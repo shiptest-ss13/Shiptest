@@ -10,6 +10,7 @@
 /turf/open/floor/wood
 	desc = "Stylish dark wood."
 	icon_state = "wood"
+	icon = 'icons/turf/wood.dmi'
 	floor_tile = /obj/item/stack/tile/wood
 	broken_states = list("wood-broken", "wood-broken2", "wood-broken3", "wood-broken4", "wood-broken5", "wood-broken6", "wood-broken7")
 	footstep = FOOTSTEP_WOOD
@@ -17,9 +18,7 @@
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
-
-/turf/open/floor/wood/icecropolis
-	baseturfs = /turf/open/indestructible/necropolis/air
+	color = WOOD_COLOR_GENERIC
 
 /turf/open/floor/wood/mahogany
 	color = WOOD_COLOR_RICH
@@ -38,6 +37,9 @@
 
 /turf/open/floor/wood/yew
 	color = WOOD_COLOR_YELLOW
+
+/turf/open/floor/wood/icecropolis
+	baseturfs = /turf/open/indestructible/necropolis/air
 
 /turf/open/floor/wood/examine(mob/user)
 	. = ..()

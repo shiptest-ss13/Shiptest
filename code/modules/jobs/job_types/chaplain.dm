@@ -132,3 +132,15 @@
 	satchel = /obj/item/storage/backpack/cultpack
 
 	chameleon_extras = /obj/item/stamp/chap
+
+/datum/outfit/job/chaplain/roumain
+	name = "Hunter Montagne (Saint-Roumain Militia)"
+
+	uniform = /obj/item/clothing/under/suit/roumain
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/armor/hos/roumain/montagne
+
+	head = /obj/item/clothing/head/cowboy/sec/roumain/montagne
+	gloves = null
+	id = /obj/item/card/id/captains_spare

@@ -240,6 +240,17 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1,/obj/item/pda/security )
 
+/datum/outfit/job/security/roumain
+	name = "Hunter (Saint-Roumain Militia)"
+
+	uniform = /obj/item/clothing/under/suit/roumain
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/armor/roumain
+
+	head = /obj/item/clothing/head/cowboy/sec/roumain
+	gloves = null
+
 //Shiptest outfits end
 
 /obj/item/radio/headset/headset_sec/alt/department/Initialize()

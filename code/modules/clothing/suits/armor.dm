@@ -328,3 +328,24 @@
 	icon_state = "inteq_battlecoat"
 	item_state = "inteq_battlecoat"
 	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/suit/armor/roumain
+	name = "saint-roumain duster"
+	desc = "A coat made from hard lather. Meant to withstand long durations in the wild."
+	icon_state = "rouma_coat"
+	item_state = "rouma_coat"
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	heat_protection = CHEST|GROIN|ARMS
+
+/obj/item/clothing/suit/armor/roumain/shadow
+	name = "saint-roumain shadow duster"
+	desc = "A coat made from hard lather. To seperate the trainees from everyone else."
+	icon_state = "rouma_shadow_coat"
+	item_state = "rouma_shadow_coat"
+
+/obj/item/clothing/suit/armor/hos/roumain/montagne
+	name = "saint-roumain montagne coat"
+	desc = "A stylish red coat to signal that you are, in fact, a montagne. Made of extra hard leather, infused with bulletproof material. Somehow."
+	icon_state = "rouma_montagne_coat"
+	item_state = "rouma_montagne_coat"

@@ -46,3 +46,23 @@
 	icon_state = "cowboyhos"
 
 	dog_fashion = /datum/dog_fashion/head/cowboy
+
+/obj/item/clothing/head/cowboy/sec/roumain
+	name = "hunter's hat"
+	desc = "A fancy hat with a nice feather. It covers your eyes, which makes you feel badass."
+	icon_state = "rouma_hat"
+
+/obj/item/clothing/head/cowboy/sec/roumain/shadow
+	name = "shadow's hat"
+	desc = "A okay looking hat. It covers your eyes, which makes you feel badass, but in reality you look like a wannabe hunter."
+	icon_state = "rouma_shadow_hat"
+
+/obj/item/clothing/head/cowboy/sec/roumain/med
+	name = "medical hunter's hat"
+	desc = "A hat that makes you want to cure plauges."
+	icon_state = "rouma_med_hat"
+
+/obj/item/clothing/head/cowboy/sec/roumain/montagne
+	name = "montagne's hat"
+	desc = "A very fancy hat to signal that you are, in fact, a montagne."
+	icon_state = "rouma_montagne_hat"

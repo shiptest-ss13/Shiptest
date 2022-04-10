@@ -385,14 +385,14 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/hundred
 
 /obj/item/gun/ballistic/shotgun/winchester
-	name = "Winchester MK.1"
-	desc = "A sturdy lever action rifle. This one is an antique and old model."
+	name = "Winchester MK.2"
+	desc = "A sturdy lever action rifle. This one is a newer reproduction."
+	icon_state = "winchestermk2"
+	item_state = "winchestermk2"
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
-	icon_state = "winchester"
-	item_state = "winchester"
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
@@ -401,11 +401,10 @@
 /obj/item/gun/ballistic/shotgun/winchester/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
 
-/obj/item/gun/ballistic/shotgun/winchester/mk2
-	name = "Winchester MK.2"
-	desc = "A sturdy lever action rifle. This one is a newer reproduction."
-	icon_state = "winchestermk2"
-	item_state = "winchestermk2"
+/obj/item/gun/ballistic/shotgun/winchester/mk1
+	name = "Winchester MK.1"
+	desc = "A sturdy lever action rifle. This one is an antique and old model."
+	icon_state = "winchester"
 
-/obj/item/gun/ballistic/shotgun/winchester/mk2/lethal
+/obj/item/gun/ballistic/shotgun/winchester/mk1/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
