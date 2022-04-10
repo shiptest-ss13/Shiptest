@@ -109,6 +109,7 @@
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	head = /obj/item/clothing/head/beret/med
 	suit = null
+	suit_store = null
 
 /datum/outfit/job/doctor/solgov
 	name = "Medical Doctor (SolGov)"
