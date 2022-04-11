@@ -673,6 +673,25 @@
 /obj/item/clothing/head/hooded/winterhood/security/inteq
 	icon_state = "winterhood_inteq"
 
+/obj/item/clothing/suit/hooded/coat/inteq
+	name = "inteq hooded coat"
+	desc = "A hooded coat with a fur trim around the hood, comfy! It has a small 'IRMG' embroidered onto the shoulder."
+	icon_state = "hoodieinteq"
+	item_state = "hoodieinteq"
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
+	hoodtype = /obj/item/clothing/head/hooded/coat/inteq
+
+/obj/item/clothing/head/hooded/coat/inteq
+	name = "inteq hood"
+	desc = "A comfortable looking brown hood."
+	icon_state = "hoodinteq"
+	item_state = "hoodinteq"
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
+
+/obj/item/clothing/suit/hooded/coat/inteq/Initialize()
+	. = ..()
+	allowed = GLOB.security_wintercoat_allowed
+
 /obj/item/clothing/head/hooded/ablative
 	name = "ablative hood"
 	desc = "Hood hopefully belonging to an ablative trenchcoat. Includes a visor for cool-o-vision."
