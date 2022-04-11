@@ -116,7 +116,7 @@
 
 /obj/item/storage/firstaid/ancient
 	icon = 'icons/obj/storage.dmi'
-	icon_state = "medkit"
+	icon_state = "oldfirstaid"
 	desc = "A first aid kit with the ability to heal common types of injuries."
 
 /obj/item/storage/firstaid/ancient/PopulateContents()
