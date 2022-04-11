@@ -95,9 +95,6 @@
 		current_ship = port.current_ship
 
 /obj/machinery/computer/helm/ui_interact(mob/user, datum/tgui/ui)
-	if(jump_state != JUMP_STATE_OFF)
-		say("Bluespace Jump in progress. Controls suspended.")
-		return
 	// Update UI
 	if(!current_ship && !reload_ship())
 		return
@@ -210,6 +207,10 @@
 		if("reload_engines")
 			current_ship.refresh_engines()
 			return
+
+	if(jump_state != JUMP_STATE_OFF)
+		say("Bluespace Jump in progress. Controls suspended.")
+		return
 
 	if(!current_ship.docked_to && !current_ship.docking)
 		switch(action)

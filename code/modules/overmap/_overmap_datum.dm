@@ -283,13 +283,13 @@
 	docked_to.contents -= src
 	var/datum/overmap/old_docked_to = docked_to
 	docked_to = null
-	token.abstract_move(OVERMAP_TOKEN_TURF(x, y))
-	old_docked_to.post_undocked(src) //Post undocked is called on the old dock target.
+	token.Move(OVERMAP_TOKEN_TURF(x, y))
+	INVOKE_ASYNC(old_docked_to, .proc/post_undocked, src)
 	docking = FALSE
 	SEND_SIGNAL(src, COMSIG_OVERMAP_UNDOCK, old_docked_to)
 
 /**
-  * Called at the very end of a [datum/overmap/proc/Unock] call, on the **TARGET of the undocking attempt**. Return result is ignored.
+  * Called at the very end of a [datum/overmap/proc/Unock] call (non-blocking/asynchronously), on the **TARGET of the undocking attempt**. Return result is ignored.
   *
   * * dock_requester - The overmap datum trying to undock from this one. Cannot be null.
   */
