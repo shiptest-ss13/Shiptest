@@ -97,3 +97,12 @@
 	belt = /obj/item/storage/belt/military/minutemen
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/gun/energy/e_gun/advtaser=1)
+
+/datum/outfit/job/warden/nanotrasen
+	name = "Warden (Nanotrasen)"
+
+	head = /obj/item/clothing/head/warden/red
+	uniform = /obj/item/clothing/under/rank/security/warden/nt
+	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
+	alt_uniform = null
+	alt_suit = null

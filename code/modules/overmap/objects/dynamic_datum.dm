@@ -156,10 +156,13 @@
 			planet = DYNAMIC_WORLD_SPACERUIN
 			token.icon_state = "strange_event"
 			token.color = null
-	token.desc += !preserve_level && "It may not still be here if you leave it."
+
 	#ifndef QUICK_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
 	load_level() //Load the level whenever it's randomised
 	#endif
+
+	if(!preserve_level)
+		token.desc += "It may not still be here if you leave it."
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
