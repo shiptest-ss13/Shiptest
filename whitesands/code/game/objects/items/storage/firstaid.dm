@@ -258,6 +258,7 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
+		/obj/item/healthanalyzer = 1,
 		/obj/item/geiger_counter = 1,
 		/obj/item/storage/pill_bottle/potassiodide = 1,
 		/obj/item/storage/pill_bottle/mutadone = 1,
