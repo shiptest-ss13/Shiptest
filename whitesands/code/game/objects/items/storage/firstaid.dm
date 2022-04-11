@@ -246,15 +246,15 @@
 	name = "tadiation treatment kit"
 	desc = "A specialized medical kit for use in nuclear powerplants and research facilities"
 	icon_state = "medkit_rad"
-	item_state = "firstaid-rad"
+	item_state = "firstaid-radiation"
 	damagetype_healed = BURN
 
 /obj/item/storage/firstaid/radiation/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins sniffing \the [src] . It looks like [user.p_theyre()] trying to take a way to high radiation dose!</span>")
+	user.visible_message("<span class='suicide'>[user] begins sniffing \the [src]. It looks like [user.p_theyre()] trying to take a way to high radiation dose!</span>")
 	return TOXLOSS
 
 
-/obj/item/storage/firstaid/fire/PopulateContents()
+/obj/item/storage/firstaid/radiation/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(
@@ -262,7 +262,7 @@
 		/obj/item/storage/pill_bottle/potassiodide = 1,
 		/obj/item/storage/pill_bottle/mutadone = 1,
 		/obj/item/reagent_containers/hypospray/medipen/penacid = 1,
-		/obj/item/reagent_containers/hypospray/medipen = 1,
+		/obj/item/reagent_containers/hypospray/medipen = 1)
 	generate_items_inside(items_inside,src)
 
 
