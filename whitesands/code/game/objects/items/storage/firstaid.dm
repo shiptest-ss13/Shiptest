@@ -12,7 +12,7 @@
 	name = "first-aid kit"
 	desc = "It's an emergency medical kit for those serious boo-boos."
 	icon = 'whitesands/icons/obj/storage.dmi'
-	icon_state = "firstaid"
+	icon_state = "medkit"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	throw_speed = 3
@@ -21,7 +21,7 @@
 	var/damagetype_healed //defines damage type of the medkit. General ones stay null. Used for medibot healing bonuses
 
 /obj/item/storage/firstaid/regular
-	icon_state = "firstaid"
+	icon_state = "medkit"
 	desc = "A first aid kit with the ability to heal common types of injuries."
 
 /obj/item/storage/firstaid/regular/suicide_act(mob/living/carbon/user)
@@ -41,8 +41,8 @@
 
 /obj/item/storage/firstaid/medical
 	name = "medical aid kit"
-	icon_state = "firstaid_surgery"
-	item_state = "firstaid"
+	icon_state = "medkit_surgery"
+	item_state = "medkit"
 	desc = "A high capacity aid kit for doctors, full of medical supplies and basic surgical equipment"
 
 /obj/item/storage/firstaid/medical/ComponentInitialize()
@@ -116,7 +116,7 @@
 
 /obj/item/storage/firstaid/ancient
 	icon = 'icons/obj/storage.dmi'
-	icon_state = "firstaid"
+	icon_state = "medkit"
 	desc = "A first aid kit with the ability to heal common types of injuries."
 
 /obj/item/storage/firstaid/ancient/PopulateContents()
@@ -135,7 +135,7 @@
 /obj/item/storage/firstaid/fire
 	name = "burn treatment kit"
 	desc = "A specialized medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
-	icon_state = "ointment"
+	icon_state = "medkit_burn"
 	item_state = "firstaid-ointment"
 	damagetype_healed = BURN
 
@@ -143,9 +143,6 @@
 	user.visible_message("<span class='suicide'>[user] begins rubbing \the [src] against [user.p_them()]self! It looks like [user.p_theyre()] trying to start a fire!</span>")
 	return FIRELOSS
 
-/obj/item/storage/firstaid/fire/Initialize(mapload)
-	. = ..()
-	icon_state = pick("ointment","firefirstaid")
 
 /obj/item/storage/firstaid/fire/PopulateContents()
 	if(empty)
@@ -161,17 +158,13 @@
 /obj/item/storage/firstaid/toxin
 	name = "toxin treatment kit"
 	desc = "Used to treat toxic blood content and radiation poisoning."
-	icon_state = "antitoxin"
+	icon_state = "medkit_toxin"
 	item_state = "firstaid-toxin"
 	damagetype_healed = TOX
 
 /obj/item/storage/firstaid/toxin/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return TOXLOSS
-
-/obj/item/storage/firstaid/toxin/Initialize(mapload)
-	. = ..()
-	icon_state = pick("antitoxin","antitoxfirstaid","antitoxfirstaid2")
 
 /obj/item/storage/firstaid/toxin/PopulateContents()
 	if(empty)
@@ -188,17 +181,13 @@
 /obj/item/storage/firstaid/o2
 	name = "oxygen deprivation treatment kit"
 	desc = "A box full of oxygen goodies."
-	icon_state = "o2"
+	icon_state = "medkit_o2"
 	item_state = "firstaid-o2"
 	damagetype_healed = OXY
 
 /obj/item/storage/firstaid/o2/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return OXYLOSS
-
-/obj/item/storage/firstaid/o2/Initialize(mapload)
-	. = ..()
-	icon_state = pick("o2","o2second")
 
 /obj/item/storage/firstaid/o2/PopulateContents()
 	if(empty)
@@ -214,7 +203,7 @@
 /obj/item/storage/firstaid/brute
 	name = "brute trauma treatment kit"
 	desc = "A first aid kit for when you get toolboxed."
-	icon_state = "brute"
+	icon_state = "medkit_brute"
 	item_state = "firstaid-brute"
 	damagetype_healed = BRUTE
 	custom_price = 600
@@ -222,10 +211,6 @@
 /obj/item/storage/firstaid/brute/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
-
-/obj/item/storage/firstaid/brute/Initialize(mapload)
-	. = ..()
-	icon_state = pick("brute","brute2")
 
 /obj/item/storage/firstaid/brute/PopulateContents()
 	if(empty)
@@ -242,7 +227,7 @@
 /obj/item/storage/firstaid/advanced
 	name = "advanced first aid kit"
 	desc = "An advanced kit to help deal with advanced wounds."
-	icon_state = "radfirstaid"
+	icon_state = "medkit_advanced"
 	item_state = "firstaid-rad"
 	custom_premium_price = 1100
 
@@ -260,7 +245,7 @@
 /obj/item/storage/firstaid/tactical
 	name = "combat medical kit"
 	desc = "I hope you've got insurance."
-	icon_state = "bezerk"
+	icon_state = "medkit_tactical"
 
 /obj/item/storage/firstaid/tactical/ComponentInitialize()
 	. = ..()
