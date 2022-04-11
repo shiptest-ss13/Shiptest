@@ -40,7 +40,7 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/caphat
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/sector_charter=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
@@ -119,4 +119,16 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/aclfcap
 	suit = /obj/item/clothing/suit/aclf
+
+/datum/outfit/job/captain/minutemen
+	name = "General (Colonial Minutemen)"
+
+	head = /obj/item/clothing/head/caphat/minutemen
+	uniform = /obj/item/clothing/under/rank/command/minutemen
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/minutemen
+	shoes = /obj/item/clothing/shoes/combat
+
+	box = /obj/item/storage/box/survival/engineer/radio
+	backpack = /obj/item/storage/backpack
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/mateba=1)
 

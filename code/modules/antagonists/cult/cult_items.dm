@@ -27,7 +27,7 @@
 	. = ..()
 	var/image/I = image(icon = 'icons/effects/blood.dmi' , icon_state = null, loc = src)
 	I.override = TRUE
-	add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/silicons, "cult_dagger", I)
+	add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/cult, "cult_dagger", I)
 
 /obj/item/melee/cultblade
 	name = "eldritch longsword"

@@ -27,23 +27,20 @@
 	dir = EAST
 
 /turf/open/space/transit/Entered(atom/movable/AM, atom/OldLoc)
-	..()
+	. = ..()
 	if(!locate(/obj/structure/lattice) in src)
-		throw_atom_into_space(AM)
+		AM.throw_atom_into_space()
 
-/atom/proc/throw_atom_into_space(atom/movable/AM)
-	set waitfor = FALSE
-	if(!AM || istype(AM, /obj/docking_port))
+/atom/proc/throw_atom_into_space()
+	if(istype(src, /obj/docking_port))
 		return
-	if(AM.loc != src) 	// Multi-tile objects are "in" multiple locs but its loc is it's true placement.
-		return			// Don't move multi tile objects if their origin isnt in transit
-	if(iseffect(AM))
+	if(iseffect(src))
 		return
-	if(isliving(AM))
-		var/mob/living/poor_soul = AM			// This may not seem like much, but if you toss someone out
+	if(isliving(src))
+		var/mob/living/poor_soul = src			// This may not seem like much, but if you toss someone out
 		poor_soul.apply_damage_type(50, BRUTE)	// and they go through like four tiles, they're goners
 		return
-	qdel(AM)
+	qdel(src)
 
 /turf/open/space/transit/CanBuildHere()
 	return SSshuttle.is_in_shuttle_bounds(src)
@@ -53,7 +50,7 @@
 	. = ..()
 	update_icon()
 	for(var/atom/movable/AM in src)
-		throw_atom_into_space(AM)
+		AM.throw_atom_into_space()
 
 /turf/open/space/transit/update_icon()
 	. = ..()

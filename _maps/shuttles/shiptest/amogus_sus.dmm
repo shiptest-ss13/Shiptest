@@ -893,7 +893,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "jR" = (
-/obj/machinery/computer/autopilot{
+/obj/structure/frame/computer{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/neutral/half{
@@ -1096,9 +1096,6 @@
 /obj/structure/closet/crate{
 	name = "food crate"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/item/storage/cans/sixbeer,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
@@ -1106,6 +1103,7 @@
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
@@ -1231,7 +1229,7 @@
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
 "nT" = (
-/obj/machinery/selling_pad,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "oa" = (
@@ -4033,6 +4031,11 @@
 	pixel_y = -32
 	},
 /obj/item/paper_bin,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "TZ" = (
@@ -4398,7 +4401,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "XF" = (
-/obj/machinery/computer/selling_pad_control,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "XG" = (
@@ -5380,10 +5383,10 @@ Ph
 Ko
 SX
 Te
-XF
-lX
-NT
 Yh
+nT
+lX
+VT
 VW
 Jo
 kP
@@ -5410,7 +5413,7 @@ JE
 QW
 Qk
 Yh
-VT
+XF
 nT
 ZR
 Ir

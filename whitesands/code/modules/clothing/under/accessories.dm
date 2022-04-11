@@ -54,6 +54,16 @@
 	. = ..()
 	chameleon_action.emp_randomise(INFINITY)
 
+/obj/item/clothing/accessory/holster/marine
+	name = "marine's holster"
+	desc = "Wearing this makes you feel badass, but you suspect it's just a detective's holster from a surplus somewhere."
+
+/obj/item/clothing/accessory/holster/marine/Initialize()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+
 /obj/item/clothing/accessory/waistcoat/solgov
 	name = "solgov waistcoat"
 	desc = "A standard issue waistcoat in solgov colors."

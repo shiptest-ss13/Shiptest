@@ -32,6 +32,7 @@
 	icon_state = "utilitybelt"
 	item_state = "utility"
 	content_overlays = TRUE
+	custom_price = 350
 	custom_premium_price = 300
 	drop_sound = 'sound/items/handling/toolbelt_drop.ogg'
 	pickup_sound =  'sound/items/handling/toolbelt_pickup.ogg'
@@ -122,6 +123,15 @@
 	new /obj/item/wirecutters/syndie(src)
 	new /obj/item/multitool/syndie(src)
 	new /obj/item/inducer/syndicate(src)
+
+/obj/item/storage/belt/utility/full/ert/PopulateContents()
+	new /obj/item/screwdriver/power(src)
+	new /obj/item/crowbar/power(src)
+	new /obj/item/weldingtool/experimental(src)
+	new /obj/item/multitool(src)
+	new /obj/item/construction/rcd/combat(src)
+	new /obj/item/extinguisher/mini(src)
+	new /obj/item/stack/cable_coil(src)
 
 /obj/item/storage/belt/medical
 	name = "medical belt"
@@ -395,7 +405,7 @@
 
 /obj/item/storage/belt/military
 	name = "chest rig"
-	desc = "A set of tactical webbing worn by Syndicate boarding parties."
+	desc = "A set of tactical webbing worn by military cosplayers and actual militaries alike."
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
 	resistance_flags = FIRE_PROOF
@@ -404,6 +414,15 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/storage/belt/military/minutemen/PopulateContents()
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
@@ -484,6 +503,14 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
+
+/obj/item/storage/belt/military/assault/full/PopulateContents()
+	new /obj/item/ammo_box/magazine/wt550m9/wtap(src)
+	new /obj/item/ammo_box/magazine/wt550m9/wtap(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
 
 /obj/item/storage/belt/grenade
 	name = "grenadier belt"

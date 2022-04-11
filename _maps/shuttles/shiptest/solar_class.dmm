@@ -1319,7 +1319,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "zs" = (
-/obj/machinery/computer/autopilot{
+/obj/structure/frame/computer{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/neutral{
@@ -1515,6 +1515,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/computer/cryopod{
+	dir = 1;
+	pixel_y = -24
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
@@ -2094,6 +2098,9 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Nx" = (

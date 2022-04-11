@@ -623,7 +623,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			if(prob(25))
 				new /obj/item/disk/design_disk/modkit_disc/bounty(loc)
 			if(prob(35))
-				new /obj/item/circuitboard/machine/mining_equipment_vendor(loc)
+				new /obj/item/circuitboard/machine/vending/mining_equipment(loc)
 			if(prob(45))
 				new /obj/item/vending_refill/mining_equipment(loc)
 				new /mob/living/simple_animal/hostile/asteroid/goliath/beast(loc)

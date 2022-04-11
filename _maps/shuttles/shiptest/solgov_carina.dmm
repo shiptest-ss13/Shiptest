@@ -1287,7 +1287,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "uM" = (
-/obj/machinery/computer/autopilot{
+/obj/structure/frame/computer{
 	dir = 8
 	},
 /obj/item/radio/intercom{
@@ -1804,12 +1804,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
-"Cb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/industrial/hatch,
-/obj/machinery/selling_pad,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
 "Ci" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor/window,
@@ -2687,6 +2681,10 @@
 	pixel_x = 5
 	},
 /obj/item/pen/solgov,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "QS" = (
@@ -3011,9 +3009,6 @@
 	},
 /obj/structure/sign/poster/official/solgov_enlist{
 	pixel_y = -32
-	},
-/obj/machinery/computer/selling_pad_control{
-	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -3922,7 +3917,7 @@ eo
 cW
 SP
 oH
-Cb
+uL
 ar
 PX
 "}
