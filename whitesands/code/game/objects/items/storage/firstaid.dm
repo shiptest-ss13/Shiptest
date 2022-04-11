@@ -136,7 +136,7 @@
 	name = "burn treatment kit"
 	desc = "A specialized medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
 	icon_state = "medkit_burn"
-	item_state = "firstaid-ointment"
+	item_state = "firstaid-burn"
 	damagetype_healed = BURN
 
 /obj/item/storage/firstaid/fire/suicide_act(mob/living/carbon/user)
@@ -228,7 +228,7 @@
 	name = "advanced first aid kit"
 	desc = "An advanced kit to help deal with advanced wounds."
 	icon_state = "medkit_advanced"
-	item_state = "firstaid-rad"
+	item_state = "firstaid-adv"
 	custom_premium_price = 1100
 
 /obj/item/storage/firstaid/advanced/PopulateContents()
@@ -244,9 +244,9 @@
 
 /obj/item/storage/firstaid/radiation
 	name = "tadiation treatment kit"
-	desc = "A specialized medical kit for use in nuclear powerplants and research facilities"
+	desc = "A specialized medical kit for use in nuclear power plants and research facilities."
 	icon_state = "medkit_rad"
-	item_state = "firstaid-radiation"
+	item_state = "firstaid-rad"
 	damagetype_healed = BURN
 
 /obj/item/storage/firstaid/radiation/suicide_act(mob/living/carbon/user)
