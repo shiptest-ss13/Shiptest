@@ -1,0 +1,6 @@
+author: MarkSuckerberg
+delete-after: true
+changes:
+  - tweak: Planet loading now occurs during init and after departure, so initial docking
+      should be a lot faster, as well as ghost roles will actually appear in time
+      for them to get a foothold on the planet.
