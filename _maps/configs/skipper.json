@@ -20,7 +20,10 @@
 		"Station Engineer": 3,
 		"Shaft Miner": 2,
 		"Cargo Technician": 2,
-		"Security Officer": 1,
+		"Security Officer": {
+			"outfit": "/datum/outfit/job/security/nanotrasen",
+			"slots": 1
+		},
 		"Assistant": 5
 	},
 	"cost": 750
