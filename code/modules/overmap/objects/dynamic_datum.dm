@@ -72,7 +72,6 @@
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	var/list/results = SSovermap.get_unused_overmap_square()
 	overmap_move(results["x"], results["y"])
-	choose_level_type()
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock
@@ -81,6 +80,8 @@
 	if(mapzone)
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
+
+	choose_level_type()
 
 /**
   * Chooses a type of level for the dynamic level to use.
@@ -155,6 +156,11 @@
 			planet = DYNAMIC_WORLD_SPACERUIN
 			token.icon_state = "strange_event"
 			token.color = null
+
+	#ifndef QUICK_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
+	load_level() //Load the level whenever it's randomised
+	#endif
+
 	if(!preserve_level)
 		token.desc += "It may not still be here if you leave it."
 
@@ -178,8 +184,6 @@
 /datum/overmap/dynamic/proc/load_level()
 	if(mapzone)
 		return TRUE
-	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
-		return FALSE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, ruin_type = template)
 	if(!length(dynamic_encounter_values))
