@@ -525,6 +525,10 @@
 	dir = 1;
 	name = "Engine Access"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "riggerengwindows";
+	name = "blast shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "jI" = (
@@ -1399,6 +1403,10 @@
 	dir = 1;
 	name = "Engine Access"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "riggerengwindows";
+	name = "blast shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "uk" = (
@@ -1536,6 +1544,10 @@
 	},
 /obj/machinery/door/window/eastleft{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "riggerwindows";
+	name = "blast shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1775,6 +1787,10 @@
 	dir = 1;
 	name = "Engine Access"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "riggerengwindows";
+	name = "blast shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "yJ" = (
@@ -1819,6 +1835,10 @@
 /obj/machinery/door/window/eastleft{
 	dir = 1;
 	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "riggerwindows";
+	name = "blast shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2691,6 +2711,13 @@
 /obj/machinery/status_display/shuttle{
 	pixel_y = -32
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "riggerengwindows";
+	name = "Preheater Access";
+	pixel_x = 9;
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Ji" = (
@@ -3142,6 +3169,10 @@
 /obj/machinery/door/window/eastright{
 	dir = 1;
 	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "riggerengwindows";
+	name = "blast shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)

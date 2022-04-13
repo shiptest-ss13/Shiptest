@@ -464,7 +464,6 @@
 
 /obj/item/stack/tile/plasteel/white
 	name = "white tile"
-	icon_state = "tile-bluespace"
 	turf_type = /turf/open/floor/plasteel/white
 	merge_type = /obj/item/stack/tile/plasteel/white
 	color = COLOR_WHITE
