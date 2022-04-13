@@ -83,41 +83,41 @@ You're pretty sure this is just a raincoat.
 /obj/item/clothing/suit/longcoat/virologist
 	name = "virologist longcoat"
 	desc = "A long labcoat with a green stripe. Perfect for creating bioweapons while laughing like a cartoon villian."
-	icon_state = "labcoat_viro_alt"
+	icon_state = "labcoat_viro_long"
 
 /obj/item/clothing/suit/longcoat/genetics
 	name = "geneticist longcoat"
 	desc = "A long labcoat with a blue stripe. Perfect for creating genetic abombinations while laughing like a cartoon villian."
-	icon_state = "labcoat_gene_alt"
+	icon_state = "labcoat_gene_long"
 
 /obj/item/clothing/suit/longcoat/cmo
 	name = "chief medical officer's longcoat"
 	desc = "A long labcoat colored blue to match a chief medical officer."
-	icon_state = "labcoat_cmo_alt"
+	icon_state = "labcoat_cmo_long"
 
 /obj/item/clothing/suit/longcoat/chemist
 	name = "chemist longcoat"
 	desc = "A long labcoat with a orange stripe. Perfect for creating chemical weapons while laughing like a cartoon villian."
-	icon_state = "labcoat_chem"
+	icon_state = "labcoat_chem_long"
 
 /obj/item/clothing/suit/longcoat/science
 	name = "scientist longcoat"
 	desc = "A long labcoat with a purple stripe. Perfect for laughing like a cartoon villian, yet being indecisive on what weapon you want to create."
-	icon_state = "labcoat_sci"
+	icon_state = "labcoat_sci_long"
 
 /obj/item/clothing/suit/longcoat/brig_phys
 	name = "security medic's longcoat"
 	desc = "A long labcoat with a red stripe. Perfect for laughing like a cartoon villian, while using already created weapons."
-	icon_state = "labcoat_brig"
+	icon_state = "labcoat_brig_long"
 	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0, fire = 50, acid = 50)
 
 //we actually don't have the robotcist labcoats here, but since these are made anyways, might as well put them in
 /obj/item/clothing/suit/longcoat/roboblack
 	name = "roboticist's black labcoat"
 	desc = "A long labcoat colored black with a red stripe. The sleves appear to be cut off with scizors. Perfect for creating mechanical exosuit weapons while laughing like a cartoon villian."
-	icon_state = "labcoat_roboblack"
+	icon_state = "labcoat_roboblack_long"
 
 /obj/item/clothing/suit/longcoat/robowhite
 	name = "roboticist's white labcoat"
 	desc = "A long labcoat with a black stripe and sleves. Perfect for creating mechanical exosuit weapons while laughing like a cartoon villian."
-	icon_state = "labcoat_robowhite"
+	icon_state = "labcoat_robowhite_long"
