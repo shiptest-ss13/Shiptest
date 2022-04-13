@@ -144,3 +144,8 @@
 	head = /obj/item/clothing/head/cowboy/sec/roumain/montagne
 	gloves = null
 	id = /obj/item/card/id/captains_spare
+
+	backpack_contents = list(
+		/obj/item/stamp/chap = 1,
+		/obj/item/melee/classic_baton/telescopic=1
+		)

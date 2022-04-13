@@ -250,6 +250,11 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	head = /obj/item/clothing/head/cowboy/sec/roumain
 	gloves = null
+	backpack = /obj/item/storage/backpack
+	satchel  = /obj/item/storage/backpack/satchel
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger
+	backpack_contents = null
 
 //Shiptest outfits end
 

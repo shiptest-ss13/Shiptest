@@ -148,3 +148,7 @@
 	head = /obj/item/clothing/head/cowboy/sec/roumain/med
 	mask = /obj/item/clothing/mask/gas/plaguedoctor
 	gloves = null
+	backpack = /obj/item/storage/backpack
+	satchel  = /obj/item/storage/backpack/satchel
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger
