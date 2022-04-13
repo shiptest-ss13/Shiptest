@@ -141,7 +141,7 @@
 
 /obj/item/clothing/under/suit/roumain
 	name = "saint-roumain's worksuit"
-	desc = "An suit designed for the hardworking hunters."
+	desc = "A simple, hard-wearing suit designed for the hardworking hunters of the Saint-Roumain Militia."
 	icon_state = "rouma_work"
 	item_state = "rouma_work"
 

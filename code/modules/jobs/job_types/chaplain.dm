@@ -141,7 +141,7 @@
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	suit = /obj/item/clothing/suit/armor/hos/roumain/montagne
 
-	head = /obj/item/clothing/head/cowboy/sec/roumain/montagne
+	head = /obj/item/clothing/head/HoS/cowboy/montagne
 	gloves = null
 	id = /obj/item/card/id/captains_spare
 

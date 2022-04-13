@@ -66,7 +66,7 @@ You're pretty sure this is just a raincoat.
 
 /obj/item/clothing/suit/toggle/labcoat/roumain_med
 	name = "saint-roumain medical duster"
-	desc = "A coat made from hard lather infused with labcoat material. Due to the infusion, it is better at resisting biological hazards."
+	desc = "A coat made from hard leather and further treated with exotic sterilizing oils and wax. The treatment and its more closed design offers much better protection against biological hazards."
 	icon_state = "rouma_med_coat"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
 

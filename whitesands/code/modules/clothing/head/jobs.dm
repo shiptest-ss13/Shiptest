@@ -49,20 +49,20 @@
 
 /obj/item/clothing/head/cowboy/sec/roumain
 	name = "hunter's hat"
-	desc = "A fancy hat with a nice feather. It covers your eyes, which makes you feel badass."
+	desc = "A fancy hat with a nice feather. The way it covers your eyes makes you feel like a badass."
 	icon_state = "rouma_hat"
 
 /obj/item/clothing/head/cowboy/sec/roumain/shadow
 	name = "shadow's hat"
-	desc = "A okay looking hat. It covers your eyes, which makes you feel badass, but in reality you look like a wannabe hunter."
+	desc = "A rough, simple hat. The way it covers your eyes makes you feel badass, but you just look like a wannabe hunter."
 	icon_state = "rouma_shadow_hat"
 
 /obj/item/clothing/head/cowboy/sec/roumain/med
 	name = "medical hunter's hat"
-	desc = "A hat that makes you want to cure plauges."
+	desc = "A very wide-brimmed, round hat treated with oil and wax. Somehow manages to look stylish and creepy at the same time."
 	icon_state = "rouma_med_hat"
 
-/obj/item/clothing/head/cowboy/sec/roumain/montagne
+/obj/item/clothing/head/HoS/cowboy/montagne
 	name = "montagne's hat"
-	desc = "A very fancy hat to signal that you are, in fact, a montagne."
+	desc = "A very fancy hat with a large feather plume to signal that you are, in fact, a Hunter Montagne. The exotic fur lining is impeccably soft and bafflingly bulletproof."
 	icon_state = "rouma_montagne_hat"

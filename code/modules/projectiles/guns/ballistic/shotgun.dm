@@ -403,7 +403,7 @@
 
 /obj/item/gun/ballistic/shotgun/winchester/mk1
 	name = "Winchester MK.1"
-	desc = "A sturdy lever action rifle. This one is an antique and old model."
+	desc = "A sturdy lever action rifle. This older pattern appears to be an antique, in excellent condition despite its age."
 	icon_state = "winchestermk1"
 
 /obj/item/gun/ballistic/shotgun/winchester/mk1/lethal

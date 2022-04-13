@@ -273,7 +273,7 @@
 
 /obj/item/gun/ballistic/revolver/pepperbox
 	name = "\improper pepperbox pistol"
-	desc = "A extremly old revolver, how it even end up here? While fast to fire, it is extremely innacurate. Uses .357 ammo."
+	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. How did it even end up here? While fast to fire, it is extremely inaccurate. Uses .357 ammo."
 	icon_state = "pepperbox"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
 	fire_rate = 3
