@@ -68,6 +68,10 @@
 
 	if(!on)
 		return
+	if(!is_operational())
+		return
+	if(!on || welded)
+		return
 	var/datum/gas_mixture/air1 = airs[1]
 	var/datum/gas_mixture/air2 = airs[2]
 
