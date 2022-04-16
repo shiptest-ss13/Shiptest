@@ -7,6 +7,7 @@
 /obj/machinery/atmospherics/components/binary/dp_vent_pump
 	icon = 'icons/obj/atmospherics/components/unary_devices.dmi' //We reuse the normal vent icons!
 	icon_state = "dpvent_map-3"
+	pipe_state = "dp_vent_pump"
 
 	//node2 is output port
 	//node1 is input port
@@ -14,6 +15,9 @@
 	name = "dual-port air vent"
 	desc = "Has a valve and pump attached to it. There are two ports."
 
+	can_unwrench = TRUE
+	construction_type = /obj/item/pipe/directional
+	shift_underlay_only = FALSE
 	hide = TRUE
 
 	interacts_with_air = TRUE
@@ -47,6 +51,8 @@
 	if(showpipe)
 		var/image/cap = getpipeimage(icon, "dpvent_cap", dir, piping_layer = piping_layer)
 		add_overlay(cap)
+	else
+		PIPING_LAYER_SHIFT(src, PIPING_LAYER_DEFAULT)
 
 	if(welded)
 		icon_state = "vent_welded"
@@ -171,6 +177,53 @@
 
 	if(!("status" in signal.data)) //do not update_icon
 		update_icon()
+
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/welder_act(mob/living/user, obj/item/I)
+	..()
+	if(!I.tool_start_check(user, amount=0))
+		return TRUE
+	to_chat(user, "<span class='notice'>You begin welding the vent...</span>")
+	if(I.use_tool(src, user, 20, volume=50))
+		if(!welded)
+			user.visible_message("<span class='notice'>[user] welds the vent shut.</span>", "<span class='notice'>You weld the vent shut.</span>", "<span class='hear'>You hear welding.</span>")
+			welded = TRUE
+		else
+			user.visible_message("<span class='notice'>[user] unwelded the vent.</span>", "<span class='notice'>You unweld the vent.</span>", "<span class='hear'>You hear welding.</span>")
+			welded = FALSE
+		update_icon()
+		pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
+		pipe_vision_img.plane = ABOVE_HUD_PLANE
+		investigate_log("was [welded ? "welded shut" : "unwelded"] by [key_name(user)]", INVESTIGATE_ATMOS)
+		add_fingerprint(user)
+	return TRUE
+
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/can_unwrench(mob/user)
+	. = ..()
+	if(. && on && is_operational())
+		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
+		return FALSE
+
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/examine(mob/user)
+	. = ..()
+	if(welded)
+		. += "It seems welded shut."
+
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/power_change()
+	. = ..()
+	update_icon_nopipes()
+
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/can_crawl_through()
+	return !welded
+
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/attack_alien(mob/user)
+	if(!welded || !(do_after(user, 20, target = src)))
+		return
+	user.visible_message("<span class='warning'>[user] furiously claws at [src]!</span>", "<span class='notice'>You manage to clear away the stuff blocking the vent.</span>", "<span class='hear'>You hear loud scraping noises.</span>")
+	welded = FALSE
+	update_icon()
+	pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
+	pipe_vision_img.plane = ABOVE_HUD_PLANE
+	playsound(loc, 'sound/weapons/bladeslice.ogg', 100, TRUE)
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume
 	name = "large dual-port air vent"
