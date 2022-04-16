@@ -14,6 +14,7 @@
 			l_store = null
 		if ( I == r_store )
 			r_store = null
+
 		update_inv_internal_storage()
 		return TRUE
 	return FALSE
