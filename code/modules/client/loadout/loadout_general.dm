@@ -93,6 +93,10 @@
 	display_name = "toy, lizard plushie"
 	path = /obj/item/toy/plush/lizardplushie
 
+/datum/gear/snake
+	display_name = "toy, snake plushie"
+	path = /obj/item/toy/plush/snakeplushie
+
 /datum/gear/moth
 	display_name = "toy, moth plushie"
 	path = /obj/item/toy/plush/moth
