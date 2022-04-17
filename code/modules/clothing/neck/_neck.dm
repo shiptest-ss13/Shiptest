@@ -6,7 +6,7 @@
 	strip_delay = 40
 	equip_delay_other = 40
 	cuttable = TRUE
-	clothamnt = 2
+	clothamnt = 1
 	greyscale_colors = list(list(15, 19))
 	greyscale_icon_state = "scarf"
 
@@ -98,6 +98,11 @@
 	desc = "A loosely tied necktie, a perfect accessory for the over-worked detective."
 	icon_state = "detective"
 	unique_reskin = null
+
+/obj/item/clothing/neck/maid
+	name = "maid neck cover"
+	desc = "A neckpiece for a maid costume, it smells faintly of disappointment."
+	icon_state = "maid_neck"
 
 /obj/item/clothing/neck/tie/trans
 	name = "transgender tie"

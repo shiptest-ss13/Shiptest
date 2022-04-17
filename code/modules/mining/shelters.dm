@@ -8,10 +8,10 @@
 
 /datum/map_template/shelter/New()
 	. = ..()
-	blacklisted_turfs = typecacheof(/turf/closed)
-	whitelisted_turfs = list()
 	banned_areas = typecacheof(/area/shuttle)
-	banned_objects = list()
+	blacklisted_turfs = typecacheof(list(/turf/closed, /turf/open/indestructible))
+	whitelisted_turfs = typecacheof(/turf/closed/mineral)
+	banned_objects = typecacheof(/obj/structure/stone_tile)
 
 /datum/map_template/shelter/proc/check_deploy(turf/deploy_location)
 	var/affected = get_affected_turfs(deploy_location, centered=TRUE)
@@ -39,12 +39,6 @@
 		absolutely free!"
 	mappath = "_maps/templates/shelter_1.dmm"
 
-/datum/map_template/shelter/alpha/New()
-	. = ..()
-	blacklisted_turfs = typecacheof(/turf/open/indestructible)
-	whitelisted_turfs = typecacheof(/turf/closed/mineral)
-	banned_objects = typecacheof(/obj/structure/stone_tile)
-
 /datum/map_template/shelter/beta
 	name = "Shelter Beta"
 	shelter_id = "shelter_beta"
@@ -55,12 +49,6 @@
 		an ash storm."
 	mappath = "_maps/templates/shelter_2.dmm"
 
-/datum/map_template/shelter/beta/New()
-	. = ..()
-	blacklisted_turfs = typecacheof(/turf/open/indestructible)
-	whitelisted_turfs = typecacheof(/turf/closed/mineral)
-	banned_objects = typecacheof(/obj/structure/stone_tile)
-
 /datum/map_template/shelter/charlie
 	name = "Shelter Charlie"
 	shelter_id = "shelter_charlie"
@@ -70,9 +58,3 @@
 		expect that this won't save you if you're bleeding out to \
 		death."
 	mappath = "_maps/templates/shelter_3.dmm"
-
-/datum/map_template/shelter/charlie/New()
-	. = ..()
-	blacklisted_turfs = typecacheof(/turf/open/indestructible)
-	whitelisted_turfs = typecacheof(/turf/closed/mineral)
-	banned_objects = typecacheof(/obj/structure/stone_tile)

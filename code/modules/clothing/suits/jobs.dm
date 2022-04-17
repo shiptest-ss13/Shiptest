@@ -155,6 +155,12 @@
 	icon_state = "suitjacket_charcoal"
 	item_state = "suitjacket_charcoal"
 
+/obj/item/clothing/suit/toggle/lawyer/minutemen
+	name = "minutemen suit jacket"
+	desc = "An enterprising dress jacket used by officers of the Colonial Minutemen."
+	icon_state = "suitjacket_minuteman"
+	item_state = "suitjacket_navy"
+
 //Mime
 /obj/item/clothing/suit/toggle/suspenders
 	name = "suspenders"
