@@ -4,7 +4,7 @@
 	default_color = "6060FF"
 	species_traits = list(MUTCOLORS, EYECOLOR, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_HOLDABLE)
-	mutant_bodyparts = list("kepori_feathers", "kepori_body_feathers")
+	mutant_bodyparts = list("kepori_body_feathers", "kepori_feathers")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "body_size" = "Normal")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = GRAIN | GROSS
@@ -17,7 +17,7 @@
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	species_clothing_path = 'icons/mob/clothing/species/kepori.dmi'
 	species_eye_path = 'icons/mob/kepori_parts.dmi'
-	offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,0), OFFSET_EARS = list(0,-4), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,-5), OFFSET_HEAD = list(0,-4), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,-4), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0), OFFSET_ACCESSORY = list(0, -4))
+	//offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,0), OFFSET_EARS = list(0,-4), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,-5), OFFSET_HEAD = list(0,-4), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,-4), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0), OFFSET_ACCESSORY = list(0, -4))
 	punchdamagelow = 0
 	punchdamagehigh = 6
 	heatmod = 0.67
@@ -51,6 +51,14 @@
 	species_r_arm = /obj/item/bodypart/r_arm/kepori
 	species_l_leg = /obj/item/bodypart/l_leg/kepori
 	species_r_leg = /obj/item/bodypart/r_leg/kepori
+
+/datum/species/kepori/New()
+	. = ..()
+	offset_clothing = list(
+		"[HEAD_LAYER]" = list("north" = list("x" = 0, "y" = -4), "east" = list("x" = 4, "y" = -4), "south" = list("x" = 0, "y" = -4), "west" = list("x" =  -4, "y" = -4)),
+		"[GLASSES_LAYER]" = list("north" = list("x" = 0, "y" = -4), "east" = list("x" = 4, "y" = -4), "south" = list("x" = 0, "y" = -4), "west" = list("x" =  -4, "y" = -4)),
+		"[FACEMASK_LAYER]" = list("north" = list("x" = 0, "y" = -5), "east" = list("x" = 4, "y" = -5), "south" = list("x" = 0, "y" = -5), "west" = list("x" =  -4, "y" = -5))
+	)
 
 /datum/species/kepori/random_name(gender,unique,lastname)
 	if(unique)
