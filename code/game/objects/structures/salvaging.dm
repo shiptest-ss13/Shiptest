@@ -79,7 +79,7 @@
 		/obj/item/computer_hardware/card_slot = 40,
 		/obj/item/computer_hardware/network_card/advanced = 20,
 
-		/obj/effect/spawner/lootdrop/random_computer_circuit_common = 25,
+		/obj/effect/spawner/lootdrop/random_computer_circuit_common = 50,
 		/obj/effect/spawner/lootdrop/random_computer_circuit_rare = 5,
 
 		/obj/item/research_notes/loot/tiny = 10
@@ -164,7 +164,7 @@
 
 		/obj/item/stack/circuit_stack = 50, //this might be the only way in the game to get a poly circuit, and the only way for many ships to get essensial electronics. huh.
 		/obj/effect/spawner/lootdrop/random_machine_circuit_mech = 45, //with all the wonderful broken mechs lying around, this might be a chance to get something stupidly overpowered.
-		/obj/effect/spawner/lootdrop/random_machine_circuit_common = 30, //well.... "common"
+		/obj/effect/spawner/lootdrop/random_machine_circuit_common = 50, //well.... "common"
 		/obj/effect/spawner/lootdrop/random_machine_circuit_rare = 5,
 
 		/obj/item/stack/sheet/metal/five = 15, //same as above but more geared towards stuff used by circuit imprinter
@@ -412,35 +412,35 @@
 //GENERIC
 /obj/effect/spawner/lootdrop/salvage_capacitor
 	loot = list(
-			/obj/item/stock_parts/capacitor = 150,
+			/obj/item/stock_parts/capacitor = 120,
 			/obj/item/stock_parts/capacitor/adv = 20,
 			/obj/item/stock_parts/capacitor/super = 5
 		)
 
 /obj/effect/spawner/lootdrop/salvage_scanning
 	loot = list(
-			/obj/item/stock_parts/scanning_module = 150,
+			/obj/item/stock_parts/scanning_module = 120,
 			/obj/item/stock_parts/scanning_module/adv = 20,
 			/obj/item/stock_parts/scanning_module/phasic = 5
 		)
 
 /obj/effect/spawner/lootdrop/salvage_manipulator
 	loot = list(
-			/obj/item/stock_parts/manipulator = 150,
+			/obj/item/stock_parts/manipulator = 120,
 			/obj/item/stock_parts/manipulator/nano = 20,
 			/obj/item/stock_parts/manipulator/pico = 5
 		)
 
 /obj/effect/spawner/lootdrop/salvage_matter_bin
 	loot = list(
-			/obj/item/stock_parts/matter_bin = 150,
+			/obj/item/stock_parts/matter_bin = 120,
 			/obj/item/stock_parts/matter_bin/adv = 20,
 			/obj/item/stock_parts/matter_bin/super = 5
 		)
 
 /obj/effect/spawner/lootdrop/salvage_laser
 	loot = list(
-			/obj/item/stock_parts/micro_laser = 150,
+			/obj/item/stock_parts/micro_laser = 120,
 			/obj/item/stock_parts/micro_laser/high = 20,
 			/obj/item/stock_parts/micro_laser/ultra = 5
 		)
@@ -448,7 +448,7 @@
 //PROTOLATHE
 /obj/effect/spawner/lootdrop/tool_engie_proto
 	loot = list(
-			/obj/effect/spawner/lootdrop/tool_engie_common = 150,
+			/obj/effect/spawner/lootdrop/tool_engie_common = 120,
 			/obj/effect/spawner/lootdrop/tool_engie_sydnie = 20,
 			/obj/effect/spawner/lootdrop/tool_engie_adv = 5
 		)
@@ -482,7 +482,7 @@
 
 /obj/effect/spawner/lootdrop/tool_surgery_proto
 	loot = list(
-			/obj/effect/spawner/lootdrop/tool_surgery_common = 150,
+			/obj/effect/spawner/lootdrop/tool_surgery_common = 120,
 			/obj/effect/spawner/lootdrop/tool_surgery_adv = 10,
 		)
 
@@ -505,7 +505,7 @@
 
 /obj/effect/spawner/lootdrop/beaker_loot_spawner
 	loot = list(
-			/obj/item/reagent_containers/glass/beaker = 500,
+			/obj/item/reagent_containers/glass/beaker = 300,
 			/obj/item/reagent_containers/glass/beaker/large = 200,
 			/obj/item/reagent_containers/glass/beaker/plastic = 50,
 			/obj/item/reagent_containers/glass/beaker/meta = 10,
