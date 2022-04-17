@@ -1251,6 +1251,19 @@
 		/obj/item/screwdriver = 1)
 	generate_items_inside(items_inside,src)
 
+// because i have no idea where the fuck to put this
+/obj/item/storage/box/maid
+	name = "Maid box"
+	desc = "Contains a maid outfit"
+
+/obj/item/storage/box/maid/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/head/maidheadband = 1,
+		/obj/item/clothing/under/costume/maid = 1,
+		/obj/item/clothing/gloves/maid = 1,
+		/obj/item/clothing/neck/maid = 1,)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/box/material
 	name = "box of materials"
 	illustration = "implant"

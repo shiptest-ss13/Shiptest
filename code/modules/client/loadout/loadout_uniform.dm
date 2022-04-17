@@ -244,4 +244,4 @@
 
 /datum/gear/uniform/maid
 	display_name = "maid outfit"
-	path = /obj/item/clothing/under/costume/maid
+	path = /obj/item/storage/box/maid
