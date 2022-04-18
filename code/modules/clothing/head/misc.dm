@@ -534,3 +534,8 @@
 	desc = "Tacticute."
 	icon_state = "inteqheadband"
 	item_state = "inteqheadband"
+
+/obj/item/clothing/head/maidheadband
+	name = "maid headband"
+	desc = "Just like from one of those chinese cartoons!"
+	icon_state = "maid_headband"

@@ -74,6 +74,11 @@
 	icon_state = "detective"
 	unique_reskin = null
 
+/obj/item/clothing/neck/maid
+	name = "maid neck cover"
+	desc = "A neckpiece for a maid costume, it smells faintly of disappointment."
+	icon_state = "maid_neck"
+
 /obj/item/clothing/neck/tie/trans
 	name = "transgender tie"
 	desc = "A neosilk clip-on tie. This one is in the colors of the trans flag."

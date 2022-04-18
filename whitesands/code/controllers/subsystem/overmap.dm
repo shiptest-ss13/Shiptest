@@ -25,9 +25,6 @@ SUBSYSTEM_DEF(overmap)
 	///Should events be processed
 	var/events_enabled = TRUE
 
-	///Cooldown on dynamically loading encounters
-	var/encounter_cooldown = 0
-
 	///The two-dimensional list that contains every single tile in the overmap as a sublist.
 	var/list/list/overmap_container
 
