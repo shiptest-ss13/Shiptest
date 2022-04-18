@@ -578,6 +578,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "rj" = (
@@ -606,10 +607,9 @@
 /obj/machinery/power/terminal{
 	dir = 4
 	},
-/obj/machinery/power/port_gen/pacman{
-	anchored = 1
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
-/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "rB" = (
@@ -631,7 +631,11 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "sw" = (
-/obj/machinery/portable_atmospherics/pump,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "tm" = (
@@ -1774,6 +1778,9 @@
 /area/ship/engineering/electrical)
 "Zc" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "ZA" = (
