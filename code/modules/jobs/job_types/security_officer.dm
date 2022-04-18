@@ -97,7 +97,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	belt = /obj/item/pda/security
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/officer
-	alt_uniform = /obj/item/clothing/under/rank/security/old
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/helmet/sec
 	suit = /obj/item/clothing/suit/armor/vest
@@ -181,6 +180,49 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
 
+/datum/outfit/job/security/minutemen
+	name = "Minuteman (Colonial Minutemen)"
+
+	head = /obj/item/clothing/head/helmet/alt/minutemen
+	mask = /obj/item/clothing/mask/russian_balaclava
+	suit = /obj/item/clothing/suit/armor/bulletproof
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/headset_sec/alt
+
+	belt = /obj/item/storage/belt/military
+
+	l_pocket = /obj/item/flashlight/seclite
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+
+	backpack = /obj/item/storage/backpack
+	box = /obj/item/storage/box/survival/engineer/radio
+	backpack_contents = null
+
+/datum/outfit/job/security/minutemen/naked
+	name = "Minuteman (Colonial Minutemen) (Naked)"
+
+	head = null
+	suit = null
+	mask = null
+	shoes = null
+	gloves = null
+	ears = null
+
+	belt = null
+
+	l_pocket = null
+	r_pocket = null
+
+/datum/outfit/job/security/minutemen/armed
+	name = "Minuteman (Colonial Minutemen) (Armed)"
+
+	suit_store = /obj/item/gun/ballistic/automatic/p16/minutemen
+	belt = /obj/item/storage/belt/military/minutemen
+
+	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1)
+
 /datum/outfit/job/security/inteq
 	name = "IRMG Enforcer"
 
@@ -196,6 +238,12 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1,/obj/item/pda/security )
+
+/datum/outfit/job/security/nanotrasen
+	name = "Security Officer (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/nt
+	alt_uniform = null
 
 //Shiptest outfits end
 

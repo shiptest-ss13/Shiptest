@@ -107,6 +107,11 @@
 	desc = "A white jacket with silver rank pips and body armor strapped on top."
 	icon_state = "warden_jacket"
 
+/obj/item/clothing/suit/armor/vest/security/warden/alt/nt
+	name = "warden's red armored jacket"
+	desc = "A red jacket with silver rank pips and body armor strapped on top."
+	icon_state = "rwarden_jacket"
+
 /obj/item/clothing/suit/armor/vest/leather
 	name = "security overcoat"
 	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Nanotrasen Security."
@@ -137,6 +142,11 @@
 	desc = "For when an armoured vest isn't fashionable enough."
 	icon_state = "capformal"
 	item_state = "capspacesuit"
+
+/obj/item/clothing/suit/armor/vest/capcarapace/minutemen
+	name = "colonial minutemen general coat"
+	desc = "A very fancy coat used by generals of the Colonial Minutemen."
+	icon_state = "minuteman_general"
 
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"
