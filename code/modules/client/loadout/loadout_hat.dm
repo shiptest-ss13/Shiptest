@@ -80,6 +80,10 @@
 	display_name = "top hat"
 	path = /obj/item/clothing/head/that
 
+/datum/gear/hat/maidheadband
+	display_name = "maid headband"
+	path = /obj/item/clothing/head/maidheadband
+
 /datum/gear/hat/fedora
 	display_name = "fedora"
 	path = /obj/item/clothing/head/fedora
@@ -99,10 +103,6 @@
 /datum/gear/hat/wig
 	display_name = "wig"
 	path = /obj/item/clothing/head/wig
-
-/datum/gear/hat/naturalwig
-	display_name = "wig"
-	path = /obj/item/clothing/head/wig/natural
 
 /datum/gear/hat/cowboy
 	display_name = "cowboy hat"

@@ -243,5 +243,5 @@
 	path = /obj/item/clothing/under/misc/psyche
 
 /datum/gear/uniform/maid
-	display_name = "maid outfit"
-	path = /obj/item/storage/box/maid
+	display_name = "maid dress"
+	path = 	/obj/item/clothing/under/costume/maid
