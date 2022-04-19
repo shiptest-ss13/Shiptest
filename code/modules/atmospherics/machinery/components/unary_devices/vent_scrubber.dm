@@ -134,6 +134,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos()
 	..()
+
 	if(welded || !on || !is_operational())
 		return FALSE
 	if(!nodes[1])
