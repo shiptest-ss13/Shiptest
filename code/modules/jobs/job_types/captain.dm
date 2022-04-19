@@ -90,7 +90,6 @@
 
 /datum/outfit/job/captain/western
 	name = "Captain (Western)"
-	uniform = /obj/item/clothing/under/suit/white
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/cowboy/white
 	head = /obj/item/clothing/head/caphat/cowboy
