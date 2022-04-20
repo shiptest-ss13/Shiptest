@@ -274,12 +274,6 @@
 	icon = 'icons/obj/statuelarge.dmi'
 	icon_state = "venus"
 
-/obj/structure/statue/sandstone/ancient
-	name = "statue of an ancient"
-	desc = "An ancient statue depicting an unkown alien race. Its strange physique and similiarities to other alien species makes it oddly beautiful."
-	icon_state = "ancient"
-	impressiveness = 50
-
 /////////////////////snow/////////////////////////////////////////
 
 /obj/structure/statue/snow

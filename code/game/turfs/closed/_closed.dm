@@ -268,14 +268,3 @@
 	smoothing_flags = SMOOTH_CORNERS
 	smoothing_groups = list(SMOOTH_GROUP_HIERO_WALL)
 	canSmoothWith = list(SMOOTH_GROUP_HIERO_WALL)
-
-
-/turf/closed/indestructible/ancient
-	name = "ancient wall"
-	desc = "A strange wall made of clay-like material. Effectively impervious to conventional methods of destruction."
-	icon = 'icons/turf/walls/ancient.dmi'
-	icon_state = "ancient-0"
-	base_icon_state = "ancient"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS)
