@@ -664,6 +664,15 @@
 	icon_state = "winterhood_miner"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	name = "inteq winter coat"
+	icon_state = "coatinteq"
+	item_state = "coatinteq"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/inteq
+
+/obj/item/clothing/head/hooded/winterhood/security/inteq
+	icon_state = "winterhood_inteq"
+
 /obj/item/clothing/head/hooded/ablative
 	name = "ablative hood"
 	desc = "Hood hopefully belonging to an ablative trenchcoat. Includes a visor for cool-o-vision."
