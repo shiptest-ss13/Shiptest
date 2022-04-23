@@ -34,7 +34,6 @@
 /obj/item/ammo_box/magazine/m45
 	name = "pistol magazine (.45)"
 	desc = "A single stack M1911 reproduction magazine, faithfully designed to chamber .45."
-	icon = 'icons/obj/ammo.dmi'
 	icon_state = "45-8"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
@@ -70,7 +69,6 @@
 /obj/item/ammo_box/magazine/co9mm //WS edit begin - commander
 	name = "pistol magazine (9mm)"
 	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm."
-	icon = 'icons/obj/ammo.dmi'
 	icon_state = "co9mm-8"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
@@ -127,7 +125,6 @@
 /obj/item/ammo_box/magazine/disposable
 	name = "part of a disposable gun"
 	desc = "You ripped out part of the gun, somehow, rendering it unusuable. I hope you're happy."
-	icon = 'icons/obj/ammo.dmi'
 	icon_state = "45-8"
 	ammo_type = /obj/item/ammo_casing/c38
 	caliber = ".38"

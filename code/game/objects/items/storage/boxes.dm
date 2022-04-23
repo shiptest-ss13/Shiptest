@@ -1148,6 +1148,7 @@
 	name = "\proper the liberator's legacy"
 	desc = "A box containing a gift for worthy golems."
 	illustration = "scicircuit"
+	custom_price = 2000
 
 /obj/item/storage/box/rndboards/PopulateContents()
 	new /obj/item/circuitboard/machine/protolathe(src)
@@ -1248,6 +1249,19 @@
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stock_parts/matter_bin = 2,
 		/obj/item/screwdriver = 1)
+	generate_items_inside(items_inside,src)
+
+// because i have no idea where the fuck to put this
+/obj/item/storage/box/maid
+	name = "Maid box"
+	desc = "Contains a maid outfit"
+
+/obj/item/storage/box/maid/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/head/maidheadband = 1,
+		/obj/item/clothing/under/costume/maid = 1,
+		/obj/item/clothing/gloves/maid = 1,
+		/obj/item/clothing/neck/maid = 1,)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/material

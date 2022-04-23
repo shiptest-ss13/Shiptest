@@ -583,16 +583,6 @@ update_label()
 	access = list(ACCESS_SYNDICATE)
 	uses_overlays = FALSE
 
-/obj/item/card/id/syndicate_command/captain_id
-	name = "syndicate captain ID card"
-	id_type_name = "syndicate captain ID card"
-	desc = "An ID straight from the Syndicate."
-	registered_name = "Syndicate"
-	assignment = "Syndicate Ship Captain"
-	icon_state = "syndie"
-	access = list(ACCESS_SYNDICATE)
-	uses_overlays = FALSE
-
 /obj/item/card/id/captains_spare
 	name = "captain's spare ID"
 	id_type_name = "captain's spare ID"
@@ -777,6 +767,7 @@ update_label()
 /obj/item/card/id/mining
 	name = "mining ID"
 	access = list(ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MAILSORTING, ACCESS_MINERAL_STOREROOM)
+	custom_price = 250
 
 /obj/item/card/id/away
 	name = "\proper a perfectly generic identification card"

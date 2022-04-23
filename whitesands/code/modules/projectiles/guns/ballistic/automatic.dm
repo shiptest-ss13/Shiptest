@@ -97,7 +97,7 @@
 	name = "AK-47"
 	desc = "An old assault rifle, dating back to 20th century. It is commonly used by various bandits, pirates and colonists thanks to its reliability and ease of maintenance."
 	icon = 'icons/obj/guns/48x32guns.dmi'
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/ak47.ogg'
 	icon_state = "ak47"
 	item_state = "ak47"
 	fire_rate = 5
@@ -223,3 +223,23 @@
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	mag_display = TRUE
+
+/obj/item/gun/ballistic/automatic/p16
+	name = "P-16"
+	desc = "An ancient rifle used by professional mercenaries. It is said that the P-16 and AK-47 were destined to be in combat against each other. Chambered in 5.56mm."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/m16.ogg'
+	icon_state = "p16"
+	item_state = "p16"
+	fire_rate = 5
+	mag_display = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	mag_type = /obj/item/ammo_box/magazine/p16
+
+/obj/item/gun/ballistic/automatic/p16/minutemen
+	name = "CM-16"
+	desc = "A heavily modified version of the P-16. Standard rifle of the Colonial Minutemen."
+	icon_state = "cm16"
+	item_state = "cm16"

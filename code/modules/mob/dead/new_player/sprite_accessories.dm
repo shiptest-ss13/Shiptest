@@ -2211,6 +2211,10 @@
 	icon = 'icons/mob/ipc_accessories.dmi'
 	color_src = EYECOLOR
 
+/datum/sprite_accessory/ipc_screens/blank
+	name = "Blank Canvas"
+	icon_state = "blank"
+
 /datum/sprite_accessory/ipc_screens/blue
 	name = "Blue"
 	icon_state = "blue"
@@ -2221,6 +2225,10 @@
 	icon_state = "bsod"
 	color_src = 0
 
+/datum/sprite_accessory/ipc_screens/buffering
+	name = "Buffering"
+	icon_state = "buffering"
+
 /datum/sprite_accessory/ipc_screens/breakout
 	name = "Breakout"
 	icon_state = "breakout"
@@ -2228,6 +2236,10 @@
 /datum/sprite_accessory/ipc_screens/console
 	name = "Console"
 	icon_state = "console"
+
+/datum/sprite_accessory/ipc_screens/doom
+	name = "DOOM"
+	icon_state = "doom"
 
 /datum/sprite_accessory/ipc_screens/ecgwave
 	name = "ECG Wave"
@@ -2238,8 +2250,16 @@
 	icon_state = "eight"
 
 /datum/sprite_accessory/ipc_screens/eyes
-	name = "Eyes"
+	name = "Eyes (Spinny)"
 	icon_state = "eyes"
+
+/datum/sprite_accessory/ipc_screens/eyes_noanim
+	name = "Eyes (No Spinny)"
+	icon_state = "eyes_noanim"
+
+/datum/sprite_accessory/ipc_screens/eyes_fortuna
+	name = "Eyes (Sun and Moon)"
+	icon_state = "eyes_fortuna"
 
 /datum/sprite_accessory/ipc_screens/glider
 	name = "Glider"

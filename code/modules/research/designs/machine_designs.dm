@@ -307,6 +307,14 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/augmanipulator
+	name = "Machine Design (Augment Manipulator Board)"
+	desc = "The circuit board for an Augment Manipulator."
+	id = "augmanipulator"
+	build_path = /obj/item/circuitboard/machine/aug_manipulator
+	category = list("Research Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
 /datum/design/board/nanite_chamber
 	name = "Machine Design (Nanite Chamber Board)"
 	desc = "The circuit board for a Nanite Chamber."
@@ -609,14 +617,6 @@
 	desc = "The circuit board for a stasis unit."
 	id = "stasis"
 	build_path = /obj/item/circuitboard/machine/stasis
-	category = list("Medical Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
-/datum/design/board/autodoc
-	name = "Machine Design (Autodoc)"
-	desc = "The circuit board for an Autodoc."
-	id = "autodoc"
-	build_path = /obj/item/circuitboard/machine/autodoc
 	category = list("Medical Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 

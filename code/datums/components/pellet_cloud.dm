@@ -79,7 +79,7 @@
 		RegisterSignal(parent, COMSIG_MINE_TRIGGERED, .proc/create_blast_pellets)
 
 /datum/component/pellet_cloud/UnregisterFromParent()
-	UnregisterSignal(parent, list(COMSIG_PARENT_PREQDELETED, COMSIG_PELLET_CLOUD_INIT, COMSIG_GRENADE_PRIME, COMSIG_GRENADE_ARMED, COMSIG_MOVABLE_MOVED, COMSIG_MOVABLE_UNCROSSED, COMSIG_MINE_TRIGGERED, COMSIG_ITEM_DROPPED))
+	UnregisterSignal(parent, list(COMSIG_PARENT_PREQDELETED, COMSIG_PELLET_CLOUD_INIT, COMSIG_GRENADE_PRIME, COMSIG_GRENADE_ARMED, COMSIG_MOVABLE_MOVED, COMSIG_MINE_TRIGGERED, COMSIG_ITEM_DROPPED))
 
 /**
   * create_casing_pellets() is for directed pellet clouds for ammo casings that have multiple pellets (buckshot and scatter lasers for instance)
@@ -254,7 +254,10 @@
 	LAZYINITLIST(bodies)
 	RegisterSignal(parent, COMSIG_ITEM_DROPPED, .proc/grenade_dropped)
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/grenade_moved)
-	RegisterSignal(parent, COMSIG_MOVABLE_UNCROSSED, .proc/grenade_uncrossed)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_EXITED =.proc/grenade_uncrossed,
+	)
+	AddComponent(/datum/component/connect_loc_behalf, parent, loc_connections)
 
 /// Someone dropped the grenade, so set them to the shooter in case they're on top of it when it goes off
 /datum/component/pellet_cloud/proc/grenade_dropped(obj/item/nade, mob/living/slick_willy)
@@ -269,7 +272,7 @@
 		bodies += L
 
 /// Someone who was originally "under" the grenade has moved off the tile and is now eligible for being a martyr and "covering" it
-/datum/component/pellet_cloud/proc/grenade_uncrossed(datum/source, atom/movable/AM)
+/datum/component/pellet_cloud/proc/grenade_uncrossed(datum/source, atom/movable/AM, direction)
 	bodies -= AM
 
 /// Our grenade or landmine or caseless shell or whatever tried deleting itself, so we intervene and nullspace it until we're done here
