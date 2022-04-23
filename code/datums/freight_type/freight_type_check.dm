@@ -13,3 +13,6 @@
 
 	// If one group doesn't like the results of the shipment, the whole check is cancelled and rejection kicks in
 	var/group_status = TRUE
+
+/datum/freight_type_check/New( var/obj/_container )
+	container = _container
