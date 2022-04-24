@@ -657,14 +657,16 @@
 /obj/item/bodypart/proc/break_bone()
 	if(!can_break_bone())
 		return
+	if ( bone_status == BONE_FLAG_NORMAL && body_part & LEGS ) // Because arms are not legs
+		owner.set_broken_legs(owner.broken_legs + 1)
 	bone_status = BONE_FLAG_BROKEN
-	owner.set_broken_legs(owner.broken_legs + 1)
 	addtimer(CALLBACK(owner, /atom/.proc/visible_message, "<span class='danger'>You hear a cracking sound coming from [owner]'s [name].</span>", "<span class='userdanger'>You feel something crack in your [name]!</span>", "<span class='danger'>You hear an awful cracking sound.</span>"), 1 SECONDS)
 
 /obj/item/bodypart/proc/fix_bone()
-	bone_status = BONE_FLAG_NORMAL
 	// owner.update_inv_splints() breaks
-	owner.set_broken_legs(owner.broken_legs - 1)
+	if ( bone_status != BONE_FLAG_NORMAL && body_part & LEGS )
+		owner.set_broken_legs(owner.broken_legs - 1)
+	bone_status = BONE_FLAG_NORMAL
 
 /obj/item/bodypart/proc/on_mob_move()
 	// Dont trigger if it isn't broken or if it has no owner

@@ -411,6 +411,20 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|ARMS|LEGS
 
+/obj/item/clothing/suit/jacket/leather/duster
+	name = "leather duster"
+	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, and dust."
+	icon_state = "duster"
+	item_state = "duster"
+	heat_protection = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|ARMS|LEGS
+
+/obj/item/clothing/suit/jacket/leather/duster/command
+	name = "officer's duster"
+	desc = "A long, supple leather coat. Ideal for protecting its wearer from rain, sun, dust, and paperwork."
+	icon_state = "duster_command"
+	item_state = "duster_command"
+
 /obj/item/clothing/suit/jacket/puffer
 	name = "puffer jacket"
 	desc = "A thick jacket with a rubbery, water-resistant shell."
