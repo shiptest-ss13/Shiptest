@@ -5,7 +5,6 @@
 	icon_state = "severedwings"
 	var/cooldown = FALSE
 
-
 /obj/item/implant/razorwing/activate()
 	if(cooldown)
 		to_chat(imp_in, "<span class='warning'>You can't do that yet!</span>")

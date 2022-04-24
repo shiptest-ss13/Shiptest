@@ -85,3 +85,5 @@
 #define COMSIG_KB_MOVEMENT_SOUTH_DOWN "keybinding_movement_south_down"
 #define COMSIG_KB_MOVEMENT_WEST_DOWN "keybinding_movement_west_down"
 #define COMSIG_KB_MOVEMENT_EAST_DOWN "keybinding_movement_east_down"
+#define COMSIG_KB_MOVEMENT_UPWARDS_DOWN "keybinding_movement_upwards_down"
+#define COMSIG_KB_MOVEMENT_DOWNWARDS_DOWN "keybinding_movement_downwards_down"
