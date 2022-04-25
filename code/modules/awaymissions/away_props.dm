@@ -115,3 +115,23 @@
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "floor"
 	hidden = TRUE
+
+/*There's no good place for these disks right now, and instead of making one I'm just gonna
+ say ships are close enough to being awaymissions that it's valid to throw it in here. */
+
+/obj/item/disk/design_disk/ammo_38_hunting
+	name = "Design Disk - .38 Hunting Ammo"
+	desc = "A design disk containing the pattern for a refill ammo box for Winchester rifles and Detective Specials."
+
+/obj/item/disk/design_disk/ammo_38_hunting/Initialize()
+	. = ..()
+	var/datum/design/ammo/c38_hunting/M = new
+	blueprints[1] = M
+
+/obj/item/disk/design_disk/ammo_c10mm
+	name = "Design Disk - 10mm Ammo"
+	desc = "A design disk containing the pattern for a refill box of standard 10mm ammo, used in Stechkin pistols."
+
+/obj/item/disk/design_disk/ammo_c10mm/Initialize()
+	. = ..()
+	blueprints[1] = new /datum/design/c10mm()
