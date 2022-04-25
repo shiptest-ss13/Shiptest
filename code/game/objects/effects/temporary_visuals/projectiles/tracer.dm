@@ -30,7 +30,7 @@
 
 /obj/effect/projectile/tracer/laser/blue
 	icon_state = "beam_blue"
-	
+
 /obj/effect/projectile/tracer/laser/emitter
 	name = "emitter beam"
 	icon_state = "emitter"

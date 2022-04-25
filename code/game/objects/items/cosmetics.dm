@@ -251,20 +251,16 @@
 						to_chat(user, "<span class='warning'>There is not enough hair left to shave!</span>")
 						return
 					if(H == user) //shaving yourself
-						user.visible_message("<span class='notice'>[user] starts to shave [user.p_their()] head with [src].</span>", \
-											"<span class='notice'>You start to shave your head with [src]...</span>")
+						user.visible_message("<span class='notice'>[user] starts to shave [user.p_their()] head with [src].</span>", "<span class='notice'>You start to shave your head with [src]...</span>")
 						if(do_after(user, 5, target = H))
-							user.visible_message("<span class='notice'>[user] shaves [user.p_their()] head with [src].</span>", \
-												"<span class='notice'>You finish shaving with [src].</span>")
+							user.visible_message("<span class='notice'>[user] shaves [user.p_their()] head with [src].</span>", "<span class='notice'>You finish shaving with [src].</span>")
 							shave(H, location)
 					else
 						var/turf/H_loc = H.loc
-						user.visible_message("<span class='warning'>[user] tries to shave [H]'s head with [src]!</span>", \
-											"<span class='notice'>You start shaving [H]'s head...</span>")
+						user.visible_message("<span class='warning'>[user] tries to shave [H]'s head with [src]!</span>", "<span class='notice'>You start shaving [H]'s head...</span>")
 						if(do_after(user, 50, target = H))
 							if(H_loc == H.loc)
-								user.visible_message("<span class='warning'>[user] shaves [H]'s head bald with [src]!</span>", \
-													"<span class='notice'>You shave [H]'s head bald.</span>")
+								user.visible_message("<span class='warning'>[user] shaves [H]'s head bald with [src]!</span>", "<span class='notice'>You shave [H]'s head bald.</span>")
 								shave(H, location)
 			else
 				..()
