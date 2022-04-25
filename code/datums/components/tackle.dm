@@ -104,6 +104,7 @@
 		return
 
 	tackling = TRUE
+	user.throw_mode_off(THROW_MODE_TOGGLE)
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/checkObstacle)
 	playsound(user, 'sound/weapons/thudswoosh.ogg', 40, TRUE, -1)
 
