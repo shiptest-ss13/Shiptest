@@ -36,7 +36,7 @@
 	desc = "Designed to help reload Nagant revolvers."
 	icon_state = "n762"
 	ammo_type = /obj/item/ammo_casing/n762
-	max_ammo = 6
+	max_ammo = 7
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	item_flags = NO_MAT_REDEMPTION
 
