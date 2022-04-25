@@ -90,6 +90,11 @@
 	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_SURVIVAL_TIANIUM_POD)
 	canSmoothWith = list(SMOOTH_GROUP_SURVIVAL_TIANIUM_POD)
 
+/obj/structure/window/reinforced/survival_pod
+	name = "pod window"
+	icon = 'icons/obj/lavaland/survival_pod.dmi'
+	icon_state = "pwindow"
+
 /obj/structure/window/reinforced/survival_pod/spawner/north
 	dir = NORTH
 
@@ -98,11 +103,6 @@
 
 /obj/structure/window/reinforced/survival_pod/spawner/west
 	dir = WEST
-
-/obj/structure/window/reinforced/survival_pod
-	name = "pod window"
-	icon = 'icons/obj/lavaland/survival_pod.dmi'
-	icon_state = "pwindow"
 
 //Door
 /obj/machinery/door/airlock/survival_pod
