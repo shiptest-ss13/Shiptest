@@ -997,3 +997,14 @@
 		to_chat(M, "<span class='notice'>Ah, what was that? You thought you heard something...</span>")
 		M.confused += 5
 	return ..()
+
+/datum/reagent/toxin/lava_microbe
+	name = "Lavaland Microbes"
+	description = "Microbes isolated from the dirt."
+	taste_description = "grit"
+	taste_mult = 0.5
+	color = "#f7cd90"
+	toxpwr = 0
+
+/datum/reagent/toxin/lava_microbe/expose_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1)
+	M.ForceContractDisease(new /datum/disease/advance/random(2, 3), FALSE, TRUE)

@@ -9,6 +9,8 @@
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Station_Engineer" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Maintenance Technician", "Engine Technician", "Electrician", "Telecommunications Specialist", "Junior Engineer")
+	senior_title = "Senior Engineer"
 
 	outfit = /datum/outfit/job/engineer
 

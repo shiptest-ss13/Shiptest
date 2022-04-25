@@ -14,6 +14,7 @@
 	exp_type_department = EXP_TYPE_MEDICAL
 	officer = TRUE
 	wiki_page = "Chief_Medical_Officer"
+	alt_titles = list("Medical Director", "Surgeon-General")
 
 	outfit = /datum/outfit/job/cmo
 

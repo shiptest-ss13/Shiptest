@@ -7,6 +7,8 @@
 	supervisors = "the head of personnel"
 	wiki_page = "Mime" //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
+	alt_titles = list("Performer")
+	senior_title = "Living Statue"
 
 	outfit = /datum/outfit/job/mime
 
