@@ -41,6 +41,18 @@
 	resistance_flags = NONE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 50)
 
+/obj/item/clothing/gloves/combat/maid
+	name = "combat maid sleeves"
+	desc = "These 'tactical' gloves and sleeves are fireproof and electrically insulated. Warm to boot."
+	icon_state = "syndimaid_arms"
+	item_state = "syndimaid_arms"
+
+/obj/item/clothing/gloves/combat/maid/inteq
+	name = "inteq combat maid sleeves"
+	desc = "Tacticute and comfy, along with being both fireproof and electrically insulated."
+	icon_state = "inteqmaid_arms"
+	item_state = "inteqmaid_arms"
+
 /obj/item/clothing/gloves/bracer
 	name = "bone bracers"
 	desc = "For when you're expecting to get slapped on the wrist. Offers modest protection to your arms."
