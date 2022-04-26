@@ -45,6 +45,7 @@
 /mob/living/simple_animal/hostile/hivebot/Aggro()
 	. = ..()
 	a_intent_change(INTENT_HARM)
+	update_icons()
 	if(prob(5))
 		say(pick("INTRUDER DETECTED!", "CODE 7-34.", "101010!!"), forced = type)
 
