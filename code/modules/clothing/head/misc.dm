@@ -523,6 +523,18 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 60
 
+/obj/item/clothing/head/maidheadband/syndicate
+	name = "tactical maid headband"
+	desc = "Tacticute."
+	icon_state = "syndieheadband"
+	item_state = "syndieheadband"
+
+/obj/item/clothing/head/maidheadband/inteq
+	name = "inteq maid headband"
+	desc = "Tacticute."
+	icon_state = "inteqheadband"
+	item_state = "inteqheadband"
+
 /obj/item/clothing/head/maidheadband
 	name = "maid headband"
 	desc = "Just like from one of those chinese cartoons!"

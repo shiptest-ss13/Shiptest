@@ -1047,7 +1047,7 @@
 
 /obj/item/clothing/head/helmet/space/pilot
 	name = "pilot helmet"
-	icon_state = "space-pilot-plain"
+	icon_state = "space-pilot-plain0"
 	item_state = "space-pilot-plain"
 	desc = "A specialized space helmet designed for mech and spacepod pilots. Offers limited impact protection."
 	var/skin = "plain"
