@@ -201,7 +201,7 @@
 	shots_per = 3
 	fire_sound = 'sound/weapons/taser2.ogg'
 	fire_delay = 30
-	overlay_icon = 'whitesands/icons/obj/spacepods/2x2.dmi'
+	overlay_icon = 'goon/icons/obj/spacepods/2x2.dmi'
 	overlay_icon_state = "pod_weapon_disabler"
 
 /obj/item/spacepod_equipment/weaponry/laser
@@ -211,7 +211,7 @@
 	projectile_type = /obj/projectile/beam/laser
 	shot_cost = 600
 	fire_sound = 'sound/weapons/Laser.ogg'
-	overlay_icon = 'icons/obj/spacepods/2x2.dmi'
+	overlay_icon = 'goon/icons/obj/spacepods/2x2.dmi'
 	overlay_icon_state = "pod_weapon_laser"
 
 // MINING LASERS
