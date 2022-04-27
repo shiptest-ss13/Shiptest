@@ -49,7 +49,7 @@
 /obj/machinery/atmospherics/pipe/return_air()
 	if(air_temporary)
 		return air_temporary
-	if(parent == null)
+	if(!parent)
 		rebuild_pipes()
 	return parent.air
 
