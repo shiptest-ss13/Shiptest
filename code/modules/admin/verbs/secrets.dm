@@ -248,7 +248,6 @@
 				return
 			holder.anon_names()
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Anonymous Names"))
-	
 		if("guns")
 			if(!is_funmin)
 				return
