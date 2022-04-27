@@ -16,7 +16,7 @@
 /obj/machinery/atmospherics/pipe/New()
 	add_atom_colour(pipe_color, FIXED_COLOUR_PRIORITY)
 	volume = 35 * device_type
-	. = ..()
+	return ..()
 
 ///I have no idea why there's a new and at this point I'm too afraid to ask
 /obj/machinery/atmospherics/pipe/Initialize(mapload)
