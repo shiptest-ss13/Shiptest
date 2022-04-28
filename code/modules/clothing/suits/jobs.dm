@@ -161,6 +161,11 @@
 	icon_state = "suitjacket_minuteman"
 	item_state = "suitjacket_navy"
 
+/obj/item/clothing/suit/toggle/lawyer/minutemen/Initialize()
+	. = ..()
+	if(!allowed)
+		allowed = GLOB.security_vest_allowed //it's hop-equivalent gear after all
+
 //Mime
 /obj/item/clothing/suit/toggle/suspenders
 	name = "suspenders"

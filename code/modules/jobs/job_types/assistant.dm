@@ -90,6 +90,11 @@ Assistant
 	uniform = /obj/item/clothing/under/syndicate/camo
 	head = /obj/item/clothing/head/beret/solgov/terragov/plain
 
+/datum/outfit/job/assistant/minutemen
+	name = "Volunteer (Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+
 /datum/outfit/job/assistant/intern
 	name = "Assistant (Intern)"
 	uniform = /obj/item/clothing/under/suit/black
