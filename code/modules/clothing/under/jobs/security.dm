@@ -20,7 +20,7 @@
 // Security Officer //
 /obj/item/clothing/under/rank/security/officer
 	name = "security jumpsuit"
-	desc = "A tactical security jumpsuit for officers complete with Nanotrasen belt buckle."
+	desc = "A tactical security jumpsuit for officers."
 	icon_state = "security"
 	item_state = "gy_suit"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
@@ -34,7 +34,20 @@
 	desc = "A \"tactical\" security jumpsuit with the legs replaced by a skirt."
 	icon_state = "security_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE //you know now that i think of it if you adjust the skirt and the sprite disappears isn't that just like flashing everyone
+	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+
+/obj/item/clothing/under/rank/security/officer/nt
+	name = "red security jumpsuit"
+	desc = "A tactical security jumpsuit for officers complete with a Nanotrasen belt buckle."
+	icon_state = "rsecurity"
+	item_state = "r_suit"
+
+/obj/item/clothing/under/rank/security/officer/nt/skirt
+	name = "red security jumpskirt"
+	desc = "A \"tactical\" security jumpsuit with the legs replaced by a skirt."
+	icon_state = "rsecurity_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
@@ -55,7 +68,6 @@
 	desc = "Someone who wears this means business."
 	icon_state = "detective_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
@@ -71,7 +83,6 @@
 	desc = "A hard-boiled private investigator's grey suitskirt, complete with tie clip."
 	icon_state = "greydet_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
@@ -90,24 +101,24 @@
 	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
-/obj/item/clothing/under/rank/security/brig_phys/security_medic
+/obj/item/clothing/under/rank/security/brig_phys/nt
 	name = "security medic's uniform"
 	desc = "A lightly armored uniform worn by medics ensuring the health of prisoners."
-	icon_state = "security_medic"
+	icon_state = "rbrig_phys"
+	item_state = "r_suit"
 	fitted = NO_FEMALE_UNIFORM
 
-/obj/item/clothing/under/rank/security/brig_phys/security_medic/skirt
+/obj/item/clothing/under/rank/security/brig_phys/nt/skirt
 	name = "security medic's uniform"
 	desc = "A lightly armored uniform, with a skirt, worn by medics ensuring the health of prisoners."
-	icon_state = "security_medic_skirt"
+	icon_state = "rbrig_phys_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 // Warden //
 /obj/item/clothing/under/rank/security/warden
-	name = "security suit"
-	desc = "A formal security suit for officers complete with Nanotrasen belt buckle."
+	name = "warden's security suit"
+	desc = "A formal security suit for wardens."
 	icon_state = "warden"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 	strip_delay = 50
@@ -117,10 +128,37 @@
 
 /obj/item/clothing/under/rank/security/warden/skirt
 	name = "warden's suitskirt"
-	desc = "A formal security suitskirt for officers complete with Nanotrasen belt buckle."
+	desc = "A formal security suitskirt for wardens."
 	icon_state = "warden_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
+	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+
+/obj/item/clothing/under/rank/security/warden/nt
+	name = "warden's red security suit"
+	desc = "A formal security suit for officers complete with Nanotrasen belt buckle."
+	icon_state = "rwarden"
+	item_state = "r_suit"
+
+/obj/item/clothing/under/rank/security/warden/nt/skirt
+	name = "warden's red suitskirt"
+	desc = "A formal security suitskirt for officers complete with Nanotrasen belt buckle."
+	icon_state = "rwarden_skirt"
+	item_state = "r_suit"
+	body_parts_covered = CHEST|GROIN|ARMS
+	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+
+/obj/item/clothing/under/rank/security/head_of_security/nt
+	name = "red head of security's jumpsuit"
+	icon_state = "rhos"
+	item_state = "r_suit"
+
+/obj/item/clothing/under/rank/security/head_of_security/nt/skirt
+	name = "head of security's red jumpskirt"
+	desc = "A security jumpskirt decorated for those few with the dedication to achieve the position of Head of Security."
+	icon_state = "rhos_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
@@ -156,7 +194,6 @@
 	icon_state = "hosalt_skirt"
 	item_state = "bl_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
@@ -208,12 +245,6 @@
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 // Non-official //
-/obj/item/clothing/under/rank/security/old
-	name = "ancient sec jumpsuit"
-	desc = "A relic from security of old, this jumpsuit was coloured red to hide any potential bloodstains."
-	icon_state = "old_security"
-	item_state = "r_suit"
-
 /obj/item/clothing/under/rank/security/constable
 	name = "constable outfit"
 	desc = "A british looking outfit."
@@ -221,13 +252,6 @@
 	item_state = "constable"
 	can_adjust = FALSE
 	custom_price = 200
-
-/obj/item/clothing/under/rank/security/officer/spacepol
-	name = "police uniform"
-	desc = "A spiffy uniform poking fun at the lack of law enforcement on the frontier sector."
-	icon_state = "spacepol"
-	item_state = "spacepol"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/security/officer/beatcop
 	name = "space police uniform"
@@ -241,19 +265,11 @@
 	desc = "I'm a little busy right now, Calhoun."
 	icon_state = "blueshift"
 	item_state = "blueshift"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/security/officer/mallcop
 	name = "NT mall cop uniform"
 	desc = "The radio and badge are sewn on, what a crappy knock off. Secway not included."
 	icon_state = "mallcop"
-	can_adjust = FALSE
-
-/obj/item/clothing/under/rank/security/officer/marine
-	name = "blue shirt and tie"
-	desc = "I'm a little busy right now, Calhoun."
-	icon_state = "blueshift"
-	item_state = "blueshift"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/security/officer/military
