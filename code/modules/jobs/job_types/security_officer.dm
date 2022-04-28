@@ -172,7 +172,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	suit = /obj/item/clothing/suit/armor/vest/security/officer
 
 /datum/outfit/job/security/western
-	name = "Security Specialist (Western)"
+	name = "Security Detail (Western)"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
 	alt_uniform = null
@@ -184,7 +184,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	name = "Minuteman (Colonial Minutemen)"
 
 	head = /obj/item/clothing/head/helmet/alt/minutemen
-	mask = /obj/item/clothing/mask/russian_balaclava
+	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
 	suit = /obj/item/clothing/suit/armor/bulletproof
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 	shoes = /obj/item/clothing/shoes/combat

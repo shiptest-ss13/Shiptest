@@ -212,7 +212,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/corprejectengineering)
 "fS" = (
-/obj/item/fireaxe,
 /obj/structure/rack,
 /obj/item/gun/medbeam,
 /turf/open/floor/vault,
@@ -266,12 +265,6 @@
 "gT" = (
 /obj/item/ammo_casing/shotgun/incendiary{
 	pixel_y = 10
-	},
-/obj/item/ammo_casing/shotgun/incendiary{
-	pixel_y = -12
-	},
-/obj/item/ammo_casing/shotgun/incendiary{
-	pixel_x = -13
 	},
 /obj/structure/cable/blue{
 	icon_state = "1-5"
@@ -372,15 +365,9 @@
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
 "jy" = (
-/mob/living/simple_animal/slaughter{
+/mob/living/simple_animal/bot/secbot/ed209/rockplanet{
 	faction = list("DeserterNT");
-	name = "Jack";
-	real_name = "Glorious Jonathon"
-	},
-/mob/living/simple_animal/hostile/cult_demon/greater{
-	faction = list("DeserterNT");
-	name = "Jack";
-	real_name = "Glorious Jonathon"
+	name = "Jimmothy"
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
@@ -504,6 +491,10 @@
 "ni" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable/blue,
+/mob/living/simple_animal/bot/secbot/ed209/rockplanet{
+	faction = list("DeserterNT");
+	name = "Dell"
+	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "nk" = (
@@ -1310,14 +1301,7 @@
 	pixel_y = 11
 	},
 /obj/item/ammo_casing/shotgun/dragonsbreath{
-	pixel_x = 10;
-	pixel_y = -5
-	},
-/obj/item/ammo_casing/shotgun/dragonsbreath{
 	pixel_y = 6
-	},
-/obj/item/ammo_casing/shotgun/dragonsbreath{
-	pixel_x = 12
 	},
 /obj/structure/cable/blue{
 	icon_state = "1-9"
@@ -1348,7 +1332,6 @@
 /obj/item/gun/ballistic/automatic/proto,
 /obj/structure/rack,
 /obj/item/firing_pin,
-/obj/item/gun/energy/beam_rifle,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Er" = (
@@ -1529,12 +1512,6 @@
 /obj/item/ammo_casing/shotgun/buckshot{
 	pixel_x = -9
 	},
-/obj/item/ammo_casing/shotgun/buckshot{
-	pixel_y = 7
-	},
-/obj/item/ammo_casing/shotgun/buckshot{
-	pixel_x = 5
-	},
 /obj/structure/cable/blue{
 	icon_state = "1-2"
 	},
@@ -1592,14 +1569,6 @@
 /area/ruin/unpowered/corprejectrooms)
 "Jk" = (
 /obj/item/ammo_casing/shotgun/laserslug{
-	pixel_x = 8;
-	pixel_y = -12
-	},
-/obj/item/ammo_casing/shotgun/laserslug{
-	pixel_x = 12;
-	pixel_y = -12
-	},
-/obj/item/ammo_casing/shotgun/laserslug{
 	pixel_x = 10
 	},
 /obj/item/ammo_casing/shotgun/laserslug{
@@ -1625,7 +1594,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/item/stock_parts/cell/gun/upgraded,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Kk" = (
@@ -1641,7 +1609,6 @@
 /obj/item/poster/random_official,
 /obj/item/poster/random_official,
 /obj/structure/table/glass,
-/obj/item/slimepotion/slime/sentience,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "KF" = (
@@ -1651,10 +1618,9 @@
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Lo" = (
-/mob/living/simple_animal/hostile/cult_demon{
+/mob/living/simple_animal/bot/secbot/ed209/rockplanet{
 	faction = list("DeserterNT");
-	name = "Jill";
-	real_name = "Jolly Janie"
+	name = "Phillip"
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
@@ -1729,7 +1695,7 @@
 /area/ruin/unpowered/corprejectrooms)
 "Mc" = (
 /obj/structure/table/glass,
-/obj/item/gun_voucher,
+/obj/item/fireaxe,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Mh" = (

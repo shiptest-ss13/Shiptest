@@ -586,8 +586,6 @@
 /obj/item/ammo_casing/shotgun/improvised,
 /obj/item/ammo_casing/shotgun/buckshot,
 /obj/item/ammo_casing/shotgun/buckshot,
-/obj/item/kitchen/knife/combat/survival,
-/obj/item/kitchen/knife/combat/survival,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "lH" = (
@@ -1087,7 +1085,7 @@
 "uE" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/table/wood/fancy/royalblue,
-/obj/item/gun/magic/staff/healing,
+/obj/item/dragons_blood,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "uF" = (
@@ -1180,12 +1178,6 @@
 /obj/structure/toilet,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
-"wd" = (
-/obj/item/dragons_blood,
-/obj/structure/stone_tile/slab,
-/obj/structure/table/wood/fancy/royalblue,
-/turf/open/indestructible/boss/air,
-/area/ruin/unpowered/icecropolis)
 "wf" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -2059,10 +2051,7 @@
 "LH" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/structure/table/wood/fancy/red_gold,
-/obj/item/stack/sheet/mineral/adamantine{
-	amount = 15
-	},
-/obj/item/pickaxe/drill/cyborg,
+/obj/item/shield/adamantineshield,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
 "LL" = (
@@ -2199,7 +2188,6 @@
 /obj/structure/stone_tile/slab/cracked,
 /obj/structure/table/wood/fancy/red_gold,
 /obj/item/clothing/suit/armor/heavy/adamantine,
-/obj/item/shield/adamantineshield,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
 "Os" = (
@@ -2842,14 +2830,9 @@
 /obj/item/gun/energy/kinetic_accelerator,
 /obj/item/borg/upgrade/modkit/cooldown,
 /obj/item/borg/upgrade/modkit/damage,
-/obj/item/borg/upgrade/modkit/damage,
 /obj/item/borg/upgrade/modkit/indoors,
 /obj/item/borg/upgrade/modkit/range,
 /obj/item/borg/upgrade/modkit/trigger_guard,
-/obj/item/borg/upgrade/modkit/aoe/turfs,
-/obj/item/storage/box/contractor/fulton_extraction,
-/obj/item/t_scanner/adv_mining_scanner/lesser,
-/obj/item/survivalcapsule/luxury,
 /obj/item/rcd_ammo,
 /obj/item/gps,
 /turf/open/floor/plating,
@@ -2900,13 +2883,13 @@
 /area/ruin/unpowered/icecropolis/gold)
 "Zf" = (
 /obj/structure/closet/crate,
-/obj/item/gun/ballistic/rifle/boltaction,
 /obj/item/clothing/mask/russian_balaclava,
 /obj/item/clothing/shoes/russian,
 /obj/item/clothing/suit/armor/vest/russian,
 /obj/item/clothing/head/helmet/rus_helmet,
 /obj/item/clothing/under/pants/track,
 /obj/item/clothing/under/color/black,
+/obj/item/kitchen/knife/combat/survival,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "Zh" = (
@@ -3634,7 +3617,7 @@ VV
 Qf
 VV
 zA
-wd
+VU
 VV
 VU
 Il
