@@ -128,7 +128,7 @@
 		return
 	if(!gas_type)
 		var/datum/gas_mixture/removed = air_contents.remove(amount)
-		return removed.return_volume()
+		return removed.total_moles()
 	else
 		var/starting_amt = air_contents.get_moles(gas_type)
 		air_contents.adjust_moles(gas_type, -amount)

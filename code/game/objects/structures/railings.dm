@@ -3,9 +3,20 @@
 	desc = "Basic railing meant to protect idiots like you from falling."
 	icon = 'icons/obj/fluff.dmi'
 	icon_state = "railing"
+	flags_1 = ON_BORDER_1
+	pass_flags_self = LETPASSTHROW
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
+
+
+/obj/structure/railing/Initialize()
+	. = ..()
+	if(density && flags_1 & ON_BORDER_1)
+		var/static/list/loc_connections = list(
+			COMSIG_ATOM_EXIT = .proc/on_exit,
+		)
+		AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/railing/corner //aesthetic corner sharp edges hurt oof ouch
 	icon_state = "railing_corner"
@@ -64,22 +75,32 @@
 	. = ..()
 	if(get_dir(loc, target) & dir)
 		var/checking = FLYING | FLOATING
-		return . || mover.movement_type & checking
+		return . || mover.throwing || mover.movement_type & checking
 	return TRUE
 
-/obj/structure/railing/corner/CanPass()
-	..()
-	return TRUE
+/obj/structure/railing/proc/on_exit(datum/source, atom/movable/leaving, direction)
+	SIGNAL_HANDLER
 
-/obj/structure/railing/CheckExit(atom/movable/mover, turf/target)
-	..()
-	if(get_dir(loc, target) & dir)
-		var/checking = PHASING | FLYING | FLOATING
-		return !density || mover.throwing || mover.movement_type & checking || mover.move_force >= MOVE_FORCE_EXTREMELY_STRONG
-	return TRUE
+	if(leaving == src)
+		return // Let's not block ourselves.
 
-/obj/structure/railing/corner/CheckExit()
-	return TRUE
+	if(!(direction & dir))
+		return
+
+	if (!density)
+		return
+
+	if (leaving.throwing)
+		return
+
+	if (leaving.movement_type & (PHASING | FLYING | FLOATING))
+		return
+
+	if (leaving.move_force >= MOVE_FORCE_EXTREMELY_STRONG)
+		return
+
+	leaving.Bump(src)
+	return COMPONENT_ATOM_BLOCK_EXIT
 
 /obj/structure/railing/proc/can_be_rotated(mob/user,rotation_type)
 	if(anchored)

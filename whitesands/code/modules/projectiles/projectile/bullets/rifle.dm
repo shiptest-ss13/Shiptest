@@ -9,7 +9,7 @@
 
 /obj/projectile/bullet/a762_39
 	name = "7.62x39mm FMJ"
-	damage = 32
+	damage = 30
 
 /obj/projectile/bullet/win308
 	name = ".308 Winchester FMJ"

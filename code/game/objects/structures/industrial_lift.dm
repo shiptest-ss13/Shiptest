@@ -159,25 +159,26 @@ GLOBAL_LIST_EMPTY(lifts)
 
 /obj/structure/industrial_lift/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_MOVABLE_CROSSED, .proc/AddItemOnLift)
-	RegisterSignal(loc, COMSIG_ATOM_CREATED, .proc/AddItemOnLift)//For atoms created on platform
-	RegisterSignal(src, COMSIG_MOVABLE_UNCROSSED, .proc/RemoveItemFromLift)
+
+	var/static/list/connections = list(
+		COMSIG_ATOM_ENTERED = .proc/AddItemOnLift,
+		COMSIG_ATOM_CREATED = .proc/AddItemOnLift,
+		COMSIG_ATOM_EXITED = .proc/RemoveItemFromLift
+	)
+	AddElement(/datum/element/connect_loc, connections)
 
 	if(!lift_master_datum)
 		lift_master_datum = new(src)
 
-/obj/structure/industrial_lift/Move(atom/newloc, direct)
-	UnregisterSignal(loc, COMSIG_ATOM_CREATED)
-	. = ..()
-	RegisterSignal(loc, COMSIG_ATOM_CREATED, .proc/AddItemOnLift)//For atoms created on platform
-
 /obj/structure/industrial_lift/proc/RemoveItemFromLift(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(!(AM in lift_load))
 		return
 	LAZYREMOVE(lift_load, AM)
 	UnregisterSignal(AM, COMSIG_PARENT_QDELETING)
 
 /obj/structure/industrial_lift/proc/AddItemOnLift(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(AM in lift_load)
 		return
 	LAZYADD(lift_load, AM)
