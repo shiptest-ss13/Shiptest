@@ -38,13 +38,14 @@
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
-/mob/living/simple_animal/hostile/hivebot/Initialize()
+/mob/living/simple_animal/hostile/hivebot/Initialize(mapload)
 	. = ..()
 	deathmessage = "[src] blows apart!"
 
 /mob/living/simple_animal/hostile/hivebot/Aggro()
 	. = ..()
 	a_intent_change(INTENT_HARM)
+	update_icons()
 	if(prob(5))
 		say(pick("INTRUDER DETECTED!", "CODE 7-34.", "101010!!"), forced = type)
 
@@ -110,7 +111,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	var/datum/action/innate/hivebot/foamwall/foam
 
-/mob/living/simple_animal/hostile/hivebot/mechanic/Initialize()
+/mob/living/simple_animal/hostile/hivebot/mechanic/Initialize(mapload)
 	. = ..()
 	foam = new
 	foam.Grant(src)

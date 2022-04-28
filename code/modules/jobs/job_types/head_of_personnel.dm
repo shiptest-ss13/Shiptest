@@ -114,4 +114,4 @@
 	head = /obj/item/clothing/head/cowboy/sec/minutemen
 	backpack = /obj/item/storage/backpack
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
-		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/gun/ballistic/revolver/mateba=1)
+		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
