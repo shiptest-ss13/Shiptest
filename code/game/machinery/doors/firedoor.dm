@@ -420,19 +420,19 @@
 		return TRUE
 
 /obj/machinery/door/firedoor/proc/emergency_pressure_close()
+	SHOULD_NOT_SLEEP(TRUE)
+
 	if(density)
 		return
 	if(operating || welded)
 		return
 	density = TRUE
 	air_update_turf(1)
-	update_icon()
+	do_animate("closing")
 	update_freelook_sight()
-	if(safe)
-		CheckForMobs()
-	else if(!(flags_1 & ON_BORDER_1))
+	if(!(flags_1 & ON_BORDER_1))
 		crush()
-	latetoggle()
+	addtimer(CALLBACK(src, /atom/.proc/update_icon), 5)
 
 /obj/machinery/door/firedoor/border_only/emergency_pressure_close()
 	if(density)
@@ -447,14 +447,14 @@
 			if(!istype(M2) || !M2.buckled || !M2.buckled.buckle_prevents_pull)
 				to_chat(M, "<span class='notice'>You pull [M.pulling] through [src] right as it closes.</span>")
 				M.pulling.forceMove(T1)
-				M.start_pulling(M2)
+				INVOKE_ASYNC(M, /atom/movable/.proc/start_pulling)
 	for(var/mob/living/M in T2)
 		if(M.stat == CONSCIOUS && M.pulling && M.pulling.loc == T1 && !M.pulling.anchored && M.pulling.move_resist <= M.move_force)
 			var/mob/living/M2 = M.pulling
 			if(!istype(M2) || !M2.buckled || !M2.buckled.buckle_prevents_pull)
 				to_chat(M, "<span class='notice'>You pull [M.pulling] through [src] right as it closes.</span>")
 				M.pulling.forceMove(T2)
-				M.start_pulling(M2)
+				INVOKE_ASYNC(M, /atom/movable/.proc/start_pulling)
 	return ..()
 
 /obj/machinery/door/firedoor/heavy
