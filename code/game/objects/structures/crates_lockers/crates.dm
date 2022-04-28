@@ -1,7 +1,7 @@
 /obj/structure/closet/crate
 	name = "crate"
 	desc = "A rectangular steel crate."
-	icon = 'goon/icons/obj/crates.dmi'
+	icon = 'icons/obj/crates.dmi'
 	icon_state = "crate"
 	req_access = null
 	can_weld_shut = FALSE
