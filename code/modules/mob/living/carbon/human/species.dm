@@ -23,9 +23,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///Whether or not the race has sexual characteristics (biological genders). At the moment this is only FALSE for skeletons and shadows
 	var/sexes = TRUE
 
-	///Clothing offsets. If a species has a different body than other species, you can offset clothing so they look less weird.
-	var/list/offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,0), OFFSET_EARS = list(0,0), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0), OFFSET_ACCESSORY = list(0, 0))
-
 	var/list/offset_clothing = list()
 
 	//The maximum number of bodyparts this species can have.
@@ -685,9 +682,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				else
 					hair_overlay.color = forced_colour
 				hair_overlay.alpha = hair_alpha
-				if(OFFSET_FACE in H.dna.species.offset_features)
-					hair_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-					hair_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
 		if(hair_overlay.icon)
 			standing += hair_overlay
 			standing += gradient_overlay
@@ -717,9 +711,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(H.lip_style && (LIPS in species_traits))
 			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/human_face.dmi', "lips_[H.lip_style]", -BODY_LAYER)
 			lip_overlay.color = H.lip_color
-			if(OFFSET_FACE in H.dna.species.offset_features)
-				lip_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-				lip_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
 			standing += lip_overlay
 
 		// eyes
@@ -732,9 +723,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', E.eye_icon_state, -BODY_LAYER)
 			if((EYECOLOR in species_traits) && E)
 				eye_overlay.color = "#" + H.eye_color
-			if(OFFSET_FACE in H.dna.species.offset_features)
-				eye_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-				eye_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
 			standing += eye_overlay
 
 	//Underwear, Undershirts & Socks

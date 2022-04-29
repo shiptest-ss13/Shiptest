@@ -294,7 +294,7 @@
 		// Apply all pixel shifts for each direction.
 		for(var/shift_facing in shifts)
 			var/list/facing_list = shifts[shift_facing]
-			var/use_dir = text2dir(shift_facing)
+			var/use_dir = text2num(shift_facing)
 			var/icon/equip = icon(file2use, icon_state = state2use, dir = use_dir)
 			var/icon/canvas = icon('icons/mob/clothing/species/kepori.dmi', "empty")
 			canvas.Blend(equip, ICON_OVERLAY, facing_list["x"]+1, facing_list["y"]+1)

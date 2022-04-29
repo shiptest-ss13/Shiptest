@@ -17,9 +17,6 @@
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	species_clothing_path = 'icons/mob/clothing/species/kepori.dmi'
 	species_eye_path = 'icons/mob/kepori_parts.dmi'
-	//offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,0), OFFSET_EARS = list(0,-4), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,-5), OFFSET_HEAD = list(0,-4), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,-4), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0), OFFSET_ACCESSORY = list(0, -4))
-	punchdamagelow = 0
-	punchdamagehigh = 6
 	heatmod = 0.67
 	coldmod = 1.5
 	brutemod = 1.5
@@ -54,10 +51,13 @@
 
 /datum/species/kepori/New()
 	. = ..()
+	// This is in new because "[HEAD_LAYER]" etc. is NOT a constant compile-time value. For some reason.
+	// Why not just use HEAD_LAYER? Well, because HEAD_LAYER is a number, and if you try to use numbers as indexes,
+	// BYOND will try to make it an ordered list. So, we have to use a string. This is annoying, but it's the only way to do it smoothly.
 	offset_clothing = list(
-		"[HEAD_LAYER]" = list("north" = list("x" = 0, "y" = -4), "east" = list("x" = 4, "y" = -4), "south" = list("x" = 0, "y" = -4), "west" = list("x" =  -4, "y" = -4)),
-		"[GLASSES_LAYER]" = list("north" = list("x" = 0, "y" = -4), "east" = list("x" = 4, "y" = -4), "south" = list("x" = 0, "y" = -4), "west" = list("x" =  -4, "y" = -4)),
-		"[FACEMASK_LAYER]" = list("north" = list("x" = 0, "y" = -5), "east" = list("x" = 4, "y" = -5), "south" = list("x" = 0, "y" = -5), "west" = list("x" =  -4, "y" = -5))
+		"[HEAD_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = -4), "[EAST]" = list("x" = 4, "y" = -4), "[SOUTH]" = list("x" = 0, "y" = -4), "[WEST]" = list("x" =  -4, "y" = -4)),
+		"[GLASSES_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = -4), "[EAST]" = list("x" = 4, "y" = -4), "[SOUTH]" = list("x" = 0, "y" = -4), "[WEST]" = list("x" =  -4, "y" = -4)),
+		"[FACEMASK_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = -5), "[EAST]" = list("x" = 4, "y" = -5), "[SOUTH]" = list("x" = 0, "y" = -5), "[WEST]" = list("x" =  -4, "y" = -5))
 	)
 
 /datum/species/kepori/random_name(gender,unique,lastname)
