@@ -103,12 +103,10 @@
 			return TRUE
 		if(tool && tool.item_flags & SURGICAL_TOOL) //Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
 			var/required_tool_type = TOOL_CAUTERY
-			var/is_robotic = requires_bodypart_type == BODYTYPE_ROBOTIC
-
-			if(is_robotic)
+			if(requires_bodypart_type == BODYTYPE_ROBOTIC)
 				required_tool_type = TOOL_SCREWDRIVER
 
-			if ( tool.tool_behaviour == required_tool_type )
+			if(tool.tool_behaviour == required_tool_type)
 				// Cancel the surgery if a cautery is used AND it's not the tool used in the next step.
 				attempt_cancel_surgery( src, tool, target, user )
 				return TRUE
