@@ -58,6 +58,8 @@
 		for(var/obj/item/stack/S in loc)
 			if(S.merge_type == merge_type)
 				merge(S)
+				if(QDELETED(src))
+					return
 	var/list/temp_recipes = get_main_recipes()
 	recipes = temp_recipes.Copy()
 	if(material_type)
@@ -69,6 +71,11 @@
 					recipes += temp
 	update_weight()
 	update_icon()
+
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/item/stack/proc/get_main_recipes()
 	SHOULD_CALL_PARENT(1)
@@ -375,10 +382,15 @@
 	S.add(transfer)
 	return transfer
 
-/obj/item/stack/Crossed(atom/movable/AM)
+/obj/item/stack/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+
+	// Edge case. This signal will also be sent when src has entered the turf. Don't want to merge with ourselves.
+	if(AM == src)
+		return
+
 	if(istype(AM, merge_type) && !AM.throwing)
-		merge(AM)
-	. = ..()
+		INVOKE_ASYNC(src, .proc/merge, AM)
 
 /obj/item/stack/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(istype(AM, merge_type))

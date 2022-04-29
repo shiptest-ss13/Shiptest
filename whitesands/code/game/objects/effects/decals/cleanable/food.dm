@@ -1,5 +1,5 @@
-/obj/effect/decal/cleanable/food/salt/Crossed(atom/movable/O)
-	..()
+/obj/effect/decal/cleanable/food/salt/on_entered(datum/source, atom/movable/O)
+	. = ..()
 	if(issquidperson(O))
 		var/mob/living/carbon/human/H = O
 		if(H.movement_type & FLYING)
