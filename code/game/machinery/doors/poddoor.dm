@@ -15,6 +15,7 @@
 	resistance_flags = FIRE_PROOF
 	damage_deflection = 70
 	poddoor = TRUE
+	assemblytype = /obj/structure/poddoor_assembly
 	var/open_sound = 'sound/machines/blastdoor.ogg'
 	var/close_sound = 'sound/machines/blastdoor.ogg'
 /obj/machinery/door/poddoor/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
