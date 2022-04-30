@@ -7,11 +7,6 @@
 #define MAX_FORGE_TEMP 100
 #define MIN_FORGE_TEMP 51 //the minimum temp to actually use it
 
-#define FORGE_LEVEL_ZERO 0
-#define FORGE_LEVEL_ONE 1
-#define FORGE_LEVEL_TWO 2
-#define FORGE_LEVEL_THREE 3
-
 #define MAX_UPGRADE_SINEW 10
 #define MAX_UPGRADE_GOLIATH 3
 #define MAX_UPGRADE_REGEN 6
@@ -52,8 +47,6 @@
 	COOLDOWN_DECLARE(forging_cooldown)
 	///the variable that stops spamming
 	var/in_use = FALSE
-	///the forge level, which will upgrade the forge (goliath/sinew/core upgrades)
-	var/forge_level = FORGE_LEVEL_ZERO
 	var/static/list/choice_list = list(
 		"Chain" = /obj/item/forging/incomplete/chain,
 		"Plate" = /obj/item/forging/incomplete/plate,
@@ -70,17 +63,6 @@
 
 /obj/structure/forge/examine(mob/user)
 	. = ..()
-	. += "<span class='warning'><br>Perhaps using your hand on [src] when skilled will do something...</span>"
-	switch(forge_level)
-		if(FORGE_LEVEL_ZERO)
-			. += "<span class='notice'>[src] has not yet been touched by a smithy.<br></span>"
-		if(FORGE_LEVEL_ONE)
-			. += "<span class='notice'>[src] has been touched by an apprentice smithy.<br></span>"
-		if(FORGE_LEVEL_TWO)
-			. += "<span class='notice'>[src] has been touched by an expert smithy.<br></span>"
-		if(FORGE_LEVEL_THREE)
-			. += "<span class='boldwarning'>[src] has been touched by a master smithy.<br></span>"
-	if(forge_level < FORGE_LEVEL_THREE)
 		. += "<span class='notice'>[src] has [goliath_ore_improvement]/[MAX_UPGRADE_GOLIATH] goliath hides.</span>"
 		. += "<span class='notice'>[src] has [current_sinew]/[MAX_UPGRADE_SINEW] watcher sinews.</span>"
 		. += "<span class='notice'>[src] has [current_core]/[MAX_UPGRADE_REGEN] regenerative cores.</span>"
@@ -117,7 +99,7 @@
 	reagent_forging = TRUE
 	say("gurgle!") //ReplaceWithBalloonAlertLater
 	color = "#ff5151"
-	name = "master forge"
+	name = "imbuing forge"
 
 /**
  * Here we give a fail message as well as set the in_use to false
@@ -169,28 +151,6 @@
 	check_fuel()
 	check_temp()
 	check_in_use() //plenty of weird bugs, this should hopefully fix the in_use bugs
-
-/obj/structure/forge/attack_hand(mob/living/user, list/modifiers)
-	. = ..()
-	var/user_smithing_skill = user.mind.get_skill_level(/datum/skill/smithing)
-	var/previous_level = forge_level
-	if(user_smithing_skill <= SKILL_LEVEL_NOVICE)
-		to_chat(user, "<span class='notice'>[src] requires you to be more experienced!</span>")
-		return
-	if(user_smithing_skill >= SKILL_LEVEL_APPRENTICE)
-		goliath_ore_improvement = MAX_UPGRADE_GOLIATH
-		forge_level = FORGE_LEVEL_ONE
-	if(user_smithing_skill >= SKILL_LEVEL_EXPERT)
-		sinew_lower_chance = MAX_UPGRADE_SINEW * 10 //100, just written funny!
-		current_sinew = MAX_UPGRADE_SINEW
-		forge_level = FORGE_LEVEL_TWO
-	if(user_smithing_skill >= SKILL_LEVEL_MASTER)
-		forge_level = FORGE_LEVEL_THREE
-	if(forge_level == previous_level)
-		to_chat(user, "<span class='notice'>[src] was already upgraded by your level of expertise!</span>")
-		return
-	to_chat(user, "<span class='notice'>As you work with [src], you note the purity caused by heating metal with nothing but exposed flame. Examine to view what has improved!</span>")
-	playsound(src, 'sound/magic/demon_consume.ogg', 50, TRUE)
 
 /obj/structure/forge/attackby(obj/item/I, mob/living/user, params)
 	var/skill_modifier = user.mind.get_skill_modifier(/datum/skill/smithing, SKILL_SPEED_MODIFIER)
@@ -510,11 +470,6 @@
 
 #undef MAX_FORGE_TEMP
 #undef MIN_FORGE_TEMP
-
-#undef FORGE_LEVEL_ZERO
-#undef FORGE_LEVEL_ONE
-#undef FORGE_LEVEL_TWO
-#undef FORGE_LEVEL_THREE
 
 #undef MAX_UPGRADE_SINEW
 #undef MAX_UPGRADE_GOLIATH
