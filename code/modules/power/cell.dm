@@ -410,6 +410,40 @@
 	if(!A.lightswitch || !A.light_power)
 		charge = 0 //For naturally depowered areas, we start with no power
 
+/obj/item/stock_parts/cell/crank
+	name = "crank cell"
+	desc = "Rechargeable power cell that does not hold a charge very well. Oh well."
+	icon = 'icons/obj/power.dmi'
+	icon_state = "crankcell"
+	/// how much each crank will give the cell charge
+	var/crank_amount = 100
+	/// how fast it takes to crank to get the crank_amount
+	var/crank_speed = 1 SECONDS
+	/// how much gets discharged every process
+	var/discharge_amount = 5
+
+/obj/item/stock_parts/cell/crank/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Click to start cranking the cell.</span>"
+
+/obj/item/stock_parts/cell/crank/Initialize(mapload, override_maxcharge)
+	. = ..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/stock_parts/cell/crank/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
+
+/obj/item/stock_parts/cell/crank/process(delta_time)
+	use(discharge_amount)
+
+/obj/item/stock_parts/cell/crank/attack_self(mob/user)
+	while(charge < maxcharge)
+		if(!do_after(user, crank_speed, src))
+			return
+		give(crank_amount)
+		playsound(src, 'sound/machines/crank.ogg', 25, FALSE)
+
 //WS Begin -- Ethereal Charge Scaling
 #undef CELL_DRAIN_TIME
 #undef CELL_POWER_GAIN

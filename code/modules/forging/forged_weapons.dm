@@ -39,8 +39,6 @@
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FIRE_PROOF
-	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
-	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
 	sharpness = IS_SHARP
 	max_integrity = 150
 
@@ -56,9 +54,7 @@
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FIRE_PROOF
-	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
-	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
-	sharpness = SHARP_EDGED
+	sharpness = IS_SHARP
 
 /obj/item/forging/reagent_weapon/dagger
 	name = "reagent dagger"
@@ -71,9 +67,7 @@
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FIRE_PROOF
-	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
-	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
-	sharpness = SHARP_EDGED
+	sharpness = IS_SHARP
 
 /obj/item/forging/reagent_weapon/dagger/attack(mob/living/M, mob/living/user, params)
 	. = ..()
@@ -89,9 +83,6 @@
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FIRE_PROOF
-	attack_verb_continuous = list("bonks", "bashes", "whacks", "pokes", "prods")
-	attack_verb_simple = list("bonk", "bash", "whack", "poke", "prod")
-
 /obj/item/forging/reagent_weapon/staff/attack(mob/living/M, mob/living/user, params)
 	. = ..()
 	user.changeNext_move(CLICK_CD_RANGE)
@@ -108,12 +99,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FIRE_PROOF
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb_continuous = list("attacks", "pokes", "jabs", "tears", "lacerates", "gores")
-	attack_verb_simple = list("attack", "poke", "jab", "tear", "lacerate", "gore")
-	wound_bonus = -15
-	bare_wound_bonus = 15
 	reach = 2
-	sharpness = SHARP_POINTY
+	sharpness = IS_SHARP
 
 /obj/item/forging/reagent_weapon/spear/ComponentInitialize()
 	. = ..()
@@ -132,9 +119,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FIRE_PROOF
-	attack_verb_continuous = list("slashes", "bashes")
-	attack_verb_simple = list("slash", "bash")
-	sharpness = SHARP_EDGED
+	sharpness = IS_SHARP
 
 /obj/item/forging/reagent_weapon/hammer
 	name = "reagent hammer"
@@ -147,17 +132,15 @@
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FIRE_PROOF
-	attack_verb_continuous = list("bashes", "whacks")
-	attack_verb_simple = list("bash", "whack")
 
 /obj/item/shield/riot/buckler/reagent_weapon //Same as a buckler, but metal.
 	name = "reagent plated buckler shield"
 	desc = "A small, round shield best used in tandem with a melee weapon in close-quarters combat; can be imbued with a reagent."
-	icon = 'modular_skyrat/modules/reagent_forging/icons/obj/forge_items.dmi'
+	icon = 'icons/obj/forge_items.dmi'
 	icon_state = "buckler"
 	item_state = "buckler"
-	lefthand_file = 'modular_skyrat/modules/reagent_forging/icons/mob/forge_weapon_l.dmi'
-	righthand_file = 'modular_skyrat/modules/reagent_forging/icons/mob/forge_weapon_r.dmi'
+	lefthand_file = 'icons/mob/forge_weapon_l.dmi'
+	righthand_file = 'icons/mob/forge_weapon_r.dmi'
 	custom_materials = list(/datum/material/iron=1000)
 	resistance_flags = FIRE_PROOF
 	block_chance = 30
@@ -170,7 +153,6 @@
 	AddComponent(/datum/component/reagent_weapon)
 
 /obj/item/shield/riot/buckler/reagent_weapon/shatter(mob/living/carbon/human/owner)
-	owner.H.manual_emote("shield has shattered!") //ReplaceWithBalloonAlertLater
 	playsound(owner, 'sound/effects/bang.ogg', 50)
 	new /obj/item/forging/complete/plate(get_turf(src))
 

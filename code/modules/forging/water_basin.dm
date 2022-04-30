@@ -1,14 +1,13 @@
 /obj/structure/water_basin
 	name = "water basin"
 	desc = "A basin full of water, ready to quench the hot metal."
-	icon = 'modular_skyrat/modules/reagent_forging/icons/obj/forge_structures.dmi'
+	icon = 'icons/obj/forge_structures.dmi'
 	icon_state = "water_basin"
 	anchored = TRUE
 	density = TRUE
 
 /obj/structure/water_basin/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
-	var/smithing_skill = user.mind.get_skill_level(/datum/skill/smithing)
 
 /obj/structure/water_basin/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/forging/tongs))

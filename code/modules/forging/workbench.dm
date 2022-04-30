@@ -23,14 +23,12 @@
 	var/current_coil = 0
 	///the amount of coils required
 	var/required_coil = 0
-	///the amount of wood within the bench
-	var/current_wood = 0
-	///the amount of wood required
-	var/required_wood = 0
 	///the amount of hits required to complete the item
 	var/required_hits = 0
 	///the current amount of hits
 	var/current_hits = 0
+	///the amount of wood currently stored
+	var/current_wood = 0
 	//so we can't just keep being hit without cooldown
 	COOLDOWN_DECLARE(hit_cooldown)
 	///the choices allowed in crafting
@@ -46,46 +44,30 @@
 		"Handcuffs" = /obj/item/restraints/handcuffs/reagent_clothing,
 		"Pavise Shield" = /obj/item/shield/riot/buckler/reagent_weapon/pavise,
 		"Buckler Shield" = /obj/item/shield/riot/buckler/reagent_weapon,
-		"Coil" = /obj/item/forging/coil
+		"Coil" = /obj/item/forging/coil,
 	)
 
 /obj/structure/forging_workbench/examine(mob/user)
 	. = ..()
-	if(current_chain)
-		. += "<span class='notice'>[current_chain] chains stored.</span>"
-	if(current_plate)
-		. += "<span class='notice'>[current_plate] plates stored.</span>"
-	if(current_coil)
-		. += "<span class='notice'>[current_coil] coils stored.</span>"
-	if(current_wood)
-		. += "<span class='notice'>[current_wood] wood stored.<br></span>"
 	if(goal_name)
 		. += "<span class='notice'>Goal Item: [goal_name]</span>"
 		. += "<span class='notice'>When you have the necessary materials, begin hammering!<br></span>"
 		if(required_chain)
-			. += "<span class='warning'>[required_chain] chains required.</span>"
+			. += "<span class='warning'>[current_chain]/[required_chain] chains stored.</span>"
 		if(required_plate)
-			. += "<span class='warning'>[required_plate] plates required.</span>"
+			. += "<span class='warning'>[current_plate]/[required_plate] plates stored.</span>"
 		if(required_coil)
-			. += "<span class='warning'>[required_coil] coils required.</span>"
-		if(required_wood)
-			. += "<span class='warning'>[required_wood] wood required.</span>"
+			. += "<span class='warning'>[current_coil]/[required_coil] coils stored.</span>"
 	if(length(contents))
-		. += "<span class='notice'><br>Held Item: [contents[1]]</span>"
+		. += "<span class='notice'>Held Item: [contents[1]]</span>"
 
-/obj/structure/forging_workbench/update_appearance(updates)
+/obj/structure/forging_workbench/proc/update_appearance(updates)
 	. = ..()
-	cut_overlays()
-	if(!length(contents))
-		return
-	var/image/overlayed_item = image(icon = contents[1].icon, icon_state = contents[1].icon_state)
-	overlayed_item.transform = matrix(1.5, 0, 0, 0, 0.8, 0)
-	add_overlay(overlayed_item)
+	icon_state = "crafting_bench_[length(contents) ? "full" : "empty"]"
 
 //when picking a design or clearing a design
 /obj/structure/forging_workbench/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
-	update_appearance()
 	if(length(contents))
 		var/obj/item/moving_item = contents[1]
 		user.put_in_hands(moving_item)
@@ -94,7 +76,7 @@
 		return
 	if(goal_item_path)
 		clear_required()
-		H.manual_emote("table cleared!") //ReplaceWithBalloonAlertLater
+		to_chat(user, "<span class='notice'>table cleared!</span>")
 		update_appearance()
 		return
 	var/target_choice = tgui_input_list(user, "Which item would you like to craft?", "Crafting Choice", allowed_choices)
@@ -130,17 +112,8 @@
 			required_plate = 5
 		if("Coil")
 			required_chain = 2
-		if("Seed Mesh")
-			required_chain = 4
-			required_plate = 1
-		if("Primitive Centrifuge")
-			required_plate = 1
-		if("Bokken")
-			required_wood = 4
-		if("Bow")
-			required_wood = 4
 	if(!required_hits)
-		required_hits = (required_chain * 2) + (required_plate * 2) + (required_coil * 2) + (required_wood * 2)
+		required_hits = (required_chain * 2) + (required_plate * 2) + (required_coil * 2)
 	to_chat(user, "<span class='notice'>choice made!</span>") //ReplaceWithBalloonAlertLater
 	update_appearance()
 
@@ -152,7 +125,6 @@
 	required_chain = 0
 	required_plate = 0
 	required_coil = 0
-	required_wood = 0
 
 /obj/structure/forging_workbench/proc/check_required_materials(mob/living/user)
 	if(current_chain < required_chain)
@@ -164,13 +136,10 @@
 	if(current_coil < required_coil)
 		to_chat(user, "<span class='notice'>not enough materials!</span>") //ReplaceWithBalloonAlertLater
 		return FALSE
-	if(current_wood < required_wood)
-		to_chat(user, "<span class='notice'>not enough materials!</span>") //ReplaceWithBalloonAlertLater
-		return FALSE
 	return TRUE
 
 //when inserting the materials
-/obj/structure/reagent_crafting_bench/attackby(obj/item/attacking_item, mob/user, params)
+/obj/structure/forging_workbench/attackby(obj/item/attacking_item, mob/user, params)
 	update_appearance()
 	//if we are attacking with a hammer and we have a goal in mind!
 	if(istype(attacking_item, /obj/item/forging/hammer))

@@ -7,7 +7,6 @@
 	mob_overlay_icon = 'icons/mob/forge_clothing.dmi'
 	resistance_flags = FIRE_PROOF
 	armor = list(MELEE = 40, BULLET = 40, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 50, ACID = 0, WOUND = 30)
-	supports_variations_flags = NONE
 
 /obj/item/clothing/suit/armor/reagent_clothing/Initialize()
 	. = ..()
@@ -108,7 +107,7 @@
 	AddComponent(/datum/component/reagent_clothing, ITEM_SLOT_NECK)
 
 /obj/item/clothing/neck/kink_collar/reagent_clothing/attack_self(mob/user)
-	tagname = sanitize_name(stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot", MAX_NAME_LEN))
+	var/tagname = sanitize_name(stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot", MAX_NAME_LEN))
 	name = initial(name)
 	for(var/datum/reagent/clothing_reagent in reagents.reagent_list)
 		if(clothing_reagent.volume < 200)

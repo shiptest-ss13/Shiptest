@@ -115,7 +115,7 @@
  */
 /obj/structure/forge/proc/create_reagent_forge()
 	reagent_forging = TRUE
-	H.manual_emote("gurgles!") //ReplaceWithBalloonAlertLater
+	say("gurgle!") //ReplaceWithBalloonAlertLater
 	color = "#ff5151"
 	name = "reagent forge"
 	desc = "[initial(desc)]<br>It has the ability to imbue forged metals with chemicals!"
@@ -424,7 +424,7 @@
 		return
 
 	if(I.tool_behaviour == TOOL_WRENCH)
-		new /obj/item/stack/sheet/iron/ten(get_turf(src))
+		new /obj/item/stack/sheet/metal/ten(get_turf(src))
 		qdel(src)
 
 	if(I.GetComponent(/datum/component/reagent_weapon))
