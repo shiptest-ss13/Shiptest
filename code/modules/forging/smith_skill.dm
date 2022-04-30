@@ -16,4 +16,4 @@
 	icon = 'icons/obj/clothing/cloaks.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/neck.dmi'
 	icon_state = "smithingcloak"
-	associated_skill_path = /datum/skill/smithing	
+	associated_skill_path = /datum/skill/smithing
