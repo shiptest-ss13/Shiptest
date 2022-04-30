@@ -194,6 +194,7 @@
 
 /obj/item/pickaxe/forged_weapon
 	name = "forged pickaxe"
+	toolspeed = 0.45 //Just a tiny bit better than a regular one
 
 /obj/item/pickaxe/forged_weapon/Initialize(mapload)
 	. = ..()

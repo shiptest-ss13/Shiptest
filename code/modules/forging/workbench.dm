@@ -40,7 +40,7 @@
 		"Plated Boots" = /obj/item/clothing/shoes/plated_boots,
 		"Horseshoes" = /obj/item/clothing/shoes/horseshoe,
 		"Ring" = /obj/item/clothing/gloves/ring/reagent_clothing,
-		"Collar" = /obj/item/clothing/neck/kink_collar/reagent_clothing,
+		"Collar" = /obj/item/clothing/neck/petcollar/reagent_clothing,
 		"Handcuffs" = /obj/item/restraints/handcuffs/reagent_clothing,
 		"Pavise Shield" = /obj/item/shield/riot/buckler/forged_weapon/pavise,
 		"Buckler Shield" = /obj/item/shield/riot/buckler/forged_weapon,
@@ -70,17 +70,17 @@
 	if(length(contents))
 		var/obj/item/moving_item = contents[1]
 		user.put_in_hands(moving_item)
-		to_chat(user, "<span class='notice'>item retrieved!</span>") //ReplaceWithBalloonAlertLater
+		to_chat(user, "<span class='notice'>Item retrieved!</span>") //ReplaceWithBalloonAlertLater
 		update_appearance()
 		return
 	if(goal_item_path)
 		clear_required()
-		to_chat(user, "<span class='notice'>table cleared!</span>")
+		to_chat(user, "<span class='notice'>Table cleared!</span>")
 		update_appearance()
 		return
 	var/target_choice = tgui_input_list(user, "Which item would you like to craft?", "Crafting Choice", allowed_choices)
 	if(!target_choice)
-		to_chat(user, "<span class='notice'>no choice made!</span>") //ReplaceWithBalloonAlertLater
+		to_chat(user, "<span class='notice'>No choice made!</span>") //ReplaceWithBalloonAlertLater
 		return
 	goal_name = target_choice
 	goal_item_path = allowed_choices[target_choice]
@@ -111,7 +111,7 @@
 			required_chain = 2
 	if(!required_hits)
 		required_hits = (required_chain * 2) + (required_plate * 2) + (required_coil * 2)
-	to_chat(user, "<span class='notice'>choice made!</span>") //ReplaceWithBalloonAlertLater
+	to_chat(user, "<span class='notice'>[target_choice] selected!</span>") //ReplaceWithBalloonAlertLater
 	update_appearance()
 
 /obj/structure/forging_workbench/proc/clear_required()
@@ -125,13 +125,13 @@
 
 /obj/structure/forging_workbench/proc/check_required_materials(mob/living/user)
 	if(current_chain < required_chain)
-		to_chat(user, "<span class='notice'>not enough materials!</span>") //ReplaceWithBalloonAlertLater
+		to_chat(user, "<span class='notice'>Not enough materials!</span>") //ReplaceWithBalloonAlertLater
 		return FALSE
 	if(current_plate < required_plate)
-		to_chat(user, "<span class='notice'>not enough materials!</span>") //ReplaceWithBalloonAlertLater
+		to_chat(user, "<span class='notice'>Not enough materials!</span>") //ReplaceWithBalloonAlertLater
 		return FALSE
 	if(current_coil < required_coil)
-		to_chat(user, "<span class='notice'>not enough materials!</span>") //ReplaceWithBalloonAlertLater
+		to_chat(user, "<span class='notice'>Not enough materials!</span>") //ReplaceWithBalloonAlertLater
 		return FALSE
 	return TRUE
 
@@ -148,32 +148,32 @@
 					to_chat(user, "<span class='notice'>no craftable!</span>") //ReplaceWithBalloonAlertLater
 					return
 				if(current_wood < 2)
-					to_chat(user, "<span class='notice'>not enough wood!</span>") //ReplaceWithBalloonAlertLater
+					to_chat(user, "<span class='notice'>Not enough wood!</span>") //ReplaceWithBalloonAlertLater
 					return
 				current_wood -= 2
 				var/spawning_item = complete_content.spawning_item
 				qdel(complete_content)
 				new spawning_item(src)
 				user.mind.adjust_experience(/datum/skill/smithing, 15) //creating grants you something
-				to_chat(user, "<span class='notice'>item crafted!</span>") //ReplaceWithBalloonAlertLater
+				to_chat(user, "<span class='notice'>Item crafted!</span>") //ReplaceWithBalloonAlertLater
 				update_appearance()
 				return
 		if(!goal_item_path)
-			to_chat(user, "<span class='notice'>no choice made!</span>") //ReplaceWithBalloonAlertLater
+			to_chat(user, "<span class='notice'>No choice made!</span>") //ReplaceWithBalloonAlertLater
 			return
 		if(!check_required_materials(user))
 			return
 		var/skill_modifier = user.mind.get_skill_modifier(/datum/skill/smithing, SKILL_SPEED_MODIFIER) * 1 SECONDS
 		if(!COOLDOWN_FINISHED(src, hit_cooldown))
 			current_hits -= 3
-			to_chat(user, "<span class='notice'>bad hit!</span>") //ReplaceWithBalloonAlertLater
+			to_chat(user, "<span class='notice'>Bad hit!</span>") //ReplaceWithBalloonAlertLater
 			if(current_hits <= -required_hits)
 				clear_required()
 			return
 		COOLDOWN_START(src, hit_cooldown, skill_modifier)
 		if(current_hits >= required_hits && !length(contents))
 			new goal_item_path(src)
-			to_chat(user, "<span class='notice'>item crafted!</span>") //ReplaceWithBalloonAlertLater
+			to_chat(user, "<span class='notice'>[src] crafted!</span>") //ReplaceWithBalloonAlertLater
 			update_appearance()
 			user.mind.adjust_experience(/datum/skill/smithing, 15) //creating grants you something
 			current_chain -= required_chain
@@ -182,7 +182,7 @@
 			clear_required()
 			return
 		current_hits++
-		to_chat(user, "<span class='notice'>good hit!</span>") //ReplaceWithBalloonAlertLater
+		to_chat(user, "<span class='nicegreen'>Good hit!</span>") //ReplaceWithBalloonAlertLater
 		user.mind.adjust_experience(/datum/skill/smithing, 2) //useful hammering means you get some experience
 		return
 
@@ -192,32 +192,32 @@
 		if(!attacking_wood.use(1))
 			return
 		current_wood++
-		to_chat(user, "<span class='notice'>wood added!</span>") //ReplaceWithBalloonAlertLater
+		to_chat(user, "<span class='notice'>Wood added!</span>") //ReplaceWithBalloonAlertLater
 		return
 	if(istype(attacking_item, /obj/item/forging/complete/plate))
 		qdel(attacking_item)
 		current_plate++
-		to_chat(user, "<span class='notice'>plate added!</span>") //ReplaceWithBalloonAlertLater
+		to_chat(user, "<span class='notice'>Plate added!</span>") //ReplaceWithBalloonAlertLater
 		return
 	if(istype(attacking_item, /obj/item/forging/complete/chain))
 		qdel(attacking_item)
 		current_chain++
-		to_chat(user, "<span class='notice'>chain added!</span>") //ReplaceWithBalloonAlertLater
+		to_chat(user, "<span class='notice'>Chain added!</span>") //ReplaceWithBalloonAlertLater
 		return
 	if(istype(attacking_item, /obj/item/forging/coil))
 		qdel(attacking_item)
 		current_coil++
-		to_chat(user, "<span class='notice'>coil added!</span>") //ReplaceWithBalloonAlertLater
+		to_chat(user, "<span class='notice'>Coil added!</span>") //ReplaceWithBalloonAlertLater
 		return
 
 	//inserting a thing
 	if(istype(attacking_item, /obj/item/forging/complete))
 		var/obj/item/forging/complete/attacking_complete = attacking_item
 		if(length(contents))
-			to_chat(user, "<span class='notice'>already full!</span>") //ReplaceWithBalloonAlertLater
+			to_chat(user, "<span class='notice'>Already full!</span>") //ReplaceWithBalloonAlertLater
 			return
 		attacking_complete.forceMove(src)
-		to_chat(user, "<span class='notice'>item inserted!</span>") //ReplaceWithBalloonAlertLater
+		to_chat(user, "<span class='notice'>Item inserted!</span>") //ReplaceWithBalloonAlertLater
 		update_appearance()
 		return
 
