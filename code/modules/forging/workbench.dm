@@ -42,8 +42,8 @@
 		"Ring" = /obj/item/clothing/gloves/ring/reagent_clothing,
 		"Collar" = /obj/item/clothing/neck/kink_collar/reagent_clothing,
 		"Handcuffs" = /obj/item/restraints/handcuffs/reagent_clothing,
-		"Pavise Shield" = /obj/item/shield/riot/buckler/reagent_weapon/pavise,
-		"Buckler Shield" = /obj/item/shield/riot/buckler/reagent_weapon,
+		"Pavise Shield" = /obj/item/shield/riot/buckler/forged_weapon/pavise,
+		"Buckler Shield" = /obj/item/shield/riot/buckler/forged_weapon,
 		"Coil" = /obj/item/forging/coil,
 	)
 
@@ -103,8 +103,6 @@
 			required_chain = 3
 		if("Handcuffs")
 			required_chain = 10
-		if("Borer Cage")
-			required_plate = 6
 		if("Pavise Shield")
 			required_plate = 8
 		if("Buckler Shield")

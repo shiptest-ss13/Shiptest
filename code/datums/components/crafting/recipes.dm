@@ -905,3 +905,29 @@
 				/obj/item/stack/sheet/bone = 5,
 				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_PRIMAL
+
+/datum/crafting_recipe/forging_billow
+	name = "Forging Billow"
+	result = /obj/item/forging/billow
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 3,
+			/obj/item/stack/sheet/leather = 2)
+	tools = list(/obj/item/hatchet)
+	category = CAT_MISC
+
+/datum/crafting_recipe/forging_tongs
+	name = "Forging Tongs"
+	result = /obj/item/forging/tongs
+	time = 30
+	reqs = list(/obj/item/stack/rods = 3)
+	tools = list(TOOL_WELDER, TOOL_WIRECUTTER)
+	category = CAT_MISC
+
+/datum/crafting_recipe/forging_hammer
+	name = "Forging Hammer"
+	result = /obj/item/forging/hammer
+	time = 45
+	reqs = list(/obj/item/stack/sheet/metal = 3,
+			/obj/item/stack/sheet/mineral/wood = 1)
+	tools = list(TOOL_WELDER)
+	category = CAT_MISC

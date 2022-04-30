@@ -13,24 +13,27 @@
 /obj/structure/anvil/attackby(obj/item/I, mob/living/user, params)
 	var/obj/item/forging/incomplete/search_incomplete_src = locate(/obj/item/forging/incomplete) in contents
 	if(istype(I, /obj/item/forging/hammer) && search_incomplete_src)
-		playsound(src, 'sound/misc/forge.ogg', 50, TRUE)
 		if(COOLDOWN_FINISHED(search_incomplete_src, heating_remainder))
 			to_chat(user, "<span class='warning'>You mess up, the metal was too cool!</span>")
+			playsound(src, 'sound/misc/forge_fail.ogg', 50, TRUE)
 			search_incomplete_src.times_hit -= 3
 			return TRUE
 		if(COOLDOWN_FINISHED(search_incomplete_src, striking_cooldown))
 			var/skill_modifier = user.mind.get_skill_modifier(/datum/skill/smithing, SKILL_SPEED_MODIFIER) * search_incomplete_src.average_wait
 			COOLDOWN_START(search_incomplete_src, striking_cooldown, skill_modifier)
 			search_incomplete_src.times_hit++
-			to_chat(user, "<span class='notice'>good hit!</span>") //ReplaceWithBalloonAlertLater
+			to_chat(user, "<span class='nicegreen'>good hit!</span>") //ReplaceWithBalloonAlertLater
+			playsound(src, 'sound/misc/forge.ogg', 50, TRUE)
 			user.mind.adjust_experience(/datum/skill/smithing, 1) //A good hit gives minimal experience
 			if(search_incomplete_src?.times_hit >= search_incomplete_src.average_hits)
 				to_chat(user, "<span class='notice'>The metal is sounding ready.</span>")
 			return TRUE
 		search_incomplete_src.times_hit -= 3
 		to_chat(user, "<span class='notice'>bad hit!</span>") //ReplaceWithBalloonAlertLater
+		playsound(src, 'sound/misc/forge_fail.ogg', 50, TRUE)
 		if(search_incomplete_src?.times_hit <= -(search_incomplete_src.average_hits))
 			to_chat(user, "<span class='warning'>The hits were too inconsistent-- the metal breaks!</span>")
+			playsound(src, 'sound/misc/forge_break.ogg', 50, TRUE)
 			icon_state = "anvil_empty"
 			qdel(search_incomplete_src)
 		return TRUE

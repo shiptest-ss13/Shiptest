@@ -88,7 +88,7 @@
 	AddComponent(/datum/component/reagent_clothing, ITEM_SLOT_FEET)
 
 /obj/item/clothing/gloves/ring/reagent_clothing
-	name = "reagent ring"
+	name = "forged ring"
 	desc = "A tiny ring, sized to wrap around a finger. It is possible to imbue this ring."
 	icon_state = "ringsilver"
 	item_state = "sring"
@@ -99,7 +99,7 @@
 	AddComponent(/datum/component/reagent_clothing, ITEM_SLOT_GLOVES)
 
 /obj/item/clothing/neck/kink_collar/reagent_clothing
-	name = "reagent pet collar"
+	name = "forged pet collar"
 	desc = "A pet collar that is ready to be imbued."
 
 /obj/item/clothing/neck/kink_collar/reagent_clothing/Initialize()
@@ -117,7 +117,7 @@
 	name = "[name] [tagname]"
 
 /obj/item/restraints/handcuffs/reagent_clothing
-	name = "reagent handcuffs"
+	name = "forged handcuffs"
 	desc = "A pair of handcuffs that are ready to be imbued."
 
 /obj/item/restraints/handcuffs/reagent_clothing/Initialize()

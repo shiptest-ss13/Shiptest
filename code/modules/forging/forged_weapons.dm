@@ -1,17 +1,17 @@
-/obj/item/forging/reagent_weapon
+/obj/item/forging/forged_weapon
 	icon = 'icons/obj/forge_items.dmi'
 	lefthand_file = 'icons/mob/forge_weapon_l.dmi'
 	righthand_file = 'icons/mob/forge_weapon_r.dmi'
 
-/obj/item/forging/reagent_weapon/Initialize()
+/obj/item/forging/forged_weapon/Initialize()
 	. = ..()
 	AddComponent(/datum/component/reagent_weapon)
 
-/obj/item/forging/reagent_weapon/examine(mob/user)
+/obj/item/forging/forged_weapon/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Using a hammer on [src] will repair its damage!</span>"
 
-/obj/item/forging/reagent_weapon/attackby(obj/item/attacking_item, mob/user, params)
+/obj/item/forging/forged_weapon/attackby(obj/item/attacking_item, mob/user, params)
 	if(obj_integrity >= max_integrity)
 		return ..()
 	if(istype(attacking_item, /obj/item/forging/hammer))
@@ -26,8 +26,8 @@
 		return
 	return ..()
 
-/obj/item/forging/reagent_weapon/sword
-	name = "reagent sword"
+/obj/item/forging/forged_weapon/sword
+	name = "forged sword"
 	desc = "A sword that can be imbued with a reagent. Useful for blocking."
 	force = 15
 	armour_penetration = 10
@@ -42,8 +42,8 @@
 	sharpness = IS_SHARP
 	max_integrity = 150
 
-/obj/item/forging/reagent_weapon/katana
-	name = "reagent katana"
+/obj/item/forging/forged_weapon/katana
+	name = "forged katana"
 	desc = "A katana that can be imbued with a reagent. It's very sharp, but not quite million-times-folded sharp."
 	force = 15
 	armour_penetration = 25 //Slices through armour like butter, but can't quite bisect a knight like the real thing.
@@ -56,8 +56,8 @@
 	resistance_flags = FIRE_PROOF
 	sharpness = IS_SHARP
 
-/obj/item/forging/reagent_weapon/dagger
-	name = "reagent dagger"
+/obj/item/forging/forged_weapon/dagger
+	name = "forged dagger"
 	desc = "A dagger that can be imbued with a reagent. It can attack very fast!"
 	force = 8
 	icon_state = "dagger"
@@ -69,12 +69,12 @@
 	resistance_flags = FIRE_PROOF
 	sharpness = IS_SHARP
 
-/obj/item/forging/reagent_weapon/dagger/attack(mob/living/M, mob/living/user, params)
+/obj/item/forging/forged_weapon/dagger/attack(mob/living/M, mob/living/user, params)
 	. = ..()
 	user.changeNext_move(CLICK_CD_RANGE)
 
-/obj/item/forging/reagent_weapon/staff //doesn't do damage. Useful for healing reagents.
-	name = "reagent staff"
+/obj/item/forging/forged_weapon/staff //doesn't do damage. Useful for healing reagents.
+	name = "forged staff"
 	desc = "A staff that can be imbued with a reagent. It has a very soft swing."
 	force = 0
 	icon_state = "staff"
@@ -83,12 +83,12 @@
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FIRE_PROOF
-/obj/item/forging/reagent_weapon/staff/attack(mob/living/M, mob/living/user, params)
+/obj/item/forging/forged_weapon/staff/attack(mob/living/M, mob/living/user, params)
 	. = ..()
 	user.changeNext_move(CLICK_CD_RANGE)
 
-/obj/item/forging/reagent_weapon/spear
-	name = "reagent spear"
+/obj/item/forging/forged_weapon/spear
+	name = "forged spear"
 	desc = "A spear that can be imbued with a reagent. It can be dual-wielded to increase its damage!"
 	force = 10
 	armour_penetration = 10
@@ -102,12 +102,12 @@
 	reach = 2
 	sharpness = IS_SHARP
 
-/obj/item/forging/reagent_weapon/spear/ComponentInitialize()
+/obj/item/forging/forged_weapon/spear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=17) //better than the bone spear
 
-/obj/item/forging/reagent_weapon/axe
-	name = "reagent axe"
+/obj/item/forging/forged_weapon/axe
+	name = "forged axe"
 	desc = "An axe that can be imbued with a reagent. Looks balanced for throwing."
 	force = 15
 	armour_penetration = 10
@@ -121,8 +121,8 @@
 	resistance_flags = FIRE_PROOF
 	sharpness = IS_SHARP
 
-/obj/item/forging/reagent_weapon/hammer
-	name = "reagent hammer"
+/obj/item/forging/forged_weapon/hammer
+	name = "forged hammer"
 	desc = "A hammer that can be imbued with a reagent. It packs a real wallop."
 	force = 19 //strong but boring.
 	armour_penetration = 10
@@ -133,8 +133,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FIRE_PROOF
 
-/obj/item/shield/riot/buckler/reagent_weapon //Same as a buckler, but metal.
-	name = "reagent plated buckler shield"
+/obj/item/shield/riot/buckler/forged_weapon //Same as a buckler, but metal.
+	name = "forged plated buckler shield"
 	desc = "A small, round shield best used in tandem with a melee weapon in close-quarters combat; can be imbued with a reagent."
 	icon = 'icons/obj/forge_items.dmi'
 	icon_state = "buckler"
@@ -148,19 +148,19 @@
 	max_integrity = 150 //over double that of a wooden one
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/shield/riot/buckler/reagent_weapon/Initialize()
+/obj/item/shield/riot/buckler/forged_weapon/Initialize()
 	. = ..()
 	AddComponent(/datum/component/reagent_weapon)
 
-/obj/item/shield/riot/buckler/reagent_weapon/shatter(mob/living/carbon/human/owner)
+/obj/item/shield/riot/buckler/forged_weapon/shatter(mob/living/carbon/human/owner)
 	playsound(owner, 'sound/effects/bang.ogg', 50)
 	new /obj/item/forging/complete/plate(get_turf(src))
 
-/obj/item/shield/riot/buckler/reagent_weapon/examine(mob/user)
+/obj/item/shield/riot/buckler/forged_weapon/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Using a hammer on [src] will repair its damage!</span>"
 
-/obj/item/shield/riot/buckler/reagent_weapon/attackby(obj/item/attacking_item, mob/user, params)
+/obj/item/shield/riot/buckler/forged_weapon/attackby(obj/item/attacking_item, mob/user, params)
 	if(obj_integrity >= max_integrity)
 		return ..()
 	if(istype(attacking_item, /obj/item/forging/hammer))
@@ -176,8 +176,8 @@
 		return
 	return ..()
 
-/obj/item/shield/riot/buckler/reagent_weapon/pavise //similar to the adamantine shield. Huge, slow, lets you soak damage and packs a wallop.
-	name = "reagent plated pavise shield"
+/obj/item/shield/riot/buckler/forged_weapon/pavise //similar to the adamantine shield. Huge, slow, lets you soak damage and packs a wallop.
+	name = "forged plated pavise shield"
 	desc = "An oblong shield used by ancient crossbowman as cover while reloading; can be imbued with a reagent."
 	icon_state = "pavise"
 	item_state = "pavise"
@@ -187,20 +187,20 @@
 	slot_flags = ITEM_SLOT_BACK
 	max_integrity = 300 //tanky
 
-/obj/item/shield/riot/buckler/reagent_weapon/pavise/ComponentInitialize()
+/obj/item/shield/riot/buckler/forged_weapon/pavise/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE, force_wielded=15)
 
-/obj/item/pickaxe/reagent_weapon
-	name = "reagent pickaxe"
+/obj/item/pickaxe/forged_weapon
+	name = "forged pickaxe"
 
-/obj/item/pickaxe/reagent_weapon/Initialize(mapload)
+/obj/item/pickaxe/forged_weapon/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/reagent_weapon)
 
-/obj/item/shovel/reagent_weapon
-	name = "reagent shovel"
+/obj/item/shovel/forged_weapon
+	name = "forged shovel"
 
-/obj/item/shovel/reagent_weapon/Initialize(mapload)
+/obj/item/shovel/forged_weapon/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/reagent_weapon)
