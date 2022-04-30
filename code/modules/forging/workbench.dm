@@ -44,7 +44,7 @@
 		"Handcuffs" = /obj/item/restraints/handcuffs/reagent_clothing,
 		"Pavise Shield" = /obj/item/shield/riot/buckler/forged_weapon/pavise,
 		"Buckler Shield" = /obj/item/shield/riot/buckler/forged_weapon,
-		"Coil" = /obj/item/forging/coil,
+		"Coil" = /obj/item/forging/coil
 	)
 
 /obj/structure/forging_workbench/examine(mob/user)

@@ -1,3 +1,5 @@
+#define BAD_HIT_PENALTY 3
+
 /obj/structure/anvil
 	name = "anvil"
 	desc = "An object with the intent to hammer metal against. One of the most important parts for forging an item."
@@ -13,7 +15,7 @@
 		if(COOLDOWN_FINISHED(search_incomplete_src, heating_remainder))
 			to_chat(user, "<span class='warning'>You mess up, the metal was too cool!</span>")
 			playsound(src, 'sound/misc/forge_fail.ogg', 50, TRUE)
-			search_incomplete_src.times_hit -= 3
+			search_incomplete_src.times_hit -= BAD_HIT_PENALTY
 			return TRUE
 		if(COOLDOWN_FINISHED(search_incomplete_src, striking_cooldown))
 			var/skill_modifier = user.mind.get_skill_modifier(/datum/skill/smithing, SKILL_SPEED_MODIFIER) * search_incomplete_src.average_wait
@@ -25,7 +27,7 @@
 			if(search_incomplete_src?.times_hit >= search_incomplete_src.average_hits)
 				to_chat(user, "<span class='notice'>The metal is sounding ready.</span>")
 			return TRUE
-		search_incomplete_src.times_hit -= 3
+		search_incomplete_src.times_hit -= BAD_HIT_PENALTY
 		to_chat(user, "<span class='notice'>Bad hit!</span>") //ReplaceWithBalloonAlertLater
 		playsound(src, 'sound/misc/forge_fail.ogg', 50, TRUE)
 		if(search_incomplete_src?.times_hit <= -(search_incomplete_src.average_hits))
@@ -58,3 +60,5 @@
 		return
 
 	return ..()
+
+#undef BAD_HIT_PENALTY

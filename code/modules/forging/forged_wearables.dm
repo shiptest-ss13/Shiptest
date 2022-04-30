@@ -1,7 +1,7 @@
 //armor
 /obj/item/clothing/suit/armor/reagent_clothing
 	name = "chain armor"
-	desc = "A piece of armor made out of chains, ready to be imbued with a chemical."
+	desc = "A piece of armor made out of chains."
 	icon = 'icons/obj/forge_clothing.dmi'
 	icon_state = "chain_armor"
 	mob_overlay_icon = 'icons/mob/forge_clothing.dmi'
@@ -16,7 +16,7 @@
 //gloves
 /obj/item/clothing/gloves/reagent_clothing
 	name = "chain gloves"
-	desc = "A set of gloves made out of chains, ready to be imbued with a chemical."
+	desc = "A set of gloves made out of chains."
 	icon = 'icons/obj/forge_clothing.dmi'
 	icon_state = "chain_glove"
 	mob_overlay_icon = 'icons/mob/forge_clothing.dmi'
@@ -30,7 +30,7 @@
 
 /obj/item/clothing/head/helmet/reagent_clothing
 	name = "chain helmet"
-	desc = "A helmet made out of chains, ready to be imbued with a chemical."
+	desc = "A helmet made out of chains."
 	icon = 'icons/obj/forge_clothing.dmi'
 	icon_state = "chain_helmet"
 	mob_overlay_icon = 'icons/mob/forge_clothing.dmi'
@@ -44,7 +44,7 @@
 
 /obj/item/clothing/shoes/chain_boots
 	name = "chain boots"
-	desc = "A pair of boots made out of chains, ready to be imbued with a chemical."
+	desc = "A pair of boots made out of chains."
 	icon = 'icons/obj/forge_clothing.dmi'
 	icon_state = "chain_boot"
 	mob_overlay_icon = 'icons/mob/forge_clothing.dmi'
@@ -59,7 +59,7 @@
 
 /obj/item/clothing/shoes/plated_boots
 	name = "plated boots"
-	desc = "A pair of boots made out of plates, ready to be imbued with a chemical."
+	desc = "A pair of boots made out of plates."
 	icon = 'icons/obj/forge_clothing.dmi'
 	icon_state = "plate_boot"
 	mob_overlay_icon = 'icons/mob/forge_clothing.dmi'
@@ -74,7 +74,7 @@
 
 /obj/item/clothing/shoes/horseshoe
 	name = "horseshoe"
-	desc = "A pair of horseshoes made out of chains, ready to be imbued with a chemical."
+	desc = "A pair of horseshoes made out of chains."
 	icon = 'icons/obj/forge_clothing.dmi'
 	icon_state = "horseshoe"
 	mob_overlay_icon = 'icons/mob/forge_clothing.dmi'
