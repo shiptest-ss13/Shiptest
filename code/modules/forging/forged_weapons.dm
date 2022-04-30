@@ -164,18 +164,18 @@
 /obj/item/shield/riot/buckler/forged_weapon/attackby(obj/item/attacking_item, mob/user, params)
 	if(obj_integrity >= max_integrity)
 		return ..()
-	if(istype(attacking_item, /obj/item/forging/hammer))
-		var/obj/item/forging/hammer/attacking_hammer = attacking_item
-		var/skill_modifier = user.mind.get_skill_modifier(/datum/skill/smithing, SKILL_SPEED_MODIFIER) * attacking_hammer.work_time
-		while(obj_integrity < max_integrity)
-			if(!do_after(user, skill_modifier, src))
-				return
-			var/fixing_amount = min(max_integrity - obj_integrity, 5)
-			obj_integrity += fixing_amount
-			user.mind.adjust_experience(/datum/skill/smithing, 5) //useful heating means you get some experience
-			to_chat(user, "<span class='notice'>Partially repaired!</span>") //ReplaceWithBalloonAlertLater
-		return
-	return ..()
+	if(!istype(attacking_item, /obj/item/forging/hammer))
+		return ..()
+	var/obj/item/forging/hammer/attacking_hammer = attacking_item
+	var/skill_modifier = user.mind.get_skill_modifier(/datum/skill/smithing, SKILL_SPEED_MODIFIER) * attacking_hammer.work_time
+	while(obj_integrity < max_integrity)
+		if(!do_after(user, skill_modifier, src))
+			return
+		var/fixing_amount = min(max_integrity - obj_integrity, 5)
+		obj_integrity += fixing_amount
+		user.mind.adjust_experience(/datum/skill/smithing, 5) //useful heating means you get some experience
+		to_chat(user, "<span class='notice'>Partially repaired!</span>") //ReplaceWithBalloonAlertLater
+	return
 
 /obj/item/shield/riot/buckler/forged_weapon/pavise //similar to the adamantine shield. Huge, slow, lets you soak damage and packs a wallop.
 	name = "forged plated pavise shield"
