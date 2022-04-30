@@ -25,6 +25,7 @@
 #include "binary_insert.dm"
 #include "combat.dm"
 #include "component_tests.dm"
+#include "connect_loc.dm"
 #include "emoting.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"

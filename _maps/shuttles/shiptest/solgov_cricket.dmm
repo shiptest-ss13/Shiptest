@@ -422,7 +422,8 @@
 /area/ship/hallway/port)
 "fa" = (
 /obj/machinery/computer/telecomms/monitor{
-	dir = 8
+	dir = 8;
+	network = "tcommsat"
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 6
@@ -2196,7 +2197,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "Am" = (
-/obj/machinery/telecomms/server/presets/common/birdstation,
+/obj/machinery/telecomms/server/presets/common/birdstation{
+	autolinkers = list("common","Broadcaster A")
+	},
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/ship/engineering/communications)
 "At" = (
@@ -2265,7 +2268,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "AQ" = (
-/obj/machinery/telecomms/broadcaster/preset_left/birdstation,
+/obj/machinery/telecomms/broadcaster/preset_left/birdstation{
+	autolinkers = list("broadcasterA","common")
+	},
 /obj/machinery/camera/autoname{
 	dir = 8;
 	network = list("cricket")
@@ -2523,7 +2528,9 @@
 /turf/open/floor/eighties,
 /area/ship/crew/dorm)
 "CQ" = (
-/obj/machinery/telecomms/bus/preset_one/birdstation,
+/obj/machinery/telecomms/bus/preset_one/birdstation{
+	autolinkers = list("processor1","common","receiverA")
+	},
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/ship/engineering/communications)
 "CR" = (
@@ -2577,7 +2584,9 @@
 /turf/template_noop,
 /area/ship/external)
 "Df" = (
-/obj/machinery/telecomms/receiver/preset_left/birdstation,
+/obj/machinery/telecomms/receiver/preset_left/birdstation{
+	autolinkers = list("receiverA","Bus 1")
+	},
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/ship/engineering/communications)
 "Dg" = (
@@ -2736,7 +2745,8 @@
 /area/ship/hallway/aft)
 "EF" = (
 /obj/machinery/computer/telecomms/server{
-	dir = 8
+	dir = 8;
+	network = "tcommsat"
 	},
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 4
@@ -2746,10 +2756,6 @@
 "EI" = (
 /obj/machinery/light,
 /turf/open/floor/circuit/green/telecomms/mainframe,
-/area/ship/engineering/communications)
-"EQ" = (
-/obj/structure/noticeboard,
-/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/communications)
 "ER" = (
 /obj/structure/cable{
@@ -3061,6 +3067,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/noticeboard{
+	pixel_y = 33
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
@@ -5028,7 +5037,7 @@ EF
 yw
 AQ
 Df
-EQ
+mU
 Ib
 LV
 OI

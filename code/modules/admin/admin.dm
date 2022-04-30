@@ -61,14 +61,9 @@
 		body += "<br><br><b>Show related accounts by:</b> "
 		body += " <a href='?_src_=holder;[HrefToken()];showrelatedacc=cid;client=[REF(M.client)]'>CID</a>"
 		body += "<a href='?_src_=holder;[HrefToken()];showrelatedacc=ip;client=[REF(M.client)]'>IP</a> "
-		body += "<br><br><b>CentCom Galactic Ban DB: </b> "
-		if(CONFIG_GET(string/centcom_ban_db))
-			body += "<a href='?_src_=holder;[HrefToken()];centcomlookup=[M.client.ckey]'>Search</a>"
-		else
-			body += "<i>Disabled</i>"
 		var/rep = 0
 		rep += SSpersistence.antag_rep[M.ckey]
-		body += "<br><br><b>Antagonist reputation: [rep]"
+		body += "<br><br><b>Antagonist reputation:</b> [rep]"
 		body += "<br><a href='?_src_=holder;[HrefToken()];modantagrep=add;mob=[REF(M)]'>+</a> "
 		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=subtract;mob=[REF(M)]'>-</a> "
 		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=set;mob=[REF(M)]'>=</a> "

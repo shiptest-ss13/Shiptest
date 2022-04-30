@@ -49,7 +49,7 @@
 	var/turf/jump_to_turf = parent.get_jump_to_turf()
 	if(!jump_to_turf)
 		return
-	user.forceMove(jump_to_turf)
+	user.abstract_move(jump_to_turf)
 
 /obj/overmap/vv_edit_var(var_name, var_value)
 	switch(var_name)
@@ -75,9 +75,9 @@
 				QDEL_NULL(cam_plane_master)
 				QDEL_NULL(cam_background)
 		if(NAMEOF(src, x))
-			return parent.Move(var_value, parent.y)
+			return parent.overmap_move(var_value, parent.y)
 		if(NAMEOF(src, y))
-			return parent.Move(parent.x, var_value)
+			return parent.overmap_move(parent.x, var_value)
 		if(NAMEOF(src, name))
 			parent.Rename(var_value)
 			return TRUE

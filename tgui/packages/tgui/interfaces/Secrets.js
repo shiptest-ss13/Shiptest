@@ -300,14 +300,6 @@ const FunTab = (props, context) => {
             content="Anonymous Names"
             onClick={() => act("anon_name")} />
         </Flex.Item>
-        <Flex.Item grow={1}>
-          <Button
-            icon="bullhorn"
-            lineHeight={lineHeightNormal}
-            fluid
-            content="THERE CAN ONLY BE ONE!"
-            onClick={() => act("onlyone")} />
-        </Flex.Item>
       </Flex>
       <Flex
         mb={1}
