@@ -18,7 +18,6 @@
 	assemblytype = /obj/structure/poddoor_assembly
 	var/open_sound = 'sound/machines/blastdoor.ogg'
 	var/close_sound = 'sound/machines/blastdoor.ogg'
-	var/ertblast = FALSE //If this is true the blast door cannot be deconstructed
 
 /obj/machinery/door/poddoor/attackby(obj/item/W, mob/user, params)
 	. = ..()
