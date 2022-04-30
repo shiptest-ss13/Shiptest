@@ -79,7 +79,7 @@
 		if(FORGE_LEVEL_TWO)
 			. += "<span class='notice'>[src] has been touched by an expert smithy.<br></span>"
 		if(FORGE_LEVEL_THREE)
-			. += "<span class='boldwarning'>[src] has been touched by a master smithy; It is fully upgraded!<br></span>"
+			. += "<span class='boldwarning'>[src] has been touched by a master smithy.<br></span>"
 	if(forge_level < FORGE_LEVEL_THREE)
 		. += "<span class='notice'>[src] has [goliath_ore_improvement]/[MAX_UPGRADE_GOLIATH] goliath hides.</span>"
 		. += "<span class='notice'>[src] has [current_sinew]/[MAX_UPGRADE_SINEW] watcher sinews.</span>"
@@ -117,8 +117,7 @@
 	reagent_forging = TRUE
 	say("gurgle!") //ReplaceWithBalloonAlertLater
 	color = "#ff5151"
-	name = "reagent forge"
-	desc = "[initial(desc)]<br>It has the ability to imbue forged metals with chemicals!"
+	name = "master forge"
 
 /**
  * Here we give a fail message as well as set the in_use to false
@@ -186,9 +185,7 @@
 		current_sinew = MAX_UPGRADE_SINEW
 		forge_level = FORGE_LEVEL_TWO
 	if(user_smithing_skill >= SKILL_LEVEL_MASTER)
-		current_core = MAX_UPGRADE_REGEN
 		forge_level = FORGE_LEVEL_THREE
-		create_reagent_forge()
 	if(forge_level == previous_level)
 		to_chat(user, "<span class='notice'>[src] was already upgraded by your level of expertise!</span>")
 		return
@@ -260,7 +257,7 @@
 			fail_message(user, "You can't heat [src] to be any hotter!")
 			return
 		to_chat(user, "<span class='warning'>You start to pump [forge_item] into [src]...</span>")
-		while(forge_temperature < 91)
+		while(forge_temperature < (MAX_FORGE_TEMP-9))
 			if(!do_after(user, skill_modifier * forge_item.work_time, target = src))
 				fail_message(user, "You fail billowing [src].")
 				return
@@ -305,7 +302,7 @@
 		if(used_core.inert) //no inert cores allowed
 			fail_message(user, "You cannot use an inert [used_core].")
 			return
-		to_chat(user, "<span class='warning'>You start to sacrifice [used_core] to [src]...</span>")
+		to_chat(user, "<span class='warning'>You begin to sacrifice [used_core] to [src]...</span>")
 		if(!do_after(user, skill_modifier * 3 SECONDS, target = src))
 			fail_message(user, "You fail sacrificing [used_core] to [src].")
 			return
@@ -434,7 +431,7 @@
 			return
 		in_use = TRUE
 		if(!reagent_forging)
-			fail_message(user, "You must enchant [src] to allow reagent imbueing!")
+			fail_message(user, "You can't really do much with [src] at the forge right now...")
 			return
 		var/datum/component/reagent_weapon/weapon_component = attacking_item.GetComponent(/datum/component/reagent_weapon)
 		if(!weapon_component)
@@ -456,8 +453,8 @@
 			fail_message(user, "You failed imbueing [attacking_item]...")
 			return
 		attacking_item.color = mix_color_from_reagents(attacking_item.reagents.reagent_list)
-		to_chat(user, "<span class='notice'>You finish imbueing [attacking_item]...</span>")
-		user.mind.adjust_experience(/datum/skill/smithing, 30) //successfully imbueing will grant great experience!
+		to_chat(user, "<span class='notice'>You finish imbuing [attacking_item]...</span>")
+		user.mind.adjust_experience(/datum/skill/smithing, 30) //successfully imbuing will grant great experience!
 		playsound(src, 'sound/magic/demon_consume.ogg', 50, TRUE)
 		in_use = FALSE
 		return TRUE
@@ -469,7 +466,7 @@
 			return
 		in_use = TRUE
 		if(!reagent_forging)
-			fail_message(user, "You must enchant [src] to allow reagent imbueing!")
+			fail_message(user, "You can't really do much with [src] at the forge right now...")
 			return
 		var/datum/component/reagent_clothing/clothing_component = attacking_item.GetComponent(/datum/component/reagent_clothing)
 		if(!clothing_component)

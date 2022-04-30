@@ -83,6 +83,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FIRE_PROOF
+
 /obj/item/forging/forged_weapon/staff/attack(mob/living/M, mob/living/user, params)
 	. = ..()
 	user.changeNext_move(CLICK_CD_RANGE)
@@ -172,7 +173,7 @@
 			var/fixing_amount = min(max_integrity - obj_integrity, 5)
 			obj_integrity += fixing_amount
 			user.mind.adjust_experience(/datum/skill/smithing, 5) //useful heating means you get some experience
-			to_chat(user, "<span class='notice'>partially repaired!</span>") //ReplaceWithBalloonAlertLater
+			to_chat(user, "<span class='notice'>Partially repaired!</span>") //ReplaceWithBalloonAlertLater
 		return
 	return ..()
 
