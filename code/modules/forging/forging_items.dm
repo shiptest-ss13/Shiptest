@@ -195,11 +195,11 @@
 	icon_state = "coil"
 
 /obj/item/stock_parts/cell/attackby(obj/item/attacking_item, mob/user, params)
-    if(!istype(attacking_item, /obj/item/forging/coil))
-      return ..()
-    var/obj/item/stock_parts/cell/crank/new_crank = new(get_turf(src))
-    new_crank.maxcharge = maxcharge
-    new_crank.charge = charge
-    qdel(attacking_item)
-    qdel(src)
+	if(!istype(attacking_item, /obj/item/forging/coil))
+		return ..()
+	var/obj/item/stock_parts/cell/crank/new_crank = new(get_turf(src))
+	new_crank.maxcharge = maxcharge
+	new_crank.charge = charge
+	qdel(attacking_item)
+	qdel(src)
 	return ..()
