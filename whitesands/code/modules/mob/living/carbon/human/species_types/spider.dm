@@ -42,7 +42,6 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	name = "Rachnid"
 	id = SPECIES_RACHNID
 	sexes = 0
-	say_mod = "chitters"
 	default_color = "00FF00"
 	species_traits = list(LIPS, NOEYESPRITES, NO_UNDERWEAR, MUTCOLORS_PARTSONLY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG

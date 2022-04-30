@@ -172,15 +172,15 @@
 	display_name = "suit, galaxy"
 	path = /obj/item/clothing/under/rank/civilian/lawyer/galaxy
 
-/datum/gear/uniform/suit/white/skirt
+/datum/gear/uniform/suit/white_skirt
 	display_name = "suitskirt, white shirt"
 	path = /obj/item/clothing/under/suit/black/skirt
 
-/datum/gear/uniform/suit/green/skirt
+/datum/gear/uniform/suit/green_skirt
 	display_name = "suitskirt, green"
 	path = /obj/item/clothing/under/rank/command/captain/suit/skirt
 
-/datum/gear/uniform/suit/teal/skirt
+/datum/gear/uniform/suit/teal_skirt
 	display_name = "suitskirt, teal"
 	path = /obj/item/clothing/under/rank/command/head_of_personnel/suit/skirt
 
@@ -243,5 +243,5 @@
 	path = /obj/item/clothing/under/misc/psyche
 
 /datum/gear/uniform/maid
-	display_name = "maid outfit"
-	path = /obj/item/storage/box/maid
+	display_name = "maid dress"
+	path = 	/obj/item/clothing/under/costume/maid

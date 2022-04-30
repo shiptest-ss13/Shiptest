@@ -2,7 +2,6 @@
 	// Reptilian humanoids with scaled skin and tails.
 	name = "\improper Sarathi"
 	id = SPECIES_LIZARD
-	say_mod = "hisses"
 	default_color = "00FF00"
 	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,NO_UNDERWEAR)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE

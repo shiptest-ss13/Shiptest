@@ -6,7 +6,6 @@
 	species_traits = list(MUTCOLORS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_ALWAYS_CLEAN, TRAIT_NOSLIPALL)
 	attack_verb = "slap"
-	say_mod = "slurs"
 	coldmod = 0.5 //snails only come out when its cold and wet
 	burnmod = 2
 	speedmod = 6

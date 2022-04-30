@@ -31,6 +31,15 @@
 	desc = "Designed to help reload large revolvers. These rounds contain a tiny explosive charge that detonates on impact, creating especially deadly wounds."
 	ammo_type = /obj/item/ammo_casing/a4570/explosive
 
+/obj/item/ammo_box/n762_clip
+	name = "ammo holder (7.62x38mmR)"
+	desc = "Designed to help reload Nagant revolvers."
+	icon_state = "n762"
+	ammo_type = /obj/item/ammo_casing/n762
+	max_ammo = 7
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	item_flags = NO_MAT_REDEMPTION
+
 /obj/item/ammo_box/c38
 	name = "speed loader (.38)"
 	desc = "Designed to quickly reload revolvers."
@@ -236,7 +245,7 @@
 
 /obj/item/ammo_box/n762
 	name = "ammo box (7.62x38mmR)"
-	icon_state = "10mmbox"
+	icon_state = "n762box"
 	ammo_type = /obj/item/ammo_casing/n762
 	max_ammo = 14
 
