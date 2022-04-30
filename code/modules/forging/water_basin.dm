@@ -19,7 +19,7 @@
 			return
 		if(search_incomplete?.times_hit >= search_incomplete.average_hits)
 			to_chat(user, "<span class='notice'>You cool down the finished [I].</span>")
-			user.mind.adjust_experience(/datum/skill/smithing, 4) //using the water basin on a ready item gives decent experience. 
+			user.mind.adjust_experience(/datum/skill/smithing, 4) //using the water basin on a ready item gives decent experience.
 			playsound(src, 'sound/misc/hot_hiss.ogg', 50, TRUE)
 			var/obj/item/forging/complete/spawn_item = search_incomplete.spawn_item
 			new spawn_item(get_turf(src))
