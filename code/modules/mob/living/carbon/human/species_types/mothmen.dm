@@ -1,7 +1,6 @@
 /datum/species/moth
 	name = "\improper Mothman"
 	id = SPECIES_MOTH
-	say_mod = "flutters"
 	default_color = "00FF00"
 	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG

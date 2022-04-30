@@ -1,7 +1,6 @@
 /datum/species/plasmaman
 	name = "\improper Plasmaman"
 	id = SPECIES_PLASMAMAN
-	say_mod = "rattles"
 	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma
 	species_traits = list(NOBLOOD,NOTRANSSTING)

@@ -9,7 +9,6 @@
 			to_chat(H, "<span class='notice'>A throwing star has been created in your hand!</span>")
 		else
 			qdel(N)
-		H.throw_mode_on() //So they can quickly throw it.
 
 
 /obj/item/throwing_star/ninja
