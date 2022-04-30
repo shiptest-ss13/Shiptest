@@ -63,9 +63,9 @@
 
 /obj/structure/forge/examine(mob/user)
 	. = ..()
-		. += "<span class='notice'>[src] has [goliath_ore_improvement]/[MAX_UPGRADE_GOLIATH] goliath hides.</span>"
-		. += "<span class='notice'>[src] has [current_sinew]/[MAX_UPGRADE_SINEW] watcher sinews.</span>"
-		. += "<span class='notice'>[src] has [current_core]/[MAX_UPGRADE_REGEN] regenerative cores.</span>"
+	. += "<span class='notice'>[src] has [goliath_ore_improvement]/[MAX_UPGRADE_GOLIATH] goliath hides.</span>"
+	. += "<span class='notice'>[src] has [current_sinew]/[MAX_UPGRADE_SINEW] watcher sinews.</span>"
+	. += "<span class='notice'>[src] has [current_core]/[MAX_UPGRADE_REGEN] regenerative cores.</span>"
 	. += "<span class='notice'><br>[src] is about [forge_temperature] degrees hot and it's going towards [target_temperature] degrees.<br></span>"
 	if(reagent_forging)
 		. += "<span class='warning'>[src] has a red tinge and it seems weirdly... dry?</span>"
