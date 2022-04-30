@@ -42,27 +42,27 @@
 	. += "<span class='notice'>The assembly [welded ? "is firmly <b>welded</b> into place" : "needs to be <i>welded</i> to the floor in order to complete it"].</span>"
 	. += "<span class='notice'>There is a small placard on the assembly[doorname].</span>"
 
-/obj/structure/poddoor_assembly/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/pen))
-		var/t = stripped_input(user, "Enter the name for the assembly.", name, created_name,MAX_NAME_LEN)
-		if(!t || (!in_range(src, usr) && loc != usr) )
+/obj/structure/poddoor_assembly/attackby(obj/item/item_used, mob/user, params)
+	if(istype(item_used, /obj/item/pen))
+		var/new_name = stripped_input(user, "Enter the name for the assembly.", name, created_name,MAX_NAME_LEN)
+		if(!new_name || (!in_range(src, usr) && loc != usr) )
 			return
-		created_name = t
+		created_name = new_name
 
-	else if(W.tool_behaviour == TOOL_WELDER)
-		if(!W.tool_start_check(user, amount=0))
+	else if(item_used.tool_behaviour == TOOL_WELDER)
+		if(!item_used.tool_start_check(user, amount=0))
 			return
 
 		else if(!anchored)
 			user.visible_message("<span class='warning'>[user] cuts apart [src].</span>", \
 								"<span class='notice'>You start to slice apart [src]...</span>")
-			if(W.use_tool(src, user, 40, volume=50))
+			if(item_used.use_tool(src, user, 4 SECONDS, volume=50))
 				to_chat(user, "<span class='notice'>You disassemble [src].</span>")
 				deconstruct(TRUE)
 		else if(!welded)
 			user.visible_message("<span class='warning'>[user] welds [src].</span>", \
 								"<span class='notice'>You start to weld [src] to the floor...</span>")
-			if(W.use_tool(src, user, 40, volume=50))
+			if(item_used.use_tool(src, user, 4 SECONDS, volume=50))
 				if(!anchored || welded)
 					return
 				to_chat(user, "<span class='notice'>You weld [src] to the floor.</span>")
@@ -70,17 +70,17 @@
 		else
 			user.visible_message("<span class='warning'>[user] welds [src].</span>", \
 								"<span class='notice'>You start to weld [src] free from the floor...</span>")
-			if(W.use_tool(src, user, 40, volume=50))
+			if(item_used.use_tool(src, user, 4 SECONDS, volume=50))
 				if(!welded)
 					return
 				to_chat(user, "<span class='notice'>You weld [src] from the floor.</span>")
 				welded = FALSE
 
-	else if(W.tool_behaviour == TOOL_WRENCH)
-		if(!anchored )
-			var/door_check = 1
+	else if(item_used.tool_behaviour == TOOL_WRENCH)
+		if(!anchored)
+			var/door_check = TRUE
 			if(locate(/obj/machinery/door/poddoor) in loc)
-				door_check = 0
+				door_check = FALSE
 				return
 
 			if(door_check)
@@ -90,7 +90,7 @@
 					"<span class='hear'>You hear wrenching.</span>"
 				)
 
-				if(W.use_tool(src, user, 40, volume=100))
+				if(item_used.use_tool(src, user, 4 SECONDS, volume=100))
 					if(anchored)
 						return
 					to_chat(user, "<span class='notice'>You secure [src].</span>")
@@ -104,79 +104,78 @@
 				"<span class='notice'>You start to free [src] from the floor...</span>",
 				"<span class='hear'>You hear wrenching.</span>"
 			)
-			if(W.use_tool(src, user, 40, volume=100))
+			if(item_used.use_tool(src, user, 4 SECONDS, volume=100))
 				if(!anchored)
 					return
 				to_chat(user, "<span class='notice'>You unsecure [src].</span>")
 				name = "airlock assembly"
 				set_anchored(FALSE)
 
-	else if(istype(W, /obj/item/stack/cable_coil) && state == AIRLOCK_ASSEMBLY_NEEDS_WIRES )
-		if(!W.tool_start_check(user, amount=1))
+	else if(istype(item_used, /obj/item/stack/cable_coil) && state == AIRLOCK_ASSEMBLY_NEEDS_WIRES)
+		if(!item_used.tool_start_check(user, amount=1))
 			return
 
 		user.visible_message("<span class='notice'>[user] wires [src].</span>", \
 							"<span class='notice'>You start to wire [src]...</span>")
-		if(W.use_tool(src, user, 40, amount=1))
+		if(item_used.use_tool(src, user, 4 SECONDS, amount=1))
 			if(state != AIRLOCK_ASSEMBLY_NEEDS_WIRES)
 				return
 			state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
 			to_chat(user, "<span class='notice'>You wire [src].</span>")
 
-	else if((W.tool_behaviour == TOOL_WIRECUTTER) && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS )
+	else if((item_used.tool_behaviour == TOOL_WIRECUTTER) && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 		user.visible_message("<span class='notice'>[user] cuts the wires from [src].</span>", \
 							"<span class='notice'>You start to cut the wires from [src]...</span>")
 
-		if(W.use_tool(src, user, 40, volume=100))
+		if(item_used.use_tool(src, user, 4 SECONDS, volume=100))
 			if(state != AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 				return
 			to_chat(user, "<span class='notice'>You cut the wires from the [src].</span>")
 			new/obj/item/stack/cable_coil(get_turf(user), 1)
 			state = AIRLOCK_ASSEMBLY_NEEDS_WIRES
 
-	else if(istype(W, /obj/item/electronics/airlock) && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS )
-		W.play_tool_sound(src, 100)
+	else if(istype(item_used, /obj/item/electronics/airlock) && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
+		item_used.play_tool_sound(src, 100)
 		user.visible_message("<span class='notice'>[user] installs the electronics into [src].</span>", \
 							"<span class='notice'>You start to install electronics into [src]...</span>")
-		if(do_after(user, 40, target = src))
-			if( state != AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS )
+		if(do_after(user, 4 SECONDS, target = src))
+			if( state != AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 				return
-			if(!user.transferItemToLoc(W, src))
+			if(!user.transferItemToLoc(item_used, src))
 				return
 
 			to_chat(user, "<span class='notice'>You install the electronics.</span>")
 			state = AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER
-			electronics = W
+			electronics = item_used
 
-	else if((W.tool_behaviour == TOOL_CROWBAR) && state == AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER )
+	else if((item_used.tool_behaviour == TOOL_CROWBAR) && state == AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
 		user.visible_message("<span class='notice'>[user] removes the electronics from [src].</span>", \
 							"<span class='notice'>You start to remove electronics from [src]...</span>")
 
-		if(W.use_tool(src, user, 40, volume=100))
+		if(item_used.use_tool(src, user, 4 SECONDS, volume=100))
 			if(state != AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
 				return
 			to_chat(user, "<span class='notice'>You remove the electronics.</span>")
 			state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
-			var/obj/item/electronics/airlock/ae
+			var/obj/item/electronics/airlock/airlock_electronics
 			if (!electronics)
-				ae = new/obj/item/electronics/airlock( loc )
+				airlock_electronics = new /obj/item/electronics/airlock(loc)
 			else
-				ae = electronics
+				airlock_electronics = electronics
 				electronics = null
-				ae.forceMove(src.loc)
+				airlock_electronics.forceMove(loc)
 
-	else if((W.tool_behaviour == TOOL_SCREWDRIVER) && state == AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER && welded )
+	else if((item_used.tool_behaviour == TOOL_SCREWDRIVER) && state == AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER && welded)
 		user.visible_message(
 			"<span class='notice'>[user] finishes [src].</span>",
 			"<span class='notice'>You start finishing [src]...</span>"
 		)
-		if(W.use_tool(src, user, 40, volume=100))
+		if(item_used.use_tool(src, user, 4 SECONDS, volume=100))
 			if(!welded)
 				return
 			if(loc && state == AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
 				to_chat(user, "<span class='notice'>You finish [src].</span>")
-				var/obj/machinery/door/poddoor/door
-				door = new poddoor_type(loc)
+				var/obj/machinery/door/poddoor/door = new poddoor_type(loc)
 				door.setDir(dir)
 				if(created_name)
 					door.name = created_name
