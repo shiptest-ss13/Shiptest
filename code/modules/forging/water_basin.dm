@@ -13,12 +13,12 @@
 	if(istype(I, /obj/item/forging/tongs))
 		var/obj/item/forging/incomplete/search_incomplete = locate(/obj/item/forging/incomplete) in I.contents
 		if(search_incomplete?.times_hit < search_incomplete.average_hits)
-			to_chat(user, "<span class='warning'>You cool down [src] but it's not ready yet!/span>")
+			to_chat(user, "<span class='warning'>You cool down [I] but it's not ready yet!/<span>")
 			COOLDOWN_RESET(search_incomplete, heating_remainder)
 			playsound(src, 'sound/misc/hot_hiss.ogg', 50, TRUE)
 			return
 		if(search_incomplete?.times_hit >= search_incomplete.average_hits)
-			to_chat(user, "<span class='notice'>You cool down the finished [src].</span>")
+			to_chat(user, "<span class='notice'>You cool down the finished [I].</span>")
 			user.mind.adjust_experience(/datum/skill/smithing, 4) //using the water basin on a ready item gives decent experience.
 			playsound(src, 'sound/misc/hot_hiss.ogg', 50, TRUE)
 			var/obj/item/forging/complete/spawn_item = search_incomplete.spawn_item
