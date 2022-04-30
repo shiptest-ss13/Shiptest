@@ -123,7 +123,7 @@
 			state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
 			to_chat(user, "<span class='notice'>You wire [src].</span>")
 
-	else if((item_used.tool_behaviour == TOOL_WIRECUTTER) && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
+	else if(item_used.tool_behaviour == TOOL_WIRECUTTER && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 		user.visible_message("<span class='notice'>[user] cuts the wires from [src].</span>", \
 							"<span class='notice'>You start to cut the wires from [src]...</span>")
 
