@@ -56,7 +56,7 @@
 	COOLDOWN_START(src, imbue_cooldown, 3 SECONDS)
 	for(var/create_reagent in imbued_reagent)
 		applying_container.reagents.add_reagent(create_reagent, 0.5)
-		applying_container.reagents.trans_to(target = cloth_wearer, amount = 0.5, methods = INJECT)
+		applying_container.reagents.trans_to(target = cloth_wearer, amount = 0.5, method = INJECT)
 
 //the component that is attached to weapons that allows them to be imbued
 //ONLY USE THIS FOR WEAPONS

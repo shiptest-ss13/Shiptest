@@ -62,7 +62,6 @@
 		. += "<span class='notice'>Held Item: [contents[1]]</span>"
 
 /obj/structure/forging_workbench/proc/update_appearance(updates)
-	. = ..()
 	icon_state = "crafting_bench_[length(contents) ? "full" : "empty"]"
 
 //when picking a design or clearing a design
