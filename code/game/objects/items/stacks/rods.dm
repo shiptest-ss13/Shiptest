@@ -71,7 +71,14 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 			R.use(2)
 			if (!R && replace)
 				user.put_in_hands(new_item)
-
+	if(istype(W, /obj/item/forging/tongs))
+		var/obj/searchObj = locate(/obj) in W.contents
+		if(searchObj)
+			to_chat(user, "<span class='warning'>The tongs are already holding something!</span>")
+			return
+		forceMove(W)
+		W.icon_state = "tong_full"
+		return
 	else if(istype(W, /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/S = W
 		if(amount != 1)

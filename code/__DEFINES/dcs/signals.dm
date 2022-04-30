@@ -477,6 +477,8 @@
 #define COMSIG_ITEM_AFTERATTACK "item_afterattack" //from base of obj/item/afterattack(): (atom/target, mob/user, params)
 #define COMSIG_ITEM_ATTACK_QDELETED "item_attack_qdeleted" //from base of obj/item/attack_qdeleted(): (atom/target, mob/user, params)
 #define COMSIG_ITEM_EQUIPPED "item_equip" //from base of obj/item/equipped(): (/mob/equipper, slot)
+#define COMSIG_ITEM_PRE_UNEQUIP "item_pre_unequip"
+	#define COMPONENT_ITEM_BLOCK_UNEQUIP (1<<0)
 #define COMSIG_ITEM_DROPPED "item_drop" //from base of obj/item/dropped(): (mob/user)
 #define COMSIG_ITEM_PICKUP "item_pickup" //from base of obj/item/pickup(): (/mob/taker)
 #define COMSIG_ITEM_ATTACK_ZONE "item_attack_zone" //from base of mob/living/carbon/attacked_by(): (mob/living/carbon/target, mob/living/user, hit_zone)

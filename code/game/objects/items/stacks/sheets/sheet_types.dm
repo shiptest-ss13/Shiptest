@@ -99,7 +99,10 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("voting box", /obj/structure/votebox, 15, time = 50), \
 	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/metal, 3), \
 	new/datum/stack_recipe("pestle", /obj/item/pestle, 1, time = 50), \
-	new/datum/stack_recipe("hygienebot assembly", /obj/item/bot_assembly/hygienebot, 2, time = 50)
+	new/datum/stack_recipe("hygienebot assembly", /obj/item/bot_assembly/hygienebot, 2, time = 50), \
+	null, \
+	new/datum/stack_recipe("anvil", /obj/structure/anvil, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("forge", /obj/structure/forge, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE)
 ))
 
 /obj/item/stack/sheet/metal
@@ -231,6 +234,8 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("loom", /obj/structure/loom, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar, 3), \
 	new/datum/stack_recipe("firebrand", /obj/item/match/firebrand, 2, time = 100), \
+	new/datum/stack_recipe("water basin", /obj/structure/water_basin, 5, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("forging workbench", /obj/structure/forging_workbench, 5, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe_list("pews", list(
 		new /datum/stack_recipe("pew (middle)", /obj/structure/chair/pew, 3, one_per_turf = TRUE, on_floor = TRUE),
