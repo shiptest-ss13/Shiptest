@@ -39,10 +39,7 @@
 			. += "<span class='notice'>The maintenance panel is <b>wired</b>, but the circuit slot is <i>empty</i>.</span>"
 		if(AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
 			. += "<span class='notice'>The circuit is <b>connected loosely</b> to its slot.</span>"
-	if(welded)
-		. += "<span class='notice'>The assembly is firmly <i>welded</i> into place.</span>"
-	else
-		. += "<span class='notice'>The assembly needs to be <i>welded</i> to the floor in order to complete it.</span>"
+	. += "<span class='notice'>The assembly [welded ? "is firmly <b>welded</b> into place" : "needs to be <i>welded</i> to the floor in order to complete it"].</span>"
 	. += "<span class='notice'>There is a small placard on the assembly[doorname].</span>"
 
 /obj/structure/poddoor_assembly/attackby(obj/item/W, mob/user, params)

@@ -18,6 +18,54 @@
 	assemblytype = /obj/structure/poddoor_assembly
 	var/open_sound = 'sound/machines/blastdoor.ogg'
 	var/close_sound = 'sound/machines/blastdoor.ogg'
+	var/ertblast = FALSE //If this is true the blast door cannot be deconstructed
+
+/obj/machinery/door/poddoor/attackby(obj/item/W, mob/user, params)
+	. = ..()
+	if(ertblast && W.tool_behaviour == TOOL_SCREWDRIVER) // This makes it so ERT members cannot cheese by opening their blast doors.
+		to_chat(user, "<span class='warning'>This shutter has a different kind of screw, you cannot unscrew the panel open.</span>")
+		return
+
+	if(W.tool_behaviour == TOOL_SCREWDRIVER)
+		if(density)
+			to_chat(user, "<span class='warning'>You need to open [src] to access the maintenance panel!</span>")
+			return
+		else if(default_deconstruction_screwdriver(user, icon_state, icon_state, W))
+			to_chat(user, "<span class='notice'>You [panel_open ? "open" : "close"] the maintenance hatch of [src].</span>")
+			return TRUE
+
+	if(panel_open)
+		if(W.tool_behaviour == TOOL_MULTITOOL)
+			var/change_id = input("Set [src]'s ID. It must be a number between 1 and 100.", "ID", id) as num|null
+			if(change_id)
+				id = clamp(round(change_id, 1), 1, 100)
+				to_chat(user, "<span class='notice'>You change the ID to [id].</span>")
+
+		if(W.tool_behaviour == TOOL_CROWBAR)
+			to_chat(user, "<span class='notice'>You start to remove the airlock electronics.</span>")
+			if(!(machine_stat & NOPOWER))
+				electrocute_mob(user, get_area(src), src, 1, TRUE) //fuck this fella
+			if(W.use_tool(src, user, 100, volume=50))
+				deconstruct(TRUE)
+
+/obj/machinery/door/poddoor/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>The maintenance panel is [panel_open ? "opened" : "closed"].</span>"
+	if(panel_open)
+		. += "<span class='notice'>The <b>airlock electronics</b> are exposed and could be <i>pried out</i>."
+
+/obj/machinery/door/poddoor/deconstruct(disassembled = TRUE, mob/user)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		var/obj/structure/poddoor_assembly/A
+		A = new assemblytype(loc)
+		A.set_anchored(TRUE)
+		A.state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
+		A.created_name = name
+		A.update_name()
+		A.update_icon()
+		A.welded = TRUE
+	qdel(src)
+
 /obj/machinery/door/poddoor/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[REF(port)][id]"
 
@@ -30,11 +78,13 @@
 	name = "hardened blast door"
 	desc = "A heavy duty blast door that only opens for dire emergencies."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	ertblast = TRUE
 
 //special poddoors that open when emergency shuttle docks at centcom
 /obj/machinery/door/poddoor/shuttledock
 	var/checkdir = 4	//door won't open if turf in this dir is `turftype`
 	var/turftype = /turf/open/space
+	ertblast = TRUE
 
 /obj/machinery/door/poddoor/shuttledock/proc/check()
 	var/turf/T = get_step(src, checkdir)
