@@ -96,3 +96,18 @@
 	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
 	icon_state = "unnamed_crystal"
 	grind_results = list(/datum/reagent/crystal_reagent = 4)
+
+/obj/item/strange_crystal/attackby(obj/item/item, mob/user, params)
+	. = ..()
+	if(!istype(item ,/obj/item/kitchen/knife))
+		return
+	playsound(loc, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start breaking the [src] up into shards...")
+	if(!do_after(user, 10, src))
+		return
+	if(!src)
+		return
+	to_chat(user, "<span class='notice'>You finish cutting the [src]")
+	var/location = get_turf(src)
+	new /obj/item/garnish/crystal(location)
+	qdel(src)

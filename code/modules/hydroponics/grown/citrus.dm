@@ -33,6 +33,20 @@
 	filling_color = "#00FF00"
 	juice_results = list(/datum/reagent/consumable/limejuice = 0)
 
+/obj/item/reagent_containers/food/snacks/grown/citrus/lime/attackby(obj/item/item, mob/user, params)
+	if(!istype(item ,/obj/item/kitchen/knife) && INTENT_HARM)
+		return ..()
+	playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start cutting the [src] up into slices...")
+	if(!do_after(user, 10, src))
+		return ..()
+	if(!src)
+		return ..()
+	to_chat(user, "<span class='notice'>You finish cutting the [src]")
+	var/location = get_turf(src)
+	new /obj/item/garnish/lime(location)
+	qdel(src)
+
 // Orange
 /obj/item/seeds/orange
 	name = "pack of orange seeds"

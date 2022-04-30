@@ -142,3 +142,18 @@
 
 		unset_mutability(/datum/plant_gene/reagent, PLANT_GENE_EXTRACTABLE)
 		unset_mutability(/datum/plant_gene/trait/plant_type/crystal, PLANT_GENE_EXTRACTABLE)
+
+/obj/item/seeds/lavaland/whitesands/puce/attackby(obj/item/item, mob/user, params)
+	. = ..()
+	if(!istype(item ,/obj/item/kitchen/knife))
+		return
+	playsound(loc, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start breaking the [src] up into shards...")
+	if(!do_after(user, 10, src))
+		return
+	if(!src)
+		return
+	to_chat(user, "<span class='notice'>You finish cutting the [src]")
+	var/location = get_turf(src)
+	new /obj/item/garnish/puce(location)
+	qdel(src)
