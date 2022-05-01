@@ -151,9 +151,7 @@
 	to_chat(user, "<span class='notice'>You start breaking the [src] up into shards...")
 	if(!do_after(user, 10, src))
 		return
-	if(!src)
-		return
-	to_chat(user, "<span class='notice'>You finish cutting the [src]")
+	to_chat(user, "<span class='notice'>You finish breaking the [src]")
 	var/location = get_turf(src)
 	new /obj/item/garnish/puce(location)
 	qdel(src)

@@ -781,8 +781,6 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 	to_chat(user, "<span class='notice'>You start cutting the insulation off of [src]...")
 	if(!do_after(user, 10, src))
 		return
-	if(!src)
-		return
 	to_chat(user, "<span class='notice'>You finish cutting [src].")
 	var/location = get_turf(src)
 	new /obj/item/garnish/wire(location)

@@ -40,9 +40,7 @@
 	to_chat(user, "<span class='notice'>You start cutting the [src] up into slices...")
 	if(!do_after(user, 10, src))
 		return ..()
-	if(!src)
-		return ..()
-	to_chat(user, "<span class='notice'>You finish cutting the [src]")
+	to_chat(user, "<span class='notice'>You finish cutting [src].")
 	var/location = get_turf(src)
 	new /obj/item/garnish/lime(location)
 	qdel(src)
@@ -75,6 +73,18 @@
 	juice_results = list(/datum/reagent/consumable/orangejuice = 0)
 	distill_reagent = /datum/reagent/consumable/ethanol/triple_sec
 
+/obj/item/reagent_containers/food/snacks/grown/citrus/orange/attackby(obj/item/item, mob/user, params)
+	if(!istype(item ,/obj/item/kitchen/knife) && INTENT_HARM)
+		return ..()
+	playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start cutting the [src] up into slices...")
+	if(!do_after(user, 10, src))
+		return ..()
+	to_chat(user, "<span class='notice'>You finish cutting [src].")
+	var/location = get_turf(src)
+	new /obj/item/garnish/orange(location)
+	qdel(src)
+
 // Lemon
 /obj/item/seeds/lemon
 	name = "pack of lemon seeds"
@@ -100,6 +110,18 @@
 	icon_state = "lemon"
 	filling_color = "#FFD700"
 	juice_results = list(/datum/reagent/consumable/lemonjuice = 0)
+
+/obj/item/reagent_containers/food/snacks/grown/citrus/lemon/attackby(obj/item/item, mob/user, params)
+	if(!istype(item ,/obj/item/kitchen/knife) && INTENT_HARM)
+		return ..()
+	playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start cutting the [src] up into slices...")
+	if(!do_after(user, 10, src))
+		return ..()
+	to_chat(user, "<span class='notice'>You finish cutting [src].")
+	var/location = get_turf(src)
+	new /obj/item/garnish/lemon(location)
+	qdel(src)
 
 // Combustible lemon
 /obj/item/seeds/firelemon //combustible lemon is too long so firelemon
