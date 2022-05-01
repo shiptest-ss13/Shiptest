@@ -65,6 +65,13 @@
 
 // Check if an item has access to this object
 /obj/proc/check_access(obj/item/I)
+	if ( req_ship_access )
+		var/obj/item/card/id/id = I?.GetID()
+		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+
+		if ( ship?.unique_ship_access && !( id?.has_ship_access( ship ) ) )
+			return FALSE
+
 	return check_access_list(I ? I.GetAccess() : null)
 
 /obj/proc/check_access_list(list/access_list)

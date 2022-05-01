@@ -222,6 +222,11 @@ SUBSYSTEM_DEF(shuttle)
 		if(port.is_in_shuttle_bounds(A))
 			return port
 
+/datum/controller/subsystem/shuttle/proc/get_ship( atom/A )
+	var/obj/docking_port/mobile/port = get_containing_shuttle( A )
+	if ( port?.current_ship )
+		return port.current_ship
+
 /datum/controller/subsystem/shuttle/proc/get_containing_docks(atom/A)
 	. = list()
 	for(var/obj/docking_port/port as anything in stationary)

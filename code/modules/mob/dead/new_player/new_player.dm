@@ -283,8 +283,8 @@
 
 	SSjob.AssignRole(src, job, 1)
 
-	var/mob/living/character = create_character(TRUE)	//creates the human and transfers vars and mind
-	var/equip = job.EquipRank(character)
+	var/mob/living/carbon/human/character = create_character(TRUE)	//creates the human and transfers vars and mind
+	var/equip = job.EquipRank(character, ship)
 	if(isliving(equip))	//Borgs get borged in the equip, so we need to make sure we handle the new mob.
 		character = equip
 
