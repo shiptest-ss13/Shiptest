@@ -174,7 +174,7 @@ export const NtosCardContent = (props, context) => {
               </Flex>
             </Section>
           )}
-          {( tab === 3 && req_ship_access === 1 ) && (
+          {(tab === 3 && req_ship_access === 1) && (
             <Section
               title={"Unique Ship Access: " + (ship_has_unique_access?"Enabled":"Disabled")}
               buttons={(
