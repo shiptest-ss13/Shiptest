@@ -9,6 +9,7 @@
 	can_charge = FALSE
 	max_charges = 100 //100, 50, 50, 34 (max charge distribution by 25%ths)
 	var/variable_charges = TRUE
+	var/wrest_chance = 0.82644628 //For use in prob(), about a 1 in 121 chance
 
 /obj/item/gun/magic/wand/Initialize()
 	if(prob(75) && variable_charges) //25% chance of listed max charges, 50% chance of 1/2 max charges, 25% chance of 1/3 max charges
@@ -31,9 +32,11 @@
 	..()
 
 /obj/item/gun/magic/wand/afterattack(atom/target, mob/living/user)
+	var/wrested = FALSE
 	if(!charges)
-		shoot_with_empty_chamber(user)
-		return
+		wrested = shoot_with_empty_chamber(user)
+		if(!wrested)
+			return
 	if(target == user)
 		if(no_den_usage)
 			var/area/A = get_area(user)
@@ -45,8 +48,19 @@
 		zap_self(user)
 	else
 		. = ..()
+	if(wrested)
+		to_chat(user,"<span class='danger'>[src] overloads and disintegrates.</span>")
+		qdel(src)
+		return
 	update_icon()
 
+/obj/item/gun/magic/wand/shoot_with_empty_chamber(mob/living/user)
+	if(prob(wrest_chance))
+		to_chat(user,"<span class='danger'>You manage to activate [src] one last time</span>")
+		charges++
+		recharge_newshot()
+		return TRUE
+	return ..()
 
 /obj/item/gun/magic/wand/proc/zap_self(mob/living/user)
 	user.visible_message("<span class='danger'>[user] zaps [user.p_them()]self with [src].</span>")
