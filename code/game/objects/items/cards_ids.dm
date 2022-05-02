@@ -641,6 +641,9 @@ update_label()
 	access = get_all_centcom_access()
 	. = ..()
 
+/obj/item/card/id/centcom/has_ship_access( var/datum/overmap/ship/controlled/ship )
+	return TRUE
+
 /obj/item/card/id/ert
 	name = "\improper CentCom ID"
 	id_type_name = "\improper CentCom ID"
