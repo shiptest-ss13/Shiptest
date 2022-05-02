@@ -77,58 +77,68 @@
 //for each layer a garnish can be on, if there is a garnish in that layers index, apply a mutable appearance of its type and our rim size
 /obj/item/reagent_containers/food/drinks/modglass/update_overlays()
 	. = ..()
-	for(var/x in 1 to GARNISH_MAX)
+	var/rimtype = garnishes["1"]
+	if(rimtype)
+		var/mutable_appearance/rimbottom = mutable_appearance('icons/obj/food/modglass_garnishes.dmi', "[rimtype]-[rim]")
+		. += rimbottom
+	for(var/x in 2 to GARNISH_MAX)
 		var/type = garnishes["[x]"]
 		if(!type)
-			return
+			break
 		var/mutable_appearance/garnish = mutable_appearance('icons/obj/food/modglass_garnishes.dmi', "[type]-[rim]")
 		. += garnish
+	if(rimtype)
+		var/mutable_appearance/rimtop = mutable_appearance('icons/obj/food/modglass_garnishes.dmi', "[rimtype]-[rim]-top")
+		. += rimtop
+
 
 
 
 //garnishes, an item that if used on a modglass, will apply its garnish_state to it
 
 //rim garnishes, these go on the bottom
+//sprites for rim garnishes must be split into two halves, one with normal naming, the other with -top appended to it
+//this will allow it to layer over things inside the glass
 /obj/item/garnish
 	name = "garnish"
 	desc = "you should not see this"
-	icon = 'icons/obj/food/modglass_garnishes.dmi'
-	icon_state = "rim-m"
+	icon = 'icons/obj/food/modglass_garnishes_items.dmi'
+	icon_state = "rim"
 	var/garnish_state = "rim"
 	var/garnish_layer = GARNISH_RIM
 
 /obj/item/garnish/salt
 	name = "salt garnish"
 	desc = "Harvested from the tears of the saltiest assistant."
-	icon_state = "rim-m"
+	icon_state = "rim"
 	garnish_state = "rim"
 	garnish_layer = GARNISH_RIM
 
 /obj/item/garnish/ash
 	name = "ash garnish"
 	desc = "But why would you do this though."
-	icon_state = "drim-m"
+	icon_state = "drim"
 	garnish_state = "drim"
 	garnish_layer = GARNISH_RIM
 
 /obj/item/garnish/puce
 	name = "puce garnish"
 	desc = "Get some puce in your drink."
-	icon_state = "puce-m"
+	icon_state = "puce"
 	garnish_state = "puce"
 	garnish_layer = GARNISH_RIM
 
 /obj/item/garnish/crystal
 	name = "strange crystal garnish"
 	desc = "I'm sure nothing could possibly go wrong."
-	icon_state = "crystal-m"
+	icon_state = "crystal"
 	garnish_state = "crystal"
 	garnish_layer = GARNISH_RIM
 
 /obj/item/garnish/wire
 	name = "stripped wire"
 	desc = "This seems like a perfectly normal thing to put on your drinks."
-	icon_state = "wire-m"
+	icon_state = "wire"
 	garnish_state = "wire"
 	garnish_layer = GARNISH_RIM
 
@@ -136,21 +146,21 @@
 /obj/item/garnish/lime
 	name = "lime wedge"
 	desc = "A classic topping for your drink."
-	icon_state = "lime-m"
+	icon_state = "lime"
 	garnish_state = "lime"
 	garnish_layer = GARNISH_WEDGE
 
 /obj/item/garnish/lemon
 	name = "lemon wedge"
 	desc = "A classic topping for your drink."
-	icon_state = "lemon-m"
+	icon_state = "lemon"
 	garnish_state = "lemon"
 	garnish_layer = GARNISH_WEDGE
 
 /obj/item/garnish/orange
 	name = "orange wedge"
 	desc = "A classic topping for your drink."
-	icon_state = "orange-m"
+	icon_state = "orange"
 	garnish_state = "orange"
 	garnish_layer = GARNISH_WEDGE
 
@@ -158,6 +168,6 @@
 /obj/item/garnish/olives
 	name = "skewered olives"
 	desc = "This would look good in a martini."
-	icon_state = "olives-m"
+	icon_state = "olives"
 	garnish_state = "olives"
 	garnish_layer = GARNISH_SKEWER
