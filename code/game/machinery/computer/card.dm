@@ -260,6 +260,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		var/target_owner = (inserted_modify_id && inserted_modify_id.registered_name) ? html_encode(inserted_modify_id.registered_name) : "--------"
 		var/target_rank = (inserted_modify_id && inserted_modify_id.assignment) ? html_encode(inserted_modify_id.assignment) : "Unassigned"
 		var/target_age = (inserted_modify_id && inserted_modify_id.registered_age) ? html_encode(inserted_modify_id.registered_age) : "--------"
+		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+		var/target_ship_access = ( inserted_modify_id && inserted_modify_id.has_ship_access( ship ) ) ? TRUE : FALSE
 
 		if(!authenticated)
 			header += {"<br><i>Please insert the cards into the slots</i><br>
@@ -271,6 +273,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				Confirm Identity: <a href='?src=[REF(src)];choice=inserted_scan_id'>Remove [scan_name]</a><br>
 				<a href='?src=[REF(src)];choice=mode;mode_target=1'>Access Crew Manifest</a><br>
 				[!target_dept ? "<a href='?src=[REF(src)];choice=mode;mode_target=2'>Job Management</a><br>" : ""]
+				Unique Ship Access: [ship.unique_ship_access?"Enabled":"Disabled"] <a href='?src=[REF(src)];choice=toggle_unique_ship_access'>[ship.unique_ship_access?"Disable":"Enable"]</a><br>
 				<a href='?src=[REF(src)];choice=logout'>Log Out</a></div>"}
 
 		header += "<hr>"
@@ -309,6 +312,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					<b>registered age:</b> <input type='number' id='namefield' name='setage' value='[target_age]' style='width:50px; background-color:white;' onchange='markRed()'>
 					<input type='submit' value='Submit' onclick='markGreen()'>
 					</form>
+					<b>has ship access: [target_ship_access?"granted":"denied"]</b> <a href='?src=[REF(src)];choice=toggle_id_ship_access'>[target_ship_access?"Deny":"Grant"]</a>
 					<b>Assignment:</b> "}
 
 				jobs += "<span id='alljobsslot'><a href='#' onclick='showAll()'>[target_rank]</a></span>" //CHECK THIS
@@ -445,6 +449,21 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						if(access_allowed == 1)
 							inserted_modify_id.access += access_type
 						playsound(src, "terminal_type", 50, FALSE)
+		if ( "toggle_id_ship_access" )
+			if (authenticated == 2)
+				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+				if ( inserted_modify_id.has_ship_access( ship ) )
+					inserted_modify_id.remove_ship_access( ship )
+				else
+					inserted_modify_id.add_ship_access( ship )
+				playsound(src, "terminal_type", 50, FALSE)
+
+		if ( "toggle_unique_ship_access" )
+			if (authenticated == 2)
+				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+				ship.unique_ship_access = !ship.unique_ship_access
+				playsound(src, "terminal_type", 50, FALSE)
+
 		if ("assign")
 			if (authenticated == 2)
 				var/t1 = href_list["assign_target"]
