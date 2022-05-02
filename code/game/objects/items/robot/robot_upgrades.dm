@@ -615,6 +615,37 @@
 	var/mob/living/silicon/robot/Cyborg = usr
 	GLOB.crewmonitor.show(Cyborg,Cyborg)
 
+/obj/item/borg/upgrade/ship_access_chip
+	name = "silicon ship access chip"
+	desc = "A module that grants cyborgs access to the ship this was printed from."
+	icon_state = "card_mod"
+	var/datum/overmap/ship/controlled/ship
+
+/obj/item/borg/upgrade/ship_access_chip/examine( mob/user )
+	. = ..()
+	. += "The chip has access for [ship.name] installed."
+
+/obj/item/borg/upgrade/ship_access_chip/action(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if(.)
+
+		var/obj/item/borg/upgrade/ship_access_chip/chip = locate() in R.module
+		if(chip)
+			to_chat(user, "<span class='warning'>This unit already has this ship's access installed!</span>")
+			return FALSE
+
+		chip = new(R.module)
+		R.module.basic_modules += chip
+		R.module.add_module(chip, FALSE, TRUE)
+		R.add_ship_access( ship )
+
+/obj/item/borg/upgrade/ship_access_chip/deactivate(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if (.)
+		var/obj/item/borg/upgrade/ship_access_chip/chip = locate() in R.module
+		if (chip)
+			R.module.remove_module(chip, TRUE)
+		R.remove_ship_access( ship )
 
 /obj/item/borg/upgrade/transform
 	name = "borg module picker (Standard)"

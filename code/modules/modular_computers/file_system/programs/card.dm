@@ -28,6 +28,8 @@
 	//For some reason everything was exploding if this was static.
 	var/list/sub_managers
 
+	var/cooldown = 0
+
 /datum/computer_file/program/card_mod/New(obj/item/modular_computer/comp)
 	. = ..()
 	sub_managers = list(
@@ -251,15 +253,28 @@
 			if(!computer || !authenticated || !computer.req_ship_access)
 				return
 			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
-			ship.unique_ship_access = TRUE
+			ship?.unique_ship_access = TRUE
 			playsound(computer, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			return TRUE
 		if ( "PRG_disableuniqueaccess" )
 			if(!computer || !authenticated || !computer.req_ship_access)
 				return
 			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
-			ship.unique_ship_access = FALSE
+			ship?.unique_ship_access = FALSE
 			playsound(computer, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
+			return TRUE
+		if ( "PRG_printsiliconaccess" )
+			if(!computer || !authenticated || !computer.req_ship_access)
+				return
+			if ( cooldown > world.time )
+				computer.say("Printer unavailable. Please allow a short time before attempting to print.")
+				return
+			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
+			if ( ship )
+				var/obj/item/borg/upgrade/ship_access_chip/chip = new( get_turf( computer ) )
+				chip.ship = ship
+				cooldown = world.time + 10 SECONDS
+			playsound(computer, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			return TRUE
 		if("PRG_grantall")
 			if(!computer || !authenticated || minor)

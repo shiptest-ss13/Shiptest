@@ -175,15 +175,27 @@ export const NtosCardContent = (props, context) => {
             </Section>
           )}
           {(tab === 3 && req_ship_access === 1) && (
-            <Section
-              title={"Unique Ship Access: " + (ship_has_unique_access?"Enabled":"Disabled")}
-              buttons={(
-                <Button
-                  icon={ship_has_unique_access?"lock-open":"lock"}
-                  content={ship_has_unique_access?"Disable":"Enable"}
-                  color={ship_has_unique_access?"bad":"good"}
-                  onClick={() => act(ship_has_unique_access?'PRG_disableuniqueaccess':'PRG_enableuniqueaccess')} />
-              )} />
+            <>
+              <Section
+                title={"Unique Ship Access: " + (ship_has_unique_access?"Enabled":"Disabled")}
+                buttons={(
+                  <Button
+                    icon={ship_has_unique_access?"lock-open":"lock"}
+                    content={ship_has_unique_access?"Disable":"Enable"}
+                    color={ship_has_unique_access?"bad":"good"}
+                    onClick={() => act(ship_has_unique_access?'PRG_disableuniqueaccess':'PRG_enableuniqueaccess')} />
+                )} />
+              <Section
+                title="Print Silicon Access Chip"
+                buttons={(
+                  <Button
+                    icon="microchip"
+                    content="Print"
+                    color="good"
+                    onClick={() => act("PRG_printsiliconaccess")}
+                  />
+                )} />
+            </>
           )}
         </Box>
       )}

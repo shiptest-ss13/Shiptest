@@ -7,7 +7,10 @@
 	if(issilicon(M))
 		if(ispAI(M))
 			return FALSE
-		return TRUE	//AI can do whatever it wants
+		// return TRUE	//AI can do whatever it wants
+		if ( check_ship_ai_access( M ) )
+			// No, AI can't do whatever it wants anymore :)
+			return TRUE
 	if(isAdminGhostAI(M))
 		//Access can't stop the abuse
 		return TRUE
@@ -63,6 +66,14 @@
 		for(var/b in text2access(req_one_access_txt))
 			req_one_access += b
 
+// Call this before using req_ship_access directly
+/obj/proc/gen_ship_access( datum/overmap/ship/controlled/ship )
+	if ( !req_ship_access )
+		return TRUE
+
+	if ( !( ship?.unique_ship_access ) )
+		return TRUE
+
 // Check if an item has access to this object
 /obj/proc/check_access(obj/item/I)
 	if ( !check_ship_access( I ) )
@@ -97,15 +108,22 @@
 	return check_access_list(data.passkey)
 
 /obj/proc/check_ship_access( obj/item/I )
-	if ( !req_ship_access )
-		return TRUE
-
 	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
-	if ( !( ship?.unique_ship_access ) )
+	if ( gen_ship_access( ship ) )
 		return TRUE
 
 	var/obj/item/card/id/id = I?.GetID()
 	if ( id?.has_ship_access( ship ) )
+		return TRUE
+
+	return FALSE
+
+/obj/proc/check_ship_ai_access( mob/living/silicon/robot )
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+	if ( gen_ship_access( ship ) )
+		return TRUE
+
+	if ( robot.has_ship_access( ship ) )
 		return TRUE
 
 	return FALSE

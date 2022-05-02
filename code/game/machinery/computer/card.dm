@@ -274,6 +274,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				<a href='?src=[REF(src)];choice=mode;mode_target=1'>Access Crew Manifest</a><br>
 				[!target_dept ? "<a href='?src=[REF(src)];choice=mode;mode_target=2'>Job Management</a><br>" : ""]
 				Unique Ship Access: [ship.unique_ship_access?"Enabled":"Disabled"] <a href='?src=[REF(src)];choice=toggle_unique_ship_access'>[ship.unique_ship_access?"Disable":"Enable"]</a><br>
+				Print Silicon Access Chip <a href='?src=[REF(src)];choice=print_silicon_access_chip'>Print</a></div>"
 				<a href='?src=[REF(src)];choice=logout'>Log Out</a></div>"}
 
 		header += "<hr>"
@@ -462,6 +463,12 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			if (authenticated == 2)
 				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
 				ship.unique_ship_access = !ship.unique_ship_access
+				playsound(src, "terminal_type", 50, FALSE)
+
+		if ( "print_silicon_access_chip" )
+			if ( authenticated == 2 )
+				var/obj/item/borg/upgrade/ship_access_chip/chip = new( get_turf( src ) )
+				chip.ship = SSshuttle.get_ship( src )
 				playsound(src, "terminal_type", 50, FALSE)
 
 		if ("assign")

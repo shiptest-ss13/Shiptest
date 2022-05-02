@@ -439,7 +439,7 @@
 	return FALSE
 
 /obj/machinery/door/airlock/proc/canAIControl(mob/user)
-	return ((aiControlDisabled != AI_WIRE_DISABLED) && !isAllPowerCut())
+	return ((aiControlDisabled != AI_WIRE_DISABLED) && !isAllPowerCut() && check_ship_ai_access(user))
 
 /obj/machinery/door/airlock/proc/canAIHack()
 	return ((aiControlDisabled==AI_WIRE_DISABLED) && (!hackProof) && (!isAllPowerCut()));
@@ -1581,6 +1581,7 @@
 		return
 
 	if(!user_allowed(usr))
+		to_chat(usr, "<span class='danger'>Access denied.</span>")
 		return
 	switch(action)
 		if("disrupt-main")
