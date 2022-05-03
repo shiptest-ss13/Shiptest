@@ -34,18 +34,7 @@
 	slice_path = /obj/item/garnish/orange
 	slices_num = 3
 	juice_results = list(/datum/reagent/consumable/limejuice = 0)
-/*
-/obj/item/reagent_containers/food/snacks/grown/citrus/lime/attackby(obj/item/item, mob/user, params)
-	if(!istype(item, /obj/item/kitchen/knife) && (user.a_intent != INTENT_HARM))
-		return ..()
-	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start cutting the [src] up into slices...</span>")
-	if(!do_after(user, 1 SECONDS, src))
-		return ..()
-	to_chat(user, "<span class='notice'>You finish cutting [src].</span>")
-	new /obj/item/garnish/lime(get_turf(src))
-	qdel(src)
-*/
+
 // Orange
 /obj/item/seeds/orange
 	name = "pack of orange seeds"
@@ -75,18 +64,7 @@
 	slices_num = 3
 	juice_results = list(/datum/reagent/consumable/orangejuice = 0)
 	distill_reagent = /datum/reagent/consumable/ethanol/triple_sec
-/*
-/obj/item/reagent_containers/food/snacks/grown/citrus/orange/attackby(obj/item/item, mob/user, params)
-	if(!istype(item, /obj/item/kitchen/knife) && (user.a_intent != INTENT_HARM))
-		return ..()
-	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start cutting [src] up into slices...</span>")
-	if(!do_after(user, 1 SECONDS, src))
-		return ..()
-	to_chat(user, "<span class='notice'>You finish cutting [src].</span>")
-	new /obj/item/garnish/orange(get_turf(src))
-	qdel(src)
-*/
+
 // Lemon
 /obj/item/seeds/lemon
 	name = "pack of lemon seeds"
@@ -115,17 +93,6 @@
 	slices_num = 3
 	juice_results = list(/datum/reagent/consumable/lemonjuice = 0)
 
-/*/obj/item/reagent_containers/food/snacks/grown/citrus/lemon/attackby(obj/item/item, mob/user, params)
-	if(!istype(item, /obj/item/kitchen/knife) && (user.a_intent != INTENT_HARM))
-		return ..()
-	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start cutting [src] up into slices...</span>")
-	if(!do_after(user, 1 SECONDS, src))
-		return ..()
-	to_chat(user, "<span class='notice'>You finish cutting [src].</span>")
-	new /obj/item/garnish/lemon(get_turf(src))
-	qdel(src)
-*/
 // Combustible lemon
 /obj/item/seeds/firelemon //combustible lemon is too long so firelemon
 	name = "pack of combustible lemon seeds"
