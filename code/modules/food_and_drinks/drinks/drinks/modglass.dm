@@ -67,9 +67,7 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	if(.)
 		return
 	for(var/variant in 1 to variants)
-		glass_skins += "[rim]glass-[variant]-"
-	for(var/name in glass_skins)
-		var/name_string = name
+		var/name_string = "[rim]glass-[variant]-"
 		glass_skins[name_string] = icon('icons/obj/food/modglass.dmi', "[name_string]")
 	return GLOB.glass_variants[rim] = glass_skins
 
