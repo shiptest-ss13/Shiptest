@@ -9,16 +9,16 @@
 	var/obj/item/card/id/stored_card
 	var/obj/item/card/id/stored_card2
 
-/obj/item/computer_hardware/card_slot/Exited(atom/A, atom/newloc)
-	if(!(A == stored_card || A == stored_card2))
+/obj/item/computer_hardware/card_slot/Exited(atom/ejected, atom/newloc)
+	if(!(ejected == stored_card || ejected == stored_card2))
 		return ..()
 	if(!holder)
 		return ..()
 
 	if(holder.active_program)
-		holder.active_program.event_idremoved(FALSE)
+		holder.active_program.event_idremoved( background = FALSE )
 	for(var/datum/computer_file/program/computer_program as anything in holder.idle_threads)
-		computer_program.event_idremoved(TRUE)
+		computer_program.event_idremoved( background = TRUE )
 
 	holder.update_slot_icon()
 
