@@ -70,6 +70,15 @@
 	item_state = "blueshift"
 	custom_premium_price = 750
 
+/obj/item/clothing/suit/armor/vest/duster
+	name = "black duster"
+	desc = "A long, intimidating black coat. This one is reinforced and ideal for protecting its wearer from rain, sun, dust, and bullets."
+	icon_state = "duster_sec"
+	item_state = "duster_sec"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+
 /obj/item/clothing/suit/armor/hos
 	name = "armored greatcoat"
 	desc = "A greatcoat enhanced with a special alloy for some extra protection and style for those with a commanding presence."
@@ -147,6 +156,12 @@
 	name = "colonial minutemen general coat"
 	desc = "A very fancy coat used by generals of the Colonial Minutemen."
 	icon_state = "minuteman_general"
+
+/obj/item/clothing/suit/armor/vest/capcarapace/duster
+	name = "captain's duster"
+	desc = "A long, commanding coat worn over a surprisingly sleek set of armor and decorated with gold embroidery. Ideal for protecting its wearer from rain, sun, dust, mutineers, pirates, bears, hordes of angry legions, and so on."
+	icon_state = "duster_captain"
+	item_state = "duster_captain"
 
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"

@@ -180,9 +180,9 @@
 	docking = TRUE
 
 	var/datum/docking_ticket/ticket = dock_target.pre_docked(src)
-	if(!ticket)
+	if(!ticket || ticket.docking_error)
 		docking = FALSE
-		return
+		return ticket?.docking_error || "Unknown docking error!"
 	if(!pre_dock(dock_target, ticket))
 		docking = FALSE
 		return
@@ -204,7 +204,7 @@
   */
 /datum/overmap/proc/pre_docked(datum/overmap/dock_requester)
 	RETURN_TYPE(/datum/docking_ticket)
-	return
+	return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 
 /**
   * Called at the very start of a [datum/overmap/proc/Dock] call. If it returns FALSE, the docking will be aborted.

@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/mimic
 	name = "crate"
 	desc = "A rectangular steel crate."
-	icon = 'goon/icons/obj/crates.dmi'
+	icon = 'icons/obj/crates.dmi'
 	icon_state = "crate"
 	icon_living = "crate"
 

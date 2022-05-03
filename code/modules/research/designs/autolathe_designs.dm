@@ -1123,3 +1123,11 @@
 	materials = list(/datum/material/plastic = 500)
 	build_path = /obj/item/stack/tape/industrial
 	category = list("initial", "Misc")
+
+/datum/design/control
+	name = "Blast Door Controller"
+	id = "blast"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	build_path = /obj/item/assembly/control
+	category = list("initial","Misc")

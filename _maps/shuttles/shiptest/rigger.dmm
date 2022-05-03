@@ -645,7 +645,7 @@
 /obj/item/clothing/shoes/sneakers/white,
 /obj/item/clothing/under/rank/medical/doctor,
 /obj/item/clothing/suit/toggle/labcoat,
-/obj/item/borg/sight/hud/med,
+/obj/item/clothing/glasses/hud/health,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "iU" = (
@@ -888,8 +888,8 @@
 	},
 /obj/item/storage/backpack/captain,
 /obj/item/clothing/shoes/cowboy/white,
-/obj/item/clothing/under/suit/white,
-/obj/item/clothing/suit/armor/hos/trenchcoat,
+/obj/item/clothing/under/rank/command/captain,
+/obj/item/clothing/suit/armor/vest/capcarapace/duster,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/head/caphat/cowboy,
 /obj/item/gun/ballistic/automatic/pistol/m1911,
@@ -906,6 +906,8 @@
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
+/obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m45,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "lH" = (
@@ -1014,13 +1016,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/item/gun/ballistic/revolver/detective,
 /obj/structure/closet/secure_closet/wall{
 	icon_state = "sec_wall";
 	name = "firearms locker";
 	pixel_y = 28;
 	req_access_txt = "1"
 	},
+/obj/item/gun/ballistic/automatic/pistol/m1911,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "mJ" = (
@@ -2346,9 +2348,10 @@
 	},
 /obj/item/storage/backpack/security,
 /obj/item/clothing/gloves/fingerless,
-/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/under/rank/security/officer/blueshirt,
 /obj/item/clothing/glasses/hud/security/sunglasses,
+/obj/item/clothing/suit/armor/vest/duster,
 /obj/item/clothing/head/cowboy/sec,
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
@@ -3781,9 +3784,10 @@
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/under/rank/security/detective/grey,
 /obj/item/clothing/accessory/waistcoat,
+/obj/item/clothing/suit/jacket/leather/duster/command,
 /obj/item/clothing/glasses/sunglasses,
+/obj/item/gun/ballistic/revolver/detective,
 /obj/item/clothing/head/HoS/cowboy,
-/obj/item/gun/energy/e_gun/mini,
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
 	icon_state = "solgov_wall";
@@ -3791,6 +3795,8 @@
 	pixel_x = -28;
 	req_access_txt = "57"
 	},
+/obj/item/ammo_box/c38,
+/obj/item/ammo_box/c38,
 /turf/open/floor/carpet/blue,
 /area/ship/engineering/communications)
 "TC" = (
@@ -4068,16 +4074,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/item/ammo_box/c38,
-/obj/item/stock_parts/cell/gun/mini,
-/obj/item/ammo_box/magazine/m45,
-/obj/item/ammo_box/magazine/m45,
 /obj/structure/closet/secure_closet/wall{
 	icon_state = "sec_wall";
 	name = "ammunition locker";
 	pixel_y = 28;
 	req_access_txt = "1"
 	},
+/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "WH" = (

@@ -68,3 +68,19 @@
 /obj/item/disk/design_disk/ammo_c10mm/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/c10mm()
+
+/obj/item/disk/design_disk/ammo_n762
+	name = "Design Disk - 7.62x38mmR Ammo"
+	desc = "A design disk containing the pattern for an ammo holder of 7.62x38mmR ammo, used in Nagant revolvers. It's a wonder anybody still makes these."
+
+/obj/item/disk/design_disk/ammo_n762/Initialize()
+	. = ..()
+	blueprints[1] = new /datum/design/ammo/n762()
+
+/datum/design/ammo/n762
+	name = "Ammo Holder (7.62x38mmR)"
+	id = "n762"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 20000)
+	build_path = /obj/item/ammo_box/n762
+	category = list("Imported")

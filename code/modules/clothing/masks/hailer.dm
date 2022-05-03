@@ -200,6 +200,14 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	strip_delay = 60
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
 
+/obj/item/clothing/mask/gas/sechailer/minutemen
+	name = "combat balaclava"
+	desc = "A surprisingly advanced balaclava equipped with internals tubing and a hailer voicebox. Widely used by frontier militias."
+	icon_state = "rus_balaclava"
+	item_state = "rus_balaclava"
+	strip_delay = 60
+	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
+
 #undef PHRASE_COOLDOWN
 #undef OVERUSE_COOLDOWN
 #undef AGGR_GOOD_COP
