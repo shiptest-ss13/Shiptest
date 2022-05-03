@@ -34,9 +34,9 @@
 	if(iscarbon(living_mob))
 		var/mob/living/carbon/carbon = living_mob
 		if(HAS_TRAIT(carbon, TRAIT_NOBREATH))
-			continue
+			return
 		if(carbon.is_mouth_covered())
-			continue
+			return
 		carbon.adjustOxyLoss(1.5)
 		if(prob(10))
 			carbon.emote("cough")
