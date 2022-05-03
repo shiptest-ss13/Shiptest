@@ -775,15 +775,14 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 
 /obj/item/stack/cable_coil/attackby(obj/item/item, mob/user, params)
 	. = ..()
-	if(!item.tool_behaviour == TOOL_WIRECUTTER)
+	if(item.tool_behaviour != TOOL_WIRECUTTER)
 		return
-	playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start cutting the insulation off of [src]...")
-	if(!do_after(user, 10, src))
+	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start cutting the insulation off of [src]...</span>")
+	if(!do_after(user, 1 SECONDS, src))
 		return
-	to_chat(user, "<span class='notice'>You finish cutting [src].")
-	var/location = get_turf(src)
-	new /obj/item/garnish/wire(location)
+	to_chat(user, "<span class='notice'>You finish cutting [src].</span>")
+	new /obj/item/garnish/wire(get_turf(src))
 	use(1)
 
 //////////////////////////////

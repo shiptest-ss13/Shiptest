@@ -1,4 +1,14 @@
-//garnish layer defines
+//rim size defines, this is passed into the string for the icon_state of both glasses and garnishes
+#define RIM_SMALL "s"
+#define RIM_MEDIUM "m"
+#define RIM_LARGE "l"
+
+//glass variant defines, if you're adding new glasses make sure to update these
+#define SMALL_VARIANTS 6
+#define MEDIUM_VARIANTS 13
+#define LARGE_VARIANTS 5
+
+//garnish layer defines, higher numbers go above low ones
 #define GARNISH_RIM 1
 #define GARNISH_WEDGE 2
 #define GARNISH_SKEWER 3
@@ -22,8 +32,10 @@
 	drop_sound = 'sound/items/handling/drinkglass_drop.ogg'
 	pickup_sound =  'sound/items/handling/drinkglass_pickup.ogg'
 	custom_price = 25
-	var/rim = "m"
-	var/variants = 13
+	//tim defines the size of rim the glass has, used to decide which skins are available, and which garnish sprites to use
+	var/rim = RIM_MEDIUM
+	//stores the number of variations this glass sprite has to select from
+	var/variants = MEDIUM_VARIANTS
 	var/list/glass_skins = list()
 	var/list/garnishes = list()
 
@@ -32,18 +44,18 @@
 	icon_state = "sglass-1-"
 	custom_materials = list(/datum/material/glass=100, /datum/material/silver=100)
 	volume = 25
-	rim = "s"
-	variants = 6
+	rim = RIM_SMALL
+	variants = SMALL_VARIANTS
 
 /obj/item/reagent_containers/food/drinks/modglass/large
 	name = "large malleable glass"
 	icon_state = "lglass-1-"
-	rim = "l"
-	variants = 5
+	rim = RIM_LARGE
+	variants = LARGE_VARIANTS
 
 /obj/item/reagent_containers/food/drinks/modglass/Initialize()
-	for(var/x in 1 to variants)
-		glass_skins["[rim]glass-[x]-"] += icon('icons/obj/food/modglass.dmi', "[rim]glass-[x]-")
+	for(var/variant in 1 to variants)
+		glass_skins["[rim]glass-[variant]-"] = icon('icons/obj/food/modglass.dmi', "[rim]glass-[variant]-")
 	return ..()
 
 
@@ -81,8 +93,8 @@
 	if(rimtype)
 		var/mutable_appearance/rimbottom = mutable_appearance('icons/obj/food/modglass_garnishes.dmi', "[rimtype]-[rim]")
 		. += rimbottom
-	for(var/x in 2 to GARNISH_MAX)
-		var/type = garnishes["[x]"]
+	for(var/i in 2 to GARNISH_MAX)
+		var/type = garnishes["[i]"]
 		if(!type)
 			break
 		var/mutable_appearance/garnish = mutable_appearance('icons/obj/food/modglass_garnishes.dmi', "[type]-[rim]")
@@ -95,10 +107,6 @@
 
 
 //garnishes, an item that if used on a modglass, will apply its garnish_state to it
-
-//rim garnishes, these go on the bottom
-//sprites for rim garnishes must be split into two halves, one with normal naming, the other with -top appended to it
-//this will allow it to layer over things inside the glass
 /obj/item/garnish
 	name = "garnish"
 	desc = "you should not see this"
@@ -107,40 +115,36 @@
 	var/garnish_state = "rim"
 	var/garnish_layer = GARNISH_RIM
 
+//rim garnishes, these go on the bottom
+//sprites for rim garnishes must be split into two halves, one with normal naming, the other with -top appended to it
+//this will allow it to layer over things inside the glass
 /obj/item/garnish/salt
 	name = "salt garnish"
 	desc = "Harvested from the tears of the saltiest assistant."
-	icon_state = "rim"
-	garnish_state = "rim"
-	garnish_layer = GARNISH_RIM
 
 /obj/item/garnish/ash
 	name = "ash garnish"
 	desc = "But why would you do this though."
 	icon_state = "drim"
 	garnish_state = "drim"
-	garnish_layer = GARNISH_RIM
 
 /obj/item/garnish/puce
 	name = "puce garnish"
 	desc = "Get some puce in your drink."
 	icon_state = "puce"
 	garnish_state = "puce"
-	garnish_layer = GARNISH_RIM
 
 /obj/item/garnish/crystal
 	name = "strange crystal garnish"
 	desc = "I'm sure nothing could possibly go wrong."
 	icon_state = "crystal"
 	garnish_state = "crystal"
-	garnish_layer = GARNISH_RIM
 
 /obj/item/garnish/wire
 	name = "stripped wire"
 	desc = "This seems like a perfectly normal thing to put on your drinks."
 	icon_state = "wire"
 	garnish_state = "wire"
-	garnish_layer = GARNISH_RIM
 
 //wedge garnishes, these go above the rim, but below other objects
 /obj/item/garnish/lime

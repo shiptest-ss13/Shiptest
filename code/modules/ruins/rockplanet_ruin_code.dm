@@ -99,15 +99,12 @@
 
 /obj/item/strange_crystal/attackby(obj/item/item, mob/user, params)
 	. = ..()
-	if(!istype(item ,/obj/item/kitchen/knife))
+	if(!istype(item, /obj/item/kitchen/knife))
 		return
-	playsound(loc, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start breaking the [src] up into shards...")
-	if(!do_after(user, 10, src))
+	playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start breaking [src] up into shards...</span>")
+	if(!do_after(user, 1 SECONDS, src))
 		return
-	if(!src)
-		return
-	to_chat(user, "<span class='notice'>You finish cutting the [src]")
-	var/location = get_turf(src)
-	new /obj/item/garnish/crystal(location)
+	to_chat(user, "<span class='notice'>You finish cutting [src]</span>")
+	new /obj/item/garnish/crystal(get_turf(src))
 	qdel(src)

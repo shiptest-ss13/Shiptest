@@ -34,15 +34,14 @@
 	juice_results = list(/datum/reagent/consumable/limejuice = 0)
 
 /obj/item/reagent_containers/food/snacks/grown/citrus/lime/attackby(obj/item/item, mob/user, params)
-	if(!istype(item ,/obj/item/kitchen/knife) && INTENT_HARM)
+	if(!istype(item ,/obj/item/kitchen/knife) && (user.a_intent == INTENT_HARM))
 		return ..()
-	playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start cutting the [src] up into slices...")
-	if(!do_after(user, 10, src))
+	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start cutting the [src] up into slices...</span>")
+	if(!do_after(user, 1 SECONDS, src))
 		return ..()
-	to_chat(user, "<span class='notice'>You finish cutting [src].")
-	var/location = get_turf(src)
-	new /obj/item/garnish/lime(location)
+	to_chat(user, "<span class='notice'>You finish cutting [src].</span>")
+	new /obj/item/garnish/lime(get_turf(src))
 	qdel(src)
 
 // Orange
@@ -74,15 +73,14 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/triple_sec
 
 /obj/item/reagent_containers/food/snacks/grown/citrus/orange/attackby(obj/item/item, mob/user, params)
-	if(!istype(item ,/obj/item/kitchen/knife) && INTENT_HARM)
+	if(!istype(item ,/obj/item/kitchen/knife) && (user.a_intent == INTENT_HARM))
 		return ..()
-	playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start cutting the [src] up into slices...")
-	if(!do_after(user, 10, src))
+	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start cutting [src] up into slices...</span>")
+	if(!do_after(user, 1 SECONDS, src))
 		return ..()
-	to_chat(user, "<span class='notice'>You finish cutting [src].")
-	var/location = get_turf(src)
-	new /obj/item/garnish/orange(location)
+	to_chat(user, "<span class='notice'>You finish cutting [src].</span>")
+	new /obj/item/garnish/orange(get_turf(src))
 	qdel(src)
 
 // Lemon
@@ -112,15 +110,14 @@
 	juice_results = list(/datum/reagent/consumable/lemonjuice = 0)
 
 /obj/item/reagent_containers/food/snacks/grown/citrus/lemon/attackby(obj/item/item, mob/user, params)
-	if(!istype(item ,/obj/item/kitchen/knife) && INTENT_HARM)
+	if(!istype(item ,/obj/item/kitchen/knife) && (user.a_intent == INTENT_HARM))
 		return ..()
-	playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start cutting the [src] up into slices...")
-	if(!do_after(user, 10, src))
+	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start cutting [src] up into slices...</span>")
+	if(!do_after(user, 1 SECONDS, src))
 		return ..()
-	to_chat(user, "<span class='notice'>You finish cutting [src].")
-	var/location = get_turf(src)
-	new /obj/item/garnish/lemon(location)
+	to_chat(user, "<span class='notice'>You finish cutting [src].</span>")
+	new /obj/item/garnish/lemon(get_turf(src))
 	qdel(src)
 
 // Combustible lemon
