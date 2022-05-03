@@ -12,20 +12,23 @@
 /obj/item/computer_hardware/card_slot/Exited(atom/A, atom/newloc)
 	if(!(A == stored_card || A == stored_card2))
 		return ..()
-	if(holder)
-		if(holder.active_program)
-			holder.active_program.event_idremoved(0)
-		for(var/p in holder.idle_threads)
-			var/datum/computer_file/program/computer_program = p
-			computer_program.event_idremoved(1)
+	if(!holder)
+		return ..()
 
-		holder.update_slot_icon()
+	if(holder.active_program)
+		holder.active_program.event_idremoved(FALSE)
+	for(var/datum/computer_file/program/computer_program as anything in holder.idle_threads)
+		computer_program.event_idremoved(TRUE)
 
-		if(!ishuman(holder.loc))
-			return ..()
-		var/mob/living/carbon/human/human_wearer = holder.loc
-		if(human_wearer.wear_id == holder)
-			human_wearer.sec_hud_set_ID()
+	holder.update_slot_icon()
+
+	if(!ishuman(holder.loc))
+		return ..()
+
+	var/mob/living/carbon/human/human_wearer = holder.loc
+	if(human_wearer.wear_id == holder)
+		human_wearer.sec_hud_set_ID()
+
 	return ..()
 
 /obj/item/computer_hardware/card_slot/Destroy()
