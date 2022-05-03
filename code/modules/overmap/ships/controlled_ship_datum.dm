@@ -40,6 +40,11 @@
 	///Shipwide bank account used for cargo consoles and bounty payouts.
 	var/datum/bank_account/ship/ship_account
 
+	/// List of currently-accepted missions.
+	var/list/datum/mission/missions
+	/// The maximum number of currently active missions that a ship may take on.
+	var/max_missions = 2
+
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))

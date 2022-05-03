@@ -118,6 +118,7 @@ SUBSYSTEM_DEF(overmap)
 		spawn_events()
 		spawn_ruin_levels()
 
+	spawn_outpost()
 	spawn_initial_ships()
 
 /**
@@ -170,6 +171,14 @@ SUBSYSTEM_DEF(overmap)
 			if(locate(/datum/overmap) in SSovermap.overmap_container[location["x"]][location["y"]])
 				continue
 			spawn_event_cluster(type, location, chance / 2)
+
+/**
+  * Creates a single outpost somewhere near the center of the system.
+  */
+/datum/controller/subsystem/overmap/proc/spawn_outpost()
+	var/list/S = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
+	new /datum/overmap/outpost(S)
+	return
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
 #ifndef UNIT_TESTS

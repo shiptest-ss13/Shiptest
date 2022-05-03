@@ -1,4 +1,3 @@
-#define MAX_EMAG_ROCKETS 8
 #define BEACON_COST 500
 #define SP_LINKED 1
 #define SP_READY 2
@@ -83,18 +82,6 @@
 			to_chat(user, "<span class='alert'>[src] is already linked to [sb].</span>")
 	..()
 
-/obj/machinery/computer/cargo/express/emag_act(mob/living/user)
-	if(obj_flags & EMAGGED)
-		return
-	if(user)
-		user.visible_message("<span class='warning'>[user] swipes a suspicious card through [src]!</span>",
-		"<span class='notice'>You change the routing protocols, allowing the Supply Pod to land anywhere on the station.</span>")
-	obj_flags |= EMAGGED
-	// This also sets this on the circuit board
-	var/obj/item/circuitboard/computer/cargo/board = circuit
-	board.obj_flags |= EMAGGED
-	packin_up()
-
 /obj/machinery/computer/cargo/express/proc/packin_up() // oh shit, I'm sorry
 	meme_pack_data = list() // sorry for what?
 	for(var/pack in SSshuttle.supply_packs) // our quartermaster taught us not to be ashamed of our supply packs
@@ -106,8 +93,6 @@
 			) // see, my quartermaster taught me a few things too
 		if((P.hidden) || (P.special)) // like, how not to rip the manifest
 			continue// by using someone else's crate
-		if(!(obj_flags & EMAGGED) && P.contraband) // will you show me?
-			continue // i'd be right happy to
 		meme_pack_data[P.group]["packs"] += list(list(
 			"name" = P.name,
 			"cost" = P.cost,
@@ -118,7 +103,7 @@
 /obj/machinery/computer/cargo/express/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "CargoExpress", name)
+		ui = new(user, src, "Communications", name)
 		ui.open()
 		if(!charge_account)
 			reconnect()
@@ -126,6 +111,19 @@
 /obj/machinery/computer/cargo/express/ui_data(mob/user)
 	var/canBeacon = beacon && (isturf(beacon.loc) || ismob(beacon.loc))//is the beacon in a valid location?
 	var/list/data = list()
+
+	var/outpost_docked = FALSE
+	var/area/ship/current_area = get_area(src)
+	var/datum/overmap/ship/controlled/ship
+	if(istype(current_area))
+		ship = current_area.mobile_port.current_ship
+		if(istype(ship.docked_to, /datum/overmap/outpost))
+			outpost_docked = TRUE
+
+	data["onShip"] = !isnull(ship)
+	data["numMissions"] = ship ? LAZYLEN(ship.missions) : 0
+	data["maxMissions"] = ship ? ship.max_missions : 0
+	data["outpostDocked"] = outpost_docked
 	if(charge_account)
 		data["points"] = charge_account.account_balance
 	data["siliconUser"] = user.has_unlimited_silicon_privilege
@@ -145,8 +143,6 @@
 		message = "BEACON ERROR: BEACON MISSING"//beacon was destroyed
 	else if (usingBeacon && !canBeacon)
 		message = "BEACON ERROR: MUST BE EXPOSED"//beacon's loc/user's loc must be a turf
-	if(obj_flags & EMAGGED)
-		message = "(&!#@ERROR: ROUTING_#PROTOCOL MALF(*CT#ON. $UG%ESTE@ ACT#0N: !^/PULS3-%E)ET CIR*)ITB%ARD."
 	data["message"] = message
 	if(!meme_pack_data)
 		packin_up()
@@ -154,6 +150,18 @@
 	data["supplies"] = meme_pack_data
 	if (cooldown > 0)//cooldown used for printing beacons
 		cooldown--
+
+	data["shipMissions"] = list()
+	data["outpostMissions"] = list()
+
+	if(ship)
+		for(var/datum/mission/M as anything in ship.missions)
+			data["shipMissions"] += list(M.get_tgui_info())
+	if(outpost_docked)
+		var/datum/overmap/outpost/out = ship.docked_to
+		for(var/datum/mission/M as anything in out.missions)
+			data["outpostMissions"] += list(M.get_tgui_info())
+
 	return data
 
 /obj/machinery/computer/cargo/express/ui_act(action, params, datum/tgui/ui)
@@ -179,6 +187,12 @@
 				beacon.name = "Supply Pod Beacon #[printed_beacons]"
 
 		if("add")//Generate Supply Order first
+			var/area/ship/current_area = get_area(src)
+			if(!istype(current_area))
+				return
+			// you have to be at an outpost to trade
+			if(!istype(current_area.mobile_port.current_ship.docked_to, /datum/overmap/outpost))
+				return
 			var/id = text2path(params["id"])
 			var/datum/supply_pack/pack = SSshuttle.supply_packs[id]
 			if(!istype(pack))
@@ -199,45 +213,50 @@
 			var/points_to_check
 			if(charge_account)
 				points_to_check = charge_account.account_balance
-			if(!(obj_flags & EMAGGED))
-				if(SO.pack.cost <= points_to_check)
-					var/LZ
-					if (istype(beacon) && usingBeacon)//prioritize beacons over landing in cargobay
-						LZ = get_turf(beacon)
-						beacon.update_status(SP_LAUNCH)
-					else if (!usingBeacon)//find a suitable supplypod landing zone in cargobay
-						if(!landingzone)
-							reconnect()
-						if (!landingzone)
-							WARNING("[src] couldnt find a Ship/Cargo (aka cargobay) area on a ship, and as such it has set the supplypod landingzone to the area it resides in.")
-							landingzone = get_area(src)
-						for(var/turf/open/floor/T in landingzone.contents)//uses default landing zone
-							if(T.is_blocked_turf())
-								continue
-							LAZYADD(empty_turfs, T)
-							CHECK_TICK
-						if(empty_turfs && empty_turfs.len)
-							LZ = pick(empty_turfs)
-					if (SO.pack.cost <= points_to_check && LZ)//we need to call the cost check again because of the CHECK_TICK call
-						charge_account.adjust_money(-SO.pack.cost)
-						new /obj/effect/DPtarget(LZ, podType, SO)
-						. = TRUE
-						update_icon()
-			else
-				if(SO.pack.cost * (0.72*MAX_EMAG_ROCKETS) <= points_to_check) // bulk discount :^)
-					for(var/turf/open/floor/T in landingzone.contents)
+			if(SO.pack.cost <= points_to_check)
+				var/LZ
+				if (istype(beacon) && usingBeacon)//prioritize beacons over landing in cargobay
+					LZ = get_turf(beacon)
+					beacon.update_status(SP_LAUNCH)
+				else if (!usingBeacon)//find a suitable supplypod landing zone in cargobay
+					if(!landingzone)
+						reconnect()
+					if (!landingzone)
+						WARNING("[src] couldnt find a Ship/Cargo (aka cargobay) area on a ship, and as such it has set the supplypod landingzone to the area it resides in.")
+						landingzone = get_area(src)
+					for(var/turf/open/floor/T in landingzone.contents)//uses default landing zone
 						if(T.is_blocked_turf())
 							continue
 						LAZYADD(empty_turfs, T)
 						CHECK_TICK
 					if(empty_turfs && empty_turfs.len)
-						charge_account.adjust_money(-(SO.pack.cost * (0.72*MAX_EMAG_ROCKETS)))
+						LZ = pick(empty_turfs)
+				if (SO.pack.cost <= points_to_check && LZ)//we need to call the cost check again because of the CHECK_TICK call
+					charge_account.adjust_money(-SO.pack.cost)
+					new /obj/effect/DPtarget(LZ, podType, SO)
+					. = TRUE
+					update_icon()
 
-						SO.generateRequisition(get_turf(src))
-						for(var/i in 1 to MAX_EMAG_ROCKETS)
-							var/LZ = pick(empty_turfs)
-							LAZYREMOVE(empty_turfs, LZ)
-							new /obj/effect/DPtarget(LZ, podType, SO)
-							. = TRUE
-							update_icon()
-							CHECK_TICK
+		if("mission-act")
+			var/datum/mission/mission = locate(params["ref"])
+			var/area/ship/current_area = get_area(src)
+			if(!istype(current_area))
+				return
+			var/datum/overmap/ship/controlled/ship = current_area.mobile_port.current_ship
+			if(!istype(ship))
+				return
+			var/datum/overmap/outpost/outpost = ship.docked_to
+			if(!istype(outpost) || mission.source_outpost != outpost) // important to check these to prevent href fuckery
+				return
+			if(LAZYISIN(outpost.missions, mission))
+				LAZYREMOVE(outpost.missions, mission)
+				LAZYADD(ship.missions, mission)
+				mission.accepted(ship)
+				return TRUE
+			else if(LAZYISIN(ship.missions, mission))
+				if(mission.is_complete())
+					mission.turn_in()
+				else
+					mission.give_up()
+				LAZYREMOVE(ship.missions, mission)
+				return TRUE
