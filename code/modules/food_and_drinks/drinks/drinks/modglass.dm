@@ -39,8 +39,9 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	var/rim = RIM_MEDIUM
 	//stores the number of variations this glass sprite has to select from
 	var/variants = MEDIUM_VARIANTS
-	//
+	//a list to be filled with the associative list containing possible skins
 	var/list/glass_skins = list()
+	//a list to be filled with the current garnishes placed on the glass
 	var/list/garnishes = list()
 
 /obj/item/reagent_containers/food/drinks/modglass/small
@@ -60,9 +61,10 @@ GLOBAL_LIST_EMPTY(glass_variants)
 /obj/item/reagent_containers/food/drinks/modglass/Initialize()
 	. = ..()
 	if(variants)
-		glass_skins = glass_variants_list(variants)
+		glass_skins = glass_variants_list()
 
-/obj/item/reagent_containers/food/drinks/modglass/proc/glass_variants_list(var/num_of_variants)
+//steals code from tile_reskinning.dm to cache an associative list containing possible reskins of the glass
+/obj/item/reagent_containers/food/drinks/modglass/proc/glass_variants_list()
 	. = GLOB.glass_variants[rim]
 	if(.)
 		return
@@ -71,7 +73,7 @@ GLOBAL_LIST_EMPTY(glass_variants)
 		glass_skins[name_string] = icon('icons/obj/food/modglass.dmi', "[name_string]")
 	return GLOB.glass_variants[rim] = glass_skins
 
-
+//if this glass can be reskinned, open a radial menu containing the skins, and change the icon_state to whatever is chosen
 /obj/item/reagent_containers/food/drinks/modglass/AltClick(mob/user)
 	if(!glass_skins)
 		return
@@ -100,7 +102,11 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	garnishes = list()
 	update_icon()
 
-//for each layer a garnish can be on, if there is a garnish in that layers index, apply a mutable appearance of its type and our rim size
+/**
+  * for each layer a garnish can be on, if there is a garnish in that layers index, apply a mutable appearance of its type and our rim size
+  * if the garnish is a "rim" garnish, it is instead split into two halves, one drawn below all others,
+  * and one above all others, allowing garnishes to be placed "inside" the glass
+  */
 /obj/item/reagent_containers/food/drinks/modglass/update_overlays()
 	. = ..()
 	var/rimtype = garnishes["1"]
