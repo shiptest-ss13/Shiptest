@@ -33,7 +33,10 @@
 /datum/weather/sandstorm/weather_act(mob/living/living_mob)
 	if(iscarbon(living_mob))
 		var/mob/living/carbon/carbon = living_mob
-		if(!carbon.is_mouth_covered())
-			carbon.adjustOxyLoss(1.5)
-			if(prob(10))
-				carbon.emote("cough")
+		if(HAS_TRAIT(carbon, TRAIT_NOBREATH))
+			continue
+		if(carbon.is_mouth_covered())
+			continue
+		carbon.adjustOxyLoss(1.5)
+		if(prob(10))
+			carbon.emote("cough")
