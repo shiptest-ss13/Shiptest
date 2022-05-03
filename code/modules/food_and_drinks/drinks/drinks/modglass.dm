@@ -84,18 +84,17 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	update_icon()
 
 //if the object is a garnish, with a valid garnish_state, and there isnt already a garnish of the same type, add it to the list at the index of its layer
-/obj/item/reagent_containers/food/drinks/modglass/attackby(obj/item/I, mob/user, params)
-	if(!istype(I, /obj/item/garnish))
+/obj/item/reagent_containers/food/drinks/modglass/attackby(obj/item/garnish/garnish, mob/user, params)
+	if(!istype(garnish))
 		return ..()
-	var/obj/item/garnish/item = I
-	if(!item.garnish_state)
+	if(!garnish.garnish_state)
 		return ..()
-	if(garnishes["[item.garnish_layer]"])
-		to_chat(user, "<span class='notice'>You can't fit [item] on the glass!</span>")
+	if(garnishes["[garnish.garnish_layer]"])
+		to_chat(user, "<span class='notice'>Theres already something on this part of the glass!</span>")
 		return ..()
-	garnishes["[item.garnish_layer]"] = item.garnish_state
+	garnishes["[garnish.garnish_layer]"] = garnish.garnish_state
 	update_icon()
-	qdel(item)
+	qdel(garnish)
 
 //clear garnishes on wash
 /obj/item/reagent_containers/food/drinks/modglass/wash(clean_types)
