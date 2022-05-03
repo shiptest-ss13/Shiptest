@@ -8,11 +8,14 @@
 #define MEDIUM_VARIANTS 13
 #define LARGE_VARIANTS 5
 
-//garnish layer defines, higher numbers go above low ones
+//garnish layer defines, higher numbers go above low ones, add more of these if you want to add new kinds of garnish
 #define GARNISH_RIM 1
 #define GARNISH_WEDGE 2
 #define GARNISH_SKEWER 3
 #define GARNISH_MAX 3
+
+//global list for reskinning
+GLOBAL_LIST_EMPTY(glass_variants)
 
 //glass that can be reskinned via alt-click, and have garnishes added to its rim
 /obj/item/reagent_containers/food/drinks/modglass
@@ -32,10 +35,11 @@
 	drop_sound = 'sound/items/handling/drinkglass_drop.ogg'
 	pickup_sound =  'sound/items/handling/drinkglass_pickup.ogg'
 	custom_price = 25
-	//tim defines the size of rim the glass has, used to decide which skins are available, and which garnish sprites to use
+	//rim defines the size of rim the glass has, used to decide which skins are available, and which garnish sprites to use
 	var/rim = RIM_MEDIUM
 	//stores the number of variations this glass sprite has to select from
 	var/variants = MEDIUM_VARIANTS
+	//
 	var/list/glass_skins = list()
 	var/list/garnishes = list()
 
@@ -54,9 +58,20 @@
 	variants = LARGE_VARIANTS
 
 /obj/item/reagent_containers/food/drinks/modglass/Initialize()
+	. = ..()
+	if(variants)
+		glass_skins = glass_variants_list(variants)
+
+/obj/item/reagent_containers/food/drinks/modglass/proc/glass_variants_list(var/num_of_variants)
+	. = GLOB.glass_variants[rim]
+	if(.)
+		return
 	for(var/variant in 1 to variants)
-		glass_skins["[rim]glass-[variant]-"] = icon('icons/obj/food/modglass.dmi', "[rim]glass-[variant]-")
-	return ..()
+		glass_skins += "[rim]glass-[variant]-"
+	for(var/name in glass_skins)
+		var/name_string = name
+		glass_skins[name_string] = icon('icons/obj/food/modglass.dmi', "[name_string]")
+	return GLOB.glass_variants[rim] = glass_skins
 
 
 /obj/item/reagent_containers/food/drinks/modglass/AltClick(mob/user)
@@ -75,7 +90,8 @@
 	var/obj/item/garnish/item = I
 	if(!item.garnish_state)
 		return ..()
-	if(garnishes.Find(item.garnish_layer))
+	if(garnishes["[item.garnish_layer]"])
+		to_chat(user, "<span class='notice'>You can't fit [item] on the glass!</span>")
 		return ..()
 	garnishes["[item.garnish_layer]"] = item.garnish_state
 	update_icon()
@@ -114,6 +130,11 @@
 	icon_state = "rim"
 	var/garnish_state = "rim"
 	var/garnish_layer = GARNISH_RIM
+
+/obj/item/garnish/Initialize(mapload, amount)
+	. = ..()
+	pixel_x = rand(-3, 3)
+	pixel_y = rand(-3, 3) //randomize a little
 
 //rim garnishes, these go on the bottom
 //sprites for rim garnishes must be split into two halves, one with normal naming, the other with -top appended to it
