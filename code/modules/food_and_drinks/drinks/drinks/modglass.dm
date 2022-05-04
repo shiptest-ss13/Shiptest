@@ -8,11 +8,12 @@
 #define MEDIUM_VARIANTS 13
 #define LARGE_VARIANTS 5
 
-//garnish layer defines, higher numbers go above low ones, add more of these if you want to add new kinds of garnish
+//garnish layer defines, higher numbers go above low ones, add more of these if you manage to get sprites that can fit in a new part of the glass
 #define GARNISH_RIM 1
-#define GARNISH_WEDGE 2
-#define GARNISH_SKEWER 3
-#define GARNISH_MAX 3
+#define GARNISH_CENTER 2
+#define GARNISH_RIGHT 3
+#define GARNISH_LEFT 4
+#define GARNISH_MAX 4
 
 //global list for reskinning
 GLOBAL_LIST_EMPTY(glass_variants)
@@ -114,10 +115,9 @@ GLOBAL_LIST_EMPTY(glass_variants)
 		. += rimbottom
 	for(var/i in 2 to GARNISH_MAX)
 		var/type = garnishes["[i]"]
-		if(!type)
-			break
-		var/mutable_appearance/garnish = mutable_appearance('icons/obj/food/modglass_garnishes.dmi', "[type]-[rim]")
-		. += garnish
+		if(type)
+			var/mutable_appearance/garnish = mutable_appearance('icons/obj/food/modglass_garnishes.dmi', "[type]-[rim]")
+			. += garnish
 	if(rimtype)
 		var/mutable_appearance/rimtop = mutable_appearance('icons/obj/food/modglass_garnishes.dmi', "[rimtype]-[rim]-top")
 		. += rimtop
@@ -170,32 +170,62 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	icon_state = "wire"
 	garnish_state = "wire"
 
-//wedge garnishes, these go above the rim, but below other objects
+//center garnishes, none of these exist yet, but when they do, put them here
+
+//right side garnishes, these go above the rim and center garnishes, but below all others
 /obj/item/garnish/lime
 	name = "lime wedge"
 	desc = "A classic topping for your drink."
 	icon_state = "lime"
 	garnish_state = "lime"
-	garnish_layer = GARNISH_WEDGE
+	garnish_layer = GARNISH_RIGHT
 
 /obj/item/garnish/lemon
 	name = "lemon wedge"
 	desc = "A classic topping for your drink."
 	icon_state = "lemon"
 	garnish_state = "lemon"
-	garnish_layer = GARNISH_WEDGE
+	garnish_layer = GARNISH_RIGHT
 
 /obj/item/garnish/orange
 	name = "orange wedge"
 	desc = "A classic topping for your drink."
 	icon_state = "orange"
 	garnish_state = "orange"
-	garnish_layer = GARNISH_WEDGE
+	garnish_layer = GARNISH_RIGHT
 
-//skewered garnishes, these go above both the rim and wedges
+/obj/item/garnish/cherry
+	name = "bunch of cherries"
+	desc = "A classic topping for your drink."
+	icon_state = "cherry"
+	garnish_state = "cherry"
+	garnish_layer = GARNISH_RIGHT
+
+/obj/item/garnish/umbrellared
+	name = "red drink umbrella"
+	desc = "A cute little umbrella to go in your drink. This one is light red, <i>not</i> pink."
+	icon_state = "umbrellared"
+	garnish_state = "umbrellared"
+	garnish_layer = GARNISH_RIGHT
+
+/obj/item/garnish/umbrellablue
+	name = "blue drink umbrella"
+	desc = "A cute little umbrella to go in your drink. This one is blue."
+	icon_state = "umbrellablue"
+	garnish_state = "umbrellablue"
+	garnish_layer = GARNISH_RIGHT
+
+/obj/item/garnish/umbrellagreen
+	name = "green drink umbrella"
+	desc = "A cute little umbrella to go in your drink. This one is green."
+	icon_state = "umbrellagreen"
+	garnish_state = "umbrellagreen"
+	garnish_layer = GARNISH_RIGHT
+
+//left side garnishes, these go above both the rim, center, and right side
 /obj/item/garnish/olives
 	name = "skewered olives"
 	desc = "This would look good in a martini."
 	icon_state = "olives"
 	garnish_state = "olives"
-	garnish_layer = GARNISH_SKEWER
+	garnish_layer = GARNISH_LEFT
