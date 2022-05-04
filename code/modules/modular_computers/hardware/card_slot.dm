@@ -16,9 +16,9 @@
 		return ..()
 
 	if(holder.active_program)
-		holder.active_program.event_idremoved( background = FALSE )
+		holder.active_program.event_idremoved(background = FALSE)
 	for(var/datum/computer_file/program/computer_program as anything in holder.idle_threads)
-		computer_program.event_idremoved( background = TRUE )
+		computer_program.event_idremoved(background = TRUE)
 
 	holder.update_slot_icon()
 
