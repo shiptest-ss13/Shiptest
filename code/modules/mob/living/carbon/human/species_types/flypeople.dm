@@ -1,7 +1,6 @@
 /datum/species/fly
 	name = "\improper Flyperson"
 	id = SPECIES_FLYPERSON
-	say_mod = "buzzes"
 	species_traits = list(NOEYESPRITES,TRAIT_ANTENNAE)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	mutanttongue = /obj/item/organ/tongue/fly

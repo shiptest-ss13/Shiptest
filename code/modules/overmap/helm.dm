@@ -219,7 +219,7 @@
 					to_chat(usr, "<span class='warning'>Cannot dock due to bluespace jump preperations!</span>")
 					return
 				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects()
-				current_ship.Dock(to_act)
+				say(current_ship.Dock(to_act))
 				return
 			if("toggle_engine")
 				var/obj/machinery/power/shuttle/engine/E = locate(params["engine"]) in current_ship.shuttle_port.engine_list

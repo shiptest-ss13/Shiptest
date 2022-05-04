@@ -15,8 +15,58 @@
 	resistance_flags = FIRE_PROOF
 	damage_deflection = 70
 	poddoor = TRUE
+	assemblytype = /obj/structure/poddoor_assembly
 	var/open_sound = 'sound/machines/blastdoor.ogg'
 	var/close_sound = 'sound/machines/blastdoor.ogg'
+
+/obj/machinery/door/poddoor/attackby(obj/item/W, mob/user, params)
+	. = ..()
+	if((resistance_flags & INDESTRUCTIBLE) && W.tool_behaviour == TOOL_SCREWDRIVER) // This makes it so ERT members cannot cheese by opening their blast doors.
+		to_chat(user, "<span class='warning'>You can't find the panel!</span>")
+		return
+
+	if(W.tool_behaviour == TOOL_SCREWDRIVER)
+		if(density)
+			to_chat(user, "<span class='warning'>You need to open [src] to access the maintenance panel!</span>")
+			return
+		else if(default_deconstruction_screwdriver(user, icon_state, icon_state, W))
+			to_chat(user, "<span class='notice'>You [panel_open ? "open" : "close"] the maintenance hatch of [src].</span>")
+			return TRUE
+
+	if(panel_open && !density)
+		if(W.tool_behaviour == TOOL_MULTITOOL)
+			var/change_id = input("Set [src]'s ID. It must be a number between 1 and 100.", "ID", id) as num|null
+			if(change_id)
+				id = clamp(round(change_id, 1), 1, 100)
+				to_chat(user, "<span class='notice'>You change the ID to [id].</span>")
+
+		if(W.tool_behaviour == TOOL_CROWBAR)
+			to_chat(user, "<span class='notice'>You start to remove the airlock electronics.</span>")
+			if(!(machine_stat & NOPOWER))
+				do_sparks(5, TRUE, src)
+				electrocute_mob(user, get_area(src), src, 1, TRUE) //fuck this fella
+				close()
+			else if(W.use_tool(src, user, 10 SECONDS, volume=50))
+				deconstruct(TRUE)
+
+/obj/machinery/door/poddoor/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>The maintenance panel is [panel_open ? "opened" : "closed"].</span>"
+	if(panel_open)
+		. += "<span class='notice'>The <b>airlock electronics</b> are exposed and could be <i>pried out</i>."
+
+/obj/machinery/door/poddoor/deconstruct(disassembled = TRUE, mob/user)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		var/obj/structure/poddoor_assembly/assembly = new assemblytype(loc)
+		assembly.set_anchored(TRUE)
+		assembly.state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
+		assembly.created_name = name
+		assembly.update_name()
+		assembly.update_icon()
+		assembly.welded = TRUE
+		new /obj/item/electronics/airlock(loc)
+	qdel(src)
+
 /obj/machinery/door/poddoor/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[REF(port)][id]"
 

@@ -449,3 +449,8 @@
 /// Breathing types. Lungs can access either by these or by a string, which will be considered a gas ID.
 #define BREATH_OXY /datum/breathing_class/oxygen
 #define BREATH_PLASMA /datum/breathing_class/plasma
+
+/// Throw modes, defines whether or not to turn off throw mode after
+#define THROW_MODE_DISABLED 0
+#define THROW_MODE_TOGGLE 1
+#define THROW_MODE_HOLD 2

@@ -6,7 +6,7 @@
 	slot = ORGAN_SLOT_TONGUE
 	attack_verb = list("licked", "slobbered", "slapped", "frenched", "tongued")
 	var/list/languages_possible
-	var/say_mod = null
+	var/say_mod = "says"
 	var/taste_sensitivity = 15 // lower is more sensitive.
 	var/modifies_speech = FALSE
 	var/static/list/languages_possible_base = typecacheof(list(
@@ -33,22 +33,32 @@
 
 /obj/item/organ/tongue/Insert(mob/living/carbon/M, special = 0)
 	..()
-	if(say_mod && M.dna && M.dna.species)
-		M.dna.species.say_mod = say_mod
 	if (modifies_speech)
 		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
 	M.UnregisterSignal(M, COMSIG_MOB_SAY)
 
 /obj/item/organ/tongue/Remove(mob/living/carbon/M, special = 0)
 	..()
-	if(say_mod && M.dna && M.dna.species)
-		M.dna.species.say_mod = initial(M.dna.species.say_mod)
 	UnregisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
 	M.RegisterSignal(M, COMSIG_MOB_SAY, /mob/living/carbon/.proc/handle_tongueless_speech)
 
 /obj/item/organ/tongue/could_speak_language(language)
 	return is_type_in_typecache(language, languages_possible)
 
+//Say_mod-Only Tongues
+/obj/item/organ/tongue/golem_base
+	name = "golem tongue"
+	say_mod = "rumbles"
+
+/obj/item/organ/tongue/golem_honk
+	name = "bananium tongue"
+	say_mod = "honks"
+
+/obj/item/organ/tongue/toma
+	name = "mutated tongue"
+	say_mod = "mumbles"
+
+//Other Tongues
 /obj/item/organ/tongue/lizard
 	name = "forked tongue"
 	desc = "A thin and long muscle typically found in reptilian races, apparently moonlights as a nose."
@@ -275,6 +285,7 @@
 
 /obj/item/organ/tongue/snail
 	name = "snailtongue"
+	say_mod = "slurs"
 	modifies_speech = TRUE
 
 /obj/item/organ/tongue/snail/handle_speech(datum/source, list/speech_args)
