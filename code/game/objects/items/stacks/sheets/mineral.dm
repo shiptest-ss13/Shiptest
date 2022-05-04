@@ -251,6 +251,18 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 	. = ..()
 	. += GLOB.gold_recipes
 
+/obj/item/stack/sheet/mineral/gold/attackby(obj/item/item, mob/user, params)
+	. = ..()
+	if(item.tool_behaviour != TOOL_WIRECUTTER)
+		return
+	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start whittling away some of [src]...</span>")
+	if(!do_after(user, 1 SECONDS, src))
+		return
+	to_chat(user, "<span class='notice'>You finish cutting [src].</span>")
+	new /obj/item/garnish/gold(get_turf(src))
+	use(1)
+
 /obj/item/stack/sheet/mineral/gold/fifty
 	amount = 50
 
@@ -290,6 +302,18 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 /obj/item/stack/sheet/mineral/silver/get_main_recipes()
 	. = ..()
 	. += GLOB.silver_recipes
+
+/obj/item/stack/sheet/mineral/silver/attackby(obj/item/item, mob/user, params)
+	. = ..()
+	if(item.tool_behaviour != TOOL_WIRECUTTER)
+		return
+	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start whittling away some of [src]...</span>")
+	if(!do_after(user, 1 SECONDS, src))
+		return
+	to_chat(user, "<span class='notice'>You finish cutting [src].</span>")
+	new /obj/item/garnish/silver(get_turf(src))
+	use(1)
 
 /obj/item/stack/sheet/mineral/silver/fifty
 	amount = 50

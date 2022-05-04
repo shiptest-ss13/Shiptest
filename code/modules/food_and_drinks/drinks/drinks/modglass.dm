@@ -170,6 +170,18 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	icon_state = "wire"
 	garnish_state = "wire"
 
+/obj/item/garnish/gold
+	name = "gold trim"
+	desc = "Give your drinks that first-class flair!"
+	icon_state = "gold"
+	garnish_state = "gold"
+
+/obj/item/garnish/silver
+	name = "silver trim"
+	desc = "Give your drinks that second-class flair!"
+	icon_state = "silver"
+	garnish_state = "silver"
+
 //center garnishes, none of these exist yet, but when they do, put them here
 
 //right side garnishes, these go above the rim and center garnishes, but below all others
