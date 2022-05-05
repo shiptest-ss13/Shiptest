@@ -110,6 +110,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"kepori_body_feathers" = "Plain",
 							"vox_head_quills" = "Plain",
 							"vox_neck_quills" = "Plain",
+							"snail_shell_type" = "Coneshell",
 							"flavor_text" = "",
 							"body_size" = "Normal"
 						)
