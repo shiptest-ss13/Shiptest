@@ -968,11 +968,12 @@
 /obj/machinery/power/apc/proc/can_use(mob/user, loud = 0) //used by attack_hand() and Topic()
 	if(isAdminGhostAI(user))
 		return TRUE
-	if(user.has_unlimited_silicon_privilege && check_ship_ai_access( user ))
+	if(user.has_unlimited_silicon_privilege)
 		var/mob/living/silicon/ai/AI = user
 		var/mob/living/silicon/robot/robot = user
 		if (																				 \
 			src.aidisabled ||														  \
+			!check_ship_ai_access( user ) || \
 			malfhack && istype(malfai) &&										  \
 			(																				\
 				(istype(AI) && (malfai!=AI && malfai != AI.parent)) ||	\
