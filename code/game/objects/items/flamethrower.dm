@@ -208,14 +208,43 @@
 	flamer_proj.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
 	flamer_proj.firer = usr
 	flamer_proj.turf_target = turf_target //assign the turf we are firing at to this
-	flamer_proj.linked_flamethrower = src //link ourselves to the projectille
-	flamer_proj.power = power // give the projectille the beaker power
-	flamer_proj.range = FLAMETHROWER_RANGE
-	flamer_proj.release_amount = release_amount // give our release_amount to the projecitlle
+	//flamer_proj.linked_flamethrower = src //link ourselves to the projectille
+	//flamer_proj.power = power // give the projectille the beaker power
+	flamer_proj.range = get_dist_euclidian(turf_target) FLAMETHROWER_RANGE
+	//flamer_proj.release_amount = release_amount // give our release_amount to the projecitlle
+
+	RegisterSignal(flamer_proj, COMSIG_MOVABLE_MOVED, .proc/handle_flaming)
+	linked_projectile = flamer_proj//pretend this var already exists
+
+	flamer_proj.fire() //off it goes
 
 
-	flamer_proj.fire(Get_Angle(get_turf(src), turf_target)) //off it goes
+/obj/item/flamethrower/proc/handle_flaming(target, release_amount = 8, safety = TRUE)
+	if(!.beaker)
+		return
+	var/turf/location = get_turf(src)
 
+	var/datum/reagents/beaker_reagents = beaker.reagents
+	var/datum/reagents/my_fraction = new()
+
+	beaker_reagents.trans_to(my_fraction, release_amount, no_react = TRUE)
+
+	if(location)
+		location.IgniteTurf(power, flame_color)
+		new /obj/effect/hotspot(location)
+		location.hotspot_expose((power*3) + 380,500)
+		if(turf_target)
+			if(location == turf_target)
+				qdel(src)
+
+	if(beaker)
+		my_fraction.trans_to(beaker_reagents, release_amount, no_react = TRUE)
+	qdel(my_fraction)
+
+/obj/projectile/flamethrower/can_hit_target(atom/target, list/passthrough, direct_target, ignore_loc)
+	if(ismob(target))
+		return FALSE
+	return ..()
 
 #undef REQUIRED_POWER_TO_FIRE_FLAMETHROWER
 #undef FLAMETHROWER_POWER_MULTIPLIER
@@ -283,37 +312,6 @@
 	var/power = 4
 	/// how much do we subtract from the beaker?
 	var/release_amount = 8
-
-
-/obj/projectile/flamethrower/Move()
-	. = ..()
-	if(!linked_flamethrower)
-		return
-	if(!linked_flamethrower.beaker)
-		return
-	var/turf/location = get_turf(src)
-
-	var/datum/reagents/beaker_reagents = linked_flamethrower.beaker.reagents
-	var/datum/reagents/my_fraction = new()
-
-	beaker_reagents.trans_to(my_fraction, release_amount, no_react = TRUE)
-
-	if(location)
-		location.IgniteTurf(power, flame_color)
-		new /obj/effect/hotspot(location)
-		location.hotspot_expose((power*3) + 380,500)
-		if(turf_target)
-			if(location == turf_target)
-				qdel(src)
-
-	if(linked_flamethrower.beaker)
-		my_fraction.trans_to(beaker_reagents, release_amount, no_react = TRUE)
-	qdel(my_fraction)
-
-/obj/projectile/flamethrower/can_hit_target(atom/target, list/passthrough, direct_target, ignore_loc)
-	if(ismob(target))
-		return FALSE
-	return ..()
 
 /obj/projectile/flamethrower/on_hit(atom/target, blocked = FALSE)
 	. = ..()

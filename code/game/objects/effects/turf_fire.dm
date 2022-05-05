@@ -9,6 +9,8 @@
 #define TURF_FIRE_BURN_RATE_BASE 0.12
 #define TURF_FIRE_BURN_RATE_PER_POWER 0.02
 #define TURF_FIRE_BURN_CARBON_DIOXIDE_MULTIPLIER 0.75
+#define TURF_FIRE_BURN_MINIMUM_OXYGEN_REQUIRED 0.5
+#define TURF_FIRE_BURN_PLAY_SOUND_EFFECT_CHANCE 6
 
 #define TURF_FIRE_STATE_SMALL 1
 #define TURF_FIRE_STATE_MEDIUM 2
@@ -70,7 +72,7 @@
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
-	AddElement(/datum/element/connect_loc, src, loc_connections)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 	if(!fire_color)
 		base_icon_state = "red"
@@ -99,7 +101,7 @@
 		return TRUE
 	var/datum/gas_mixture/cached_air = open_turf.air
 	var/oxy = cached_air.get_moles(GAS_O2)
-	if (oxy < 0.5)
+	if (oxy < TURF_FIRE_BURN_MINIMUM_OXYGEN_REQUIRED)
 		return FALSE
 	var/temperature = cached_air.return_temperature()
 	var/old_heat_capacity = cached_air.heat_capacity()
@@ -145,7 +147,7 @@
 	if(interact_with_atmos)
 		if(prob(fire_power))
 			open_turf.burn_tile()
-		if(prob(6))
+		if(prob(TURF_FIRE_BURN_PLAY_SOUND_EFFECT_CHANCE))
 			playsound(open_turf, 'sound/effects/comfyfire.ogg', 40, TRUE)
 		UpdateFireState()
 
@@ -212,6 +214,8 @@
 #undef TURF_FIRE_BURN_RATE_BASE
 #undef TURF_FIRE_BURN_RATE_PER_POWER
 #undef TURF_FIRE_BURN_CARBON_DIOXIDE_MULTIPLIER
+#undef TURF_FIRE_BURN_MINIMUM_OXYGEN_REQUIRED
+#undef TURF_FIRE_BURN_PLAY_SOUND_EFFECT_CHANCE
 
 #undef TURF_FIRE_STATE_SMALL
 #undef TURF_FIRE_STATE_MEDIUM
