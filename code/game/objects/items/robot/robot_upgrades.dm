@@ -617,7 +617,7 @@
 
 /obj/item/borg/upgrade/ship_access_chip
 	name = "silicon ship access chip"
-	desc = "A module that grants cyborgs access to the ship this was printed from."
+	desc = "A module that grants cyborgs and AI access to the ship this was printed from."
 	icon_state = "card_mod"
 	var/datum/overmap/ship/controlled/ship
 
@@ -631,7 +631,7 @@
 
 		var/obj/item/borg/upgrade/ship_access_chip/chip = locate() in R.module
 		if(chip)
-			to_chat(user, "<span class='warning'>This unit already has this ship's access installed!</span>")
+			to_chat(user, "<span class='warning'>[R] already has access to [ship.name]!</span>")
 			return FALSE
 
 		chip = new(R.module)
@@ -646,6 +646,21 @@
 		if (chip)
 			R.module.remove_module(chip, TRUE)
 		R.remove_ship_access( ship )
+
+/obj/item/borg/upgrade/ship_access_chip/afterattack(mob/living/silicon/ai/AI, mob/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+	if(!istype(AI))
+		return
+	if( AI.has_ship_access( ship ) )
+		to_chat(user, "<span class='warning'>[AI] already has access to [ship.name]!</span>")
+		return
+
+	to_chat(AI, "<span class='notice'>[user] has upgraded you with access to [ship.name].</span>")
+	AI.add_ship_access( ship )
+	to_chat(user, "<span class='notice'>You upgrade [AI]. [src] is consumed in the process.</span>")
+	qdel(src)
 
 /obj/item/borg/upgrade/transform
 	name = "borg module picker (Standard)"
