@@ -1,23 +1,22 @@
 /datum/species/snail
-	name = "\improper Snailperson"
+	name = "\improper Snail genetic modification"
 	id = SPECIES_SNAIL
-	offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,4), OFFSET_EARS = list(0,0), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0), OFFSET_ACCESSORY = list(0, 0))
 	default_color = "336600" //vomit green
-	species_traits = list(MUTCOLORS, NO_UNDERWEAR)
+	species_traits = list(MUTCOLORS,HAIR,EYECOLOR,HAIR,FACEHAIR)
 	inherent_traits = list(TRAIT_ALWAYS_CLEAN, TRAIT_NOSLIPALL)
 	attack_verb = "slap"
-	coldmod = 0.5 //snails only come out when its cold and wet
+	coldmod = 0.6 //snails only come out when its cold and wet
 	burnmod = 2
 	speedmod = 6
 	punchdamagehigh = 0.5 //snails are soft and squishy
 	siemens_coeff = 2 //snails are mostly water
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP
-	sexes = FALSE //snails are hermaphrodites
-	var/shell_type = /obj/item/storage/backpack/snail
+	var/shell_type =/obj/item/storage/backpack/duffelbag/snail
+	loreblurb = "Heavey modi"
 
 	mutanteyes = /obj/item/organ/eyes/snail
 	mutanttongue = /obj/item/organ/tongue/snail
-	exotic_blood = /datum/reagent/lube
+	exotic_blood = /datum/reagent/water
 
 	species_chest = /obj/item/bodypart/chest/snail
 	species_head = /obj/item/bodypart/head/snail
@@ -37,31 +36,40 @@
 /datum/species/snail/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
 	var/obj/item/storage/backpack/bag = C.get_item_by_slot(ITEM_SLOT_BACK)
-	if(!istype(bag, /obj/item/storage/backpack/snail))
+	if(!istype(bag, /obj/item/storage/backpack/duffelbag/snail))
 		if(C.dropItemToGround(bag)) //returns TRUE even if its null
-			C.equip_to_slot_or_del(new /obj/item/storage/backpack/snail(C), ITEM_SLOT_BACK)
+			C.equip_to_slot_or_del(new /obj/item/storage/backpack/duffelbag/snail(C), ITEM_SLOT_BACK)
 	C.AddElement(/datum/element/snailcrawl)
 
 /datum/species/snail/on_species_loss(mob/living/carbon/C)
 	. = ..()
 	C.RemoveElement(/datum/element/snailcrawl)
 	var/obj/item/storage/backpack/bag = C.get_item_by_slot(ITEM_SLOT_BACK)
-	if(istype(bag, /obj/item/storage/backpack/snail))
+	if(istype(bag, /obj/item/storage/backpack/duffelbag/snail))
 		bag.emptyStorage()
 		C.temporarilyRemoveItemFromInventory(bag, TRUE)
 		qdel(bag)
 
-/obj/item/storage/backpack/snail
+/obj/item/storage/backpack/duffelbag/snail
 	name = "snail shell"
 	desc = "Worn by snails as armor and storage compartment."
-	icon_state = "snailshell"
-	item_state = "snailshell"
+	icon_state = "cinnamonshell"
+	item_state = "cinnamonshell"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
 	max_integrity = 200
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	slowdown = 0
 
-/obj/item/storage/backpack/snail/Initialize()
+/*/obj/item/storage/backpack/duffelbag/snail/cone
+	item_state =
+	icon_state =
+
+/obj/item/storage/backpack/duffelbag/snail/carm
+	item_state =
+	icon_state = */
+
+/obj/item/storage/backpack/duffelbag/snail/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, "snailshell")

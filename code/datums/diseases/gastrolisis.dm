@@ -39,11 +39,11 @@
 				affected_mob.emote("scream")
 				return
 			var/obj/item/shell = affected_mob.get_item_by_slot(ITEM_SLOT_BACK)
-			if(!istype(shell, /obj/item/storage/backpack/snail))
+			if(!istype(shell, /obj/item/storage/backpack/duffelbag/snail))
 				shell = null
 			if(!shell && prob(5))
 				if(affected_mob.dropItemToGround(affected_mob.get_item_by_slot(ITEM_SLOT_BACK)))
-					affected_mob.equip_to_slot_or_del(new /obj/item/storage/backpack/snail(affected_mob), ITEM_SLOT_BACK)
+					affected_mob.equip_to_slot_or_del(new /obj/item/storage/backpack/duffelbag/snail(affected_mob), ITEM_SLOT_BACK)
 					affected_mob.visible_message("<span class='warning'>[affected_mob] grows a grotesque shell on their back!</span>", \
 					"<span class='userdanger'>You scream in pain as a shell pushes itself out from under your skin!</span>")
 					affected_mob.emote("scream")
@@ -80,7 +80,7 @@
 			var/obj/item/organ/eyes/new_eyes = new H.dna.species.mutanteyes ()
 			new_eyes.Insert(H)
 		var/obj/item/storage/backpack/bag = H.get_item_by_slot(ITEM_SLOT_BACK)
-		if(istype(bag, /obj/item/storage/backpack/snail))
+		if(istype(bag, /obj/item/storage/backpack/duffelbag/snail))
 			bag.emptyStorage()
 			H.temporarilyRemoveItemFromInventory(bag, TRUE)
 			qdel(bag)

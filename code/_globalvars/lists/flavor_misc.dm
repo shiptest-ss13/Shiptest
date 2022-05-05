@@ -52,6 +52,8 @@ GLOBAL_LIST_EMPTY(kepori_feathers_list)
 GLOBAL_LIST_EMPTY(kepori_body_feathers_list)
 GLOBAL_LIST_EMPTY(vox_head_quills_list)
 GLOBAL_LIST_EMPTY(vox_neck_quills_list)
+GLOBAL_LIST_EMPTY(shells_list)
+
 
 GLOBAL_LIST_INIT(color_list_ethereal, list(
 	"Red" = "ff4d4d",
