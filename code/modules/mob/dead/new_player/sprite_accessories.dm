@@ -2690,3 +2690,8 @@
 /datum/sprite_accessory/vox_neck_quills/ruffhawk
 	name = "Ruffhawk"
 	icon_state = "ruffhawk"
+
+/datum/sprite_accessory/shells
+	name = "Cinnamon shell"
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "cinnamonshell"

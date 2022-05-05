@@ -411,7 +411,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_kepori_body_feathers"], features["kepori_body_feathers"])
 	READ_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
 	READ_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
-	READ_FILE(s["feature_shells"], features["shells"])
+	READ_FILE(S["feature_shells"], features["shells"])
 	READ_FILE(S["alt_titles_preferences"], alt_titles_preferences)
 
 	READ_FILE(S["equipped_gear"], equipped_gear)
@@ -534,7 +534,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["kepori_body_feathers"] = sanitize_inlist(features["kepori_body_feathers"], GLOB.kepori_body_feathers_list, "Plain")
 	features["vox_head_quills"] = sanitize_inlist(features["vox_head_quills"], GLOB.vox_head_quills_list, "None")
 	features["vox_neck_quills"] = sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
-	features["shells"] = sanitize_inlist(features["shells"], GLOB.shells_list, "cinnamonshell")
+	features["shells"] = sanitize_inlist(features["shells"], GLOB.snail_shells_list, "cinnamonshell")
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
