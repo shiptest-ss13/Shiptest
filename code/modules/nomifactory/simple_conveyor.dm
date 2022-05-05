@@ -8,11 +8,11 @@
 	var/static/list/connect_loc = list(
 		COMSIG_ATOM_EXITED = .proc/on_loc_exit
 	)
-	AddComponent(/datum/component/connect_loc_behalf, loc, connect_loc)
+	AddComponent(/datum/component/connect_loc_behalf, src, connect_loc)
 
 /obj/structure/nomifactory/conveyor/nomifactory_process()
 	for(var/atom/movable/content in loc)
-		if(content == src)
+		if(content == src || content.anchored)
 			continue
 
 		switch(dir)
@@ -32,10 +32,10 @@
 			step(content, EAST)
 
 		if(content.pixel_y < 0)
-			step(content, NORTH)
+			step(content, SOUTH)
 
 		if(content.pixel_y > world.icon_size)
-			step(content, SOUTH)
+			step(content, NORTH)
 
 /obj/structure/nomifactory/conveyor/proc/on_loc_exit(datum/source, atom/movable/gone)
 	SIGNAL_HANDLER
