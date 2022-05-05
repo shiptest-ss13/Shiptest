@@ -721,6 +721,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Shells</h3>"
 				dat += "<a href='?_src_=prefs;preference=shells;task=input'>[features["shells"]]</a><BR>"
 
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
 			if("tail_human" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
