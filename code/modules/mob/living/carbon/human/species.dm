@@ -899,7 +899,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			bodyparts_to_add -= "vox_neck_quills"
 
 	if("shells" in mutant_bodyparts)
-		if(!H.dna.features["shells"] || H.dna.features["shells"] == "Cinnamon shell")
+		if(!H.dna.features["shells"] || H.dna.features["shells"] == "Cinnamonshell")
 			bodyparts_to_add -= "shells"
 
 ////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE

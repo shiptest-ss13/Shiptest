@@ -3,7 +3,7 @@
 	id = SPECIES_SNAIL
 	default_color = "336600" //vomit green
 	mutant_bodyparts = list("shells")
-	default_features = list("shells" = "Cinnamon shell")
+	default_features = list("shells" = "Cinnamonshell")
 	species_traits = list(MUTCOLORS,HAIR,EYECOLOR,HAIR,FACEHAIR)
 	inherent_traits = list(TRAIT_ALWAYS_CLEAN, TRAIT_NOSLIPALL)
 	attack_verb = "slap"
