@@ -12,6 +12,7 @@
 
 /obj/structure/nomifactory/conveyor/nomifactory_process()
 	for(var/atom/movable/content in loc)
+		var/turf/target = get_step(src, dir)
 		if(content == src || content.anchored)
 			continue
 
@@ -26,16 +27,16 @@
 				content.pixel_x -= speed
 
 		if(content.pixel_x < 0)
-			step(content, WEST)
+			content.forceMove(target)
 
 		if(content.pixel_x > world.icon_size)
-			step(content, EAST)
+			content.forceMove(target)
 
 		if(content.pixel_y < 0)
-			step(content, SOUTH)
+			content.forceMove(target)
 
 		if(content.pixel_y > world.icon_size)
-			step(content, NORTH)
+			content.forceMove(target)
 
 /obj/structure/nomifactory/conveyor/proc/on_loc_exit(datum/source, atom/movable/gone)
 	SIGNAL_HANDLER
