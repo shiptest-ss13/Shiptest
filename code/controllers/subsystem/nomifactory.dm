@@ -1,5 +1,6 @@
 SUBSYSTEM_DEF(nomifactory)
 	name = "Nomifactory"
+	wait = 0.2 SECONDS
 
 	var/list/all_nodes
 	var/list/currentrun
