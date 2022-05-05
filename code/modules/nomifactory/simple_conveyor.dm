@@ -17,13 +17,13 @@
 
 		switch(dir)
 			if(NORTH)
-				content.pixel_y -= speed
-			if(SOUTH)
 				content.pixel_y += speed
+			if(SOUTH)
+				content.pixel_y -= speed
 			if(EAST)
-				content.pixel_x -= speed
-			if(WEST)
 				content.pixel_x += speed
+			if(WEST)
+				content.pixel_x -= speed
 
 		if(content.pixel_x < 0)
 			step(content, WEST)
