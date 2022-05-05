@@ -94,7 +94,7 @@
 		DYNAMIC_WORLD_JUNGLE = min(length(SSmapping.jungle_ruins_templates), 20),
 		DYNAMIC_WORLD_SAND = min(length(SSmapping.sand_ruins_templates), 20),
 		DYNAMIC_WORLD_SPACERUIN = min(length(SSmapping.space_ruins_templates), 20),
-		DYNAMIC_WORLD_ROCKPLANET = min(length(SSmapping.rock_ruins_templates), 20),
+		DYNAMIC_WORLD_WASTEPLANET = min(length(SSmapping.rock_ruins_templates), 20),
 		//DYNAMIC_WORLD_REEBE = 1, //very rare because of major lack of skil //TODO, make removing no teleport not break things, then it can be reenabled
 		DYNAMIC_WORLD_ASTEROID = 30)
 
@@ -131,12 +131,12 @@
 			token.icon_state = "globe"
 			token.color = COLOR_GRAY
 			planet_name = gen_planet_name()
-		if(DYNAMIC_WORLD_ROCKPLANET)
-			Rename("strange rock planet")
-			token.desc = "A very weak energy signal originating from a abandoned industrial planet."
-			planet = DYNAMIC_WORLD_ROCKPLANET
+		if(DYNAMIC_WORLD_WASTEPLANET)
+			Rename("waste disposal planet")
+			token.desc = "A very weak energy signal originating from a planet marked as waste disposal."
+			planet = DYNAMIC_WORLD_WASTEPLANET
 			token.icon_state = "globe"
-			token.color = COLOR_BROWN
+			token.color = "#a9883e"
 			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_REEBE)
 			Rename("???")

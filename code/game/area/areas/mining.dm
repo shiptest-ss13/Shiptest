@@ -338,7 +338,7 @@
 	ambientsounds = MINING
 	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED
-	map_generator = /datum/map_generator/cave_generator/rockplanet
+	map_generator = /datum/map_generator/cave_generator/wasteplanet
 
 /area/rock/surface/outdoors // weather happens here
 	name = "Industrial Wastes"
