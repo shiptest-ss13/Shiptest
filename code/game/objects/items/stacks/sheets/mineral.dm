@@ -319,7 +319,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	use(1)
 	if(QDELETED(src) && give_to_user)
 		user.put_in_hands(result)
-	to_chat(user, "<span class='notice'>You finish cutting the [src]</span>")
+	to_chat(user, "<span class='notice'>You finish cutting [src]</span>")
 
 /obj/item/stack/sheet/mineral/silver/fifty
 	amount = 50
