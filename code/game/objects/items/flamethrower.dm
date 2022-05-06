@@ -184,14 +184,15 @@
 #define REQUIRED_POWER_TO_FIRE_FLAMETHROWER 10
 #define FLAMETHROWER_POWER_MULTIPLIER 0.5
 #define FLAMETHROWER_RANGE 4
+#define FLAMETHROWER_RELEASE_AMOUNT 8
 
-/obj/item/flamethrower/proc/flame_turf(target, release_amount = 8, safety = TRUE)
+/obj/item/flamethrower/proc/flame_turf(target)
 	if(!beaker)
 		return
 	var/power = 0
 	var/datum/reagents/beaker_reagents = beaker.reagents
 	var/datum/reagents/my_fraction = new()
-	beaker_reagents.trans_to(my_fraction, release_amount, no_react = TRUE)
+	beaker_reagents.trans_to(my_fraction, FLAMETHROWER_RELEASE_AMOUNT, no_react = TRUE)
 	power = my_fraction.get_total_accelerant_quality() * FLAMETHROWER_POWER_MULTIPLIER
 
 	if(power < REQUIRED_POWER_TO_FIRE_FLAMETHROWER)
@@ -205,40 +206,40 @@
 	//let us prepare the projectile
 	var/obj/projectile/flamethrower/flamer_proj = new /obj/projectile/flamethrower(get_turf(src))
 	var/turf/turf_target = get_turf(target)
-	flamer_proj.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
+	flamer_proj.preparePixelProjectile(target, get_turf(src))
 	flamer_proj.firer = usr
-	flamer_proj.turf_target = turf_target //assign the turf we are firing at to this
-	//flamer_proj.linked_flamethrower = src //link ourselves to the projectille
-	//flamer_proj.power = power // give the projectille the beaker power
-	flamer_proj.range = get_dist_euclidian(turf_target) FLAMETHROWER_RANGE
-	//flamer_proj.release_amount = release_amount // give our release_amount to the projecitlle
+	flamer_proj.range = get_dist(src, turf_target)
+	if(get_dist(src, turf_target) < FLAMETHROWER_RANGE) //thiss shit doesnt work aaaaa
+		flamer_proj.range = FLAMETHROWER_RANGE
 
 	RegisterSignal(flamer_proj, COMSIG_MOVABLE_MOVED, .proc/handle_flaming)
-	linked_projectile = flamer_proj//pretend this var already exists
+	RegisterSignal(flamer_proj, COMSIG_PARENT_QDELETING, .proc/stop_operating)
 
 	flamer_proj.fire() //off it goes
 
 
-/obj/item/flamethrower/proc/handle_flaming(target, release_amount = 8, safety = TRUE)
-	if(!.beaker)
+/obj/item/flamethrower/proc/handle_flaming(projectille)
+	if(!beaker)
 		return
-	var/turf/location = get_turf(src)
+	var/turf/location = get_turf(projectille)
 
+	var/power = 0
 	var/datum/reagents/beaker_reagents = beaker.reagents
 	var/datum/reagents/my_fraction = new()
 
-	beaker_reagents.trans_to(my_fraction, release_amount, no_react = TRUE)
+	beaker_reagents.trans_to(my_fraction, FLAMETHROWER_RELEASE_AMOUNT, no_react = TRUE)
+	power = my_fraction.get_total_accelerant_quality() * FLAMETHROWER_POWER_MULTIPLIER
+
 
 	if(location)
-		location.IgniteTurf(power, flame_color)
+		if(location == get_turf(src))
+			return
+		location.IgniteTurf(power)
 		new /obj/effect/hotspot(location)
 		location.hotspot_expose((power*3) + 380,500)
-		if(turf_target)
-			if(location == turf_target)
-				qdel(src)
 
 	if(beaker)
-		my_fraction.trans_to(beaker_reagents, release_amount, no_react = TRUE)
+		my_fraction.trans_to(beaker_reagents, FLAMETHROWER_RELEASE_AMOUNT, no_react = TRUE)
 	qdel(my_fraction)
 
 /obj/projectile/flamethrower/can_hit_target(atom/target, list/passthrough, direct_target, ignore_loc)
@@ -246,10 +247,8 @@
 		return FALSE
 	return ..()
 
-#undef REQUIRED_POWER_TO_FIRE_FLAMETHROWER
-#undef FLAMETHROWER_POWER_MULTIPLIER
-#undef FLAMETHROWER_RANGE
-
+/obj/item/flamethrower/proc/stop_operating()
+	operating = FALSE
 
 /obj/item/flamethrower/proc/default_ignite(turf/target, power)
 	target.IgniteTurf(power, "red")
@@ -301,17 +300,14 @@
 	hitsound = ""
 	icon_state = null
 	icon = null
+	range = FLAMETHROWER_RANGE
 
-	///the turf the target was on when we clicked the flamethrower
-	var/turf_target
 	///the color the turf fire will be when igniting a turf
 	var/flame_color = "red"
 	///the flamethrower this was shot from
 	var/obj/item/flamethrower/linked_flamethrower
 	///how much power do we give the turf fire once it ignites?
 	var/power = 4
-	/// how much do we subtract from the beaker?
-	var/release_amount = 8
 
 /obj/projectile/flamethrower/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -327,3 +323,7 @@
 	. = ..()
 	if(linked_flamethrower)
 		linked_flamethrower.operating = FALSE
+
+#undef REQUIRED_POWER_TO_FIRE_FLAMETHROWER
+#undef FLAMETHROWER_POWER_MULTIPLIER
+#undef FLAMETHROWER_RANGE
