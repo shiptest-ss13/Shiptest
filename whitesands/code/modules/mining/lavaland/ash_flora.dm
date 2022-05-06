@@ -145,6 +145,7 @@
 
 /obj/item/seeds/lavaland/whitesands/puce/attackby(obj/item/item, mob/user, params)
 	. = ..()
+	//anyone intending to add more garnishes using this method should componentize this
 	if(!istype(item, /obj/item/kitchen/knife))
 		return
 	playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
