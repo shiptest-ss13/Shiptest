@@ -26,17 +26,14 @@
 			if(WEST)
 				content.pixel_x -= speed
 
-		if(content.pixel_x < 0)
-			content.forceMove(target)
+		if((abs(content.pixel_x) > world.icon_size) || (abs(content.pixel_y) > world.icon_size))
+			content.pixel_x = content.base_pixel_x
+			content.pixel_y = content.base_pixel_y
+			var/old_anim = content.animate_movement
+			content.animate_movement = NO_STEPS
+			content.Move(target)
+			content.animate_movement = old_anim
 
-		if(content.pixel_x > world.icon_size)
-			content.forceMove(target)
-
-		if(content.pixel_y < 0)
-			content.forceMove(target)
-
-		if(content.pixel_y > world.icon_size)
-			content.forceMove(target)
 
 /obj/structure/nomifactory/conveyor/proc/on_loc_exit(datum/source, atom/movable/gone)
 	SIGNAL_HANDLER
