@@ -24,7 +24,7 @@
 "aS" = (
 /obj/structure/marker_beacon,
 /obj/effect/decal/cleanable/blood/tracks,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/sand,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "bl" = (
 /mob/living/simple_animal/hostile/construct/proteon/hostile,
@@ -135,7 +135,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/sand,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "eX" = (
 /obj/machinery/atmospherics/components/unary/vent_pump{
@@ -247,7 +247,7 @@
 /area/ruin/unpowered)
 "jU" = (
 /obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/sand,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "kj" = (
 /obj/structure/cable{
@@ -265,6 +265,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"ks" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "kE" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Crew Quarters"
@@ -292,7 +298,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/sand,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "lu" = (
 /obj/effect/decal/cleanable/blood{
@@ -398,7 +404,7 @@
 /obj/item/flashlight/glowstick/red{
 	on = 1
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "oA" = (
 /obj/structure/table,
@@ -644,6 +650,12 @@
 /obj/machinery/door/airlock/cult/friendly,
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
+"wu" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "ww" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor5";
@@ -729,7 +741,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/sand,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "yb" = (
 /obj/machinery/hydroponics/constructable,
@@ -814,7 +826,7 @@
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
 "Bf" = (
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Bz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump,
@@ -916,6 +928,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered)
+"Es" = (
+/turf/open/floor/plating/asteroid/rockplanet/sand,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ez" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -961,7 +976,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Gz" = (
 /obj/effect/rune/narsie,
@@ -1220,7 +1235,7 @@
 "PU" = (
 /obj/item/pickaxe/rusted,
 /obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "QK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -1260,7 +1275,7 @@
 /area/ruin/unpowered)
 "RA" = (
 /obj/structure/marker_beacon,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Sm" = (
 /obj/machinery/hydroponics/constructable,
@@ -1273,6 +1288,10 @@
 /obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"Sz" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "SC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/gibs/old,
@@ -1281,6 +1300,10 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
+"SP" = (
+/obj/structure/marker_beacon,
+/turf/open/floor/plating/asteroid/rockplanet/sand,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Tn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1294,7 +1317,7 @@
 /area/ruin/unpowered)
 "Us" = (
 /obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/rockplanet/sand,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "UA" = (
 /obj/structure/sign/warning/longtermwaste{
@@ -1372,7 +1395,7 @@
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
 "XI" = (
-/turf/closed/mineral/random/asteroid/wasteplanet,
+/turf/closed/mineral/random/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "XN" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1418,14 +1441,14 @@ Bf
 Bf
 Bf
 RA
-jU
+Sz
 Bf
-Bf
+Es
 Nt
 Dj
 Ax
 UA
-Bf
+Es
 Us
 Bf
 RA
@@ -1445,7 +1468,7 @@ EQ
 HE
 KH
 EQ
-Bf
+Es
 Nt
 Nt
 Nt
@@ -1460,12 +1483,12 @@ dh
 wH
 lF
 Nt
-Bf
+Es
 EQ
 xo
 xb
 EQ
-Bf
+Es
 Dr
 yb
 rH
@@ -1480,12 +1503,12 @@ dh
 ig
 dh
 xD
-Bf
+Es
 EQ
 SC
 xb
 EQ
-Bf
+Es
 xD
 OB
 Hm
@@ -1500,12 +1523,12 @@ Jh
 Jq
 TR
 vJ
-Bf
+Es
 Nt
 Mn
 Ba
 Nt
-Bf
+Es
 xD
 sY
 VV
@@ -1585,7 +1608,7 @@ xD
 IO
 Jh
 Nt
-Bf
+Es
 Nt
 wH
 kr
@@ -1605,7 +1628,7 @@ EQ
 Wm
 Rq
 EQ
-Bf
+Es
 Nt
 cZ
 wn
@@ -1625,7 +1648,7 @@ EQ
 xI
 hD
 EQ
-Bf
+Es
 Nt
 xD
 xD
@@ -1645,8 +1668,8 @@ xD
 IO
 KV
 EQ
-Bf
-Bf
+Es
+Es
 Bf
 RA
 Bf
@@ -1665,7 +1688,7 @@ xD
 zP
 Ba
 EQ
-Bf
+Es
 Nt
 Nt
 Nt
@@ -1685,7 +1708,7 @@ Nt
 Wm
 dh
 Nt
-Bf
+Es
 xD
 lG
 fE
@@ -1760,7 +1783,7 @@ my
 Fe
 cD
 Nt
-Bf
+Es
 Nt
 ex
 Nr
@@ -1780,7 +1803,7 @@ EQ
 EQ
 Nt
 Nt
-Bf
+Es
 xD
 IO
 Rq
@@ -1795,19 +1818,19 @@ Nt
 "}
 (20,1,1) = {"
 Bf
-Bf
-Bf
-Bf
-RA
-Bf
-Bf
+Es
+Es
+Es
+SP
+Es
+Es
 xD
 Mn
 Jh
 Nt
 xY
 aS
-li
+wu
 Bf
 Bf
 Bf
@@ -1817,9 +1840,9 @@ XI
 XI
 Bf
 Us
-Bf
-Bf
-Bf
+Es
+Es
+Es
 xD
 xD
 QK
@@ -1827,7 +1850,7 @@ hm
 nv
 xD
 Us
-eK
+ks
 ou
 XI
 XI
@@ -1838,7 +1861,7 @@ XI
 Bf
 Bf
 jU
-Bf
+Es
 Nt
 xD
 BX
@@ -1847,7 +1870,7 @@ in
 fg
 xD
 xD
-eK
+ks
 XI
 XI
 XI
@@ -1858,7 +1881,7 @@ XI
 XI
 Bf
 RA
-Bf
+Es
 as
 sX
 wB
@@ -1878,7 +1901,7 @@ XI
 XI
 Bf
 ou
-Bf
+Es
 as
 dj
 wG
@@ -1888,7 +1911,7 @@ Ht
 ct
 xD
 Bf
-jU
+Sz
 XI
 XI
 Bf
@@ -1898,7 +1921,7 @@ XI
 XI
 XI
 Bf
-Bf
+Es
 as
 as
 JX

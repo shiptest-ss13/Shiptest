@@ -57,7 +57,7 @@
 	death_limit = 3
 
 /turf/closed/mineral/random/asteroid/wasteplanet
-	name = "iron rock"
+	name = "cracked rock"
 	icon = 'icons/turf/walls/wasteplanet.dmi'
 	icon_state = "wasteplanet-255"
 	smooth_icon = 'icons/turf/walls/wasteplanet.dmi'

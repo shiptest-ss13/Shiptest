@@ -233,8 +233,13 @@ SUBSYSTEM_DEF(overmap)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
 			if(DYNAMIC_WORLD_WASTEPLANET)
-				ruin_list = SSmapping.rock_ruins_templates
+				ruin_list = SSmapping.waste_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/wasteplanet
+				target_area = /area/overmap_encounter/planetoid/wasteplanet
+				surface = /turf/open/floor/plating/asteroid/wasteplanet
+			if(DYNAMIC_WORLD_ROCKPLANET)
+				ruin_list = SSmapping.rock_ruins_templates
+				mapgen = new /datum/map_generator/cave_generator/rockplanet
 				target_area = /area/overmap_encounter/planetoid/rockplanet
 				surface = /turf/open/floor/plating/asteroid
 			if(DYNAMIC_WORLD_REEBE)

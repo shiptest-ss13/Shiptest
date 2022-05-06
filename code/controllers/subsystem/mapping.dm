@@ -15,6 +15,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/sand_ruins_templates = list()
 	var/list/jungle_ruins_templates = list()
 	var/list/rock_ruins_templates = list()
+	var/list/waste_ruins_templates = list()
 	var/list/yellow_ruins_templates = list()
 
 	var/list/maplist
@@ -85,6 +86,7 @@ SUBSYSTEM_DEF(mapping)
 	space_ruins_templates = SSmapping.space_ruins_templates
 	lava_ruins_templates = SSmapping.lava_ruins_templates
 	rock_ruins_templates = SSmapping.rock_ruins_templates
+	waste_ruins_templates = SSmapping.waste_ruins_templates
 	sand_ruins_templates = SSmapping.sand_ruins_templates
 	jungle_ruins_templates = SSmapping.jungle_ruins_templates
 	ice_ruins_templates = SSmapping.ice_ruins_templates
@@ -123,6 +125,7 @@ SUBSYSTEM_DEF(mapping)
 	banned += generateMapList("[global.config.directory]/sandruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/jungleruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/rockruinblacklist.txt")
+	banned += generateMapList("[global.config.directory]/wasteruinblacklist.txt")
 
 	for(var/item in sortList(subtypesof(/datum/map_template/ruin), /proc/cmp_ruincost_priority))
 		var/datum/map_template/ruin/ruin_type = item
@@ -149,6 +152,8 @@ SUBSYSTEM_DEF(mapping)
 			space_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/rockplanet))
 			rock_ruins_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/wasteplanet))
+			waste_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/reebe))
 			yellow_ruins_templates[R.name] = R
 

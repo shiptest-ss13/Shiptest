@@ -94,7 +94,8 @@
 		DYNAMIC_WORLD_JUNGLE = min(length(SSmapping.jungle_ruins_templates), 20),
 		DYNAMIC_WORLD_SAND = min(length(SSmapping.sand_ruins_templates), 20),
 		DYNAMIC_WORLD_SPACERUIN = min(length(SSmapping.space_ruins_templates), 20),
-		DYNAMIC_WORLD_WASTEPLANET = min(length(SSmapping.rock_ruins_templates), 20),
+		DYNAMIC_WORLD_WASTEPLANET = min(length(SSmapping.waste_ruins_templates), 20),
+		DYNAMIC_WORLD_ROCKPLANET = min(length(SSmapping.rock_ruins_templates), 20),
 		//DYNAMIC_WORLD_REEBE = 1, //very rare because of major lack of skil //TODO, make removing no teleport not break things, then it can be reenabled
 		DYNAMIC_WORLD_ASTEROID = 30)
 
@@ -137,6 +138,13 @@
 			planet = DYNAMIC_WORLD_WASTEPLANET
 			token.icon_state = "globe"
 			token.color = "#a9883e"
+			planet_name = gen_planet_name()
+		if(DYNAMIC_WORLD_ROCKPLANET)
+			Rename("strange rock planet")
+			token.desc = "A very weak energy signal originating from a iron rich and rocky planet."
+			planet = DYNAMIC_WORLD_ROCKPLANET
+			token.icon_state = "globe"
+			token.color = "#bd1313"
 			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_REEBE)
 			Rename("???")
@@ -289,12 +297,17 @@
 
 /area/overmap_encounter/planetoid/rockplanet
 	name = "\improper Rocky Planetoid"
-	sound_environment = SOUND_ENVIRONMENT_HANGAR
-	ambientsounds = MAINTENANCE
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	ambientsounds = AWAY_MISSION
 
 /area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
 	area_flags = UNIQUE_AREA
 	area_flags = VALID_TERRITORY | UNIQUE_AREA
+
+/area/overmap_encounter/planetoid/wasteplanet
+	name = "\improper Waste Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_HANGAR
+	ambientsounds = MAINTENANCE
 
 /area/overmap_encounter/planetoid/reebe
 	name = "\improper Yellow Space"
