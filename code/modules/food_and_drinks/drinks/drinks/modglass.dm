@@ -213,31 +213,31 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	garnish_state = "cherry"
 	garnish_layer = GARNISH_RIGHT
 
-/obj/item/garnish/umbrellared
-	name = "red drink umbrella"
-	desc = "A cute little umbrella to go in your drink. This one is light red, <i>not</i> pink."
-	icon_state = "umbrellared"
-	garnish_state = "umbrellared"
-	garnish_layer = GARNISH_RIGHT
-
-/obj/item/garnish/umbrellablue
-	name = "blue drink umbrella"
-	desc = "A cute little umbrella to go in your drink. This one is blue."
-	icon_state = "umbrellablue"
-	garnish_state = "umbrellablue"
-	garnish_layer = GARNISH_RIGHT
-
-/obj/item/garnish/umbrellagreen
-	name = "green drink umbrella"
-	desc = "A cute little umbrella to go in your drink. This one is green."
-	icon_state = "umbrellagreen"
-	garnish_state = "umbrellagreen"
-	garnish_layer = GARNISH_RIGHT
-
 //left side garnishes, these go above both the rim, center, and right side
 /obj/item/garnish/olives
 	name = "skewered olives"
 	desc = "This would look good in a martini."
 	icon_state = "olives"
 	garnish_state = "olives"
+	garnish_layer = GARNISH_LEFT
+
+/obj/item/garnish/umbrellared
+	name = "red drink umbrella"
+	desc = "A cute little umbrella to go in your drink. This one is light red, <i>not</i> pink."
+	icon_state = "umbrellared"
+	garnish_state = "umbrellared"
+	garnish_layer = GARNISH_LEFT
+
+/obj/item/garnish/umbrellablue
+	name = "blue drink umbrella"
+	desc = "A cute little umbrella to go in your drink. This one is blue."
+	icon_state = "umbrellablue"
+	garnish_state = "umbrellablue"
+	garnish_layer = GARNISH_LEFT
+
+/obj/item/garnish/umbrellagreen
+	name = "green drink umbrella"
+	desc = "A cute little umbrella to go in your drink. This one is green."
+	icon_state = "umbrellagreen"
+	garnish_state = "umbrellagreen"
 	garnish_layer = GARNISH_LEFT
