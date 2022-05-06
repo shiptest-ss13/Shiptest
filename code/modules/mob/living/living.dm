@@ -1771,7 +1771,7 @@
 	//this won't really work with species with more than 2 legs, but it'll function
 	if(broken_legs > 0)
 		var/broken_slowdown = 0
-		broken_slowdown += (default_num_legs - broken_legs) * 2
+		broken_slowdown += broken_legs
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bones, multiplicative_slowdown=broken_slowdown) //can't move fast with a broken leg
 	else
 		remove_movespeed_modifier(/datum/movespeed_modifier/bones)

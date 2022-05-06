@@ -100,7 +100,7 @@
 
 /obj/projectile/beam/disabler/weak/negative_ap
 	armour_penetration = -30
-	range = 0
+	range = 9
 
 /obj/projectile/beam/disabler/weak/negative_ap/low_range
 	range = 6

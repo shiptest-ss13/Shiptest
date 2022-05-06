@@ -12,7 +12,7 @@
 /obj/item/ammo_casing/a762/enchanted
 	projectile_type = /obj/projectile/bullet/a762_enchanted
 
-// 5.56mm (M-90gl Carbine)
+// 5.56mm (M-90gl Carbine & P-16)
 
 /obj/item/ammo_casing/a556
 	name = "5.56mm bullet casing"
