@@ -96,7 +96,7 @@
 	icon_state = "Glass ore"
 	item_state = "Glass ore"
 	singular_name = "sand pile"
-	grind_results = list(/datum/reagent/consumable/sodiumchloride, /datum/reagent/silicon = 10)
+	grind_results = list(/datum/reagent/silicon = 10)
 	points = 1
 	custom_materials = list(/datum/material/glass=MINERAL_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/sheet/glass

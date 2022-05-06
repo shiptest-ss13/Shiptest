@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	icon = 'icons/obj/food/modglass.dmi'
 	icon_state = "mglass-1-"
 	fill_icon = 'icons/obj/food/modglass_fillings.dmi'
-	fill_icon_thresholds = list(25,50)
+	fill_icon_thresholds = list(50,90)
 	amount_per_transfer_from_this = 10
 	volume = 50
 	custom_materials = list(/datum/material/glass=500, /datum/material/silver=100)
