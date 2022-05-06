@@ -7,7 +7,7 @@
 	species_traits = list(MUTCOLORS,HAIR,EYECOLOR,HAIR,FACEHAIR)
 	inherent_traits = list(TRAIT_ALWAYS_CLEAN, TRAIT_NOSLIPALL)
 	liked_food = VEGETABLES | FRUIT | GROSS | RAW
-	disliked_food = DAIRY | ORANGES | SUGAR
+	disliked_food = DAIRY | SUGAR
 	attack_verb = "slap"
 	coldmod = 0.6 //snails only come out when its cold and wet
 	burnmod = 2
