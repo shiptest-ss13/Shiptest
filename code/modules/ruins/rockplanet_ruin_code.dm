@@ -105,6 +105,9 @@
 	to_chat(user, "<span class='notice'>You start breaking [src] up into shards...</span>")
 	if(!do_after(user, 1 SECONDS, src))
 		return
-	to_chat(user, "<span class='notice'>You finish cutting [src]</span>")
-	new /obj/item/garnish/crystal(get_turf(src))
+	var/obj/item/result = new /obj/item/garnish/crystal(drop_location())
+	var/give_to_user = user.is_holding(src)
 	qdel(src)
+	if(give_to_user)
+		user.put_in_hands(result)
+	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")

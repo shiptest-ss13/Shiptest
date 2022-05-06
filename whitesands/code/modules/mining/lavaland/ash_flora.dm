@@ -148,9 +148,12 @@
 	if(!istype(item, /obj/item/kitchen/knife))
 		return
 	playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start breaking the [src] up into shards...</span>")
+	to_chat(user, "<span class='notice'>You start breaking [src] up into shards...</span>")
 	if(!do_after(user, 1 SECONDS, src))
 		return
-	to_chat(user, "<span class='notice'>You finish breaking the [src]</span>")
-	new /obj/item/garnish/puce(get_turf(src))
+	var/obj/item/result = new /obj/item/garnish/puce(drop_location())
+	var/give_to_user = user.is_holding(src)
 	qdel(src)
+	if(give_to_user)
+		user.put_in_hands(result)
+	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")

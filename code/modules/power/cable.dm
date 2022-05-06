@@ -781,9 +781,12 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 	to_chat(user, "<span class='notice'>You start cutting the insulation off of [src]...</span>")
 	if(!do_after(user, 1 SECONDS, src))
 		return
-	to_chat(user, "<span class='notice'>You finish cutting [src].</span>")
-	new /obj/item/garnish/wire(get_turf(src))
+	var/obj/item/result = new /obj/item/garnish/wire(drop_location())
+	var/give_to_user = user.is_holding(src)
 	use(1)
+	if(QDELETED(src) && give_to_user)
+		user.put_in_hands(result)
+	to_chat(user, "<span class='notice'>You finish cutting [src]</span>")
 
 //////////////////////////////
 // Misc.

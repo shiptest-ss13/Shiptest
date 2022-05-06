@@ -259,9 +259,12 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 	to_chat(user, "<span class='notice'>You start whittling away some of [src]...</span>")
 	if(!do_after(user, 1 SECONDS, src))
 		return
-	to_chat(user, "<span class='notice'>You finish cutting [src].</span>")
-	new /obj/item/garnish/gold(get_turf(src))
+	var/obj/item/result = new /obj/item/garnish/gold(drop_location())
+	var/give_to_user = user.is_holding(src)
 	use(1)
+	if(QDELETED(src) && give_to_user)
+		user.put_in_hands(result)
+	to_chat(user, "<span class='notice'>You finish cutting [src]</span>")
 
 /obj/item/stack/sheet/mineral/gold/fifty
 	amount = 50
@@ -311,9 +314,12 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	to_chat(user, "<span class='notice'>You start whittling away some of [src]...</span>")
 	if(!do_after(user, 1 SECONDS, src))
 		return
-	to_chat(user, "<span class='notice'>You finish cutting [src].</span>")
-	new /obj/item/garnish/silver(get_turf(src))
+	var/obj/item/result = new /obj/item/garnish/silver(drop_location())
+	var/give_to_user = user.is_holding(src)
 	use(1)
+	if(QDELETED(src) && give_to_user)
+		user.put_in_hands(result)
+	to_chat(user, "<span class='notice'>You finish cutting the [src]</span>")
 
 /obj/item/stack/sheet/mineral/silver/fifty
 	amount = 50
