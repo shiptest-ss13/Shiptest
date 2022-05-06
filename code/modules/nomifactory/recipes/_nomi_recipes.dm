@@ -5,9 +5,19 @@ GLOBAL_LIST_INIT_TYPED(nomi_recipes, /datum/nomi_recipe, setup_nomi_recipes())
 	for(var/datum/nomi_recipe/recipe as anything in subtypesof(/datum/nomi_recipe))
 		if(initial(recipe.abstract) == recipe)
 			continue
+
+
 		var/datum/nomi_recipe/recipe_instance = new recipe
+		if(!length(recipe_instance.outputs))
+			stack_trace("nomifactory recipe with zero outputs: '[recipe]'")
+			continue
+
 		if(recipe_instance.overlay_icon && recipe_instance.overlay_icon_state)
 			recipe_instance.generated_overlay = mutable_appearance(recipe_instance.overlay_icon, recipe_instance.overlay_icon_state)
+		else
+			var/atom/first_output = outputs[1]
+			recipe_instance.generated_overlay = mutable_appearance(initial(first_output.icon), initial(first_output.icon_state))
+
 		. += recipe_instance
 	return .
 

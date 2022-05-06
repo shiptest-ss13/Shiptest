@@ -34,7 +34,6 @@
 			content.Move(target)
 			content.animate_movement = old_anim
 
-
 /obj/structure/nomifactory/conveyor/proc/on_loc_exit(datum/source, atom/movable/gone)
 	SIGNAL_HANDLER
 

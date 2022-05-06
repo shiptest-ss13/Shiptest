@@ -9,7 +9,7 @@
 	RegisterSignal(get_turf(src), COMSIG_ATOM_ENTERED, .proc/turf_entered)
 
 /obj/structure/nomifactory/machinery/update_icon()
-	name = "[initial(name)] ([recipe.name])"
+	name = recipe ? "[initial(name)] ([recipe.name])" : initial(name)
 	. = ..()
 
 /obj/structure/nomifactory/machinery/update_overlays()
