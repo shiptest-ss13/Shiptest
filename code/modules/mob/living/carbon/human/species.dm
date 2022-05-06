@@ -739,7 +739,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(!E)
 				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', "eyes_missing", -BODY_LAYER)
 			else
-				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', E.eye_icon_state, -BODY_LAYER)
+				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', E.eye_icon_state, E.eyes_layer)
 			if((EYECOLOR in species_traits) && E)
 				eye_overlay.color = "#" + H.eye_color
 			if(OFFSET_FACE in H.dna.species.offset_features)
@@ -899,7 +899,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			bodyparts_to_add -= "vox_neck_quills"
 
 	if("shells" in mutant_bodyparts)
-		if(!H.dna.features["shells"] || H.dna.features["shells"] == "Cinnamonshell")
+		if(!H.dna.features["shells"] || H.dna.features["shells"] == "None")
 			bodyparts_to_add -= "shells"
 
 ////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE

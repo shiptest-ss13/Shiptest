@@ -1953,6 +1953,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if (new_vox_neck_quills)
 						features["vox_neck_quills"] = new_vox_neck_quills
 
+				if("shells")
+					var/new_shells
+					new_shells = input(user, "Choose your character's shell type:", "Character Preference") as null|anything in GLOB.snail_shells_list
+					if(new_shells)
+						features["shells"] = new_shells
+
 				if("s_tone")
 					var/new_s_tone = input(user, "Choose your character's skin-tone:", "Character Preference")  as null|anything in GLOB.skin_tones
 					if(new_s_tone)

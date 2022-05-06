@@ -2692,6 +2692,16 @@
 	icon_state = "ruffhawk"
 
 /datum/sprite_accessory/shells
-	name = "Cinnamonshell"
 	icon = 'icons/obj/storage.dmi'
+
+/datum/sprite_accessory/shells/cinnamonshell
+	name = "Cinnamonshell"
 	icon_state = "cinnamonshell"
+
+/datum/sprite_accessory/shells/coneshell
+	name = "Coneshell"
+	icon_state = "coneshell"
+
+/datum/sprite_accessory/shells/caramelshell
+	name = "Caramelshell"
+	icon_state = "caramelshell"

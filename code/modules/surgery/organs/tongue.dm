@@ -286,9 +286,9 @@
 /obj/item/organ/tongue/snail
 	name = "snailtongue"
 	say_mod = "slurs"
-	modifies_speech = TRUE
+	modifies_speech = FALSE
 
-/obj/item/organ/tongue/snail/handle_speech(datum/source, list/speech_args)
+/*/obj/item/organ/tongue/snail/handle_speech(datum/source, list/speech_args)
 	var/new_message
 	var/message = speech_args[SPEECH_MESSAGE]
 	for(var/i in 1 to length(message))
@@ -296,7 +296,7 @@
 			new_message += message[i] + message[i] + message[i] //aaalllsssooo ooopppeeennn tttooo sssuuuggggggeeessstttiiiooonsss
 		else
 			new_message += message[i]
-	speech_args[SPEECH_MESSAGE] = new_message
+	speech_args[SPEECH_MESSAGE] = new_message*/
 
 /obj/item/organ/tongue/squid
 	name = "squid tongue"
