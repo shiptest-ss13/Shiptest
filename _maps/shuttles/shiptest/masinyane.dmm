@@ -500,8 +500,9 @@
 	name = "Equipment closet";
 	pixel_x = -30
 	},
-/obj/item/gun/ballistic/automatic/pistol/commander,
-/obj/item/inducer/sci,
+/obj/item/inducer/sci{
+	cell_type = /obj/item/stock_parts/cell/high
+	},
 /obj/item/circuitboard/machine/cell_charger,
 /obj/item/circuitboard/machine/chem_dispenser/drinks,
 /turf/open/floor/mineral/plastitanium,
@@ -550,11 +551,6 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "Oy" = (
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	name = "air filtration controller";
-	pixel_x = 24
-	},
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -564,19 +560,6 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Pn" = (
@@ -703,6 +686,14 @@
 "Wn" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
+"Xc" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -20
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "Xe" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -723,6 +714,11 @@
 	},
 /obj/effect/turf_decal/trimline/white/filled/warning{
 	dir = 1
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	name = "air filtration controller";
+	pixel_x = 24
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -758,6 +754,19 @@
 	dir = 8;
 	pixel_x = 26
 	},
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
 /turf/open/floor/plating,
 /area/ship/engineering)
 
@@ -872,7 +881,7 @@ Iu
 Wi
 sn
 yn
-ao
+Xc
 ip
 Tq
 PB
