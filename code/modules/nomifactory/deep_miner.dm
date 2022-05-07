@@ -28,9 +28,29 @@
 	var/payout_progress = 20
 
 /obj/structure/nomifactory/nomifactory_process()
+	if(!valid_location())
+		say("Invalid sediment content, disabling to prevent damage!")
+		construction_stage--
+		return
+
 	if(progress++ > payout_progress)
 		progress = 0
 		payout()
+
+/obj/structure/nomifactory/proc/valid_location()
+	var/turf/my_turf = get_turf(src)
+	if(my_turf != loc)
+		return FALSE
+
+	if(isspaceturf(my_turf) || isclosedturf(my_turf))
+		return FALSE
+
+	var/static/list/valid_turfs = list(
+		/turf/open/floor/plating/asteroid,
+		/turf/open/floor/plating/ironsand,
+		/turf/open/floor/plating/ashplanet
+	)
+	return is_type_in_list(my_turf, valid_turfs)
 
 /obj/structure/nomifactory/deep_miner/proc/payout()
 	var/turf/target = get_step(src, dir)
