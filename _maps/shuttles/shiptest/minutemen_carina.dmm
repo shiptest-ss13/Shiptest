@@ -209,7 +209,7 @@
 /obj/machinery/turretid{
 	pixel_y = 32
 	},
-/turf/open/floor/carpet/royalblue,
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cQ" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -638,7 +638,7 @@
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
-/turf/open/floor/carpet/royalblue,
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "hA" = (
 /obj/machinery/light{
@@ -699,7 +699,7 @@
 /obj/structure/sign/poster/retro/we_watch{
 	pixel_y = -32
 	},
-/turf/open/floor/carpet/royalblue,
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ij" = (
 /obj/item/radio/intercom{
@@ -712,7 +712,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
-/turf/open/floor/carpet/royalblue,
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "iD" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -1623,7 +1623,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
-/turf/open/floor/carpet/royalblue,
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "sM" = (
 /obj/machinery/cryopod,
@@ -2436,6 +2436,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "BM" = (
@@ -2941,7 +2942,10 @@
 /obj/structure/bed,
 /obj/item/bedsheet/blue,
 /obj/structure/curtain/bounty,
-/turf/open/floor/carpet/royalblue,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Hp" = (
 /obj/effect/turf_decal/siding/white{
@@ -3184,7 +3188,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/holopad/emergency/command,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "Li" = (
@@ -3540,7 +3543,8 @@
 /obj/structure/bed,
 /obj/item/bedsheet/blue,
 /obj/structure/curtain/bounty,
-/turf/open/floor/carpet/royalblue,
+/obj/effect/turf_decal/borderfloor,
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Qy" = (
 /obj/structure/chair,
