@@ -22,18 +22,6 @@
 	category = list("Stock Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
-//Capacitors
-/datum/design/basic_capacitor
-	name = "Basic Capacitor"
-	desc = "A stock part used in the construction of various devices."
-	id = "basic_capacitor"
-	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
-	build_path = /obj/item/stock_parts/capacitor
-	category = list("Stock Parts","Machinery","initial")
-	lathe_time_factor = 0.2
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/adv_capacitor
 	name = "Advanced Capacitor"
 	desc = "A stock part used in the construction of various devices."
@@ -112,18 +100,6 @@
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
-//Maipulators
-/datum/design/micro_mani
-	name = "Micro Manipulator"
-	desc = "A stock part used in the construction of various devices."
-	id = "micro_mani"
-	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/iron = 100)
-	build_path = /obj/item/stock_parts/manipulator
-	category = list("Stock Parts","Machinery","initial")
-	lathe_time_factor = 0.2
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/nano_mani
 	name = "Nano Manipulator"
 	desc = "A stock part used in the construction of various devices."
@@ -157,18 +133,6 @@
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
-//Micro-lasers
-/datum/design/basic_micro_laser
-	name = "Basic Micro-Laser"
-	desc = "A stock part used in the construction of various devices."
-	id = "basic_micro_laser"
-	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
-	build_path = /obj/item/stock_parts/micro_laser
-	category = list("Stock Parts","Machinery","initial")
-	lathe_time_factor = 0.2
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/high_micro_laser
 	name = "High-Power Micro-Laser"
 	desc = "A stock part used in the construction of various devices."
@@ -199,17 +163,6 @@
 	materials = list(/datum/material/iron = 200, /datum/material/glass = 200, /datum/material/uranium = 100, /datum/material/diamond = 60)
 	build_path = /obj/item/stock_parts/micro_laser/quadultra
 	category = list("Stock Parts")
-	lathe_time_factor = 0.2
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/basic_matter_bin
-	name = "Basic Matter Bin"
-	desc = "A stock part used in the construction of various devices."
-	id = "basic_matter_bin"
-	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/iron = 100)
-	build_path = /obj/item/stock_parts/matter_bin
-	category = list("Stock Parts","Machinery","initial")
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
