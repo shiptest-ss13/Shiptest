@@ -46,20 +46,6 @@
 "dJ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
-"dR" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2,
-/obj/machinery/button/door{
-	color = "#ddcc00";
-	dir = 8;
-	id = "masi_engi";
-	name = "engine emergency shielding";
-	pixel_x = 24
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "ej" = (
 /obj/machinery/atmospherics/pipe/simple/purple{
 	dir = 10
@@ -94,26 +80,6 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
-"in" = (
-/obj/item/areaeditor/shuttle,
-/obj/item/pipe_dispenser,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/gps{
-	gpstag = "MasinyaneVessel"
-	},
-/obj/item/storage/firstaid/regular,
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	name = "Equipment closet";
-	pixel_x = -30
-	},
-/obj/item/inducer/sci{
-	cell_type = /obj/item/stock_parts/cell/high
-	},
-/obj/item/circuitboard/machine/cell_charger,
-/obj/item/circuitboard/machine/chem_dispenser/drinks,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/bridge)
 "ix" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -157,27 +123,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"jJ" = (
-/obj/structure/fans/tiny{
-	pixel_y = -10
-	},
-/obj/effect/turf_decal/industrial/stand_clear{
-	layer = 2.09
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "masinyane_blastdoors";
-	pixel_x = -23
-	},
-/obj/machinery/door/poddoor{
-	id = "masinyane_blastdoors";
-	name = "masinyane entrance doors"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
-"jX" = (
-/turf/template_noop,
-/area/template_noop)
 "ks" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -231,6 +176,28 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"pf" = (
+/obj/structure/fans/tiny{
+	pixel_y = -10
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1;
+	layer = 2.09
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "masinyane_blastdoors";
+	pixel_x = 23
+	},
+/obj/machinery/door/poddoor{
+	id = "masinyane_blastdoors";
+	name = "masinyane entrance doors"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"pl" = (
+/turf/template_noop,
+/area/template_noop)
 "qu" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -250,14 +217,6 @@
 /area/ship/bridge)
 "sn" = (
 /turf/open/floor/plasteel/tech,
-/area/ship/bridge)
-"td" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = -20
-	},
-/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "tx" = (
 /obj/machinery/atmospherics/components/unary/passive_vent{
@@ -311,6 +270,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"vY" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric/premium{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "yn" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -339,21 +307,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"zr" = (
-/obj/structure/cable,
-/obj/machinery/power/port_gen/pacman/super{
-	anchored = 1
-	},
-/obj/effect/turf_decal/trimline/white/filled/warning{
-	dir = 1
-	},
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	name = "air filtration controller";
-	pixel_x = 24
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "zI" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -363,34 +316,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"AK" = (
-/obj/structure/fans/tiny{
-	pixel_y = -10
-	},
-/obj/effect/turf_decal/industrial/stand_clear{
-	dir = 1;
-	layer = 2.09
-	},
-/obj/machinery/button/door{
-	dir = 8;
-	id = "masinyane_blastdoors";
-	pixel_x = 23
-	},
-/obj/machinery/door/poddoor{
-	id = "masinyane_blastdoors";
-	name = "masinyane entrance doors"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
-"Bx" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/shuttle/engine/electric/premium{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Ce" = (
 /obj/machinery/power/smes/engineering,
 /obj/machinery/light{
@@ -404,6 +329,16 @@
 	},
 /obj/item/storage/secure/safe{
 	pixel_x = 33
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"Cs" = (
+/obj/machinery/button/door{
+	color = "#ddcc00";
+	dir = 4;
+	id = "masi_engi";
+	name = "engine emergency shielding";
+	pixel_x = -23
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -436,6 +371,24 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Ds" = (
+/obj/structure/fans/tiny{
+	pixel_y = -10
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	layer = 2.09
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "masinyane_blastdoors";
+	pixel_x = -23
+	},
+/obj/machinery/door/poddoor{
+	id = "masinyane_blastdoors";
+	name = "masinyane entrance doors"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "EK" = (
 /obj/machinery/atmospherics/pipe/simple/purple{
 	dir = 9
@@ -502,18 +455,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"GA" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "Iw" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -528,6 +469,26 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/chair,
 /turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"KV" = (
+/obj/item/areaeditor/shuttle,
+/obj/item/pipe_dispenser,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/gps{
+	gpstag = "MasinyaneVessel"
+	},
+/obj/item/storage/firstaid/regular,
+/obj/structure/closet/wall/blue{
+	dir = 4;
+	name = "Equipment closet";
+	pixel_x = -30
+	},
+/obj/item/inducer/sci{
+	cell_type = /obj/item/stock_parts/cell/high
+	},
+/obj/item/circuitboard/machine/cell_charger,
+/obj/item/circuitboard/machine/chem_dispenser/drinks,
+/turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "LT" = (
 /obj/structure/cable{
@@ -566,37 +527,22 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"MP" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/button/door{
-	color = "#ddcc00";
-	dir = 8;
-	id = "masi_engi";
-	name = "engine emergency shielding";
-	pixel_x = 24
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Ng" = (
 /obj/machinery/atmospherics/pipe/simple/purple{
 	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
-"OG" = (
+"Oy" = (
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "2-8"
 	},
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "0-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+/obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Pn" = (
@@ -610,37 +556,6 @@
 	dir = 4
 	},
 /obj/machinery/portable_atmospherics/canister/air,
-/turf/open/floor/plating,
-/area/ship/engineering)
-"Pw" = (
-/obj/machinery/button/door{
-	color = "#ddcc00";
-	dir = 4;
-	id = "masi_engi";
-	name = "engine emergency shielding";
-	pixel_x = -23
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
-"PC" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 26
-	},
-/obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "QR" = (
@@ -722,6 +637,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Vj" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "Wi" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -734,18 +663,55 @@
 "Wn" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
+"Xc" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -20
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "Xe" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
+"Xf" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2,
+/obj/machinery/button/door{
+	color = "#ddcc00";
+	dir = 8;
+	id = "masi_engi";
+	name = "engine emergency shielding";
+	pixel_x = 24
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Xq" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/light/small{
 	dir = 8
 	},
 /turf/open/floor/plating,
+/area/ship/bridge)
+"XT" = (
+/obj/structure/cable,
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
+/obj/effect/turf_decal/trimline/white/filled/warning{
+	dir = 1
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	name = "air filtration controller";
+	pixel_x = 24
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Yl" = (
 /obj/machinery/power/terminal{
@@ -763,6 +729,19 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Yq" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/button/door{
+	color = "#ddcc00";
+	dir = 8;
+	id = "masi_engi";
+	name = "engine emergency shielding";
+	pixel_x = 24
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Zc" = (
 /obj/structure/cable,
 /obj/machinery/power/port_gen/pacman{
@@ -773,35 +752,56 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"ZU" = (
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 26
+	},
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/obj/item/reagent_containers/food/snacks/burrito,
+/turf/open/floor/plating,
+/area/ship/engineering)
 
 (1,1,1) = {"
 dJ
-jX
-jX
-jX
-jX
-jX
-jX
-jX
-jX
-jX
-jX
-jX
+pl
+pl
+pl
+pl
+pl
+pl
+pl
+pl
+pl
+pl
+pl
 dJ
 "}
 (2,1,1) = {"
 dJ
-Bx
-Bx
-Bx
+vY
+vY
+vY
 tx
-jX
-jX
-jX
+pl
+pl
+pl
 dJ
-Bx
-Bx
-Bx
+vY
+vY
+vY
 dJ
 "}
 (3,1,1) = {"
@@ -810,9 +810,9 @@ uf
 uf
 uf
 Ng
-Bx
-Bx
-Bx
+vY
+vY
+vY
 dJ
 uf
 uf
@@ -852,14 +852,14 @@ dJ
 (6,1,1) = {"
 dJ
 ej
-PC
-dR
+ZU
+Xf
 Mj
 aC
 EN
 ks
 ix
-MP
+Yq
 kS
 ic
 dJ
@@ -881,22 +881,22 @@ Wn
 "}
 (8,1,1) = {"
 Xq
-jJ
+Ds
 Wi
 sn
 yn
-td
-OG
+Xc
+Vj
 Tq
-Pw
+Cs
 qu
-in
+KV
 cN
 Md
 "}
 (9,1,1) = {"
 qK
-AK
+pf
 up
 sn
 Cu
@@ -925,32 +925,32 @@ Md
 Md
 "}
 (11,1,1) = {"
-jX
+pl
 Wn
 Wn
 Wn
 Wn
 SR
 Ce
-GA
-zr
+Oy
+XT
 Wn
 Md
 Md
-jX
+pl
 "}
 (12,1,1) = {"
-jX
-jX
-jX
-jX
+pl
+pl
+pl
+pl
 Wn
 Wn
 Wn
 Wn
 Wn
 Wn
-jX
-jX
-jX
+pl
+pl
+pl
 "}
