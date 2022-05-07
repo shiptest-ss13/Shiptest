@@ -1,3 +1,6 @@
+//For use in prob(), about a 1 in 121 chance
+#define WAND_WREST_CHANCE 0.82644628
+
 /obj/item/gun/magic/wand
 	name = "wand"
 	desc = "You shouldn't have this."
@@ -9,7 +12,6 @@
 	can_charge = FALSE
 	max_charges = 100 //100, 50, 50, 34 (max charge distribution by 25%ths)
 	var/variable_charges = TRUE
-	var/wrest_chance = 0.82644628 //For use in prob(), about a 1 in 121 chance
 
 /obj/item/gun/magic/wand/Initialize()
 	if(prob(75) && variable_charges) //25% chance of listed max charges, 50% chance of 1/2 max charges, 25% chance of 1/3 max charges
@@ -55,8 +57,8 @@
 	update_icon()
 
 /obj/item/gun/magic/wand/shoot_with_empty_chamber(mob/living/user)
-	if(prob(wrest_chance))
-		to_chat(user,"<span class='danger'>You manage to activate [src] one last time</span>")
+	if(prob(WAND_WREST_CHANCE))
+		to_chat(user,"<span class='danger'>You manage to activate [src] one last time.</span>")
 		charges++
 		recharge_newshot()
 		return TRUE
