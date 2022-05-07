@@ -293,6 +293,9 @@
 	icon_state = "1-2"
 	},
 /obj/item/wrench,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "eg" = (
@@ -1015,6 +1018,12 @@
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 1
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/hole{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "no" = (
@@ -1326,7 +1335,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "pT" = (
 /obj/machinery/atmospherics/components/binary/valve/digital{
@@ -1845,6 +1857,9 @@
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 4
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "vm" = (
@@ -1977,12 +1992,9 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "wN" = (
-/obj/machinery/atmospherics/pipe/manifold/orange{
-	dir = 4
-	},
 /obj/item/radio/headset/headset_eng,
 /obj/item/multitool,
 /obj/item/clothing/glasses/welding,
@@ -2003,6 +2015,9 @@
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -3634,7 +3649,7 @@
 /obj/effect/turf_decal/techfloor/hole/right{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "RS" = (
 /obj/structure/cable{
@@ -3904,7 +3919,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "TT" = (
 /obj/structure/table,
@@ -4366,7 +4384,7 @@
 /obj/effect/turf_decal/techfloor/hole{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 
 (1,1,1) = {"
