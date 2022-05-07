@@ -133,6 +133,7 @@
 	for(var/obj/docking_port/stationary/docking_port in shuttle_port.docking_points)
 		if(dock_requester.shuttle_port.check_dock(docking_port))
 			return new /datum/docking_ticket(docking_port, src, dock_requester)
+	return ..()
 
 /datum/overmap/ship/controlled/post_undocked(datum/overmap/dock_requester)
 	if(istype(dock_requester, /datum/overmap/ship/controlled))

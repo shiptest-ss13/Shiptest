@@ -166,7 +166,9 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 		new/datum/stack_recipe("nanoweave (beige)", /obj/item/stack/tile/carpet/nanoweave/beige, 1, 4, 20), \
 		new/datum/stack_recipe("nanoweave (purple)", /obj/item/stack/tile/carpet/nanoweave/purple, 1, 4, 20), \
 		new/datum/stack_recipe("nanoweave (orange)", /obj/item/stack/tile/carpet/nanoweave/orange, 1, 4, 20), \
-	))
+	)), \
+	new/datum/stack_recipe("shutters frame", /obj/structure/poddoor_assembly/shutters, 5, time = 50, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("blast door frame", /obj/structure/poddoor_assembly, 15, time = 50, one_per_turf = 1, on_floor = 1)
 ))
 // WS End: carpet
 
