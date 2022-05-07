@@ -434,6 +434,30 @@
 	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass
 	category = list("initial","Dinnerware")
 
+/datum/design/modglass
+	name = "Malleable Glass"
+	id = "mod_glass"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=500, /datum/material/silver=100)
+	build_path = /obj/item/reagent_containers/food/drinks/modglass
+	category = list("initial", "Dinnerware")
+
+/datum/design/modglass_small
+	name = "Small Malleable Glass"
+	id = "mod_glass_small"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=100, /datum/material/silver=100)
+	build_path = /obj/item/reagent_containers/food/drinks/modglass/small
+	category = list("initial", "Dinnerware")
+
+/datum/design/modglass_large
+	name = "Large Malleable Glass"
+	id = "mod_glass_large"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=500, /datum/material/silver=100)
+	build_path = /obj/item/reagent_containers/food/drinks/modglass/large
+	category = list("initial", "Dinnerware")
+
 /datum/design/shaker
 	name = "Shaker"
 	id = "shaker"
