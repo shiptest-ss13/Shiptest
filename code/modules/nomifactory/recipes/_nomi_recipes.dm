@@ -17,7 +17,11 @@ GLOBAL_LIST_INIT_TYPED(nomi_recipes, /datum/nomi_recipe, setup_nomi_recipes())
 		else
 			var/atom/first_output = recipe_instance.outputs[1]
 			recipe_instance.generated_overlay = mutable_appearance(initial(first_output.icon), initial(first_output.icon_state))
-
+		recipe_instance.generated_overlay.alpha = 128
+		var/matrix/matrix = matrix()
+		matrix.Translate(0, world.icon_size * 0.25)
+		recipe_instance.generated_overlay.transform = matrix
+		recipe_instance.generated_overlay.filters += outline_filter(2, "#000000")
 		. += recipe_instance
 	return .
 
