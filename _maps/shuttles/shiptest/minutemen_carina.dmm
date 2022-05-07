@@ -293,7 +293,7 @@
 	icon_state = "1-2"
 	},
 /obj/item/wrench,
-/obj/effect/turf_decal/techfloor{
+/obj/effect/turf_decal/techfloor/orange{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -985,7 +985,7 @@
 	icon_state = "2-8"
 	},
 /obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/turf_decal/techfloor{
+/obj/effect/turf_decal/techfloor/orange{
 	dir = 4
 	},
 /obj/effect/turf_decal/techfloor/hole/right{
@@ -1018,7 +1018,7 @@
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 1
 	},
-/obj/effect/turf_decal/techfloor{
+/obj/effect/turf_decal/techfloor/orange{
 	dir = 8
 	},
 /obj/effect/turf_decal/techfloor/hole{
@@ -1857,7 +1857,7 @@
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/techfloor{
+/obj/effect/turf_decal/techfloor/orange{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1935,7 +1935,7 @@
 	pixel_x = 28
 	},
 /obj/item/stack/sheet/mineral/plasma/twenty,
-/obj/effect/turf_decal/techfloor{
+/obj/effect/turf_decal/techfloor/orange{
 	dir = 4
 	},
 /obj/effect/turf_decal/techfloor/hole/right{
@@ -1989,7 +1989,7 @@
 	},
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/techfloor/orange{
+/obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -2073,11 +2073,11 @@
 	icon_state = "1-2"
 	},
 /obj/item/analyzer,
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 6
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -3236,10 +3236,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/techfloor{
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2,
+/obj/effect/turf_decal/techfloor/orange{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Lz" = (
@@ -3338,6 +3338,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 6
 	},
+/obj/effect/turf_decal/techfloor/orange/corner,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "MN" = (
@@ -3357,7 +3358,7 @@
 /obj/machinery/navbeacon/wayfinding{
 	location = "Engineering"
 	},
-/obj/effect/turf_decal/techfloor{
+/obj/effect/turf_decal/techfloor/orange{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3550,6 +3551,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 5
 	},
+/obj/effect/turf_decal/techfloor/orange/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "QJ" = (
@@ -3643,7 +3647,7 @@
 	name = "engine fuel pump"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/techfloor/orange{
+/obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
 /obj/effect/turf_decal/techfloor/hole/right{
@@ -4101,11 +4105,11 @@
 	dir = 8;
 	pixel_x = 28
 	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 9
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -4130,7 +4134,7 @@
 	dir = 8;
 	pixel_x = 26
 	},
-/obj/effect/turf_decal/techfloor{
+/obj/effect/turf_decal/techfloor/orange{
 	dir = 4
 	},
 /obj/effect/turf_decal/techfloor/hole{
@@ -4375,7 +4379,7 @@
 	dir = 8;
 	name = "engine fuel pump"
 	},
-/obj/effect/turf_decal/techfloor/orange{
+/obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
 /obj/effect/turf_decal/techfloor/hole/right{
