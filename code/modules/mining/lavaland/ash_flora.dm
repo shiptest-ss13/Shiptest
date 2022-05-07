@@ -502,4 +502,3 @@
 	if(give_to_user)
 		user.put_in_hands(result)
 	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")
-	
