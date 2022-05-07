@@ -1,0 +1,61 @@
+/obj/structure/nomifactory/deep_miner
+	name = "Deep Core Tertiary Miner"
+	construction_steps = list(
+		TOOL_WRENCH,
+		TOOL_WELDER,
+		TOOL_CROWBAR,
+		TOOL_WELDER,
+		TOOL_WRENCH,
+		TOOL_MULTITOOL
+	)
+
+	/// Maximum number of outputs allowed to roll
+	var/max_outputs = 2
+	/// A list indexed by item with a value of the probability
+	var/list/output_probabilty_map = list(
+		/obj/item/stack/ore/glass = 50
+		/obj/item/stack/ore/iron = 40,
+		/obj/item/stack/ore/gold = 35,
+		/obj/item/stack/ore/uranium = 20,
+		/obj/item/stack/ore/plasma = 20,
+		/obj/item/stack/ore/titanium = 15,
+		/obj/item/stack/ore/diamond = 10,
+		/obj/item/stack/ore/bluespace_crystal = 2,
+		/obj/item/stack/ore/bananium = 1,
+		/obj/item/stack/ore/slag = 1
+	)
+	var/progress = 0
+	var/payout_progress = 20
+
+/obj/structure/nomifactory/nomifactory_process()
+	if(progress++ > payout_progress)
+		progress = 0
+		payout()
+
+/obj/structure/nomifactory/deep_miner/proc/payout()
+	var/turf/target = get_step(src, dir)
+	var/list/outputs = new
+	say("Processing mineral load...")
+
+	for(var/output in output_probabilty_map)
+		if(!prob(output_probabilty_map(output)))
+			continue
+		outputs[output] = output_probabilty_map[output]
+
+	if(!length(outputs))
+		say("failed to procure any usable sediment.")
+		return
+
+	while(length(outputs) > max_outputs)
+		var/highest_type
+		for(var/output in outputs)
+			if(!highest_type || outputs[output] > outputs[highest_type])
+				highest_type = output
+		outputs -= highest_type
+
+	for(var/output in outputs)
+		if(!ismovable(output))
+			stack_trace("illegal output for [src]: [output]")
+			continue
+		var/atom/movable/output_atom = new output(loc)
+		output_atom.Move(target, dir)
