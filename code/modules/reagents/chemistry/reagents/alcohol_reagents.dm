@@ -196,7 +196,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/thirteenloko
 	name = "Thirteen Loko"
 	description = "A potent mixture of caffeine and alcohol."
-	color = "#102000" // rgb: 16, 32, 0
+	color = "#ce871d"
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	boozepwr = 80
 	quality = DRINK_GOOD
@@ -479,7 +479,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "cola"
 	boozepwr = 40
 	quality = DRINK_NICE
-	color = "#3E1B00"
+	color = "#6b2f01"
 	glass_icon_state = "whiskeycolaglass"
 	glass_name = "Rum and Coke"
 	glass_desc = "The classic go-to of space-fratboys."
@@ -487,7 +487,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/cuba_libre
 	name = "Cuba Libre"
 	description = "Viva la Revolucion! Viva Cuba Libre!"
-	color = "#3E1B00" // rgb: 62, 27, 0
+	color = "#692e01"
 	boozepwr = 50
 	quality = DRINK_GOOD
 	taste_description = "a refreshing marriage of citrus and rum"
@@ -507,7 +507,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/whiskey_cola
 	name = "Whiskey Cola"
 	description = "Whiskey, mixed with cola. Surprisingly refreshing."
-	color = "#3E1B00" // rgb: 62, 27, 0
+	color = "#602a00"
 	boozepwr = 70
 	quality = DRINK_NICE
 	taste_description = "cola"
@@ -519,7 +519,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/martini
 	name = "Classic Martini"
 	description = "Vermouth with Gin. Not quite how 007 enjoyed it, but still delicious."
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#9e8c67"
 	boozepwr = 60
 	quality = DRINK_NICE
 	taste_description = "dry class"
@@ -646,7 +646,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/toxins_special
 	name = "Toxins Special"
 	description = "This thing is ON FIRE! CALL THE DAMN SHUTTLE!"
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#780162"
 	boozepwr = 25
 	quality = DRINK_VERYGOOD
 	taste_description = "spicy toxins"
@@ -1281,7 +1281,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/bacchus_blessing //An EXTREMELY powerful drink. Smashed in seconds, dead in minutes.
 	name = "Bacchus' Blessing"
 	description = "Unidentifiable mixture. Unmeasurably high alcohol content."
-	color = rgb(51, 19, 3) //Sickly brown
+	color = rgb(65, 24, 4) //Sickly brown
 	boozepwr = 300 //I warned you
 	taste_description = "a wall of bricks"
 	glass_icon_state = "glass_brown2"
@@ -1350,7 +1350,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/neurotoxin
 	name = "Neurotoxin"
 	description = "A strong neurotoxin that puts the subject into a death-like state."
-	color = "#2E2E61" // rgb: 46, 46, 97
+	color = "#3c3c84" // rgb: 46, 46, 97
 	boozepwr = 50
 	quality = DRINK_VERYGOOD
 	taste_description = "a numbing sensation"
@@ -1806,7 +1806,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/fernet
 	name = "Fernet"
 	description = "An incredibly bitter herbal liqueur used as a digestif."
-	color = "#1B2E24" // rgb: 27, 46, 36
+	color = "#2d4b3b" // rgb: 27, 46, 36
 	boozepwr = 80
 	taste_description = "utter bitterness"
 	glass_name = "glass of fernet"
