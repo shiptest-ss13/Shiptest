@@ -38,8 +38,10 @@
 		if(!istype(src, recipe.machine_needed))
 			continue
 		valid_recipes[recipe.name] = recipe
+	valid_recipes["Disable"] = TRUE
 	var/selected = tgui_input_list(user, "Select Recipe", name, valid_recipes)
-	recipe = valid_recipes[selected]
+	if(selected)
+		recipe = valid_recipes[selected] // Indexing by a non-existant key returns null, so this works
 	update_icon()
 
 /obj/structure/nomifactory/machinery/proc/nomifactory_pre_turf_entered(atom/movable/entered)
