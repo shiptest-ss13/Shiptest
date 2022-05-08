@@ -47,7 +47,8 @@
 		/obj/structure/salvageable/protolathe = 10,
 		/obj/structure/salvageable/circuit_imprinter = 8,
 		/obj/structure/salvageable/destructive_analyzer = 8,
-		/obj/structure/salvageable/server = 8)
+		/obj/structure/salvageable/server = 8,
+	)
 
 	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/effect/mine/shrapnel/human_only = 1)
 
