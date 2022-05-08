@@ -1,5 +1,5 @@
-//For use in prob(), about a 1 in 121 chance
-#define WAND_WREST_CHANCE 0.82644628
+//For use in prob()
+#define WAND_WREST_CHANCE (100/121)
 
 /obj/item/gun/magic/wand
 	name = "wand"
