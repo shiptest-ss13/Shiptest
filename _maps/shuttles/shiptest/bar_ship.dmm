@@ -25,6 +25,12 @@
 /obj/machinery/smartfridge/drinks,
 /turf/closed/wall,
 /area/ship/storage)
+"bB" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/bridge)
 "bM" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/closet/secure_closet/freezer/meat/open,
@@ -974,11 +980,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"vP" = (
-/obj/machinery/seed_extractor,
-/obj/effect/turf_decal/box,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/hydroponics)
 "vZ" = (
 /turf/template_noop,
 /area/template_noop)
@@ -1024,6 +1025,11 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
+"wO" = (
+/obj/machinery/seed_extractor,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/hydroponics)
 "xh" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
@@ -1116,7 +1122,7 @@
 	name = "Cluckens"
 	},
 /obj/structure/bed/nest{
-	color = #FFFF00;
+	color = "#FFFF00";
 	desc = "It's a pile of soft, loose hay shaped like a nest.";
 	name = "Chicken Nest"
 	},
@@ -1157,11 +1163,6 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/wood,
-/area/ship/crew/canteen)
-"zO" = (
-/obj/structure/table/reinforced,
-/obj/item/paicard,
-/turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "zP" = (
 /obj/machinery/icecream_vat,
@@ -1718,6 +1719,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
+"HN" = (
+/obj/structure/table/reinforced,
+/obj/item/paicard,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "HY" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1868,6 +1874,14 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/bridge)
+"Kl" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/vending/hydronutrients,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/hydroponics)
 "KJ" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -2018,15 +2032,24 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
-"NM" = (
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/canteen)
-"Os" = (
+"NB" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/neutral{
+	dir = 1
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
+"NM" = (
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "Ow" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -2502,14 +2525,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel,
 /area/ship/crew/hydroponics)
-"WV" = (
-/obj/effect/turf_decal/box,
-/obj/machinery/vending/hydronutrients,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/hydroponics)
 "Xd" = (
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
@@ -2527,21 +2542,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/hydroponics)
-"Xl" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/neutral{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/bridge)
 "Xv" = (
 /obj/item/radio/intercom{
 	pixel_x = 27
@@ -2969,7 +2969,7 @@ dl
 MI
 hk
 sp
-zO
+HN
 NM
 NM
 Hs
@@ -3160,14 +3160,14 @@ Ag
 px
 Dd
 Lj
-Os
+bB
 Mp
 Sf
 Lj
 dM
 TD
-vP
-WV
+wO
+Kl
 Eo
 TD
 vZ
@@ -3181,7 +3181,7 @@ vZ
 of
 of
 lG
-Xl
+NB
 ph
 ph
 Ng
