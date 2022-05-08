@@ -1,5 +1,5 @@
-//For use in prob()
-#define WAND_WREST_CHANCE (100/121)
+//For use in prob() to determine if an empty wand will shoot once then break.
+#define WAND_WREST_CHANCE (1/121)
 
 /obj/item/gun/magic/wand
 	name = "wand"
@@ -57,7 +57,7 @@
 	update_icon()
 
 /obj/item/gun/magic/wand/shoot_with_empty_chamber(mob/living/user)
-	if(prob(WAND_WREST_CHANCE))
+	if(prob(100*WAND_WREST_CHANCE))
 		to_chat(user,"<span class='danger'>You manage to activate [src] one last time.</span>")
 		charges++
 		recharge_newshot()
@@ -255,3 +255,4 @@
 	ammo_type = /obj/item/ammo_casing/magic/nothing
 
 
+#undef WAND_WREST_CHANCE
