@@ -31,13 +31,22 @@
 	results = list(/datum/reagent/consumable/sodiumchloride = 3)
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/sodium = 1, /datum/reagent/chlorine = 1)
 
+/datum/chemical_reaction/saltsolidification
+	required_reagents = list(/datum/reagent/consumable/sodiumchloride = 10)
+	required_temp = 600
+
+/datum/chemical_reaction/saltsolidification/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i in 1 to created_volume)
+		new /obj/item/garnish/salt(location)
+
 /datum/chemical_reaction/plasmasolidification
 	required_reagents = list(/datum/reagent/iron = 5, /datum/reagent/consumable/frostoil = 5, /datum/reagent/toxin/plasma = 20)
 	mob_react = FALSE
 
 /datum/chemical_reaction/plasmasolidification/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
-	for(var/i = 1, i <= created_volume, i++)
+	for(var/i in 1 to created_volume)
 		new /obj/item/stack/sheet/mineral/plasma(location)
 
 /datum/chemical_reaction/goldsolidification
@@ -422,6 +431,15 @@
 	results = list(/datum/reagent/ash = 1)
 	required_reagents = list(/datum/reagent/fuel/oil = 1)
 	required_temp = 480
+
+/datum/chemical_reaction/ashsolidification
+	required_reagents = list(/datum/reagent/ash = 10)
+	required_temp = 600
+
+/datum/chemical_reaction/ashsolidification/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i in 1 to created_volume)
+		new /obj/item/garnish/ash(location)
 
 /datum/chemical_reaction/colorful_reagent
 	results = list(/datum/reagent/colorful_reagent = 5)
