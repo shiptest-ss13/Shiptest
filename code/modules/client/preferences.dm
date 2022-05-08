@@ -436,16 +436,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			var/list/limb_display_list = list()
 			for(var/index in prosthetic_limbs)
-				var/bodypart_name
-				switch(index)
-					if(BODY_ZONE_L_ARM)
-						bodypart_name = "Left Arm"
-					if(BODY_ZONE_L_LEG)
-						bodypart_name = "Left Leg"
-					if(BODY_ZONE_R_ARM)
-						bodypart_name = "Right Arm"
-					if(BODY_ZONE_R_LEG)
-						bodypart_name = "Right Leg"
+				var/bodypart_name = parse_zone(index)
 				if(prosthetic_limbs[index] != "normal")
 					limb_display_list += "[bodypart_name]: [prosthetic_limbs[index]]"
 				dat += "<a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[bodypart_name]</a>"
@@ -2009,17 +2000,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("limbs")
 					if(href_list["customize_limb"])
 						var/limb = href_list["customize_limb"]
-						var/bodypart_name
-						switch(limb)
-							if(BODY_ZONE_L_ARM)
-								bodypart_name = "Left Arm"
-							if(BODY_ZONE_L_LEG)
-								bodypart_name = "Left Leg"
-							if(BODY_ZONE_R_ARM)
-								bodypart_name = "Right Arm"
-							if(BODY_ZONE_R_LEG)
-								bodypart_name = "Right Leg"
-						var/status = input(user, "You are modifying [bodypart_name], what should it be changed to?", "Character Preference", prosthetic_limbs[limb]) as null|anything in list("normal","prosthetic","amputated")
+						var/status = input(user, "You are modifying your [parse_zone(limb)], what should it be changed to?", "Character Preference", prosthetic_limbs[limb]) as null|anything in list("normal","prosthetic","amputated")
 						if(status)
 							prosthetic_limbs[limb] = status
 
