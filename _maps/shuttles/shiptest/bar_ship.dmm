@@ -36,6 +36,12 @@
 	pixel_x = 24
 	},
 /obj/effect/turf_decal/box,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "bQ" = (
@@ -197,6 +203,14 @@
 "dH" = (
 /turf/closed/wall/r_wall,
 /area/ship/maintenance)
+"dJ" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/vending/hydronutrients,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/hydroponics)
 "dM" = (
 /obj/machinery/vending/dinnerware,
 /obj/machinery/firealarm{
@@ -212,6 +226,11 @@
 /obj/effect/turf_decal/box,
 /obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
+"dO" = (
+/obj/structure/table/reinforced,
+/obj/item/paicard,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "dQ" = (
 /obj/machinery/light{
@@ -241,15 +260,17 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
 "ep" = (
-/obj/structure/frame/computer{
-	anchored = 1;
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/blue{
 	dir = 8
+	},
+/obj/machinery/computer/monitor{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -360,6 +381,7 @@
 /area/ship/crew/hydroponics)
 "ie" = (
 /obj/machinery/advanced_airlock_controller{
+	locked = 0;
 	pixel_x = 24
 	},
 /obj/structure/chair,
@@ -895,7 +917,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/vending/hydroseeds,
+/obj/machinery/vending/clothing,
 /turf/open/floor/wood,
 /area/ship/crew)
 "up" = (
@@ -990,6 +1012,9 @@
 /area/ship/cargo)
 "wm" = (
 /obj/machinery/holopad,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "wn" = (
@@ -1093,6 +1118,16 @@
 /obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
+/mob/living/simple_animal/chicken{
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	desc = "A regular chicken, nothing weird about this one .";
+	name = "Cluckens"
+	},
+/obj/structure/bed/nest{
+	color = #FFFF00;
+	desc = "It's a pile of soft, loose hay shaped like a nest.";
+	name = "Chicken Nest"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
 "yW" = (
@@ -1132,6 +1167,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "zP" = (
+/obj/machinery/icecream_vat,
 /turf/open/floor/plasteel/freezer,
 /area/ship/storage)
 "zQ" = (
@@ -1210,7 +1246,6 @@
 /obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
-/obj/item/paicard,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "AT" = (
@@ -1430,8 +1465,16 @@
 /obj/machinery/status_display/shuttle,
 /turf/closed/wall,
 /area/ship/maintenance)
+"DI" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/bridge)
 "DK" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	name = "internal airlock"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -1492,22 +1535,11 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/canteen)
 "Eo" = (
-/obj/structure/closet/crate/hydroponics,
-/obj/item/clothing/under/rank/civilian/hydroponics,
-/obj/item/clothing/under/rank/civilian/hydroponics/skirt,
-/obj/item/cultivator,
-/obj/item/cultivator,
-/obj/item/cultivator,
-/obj/item/shovel/spade,
-/obj/item/shovel/spade,
-/obj/item/shovel/spade,
-/obj/item/plant_analyzer,
-/obj/item/plant_analyzer,
-/obj/item/plant_analyzer,
 /obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /obj/effect/turf_decal/box,
+/obj/machinery/vending/hydroseeds,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
 "Ex" = (
@@ -1547,7 +1579,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/obj/machinery/icecream_vat,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1606,12 +1637,26 @@
 /turf/closed/wall,
 /area/ship/bridge)
 "FR" = (
-/obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/hydroponics)
+"FS" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/neutral{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/bridge)
 "FU" = (
 /obj/machinery/power/smes/engineering,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -1708,6 +1753,11 @@
 /obj/machinery/holopad,
 /turf/open/floor/plasteel,
 /area/ship/crew/hydroponics)
+"Ie" = (
+/obj/machinery/seed_extractor,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/hydroponics)
 "In" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
@@ -1782,6 +1832,11 @@
 	},
 /obj/effect/turf_decal/corner/neutral{
 	dir = 4
+	},
+/obj/structure/sink/kitchen{
+	dir = 4;
+	layer = 2.04;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
@@ -2016,13 +2071,13 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "OJ" = (
-/obj/structure/frame/computer{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/blue{
+	dir = 8
+	},
+/obj/machinery/modular_computer/console/preset/civilian{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -2068,6 +2123,11 @@
 /obj/machinery/newscaster{
 	pixel_x = -30
 	},
+/obj/structure/closet/wall/white{
+	dir = 8;
+	name = "First Aid";
+	pixel_x = 31
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "PL" = (
@@ -2093,6 +2153,9 @@
 "Qc" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/donkpockets,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/bridge)
 "Qn" = (
@@ -2215,6 +2278,9 @@
 /obj/machinery/reagentgrinder,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
@@ -2401,19 +2467,9 @@
 /area/ship/crew)
 "Vm" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/glass/bottle/nutrient/ez{
-	pixel_x = -5;
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/glass/bottle/nutrient/rh{
-	pixel_x = 5;
-	pixel_y = 5
-	},
 /obj/machinery/smartfridge/disks,
-/obj/item/reagent_containers/glass/bottle/nutrient/l4z{
-	pixel_x = 5;
-	pixel_y = -5
-	},
+/obj/item/storage/box/disks_plantgene,
+/obj/item/storage/box/disks_plantgene,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
 "Vo" = (
@@ -2431,13 +2487,26 @@
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "Wv" = (
-/obj/structure/table/glass,
-/obj/item/storage/bag/plants,
-/obj/item/storage/bag/plants,
+/obj/structure/closet/crate/hydroponics,
+/obj/item/plant_analyzer,
+/obj/item/plant_analyzer,
+/obj/item/plant_analyzer,
+/obj/item/shovel/spade,
+/obj/item/shovel/spade,
+/obj/item/shovel/spade,
+/obj/item/cultivator,
+/obj/item/cultivator,
+/obj/item/cultivator,
+/obj/item/clothing/under/rank/civilian/hydroponics/skirt,
+/obj/item/clothing/under/rank/civilian/hydroponics/skirt,
+/obj/item/clothing/under/rank/civilian/hydroponics,
+/obj/item/clothing/under/rank/civilian/hydroponics,
 /obj/item/hatchet,
 /obj/item/hatchet,
-/obj/item/storage/box/disks_plantgene,
-/obj/item/storage/box/disks_plantgene,
+/obj/item/hatchet,
+/obj/item/storage/bag/plants,
+/obj/item/storage/bag/plants,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
 "WH" = (
@@ -2457,9 +2526,11 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/hydroponics)
 "Xd" = (
-/obj/machinery/seed_extractor,
-/obj/effect/turf_decal/box,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel,
 /area/ship/crew/hydroponics)
 "Xg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2521,7 +2592,9 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "ZH" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	name = "internal airlock"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "ZI" = (
@@ -2896,7 +2969,7 @@ dl
 MI
 hk
 sp
-ng
+dO
 NM
 NM
 Hs
@@ -3087,14 +3160,14 @@ Ag
 px
 Dd
 Lj
-Sf
+DI
 Mp
 Sf
 Lj
 dM
 TD
-TD
-TD
+Ie
+dJ
 Eo
 TD
 vZ
@@ -3108,13 +3181,13 @@ vZ
 of
 of
 lG
-ph
+FS
 ph
 ph
 Ng
 of
 of
-vZ
+TD
 TD
 DZ
 TD
