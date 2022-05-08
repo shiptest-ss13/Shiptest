@@ -3,19 +3,16 @@ SUBSYSTEM_DEF(autotransfer)
 	flags = SS_KEEP_TIMING | SS_BACKGROUND
 	wait = 1 MINUTES
 
-	var/starttime
-	var/targettime
+	COOLDOWN_DECLARE(next_vote)
 
 /datum/controller/subsystem/autotransfer/Initialize(timeofday)
-	starttime = world.time
-	targettime = starttime + CONFIG_GET(number/vote_autotransfer_initial)
+	COOLDOWN_START(src, next_vote, CONFIG_GET(number/vote_autotransfer_initial))
 	return ..()
 
 /datum/controller/subsystem/autotransfer/fire()
-	if (world.time > targettime)
-		SSvote.initiate_vote("transfer",null, FALSE) //WS Edit - Ghost Vote Rework
-		targettime = targettime + CONFIG_GET(number/vote_autotransfer_interval)
+	if(COOLDOWN_FINISHED(src, next_vote))
+		SSvote.initiate_vote(/datum/vote/transfer_vote, "The Server", forced = TRUE)
+		COOLDOWN_START(src, next_vote, CONFIG_GET(number/vote_autotransfer_interval))
 
 /datum/controller/subsystem/autotransfer/Recover()
-	starttime = SSautotransfer.starttime
-	targettime = SSautotransfer.targettime
+	next_vote = SSautotransfer.next_vote
