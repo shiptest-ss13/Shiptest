@@ -32,7 +32,7 @@
 
 /obj/structure/nomifactory/deep_miner/proc/create_output_map()
 	return list(
-		/obj/item/stack/ore/glass = 50
+		/obj/item/stack/ore/glass = 50,
 		/obj/item/stack/ore/iron = 40,
 		/obj/item/stack/ore/gold = 35,
 		/obj/item/stack/ore/uranium = 20,
