@@ -1,4 +1,14 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ai" = (
+/obj/machinery/button/door{
+	color = "#ddcc00";
+	dir = 4;
+	id = "masi_engi";
+	name = "engine emergency shielding";
+	pixel_x = -23
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "ao" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/dark,
@@ -72,6 +82,38 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"fZ" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2,
+/obj/machinery/button/door{
+	color = "#ddcc00";
+	dir = 8;
+	id = "masi_engi";
+	name = "engine emergency shielding";
+	pixel_x = 24
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"hs" = (
+/obj/structure/fans/tiny{
+	pixel_y = -10
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	layer = 2.09
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "masinyane_blastdoors";
+	pixel_x = -23
+	},
+/obj/machinery/door/poddoor{
+	id = "masinyane_blastdoors";
+	name = "masinyane entrance doors"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "ic" = (
 /obj/machinery/autolathe,
 /turf/open/floor/plating,
@@ -80,6 +122,20 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
+"ip" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "ix" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -167,6 +223,19 @@
 /obj/machinery/light/small,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"mC" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/button/door{
+	color = "#ddcc00";
+	dir = 8;
+	id = "masi_engi";
+	name = "engine emergency shielding";
+	pixel_x = 24
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "mG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -176,28 +245,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"pf" = (
-/obj/structure/fans/tiny{
-	pixel_y = -10
-	},
-/obj/effect/turf_decal/industrial/stand_clear{
-	dir = 1;
-	layer = 2.09
-	},
-/obj/machinery/button/door{
-	dir = 8;
-	id = "masinyane_blastdoors";
-	pixel_x = 23
-	},
-/obj/machinery/door/poddoor{
-	id = "masinyane_blastdoors";
-	name = "masinyane entrance doors"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
-"pl" = (
-/turf/template_noop,
-/area/template_noop)
 "qu" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -270,15 +317,25 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"vY" = (
-/obj/structure/cable{
-	icon_state = "0-4"
+"wx" = (
+/obj/structure/fans/tiny{
+	pixel_y = -10
 	},
-/obj/machinery/power/shuttle/engine/electric/premium{
-	dir = 4
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1;
+	layer = 2.09
 	},
-/turf/open/floor/plating,
-/area/ship/engineering)
+/obj/machinery/button/door{
+	dir = 8;
+	id = "masinyane_blastdoors";
+	pixel_x = 23
+	},
+/obj/machinery/door/poddoor{
+	id = "masinyane_blastdoors";
+	name = "masinyane entrance doors"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "yn" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -332,16 +389,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"Cs" = (
-/obj/machinery/button/door{
-	color = "#ddcc00";
-	dir = 4;
-	id = "masi_engi";
-	name = "engine emergency shielding";
-	pixel_x = -23
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "Cu" = (
 /obj/machinery/door/window/northright,
 /obj/machinery/mineral/ore_redemption,
@@ -371,24 +418,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Ds" = (
-/obj/structure/fans/tiny{
-	pixel_y = -10
-	},
-/obj/effect/turf_decal/industrial/stand_clear{
-	layer = 2.09
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "masinyane_blastdoors";
-	pixel_x = -23
-	},
-/obj/machinery/door/poddoor{
-	id = "masinyane_blastdoors";
-	name = "masinyane entrance doors"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
 "EK" = (
 /obj/machinery/atmospherics/pipe/simple/purple{
 	dir = 9
@@ -637,20 +666,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"Vj" = (
+"Uf" = (
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "0-4"
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
+/obj/machinery/power/shuttle/engine/electric/premium{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/effect/landmark/observer_start,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Wi" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -677,20 +701,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
-"Xf" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2,
-/obj/machinery/button/door{
-	color = "#ddcc00";
-	dir = 8;
-	id = "masi_engi";
-	name = "engine emergency shielding";
-	pixel_x = 24
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Xq" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/light/small{
@@ -729,19 +739,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Yq" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/button/door{
-	color = "#ddcc00";
-	dir = 8;
-	id = "masi_engi";
-	name = "engine emergency shielding";
-	pixel_x = 24
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Zc" = (
 /obj/structure/cable,
 /obj/machinery/power/port_gen/pacman{
@@ -752,6 +749,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"ZD" = (
+/turf/template_noop,
+/area/template_noop)
 "ZU" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2,
 /obj/machinery/firealarm{
@@ -776,32 +776,32 @@
 
 (1,1,1) = {"
 dJ
-pl
-pl
-pl
-pl
-pl
-pl
-pl
-pl
-pl
-pl
-pl
+ZD
+ZD
+ZD
+ZD
+ZD
+ZD
+ZD
+ZD
+ZD
+ZD
+ZD
 dJ
 "}
 (2,1,1) = {"
 dJ
-vY
-vY
-vY
+Uf
+Uf
+Uf
 tx
-pl
-pl
-pl
+ZD
+ZD
+ZD
 dJ
-vY
-vY
-vY
+Uf
+Uf
+Uf
 dJ
 "}
 (3,1,1) = {"
@@ -810,9 +810,9 @@ uf
 uf
 uf
 Ng
-vY
-vY
-vY
+Uf
+Uf
+Uf
 dJ
 uf
 uf
@@ -853,13 +853,13 @@ dJ
 dJ
 ej
 ZU
-Xf
+fZ
 Mj
 aC
 EN
 ks
 ix
-Yq
+mC
 kS
 ic
 dJ
@@ -881,14 +881,14 @@ Wn
 "}
 (8,1,1) = {"
 Xq
-Ds
+hs
 Wi
 sn
 yn
 Xc
-Vj
+ip
 Tq
-Cs
+ai
 qu
 KV
 cN
@@ -896,7 +896,7 @@ Md
 "}
 (9,1,1) = {"
 qK
-pf
+wx
 up
 sn
 Cu
@@ -925,7 +925,7 @@ Md
 Md
 "}
 (11,1,1) = {"
-pl
+ZD
 Wn
 Wn
 Wn
@@ -937,20 +937,20 @@ XT
 Wn
 Md
 Md
-pl
+ZD
 "}
 (12,1,1) = {"
-pl
-pl
-pl
-pl
+ZD
+ZD
+ZD
+ZD
 Wn
 Wn
 Wn
 Wn
 Wn
 Wn
-pl
-pl
-pl
+ZD
+ZD
+ZD
 "}
