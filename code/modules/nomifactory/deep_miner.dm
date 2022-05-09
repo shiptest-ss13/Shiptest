@@ -64,10 +64,10 @@
 	var/list/outputs = new
 	say("Processing mineral load...")
 
-	for(var/output in output_probabilty_map)
-		if(!prob(output_probabilty_map(output)))
+	for(var/output in output_probability_map)
+		if(!prob(output_probability_map[output]))
 			continue
-		outputs[output] = output_probabilty_map[output]
+		outputs[output] = output_probability_map[output]
 
 	if(!length(outputs))
 		say("failed to procure any usable sediment.")
