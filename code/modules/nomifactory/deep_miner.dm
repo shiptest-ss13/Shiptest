@@ -84,5 +84,5 @@
 		if(!ismovable(output))
 			stack_trace("illegal output for [src]: [output]")
 			continue
-		var/atom/movable/output_atom = new output(loc)
-		output_atom.Move(target, dir)
+		var/atom/movable/output_atom = new output
+		output(output_atom)
