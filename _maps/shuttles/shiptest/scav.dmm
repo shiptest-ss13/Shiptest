@@ -157,21 +157,6 @@
 "fp" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
-"fB" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/door/window{
-	dir = 8
-	},
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/engineering)
 "fS" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
@@ -925,7 +910,7 @@
 	pixel_y = 26
 	},
 /obj/machinery/button/door{
-	id = scav_door;
+	id = "scav_door";
 	name = "Blast Control";
 	pixel_x = 7;
 	pixel_y = 26
@@ -986,6 +971,21 @@
 /obj/structure/window/reinforced,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"Hf" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/window{
+	dir = 8
+	},
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/engineering)
 "Hm" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1409,7 +1409,7 @@ EL
 gs
 BG
 nS
-fB
+Hf
 pi
 tr
 eh
