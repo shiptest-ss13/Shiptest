@@ -157,6 +157,21 @@
 "fp" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
+"fB" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/window{
+	dir = 8
+	},
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/engineering)
 "fS" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
@@ -222,21 +237,6 @@
 /area/ship/medical)
 "hG" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering)
-"hM" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/door/window{
-	dir = 8
-	},
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "hZ" = (
 /obj/structure/window/reinforced,
@@ -617,9 +617,6 @@
 	},
 /obj/machinery/door/window{
 	dir = 1
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = scav_shutters
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "scav_shutters"
@@ -1412,7 +1409,7 @@ EL
 gs
 BG
 nS
-hM
+fB
 pi
 tr
 eh
