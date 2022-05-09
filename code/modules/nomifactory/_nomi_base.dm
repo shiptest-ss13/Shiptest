@@ -18,14 +18,27 @@
 	)
 	var/construction_stage = 1
 
+	/// Output conveyor
+	var/obj/structure/nomifactory/conveyor/conveyor
+
 /obj/structure/nomifactory/Initialize()
 	. = ..()
+
+	var/obj/structure/nomifactory/existing_node = locate() in loc
+	if(existing_node && !existing_node.allow_same_tile(src))
+		stack_trace("[src] attempted to be created in the same tile as [existing_node]")
+		qdel(src)
+		return
+
 	if(!(icon_state in icon_states(icon)))
 		stack_trace("[src] had an invalid icon state at initialize.")
 		icon = 'icons/obj/nomifactory.dmi'
 		icon_state = null
 	SSnomifactory.all_nodes += src
 	connected_nodes = new
+
+/obj/structure/nomifactory/proc/allow_same_tile(obj/structure/nomifactory/other_node)
+	return FALSE
 
 /obj/structure/nomifactory/Destroy()
 	. = ..()
@@ -151,6 +164,12 @@
 			. += old
 	else
 		. += "You could deconstruct it with a <i>welding tool and crowbar</i>"
+
+/obj/structure/nomifactory/proc/output(atom/movable/outputed)
+	if(conveyor)
+		outputed.loc = get_turf(conveyor)
+		return
+	outputed.loc = get_turf(src)
 
 /obj/structure/nomifactory/attackby(obj/item/I, mob/living/user, params)
 	if(!construction_finished())
