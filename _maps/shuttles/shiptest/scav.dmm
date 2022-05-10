@@ -1001,12 +1001,6 @@
 /obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
-"FC" = (
-/obj/effect/turf_decal/corner/pink/border{
-	dir = 1
-	},
-/turf/open/floor/mineral/titanium/white,
-/area/ship/medical)
 "FK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1073,6 +1067,12 @@
 /obj/machinery/light/small,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
+"IE" = (
+/obj/effect/turf_decal/corner/pink/border{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/medical)
 "Jd" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -1300,7 +1300,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Uz" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
@@ -1654,7 +1654,7 @@ cF
 jA
 xG
 Sd
-FC
+IE
 qq
 Jt
 Jt
@@ -1669,7 +1669,7 @@ mC
 FK
 Qd
 Zy
-FC
+IE
 TD
 oY
 Rc
