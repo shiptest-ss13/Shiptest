@@ -640,12 +640,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
-"tL" = (
-/obj/effect/turf_decal/corner/pink/border{
-	dir = 1
-	},
-/turf/open/floor/mineral/titanium/white,
-/area/ship/medical)
 "tO" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/donkpockets,
@@ -686,7 +680,6 @@
 	},
 /mob/living/simple_animal/pet/cat/original{
 	butcher_difficulty = 100;
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/organ/ears/cat = 1, /obj/item/organ/tail/cat = 1,/obj/item/stackable/iron=20);
 	damage_coeff = list("brute" = 1, "fire" = 1.5, "toxin" = 1, "clone" = 1, "stamina" = 0, "oxygen" = 0);
 	desc = "The product of alien DNA and bored geneticists. This one looks awefully sturdy.";
 	health = 200;
@@ -1008,6 +1001,12 @@
 /obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
+"FC" = (
+/obj/effect/turf_decal/corner/pink/border{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/medical)
 "FK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1655,7 +1654,7 @@ cF
 jA
 xG
 Sd
-tL
+FC
 qq
 Jt
 Jt
@@ -1670,7 +1669,7 @@ mC
 FK
 Qd
 Zy
-tL
+FC
 TD
 oY
 Rc
