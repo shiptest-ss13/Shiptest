@@ -179,11 +179,11 @@
 
 /////PROJECTILE SHOOTING
 /mob/living/simple_animal/hostile/megafauna/claw/proc/shoot_projectile(angle)
-	var/obj/projectile/P = new projectiletype(get_turf(src))
+	var/obj/projectile/shot_proj = new projectiletype(get_turf(src))
 	playsound(src, projectilesound, 100, TRUE)
-	P.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
-	P.firer = src
-	P.fire(angle)
+	shot_proj.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
+	shot_proj.firer = src
+	shot_proj.fire(angle)
 
 
 /////DASH ATTACK
