@@ -193,10 +193,10 @@
 	dash_cooldown = world.time + (dash_cooldown_time * distance)
 	shouldnt_move = TRUE
 	var/dir_to_target = get_dir(get_turf(src), get_turf(target))
-	var/turf/T = get_step(get_turf(src), dir_to_target)
+	var/turf/next_turf = get_step(get_turf(src), dir_to_target)
 	for(var/i in 1 to distance)
-		new /obj/effect/temp_visual/cult/sparks(T)
-		T = get_step(T, dir_to_target)
+		new /obj/effect/temp_visual/cult/sparks(next_turf)
+		next_turf = get_step(next_turf, dir_to_target)
 	addtimer(CALLBACK(src, .proc/swift_dash2, dir_to_target, 0, distance), wait_time)
 	playsound(src, 'sound/creatures/claw_prepare.ogg', 100, 1)
 
