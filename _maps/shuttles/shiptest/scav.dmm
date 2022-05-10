@@ -20,6 +20,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/window/reinforced/survival_pod,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/cargo)
 "aQ" = (
@@ -180,6 +181,9 @@
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "gr" = (
@@ -187,6 +191,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/window/reinforced,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "gs" = (
@@ -232,6 +237,7 @@
 /area/ship/engineering)
 "hZ" = (
 /obj/structure/window/reinforced/survival_pod,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/cargo)
 "is" = (
@@ -338,6 +344,7 @@
 	},
 /obj/structure/window/reinforced/survival_pod,
 /obj/structure/curtain/bounty,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/noslip,
 /area/ship/cargo)
 "ko" = (
@@ -387,6 +394,7 @@
 	icon_state = "2-8"
 	},
 /obj/structure/window/reinforced,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "mY" = (
@@ -498,6 +506,10 @@
 /obj/structure/table,
 /obj/item/disk/holodisk,
 /obj/item/toy/plush/goatplushie,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/cargo)
 "qg" = (
@@ -508,6 +520,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "qq" = (
@@ -548,6 +561,12 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "rb" = (
@@ -565,6 +584,7 @@
 	},
 /obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "rh" = (
@@ -688,6 +708,7 @@
 	verb_whisper = "purrs";
 	verb_yell = "hisses"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "uO" = (
@@ -999,6 +1020,9 @@
 	},
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "FK" = (
@@ -1034,6 +1058,7 @@
 /area/ship/engineering)
 "GM" = (
 /obj/structure/window/reinforced,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Hm" = (
@@ -1105,6 +1130,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "KX" = (
@@ -1119,6 +1145,7 @@
 /obj/machinery/computer/helm{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "MG" = (
@@ -1176,12 +1203,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/cargo)
-"Pp" = (
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
-/turf/open/space/basic,
-/area/space)
 "Pu" = (
 /obj/structure/window/reinforced,
 /obj/machinery/modular_computer/console/preset/command{
@@ -1191,6 +1212,7 @@
 	dir = 4;
 	pixel_x = -28
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Qd" = (
@@ -1220,8 +1242,8 @@
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "Rc" = (
-/turf/open/space/basic,
-/area/space)
+/turf/template_noop,
+/area/template_noop)
 "Rx" = (
 /obj/machinery/computer/security,
 /turf/open/floor/carpet/nanoweave/blue,
@@ -1240,6 +1262,7 @@
 	},
 /obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Sh" = (
@@ -1279,6 +1302,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Un" = (
@@ -1407,6 +1431,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "YY" = (
@@ -1431,6 +1456,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Zy" = (
@@ -1447,6 +1473,7 @@
 	},
 /obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "ZA" = (
@@ -1759,7 +1786,7 @@ Qk
 AV
 Qk
 gi
-Pp
+Rc
 Rc
 Rc
 Rc
