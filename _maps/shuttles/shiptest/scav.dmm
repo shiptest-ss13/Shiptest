@@ -19,20 +19,14 @@
 "aN" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/window/reinforced,
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/cargo)
 "aQ" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 1
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/cargo)
-"aR" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "scav_shutters"
 	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "aX" = (
@@ -42,9 +36,16 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/closet/firecloset/wall{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/open/floor/plating/airless,
 /area/ship/cargo)
 "bK" = (
+/obj/effect/turf_decal/corner/pink/border{
+	dir = 9
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "bL" = (
@@ -99,6 +100,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/corner/grey/border{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "dT" = (
@@ -117,15 +121,11 @@
 /area/ship/engineering)
 "dW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = 78
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/shieldwall/atmos,
-/obj/machinery/door/poddoor/shuttledock{
-	desc = "A heavy duty blast door that opens mechanically. Looks like it has been sand blasted.";
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
 	id = "scav_door";
 	name = "dusty blast door"
 	},
@@ -218,13 +218,20 @@
 	pixel_x = 24;
 	pixel_y = -24
 	},
+/obj/item/radio/intercom/wideband{
+	dir = 1;
+	pixel_y = -28
+	},
+/obj/effect/turf_decal/corner/pink/border{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "hG" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering)
 "hZ" = (
-/obj/structure/window/reinforced,
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/cargo)
 "is" = (
@@ -249,6 +256,9 @@
 /obj/machinery/recharger{
 	pixel_y = 4
 	},
+/obj/effect/turf_decal/corner/grey/border{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "jm" = (
@@ -271,9 +281,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/item/stack/spacecash/c1{
-	pixel_y = 17
-	},
+/obj/item/stack/spacecash/c1,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "jA" = (
@@ -282,6 +290,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/light/floor{
+	brightness = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -305,11 +316,11 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "kg" = (
-/obj/machinery/camera/autoname{
-	dir = 8
+/obj/effect/turf_decal/corner/grey/border{
+	dir = 1
 	},
-/turf/open/space/basic,
-/area/ship/engineering)
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "kh" = (
 /obj/machinery/shower{
 	dir = 4;
@@ -321,19 +332,22 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 8;
 	pixel_x = -7
 	},
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/curtain/bounty,
 /turf/open/floor/noslip,
 /area/ship/cargo)
 "ko" = (
-/obj/machinery/camera/autoname{
-	dir = 9
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/corner/grey/border{
+	dir = 1
 	},
-/turf/open/space/basic,
-/area/ship/engineering)
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "kE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
@@ -358,6 +372,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/box/white/corners{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "mV" = (
@@ -376,6 +393,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/effect/turf_decal/corner/pink/border{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "nl" = (
@@ -383,6 +403,12 @@
 	dir = 8
 	},
 /obj/machinery/light/small,
+/obj/machinery/firealarm{
+	pixel_y = -30
+	},
+/obj/effect/turf_decal/corner/pink/border{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "nw" = (
@@ -408,6 +434,9 @@
 /obj/machinery/stasis{
 	dir = 1
 	},
+/obj/machinery/shower{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "ob" = (
@@ -424,10 +453,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "on" = (
-/obj/machinery/computer/helm{
-	dir = 8
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "scav_shutters"
 	},
-/turf/open/floor/carpet/nanoweave/blue,
+/turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "oK" = (
 /obj/structure/chair/sofa/left{
@@ -438,9 +468,8 @@
 "oV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/shieldwall/atmos,
-/obj/machinery/door/poddoor/shuttledock{
-	desc = "A heavy duty blast door that opens mechanically. Looks like it has been sand blasted.";
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
 	id = "scav_door";
 	name = "dusty blast door"
 	},
@@ -462,10 +491,13 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "ps" = (
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
+/obj/structure/table,
+/obj/item/disk/holodisk,
+/obj/item/toy/plush/goatplushie,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/cargo)
 "qg" = (
@@ -482,6 +514,10 @@
 /obj/structure/table/optable,
 /obj/machinery/light/small,
 /obj/machinery/airalarm/directional/south,
+/obj/item/storage/backpack/duffelbag/med/surgery{
+	pixel_x = -5;
+	pixel_y = -5
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "qv" = (
@@ -497,6 +533,9 @@
 "qL" = (
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/box/white/corners{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -540,7 +579,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "rA" = (
-/obj/structure/closet/crate/engineering,
+/obj/structure/closet/crate/engineering{
+	anchored = 1
+	},
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/mechanical,
@@ -557,13 +598,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/item/stock_parts/cell/gun/mini{
-	chargerate = 10;
-	desc = "A rechargeable electrochemical power cell. this one looks awefully bloated";
-	maxcharge = 6250;
-	name = "bloated miniature weapon power cell";
-	w_class = 3
-	},
+/obj/item/radio/intercom/wideband,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "tg" = (
@@ -584,10 +619,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/item/stack/spacecash/c1{
-	pixel_x = 1;
-	pixel_y = -6
-	},
+/obj/item/stack/spacecash/c1,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "tr" = (
@@ -608,11 +640,20 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
+"tL" = (
+/obj/effect/turf_decal/corner/pink/border{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/medical)
 "tO" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/turf_decal/corner/grey/border{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "tW" = (
@@ -646,7 +687,7 @@
 /mob/living/simple_animal/pet/cat/original{
 	butcher_difficulty = 100;
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/organ/ears/cat = 1, /obj/item/organ/tail/cat = 1,/obj/item/stackable/iron=20);
-	damage_coeff = list("brute" = 1, "fire" = 1, "toxin" = 1, "clone" = 1, "stamina" = 0, "oxygen" = 0);
+	damage_coeff = list("brute" = 1, "fire" = 1.5, "toxin" = 1, "clone" = 1, "stamina" = 0, "oxygen" = 0);
 	desc = "The product of alien DNA and bored geneticists. This one looks awefully sturdy.";
 	health = 200;
 	name = "Scav";
@@ -657,7 +698,9 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "uO" = (
-/obj/structure/closet/crate/engineering/electrical,
+/obj/structure/closet/crate/engineering/electrical{
+	anchored = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -691,7 +734,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/closet/crate/eva,
 /obj/effect/turf_decal/industrial/outline/orange,
 /obj/machinery/firealarm{
 	dir = 4;
@@ -702,12 +744,21 @@
 	dir = 8
 	},
 /obj/item/storage/box/lights/bulbs,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -28;
+	pixel_y = 8
+	},
+/obj/structure/closet/crate{
+	anchored = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "vL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/machinery/firealarm,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "wq" = (
@@ -718,6 +769,8 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/port_gen/pacman,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "xG" = (
@@ -732,7 +785,6 @@
 /area/ship/engineering)
 "yB" = (
 /obj/structure/table/rolling,
-/obj/item/storage/belt/medical/surgery,
 /obj/item/clothing/glasses/hud/health,
 /obj/item/clothing/glasses/hud/health/prescription,
 /obj/item/reagent_containers/glass/bottle/formaldehyde,
@@ -751,7 +803,14 @@
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/box/bodybags,
 /mob/living/simple_animal/pet/cat/Proc,
-/obj/item/gun/syringe/syndicate,
+/obj/item/storage/box/syringes{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/item/defibrillator,
+/obj/effect/turf_decal/corner/pink/border{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "zq" = (
@@ -761,9 +820,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "zA" = (
-/obj/machinery/door/window{
-	dir = 4
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -771,10 +827,16 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/plastic,
+/obj/machinery/door/window/survival_pod{
+	dir = 4
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/cargo)
 "An" = (
 /obj/effect/decal/cleanable/blood/old,
+/obj/effect/turf_decal/corner/pink/bordercorner{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "Ar" = (
@@ -792,7 +854,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/light/floor,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "AV" = (
@@ -857,6 +918,9 @@
 /obj/machinery/computer/cryopod{
 	pixel_y = 26
 	},
+/obj/structure/curtain/bounty{
+	open = 0
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/cargo)
 "Ez" = (
@@ -892,6 +956,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/corner/pink/border{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "Fc" = (
@@ -915,11 +982,6 @@
 	pixel_x = 7;
 	pixel_y = 26
 	},
-/obj/machinery/button{
-	id = 78;
-	name = "Holofield";
-	pixel_y = 38
-	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Fq" = (
@@ -942,12 +1004,22 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "FK" = (
-/obj/structure/closet/wall/blue,
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/white/corners{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "FO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -971,21 +1043,6 @@
 /obj/structure/window/reinforced,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"Hf" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/door/window{
-	dir = 8
-	},
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/engineering)
 "Hm" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1060,7 +1117,7 @@
 /area/ship/engineering)
 "Mv" = (
 /obj/structure/window/reinforced,
-/obj/machinery/computer/security{
+/obj/machinery/computer/helm{
 	dir = 8
 	},
 /turf/open/floor/carpet/nanoweave/blue,
@@ -1074,6 +1131,17 @@
 /obj/item/storage/backpack/duffelbag,
 /obj/machinery/airalarm/directional/west,
 /obj/item/stack/spacecash/c500,
+/obj/item/stock_parts/cell/gun/mini{
+	chargerate = 10;
+	desc = "A rechargeable electrochemical power cell. this one looks awefully bloated";
+	maxcharge = 6250;
+	name = "bloated miniature weapon power cell";
+	w_class = 3
+	},
+/obj/item/cane,
+/obj/structure/closet/wall/blue{
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "MH" = (
@@ -1111,14 +1179,18 @@
 /area/ship/cargo)
 "Pp" = (
 /obj/machinery/camera/autoname{
-	dir = 5
+	dir = 4
 	},
 /turf/open/space/basic,
-/area/ship/cargo)
+/area/space)
 "Pu" = (
 /obj/structure/window/reinforced,
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
@@ -1136,6 +1208,9 @@
 /obj/machinery/microwave{
 	pixel_y = 5
 	},
+/obj/effect/turf_decal/corner/grey/border{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "QY" = (
@@ -1149,9 +1224,7 @@
 /turf/open/space/basic,
 /area/space)
 "Rx" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
+/obj/machinery/computer/security,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Rz" = (
@@ -1164,7 +1237,7 @@
 	allowed = list(/obj/item/gun,/obj/item/circular_saw,/obj/item/tank/internals,/obj/item/storage/box/pillbottles,/obj/item/storage/firstaid,/obj/item/stack/medical/gauze,/obj/item/stack/medical/suture,/obj/item/stack/medical/mesh,/obj/item/storage/bag/chemistry);
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 20, "energy" = 15, "bomb" = 5, "bio" = 80, "rad" = 50, "fire" = 65, "acid" = 75);
 	desc = "What was once the standard issue hardsuit of infectious disease officers, before the NT ERT squads. this one looks like it has been degrading for quite a long time.";
-	name = "degrading medic hardsuit"
+	name = "degrading biological hardsuit"
 	},
 /obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/suit_storage_unit/inherit/industrial,
@@ -1211,9 +1284,8 @@
 /area/ship/bridge)
 "Un" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/shieldwall/atmos,
-/obj/machinery/door/poddoor/shuttledock{
-	desc = "A heavy duty blast door that opens mechanically. Looks like it has been sand blasted.";
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
 	id = "scav_door";
 	name = "dusty blast door"
 	},
@@ -1236,17 +1308,12 @@
 /area/ship/engineering)
 "Vl" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 1;
-	id = 78
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/shieldwall/atmos,
-/obj/machinery/door/poddoor/shuttledock{
-	desc = "A heavy duty blast door that opens mechanically. Looks like it has been sand blasted.";
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
 	id = "scav_door";
 	name = "dusty blast door"
 	},
@@ -1255,6 +1322,9 @@
 "VI" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
+	},
+/obj/effect/turf_decal/corner/pink/border{
+	dir = 9
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
@@ -1268,21 +1338,50 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/light/floor,
 /obj/structure/table,
+/obj/item/radio/off{
+	pixel_x = -15
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Xn" = (
 /obj/structure/table,
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
-/obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/machinery/light/small,
-/obj/item/storage/box/syringes,
+/obj/item/reagent_containers/hypospray{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/dexalin{
+	pixel_x = -12;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/kelotane{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/bicaridine{
+	pixel_x = -2;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/glass/bottle/vial/tiny{
+	pixel_x = -12;
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/glass/bottle/vial/tiny{
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/glass/bottle/vial/tiny{
+	pixel_x = -2;
+	pixel_y = -7
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "XK" = (
-/obj/structure/closet/crate/science,
+/obj/structure/closet/crate/science{
+	anchored = 1
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1290,14 +1389,20 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
+/obj/item/gun/energy/e_gun/old,
+/obj/item/gun/energy/e_gun/old,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Yn" = (
-/obj/machinery/camera/autoname{
-	dir = 5
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
-/turf/open/space/basic,
-/area/ship/medical)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/white/corners,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "YA" = (
 /obj/structure/window/reinforced,
 /obj/structure/chair/comfy/shuttle{
@@ -1356,10 +1461,12 @@
 	pixel_x = 5;
 	pixel_y = 17
 	},
+/obj/item/radio/off{
+	pixel_x = -15
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "ZQ" = (
-/obj/structure/closet/crate/eva,
 /obj/item/storage/toolbox/emergency,
 /obj/effect/turf_decal/industrial/outline/orange,
 /obj/item/pickaxe/drill,
@@ -1367,6 +1474,9 @@
 /obj/item/mining_scanner,
 /obj/item/mining_scanner,
 /obj/machinery/airalarm/directional/west,
+/obj/structure/closet/crate{
+	anchored = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 
@@ -1389,7 +1499,7 @@ Rc
 Rc
 Rc
 Rc
-kg
+Rc
 ut
 MH
 cM
@@ -1397,7 +1507,7 @@ QY
 MH
 gc
 ut
-ko
+Rc
 Rc
 "}
 (3,1,1) = {"
@@ -1409,7 +1519,7 @@ EL
 gs
 BG
 nS
-Hf
+pi
 pi
 tr
 eh
@@ -1479,7 +1589,7 @@ hG
 VS
 nw
 Pu
-xG
+kg
 xG
 xG
 oK
@@ -1491,10 +1601,10 @@ yB
 oY
 "}
 (9,1,1) = {"
-FK
+VS
 MG
 KK
-fm
+ko
 fm
 is
 tq
@@ -1536,7 +1646,7 @@ dT
 oY
 "}
 (12,1,1) = {"
-aR
+on
 Rx
 YA
 tO
@@ -1545,34 +1655,34 @@ cF
 jA
 xG
 Sd
-bK
+tL
 qq
 Jt
 Jt
 "}
 (13,1,1) = {"
-aR
+aQ
 on
 Mv
 QG
 xG
 mC
-jA
+FK
 Qd
 Zy
-bK
+tL
 TD
 oY
-Yn
+Rc
 "}
 (14,1,1) = {"
 Rc
-aR
+aQ
 nw
 Hq
 SC
 qL
-jA
+Yn
 xG
 rb
 hv
@@ -1620,7 +1730,7 @@ kE
 YY
 YY
 aX
-aQ
+fp
 Rc
 Rc
 Rc
