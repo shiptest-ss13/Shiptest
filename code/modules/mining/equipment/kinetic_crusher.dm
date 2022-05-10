@@ -474,10 +474,10 @@
 
 /obj/item/crusher_trophy/legion_skull_crystal/on_mark_detonation(mob/living/target, mob/living/user)
 	for(var/i in 0 to 5)
-		var/obj/projectile/P = new /obj/projectile/crystalline_crusher(get_turf(src))
-		P.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
-		P.firer = user
-		P.fire(i*(360/5))
+		var/obj/projectile/projectile_to_shoot = new /obj/projectile/crystalline_crusher(get_turf(src))
+		projectile_to_shoot.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
+		projectile_to_shoot.firer = user
+		projectile_to_shoot.fire(i*(360/5))
 	return ..()
 
 /obj/projectile/crystalline_crusher

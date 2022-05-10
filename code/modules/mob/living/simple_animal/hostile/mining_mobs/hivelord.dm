@@ -637,8 +637,3 @@
 		P.firer = source
 		P.fire(i*(360/5))
 	return ..()
-
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal/monolith/death(gibbed)
-	. = ..()
-	new /obj/effect/gibspawner/generic(get_turf(src))
-	qdel(src)
