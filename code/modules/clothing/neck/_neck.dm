@@ -415,7 +415,7 @@
 			. += "<span class='warning'>It's falling apart!</span>"
 
 /obj/item/clothing/neck/crystal_amulet/worn_overlays(isinhands)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
 

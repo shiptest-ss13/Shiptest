@@ -29,8 +29,10 @@
 	deathmessage = "stops moving..."
 	deathsound = "bodyfall"
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	attack_action_types = list(/datum/action/innate/megafauna_attack/swift_dash,
-								/datum/action/innate/megafauna_attack/swift_dash_long)
+	attack_action_types = list(
+		/datum/action/innate/megafauna_attack/swift_dash,
+		/datum/action/innate/megafauna_attack/swift_dash_long,
+	)
 	pixel_x = -16
 	var/shouldnt_move = FALSE
 	var/dash_num_short = 4
@@ -46,13 +48,14 @@
 	icon_living = "claw-phase2"
 	gps_name = "F453C619AE278"
 	deathsound = "bodyfall"
-	attack_action_types = list(/datum/action/innate/megafauna_attack/swift_dash,
-								/datum/action/innate/megafauna_attack/swift_dash_long,
-								/datum/action/innate/megafauna_attack/emp_pulse,
-								/datum/action/innate/megafauna_attack/tentacle,
-								/datum/action/innate/megafauna_attack/summon_creatures,
-								/datum/action/innate/megafauna_attack/sting_attack
-								)
+	attack_action_types = list(
+		/datum/action/innate/megafauna_attack/swift_dash,
+		/datum/action/innate/megafauna_attack/swift_dash_long,
+		/datum/action/innate/megafauna_attack/emp_pulse,
+		/datum/action/innate/megafauna_attack/tentacle,
+		/datum/action/innate/megafauna_attack/summon_creatures,
+		/datum/action/innate/megafauna_attack/sting_attack,
+	)
 	speed = 5
 	move_to_delay = 5
 	speak_emote = list("verbalizes")
