@@ -578,7 +578,7 @@
 	// this must come before the screen objects only block, dunno why it wasn't before
 	if(over_object == M)
 		user_show_to_mob(M)
-		if(use_sound)
+		if(use_sound) 
 			playsound(A, use_sound, 50, TRUE, -5)
 	if(!istype(over_object, /atom/movable/screen))
 		dump_content_at(over_object, M)
