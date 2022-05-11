@@ -10,10 +10,10 @@
 	flora_spawn_chance = 5
 
 	mob_spawn_list = list(
-		//'regular' fauna, not too difficult
-		/mob/living/simple_animal/hostile/netherworld/asteroid = 50,
-		/mob/living/simple_animal/hostile/asteroid/fugu/asteroid = 50,
-		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 40, //mariuce
+		//hivebots, not too difficult
+		/mob/living/simple_animal/hostile/hivebot/strong = 70,
+		/mob/living/simple_animal/hostile/hivebot/range = 40,
+		/mob/living/simple_animal/hostile/hivebot/rapid = 30,
 		//crystal mobs, very difficult
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1,
