@@ -15,10 +15,17 @@
 	icon_state = "firstaid"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
+	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
 	throw_speed = 3
 	throw_range = 7
 	var/empty = FALSE
 	var/damagetype_healed //defines damage type of the medkit. General ones stay null. Used for medibot healing bonuses
+
+/obj/item/storage/firstaid/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
 
 /obj/item/storage/firstaid/regular
 	icon_state = "firstaid"
@@ -326,6 +333,7 @@
 	STR.allow_quick_gather = TRUE
 	STR.click_gather = TRUE
 	STR.set_holdable(list(/obj/item/reagent_containers/pill, /obj/item/dice))
+	STR.use_sound = 'sound/items/storage/pillbottle.ogg'
 
 /obj/item/storage/pill_bottle/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is trying to get the cap off [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")

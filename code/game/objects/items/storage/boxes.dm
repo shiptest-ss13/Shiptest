@@ -38,6 +38,11 @@
 	. = ..()
 	update_icon()
 
+/obj/item/storage/box/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
+
 /obj/item/storage/box/suicide_act(mob/living/carbon/user)
 	var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
 	if(myhead)

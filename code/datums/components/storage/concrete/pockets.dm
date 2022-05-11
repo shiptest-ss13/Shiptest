@@ -2,7 +2,7 @@
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_SMALL
 	max_combined_w_class = 50
-	rustle_sound = FALSE
+	use_sound = null
 
 /datum/component/storage/concrete/pockets/handle_item_insertion(obj/item/I, prevent_warning, mob/user)
 	. = ..()
