@@ -7,7 +7,7 @@
 	planetary_atmos = TRUE
 	environment_type = WHITESANDS_SAND_ENV
 	initial_gas_mix = WHITESANDS_ATMOS //Fallback, and used to tell the AACs that this is the exterior
-	digResult = /obj/item/stack/ore/glass
+	digResult = /obj/item/stack/ore/glass/whitesands
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
@@ -27,7 +27,7 @@
 	icon_state = "dried_up"
 	icon_plating = "dried_up"
 	environment_type = WHITESANDS_DRIED_ENV
-	digResult = /obj/item/stack/ore/glass
+	digResult = /obj/item/stack/ore/glass/whitesands
 
 /turf/open/floor/plating/asteroid/whitesands/remove_air(amount)
 	return return_air()

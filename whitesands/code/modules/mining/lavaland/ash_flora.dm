@@ -142,3 +142,19 @@
 
 		unset_mutability(/datum/plant_gene/reagent, PLANT_GENE_EXTRACTABLE)
 		unset_mutability(/datum/plant_gene/trait/plant_type/crystal, PLANT_GENE_EXTRACTABLE)
+
+/obj/item/seeds/lavaland/whitesands/puce/attackby(obj/item/item, mob/user, params)
+	. = ..()
+	//anyone intending to add more garnishes using this method should componentize this
+	if(!istype(item, /obj/item/kitchen/knife))
+		return
+	playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start breaking [src] up into shards...</span>")
+	if(!do_after(user, 1 SECONDS, src))
+		return
+	var/obj/item/result = new /obj/item/garnish/puce(drop_location())
+	var/give_to_user = user.is_holding(src)
+	qdel(src)
+	if(give_to_user)
+		user.put_in_hands(result)
+	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")

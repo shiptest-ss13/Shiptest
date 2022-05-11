@@ -43,7 +43,7 @@
 
 /datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
 	if(!load_level())
-		return FALSE
+		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 	else
 		var/dock_to_use = null
 		for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -52,7 +52,7 @@
 				break
 
 		if(!dock_to_use)
-			return FALSE
+			return new /datum/docking_ticket(_docking_error = "[src] does not have any free docks. Aborting docking.")
 		adjust_dock_to_shuttle(dock_to_use, dock_requester.shuttle_port)
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
 
