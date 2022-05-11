@@ -96,6 +96,7 @@
 		DYNAMIC_WORLD_SPACERUIN = min(length(SSmapping.space_ruins_templates), 20),
 		DYNAMIC_WORLD_WASTEPLANET = min(length(SSmapping.waste_ruins_templates), 20),
 		DYNAMIC_WORLD_ROCKPLANET = min(length(SSmapping.rock_ruins_templates), 20),
+		DYNAMIC_WORLD_BEACHPLANET = min(length(SSmapping.beach_ruins_templates), 20),
 		//DYNAMIC_WORLD_REEBE = 1, //very rare because of major lack of skil //TODO, make removing no teleport not break things, then it can be reenabled
 		DYNAMIC_WORLD_ASTEROID = 30)
 
@@ -105,28 +106,28 @@
 		chosen = pickweight(probabilities)
 	switch(chosen)
 		if(DYNAMIC_WORLD_LAVA)
-			Rename("strange lava planet")
+			Rename("lava planet")
 			token.desc = "A very weak energy signal originating from a planet with lots of seismic and volcanic activity."
 			planet = DYNAMIC_WORLD_LAVA
 			token.icon_state = "globe"
 			token.color = COLOR_ORANGE
 			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_ICE)
-			Rename("strange ice planet")
+			Rename("frozen planet")
 			token.desc = "A very weak energy signal originating from a planet with traces of water and extremely low temperatures."
 			planet = DYNAMIC_WORLD_ICE
 			token.icon_state = "globe"
 			token.color = COLOR_BLUE_LIGHT
 			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_JUNGLE)
-			Rename("strange jungle planet")
+			Rename("jungle planet")
 			token.desc = "A very weak energy signal originating from a planet teeming with life."
 			planet = DYNAMIC_WORLD_JUNGLE
 			token.icon_state = "globe"
 			token.color = COLOR_LIME
 			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_SAND)
-			Rename("strange sand planet")
+			Rename("sand planet")
 			token.desc = "A very weak energy signal originating from a planet with many traces of silica."
 			planet = DYNAMIC_WORLD_SAND
 			token.icon_state = "globe"
@@ -140,11 +141,18 @@
 			token.color = "#a9883e"
 			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_ROCKPLANET)
-			Rename("strange rock planet")
+			Rename("rock planet")
 			token.desc = "A very weak energy signal originating from a iron rich and rocky planet."
 			planet = DYNAMIC_WORLD_ROCKPLANET
 			token.icon_state = "globe"
 			token.color = "#bd1313"
+			planet_name = gen_planet_name()
+		if(DYNAMIC_WORLD_BEACHPLANET)
+			Rename("beach planet")
+			token.desc = "A very weak energy signal originating from a warm, oxygen rich planet."
+			planet = DYNAMIC_WORLD_BEACHPLANET
+			token.icon_state = "globe"
+			token.color = "#c6b597"
 			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_REEBE)
 			Rename("???")
@@ -152,6 +160,7 @@
 			planet = DYNAMIC_WORLD_REEBE
 			token.icon_state = "wormhole"
 			token.color = COLOR_YELLOW
+			planet_name = "Reebe"
 		if(DYNAMIC_WORLD_ASTEROID)
 			Rename("large asteroid")
 			token.desc = "A large asteroid with significant traces of minerals."

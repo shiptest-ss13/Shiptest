@@ -242,6 +242,11 @@ SUBSYSTEM_DEF(overmap)
 				mapgen = new /datum/map_generator/cave_generator/rockplanet
 				target_area = /area/overmap_encounter/planetoid/rockplanet
 				surface = /turf/open/floor/plating/asteroid
+			if(DYNAMIC_WORLD_BEACHPLANET)
+				ruin_list = SSmapping.beach_ruins_templates
+				mapgen = new /datum/map_generator/cave_generator/rockplanet //TODO
+				target_area = /area/overmap_encounter/planetoid/rockplanet
+				surface = /turf/open/floor/plating/asteroid
 			if(DYNAMIC_WORLD_REEBE)
 				ruin_list = SSmapping.yellow_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/reebe

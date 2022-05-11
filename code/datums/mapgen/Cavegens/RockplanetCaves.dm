@@ -16,22 +16,15 @@
 		/mob/living/simple_animal/hostile/asteroid/hivelord = 50,
 		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 10,
 		/mob/living/simple_animal/hostile/alien/asteroid = 20,
-		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10)
+		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
+	)
 
 
 	flora_spawn_list = list(
 		/obj/structure/flora/rock/jungle = 2,
 		/obj/structure/flora/junglebush = 2,
 		/obj/structure/flora/junglebush = 2,
-		/obj/structure/flora/ash/cacti = 1)
-
-		/obj/structure/salvageable/machine = 20,
-		/obj/structure/salvageable/autolathe = 15,
-		/obj/structure/salvageable/computer = 10,
-		/obj/structure/salvageable/protolathe = 10,
-		/obj/structure/salvageable/circuit_imprinter = 8,
-		/obj/structure/salvageable/destructive_analyzer = 8,
-		/obj/structure/salvageable/server = 8,
+		/obj/structure/flora/ash/cacti = 1,
 	)
 
 	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/effect/mine/shrapnel/human_only = 1)

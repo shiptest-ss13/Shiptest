@@ -24,13 +24,16 @@
 #define MAX_OVERMAP_PLACEMENT_ATTEMPTS 5
 
 //Possible dynamic encounter types
-#define DYNAMIC_WORLD_LAVA "lava"
+#define DYNAMIC_WORLD_LAVA "lava" //base planets
 #define DYNAMIC_WORLD_ICE "ice"
 #define DYNAMIC_WORLD_SAND "sand"
 #define DYNAMIC_WORLD_JUNGLE "jungle"
-#define DYNAMIC_WORLD_ROCKPLANET "rockplanet"
+
+#define DYNAMIC_WORLD_ROCKPLANET "rockplanet" //wacky planets
+#define DYNAMIC_WORLD_BEACHPLANET "rockplanet"
 #define DYNAMIC_WORLD_WASTEPLANET "wasteplanet"
-#define DYNAMIC_WORLD_REEBE "reebe"
+
+#define DYNAMIC_WORLD_REEBE "reebe" //celestial bodies
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
 #define DYNAMIC_WORLD_SPACERUIN "space"
 

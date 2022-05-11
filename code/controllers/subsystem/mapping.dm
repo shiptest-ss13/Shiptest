@@ -15,6 +15,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/sand_ruins_templates = list()
 	var/list/jungle_ruins_templates = list()
 	var/list/rock_ruins_templates = list()
+	var/list/beach_ruins_templates = list()
 	var/list/waste_ruins_templates = list()
 	var/list/yellow_ruins_templates = list()
 
@@ -86,6 +87,7 @@ SUBSYSTEM_DEF(mapping)
 	space_ruins_templates = SSmapping.space_ruins_templates
 	lava_ruins_templates = SSmapping.lava_ruins_templates
 	rock_ruins_templates = SSmapping.rock_ruins_templates
+	beach_ruins_templates = SSmapping.beach_ruins_templates
 	waste_ruins_templates = SSmapping.waste_ruins_templates
 	sand_ruins_templates = SSmapping.sand_ruins_templates
 	jungle_ruins_templates = SSmapping.jungle_ruins_templates
@@ -152,6 +154,8 @@ SUBSYSTEM_DEF(mapping)
 			space_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/rockplanet))
 			rock_ruins_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/beachplanet))
+			beach_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/wasteplanet))
 			waste_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/reebe))
