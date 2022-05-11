@@ -4,6 +4,8 @@
 /obj/item/floor_painter
 	name = "floor painter"
 	icon = 'whitesands/icons/obj/device.dmi'
+	pickup_sound =  'sound/items/handling/device_pickup.ogg'
+	drop_sound = 'sound/items/handling/device_drop.ogg'
 	icon_state = "floor_sprayer"
 	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed. Use it inhand to change the design, and Ctrl-Click to switch to decal-painting mode."
 
