@@ -207,28 +207,34 @@ SUBSYSTEM_DEF(overmap)
 	var/datum/map_generator/mapgen
 	var/area/target_area
 	var/turf/surface = /turf/open/space
+	///A planet template that contains a list of biomes to use
+	var/datum/planet/planet_template
 	if(planet_type)
 		switch(planet_type)
 			if(DYNAMIC_WORLD_LAVA)
 				ruin_list = SSmapping.lava_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/lavaland
+				mapgen = new /datum/map_generator/planet_generator/lava
 				target_area = /area/overmap_encounter/planetoid/lava
 				surface = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
+				planet_template = /datum/planet/lava
 			if(DYNAMIC_WORLD_ICE)
 				ruin_list = SSmapping.ice_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/icemoon
+				mapgen = new /datum/map_generator/planet_generator/snow
 				target_area = /area/overmap_encounter/planetoid/ice
 				surface = /turf/open/floor/plating/asteroid/snow/icemoon
+				planet_template = /datum/planet/snow
 			if(DYNAMIC_WORLD_SAND)
 				ruin_list = SSmapping.sand_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/whitesands
 				target_area = /area/overmap_encounter/planetoid/sand
 				surface = /turf/open/floor/plating/asteroid/whitesands
+				//planet_template = /datum/planet/lava //TODO, MAKE NEW PLANET TEMPLATE
 			if(DYNAMIC_WORLD_JUNGLE)
 				ruin_list = SSmapping.jungle_ruins_templates
-				mapgen = new /datum/map_generator/jungle_generator
+				mapgen = new /datum/map_generator/planet_generator
 				target_area = /area/overmap_encounter/planetoid/jungle
 				surface = /turf/open/floor/plating/dirt/jungle
+				planet_template = /datum/planet/jungle
 			if(DYNAMIC_WORLD_ASTEROID)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
@@ -237,16 +243,19 @@ SUBSYSTEM_DEF(overmap)
 				mapgen = new /datum/map_generator/cave_generator/wasteplanet
 				target_area = /area/overmap_encounter/planetoid/wasteplanet
 				surface = /turf/open/floor/plating/asteroid/wasteplanet
+				//planet_template = /datum/planet/lava //TODO, MAKE NEW PLANET TEMPLATE
 			if(DYNAMIC_WORLD_ROCKPLANET)
 				ruin_list = SSmapping.rock_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/rockplanet
 				target_area = /area/overmap_encounter/planetoid/rockplanet
 				surface = /turf/open/floor/plating/asteroid
+				//planet_template = /datum/planet/lava //TODO, MAKE NEW PLANET TEMPLATE
 			if(DYNAMIC_WORLD_BEACHPLANET)
 				ruin_list = SSmapping.beach_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/rockplanet //TODO
-				target_area = /area/overmap_encounter/planetoid/rockplanet
-				surface = /turf/open/floor/plating/asteroid
+				mapgen = new /datum/map_generator/planet_generator/beach
+				target_area = /area/overmap_encounter/planetoid/beachplanet
+				surface = /turf/open/floor/plating/asteroid/sand/lit
+				planet_template = /datum/planet/beach
 			if(DYNAMIC_WORLD_REEBE)
 				ruin_list = SSmapping.yellow_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/reebe
@@ -284,7 +293,11 @@ SUBSYSTEM_DEF(overmap)
 
 	if(mapgen) //If what is going on is what I think it is, this is going to need to return some sort of promise to await.
 		log_shuttle("SSOVERMAP: START_DYN_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
-		mapgen.generate_terrain(vlevel.get_unreserved_block())
+		if (istype(mapgen, /datum/map_generator/planet_generator) && !isnull(planet_template))
+			planet_template = new planet_template
+			mapgen.generate_terrain(vlevel.get_unreserved_block(), planet_template)
+		else
+			mapgen.generate_terrain(vlevel.get_unreserved_block())
 		log_shuttle("SSOVERMAP: START_DYN_E: MAPGEN REF [REF(mapgen)] RETURNED FOR VLEV [vlevel.id] OF TYPE [mapgen.type]. IT MAY NOT BE FINISHED YET.")
 
 	// locates the first dock in the bottom left, accounting for padding and the border

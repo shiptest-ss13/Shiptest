@@ -625,3 +625,7 @@
 
 /turf/closed/mineral/strong/ex_act(severity, target)
 	return
+
+/turf/closed/mineral/random/beach
+	baseturfs = /turf/open/floor/plating/asteroid/sand/dense
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS

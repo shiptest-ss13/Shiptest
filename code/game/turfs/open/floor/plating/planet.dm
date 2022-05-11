@@ -54,9 +54,6 @@
 	icon_state = "junglegrass"
 	base_icon_state = "junglegrass"
 	baseturfs = /turf/open/floor/plating/dirt/jungle
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_VERY_LIGHT_GRAY
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 
 /turf/closed/mineral/random/jungle
@@ -65,3 +62,60 @@
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10,
 		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 11,
 		/obj/item/stack/ore/bluespace_crystal = 1)
+
+/turf/open/floor/plating/grass/jungle/lit
+	light_range = 2
+	light_power = 1
+
+/turf/open/floor/plating/dirt/jungle/dark/lit
+	light_range = 2
+	light_power = 1
+
+/turf/open/floor/plating/dirt/jungle/wasteland/lit
+	light_range = 2
+	light_power = 1
+
+/turf/open/water/jungle/lit
+	light_range = 2
+	light_power = 0.8
+	light_color = LIGHT_COLOR_BLUEGREEN
+
+/turf/open/floor/plating/dirt/old
+	icon_state = "oldsmoothdirt"
+
+/turf/open/floor/plating/dirt/old/lit
+	light_power = 1
+	light_range = 2
+
+/turf/open/floor/plating/dirt/old/dark
+	icon_state =  "oldsmoothdarkdirt"
+
+/turf/open/floor/plating/dirt/old/dark/lit
+	light_power = 1
+	light_range = 2
+
+
+/turf/open/floor/plating/dirt/dry/lit
+	light_power = 1
+	light_range = 2
+
+/turf/open/floor/plating/grass/lava
+	name = "ungodly grass"
+	desc = "Common grass, tinged to unnatural colours by chemicals in the atmosphere."
+	baseturfs = /turf/open/floor/plating/grass/lava
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	icon_state = "grass"
+	base_icon_state = "grass"
+	planetary_atmos = TRUE
+	smooth_icon = 'icons/turf/floors/lava_grass_red.dmi'
+	light_power = 1
+	light_range = 2
+	gender = PLURAL
+
+/turf/open/floor/plating/grass/lava/orange
+	smooth_icon = 'icons/turf/floors/lava_grass_orange.dmi'
+	baseturfs = /turf/open/floor/plating/grass/lava/orange
+
+/turf/open/floor/plating/grass/lava/purple
+	baseturfs = /turf/open/floor/plating/grass/lava/purple
+	smooth_icon = 'icons/turf/floors/lava_grass_purple.dmi'

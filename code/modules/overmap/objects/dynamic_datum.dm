@@ -285,6 +285,12 @@
 	has_gravity = STANDARD_GRAVITY
 	always_unpowered = TRUE
 
+/area/overmap_encounter/planetoid/cave
+	name = "\improper Planetoid Cavern"
+	sound_environment = SOUND_ENVIRONMENT_CAVE
+	ambientsounds = SPOOKY
+	outdoors = FALSE
+
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
 	ambientsounds = MINING
@@ -308,6 +314,11 @@
 	name = "\improper Rocky Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = AWAY_MISSION
+
+/area/overmap_encounter/planetoid/beachplanet
+	name = "\improper Beach Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_FOREST
+	ambientsounds = BEACH
 
 /area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
 	area_flags = UNIQUE_AREA

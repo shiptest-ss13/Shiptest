@@ -30,7 +30,7 @@
 #define DYNAMIC_WORLD_JUNGLE "jungle"
 
 #define DYNAMIC_WORLD_ROCKPLANET "rockplanet" //wacky planets
-#define DYNAMIC_WORLD_BEACHPLANET "rockplanet"
+#define DYNAMIC_WORLD_BEACHPLANET "beachplanet"
 #define DYNAMIC_WORLD_WASTEPLANET "wasteplanet"
 
 #define DYNAMIC_WORLD_REEBE "reebe" //celestial bodies

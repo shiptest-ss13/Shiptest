@@ -220,3 +220,77 @@
 /turf/open/floor/plating/asteroid/snow/atmosphere
 	initial_gas_mix = FROZEN_ATMOS
 	planetary_atmos = FALSE
+
+/turf/open/floor/plating/asteroid/snow/breathable
+	planetary_atmos = TRUE
+	slowdown = 0
+
+/turf/open/floor/plating/asteroid/snow/breathable/lit
+	light_range = 2
+	light_power = 1
+
+/turf/open/floor/plating/asteroid/snow/under
+	icon_state = "snow_dug"
+	planetary_atmos = TRUE
+
+/turf/open/floor/plating/asteroid/snow/under/lit
+	light_range = 2
+	light_power = 1
+
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit
+	light_power = 0.55
+	light_range = 2
+
+/turf/open/floor/plating/asteroid/basalt/purple
+	icon = 'icons/turf/lavaland_purple.dmi'
+	baseturfs = /turf/open/floor/plating/asteroid/basalt/purple
+	turf_type = /turf/open/floor/plating/asteroid/basalt/purple
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
+/turf/open/floor/plating/asteroid/basalt/purple/lit
+	light_power = 1
+	light_range = 2
+
+/turf/open/floor/plating/asteroid/purple
+	name = "ashen sand"
+	desc = "Sand, tinted by the chemicals in the atmosphere to an uncanny shade of purple."
+	icon = 'icons/turf/lavaland_purple.dmi'
+	baseturfs = /turf/open/floor/plating/asteroid/purple
+	turf_type = /turf/open/floor/plating/asteroid/basalt/purple
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
+/turf/open/floor/plating/asteroid/purple/lit
+	light_power = 1
+	light_range = 2
+
+/turf/open/floor/plating/asteroid/sand
+	name = "sand"
+	icon = 'icons/misc/beach.dmi'
+	icon_state = "sand"
+	base_icon_state = "sand"
+	environment_type = "sand"
+	baseturfs = /turf/open/floor/plating/asteroid/sand
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS //custom atmos? lots of oxygen, hot?
+	digResult = /obj/item/stack/ore/glass
+	planetary_atmos = TRUE
+
+/turf/open/floor/plating/asteroid/sand/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	icon_state = "[base_icon_state]"
+
+/turf/open/floor/plating/asteroid/sand/lit
+	light_range = 2
+	light_power = 0.80
+	light_color = LIGHT_COLOR_TUNGSTEN
+
+/turf/open/floor/plating/asteroid/sand/dense
+	icon_state = "light_sand"
+	planetary_atmos = TRUE
+	base_icon_state = "light_sand"
+
+/turf/open/floor/plating/asteroid/sand/dense/lit
+	light_range = 2
+	light_power = 0.80
+	light_color = LIGHT_COLOR_TUNGSTEN

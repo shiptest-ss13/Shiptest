@@ -1,6 +1,4 @@
-//the random offset applied to square coordinates, causes intermingling at biome borders
-#define BIOME_RANDOM_SQUARE_DRIFT 2
-
+/*
 /datum/map_generator/jungle_generator
 	///2D list of all biomes based on heat and humidity combos.
 	var/list/possible_biomes = list(
@@ -83,6 +81,7 @@
 		selected_biome.generate_turf(gen_turf)
 		CHECK_TICK
 	report_completion(start_time, "Jungle Generator")
+*/
 /turf/open/genturf
 	name = "ungenerated turf"
 	desc = "If you see this, and you're not a ghost, yell at coders"

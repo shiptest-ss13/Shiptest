@@ -5,7 +5,6 @@
 	allow_duplicates = FALSE
 	cost = 5
 
-
 /datum/map_template/ruin/beachplanet/fishinghut
 	name = "Fishing Hut"
 	id = "fishinghut"
