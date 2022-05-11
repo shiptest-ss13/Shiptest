@@ -186,17 +186,14 @@
 	. = ..()
 	if(stat == CONSCIOUS)
 		if(has_shell)
-			if(shell_health >= initial(shell_health)*0.50)
+			if(shell_health >= initial(shell_health)*0.5)
 				icon_state = "basilisk_whitesands"
-			else if(shell_health < initial(shell_health)*0.50)
+			else if(shell_health < initial(shell_health)*0.5)
 				icon_state = "basilisk_whitesands_shell50"
 		else
 			icon_state = "basilisk_whitesands_shell0"
 	else
 		icon_state = "basilisk_whitesands_dead"
-/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/update_overlays()
-	. = ..()
-
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/heat
 	name = "glowing basilisk"
@@ -359,8 +356,3 @@
 	projectiletype = /obj/projectile/temp/basilisk/super
 	ranged_cooldown_time = 10
 	butcher_results = list(/obj/item/stack/ore/diamond = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1, /obj/item/strange_crystal = 1)
-
-/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten/monolith/death(gibbed)
-	. = ..()
-	new /obj/effect/gibspawner/generic(get_turf(src))
-	qdel(src)

@@ -21,8 +21,6 @@
 	ranged = TRUE
 	speed = 4
 	move_to_delay = 4
-	pixel_x = 0
-
 	crusher_loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/nanotrasen)
 	loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/nanotrasen)
 	wander = FALSE
@@ -31,10 +29,12 @@
 	deathmessage = "stops moving..."
 	deathsound = "bodyfall"
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	attack_action_types = list(/datum/action/innate/megafauna_attack/swift_dash,
-								/datum/action/innate/megafauna_attack/swift_dash_long)
+	attack_action_types = list(
+		/datum/action/innate/megafauna_attack/swift_dash,
+		/datum/action/innate/megafauna_attack/swift_dash_long,
+	)
 	pixel_x = -16
-	var/shoudnt_move = FALSE
+	var/shouldnt_move = FALSE
 	var/dash_num_short = 4
 	var/dash_num_long = 7
 	var/dash_cooldown = 0
@@ -48,13 +48,14 @@
 	icon_living = "claw-phase2"
 	gps_name = "F453C619AE278"
 	deathsound = "bodyfall"
-	attack_action_types = list(/datum/action/innate/megafauna_attack/swift_dash,
-								/datum/action/innate/megafauna_attack/swift_dash_long,
-								/datum/action/innate/megafauna_attack/emp_pulse,
-								/datum/action/innate/megafauna_attack/tentacle,
-								/datum/action/innate/megafauna_attack/summon_creatures,
-								/datum/action/innate/megafauna_attack/sting_attack
-								)
+	attack_action_types = list(
+		/datum/action/innate/megafauna_attack/swift_dash,
+		/datum/action/innate/megafauna_attack/swift_dash_long,
+		/datum/action/innate/megafauna_attack/emp_pulse,
+		/datum/action/innate/megafauna_attack/tentacle,
+		/datum/action/innate/megafauna_attack/summon_creatures,
+		/datum/action/innate/megafauna_attack/sting_attack,
+	)
 	speed = 5
 	move_to_delay = 5
 	speak_emote = list("verbalizes")
@@ -62,7 +63,7 @@
 	loot = list(/obj/effect/spawner/clawloot/crusher)
 	health = 2250
 	maxHealth = 2250
-	shoudnt_move = TRUE //we want to show the transforming animation
+	shouldnt_move = TRUE //we want to show the transforming animation
 	phase = 2
 	status_flags = CANPUSH | GODMODE //this is so during the animation you cant beat it up
 
@@ -129,13 +130,13 @@
 	addtimer(CALLBACK(src, .proc/unlock_phase2), 4.4 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/Move()
-	if(shoudnt_move)
+	if(shouldnt_move)
 		return FALSE
 	return ..()
 
 /mob/living/simple_animal/hostile/megafauna/claw/OpenFire()
 	if(client)
-		if(shoudnt_move)
+		if(shouldnt_move)
 			return
 		switch(chosen_attack)
 			if(1) //these SHOULDNT fire during phase 2, but if they do have fun with the extra attacks
@@ -154,12 +155,12 @@
 
 	Goto(target, move_to_delay, minimum_distance)
 	if(phase == 1)
-		if(get_dist(src, target) >= 3 && dash_cooldown <= world.time && !shoudnt_move)
+		if(get_dist(src, target) >= 3 && dash_cooldown <= world.time && !shouldnt_move)
 			swift_dash(target, dash_num_short, 5)
-		if(get_dist(src, target) > 5 && dash_cooldown <= world.time && !shoudnt_move)
+		if(get_dist(src, target) > 5 && dash_cooldown <= world.time && !shouldnt_move)
 			swift_dash(target, dash_num_long, 15)
 	else
-		if((get_dist(src, target) >= 4) && ((get_dist(src, target)) <= 8) && !shoudnt_move)
+		if((get_dist(src, target) >= 4) && ((get_dist(src, target)) <= 8) && !shouldnt_move)
 			if(prob(60))
 				tentacle(target)
 				return
@@ -181,11 +182,11 @@
 
 /////PROJECTILE SHOOTING
 /mob/living/simple_animal/hostile/megafauna/claw/proc/shoot_projectile(angle)
-	var/obj/projectile/P = new projectiletype(get_turf(src))
+	var/obj/projectile/shot_proj = new projectiletype(get_turf(src))
 	playsound(src, projectilesound, 100, TRUE)
-	P.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
-	P.firer = src
-	P.fire(angle)
+	shot_proj.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
+	shot_proj.firer = src
+	shot_proj.fire(angle)
 
 
 /////DASH ATTACK
@@ -193,27 +194,26 @@
 	if(dash_cooldown > world.time)
 		return
 	dash_cooldown = world.time + (dash_cooldown_time * distance)
-	shoudnt_move = TRUE
+	shouldnt_move = TRUE
 	var/dir_to_target = get_dir(get_turf(src), get_turf(target))
-	var/turf/T = get_step(get_turf(src), dir_to_target)
+	var/turf/next_turf = get_step(get_turf(src), dir_to_target)
 	for(var/i in 1 to distance)
-		new /obj/effect/temp_visual/cult/sparks(T)
-		T = get_step(T, dir_to_target)
+		new /obj/effect/temp_visual/cult/sparks(next_turf)
+		next_turf = get_step(next_turf, dir_to_target)
 	addtimer(CALLBACK(src, .proc/swift_dash2, dir_to_target, 0, distance), wait_time)
 	playsound(src, 'sound/creatures/claw_prepare.ogg', 100, 1)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/swift_dash2(move_dir, times_ran, distance_run)
 	if(times_ran > distance_run)
-		shoudnt_move = FALSE
+		shouldnt_move = FALSE
 		return
-	var/turf/T = get_step(get_turf(src), move_dir)
-	new /obj/effect/temp_visual/small_smoke/halfsecond(T)
-	forceMove(T)
+	var/turf/next_turf = get_step(get_turf(src), move_dir)
+	new /obj/effect/temp_visual/small_smoke/halfsecond(next_turf)
+	forceMove(next_turf)
 	playsound(src,'sound/creatures/claw_move.ogg', 50, 1)
-	for(var/mob/living/L in T.contents - src)
-		L.Knockdown(15)
-		L.attack_animal(src)
-//		new /obj/effect/temp_visual/cleave(L.loc)
+	for(var/mob/living/hit_mob in next_turf.contents - src)
+		hit_mob.Knockdown(15)
+		hit_mob.attack_animal(src)
 	addtimer(CALLBACK(src, .proc/swift_dash2, move_dir, (times_ran + 1), distance_run), 0.7)
 /////DASH ATTACK END
 
@@ -221,14 +221,14 @@
 /mob/living/simple_animal/hostile/megafauna/claw/proc/emp_pulse()
 	shake_animation(0.5)
 	visible_message("<span class='danger'>[src] stops and shudders for a moment... </span>")
-	shoudnt_move = TRUE
+	shouldnt_move = TRUE
 	addtimer(CALLBACK(src, .proc/emp_pulse2), 1 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/emp_pulse2()
 	shake_animation(2)
 	playsound(src, 'sound/voice/vox/vox_scream_1.ogg', 300, 1, 8, 8)
 	empulse(src, 2, 4)
-	shoudnt_move = FALSE
+	shouldnt_move = FALSE
 
 /////TENTACLE
 /mob/living/simple_animal/hostile/megafauna/claw/proc/tentacle(target)
@@ -241,7 +241,7 @@
 
 /////STING ATTACK
 /mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack(target)
-	shoudnt_move = TRUE
+	shouldnt_move = TRUE
 	visible_message("<span class='danger'>[src] stops suddenly and spikes apear all over it's body!</span>")
 	icon_state = "claw-phase2_sting_attack"
 	flick("claw-phase2_sting_attack_transform", src)
@@ -257,7 +257,7 @@
 	shoot_projectile(Get_Angle(src,target))
 	shoot_projectile(Get_Angle(src,target) - 5)
 	shoot_projectile(Get_Angle(src,target) - 10)
-	shoudnt_move = FALSE
+	shouldnt_move = FALSE
 
 /obj/projectile/claw_projectille
 	name = "claw's spike"
@@ -273,14 +273,14 @@
 /mob/living/simple_animal/hostile/megafauna/claw/proc/summon_creatures()
 	shake_animation(20)
 	visible_message("<span class='danger'>[src] shudders violently and starts to split a flesh spider from it's body!</span>")
-	shoudnt_move = TRUE
+	shouldnt_move = TRUE
 	addtimer(CALLBACK(src, .proc/summon_creatures2), 2 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/summon_creatures2()
 	shake_animation(5)
 	var/mob/living/summoned_spider = new /mob/living/simple_animal/hostile/poison/giant_spider/hunter(get_turf(src))
 	visible_message("<span class='danger'>[summoned_spider] violently tears apart from [src]!</span>")
-	shoudnt_move = FALSE
+	shouldnt_move = FALSE
 
 /////LIE SPIDER END
 
@@ -304,7 +304,7 @@
 	new /mob/living/simple_animal/hostile/megafauna/claw/phase2(get_turf(src))
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/unlock_phase2()
-	shoudnt_move = FALSE
+	shouldnt_move = FALSE
 	empulse(src, 3, 10) //changling's emp scream, right?
 	explosion(src, 0, 0, 5) //dramatic
 	playsound(src, 'sound/voice/vox/vox_scream_1.ogg', 300, 1, 8, 8) //jumpscare

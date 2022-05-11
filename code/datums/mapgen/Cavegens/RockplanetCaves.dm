@@ -25,6 +25,15 @@
 		/obj/structure/flora/junglebush = 2,
 		/obj/structure/flora/ash/cacti = 1)
 
+		/obj/structure/salvageable/machine = 20,
+		/obj/structure/salvageable/autolathe = 15,
+		/obj/structure/salvageable/computer = 10,
+		/obj/structure/salvageable/protolathe = 10,
+		/obj/structure/salvageable/circuit_imprinter = 8,
+		/obj/structure/salvageable/destructive_analyzer = 8,
+		/obj/structure/salvageable/server = 8,
+	)
+
 	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/effect/mine/shrapnel/human_only = 1)
 
 	initial_closed_chance = 30

@@ -247,20 +247,21 @@
 	righthand_file = 'whitesands/icons/mob/inhands/weapons/polearms_righthand.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 12
-	throwforce = 50
+	throwforce = 40
 	armour_penetration = 20
+	max_integrity = 300 //you can repair this with duct tape
 	var/damage_to_take_on_hit = 25 //every time we hit something, deal how much damage?
 
 /obj/item/spear/crystal/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=50, icon_wielded="crystal_spear1") //2 hit crit
+	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=30, icon_wielded="crystal_spear1") //4 hit crit
 
 /obj/item/spear/crystal/update_icon_state()
 	icon_state = "crystal_spear0"
 
 /obj/item/spear/crystal/examine(mob/user)
 	. = ..()
-	. += "You can throw it for very high damage on a animal along with a stun, though this will shatter it instantly."
+	. += "You can throw it for very high damage and stuns fauna, though this will shatter it instantly."
 	var/healthpercent = (obj_integrity/max_integrity) * 100
 	switch(healthpercent)
 		if(50 to 99)
@@ -272,25 +273,26 @@
 
 /obj/item/spear/crystal/attack(mob/living/M, mob/living/user)
 	. = ..()
-	handle_damage()
+	take_damage(damage_to_take_on_hit)
 
 /obj/item/spear/crystal/attack_obj(obj/O, mob/living/user)
 	. = ..()
-	handle_damage()
+	take_damage(damage_to_take_on_hit)
 
-/obj/item/spear/crystal/proc/handle_damage() // lets handle the damage we should take per hit
-	obj_integrity -= damage_to_take_on_hit
-	if(!(obj_integrity > 0))
-		visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
-		playsound(src,"shatter", 70)
-		new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
-		qdel(src)
+/obj/item/spear/crystal/obj_destruction(damage_flag)
+	visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
+	playsound(src,"shatter", 70)
+	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
+	return ..()
 
-/obj/item/spear/crystal/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum) //destroyes when trhwon
+/obj/item/spear/crystal/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum) //destroyes when thrown
 	. = ..()
-	if(isliving(hit_atom)) //are we living so we can stun without runiming?
-		var/mob/living/hit_mob = hit_atom
-		hit_mob.Stun(100) //this should be balanced because it breaks on hit
+	if(ishostile(hit_atom))
+		var/mob/living/simple_animal/hostile/hostile_target = hit_atom
+		var/hostile_ai_status = hostile_target.AIStatus
+		hostile_target.AIStatus = AI_OFF
+		addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status), 5 SECONDS)
+
 	new /obj/effect/temp_visual/goliath_tentacle/crystal/visual_only(get_turf(src))
 	visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
 	playsound(src,"shatter", 70)
