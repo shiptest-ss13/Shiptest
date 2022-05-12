@@ -340,7 +340,7 @@
 
 	data["authenticated"] = authenticated
 
-	if(computer)
+	if(computer && card_slot)
 		var/obj/item/card/id/id_card = card_slot.stored_card
 		data["has_id"] = !!id_card
 		data["id_name"] = id_card ? id_card.name : "-----"

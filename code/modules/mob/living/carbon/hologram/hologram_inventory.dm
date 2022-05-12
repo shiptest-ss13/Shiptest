@@ -10,7 +10,12 @@
 		update_inv_hands()
 		if(I == internal_storage)
 			internal_storage = null
-			update_inv_internal_storage()
+		if ( I == l_store )
+			l_store = null
+		if ( I == r_store )
+			r_store = null
+
+		update_inv_internal_storage()
 		return TRUE
 	return FALSE
 

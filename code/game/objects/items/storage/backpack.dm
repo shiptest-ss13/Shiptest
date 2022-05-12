@@ -16,6 +16,8 @@
 	item_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	pickup_sound = "rustle"
+	drop_sound = "rustle"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
 	resistance_flags = NONE
@@ -27,6 +29,7 @@
 	STR.max_combined_w_class = 21
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 21
+	STR.use_sound = 'sound/items/storage/unzip.ogg'
 
 /*
  * Backpack Types

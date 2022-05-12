@@ -10,6 +10,8 @@
 	item_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	pickup_sound =  'sound/items/handling/device_pickup.ogg'
+	drop_sound = 'sound/items/handling/device_drop.ogg'
 	throw_speed = 3
 	throw_range = 7
 	custom_materials = list(/datum/material/iron = 500, /datum/material/glass = 250)

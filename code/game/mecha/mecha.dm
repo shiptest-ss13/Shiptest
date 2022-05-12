@@ -9,7 +9,6 @@
 	layer = BELOW_MOB_LAYER//icon draw layer
 	infra_luminosity = 15 //byond implementation is bugged.
 	force = 5
-	flags_1 = HEAR_1
 	light_system = MOVABLE_LIGHT
 	light_power = 0.8
 	light_range = 6
@@ -147,6 +146,7 @@
 	diag_hud_set_mechhealth()
 	diag_hud_set_mechcell()
 	diag_hud_set_mechstat()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /obj/mecha/update_icon_state()
 	if(silicon_pilot && silicon_icon_state)
@@ -440,8 +440,6 @@
 /obj/mecha/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()
 	if(speaker == occupant)
-		if(radio?.broadcasting)
-			radio.talk_into(speaker, text, , spans, message_language, message_mods)
 		//flick speech bubble
 		var/list/speech_bubble_recipients = list()
 		for(var/mob/M in get_hearers_in_view(7,src))
@@ -808,6 +806,7 @@
 	AI.cancel_camera()
 	AI.controlled_mech = src
 	AI.remote_control = src
+	REMOVE_TRAIT(AI, TRAIT_HANDS_BLOCKED, ROUNDSTART_TRAIT)
 	AI.can_shunt = 0 //ONE AI ENTERS. NO AI LEAVES.
 	to_chat(AI, AI.can_dominate_mechs ? "<span class='announce'>Takeover of [name] complete! You are now loaded onto the onboard computer. Attempting to leave your transmission region will result in connection loss!</span>" :\
 		"<span class='notice'>You have been uploaded to a mech's onboard computer.</span>")
@@ -1062,6 +1061,7 @@
 				AI.linked_core = null
 				return
 			to_chat(AI, "<span class='notice'>Returning to core...</span>")
+			ADD_TRAIT(AI, TRAIT_HANDS_BLOCKED, ROUNDSTART_TRAIT) // Resets the AI's hand status
 			AI.controlled_mech = null
 			AI.remote_control = null
 			RemoveActions(occupant, 1)
