@@ -605,9 +605,9 @@
 	},
 /obj/structure/closet/secure_closet/wall{
 	dir = 1;
-	icon_door = "generic_wall";
+	icon_door = "orange_wall";
 	icon_state = "generic_wall";
-	name = "prisoner locker";
+	name = "prison locker";
 	pixel_y = -28;
 	req_access_txt = "1"
 	},
@@ -633,23 +633,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/mask/gas/sechailer/minutemen,
-/obj/item/clothing/mask/gas/sechailer/minutemen,
-/obj/item/clothing/mask/gas/sechailer/minutemen,
-/obj/structure/closet/wall{
-	dir = 1;
-	icon_door = "red_wall";
-	name = "uniform closet";
-	pixel_y = -28
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/prison)
@@ -1250,24 +1235,30 @@
 /obj/item/storage/backpack,
 /obj/item/storage/backpack,
 /obj/item/storage/backpack,
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
-	icon_door = "sec_wall";
-	icon_state = "sec_wall";
-	name = "equipment locker";
-	pixel_y = -28
-	},
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/kitchen/knife/combat/survival,
 /obj/item/kitchen/knife/combat/survival,
 /obj/item/kitchen/knife/combat/survival,
-/obj/item/storage/belt/military,
-/obj/item/storage/belt/military,
-/obj/item/storage/belt/military,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
+	},
+/obj/item/clothing/mask/gas/sechailer/minutemen,
+/obj/item/clothing/mask/gas/sechailer/minutemen,
+/obj/item/clothing/mask/gas/sechailer/minutemen,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/rank/security/officer/minutemen,
+/obj/item/clothing/under/rank/security/officer/minutemen,
+/obj/item/clothing/under/rank/security/officer/minutemen,
+/obj/structure/closet/secure_closet/wall{
+	dir = 1;
+	icon_door = "red_wall";
+	icon_state = "generic_wall";
+	name = "equipment locker";
+	pixel_y = -28
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/prison)
@@ -2912,6 +2903,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
+/obj/item/storage/belt/military,
+/obj/item/storage/belt/military,
+/obj/item/storage/belt/military,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/prison)
 "NS" = (
