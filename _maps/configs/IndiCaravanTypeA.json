@@ -3,6 +3,8 @@
 	"map_short_name": "Caravan-class",
 	"map_path": "_maps/shuttles/shiptest/IndiCaravanTypeA.dmm",
 	"map_id": "IndiCaravanTypeA",
+	"prefix": "ISV",
+	"namelists": "GENREAL, SPACE",
 	"roundstart": true,
 	"job_slots": 
 	{
@@ -12,15 +14,27 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Scientist": 1,
-		"Medical Doctor": 1,
-		"Atmospheric Technician": 1,
-		"Assistant": 1,
+		"Ship's Doctor": 
+		{
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 1
+		},
+		"Engine Technician": 
+		{
+			"outfit": "/datum/outfit/job/atmos",
+			"slots": 1
+		},
 		"Asteroid Miner": 
 		{
 			"outfit": "/datum/outfit/job/miner/hazard",
 			"slots":1 
-		}
+		},
+		"Fauna Researcher": 
+		{
+			"outfit": "/datum/job/scientist",
+			"slots":1 
+		},
+		"Assistant": 1
 	},
 	"cost": 750
 }
