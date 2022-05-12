@@ -84,7 +84,6 @@
 /datum/outfit/job/hos/inteq
 	name = "IRMG Vanguard (Inteq)"
 
-	id = /obj/item/card/id/gold
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	head = /obj/item/clothing/head/beret/sec/hos/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
