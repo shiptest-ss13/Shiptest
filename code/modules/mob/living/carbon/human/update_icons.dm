@@ -427,9 +427,6 @@ There are several things that need to be remembered:
 	return mutable_appearance(GLOB.female_clothing_icons[t_color], layer = -layer)
 
 /obj/item/proc/wear_species_version(file2use, state2use, layer, datum/species/mob_species)
-	return
-
-/obj/item/clothing/wear_species_version(file2use, state2use, layer, datum/species/mob_species)
 	LAZYINITLIST(GLOB.species_clothing_icons[mob_species.name])
 	var/icon/species_clothing_icon = GLOB.species_clothing_icons[mob_species.name]["[file2use]-[state2use]"]
 	if(!species_clothing_icon) 	//Create standing/laying icons if they don't exist

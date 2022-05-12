@@ -10,6 +10,8 @@
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "courierbag"
 	item_state = "courierbag"
+	greyscale_icon_state = "satchel"
+	greyscale_colors = list(list(15, 16), list(15, 17))
 
 /obj/item/storage/backpack/messenger/chem
 	name = "chemistry messenger bag"

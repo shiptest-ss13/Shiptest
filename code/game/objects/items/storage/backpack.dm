@@ -22,6 +22,8 @@
 	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
+	greyscale_icon_state = "bag"
+	greyscale_colors = list(list(19, 14), list(12, 22))
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
@@ -222,6 +224,8 @@
 	icon_state = "satchel-norm"
 	item_state = "satchel-norm"
 	species_exception = list(/datum/species/kepori)
+	greyscale_icon_state = "satchel"
+	greyscale_colors = list(list(15, 16), list(15, 16))
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
