@@ -1800,7 +1800,9 @@
 /turf/closed/wall,
 /area/ship/crew/canteen)
 "Jg" = (
-/obj/machinery/hydroponics/constructable,
+/obj/machinery/hydroponics/constructable{
+	layer = 2
+	},
 /obj/machinery/firealarm{
 	pixel_y = -28
 	},
@@ -1934,6 +1936,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
+/obj/machinery/jukebox,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Mj" = (
