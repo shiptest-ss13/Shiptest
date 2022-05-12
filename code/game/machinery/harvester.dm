@@ -180,7 +180,6 @@
 	. = ..()
 	if (!state_open && user == occupant)
 		container_resist_act(user)
-	. = ..()
 
 /obj/machinery/harvester/relaymove(mob/living/user, direction)
 	if (!state_open)
