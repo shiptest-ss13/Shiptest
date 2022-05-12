@@ -86,3 +86,12 @@
 	head = /obj/item/clothing/head/soft/cybersun
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
+
+/datum/outfit/job/paramedic/inteq
+	name = "IRMG Corpsman (Inteq)"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq
+	head = /obj/item/clothing/head/soft/inteq
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+	accessory = /obj/item/clothing/accessory/armband/med
+	belt = /obj/item/storage/belt/medical/webbing/paramedic
