@@ -278,10 +278,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/flasher{
-	id = "Cell 2";
-	pixel_x = -24
-	},
 /obj/effect/turf_decal/corner/grey/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
@@ -385,8 +381,8 @@
 /obj/item/gun/ballistic/revolver/detective,
 /obj/item/melee/classic_baton,
 /obj/machinery/power/apc/auto_name/north,
-/obj/structure/cable{
-	icon_state = "0-2"
+/obj/item/radio/intercom{
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
@@ -450,6 +446,11 @@
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"fV" = (
+/obj/effect/turf_decal/corner/grey/diagonal,
+/obj/effect/turf_decal/number/one,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/prison)
 "ge" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer4{
 	dir = 8
@@ -520,6 +521,9 @@
 	},
 /obj/effect/turf_decal/corner/red{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
@@ -593,9 +597,6 @@
 /area/ship/engineering)
 "hj" = (
 /obj/structure/table,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/machinery/recharger,
 /obj/effect/turf_decal/corner/red{
 	dir = 8
@@ -723,9 +724,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "jw" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/structure/window/reinforced,
 /obj/effect/turf_decal/corner/red,
 /obj/effect/turf_decal/corner/red{
@@ -761,6 +759,13 @@
 /obj/machinery/navbeacon/wayfinding/sec{
 	location = "Brig"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/prison)
 "ko" = (
@@ -792,6 +797,16 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
+/area/ship/security/prison)
+"kr" = (
+/obj/effect/turf_decal/corner/grey/diagonal,
+/obj/machinery/door/airlock/security/brig/glass{
+	id = "Cell 1";
+	name = "Cell 1";
+	req_access_txt = "1"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
 "ky" = (
 /obj/structure/sign/number/four,
@@ -1440,17 +1455,11 @@
 /area/ship/hallway/central)
 "rm" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/number/two{
-	dir = 4
-	},
-/obj/machinery/door_timer{
-	id = "Cell 2";
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
 /area/ship/security/prison)
 "rp" = (
 /obj/machinery/light/small,
@@ -1778,12 +1787,6 @@
 /area/ship/bridge)
 "uN" = (
 /obj/machinery/camera/autoname,
-/obj/machinery/firealarm{
-	pixel_y = 24
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/structure/closet/secure_closet{
 	icon_door = "tac";
 	icon_state = "tac";
@@ -1805,6 +1808,10 @@
 	},
 /obj/effect/turf_decal/corner/red{
 	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
@@ -2744,7 +2751,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/oil/streak,
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
@@ -3008,9 +3015,6 @@
 /area/ship/engineering)
 "IO" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
 "Je" = (
@@ -3098,27 +3102,16 @@
 /turf/open/floor/carpet,
 /area/ship/crew)
 "Kw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /obj/machinery/door_timer{
 	id = "Cell 1";
 	pixel_y = -32
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/number/one{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/security/prison)
-"KB" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
-/obj/structure/closet/secure_closet/brig/wall{
-	dir = 4;
-	id = "Cell 1";
-	pixel_x = -28
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/prison)
@@ -3236,15 +3229,12 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "LG" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
-/obj/structure/closet/secure_closet/brig/wall{
-	dir = 4;
-	id = "Cell 2";
-	pixel_x = -28
-	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
 /area/ship/security/prison)
 "LK" = (
 /obj/structure/chair/office{
@@ -3259,9 +3249,6 @@
 /obj/effect/turf_decal/corner/red,
 /obj/effect/turf_decal/corner/red{
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
@@ -3439,18 +3426,16 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/prison)
 "NS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/grey/diagonal,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 4
-	},
-/obj/machinery/door/airlock/security/brig/glass{
-	id = "Cell 2";
-	name = "Cell 2";
-	req_access_txt = "1"
+/obj/structure/sign/poster/official/obey{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
@@ -3802,17 +3787,13 @@
 /area/ship/hallway/port)
 "SJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/grey/diagonal,
-/obj/structure/bed,
-/obj/item/bedsheet/grey,
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/flasher{
-	id = "Cell 1";
-	pixel_x = -24
+/obj/structure/closet/secure_closet/brig{
+	id = "Cell 1"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/prison)
 "SP" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4224,17 +4205,10 @@
 /turf/open/floor/carpet,
 /area/ship/crew)
 "XY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/grey/diagonal,
-/obj/effect/turf_decal/siding/wideplating/dark{
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
-/obj/machinery/door/airlock/security/brig/glass{
-	id = "Cell 1";
-	name = "Cell 1";
-	req_access_txt = "1"
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/ship/security/prison)
 "Yl" = (
 /obj/machinery/door/firedoor/border_only,
@@ -4361,6 +4335,15 @@
 	},
 /turf/open/floor/carpet,
 /area/ship/crew)
+"ZK" = (
+/obj/machinery/flasher{
+	id = "Cell 1";
+	pixel_x = -24
+	},
+/obj/effect/turf_decal/corner/grey/diagonal,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/prison)
 "ZL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -4560,7 +4543,7 @@ tO
 Ee
 bP
 dR
-bP
+ZK
 bP
 SJ
 bP
@@ -4579,8 +4562,8 @@ ut
 Gg
 bP
 NS
-bP
-bP
+fV
+kr
 XY
 bP
 sM
@@ -4599,7 +4582,7 @@ xQ
 bP
 rm
 LG
-KB
+LG
 Kw
 bP
 hA
