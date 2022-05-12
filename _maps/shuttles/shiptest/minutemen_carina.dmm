@@ -206,9 +206,6 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/machinery/turretid{
-	pixel_y = 32
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cQ" = (
@@ -1220,6 +1217,7 @@
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 8
 	},
+/obj/effect/mapping_helpers/airlock/unres,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/security/prison)
 "oY" = (
@@ -2020,6 +2018,7 @@
 "xb" = (
 /obj/machinery/door/window/eastleft,
 /obj/machinery/button/massdriver{
+	dir = 1;
 	id = "space_cops_port_launcher";
 	name = "port mass driver button";
 	pixel_x = 7;
@@ -2924,6 +2923,9 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/machinery/turretid{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Hp" = (
@@ -3362,6 +3364,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/loading,
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "Nu" = (
@@ -3389,6 +3395,9 @@
 	},
 /obj/structure/chair/office/light{
 	dir = 1
+	},
+/obj/structure/sign/poster/official/moth/epi{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
