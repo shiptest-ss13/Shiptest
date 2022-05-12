@@ -126,6 +126,15 @@
 	normal_integrity = 400
 	hatch_colour = "#b81b1b"
 
+/obj/machinery/door/airlock/security/brig //fulltile cell doors because of shuttle shenanigans
+	var/id = null
+
+/obj/machinery/door/airlock/security/brig/glass
+	opacity = FALSE
+	glass = TRUE
+	normal_integrity = 400
+	hatch_colour = "#b81b1b"
+
 /obj/machinery/door/airlock/medical/glass
 	opacity = FALSE
 	glass = TRUE
