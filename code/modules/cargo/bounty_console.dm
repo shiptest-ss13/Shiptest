@@ -28,12 +28,12 @@
 	info = "<h2>Nanotrasen Cargo Bounties</h2></br>"
 	update_icon()
 
-	for(var/datum/bounty/B as anything in GLOB.bounties_list)
-		if(B.claimed)
+	for(var/datum/bounty/bounty as anything in GLOB.bounties_list)
+		if(bounty.claimed)
 			continue
-		info += {"<h3>[B.name]</h3>
-		<ul><li>Reward: [B.reward_string()]</li>
-		<li>Completed: [B.completion_string()]</li></ul>"}
+		info += {"<h3>[bounty.name]</h3>
+		<ul><li>Reward: [bounty.reward_string()]</li>
+		<li>Completed: [bounty.completion_string()]</li></ul>"}
 
 /obj/machinery/computer/bounty/ui_interact(mob/user, datum/tgui/ui)
 	if(!length(GLOB.bounties_list))
@@ -46,8 +46,8 @@
 /obj/machinery/computer/bounty/ui_data(mob/user)
 	var/list/data = list()
 	var/list/bountyinfo = list()
-	for(var/datum/bounty/B as anything in GLOB.bounties_list) //This should probably be static data.
-		bountyinfo += list(list("name" = B.name, "description" = B.description, "reward_string" = B.reward_string(), "completion_string" = B.completion_string() , "claimed" = B.claimed, "can_claim" = B.can_claim(), "priority" = B.high_priority, "bounty_ref" = REF(B)))
+	for(var/datum/bounty/bounty as anything in GLOB.bounties_list) //This should probably be static data.
+		bountyinfo += list(list("name" = bounty.name, "description" = bounty.description, "reward_string" = bounty.reward_string(), "completion_string" = bounty.completion_string() , "claimed" = bounty.claimed, "can_claim" = bounty.can_claim(), "priority" = bounty.high_priority, "bounty_ref" = REF(bounty)))
 	data["stored_cash"] = cargocash?.account_balance
 	data["bountydata"] = bountyinfo
 	return data
