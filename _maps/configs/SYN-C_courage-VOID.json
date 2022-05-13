@@ -1,9 +1,11 @@
 {
 	"map_name": "Courage-class Strike Dropship",
 	"map_short_name": "Courage-class",
-	"prefix": "SYN-C",
+	"prefix": "SSV",
+	"namelists": [“SPACE”, “WEAPONS”, “NATURAL_AGGRESSIVE”, “BEASTS”],
 	"map_path": "_maps/shuttles/shiptest/courage.dmm",
 	"map_id": "courage_class",
+	"limit": 1,
 	"job_slots": {
 		"Syndicate Strike Captain": {
 			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/captain",
