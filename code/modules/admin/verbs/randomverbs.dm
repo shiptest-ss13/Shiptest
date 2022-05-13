@@ -948,14 +948,14 @@
 				return
 		if(ADMIN_PUNISHMENT_IMMERSE)
 			immerse_player(target)
-		if(ADMIN_PUNISHMENT_NYA)//WS Start - Admin Punishment: Cat Tongue
+		if(ADMIN_PUNISHMENT_NYA)
 			if(!iscarbon(target))
 				to_chat(usr,"<span class='warning'>This must be used on a carbon mob.</span>")
 				return
 			to_chat(target, "<span class='userdanger'>You do nyat feew vewy good!</span>", confidential = TRUE)
 			var/mob/living/carbon/dude = target
-			var/obj/item/organ/tongue/felinid/tonje = new
-			tonje.Insert(dude, TRUE, FALSE)//WS End - Admin Punishment: Cat Tongue
+			var/obj/item/organ/tongue/uwuspeak/tonje = new
+			tonje.Insert(dude, TRUE, FALSE)
 
 	punish_log(target, punishment)
 
