@@ -51,7 +51,7 @@
 		internal_lighter = new
 		internal_lighter.Grant(C)
 
-/datum/action/innate/liz__lighter
+/datum/action/innate/liz_lighter
 	name = "Ignite"
 	desc = "(Requires you to drink welding fuel beforehand)"
 	check_flags = AB_CHECK_CONSCIOUS

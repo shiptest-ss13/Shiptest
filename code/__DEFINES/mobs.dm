@@ -124,9 +124,8 @@
 #define FLAG_PLASMAMAN (1<<3)
 #define FLAG_MOTH (1<<4)
 #define FLAG_LIZARD (1<<5)
-#define FLAG_OOZELING (1<<6)
-#define FLAG_FLY (1<<7)
-#define FLAG_MONKEY (1<<8)
+#define FLAG_FLY (1<<6)
+#define FLAG_MONKEY (1<<7)
 
 //Bodytype defines for how things can be worn.
 #define BODYTYPE_ORGANIC (1<<0)
