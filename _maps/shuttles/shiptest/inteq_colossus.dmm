@@ -674,6 +674,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/navbeacon/wayfinding{
+	codes_txt = "patrol;next_patrol=crew";
+	location = "hall"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "ho" = (
@@ -1152,6 +1156,16 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
+"na" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/machinery/navbeacon/wayfinding{
+	codes_txt = "patrol;next_patrol=port";
+	location = "starboard"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "nb" = (
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 1
@@ -2124,6 +2138,10 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/navbeacon/wayfinding{
+	codes_txt = "patrol;next_patrol=hall";
+	location = "office"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "xd" = (
@@ -2329,6 +2347,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
+	},
+/obj/machinery/navbeacon/wayfinding{
+	location = "bridge"
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
@@ -2705,6 +2726,16 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
+"EF" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/machinery/navbeacon/wayfinding{
+	codes_txt = "patrol;next_patrol=office";
+	location = "port"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "EG" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable,
@@ -3096,6 +3127,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
+	},
+/obj/machinery/navbeacon/wayfinding{
+	location = "armory"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -3513,6 +3547,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
+	},
+/obj/machinery/navbeacon/wayfinding{
+	location = "cryo"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
@@ -3999,6 +4036,18 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
+"WR" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/navbeacon/wayfinding{
+	codes_txt = "patrol;next_patrol=starboard";
+	location = "crew"
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "WZ" = (
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 1
@@ -4138,6 +4187,9 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/obj/machinery/navbeacon/wayfinding{
+	location = "engineering"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "XJ" = (
@@ -4578,13 +4630,13 @@ XJ
 XJ
 vZ
 Cu
-Cu
+EF
 Tk
 wo
 rJ
 du
 Zc
-Cu
+na
 Cu
 pX
 XJ
@@ -4964,7 +5016,7 @@ zh
 Xt
 bs
 eD
-eD
+WR
 rf
 Fr
 zF
