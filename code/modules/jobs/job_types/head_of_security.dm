@@ -106,6 +106,7 @@
 	belt = null
 	suit = null
 	gloves = null
+	suit_store = null
 
 /datum/outfit/job/hos/nanotrasen
 	name = "Head of Security (Nanotrasen)"
