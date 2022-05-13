@@ -1,16 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ab" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/navbeacon/wayfinding{
-	codes_txt = "patrol;next_patrol=starboard";
-	location = "crew"
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew)
 "al" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -73,6 +61,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
+"aF" = (
+/obj/structure/sign/number/nine{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/office)
 "aG" = (
 /obj/machinery/atmospherics/components/unary/tank/toxins{
 	dir = 1;
@@ -763,6 +757,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"ig" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/navbeacon/wayfinding{
+	codes_txt = "patrol;next_patrol=starboard";
+	location = "crew"
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "iq" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -823,6 +829,10 @@
 /obj/effect/turf_decal/corner_techfloor_gray,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"jf" = (
+/obj/structure/sign/number/eight,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security/armory)
 "jn" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/reagent_dispensers/watertank,
@@ -1158,16 +1168,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew)
-"mW" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
-/obj/machinery/navbeacon/wayfinding{
-	codes_txt = "patrol;next_patrol=port";
-	location = "starboard"
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo)
 "mY" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1229,10 +1229,10 @@
 /area/ship/security/armory)
 "nV" = (
 /obj/structure/rack,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
 /obj/item/pickaxe/drill/jackhammer/old,
 /obj/effect/turf_decal/floordetail/edgedrain,
+/obj/item/pickaxe/mini,
+/obj/item/pickaxe/mini,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "nW" = (
@@ -1438,10 +1438,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
-"pG" = (
-/obj/structure/sign/number/eight,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/armory)
 "pP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1539,7 +1535,7 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"qN" = (
+"qT" = (
 /obj/structure/sign/number/eight{
 	dir = 1
 	},
@@ -1668,12 +1664,6 @@
 	},
 /obj/item/toy/figure/inteq,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/office)
-"si" = (
-/obj/structure/sign/number/nine{
-	dir = 1
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/office)
 "sm" = (
 /obj/structure/table,
@@ -1864,6 +1854,7 @@
 	name = "\proper the vanguard's bowman headset"
 	},
 /obj/item/areaeditor/shuttle,
+/obj/item/shield/riot/tele,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "tI" = (
@@ -1876,6 +1867,10 @@
 /obj/machinery/holopad,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
+"tL" = (
+/obj/structure/sign/number/one,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/cryo)
 "tR" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -2032,6 +2027,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/toilet)
+"vd" = (
+/obj/structure/sign/number/four,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security/armory)
 "vp" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2142,10 +2141,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"wN" = (
-/obj/structure/sign/number/four,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/armory)
 "wS" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -2315,10 +2310,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/carpet/black,
 /area/ship/crew)
-"zo" = (
-/obj/structure/sign/number/nine,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/armory)
 "zE" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
@@ -2519,6 +2510,7 @@
 	pixel_y = 24
 	},
 /obj/effect/turf_decal/industrial/caution,
+/obj/structure/ore_box,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "BK" = (
@@ -2527,10 +2519,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"BN" = (
-/obj/structure/sign/number/one,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/cryo)
 "BQ" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -2563,11 +2551,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
-"Cf" = (
-/obj/machinery/door/firedoor,
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ship/crew/office)
 "Ci" = (
 /obj/structure/rack,
 /obj/item/gun/ballistic/automatic/pistol/m1911{
@@ -2672,16 +2655,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"Dp" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
-/obj/machinery/navbeacon/wayfinding{
-	codes_txt = "patrol;next_patrol=office";
-	location = "port"
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo)
 "Dq" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/armory)
@@ -2723,6 +2696,12 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
+"Eb" = (
+/obj/structure/sign/number/four{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/office)
 "Eo" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
@@ -2915,6 +2894,16 @@
 /obj/item/storage/belt/utility,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"GO" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/machinery/navbeacon/wayfinding{
+	codes_txt = "patrol;next_patrol=office";
+	location = "port"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "GR" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -3026,6 +3015,16 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"HO" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/machinery/navbeacon/wayfinding{
+	codes_txt = "patrol;next_patrol=port";
+	location = "starboard"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "It" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -3417,12 +3416,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
-"Pj" = (
-/obj/structure/sign/number/four{
-	dir = 1
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/office)
 "Pv" = (
 /obj/effect/turf_decal/corner/yellow,
 /obj/effect/turf_decal/corner/brown{
@@ -3551,6 +3544,10 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering)
+"Rk" = (
+/obj/structure/sign/number/nine,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security/armory)
 "Rm" = (
 /obj/docking_port/mobile{
 	dir = 2;
@@ -4232,6 +4229,11 @@
 "Yr" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/fore)
+"Yu" = (
+/obj/machinery/door/firedoor,
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/crew/office)
 "Yx" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/open/floor/engine/hull,
@@ -4654,13 +4656,13 @@ XJ
 XJ
 vZ
 Cu
-Dp
+GO
 Tk
 wo
 rJ
 du
 Zc
-mW
+HO
 Cu
 pX
 XJ
@@ -4781,7 +4783,7 @@ ry
 ry
 ry
 Pv
-Cf
+Yu
 Zz
 tu
 cO
@@ -4802,7 +4804,7 @@ sc
 wb
 DL
 Pv
-Cf
+Yu
 Zz
 Zu
 aU
@@ -4813,10 +4815,10 @@ mz
 Px
 Ob
 nQ
-pG
+jf
 "}
 (21,1,1) = {"
-Pj
+Eb
 eK
 jw
 sP
@@ -4834,10 +4836,10 @@ di
 Xn
 Wc
 Ci
-zo
+Rk
 "}
 (22,1,1) = {"
-si
+aF
 eT
 jw
 sQ
@@ -4855,10 +4857,10 @@ Dq
 Dq
 Dq
 Dq
-wN
+vd
 "}
 (23,1,1) = {"
-qN
+qT
 eX
 jX
 td
@@ -4876,7 +4878,7 @@ kI
 aD
 xu
 eH
-BN
+tL
 "}
 (24,1,1) = {"
 ZB
@@ -5040,7 +5042,7 @@ zh
 Xt
 bs
 eD
-ab
+ig
 rf
 Fr
 zF
