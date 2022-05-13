@@ -22,7 +22,7 @@
 	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
-	greyscale_icon_state = "bag"
+	greyscale_icon_state = "backpack"
 	greyscale_colors = list(list(19, 14), list(12, 22))
 
 /obj/item/storage/backpack/ComponentInitialize()

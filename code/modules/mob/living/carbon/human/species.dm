@@ -22,6 +22,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/bodytype = BODYTYPE_HUMANOID
 	///Whether or not the race has sexual characteristics (biological genders). At the moment this is only FALSE for skeletons and shadows
 	var/sexes = TRUE
+	///Minimum species_age
+	var/species_age_min = 17
+	///Maximum species age
+	var/species_age_max = 85
 
 	var/list/offset_clothing = list()
 
@@ -134,13 +138,23 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/has_innate_wings = FALSE
 
 	/// The natural temperature for a body
-	var/bodytemp_normal = BODYTEMP_NORMAL
+	var/bodytemp_normal = HUMAN_BODYTEMP_NORMAL
 	/// Minimum amount of kelvin moved toward normal body temperature per tick.
-	var/bodytemp_autorecovery_min = BODYTEMP_AUTORECOVERY_MINIMUM
+	var/bodytemp_autorecovery_min = HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM
+	/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery.
+	var/bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR
+	///Similar to the autorecovery_divsor, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to lose bodytemp faster.
+	var/bodytemp_heat_divisor = HUMAN_BODYTEMP_HEAT_DIVISOR
+	///Similar to the autorecovery_divisor, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is lower than their body temperature. Make it lower to gain bodytemp faster.
+	var/bodytemp_cold_divisor = HUMAN_BODYTEMP_COLD_DIVISOR
 	/// The body temperature limit the body can take before it starts taking damage from heat.
-	var/bodytemp_heat_damage_limit = BODYTEMP_HEAT_DAMAGE_LIMIT
+	var/bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT
 	/// The body temperature limit the body can take before it starts taking damage from cold.
-	var/bodytemp_cold_damage_limit = BODYTEMP_COLD_DAMAGE_LIMIT
+	var/bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT
+	/// The maximum rate at which a species can heat up per tick
+	var/bodytemp_cooling_rate_max = HUMAN_BODYTEMP_COOLING_MAX
+	/// The maximum rate at which a species can cool down per tick
+	var/bodytemp_heating_rate_max = HUMAN_BODYTEMP_HEATING_MAX
 
 	///Species-only traits. Can be found in [code/_DEFINES/DNA.dm]
 	var/list/species_traits = list()
@@ -865,6 +879,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if("kepori_feathers" in mutant_bodyparts)
 		if(!H.dna.features["kepori_feathers"] || H.dna.features["kepori_feathers"] == "None" || (H.head && (H.head.flags_inv & HIDEHAIR)) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD) //HD.status == BODYTYPE_ROBOTIC) and here too
 			bodyparts_to_add -= "kepori_feathers"
+	
+	if("vox_head_quills" in mutant_bodyparts)
+		if(!H.dna.features["vox_head_quills"] || H.dna.features["vox_head_quills"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
+			bodyparts_to_add -= "vox_head_quills"
+
+	if("vox_neck_quills" in mutant_bodyparts)
+		if(!H.dna.features["vox_neck_quills"] || H.dna.features["vox_neck_quills"] == "None")
+			bodyparts_to_add -= "vox_neck_quills"
 
 ////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE
 	///Digi handling
@@ -958,6 +980,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.kepori_body_feathers_list[H.dna.features["kepori_body_feathers"]]
 				if("kepori_feathers")
 					S = GLOB.kepori_feathers_list[H.dna.features["kepori_feathers"]]
+				if("vox_head_quills")
+					S = GLOB.vox_head_quills_list[H.dna.features["vox_head_quills"]]
+				if("vox_neck_quills")
+					S = GLOB.vox_neck_quills_list[H.dna.features["vox_neck_quills"]]
 			if(!S || S.icon_state == "none")
 				continue
 
@@ -1253,25 +1279,29 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/after_equip_job(datum/job/J, mob/living/carbon/human/H)
 	H.update_mutant_bodyparts()
 
+
+// Do species-specific reagent handling here
+// Return 0 if it should do normal processing too
+// Return 1 if it's effect is handled entirely by species code
+// Other return values will cause weird badness
 /datum/species/proc/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+	SHOULD_CALL_PARENT(TRUE)
+
 	if(chem.type == exotic_blood)
 		H.blood_volume = min(H.blood_volume + round(chem.volume, 0.1), BLOOD_VOLUME_MAXIMUM)
 		H.reagents.del_reagent(chem.type)
 		return TRUE
-	if(chem.overdose_threshold && chem.volume >= chem.overdose_threshold && !chem.overdosed)
-		chem.overdosed = TRUE
-		chem.overdose_start(H)
+	//This handles dumping unprocessable reagents.
+	var/dump_reagent = TRUE
+	if((chem.process_flags & SYNTHETIC) && (H.dna.species.reagent_tag & PROCESS_SYNTHETIC))		//SYNTHETIC-oriented reagents require PROCESS_SYNTHETIC
+		dump_reagent = FALSE
+	if((chem.process_flags & ORGANIC) && (H.dna.species.reagent_tag & PROCESS_ORGANIC))		//ORGANIC-oriented reagents require PROCESS_ORGANIC
+		dump_reagent = FALSE
+	if(dump_reagent)
+		chem.holder.remove_reagent(chem.type, chem.metabolization_rate)
+		return TRUE
+	return FALSE
 
-// Do species-specific reagent handling here
-// Return 1 if it should do normal processing too
-// Return 0 if it shouldn't deplete and do its normal effect
-// Other return values will cause weird badness
-/datum/species/proc/handle_reagents(mob/living/carbon/human/H, datum/reagent/R)
-	if(R.type == exotic_blood)
-		H.blood_volume = min(H.blood_volume + round(R.volume, 0.1), BLOOD_VOLUME_NORMAL)
-		H.reagents.del_reagent(R.type)
-		return FALSE
-	return TRUE
 
 //return a list of spans or an empty list
 /datum/species/proc/get_spans()
@@ -1917,7 +1947,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// Display alerts based on the amount of fire damage being taken
 		if (burn_damage)
 			switch(burn_damage)
-				if(0 to 2)
+				if(1 to 2)
 					H.throw_alert("temp", /atom/movable/screen/alert/hot, 1)
 				if(2 to 4)
 					H.throw_alert("temp", /atom/movable/screen/alert/hot, 2)
@@ -2018,22 +2048,22 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	// We are very cold, increate body temperature
 	if(body_temp <= bodytemp_cold_damage_limit)
-		natural_change = max((body_temperature_difference * H.metabolism_efficiency / BODYTEMP_AUTORECOVERY_DIVISOR), \
+		natural_change = max((body_temperature_difference * H.metabolism_efficiency / bodytemp_autorecovery_divisor), \
 			bodytemp_autorecovery_min)
 
 	// we are cold, reduce the minimum increment and do not jump over the difference
 	else if(body_temp > bodytemp_cold_damage_limit && body_temp < H.get_body_temp_normal())
-		natural_change = max(body_temperature_difference * H.metabolism_efficiency / BODYTEMP_AUTORECOVERY_DIVISOR, \
+		natural_change = max(body_temperature_difference * H.metabolism_efficiency / bodytemp_autorecovery_divisor, \
 			min(body_temperature_difference, bodytemp_autorecovery_min / 4))
 
 	// We are hot, reduce the minimum increment and do not jump below the difference
 	else if(body_temp > H.get_body_temp_normal() && body_temp <= bodytemp_heat_damage_limit)
-		natural_change = min(body_temperature_difference * H.metabolism_efficiency / BODYTEMP_AUTORECOVERY_DIVISOR, \
+		natural_change = min(body_temperature_difference * H.metabolism_efficiency / bodytemp_autorecovery_divisor, \
 			max(body_temperature_difference, -(bodytemp_autorecovery_min / 4)))
 
 	// We are very hot, reduce the body temperature
 	else if(body_temp >= bodytemp_heat_damage_limit)
-		natural_change = min((body_temperature_difference / BODYTEMP_AUTORECOVERY_DIVISOR), -bodytemp_autorecovery_min)
+		natural_change = min((body_temperature_difference / bodytemp_autorecovery_divisor), -bodytemp_autorecovery_min)
 
 	var/thermal_protection = H.get_insulation_protection(body_temp + natural_change)
 	if(areatemp > body_temp) // It is hot here
@@ -2122,7 +2152,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(thermal_protection >= FIRE_SUIT_MAX_TEMP_PROTECT && !no_protection)
 			H.adjust_bodytemperature(11)
 		else
-			H.adjust_bodytemperature(BODYTEMP_HEATING_MAX + (H.fire_stacks * 12))
+			H.adjust_bodytemperature(bodytemp_heating_rate_max + (H.fire_stacks * 12))
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 
 /datum/species/proc/CanIgniteMob(mob/living/carbon/human/H)
@@ -2325,6 +2355,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 */
 
 /datum/species/proc/get_item_offsets_for_index(i)
+	return
+
+/datum/species/proc/get_item_offsets_for_dir(dir, hand_index)
 	return
 
 /datum/species/proc/get_harm_descriptors()

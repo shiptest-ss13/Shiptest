@@ -307,6 +307,9 @@
 		GLOB.species_clothing_icons[mob_species.name]["[file2use]-[state2use]"] = human_clothing_icon
 		return
 
+	if(!icon_exists(species.species_clothing_path, greyscale_icon_state))
+		return
+
 	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_icon_state)
 	var/list/final_list = list()
 	for(var/i in 1 to 3)
@@ -321,7 +324,9 @@
 
 	species_icon.MapColors(final_list[1], final_list[2], final_list[3])
 	species_icon = fcopy_rsc(species_icon)
-	GLOB.species_clothing_icons[mob_species.name]["[file2use]-[state2use]"] = species_icon
+	GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = species_icon
+
+	return TRUE
 
 /obj/item/clothing/under/verb/toggle()
 	set name = "Adjust Suit Sensors"
