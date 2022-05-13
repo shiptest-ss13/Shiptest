@@ -60,7 +60,6 @@
 	return is_type_in_list(my_turf, valid_turfs)
 
 /obj/structure/nomifactory/deep_miner/proc/payout()
-	var/turf/target = get_step(src, dir)
 	var/list/outputs = new
 	say("Processing mineral load...")
 
@@ -85,4 +84,4 @@
 			stack_trace("illegal output for [src]: [output]")
 			continue
 		var/atom/movable/output_atom = new output
-		output(output_atom)
+		do_output(output_atom)

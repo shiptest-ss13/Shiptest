@@ -165,7 +165,7 @@
 	else
 		. += "You could deconstruct it with a <i>welding tool and crowbar</i>"
 
-/obj/structure/nomifactory/proc/output(atom/movable/outputed)
+/obj/structure/nomifactory/proc/do_output(atom/movable/outputed)
 	if(conveyor)
 		outputed.loc = get_turf(conveyor)
 		return

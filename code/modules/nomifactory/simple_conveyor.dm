@@ -16,9 +16,9 @@
 	processing = new
 
 /obj/structure/nomifactory/conveyor/allow_same_tile(obj/structure/nomifactory/other_node)
-	return !parent_node && !istype(/obj/structure/nomifactory/conveyor)
+	return !parent_node && !istype(other_node, /obj/structure/nomifactory/conveyor)
 
-/obj/structure/nomifactory/conveyor/output(atom/movable/outputed)
+/obj/structure/nomifactory/conveyor/do_output(atom/movable/outputed)
 	var/turf/output_turf = get_step(src, dir)
 	var/obj/structure/nomifactory/conveyor/new_conveyor = locate() in output_turf
 
