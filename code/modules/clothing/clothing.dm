@@ -90,7 +90,7 @@
 
 /obj/item/clothing/attackby(obj/item/tool, mob/user, params)
 	if(tool.get_sharpness() && cuttable)
-		if(tgui_alert(user, "Are you sure you want to cut the [src] into strips?", "Cut clothing:", list("Yes", "No")) != "Yes")
+		if(tgui_alert(user, "Are you sure you want to cut \the [src] into strips?", "Cut clothing:", list("Yes", "No")) != "Yes")
 			return
 		if(QDELETED(src))
 			return
