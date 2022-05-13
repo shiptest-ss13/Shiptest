@@ -64,3 +64,27 @@
 /obj/item/organ/tongue/kepori/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_kepi
+
+/obj/item/organ/tongue/vox
+	name = "hindtongue"
+	desc = "Some kind of severed bird tongue."
+	say_mod = "shrieks"
+	var/static/list/languages_possible_vox = typecacheof(list(
+		/datum/language/common,
+		/datum/language/draconic,
+		/datum/language/codespeak,
+		/datum/language/monkey,
+		/datum/language/narsie,
+		/datum/language/beachbum,
+		/datum/language/aphasia,
+		/datum/language/piratespeak,
+		/datum/language/moffic,
+		/datum/language/sylvan,
+		/datum/language/shadowtongue,
+		/datum/language/terrum,
+		/datum/language/vox_pidgin
+	))
+
+/obj/item/organ/tongue/vox/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_vox

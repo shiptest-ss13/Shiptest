@@ -53,7 +53,7 @@
 	// this balances body temp to the enviroment and natural stabilization
 	. = ..()
 
-	if(bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
+	if(bodytemperature > HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT)
 		//Body temperature is too hot.
 		throw_alert("alien_fire", /atom/movable/screen/alert/alien_fire)
 		switch(bodytemperature)
@@ -69,7 +69,7 @@
 	else
 		clear_alert("alien_fire")
 
-/mob/living/carbon/alien/reagent_check(datum/reagent/R) //can metabolize all reagents
+/mob/living/carbon/alien/handled_by_species(datum/reagent/R) //can metabolize all reagents
 	return 0
 
 /mob/living/carbon/alien/IsAdvancedToolUser()

@@ -192,7 +192,7 @@
 
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(BP.limb_id != (dna.species.examine_limb_id ? dna.species.examine_limb_id : dna.species.id))
-			msg += "<span class='info'>[t_He] has \an [BP.name].</span>\n"
+			msg += "<span class='info'>[t_He] [t_has] \an [BP.name].</span>\n"
 
 	if(!(user == src && src.hal_screwyhud == SCREWYHUD_HEALTHY)) //fake healthy
 		if(temp)
