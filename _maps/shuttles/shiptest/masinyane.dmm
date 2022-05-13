@@ -78,6 +78,7 @@
 	},
 /obj/machinery/button/door{
 	color = "#ddcc00";
+	dir = 8;
 	id = "masi_engi";
 	name = "engine emergency shielding";
 	pixel_x = 24
@@ -95,6 +96,7 @@
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2,
 /obj/machinery/button/door{
 	color = "#ddcc00";
+	dir = 8;
 	id = "masi_engi";
 	name = "engine emergency shielding";
 	pixel_x = 24
@@ -187,6 +189,7 @@
 	layer = 2.09
 	},
 /obj/machinery/button/door{
+	dir = 8;
 	id = "masinyane_blastdoors";
 	pixel_x = 23
 	},
@@ -464,6 +467,7 @@
 	layer = 2.09
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "masinyane_blastdoors";
 	pixel_x = -23
 	},
@@ -579,6 +583,7 @@
 "PB" = (
 /obj/machinery/button/door{
 	color = "#ddcc00";
+	dir = 4;
 	id = "masi_engi";
 	name = "engine emergency shielding";
 	pixel_x = -23
