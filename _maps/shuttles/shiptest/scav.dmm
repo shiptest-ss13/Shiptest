@@ -41,7 +41,7 @@
 	dir = 1;
 	pixel_y = -32
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "bK" = (
 /obj/effect/turf_decal/corner/pink/border{
@@ -130,7 +130,7 @@
 	id = "scav_door";
 	name = "dusty blast door"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "eh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -184,7 +184,7 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/external)
 "gr" = (
 /obj/structure/cable{
@@ -359,7 +359,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "ls" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -481,7 +481,7 @@
 	id = "scav_door";
 	name = "dusty blast door"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "oY" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -816,7 +816,6 @@
 /obj/item/storage/firstaid/advanced,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/box/bodybags,
-/mob/living/simple_animal/pet/cat/Proc,
 /obj/item/storage/box/syringes{
 	pixel_x = 6;
 	pixel_y = -5
@@ -825,6 +824,7 @@
 /obj/effect/turf_decal/corner/pink/border{
 	dir = 8
 	},
+/obj/item/toy/plush/goatplushie/angry/realgoat,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "zq" = (
@@ -859,7 +859,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/external)
 "AM" = (
 /obj/structure/cable{
@@ -878,7 +878,7 @@
 	launch_status = 0
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/external)
 "Bv" = (
 /obj/structure/cable{
@@ -1201,7 +1201,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "Pu" = (
 /obj/structure/window/reinforced,
@@ -1222,7 +1222,7 @@
 "Qk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/external)
 "QG" = (
 /obj/structure/table,
@@ -1312,7 +1312,7 @@
 	id = "scav_door";
 	name = "dusty blast door"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "Uy" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1340,7 +1340,7 @@
 	id = "scav_door";
 	name = "dusty blast door"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "VI" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1372,9 +1372,6 @@
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
 /obj/machinery/light/small,
-/obj/item/reagent_containers/hypospray{
-	pixel_x = 8
-	},
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/dexalin{
 	pixel_x = -12;
 	pixel_y = 7
@@ -1398,6 +1395,10 @@
 /obj/item/reagent_containers/glass/bottle/vial/tiny{
 	pixel_x = -2;
 	pixel_y = -7
+	},
+/obj/item/hypospray/mkii{
+	pixel_x = 7;
+	pixel_y = 3
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
@@ -1437,7 +1438,7 @@
 "YY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "Zv" = (
 /obj/structure/window/reinforced,
@@ -1684,7 +1685,7 @@ Sd
 IE
 qq
 Jt
-Jt
+oY
 "}
 (13,1,1) = {"
 aQ
