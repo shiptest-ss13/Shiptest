@@ -879,7 +879,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if("kepori_feathers" in mutant_bodyparts)
 		if(!H.dna.features["kepori_feathers"] || H.dna.features["kepori_feathers"] == "None" || (H.head && (H.head.flags_inv & HIDEHAIR)) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD) //HD.status == BODYTYPE_ROBOTIC) and here too
 			bodyparts_to_add -= "kepori_feathers"
-	
+
 	if("vox_head_quills" in mutant_bodyparts)
 		if(!H.dna.features["vox_head_quills"] || H.dna.features["vox_head_quills"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
 			bodyparts_to_add -= "vox_head_quills"
