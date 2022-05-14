@@ -979,7 +979,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "A spicy mix of Vodka and Spice. Very hot."
 
 /datum/reagent/consumable/ethanol/sbiten/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(50 * TEMPERATURE_DAMAGE_COEFFICIENT, 0 ,BODYTEMP_HEAT_DAMAGE_LIMIT) //310.15 is the normal bodytemp.
+	M.adjust_bodytemperature(50 * TEMPERATURE_DAMAGE_COEFFICIENT, 0 , M.dna.species.bodytemp_heat_damage_limit) //310.15 is the normal bodytemp.
 	return ..()
 
 /datum/reagent/consumable/ethanol/red_mead
@@ -2113,18 +2113,18 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(prob(20))
 		if(ishuman(M))
 			var/mob/living/carbon/human/N = M
-			N.age += 1
-			if(N.age > 70)
+			N.age++
+			if(N.age > N.dna.species.species_age_max * 0.6)
 				N.facial_hair_color = "ccc"
 				N.hair_color = "ccc"
 				N.update_hair()
-				if(N.age > 100)
+				if(N.age > N.dna.species.species_age_max * 0.8)
 					N.become_nearsighted(type)
 					if(N.gender == MALE)
 						N.facial_hairstyle = "Beard (Very Long)"
 						N.update_hair()
 
-				if(N.age > 969) //Best not let people get older than this or i might incur G-ds wrath
+				if(N.age > N.dna.species.species_age_max * 1.2) //Best not let people get older than this or i might incur G-ds wrath
 					M.visible_message("<span class='notice'>[M] becomes older than any man should be.. and crumbles into dust!</span>")
 					M.dust(0,1,0)
 

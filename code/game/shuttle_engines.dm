@@ -77,6 +77,7 @@
 	name = "engine platform"
 	icon_state = "platform"
 	desc = "A platform for engine components."
+	density = TRUE
 	pass_flags_self = PASSPLATFORM
 
 /obj/structure/shuttle/platform/corner

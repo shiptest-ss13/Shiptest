@@ -32,7 +32,7 @@
 
 	var/silent = FALSE								//whether this makes a message when things are put in.
 	var/click_gather = FALSE						//whether this can be clicked on items to pick it up rather than the other way around.
-	var/rustle_sound = TRUE							//play rustle sound on interact.
+	var/use_sound = "rustle"						//sound to play on interacting.
 	var/allow_quick_empty = FALSE					//allow empty verb which allows dumping on the floor of everything inside quickly.
 	var/allow_quick_gather = FALSE					//allow toggle mob verb which toggles collecting all items from a tile.
 
@@ -582,6 +582,8 @@
 	// this must come before the screen objects only block, dunno why it wasn't before
 	if(over_object == M)
 		user_show_to_mob(M)
+		if(use_sound)
+			playsound(A, use_sound, 50, TRUE, -5)
 	if(!istype(over_object, /atom/movable/screen))
 		INVOKE_ASYNC(src, .proc/dump_content_at, over_object, M)
 		return
@@ -697,7 +699,7 @@
 /datum/component/storage/proc/mob_item_insertion_feedback(mob/user, mob/M, obj/item/I, override = FALSE)
 	if(silent && !override)
 		return
-	if(rustle_sound)
+	if(use_sound)
 		playsound(parent, "rustle", 50, TRUE, -5)
 	for(var/mob/viewing in viewers(user, null))
 		if(M == viewing)
@@ -792,9 +794,6 @@
 		. = COMPONENT_NO_ATTACK_HAND
 		return
 
-	if(rustle_sound)
-		playsound(A, "rustle", 50, TRUE, -5)
-
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.l_store == A && !H.get_active_held_item())	//Prevents opening if it's in a pocket.
@@ -814,6 +813,8 @@
 			to_chat(user, "<span class='warning'>[parent] seems to be locked!</span>")
 		else
 			show_to(user)
+			if(use_sound)
+				playsound(A, use_sound, 50, TRUE, -5)
 
 /datum/component/storage/proc/signal_on_pickup(datum/source, mob/user)
 	SIGNAL_HANDLER
@@ -855,7 +856,8 @@
 	if(!quickdraw)
 		A.add_fingerprint(user)
 		user_show_to_mob(user)
-		playsound(A, "rustle", 50, TRUE, -5)
+		if(use_sound)
+			playsound(A, use_sound, 50, TRUE, -5)
 		return
 
 	var/obj/item/I = locate() in real_location()
