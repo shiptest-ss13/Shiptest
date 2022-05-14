@@ -21,6 +21,7 @@
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	speak_emote = list("squeaks")
 	ventcrawler = VENTCRAWLER_ALWAYS
+	sharpness = SHARP_POINTY
 	var/datum/mind/origin
 	var/egg_lain = 0
 
