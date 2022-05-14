@@ -6,6 +6,7 @@
 	inherent_traits = list(TRAIT_RESISTHEAT,TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_NOFIRE,TRAIT_CHUNKYFINGERS,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER)
 	inherent_biotypes = MOB_HUMANOID|MOB_MINERAL
 	mutant_organs = list(/obj/item/organ/adamantine_resonator)
+	mutanttongue = /obj/item/organ/tongue/golem_base
 	speedmod = 2
 	armor = 55
 	siemens_coeff = 0
@@ -513,7 +514,6 @@
 	name = "Bananium Golem"
 	id = "bananium golem"
 	fixed_mut_color = "ff0"
-	say_mod = "honks"
 	punchdamagelow = 0
 	punchdamagehigh = 1
 	punchstunthreshold = 2 //Harmless and can't stun
@@ -523,6 +523,7 @@
 	attack_sound = 'sound/items/airhorn2.ogg'
 	prefix = "Bananium"
 	special_names = null
+	mutanttongue = /obj/item/organ/tongue/golem_honk
 
 	species_chest = /obj/item/bodypart/chest/golem/bananium
 	species_head = /obj/item/bodypart/head/golem/bananium
@@ -953,7 +954,6 @@
 /datum/species/golem/bone
 	name = "Bone Golem"
 	id = "bone golem"
-	say_mod = "rattles"
 	prefix = "Bone"
 	special_names = list("Head", "Broth", "Fracture", "Rattler", "Appetit")
 	liked_food = GROSS | MEAT | RAW

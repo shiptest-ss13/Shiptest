@@ -83,7 +83,34 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_color = "000"				//Eye color
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
 	var/species_looking_at = "human" //used as a helper to keep track of in the species select thingy
-	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", "spider_legs" = "Plain", "spider_spinneret" = "Plain", "spider_mandibles" = "Plain", "squid_face" = "Squidward", "ipc_screen" = "Blue", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "flavor_text" = "")
+	var/list/features = list(
+							"mcolor" = "FFF",
+							"ethcolor" = "9c3030",
+							"tail_lizard" = "Smooth",
+							"tail_human" = "None",
+							"snout" = "Round",
+							"horns" = "None",
+							"ears" = "None",
+							"wings" = "None",
+							"frills" = "None",
+							"spines" = "None",
+							"body_markings" = "None",
+							"legs" = "Normal Legs",
+							"moth_wings" = "Plain",
+							"moth_fluff" = "Plain",
+							"moth_markings" = "None",
+							"spider_legs" = "Plain",
+							"spider_spinneret" = "Plain",
+							"spider_mandibles" = "Plain",
+							"squid_face" = "Squidward",
+							"ipc_screen" = "Blue",
+							"ipc_antenna" = "None",
+							"ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)",
+							"kepori_feathers" = "Plain",
+							"kepori_body_feathers" = "Plain",
+							"flavor_text" = "",
+							"body_size" = "Normal"
+						)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
 	var/phobia = "spiders"
@@ -691,6 +718,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Phobia</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=phobia;task=input'>[phobia]</a><BR>"
+
+			if("body_size" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Size</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]]</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
 
 			if(CONFIG_GET(flag/join_with_mutant_humans))
 
@@ -1696,6 +1736,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_eyes)
 						eye_color = sanitize_hexcolor(new_eyes)
 
+				if("body_size")
+					var/new_size = input(user, "Choose your character's height:", "Character Preference") as null|anything in GLOB.body_sizes
+					if(new_size)
+						features["body_size"] = new_size
+
+
 				if("species")
 					ShowSpeciesChoices(user)
 					return TRUE
@@ -2294,6 +2340,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.update_body()
 		character.update_hair()
 		character.update_body_parts(TRUE)
+
+	character.dna.update_body_size()
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)

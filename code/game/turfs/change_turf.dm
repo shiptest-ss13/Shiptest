@@ -94,19 +94,26 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	var/list/old_baseturfs = baseturfs
 
 	var/old_virtual_z = virtual_z
-
-	var/list/transferring_comps = list()
-	SEND_SIGNAL(src, COMSIG_TURF_CHANGE, path, new_baseturfs, flags, transferring_comps)
-	for(var/i in transferring_comps)
-		var/datum/component/comp = i
-		comp.RemoveComponent()
+	var/list/post_change_callbacks = list()
+	SEND_SIGNAL(src, COMSIG_TURF_CHANGE, path, new_baseturfs, flags, post_change_callbacks)
 
 	changing_turf = TRUE
-	qdel(src)	//Just get the side effects and call Destroy
+	qdel(src) //Just get the side effects and call Destroy
+	//We do this here so anything that doesn't want to persist can clear itself
+	var/list/old_comp_lookup = comp_lookup?.Copy()
+	var/list/old_signal_procs = signal_procs?.Copy()
 	var/turf/W = new path(src, virtual_z)
 
-	for(var/i in transferring_comps)
-		W.TakeComponent(i)
+	// WARNING WARNING
+	// Turfs DO NOT lose their signals when they get replaced, REMEMBER THIS
+	// It's possible because turfs are fucked, and if you have one in a list and it's replaced with another one, the list ref points to the new turf
+	if(old_comp_lookup)
+		LAZYOR(W.comp_lookup, old_comp_lookup)
+	if(old_signal_procs)
+		LAZYOR(W.signal_procs, old_signal_procs)
+
+	for(var/datum/callback/callback as anything in post_change_callbacks)
+		callback.InvokeAsync(W)
 
 	if(new_baseturfs)
 		W.baseturfs = baseturfs_string_list(new_baseturfs, W)
@@ -150,12 +157,6 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 
 /turf/open/ChangeTurf(path, list/new_baseturfs, flags) //Resist the temptation to make this default to keeping air.
 	if ((flags & CHANGETURF_INHERIT_AIR) && ispath(path, /turf/open))
-		var/turf_fire_ref
-		if(turf_fire)
-			if(ispath(path, /turf/open/openspace) || ispath(path, /turf/open/space))
-				qdel(turf_fire)
-			else
-				turf_fire_ref = turf_fire
 		var/datum/gas_mixture/stashed_air = new()
 		stashed_air.copy_from(air)
 		. = ..()
@@ -163,13 +164,10 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			QDEL_NULL(stashed_air)
 			return
 		var/turf/open/newTurf = .
-		newTurf.turf_fire = turf_fire_ref
 		newTurf.air.copy_from(stashed_air)
 		update_air_ref(planetary_atmos ? 1 : 2)
 		QDEL_NULL(stashed_air)
 	else
-		if(turf_fire)
-			qdel(turf_fire)
 		if(ispath(path,/turf/closed))
 			flags |= CHANGETURF_RECALC_ADJACENT
 			update_air_ref(-1)

@@ -15,6 +15,11 @@
 
 /obj/effect/mine/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 	if(arm_delay)
 		armed = FALSE
 		icon_state = "uglymine-inactive"
@@ -25,9 +30,9 @@
 	if(!armed)
 		. += "\t<span class='information'>It appears to be inactive...</span>"
 
-/// The effect of the mine
 /obj/effect/mine/proc/mineEffect(mob/victim)
 	to_chat(victim, "<span class='danger'>*click*</span>")
+
 
 /// If the landmine was previously inactive, this beeps and displays a message marking it active
 /obj/effect/mine/proc/now_armed()
@@ -36,15 +41,15 @@
 	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 40, FALSE, -2)
 	visible_message("<span class='danger'>\The [src] beeps softly, indicating it is now active.<span>", vision_distance = COMBAT_MESSAGE_RANGE)
 
-/obj/effect/mine/Crossed(atom/movable/AM)
-	if(triggered || !isturf(loc) || !armed)
-		return
-	. = ..()
-
-	if(AM.movement_type & FLYING)
-		return
-
-	triggermine(AM)
+/obj/effect/mine/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+	if(isturf(loc))
+		if(ismob(AM))
+			var/mob/MM = AM
+			if(!(MM.movement_type & FLYING))
+				INVOKE_ASYNC(src, .proc/triggermine, AM)
+		else
+			INVOKE_ASYNC(src, .proc/triggermine, AM)
 
 /obj/effect/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
@@ -86,7 +91,7 @@
 	name = "sophisticated shrapnel mine"
 	desc = "A deadly mine, this one seems to be modified to trigger for humans only?"
 
-/obj/effect/mine/shrapnel/human_only/Crossed(atom/movable/AM)
+/obj/effect/mine/shrapnel/human_only/on_entered(datum/source, atom/movable/AM)
 	if(!ishuman(AM))
 		return
 	. = ..()
@@ -229,7 +234,9 @@
 		return
 	to_chat(victim, "<span class='notice'>You feel fast!</span>")
 	victim.add_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
-	sleep(duration)
+	addtimer(CALLBACK(src, .proc/finish_effect, victim), duration)
+
+/obj/effect/mine/pickup/speed/proc/finish_effect(mob/living/carbon/victim)
 	victim.remove_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
 	to_chat(victim, "<span class='notice'>You slow down.</span>")
 
@@ -274,7 +281,7 @@
 	name = "sophisticated shrapnel mine"
 	desc = "A deadly mine, this one seems to be modified to trigger for humans only?"
 
-/obj/effect/mine/shrapnel/human_only/Crossed(atom/movable/AM)
+/obj/effect/mine/shrapnel/human_only/on_entered(datum/source, atom/movable/AM)
 	if(!ishuman(AM))
 		return
 	. = ..()

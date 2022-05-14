@@ -17,6 +17,8 @@
 	item_state = "broken_beer" //Generic held-item sprite until unique ones are made.
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	pickup_sound =  'sound/items/handling/bottle_pickup.ogg'
+	drop_sound = 'sound/items/handling/bottle_drop.ogg'
 	var/const/duration = 13 //Directly relates to the 'knockdown' duration. Lowered by armor (i.e. helmets)
 	isGlass = TRUE
 	foodtype = ALCOHOL
@@ -494,6 +496,8 @@
 	desc = "A throwing weapon used to ignite things, typically filled with an accelerant. Recommended highly by rioters and revolutionaries. Light and toss."
 	icon_state = "vodkabottle"
 	list_reagents = list()
+	var/list/accelerants = list(	/datum/reagent/consumable/ethanol, /datum/reagent/fuel, /datum/reagent/clf3, /datum/reagent/phlogiston,
+							/datum/reagent/napalm, /datum/reagent/hellwater, /datum/reagent/toxin/plasma, /datum/reagent/toxin/spore_burning)
 	var/active = 0
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/CheckParts(list/parts_list)
@@ -508,11 +512,12 @@
 	return
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	var/firestarter = FALSE
-	for(var/datum/reagent/reagent as anything in reagents.reagent_list)
-		if(reagent.accelerant_quality)
-			firestarter = TRUE
-			break
+	var/firestarter = 0
+	for(var/datum/reagent/R in reagents.reagent_list)
+		for(var/A in accelerants)
+			if(istype(R,A))
+				firestarter = 1
+				break
 	if(firestarter && active)
 		hit_atom.fire_act()
 		new /obj/effect/hotspot(get_turf(hit_atom))

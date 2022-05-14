@@ -114,8 +114,8 @@
 
 /datum/component/embedded/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/jostleCheck)
-	RegisterSignal(parent, COMSIG_CARBON_EMBED_RIP, .proc/ripOut)
-	RegisterSignal(parent, COMSIG_CARBON_EMBED_REMOVAL, .proc/safeRemove)
+	RegisterSignal(parent, COMSIG_CARBON_EMBED_RIP, .proc/ripOutCarbon)
+	RegisterSignal(parent, COMSIG_CARBON_EMBED_REMOVAL, .proc/safeRemoveCarbon)
 
 /datum/component/embedded/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_MOVABLE_MOVED, COMSIG_CARBON_EMBED_RIP, COMSIG_CARBON_EMBED_REMOVAL))
@@ -179,17 +179,21 @@
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND)
 
 	victim.visible_message("<span class='danger'>[weapon] falls [harmful ? "out" : "off"] of [victim.name]'s [limb.name]!</span>", "<span class='userdanger'>[weapon] falls [harmful ? "out" : "off"] of your [limb.name]!</span>")
-	safeRemove()
+	safeRemoveCarbon()
 
 
 /// Called when a carbon with an object embedded/stuck to them inspects themselves and clicks the appropriate link to begin ripping the item out. This handles the ripping attempt, descriptors, and dealing damage, then calls safe_remove()
-/datum/component/embedded/proc/ripOut(datum/source, obj/item/I, obj/item/bodypart/limb)
-	SIGNAL_HANDLER_DOES_SLEEP
+/datum/component/embedded/proc/ripOutCarbon(datum/source, obj/item/I, obj/item/bodypart/limb)
+	SIGNAL_HANDLER
 
 	if(I != weapon || src.limb != limb)
 		return
 	var/mob/living/carbon/victim = parent
 	var/time_taken = rip_time * weapon.w_class
+	INVOKE_ASYNC(src, .proc/complete_rip_out, victim, I, limb, time_taken)
+
+/// everything async that ripOut used to do
+/datum/component/embedded/proc/complete_rip_out(mob/living/carbon/victim, obj/item/I, obj/item/bodypart/limb, time_taken)
 	victim.visible_message("<span class='warning'>[victim] attempts to remove [weapon] from [victim.p_their()] [limb.name].</span>","<span class='notice'>You attempt to remove [weapon] from your [limb.name]... (It will take [DisplayTimeText(time_taken)].)</span>")
 	if(!do_after(victim, time_taken, target = victim))
 		return
@@ -202,12 +206,12 @@
 		victim.emote("scream")
 
 	victim.visible_message("<span class='notice'>[victim] successfully rips [weapon] [harmful ? "out" : "off"] of [victim.p_their()] [limb.name]!</span>", "<span class='notice'>You successfully remove [weapon] from your [limb.name].</span>")
-	safeRemove(TRUE)
+	safeRemoveCarbon(TRUE)
 
 /// This proc handles the final step and actual removal of an embedded/stuck item from a carbon, whether or not it was actually removed safely.
 /// Pass TRUE for to_hands if we want it to go to the victim's hands when they pull it out
-/datum/component/embedded/proc/safeRemove(to_hands)
-	SIGNAL_HANDLER_DOES_SLEEP
+/datum/component/embedded/proc/safeRemoveCarbon(to_hands)
+	SIGNAL_HANDLER
 
 	var/mob/living/carbon/victim = parent
 	limb.embedded_objects -= weapon
@@ -216,7 +220,7 @@
 	if(!weapon.unembedded()) // if it hasn't deleted itself due to drop del
 		UnregisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING))
 		if(to_hands)
-			victim.put_in_hands(weapon)
+			INVOKE_ASYNC(victim, /mob.proc/put_in_hands, weapon)
 		else
 			weapon.forceMove(get_turf(victim))
 

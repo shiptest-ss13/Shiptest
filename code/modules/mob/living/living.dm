@@ -10,6 +10,11 @@
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /mob/living/prepare_huds()
 	..()
 	prepare_data_huds()
@@ -215,6 +220,7 @@
 		return
 	now_pushing = TRUE
 	var/dir_to_target = get_dir(src, AM)
+	dir_to_target = dir_to_target ? dir_to_target : dir //we will fall back to using the mob's dir if on same tile as obj
 
 	// If there's no dir_to_target then the player is on the same turf as the atom they're trying to push.
 	// This can happen when a player is stood on the same turf as a directional window. All attempts to push
@@ -667,8 +673,8 @@
 	SetUnconscious(0)
 
 
-/mob/living/Crossed(atom/movable/AM)
-	. = ..()
+/mob/living/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	for(var/i in get_equipped_items())
 		var/obj/item/item = i
 		SEND_SIGNAL(item, COMSIG_ITEM_WEARERCROSSED, AM, src)
@@ -1786,7 +1792,7 @@
 	//this won't really work with species with more than 2 legs, but it'll function
 	if(broken_legs > 0)
 		var/broken_slowdown = 0
-		broken_slowdown += (default_num_legs - broken_legs) * 2
+		broken_slowdown += broken_legs
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bones, multiplicative_slowdown=broken_slowdown) //can't move fast with a broken leg
 	else
 		remove_movespeed_modifier(/datum/movespeed_modifier/bones)

@@ -74,10 +74,6 @@ Difficulty: Medium
 		/datum/action/innate/megafauna_attack/mass_fire,
 		/datum/action/innate/megafauna_attack/lava_swoop)
 	small_sprite_type = /datum/action/small_sprite/megafauna/drake
-
-/mob/living/simple_animal/hostile/megafauna/dragon/icemoon
-	dungeon = TRUE
-
 /datum/action/innate/megafauna_attack/fire_cone
 	name = "Fire Cone"
 	icon_icon = 'icons/obj/wizard.dmi'
@@ -392,17 +388,6 @@ Difficulty: Medium
 	if(!lava_success)
 		arena_escape_enrage()
 
-/mob/living/simple_animal/hostile/megafauna/dragon/death()
-	//open all ashdrake gates
-	if(dungeon)
-		for(var/obj/machinery/door/poddoor/D in GLOB.machines)
-			if(D.id == "ash_drake_dead")
-				D.open()
-		for(var/obj/effect/landmark/ashdrake_ghost_spawn/L in GLOB.landmarks_list)
-			L.create_roles()
-
-	..()
-
 /obj/effect/landmark/ashdrake_ghost_spawn //spawn a random ghost role if ash drake is killed
 	name = "ash drake ghost role spawner"
 	var/picked
@@ -638,3 +623,10 @@ Difficulty: Medium
 
 /mob/living/simple_animal/hostile/megafauna/dragon/lesser/grant_achievement(medaltype,scoretype)
 	return
+
+/mob/living/simple_animal/hostile/megafauna/dragon/icemoon
+
+/mob/living/simple_animal/hostile/megafauna/dragon/icemoon/death()
+	for(var/obj/effect/landmark/ashdrake_ghost_spawn/L in GLOB.landmarks_list)
+		L.create_roles()
+	..()

@@ -87,7 +87,7 @@
 		RegisterSignal(parent, COMSIG_MINE_TRIGGERED, .proc/create_blast_pellets)
 
 /datum/component/pellet_cloud/UnregisterFromParent()
-	UnregisterSignal(parent, list(COMSIG_PARENT_PREQDELETED, COMSIG_PELLET_CLOUD_INIT, COMSIG_GRENADE_PRIME, COMSIG_GRENADE_ARMED, COMSIG_MOVABLE_MOVED, COMSIG_MOVABLE_UNCROSSED, COMSIG_MINE_TRIGGERED, COMSIG_ITEM_DROPPED))
+	UnregisterSignal(parent, list(COMSIG_PARENT_PREQDELETED, COMSIG_PELLET_CLOUD_INIT, COMSIG_GRENADE_PRIME, COMSIG_GRENADE_ARMED, COMSIG_MOVABLE_MOVED, COMSIG_MINE_TRIGGERED, COMSIG_ITEM_DROPPED))
 
 /**
   * create_casing_pellets() is for directed pellet clouds for ammo casings that have multiple pellets (buckshot and scatter lasers for instance)
@@ -96,7 +96,7 @@
   * The arguments really don't matter, this proc is triggered by COMSIG_PELLET_CLOUD_INIT which is only for this really, it's just a big mess of the state vars we need for doing the stuff over here.
   */
 /datum/component/pellet_cloud/proc/create_casing_pellets(obj/item/ammo_casing/shell, atom/target, mob/living/user, fired_from, randomspread, spread, zone_override, params, distro)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	shooter = user
 	var/targloc = get_turf(target)
@@ -122,10 +122,13 @@
 		shell.BB.wound_bonus = original_wb
 		shell.BB.bare_wound_bonus = original_bwb
 		pellets += shell.BB
-		if(!shell.throw_proj(target, targloc, shooter, params, spread))
-			return
-		if(i != num_pellets)
-			shell.newshot()
+		INVOKE_ASYNC(src, .proc/async_create_casing_pellets, shell, target, targloc, spread, params, i)
+
+/datum/component/pellet_cloud/proc/async_create_casing_pellets(obj/item/ammo_casing/shell, atom/target, turf/targloc, spread, params, i)
+	if(!shell.throw_proj(target, targloc, shooter, params, spread))
+		return
+	if(i != num_pellets)
+		shell.newshot()
 
 /**
   * create_blast_pellets() is for when we have a central point we want to shred the surroundings of with a ring of shrapnel, namely frag grenades and landmines.
@@ -138,18 +141,18 @@
   * * punishable_triggerer- For grenade lances or people who step on the landmines (if we shred the triggerer), we spawn extra shrapnel for them in addition to the normal spread
   */
 /datum/component/pellet_cloud/proc/create_blast_pellets(obj/O, mob/living/punishable_triggerer)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	var/atom/A = parent
 
 	if(isgrenade(parent)) // handle_martyrs can reduce the radius and thus the number of pellets we produce if someone dives on top of a frag grenade
-		handle_martyrs(punishable_triggerer) // note that we can modify radius in this proc
+		INVOKE_ASYNC(src, .proc/handle_martyrs, punishable_triggerer) // note that we can modify radius in this proc
 	else if(islandmine(parent))
 		var/obj/effect/mine/shrapnel/triggered_mine = parent
 		if(triggered_mine.shred_triggerer && istype(punishable_triggerer)) // free shrapnel for the idiot who stepped on it if we're a mine that shreds the triggerer
 			pellet_delta += radius // so they don't count against the later total
 			for(var/i in 1 to radius)
-				pew(punishable_triggerer, TRUE)
+				INVOKE_ASYNC(src, .proc/pew, punishable_triggerer, TRUE)
 
 	if(radius < 1)
 		return
@@ -159,7 +162,7 @@
 
 	for(var/T in all_the_turfs_were_gonna_lacerate)
 		var/turf/shootat_turf = T
-		pew(shootat_turf)
+		INVOKE_ASYNC(src, .proc/pew, shootat_turf)
 
 /**
   * handle_martyrs() is used for grenades that shoot shrapnel to check if anyone threw themselves/were thrown on top of the grenade, thus absorbing a good chunk of the shrapnel
@@ -319,7 +322,10 @@
 	LAZYINITLIST(bodies)
 	RegisterSignal(parent, COMSIG_ITEM_DROPPED, .proc/grenade_dropped)
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/grenade_moved)
-	RegisterSignal(parent, COMSIG_MOVABLE_UNCROSSED, .proc/grenade_uncrossed)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_EXITED =.proc/grenade_uncrossed,
+	)
+	AddComponent(/datum/component/connect_loc_behalf, parent, loc_connections)
 
 /// Someone dropped the grenade, so set them to the shooter in case they're on top of it when it goes off
 /datum/component/pellet_cloud/proc/grenade_dropped(obj/item/nade, mob/living/slick_willy)
@@ -334,7 +340,7 @@
 		bodies += L
 
 /// Someone who was originally "under" the grenade has moved off the tile and is now eligible for being a martyr and "covering" it
-/datum/component/pellet_cloud/proc/grenade_uncrossed(datum/source, atom/movable/AM)
+/datum/component/pellet_cloud/proc/grenade_uncrossed(datum/source, atom/movable/AM, direction)
 	bodies -= AM
 
 /// Our grenade or landmine or caseless shell or whatever tried deleting itself, so we intervene and nullspace it until we're done here

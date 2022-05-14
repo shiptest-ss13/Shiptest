@@ -66,6 +66,7 @@
 /obj/projectile/beam/laser/weak/negative_ap
 	damage = 15
 	armour_penetration = -30
+	range = 9
 
 /obj/projectile/beam/laser/weak/negative_ap/low_range
 	range = 6
@@ -114,9 +115,11 @@
 
 /obj/projectile/beam/disabler/weak/negative_ap
 	armour_penetration = -30
+	range = 9
 
 /obj/projectile/beam/disabler/weak/negative_ap/low_range
 	range = 6
+
 /obj/projectile/beam/pulse
 	name = "pulse"
 	icon_state = "u_laser"
@@ -135,10 +138,6 @@
 			SSexplosions.medobj += target
 		else
 			SSexplosions.medturf += target
-	var/turf/targets_turf = target.loc
-	if(!isopenturf(targets_turf))
-		return
-	targets_turf.IgniteTurf(rand(8,22), "blue")
 
 /obj/projectile/beam/pulse/shotgun
 	damage = 40

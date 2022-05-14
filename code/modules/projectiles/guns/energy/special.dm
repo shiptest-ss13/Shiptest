@@ -203,31 +203,13 @@
 
 /obj/item/gun/energy/wormhole_projector
 	name = "bluespace wormhole projector"
-	desc = "A projector that emits high density quantum-coupled bluespace beams. Requires an anomaly core to function." //WS Edit - Any anomaly core for phazons
+	desc = "A projector that emits high density quantum-coupled bluespace beams." //WS Edit - Any anomaly core for phazons
 	ammo_type = list(/obj/item/ammo_casing/energy/wormhole, /obj/item/ammo_casing/energy/wormhole/orange)
 	item_state = null
 	icon_state = "wormhole_projector"
 	var/obj/effect/portal/p_blue
 	var/obj/effect/portal/p_orange
 	var/atmos_link = FALSE
-	var/firing_core = FALSE
-
-/obj/item/gun/energy/wormhole_projector/attackby(obj/item/C, mob/user)
-	if(istype(C, /obj/item/assembly/signaler/anomaly)) //WS Edit - Any anomaly core for phazons
-		to_chat(user, "<span class='notice'>You insert [C] into the wormhole projector and the weapon gently hums to life.</span>")
-		firing_core = TRUE
-		playsound(src.loc, 'sound/machines/click.ogg', 50, TRUE)
-		qdel(C)
-		return
-
-/obj/item/gun/energy/wormhole_projector/can_shoot()
-	if(!firing_core)
-		return FALSE
-	return ..()
-
-/obj/item/gun/energy/wormhole_projector/shoot_with_empty_chamber(mob/living/user)
-	. = ..()
-	to_chat(user, "<span class='danger'>The display says, 'NO CORE INSTALLED'.</span>")
 
 /obj/item/gun/energy/wormhole_projector/update_icon_state()
 	icon_state = item_state = "[initial(icon_state)][select]"
@@ -285,9 +267,6 @@
 		qdel(p_blue)
 		p_blue = P
 	crosslink()
-
-/obj/item/gun/energy/wormhole_projector/core_inserted
-	firing_core = TRUE
 
 /* 3d printer 'pseudo guns' for borgs */
 

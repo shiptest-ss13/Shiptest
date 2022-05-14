@@ -60,3 +60,9 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
 
+/datum/outfit/job/quartermaster/donk
+	name = "Manager (Donk! Co.)"
+	uniform = /obj/item/clothing/under/syndicate/donk/qm
+	suit = /obj/item/clothing/suit/hazardvest/donk/qm
+	ears = /obj/item/radio/headset/syndicate/alt
+	shoes = /obj/item/clothing/shoes/laceup

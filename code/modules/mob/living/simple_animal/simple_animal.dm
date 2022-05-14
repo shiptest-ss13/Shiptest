@@ -154,7 +154,7 @@
 	///Generic flags
 	var/simple_mob_flags = NONE
 
-/mob/living/simple_animal/Initialize()
+/mob/living/simple_animal/Initialize(mapload)
 	. = ..()
 	GLOB.simple_animals[AIStatus] += src
 	if(gender == PLURAL)
@@ -166,6 +166,8 @@
 	update_simplemob_varspeed()
 	if(dextrous)
 		AddComponent(/datum/component/personal_crafting)
+	if(footstep_type)
+		AddComponent(/datum/component/footstep, footstep_type)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
@@ -180,8 +182,6 @@
 	if (T && AIStatus == AI_Z_OFF)
 		SSidlenpcpool.idle_mobs_by_zlevel[T.z] -= src
 
-	//Walking counts as a reference, putting this here because most things don't walk, clean this up once walk() procs are dead
-	walk(src, 0)
 	return ..()
 
 /mob/living/simple_animal/attackby(obj/item/O, mob/user, params)
@@ -218,8 +218,6 @@
 		else
 			set_stat(CONSCIOUS)
 	med_hud_set_status()
-	if(footstep_type)
-		AddComponent(/datum/component/footstep, footstep_type)
 
 /mob/living/simple_animal/handle_status_effects()
 	..()
