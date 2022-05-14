@@ -112,14 +112,14 @@
 	if(istype(loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
 
+	dna.species.handle_body_temperature(src)
 	dna.species.handle_environment(environment, src)
 	dna.species.handle_environment_pressure(environment, src)
-	dna.species.handle_body_temperature(src)
 
 /**
  * get_body_temperature Returns the body temperature with any modifications applied
  *
- * This applies the result from proc/get_body_temp_normal_change() against the bodytemp_normal
+ * This applies the result from proc/get_body_temp_normal_change() against the HUMAN_BODYTEMP_NORMAL
  * for the species and returns the result
  *
  * arguments:

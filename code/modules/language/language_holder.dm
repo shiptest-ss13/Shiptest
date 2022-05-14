@@ -397,6 +397,12 @@ Key procs
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/teceti_unified = list(LANGUAGE_ATOM))
 
+/datum/language_holder/vox
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+								/datum/language/vox_pidgin = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+							/datum/language/vox_pidgin = list(LANGUAGE_ATOM))
+
 /datum/language_holder/mouse
 	understood_languages = list(/datum/language/mouse = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/mouse = list(LANGUAGE_ATOM))
