@@ -244,7 +244,7 @@
 		msg = "[msg]"
 	for(var/i in GLOB.mob_list)
 		var/mob/M = i
-		if(M.real_name == msg)
+		if(lowertext(M.real_name) == lowertext(msg))
 			return M
 	return 0
 
@@ -359,7 +359,7 @@
 	return FALSE
 
 
-/mob/proc/reagent_check(datum/reagent/R) // utilized in the species code
+/mob/proc/handled_by_species(datum/reagent/R) // utilized in the species code
 	return 1
 
 

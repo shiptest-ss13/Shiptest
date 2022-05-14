@@ -139,6 +139,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 21
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
 
 //Syndie variant of Secure Briefcase. Contains space cash, slightly more robust.
 /obj/item/storage/secure/briefcase/syndie
