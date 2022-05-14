@@ -328,3 +328,94 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	icon = 'icons/obj/stock_parts.dmi'
 	icon_state = "capacitor"
 	desc = "A debug item for research."
+
+
+//Mysterious machine components made by an unknown source. Designed to be doled out as an ultra-rare loot item.
+/obj/item/stock_parts/capacitor/quantumcap
+	name = "Vaccum Power Accumilator"
+	desc = "A mysterious energy regulation box, capable of fufilling the role of a stock capacitor in modern lathe equipment."
+	icon_state = "quantumcap"
+	icon = 'icons/obj/stock_parts.dmi'
+	rating = 8
+	custom_materials = list(/datum/material/iron =225, /datum/material/glass =180, /datum/material/gold =135, /datum/material/diamond = 90)
+
+/obj/item/stock_parts/scanning_module/quantumscan
+	name = "Reader Wave Instructor"
+	desc = "A subspace manipulation and data-collecting tool, made by unknown hands. Capable of being used in the place of a scanning module in lathes, though this may be somewhat insulting to it's original purpose."
+	icon_state = "quantumscan"
+	icon = 'icons/obj/stock_parts.dmi'
+	rating = 8
+	custom_materials = list(/datum/material/iron= 225, /datum/material/glass = 180, /datum/material/diamond = 54, /datum/material/bluespace = 54)
+
+/obj/item/stock_parts/manipulator/quantummanip
+	name = "Multiphase Surgical Alterator"
+	desc = "A mysterious, semi-hardlight manipulation head, constantly phasing through this reality's dimensional spline. Could be used as an exceptional manipulator module if inserted into a lathe."
+	icon_state = "quantummanip"
+	icon = 'icons/obj/stock_parts.dmi'
+	rating = 8
+	custom_materials = list(/datum/material/iron= 180, /datum/material/diamond = 27, /datum/material/titanium = 27, /datum/material/uranium = 27)
+
+/obj/item/stock_parts/micro_laser/quantumlaser
+	name = "Dense Projectile Excitator"
+	desc = "A highly effective, compact particle beam capable of projecting in previously-unknown parts of the light spectrum. Could be used as a particularly over-qualified microlaser if placed in a stock-enabled lathe."
+	icon_state = "quantumlaser"
+	icon = 'icons/obj/stock_parts.dmi'
+	rating = 8
+	custom_materials = list(/datum/material/iron= 180, /datum/material/glass = 180, /datum/material/uranium = 90, /datum/material/diamond = 90)
+
+/obj/item/stock_parts/matter_bin/quantumbin
+	name = "Multifractal Containment Engine"
+	desc = "A self-contained dimensional pocket housing, designed for maximum efficacy in securing rogue matter. Though not it's original purpose, it could perform quite well in the place of a stock matter bin."
+	icon_state = "quantumbin"
+	icon = 'icons/obj/stock_parts.dmi'
+	rating = 8
+	custom_materials = list(/datum/material/iron= 225, /datum/material/diamond = 90, /datum/material/bluespace = 135)
+
+/obj/item/reagent_containers/glass/beaker/quantum
+	name = "Coolant Repose Chamber"
+	desc = "A hover-stabilized containment jar, leading to a small, localized spacetime pocket fully isolated from normal reality. Could be used as a beaker."
+	icon_state = "quantumbeaker"
+	icon = 'icons/obj/stock_parts.dmi'
+	custom_materials = list(/datum/material/iron = 500, /datum/material/glass = 5000, /datum/material/plasma = 3000, /datum/material/diamond = 1500, /datum/material/bluespace = 1500)
+	volume = 1000
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,300,500,800,1000)
+	reagent_flags = NO_REACT//reagents inside are stored in an external pocket dimension with alien physics. A little hard to make chemical reactions there
+	can_have_cap = FALSE
+	cap_on = FALSE
+
+/obj/item/stock_parts/cell/quantum
+	name = "Umbral Well Complex"
+	desc = "A small multi-dimensional containment housing of unknown make, capable of containing a truly staggering amount of raw energy. You could use this as a truly wonderful power cell."
+	icon_state = "quantumcell"
+	icon = 'icons/obj/stock_parts.dmi'
+	maxcharge = 70000
+	custom_materials = list(/datum/material/iron = 1000, /datum/material/glass = 5500, /datum/material/plasma = 3500, /datum/material/diamond = 1000, /datum/material/bluespace = 1000)
+	chargerate = 9000
+	rating = 6
+
+/obj/item/stock_parts/cell/quantum/empty/Initialize()
+	. = ..()
+	charge = 0
+	update_icon()
+
+/obj/item/stock_parts/cell/quantum/empty/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF)
+
+/obj/item/stock_parts/cell/quantum/corrupt()
+
+	return
+
+/// RPED
+/obj/item/storage/part_replacer/bluespace/tier5
+
+/obj/item/storage/part_replacer/bluespace/tier5/PopulateContents()
+	for(var/i in 1 to 10)
+		new /obj/item/stock_parts/capacitor/quantumcap(src)
+		new /obj/item/stock_parts/scanning_module/quantumscan(src)
+		new /obj/item/stock_parts/manipulator/quantummanip(src)
+		new /obj/item/stock_parts/micro_laser/quantumlaser(src)
+		new /obj/item/stock_parts/matter_bin/quantumbin(src)
+		new /obj/item/reagent_containers/glass/beaker/quantum(src)
+

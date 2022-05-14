@@ -49,6 +49,7 @@
 	move_force = MOVE_FORCE_EXTREMELY_STRONG
 	move_resist = MOVE_FORCE_EXTREMELY_STRONG
 	pull_force = MOVE_FORCE_EXTREMELY_STRONG
+	gold_core_spawnable = HOSTILE_SPAWN
 
 	var/cannot_be_seen = 1
 	var/mob/living/creator = null

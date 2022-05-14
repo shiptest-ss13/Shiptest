@@ -13,6 +13,7 @@
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	mutatelist = list(/obj/item/seeds/carrot/parsnip)
 	reagents_add = list(/datum/reagent/medicine/oculine = 0.25, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.05)
+	research = PLANT_RESEARCH_TIER_0
 
 /obj/item/reagent_containers/food/snacks/grown/carrot
 	seed = /obj/item/seeds/carrot
@@ -46,6 +47,7 @@
 	icon_dead = "carrot-dead"
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.05, /datum/reagent/consumable/nutriment = 0.05)
+	research = PLANT_RESEARCH_TIER_0
 
 /obj/item/reagent_containers/food/snacks/grown/parsnip
 	seed = /obj/item/seeds/carrot/parsnip
@@ -73,6 +75,7 @@
 	icon_dead = "whitebeet-dead"
 	mutatelist = list(/obj/item/seeds/redbeet)
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/sugar = 0.2, /datum/reagent/consumable/nutriment = 0.05)
+	research = PLANT_RESEARCH_TIER_1
 
 /obj/item/reagent_containers/food/snacks/grown/whitebeet
 	seed = /obj/item/seeds/whitebeet
@@ -99,6 +102,7 @@
 	icon_dead = "whitebeet-dead"
 	genes = list(/datum/plant_gene/trait/maxchem)
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.05, /datum/reagent/consumable/nutriment = 0.05)
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/redbeet
 	seed = /obj/item/seeds/redbeet

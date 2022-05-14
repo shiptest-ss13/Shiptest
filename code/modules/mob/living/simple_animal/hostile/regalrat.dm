@@ -25,6 +25,7 @@
 	attack_sound = 'sound/weapons/punch1.ogg'
 	ventcrawler = VENTCRAWLER_ALWAYS
 	unique_name = TRUE
+	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("rat")
 	var/datum/action/cooldown/coffer
 	var/datum/action/cooldown/riot
