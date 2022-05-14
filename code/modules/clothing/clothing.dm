@@ -300,14 +300,14 @@
 			canvas.Blend(equip, ICON_OVERLAY, facing_list["x"]+1, facing_list["y"]+1)
 			final_I.Insert(canvas, dir = use_dir)
 		final_I = fcopy_rsc(final_I)
-		GLOB.species_clothing_icons[mob_species.name]["[file2use]-[state2use]"] = final_I
-		return
+		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = final_I
+		return TRUE
 
 	if(!greyscale_colors || !greyscale_icon_state)
-		GLOB.species_clothing_icons[mob_species.name]["[file2use]-[state2use]"] = human_clothing_icon
+		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = human_clothing_icon
 		return
 
-	if(!icon_exists(species.species_clothing_path, greyscale_icon_state))
+	if(!icon_exists(mob_species.species_clothing_path, greyscale_icon_state))
 		return
 
 	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_icon_state)
