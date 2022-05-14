@@ -1,5 +1,6 @@
 /datum/element/turf_z_transparency
 	var/show_bottom_level = FALSE
+	var/turf/our_turf
 
 ///This proc sets up the signals to handle updating viscontents when turfs above/below update. Handle plane and layer here too so that they don't cover other obs/turfs in Dream Maker
 /datum/element/turf_z_transparency/Attach(datum/target, show_bottom_level = TRUE)
@@ -7,7 +8,7 @@
 	if(!isturf(target))
 		return ELEMENT_INCOMPATIBLE
 
-	var/turf/our_turf = target
+	our_turf = target
 
 	src.show_bottom_level = show_bottom_level
 
@@ -26,8 +27,8 @@
 	. = ..()
 	var/turf/our_turf = source
 	our_turf.vis_contents.len = 0
-	UnregisterSignal(target, COMSIG_TURF_MULTIZ_DEL)
-	UnregisterSignal(target, COMSIG_TURF_MULTIZ_NEW)
+	UnregisterSignal(our_turf, COMSIG_TURF_MULTIZ_DEL)
+	UnregisterSignal(our_turf, COMSIG_TURF_MULTIZ_NEW)
 	REMOVE_TRAIT(our_turf, TURF_Z_TRANSPARENT_TRAIT, TURF_TRAIT)
 
 ///Updates the viscontents or underlays below this tile.
