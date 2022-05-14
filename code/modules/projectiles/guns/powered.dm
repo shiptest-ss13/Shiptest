@@ -12,7 +12,7 @@
 	var/internal_cell = FALSE ///if the gun's cell cannot be replaced
 	var/small_gun = FALSE ///if the gun is small and can only fit the small gun cell
 	var/big_gun = FALSE ///if the gun is big and can fit the comically large gun cell
-	var/unscrewing_time = 20 ///Time it takes to unscrew the cell
+	var/unscrewing_time = 2 SECONDS ///Time it takes to unscrew the cell
 	var/sound_volume = 40 //Volume of loading/unloading cell sounds
 
 
@@ -33,13 +33,13 @@
 
 /obj/item/gun/ballistic/automatic/powered/can_shoot()
 	if(QDELETED(cell))
-		return 0
+		return FALSE
 
 	var/obj/item/ammo_casing/caseless/gauss/shot = chambered
 	if(!shot)
-		return 0
+		return FALSE
 	if(cell.charge < shot.energy_cost * burst_size)
-		return 0
+		return FALSE
 	. = ..()
 
 /obj/item/gun/ballistic/automatic/powered/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
@@ -64,19 +64,19 @@
 
 /obj/item/gun/ballistic/automatic/powered/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(small_gun && !istype(C, /obj/item/stock_parts/cell/gun/mini))
-		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
+		to_chat(user, "<span class='warning'>[C] doesn't seem to fit into [src]...</span>")
 		return FALSE
 	if(!big_gun && istype(C, /obj/item/stock_parts/cell/gun/large))
-		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
+		to_chat(user, "<span class='warning'>[C] doesn't seem to fit into [src]...</span>")
 		return FALSE
 	if(user.transferItemToLoc(C, src))
 		cell = C
-		to_chat(user, "<span class='notice'>You load the [C] into \the [src].</span>")
+		to_chat(user, "<span class='notice'>You load [C] into [src].</span>")
 		playsound(src, load_sound, sound_volume, load_sound_vary)
 		update_icon()
 		return TRUE
 	else
-		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+		to_chat(user, "<span class='warning'>You cannot seem to get [src] out of your hands!</span>")
 		return FALSE
 
 /obj/item/gun/ballistic/automatic/powered/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
@@ -102,22 +102,22 @@
 	if(!automatic_charge_overlays)
 		return
 	var/overlay_icon_state = "[icon_state]_charge"
-	var/ratio = get_charge_ratio()
+	var/charge_ratio = get_charge_ratio()
 	if(cell)
 		. += "[icon_state]_cell"
-	if(ratio == 0)
+	if(charge_ratio == 0)
 		. += "[icon_state]_cellempty"
 	else
 		if(!shaded_charge)
 			var/mutable_appearance/charge_overlay = mutable_appearance(icon, overlay_icon_state)
-			for(var/i = ratio, i >= 1, i--)
+			for(var/i in 1 to charge_ratio)
 				charge_overlay.pixel_x = ammo_x_offset * (i - 1)
 				charge_overlay.pixel_y = ammo_y_offset * (i - 1)
 				. += new /mutable_appearance(charge_overlay)
 		else
-			. += "[icon_state]_charge[ratio]"
+			. += "[icon_state]_charge[charge_ratio]"
 
 /obj/item/gun/ballistic/automatic/powered/proc/get_charge_ratio()
 	if(!cell)
-		return 0
+		return FALSE
 	return CEILING(clamp(cell.charge / cell.maxcharge, 0, 1) * charge_sections, 1)// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.
