@@ -18,8 +18,6 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 
 //FLAGS BITMASK
 
-/// This flag is what recursive_hear_check() uses to determine wether to add an item to the hearer list or not.
-#define HEAR_1 (1<<3)
 /// conducts electricity (metal etc.)
 #define CONDUCT_1 (1<<5)
 /// For machines and structures that should not break into parts, eg, holodeck stuff

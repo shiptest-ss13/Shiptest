@@ -1,17 +1,25 @@
 {
 	"map_name": "Tartarus-class Military Carrier",
+	"prefix": "NTSV",
+	"namelists": ["GENERAL", "BRITISH_NAVY", "MYTHOLOGICAL", "WEAPONS"],
 	"map_short_name": "Tartarus-class",
 	"map_path": "_maps/shuttles/shiptest/carrier.dmm",
 	"map_id": "carrier",
-	"roundstart": true,
 	"job_slots": {
-		"Head of Security": 1,
+		"Head of Security": {
+			"outfit": "/datum/outfit/job/hos/nanotrasen",
+			"officer": true,
+			"slots": 1
+		},
 		"Pilot": {
 			"outfit": "/datum/outfit/job/cargo_tech/pilot",
 			"officer": true,
 			"slots": 1
 		},
-		"Security Officer": 4,
+		"Security Officer": {
+			"outfit": "/datum/outfit/job/security/nanotrasen",
+			"slots": 4
+		},
 		"Deputized Prisoner": {
 			"outfit": "/datum/outfit/job/assistant/ex_prisoner",
 			"slots": 3

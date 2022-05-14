@@ -1509,15 +1509,15 @@
 /**
  * get_body_temp_normal Returns the mobs normal body temperature with any modifications applied
  *
- * This applies the result from proc/get_body_temp_normal_change() against the BODYTEMP_NORMAL and returns the result
+ * This applies the result from proc/get_body_temp_normal_change() against the HUMAN_BODYTEMP_NORMAL and returns the result
  *
  * arguments:
  * * apply_change (optional) Default True This applies the changes to body temperature normal
  */
 /mob/living/proc/get_body_temp_normal(apply_change=TRUE)
 	if(!apply_change)
-		return BODYTEMP_NORMAL
-	return BODYTEMP_NORMAL + get_body_temp_normal_change()
+		return HUMAN_BODYTEMP_NORMAL
+	return HUMAN_BODYTEMP_NORMAL + get_body_temp_normal_change()
 
 ///Checks if the user is incapacitated or on cooldown.
 /mob/living/proc/can_look_up()
