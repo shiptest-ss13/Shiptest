@@ -605,6 +605,15 @@
 	pixel_x = -8;
 	pixel_y = 9
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
 "hs" = (
@@ -729,6 +738,9 @@
 	dir = 1
 	},
 /obj/machinery/rnd/production/protolathe/department/security,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
 "jy" = (
@@ -754,9 +766,6 @@
 	},
 /obj/machinery/navbeacon/wayfinding/sec{
 	location = "Brig"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /obj/machinery/firealarm{
 	dir = 1;
@@ -1452,10 +1461,10 @@
 /area/ship/hallway/central)
 "rm" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/security/prison)
 "rp" = (
@@ -1809,6 +1818,9 @@
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
@@ -2751,6 +2763,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
 "Fu" = (
@@ -3104,9 +3119,6 @@
 /area/ship/crew)
 "Kw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
@@ -3230,11 +3242,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "LG" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/security/prison)
 "LK" = (
@@ -3433,9 +3444,6 @@
 /obj/item/clothing/mask/gas/sechailer/minutemen,
 /obj/structure/cable{
 	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/prison)
