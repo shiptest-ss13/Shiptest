@@ -216,7 +216,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/vault{
-	req_one_access = list(25,1)
+	req_one_access = null
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
@@ -252,9 +252,9 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/vault{
-	req_one_access = list(25,1)
+	req_one_access = null
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
 "fC" = (
 /obj/machinery/power/apc/auto_name/west,
@@ -363,7 +363,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "hI" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -377,6 +377,7 @@
 /area/ship/crew/canteen)
 "ie" = (
 /obj/machinery/advanced_airlock_controller{
+	locked = 0;
 	pixel_x = 24
 	},
 /obj/structure/chair,
@@ -432,7 +433,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "jq" = (
 /obj/machinery/roulette,
@@ -488,9 +489,12 @@
 /area/ship/crew/canteen)
 "kD" = (
 /obj/structure/kitchenspike,
-/mob/living/carbon/monkey{
-	health = -100
-	},
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/stack/sheet/animalhide/monkey,
 /turf/open/floor/plasteel/freezer{
 	color = "#8D8B8B"
 	},
@@ -769,7 +773,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "pl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1577,7 +1581,7 @@
 	},
 /area/ship/crew/canteen/kitchen)
 "Ia" = (
-/obj/machinery/holopad,
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "In" = (
@@ -2204,7 +2208,7 @@
 	name = "Bridge Lockdown";
 	pixel_y = -5
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Uq" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
@@ -2280,7 +2284,9 @@
 /area/ship/crew)
 "Vm" = (
 /obj/machinery/vending/hydroseeds,
-/turf/open/floor/carpet/nanoweave/red,
+/turf/open/floor/plasteel/freezer{
+	color = "#8D8B8B"
+	},
 /area/ship/crew/canteen/kitchen)
 "Vo" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -2373,9 +2379,12 @@
 	pixel_y = 20
 	},
 /obj/structure/kitchenspike,
-/mob/living/carbon/monkey{
-	health = -100
-	},
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/stack/sheet/animalhide/monkey,
 /turf/open/floor/plasteel/freezer{
 	color = "#8D8B8B"
 	},
