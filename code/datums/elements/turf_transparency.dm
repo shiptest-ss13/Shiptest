@@ -14,8 +14,8 @@
 	our_turf.plane = OPENSPACE_PLANE
 	our_turf.layer = OPENSPACE_LAYER
 
-	RegisterSignal(target, COMSIG_TURF_MULTIZ_DEL, .proc/on_multiz_turf_del)
-	RegisterSignal(target, COMSIG_TURF_MULTIZ_NEW, .proc/on_multiz_turf_new)
+	RegisterSignal(target, COMSIG_TURF_MULTIZ_DEL, .proc/on_multiz_turf_del, TRUE)
+	RegisterSignal(target, COMSIG_TURF_MULTIZ_NEW, .proc/on_multiz_turf_new, TRUE)
 
 	ADD_TRAIT(our_turf, TURF_Z_TRANSPARENT_TRAIT, TURF_TRAIT)
 
@@ -26,6 +26,8 @@
 	. = ..()
 	var/turf/our_turf = source
 	our_turf.vis_contents.len = 0
+	UnregisterSignal(target, COMSIG_TURF_MULTIZ_DEL)
+	UnregisterSignal(target, COMSIG_TURF_MULTIZ_NEW)
 	REMOVE_TRAIT(our_turf, TURF_Z_TRANSPARENT_TRAIT, TURF_TRAIT)
 
 ///Updates the viscontents or underlays below this tile.
