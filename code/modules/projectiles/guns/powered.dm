@@ -40,12 +40,12 @@
 		return FALSE
 	if(cell.charge < shot.energy_cost * burst_size)
 		return FALSE
-	. = ..()
+	return ..()
 
 /obj/item/gun/ballistic/automatic/powered/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	var/obj/item/ammo_casing/caseless/gauss/shot = chambered
 	cell.use(shot.energy_cost)
-	. = ..()
+	return ..()
 
 /obj/item/gun/ballistic/automatic/powered/get_cell()
 	return cell
