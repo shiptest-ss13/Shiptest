@@ -17,13 +17,6 @@
 		return FALSE
 	return assembly_finished
 
-/datum/controller/master/Initialize(delay, init_sss, tgs_prime)
-	var/obj/structure/nomifactory/machinery/multi_tile/mmmc = new(locate(5,5,1))
-	for(var/dir in GLOB.cardinals)
-		new /obj/structure/nomifactory(get_step(mmmc, dir))
-	mmmc.check_assembly()
-	del world
-
 /obj/structure/nomifactory/machinery/multi_tile/proc/check_assembly()
 	ASSERT(length(tile_setup) == (tile_setup_height * tile_setup_width))
 	var/list/current_setup = new(length(tile_setup))
