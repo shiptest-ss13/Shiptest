@@ -12,12 +12,6 @@
 	/// This exists to ensure we dont enter a refresh loop
 	VAR_PRIVATE/last_refresh
 
-	var/list/construction_steps = list(
-		TOOL_WRENCH,
-		TOOL_WELDER
-	)
-	var/construction_stage = 1
-
 	/// Output conveyor
 	var/obj/machinery/nomifactory/conveyor/conveyor
 
@@ -56,9 +50,6 @@
 	dir = turn(dir, 90)
 	say("Now facing [dir2text(dir)]")
 	return COMPONENT_BLOCK_TOOL_ATTACK
-
-/obj/machinery/nomifactory/proc/construction_finished()
-	return construction_stage == length(construction_steps) + 1
 
 /obj/machinery/nomifactory/proc/allow_nomifactory_connection(dir, obj/structure/nomifactory/connectee)
 	if(!connection_allow_digonal)
@@ -111,106 +102,11 @@
 /obj/machinery/nomifactory/proc/nomifactory_process()
 	return
 
-/obj/machinery/nomifactory/examine(mob/user)
-	. = ..()
-
-	if(!construction_finished())
-		var/needed = "something"
-		var/old
-
-		var/current = construction_steps[construction_stage]
-		if(ispath(current))
-			var/atom/current_as_atom = current
-			current = initial(current_as_atom.name)
-
-		var/previous = construction_stage > 1 ? construction_steps[construction_stage-1] : null
-		if(ispath(previous))
-			var/atom/previous_as_atom = previous
-			previous = initial(previous_as_atom.name)
-
-		switch(current)
-			if(TOOL_CROWBAR)
-				needed = "The frame needs to be <i>pried</i> into place"
-			if(TOOL_MULTITOOL)
-				needed = "Some circuitry needs to be enabled"
-			if(TOOL_SCREWDRIVER)
-				needed = "Some circuitry needs to be <i>screwed</i> into place"
-			if(TOOL_WELDER)
-				needed = "The frame needs to be <i>welded</i>"
-			if(TOOL_WRENCH)
-				needed = "The frame needs to be <i>secured</i>"
-			if(TOOL_WIRECUTTER)
-				needed = "Some circuitry needs to be trimmed"
-			else
-				needed = "It needs [current] applied to it"
-
-		if(previous)
-			switch(previous)
-				if(TOOL_CROWBAR)
-					old = "You can <i>pry</i> the frame out of place"
-				if(TOOL_MULTITOOL)
-					old = "Some circuitry can be disabled"
-				if(TOOL_SCREWDRIVER)
-					old = "Some circuitry can be <i>unscrewed</i>"
-				if(TOOL_WELDER)
-					old = "The frame can be <i>unwelded</i>"
-				if(TOOL_WRENCH)
-					old = "The frame can be <i>unsecured</i>"
-				if(TOOL_WIRECUTTER)
-					old = "Some circuitry can be trimmed out"
-				else
-					old = "[previous] can be undone"
-
-		. += needed
-		if(old)
-			. += old
-	else
-		. += "You could deconstruct it with a <i>welding tool and crowbar</i>"
-
 /obj/machinery/nomifactory/proc/do_output(atom/movable/outputed)
 	if(conveyor)
 		outputed.loc = get_turf(conveyor)
 		return
 	outputed.loc = get_turf(src)
-
-/obj/machinery/nomifactory/attackby(obj/item/I, mob/living/user, params)
-	if(!construction_finished())
-		var/current = construction_steps[construction_stage]
-		var/previous = construction_stage > 1 ? construction_steps[construction_stage-1] : null
-
-		if(I.type == current || I.tool_behaviour == current)
-			if(!I.use(construction_steps[current]))
-				to_chat(user, "<span class='warning'>You fail to complete the step!</span>")
-				return TRUE
-
-			construction_stage++
-			to_chat(user, "<span class='notice'>You complete the step.</span>")
-			return TRUE
-
-		if(I.type == previous || I.tool_behaviour == previous)
-			construction_stage--
-			to_chat(user, "<span class='notice'>You undo your work.</span>")
-			return TRUE
-
-	if(I.tool_behaviour == TOOL_WELDER)
-		var/obj/item/weldingtool/welder = I
-		if(!welder.welding)
-			return ..()
-		var/obj/item/offhand = user.get_inactive_held_item()
-		if(istype(offhand) && offhand.tool_behaviour == TOOL_CROWBAR)
-			if(!do_after_mob(user, src, 2 SECONDS))
-				return TRUE
-
-			if(construction_stage > 1)
-				to_chat(user, "<span class='danger'>You forcibly rip apart some of [src]!</span>")
-				construction_stage--
-				return TRUE
-			else
-				to_chat(user, "<span class='danger'>You finish ripping apart [src]!</span>")
-				qdel(src)
-				return TRUE
-
-	return ..()
 
 /obj/machinery/nomifactory/multitool_act(mob/living/user, obj/item/I)
 	refresh_nomifactory_connections()
