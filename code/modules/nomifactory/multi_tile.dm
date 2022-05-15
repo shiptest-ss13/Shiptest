@@ -9,10 +9,18 @@
 		/obj/machinery/nomifactory, /obj/machinery/nomifactory/machinery/multi_tile, /obj/machinery/nomifactory,
 		null, /obj/machinery/nomifactory, null,
 	)
+	/// If assembly is finished this is a list containing the tiles located and used to finish assembly
+	var/list/tile_instance_map = new
 	var/assembly_finished = FALSE
 
 /obj/machinery/nomifactory/machinery/multi_tile/is_operational()
-	return ..() && assembly_finished
+	return ..() && (assembly_finished && _check_tiles_operation())
+
+/obj/machinery/nomifactory/machinery/multi_tile/_check_tiles_operation()
+	for(var/obj/machinery/machine in tile_instance_map)
+		if(!machine.is_operational())
+			return FALSE
+	return TRUE
 
 /obj/machinery/nomifactory/machinery/multi_tile/examine(mob/user)
 	. = ..()
@@ -29,6 +37,11 @@
 
 /obj/machinery/nomifactory/machinery/multi_tile/proc/check_assembly()
 	ASSERT(length(tile_setup) == (tile_setup_height * tile_setup_width))
+
+	for(var/existing_tile in tile_instance_map)
+		UnregisterSignal(tile, COMSIG_PARENT_QDELETING)
+	tile_instance_map.Cut()
+
 	var/list/current_setup = new(length(tile_setup))
 	var/setup_index = 1
 
@@ -55,5 +68,17 @@
 			var/tile = locate(tile_setup[setup_index]) in turf
 			if(!tile)
 				assembly_finished = FALSE
-			current_setup[setup_index] = tile
+			else
+				current_setup[setup_index] = tile
+				RegisterSignal(tile, COMSIG_PARENT_QDELETING, .proc/handle_tile_deletion)
 			setup_index++
+	tile_instance_map = current_setup
+
+/obj/machinery/nomifactory/machinery/multi_tile/proc/handle_tile_deletion(datum/deleting)
+	SIGNAL_HANDLER
+
+	if(!(deleting in tile_instance_map))
+		return
+
+	assembly_finished = FALSE
+	check_assembly()
