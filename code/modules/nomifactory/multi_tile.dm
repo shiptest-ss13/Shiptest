@@ -16,7 +16,7 @@
 /obj/machinery/nomifactory/machinery/multi_tile/is_operational()
 	return ..() && (assembly_finished && _check_tiles_operation())
 
-/obj/machinery/nomifactory/machinery/multi_tile/_check_tiles_operation()
+/obj/machinery/nomifactory/machinery/multi_tile/proc/_check_tiles_operation()
 	for(var/obj/machinery/machine in tile_instance_map)
 		if(!machine.is_operational())
 			return FALSE
@@ -39,7 +39,7 @@
 	ASSERT(length(tile_setup) == (tile_setup_height * tile_setup_width))
 
 	for(var/existing_tile in tile_instance_map)
-		UnregisterSignal(tile, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(existing_tile, COMSIG_PARENT_QDELETING)
 	tile_instance_map.Cut()
 
 	var/list/current_setup = new(length(tile_setup))
