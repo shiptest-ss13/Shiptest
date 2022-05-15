@@ -1,4 +1,4 @@
-/obj/structure/nomifactory
+/obj/machinery/nomifactory
 	name = "Nomifactory Node"
 	desc = "It does... something?"
 	icon = 'icons/obj/nomifactory.dmi'
@@ -19,12 +19,12 @@
 	var/construction_stage = 1
 
 	/// Output conveyor
-	var/obj/structure/nomifactory/conveyor/conveyor
+	var/obj/machinery/nomifactory/conveyor/conveyor
 
-/obj/structure/nomifactory/Initialize()
+/obj/machinery/nomifactory/Initialize()
 	. = ..()
 
-	for(var/obj/structure/nomifactory/existing_node in loc)
+	for(var/obj/machinery/nomifactory/existing_node in loc)
 		if(existing_node == src)
 			continue
 		if(existing_node && !existing_node.allow_same_tile(src))
@@ -39,17 +39,17 @@
 	SSnomifactory.all_nodes += src
 	connected_nodes = new
 
-/obj/structure/nomifactory/proc/allow_same_tile(obj/structure/nomifactory/other_node)
+/obj/machinery/nomifactory/proc/allow_same_tile(obj/structure/nomifactory/other_node)
 	return FALSE
 
-/obj/structure/nomifactory/Destroy()
+/obj/machinery/nomifactory/Destroy()
 	. = ..()
 	SSnomifactory.all_nodes -= src
-	for(var/obj/structure/nomifactory/node as anything in connected_nodes)
+	for(var/obj/machinery/nomifactory/node as anything in connected_nodes)
 		node.connected_nodes -= src
 	connected_nodes = null
 
-/obj/structure/nomifactory/wrench_act(mob/living/user, obj/item/I)
+/obj/machinery/nomifactory/wrench_act(mob/living/user, obj/item/I)
 	if(!construction_finished() || user.a_intent == INTENT_HARM)
 		return ..()
 
@@ -57,17 +57,17 @@
 	say("Now facing [dir2text(dir)]")
 	return COMPONENT_BLOCK_TOOL_ATTACK
 
-/obj/structure/nomifactory/proc/construction_finished()
+/obj/machinery/nomifactory/proc/construction_finished()
 	return construction_stage == length(construction_steps) + 1
 
-/obj/structure/nomifactory/proc/allow_nomifactory_connection(dir, obj/structure/nomifactory/connectee)
+/obj/machinery/nomifactory/proc/allow_nomifactory_connection(dir, obj/structure/nomifactory/connectee)
 	if(!connection_allow_digonal)
 		if(dir in GLOB.diagonals)
 			return FALSE
 
 	return construction_finished()
 
-/obj/structure/nomifactory/proc/refresh_nomifactory_connections(requested_at = world.time)
+/obj/machinery/nomifactory/proc/refresh_nomifactory_connections(requested_at = world.time)
 	if(last_refresh == requested_at)
 		return
 	if(!construction_finished())
@@ -83,35 +83,35 @@
 
 	for(var/dir in check_dirs)
 		var/turf/check = get_turf(get_step(src, dir))
-		var/obj/structure/nomifactory/node = locate() in check
+		var/obj/machinery/nomifactory/node = locate() in check
 		if(QDELETED(node))
 			continue
 		connected_nodes[node] = dir
 
-	for(var/obj/structure/nomifactory/old_node as anything in old_connections)
+	for(var/obj/machinery/nomifactory/old_node as anything in old_connections)
 		if(QDELETED(old_node))
 			continue
 		if(!(old_node in connected_nodes))
 			old_node.on_nomifactory_disconnection(src, get_dir(old_node, src))
 			old_node.refresh_nomifactory_connections(requested_at)
 
-	for(var/obj/structure/nomifactory/new_node as anything in connected_nodes)
+	for(var/obj/machinery/nomifactory/new_node as anything in connected_nodes)
 		if(!(new_node in old_connections))
 			new_node.on_nomifactory_connection(src, get_dir(new_node, src))
 			new_node.refresh_nomifactory_connections(requested_at)
 
-/obj/structure/nomifactory/proc/on_nomifactory_connection(obj/structure/nomifactory/node, dir)
+/obj/machinery/nomifactory/proc/on_nomifactory_connection(obj/structure/nomifactory/node, dir)
 	SHOULD_CALL_PARENT(TRUE)
 	connected_nodes[node] = dir
 
-/obj/structure/nomifactory/proc/on_nomifactory_disconnection(obj/structure/nomifactory/node, dir)
+/obj/machinery/nomifactory/proc/on_nomifactory_disconnection(obj/structure/nomifactory/node, dir)
 	SHOULD_CALL_PARENT(TRUE)
 	connected_nodes -= node
 
-/obj/structure/nomifactory/proc/nomifactory_process()
+/obj/machinery/nomifactory/proc/nomifactory_process()
 	return
 
-/obj/structure/nomifactory/examine(mob/user)
+/obj/machinery/nomifactory/examine(mob/user)
 	. = ..()
 
 	if(!construction_finished())
@@ -167,13 +167,13 @@
 	else
 		. += "You could deconstruct it with a <i>welding tool and crowbar</i>"
 
-/obj/structure/nomifactory/proc/do_output(atom/movable/outputed)
+/obj/machinery/nomifactory/proc/do_output(atom/movable/outputed)
 	if(conveyor)
 		outputed.loc = get_turf(conveyor)
 		return
 	outputed.loc = get_turf(src)
 
-/obj/structure/nomifactory/attackby(obj/item/I, mob/living/user, params)
+/obj/machinery/nomifactory/attackby(obj/item/I, mob/living/user, params)
 	if(!construction_finished())
 		var/current = construction_steps[construction_stage]
 		var/previous = construction_stage > 1 ? construction_steps[construction_stage-1] : null
@@ -212,7 +212,7 @@
 
 	return ..()
 
-/obj/structure/nomifactory/multitool_act(mob/living/user, obj/item/I)
+/obj/machinery/nomifactory/multitool_act(mob/living/user, obj/item/I)
 	refresh_nomifactory_connections()
 	to_chat(user, "<span class='notice'>You press the factory reset button!</span>")
 	return COMPONENT_BLOCK_TOOL_ATTACK

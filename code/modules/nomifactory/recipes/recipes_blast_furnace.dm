@@ -1,6 +1,6 @@
 /datum/nomi_recipe/blast_furnace
 	abstract = /datum/nomi_recipe/blast_furnace
-	machine_needed = /obj/structure/nomifactory/machinery/blast_furnace
+	machine_needed = /obj/machinery/nomifactory/machinery/blast_furnace
 
 /datum/nomi_recipe/blast_furnace/ingot_iron
 	name = "Ingot Casting"

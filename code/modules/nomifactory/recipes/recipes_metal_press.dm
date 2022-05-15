@@ -1,6 +1,6 @@
 /datum/nomi_recipe/metal_press
 	abstract = /datum/nomi_recipe/metal_press
-	machine_needed = /obj/structure/nomifactory/machinery/metal_press
+	machine_needed = /obj/machinery/nomifactory/machinery/metal_press
 
 /datum/nomi_recipe/metal_press/gear_press
 	name = "Gear Pressing"

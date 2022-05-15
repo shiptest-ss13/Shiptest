@@ -1,23 +1,23 @@
-/obj/structure/nomifactory/machinery
+/obj/machinery/nomifactory/machinery
 	var/progress
 	var/datum/nomi_recipe/recipe
 	/// The number of excess items allowed, aka the buffer capacity
 	var/buffer_count = 0
 
-/obj/structure/nomifactory/machinery/Initialize()
+/obj/machinery/nomifactory/machinery/Initialize()
 	. = ..()
 	RegisterSignal(get_turf(src), COMSIG_ATOM_ENTERED, .proc/turf_entered)
 
-/obj/structure/nomifactory/machinery/update_icon()
+/obj/machinery/nomifactory/machinery/update_icon()
 	name = recipe ? "[initial(name)] ([recipe.name])" : initial(name)
 	. = ..()
 
-/obj/structure/nomifactory/machinery/update_overlays()
+/obj/machinery/nomifactory/machinery/update_overlays()
 	. = ..()
 	if(recipe?.generated_overlay)
 		. += recipe.generated_overlay
 
-/obj/structure/nomifactory/machinery/examine(mob/user)
+/obj/machinery/nomifactory/machinery/examine(mob/user)
 	. = ..()
 
 	var/list/content_tally = new
@@ -32,7 +32,7 @@
 			contains_str += "\n\t([content_tally[content]]x) [content]"
 		. += contains_str
 
-/obj/structure/nomifactory/machinery/attack_hand(mob/user)
+/obj/machinery/nomifactory/machinery/attack_hand(mob/user)
 	var/list/valid_recipes = new
 	for(var/datum/nomi_recipe/recipe as anything in GLOB.nomi_recipes)
 		if(!istype(src, recipe.machine_needed))
@@ -44,10 +44,10 @@
 		recipe = valid_recipes[selected] // Indexing by a non-existant key returns null, so this works
 	update_icon()
 
-/obj/structure/nomifactory/machinery/proc/nomifactory_pre_turf_entered(atom/movable/entered)
+/obj/machinery/nomifactory/machinery/proc/nomifactory_pre_turf_entered(atom/movable/entered)
 	return FALSE
 
-/obj/structure/nomifactory/machinery/proc/turf_entered(datum/source, atom/movable/entered)
+/obj/machinery/nomifactory/machinery/proc/turf_entered(datum/source, atom/movable/entered)
 	SIGNAL_HANDLER
 	SHOULD_NOT_OVERRIDE(TRUE)
 
@@ -71,7 +71,7 @@
 
 	entered.forceMove(src)
 
-/obj/structure/nomifactory/machinery/nomifactory_process()
+/obj/machinery/nomifactory/machinery/nomifactory_process()
 	if(!recipe)
 		progress = 0
 		return
@@ -89,18 +89,18 @@
 		recipe.create_outputs(get_step(src, dir))
 		return
 
-/obj/structure/nomifactory/machinery/metal_press
+/obj/machinery/nomifactory/machinery/metal_press
 	name = "Metal Press"
 	icon_state = "metal_press"
 
-/obj/structure/nomifactory/machinery/blast_furnace
+/obj/machinery/nomifactory/machinery/blast_furnace
 	name = "Blast Furnace"
 	icon_state = "blast_furnace"
 
-/obj/structure/nomifactory/machinery/assembly_complex
+/obj/machinery/nomifactory/machinery/assembly_complex
 	name = "Multi-Stage Assembly Core"
 	icon_state = "assembly_core"
 
-/obj/structure/nomifactory/machinery/digital_printer
+/obj/machinery/nomifactory/machinery/digital_printer
 	name = "Digital Printer"
 	icon_state = "digital_printer"

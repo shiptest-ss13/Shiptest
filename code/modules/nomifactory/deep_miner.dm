@@ -1,4 +1,4 @@
-/obj/structure/nomifactory/deep_miner
+/obj/machinery/nomifactory/deep_miner
 	name = "Deep Core Tertiary Miner"
 	construction_steps = list(
 		TOOL_WRENCH,
@@ -16,11 +16,11 @@
 	var/progress = 0
 	var/payout_progress = 20
 
-/obj/structure/nomifactory/deep_miner/Initialize()
+/obj/machinery/nomifactory/deep_miner/Initialize()
 	. = ..()
 	output_probability_map = output_probability_map || create_output_map()
 
-/obj/structure/nomifactory/deep_miner/nomifactory_process()
+/obj/machinery/nomifactory/deep_miner/nomifactory_process()
 	if(!valid_location())
 		say("Invalid sediment content, disabling to prevent damage!")
 		construction_stage--
@@ -30,7 +30,7 @@
 		progress = 0
 		payout()
 
-/obj/structure/nomifactory/deep_miner/proc/create_output_map()
+/obj/machinery/nomifactory/deep_miner/proc/create_output_map()
 	return list(
 		/obj/item/stack/ore/glass = 50,
 		/obj/item/stack/ore/iron = 40,
@@ -44,7 +44,7 @@
 		/obj/item/stack/ore/slag = 1
 	)
 
-/obj/structure/nomifactory/deep_miner/proc/valid_location()
+/obj/machinery/nomifactory/deep_miner/proc/valid_location()
 	var/turf/my_turf = get_turf(src)
 	if(my_turf != loc)
 		return FALSE
@@ -59,7 +59,7 @@
 	)
 	return is_type_in_list(my_turf, valid_turfs)
 
-/obj/structure/nomifactory/deep_miner/proc/payout()
+/obj/machinery/nomifactory/deep_miner/proc/payout()
 	var/list/outputs = new
 	say("Processing mineral load...")
 

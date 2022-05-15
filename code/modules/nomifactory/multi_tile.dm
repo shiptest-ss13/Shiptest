@@ -1,23 +1,23 @@
-/obj/structure/nomifactory/machinery/multi_tile
+/obj/machinery/nomifactory/machinery/multi_tile
 	/// The width of our tile setup map
 	var/tile_setup_width = 3
 	/// The height of our tile setup map
 	var/tile_setup_height = 3
 	/// The tile setup map to use when checking if this machine is done with construction
 	var/list/tile_setup = list(
-		null, /obj/structure/nomifactory, null,
-		/obj/structure/nomifactory, /obj/structure/nomifactory/machinery/multi_tile, /obj/structure/nomifactory,
-		null, /obj/structure/nomifactory, null,
+		null, /obj/machinery/nomifactory, null,
+		/obj/machinery/nomifactory, /obj/machinery/nomifactory/machinery/multi_tile, /obj/machinery/nomifactory,
+		null, /obj/machinery/nomifactory, null,
 	)
 	var/assembly_finished = FALSE
 
-/obj/structure/nomifactory/machinery/multi_tile/construction_finished()
+/obj/machinery/nomifactory/machinery/multi_tile/construction_finished()
 	. = ..()
 	if(!.)
 		return FALSE
 	return assembly_finished
 
-/obj/structure/nomifactory/machinery/multi_tile/proc/check_assembly()
+/obj/machinery/nomifactory/machinery/multi_tile/proc/check_assembly()
 	ASSERT(length(tile_setup) == (tile_setup_height * tile_setup_width))
 	var/list/current_setup = new(length(tile_setup))
 	var/setup_index = 1
@@ -48,6 +48,6 @@
 			current_setup[setup_index] = tile
 			setup_index++
 
-/obj/structure/nomifactory/machinery/multi_tile/multitool_act(mob/living/user, obj/item/I)
+/obj/machinery/nomifactory/machinery/multi_tile/refresh_nomifactory_connections(requested_at)
 	. = ..()
 	check_assembly()

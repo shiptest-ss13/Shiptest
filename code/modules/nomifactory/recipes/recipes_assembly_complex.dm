@@ -1,6 +1,6 @@
 /datum/nomi_recipe/assembly
 	abstract = /datum/nomi_recipe/assembly
-	machine_needed = /obj/structure/nomifactory/machinery/assembly_complex
+	machine_needed = /obj/machinery/nomifactory/machinery/assembly_complex
 
 /datum/nomi_recipe/assembly/capacitor
 	name = "Capacitor Fabrication"
