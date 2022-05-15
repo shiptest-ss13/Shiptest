@@ -33,7 +33,7 @@
 	SSnomifactory.all_nodes += src
 	connected_nodes = new
 
-/obj/machinery/nomifactory/proc/allow_same_tile(obj/structure/nomifactory/other_node)
+/obj/machinery/nomifactory/proc/allow_same_tile(obj/machinery/nomifactory/other_node)
 	return FALSE
 
 /obj/machinery/nomifactory/Destroy()
@@ -43,25 +43,27 @@
 		node.connected_nodes -= src
 	connected_nodes = null
 
+/obj/machinery/nomifactory/examine(mob/user)
+	. = ..()
+	. += "it could be rotated with a wrench."
+
 /obj/machinery/nomifactory/wrench_act(mob/living/user, obj/item/I)
-	if(!construction_finished() || user.a_intent == INTENT_HARM)
+	if(user.a_intent != INTENT_HELP)
 		return ..()
 
 	dir = turn(dir, 90)
 	say("Now facing [dir2text(dir)]")
 	return COMPONENT_BLOCK_TOOL_ATTACK
 
-/obj/machinery/nomifactory/proc/allow_nomifactory_connection(dir, obj/structure/nomifactory/connectee)
+/obj/machinery/nomifactory/proc/allow_nomifactory_connection(dir, obj/machinery/nomifactory/connectee)
 	if(!connection_allow_digonal)
 		if(dir in GLOB.diagonals)
 			return FALSE
 
-	return construction_finished()
+	return TRUE
 
 /obj/machinery/nomifactory/proc/refresh_nomifactory_connections(requested_at = world.time)
 	if(last_refresh == requested_at)
-		return
-	if(!construction_finished())
 		return
 	last_refresh = requested_at
 
@@ -91,11 +93,11 @@
 			new_node.on_nomifactory_connection(src, get_dir(new_node, src))
 			new_node.refresh_nomifactory_connections(requested_at)
 
-/obj/machinery/nomifactory/proc/on_nomifactory_connection(obj/structure/nomifactory/node, dir)
+/obj/machinery/nomifactory/proc/on_nomifactory_connection(obj/machinery/nomifactory/node, dir)
 	SHOULD_CALL_PARENT(TRUE)
 	connected_nodes[node] = dir
 
-/obj/machinery/nomifactory/proc/on_nomifactory_disconnection(obj/structure/nomifactory/node, dir)
+/obj/machinery/nomifactory/proc/on_nomifactory_disconnection(obj/machinery/nomifactory/node, dir)
 	SHOULD_CALL_PARENT(TRUE)
 	connected_nodes -= node
 
