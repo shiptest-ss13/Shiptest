@@ -47,6 +47,10 @@
 /obj/effect/turf_decal/corner/pink/border{
 	dir = 9
 	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 2
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "bL" = (
@@ -190,7 +194,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -229,6 +232,10 @@
 	},
 /obj/effect/turf_decal/corner/pink/border{
 	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 2
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
@@ -393,7 +400,6 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -404,6 +410,10 @@
 /obj/effect/turf_decal/corner/pink/border{
 	dir = 1
 	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 2
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "nl" = (
@@ -412,10 +422,15 @@
 	},
 /obj/machinery/light/small,
 /obj/machinery/firealarm{
+	dir = 1;
 	pixel_y = -30
 	},
 /obj/effect/turf_decal/corner/pink/border{
 	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 2
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
@@ -516,7 +531,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "qi" = (
-/obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -571,7 +585,6 @@
 /area/ship/engineering)
 "rb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/window/reinforced,
 /obj/item/clothing/suit/space/syndicate/orange{
 	armor = list("melee" = 5, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 85);
 	name = "degrading orange space suit";
@@ -772,7 +785,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/obj/machinery/firealarm,
+/obj/machinery/firealarm{
+	dir = 1
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "wq" = (
@@ -973,6 +988,10 @@
 /obj/effect/turf_decal/corner/pink/border{
 	dir = 1
 	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 2
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "Fc" = (
@@ -1057,7 +1076,6 @@
 /turf/closed/wall/mineral/plastitanium/interior,
 /area/ship/engineering)
 "GM" = (
-/obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -1095,6 +1113,10 @@
 "IE" = (
 /obj/effect/turf_decal/corner/pink/border{
 	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 2
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
@@ -1239,6 +1261,9 @@
 	dir = 4;
 	piping_layer = 2
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "Rc" = (
@@ -1253,7 +1278,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "Sd" = (
-/obj/structure/window/reinforced,
 /obj/item/clothing/suit/space/hardsuit/combatmedic{
 	allowed = list(/obj/item/gun,/obj/item/circular_saw,/obj/item/tank/internals,/obj/item/storage/box/pillbottles,/obj/item/storage/firstaid,/obj/item/stack/medical/gauze,/obj/item/stack/medical/suture,/obj/item/stack/medical/mesh,/obj/item/storage/bag/chemistry);
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 20, "energy" = 15, "bomb" = 5, "bio" = 80, "rad" = 50, "fire" = 65, "acid" = 75);
@@ -1282,7 +1306,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Tk" = (
-/obj/machinery/firealarm,
+/obj/machinery/firealarm{
+	dir = 1
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
 "TD" = (
@@ -1348,6 +1374,10 @@
 	},
 /obj/effect/turf_decal/corner/pink/border{
 	dir = 9
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 2
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
@@ -1441,7 +1471,6 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Zv" = (
-/obj/structure/window/reinforced,
 /obj/item/clothing/suit/space/syndicate/black{
 	armor = list("melee" = 5, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 85);
 	name = "degrading black space suit";
@@ -1461,7 +1490,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Zy" = (
-/obj/structure/window/reinforced,
 /obj/item/clothing/suit/space/syndicate/blue{
 	armor = list("melee" = 5, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 85);
 	name = "degrading blue space suit";
