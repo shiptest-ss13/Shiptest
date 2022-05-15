@@ -114,6 +114,11 @@
 	dyn_explosion(T, plasmaAmount/5)//20 plasma in a standard welder has a 4 power explosion. no breaches, but enough to kill/dismember holder
 	qdel(src)
 
+/obj/item/weldingtool/use_tool(atom/target, mob/living/user, delay, amount, volume, datum/callback/extra_checks)
+	target.add_overlay(GLOB.welding_sparks)
+	. = ..()
+	target.cut_overlay(GLOB.welding_sparks)
+
 /obj/item/weldingtool/attack(mob/living/carbon/human/H, mob/user)
 	if(!istype(H))
 		return ..()
@@ -122,12 +127,15 @@
 
 	if(affecting && (!IS_ORGANIC_LIMB(affecting)) && user.a_intent != INTENT_HARM)
 		if(src.use_tool(H, user, 0, volume=50, amount=1))
+			H.add_overlay(GLOB.welding_sparks)
 			if(user == H)
 				user.visible_message("<span class='notice'>[user] starts to fix some of the dents on [H]'s [parse_zone(affecting.body_zone)].</span>",
 					"<span class='notice'>You start fixing some of the dents on [H == user ? "your" : "[H]'s"] [parse_zone(affecting.body_zone)].</span>")
 				if(!do_mob(user, H, 50))
+					H.cut_overlay(GLOB.welding_sparks)
 					return
 			item_heal_robotic(H, user, 15, 0)
+			H.cut_overlay(GLOB.welding_sparks)
 	else
 		return ..()
 
