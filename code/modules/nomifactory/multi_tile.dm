@@ -32,16 +32,18 @@
 	var/my_position = tile_setup.Find(src.type)
 	if(!my_position)
 		CRASH("Illegal multitile setup map")
+	my_position--
 
-	var/base_x = src.x - (my_position % tile_setup_width) - 1
+	var/base_x = src.x - (my_position % tile_setup_width)
 	var/base_y = src.y - round(my_position / tile_setup_width) // why the fuck does round act like floor and not like ANY OTHER GOD DAMN LANGUAGE (except python)
 
 	var/max_x = base_x + tile_setup_width
 	var/max_y = base_y + tile_setup_height
 
 	assembly_finished = TRUE
-	for(var/index_x in base_x to max_x)
-		for(var/index_y in base_y to max_y)
+
+	for(var/index_y in base_y to max_y)
+		for(var/index_x in base_x to max_x)
 			if(isnull(tile_setup[setup_index]))
 				setup_index++
 				continue
