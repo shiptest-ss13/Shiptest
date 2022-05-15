@@ -31,6 +31,8 @@
 
 //Set ignoregloves to add prints irrespective of the mob having gloves on.
 /atom/proc/add_fingerprint(mob/M, ignoregloves = FALSE)
+	if ( QDELETED(src) )
+		return FALSE
 	var/datum/component/forensics/D = AddComponent(/datum/component/forensics)
 	. = D.add_fingerprint(M, ignoregloves)
 
@@ -39,6 +41,8 @@
 		. = AddComponent(/datum/component/forensics, null, null, null, fibertext)
 
 /atom/proc/add_fibers(mob/living/carbon/human/M)
+	if ( QDELETED(src) )
+		return FALSE
 	var/old = 0
 	if(M.gloves && istype(M.gloves, /obj/item/clothing))
 		var/obj/item/clothing/gloves/G = M.gloves
@@ -58,6 +62,8 @@
 		. = AddComponent(/datum/component/forensics, null, hiddenprints)
 
 /atom/proc/add_hiddenprint(mob/M)
+	if ( QDELETED(src) )
+		return FALSE
 	var/datum/component/forensics/D = AddComponent(/datum/component/forensics)
 	. = D.add_hiddenprint(M)
 
@@ -97,6 +103,8 @@
 	return TRUE
 
 /atom/proc/transfer_fingerprints_to(atom/A)
+	if ( QDELETED(src) )
+		return FALSE
 	A.add_fingerprint_list(return_fingerprints())
 	A.add_hiddenprint_list(return_hiddenprints())
 	A.fingerprintslast = fingerprintslast
