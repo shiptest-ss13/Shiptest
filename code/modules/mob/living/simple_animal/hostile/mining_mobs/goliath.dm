@@ -64,15 +64,9 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/revive(full_heal = FALSE, admin_revive = FALSE)//who the fuck anchors mobs
 	if(..())
-		move_force = MOVE_FORCE_NORMAL
-		move_resist = MOVE_FORCE_VERY_STRONG
-		pull_force = MOVE_FORCE_NORMAL
 		. = 1
 
 /mob/living/simple_animal/hostile/asteroid/goliath/death(gibbed)
-	move_force = MOVE_FORCE_DEFAULT
-	move_resist = MOVE_RESIST_DEFAULT
-	pull_force = MOVE_FORCE_DEFAULT
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/goliath/gib()
