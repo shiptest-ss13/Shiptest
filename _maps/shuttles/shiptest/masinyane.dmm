@@ -72,8 +72,35 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"hc" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/button/door{
+	color = "#ddcc00";
+	dir = 8;
+	id = "masi_engi";
+	name = "engine emergency shielding";
+	pixel_x = 24
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "ic" = (
 /obj/machinery/autolathe,
+/turf/open/floor/plating,
+/area/ship/engineering)
+"ie" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2,
+/obj/machinery/button/door{
+	color = "#ddcc00";
+	dir = 8;
+	id = "masi_engi";
+	name = "engine emergency shielding";
+	pixel_x = 24
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "if" = (
@@ -153,6 +180,25 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"kO" = (
+/obj/structure/fans/tiny{
+	pixel_y = -10
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1;
+	layer = 2.09
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "masinyane_blastdoors";
+	pixel_x = 23
+	},
+/obj/machinery/door/poddoor{
+	id = "masinyane_blastdoors";
+	name = "masinyane entrance doors"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "kS" = (
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -240,15 +286,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"uW" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/shuttle/engine/electric/premium{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "ve" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -311,25 +348,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"Bs" = (
-/obj/structure/fans/tiny{
-	pixel_y = -10
-	},
-/obj/effect/turf_decal/industrial/stand_clear{
-	dir = 1;
-	layer = 2.09
-	},
-/obj/machinery/button/door{
-	dir = 8;
-	id = "masinyane_blastdoors";
-	pixel_x = 23
-	},
-/obj/machinery/door/poddoor{
-	id = "masinyane_blastdoors";
-	name = "masinyane entrance doors"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
 "Ce" = (
 /obj/machinery/power/smes/engineering,
 /obj/machinery/light{
@@ -372,19 +390,6 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
-"Dp" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/button/door{
-	color = "#ddcc00";
-	dir = 8;
-	id = "masi_engi";
-	name = "engine emergency shielding";
-	pixel_x = 24
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -454,6 +459,24 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Iu" = (
+/obj/structure/fans/tiny{
+	pixel_y = -10
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	layer = 2.09
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "masinyane_blastdoors";
+	pixel_x = -23
+	},
+/obj/machinery/door/poddoor{
+	id = "masinyane_blastdoors";
+	name = "masinyane entrance doors"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "Iw" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -526,20 +549,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Mr" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2,
-/obj/machinery/button/door{
-	color = "#ddcc00";
-	dir = 8;
-	id = "masi_engi";
-	name = "engine emergency shielding";
-	pixel_x = 24
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Ng" = (
 /obj/machinery/atmospherics/pipe/simple/purple{
 	dir = 4
@@ -571,25 +580,7 @@
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Ps" = (
-/obj/structure/fans/tiny{
-	pixel_y = -10
-	},
-/obj/effect/turf_decal/industrial/stand_clear{
-	layer = 2.09
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "masinyane_blastdoors";
-	pixel_x = -23
-	},
-/obj/machinery/door/poddoor{
-	id = "masinyane_blastdoors";
-	name = "masinyane entrance doors"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/bridge)
-"QL" = (
+"PB" = (
 /obj/machinery/button/door{
 	color = "#ddcc00";
 	dir = 4;
@@ -678,6 +669,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"TB" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric/premium{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Wi" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -791,17 +791,17 @@ dJ
 "}
 (2,1,1) = {"
 dJ
-uW
-uW
-uW
+TB
+TB
+TB
 tx
 sx
 sx
 sx
 dJ
-uW
-uW
-uW
+TB
+TB
+TB
 dJ
 "}
 (3,1,1) = {"
@@ -810,9 +810,9 @@ uf
 uf
 uf
 Ng
-uW
-uW
-uW
+TB
+TB
+TB
 dJ
 uf
 uf
@@ -853,13 +853,13 @@ dJ
 dJ
 ej
 ZU
-Mr
+ie
 Mj
 aC
 EN
 ks
 ix
-Dp
+hc
 kS
 ic
 dJ
@@ -881,14 +881,14 @@ Wn
 "}
 (8,1,1) = {"
 Xq
-Ps
+Iu
 Wi
 sn
 yn
 Xc
 ip
 Tq
-QL
+PB
 qu
 KV
 cN
@@ -896,7 +896,7 @@ Md
 "}
 (9,1,1) = {"
 qK
-Bs
+kO
 up
 sn
 Cu
