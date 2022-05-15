@@ -11,11 +11,21 @@
 	)
 	var/assembly_finished = FALSE
 
-/obj/machinery/nomifactory/machinery/multi_tile/construction_finished()
+/obj/machinery/nomifactory/machinery/multi_tile/is_operational()
+	return ..() && assembly_finished
+
+/obj/machinery/nomifactory/machinery/multi_tile/examine(mob/user)
 	. = ..()
-	if(!.)
-		return FALSE
-	return assembly_finished
+	if(assembly_finished)
+		return
+	. += "You could probably attempt to finish the assembly with a crowbar."
+
+/obj/machinery/nomifactory/machinery/multi_tile/crowbar_act(mob/living/user, obj/item/I)
+	if(assembly_finished || user.a_intent != INTENT_HELP)
+		return ..()
+	to_chat(user, "<span class='notice'>You attempt to complete [src].</span>")
+	check_assembly()
+	return COMPONENT_BLOCK_TOOL_ATTACK
 
 /obj/machinery/nomifactory/machinery/multi_tile/proc/check_assembly()
 	ASSERT(length(tile_setup) == (tile_setup_height * tile_setup_width))
@@ -47,7 +57,3 @@
 				assembly_finished = FALSE
 			current_setup[setup_index] = tile
 			setup_index++
-
-/obj/machinery/nomifactory/machinery/multi_tile/refresh_nomifactory_connections(requested_at)
-	. = ..()
-	check_assembly()
