@@ -8,6 +8,7 @@
 /obj/effect/decal/Initialize()
 	. = ..()
 	if(turf_loc_check && (!isturf(loc) || NeverShouldHaveComeHere(loc)))
+		qdel(src)
 		return INITIALIZE_HINT_QDEL
 
 /obj/effect/decal/blob_act(obj/structure/blob/B)

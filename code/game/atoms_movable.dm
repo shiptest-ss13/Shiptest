@@ -738,6 +738,10 @@
 /atom/movable/proc/safe_throw_at(atom/target, range, speed, mob/thrower, spin = TRUE, diagonals_first = FALSE, datum/callback/callback, force = MOVE_FORCE_STRONG, gentle = FALSE)
 	if((force < (move_resist * MOVE_FORCE_THROW_RATIO)) || (move_resist == INFINITY))
 		return
+
+	if ( QDELETED(src) )
+		return
+
 	return throw_at(target, range, speed, thrower, spin, diagonals_first, callback, force, gentle)
 
 ///If this returns FALSE then callback will not be called.
