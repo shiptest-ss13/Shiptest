@@ -24,11 +24,13 @@
 /obj/structure/nomifactory/Initialize()
 	. = ..()
 
-	var/obj/structure/nomifactory/existing_node = locate() in loc
-	if(existing_node && !existing_node.allow_same_tile(src))
-		stack_trace("[src] attempted to be created in the same tile as [existing_node]")
-		qdel(src)
-		return
+	for(var/obj/structure/nomifactory/existing_node in loc)
+		if(existing_node == src)
+			continue
+		if(existing_node && !existing_node.allow_same_tile(src))
+			stack_trace("[src] attempted to be created in the same tile as [existing_node]")
+			qdel(src)
+			return
 
 	if(!(icon_state in icon_states(icon)))
 		stack_trace("[src] had an invalid icon state at initialize.")

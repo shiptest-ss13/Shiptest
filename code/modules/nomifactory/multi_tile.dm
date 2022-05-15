@@ -1,12 +1,13 @@
 /obj/structure/nomifactory/machinery/multi_tile
 	/// The width of our tile setup map
-	var/tile_setup_width = 2
+	var/tile_setup_width = 3
 	/// The height of our tile setup map
-	var/tile_setup_height = 2
+	var/tile_setup_height = 3
 	/// The tile setup map to use when checking if this machine is done with construction
 	var/list/tile_setup = list(
-		/obj/structure/nomifactory, /obj/structure/nomifactory,
-		/obj/structure/nomifactory, /obj/structure/nomifactory/machinery/multi_tile,
+		null, /obj/structure/nomifactory, null,
+		/obj/structure/nomifactory, /obj/structure/nomifactory/machinery/multi_tile, /obj/structure/nomifactory,
+		null, /obj/structure/nomifactory, null,
 	)
 	var/assembly_finished = FALSE
 
@@ -16,13 +17,36 @@
 		return FALSE
 	return assembly_finished
 
+/datum/controller/master/Initialize(delay, init_sss, tgs_prime)
+	var/obj/structure/nomifactory/machinery/multi_tile/mmmc = new(locate(5,5,1))
+	for(var/dir in GLOB.cardinals)
+		new /obj/structure/nomifactory(get_step(mmmc, dir))
+	mmmc.check_assembly()
+	del world
+
 /obj/structure/nomifactory/machinery/multi_tile/proc/check_assembly()
-	var/list/current_setup = new
+	ASSERT(length(tile_setup) == (tile_setup_height * tile_setup_width))
+	var/list/current_setup = new(length(tile_setup))
 	var/setup_index = 1
+
+	var/my_position = tile_setup.Find(src.type)
+	if(!my_position)
+		CRASH("Illegal multitile setup map")
+
+	var/base_x = src.x - (my_position % tile_setup_width) - 1
+	var/base_y = src.y - round(my_position / tile_setup_width) // why the fuck does round act like floor and not like ANY OTHER GOD DAMN LANGUAGE (except python)
+
+	var/max_x = base_x + tile_setup_width
+	var/max_y = base_y + tile_setup_height
+
 	assembly_finished = TRUE
-	for(var/index_x in 1 to tile_setup_width)
-		for(var/index_y in 1 to tile_setup_height)
-			var/turf/turf = locate(x - index_x, y - index_y, z)
+	for(var/index_x in base_x to max_x)
+		for(var/index_y in base_y to max_y)
+			if(isnull(tile_setup[setup_index]))
+				setup_index++
+				continue
+
+			var/turf/turf = locate(index_x, index_y, z)
 			var/tile = locate(tile_setup[setup_index]) in turf
 			if(!tile)
 				assembly_finished = FALSE
