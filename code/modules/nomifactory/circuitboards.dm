@@ -47,7 +47,7 @@
 
 /obj/item/circuitboard/machine/nomifactory/deep_miner
 	name = "Deep Miner (Machine Board)"
-	build_path = /obj/machinery/nomifactory/machinery/deep_miner
+	build_path = /obj/machinery/nomifactory/deep_miner
 	req_components = list(
 		/obj/item/nomi/motor = 4,
 		/obj/item/nomi/ferro_rod = 2,
