@@ -1,14 +1,9 @@
 /obj/machinery/nomifactory/deep_miner
 	name = "Deep Core Tertiary Miner"
-	construction_steps = list(
-		TOOL_WRENCH,
-		TOOL_WELDER,
-		TOOL_CROWBAR,
-		TOOL_WELDER,
-		TOOL_WRENCH,
-		TOOL_MULTITOOL
-	)
+	circuit = /obj/item/circuitboard/machine/nomifactory/deep_miner
 
+	/// Whether we are disabled from invalid location
+	var/location_overload = FALSE
 	/// Maximum number of outputs allowed to roll
 	var/max_outputs = 2
 	/// A list indexed by item with a value of the probability
@@ -16,14 +11,25 @@
 	var/progress = 0
 	var/payout_progress = 20
 
+/obj/machinery/nomifactory/deep_miner/multitool_act(mob/living/user, obj/item/I)
+	if(!location_overload)
+		return ..()
+
+	say("Resetting circuitry...")
+	location_overload = FALSE
+	return COMPONENT_BLOCK_TOOL_ATTACK
+
 /obj/machinery/nomifactory/deep_miner/Initialize()
 	. = ..()
 	output_probability_map = output_probability_map || create_output_map()
 
+/obj/machinery/nomifactory/deep_miner/is_operational()
+	return ..() && !location_overload
+
 /obj/machinery/nomifactory/deep_miner/nomifactory_process()
 	if(!valid_location())
-		say("Invalid sediment content, disabling to prevent damage!")
-		construction_stage--
+		say("Invalid sediment content, internal circuitry overloaded!")
+		location_overload = TRUE
 		return
 
 	if(progress++ > payout_progress)
