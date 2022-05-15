@@ -44,3 +44,22 @@
 		/obj/item/stock_parts/micro_laser = 2,
 		/obj/item/stock_parts/matter_bin = 2,
 	)
+
+/obj/item/circuitboard/machine/nomifactory/deep_miner
+	name = "Deep Miner (Machine Board)"
+	build_path = /obj/machinery/nomifactory/machinery/deep_miner
+	req_components = list(
+		/obj/item/nomi/motor = 4,
+		/obj/item/nomi/ferro_rod = 2,
+		/obj/item/nomi/frame_casing = 1,
+		/obj/item/stock_parts/micro_laser = 4,
+		/obj/item/stock_parts/matter_bin = 4,
+	)
+
+/obj/item/circuitboard/machine/nomifactory/conveyor
+	name = "Basic Conveyor (Machine Board)"
+	build_path = /obj/machinery/nomifactory/conveyor
+	req_components = list(
+		/obj/item/nomi/motor = 4,
+		/obj/item/nomi/ferro_rod = 2,
+	)

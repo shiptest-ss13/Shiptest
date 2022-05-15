@@ -1,6 +1,6 @@
 /obj/machinery/nomifactory/conveyor
-	construction_steps = list()
 	icon_state = "conveyor"
+	circuit = /obj/item/circuitboard/machine/nomifactory/conveyor
 	var/speed = 2
 	var/list/processing
 	var/obj/machinery/nomifactory/parent_node
@@ -15,7 +15,7 @@
 	parent_node = locate(/obj/machinery/nomifactory) in loc
 	processing = new
 
-/obj/machinery/nomifactory/conveyor/allow_same_tile(obj/structure/nomifactory/other_node)
+/obj/machinery/nomifactory/conveyor/allow_same_tile(obj/machinery/nomifactory/other_node)
 	return !parent_node && !istype(other_node, /obj/machinery/nomifactory/conveyor)
 
 /obj/machinery/nomifactory/conveyor/do_output(atom/movable/outputed)
