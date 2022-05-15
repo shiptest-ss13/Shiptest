@@ -88,19 +88,3 @@
 		say("recipe complete")
 		recipe.create_outputs(get_step(src, dir))
 		return
-
-/obj/machinery/nomifactory/machinery/metal_press
-	name = "Metal Press"
-	icon_state = "metal_press"
-
-/obj/machinery/nomifactory/machinery/blast_furnace
-	name = "Blast Furnace"
-	icon_state = "blast_furnace"
-
-/obj/machinery/nomifactory/machinery/assembly_complex
-	name = "Multi-Stage Assembly Core"
-	icon_state = "assembly_core"
-
-/obj/machinery/nomifactory/machinery/digital_printer
-	name = "Digital Printer"
-	icon_state = "digital_printer"
