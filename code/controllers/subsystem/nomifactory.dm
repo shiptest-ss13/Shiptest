@@ -7,6 +7,7 @@ SUBSYSTEM_DEF(nomifactory)
 
 /datum/controller/subsystem/nomifactory/Initialize(start_timeofday)
 	all_nodes = new
+	return ..()
 
 /datum/controller/subsystem/nomifactory/fire()
 	currentrun = all_nodes.Copy()
