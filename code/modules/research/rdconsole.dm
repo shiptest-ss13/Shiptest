@@ -151,7 +151,7 @@ Nothing else in the console has ID requirements.
 		if(!plant_already_researched[E.type])
 			if(!E.research)
 				playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>[src] buzzes and displays a message: Sample quality error! (You shouldn't be seeing this. If you are, tell someone.)</span>")
+				visible_message("<span class='warning'>[src] buzzes and displays a message: Sample quality error! Sample is either too common to be of value or too full of bugs to be of use!</span>")
 				return
 			else
 				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)

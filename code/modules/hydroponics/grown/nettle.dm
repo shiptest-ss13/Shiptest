@@ -12,7 +12,6 @@
 	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/plant_type/weed_hardy)
 	mutatelist = list(/obj/item/seeds/nettle/death)
 	reagents_add = list(/datum/reagent/toxin/acid = 0.5)
-	research = PLANT_RESEARCH_TIER_1
 
 /obj/item/seeds/nettle/death
 	name = "pack of death-nettle seeds"

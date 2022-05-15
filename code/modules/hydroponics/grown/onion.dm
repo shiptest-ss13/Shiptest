@@ -15,7 +15,6 @@
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 	mutatelist = list(/obj/item/seeds/onion/red)
-	research = PLANT_RESEARCH_TIER_0
 
 /obj/item/reagent_containers/food/snacks/grown/onion
 	seed = /obj/item/seeds/onion

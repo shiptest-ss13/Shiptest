@@ -16,7 +16,6 @@
 	growing_icon = 'icons/obj/hydroponics/growing.dmi'
 	icon_dead = "cotton-dead"
 	mutatelist = list(/obj/item/seeds/cotton/durathread)
-	research = PLANT_RESEARCH_TIER_0
 
 /obj/item/grown/cotton
 	seed = /obj/item/seeds/cotton

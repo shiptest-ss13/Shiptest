@@ -12,7 +12,6 @@
 	icon_dead = "wheat-dead"
 	mutatelist = list(/obj/item/seeds/wheat/oat, /obj/item/seeds/wheat/meat)
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.04)
-	research = PLANT_RESEARCH_TIER_0
 
 /obj/item/reagent_containers/food/snacks/grown/wheat
 	seed = /obj/item/seeds/wheat
@@ -61,7 +60,6 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/rice
 	mutatelist = list()
 	growthstages = 3
-	research = PLANT_RESEARCH_TIER_0
 
 /obj/item/reagent_containers/food/snacks/grown/rice
 	seed = /obj/item/seeds/wheat/rice

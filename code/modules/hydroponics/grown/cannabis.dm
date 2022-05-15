@@ -18,7 +18,6 @@
 						/obj/item/seeds/cannabis/white,
 						/obj/item/seeds/cannabis/ultimate)
 	reagents_add = list(/datum/reagent/drug/space_drugs = 0.15, /datum/reagent/toxin/lipolicide = 0.35) // gives u the munchies
-	research = PLANT_RESEARCH_TIER_1
 
 /obj/item/seeds/cannabis/rainbow
 	name = "pack of rainbow weed seeds"
