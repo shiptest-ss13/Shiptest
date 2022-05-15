@@ -409,6 +409,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_ipc_chassis"], features["ipc_chassis"])
 	READ_FILE(S["feature_kepori_feathers"], features["kepori_feathers"])
 	READ_FILE(S["feature_kepori_body_feathers"], features["kepori_body_feathers"])
+	READ_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
+	READ_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
 	READ_FILE(S["alt_titles_preferences"], alt_titles_preferences)
 
 	READ_FILE(S["equipped_gear"], equipped_gear)
@@ -495,7 +497,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		undershirt 		= sanitize_inlist(undershirt, GLOB.undershirt_list)
 
 	socks			= sanitize_inlist(socks, GLOB.socks_list)
-	age				= sanitize_integer(age, AGE_MIN, AGE_MAX, initial(age))
+	age				= sanitize_integer(age, pref_species.species_age_min, pref_species.species_age_max, initial(age))
 	hair_color			= sanitize_hexcolor(hair_color, 3, 0)
 	facial_hair_color			= sanitize_hexcolor(facial_hair_color, 3, 0)
 	underwear_color			= sanitize_hexcolor(underwear_color, 3, 0)
@@ -529,6 +531,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["ipc_chassis"]	 = sanitize_inlist(features["ipc_chassis"], GLOB.ipc_chassis_list)
 	features["kepori_feathers"] = sanitize_inlist(features["kepori_feathers"], GLOB.kepori_feathers_list, "Plain")
 	features["kepori_body_feathers"] = sanitize_inlist(features["kepori_body_feathers"], GLOB.kepori_body_feathers_list, "Plain")
+	features["vox_head_quills"] = sanitize_inlist(features["vox_head_quills"], GLOB.vox_head_quills_list, "None")
+	features["vox_neck_quills"] = sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
@@ -600,6 +604,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_ipc_chassis"]			, features["ipc_chassis"])
 	WRITE_FILE(S["feature_kepori_feathers"]	, features["kepori_feathers"])
 	WRITE_FILE(S["feature_kepori_body_feathers"], features["kepori_body_feathers"])
+	WRITE_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
+	WRITE_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
 
 	//Alternate job titles
 	WRITE_FILE(S["alt_titles_preferences"]		,alt_titles_preferences)
