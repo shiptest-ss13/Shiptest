@@ -37,8 +37,8 @@
 	var/base_x = src.x - (my_position % tile_setup_width)
 	var/base_y = src.y - round(my_position / tile_setup_width) // why the fuck does round act like floor and not like ANY OTHER GOD DAMN LANGUAGE (except python)
 
-	var/max_x = base_x + tile_setup_width
-	var/max_y = base_y + tile_setup_height
+	var/max_x = (base_x + tile_setup_width) - 1
+	var/max_y = (base_y + tile_setup_height) - 1
 
 	assembly_finished = TRUE
 
