@@ -32,6 +32,8 @@
 	var/list/manifest = list()
 	/// The shipkey for this ship
 	var/obj/item/key/ship/shipkey
+	/// All helms connected to this ship
+	var/list/obj/machinery/computer/helm/helms = list()
 	/// Is helm access for this ship locked
 	var/helm_locked = FALSE
 	///Time that next job slot change can occur
@@ -96,6 +98,21 @@
 	if(!shuttle_port.check_dock(ticket.target_port))
 		return FALSE
 	return TRUE
+
+/datum/overmap/ship/controlled/proc/attempt_key_usage(mob/user, obj/item/key/ship/shipkey, obj/machinery/computer/helm/target_helm)
+	user.changeNext_move(CLICK_CD_MELEE)
+
+	if(shipkey.master_ship != src)
+		target_helm.say("Invalid shipkey usage attempted, forcibly locking down.")
+		helm_locked = TRUE
+	else
+		helm_locked = !helm_locked
+
+	if(helm_locked)
+		for(var/obj/machinery/computer/helm/helm as anything in helms)
+			SStgui.close_uis(helm)
+			helm.say(helm_locked ? "Helm console is now locked." : "Helm console has been unlocked.")
+
 
 /datum/overmap/ship/controlled/start_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	log_shuttle("[src] [REF(src)] DOCKING: STARTED REQUEST FOR [to_dock] AT [ticket.target_port]")

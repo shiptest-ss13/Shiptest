@@ -56,6 +56,14 @@
 	calibrating = TRUE
 	return TRUE
 
+/obj/machinery/computer/helm/Destroy()
+	. = ..()
+	SStgui.close_uis(src)
+	ASSERT(length(concurrent_users) == 0)
+	if(current_ship)
+		current_ship.helms -= src
+		current_ship = null
+
 /obj/machinery/computer/helm/proc/cancel_jump()
 	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 	calibrating = FALSE
@@ -84,6 +92,8 @@
 	current_ship.shuttle_port.intoTheSunset()
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	if(current_ship && current_ship != port.current_ship)
+		current_ship.helms -= src
 	current_ship = port.current_ship
 
 /**
@@ -92,6 +102,8 @@
 /obj/machinery/computer/helm/proc/reload_ship()
 	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
 	if(port?.current_ship)
+		if(current_ship && current_ship != port.current_ship)
+			current_ship.helms -= src
 		current_ship = port.current_ship
 
 /obj/machinery/computer/helm/ui_interact(mob/living/user, datum/tgui/ui)
@@ -280,15 +292,8 @@
 	if(!istype(key))
 		return ..()
 
-	if(key.master_ship != current_ship)
-		say("Invalid shipkey usage attempted, forcibly locking down.")
-		current_ship.helm_locked = TRUE
-	else
-		current_ship.helm_locked = !current_ship.helm_locked
-		say(current_ship.helm_locked ? "Helm console is now locked." : "Helm console has been unlocked.")
-
-	if(current_ship.helm_locked)
-		SStgui.close_uis(src)
+	current_ship?.attempt_key_usage(user, key, src)
+	return TRUE
 
 /obj/machinery/computer/helm/emag_act(mob/user)
 	. = ..()
@@ -297,7 +302,7 @@
 	current_ship.helm_locked = FALSE
 
 /// Checks if this helm is locked, or for the key being destroyed. Returns TRUE if locked.
-/obj/machinery/computer/helm/proc/check_keylock()
+/obj/machinery/computer/helm/proc/check_keylock(silent=FALSE)
 	if(!current_ship.helm_locked)
 		return FALSE
 	if(!current_ship.shipkey)
@@ -305,7 +310,8 @@
 		return FALSE
 	if(IsAdminAdvancedProcCall())
 		return FALSE
-	say("[src] is currently locked; please insert your key to continue.")
+	if(!silent)
+		say("[src] is currently locked; please insert your key to continue.")
 	return TRUE
 
 /obj/machinery/computer/helm/viewscreen
