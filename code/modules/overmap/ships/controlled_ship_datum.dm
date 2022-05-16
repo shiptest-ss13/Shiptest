@@ -32,6 +32,8 @@
 	var/list/manifest = list()
 	/// The shipkey for this ship
 	var/obj/item/key/ship/shipkey
+	/// Is helm access for this ship locked
+	var/helm_locked = FALSE
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 	///Whether or not new players are allowed to join the ship

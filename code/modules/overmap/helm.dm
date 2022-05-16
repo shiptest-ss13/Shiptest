@@ -29,8 +29,6 @@
 	var/calibrating = FALSE
 	///holding jump timer ID
 	var/jump_timer
-	/// Is this console currently locked
-	var/locked
 
 /datum/config_entry/number/bluespace_jump_wait
 	default = 30 MINUTES
@@ -284,26 +282,26 @@
 
 	if(key.master_ship != current_ship)
 		say("Invalid shipkey usage attempted, forcibly locking down.")
-		locked = TRUE
+		current_ship.helm_locked = TRUE
 	else
-		locked = !locked
-		say(locked ? "Helm console is now locked." : "Helm console has been unlocked.")
+		current_ship.helm_locked = !current_ship.helm_locked
+		say(current_ship.helm_locked ? "Helm console is now locked." : "Helm console has been unlocked.")
 
-	if(locked)
+	if(current_ship.helm_locked)
 		SStgui.close_uis(src)
 
 /obj/machinery/computer/helm/emag_act(mob/user)
 	. = ..()
 	say("Warning, database corruption present, resetting local database state.")
 	playsound(src, 'sound/effects/fuse.ogg')
-	locked = FALSE
+	current_ship.helm_locked = FALSE
 
 /// Checks if this helm is locked, or for the key being destroyed. Returns TRUE if locked.
 /obj/machinery/computer/helm/proc/check_keylock()
-	if(!locked)
+	if(!current_ship.helm_locked)
 		return FALSE
-	if(!current_ship?.shipkey)
-		locked = FALSE
+	if(!current_ship.shipkey)
+		current_ship.helm_locked = FALSE
 		return FALSE
 	if(IsAdminAdvancedProcCall())
 		return FALSE
