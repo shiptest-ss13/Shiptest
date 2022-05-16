@@ -14,7 +14,7 @@
 	///The docking port in the reserve
 	var/list/obj/docking_port/stationary/reserve_docks
 	///If the level should be preserved. Useful for if you want to build a colony or something.
-	var/preserve_level = FALSE
+	var/preserve_level = TRUE
 	///What kind of planet the level is, if it's a planet at all.
 	var/planet
 	///Planet's flavor name, if it is a planet.
