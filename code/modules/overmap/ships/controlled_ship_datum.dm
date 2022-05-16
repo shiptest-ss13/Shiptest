@@ -108,10 +108,9 @@
 	else
 		helm_locked = !helm_locked
 
-	if(helm_locked)
-		for(var/obj/machinery/computer/helm/helm as anything in helms)
-			SStgui.close_uis(helm)
-			helm.say(helm_locked ? "Helm console is now locked." : "Helm console has been unlocked.")
+	for(var/obj/machinery/computer/helm/helm as anything in helms)
+		SStgui.close_uis(helm)
+		helm.say(helm_locked ? "Helm console is now locked." : "Helm console has been unlocked.")
 
 
 /datum/overmap/ship/controlled/start_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)

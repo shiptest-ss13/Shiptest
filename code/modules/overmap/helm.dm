@@ -95,6 +95,7 @@
 	if(current_ship && current_ship != port.current_ship)
 		current_ship.helms -= src
 	current_ship = port.current_ship
+	current_ship.helms |= src
 
 /**
  * This proc manually rechecks that the helm computer is connected to a proper ship
@@ -105,6 +106,7 @@
 		if(current_ship && current_ship != port.current_ship)
 			current_ship.helms -= src
 		current_ship = port.current_ship
+		current_ship.helms |= src
 
 /obj/machinery/computer/helm/ui_interact(mob/living/user, datum/tgui/ui)
 	// Update UI
