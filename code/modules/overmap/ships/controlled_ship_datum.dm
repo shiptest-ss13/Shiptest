@@ -30,6 +30,8 @@
 	var/list/job_slots = list(new /datum/job/captain() = 1, new /datum/job/assistant() = 5)
 	///Manifest list of people on the ship
 	var/list/manifest = list()
+	/// The shipkey for this ship
+	var/obj/item/key/ship/shipkey
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 	///Whether or not new players are allowed to join the ship
@@ -238,3 +240,18 @@
 	shuttle_port.name = name
 	for(var/area/shuttle_area as anything in shuttle_port.shuttle_areas)
 		shuttle_area.rename_area("[name] [initial(shuttle_area.name)]")
+
+/obj/item/key/ship
+	name = "Ship Key"
+	var/datum/overmap/ship/controlled/master_ship
+
+/obj/item/key/ship/Initialize(mapload, datum/overmap/ship/controlled/master_ship)
+	. = ..()
+	src.master_ship = master_ship
+	master_ship.shipkey = src
+	name = "Ship Key ([master_ship.name])"
+
+/obj/item/key/ship/Destroy()
+	master_ship.shipkey = null
+	master_ship = null
+	return ..()
