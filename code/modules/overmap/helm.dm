@@ -59,8 +59,6 @@
 	return TRUE
 
 /obj/machinery/computer/helm/proc/cancel_jump()
-	if(!check_keylock())
-		return
 	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 	calibrating = FALSE
 	deltimer(jump_timer)
@@ -103,7 +101,7 @@
 	if(!current_ship && !reload_ship())
 		return
 
-	if(!check_keylock())
+	if(check_keylock())
 		return
 
 	if(!current_ship.shipkey && istype(user) && Adjacent(user))
@@ -198,7 +196,7 @@
 		return
 	if(!current_ship)
 		return
-	if(!check_keylock())
+	if(check_keylock())
 		return
 
 	switch(action) // Universal topics
@@ -300,6 +298,7 @@
 	playsound(src, 'sound/effects/fuse.ogg')
 	locked = FALSE
 
+/// Checks if this helm is locked, or for the key being destroyed. Returns TRUE if locked.
 /obj/machinery/computer/helm/proc/check_keylock()
 	if(!locked)
 		return FALSE
