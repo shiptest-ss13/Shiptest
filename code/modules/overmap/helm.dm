@@ -29,6 +29,8 @@
 	var/calibrating = FALSE
 	///holding jump timer ID
 	var/jump_timer
+	/// Is this console currently locked
+	var/locked
 
 /datum/config_entry/number/bluespace_jump_wait
 	default = 30 MINUTES
@@ -57,6 +59,8 @@
 	return TRUE
 
 /obj/machinery/computer/helm/proc/cancel_jump()
+	if(!check_keylock())
+		return
 	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 	calibrating = FALSE
 	deltimer(jump_timer)
@@ -94,10 +98,20 @@
 	if(port?.current_ship)
 		current_ship = port.current_ship
 
-/obj/machinery/computer/helm/ui_interact(mob/user, datum/tgui/ui)
+/obj/machinery/computer/helm/ui_interact(mob/living/user, datum/tgui/ui)
 	// Update UI
 	if(!current_ship && !reload_ship())
 		return
+
+	if(!check_keylock())
+		return
+
+	if(!current_ship.shipkey && istype(user) && Adjacent(user))
+		say("Generated new shipkey, do not lose it!")
+		var/key = new /obj/item/key/ship(get_turf(src), current_ship)
+		user.put_in_hands(key)
+		return
+
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		var/user_ref = REF(user)
@@ -184,6 +198,8 @@
 		return
 	if(!current_ship)
 		return
+	if(!check_keylock())
+		return
 
 	switch(action) // Universal topics
 		if("rename_ship")
@@ -263,6 +279,37 @@
 	if(length(concurrent_users) == 0 && is_living)
 		playsound(src, 'sound/machines/terminal_off.ogg', 25, FALSE)
 		use_power(0)
+
+/obj/machinery/computer/helm/attackby(obj/item/key/ship/key, mob/living/user, params)
+	if(!istype(key))
+		return ..()
+
+	if(key.master_ship != current_ship)
+		say("Invalid shipkey usage attempted, forcibly locking down.")
+		locked = TRUE
+	else
+		locked = !locked
+		say(locked ? "Helm console is now locked." : "Helm console has been unlocked.")
+
+	if(locked)
+		SStgui.close_uis(src)
+
+/obj/machinery/computer/helm/emag_act(mob/user)
+	. = ..()
+	say("Warning, database corruption present, resetting local database state.")
+	playsound(src, 'sound/effects/fuse.ogg')
+	locked = FALSE
+
+/obj/machinery/computer/helm/proc/check_keylock()
+	if(!locked)
+		return FALSE
+	if(!current_ship?.shipkey)
+		locked = FALSE
+		return FALSE
+	if(IsAdminAdvancedProcCall())
+		return FALSE
+	say("[src] is currently locked; please insert your key to continue.")
+	return TRUE
 
 /obj/machinery/computer/helm/viewscreen
 	name = "ship viewscreen"
