@@ -348,3 +348,9 @@
 	icon_state = "inteq_battlecoat"
 	item_state = "inteq_battlecoat"
 	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/suit/armor/inteq/corpsman
+	name = "inteq corpsman vest"
+	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division medical staff."
+	icon_state = "inteq_labcoat"
+	item_state = "inteq_labcoat"
