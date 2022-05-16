@@ -115,3 +115,15 @@ other types of metals and chemistry for reagents).
 /obj/item/disk/design_disk/ammo_n762/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/n762()
+
+/obj/item/disk/design_disk/disposable_gun
+	name = "design disk - disposable gun"
+	desc = "A design disk containing designs for a cheap and disposable gun."
+	illustration = "gun"
+
+/obj/item/disk/design_disk/disposable_gun/Initialize()
+	. = ..()
+	var/datum/design/disposable_gun/G = new
+	var/datum/design/pizza_disposable_gun/P = new
+	blueprints[1] = G
+	blueprints[2] = P

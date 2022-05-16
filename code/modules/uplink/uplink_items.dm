@@ -573,6 +573,29 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 12
 	include_modes = list(/datum/game_mode/nuclear)
 
+/datum/uplink_item/dangerous/weebstick
+	name = "Nanoforged Katana"
+	desc = "A tailor-made blade forged from one of the many ninja clans within the syndicate. \
+			Merely weilding this weapon grants incredible agility."
+	item = /obj/item/storage/belt/weebstick
+	cost = 10
+	surplus = 5
+	limited_stock = 1
+
+/datum/uplink_item/dangerous/tec9
+	name = "TEC9 Machine Pistol"
+	desc = "A powerful machine pistol sporting a high rate of fire and armor-piercing rounds."
+	item = /obj/item/gun/ballistic/automatic/pistol/tec9
+	cost = 12
+	surplus = 20
+
+/datum/uplink_item/dangerous/ebr
+	name = "M514 EBR"
+	desc = "A cheap rifle with high stopping power and low capacity."
+	item = /obj/item/gun/ballistic/automatic/ebr
+	cost = 8
+	surplus = 20
+	include_modes = list(/datum/game_mode/nuclear)
 
 // Stealthy Weapons
 /datum/uplink_item/stealthy_weapons
@@ -687,6 +710,25 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A useful little device that allows for inconspicuous carrying of guns using chameleon technology. It also allows for badass gun-spinning."
 	item = /obj/item/clothing/accessory/holster/chameleon //WS Edit - Holsters are Accessories
 	cost = 1
+
+/datum/uplink_item/stealthy_weapons/derringerpack
+	name = "Compact Derringer"
+	desc = "An easily concealable handgun capable of firing .357 rounds. Comes in an inconspicuious packet of cigarettes with additional munitions."
+	item = /obj/item/storage/fancy/cigarettes/derringer
+	cost = 8
+	surplus = 30
+	surplus_nullcrates = 40
+
+/datum/uplink_item/stealthy_weapons/derringerpack/purchase(mob/user, datum/component/uplink/U)
+	if(prob(1)) //For the 1%
+		item = /obj/item/storage/fancy/cigarettes/derringer/gold
+	..()
+
+/datum/uplink_item/stealthy_weapons/syndi_borer
+	name = "Syndicate Brain Slug"
+	desc = "A small cortical borer, modified to be completely loyal to the owner. \
+			Genetically infertile, these brain slugs can assist medically in a support role, or take direct action \
+			to assist their host."
 
 // Ammunition
 /datum/uplink_item/ammo
@@ -1981,43 +2023,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 //WS additions, needs to be sorted
 /* Dangerous Weapons */
-/datum/uplink_item/dangerous/weebstick
-	name = "Nanoforged Katana"
-	desc = "A tailor-made blade forged from one of the many ninja clans within the syndicate. \
-			Merely weilding this weapon grants incredible agility."
-	item = /obj/item/storage/belt/weebstick
-	cost = 10
-	surplus = 5
-	limited_stock = 1
-
-/datum/uplink_item/dangerous/tec9
-	name = "TEC9 Machine Pistol"
-	desc = "A powerful machine pistol sporting a high rate of fire and armor-piercing rounds."
-	item = /obj/item/gun/ballistic/automatic/pistol/tec9
-	cost = 12
-	surplus = 20
-
-/datum/uplink_item/dangerous/ebr
-	name = "M514 EBR"
-	desc = "A cheap rifle with high stopping power and low capacity."
-	item = /obj/item/gun/ballistic/automatic/ebr
-	cost = 8
-	surplus = 20
-	include_modes = list(/datum/game_mode/nuclear)
-
 /*Stealthy Weapons*/
-/datum/uplink_item/stealthy_weapons/derringerpack
-	name = "Compact Derringer"
-	desc = "An easily concealable handgun capable of firing .357 rounds. Comes in an inconspicuious packet of cigarettes with additional munitions."
-	item = /obj/item/storage/fancy/cigarettes/derringer
-	cost = 8
-	surplus = 30
-	surplus_nullcrates = 40
-
-/datum/uplink_item/stealthy_weapons/derringerpack/purchase(mob/user, datum/component/uplink/U)
-	if(prob(1)) //For the 1%
-		item = /obj/item/storage/fancy/cigarettes/derringer/gold
-	..()
 
 /datum/uplink_item/stealthy_weapons/syndi_borer
 	name = "Syndicate Brain Slug"
