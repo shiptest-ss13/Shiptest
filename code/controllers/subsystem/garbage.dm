@@ -5,6 +5,7 @@ SUBSYSTEM_DEF(garbage)
 	flags = SS_POST_FIRE_TIMING|SS_BACKGROUND|SS_NO_INIT
 	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY
 	init_order = INIT_ORDER_GARBAGE
+	init_stage = INITSTAGE_EARLY
 
 	var/list/collection_timeout = list(5 MINUTES, 10 SECONDS) // deciseconds to wait before moving something up in the queue to the next level
 
@@ -250,7 +251,6 @@ SUBSYSTEM_DEF(garbage)
 /datum/qdel_item/New(mytype)
 	name = "[mytype]"
 
-
 // Should be treated as a replacement for the 'del' keyword.
 // Datums passed to this will be given a chance to clean up references to allow the GC to collect them.
 /proc/qdel(datum/D, force=FALSE, ...)
@@ -261,6 +261,8 @@ SUBSYSTEM_DEF(garbage)
 			return
 
 	if(!istype(D))
+		if(ispath(D))
+			CRASH("BAD DEL: PATH OF [D].")
 		del(D)
 		return
 

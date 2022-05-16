@@ -76,7 +76,7 @@
 	var/sound
 
 /turf/open/indestructible/sound/Entered(atom/movable/AM)
-	..()
+	. = ..()
 	if(ismob(AM))
 		playsound(src,sound,50,TRUE)
 
@@ -92,6 +92,9 @@
 	clawfootstep = FOOTSTEP_LAVA
 	heavyfootstep = FOOTSTEP_LAVA
 	tiled_dirt = FALSE
+
+/turf/open/indestructible/necropolis/icecropolis
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
 /turf/open/indestructible/necropolis/Initialize(mapload, inherited_virtual_z)
 	. = ..()

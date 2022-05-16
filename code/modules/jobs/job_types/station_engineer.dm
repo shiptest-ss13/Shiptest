@@ -113,6 +113,14 @@
 
 //Shiptest Outfits
 
+/datum/outfit/job/engineer/minutemen
+	name = "Mechanic (Colonial Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	accessory = /obj/item/clothing/accessory/armband/engine
+	head = /obj/item/clothing/head/hardhat/dblue
+	suit =  /obj/item/clothing/suit/hazardvest
+
 /datum/outfit/job/engineer/solgov
 	name = "Ship Engineer (SolGov)"
 
@@ -161,7 +169,7 @@
 /datum/outfit/job/engineer/gec
 	name = "Station Engineer (GEC)"
 
-	uniform = /obj/item/clothing/under/syndicate/intern
+	uniform = /obj/item/clothing/under/syndicate/gec
 	suit = /obj/item/clothing/suit/toggle/hazard
 	head = /obj/item/clothing/head/hardhat
 	ears = /obj/item/radio/headset/syndicate/alt

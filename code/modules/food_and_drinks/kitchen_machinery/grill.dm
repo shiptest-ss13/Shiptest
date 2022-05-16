@@ -88,7 +88,7 @@
 	if(AM == grilled_item)
 		finish_grill()
 		grilled_item = null
-	..()
+	. = ..()
 
 /obj/machinery/grill/Destroy()
 	grilled_item = null

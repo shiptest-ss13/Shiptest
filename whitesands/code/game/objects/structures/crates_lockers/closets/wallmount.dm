@@ -13,7 +13,7 @@
 	icon_state = "cargo_wall"
 
 /obj/structure/closet/wall/blue
-	icon_state = "cargo_wall"
+	icon_state = "solgov_wall"
 
 /obj/structure/closet/wall/white
 	icon_state = "freezer_wall"
@@ -147,3 +147,12 @@
 	can_be_unanchored = FALSE
 	icon = 'whitesands/icons/obj/closet.dmi'
 	icon_state = "freezer_wall"
+
+/obj/structure/closet/secure_closet/brig/wall
+	wall_mounted = TRUE
+	anchored = TRUE
+	density = TRUE
+	can_be_unanchored = FALSE
+	icon = 'whitesands/icons/obj/closet.dmi'
+	icon_state = "generic_wall"
+	icon_door = "generic_wall"

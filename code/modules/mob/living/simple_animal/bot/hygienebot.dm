@@ -51,7 +51,7 @@
 	if(washing)
 		do_wash(AM)
 
-/mob/living/simple_animal/bot/hygienebot/Crossed(atom/movable/AM)
+/mob/living/simple_animal/bot/hygienebot/on_entered(datum/source, atom/movable/AM)
 	. = ..()
 	if(washing)
 		do_wash(AM)
@@ -86,12 +86,6 @@
 	oldtarget_name = null
 	walk_to(src,0)
 	last_found = world.time
-
-
-/mob/living/simple_animal/bot/hygienebot/Crossed(atom/movable/AM)
-	. = ..()
-	if(washing)
-		do_wash(AM)
 
 /mob/living/simple_animal/bot/hygienebot/Moved()
 	. = ..()

@@ -97,7 +97,6 @@
 /obj/item/toy/eightball/haunted
 	shake_time = 30 SECONDS
 	cooldown_time = 3 MINUTES
-	flags_1 = HEAR_1
 	var/last_message
 	var/selected_message
 	//these kind of store the same thing but one is easier to work with.
@@ -134,6 +133,7 @@
 
 /obj/item/toy/eightball/haunted/Initialize(mapload)
 	. = ..()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 	for (var/answer in haunted_answers)
 		votes[answer] = 0
 	GLOB.poi_list |= src

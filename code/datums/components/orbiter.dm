@@ -24,6 +24,8 @@
 	if(ismovable(target))
 		tracker = new(target, CALLBACK(src, .proc/move_react))
 
+	RegisterSignal(parent, COMSIG_MOVABLE_UPDATE_GLIDE_SIZE, .proc/orbiter_glide_size_update)
+
 /datum/component/orbiter/UnregisterFromParent()
 	var/atom/target = parent
 	target.orbiters = null
@@ -58,7 +60,6 @@
 	orbiters[orbiter] = TRUE
 	orbiter.orbiting = src
 	RegisterSignal(orbiter, COMSIG_MOVABLE_MOVED, .proc/orbiter_move_react)
-	RegisterSignal(parent, COMSIG_MOVABLE_UPDATE_GLIDE_SIZE, .proc/orbiter_glide_size_update)
 
 	SEND_SIGNAL(parent, COMSIG_ATOM_ORBIT_BEGIN, orbiter)
 
@@ -87,7 +88,7 @@
 		var/atom/movable/movable_parent = parent
 		orbiter.glide_size = movable_parent.glide_size
 
-	orbiter.forceMove(get_turf(parent))
+	orbiter.abstract_move(get_turf(parent))
 	to_chat(orbiter, "<span class='notice'>Now orbiting [parent].</span>")
 
 /datum/component/orbiter/proc/end_orbit(atom/movable/orbiter, refreshing=FALSE)
@@ -123,11 +124,10 @@
 		qdel(src)
 
 	var/atom/curloc = master.loc
-	for(var/i in orbiters)
-		var/atom/movable/thing = i
-		if(QDELETED(thing) || thing.loc == newturf)
+	for(var/atom/movable/movable_orbiter as anything in orbiters)
+		if(QDELETED(movable_orbiter) || movable_orbiter.loc == newturf)
 			continue
-		thing.forceMove(newturf)
+		movable_orbiter.abstract_move(newturf)
 		if(CHECK_TICK && master.loc != curloc)
 			// We moved again during the checktick, cancel current operation
 			break

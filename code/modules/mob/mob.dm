@@ -92,6 +92,7 @@
 	. = ..()
 	update_config_movespeed()
 	update_movespeed(TRUE)
+	become_hearing_sensitive(ORGAN_TRAIT)
 
 /**
   * Generate the tag for this mob
@@ -1226,10 +1227,6 @@
 	return
 
 /mob/proc/get_id_in_hand()
-	return
-
-///Get the mob's probably linked bank account WS EDIT
-/mob/proc/get_bank_account(hand_first)
 	return
 
 /**

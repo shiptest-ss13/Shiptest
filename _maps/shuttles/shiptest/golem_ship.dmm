@@ -215,9 +215,7 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
 "dO" = (
-/obj/machinery/mineral/equipment_vendor/golem{
-	icon = 'whitesands/icons/obj/machines/vending.dmi'
-	},
+/obj/machinery/vending/mining_equipment/golem,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/trimline/yellow/line,
 /obj/effect/turf_decal/corner/neutral{
@@ -1208,7 +1206,7 @@
 /area/ship/crew)
 "us" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/computer/autopilot{
+/obj/structure/frame/computer{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
