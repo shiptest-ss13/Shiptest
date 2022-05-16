@@ -7,7 +7,7 @@
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
 	icon_state = "floor_sprayer"
-	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed. Use it inhand to change the design, and Ctrl-Click to switch to decal-painting mode."
+	desc = "A specialized paint sprayer used for colouring floor tiles. Paint is temporary, and the detail will wash out when the floor tiles are removed. Use it inhand to change the design."
 
 	var/floor_icon
 	var/floor_state = "steel"
@@ -22,7 +22,7 @@
 		"kafel_full", "steel_monofloor", "monotile", "grid", "ridged"
 	)
 
-/obj/item/floor_painter/afterattack(var/atom/A, var/mob/user, proximity, params)
+/obj/item/floor_painter/afterattack(atom/A, mob/user, proximity, params)
 	if(!proximity)
 		return
 
@@ -36,14 +36,14 @@
 	F.dir = floor_dir
 	playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
 
-/obj/item/floor_painter/attack_self(var/mob/user)
+/obj/item/floor_painter/attack_self(mob/user)
 	if(!user)
 		return FALSE
 	user.set_machine(src)
 	interact(user)
 	return TRUE
 
-/obj/item/floor_painter/interact(mob/user as mob) //TODO: Make TGUI for this because ouch
+/obj/item/floor_painter/interact(mob/user) //TODO: Make TGUI for this because ouch
 	if(!floor_icon)
 		floor_icon = icon('whitesands/icons/turf/floors/tiles.dmi', floor_state, floor_dir)
 	user << browse_rsc(floor_icon, "floor.png")
@@ -134,7 +134,7 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "decal_sprayer"
 	item_state = "decalsprayer"
-	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles. Decals break when the floor tiles are removed. Use it inhand to change the design."
+	desc = "A specialized paint sprayer used for applying standardized decals to floor tiles. Paint is temporary, and the decals will wash out when the floor tiles are removed. Use it inhand to change the design."
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=500)
 
 	var/decal_icon
@@ -190,7 +190,7 @@
 	"trimline_arrow_cw_fill","trimline_arrow_ccw_fill","trimline_warn","trimline_warn_fill"
 	)
 
-/obj/item/decal_painter/afterattack(var/atom/A, var/mob/user, proximity, params)
+/obj/item/decal_painter/afterattack(atom/A, mob/user, proximity, params)
 	if(!proximity)
 		return
 
@@ -204,14 +204,14 @@
 		F.AddComponent(/datum/component/decal, 'whitesands/icons/turf/decals.dmi', decal_state, decal_dir, CLEAN_TYPE_PAINT, decal_color, null, null, alpha)
 	playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
 
-/obj/item/decal_painter/attack_self(var/mob/user)
+/obj/item/decal_painter/attack_self(mob/user)
 	if(!user)
 		return FALSE
 	user.set_machine(src)
 	interact(user)
 	return TRUE
 
-/obj/item/decal_painter/interact(mob/user as mob) //TODO: Make TGUI for this because ouch
+/obj/item/decal_painter/interact(mob/user) //TODO: Make TGUI for this because ouch
 	if(!decal_icon)
 		decal_icon = icon('whitesands/icons/turf/decals.dmi', decal_state, decal_dir)
 	user << browse_rsc(decal_icon, "floor.png")
