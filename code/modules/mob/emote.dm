@@ -68,6 +68,8 @@
 
 /datum/emote/spin/run_emote(mob/user, params ,  type_override, intentional)
 	. = ..()
+	if(!.)
+		return
 	if(HAS_TRAIT(user, ORBITED_TRAIT))
 		user.spin(40, 2)
 	else
