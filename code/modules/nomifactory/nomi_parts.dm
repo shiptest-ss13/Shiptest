@@ -1,5 +1,9 @@
 /obj/item/nomi
-	var/part_quality = 1
+	// Rating values work as a percentage modifer. aka a rating of 5 would be 5% faster, %5 less power usage, etc
+	/// The power rating of this part, aka does it make a machine use less power
+	var/power_rating = 1
+	/// Does it make a machine work faster
+	var/speed_rating = 1
 
 /obj/item/nomi/ingot_iron
 	name = "iron ingot"

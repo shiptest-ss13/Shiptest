@@ -1,6 +1,12 @@
 /obj/machinery/nomifactory/machinery
 	var/progress
 	var/datum/nomi_recipe/recipe
+
+	/// The cached power multiplier, calcualted in RefreshParts
+	var/cached_power_mult
+	/// See above
+	var/cached_speed_mult
+
 	/// The number of excess items allowed, aka the buffer capacity
 	var/buffer_count = 0
 
@@ -11,6 +17,19 @@
 /obj/machinery/nomifactory/machinery/update_icon()
 	name = recipe ? "[initial(name)] ([recipe.name])" : initial(name)
 	. = ..()
+
+/obj/machinery/nomifactory/machinery/RefreshParts()
+	cached_power_mult = 1
+	for(var/obj/item/stock_parts/capacitor/capacitor in component_parts)
+		cached_power_mult *= 1 - (capacitor.get_part_rating() * 0.01)
+
+	cached_speed_mult = 1
+	for(var/obj/item/stock_parts/manipulator/manipulator in component_parts)
+		cached_speed_mult *= 1 - (manipulator.get_part_rating() * 0.01)
+
+	for(var/obj/item/nomi/nomi_part in component_parts)
+		cached_power_mult *= 1 - (nomi_part.power_rating * 0.01)
+		cached_speed_mult *= 1 - (nomi_part.speed_rating * 0.01)
 
 /obj/machinery/nomifactory/machinery/update_overlays()
 	. = ..()
