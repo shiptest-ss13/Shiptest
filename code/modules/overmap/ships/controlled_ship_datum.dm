@@ -53,6 +53,8 @@
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
 	shuttle_port?.name = new_name
 	ship_account.account_holder = new_name
+	if(shipkey)
+		shipkey.name = "ship key ([new_name])"
 	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
 	if(!force)
@@ -260,14 +262,14 @@
 		shuttle_area.rename_area("[name] [initial(shuttle_area.name)]")
 
 /obj/item/key/ship
-	name = "Ship Key"
+	name = "ship key"
 	var/datum/overmap/ship/controlled/master_ship
 
 /obj/item/key/ship/Initialize(mapload, datum/overmap/ship/controlled/master_ship)
 	. = ..()
 	src.master_ship = master_ship
 	master_ship.shipkey = src
-	name = "Ship Key ([master_ship.name])"
+	name = "ship key ([master_ship.name])"
 
 /obj/item/key/ship/Destroy()
 	master_ship.shipkey = null
