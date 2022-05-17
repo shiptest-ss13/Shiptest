@@ -13,5 +13,8 @@ SUBSYSTEM_DEF(nomifactory)
 	currentrun = all_nodes.Copy()
 	for(var/obj/machinery/nomifactory/node as anything in currentrun)
 		if(node.powered() && node.is_operational())
+			if(istype(node, /obj/machinery/nomifactory/machinery))
+				var/obj/machinery/nomifactory/machinery/machine_node = node
+				machine_node.use_power(machine_node.active_power_usage * machine_node.cached_power_mult)
 			node.nomifactory_process()
 	currentrun.Cut()

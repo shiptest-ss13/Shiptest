@@ -3,9 +3,10 @@
 	var/datum/nomi_recipe/recipe
 
 	/// The cached power multiplier, calcualted in RefreshParts
-	var/cached_power_mult
+	var/cached_power_mult = 1
 	/// See above
-	var/cached_speed_mult
+	var/cached_speed_mult = 1
+	var/cached_examine_text = ""
 
 	/// The number of excess items allowed, aka the buffer capacity
 	var/buffer_count = 0
@@ -26,10 +27,15 @@
 	cached_speed_mult = 1
 	for(var/obj/item/stock_parts/manipulator/manipulator in component_parts)
 		cached_speed_mult *= 1 - (manipulator.get_part_rating() * 0.01)
+	for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
+		cached_speed_mult *= 1 - (laser.get_part_rating() * 0.01)
 
 	for(var/obj/item/nomi/nomi_part in component_parts)
 		cached_power_mult *= 1 - (nomi_part.power_rating * 0.01)
 		cached_speed_mult *= 1 - (nomi_part.speed_rating * 0.01)
+
+	var/pct_speed = 10000 / cached_speed_mult
+	cached_examine_text = "The automated efficiency panel shows the following:\nPower Usage: [cached_power_mult * 100]%\n\tSpeed Modifer: [pct_speed]%"
 
 /obj/machinery/nomifactory/machinery/update_overlays()
 	. = ..()
@@ -38,6 +44,9 @@
 
 /obj/machinery/nomifactory/machinery/examine(mob/user)
 	. = ..()
+
+	if(cached_examine_text)
+		. += cached_examine_text
 
 	var/list/content_tally = new
 	for(var/content in contents)
@@ -102,7 +111,8 @@
 				contents -= taken
 		return
 
-	if(progress++ >= recipe.work_needed)
+	var/actual_needed = recipe.work_needed * cached_speed_mult
+	if(progress++ >= actual_needed)
 		progress = 0
 		say("recipe complete")
 		recipe.create_outputs(get_step(src, dir))
