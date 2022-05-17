@@ -113,9 +113,10 @@
 #define HAIR 2
 #define FACEHAIR 3
 #define EYECOLOR 4
-#define LIPS 5
-#define NOBLOOD 6
-#define NOTRANSSTING 7
+#define SCLERACOLOR 5
+#define LIPS 6
+#define NOBLOOD 7
+#define NOTRANSSTING 8
 /// Used if we want the mutant colour to be only used by mutant bodyparts. Don't combine this with MUTCOLORS, or it will be useless.
 #define MUTCOLORS_PARTSONLY 8
 #define NOZOMBIE 9

@@ -734,17 +734,26 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		// eyes
 		if(!(NOEYESPRITES in species_traits))
-			var/obj/item/organ/eyes/E = H.getorganslot(ORGAN_SLOT_EYES)
+			var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 			var/mutable_appearance/eye_overlay
-			if(!E)
+			var/mutable_appearance/sclera_overlay
+			if(!eyes)
 				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', "eyes_missing", -BODY_LAYER)
 			else
-				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', E.eye_icon_state, -BODY_LAYER)
-			if((EYECOLOR in species_traits) && E)
+				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', eyes.eye_icon_state, -BODY_LAYER)
+				sclera_overlay = mutable_appearance('icons/mob/human_face.dmi', eyes.sclera_icon_state, -BODY_LAYER)
+			if((EYECOLOR in species_traits) && eyes)
 				eye_overlay.color = "#" + H.eye_color
+			if((SCLERACOLOR in species_traits) && eyes)
+				sclera_overlay.color = "#" + H.sclera_color
 			if(OFFSET_FACE in H.dna.species.offset_features)
 				eye_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
 				eye_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+				if(eyes)
+					sclera_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
+					sclera_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+			if(eyes)
+				standing += sclera_overlay
 			standing += eye_overlay
 
 	//Underwear, Undershirts & Socks
