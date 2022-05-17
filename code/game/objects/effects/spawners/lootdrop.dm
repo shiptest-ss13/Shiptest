@@ -500,18 +500,6 @@
 		lootspawn = pickweight_float(lootspawn) // WS edit - Fix various startup runtimes
 	return lootspawn
 
-/obj/effect/spawner/lootdrop/engimatic
-	name = "random engimatic components"
-	loot = list(
-				/obj/item/stock_parts/capacitor/quantumcap,
-				/obj/item/stock_parts/cell/quantum,
-				/obj/item/stock_parts/matter_bin/quantumbin,
-				/obj/item/stock_parts/micro_laser/quantumlaser,
-				/obj/item/stock_parts/scanning_module/quantumscan,
-				/obj/item/reagent_containers/glass/beaker/quantum,
-				/obj/item/stock_parts/manipulator/quantummanip
-				)
-
 /obj/effect/spawner/lootdrop/stockparts
 	name = "random good stock parts"
 	lootcount = 6
