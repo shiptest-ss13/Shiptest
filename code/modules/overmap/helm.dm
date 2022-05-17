@@ -307,6 +307,23 @@
 	playsound(src, 'sound/effects/fuse.ogg')
 	current_ship.helm_locked = FALSE
 
+/obj/machinery/computer/helm/multitool_act(mob/living/user, obj/item/I)
+	if(!Adjacent(user))
+		return
+
+	to_chat(user, "<span class='warning'>You begin to manually override the local database...</span>")
+	if(!do_after_mob(user, list(src), 2 SECONDS))
+		return COMPONENT_BLOCK_TOOL_ATTACK
+
+	priority_announce("Illegal access to local ship database detected.", sender_override="[src.name]", zlevel=virtual_z())
+	if(!do_after_mob(user, list(src), 10 SECONDS))
+		return COMPONENT_BLOCK_TOOL_ATTACK
+
+	say("Warning, database corruption present, resetting local database state.")
+	playsound(src, 'sound/effects/fuse.ogg')
+	current_ship.helm_locked = FALSE
+	return COMPONENT_BLOCK_TOOL_ATTACK
+
 /// Checks if this helm is locked, or for the key being destroyed. Returns TRUE if locked.
 /obj/machinery/computer/helm/proc/check_keylock(silent=FALSE)
 	if(!current_ship.helm_locked)
