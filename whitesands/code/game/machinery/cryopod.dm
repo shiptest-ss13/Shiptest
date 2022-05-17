@@ -152,7 +152,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/cryopod
 	name = "cryogenic freezer"
 	desc = "Keeps crew frozen in cryostasis until they are needed in order to cut down on supply usage."
-	icon = 'icons/obj/cryogenic2.dmi'
+	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "cryopod-open"
 	density = TRUE
 	anchored = TRUE

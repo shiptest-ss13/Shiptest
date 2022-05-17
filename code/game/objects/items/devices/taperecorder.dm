@@ -6,6 +6,8 @@
 	item_state = "analyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	pickup_sound =  'sound/items/handling/device_pickup.ogg'
+	drop_sound = 'sound/items/handling/device_drop.ogg'
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=60, /datum/material/glass=30)
