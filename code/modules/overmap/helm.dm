@@ -335,7 +335,7 @@
 		return FALSE
 	if(!silent)
 		say("[src] is currently locked; please insert your key to continue.")
-		playsound(src, 'sound/machines/buzz_two.ogg')
+		playsound(src, 'sound/machines/buzz-two.ogg')
 	return TRUE
 
 /obj/machinery/computer/helm/viewscreen
