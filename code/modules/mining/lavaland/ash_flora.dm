@@ -164,6 +164,55 @@
 	regrowth_time_low = 2400
 	regrowth_time_high = 5500
 
+/obj/structure/flora/ash/whitesands
+	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
+
+/obj/structure/flora/ash/whitesands/fern
+	name = "cave fern"
+	desc = "A species of fern with highly fibrous leaves."
+	icon_state = "fern" //needs new sprites.
+	harvested_name = "cave fern stems"
+	harvested_desc = "A few cave fern stems, missing their leaves."
+	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fern
+	harvest_amount_high = 4
+	harvest_message_low = "You clip a single, suitable leaf."
+	harvest_message_med = "You clip a number of leaves, leaving a few unsuitable ones."
+	harvest_message_high = "You clip quite a lot of suitable leaves."
+	regrowth_time_low = 3000
+	regrowth_time_high = 5400
+	num_sprites = 1
+
+/obj/structure/flora/ash/whitesands/fireblossom
+	name = "fire blossom"
+	desc = "An odd flower that grows commonly near bodies of lava. The leaves can be ground up for a substance resembling capsaicin."
+	icon_state = "fireblossom"
+	harvested_name = "fire blossom stems"
+	harvested_desc = "A few fire blossom stems, missing their flowers."
+	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fireblossom
+	needs_sharp_harvest = FALSE
+	harvest_amount_high = 3
+	harvest_message_low = "You pluck a single, suitable flower."
+	harvest_message_med = "You pluck a number of flowers, leaving a few unsuitable ones."
+	harvest_message_high = "You pluck quite a lot of suitable flowers."
+	regrowth_time_low = 2500
+	regrowth_time_high = 4000
+	num_sprites = 2
+
+/obj/structure/flora/ash/whitesands/puce
+	name = "Pucestal Growth"
+	desc = "A collection of puce colored crystal growths."
+	icon_state = "puce"
+	harvested_name = "Pucestal fragments"
+	harvested_desc = "A few pucestal fragments, slowly regrowing."
+	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/puce
+	harvest_amount_high = 6
+	harvest_message_low = "You work a crystal free."
+	harvest_message_med = "You cut a number of crystals free, leaving a few small ones."
+	harvest_message_high = "You cut free quite a lot of crystals."
+	regrowth_time_low = 10 MINUTES 				// Fast, for a crystal
+	regrowth_time_high = 20 MINUTES
+	num_sprites = 1
+
 //SNACKS
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora
@@ -211,6 +260,33 @@
 	icon_state = "cactus_fruit"
 	seed = /obj/item/seeds/lavaland/cactus
 	wine_power = 50
+
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands
+	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
+
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fern
+	name = "fern leaf"
+	desc = "A leaf from a cave fern."
+	icon_state = "fern"
+	seed = /obj/item/seeds/lavaland/whitesands/fern
+	wine_power = 10
+
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fireblossom
+	name = "fire blossom"
+	desc = "A flower from a fire blossom."
+	icon_state = "fireblossom"
+	seed = /obj/item/seeds/lavaland/whitesands/fireblossom
+	wine_power = 40
+
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/puce
+	name = "Pucestal Crystal"
+	desc = "A crystal from a pucestal growth."
+	icon_state = "puce"
+	seed = /obj/item/seeds/lavaland/whitesands/puce
+	wine_power = 0		// It's a crystal
+
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/puce/canconsume(mob/eater, mob/user)
+	return FALSE
 
 //SEEDS
 
@@ -286,154 +362,6 @@
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	reagents_add = list(/datum/reagent/consumable/tinlux = 0.04, /datum/reagent/consumable/nutriment/vitamin = 0.02, /datum/reagent/drug/space_drugs = 0.02)
 
-//CRAFTING
-
-/datum/crafting_recipe/mushroom_bowl
-	name = "Mushroom Bowl"
-	result = /obj/item/reagent_containers/glass/bowl/mushroom_bowl
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings = 5)
-	time = 30
-	category = CAT_PRIMAL
-
-/obj/item/reagent_containers/food/snacks/customizable/salad/ashsalad
-	desc = "Very ashy."
-	trash = /obj/item/reagent_containers/glass/bowl/mushroom_bowl
-	icon = 'icons/obj/lavaland/ash_flora.dmi'
-	icon_state = "mushroom_bowl"
-
-/obj/item/reagent_containers/food/snacks/customizable/soup/ashsoup
-	desc = "A bowl with ash and... stuff in it."
-	trash = /obj/item/reagent_containers/glass/bowl/mushroom_bowl
-	icon = 'icons/obj/lavaland/ash_flora.dmi'
-	icon_state = "mushroom_soup"
-
-/obj/item/reagent_containers/glass/bowl/mushroom_bowl
-	name = "mushroom bowl"
-	desc = "A bowl made out of mushrooms. Not food, though it might have contained some at some point."
-	icon = 'icons/obj/lavaland/ash_flora.dmi'
-	icon_state = "mushroom_bowl"
-
-/obj/item/reagent_containers/glass/bowl/mushroom_bowl/update_overlays()
-	. = ..()
-	if(reagents && reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/obj/lavaland/ash_flora.dmi', "fullbowl")
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
-		. += filling
-
-/obj/item/reagent_containers/glass/bowl/mushroom_bowl/update_icon_state()
-	if(!reagents || !reagents.total_volume)
-		icon_state = "mushroom_bowl"
-
-/obj/item/reagent_containers/glass/bowl/mushroom_bowl/attackby(obj/item/I,mob/user, params)
-	if(istype(I, /obj/item/reagent_containers/food/snacks))
-		var/obj/item/reagent_containers/food/snacks/S = I
-		if(I.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
-		else if(contents.len >= 20)
-			to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
-		else
-			if(reagents.has_reagent(/datum/reagent/water, 10)) //are we starting a soup or a salad?
-				var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/soup/ashsoup(get_turf(src))
-				A.initialize_custom_food(src, S, user)
-			else
-				var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/salad/ashsalad(get_turf(src))
-				A.initialize_custom_food(src, S, user)
-	else
-		. = ..()
-
-/obj/structure/flora/ash/proc/consume(user)
-	if(harvested)
-		return 0
-
-	icon_state = "[base_icon]p"
-	name = harvested_name
-	desc = harvested_desc
-	harvested = TRUE
-	addtimer(CALLBACK(src, .proc/regrow), rand(regrowth_time_low, regrowth_time_high))
-	return 1
-
-//Whitesands additions, these need to be sorted
-/obj/structure/flora/ash/whitesands
-	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
-
-/obj/structure/flora/ash/whitesands/fern
-	name = "cave fern"
-	desc = "A species of fern with highly fibrous leaves."
-	icon_state = "fern" //needs new sprites.
-	harvested_name = "cave fern stems"
-	harvested_desc = "A few cave fern stems, missing their leaves."
-	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fern
-	harvest_amount_high = 4
-	harvest_message_low = "You clip a single, suitable leaf."
-	harvest_message_med = "You clip a number of leaves, leaving a few unsuitable ones."
-	harvest_message_high = "You clip quite a lot of suitable leaves."
-	regrowth_time_low = 3000
-	regrowth_time_high = 5400
-	num_sprites = 1
-
-/obj/structure/flora/ash/whitesands/fireblossom
-	name = "fire blossom"
-	desc = "An odd flower that grows commonly near bodies of lava. The leaves can be ground up for a substance resembling capsaicin."
-	icon_state = "fireblossom"
-	harvested_name = "fire blossom stems"
-	harvested_desc = "A few fire blossom stems, missing their flowers."
-	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fireblossom
-	needs_sharp_harvest = FALSE
-	harvest_amount_high = 3
-	harvest_message_low = "You pluck a single, suitable flower."
-	harvest_message_med = "You pluck a number of flowers, leaving a few unsuitable ones."
-	harvest_message_high = "You pluck quite a lot of suitable flowers."
-	regrowth_time_low = 2500
-	regrowth_time_high = 4000
-	num_sprites = 2
-
-/obj/structure/flora/ash/whitesands/puce
-	name = "Pucestal Growth"
-	desc = "A collection of puce colored crystal growths."
-	icon_state = "puce"
-	harvested_name = "Pucestal fragments"
-	harvested_desc = "A few pucestal fragments, slowly regrowing."
-	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/puce
-	harvest_amount_high = 6
-	harvest_message_low = "You work a crystal free."
-	harvest_message_med = "You cut a number of crystals free, leaving a few small ones."
-	harvest_message_high = "You cut free quite a lot of crystals."
-	regrowth_time_low = 10 MINUTES 				// Fast, for a crystal
-	regrowth_time_high = 20 MINUTES
-	num_sprites = 1
-
-
-//SNACKS
-
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands
-	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
-
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fern
-	name = "fern leaf"
-	desc = "A leaf from a cave fern."
-	icon_state = "fern"
-	seed = /obj/item/seeds/lavaland/whitesands/fern
-	wine_power = 10
-
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fireblossom
-	name = "fire blossom"
-	desc = "A flower from a fire blossom."
-	icon_state = "fireblossom"
-	seed = /obj/item/seeds/lavaland/whitesands/fireblossom
-	wine_power = 40
-
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/puce
-	name = "Pucestal Crystal"
-	desc = "A crystal from a pucestal growth."
-	icon_state = "puce"
-	seed = /obj/item/seeds/lavaland/whitesands/puce
-	wine_power = 0		// It's a crystal
-
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/puce/canconsume(mob/eater, mob/user)
-	return FALSE
-
-//SEEDS
-
 /obj/item/seeds/lavaland/whitesands
 	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
 	growing_icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
@@ -502,3 +430,69 @@
 	if(give_to_user)
 		user.put_in_hands(result)
 	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")
+
+//CRAFTING
+
+/datum/crafting_recipe/mushroom_bowl
+	name = "Mushroom Bowl"
+	result = /obj/item/reagent_containers/glass/bowl/mushroom_bowl
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings = 5)
+	time = 30
+	category = CAT_PRIMAL
+
+/obj/item/reagent_containers/food/snacks/customizable/salad/ashsalad
+	desc = "Very ashy."
+	trash = /obj/item/reagent_containers/glass/bowl/mushroom_bowl
+	icon = 'icons/obj/lavaland/ash_flora.dmi'
+	icon_state = "mushroom_bowl"
+
+/obj/item/reagent_containers/food/snacks/customizable/soup/ashsoup
+	desc = "A bowl with ash and... stuff in it."
+	trash = /obj/item/reagent_containers/glass/bowl/mushroom_bowl
+	icon = 'icons/obj/lavaland/ash_flora.dmi'
+	icon_state = "mushroom_soup"
+
+/obj/item/reagent_containers/glass/bowl/mushroom_bowl
+	name = "mushroom bowl"
+	desc = "A bowl made out of mushrooms. Not food, though it might have contained some at some point."
+	icon = 'icons/obj/lavaland/ash_flora.dmi'
+	icon_state = "mushroom_bowl"
+
+/obj/item/reagent_containers/glass/bowl/mushroom_bowl/update_overlays()
+	. = ..()
+	if(reagents && reagents.total_volume)
+		var/mutable_appearance/filling = mutable_appearance('icons/obj/lavaland/ash_flora.dmi', "fullbowl")
+		filling.color = mix_color_from_reagents(reagents.reagent_list)
+		. += filling
+
+/obj/item/reagent_containers/glass/bowl/mushroom_bowl/update_icon_state()
+	if(!reagents || !reagents.total_volume)
+		icon_state = "mushroom_bowl"
+
+/obj/item/reagent_containers/glass/bowl/mushroom_bowl/attackby(obj/item/I,mob/user, params)
+	if(istype(I, /obj/item/reagent_containers/food/snacks))
+		var/obj/item/reagent_containers/food/snacks/S = I
+		if(I.w_class > WEIGHT_CLASS_SMALL)
+			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
+		else if(contents.len >= 20)
+			to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
+		else
+			if(reagents.has_reagent(/datum/reagent/water, 10)) //are we starting a soup or a salad?
+				var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/soup/ashsoup(get_turf(src))
+				A.initialize_custom_food(src, S, user)
+			else
+				var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/salad/ashsalad(get_turf(src))
+				A.initialize_custom_food(src, S, user)
+	else
+		. = ..()
+
+/obj/structure/flora/ash/proc/consume(user)
+	if(harvested)
+		return 0
+
+	icon_state = "[base_icon]p"
+	name = harvested_name
+	desc = harvested_desc
+	harvested = TRUE
+	addtimer(CALLBACK(src, .proc/regrow), rand(regrowth_time_low, regrowth_time_high))
+	return 1
