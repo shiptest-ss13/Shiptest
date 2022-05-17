@@ -14,7 +14,7 @@
 
 /obj/item/toy/sprayoncan
 	name = "spray-on insulation applicator"
-	desc = "What is the number one problem facing our station today?"
+	desc = "What is the number one problem facing our society today?"
 	icon = 'icons/obj/clothing/gloves.dmi'
 	icon_state = "sprayoncan"
 
@@ -263,3 +263,8 @@
 		/obj/item/clothing/gloves/color/brown = 1,
 		/obj/item/clothing/gloves/color/white = 1,
 		/obj/item/clothing/gloves/color/rainbow = 1)
+
+/obj/item/clothing/gloves/maid
+	name = "maid arm covers"
+	desc = "Cylindrical looking tubes that go over your arm, weird."
+	icon_state = "maid_arms"

@@ -307,6 +307,14 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/augmanipulator
+	name = "Machine Design (Augment Manipulator Board)"
+	desc = "The circuit board for an Augment Manipulator."
+	id = "augmanipulator"
+	build_path = /obj/item/circuitboard/machine/aug_manipulator
+	category = list("Research Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
 /datum/design/board/nanite_chamber
 	name = "Machine Design (Nanite Chamber Board)"
 	desc = "The circuit board for a Nanite Chamber."
@@ -612,14 +620,6 @@
 	category = list("Medical Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/board/autodoc
-	name = "Machine Design (Autodoc)"
-	desc = "The circuit board for an Autodoc."
-	id = "autodoc"
-	build_path = /obj/item/circuitboard/machine/autodoc
-	category = list("Medical Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/board/medical_kiosk
 	name = "Machine Design (Medical Kiosk)"
 	desc = "The circuit board for a Medical Kiosk."
@@ -643,3 +643,16 @@
 	build_path = /obj/item/circuitboard/machine/sheetifier
 	category = list ("Misc. Machinery")
 
+/datum/design/board/shieldwallgen
+	name = "Machine Design (Shield Wall Generator)"
+	desc = "A shield generator commonly used in xenobiology research."
+	id = "shieldwallgen"
+	build_path = /obj/item/circuitboard/machine/shieldwallgen
+	category = list("Misc. Machinery")
+
+/datum/design/board/shieldwallgen/atmos
+	name = "Machine Design (Holofield Generator)"
+	desc = "A specialized shield generator used to block airflow."
+	id = "shieldwallgen_atmos"
+	build_path = /obj/item/circuitboard/machine/shieldwallgen/atmos
+	category = list("Misc. Machinery")

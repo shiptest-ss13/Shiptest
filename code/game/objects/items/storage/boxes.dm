@@ -38,6 +38,11 @@
 	. = ..()
 	update_icon()
 
+/obj/item/storage/box/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
+
 /obj/item/storage/box/suicide_act(mob/living/carbon/user)
 	var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
 	if(myhead)
@@ -1148,6 +1153,7 @@
 	name = "\proper the liberator's legacy"
 	desc = "A box containing a gift for worthy golems."
 	illustration = "scicircuit"
+	custom_price = 2000
 
 /obj/item/storage/box/rndboards/PopulateContents()
 	new /obj/item/circuitboard/machine/protolathe(src)
@@ -1248,6 +1254,42 @@
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stock_parts/matter_bin = 2,
 		/obj/item/screwdriver = 1)
+	generate_items_inside(items_inside,src)
+
+//It's a maid costume from the IRMG and Syndicate, what else.
+/obj/item/storage/box/inteqmaid
+	name = "IRMG non standard issue maid outfit"
+	desc = "A box containing a 'tactical' and 'practical' maid outfit from the IRMG."
+
+/obj/item/storage/box/inteqmaid/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/head/maidheadband/inteq = 1,
+		/obj/item/clothing/under/syndicate/inteq/skirt/maid = 1,
+		/obj/item/clothing/gloves/combat/maid/inteq = 1,)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/syndimaid
+	name = "Syndicate maid outfit"
+	desc = "A box containing a 'tactical' and 'practical' maid outfit."
+	icon_state = "syndiebox"
+
+/obj/item/storage/box/syndimaid/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/head/maidheadband/syndicate = 1,
+		/obj/item/clothing/under/syndicate/skirt/maid = 1,
+		/obj/item/clothing/gloves/combat/maid = 1,)
+
+// because i have no idea where the fuck to put this
+/obj/item/storage/box/maid
+	name = "Maid box"
+	desc = "Contains a maid outfit"
+
+/obj/item/storage/box/maid/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/head/maidheadband = 1,
+		/obj/item/clothing/under/costume/maid = 1,
+		/obj/item/clothing/gloves/maid = 1,
+		/obj/item/clothing/neck/maid = 1,)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/material

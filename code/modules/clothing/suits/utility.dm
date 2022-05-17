@@ -44,7 +44,7 @@
 
 /obj/item/clothing/suit/fire/atmos
 	name = "firesuit"
-	desc = "An expensive firesuit that protects against even the most deadly of station fires. Designed to protect even if the wearer is set aflame."
+	desc = "An expensive firesuit that protects against even the most deadly of plasmafires. Designed to protect even if the wearer is set aflame."
 	icon_state = "atmos_firesuit"
 	item_state = "firesuit_atmos"
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT

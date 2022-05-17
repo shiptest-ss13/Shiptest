@@ -61,6 +61,8 @@
 
 	var/static/list/limb_icon_cache = list()
 
+	var/layered_hands //Does the mob have "layered hands" and require using HANDS_UNDER_BODY_LAYER?
+
 	//halucination vars
 	var/image/halimage
 	var/image/halbody
@@ -83,3 +85,6 @@
 
 	/// WS edit - moth dust when hugging
 	var/mothdust
+
+	/// Timer to remove the dream_sequence timer when the mob is deleted
+	var/dream_timer

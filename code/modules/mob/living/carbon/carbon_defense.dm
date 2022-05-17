@@ -44,7 +44,7 @@
 
 /mob/living/carbon/proc/can_catch_item(skip_throw_mode_check)
 	. = FALSE
-	if(!skip_throw_mode_check && !in_throw_mode)
+	if(!skip_throw_mode_check && !throw_mode)
 		return
 	if(get_active_held_item())
 		return
@@ -62,7 +62,7 @@
 					if(get_active_held_item() == I) //if our attack_hand() picks up the item...
 						visible_message("<span class='warning'>[src] catches [I]!</span>", \
 										"<span class='userdanger'>You catch [I] in mid-air!</span>")
-						throw_mode_off()
+						throw_mode_off(THROW_MODE_TOGGLE)
 						return 1
 	..()
 
@@ -314,14 +314,14 @@
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/warmhug, M) // You got a warm hug
 
 		// Let people know if they hugged someone really warm or really cold
-		if(M.bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
+		if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
 			to_chat(src, "<span class='warning'>It feels like [M] is over heating as they hug you.</span>")
-		else if(M.bodytemperature < BODYTEMP_COLD_DAMAGE_LIMIT)
+		else if(M.bodytemperature < M.dna.species.bodytemp_cold_damage_limit)
 			to_chat(src, "<span class='warning'>It feels like [M] is freezing as they hug you.</span>")
 
-		if(bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
+		if(bodytemperature > dna.species.bodytemp_heat_damage_limit)
 			to_chat(M, "<span class='warning'>It feels like [src] is over heating as you hug them.</span>")
-		else if(bodytemperature < BODYTEMP_COLD_DAMAGE_LIMIT)
+		else if(bodytemperature < dna.species.bodytemp_cold_damage_limit)
 			to_chat(M, "<span class='warning'>It feels like [src] is freezing as you hug them.</span>")
 
 		if(HAS_TRAIT(M, TRAIT_FRIENDLY))

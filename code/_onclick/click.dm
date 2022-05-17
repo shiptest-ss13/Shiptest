@@ -121,7 +121,7 @@
 		UnarmedAttack(A)
 		return
 
-	if(in_throw_mode)
+	if(throw_mode)
 		throw_item(A)
 		return
 
@@ -175,8 +175,7 @@
 	return FALSE
 
 /turf/IsObscured()
-	for(var/item in src)
-		var/atom/movable/AM = item
+	for(var/atom/movable/AM as anything in src)
 		if(AM.flags_1 & PREVENT_CLICK_UNDER_1)
 			return TRUE
 	return FALSE

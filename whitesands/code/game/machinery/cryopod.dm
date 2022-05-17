@@ -29,7 +29,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	/// Whether or not to store items from people going into cryosleep.
 	var/allow_items = TRUE
 	/// The ship object representing the ship that this console is on.
-	var/obj/structure/overmap/ship/simulated/linked_ship
+	var/datum/overmap/ship/controlled/linked_ship
 
 /obj/machinery/computer/cryopod/Initialize()
 	. = ..()
@@ -121,7 +121,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			if(linked_ship.job_slots[target_job] + params["delta"] < 0 || linked_ship.job_slots[target_job] + params["delta"] > 4)
 				return
 			linked_ship.job_slots[target_job] += params["delta"]
-			linked_ship.job_slot_adjustment_cooldown = world.time + DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN
+			COOLDOWN_START(linked_ship, job_slot_adjustment_cooldown, DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN)
 			update_static_data(user)
 			return
 
@@ -129,7 +129,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	. = list()
 	.["allowItems"] = allow_items
 	.["awakening"] = linked_ship.join_allowed
-	.["cooldown"] = linked_ship.job_slot_adjustment_cooldown - world.time
+	.["cooldown"] = COOLDOWN_TIMELEFT(linked_ship, job_slot_adjustment_cooldown)
 	.["memo"] = linked_ship.memo
 
 /obj/machinery/computer/cryopod/ui_static_data(mob/user)
@@ -151,8 +151,8 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 //Cryopods themselves.
 /obj/machinery/cryopod
 	name = "cryogenic freezer"
-	desc = "Suited for Cyborgs and Humanoids, the pod is a safe place for personnel affected by the Space Sleep Disorder to get some rest."
-	icon = 'icons/obj/cryogenic2.dmi'
+	desc = "Keeps crew frozen in cryostasis until they are needed in order to cut down on supply usage."
+	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "cryopod-open"
 	density = TRUE
 	anchored = TRUE
@@ -197,6 +197,9 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	var/close_state = "cryopod"
 	var/obj/docking_port/mobile/linked_ship
 
+	var/open_sound = 'sound/machines/podopen.ogg'
+	var/close_sound = 'sound/machines/podclose.ogg'
+
 /obj/machinery/cryopod/Initialize()
 	..()
 	if(!preserve_items_typecache)
@@ -236,21 +239,30 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		..(user)
 		if(exiting && istype(user, /mob/living/carbon))
 			var/mob/living/carbon/C = user
-			C.SetSleeping(50)
-			to_chat(occupant, "<span class='boldnotice'>You begin to wake from cryosleep...</span>")
+			apply_effects_to_mob(C)
 			icon_state = close_state
+			playsound(src, 'sound/machines/hiss.ogg', 30, 1)
 			return
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
 			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
 			addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
 	icon_state = close_state
+	if(close_sound)
+		playsound(src, close_sound, 40)
+
+/obj/machinery/cryopod/proc/apply_effects_to_mob(mob/living/carbon/sleepyhead)
+	sleepyhead.SetSleeping(50)
+	to_chat(sleepyhead, "<span class='boldnotice'>You begin to wake from cryosleep...</span>")
 
 /obj/machinery/cryopod/open_machine()
 	..()
 	icon_state = open_state
 	density = TRUE
 	name = initial(name)
+	if(open_sound)
+		playsound(src, open_sound, 40)
+
 
 /obj/machinery/cryopod/container_resist_act(mob/living/user)
 	visible_message("<span class='notice'>[occupant] emerges from [src]!</span>",
@@ -350,7 +362,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	// Regardless of what ship you spawned in you need to be removed from it.
 	// This covers scenarios where you spawn in one ship but cryo in another.
-	for(var/obj/structure/overmap/ship/simulated/sim_ship as anything in SSovermap.simulated_ships)
+	for(var/datum/overmap/ship/controlled/sim_ship as anything in SSovermap.controlled_ships)
 		sim_ship.manifest -= mob_occupant.real_name
 
 	var/obj/machinery/computer/cryopod/control_computer_obj = control_computer?.resolve()
@@ -449,5 +461,15 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	. = ..()
 	linked_ship = port
 	linked_ship.spawn_points += src
+
+/obj/machinery/cryopod/poor
+	name = "low quality cryogenic freezer"
+	desc = "Keeps crew frozen in cryostasis until they are needed in order to cut down on supply usage. This one seems cheaply made."
+
+/obj/machinery/cryopod/poor/apply_effects_to_mob(mob/living/carbon/sleepyhead)
+	sleepyhead.SetSleeping(50)
+	sleepyhead.set_disgust(60)
+	sleepyhead.set_nutrition(160)
+	to_chat(sleepyhead, "<span class='bolddanger'>A very bad headache wakes you up from cryosleep...</span>")
 
 #undef DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN

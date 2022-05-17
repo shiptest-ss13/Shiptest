@@ -20,6 +20,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/supports_variations = null //This is a bitfield that defines what variations exist for bodyparts like Digi legs.
 
+	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
+	var/list/greyscale_colors[3]
+	/// Needs to be a RGB-greyscale format icon state in all species' clothing icon files.
+	var/greyscale_icon_state
+
 	///Icon file for mob worn overlays.
 	var/icon/mob_overlay_icon
 	///icon state for mob worn overlays, if null the normal icon_state will be used.
@@ -119,8 +124,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/list/attack_verb
 	/// list() of species types, if a species cannot put items in a certain slot, but species type is in list, it will be able to wear that item
 	var/list/species_exception = null
-	///A bitfield of a species to use as an alternative sprite for any given item. DMIs are stored in the species datum and called via proc in update_icons.
-	var/sprite_sheets = null
 	///A bitfield of bodytypes that the item cannot be worn by.
 	var/restricted_bodytypes = null
 
@@ -268,8 +271,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			return
 
 	var/turf/T = loc
-	loc = null
-	loc = T
+	abstract_move(null)
+	forceMove(T)
 
 /obj/item/examine(mob/user) //This might be spammy. Remove?
 	. = ..()
@@ -482,6 +485,17 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/on_found(mob/finder)
 	return
 
+
+/**
+ * To be overwritten to only perform visual tasks;
+ * this is directly called instead of `equipped` on visual-only features like human dummies equipping outfits.
+ *
+ * This separation exists to prevent things like the monkey sentience helmet from
+ * polling ghosts while it's just being equipped as a visual preview for a dummy.
+ */
+/obj/item/proc/visual_equipped(mob/user, slot, initial = FALSE)
+	return
+
 /**
   *called after an item is placed in an equipment slot
 
@@ -492,6 +506,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
   */
 /obj/item/proc/equipped(mob/user, slot, initial = FALSE)
 	SHOULD_CALL_PARENT(1)
+	visual_equipped(user, slot, initial)
 	SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, user, slot)
 	for(var/X in actions)
 		var/datum/action/A = X

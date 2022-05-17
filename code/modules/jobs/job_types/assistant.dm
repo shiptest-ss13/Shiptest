@@ -29,6 +29,7 @@ Assistant
 	name = "Assistant"
 	jobtype = /datum/job/assistant
 	r_pocket = /obj/item/radio
+	belt = /obj/item/pda
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -89,6 +90,11 @@ Assistant
 
 	uniform = /obj/item/clothing/under/syndicate/camo
 	head = /obj/item/clothing/head/beret/solgov/terragov/plain
+
+/datum/outfit/job/assistant/minutemen
+	name = "Volunteer (Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 
 /datum/outfit/job/assistant/intern
 	name = "Assistant (Intern)"
@@ -152,3 +158,11 @@ Assistant
 	uniform = /obj/item/clothing/under/rank/prisoner
 	shoes = /obj/item/clothing/shoes/sneakers/orange
 	accessory = /obj/item/clothing/accessory/armband/deputy
+
+/datum/outfit/job/assistant/waiter
+	name = "Assistant (Waiter)"
+
+	uniform = /obj/item/clothing/under/suit/waiter
+	shoes = /obj/item/clothing/shoes/laceup
+	ears = /obj/item/radio/headset/headset_srv
+	gloves = /obj/item/clothing/gloves/color/white

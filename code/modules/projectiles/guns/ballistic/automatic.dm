@@ -11,6 +11,7 @@
 	suppressed_sound = 'sound/weapons/gun/smg/shot_suppressed.ogg'
 	automatic = 1
 	weapon_weight = WEAPON_MEDIUM
+	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
 /obj/item/gun/ballistic/automatic/proto
 	name = "\improper Nanotrasen Saber SMG"
@@ -119,7 +120,7 @@
 	pin = /obj/item/firing_pin/implant/pindicate
 	mag_display = TRUE
 	empty_indicator = TRUE
-	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
 
 /obj/item/gun/ballistic/automatic/m90/Initialize()
 	. = ..()
@@ -193,7 +194,7 @@
 /obj/item/gun/ballistic/automatic/ar
 	name = "\improper NT-ARG 'Boarder'"
 	desc = "A robust assault rifle used by Nanotrasen fighting forces."
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/shot_alt2.ogg'
 	icon_state = "arg"
 	item_state = "arg"
 	slot_flags = 0

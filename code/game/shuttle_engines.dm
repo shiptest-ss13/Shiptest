@@ -15,7 +15,6 @@
 	desc = "A bluespace engine used to make shuttles move."
 	density = TRUE
 	anchored = TRUE
-	var/engine_power = 1
 	var/state = ENGINE_WELDED //welding shmelding
 
 //Ugh this is a lot of copypasta from emitters, welding need some boilerplate reduction
@@ -55,7 +54,6 @@
 			if(I.use_tool(src, user, ENGINE_WELDTIME, volume=50))
 				state = ENGINE_WELDED
 				to_chat(user, "<span class='notice'>You weld \the [src] to the floor.</span>")
-				alter_engine_power(engine_power, src)
 
 		if(ENGINE_WELDED)
 			if(!I.tool_start_check(user, amount=0))
@@ -68,37 +66,22 @@
 			if(I.use_tool(src, user, ENGINE_WELDTIME, volume=50))
 				state = ENGINE_WRENCHED
 				to_chat(user, "<span class='notice'>You cut \the [src] free from the floor.</span>")
-				alter_engine_power(-engine_power, src)
 	return TRUE
-
-/obj/structure/shuttle/engine/Destroy()
-	if(state == ENGINE_WELDED)
-		alter_engine_power(-engine_power, src)
-	. = ..()
-
-//Propagates the change to the shuttle.
-/obj/structure/shuttle/engine/proc/alter_engine_power(mod)
-	if(mod == 0)
-		return
-	if(SSshuttle.is_in_shuttle_bounds(src))
-		var/obj/docking_port/mobile/M = SSshuttle.get_containing_shuttle(src)
-		if(M)
-			M.alter_engines(mod, src)
 
 /obj/structure/shuttle/engine/heater
 	name = "engine heater"
 	icon_state = "heater"
 	desc = "Directs energy into compressed particles in order to power engines."
-	engine_power = 0 // todo make these into 2x1 parts
 
-/obj/structure/shuttle/engine/platform
+/obj/structure/shuttle/platform
 	name = "engine platform"
 	icon_state = "platform"
 	desc = "A platform for engine components."
-	engine_power = 0
+	density = TRUE
+	anchored = TRUE
 	pass_flags_self = PASSPLATFORM
 
-/obj/structure/shuttle/engine/platform/corner
+/obj/structure/shuttle/platform/corner
 	icon_state = "platform_corner"
 
 /obj/structure/shuttle/engine/propulsion

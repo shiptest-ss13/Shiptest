@@ -1,9 +1,15 @@
 /datum/component/butchering
-	var/speed = 80 //time in deciseconds taken to butcher something
-	var/effectiveness = 100 //percentage effectiveness; numbers above 100 yield extra drops
-	var/bonus_modifier = 0 //percentage increase to bonus item chance
-	var/butcher_sound = 'sound/weapons/slice.ogg' //sound played when butchering
+	/// Time in deciseconds taken to butcher something
+	var/speed = 8 SECONDS
+	/// Percentage effectiveness; numbers above 100 yield extra drops
+	var/effectiveness = 100
+	/// Percentage increase to bonus item chance
+	var/bonus_modifier = 0
+	/// Sound played when butchering
+	var/butcher_sound = 'sound/weapons/slice.ogg'
+	/// Whether or not this component can be used to butcher currently. Used to temporarily disable butchering
 	var/butchering_enabled = TRUE
+	/// Whether or not this component is compatible with blunt tools.
 	var/can_be_blunt = FALSE
 
 /datum/component/butchering/Initialize(_speed, _effectiveness, _bonus_modifier, _butcher_sound, disabled, _can_be_blunt)
@@ -114,15 +120,20 @@
 	. = ..()
 	if(. == COMPONENT_INCOMPATIBLE)
 		return
-	RegisterSignal(parent, COMSIG_MOVABLE_CROSSED, .proc/onCrossed)
 
-/datum/component/butchering/recycler/proc/onCrossed(datum/source, mob/living/L)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddComponent(/datum/component/connect_loc_behalf, parent, loc_connections)
+
+/datum/component/butchering/recycler/proc/on_entered(datum/source, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	SIGNAL_HANDLER
 
-	if(!istype(L))
+	if(!isliving(arrived))
 		return
+	var/mob/living/victim = arrived
 	var/obj/machinery/recycler/eater = parent
 	if(eater.safety_mode || (eater.machine_stat & (BROKEN|NOPOWER))) //I'm so sorry.
 		return
-	if(L.stat == DEAD && (L.butcher_results || L.guaranteed_butcher_results))
-		Butcher(parent, L)
+	if(victim.stat == DEAD && (victim.butcher_results || victim.guaranteed_butcher_results))
+		Butcher(parent, victim)

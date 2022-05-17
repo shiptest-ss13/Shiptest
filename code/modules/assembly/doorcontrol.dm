@@ -13,6 +13,12 @@
 	if(id)
 		. += "<span class='notice'>Its channel ID is '[id]'.</span>"
 
+/obj/item/assembly/control/multitool_act(mob/living/user)
+	var/change_id = input("Set [src] ID. It must be a number between 1 and 100.", "ID", id) as num|null
+	if(change_id)
+		id = clamp(round(change_id, 1), 1, 100)
+		to_chat(user, "<span class='notice'>You change the ID to [id].</span>")
+
 /obj/item/assembly/control/activate()
 	var/openclose
 	if(cooldown)
@@ -181,3 +187,17 @@
 	lift.lift_master_datum.set_controls(UNLOCKED)
 
 #undef FLOOR_TRAVEL_TIME
+
+/obj/item/assembly/control/shieldwallgen
+	name = "holofield controller"
+	desc = "A small device used to remotely operate holofield generators."
+
+/obj/item/assembly/control/shieldwallgen/activate()
+	if(cooldown)
+		return
+	cooldown = TRUE
+	for(var/obj/machinery/power/shieldwallgen/machine in GLOB.machines)
+		if(machine.id == src.id)
+			INVOKE_ASYNC(machine, /obj/machinery/power/shieldwallgen.proc/toggle)
+
+	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 20)

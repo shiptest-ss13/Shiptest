@@ -100,6 +100,18 @@
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
+/obj/item/clothing/accessory/maidapron/syndicate
+	name = "syndicate maid apron"
+	desc = "Practical? No. Tactical? Also no. Cute? Most definitely yes."
+	icon_state = "maidapronsynd"
+	item_state = "maidapronsynd"
+
+/obj/item/clothing/accessory/maidapron/inteq
+	name = "inteq maid apron"
+	desc = "A 'tactical' apron to protect you from all sorts of spills, from dough to blood!"
+	icon_state = "inteqmaidapron"
+	item_state = "inteqmaidapron"
+
 //////////
 //Medals//
 //////////
@@ -245,36 +257,36 @@
 
 /obj/item/clothing/accessory/armband/deputy
 	name = "security deputy armband"
-	desc = "An armband, worn by personnel authorized to act as a deputy of station security."
+	desc = "An armband, worn by personnel authorized to act as a deputy of corporate security."
 
 /obj/item/clothing/accessory/armband/cargo
 	name = "cargo bay guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is brown."
+	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is brown."
 	icon_state = "cargoband"
 
 /obj/item/clothing/accessory/armband/engine
 	name = "engineering guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is orange with a reflective strip!"
+	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is orange with a reflective strip!"
 	icon_state = "engieband"
 
 /obj/item/clothing/accessory/armband/science
 	name = "science guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is purple."
+	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is purple."
 	icon_state = "rndband"
 
 /obj/item/clothing/accessory/armband/hydro
 	name = "hydroponics guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is green and blue."
+	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is green and blue."
 	icon_state = "hydroband"
 
 /obj/item/clothing/accessory/armband/med
 	name = "medical guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is white."
+	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is white."
 	icon_state = "medband"
 
 /obj/item/clothing/accessory/armband/medblue
 	name = "medical guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is white and blue."
+	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is white and blue."
 	icon_state = "medblueband"
 
 //////////////

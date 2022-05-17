@@ -8,13 +8,14 @@
 	bolt_type = BOLT_TYPE_STANDARD
 	semi_auto = FALSE
 	internal_magazine = TRUE
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/mosin.ogg'
 	fire_sound_volume = 90
 	vary_fire_sound = FALSE
 	rack_sound = 'sound/weapons/gun/rifle/bolt_out.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/rifle/bolt_in.ogg'
 	tac_reloads = FALSE
 	weapon_weight = WEAPON_MEDIUM
+	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
 /obj/item/gun/ballistic/rifle/update_overlays()
 	. = ..()

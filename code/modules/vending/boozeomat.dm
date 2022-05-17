@@ -6,6 +6,9 @@
 	products = list(
 		/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass = 12,
+		/obj/item/reagent_containers/food/drinks/modglass/small = 10,
+		/obj/item/reagent_containers/food/drinks/modglass = 10,
+		/obj/item/reagent_containers/food/drinks/modglass/large = 10,
 		/obj/item/reagent_containers/food/drinks/flask = 3,
 		/obj/item/reagent_containers/food/drinks/ice = 10,
 		/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 4,
@@ -36,7 +39,11 @@
 		/obj/item/reagent_containers/food/drinks/bottle/sake = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/applejack = 5,
 		/obj/item/reagent_containers/food/drinks/bottle = 15,
-		/obj/item/reagent_containers/food/drinks/bottle/small = 15
+		/obj/item/reagent_containers/food/drinks/bottle/small = 15,
+		/obj/item/garnish/olives = 10,
+		/obj/item/garnish/umbrellared = 10,
+		/obj/item/garnish/umbrellablue = 10,
+		/obj/item/garnish/umbrellagreen = 10
 	)
 	contraband = list(
 		/obj/item/reagent_containers/food/drinks/mug/tea = 12,
@@ -46,7 +53,7 @@
 		/obj/item/reagent_containers/food/drinks/bottle/champagne = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/trappist = 5)
 
-	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this station?"
+	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty 'round this sector?"
 	product_ads = "Drink up!;Booze is good for you!;Alcohol is humanity's best friend.;Quite delighted to serve you!;Care for a nice, cold beer?;Nothing cures you like booze!;Have a sip!;Have a drink!;Have a beer!;Beer is good for you!;Only the finest alcohol!;Best quality booze since 2053!;Award-winning wine!;Maximum alcohol!;Man loves beer.;A toast for progress!"
 	req_access = list(ACCESS_BAR)
 	refill_canister = /obj/item/vending_refill/boozeomat

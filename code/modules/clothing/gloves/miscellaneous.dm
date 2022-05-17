@@ -29,8 +29,8 @@
 /obj/item/clothing/gloves/combat
 	name = "combat gloves"
 	desc = "These tactical gloves are fireproof and electrically insulated."
-	icon_state = "black"
-	item_state = "blackgloves"
+	icon_state = "combat"
+	item_state = "combat"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	strip_delay = 80
@@ -40,6 +40,18 @@
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 50)
+
+/obj/item/clothing/gloves/combat/maid
+	name = "combat maid sleeves"
+	desc = "These 'tactical' gloves and sleeves are fireproof and electrically insulated. Warm to boot."
+	icon_state = "syndimaid_arms"
+	item_state = "syndimaid_arms"
+
+/obj/item/clothing/gloves/combat/maid/inteq
+	name = "inteq combat maid sleeves"
+	desc = "Tacticute and comfy, along with being both fireproof and electrically insulated."
+	icon_state = "inteqmaid_arms"
+	item_state = "inteqmaid_arms"
 
 /obj/item/clothing/gloves/bracer
 	name = "bone bracers"

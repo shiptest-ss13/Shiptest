@@ -20,6 +20,9 @@
 	normal_integrity = 450
 	hatch_colour = "#c82b2b"
 
+/obj/machinery/door/airlock/security/brig //fulltile cell doors because of shuttle shenanigans
+	var/id = null
+
 /obj/machinery/door/airlock/engineering
 	icon = 'icons/obj/doors/airlocks/station/engineering.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_eng
@@ -121,6 +124,12 @@
 	critical_machine = TRUE //stops greytide virus from opening & bolting doors in critical positions, such as the SM chamber.
 
 /obj/machinery/door/airlock/security/glass
+	opacity = FALSE
+	glass = TRUE
+	normal_integrity = 400
+	hatch_colour = "#b81b1b"
+
+/obj/machinery/door/airlock/security/brig/glass //more brig doors
 	opacity = FALSE
 	glass = TRUE
 	normal_integrity = 400
@@ -543,7 +552,7 @@
 			SEND_SOUND(L, sound(pick('sound/hallucinations/turn_around1.ogg','sound/hallucinations/turn_around2.ogg'),0,1,50))
 			flash_color(L, flash_color="#960000", flash_time=20)
 			L.Paralyze(40)
-			L.throw_at(throwtarget, 5, 1,src)
+			L.throw_at(throwtarget, 5, 1)
 		return 0
 
 /obj/machinery/door/airlock/cult/proc/conceal()

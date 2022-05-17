@@ -24,6 +24,11 @@
 	update_icon()
 	req_one_access = get_all_accesses() + get_all_centcom_access()
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/machinery/recycler/RefreshParts()
 	var/amt_made = 0
 	var/mat_mod = 0
@@ -86,9 +91,9 @@
 	if(move_dir == eat_dir)
 		return TRUE
 
-/obj/machinery/recycler/Crossed(atom/movable/AM)
-	eat(AM)
-	. = ..()
+/obj/machinery/recycler/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, .proc/eat, AM)
 
 /obj/machinery/recycler/proc/eat(atom/movable/AM0, sound=TRUE)
 	if(machine_stat & (BROKEN|NOPOWER))

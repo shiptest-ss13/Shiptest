@@ -11,6 +11,8 @@
 	can_have_cap = TRUE
 	cap_icon_state = "bottle_cap"
 	cap_on = TRUE
+	drop_sound = 'sound/items/handling/beaker_drop.ogg'
+	pickup_sound =  'sound/items/handling/beaker_pickup.ogg'
 
 /obj/item/reagent_containers/glass/bottle/epinephrine
 	name = "epinephrine bottle"

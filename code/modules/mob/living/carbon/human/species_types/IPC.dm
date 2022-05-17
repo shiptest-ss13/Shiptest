@@ -2,8 +2,7 @@
 	name = "\improper Integrated Positronic Chassis" //inherited from the real species, for health scanners and things
 	id = SPECIES_IPC
 	sexes = FALSE
-	say_mod = "states" //inherited from a user's real species
-	species_traits = list(AGENDER,NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,NOBLOOD,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES, MUTCOLORS, NO_UNDERWEAR) //all of these + whatever we inherit from the real species
+	species_traits = list(AGENDER,NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,NOBLOOD,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES, MUTCOLORS) //all of these + whatever we inherit from the real species
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
 	inherent_biotypes = list(MOB_ROBOTIC, MOB_HUMANOID)
 	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
@@ -33,6 +32,7 @@
 	allow_numbers_in_name = TRUE
 	deathsound = "sound/voice/borg_deathsound.ogg"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	species_language_holder = /datum/language_holder/ipc
 	loreblurb = "Integrated Positronic Chassis or \"IPC\" for short, are synthetic lifeforms composed of an Artificial \
 	Intelligence program encased in a bipedal robotic shell. They are fragile, allergic to EMPs, and the butt of endless toaster jokes. \
 	Just as easy to repair as they are to destroy, they might just get their last laugh in as you're choking on neurotoxins. Beep Boop."
@@ -63,12 +63,6 @@
 	. = ..()
 	if(change_screen)
 		change_screen.Remove(C)
-
-/datum/species/ipc/get_spans()
-	return SPAN_ROBOT
-
-/datum/species/ipc/after_equip_job(datum/job/J, mob/living/carbon/human/H)
-	H.grant_language(/datum/language/machine)
 
 /datum/species/ipc/spec_death(gibbed, mob/living/carbon/C)
 	saved_screen = C.dna.features["ipc_screen"]

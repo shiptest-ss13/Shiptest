@@ -196,7 +196,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/thirteenloko
 	name = "Thirteen Loko"
 	description = "A potent mixture of caffeine and alcohol."
-	color = "#102000" // rgb: 16, 32, 0
+	color = "#ce871d"
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	boozepwr = 80
 	quality = DRINK_GOOD
@@ -479,7 +479,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "cola"
 	boozepwr = 40
 	quality = DRINK_NICE
-	color = "#3E1B00"
+	color = "#6b2f01"
 	glass_icon_state = "whiskeycolaglass"
 	glass_name = "Rum and Coke"
 	glass_desc = "The classic go-to of space-fratboys."
@@ -487,7 +487,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/cuba_libre
 	name = "Cuba Libre"
 	description = "Viva la Revolucion! Viva Cuba Libre!"
-	color = "#3E1B00" // rgb: 62, 27, 0
+	color = "#692e01"
 	boozepwr = 50
 	quality = DRINK_GOOD
 	taste_description = "a refreshing marriage of citrus and rum"
@@ -507,7 +507,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/whiskey_cola
 	name = "Whiskey Cola"
 	description = "Whiskey, mixed with cola. Surprisingly refreshing."
-	color = "#3E1B00" // rgb: 62, 27, 0
+	color = "#602a00"
 	boozepwr = 70
 	quality = DRINK_NICE
 	taste_description = "cola"
@@ -519,7 +519,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/martini
 	name = "Classic Martini"
 	description = "Vermouth with Gin. Not quite how 007 enjoyed it, but still delicious."
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#9e8c67"
 	boozepwr = 60
 	quality = DRINK_NICE
 	taste_description = "dry class"
@@ -646,7 +646,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/toxins_special
 	name = "Toxins Special"
 	description = "This thing is ON FIRE! CALL THE DAMN SHUTTLE!"
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#780162"
 	boozepwr = 25
 	quality = DRINK_VERYGOOD
 	taste_description = "spicy toxins"
@@ -829,14 +829,14 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/manhattan_proj
 	name = "Manhattan Project"
-	description = "A scientist's drink of choice, for pondering ways to blow up the station."
+	description = "A scientist's drink of choice, for pondering ways to blow up the sector."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 45
 	quality = DRINK_VERYGOOD
 	taste_description = "death, the destroyer of worlds"
 	glass_icon_state = "proj_manhattanglass"
 	glass_name = "Manhattan Project"
-	glass_desc = "A scientist's drink of choice, for thinking how to blow up the station."
+	glass_desc = "A scientist's drink of choice, for thinking how to blow up the sector."
 
 
 /datum/reagent/consumable/ethanol/manhattan_proj/on_mob_life(mob/living/carbon/M)
@@ -979,7 +979,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "A spicy mix of Vodka and Spice. Very hot."
 
 /datum/reagent/consumable/ethanol/sbiten/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(50 * TEMPERATURE_DAMAGE_COEFFICIENT, 0 ,BODYTEMP_HEAT_DAMAGE_LIMIT) //310.15 is the normal bodytemp.
+	M.adjust_bodytemperature(50 * TEMPERATURE_DAMAGE_COEFFICIENT, 0 , M.dna.species.bodytemp_heat_damage_limit) //310.15 is the normal bodytemp.
 	return ..()
 
 /datum/reagent/consumable/ethanol/red_mead
@@ -1281,7 +1281,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/bacchus_blessing //An EXTREMELY powerful drink. Smashed in seconds, dead in minutes.
 	name = "Bacchus' Blessing"
 	description = "Unidentifiable mixture. Unmeasurably high alcohol content."
-	color = rgb(51, 19, 3) //Sickly brown
+	color = rgb(65, 24, 4) //Sickly brown
 	boozepwr = 300 //I warned you
 	taste_description = "a wall of bricks"
 	glass_icon_state = "glass_brown2"
@@ -1350,7 +1350,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/neurotoxin
 	name = "Neurotoxin"
 	description = "A strong neurotoxin that puts the subject into a death-like state."
-	color = "#2E2E61" // rgb: 46, 46, 97
+	color = "#3c3c84" // rgb: 46, 46, 97
 	boozepwr = 50
 	quality = DRINK_VERYGOOD
 	taste_description = "a numbing sensation"
@@ -1513,7 +1513,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	color = "#cc0000"
 	boozepwr = 35
 	quality = DRINK_GOOD
-	taste_description = "an invigorating bitter freshness which suffuses your being; no enemy of the station will go unrobusted this day"
+	taste_description = "an invigorating bitter freshness which suffuses your being; no enemy of the corporation will go unrobusted this day"
 	glass_icon_state = "quadruple_sec"
 	glass_name = "Quadruple Sec"
 	glass_desc = "An intimidating and lawful beverage dares you to violate the law and make its day. Still can't drink it on duty, though."
@@ -1806,7 +1806,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/fernet
 	name = "Fernet"
 	description = "An incredibly bitter herbal liqueur used as a digestif."
-	color = "#1B2E24" // rgb: 27, 46, 36
+	color = "#2d4b3b" // rgb: 27, 46, 36
 	boozepwr = 80
 	taste_description = "utter bitterness"
 	glass_name = "glass of fernet"
@@ -2113,18 +2113,18 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(prob(20))
 		if(ishuman(M))
 			var/mob/living/carbon/human/N = M
-			N.age += 1
-			if(N.age > 70)
+			N.age++
+			if(N.age > N.dna.species.species_age_max * 0.6)
 				N.facial_hair_color = "ccc"
 				N.hair_color = "ccc"
 				N.update_hair()
-				if(N.age > 100)
+				if(N.age > N.dna.species.species_age_max * 0.8)
 					N.become_nearsighted(type)
 					if(N.gender == MALE)
 						N.facial_hairstyle = "Beard (Very Long)"
 						N.update_hair()
 
-				if(N.age > 969) //Best not let people get older than this or i might incur G-ds wrath
+				if(N.age > N.dna.species.species_age_max * 1.2) //Best not let people get older than this or i might incur G-ds wrath
 					M.visible_message("<span class='notice'>[M] becomes older than any man should be.. and crumbles into dust!</span>")
 					M.dust(0,1,0)
 

@@ -34,7 +34,7 @@
 	health_doll_icon = "spacedragon"
 	obj_damage = 50
 	environment_smash = ENVIRONMENT_SMASH_NONE
-	flags_1 = PREVENT_CONTENTS_EXPLOSION_1 | HEAR_1
+	flags_1 = PREVENT_CONTENTS_EXPLOSION_1
 	melee_damage_upper = 35
 	melee_damage_lower = 35
 	armour_penetration = 30
@@ -82,6 +82,7 @@
 	gust.Grant(src)
 	rift = new
 	rift.Grant(src)
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /mob/living/simple_animal/hostile/space_dragon/Life(mapload)
 	. = ..()
@@ -495,7 +496,7 @@
 		var/area/A = get_area(src)
 		priority_announce("Spatial object has reached peak energy charge in [initial(A.name)], please stand-by.", "Central Command Spatial Corps")
 		obj_integrity = INFINITY
-		desc = "A rift akin to the ones space carp use to travel long distances.  This one is fully charged, and is capable of bringing many carp to the station's location."
+		desc = "A rift akin to the ones space carp use to travel long distances.  This one is fully charged, and is capable of bringing many carp to the portal's location."
 		icon_state = "carp_rift_charged"
 		light_color = LIGHT_COLOR_YELLOW
 		armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)

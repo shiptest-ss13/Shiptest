@@ -13,7 +13,7 @@
 	mob_biotypes = MOB_ROBOTIC
 	deathsound = 'sound/voice/borg_deathsound.ogg'
 	speech_span = SPAN_ROBOT
-	flags_1 = PREVENT_CONTENTS_EXPLOSION_1 | HEAR_1 | RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1
+	flags_1 = PREVENT_CONTENTS_EXPLOSION_1 | RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1
 	examine_cursor_icon = null
 	var/datum/ai_laws/laws = null//Now... THEY ALL CAN ALL HAVE LAWS
 	var/last_lawchange_announce = 0
@@ -445,6 +445,3 @@
 
 /mob/living/silicon/on_standing_up()
 	return // Silicons are always standing by default.
-
-/mob/living/silicon/get_bank_account() /// WS Edit - Silicons can buy and use materials
-	return SSeconomy.get_dep_account(ACCOUNT_CIV)

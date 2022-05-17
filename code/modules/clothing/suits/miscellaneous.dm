@@ -411,6 +411,20 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|ARMS|LEGS
 
+/obj/item/clothing/suit/jacket/leather/duster
+	name = "leather duster"
+	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, and dust."
+	icon_state = "duster"
+	item_state = "duster"
+	heat_protection = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|ARMS|LEGS
+
+/obj/item/clothing/suit/jacket/leather/duster/command
+	name = "officer's duster"
+	desc = "A long, supple leather coat. Ideal for protecting its wearer from rain, sun, dust, and paperwork."
+	icon_state = "duster_command"
+	item_state = "duster_command"
+
 /obj/item/clothing/suit/jacket/puffer
 	name = "puffer jacket"
 	desc = "A thick jacket with a rubbery, water-resistant shell."
@@ -663,6 +677,34 @@
 /obj/item/clothing/head/hooded/winterhood/miner
 	icon_state = "winterhood_miner"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	name = "inteq winter coat"
+	icon_state = "coatinteq"
+	item_state = "coatinteq"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/inteq
+
+/obj/item/clothing/head/hooded/winterhood/security/inteq
+	icon_state = "winterhood_inteq"
+
+/obj/item/clothing/suit/hooded/coat/inteq
+	name = "inteq hooded coat"
+	desc = "A hooded coat with a fur trim around the hood, comfy! It has a small 'IRMG' embroidered onto the shoulder."
+	icon_state = "hoodieinteq"
+	item_state = "hoodieinteq"
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
+	hoodtype = /obj/item/clothing/head/hooded/coat/inteq
+
+/obj/item/clothing/head/hooded/coat/inteq
+	name = "inteq hood"
+	desc = "A comfortable looking brown hood."
+	icon_state = "hoodinteq"
+	item_state = "hoodinteq"
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
+
+/obj/item/clothing/suit/hooded/coat/inteq/Initialize()
+	. = ..()
+	allowed = GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/head/hooded/ablative
 	name = "ablative hood"

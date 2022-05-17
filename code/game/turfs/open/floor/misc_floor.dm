@@ -167,7 +167,6 @@
 	icon_state = "plastic"
 	thermal_conductivity = 0.1
 	heat_capacity = 900
-	custom_materials = list(/datum/material/plastic=500)
 	floor_tile = /obj/item/stack/tile/plastic
 	broken_states = list("plastic-damaged1","plastic-damaged2")
 
@@ -185,3 +184,9 @@
 
 /turf/open/floor/plating/rust/plasma
 	initial_gas_mix = "plasma=104;TEMP=293.15"
+
+/turf/open/floor/plasteel/telecomms_floor
+	icon_state = "tcomms"
+	base_icon_state = "tcomms"
+	icon = 'icons/turf/floors/misc.dmi'
+	color = null

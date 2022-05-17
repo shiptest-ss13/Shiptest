@@ -182,7 +182,7 @@
 /turf/open/floor/plasteel/rockvault
 	icon_state = "rockvault"
 	base_icon_state = "rockvault"
-	icon = 'whitesands/icons/turf/floors/misc.dmi'
+	icon = 'icons/turf/floors/misc.dmi'
 
 /turf/open/floor/plasteel/rockvault/alien
 	icon_state = "alienvault"
@@ -207,3 +207,6 @@
 
 /turf/open/floor/plasteel/sepia
 	color = "#938170"
+
+/turf/open/floor/plasteel/icecropolis
+	baseturfs = /turf/open/indestructible/necropolis/air

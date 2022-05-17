@@ -10,7 +10,7 @@
 	filename = "plexagonidwriter"
 	filedesc = "Plexagon Access Management"
 	program_icon_state = "id"
-	extended_desc = "Program for programming employee ID cards to access parts of the station."
+	extended_desc = "Program for programming standarized ID cards to access doors across the sector."
 	transfer_access = ACCESS_HEADS
 	requires_ntnet = 0
 	size = 8
@@ -340,7 +340,7 @@
 
 	data["authenticated"] = authenticated
 
-	if(computer)
+	if(computer && card_slot)
 		var/obj/item/card/id/id_card = card_slot.stored_card
 		data["has_id"] = !!id_card
 		data["id_name"] = id_card ? id_card.name : "-----"

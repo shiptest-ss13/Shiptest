@@ -55,6 +55,8 @@
 	item_state = "sabre"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	pickup_sound =  'sound/items/unsheath.ogg'
+	drop_sound = 'sound/items/handling/metal_drop.ogg'
 	flags_1 = CONDUCT_1
 	obj_flags = UNIQUE_RENAME
 	force = 15
@@ -75,11 +77,6 @@
 	if(attack_type == PROJECTILE_ATTACK)
 		final_block_chance = 0 //Don't bring a sword to a gunfight
 	return ..()
-
-/obj/item/melee/sabre/on_exit_storage(datum/component/storage/concrete/S)
-	var/obj/item/storage/belt/sabre/B = S.real_location()
-	if(istype(B))
-		playsound(B, 'sound/items/unsheath.ogg', 25, TRUE)
 
 /obj/item/melee/sabre/on_enter_storage(datum/component/storage/concrete/S)
 	var/obj/item/storage/belt/sabre/B = S.real_location()
@@ -415,7 +412,7 @@
 
 /obj/item/melee/supermatter_sword
 	name = "supermatter sword"
-	desc = "In a station full of bad ideas, this might just be the worst."
+	desc = "In a universe full of bad ideas, this might just be the worst."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "supermatter_sword"
 	item_state = "supermatter_sword"

@@ -32,18 +32,12 @@
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	stop_automated_movement_when_pulled = 1
 	blood_volume = BLOOD_VOLUME_NORMAL
-	var/obj/item/udder/udder = null
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 /mob/living/simple_animal/hostile/retaliate/goat/Initialize()
-	udder = new()
+	AddComponent(/datum/component/udder)
 	. = ..()
-
-/mob/living/simple_animal/hostile/retaliate/goat/Destroy()
-	qdel(udder)
-	udder = null
-	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/goat/Life()
 	. = ..()
@@ -57,7 +51,6 @@
 			LoseTarget()
 			src.visible_message("<span class='notice'>[src] calms down.</span>")
 	if(stat == CONSCIOUS)
-		udder.generateMilk()
 		eat_plants()
 		if(!pulledby)
 			for(var/direction in shuffle(list(1,2,4,8,5,6,9,10)))
@@ -89,14 +82,6 @@
 
 	if(eaten && prob(10))
 		say("Nom")
-
-/mob/living/simple_animal/hostile/retaliate/goat/attackby(obj/item/O, mob/user, params)
-	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass))
-		udder.milkAnimal(O, user)
-		return 1
-	else
-		return ..()
-
 
 /mob/living/simple_animal/hostile/retaliate/goat/AttackingTarget()
 	. = ..()
@@ -137,7 +122,6 @@
 	attack_sound = 'sound/weapons/punch1.ogg'
 	health = 50
 	maxHealth = 50
-	var/obj/item/udder/udder = null
 	gold_core_spawnable = FRIENDLY_SPAWN
 	blood_volume = BLOOD_VOLUME_NORMAL
 	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
@@ -146,20 +130,8 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 /mob/living/simple_animal/cow/Initialize()
-	udder = new()
+	AddComponent(/datum/component/udder)
 	. = ..()
-
-/mob/living/simple_animal/cow/Destroy()
-	qdel(udder)
-	udder = null
-	return ..()
-
-/mob/living/simple_animal/cow/attackby(obj/item/O, mob/user, params)
-	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass))
-		udder.milkAnimal(O, user)
-		return 1
-	else
-		return ..()
 
 /mob/living/simple_animal/cow/tamed()
 	. = ..()
@@ -172,11 +144,6 @@
 	D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
 	D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
 	D.drive_verb = "ride"
-
-/mob/living/simple_animal/cow/Life()
-	. = ..()
-	if(stat == CONSCIOUS)
-		udder.generateMilk()
 
 /mob/living/simple_animal/cow/attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_DISARM && icon_state != icon_dead)
@@ -380,30 +347,6 @@
 			qdel(src)
 	else
 		STOP_PROCESSING(SSobj, src)
-
-
-/obj/item/udder
-	name = "udder"
-
-/obj/item/udder/Initialize()
-	create_reagents(50)
-	reagents.add_reagent(/datum/reagent/consumable/milk, 20)
-	. = ..()
-
-/obj/item/udder/proc/generateMilk()
-	if(prob(5))
-		reagents.add_reagent(/datum/reagent/consumable/milk, rand(5, 10))
-
-/obj/item/udder/proc/milkAnimal(obj/O, mob/user)
-	var/obj/item/reagent_containers/glass/G = O
-	if(G.reagents.total_volume >= G.volume)
-		to_chat(user, "<span class='warning'>[O] is full.</span>")
-		return
-	var/transfered = reagents.trans_to(O, rand(5,10))
-	if(transfered)
-		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>", "<span class='notice'>You milk [src] using \the [O].</span>")
-	else
-		to_chat(user, "<span class='warning'>The udder is dry. Wait a bit longer...</span>")
 
 /mob/living/simple_animal/deer
 	name = "doe"

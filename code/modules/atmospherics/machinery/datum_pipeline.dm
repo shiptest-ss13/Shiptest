@@ -124,7 +124,7 @@
 				continue
 			var/datum/pipeline/E = I.parent
 			merge(E)
-		if(!members.Find(P))
+		if(!(P in members))
 			members += P
 			air.set_volume(air.return_volume() + P.volume)
 	else
@@ -233,7 +233,7 @@
 	. = other_airs + air
 	if(null in .)
 		stack_trace("[src]([REF(src)]) has one or more null gas mixtures, which may cause bugs. Null mixtures will not be considered in reconcile_air().")
-		listclearnulls(.)
+		return listclearnulls(.)
 
 /datum/pipeline/proc/empty()
 	for(var/datum/gas_mixture/GM in get_all_connected_airs())
