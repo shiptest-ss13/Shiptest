@@ -60,15 +60,25 @@
 /turf/open/floor/plating/rust,
 /area/ship/storage)
 "i" = (
-/obj/machinery/power/supermatter_crystal,
+/obj/machinery/power/supermatter_crystal{
+	layer = 3.4
+	},
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/layer2,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	filter_types = list("co2","bz","o2","plasma","water_vapor","nob","no2","tritium","freon","miasma","pluox","stim")
 	},
-/obj/structure/window/spawner,
-/obj/structure/window/spawner/west,
-/obj/structure/window/spawner/east,
-/obj/structure/window/spawner/north,
+/obj/structure/window/spawner{
+	pixel_y = -5
+	},
+/obj/structure/window/spawner/west{
+	pixel_x = -5
+	},
+/obj/structure/window/spawner/east{
+	pixel_x = 5
+	},
+/obj/structure/window/spawner/north{
+	pixel_y = 5
+	},
 /turf/open/floor/plating{
 	initial_gas_mix = "n2o=28, n2=72;TEMP=7"
 	},
