@@ -231,6 +231,7 @@
 		return TRUE
 
 	src.shipkey = shipkey
+	shipkey.forceMove(src)
 	to_chat(user, "<span class='notice'>You slot [shipkey] into [src].</span>")
 
 /obj/item/clothing/accessory/medal/gold/captain/AltClick(mob/user)
