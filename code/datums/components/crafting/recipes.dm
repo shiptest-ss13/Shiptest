@@ -935,3 +935,17 @@
 		/obj/item/paper = 1,
 		/obj/item/stack/rods = 1)
 	category = CAT_DRINK
+
+/datum/crafting_recipe/ash_garnish
+	name = "Ash Garnish"
+	result = /obj/item/garnish/ash
+	reqs = list(/datum/reagent/ash = 10)
+	time = 5
+	category = CAT_DRINK
+
+/datum/crafting_recipe/salt_garnish
+	name = "Salt Garnish"
+	result = /obj/item/garnish/salt
+	reqs = list(/datum/reagent/consumable/sodiumchloride = 10)
+	time = 5
+	category = CAT_DRINK
