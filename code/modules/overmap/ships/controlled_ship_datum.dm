@@ -105,7 +105,7 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 
 	if(shipkey.master_ship != src)
-		target_helm.say("Invalid shipkey usage attempted, forcibly locking down.")
+		target_helm?.say("Invalid shipkey usage attempted, forcibly locking down.")
 		helm_locked = TRUE
 	else
 		helm_locked = !helm_locked
@@ -276,3 +276,10 @@
 	master_ship.shipkey = null
 	master_ship = null
 	return ..()
+
+/obj/item/key/ship/attack_self(mob/user)
+	if(!master_ship || !Adjacent(user))
+		return ..()
+
+	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
+	return TRUE
