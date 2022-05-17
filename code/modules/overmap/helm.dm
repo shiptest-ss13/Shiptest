@@ -290,8 +290,12 @@
 		playsound(src, 'sound/machines/terminal_off.ogg', 25, FALSE)
 		use_power(0)
 
-/obj/machinery/computer/helm/attackby(obj/item/key/ship/key, mob/living/user, params)
-	if(!istype(key))
+/obj/machinery/computer/helm/attackby(obj/item/key, mob/living/user, params)
+	if(istype(key, /obj/item/clothing/accessory/medal/gold/captain))
+		var/obj/item/clothing/accessory/medal/gold/captain/medal = key
+		key = medal.shipkey
+
+	if(!istype(key, /obj/item/key/ship))
 		return ..()
 
 	current_ship?.attempt_key_usage(user, key, src)
