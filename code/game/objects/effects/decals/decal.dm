@@ -7,15 +7,12 @@
 
 /obj/effect/decal/Initialize()
 	. = ..()
-	if(turf_loc_check && (!isturf(loc) || NeverShouldHaveComeHere(loc)))
+	if(turf_loc_check && (!isturf(loc) || invalid_turf_spawn(loc)))
 		return INITIALIZE_HINT_QDEL
 
 /obj/effect/decal/blob_act(obj/structure/blob/B)
 	if(B && B.loc == loc)
 		qdel(src)
-
-/obj/effect/decal/proc/NeverShouldHaveComeHere(turf/T)
-	return isclosedturf(T) || isgroundlessturf(T)
 
 /obj/effect/decal/ex_act(severity, target)
 	qdel(src)
@@ -26,7 +23,7 @@
 
 /obj/effect/decal/HandleTurfChange(turf/T)
 	..()
-	if(T == loc && NeverShouldHaveComeHere(T))
+	if(T == loc && invalid_turf_spawn(T))
 		qdel(src)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

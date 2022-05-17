@@ -1551,3 +1551,6 @@
 	base_pixel_y = new_value
 
 	pixel_y = pixel_y + base_pixel_y - .
+
+/atom/proc/invalid_turf_spawn(turf/floor)
+	return isclosedturf(floor) || isgroundlessturf(floor)

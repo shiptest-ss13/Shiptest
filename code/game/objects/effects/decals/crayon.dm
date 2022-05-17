@@ -30,7 +30,7 @@ GLOBAL_LIST(gang_tags)
 	if(main)
 		paint_colour = main
 	add_atom_colour(paint_colour, FIXED_COLOUR_PRIORITY)
-/obj/effect/decal/cleanable/crayon/NeverShouldHaveComeHere(turf/T)
+/obj/effect/decal/cleanable/crayon/invalid_turf_spawn(turf/T)
 	return isgroundlessturf(T)
 
 /obj/effect/decal/cleanable/crayon/gang

@@ -261,6 +261,8 @@
 		return
 	if(!T)
 		T = get_turf(src)
+	if ( invalid_turf_spawn( T ) )
+		return
 
 	var/list/temp_blood_DNA
 	if(small_drip)
