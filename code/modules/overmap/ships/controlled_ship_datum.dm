@@ -109,6 +109,7 @@
 		helm_locked = TRUE
 	else
 		helm_locked = !helm_locked
+		playsound(src, helm_locked ? 'sound/machines/button4.ogg' : 'sound/machines/button3.ogg')
 
 	for(var/obj/machinery/computer/helm/helm as anything in helms)
 		SStgui.close_uis(helm)
