@@ -103,6 +103,15 @@
 	w_class = WEIGHT_CLASS_TINY
 	mine_experience = 0 //its sand
 
+/obj/item/stack/ore/glass/whitesands
+	name = "white sand pile"
+	icon = 'whitesands/icons/obj/mining.dmi'
+	icon_state = "whitesands"
+	item_state = "whitesands"
+	singular_name = "white sand pile"
+	grind_results = list(/datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/silicon = 10)
+	mine_experience = 0 // it's very pretty sand, but still sand
+
 GLOBAL_LIST_INIT(sand_recipes, list(\
 		new /datum/stack_recipe("sandstone", /obj/item/stack/sheet/mineral/sandstone, 1, 1, 50),\
 		new /datum/stack_recipe("aesthetic volcanic floor tile", /obj/item/stack/tile/basalt, 2, 1, 50)\
