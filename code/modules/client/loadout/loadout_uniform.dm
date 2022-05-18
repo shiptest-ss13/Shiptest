@@ -276,4 +276,9 @@
 	path = /obj/item/clothing/under/trek/command/ent
 
 /datum/gear/uniform/trek_ent_engsec
-	display_name = "enterprise engineering/security unifo
+	display_name = "enterprise engineering/security uniform"
+	path = /obj/item/clothing/under/trek/engsec/ent
+
+/datum/gear/uniform/trek_ent_medsci
+	display_name = "enterprise medical/science uniform"
+	path = /obj/item/clothing/under/trek/medsci/ent
