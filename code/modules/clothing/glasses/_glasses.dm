@@ -108,6 +108,12 @@
 	if(slot == ITEM_SLOT_EYES)
 		return 1
 
+/obj/item/clothing/glasses/science/prescription
+	name = "prescription science goggles"
+	desc = "A pair of prescription glasses fitted with an analyzer for scanning items and reagents. "
+	icon_state = "prescriptionpurple"
+	vision_correction = 1
+
 /obj/item/clothing/glasses/night
 	name = "night vision goggles"
 	desc = "You can totally see in the dark now!"
@@ -540,3 +546,13 @@
 		xray = !xray
 		var/mob/living/carbon/human/H = user
 		H.update_sight()
+
+/obj/item/clothing/glasses/cheapsuns
+	name = "cheap sunglasses"
+	desc = "Strangely ancient technology used to help provide rudimentary eye cover."
+	icon_state = "sun"
+	item_state = "sunglasses"
+	darkness_view = 1
+	tint = 1
+	glass_colour_type = /datum/client_colour/glass_colour/gray
+	dog_fashion = /datum/dog_fashion/head

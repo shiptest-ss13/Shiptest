@@ -5,6 +5,8 @@
 	use_power = IDLE_POWER_USE
 	device_type = BINARY
 	layer = GAS_PUMP_LAYER
+	var/uid
+	var/static/gl_uid = 1
 
 /obj/machinery/atmospherics/components/binary/SetInitDirections()
 	switch(dir)
@@ -23,3 +25,7 @@
 			return 1
 		if(2, 4)
 			return 2
+
+/obj/machinery/atmospherics/components/binary/proc/assign_uid_vents()
+	uid = num2text(gl_uid++)
+	return uid

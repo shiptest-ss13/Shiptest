@@ -21,7 +21,7 @@
 	minimum_pressure = WARNING_LOW_PRESSURE + 10
 	maximum_pressure = LAVALAND_EQUIPMENT_EFFECT_PRESSURE - 1
 
-	minimum_temp = BODYTEMP_COLD_DAMAGE_LIMIT + 1
+	minimum_temp = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 1
 	maximum_temp = 350
 
 /datum/atmosphere/icemoon

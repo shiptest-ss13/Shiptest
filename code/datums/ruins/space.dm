@@ -24,38 +24,6 @@
 	name = "Excavator DK Class"
 	description = "A heavily damaged DK class excavator"
 
-/datum/map_template/ruin/space/asteroid1
-	id = "asteroid1"
-	suffix = "asteroid1.dmm"
-	name = "Asteroid 1"
-	description = "I-spy with my little eye, something beginning with R."
-
-
-/datum/map_template/ruin/space/asteroid2
-	id = "asteroid2"
-	suffix = "asteroid2.dmm"
-	name = "Asteroid 2"
-	description = "Oh my god, a giant rock!"
-
-/datum/map_template/ruin/space/asteroid3
-	id = "asteroid3"
-	suffix = "asteroid3.dmm"
-	name = "Asteroid 3"
-	description = "This asteroid floating in space has no official designation, because the scientist that discovered it deemed it 'super dull'."
-
-/datum/map_template/ruin/space/asteroid4
-	id = "asteroid4"
-	suffix = "asteroid4.dmm"
-	name = "Asteroid 4"
-	description = "Nanotrasen Escape Pods have a 100%* success rate, and a 99%* customer satisfaction rate. \
-	*Please note that these statistics are taken from pods that have successfully docked with a recovery vessel."
-
-/datum/map_template/ruin/space/asteroid5
-	id = "asteroid5"
-	suffix = "asteroid5.dmm"
-	name = "Asteroid 5"
-	description = "Oh my god, another giant rock!"
-
 /datum/map_template/ruin/space/deep_storage
 	id = "deep-storage"
 	suffix = "deepstorage.dmm"
@@ -69,47 +37,6 @@
 	name = "Derelict Tradepost"
 	description = "A once-bustling tradestation that handled imports and exports from nearby stations now lays eerily dormant. \
 	The last received message was a distress call from one of the on-board officers, but we had no success in making contact again."
-
-/datum/map_template/ruin/space/derelict1
-	id = "derelict1"
-	suffix = "derelict1.dmm"
-	name = "Derelict 1"
-	description = "Nothing to see here citizen, move along, certainly no xeno outbreaks on this piece of station debris. That purple stuff? It's uh... station nectar. \
-	It's a top secret research installation."
-
-/datum/map_template/ruin/space/derelict2
-	id = "derelict2"
-	suffix = "derelict2.dmm"
-	name = "Dinner for Two"
-	description = "Oh this is the night\n\
-		It's a beautiful night\n\
-		And we call it bella notte"
-
-/datum/map_template/ruin/space/derelict3
-	id = "derelict3"
-	suffix = "derelict3.dmm"
-	name = "Derelict 3"
-	description = "These hulks were once part of a larger structure, where the three great \[REDACTED\] were forged."
-
-/datum/map_template/ruin/space/derelict4
-	id = "derelict4"
-	suffix = "derelict4.dmm"
-	name = "Derelict 4"
-	description = "CentCom ferries have never crashed, will never crash, there is no current investigation into a crashed ferry, and we will not let Internal Affairs trample over high security \
-	information in the name of this baseless witchhunt."
-
-/datum/map_template/ruin/space/derelict5
-	id = "derelict5"
-	suffix = "derelict5.dmm"
-	name = "Derelict 5"
-	description = "The plan is, we put a whole bunch of crates full of treasure in this disused warehouse, launch it into space, and then ignore it. Forever."
-
-/datum/map_template/ruin/space/derelict6
-	id = "derelict6"
-	suffix = "derelict6.dmm"
-	name = "Derelict 6"
-	description = "The hush-hush of Nanotrasen when it comes to stations seemingly vanishing off the radar is an interesting topic, theories of nuclear destruction float about while Nanotrasen \
-	flat-out denies said stations ever existing."
 
 /datum/map_template/ruin/space/empty_shell
 	id = "empty-shell"
@@ -129,13 +56,6 @@
 	name = "Syndicate Ambush"
 	description = "A caravan route used by passing cargo freights has been ambushed by a salvage team manned by the syndicate. \
 	The caravan managed to send off a distress message before being surrounded, their video feed cutting off as the sound of gunfire and a parrot was heard."
-
-/datum/map_template/ruin/space/originalcontent
-	id = "paperwizard"
-	suffix = "originalcontent.dmm"
-	name = "A Giant Ball of Paper in Space"
-	description = "Sightings of a giant wad of paper hurling through the depths of space have been recently reported by multiple outposts near this sector. \
-	A giant wad of paper, really? Damn prank callers."
 
 /datum/map_template/ruin/space/mech_transport
 	id = "mech-transport"
@@ -308,3 +228,70 @@
 	suffix = "dangerous_research.dmm"
 	name = "Occult Research Station"
 	description = "This station was deemed unsuitable for continued experiments, and quickly abandoned."
+
+/datum/map_template/ruin/space/macspace
+	id = "fast_food"
+	suffix = "Fast_Food.dmm"
+	name = "Mac Space Restaurant"
+	description = "A fast food reataurant in space."
+
+/datum/map_template/ruin/space/scav_mining
+	id = "mining_asteroid"
+	suffix = "scav_mining.dmm"
+	name = "Mining asteroid"
+	description = "An abandoned mining operation on an asteroid that now has new ocupants that is not happy to se you"
+
+/datum/map_template/ruin/space/power_puzzle
+	id = "power_puzzle"
+	suffix = "power_puzzle.dmm"
+	name = "Power Puzzle"
+	description = "an abandoned secure storage location. there is no power left in the batteries and the former ocupants locked it pretty tight before leaving.\
+	You will have to power areas to raise the bolts on the doors. look out for secrets."
+
+/datum/map_template/ruin/space/spacegym
+	id = "Space_Gym"
+	suffix = "spacegym.dmm"
+	name = "Space Gym"
+	description = "A gym, lost in space, where many grunts and moaning could be heard."
+
+/datum/map_template/ruin/space/oldshuttle
+	id = "oldcode-nukeops"
+	suffix = "oldcodeops.dmm"
+	name = "Strange Infiltrator"
+	description = "A nuclear operative's ship, drifing along the stars. This thing looks like it belongs in ancient times."
+
+/datum/map_template/ruin/space/transport18
+	id = "transport18"
+	suffix = "transport18.dmm"
+	name = "Booze Cruise"
+	description = "A freighter, damaged beyond repair and surrounded by a cloud of aluminium and... beer foam?"
+
+/datum/map_template/ruin/space/fueldepot
+	id = "fueldepot"
+	suffix = "fueldepot.dmm"
+	name = "Fuel Depot"
+	description = "An orbital refueling station with the remains of a ship lodged among the debris."
+
+/datum/map_template/ruin/space/nuclear_dump
+	id = "radioactivedump"
+	suffix = "nuclear_dump.dmm"
+	name = "Nuclear Waste Dump"
+	description = "An abandoned nuclear waste disposal zone, a relic of old-age spaceflight and a death sentence to any who dare enter..."
+
+/datum/map_template/ruin/space/ntfacility
+	id = "ntfacility"
+	suffix = "ntfacility.dmm"
+	name = "Abandoned Facility"
+	description = "A NT research station. Something has gone horribly wrong here."
+
+/datum/map_template/ruin/space/astraeus
+	id = "astraeus"
+	suffix = "astraeus.dmm"
+	name = "Astraeus Ruin"
+	description = "This vessel served a lengthy period in the Nanotrasen fleet, before an accident in the munitions bay caused to to be destroyed while in active combat."
+
+/datum/map_template/ruin/space/glade
+	id = "dark_glade"
+	suffix = "dark_glade.dmm"
+	name = "Dark Glade"
+	description = "It's always dark in the ancient glade."

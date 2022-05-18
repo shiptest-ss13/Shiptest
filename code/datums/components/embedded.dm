@@ -185,14 +185,17 @@
 
 /// Called when a carbon with an object embedded/stuck to them inspects themselves and clicks the appropriate link to begin ripping the item out. This handles the ripping attempt, descriptors, and dealing damage, then calls safe_remove()
 /datum/component/embedded/proc/ripOutCarbon(datum/source, obj/item/I, obj/item/bodypart/limb)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	if(I != weapon || src.limb != limb)
 		return
 
 	var/mob/living/carbon/victim = parent
 	var/time_taken = rip_time * weapon.w_class
+	INVOKE_ASYNC(src, .proc/complete_rip_out, victim, I, limb, time_taken)
 
+/// everything async that ripOut used to do
+/datum/component/embedded/proc/complete_rip_out(mob/living/carbon/victim, obj/item/I, obj/item/bodypart/limb, time_taken)
 	victim.visible_message("<span class='warning'>[victim] attempts to remove [weapon] from [victim.p_their()] [limb.name].</span>","<span class='notice'>You attempt to remove [weapon] from your [limb.name]... (It will take [DisplayTimeText(time_taken)].)</span>")
 	if(do_after(victim, time_taken, target = victim))
 		if(!weapon || !limb || weapon.loc != victim || !(weapon in limb.embedded_objects))
@@ -213,7 +216,7 @@
 /// This proc handles the final step and actual removal of an embedded/stuck item from a carbon, whether or not it was actually removed safely.
 /// Pass TRUE for to_hands if we want it to go to the victim's hands when they pull it out
 /datum/component/embedded/proc/safeRemoveCarbon(to_hands)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	var/mob/living/carbon/victim = parent
 	limb.embedded_objects -= weapon
@@ -236,7 +239,7 @@
 		return
 
 	if(to_hands)
-		victim.put_in_hands(weapon)
+		INVOKE_ASYNC(victim, /mob.proc/put_in_hands, weapon)
 	else
 		weapon.forceMove(get_turf(victim))
 

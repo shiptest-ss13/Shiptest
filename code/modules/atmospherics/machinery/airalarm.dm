@@ -202,6 +202,8 @@
 	var/list/air_scrub_names = list()
 	var/list/air_vent_info = list()
 	var/list/air_scrub_info = list()
+	var/list/dp_air_vent_names = list()
+	var/list/dp_air_vent_info = list()
 
 /obj/machinery/airalarm/New(loc, ndir, nbuild)
 	..()

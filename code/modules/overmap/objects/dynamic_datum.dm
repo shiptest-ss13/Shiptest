@@ -43,7 +43,7 @@
 
 /datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
 	if(!load_level())
-		return FALSE
+		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 	else
 		var/dock_to_use = null
 		for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -52,7 +52,7 @@
 				break
 
 		if(!dock_to_use)
-			return FALSE
+			return new /datum/docking_ticket(_docking_error = "[src] does not have any free docks. Aborting docking.")
 		adjust_dock_to_shuttle(dock_to_use, dock_requester.shuttle_port)
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
 
@@ -71,8 +71,7 @@
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	var/list/results = SSovermap.get_unused_overmap_square()
-	Move(results["x"], results["y"])
-	choose_level_type()
+	overmap_move(results["x"], results["y"])
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock
@@ -81,6 +80,8 @@
 	if(mapzone)
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
+
+	choose_level_type()
 
 /**
   * Chooses a type of level for the dynamic level to use.
@@ -155,7 +156,13 @@
 			planet = DYNAMIC_WORLD_SPACERUIN
 			token.icon_state = "strange_event"
 			token.color = null
-	token.desc += !preserve_level && "It may not still be here if you leave it."
+
+	#ifndef QUICK_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
+	load_level() //Load the level whenever it's randomised
+	#endif
+
+	if(!preserve_level)
+		token.desc += "It may not still be here if you leave it."
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
@@ -177,8 +184,6 @@
 /datum/overmap/dynamic/proc/load_level()
 	if(mapzone)
 		return TRUE
-	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
-		return FALSE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, ruin_type = template)
 	if(!length(dynamic_encounter_values))
