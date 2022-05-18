@@ -2453,3 +2453,31 @@
 			addtimer(CALLBACK(C, /mob/living/carbon.proc/adjustOrganLoss, ORGAN_SLOT_BRAIN, 200), 5 SECONDS) //Deathblow to the brain
 		else
 			addtimer(CALLBACK(L, /mob/living.proc/gib), 5 SECONDS)
+
+/datum/reagent/calcium
+	name = "Calcium"
+	description = "A dull gray metal important to bones."
+	reagent_state = SOLID
+	color = "#68675c"
+	metabolization_rate = REAGENTS_METABOLISM
+
+/datum/reagent/ash_fibers
+	name = "Ashen Fibers"
+	description = "Ground plant fibers from a cave fern. Useful for medicines."
+	reagent_state = SOLID
+	color = "#5a4f42"
+	taste_mult = 0
+
+/datum/reagent/titanium
+	name = "Titanium"
+	description = "A light, reflective grey metal used in ship construction."
+	reagent_state = SOLID
+	color = "#c2c2c2"
+
+/datum/reagent/mutationtoxin/kobold
+	name = "Kobold Mutation Toxin"
+	description = "An ashen toxin. Something about this seems lesser."
+	color = "#5EFF3B" //RGB: 94, 255, 59
+	race = /datum/species/lizard/ashwalker/kobold
+	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
+	taste_description = "short savagery"

@@ -3,6 +3,7 @@
 /obj/machinery/portable_atmospherics/canister
 	name = "canister"
 	desc = "A canister for the storage of gas."
+	icon = 'whitesands/icons/obj/atmos.dmi'
 	icon_state = "yellow"
 	density = TRUE
 	base_icon_state = "yellow" //Used to make dealing with breaking the canister less hellish.
@@ -233,17 +234,14 @@
 		. += "can-open"
 	if(connected_port)
 		. += "can-connector"
-	/*WS Edit - Use our overlays
-	var/pressure = air_contents.return_pressure()
-	if(pressure >= 40 * ONE_ATMOSPHERE)
-		. += "can-o3"
-	else if(pressure >= 10 * ONE_ATMOSPHERE)
-		. += "can-o2"
-	else if(pressure >= 5 * ONE_ATMOSPHERE)
-		. += "can-o1"
-	else if(pressure >= 10)
-		. += "can-o0"
-	WS End */
+	if(machine_stat & BROKEN)
+		return
+	var/pressure = air_contents?.return_pressure()
+	var/pressure_display = round(pressure / 500)
+	if(pressure_display > 10)
+		pressure_display = 10
+	if(pressure > 100)
+		. += "can-o" + num2text(pressure_display)
 
 
 /obj/machinery/portable_atmospherics/canister/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
