@@ -19,6 +19,8 @@
 	var/integrity = 3
 	var/volume = 70
 
+	supports_variations = VOX_VARIATION
+
 /obj/item/tank/ui_action_click(mob/user)
 	toggle_internals(user)
 

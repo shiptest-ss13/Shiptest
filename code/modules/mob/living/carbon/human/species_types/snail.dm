@@ -6,7 +6,6 @@
 	species_traits = list(MUTCOLORS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_ALWAYS_CLEAN, TRAIT_NOSLIPALL)
 	attack_verb = "slap"
-	say_mod = "slurs"
 	coldmod = 0.5 //snails only come out when its cold and wet
 	burnmod = 2
 	speedmod = 6
@@ -28,11 +27,12 @@
 	species_r_leg = /obj/item/bodypart/r_leg/snail
 
 /datum/species/snail/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
-	if(istype(chem,/datum/reagent/consumable/sodiumchloride))
+	if(chem.type == /datum/reagent/consumable/sodiumchloride)
 		H.adjustFireLoss(2)
 		playsound(H, 'sound/weapons/sear.ogg', 30, TRUE)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
-		return 1
+		return TRUE
+	return ..()
 
 /datum/species/snail/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()

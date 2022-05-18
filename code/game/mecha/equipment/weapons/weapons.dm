@@ -212,11 +212,16 @@
 	name = "general ballistic weapon"
 	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
 	var/projectiles
+	var/projectiles_max //maximum amount of projectiles that can be chambered.
 	var/projectiles_cache //ammo to be loaded in, if possible.
 	var/projectiles_cache_max
 	var/projectile_energy_cost
 	var/disabledreload //For weapons with no cache (like the rockets) which are reloaded by hand
 	var/ammo_type
+
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/Initialize() //initial(projectiles) prevented me from making mech weapons start empty TODO: PORT ALL OF TG MECH IMPROVEMENTS
+	. = ..()
+	projectiles_max ||= projectiles
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/get_shot_amount()
 	return min(projectiles, projectiles_per_shot)
@@ -229,12 +234,12 @@
 	return 1
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/get_equip_info()
-	return "[..()] \[[src.projectiles][projectiles_cache_max &&!projectile_energy_cost?"/[projectiles_cache]":""]\][!disabledreload &&(src.projectiles < initial(src.projectiles))?" - <a href='?src=[REF(src)];rearm=1'>Rearm</a>":null]"
+	return "[..()] \[[src.projectiles][projectiles_cache_max &&!projectile_energy_cost?"/[projectiles_cache]":""]\][!disabledreload &&(src.projectiles < projectiles_max)?" - <a href='?src=[REF(src)];rearm=1'>Rearm</a>":null]"
 
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/rearm()
-	if(projectiles < initial(projectiles))
-		var/projectiles_to_add = initial(projectiles) - projectiles
+	if(projectiles < projectiles_max)
+		var/projectiles_to_add = projectiles_max - projectiles
 
 		if(projectile_energy_cost)
 			while(chassis.get_charge() >= projectile_energy_cost && projectiles_to_add)
@@ -328,6 +333,18 @@
 	harmful = TRUE
 	ammo_type = "lmg"
 
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/mounted
+	name = "\improper mounted HMG"
+	desc = "A heavy calibre machine gun commonly used by motorized forces, famed for it's ability to give people on the recieving end more holes than normal. It is modified to be attached to vehicles"
+	projectile = /obj/projectile/bullet/lmg
+	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
+	projectiles = 0
+	projectiles_max = 100
+	projectiles_cache = 0
+	projectiles_cache_max = 100
+	equip_cooldown = 1 SECONDS
+	projectile_delay = 1
+
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
 	name = "\improper SRM-8 missile rack"
 	desc = "A weapon for combat exosuits. Launches light explosive missiles."
@@ -342,8 +359,12 @@
 	harmful = TRUE
 	ammo_type = "missiles_he"
 
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/spacecops
-	projectiles = 420
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/tank
+	name = "\improper tank gun"
+	desc = "A long barreled cannon modified to shoot rockets."
+	fire_sound = 'sound/weapons/gun/general/tank_cannon.ogg'
+	projectiles_max = 8
+	projectiles = 0
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/breaching
 	name = "\improper BRM-6 missile rack"

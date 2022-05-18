@@ -16,6 +16,7 @@
 	mining_point_vendor = TRUE
 	default_price = 100
 	extra_price = 200
+	all_items_free = FALSE
 	// Mining products are handled differently, because I am too lazy to convert this list stolen from the old vendor.
 	products = list( //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
 		/obj/item/stack/marker_beacon/thirty = 6,
@@ -85,6 +86,10 @@
 		RedeemVoucher(I, user)
 		return
 	return ..()
+
+/obj/machinery/vending/mining_equipment/freebie(mob/fatty, freebies)
+	message_admins("proc freebie was called on [src] which should never happen. I am causing a runtime to print the stack trace. inform a maintainer")
+	CRASH("freebie called on [src]")
 
 /obj/machinery/vending/mining_equipment/proc/RedeemVoucher(obj/item/mining_voucher/voucher, mob/redeemer)
 	var/selection = show_radial_menu(redeemer, src, voucher_items, require_near = TRUE, tooltips = TRUE)

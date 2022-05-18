@@ -679,3 +679,9 @@
 	target = new_target
 	if(target)
 		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del, TRUE)
+
+/mob/living/simple_animal/hostile/proc/set_camp_faction(tag)
+	src.faction = list()
+	if (length(initial(src.faction)) > 0)
+		src.faction += initial(src.faction)
+	src.faction += tag

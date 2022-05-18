@@ -65,6 +65,9 @@
 	///Basically determines whether or not more of the job can be opened.
 	var/officer = FALSE
 
+	var/list/alt_titles = list()
+	var/senior_title
+
 /datum/job/New(new_title, datum/outfit/new_outfit)
 	if(new_title)
 		title = new_title

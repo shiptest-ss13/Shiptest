@@ -9,6 +9,8 @@
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Station_Engineer" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Maintenance Technician", "Engine Technician", "Electrician", "Telecommunications Specialist", "Junior Engineer")
+	senior_title = "Senior Engineer"
 
 	outfit = /datum/outfit/job/engineer
 
@@ -112,6 +114,14 @@
 //WS Edit End - Alt-Job Titles
 
 //Shiptest Outfits
+
+/datum/outfit/job/engineer/minutemen
+	name = "Mechanic (Colonial Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	accessory = /obj/item/clothing/accessory/armband/engine
+	head = /obj/item/clothing/head/hardhat/dblue
+	suit =  /obj/item/clothing/suit/hazardvest
 
 /datum/outfit/job/engineer/solgov
 	name = "Ship Engineer (SolGov)"

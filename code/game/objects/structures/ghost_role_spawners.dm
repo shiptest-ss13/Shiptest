@@ -607,7 +607,7 @@
 	The last thing you remember is the station's Artificial Program telling you that you would only be asleep for eight hours. As you open \
 	your eyes, everything seems rusted and broken, a dark feeling swells in your gut as you climb out of your pod."
 	important_info = "Work as a team with your fellow survivors and do not abandon them."
-	uniform = /obj/item/clothing/under/rank/security/old //WS edit - Command/Sec resprite
+	uniform = /obj/item/clothing/under/rank/security/officer/nt
 	shoes = /obj/item/clothing/shoes/jackboots
 	id = /obj/item/card/id/away/old/sec
 	r_pocket = /obj/item/restraints/handcuffs
@@ -927,3 +927,33 @@
 	flavour_text = "You are being sent in to stop a treat. Your objective is- wait where the hell are you? You still have your gear but... you have no idea where you are?"
 	assignedrole = "Lost SolGov Commander"
 	outfit = /datum/outfit/solgov/commander
+
+/obj/effect/mob_spawn/human/slime_rancher
+	name = "slime receptical"
+	desc = "A fairly rare machine that seems to be used for storing and molding jelly. You can see the vague shape of a humanoid in it."
+	icon = 'icons/obj/lavaland/spawners.dmi'
+	icon_state = "terrarium"
+	density = TRUE
+	roundstart = FALSE
+	death = FALSE
+	mob_species = /datum/species/jelly
+	short_desc = "You are a humble slime rancher, taking care of your slimes and keeping them safe from the cold."
+	flavour_text = "You bought this farm when it was a simple Syndicate bioweapons testing area, \
+	and renovated it with your partner to become a real ranch. \
+	Take care of the slimes, and make sure to keep them safe from the dangerous ice outside. "
+	important_info = "Don't let the cold seep in and destroy your perfect life."
+	uniform = /obj/item/clothing/under/rank/rnd/scientist/xenobiologist/skirt
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	id = /obj/item/card/id/away/slime
+	assignedrole = "Slime Rancher"
+
+/obj/effect/mob_spawn/human/slime_rancher/special(mob/living/new_spawn)
+	var/slime_name = pick("Maroon", "Funky", "Squishy", "Bubblegum", "Gummy", "Pinkie Pie", "Rainbow Dash", "Beatrix LeBeau", "Chartreuse", "Chocolate")
+	new_spawn.fully_replace_character_name(null,slime_name)
+	if(ishuman(new_spawn))
+		var/mob/living/carbon/human/H = new_spawn
+		H.update_body()
+
+/obj/effect/mob_spawn/human/slime_rancher/Destroy()
+	new/obj/structure/fluff/empty_terrarium(get_turf(src))
+	return ..()

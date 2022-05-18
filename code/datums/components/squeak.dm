@@ -20,13 +20,18 @@
 	///sound exponent for squeak. Defaults to 10 as squeaking is loud and annoying enough.
 	var/sound_falloff_exponent = 10
 
+	///what we set connect_loc to if parent is an item
+	var/static/list/item_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/play_squeak_crossed,
+	)
+
 /datum/component/squeak/Initialize(custom_sounds, volume_override, chance_override, step_delay_override, use_delay_override, extrarange, falloff_exponent, fallof_distance)
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 	RegisterSignal(parent, list(COMSIG_ATOM_ENTERED, COMSIG_ATOM_BLOB_ACT, COMSIG_ATOM_HULK_ATTACK, COMSIG_PARENT_ATTACKBY), .proc/play_squeak)
 	if(ismovable(parent))
 		RegisterSignal(parent, list(COMSIG_MOVABLE_BUMP, COMSIG_MOVABLE_IMPACT), .proc/play_squeak)
-		RegisterSignal(parent, COMSIG_MOVABLE_CROSSED, .proc/play_squeak_crossed)
+		AddComponent(/datum/component/connect_loc_behalf, parent, item_connections)
 		RegisterSignal(parent, COMSIG_ITEM_WEARERCROSSED, .proc/play_squeak_crossed)
 		RegisterSignal(parent, COMSIG_MOVABLE_DISPOSING, .proc/disposing_react)
 		if(isitem(parent))
@@ -53,6 +58,10 @@
 	if(isnum(fallof_distance))
 		sound_falloff_distance = fallof_distance
 
+/datum/component/squeak/UnregisterFromParent()
+	. = ..()
+	qdel(GetComponent(/datum/component/connect_loc_behalf))
+
 /datum/component/squeak/proc/play_squeak()
 	SIGNAL_HANDLER
 
@@ -71,25 +80,17 @@
 	else
 		steps++
 
-/datum/component/squeak/proc/play_squeak_crossed(datum/source, atom/movable/AM)
+/datum/component/squeak/proc/play_squeak_crossed(datum/source, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	SIGNAL_HANDLER
 
-	if(isitem(AM))
-		var/obj/item/I = AM
+	if(isitem(arrived))
+		var/obj/item/I = arrived
 		if(I.item_flags & ABSTRACT)
 			return
-		else if(istype(AM, /obj/projectile))
-			var/obj/projectile/P = AM
-			if(P.original != parent)
-				return
-	if(istype(AM, /obj/effect/dummy/phased_mob)) //don't squeek if they're in a phased/jaunting container.
+	if(arrived.movement_type & (FLYING|FLOATING) || !arrived.has_gravity())
 		return
-	if(ismob(AM))
-		var/mob/M = AM
-		if(M.movement_type & (FLYING|FLOATING))
-			return
 	var/atom/current_parent = parent
-	if(isturf(current_parent.loc))
+	if(isturf(current_parent?.loc))
 		play_squeak()
 
 /datum/component/squeak/proc/use_squeak()
