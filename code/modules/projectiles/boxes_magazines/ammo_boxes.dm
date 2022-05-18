@@ -261,3 +261,12 @@
 	icon_state = "foambox_riot"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
 	custom_materials = list(/datum/material/iron = 50000)
+
+/obj/item/ammo_box/magazine/zip_ammo_9mm
+	name = "budget pistol magazine(9mm)"
+	desc = "A knockoff commander magazine that can only hold 4 rounds."
+	icon_state = "ZipAmmo9mm"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 4
+	custom_materials = list(/datum/material/iron = 20000)

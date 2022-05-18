@@ -111,3 +111,11 @@
 /datum/movespeed_modifier/mob_config_speedmod
 	variable = TRUE
 	flags = IGNORE_NOSLOW
+
+/datum/movespeed_modifier/mouse_cheese
+	multiplicative_slowdown = -1
+
+/datum/movespeed_modifier/bones
+	variable = TRUE
+	movetypes = GROUND
+	flags = IGNORE_NOSLOW

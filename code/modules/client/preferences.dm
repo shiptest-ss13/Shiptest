@@ -108,6 +108,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)",
 							"kepori_feathers" = "Plain",
 							"kepori_body_feathers" = "Plain",
+							"vox_head_quills" = "Plain",
+							"vox_neck_quills" = "Plain",
 							"flavor_text" = "",
 							"body_size" = "Normal"
 						)
@@ -563,6 +565,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+
 			if("spider_legs" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -574,6 +577,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+
 			if("spider_spinneret" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -585,6 +589,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+
 			if("spider_mandibles" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -596,6 +601,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+
 			if("squid_face" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -674,6 +680,34 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=kepori_body_feathers;task=input'>[features["kepori_body_feathers"]]</a><BR>"
 				dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("vox_head_quills" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Vox Head Quills</h3>"
+				dat += "<a href='?_src_=prefs;preference=vox_head_quills;task=input'>[features["vox_head_quills"]]</a><BR>"
+				//dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><BR>"
+				//dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIR_COLOR]'>[(randomise[RANDOM_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("vox_neck_quills" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Vox Neck Quills</h3>"
+				dat += "<a href='?_src_=prefs;preference=vox_neck_quills;task=input'>[features["vox_neck_quills"]]</a><BR>"
+				//dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
+				//dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -1521,7 +1555,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("name")
 					real_name = pref_species.random_name(gender,1)
 				if("age")
-					age = rand(AGE_MIN, AGE_MAX)
+					age = rand(pref_species.species_age_min, pref_species.species_age_max)
 				if("hair")
 					hair_color = random_short_color()
 				if("hairstyle")
@@ -1564,7 +1598,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					features["mcolor"] = pref_species.default_color
 				user << browse(null, "window=speciespick")
 				ShowChoices(user)
-				return 1
+				age = rand(pref_species.species_age_min, pref_species.species_age_max)
+				return TRUE
 
 			if(href_list["lookatspecies"])
 				species_looking_at = href_list["lookatspecies"]
@@ -1618,9 +1653,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
 
 				if("age")
-					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Character Preference") as num|null
+					var/new_age = input(user, "Choose your character's age:\n([pref_species.species_age_min]-[pref_species.species_age_max])", "Character Preference") as num|null
 					if(new_age)
-						age = max(min( round(text2num(new_age)), AGE_MAX),AGE_MIN)
+						age = clamp(round(text2num(new_age)), pref_species.species_age_min, pref_species.species_age_max)
 
 				if("flavor_text")
 					var/msg = sanitize(stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Flavor Text", features["flavor_text"], 4096, TRUE))
@@ -1893,6 +1928,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_kepori_feathers = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.kepori_body_feathers_list
 					if (new_kepori_feathers)
 						features["kepori_body_feathers"] = new_kepori_feathers
+
+				if("vox_head_quills")
+					var/new_vox_head_quills
+					new_vox_head_quills = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.vox_head_quills_list
+					if (new_vox_head_quills)
+						features["vox_head_quills"] = new_vox_head_quills
+
+				if("vox_neck_quills")
+					var/new_vox_neck_quills
+					new_vox_neck_quills = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.vox_neck_quills_list
+					if (new_vox_neck_quills)
+						features["vox_neck_quills"] = new_vox_neck_quills
 
 				if("s_tone")
 					var/new_s_tone = input(user, "Choose your character's skin-tone:", "Character Preference")  as null|anything in GLOB.skin_tones
@@ -2272,8 +2319,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.name = character.real_name
 
 	character.gender = gender
-	character.age = age
-
+	character.age = clamp(age, pref_species.species_age_min, pref_species.species_age_max)
 	character.eye_color = eye_color
 	var/obj/item/organ/eyes/organ_eyes = character.getorgan(/obj/item/organ/eyes)
 	if(organ_eyes)
