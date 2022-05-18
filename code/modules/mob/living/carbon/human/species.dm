@@ -47,6 +47,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/grad_style
 	///The gradient color used to color the gradient.
 	var/grad_color
+	///The color used for the "white" of the eye, if the eye has one.
+	var/sclera_color = "ebeae8"
 
 	///Does the species use skintones or not? As of now only used by humans.
 	var/use_skintones = FALSE
@@ -460,6 +462,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		for(var/obj/item/bodypart/head/head in C.bodyparts)
 			head.mouth = FALSE
 
+	if(SCLERA in species_traits)
+		var/obj/item/organ/eyes/eyes = C.getorganslot(ORGAN_SLOT_EYES)
+		eyes.sclera_color = sclera_color
+
 	for(var/X in inherent_traits)
 		ADD_TRAIT(C, X, SPECIES_TRAIT)
 
@@ -737,24 +743,37 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 			var/mutable_appearance/eye_overlay
 			var/mutable_appearance/sclera_overlay
-			if(!eyes)
-				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', "eyes_missing", -BODY_LAYER)
-			else
-				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', eyes.eye_icon_state, -BODY_LAYER)
-				sclera_overlay = mutable_appearance('icons/mob/human_face.dmi', eyes.sclera_icon_state, -BODY_LAYER)
-			if((EYECOLOR in species_traits) && eyes)
-				eye_overlay.color = "#" + H.eye_color
-			if((SCLERACOLOR in species_traits) && eyes)
-				sclera_overlay.color = "#" + H.sclera_color
-			if(OFFSET_FACE in H.dna.species.offset_features)
-				eye_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-				eye_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
-				if(eyes)
-					sclera_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-					sclera_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
 			if(eyes)
-				standing += sclera_overlay
-			standing += eye_overlay
+				if(!HAS_TRAIT(H, TRAIT_EYESCLOSED) && !(H.stat == DEAD))
+					eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', eyes.eye_icon_state, -BODY_LAYER)
+					sclera_overlay = mutable_appearance('icons/mob/human_face.dmi', eyes.sclera_icon_state, -BODY_LAYER)
+					if((EYECOLOR in species_traits) && eyes)
+						eye_overlay.color = "#" + H.eye_color
+					if(OFFSET_FACE in H.dna.species.offset_features)
+						eye_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
+						eye_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+						if(eyes)
+							sclera_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
+							sclera_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+					if((SCLERA in species_traits) && eyes)
+						sclera_overlay.color = "#" + H.sclera_color
+						standing += sclera_overlay
+					standing += eye_overlay
+
+		// blush
+		if (HAS_TRAIT(H, TRAIT_BLUSHING)) // Caused by either the *blush emote or the "drunk" mood event
+			var/mutable_appearance/blush_overlay = mutable_appearance('icons/mob/human_face.dmi', "blush", -BODY_ADJ_LAYER) //should appear behind the eyes
+			blush_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
+			blush_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+			blush_overlay.color = COLOR_BLUSH_PINK
+			standing += blush_overlay
+
+		// snore
+		if (HAS_TRAIT(H, TRAIT_SNORE)) // Caused by snoring asleeep
+			var/mutable_appearance/snore_overlay = mutable_appearance('icons/mob/human_face.dmi', "snore", BODY_ADJ_LAYER) //should appear behind the eyes
+			snore_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
+			snore_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+			standing += snore_overlay
 
 	//Underwear, Undershirts & Socks
 	if(!(NO_UNDERWEAR in species_traits))
