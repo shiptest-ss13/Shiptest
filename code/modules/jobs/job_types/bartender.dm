@@ -7,6 +7,8 @@
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
 	wiki_page = "Drinks" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Barkeep", "Mixologist")
+	senior_title = "Master Mixologist"
 
 	outfit = /datum/outfit/job/bartender
 
