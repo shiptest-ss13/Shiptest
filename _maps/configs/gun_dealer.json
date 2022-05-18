@@ -1,16 +1,18 @@
 {
-	"map_name": "Admin Gun Dealer Ship",
-	"map_short_name": "Gun Dealer",
+	"map_name": "Halftrack-Class Merchant Vessel",
+	"prefix": "ISV",
+	"namelists": ["MERCHANTILE","WEAPON"],
+	"map_short_name": "Halftrack-Class",
 	"map_path": "_maps/shuttles/shiptest/gun_dealer.dmm",
 	"map_id": "gun_dealer",
 	"job_slots": {
 		"Captain": 1,
-		"Head of Security": {
+		"IRMG Vanguard": {
 			"outfit": "/datum/outfit/job/hos/inteq",
 			"officer": true,
 			"slots": 1
 		},
-		"Security Officer": {
+		"IRMG Enforcer": {
 			"outfit": "/datum/outfit/job/security/inteq",
 			"slots": 2
 		}

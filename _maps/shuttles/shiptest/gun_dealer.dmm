@@ -54,10 +54,6 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "ck" = (
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 24
-	},
 /obj/structure/rack,
 /obj/item/gun/ballistic/shotgun/automatic/combat,
 /obj/item/gun/ballistic/shotgun/automatic/combat,
@@ -348,6 +344,9 @@
 	dir = 8
 	},
 /obj/machinery/door/window/westleft,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "kB" = (
@@ -422,7 +421,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/stairs/right,
-/area/ship/hallway/central)
+/area/ship/hallway/fore)
 "lj" = (
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/ammo_box/magazine/co9mm,
@@ -480,7 +479,7 @@
 /obj/machinery/door/airlock/security{
 	name = "Crew Quarters"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "mw" = (
 /obj/machinery/door/airlock/maintenance_hatch{
@@ -672,17 +671,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "qQ" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/turf_decal/trimline/orange/filled/warning{
 	name = "warningr";
-	dir = 8
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
+/area/ship/hallway/fore)
 "ru" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
@@ -698,7 +695,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
+/area/ship/hallway/fore)
 "rM" = (
 /obj/machinery/light/small,
 /obj/machinery/power/apc/auto_name/south,
@@ -837,6 +834,9 @@
 /area/ship/hallway/aft)
 "tW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "uk" = (
@@ -876,10 +876,6 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
-	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -24
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -1387,6 +1383,12 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "Suit Storage"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "Kv" = (
@@ -1415,6 +1417,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "KW" = (
@@ -1701,7 +1707,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
+/area/ship/hallway/fore)
 "QU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1750,15 +1756,18 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/turf_decal/trimline/orange/filled/warning{
 	name = "warningr";
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
+/area/ship/hallway/fore)
 "RW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2027,7 +2036,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
+/area/ship/hallway/fore)
 "Wm" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -2041,7 +2050,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
+/area/ship/hallway/fore)
 "Xb" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
@@ -2154,7 +2163,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/stairs/left,
-/area/ship/hallway/central)
+/area/ship/hallway/fore)
 "YM" = (
 /turf/closed/wall/r_wall,
 /area/ship/security)
@@ -2447,11 +2456,11 @@ Aj
 sM
 Aj
 vn
-qQ
+Aj
 Rs
 ru
 Wm
-qQ
+Aj
 YK
 RW
 dH
@@ -2477,7 +2486,7 @@ Ug
 cI
 sz
 Wd
-Wd
+qQ
 QP
 Wd
 Wd
