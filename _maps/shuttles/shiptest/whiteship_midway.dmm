@@ -66,10 +66,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"bL" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/visible,
-/turf/closed/wall/mineral/titanium,
-/area/ship/engineering/atmospherics)
 "bU" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -986,16 +982,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"rM" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor{
-	id = "whiteship_windows"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/turf/open/floor/plating,
-/area/ship/hallway/central)
 "se" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1249,10 +1235,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "zt" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1803,9 +1785,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Mp" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -3042,10 +3021,10 @@ hg
 Ei
 yt
 yt
-bL
+yt
 yt
 Zn
-rM
+Um
 lA
 ZY
 zO
@@ -3176,7 +3155,7 @@ zv
 "}
 (16,1,1) = {"
 yt
-yt
+fD
 ND
 Hp
 KP
