@@ -7,11 +7,23 @@
 	"map_id": "whiteship_midway",
 	"job_slots": {
 		"Chief Engineer": 1,
-		"Shaft Miner": 1,
-		"Medical Doctor": 1,
-		"Station Engineer": 1,
+		"Asteroid Miner": {
+			"outfit": "/datum/outfit/job/miner/hazard",
+			"slots": 1
+		},
+		"Ship's Physician": {
+			"outfit": "/datum/outfit/job/paramedic/traumateam",
+			"slots": 1
+		},
+		"Ship's Engineer": {
+			"outfit": "/datum/outfit/job/engineer/hazard",
+			"slots": 2
+		},
 		"Atmospheric Technician": 2,
-		"Assistant": 2
+		"Junior Engineer": {
+			"outfit": "/datum/outfit/job/engineer/juniorengineer",
+			"slots": 2
+		}
 	},
 	"cost": 500
 }
