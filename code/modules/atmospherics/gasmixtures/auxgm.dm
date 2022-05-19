@@ -42,8 +42,8 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 	var/id = ""
 	var/specific_heat = 0
 	var/name = ""
-	var/gas_overlay = "" //icon_state in icons/effects/atmospherics.dmi
-	var/color = "#ffff"
+	var/gas_overlay = "generic" //icon_state in icons/effects/atmospherics.dmi
+	var/color = "#ffff" // Tints the overlay by this color. Use instead of gas_overlay, usually (but not necessarily).
 	var/moles_visible = null
 	var/flags = NONE //currently used by canisters
 	var/group = null // groups for scrubber/filter listing
@@ -75,7 +75,10 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 			visibility[g] = gas.moles_visible
 			overlays[g] = new /list(FACTOR_GAS_VISIBLE_MAX)
 			for(var/i in 1 to FACTOR_GAS_VISIBLE_MAX)
-				overlays[g][i] = new /obj/effect/overlay/gas(gas.gas_overlay, i * 255 / FACTOR_GAS_VISIBLE_MAX)
+				var/obj/effect/overlay/gas/overlay = new(gas.gas_overlay)
+				overlay.color = gas.color
+				overlay.alpha = i * 255 / FACTOR_GAS_VISIBLE_MAX
+				overlays[g][i] = overlay
 		else
 			visibility[g] = 0
 			overlays[g] = 0
@@ -116,6 +119,17 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 		breathing_classes[breathing_class_path] = class
 	finalize_gas_refs()
 
+/datum/auxgm/proc/get_by_flag(flag)
+	var/static/list/gases_by_flag
+	if(!gases_by_flag)
+		gases_by_flag = list()
+	if(!(flag in gases_by_flag))
+		gases_by_flag += flag
+		gases_by_flag[flag] = list()
+		for(var/g in flags)
+			if(flags[g] & flag)
+				gases_by_flag[flag] += g
+	return gases_by_flag[flag]
 
 GLOBAL_DATUM_INIT(gas_data, /datum/auxgm, new)
 
@@ -127,7 +141,6 @@ GLOBAL_DATUM_INIT(gas_data, /datum/auxgm, new)
 	appearance_flags = TILE_BOUND
 	vis_flags = NONE
 
-/obj/effect/overlay/gas/New(state, alph)
+/obj/effect/overlay/gas/New(state)
 	. = ..()
 	icon_state = state
-	alpha = alph
