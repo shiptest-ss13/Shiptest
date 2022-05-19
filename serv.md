@@ -48,7 +48,7 @@ Shiptest - один из уникальных билдов Space Station 13.  В
 <div id=картинки>
 
 ![](https://images-ext-1.discordapp.net/external/BTIpJ_owB9fbEfjPUPocegJdVLYb0oPzPsgqCwfgMCI/%3Fwidth%3D722%26height%3D621/https/media.discordapp.net/attachments/825754095117140019/973611527011721226/unknown.png)
-![](https://media.discordapp.net/attachments/933721551117877271/973906428840521749/unknown-95.png)
+![](https://media.discordapp.net/attachments/976562718930776074/976587727720030298/unknown.png)
 ![](https://media.discordapp.net/attachments/938383542264659980/938447824838885446/unknown.png)
 
 
