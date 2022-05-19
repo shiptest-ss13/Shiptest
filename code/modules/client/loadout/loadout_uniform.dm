@@ -245,7 +245,7 @@
 /datum/gear/uniform/maid
 	display_name = "maid dress"
 	path = 	/obj/item/clothing/under/costume/maid
-	
+
 //>shiptest >no trek uniforms in loadout
 /datum/gear/uniform/trek_tog_command
 	display_name = "original series command uniform"
