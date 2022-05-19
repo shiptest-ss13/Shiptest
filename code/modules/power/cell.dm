@@ -442,7 +442,6 @@
 		give(crank_amount)
 		playsound(src, 'sound/machines/crank.ogg', 25, FALSE)
 
-//WS Begin -- Ethereal Charge Scaling
 // gun power cell //
 /obj/item/stock_parts/cell/gun
 	name = "weapon power cell"
