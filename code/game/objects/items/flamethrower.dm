@@ -209,7 +209,7 @@
 	flamer_proj.preparePixelProjectile(target, get_turf(src))
 	flamer_proj.firer = usr
 	flamer_proj.range = get_dist(src, turf_target)
-	if(get_dist(src, turf_target) < FLAMETHROWER_RANGE) //thiss shit doesnt work aaaaa
+	if(get_dist(src, turf_target) > FLAMETHROWER_RANGE) //thiss shit doesnt work aaaaa
 		flamer_proj.range = FLAMETHROWER_RANGE
 
 	RegisterSignal(flamer_proj, COMSIG_MOVABLE_MOVED, .proc/handle_flaming)
