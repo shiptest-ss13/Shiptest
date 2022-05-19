@@ -107,6 +107,8 @@
 /obj/proc/check_access_ntnet(datum/netdata/data)
 	return check_access_list(data.passkey)
 
+// Checks the referenced item (if it has an ID) for ship access and returns true if authorized,
+// or if the ship/object being access is not checking for unique ship access at this time
 /obj/proc/check_ship_access( obj/item/I )
 	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
 	if ( gen_ship_access( ship ) )

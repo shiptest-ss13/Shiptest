@@ -448,6 +448,7 @@
 /mob/living/silicon/on_standing_up()
 	return // Silicons are always standing by default.
 
+// Silicon equivalent of ID card ship access procs
 /mob/living/silicon/proc/add_ship_access( var/datum/overmap/ship/controlled/ship )
 	if ( ship )
 		ship_access += ship

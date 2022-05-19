@@ -404,14 +404,17 @@
 		return "[icon2html(get_cached_flat_icon(), user)] [thats? "That's ":""][get_examine_name(user)]" //displays all overlays in chat
 	return ..()
 
+// Adds the referenced ship directly to the card
 /obj/item/card/id/proc/add_ship_access( var/datum/overmap/ship/controlled/ship )
 	if ( ship )
 		ship_access += ship
 
+// Removes the referenced ship from the card
 /obj/item/card/id/proc/remove_ship_access( var/datum/overmap/ship/controlled/ship )
 	if ( ship )
 		ship_access -= ship
 
+// Finds the referenced ship in the list
 /obj/item/card/id/proc/has_ship_access( var/datum/overmap/ship/controlled/ship )
 	if ( ship )
 		return ship_access.Find( ship )
