@@ -310,6 +310,8 @@
 	item_state = "claymore_gold"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	pickup_sound =  'sound/items/handling/knife2_pickup.ogg'
+	drop_sound = 'sound/items/handling/metal_drop.ogg'
 	name = "holy claymore"
 	desc = "A weapon fit for a crusade!"
 	w_class = WEIGHT_CLASS_HUGE

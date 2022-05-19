@@ -96,6 +96,7 @@
 	icon_state = "Glass ore"
 	item_state = "Glass ore"
 	singular_name = "sand pile"
+	grind_results = list(/datum/reagent/silicon = 10)
 	points = 1
 	custom_materials = list(/datum/material/glass=MINERAL_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/sheet/glass
@@ -134,7 +135,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	icon_state = "volcanic_sand"
 	item_state = "volcanic_sand"
 	singular_name = "volcanic ash pile"
-	grind_results = list(/datum/reagent/toxin/lava_microbe = 5)		//WS Edit - Fuck
+	grind_results = list(/datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5, /datum/reagent/silicon = 8.5)
 	mine_experience = 0
 
 /obj/item/stack/ore/plasma

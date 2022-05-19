@@ -31,6 +31,8 @@
 	desc = "It's so sour, your face will twist."
 	icon_state = "lime"
 	filling_color = "#00FF00"
+	slice_path = /obj/item/garnish/orange
+	slices_num = 3
 	juice_results = list(/datum/reagent/consumable/limejuice = 0)
 
 // Orange
@@ -58,6 +60,8 @@
 	desc = "It's a tangy fruit."
 	icon_state = "orange"
 	filling_color = "#FFA500"
+	slice_path = /obj/item/garnish/orange
+	slices_num = 3
 	juice_results = list(/datum/reagent/consumable/orangejuice = 0)
 	distill_reagent = /datum/reagent/consumable/ethanol/triple_sec
 
@@ -85,6 +89,8 @@
 	desc = "When life gives you lemons, make lemonade."
 	icon_state = "lemon"
 	filling_color = "#FFD700"
+	slice_path = /obj/item/garnish/lemon
+	slices_num = 3
 	juice_results = list(/datum/reagent/consumable/lemonjuice = 0)
 
 // Combustible lemon

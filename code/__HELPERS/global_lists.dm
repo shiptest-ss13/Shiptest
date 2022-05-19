@@ -46,6 +46,8 @@
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_mandibles, GLOB.spider_mandibles_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_feathers, GLOB.kepori_feathers_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_body_feathers, GLOB.kepori_body_feathers_list)
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_head_quills, GLOB.vox_head_quills_list)
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_neck_quills, GLOB.vox_neck_quills_list)
 	//WS End
 
 	//Species
@@ -53,6 +55,11 @@
 		var/datum/species/S = new spath()
 		GLOB.species_list[S.id] = spath
 	sortList(GLOB.species_list, /proc/cmp_typepaths_asc)
+
+	//Species clothing
+	for(var/spath in subtypesof(/datum/species))
+		var/datum/species/S = new spath()
+		GLOB.species_clothing_icons[S.id] = list()
 
 	//Surgeries
 	for(var/path in subtypesof(/datum/surgery))
