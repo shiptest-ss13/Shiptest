@@ -31,6 +31,14 @@
 	if(T0 == src) //same turf
 		return TRUE
 
+	if(istype(neighbor, /atom/movable)) //fml
+		var/atom/movable/AM = neighbor
+		if((AM.bound_width != world.icon_size || AM.bound_height != world.icon_size) && (islist(AM.locs) && AM.locs.len > 1))
+			for(var/turf/T2 in AM.locs)
+				if(Adjacent(T2, target, mover))
+					return TRUE
+			return FALSE
+
 	if(get_dist(src, T0) > 1 || z != T0.z) //too far
 		return FALSE
 
@@ -65,13 +73,17 @@
 	Adjacency (to anything else):
 	* Must be on a turf
 */
-/atom/movable/Adjacent(atom/neighbor)
+/atom/movable/Adjacent(var/atom/neighbor)
+	var/turf/T = loc
 	if(neighbor == loc)
 		return TRUE
-	var/turf/T = loc
-	if(!istype(T))
+	if(!isturf(loc))
 		return FALSE
-	if(T.Adjacent(neighbor,target = neighbor, mover = src))
+	if((islist(locs) && locs.len > 1) && (bound_width != world.icon_size || bound_height != world.icon_size))
+		for(var/turf/L in locs) //this is to handle multi tile objects
+			if(L.Adjacent(neighbor, src, src))
+				return TRUE
+	else if(T.Adjacent(neighbor,target = neighbor, mover = src))
 		return TRUE
 	return FALSE
 

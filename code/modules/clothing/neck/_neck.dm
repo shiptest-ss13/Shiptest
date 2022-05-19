@@ -23,9 +23,14 @@
 	name = "recolorable tie"
 	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it."
 	icon = 'icons/obj/clothing/neck.dmi'
-	unique_reskin = list("blue tie" = "bluetie",
-						"red tie" = "redtie",
+	unique_reskin = list("red tie" = "redtie",
+						"orange tie" = "orangetie",
+						"green tie" = "greentie",
+						"light blue tie" = "lightbluetie",
+						"blue tie" = "bluetie",
+						"purple tie" = "purpletie",
 						"black tie" = "blacktie",
+						"brown tie" = "browntie",
 						"rainbow tie" = "rainbow_tie",
 						"horrible tie" = "horribletie",
 						"transgender tie" = "transgender",
@@ -58,7 +63,27 @@
 /obj/item/clothing/neck/tie/black
 	name = "black tie"
 	icon_state = "blacktie"
+//
+/obj/item/clothing/neck/tie/orange
+	name = "orange tie"
+	icon_state = "orangetie"
 
+/obj/item/clothing/neck/tie/light_blue
+	name = "light blue tie"
+	icon_state = "lightbluetie"
+
+/obj/item/clothing/neck/tie/purple
+	name = "purple tie"
+	icon_state = "purpletie"
+
+/obj/item/clothing/neck/tie/green
+	name = "green tie"
+	icon_state = "greentie"
+
+/obj/item/clothing/neck/tie/brown
+	name = "brown tie"
+	icon_state = "browntie"
+//
 /obj/item/clothing/neck/tie/rainbow
 	name = "rainbow tie"
 	icon_state = "rainbow_tie"
