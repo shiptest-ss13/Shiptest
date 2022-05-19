@@ -29,6 +29,8 @@
 	var/calibrating = FALSE
 	///holding jump timer ID
 	var/jump_timer
+	///is the AI allowed to control this helm console
+	var/allow_ai_control = FALSE
 
 /datum/config_entry/number/bluespace_jump_wait
 	default = 30 MINUTES
@@ -168,6 +170,7 @@
 	.["eta"] = current_ship.get_eta()
 	.["est_thrust"] = current_ship.est_thrust
 	.["engineInfo"] = list()
+	.["ai_controls"] = allow_ai_control
 	for(var/obj/machinery/power/shuttle/engine/E as anything in current_ship.shuttle_port.engine_list)
 		var/list/engine_data
 		if(!E.thruster_active)
@@ -190,7 +193,7 @@
 
 /obj/machinery/computer/helm/ui_static_data(mob/user)
 	. = list()
-	.["isViewer"] = viewer
+	.["isViewer"] = viewer || (!allow_ai_control && issilicon(user))
 	.["mapRef"] = current_ship.token.map_name
 	.["shipInfo"] = list(
 		name = current_ship.name,
@@ -199,6 +202,7 @@
 		sensor_range = 4
 	)
 	.["canFly"] = TRUE
+	.["ai_user"] = issilicon(user)
 
 /obj/machinery/computer/helm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
@@ -210,6 +214,7 @@
 		return
 	if(check_keylock())
 		return
+	. = TRUE
 
 	switch(action) // Universal topics
 		if("rename_ship")
@@ -232,6 +237,13 @@
 			return
 		if("reload_engines")
 			current_ship.refresh_engines()
+			return
+		if("toggle_ai_control")
+			if(issilicon(usr))
+				to_chat(usr, "<span class='warning'>You are unable to toggle AI controls.</span>")
+				return
+			allow_ai_control = !allow_ai_control
+			say(allow_ai_control ? "AI Control has been enabled." : "AI Control is now disabled.")
 			return
 
 	if(jump_state != JUMP_STATE_OFF)
@@ -332,6 +344,8 @@
 		current_ship.helm_locked = FALSE
 		return FALSE
 	if(IsAdminAdvancedProcCall())
+		return FALSE
+	if(issilicon(usr) && allow_ai_control)
 		return FALSE
 	if(!silent)
 		say("[src] is currently locked; please insert your key to continue.")
