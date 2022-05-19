@@ -519,9 +519,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"fr" = (
-/turf/closed/wall/r_wall/rust,
-/area/ship/engineering)
 "fs" = (
 /obj/machinery/power/tesla_coil,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -638,6 +635,7 @@
 /obj/item/gps/mining,
 /obj/item/gps/mining,
 /obj/structure/closet/crate/miningcar,
+/obj/item/disk/holodisk/rube/disk7,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "gP" = (
@@ -656,6 +654,8 @@
 	},
 /obj/structure/table/wood,
 /obj/item/pipe_dispenser,
+/obj/item/disk/holodisk/rube/disk4,
+/obj/item/disk/holodisk/rube/disk3,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "hc" = (
@@ -1098,6 +1098,7 @@
 /obj/item/holosign_creator/atmos,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/gloves/color/yellow,
+/obj/item/disk/holodisk/rube/disk6,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "mf" = (
@@ -1435,6 +1436,7 @@
 	dir = 8
 	},
 /obj/structure/table/wood,
+/obj/item/disk/holodisk/rube/disk5,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "qP" = (
@@ -1478,7 +1480,15 @@
 /area/ship/crew/dorm)
 "rh" = (
 /obj/structure/table/wood,
-/obj/item/radio/intercom/wideband,
+/obj/item/radio/intercom/wideband{
+	pixel_y = -27
+	},
+/obj/item/disk/holodisk/rube/disk6,
+/obj/item/disk/holodisk/rube/disk5,
+/obj/item/disk/holodisk/rube/disk4,
+/obj/item/disk/holodisk/rube/disk3,
+/obj/item/disk/holodisk/rube/disk2,
+/obj/item/disk/holodisk/rube/disk1,
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "rj" = (
@@ -4679,9 +4689,6 @@
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
-"ZE" = (
-/turf/closed/wall/r_wall/rust,
-/area/ship/medical)
 "ZY" = (
 /obj/structure/chair/sofa/left{
 	dir = 4
@@ -5820,7 +5827,7 @@ nl
 Tc
 sR
 gk
-fr
+bL
 bL
 Yj
 Zj
@@ -5878,11 +5885,11 @@ gk
 gk
 ZZ
 gk
-fr
 bL
-ZE
-ZE
-ZE
+bL
+bL
+bL
+bL
 bL
 bL
 IO
