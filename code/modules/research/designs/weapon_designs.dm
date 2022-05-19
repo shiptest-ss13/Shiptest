@@ -573,7 +573,6 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-//WS Edit - Energy Gun power cells
 /datum/design/gun_cell
 	name = "Weapon Power Cell"
 	desc = "A power cell for weapons holds 10 MJ of energy."
@@ -585,7 +584,7 @@
 	category = list("Misc","Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/gun_cell/upgraded
+/datum/design/gun_cell_upgraded
 	name = "Upgraded Weapon Power Cell"
 	desc = "A upgraded power cell for weapons holds 20 MJ of energy."
 	id = "gun_cell_upgraded"
@@ -596,7 +595,7 @@
 	category = list("Misc","Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/gun_cell/large
+/datum/design/gun_cell_large
 	name = "Large Weapon Power Cell"
 	desc = "A huge weapon power cell, holding 50 MJ of energy."
 	id = "gun_cell_large"
@@ -606,4 +605,43 @@
 	build_path = /obj/item/stock_parts/cell/gun/large/empty
 	category = list("Misc","Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
-//WS end
+
+/datum/design/colt_1911_magazine
+	name = "Colt 1911 Magazine"
+	id = "ammo_1911"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_box/magazine/m45
+	category = list("Imported")
+
+/datum/design/c38_hunting
+	name = "Ammo Box (.38 hunting)"
+	id = "c38_hunting"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 20000)
+	build_path = /obj/item/ammo_box/c38_box/hunting
+	category = list("Imported")
+
+/datum/design/n762
+	name = "Ammo Holder (7.62x38mmR)"
+	id = "n762"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 20000)
+	build_path = /obj/item/ammo_box/n762
+	category = list("Imported")
+
+/datum/design/disposable_gun
+	name = "Disposable Gun"
+	id = "disposable"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 4000)
+	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable
+	category = list("Imported")
+
+/datum/design/pizza_disposable_gun
+	name = "Pizza Disposable Gun"
+	id = "disposable_pizza"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/pizza = 4000)
+	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable/pizza
+	category = list("Imported")

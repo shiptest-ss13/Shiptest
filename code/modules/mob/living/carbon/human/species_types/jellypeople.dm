@@ -15,6 +15,8 @@
 	var/datum/action/innate/regenerate_limbs/regenerate_limbs
 	var/datum/action/innate/humanoid_customization/humanoid_customization
 	liked_food = MEAT
+	disliked_food = NONE
+	toxic_food = NONE
 	coldmod = 6   // = 3x cold damage
 	heatmod = 0.5 // = 1/4x heat damage
 	burnmod = 0.5 // = 1/2x generic burn damage
