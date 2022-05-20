@@ -246,7 +246,7 @@
 	display_name = "maid dress"
 	path = 	/obj/item/clothing/under/costume/maid
 
-//>shiptest >no trek uniforms in loadout
+//Trek uniforms
 /datum/gear/uniform/trek_tog_command
 	display_name = "original series command uniform"
 	path = /obj/item/clothing/under/trek/command
