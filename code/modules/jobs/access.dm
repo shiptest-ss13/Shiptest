@@ -75,11 +75,11 @@
 		return TRUE
 
 // Check if an item has access to this object
-/obj/proc/check_access(obj/item/I)
-	if ( !check_ship_access( I ) )
+/obj/proc/check_access(obj/item/item)
+	if ( !check_ship_access( item ) )
 		return FALSE
 
-	return check_access_list(I ? I.GetAccess() : null)
+	return check_access_list(item ? item.GetAccess() : null)
 
 /obj/proc/check_access_list(list/access_list)
 	gen_access()
@@ -109,12 +109,12 @@
 
 // Checks the referenced item (if it has an ID) for ship access and returns true if authorized,
 // or if the ship/object being access is not checking for unique ship access at this time
-/obj/proc/check_ship_access( obj/item/I )
+/obj/proc/check_ship_access( obj/item/item )
 	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
 	if ( gen_ship_access( ship ) )
 		return TRUE
 
-	var/obj/item/card/id/id = I?.GetID()
+	var/obj/item/card/id/id = item?.GetID()
 	if ( id?.has_ship_access( ship ) )
 		return TRUE
 

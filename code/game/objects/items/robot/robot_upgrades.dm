@@ -625,41 +625,41 @@
 	. = ..()
 	. += "The chip has access for [ship.name] installed."
 
-/obj/item/borg/upgrade/ship_access_chip/action(mob/living/silicon/robot/R, user = usr)
+/obj/item/borg/upgrade/ship_access_chip/action(mob/living/silicon/robot/robot, user = usr)
 	. = ..()
 	if(.)
 
-		var/obj/item/borg/upgrade/ship_access_chip/chip = locate() in R.module
+		var/obj/item/borg/upgrade/ship_access_chip/chip = locate() in robot.module
 		if(chip)
-			to_chat(user, "<span class='warning'>[R] already has access to [ship.name]!</span>")
+			to_chat(user, "<span class='warning'>[robot] already has access to [ship.name]!</span>")
 			return FALSE
 
-		chip = new(R.module)
-		R.module.basic_modules += chip
-		R.module.add_module(chip, FALSE, TRUE)
-		R.add_ship_access( ship )
+		chip = new(robot.module)
+		robot.module.basic_modules += chip
+		robot.module.add_module(chip, FALSE, TRUE)
+		robot.add_ship_access( ship )
 
-/obj/item/borg/upgrade/ship_access_chip/deactivate(mob/living/silicon/robot/R, user = usr)
+/obj/item/borg/upgrade/ship_access_chip/deactivate(mob/living/silicon/robot/robot, user = usr)
 	. = ..()
 	if (.)
-		var/obj/item/borg/upgrade/ship_access_chip/chip = locate() in R.module
+		var/obj/item/borg/upgrade/ship_access_chip/chip = locate() in robot.module
 		if (chip)
-			R.module.remove_module(chip, TRUE)
-		R.remove_ship_access( ship )
+			robot.module.remove_module(chip, TRUE)
+		robot.remove_ship_access( ship )
 
-/obj/item/borg/upgrade/ship_access_chip/afterattack(mob/living/silicon/ai/AI, mob/user, proximity)
+/obj/item/borg/upgrade/ship_access_chip/afterattack(mob/living/silicon/ai/ai, mob/user, proximity)
 	. = ..()
 	if(!proximity)
 		return
-	if(!istype(AI))
+	if(!istype(ai))
 		return
-	if( AI.has_ship_access( ship ) )
-		to_chat(user, "<span class='warning'>[AI] already has access to [ship.name]!</span>")
+	if( ai.has_ship_access( ship ) )
+		to_chat(user, "<span class='warning'>[ai] already has access to [ship.name]!</span>")
 		return
 
-	to_chat(AI, "<span class='notice'>[user] has upgraded you with access to [ship.name].</span>")
-	AI.add_ship_access( ship )
-	to_chat(user, "<span class='notice'>You upgrade [AI]. [src] is consumed in the process.</span>")
+	to_chat(ai, "<span class='notice'>[user] has upgraded you with access to [ship.name].</span>")
+	ai.add_ship_access( ship )
+	to_chat(user, "<span class='notice'>You upgrade [ai]. [src] is consumed in the process.</span>")
 	qdel(src)
 
 /obj/item/borg/upgrade/transform
