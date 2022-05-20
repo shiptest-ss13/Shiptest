@@ -904,6 +904,7 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/robot_debris,
+/obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "rN" = (
@@ -1822,7 +1823,7 @@
 	dir = 8
 	},
 /obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/atmospherics/components/unary/outlet_injector/layer4{
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 8
 	},
 /turf/open/floor/engine/n2,
@@ -1872,9 +1873,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Jb" = (
-/obj/structure/lattice,
 /obj/machinery/atmospherics/components/unary/outlet_injector/layer4,
-/turf/open/space/basic,
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Jg" = (
 /obj/machinery/power/terminal{
@@ -1889,6 +1890,9 @@
 	name = "thruster doors";
 	pixel_y = -24
 	},
+/obj/structure/closet/crate/radiation,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Jn" = (
@@ -2029,11 +2033,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
 "Mq" = (
-/obj/structure/lattice,
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
 	dir = 1
 	},
-/turf/open/space/basic,
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "ME" = (
 /obj/machinery/light{
@@ -2277,7 +2281,7 @@
 /obj/structure/window/plasma/reinforced/spawner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input{
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 8
 	},
 /turf/open/floor/engine/air,
@@ -2473,7 +2477,7 @@
 	dir = 8
 	},
 /obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/atmospherics/components/unary/outlet_injector/layer4,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
 /turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
 "TU" = (
@@ -2792,7 +2796,7 @@
 /obj/structure/window/plasma/reinforced/spawner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/layer4{
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 1
 	},
 /turf/open/floor/engine/plasma,
