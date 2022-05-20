@@ -530,13 +530,13 @@
 	req_access_txt = "1"
 	},
 /obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
-/obj/item/tank/jetpack/carbondioxide,
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/item/tank/jetpack/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "fW" = (
@@ -864,7 +864,6 @@
 	req_access_txt = "1"
 	},
 /obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
-/obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
 	pixel_x = -24
@@ -875,6 +874,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/item/tank/jetpack/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "jT" = (
@@ -1189,6 +1189,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/newscaster{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
@@ -1702,10 +1705,11 @@
 /obj/item/toy/cards/deck/cas/black{
 	pixel_y = 10
 	},
-/obj/structure/sign/poster/official/bless_this_spess{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/newscaster{
+	dir = 1;
 	pixel_y = -32
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "sp" = (
@@ -1777,7 +1781,6 @@
 	req_access_txt = "1"
 	},
 /obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
-/obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/firealarm{
 	pixel_y = 28
 	},
@@ -1790,6 +1793,7 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = 32
 	},
+/obj/item/tank/jetpack/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "td" = (
@@ -1848,7 +1852,9 @@
 /area/ship/cargo)
 "tx" = (
 /obj/structure/table/reinforced,
-/obj/item/flashlight/lamp,
+/obj/machinery/computer/secure_data/laptop{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "tF" = (
@@ -2647,6 +2653,10 @@
 	dir = 8
 	},
 /obj/item/cigbutt,
+/obj/machinery/newscaster{
+	dir = 4;
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "Cy" = (
@@ -4161,7 +4171,6 @@
 /area/ship/crew)
 "Wr" = (
 /obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
-/obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -4178,6 +4187,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	dir = 4
 	},
+/obj/item/tank/jetpack/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "Wu" = (
@@ -4430,6 +4440,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/newscaster/security_unit{
+	dir = 8;
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "YZ" = (
