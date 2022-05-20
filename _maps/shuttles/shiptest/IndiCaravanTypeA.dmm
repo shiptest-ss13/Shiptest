@@ -1620,8 +1620,12 @@
 	dir = 2;
 	pixel_y = 28
 	},
-/mob/living/simple_animal/pet/cat/space,
-/obj/structure/bed/dogbed/runtime,
+/mob/living/simple_animal/pet/cat/space{
+	name = "Félicette"
+	},
+/obj/structure/bed/dogbed/runtime{
+	name = "Félicette's bed"
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "EU" = (
@@ -2281,7 +2285,7 @@
 /obj/structure/window/plasma/reinforced/spawner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input{
 	dir = 8
 	},
 /turf/open/floor/engine/air,
