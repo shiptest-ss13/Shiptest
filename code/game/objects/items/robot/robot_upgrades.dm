@@ -628,7 +628,6 @@
 /obj/item/borg/upgrade/ship_access_chip/action(mob/living/silicon/robot/robot, user = usr)
 	. = ..()
 	if(.)
-
 		var/obj/item/borg/upgrade/ship_access_chip/chip = locate() in robot.module
 		if(chip)
 			to_chat(user, "<span class='warning'>[robot] already has access to [ship.name]!</span>")
