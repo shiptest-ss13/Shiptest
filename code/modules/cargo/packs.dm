@@ -632,7 +632,8 @@
 	name = "Incendiary Weapons Crate"
 	desc = "Burn, baby burn. Contains three incendiary grenades and three prebuilt flamethrowers. Requires Armory access to open."
 	cost = 4500
-	contains = list(/obj/item/flamethrower/full,
+	contains = list(
+		/obj/item/flamethrower/full,
 					/obj/item/flamethrower/full,
 					/obj/item/flamethrower/full,
 					/obj/item/grenade/chem_grenade/incendiary,
