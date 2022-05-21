@@ -166,7 +166,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		var/turf/open/newTurf = .
 		var/turf_fire_ref
 		if(turf_fire)
-			if(isgroundlessturf(path))
+			if(ispath(path, /turf/open/openspace) || ispath(path, /turf/open/space))
 				qdel(turf_fire)
 			else
 				turf_fire_ref = turf_fire
