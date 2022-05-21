@@ -268,6 +268,6 @@
 	if(turf_fire)
 		turf_fire.AddPower(power)
 		return
-	if(isopenspaceturf(src) || isspaceturf(src))
+	if(isgroundlessturf(src))
 		return
 	new /obj/effect/abstract/turf_fire(src, power, fire_color)
