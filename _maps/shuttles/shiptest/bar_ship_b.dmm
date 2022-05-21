@@ -576,6 +576,7 @@
 /area/ship/crew/canteen)
 "ly" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden,
+/obj/machinery/light/small,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "lD" = (
@@ -883,6 +884,7 @@
 /area/ship/maintenance)
 "rj" = (
 /obj/structure/ore_box,
+/obj/machinery/light/small,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "rr" = (
@@ -1326,6 +1328,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "Df" = (
@@ -1511,7 +1516,7 @@
 	},
 /area/ship/crew/canteen/kitchen)
 "GV" = (
-/obj/structure/frame/computer{
+/obj/machinery/modular_computer/console/preset/civilian{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/blue{
@@ -1786,13 +1791,6 @@
 /obj/structure/curtain/bounty,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew)
-"Ni" = (
-/obj/structure/window/reinforced/spawner/west,
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance)
 "Nk" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1896,7 +1894,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/hatch,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/carpet/red,
 /area/ship/cargo)
 "Po" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -2102,7 +2100,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/hatch,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/carpet/red,
 /area/ship/cargo)
 "SW" = (
 /obj/structure/sign/warning/chemdiamond,
@@ -2542,7 +2540,7 @@
 /area/ship/bridge)
 "ZT" = (
 /obj/machinery/vending/cigarette/syndicate,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/carpet/black,
 /area/ship/crew/canteen)
 
 (1,1,1) = {"
@@ -2601,7 +2599,7 @@ fb
 me
 me
 me
-Ni
+me
 xh
 tM
 tM
