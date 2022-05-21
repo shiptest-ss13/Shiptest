@@ -1539,7 +1539,8 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
-	dir = 4
+	dir = 4;
+	target_pressure = 101.325
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
