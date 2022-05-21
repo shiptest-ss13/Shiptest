@@ -56,6 +56,10 @@
 	},
 /turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
+"bD" = (
+/obj/structure/sign/warning/securearea,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "bF" = (
 /obj/machinery/computer/operating{
 	dir = 1
@@ -431,6 +435,23 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/obj/structure/closet/wall/orange{
+	pixel_y = 32
+	},
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/holosign_creator/atmos,
+/obj/item/holosign_creator/engineering,
+/obj/item/circuitboard/machine/techfab/department/engineering,
+/obj/item/areaeditor/shuttle,
+/obj/item/storage/belt/utility/chief/full,
+/obj/item/clothing/under/rank/engineering/chief_engineer,
+/obj/item/clothing/under/rank/engineering/chief_engineer/skirt,
+/obj/item/clothing/head/hardhat/white,
+/obj/item/clothing/head/hardhat/weldhat/white,
+/obj/item/clothing/suit/toggle/hazard,
+/obj/item/clothing/head/beret/ce,
+/obj/item/clothing/head/beret/eng,
+/obj/item/pipe_dispenser,
 /turf/open/floor/wood/yew,
 /area/ship/crew)
 "iR" = (
@@ -532,6 +553,10 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
+"kl" = (
+/obj/structure/sign/poster/contraband/hacking_guide,
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew)
 "kr" = (
 /obj/machinery/atmospherics/pipe/simple/green{
 	dir = 8
@@ -599,7 +624,7 @@
 /obj/machinery/atmospherics/pipe/manifold/yellow/hidden{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/moth/piping,
+/obj/structure/sign/warning/vacuum,
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering/atmospherics)
 "lm" = (
@@ -613,7 +638,10 @@
 /area/ship/medical)
 "lq" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/structure/sign/poster/official/moth/hardhats,
+/obj/structure/sign/directions/engineering{
+	dir = 1;
+	pixel_y = -7
+	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/atmospherics)
 "ly" = (
@@ -727,6 +755,12 @@
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/atmospherics)
+"oq" = (
+/obj/structure/sign/directions/medical{
+	pixel_y = 7
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/medical)
 "oB" = (
 /obj/machinery/light/broken{
 	dir = 4
@@ -943,6 +977,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"rz" = (
+/obj/structure/sign/departments/mait/alt,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "rC" = (
 /obj/structure/table,
 /obj/item/radio/off{
@@ -1434,6 +1472,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"Df" = (
+/obj/structure/sign/warning/nosmoking/circle,
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering)
 "Dh" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -1711,6 +1753,10 @@
 "JJ" = (
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
+"Kj" = (
+/obj/structure/sign/poster/official/moth/hardhats,
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering/atmospherics)
 "KA" = (
 /obj/effect/turf_decal/corner/brown,
 /obj/machinery/airalarm/directional/south,
@@ -1722,6 +1768,10 @@
 /obj/item/clothing/head/hardhat/mining,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"KD" = (
+/obj/structure/sign/departments/mait,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "KM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1928,6 +1978,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Oe" = (
+/obj/structure/sign/poster/official/moth/piping,
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering/atmospherics)
 "Oh" = (
 /obj/structure/window/reinforced{
 	dir = 8;
@@ -1968,6 +2022,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Ow" = (
+/obj/structure/sign/poster/contraband/eat,
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew)
 "OA" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/bar/diagonal,
@@ -2115,17 +2173,49 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
+"Qg" = (
+/obj/structure/sign/directions/command{
+	dir = 4;
+	pixel_y = 7
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/hallway/central)
 "Ql" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/wall/blue{
+	pixel_y = 32
+	},
+/obj/item/storage/backpack/duffelbag/engineering,
+/obj/item/storage/backpack/duffelbag/engineering,
+/obj/item/clothing/under/rank/engineering/engineer/hazard,
+/obj/item/clothing/under/rank/engineering/engineer/hazard,
+/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech,
+/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech,
+/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/skirt,
+/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/skirt,
+/obj/item/clothing/head/hardhat,
+/obj/item/clothing/head/hardhat,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/shoes/workboots,
 /turf/open/floor/wood/yew,
 /area/ship/crew)
 "Qz" = (
 /obj/structure/girder,
 /turf/open/floor/plating,
 /area/ship/external)
+"QG" = (
+/obj/structure/sign/warning/vacuum,
+/turf/closed/wall/mineral/titanium,
+/area/ship/cargo)
 "QM" = (
 /obj/machinery/door/airlock/atmos{
 	name = "atmospherics Tank"
@@ -2546,6 +2636,10 @@
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew)
+"VE" = (
+/obj/structure/sign/donk,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew)
 "VN" = (
 /obj/machinery/power/apc/auto_name/north{
 	pixel_y = 24
@@ -2658,6 +2752,14 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/crew)
+"XN" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/sign/directions/supply{
+	dir = 1;
+	pixel_y = -7
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo)
 "XQ" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/plasteel/patterned/ridged{
@@ -2731,8 +2833,8 @@
 /area/ship/medical)
 "Zb" = (
 /obj/structure/table,
-/obj/structure/showcase/machinery/microwave,
 /obj/effect/turf_decal/corner/bar/diagonal,
+/obj/machinery/microwave,
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "Zn" = (
@@ -2948,7 +3050,7 @@ se
 PR
 bA
 UI
-PR
+bD
 TC
 bA
 PR
@@ -2979,7 +3081,7 @@ El
 SN
 TS
 sz
-bA
+Df
 bA
 Zn
 "}
@@ -2992,11 +3094,11 @@ ux
 bA
 bA
 bA
-PR
+KD
 bx
 Av
 tw
-PR
+rz
 bA
 oa
 bA
@@ -3033,7 +3135,7 @@ Zn
 ao
 hg
 Ei
-yt
+Oe
 yt
 yt
 yt
@@ -3096,7 +3198,7 @@ Vv
 Ta
 OA
 TL
-jb
+Ow
 "}
 (13,1,1) = {"
 MJ
@@ -3134,7 +3236,7 @@ IC
 qr
 OF
 Dw
-Yw
+VE
 zv
 Yw
 UF
@@ -3211,7 +3313,7 @@ Yj
 XY
 Ql
 On
-jb
+kl
 "}
 (18,1,1) = {"
 yt
@@ -3240,7 +3342,7 @@ jb
 yt
 yt
 yt
-yt
+Kj
 yt
 yt
 yt
@@ -3341,7 +3443,7 @@ Lf
 sZ
 jE
 Dw
-Lc
+oq
 Ry
 Lc
 SQ
@@ -3383,7 +3485,7 @@ lb
 xX
 pv
 wA
-Lf
+XN
 Tw
 gc
 Ax
@@ -3399,7 +3501,7 @@ Zn
 "}
 (26,1,1) = {"
 Zn
-Nz
+QG
 Zv
 Ec
 eY
@@ -3433,7 +3535,7 @@ aZ
 Gv
 oV
 Bx
-Ux
+Qg
 Zn
 OZ
 OZ
