@@ -470,7 +470,7 @@
 	DELAY 50"}
 
 /obj/item/disk/holodisk/rube/disk1
-	name = "Rube Amort on how to be a successful Engineer Disk 1"
+	name = "Gustus Amort on how to be a successful Engineer Disk 1"
 	desc = "A guide by Gustus Amort on running the Rube Goldberg Class Vessel. This seems to be disk 1."
 	preset_image_type = /datum/preset_holoimage/engineer/ce
 	preset_record_text = {"
@@ -755,7 +755,7 @@
 	DELAY 20
 	SAY Now finally the piece of resistance. Your boss has a very special item in their locker. A gun.
 	DELAY 20
-	SAY But not just any gun! A fucking pump action 38 cal hunting rifle! They also have ammo and a design disk.
+	SAY But not just any gun! A fucking lever action action 38 cal hunting rifle! They also have ammo and a design disk.
 	DELAY 20
 	SAY Now you'll either need to kiss ass or break in. I prefer breaking in while the boss is distracted.
 	DELAY 20
