@@ -119,19 +119,25 @@
 	. = ..()
 	target.cut_overlay(GLOB.welding_sparks)
 
-/obj/item/weldingtool/attack(mob/living/carbon/human/H, mob/user)
-	if(!istype(H))
+/obj/item/weldingtool/attack(mob/living/carbon/human/target, mob/user)
+	if(!istype(target))
 		return ..()
 
-	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
+	var/obj/item/bodypart/attackedLimb = target.get_bodypart(check_zone(user.zone_selected))
 
-	if(affecting && (!IS_ORGANIC_LIMB(affecting)) && user.a_intent != INTENT_HARM)
-		if(!src.tool_start_check(user, amount=1))
+	if(attackedLimb && (!IS_ORGANIC_LIMB(attackedLimb)) && user.a_intent != INTENT_HARM)
+		if(!tool_start_check(user, amount=1))
 			return
-		user.visible_message("<span class='notice'>[user] starts to fix some of the dents on [H]'s [parse_zone(affecting.body_zone)].</span>",
-			"<span class='notice'>You start fixing some of the dents on [H == user ? "your" : "[H]'s"] [parse_zone(affecting.body_zone)].</span>")
-		use_tool(H, user, 50, 0, 25)
-		item_heal_robotic(H, user, 15, 0)
+		var/selfFix=(target == user)
+		user.visible_message("<span class='notice'>[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)].</span>",
+			"<span class='notice'>You start fixing some of the dents on [selfFix ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)].</span>")
+		if(selfFix)
+			if(!use_tool(target, user, delay=50, amount=0, volume=30)) //Setting this to 0 because afterattack seems to be handling fuel consumption already. No need to take the fuel twice.
+				return
+		else
+			if(!use_tool(target, user, delay=5, amount=0, volume=25))
+				return
+		item_heal_robotic(target, user, brute_heal=15, burn_heal=0)
 	else
 		return ..()
 
