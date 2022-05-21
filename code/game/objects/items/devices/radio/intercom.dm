@@ -144,3 +144,26 @@
 	pixel_shift = 29
 	inverse = TRUE
 	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
+
+//wideband radio
+/obj/item/radio/intercom/wideband
+	name = "wideband relay"
+	desc = "A low-gain reciever capable of sending and recieving wideband subspace messages."
+	icon_state = "intercom-wideband"
+	canhear_range = 3
+	keyslot = new /obj/item/encryptionkey/wideband
+	independent = TRUE
+	frequency = FREQ_WIDEBAND
+	freqlock = TRUE
+
+/obj/item/radio/intercom/wideband/unscrewed
+	unscrewed = TRUE
+
+/obj/item/radio/intercom/wideband/recalculateChannels()
+	. = ..()
+	independent = TRUE
+
+/obj/item/wallframe/intercom/wideband
+	name = "wideband relay frame"
+	desc = "A detached wideband relay. Attach to a wall and screw it in to use."
+	result_path = /obj/item/radio/intercom/wideband/unscrewed

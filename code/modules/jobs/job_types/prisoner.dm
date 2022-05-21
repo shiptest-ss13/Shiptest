@@ -6,6 +6,8 @@
 	spawn_positions = 2
 	supervisors = "the security team"
 	selection_color = "#ffe1c3"
+	alt_titles = list("Protected Custody", "Indentured Servant")
+	senior_title = "Shotcaller"
 
 	outfit = /datum/outfit/job/prisoner
 
@@ -29,3 +31,7 @@
 	alt_uniform = /obj/item/clothing/under/rank/prisoner/protected_custody
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/sneakers/orange
+
+/datum/outfit/job/prisoner/shotcaller
+	name = "Shotcaller"
+	l_pocket = /obj/item/kitchen/knife/shiv

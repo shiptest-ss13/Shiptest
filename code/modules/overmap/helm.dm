@@ -31,6 +31,8 @@
 	var/jump_timer
 	///is the AI allowed to control this helm console
 	var/allow_ai_control = FALSE
+	/// store an ntnet relay for tablets on the ship
+	var/obj/machinery/ntnet_relay/integrated/ntnet_relay
 
 /datum/config_entry/number/bluespace_jump_wait
 	default = 30 MINUTES
@@ -38,6 +40,7 @@
 /obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
 	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
+	ntnet_relay = new(src)
 
 /obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
 	if(jump_allowed < 0)
