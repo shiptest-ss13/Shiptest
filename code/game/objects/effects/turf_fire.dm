@@ -84,7 +84,7 @@
 		base_icon_state = "greyscale"
 
 	open_turf.turf_fire = src
-	SSturf_fire.fires += src
+	START_PROCESSING(SSturf_fire, src)
 	if(power)
 		fire_power = min(TURF_FIRE_MAX_POWER, power)
 	UpdateFireState()
@@ -92,7 +92,7 @@
 /obj/effect/abstract/turf_fire/Destroy()
 	var/turf/open/open_turf = loc
 	open_turf.turf_fire = null
-	SSturf_fire.fires -= src
+	STOP_PROCESSING(SSturf_fire, src)
 	return ..()
 
 /obj/effect/abstract/turf_fire/proc/process_waste()
