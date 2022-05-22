@@ -2582,6 +2582,37 @@
 /datum/sprite_accessory/kepori_body_feathers/none
 	name = "None"
 
+/datum/sprite_accessory/moth_wings/brown
+	name = "Brown"
+	icon_state = "brown"
+
+/datum/sprite_accessory/moth_wings/feathery
+	name = "Feathery"
+	icon_state = "feathery"
+
+/datum/sprite_accessory/moth_wings/rosy
+	name = "Rosy"
+	icon_state = "rosy"
+
+/datum/sprite_accessory/moth_wings/plasmafire
+	name = "Plasmafire"
+	icon_state = "plasmafire"
+
+/datum/sprite_accessory/moth_fluff/brown
+	name = "Brown"
+	icon_state = "brown"
+
+/datum/sprite_accessory/moth_fluff/feathery
+	name = "Feathery"
+	icon_state = "feathery"
+
+/datum/sprite_accessory/moth_fluff/rosy
+	name = "Rosy"
+	icon_state = "rosy"
+
+/datum/sprite_accessory/moth_fluff/plasmafire
+	name = "Plasmafire"
+	icon_state = "plasmafire"
 
 //Vox
 
@@ -2603,10 +2634,6 @@
 /datum/sprite_accessory/vox_head_quills/shaggy
 	name = "Shaggy"
 	icon_state = "shaggy"
-
-/datum/sprite_accessory/vox_head_quills/tailfeather
-	name = "Tailfeather"
-	icon_state = "tailfeather"
 
 /datum/sprite_accessory/vox_head_quills/mange
 	name = "Mange"
@@ -2682,6 +2709,10 @@
 /datum/sprite_accessory/vox_neck_quills/plain
 	name = "Plain"
 	icon_state = "plain"
+
+/datum/sprite_accessory/vox_neck_quills/tailfeather
+	name = "Tailfeather"
+	icon_state = "tailfeather"
 
 /datum/sprite_accessory/vox_neck_quills/ruffbeard
 	name = "Ruffbeard"

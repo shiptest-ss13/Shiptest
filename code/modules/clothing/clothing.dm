@@ -95,14 +95,16 @@
 	else
 		return ..()
 
-/obj/item/clothing/attackby(obj/item/W, mob/user, params)
-	if(W.get_sharpness() && cuttable)
-		if (alert(user, "Are you sure you want to cut the [src] into strips?", "Cut clothing:", "Yes", "No") != "Yes")
+/obj/item/clothing/attackby(obj/item/tool, mob/user, params)
+	if(tool.get_sharpness() && cuttable)
+		if(tgui_alert(user, "Are you sure you want to cut \the [src] into strips?", "Cut clothing:", list("Yes", "No")) != "Yes")
+			return
+		if(QDELETED(src))
 			return
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
-		to_chat(user, "<span class='notice'>You cut the [src] into strips with [W].</span>")
-		var/obj/item/stack/sheet/cotton/cloth/C = new (get_turf(src), clothamnt)
-		user.put_in_hands(C)
+		to_chat(user, "<span class='notice'>You cut the [src] into strips with [tool].</span>")
+		var/obj/item/stack/sheet/cotton/cloth/cloth = new (get_turf(src), clothamnt)
+		user.put_in_hands(cloth)
 		qdel(src)
 
 	if(damaged_clothes && istype(W, repairable_by))

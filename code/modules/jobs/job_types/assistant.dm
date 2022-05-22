@@ -17,6 +17,8 @@ Assistant
 	paycheck_department = ACCOUNT_CIV
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT
 	wiki_page = "Assistant" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Crewmate", "Deckhand", "Engineering Specialist", "Medical Specialist", "Science Specialist", "Entertainer")
+	senior_title = "Greytider"
 
 	skills = list(/datum/skill/cleaning = SKILL_EXP_NOVICE)
 
