@@ -846,6 +846,9 @@
 	dir = 4
 	},
 /obj/structure/lattice/catwalk,
+/obj/structure/railing/corner{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
 "hE" = (
@@ -1207,6 +1210,13 @@
 /obj/item/circuitboard/machine/microwave,
 /obj/item/circuitboard/machine/smes,
 /obj/item/circuitboard/machine/techfab/department/engineering,
+/obj/item/circuitboard/machine/shuttle/engine/plasma,
+/obj/item/circuitboard/machine/shuttle/engine/plasma,
+/obj/item/circuitboard/machine/shuttle/engine/electric,
+/obj/item/circuitboard/machine/shuttle/engine/electric,
+/obj/item/circuitboard/machine/shuttle/smes,
+/obj/item/circuitboard/machine/shuttle/smes,
+/obj/item/circuitboard/machine/smes,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "kG" = (
@@ -1220,6 +1230,7 @@
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
+/obj/structure/railing/corner,
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
 "kM" = (
@@ -2136,7 +2147,11 @@
 /area/ship/storage)
 "uq" = (
 /obj/structure/lattice/catwalk,
-/turf/open/space/basic,
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer2,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
 /area/ship/hallway)
 "uz" = (
 /obj/machinery/button/ignition/incinerator/toxmix{
@@ -2378,6 +2393,7 @@
 /turf/open/floor/engine/airless,
 /area/ship/engineering/atmospherics)
 "vW" = (
+/obj/item/storage/backpack/satchel/flat/with_drip,
 /turf/open/floor/engine/airless,
 /area/ship/engineering/engine)
 "vX" = (
@@ -2731,6 +2747,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
+/obj/structure/railing,
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
 "zm" = (
@@ -2923,6 +2940,7 @@
 /obj/effect/turf_decal/corner/yellow/border{
 	dir = 1
 	},
+/obj/item/storage/backpack/satchel/flat/with_drip,
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "Be" = (
@@ -4258,6 +4276,9 @@
 	dir = 8
 	},
 /obj/structure/lattice/catwalk,
+/obj/structure/railing/corner{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
 "Ol" = (
@@ -4698,6 +4719,16 @@
 /obj/machinery/suit_storage_unit/atmos,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
+"Tr" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/lattice/catwalk,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/hallway)
 "Tw" = (
 /obj/machinery/light{
 	dir = 1
@@ -6429,7 +6460,7 @@ vw
 jG
 hR
 kG
-iL
+uq
 Oj
 iL
 iL
@@ -6487,8 +6518,8 @@ Ua
 CP
 hR
 zl
-uq
-Ps
+eZ
+Tr
 bT
 Om
 Om
@@ -6705,11 +6736,11 @@ gk
 WN
 gk
 gk
-eZ
-eZ
-eZ
-eZ
-eZ
+Zg
+Zg
+Zg
+Zg
+Zg
 bL
 Ps
 hJ
