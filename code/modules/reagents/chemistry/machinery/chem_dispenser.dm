@@ -558,9 +558,9 @@
 	dispensable_reagents = list(
 		/datum/reagent/toxin/mutagen,
 		/datum/reagent/saltpetre,
-		/datum/reagent/consumable/nutriment,
-		/datum/reagent/left4zed,
-		/datum/reagent/robustharvest,
+		/datum/reagent/plantnutriment/eznutriment,
+		/datum/reagent/plantnutriment/left4zednutriment,
+		/datum/reagent/plantnutriment/robustharvestnutriment,
 		/datum/reagent/water,
 		/datum/reagent/toxin/plantbgone,
 		/datum/reagent/toxin/plantbgone/weedkiller,
