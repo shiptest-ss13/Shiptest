@@ -22,7 +22,7 @@
 	if(ispodperson(M))
 		user.visible_message("<span class='notice'>[user] analyzes [M]'s vitals.</span>", \
 							"<span class='notice'>You analyze [M]'s vitals.</span>")
-		if(scan_mode== PLANT_SCANMODE_STATS)
+		if(scan_mode == PLANT_SCANMODE_STATS)
 			healthscan(user, M, advanced = TRUE)
 		else
 			chemscan(user, M)
