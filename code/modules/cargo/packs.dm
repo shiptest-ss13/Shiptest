@@ -639,7 +639,7 @@
 		/obj/item/grenade/chem_grenade/incendiary,
 		/obj/item/grenade/chem_grenade/incendiary,
 		/obj/item/grenade/chem_grenade/incendiary,
-		)
+	)
 	crate_name = "incendiary weapons crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	dangerous = TRUE
