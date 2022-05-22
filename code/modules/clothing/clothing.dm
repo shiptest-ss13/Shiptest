@@ -107,8 +107,8 @@
 		user.put_in_hands(cloth)
 		qdel(src)
 
-	if(damaged_clothes && istype(W, repairable_by))
-		var/obj/item/stack/S = W
+	if(damaged_clothes && istype(tool, repairable_by))
+		var/obj/item/stack/S = tool
 		switch(damaged_clothes)
 			if(CLOTHING_DAMAGED)
 				S.use(1)
