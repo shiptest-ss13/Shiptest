@@ -4,12 +4,6 @@
 	dir = 1
 	},
 /obj/structure/rack,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/head/helmet/swat/inteq,
-/obj/item/clothing/head/helmet/swat/inteq,
-/obj/item/clothing/head/helmet/swat/inteq,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -17,6 +11,19 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_box/magazine/smgm9mm{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/ammo_box/magazine/smgm9mm{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/automatic/vector{
+	automatic = 0;
+	mag_type = /obj/item/ammo_box/magazine/smgm9mm;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "ar" = (
@@ -114,6 +121,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/item/storage/box/handcuffs,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "bo" = (
@@ -678,6 +686,12 @@
 /obj/structure/sign/poster/contraband/revolver{
 	pixel_x = -32
 	},
+/obj/item/clothing/suit/armor/bulletproof,
+/obj/item/clothing/suit/armor/bulletproof,
+/obj/item/clothing/suit/armor/bulletproof,
+/obj/item/clothing/head/helmet/swat/inteq,
+/obj/item/clothing/head/helmet/swat/inteq,
+/obj/item/clothing/head/helmet/swat/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "hh" = (
