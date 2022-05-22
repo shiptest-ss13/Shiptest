@@ -556,6 +556,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	for(var/faction1 in faction)
 		if(faction1 in target.faction)
 			return TRUE
+	if(ismouse(target))
+		return TRUE
 	return FALSE
 
 /obj/machinery/porta_turret/proc/target(atom/movable/target)
@@ -825,6 +827,13 @@ DEFINE_BITFIELD(turret_flags, list(
 	stun_projectile = /obj/projectile/beam/weak/penetrator
 	lethal_projectile = /obj/projectile/beam/weak/penetrator
 	faction = list("neutral","silicon","turret")
+
+/obj/machinery/porta_turret/centcom_shuttle/ballistic
+	stun_projectile = /obj/projectile/bullet
+	lethal_projectile = /obj/projectile/bullet
+	lethal_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
+	stun_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
+	desc = "A ballistic machine gun auto-turret."
 
 ////////////////////////
 //Turret Control Panel//

@@ -38,6 +38,11 @@
 	desc = "A suit that protects against minor chemical spills. Has an orange stripe on the shoulder."
 	icon_state = "labcoat_chem"
 
+/obj/item/clothing/suit/toggle/labcoat/chemist/side
+	name = "pharmacologist labcoat"
+	desc = "A lab coat that buttons on the side, which provides some protection from chemical spills. It in chemistry colors."
+	icon_state = "labcoat_side_chem"
+
 /obj/item/clothing/suit/toggle/labcoat/virologist
 	name = "virologist labcoat"
 	desc = "A suit that protects against minor chemical spills. Offers slightly more protection against biohazards than the standard model. Has a green stripe on the shoulder."
