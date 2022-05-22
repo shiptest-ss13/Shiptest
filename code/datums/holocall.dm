@@ -470,7 +470,7 @@
 	DELAY 50"}
 
 /obj/item/disk/holodisk/rube/disk1
-	name = "Gustus Amort on how to be a successful Engineer Disk 1"
+	name = "Gustus Amort on how to be a successful Engineer 1: Overview"
 	desc = "A guide by Gustus Amort on running the Rube Goldberg Class Vessel. This seems to be disk 1."
 	preset_image_type = /datum/preset_holoimage/engineer/ce
 	preset_record_text = {"
@@ -517,7 +517,7 @@
 	"}
 
 /obj/item/disk/holodisk/rube/disk2
-	name = "Gustus Amort on how to be a successful Engineer Disk 2"
+	name = "Gustus Amort on how to be a successful Engineer 2: General Operations"
 	desc = "A guide by Gustus Amort on general operations of the Rube Goldberg Class Vessel. This seems to be disk 2."
 	preset_image_type = /datum/preset_holoimage/engineer/ce
 	preset_record_text = {"
@@ -556,7 +556,7 @@
 	"}
 
 /obj/item/disk/holodisk/rube/disk3
-	name = "Gustus Amort on how to be a successful Engineer Disk 3"
+	name = "Gustus Amort on how to be a successful Engineer 3: Atmos"
 	desc = "A guide by Gustus Amort on setting up Atmos in the Rube Goldberg Class Vessel. This seems to be disk 3."
 	preset_image_type = /datum/preset_holoimage/engineer/ce
 	preset_record_text = {"
@@ -597,7 +597,7 @@
 	"}
 
 /obj/item/disk/holodisk/rube/disk4
-	name = "Gustus Amort on how to be a successful Engineer Disk 4"
+	name = "Gustus Amort on how to be a successful Engineer 4: Plasma and Burn Mix"
 	desc = "A guide by Gustus Amort on plasma and burn mixes. This seems to be disk 4."
 	preset_image_type = /datum/preset_holoimage/engineer/ce
 	preset_record_text = {"
@@ -644,7 +644,7 @@
 	"}
 
 /obj/item/disk/holodisk/rube/disk5
-	name = "Gustus Amort on how to be a successful Engineer Disk 5"
+	name = "Gustus Amort on how to be a successful Engineer Disk 5: TEG"
 	desc = "A guide by Gustus Amort on operation the Rube Goldberg TEG. This seems to be disk 5."
 	preset_image_type = /datum/preset_holoimage/engineer/ce
 	preset_record_text = {"
@@ -708,7 +708,7 @@
 
 
 /obj/item/disk/holodisk/rube/disk6
-	name = "Gustus Amort on how to be a successful Engineer Disk 6"
+	name = "Gustus Amort on how to be a successful Engineer Disk 6: What now?"
 	desc = "A guide by Gustus Amort on what to do next! This seems to be disk 6."
 	preset_image_type = /datum/preset_holoimage/engineer/ce
 	preset_record_text = {"
