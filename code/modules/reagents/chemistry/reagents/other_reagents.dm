@@ -1042,12 +1042,6 @@
 		return TRUE
 	return
 
-/datum/reagent/uranium/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
-	. = ..()
-	if(volume >= 10)
-		volume -= 10
-		mytray.randomMutate(user)
-
 /datum/reagent/uranium/radium
 	name = "Radium"
 	description = "Radium is an alkaline earth metal. It is extremely radioactive."
@@ -1060,12 +1054,6 @@
 
 /datum/reagent/uranium/radium/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
 	return FALSE
-
-/datum/reagent/uranium/radium/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
-	. = ..()
-	if(volume >= 10)
-		volume -= 10
-		mytray.randomMutate(user)
 
 /datum/reagent/bluespace
 	name = "Bluespace Dust"
@@ -1518,28 +1506,41 @@
 
 //////////////////////////////////Hydroponics stuff///////////////////////////////
 
+/datum/reagent/plantnutriment
+	name = "Generic nutriment"
+	description = "Some kind of nutriment. You can't really tell what it is. You should probably report it, along with how you obtained it."
+	color = "#000000" // RBG: 0, 0, 0
+	var/tox_prob = 0
+	taste_description = "plant food"
 
+/datum/reagent/plantnutriment/on_mob_life(mob/living/carbon/M)
+	if(prob(tox_prob))
+		M.adjustToxLoss(1*REM, 0)
+		. = 1
+	..()
 
-/datum/reagent/left4zed
+/datum/reagent/plantnutriment/eznutriment
+	name = "E-Z-Nutrient"
+	description = "Contains electrolytes. It's what plants crave."
+	color = "#376400" // RBG: 50, 100, 0
+	tox_prob = 10
+
+/datum/reagent/plantnutriment/left4zednutriment
 	name = "Left 4 Zed"
-	description = "A fertilizer causes a plant's yield to mutate."
+	description = "Unstable nutriment that makes plants mutate more often than usual."
 	color = "#1A1E4D" // RBG: 26, 30, 77
+	tox_prob = 25
 
-/datum/reagent/left4zed/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
-	. = ..()
-	mytray.yieldmod = 0
-	mytray.mutate_yield = 1
-
-/datum/reagent/robustharvest
+/datum/reagent/plantnutriment/robustharvestnutriment
 	name = "Robust Harvest"
-	description = "A fertilizer that increases a plant's yield."
+	description = "Very potent nutriment that slows plants from mutating."
 	color = "#9D9D00" // RBG: 157, 157, 0
-	taste_description = "copper"
+	tox_prob = 15
 
-/datum/reagent/robustharvest/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
-	. = ..()
-	mytray.yieldmod = 1.3
-	mytray.mutate_yield = 0
+
+
+
+
 
 
 // GOON OTHERS
@@ -2452,3 +2453,31 @@
 			addtimer(CALLBACK(C, /mob/living/carbon.proc/adjustOrganLoss, ORGAN_SLOT_BRAIN, 200), 5 SECONDS) //Deathblow to the brain
 		else
 			addtimer(CALLBACK(L, /mob/living.proc/gib), 5 SECONDS)
+
+/datum/reagent/calcium
+	name = "Calcium"
+	description = "A dull gray metal important to bones."
+	reagent_state = SOLID
+	color = "#68675c"
+	metabolization_rate = REAGENTS_METABOLISM
+
+/datum/reagent/ash_fibers
+	name = "Ashen Fibers"
+	description = "Ground plant fibers from a cave fern. Useful for medicines."
+	reagent_state = SOLID
+	color = "#5a4f42"
+	taste_mult = 0
+
+/datum/reagent/titanium
+	name = "Titanium"
+	description = "A light, reflective grey metal used in ship construction."
+	reagent_state = SOLID
+	color = "#c2c2c2"
+
+/datum/reagent/mutationtoxin/kobold
+	name = "Kobold Mutation Toxin"
+	description = "An ashen toxin. Something about this seems lesser."
+	color = "#5EFF3B" //RGB: 94, 255, 59
+	race = /datum/species/lizard/ashwalker/kobold
+	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
+	taste_description = "short savagery"
