@@ -12,6 +12,8 @@
 	exp_requirements = 300
 	officer = TRUE
 	wiki_page = "Head_of_Security" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Security Commander", "Chief of Security")
+
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SECURITY
 
@@ -47,7 +49,7 @@
 	alt_suit = /obj/item/clothing/suit/armor/vest/security/hos
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security //WS Edit - Alt Uniforms
 	gloves = /obj/item/clothing/gloves/color/black
-	head = /obj/item/clothing/head/beret/sec/hos //WS edit - Better Berets
+	head = /obj/item/clothing/head/HoS
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	suit_store = /obj/item/gun/energy/e_gun
 	r_pocket = /obj/item/assembly/flash/handheld
@@ -96,3 +98,11 @@
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/heads/hos)
+
+/datum/outfit/job/hos/nanotrasen
+	name = "Head of Security (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt
+	alt_uniform = null
+	head = /obj/item/clothing/head/beret/sec/hos
+

@@ -125,6 +125,10 @@ SUBSYSTEM_DEF(overlays)
 	if(NOT_QUEUED_ALREADY && remove_overlays.len)
 		QUEUE_FOR_COMPILE
 
+/mob/living/carbon/cut_overlays()
+	icon_render_keys = list()
+	return ..()
+
 /atom/proc/cut_overlay(list/overlays)
 	if(!overlays)
 		return

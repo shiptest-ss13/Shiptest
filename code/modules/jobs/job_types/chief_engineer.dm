@@ -13,6 +13,7 @@
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_ENGINEERING
 	wiki_page = "Chief_Engineer" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Engineering Coordinator", "Maintenance Supervisor")
 
 	outfit = /datum/outfit/job/ce
 

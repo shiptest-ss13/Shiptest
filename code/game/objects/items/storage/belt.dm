@@ -405,7 +405,7 @@
 
 /obj/item/storage/belt/military
 	name = "chest rig"
-	desc = "A set of tactical webbing worn by Syndicate boarding parties."
+	desc = "A set of tactical webbing worn by military cosplayers and actual militaries alike."
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
 	resistance_flags = FIRE_PROOF
@@ -414,6 +414,15 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/storage/belt/military/minutemen/PopulateContents()
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
@@ -725,7 +734,7 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 1
-	STR.rustle_sound = FALSE
+	STR.use_sound = null
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
 		/obj/item/melee/sabre

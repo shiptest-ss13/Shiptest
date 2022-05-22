@@ -434,6 +434,30 @@
 	build_path = /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass
 	category = list("initial","Dinnerware")
 
+/datum/design/modglass
+	name = "Malleable Glass"
+	id = "mod_glass"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=500, /datum/material/silver=100)
+	build_path = /obj/item/reagent_containers/food/drinks/modglass
+	category = list("initial", "Dinnerware")
+
+/datum/design/modglass_small
+	name = "Small Malleable Glass"
+	id = "mod_glass_small"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=100, /datum/material/silver=100)
+	build_path = /obj/item/reagent_containers/food/drinks/modglass/small
+	category = list("initial", "Dinnerware")
+
+/datum/design/modglass_large
+	name = "Large Malleable Glass"
+	id = "mod_glass_large"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=500, /datum/material/silver=100)
+	build_path = /obj/item/reagent_containers/food/drinks/modglass/large
+	category = list("initial", "Dinnerware")
+
 /datum/design/shaker
 	name = "Shaker"
 	id = "shaker"
@@ -1123,3 +1147,35 @@
 	materials = list(/datum/material/plastic = 500)
 	build_path = /obj/item/stack/tape/industrial
 	category = list("initial", "Misc")
+
+/datum/design/floor_painter
+	name = "Floor Painter"
+	id = "floor_painter"
+	build_type = AUTOLATHE | PROTOLATHE
+	build_path = /obj/item/floor_painter
+	category = list("initial","Tools","Tool Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
+
+/datum/design/zip_ammo_9mm
+	name = "Budget Pistol 9mm Magazine"
+	id = "ZipAmmo9mm"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 20000)
+	build_path = /obj/item/ammo_box/magazine/zip_ammo_9mm
+	category = list("hacked", "Security")
+
+/datum/design/pipedispenser
+	name = "Pipe Dispenser (Machine Board)"
+	id = "pipedispenser"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 500)
+	build_path = /obj/item/circuitboard/machine/pipedispenser
+	category = list("initial", "Machinery")
+
+/datum/design/control
+	name = "Blast Door Controller"
+	id = "blast"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	build_path = /obj/item/assembly/control
+	category = list("initial","Misc")

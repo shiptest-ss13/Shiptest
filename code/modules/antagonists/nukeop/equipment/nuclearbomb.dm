@@ -619,10 +619,6 @@ This is here to make the tiles around the station mininuke change when it's arme
 		last_disk_move = world.time
 		START_PROCESSING(SSobj, src)
 
-/obj/item/disk/nuclear/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/shiploving, inform_admins = !fake)
-
 /obj/item/disk/nuclear/process()
 	if(fake)
 		STOP_PROCESSING(SSobj, src)

@@ -5,10 +5,9 @@
 // effectout: effect to show right after teleportation
 // asoundin: soundfile to play before teleportation
 // asoundout: soundfile to play after teleportation
-// forceMove: if false, teleport will use Move() proc (dense objects will prevent teleportation)
 // no_effects: disable the default effectin/effectout of sparks
 // forced: whether or not to ignore no_teleport
-/proc/do_teleport(atom/movable/teleatom, atom/destination, precision=null, forceMove = TRUE, datum/effect_system/effectin=null, datum/effect_system/effectout=null, asoundin=null, asoundout=null, no_effects=FALSE, channel=TELEPORT_CHANNEL_BLUESPACE, forced = FALSE)
+/proc/do_teleport(atom/movable/teleatom, atom/destination, precision=null, datum/effect_system/effectin=null, datum/effect_system/effectout=null, asoundin=null, asoundout=null, no_effects=FALSE, channel=TELEPORT_CHANNEL_BLUESPACE, forced = FALSE, restrain_vlevel = TRUE)
 	// teleporting most effects just deletes them
 	var/static/list/delete_atoms = typecacheof(list(
 		/obj/effect,
@@ -59,7 +58,7 @@
 
 	// perform the teleport
 	var/turf/curturf = get_turf(teleatom)
-	var/turf/destturf = get_teleport_turf(get_turf(destination), precision)
+	var/turf/destturf = get_teleport_turf(curturf, get_turf(destination), precision, restrain_vlevel)
 
 	if(!destturf || !curturf)
 		return FALSE
@@ -72,8 +71,12 @@
 	if(SEND_SIGNAL(destturf, COMSIG_ATOM_INTERCEPT_TELEPORT, channel, curturf, destturf))
 		return FALSE
 
+	if(isobserver(teleatom))
+		teleatom.abstract_move(destturf)
+		return TRUE
+
 	tele_play_specials(teleatom, curturf, effectin, asoundin)
-	var/success = forceMove ? teleatom.forceMove(destturf) : teleatom.Move(destturf)
+	var/success = teleatom.forceMove(destturf)
 	if (success)
 		log_game("[key_name(teleatom)] has teleported from [loc_name(curturf)] to [loc_name(destturf)]")
 		tele_play_specials(teleatom, destturf, effectout, asoundout)
@@ -150,25 +153,34 @@
 			// DING! You have passed the gauntlet, and are "probably" safe.
 			return potential_floor
 
-/proc/get_teleport_turfs(turf/center, precision = 0)
-	if(!precision)
-		return list(center)
+/proc/get_teleport_turfs(turf/current, turf/center, precision = 0, restrain_vlevel = TRUE)
+	if(!center)
+		CRASH("Teleport proc passed without a destination")
 	var/datum/virtual_level/center_vlevel = center.get_virtual_level()
+	// Trying to teleport into unallocated space
+	if(!center_vlevel)
+		return
+	if(restrain_vlevel)
+		var/datum/virtual_level/current_vlevel = current.get_virtual_level()
+		// We restrain the teleport to a single virtual level
+		if(current_vlevel != center_vlevel)
+			return
+	if(!precision)
+		if(center.is_transition_turf())
+			return
+		return list(center)
 	var/list/posturfs = list()
-	var/current_z_level = center.virtual_z()
 	for(var/turf/T in range(precision,center))
 		if(T.is_transition_turf())
 			continue // Avoid picking these.
 		if(!center_vlevel.is_in_bounds(T))
-			continue // Out of bounds of our vlevel
-		if(T.virtual_z() != current_z_level)
-			continue
+			continue // Out of bounds of our vlevel. Can happen if the precision is low that it may wanted to pick a level adjacent to this one
 		var/area/A = T.loc
 		if(!(A.area_flags & NOTELEPORT))
 			posturfs.Add(T)
 	return posturfs
 
-/proc/get_teleport_turf(turf/center, precision = 0)
-	var/list/turfs = get_teleport_turfs(center, precision)
+/proc/get_teleport_turf(turf/current, turf/destination, precision = 0, restrain_vlevel = TRUE)
+	var/list/turfs = get_teleport_turfs(current, destination, precision)
 	if (length(turfs))
 		return pick(turfs)

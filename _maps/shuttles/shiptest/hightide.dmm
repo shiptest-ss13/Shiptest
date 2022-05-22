@@ -222,7 +222,7 @@
 /obj/machinery/cryopod{
 	close_state = "crate";
 	dir = 8;
-	icon = 'goon/icons/obj/crates.dmi';
+	icon = 'icons/obj/crates.dmi';
 	icon_state = "crateopen";
 	open_state = "crateopen"
 	},
@@ -855,7 +855,7 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 4
 	},
-/obj/structure/toilet,
+/obj/structure/toilet/secret,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "HE" = (
@@ -928,7 +928,7 @@
 /obj/machinery/cryopod{
 	close_state = "crate";
 	dir = 8;
-	icon = 'goon/icons/obj/crates.dmi';
+	icon = 'icons/obj/crates.dmi';
 	icon_state = "crateopen";
 	open_state = "crateopen"
 	},
@@ -941,6 +941,10 @@
 /obj/structure/catwalk,
 /turf/open/floor/plating,
 /area/ship/external)
+"Lr" = (
+/obj/item/stack/spacecash/c1,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "LD" = (
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/glass,
@@ -1413,7 +1417,7 @@ cQ
 aN
 Wt
 Vx
-Vx
+Lr
 Vx
 tq
 NI
