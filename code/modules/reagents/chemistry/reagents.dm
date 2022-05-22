@@ -110,6 +110,15 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 /datum/reagent/proc/expose_turf(turf/T, volume)
 	return
 
+/**
+ * New, standardized method for chemicals to affect hydroponics trays.
+ * Defined on a per-chem level as opposed to by the tray.
+ * Can affect plant's health, stats, or cause the plant to react in certain ways.
+ */
+/datum/reagent/proc/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	if(!mytray)
+		return
+
 /// Called from [/datum/reagents/proc/metabolize]
 /datum/reagent/proc/on_mob_life(mob/living/carbon/M)
 	current_cycle++

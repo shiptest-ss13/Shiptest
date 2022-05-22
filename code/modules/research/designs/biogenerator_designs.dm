@@ -71,7 +71,7 @@
 	id = "ez_nut"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass= 10)
-	make_reagents = list(/datum/reagent/plantnutriment/eznutriment = 25)
+	make_reagents = list(/datum/reagent/consumable/nutriment = 25)
 	category = list("initial","Botany Chemicals")
 
 /datum/design/l4z_nut
@@ -79,7 +79,7 @@
 	id = "l4z_nut"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass= 20)
-	make_reagents = list(/datum/reagent/plantnutriment/left4zednutriment = 25)
+	make_reagents = list(/datum/reagent/left4zed = 25)
 	category = list("initial","Botany Chemicals")
 
 /datum/design/rh_nut
@@ -87,7 +87,7 @@
 	id = "rh_nut"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass= 25)
-	make_reagents = list(/datum/reagent/plantnutriment/robustharvestnutriment = 25)
+	make_reagents = list(/datum/reagent/robustharvest = 25)
 	category = list("initial","Botany Chemicals")
 
 /datum/design/weed_killer
