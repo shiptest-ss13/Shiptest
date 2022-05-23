@@ -29,9 +29,7 @@
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	vision_range = 8
 	aggro_vision_range = 8
-	move_force = MOVE_FORCE_NORMAL
 	move_resist = MOVE_FORCE_VERY_STRONG
-	pull_force = MOVE_FORCE_NORMAL
 	del_on_death = TRUE
 	loot = list()
 	deathmessage = "fades as the energies that tied it to this world dissipate."
