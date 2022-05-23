@@ -62,13 +62,6 @@
 		return
 	icon_state = pre_attack_icon
 
-/mob/living/simple_animal/hostile/asteroid/goliath/revive(full_heal = FALSE, admin_revive = FALSE)//who the fuck anchors mobs
-	if(..())
-		. = 1
-
-/mob/living/simple_animal/hostile/asteroid/goliath/death(gibbed)
-	..()
-
 /mob/living/simple_animal/hostile/asteroid/goliath/gib()
 	if(prob(1))//goliaths eat rocks and thus have a tiny chance to contain a number of gems
 		var/obj/item/gem/to_drop = pick(/obj/item/gem/rupee, /obj/item/gem/fdiamond, /obj/item/gem/void, /obj/item/gem/phoron)
