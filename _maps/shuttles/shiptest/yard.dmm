@@ -60,6 +60,12 @@
 /obj/effect/turf_decal/spline/fancy/wood/corner{
 	dir = 4
 	},
+/obj/item/gun/energy/laser/retro/old,
+/obj/item/stack/sheet/mineral/gold/five,
+/obj/item/storage/fancy/cigarettes/cigpack_robustgold,
+/obj/structure/safe/floor{
+	number_of_tumblers = 5
+	},
 /turf/open/floor/wood,
 /area/ship/bridge)
 "cC" = (
@@ -169,6 +175,7 @@
 /turf/open/floor/plating,
 /area/ship/construction)
 "gS" = (
+/obj/item/reagent_containers/food/snacks/deadmouse,
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "gT" = (
@@ -579,6 +586,7 @@
 /obj/item/reagent_containers/food/snacks/burger/chicken,
 /obj/item/reagent_containers/food/snacks/burger/chicken,
 /obj/effect/decal/cleanable/blood/old,
+/obj/item/reagent_containers/food/snacks/deadmouse,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "sF" = (
@@ -706,8 +714,8 @@
 /turf/open/floor/plating/rust,
 /area/ship/cargo)
 "wJ" = (
-/obj/effect/spawner/lootdrop/maintenance/four,
-/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/snacks/deadmouse,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "wS" = (
@@ -934,6 +942,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
+/obj/item/assembly/mousetrap/armed,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "DN" = (
@@ -1512,6 +1521,12 @@
 "VE" = (
 /turf/closed/wall/rust,
 /area/ship/cargo)
+"Wa" = (
+/obj/structure/sink{
+	pixel_y = 28
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Wr" = (
 /obj/structure/closet,
 /obj/item/clothing/shoes/magboots,
@@ -1605,8 +1620,9 @@
 /turf/open/floor/plating/rust,
 /area/ship/cargo)
 "YY" = (
-/obj/effect/spawner/lootdrop/maintenance/four,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/snacks/deadmouse,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Zl" = (
@@ -1716,7 +1732,7 @@ rU
 LP
 LZ
 EA
-wJ
+EA
 Da
 LT
 Zl
@@ -1741,7 +1757,7 @@ Sc
 TC
 jy
 PK
-LZ
+Wa
 LZ
 LZ
 LZ
@@ -1754,7 +1770,7 @@ Lk
 Lk
 Lk
 Lk
-YY
+Lk
 Mm
 Lk
 Lk
@@ -1789,7 +1805,7 @@ vQ
 dD
 kl
 Al
-Gv
+YY
 kl
 YJ
 BC
@@ -2266,7 +2282,7 @@ gS
 RJ
 LZ
 nX
-Al
+wJ
 XC
 LZ
 LZ
