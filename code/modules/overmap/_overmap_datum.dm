@@ -104,9 +104,11 @@
 		new_y = SSovermap.size
 	SSovermap.overmap_container[x][y] -= src
 	SSovermap.overmap_container[new_x][new_y] += src
-	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVED, x, y)
+	var/old_x = x
+	var/old_y = y
 	x = new_x
 	y = new_y
+	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVED, old_x, old_y, x, y)
 
 	// Updates the token with the new position.
 	token.abstract_move(OVERMAP_TOKEN_TURF(x, y))

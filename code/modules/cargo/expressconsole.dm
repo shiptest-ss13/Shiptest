@@ -248,15 +248,12 @@
 			var/datum/overmap/outpost/outpost = ship.docked_to
 			if(!istype(outpost) || mission.source_outpost != outpost) // important to check these to prevent href fuckery
 				return
-			if(LAZYISIN(outpost.missions, mission))
-				LAZYREMOVE(outpost.missions, mission)
-				LAZYADD(ship.missions, mission)
-				mission.accepted(ship)
+			if(!mission.accepted)
+				mission.accept(ship, loc)
 				return TRUE
-			else if(LAZYISIN(ship.missions, mission))
+			else if(mission.servant == ship)
 				if(mission.is_complete())
 					mission.turn_in()
 				else
 					mission.give_up()
-				LAZYREMOVE(ship.missions, mission)
 				return TRUE

@@ -12,7 +12,8 @@
 	var/max_missions = 10
 
 	var/list/datum/mission/mission_types = list(
-		/datum/mission/research
+		/datum/mission/research,
+		/datum/mission/acquire/goliath
 	)
 
 /datum/overmap/outpost/Initialize(...)

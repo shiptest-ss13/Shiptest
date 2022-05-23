@@ -5,7 +5,7 @@ import { CargoCatalog } from './Cargo';
 
 export const Communications = (props, context) => {
   const { act, data } = useBackend(context);
-  const [tab, setTab] = useSharedState(context, 'outpostTab', 'cargo');
+  const [tab, setTab] = useSharedState(context, 'outpostTab', '');
   return (
     <Window
       width={600}
