@@ -265,3 +265,23 @@
 	back = /obj/item/storage/backpack
 	id = /obj/item/card/id/solgov/commander
 	backpack_contents = null
+
+/obj/effect/mob_spawn/human/corpse/feral_doctor
+	name = "Ayden Ramos"
+	id_job = "Medical Doctor"
+	id_access_list = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT)
+	hairstyle = "Cut Hair"
+	facial_hairstyle = "Watson Mustache"
+	skin_tone = "caucasian1"
+	outfit = /datum/outfit/feral_doctor
+
+/datum/outfit/feral_doctor
+	name = "Feral Doctor Uniform"
+	uniform = /obj/item/clothing/under/rank/medical/doctor/green
+	suit = /obj/item/clothing/suit/apron/surgical
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	ears = /obj/item/radio/headset
+	back = /obj/item/storage/backpack/satchel/med
+	id = /obj/item/card/id
+	glasses = /obj/item/clothing/glasses/hud/health
