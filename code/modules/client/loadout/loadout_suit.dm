@@ -6,7 +6,6 @@
 //WINTER COATS
 /datum/gear/suit/coat
 	subtype_path = /datum/gear/suit/coat
-	cost = 2000
 
 /datum/gear/suit/coat/plain
 	display_name = "winter coat"
@@ -15,7 +14,6 @@
 //JACKETS
 /datum/gear/suit/jacket
 	subtype_path = /datum/gear/suit/jacket
-	cost = 1000
 
 /datum/gear/suit/jacket/bomber
 	display_name = "bomber jacket"
@@ -24,6 +22,14 @@
 /datum/gear/suit/jacket/leather
 	display_name = "leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
+
+/datum/gear/suit/jacket/leather/overcoat
+	display_name = "leather overcoat"
+	path = /obj/item/clothing/suit/jacket/leather/overcoat
+
+/datum/gear/suit/jacket/leather/duster
+	display_name = "leather duster"
+	path = /obj/item/clothing/suit/jacket/leather/duster
 
 /datum/gear/suit/jacket/military
 	display_name = "military jacket"
@@ -59,20 +65,29 @@
 
 /datum/gear/suit/jacket/navy
 
+/datum/gear/suit/jacket/highvis
+	display_name = "industrial jacket"
+	path = /obj/item/clothing/suit/toggle/industrial
+
+/datum/gear/suit/jacket/hazard
+	display_name = "hazard jacket"
+	path = /obj/item/clothing/suit/toggle/hazard
+
 //Misc
 /datum/gear/suit/grponcho
 	display_name = "poncho, green"
 	path = /obj/item/clothing/suit/poncho/green
-	cost = 750
 
 /datum/gear/suit/overalls
 	display_name = "overalls"
 	path = /obj/item/clothing/suit/apron/overalls
-	cost = 750
 
 /datum/gear/suit/raincoat
 	display_name = "Cybersun labcoat"
 	description = "Designer lab safety equipment. You're pretty sure this is just a raincoat."
 	path = /obj/item/clothing/suit/toggle/labcoat/raincoat
-	cost = 1000
+
+/datum/gear/suit/ianshirt
+	display_name = "worn shirt"
+	path = /obj/item/clothing/suit/ianshirt
 

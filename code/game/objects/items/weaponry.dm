@@ -57,6 +57,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "claymore"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	pickup_sound =  'sound/items/handling/knife2_pickup.ogg'
+	drop_sound = 'sound/items/handling/metal_drop.ogg'
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
@@ -210,6 +212,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "katana"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	pickup_sound =  'sound/items/handling/knife2_pickup.ogg'
+	drop_sound = 'sound/items/handling/metal_drop.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	force = 40
@@ -752,7 +756,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/circlegame/Destroy()
 	var/mob/owner = loc
 	if(!istype(owner))
-		return
+		return ..()
 	UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
 	. = ..()
 
@@ -923,7 +927,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 	target.apply_damage(damage, BRUTE, BODY_ZONE_HEAD)
 	user.adjustStaminaLoss(iteration + 5)
-	playsound(get_turf(user), pick('sound/effects/rustle1.ogg','sound/effects/rustle2.ogg','sound/effects/rustle3.ogg','sound/effects/rustle4.ogg','sound/effects/rustle5.ogg'), 50)
+	playsound(get_turf(user), "rustle", 50)
 
 	if(prob(33))
 		user.visible_message("<span class='danger'>[user] continues noogie'ing [target]!</span>", "<span class='warning'>You continue giving [target] a noogie!</span>", vision_distance=COMBAT_MESSAGE_RANGE, ignored_mobs=target)
@@ -1065,3 +1069,17 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		LegionSkull.faction = user.faction.Copy()
 		LegionSkull.friends += user
 	next_use_time = world.time + 6 SECONDS
+
+/obj/item/claymore/bone
+	name = "Bone Sword"
+	desc = "Jagged pieces of bone are tied to what looks like a goliaths femur."
+	icon_state = "bone_sword"
+	item_state = "bone_sword"
+	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/swords_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	force = 15
+	throwforce = 10
+	armour_penetration = 15
+	block_chance = 30

@@ -29,7 +29,7 @@
 	var/list/dent_decals
 
 
-/turf/closed/wall/Initialize(mapload)
+/turf/closed/wall/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(smoothing_flags & SMOOTH_DIAGONAL_CORNERS && fixed_underlay) //Set underlays for the diagonal walls.
 		var/mutable_appearance/underlay_appearance = mutable_appearance(layer = TURF_LAYER, plane = FLOOR_PLANE)
@@ -62,10 +62,8 @@
 		if(newgirder) //maybe we don't /want/ a girder!
 			transfer_fingerprints_to(newgirder)
 
-	for(var/obj/O in src.contents) //Eject contents!
-		if(istype(O, /obj/structure/sign/poster))
-			var/obj/structure/sign/poster/P = O
-			P.roll_and_drop(src)
+	for(var/obj/structure/sign/poster/P in src.contents) //Eject contents!
+		P.roll_and_drop(src)
 
 	ScrapeAway()
 

@@ -25,7 +25,7 @@
 	/// Whether the turf has been dug or not
 	var/dug
 
-/turf/open/floor/plating/asteroid/Initialize()
+/turf/open/floor/plating/asteroid/Initialize(mapload, inherited_virtual_z)
 	var/proper_name = name
 	. = ..()
 	name = proper_name
@@ -109,7 +109,7 @@
 /turf/open/floor/plating/asteroid/basalt/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
-/turf/open/floor/plating/asteroid/basalt/Initialize()
+/turf/open/floor/plating/asteroid/basalt/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	set_basalt_light(src)
 
@@ -130,6 +130,15 @@
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/lava/smooth/lava_land_surface
+
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	baseturfs = /turf/open/indestructible/necropolis/icecropolis
+
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	planetary_atmos = FALSE
+	baseturfs = /turf/open/indestructible/necropolis/air
 
 /turf/open/floor/plating/asteroid/lowpressure
 	initial_gas_mix = OPENTURF_LOW_PRESSURE

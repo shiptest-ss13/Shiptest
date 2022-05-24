@@ -28,6 +28,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	slot_flags = ITEM_SLOT_EARS
 	var/obj/item/encryptionkey/keyslot2 = null
 	dog_fashion = null
+	supports_variations = VOX_VARIATION
 
 /obj/item/radio/headset/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins putting \the [src]'s antenna up [user.p_their()] nose! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer!</span>")
@@ -67,13 +68,13 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		return ITALICS | REDUCE_RANGE
 	return ..()
 
-/obj/item/radio/headset/can_receive(freq, level, AIuser)
+/obj/item/radio/headset/can_receive(freq, map_zones, AIuser)
 	if(ishuman(src.loc))
 		var/mob/living/carbon/human/H = src.loc
 		if(H.ears == src)
-			return ..(freq, level)
+			return ..(freq, map_zones)
 	else if(AIuser)
-		return ..(freq, level)
+		return ..(freq, map_zones)
 	return FALSE
 
 /obj/item/radio/headset/ui_data(mob/user)
@@ -120,6 +121,22 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	item_state = "sec_headset_alt"
 
 /obj/item/radio/headset/headset_sec/alt/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
+/obj/item/radio/headset/headset_medsec
+	name = "medical-security radio headset"
+	desc = "Used to hear how many security officers need to be stiched back together."
+	icon_state = "medsec_headset"
+	keyslot = new /obj/item/encryptionkey/headset_medsec
+
+/obj/item/radio/headset/headset_medsec/alt
+	name = "medical-security bowman headset"
+	desc = "Used to hear how many security officers need to be stiched back together. Protects ears from flashbangs."
+	icon_state = "medsec_headset_alt"
+	keyslot = new /obj/item/encryptionkey/headset_medsec
+
+/obj/item/radio/headset/headset_medsec/alt/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
 
@@ -190,6 +207,22 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
 
+/obj/item/radio/headset/heads/lieutenant
+	name = "lieutenant's headset"
+	desc = "A lieutenant's headset."
+	icon_state = "com_headset"
+	keyslot = new /obj/item/encryptionkey/heads/lieutenant
+
+/obj/item/radio/headset/heads/lieutenant/alt
+	name = "lieutenant's bowman headset"
+	desc = "A lieutenant's headset. Protects ears from flashbangs."
+	icon_state = "com_headset_alt"
+	keyslot = new /obj/item/encryptionkey/heads/lieutenant
+
+/obj/item/radio/headset/heads/lieutenant/alt/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
 /obj/item/radio/headset/heads/rd
 	name = "\proper the research director's headset"
 	desc = "Headset of the fellow who keeps society marching towards technological singularity."
@@ -198,13 +231,13 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/heads/hos
 	name = "\proper the head of security's headset"
-	desc = "The headset of the man in charge of keeping order and protecting the station."
+	desc = "The headset of the man in charge of keeping order and protecting the innocent."
 	icon_state = "com_headset"
 	keyslot = new /obj/item/encryptionkey/heads/hos
 
 /obj/item/radio/headset/heads/hos/alt
 	name = "\proper the head of security's bowman headset"
-	desc = "The headset of the man in charge of keeping order and protecting the station. Protects ears from flashbangs."
+	desc = "The headset of the man in charge of keeping order and protecting the innocent. Protects ears from flashbangs."
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 
@@ -214,13 +247,13 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/heads/ce
 	name = "\proper the chief engineer's headset"
-	desc = "The headset of the guy in charge of keeping the station powered and undamaged."
+	desc = "The headset of the guy in charge of keeping essential systems powered and undamaged."
 	icon_state = "com_headset"
 	keyslot = new /obj/item/encryptionkey/heads/ce
 
 /obj/item/radio/headset/heads/cmo
 	name = "\proper the chief medical officer's headset"
-	desc = "The headset of the highly trained medical chief."
+	desc = "The headset of a highly trained medical chief."
 	icon_state = "com_headset"
 	keyslot = new /obj/item/encryptionkey/heads/cmo
 
@@ -244,7 +277,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/headset_srv
 	name = "service radio headset"
-	desc = "Headset used by the service staff, tasked with keeping the station full, happy and clean."
+	desc = "Headset used by the service staff, tasked with keeping the endless workforces of the galaxy full, happy and clean."
 	icon_state = "srv_headset"
 	keyslot = new /obj/item/encryptionkey/headset_service
 
@@ -283,8 +316,27 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot2 = new /obj/item/encryptionkey/ai
 	command = TRUE
 
-/obj/item/radio/headset/silicon/can_receive(freq, level)
-	return ..(freq, level, TRUE)
+/obj/item/radio/headset/silicon/can_receive(freq, map_zones)
+	return ..(freq, map_zones, TRUE)
+
+//solgov
+/obj/item/radio/headset/solgov
+	name = "\improper SolGov Offical's headset"
+	desc = "A SolGov Official's headset."
+	icon = 'icons/obj/radio.dmi'
+	icon_state = "solgov_headset"
+	keyslot = new /obj/item/encryptionkey/solgov
+
+/obj/item/radio/headset/solgov/alt
+	name = "\improper SolGov Officer's bowman headset"
+	desc = "A SolGov Officer's headset. Protects ears from flashbangs."
+	icon_state = "solgov_headset_alt"
+
+/obj/item/radio/headset/solgov/alt/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
+//interactions
 
 /obj/item/radio/headset/attackby(obj/item/W, mob/user, params)
 	user.set_machine(src)

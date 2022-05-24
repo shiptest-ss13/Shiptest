@@ -118,6 +118,11 @@
 /obj/structure/flora/rock/icy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
+"ih" = (
+/obj/item/coin/gold,
+/obj/item/stack/spacecash/c1000,
+/turf/open/floor/mineral/gold,
+/area/icemoon/underground/explored)
 "iu" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 8
@@ -126,7 +131,9 @@
 /area/icemoon/surface/outdoors)
 "iT" = (
 /obj/structure/stone_tile/slab,
-/mob/living/simple_animal/hostile/megafauna/dragon/icemoon,
+/mob/living/simple_animal/hostile/megafauna/dragon/icemoon{
+	loot = list(/obj/structure/closet/crate/necropolis/dragon, /obj/item/keycard/gatedrop/drakelair)
+	},
 /turf/open/indestructible/boss,
 /area/ruin)
 "jf" = (
@@ -165,9 +172,9 @@
 /turf/open/floor/mineral/gold,
 /area/ruin/powered)
 "kA" = (
-/obj/item/nullrod/scythe/talking,
+/obj/item/nullrod/scythe/talking/necro,
 /turf/open/floor/mineral/gold,
-/area/icemoon/underground/unexplored)
+/area/ruin/powered)
 "kC" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/necropolis_gate,
@@ -219,10 +226,8 @@
 /area/icemoon/surface/outdoors)
 "sm" = (
 /obj/structure/stone_tile/slab/cracked,
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "ash_drake_dead"
-	},
 /obj/structure/fans/tiny/invisible,
+/obj/machinery/door/keycard/gates/drakelair,
 /turf/open/indestructible/boss{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
@@ -294,13 +299,11 @@
 /area/ruin/powered)
 "wX" = (
 /turf/closed/indestructible/rock/snow/ice/ore,
-/area/icemoon/underground/unexplored)
+/area/icemoon/surface/outdoors)
 "xo" = (
 /obj/structure/stone_tile/slab,
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "ash_drake_dead"
-	},
 /obj/structure/fans/tiny/invisible,
+/obj/machinery/door/keycard/gates/drakelair,
 /turf/open/indestructible/boss{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
@@ -321,18 +324,14 @@
 /area/ruin/powered)
 "yx" = (
 /obj/structure/stone_tile/slab/cracked,
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "ash_drake_dead"
-	},
+/obj/machinery/door/keycard/gates/drakelair,
 /turf/open/indestructible/boss{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/powered)
 "yA" = (
 /obj/structure/stone_tile/slab,
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "ash_drake_dead"
-	},
+/obj/machinery/door/keycard/gates/drakelair,
 /turf/open/indestructible/boss{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
@@ -343,7 +342,7 @@
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "icerock"
 	},
-/area/icemoon/underground/unexplored)
+/area/icemoon/surface/outdoors)
 "yL" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 9
@@ -353,13 +352,6 @@
 	},
 /turf/open/floor/grass/snow/basalt,
 /area/icemoon/surface/outdoors)
-"yZ" = (
-/turf/closed/indestructible/riveted/uranium{
-	base_icon_state = "iron_wall";
-	icon = 'icons/turf/walls/iron_wall.dmi';
-	icon_state = "iron_wall-0"
-	},
-/area/icemoon/underground/unexplored)
 "Ai" = (
 /obj/structure/stone_tile/cracked,
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -371,7 +363,7 @@
 "Cc" = (
 /obj/structure/closet/crate/necropolis,
 /turf/open/floor/mineral/gold,
-/area/icemoon/underground/unexplored)
+/area/ruin/powered)
 "CK" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 5
@@ -428,7 +420,7 @@
 /area/ruin/powered)
 "Gb" = (
 /turf/closed/mineral/snowmountain/cavern/icemoon,
-/area/icemoon/underground/unexplored)
+/area/icemoon/surface/outdoors)
 "Gh" = (
 /obj/effect/decal/remains/human{
 	desc = "Some human remains, the only thing that could burn remains to a crisp like this is a plasmafire, or a dragon..."
@@ -443,12 +435,11 @@
 /turf/open/floor/grass/snow/basalt,
 /area/icemoon/surface/outdoors)
 "Gv" = (
-/obj/machinery/door/poddoor/gates/indestructible{
-	color = "#EFC51D";
-	id = "ash_drake_dead"
+/obj/machinery/door/keycard/gates/drakelair{
+	color = "#EFC51D"
 	},
 /turf/open/floor/mineral/gold,
-/area/icemoon/underground/unexplored)
+/area/ruin/powered)
 "Hb" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
@@ -868,7 +859,7 @@ tD
 Gb
 Gb
 wX
-yZ
+nD
 nD
 QM
 xW
@@ -900,7 +891,7 @@ Gb
 Gb
 Gb
 wX
-yZ
+nD
 Fw
 QM
 QM
@@ -932,7 +923,7 @@ Gb
 Gb
 Gb
 wX
-yZ
+nD
 QM
 Fw
 Ax
@@ -964,7 +955,7 @@ Gb
 Gb
 Gb
 wX
-yZ
+nD
 QM
 xW
 eU
@@ -996,7 +987,7 @@ Gb
 Gb
 Gb
 wX
-yZ
+nD
 dK
 QM
 QM
@@ -1028,10 +1019,10 @@ Gb
 wX
 wX
 wX
-yZ
+nD
 Fw
 Fw
-eU
+ih
 Ax
 QM
 EF
@@ -1058,9 +1049,9 @@ ie
 (13,1,1) = {"
 Gb
 wX
-yZ
-yZ
-yZ
+nD
+nD
+nD
 kP
 Fw
 QM
@@ -1090,7 +1081,7 @@ ie
 (14,1,1) = {"
 Gb
 wX
-yZ
+nD
 Cc
 Gv
 Fw
@@ -1122,7 +1113,7 @@ iu
 (15,1,1) = {"
 Gb
 wX
-yZ
+nD
 kA
 Gv
 Fw
@@ -1154,7 +1145,7 @@ ci
 (16,1,1) = {"
 tD
 wX
-yZ
+nD
 Cc
 Gv
 Fw
@@ -1186,9 +1177,9 @@ li
 (17,1,1) = {"
 tD
 wX
-yZ
-yZ
-yZ
+nD
+nD
+nD
 QM
 xW
 Zp
@@ -1220,7 +1211,7 @@ tD
 wX
 wX
 wX
-yZ
+nD
 Fw
 Fw
 Fw
@@ -1252,7 +1243,7 @@ tD
 tD
 Gb
 wX
-yZ
+nD
 dK
 QM
 kd
@@ -1284,7 +1275,7 @@ tD
 tD
 Gb
 wX
-yZ
+nD
 Fw
 QM
 Fw
@@ -1316,7 +1307,7 @@ tD
 tD
 Gb
 wX
-yZ
+nD
 QM
 Fw
 QM
@@ -1348,7 +1339,7 @@ tD
 tD
 tD
 wX
-yZ
+nD
 nD
 QM
 Ax

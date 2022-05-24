@@ -49,7 +49,7 @@
 			var/turf/tr = get_turf(W)
 
 			// Make sure it's on a turf and that its Z-level matches the tracker's Z-level
-			if (tr && tr.get_virtual_z_level() == sr.get_virtual_z_level())
+			if (tr && tr.virtual_z() == sr.virtual_z())
 				// Get the distance between the beacon's turf and our turf
 				var/distance = max(abs(tr.x - sr.x), abs(tr.y - sr.y))
 
@@ -136,7 +136,7 @@
 /obj/item/hand_tele/attack_self(mob/user)
 	var/turf/current_location = get_turf(user)//What turf is the user on?
 	var/area/current_area = current_location.loc
-	if(!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location.z) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
+	if(!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
 		to_chat(user, "<span class='notice'>\The [src] is malfunctioning.</span>")
 		return
 	var/list/L = list()
@@ -150,13 +150,13 @@
 			else
 				L["[get_area(com.target)] (Inactive)"] = com.target
 	var/list/turfs = list()
-	var/current_z_level = user.get_virtual_z_level()
+	var/current_z_level = user.virtual_z()
 	for(var/turf/T in urange(10, orange=1))
 		if(T.x>world.maxx-8 || T.x<8)
 			continue	//putting them at the edge is dumb
 		if(T.y>world.maxy-8 || T.y<8)
 			continue
-		if(T.get_virtual_z_level() != current_z_level)
+		if(T.virtual_z() != current_z_level)
 			continue
 		var/area/A = T.loc
 		if(A.area_flags & NOTELEPORT)
@@ -177,19 +177,21 @@
 		return
 	current_location = get_turf(user)	//Recheck.
 	current_area = current_location.loc
-	if(!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location.z) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
+	if(!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
 		to_chat(user, "<span class='notice'>\The [src] is malfunctioning.</span>")
 		return
 	user.show_message("<span class='notice'>Locked In.</span>", MSG_AUDIBLE)
-	var/list/obj/effect/portal/created = create_portal_pair(current_location, get_teleport_turf(get_turf(T)), 300, 1, null, atmos_link_override)
+	var/list/obj/effect/portal/created = create_portal_pair(current_location, get_teleport_turf(current_location, get_turf(T), 0, FALSE), 300, 1, null, atmos_link_override)
 	if(!(LAZYLEN(created) == 2))
 		return
 	RegisterSignal(created[1], COMSIG_PARENT_QDELETING, .proc/on_portal_destroy) //Gosh darn it kevinz.
 	RegisterSignal(created[2], COMSIG_PARENT_QDELETING, .proc/on_portal_destroy)
-	try_move_adjacent(created[1], user.dir)
-	active_portal_pairs[created[1]] = created[2]
 	var/obj/effect/portal/c1 = created[1]
 	var/obj/effect/portal/c2 = created[2]
+	var/turf/check_turf = get_turf(get_step(user, user.dir))
+	if(check_turf.CanPass(user, get_dir(check_turf, user)))
+		c1.forceMove(check_turf)
+	active_portal_pairs[created[1]] = created[2]
 	investigate_log("was used by [key_name(user)] at [AREACOORD(user)] to create a portal pair with destinations [AREACOORD(c1)] and [AREACOORD(c2)].", INVESTIGATE_PORTAL)
 	add_fingerprint(user)
 
@@ -215,7 +217,7 @@
 		var/obj/item/bodypart/head/head = itemUser.get_bodypart(BODY_ZONE_HEAD)
 		if(head)
 			head.drop_limb()
-			var/list/safeLevels = SSmapping.levels_by_any_trait(list(ZTRAIT_SPACE_RUINS, ZTRAIT_LAVA_RUINS, ZTRAIT_STATION, ZTRAIT_MINING))
+			var/list/safeLevels = SSmapping.virtual_levels_by_any_trait(list(ZTRAIT_SPACE_RUINS, ZTRAIT_LAVA_RUINS, ZTRAIT_STATION, ZTRAIT_MINING))
 			head.forceMove(locate(rand(1, world.maxx), rand(1, world.maxy), pick(safeLevels)))
 			itemUser.visible_message("<span class='suicide'>The portal snaps closed taking [user]'s head with it!</span>")
 		else

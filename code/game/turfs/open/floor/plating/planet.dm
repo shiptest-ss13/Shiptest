@@ -12,6 +12,9 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
 
 /turf/open/floor/plating/dirt/dark
 	icon_state = "greenerdirt"
@@ -21,7 +24,11 @@
 
 /turf/open/floor/plating/dirt/jungle
 	slowdown = 0.5
+	baseturfs = /turf/open/floor/plating/dirt/jungle
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
 
 /turf/open/floor/plating/dirt/jungle/dark
 	icon_state = "greenerdirt"
@@ -34,7 +41,7 @@
 	slowdown = 1
 	var/floor_variance = 15
 
-/turf/open/floor/plating/dirt/jungle/wasteland/Initialize()
+/turf/open/floor/plating/dirt/jungle/wasteland/Initialize(mapload, inherited_virtual_z)
 	.=..()
 	if(prob(floor_variance))
 		icon_state = "[initial(icon_state)][rand(0,12)]"
@@ -46,6 +53,10 @@
 	desc = "Greener on the other side."
 	icon_state = "junglegrass"
 	base_icon_state = "junglegrass"
+	baseturfs = /turf/open/floor/plating/dirt/jungle
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 
 /turf/closed/mineral/random/jungle

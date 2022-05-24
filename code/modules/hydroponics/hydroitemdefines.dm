@@ -75,8 +75,15 @@
 	flags_1 = NONE
 	resistance_flags = FLAMMABLE
 
-/obj/item/cultivator/rake/Crossed(atom/movable/AM)
+/obj/item/cultivator/rake/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/item/cultivator/rake/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(!ishuman(AM))
 		return
 	var/mob/living/carbon/human/H = AM
@@ -182,8 +189,8 @@
 
 /obj/item/reagent_containers/glass/bottle/nutrient/Initialize()
 	. = ..()
-	pixel_x = rand(-5, 5)
-	pixel_y = rand(-5, 5)
+	pixel_x = base_pixel_x + rand(-5, 5)
+	pixel_y = base_pixel_y + rand(-5, 5)
 
 
 /obj/item/reagent_containers/glass/bottle/nutrient/ez

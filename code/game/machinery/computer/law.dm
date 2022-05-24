@@ -22,7 +22,7 @@
 			current = null
 			return
 		var/turf/currentloc = get_turf(current)
-		if(currentloc && user.get_virtual_z_level() != currentloc.get_virtual_z_level())
+		if(currentloc && user.virtual_z() != currentloc.virtual_z())
 			to_chat(user, "<span class='alert'>Upload failed! Unable to establish a connection to [current.name]. You're too far away!</span>")
 			current = null
 			return
@@ -39,6 +39,7 @@
 	name = "\improper AI upload console"
 	desc = "Used to upload laws to the AI."
 	circuit = /obj/item/circuitboard/computer/aiupload
+	icon_screen = "ai_upload"
 
 /obj/machinery/computer/upload/ai/interact(mob/user)
 	current = select_active_ai(user, z)

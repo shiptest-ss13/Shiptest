@@ -1,5 +1,6 @@
 /datum/element/turf_z_transparency
 	var/show_bottom_level = FALSE
+	var/turf/our_turf
 
 ///This proc sets up the signals to handle updating viscontents when turfs above/below update. Handle plane and layer here too so that they don't cover other obs/turfs in Dream Maker
 /datum/element/turf_z_transparency/Attach(datum/target, show_bottom_level = TRUE)
@@ -7,15 +8,15 @@
 	if(!isturf(target))
 		return ELEMENT_INCOMPATIBLE
 
-	var/turf/our_turf = target
+	our_turf = target
 
 	src.show_bottom_level = show_bottom_level
 
 	our_turf.plane = OPENSPACE_PLANE
 	our_turf.layer = OPENSPACE_LAYER
 
-	RegisterSignal(target, COMSIG_TURF_MULTIZ_DEL, .proc/on_multiz_turf_del)
-	RegisterSignal(target, COMSIG_TURF_MULTIZ_NEW, .proc/on_multiz_turf_new)
+	RegisterSignal(target, COMSIG_TURF_MULTIZ_DEL, .proc/on_multiz_turf_del, TRUE)
+	RegisterSignal(target, COMSIG_TURF_MULTIZ_NEW, .proc/on_multiz_turf_new, TRUE)
 
 	ADD_TRAIT(our_turf, TURF_Z_TRANSPARENT_TRAIT, TURF_TRAIT)
 
@@ -26,6 +27,8 @@
 	. = ..()
 	var/turf/our_turf = source
 	our_turf.vis_contents.len = 0
+	UnregisterSignal(our_turf, COMSIG_TURF_MULTIZ_DEL)
+	UnregisterSignal(our_turf, COMSIG_TURF_MULTIZ_NEW)
 	REMOVE_TRAIT(our_turf, TURF_Z_TRANSPARENT_TRAIT, TURF_TRAIT)
 
 ///Updates the viscontents or underlays below this tile.
@@ -63,11 +66,11 @@
 /datum/element/turf_z_transparency/proc/show_bottom_level(turf/our_turf)
 	if(!show_bottom_level)
 		return FALSE
-	var/turf/path = SSmapping.level_trait(our_turf.z, ZTRAIT_BASETURF) || /turf/open/space
+	var/turf/path = our_turf.virtual_level_trait(ZTRAIT_BASETURF) || /turf/open/space
 	if(!ispath(path))
 		path = text2path(path)
 		if(!ispath(path))
-			warning("Z-level [our_turf.z] has invalid baseturf '[SSmapping.level_trait(our_turf.z, ZTRAIT_BASETURF)]'")
+			warning("Z-level [our_turf.z] has invalid baseturf '[our_turf.virtual_level_trait(ZTRAIT_BASETURF)]'")
 			path = /turf/open/space
 	var/mutable_appearance/underlay_appearance = mutable_appearance(initial(path.icon), initial(path.icon_state), layer = TURF_LAYER-0.02, plane = PLANE_SPACE)
 	underlay_appearance.appearance_flags = RESET_ALPHA | RESET_COLOR

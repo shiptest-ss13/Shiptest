@@ -14,7 +14,7 @@
 
 /obj/item/toy/sprayoncan
 	name = "spray-on insulation applicator"
-	desc = "What is the number one problem facing our station today?"
+	desc = "What is the number one problem facing our society today?"
 	icon = 'icons/obj/clothing/gloves.dmi'
 	icon_state = "sprayoncan"
 
@@ -58,6 +58,30 @@
 /obj/item/clothing/gloves/color/yellow/sprayon/dropped()
 	.=..()
 	qdel(src) //loose nodrop items bad
+
+/obj/item/clothing/gloves/color/yellow/sprayon/tape
+	name = "taped-on insulated gloves"
+	desc = "This is a totally safe idea."
+	icon_state = "yellowtape"
+	item_state = "ygloves"
+	shocks_remaining = 3
+
+/obj/item/clothing/gloves/color/yellow/sprayon/tape/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+/obj/item/clothing/gloves/color/yellow/sprayon/tape/equipped(mob/user, slot)
+	. = ..()
+	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, .proc/Shocked)
+
+/obj/item/clothing/gloves/color/yellow/sprayon/tape/Shocked(mob/user)
+	if(prob(50)) //Fear the unpredictable
+		shocks_remaining--
+	if(shocks_remaining <= 0)
+		playsound(user, 'sound/items/poster_ripped.ogg', 30)
+		to_chat(user, "<span class='danger'>\The [src] fall apart into useless scraps!</span>")
+		qdel(src)
+
 
 /obj/item/clothing/gloves/color/fyellow                             //Cheap Chinese Crap
 	desc = "These gloves are cheap knockoffs of the coveted ones - no way this can end badly."
@@ -205,6 +229,12 @@
 	transfer_prints = FALSE
 	carrytrait = TRAIT_QUICKER_CARRY
 
+/obj/item/clothing/gloves/color/latex/nitrile/evil
+	name = "red nitrile gloves"
+	desc = "Thick sterile gloves that reach up to the elbows, in exactly the same color as fresh blood. Transfers combat medic knowledge into the user via nanochips."
+	icon_state = "nitrile_evil"
+	item_state = "nitrile_evil"
+
 /obj/item/clothing/gloves/color/latex/nitrile/infiltrator
 	name = "infiltrator gloves"
 	desc = "Specialized combat gloves for carrying people around. Transfers tactical kidnapping knowledge into the user via nanochips."
@@ -234,6 +264,13 @@
 	item_state = "wgloves"
 	custom_price = 200
 
+/obj/item/clothing/gloves/color/evening
+	name = "evening gloves"
+	desc = "White satin gloves that rise up to the elbows. Excessively fancy."
+	icon_state = "evening_gloves"
+	item_state = "evening_gloves"
+	custom_price = 200
+
 /obj/effect/spawner/lootdrop/gloves
 	name = "random gloves"
 	desc = "These gloves are supposed to be a random color..."
@@ -250,3 +287,8 @@
 		/obj/item/clothing/gloves/color/brown = 1,
 		/obj/item/clothing/gloves/color/white = 1,
 		/obj/item/clothing/gloves/color/rainbow = 1)
+
+/obj/item/clothing/gloves/maid
+	name = "maid arm covers"
+	desc = "Cylindrical looking tubes that go over your arm, weird."
+	icon_state = "maid_arms"

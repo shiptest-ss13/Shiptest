@@ -13,10 +13,6 @@
 /obj/machinery/computer/helm,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
-"ad" = (
-/obj/machinery/computer/communications,
-/turf/open/floor/carpet/stellar,
-/area/ship/bridge)
 "af" = (
 /obj/structure/chair/bronze{
 	dir = 1
@@ -283,14 +279,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"aZ" = (
-/obj/structure/table,
-/obj/item/shovel/spoon{
-	desc = "This mighty silver staff seems to have irreversibly lost it's luster.";
-	name = "staff of sustenance"
-	},
-/turf/open/floor/wood,
-/area/ship/crew/canteen/kitchen)
 "ba" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder{
@@ -324,17 +312,6 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
-"bg" = (
-/obj/structure/table,
-/obj/item/storage/box/donkpockets{
-	pixel_y = 8
-	},
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/turf/open/floor/wood,
-/area/ship/crew/canteen/kitchen)
 "bh" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -453,22 +430,6 @@
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
 	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel,
-/area/ship/storage)
-"bD" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
@@ -607,17 +568,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
-"bP" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/closet/crate/science,
-/obj/item/storage/box/rndboards{
-	desc = "A box containing a gift for worthy wizards.";
-	name = "\proper the archmagus's legacy"
-	},
-/obj/machinery/airalarm/directional/west,
-/obj/structure/window/reinforced/survival_pod,
-/turf/open/floor/plasteel,
-/area/ship/storage)
 "bQ" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable{
@@ -646,13 +596,6 @@
 	},
 /obj/structure/curtain,
 /obj/item/soap/deluxe,
-/turf/open/floor/plasteel/white,
-/area/ship/crew/toilet)
-"bU" = (
-/obj/structure/toilet{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "bV" = (
@@ -895,6 +838,14 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/hallway/aft)
+"fJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/toilet/secret{
+	dir = 1;
+	secret_type = /obj/item/book/granter/spell/knock
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/toilet)
 "gz" = (
 /mob/living/simple_animal/hostile/carp/ranged{
 	desc = "A wizard's favorite familiar, the Magicarp!";
@@ -917,6 +868,18 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
+"gF" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/closet/crate/science,
+/obj/item/storage/box/rndboards{
+	desc = "A box containing a gift for worthy wizards.";
+	name = "\proper the archmagus's legacy"
+	},
+/obj/machinery/airalarm/directional/west,
+/obj/structure/window/reinforced/survival_pod,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel,
+/area/ship/storage)
 "gL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/gun/magic/wand/nothing{
@@ -1374,6 +1337,24 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
+"xn" = (
+/obj/structure/table,
+/obj/item/storage/box/donkpockets{
+	pixel_y = 8
+	},
+/obj/item/storage/box/donkpockets/donkpocketgondola,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/item/shovel/spoon{
+	desc = "This mighty silver staff seems to have irreversibly lost it's luster.";
+	name = "staff of sustenance"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
 "zn" = (
 /obj/machinery/processor,
 /turf/open/floor/wood,
@@ -1560,6 +1541,21 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"FX" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/storage)
 "Ge" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1609,6 +1605,18 @@
 "GM" = (
 /turf/open/floor/carpet/orange,
 /area/ship/crew/library)
+"Hr" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ship/storage)
 "HS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/purple,
@@ -1774,10 +1782,6 @@
 	name = "emerald wall"
 	},
 /area/ship/crew/dorm)
-"Ma" = (
-/obj/machinery/computer/autopilot,
-/turf/open/floor/carpet/stellar,
-/area/ship/bridge)
 "Mb" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -1840,19 +1844,6 @@
 /obj/structure/table/wood/fancy/purple,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
-"MB" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ship/storage)
 "MX" = (
 /obj/structure/sign/poster/random,
 /turf/closed/wall/mineral/uranium/safe{
@@ -1946,6 +1937,9 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "OQ" = (
@@ -1953,17 +1947,10 @@
 /obj/machinery/libraryscanner,
 /turf/open/floor/wood,
 /area/ship/crew/library)
-"Pc" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/closet/crate,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/structure/window/reinforced/survival_pod,
-/turf/open/floor/plasteel,
-/area/ship/storage)
+"OW" = (
+/obj/structure/frame/computer,
+/turf/open/floor/carpet/stellar,
+/area/ship/bridge)
 "PT" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile{
@@ -1982,6 +1969,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/external)
+"QJ" = (
+/obj/machinery/deepfryer,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"Ro" = (
+/obj/machinery/computer/monitor,
+/turf/open/floor/carpet/stellar,
+/area/ship/bridge)
 "RD" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile{
@@ -2016,6 +2011,18 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
+"Sf" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/closet/crate,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/structure/window/reinforced/survival_pod,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel,
+/area/ship/storage)
 "Si" = (
 /obj/structure/cable{
 	icon_state = "4-9"
@@ -2474,7 +2481,7 @@ Vy
 IN
 bC
 bJ
-bP
+gF
 bW
 Ar
 bX
@@ -2505,8 +2512,8 @@ kN
 fx
 cD
 bA
-bD
-MB
+FX
+Hr
 bQ
 Dg
 pf
@@ -2540,7 +2547,7 @@ KS
 wj
 ZW
 bK
-Pc
+Sf
 bY
 kC
 Xm
@@ -2584,7 +2591,7 @@ No
 "}
 (9,1,1) = {"
 ab
-Ma
+OW
 io
 Mb
 ab
@@ -2650,7 +2657,7 @@ cl
 "}
 (11,1,1) = {"
 ab
-ad
+Ro
 af
 wq
 ab
@@ -2771,7 +2778,7 @@ cD
 bB
 bH
 Tc
-bU
+fJ
 CF
 No
 No
@@ -2826,8 +2833,8 @@ aC
 av
 CH
 oz
-aZ
-bg
+QJ
+xn
 xc
 bs
 IN

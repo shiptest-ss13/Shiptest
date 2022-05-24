@@ -3,7 +3,6 @@
 	slot = ITEM_SLOT_HEAD
 	sort_category = "Headwear"
 	species_blacklist = list("plasmaman") //Their helmet takes up the head slot
-	cost = 1000
 
 //Hardhats
 
@@ -11,7 +10,6 @@
 	display_name = "hardhat, yellow"
 	path = /obj/item/clothing/head/hardhat
 	allowed_roles = list("Chief Engineer", "Engineer", "Atmospheric Technician")
-	cost = 900
 
 /datum/gear/hat/hhat_orange
 	display_name = "hardhat, orange"
@@ -28,7 +26,6 @@
 /datum/gear/hat/beret
 	display_name = "beret, red"
 	path = /obj/item/clothing/head/beret
-	cost = 2000
 
 /datum/gear/hat/beret/departmental
 	display_name = "beret, departmental"
@@ -83,6 +80,10 @@
 	display_name = "top hat"
 	path = /obj/item/clothing/head/that
 
+/datum/gear/hat/maidheadband
+	display_name = "maid headband"
+	path = /obj/item/clothing/head/maidheadband
+
 /datum/gear/hat/fedora
 	display_name = "fedora"
 	path = /obj/item/clothing/head/fedora
@@ -106,17 +107,15 @@
 /datum/gear/hat/cowboy
 	display_name = "cowboy hat"
 	path = /obj/item/clothing/head/cowboy
-	cost = 1500
 
 /datum/gear/hat/catears
 	display_name = "cat ears"
 	path = /obj/item/clothing/head/kitty
-	cost = 5000
 
 /datum/gear/hat/horse
 	display_name = "horse mask"
 	path = /obj/item/clothing/mask/horsehead
-	cost = 5000
+	slot = ITEM_SLOT_MASK
 
 /datum/gear/hat/piratehat
 	display_name = "pirate hat"

@@ -5,7 +5,7 @@
 	id = "riggerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
 	},
 /turf/open/floor/plating,
@@ -97,7 +97,7 @@
 	id = "riggerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#9ADEDE"
 	},
 /turf/open/floor/plating,
@@ -341,7 +341,7 @@
 	id = "riggerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
 	},
 /turf/open/floor/plating,
@@ -536,7 +536,7 @@
 	id = "riggerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#9ADEDE"
 	},
 /turf/open/floor/plating,
@@ -1014,7 +1014,7 @@
 	id = "riggerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
 	},
 /turf/open/floor/plating,
@@ -1082,7 +1082,7 @@
 	id = "riggerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#9ADEDE"
 	},
 /turf/open/floor/plating,
@@ -1467,7 +1467,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "ru" = (
-/obj/machinery/computer/autopilot,
+/obj/structure/frame/computer,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "rJ" = (
@@ -1727,6 +1727,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "uC" = (
@@ -2204,9 +2205,7 @@
 "zg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/turf_decal/caution{
-	pixel_y = -11
-	},
+/obj/effect/turf_decal/industrial/caution,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
@@ -2222,7 +2221,7 @@
 	id = "riggerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
 	},
 /turf/open/floor/plating,
@@ -2411,7 +2410,7 @@
 	id = "riggerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#9ADEDE"
 	},
 /turf/open/floor/plating,
@@ -2826,6 +2825,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Fo" = (
@@ -3021,7 +3021,7 @@
 	id = "riggerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
 	},
 /obj/structure/curtain,
@@ -3305,7 +3305,7 @@
 	id = "riggerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
 	},
 /turf/open/floor/plating,
@@ -3397,6 +3397,9 @@
 	},
 /obj/machinery/door/airlock/security/glass{
 	name = "Brig"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
@@ -3754,7 +3757,7 @@
 /obj/machinery/atmospherics/components/binary/pump/on/layer4{
 	dir = 8
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
 	},
 /turf/open/floor/plating,
@@ -3897,7 +3900,7 @@
 	id = "riggerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
 	},
 /turf/open/floor/plating,
@@ -4145,7 +4148,7 @@
 	name = "blast shutters"
 	},
 /obj/structure/grille,
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
 	},
 /turf/open/floor/plating,
@@ -4212,7 +4215,7 @@
 	id = "riggerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
 	},
 /turf/open/floor/plating,
@@ -4306,7 +4309,7 @@
 	name = "blast shutters"
 	},
 /obj/structure/grille,
-/obj/structure/window/shuttle{
+/obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
 	},
 /turf/open/floor/plating,

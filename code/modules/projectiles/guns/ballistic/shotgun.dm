@@ -24,6 +24,7 @@
 	cartridge_wording = "shell"
 	tac_reloads = FALSE
 	fire_rate = 1 //reee
+	pickup_sound =  'sound/items/handling/shotgun_pickup.ogg'
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	. = 0
@@ -141,6 +142,7 @@
 	tac_reloads = TRUE
 	fire_rate = 2
 	automatic = 1
+	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
 
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
@@ -291,7 +293,6 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact
 	name = "compact compact combat shotgun"
 	desc = "A compact version of the compact version of the semi automatic combat shotgun. For when you want a gun the same size as your brain."
-	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "cshotguncc"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact
 	w_class = WEIGHT_CLASS_SMALL
@@ -303,7 +304,8 @@
 		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
 		to_chat(user, "<span class='userdanger'>[src] blows up in your face!</span>")
 		if(prob(25))
-			user.gib()
+			user.take_bodypart_damage(0,75)
+			explosion(src, 0, 0, 1, 1)
 			user.dropItemToGround(src)
 		else
 			user.take_bodypart_damage(0,50)
@@ -314,7 +316,6 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact/compact
 	name = "compact compact compact combat shotgun"
 	desc = "A compact version of the compact version of the compact version of the semi automatic combat shotgun. <i>It's a miracle it works...</i>"
-	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "cshotgunccc"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact/compact
 	w_class = WEIGHT_CLASS_TINY
@@ -326,7 +327,8 @@
 		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
 		if(prob(50))
 			to_chat(user, "<span class='userdanger'>Fu-</span>")
-			user.gib()
+			user.take_bodypart_damage(100)
+			explosion(src, 0, 0, 1, 1)
 			user.dropItemToGround(src)
 		else
 			to_chat(user, "<span class='userdanger'>[src] blows up in your face! What a surprise.</span>")
@@ -338,7 +340,7 @@
 //god fucking bless brazil
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil
 	name = "six-barreled \"TRABUCO\" shotgun"
-	desc = "Dear fucking god, what the fuck even is this!? Theres a green flag with a blue circle and a yellow diamond around it. Some text in the circle says: \"ORDEM E PROGRESSO.\""
+	desc = "Dear fucking god, what the fuck even is this!? The recoil caused by the sheer act of firing this thing would probably kill you, if the gun itself doesn't explode in your face first! Theres a green flag with a blue circle and a yellow diamond around it. Some text in the circle says: \"ORDEM E PROGRESSO.\""
 	icon_state = "shotgun_brazil"
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
@@ -361,34 +363,16 @@
 	can_be_sawn_off = FALSE
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
-/*	//doesn't work properly
-	if(prob(0 + (magazine.ammo_count() * 10)))	//minimum probability of 10, maximum of 60 only procs if theres more than 4 shells
-//		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
-		if(prob(50))
-			to_chat(user, "<span class='userdanger'>Holy shit! [src] hurts your hand from trying to control it!</span>")
-			user.take_bodypart_damage(0,50)
-			..()
-		else
-			if(prob(10))
-				to_chat(user, "<span class='userdanger'>Something isn't right. \the [src] doesn't fire for a brief moment. Then, the following words come to mind: \
-				Ó Pátria amada, \
-				Idolatrada, \
-				Salve! Salve!</span>")
-				explosion(src, 0, 2, 4, 6, TRUE, TRUE)
-				user.gib()
-			else
-				to_chat(user, "<span class='userdanger'>[src] flies out of your hand!</span>")
-				user.dropItemToGround(src)
-	..()
-*/
 	if(prob(0 + (magazine.ammo_count() * 10)))
 		if(prob(10))
 			to_chat(user, "<span class='userdanger'>Something isn't right. \the [src] doesn't fire for a brief moment. Then, the following words come to mind: \
 			Ó Pátria amada, \
 			Idolatrada, \
 			Salve! Salve!</span>")
+
+			message_admins("A [src] misfired and exploded at [ADMIN_VERBOSEJMP(src)], which was fired by [user].") //logging
+			user.take_bodypart_damage(0,50)
 			explosion(src, 0, 2, 4, 6, TRUE, TRUE)
-			user.gib()
 	..()
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil/death
 	name = "Force of Nature"

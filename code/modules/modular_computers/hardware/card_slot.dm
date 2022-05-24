@@ -6,14 +6,29 @@
 	w_class = WEIGHT_CLASS_TINY
 	device_type = MC_CARD
 
-	var/obj/item/card/id/stored_card = null
-	var/obj/item/card/id/stored_card2 = null
+	var/obj/item/card/id/stored_card
+	var/obj/item/card/id/stored_card2
 
-/obj/item/computer_hardware/card_slot/Exited(atom/A, atom/newloc)
-	if(A == stored_card)
-		try_eject(1, null, TRUE)
-	if(A == stored_card2)
-		try_eject(2, null, TRUE)
+/obj/item/computer_hardware/card_slot/Exited(atom/ejected, atom/newloc)
+	if(!(ejected == stored_card || ejected == stored_card2))
+		return ..()
+	if(!holder)
+		return ..()
+
+	if(holder.active_program)
+		holder.active_program.event_idremoved(background = FALSE)
+	for(var/datum/computer_file/program/computer_program as anything in holder.idle_threads)
+		computer_program.event_idremoved(background = TRUE)
+
+	holder.update_slot_icon()
+
+	if(!ishuman(holder.loc))
+		return ..()
+
+	var/mob/living/carbon/human/human_wearer = holder.loc
+	if(human_wearer.wear_id == holder)
+		human_wearer.sec_hud_set_ID()
+
 	return ..()
 
 /obj/item/computer_hardware/card_slot/Destroy()
@@ -83,7 +98,7 @@
 
 	var/ejected = 0
 	if(stored_card && (!slot || slot == 1))
-		if(user)
+		if(user && Adjacent(user) && !issiliconoradminghost(user))
 			user.put_in_hands(stored_card)
 		else
 			stored_card.forceMove(drop_location())
@@ -91,7 +106,7 @@
 		ejected++
 
 	if(stored_card2 && (!slot || slot == 2))
-		if(user)
+		if(user && Adjacent(user) && !issiliconoradminghost(user))
 			user.put_in_hands(stored_card2)
 		else
 			stored_card2.forceMove(drop_location())

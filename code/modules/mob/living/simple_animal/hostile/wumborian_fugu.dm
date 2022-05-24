@@ -20,6 +20,7 @@
 	maxHealth = 50
 	health = 50
 	pixel_x = -16
+	base_pixel_x = -16
 	harm_intent_damage = 5
 	obj_damage = 0
 	melee_damage_lower = 0
@@ -36,6 +37,10 @@
 	var/inflate_cooldown = 0
 	var/datum/action/innate/fugu/expand/E
 	loot = list(/obj/item/fugu_gland{layer = ABOVE_MOB_LAYER})
+
+/mob/living/simple_animal/hostile/asteroid/fugu/asteroid
+	maxHealth = 40
+	health = 40
 
 /mob/living/simple_animal/hostile/asteroid/fugu/Initialize()
 	. = ..()

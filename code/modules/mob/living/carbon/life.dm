@@ -342,15 +342,11 @@
 	return
 
 /mob/living/carbon/proc/handle_bodyparts()
-	var/stam_regen = FALSE
 	if(stam_regen_start_time <= world.time)
-		stam_regen = TRUE
 		if(HAS_TRAIT_FROM(src, TRAIT_INCAPACITATED, STAMINA))
 			. |= BODYPART_LIFE_UPDATE_HEALTH //make sure we remove the stamcrit
-	for(var/I in bodyparts)
-		var/obj/item/bodypart/BP = I
-		if(BP.needs_processing)
-			. |= BP.on_life(stam_regen)
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		. |= BP.on_life()
 
 /mob/living/carbon/proc/handle_organs()
 	if(stat != DEAD)
@@ -586,23 +582,23 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	var/natural_change = 0
 
 	// We are very cold, increate body temperature
-	if(bodytemperature <= BODYTEMP_COLD_DAMAGE_LIMIT)
-		natural_change = max((body_temperature_difference * metabolism_efficiency / BODYTEMP_AUTORECOVERY_DIVISOR), \
-			BODYTEMP_AUTORECOVERY_MINIMUM)
+	if(bodytemperature <= dna.species.bodytemp_cold_damage_limit)
+		natural_change = max((body_temperature_difference * metabolism_efficiency / dna.species.bodytemp_autorecovery_divisor), \
+			dna.species.bodytemp_autorecovery_min)
 
 	// we are cold, reduce the minimum increment and do not jump over the difference
-	else if(bodytemperature > BODYTEMP_COLD_DAMAGE_LIMIT && bodytemperature < get_body_temp_normal())
-		natural_change = max(body_temperature_difference * metabolism_efficiency / BODYTEMP_AUTORECOVERY_DIVISOR, \
-			min(body_temperature_difference, BODYTEMP_AUTORECOVERY_MINIMUM / 4))
+	else if(bodytemperature > dna.species.bodytemp_cold_damage_limit && bodytemperature < get_body_temp_normal())
+		natural_change = max(body_temperature_difference * metabolism_efficiency / dna.species.bodytemp_autorecovery_divisor, \
+			min(body_temperature_difference, dna.species.bodytemp_autorecovery_min / 4))
 
 	// We are hot, reduce the minimum increment and do not jump below the difference
-	else if(bodytemperature > get_body_temp_normal() && bodytemperature <= BODYTEMP_HEAT_DAMAGE_LIMIT)
-		natural_change = min(body_temperature_difference * metabolism_efficiency / BODYTEMP_AUTORECOVERY_DIVISOR, \
-			max(body_temperature_difference, -(BODYTEMP_AUTORECOVERY_MINIMUM / 4)))
+	else if(bodytemperature > get_body_temp_normal() && bodytemperature <= dna.species.bodytemp_heat_damage_limit)
+		natural_change = min(body_temperature_difference * metabolism_efficiency / dna.species.bodytemp_autorecovery_divisor, \
+			max(body_temperature_difference, -(dna.species.bodytemp_autorecovery_min / 4)))
 
 	// We are very hot, reduce the body temperature
-	else if(bodytemperature >= BODYTEMP_HEAT_DAMAGE_LIMIT)
-		natural_change = min((body_temperature_difference / BODYTEMP_AUTORECOVERY_DIVISOR), -BODYTEMP_AUTORECOVERY_MINIMUM)
+	else if(bodytemperature >= dna.species.bodytemp_heat_damage_limit)
+		natural_change = min((body_temperature_difference / dna.species.bodytemp_autorecovery_divisor), -dna.species.bodytemp_autorecovery_min)
 
 	var/thermal_protection = 1 - get_insulation_protection(areatemp) // invert the protection
 	if(areatemp > bodytemperature) // It is hot here
@@ -676,7 +672,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
  * * max_temp (optional) The maximum body temperature after adjustment
  * * use_insulation (optional) modifies the amount based on the amount of insulation the mob has
  * * use_steps (optional) Use the body temp divisors and max change rates
- * * hardsuit_fix (optional) num bodytemp_normal - H.bodytemperature Use hardsuit override until hardsuits fix is done...
+ * * hardsuit_fix (optional) num HUMAN_BODYTEMP_NORMAL - H.bodytemperature Use hardsuit override until hardsuits fix is done...
  */
 /mob/living/carbon/adjust_bodytemperature(amount, min_temp=0, max_temp=INFINITY, use_insulation=FALSE, use_steps=FALSE, \
 											hardsuit_fix=FALSE)
@@ -690,7 +686,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 	// Use the bodytemp divisors to get the change step, with max step size
 	if(use_steps)
-		amount = (amount > 0) ? min(amount / BODYTEMP_HEAT_DIVISOR, BODYTEMP_HEATING_MAX) : max(amount / BODYTEMP_COLD_DIVISOR, BODYTEMP_COOLING_MAX)
+		amount = (amount > 0) ? min(amount / dna.species.bodytemp_heat_divisor, dna.species.bodytemp_heating_rate_max) : max(amount / dna.species.bodytemp_cold_divisor, dna.species.bodytemp_cooling_rate_max)
 
 	if(bodytemperature >= min_temp && bodytemperature <= max_temp)
 		bodytemperature = clamp(bodytemperature + amount,min_temp,max_temp)
@@ -746,7 +742,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(limb.get_damage() >= limb.max_damage)
 				limb.cremation_progress += rand(2,5)
 				if(limb.cremation_progress >= 100)
-					if(limb.status == BODYPART_ORGANIC) //Non-organic limbs don't burn
+					if(IS_ORGANIC_LIMB(limb))  //Non-organic limbs don't burn
 						limb.drop_limb()
 						limb.visible_message("<span class='warning'>[src]'s [limb.name] crumbles into ash!</span>")
 						qdel(limb)
@@ -762,7 +758,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		if(head.get_damage() >= head.max_damage)
 			head.cremation_progress += rand(2,5)
 			if(head.cremation_progress >= 100)
-				if(head.status == BODYPART_ORGANIC) //Non-organic limbs don't burn
+				if(!IS_ORGANIC_LIMB(head)) //Non-organic limbs don't burn
 					head.drop_limb()
 					head.visible_message("<span class='warning'>[src]'s head crumbles into ash!</span>")
 					qdel(head)

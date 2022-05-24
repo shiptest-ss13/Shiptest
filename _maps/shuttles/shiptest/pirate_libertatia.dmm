@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "au" = (
-/obj/machinery/computer/autopilot,
+/obj/structure/frame/computer,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/box,
 /turf/open/floor/pod/light,
@@ -388,19 +388,12 @@
 	dir = 8;
 	pixel_y = 12
 	},
-/obj/item/clothing/suit/space/orange,
-/obj/item/clothing/mask/breath,
-/obj/item/tank/jetpack/oxygen,
-/obj/item/clothing/head/helmet/space,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
-/obj/structure/closet/wall/red{
-	dir = 4;
-	name = "suit locker";
-	pixel_x = -28;
-	req_one_access_txt = "1"
-	},
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/hardsuit/swat,
+/obj/item/tank/jetpack/carbondioxide,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "pA" = (
@@ -1426,6 +1419,9 @@
 /obj/item/radio/intercom{
 	dir = 4;
 	pixel_x = -22
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)

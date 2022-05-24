@@ -7,6 +7,8 @@
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dcba97"
 	wiki_page = "Cargo_technician" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Mailroom Technician", "Deliveries Officer")
+	senior_title = "Cargonian"
 
 	outfit = /datum/outfit/job/cargo_tech
 
@@ -60,3 +62,33 @@
 
 	ears = /obj/item/radio/headset/headset_sec/alt/department/supply
 	suit = /obj/item/clothing/suit/jacket
+
+/datum/outfit/job/cargo_tech/pilot
+	name = "Pilot"
+
+	uniform = /obj/item/clothing/under/syndicate/camo
+	accessory = /obj/item/clothing/accessory/armband/cargo
+	ears = /obj/item/radio/headset/headset_sec/alt/department/supply
+	suit = /obj/item/clothing/suit/jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/fingerless
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+
+/datum/outfit/job/cargo_tech/donk
+	name = "Customer Associate (Donk! Co.)"
+	uniform = /obj/item/clothing/under/syndicate/donk
+	suit = /obj/item/clothing/suit/hazardvest/donk
+	ears = /obj/item/radio/headset/syndicate/alt
+
+/datum/outfit/job/cargo_tech/stockboy
+	name = "Cargo Technician (Stock Boy)"
+
+	uniform = /obj/item/clothing/under/suit/cargo_tech
+	suit = /obj/item/clothing/suit/jacket/leather
+	alt_uniform = null
+	l_hand = null
+	backpack_contents = list(
+		/obj/item/modular_computer/tablet/preset/cargo = 1,
+		/obj/item/export_scanner = 1,
+		/obj/item/kitchen/knife/hunting = 1
+	)

@@ -17,6 +17,8 @@ Assistant
 	paycheck_department = ACCOUNT_CIV
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT
 	wiki_page = "Assistant" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Crewmate", "Deckhand", "Engineering Specialist", "Medical Specialist", "Science Specialist", "Entertainer")
+	senior_title = "Greytider"
 
 /datum/job/assistant/get_access()
 	if(CONFIG_GET(flag/assistants_have_maint_access) || !CONFIG_GET(flag/jobs_have_minimal_access)) //Config has assistant maint access set
@@ -29,6 +31,7 @@ Assistant
 	name = "Assistant"
 	jobtype = /datum/job/assistant
 	r_pocket = /obj/item/radio
+	belt = /obj/item/pda
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -90,6 +93,11 @@ Assistant
 	uniform = /obj/item/clothing/under/syndicate/camo
 	head = /obj/item/clothing/head/beret/solgov/terragov/plain
 
+/datum/outfit/job/assistant/minutemen
+	name = "Volunteer (Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+
 /datum/outfit/job/assistant/intern
 	name = "Assistant (Intern)"
 	uniform = /obj/item/clothing/under/suit/black
@@ -130,8 +138,33 @@ Assistant
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/lawyer/black
 
-/datum/outfit/job/assistant/operative
-	name = "Operative (Assistant)"
+/datum/outfit/job/assistant/syndicate
+	name = "Junior Agent (Assistant)"
 
-	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
+	id = /obj/item/card/id/syndicate_command/crew_id
+	ears = /obj/item/radio/headset/syndicate
+	uniform = /obj/item/clothing/under/syndicate
+	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/assistant/syndicate/gorlex
+	name = "Junior Agent (Gorlex Marauders)"
+
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	alt_uniform = /obj/item/clothing/under/syndicate
+
+/datum/outfit/job/assistant/ex_prisoner
+	name = "Assistant (Ex-Prisoner)"
+
+	glasses = /obj/item/clothing/glasses/sunglasses
+	uniform = /obj/item/clothing/under/rank/prisoner
+	shoes = /obj/item/clothing/shoes/sneakers/orange
+	accessory = /obj/item/clothing/accessory/armband/deputy
+
+/datum/outfit/job/assistant/waiter
+	name = "Assistant (Waiter)"
+
+	uniform = /obj/item/clothing/under/suit/waiter
+	shoes = /obj/item/clothing/shoes/laceup
+	ears = /obj/item/radio/headset/headset_srv
+	gloves = /obj/item/clothing/gloves/color/white

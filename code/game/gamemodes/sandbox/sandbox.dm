@@ -5,7 +5,7 @@
 	required_players = 0
 
 	announce_span = "info"
-	announce_text = "Build your own station... or just shoot each other!"
+	announce_text = "Build your own colony... or just shoot each other!"
 
 	allow_persistence_save = FALSE
 

@@ -1,6 +1,6 @@
 /obj/machinery/computer/station_alert
-	name = "station alert console"
-	desc = "Used to access the station's automated alert system."
+	name = "Emergency alert console"
+	desc = "Used to access the sector's automated alert system."
 	icon_screen = "alert:0"
 	icon_keyboard = "atmos_key"
 	circuit = /obj/item/circuitboard/computer/stationalert
@@ -34,7 +34,7 @@
 	return data
 
 /obj/machinery/computer/station_alert/proc/triggerAlarm(class, area/home, cameras, obj/source)
-	if(source.get_virtual_z_level() != get_virtual_z_level())
+	if(source.virtual_z() != virtual_z())
 		return
 	if(machine_stat & (BROKEN))
 		return

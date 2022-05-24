@@ -34,8 +34,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/custom_price
 	///Does the item have a custom premium price override
 	var/custom_premium_price
-	///Whether spessmen with an ID with an age below AGE_MINOR (20 by default) can buy this item
-	var/age_restricted = FALSE
 
 /**
 	* # vending machines
@@ -59,6 +57,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	payment_department = ACCOUNT_SRV
 	light_power = 0.5
 	light_range = MINIMUM_USEFUL_LIGHT_RANGE
+	clicksound = 'sound/machines/pda_button1.ogg'
+
 	/// Is the machine active (No sales pitches if off)!
 	var/active = 1
 	///Are we ready to vend?? Is it time??
@@ -144,7 +144,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/age_restrictions = TRUE
 
 	///A variable to change on a per instance basis on the map that allows the instance to remove cost and ID requirements
-	var/all_items_free = FALSE //change this on the object on the map. DO NOT APPLY THIS GLOBALLY.
+	var/all_items_free = TRUE
 
 	///ID's that can load this vending machine wtih refills
 	var/list/canload_access_list
@@ -300,7 +300,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		R.max_amount = amount
 		R.custom_price = initial(temp.custom_price)
 		R.custom_premium_price = initial(temp.custom_premium_price)
-		R.age_restricted = initial(temp.age_restricted)
 		recordlist += R
 /**
 	* Refill a vending machine from a refill canister
@@ -445,6 +444,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 					freebie(user, 2)
 				if(16 to 25)
 					freebie(user, 1)
+				if(26 to 75)
+					return // 50% chance to not do anything
 				if(76 to 90)
 					tilt(user)
 				if(91 to 100)
@@ -782,15 +783,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 					flick(icon_deny,src)
 					vend_ready = TRUE
 					return
-				else if(age_restrictions && R.age_restricted && (!C.registered_age || C.registered_age < AGE_MINOR))
-					say("You are not of legal age to purchase [R.name].")
-					if(!(usr in GLOB.narcd_underages))
-						Radio.set_frequency(FREQ_SECURITY)
-						Radio.talk_into(src, "SECURITY ALERT: Underaged crewmember [H] recorded attempting to purchase [R.name] in [get_area(src)]. Please watch for substance abuse.", FREQ_SECURITY)
-						GLOB.narcd_underages += H
-					flick(icon_deny,src)
-					vend_ready = TRUE
-					return
 				if(mining_point_vendor)
 					if(price_to_use > C.mining_points)
 						say("You do not possess the funds to purchase [R.name].")
@@ -948,6 +940,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	max_integrity = 400
 	payment_department = NO_FREEBIES
 	refill_canister = /obj/item/vending_refill/custom
+	all_items_free = FALSE
 	/// where the money is sent
 	var/datum/bank_account/private_a
 	/// max number of items that the custom vendor can hold

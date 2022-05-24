@@ -31,11 +31,6 @@
 	var/list/user_vars_to_edit //VARNAME = VARVALUE eg: "name" = "butts"
 	var/list/user_vars_remembered //Auto built by the above + dropped() + equipped()
 
-	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
-	var/list/greyscale_colors[3]
-	/// Needs to be a RGB-greyscale format icon state in all species' clothing icon files.
-	var/greyscale_icon_state
-
 	var/pocket_storage_component_path
 
 	//These allow head/mask items to dynamically alter the user's hair
@@ -88,23 +83,27 @@
 	else
 		return ..()
 
-/obj/item/clothing/attackby(obj/item/W, mob/user, params)
-	if(W.get_sharpness() && cuttable)
-		if (alert(user, "Are you sure you want to cut the [src] into strips?", "Cut clothing:", "Yes", "No") != "Yes")
+/obj/item/clothing/attackby(obj/item/tool, mob/user, params)
+	if(tool.get_sharpness() && cuttable)
+		if(tgui_alert(user, "Are you sure you want to cut \the [src] into strips?", "Cut clothing:", list("Yes", "No")) != "Yes")
+			return
+		if(QDELETED(src))
 			return
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
-		to_chat(user, "<span class='notice'>You cut the [src] into strips with [W].</span>")
-		var/obj/item/stack/sheet/cotton/cloth/C = new (get_turf(src), clothamnt)
-		user.put_in_hands(C)
+		to_chat(user, "<span class='notice'>You cut the [src] into strips with [tool].</span>")
+		var/obj/item/stack/sheet/cotton/cloth/cloth = new (get_turf(src), clothamnt)
+		user.put_in_hands(cloth)
 		qdel(src)
 
-	if(damaged_clothes && istype(W, /obj/item/stack/sheet/cotton/cloth))
-		var/obj/item/stack/sheet/cotton/cloth/C = W
-		C.use(1)
+	if(damaged_clothes && istype(tool, /obj/item/stack/sheet/cotton/cloth))
+		var/obj/item/stack/sheet/cotton/cloth/cloth = tool
+		if(!cloth.use(1))
+			to_chat(user, "<span class='notice'>You fail to fix the damage on [src].</span>")
+			return TRUE
 		update_clothes_damaged_state(FALSE)
 		obj_integrity = max_integrity
-		to_chat(user, "<span class='notice'>You fix the damage on [src] with [C].</span>")
-		return 1
+		to_chat(user, "<span class='notice'>You fix the damage on [src] with [cloth].</span>")
+		return TRUE
 	return ..()
 
 /obj/item/clothing/Destroy()
@@ -122,14 +121,6 @@
 					user.vars[variable] = user_vars_remembered[variable]
 		user_vars_remembered = initial(user_vars_remembered) // Effectively this sets it to null.
 
-	if((HIDEJUMPSUIT in flags_inv) || (LEGS & body_parts_covered))	//WS start - Digitigrade magboots
-		var/mob/living/carbon/human/H = user
-		if(H.get_item_by_slot(ITEM_SLOT_FEET))
-			var/obj/item/clothing/shoes/S = H.get_item_by_slot(ITEM_SLOT_FEET)
-			if(("legs" in H.dna.species.mutant_bodyparts) && H.dna.features["legs"] == "Digitigrade Legs")
-				if((DIGITIGRADE_SHOE & S.obj_flags) || (DIGITIGRADE_COMPATIBLE & S.obj_flags))
-					S.digi_alt(H, 0)								//WS end - Digitigrade magboots
-
 /obj/item/clothing/equipped(mob/user, slot)
 	..()
 	if (!istype(user))
@@ -140,14 +131,6 @@
 				if(variable in user.vars)
 					LAZYSET(user_vars_remembered, variable, user.vars[variable])
 					user.vv_edit_var(variable, user_vars_to_edit[variable])
-
-	if((HIDEJUMPSUIT in flags_inv) || (LEGS & body_parts_covered))	//WS start - Digitigrade magboots
-		var/mob/living/carbon/human/H = user
-		if(H.get_item_by_slot(ITEM_SLOT_FEET))
-			var/obj/item/clothing/shoes/S = H.get_item_by_slot(ITEM_SLOT_FEET)
-			if(("legs" in H.dna.species.mutant_bodyparts) && H.dna.features["legs"] == "Digitigrade Legs")
-				if((DIGITIGRADE_SHOE & S.obj_flags) || (DIGITIGRADE_COMPATIBLE & S.obj_flags))
-					S.digi_alt(H, 1)								//WS end - Digitigrade magboots
 
 /obj/item/clothing/examine(mob/user)
 	. = ..()
@@ -304,14 +287,13 @@
 	female_clothing_icon 			= fcopy_rsc(female_clothing_icon)
 	GLOB.female_clothing_icons[index] = female_clothing_icon
 
-/obj/item/clothing/proc/generate_species_clothing(file2use, state2use, species)
-	var/icon/human_clothing_icon = icon(file2use, state2use)
-
-	if(!greyscale_colors || !greyscale_icon_state)
-		GLOB.species_clothing_icons[species]["[file2use]-[state2use]"] = human_clothing_icon
+/obj/item/proc/generate_species_clothing(file2use, state2use, datum/species/species)
+	if(!icon_exists(species.species_clothing_path, greyscale_icon_state))
 		return
 
-	var/icon/species_icon = icon(species, greyscale_icon_state)
+	var/icon/human_clothing_icon = icon(file2use, state2use)
+
+	var/icon/species_icon = icon(species.species_clothing_path, greyscale_icon_state)
 	var/list/final_list = list()
 	for(var/i in 1 to 3)
 		if(length(greyscale_colors) < i)
@@ -325,7 +307,9 @@
 
 	species_icon.MapColors(final_list[1], final_list[2], final_list[3])
 	species_icon = fcopy_rsc(species_icon)
-	GLOB.species_clothing_icons[species]["[file2use]-[state2use]"] = species_icon
+	GLOB.species_clothing_icons[species.id]["[file2use]-[state2use]"] = species_icon
+
+	return TRUE
 
 /obj/item/clothing/under/verb/toggle()
 	set name = "Adjust Suit Sensors"

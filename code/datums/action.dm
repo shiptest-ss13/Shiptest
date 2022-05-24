@@ -160,13 +160,11 @@
 /datum/action/item_action/New(Target)
 	..()
 	var/obj/item/I = target
-	LAZYINITLIST(I.actions)
-	I.actions += src
+	LAZYADD(I.actions, src)
 
 /datum/action/item_action/Destroy()
 	var/obj/item/I = target
-	I.actions -= src
-	UNSETEMPTY(I.actions)
+	LAZYREMOVE(I.actions, src)
 	return ..()
 
 /datum/action/item_action/Trigger()
@@ -757,3 +755,17 @@
 	target.layer = old_layer
 	target.plane = old_plane
 	current_button.appearance_cache = target.appearance
+
+/datum/action/item_action/activate_lanternbang
+	name = "Activate Lanternbang"
+	check_flags = AB_CHECK_HANDS_BLOCKED | AB_CHECK_IMMOBILE
+
+/datum/action/item_action/activate_lanternbang/Trigger()
+	if(istype(target, /obj/item/flashlight/lantern/lanternbang))
+		var/obj/item/flashlight/lantern/lanternbang/L = target
+		if(L.cooldown)
+			to_chat(owner, "<span class='warning'>The lanternbang is still on cooldown!</span>")
+			return
+		to_chat(owner, "<span class='warning'>You overload the lanternbang!</span>")
+		L.activate()
+		return

@@ -165,7 +165,7 @@
 
 /atom/movable/screen/alert/fat
 	name = "Fat"
-	desc = "You ate too much food, lardass. Run around the station and lose some weight."
+	desc = "You ate too much food, lardass. Run around and lose some weight."
 	icon_state = "fat"
 
 /atom/movable/screen/alert/hungry
@@ -359,8 +359,8 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 		return
 
 	if (length(last_whisper))
+		living_owner.dying_breath("[last_whisper]")
 		living_owner.say("#[last_whisper]")
-
 	living_owner.succumb(whispered = length(last_whisper) > 0)
 
 //ALIENS
@@ -457,7 +457,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 		return
 	var/turf/P = get_turf(blood_target)
 	var/turf/Q = get_turf(owner)
-	if(!P || !Q || (P.get_virtual_z_level()!= Q.get_virtual_z_level())) //The target is on a different Z level, we cannot sense that far.
+	if(!P || !Q || (P.virtual_z()!= Q.virtual_z())) //The target is on a different Z level, we cannot sense that far.
 		icon_state = "runed_sense2"
 		desc = "You can no longer sense your target's presence."
 		return
@@ -633,7 +633,7 @@ so as to remain in compliance with the most up-to-date laws."
 		if(NOTIFY_JUMP)
 			var/turf/T = get_turf(target)
 			if(T && isturf(T))
-				G.forceMove(T)
+				G.abstract_move(T)
 		if(NOTIFY_ORBIT)
 			G.ManualFollow(target)
 

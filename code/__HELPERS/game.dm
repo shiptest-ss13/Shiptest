@@ -166,20 +166,6 @@ block( \
 			turfs += T
 	return turfs
 
-
-//This is the new version of recursive_mob_check, used for say().
-//The other proc was left intact because morgue trays use it.
-//Sped this up again for real this time
-/proc/recursive_hear_check(O)
-	var/list/processing_list = list(O)
-	. = list()
-	var/i = 0
-	while(i < length(processing_list))
-		var/atom/A = processing_list[++i]
-		if(A.flags_1 & HEAR_1)
-			. += A
-		processing_list += A.contents
-
 /** recursive_organ_check
   * inputs: O (object to start with)
   * outputs:
@@ -219,38 +205,30 @@ block( \
 
 /// Returns a list of hearers in view(view_radius) from source (ignoring luminosity). recursively checks contents for hearers
 /proc/get_hearers_in_view(view_radius, atom/source)
-
 	var/turf/center_turf = get_turf(source)
 	. = list()
 	if(!center_turf)
 		return
-	var/list/processing_list = list()
-	if (view_radius == 0) // if the range is zero, we know exactly where to look for, we can skip view
-		processing_list += center_turf.contents // We can shave off one iteration by assuming turfs cannot hear
-	else
-		var/lum = center_turf.luminosity
-		center_turf.luminosity = 6 // This is the maximum luminosity
-		var/target = source.loc == center_turf ? source : center_turf //this is reasonably faster if true, and very slightly slower if false
-		for(var/atom/movable/movable in view(view_radius, target))
-			if(movable.flags_1 & HEAR_1) //dont add the movables returned by view() to processing_list to reduce recursive iterations, just check them
-				. += movable
-				SEND_SIGNAL(movable, COMSIG_ATOM_HEARER_IN_VIEW, processing_list, .)
-			processing_list += movable.contents
-		center_turf.luminosity = lum
-
-	var/i = 0
-	while(i < length(processing_list)) // recursive_hear_check inlined here, the large majority of the work is in this part for big contents trees
-		var/atom/atom_to_check = processing_list[++i]
-		if(atom_to_check.flags_1 & HEAR_1)
-			. += atom_to_check
-			SEND_SIGNAL(atom_to_check, COMSIG_ATOM_HEARER_IN_VIEW, processing_list, .)
-		processing_list += atom_to_check.contents
+	var/lum = center_turf.luminosity
+	center_turf.luminosity = 6 // This is the maximum luminosity
+	for(var/atom/movable/movable in view(view_radius, center_turf))
+		var/list/recursive_contents = LAZYACCESS(movable.important_recursive_contents, RECURSIVE_CONTENTS_HEARING_SENSITIVE)
+		if(recursive_contents)
+			. += recursive_contents
+			SEND_SIGNAL(movable, COMSIG_ATOM_HEARER_IN_VIEW, .)
+	center_turf.luminosity = lum
 
 /proc/get_mobs_in_radio_ranges(list/obj/item/radio/radios)
 	. = list()
 	// Returns a list of mobs who can hear any of the radios given in @radios
 	for(var/obj/item/radio/R in radios)
-		. |= get_hearers_in_view(R.canhear_range, R)
+		if(R.canhear_range != -1)
+			. |= get_hearers_in_view(R.canhear_range, R)
+		else
+			if(istype(R.loc, /obj/item/implant))
+				var/obj/item/implant/I = R.loc
+				if(I.imp_in)
+					. |= I.imp_in
 
 #define SIGNV(X) ((X<0)?-1:1)
 
@@ -517,7 +495,7 @@ block( \
 
 	return A.loc
 
-/proc/AnnounceArrival(mob/living/carbon/human/character, rank, obj/structure/overmap/ship/simulated/ship)
+/proc/AnnounceArrival(mob/living/carbon/human/character, rank, datum/overmap/ship/controlled/ship)
 	if(!SSticker.IsRoundInProgress() || QDELETED(character))
 		return
 	var/area/A = get_area(character)
@@ -581,7 +559,7 @@ block( \
 /proc/power_fail(duration_min, duration_max)
 	for(var/P in GLOB.apcs_list)
 		var/obj/machinery/power/apc/C = P
-		if(C.cell && SSmapping.level_trait(C.z, ZTRAIT_STATION))
+		if(C.cell && C.virtual_level_trait(ZTRAIT_STATION))
 			var/area/A = C.area
 			if(GLOB.typecache_powerfailure_safe_areas[A.type])
 				continue

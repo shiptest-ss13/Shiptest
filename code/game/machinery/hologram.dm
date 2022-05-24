@@ -33,7 +33,6 @@ Possible to do for anyone motivated enough:
 	icon_state = "holopad0"
 	layer = LOW_OBJ_LAYER
 	plane = FLOOR_PLANE
-	flags_1 = HEAR_1
 	req_access = list(ACCESS_KEYCARD_AUTH) //Used to allow for forced connecting to other (not secure) holopads. Anyone can make a call, though.
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 5
@@ -78,6 +77,10 @@ Possible to do for anyone motivated enough:
 	var/secure = FALSE
 	/// If we are currently calling another holopad
 	var/calling = FALSE
+
+/obj/machinery/holopad/Initialize()
+	. = ..()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /obj/machinery/holopad/secure
 	name = "secure holopad"
@@ -318,7 +321,7 @@ Possible to do for anyone motivated enough:
 				new_turf = get_turf(src)
 			else
 				new_turf = get_step(src, GLOB.cardinals[offset])
-			replay_holo.forceMove(new_turf)
+			replay_holo.abstract_move(new_turf)
 			return TRUE
 		if("hang_up")
 			if(outgoing_call)
@@ -405,7 +408,7 @@ Possible to do for anyone motivated enough:
 		Hologram.set_anchored(TRUE)//So space wind cannot drag it.
 		Hologram.name = "[user.name] (Hologram)"//If someone decides to right click.
 		Hologram.set_light(2)	//hologram lighting
-		move_hologram()
+		move_hologram(user, loc)
 
 		set_holo(user, Hologram)
 		visible_message("<span class='notice'>A holographic image of [user] flickers to life before your eyes!</span>")
@@ -429,6 +432,9 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 			HC.user.Hear(message, speaker, message_language, raw_message, radio_freq, spans, message_mods)
 
 	if(outgoing_call && speaker == outgoing_call.user)
+		if(!outgoing_call.hologram) //This can apparently be null, just panic and hang up.
+			hangup_all_calls()
+			return
 		outgoing_call.hologram.say(raw_message)
 
 	if(record_mode && speaker == record_user)
@@ -506,7 +512,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
   * *Areacheck for things that need to get into other areas, such as emergency holograms
   */
 /obj/machinery/holopad/proc/validate_location(turf/T, check_los = FALSE, areacheck = TRUE)
-	if(T.get_virtual_z_level() == get_virtual_z_level() && get_dist(T, src) <= holo_range && (T.loc == get_area(src) || !areacheck) && anchored)
+	if(T.virtual_z() == virtual_z() && get_dist(T, src) <= holo_range && (T.loc == get_area(src) || !areacheck) && anchored)
 		return TRUE
 	else
 		return FALSE

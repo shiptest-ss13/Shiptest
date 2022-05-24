@@ -27,7 +27,7 @@
 
 	var/list/atmos_overlay_types //gas IDs of current active gas overlays
 
-/turf/open/Initialize()
+/turf/open/Initialize(mapload, inherited_virtual_z)
 	if(!blocks_air)
 		air = new(2500,src)
 		air.copy_from_turf(src)
@@ -225,14 +225,12 @@
 		pressure_difference = difference
 
 /turf/open/proc/high_pressure_movements()
-	var/atom/movable/M
 	var/multiplier = 1
 	if(locate(/obj/structure/rack) in src)
 		multiplier *= 0.1
 	else if(locate(/obj/structure/table) in src)
 		multiplier *= 0.2
-	for(var/thing in src)
-		M = thing
+	for(var/atom/movable/M as anything in src)
 		if (!M.anchored && !M.pulledby && M.last_high_pressure_movement_air_cycle < SSair.times_fired)
 			M.experience_pressure_difference(pressure_difference * multiplier, pressure_direction, 0, pressure_specific_target)
 

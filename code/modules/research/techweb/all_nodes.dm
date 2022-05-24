@@ -17,7 +17,9 @@
 		// Miscellaneous Stufff
 		"paystand", "space_heater", "bucket", "plastic_knife", "plastic_fork", "plastic_spoon",
 		// Security Stuff
-		"sec_rshot", "sec_beanbag_slug", "sec_bshot", "sec_slug", "sec_Islug", "sec_dart", 	"sec_38",
+		"sec_rshot", "sec_beanbag_slug", "sec_bshot", "sec_slug", "sec_Islug", "sec_dart", 	"sec_38", "buckshot_shell", "beanbag_slug", "rubber_shot",
+		//Handgun Ammo (Security)
+		"commanderammo", "stechkinammo", "m1911ammo", "m9cammo", "c9mm", "c10mm", "c45", "c556mmHITP", "rubbershot9mm", "rubbershot10mm", "rubbershot45", "rubbershot556mmHITP",
 		// Construction Materials
 		"rglass", "plasteel", "plastitanium", "plasmaglass", "plasmareinforcedglass", "titaniumglass", "plastitaniumglass",
 	)
@@ -35,7 +37,7 @@
 	display_name = "Cyborg Construction"
 	description = "Sapient robots with preloaded tool modules and programmable laws."
 	design_ids = list("robocontrol", "sflash", "borg_suit", "borg_head", "borg_chest", "borg_r_arm", "borg_l_arm", "borg_r_leg", "borg_l_leg", "borgupload",
-					"cyborgrecharger", "borg_upgrade_restart", "borg_upgrade_rename")
+					"cyborgrecharger", "borg_upgrade_restart", "borg_upgrade_rename", "augmanipulator")
 
 /datum/techweb_node/mech
 	id = "mecha"
@@ -121,7 +123,7 @@
 	display_name = "Experimental Surgery"
 	description = "When evolution isn't fast enough."
 	prereq_ids = list("adv_surgery")
-	design_ids = list("surgery_pacify","surgery_vein_thread","surgery_muscled_veins","surgery_nerve_splice","surgery_nerve_ground","surgery_ligament_hook","surgery_ligament_reinforcement","surgery_viral_bond", "surgery_heal_combo_upgrade", "surgery_exp_dissection", "autodoc", "surgery_cortex_imprint","surgery_cortex_folding")
+	design_ids = list("surgery_pacify","surgery_vein_thread","surgery_muscled_veins","surgery_nerve_splice","surgery_nerve_ground","surgery_ligament_hook","surgery_ligament_reinforcement","surgery_viral_bond", "surgery_heal_combo_upgrade", "surgery_exp_dissection", "surgery_cortex_imprint","surgery_cortex_folding")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
@@ -156,7 +158,7 @@
 	design_ids = list("solarcontrol", "solarassembly", "recharger", "powermonitor", "rped", "pacman", "adv_capacitor", "adv_scanning", "emitter", "high_cell", "adv_matter_bin", "scanner_gate",
 	"atmosalerts", "atmos_control", "recycler", "autolathe", "high_micro_laser", "nano_mani", "mesons", "welding_goggles", "thermomachine", "rad_collector", "tesla_coil", "grounding_rod",
 	"apc_control", "cell_charger", "power control", "airlock_board", "firelock_board", "aac_electronics", "airalarm_electronics", "firealarm_electronics", "cell_charger", "stack_console", "stack_machine",
-	"oxygen_tank", "plasma_tank", "emergency_oxygen", "emergency_oxygen_engi", "plasmaman_tank_belt", "pneumatic_seal") //WS edit, solar assemblies from lathe
+	"oxygen_tank", "plasma_tank", "emergency_oxygen", "emergency_oxygen_engi", "plasmaman_tank_belt", "pneumatic_seal", "shieldwallgen", "shieldwallgen_atmos") //WS edit, solar assemblies from lathe
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	export_price = 5000
 
@@ -172,7 +174,7 @@
 /datum/techweb_node/anomaly
 	id = "anomaly_research"
 	display_name = "Anomaly Research"
-	description = "Unlock the potential of the mysterious anomalies that appear on station."
+	description = "Unlock the potential of the mysterious anomalies that appear throughout the sector."
 	prereq_ids = list("adv_engi", "practical_bluespace")
 	design_ids = list("reactive_armour", "anomaly_neutralizer")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
@@ -450,7 +452,7 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 	design_ids = list("s-receiver", "s-bus", "s-broadcaster", "s-processor", "s-hub", "s-server", "s-relay", "comm_monitor", "comm_server",
-	"s-ansible", "s-filter", "s-amplifier", "ntnet_relay", "s-treatment", "s-analyzer", "s-crystal", "s-transmitter", "s-messaging", "selling_console", "selling_pad")
+	"s-ansible", "s-filter", "s-amplifier", "ntnet_relay", "s-treatment", "s-analyzer", "s-crystal", "s-transmitter", "s-messaging")
 
 /datum/techweb_node/integrated_HUDs
 	id = "integrated_HUDs"
@@ -668,7 +670,7 @@
 	display_name = "Medical Weaponry"
 	description = "Weapons using medical technology."
 	prereq_ids = list("adv_biotech", "weaponry")
-	design_ids = list("rapidsyringe")
+	design_ids = list("rapidsyringe", "shotgun_dart")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -704,16 +706,24 @@
 	display_name = "Ballistic Weaponry"
 	description = "This isn't research.. This is reverse-engineering!"
 	prereq_ids = list("weaponry")
-	design_ids = list("mag_oldsmg", "mag_oldsmg_ap", "mag_oldsmg_ic", "commanderammo", "rubbershot9mm")
+	design_ids = list("mag_oldsmg", "mag_oldsmg_ap", "mag_oldsmg_ic", "shotgun_slug")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+
+/datum/techweb_node/adv_ballistics
+	id = "adv_ballistics"
+	display_name = "Advanced Ballistics"
+	description = "Refined ballistic ammunition for extra combat trauma."
+	prereq_ids = list("ballistic_weapons", "adv_engi")
+	design_ids = list("ap9mm", "ap10mm", "ap45", "hp9mm", "hp10mm", "hp45", "ap556mmHITP", "hp556mmHITP")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/exotic_ammo
 	id = "exotic_ammo"
 	display_name = "Exotic Ammunition"
 	description = "They won't know what hit em."
 	prereq_ids = list("adv_weaponry", "medical_weapons")
-	design_ids = list("techshotshell", "c38_hotshot", "c38_iceblox")
+	design_ids = list("techshotshell", "c38_hotshot", "c38_iceblox", "inc9mm", "inc10mm", "inc45", "incendiary_slug")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -1084,6 +1094,155 @@
 			continue
 		boost_item_paths |= UI.item	//allows deconning to unlock.
 
+/////////////////////////spacepod tech/////////////////////////
+/datum/techweb_node/spacepod_basic
+	id = "spacepod_basic"
+	display_name = "Spacepod Construction"
+	description = "Basic stuff to construct Spacepods. Don't crash your first spacepod into the sun, especially while going more than 10 m/s."
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 2500
+	prereq_ids = list("base")
+	design_ids = list("podcore", "podarmor_civ", "podarmor_dark", "spacepod_main")
+
+/datum/techweb_node/spacepod_lock
+	id = "spacepod_lock"
+	display_name = "Spacepod Security"
+	description = "Keeps greytiders out of your spacepods."
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2750)
+	export_price = 2750
+	prereq_ids = list("spacepod_basic", "engineering")
+	design_ids = list("podlock_keyed", "podkey", "podmisc_tracker")
+
+/datum/techweb_node/spacepod_disabler
+	id = "spacepod_disabler"
+	display_name = "Spacepod Weaponry"
+	description = "For a bit of pew pew space battles"
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3500)
+	export_price = 3500
+	prereq_ids = list("spacepod_basic", "weaponry")
+	design_ids = list("podgun_disabler")
+
+/datum/techweb_node/spacepod_lasers
+	id = "spacepod_lasers"
+	display_name = "Advanced Spacepod Weaponry"
+	description = "For a lot of pew pew space battles. PEW PEW PEW!! Shit, I missed. I need better aim. Whatever."
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5250)
+	export_price = 5250
+	prereq_ids = list("spacepod_disabler", "electronic_weapons")
+	design_ids = list("podgun_laser", "podgun_bdisabler")
+
+/datum/techweb_node/spacepod_ka
+	id = "spacepod_ka"
+	display_name = "Spacepod Mining Tech"
+	description = "Cutting up asteroids using your spacepods"
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3500)
+	export_price = 500
+	prereq_ids = list("basic_mining", "spacepod_disabler")
+	design_ids = list("pod_ka_basic")
+
+/datum/techweb_node/spacepod_advmining
+	id = "spacepod_aka"
+	display_name = "Advanced Spacepod Mining Tech"
+	description = "Cutting up asteroids using your spacepods.... faster!"
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3500)
+	export_price = 3500
+	prereq_ids = list("spacepod_ka", "adv_mining")
+	design_ids = list("pod_ka", "pod_plasma_cutter")
+
+/datum/techweb_node/spacepod_advplasmacutter
+	id = "spacepod_apc"
+	display_name = "Advanced Spacepod Plasma Cutter"
+	description = "Cutting up asteroids using your spacepods........... FASTERRRRRR!!!!!! Oh shit, that was gibtonite."
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 4500)
+	export_price = 4500
+	prereq_ids = list("spacepod_aka", "adv_plasma")
+	design_ids = list("pod_adv_plasma_cutter")
+
+/datum/techweb_node/spacepod_pseat
+	id = "spacepod_pseat"
+	display_name = "Spacepod Passenger Seat"
+	description = "For bringing along victims as you fly off into the far reaches of space"
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3750)
+	export_price = 3750
+	prereq_ids = list("spacepod_basic", "adv_engi")
+	design_ids = list("podcargo_seat")
+
+/datum/techweb_node/spacepod_storage
+	id = "spacepod_storage"
+	display_name = "Spacepod Storage"
+	description = "For storing the stuff you find in the far reaches of space"
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 4500)
+	export_price = 4500
+	prereq_ids = list("spacepod_pseat", "high_efficiency")
+	design_ids = list("podcargo_crate", "podcargo_ore")
+
+/datum/techweb_node/spacepod_lockbuster
+	id = "spacepod_lockbuster"
+	display_name = "Spacepod Lock Buster"
+	description = "For when someone's being really naughty with a spacepod"
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 8500)
+	export_price = 8500
+	prereq_ids = list("spacepod_lasers", "high_efficiency", "adv_mining")
+	design_ids = list("pod_lockbuster")
+
+/datum/techweb_node/spacepod_iarmor
+	id = "spacepod_iarmor"
+	display_name = "Advanced Spacepod Armor"
+	description = "Better protection for your precious ride. You'll need it if you plan on engaging in spacepod battles."
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2750)
+	export_price = 2750
+	prereq_ids = list("spacepod_storage", "high_efficiency")
+	design_ids = list("podarmor_industiral", "podarmor_sec", "podarmor_gold")
+
+/datum/techweb_node/dex_robotics
+	id = "dex_robotics"
+	display_name = "Dexterous Robotics Research"
+	description = "The fine art of opposable thumbs."
+	prereq_ids = list("adv_engi", "adv_robotics", "biotech")
+	design_ids = list("maint_drone")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 5000
+
+/////////////////////////shuttle tech/////////////////////////
+/datum/techweb_node/basic_shuttle_tech
+	id = "basic_shuttle"
+	display_name = "Basic Shuttle Research"
+	description = "Research the technology required to create and use basic shuttles."
+	prereq_ids = list("bluespace_travel", "adv_engi")
+	design_ids = list("engine_plasma", "engine_ion", "engine_heater", "engine_smes", "shuttle_helm", "rapid_shuttle_designator")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	export_price = 5000
+
+/datum/techweb_node/exp_shuttle_tech
+	id = "exp_shuttle"
+	display_name = "Experimental Shuttle Research"
+	description = "A bunch of engines and related shuttle parts that are likely not really that useful, but could be in strange situations."
+	prereq_ids = list("basic_shuttle")
+	design_ids = list("engine_expulsion")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 2500
+
+
+////////////////////// Deepcore ///////////////////////
+
+/datum/techweb_node/deepcore
+	id = "deepcore"
+	display_name = "Deepcore Mining"
+	description = "Mining, but automated."
+	prereq_ids = list("basic_mining")
+	design_ids = list("deepcore_drill", "deepcore_hopper", "deepcore_hub")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 2500
+
+////////////////////// IPC Parts ///////////////////////
+/datum/techweb_node/ipc_organs
+	id = "ipc_organs"
+	display_name = "IPC Parts"
+	description = "We have the technology to replace him."
+	prereq_ids = list("cyber_organs","robotics")
+	design_ids = list("robotic_liver", "robotic_eyes", "robotic_tongue", "robotic_stomach", "robotic_ears", "power_cord")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	export_price = 5000
 
 ////////////////////////B.E.P.I.S. Locked Techs////////////////////////
 /datum/techweb_node/light_apps

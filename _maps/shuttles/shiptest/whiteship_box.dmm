@@ -14,7 +14,6 @@
 	callTime = 250;
 	dir = 2;
 	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
 	name = "Hospital Ship";
 	port_direction = 8;
 	preferred_direction = 4
@@ -1013,7 +1012,7 @@
 /obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
-/obj/machinery/computer/autopilot{
+/obj/structure/frame/computer{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -1417,6 +1416,11 @@
 /obj/item/clothing/glasses/hud/health/sunglasses,
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/east,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "do" = (

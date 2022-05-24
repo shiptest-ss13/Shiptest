@@ -65,6 +65,9 @@
 	///Basically determines whether or not more of the job can be opened.
 	var/officer = FALSE
 
+	var/list/alt_titles = list()
+	var/senior_title
+
 /datum/job/New(new_title, datum/outfit/new_outfit)
 	if(new_title)
 		title = new_title
@@ -83,73 +86,19 @@
 		for(var/i in roundstart_experience)
 			experiencer.mind.adjust_experience(i, roundstart_experience[i], TRUE)
 
-
-	if(!ishuman(H))
+	if(!iscarbon(H))
 		return
-	var/mob/living/carbon/human/human = H
-	var/list/gear_leftovers
-	if(M.client && (M.client.prefs.equipped_gear && M.client.prefs.equipped_gear.len))
+	var/mob/living/carbon/spawnee = H
+	if(M.client && (M.client.prefs.equipped_gear && length(M.client.prefs.equipped_gear)))
+		var/obj/item/storage/box/loadout_dumper = new()
 		for(var/gear in M.client.prefs.equipped_gear)
-			var/datum/gear/G = GLOB.gear_datums[gear]
-			if(G)
-				var/permitted = FALSE
-
-				if(G.allowed_roles && H.mind && (H.mind.assigned_role in G.allowed_roles))
-					permitted = TRUE
-				else if(!G.allowed_roles)
-					permitted = TRUE
-				else
-					permitted = FALSE
-
-				if(G.species_blacklist && (human.dna.species.id in G.species_blacklist))
-					permitted = FALSE
-
-				if(G.species_whitelist && !(human.dna.species.id in G.species_whitelist))
-					permitted = FALSE
-
-				if(!permitted)
-					to_chat(M, "<span class='warning'>Your current species or role does not permit you to spawn with [gear]!</span>")
-					continue
-				//WS Edit - Fix Loadout Uniforms not spawning ID/PDA
-				if(G.slot == ITEM_SLOT_ICLOTHING)
-					continue // Handled in pre_equip
-				//EndWS Edit - Fix Loadout Uniforms not spawning ID/PDA
-				if(G.slot)
-					if(!H.equip_to_slot_or_del(G.spawn_item(H, owner = H), G.slot))
-						LAZYADD(gear_leftovers, G)
-				else
-					LAZYADD(gear_leftovers, G)
-			else
-				M.client.prefs.equipped_gear -= gear
-
-	if(gear_leftovers?.len)
-		for(var/datum/gear/G in gear_leftovers)
-			var/metadata = M.client.prefs.equipped_gear[G.display_name]
-			var/item = G.spawn_item(null, metadata, owner = H)
-			var/atom/placed_in = human.equip_or_collect(item)
-
-			if(istype(placed_in))
-				if(isturf(placed_in))
-					to_chat(M, "<span class='notice'>Placing [G.display_name] on [placed_in]!</span>")
-				else
-					to_chat(M, "<span class='noticed'>Placing [G.display_name] in [placed_in.name]]")
-				continue
-
-			if(H.equip_to_appropriate_slot(item))
-				to_chat(M, "<span class='notice'>Placing [G.display_name] in your inventory!</span>")
-				continue
-			if(H.put_in_hands(item))
-				to_chat(M, "<span class='notice'>Placing [G.display_name] in your hands!</span>")
-				continue
-
-			var/obj/item/storage/B = (locate() in H)
-			if(B)
-				G.spawn_item(B, metadata, owner = H)
-				to_chat(M, "<span class='notice'>Placing [G.display_name] in [B.name]!</span>")
-				continue
-
-			to_chat(M, "<span class='danger'>Failed to locate a storage object on your mob, either you spawned with no hands free and no backpack or this is a bug.</span>")
-			qdel(item)
+			var/datum/gear/new_gear = GLOB.gear_datums[gear]
+			new_gear.spawn_item(loadout_dumper, spawnee)
+		var/datum/component/storage/back_storage = spawnee.back.GetComponent(/datum/component/storage)
+		if(back_storage)
+			back_storage.handle_item_insertion(loadout_dumper, TRUE)
+		else if(!spawnee.put_in_hands(loadout_dumper, TRUE))
+			to_chat("Unable to place loadout box.")
 
 /datum/job/proc/announce(mob/living/carbon/human/H)
 	if(head_announce)
@@ -219,7 +168,7 @@
 	if(!H)
 		return FALSE
 	if(CONFIG_GET(flag/enforce_human_authority) && (title in GLOB.command_positions))
-		if(H.dna.species.id != "human")
+		if(H.dna.species.id != SPECIES_HUMAN)
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", preference_source)
 	if(!visualsOnly)
@@ -365,21 +314,6 @@
 				holder = "[alt_uniform]"
 		if(PREF_GREYSUIT)
 			holder = "/obj/item/clothing/under/color/grey"
-		//WS Edit - Fix Loadout Uniforms not spawning ID/PDA
-		if(PREF_LOADOUT)
-			if (preference_source == null)
-				holder = "[uniform]" // Who are we getting the loadout pref from anyways?
-			else
-				var/datum/pref_loadout_uniform = null
-				for(var/gear in preference_source.prefs.equipped_gear)
-					var/datum/gear/G = GLOB.gear_datums[gear]
-					if (G.slot == ITEM_SLOT_ICLOTHING)
-						pref_loadout_uniform = G.path
-				if (pref_loadout_uniform == null)
-					holder = "[uniform]"
-				else
-					uniform = pref_loadout_uniform
-		// EndWS Edit - Fix Loadout Uniforms not spawning ID/PDA
 		else
 			holder = "[uniform]"
 

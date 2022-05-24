@@ -328,7 +328,7 @@
 
 
 /mob/living/silicon/robot/triggerAlarm(class, area/home, cameras, obj/source)
-	if(source.get_virtual_z_level() != get_virtual_z_level())
+	if(source.virtual_z() != virtual_z())
 		return
 	if(stat == DEAD)
 		return TRUE
@@ -430,22 +430,22 @@
 /mob/living/silicon/robot/regenerate_icons()
 	return update_icons()
 
-/* /mob/living/silicon/robot/update_icons() <--- WS - Moved to modular for borg icons
 /mob/living/silicon/robot/update_icons()
 	cut_overlays()
-	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	icon_state = module.cyborg_base_icon
+	//WS changes - Thanks Cit - Allows modules to use different icon files
+	icon = (module.cyborg_icon_override ? module.cyborg_icon_override : initial(icon))
+	//EndWS Changes
+	if(module.cyborg_base_icon == "robot")
+		icon = 'icons/mob/robots.dmi'
+		pixel_x = initial(pixel_x)
 	if(stat != DEAD && !(HAS_TRAIT(src, TRAIT_KNOCKEDOUT) || IsStun() || IsParalyzed() || low_power_mode)) //Not dead, not stunned.
 		if(!eye_lights)
 			eye_lights = new()
-		if(lamp_enabled)
+		if(lamp_intensity > 2)
 			eye_lights.icon_state = "[module.special_light_key ? "[module.special_light_key]":"[module.cyborg_base_icon]"]_l"
-			eye_lights.color = lamp_color
-			eye_lights.plane = 19 //glowy eyes
 		else
 			eye_lights.icon_state = "[module.special_light_key ? "[module.special_light_key]":"[module.cyborg_base_icon]"]_e"
-			eye_lights.color = COLOR_WHITE
-			eye_lights.plane = -1
 		eye_lights.icon = icon
 		add_overlay(eye_lights)
 
@@ -461,7 +461,6 @@
 		head_overlay.pixel_y += hat_offset
 		add_overlay(head_overlay)
 	update_fire()
-*/
 
 /mob/living/silicon/robot/proc/self_destruct()
 	if(emagged)

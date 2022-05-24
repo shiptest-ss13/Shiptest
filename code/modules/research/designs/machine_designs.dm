@@ -280,7 +280,7 @@
 	id = "rdserver"
 	build_type = AUTOLATHE | IMPRINTER
 	build_path = /obj/item/circuitboard/machine/rdserver
-	category = list("Research Machinery", "initial", "Equipment")
+	category = list("Research Machinery", "initial", "Equipment", "Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/mechfab
@@ -304,6 +304,14 @@
 	desc = "The circuit board for a Mechbay Recharger."
 	id = "mech_recharger"
 	build_path = /obj/item/circuitboard/machine/mech_recharger
+	category = list("Research Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/augmanipulator
+	name = "Machine Design (Augment Manipulator Board)"
+	desc = "The circuit board for an Augment Manipulator."
+	id = "augmanipulator"
+	build_path = /obj/item/circuitboard/machine/aug_manipulator
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
@@ -612,14 +620,6 @@
 	category = list("Medical Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/board/autodoc
-	name = "Machine Design (Autodoc)"
-	desc = "The circuit board for an Autodoc."
-	id = "autodoc"
-	build_path = /obj/item/circuitboard/machine/autodoc
-	category = list("Medical Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/board/medical_kiosk
 	name = "Machine Design (Medical Kiosk)"
 	desc = "The circuit board for a Medical Kiosk."
@@ -643,3 +643,94 @@
 	build_path = /obj/item/circuitboard/machine/sheetifier
 	category = list ("Misc. Machinery")
 
+/datum/design/board/shieldwallgen
+	name = "Machine Design (Shield Wall Generator)"
+	desc = "A shield generator commonly used in xenobiology research."
+	id = "shieldwallgen"
+	build_path = /obj/item/circuitboard/machine/shieldwallgen
+	category = list("Misc. Machinery")
+
+/datum/design/board/shieldwallgen/atmos
+	name = "Machine Design (Holofield Generator)"
+	desc = "A specialized shield generator used to block airflow."
+	id = "shieldwallgen_atmos"
+	build_path = /obj/item/circuitboard/machine/shieldwallgen/atmos
+	category = list("Misc. Machinery")
+
+/datum/design/board/deepcore_drill
+	name = "Machine Design (Deep Core Bluespace Drill Board)"
+	desc = "The circuit board for a Deep Core Bluespace Drill."
+	id = "deepcore_drill"
+	build_type = IMPRINTER
+	build_path = /obj/item/circuitboard/machine/deepcore/drill
+	category = list("Mining Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+
+/datum/design/board/deepcore_hopper
+	name = "Machine Design (Bluespace Material Hopper Board)"
+	desc = "The circuit board for a Bluespace Material Hopper."
+	id = "deepcore_hopper"
+	build_type = IMPRINTER
+	build_path = /obj/item/circuitboard/machine/deepcore/hopper
+	category = list("Mining Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+
+/datum/design/board/deepcore_hub
+	name = "Machine Design (Deepcore Mining Control Hub Board)"
+	desc = "The circuit board for a Deepcore Mining Control Hub."
+	id = "deepcore_hub"
+	build_type = IMPRINTER
+	build_path = /obj/item/circuitboard/machine/deepcore/hub
+	category = list("Mining Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+
+///////////////////////////////////////////
+//////////////Shuttle Boards///////////////
+///////////////////////////////////////////
+/datum/design/board/shuttle/engine/plasma
+	name = "Machine Design (Plasma Thruster Board)"
+	desc = "The circuit board for a plasma thruster."
+	id = "engine_plasma"
+	build_path = /obj/item/circuitboard/machine/shuttle/engine/plasma
+	category = list ("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/shuttle/engine/electric
+	name = "Machine Design (Ion Thruster Board)"
+	desc = "The circuit board for an ion thruster."
+	id = "engine_ion"
+	build_path = /obj/item/circuitboard/machine/shuttle/engine/electric
+	category = list ("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/shuttle/engine/expulsion
+	name = "Machine Design (Expulsion Thruster Board)"
+	desc = "The circuit board for an expulsion thruster."
+	id = "engine_expulsion"
+	build_path = /obj/item/circuitboard/machine/shuttle/engine/expulsion
+	category = list ("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/shuttle/engine/void
+	name = "Machine Design (Void Thruster Board)"
+	desc = "The circuit board for a void thruster."
+	id = "engine_void"
+	build_path = /obj/item/circuitboard/machine/shuttle/engine/void
+	category = list ("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/shuttle/engine/heater
+	name = "Machine Design (Fueled Engine Heater Board)"
+	desc = "The circuit board for an engine heater."
+	id = "engine_heater"
+	build_path = /obj/item/circuitboard/machine/shuttle/heater
+	category = list ("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/shuttle/engine/smes
+	name = "Machine Design (Engine Heater Board)"
+	desc = "The circuit board for an engine heater."
+	id = "engine_smes"
+	build_path = /obj/item/circuitboard/machine/shuttle/smes
+	category = list ("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE

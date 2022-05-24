@@ -112,9 +112,12 @@
 	key = "circle"
 	key_third_person = "circles"
 	hands_use_check = TRUE
+	mob_type_allowed_typecache = list(/mob/living/carbon)
 
 /datum/emote/living/carbon/circle/run_emote(mob/user, params, type_override, intentional)
 	. = ..()
+	if(!.)
+		return
 	var/obj/item/circlegame/N = new(user)
 	if(user.put_in_hands(N))
 		to_chat(user, "<span class='notice'>You make a circle with your hand.</span>")
@@ -126,6 +129,7 @@
 	key = "slap"
 	key_third_person = "slaps"
 	hands_use_check = TRUE
+	mob_type_allowed_typecache = list(/mob/living/carbon)
 
 /datum/emote/living/carbon/slap/run_emote(mob/user, params, type_override, intentional)
 	. = ..()

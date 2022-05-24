@@ -1,5 +1,5 @@
 /obj/item/radio/intercom
-	name = "station intercom"
+	name = "shortwave intercom"
 	desc = "Talk through this."
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "intercom"
@@ -60,6 +60,10 @@
 /obj/item/radio/intercom/attack_ai(mob/user)
 	interact(user)
 
+/obj/item/radio/intercom/attack_paw(mob/user)
+	return attack_hand(user)
+
+
 /obj/item/radio/intercom/attack_hand(mob/user)
 	. = ..()
 	if(.)
@@ -67,16 +71,22 @@
 	interact(user)
 
 /obj/item/radio/intercom/ui_state(mob/user)
-	return GLOB.default_state
+	if(issilicon(user)) // for silicons give default_state
+		return GLOB.default_state
 
-/obj/item/radio/intercom/can_receive(freq, level)
+	return GLOB.physical_state // for other non-dexterous mobs give physical_state
+
+
+
+/obj/item/radio/intercom/can_receive(freq, map_zones)
 	if(!on)
 		return FALSE
 	if(wires.is_cut(WIRE_RX))
 		return FALSE
-	if(!(0 in level))
+	if(!(0 in map_zones))
 		var/turf/position = get_turf(src)
-		if(isnull(position) || !(position.get_virtual_z_level() in level))
+		var/datum/map_zone/mapzone = position.get_map_zone()
+		if(!position || !(mapzone in map_zones))
 			return FALSE
 	if(!listening)
 		return FALSE
@@ -134,3 +144,26 @@
 	pixel_shift = 29
 	inverse = TRUE
 	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
+
+//wideband radio
+/obj/item/radio/intercom/wideband
+	name = "wideband relay"
+	desc = "A low-gain reciever capable of sending and recieving wideband subspace messages."
+	icon_state = "intercom-wideband"
+	canhear_range = 3
+	keyslot = new /obj/item/encryptionkey/wideband
+	independent = TRUE
+	frequency = FREQ_WIDEBAND
+	freqlock = TRUE
+
+/obj/item/radio/intercom/wideband/unscrewed
+	unscrewed = TRUE
+
+/obj/item/radio/intercom/wideband/recalculateChannels()
+	. = ..()
+	independent = TRUE
+
+/obj/item/wallframe/intercom/wideband
+	name = "wideband relay frame"
+	desc = "A detached wideband relay. Attach to a wall and screw it in to use."
+	result_path = /obj/item/radio/intercom/wideband/unscrewed

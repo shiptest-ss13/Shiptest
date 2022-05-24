@@ -32,8 +32,7 @@
 	var/voucher_items = list(
 		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,
 		"E-TAR SMG" = /obj/item/gun/energy/e_gun/smg,
-		"Vector SMG" = /obj/item/gun/ballistic/automatic/vector,
-		"E-SG 500" = /obj/item/gun/energy/e_gun/iot,)
+		"E-SG 500" = /obj/item/gun/energy/e_gun/iot)
 
 /obj/machinery/vending/security/pre_throw(obj/item/I)
 	if(istype(I, /obj/item/grenade))
@@ -47,7 +46,7 @@
 /obj/item/vending_refill/security
 	icon_state = "refill_sec"
 
-/obj/machinery/vending/security/attackby(obj/item/I, mob/user, params) //WS edit: THERE IS NO GOD. THERE IS ONLY GUNS. REPENT.
+/obj/machinery/vending/security/attackby(obj/item/I, mob/user, params) //WS edit: THERE IS NO GOD. THERE IS ONLY GUNS. REPENT. //shiptest: i should remove this comment, but its funny
 	if(istype(I, /obj/item/gun_voucher))
 		RedeemVoucher(I, user)
 		return
@@ -89,6 +88,32 @@
 	name = "\improper marine vendor"
 	desc = "A marine equipment vendor."
 	product_ads = "Please insert your marine voucher in the bottom slot."
+	icon_state = "marine"
+	icon_deny = "marine-deny"
+	light_mask = "marine-mask"
+	req_access = list(ACCESS_SYNDICATE)
+	products = list(
+		/obj/item/screwdriver/nuke = 5,
+		/obj/item/restraints/handcuffs = 10,
+		/obj/item/assembly/flash/handheld = 10,
+		/obj/item/flashlight/seclite = 10,
+
+		/obj/item/storage/box/lethalshot = 6,
+		/obj/item/stock_parts/cell/gun = 5,
+		/obj/item/ammo_box/magazine/uzim9mm = 5,
+
+		/obj/item/grenade/c4 = 5,
+		/obj/item/grenade/frag = 5,
+		/obj/item/melee/transforming/energy/sword/saber/green = 1,
+		)
+	contraband = list()
+	premium = list()
+	voucher_items = list(
+		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/stun,
+		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/combat,
+		"Type U3 Uzi" = /obj/item/gun/ballistic/automatic/mini_uzi)
+
+/obj/machinery/vending/security/marine/syndicate
 	icon_state = "syndicate-marine"
 	icon_deny = "syndicate-marine-deny"
 	light_mask = "syndicate-marine-mask"
@@ -108,8 +133,6 @@
 		/obj/item/grenade/frag = 1,
 		/obj/item/melee/transforming/energy/sword/saber/red = 1,
 		)
-	contraband = list()
-	premium = list()
 	voucher_items = list(
 		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/m90/unrestricted,
 		"sniper rifle" = /obj/item/gun/ballistic/automatic/sniper_rifle,
@@ -135,12 +158,36 @@
 		/obj/item/grenade/frag = 5,
 		/obj/item/grenade/flashbang = 5,
 		/obj/item/grenade/barrier = 10,
-		/obj/item/melee/transforming/energy/sword/saber/red = 1,
+		/obj/item/melee/transforming/energy/ctf/solgov = 3,
 		)
 	voucher_items = list(
 		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/stun,
 		"SGV \"Solar\" Assault Rifle" = /obj/item/gun/ballistic/automatic/solar,
 		"TGV \"Edison\" Energy Rifle" = /obj/item/gun/energy/laser/terra)
+
+/obj/machinery/vending/security/marine/nanotrasen
+	icon_state = "nt-marine"
+	icon_deny = "nt-marine-deny"
+	light_mask = "nt-marine-mask"
+	icon_vend = "nt-marine-vend"
+	req_access = list(ACCESS_SECURITY)
+	products = list(
+		/obj/item/restraints/handcuffs = 10,
+		/obj/item/assembly/flash/handheld = 10,
+		/obj/item/flashlight/seclite = 10,
+
+		/obj/item/ammo_box/magazine/aknt = 10,
+		/obj/item/storage/box/lethalshot = 5,
+
+		/obj/item/grenade/c4 = 5,
+		/obj/item/grenade/frag = 5,
+		/obj/item/grenade/flashbang = 5,
+		/obj/item/grenade/barrier = 10,
+		/obj/item/melee/transforming/energy/sword/saber/blue = 1
+		)
+
+	voucher_items = list(
+		"NT-AK" = /obj/item/gun/ballistic/automatic/ak47/nt) //if im being honest, theres no point in addiing other options when this is clearly the best
 
 /obj/item/gun_voucher
 	name = "security weapon voucher"
@@ -158,3 +205,8 @@
 	name = "syndicate weapon voucher"
 	desc = "A token used to redeem equipment from your nearest marine vendor."
 	icon_state = "syndie-voucher"
+
+/obj/item/gun_voucher/nanotrasen
+	name = "nanotrasen weapon voucher"
+	desc = "A token used to redeem equipment from your nearest marine vendor."
+	icon_state = "nanotrasen-voucher"

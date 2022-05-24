@@ -379,7 +379,7 @@
 /obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
-/obj/machinery/computer/autopilot{
+/obj/structure/frame/computer{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -789,7 +789,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engine)
 "CR" = (
-/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/industrial/outline,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -1353,7 +1353,6 @@
 	dwidth = 5;
 	height = 11;
 	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
 	name = "Small Freighter";
 	port_direction = 8;
 	preferred_direction = 4;
@@ -1491,7 +1490,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ship/bridge)
 "XI" = (
-/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/industrial/outline,
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/corner/neutral{
 	dir = 1

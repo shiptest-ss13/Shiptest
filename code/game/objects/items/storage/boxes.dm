@@ -38,6 +38,11 @@
 	. = ..()
 	update_icon()
 
+/obj/item/storage/box/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
+
 /obj/item/storage/box/suicide_act(mob/living/carbon/user)
 	var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
 	if(myhead)
@@ -893,6 +898,17 @@
 	for(var/i in 1 to 6)
 		new /obj/item/ammo_casing/shotgun/beanbag(src)
 
+/obj/item/storage/box/slugshot
+	name = "box of 12-gauge slug shotgun shells"
+	desc = "a box full of slug shots, designed for riot shotguns"
+	icon = 'whitesands/icons/obj/storage.dmi'
+	icon_state = "slugshot_box"
+	illustration = null
+
+/obj/item/storage/box/slugshot/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun(src)
+
 /obj/item/storage/box/actionfigure
 	name = "box of action figures"
 	desc = "The latest set of collectable action figures."
@@ -1148,6 +1164,7 @@
 	name = "\proper the liberator's legacy"
 	desc = "A box containing a gift for worthy golems."
 	illustration = "scicircuit"
+	custom_price = 2000
 
 /obj/item/storage/box/rndboards/PopulateContents()
 	new /obj/item/circuitboard/machine/protolathe(src)
@@ -1194,6 +1211,32 @@
 		/obj/item/stock_parts/matter_bin = 3)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/box/stockparts/t2
+	name = "box of T2 stock parts"
+	desc = "Contains a variety of advanced stock parts."
+
+/obj/item/storage/box/stockparts/t2/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/capacitor/adv = 3,
+		/obj/item/stock_parts/scanning_module/adv = 3,
+		/obj/item/stock_parts/manipulator/nano = 3,
+		/obj/item/stock_parts/micro_laser/high = 3,
+		/obj/item/stock_parts/matter_bin/adv = 3)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3
+	name = "box of T3 stock parts"
+	desc = "Contains a variety of super stock parts."
+
+/obj/item/storage/box/stockparts/t3/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/capacitor/super = 3,
+		/obj/item/stock_parts/scanning_module/phasic = 3,
+		/obj/item/stock_parts/manipulator/pico = 3,
+		/obj/item/stock_parts/micro_laser/ultra = 3,
+		/obj/item/stock_parts/matter_bin/super = 3)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/box/stockparts/deluxe
 	name = "box of deluxe stock parts"
 	desc = "Contains a variety of deluxe stock parts."
@@ -1222,6 +1265,42 @@
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stock_parts/matter_bin = 2,
 		/obj/item/screwdriver = 1)
+	generate_items_inside(items_inside,src)
+
+//It's a maid costume from the IRMG and Syndicate, what else.
+/obj/item/storage/box/inteqmaid
+	name = "IRMG non standard issue maid outfit"
+	desc = "A box containing a 'tactical' and 'practical' maid outfit from the IRMG."
+
+/obj/item/storage/box/inteqmaid/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/head/maidheadband/inteq = 1,
+		/obj/item/clothing/under/syndicate/inteq/skirt/maid = 1,
+		/obj/item/clothing/gloves/combat/maid/inteq = 1,)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/syndimaid
+	name = "Syndicate maid outfit"
+	desc = "A box containing a 'tactical' and 'practical' maid outfit."
+	icon_state = "syndiebox"
+
+/obj/item/storage/box/syndimaid/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/head/maidheadband/syndicate = 1,
+		/obj/item/clothing/under/syndicate/skirt/maid = 1,
+		/obj/item/clothing/gloves/combat/maid = 1,)
+
+// because i have no idea where the fuck to put this
+/obj/item/storage/box/maid
+	name = "Maid box"
+	desc = "Contains a maid outfit"
+
+/obj/item/storage/box/maid/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/head/maidheadband = 1,
+		/obj/item/clothing/under/costume/maid = 1,
+		/obj/item/clothing/gloves/maid = 1,
+		/obj/item/clothing/neck/maid = 1,)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/material

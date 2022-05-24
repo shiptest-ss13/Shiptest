@@ -6,7 +6,7 @@
 	strip_delay = 40
 	equip_delay_other = 40
 	cuttable = TRUE
-	clothamnt = 2
+	clothamnt = 1
 	greyscale_colors = list(list(15, 19))
 	greyscale_icon_state = "scarf"
 
@@ -23,9 +23,14 @@
 	name = "recolorable tie"
 	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it."
 	icon = 'icons/obj/clothing/neck.dmi'
-	unique_reskin = list("blue tie" = "bluetie",
-						"red tie" = "redtie",
+	unique_reskin = list("red tie" = "redtie",
+						"orange tie" = "orangetie",
+						"green tie" = "greentie",
+						"light blue tie" = "lightbluetie",
+						"blue tie" = "bluetie",
+						"purple tie" = "purpletie",
 						"black tie" = "blacktie",
+						"brown tie" = "browntie",
 						"rainbow tie" = "rainbow_tie",
 						"horrible tie" = "horribletie",
 						"transgender tie" = "transgender",
@@ -37,7 +42,8 @@
 						"gay tie" = "gay",
 						"genderfluid tie" = "genderfluid",
 						"asexual tie" = "asexual",
-						"genderfae tie" = "genderfae"
+						"genderfae tie" = "genderfae",
+						"ally tie" = "ally_tie"
 						)
 	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
@@ -57,7 +63,27 @@
 /obj/item/clothing/neck/tie/black
 	name = "black tie"
 	icon_state = "blacktie"
+//
+/obj/item/clothing/neck/tie/orange
+	name = "orange tie"
+	icon_state = "orangetie"
 
+/obj/item/clothing/neck/tie/light_blue
+	name = "light blue tie"
+	icon_state = "lightbluetie"
+
+/obj/item/clothing/neck/tie/purple
+	name = "purple tie"
+	icon_state = "purpletie"
+
+/obj/item/clothing/neck/tie/green
+	name = "green tie"
+	icon_state = "greentie"
+
+/obj/item/clothing/neck/tie/brown
+	name = "brown tie"
+	icon_state = "browntie"
+//
 /obj/item/clothing/neck/tie/rainbow
 	name = "rainbow tie"
 	icon_state = "rainbow_tie"
@@ -72,6 +98,11 @@
 	desc = "A loosely tied necktie, a perfect accessory for the over-worked detective."
 	icon_state = "detective"
 	unique_reskin = null
+
+/obj/item/clothing/neck/maid
+	name = "maid neck cover"
+	desc = "A neckpiece for a maid costume, it smells faintly of disappointment."
+	icon_state = "maid_neck"
 
 /obj/item/clothing/neck/tie/trans
 	name = "transgender tie"
@@ -122,6 +153,11 @@
 	name = "genderfae tie"
 	desc = "A neosilk clip-on tie. This one is in the colors of the genderfae flag."
 	icon_state = "genderfae"
+
+/obj/item/clothing/neck/tie/ally_tie
+	name = "ally tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the ally flag."
+	icon_state = "ally_tie"
 
 /obj/item/clothing/neck/stethoscope
 	name = "stethoscope"
@@ -248,6 +284,8 @@
 	name = "pet collar"
 	desc = "It's for pets. But some people wear it anyways for reasons unknown."
 	icon_state = "petcollar"
+	greyscale_colors = list(list(16,21), list(16,19))
+	greyscale_icon_state = "collar"
 	var/tagname = null
 
 

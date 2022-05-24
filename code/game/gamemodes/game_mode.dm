@@ -167,7 +167,7 @@
 	var/list/antag_candidates = list()
 
 	for(var/mob/living/carbon/human/H in living_crew)
-		if(H.client && H.client.prefs.allow_midround_antag && !is_centcom_level(H.z))
+		if(H.client && H.client.prefs.allow_midround_antag && !is_centcom_level(H))
 			antag_candidates += H
 
 	if(!antag_candidates)
@@ -581,93 +581,18 @@
 
 
 /datum/game_mode/proc/generate_credit_text()
-	var/list/round_credits = list()
-	var/len_before_addition
+	. = list()
 
-	// HEADS OF STAFF
-	round_credits += "<center><h1>The Glorious Command Staff:</h1>"
-	len_before_addition = round_credits.len
-	for(var/datum/mind/current in SSticker.mode.get_all_by_department(GLOB.command_positions))
-		round_credits += "<center><h2>[current.name] as the [current.assigned_role]</h2>"
-	if(round_credits.len == len_before_addition)
-		round_credits += list("<center><h2>A serious bureaucratic error has occurred!</h2>", "<center><h2>No one was in charge of the crew!</h2>")
-	round_credits += "<br>"
-
-	// SILICONS
-	round_credits += "<center><h1>The Silicon \"Intelligences\":</h1>"
-	len_before_addition = round_credits.len
-	for(var/datum/mind/current in SSticker.mode.get_all_silicon())
-		round_credits += "<center><h2>[current.name] as the [current.assigned_role]</h2>"
-	if(round_credits.len == len_before_addition)
-		round_credits += list("<center><h2>[station_name()] had no silicon helpers!</h2>", "<center><h2>Not a single door was opened today!</h2>")
-	round_credits += "<br>"
-
-	// SECURITY
-	round_credits += "<center><h1>The Brave Security Officers:</h1>"
-	len_before_addition = round_credits.len
-	for(var/datum/mind/current in SSticker.mode.get_all_by_department(GLOB.security_positions))
-		round_credits += "<center><h2>[current.name] as the [current.assigned_role]</h2>"
-	if(round_credits.len == len_before_addition)
-		round_credits += list("<center><h2>[station_name()] has fallen to Communism!</h2>", "<center><h2>No one was there to protect the crew!</h2>")
-	round_credits += "<br>"
-
-	// MEDICAL
-	round_credits += "<center><h1>The Wise Medical Department:</h1>"
-	len_before_addition = round_credits.len
-	for(var/datum/mind/current in SSticker.mode.get_all_by_department(GLOB.medical_positions))
-		round_credits += "<center><h2>[current.name] as the [current.assigned_role]</h2>"
-	if(round_credits.len == len_before_addition)
-		round_credits += list("<center><h2>Healthcare was not included!</h2>", "<center><h2>There were no doctors today!</h2>")
-	round_credits += "<br>"
-
-	// ENGINEERING
-	round_credits += "<center><h1>The Industrious Engineers:</h1>"
-	len_before_addition = round_credits.len
-	for(var/datum/mind/current in SSticker.mode.get_all_by_department(GLOB.engineering_positions))
-		round_credits += "<center><h2>[current.name] as the [current.assigned_role]</h2>"
-	if(round_credits.len == len_before_addition)
-		round_credits += list("<center><h2>[station_name()] probably did not last long!</h2>", "<center><h2>No one was holding the station together!</h2>")
-	round_credits += "<br>"
-
-	// SCIENCE
-	round_credits += "<center><h1>The Inventive Science Employees:</h1>"
-	len_before_addition = round_credits.len
-	for(var/datum/mind/current in SSticker.mode.get_all_by_department(GLOB.science_positions))
-		round_credits += "<center><h2>[current.name] as the [current.assigned_role]</h2>"
-	if(round_credits.len == len_before_addition)
-		round_credits += list("<center><h2>No one was doing \"science\" today!</h2>", "<center><h2>Everyone probably made it out alright, then!</h2>")
-	round_credits += "<br>"
-
-	// CARGO
-	round_credits += "<center><h1>The Rugged Cargo Crew:</h1>"
-	len_before_addition = round_credits.len
-	for(var/datum/mind/current in SSticker.mode.get_all_by_department(GLOB.supply_positions))
-		round_credits += "<center><h2>[current.name] as the [current.assigned_role]</h2>"
-	if(round_credits.len == len_before_addition)
-		round_credits += list("<center><h2>The station was freed from paperwork!</h2>", "<center><h2>No one worked in cargo today!</h2>")
-	round_credits += "<br>"
-
-	// CIVILIANS
-	var/list/human_garbage = list()
-	round_credits += "<center><h1>The Hardy Civilians:</h1>"
-	len_before_addition = round_credits.len
-	for(var/datum/mind/current in SSticker.mode.get_all_by_department(GLOB.service_positions))
-		if(current.assigned_role == "Assistant")
-			human_garbage += current
+	for(var/datum/overmap/ship/controlled/final_ship as anything in SSovermap.controlled_ships)
+		if(length(final_ship.job_slots) == 0) //Way to find if it's a ruin-spawned ship or similar
+			continue
+		. += "<center><h1>The [capitalize(pick(GLOB.adjectives))] [final_ship.name]:</h1></center>"
+		if(!length(final_ship.manifest))
+			. += "<center><h2>It seems nobody crewed this ship today!<h2></center>"
 		else
-			round_credits += "<center><h2>[current.name] as the [current.assigned_role]</h2>"
-	if(round_credits.len == len_before_addition)
-		round_credits += list("<center><h2>Everyone was stuck in traffic this morning!</h2>", "<center><h2>No civilians made it to work!</h2>")
-	round_credits += "<br>"
+			for(var/name in final_ship.manifest)
+				var/datum/job/their_job = final_ship.manifest[name]
+				. += "<center><h2>[name] as the [their_job.title]</h2></center><br>"
+		. += "<br>"
 
-	round_credits += "<center><h1>The Helpful Assistants:</h1>"
-	len_before_addition = round_credits.len
-	for(var/datum/mind/current in human_garbage)
-		round_credits += "<center><h2>[current.name]</h2>"
-	if(round_credits.len == len_before_addition)
-		round_credits += list("<center><h2>The station was free of <s>greytide</s> assistance!</h2>", "<center><h2>Not a single Assistant showed up on the station today!</h2>")
-
-	round_credits += "<br>"
-	round_credits += "<br>"
-
-	return round_credits
+	. += "<br>"

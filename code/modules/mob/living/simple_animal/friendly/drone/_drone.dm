@@ -40,7 +40,7 @@
   */
 /mob/living/simple_animal/drone
 	name = "Drone"
-	desc = "A maintenance drone, an expendable robot built to perform station repairs."
+	desc = "A maintenance drone, an expendable robot built to perform structural repairs to remote frontier installations."
 	icon = 'icons/mob/drone.dmi'
 	icon_state = "drone_maint_grey"
 	icon_living = "drone_maint_grey"
@@ -255,7 +255,7 @@
   * * alarmsource - [/atom] source of the alarm
   */
 /mob/living/simple_animal/drone/proc/triggerAlarm(class, area/home, cameras, obj/source)
-	if(source.get_virtual_z_level() != get_virtual_z_level())
+	if(source.virtual_z() != virtual_z())
 		return
 	if(stat == DEAD)
 		return
@@ -321,7 +321,3 @@
 
 /mob/living/simple_animal/drone/electrocute_act(shock_damage, source, siemens_coeff, flags = NONE)
 	return 0 //So they don't die trying to fix wiring
-
-/mob/living/simple_animal/drone/get_bank_account(hand_first)
-	return SSeconomy.get_dep_account(ACCOUNT_CIV)
-

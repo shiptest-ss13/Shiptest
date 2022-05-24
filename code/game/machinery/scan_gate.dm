@@ -21,7 +21,7 @@
 #define SCANGATE_IPC "ipc"
 #define SCANGATE_SQUID "squid"
 #define SCANGATE_ETHEREAL "ethereal"
-#define SCANGATE_TESHARI "tesh"
+#define SCANGATE_KEPORI "kepori"
 
 /obj/machinery/scanner_gate
 	name = "scanner gate"
@@ -45,6 +45,10 @@
 /obj/machinery/scanner_gate/Initialize()
 	. = ..()
 	set_scanline("passive")
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/machinery/scanner_gate/examine(mob/user)
 	. = ..()
@@ -53,9 +57,10 @@
 	else
 		. += "<span class='notice'>The control panel is unlocked. Swipe an ID to lock it.</span>"
 
-/obj/machinery/scanner_gate/Crossed(atom/movable/AM)
-	. = ..()
-	auto_scan(AM)
+/obj/machinery/scanner_gate/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+
+	INVOKE_ASYNC(src, .proc/auto_scan, AM)
 
 /obj/machinery/scanner_gate/proc/auto_scan(atom/movable/AM)
 	if(!(machine_stat & (BROKEN|NOPOWER)) && isliving(AM))
@@ -153,8 +158,8 @@
 						scan_species = /datum/species/squid
 					if(SCANGATE_ETHEREAL)
 						scan_species = /datum/species/ethereal
-					if(SCANGATE_TESHARI)
-						scan_species = /datum/species/teshari
+					if(SCANGATE_KEPORI)
+						scan_species = /datum/species/kepori
 				if(is_species(H, scan_species))
 					beep = TRUE
 				if(detect_species == SCANGATE_ZOMBIE) //Can detect dormant zombies
@@ -277,4 +282,4 @@
 #undef SCANGATE_IPC
 #undef SCANGATE_SQUID
 #undef SCANGATE_ETHEREAL
-#undef SCANGATE_TESHARI
+#undef SCANGATE_KEPORI

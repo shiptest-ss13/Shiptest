@@ -96,11 +96,21 @@
 	icon_state = "Glass ore"
 	item_state = "Glass ore"
 	singular_name = "sand pile"
+	grind_results = list(/datum/reagent/silicon = 10)
 	points = 1
 	custom_materials = list(/datum/material/glass=MINERAL_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/sheet/glass
 	w_class = WEIGHT_CLASS_TINY
 	mine_experience = 0 //its sand
+
+/obj/item/stack/ore/glass/whitesands
+	name = "white sand pile"
+	icon = 'whitesands/icons/obj/mining.dmi'
+	icon_state = "whitesands"
+	item_state = "whitesands"
+	singular_name = "white sand pile"
+	grind_results = list(/datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/silicon = 10)
+	mine_experience = 0 // it's very pretty sand, but still sand
 
 GLOBAL_LIST_INIT(sand_recipes, list(\
 		new /datum/stack_recipe("sandstone", /obj/item/stack/sheet/mineral/sandstone, 1, 1, 50),\
@@ -134,7 +144,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	icon_state = "volcanic_sand"
 	item_state = "volcanic_sand"
 	singular_name = "volcanic ash pile"
-	grind_results = list(/datum/reagent/toxin/lava_microbe = 5)		//WS Edit - Fuck
+	grind_results = list(/datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5, /datum/reagent/silicon = 8.5)
 	mine_experience = 0
 
 /obj/item/stack/ore/plasma
@@ -319,8 +329,8 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 
 /obj/item/stack/ore/Initialize()
 	. = ..()
-	pixel_x = rand(0,16)-8
-	pixel_y = rand(0,8)-8
+	pixel_x = base_pixel_x +  rand(0,16) - 8
+	pixel_y = base_pixel_y + rand(0,8) - 8
 
 /obj/item/stack/ore/ex_act(severity, target)
 	if (!severity || severity >= 2)
@@ -354,8 +364,8 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	. = ..()
 	coinflip = pick(sideslist)
 	icon_state = "coin_[coinflip]"
-	pixel_x = rand(0,16)-8
-	pixel_y = rand(0,8)-8
+	pixel_x = base_pixel_x + rand(0,16) - 8
+	pixel_y = base_pixel_y + rand(0,8) - 8
 
 /obj/item/coin/set_custom_materials(var/list/materials, multiplier = 1)
 	. = ..()

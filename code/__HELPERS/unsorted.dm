@@ -331,12 +331,23 @@ Turf and target are separate in case you want to teleport some distance from a t
 //For example, using this on a disk, which is in a bag, on a mob, will return the mob because it's on the turf.
 //Optional arg 'type' to stop once it reaches a specific type instead of a turf.
 /proc/get_atom_on_turf(atom/movable/M, stop_type)
-	var/atom/loc = M
-	while(loc && loc.loc && !isturf(loc.loc))
-		loc = loc.loc
-		if(stop_type && istype(loc, stop_type))
+	var/atom/turf_to_check = M
+	while(turf_to_check?.loc && !isturf(turf_to_check.loc))
+		turf_to_check = turf_to_check.loc
+		if(stop_type && istype(turf_to_check, stop_type))
 			break
-	return loc
+	return turf_to_check
+
+//Returns a list of all locations (except the area) the movable is within.
+/proc/get_nested_locs(atom/movable/AM, include_turf = FALSE)
+	. = list()
+	var/atom/location = AM.loc
+	var/turf/turf = get_turf(AM)
+	while(location && location != turf)
+		. += location
+		location = location.loc
+	if(location && include_turf) //At this point, only the turf is left, provided it exists.
+		. += location
 
 // returns the turf located at the map edge in the specified direction relative to A
 // used for mass driver
@@ -1055,6 +1066,15 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 /datum/proc/stack_trace(msg)
 	CRASH(msg)
 
+/obj/item/bodypart/proc/limb_stacktrace(msg, bypass_cap) //yes yes this uses a magic number but fuck it.
+	var/static/mcount
+	if(mcount == 10)
+		message_debug("Kapu1178/LimbSystem: Limb Stack trace cap exceeded, further traces silenced.")
+		mcount++
+	if((mcount < 10) || bypass_cap)
+		mcount++
+		CRASH(msg)
+
 GLOBAL_REAL_VAR(list/stack_trace_storage)
 /proc/gib_stack_trace()
 	stack_trace_storage = list()
@@ -1071,7 +1091,7 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 
 //returns the number of ticks slept
 /proc/stoplag(initial_delay)
-	if (!Master || !(Master.current_runlevel & RUNLEVELS_DEFAULT))
+	if (!Master || Master.init_stage_completed < INITSTAGE_MAX)
 		sleep(world.tick_lag)
 		return 1
 	if (!initial_delay)

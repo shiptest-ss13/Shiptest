@@ -32,6 +32,7 @@
 	icon_state = "utilitybelt"
 	item_state = "utility"
 	content_overlays = TRUE
+	custom_price = 350
 	custom_premium_price = 300
 	drop_sound = 'sound/items/handling/toolbelt_drop.ogg'
 	pickup_sound =  'sound/items/handling/toolbelt_pickup.ogg'
@@ -123,11 +124,27 @@
 	new /obj/item/multitool/syndie(src)
 	new /obj/item/inducer/syndicate(src)
 
+/obj/item/storage/belt/utility/full/ert/PopulateContents()
+	new /obj/item/screwdriver/power(src)
+	new /obj/item/crowbar/power(src)
+	new /obj/item/weldingtool/experimental(src)
+	new /obj/item/multitool(src)
+	new /obj/item/construction/rcd/combat(src)
+	new /obj/item/extinguisher/mini(src)
+	new /obj/item/stack/cable_coil(src)
+
 /obj/item/storage/belt/medical
 	name = "medical belt"
 	desc = "Can hold various medical equipment."
 	icon_state = "medicalbelt"
 	item_state = "medical"
+
+/obj/item/storage/belt/medical/webbing
+	name = "medical webbing"
+	desc = "Versatile chest rig, valued by field medics of all stripes for its ease of use. Can hold various medical equipment."
+	icon_state = "medicwebbing"
+	item_state = "medicwebbing"
+	custom_premium_price = 900
 
 /obj/item/storage/belt/medical/ComponentInitialize()
 	. = ..()
@@ -188,6 +205,15 @@
 		))
 
 /obj/item/storage/belt/medical/paramedic/PopulateContents()
+	new /obj/item/sensor_device(src)
+	new /obj/item/pinpointer/crew/prox(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/reagent_containers/syringe(src)
+	new /obj/item/reagent_containers/glass/bottle/epinephrine(src)
+	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
+	update_icon()
+
+/obj/item/storage/belt/medical/webbing/paramedic/PopulateContents()
 	new /obj/item/sensor_device(src)
 	new /obj/item/pinpointer/crew/prox(src)
 	new /obj/item/stack/medical/gauze/twelve(src)
@@ -379,7 +405,7 @@
 
 /obj/item/storage/belt/military
 	name = "chest rig"
-	desc = "A set of tactical webbing worn by Syndicate boarding parties."
+	desc = "A set of tactical webbing worn by military cosplayers and actual militaries alike."
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
 	resistance_flags = FIRE_PROOF
@@ -388,6 +414,15 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/storage/belt/military/minutemen/PopulateContents()
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
@@ -468,6 +503,14 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
+
+/obj/item/storage/belt/military/assault/full/PopulateContents()
+	new /obj/item/ammo_box/magazine/wt550m9/wtap(src)
+	new /obj/item/ammo_box/magazine/wt550m9/wtap(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
 
 /obj/item/storage/belt/grenade
 	name = "grenadier belt"
@@ -666,7 +709,7 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 1
-	STR.rustle_sound = FALSE
+	STR.use_sound = null
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
 		/obj/item/melee/sabre
@@ -698,3 +741,10 @@
 /obj/item/storage/belt/sabre/PopulateContents()
 	new /obj/item/melee/sabre(src)
 	update_icon()
+
+/obj/item/storage/belt/security/webbing/inteq
+	name = "inteq webbing"
+	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
+	icon_state = "inteq_webbing"
+	item_state = "inteq_webbing"
+	content_overlays = FALSE

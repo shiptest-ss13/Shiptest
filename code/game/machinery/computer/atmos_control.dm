@@ -7,6 +7,7 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "gsensor1"
 	resistance_flags = FIRE_PROOF
+	interacts_with_air = TRUE
 
 	var/on = TRUE
 
@@ -73,11 +74,11 @@
 
 /obj/machinery/air_sensor/Initialize()
 	. = ..()
-	SSair.atmos_air_machinery += src
+	SSair.start_processing_machine(src)
 	set_frequency(frequency)
 
 /obj/machinery/air_sensor/Destroy()
-	SSair.atmos_air_machinery -= src
+	SSair.stop_processing_machine(src)
 	SSradio.remove_object(src, frequency)
 	return ..()
 
@@ -88,7 +89,7 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 
 /obj/machinery/computer/atmos_control
 	name = "atmospherics monitoring"
-	desc = "Used to monitor the station's atmospherics sensors."
+	desc = "Used to monitor nearby atmospherics sensors."
 	icon_screen = "tank"
 	icon_keyboard = "atmos_key"
 	circuit = /obj/item/circuitboard/computer/atmos_control
@@ -151,7 +152,7 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 		return
 
 	var/id_tag = signal.data["id_tag"]
-	if(!id_tag || !sensors.Find(id_tag))
+	if(!id_tag || !(id_tag in sensors))
 		return
 
 	sensor_information[id_tag] = signal.data

@@ -14,20 +14,22 @@
 				UNLINT(turn_angle = C.lying_angle) // this is the only place its okay to read lying directly
 	. = ..()
 
-/obj/item/camera/proc/camera_get_icon(list/turfs, turf/center, psize_x = 96, psize_y = 96, datum/turf_reservation/clone_area, size_x, size_y, total_x, total_y)
+/obj/item/camera/proc/camera_get_icon(list/turfs, turf/center, psize_x = 96, psize_y = 96, size_x, size_y, total_x, total_y)
 	var/list/atoms = list()
 	var/skip_normal = FALSE
 	var/wipe_atoms = FALSE
 
-	if(istype(clone_area) && total_x == clone_area.width && total_y == clone_area.height && size_x >= 0 && size_y > 0)
-		var/cloned_center_x = round(clone_area.bottom_left_coords[1] + ((total_x - 1) / 2))
-		var/cloned_center_y = round(clone_area.bottom_left_coords[2] + ((total_y - 1) / 2))
+	var/turf/bottom_left_turf = locate(center.x - size_x, center.y - size_y, center.z)
+	var/list/clone_block = block(bottom_left_turf, locate(center.x + size_x, center.y + size_y, center.z))
+	if(size_x >= 0 && size_y > 0)
+		var/cloned_center_x = round(bottom_left_turf.x + ((total_x - 1) / 2))
+		var/cloned_center_y = round(bottom_left_turf.y + ((total_y - 1) / 2))
 		for(var/t in turfs)
 			var/turf/T = t
 			var/offset_x = T.x - center.x
 			var/offset_y = T.y - center.y
-			var/turf/newT = locate(cloned_center_x + offset_x, cloned_center_y + offset_y, clone_area.bottom_left_coords[3])
-			if(!(newT in clone_area.get_reserved_turfs()))		//sanity check so we don't overwrite other areas somehow
+			var/turf/newT = locate(cloned_center_x + offset_x, cloned_center_y + offset_y, bottom_left_turf.z)
+			if(!(newT in clone_block))		//sanity check so we don't overwrite other areas somehow
 				continue
 			atoms += new /obj/effect/appearance_clone(newT, T)
 			if(T.loc.icon_state)
@@ -38,7 +40,7 @@
 					atoms += new /obj/effect/appearance_clone(newT, A)
 		skip_normal = TRUE
 		wipe_atoms = TRUE
-		center = locate(cloned_center_x, cloned_center_y, clone_area.bottom_left_coords[3])
+		center = locate(cloned_center_x, cloned_center_y, bottom_left_turf.z)
 
 	if(!skip_normal)
 		for(var/i in turfs)

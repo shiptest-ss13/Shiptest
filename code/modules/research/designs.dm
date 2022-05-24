@@ -79,8 +79,8 @@ other types of metals and chemistry for reagents).
 
 /obj/item/disk/design_disk/Initialize()
 	. = ..()
-	pixel_x = rand(-5, 5)
-	pixel_y = rand(-5, 5)
+	pixel_x = base_pixel_x + rand(-5, 5)
+	pixel_y = base_pixel_y + rand(-5, 5)
 	for(var/i in 1 to max_blueprints)
 		blueprints += null
 
@@ -89,3 +89,41 @@ other types of metals and chemistry for reagents).
 	desc = "A disk for storing device design data for construction in lathes. This one has extra storage space."
 	custom_materials = list(/datum/material/iron =300, /datum/material/glass = 100, /datum/material/silver = 50)
 	max_blueprints = 5
+
+//Disks with content
+/obj/item/disk/design_disk/ammo_38_hunting
+	name = "Design Disk - .38 Hunting Ammo"
+	desc = "A design disk containing the pattern for a refill ammo box for Winchester rifles and Detective Specials."
+
+/obj/item/disk/design_disk/ammo_38_hunting/Initialize()
+	. = ..()
+	var/datum/design/c38_hunting/M = new
+	blueprints[1] = M
+
+/obj/item/disk/design_disk/ammo_c10mm
+	name = "Design Disk - 10mm Ammo"
+	desc = "A design disk containing the pattern for a refill box of standard 10mm ammo, used in Stechkin pistols."
+
+/obj/item/disk/design_disk/ammo_c10mm/Initialize()
+	. = ..()
+	blueprints[1] = new /datum/design/c10mm()
+
+/obj/item/disk/design_disk/ammo_n762
+	name = "Design Disk - 7.62x38mmR Ammo"
+	desc = "A design disk containing the pattern for an ammo holder of 7.62x38mmR ammo, used in Nagant revolvers. It's a wonder anybody still makes these."
+
+/obj/item/disk/design_disk/ammo_n762/Initialize()
+	. = ..()
+	blueprints[1] = new /datum/design/n762()
+
+/obj/item/disk/design_disk/disposable_gun
+	name = "design disk - disposable gun"
+	desc = "A design disk containing designs for a cheap and disposable gun."
+	illustration = "gun"
+
+/obj/item/disk/design_disk/disposable_gun/Initialize()
+	. = ..()
+	var/datum/design/disposable_gun/G = new
+	var/datum/design/pizza_disposable_gun/P = new
+	blueprints[1] = G
+	blueprints[2] = P

@@ -29,6 +29,11 @@
 				latches = "triple_latch"
 	update_icon()
 
+/obj/item/storage/toolbox/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.use_sound = 'sound/items/storage/toolbox.ogg'
+
 /obj/item/storage/toolbox/update_overlays()
 	. = ..()
 	if(has_latches)
@@ -179,6 +184,10 @@
 	new /obj/item/multitool/syndie(src) //WS End
 	new /obj/item/clothing/gloves/combat(src)
 
+/obj/item/storage/toolbox/syndicate/empty
+
+/obj/item/storage/toolbox/syndicate/empty/PopulateContents()
+	return
 /obj/item/storage/toolbox/drone
 	name = "mechanical toolbox"
 	icon_state = "blue"

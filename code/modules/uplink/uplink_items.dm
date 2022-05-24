@@ -573,6 +573,29 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 12
 	include_modes = list(/datum/game_mode/nuclear)
 
+/datum/uplink_item/dangerous/weebstick
+	name = "Nanoforged Katana"
+	desc = "A tailor-made blade forged from one of the many ninja clans within the syndicate. \
+			Merely weilding this weapon grants incredible agility."
+	item = /obj/item/storage/belt/weebstick
+	cost = 10
+	surplus = 5
+	limited_stock = 1
+
+/datum/uplink_item/dangerous/tec9
+	name = "TEC9 Machine Pistol"
+	desc = "A powerful machine pistol sporting a high rate of fire and armor-piercing rounds."
+	item = /obj/item/gun/ballistic/automatic/pistol/tec9
+	cost = 12
+	surplus = 20
+
+/datum/uplink_item/dangerous/ebr
+	name = "M514 EBR"
+	desc = "A cheap rifle with high stopping power and low capacity."
+	item = /obj/item/gun/ballistic/automatic/ebr
+	cost = 8
+	surplus = 20
+	include_modes = list(/datum/game_mode/nuclear)
 
 // Stealthy Weapons
 /datum/uplink_item/stealthy_weapons
@@ -687,6 +710,30 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A useful little device that allows for inconspicuous carrying of guns using chameleon technology. It also allows for badass gun-spinning."
 	item = /obj/item/clothing/accessory/holster/chameleon //WS Edit - Holsters are Accessories
 	cost = 1
+
+/datum/uplink_item/stealthy_weapons/derringerpack
+	name = "Compact Derringer"
+	desc = "An easily concealable handgun capable of firing .357 rounds. Comes in an inconspicuious packet of cigarettes with additional munitions."
+	item = /obj/item/storage/fancy/cigarettes/derringer
+	cost = 8
+	surplus = 30
+	surplus_nullcrates = 40
+
+/datum/uplink_item/stealthy_weapons/derringerpack/purchase(mob/user, datum/component/uplink/U)
+	if(prob(1)) //For the 1%
+		item = /obj/item/storage/fancy/cigarettes/derringer/gold
+	..()
+
+/datum/uplink_item/stealthy_weapons/syndi_borer
+	name = "Syndicate Brain Slug"
+	desc = "A small cortical borer, modified to be completely loyal to the owner. \
+			Genetically infertile, these brain slugs can assist medically in a support role, or take direct action \
+			to assist their host."
+	item = /obj/item/antag_spawner/syndi_borer
+	refundable = TRUE
+	cost = 10
+	surplus = 20 //Let's not have this be too common
+	exclude_modes = list(/datum/game_mode/nuclear)
 
 // Ammunition
 /datum/uplink_item/ammo
@@ -918,6 +965,20 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A duffel bag containing ammo for three full reloads of the LMG, scattershot carbine, and SRM-8 missile laucher that are equipped on a standard Mauler exosuit."
 	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/mauler
 	cost = 6
+	include_modes = list(/datum/game_mode/nuclear)
+
+/datum/uplink_item/ammo/tec9
+	name = "TEC9 Magazine"
+	desc = "An additional 20 round 9mm magazine for the TEC9."
+	item = /obj/item/ammo_box/magazine/tec9
+	cost = 3
+	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
+
+/datum/uplink_item/ammo/ebr
+	name = "M2514 EBR Magazine"
+	desc = "An additional 10 round .308 magazine for the EBR."
+	item = /obj/item/ammo_box/magazine/ebr
+	cost = 2
 	include_modes = list(/datum/game_mode/nuclear)
 
 //Grenades and Explosives
@@ -1183,7 +1244,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/stealthy_tools/chameleon
 	name = "Chameleon Kit"
-	desc = "A set of items that contain chameleon technology allowing you to disguise as pretty much anything on the station, and more! \
+	desc = "A set of items that contain chameleon technology allowing you to disguise as pretty much anything you can think of, and more! \
 			Due to budget cuts, the shoes don't provide protection against slipping."
 	item = /obj/item/storage/box/syndie_kit/chameleon
 	cost = 2
@@ -1335,7 +1396,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/device_tools/magboots
 	name = "Blood-Red Magboots"
-	desc = "A pair of magnetic boots with a Syndicate paintjob that assist with freer movement in space or on-station \
+	desc = "A pair of magnetic boots with a Syndicate paintjob that assist with freer movement in zero-g conditions \
 			during gravitational generator failures. These reverse-engineered knockoffs of Nanotrasen's \
 			'Advanced Magboots' slow you down in simulated-gravity environments much like the standard issue variety."
 	item = /obj/item/clothing/shoes/magboots/syndie
@@ -1455,8 +1516,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/device_tools/powersink
 	name = "Power Sink"
 	desc = "When screwed to wiring attached to a power grid and activated, this large device lights up and places excessive \
-			load on the grid, causing a station-wide blackout. The sink is large and cannot be stored in most \
-			traditional bags and boxes. Caution: Will explode if the powernet contains sufficient amounts of energy."
+			load on the grid, causing a network-wide blackout. The sink is large and cannot be stored in most \
+			traditional bags and boxes. Caution: Will eventually explode when internal capacitors are sufficiently overcharged."
 	item = /obj/item/powersink
 	player_minimum = 20
 	cost = 10
@@ -1504,7 +1565,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/device_tools/encryptionkey
 	name = "Syndicate Encryption Key"
-	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels \
+	desc = "A key that, when inserted into a radio headset, allows you to listen to all departmental channels \
 			as well as talk on an encrypted Syndicate channel with other agents that have the same key."
 	item = /obj/item/encryptionkey/syndicate
 	cost = 2
@@ -1522,7 +1583,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/device_tools/thermal
 	name = "Thermal Imaging Glasses"
-	desc = "These goggles can be turned to resemble common eyewear found throughout the station. \
+	desc = "These goggles can be turned to resemble common eyewear found throughout known space. \
 			They allow you to see organisms through walls by capturing the upper portion of the infrared light spectrum, \
 			emitted as heat and light by objects. Hotter objects, such as warm bodies, cybernetic organisms \
 			and artificial intelligence cores emit more of this light than cooler objects like walls and airlocks."
@@ -1544,6 +1605,12 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/clothing/gloves/tackler/combat/insulated
 	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 	cost = 2
+
+/datum/uplink_item/device_tools/telecrystal/bonemedipen
+	name = "C4L-Z1UM medipen"
+	desc = "A medipen stocked with an agent that will help regenerate bones and organs. A single-use pocket Medbay visit."
+	item = /obj/item/reagent_containers/hypospray/medipen/bonefixingjuice
+	cost = 3
 
 // Implants
 /datum/uplink_item/implants
@@ -1669,6 +1736,27 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/dnainjector/firebreath
 	restricted_species = list("lizard")
 
+/datum/uplink_item/race_restricted/razorwing
+	name = "Razorwing Implant"
+	desc = "Put those wings to good use! This implant makes your wingtips razor sharp and gives you the ability to flourish them, slicing anyone in range."
+	cost = 4
+	item = /obj/item/storage/box/syndie_kit/razorwing
+	restricted_species = list("moth")
+
+/datum/uplink_item/race_restricted/lampbang
+	name = "Lanternbang"
+	desc = "This LepiCorp-brand lantern has the ability to overload its lightbulb, blinding and confusing anyone in a radius around it except for its holder."
+	cost = 5
+	item = /obj/item/flashlight/lantern/lanternbang
+	restricted_species = list("moth")
+
+/datum/uplink_item/race_restricted/ethereal_grenade
+	name = "Ethereal Dance Grenade"
+	desc = "Syndicate scientists have cunningly stuffed the bodies of multiple Ethereals into a special package! Activating it will cause anyone nearby to dance, excluding Ethereals, who might just get offended."
+	cost = 4
+	item = /obj/item/grenade/discogrenade
+	restricted_species = list("ethereal")
+
 // Role-specific items
 /datum/uplink_item/role_restricted
 	category = "Role-Restricted"
@@ -1786,7 +1874,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/role_restricted/his_grace
 	name = "His Grace"
-	desc = "An incredibly dangerous weapon recovered from a station overcome by the grey tide. Once activated, He will thirst for blood and must be used to kill to sate that thirst. \
+	desc = "An incredibly dangerous weapon recovered from a Nanotransen station overcome by the grey tide. Once activated, He will thirst for blood and must be used to kill to sate that thirst. \
 	His Grace grants gradual regeneration and complete stun immunity to His wielder, but be wary: if He gets too hungry, He will become impossible to drop and eventually kill you if not fed. \
 	However, if left alone for long enough, He will fall back to slumber. \
 	To activate His Grace, simply unlatch Him."
@@ -1801,6 +1889,14 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/storage/box/syndie_kit/cultconstructkit
 	cost = 20
 	restricted_roles = list("Chaplain")
+
+/datum/uplink_item/role_restricted/lawnmower
+	name = "Gas powered lawn mower"
+	desc = "A lawn mower is a machine utilizing one or more revolving blades to cut a grass surface to an even height, or bodies if that's your thing"
+	restricted_roles = list("Botanist")
+	cost = 14
+	item = /obj/vehicle/ridden/lawnmower/emagged
+
 /datum/uplink_item/role_restricted/explosive_hot_potato
 	name = "Exploding Hot Potato"
 	desc = "A potato rigged with explosives. On activation, a special mechanism is activated that prevents it from being dropped. \
@@ -1899,6 +1995,13 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/autosurgeon/syndicate/laser_arm
 	restricted_roles = list("Roboticist")
 
+/datum/uplink_item/role_restricted/greykingsword
+	name = "Blade of The Grey Tide"
+	desc = "A weapon of legend, forged by the greatest crackheads of our generation."
+	item = /obj/item/melee/greykingsword
+	cost = 2
+	restricted_roles = list("Assistant", "Chemist")
+
 // Pointless
 /datum/uplink_item/badass
 	category = "(Pointless) Badassery"
@@ -1906,7 +2009,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/badass/costumes/obvious_chameleon
 	name = "Broken Chameleon Kit"
-	desc = "A set of items that contain chameleon technology allowing you to disguise as pretty much anything on the station, and more! \
+	desc = "A set of items that contain chameleon technology allowing you to disguise as pretty much anything you can think of, and more! \
 			Please note that this kit did NOT pass quality control."
 	item = /obj/item/storage/box/syndie_kit/chameleon/broken
 

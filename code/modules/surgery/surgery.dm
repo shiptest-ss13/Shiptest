@@ -7,7 +7,7 @@
 	var/can_cancel = TRUE										//Can cancel this surgery after step 1 with cautery
 	var/list/target_mobtypes = list(/mob/living/carbon/human)	//Acceptable Species
 	var/location = BODY_ZONE_CHEST								//Surgery location
-	var/requires_bodypart_type = BODYPART_ORGANIC				//Prevents you from performing an operation on incorrect limbs. 0 for any limb type
+	var/requires_bodypart_type = BODYTYPE_ORGANIC				//Prevents you from performing an operation on incorrect limbs. 0 for any limb type
 	var/list/possible_locs = list() 							//Multiple locations
 	var/ignore_clothes = FALSE									//This surgery ignores clothes
 	var/mob/living/carbon/target								//Operation target mob
@@ -102,6 +102,14 @@
 		if(S.try_op(user, target, user.zone_selected, tool, src, try_to_fail))
 			return TRUE
 		if(tool && tool.item_flags & SURGICAL_TOOL) //Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
+			var/required_tool_type = TOOL_CAUTERY
+			if(requires_bodypart_type == BODYTYPE_ROBOTIC)
+				required_tool_type = TOOL_SCREWDRIVER
+
+			if(tool.tool_behaviour == required_tool_type)
+				// Cancel the surgery if a cautery is used AND it's not the tool used in the next step.
+				attempt_cancel_surgery( src, tool, target, user )
+				return TRUE
 			to_chat(user, "<span class='warning'>This step requires a different tool!</span>")
 			return TRUE
 	return FALSE

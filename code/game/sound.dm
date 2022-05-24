@@ -59,8 +59,8 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 	var/source_z = turf_source.z
 	var/list/listeners = SSmobs.clients_by_zlevel[source_z].Copy()
 
-	var/turf/above_turf = SSmapping.get_turf_above(turf_source)
-	var/turf/below_turf = SSmapping.get_turf_below(turf_source)
+	var/turf/above_turf = turf_source.above()
+	var/turf/below_turf = turf_source.below()
 
 	if(!ignore_walls) //these sounds don't carry through walls
 		listeners = listeners & hearers(maxdistance,turf_source)
@@ -229,7 +229,7 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 			if ("sparks")
 				soundin = pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg','sound/effects/sparks4.ogg')
 			if ("rustle")
-				soundin = pick('sound/effects/rustle1.ogg','sound/effects/rustle2.ogg','sound/effects/rustle3.ogg','sound/effects/rustle4.ogg','sound/effects/rustle5.ogg')
+				soundin = pick('sound/items/storage/rustle1.ogg','sound/items/storage/rustle2.ogg','sound/items/storage/rustle3.ogg','sound/items/storage/rustle4.ogg','sound/items/storage/rustle5.ogg')
 			if ("bodyfall")
 				soundin = pick('sound/effects/bodyfall1.ogg','sound/effects/bodyfall2.ogg','sound/effects/bodyfall3.ogg','sound/effects/bodyfall4.ogg')
 			if ("punch")

@@ -104,8 +104,6 @@
 
 /datum/config_entry/flag/allow_vote_mode	// allow votes to change mode
 
-/datum/config_entry/flag/allow_vote_map	// allow votes to change map
-
 /datum/config_entry/number/vote_delay	// minimum time between voting sessions (deciseconds, 10 minute default)
 	config_entry_value = 6000
 	integer = FALSE
@@ -173,11 +171,6 @@
 		sync_validate = FALSE
 
 /datum/config_entry/flag/allow_holidays
-
-/datum/config_entry/number/tick_limit_mc_init	//SSinitialization throttling
-	config_entry_value = TICK_LIMIT_MC_INIT_DEFAULT
-	min_val = 0 //oranges warned us
-	integer = FALSE
 
 /datum/config_entry/flag/admin_legacy_system	//Defines whether the server uses the legacy admin system with admins.txt or the SQL system
 	protection = CONFIG_ENTRY_LOCKED
@@ -500,7 +493,7 @@
 
 /datum/config_entry/flag/resume_after_initializations/ValidateAndSet(str_val)
 	. = ..()
-	if(. && Master.current_runlevel)
+	if(. && MC_RUNNING())
 		world.sleep_offline = !config_entry_value
 
 /datum/config_entry/number/rounds_until_hard_restart
@@ -536,3 +529,25 @@
 /datum/config_entry/string/centcom_ban_db	// URL for the CentCom Galactic Ban DB API
 
 /datum/config_entry/string/centcom_source_whitelist
+
+/datum/config_entry/number/whitesands_atmos_moles
+	config_entry_value = 103
+	integer = FALSE
+	min_val = 10
+	max_val = 200
+
+/datum/config_entry/keyed_list/whitesands_atmos_mix
+	key_mode = KEY_MODE_TEXT
+	value_mode = VALUE_MODE_NUM
+	lowercase = FALSE
+	splitter = " "
+
+
+/datum/config_entry/keyed_list/whitesands_atmos_mix/ValidateListEntry(key_name, key_value)
+	var/list/gas_types = gas_types()
+	for (var/type in gas_types)
+		var/datum/gas/T = type
+		if (initial(T.id) == key_name)
+			// even a high pressure zone will be less than 1.5x one atmos
+			return key_value > 0 && key_value < 1.5
+	return FALSE

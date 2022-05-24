@@ -13,6 +13,7 @@
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_ENGINEERING
 	wiki_page = "Chief_Engineer" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Engineering Coordinator", "Maintenance Supervisor")
 
 	outfit = /datum/outfit/job/ce
 
@@ -81,3 +82,29 @@
 	gloves = null
 	neck = /obj/item/clothing/neck/tie/green
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/chief/full=1, /obj/item/clothing/gloves/color/black=1)
+/datum/outfit/job/ce/gec
+	name = "Chief Engineer (GEC)"
+
+	uniform = /obj/item/clothing/under/syndicate/gec/chief_engineer
+	suit = /obj/item/clothing/suit/toggle/hazard
+	head = /obj/item/clothing/head/hardhat/white
+	shoes =/obj/item/clothing/shoes/laceup
+	ears = /obj/item/radio/headset/syndicate/alt/leader
+	id = /obj/item/card/id/syndicate_command/captain_id
+
+/datum/outfit/job/ce/syndicate
+	name = "Chief Engineer (Syndicate Generic)"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	ears = /obj/item/radio/headset/syndicate/alt
+	glasses = /obj/item/clothing/glasses/sunglasses
+
+/datum/outfit/job/ce/syndicate/gorlex
+	name = "Foreman (Gorlex Marauders)"
+
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/hazard
+	alt_suit = null
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/combat

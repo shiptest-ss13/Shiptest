@@ -7,6 +7,8 @@
 	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
 	wiki_page = "Paramedic"
+	alt_titles = list("Emergency Medical Technician", "Combat Life Saver")
+	senior_title = "Field Surgeon"
 
 	outfit = /datum/outfit/job/paramedic
 
@@ -70,3 +72,19 @@
 	uniform = /obj/item/clothing/under/rank/security/brig_phys
 	shoes = /obj/item/clothing/shoes/combat
 	backpack = /obj/item/storage/backpack/ert/medical
+/datum/outfit/job/paramedic/syndicate/gorlex
+	name = "Paramedic (Gorlex)"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	ears = /obj/item/radio/headset/syndicate/alt
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/paramedic/syndicate
+	name = "Field Medic (Cybersun Industries)"
+
+	uniform = /obj/item/clothing/under/syndicate/medic
+	head = /obj/item/clothing/head/soft/cybersun
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat

@@ -66,18 +66,15 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define iszombie(A) (is_species(A, /datum/species/zombie))
 #define isskeleton(A) (is_species(A, /datum/species/skeleton))
 #define ismoth(A) (is_species(A, /datum/species/moth))
-#define ishumanbasic(A) (is_species(A, /datum/species/human))
+#define ishumanbasic(A) (is_species(A, /datum/species/human) && !is_species(A, /datum/species/human/krokodil_addict))
 #define isfelinid(A) (is_species(A, /datum/species/human/felinid))
 #define isethereal(A) (is_species(A, /datum/species/ethereal))
 #define isvampire(A) (is_species(A,/datum/species/vampire))
 #define isdullahan(A) (is_species(A, /datum/species/dullahan))
-#define isteshari(A) (is_species(A, /datum/species/teshari))
-
-//WS Begin - Custom Species
+#define iskepori(A) (is_species(A, /datum/species/kepori))
 #define issquidperson(A) (is_species(A, /datum/species/squid))
 #define isipc(A) (is_species(A, /datum/species/ipc))
 #define isspiderperson(A) (is_species(A, /datum/species/spider))
-//WS End
 
 //more carbon mobs
 #define ismonkey(A) (istype(A, /mob/living/carbon/monkey))
@@ -144,11 +141,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isclown(A) (istype(A, /mob/living/simple_animal/hostile/retaliate/clown))
 
-//WS Begin - Custom Simplemobs
-
 #define isborer(A) (istype(A, /mob/living/simple_animal/borer))
-
-//WS end
 
 //Misc mobs
 #define isobserver(A) (istype(A, /mob/dead/observer))
@@ -229,9 +222,7 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 
 #define isshuttleturf(T) (length(T.baseturfs) && (/turf/baseturf_skipover/shuttle in T.baseturfs))
 
-//WS Begin
 #define isspacepod(A) (istype(A, /obj/spacepod))
-//WS End
 
 #define isbook(O) (is_type_in_typecache(O, GLOB.book_types))
 

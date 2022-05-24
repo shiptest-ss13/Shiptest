@@ -18,6 +18,8 @@
 	light_power = 0.8
 	light_on = FALSE
 	var/on = FALSE
+	var/toggle_on_sound = 'sound/items/flashlight_on.ogg'
+	var/toggle_off_sound = 'sound/items/flashlight_off.ogg'
 
 
 /obj/item/flashlight/Initialize()
@@ -38,7 +40,7 @@
 
 /obj/item/flashlight/attack_self(mob/user)
 	on = !on
-	playsound(user, on ? 'sound/weapons/magin.ogg' : 'sound/weapons/magout.ogg', 40, TRUE)
+	playsound(user, on ? toggle_on_sound : toggle_off_sound, 40, TRUE)
 	update_brightness(user)
 	for(var/X in actions)
 		var/datum/action/A = X
@@ -366,9 +368,35 @@
 	desc = "An old lantern that has seen plenty of use."
 	light_range = 4
 
-/obj/item/flashlight/lantern/syndicate //WS edit - LepiCorp stuff
+/obj/item/flashlight/lantern/syndicate
 	desc = "A mining lantern with an extra-bright bulb. Manufactured by LepiCorp."
-	light_range = 10 //End WS edit
+	light_range = 10
+
+/obj/item/flashlight/lantern/lanternbang
+	name = "suspicious lantern"
+	desc = "A mining lantern with some odd electronics inside the glass. Manufactured by LepiCorp."
+	icon_state = "syndilantern"
+	item_state = "syndilantern"
+	actions_types = list(/datum/action/item_action/activate_lanternbang)
+	var/cooldown = 0
+
+/obj/item/flashlight/lantern/lanternbang/proc/activate()
+	if(cooldown)
+		return
+	src.visible_message("<span class='warning'>\The [src]'s light overloads!</span>")
+	new /obj/effect/dummy/lighting_obj (get_turf(src), 10, 4, COLOR_WHITE, 2)
+	playsound(get_turf(src), 'sound/weapons/flash.ogg', 50, TRUE, 3)
+	for(var/mob/living/M in get_hearers_in_view(7, get_turf(src)))
+		if(M.stat == DEAD)
+			continue
+		var/distance = max(0, get_dist(get_turf(src), M.loc))
+		if(distance == 0) //We won't affect ourselves
+			continue
+		if(M.flash_act(affect_silicon = 1))
+			M.Knockdown(10/(max(1, distance)))
+			M.confused += 15
+	cooldown = TRUE
+	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 20 SECONDS)
 
 /obj/item/flashlight/slime
 	gender = PLURAL
@@ -450,6 +478,8 @@
 	item_state = "glowstick"
 	grind_results = list(/datum/reagent/phenol = 15, /datum/reagent/hydrogen = 10, /datum/reagent/oxygen = 5) //Meth-in-a-stick
 	var/fuel = 0
+	toggle_on_sound = 'sound/effects/glowstick.ogg'
+	toggle_off_sound = 'sound/effects/glowstick.ogg'
 
 
 /obj/item/flashlight/glowstick/Initialize()

@@ -23,6 +23,7 @@
 	fire_rate = 3
 	automatic = 0
 	weapon_weight = WEAPON_LIGHT
+	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
@@ -35,7 +36,7 @@
 /obj/item/gun/ballistic/automatic/pistol/m1911
 	name = "\improper M1911"
 	desc = "A classic .45 handgun with a small magazine capacity."
-	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+
 	icon_state = "m1911"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
@@ -100,7 +101,6 @@
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
 	desc = "An exceedingly flimsy gun that is extremely cheap and easy to produce. You get what you pay for."
-	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "disposable"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/disposable
@@ -130,3 +130,46 @@
 	icon_state = "disposable_pizza"
 	random_icon = FALSE
 	custom_materials = list(/datum/material/pizza=2000)
+
+//not technically a pistol but whatever
+/obj/item/gun/ballistic/derringer
+	name = ".38 Derringer"
+	desc = "A easily concealable derringer. Uses .38 ammo."
+	icon_state = "derringer"
+	mag_type = /obj/item/ammo_box/magazine/internal/derr38
+	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
+	load_sound = 'sound/weapons/gun/revolver/load_bullet.ogg'
+	eject_sound = 'sound/weapons/gun/revolver/empty.ogg'
+	fire_sound_volume = 60
+	dry_fire_sound = 'sound/weapons/gun/revolver/dry_fire.ogg'
+	casing_ejector = FALSE
+	internal_magazine = TRUE
+	bolt_type = BOLT_TYPE_NO_BOLT
+	tac_reloads = FALSE
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/gun/ballistic/derringer/get_ammo(countchambered = FALSE, countempties = TRUE)
+	var/boolets = 0 //legacy var name maturity
+	if (chambered && countchambered)
+		boolets++
+	if (magazine)
+		boolets += magazine.ammo_count(countempties)
+	return boolets
+
+/obj/item/gun/ballistic/derringer/examine(mob/user)
+	. = ..()
+	var/live_ammo = get_ammo(FALSE, FALSE)
+	. += "[live_ammo ? live_ammo : "None"] of those are live rounds."
+
+/obj/item/gun/ballistic/derringer/traitor
+	name = "\improper .357 Syndicate Derringer"
+	desc = "An easily concealable derriger, if not for the bright red and black. Uses .357 ammo."
+	icon_state = "derringer_syndie"
+	mag_type = /obj/item/ammo_box/magazine/internal/derr357
+	fire_sound_volume = 50 //Tactical stealth firing
+
+/obj/item/gun/ballistic/derringer/gold
+	name = "\improper Golden Derringer"
+	desc = "The golden sheen is somewhat counterintuitive as a stealth weapon, but it looks cool. Uses .357 ammo."
+	icon_state = "derringer_gold"
+	mag_type = /obj/item/ammo_box/magazine/internal/derr357

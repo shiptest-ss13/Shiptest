@@ -8,13 +8,14 @@
 	bolt_type = BOLT_TYPE_STANDARD
 	semi_auto = FALSE
 	internal_magazine = TRUE
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/mosin.ogg'
 	fire_sound_volume = 90
 	vary_fire_sound = FALSE
 	rack_sound = 'sound/weapons/gun/rifle/bolt_out.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/rifle/bolt_in.ogg'
 	tac_reloads = FALSE
 	weapon_weight = WEAPON_MEDIUM
+	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
 /obj/item/gun/ballistic/rifle/update_overlays()
 	. = ..()
@@ -131,3 +132,13 @@
 		user.put_in_hands(gun)
 	else
 		user.dropItemToGround(src, TRUE)
+
+/obj/item/gun/ballistic/rifle/boltaction/polymer
+	name = "polymer survivor rifle"
+	desc = "Chambered in .300 Blackout, and manufactured with cheap tools, this rifle has seen its share of part replacements, repairs, and bubba-hack-jobs to keep it serviceable. Use at your own risk."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "crackhead_rifle"
+	item_state = "crackhead_rifle"
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_NORMAL
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/polymer

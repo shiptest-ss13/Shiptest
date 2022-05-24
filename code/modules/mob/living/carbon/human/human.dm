@@ -9,8 +9,11 @@
 
 	setup_human_dna()
 
+
+	prepare_huds() //Prevents a nasty runtime on human init
+
 	if(dna.species)
-		set_species(dna.species.type)
+		set_species(dna.species.type) //This generates new limbs based on the species, beware.
 
 	//initialise organs
 	create_internal_organs() //most of it is done in set_species now, this is only for parent call
@@ -198,7 +201,7 @@
 		dat += "</td></tr>"
 
 	var/obj/item/bodypart/O = get_bodypart(BODY_ZONE_CHEST)
-	if((w_uniform == null && !(dna && dna.species.nojumpsuit) && !(O && O.status == BODYPART_ROBOTIC)) || (ITEM_SLOT_ICLOTHING in obscured))
+	if((w_uniform == null && !(dna && dna.species.nojumpsuit) && !IS_ORGANIC_LIMB(O)) || (ITEM_SLOT_ICLOTHING in obscured))
 		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Pockets:</B></font></td></tr>"
 		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>ID:</B></font></td></tr>"
 		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Belt:</B></font></td></tr>"
@@ -226,11 +229,10 @@
 
 // called when something steps onto a human
 // this could be made more general, but for now just handle mulebot
-/mob/living/carbon/human/Crossed(atom/movable/AM)
+/mob/living/carbon/human/on_entered(datum/source, atom/movable/AM)
 	var/mob/living/simple_animal/bot/mulebot/MB = AM
 	if(istype(MB))
 		MB.RunOver(src)
-
 	. = ..()
 	spreadFire(AM)
 
@@ -332,8 +334,7 @@
 				var/status = ""
 				if(getBruteLoss())
 					to_chat(usr, "<b>Physical trauma analysis:</b>")
-					for(var/X in bodyparts)
-						var/obj/item/bodypart/BP = X
+					for(var/obj/item/bodypart/BP as anything in bodyparts)
 						var/brutedamage = BP.brute_dam
 						if(brutedamage > 0)
 							status = "received minor physical injuries."
@@ -348,8 +349,7 @@
 							to_chat(usr, "<span class='[span]'>[BP] appears to have [status]</span>")
 				if(getFireLoss())
 					to_chat(usr, "<b>Analysis of skin burns:</b>")
-					for(var/X in bodyparts)
-						var/obj/item/bodypart/BP = X
+					for(var/obj/item/bodypart/BP as anything in bodyparts)
 						var/burndamage = BP.burn_dam
 						if(burndamage > 0)
 							status = "signs of minor burns."
@@ -630,7 +630,7 @@
 		threatcount += 2
 
 	//Check for nonhuman scum
-	if(dna && dna.species.id && dna.species.id != "human")
+	if(dna && dna.species.id && dna.species.id != SPECIES_HUMAN)
 		threatcount += 1
 
 	//mindshield implants imply trustworthyness
@@ -872,8 +872,7 @@
 			hud_used.healthdoll.cut_overlays()
 			if(stat != DEAD)
 				hud_used.healthdoll.icon_state = "healthdoll_OVERLAY"
-				for(var/X in bodyparts)
-					var/obj/item/bodypart/BP = X
+				for(var/obj/item/bodypart/BP as anything in bodyparts)
 					var/damage = BP.burn_dam + BP.brute_dam
 					var/comparison = (BP.max_damage/5)
 					var/icon_num = 0
@@ -1069,6 +1068,79 @@
 	else if(can_be_firemanned(target))
 		fireman_carry(target)
 
+/mob/living/carbon/human/MouseDrop(mob/over)
+	. = ..()
+	if(ishuman(over))
+		var/mob/living/carbon/human/T = over  // curbstomp, ported from PP with modifications
+		if(!src.is_busy && (src.zone_selected == BODY_ZONE_HEAD || src.zone_selected == BODY_ZONE_PRECISE_GROIN) && get_turf(src) == get_turf(T) && !(T.mobility_flags & MOBILITY_STAND) && src.a_intent != INTENT_HELP) //all the stars align, time to curbstomp
+			src.is_busy = TRUE
+
+			if (!do_mob(src,T,25) || get_turf(src) != get_turf(T) || (T.mobility_flags & MOBILITY_STAND) || src.a_intent == INTENT_HELP || src == T) //wait 30ds and make sure the stars still align (Body zone check removed after PR #958)
+				src.is_busy = FALSE
+				return
+
+			T.Stun(6)
+
+			if(src.zone_selected == BODY_ZONE_HEAD) //curbstomp specific code
+
+				var/increment = (T.lying_angle/90)-2
+				setDir(increment > 0 ? WEST : EAST)
+				for(var/i in 1 to 5)
+					src.pixel_y += 8-i
+					src.pixel_x -= increment
+					sleep(0.2)
+				for(var/i in 1 to 5)
+					src.pixel_y -= 8-i
+					src.pixel_x -= increment
+					sleep(0.2)
+
+				playsound(src, 'sound/effects/hit_kick.ogg', 80, 1, -1)
+				playsound(src, 'sound/weapons/punch2.ogg', 80, 1, -1)
+
+				var/obj/item/bodypart/BP = T.get_bodypart(BODY_ZONE_HEAD)
+				if(BP)
+					BP.receive_damage(36) //so 3 toolbox hits
+
+				T.visible_message("<span class='warning'>[src] curbstomps [T]!</span>", "<span class='warning'>[src] curbstomps you!</span>")
+
+				log_combat(src, T, "curbstomped")
+
+			else if(src.zone_selected == BODY_ZONE_PRECISE_GROIN) //groinkick specific code
+
+				var/increment = (T.lying_angle/90)-2
+				setDir(increment > 0 ? WEST : EAST)
+				for(var/i in 1 to 5)
+					src.pixel_y += 2-i
+					src.pixel_x -= increment
+					sleep(0.2)
+				for(var/i in 1 to 5)
+					src.pixel_y -= 2-i
+					src.pixel_x -= increment
+					sleep(0.2)
+
+				playsound(src, 'sound/effects/hit_kick.ogg', 80, 1, -1)
+				playsound(src, 'sound/effects/hit_punch.ogg', 80, 1, -1)
+
+				var/obj/item/bodypart/BP = T.get_bodypart(BODY_ZONE_CHEST)
+				if(BP)
+					if(T.gender == MALE)
+						BP.receive_damage(25)
+					else
+						BP.receive_damage(15)
+
+				T.visible_message("<span class='warning'>[src] kicks [T] in the groin!</span>", "<span class='warning'>[src] kicks you in the groin!</span")
+
+				log_combat(src, T, "groinkicked")
+
+			var/increment = (T.lying_angle/90)-2
+			for(var/i in 1 to 10)
+				src.pixel_x = src.pixel_x + increment
+				sleep(0.1)
+
+			src.pixel_x = 0
+			src.pixel_y = 0 //position reset
+
+			src.is_busy = FALSE
 
 //src is the user that will be carrying, target is the mob to be carried
 /mob/living/carbon/human/proc/can_piggyback(mob/living/carbon/target)
@@ -1204,9 +1276,6 @@
 /mob/living/carbon/human/species/android
 	race = /datum/species/android
 
-/mob/living/carbon/human/species/corporate
-	race = /datum/species/corporate
-
 /mob/living/carbon/human/species/dullahan
 	race = /datum/species/dullahan
 
@@ -1324,9 +1393,6 @@
 /mob/living/carbon/human/species/moth
 	race = /datum/species/moth
 
-/mob/living/carbon/human/species/mush
-	race = /datum/species/mush
-
 /mob/living/carbon/human/species/plasma
 	race = /datum/species/plasmaman
 
@@ -1348,14 +1414,8 @@
 /mob/living/carbon/human/species/snail
 	race = /datum/species/snail
 
-/mob/living/carbon/human/species/synth
-	race = /datum/species/synth
-
-/mob/living/carbon/human/species/synth/military
-	race = /datum/species/synth/military
-
-/mob/living/carbon/human/species/teshari
-	race = /datum/species/teshari
+/mob/living/carbon/human/species/kepori
+	race = /datum/species/kepori
 
 /mob/living/carbon/human/species/vampire
 	race = /datum/species/vampire
@@ -1367,4 +1427,13 @@
 	race = /datum/species/zombie/infectious
 
 /mob/living/carbon/human/species/zombie/krokodil_addict
-	race = /datum/species/krokodil_addict
+	race = /datum/species/human/krokodil_addict
+
+/mob/living/carbon/human/species/ipc
+	race = /datum/species/ipc
+
+/mob/living/carbon/human/species/squid
+	race = /datum/species/squid
+
+/mob/living/carbon/human/species/lizard/ashwalker/kobold
+	race = /datum/species/lizard/ashwalker/kobold

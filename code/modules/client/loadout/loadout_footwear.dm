@@ -2,7 +2,6 @@
 	subtype_path = /datum/gear/footwear
 	slot = ITEM_SLOT_FEET
 	sort_category = "Footwear"
-	cost = 1000
 
 //pretty much everything else
 
@@ -17,27 +16,22 @@
 /datum/gear/footwear/winterboots
 	display_name = "winter boots"
 	path = /obj/item/clothing/shoes/winterboots
-	cost = 4000
 
 /datum/gear/footwear/jackboots
 	display_name = "jackboots"
 	path = /obj/item/clothing/shoes/jackboots
-	cost = 4000
 
 /datum/gear/footwear/miningboots
 	display_name = "mining boots"
 	path = /obj/item/clothing/shoes/workboots/mining
-	cost = 4000
 
 /datum/gear/footwear/workboots
 	display_name = "work boots"
-	path = /obj/item/clothing/shoes/workboots/mining
-	cost = 4000
+	path = /obj/item/clothing/shoes/workboots
 //Sneakers
 
 /datum/gear/footwear/color
 	subtype_path = /datum/gear/footwear/color
-	cost = 500
 
 /datum/gear/footwear/color/black
 	display_name = "black shoes"

@@ -2,17 +2,8 @@ import { useBackend } from "../backend";
 import { Icon, Section, Table } from "../components";
 import { Window } from "../layouts";
 
-const commandJobs = [
-  "Captain",
-  "Head of Personnel",
-  "Head of Security",
-  "Chief Engineer",
-  "Research Director",
-  "Chief Medical Officer",
-];
-
 export const CrewManifest = (props, context) => {
-  const { data: { manifest, positions } } = useBackend(context);
+  const { data: { manifest } } = useBackend(context);
 
   return (
     <Window title="Crew Manifest" width={350} height={500}>
@@ -36,7 +27,7 @@ export const CrewManifest = (props, context) => {
                     }
                     collapsing
                   >
-                    {commandJobs.includes(crewMember.rank) && (
+                    {!!crewMember.officer && (
                       <Icon
                         name={
                           crewMember.rank === "Captain" ? "star" : "chevron-up"

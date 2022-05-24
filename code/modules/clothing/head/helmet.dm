@@ -97,6 +97,36 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 
+/obj/item/clothing/head/helmet/marine
+	name = "tactical combat helmet"
+	desc = "A tactical black helmet, sealed from outside hazards with a plate of reinforced glass."
+	icon_state = "marine_command"
+	item_state = "helmetalt"
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 25, "bomb" = 50, "bio" = 100, "fire" = 40, "acid" = 50)
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+	clothing_flags = STOPSPRESSUREDAMAGE
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	can_flashlight = TRUE
+	dog_fashion = null
+
+/obj/item/clothing/head/helmet/marine/Initialize(mapload)
+	set_attached_light(new /obj/item/flashlight/seclite)
+	update_helmlight()
+	update_icon()
+	. = ..()
+
+/obj/item/clothing/head/helmet/marine/security
+	name = "marine heavy helmet"
+	icon_state = "marine_security"
+
+/obj/item/clothing/head/helmet/marine/engineer
+	name = "marine utility helmet"
+	icon_state = "marine_engineer"
+
+/obj/item/clothing/head/helmet/marine/medic
+	name = "marine medic helmet"
+	icon_state = "marine_medic"
+
 /obj/item/clothing/head/helmet/old
 	name = "degrading helmet"
 	desc = "Standard issue security helmet. Due to degradation the helmet's visor obstructs the users ability to see long distances."
@@ -440,3 +470,56 @@
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
+
+/obj/item/clothing/head/helmet/swat/inteq
+	name = "inteq SWAT helmet"
+	desc = "A robust and spaceworthy helmet with an opaque gold visor. There is an insignia on the earpad with the letters 'IRMG' on it."
+	icon_state = "inteq_swat"
+	item_state = "inteq_swat"
+	flags_inv = HIDEHAIR
+
+/obj/item/clothing/head/helmet/inteq
+	name = "inteq helmet"
+	desc = "A standard issue helmet in the colors of the IRMG. It doesn't feel special in any way."
+	icon_state = "inteq_helmet"
+	icon_state = "inteq_helmet"
+
+/obj/item/clothing/head/helmet/alt/minutemen
+	name = "minutemen ballistic helmet"
+	desc = "A bulletproof helmet that is worn by members of the colonial minutemen."
+	icon_state = "antichristhelm"
+
+/obj/item/clothing/head/helmet/solgov
+	name = "\improper SolGov Helmet"
+	desc = "A helmet manufactured by SolGov to protect craniums. Painted in green to provide some degree of camoflauge."
+	icon_state = "helmet_terragov"
+	item_state = "helmet_terragov"
+	can_flashlight = FALSE
+	dog_fashion = null
+
+/obj/item/clothing/head/solgov
+	name = "\improper SolGov officer's cap"
+	desc = "A blue cap worn by high-ranking officers of SolGov."
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
+	icon_state = "cap_solgov"
+	item_state = "cap_solgov"
+	strip_delay = 80
+
+/obj/item/clothing/head/solgov/terragov
+	name = "\improper TerraGov officer's cap"
+	desc = "A cap worn by high-ranking officers of SolGov. This one is still in original TerraGov green."
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
+	icon_state = "cap_terragov"
+	item_state = "cap_terragov"
+
+/obj/item/clothing/head/helmet/space/plasmaman/solgov
+	name = "\improper SolGov envirosuit helmet"
+	desc = "A generic white envirohelmet with a secondary blue."
+	icon_state = "solgov_envirohelm"
+	item_state = "solgov_envirohelm"
+
+/obj/item/clothing/head/helmet/operator
+	name = "\improper Operator helmet"
+	desc = "A robust combat helmet commonly employed by Syndicate forces, regardless of alignment."
+	icon_state = "operator"
+	item_state = "operator"

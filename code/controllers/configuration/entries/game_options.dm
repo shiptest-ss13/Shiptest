@@ -157,6 +157,10 @@
 
 /datum/config_entry/flag/join_with_mutant_humans	//players can pick mutant bodyparts for humans before joining the game
 
+/datum/config_entry/number/max_loadout_items	//maximum number of items that can be in a player's loadout
+	config_entry_value = 10
+	min_val = 0
+
 /datum/config_entry/flag/no_summon_guns	//No
 
 /datum/config_entry/flag/no_summon_magic	//Fun
@@ -196,7 +200,6 @@
 
 /datum/config_entry/flag/emojis
 
-/datum/config_entry/flag/chat_markup //WS edit - Chat markup
 
 /datum/config_entry/keyed_list/multiplicative_movespeed
 	key_mode = KEY_MODE_TYPE
@@ -414,3 +417,32 @@
 
 /datum/config_entry/number/max_shuttle_size
 	config_entry_value = 300
+
+/datum/config_entry/keyed_list/no_traitor_head
+	key_mode = KEY_MODE_TEXT
+	value_mode = VALUE_MODE_FLAG
+
+/datum/config_entry/number/traitor_malf_ai_min_pop
+	config_entry_value = 10
+	min_val = 1
+	max_val = 20
+
+/datum/config_entry/number/max_malf_apc_hack_obj
+	min_val = 10
+	max_val = 20
+
+/datum/config_entry/number/max_overmap_event_clusters
+	config_entry_value = 10
+
+/datum/config_entry/number/max_overmap_events
+	config_entry_value = 150
+
+/datum/config_entry/number/max_overmap_dynamic_events
+	config_entry_value = 10
+
+/datum/config_entry/string/overmap_generator_type
+	config_entry_value = "solar_system"
+
+/datum/config_entry/number/overmap_size
+	config_entry_value = 30
+	min_val = 1

@@ -2,7 +2,7 @@
 	icon_state = "energy"
 	name = "energy gun"
 	desc = "A basic energy-based gun."
-	icon = 'whitesands/icons/obj/guns/energy.dmi'
+	icon = 'icons/obj/guns/energy.dmi'
 
 	var/obj/item/stock_parts/cell/gun/cell //What type of power cell this uses
 	var/cell_type = /obj/item/stock_parts/cell/gun
@@ -153,12 +153,16 @@
 	if (!ammo_type || !cell)
 		return
 	if(use_cyborg_cell && !no_cyborg_drain)
-		if(iscyborg(loc))
-			var/mob/living/silicon/robot/R = loc
-			if(R.cell)
-				var/obj/item/ammo_casing/energy/shot = ammo_type[select] //Necessary to find cost of shot
-				if(R.cell.use(shot.e_cost)) 		//Take power from the borg...
-					cell.give(shot.e_cost)	//... to recharge the shot
+		if(!iscyborg(loc))
+			return
+		var/mob/living/silicon/robot/R = loc
+		if(!R.cell)
+			return
+		var/obj/item/ammo_casing/energy/shot = ammo_type[select] //Necessary to find cost of shot
+		if(!R.cell.use(shot.e_cost)) 		//Take power from the borg...
+			shoot_with_empty_chamber( R )
+			return
+		cell.give(shot.e_cost)	//... to recharge the shot
 	if(!chambered)
 		var/obj/item/ammo_casing/energy/AC = ammo_type[select]
 		if(cell.charge >= AC.e_cost) //if there's enough power in the cell cell...

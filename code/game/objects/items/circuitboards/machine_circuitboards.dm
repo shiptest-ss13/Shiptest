@@ -377,6 +377,30 @@
 #undef PATH_FREEZER
 #undef PATH_HEATER
 
+/obj/item/circuitboard/machine/shieldwallgen
+	name = "Shieldwall Generator (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/shieldwallgen
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 2,
+		/obj/item/stock_parts/micro_laser = 2,
+		/obj/item/stack/sheet/plasmaglass = 1,
+		/obj/item/stack/cable_coil = 5
+		)
+	needs_anchored = FALSE
+
+/obj/item/circuitboard/machine/shieldwallgen/atmos
+	name = "Atmospheric Holowall Generator (Machine Board)"
+	build_path = /obj/machinery/power/shieldwallgen/atmos
+
+/obj/item/circuitboard/machine/pipedispenser
+	name = "Pipe dispenser (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/pipedispenser
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/matter_bin = 1)
+
 //Generic
 
 /obj/item/circuitboard/machine/circuit_imprinter
@@ -756,8 +780,6 @@
 	icon_state = "medical"
 	build_path = /obj/machinery/rnd/production/protolathe/department/medical
 
-/*WS Edit - Sleepers are now in the modularized file, so that if TG removes the circuit board, we don't lose em.
-
 /obj/item/circuitboard/machine/sleeper
 	name = "Sleeper (Machine Board)"
 	icon_state = "medical"
@@ -767,12 +789,6 @@
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stack/sheet/glass = 2)
-
-/obj/item/circuitboard/machine/sleeper/party
-	name = "Party Pod (Machine Board)"
-	build_path = /obj/machinery/sleeper/party
-
-WS End */
 
 /obj/item/circuitboard/machine/smoke_machine
 	name = "Smoke Machine (Machine Board)"
@@ -806,6 +822,33 @@ WS End */
 	name = "\improper Departmental Techfab (Machine Board) - Medical"
 	icon_state = "medical"
 	build_path = /obj/machinery/rnd/production/techfab/department/medical
+
+/obj/item/circuitboard/machine/clonepod
+	name = "Clone Pod (Machine Board)"
+	icon_state = "medical"
+	build_path = /obj/machinery/clonepod
+	req_components = list(
+		/obj/item/stack/cable_coil = 2,
+		/obj/item/stock_parts/scanning_module = 2,
+		/obj/item/stock_parts/manipulator = 2,
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/reagent_containers/glass/beaker = 2)
+
+/obj/item/circuitboard/machine/clonepod/experimental
+	name = "Experimental Clone Pod (Machine Board)"
+	icon_state = "medical"
+	build_path = /obj/machinery/clonepod/experimental
+
+/obj/item/circuitboard/machine/clonescanner
+	name = "Cloning Scanner (Machine Board)"
+	icon_state = "medical"
+	build_path = /obj/machinery/dna_scannernew
+	req_components = list(
+		/obj/item/stock_parts/scanning_module = 1,
+		/obj/item/stock_parts/matter_bin = 1,
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/stack/cable_coil = 2)
 
 //Science
 
@@ -858,6 +901,14 @@ WS End */
 		/obj/item/stock_parts/matter_bin = 2,
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stack/sheet/glass = 1)
+
+/obj/item/circuitboard/machine/aug_manipulator
+	name = "Augment Manipulator (Machine Board)"
+	icon_state = "science"
+	build_path = /obj/machinery/aug_manipulator
+	req_components = list(
+		/obj/item/airlock_painter = 1,
 		/obj/item/stack/sheet/glass = 1)
 
 /obj/item/circuitboard/machine/monkey_recycler
@@ -999,6 +1050,17 @@ WS End */
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stock_parts/micro_laser = 1,
 		/obj/item/stock_parts/scanning_module = 1)
+
+/obj/item/circuitboard/machine/bluespace_miner
+	name = "Bluespace Miner (Machine Board)"
+	build_path = /obj/machinery/power/bluespace_miner
+	req_components = list(
+		/obj/item/stock_parts/matter_bin = 3,
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/manipulator = 3,
+		/obj/item/stock_parts/scanning_module = 1,
+		/obj/item/stack/ore/bluespace_crystal = 5)
+	needs_anchored = FALSE
 
 //Security
 
@@ -1199,19 +1261,6 @@ WS End */
 		/obj/item/stock_parts/card_reader = 1)
 
 //Supply
-
-/obj/item/circuitboard/machine/mining_equipment_vendor
-	name = "Mining Equipment Vendor (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/mineral/equipment_vendor
-	req_components = list(
-		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stock_parts/matter_bin = 3)
-
-/obj/item/circuitboard/machine/mining_equipment_vendor/golem
-	name = "Golem Ship Equipment Vendor (Machine Board)"
-	build_path = /obj/machinery/mineral/equipment_vendor/golem
-
 /obj/item/circuitboard/machine/ore_redemption
 	name = "Ore Redemption (Machine Board)"
 	icon_state = "supply"
@@ -1267,6 +1316,36 @@ WS End */
 		/obj/item/stock_parts/scanning_module = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
+/obj/item/circuitboard/machine/deepcore/drill
+	name = "Deep Core Bluespace Drill (Machine Board)"
+	icon_state = "supply"
+	build_path = /obj/machinery/deepcore/drill
+	req_components = list(
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/matter_bin = 1)
+
+/obj/item/circuitboard/machine/deepcore/hopper
+	name = "Bluespace Material Hopper (Machine Board)"
+	icon_state = "supply"
+	build_path = /obj/machinery/deepcore/hopper
+	req_components = list(
+		/obj/item/stack/ore/bluespace_crystal = 2,
+		/obj/item/stock_parts/capacitor = 2,
+		/obj/item/stock_parts/manipulator = 2,
+		/obj/item/stock_parts/matter_bin = 2)
+	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
+
+/obj/item/circuitboard/machine/deepcore/hub
+	name = "Deepcore Mining Control Hub (Machine Board)"
+	icon_state = "supply"
+	build_path = /obj/machinery/deepcore/hub
+	req_components = list(
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/micro_laser = 2,
+		/obj/item/stock_parts/matter_bin = 3,
+		/obj/item/stock_parts/manipulator = 2)
+
 //Misc
 /obj/item/circuitboard/machine/sheetifier
 	name = "Sheet-meister 2000 (Machine Board)"
@@ -1308,4 +1387,51 @@ WS End */
 	req_components = list(
 		/obj/item/stock_parts/micro_laser = 2,
 		/obj/item/stock_parts/scanning_module = 2
+	)
+
+/obj/item/circuitboard/machine/shuttle/engine/plasma
+	name = "Plasma Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/fueled/plasma
+	req_components = list(/obj/item/stock_parts/capacitor = 2,
+		/obj/item/stack/cable_coil = 5,
+		/obj/item/stock_parts/micro_laser = 1)
+
+/obj/item/circuitboard/machine/shuttle/engine/electric
+	name = "Ion Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/electric
+	req_components = list(/obj/item/stock_parts/capacitor = 3,
+		/obj/item/stock_parts/micro_laser = 3)
+
+/obj/item/circuitboard/machine/shuttle/engine/expulsion
+	name = "Expulsion Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/fueled/expulsion
+	req_components = list(/obj/item/stock_parts/manipulator = 2,
+		/obj/item/stock_parts/matter_bin = 2)
+
+/obj/item/circuitboard/machine/shuttle/engine/oil
+	name = "Oil Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/liquid/oil
+	req_components = list(/obj/item/reagent_containers/glass/beaker = 4,
+		/obj/item/stock_parts/micro_laser = 2)
+
+/obj/item/circuitboard/machine/shuttle/engine/void
+	name = "Void Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/void
+	req_components = list(/obj/item/stock_parts/capacitor/quadratic = 2,
+		/obj/item/stack/cable_coil = 5,
+		/obj/item/stock_parts/micro_laser/quadultra = 1)
+
+/obj/item/circuitboard/machine/shuttle/heater
+	name = "Fueled Engine Heater (Machine Board)"
+	build_path = /obj/machinery/atmospherics/components/unary/shuttle/heater
+	req_components = list(/obj/item/stock_parts/micro_laser = 2,
+		/obj/item/stock_parts/matter_bin = 1)
+
+/obj/item/circuitboard/machine/shuttle/smes
+	name = "Electric Engine Precharger (Machine Board)"
+	build_path = /obj/machinery/power/smes/shuttle
+	req_components = list(
+		/obj/item/stack/cable_coil = 5,
+		/obj/item/stock_parts/cell = 3,
+		/obj/item/stock_parts/capacitor = 1
 	)

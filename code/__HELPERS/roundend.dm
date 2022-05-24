@@ -64,7 +64,7 @@
 			var/name_to_use = initial(M.name)
 			if(ishuman(M))
 				name_to_use = "Unknown Human" //Monkeymen and other mindless corpses
-			if(npc_nest.Find(name_to_use))
+			if(name_to_use in npc_nest)
 				file_data["[escape_status]"]["npcs"][name_to_use] += 1
 			else
 				file_data["[escape_status]"]["npcs"][name_to_use] = 1
@@ -94,8 +94,6 @@
 	var/team_gid = 1
 	var/list/team_ids = list()
 
-	var/list/greentexters = list()//WS Edit - Metacoin
-
 	for(var/datum/antagonist/A in GLOB.antagonists)
 		if(!A.owner)
 			continue
@@ -115,27 +113,12 @@
 				team_ids[T] = team_gid++
 			antag_info["team"]["id"] = team_ids[T]
 
-		var/greentexted = TRUE
-
 		if(A.objectives.len)
 			for(var/datum/objective/O in A.objectives)
 				var/result = O.check_completion() ? "SUCCESS" : "FAIL"
 
-				if (result == "FAIL")
-					greentexted = FALSE
-
 				antag_info["objectives"] += list(list("objective_type"=O.type,"text"=O.explanation_text,"result"=result))
 		SSblackbox.record_feedback("associative", "antagonists", 1, antag_info)
-
-		if (greentexted)
-			if (A.owner && A.owner.key)
-				if (A.type != /datum/antagonist/custom)
-					var/client/C = GLOB.directory[ckey(A.owner.key)]
-					if (C)
-						greentexters |= C
-
-	for (var/client/C in greentexters)
-		C.process_greentext(world.time - SSticker.round_start_time <= 300 SECONDS, world.time - SSticker.round_start_time)
 
 /datum/controller/subsystem/ticker/proc/record_nuke_disk_location()
 	var/obj/item/disk/nuclear/N = locate() in GLOB.poi_list
@@ -202,7 +185,6 @@
 
 	for(var/client/C in GLOB.clients)
 		C.playtitlemusic(40)
-		C.process_endround_metacoin(speed_round, world.time - SSticker.round_start_time)
 
 		if(speed_round)
 			C.give_award(/datum/award/achievement/misc/speed_round, C.mob)
@@ -271,7 +253,7 @@
 /datum/controller/subsystem/ticker/proc/standard_reboot()
 	if(ready_for_reboot)
 		if(mode.station_was_nuked)
-			Reboot("Station destroyed by Nuclear Device.", "nuke")
+			Reboot("Sector destroyed by Nuclear Device.", "nuke")
 		else
 			Reboot("Round ended.", "proper completion")
 	else
@@ -320,7 +302,7 @@
 		var/statspage = CONFIG_GET(string/roundstatsurl)
 		var/info = statspage ? "<a href='?action=openLink&link=[url_encode(statspage)][GLOB.round_id]'>[GLOB.round_id]</a>" : GLOB.round_id
 		parts += "[FOURSPACES]Round ID: <b>[info]</b>"
-	parts += "[FOURSPACES]Shift Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B>"
+	parts += "[FOURSPACES]Shift Duration: <B>[DisplayTimeText(world.timeofday - SSticker.round_start_timeofday)]</B>"
 	parts += "[FOURSPACES]Station Integrity: <B>[mode.station_was_nuked ? "<span class='redtext'>Destroyed</span>" : "[popcount["station_integrity"]]%"]</B>"
 	var/total_players = GLOB.joined_player_list.len
 	if(total_players)

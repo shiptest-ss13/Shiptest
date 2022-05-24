@@ -103,6 +103,18 @@
 	resistance_flags = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
+/obj/item/clothing/suit/toggle/industrial
+	name = "industrial jacket"
+	desc = "A black bomber jacket with high-visibility markings."
+	icon_state = "highvis"
+	item_state = "highvis"
+	blood_overlay_type = "coat"
+	body_parts_covered = CHEST|ARMS
+	togglename = "zipper"
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
+	resistance_flags = NONE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
 //Lawyer
 /obj/item/clothing/suit/toggle/lawyer
 	name = "blue suit jacket"
@@ -143,6 +155,47 @@
 	icon_state = "suitjacket_charcoal"
 	item_state = "suitjacket_charcoal"
 
+/obj/item/clothing/suit/toggle/lawyer/minutemen
+	name = "minutemen suit jacket"
+	desc = "An enterprising dress jacket used by officers of the Colonial Minutemen."
+	icon_state = "suitjacket_minuteman"
+	item_state = "suitjacket_navy"
+
+/obj/item/clothing/suit/toggle/lawyer/minutemen/Initialize()
+	. = ..()
+	if(!allowed)
+		allowed = GLOB.security_vest_allowed //it's hop-equivalent gear after all
+
+/obj/item/clothing/suit/toggle/lawyer/cmo
+	name = "light blue suit jacket"
+	desc = "A foppish dress jacket."
+	icon_state = "suitjacket_cmo"
+
+/obj/item/clothing/suit/toggle/lawyer/medical
+	name = "saturated blue suit jacket"
+	desc = "A foppish dress jacket."
+	icon_state = "suitjacket_medical"
+
+/obj/item/clothing/suit/toggle/lawyer/science
+	name = "purple suit jacket"
+	desc = "A foppish dress jacket."
+	icon_state = "suitjacket_science"
+
+/obj/item/clothing/suit/toggle/lawyer/brown
+	name = "brown suit jacket"
+	desc = "A foppish dress jacket."
+	icon_state = "suitjacket_brown"
+
+/obj/item/clothing/suit/toggle/lawyer/orange
+	name = "orange suit jacket"
+	desc = "A foppish dress jacket."
+	icon_state = "suitjacket_orange"
+
+/obj/item/clothing/suit/toggle/lawyer/atmos
+	name = "light blue jacket"
+	desc = "A foppish dress jacket."
+	icon_state = "suitjacket_light_blue"
+
 //Mime
 /obj/item/clothing/suit/toggle/suspenders
 	name = "suspenders"
@@ -154,6 +207,13 @@
 
 //Security
 /obj/item/clothing/suit/armor/vest/security
+	item_state = "armor"
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS|HANDS
+	heat_protection = CHEST|GROIN|ARMS|HANDS
+	strip_delay = 70
+	resistance_flags = FLAMMABLE
+	dog_fashion = null
 
 /obj/item/clothing/suit/armor/vest/security/officer
 	name = "security officer's jacket"
@@ -172,6 +232,17 @@
 	desc = "This piece of clothing was specifically designed for asserting superior authority."
 	icon_state = "hosjacket"
 	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/armor/vest/security/brig_phys
+	name = "brig physician's jacket"
+	desc = "A black jacket with dark blue and silver accents, for the brig physician to prove they're a real member of security in style."
+	icon_state = "brigphysjacket"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/armor/vest/security/warden/alt
+	name = "warden's armored jacket"
+	desc = "A white jacket with silver rank pips and body armor strapped on top."
+	icon_state = "warden_jacket"
 
 //Surgeon
 /obj/item/clothing/suit/apron/surgical
@@ -193,7 +264,6 @@
 	cold_protection = CHEST|ARMS
 	heat_protection = CHEST|ARMS
 
-
 //Robotocist
 
 /obj/item/clothing/suit/hooded/techpriest
@@ -211,3 +281,71 @@
 	item_state = "techpriesthood"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS
+
+//Lieutenant
+/obj/item/clothing/suit/lieutenant_trenchcoat
+	name = "lieutenant's trenchcoat"
+	desc = "A design taken from a war over 500 years ago. Makes you look like a badass."
+	icon_state = "trenchcoat_blueshield"
+	item_state = "trenchcoat_blueshield"
+	blood_overlay_type = "coat"
+	allowed = list(/obj/item/gun/energy, /obj/item/reagent_containers/spray/pepper, /obj/item/ammo_box, /obj/item/ammo_casing,/obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/flashlight/seclite, /obj/item/melee/classic_baton)
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|ARMS|HANDS
+	cold_protection = CHEST|LEGS|ARMS
+	heat_protection = CHEST|LEGS|ARMS
+
+/obj/item/clothing/suit/toggle/lieutenant
+	name = "lieutenant's coat"
+	desc = "Surplus from some military. You finally have your own coat."
+	icon_state = "blueshield_coat"
+	item_state = "blueshield_coat"
+	allowed = list(/obj/item/gun/energy, /obj/item/reagent_containers/spray/pepper, /obj/item/ammo_box, /obj/item/ammo_casing,/obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/flashlight/seclite, /obj/item/melee/classic_baton)
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	body_parts_covered = CHEST|GROIN|ARMS|HANDS
+
+//SolGov suits
+/obj/item/clothing/suit/solgov_trenchcoat
+	name = "\improper SolGov trenchcoat"
+	desc = "A solgov official's trenchcoat. Has a lot of pockets."
+	icon_state = "trenchcoat_solgov"
+	item_state = "trenchcoat_solgov"
+	body_parts_covered = CHEST|LEGS|ARMS
+	allowed = list(/obj/item/gun/energy, /obj/item/reagent_containers/spray/pepper, /obj/item/ammo_box, /obj/item/ammo_casing,/obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/flashlight/seclite, /obj/item/melee/classic_baton)
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	cold_protection = CHEST|LEGS|ARMS
+	heat_protection = CHEST|LEGS|ARMS
+
+/obj/item/clothing/suit/toggle/solgov
+	name = "\improper SolGov coat"
+	desc = "An armored coat worn for special occasions. This one is dyed in SolGov blue."
+	body_parts_covered = CHEST|GROIN|ARMS|HANDS
+	icon_state = "coat_solgov"
+	item_state = "coat_solgov"
+	blood_overlay_type = "coat"
+	togglename = "buttons"
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+
+/obj/item/clothing/suit/toggle/solgov/terragov
+	name = "\improper Terragov coat"
+	desc = "An armored coat worn for special occasions. This one is still dyed in original TerraGov green."
+	icon_state = "coat_terragov"
+	item_state = "coat_terragov"
+
+/obj/item/clothing/suit/hooded/enginseer
+	name = "enginseer regalia"
+	desc = "You hold the secrets of the Machine."
+	icon_state = "enginseer"
+	item_state = "enginseer"
+	hoodtype = /obj/item/clothing/head/hooded/enginseer
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
+	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDEGLOVES
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/gun, /obj/item/melee, /obj/item/nullrod, /obj/item/radio, /obj/item/storage/book)
+
+/obj/item/clothing/head/hooded/enginseer
+	name = "enginseer's hood"
+	desc = "You are honored that they require your skills."
+	icon_state = "enginseerhood"
+	item_state = "enginseerhood"
+	body_parts_covered = HEAD
+	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR

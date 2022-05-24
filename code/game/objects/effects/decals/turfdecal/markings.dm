@@ -1,152 +1,31 @@
-/obj/effect/turf_decal/stripes/line
-	icon_state = "warningline"
-
-/obj/effect/turf_decal/stripes/end
-	icon_state = "warn_end"
-
-/obj/effect/turf_decal/stripes/corner
-	icon_state = "warninglinecorner"
-
-/obj/effect/turf_decal/stripes/box
-	icon_state = "warn_box"
-
-/obj/effect/turf_decal/stripes/full
-	icon_state = "warn_full"
-
-/obj/effect/turf_decal/stripes/asteroid/line
-	icon_state = "ast_warn"
-
-/obj/effect/turf_decal/stripes/asteroid/end
-	icon_state = "ast_warn_end"
-
-/obj/effect/turf_decal/stripes/asteroid/corner
-	icon_state = "ast_warn_corner"
-
-/obj/effect/turf_decal/stripes/asteroid/box
-	icon_state = "ast_warn_box"
-
-/obj/effect/turf_decal/stripes/asteroid/full
-	icon_state = "ast_warn_full"
-
-/obj/effect/turf_decal/stripes/white/line
-	icon_state = "warningline_white"
-
-/obj/effect/turf_decal/stripes/white/end
-	icon_state = "warn_end_white"
-
-/obj/effect/turf_decal/stripes/white/corner
-	icon_state = "warninglinecorner_white"
-
-/obj/effect/turf_decal/stripes/white/box
-	icon_state = "warn_box_white"
-
-/obj/effect/turf_decal/stripes/white/full
-	icon_state = "warn_full_white"
-
-/obj/effect/turf_decal/stripes/red/line
-	icon_state = "warningline_red"
-
-/obj/effect/turf_decal/stripes/red/end
-	icon_state = "warn_end_red"
-
-/obj/effect/turf_decal/stripes/red/corner
-	icon_state = "warninglinecorner_red"
-
-/obj/effect/turf_decal/stripes/red/box
-	icon_state = "warn_box_red"
-
-/obj/effect/turf_decal/stripes/red/full
-	icon_state = "warn_full_red"
-
-/obj/effect/turf_decal/delivery
-	icon_state = "delivery"
-
-/obj/effect/turf_decal/delivery/white
-	icon_state = "delivery_white"
-
-/obj/effect/turf_decal/delivery/red
-	icon_state = "delivery_red"
-
-/obj/effect/turf_decal/bot
-	icon_state = "bot"
-
-/obj/effect/turf_decal/bot/right
-	icon_state = "bot_right"
-
-/obj/effect/turf_decal/bot/left
-	icon_state = "bot_left"
-
-/obj/effect/turf_decal/bot_white
-	icon_state = "bot_white"
-
-/obj/effect/turf_decal/bot_white/right
-	icon_state = "bot_right_white"
-
-/obj/effect/turf_decal/bot_white/left
-	icon_state = "bot_left_white"
-
-/obj/effect/turf_decal/bot_red
-	icon_state = "bot_red"
-
-/obj/effect/turf_decal/bot_red/right
-	icon_state = "bot_right_red"
-
-/obj/effect/turf_decal/bot_red/left
-	icon_state = "bot_left_red"
-
-/obj/effect/turf_decal/loading_area
-	icon_state = "loadingarea"
-
-/obj/effect/turf_decal/loading_area/white
-	icon_state = "loadingarea_white"
-
-/obj/effect/turf_decal/loading_area/red
-	icon_state = "loadingarea_red"
-
-/obj/effect/turf_decal/caution
-	icon_state = "caution"
-
-/obj/effect/turf_decal/caution/white
-	icon_state = "caution_white"
-
-/obj/effect/turf_decal/caution/red
-	icon_state = "caution_red"
-
-/obj/effect/turf_decal/caution/stand_clear
-	icon_state = "stand_clear"
-
-/obj/effect/turf_decal/caution/stand_clear/white
-	icon_state = "stand_clear_white"
-
-/obj/effect/turf_decal/caution/stand_clear/red
-	icon_state = "stand_clear_red"
-
 /obj/effect/turf_decal/arrows
 	icon_state = "arrows"
+	color = COLOR_YELLOW
 
 /obj/effect/turf_decal/arrows/white
-	icon_state = "arrows_white"
+	color = COLOR_WHITE
 
 /obj/effect/turf_decal/arrows/red
-	icon_state = "arrows_red"
+	color = COLOR_RED
 
 /obj/effect/turf_decal/box
 	icon_state = "box"
+	color = COLOR_YELLOW
 
 /obj/effect/turf_decal/box/corners
 	icon_state = "box_corners"
 
 /obj/effect/turf_decal/box/white
-	icon_state = "box_white"
+	color = COLOR_WHITE
 
 /obj/effect/turf_decal/box/white/corners
-	icon_state = "box_corners_white"
+	icon_state = "box_corners"
 
 /obj/effect/turf_decal/box/red
-	icon_state = "box_red"
+	color = COLOR_RED
 
 /obj/effect/turf_decal/box/red/corners
-	icon_state = "box_corners_red"
+	icon_state = "box_corners"
 
 /obj/effect/turf_decal/plaque
 	icon_state = "plaque"
@@ -349,3 +228,115 @@
 
 /obj/effect/turf_decal/syndicateemblem/top/right
 	icon_state = "s3,3"
+
+/obj/effect/turf_decal/atmos/oxygen
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "oxygen"
+
+/obj/effect/turf_decal/atmos/carbon_dioxide
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "carbon_dioxide"
+
+/obj/effect/turf_decal/atmos/nitrogen
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "nitrogen"
+
+/obj/effect/turf_decal/atmos/air
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "air"
+
+/obj/effect/turf_decal/atmos/nitrous_oxide
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "nitrous_oxide"
+
+/obj/effect/turf_decal/atmos/plasma
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "plasma"
+
+/obj/effect/turf_decal/atmos/mix
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "mix"
+
+/obj/effect/turf_decal/number/one
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "1"
+
+/obj/effect/turf_decal/number/two
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "2"
+
+/obj/effect/turf_decal/number/three
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "3"
+
+/obj/effect/turf_decal/number/four
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "4"
+
+/obj/effect/turf_decal/number/five
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "5"
+
+/obj/effect/turf_decal/number/six
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "6"
+
+/obj/effect/turf_decal/number/seven
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "7"
+
+/obj/effect/turf_decal/number/eight
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "8"
+
+/obj/effect/turf_decal/number/nine
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "9"
+
+/obj/effect/turf_decal/number/zero
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "0"
+
+/obj/effect/turf_decal/dept/hop
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "hop"
+
+/obj/effect/turf_decal/dept/bar
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "bar"
+
+/obj/effect/turf_decal/dept/cargo
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "cargo"
+
+/obj/effect/turf_decal/dept/medical
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "med"
+
+/obj/effect/turf_decal/dept/science
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "sci"
+
+/obj/effect/turf_decal/dept/security
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "sec"
+
+/obj/effect/turf_decal/dept/mining
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "mine"
+
+/obj/effect/turf_decal/zoo
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "zoo"
+
+/obj/effect/turf_decal/no
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "no"
+
+/obj/effect/turf_decal/radiation
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "radiation"
+
+/obj/effect/turf_decal/radiation/white
+	icon = 'whitesands/icons/turf/decals.dmi'
+	icon_state = "radiation-w"

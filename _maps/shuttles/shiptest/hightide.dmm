@@ -1,8 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aC" = (
-/obj/structure/chair/stool,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "aK" = (
 /obj/item/wrench/old,
 /obj/structure/rack,
@@ -12,10 +8,6 @@
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
-"aW" = (
-/obj/structure/lattice,
-/turf/closed/wall,
-/area/space)
 "bd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/reagent_dispensers/beerkeg,
@@ -23,11 +15,6 @@
 /area/ship/maintenance/aft)
 "be" = (
 /obj/machinery/door/airlock/maintenance_hatch,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
-/area/ship/cargo)
-"bg" = (
-/obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -45,17 +32,20 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
+"bQ" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	welded = 1
+	},
+/obj/structure/barricade/wooden/crude,
+/obj/effect/mapping_helpers/airlock/abandoned,
+/turf/open/floor/plating,
+/area/ship/maintenance/central)
 "bT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"cb" = (
-/obj/structure/catwalk,
-/obj/item/trash/sosjerky,
-/turf/open/floor/plating,
-/area/space)
 "cc" = (
 /obj/structure/table/wood,
 /obj/item/pen/fountain/solgov,
@@ -66,6 +56,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"cg" = (
+/turf/template_noop,
+/area/template_noop)
+"cr" = (
+/turf/closed/wall,
+/area/ship/external)
 "cy" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -90,6 +86,11 @@
 "cQ" = (
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/fore)
+"cT" = (
+/obj/structure/catwalk,
+/obj/item/trash/sosjerky,
+/turf/open/floor/plating,
+/area/ship/external)
 "dd" = (
 /mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/plating,
@@ -107,6 +108,13 @@
 /obj/structure/rack,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"dx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "dy" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/east,
@@ -153,9 +161,6 @@
 "fh" = (
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/port)
-"fj" = (
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "fO" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/maintenance/port)
@@ -213,14 +218,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
-"io" = (
-/obj/structure/catwalk,
-/obj/item/toy/plush/among,
-/obj/structure/chair{
-	dir = 1
+"iR" = (
+/obj/machinery/cryopod{
+	close_state = "crate";
+	dir = 8;
+	icon = 'icons/obj/crates.dmi';
+	icon_state = "crateopen";
+	open_state = "crateopen"
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ship/maintenance/fore)
 "iS" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/structure/cable{
@@ -236,6 +243,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"ju" = (
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "ka" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -259,6 +269,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"kj" = (
+/obj/structure/chair/stool{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "ko" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "wrench storage"
@@ -282,9 +298,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
-"lv" = (
-/obj/machinery/ore_silo,
+"kQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "lC" = (
@@ -301,6 +317,14 @@
 /obj/structure/bed,
 /obj/item/bedsheet/dorms,
 /obj/item/trash/chips,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"lW" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	welded = 1
+	},
+/obj/structure/barricade/wooden/crude,
+/obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "lY" = (
@@ -320,10 +344,6 @@
 /obj/effect/spawner/lootdrop/pizzaparty,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"mw" = (
-/obj/machinery/computer/autopilot,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "mX" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -373,24 +393,14 @@
 /area/ship/maintenance/aft)
 "ob" = (
 /obj/item/radio/intercom/wideband{
-	pixel_y = -32
+	dir = 1;
+	pixel_y = -24
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "of" = (
 /turf/closed/wall/rust,
 /area/ship/maintenance/central)
-"oh" = (
-/obj/machinery/door/airlock/maintenance_hatch,
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
-"ou" = (
-/obj/structure/catwalk,
-/obj/item/toy/plush/among,
-/obj/structure/chair,
-/turf/open/floor/plating,
-/area/space)
 "oF" = (
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/starboard)
@@ -400,6 +410,9 @@
 	dir = 8;
 	launch_status = 0;
 	port_direction = 4
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -419,6 +432,20 @@
 /obj/item/trash/can/food/peaches/maint,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
+"pL" = (
+/obj/machinery/airalarm/directional/west,
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/item/circular_saw{
+	pixel_y = 11
+	},
+/obj/effect/spawner/lootdrop/maintenance/four,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"pX" = (
+/obj/structure/frame/computer,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "pY" = (
 /obj/structure/table/glass,
 /obj/item/storage/box/drinkingglasses,
@@ -452,6 +479,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"qE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/cryopod{
+	dir = 1;
+	pixel_y = -23
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "qO" = (
 /obj/structure/chair/stool,
 /turf/open/floor/plating,
@@ -461,14 +496,6 @@
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"rj" = (
-/obj/machinery/mineral/ore_redemption,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 10
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
 "rl" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/terminal,
@@ -527,17 +554,17 @@
 /obj/structure/rack,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"tL" = (
-/obj/machinery/door/airlock/maintenance_hatch,
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/plating,
-/area/ship/maintenance/central)
 "tR" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
+"tT" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/mineral/ore_redemption,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "us" = (
 /obj/machinery/autolathe/hacked,
 /turf/open/floor/plating,
@@ -546,6 +573,17 @@
 /obj/structure/closet/athletic_mixed,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"uE" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/window/northleft,
+/obj/structure/window,
+/turf/open/floor/plating,
+/area/ship/maintenance/central)
 "uQ" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/maintenance/aft)
@@ -593,9 +631,26 @@
 /obj/structure/window/reinforced/spawner,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
-"xg" = (
-/turf/template_noop,
-/area/space)
+"xf" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/window/northright,
+/obj/structure/window,
+/turf/open/floor/plating,
+/area/ship/maintenance/central)
+"xh" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "xk" = (
 /obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plating,
@@ -648,12 +703,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
-"yw" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "yK" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/portable_atmospherics/canister/air,
@@ -669,35 +718,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"yY" = (
-/obj/machinery/airalarm/directional/west,
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/maintenance/four,
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
-"zb" = (
-/obj/structure/closet/secure_closet{
-	req_access = list(11)
-	},
-/obj/item/circuitboard/machine/rdserver,
-/obj/item/storage/box/rndboards{
-	desc = "Smells feighntly of plastic.";
-	name = "research equipment"
-	},
-/obj/effect/spawner/lootdrop/maintenance/five,
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
-"zE" = (
-/obj/structure/table/reinforced,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/south,
-/obj/effect/decal/cleanable/glass,
-/obj/item/trash/cheesie,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "zL" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -768,13 +788,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
-"Dl" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 1
-	},
-/obj/structure/cable/yellow,
-/turf/open/floor/plating,
-/area/ship/maintenance/central)
 "Dn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/east,
@@ -784,17 +797,11 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
-"DJ" = (
+"DC" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/window/reinforced/spawner,
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
+/obj/machinery/suit_storage_unit/independent/engineering,
 /turf/open/floor/plating,
-/area/ship/maintenance/central)
+/area/ship/cargo)
 "DP" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/structure/cable{
@@ -848,7 +855,7 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 4
 	},
-/obj/structure/toilet,
+/obj/structure/toilet/secret,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "HE" = (
@@ -862,25 +869,15 @@
 /obj/item/trash/can/food/beans,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
-"Il" = (
-/turf/closed/wall/r_wall,
-/area/ship/cargo)
-"IV" = (
+"HN" = (
 /obj/structure/catwalk,
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/two_percent_xeno_egg_spawner,
 /turf/open/floor/plating,
-/area/space)
-"Jd" = (
-/obj/structure/window/reinforced/spawner,
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/central)
+/area/ship/external)
+"Il" = (
+/turf/closed/wall/r_wall,
+/area/ship/cargo)
 "Jj" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -899,6 +896,12 @@
 "JH" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/maintenance/starboard)
+"JO" = (
+/obj/structure/catwalk,
+/obj/structure/chair,
+/obj/item/toy/plush/among,
+/turf/open/floor/plating,
+/area/ship/external)
 "JR" = (
 /obj/structure/closet/boxinggloves,
 /turf/open/floor/plating,
@@ -919,9 +922,29 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
+"KL" = (
+/obj/item/trash/semki,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/cryopod{
+	close_state = "crate";
+	dir = 8;
+	icon = 'icons/obj/crates.dmi';
+	icon_state = "crateopen";
+	open_state = "crateopen"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "KU" = (
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/central)
+"Ln" = (
+/obj/structure/catwalk,
+/turf/open/floor/plating,
+/area/ship/external)
+"Lr" = (
+/obj/item/stack/spacecash/c1,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "LD" = (
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/glass,
@@ -948,6 +971,17 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
+"Mj" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/window/northright,
+/obj/structure/window,
+/turf/open/floor/plating,
+/area/ship/maintenance/central)
 "MH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/terminal,
@@ -981,6 +1015,19 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"NP" = (
+/obj/structure/table/reinforced,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/south{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/glass,
+/obj/item/trash/cheesie,
+/obj/item/areaeditor/shuttle,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "NY" = (
 /obj/structure/barricade/wooden,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1034,10 +1081,6 @@
 /obj/machinery/grill/unwrenched,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"QJ" = (
-/obj/structure/catwalk,
-/turf/open/floor/plating,
-/area/space)
 "Rc" = (
 /obj/effect/decal/cleanable/robot_debris,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1095,6 +1138,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"Sq" = (
+/obj/structure/catwalk,
+/obj/item/toy/plush/among,
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "Ss" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
@@ -1164,10 +1215,6 @@
 /obj/item/chair,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"Uw" = (
-/obj/structure/lattice,
-/turf/template_noop,
-/area/space)
 "UX" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating,
@@ -1186,6 +1233,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"VA" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/plating,
+/area/ship/external)
+"VC" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/ship/external)
 "VK" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/terminal,
@@ -1213,6 +1271,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "Wr" = (
@@ -1251,14 +1310,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"XU" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/item/trash/semki,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "XZ" = (
 /obj/item/chair,
 /obj/structure/cable{
@@ -1282,15 +1333,26 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
+"ZJ" = (
+/obj/structure/closet/secure_closet{
+	req_access = list(11)
+	},
+/obj/item/circuitboard/machine/rdserver,
+/obj/effect/spawner/lootdrop/maintenance/five,
+/obj/item/circuitboard/machine/circuit_imprinter,
+/obj/item/circuitboard/machine/destructive_analyzer,
+/obj/item/circuitboard/computer/rdconsole,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 
 (1,1,1) = {"
-xg
-xg
-xg
-xg
-xg
-xg
-xg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
 fh
 fO
 fO
@@ -1301,32 +1363,32 @@ fO
 fh
 fh
 fO
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
 "}
 (2,1,1) = {"
-xg
-xg
-xg
-xg
-xg
+cg
+cg
+cg
+cg
+cg
 cQ
-oh
+lW
 fh
 mv
 LR
 FZ
-zb
+ZJ
 hH
 xk
 hy
@@ -1334,28 +1396,28 @@ rd
 fO
 fh
 fh
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
 "}
 (3,1,1) = {"
-xg
-xg
-xg
+cg
+cg
+cg
 LY
 LY
 cQ
 aN
 Wt
 Vx
-Vx
+Lr
 Vx
 tq
 NI
@@ -1371,19 +1433,19 @@ gz
 uQ
 uQ
 KU
-xg
-xg
-xg
-xg
+cg
+cg
+cg
+cg
 "}
 (4,1,1) = {"
 LY
 Rd
 Rd
 cQ
-yw
-XU
-fj
+iR
+KL
+ju
 Wt
 us
 bT
@@ -1397,7 +1459,7 @@ yL
 qy
 vK
 Uo
-yY
+pL
 Un
 Nv
 sW
@@ -1409,12 +1471,12 @@ nT
 "}
 (5,1,1) = {"
 Rd
-mw
+pX
 ob
 cQ
 lQ
 po
-LV
+qE
 vK
 vK
 jr
@@ -1435,8 +1497,8 @@ gw
 of
 Ao
 rl
-Jd
-Dl
+uE
+VA
 "}
 (6,1,1) = {"
 Rd
@@ -1466,14 +1528,14 @@ bd
 of
 vY
 VK
-DJ
-Dl
+xf
+VA
 "}
 (7,1,1) = {"
 Rd
 nK
 LV
-zE
+NP
 LY
 LY
 LY
@@ -1506,10 +1568,10 @@ Rd
 Rd
 Rd
 cQ
-Uw
-cb
+VC
+cT
 cQ
-tL
+bQ
 KU
 nT
 CO
@@ -1529,19 +1591,19 @@ wZ
 np
 Wr
 KU
-xg
+cg
 "}
 (9,1,1) = {"
-xg
-xg
-Uw
-Uw
-Uw
-Uw
-QJ
-QJ
-QJ
-QJ
+cg
+cg
+VC
+VC
+VC
+VC
+Ln
+Ln
+Ln
+Ln
 nT
 wj
 yo
@@ -1560,19 +1622,19 @@ AE
 lC
 OG
 KU
-xg
+cg
 "}
 (10,1,1) = {"
-xg
-xg
-xg
-Uw
-aW
-Uw
-QJ
-ou
-IV
-io
+cg
+cg
+cg
+VC
+cr
+VC
+Ln
+JO
+HN
+Sq
 nT
 px
 Kl
@@ -1591,16 +1653,16 @@ dM
 Ul
 nB
 nT
-xg
+cg
 "}
 (11,1,1) = {"
-xg
-xg
-xg
-Uw
-Uw
-Uw
-Uw
+cg
+cg
+cg
+VC
+VC
+VC
+VC
 xq
 xq
 xq
@@ -1625,16 +1687,16 @@ nT
 nT
 "}
 (12,1,1) = {"
-xg
-xg
-xg
-Uw
-Uw
+cg
+cg
+cg
+VC
+VC
 Il
 Il
 Il
-bg
-bg
+DC
+kQ
 Fn
 np
 kb
@@ -1652,15 +1714,15 @@ cI
 nc
 nm
 PC
-Jd
-Dl
+uE
+VA
 "}
 (13,1,1) = {"
-xg
-xg
-xg
-Uw
-Uw
+cg
+cg
+cg
+VC
+VC
 Il
 Ry
 LD
@@ -1683,19 +1745,19 @@ QC
 dM
 yK
 Zi
-Jd
-Dl
+Mj
+VA
 "}
 (14,1,1) = {"
-xg
-xg
+cg
+cg
 xq
 ee
 Il
 Il
 WH
 Rc
-rj
+dx
 hW
 Wh
 lC
@@ -1718,15 +1780,15 @@ KU
 nT
 "}
 (15,1,1) = {"
-xg
-xg
+cg
+cg
 TV
-aC
+kj
 GF
 be
 Yc
 GF
-lv
+tT
 Ub
 Bp
 AJ
@@ -1738,25 +1800,25 @@ JH
 oF
 oF
 JH
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
 "}
 (16,1,1) = {"
-xg
-xg
+cg
+cg
 TV
-aC
+kj
 Yc
 Fn
 Fn
-be
+xh
 Il
 RR
 xq
@@ -1764,24 +1826,24 @@ JH
 oF
 oF
 oF
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
 "}
 (17,1,1) = {"
-xg
-xg
+cg
+cg
 Il
 ee
 xq
@@ -1790,54 +1852,54 @@ xq
 gy
 Il
 ro
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
 "}
 (18,1,1) = {"
-xg
-xg
-xg
-xg
-xg
-xg
+cg
+cg
+cg
+cg
+cg
+cg
 xq
 oY
 Il
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
-xg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
 "}

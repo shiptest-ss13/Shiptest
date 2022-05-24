@@ -90,7 +90,10 @@
 
 
 /mob/living/simple_animal/drone/attackby(obj/item/I, mob/user)
-	if(I.tool_behaviour == TOOL_SCREWDRIVER && stat != DEAD)
+	if(I.tool_behaviour == TOOL_SCREWDRIVER)
+		if(stat == DEAD)
+			try_reactivate(user)
+			return
 		if(health < maxHealth)
 			to_chat(user, "<span class='notice'>You start to tighten loose screws on [src]...</span>")
 			if(I.use_tool(src, user, 80))

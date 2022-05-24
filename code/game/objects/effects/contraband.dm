@@ -213,7 +213,7 @@
 
 /obj/structure/sign/poster/contraband/fun_police
 	name = "Fun Police"
-	desc = "A poster condemning the station's security forces."
+	desc = "A poster condemning Nanotransen's infamous corporate security forces."
 	icon_state = "poster3"
 
 /obj/structure/sign/poster/contraband/lusty_xenomorph
@@ -442,7 +442,6 @@
 /obj/structure/sign/poster/contraband/syndicate
 	name = "Syndicate Logo"
 	desc = "A poster depicting the Syndicate logo. This probably shouldn't be anywhere near Nanotrasen stations."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-syndicate"
 
 //beginning of Nanotrasen approved posters. Expect propaganda and corprate motavation
@@ -459,7 +458,7 @@
 
 /obj/structure/sign/poster/official/here_for_your_safety
 	name = "Here For Your Safety"
-	desc = "A poster glorifying the station's security force."
+	desc = "A poster glorifying corporate security forces."
 	icon_state = "poster1_legit"
 
 /obj/structure/sign/poster/official/nanotrasen_logo
@@ -490,8 +489,7 @@
 /obj/structure/sign/poster/official/science
 	name = "Science"
 	desc = "A poster depicting an beaker."
-	icon = 'whitesands/icons/obj/contraband.dmi' //funny edit to change to beaker, as atom looks more retro.
-	icon_state = "poster7_legit"
+	icon_state = "poster7_legit" //funny edit to change to beaker, as atom looks more retro.
 
 /obj/structure/sign/poster/official/ian
 	name = "Ian"
@@ -565,7 +563,7 @@
 
 /obj/structure/sign/poster/official/report_crimes
 	name = "Report Crimes"
-	desc = "A poster encouraging the swift reporting of crime or seditious behavior to station security."
+	desc = "A poster encouraging the swift reporting of crime or seditious behavior to security personnel."
 	icon_state = "poster22_legit"
 
 /obj/structure/sign/poster/official/ion_rifle
@@ -606,7 +604,6 @@
 /obj/structure/sign/poster/official/solgov_enlist //much better.
 	name = "Enlist"
 	desc = "Enlist to be a part of the SolGov Peacekeeping Operations today!"
-	icon = 'whitesands/icons/obj/contraband.dmi' // look i even did the modularizations
 	icon_state = "poster_solgov_enlist_legit"
 
 /obj/structure/sign/poster/official/nanomichi_ad
@@ -626,18 +623,23 @@
 
 /obj/structure/sign/poster/official/the_owl
 	name = "The Owl"
-	desc = "The Owl would do his best to protect the station. Will you?"
+	desc = "The Owl would do his best to protect the colonies. Will you?"
 	icon_state = "poster33_legit"
 
 /obj/structure/sign/poster/official/no_erp
 	name = "No ERP"
-	desc = "This poster reminds the crew that Eroticism, Rape and Pornography are banned on Nanotrasen stations."
+	desc = "This poster reminds viewers that the 2102 Eroticism, Rape and Pornography act banned laviscious behavior throughout civilized space."
 	icon_state = "poster34_legit"
 
 /obj/structure/sign/poster/official/wtf_is_co2
 	name = "Carbon Dioxide"
 	desc = "This informational poster teaches the viewer what carbon dioxide is."
 	icon_state = "poster35_legit"
+
+/obj/structure/sign/poster/official/sgt
+	name = "Sapient Trafficking Awareness"
+	desc = "A poster calling for an end to sapient trafficking. Over sixty percent of victims are jellywomen."
+	icon_state = "poster_sgt" // Maybe this will be what finally fixes it.
 
 //shiptest stuff, retro posters. very inspired by the early apple logos and 70s-90s tech logos.
 /obj/structure/sign/poster/retro
@@ -647,7 +649,6 @@
 
 /obj/structure/sign/poster/retro/random
 	name = "random retro poster"
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "random_retro"
 	never_random = TRUE
 	random_basetype = /obj/structure/sign/poster/retro
@@ -655,72 +656,117 @@
 /obj/structure/sign/poster/retro/nanotrasen_logo_70s
 	name = "\improper Ancient Nanotrasen logo"
 	desc = "A poster depicting the Nanotrasen logo. This thing is ancient."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-nanotrasen70s_retro"
 
 /obj/structure/sign/poster/retro/nanotrasen_logo_80s
 	name = "\improper Nanotrasen logo"
 	desc = "A poster depicting the Nanotrasen logo. It has a nice aesthetic."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-nanotrasen_retro"
 
 /obj/structure/sign/poster/retro/smile
 	name = "Smile"
 	desc = "Turn that frown upside down! It has a nice aesthetic."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-smile_retro"
 
 /obj/structure/sign/poster/retro/we_watch
 	name = "We Watch"
 	desc = "Big Brother is always watching. It has a nice aesthetic."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-watch_retro"
 
 /obj/structure/sign/poster/retro/build
 	name = "Build"
 	desc = "A poster glorifying the engineering team. It has a nice aesthetic."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-build_retro"
 
 /obj/structure/sign/poster/retro/science
 	name = "Science"
 	desc = "A poster depicting an atom. It has a nice aesthetic."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-science_retro"
 
 /obj/structure/sign/poster/retro/pdaancient
 	name = "PDA Ad"
 	desc = "A poster advertising the original Thinkitronic PDA after it was aquired by Nanotrasen. This thing shipped with severe problems such as PDA message 'bombing' and memory errors. Despite this, it's fondly remembered. This thing is ancient."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-pda70_retro"
 /obj/structure/sign/poster/retro/lasergun
 	name = "Retro Laser Gun"
 	desc = "A poster advertising the retro laser gun, back when it was new and called the L-102. This thing is ancient."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-l102_retro"
 
 /obj/structure/sign/poster/retro/lasergun_new
 	name = "Old Laser Gun"
 	desc = "A poster advertising a older version of the L-704, the L-204 model. It has a nice aesthetic."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-newl204_retro"
 
 /obj/structure/sign/poster/retro/emag
 	name = "Cryptographic Sequencer"
 	desc = "A poster advertising a Nanotrasen beginner hacker tool. It was shelved due to not taking any skill to use. You wonder how it worked out for them. It has a nice aesthetic."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-emag_retro"
 
 /obj/structure/sign/poster/retro/telecrystal
 	name = "Telecrystals"
 	desc = "A poster advertising a teleportation alternative to bluespace. It was notable for not requiring massive machinery to use, and can even work in a handheld PDA. It was shelved due to high costs. It has a nice aesthetic."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-tc-retro"
 
 /obj/structure/sign/poster/retro/radio
 	name = "Radio"
 	desc = "A poster advertising one of Nanotrasen's earliest products, a radio. One of its main selling points was a integrated OS, and dual langauge support for Galactic Common, and Draconic, which made it a smash hit. This thing is ancient."
-	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-radio70_retro"
+
+//Safety moth posters, credit to AspEv for the art which the below posters are based on and to Ayy-Robotics for the sprites.
+
+/obj/structure/sign/poster/official/moth
+	name = "Safety Moth - Poisoning"
+	desc = "This informational poster uses Safety Moth(TM) to tell the viewer not to poison important goods, and to be wary of suspect foods. It's signed by 'AspEv'."
+	icon_state = "poster_moth_poisoning"
+
+/obj/structure/sign/poster/official/moth/boh
+	name = "Safety Moth - BoH"
+	desc = "This informational poster uses Safety Moth(TM) to inform the viewer of the dangers of Bags of Holding. It's signed by 'AspEv'."
+	icon_state = "poster_moth_boh"
+
+/obj/structure/sign/poster/official/moth/hardhats
+	name = "Safety Moth - Hardhats"
+	desc = "This informational poster uses Safety Moth(TM) to tell the viewer to wear hardhats in cautious areas. It's like a lamp for your head! It's signed by 'AspEv'."
+	icon_state = "poster_moth_hardhats"
+
+/obj/structure/sign/poster/official/moth/smokey
+	name = "Safety Moth - Smokey?"
+	desc = "This informational poster uses Safety Moth(TM) to promote safe handling of plasma, or promoting crew to combat plasmafires. We can't tell. It's signed by 'AspEv'."
+	icon_state = "poster_moth_smokey"
+
+/obj/structure/sign/poster/official/moth/piping
+	name = "Safety Moth - Piping"
+	desc = "This informational poster uses Safety Moth(TM) to tell atmospheric technicians correct types of piping to be used. Proper pipe placement prevents poor preformance! It's signed by 'AspEv'."
+	icon_state = "poster_moth_piping"
+
+/obj/structure/sign/poster/official/moth/supermatter
+	name = "Safety Moth - Supermatter"
+	desc = "This informational poster uses Safety Moth(TM) to promote proper safety equipment when working near a Supermatter Crystal. It's signed by 'AspEv'."
+	icon_state = "poster_moth_supermatter"
+
+/obj/structure/sign/poster/official/moth/meth
+	name = "Safety Moth - Methamphetamine"
+	desc = "This informational poster uses Safety Moth(TM) to tell the viewer to seek CMO approval before cooking methamphetamine. You shouldn't even be making this. It's signed by 'AspEv'."
+	icon_state = "poster_moth_meth"
+
+/obj/structure/sign/poster/official/moth/epi
+	name = "Safety Moth - Epinephrine"
+	desc = "This informational poster uses Safety Moth(TM) to inform the viewer to help injured/deceased crewmen with their epinephrine injectors. It's signed by 'AspEv'."
+	icon_state = "poster_moth_epi"
+
+/obj/structure/sign/poster/official/moth/delam
+	name = "Safety Moth - Delamination Safety Precautions"
+	desc = "This informational poster uses Safety Moth(TM) to tell the viewer to hide in lockers when the Supermatter Crystal has delaminated. Running away might be a better strategy. It's signed by 'AspEv'."
+	icon_state = "poster_moth_delam"
+
+/obj/structure/sign/poster/contraband/syndiemoth
+	name = "Syndie Moth - Nuclear Operation"
+	desc = "A Syndicate-commissioned poster that uses Syndie Moth(TM?) to tell the viewer to keep the nuclear authentication disk unsecured. No, we aren't doing that. It's signed by 'AspEv'."
+	icon_state = "poster_moth_syndie"
+
+/obj/structure/sign/poster/contraband/mothpill
+	name = "Safety Pill - Methamphetamine"
+	desc = "A decommisioned poster that uses Safety Pill(TM?) to promote less-than-legal chemicals. This is one of the reasons we stopped outsourcing these posters. It's partially signed by 'AspEv'."
+	icon_state = "poster_moth_pill"
 
 #undef PLACE_SPEED

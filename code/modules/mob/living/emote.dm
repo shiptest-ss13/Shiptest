@@ -448,7 +448,7 @@
 				else
 					alert("Unable to use this emote, must be either hearable or visible.")
 					return
-			message = custom_emote
+			message = user.say_emphasis(custom_emote)
 	else
 		message = params
 		if(type_override)
@@ -505,3 +505,9 @@
 	key = "exhale"
 	key_third_person = "exhales"
 	message = "breathes out."
+
+/datum/emote/living/clack
+	key = "clack"
+	key_third_person = "clacks"
+	message = "clacks their beak."
+	emote_type = EMOTE_VISIBLE

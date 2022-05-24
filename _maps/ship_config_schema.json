@@ -1,0 +1,99 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Ship Configuration Schema",
+	"description": "A ship configuration, used for defining new ship classes.",
+	"type": "object",
+
+	"properties": {
+		"map_name": {
+			"title": "Class Name",
+			"type": "string",
+			"description": "The name of the ship class, as viewable in-game."
+		},
+		"map_short_name": {
+			"title": "Shortened Class Name",
+			"type": "string",
+			"description": "A shortened version of the ship class name, used in things such as the manifest.",
+			"maxLength": 20
+		},
+		"prefix": {
+			"title": "Ship Default Prefix",
+			"type": "string",
+			"description": "The prefix of the ship class, appended to randomly generated names when they're first purchased.",
+			"maxLength": 5
+		},
+		"namelists": {
+			"title": "Namelists",
+			"type": "array",
+			"description": "A list of namelists that this ship class will draw from when first bought to get a random name. All options can be found in the ship_names.json file.",
+			"uniqueItems": true,
+			"items": {
+				"type": "string",
+				"enum": ["GENERAL", "PIRATES", "BRITISH_NAVY", "MERCANTILE", "REVOLUTIONARY", "SPACE", "NATURAL", "NATURAL_AGGRESSIVE", "BEASTS", "MYTHOLOGICAL", "HISTORICAL", "WEAPONS", "PILLS", "ENGINEERING"]
+			}
+		},
+		"map_path": {
+			"title": "Map File Path",
+			"type": "string",
+			"description": "The path to the ship class's map file. Use forward slashes (/) for directories, and include the .dmm extension. Map files must be somewhere under the _maps folder.",
+			"pattern": "^_maps\/([a-zA-Z0-9_/.]*)dmm$"
+		},
+		"map_id": {
+			"title": "Map ID (DEPRECATED)",
+			"type": "string",
+			"description": "The ID of the ship class. Deprecated, code uses map_path instead."
+		},
+		"job_slots": {
+			"title": "Job Slots",
+			"description": "A list of job slots that this ship class will have when placed. The First Slot will always be the 'captain' that the purchaser becomes.",
+			"type": "object",
+			"additionalProperties": {
+				"oneOf": [
+					{
+						"type": "integer",
+						"description": "A preset job slot, must match a job name in the code (Job names are found in the jobs' respective files)."
+					},
+					{
+						"type": "object",
+						"description": "A custom job slot, can be any name, but needs an outfit and slot count to be valid. The name is the string you are currently viewing.",
+						"properties": {
+							"outfit": {
+								"type": "string",
+								"description": "The name of the outfit that will be placed in this slot. Must be exact, will error if not found in the code.",
+								"pattern": "^\/datum\/outfit\/(.*)$"
+							},
+							"officer": {
+								"type": "boolean",
+								"description": "Whether or not this slot is an officer slot. This determines if the job will have a chevron in the manifest, as well as the amount of slots cannot be changed by the crew in-round.",
+								"default": false
+							},
+							"slots": {
+								"type": "integer",
+								"description": "The number of slots that this slot will have roundstart. The crew can change this, up to doubling it, in-round.",
+								"minimum": 1
+							}
+						},
+						"required": ["outfit", "slots"]
+					}
+				]
+			}
+		},
+		"cost": {
+			"title": "Class Cost",
+			"type": "integer",
+			"description": "The cost of the ship class, in credits.",
+			"maximum": 116115990
+		},
+		"roundstart": {
+			"title": "Random Roundstart Selection",
+			"type": "boolean",
+			"description": "Whether or not the ship has a chance to be randomly selected as the free roundstart ship.",
+			"default": false
+		}
+	},
+
+	"required": [
+		"map_name",
+		"map_path"
+	]
+}

@@ -18,6 +18,9 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 
+/turf/open/floor/wood/icecropolis
+	baseturfs = /turf/open/indestructible/necropolis/air
+
 /turf/open/floor/wood/mahogany
 	color = WOOD_COLOR_RICH
 
@@ -101,7 +104,7 @@
 	var/turfverb = "uproot"
 	tiled_dirt = FALSE
 
-/turf/open/floor/grass/Initialize()
+/turf/open/floor/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	spawniconchange()
 
@@ -217,7 +220,7 @@
 	. = ..()
 	. += "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>"
 
-/turf/open/floor/carpet/Initialize()
+/turf/open/floor/carpet/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	update_icon()
 
@@ -235,6 +238,14 @@
 ///Carpet variant for mapping aid, functionally the same as parent after smoothing.
 /turf/open/floor/carpet/lone
 	icon_state = "carpet-0"
+
+/turf/open/floor/carpet/red_gold
+	icon = 'icons/turf/floors/carpet_red_gold.dmi'
+	icon_state = "carpet_red_gold-255"
+	base_icon_state = "carpet_red_gold"
+	floor_tile = /obj/item/stack/tile/carpet/red_gold
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_RED_GOLD)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_RED_GOLD)
 
 /turf/open/floor/carpet/black
 	icon = 'icons/turf/floors/carpet_black.dmi'
@@ -335,7 +346,52 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_DONK)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_DONK)
 
-//*****Airless versions of all of the above.*****
+/turf/open/floor/carpet/nanoweave
+	name = "nanoweave carpet"
+	desc = "A padded piece of plasteel plating, used to make space-based installations a feel little less soulless."
+	icon = 'whitesands/icons/turf/floors/nanoweave_dark.dmi'
+	icon_state = "icon-255" //no i am not renaming like 40 tile states 5 times over
+	base_icon_state = "icon" //god hates you - Zeta
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWDARK)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWDARK)
+
+/turf/open/floor/carpet/nanoweave/red
+	name = "nanoweave carpet (red)"
+	icon = 'whitesands/icons/turf/floors/nanoweave_red.dmi' //the good part of being a lazy dickwad is that i dont need to redefine icon_state and base_icon_state 5 times over
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave/red
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWRED)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWRED)
+
+/turf/open/floor/carpet/nanoweave/beige //this one is good for varediting to cool colors
+	name = "nanoweave carpet (beige)"
+	icon = 'whitesands/icons/turf/floors/nanoweave_beige.dmi'
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave/beige
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWBEIGE)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWBEIGE)
+
+/turf/open/floor/carpet/nanoweave/blue
+	name = "nanoweave carpet (blue)"
+	icon = 'whitesands/icons/turf/floors/nanoweave_blue.dmi'
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave/blue
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWBLUE)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWBLUE)
+
+/turf/open/floor/carpet/nanoweave/purple
+	name = "nanoweave carpet (purple)"
+	icon = 'whitesands/icons/turf/floors/nanoweave_purple.dmi'
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave/purple
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWPURPLE)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWPURPLE)
+
+/turf/open/floor/carpet/nanoweave/orange
+	name = "nanoweave carpet (orange)"
+	icon = 'whitesands/icons/turf/floors/nanoweave_orange.dmi'
+	floor_tile = /obj/item/stack/tile/carpet/nanoweave/orange
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_NWORANGE)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_NWORANGE)
+
+//*****Airless versions of most of the above.*****
 /turf/open/floor/carpet/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
@@ -367,13 +423,12 @@
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/carpet/narsie_act(force, ignore_mobs, probability = 20)
-	. = (prob(probability) || force)
-	for(var/I in src)
-		var/atom/A = I
-		if(ignore_mobs && ismob(A))
-			continue
-		if(ismob(A) || .)
-			A.narsie_act()
+	. = (force || prob(probability))
+	var/individual_chance
+	for(var/atom/movable/movable_contents as anything in src)
+		individual_chance = ismob(movable_contents) ? !ignore_mobs : .
+		if(individual_chance)
+			movable_contents.narsie_act()
 
 /turf/open/floor/carpet/break_tile()
 	broken = TRUE
@@ -410,7 +465,7 @@
 	plane = PLANE_SPACE
 	tiled_dirt = FALSE
 
-/turf/open/floor/fakespace/Initialize()
+/turf/open/floor/fakespace/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = SPACE_ICON_STATE
 

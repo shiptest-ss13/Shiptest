@@ -494,7 +494,7 @@
 
 /obj/machinery/nuclearbomb/proc/really_actually_explode(off_station)
 	Cinematic(get_cinematic_type(off_station),world,CALLBACK(SSticker,/datum/controller/subsystem/ticker/proc/station_explosion_detonation,src))
-	INVOKE_ASYNC(GLOBAL_PROC,.proc/KillEveryoneOnZLevel, get_virtual_z_level())
+	INVOKE_ASYNC(GLOBAL_PROC,.proc/KillEveryoneOnZLevel, virtual_z())
 
 /obj/machinery/nuclearbomb/proc/get_cinematic_type(off_station)
 	if(off_station < 2)
@@ -569,7 +569,7 @@
 	if(!z)
 		return
 	for(var/mob/M in GLOB.mob_list)
-		if(M.stat != DEAD && M.get_virtual_z_level() == z)
+		if(M.stat != DEAD && M.virtual_z() == z)
 			M.gib()
 
 /*
@@ -618,10 +618,6 @@ This is here to make the tiles around the station mininuke change when it's arme
 		GLOB.poi_list |= src
 		last_disk_move = world.time
 		START_PROCESSING(SSobj, src)
-
-/obj/item/disk/nuclear/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/stationloving, !fake)
 
 /obj/item/disk/nuclear/process()
 	if(fake)

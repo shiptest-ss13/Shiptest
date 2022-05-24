@@ -42,12 +42,16 @@
 /obj/projectile/beam/weak
 	damage = 15
 
+/obj/projectile/beam/weaker
+	damage = 10
+
 /obj/projectile/beam/weak/penetrator
 	armour_penetration = 50
 
 /obj/projectile/beam/laser/weak/negative_ap
 	damage = 15
 	armour_penetration = -30
+	range = 9
 
 /obj/projectile/beam/laser/weak/negative_ap/low_range
 	range = 6
@@ -96,9 +100,11 @@
 
 /obj/projectile/beam/disabler/weak/negative_ap
 	armour_penetration = -30
+	range = 9
 
 /obj/projectile/beam/disabler/weak/negative_ap/low_range
 	range = 6
+
 /obj/projectile/beam/pulse
 	name = "pulse"
 	icon_state = "u_laser"
@@ -224,3 +230,10 @@
 	if(isopenturf(target) || istype(target, /turf/closed/indestructible))//shrunk floors wouldnt do anything except look weird, i-walls shouldnt be bypassable
 		return
 	target.AddComponent(/datum/component/shrink, shrink_time)
+
+/obj/projectile/beam/emitter/hitscan
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/laser/emitter
+	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
+	impact_type = /obj/effect/projectile/impact/laser/emitter
+	impact_effect_type = null

@@ -193,13 +193,12 @@
 
 /obj/docking_port/stationary/proc/load_roundstart()
 	if(roundstart_template) // passed a PATH
-		var/sid = "[initial(roundstart_template.file_name)]"
-
-		roundstart_template = SSmapping.shuttle_templates[sid]
+		var/template = SSmapping.shuttle_templates[initial(roundstart_template.file_name)]
 		if(!roundstart_template)
-			CRASH("Invalid path ([sid]/[roundstart_template]) passed to docking port.")
+			CRASH("Invalid path ([template]) passed to docking port.")
 
-		SSshuttle.action_load(roundstart_template, src)
+		var/datum/overmap/ship/controlled/new_ship = new(SSovermap.get_overmap_object_by_location(src), template, FALSE) //Don't instantiate, we handle that ourselves
+		new_ship.connect_new_shuttle_port(SSshuttle.action_load(template, new_ship, src))
 
 //returns first-found touching shuttleport
 /obj/docking_port/stationary/get_docked()
@@ -208,7 +207,7 @@
 /obj/docking_port/stationary/transit
 	name = "transit dock"
 
-	var/datum/turf_reservation/reserved_area
+	var/datum/map_zone/reserved_mapzone
 	var/area/shuttle/transit/assigned_area
 	var/obj/docking_port/mobile/owner
 
@@ -228,9 +227,9 @@
 			if(owner.assigned_transit == src)
 				owner.assigned_transit = null
 			owner = null
-		if(!QDELETED(reserved_area))
-			qdel(reserved_area)
-		reserved_area = null
+		if(!QDELETED(reserved_mapzone))
+			qdel(reserved_mapzone)
+		reserved_mapzone = null
 	return ..()
 
 /obj/docking_port/mobile
@@ -239,6 +238,7 @@
 
 	area_type = SHUTTLE_DEFAULT_SHUTTLE_AREA_TYPE
 
+	///All currently linked areas that will be moved when the shuttle (un)docks
 	var/list/shuttle_areas
 
 	///used as a timer (if you want time left to complete move, use timeLeft proc)
@@ -265,6 +265,7 @@
 	var/obj/docking_port/stationary/destination
 	var/obj/docking_port/stationary/previous
 
+	/// The transit dock assigned exclusively to this shuttle.
 	var/obj/docking_port/stationary/transit/assigned_transit
 
 	var/launch_status = NOLAUNCH
@@ -272,23 +273,24 @@
 	///Whether or not you want your ship to knock people down, and also whether it will throw them several tiles upon launching.
 	var/list/movement_force = list("KNOCKDOWN" = 3, "THROW" = 0)
 
+	///List of all the ripple effects made at this shuttle's future docking location.
 	var/list/ripples = list()
 	var/engine_coeff = 1
-	var/current_engines = 0
-	var/initial_engines = 0
+
+	///A list of all engines currently linked to the shuttle.
 	var/list/engine_list = list()
+
 	///if this shuttle can move docking ports other than the one it is docked at
 	var/can_move_docking_ports = FALSE
-	var/list/hidden_turfs = list()
-	///If this shuttle should undock roundstart. Wasp edit.
-	var/undock_roundstart
 
 	///The linked overmap object, if there is one
-	var/obj/structure/overmap/ship/simulated/current_ship
-	///The map template the shuttle was spawned from, if it was indeed created from a template
-	var/datum/map_template/shuttle/source_template
+	var/datum/overmap/ship/controlled/current_ship
+
 	///List of spawn points on the ship
 	var/list/atom/spawn_points = list()
+
+	///List of all stationary docking ports that spawned on the ship roundstart, used for docking to other ships.
+	var/list/obj/docking_port/stationary/docking_points
 
 /obj/docking_port/mobile/proc/register()
 	SSshuttle.mobile += src
@@ -296,26 +298,26 @@
 /obj/docking_port/mobile/Destroy(force)
 	if(force)
 		SSshuttle.mobile -= src
-		if(current_ship)
-			qdel(current_ship)
 		destination = null
 		previous = null
-		QDEL_NULL(assigned_transit)		//don't need it where we're goin'!
-		shuttle_areas = null
+		if(!QDELETED(current_ship))
+			QDEL_NULL(current_ship)
+		qdel(assigned_transit, TRUE)		//don't need it where we're goin'!
+		assigned_transit = null
+		for(var/obj/docking_port/stationary/docking_point as anything in docking_points)
+			qdel(docking_point, TRUE)
+		docking_points = null
+		shuttle_areas = null //TODO: This is nowhere near enough to clear references, lol. We need an /atom/proc/disconnect_from_shuttle() proc to clear references.
 		remove_ripples()
 	. = ..()
 
 /obj/docking_port/mobile/Initialize(mapload)
 	. = ..()
-
-	if(name == "shuttle")
-		name = "shuttle[SSshuttle.mobile.len]"
-
 	if(!mapload) // If maploaded, will be called in code\datums\shuttles.dm
 		load()
 
 
-/obj/docking_port/mobile/proc/load()
+/obj/docking_port/mobile/proc/load(datum/map_template/shuttle/source_template)
 	shuttle_areas = list()
 	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
 	for(var/i in 1 to all_turfs.len)
@@ -326,18 +328,13 @@
 			if(!cur_area.mobile_port)
 				cur_area.link_to_shuttle(src)
 
-	initial_engines = count_engines()
-	current_engines = initial_engines
-
-	if(SSovermap.initialized)
-		SSovermap.setup_shuttle_ship(src)
-
 	#ifdef DOCKING_PORT_HIGHLIGHT
 	highlight("#0f0")
 	#endif
 
 // Called after the shuttle is loaded from template
-/obj/docking_port/mobile/proc/linkup(datum/map_template/shuttle/template, obj/docking_port/stationary/dock)
+/obj/docking_port/mobile/proc/linkup(obj/docking_port/stationary/dock, datum/overmap/ship/controlled/new_ship)
+	current_ship = new_ship
 	for(var/place in shuttle_areas)
 		var/area/area = place
 		area.connect_to_shuttle(src, dock)
@@ -345,9 +342,8 @@
 			var/atom/atom = each
 			atom.connect_to_shuttle(src, dock)
 
-
 //this is a hook for custom behaviour. Maybe at some point we could add checks to see if engines are intact
-/obj/docking_port/mobile/proc/canMove()
+/obj/docking_port/mobile/proc/can_move()
 	return TRUE
 
 //this is to check if this shuttle can physically dock at dock S
@@ -395,9 +391,6 @@
 		// Triggering shuttle movement code in place is weird
 		return FALSE
 
-/obj/docking_port/mobile/proc/transit_failure()
-	message_admins("Shuttle [src] repeatedly failed to create transit zone.")
-
 //call the shuttle to destination S
 /obj/docking_port/mobile/proc/request(obj/docking_port/stationary/S)
 	if(!check_dock(S))
@@ -410,17 +403,17 @@
 	switch(mode)
 		if(SHUTTLE_CALL)
 			if(S == destination)
-				if(timeLeft(1) < callTime * engine_coeff)
-					setTimer(callTime * engine_coeff)
+				if(timeLeft(1) < callTime)
+					setTimer(callTime)
 			else
 				destination = S
-				setTimer(callTime * engine_coeff)
+				setTimer(callTime)
 		if(SHUTTLE_RECALL)
 			if(S == destination)
-				setTimer(callTime * engine_coeff - timeLeft(1))
+				setTimer(callTime - timeLeft(1))
 			else
 				destination = S
-				setTimer(callTime * engine_coeff)
+				setTimer(callTime)
 			mode = SHUTTLE_CALL
 		if(SHUTTLE_IDLE, SHUTTLE_IGNITING)
 			destination = S
@@ -438,7 +431,7 @@
 	mode = SHUTTLE_RECALL
 
 /obj/docking_port/mobile/proc/enterTransit()
-	if((SSshuttle.lockdown) || !canMove())	//emp went off, no escape
+	if(SSshuttle.lockdown || !can_move())	//emp went off, no escape
 		mode = SHUTTLE_IDLE
 		return
 	previous = null
@@ -582,7 +575,7 @@
 				return
 			else
 				mode = SHUTTLE_CALL
-				setTimer(callTime * engine_coeff)
+				setTimer(callTime)
 				enterTransit()
 				return
 
@@ -653,7 +646,7 @@
 
 	var/ds_remaining
 	if(!timer)
-		ds_remaining = callTime * engine_coeff
+		ds_remaining = callTime
 	else
 		ds_remaining = max(0, timer - world.time)
 
@@ -764,7 +757,7 @@
 	// This previously was played from each door at max volume, and was one of the worst things I had ever seen.
 	// Now it's instead played from the nearest engine if close, or the first engine in the list if far since it doesn't really matter.
 	// Or a door if for some reason the shuttle has no engine, fuck oh hi daniel fuck it
-	var/range = (engine_coeff * max(width, height))
+	var/range = max(width, height)
 	var/long_range = range * 2.5
 	var/atom/distant_source
 	if(engine_list[1])
@@ -793,57 +786,6 @@
 							closest_dist = dist_near
 				M.playsound_local(source, "sound/runtime/hyperspace/[selected_sound].ogg", 100)
 
-// Losing all initial engines should get you 2
-// Adding another set of engines at 0.5 time
-/obj/docking_port/mobile/proc/alter_engines(mod, engine)
-	if(mod == 0)
-		return
-	if(mod < 0)
-		LAZYREMOVE(engine_list, engine)
-	else
-		LAZYOR(engine_list, engine)
-	var/old_coeff = engine_coeff
-	engine_coeff = get_engine_coeff(current_engines,mod)
-	current_engines = max(0,current_engines + mod)
-	if(in_flight())
-		var/delta_coeff = engine_coeff / old_coeff
-		modTimer(delta_coeff)
-
-/obj/docking_port/mobile/proc/count_engines()
-	. = 0
-	engine_list = list()
-	for(var/thing in shuttle_areas)
-		var/area/shuttle/areaInstance = thing
-		for(var/obj/structure/shuttle/engine/E in areaInstance.contents)
-			if(!QDELETED(E))
-				engine_list += E
-				. += E.engine_power
-		for(var/obj/machinery/power/shuttle/engine/E in areaInstance.contents)
-			if(!QDELETED(E))
-				engine_list += E
-				. += E.thruster_active ? 1 : 0
-
-// Double initial engines to get to 0.5 minimum
-// Lose all initial engines to get to 2
-//For 0 engine shuttles like BYOS 5 engines to get to doublespeed
-/obj/docking_port/mobile/proc/get_engine_coeff(current,engine_mod)
-	var/new_value = max(0,current + engine_mod)
-	if(new_value == initial_engines)
-		return 1
-	if(new_value > initial_engines)
-		var/delta = new_value - initial_engines
-		var/change_per_engine = (1 - ENGINE_COEFF_MIN) / ENGINE_DEFAULT_MAXSPEED_ENGINES // 5 by default
-		if(initial_engines > 0)
-			change_per_engine = (1 - ENGINE_COEFF_MIN) / initial_engines // or however many it had
-		return clamp(1 - delta * change_per_engine,ENGINE_COEFF_MIN,ENGINE_COEFF_MAX)
-	if(new_value < initial_engines)
-		var/delta = initial_engines - new_value
-		var/change_per_engine = 1 //doesn't really matter should not be happening for 0 engine shuttles
-		if(initial_engines > 0)
-			change_per_engine = (ENGINE_COEFF_MAX -  1) / initial_engines //just linear drop to max delay
-		return clamp(1 + delta * change_per_engine,ENGINE_COEFF_MIN,ENGINE_COEFF_MAX)
-
-
 /obj/docking_port/mobile/proc/in_flight()
 	switch(mode)
 		if(SHUTTLE_CALL,SHUTTLE_RECALL,SHUTTLE_PREARRIVAL)
@@ -870,7 +812,3 @@
 
 /obj/docking_port/mobile/emergency/on_emergency_dock()
 	return
-
-/obj/docking_port/mobile/get_virtual_z_level()
-	var/datum/turf_reservation/TR = SSmapping.get_turf_reservation_at_coords(x, y, z)
-	return TR?.virtual_z_level || z

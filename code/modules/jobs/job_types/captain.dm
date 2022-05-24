@@ -40,7 +40,7 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/caphat
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
@@ -62,7 +62,6 @@
 	name = "Captain (Nanotrasen)"
 
 	uniform = /obj/item/clothing/under/rank/command/captain/nt
-	alt_uniform = /obj/item/clothing/under/rank/command/captain/nt/alt
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat/nt
 
@@ -91,17 +90,59 @@
 
 /datum/outfit/job/captain/western
 	name = "Captain (Western)"
-	uniform = /obj/item/clothing/under/suit/white
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/cowboy/white
 	head = /obj/item/clothing/head/caphat/cowboy
 	glasses = /obj/item/clothing/glasses/sunglasses
 	alt_suit = null
 
-/datum/outfit/job/captain/aclf
+/datum/outfit/job/captain/syndicate
 	name = "Captain (ACLF)"
+	id = /obj/item/card/id/syndicate_command/captain_id
+	ears = /obj/item/radio/headset/syndicate/alt
+	uniform = /obj/item/clothing/under/syndicate/aclf
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/HoS/syndicate
+	gloves = /obj/item/clothing/gloves/combat
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+
+/datum/outfit/job/captain/syndicate/gorlex
+	name = "Captain (Gorlex Marauders)"
+
 	uniform = /obj/item/clothing/under/syndicate/aclf
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/aclfcap
 	suit = /obj/item/clothing/suit/aclf
+
+/datum/outfit/job/captain/minutemen
+	name = "Captain (Colonial Minutemen)"
+
+	ears = /obj/item/radio/headset/heads/captain/alt
+	uniform = /obj/item/clothing/under/rank/command/minutemen
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
+	alt_suit = null
+
+	shoes = /obj/item/clothing/shoes/combat
+	head = /obj/item/clothing/head/cowboy/sec/minutemen
+	backpack = /obj/item/storage/backpack
+	backpack_contents = list(/obj/item/storage/box/ids=1,\
+		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+
+/datum/outfit/job/captain/minutemen/general
+	name = "General (Colonial Minutemen)"
+
+	head = /obj/item/clothing/head/caphat/minutemen
+	uniform = /obj/item/clothing/under/rank/command/minutemen
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/minutemen
+	shoes = /obj/item/clothing/shoes/combat
+
+	box = /obj/item/storage/box/survival/engineer/radio
+	backpack = /obj/item/storage/backpack
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/mateba=1)
 

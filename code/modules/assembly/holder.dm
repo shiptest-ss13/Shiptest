@@ -14,6 +14,13 @@
 	var/obj/item/assembly/a_left = null
 	var/obj/item/assembly/a_right = null
 
+/obj/item/assembly_holder/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/item/assembly_holder/ComponentInitialize()
 	. = ..()
 	var/static/rotation_flags = ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_FLIP | ROTATION_VERBS
@@ -66,12 +73,12 @@
 	if(master)
 		master.update_icon()
 
-/obj/item/assembly_holder/Crossed(atom/movable/AM as mob|obj)
-	. = ..()
+/obj/item/assembly_holder/proc/on_entered(datum/source, atom/movable/AM as mob|obj)
+	SIGNAL_HANDLER
 	if(a_left)
-		a_left.Crossed(AM)
+		a_left.on_entered(src, AM)
 	if(a_right)
-		a_right.Crossed(AM)
+		a_right.on_entered(src, AM)
 
 /obj/item/assembly_holder/on_found(mob/finder)
 	if(a_left)

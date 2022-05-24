@@ -70,6 +70,7 @@
 	item_flags = NO_MAT_REDEMPTION | NOBLUDGEON
 	var/prox_check = TRUE //If the emag requires you to be in range
 	var/emag_on = TRUE //added to suppport multi-function tools with a deployable emag - hams
+	var/uses_left = -1 //how many uses does the emag have left before it's toast? If set to -1 then it never runs out
 
 //multi-purpose emag tool example- used in syndicate borgs.
 /obj/item/card/emag/borg
@@ -81,6 +82,13 @@
 /obj/item/card/emag/borg/examine()
 	. = ..()
 	. += "<span class='notice'> Capable of interchanging between electromagnetic, electrical, & screw turning functionality.</span>"
+	if(uses_left > -1)
+		. += "<span class='notice'> It has [uses_left] charge\s left.</span>"
+
+/obj/item/card/emag/limited
+	name = "limited cryptographic sequencer"
+	desc = "It's a card with a magnetic strip attached to some circuitry. It has limited charges."
+	uses_left = 1
 
 /obj/item/card/emag/borg/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/items/change_drill.ogg', 50, TRUE)
@@ -118,6 +126,10 @@
 			return
 		log_combat(user, A, "attempted to emag")
 		A.emag_act(user)
+		if(!(uses_left == -1))
+			uses_left--
+			if(uses_left == 0)
+				emag_on = FALSE
 
 /obj/item/card/emagfake
 	desc = "It's a card with a magnetic strip attached to some circuitry. Closer inspection shows that this card is a poorly made replica, with a \"DonkCo\" logo stamped on the back."
@@ -571,16 +583,6 @@ update_label()
 	access = list(ACCESS_SYNDICATE)
 	uses_overlays = FALSE
 
-/obj/item/card/id/syndicate_command/captain_id
-	name = "syndicate captain ID card"
-	id_type_name = "syndicate captain ID card"
-	desc = "An ID straight from the Syndicate."
-	registered_name = "Syndicate"
-	assignment = "Syndicate Ship Captain"
-	icon_state = "syndie"
-	access = list(ACCESS_SYNDICATE)
-	uses_overlays = FALSE
-
 /obj/item/card/id/captains_spare
 	name = "captain's spare ID"
 	id_type_name = "captain's spare ID"
@@ -765,6 +767,7 @@ update_label()
 /obj/item/card/id/mining
 	name = "mining ID"
 	access = list(ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MAILSORTING, ACCESS_MINERAL_STOREROOM)
+	custom_price = 250
 
 /obj/item/card/id/away
 	name = "\proper a perfectly generic identification card"
@@ -810,6 +813,7 @@ update_label()
 	desc = "A faded Charlie Station ID card. You can make out the rank \"Captain\"."
 	assignment = "Charlie Station Captain"
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_ENGINE, ACCESS_AWAY_SEC)
+
 /obj/item/card/id/away/old/apc
 	name = "APC Access ID"
 	desc = "A special ID card that allows access to APC terminals."
@@ -817,6 +821,32 @@ update_label()
 
 /obj/item/card/id/away/deep_storage //deepstorage.dmm space ruin
 	name = "bunker access ID"
+
+/obj/item/card/id/solgov
+	name = "\improper SolGov Officer ID"
+	id_type_name = "\improper SolGov ID"
+	desc = "A SolGov ID with no proper access to speak of."
+	assignment = "SolGov Officer"
+	icon_state = "solgov"
+	uses_overlays = FALSE
+
+/obj/item/card/id/solgov/commander
+	name = "\improper SolGov Commander ID"
+	id_type_name = "\improper SolGov ID"
+	desc = "A SolGov ID with no proper access to speak of. This one indicates a Commander."
+
+/obj/item/card/id/solgov/elite
+	name = "\improper SolGov Elite ID"
+	id_type_name = "\improper SolGov ID"
+	desc = "A SolGov ID with no proper access to speak of. This one indicates an Elite."
+
+/obj/item/card/id/away/slime //We're ranchin, baby!
+	name = "\improper Slime Ranch access card"
+	desc = "An ID card with access to the farm."
+	assignment = "Slime Rancher"
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_XENOBIOLOGY)
+	registered_name = "Slime Rancher"
+	icon_state = "syndie"
 
 /obj/item/card/id/departmental_budget
 	name = "departmental card (FUCK)"

@@ -61,9 +61,6 @@
 /area/ship/engineering/engine)
 "aI" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -210,9 +207,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -220,14 +215,9 @@
 /area/ship/crew/canteen)
 "cp" = (
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/effect/turf_decal/box,
-/obj/machinery/selling_pad,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "cu" = (
@@ -257,9 +247,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "cQ" = (
@@ -387,9 +375,6 @@
 /area/ship/engineering)
 "eN" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -437,7 +422,8 @@
 /area/ship/hallway/port)
 "fa" = (
 /obj/machinery/computer/telecomms/monitor{
-	dir = 8
+	dir = 8;
+	network = "tcommsat"
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 6
@@ -513,9 +499,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -607,9 +591,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "gO" = (
@@ -645,9 +627,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -739,9 +719,6 @@
 /area/ship/hallway/fore)
 "hH" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -795,7 +772,6 @@
 /area/ship/engineering/engine)
 "iS" = (
 /obj/machinery/power/apc/auto_name/south,
-/obj/machinery/power/terminal,
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -896,7 +872,6 @@
 	icon_state = "2-4"
 	},
 /mob/living/simple_animal/bot/cleanbot{
-	auto_patrol = 0;
 	name = "Janniebot"
 	},
 /turf/open/floor/carpet/nanoweave/purple,
@@ -1138,9 +1113,6 @@
 /area/ship/engineering/communications)
 "na" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -1239,9 +1211,6 @@
 /area/ship/crew/canteen)
 "nZ" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1289,9 +1258,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -1313,9 +1280,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -1453,9 +1418,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -1752,9 +1715,6 @@
 /area/ship/hallway/aft)
 "uB" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -1830,9 +1790,6 @@
 /area/ship/hallway/port)
 "vi" = (
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1849,9 +1806,6 @@
 /area/ship/crew/solgov)
 "vq" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1875,9 +1829,6 @@
 "vV" = (
 /obj/structure/railing,
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1898,7 +1849,6 @@
 /area/ship/bridge)
 "wf" = (
 /obj/machinery/power/apc/auto_name/south,
-/obj/machinery/power/terminal,
 /obj/structure/cable,
 /turf/open/floor/wood,
 /area/ship/crew/solgov)
@@ -1997,9 +1947,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -2072,9 +2020,6 @@
 /area/ship/engineering/atmospherics)
 "yV" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -2087,9 +2032,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "yX" = (
@@ -2254,7 +2197,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "Am" = (
-/obj/machinery/telecomms/server/presets/common/birdstation,
+/obj/machinery/telecomms/server/presets/common/birdstation{
+	autolinkers = list("common","Broadcaster A")
+	},
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/ship/engineering/communications)
 "At" = (
@@ -2290,9 +2235,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "AB" = (
@@ -2310,9 +2253,6 @@
 /area/ship/engineering/engine)
 "AF" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable/blue{
 	icon_state = "0-8"
 	},
@@ -2328,7 +2268,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "AQ" = (
-/obj/machinery/telecomms/broadcaster/preset_left/birdstation,
+/obj/machinery/telecomms/broadcaster/preset_left/birdstation{
+	autolinkers = list("broadcasterA","common")
+	},
 /obj/machinery/camera/autoname{
 	dir = 8;
 	network = list("cricket")
@@ -2427,7 +2369,7 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "BD" = (
-/obj/machinery/computer/autopilot{
+/obj/structure/frame/computer{
 	dir = 8
 	},
 /turf/open/floor/carpet/nanoweave/blue,
@@ -2439,9 +2381,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -2588,7 +2528,9 @@
 /turf/open/floor/eighties,
 /area/ship/crew/dorm)
 "CQ" = (
-/obj/machinery/telecomms/bus/preset_one/birdstation,
+/obj/machinery/telecomms/bus/preset_one/birdstation{
+	autolinkers = list("processor1","common","receiverA")
+	},
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/ship/engineering/communications)
 "CR" = (
@@ -2608,9 +2550,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -2644,7 +2584,9 @@
 /turf/template_noop,
 /area/ship/external)
 "Df" = (
-/obj/machinery/telecomms/receiver/preset_left/birdstation,
+/obj/machinery/telecomms/receiver/preset_left/birdstation{
+	autolinkers = list("receiverA","Bus 1")
+	},
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/ship/engineering/communications)
 "Dg" = (
@@ -2708,9 +2650,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "DR" = (
@@ -2736,9 +2676,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "Ej" = (
@@ -2768,9 +2706,6 @@
 /obj/machinery/camera/autoname{
 	dir = 8;
 	network = list("cricket")
-	},
-/obj/machinery/computer/selling_pad_control{
-	dir = 8
 	},
 /obj/effect/turf_decal/corner/brown/half,
 /obj/effect/turf_decal/corner/brown{
@@ -2810,7 +2745,8 @@
 /area/ship/hallway/aft)
 "EF" = (
 /obj/machinery/computer/telecomms/server{
-	dir = 8
+	dir = 8;
+	network = "tcommsat"
 	},
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 4
@@ -2820,10 +2756,6 @@
 "EI" = (
 /obj/machinery/light,
 /turf/open/floor/circuit/green/telecomms/mainframe,
-/area/ship/engineering/communications)
-"EQ" = (
-/obj/structure/noticeboard,
-/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/communications)
 "ER" = (
 /obj/structure/cable{
@@ -2950,9 +2882,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "GK" = (
@@ -2988,9 +2918,6 @@
 /area/ship/hallway/starboard)
 "Hh" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3020,9 +2947,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "Hu" = (
@@ -3031,9 +2956,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "Hy" = (
@@ -3072,9 +2995,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -3146,6 +3067,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/noticeboard{
+	pixel_y = 33
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
@@ -3316,9 +3240,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "KL" = (
@@ -3397,9 +3319,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -3407,9 +3327,6 @@
 /area/ship/crew/canteen)
 "LR" = (
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -3420,9 +3337,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -3467,9 +3382,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -3820,9 +3733,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "QU" = (
@@ -3840,9 +3751,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "QZ" = (
@@ -3904,9 +3813,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -3959,9 +3866,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "SJ" = (
@@ -3983,9 +3888,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "Tg" = (
@@ -3999,9 +3902,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "Ti" = (
@@ -4057,9 +3958,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -4067,9 +3966,6 @@
 /area/ship/crew/canteen)
 "TW" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -4199,9 +4095,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -4252,6 +4146,10 @@
 /obj/item/newspaper,
 /obj/item/megaphone/command,
 /obj/item/radio/headset/solgov/alt,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Wj" = (
@@ -4322,9 +4220,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "WY" = (
@@ -4556,9 +4452,7 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
@@ -5143,7 +5037,7 @@ EF
 yw
 AQ
 Df
-EQ
+mU
 Ib
 LV
 OI

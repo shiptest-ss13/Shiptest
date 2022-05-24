@@ -7,6 +7,8 @@
 	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
 	wiki_page = "Guide_to_Medicine"
+	alt_titles = list("Nurse", "Surgeon", "Junior Doctor", "Psychiatrist")
+	senior_title = "Senior Medical Doctor"
 
 	outfit = /datum/outfit/job/doctor
 
@@ -102,6 +104,15 @@
 
 //Shiptest outfits
 
+/datum/outfit/job/doctor/minutemen
+	name = "Field Medic (Colonial Minutemen)"
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	accessory = /obj/item/clothing/accessory/armband/medblue
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	head = /obj/item/clothing/head/beret/med
+	suit = null
+	suit_store = null
+
 /datum/outfit/job/doctor/solgov
 	name = "Medical Doctor (SolGov)"
 
@@ -129,3 +140,10 @@
 	uniform = /obj/item/clothing/under/syndicate/cybersun
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/jackboots
+/datum/outfit/job/doctor/syndicate/nsv
+	name = "Medical Doctor (NSV-M)"
+
+	uniform = /obj/item/clothing/under/syndicate
+	id = /obj/item/card/id/syndicate_command/crew_id
+	shoes = /obj/item/clothing/shoes/jackboots
+	ears = /obj/item/radio/headset/syndicate/alt

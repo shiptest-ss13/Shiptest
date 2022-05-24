@@ -14,7 +14,7 @@
 	var/teleport_range = 7
 
 /obj/item/mecha_parts/mecha_equipment/teleporter/action(atom/target)
-	if(!action_checks(target) || is_centcom_level(loc.z))
+	if(!action_checks(target) || is_centcom_level(loc))
 		return
 	var/turf/T = get_turf(target)
 	if(T && (loc.z == T.z) && (get_dist(loc, T) <= teleport_range))
@@ -35,7 +35,7 @@
 
 
 /obj/item/mecha_parts/mecha_equipment/wormhole_generator/action(atom/target)
-	if(!action_checks(target) || is_centcom_level(loc.z))
+	if(!action_checks(target) || is_centcom_level(loc))
 		return
 	var/list/theareas = get_areas_in_range(100, chassis)
 	if(!theareas.len)
@@ -44,7 +44,7 @@
 	var/list/L = list()
 	var/turf/pos = get_turf(src)
 	for(var/turf/T in thearea)
-		if(!T.density && pos.get_virtual_z_level() == T.get_virtual_z_level())
+		if(!T.density && pos.virtual_z() == T.virtual_z())
 			var/clear = 1
 			for(var/obj/O in T)
 				if(O.density)
@@ -408,20 +408,20 @@
 		if(result)
 			send_byjax(chassis.occupant,"exosuit.browser","[REF(src)]",src.get_equip_info())
 
-/obj/item/mecha_parts/mecha_equipment/generator/proc/load_fuel(var/obj/item/stack/sheet/P)
-	if(P.type == fuel.type && P.amount > 0)
+/obj/item/mecha_parts/mecha_equipment/generator/proc/load_fuel(var/obj/item/stack/sheet/sheet_being_inserted)
+	if((istype(sheet_being_inserted, fuel)) && sheet_being_inserted.amount > 0)
 		var/to_load = max(max_fuel - fuel.amount*MINERAL_MATERIAL_AMOUNT,0)
 		if(to_load)
-			var/units = min(max(round(to_load / MINERAL_MATERIAL_AMOUNT),1),P.amount)
+			var/units = min(max(round(to_load / MINERAL_MATERIAL_AMOUNT),1),sheet_being_inserted.amount)
 			fuel.amount += units
-			P.use(units)
+			sheet_being_inserted.use(units)
 			occupant_message("<span class='notice'>[units] unit\s of [fuel] successfully loaded.</span>")
 			return units
 		else
 			occupant_message("<span class='notice'>Unit is full.</span>")
 			return 0
 	else
-		occupant_message("<span class='warning'>[fuel] traces in target minimal! [P] cannot be used as fuel.</span>")
+		occupant_message("<span class='warning'>[fuel] traces in target minimal! [sheet_being_inserted] cannot be used as fuel.</span>")
 		return
 
 /obj/item/mecha_parts/mecha_equipment/generator/attackby(weapon,mob/user, params)

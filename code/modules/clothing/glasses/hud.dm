@@ -242,3 +242,22 @@
 	icon_state = "sun"
 	item_state = "sunglasses"
 
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	name = "inteq ballistic HUD"
+	desc = "A snazzy looking pair of ballistic goggles with an integrated security hud. The opaque visor provides flash protection."
+	icon_state = "inteq_goggles"
+	item_state = "inteq_goggles"
+	alternate_worn_layer = HEAD_LAYER
+
+/obj/item/clothing/glasses/hud/health/prescription
+	name = "prescription health scanner HUD"
+	desc = "A heads-up display that scans the humanoids in view and provides accurate data about their health status. This pair also helps nearsighted doctors."
+	icon_state = "prescriptionhealthhud"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/hud/security/prescription
+	name = "prescription security HUD"
+	desc = "A heads-up display that scans the humanoids in view and provides accurate data about their ID status and security records. This pair also corrects nearsightedness."
+	icon_state = "prescriptionsecurityhud"
+	vision_correction = 1
+

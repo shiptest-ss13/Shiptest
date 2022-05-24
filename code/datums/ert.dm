@@ -7,7 +7,7 @@
 	var/roles = list(/datum/antagonist/ert/security, /datum/antagonist/ert/medic, /datum/antagonist/ert/engineer) //List of possible roles to be assigned to ERT members.
 	var/rename_team
 	var/code
-	var/mission = "Assist the station."
+	var/mission = "Assist your employers in achieving their goals. Protect corporate assets."
 	var/teamsize = 5
 	var/polldesc
 
@@ -35,6 +35,13 @@
 	mission = "Leave no witnesses."
 	polldesc = "an elite Nanotrasen Strike Team"
 
+/datum/ert/marine
+	leader_role = /datum/antagonist/ert/marine
+	roles = list(/datum/antagonist/ert/marine/security, /datum/antagonist/ert/marine/engineer, /datum/antagonist/ert/marine/medic)
+	rename_team = "Marine Squad"
+	polldesc = "an 'elite' Nanotrasen Strike Team"
+	opendoors = FALSE
+
 /datum/ert/centcom_official
 	code = "Green"
 	teamsize = 1
@@ -45,13 +52,13 @@
 	polldesc = "a CentCom Official"
 
 /datum/ert/centcom_official/New()
-	mission = "Conduct a routine performance review of [station_name()] and its Captain."
+	mission = "Conduct a routine review of [station_name()]."
 
 /datum/ert/inquisition
 	roles = list(/datum/antagonist/ert/chaplain/inquisitor, /datum/antagonist/ert/security/inquisitor, /datum/antagonist/ert/medic/inquisitor)
 	leader_role = /datum/antagonist/ert/commander/inquisitor
 	rename_team = "Inquisition"
-	mission = "Destroy any traces of paranormal activity aboard the station."
+	mission = "Destroy any traces of paranormal activity within the deployment site."
 	polldesc = "a Nanotrasen paranormal response team"
 
 /datum/ert/janitor
@@ -80,3 +87,12 @@
 	mission = "Create entertainment for the crew."
 	polldesc = "a Code Rainbow Nanotrasen Emergency Response Party"
 	code = "Rainbow"
+
+/datum/ert/solgov
+	roles = list(/datum/antagonist/ert/solgov)
+	leader_role = /datum/antagonist/ert/solgov/leader
+	teamsize = 7
+	opendoors = FALSE
+	rename_team = "Hired SolGov Marines"
+	mission = "Assist in conflict resolution."
+	polldesc = "a military squad hired by Nanotrasen"

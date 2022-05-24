@@ -9,6 +9,8 @@
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Guide_to_Atmospherics" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Firefighter", "Life Support Specialist")
+	senior_title = "Chadmos"
 
 	outfit = /datum/outfit/job/atmos
 
@@ -71,3 +73,13 @@
 	neck = /obj/item/clothing/neck/tie/light_blue
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/atmostech=1)
+
+//Shiptest
+/datum/outfit/job/atmos/gec
+	name = "Atmospheric Technician (GEC)"
+
+	uniform = /obj/item/clothing/under/syndicate/gec/atmos_tech
+	suit = /obj/item/clothing/suit/toggle/hazard
+	head = /obj/item/clothing/head/hardhat
+	ears = /obj/item/radio/headset/syndicate/alt
+	id = /obj/item/card/id/syndicate_command/crew_id

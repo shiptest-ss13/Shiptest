@@ -38,6 +38,8 @@ require only minor tweaks.
 #define ZTRAIT_ICE_RUINS "Ice Ruins"
 #define ZTRAIT_ICE_RUINS_UNDERGROUND "Ice Ruins Underground"
 #define ZTRAIT_SAND_RUINS "Sand Ruins" //WS edit - Whitesands
+#define ZTRAIT_JUNGLE_RUINS "Jungle Ruins"
+#define ZTRAIT_ROCK_RUINS "Rock Ruins"
 
 // boolean - weather types that occur on the level
 #define ZTRAIT_SANDSTORM "Weather_Sandstorm"
@@ -107,11 +109,6 @@ require only minor tweaks.
 	DECLARE_LEVEL("CentCom", ZTRAITS_CENTCOM), \
 )
 
-// Camera lock flags
-#define CAMERA_LOCK_STATION 1
-#define CAMERA_LOCK_MINING 2
-#define CAMERA_LOCK_CENTCOM 4
-
 //Reserved turf type
 #define RESERVED_TURF_TYPE /turf/open/space/basic //What the turf is when not being used
 
@@ -141,3 +138,15 @@ require only minor tweaks.
 #define BIOME_LOWMEDIUM_HUMIDITY "lowmedium_humidity"
 #define BIOME_HIGHMEDIUM_HUMIDITY "highmedium_humidity"
 #define BIOME_HIGH_HUMIDITY "high_humidity"
+
+#define ALLOCATION_FREE 1
+#define ALLOCATION_QUADRANT 2
+
+#define QUADRANT_MAP_SIZE 127
+
+#define QUADRANT_SIZE_BORDER 3
+#define TRANSIT_SIZE_BORDER 3
+
+#define DEFAULT_ALLOC_JUMP 5
+
+#define MAP_EDGE_PAD 5

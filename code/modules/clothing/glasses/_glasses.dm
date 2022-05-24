@@ -102,10 +102,17 @@
 	glass_colour_type = /datum/client_colour/glass_colour/purple
 	resistance_flags = ACID_PROOF
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 100)
+	custom_price = 250
 
 /obj/item/clothing/glasses/science/item_action_slot_check(slot)
 	if(slot == ITEM_SLOT_EYES)
 		return 1
+
+/obj/item/clothing/glasses/science/prescription
+	name = "prescription science goggles"
+	desc = "A pair of prescription glasses fitted with an analyzer for scanning items and reagents. "
+	icon_state = "prescriptionpurple"
+	vision_correction = 1
 
 /obj/item/clothing/glasses/night
 	name = "night vision goggles"
@@ -321,7 +328,7 @@
 	item_state = "blindfoldwhite"
 	var/colored_before = FALSE
 
-/obj/item/clothing/glasses/blindfold/white/equipped(mob/living/carbon/human/user, slot)
+/obj/item/clothing/glasses/blindfold/white/visual_equipped(mob/living/carbon/human/user, slot)
 	if(ishuman(user) && slot == ITEM_SLOT_EYES)
 		update_icon(user)
 		user.update_inv_glasses() //Color might have been changed by update_icon.
@@ -539,3 +546,13 @@
 		xray = !xray
 		var/mob/living/carbon/human/H = user
 		H.update_sight()
+
+/obj/item/clothing/glasses/cheapsuns
+	name = "cheap sunglasses"
+	desc = "Strangely ancient technology used to help provide rudimentary eye cover."
+	icon_state = "sun"
+	item_state = "sunglasses"
+	darkness_view = 1
+	tint = 1
+	glass_colour_type = /datum/client_colour/glass_colour/gray
+	dog_fashion = /datum/dog_fashion/head

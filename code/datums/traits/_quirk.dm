@@ -54,6 +54,7 @@
 		quirk_holder.roundstart_quirks -= src
 		if(mob_trait)
 			REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
+		quirk_holder = null
 	SSquirks.quirk_objects -= src
 	return ..()
 
@@ -108,6 +109,9 @@
 	for(var/V in roundstart_quirks)
 		var/datum/quirk/T = V
 		T.transfer_mob(to_mob)
+
+/datum/quirk/proc/clone_data() //return additional data that should be remembered by cloning
+/datum/quirk/proc/on_clone(data) //create the quirk from clone data
 
 /*
 

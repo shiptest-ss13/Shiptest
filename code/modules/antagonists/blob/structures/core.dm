@@ -65,7 +65,3 @@
 		if(prob(5))
 			B.change_to(/obj/structure/blob/shield/core, overmind)
 	..()
-
-/obj/structure/blob/core/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/stationloving, FALSE, TRUE)

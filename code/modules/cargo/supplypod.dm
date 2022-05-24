@@ -139,7 +139,7 @@
 		bluespace = TRUE //Make it so that the pod doesn't stay in centcom forever
 
 		QDEL_IN(risingPod, 10)
-		audible_message("<span class='notice'>The pod hisses, closing quickly and launching itself away from the station.</span>", "<span class='notice'>The ground vibrates, the nearby pod launching away from the station.</span>")
+		audible_message("<span class='notice'>The pod hisses, closing quickly and launching itself away from the launch point.</span>", "<span class='notice'>The ground vibrates, the nearby pod off into the unknown.</span>")
 
 		stay_after_drop = FALSE
 		specialisedPod(holder) // Do special actions for specialised pods - this is likely if we were already doing manual launches

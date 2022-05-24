@@ -4,7 +4,7 @@
 	icon_state = "cargosoft"
 	item_state = "helmet"
 	cuttable = TRUE
-	clothamnt = 3
+	clothamnt = 2
 	var/soft_type = "cargo"
 
 	dog_fashion = /datum/dog_fashion/head/cargo_tech
@@ -134,4 +134,19 @@
 	desc = "It's a baseball hat with a dark turquoise color and a reflective cross on the top."
 	icon_state = "paramedicsoft"
 	soft_type = "paramedic"
+	dog_fashion = null
+
+/obj/item/clothing/head/soft/cybersun
+	name = "cybersun medic cap"
+	desc = "A turquoise baseball hat emblazoned with a reflective cross. Typical of Cybersun Industries field medics."
+	icon_state = "cybersunsoft"
+	soft_type = "cybersun"
+	dog_fashion = null
+
+/obj/item/clothing/head/soft/inteq
+	name = "inteq utility cover"
+	desc = "A drab brown utility cover with a golden insignia on it. Worn by IRMG operators."
+	icon_state = "inteqsoft"
+	soft_type = "inteq"
+	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 50)
 	dog_fashion = null

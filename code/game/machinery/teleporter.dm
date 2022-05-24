@@ -47,7 +47,7 @@
 	return power_station
 
 /obj/machinery/teleport/hub/Bumped(atom/movable/AM)
-	if(is_centcom_level(z))
+	if(is_centcom_level(src))
 		to_chat(AM, "<span class='warning'>You can't use this here!</span>")
 		return
 	if(is_ready())
@@ -72,7 +72,7 @@
 		visible_message("<span class='alert'>Cannot authenticate locked on coordinates. Please reinstate coordinate matrix.</span>")
 		return
 	if (ismovable(M))
-		if(do_teleport(M, com.target, channel = TELEPORT_CHANNEL_BLUESPACE))
+		if(do_teleport(M, com.target, channel = TELEPORT_CHANNEL_BLUESPACE, restrain_vlevel = FALSE))
 			use_power(5000)
 			if(!calibrated && prob(30 - ((accuracy) * 10))) //oh dear a problem
 				if(ishuman(M))//don't remove people from the round randomly you jerks
