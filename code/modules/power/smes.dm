@@ -220,9 +220,6 @@
 		return
 
 	if(machine_stat & BROKEN)
-		. += "failing"
-		SSvis_overlays.add_vis_overlay(src, icon, "failing", layer, plane, dir)
-		SSvis_overlays.add_vis_overlay(src, icon, "failing", layer, EMISSIVE_PLANE, dir)
 		return
 
 	var/clevel = chargedisplay()
