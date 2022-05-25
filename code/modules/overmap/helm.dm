@@ -42,13 +42,6 @@
 	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
 	ntnet_relay = new(src)
 
-/obj/machinery/computer/helm/Destroy()
-	. = ..()
-	QDEL_NULL(ntnet_relay)
-	SStgui.close_uis(src)
-	ASSERT(length(concurrent_users) == 0)
-	current_ship = null
-
 /obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
 	if(jump_allowed < 0)
 		say("Bluespace Jump Calibration offline. Please contact your system administrator.")
@@ -72,6 +65,7 @@
 	. = ..()
 	SStgui.close_uis(src)
 	ASSERT(length(concurrent_users) == 0)
+	QDEL_NULL(ntnet_relay)
 	if(current_ship)
 		current_ship.helms -= src
 		current_ship = null
