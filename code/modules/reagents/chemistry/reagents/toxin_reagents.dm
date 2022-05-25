@@ -50,6 +50,12 @@
 	C.apply_effect(5,EFFECT_IRRADIATE,0)
 	return ..()
 
+/datum/reagent/toxin/mutagen/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.mutation_roll(user)
+		mytray.adjustToxic(1.5) //It is still toxic, mind you, but not to the same degree
+
 #define LIQUID_PLASMA_BP (50+T0C)
 
 /datum/reagent/toxin/plasma
@@ -287,10 +293,24 @@
 				var/damage = min(round(0.4*reac_volume, 0.1),10)
 				C.adjustToxLoss(damage)
 
+/datum/reagent/toxin/plantbgone/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 10))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 6))
+		mytray.adjustWeeds(-rand(4,8))
+
 /datum/reagent/toxin/plantbgone/weedkiller
 	name = "Weed Killer"
 	description = "A harmful toxic mixture to kill weeds. Do not ingest!"
 	color = "#4B004B" // rgb: 75, 0, 75
+
+//Weed Spray
+/datum/reagent/toxin/plantbgone/weedkiller/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 0.5))
+		mytray.adjustWeeds(-rand(1,2))
 
 /datum/reagent/toxin/pestkiller
 	name = "Pest Killer"

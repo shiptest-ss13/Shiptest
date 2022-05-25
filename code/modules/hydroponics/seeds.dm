@@ -24,7 +24,7 @@
 	var/yield = 3					// Amount of growns created per harvest. If is -1, the plant/shroom/weed is never meant to be harvested.
 	var/potency = 10				// The 'power' of a plant. Generally effects the amount of reagent in a plant, also used in other ways.
 	var/growthstages = 6			// Amount of growth sprites the plant has.
-	var/instability = 5 			// Chance for a plant to mutate in each life stage
+	var/instability = 5             //Chance that a plant will mutate in each stage of it's life.
 	var/rarity = 0					// How rare the plant is. Used for giving points to cargo when shipping off to CentCom.
 	var/list/mutatelist = list()	// The type of plants that this plant can mutate into.
 	var/list/genes = list()			// Plant genes are stored here, see plant_genes.dm for more info.
@@ -58,10 +58,10 @@
 		genes += new /datum/plant_gene/core/endurance(endurance)
 		genes += new /datum/plant_gene/core/weed_rate(weed_rate)
 		genes += new /datum/plant_gene/core/weed_chance(weed_chance)
-		if(yield != -1)
+		if(yield != UNHARVESTABLE)
 			genes += new /datum/plant_gene/core/yield(yield)
 			genes += new /datum/plant_gene/core/production(production)
-		if(potency != -1)
+		if(potency != UNHARVESTABLE)
 			genes += new /datum/plant_gene/core/potency(potency)
 			genes += new /datum/plant_gene/core/instability(instability)
 
@@ -92,6 +92,7 @@
 	S.yield = yield
 	S.potency = potency
 	S.weed_rate = weed_rate
+	S.instability = instability
 	S.weed_chance = weed_chance
 	S.name = name
 	S.plantname = plantname
@@ -139,7 +140,6 @@
 		else
 			add_random_reagents(1, 1)
 
-
 /obj/item/seeds/bullet_act(obj/projectile/Proj) //Works with the Somatoray to modify plant variables.
 	if(istype(Proj, /obj/projectile/energy/florayield))
 		var/rating = 1
@@ -170,12 +170,19 @@
 
 
 /obj/item/seeds/proc/harvest(mob/user)
-	var/obj/machinery/hydroponics/parent = loc ///Reference to the tray/soil the seeds are planted in.
-	var/t_amount = 0 ///Count used for creating the correct amount of results to the harvest.
-	var/list/result = list() ///List of plants all harvested from the same batch.
-	var/output_loc = parent.Adjacent(user) ? user.loc : parent.loc ///Tile of the harvester to deposit the growables && Needed for TK
-	var/product_name ///Name of the grown products.
-	var/product_count = getYield() 	///The Number of products produced by the plant, typically the yield.
+	///Reference to the tray/soil the seeds are planted in.
+	var/obj/machinery/hydroponics/parent = loc //for ease of access
+	///Count used for creating the correct amount of results to the harvest.
+	var/t_amount = 0
+	///List of plants all harvested from the same batch.
+	var/list/result = list()
+	///Tile of the harvester to deposit the growables.
+	var/output_loc = parent.Adjacent(user) ? user.loc : parent.loc //needed for TK
+	///Name of the grown products.
+	var/product_name
+	///The Number of products produced by the plant, typically the yield.
+	var/product_count = getYield()
+
 	while(t_amount < product_count)
 		var/obj/item/reagent_containers/food/snacks/grown/t_prod
 		if(instability >= 30 && (seed_flags & MUTATE_EARLY) && LAZYLEN(mutatelist) && prob(instability/3))
@@ -260,7 +267,7 @@
 
 /// Setters procs ///
 /obj/item/seeds/proc/adjust_yield(adjustamt)
-	if(yield != -1) // Unharvestable shouldn't suddenly turn harvestable
+	if(yield != UNHARVESTABLE) // Unharvestable shouldn't suddenly turn harvestable
 		yield = clamp(yield + adjustamt, 0, 10)
 
 		if(yield <= 0 && get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism))
@@ -277,31 +284,31 @@
 
 /obj/item/seeds/proc/adjust_endurance(adjustamt)
 	endurance = clamp(endurance + adjustamt, 10, 100)
-	var/datum/plant_gene/core/gene = get_gene(/datum/plant_gene/core/endurance)
-	if(gene)
-		gene.value = endurance
+	var/datum/plant_gene/core/C = get_gene(/datum/plant_gene/core/endurance)
+	if(C)
+		C.value = endurance
 
 /obj/item/seeds/proc/adjust_production(adjustamt)
-	if(yield != -1)
+	if(yield != UNHARVESTABLE)
 		production = clamp(production + adjustamt, 1, 10)
-		var/datum/plant_gene/core/gene = get_gene(/datum/plant_gene/core/production)
-		if(gene)
-			gene.value = production
+		var/datum/plant_gene/core/C = get_gene(/datum/plant_gene/core/production)
+		if(C)
+			C.value = production
 
 /obj/item/seeds/proc/adjust_instability(adjustamt)
-	if(instability == -1)
+	if(instability == UNHARVESTABLE)
 		return
 	instability = clamp(instability + adjustamt, 0, 100)
-	var/datum/plant_gene/core/gene = get_gene(/datum/plant_gene/core/instability)
-	if(gene)
-		gene.value = instability
+	var/datum/plant_gene/core/Core = get_gene(/datum/plant_gene/core/instability)
+	if(Core)
+		Core.value = instability
 
 /obj/item/seeds/proc/adjust_potency(adjustamt)
-	if(potency != -1)
+	if(potency != UNHARVESTABLE)
 		potency = clamp(potency + adjustamt, 0, 100)
-		var/datum/plant_gene/core/gene = get_gene(/datum/plant_gene/core/potency)
-		if(gene)
-			gene.value = potency
+		var/datum/plant_gene/core/C = get_gene(/datum/plant_gene/core/potency)
+		if(C)
+			C.value = potency
 
 /obj/item/seeds/proc/adjust_weed_rate(adjustamt)
 	weed_rate = clamp(weed_rate + adjustamt, 0, 10)
@@ -318,7 +325,7 @@
 //Directly setting stats
 
 /obj/item/seeds/proc/set_yield(adjustamt)
-	if(yield != -1) // Unharvestable shouldn't suddenly turn harvestable
+	if(yield != UNHARVESTABLE) // Unharvestable shouldn't suddenly turn harvestable
 		yield = clamp(adjustamt, 0, 10)
 
 		if(yield <= 0 && get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism))
@@ -326,14 +333,6 @@
 		var/datum/plant_gene/core/C = get_gene(/datum/plant_gene/core/yield)
 		if(C)
 			C.value = yield
-
-/obj/item/seeds/proc/set_instability(adjustamt)
-	if(instability == -1)
-		return
-	instability = clamp(adjustamt, 0, 100)
-	var/datum/plant_gene/core/gene = get_gene(/datum/plant_gene/core/instability)
-	if(gene)
-		gene.value = instability
 
 /obj/item/seeds/proc/set_lifespan(adjustamt)
 	lifespan = clamp(adjustamt, 10, 100)
@@ -348,18 +347,26 @@
 		C.value = endurance
 
 /obj/item/seeds/proc/set_production(adjustamt)
-	if(yield != -1)
+	if(yield != UNHARVESTABLE)
 		production = clamp(adjustamt, 1, 10)
 		var/datum/plant_gene/core/C = get_gene(/datum/plant_gene/core/production)
 		if(C)
 			C.value = production
 
 /obj/item/seeds/proc/set_potency(adjustamt)
-	if(potency != -1)
+	if(potency != UNHARVESTABLE)
 		potency = clamp(adjustamt, 0, 100)
 		var/datum/plant_gene/core/C = get_gene(/datum/plant_gene/core/potency)
 		if(C)
 			C.value = potency
+
+/obj/item/seeds/proc/set_instability(adjustamt)
+	if(instability == UNHARVESTABLE)
+		return
+	instability = clamp(adjustamt, 0, 100)
+	var/datum/plant_gene/core/C = get_gene(/datum/plant_gene/core/instability)
+	if(C)
+		C.value = instability
 
 /obj/item/seeds/proc/set_weed_rate(adjustamt)
 	weed_rate = clamp(adjustamt, 0, 10)
@@ -386,12 +393,12 @@
 		text += "- Plant type: Crystal. Revitalizes soil.\n"
 	if(get_gene(/datum/plant_gene/trait/plant_type/alien_properties))
 		text += "- Plant type: <span class='warning'>UNKNOWN</span> \n"
-	if(potency != -1)
+	if(potency != UNHARVESTABLE)
 		text += "- Potency: [potency]\n"
-	if(yield != -1)
+	if(yield != UNHARVESTABLE)
 		text += "- Yield: [yield]\n"
 	text += "- Maturation speed: [maturation]\n"
-	if(yield != -1)
+	if(yield != UNHARVESTABLE)
 		text += "- Production speed: [production]\n"
 	text += "- Endurance: [endurance]\n"
 	text += "- Lifespan: [lifespan]\n"
@@ -406,9 +413,7 @@
 			continue
 		all_traits += " [traits.get_name()]"
 	text += "- Plant Traits:[all_traits]\n"
-
 	text += "*---------*"
-
 	return text
 
 /obj/item/seeds/proc/on_chem_reaction(datum/reagents/S)  //in case seeds have some special interaction with special chems
@@ -426,10 +431,9 @@
 		if(reagents_add && P_analyzer.scan_mode == PLANT_SCANMODE_CHEMICALS)
 			to_chat(user, "<span class='notice'>- Plant Reagents -</span>")
 			to_chat(user, "<span class='notice'>*---------*</span>")
-			for(var/datum/plant_gene/reagent/G in genes)
-				to_chat(user, "<span class='notice'>- [G.get_name()] -</span>")
+			for(var/datum/plant_gene/reagent/Gene in genes)
+				to_chat(user, "<span class='notice'>- [Gene.get_name()] -</span>")
 			to_chat(user, "<span class='notice'>*---------*</span>")
-
 
 
 		return
@@ -444,10 +448,10 @@
 				if(!user.canUseTopic(src, BE_CLOSE))
 					return
 				if (length(newplantname) > 20)
-					to_chat(user, "<span class='warning'>That name is too long!</span>")
+					to_chat(user, "That name is too long!")
 					return
 				if(!newplantname)
-					to_chat(user, "<span class='warning'>That name is invalid.</span>")
+					to_chat(user, "That name is invalid.")
 					return
 				else
 					name = "[lowertext(newplantname)]"
@@ -457,10 +461,10 @@
 				if(!user.canUseTopic(src, BE_CLOSE))
 					return
 				if (length(newdesc) > 180)
-					to_chat(user, "<span class='warning'>That description is too long!</span>")
+					to_chat(user, "That description is too long!")
 					return
 				if(!newdesc)
-					to_chat(user, "<span class='warning'>That description is invalid.</span>")
+					to_chat(user, "That description is invalid.")
 					return
 				else
 					desc = newdesc
@@ -471,10 +475,10 @@
 				if(!user.canUseTopic(src, BE_CLOSE))
 					return
 				if (length(newproductdesc) > 180)
-					to_chat(user, "<span class='warning'>That description is too long!</span>")
+					to_chat(user, "That description is too long!")
 					return
 				if(!newproductdesc)
-					to_chat(user, "<span class='warning'>That description is invalid.</span>")
+					to_chat(user, "That description is invalid.")
 					return
 				else
 					productdesc = newproductdesc

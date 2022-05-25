@@ -81,6 +81,11 @@
 	if(data["blood_DNA"])
 		B.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"]))
 
+/datum/reagent/blood/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustPests(rand(2,3))
+
 /datum/reagent/liquidgibs
 	name = "Liquid gibs"
 	color = "#CC4633"
@@ -192,6 +197,14 @@
 		M.ExtinguishMob()
 	..()
 
+///For weird backwards situations where water manages to get added to trays nutrients, as opposed to being snowflaked away like usual.
+/datum/reagent/water/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustWater(round(chems.get_reagent_amount(type) * 1))
+		//You don't belong in this world, monster!
+		chems.remove_reagent(/datum/reagent/water, chems.get_reagent_amount(type))
+
 /datum/reagent/water/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
 	. = ..()
 	if(istype(I, /obj/item/stock_parts/capacitor))
@@ -200,6 +213,12 @@
 		H.reagents.add_reagent(/datum/reagent/hydrogen, (removed/3)*2)
 		return TRUE
 	return
+
+/datum/reagent/water/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
+	if(chems.has_reagent(type, 1))
+		mytray.adjustWater(round(chems.get_reagent_amount(type)))
+		//You don't belong in this world, monster!
+		chems.remove_reagent(/datum/reagent/water, chems.get_reagent_amount(type))
 
 /datum/reagent/water/holywater
 	name = "Holy Water"
@@ -1022,6 +1041,13 @@
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 	//WS End
 
+/datum/reagent/uranium/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	mytray.mutation_roll(user)
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 1))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 2))
+
 /datum/reagent/uranium/on_mob_life(mob/living/carbon/M)
 	M.apply_effect(irradiation_level/M.metabolism_efficiency,EFFECT_IRRADIATE,0)
 	..()
@@ -1307,6 +1333,16 @@
 		T.atmos_spawn_air("co2=[reac_volume/5];TEMP=[temp]")
 	return
 
+// This is more bad ass, and pests get hurt by the corrosive nature of it, not the plant. The new trade off is it culls stability.
+/datum/reagent/diethylamine/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(round(chems.get_reagent_amount(type) * 1))
+		mytray.adjustPests(-rand(1,2))
+		if(myseed)
+			myseed.adjust_yield(round(chems.get_reagent_amount(type) * 1))
+			myseed.adjust_instability(-round(chems.get_reagent_amount(type) * 1))
+
 /datum/reagent/nitrous_oxide
 	name = "Nitrous Oxide"
 	description = "A potent oxidizer used as fuel in rockets and as an anaesthetic during surgery."
@@ -1525,11 +1561,24 @@
 	color = "#376400" // RBG: 50, 100, 0
 	tox_prob = 10
 
+/datum/reagent/plantnutriment/eznutriment/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
+	. = ..()
+	if(myseed && chems.has_reagent(type, 1))
+		myseed.adjust_instability(0.2)
+		myseed.adjust_potency(round(chems.get_reagent_amount(type) * 0.3))
+		myseed.adjust_yield(round(chems.get_reagent_amount(type) * 0.1))
+
 /datum/reagent/plantnutriment/left4zednutriment
 	name = "Left 4 Zed"
 	description = "Unstable nutriment that makes plants mutate more often than usual."
 	color = "#1A1E4D" // RBG: 26, 30, 77
 	tox_prob = 25
+
+/datum/reagent/plantnutriment/left4zednutriment/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
+	. = ..()
+	if(myseed && chems.has_reagent(type, 1))
+		mytray.adjustHealth(round(chems.get_reagent_amount(type) * 0.1))
+		myseed.adjust_instability(round(chems.get_reagent_amount(type) * 0.2))
 
 /datum/reagent/plantnutriment/robustharvestnutriment
 	name = "Robust Harvest"
@@ -1537,6 +1586,12 @@
 	color = "#9D9D00" // RBG: 157, 157, 0
 	tox_prob = 15
 
+/datum/reagent/plantnutriment/robustharvestnutriment/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
+	. = ..()
+	if(myseed && chems.has_reagent(type, 1))
+		myseed.adjust_instability(-0.25)
+		myseed.adjust_potency(round(chems.get_reagent_amount(type) * 0.1))
+		myseed.adjust_yield(round(chems.get_reagent_amount(type) * 0.2))
 
 
 

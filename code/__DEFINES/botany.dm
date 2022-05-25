@@ -11,3 +11,7 @@
 
 //Seed flags.
 #define MUTATE_EARLY (1<<0)
+#define UNHARVESTABLE -1
+
+//Floral Somoray
+#define REVOLUTION_CHARGE 10000 // Default flora cell

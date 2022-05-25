@@ -1,7 +1,7 @@
 // Plant analyzer
 /obj/item/plant_analyzer
 	name = "plant analyzer"
-	desc = "A scanner used to evaluate a plant's various areas of growth, genetic traits, and chemical contents."
+	desc = "A scanner used to evaluate a plant's various areas of growth, chemical contents, and genetic traits."
 	icon = 'whitesands/icons/obj/device.dmi' //WS edit - analyzer update
 	icon_state = "hydro"
 	item_state = "analyzer"
@@ -15,7 +15,7 @@
 /obj/item/plant_analyzer/attack_self(mob/user)
 	. = ..()
 	scan_mode = !scan_mode
-	to_chat(user, "<span class='notice'>You switch [src] to [scan_mode == PLANT_SCANMODE_CHEMICALS ? "scan for chemical reagents and traits" : "scan for plant growth statistics"].</span>")
+	to_chat(user, "<span class='notice'>You switch [src] to [scan_mode == PLANT_SCANMODE_CHEMICALS ? "scan for chemical reagents" : "scan for plant growth statistics and traits"].</span>")
 
 /obj/item/plant_analyzer/attack(mob/living/M, mob/living/carbon/human/user)
 	//Checks if target is a podman
@@ -99,10 +99,13 @@
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
+
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/item/cultivator/rake/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
+
+/obj/item/cultivator/rake/Crossed(atom/movable/AM)
 	if(!ishuman(AM))
 		return
 	var/mob/living/carbon/human/H = AM

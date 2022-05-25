@@ -10,7 +10,7 @@
 	var/waterlevel = 100	//The amount of water in the tray (max 100)
 	var/maxwater = 100		//The maximum amount of water in the tray
 	var/nutridrain = 1      // How many units of nutrient will be drained in the tray
-	var/maxnutri = 10		//The maximum amount of nutrients in the tray
+	var/maxnutri = 10		//The maximum nutrient of water in the tray
 	var/pestlevel = 0		//The amount of pests in the tray (max 10)
 	var/weedlevel = 0		//The amount of weeds in the tray (max 10)
 	var/yieldmod = 1		//Nutriment's effect on yield
@@ -35,7 +35,7 @@
 	//Here lies "nutrilevel", killed by ArcaneMusic 20??-2019. Finally, we strive for a better future. Please use "reagents" instead
 	create_reagents(20)
 	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, 10) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
-	. = ..()
+	return ..()
 
 /obj/machinery/hydroponics/constructable
 	name = "hydroponics tray"
@@ -67,11 +67,16 @@
 	if(in_range(user, src) || isobserver(user))
 		. += "<span class='notice'>The status display reads: Tray efficiency at <b>[rating*100]%</b>.</span>"
 
+
 /obj/machinery/hydroponics/Destroy()
 	if(myseed)
 		qdel(myseed)
 		myseed = null
 	return ..()
+
+/obj/machinery/hydroponics/Exited()
+	if(myseed && (myseed.loc != src))
+		myseed.forceMove(src)
 
 /obj/machinery/hydroponics/constructable/attackby(obj/item/I, mob/user, params)
 	if (user.a_intent != INTENT_HARM)
@@ -92,16 +97,11 @@
 	else if(istype(Proj , /obj/projectile/energy/florayield))
 		return myseed.bullet_act(Proj)
 	else if(istype(Proj , /obj/projectile/energy/florarevolution))
-		if(myseed)
-			if(myseed.mutatelist.len > 0)
-				myseed.instability = (myseed.instability/2)
+		if(length(myseed.mutatelist))
+			myseed.adjust_instability(round(myseed.instability * 0.5))
 		mutatespecie()
 	else
 		return ..()
-
-/obj/machinery/hydroponics/Exited(atom/movable/Obj)
-	if(myseed && (myseed.loc != src))
-		myseed.forceMove(src)
 
 /obj/machinery/hydroponics/process()
 	var/needs_update = 0 // Checks if the icon needs updating so we don't redraw empty trays every time
@@ -134,6 +134,7 @@
 				lastproduce = age
 
 			needs_update = 1
+
 
 //Nutrients//////////////////////////////////////////////////////////////
 			// Nutrients deplete at a constant rate, since new nutrients can boost stats far easier.
@@ -321,6 +322,7 @@
 	if(harvest)
 		add_overlay(mutable_appearance('icons/obj/hydroponics/equipment.dmi', "over_harvest3"))
 
+
 /obj/machinery/hydroponics/examine(user)
 	. = ..()
 	if(myseed)
@@ -344,6 +346,8 @@
 	if(pestlevel >= 5)
 		to_chat(user, "<span class='warning'>It's filled with tiny worms!</span>")
 	to_chat(user, "" )
+
+
 
 /obj/machinery/hydroponics/proc/weedinvasion() // If a weed growth is sufficient, this happens.
 	dead = 0
@@ -400,7 +404,7 @@
 		return
 
 	var/oldPlantName = myseed.plantname
-	if(myseed.mutatelist.len > 0)
+	if(length(myseed.mutatelist))
 		var/mutantseed = pick(myseed.mutatelist)
 		qdel(myseed)
 		myseed = null
@@ -412,12 +416,13 @@
 	age = 0
 	plant_health = myseed.endurance
 	lastcycle = world.time
-	harvest = 0
+	harvest = TRUE
 	weedlevel = 0 // Reset
 
 	sleep(5) // Wait a while
 	update_icon()
 	visible_message("<span class='warning'>[oldPlantName] suddenly mutates into [myseed.plantname]!</span>")
+	TRAY_NAME_UPDATE
 
 /obj/machinery/hydroponics/proc/mutateweed() // If the weeds gets the mutagent instead. Mind you, this pretty much destroys the old plant
 	if( weedlevel > 5 )
@@ -437,6 +442,7 @@
 		sleep(5) // Wait a while
 		update_icon()
 		visible_message("<span class='warning'>The mutated weeds in [src] spawn some [myseed.plantname]!</span>")
+		TRAY_NAME_UPDATE
 	else
 		to_chat(usr, "<span class='warning'>The few weeds in [src] seem to react, but only for a moment...</span>")
 
@@ -454,6 +460,7 @@
 		update_icon()
 		dead = TRUE
 
+
 /obj/machinery/hydroponics/proc/mutatepest(mob/user)
 	if(pestlevel > 5)
 		message_admins("[ADMIN_LOOKUPFLW(user)] caused spiderling pests to spawn in a hydro tray")
@@ -467,6 +474,7 @@
 	//Called when mob user "attacks" it with object O
 	if(istype(O, /obj/item/reagent_containers) )  // Syringe stuff (and other reagent containers now too)
 		var/obj/item/reagent_containers/reagent_source = O
+		lastuser = REF(user)
 
 		if(istype(reagent_source, /obj/item/reagent_containers/syringe))
 			var/obj/item/reagent_containers/syringe/syr = reagent_source
@@ -536,6 +544,7 @@
 			to_chat(user, "<span class='notice'>You plant [O].</span>")
 			dead = FALSE
 			myseed = O
+			TRAY_NAME_UPDATE
 			age = 1
 			plant_health = myseed.endurance
 			lastcycle = world.time
@@ -558,8 +567,8 @@
 			if(myseed.reagents_add && P_analyzer.scan_mode == PLANT_SCANMODE_CHEMICALS)
 				to_chat(user, "- <B>Plant Reagents</B> -")
 				to_chat(user, "*---------*")
-				for(var/datum/plant_gene/reagent/gene in myseed.genes)
-					to_chat(user, "<span class='notice'>- [gene.get_name()] -</span>")
+				for(var/datum/plant_gene/reagent/Gene in myseed.genes)
+					to_chat(user, "<span class='notice'>- [Gene.get_name()] -</span>")
 				to_chat(user, "*---------*")
 		else
 			to_chat(user, "<B>No plant found.</B>")
@@ -608,8 +617,8 @@
 			update_icon()
 	else if(istype(O, /obj/item/gun/energy/floragun))
 		var/obj/item/gun/energy/floragun/flowergun = O
-		if(flowergun.cell.charge < flowergun.cell.maxcharge)
-			to_chat(user, "<span class='notice'>[flowergun] must be fully charged to lock in a mutation!</span>")
+		if(flowergun.cell.charge < REVOLUTION_CHARGE) // In case an admin var edits the gun or guns gain the ability to have their cell upgraded
+			to_chat(user, "<span class='notice'>[flowergun] must be charged to lock in a mutation!</span>")
 			return
 		if(!myseed)
 			to_chat(user, "<span class='warning'>[src] is empty!</span>")
@@ -630,7 +639,7 @@
 				return
 			myseed.mutatelist = list(fresh_mut_list[locked_mutation])
 			myseed.endurance = (myseed.endurance/2)
-			flowergun.cell.use(flowergun.cell.charge)
+			flowergun.cell.use(REVOLUTION_CHARGE)
 			flowergun.update_icon()
 			to_chat(user, "<span class='notice'>[myseed.plantname]'s mutation was set to [locked_mutation], depleting [flowergun]'s cell!</span>")
 			return
@@ -659,6 +668,7 @@
 		qdel(myseed)
 		myseed = null
 		update_icon()
+		TRAY_NAME_UPDATE
 	else
 		if(user)
 			examine(user)
@@ -702,6 +712,7 @@
 		dead = FALSE
 		name = initial(name)
 		desc = initial(desc)
+		TRAY_NAME_UPDATE
 		if(self_sustaining) //No reason to pay for an empty tray.
 			idle_power_usage = 0
 			self_sustaining = FALSE
