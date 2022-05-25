@@ -128,7 +128,7 @@
 	if(attackedLimb && (!IS_ORGANIC_LIMB(attackedLimb)) && user.a_intent != INTENT_HARM)
 		if(!tool_start_check(user, amount=1))
 			return
-		var/selfFix=(target == user)
+		var/selfFix = (target == user)
 		user.visible_message("<span class='notice'>[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)].</span>",
 			"<span class='notice'>You start fixing some of the dents on [selfFix ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)].</span>")
 		if(selfFix)
