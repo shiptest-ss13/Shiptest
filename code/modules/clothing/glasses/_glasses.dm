@@ -57,7 +57,7 @@
 				eyes.applyOrganDamage(5)
 
 /obj/item/clothing/glasses/meson
-	name = "optical meson scanner goggles"
+	name = "optical meson scanner"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting conditions."
 	icon_state = "mesongoggles"
 	item_state = "meson"
@@ -352,7 +352,7 @@
 	item_state = "bigsunglasses"
 
 /obj/item/clothing/glasses/thermal
-	name = "optical thermal scanner goggles"
+	name = "optical thermal scanner"
 	desc = "Thermals in the shape of glasses."
 	icon_state = "thermalgoggles"
 	item_state = "glasses"

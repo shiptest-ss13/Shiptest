@@ -42,9 +42,9 @@
 	desc = "[desc] The display is flickering slightly."
 
 /obj/item/clothing/glasses/hud/health
-	name = "health scanner goggles"
+	name = "health scanner HUD"
 	desc = "A heads-up display that scans the humanoids in view and provides accurate data about their health status."
-	icon_state = "healthgoggles"
+	icon_state = "healthhud"
 	hud_type = DATA_HUD_MEDICAL_ADVANCED
 	hud_trait = TRAIT_MEDICAL_HUD
 	glass_colour_type = /datum/client_colour/glass_colour/lightblue
@@ -69,9 +69,9 @@
 	glass_colour_type = /datum/client_colour/glass_colour/blue
 
 /obj/item/clothing/glasses/hud/diagnostic
-	name = "diagnostic goggles"
+	name = "diagnostic HUD"
 	desc = "A heads-up display capable of analyzing the integrity and status of robotics and exosuits."
-	icon_state = "diagnosticgoggles"
+	icon_state = "diagnostichud"
 	hud_type = DATA_HUD_DIAGNOSTIC_BASIC
 	hud_trait = TRAIT_DIAGNOSTIC_HUD
 	glass_colour_type = /datum/client_colour/glass_colour/lightorange
@@ -97,7 +97,7 @@
 /obj/item/clothing/glasses/hud/security
 	name = "security HUD"
 	desc = "A heads-up display that scans the humanoids in view and provides accurate data about their ID status and security records."
-	icon_state = "securitygoggles"
+	icon_state = "securityhud"
 	hud_type = DATA_HUD_SECURITY_ADVANCED
 	hud_trait = TRAIT_SECURITY_HUD
 	glass_colour_type = /datum/client_colour/glass_colour/red
