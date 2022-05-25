@@ -364,9 +364,9 @@
 	if(instability == UNHARVESTABLE)
 		return
 	instability = clamp(adjustamt, 0, 100)
-	var/datum/plant_gene/core/C = get_gene(/datum/plant_gene/core/instability)
-	if(C)
-		C.value = instability
+	var/datum/plant_gene/core/Core = get_gene(/datum/plant_gene/core/instability)
+	if(Core)
+		Core.value = instability
 
 /obj/item/seeds/proc/set_weed_rate(adjustamt)
 	weed_rate = clamp(adjustamt, 0, 10)
