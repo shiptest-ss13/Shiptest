@@ -104,9 +104,6 @@
 
 /obj/item/cultivator/rake/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
-
-/obj/item/cultivator/rake/Crossed(atom/movable/AM)
-	. = ..()
 	if(!ishuman(AM))
 		return
 	var/mob/living/carbon/human/H = AM
