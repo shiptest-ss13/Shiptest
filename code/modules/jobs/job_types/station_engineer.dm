@@ -51,9 +51,10 @@
 	gloves = /obj/item/clothing/gloves/color/yellow
 
 /datum/outfit/job/engineer/gloved/rig
-	name = "Mechanic (Hardsuit)"
+	name = "Mechanic (Space suit)"
 	mask = /obj/item/clothing/mask/breath
-	suit = /obj/item/clothing/suit/space/hardsuit/engine
+	suit = /obj/item/clothing/suit/space/engineer
+	head = /obj/item/clothing/mask/breath
 	suit_store = /obj/item/tank/internals/oxygen
 	head = null
 	internals_slot = ITEM_SLOT_SUITSTORE
