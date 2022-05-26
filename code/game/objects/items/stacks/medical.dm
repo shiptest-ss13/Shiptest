@@ -404,9 +404,11 @@
 /obj/item/stack/medical/bruise_pack/herb
 	name = "ashen herbal pack"
 	singular_name = "ashen herbal pack"
+	icon_state = "hbrutepack"
 	desc = "Thereputic herbs designed to treat bruises."
 
 /obj/item/stack/medical/ointment/herb
 	name = "burn ointment slurry"
 	singular_name = "burn ointment slurry"
+	icon_state = "hointment"
 	desc = "Herb slurry meant to treat burns."
