@@ -40,7 +40,7 @@
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/engineering/engineer
-	desc = "It's an orange high visibility jumpsuit worn by mechanics. It has fire resistance."
+	desc = "A thick blue jumpsuit worn by civilian mechanics. It's made from fire-resistant materials."
 	name = "mechanic's jumpsuit"
 	icon_state = "engine"
 	item_state = "b_suit"

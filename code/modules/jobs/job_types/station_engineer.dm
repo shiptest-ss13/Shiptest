@@ -54,7 +54,7 @@
 	name = "Mechanic (Space suit)"
 	mask = /obj/item/clothing/mask/breath
 	suit = /obj/item/clothing/suit/space/engineer
-	head = /obj/item/clothing/mask/breath
+	head = /obj/item/clothing/head/helmet/space/light/engineer
 	suit_store = /obj/item/tank/internals/oxygen
 	head = null
 	internals_slot = ITEM_SLOT_SUITSTORE
