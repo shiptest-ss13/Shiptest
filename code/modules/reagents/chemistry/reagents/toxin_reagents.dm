@@ -19,7 +19,7 @@
 /datum/reagent/toxin/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
 	if(chems.has_reagent(type, 1))
-		mytray.adjustToxic(round((chems.get_reagent_amount(type) * toxpwr) * 0.05))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 0.05) * toxpwr)
 
 /datum/reagent/toxin/amatoxin
 	name = "Amatoxin"

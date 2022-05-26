@@ -289,7 +289,7 @@
 		mytray.adjustWater(round(chems.get_reagent_amount(type)))
 		mytray.adjustHealth(round(chems.get_reagent_amount(type) * 0.1))
 		if(myseed)
-			myseed.adjust_instability(round(chems.get_reagent_amount(src.type) * 0.15))
+			myseed.adjust_instability(round(chems.get_reagent_amount(type) * 0.15))
 
 /datum/reagent/water/hollowwater
 	name = "Hollow Water"
