@@ -60,24 +60,26 @@
 /turf/open/floor/plating/rust,
 /area/ship/storage)
 "i" = (
-/obj/machinery/power/supermatter_crystal{
-	layer = 3.4
-	},
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/layer2,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	filter_types = list("co2","bz","o2","plasma","water_vapor","nob","no2","tritium","freon","miasma","pluox","stim")
 	},
-/obj/structure/window/spawner{
-	pixel_y = -5
+/obj/machinery/power/supermatter_crystal/shard,
+/obj/structure/window/plasma/reinforced/spawner{
+	pixel_y = -7
 	},
-/obj/structure/window/spawner/west{
-	pixel_x = -5
+/obj/structure/window/plasma/reinforced/spawner/east{
+	pixel_x = 7
 	},
-/obj/structure/window/spawner/east{
-	pixel_x = 5
+/obj/structure/window/plasma/reinforced/spawner/north{
+	pixel_y = 7
 	},
-/obj/structure/window/spawner/north{
-	pixel_y = 5
+/obj/structure/window/plasma/reinforced/spawner/west{
+	pixel_x = -7
+	},
+/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/layer4,
+/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w{
+	layer = 3
 	},
 /turf/open/floor/plating{
 	initial_gas_mix = "n2o=28, n2=72;TEMP=7"
@@ -235,7 +237,7 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer1,
 /obj/item/clothing/suit/space/orange,
 /obj/item/gun/energy/e_gun/mini{
-	name = "engine ignition key"
+	name = "engine ignition device"
 	},
 /obj/item/analyzer,
 /obj/item/multitool,
@@ -252,9 +254,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "R" = (
-/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w{
-	layer = 3
-	},
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -265,6 +264,7 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/layer4,
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w,
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/layer2,
 /turf/open/floor/plating/rust,
 /area/ship/storage)
 
