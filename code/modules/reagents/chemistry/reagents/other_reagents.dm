@@ -1652,10 +1652,10 @@
 
 /datum/reagent/plantnutriment/endurogrow/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
 	. = ..()
-	if(myseed && chems.has_reagent(src.type, 1))
-		myseed.adjust_potency(-round(chems.get_reagent_amount(src.type) * 0.1))
-		myseed.adjust_yield(-round(chems.get_reagent_amount(src.type) * 0.075))
-		myseed.adjust_endurance(round(chems.get_reagent_amount(src.type) * 0.35))
+	if(myseed && chems.has_reagent(type, 1))
+		myseed.adjust_potency(-round(chems.get_reagent_amount(type) * 0.1))
+		myseed.adjust_yield(-round(chems.get_reagent_amount(type) * 0.075))
+		myseed.adjust_endurance(round(chems.get_reagent_amount(type) * 0.35))
 
 /datum/reagent/plantnutriment/liquidearthquake
 	name = "Liquid Earthquake"
@@ -1665,10 +1665,10 @@
 
 /datum/reagent/plantnutriment/liquidearthquake/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
 	. = ..()
-	if(myseed && chems.has_reagent(src.type, 1))
-		myseed.adjust_weed_rate(round(chems.get_reagent_amount(src.type) * 0.1))
-		myseed.adjust_weed_chance(round(chems.get_reagent_amount(src.type) * 0.3))
-		myseed.adjust_production(-round(chems.get_reagent_amount(src.type) * 0.075))
+	if(myseed && chems.has_reagent(type, 1))
+		myseed.adjust_weed_rate(round(chems.get_reagent_amount(type) * 0.1))
+		myseed.adjust_weed_chance(round(chems.get_reagent_amount(type) * 0.3))
+		myseed.adjust_production(-round(chems.get_reagent_amount(type) * 0.075))
 
 
 
@@ -1992,7 +1992,7 @@
 
 /datum/reagent/saltpetre/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
-	if(chems.has_reagent(src.type, 1))
+	if(chems.has_reagent(type, 1))
 		var/salt = chems.get_reagent_amount(type)
 		mytray.adjustHealth(round(salt * 0.18))
 		if(myseed)
