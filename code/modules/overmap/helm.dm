@@ -115,7 +115,9 @@
 		current_ship.helms |= src
 
 /obj/machinery/computer/helm/ui_interact(mob/living/user, datum/tgui/ui)
-	// Update UI
+	if(!isliving(user))
+		return
+
 	if(!current_ship && !reload_ship())
 		return
 
@@ -131,13 +133,9 @@
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		var/user_ref = REF(user)
-		var/is_living = isliving(user)
-		// Ghosts shouldn't count towards concurrent users, which produces
-		// an audible terminal_on click.
-		if(is_living)
-			concurrent_users += user_ref
+		concurrent_users += user_ref
 		// Turn on the console
-		if(length(concurrent_users) == 1 && is_living)
+		if(length(concurrent_users) == 1)
 			playsound(src, 'sound/machines/terminal_on.ogg', 25, FALSE)
 			use_power(active_power_usage)
 		// Register map objects
