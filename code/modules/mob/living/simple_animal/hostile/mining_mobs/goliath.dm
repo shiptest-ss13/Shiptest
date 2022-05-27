@@ -364,6 +364,9 @@
 /obj/effect/temp_visual/goliath_tentacle/crystal/get_directions()
 	return GLOB.cardinals.Copy() + GLOB.diagonals.Copy()
 
+/obj/effect/temp_visual/goliath_tentacle/crystal/visual_only/on_hit(mob/living/L)
+	return
+
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal
 	name = "crystal goliath"
 	desc = "Once a goliath, it is now an abomination composed of undead flesh and crystals that sprout throughout it's decomposing body."
@@ -379,19 +382,33 @@
 	tentacle_recheck_cooldown = 50
 	speed = 2
 	can_charge = FALSE
+	var/spiral_attack_inprogress = FALSE
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/OpenFire()
 	. = ..()
-	visible_message("<span class='warning'>[src] expels it's matter, releasing a spray of crystalline shards!</span>")
-	INVOKE_ASYNC(src,.proc/spray_of_crystals)
-	shoot_projectile(Get_Angle(src,target) + 10)
-	shoot_projectile(Get_Angle(src,target))
-	shoot_projectile(Get_Angle(src,target) - 10)
+	shake_animation(20)
+	visible_message("<span class='warning'>[src] convulses violently!! Get back!!</span>")
+	playsound(loc, 'sound/effects/magic.ogg', 100, TRUE)
+	addtimer(CALLBACK(src, .proc/open_fire_2), 1 SECONDS)
+
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/open_fire_2()
+	if(prob(20) && !(spiral_attack_inprogress))
+		visible_message("<span class='warning'>[src] sprays crystalline shards in a circle!</span>")
+		playsound(loc, 'sound/magic/charge.ogg', 100, TRUE)
+		INVOKE_ASYNC(src,.proc/spray_of_crystals)
+	else
+		visible_message("<span class='warning'>[src] expels it's matter, releasing a spray of crystalline shards!</span>")
+		playsound(loc, 'sound/effects/bamf.ogg', 100, TRUE)
+		shoot_projectile(Get_Angle(src,target) + 10)
+		shoot_projectile(Get_Angle(src,target))
+		shoot_projectile(Get_Angle(src,target) - 10)
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/spray_of_crystals()
+	spiral_attack_inprogress = TRUE
 	for(var/i in 0 to 9)
 		shoot_projectile(i*(180/NUM_E))
 		sleep(3)
+	spiral_attack_inprogress = FALSE
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/shoot_projectile(angle)
 	var/obj/projectile/P = new /obj/projectile/goliath(get_turf(src))

@@ -8,6 +8,8 @@
 	var/blockTracking = 0 //For AI tracking
 	var/can_toggle = null
 	dynamic_hair_suffix = "+generic"
+	greyscale_icon_state = "hat"
+	greyscale_colors = list(list(16,26))
 
 /obj/item/clothing/head/Initialize()
 	. = ..()

@@ -2,7 +2,7 @@
 	name = "\improper Mothman"
 	id = SPECIES_MOTH
 	default_color = "00FF00"
-	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE)
+	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE, HAIR)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	mutant_bodyparts = list("moth_wings", "moth_fluff", "moth_markings")
 	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", "body_size" = "Normal")
@@ -11,7 +11,7 @@
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/moth
-	liked_food = FRUIT | VEGETABLES | DAIRY | CLOTH
+	liked_food = FRUIT | SUGAR
 	disliked_food = GROSS
 	toxic_food = MEAT | RAW
 	mutanteyes = /obj/item/organ/eyes/compound 	//WS Edit - Compound eyes
@@ -79,10 +79,10 @@
 		handle_mutant_bodyparts(H)
 
 /datum/species/moth/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
-	. = ..()
 	if(chem.type == /datum/reagent/toxin/pestkiller)
 		H.adjustToxLoss(3)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
+	return ..()
 
 /datum/species/moth/check_species_weakness(obj/item/weapon, mob/living/attacker)
 	if(istype(weapon, /obj/item/melee/flyswatter))

@@ -314,14 +314,14 @@
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/warmhug, M) // You got a warm hug
 
 		// Let people know if they hugged someone really warm or really cold
-		if(M.bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
+		if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
 			to_chat(src, "<span class='warning'>It feels like [M] is over heating as they hug you.</span>")
-		else if(M.bodytemperature < BODYTEMP_COLD_DAMAGE_LIMIT)
+		else if(M.bodytemperature < M.dna.species.bodytemp_cold_damage_limit)
 			to_chat(src, "<span class='warning'>It feels like [M] is freezing as they hug you.</span>")
 
-		if(bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
+		if(bodytemperature > dna.species.bodytemp_heat_damage_limit)
 			to_chat(M, "<span class='warning'>It feels like [src] is over heating as you hug them.</span>")
-		else if(bodytemperature < BODYTEMP_COLD_DAMAGE_LIMIT)
+		else if(bodytemperature < dna.species.bodytemp_cold_damage_limit)
 			to_chat(M, "<span class='warning'>It feels like [src] is freezing as you hug them.</span>")
 
 		if(HAS_TRAIT(M, TRAIT_FRIENDLY))

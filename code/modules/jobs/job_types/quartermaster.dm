@@ -9,6 +9,8 @@
 	wiki_page = "Quartermaster" //WS Edit - Wikilinks/Warning
 	officer = TRUE
 	exp_type_department = EXP_TYPE_SUPPLY // This is so the jobs menu can work properly
+	alt_titles = list("Supply Chief", "Requisitions Officer")
+	senior_title = "Chief Economist"
 
 	outfit = /datum/outfit/job/quartermaster
 
@@ -64,3 +66,13 @@
 	suit = /obj/item/clothing/suit/hazardvest/donk/qm
 	ears = /obj/item/radio/headset/syndicate/alt
 	shoes = /obj/item/clothing/shoes/laceup
+
+/datum/outfit/job/quartermaster/requisitionsofficer
+	name = "Requisitions Officer"
+	suit = /obj/item/clothing/suit/jacket/miljacket
+	head = /obj/item/clothing/head/soft/black
+
+/datum/outfit/job/quartermaster/chiefeconomist
+	name = "Chief Economist"
+	uniform = /obj/item/clothing/under/suit/tan
+	neck = /obj/item/clothing/neck/tie/brown

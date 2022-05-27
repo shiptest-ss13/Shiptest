@@ -11,7 +11,6 @@
 	density = TRUE
 	layer = MOB_LAYER
 	animate_movement = SLIDE_STEPS
-	flags_1 = HEAR_1
 	hud_possible = list(ANTAG_HUD)
 	pressure_resistance = 8
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
@@ -89,7 +88,7 @@
 	var/name_archive //For admin things like possession
 
 	/// Default body temperature
-	var/bodytemperature = BODYTEMP_NORMAL	//310.15K / 98.6F
+	var/bodytemperature = HUMAN_BODYTEMP_NORMAL	//310.15K / 98.6F
 	/// Drowsyness level of the mob
 	var/drowsyness = 0//Carbon
 	/// Dizziness level of the mob
