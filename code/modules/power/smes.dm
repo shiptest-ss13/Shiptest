@@ -233,7 +233,7 @@
 		SSvis_overlays.add_vis_overlay(src, icon, "emp", layer, EMISSIVE_PLANE, dir)
 	else
 		if(inputting)
-			if(clevel == 5)
+			if(clevel == SMES_CLEVEL_5)
 				. += "input-2"
 				SSvis_overlays.add_vis_overlay(src, icon, "input-2", layer, plane, dir)
 				SSvis_overlays.add_vis_overlay(src, icon, "input-2", layer, EMISSIVE_PLANE, dir)
@@ -251,7 +251,7 @@
 			SSvis_overlays.add_vis_overlay(src, icon, "input-off", layer, EMISSIVE_PLANE, dir)
 
 		if(outputting)
-			if(clevel == 5)
+			if(clevel == SMES_CLEVEL_5)
 				. += "output2"
 				SSvis_overlays.add_vis_overlay(src, icon, "output2", layer, plane, dir)
 				SSvis_overlays.add_vis_overlay(src, icon, "output2", layer, EMISSIVE_PLANE, dir)
