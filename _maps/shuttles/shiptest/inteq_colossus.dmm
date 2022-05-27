@@ -440,6 +440,10 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "eX" = (
@@ -975,16 +979,6 @@
 /obj/effect/turf_decal/floordetail/edgedrain,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"lk" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -24
-	},
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/cargo)
 "lr" = (
 /obj/item/storage/firstaid/regular{
 	pixel_x = 5
@@ -1255,6 +1249,10 @@
 /obj/item/pickaxe/mini,
 /obj/item/pickaxe/mini,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "nW" = (
@@ -1558,6 +1556,7 @@
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_x = 32
 	},
+/obj/item/pushbroom,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "qM" = (
@@ -2711,11 +2710,12 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/radio/intercom{
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "CP" = (
@@ -2999,19 +2999,23 @@
 "Hc" = (
 /obj/structure/closet/emcloset/empty{
 	anchored = 1;
+	can_be_unanchored = 1;
 	name = "oxygen closet"
 	},
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/item/tank/internals/plasmaman/full,
+/obj/item/tank/internals/plasmaman/full,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
 "Hp" = (
@@ -3033,13 +3037,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"Hq" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -32
-	},
-/obj/structure/weightmachine/weightlifter,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/cargo)
 "Hr" = (
 /obj/machinery/light_switch{
 	dir = 4;
@@ -3205,10 +3202,6 @@
 	dir = 10
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 24
-	},
 /obj/machinery/firealarm{
 	pixel_y = 28
 	},
@@ -3237,7 +3230,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "KM" = (
-/obj/structure/reagent_dispensers/watertank,
+/obj/structure/closet/emcloset/wall{
+	dir = 4;
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Lg" = (
@@ -4515,7 +4511,8 @@
 	piping_layer = 2
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/extinguisher_cabinet{
+/obj/structure/closet/firecloset/wall{
+	dir = 4;
 	pixel_x = -32
 	},
 /turf/open/floor/plating,
@@ -4760,8 +4757,8 @@ CO
 nV
 kV
 uB
-lk
-Hq
+Cy
+Ve
 YZ
 vH
 rh
