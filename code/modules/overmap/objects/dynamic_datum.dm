@@ -299,6 +299,7 @@
 /area/overmap_encounter/planetoid/reebe
 	name = "\improper Yellow Space"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	area_flags = HIDDEN_AREA | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
 
 /area/overmap_encounter/planetoid/reebe/Entered(atom/movable/AM)
