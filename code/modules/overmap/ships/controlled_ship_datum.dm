@@ -30,6 +30,12 @@
 	var/list/job_slots = list(new /datum/job/captain() = 1, new /datum/job/assistant() = 5)
 	///Manifest list of people on the ship
 	var/list/manifest = list()
+	/// The shipkey for this ship
+	var/obj/item/key/ship/shipkey
+	/// All helms connected to this ship
+	var/list/obj/machinery/computer/helm/helms = list()
+	/// Is helm access for this ship locked
+	var/helm_locked = FALSE
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 	///Whether or not new players are allowed to join the ship
@@ -47,6 +53,8 @@
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
 	shuttle_port?.name = new_name
 	ship_account.account_holder = new_name
+	if(shipkey)
+		shipkey.name = "ship key ([new_name])"
 	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
 	if(!force)
@@ -92,6 +100,21 @@
 	if(!shuttle_port.check_dock(ticket.target_port))
 		return FALSE
 	return TRUE
+
+/datum/overmap/ship/controlled/proc/attempt_key_usage(mob/user, obj/item/key/ship/shipkey, obj/machinery/computer/helm/target_helm)
+	user.changeNext_move(CLICK_CD_MELEE)
+
+	if(shipkey.master_ship != src)
+		target_helm?.say("Invalid shipkey usage attempted, forcibly locking down.")
+		helm_locked = TRUE
+	else
+		helm_locked = !helm_locked
+		playsound(src, helm_locked ? 'sound/machines/button4.ogg' : 'sound/machines/button3.ogg')
+
+	for(var/obj/machinery/computer/helm/helm as anything in helms)
+		SStgui.close_uis(helm)
+		helm.say(helm_locked ? "Helm console is now locked." : "Helm console has been unlocked.")
+
 
 /datum/overmap/ship/controlled/start_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	log_shuttle("[src] [REF(src)] DOCKING: STARTED REQUEST FOR [to_dock] AT [ticket.target_port]")
@@ -238,3 +261,25 @@
 	shuttle_port.name = name
 	for(var/area/shuttle_area as anything in shuttle_port.shuttle_areas)
 		shuttle_area.rename_area("[name] [initial(shuttle_area.name)]")
+
+/obj/item/key/ship
+	name = "ship key"
+	var/datum/overmap/ship/controlled/master_ship
+
+/obj/item/key/ship/Initialize(mapload, datum/overmap/ship/controlled/master_ship)
+	. = ..()
+	src.master_ship = master_ship
+	master_ship.shipkey = src
+	name = "ship key ([master_ship.name])"
+
+/obj/item/key/ship/Destroy()
+	master_ship.shipkey = null
+	master_ship = null
+	return ..()
+
+/obj/item/key/ship/attack_self(mob/user)
+	if(!master_ship || !Adjacent(user))
+		return ..()
+
+	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
+	return TRUE
