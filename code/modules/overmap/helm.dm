@@ -115,7 +115,6 @@
 		current_ship.helms |= src
 
 /obj/machinery/computer/helm/ui_interact(mob/living/user, datum/tgui/ui)
-	var/user_ref = REF(user)
 	if(!isliving(user))
 		return
 
@@ -133,6 +132,7 @@
 
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
+		var/user_ref = REF(user)
 		concurrent_users += user_ref
 		// Turn on the console
 		if(length(concurrent_users) == 1)
