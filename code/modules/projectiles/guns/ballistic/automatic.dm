@@ -83,7 +83,7 @@
 
 /obj/item/gun/ballistic/automatic/c20r/cobra
 	name = "\improper Cobra 20"
-	desc = "Scarborough Arms's attempt to produce a cheaper C-20r for civillian use. Chambered in .45. "
+	desc = "An older model of SMG manufactured by Scarborough Arms, a predecessor to the military C-20 series. Chambered in .45. "
 	can_bayonet = FALSE
 
 	icon_state = "cobra20"
