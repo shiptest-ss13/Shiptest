@@ -46,6 +46,12 @@
 
 	dog_fashion = /datum/dog_fashion/head/captain
 
+/obj/item/clothing/head/collectable/maeborowski
+	name = "Collectable Cat Hat"
+	desc = "A collectable hat. It must belong to some game's merch collection."
+	icon_state = "maeborowski"
+	item_state = "mae"
+
 /obj/item/clothing/head/collectable/police
 	name = "collectable police officer's hat"
 	desc = "A collectable police officer's Hat. This hat emphasizes that you are THE LAW."
