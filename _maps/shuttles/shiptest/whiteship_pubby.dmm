@@ -350,9 +350,6 @@
 /turf/open/floor/engine,
 /area/ship/cargo)
 "iC" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -361,6 +358,9 @@
 /obj/machinery/light,
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 28
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -629,7 +629,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "pz" = (
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -640,6 +639,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "pF" = (
