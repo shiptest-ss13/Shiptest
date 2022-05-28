@@ -29,6 +29,8 @@
 	var/calibrating = FALSE
 	///holding jump timer ID
 	var/jump_timer
+	/// store an ntnet relay for tablets on the ship
+	var/obj/machinery/ntnet_relay/integrated/ntnet_relay
 
 /datum/config_entry/number/bluespace_jump_wait
 	default = 30 MINUTES
@@ -36,6 +38,7 @@
 /obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
 	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
+	ntnet_relay = new(src)
 
 /obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
 	if(jump_allowed < 0)
