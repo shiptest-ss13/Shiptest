@@ -28,7 +28,7 @@
 	//For some reason everything was exploding if this was static.
 	var/list/sub_managers
 
-	var/cooldown = 0
+	COOLDOWN_DECLARE(silicon_access_print_cooldown)
 
 /datum/computer_file/program/card_mod/New(obj/item/modular_computer/comp)
 	. = ..()
@@ -266,14 +266,14 @@
 		if ( "PRG_printsiliconaccess" )
 			if(!computer || !authenticated || !computer.req_ship_access)
 				return
-			if ( cooldown > world.time )
+			if(!COOLDOWN_FINISHED(src, silicon_access_print_cooldown))
 				computer.say("Printer unavailable. Please allow a short time before attempting to print.")
 				return
 			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
 			if ( ship )
 				var/obj/item/borg/upgrade/ship_access_chip/chip = new( get_turf( computer ) )
 				chip.ship = ship
-				cooldown = world.time + 10 SECONDS
+				COOLDOWN_START(src, silicon_access_print_cooldown, 10 SECONDS)
 			playsound(computer, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			return TRUE
 		if("PRG_grantall")
