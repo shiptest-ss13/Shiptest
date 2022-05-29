@@ -859,6 +859,8 @@
 		immerse_player(M, toggle=FALSE, remove=remove)
 
 /proc/pie_smite(mob/living/target)
+	if(QDELETED(target))
+		return
 	var/obj/item/reagent_containers/food/snacks/pie/cream/nostun/creamy = new(get_turf(target))
 	creamy.splat(target)
 
@@ -966,6 +968,8 @@
 			if(!pie_count)
 				return
 			for(var/x in 1 to pie_count)
+				if(QDELETED(target))
+					return
 				addtimer(CALLBACK(GLOBAL_PROC, .proc/pie_smite, target), delay_counter)
 				delay_counter += 1
 	punish_log(target, punishment)
