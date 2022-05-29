@@ -771,6 +771,23 @@
 /obj/effect/turf_decal/steeldecal/steel_decals9,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"nv" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "nF" = (
 /obj/structure/railing{
 	dir = 1
@@ -932,13 +949,11 @@
 /turf/open/floor/plating/grass,
 /area/ship/science)
 "qs" = (
-/obj/machinery/shower{
-	desc = "The HS-452. Installed recently by the DonkCo Hygiene Division.";
-	dir = 4;
-	name = "emergency shower"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/shower{
+	dir = 4
+	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/engineering)
 "qv" = (
@@ -2005,6 +2020,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/window/eastleft{
 	dir = 1;
 	name = "Engine Access"
@@ -2295,24 +2311,6 @@
 	},
 /turf/open/floor/pod/light,
 /area/ship/security)
-"Nc" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/window/plasma/reinforced/spawner/east,
-/obj/machinery/door/window/eastleft{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Ni" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -3302,7 +3300,7 @@ zr
 OL
 it
 JP
-Nc
+Hs
 Fa
 "}
 (6,1,1) = {"
@@ -3333,7 +3331,7 @@ sv
 US
 Mj
 qI
-Hs
+nv
 Fa
 "}
 (7,1,1) = {"
@@ -3519,7 +3517,7 @@ UW
 US
 gl
 dd
-Nc
+Hs
 Fa
 "}
 (13,1,1) = {"
@@ -3550,7 +3548,7 @@ PS
 AF
 SS
 JP
-Nc
+Hs
 Fa
 "}
 (14,1,1) = {"
