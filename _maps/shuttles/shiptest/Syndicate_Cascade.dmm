@@ -35,6 +35,10 @@
 /obj/effect/turf_decal/corner/lime/border{
 	dir = 8
 	},
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "bi" = (
@@ -1037,6 +1041,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/item/circuitboard/computer/rdconsole,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "sB" = (
@@ -1069,6 +1074,10 @@
 "tx" = (
 /obj/structure/railing{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
 	},
 /turf/open/floor/plasteel/stairs,
 /area/ship/bridge)
@@ -1123,6 +1132,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/science)
@@ -1249,6 +1262,10 @@
 /obj/item/clothing/gloves/color/latex/nitrile/evil{
 	pixel_y = -3;
 	pixel_x = 1
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -26
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1459,13 +1476,13 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
 	},
-/obj/machinery/shower{
-	pixel_y = 19
-	},
 /obj/item/soap/syndie,
 /obj/item/bikehorn/rubberducky,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 26
+	},
+/obj/machinery/shower{
+	dir = 8
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/crew/dorm)
@@ -1671,10 +1688,10 @@
 /obj/structure/table/reinforced,
 /obj/machinery/computer/med_data/laptop{
 	dir = 8;
-	pixel_x = 6;
-	pixel_y = 4;
 	generic_canpass = 0;
-	pass_flags = 0
+	pass_flags = 0;
+	pixel_y = 5;
+	pixel_x = 3
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -1734,23 +1751,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"EA" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/door/window/eastleft{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "EO" = (
 /obj/structure/railing{
 	dir = 1
@@ -1819,6 +1819,10 @@
 /obj/machinery/light,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/machinery/firealarm{
+	pixel_y = -28;
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -2001,7 +2005,6 @@
 	icon_state = "0-2"
 	},
 /obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/window/eastleft{
 	dir = 1;
 	name = "Engine Access"
@@ -2286,8 +2289,30 @@
 	dir = 4
 	},
 /obj/effect/landmark/start/security_officer,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
+	},
 /turf/open/floor/pod/light,
 /area/ship/security)
+"Nc" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Ni" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -2328,9 +2353,6 @@
 	},
 /obj/structure/railing{
 	dir = 1
-	},
-/obj/item/reagent_containers/hypospray/combat{
-	pixel_x = -6
 	},
 /obj/item/storage/fancy/cigarettes/cigars/havana{
 	pixel_y = 7;
@@ -3044,7 +3066,6 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/obj/effect/landmark/start/geneticist,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "Zr" = (
@@ -3281,7 +3302,7 @@ zr
 OL
 it
 JP
-Hs
+Nc
 Fa
 "}
 (6,1,1) = {"
@@ -3312,7 +3333,7 @@ sv
 US
 Mj
 qI
-EA
+Hs
 Fa
 "}
 (7,1,1) = {"
@@ -3498,7 +3519,7 @@ UW
 US
 gl
 dd
-Hs
+Nc
 Fa
 "}
 (13,1,1) = {"
@@ -3529,7 +3550,7 @@ PS
 AF
 SS
 JP
-Hs
+Nc
 Fa
 "}
 (14,1,1) = {"
