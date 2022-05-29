@@ -405,15 +405,14 @@
 	dir = 1
 	},
 /obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/door/window/eastright{
+/obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/window/eastleft{
 	dir = 1;
 	name = "Engine Access"
 	},
-/obj/machinery/door/poddoor{
-	id = "osprey_thruster_port";
-	name = "thruster blast door"
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
 	},
-/obj/structure/window/plasma/reinforced/spawner/east,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "it" = (
@@ -955,13 +954,12 @@
 	dir = 1
 	},
 /obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/door/window/eastright{
+/obj/machinery/door/window/eastleft{
 	dir = 1;
 	name = "Engine Access"
 	},
-/obj/machinery/door/poddoor{
-	id = "osprey_thruster_port";
-	name = "thruster blast door"
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1743,6 +1741,12 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/button/door{
+	id = "Cascade_engine";
+	name = "engine lockdown";
+	pixel_y = -25;
+	dir = 1
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 8
 	},
@@ -1855,6 +1859,24 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"Gx" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1983,10 +2005,8 @@
 	dir = 1;
 	name = "Engine Access"
 	},
-/obj/structure/window/plasma/reinforced/spawner/east,
-/obj/machinery/door/poddoor{
-	id = "osprey_thruster_starboard";
-	name = "thruster blast door"
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2241,6 +2261,12 @@
 /obj/structure/railing,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	id = "Cascade_engine";
+	name = "engine lockdown";
+	pixel_y = -25;
+	dir = 1
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4
@@ -3254,7 +3280,7 @@ zr
 OL
 it
 JP
-Hs
+Gx
 Fa
 "}
 (6,1,1) = {"
@@ -3471,7 +3497,7 @@ UW
 US
 gl
 dd
-Hs
+Gx
 Fa
 "}
 (13,1,1) = {"
@@ -3502,7 +3528,7 @@ PS
 AF
 SS
 JP
-Hs
+Gx
 Fa
 "}
 (14,1,1) = {"
