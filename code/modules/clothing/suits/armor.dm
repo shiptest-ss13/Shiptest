@@ -373,8 +373,8 @@
 		/obj/item/ammo_box,
 		/obj/item/gun/ballistic,
 		/obj/item/gun/energy,
-		/obj/item/melee/baton
-		)
+		/obj/item/melee/baton,
+	)
 
 /obj/item/clothing/suit/armor/vest/lieutenant
 	name = "lieutenant's armor"
