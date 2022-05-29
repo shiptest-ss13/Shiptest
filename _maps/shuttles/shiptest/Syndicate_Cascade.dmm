@@ -188,7 +188,6 @@
 	dir = 8;
 	pixel_y = -10
 	},
-/obj/effect/landmark/start/station_engineer,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "eE" = (
@@ -244,7 +243,6 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/obj/effect/landmark/start/quartermaster,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -259,23 +257,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering)
-"gs" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/door/window/eastleft{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
-	},
-/turf/open/floor/plating,
 /area/ship/engineering)
 "gD" = (
 /obj/structure/fans/tiny,
@@ -618,7 +599,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/effect/landmark/start/paramedic,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -654,6 +634,23 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"kI" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "kY" = (
 /obj/structure/chair/office/light{
 	dir = 4
@@ -721,7 +718,6 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/obj/effect/landmark/start/chief_medical_officer,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "mD" = (
@@ -1072,7 +1068,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/effect/landmark/start/shaft_miner,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "tt" = (
@@ -1173,7 +1168,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/effect/landmark/start/medical_doctor,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "uq" = (
@@ -1376,7 +1370,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/station_engineer,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -2162,7 +2155,6 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/effect/landmark/start/security_officer,
 /turf/open/floor/pod/light,
 /area/ship/security)
 "Kv" = (
@@ -3337,7 +3329,7 @@ sv
 US
 Mj
 qI
-gs
+kI
 Fa
 "}
 (7,1,1) = {"
