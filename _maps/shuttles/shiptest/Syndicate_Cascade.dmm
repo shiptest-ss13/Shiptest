@@ -46,11 +46,22 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
 "bk" = (
-/mob/living/carbon/monkey,
-/turf/open/floor/plating/beach/coastline_b{
+/obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
 	},
-/area/ship/science)
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "bm" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -1179,12 +1190,6 @@
 	},
 /turf/open/floor/pod/light,
 /area/ship/security)
-"ur" = (
-/mob/living/carbon/monkey,
-/turf/open/floor/plating/beach/coastline_t{
-	dir = 1
-	},
-/area/ship/science)
 "vC" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
@@ -2002,6 +2007,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/window/eastleft{
 	dir = 1;
 	name = "Engine Access"
@@ -2679,24 +2685,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
-"UK" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/window/plasma/reinforced/spawner/east,
-/obj/machinery/door/window/eastleft{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "US" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
@@ -3302,7 +3290,7 @@ zr
 OL
 it
 JP
-UK
+Hs
 Fa
 "}
 (6,1,1) = {"
@@ -3333,7 +3321,7 @@ sv
 US
 Mj
 qI
-Hs
+bk
 Fa
 "}
 (7,1,1) = {"
@@ -3341,8 +3329,8 @@ vI
 Nq
 tW
 eE
-ur
-YU
+Ao
+jq
 YU
 cy
 xi
@@ -3404,7 +3392,7 @@ Nq
 Nq
 eE
 Ao
-YU
+jq
 BU
 YU
 dj
@@ -3433,7 +3421,7 @@ wy
 vI
 Nq
 Nq
-bk
+eE
 Ao
 YU
 YU
@@ -3519,7 +3507,7 @@ UW
 US
 gl
 dd
-UK
+Hs
 Fa
 "}
 (13,1,1) = {"
@@ -3550,7 +3538,7 @@ PS
 AF
 SS
 JP
-UK
+Hs
 Fa
 "}
 (14,1,1) = {"
