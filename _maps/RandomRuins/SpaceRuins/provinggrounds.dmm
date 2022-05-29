@@ -506,12 +506,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/deployable_turret,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/syndicircle/research)
 "pb" = (
-/obj/machinery/manned_turret{
-	dir = 8
-	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/syndicircle/research)
 "pk" = (
@@ -671,7 +669,6 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/syndicircle/research)
 "tV" = (
-/obj/machinery/manned_turret,
 /obj/item/ammo_casing/mm712x82/match,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/syndicircle/research)
@@ -863,13 +860,6 @@
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/syndicircle/research)
-"xY" = (
-/obj/machinery/manned_turret{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/snow/atmosphere,
-/area/ruin/space/has_grav/syndicircle/winter)
 "yf" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1864,8 +1854,8 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/syndicircle/escape)
 "Yh" = (
-/obj/structure/window/shuttle/tinted,
 /obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle/tinted,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/space/has_grav/syndicircle/escape)
 "Yr" = (
@@ -2735,7 +2725,7 @@ nZ
 ta
 bL
 bL
-xY
+bD
 bL
 oS
 lv
