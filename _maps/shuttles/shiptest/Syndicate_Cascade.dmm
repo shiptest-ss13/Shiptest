@@ -377,7 +377,9 @@
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/north,
-/obj/item/storage/firstaid/tactical,
+/obj/item/storage/firstaid/o2{
+	pixel_x = -3
+	},
 /obj/item/storage/firstaid/brute{
 	pixel_x = 4;
 	pixel_y = 4
@@ -800,23 +802,6 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/science)
-"ob" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/door/window/eastleft{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "oh" = (
 /obj/structure/railing{
 	dir = 1
@@ -1274,6 +1259,10 @@
 	dir = 1;
 	pixel_y = -26
 	},
+/obj/item/storage/pill_bottle/mannitol{
+	pixel_x = 10;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "wn" = (
@@ -1636,7 +1625,6 @@
 /area/ship/science)
 "BU" = (
 /obj/item/reagent_containers/food/snacks/grown/banana,
-/mob/living/carbon/monkey,
 /turf/open/floor/plating/grass,
 /area/ship/science)
 "Cb" = (
@@ -2014,7 +2002,6 @@
 	icon_state = "0-2"
 	},
 /obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/window/eastleft{
 	dir = 1;
 	name = "Engine Access"
@@ -2189,11 +2176,14 @@
 /obj/effect/turf_decal/corner/red/diagonal,
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/eastleft,
-/obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/medical{
 	pixel_x = -5;
 	pixel_y = -4
 	},
+/obj/item/storage/firstaid/regular{
+	pixel_x = 4
+	},
+/obj/item/storage/firstaid/fire,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "LR" = (
@@ -2650,10 +2640,6 @@
 	pixel_y = 7;
 	pixel_x = 6
 	},
-/obj/item/clothing/glasses/hud/health{
-	pixel_y = 3;
-	pixel_x = 6
-	},
 /obj/item/clothing/glasses/hud/health/prescription{
 	pixel_y = 13
 	},
@@ -2693,6 +2679,24 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"UK" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "US" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
@@ -3298,7 +3302,7 @@ zr
 OL
 it
 JP
-Hs
+UK
 Fa
 "}
 (6,1,1) = {"
@@ -3329,7 +3333,7 @@ sv
 US
 Mj
 qI
-ob
+Hs
 Fa
 "}
 (7,1,1) = {"
@@ -3337,8 +3341,8 @@ vI
 Nq
 tW
 eE
-Ao
-jq
+ur
+YU
 YU
 cy
 xi
@@ -3367,12 +3371,12 @@ US
 vI
 Nq
 Nq
-bk
+eE
 Ao
 YU
 HR
-jq
 YU
+jq
 yC
 MF
 WY
@@ -3429,8 +3433,8 @@ wy
 vI
 Nq
 Nq
-eE
-ur
+bk
+Ao
 YU
 YU
 Pk
@@ -3463,7 +3467,7 @@ Nq
 eE
 mX
 qo
-jq
+YU
 wq
 Kv
 tR
@@ -3494,7 +3498,7 @@ Vc
 ZY
 pX
 Bp
-YU
+jq
 VP
 nF
 YM
@@ -3515,7 +3519,7 @@ UW
 US
 gl
 dd
-Hs
+UK
 Fa
 "}
 (13,1,1) = {"
@@ -3546,7 +3550,7 @@ PS
 AF
 SS
 JP
-Hs
+UK
 Fa
 "}
 (14,1,1) = {"
