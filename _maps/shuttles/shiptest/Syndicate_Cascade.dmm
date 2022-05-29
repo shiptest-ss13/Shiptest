@@ -231,6 +231,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
+/obj/effect/mapping_helpers/dead_body_placer,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
 "gk" = (
@@ -1733,6 +1734,23 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"EA" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "EO" = (
 /obj/structure/railing{
 	dir = 1
@@ -1862,24 +1880,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Gx" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/window/plasma/reinforced/spawner/east,
-/obj/machinery/door/window/eastleft{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "GA" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -2001,6 +2001,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/window/eastleft{
 	dir = 1;
 	name = "Engine Access"
@@ -3280,7 +3281,7 @@ zr
 OL
 it
 JP
-Gx
+Hs
 Fa
 "}
 (6,1,1) = {"
@@ -3311,7 +3312,7 @@ sv
 US
 Mj
 qI
-Hs
+EA
 Fa
 "}
 (7,1,1) = {"
@@ -3497,7 +3498,7 @@ UW
 US
 gl
 dd
-Gx
+Hs
 Fa
 "}
 (13,1,1) = {"
@@ -3528,7 +3529,7 @@ PS
 AF
 SS
 JP
-Gx
+Hs
 Fa
 "}
 (14,1,1) = {"
