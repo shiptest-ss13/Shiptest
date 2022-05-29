@@ -45,24 +45,6 @@
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
-"bk" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/window/plasma/reinforced/spawner/east,
-/obj/machinery/door/window/eastleft{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "bm" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -124,6 +106,8 @@
 "cy" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
+/obj/item/reagent_containers/food/snacks/monkeycube,
+/obj/effect/particle_effect/water,
 /turf/open/floor/plating/grass,
 /area/ship/science)
 "cF" = (
@@ -528,7 +512,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "jq" = (
-/mob/living/carbon/monkey,
+/obj/effect/particle_effect/water,
+/obj/item/reagent_containers/food/snacks/monkeycube,
 /turf/open/floor/plating/grass,
 /area/ship/science)
 "ju" = (
@@ -1191,6 +1176,24 @@
 	},
 /turf/open/floor/pod/light,
 /area/ship/security)
+"ur" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "vC" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
@@ -1722,17 +1725,15 @@
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/magazine/m10mm,
-/obj/item/gun/ballistic/automatic/vector,
-/obj/item/ammo_box/magazine/smgm9mm/ap,
-/obj/item/ammo_box/magazine/smgm9mm/ap,
-/obj/item/ammo_box/magazine/smgm9mm/fire,
-/obj/item/ammo_box/magazine/smgm9mm/rubbershot,
 /obj/item/gun/ballistic/automatic/pistol,
 /obj/item/gun/ballistic/automatic/pistol,
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/gun/ballistic/automatic/pistol/APS,
+/obj/item/ammo_box/magazine/pistolm9mm,
+/obj/item/ammo_box/magazine/pistolm9mm,
 /turf/open/floor/pod/light,
 /area/ship/security)
 "DR" = (
@@ -3290,7 +3291,7 @@ zr
 OL
 it
 JP
-bk
+ur
 Fa
 "}
 (6,1,1) = {"
@@ -3331,7 +3332,7 @@ tW
 eE
 Ao
 jq
-YU
+jq
 cy
 xi
 qd
@@ -3363,8 +3364,8 @@ eE
 Ao
 YU
 HR
-YU
 jq
+YU
 yC
 MF
 WY
@@ -3392,7 +3393,7 @@ Nq
 Nq
 eE
 Ao
-jq
+YU
 BU
 YU
 dj
@@ -3486,7 +3487,7 @@ Vc
 ZY
 pX
 Bp
-jq
+YU
 VP
 nF
 YM
@@ -3507,7 +3508,7 @@ UW
 US
 gl
 dd
-bk
+ur
 Fa
 "}
 (13,1,1) = {"
@@ -3538,7 +3539,7 @@ PS
 AF
 SS
 JP
-bk
+ur
 Fa
 "}
 (14,1,1) = {"
