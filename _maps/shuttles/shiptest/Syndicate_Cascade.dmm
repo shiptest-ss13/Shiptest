@@ -634,23 +634,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"kI" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/door/window/eastleft{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "kY" = (
 /obj/structure/chair/office/light{
 	dir = 4
@@ -817,6 +800,23 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/science)
+"ob" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "oh" = (
 /obj/structure/railing{
 	dir = 1
@@ -1928,7 +1928,7 @@
 	id = "nemoblast"
 	},
 /obj/docking_port/mobile{
-	dir = 4
+	dir = 2
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -3329,7 +3329,7 @@ sv
 US
 Mj
 qI
-kI
+ob
 Fa
 "}
 (7,1,1) = {"
