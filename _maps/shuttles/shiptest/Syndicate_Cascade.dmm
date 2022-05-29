@@ -30,23 +30,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
-"aE" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/door/window/eastleft{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "aT" = (
 /obj/machinery/dna_scannernew,
 /obj/effect/turf_decal/corner/lime/border{
@@ -276,6 +259,23 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"gs" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
+	},
+/turf/open/floor/plating,
 /area/ship/engineering)
 "gD" = (
 /obj/structure/fans/tiny,
@@ -3114,6 +3114,11 @@
 	name = "Quartermaster's trench coat"
 	},
 /obj/item/clothing/neck/cloak/qm,
+/obj/item/circuitboard/machine/ore_redemption{
+	pixel_y = 5;
+	pixel_x = -8
+	},
+/obj/item/circuitboard/machine/ore_silo,
 /turf/open/floor/pod,
 /area/ship/cargo)
 "ZI" = (
@@ -3332,7 +3337,7 @@ sv
 US
 Mj
 qI
-aE
+gs
 Fa
 "}
 (7,1,1) = {"
