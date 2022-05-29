@@ -263,7 +263,8 @@
 /obj/machinery/light,
 /obj/structure/closet/wall/blue{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -28;
+	name = "Captain's locker"
 	},
 /obj/item/gun/ballistic/automatic/pistol/commander,
 /obj/item/ammo_box/magazine/co9mm,
@@ -334,7 +335,8 @@
 "iu" = (
 /obj/structure/closet/wall/white{
 	pixel_y = -30;
-	dir = 1
+	dir = 1;
+	name = "Medicine storage"
 	},
 /obj/item/storage/firstaid/ancient{
 	pixel_x = 6;
@@ -2183,7 +2185,7 @@
 	},
 /obj/structure/closet/wall{
 	icon_door = "orange_wall";
-	name = "quartermaster's closet";
+	name = "Mining equipment";
 	pixel_y = 28
 	},
 /obj/item/clothing/glasses/meson,
