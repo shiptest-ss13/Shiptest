@@ -130,9 +130,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dd" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/structure/chair/office{
 	dir = 1;
 	name = "tactical swivel chair"
@@ -144,6 +141,8 @@
 	brightness = 3;
 	dir = 8
 	},
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "dj" = (
@@ -771,23 +770,6 @@
 /obj/effect/turf_decal/steeldecal/steel_decals9,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"nv" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/door/window/eastleft{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "nF" = (
 /obj/structure/railing{
 	dir = 1
@@ -984,9 +966,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "qI" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/structure/railing/corner{
 	dir = 4
 	},
@@ -994,6 +973,8 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "rd" = (
@@ -2020,7 +2001,6 @@
 	icon_state = "0-2"
 	},
 /obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/window/eastleft{
 	dir = 1;
 	name = "Engine Access"
@@ -2149,10 +2129,9 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "JP" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "JQ" = (
@@ -2822,6 +2801,24 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Wf" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Wh" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/effect/turf_decal/spline/fancy/black{
@@ -3300,7 +3297,7 @@ zr
 OL
 it
 JP
-Hs
+Wf
 Fa
 "}
 (6,1,1) = {"
@@ -3331,7 +3328,7 @@ sv
 US
 Mj
 qI
-nv
+Hs
 Fa
 "}
 (7,1,1) = {"
@@ -3517,7 +3514,7 @@ UW
 US
 gl
 dd
-Hs
+Wf
 Fa
 "}
 (13,1,1) = {"
@@ -3548,7 +3545,7 @@ PS
 AF
 SS
 JP
-Hs
+Wf
 Fa
 "}
 (14,1,1) = {"
