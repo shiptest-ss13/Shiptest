@@ -165,6 +165,36 @@
 	desc = "A vest used to easily identify managers. It has a name tag attached. It reads: 'Hello! My name is... THE BOSS'"
 	icon_state = "donk_qm_vest"
 
+/obj/item/clothing/under/syndicate/gec
+	name = "GEC engineer jumpsuit"
+	desc = "A jumpsuit worn by GEC engineers. This one is worn by low ranking engineers."
+	icon_state = "gec_engineer"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 60, "acid" = 20)
+	resistance_flags = NONE
+
+/obj/item/clothing/under/syndicate/gec/atmos_tech
+	name = "GEC atmospheric technician jumpsuit"
+	desc = "A jumpsuit worn by GEC engineers. This one is worn by atmospheric technicians."
+	icon_state = "gec_atmos"
+
+/obj/item/clothing/under/syndicate/gec/chief_engineer
+	name = "GEC chief engineer jumpsuit"
+	desc = "A jumpsuit worn by GEC engineers. This one is worn by high ranking chiefengineers."
+	icon_state = "gec_ce"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 80, "acid" = 40)
+
+
+/obj/item/clothing/under/syndicate/skirt/maid
+	name = "tactical maid outfit"
+	desc = "A 'tactical' turtleneck fashioned to the likeness of a maid outfit. Why the Syndicate has these, you'll never know."
+	icon_state = "syndimaid"
+	item_state = "syndimaid"
+
+/obj/item/clothing/under/syndicate/skirt/maid/Initialize()
+	. = ..()
+	var/obj/item/clothing/accessory/maidapron/syndicate/A = new (src)
+	attach_accessory(A)
+
 /datum/outfit/syndicate/intern
 	name = "Syndicate Operative - Intern"
 
@@ -210,3 +240,15 @@
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/under/syndicate/inteq/skirt/maid
+	name = "inteq tactical maid outfit"
+	desc = "A 'tactical' turtleneck fashioned to the likeness of a maid outfit. This one is lovingly knitted in the colors of the IRMG."
+	icon_state = "inteqmaid"
+	item_state = "inteqmaid"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/syndicate/inteq/skirt/maid/Initialize()
+	. = ..()
+	var/obj/item/clothing/accessory/maidapron/inteq/A = new (src)
+	attach_accessory(A)

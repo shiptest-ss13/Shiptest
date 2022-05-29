@@ -108,6 +108,7 @@
 /obj/structure/safe/floor{
 	number_of_tumblers = 5
 	},
+/obj/item/stack/spacecash/c20,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "gy" = (
@@ -176,6 +177,7 @@
 /obj/item/trash/tray,
 /mob/living/simple_animal/hostile/retaliate/goose/vomit,
 /obj/structure/bed/dogbed,
+/obj/item/stack/spacecash/c100,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "mB" = (
@@ -580,7 +582,7 @@
 /obj/machinery/cryopod{
 	close_state = "crate";
 	dir = 8;
-	icon = 'goon/icons/obj/crates.dmi';
+	icon = 'icons/obj/crates.dmi';
 	icon_state = "crateopen";
 	open_state = "crateopen"
 	},

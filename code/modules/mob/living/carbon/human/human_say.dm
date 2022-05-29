@@ -1,5 +1,6 @@
 /mob/living/carbon/human/say_mod(input, list/message_mods = list())
-	verb_say = dna.species.say_mod
+	var/obj/item/organ/tongue/T = src.getorganslot(ORGAN_SLOT_TONGUE)
+	verb_say = T.say_mod
 	if(slurring)
 		return "slurs"
 	else

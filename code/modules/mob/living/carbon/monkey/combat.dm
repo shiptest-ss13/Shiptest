@@ -400,14 +400,14 @@
 			retaliate(H)
 	..()
 
-/mob/living/carbon/monkey/Crossed(atom/movable/AM)
+/mob/living/carbon/monkey/on_entered(datum/source, atom/movable/AM)
+	. = ..()
 	if(!IsDeadOrIncap() && ismob(AM) && target)
 		var/mob/living/carbon/monkey/M = AM
 		if(!istype(M) || !M)
 			return
 		knockOver(M)
 		return
-	..()
 
 /mob/living/carbon/monkey/proc/monkeyDrop(var/obj/item/A)
 	if(A)

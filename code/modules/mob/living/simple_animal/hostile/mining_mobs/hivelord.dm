@@ -322,7 +322,7 @@
 
 /mob/living/simple_animal/hostile/big_legion/Initialize()
 	.=..()
-	AddComponent(/datum/component/spawner, list(/mob/living/simple_animal/hostile/asteroid/hivelord/legion), 200, faction, "peels itself off from", 3)
+	AddComponent(/datum/component/spawner, list(/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril), 200, faction, "peels itself off from", 3)
 
 //Tendril-spawned Legion remains, the charred skeletons of those whose bodies sank into lava or fell into chasms.
 /obj/effect/mob_spawn/human/corpse/charredskeleton
@@ -627,7 +627,8 @@
 	icon_living = "disfigured_legion_head"
 	icon_aggro = "disfigured_legion_head"
 	icon_dead = "disfigured_legion_head"
-	speed = 2
+	speed = 3
+	move_to_delay = 3
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/crystal/death(gibbed)
 	for(var/i in 0 to 5)

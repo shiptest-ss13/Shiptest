@@ -135,6 +135,8 @@
 	icon_state = "cherry"
 	gender = PLURAL
 	filling_color = "#FF0000"
+	slice_path = /obj/item/garnish/cherry
+	slices_num = 3
 	bitesize_mod = 2
 	foodtype = FRUIT
 	grind_results = list(/datum/reagent/consumable/cherryjelly = 0)

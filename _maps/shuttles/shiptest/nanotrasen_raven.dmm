@@ -86,7 +86,7 @@
 	},
 /obj/item/restraints/handcuffs,
 /obj/item/reagent_containers/food/snacks/chocolatebar,
-/obj/item/assembly/flash,
+/obj/item/assembly/flash/handheld,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ak" = (
@@ -101,6 +101,7 @@
 "am" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "an" = (
@@ -844,6 +845,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
+/obj/machinery/vending/security/wall{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
 "bS" = (

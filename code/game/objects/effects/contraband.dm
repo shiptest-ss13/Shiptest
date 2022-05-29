@@ -636,6 +636,11 @@
 	desc = "This informational poster teaches the viewer what carbon dioxide is."
 	icon_state = "poster35_legit"
 
+/obj/structure/sign/poster/official/sgt
+	name = "Sapient Trafficking Awareness"
+	desc = "A poster calling for an end to sapient trafficking. Over sixty percent of victims are jellywomen."
+	icon_state = "poster_sgt" // Maybe this will be what finally fixes it.
+
 //shiptest stuff, retro posters. very inspired by the early apple logos and 70s-90s tech logos.
 /obj/structure/sign/poster/retro
 	poster_item_name = "retro poster"

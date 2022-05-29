@@ -8,9 +8,12 @@
 	use_power = IDLE_POWER_USE
 	anchored = TRUE
 	density = TRUE
-	flags_1 = HEAR_1
 	circuit = /obj/item/circuitboard/machine/nanite_programmer
 	COOLDOWN_DECLARE(nanite_programmer)
+
+/obj/machinery/nanite_programmer/Initialize(mapload, apply_default_parts)
+	. = ..()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /obj/machinery/nanite_programmer/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/disk/nanite_program))

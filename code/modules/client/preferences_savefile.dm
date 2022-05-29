@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 39
+#define SAVEFILE_VERSION_MAX 40
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -76,6 +76,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(current_version < 38)
 		outline_enabled = TRUE
 		outline_color = COLOR_BLUE_GRAY
+	if (current_version < 40)
+		LAZYADD(key_bindings["Space"], "hold_throw_mode")
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
 	if(current_version < 39)
@@ -382,6 +384,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["uplink_loc"], uplink_spawn_loc)
 	READ_FILE(S["phobia"], phobia)
 	READ_FILE(S["randomise"],  randomise)
+	READ_FILE(S["body_size"], features["body_size"])
 	READ_FILE(S["feature_mcolor"], features["mcolor"])
 	READ_FILE(S["feature_ethcolor"], features["ethcolor"])
 	READ_FILE(S["feature_lizard_tail"], features["tail_lizard"])
@@ -394,7 +397,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_moth_wings"], features["moth_wings"])
 	READ_FILE(S["feature_moth_markings"], features["moth_markings"])
 
-	READ_FILE(S["equipped_gear"], equipped_gear)
 	READ_FILE(S["jumpsuit_style"], jumpsuit_style)
 	READ_FILE(S["exowear"], exowear)
 	READ_FILE(S["feature_moth_fluff"], features["moth_fluff"])
@@ -407,7 +409,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_ipc_chassis"], features["ipc_chassis"])
 	READ_FILE(S["feature_kepori_feathers"], features["kepori_feathers"])
 	READ_FILE(S["feature_kepori_body_feathers"], features["kepori_body_feathers"])
+	READ_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
+	READ_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
 	READ_FILE(S["alt_titles_preferences"], alt_titles_preferences)
+
+	READ_FILE(S["equipped_gear"], equipped_gear)
+	if(config) //This should *probably* always be there, but just in case.
+		if(length(equipped_gear) > CONFIG_GET(number/max_loadout_items))
+			to_chat(parent, "<span class='userdanger'>Loadout maximum items exceeded in loaded slot, Your loadout has been cleared! You had [length(equipped_gear)]/[CONFIG_GET(number/max_loadout_items)] equipped items!</span>")
+			equipped_gear = list()
+			WRITE_FILE(S["equipped_gear"]				, equipped_gear)
 
 	alt_titles_preferences = SANITIZE_LIST(alt_titles_preferences)
 	if(SSjob)
@@ -486,7 +497,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		undershirt 		= sanitize_inlist(undershirt, GLOB.undershirt_list)
 
 	socks			= sanitize_inlist(socks, GLOB.socks_list)
-	age				= sanitize_integer(age, AGE_MIN, AGE_MAX, initial(age))
+	age				= sanitize_integer(age, pref_species.species_age_min, pref_species.species_age_max, initial(age))
 	hair_color			= sanitize_hexcolor(hair_color, 3, 0)
 	facial_hair_color			= sanitize_hexcolor(facial_hair_color, 3, 0)
 	underwear_color			= sanitize_hexcolor(underwear_color, 3, 0)
@@ -496,6 +507,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	jumpsuit_style	= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	exowear		= sanitize_inlist(exowear, GLOB.exowearlist, initial(exowear))
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
+	features["body_size"] = sanitize_inlist(features["body_size"], GLOB.body_sizes, "Normal")
 	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 3, 0)
 	features["ethcolor"]	= copytext_char(features["ethcolor"], 1, 7)
 	features["tail_lizard"]	= sanitize_inlist(features["tail_lizard"], GLOB.tails_list_lizard)
@@ -519,6 +531,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["ipc_chassis"]	 = sanitize_inlist(features["ipc_chassis"], GLOB.ipc_chassis_list)
 	features["kepori_feathers"] = sanitize_inlist(features["kepori_feathers"], GLOB.kepori_feathers_list, "Plain")
 	features["kepori_body_feathers"] = sanitize_inlist(features["kepori_body_feathers"], GLOB.kepori_body_feathers_list, "Plain")
+	features["vox_head_quills"] = sanitize_inlist(features["vox_head_quills"], GLOB.vox_head_quills_list, "None")
+	features["vox_neck_quills"] = sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
@@ -560,6 +574,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["randomise"]		, randomise)
 	WRITE_FILE(S["species"]			, pref_species.id)
 	WRITE_FILE(S["phobia"], phobia)
+	WRITE_FILE(S["body_size"]		, features["body_size"])
 	WRITE_FILE(S["feature_mcolor"]					, features["mcolor"])
 	WRITE_FILE(S["feature_ethcolor"]					, features["ethcolor"])
 	WRITE_FILE(S["feature_lizard_tail"]			, features["tail_lizard"])
@@ -589,6 +604,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_ipc_chassis"]			, features["ipc_chassis"])
 	WRITE_FILE(S["feature_kepori_feathers"]	, features["kepori_feathers"])
 	WRITE_FILE(S["feature_kepori_body_feathers"], features["kepori_body_feathers"])
+	WRITE_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
+	WRITE_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
 
 	//Alternate job titles
 	WRITE_FILE(S["alt_titles_preferences"]		,alt_titles_preferences)
