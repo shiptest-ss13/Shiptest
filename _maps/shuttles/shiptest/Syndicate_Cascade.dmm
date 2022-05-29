@@ -30,6 +30,23 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"aE" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "aT" = (
 /obj/machinery/dna_scannernew,
 /obj/effect/turf_decal/corner/lime/border{
@@ -1726,6 +1743,9 @@
 /obj/item/gun/ballistic/automatic/pistol,
 /obj/item/gun/ballistic/automatic/pistol,
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/pod/light,
 /area/ship/security)
 "DR" = (
@@ -2001,6 +2021,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/window/eastleft{
 	dir = 1;
 	name = "Engine Access"
@@ -2141,6 +2162,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/effect/landmark/start/security_officer,
 /turf/open/floor/pod/light,
 /area/ship/security)
 "Kv" = (
@@ -2272,23 +2294,23 @@
 	},
 /area/ship/engineering)
 "MQ" = (
-/obj/structure/railing{
-	dir = 1
-	},
 /obj/machinery/door_timer{
 	id = "Cell 1";
 	name = "Cell 1";
 	pixel_y = 32
 	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/landmark/start/security_officer,
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = 28
 	},
-/turf/open/floor/pod/light,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
+	},
+/obj/machinery/suit_storage_unit/syndicate,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
 /area/ship/security)
 "Ni" = (
 /obj/structure/railing/corner{
@@ -2801,24 +2823,6 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Wf" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/window/plasma/reinforced/spawner/east,
-/obj/machinery/door/window/eastleft{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Wh" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/effect/turf_decal/spline/fancy/black{
@@ -3297,7 +3301,7 @@ zr
 OL
 it
 JP
-Wf
+Hs
 Fa
 "}
 (6,1,1) = {"
@@ -3328,7 +3332,7 @@ sv
 US
 Mj
 qI
-Hs
+aE
 Fa
 "}
 (7,1,1) = {"
@@ -3514,7 +3518,7 @@ UW
 US
 gl
 dd
-Wf
+Hs
 Fa
 "}
 (13,1,1) = {"
@@ -3545,7 +3549,7 @@ PS
 AF
 SS
 JP
-Wf
+Hs
 Fa
 "}
 (14,1,1) = {"
