@@ -1846,6 +1846,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
+"BD" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/components/binary/valve/layer4,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering)
 "BJ" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 1;
@@ -2344,16 +2349,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "LC" = (
-/obj/effect/turf_decal/techfloor/orange,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
+/obj/effect/turf_decal/techfloor/orange,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "LL" = (
@@ -2365,13 +2367,14 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "LN" = (
-/obj/structure/sign/warning/vacuum{
-	pixel_y = -32
-	},
 /obj/effect/turf_decal/techfloor/orange,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /obj/structure/reagent_dispensers/fueltank,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Md" = (
@@ -2386,7 +2389,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Mf" = (
-/obj/machinery/atmospherics/pipe/manifold/orange/visible/layer1{
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden/layer1{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
@@ -2422,7 +2425,6 @@
 "Mx" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/binary/valve/layer2,
-/obj/machinery/atmospherics/components/binary/valve/layer4,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "MA" = (
@@ -3302,7 +3304,7 @@ Ef
 De
 eF
 jb
-Mx
+BD
 "}
 (16,1,1) = {"
 Zf
