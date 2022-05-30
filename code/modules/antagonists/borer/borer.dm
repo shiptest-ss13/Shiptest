@@ -122,6 +122,11 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	var/is_team_borer = TRUE
 	var/borer_alert = "Become a cortical borer? (Warning, You can no longer be cloned!)"
 
+/mob/living/simple_animal/borer/sterile
+	name = "neutered cortial borer"
+	is_team_borer = FALSE
+	borer_alert = "Become a neutered cortical borer? (Warning, You can no longer be cloned!)"
+
 /mob/living/simple_animal/borer/Initialize(mapload, gen=1)
 	..()
 	generation = gen
