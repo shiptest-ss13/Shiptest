@@ -52,7 +52,7 @@
 /area/ship/bridge)
 "aM" = (
 /obj/machinery/door/airlock/external{
-	name = "Escape Pod"
+	name = "Internal Airlock"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/turf_decal/industrial/warning,
@@ -748,7 +748,6 @@
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 1
 	},
-/obj/item/pipe_dispenser,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1800,6 +1799,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/item/pipe_dispenser,
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "Hk" = (
@@ -2449,7 +2449,7 @@
 "UZ" = (
 /obj/structure/catwalk,
 /obj/machinery/door/airlock/external{
-	name = "Escape Pod"
+	name = "External Airlock"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
