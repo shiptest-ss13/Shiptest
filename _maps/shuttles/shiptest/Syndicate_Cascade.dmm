@@ -46,22 +46,26 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
 "bk" = (
-/obj/machinery/power/smes/shuttle/precharged{
+/obj/item/reagent_containers/food/snacks/monkeycube{
+	pixel_y = -1;
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/food/snacks/monkeycube{
+	pixel_y = 5;
+	pixel_x = 3
+	},
+/obj/item/reagent_containers/food/snacks/monkeycube{
+	pixel_y = -1;
+	pixel_x = -1
+	},
+/obj/item/reagent_containers/food/snacks/monkeycube{
+	pixel_y = 1;
+	pixel_x = -5
+	},
+/turf/open/floor/plating/beach/coastline_t{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/door/window/eastleft{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
+/area/ship/science)
 "bm" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -75,6 +79,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "bH" = (
@@ -123,8 +128,6 @@
 "cy" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/item/reagent_containers/food/snacks/monkeycube,
-/obj/effect/particle_effect/water,
 /turf/open/floor/plating/grass,
 /area/ship/science)
 "cF" = (
@@ -160,6 +163,7 @@
 /area/ship/engineering)
 "dj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/grass,
 /area/ship/science)
 "dU" = (
@@ -259,6 +263,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "gl" = (
@@ -415,6 +420,7 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "ic" = (
@@ -532,8 +538,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "jq" = (
-/obj/effect/particle_effect/water,
-/obj/item/reagent_containers/food/snacks/monkeycube,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/grass,
 /area/ship/science)
 "ju" = (
@@ -621,6 +626,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "kp" = (
@@ -651,6 +657,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "kY" = (
@@ -695,6 +702,10 @@
 /obj/machinery/computer/scan_consolenew,
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/item/paper/crumpled/awaymissions/moonoutpost19/hastey_note{
+	info = "oh yea... totally forgot! just a reminder to connect this bad boy to the Research Server. tend to... not work if you forget it... smell ya later!";
+	name = "PS. about the console"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -757,6 +768,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "mR" = (
@@ -854,6 +866,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "oL" = (
@@ -929,6 +942,7 @@
 	pixel_x = -6;
 	pixel_y = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "qn" = (
@@ -1070,6 +1084,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "tt" = (
@@ -1079,6 +1094,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/stairs,
 /area/ship/cargo)
 "tx" = (
@@ -1103,6 +1119,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "tE" = (
@@ -1194,8 +1211,13 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/light,
 /area/ship/security)
+"ur" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/grass,
+/area/ship/science)
 "vC" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
@@ -1290,6 +1312,7 @@
 /obj/structure/flora/ausbushes/sparsegrass{
 	pixel_y = 13
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/grass,
 /area/ship/science)
 "wy" = (
@@ -1570,6 +1593,8 @@
 	pixel_x = -17;
 	pixel_y = -3
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
 /area/ship/cargo)
 "Aj" = (
@@ -1634,8 +1659,26 @@
 	},
 /turf/open/floor/plating/grass,
 /area/ship/science)
+"BR" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Cascade_engine"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "BU" = (
 /obj/item/reagent_containers/food/snacks/grown/banana,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/grass,
 /area/ship/science)
 "Cb" = (
@@ -1698,6 +1741,8 @@
 	pixel_y = 5;
 	pixel_x = 3
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "CN" = (
@@ -1903,6 +1948,10 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -25;
+	pixel_y = 1
+	},
 /turf/open/floor/plating/beach/coastline_b{
 	dir = 1
 	},
@@ -2048,6 +2097,7 @@
 /area/ship/hallway/central)
 "HR" = (
 /obj/structure/flora/junglebush/large,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/grass,
 /area/ship/science)
 "Iw" = (
@@ -2069,6 +2119,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "IQ" = (
@@ -2325,6 +2376,11 @@
 "Nq" = (
 /turf/open/floor/plating/beach/water,
 /area/ship/science)
+"NR" = (
+/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "Of" = (
 /obj/effect/turf_decal/corner/red/diagonal,
 /obj/structure/cable/yellow{
@@ -2376,6 +2432,7 @@
 	dir = 1;
 	pixel_y = 3
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "OL" = (
@@ -2613,6 +2670,7 @@
 "TT" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/grass,
 /area/ship/science)
 "TX" = (
@@ -2804,6 +2862,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "VP" = (
@@ -2870,6 +2929,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Xb" = (
@@ -3307,7 +3367,7 @@ vI
 vI
 Nq
 GE
-Ao
+bk
 Fm
 Aj
 RZ
@@ -3330,7 +3390,7 @@ sv
 US
 Mj
 qI
-bk
+BR
 Fa
 "}
 (7,1,1) = {"
@@ -3339,8 +3399,8 @@ Nq
 tW
 eE
 Ao
-jq
-jq
+YU
+YU
 cy
 xi
 qd
@@ -3372,8 +3432,8 @@ eE
 Ao
 YU
 HR
-jq
 YU
+jq
 yC
 MF
 WY
@@ -3403,7 +3463,7 @@ eE
 Ao
 YU
 BU
-YU
+ur
 dj
 HF
 YM
@@ -3464,7 +3524,7 @@ Nq
 eE
 mX
 qo
-YU
+jq
 wq
 Kv
 tR
@@ -3495,7 +3555,7 @@ Vc
 ZY
 pX
 Bp
-YU
+jq
 VP
 nF
 YM
@@ -3563,7 +3623,7 @@ Yr
 GA
 Ua
 wf
-wf
+NR
 wf
 wf
 kn
