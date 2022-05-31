@@ -176,7 +176,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
 "dX" = (
-/obj/machinery/suit_storage_unit/independent/mining/eva,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -187,6 +186,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/syndicate/green/dark,
+/obj/item/clothing/head/helmet/space/syndicate/green/dark,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "es" = (
@@ -1011,13 +1013,15 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/east,
-/obj/machinery/suit_storage_unit/mining,
-/obj/structure/railing{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/suit_storage_unit/inherit,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/item/clothing/suit/space/syndicate/black/blue,
+/obj/item/clothing/head/helmet/space/syndicate/black/blue,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "rN" = (
@@ -1914,15 +1918,12 @@
 /obj/item/holosign_creator/atmos,
 /obj/item/radio/off,
 /obj/item/clothing/suit/hooded/wintercoat/engineering,
-/obj/item/construction/rcd/loaded,
-/obj/item/pipe_dispenser,
 /obj/item/clothing/head/hardhat/weldhat,
 /obj/structure/closet/wall/orange{
 	dir = 4;
 	pixel_x = -30;
 	name = "Engineering locker"
 	},
-/obj/item/wrench/combat,
 /obj/effect/turf_decal/steeldecal/steel_decals1,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light,
@@ -2046,7 +2047,6 @@
 /obj/item/mining_scanner,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
-/obj/item/kinetic_crusher,
 /turf/open/floor/pod,
 /area/ship/cargo)
 "Hq" = (
@@ -2961,7 +2961,6 @@
 /area/ship/crew/dorm)
 "Xt" = (
 /obj/item/multitool,
-/obj/item/pipe_dispenser,
 /obj/item/clothing/glasses/meson/engine/tray,
 /obj/item/radio/off,
 /obj/item/storage/belt/utility/atmostech,
@@ -3033,12 +3032,14 @@
 /turf/open/floor/holofloor/wood,
 /area/ship/crew/dorm)
 "Yp" = (
-/obj/machinery/suit_storage_unit/engine,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
 /obj/effect/decal/cleanable/wrapping,
 /obj/machinery/light,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/syndicate/black/engie,
+/obj/item/clothing/head/helmet/space/syndicate/black/engie,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Yr" = (
@@ -3076,6 +3077,8 @@
 	dir = 9
 	},
 /obj/item/storage/belt/sabre,
+/obj/item/gun/ballistic/derringer,
+/obj/item/ammo_box/c38,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "YE" = (
