@@ -105,6 +105,7 @@
 #define SPECIES_VOX "vox"
 #define SPECIES_ZOMBIE "zombie"
 #define SPECIES_GOOFZOMBIE "krokodil_zombie"
+#define SPECIES_ORC "orc"
 
 #define DIGITIGRADE_NEVER 0
 #define DIGITIGRADE_OPTIONAL 1
