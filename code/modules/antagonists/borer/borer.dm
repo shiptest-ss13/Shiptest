@@ -62,9 +62,9 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	real_name = "cortical borer"
 	desc = "A small, quivering, slug-like creature."
 	icon = 'whitesands/icons/mob/borer.dmi'
-	icon_state = "brainslug"
-	icon_living = "brainslug"
-	icon_dead = "brainslug_dead"
+	icon_state = "legacy"
+	icon_living = "legacy"
+	icon_dead = "legacy_dead"
 	health = 20
 	maxHealth = 20
 	melee_damage_lower = 5
@@ -130,6 +130,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 /mob/living/simple_animal/borer/sterile/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/rename_on_login)
+	AddElement(/datum/element/appearance_on_login)
 
 /mob/living/simple_animal/borer/Initialize(mapload, gen=1)
 	..()
