@@ -16,20 +16,20 @@
 		)
 
 /datum/element/appearance_on_login/Attach(mob/living/simple_animal/target)
-    .=..()
-    if(!ismob(target))
-        return ELEMENT_INCOMPATIBLE
-    if(target.client)
-        mob_appearance(target)
-        target.RemoveElement(/datum/element/appearance_on_login)
-    else
-        RegisterSignal(target, COMSIG_MOB_LOGIN, .proc/on_mob_login)
+	.=..()
+	if(!ismob(target))
+		return ELEMENT_INCOMPATIBLE
+	if(target.client)
+		mob_appearance(target)
+		target.RemoveElement(/datum/element/appearance_on_login)
+	else
+		RegisterSignal(target, COMSIG_MOB_LOGIN, .proc/on_mob_login)
 
 /datum/element/appearance_on_login/proc/on_mob_login(mob/source)
-    SIGNAL_HANDLER
-    INVOKE_ASYNC(src, .proc/mob_appearance, source)
-    UnregisterSignal(source, COMSIG_MOB_LOGIN)
-    source.RemoveElement(/datum/element/appearance_on_login)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, .proc/mob_appearance, source)
+	UnregisterSignal(source, COMSIG_MOB_LOGIN)
+	source.RemoveElement(/datum/element/appearance_on_login)
 
 /datum/element/appearance_on_login/proc/check_menu(mob/living/simple_animal/target)
 	if(!istype(target))
