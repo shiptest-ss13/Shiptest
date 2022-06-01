@@ -17,6 +17,12 @@
 /obj/item/nomi/ingot_gold
 	name = "gold ingot"
 
+/obj/item/nomi/ingot_uranium
+	name = "uranium ingot"
+
+/obj/item/nomi/diamond
+	name = "diamond"
+
 /obj/item/nomi/gear
 	name = "gear"
 
@@ -37,6 +43,18 @@
 
 /obj/item/nomi/piston
 	name = "piston"
+
+/obj/item/nomi/transistor
+	name = "transistor"
+
+/obj/item/nomi/microchip
+	name = "microchip"
+
+/obj/item/nomi/microchip/advanced
+	name = "advanced microchip"
+
+/obj/item/nomi/lens
+	name = "laser lens"
 
 /datum/crafting_recipe/nomi_iron_ingot
 	name = "Iron Ingot"
