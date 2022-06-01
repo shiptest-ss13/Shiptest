@@ -62,9 +62,9 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	real_name = "cortical borer"
 	desc = "A small, quivering, slug-like creature."
 	icon = 'whitesands/icons/mob/borer.dmi'
-	icon_state = "legacy"
-	icon_living = "legacy"
-	icon_dead = "legacy_dead"
+	icon_state = "creepy"
+	icon_living = "creepy"
+	icon_dead = "creepy_dead"
 	health = 20
 	maxHealth = 20
 	melee_damage_lower = 5
@@ -123,14 +123,14 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	var/borer_alert = "Become a cortical borer? (Warning, You can no longer be cloned!)"
 
 /mob/living/simple_animal/borer/sterile
-	name = "neutered cortial borer"
+	name = "neutered chemslug"
 	is_team_borer = FALSE
 	borer_alert = "Become a neutered cortical borer? (Warning, You can no longer be cloned!)"
 
 /mob/living/simple_animal/borer/sterile/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/rename_on_login)
-	AddElement(/datum/element/appearance_on_login)
+	AddElement(/datum/element/appearance_on_login/borer)
 
 /mob/living/simple_animal/borer/Initialize(mapload, gen=1)
 	..()

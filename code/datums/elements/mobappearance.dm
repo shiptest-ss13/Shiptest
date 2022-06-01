@@ -3,18 +3,10 @@
 /datum/element/appearance_on_login
 	var/list/icon_list
 
-/datum/element/appearance_on_login/New()
-	icon_list = list(
-		"creepy" = image(icon =    'whitesands/icons/mob/borer.dmi', icon_state = "creepy"),
-		"fluffy" = image(icon =    'whitesands/icons/mob/borer.dmi', icon_state = "fluffy"),
-		"colorful" = image(icon =  'whitesands/icons/mob/borer.dmi', icon_state = "colorful"),
-		"coral" = image(icon =     'whitesands/icons/mob/borer.dmi', icon_state = "coral"),
-		"legacy" = image(icon =    'whitesands/icons/mob/borer.dmi', icon_state = "legacy")
-		)
-
 /datum/element/appearance_on_login/borer
 
 /datum/element/appearance_on_login/borer/New()
+	. = ..()
 	icon_list = list(
 		"creepy" = image(icon =    'whitesands/icons/mob/borer.dmi', icon_state = "creepy"),
 		"fluffy" = image(icon =    'whitesands/icons/mob/borer.dmi', icon_state = "fluffy"),
@@ -40,21 +32,15 @@
     source.RemoveElement(/datum/element/appearance_on_login)
 
 /datum/element/appearance_on_login/proc/check_menu(mob/living/simple_animal/target)
-/*
-	WHY DOESN'T ANYTHING HERE WORK?
-	to_chat(world, "our target is [target]")
 	if(!istype(target))
-		to_chat(world, "our target is [target]")
 		return FALSE
 	if(target.incapacitated())
-		to_chat(world, "our target is [target]")
 		return FALSE
-*/
 	return TRUE
 
 /datum/element/appearance_on_login/proc/mob_appearance(mob/living/simple_animal/target)
 
-	var/picked_icon = show_radial_menu(target, target, icon_list, custom_check = CALLBACK(src, .proc/check_menu), radius = 38, require_near = TRUE)
+	var/picked_icon = show_radial_menu(target, target, icon_list, custom_check = CALLBACK(src, .proc/check_menu, target), radius = 38, require_near = TRUE)
 	if(picked_icon)
 		target.icon_state = "[picked_icon]"
 		target.icon_living = "[picked_icon]"
