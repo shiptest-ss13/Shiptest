@@ -10,6 +10,11 @@
 /obj/effect/decal/cleanable/blood/gibs/up,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
+"c" = (
+/obj/effect/decal/remains/human,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/unpowered)
 "d" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /obj/effect/decal/cleanable/cobweb,
@@ -21,13 +26,34 @@
 "g" = (
 /obj/structure/dresser,
 /obj/item/book/codex_gigas,
+/obj/item/toy/toy_dagger,
+/turf/open/floor/wood,
+/area/ruin/unpowered)
+"h" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/unpowered)
+"j" = (
+/obj/item/toy/figure/wizard{
+	pixel_x = 7
+	},
+/obj/item/toy/toy_xeno{
+	pixel_x = -9
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "l" = (
 /obj/structure/table/wood,
-/obj/item/slimepotion/lovepotion,
-/obj/item/slimepotion/slime/sentience,
+/obj/item/slimepotion/lovepotion{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/slimepotion/slime/sentience{
+	pixel_x = 4;
+	pixel_y = 1
+	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/gun/magic/wand/nothing,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "m" = (
@@ -46,11 +72,27 @@
 "p" = (
 /turf/open/floor/wood,
 /area/ruin/unpowered)
+"q" = (
+/obj/structure/sign/poster/contraband/ambrosia_vulgaris{
+	pixel_y = -1
+	},
+/turf/closed/wall/mineral/wood,
+/area/ruin/unpowered)
+"r" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/mouse/gray,
+/turf/open/floor/wood,
+/area/ruin/unpowered)
 "s" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/unpowered)
 "t" = (
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/unpowered)
+"u" = (
+/obj/effect/decal/remains/human,
+/obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/unpowered)
 "w" = (
@@ -83,6 +125,7 @@
 /area/ruin/unpowered)
 "E" = (
 /obj/effect/decal/remains/human,
+/obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/unpowered)
 "G" = (
@@ -97,6 +140,11 @@
 /obj/structure/bed,
 /mob/living/simple_animal/hostile/dark_wizard,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/item/clothing/gloves/combat/wizard,
+/turf/open/floor/wood,
+/area/ruin/unpowered)
+"J" = (
+/obj/item/clothing/suit/wizrobe/fake,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "L" = (
@@ -137,10 +185,6 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/unpowered)
-"T" = (
-/obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/unpowered)
 "U" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -153,19 +197,19 @@
 /turf/closed/wall/mineral/wood,
 /area/ruin/unpowered)
 "Z" = (
-/obj/structure/flora/rock/jungle,
+/obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/unpowered)
 
 (1,1,1) = {"
-T
+Z
 y
 f
 f
 U
-E
+c
 s
-t
+h
 f
 a
 "}
@@ -199,7 +243,7 @@ f
 W
 d
 m
-p
+j
 l
 W
 f
@@ -210,7 +254,7 @@ f
 f
 W
 g
-p
+J
 O
 V
 P
@@ -220,9 +264,9 @@ B
 (6,1,1) = {"
 f
 w
-W
+q
 b
-V
+r
 p
 p
 P
@@ -274,6 +318,6 @@ R
 f
 L
 f
-E
+u
 y
 "}

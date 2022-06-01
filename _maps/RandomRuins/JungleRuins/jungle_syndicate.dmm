@@ -88,7 +88,9 @@
 /area/ruin/powered)
 "t" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/porta_turret/syndicate/pod,
+/obj/machinery/porta_turret/syndicate/pod{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -96,7 +98,9 @@
 /area/ruin/powered)
 "u" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/porta_turret/syndicate/pod,
+/obj/machinery/porta_turret/syndicate/pod{
+	dir = 8
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -149,7 +153,10 @@
 /area/ruin/powered)
 "G" = (
 /obj/structure/cable,
-/mob/living/simple_animal/hostile/syndicate,
+/mob/living/simple_animal/hostile/syndicate{
+	desc = "A syndicate guard. Looks like this one has been huffing whatever they put on those punji sticks...";
+	name = "Syndicate Outpost Guard"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "H" = (
@@ -168,7 +175,10 @@
 /area/ruin/unpowered)
 "K" = (
 /obj/structure/chair/plastic,
-/mob/living/simple_animal/hostile/syndicate/ranged,
+/mob/living/simple_animal/hostile/syndicate/ranged{
+	desc = "A syndicate guard. Seems a little too eager to follow the orders of 'Shoot anything that moves'.";
+	name = "Syndicate Outpost Guard"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "M" = (
@@ -181,6 +191,56 @@
 /obj/effect/decal/cleanable/blood/gibs/up,
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
+"O" = (
+/obj/item/ammo_casing/c10mm{
+	dir = 8;
+	pixel_y = 4
+	},
+/obj/item/ammo_casing/c10mm{
+	dir = 10;
+	pixel_x = 6;
+	pixel_y = -9
+	},
+/obj/item/ammo_casing/c10mm{
+	dir = 4;
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/obj/item/ammo_casing/c10mm{
+	dir = 5;
+	pixel_x = -4;
+	pixel_y = -7
+	},
+/obj/item/ammo_casing/c10mm{
+	dir = 5;
+	pixel_x = 9;
+	pixel_y = 11
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"P" = (
+/obj/item/ammo_casing/c10mm,
+/obj/item/ammo_casing/c10mm{
+	dir = 8;
+	pixel_x = 7;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/c10mm{
+	dir = 5;
+	pixel_x = -8;
+	pixel_y = 3
+	},
+/obj/item/ammo_casing/c10mm{
+	dir = 10;
+	pixel_x = 9;
+	pixel_y = 7
+	},
+/obj/item/ammo_casing/c10mm{
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
 "R" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/sandbags,
@@ -273,7 +333,7 @@ W
 b
 j
 S
-V
+P
 p
 C
 o
@@ -296,7 +356,7 @@ Y
 G
 V
 y
-V
+O
 A
 w
 a
