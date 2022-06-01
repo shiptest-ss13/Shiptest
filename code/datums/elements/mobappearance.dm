@@ -8,11 +8,11 @@
 /datum/element/appearance_on_login/borer/New()
 	. = ..()
 	icon_list = list(
-		"creepy" = image(icon =    'whitesands/icons/mob/borer.dmi', icon_state = "creepy"),
-		"fluffy" = image(icon =    'whitesands/icons/mob/borer.dmi', icon_state = "fluffy"),
-		"colorful" = image(icon =  'whitesands/icons/mob/borer.dmi', icon_state = "colorful"),
-		"coral" = image(icon =     'whitesands/icons/mob/borer.dmi', icon_state = "coral"),
-		"legacy" = image(icon =    'whitesands/icons/mob/borer.dmi', icon_state = "legacy")
+		"creepy" = image(icon =    'icons/mob/borer.dmi', icon_state = "creepy"),
+		"fluffy" = image(icon =    'icons/mob/borer.dmi', icon_state = "fluffy"),
+		"colorful" = image(icon =  'icons/mob/borer.dmi', icon_state = "colorful"),
+		"coral" = image(icon =     'icons/mob/borer.dmi', icon_state = "coral"),
+		"legacy" = image(icon =    'icons/mob/borer.dmi', icon_state = "legacy")
 		)
 
 /datum/element/appearance_on_login/Attach(mob/living/simple_animal/target)

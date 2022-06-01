@@ -61,7 +61,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	name = "cortical borer"
 	real_name = "cortical borer"
 	desc = "A small, quivering, slug-like creature."
-	icon = 'whitesands/icons/mob/borer.dmi'
+	icon = 'icons/mob/borer.dmi'
 	icon_state = "creepy"
 	icon_living = "creepy"
 	icon_dead = "creepy_dead"
