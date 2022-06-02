@@ -349,6 +349,33 @@
 	item_state = "inteq_battlecoat"
 	supports_variations = DIGITIGRADE_VARIATION
 
+/obj/item/clothing/suit/armor/inteq/corpsman
+	name = "inteq corpsman vest"
+	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division medical staff."
+	icon_state = "inteq_labcoat"
+	item_state = "inteq_labcoat"
+	allowed = list(
+		/obj/item/analyzer,
+		/obj/item/stack/medical,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/reagent_containers/hypospray,
+		/obj/item/healthanalyzer,
+		/obj/item/flashlight/pen,
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/reagent_containers/glass/beaker,
+		/obj/item/reagent_containers/pill,
+		/obj/item/storage/pill_bottle,
+		/obj/item/melee/classic_baton/telescopic,
+		/obj/item/soap,
+		/obj/item/sensor_device,
+		/obj/item/tank/internals/emergency_oxygen,
+		/obj/item/tank/internals/plasmaman,
+		/obj/item/ammo_box,
+		/obj/item/gun/ballistic,
+		/obj/item/gun/energy,
+		/obj/item/melee/baton,
+	)
+
 /obj/item/clothing/suit/armor/vest/lieutenant
 	name = "lieutenant's armor"
 	desc = "An armored vest with a lieutenant's insignia imprinted on it."
