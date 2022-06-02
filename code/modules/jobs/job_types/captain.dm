@@ -146,3 +146,21 @@
 	backpack = /obj/item/storage/backpack
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/mateba=1)
 
+/datum/outfit/job/captain/independent/owner
+	name = "Private Ship Owner (Independent)"
+
+	id = /obj/item/card/id/gold
+	uniform = /obj/item/clothing/under/suit/black
+	shoes = /obj/item/clothing/shoes/laceup
+	head = null
+	belt = null
+	gloves = null
+	accessory = null
+	ears = /obj/item/radio/headset/heads/captain
+	box = /obj/item/storage/box/survival
+	backpack = /obj/item/storage/backpack
+	satchel = /obj/item/storage/backpack/satchel/
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger
+	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/clothing/accessory/medal/gold/captain=1, /obj/item/stack/spacecash/c10000=1)
+
