@@ -93,6 +93,10 @@
 	display_name = "toy, lizard plushie"
 	path = /obj/item/toy/plush/lizardplushie
 
+/datum/gear/snake
+	display_name = "toy, snake plushie"
+	path = /obj/item/toy/plush/snakeplushie
+
 /datum/gear/moth
 	display_name = "toy, moth plushie"
 	path = /obj/item/toy/plush/moth
@@ -150,3 +154,8 @@
 /datum/gear/surgical_mask
 	display_name = "surgical mask"
 	path = /obj/item/clothing/mask/surgical
+
+/datum/gear/maidbox
+	display_name = "maid outfit bundle"
+	path = /obj/item/storage/box/maid
+	description = "Contains a four-piece maid outfit inside a single box."

@@ -14,12 +14,19 @@
 	///What radio station is your radio set to when crossed (And human)?
 	var/team_radio = FREQ_COMMON
 
+/obj/machinery/teambuilder/Initialize(mapload, apply_default_parts)
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/machinery/teambuilder/examine_more(mob/user)
 	. = ..()
 	. += "<span class='notice'>You see a hastily written note on the side, it says '1215-1217, PICK A SIDE'.</span>"
 
-/obj/machinery/teambuilder/Crossed(atom/movable/AM, oldloc)
-	. = ..()
+/obj/machinery/teambuilder/proc/on_entered(datum/source, atom/movable/AM, oldloc)
+	SIGNAL_HANDLER
 	if(AM.color)
 		return
 	if(isliving(AM) && team_color)

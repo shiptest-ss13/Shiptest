@@ -92,6 +92,7 @@
 	. = ..()
 	update_config_movespeed()
 	update_movespeed(TRUE)
+	become_hearing_sensitive(ORGAN_TRAIT)
 
 /**
   * Generate the tag for this mob

@@ -110,6 +110,9 @@
 		var/datum/quirk/T = V
 		T.transfer_mob(to_mob)
 
+/datum/quirk/proc/clone_data() //return additional data that should be remembered by cloning
+/datum/quirk/proc/on_clone(data) //create the quirk from clone data
+
 /*
 
 Commented version of Nearsighted to help you add your own traits

@@ -12,6 +12,8 @@
 	exp_type = EXP_TYPE_CREW
 	officer = TRUE
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Brig Chief", "Master at Arms")
+	senior_title = "Chief Master Sergeant"
 
 	outfit = /datum/outfit/job/warden
 
@@ -65,3 +67,44 @@
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/beret/solgov
 	suit = /obj/item/clothing/suit/armor/vest/solgov/rep
+
+/datum/outfit/job/warden/chiefmastersergeant
+	name = "Chief Master Sergeant"
+	r_pocket = /obj/item/gun/ballistic/automatic/pistol/solgov
+	l_pocket = /obj/item/ammo_box/magazine/pistol556mm
+	chameleon_extras = null
+
+/datum/outfit/job/warden/minutemen
+	name = "Field Commander (Colonial Minutemen)"
+
+	glasses = /obj/item/clothing/glasses/sunglasses
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	accessory = /obj/item/clothing/accessory/armband
+	head = /obj/item/clothing/head/cowboy/sec/minutemen
+	suit = /obj/item/clothing/suit/armor/bulletproof
+	belt = /obj/item/storage/belt/military
+	shoes = /obj/item/clothing/shoes/combat
+
+	l_pocket = /obj/item/flashlight/seclite
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+
+	box = /obj/item/storage/box/survival/engineer/radio
+	backpack = /obj/item/storage/backpack
+	backpack_contents = null
+
+/datum/outfit/job/warden/minutemen/armed
+	name = "Field Commander (Colonial Minutemen) (Armed)"
+
+	suit_store = /obj/item/gun/ballistic/automatic/p16/minutemen
+	belt = /obj/item/storage/belt/military/minutemen
+
+	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/gun/energy/e_gun/advtaser=1)
+
+/datum/outfit/job/warden/nanotrasen
+	name = "Warden (Nanotrasen)"
+
+	head = /obj/item/clothing/head/warden/red
+	uniform = /obj/item/clothing/under/rank/security/warden/nt
+	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
+	alt_uniform = null
+	alt_suit = null
