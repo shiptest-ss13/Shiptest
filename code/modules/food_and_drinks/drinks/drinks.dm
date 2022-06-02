@@ -8,6 +8,8 @@
 	icon_state = null
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	pickup_sound =  'sound/items/handling/bottle_pickup.ogg'
+	drop_sound = 'sound/items/handling/bottle_drop.ogg'
 	reagent_flags = OPENCONTAINER | DUNKABLE
 	var/gulp_size = 5 //This is now officially broken ... need to think of a nice way to fix it.
 	possible_transfer_amounts = list(5,10,15,20,25,30,50)
@@ -116,7 +118,7 @@
 		return
 	var/obj/item/broken_bottle/B = new (loc)
 	B.icon_state = icon_state
-	var/icon/I = new('whitesands/icons/obj/drinks.dmi', src.icon_state)
+	var/icon/I = new(icon, icon_state)
 	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
 	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
 	B.icon = I
@@ -541,7 +543,7 @@
 	reagents.trans_to(H, src.reagents.total_volume, transfered_by = H) //a big sip
 	sleep(5)
 	H.say(pick("Now, Outbomb Cuban Pete, THAT was a game.", "All these new fangled arcade games are too slow. I prefer the classics.", "They don't make 'em like Orion Trail anymore.", "You know what they say. Worst day of spess carp fishing is better than the best day at work.", "They don't make 'em like good old fashioned singularity engines anymore."))
-	if(H.age >= 30)
+	if(H.age >= H.dna.species.species_age_min * 2)
 		H.Stun(50)
 		sleep(50)
 		playsound(H,'sound/items/drink.ogg', 80, TRUE)
@@ -726,3 +728,15 @@
 	desc = "There is no air shortage. Do not drink."
 	icon_state = "air"
 	list_reagents = list(/datum/reagent/nitrogen = 24, /datum/reagent/oxygen = 6)
+
+/obj/item/reagent_containers/food/drinks/soda_cans/molten
+	name = "Molten Bubbles"
+	desc = "A spicy cola to cool the nerves and burn the soul."
+	icon_state = "molten"
+	list_reagents = list(/datum/reagent/medicine/molten_bubbles = 50)
+
+/obj/item/reagent_containers/food/drinks/soda_cans/plasma
+	name = "Plasma Fizz"
+	desc = "A dangerous fusion of flavors!"
+	icon_state = "plasma"
+	list_reagents = list(/datum/reagent/medicine/molten_bubbles/plasma = 50)

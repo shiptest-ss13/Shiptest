@@ -11,6 +11,8 @@
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Security Guard", "Junior Officer")
+	senior_title = "Senior Officer"
 
 	outfit = /datum/outfit/job/security
 

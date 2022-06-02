@@ -7,6 +7,8 @@
 	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
 	wiki_page = "Paramedic"
+	alt_titles = list("Emergency Medical Technician", "Combat Life Saver")
+	senior_title = "Field Surgeon"
 
 	outfit = /datum/outfit/job/paramedic
 

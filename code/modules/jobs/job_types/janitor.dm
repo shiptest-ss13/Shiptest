@@ -7,6 +7,8 @@
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
 	wiki_page = "Janitor" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Custodian", "Sanitation Technician")
+	senior_title = "Maid"
 
 	outfit = /datum/outfit/job/janitor
 
@@ -42,3 +44,7 @@
 	name = "Janitor (Sanitation Technician)"
 
 	uniform = /obj/item/clothing/under/rank/civilian/janitor/sanitation_tech
+
+/datum/outfit/job/janitor/maid
+	name = "Maid"
+	uniform = /obj/item/clothing/under/rank/civilian/janitor/maid

@@ -390,4 +390,8 @@
 		nextrefueltick = world.time + 10
 		reagents.add_reagent(/datum/reagent/fuel, 1)
 
+/obj/item/weldingtool/old
+	desc = "A standard edition welder provided by Nanotrasen. This one seems to leak a little bit."
+	icon = 'icons/obj/tools.dmi'
+
 #undef WELDER_FUEL_BURN_INTERVAL
