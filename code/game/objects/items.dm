@@ -900,6 +900,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	delay *= toolspeed * skill_modifier
 
+
 	// Play tool sound at the beginning of tool usage.
 	play_tool_sound(target, volume)
 
