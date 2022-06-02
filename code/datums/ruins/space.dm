@@ -295,3 +295,15 @@
 	suffix = "dark_glade.dmm"
 	name = "Dark Glade"
 	description = "It's always dark in the ancient glade."
+
+/datum/map_template/ruin/space/syndicircle
+	id = "provinggrounds"
+	suffix = "provinggrounds.dmm"
+	name = "Syndicate Battle Sphere"
+	description = "The Syndicate Battle Sphere, complete with guns!"
+
+/datum/map_template/ruin/space/lab4071
+	id = "lab4071"
+	suffix = "lab4071.dmm"
+	name = "Syndicate Laboratory 4071"
+	description = "A Syndicate laboratory run by syndicate scientists."

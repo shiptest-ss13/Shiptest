@@ -490,3 +490,90 @@
 	name = "\improper Dark Glade"
 	icon_state = "away"
 	always_unpowered = FALSE
+
+//Syndie battle sphere
+/area/ruin/space/has_grav/syndicircle/halls
+	name = "Syndicate Battle Sphere Primary Hallway"
+	icon_state = "dk_yellow"
+	color = "#a5131388"
+
+/area/ruin/space/has_grav/syndicircle/spacewalk
+	name = "Syndicate Battle Sphere Shuttle Launch Site"
+	icon_state = "dk_yellow"
+	color = "#663cb488"
+
+/area/ruin/space/has_grav/syndicircle/research
+	name = "Syndicate Battle Sphere Laboratory"
+	icon_state = "dk_yellow"
+	color = "#228a2b88"
+
+/area/ruin/space/has_grav/syndicircle/escape
+	name = "Syndicate Battle Sphere Escape Shuttle"
+	icon_state = "dk_yellow"
+	color = "#92bb3388"
+
+/area/ruin/space/has_grav/syndicircle/winter
+	name = "Syndicate Battle Sphere Snow Outpost"
+	icon_state = "dk_yellow"
+	color = "#4341c488"
+
+/area/ruin/space/has_grav/syndicircle/training
+	name = "Syndicate Battle Sphere Training Grounds"
+	icon_state = "dk_yellow"
+	color = "#26773a88"
+
+//Syndiecate chemlab
+/area/ruin/space/has_grav/crazylab/airlock
+	name = "Syndicate Laboratory 4071 Airlock"
+	icon_state = "dk_yellow"
+	color = "#eb7fac88"
+
+/area/ruin/space/has_grav/crazylab/armory
+	name = "Syndicate Laboratory 4071 Armory"
+	icon_state = "dk_yellow"
+	color = "#55384c88"
+
+/area/ruin/space/has_grav/crazylab/hydro
+	name = "Syndicate Laboratory 4071 Hydroponics Lab"
+	icon_state = "dk_yellow"
+	color = "#185d7288"
+
+/area/ruin/space/has_grav/crazylab/bar
+	name = "Syndicate Laboratory 4071 Kitchen"
+	icon_state = "dk_yellow"
+	color = "#75162e88"
+
+/area/ruin/space/has_grav/crazylab/gamble
+	name = "Syndicate Laboratory 4071 Break Room"
+	icon_state = "dk_yellow"
+	color = "#97632088"
+
+/area/ruin/space/has_grav/crazylab/crew
+	name = "Syndicate Laboratory 4071 Crew Quarters"
+	icon_state = "dk_yellow"
+	color = "#74c24f88"
+
+/area/ruin/space/has_grav/crazylab/engi
+	name = "Syndicate Laboratory 4071 Engineering"
+	icon_state = "dk_yellow"
+	color = "#0e1b3f88"
+
+/area/ruin/space/has_grav/crazylab/chem
+	name = "Syndicate Laboratory 4071 Chemistry Lab"
+	icon_state = "dk_yellow"
+	color = "#77265588"
+
+/area/ruin/space/has_grav/crazylab/bomb
+	name = "Syndicate Laboratory 4071 Bombing Range"
+	icon_state = "dk_yellow"
+	color = "#2b267788"
+
+/area/ruin/space/has_grav/crazylab/watchpost
+	name = "Syndicate Laboratory 4071 WatchPost"
+	icon_state = "dk_yellow"
+	color = "#77262688"
+
+/area/ruin/space/has_grav/crazylab/outside
+	name = "Syndicate Laboratory 4071 Surrounding Area"
+	icon_state = "dk_yellow"
+	color = "#26773a88"
