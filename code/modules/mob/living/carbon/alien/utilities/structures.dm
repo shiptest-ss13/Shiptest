@@ -139,7 +139,7 @@
 
 
 /obj/structure/alien/weeds/Initialize()
- 	//so the sprites line up right in the map editor
+	//so the sprites line up right in the map editor
 	pixel_x = -4
 	pixel_y = -4
 
