@@ -248,7 +248,7 @@ const ShipContent = (_props, context) => {
 // Arrow directional controls
 const ShipControlContent = (_props, context) => {
   const { act, data } = useBackend(context);
-  const { calibrating } = data;
+  const { calibrating, ai_controls, ai_user } = data;
   let flyable = (!data.docking && !data.docked);
   //  DIRECTIONS const idea from Lyra as part of their Haven-Urist project
   const DIRECTIONS = {
@@ -285,6 +285,13 @@ const ShipControlContent = (_props, context) => {
             color={calibrating ? "bad" : undefined}
             disabled={!flyable}
             onClick={() => act('bluespace_jump')} />
+          <Button
+            tooltip={ai_controls ? "Disable AI Control" : "Enable AI Control"}
+            tooltipPosition="left"
+            icon="lock-a"
+            color={ai_controls ? "green" : "red"}
+            disabled={ai_user}
+            onClick={() => act('toggle_ai_control')} />
         </>
       )}>
       <Table collapsing>

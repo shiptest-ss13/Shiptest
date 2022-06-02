@@ -2360,6 +2360,10 @@
 	name = "Tetris"
 	icon_state = "tetris"
 
+/datum/sprite_accessory/ipc_screens/bubbles
+	name = "Bubbles"
+	icon_state = "bubbles"
+
 /datum/sprite_accessory/ipc_screens/tv
 	name = "Color Test"
 	icon_state = "tv"
