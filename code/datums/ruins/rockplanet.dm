@@ -151,3 +151,9 @@
 	description = "A crashed part of some unlucky ship. Has been occupied by a cult."
 	id = "crash_cult"
 	suffix = "rockplanet_crash_cult.dmm"
+
+/datum/map_template/ruin/rockplanet/thruster_factory
+	name = "Overthrown Thruster Factory"
+	description = "A thruster factory overtaken by some hostile robots."
+	id = "thruster_factory"
+	suffix = "rockplanet_thruster_factory.dmm"

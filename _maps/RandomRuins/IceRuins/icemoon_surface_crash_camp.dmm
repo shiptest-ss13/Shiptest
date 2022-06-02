@@ -204,6 +204,11 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/grass/snow,
 /area/icemoon/surface/outdoors)
+"hW" = (
+/obj/structure/closet/crate/grave,
+/obj/effect/mob_spawn/human/sec,
+/turf/open/floor/grass/snow,
+/area/icemoon/surface/outdoors)
 "ib" = (
 /obj/structure/sign/mining/survival{
 	dir = 4
@@ -222,7 +227,6 @@
 	pixel_x = 5
 	},
 /obj/item/slime_extract,
-/obj/item/storage/cans/sixbeer,
 /turf/open/floor/pod/dark,
 /area/survivalpod)
 "iI" = (
@@ -265,10 +269,8 @@
 /obj/effect/turf_decal/weather/snow/corner,
 /turf/open/floor/plasteel/dark,
 /area/icemoon/surface/outdoors)
-"jj" = (
-/obj/machinery/hydroponics{
-	pixel_y = 15
-	},
+"jh" = (
+/obj/item/broken_bottle,
 /turf/open/floor/grass/snow,
 /area/icemoon/surface/outdoors)
 "jk" = (
@@ -338,12 +340,19 @@
 /turf/open/floor/carpet/black,
 /area/survivalpod)
 "la" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg{
-	dir = 8;
-	name = "irrational Submachinegunner";
-	desc = "A very well armed security team member. He holds his weapon with an agressive posture."
+/mob/living/simple_animal/hostile/nanotrasen/ranged{
+	faction = list("hostile");
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	maxbodytemp = 1e+031;
+	minbodytemp = 180;
+	name = "Crazed Security Officer";
+	desc = "An armed security team member. The way he shambles and talks to himself is very questionable."
 	},
 /turf/open/floor/plating/ashplanet/rocky,
+/area/icemoon/surface/outdoors)
+"ln" = (
+/obj/structure/closet/crate/grave,
+/turf/open/floor/grass/snow,
 /area/icemoon/surface/outdoors)
 "lq" = (
 /turf/open/floor/pod,
@@ -355,13 +364,11 @@
 	},
 /turf/open/floor/pod/dark,
 /area/survivalpod)
-"ml" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/russian/ranged/trooper{
-	name = "Twitching rifleman";
-	desc = "An armed security officer man wearing a set of ragged bulletproof armor, they do not seem to be in the mood to discuss fashion though."
+"lG" = (
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = null
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/ashplanet/rocky,
 /area/icemoon/surface/outdoors)
 "my" = (
 /obj/structure/table,
@@ -381,20 +388,15 @@
 /area/survivalpod)
 "nP" = (
 /obj/effect/decal/cleanable/oil/slippery,
-/obj/structure/flippedtable,
-/obj/machinery/deployable_turret{
-	layer = 3.1
-	},
+/obj/machinery/porta_turret/syndicate/pod,
 /turf/open/floor/carpet/black,
 /area/survivalpod)
 "og" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg{
-	dir = 8;
-	name = "irrational Submachinegunner";
-	desc = "A very well armed security team member. He holds his weapon with an agressive posture."
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = null
 	},
-/turf/open/floor/plating/asteroid/snow,
-/area/icemoon/surface/outdoors)
+/turf/open/floor/carpet/black,
+/area/survivalpod)
 "oB" = (
 /obj/effect/turf_decal/corner/neutral{
 	dir = 8
@@ -512,7 +514,9 @@
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/survivalpod)
 "qY" = (
-/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = null
+	},
 /obj/item/reagent_containers/food/drinks/bottle/whiskey,
 /turf/open/floor/pod/dark,
 /area/survivalpod)
@@ -683,7 +687,11 @@
 "xG" = (
 /mob/living/simple_animal/hostile/russian/ranged/trooper{
 	name = "Twitching rifleman";
-	desc = "An armed security officer man wearing a set of ragged bulletproof armor, they do not seem to be in the mood to discuss fashion though."
+	desc = "An armed security officer man wearing a set of ragged bulletproof armor, they do not seem to be in the mood to discuss fashion though.";
+	faction = list("hostile");
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	maxbodytemp = 1e+031;
+	minbodytemp = 180
 	},
 /turf/open/floor/plating/asteroid/snow,
 /area/icemoon/surface/outdoors)
@@ -762,7 +770,11 @@
 "Ae" = (
 /mob/living/simple_animal/hostile/russian/ranged/trooper{
 	name = "Twitching rifleman";
-	desc = "An armed security officer man wearing a set of ragged bulletproof armor, they do not seem to be in the mood to discuss fashion though."
+	desc = "An armed security officer man wearing a set of ragged bulletproof armor, they do not seem to be in the mood to discuss fashion though.";
+	faction = list("hostile");
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	maxbodytemp = 1e+031;
+	minbodytemp = 180
 	},
 /turf/open/floor/grass/snow,
 /area/icemoon/surface/outdoors)
@@ -788,18 +800,29 @@
 "Cp" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
 	name = "Unidentifiable Marksman";
-	desc = "A suspicious individual clad in the highest quality of rugged, uparmored armor, he holds his rifle with a steady grip."
+	desc = "A suspicious individual clad in the highest quality of rugged, uparmored armor, he holds his rifle with a steady grip.";
+	faction = list("hostile");
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	maxbodytemp = 1e+031;
+	minbodytemp = 180
 	},
 /turf/open/floor/plating/asteroid/snow,
 /area/icemoon/surface/outdoors)
 "Ct" = (
 /mob/living/simple_animal/hostile/nanotrasen/ranged{
 	faction = list("hostile");
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	maxbodytemp = 1e+031;
+	minbodytemp = 180;
 	name = "Crazed Security Officer";
 	desc = "An armed security team member. The way he shambles and talks to himself is very questionable."
 	},
 /turf/open/floor/grass/snow,
 /area/icemoon/surface/outdoors)
+"CG" = (
+/obj/effect/turf_decal/weather/snow/corner,
+/turf/open/floor/carpet/black,
+/area/survivalpod)
 "CL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/comfy/shuttle{
@@ -834,10 +857,6 @@
 /obj/structure/bonfire/prelit,
 /turf/open/floor/grass/snow,
 /area/icemoon/surface/outdoors)
-"Dy" = (
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
-/turf/open/floor/grass/snow,
-/area/icemoon/surface/outdoors)
 "DH" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/laptop/preset/civilian,
@@ -864,7 +883,7 @@
 /obj/machinery/door/airlock/survival_pod/glass,
 /obj/structure/fans/tiny,
 /obj/structure/barricade/wooden/crude/snow,
-/turf/open/floor/carpet/black,
+/turf/closed/wall/mineral/snow,
 /area/survivalpod)
 "Ej" = (
 /obj/structure/barricade/sandbags,
@@ -915,7 +934,12 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
+/mob/living/simple_animal/hostile/nanotrasen/ranged/smg{
+	faction = list("hostile");
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	maxbodytemp = 1e+031;
+	minbodytemp = 180
+	},
 /turf/open/floor/plasteel/dark,
 /area/icemoon/surface/outdoors)
 "FI" = (
@@ -964,6 +988,7 @@
 	name = "research equipment"
 	},
 /obj/item/survey_handheld/elite,
+/obj/item/gun/energy/pulse/carbine/loyalpin,
 /turf/open/floor/carpet/black,
 /area/survivalpod)
 "GB" = (
@@ -1060,6 +1085,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/snow/airless,
 /area/icemoon/surface/outdoors)
+"KZ" = (
+/obj/item/storage/cans/sixbeer,
+/turf/open/floor/grass/snow,
+/area/icemoon/surface/outdoors)
 "Lp" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -1068,6 +1097,12 @@
 /obj/effect/decal/cleanable/blood/gibs/down,
 /obj/item/clothing/head/helmet/space/pilot,
 /turf/closed/mineral/snowmountain/cavern/icemoon,
+/area/icemoon/surface/outdoors)
+"Lu" = (
+/obj/item/reagent_containers/food/drinks/bottle/rum{
+	list_reagents = null
+	},
+/turf/open/floor/grass/snow,
 /area/icemoon/surface/outdoors)
 "LJ" = (
 /obj/structure/barricade/sandbags{
@@ -1089,12 +1124,21 @@
 	},
 /turf/open/floor/pod,
 /area/survivalpod)
+"Mt" = (
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = null
+	},
+/turf/open/floor/plating/asteroid/snow,
+/area/icemoon/surface/outdoors)
 "MC" = (
 /turf/open/floor/pod/dark,
 /area/survivalpod)
 "MX" = (
 /mob/living/simple_animal/hostile/nanotrasen/ranged{
 	faction = list("hostile");
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	maxbodytemp = 1e+031;
+	minbodytemp = 180;
 	name = "Crazed Security Officer";
 	desc = "An armed security team member. The way he shambles and talks to himself is very questionable."
 	},
@@ -1201,7 +1245,11 @@
 	},
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
 	name = "Unidentifiable Marksman";
-	desc = "A suspicious individual clad in the highest quality of rugged, uparmored armor, he holds his rifle with a steady grip."
+	desc = "A suspicious individual clad in the highest quality of rugged, uparmored armor, he holds his rifle with a steady grip.";
+	faction = list("hostile");
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	maxbodytemp = 1e+031;
+	minbodytemp = 180
 	},
 /turf/open/floor/plating,
 /area/icemoon/surface/outdoors)
@@ -1260,18 +1308,10 @@
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/survivalpod)
 "QS" = (
-/obj/effect/turf_decal/box/white/corners{
-	dir = 8
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = null
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg{
-	dir = 8;
-	name = "irrational Submachinegunner";
-	desc = "A very well armed security team member. He holds his weapon with an agressive posture."
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/grass/snow,
 /area/icemoon/surface/outdoors)
 "QX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1309,6 +1349,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/icemoon/surface/outdoors)
+"Ry" = (
+/obj/item/reagent_containers/food/drinks/bottle/applejack{
+	list_reagents = null
+	},
+/turf/open/floor/grass/snow,
+/area/icemoon/surface/outdoors)
 "Sk" = (
 /obj/structure/statue/snow/snowman,
 /turf/open/floor/grass/snow,
@@ -1342,7 +1388,7 @@
 /area/survivalpod)
 "SJ" = (
 /obj/item/reagent_containers/glass/bucket/wooden{
-	pixel_y = 12;
+	pixel_y = -5;
 	pixel_x = -10
 	},
 /turf/open/floor/grass/snow,
@@ -1367,7 +1413,9 @@
 /turf/open/floor/pod,
 /area/survivalpod)
 "TU" = (
-/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = null
+	},
 /turf/open/floor/pod/dark,
 /area/survivalpod)
 "UD" = (
@@ -1388,12 +1436,20 @@
 /obj/effect/turf_decal/weather/snow/corner,
 /mob/living/simple_animal/hostile/nanotrasen/ranged/assault{
 	desc = "A well armed SolGov Fireteam Leader. His uniform is unkept and he moves uneasily. Walking up to say high may be a bad idea.";
-	name = "Deranged Fireteam Leader"
+	name = "Deranged Fireteam Leader";
+	faction = list("hostile");
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	maxbodytemp = 1e+031;
+	minbodytemp = 180
 	},
 /turf/open/floor/plating/snowed,
 /area/icemoon/surface/outdoors)
 "Vz" = (
-/mob/living/simple_animal/hostile/feral_doctor,
+/mob/living/simple_animal/hostile/feral_doctor{
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	maxbodytemp = 1e+031;
+	minbodytemp = 180
+	},
 /obj/effect/decal/cleanable/garbage,
 /turf/open/floor/pod,
 /area/survivalpod)
@@ -1476,13 +1532,6 @@
 	},
 /turf/open/floor/pod,
 /area/survivalpod)
-"Xl" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
-/turf/open/floor/plasteel/dark,
-/area/icemoon/surface/outdoors)
 "Xu" = (
 /obj/structure/window/reinforced/survival_pod{
 	dir = 9
@@ -1609,7 +1658,11 @@
 /mob/living/simple_animal/hostile/nanotrasen/ranged/smg{
 	dir = 8;
 	name = "irrational Submachinegunner";
-	desc = "A very well armed security team member. He holds his weapon with an agressive posture."
+	desc = "A very well armed security team member. He holds his weapon with an agressive posture.";
+	faction = list("hostile");
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	maxbodytemp = 1e+031;
+	minbodytemp = 180
 	},
 /turf/open/floor/grass/snow,
 /area/icemoon/surface/outdoors)
@@ -1713,7 +1766,7 @@ pd
 pd
 pd
 pd
-pd
+QS
 pd
 SY
 pd
@@ -1787,7 +1840,7 @@ Ae
 hD
 pd
 Ct
-ZM
+pd
 Qd
 tL
 ye
@@ -1857,7 +1910,7 @@ fk
 pd
 pd
 pd
-pd
+QS
 pd
 pd
 Qd
@@ -1867,7 +1920,7 @@ ki
 Qd
 pd
 pd
-pd
+QS
 pd
 pd
 pd
@@ -1886,7 +1939,7 @@ Pz
 bB
 nP
 LJ
-WL
+og
 WL
 WL
 zu
@@ -1894,7 +1947,7 @@ pd
 Eo
 pd
 pd
-Ct
+QS
 pd
 Qd
 sN
@@ -1924,7 +1977,7 @@ Gf
 LJ
 WL
 WL
-WL
+CG
 Ea
 pd
 Ne
@@ -1942,7 +1995,7 @@ pd
 ZM
 hD
 pd
-pd
+QS
 pd
 pd
 "}
@@ -1968,14 +2021,14 @@ Ne
 pd
 Dv
 Dk
-pd
+Ry
 EI
 pd
 pd
-pd
+QS
 Dm
 pd
-Ct
+QS
 hD
 pd
 pd
@@ -1992,20 +2045,20 @@ EE
 MC
 fq
 bB
-WL
+og
 zu
 JP
 kL
 VL
 fk
-jj
+VI
 pd
 pd
 gI
 pd
+QS
 pd
-pd
-pd
+jh
 ZR
 gI
 pd
@@ -2021,8 +2074,8 @@ Qd
 (12,1,1) = {"
 Al
 Al
-pd
-pd
+ln
+hW
 zu
 YO
 MC
@@ -2034,14 +2087,14 @@ SN
 zu
 GB
 zu
-jj
+VI
 pd
 pd
 pd
 Ne
 pd
 Sk
-pd
+Lu
 pd
 Dm
 pd
@@ -2057,8 +2110,8 @@ uu
 (13,1,1) = {"
 Al
 Al
-pd
-pd
+ln
+hW
 GH
 be
 MC
@@ -2070,16 +2123,16 @@ Hx
 zu
 SD
 uu
-jj
+VI
 jk
-pd
-pd
-pd
+jh
+QS
+KZ
 pd
 cs
-Ct
 pd
-pd
+QS
+QS
 pd
 pd
 Qd
@@ -2093,8 +2146,8 @@ Qd
 (14,1,1) = {"
 Al
 Al
-pd
-pd
+hW
+ln
 Qd
 Wu
 tA
@@ -2112,7 +2165,7 @@ pd
 pd
 Ct
 Ne
-pd
+QS
 pd
 pd
 pd
@@ -2145,12 +2198,12 @@ pd
 pd
 pd
 pd
-Dy
+pd
 pd
 pd
 pd
 vm
-pd
+jh
 Dv
 pd
 pd
@@ -2186,9 +2239,9 @@ pd
 pd
 pd
 pd
-Ct
 pd
 pd
+Lu
 pd
 NH
 YJ
@@ -2218,11 +2271,11 @@ gd
 pd
 Di
 Di
-Di
+Mt
 Ne
+Mt
 Di
-Di
-Di
+Mt
 Di
 Hm
 Di
@@ -2247,7 +2300,7 @@ QX
 Hw
 Rb
 Rb
-Xl
+Hw
 yS
 CU
 aF
@@ -2301,7 +2354,7 @@ Di
 Ne
 Jk
 Di
-Di
+Mt
 Di
 Di
 Di
@@ -2387,7 +2440,7 @@ Lp
 oB
 FI
 kn
-ml
+Rb
 PU
 CL
 CL
@@ -2406,7 +2459,7 @@ Di
 sf
 aY
 Ne
-Ne
+lG
 Di
 Ne
 pd
@@ -2428,7 +2481,7 @@ Rm
 zn
 zn
 Rm
-QS
+za
 FI
 FI
 FI
@@ -2439,11 +2492,11 @@ Di
 sf
 Di
 Di
-Ne
+lG
 Di
 MX
 sf
-og
+MX
 xi
 Al
 Al
@@ -2474,7 +2527,7 @@ Di
 Di
 YF
 Ne
-Di
+Mt
 Di
 Jk
 xi
@@ -2504,7 +2557,7 @@ FI
 FI
 gd
 Di
-Di
+Mt
 Di
 Di
 Di
