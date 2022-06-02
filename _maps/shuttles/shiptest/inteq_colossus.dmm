@@ -1,4 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ah" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/item/trash/raisins,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "al" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -2649,6 +2656,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
+"Ck" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/item/trash/boritos,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/office)
 "Cu" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -2976,14 +2990,14 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/item/storage/backpack/industrial,
-/obj/item/clothing/shoes/workboots,
-/obj/item/clothing/accessory/armband/engine,
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
 /obj/item/clothing/suit/toggle/industrial,
-/obj/item/clothing/head/hardhat,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/storage/belt/utility,
+/obj/item/clothing/under/syndicate/inteq/artificer,
+/obj/item/clothing/under/syndicate/inteq/skirt/artificer,
+/obj/item/clothing/head/soft/inteq,
+/obj/item/clothing/head/hardhat,
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "GR" = (
@@ -3400,13 +3414,6 @@
 "NV" = (
 /obj/machinery/light,
 /obj/structure/closet/crate/medical,
-/obj/item/clothing/shoes/sneakers/brown,
-/obj/item/clothing/accessory/armband/med,
-/obj/item/clothing/under/syndicate/inteq,
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/storage/belt/medical/webbing,
-/obj/item/clothing/head/soft/inteq,
-/obj/item/clothing/glasses/hud/health,
 /obj/machinery/button/door{
 	dir = 1;
 	id = "colossus_starboard";
@@ -3417,6 +3424,14 @@
 /obj/effect/turf_decal/industrial/caution{
 	dir = 1
 	},
+/obj/item/storage/backpack/satchel/med,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/storage/belt/medical/webbing,
+/obj/item/clothing/suit/armor/inteq/corpsman,
+/obj/item/clothing/head/soft/inteq/corpsman,
+/obj/item/clothing/under/syndicate/inteq/skirt/corpsman,
+/obj/item/clothing/under/syndicate/inteq/corpsman,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Ob" = (
@@ -4757,7 +4772,7 @@ CO
 nV
 kV
 uB
-Cy
+ah
 Ve
 YZ
 vH
@@ -4961,7 +4976,7 @@ dS
 jw
 ry
 ry
-ry
+Ck
 Od
 Cz
 Zz

@@ -126,8 +126,9 @@
 /datum/outfit/job/engineer/inteq
 	name = "IRMG Artificer (Inteq)"
 
-	uniform = /obj/item/clothing/under/syndicate/inteq
-	accessory = /obj/item/clothing/accessory/armband/engine
+	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
+	head = /obj/item/clothing/head/soft/inteq
+	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/job/engineer/solgov
 	name = "Ship Engineer (SolGov)"

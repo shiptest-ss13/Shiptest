@@ -92,8 +92,8 @@
 /datum/outfit/job/paramedic/inteq
 	name = "IRMG Corpsman (Inteq)"
 
-	uniform = /obj/item/clothing/under/syndicate/inteq
-	head = /obj/item/clothing/head/soft/inteq
-	shoes = /obj/item/clothing/shoes/sneakers/brown
-	accessory = /obj/item/clothing/accessory/armband/med
+	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
+	head = /obj/item/clothing/head/soft/inteq/corpsman
+	suit = /obj/item/clothing/suit/armor/inteq/corpsman
+	shoes = /obj/item/clothing/shoes/combat
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
