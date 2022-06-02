@@ -342,7 +342,8 @@
 	name = "Hell Water"
 	description = "YOUR FLESH! IT BURNS!"
 	taste_description = "burning"
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
+	accelerant_quality = 20
+	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/hellwater/on_mob_life(mob/living/carbon/M)
 	M.fire_stacks = min(5,M.fire_stacks + 3)
@@ -1131,7 +1132,8 @@
 	glass_icon_state = "dr_gibb_glass"
 	glass_name = "glass of welder fuel"
 	glass_desc = "Unless you're an industrial tool, this is probably not safe for consumption."
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
+	process_flags = ORGANIC | SYNTHETIC
+	accelerant_quality = 10
 
 /datum/reagent/fuel/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with welding fuel to make them easy to ignite!
 	if(method == TOUCH || method == VAPOR)
@@ -2324,7 +2326,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 	taste_description = "rocks"
-	var/healing = 0.65
+	var/healing = 0.8
 
 /datum/reagent/crystal_reagent/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-healing*REM, 0)

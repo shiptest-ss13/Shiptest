@@ -357,7 +357,7 @@
 		close_spawn_windows()
 		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
 		var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template)
-		if(!istype(target))
+		if(!target?.shuttle_port)
 			to_chat(usr, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
 			new_player_panel()
 			return

@@ -155,6 +155,7 @@
 	independent = TRUE
 	frequency = FREQ_WIDEBAND
 	freqlock = TRUE
+	freerange = TRUE
 
 /obj/item/radio/intercom/wideband/unscrewed
 	unscrewed = TRUE
