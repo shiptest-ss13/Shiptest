@@ -963,7 +963,7 @@
 			var/obj/item/organ/tongue/felinid/tonje = new
 			tonje.Insert(dude, TRUE, FALSE)
 		if(ADMIN_PUNISHMENT_PIE)
-			var/pie_count = input("How many pies?:","Num") as num|null
+			var/pie_count = input("How many pies do you want to deploy?:","Armageddon") as num|null
 			var/delay_counter = 1
 			if(!pie_count)
 				return
