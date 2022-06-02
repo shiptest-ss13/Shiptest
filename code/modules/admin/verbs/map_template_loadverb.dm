@@ -21,10 +21,26 @@
 	images += preview
 	if(alert(src,"Confirm location.","Template Confirm","Yes","No") == "Yes")
 		if(template.load(T, centered = TRUE))
+			var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template)
 			message_admins("<span class='adminnotice'>[key_name_admin(src)] has placed a map template ([template.name]) at [ADMIN_COORDJMP(T)]</span>")
 		else
 			to_chat(src, "Failed to place map", confidential = TRUE)
 	images -= preview
+
+/client/proc/ship_template_load()
+	set category = "Debug"
+	set name = "Load Template As Ship"
+
+	var/datum/map_template/template
+
+	var/map = input(src, "Choose a Map Template to spawn as a ship.","Place Map Template") as null|anything in sortList(SSmapping.map_templates)
+	if(!map)
+		return
+	template = SSmapping.map_templates[map]
+
+	if(alert(src,"Confirm Placement.","Ship Confirm","Yes","No") == "Yes")
+		var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template)
+		message_admins("<span class='adminnotice'>[key_name_admin(src)] has loaded ([template.name]) as a shiptest </span>")
 
 /client/proc/map_template_upload()
 	set category = "Debug"

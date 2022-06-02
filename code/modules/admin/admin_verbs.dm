@@ -183,6 +183,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/debug_huds,
 	/client/proc/map_template_load,
 	/client/proc/map_template_upload,
+	/client/proc/ship_template_load,
 	/client/proc/jump_to_ruin,
 	/client/proc/view_runtimes,
 	/client/proc/pump_random_event,
