@@ -682,6 +682,9 @@
 /obj/machinery/power/port_gen/pacman/super,
 /obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
@@ -794,6 +797,16 @@
 	icon_state = "2-8"
 	},
 /obj/item/stack/sheet/mineral/wood/fifty,
+/obj/structure/rack,
+/obj/item/card/emag/limited{
+	uses_left = 3
+	},
+/obj/item/multitool,
+/obj/item/multitool,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "pE" = (
@@ -816,6 +829,10 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/structure/reagent_dispensers/watertank/high,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "pR" = (
@@ -1111,16 +1128,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
-"yd" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/reagent_dispensers/watertank/high,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/mop,
-/turf/open/floor/plating,
-/area/ship/maintenance)
 "yi" = (
 /turf/open/floor/plating/airless,
 /area/ship/external)
@@ -2016,16 +2023,10 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew)
 "QR" = (
-/obj/item/storage/toolbox/electrical,
-/obj/item/storage/toolbox/electrical,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/multitool,
-/obj/structure/rack,
 /obj/effect/turf_decal/box,
-/obj/item/multitool,
-/obj/item/card/emag/limited{
-	uses_left = 3
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
@@ -2716,7 +2717,7 @@ Of
 fb
 CV
 Mj
-yd
+Si
 FI
 pN
 qg
