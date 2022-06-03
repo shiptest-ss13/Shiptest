@@ -2439,6 +2439,9 @@
 /obj/effect/turf_decal/siding/blue{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "pZ" = (
@@ -3497,6 +3500,13 @@
 /obj/machinery/smartfridge/food,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/hydroponics)
+"xz" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/grass,
+/area/ship/hallway/central)
 "xA" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6907,15 +6917,11 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "Vi" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/black/border,
-/turf/open/floor/plasteel,
-/area/ship/crew)
+/turf/open/floor/grass,
+/area/ship/hallway/central)
 "Vl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6953,6 +6959,21 @@
 	},
 /turf/open/floor/circuit,
 /area/ship/hallway/fore)
+"VE" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/grass,
+/area/ship/hallway/central)
 "VF" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -7346,6 +7367,9 @@
 "Yh" = (
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/grass,
 /area/ship/hallway/central)
 "Yl" = (
@@ -8441,7 +8465,7 @@ Kl
 Kl
 Kl
 IX
-Vi
+Mm
 cx
 sg
 XC
@@ -8949,9 +8973,9 @@ vy
 vy
 cS
 Yh
-cP
-XI
-zP
+Vi
+xz
+VE
 cP
 Gw
 qx
