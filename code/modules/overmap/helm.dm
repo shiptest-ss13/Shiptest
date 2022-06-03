@@ -119,10 +119,11 @@
 	if(!current_ship && !reload_ship())
 		return
 
-	if(check_keylock())
-		return
+	if(isliving(user) && !viewer)
+		if(check_keylock())
+			return
 
-	if(!current_ship.shipkey && istype(user) && Adjacent(user))
+	if(!current_ship.shipkey && istype(user) && Adjacent(user) && !viewer)
 		say("Generated new shipkey, do not lose it!")
 		var/key = new /obj/item/key/ship(get_turf(src), current_ship)
 		user.put_in_hands(key)
