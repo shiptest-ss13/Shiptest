@@ -88,7 +88,10 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm)
 "bW" = (
-/obj/machinery/door/airlock/survival_pod,
+/obj/machinery/door/airlock/survival_pod{
+/obj/docking_port/mobile,
+	dir = 2
+	},
 /obj/structure/fans/tiny,
 /turf/open/floor/pod/dark,
 /area/ship/crew/canteen)
