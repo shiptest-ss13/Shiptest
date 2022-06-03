@@ -97,3 +97,4 @@
 	suit = /obj/item/clothing/suit/armor/inteq/corpsman
 	shoes = /obj/item/clothing/shoes/combat
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
+	ears = /obj/item/radio/headset/headset_medsec/alt
