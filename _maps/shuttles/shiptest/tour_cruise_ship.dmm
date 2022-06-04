@@ -1113,6 +1113,9 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/effect/turf_decal/industrial/radiation/corner{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ho" = (
@@ -3542,6 +3545,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/purple/arrow_cw,
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "xJ" = (
@@ -5479,6 +5485,9 @@
 /obj/effect/turf_decal/trimline/red/arrow_ccw{
 	dir = 1
 	},
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "LB" = (
@@ -5535,6 +5544,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 8
+	},
 /turf/open/floor/light,
 /area/ship/engineering)
 "Me" = (
@@ -5547,6 +5559,9 @@
 /obj/machinery/button/door/incinerator_vent_atmos_aux{
 	pixel_x = -28;
 	pixel_y = 8
+	},
+/obj/effect/turf_decal/industrial/radiation/corner{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
