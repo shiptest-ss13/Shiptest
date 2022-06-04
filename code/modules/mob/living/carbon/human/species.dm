@@ -48,7 +48,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///The gradient color used to color the gradient.
 	var/grad_color
 	///The color used for the "white" of the eye, if the eye has one.
-	var/sclera_color = "ebeae8"
+	var/sclera_color = "e8e8e8"
 
 	///Does the species use skintones or not? As of now only used by humans.
 	var/use_skintones = FALSE
@@ -759,21 +759,21 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 						sclera_overlay.color = "#" + H.sclera_color
 						standing += sclera_overlay
 					standing += eye_overlay
+		if(EMOTE_OVERLAY in species_traits)
+			// blush
+			if (HAS_TRAIT(H, TRAIT_BLUSHING)) // Caused by either the *blush emote or the "drunk" mood event
+				var/mutable_appearance/blush_overlay = mutable_appearance('icons/mob/human_face.dmi', "blush", -BODY_ADJ_LAYER) //should appear behind the eyes
+				blush_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
+				blush_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+				blush_overlay.color = COLOR_BLUSH_PINK
+				standing += blush_overlay
 
-		// blush
-		if (HAS_TRAIT(H, TRAIT_BLUSHING)) // Caused by either the *blush emote or the "drunk" mood event
-			var/mutable_appearance/blush_overlay = mutable_appearance('icons/mob/human_face.dmi', "blush", -BODY_ADJ_LAYER) //should appear behind the eyes
-			blush_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-			blush_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
-			blush_overlay.color = COLOR_BLUSH_PINK
-			standing += blush_overlay
-
-		// snore
-		if (HAS_TRAIT(H, TRAIT_SNORE)) // Caused by snoring asleeep
-			var/mutable_appearance/snore_overlay = mutable_appearance('icons/mob/human_face.dmi', "snore", BODY_ADJ_LAYER) //should appear behind the eyes
-			snore_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-			snore_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
-			standing += snore_overlay
+			// snore
+			if (HAS_TRAIT(H, TRAIT_SNORE)) // Caused by the snore emote
+				var/mutable_appearance/snore_overlay = mutable_appearance('icons/mob/human_face.dmi', "snore", BODY_ADJ_LAYER) //should appear behind the eyes
+				snore_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
+				snore_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+				standing += snore_overlay
 
 	//Underwear, Undershirts & Socks
 	if(!(NO_UNDERWEAR in species_traits))
