@@ -114,6 +114,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffdbb4"
 	lighting_brightness_tube = 6
 
+/area/ship/crew/crewtwo
+
+/area/ship/crew/crewthree
+
+/area/ship/crew/crewfour
+
+/area/ship/crew/crewfive
+
 /area/ship/crew/cryo
 	name = "Cryopod Room"
 	icon_state = "cryopod"
@@ -123,6 +131,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/dorm
 	name = "Dormitory"
 	icon_state = "Sleep"
+
+/area/ship/crew/dorm/dormtwo
+
+/area/ship/crew/dorm/dormthree
+
+/area/ship/crew/dorm/dormfour
+
+/area/ship/crew/dorm/dormfive
 
 /area/ship/crew/toilet
 	name = "Restrooms"

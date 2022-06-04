@@ -1,0 +1,36 @@
+{
+	"map_name": "Echo-class Apartment Ship",
+	"prefix": "ISV",
+	"namelists": ["GENERAL", "SPACE", "NATURAL"],
+	"map_short_name": "Echo-class",
+	"map_path": "_maps/shuttles/shiptest/echo.dmm",
+	"map_id": "echo",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/western",
+			"officer": true,
+			"slots": 1
+		},
+		"Scholar": {
+			"outfit": "/datum/outfit/job/curator",
+			"slots": 1
+			},
+		"Medical Tenant": {
+			"outfit": "/datum/outfit/job/chemist/pharmacologist",
+			"slots": 1
+			},
+		"Engineering Tenant": {
+			"outfit": "/datum/outfit/job/engineer/electrician",
+			"slots": 1
+		},
+		"Tenant": {
+			"outfit": "/datum/outfit/job/curator/dungeonmaster",
+			"slots": 1
+		},
+		"Resident Artist": {
+			"outfit": "/datum/outfit/job/assistant/artist",
+			"slots": 1
+		}
+	},
+	"cost": 1000
+}

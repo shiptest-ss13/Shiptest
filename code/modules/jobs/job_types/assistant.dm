@@ -168,3 +168,13 @@ Assistant
 	shoes = /obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/headset_srv
 	gloves = /obj/item/clothing/gloves/color/white
+
+/datum/outfit/job/assistant/artist
+	name = "Assistant (Artist)"
+
+	uniform = /obj/item/clothing/under/suit/burgundy
+	suit = /obj/item/clothing/suit/toggle/suspenders
+	head = /obj/item/clothing/head/beret/black
+	shoes = /obj/item/clothing/shoes/laceup
+	gloves = /obj/item/clothing/gloves/color/white
+	accessory = /obj/item/clothing/neck/scarf/darkblue
