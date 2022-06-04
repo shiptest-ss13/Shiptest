@@ -307,9 +307,6 @@
 		AddEmploymentContract(humanc)
 		SSblackbox.record_feedback("tally", "species_spawned", 1, humanc.dna.species.name)
 
-		if(GLOB.highlander)
-			to_chat(humanc, "<span class='userdanger'><i>THERE CAN BE ONLY ONE!!!</i></span>")
-			humanc.make_scottish()
 		if(GLOB.summon_guns_triggered)
 			give_guns(humanc)
 		if(GLOB.summon_magic_triggered)
@@ -360,7 +357,7 @@
 		close_spawn_windows()
 		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
 		var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template)
-		if(!istype(target))
+		if(!target?.shuttle_port)
 			to_chat(usr, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
 			new_player_panel()
 			return

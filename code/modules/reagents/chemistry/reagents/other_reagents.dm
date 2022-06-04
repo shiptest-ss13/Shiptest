@@ -335,7 +335,8 @@
 	name = "Hell Water"
 	description = "YOUR FLESH! IT BURNS!"
 	taste_description = "burning"
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
+	accelerant_quality = 20
+	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/hellwater/on_mob_life(mob/living/carbon/M)
 	M.fire_stacks = min(5,M.fire_stacks + 3)
@@ -1124,7 +1125,8 @@
 	glass_icon_state = "dr_gibb_glass"
 	glass_name = "glass of welder fuel"
 	glass_desc = "Unless you're an industrial tool, this is probably not safe for consumption."
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
+	process_flags = ORGANIC | SYNTHETIC
+	accelerant_quality = 10
 
 /datum/reagent/fuel/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with welding fuel to make them easy to ignite!
 	if(method == TOUCH || method == VAPOR)
@@ -2325,7 +2327,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 	taste_description = "rocks"
-	var/healing = 0.65
+	var/healing = 0.8
 
 /datum/reagent/crystal_reagent/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-healing*REM, 0)
@@ -2554,3 +2556,31 @@
 	color = "#7b6e60"
 	wall_type = /turf/closed/wall/concrete/reinforced
 	floor_type = /turf/open/floor/concrete/reinforced
+
+/datum/reagent/calcium
+	name = "Calcium"
+	description = "A dull gray metal important to bones."
+	reagent_state = SOLID
+	color = "#68675c"
+	metabolization_rate = REAGENTS_METABOLISM
+
+/datum/reagent/ash_fibers
+	name = "Ashen Fibers"
+	description = "Ground plant fibers from a cave fern. Useful for medicines."
+	reagent_state = SOLID
+	color = "#5a4f42"
+	taste_mult = 0
+
+/datum/reagent/titanium
+	name = "Titanium"
+	description = "A light, reflective grey metal used in ship construction."
+	reagent_state = SOLID
+	color = "#c2c2c2"
+
+/datum/reagent/mutationtoxin/kobold
+	name = "Kobold Mutation Toxin"
+	description = "An ashen toxin. Something about this seems lesser."
+	color = "#5EFF3B" //RGB: 94, 255, 59
+	race = /datum/species/lizard/ashwalker/kobold
+	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
+	taste_description = "short savagery"

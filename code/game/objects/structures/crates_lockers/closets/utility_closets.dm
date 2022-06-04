@@ -20,6 +20,9 @@
 /obj/structure/closet/emcloset/anchored
 	anchored = TRUE
 
+/obj/structure/closet/emcloset/empty
+	populate = FALSE
+
 /obj/structure/closet/emcloset/PopulateContents()
 	..()
 
@@ -61,6 +64,9 @@
 	desc = "It's a storage unit for fire-fighting supplies."
 	icon_state = "fire"
 
+/obj/structure/closet/firecloset/empty
+	populate = FALSE
+
 /obj/structure/closet/firecloset/PopulateContents()
 	..()
 
@@ -86,6 +92,9 @@
 	desc = "It's a storage unit for tools."
 	icon_state = "eng"
 	icon_door = "eng_tool"
+
+/obj/structure/closet/toolcloset/empty
+	populate = FALSE
 
 /obj/structure/closet/toolcloset/PopulateContents()
 	..()
@@ -129,6 +138,9 @@
 	desc = "It's a storage unit for rad-protective suits."
 	icon_state = "eng"
 	icon_door = "eng_rad"
+
+/obj/structure/closet/radiation/empty
+	populate = FALSE
 
 /obj/structure/closet/radiation/PopulateContents()
 	..()

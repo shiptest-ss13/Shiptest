@@ -90,7 +90,6 @@
 
 /datum/outfit/job/captain/western
 	name = "Captain (Western)"
-	uniform = /obj/item/clothing/under/suit/white
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/cowboy/white
 	head = /obj/item/clothing/head/caphat/cowboy
@@ -119,4 +118,31 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/aclfcap
 	suit = /obj/item/clothing/suit/aclf
+
+/datum/outfit/job/captain/minutemen
+	name = "Captain (Colonial Minutemen)"
+
+	ears = /obj/item/radio/headset/heads/captain/alt
+	uniform = /obj/item/clothing/under/rank/command/minutemen
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
+	alt_suit = null
+
+	shoes = /obj/item/clothing/shoes/combat
+	head = /obj/item/clothing/head/cowboy/sec/minutemen
+	backpack = /obj/item/storage/backpack
+	backpack_contents = list(/obj/item/storage/box/ids=1,\
+		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+
+/datum/outfit/job/captain/minutemen/general
+	name = "General (Colonial Minutemen)"
+
+	head = /obj/item/clothing/head/caphat/minutemen
+	uniform = /obj/item/clothing/under/rank/command/minutemen
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/minutemen
+	shoes = /obj/item/clothing/shoes/combat
+
+	box = /obj/item/storage/box/survival/engineer/radio
+	backpack = /obj/item/storage/backpack
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/mateba=1)
 

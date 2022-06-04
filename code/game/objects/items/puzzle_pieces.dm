@@ -222,6 +222,11 @@
 
 	AddElement(/datum/element/undertile, tile_overlay = tile_overlay) //we remove use_anchor here, so it ALWAYS stays anchored
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/item/pressure_plate/hologrid/examine(mob/user)
 	. = ..()
 	if(claimed)
@@ -234,8 +239,7 @@
 	icon_state = "lasergrid_full"
 	claimed = TRUE
 
-/obj/item/pressure_plate/hologrid/Crossed(atom/movable/AM)
-	. = ..()
+/obj/item/pressure_plate/hologrid/on_entered(datum/source, atom/movable/AM)
 	if(trigger_item && istype(AM, specific_item) && !claimed)
 		AM.set_anchored(TRUE)
 		flick("laserbox_burn", AM)

@@ -1,7 +1,6 @@
 /datum/species/fly
 	name = "\improper Flyperson"
 	id = SPECIES_FLYPERSON
-	say_mod = "buzzes"
 	species_traits = list(NOEYESPRITES,TRAIT_ANTENNAE)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	mutanttongue = /obj/item/organ/tongue/fly
@@ -24,11 +23,9 @@
 	if(chem.type == /datum/reagent/toxin/pestkiller)
 		H.adjustToxLoss(3)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
-		return 1
+		return TRUE
 
-
-/datum/species/fly/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
-	if(istype(chem, /datum/reagent/consumable))
+	if(chem.type == /datum/reagent/consumable)
 		var/datum/reagent/consumable/nutri_check = chem
 		if(nutri_check.nutriment_factor > 0)
 			var/turf/pos = get_turf(H)
@@ -36,7 +33,7 @@
 			playsound(pos, 'sound/effects/splat.ogg', 50, TRUE)
 			H.visible_message("<span class='danger'>[H] vomits on the floor!</span>", \
 						"<span class='userdanger'>You throw up on the floor!</span>")
-	..()
+	return ..()
 
 /datum/species/fly/check_species_weakness(obj/item/weapon, mob/living/attacker)
 	if(istype(weapon, /obj/item/melee/flyswatter))
