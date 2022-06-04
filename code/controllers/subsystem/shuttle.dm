@@ -311,7 +311,8 @@ SUBSYSTEM_DEF(shuttle)
 	loading_zone.fill_in(turf_type = /turf/open/space/transit/south)
 
 	var/turf/BL = locate(loading_zone.low_x, loading_zone.low_y, loading_zone.z_value)
-	template.load(BL, centered = FALSE, register = FALSE)
+	if(!template.load(BL, centered = FALSE, register = FALSE))
+		return
 
 	var/affected = template.get_affected_turfs(BL, centered=FALSE)
 

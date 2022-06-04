@@ -32,15 +32,15 @@
 	throw_message = "does nothing to the rocky hide of the"
 	vision_range = 5
 	aggro_vision_range = 9
-	move_force = MOVE_FORCE_VERY_STRONG
 	move_resist = MOVE_FORCE_VERY_STRONG
-	pull_force = MOVE_FORCE_VERY_STRONG
 	gender = MALE //lavaland elite goliath says that it s female and i s stronger because of sexual dimorphism, so normal goliaths should be male
 	var/can_charge = TRUE
 	var/pre_attack = 0
 	var/pre_attack_icon = "Goliath_preattack"
 	var/tentacle_type = /obj/effect/temp_visual/goliath_tentacle
-	loot = list(/obj/item/stack/sheet/animalhide/goliath_hide)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
+	loot = list()
 	food_type = list(/obj/item/reagent_containers/food/snacks/meat, /obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit, /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf)		// Omnivorous
 	tame_chance = 0
 	bonus_tame_chance = 10
@@ -62,15 +62,11 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/revive(full_heal = FALSE, admin_revive = FALSE)//who the fuck anchors mobs
 	if(..())
-		move_force = MOVE_FORCE_VERY_STRONG
 		move_resist = MOVE_FORCE_VERY_STRONG
-		pull_force = MOVE_FORCE_VERY_STRONG
-		. = 1
+		return TRUE
 
 /mob/living/simple_animal/hostile/asteroid/goliath/death(gibbed)
-	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
-	pull_force = PULL_FORCE_DEFAULT
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/goliath/gib()
@@ -152,7 +148,7 @@
 	pre_attack_icon = "goliath2"
 	crusher_loot = /obj/item/crusher_trophy/goliath_tentacle
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 4)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
 	loot = list()
 	stat_attack = UNCONSCIOUS
 	robust_searching = 1
