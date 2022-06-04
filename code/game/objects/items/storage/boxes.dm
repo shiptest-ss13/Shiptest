@@ -38,6 +38,11 @@
 	. = ..()
 	update_icon()
 
+/obj/item/storage/box/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
+
 /obj/item/storage/box/suicide_act(mob/living/carbon/user)
 	var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
 	if(myhead)
@@ -892,6 +897,17 @@
 /obj/item/storage/box/beanbag/PopulateContents()
 	for(var/i in 1 to 6)
 		new /obj/item/ammo_casing/shotgun/beanbag(src)
+
+/obj/item/storage/box/slugshot
+	name = "box of 12-gauge slug shotgun shells"
+	desc = "a box full of slug shots, designed for riot shotguns"
+	icon = 'whitesands/icons/obj/storage.dmi'
+	icon_state = "slugshot_box"
+	illustration = null
+
+/obj/item/storage/box/slugshot/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun(src)
 
 /obj/item/storage/box/actionfigure
 	name = "box of action figures"

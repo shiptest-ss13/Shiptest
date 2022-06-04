@@ -219,6 +219,5 @@ round(cos_inv_third+sqrt3_sin, 0.001), round(cos_inv_third-sqrt3_sin, 0.001), ro
 	var/shake_dir = pick(-1, 1)
 	var/rotation = 2+soft_cap(intensity, 1, 1, 0.94)
 	var/offset = 1+soft_cap(intensity*0.3, 1, 1, 0.8)
-	var/time_new = time +soft_cap(intensity*0.3, 2, 1, 0.92)
 	animate(src, transform=turn(transform, rotation*shake_dir), pixel_x=init_px + offset*shake_dir, time=1)
-	animate(transform=initial_transform, pixel_x=init_px, time=time_new, easing=ELASTIC_EASING)
+	animate(transform=initial_transform, pixel_x=init_px, time, easing=ELASTIC_EASING)

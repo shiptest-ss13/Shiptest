@@ -16,13 +16,11 @@
 	for(var/path in salvageable_parts)
 		if(prob(salvageable_parts[path]))
 			new path (loc)
-	return
 
 /obj/structure/salvageable/attackby(obj/item/tool, mob/living/user, params)
 	if((user.a_intent != INTENT_HELP) && tool.tool_behaviour == TOOL_CROWBAR)
 		return
-	else
-		return ..()
+	return ..()
 
 /obj/structure/salvageable/crowbar_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -35,7 +33,6 @@
 		dismantle(user)
 		tool.play_tool_sound(src, 100)
 		qdel(src)
-		return
 
 
 //Types themself, use them, but not the parent object

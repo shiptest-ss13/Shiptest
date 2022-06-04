@@ -74,6 +74,8 @@
 	icon_state = "knife"
 	item_state = "knife"
 	desc = "A general purpose Chef's Knife made by SpaceCook Incorporated. Guaranteed to stay sharp for years to come."
+	pickup_sound =  'sound/items/handling/knife1_pickup.ogg'
+	drop_sound = 'sound/items/handling/knife3_drop.ogg'
 	flags_1 = CONDUCT_1
 	force = 10
 	w_class = WEIGHT_CLASS_SMALL

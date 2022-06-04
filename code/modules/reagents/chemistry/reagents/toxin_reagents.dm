@@ -434,9 +434,12 @@
 	overdose_threshold = 30
 	toxpwr = 0
 
+/datum/reagent/toxin/histamine/overdose_start(mob/living/M)
+	//Deliberately empty to make it a silent killer
+
 /datum/reagent/toxin/histamine/on_mob_life(mob/living/carbon/M)
-	if(prob(50))
-		switch(pick(1, 2, 3, 4))
+	if(prob(10))
+		switch(rand(1,4))
 			if(1)
 				to_chat(M, "<span class='danger'>You can barely see!</span>")
 				M.blur_eyes(3)
@@ -447,14 +450,13 @@
 			if(4)
 				if(prob(75))
 					to_chat(M, "<span class='danger'>You scratch at an itch.</span>")
-					M.adjustBruteLoss(2*REM, 0)
+					M.adjustBruteLoss(5, 0)
 					. = 1
 	..()
 
 /datum/reagent/toxin/histamine/overdose_process(mob/living/M)
-	M.adjustOxyLoss(2*REM, 0)
-	M.adjustBruteLoss(2*REM, FALSE, FALSE, BODYTYPE_ORGANIC)
-	M.adjustToxLoss(2*REM, 0)
+	M.adjustOxyLoss(1*REM, 0)
+	M.adjustToxLoss(1*REM, 0)
 	..()
 	. = 1
 
@@ -997,3 +999,14 @@
 		to_chat(M, "<span class='notice'>Ah, what was that? You thought you heard something...</span>")
 		M.confused += 5
 	return ..()
+
+/datum/reagent/toxin/lava_microbe
+	name = "Lavaland Microbes"
+	description = "Microbes isolated from the dirt."
+	taste_description = "grit"
+	taste_mult = 0.5
+	color = "#f7cd90"
+	toxpwr = 0
+
+/datum/reagent/toxin/lava_microbe/expose_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1)
+	M.ForceContractDisease(new /datum/disease/advance/random(2, 3), FALSE, TRUE)
