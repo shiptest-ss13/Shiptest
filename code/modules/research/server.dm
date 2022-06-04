@@ -4,7 +4,7 @@
 	icon_state = "RD-server-on"
 	var/datum/techweb/stored_research
 
-/obj/machinery/rnd/server/on_construction()
+/obj/machinery/rnd/server/Initialize()
 	var/obj/item/circuitboard/machine/rdserver/board = circuit
 	name = "\improper [board.server_id] research server"
 	SSresearch.servers |= src
