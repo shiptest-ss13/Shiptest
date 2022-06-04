@@ -430,22 +430,10 @@
 		/obj/item/stack/tile/plasteel/tech/techmaint
 		)
 
-// Cyborg tile helper to reduce copy paste code maintenance
-// All other Borg versions of items have no Metal or Glass - RR
-#define CYBORG_PLASTEEL_TILE_HELPER(full_path)						\
-	##full_path/cyborg {											\
-		custom_materials = null; 									\
-		is_cyborg = 1;												\
-		cost = 125;													\
-		tile_reskin_types = list(									\
-			/obj/item/stack/tile/plasteel/cyborg,					\
-			/obj/item/stack/tile/plasteel/dark/cyborg,				\
-			/obj/item/stack/tile/plasteel/white/cyborg,				\
-			/obj/item/stack/tile/plasteel/tech/cyborg,				\
-			/obj/item/stack/tile/plasteel/tech/grid/cyborg,			\
-			/obj/item/stack/tile/plasteel/tech/techmaint/cyborg		\
-			)														\
-	}																\
+/obj/item/stack/tile/plasteel/cyborg
+	custom_materials = null // All other Borg versions of items have no Metal or Glass - RR
+	is_cyborg = 1
+	cost = 125
 
 /obj/item/stack/tile/plastic
 	name = "plastic tile"
@@ -454,20 +442,17 @@
 	icon_state = "tile_plastic"
 	custom_materials = list(/datum/material/plastic=500)
 	turf_type = /turf/open/floor/plastic
-CYBORG_PLASTEEL_TILE_HELPER(/obj/item/stack/tile/plasteel)
 
 /obj/item/stack/tile/plasteel/dark
 	name = "dark tile"
 	icon_state = "fr_tile"
 	turf_type = /turf/open/floor/plasteel/dark
 	merge_type = /obj/item/stack/tile/plasteel/dark
-CYBORG_PLASTEEL_TILE_HELPER(/obj/item/stack/tile/plasteel/dark)
 /obj/item/stack/tile/plasteel/white
 	name = "white tile"
 	icon_state = "tile-bluespace"
 	turf_type = /turf/open/floor/plasteel/white
 	merge_type = /obj/item/stack/tile/plasteel/white
-CYBORG_PLASTEEL_TILE_HELPER(/obj/item/stack/tile/plasteel/white)
 /obj/item/stack/tile/plasteel/grimy
 	name = "grimy floor tile"
 	turf_type = /turf/open/floor/plasteel/grimy
@@ -477,19 +462,16 @@ CYBORG_PLASTEEL_TILE_HELPER(/obj/item/stack/tile/plasteel/white)
 	icon_state = "tile_podlight"
 	turf_type = /turf/open/floor/plasteel/tech
 	merge_type = /obj/item/stack/tile/plasteel/tech
-CYBORG_PLASTEEL_TILE_HELPER(/obj/item/stack/tile/plasteel/tech)
 /obj/item/stack/tile/plasteel/tech/grid
 	name = "techfloor grid tile"
 	icon_state = "tile_poddark"
 	turf_type = /turf/open/floor/plasteel/tech/grid
 	merge_type = /obj/item/stack/tile/plasteel/tech/grid
-CYBORG_PLASTEEL_TILE_HELPER(/obj/item/stack/tile/plasteel/tech/grid)
 /obj/item/stack/tile/plasteel/tech/techmaint
 	name = "techmaint tile"
 	icon_state = "tile_pod"
 	turf_type = /turf/open/floor/plasteel/tech/techmaint
 	merge_type = /obj/item/stack/tile/plasteel/tech/techmaint
-CYBORG_PLASTEEL_TILE_HELPER(/obj/item/stack/tile/plasteel/tech/techmaint)
 
 /obj/item/stack/tile/material
 	name = "floor tile"
@@ -523,5 +505,3 @@ CYBORG_PLASTEEL_TILE_HELPER(/obj/item/stack/tile/plasteel/tech/techmaint)
 	desc = "The glass you walk on."
 	icon_state = "rglass_tile"
 	turf_type = /turf/open/floor/glass/reinforced
-
-#undef CYBORG_PLASTEEL_TILE_HELPER
