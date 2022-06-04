@@ -46,8 +46,8 @@
 
 /turf/closed/wall/update_overlays()
 	. = ..()
-	for(var/D in dent_decals)
-		. += D
+	for(var/decal in dent_decals)
+		. += decal
 
 /turf/closed/wall/examine(mob/user)
 	. += ..()

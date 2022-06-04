@@ -33,7 +33,7 @@
 // no sheets, just a cult effect
 /turf/closed/wall/mineral/cult/artificer/create_sheets()
 	new /obj/effect/temp_visual/cult/turf(get_turf(src))
-	return null
+	return
 
 /turf/closed/wall/vault
 	icon = 'icons/turf/walls.dmi'

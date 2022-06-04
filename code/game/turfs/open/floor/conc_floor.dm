@@ -65,8 +65,7 @@
 		return FALSE
 	var/list/opts = list()
 
-	for(var/T in shape_types)
-		var/turf/open/floor/concrete/conc = T
+	for(var/turf/open/floor/concrete/conc as anything in shape_types)
 		opts[conc] = image(icon = initial(conc.icon), icon_state = initial(conc.icon_state))
 
 	var/choice = show_radial_menu(

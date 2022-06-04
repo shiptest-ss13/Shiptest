@@ -77,22 +77,22 @@
 /obj/item/reagent_containers/is_injectable(mob/user, allowmobs = TRUE)
 	if(can_have_cap && cap_on)
 		return FALSE
-	. = ..()
+	return ..()
 
 /obj/item/reagent_containers/is_drawable(mob/user, allowmobs = TRUE)
 	if(can_have_cap && cap_on)
 		return FALSE
-	. = ..()
+	return ..()
 
 /obj/item/reagent_containers/is_refillable()
 	if(can_have_cap && cap_on)
 		return FALSE
-	. = ..()
+	return ..()
 
 /obj/item/reagent_containers/is_drainable()
 	if(can_have_cap && cap_on)
 		return FALSE
-	. = ..()
+	return ..()
 
 /obj/item/reagent_containers/attack_self(mob/user)
 	if(possible_transfer_amounts.len)
@@ -128,9 +128,8 @@
 	var/frac = min(amount_per_transfer_from_this/reagents.total_volume, 1)
 	// don't use trans_to, because we're not ADDING it to the object, we're just... pouring it.
 	reagents.expose(target, TOUCH, frac)
-	for(var/reagent in reagents.reagent_list)
-		var/datum/reagent/R = reagent
-		reagents.remove_reagent(R.type, R.volume * frac)
+	for(var/datum/reagent/reag as anything in reagents.reagent_list)
+		reagents.remove_reagent(reag.type, reag.volume * frac)
 
 /obj/item/reagent_containers/AltClick(mob/user)
 	. = ..()

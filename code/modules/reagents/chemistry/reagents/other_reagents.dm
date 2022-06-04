@@ -2487,8 +2487,8 @@
 		return
 	var/age = 6
 	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		age = H.age
+		var/mob/living/carbon/human/conc_eater = M
+		age = conc_eater.age
 	message_admins("[M] was forced to eat cement when [M.p_they()] [M.p_were()] [age]!")
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "cement", /datum/mood_event/cement)
 
@@ -2527,26 +2527,28 @@
 /datum/reagent/concrete/proc/concify_girder(obj/O, volume)
 	if(volume < units_per_wall)
 		return
-	var/turf/T = get_turf(O)
-	var/turf/closed/wall/concrete/W = T.PlaceOnTop(wall_type)
-	O.transfer_fingerprints_to(W)
-	W.harden_lvl = 0
-	W.check_harden()
-	W.update_stats()
+	var/turf/open/wall_turf = get_turf(O)
+	if(!istype(wall_turf))
+		return
+	var/turf/closed/wall/concrete/conc_wall = wall_turf.PlaceOnTop(wall_type)
+	O.transfer_fingerprints_to(conc_wall)
+	conc_wall.harden_lvl = 0
+	conc_wall.check_harden()
+	conc_wall.update_stats()
 	qdel(O)
 	return
 
 /datum/reagent/concrete/proc/concify_catwalk(obj/O, volume)
 	if(volume < units_per_floor)
 		return
-	var/turf/T = get_turf(O)
-	if(!istype(T, /turf/open/floor/plating))
+	var/turf/open/floor/plating/floor_turf = get_turf(O)
+	if(!istype(floor_turf))
 		return
-	var/turf/open/floor/concrete/F = T.PlaceOnTop(floor_type)
-	O.transfer_fingerprints_to(F)
-	F.harden_lvl = 0
-	F.check_harden()
-	F.update_icon()
+	var/turf/open/floor/concrete/conc_floor = floor_turf.PlaceOnTop(floor_type)
+	O.transfer_fingerprints_to(conc_floor)
+	conc_floor.harden_lvl = 0
+	conc_floor.check_harden()
+	conc_floor.update_icon()
 	qdel(O)
 	return
 
