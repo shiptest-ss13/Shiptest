@@ -1,0 +1,37 @@
+{
+	"map_name": "Limus-class Xenobiology Cataloguing Vessel",
+	"map_short_name": "Limus-class",
+	"map_path": "_maps/shuttles/shiptest/limus.dmm",
+	"map_id": "limus",
+	"limit": 2,
+	"job_slots": {
+		"Research Director": {
+			"outfit": "/datum/outfit/job/rd",
+			"officer": true,
+			"slots": 1
+
+		},
+		"Xenobiologist": {
+			"outfit": "/datum/outfit/job/scientist/xenobiologist",
+			"slots": 2
+
+		},
+		"Xenofauna Biologist": {
+			"outfit": "/datum/outfit/job/scientist/xenobiologist/fauna",
+			"slots": 1
+
+		},
+		"Minerologist": {
+			"outfit": "/datum/outfit/job/miner/scientist",
+			"slots": 1
+
+		},
+		"Mutagenic Chemist": {
+			"outfit": "/datum/outfit/job/scientist/seniorscientist",
+			"slots": 1
+
+		},
+		"Janitor": 1
+	},
+	"cost": 600
+}

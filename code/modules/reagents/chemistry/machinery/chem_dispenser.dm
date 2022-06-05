@@ -547,6 +547,19 @@
 	upgrade_reagents = null
 	emagged_reagents = list(/datum/reagent/toxin/plasma)
 
+/obj/machinery/chem_dispenser/mutagenlab
+	name = "xeno mutagen dispenser"
+	desc = "Creates and dispenses reagents useful for making mutagens."
+	dispensable_reagents = list(
+		/datum/reagent/uranium/radium,
+		/datum/reagent/plantnutriment/eznutriment,
+		/datum/reagent/carbondioxide,
+		/datum/reagent/sodium,
+		/datum/reagent/chlorine,
+		/datum/reagent/ash,
+		/datum/reagent/uranium/radium,
+		/datum/reagent/phosphorus)
+	upgrade_reagents = null
 
 /obj/machinery/chem_dispenser/mutagensaltpeter
 	name = "botanical chemical dispenser"
