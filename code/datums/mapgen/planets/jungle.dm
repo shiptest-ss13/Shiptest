@@ -11,13 +11,13 @@
 		"cold" = list(
 			"biome_lowest_humidity" = /datum/biome/jungle_wasteland,
 			"biome_low_humidity" = /datum/biome/jungle/plains,
-			"biome_medium_humidity" = /datum/biome/jungle/plains,
+			"biome_medium_humidity" = /datum/biome/jungle,
 			"biome_high_humidity" = /datum/biome/mudlands,
 			"biome_highest_humidity" = /datum/biome/mudlands
 		),
 		"warm" = list(
-			"biome_lowest_humidity" = /datum/biome/jungle/plains,
-			"biome_low_humidity" = /datum/biome/jungle/plains,
+			"biome_lowest_humidity" = /datum/biome/jungle,
+			"biome_low_humidity" = /datum/biome/jungle,
 			"biome_medium_humidity" = /datum/biome/mudlands,
 			"biome_high_humidity" = /datum/biome/mudlands,
 			"biome_highest_humidity" = /datum/biome/jungle
@@ -30,9 +30,9 @@
 			"biome_highest_humidity" = /datum/biome/mudlands
 		),
 		"hot" = list(
-			"biome_lowest_humidity" = /datum/biome/jungle/plains,
+			"biome_lowest_humidity" = /datum/biome/jungle,
 			"biome_low_humidity" = /datum/biome/jungle,
-			"biome_medium_humidity" = /datum/biome/jungle,
+			"biome_medium_humidity" = /datum/biome/jungle/dense,
 			"biome_high_humidity" = /datum/biome/jungle/dense,
 			"biome_highest_humidity" = /datum/biome/jungle/dense
 		),

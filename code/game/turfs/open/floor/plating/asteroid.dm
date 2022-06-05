@@ -314,6 +314,8 @@
 		icon_state = "[environment_type][rand(1,8)]"
 
 /turf/open/floor/plating/asteroid/iceberg/lit
+	light_range = 2
+	light_power = 1
 
 
 /turf/open/floor/plating/asteroid/snow/icemoon

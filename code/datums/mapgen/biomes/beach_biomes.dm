@@ -24,50 +24,35 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/butterfly = 1,
 //		/mob/living/simple_animal/butterfly/beach = 1,
-//		/mob/living/simple_animal/slime/pet/beach = 1,
-//		/mob/living/simple_animal/chicken/rabbit/normal/beach = 1,
+		/mob/living/simple_animal/chicken/rabbit/normal = 1,
 //		/mob/living/simple_animal/chicken/beach = 1,
 //		/mob/living/simple_animal/chick/beach = 1,
-//		/mob/living/simple_animal/mouse/beach = 1,
-//		/mob/living/simple_animal/cow/beach = 1,
-//		/mob/living/simple_animal/deer/beach = 1
+		/mob/living/simple_animal/mouse = 1,
+		/mob/living/simple_animal/cow = 1,
+		/mob/living/simple_animal/deer = 1
 	)
 	mob_spawn_chance = 1
 
 /datum/biome/grass/dense
-	flora_spawn_chance = 65
+	flora_spawn_chance = 70
 	mob_spawn_list = list(
-//		/mob/living/simple_animal/pet/cat/cak/beach = 1,
-//		/mob/living/simple_animal/butterfly/beach = 4,
-//		/mob/living/simple_animal/hostile/retaliate/poison/snake/beach = 5,
-//		/mob/living/simple_animal/slime/random/beach = 3,
-//		/mob/living/simple_animal/hostile/poison/bees/toxin/beach = 3
-		/mob/living/simple_animal/slime/random = 3,
+
+		/mob/living/simple_animal/butterfly = 4,
+		/mob/living/simple_animal/hostile/retaliate/poison/snake = 5,
+		/mob/living/simple_animal/hostile/poison/bees/toxin = 3,
 	)
 	mob_spawn_chance = 2
 	feature_spawn_chance = 0.1
-//	feature_spawn_list = list(/obj/structure/spawner/cave/beach = 1)
 
 /datum/biome/beach
 	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/lit = 1)
-//	mob_spawn_list = list(/mob/living/simple_animal/crab/beach = 7, /mob/living/simple_animal/turtle/beach = 4, /mob/living/simple_animal/hostile/retaliate/gator/steppy = 1)
-	mob_spawn_list = list(/mob/living/simple_animal/crab = 7, /mob/living/simple_animal/turtle = 4, /mob/living/simple_animal/hostile/retaliate/gator = 1)
+	mob_spawn_list = list(/mob/living/simple_animal/crab = 7, /mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 5)
 	mob_spawn_chance = 1
-	feature_spawn_chance = 3
-	feature_spawn_list = list(
-		/obj/structure/chair/plastic = 7,
-		/obj/item/toy/beach_ball = 12,
-		/obj/structure/fluff/beach_umbrella = 20,
-		/obj/structure/fluff/beach_umbrella/engine = 18,
-		/obj/item/storage/cans/sixbeer = 2,
-		/obj/item/clothing/mask/cigarette/rollie/cannabis = 2,
-		/obj/item/clothing/under/shorts/purple = 4,
-		/obj/item/clothing/under/shorts/red = 4
-	)
 	flora_spawn_list = list(
-		/obj/structure/flora/tree/palm = 1
+		/obj/structure/flora/tree/palm = 1,
+		/obj/structure/flora/rock/beach = 3,
 	)
-	flora_spawn_chance = 1
+	flora_spawn_chance = 3
 
 /datum/biome/beach/dense
 	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/dense/lit = 1)

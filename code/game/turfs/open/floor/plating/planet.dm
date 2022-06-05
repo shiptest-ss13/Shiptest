@@ -12,9 +12,6 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_VERY_LIGHT_GRAY
 
 /turf/open/floor/plating/dirt/dark
 	icon_state = "greenerdirt"
@@ -56,6 +53,10 @@
 	baseturfs = /turf/open/floor/plating/dirt/jungle
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 
+/turf/open/floor/plating/grass/jungle/lit
+	light_range = 2
+	light_power = 1
+
 /turf/closed/mineral/random/jungle
 	turf_type = /turf/open/floor/plating/grass/jungle
 	baseturfs = /turf/open/floor/plating/grass/jungle
@@ -63,9 +64,6 @@
 		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 11,
 		/obj/item/stack/ore/bluespace_crystal = 1)
 
-/turf/open/floor/plating/grass/jungle/lit
-	light_range = 2
-	light_power = 1
 
 /turf/open/floor/plating/dirt/jungle/dark/lit
 	light_range = 2
