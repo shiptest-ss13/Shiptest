@@ -615,6 +615,10 @@
 	name = "icey rocks"
 	icon_state = "icemoonrock4"
 
+/obj/structure/flora/rock/pile/icy/Initialize()
+	. = ..()
+	icon_state = "icemoonrock4"
+
 //decals//--
 /obj/effect/turf_decal/snowdin_station_sign
 	icon_state = "AOP1"

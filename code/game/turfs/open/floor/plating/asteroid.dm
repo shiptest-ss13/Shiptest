@@ -159,7 +159,7 @@
 	icon_state = "snow"
 	icon_plating = "snow"
 	initial_gas_mix = FROZEN_ATMOS
-	slowdown = 2.5
+	slowdown = 1.5
 	environment_type = "snow"
 	flags_1 = NONE
 	planetary_atmos = TRUE
@@ -240,6 +240,7 @@
 /turf/open/floor/plating/asteroid/snow/lit
 	light_range = 2
 	light_power = 1
+	baseturfs = /turf/open/floor/plating/asteroid/icerock/lit
 
 /turf/open/floor/plating/asteroid/icerock
 	gender = PLURAL
