@@ -6,7 +6,7 @@
 			"biome_low_humidity" = /datum/biome/snow,
 			"biome_medium_humidity" = /datum/biome/iceberg/lake,
 			"biome_high_humidity" = /datum/biome/iceberg,
-			"biome_highest_humidity" = /datum/biome/snow
+			"biome_highest_humidity" = /datum/biome/iceberg
 		),
 		"cold" = list(
 			"biome_lowest_humidity" = /datum/biome/arctic,

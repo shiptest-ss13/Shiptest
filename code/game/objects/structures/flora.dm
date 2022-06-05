@@ -860,12 +860,6 @@
 	icon_state = "basalt"
 	icon = 'icons/obj/flora/rocks.dmi'
 
-/obj/structure/flora/rock/snow
-	name = "rock"
-	desc = "A rock that's been missed by the freezing cold."
-	icon_state = "basalt"
-	icon = 'icons/obj/flora/rocks.dmi'
-
 /obj/structure/flora/tree/dead/barren
 	name = "barren tree"
 	desc = "A tree turned purple from mutations to adapt to its environment. It seems to have done a great job!"

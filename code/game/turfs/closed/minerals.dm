@@ -439,10 +439,10 @@
 	base_icon_state = "mountain_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
-	baseturfs = /turf/open/floor/plating/asteroid/icerock/lit
+	baseturfs = /turf/open/floor/plating/asteroid/icerock
 	initial_gas_mix = FROZEN_ATMOS
 	environment_type = "snow"
-	turf_type = /turf/open/floor/plating/asteroid/icerock/lit
+	turf_type = /turf/open/floor/plating/asteroid/icerock
 	defer_change = TRUE
 	x_offset = -6
 	y_offset = -6

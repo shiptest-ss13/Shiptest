@@ -159,15 +159,15 @@
 	icon_state = "snow"
 	icon_plating = "snow"
 	initial_gas_mix = FROZEN_ATMOS
-	slowdown = 3
+	slowdown = 2.5
 	environment_type = "snow"
 	flags_1 = NONE
 	planetary_atmos = TRUE
 	footstep = FOOTSTEP_SNOW
 	barefootstep = FOOTSTEP_SNOW
 	clawfootstep = FOOTSTEP_SNOW
-	broken_states = list("snow_dug")
-	burnt_states = list("snow_dug")
+	broken_states = list("snow")
+	burnt_states = list("snow")
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 	digResult = /obj/item/stack/sheet/mineral/snow
@@ -308,7 +308,7 @@
 	floor_variance = 100
 	dug = TRUE
 
-/turf/open/floor/plating/asteroid/Initialize(mapload, inherited_virtual_z)
+/turf/open/floor/plating/asteroid/iceberg/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(prob(floor_variance))
 		icon_state = "[environment_type][rand(1,8)]"
@@ -358,14 +358,6 @@
 /turf/open/floor/plating/asteroid/snow/atmosphere
 	initial_gas_mix = FROZEN_ATMOS
 	planetary_atmos = FALSE
-
-/turf/open/floor/plating/asteroid/snow/breathable
-	planetary_atmos = TRUE
-
-
-/turf/open/floor/plating/asteroid/snow/breathable/lit
-	light_range = 2
-	light_power = 1
 
 /turf/open/floor/plating/asteroid/snow/under
 	icon_state = "snow_dug"

@@ -113,6 +113,6 @@
 	environment_type = "irondirt"
 	floor_variance = 0
 
-/turf/open/floor/plating/asteroid/Initialize(mapload, inherited_virtual_z)
+/turf/open/floor/plating/asteroid/rockplanet/sand/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = "[environment_type][rand(0,3)]"

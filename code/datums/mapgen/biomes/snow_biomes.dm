@@ -114,7 +114,7 @@
 	flora_spawn_list = list(
 		/obj/structure/flora/grass/both = 5,
 		/obj/structure/flora/rock/pile = 1,
-		/obj/structure/flora/rock/snow = 1,
+		/obj/structure/flora/rock/icy = 1,
 		/obj/structure/flora/ash/space = 1,
 		/obj/structure/flora/ash/leaf_shroom = 1,
 		/obj/structure/flora/ash/cap_shroom = 1,
