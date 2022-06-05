@@ -1,5 +1,5 @@
 /datum/biome/grass
-	open_turf_types = list(/turf/open/floor/plating/grass/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/grass/beach/lit = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/jungle = 1,
 		/obj/structure/flora/ausbushes/brflowers = 1,
@@ -79,8 +79,6 @@
 		/obj/structure/flora/rock/pile = 1
 	)
 	flora_spawn_chance = 1
-	feature_spawn_chance = 0.04
-	feature_spawn_list = list(/obj/vehicle/ridden/lavaboat/dragon = 1)
 
 /datum/biome/ocean/deep
 	open_turf_types = list(/turf/open/water/beach/deep = 1)
@@ -107,30 +105,17 @@
 	flora_spawn_list = list(/obj/structure/flora/rock/beach = 1, /obj/structure/flora/rock/asteroid = 6)
 	mob_spawn_chance = 1
 	mob_spawn_list = list(
-//		/mob/living/simple_animal/hostile/bear/cave = 5,
-//		/mob/living/simple_animal/hostile/killertomato/beach = 1,
-//		/mob/living/simple_animal/hostile/mushroom/beach = 1,
-		/mob/living/simple_animal/hostile/killertomato = 1,
+		/mob/living/simple_animal/hostile/bear/cave = 5,
+		/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 1,
 	)
 
 /datum/biome/cave/beach/cove
-	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/dense = 1, /turf/open/floor/wood/yew = 3)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/dense = 1)
 	flora_spawn_list = list(/obj/structure/flora/tree/dead_pine = 1, /obj/structure/flora/rock/beach = 1)
 	flora_spawn_chance = 5
-	feature_spawn_list = list(
-		/obj/structure/destructible/tribal_torch/lit = 7,
-//		/obj/structure/spawner/cave/beach = 20,
-		/obj/structure/fermenting_barrel = 10,
-		/obj/vehicle/ridden/lavaboat/dragon = 1,
-		/obj/vehicle/ridden/atv = 1,
-		/obj/machinery/jukebox/disco = 1,
-		/obj/effect/spawner/bundle/costume/mafia/white = 1,
-		/obj/machinery/vending/boozeomat/all_access = 1
-	)
-	feature_spawn_chance = 30
 
 /datum/biome/cave/beach/magical
-	open_turf_types = list(/turf/open/floor/plating/grass/lit = 1)
+	open_turf_types = list(/turf/open/floor/grass/fairy/beach = 1)
 	flora_spawn_chance = 20
 	flora_spawn_list = list(
 		/obj/structure/flora/ausbushes/grassybush = 1,

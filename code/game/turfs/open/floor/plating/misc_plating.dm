@@ -334,11 +334,13 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 
-/turf/open/floor/plating/grass/lit
-	light_range = 2
-	light_power = 0.80
+/turf/open/floor/plating/grass/beach
 	baseturfs = /turf/open/floor/plating/beach/sand
 	planetary_atmos = TRUE
+
+/turf/open/floor/plating/grass/beach/lit
+	light_range = 2
+	light_power = 0.80
 
 
 
