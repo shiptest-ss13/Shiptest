@@ -93,3 +93,15 @@
 	id = "demonlab"
 	description = "Some abandoned research outpost"
 	suffix = "icemoon_demonlab.dmm"
+
+/datum/map_template/ruin/icemoon/templeoftruth
+	name = "Temple of truth"
+	id = "icemoon_temple_of_truth"
+	description = "The truth lies beyond the danger. Or nothing, probabaly."
+	suffix = "icemoon_temple_of_truth.dmm"
+
+/datum/map_template/ruin/icemoon/permafrost
+	name = "Altar of Permafrost"
+	id = "icemoon_altar_of_permafrost"
+	description = "A strange base, with no hints on what it is. Smells faintly like tofu."
+	suffix = "icemoon_altar_of_permafrost.dmm"
