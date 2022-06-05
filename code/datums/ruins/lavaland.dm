@@ -290,7 +290,7 @@
 	name = "Ashwalker shrine"
 	id = "ashwalker_shrine"
 	description = "A destroyed ashwalker village. What even happened here?"
-	suffix = "ashwalker_shrine.dmm"
+	suffix = "lavaland_surface_ashwalker_shrine.dmm"
 
 /datum/map_template/ruin/lavaland/fuckedupandevilclub
 	name = "Evil Club"

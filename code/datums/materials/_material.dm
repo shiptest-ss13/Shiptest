@@ -12,8 +12,8 @@ Simple datum which is instanced once per type and is used for every object of sa
 	var/id = "mat"
 	///Base color of the material, is used for greyscale. Item isn't changed in color if this is null.
 	var/color
-	///Base alpha of the material, is used for greyscale icons.
-	var/alpha
+	///Base alpha of the material, is used for greyscale icons and transparency.
+	var/alpha = 255
 	///Materials "Traits". its a map of key = category | Value = Bool. Used to define what it can be used for
 	var/list/categories = list()
 	///The type of sheet this material creates. This should be replaced as soon as possible by greyscale sheets
@@ -52,7 +52,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 	if(material_flags & MATERIAL_COLOR) //Prevent changing things with pre-set colors, to keep colored toolboxes their looks for example
 		if(color) //Do we have a custom color?
 			source.add_atom_colour(color, FIXED_COLOUR_PRIORITY)
-		if(alpha)
+		if(alpha != 255)
 			source.alpha = alpha
 		if(texture_layer_icon_state)
 			ADD_KEEP_TOGETHER(source, MATERIAL_SOURCE(src))
@@ -60,6 +60,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 
 	if(alpha < 255)
 		source.opacity = FALSE
+
 	if(material_flags & MATERIAL_ADD_PREFIX)
 		source.name = "[name] [source.name]"
 
@@ -147,7 +148,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 		o.throwforce = initial(o.throwforce)
 
 /datum/material/proc/on_removed_turf(turf/T, amount, material_flags)
-	if(alpha)
+	if(alpha != 255)
 		RemoveElement(/datum/element/turf_z_transparency, FALSE)
 
 /** Returns the composition of this material.

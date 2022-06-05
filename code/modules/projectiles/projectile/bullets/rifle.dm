@@ -2,7 +2,7 @@
 
 /obj/projectile/bullet/a556
 	name = "5.56mm bullet"
-	damage = 35
+	damage = 30
 
 // 7.62 (Nagant Rifle)
 
@@ -14,3 +14,21 @@
 	name = "enchanted 7.62 bullet"
 	damage = 20
 	stamina = 80
+
+/obj/projectile/bullet/a545_39
+	name = "5.45x39mm bullet"
+	damage = 25
+
+/obj/projectile/bullet/aac_300blk
+	name = ".300 Blackout bullet"
+	damage = 20
+	dismemberment = 20
+
+/obj/projectile/bullet/a762_39
+	name = "7.62x39mm FMJ"
+	damage = 30
+
+/obj/projectile/bullet/win308
+	name = ".308 Winchester FMJ"
+	damage = 45
+	armour_penetration = 15

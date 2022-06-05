@@ -27,7 +27,7 @@
 	dir = EAST
 
 /turf/open/space/transit/Entered(atom/movable/AM, atom/OldLoc)
-	..()
+	. = ..()
 	if(!locate(/obj/structure/lattice) in src)
 		AM.throw_atom_into_space()
 

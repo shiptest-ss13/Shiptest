@@ -15,7 +15,7 @@
 //Only need to use one camera
 
 /area/ai_monitored/Entered(atom/movable/O)
-	..()
+	. = ..()
 	if (ismob(O) && motioncameras.len)
 		for(var/X in motioncameras)
 			var/obj/machinery/camera/cam = X
@@ -23,7 +23,7 @@
 			return
 
 /area/ai_monitored/Exited(atom/movable/O)
-	..()
+	. =..()
 	if (ismob(O) && motioncameras.len)
 		for(var/X in motioncameras)
 			var/obj/machinery/camera/cam = X

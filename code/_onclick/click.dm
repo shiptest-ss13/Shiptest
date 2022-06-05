@@ -121,7 +121,7 @@
 		UnarmedAttack(A)
 		return
 
-	if(in_throw_mode)
+	if(throw_mode)
 		throw_item(A)
 		return
 

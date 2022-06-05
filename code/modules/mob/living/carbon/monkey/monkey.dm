@@ -123,7 +123,7 @@
 		return FALSE
 	return TRUE
 
-/mob/living/carbon/monkey/reagent_check(datum/reagent/R) //can metabolize all reagents
+/mob/living/carbon/monkey/handled_by_species(datum/reagent/R) //can metabolize all reagents
 	return FALSE
 
 /mob/living/carbon/monkey/canBeHandcuffed()

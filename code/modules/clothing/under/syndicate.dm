@@ -183,6 +183,18 @@
 	icon_state = "gec_ce"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 80, "acid" = 40)
 
+
+/obj/item/clothing/under/syndicate/skirt/maid
+	name = "tactical maid outfit"
+	desc = "A 'tactical' turtleneck fashioned to the likeness of a maid outfit. Why the Syndicate has these, you'll never know."
+	icon_state = "syndimaid"
+	item_state = "syndimaid"
+
+/obj/item/clothing/under/syndicate/skirt/maid/Initialize()
+	. = ..()
+	var/obj/item/clothing/accessory/maidapron/syndicate/A = new (src)
+	attach_accessory(A)
+
 /datum/outfit/syndicate/intern
 	name = "Syndicate Operative - Intern"
 
@@ -228,3 +240,35 @@
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/under/syndicate/inteq/artificer
+	name = "inteq artificer overalls"
+	desc = "A black set of overalls atop a standard issue turtleneck, for the IRMG's support division engineers."
+	icon_state = "inteqeng"
+
+/obj/item/clothing/under/syndicate/inteq/skirt/artificer
+	name = "inteq artificer overall skirt"
+	desc = "A black set of overalls in the likeness of a skirt atop a standard issue turtleneck, for the IRMG's support division engineers."
+	icon_state = "inteqeng_skirt"
+
+/obj/item/clothing/under/syndicate/inteq/corpsman
+	name = "inteq corpsman turtleneck"
+	desc = "A sterile white turtleneck with tactical cargo pants, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division corpsmen."
+	icon_state = "inteqmed"
+
+/obj/item/clothing/under/syndicate/inteq/skirt/corpsman
+	name = "inteq corpsman skirtleneck"
+	desc = "A sterile white turtleneck with a free flowing black skirt, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division corpsmen."
+	icon_state = "inteqmed_skirt"
+
+/obj/item/clothing/under/syndicate/inteq/skirt/maid
+	name = "inteq tactical maid outfit"
+	desc = "A 'tactical' turtleneck fashioned to the likeness of a maid outfit. This one is lovingly knitted in the colors of the IRMG."
+	icon_state = "inteqmaid"
+	item_state = "inteqmaid"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/syndicate/inteq/skirt/maid/Initialize()
+	. = ..()
+	var/obj/item/clothing/accessory/maidapron/inteq/A = new (src)
+	attach_accessory(A)

@@ -813,6 +813,7 @@ update_label()
 	desc = "A faded Charlie Station ID card. You can make out the rank \"Captain\"."
 	assignment = "Charlie Station Captain"
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_ENGINE, ACCESS_AWAY_SEC)
+
 /obj/item/card/id/away/old/apc
 	name = "APC Access ID"
 	desc = "A special ID card that allows access to APC terminals."
@@ -820,6 +821,32 @@ update_label()
 
 /obj/item/card/id/away/deep_storage //deepstorage.dmm space ruin
 	name = "bunker access ID"
+
+/obj/item/card/id/solgov
+	name = "\improper SolGov Officer ID"
+	id_type_name = "\improper SolGov ID"
+	desc = "A SolGov ID with no proper access to speak of."
+	assignment = "SolGov Officer"
+	icon_state = "solgov"
+	uses_overlays = FALSE
+
+/obj/item/card/id/solgov/commander
+	name = "\improper SolGov Commander ID"
+	id_type_name = "\improper SolGov ID"
+	desc = "A SolGov ID with no proper access to speak of. This one indicates a Commander."
+
+/obj/item/card/id/solgov/elite
+	name = "\improper SolGov Elite ID"
+	id_type_name = "\improper SolGov ID"
+	desc = "A SolGov ID with no proper access to speak of. This one indicates an Elite."
+
+/obj/item/card/id/away/slime //We're ranchin, baby!
+	name = "\improper Slime Ranch access card"
+	desc = "An ID card with access to the farm."
+	assignment = "Slime Rancher"
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_XENOBIOLOGY)
+	registered_name = "Slime Rancher"
+	icon_state = "syndie"
 
 /obj/item/card/id/departmental_budget
 	name = "departmental card (FUCK)"
