@@ -23,12 +23,15 @@
 	var/scan_state = "" //Holder for the image we display when we're pinged by a mining scanner
 	var/defer_change = 0
 	var/has_borders = TRUE
+	/// these vars set how much the pixels translate. This is meant for turfs that are bigger than 32x32
+	var/x_offset = -4
+	var/y_offset = -4
 
 /turf/closed/mineral/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(has_borders)
 		var/matrix/M = new
-		M.Translate(-4, -4)
+		M.Translate(x_offset, y_offset)
 		transform = M
 		icon = smooth_icon
 
@@ -232,33 +235,43 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 
 /turf/closed/mineral/random/snow
-	name = "snowy mountainside"
-	icon = 'icons/turf/mining.dmi'
-	smooth_icon = 'icons/turf/walls/mountain_wall.dmi'
-	icon_state = "mountainrock"
-	base_icon_state = "mountain_wall"
+	name = "rocky wall"
+	icon = 'icons/turf/walls/rockwall_icemoon.dmi'
+	smooth_icon = 'icons/turf/walls/rockwall_icemoon.dmi'
+	icon_state = "rockwall_icemoon-0"
+	base_icon_state = "rockwall_icemoon"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
 	defer_change = TRUE
 	environment_type = "snow_cavern"
-	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
+	turf_type = /turf/open/floor/plating/asteroid/icerock
+	baseturfs = /turf/open/floor/plating/asteroid/icerock
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	has_borders = FALSE
+	defer_change = TRUE
+	mineralChance = 30 //as most caves is snowy, might as well bump up the chance
 
-/turf/closed/mineral/random/snow/Change_Ore(ore_type, random = 0)
-	. = ..()
-	if(mineralType)
-		smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-		icon = 'icons/turf/walls/icerock_wall.dmi'
-		icon_state = "icerock_wall-0"
-		base_icon_state = "icerock_wall"
-		smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-
-/turf/closed/mineral/random/snow
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10, /obj/item/stack/ore/titanium = 11,
 		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40,
 		/turf/closed/mineral/gibtonite/ice/icemoon = 4, /obj/item/stack/ore/bluespace_crystal = 1)
+
+/turf/closed/mineral/ice
+	name = "icey wall"
+	icon = 'icons/turf/walls/icewall.dmi'
+	smooth_icon = 'icons/turf/walls/icewall.dmi'
+	icon_state = "icewall-0"
+	base_icon_state = "icewall"
+	defer_change = TRUE
+	has_borders = FALSE
+	environment_type = "snow_cavern"
+	turf_type = /turf/open/floor/plating/asteroid/iceberg/lit
+	baseturfs = /turf/open/floor/plating/asteroid/iceberg/lit
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	opacity = FALSE
+	light_range = 2
+	light_power = 1
+
 
 /turf/closed/mineral/random/snow/underground
 	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
@@ -426,11 +439,13 @@
 	base_icon_state = "mountain_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
-	baseturfs = /turf/open/floor/plating/asteroid/snow
+	baseturfs = /turf/open/floor/plating/asteroid/icerock/lit
 	initial_gas_mix = FROZEN_ATMOS
 	environment_type = "snow"
-	turf_type = /turf/open/floor/plating/asteroid/snow
+	turf_type = /turf/open/floor/plating/asteroid/icerock/lit
 	defer_change = TRUE
+	x_offset = -6
+	y_offset = -6
 
 /turf/closed/mineral/snowmountain/icemoon
 	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
@@ -444,13 +459,13 @@
 	icon_state = "icerock"
 	base_icon_state = "icerock_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	baseturfs = /turf/open/floor/plating/asteroid/icerock
 	environment_type = "snow_cavern"
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/floor/plating/asteroid/icerock
 
 /turf/closed/mineral/snowmountain/cavern/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/icerock
+	turf_type = /turf/open/floor/plating/asteroid/icerock
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
 //yoo RED ROCK RED ROCK
@@ -561,9 +576,10 @@
 
 /turf/closed/mineral/gibtonite/ice
 	environment_type = "snow_cavern"
-	icon_state = "icerock_Gibtonite"
-	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
-	base_icon_state = "icerock_wall"
+	icon = 'icons/turf/walls/rockwall_icemoon.dmi'
+	smooth_icon = 'icons/turf/walls/rockwall_icemoon.dmi'
+	icon_state = "rockwall_icemoon-0"
+	base_icon_state = "rockwall_icemoon"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	turf_type = /turf/open/floor/plating/asteroid/snow/ice
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
@@ -571,8 +587,8 @@
 	defer_change = TRUE
 
 /turf/closed/mineral/gibtonite/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	turf_type = /turf/open/floor/plating/asteroid/icerock
+	baseturfs = /turf/open/floor/plating/asteroid/icerock
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
 /turf/closed/mineral/strong

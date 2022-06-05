@@ -86,7 +86,7 @@
 /**
   * Chooses a type of level for the dynamic level to use.
   */
-/datum/overmap/dynamic/proc/choose_level_type()
+/datum/overmap/dynamic/proc/choose_level_type() //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
 	var/chosen
 	if(!probabilities)
 		probabilities = list(DYNAMIC_WORLD_LAVA = min(length(SSmapping.lava_ruins_templates), 20),
@@ -97,7 +97,7 @@
 		DYNAMIC_WORLD_WASTEPLANET = min(length(SSmapping.waste_ruins_templates), 20),
 		DYNAMIC_WORLD_ROCKPLANET = min(length(SSmapping.rock_ruins_templates), 20),
 		DYNAMIC_WORLD_BEACHPLANET = min(length(SSmapping.beach_ruins_templates), 20),
-		//DYNAMIC_WORLD_REEBE = 1, //very rare because of major lack of skil //TODO, make removing no teleport not break things, then it can be reenabled
+		DYNAMIC_WORLD_REEBE = 0, //unspawnable because of major lack of skill.
 		DYNAMIC_WORLD_ASTEROID = 30)
 
 	if(force_encounter)
