@@ -956,7 +956,7 @@
 /area/ship/science/xenobiology)
 "tN" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on/coldroom{
-	dir = 8
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/science/xenobiology)
@@ -1800,6 +1800,7 @@
 /area/ship/hallway/fore)
 "GH" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 1;
 	piping_layer = 2
 	},
 /turf/open/floor/plating,
