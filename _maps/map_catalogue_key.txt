@@ -23,10 +23,14 @@ Boss Combat Challenge = Contains either one or more bossmobs, has a large number
 Megafauna = Map contains one or more megafauna.
 Antag Gear = Map contains one or more items typically only obtainable by antag roles.
 Necropolis Loot = Map contains an item or chest from the necropolis loot pool.
-Liveable Environment = The entirety of the map is inhabitable without protective gear, and the map is not surrounded by an inhospitable environment.
-Inhospitable Environment = The entirety of the map is uninhabitable without protective gear, and the map is not surrounded by a hospitable environment.
+Liveable = The entirety of the map is inhabitable without protective gear, and the map is not surrounded by an inhospitable environment.
+Inhospitable = The majority of the map is uninhabitable without protective gear, and the map is not surrounded by a hospitable environment.
 Shelter = The map contains a portion that is hospitable without protective gear, with a surrounding section that is inhospitable. Or the map is an enclosed hospitable space that spawns on an inhospitable planet.
-Oops No Content = A map that contains no objects. It contains only turfs, walls, and or areas.
+Bad Shelter = The map contains a portion that is inhospitable without protective gear, with a surround section that is hospitable. Or the map is an enclosed inhospitable space that spawn on a hospitable planet.
+No Content = A map that contains no objects. It contains only turfs, walls, and or areas.
+Hazardous = Contains hazardous environment elements. Elements include but are not limited to: Mines, IEDs, Chasms appearing more than twice or more than once if one is 3x3 or more, disease spawns, beartraps. 
+Unknown Details = Something about the map can't be checked with a map editor alone, and has not been tested for confirmation yet.
+Lava = Contains lava or liquid plasma tiles.
 
 
 Map catalogues in the main file will be listed under their respective planets and category. They must be written in the following format:
