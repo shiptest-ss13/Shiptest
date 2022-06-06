@@ -248,13 +248,14 @@ SUBSYSTEM_DEF(overmap)
 				mapgen = new /datum/map_generator/cave_generator/wasteplanet
 				target_area = /area/overmap_encounter/planetoid/wasteplanet
 				surface = /turf/open/floor/plating/asteroid/wasteplanet
+				weather_controller_type = /datum/weather_controller/chlorine //let's go??
 				//planet_template = /datum/planet/lava //TODO, MAKE NEW PLANET TEMPLATE
 			if(DYNAMIC_WORLD_ROCKPLANET)
 				ruin_list = SSmapping.rock_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/rockplanet
 				target_area = /area/overmap_encounter/planetoid/rockplanet
 				surface = /turf/open/floor/plating/asteroid
-				weather_controller_type = /datum/weather_controller/chlorine //let's go??
+				weather_controller_type = /datum/weather_controller/rockplanet
 				//planet_template = /datum/planet/lava //TODO, MAKE NEW PLANET TEMPLATE
 			if(DYNAMIC_WORLD_BEACHPLANET)
 				ruin_list = SSmapping.beach_ruins_templates
@@ -262,6 +263,7 @@ SUBSYSTEM_DEF(overmap)
 				target_area = /area/overmap_encounter/planetoid/beachplanet
 				surface = /turf/open/floor/plating/asteroid/sand/lit
 				planet_template = /datum/planet/beach
+				weather_controller_type = /datum/weather_controller/lush
 			if(DYNAMIC_WORLD_REEBE)
 				ruin_list = SSmapping.yellow_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/reebe
