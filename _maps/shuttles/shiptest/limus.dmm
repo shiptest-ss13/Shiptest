@@ -814,7 +814,7 @@
 	desc = "A comfy-looking creature bed. You can even strap your pet in, in case the gravity turns off.";
 	name = "creature bed"
 	},
-/mob/living/simple_animal/pet/cat/cak{
+/mob/living/simple_animal/pet/dog/corgi/puppy/slime{
 	name = "Crouton"
 	},
 /turf/open/floor/carpet/purple,
@@ -957,6 +957,9 @@
 "tN" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on/coldroom{
 	dir = 2
+	},
+/obj/structure/sign/warning/coldtemp{
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/science/xenobiology)
@@ -2703,6 +2706,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor,
+/obj/structure/sign/warning/coldtemp{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/xenobiology)
 "Yf" = (
