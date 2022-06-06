@@ -8,9 +8,6 @@
 	environment_type = WHITESANDS_SAND_ENV
 	initial_gas_mix = WHITESANDS_ATMOS //Fallback, and used to tell the AACs that this is the exterior
 	digResult = /obj/item/stack/ore/glass/whitesands
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_VERY_LIGHT_GRAY
 
 /// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/getDug()
@@ -20,6 +17,12 @@
 			icon_plating = "[initial(src.icon_state)]_dug"
 			icon_state = "[initial(src.icon_state)]_dug"
 	dug = TRUE
+
+/turf/open/floor/plating/asteroid/whitesands/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
 
 /turf/open/floor/plating/asteroid/whitesands/dried
 	name = "dried sand"
@@ -32,5 +35,23 @@
 /turf/open/floor/plating/asteroid/whitesands/remove_air(amount)
 	return return_air()
 
+/turf/open/floor/plating/asteroid/whitesands/dried/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried/lit
+
 /turf/open/floor/plating/grass/whitesands
 	initial_gas_mix = WHITESANDS_ATMOS
+
+/turf/open/floor/plating/asteroid/basalt/whitesands
+	initial_gas_mix = WHITESANDS_ATMOS
+	planetary_atmos = TRUE
+	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
+	icon_state = "whitesands_basalt0"
+	icon_plating = "whitesands_basalt0"
+	dug = TRUE
+
+/turf/open/floor/plating/asteroid/basalt/whitesands/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	icon_state = "whitesands_basalt[rand(0,1)]"

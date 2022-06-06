@@ -242,6 +242,10 @@
 	light_power = 1
 	baseturfs = /turf/open/floor/plating/asteroid/icerock/lit
 
+/turf/open/floor/plating/asteroid/snow/lit/whitesands
+	baseturfs = /turf/open/floor/plating/asteroid/icerock/lit
+	initial_gas_mix = WHITESANDS_ATMOS
+
 /turf/open/floor/plating/asteroid/icerock
 	gender = PLURAL
 	name = "icy rock"
