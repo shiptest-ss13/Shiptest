@@ -245,14 +245,14 @@ SUBSYSTEM_DEF(overmap)
 				mapgen = new /datum/map_generator/cave_generator/asteroid
 			if(DYNAMIC_WORLD_WASTEPLANET)
 				ruin_list = SSmapping.waste_ruins_templates
-				mapgen = new /datum/map_generator/planet_generator/waste
+				mapgen = new /datum/map_generator/cave_generator/wasteplanet
 				target_area = /area/overmap_encounter/planetoid/wasteplanet
 				surface = /turf/open/floor/plating/asteroid/wasteplanet
 				weather_controller_type = /datum/weather_controller/chlorine //let's go??
 				//planet_template = /datum/planet/lava //TODO, MAKE NEW PLANET TEMPLATE
 			if(DYNAMIC_WORLD_ROCKPLANET)
 				ruin_list = SSmapping.rock_ruins_templates
-				mapgen = new /datum/map_generator/planet_generator/rock
+				mapgen = new /datum/map_generator/cave_generator/rockplanet
 				target_area = /area/overmap_encounter/planetoid/rockplanet
 				surface = /turf/open/floor/plating/asteroid
 				weather_controller_type = /datum/weather_controller/rockplanet

@@ -64,7 +64,7 @@
 	base_icon_state = "grass"
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands
 	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	initial_gas_mix = WHITESANDS_ATMOS
 	planetary_atmos = TRUE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)

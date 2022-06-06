@@ -8,7 +8,7 @@
 	start_sound = 'sound/weather/ashstorm/outside/active_start.ogg'
 	start_length = 130
 	end_sound = 'sound/weather/ashstorm/outside/active_end.ogg'
-	volume = 20
+	volume = 40
 
 /datum/looping_sound/active_inside_ashstorm
 	mid_sounds = list(

@@ -4,15 +4,15 @@
 		"coldest" = list(
 			"biome_lowest_humidity" = /datum/biome/sand,
 			"biome_low_humidity" = /datum/biome/sand,
-			"biome_medium_humidity" = /datum/biome/sand/icecap,
+			"biome_medium_humidity" = /datum/biome/sand/grass/dead,
 			"biome_high_humidity" = /datum/biome/sand/icecap,
 			"biome_highest_humidity" = /datum/biome/sand/icecap
 		),
 		"cold" = list(
 			"biome_lowest_humidity" = /datum/biome/sand,
 			"biome_low_humidity" = /datum/biome/sand/riverbed,
-			"biome_medium_humidity" = /datum/biome/sand/grass/dead,
-			"biome_high_humidity" = /datum/biome/sand/grass/dead,
+			"biome_medium_humidity" = /datum/biome/sand/wasteland,
+			"biome_high_humidity" = /datum/biome/sand/wasteland,
 			"biome_highest_humidity" = /datum/biome/sand/icecap
 		),
 		"warm" = list(
@@ -30,15 +30,15 @@
 			"biome_highest_humidity" = /datum/biome/sand/grass
 		),
 		"hot" = list(
-			"biome_lowest_humidity" = /datum/biome/sand/wasteland,
+			"biome_lowest_humidity" =/datum/biome/sand/acid,
 			"biome_low_humidity" = /datum/biome/sand/wasteland,
 			"biome_medium_humidity" = /datum/biome/sand/riverbed,
 			"biome_high_humidity" = /datum/biome/sand,
-			"biome_highest_humidity" = /datum/biome/sand/acid
+			"biome_highest_humidity" = /datum/biome/sand/grass
 		),
 		"hottest" = list(
 			"biome_lowest_humidity" = /datum/biome/sand/acid/total,
-			"biome_low_humidity" = /datum/biome/sand/wasteland,
+			"biome_low_humidity" = /datum/biome/sand/acid,
 			"biome_medium_humidity" = /datum/biome/sand/riverbed,
 			"biome_high_humidity" = /datum/biome/sand/wasteland,
 			"biome_highest_humidity" = /datum/biome/sand/oasis
