@@ -4,8 +4,6 @@
 	icon_state = ""
 	smoothing_flags = SMOOTH_BITMASK
 	canSmoothWith = null
-	var/last_event = 0
-	var/active = null
 
 /turf/closed/wall/mineral/gold
 	name = "gold wall"
@@ -76,6 +74,8 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_URANIUM_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_URANIUM_WALLS)
+	var/last_event = 0
+	var/active = null
 
 /turf/closed/wall/mineral/uranium/proc/radiate()
 	if(!active)
@@ -88,6 +88,10 @@
 			active = null
 			return
 	return
+
+/turf/closed/wall/mineral/uranium/copyTurf(turf/closed/wall/mineral/uranium/T, copy_air, flags)
+	. = ..()
+	T.last_event = last_event
 
 /turf/closed/wall/mineral/uranium/attack_hand(mob/user)
 	radiate()

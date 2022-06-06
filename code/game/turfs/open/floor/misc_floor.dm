@@ -40,6 +40,12 @@
 		icon_state = "[icon_normal]off"
 		set_light(0)
 
+/turf/open/floor/circuit/copyTurf(turf/open/floor/circuit/T, copy_air)
+	. = ..()
+	if(T.on != on)
+		T.on = on
+		T.update_icon()
+
 /turf/open/floor/circuit/off
 	icon_state = "bcircuitoff"
 	on = FALSE

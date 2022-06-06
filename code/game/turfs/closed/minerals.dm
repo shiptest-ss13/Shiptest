@@ -551,6 +551,16 @@
 	ScrapeAway(null, flags)
 	addtimer(CALLBACK(src, .proc/AfterChange), 1, TIMER_UNIQUE)
 
+/turf/closed/mineral/gibtonite/copyTurf(turf/closed/mineral/gibtonite/T, copy_air, flags)
+	. = ..()
+	if(T.det_time != det_time)
+		T.det_time = det_time
+	if(T.stage != stage)
+		T.stage = stage //you cannot escape the consequences of your actions
+	if(T.activated_ckey != activated_ckey)
+		T.activated_ckey = activated_ckey
+	if(T.activated_name != activated_name)
+		T.activated_name = activated_name
 
 /turf/closed/mineral/gibtonite/volcanic
 	environment_type = "basalt"

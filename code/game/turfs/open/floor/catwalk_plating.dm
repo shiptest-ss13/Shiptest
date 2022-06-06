@@ -43,3 +43,8 @@
 	else //edit, not sure how else to get it to work
 		I.play_tool_sound(src, 80)
 		return ScrapeAway(1, CHANGETURF_INHERIT_AIR) //edit, this doesnt work unless its like this
+
+/turf/open/floor/plating/catwalk_floor/copyTurf(turf/open/floor/plating/catwalk_floor/T, copy_air)
+	. = ..()
+	if(T.covered != covered)
+		T.covered = covered
