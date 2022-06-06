@@ -102,6 +102,22 @@
 	desc = "A wonderous decorated Christmas tree. It has a seemly endless supply of presents!"
 	unlimited = TRUE
 
+/obj/structure/flora/tree/tall
+	icon = 'icons/obj/flora/tall_trees.dmi'
+	desc = "A remarkably tall tree."
+	icon_state = "pine_1"
+
+/obj/structure/flora/tree/dead/barren/Initialize()
+	. = ..()
+	icon_state = "pine_[rand(1, 2)]"
+
+/obj/structure/flora/tree/tall/whitesands
+	color = "#846996"
+
+/obj/structure/flora/tree/dead/barren/Initialize()
+	. = ..()
+	color = pick( "#846996", "#7b4e99", "#924fab")
+
 /obj/structure/flora/tree/dead
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	desc = "A dead tree. How it died, you know not."

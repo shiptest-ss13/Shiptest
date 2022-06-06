@@ -59,14 +59,33 @@
 /turf/open/floor/plating/asteroid/whitesands/grass
 	name = "purple grass"
 	desc = "The few known flora on Whitesands are in a purplish color."
-	icon = 'icons/turf/floors/lava_grass_purple.dmi' //PLACEHOLDER ICON, YELL AT LOCAL MOTH
-	icon_state = "grass"
+	icon = 'icons/turf/floors/lava_grass_purple.dmi' //PLACEHOLDER ICON, YELL AT LOCAL MOTH WOMAN
+	icon_state = "grass0"
 	base_icon_state = "grass"
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands
 	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
+
+/turf/open/floor/plating/asteroid/whitesands/grass/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-9, -9)
+		transform = translation
 
 /turf/open/floor/plating/asteroid/whitesands/grass/lit
+	light_power = 1
+	light_range = 2
+
+/turf/open/floor/plating/asteroid/whitesands/grass/dead
+	name = "dead grass"
+	desc = "The few known flora on Whitesands also don't tend to live for very long, especially after the war."
+	color = "#ddffb3" //the green makes a grey color, dead as hell
+
+/turf/open/floor/plating/asteroid/whitesands/grass/dead/lit
 	light_power = 1
 	light_range = 2

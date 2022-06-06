@@ -10,66 +10,66 @@
 		),
 		"cold" = list(
 			"biome_lowest_humidity" = /datum/biome/sand,
-			"biome_low_humidity" = /datum/biome/sand,
-			"biome_medium_humidity" = /datum/biome/sand/path,
-			"biome_high_humidity" = /datum/biome/sand,
+			"biome_low_humidity" = /datum/biome/sand/riverbed,
+			"biome_medium_humidity" = /datum/biome/sand/grass/dead,
+			"biome_high_humidity" = /datum/biome/sand/grass/dead,
 			"biome_highest_humidity" = /datum/biome/sand/icecap
 		),
 		"warm" = list(
 			"biome_lowest_humidity" = /datum/biome/sand,
 			"biome_low_humidity" = /datum/biome/sand,
-			"biome_medium_humidity" = /datum/biome/sand/path,
+			"biome_medium_humidity" = /datum/biome/sand/riverbed,
 			"biome_high_humidity" = /datum/biome/sand,
 			"biome_highest_humidity" = /datum/biome/sand
 		),
 		"perfect" = list(
 			"biome_lowest_humidity" = /datum/biome/sand,
-			"biome_low_humidity" = /datum/biome/sand,
-			"biome_medium_humidity" = /datum/biome/sand/path,
-			"biome_high_humidity" = /datum/biome/sand,
-			"biome_highest_humidity" = /datum/biome/sand
+			"biome_low_humidity" = /datum/biome/sand/riverbed,
+			"biome_medium_humidity" = /datum/biome/sand/grass/dead,
+			"biome_high_humidity" = /datum/biome/sand/grass,
+			"biome_highest_humidity" = /datum/biome/sand/grass
 		),
 		"hot" = list(
-			"biome_lowest_humidity" = /datum/biome/sand,
-			"biome_low_humidity" = /datum/biome/sand,
-			"biome_medium_humidity" = /datum/biome/sand/path,
+			"biome_lowest_humidity" = /datum/biome/sand/wasteland,
+			"biome_low_humidity" = /datum/biome/sand/wasteland,
+			"biome_medium_humidity" = /datum/biome/sand/riverbed,
 			"biome_high_humidity" = /datum/biome/sand,
 			"biome_highest_humidity" = /datum/biome/sand/acid
 		),
 		"hottest" = list(
-			"biome_lowest_humidity" = /datum/biome/sand,
-			"biome_low_humidity" = /datum/biome/sand,
-			"biome_medium_humidity" = /datum/biome/sand/path,
-			"biome_high_humidity" = /datum/biome/sand/acid,
-			"biome_highest_humidity" = /datum/biome/sand/acid
+			"biome_lowest_humidity" = /datum/biome/sand/acid/total,
+			"biome_low_humidity" = /datum/biome/sand/wasteland,
+			"biome_medium_humidity" = /datum/biome/sand/riverbed,
+			"biome_high_humidity" = /datum/biome/sand/wasteland,
+			"biome_highest_humidity" = /datum/biome/sand/oasis
 		),
 		//CAVE BIOMES
 		"coldest_cave" = list(
-			"biome_lowest_humidity" = /datum/biome/cave/sand,
-			"biome_low_humidity" = /datum/biome/cave/sand,
+			"biome_lowest_humidity" = /datum/biome/cave/sand/volcanic/acidic,
+			"biome_low_humidity" = /datum/biome/cave/sand/deep,
 			"biome_medium_humidity" = /datum/biome/cave/sand/deep,
-			"biome_high_humidity" = /datum/biome/cave/sand/volcanic,
-			"biome_highest_humidity" = /datum/biome/cave/sand/volcanic/acidic
+			"biome_high_humidity" = /datum/biome/cave/sand,
+			"biome_highest_humidity" = /datum/biome/cave/sand
 		),
 		"cold_cave" = list(
-			"biome_lowest_humidity" = /datum/biome/cave/sand,
-			"biome_low_humidity" = /datum/biome/cave/sand,
+			"biome_lowest_humidity" = /datum/biome/cave/sand/volcanic/acidic,
+			"biome_low_humidity" = /datum/biome/cave/sand/volcanic,
 			"biome_medium_humidity" = /datum/biome/cave/sand/deep,
 			"biome_high_humidity" = /datum/biome/cave/sand/deep,
-			"biome_highest_humidity" = /datum/biome/cave/sand/volcanic
+			"biome_highest_humidity" = /datum/biome/cave/sand,
 		),
 		"warm_cave" = list(
-			"biome_lowest_humidity" = /datum/biome/cave/sand,
-			"biome_low_humidity" = /datum/biome/cave/sand,
+			"biome_lowest_humidity" = /datum/biome/cave/sand/volcanic/acidic,
+			"biome_low_humidity" = /datum/biome/cave/sand/volcanic,
 			"biome_medium_humidity" = /datum/biome/cave/sand/deep,
-			"biome_high_humidity" = /datum/biome/cave/sand/volcanic,
-			"biome_highest_humidity" = /datum/biome/cave/sand/volcanic/lava
+			"biome_high_humidity" = /datum/biome/cave/sand,
+			"biome_highest_humidity" = /datum/biome/cave/sand
 		),
 		"hot_cave" = list(
-			"biome_lowest_humidity" = /datum/biome/cave/sand,
-			"biome_low_humidity" = /datum/biome/cave/sand/deep,
+			"biome_lowest_humidity" = /datum/biome/cave/sand/volcanic/lava,
+			"biome_low_humidity" = /datum/biome/cave/sand/volcanic,
 			"biome_medium_humidity" = /datum/biome/cave/sand/volcanic,
-			"biome_high_humidity" = /datum/biome/cave/sand/volcanic,
-			"biome_highest_humidity" = /datum/biome/cave/sand/volcanic/lava,
+			"biome_high_humidity" = /datum/biome/cave/sand/deep,
+			"biome_highest_humidity" = /datum/biome/cave/sand,
 		)
 	)
