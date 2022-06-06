@@ -144,4 +144,6 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_CARPET_NWBEIGE WS_S_OBJ(5) ///obj/item/stack/tile/carpet/nanoweave/beige
 
 #define MAX_S_OBJ SMOOTH_GROUP_CARPET_NWBEIGE //Always match this value with the one above it.
+
+#define SMOOTH_GROUP_TIALLOY_WALLS S_OBJ(71) //turf/closed/wall/mineral/tialloy
 // WS End

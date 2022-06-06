@@ -347,3 +347,15 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_PLASTITANIUM_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
+
+/obj/structure/falsewall/tialloy
+	name = "titanium-alloy wall"
+	desc = "A heavily armoured tan wall, used in military vehicles and installations."
+	icon = 'icons/turf/walls/fleet_wall.dmi'
+	icon_state = "fleet_wall-0"
+	base_icon_state = "fleet_wall"
+	mineral = /obj/item/stack/sheet/tialloy
+	walltype = /turf/closed/wall/mineral/tialloy
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TIALLOY_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_TIALLOY_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)

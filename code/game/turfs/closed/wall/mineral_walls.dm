@@ -368,3 +368,19 @@
 /turf/closed/wall/mineral/plastitanium/copyTurf(turf/T)
 	. = ..()
 	T.transform = transform
+
+/turf/closed/wall/mineral/tialloy
+	name = "titanium-alloy wall"
+	desc = "A heavily armoured tan wall, used in military vehicles and installations."
+	icon = 'icons/turf/walls/fleet_wall.dmi'
+	icon_state = "fleet_wall-0"
+	base_icon_state = "fleet_wall"
+	opacity = TRUE
+	density = TRUE
+	sheet_type = /obj/item/stack/sheet/tialloy
+	sheet_amount = 1
+	explosion_block = 2
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TIALLOY_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_TIALLOY_WALLS)
+	hardness = 10
+	rad_insulation = RAD_HEAVY_INSULATION

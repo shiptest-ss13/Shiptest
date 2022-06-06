@@ -21,6 +21,16 @@
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 	maxstack = 50
 
+/datum/design/tialloy
+	name = "Titanium + Plasteel alloy"
+	id = "tialloy"
+	build_type = SMELTER | PROTOLATHE
+	materials = list(/datum/material/titanium = MINERAL_MATERIAL_AMOUNT, /datum/material/plasma = MINERAL_MATERIAL_AMOUNT, /datum/material/iron = MINERAL_MATERIAL_AMOUNT )
+	build_path = /obj/item/stack/sheet/tialloy
+	category = list("initial", "Stock Parts")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+	maxstack = 50
+
 /datum/design/plaglass_alloy
 	name = "Plasma + Glass alloy"
 	id = "plasmaglass"

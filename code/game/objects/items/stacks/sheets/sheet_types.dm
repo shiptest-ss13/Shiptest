@@ -9,6 +9,7 @@
  * Paper Frames
  * Runed Metal (cult)
  * Bronze (bake brass)
+ * Titanium Alloy
  */
 
 /*
@@ -805,3 +806,31 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	amount = 20
 /obj/item/stack/sheet/sandblock/five
 	amount = 5
+
+/*
+ * Titanium Alloy
+ */
+/obj/item/stack/sheet/tialloy
+	name = "titanium alloy"
+	singular_name = "titanium alloy sheet"
+	desc = "This sheet is an alloy of plasteel and titanium."
+	icon_state = "sheet-plastitanium"
+	item_state = "sheet-plastitanium"
+	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT, /datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+	force = 5
+	throwforce = 5
+	w_class =  WEIGHT_CLASS_NORMAL
+	walltype = /turf/closed/wall/mineral/tialloy
+	merge_type = /obj/item/stack/sheet/tialloy
+	point_value = 23
+	material_flags = MATERIAL_NO_EFFECTS
+
+/obj/item/stack/sheet/tialloy/five
+	amount = 5
+
+/obj/item/stack/sheet/tialloy/twenty
+	amount = 20
+
+/obj/item/stack/sheet/tialloy/fifty
+	amount = 50
+
