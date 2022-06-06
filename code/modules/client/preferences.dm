@@ -1646,7 +1646,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							ghost_others = GHOST_OTHERS_SIMPLE
 
 				if("name")
-					var/new_name =  reject_bad_name( input(user, "Choose your character's name:", "Character Preference")  as text|null , pref_species.allow_numbers_in_name)
+					var/new_name =  reject_bad_name( input(user, "Choose your character's name:", "Character Preference")  as text|null)
 					if(new_name)
 						real_name = new_name
 					else
@@ -2404,7 +2404,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		else
 			return
 	else
-		var/sanitized_name = reject_bad_name(raw_name,namedata["allow_numbers"])
+		var/sanitized_name = reject_bad_name(raw_name)
 		if(!sanitized_name)
 			to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z,[namedata["allow_numbers"] ? ",0-9," : ""] -, ' and .</font>")
 			return
