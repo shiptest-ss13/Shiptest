@@ -55,3 +55,18 @@
 /turf/open/floor/plating/asteroid/basalt/whitesands/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = "whitesands_basalt[rand(0,1)]"
+
+/turf/open/floor/plating/asteroid/whitesands/grass
+	name = "purple grass"
+	desc = "The few known flora on Whitesands are in a purplish color."
+	icon = 'icons/turf/floors/lava_grass_purple.dmi' //PLACEHOLDER ICON, YELL AT LOCAL MOTH
+	icon_state = "grass"
+	base_icon_state = "grass"
+	baseturfs = /turf/open/floor/plating/asteroid/whitesands
+	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+
+/turf/open/floor/plating/asteroid/whitesands/grass/lit
+	light_power = 1
+	light_range = 2

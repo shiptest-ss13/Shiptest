@@ -17,6 +17,7 @@
 		/mob/living/simple_animal/hostile/asteroid/whitesands/survivor/random = 25,
 	)
 
+/datum/biome/sand/oasis
 /datum/biome/sand/icecap
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/lit = 1, /turf/open/floor/plating/asteroid/snow/lit/whitesands = 5)
 	flora_spawn_chance = 4
@@ -79,11 +80,11 @@
 	)
 
 /datum/biome/cave/sand/volcanic
-	open_turf_types = list(/turf/open/floor/plating/asteroid/basalt/whitesands = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 1)
 	mob_spawn_chance = 2
 
 /datum/biome/cave/sand/volcanic/lava
-	open_turf_types = list(/turf/open/floor/plating/asteroid/basalt/whitesands = 1, /turf/open/lava = 10)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 1, /turf/open/lava = 10)
 
 /datum/biome/cave/sand/volcanic/acidic
-	open_turf_types = list(/turf/open/floor/plating/asteroid/basalt/whitesands = 1, /turf/open/acid/whitesands = 7)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/dried = 1, /turf/open/acid/whitesands = 7)
