@@ -479,7 +479,7 @@ There are several things that need to be remembered:
 		var/obj/item/I = wear_mask
 		update_hud_wear_mask(I)
 		var/mutable_appearance/mask_overlay
-		var/icon_file = DEFAULT_MASK_PATH
+		var/icon_file
 		var/handled_by_bodytype = TRUE
 
 		if(!(ITEM_SLOT_MASK in check_obscured_slots()))
@@ -709,7 +709,7 @@ generate/load female uniform sprites matching all previously decided variables
 	var/layer2use = alternate_worn_layer ? alternate_worn_layer : default_layer
 
 	var/mutable_appearance/standing
-	if(mob_species && (mob_species.species_clothing_path || ("[layer]" in mob_species.offset_clothing)))
+	if(mob_species && (mob_species.species_clothing_path || ("[layer2use]" in mob_species.offset_clothing)))
 		standing = wear_species_version(file2use, t_state, layer2use, mob_species)
 	else if(femaleuniform)
 		standing = wear_female_version(t_state, file2use, layer2use, femaleuniform) //should layer2use be in sync with the adjusted value below? needs testing - shiz
@@ -720,7 +720,12 @@ generate/load female uniform sprites matching all previously decided variables
 	//Get the overlays for this item when it's being worn
 	//eg: ammo counters, primed grenade flashes, etc.
 	var/list/worn_overlays = worn_overlays(isinhands, file2use)
-	if(worn_overlays && worn_overlays.len)
+	if(length(worn_overlays))
+		if(mob_species && ("[layer2use]" in mob_species.offset_clothing))
+			var/list/new_overlays = list()
+			for(var/mutable_appearance/overlay in worn_overlays)
+				new_overlays += wear_species_version(overlay.icon, overlay.icon_state, layer2use, mob_species)
+			worn_overlays = new_overlays
 		standing.overlays.Add(worn_overlays)
 
 	standing = center_image(standing, isinhands ? inhand_x_dimension : worn_x_dimension, isinhands ? inhand_y_dimension : worn_y_dimension)

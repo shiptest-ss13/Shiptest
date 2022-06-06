@@ -288,11 +288,14 @@
 	GLOB.female_clothing_icons[index] = female_clothing_icon
 
 /obj/item/proc/generate_species_clothing(file2use, state2use, layer, datum/species/mob_species)
+	if(!icon_exists(file2use, state2use))
+		return
+
 	var/icon/human_clothing_icon = icon(file2use, state2use)
 
 	if("[layer]" in mob_species.offset_clothing)
 		// This code taken from Baystation 12
-		var/icon/final_I = icon('icons/mob/clothing/species/kepori.dmi', "empty")
+		var/icon/final_I = icon('icons/blanks/32x32.dmi', "nothing")
 		var/list/shifts = mob_species.offset_clothing["[layer]"]
 
 		// Apply all pixel shifts for each direction.
@@ -300,7 +303,7 @@
 			var/list/facing_list = shifts[shift_facing]
 			var/use_dir = text2num(shift_facing)
 			var/icon/equip = icon(file2use, icon_state = state2use, dir = use_dir)
-			var/icon/canvas = icon('icons/mob/clothing/species/kepori.dmi', "empty")
+			var/icon/canvas = icon('icons/blanks/32x32.dmi', "nothing")
 			canvas.Blend(equip, ICON_OVERLAY, facing_list["x"]+1, facing_list["y"]+1)
 			final_I.Insert(canvas, dir = use_dir)
 		final_I = fcopy_rsc(final_I)

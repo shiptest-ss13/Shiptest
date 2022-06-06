@@ -57,6 +57,7 @@
 		"[HEAD_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = -4), "[EAST]" = list("x" = 4, "y" = -4), "[SOUTH]" = list("x" = 0, "y" = -4), "[WEST]" = list("x" =  -4, "y" = -4)),
 		"[GLASSES_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = -4), "[EAST]" = list("x" = 4, "y" = -4), "[SOUTH]" = list("x" = 0, "y" = -4), "[WEST]" = list("x" =  -4, "y" = -4)),
 		"[FACEMASK_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = -5), "[EAST]" = list("x" = 4, "y" = -5), "[SOUTH]" = list("x" = 0, "y" = -5), "[WEST]" = list("x" =  -4, "y" = -5)),
+		"[NECK_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = -5), "[EAST]" = list("x" = 3, "y" = -4), "[SOUTH]" = list("x" = 0, "y" = -5), "[WEST]" = list("x" =  -3, "y" = -4)),
 	)
 
 /datum/species/kepori/random_name(gender,unique,lastname)
@@ -65,6 +66,8 @@
 	return kepori_name()
 
 /datum/species/kepori/can_equip(obj/item/I, slot, disable_warning, mob/living/carbon/human/H, bypass_equip_delay_self, swap)
+	if(..()) //If it already fits, then it's fine.
+		return TRUE
 	if(slot == ITEM_SLOT_MASK)
 		if(H.wear_mask && !swap)
 			return FALSE
@@ -73,7 +76,6 @@
 		if(!H.get_bodypart(BODY_ZONE_HEAD))
 			return FALSE
 		return equip_delay_self_check(I, H, bypass_equip_delay_self)
-	. = ..()
 
 /datum/species/kepori/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	..()
