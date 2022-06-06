@@ -1,45 +1,40 @@
 /proc/mass_purrbation()
-	for(var/M in GLOB.mob_list)
-		if(ishuman(M))
-			purrbation_apply(M)
+	for(var/mob/living/carbon/human/target as anything in GLOB.human_list)
+		target.purrbation_apply()
 		CHECK_TICK
 
 /proc/mass_remove_purrbation()
-	for(var/M in GLOB.mob_list)
-		if(ishuman(M))
-			purrbation_remove(M)
+	for(var/mob/living/carbon/human/target as anything in GLOB.human_list)
+		target.purrbation_remove()
 		CHECK_TICK
 
-/proc/purrbation_toggle(mob/living/carbon/human/H, silent = FALSE)
-	if(!ishumanbasic(H))
-		return
-	purrbation_remove(H, silent)
+/proc/purrbation_toggle(mob/living/carbon/human/target, silent = FALSE)
+	target.purrbation_remove(silent)
 	. = FALSE
 
-/proc/purrbation_apply(mob/living/carbon/human/H, silent = FALSE)
-	if(!ishuman(H))
-		return
+/mob/living/carbon/human/proc/purrbation_apply(silent = FALSE)
 	var/obj/item/organ/ears/cat/kitty_ears = new
 	var/obj/item/organ/tail/cat/kitty_tail = new
-	kitty_ears.Insert(H, TRUE, FALSE) //Gives nonhumans cat tail and ears
-	kitty_tail.Insert(H, TRUE, FALSE)
+	kitty_ears.Insert(src, special = TRUE, drop_if_replaced = FALSE) //Gives nonhumans cat tail and ears
+	kitty_tail.Insert(src, special = TRUE, drop_if_replaced = FALSE)
 	if(!silent)
-		to_chat(H, "<span class='boldnotice'>Something is nya~t right.</span>")
-		playsound(get_turf(H), 'sound/effects/meow1.ogg', 50, TRUE, -1)
+		to_chat(src, "<span class='boldnotice'>Something is nya~t right.</span>")
+		SEND_SOUND(src, 'sound/effects/meow1.ogg')
 
-/proc/purrbation_remove(mob/living/carbon/human/H, silent = FALSE)
-	if(ishuman(H) && !ishumanbasic(H))
-		var/datum/species/target_species = H.dna.species
-		var/organs = H.internal_organs
-		for(var/obj/item/organ/current_organ in organs)
-			if(istype(current_organ, /obj/item/organ/tail/cat))
-				current_organ.Remove(H, TRUE)
-				var/obj/item/organ/tail/new_tail = locate(/obj/item/organ/tail) in target_species.mutant_organs
-				if(new_tail)
-					new_tail = new new_tail()
-					new_tail.Insert(H, TRUE, FALSE)
-			if(istype(current_organ, /obj/item/organ/ears/cat))
-				var/obj/item/organ/new_ears = new target_species.mutantears
-				new_ears.Insert(H, TRUE, FALSE)
+/mob/living/carbon/human/proc/purrbation_remove(silent = FALSE)
+	var/obj/item/organ/tail/cat/cat_tail = locate() in internal_organs
+	var/obj/item/organ/ears/cat/cat_ears = locate() in internal_organs
+	if(cat_tail)
+		cat_tail.Remove(src, TRUE)
+		var/obj/item/organ/tail/new_tail
+		for(var/organ in dna.species.mutant_organs) //Yes, there's no other way.
+			if(ispath(organ, /obj/item/organ/tail))
+				new_tail = organ
+		if(new_tail)
+			new_tail = new new_tail()
+			new_tail.Insert(src, TRUE, FALSE)
+	if(cat_ears)
+		var/obj/item/organ/new_ears = new dna.species.mutantears
+		new_ears.Insert(src, TRUE, FALSE)
 	if(!silent)
-		to_chat(H, "<span class='boldnotice'>You are no longer a cat.</span>")
+		to_chat(src, "<span class='boldnotice'>You are no longer a cat.</span>")
