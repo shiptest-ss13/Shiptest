@@ -12,12 +12,10 @@
 /area/ship/engineering/electrical)
 "ah" = (
 /obj/structure/table,
-/obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife,
-/obj/item/reagent_containers/food/condiment/enzyme,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "ak" = (
@@ -746,14 +744,6 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm)
-"na" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/condiment/saltshaker{
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/food/condiment/peppermill,
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "nq" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ArrowheadRTG";
@@ -946,6 +936,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/item/toy/plush/among,
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm)
 "rH" = (
@@ -1936,7 +1927,23 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "KO" = (
-/obj/machinery/processor,
+/obj/structure/table,
+/obj/item/trash/can/food/beans{
+	pixel_x = -8;
+	pixel_y = 11
+	},
+/obj/item/trash/can/food/beans{
+	pixel_x = 5;
+	pixel_y = 11
+	},
+/obj/item/trash/can/food/beans{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/item/trash/can/food/beans{
+	pixel_x = 5;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "KP" = (
@@ -2307,26 +2314,6 @@
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
 "PJ" = (
-/obj/structure/closet/secure_closet/freezer{
-	locked = 0;
-	name = "fridge"
-	},
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/rice,
-/obj/item/reagent_containers/food/condiment/rice,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/soymilk,
-/obj/item/reagent_containers/food/condiment/soymilk,
 /obj/effect/turf_decal/siding/thinplating/end,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -3237,7 +3224,7 @@ pS
 Gx
 mz
 Lc
-na
+Lc
 fc
 "}
 (16,1,1) = {"
