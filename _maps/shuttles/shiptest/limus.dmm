@@ -432,6 +432,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/science/xenobiology)
+"ik" = (
+/turf/open/floor/plasteel/tech,
+/area/ship/science)
 "iL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -760,9 +763,6 @@
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/janitor)
-"ql" = (
-/turf/open/floor/plasteel/tech,
-/area/ship/science)
 "qx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -809,9 +809,7 @@
 	desc = "A comfy-looking creature bed. You can even strap your pet in, in case the gravity turns off.";
 	name = "creature bed"
 	},
-/mob/living/simple_animal/pet/dog/corgi/puppy/slime{
-	name = "Crouton"
-	},
+/mob/living/simple_animal/pet/cat/fennec/faux,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/dorm)
 "rl" = (
@@ -3008,7 +3006,7 @@ BL
 BL
 Sk
 UY
-ql
+ik
 FL
 YR
 pi
