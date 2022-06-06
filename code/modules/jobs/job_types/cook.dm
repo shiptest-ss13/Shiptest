@@ -7,6 +7,8 @@
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
 	wiki_page = "Food" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Culinary Artist", "Butcher", "Grillmaster")
+	senior_title = "Chef"
 	var/cooks = 0 //Counts cooks amount
 
 	outfit = /datum/outfit/job/cook

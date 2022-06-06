@@ -297,3 +297,7 @@
 	description = "<span class='warning'>OW!! That was even worse than a regular noogie!</span>\n"
 	mood_change = -4
 	timeout = 1 MINUTES
+
+/datum/mood_event/irritate
+	description = "It feels like I'm itching all over!"
+	mood_change = -2

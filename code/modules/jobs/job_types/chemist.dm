@@ -9,6 +9,8 @@
 	exp_type = EXP_TYPE_CREW
 	exp_requirements = 60
 	wiki_page = "Guide_to_Chemistry" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Pharmacist", "Pharmacologist", "Junior Chemist")
+	senior_title = "Senior Chemist"
 
 	outfit = /datum/outfit/job/chemist
 
