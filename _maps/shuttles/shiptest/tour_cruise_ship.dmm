@@ -38,6 +38,9 @@
 	dir = 8;
 	pixel_x = 24
 	},
+/obj/item/radio/intercom{
+	pixel_y = 22
+	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/canteen/kitchen)
 "al" = (
@@ -1400,6 +1403,9 @@
 /obj/effect/turf_decal/trimline/purple/corner{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/radiation/corner{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "iR" = (
@@ -1412,6 +1418,10 @@
 /obj/item/kitchen/rollingpin,
 /obj/item/reagent_containers/food/condiment/enzyme,
 /obj/effect/turf_decal/corner/white/diagonal,
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -22
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "iS" = (
@@ -2204,6 +2214,9 @@
 /obj/effect/turf_decal/trimline/green/arrow_ccw{
 	dir = 8
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "oP" = (
@@ -2336,9 +2349,9 @@
 	},
 /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos,
 /obj/item/clothing/gloves/color/black,
-/obj/item/radio/intercom{
+/obj/structure/fireaxecabinet{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 28
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -3055,6 +3068,9 @@
 /obj/structure/chair/comfy/black{
 	dir = 4
 	},
+/obj/item/radio/intercom{
+	pixel_y = 22
+	},
 /turf/open/floor/grass,
 /area/ship/hallway/central)
 "um" = (
@@ -3572,7 +3588,7 @@
 	},
 /obj/effect/turf_decal/trimline/purple/arrow_cw,
 /obj/effect/turf_decal/industrial/radiation{
-	dir = 8
+	dir = 9
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -4099,6 +4115,9 @@
 	icon_state = "1-8"
 	},
 /obj/item/geiger_counter,
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Bn" = (
@@ -4472,6 +4491,10 @@
 	},
 /obj/effect/turf_decal/siding/blue{
 	dir = 9
+	},
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -5264,6 +5287,9 @@
 /obj/effect/turf_decal/trimline/red/arrow_ccw{
 	dir = 1
 	},
+/obj/effect/turf_decal/industrial/radiation/corner{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Jt" = (
@@ -5559,7 +5585,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/radiation{
-	dir = 8
+	dir = 10
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -5616,9 +5642,6 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
-	},
-/obj/effect/turf_decal/industrial/radiation{
-	dir = 8
 	},
 /turf/open/floor/light,
 /area/ship/engineering)
@@ -6124,6 +6147,10 @@
 /obj/effect/turf_decal/siding/red{
 	dir = 10
 	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "PY" = (
@@ -6290,6 +6317,10 @@
 /area/ship/hallway/aft)
 "QP" = (
 /obj/machinery/suit_storage_unit/atmos,
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 22
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "QS" = (
@@ -7610,9 +7641,6 @@
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped/inverse{
 	dir = 1;
 	target_pressure = 101
-	},
-/obj/machinery/light{
-	dir = 8
 	},
 /obj/effect/turf_decal/trimline/neutral/filled,
 /turf/open/floor/plating,
