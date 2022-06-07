@@ -550,6 +550,8 @@
 /obj/machinery/chem_dispenser/mutagenlab
 	name = "xeno mutagen dispenser"
 	desc = "Creates and dispenses reagents useful for making mutagens."
+	flags_1 = NODECONSTRUCT_1
+	circuit = /obj/item/circuitboard/machine/chem_dispenser/mutagenlab
 	dispensable_reagents = list(
 		/datum/reagent/uranium/radium,
 		/datum/reagent/plantnutriment/eznutriment,

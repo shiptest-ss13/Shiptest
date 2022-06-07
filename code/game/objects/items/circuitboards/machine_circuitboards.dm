@@ -654,6 +654,10 @@
 		/obj/item/stock_parts/cell/bluespace = 1,
 	)
 
+/obj/item/circuitboard/machine/chem_dispenser/mutagenlab
+	name = "Mutagen Lab Dispenser (Machine Board)"
+	build_path = /obj/machinery/chem_dispenser/mutagenlab
+
 /obj/item/circuitboard/machine/chem_dispenser/mutagensaltpeter
 	build_path = /obj/machinery/chem_dispenser/mutagensaltpeter
 	req_components = list(
