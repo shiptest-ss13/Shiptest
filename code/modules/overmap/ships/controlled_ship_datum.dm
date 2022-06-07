@@ -73,7 +73,7 @@
 			calculate_mass()
 			refresh_engines()
 
-	ship_account = new(name, 7500)
+	ship_account = new(name, 2000)
 #ifdef UNIT_TESTS
 	Rename("[source_template]")
 #else

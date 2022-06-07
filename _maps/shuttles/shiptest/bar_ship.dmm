@@ -241,14 +241,13 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
 "ep" = (
-/obj/structure/frame/computer{
-	anchored = 1;
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/blue{
+	dir = 8
+	},
+/obj/machinery/computer/cargo/express{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,

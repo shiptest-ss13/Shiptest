@@ -6,10 +6,9 @@
 #define SP_UNREADY 5
 
 /obj/machinery/computer/cargo/express
-	name = "express supply console"
-	desc = "This console allows the user to purchase a package \
-		with 1/40th of the delivery time: made possible by NanoTrasen's new \"1500mm Orbital Railgun\".\
-		All sales are near instantaneous - please choose carefully"
+	name = "outpost communications console"
+	desc = "This console allows the user to communicate with a nearby outpost to \
+			purchase supplies and manage missions. Purchases are delivered near-instantly."
 	icon_screen = "supply_express"
 	circuit = /obj/item/circuitboard/computer/cargo/express
 	var/blockade_warning = "Bluespace instability detected. Delivery impossible."
@@ -103,7 +102,7 @@
 /obj/machinery/computer/cargo/express/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "Communications", name)
+		ui = new(user, src, "OutpostComms", name)
 		ui.open()
 		if(!charge_account)
 			reconnect()
@@ -112,13 +111,10 @@
 	var/canBeacon = beacon && (isturf(beacon.loc) || ismob(beacon.loc))//is the beacon in a valid location?
 	var/list/data = list()
 
-	var/outpost_docked = FALSE
-	var/area/ship/current_area = get_area(src)
-	var/datum/overmap/ship/controlled/ship
-	if(istype(current_area))
-		ship = current_area.mobile_port.current_ship
-		if(istype(ship.docked_to, /datum/overmap/outpost))
-			outpost_docked = TRUE
+	// not a big fan of get_containing_shuttle
+	var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
+	var/datum/overmap/ship/controlled/ship = D.current_ship
+	var/outpost_docked = istype(ship.docked_to, /datum/overmap/outpost)
 
 	data["onShip"] = !isnull(ship)
 	data["numMissions"] = ship ? LAZYLEN(ship.missions) : 0
@@ -239,12 +235,8 @@
 
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
-			var/area/ship/current_area = get_area(src)
-			if(!istype(current_area))
-				return
-			var/datum/overmap/ship/controlled/ship = current_area.mobile_port.current_ship
-			if(!istype(ship))
-				return
+			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
+			var/datum/overmap/ship/controlled/ship = D.current_ship
 			var/datum/overmap/outpost/outpost = ship.docked_to
 			if(!istype(outpost) || mission.source_outpost != outpost) // important to check these to prevent href fuckery
 				return
@@ -252,7 +244,7 @@
 				mission.accept(ship, loc)
 				return TRUE
 			else if(mission.servant == ship)
-				if(mission.is_complete())
+				if(mission.can_complete())
 					mission.turn_in()
 				else
 					mission.give_up()

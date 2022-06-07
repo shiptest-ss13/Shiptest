@@ -3,7 +3,7 @@ import { ProgressBar, Section, Tabs, Button, LabeledList, Box, AnimatedNumber } 
 import { Window } from '../layouts';
 import { CargoCatalog } from './Cargo';
 
-export const Communications = (props, context) => {
+export const OutpostComms = (props, context) => {
   const { act, data } = useBackend(context);
   const [tab, setTab] = useSharedState(context, 'outpostTab', '');
   return (

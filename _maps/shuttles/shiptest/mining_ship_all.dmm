@@ -99,12 +99,11 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "dl" = (
-/obj/structure/frame/computer{
-	anchored = 1;
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/blue/half{
 	dir = 4
+	},
+/obj/machinery/computer/cargo/express{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
