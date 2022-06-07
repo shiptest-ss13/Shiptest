@@ -119,9 +119,8 @@
 	if(!current_ship && !reload_ship())
 		return
 
-	if(isliving(user) && !viewer)
-		if(check_keylock())
-			return
+	if((isliving(user) && !viewer) && check_keylock())
+		return
 
 	if(!current_ship.shipkey && istype(user) && Adjacent(user) && !viewer)
 		say("Generated new shipkey, do not lose it!")
