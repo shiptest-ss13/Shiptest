@@ -119,7 +119,7 @@
 	if(!current_ship && !reload_ship())
 		return
 
-	if((isliving(user) && !viewer) && check_keylock())
+	if(isliving(user) && !viewer && check_keylock())
 		return
 
 	if(!current_ship.shipkey && istype(user) && Adjacent(user) && !viewer)
