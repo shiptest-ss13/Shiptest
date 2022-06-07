@@ -559,7 +559,6 @@
 		/datum/reagent/sodium,
 		/datum/reagent/chlorine,
 		/datum/reagent/ash,
-		/datum/reagent/uranium/radium,
 		/datum/reagent/phosphorus)
 	upgrade_reagents = null
 
