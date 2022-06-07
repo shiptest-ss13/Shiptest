@@ -718,10 +718,8 @@
 	var/datum/map_zone/mapzone = input("Map Zone to target?", "Map Zone") as null|anything in SSmapping.map_zones
 	if(!mapzone)
 		return
-
+	mapzone.assert_weather_controller()
 	var/datum/weather_controller/weather_controller = mapzone.weather_controller
-	if(!weather_controller)
-		return
 	weather_controller.run_weather(weather_type)
 
 	message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the map-zone [mapzone].")
