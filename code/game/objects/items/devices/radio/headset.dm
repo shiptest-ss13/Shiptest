@@ -28,6 +28,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	slot_flags = ITEM_SLOT_EARS
 	var/obj/item/encryptionkey/keyslot2 = null
 	dog_fashion = null
+	supports_variations = VOX_VARIATION
 
 /obj/item/radio/headset/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins putting \the [src]'s antenna up [user.p_their()] nose! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer!</span>")
@@ -123,6 +124,22 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
 
+/obj/item/radio/headset/headset_medsec
+	name = "medical-security radio headset"
+	desc = "Used to hear how many security officers need to be stiched back together."
+	icon_state = "medsec_headset"
+	keyslot = new /obj/item/encryptionkey/headset_medsec
+
+/obj/item/radio/headset/headset_medsec/alt
+	name = "medical-security bowman headset"
+	desc = "Used to hear how many security officers need to be stiched back together. Protects ears from flashbangs."
+	icon_state = "medsec_headset_alt"
+	keyslot = new /obj/item/encryptionkey/headset_medsec
+
+/obj/item/radio/headset/headset_medsec/alt/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
 /obj/item/radio/headset/headset_eng
 	name = "engineering radio headset"
 	desc = "When the engineers wish to chat like girls."
@@ -187,6 +204,22 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	item_state = "com_headset_alt"
 
 /obj/item/radio/headset/heads/captain/alt/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
+/obj/item/radio/headset/heads/lieutenant
+	name = "lieutenant's headset"
+	desc = "A lieutenant's headset."
+	icon_state = "com_headset"
+	keyslot = new /obj/item/encryptionkey/heads/lieutenant
+
+/obj/item/radio/headset/heads/lieutenant/alt
+	name = "lieutenant's bowman headset"
+	desc = "A lieutenant's headset. Protects ears from flashbangs."
+	icon_state = "com_headset_alt"
+	keyslot = new /obj/item/encryptionkey/heads/lieutenant
+
+/obj/item/radio/headset/heads/lieutenant/alt/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
 
@@ -285,6 +318,25 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/silicon/can_receive(freq, map_zones)
 	return ..(freq, map_zones, TRUE)
+
+//solgov
+/obj/item/radio/headset/solgov
+	name = "\improper SolGov Offical's headset"
+	desc = "A SolGov Official's headset."
+	icon = 'icons/obj/radio.dmi'
+	icon_state = "solgov_headset"
+	keyslot = new /obj/item/encryptionkey/solgov
+
+/obj/item/radio/headset/solgov/alt
+	name = "\improper SolGov Officer's bowman headset"
+	desc = "A SolGov Officer's headset. Protects ears from flashbangs."
+	icon_state = "solgov_headset_alt"
+
+/obj/item/radio/headset/solgov/alt/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
+//interactions
 
 /obj/item/radio/headset/attackby(obj/item/W, mob/user, params)
 	user.set_machine(src)

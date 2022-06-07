@@ -46,4 +46,4 @@
 	. = ..()
 	if(.) //if the mob isn't on fire anymore
 		return
-	adjust_bodytemperature(BODYTEMP_HEATING_MAX) //If you're on fire, you heat up!
+	adjust_bodytemperature(dna.species.bodytemp_heating_rate_max) //If you're on fire, you heat up!

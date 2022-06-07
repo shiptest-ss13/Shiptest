@@ -172,15 +172,15 @@
 	display_name = "suit, galaxy"
 	path = /obj/item/clothing/under/rank/civilian/lawyer/galaxy
 
-/datum/gear/uniform/suit/white/skirt
+/datum/gear/uniform/suit/white_skirt
 	display_name = "suitskirt, white shirt"
 	path = /obj/item/clothing/under/suit/black/skirt
 
-/datum/gear/uniform/suit/green/skirt
+/datum/gear/uniform/suit/green_skirt
 	display_name = "suitskirt, green"
 	path = /obj/item/clothing/under/rank/command/captain/suit/skirt
 
-/datum/gear/uniform/suit/teal/skirt
+/datum/gear/uniform/suit/teal_skirt
 	display_name = "suitskirt, teal"
 	path = /obj/item/clothing/under/rank/command/head_of_personnel/suit/skirt
 
@@ -243,5 +243,42 @@
 	path = /obj/item/clothing/under/misc/psyche
 
 /datum/gear/uniform/maid
-	display_name = "maid outfit"
-	path = /obj/item/storage/box/maid
+	display_name = "maid dress"
+	path = 	/obj/item/clothing/under/costume/maid
+
+//Trek uniforms
+/datum/gear/uniform/trek_tog_command
+	display_name = "original series command uniform"
+	path = /obj/item/clothing/under/trek/command
+
+/datum/gear/uniform/trek_tog_engsec
+	display_name = "original series engineering/security uniform"
+	path = /obj/item/clothing/under/trek/engsec
+
+/datum/gear/uniform/trek_tog_medsci
+	display_name = "original series medical/science uniform"
+	path = /obj/item/clothing/under/trek/medsci
+
+/datum/gear/uniform/trek_tng_command
+	display_name = "next generation command uniform"
+	path = /obj/item/clothing/under/trek/command/next
+
+/datum/gear/uniform/trek_tng_engsec
+	display_name = "next generation engineering/security uniform"
+	path = /obj/item/clothing/under/trek/engsec/next
+
+/datum/gear/uniform/trek_tng_medsci
+	display_name = "next generation medical/science uniform"
+	path = /obj/item/clothing/under/trek/medsci/next
+
+/datum/gear/uniform/trek_ent_command
+	display_name = "enterprise command uniform"
+	path = /obj/item/clothing/under/trek/command/ent
+
+/datum/gear/uniform/trek_ent_engsec
+	display_name = "enterprise engineering/security uniform"
+	path = /obj/item/clothing/under/trek/engsec/ent
+
+/datum/gear/uniform/trek_ent_medsci
+	display_name = "enterprise medical/science uniform"
+	path = /obj/item/clothing/under/trek/medsci/ent
