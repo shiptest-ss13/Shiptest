@@ -108,7 +108,7 @@ const ShipMissionsContent = (props, context) => {
         missions={data.shipMissions} />
     </Section>
   );
-}
+};
 
 const OutpostMissionsContent = (props, context) => {
   const { act, data } = useBackend(context);
@@ -127,7 +127,7 @@ const OutpostMissionsContent = (props, context) => {
         missions={data.outpostMissions} />
     </Section>
   );
-}
+};
 
 const MissionsList = (props, context) => {
   const showButton = props.showButton;
