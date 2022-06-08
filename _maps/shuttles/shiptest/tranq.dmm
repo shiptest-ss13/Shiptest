@@ -3444,6 +3444,19 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"Bw" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	pixel_x = 6;
+	pixel_y = 26
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/crewfour)
 "Bz" = (
 /obj/effect/turf_decal/corner/green/border{
 	dir = 6
@@ -5784,7 +5797,7 @@
 /obj/machinery/light/dim{
 	dir = 1
 	},
-/obj/machinery/firealarm/partyalarm{
+/obj/machinery/firealarm{
 	pixel_x = -26;
 	pixel_y = 26
 	},
@@ -7591,7 +7604,7 @@ CL
 kk
 Jz
 WZ
-UB
+Bw
 TL
 Ay
 Ay
