@@ -617,6 +617,7 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "DL" = (
@@ -1049,10 +1050,13 @@
 /obj/effect/turf_decal/corner/brown{
 	dir = 1
 	},
-/obj/item/storage/toolbox/mechanical,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
+/obj/item/circuitboard/computer/selling_pad_control,
+/obj/item/circuitboard/machine/selling_pad,
+/obj/item/circuitboard/computer/cargo/express,
+/obj/structure/closet/crate/engineering,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "VO" = (
@@ -1066,6 +1070,13 @@
 	pixel_y = -24
 	},
 /obj/item/areaeditor/shuttle,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "VQ" = (

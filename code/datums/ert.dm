@@ -35,6 +35,13 @@
 	mission = "Leave no witnesses."
 	polldesc = "an elite Nanotrasen Strike Team"
 
+/datum/ert/marine
+	leader_role = /datum/antagonist/ert/marine
+	roles = list(/datum/antagonist/ert/marine/security, /datum/antagonist/ert/marine/engineer, /datum/antagonist/ert/marine/medic)
+	rename_team = "Marine Squad"
+	polldesc = "an 'elite' Nanotrasen Strike Team"
+	opendoors = FALSE
+
 /datum/ert/centcom_official
 	code = "Green"
 	teamsize = 1
@@ -80,3 +87,12 @@
 	mission = "Create entertainment for the crew."
 	polldesc = "a Code Rainbow Nanotrasen Emergency Response Party"
 	code = "Rainbow"
+
+/datum/ert/solgov
+	roles = list(/datum/antagonist/ert/solgov)
+	leader_role = /datum/antagonist/ert/solgov/leader
+	teamsize = 7
+	opendoors = FALSE
+	rename_team = "Hired SolGov Marines"
+	mission = "Assist in conflict resolution."
+	polldesc = "a military squad hired by Nanotrasen"

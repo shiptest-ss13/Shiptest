@@ -51,6 +51,7 @@
 /obj/projectile/beam/laser/weak/negative_ap
 	damage = 15
 	armour_penetration = -30
+	range = 9
 
 /obj/projectile/beam/laser/weak/negative_ap/low_range
 	range = 6
@@ -99,9 +100,11 @@
 
 /obj/projectile/beam/disabler/weak/negative_ap
 	armour_penetration = -30
+	range = 9
 
 /obj/projectile/beam/disabler/weak/negative_ap/low_range
 	range = 6
+
 /obj/projectile/beam/pulse
 	name = "pulse"
 	icon_state = "u_laser"
@@ -119,6 +122,10 @@
 			SSexplosions.medobj += target
 		else
 			SSexplosions.medturf += target
+	var/turf/targets_turf = target.loc
+	if(!isopenturf(targets_turf))
+		return
+	targets_turf.IgniteTurf(rand(8,22), "blue")
 
 /obj/projectile/beam/pulse/shotgun
 	damage = 40
@@ -227,3 +234,10 @@
 	if(isopenturf(target) || istype(target, /turf/closed/indestructible))//shrunk floors wouldnt do anything except look weird, i-walls shouldnt be bypassable
 		return
 	target.AddComponent(/datum/component/shrink, shrink_time)
+
+/obj/projectile/beam/emitter/hitscan
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/laser/emitter
+	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
+	impact_type = /obj/effect/projectile/impact/laser/emitter
+	impact_effect_type = null

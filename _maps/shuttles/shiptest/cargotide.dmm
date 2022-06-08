@@ -541,7 +541,7 @@
 /obj/machinery/cryopod{
 	close_state = "crate";
 	dir = 8;
-	icon = 'goon/icons/obj/crates.dmi';
+	icon = 'icons/obj/crates.dmi';
 	icon_state = "crateopen";
 	open_state = "crateopen"
 	},
@@ -741,6 +741,7 @@
 	pixel_x = -6;
 	pixel_y = 7
 	},
+/obj/item/stack/spacecash/c50,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "yp" = (
@@ -995,7 +996,7 @@
 /obj/machinery/cryopod{
 	close_state = "crate";
 	dir = 8;
-	icon = 'goon/icons/obj/crates.dmi';
+	icon = 'icons/obj/crates.dmi';
 	icon_state = "crateopen";
 	open_state = "crateopen"
 	},
@@ -1086,6 +1087,7 @@
 /obj/effect/spawner/lootdrop/maintenance/seven,
 /obj/structure/closet/crate,
 /obj/item/storage/toolbox/electrical,
+/obj/item/stack/spacecash/c100,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "Fz" = (
@@ -1309,6 +1311,8 @@
 	dir = 8;
 	secret_type = /obj/item/circuitboard/machine/autolathe
 	},
+/obj/item/stack/spacecash/c100,
+/obj/item/stack/spacecash/c100,
 /turf/open/floor/plating,
 /area/ship/crew)
 "Ma" = (

@@ -1,0 +1,25 @@
+{
+	"map_name": "Masinyane-Class Personal Shuttle",
+	"map_short_name": "Masinyane-Class",
+	"prefix": "ISV",
+	"namelists": ["MYTHOLOGICAL", "NATURAL"],
+	"map_path": "_maps/shuttles/shiptest/masinyane.dmm",
+	"map_id": "masinyane",
+	"roundstart": true,
+	"job_slots": {
+		"Private Ship Owner": {
+			"outfit": "/datum/outfit/job/captain/independent/owner",
+			"officer": true,
+			"slots": 1
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/engineer/independent/ship_engineer",
+			"slots": 1
+		},
+		"Crewmate": {
+			"outfit": "/datum/outfit/job/assistant/independent/crewmatefancy",
+			"slots": 1
+		}
+	},
+	"cost": 7000
+}

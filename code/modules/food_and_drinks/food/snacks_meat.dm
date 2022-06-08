@@ -166,6 +166,7 @@
 	foodtype = MEAT | SUGAR
 	var/faction
 	var/spawned_mob = /mob/living/carbon/monkey
+	custom_price = 300
 
 /obj/item/reagent_containers/food/snacks/monkeycube/proc/Expand()
 	var/mob/spammer = get_mob_by_key(fingerprintslast)
@@ -382,3 +383,12 @@
 	icon_state = "fiestaskewer"
 	tastes = list("tex-mex" = 3, "cumin" = 2)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/capsaicin = 3)
+
+/obj/item/reagent_containers/food/snacks/fishfry
+	name = "fish fry"
+	desc = "All that and no bag of chips..."
+	icon_state = "fish_fry"
+	list_reagents = list (/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3)
+	filling_color = "#ee7676"
+	tastes = list("fish" = 1, "pan seared vegtables" = 1)
+	foodtype = MEAT | VEGETABLES | FRIED

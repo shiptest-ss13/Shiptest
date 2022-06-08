@@ -109,7 +109,6 @@
 /obj/structure/closet/crate/grave
 	name = "burial mound"
 	desc = "An marked patch of soil, showing signs of a burial long ago. You wouldn't disturb a grave... right?"
-	icon = 'goon/icons/obj/crates.dmi'
 	icon_state = "grave"
 	dense_when_open = TRUE
 	material_drop = /obj/item/stack/ore/glass/basalt
@@ -198,7 +197,6 @@
 /obj/structure/closet/crate/grave/lead_researcher
 	name = "ominous burial mound"
 	desc = "Even in a place filled to the brim with graves, this one shows a level of preperation and planning that fills you with dread."
-	icon = 'goon/icons/obj/crates.dmi'
 	icon_state = "grave_lead"
 	lead_tomb = TRUE
 	first_open = TRUE

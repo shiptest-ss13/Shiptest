@@ -1233,6 +1233,22 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
 	return icon2html(I, target, sourceonly = sourceonly)
 
 /proc/icon_exists(file, state)
-	var/list/states = icon_states(file)
-	if(state in states)
+	var/static/list/icon_states_cache = list()
+	if(icon_states_cache[file]?[state])
 		return TRUE
+
+	if(icon_states_cache[file]?[state] == FALSE)
+		return FALSE
+
+	var/list/states = icon_states(file)
+
+	if(!icon_states_cache[file])
+		icon_states_cache[file] = list()
+
+	if(state in states)
+		icon_states_cache[file][state] = TRUE
+		return TRUE
+	else
+		icon_states_cache[file][state] = FALSE
+		return FALSE
+

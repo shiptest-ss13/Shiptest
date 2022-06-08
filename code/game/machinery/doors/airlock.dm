@@ -139,6 +139,12 @@
 
 	update_icon()
 
+	var/static/list/connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_EXITED = .proc/on_exited
+	)
+	AddElement(/datum/element/connect_loc, connections)
+
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/door/airlock/LateInitialize()
@@ -184,8 +190,8 @@
 	if(density && has_hatch && (mover.pass_flags & PASSDOORHATCH))
 		return TRUE //If this airlock is closed, has hatches, and this creature can go through hatches, then we let it through without opening the airlock
 
-/obj/machinery/door/airlock/Crossed(atom/movable/mover)
-	. = ..()
+/obj/machinery/door/airlock/proc/on_entered(datum/source, atom/movable/mover)
+	SIGNAL_HANDLER
 	if(density && has_hatch && (mover.pass_flags & PASSDOORHATCH) && !hatchstate)
 		hatchstate = 1
 		update_icon()
@@ -194,8 +200,8 @@
 			return
 		mover.layer = UNDERDOOR
 
-/obj/machinery/door/airlock/Uncrossed(atom/movable/mover)
-	. = ..()
+/obj/machinery/door/airlock/proc/on_exited(datum/source, atom/movable/mover)
+	SIGNAL_HANDLER
 	if(density && has_hatch && (mover.pass_flags & PASSDOORHATCH))
 		mover.layer = initial(mover.layer)
 		close_hatch()
