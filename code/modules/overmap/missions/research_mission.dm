@@ -1,6 +1,8 @@
 /datum/mission/research
 	name = "Electrical storm research mission"
-	desc = "Fly through some electrical storms to get me data."
+	desc = "We require data on the behavior of electrical storms in the system for an ongoing study. \
+			Please anchor the attached sensor array to your ship and fly it through the storms.\
+			It must be powered to collect the data. "
 	value = 1000 // base value, before adding bonus for number of things to fly through
 	duration = 30 MINUTES
 	weight = 8
@@ -59,12 +61,16 @@
 
 /datum/mission/research/ion
 	name = "Ion storm research mission"
-	desc = "Fly through some electrical storms to get me data."
+	desc = "We require data on the behavior of ion storms in the system for an ongoing study. \
+			Please anchor the attached sensor array to your ship and fly it through the storms. \
+			It must be powered to collect the data."
 	objective_type = /datum/overmap/event/emp
 
 /datum/mission/research/meteor
 	name = "Asteroid field research mission"
-	desc = "Fly through some asteroid fields to get me data."
+	desc = "We require data on the behavior of asteroid fields in the system for an ongoing study. \
+			Please anchor the attached sensor array to your ship and fly it through the fields. \
+			It must be powered to collect the data."
 	value = 1200
 	weight = 4
 	objective_type = /datum/overmap/event/meteor
