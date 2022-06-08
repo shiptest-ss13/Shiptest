@@ -177,4 +177,3 @@
 
 /obj/item/wallframe/intercom/wideband/table
 	icon_state = "intercom-wideband-table"
-
