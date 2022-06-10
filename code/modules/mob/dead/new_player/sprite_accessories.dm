@@ -2454,16 +2454,6 @@
 	name = "Zeng-Hu Pharmaceuticals"
 	limbs_id = "zhpipc"
 
-/datum/sprite_accessory/ipc_brain
-	icon = null
-	icon_state = "not important"
-
-/datum/sprite_accessory/ipc_brain/posibrain
-	name = "Posibrain"
-
-/datum/sprite_accessory/ipc_brain/mmi
-	name = "Man-Machine Interface"
-
 /datum/sprite_accessory/spider_legs
 	icon = 'whitesands/icons/mob/spider_legs.dmi'
 	color_src = MUTCOLORS

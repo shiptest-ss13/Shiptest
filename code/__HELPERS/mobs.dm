@@ -85,8 +85,6 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_antennas, GLOB.ipc_antennas_list)
 	if(!GLOB.ipc_chassis_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_chassis, GLOB.ipc_chassis_list)
-	if(!GLOB.ipc_brain_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_brain, GLOB.ipc_brain_list)
 	if(!GLOB.spider_legs_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_legs, GLOB.spider_legs_list)
 	if(!GLOB.spider_spinneret_list.len)
