@@ -21,6 +21,6 @@
 	gold_core_spawnable = FRIENDLY_SPAWN
 
 /mob/living/simple_animal/pet/cat/fennec/faux
-	name = "faux"
+	name = "Faux"
 	desc = "Fox-thing who is apparently part of the crew."
 	gold_core_spawnable = NO_SPAWN
