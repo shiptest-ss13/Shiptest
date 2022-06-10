@@ -1781,13 +1781,13 @@
 	},
 /area/ship/science)
 "DN" = (
-/obj/structure/frame,
-/obj/structure/railing,
 /obj/effect/turf_decal/corner/mauve/border,
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = 28
 	},
+/obj/structure/frame/machine,
+/obj/structure/railing,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "DR" = (
@@ -2822,6 +2822,7 @@
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/switchblade,
+/obj/item/clothing/suit/longcoat/genetics,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "VA" = (
@@ -3079,6 +3080,7 @@
 /obj/item/storage/belt/sabre,
 /obj/item/gun/ballistic/derringer,
 /obj/item/ammo_box/c38,
+/obj/item/hypospray/mkii/CMO,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "YE" = (
