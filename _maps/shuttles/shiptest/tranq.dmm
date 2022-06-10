@@ -1047,6 +1047,9 @@
 	},
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
+/obj/item/storage/overmap_ship/electric{
+	pixel_x = -22
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "iG" = (
@@ -1527,6 +1530,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -26
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "my" = (
@@ -1632,11 +1639,6 @@
 	dir = 4;
 	pixel_x = -32
 	},
-/obj/item/tank/internals/oxygen,
-/obj/item/clothing/suit/fire/firefighter,
-/obj/item/clothing/head/hardhat/red/upgraded,
-/obj/item/clothing/mask/gas,
-/obj/item/extinguisher,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
 "nD" = (
@@ -2004,6 +2006,9 @@
 /obj/item/stack/cable_coil/random,
 /obj/item/stack/cable_coil/random,
 /obj/item/rcl/pre_loaded,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/geiger_counter,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "qa" = (
@@ -3176,11 +3181,6 @@
 	dir = 8;
 	pixel_x = 32
 	},
-/obj/item/tank/internals/emergency_oxygen,
-/obj/item/tank/internals/emergency_oxygen,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/mask/breath,
-/obj/item/storage/firstaid/o2,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/port)
 "yL" = (
@@ -3516,19 +3516,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"Bw" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/firealarm{
-	pixel_x = 6;
-	pixel_y = 26
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/crew/crewfour)
 "Bz" = (
 /obj/effect/turf_decal/corner/green/border{
 	dir = 6
@@ -3676,10 +3663,20 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/item/radio/intercom{
+/obj/structure/closet/wall{
 	dir = 1;
-	pixel_y = -26
+	pixel_y = -32
 	},
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/storage/backpack/duffelbag,
+/obj/item/storage/backpack/duffelbag,
+/obj/item/storage/backpack/satchel,
+/obj/item/storage/backpack/satchel,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "CA" = (
@@ -3735,7 +3732,10 @@
 	},
 /obj/item/grenade/chem_grenade{
 	pixel_x = 10;
-	pixel_y = -4
+	pixel_y = -10
+	},
+/obj/item/stack/cable_coil/cut{
+	amount = 1
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -5111,18 +5111,12 @@
 /obj/machinery/button/door{
 	id = "bridge_windows";
 	name = "Bridge Shutters";
-	pixel_x = 6;
-	pixel_y = -3
+	pixel_x = 6
 	},
 /obj/machinery/button/door{
 	id = "ext_windows";
 	name = "External Shutters";
-	pixel_x = -6;
-	pixel_y = -3
-	},
-/obj/item/storage/overmap_ship/electric{
-	pixel_x = 5;
-	pixel_y = 8
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -7745,7 +7739,7 @@ CL
 kk
 Jz
 WZ
-Bw
+UB
 TL
 Ay
 Ay
