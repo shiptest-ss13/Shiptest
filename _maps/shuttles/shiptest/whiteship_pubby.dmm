@@ -46,6 +46,9 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
 	},
+/obj/machinery/door/poddoor{
+	id = "whiteshipubby_Engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bW" = (
@@ -922,6 +925,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor{
+	id = "whiteshipubby_Engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "sO" = (
@@ -970,6 +976,11 @@
 	dir = 8
 	},
 /obj/structure/catwalk,
+/obj/machinery/button/door{
+	id = "whiteshipubby_Engines";
+	name = "Engine Lockdown Control;
+	pixel_x = -24
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ub" = (
@@ -1548,6 +1559,9 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
 	},
+/obj/machinery/door/poddoor{
+	id = "whiteshipubby_Engines"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Hj" = (
@@ -1963,6 +1977,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "whiteshipubby_Engines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
