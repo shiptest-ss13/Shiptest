@@ -8,7 +8,7 @@
 	icon_plating = "snow"
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	slowdown = 1.5
-	environment_type = "snow"
+	base_icon_state = "snow"
 	flags_1 = NONE
 	planetary_atmos = TRUE
 	footstep = FOOTSTEP_SNOW
@@ -121,7 +121,7 @@
 	icon_state = "icemoon_ground_coarse1"
 	icon_plating = "icemoon_ground_coarse1"
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	environment_type = "icemoon_ground_coarse"
+	base_icon_state = "icemoon_ground_coarse"
 	flags_1 = NONE
 	footstep = FOOTSTEP_ICE
 	barefootstep = FOOTSTEP_ICE
@@ -133,28 +133,22 @@
 	bullet_bounce_sound = null
 	digResult = /obj/item/stack/sheet/mineral/snow
 	floor_variance = 100
+	max_icon_states = 7
 	dug = TRUE
 
 /turf/open/floor/plating/asteroid/icerock/lit
 	light_range = 2
 	light_power = 1
 
-/turf/open/floor/plating/asteroid/icerock/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	if(prob(floor_variance))
-		icon_state = "[environment_type][rand(1,8)]"
-	else
-		icon_state = initial(icon_state) //ughhhhhhhhhhhhhhhhhhh
-
 /turf/open/floor/plating/asteroid/icerock/cracked
 	floor_variance = 0
 	icon_state = "icemoon_ground_cracked"
-	environment_type = "icemoon_ground_cracked"
+	base_icon_state = "icemoon_ground_cracked"
 
 /turf/open/floor/plating/asteroid/icerock/smooth
 	floor_variance = 0
 	icon_state = "icemoon_ground_smooth"
-	environment_type = "icemoon_ground_smooth"
+	base_icon_state = "icemoon_ground_smooth"
 
 /turf/open/floor/plating/asteroid/iceberg
 	gender = PLURAL
@@ -165,7 +159,7 @@
 	icon_state = "iceberg"
 	icon_plating = "iceberg"
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	environment_type = "iceberg"
+	base_icon_state = "iceberg"
 	flags_1 = NONE
 	footstep = FOOTSTEP_ICE
 	barefootstep = FOOTSTEP_ICE
@@ -178,11 +172,6 @@
 	digResult = /obj/item/stack/sheet/mineral/snow
 	floor_variance = 100
 	dug = TRUE
-
-/turf/open/floor/plating/asteroid/iceberg/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	if(prob(floor_variance))
-		icon_state = "[environment_type][rand(1,8)]"
 
 /turf/open/floor/plating/asteroid/iceberg/lit
 	light_range = 2
@@ -207,7 +196,7 @@
 	floor_variance = 0
 	icon_state = "snow-ice"
 	icon_plating = "snow-ice"
-	environment_type = "snow_cavern"
+	base_icon_state = "snow_cavern"
 	footstep = FOOTSTEP_FLOOR
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW

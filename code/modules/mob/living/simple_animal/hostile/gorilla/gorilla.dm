@@ -73,10 +73,7 @@
 		var/mob/living/L = target
 		if(prob(80))
 			var/atom/throw_target = get_edge_target_turf(L, dir)
-			L.throw_at(throw_target, rand(1,2), 7, src)
-		else
-			L.Paralyze(20)
-			visible_message("<span class='danger'>[src] knocks [L] down!</span>")
+			L.throw_at(throw_target, rand(1,2), 7, src, gentle = TRUE)
 
 /mob/living/simple_animal/hostile/gorilla/CanAttack(atom/the_target)
 	var/list/parts = target_bodyparts(target)

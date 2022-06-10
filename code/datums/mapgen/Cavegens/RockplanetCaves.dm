@@ -97,7 +97,7 @@
 /turf/open/floor/plating/asteroid/rockplanet
 	name = "iron sand"
 	icon_state = "ironsand0"
-	environment_type = "ironsand"
+	base_icon_state = "ironsand"
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet
 	floor_variance = 45
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
@@ -110,9 +110,7 @@
 /turf/open/floor/plating/asteroid/rockplanet/sand
 	name = "iron dirt"
 	icon_state = "irondirt0"
-	environment_type = "irondirt"
-	floor_variance = 0
+	base_icon_state = "irondirt"
+	floor_variance = 100
+	max_icon_states = 3
 
-/turf/open/floor/plating/asteroid/rockplanet/sand/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	icon_state = "[environment_type][rand(0,3)]"

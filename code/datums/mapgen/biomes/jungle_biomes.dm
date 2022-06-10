@@ -31,7 +31,6 @@
 		/obj/structure/spacevine/dense = 20,
 	)
 	mob_spawn_chance = 0.6
-	//mob_spawn_list = list(/mob/living/simple_animal/hostile/gorilla/beach = 1, /mob/living/carbon/monkey = 3)
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/gorilla = 1, /mob/living/carbon/monkey = 3)
 
 /datum/biome/jungle/plains
@@ -128,6 +127,8 @@
 	open_turf_types = list(/turf/open/floor/plating/grass/jungle/lit = 12, /turf/open/water/jungle/lit = 1)
 	flora_spawn_chance = 40
 	mob_spawn_chance = 1
-	mob_spawn_list = list(/mob/living/simple_animal/slime/random = 1, /mob/living/simple_animal/hostile/lightgeist = 1)
+	mob_spawn_list = list(
+		/mob/living/simple_animal/hostile/lightgeist = 1
+	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(/obj/item/rod_of_asclepius = 1)

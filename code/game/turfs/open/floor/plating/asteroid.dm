@@ -13,13 +13,15 @@
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	attachment_holes = FALSE
 	/// the icon name to be used: for example, asteroid1 - asteroid12 in the icon file
-	var/environment_type = "asteroid"
+	base_icon_state  = "asteroid"
 	/// Base turf type to be created by the tunnel
-	var/turf_type = /turf/open/floor/plating/asteroid
+	var/turf_type = /turf/open/floor/plating/asteroid // is this unused?
 	/// Probability floor has a different icon state
 	var/floor_variance = 20
-	attachment_holes = FALSE
+	/// The max amount of unique icons, plus one
+	var/max_icon_states = 12
 	/// Itemstack to drop when dug by a shovel
 	var/obj/item/stack/digResult = /obj/item/stack/ore/glass/basalt
 	/// Whether the turf has been dug or not
@@ -29,16 +31,17 @@
 	var/proper_name = name
 	. = ..()
 	name = proper_name
+
 	if(prob(floor_variance))
-		icon_state = "[environment_type][rand(0,12)]"
+		icon_state = "[base_icon_state][rand(0,max_icon_states)]"
 
 /// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/proc/getDug()
 	new digResult(src, 5)
 	if(postdig_icon_change)
 		if(!postdig_icon)
-			icon_plating = "[environment_type]_dug"
-			icon_state = "[environment_type]_dug"
+			icon_plating = "[base_icon_state]_dug"
+			icon_state = "[base_icon_state]_dug"
 	dug = TRUE
 
 /// If the user can dig the turf
@@ -46,7 +49,7 @@
 	if(!dug)
 		return TRUE
 	if(user)
-		to_chat(user, "<span class='warning'>Looks like someone has dug here already!</span>")
+		to_chat(user, "<span class='warning'>You can't dig here!</span>")
 
 /turf/open/floor/plating/asteroid/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return

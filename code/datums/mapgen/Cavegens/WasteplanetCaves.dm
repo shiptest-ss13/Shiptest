@@ -80,7 +80,7 @@
 /turf/open/floor/plating/asteroid/wasteplanet
 	name = "dry rock"
 	icon_state = "wasteplanet0"
-	environment_type = "wasteplanet"
+	base_icon_state = "wasteplanet"
 	turf_type = /turf/open/floor/plating/asteroid/wasteplanet
 	floor_variance = 45
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS

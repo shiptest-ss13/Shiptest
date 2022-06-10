@@ -4,7 +4,7 @@
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "basalt"
 	icon_plating = "basalt"
-	environment_type = "basalt"
+	base_icon_state = "basalt"
 	floor_variance = 15
 	digResult = /obj/item/stack/ore/glass/basalt
 

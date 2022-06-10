@@ -3,7 +3,6 @@
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "sand"
 	base_icon_state = "sand"
-	environment_type = "sand"
 	baseturfs = /turf/open/floor/plating/asteroid/sand
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS //custom atmos? lots of oxygen, hot?
 	digResult = /obj/item/stack/ore/glass
