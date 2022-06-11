@@ -46,7 +46,7 @@
 	. = ..()
 	if(gps_name && true_spawn)
 		AddComponent(/datum/component/gps, gps_name)
-	apply_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
+	AddComponent(/datum/component/crusher_damage)
 	ADD_TRAIT(src, TRAIT_NO_TELEPORT, MEGAFAUNA_TRAIT)
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	for(var/action_type in attack_action_types)
@@ -71,9 +71,9 @@
 	if(health > 0)
 		return
 	else
-		var/datum/status_effect/crusher_damage/C = has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
+		var/datum/component/crusher_damage/crusher_damage = GetComponent( /datum/component/crusher_damage )
 		var/crusher_kill = FALSE
-		if(C && crusher_loot && C.total_damage >= maxHealth * 0.6)
+		if(crusher_damage && crusher_loot && crusher_damage.total_damage >= maxHealth * 0.6)
 			spawn_crusher_loot()
 			crusher_kill = TRUE
 		if(true_spawn && !(flags_1 & ADMIN_SPAWNED_1))

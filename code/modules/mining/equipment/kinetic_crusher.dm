@@ -82,15 +82,14 @@
 		to_chat(user, "<span class='warning'>[src] is too heavy to use with one hand! You fumble and drop everything.</span>")
 		user.drop_all_held_items()
 		return
-	var/datum/status_effect/crusher_damage/C = target.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
+	var/datum/component/crusher_damage/crusher_damage = target.GetComponent( /datum/component/crusher_damage )
 	var/target_health = target.health
 	..()
-	for(var/t in trophies)
+	for(var/obj/item/crusher_trophy/trophy in trophies)
 		if(!QDELETED(target))
-			var/obj/item/crusher_trophy/T = t
-			T.on_melee_hit(target, user)
-	if(!QDELETED(C) && !QDELETED(target))
-		C.total_damage += target_health - target.health //we did some damage, but let's not assume how much we did
+			trophy.on_melee_hit(target, user)
+	if(!QDELETED(crusher_damage) && !QDELETED(target))
+		crusher_damage.total_damage += target_health - target.health //we did some damage, but let's not assume how much we did
 
 /obj/item/kinetic_crusher/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
 	. = ..()
@@ -118,25 +117,24 @@
 		var/datum/status_effect/crusher_mark/CM = L.has_status_effect(STATUS_EFFECT_CRUSHERMARK)
 		if(!CM || CM.hammer_synced != src || !L.remove_status_effect(STATUS_EFFECT_CRUSHERMARK))
 			return
-		var/datum/status_effect/crusher_damage/C = L.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
+		var/datum/component/crusher_damage/crusher_damage = L.GetComponent( /datum/component/crusher_damage )
 		var/target_health = L.health
-		for(var/t in trophies)
-			var/obj/item/crusher_trophy/T = t
-			T.on_mark_detonation(target, user)
+		for(var/obj/item/crusher_trophy/trophy in trophies)
+			trophy.on_mark_detonation(target, user)
 		if(!QDELETED(L))
-			if(!QDELETED(C))
-				C.total_damage += target_health - L.health //we did some damage, but let's not assume how much we did
+			if(!QDELETED(crusher_damage))
+				crusher_damage.total_damage += target_health - L.health //we did some damage, but let's not assume how much we did
 			new /obj/effect/temp_visual/kinetic_blast(get_turf(L))
 			var/backstab_dir = get_dir(user, L)
 			var/def_check = L.getarmor(type = "bomb")
 			if((user.dir & backstab_dir) && (L.dir & backstab_dir))
-				if(!QDELETED(C))
-					C.total_damage += detonation_damage + backstab_bonus //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
+				if(!QDELETED(crusher_damage))
+					crusher_damage.total_damage += detonation_damage + backstab_bonus //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
 				L.apply_damage(detonation_damage + backstab_bonus, BRUTE, blocked = def_check)
 				playsound(user, 'sound/weapons/kenetic_accel.ogg', 100, TRUE) //Seriously who spelled it wrong
 			else
-				if(!QDELETED(C))
-					C.total_damage += detonation_damage
+				if(!QDELETED(crusher_damage))
+					crusher_damage.total_damage += detonation_damage
 				L.apply_damage(detonation_damage, BRUTE, blocked = def_check)
 
 /obj/item/kinetic_crusher/proc/Recharge()
@@ -843,15 +841,14 @@
 		to_chat(user, "<span class='warning'>[src] is too heavy to use with one hand! You fumble and drop everything.</span>")
 		user.drop_all_held_items()
 		return
-	var/datum/status_effect/crusher_damage/C = target.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
+	var/datum/component/crusher_damage/crusher_damage = target.GetComponent( /datum/component/crusher_damage )
 	var/target_health = target.health
 	..()
-	for(var/t in trophies)
+	for(var/obj/item/crusher_trophy/trophy in trophies)
 		if(!QDELETED(target))
-			var/obj/item/crusher_trophy/T = t
-			T.on_melee_hit(target, user)
-	if(!QDELETED(C) && !QDELETED(target))
-		C.total_damage += target_health - target.health //we did some damage, but let's not assume how much we did
+			trophy.on_melee_hit(target, user)
+	if(!QDELETED(crusher_damage) && !QDELETED(target))
+		crusher_damage.total_damage += target_health - target.health //we did some damage, but let's not assume how much we did
 
 /obj/item/syndie_crusher/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
 	. = ..()
@@ -879,25 +876,24 @@
 		var/datum/status_effect/crusher_mark/CM = L.has_status_effect(STATUS_EFFECT_CRUSHERMARK)
 		if(!CM || CM.hammer_synced != src || !L.remove_status_effect(STATUS_EFFECT_CRUSHERMARK))
 			return
-		var/datum/status_effect/crusher_damage/C = L.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
+		var/datum/component/crusher_damage/crusher_damage = L.GetComponent( /datum/component/crusher_damage )
 		var/target_health = L.health
-		for(var/t in trophies)
-			var/obj/item/crusher_trophy/T = t
-			T.on_mark_detonation(target, user)
+		for(var/obj/item/crusher_trophy/trophy in trophies)
+			trophy.on_mark_detonation(target, user)
 		if(!QDELETED(L))
-			if(!QDELETED(C))
-				C.total_damage += target_health - L.health //we did some damage, but let's not assume how much we did
+			if(!QDELETED(crusher_damage))
+				crusher_damage.total_damage += target_health - L.health //we did some damage, but let's not assume how much we did
 			new /obj/effect/temp_visual/kinetic_blast(get_turf(L))
 			var/backstab_dir = get_dir(user, L)
 			var/def_check = L.getarmor(type = "bomb")
 			if((user.dir & backstab_dir) && (L.dir & backstab_dir))
-				if(!QDELETED(C))
-					C.total_damage += detonation_damage + backstab_bonus //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
+				if(!QDELETED(crusher_damage))
+					crusher_damage.total_damage += detonation_damage + backstab_bonus //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
 				L.apply_damage(detonation_damage + backstab_bonus, BRUTE, blocked = def_check)
 				playsound(user, 'sound/weapons/kenetic_accel.ogg', 100, TRUE) //Seriously who spelled it wrong
 			else
-				if(!QDELETED(C))
-					C.total_damage += detonation_damage
+				if(!QDELETED(crusher_damage))
+					crusher_damage.total_damage += detonation_damage
 				L.apply_damage(detonation_damage, BRUTE, blocked = def_check)
 
 /obj/item/syndie_crusher/proc/Recharge()
