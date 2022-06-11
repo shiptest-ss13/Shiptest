@@ -136,11 +136,9 @@
 /area/template_noop)
 "kG" = (
 /obj/machinery/door/poddoor/crusher/automatic{
-	close_sound = 'sound/clockwork/ark_damage.ogg';
 	color = "#483C32";
 	damage_deflection = 50;
-	name = "Ancient crusher";
-	open_sound = 'sound/clockwork/ark_damage.ogg'
+	name = "Ancient crusher"
 	},
 /turf/open/floor/plasteel/cult,
 /area/ruin/powered)
@@ -162,11 +160,9 @@
 /area/ruin/powered)
 "ls" = (
 /obj/machinery/door/poddoor/crusher/automatic{
-	close_sound = 'sound/clockwork/ark_damage.ogg';
 	color = "#483C32";
 	damage_deflection = 50;
-	name = "Ancient crusher";
-	open_sound = 'sound/clockwork/ark_damage.ogg'
+	name = "Ancient crusher"
 	},
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/cult,
@@ -618,7 +614,6 @@
 	dodge_prob = 40;
 	health = 1000;
 	name = "Vonnil, The Sniper";
-	projectilesound = 'sound/clockwork/ark_damage.ogg';
 	projectiletype = /obj/projectile/hook
 	},
 /turf/open/indestructible/hierophant,
