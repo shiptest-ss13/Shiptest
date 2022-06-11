@@ -10,7 +10,7 @@
 	emote_hear = list("glubs.")
 	emote_see = list("glubs.")
 	speak_chance = 1
-	faction = list("beach")
+	faction = list("mining")
 	turns_per_move = 5
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/carpmeat = 2)
 	response_help_continuous = "pets"

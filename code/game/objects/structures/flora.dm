@@ -22,6 +22,10 @@
 	layer = FLY_LAYER
 	var/log_amount = 10
 
+/obj/structure/flora/tree/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/largetransparency)
+
 /obj/structure/flora/tree/attackby(obj/item/W, mob/user, params)
 	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
 		if(W.get_sharpness() && W.force > 0)
@@ -863,6 +867,10 @@
 	icon = 'icons/obj/flora/bigtrees.dmi'
 	icon_state = "cactus"
 	density = TRUE
+
+/obj/structure/flora/tree/cactus/Initialize()
+	. = ..()
+	icon_state = "cactus[rand(1, 4)]"
 
 /obj/structure/flora/rock/hell
 	name = "rock"

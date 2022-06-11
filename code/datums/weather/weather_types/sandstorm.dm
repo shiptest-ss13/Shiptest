@@ -45,7 +45,7 @@
 	name = "severe sandstorm"
 	desc = "My battery is low and it's getting dark."
 
-	telegraph_message = "<span class='highdanger'>You see a dust cloud rising over the horizon, coming in fast!</span>"
+	telegraph_message = "<span class='userdanger'>You see a dust cloud rising over the horizon, coming in fast!</span>"
 	telegraph_overlay = "dust_med"
 	telegraph_sound = 'sound/effects/siren.ogg'
 

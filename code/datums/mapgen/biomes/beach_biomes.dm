@@ -65,13 +65,12 @@
 /datum/biome/ocean
 	open_turf_types = list(/turf/open/water/beach = 1)
 	mob_spawn_list = list(
-//		/mob/living/simple_animal/beachcarp = 1,
-		/mob/living/simple_animal/hostile/carp = 1,
-//		/mob/living/simple_animal/hostile/carp/beach/small = 1,
-//		/mob/living/simple_animal/beachcarp/bass = 1,
-//		/mob/living/simple_animal/beachcarp/trout = 1,
-//		/mob/living/simple_animal/beachcarp/salmon = 1,
-//		/mob/living/simple_animal/beachcarp/perch = 1
+		/mob/living/simple_animal/beachcarp = 1,
+//		/mob/living/simple_animal/hostile/carp = 1,
+		/mob/living/simple_animal/beachcarp/bass = 1,
+		/mob/living/simple_animal/beachcarp/trout = 1,
+		/mob/living/simple_animal/beachcarp/salmon = 1,
+		/mob/living/simple_animal/beachcarp/perch = 1,
 	)
 	mob_spawn_chance = 1.4
 	flora_spawn_list = list(
@@ -84,12 +83,11 @@
 	open_turf_types = list(/turf/open/water/beach/deep = 1)
 	mob_spawn_chance = 1.4
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/carp = 6,
-//		/mob/living/simple_animal/hostile/carp/beach/small = 5,
-//		/mob/living/simple_animal/beachcarp/bass = 5,
-//		/mob/living/simple_animal/beachcarp/trout = 5,
-//		/mob/living/simple_animal/beachcarp/salmon = 5,
-//		/mob/living/simple_animal/beachcarp/perch = 5,
+//		/mob/living/simple_animal/hostile/carp = 6,
+		/mob/living/simple_animal/beachcarp/bass = 5,
+		/mob/living/simple_animal/beachcarp/trout = 5,
+		/mob/living/simple_animal/beachcarp/salmon = 5,
+		/mob/living/simple_animal/beachcarp/perch = 5,
 //		/mob/living/simple_animal/hostile/pirate/melee/beach/boat = 3,
 //		/mob/living/simple_animal/hostile/pirate/ranged/beach/boat = 1,
 	)

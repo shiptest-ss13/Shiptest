@@ -252,11 +252,11 @@ SUBSYSTEM_DEF(overmap)
 				//planet_template = /datum/planet/lava //TODO, MAKE NEW PLANET TEMPLATE
 			if(DYNAMIC_WORLD_ROCKPLANET)
 				ruin_list = SSmapping.rock_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/rockplanet
+				mapgen = new /datum/map_generator/planet_generator/lava //TODO, MAKE NEW PLANETGEN
 				target_area = /area/overmap_encounter/planetoid/rockplanet
 				surface = /turf/open/floor/plating/asteroid
 				weather_controller_type = /datum/weather_controller/rockplanet
-				//planet_template = /datum/planet/lava //TODO, MAKE NEW PLANET TEMPLATE
+				planet_template = /datum/planet/rock
 			if(DYNAMIC_WORLD_BEACHPLANET)
 				ruin_list = SSmapping.beach_ruins_templates
 				mapgen = new /datum/map_generator/planet_generator/beach

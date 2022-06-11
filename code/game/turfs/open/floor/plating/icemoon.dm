@@ -94,6 +94,10 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
 	initial_gas_mix = WHITESANDS_ATMOS
 
+/turf/open/floor/plating/asteroid/snow/lit/rockplanet
+	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
 /turf/open/floor/plating/asteroid/snow/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
