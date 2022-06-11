@@ -1,100 +1,64 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ao" = (
 /turf/closed/wall/mineral/bronze,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "aA" = (
 /obj/machinery/power/emitter/ctf{
 	dir = 1
 	},
 /turf/open/indestructible/hierophant,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "bL" = (
 /obj/structure/girder/cult,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "bW" = (
 /obj/machinery/conveyor/auto{
-	dir = 1;
 	color = "#483C32";
-	name = "Ancient belt";
-	id = "/datum/reagent/consumable/ethanol/hooch"
+	dir = 1;
+	id = "/datum/reagent/consumable/ethanol/hooch";
+	name = "Ancient belt"
 	},
 /mob/living/simple_animal/hostile/gorilla,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "cj" = (
 /obj/item/reagent_containers/glass/mortar/mushroom{
 	list_reagents = list(/datum/reagent/mutationtoxin/lizard= 20, /datum/reagent/potassium= 20, /datum/reagent/medicine/mutadone= 20, /datum/reagent/phosphorus= 20, /datum/reagent/consumable/sugar= 20)
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "cL" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "/datum/reagent/consumable/ethanol/hooch";
-	color = "#483C32"
+	color = "#483C32";
+	id = "/datum/reagent/consumable/ethanol/hooch"
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "cM" = (
 /obj/structure/destructible/cult/pylon,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "dm" = (
 /mob/living/simple_animal/hostile/dark_wizard,
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "eb" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "eg" = (
 /obj/structure/reagent_dispensers/fueltank{
-	reagent_id = /datum/reagent/consumable/ethanol/hooch;
+	desc = "A tank full of industrial hooch. Do not consume.";
 	name = "hooch tank";
-	desc = "A tank full of industrial hooch. Do not consume."
+	reagent_id = /datum/reagent/consumable/ethanol/hooch
 	},
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
-"eO" = (
-/turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "fd" = (
 /obj/item/kinetic_crusher/old{
 	color = "#007BA7"
@@ -102,47 +66,32 @@
 /obj/structure/table/wood/fancy/purple,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "gd" = (
 /mob/living/simple_animal/hostile/dark_wizard,
 /obj/structure/table/wood/fancy/purple,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "gw" = (
 /obj/structure/table/wood/fancy/purple,
 /obj/item/paper{
-	name = "Guide";
 	color = "#9F00FF";
-	info = "Have faith."
+	info = "Have faith.";
+	name = "Guide"
 	},
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "gS" = (
 /obj/item/reagent_containers/glass/mortar/mushroom{
 	list_reagents = list(/datum/reagent/mutationtoxin/ipc= 20, /datum/reagent/potassium= 20, /datum/reagent/medicine/mutadone= 20, /datum/reagent/phosphorus= 20, /datum/reagent/consumable/sugar= 20)
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "ii" = (
 /obj/structure/necropolis_gate,
 /turf/open/floor/sepia,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "io" = (
 /obj/item/paper{
 	color = "#9F00FF";
@@ -151,124 +100,85 @@
 	},
 /obj/structure/table/wood/fancy/purple,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "jJ" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/random,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "jK" = (
 /obj/structure/destructible/cult/pylon,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "kj" = (
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "kk" = (
 /obj/item/book/granter/spell/summonitem,
 /turf/open/indestructible/hierophant,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "kq" = (
 /obj/machinery/door/poddoor/crusher/automatic{
-	damage_deflection = 2000;
 	color = "#483C32";
+	damage_deflection = 2000;
 	name = "Ancient crusher"
 	},
 /obj/machinery/conveyor/auto{
-	dir = 1;
 	color = "#483C32";
-	name = "Ancient belt";
-	id = "/datum/reagent/consumable/ethanol/hooch"
+	dir = 1;
+	id = "/datum/reagent/consumable/ethanol/hooch";
+	name = "Ancient belt"
 	},
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "kz" = (
 /turf/template_noop,
 /area/template_noop)
 "kG" = (
 /obj/machinery/door/poddoor/crusher/automatic{
-	damage_deflection = 50;
-	color = "#483C32";
-	name = "Ancient crusher";
 	close_sound = 'sound/clockwork/ark_damage.ogg';
+	color = "#483C32";
+	damage_deflection = 50;
+	name = "Ancient crusher";
 	open_sound = 'sound/clockwork/ark_damage.ogg'
 	},
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "kK" = (
 /obj/machinery/door/keycard/gates{
 	puzzle_id = "562"
 	},
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "kT" = (
 /obj/structure/necropolis_gate,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "lr" = (
 /obj/effect/spawner/lootdrop{
 	loot = list(/obj/item/clothing/suit/wizrobe/paper = 5, /obj/item/claymore/highlander = 2, /obj/item/fireaxe = 25, /obj/item/organ/eyes/night_vision/nightmare = 17, /obj/item/fireaxe/boneaxe = 15, /obj/item/organ/heart/demon = 7, /obj/item/organ/heart/nightmare = 16, /obj/item/organ/heart/cursed/wizard = 15, /obj/item/slimecross/stabilized/orange = 10, /obj/item/uplink/old = 2, /obj/item/slimecross/stabilized/red = 12, /obj/item/clothing/suit/space/freedom = 15, /obj/item/slimecross/stabilized/cerulean = 10, /obj/item/gem/amber = 30, /obj/item/gem/void = 30, /obj/item/gem/rupee = 30, /obj/item/gem/phoron = 30, /obj/item/gem/fdiamond = 30 /obj/item/book/granter/spell/shapechange = 3, /obj/item/rod_of_asclepius = 17)
 	},
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "ls" = (
 /obj/machinery/door/poddoor/crusher/automatic{
-	damage_deflection = 50;
-	color = "#483C32";
-	name = "Ancient crusher";
 	close_sound = 'sound/clockwork/ark_damage.ogg';
+	color = "#483C32";
+	damage_deflection = 50;
+	name = "Ancient crusher";
 	open_sound = 'sound/clockwork/ark_damage.ogg'
 	},
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "lV" = (
 /obj/structure/table/bronze,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "mt" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "mG" = (
 /obj/effect/spawner/lootdrop{
 	loot = list(/obj/item/clothing/suit/wizrobe/paper = 5, /obj/item/claymore/highlander = 2, /obj/item/fireaxe = 25, /obj/item/organ/eyes/night_vision/nightmare = 17, /obj/item/fireaxe/boneaxe = 15, /obj/item/organ/heart/demon = 7, /obj/item/organ/heart/nightmare = 16, /obj/item/organ/heart/cursed/wizard = 15, /obj/item/slimecross/stabilized/orange = 10, /obj/item/uplink/old = 2, /obj/item/slimecross/stabilized/red = 12, /obj/item/clothing/suit/space/freedom = 15, /obj/item/slimecross/stabilized/cerulean = 10, /obj/item/gem/amber = 30, /obj/item/gem/void = 30, /obj/item/gem/rupee = 30, /obj/item/gem/phoron = 30, /obj/item/gem/fdiamond = 30 /obj/item/book/granter/spell/shapechange = 3, /obj/item/rod_of_asclepius = 17)
@@ -277,105 +187,66 @@
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "mM" = (
 /turf/closed/indestructible/fakeglass{
 	color = "#9F00FF";
 	name = "vortex wall"
 	},
 /turf/open/indestructible/hierophant,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "mT" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
 /obj/item/clothing/mask/spamton,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "nM" = (
 /obj/structure/window/bronze/fulltile,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "oM" = (
 /mob/living/simple_animal/hostile/asteroid/old_demon,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "pt" = (
 /obj/structure/stone_tile/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,
 /mob/living/carbon/monkey,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "pY" = (
 /obj/item/implanter/krav_maga,
 /obj/structure/table/wood/fancy/purple,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "qa" = (
 /obj/machinery/door/keycard/gates{
 	puzzle_id = "562"
 	},
 /turf/open/indestructible/hierophant,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "qg" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/destructible/cult/pylon,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "qp" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "qr" = (
 /turf/open/chasm/reebe_void/lighting,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "rf" = (
 /obj/structure/fans/tiny/invisible,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "rt" = (
 /obj/item/dnainjector/antivoid,
 /obj/structure/table/bronze,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "rM" = (
 /obj/item/paper{
 	color = "#9F00FF";
@@ -383,151 +254,89 @@
 	name = "eaemxmrk svhivw jvsq wigxsv viifi."
 	},
 /turf/open/indestructible/hierophant,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "tv" = (
 /mob/living/simple_animal/hostile/dark_wizard,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "uA" = (
 /obj/effect/spawner/lootdrop{
 	loot = list(/obj/item/clothing/suit/wizrobe/paper = 5, /obj/item/claymore/highlander = 2, /obj/item/fireaxe = 25, /obj/item/organ/eyes/night_vision/nightmare = 17, /obj/item/fireaxe/boneaxe = 15, /obj/item/organ/heart/demon = 7, /obj/item/organ/heart/nightmare = 16, /obj/item/organ/heart/cursed/wizard = 15, /obj/item/slimecross/stabilized/orange = 10, /obj/item/uplink/old = 2, /obj/item/slimecross/stabilized/red = 12, /obj/item/clothing/suit/space/freedom = 15, /obj/item/slimecross/stabilized/cerulean = 10, /obj/item/gem/amber = 30, /obj/item/gem/void = 30, /obj/item/gem/rupee = 30, /obj/item/gem/phoron = 30, /obj/item/gem/fdiamond = 30 /obj/item/book/granter/spell/shapechange = 3, /obj/item/rod_of_asclepius = 17)
 	},
 /obj/structure/table/bronze,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "vb" = (
 /turf/open/indestructible/hierophant,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "vM" = (
 /obj/item/crusher_trophy/ice_crystal,
 /obj/structure/table/bronze,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "vO" = (
 /turf/open/lava/plasma,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "vT" = (
 /obj/item/reagent_containers/glass/mortar/mushroom{
 	list_reagents = list(/datum/reagent/mutationtoxin/moth= 20, /datum/reagent/potassium= 20, /datum/reagent/medicine/mutadone= 20, /datum/reagent/phosphorus= 20, /datum/reagent/consumable/sugar= 20)
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "wf" = (
 /obj/structure/table/wood/fancy/purple,
 /obj/item/implanter/uplink,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "wq" = (
 /obj/item/implanter/adrenalin,
 /obj/structure/table/wood/fancy/purple,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
-"xd" = (
-/obj/structure/table/wood/fancy/purple,
-/obj/item/clothing/suit/space/hardsuit/ert/jani,
-/turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "yg" = (
 /turf/closed/indestructible/riveted/hierophant,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "zr" = (
 /obj/machinery/conveyor/auto{
-	dir = 1;
 	color = "#483C32";
-	name = "Ancient belt";
-	id = "/datum/reagent/consumable/ethanol/hooch"
+	dir = 1;
+	id = "/datum/reagent/consumable/ethanol/hooch";
+	name = "Ancient belt"
 	},
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "zR" = (
 /turf/open/floor/goonplaque{
 	color = "#9F00FF";
-	name = "words of truth";
-	desc = "\"This is a plaque says up is down and left is right.."
+	desc = "\"This is a plaque says up is down and left is right..";
+	name = "words of truth"
 	},
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Al" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "AO" = (
 /mob/living/simple_animal/hostile/big_legion,
 /turf/open/floor/sepia,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "AV" = (
 /obj/structure/destructible/cult/forge,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Bh" = (
 /obj/structure/window/bronze/fulltile,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Bt" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Df" = (
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Dm" = (
 /obj/effect/spawner/lootdrop{
 	loot = list(/obj/item/clothing/suit/wizrobe/paper = 5, /obj/item/claymore/highlander = 2, /obj/item/fireaxe = 25, /obj/item/organ/eyes/night_vision/nightmare = 17, /obj/item/fireaxe/boneaxe = 15, /obj/item/organ/heart/demon = 7, /obj/item/organ/heart/nightmare = 16, /obj/item/organ/heart/cursed/wizard = 15, /obj/item/slimecross/stabilized/orange = 10, /obj/item/uplink/old = 2, /obj/item/slimecross/stabilized/red = 12, /obj/item/clothing/suit/space/freedom = 15, /obj/item/slimecross/stabilized/cerulean = 10, /obj/item/gem/amber = 30, /obj/item/gem/void = 30, /obj/item/gem/rupee = 30, /obj/item/gem/phoron = 30, /obj/item/gem/fdiamond = 30 /obj/item/book/granter/spell/shapechange = 3, /obj/item/rod_of_asclepius = 17)
@@ -535,172 +344,112 @@
 /obj/structure/table/wood/fancy/purple,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Dq" = (
 /turf/open/floor/sepia,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Ds" = (
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "DG" = (
 /obj/item/keycard/gatedrop{
-	puzzle_id = "562";
-	name = "false gold key"
+	name = "false gold key";
+	puzzle_id = "562"
 	},
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "DJ" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
-"Ec" = (
-/obj/structure/table/wood/fancy/purple,
-/turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Ep" = (
 /obj/effect/spawner/lootdrop{
 	loot = list(/obj/item/clothing/suit/wizrobe/paper = 5, /obj/item/claymore/highlander = 2, /obj/item/fireaxe = 25, /obj/item/organ/eyes/night_vision/nightmare = 17, /obj/item/fireaxe/boneaxe = 15, /obj/item/organ/heart/demon = 7, /obj/item/organ/heart/nightmare = 16, /obj/item/organ/heart/cursed/wizard = 15, /obj/item/slimecross/stabilized/orange = 10, /obj/item/uplink/old = 2, /obj/item/slimecross/stabilized/red = 12, /obj/item/clothing/suit/space/freedom = 15, /obj/item/slimecross/stabilized/cerulean = 10, /obj/item/gem/amber = 30, /obj/item/gem/void = 30, /obj/item/gem/rupee = 30, /obj/item/gem/phoron = 30, /obj/item/gem/fdiamond = 30 /obj/item/book/granter/spell/shapechange = 3, /obj/item/rod_of_asclepius = 17)
 	},
 /mob/living/simple_animal/pet/penguin/emperor/shamebrero,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "EC" = (
 /obj/structure/table/wood/fancy/purple,
 /obj/item/paper{
-	name = "Guide";
 	color = "#9F00FF";
-	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east )
+	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east );
+	name = "Guide"
 	},
 /obj/item/paper{
-	name = "Guide";
 	color = "#9F00FF";
-	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east )
+	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east );
+	name = "Guide"
 	},
 /obj/item/paper{
-	name = "Guide";
 	color = "#9F00FF";
-	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east )
+	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east );
+	name = "Guide"
 	},
 /obj/item/paper{
-	name = "Guide";
 	color = "#9F00FF";
-	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east )
+	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east );
+	name = "Guide"
 	},
 /obj/item/paper{
-	name = "Guide";
 	color = "#9F00FF";
-	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east )
+	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east );
+	name = "Guide"
 	},
 /obj/item/paper{
-	name = "Guide";
 	color = "#9F00FF";
-	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east )
+	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east );
+	name = "Guide"
 	},
 /obj/item/paper{
-	name = "Guide";
 	color = "#9F00FF";
-	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east )
+	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east );
+	name = "Guide"
 	},
 /obj/item/paper{
-	name = "Guide";
 	color = "#9F00FF";
-	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east )
+	form_fields = list(East east east east, north north north north,east east east, south south south south south south, east east east, south south, east east, north north north north, east );
+	name = "Guide"
 	},
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
-"EZ" = (
-/obj/item/implanter/razorwing,
-/obj/structure/table/wood/fancy/purple,
-/turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Fj" = (
 /obj/machinery/door/airlock/bronze,
 /turf/open/floor/sepia,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "FR" = (
 /mob/living/simple_animal/hostile/poison/giant_spider,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "GD" = (
 /obj/effect/spawner/lootdrop{
 	loot = list(/obj/item/clothing/suit/wizrobe/paper = 5, /obj/item/claymore/highlander = 2, /obj/item/fireaxe = 25, /obj/item/organ/eyes/night_vision/nightmare = 17, /obj/item/fireaxe/boneaxe = 15, /obj/item/organ/heart/demon = 7, /obj/item/organ/heart/nightmare = 16, /obj/item/organ/heart/cursed/wizard = 15, /obj/item/slimecross/stabilized/orange = 10, /obj/item/uplink/old = 2, /obj/item/slimecross/stabilized/red = 12, /obj/item/clothing/suit/space/freedom = 15, /obj/item/slimecross/stabilized/cerulean = 10, /obj/item/gem/amber = 30, /obj/item/gem/void = 30, /obj/item/gem/rupee = 30, /obj/item/gem/phoron = 30, /obj/item/gem/fdiamond = 30 /obj/item/book/granter/spell/shapechange = 3, /obj/item/rod_of_asclepius = 17)
 	},
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "GH" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "GR" = (
 /mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Il" = (
 /obj/structure/table/wood/fancy/purple,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Iw" = (
 /mob/living/simple_animal/hostile/dark_wizard,
 /obj/structure/destructible/cult/pylon,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "IO" = (
 /turf/closed/indestructible/riveted/boss,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "IQ" = (
 /obj/effect/spawner/lootdrop{
 	loot = list(/obj/item/clothing/suit/wizrobe/paper = 5, /obj/item/claymore/highlander = 2, /obj/item/fireaxe = 25, /obj/item/organ/eyes/night_vision/nightmare = 17, /obj/item/fireaxe/boneaxe = 15, /obj/item/organ/heart/demon = 7, /obj/item/organ/heart/nightmare = 16, /obj/item/organ/heart/cursed/wizard = 15, /obj/item/slimecross/stabilized/orange = 10, /obj/item/uplink/old = 2, /obj/item/slimecross/stabilized/red = 12, /obj/item/clothing/suit/space/freedom = 15, /obj/item/slimecross/stabilized/cerulean = 10, /obj/item/gem/amber = 30, /obj/item/gem/void = 30, /obj/item/gem/rupee = 30, /obj/item/gem/phoron = 30, /obj/item/gem/fdiamond = 30 /obj/item/book/granter/spell/shapechange = 3, /obj/item/rod_of_asclepius = 17)
@@ -708,18 +457,12 @@
 /obj/structure/table/wood/fancy/purple,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Kl" = (
 /obj/item/stack/telecrystal/five,
 /obj/structure/table/bronze,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Km" = (
 /obj/machinery/chem_dispenser/drinks/beer{
 	dir = 1;
@@ -728,361 +471,226 @@
 	},
 /obj/structure/table/wood/fancy/purple,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Lu" = (
 /obj/machinery/conveyor/auto{
-	dir = 1;
 	color = "#483C32";
-	name = "Ancient belt";
-	id = "/datum/reagent/consumable/ethanol/hooch"
+	dir = 1;
+	id = "/datum/reagent/consumable/ethanol/hooch";
+	name = "Ancient belt"
 	},
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
-"Mp" = (
-/obj/item/autosurgeon/syndicate/laser_arm,
-/obj/structure/table/wood/fancy/purple,
-/turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "MX" = (
 /mob/living/simple_animal/hostile/poison/giant_spider,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Nj" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Nm" = (
 /turf/open/indestructible/hotelwood{
 	desc = "A flowing stream of chilled liquid plasma. You probably shouldn't get in";
 	icon_state = "liquidplasma";
 	name = "liquid plasma"
 	},
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "NS" = (
 /obj/structure/destructible/cult/pylon,
 /turf/open/indestructible/hierophant,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Oi" = (
 /obj/structure/destructible/cult/forge,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Ov" = (
 /obj/structure/necropolis_gate,
 /obj/structure/stone_tile/slab,
 /obj/structure/necropolis_arch,
 /obj/structure/fans/tiny/invisible,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Ox" = (
 /obj/structure/table/wood/fancy/purple,
 /obj/item/guardiancreator/tech/choose/dextrous,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "OZ" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/floor/sepia,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Pc" = (
 /obj/structure/girder/bronze,
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Pk" = (
 /obj/item/reagent_containers/glass/mortar/mushroom{
 	list_reagents = list(/datum/reagent/mutationtoxin/kepi= 20, /datum/reagent/potassium= 20, /datum/reagent/medicine/mutadone= 20, /datum/reagent/phosphorus= 20, /datum/reagent/consumable/sugar= 20)
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Ps" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "PF" = (
 /obj/structure/table/wood/fancy/purple,
 /obj/effect/spawner/lootdrop{
 	loot = list(/obj/item/clothing/suit/wizrobe/paper = 5, /obj/item/claymore/highlander = 2, /obj/item/fireaxe = 25, /obj/item/organ/eyes/night_vision/nightmare = 17, /obj/item/fireaxe/boneaxe = 15, /obj/item/organ/heart/demon = 7, /obj/item/organ/heart/nightmare = 16, /obj/item/organ/heart/cursed/wizard = 15, /obj/item/slimecross/stabilized/orange = 10, /obj/item/uplink/old = 2, /obj/item/slimecross/stabilized/red = 12, /obj/item/clothing/suit/space/freedom = 15, /obj/item/slimecross/stabilized/cerulean = 10, /obj/item/gem/amber = 30, /obj/item/gem/void = 30, /obj/item/gem/rupee = 30, /obj/item/gem/phoron = 30, /obj/item/gem/fdiamond = 30 /obj/item/book/granter/spell/shapechange = 3, /obj/item/rod_of_asclepius = 17)
 	},
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Rk" = (
 /obj/item/crusher_trophy/shiny,
 /obj/structure/table/bronze,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "RJ" = (
 /obj/structure/spawner/ice_moon/demonic_portal{
-	name = "netherworld link";
-	max_mobs = 5;
 	faction = list("nether");
-	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile)
+	max_mobs = 5;
+	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile);
+	name = "netherworld link"
 	},
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Sa" = (
 /obj/structure/table/wood/fancy/purple,
 /obj/effect/spawner/lootdrop{
 	loot = list(/obj/item/clothing/suit/wizrobe/paper = 5, /obj/item/claymore/highlander = 2, /obj/item/fireaxe = 25, /obj/item/organ/eyes/night_vision/nightmare = 17, /obj/item/fireaxe/boneaxe = 15, /obj/item/organ/heart/demon = 7, /obj/item/organ/heart/nightmare = 16, /obj/item/organ/heart/cursed/wizard = 15, /obj/item/slimecross/stabilized/orange = 10, /obj/item/uplink/old = 2, /obj/item/slimecross/stabilized/red = 12, /obj/item/clothing/suit/space/freedom = 15, /obj/item/slimecross/stabilized/cerulean = 10, /obj/item/gem/amber = 30, /obj/item/gem/void = 30, /obj/item/gem/rupee = 30, /obj/item/gem/phoron = 30, /obj/item/gem/fdiamond = 30 /obj/item/book/granter/spell/shapechange = 3, /obj/item/rod_of_asclepius = 17)
 	},
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
-"Se" = (
-/obj/structure/table/wood/fancy/purple,
-/obj/item/slimecross/industrial/oil{
-	itempath = /obj/item/grenade/gluon;
-	effect_desc = "Produces bombs"
-	},
-/turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Sm" = (
 /obj/item/crusher_trophy/ice_wing,
 /obj/structure/table/bronze,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Sq" = (
 /obj/machinery/conveyor/auto{
-	dir = 1;
 	color = "#483C32";
-	name = "Ancient belt";
-	id = "/datum/reagent/consumable/ethanol/hooch"
+	dir = 1;
+	id = "/datum/reagent/consumable/ethanol/hooch";
+	name = "Ancient belt"
 	},
 /obj/machinery/conveyor/auto{
-	dir = 1;
 	color = "#483C32";
-	name = "Ancient belt";
-	id = "/datum/reagent/consumable/ethanol/hooch"
+	dir = 1;
+	id = "/datum/reagent/consumable/ethanol/hooch";
+	name = "Ancient belt"
 	},
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "SM" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/table/wood/fancy/purple,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "SN" = (
 /obj/structure/table/wood/fancy/purple,
-/obj/item/sharpener/cult,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Tg" = (
 /obj/structure/spawner/ice_moon/demonic_portal{
-	name = "netherworld link";
-	max_mobs = 5;
 	faction = list("nether");
-	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile)
+	max_mobs = 5;
+	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile);
+	name = "netherworld link"
 	},
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "TA" = (
 /obj/structure/stone_tile/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Vb" = (
 /mob/living/simple_animal/hostile/asteroid/elite/pandora/dungeon{
+	aggro_vision_range = 30;
 	can_talk = 1;
+	color = "#9F00FF";
 	cooldown_time = 15;
+	dodge_prob = 40;
 	health = 1000;
 	name = "Vonnil, The Sniper";
-	aggro_vision_range = 30;
-	projectiletype = /obj/projectile/hook;
 	projectilesound = 'sound/clockwork/ark_damage.ogg';
-	dodge_prob = 40;
-	color = "#9F00FF"
+	projectiletype = /obj/projectile/hook
 	},
 /turf/open/indestructible/hierophant,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Vs" = (
 /obj/effect/spawner/lootdrop{
 	loot = list(/obj/item/clothing/suit/wizrobe/paper = 5, /obj/item/claymore/highlander = 2, /obj/item/fireaxe = 25, /obj/item/organ/eyes/night_vision/nightmare = 17, /obj/item/fireaxe/boneaxe = 15, /obj/item/organ/heart/demon = 7, /obj/item/organ/heart/nightmare = 16, /obj/item/organ/heart/cursed/wizard = 15, /obj/item/slimecross/stabilized/orange = 10, /obj/item/uplink/old = 2, /obj/item/slimecross/stabilized/red = 12, /obj/item/clothing/suit/space/freedom = 15, /obj/item/slimecross/stabilized/cerulean = 10, /obj/item/gem/amber = 30, /obj/item/gem/void = 30, /obj/item/gem/rupee = 30, /obj/item/gem/phoron = 30, /obj/item/gem/fdiamond = 30 /obj/item/book/granter/spell/shapechange = 3, /obj/item/rod_of_asclepius = 17)
 	},
 /obj/structure/table/wood/fancy/purple,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "WB" = (
 /obj/effect/spawner/lootdrop{
 	loot = list(/obj/item/clothing/suit/wizrobe/paper = 5, /obj/item/claymore/highlander = 2, /obj/item/fireaxe = 25, /obj/item/organ/eyes/night_vision/nightmare = 17, /obj/item/fireaxe/boneaxe = 15, /obj/item/organ/heart/demon = 7, /obj/item/organ/heart/nightmare = 16, /obj/item/organ/heart/cursed/wizard = 15, /obj/item/slimecross/stabilized/orange = 10, /obj/item/uplink/old = 2, /obj/item/slimecross/stabilized/red = 12, /obj/item/clothing/suit/space/freedom = 15, /obj/item/slimecross/stabilized/cerulean = 10, /obj/item/gem/amber = 30, /obj/item/gem/void = 30, /obj/item/gem/rupee = 30, /obj/item/gem/phoron = 30, /obj/item/gem/fdiamond = 30 /obj/item/book/granter/spell/shapechange = 3, /obj/item/rod_of_asclepius = 17)
 	},
 /obj/structure/table/bronze,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "WC" = (
 /obj/structure/stone_tile/slab,
 /mob/living/carbon/monkey,
 /turf/open/indestructible/boss/air,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "WH" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "XQ" = (
 /obj/structure/necropolis_gate,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "XX" = (
 /mob/living/simple_animal/hostile/asteroid/wolf/alpha,
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "YV" = (
-/mob/living/carbon/monkey,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Zn" = (
 /obj/structure/table/wood/fancy/purple,
 /obj/item/shield/mirror,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "Zp" = (
 /turf/open/indestructible/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "ZA" = (
 /obj/structure/table/wood/fancy/purple,
-/obj/item/reagent_containers/glass/mortar/mushroom{
-	list_reagents = list(/datum/reagent/mutationtoxin/lizard= 20, /datum/reagent/potassium= 20, /datum/reagent/medicine/mutadone= 20, /datum/reagent/phosphorus= 20, /datum/reagent/consumable/sugar= 20)
-	},
-/obj/item/clothing/suit/space/hardsuit/cult/enchanted,
+/obj/item/clothing/suit/space/hardsuit/cult,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "ZK" = (
 /mob/living/simple_animal/hostile/headcrab{
-	name = "Slugcat";
-	faction = list("neutral")
+	faction = list("neutral");
+	name = "Slugcat"
 	},
 /obj/item/bedsheet/cult,
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "ZL" = (
 /obj/effect/temp_visual/hierophant/wall{
 	duration = 999999999999999999999
 	},
 /turf/open/indestructible/hierophant,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 "ZY" = (
 /obj/structure/table/wood/fancy/purple,
 /obj/item/gun/energy/xray{
 	color = "#9F00FF"
 	},
 /turf/open/floor/plasteel/cult,
-/area/ruin/powered{
-	icon_state = "dk_yellow";
-	name = "Shrine of Truth"
-	})
+/area/ruin/powered)
 
 (1,1,1) = {"
 kz
@@ -1157,18 +765,18 @@ kz
 kz
 IO
 IO
-Ec
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+SN
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 IO
 kz
@@ -1222,7 +830,7 @@ kz
 kz
 IO
 IO
-Ec
+SN
 eb
 kj
 kj
@@ -1233,7 +841,7 @@ kj
 kj
 kj
 kj
-eO
+YV
 AV
 IO
 IO
@@ -1287,7 +895,7 @@ kz
 IO
 IO
 IO
-Ec
+SN
 kj
 kj
 kj
@@ -1298,8 +906,8 @@ kj
 kj
 kj
 kj
-eO
-eO
+YV
+YV
 AV
 IO
 IO
@@ -1352,18 +960,18 @@ kz
 IO
 IO
 IO
-Ec
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+SN
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 AV
 IO
 IO
@@ -1419,14 +1027,14 @@ IO
 IO
 IO
 IO
-eO
+YV
 IO
 IO
 IO
 IO
 IO
 IO
-eO
+YV
 IO
 IO
 IO
@@ -1452,12 +1060,12 @@ IO
 IO
 Zp
 Zp
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 IO
 kz
@@ -1482,11 +1090,11 @@ IO
 IO
 IO
 IO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
 IO
 IO
 kj
@@ -1504,7 +1112,7 @@ IO
 IO
 Zp
 Zp
-eO
+YV
 IO
 IO
 IO
@@ -1522,7 +1130,7 @@ yg
 yg
 yg
 IO
-eO
+YV
 IO
 IO
 kz
@@ -1546,17 +1154,17 @@ IO
 IO
 IO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 kj
-eO
-eO
+YV
+YV
 kj
 IO
 kq
@@ -1587,7 +1195,7 @@ mM
 aA
 yg
 IO
-eO
+YV
 IO
 IO
 IO
@@ -1610,17 +1218,17 @@ kz
 IO
 IO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 kj
-eO
+YV
 tv
 cL
 IO
@@ -1652,8 +1260,8 @@ mM
 aA
 yg
 IO
-eO
-eO
+YV
+YV
 IO
 IO
 IO
@@ -1674,15 +1282,15 @@ kz
 kz
 IO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 kj
 kj
@@ -1717,9 +1325,9 @@ mM
 aA
 yg
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
 IO
@@ -1739,14 +1347,14 @@ IO
 IO
 IO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 IO
 IO
@@ -1758,9 +1366,9 @@ IO
 IO
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
 IO
@@ -1783,9 +1391,9 @@ yg
 yg
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
 IO
@@ -1802,30 +1410,30 @@ kz
 (12,1,1) = {"
 IO
 mt
-eO
+YV
 XQ
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 yg
 yg
 yg
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 Il
 Zp
@@ -1849,9 +1457,9 @@ IO
 IO
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
 IO
@@ -1869,28 +1477,28 @@ IO
 IO
 IO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 yg
 NS
 yg
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 Il
 Zp
@@ -1912,12 +1520,12 @@ IO
 IO
 IO
 IO
-eO
+YV
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
 IO
@@ -1934,28 +1542,28 @@ kz
 kz
 IO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 yg
 ZL
 yg
 IO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 Il
 Zp
@@ -1977,13 +1585,13 @@ IO
 kj
 kj
 IO
-eO
+YV
 IO
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
 IO
@@ -1999,28 +1607,28 @@ IO
 IO
 IO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 kK
-eO
-eO
-eO
+YV
+YV
+YV
 kK
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
 IO
@@ -2042,14 +1650,14 @@ IO
 kj
 kj
 IO
-eO
+YV
 IO
-eO
+YV
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
 IO
@@ -2062,30 +1670,30 @@ kz
 (16,1,1) = {"
 IO
 Al
-eO
+YV
 XQ
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 yg
 ZL
 yg
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 Zp
 Zp
@@ -2113,9 +1721,9 @@ IO
 IO
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
 IO
@@ -2129,28 +1737,28 @@ IO
 IO
 IO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 yg
 NS
 yg
 IO
 IO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
 tv
-eO
-eO
+YV
+YV
 IO
 Zp
 Zp
@@ -2172,16 +1780,16 @@ IO
 kj
 dm
 IO
-eO
+YV
 IO
-eO
+YV
 IO
-eO
+YV
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
 IO
@@ -2195,12 +1803,12 @@ kz
 IO
 IO
 IO
-eO
+YV
 IO
 IO
 IO
 IO
-eO
+YV
 IO
 IO
 yg
@@ -2208,14 +1816,14 @@ yg
 yg
 IO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 Zp
 Zp
@@ -2237,16 +1845,16 @@ IO
 kj
 kj
 IO
-eO
+YV
 IO
-eO
+YV
 IO
-eO
-eO
+YV
+YV
 IO
 IO
-eO
-eO
+YV
+YV
 bL
 IO
 IO
@@ -2277,10 +1885,10 @@ IO
 IO
 IO
 IO
-eO
+YV
 IO
-eO
-eO
+YV
+YV
 IO
 Zp
 Zp
@@ -2322,7 +1930,7 @@ IO
 (20,1,1) = {"
 IO
 Al
-eO
+YV
 XQ
 Zp
 Zp
@@ -2342,11 +1950,11 @@ Zp
 uA
 IO
 IO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
 Zp
 Zp
 Iw
@@ -2411,7 +2019,7 @@ IO
 IO
 IO
 IO
-eO
+YV
 IO
 Zp
 Zp
@@ -2429,16 +2037,16 @@ Nm
 vO
 vO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 kj
 IO
 IO
@@ -2476,7 +2084,7 @@ IO
 Zp
 Zp
 IO
-eO
+YV
 Zp
 Zp
 Zp
@@ -2494,15 +2102,15 @@ vO
 vO
 vO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 jK
 kj
 kj
@@ -2559,16 +2167,16 @@ vO
 vO
 vO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
 IO
-eO
+YV
 kj
 kj
 kj
@@ -2582,7 +2190,7 @@ kz
 (24,1,1) = {"
 IO
 Tg
-eO
+YV
 XQ
 Zp
 Zp
@@ -2607,7 +2215,7 @@ Zp
 Dq
 IO
 jJ
-eO
+YV
 IO
 Zp
 Zp
@@ -2624,16 +2232,16 @@ vO
 vO
 vO
 IO
-eO
-eO
-eO
-Ec
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+SN
+YV
+YV
+YV
+YV
+YV
+YV
 kj
 kj
 kj
@@ -2690,14 +2298,14 @@ IO
 IO
 IO
 jK
-eO
-eO
+YV
+YV
 IO
-eO
-eO
+YV
+YV
 IO
 IO
-Ec
+SN
 IO
 kj
 kj
@@ -2745,25 +2353,25 @@ ZL
 qg
 kj
 qg
-eO
+YV
 EC
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 kj
 dm
 kj
-eO
-eO
+YV
+YV
 kj
 kj
 kj
-eO
+YV
 kj
 IO
 kj
@@ -2842,7 +2450,7 @@ kj
 (28,1,1) = {"
 IO
 Al
-eO
+YV
 XQ
 Zp
 Zp
@@ -2875,25 +2483,25 @@ ZL
 qg
 kj
 qg
-eO
+YV
 gw
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 kj
 kj
 kj
-eO
-eO
+YV
+YV
 kj
 kj
 kj
-eO
+YV
 kj
 IO
 kj
@@ -2950,14 +2558,14 @@ IO
 IO
 IO
 jK
-eO
-eO
+YV
+YV
 IO
-eO
-eO
+YV
+YV
 IO
 IO
-Ec
+SN
 IO
 kj
 kj
@@ -3014,16 +2622,16 @@ vO
 vO
 vO
 IO
-eO
-eO
-eO
-Ec
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+SN
+YV
+YV
+YV
+YV
+YV
+YV
 kj
 kj
 kj
@@ -3079,16 +2687,16 @@ vO
 vO
 vO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 tv
-eO
-eO
-eO
+YV
+YV
+YV
 IO
-eO
+YV
 kj
 kj
 kj
@@ -3102,7 +2710,7 @@ kz
 (32,1,1) = {"
 IO
 Tg
-eO
+YV
 XQ
 Zp
 Zp
@@ -3126,9 +2734,9 @@ IO
 Zp
 ao
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 Zp
 Zp
 IO
@@ -3144,15 +2752,15 @@ Nm
 Zp
 IO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 jK
 kj
 kj
@@ -3191,9 +2799,9 @@ IO
 IO
 IO
 IO
-eO
+YV
 IO
-eO
+YV
 Zp
 Zp
 IO
@@ -3209,16 +2817,16 @@ vO
 Nm
 vO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 kj
 IO
 IO
@@ -3247,20 +2855,20 @@ IO
 Rk
 Sm
 IO
-eO
-eO
+YV
+YV
 WB
 IO
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 Nm
 vO
@@ -3317,15 +2925,15 @@ IO
 IO
 IO
 IO
-eO
+YV
 IO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
 jK
-eO
+YV
 IO
 Nm
 IO
@@ -3377,20 +2985,20 @@ Zp
 IO
 IO
 IO
-Ec
-Ec
+SN
+SN
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 Nm
 vO
@@ -3407,16 +3015,16 @@ IO
 kj
 kj
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 IO
 IO
@@ -3442,20 +3050,20 @@ Zp
 Zp
 IO
 IO
-eO
-eO
+YV
+YV
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 Nm
 vO
@@ -3472,15 +3080,15 @@ IO
 kj
 kj
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 IO
 IO
@@ -3508,19 +3116,19 @@ Zp
 Oi
 IO
 jK
-eO
-eO
+YV
+YV
 tv
-eO
+YV
 Al
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 Zp
 Nm
@@ -3537,14 +3145,14 @@ IO
 kj
 kj
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 IO
 IO
@@ -3572,20 +3180,20 @@ Zp
 Zp
 Oi
 IO
-eO
-eO
+YV
+YV
 IO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
 tv
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
 IO
 IO
 vO
@@ -3637,20 +3245,20 @@ Zp
 Zp
 Oi
 IO
-Ec
-Ec
+SN
+SN
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 vO
 vO
@@ -3667,12 +3275,12 @@ IO
 IO
 IO
 IO
-eO
-eO
-eO
-eO
-eO
-Ec
+YV
+YV
+YV
+YV
+YV
+SN
 IO
 IO
 IO
@@ -3732,10 +3340,10 @@ IO
 IO
 IO
 IO
-eO
+YV
 Tg
-eO
-eO
+YV
+YV
 Sa
 IO
 IO
@@ -3773,33 +3381,33 @@ GH
 qp
 GH
 FR
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
 Vs
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 Sa
 IO
 IO
@@ -3841,29 +3449,29 @@ ZL
 ZL
 ZL
 yg
-eO
+YV
 IO
-eO
+YV
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
-eO
-eO
+YV
+YV
 Sa
 IO
 IO
@@ -3900,35 +3508,35 @@ GR
 IO
 GH
 fd
-eO
+YV
 yg
 qr
 qr
 qr
 ZL
-eO
+YV
 gd
-eO
+YV
 IO
-eO
+YV
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
-eO
-eO
+YV
+YV
 IO
 IO
 IO
@@ -3961,39 +3569,39 @@ ZL
 Zp
 Zp
 IO
-eO
+YV
 IO
 GH
-Ec
-eO
+SN
+YV
 vb
 rM
 qr
 qr
 ZL
-eO
+YV
 wf
-eO
+YV
 IO
-eO
+YV
 IO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
+YV
 IO
 Sa
-eO
+YV
 IO
 IO
 IO
@@ -4026,18 +3634,18 @@ ZL
 Zp
 Zp
 IO
-eO
+YV
 IO
 Df
-Ec
-eO
+SN
+YV
 yg
 qr
 qr
 qr
 ZL
-eO
-Ec
+YV
+SN
 GR
 IO
 kG
@@ -4054,11 +3662,11 @@ IO
 Bh
 Bh
 IO
-eO
-eO
+YV
+YV
 IO
 IO
-eO
+YV
 IO
 IO
 IO
@@ -4093,19 +3701,19 @@ Zp
 IO
 kG
 IO
-eO
+YV
 IO
-eO
+YV
 yg
 ZL
 ZL
 ZL
 yg
-eO
+YV
 IO
 GR
 IO
-eO
+YV
 IO
 pt
 Pk
@@ -4119,11 +3727,11 @@ nM
 WC
 cj
 IO
-eO
-eO
+YV
+YV
 IO
-eO
-eO
+YV
+YV
 IO
 IO
 kz
@@ -4156,18 +3764,18 @@ yg
 Zp
 IO
 IO
-eO
+YV
 IO
 Dm
-eO
+YV
 GH
 FR
 GH
 GH
-eO
+YV
 GR
-eO
-eO
+YV
+YV
 Vs
 IO
 FR
@@ -4185,10 +3793,10 @@ WC
 pt
 IO
 Al
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
 IO
 kz
 kz
@@ -4211,17 +3819,17 @@ IO
 IO
 IO
 IO
-Mp
-eO
-eO
-eO
-eO
-eO
+SN
+YV
+YV
+YV
+YV
+YV
 ZY
 IO
 IO
 IO
-eO
+YV
 IO
 IO
 IO
@@ -4249,8 +3857,8 @@ nM
 kj
 TA
 IO
-eO
-eO
+YV
+YV
 IO
 IO
 IO
@@ -4278,9 +3886,9 @@ IO
 IO
 IO
 pY
-eO
+YV
 io
-eO
+YV
 wq
 IO
 IO
@@ -4288,16 +3896,16 @@ IO
 IO
 MX
 kG
-eO
+YV
 GH
 FR
-eO
+YV
 kG
-eO
+YV
 GH
-eO
+YV
 kG
-eO
+YV
 GH
 ls
 GH
@@ -4314,8 +3922,8 @@ nM
 kj
 Pc
 IO
-eO
-eO
+YV
+YV
 IO
 IO
 kz
@@ -4343,9 +3951,9 @@ IO
 IO
 IO
 IO
-eO
-eO
-eO
+YV
+YV
+YV
 IO
 IO
 IO
@@ -4408,9 +4016,9 @@ kz
 IO
 IO
 IO
-xd
-eO
-EZ
+SN
+YV
+SN
 IO
 IO
 IO
@@ -4432,16 +4040,16 @@ IO
 IO
 GH
 kG
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
 Bt
 WH
-eO
-eO
-eO
-Ec
+YV
+YV
+YV
+SN
 IO
 IO
 IO
@@ -4474,8 +4082,8 @@ kz
 IO
 IO
 Ox
-eO
-Se
+YV
+SN
 IO
 IO
 IO
@@ -4497,15 +4105,15 @@ kz
 IO
 IO
 IO
-eO
+YV
 WH
-eO
+YV
 GR
-eO
-eO
-eO
-eO
-eO
+YV
+YV
+YV
+YV
+YV
 Km
 IO
 IO
@@ -4562,16 +4170,16 @@ kz
 IO
 IO
 IO
-eO
-eO
+YV
+YV
 GR
-eO
-eO
-eO
-eO
-eO
-eO
-Ec
+YV
+YV
+YV
+YV
+YV
+YV
+SN
 IO
 IO
 kz
