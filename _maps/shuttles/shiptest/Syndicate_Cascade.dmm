@@ -1044,6 +1044,7 @@
 	pixel_x = 7;
 	pixel_y = 4
 	},
+/obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "sv" = (
@@ -2367,6 +2368,19 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/item/clothing/suit/longcoat/genetics,
+/obj/item/clothing/suit/longcoat/genetics,
+/obj/item/clothing/suit/toggle/labcoat/genetics,
+/obj/item/clothing/suit/toggle/labcoat/genetics,
+/obj/item/clothing/under/rank/medical/geneticist,
+/obj/item/clothing/under/rank/medical/geneticist/skirt,
+/obj/item/sequence_scanner,
+/obj/item/sequence_scanner,
+/obj/structure/closet/wall/white{
+	dir = 4;
+	pixel_x = -29;
+	name = "Genetic locker"
+	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/science)
 "Nq" = (
@@ -2822,7 +2836,6 @@
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/switchblade,
-/obj/item/clothing/suit/longcoat/genetics,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "VA" = (
