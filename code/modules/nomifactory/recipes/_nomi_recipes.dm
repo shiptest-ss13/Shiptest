@@ -85,7 +85,7 @@ GLOBAL_LIST_INIT_TYPED(nomi_recipes, /datum/nomi_recipe, setup_nomi_recipes())
 
 			var/obj/item/stack/took_as_stack = took
 			if(istype(took_as_stack)) // Special snowflake handling for stacks, I.E. metal sheets and ore
-				var/can_take = min(taking, took_as_stack.amount)
+				var/can_take = min(max(taking, 1), took_as_stack.amount)
 				taking = 0
 
 				if(can_take >= took_as_stack.amount)
