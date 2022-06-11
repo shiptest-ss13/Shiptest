@@ -175,6 +175,7 @@
 	bullet_bounce_sound = null
 	digResult = /obj/item/stack/sheet/mineral/snow
 	floor_variance = 100
+	max_icon_states = 7
 	dug = TRUE
 
 /turf/open/floor/plating/asteroid/iceberg/lit
