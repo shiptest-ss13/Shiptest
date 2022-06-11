@@ -138,8 +138,18 @@
 					continue
 				last_char_group = SPACES_DETECTED
 
-			//Everything except spaces
-			if(33 to 126)
+			//A .. Z
+			if(65 to 90)
+				number_of_alphanumeric++
+				last_char_group = CHARS_DETECTED
+
+			//a .. z
+			if(97 to 122)
+				number_of_alphanumeric++
+				last_char_group = CHARS_DETECTED
+
+			// ' - . ~ | @ : # $ % & * +
+			if(39, 45, 46, 126, 124, 64, 58, 35, 36, 37, 38, 42, 43)
 				number_of_alphanumeric++
 				last_char_group = CHARS_DETECTED
 
