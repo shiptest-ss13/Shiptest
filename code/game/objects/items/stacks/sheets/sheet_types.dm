@@ -817,6 +817,7 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	icon_state = "sheet-plastitanium"
 	item_state = "sheet-plastitanium"
 	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT, /datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+	sheettype = "tialloy"
 	force = 5
 	throwforce = 5
 	w_class =  WEIGHT_CLASS_NORMAL
