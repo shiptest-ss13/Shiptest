@@ -242,7 +242,6 @@
 	base_icon_state = "rockwall_icemoon"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
-	defer_change = TRUE
 	environment_type = "snow_cavern"
 	turf_type = /turf/open/floor/plating/asteroid/icerock
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
@@ -590,6 +589,8 @@
 	turf_type = /turf/open/floor/plating/asteroid/icerock
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	has_borders = FALSE
+	defer_change = TRUE
 
 /turf/closed/mineral/strong
 	name = "Very strong rock"
