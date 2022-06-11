@@ -1004,7 +1004,7 @@
 /area/ship/hallway/starboard)
 "if" = (
 /obj/structure/sign/departments/chemistry,
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm)
 "ih" = (
 /obj/structure/table/reinforced,
@@ -2067,9 +2067,6 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave/beige,
-/area/ship/hallway/port)
-"qH" = (
-/turf/closed/wall/mineral/titanium,
 /area/ship/hallway/port)
 "qS" = (
 /obj/effect/spawner/structure/window/shuttle,
@@ -3329,6 +3326,9 @@
 	color = "#4c535b"
 	},
 /area/ship/hallway/starboard)
+"zL" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew)
 "zP" = (
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
@@ -4469,9 +4469,6 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/port)
-"IL" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/hallway/starboard)
 "IN" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp{
@@ -6717,7 +6714,7 @@ qa
 ac
 ac
 Yd
-UF
+Yd
 jz
 jD
 aY
@@ -6759,7 +6756,7 @@ ac
 ac
 CV
 zk
-UF
+Yd
 uZ
 eu
 eu
@@ -6801,7 +6798,7 @@ ac
 QT
 fc
 or
-UF
+Yd
 eS
 rk
 rk
@@ -6885,7 +6882,7 @@ PW
 os
 TX
 Cs
-UF
+Yd
 ks
 Gu
 KX
@@ -6921,7 +6918,7 @@ qa
 "}
 (7,1,1) = {"
 UF
-UF
+Yd
 yS
 TJ
 eo
@@ -6962,19 +6959,19 @@ qa
 qa
 "}
 (8,1,1) = {"
-UF
-UF
-UF
-UF
-UF
-UF
-UF
-UF
+Yd
+Yd
+Yd
+Yd
+Yd
+Yd
+Yd
+Yd
 aP
-ES
-ES
-ES
-ES
+zL
+zL
+zL
+zL
 Ef
 Ef
 St
@@ -7004,7 +7001,7 @@ aq
 qa
 "}
 (9,1,1) = {"
-qH
+mE
 Hl
 uM
 pL
@@ -7046,7 +7043,7 @@ Sp
 aq
 "}
 (10,1,1) = {"
-qH
+mE
 jc
 pj
 VZ
@@ -7088,18 +7085,18 @@ Jq
 Gs
 "}
 (11,1,1) = {"
-qH
+mE
 uK
 uK
-qH
-qH
-qH
+mE
+mE
+mE
 aB
 aB
 aB
-qH
-qH
-qH
+mE
+mE
+mE
 aB
 aB
 aB
@@ -7473,11 +7470,11 @@ qa
 qa
 qa
 gL
-IL
-IL
-IL
-IL
-IL
+kS
+kS
+kS
+kS
+kS
 xD
 xD
 xD
@@ -7599,7 +7596,7 @@ qa
 qa
 qa
 fg
-PS
+cJ
 cJ
 cJ
 Jz
