@@ -23,13 +23,24 @@ Regenerative extracts:
 		to_chat(user, "<span class='warning'>[src] will not work on the dead!</span>")
 		return
 	if(H != user)
+		if(!do_mob(user, H, 10)) // 1 second delay
+			return FALSE
 		user.visible_message("<span class='notice'>[user] crushes the [src] over [H], the milky goo quickly regenerating all of [H.p_their()] injuries!</span>",
 			"<span class='notice'>You squeeze the [src], and it bursts over [H], the milky goo regenerating [H.p_their()] injuries.</span>")
 	else
+		if(!do_mob(user, H, 20)) // 2 second delay
+			return FALSE
 		user.visible_message("<span class='notice'>[user] crushes the [src] over [user.p_them()]self, the milky goo quickly regenerating all of [user.p_their()] injuries!</span>",
 			"<span class='notice'>You squeeze the [src], and it bursts in your hand, splashing you with milky goo which quickly regenerates your injuries!</span>")
 	core_effect_before(H, user)
-	H.revive(full_heal = TRUE, admin_revive = FALSE)
+// Slimes are good at healing clone damage, but don't heal other damage types as much. Additionally heals 10 organ damage.
+	var/oxy_loss = (5 + (H.getOxyLoss() * 0.35))
+	var/tox_loss = (5 + (H.getToxLoss() * 0.35))
+	var/fire_loss = (5 + (H.getFireLoss() * 0.35))
+	var/brute_loss = (5 + (H.getBruteLoss() * 0.35))
+	var/stamina_loss = (5 + (H.getStaminaLoss() * 0.5))
+	H.reagents.add_reagent(/datum/reagent/medicine/regen_jelly,5) // Splits the healing effect across an instant heal, and a smaller heal after.
+	H.specific_heal(brute_amt = brute_loss, fire_amt = fire_loss, tox_amt = tox_loss, oxy_amt = oxy_loss, stam_atm = stamina_loss, organ_amt = 2, clone_amt = 100, blood_amt = 100)
 	core_effect(H, user)
 	playsound(target, 'sound/effects/splat.ogg', 40, TRUE)
 	qdel(src)
@@ -252,13 +263,20 @@ Regenerative extracts:
 	colour = "light pink"
 	effect_desc = "Fully heals the target and also heals the user."
 
+// Doesn't heal the user as much as the target
 /obj/item/slimecross/regenerative/lightpink/core_effect(mob/living/target, mob/user)
 	if(!isliving(user))
 		return
 	if(target == user)
 		return
 	var/mob/living/U = user
-	U.revive(full_heal = TRUE, admin_revive = FALSE)
+	var/oxy_loss = (5 + (U.getOxyLoss() * 0.2))
+	var/tox_loss = (5 + (U.getToxLoss() * 0.2))
+	var/fire_loss = (5 + (U.getFireLoss() * 0.2))
+	var/brute_loss = (5 + (U.getBruteLoss() * 0.2))
+	var/stamina_loss = (5 + (U.getStaminaLoss() * 0.35))
+	U.reagents.add_reagent(/datum/reagent/medicine/regen_jelly,5) // Splits the healing effect across an instant heal, and a smaller heal after.
+	U.specific_heal(brute_amt = brute_loss, fire_amt = fire_loss, tox_amt = tox_loss, oxy_amt = oxy_loss, stam_atm = stamina_loss, organ_amt = 2, clone_amt = 100)
 	to_chat(U, "<span class='notice'>Some of the milky goo sprays onto you, as well!</span>")
 
 /obj/item/slimecross/regenerative/adamantine
