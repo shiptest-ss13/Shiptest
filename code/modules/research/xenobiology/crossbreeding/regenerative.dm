@@ -276,7 +276,7 @@ Regenerative extracts:
 	var/brute_loss = (5 + (U.getBruteLoss() * 0.2))
 	var/stamina_loss = (5 + (U.getStaminaLoss() * 0.35))
 	U.reagents.add_reagent(/datum/reagent/medicine/regen_jelly,5) // Splits the healing effect across an instant heal, and a smaller heal after.
-	U.specific_heal(brute_amt = brute_loss, fire_amt = fire_loss, tox_amt = tox_loss, oxy_amt = oxy_loss, stam_atm = stamina_loss, organ_amt = 2, clone_amt = 100)
+	U.specific_heal(brute_amt = brute_loss, fire_amt = fire_loss, tox_amt = tox_loss, oxy_amt = oxy_loss, stam_amt = stamina_loss, organ_amt = 2, clone_amt = 100)
 	to_chat(U, "<span class='notice'>Some of the milky goo sprays onto you, as well!</span>")
 
 /obj/item/slimecross/regenerative/adamantine
