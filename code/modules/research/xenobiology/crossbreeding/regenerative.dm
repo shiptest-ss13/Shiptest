@@ -40,7 +40,7 @@ Regenerative extracts:
 	var/brute_loss = (5 + (H.getBruteLoss() * 0.35))
 	var/stamina_loss = (5 + (H.getStaminaLoss() * 0.5))
 	H.reagents.add_reagent(/datum/reagent/medicine/regen_jelly,5) // Splits the healing effect across an instant heal, and a smaller heal after.
-	H.specific_heal(brute_amt = brute_loss, fire_amt = fire_loss, tox_amt = tox_loss, oxy_amt = oxy_loss, stam_atm = stamina_loss, organ_amt = 2, clone_amt = 100, blood_amt = 100)
+	H.specific_heal(brute_amt = brute_loss, fire_amt = fire_loss, tox_amt = tox_loss, oxy_amt = oxy_loss, stam_amt = stamina_loss, organ_amt = 2, clone_amt = 100, blood_amt = 100)
 	core_effect(H, user)
 	playsound(target, 'sound/effects/splat.ogg', 40, TRUE)
 	qdel(src)
