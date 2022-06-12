@@ -3,6 +3,7 @@ GLOBAL_PROTECT(donators)
 
 #define REWARD_FLAT 1
 #define REWARD_CONV 2
+#define REWARD_RESK 3
 #define REWARD_JSON_PATH "config/donators/"
 
 /client/var/datum/donator/donator
@@ -58,6 +59,12 @@ GLOBAL_PROTECT(donators)
 		/obj/item/screwdriver = list(/obj/item/screwdriver/old, /obj/item/screwdriver/caravan),
 	)
 
+	/// list of reskin rewards for this donator
+	/// Should be an assosciative list indexed by type with a value which is a list of skins
+	var/list/reskin_rewards = list(
+		/obj/item/screwdriver = list("fakeiconstate", "alsonotreal")
+	)
+
 	/// list of redeemed conversion types
 	var/list/conversions_redeemed = list()
 
@@ -97,6 +104,26 @@ GLOBAL_PROTECT(donators)
 				stack_trace("invalid type in donator json: '[ckey]' = '[entry]'")
 				continue
 			flat_rewards[etype] = TRUE
+
+	if("reskin" in json)
+		reskin_rewards.Cut()
+		for(var/entry in json["reskin"])
+			var/atom/etype = text2path(entry)
+			if(!etype)
+				stack_trace("invalid type in donator json: '[ckey]' = '[entry]'")
+				continue
+
+			var/list/subl = json["reskin"][entry]
+			if(!islist(subl))
+				stack_trace("invalid sublist in donator json: '[ckey]' = '[entry]'")
+				continue
+
+			var/list/reskins = subl.Copy()
+			for(var/reskin_state in subl)
+				if(!icon_exists(initial(etype.icon), reskin_state))
+					stack_trace("invalid reskin target in donator json: '[ckey]' = '[entry]' : '[reskin_state]'")
+					reskins.Remove(reskin_state)
+			reskin_rewards[etype] = reskins
 
 	if("convert" in json)
 		conversion_rewards.Cut()
@@ -146,18 +173,35 @@ GLOBAL_PROTECT(donators)
 				continue
 			. += cinstance
 
+/datum/donator/proc/get_valid_reskins(mob/living/user)
+	. = list()
+	for(var/reskin_type in reskin_rewards)
+		var/rinstance = locate(reskin_type) in user.held_items
+		if(rinstance)
+			. += rinstance
+
 /datum/donator/proc/what_can_i_redeem(mob/user)
 	var/resp = list()
+	resp += "<span class='fakespan0'>----------</span>"
 	resp += "Your current redeemable rewards are as follows:"
+
 	resp += "\tFlat Rewards:"
 	for(var/atom/flat as anything in get_valid_flats())
 		resp += "\t\t[initial(flat.name)]"
-	resp += "----------"
+	resp += "<span class='fakespan1'>----------</span>"
+
 	resp += "\tConversion Rewards:"
 	for(var/atom/conv as anything in get_valid_conversions(null))
 		resp += "\t\t[initial(conv.name)]"
-	resp += "----------"
-	resp += "<b>Note that redeemed rewards will not be present in these lists!</b>"
+	resp += "<span class='fakespan2'>----------</span>"
+
+	resp += "<b>Note that redeemed rewards will not be present in the above lists!</b>"
+	resp += "<span class='fakespan3'>----------</span>"
+
+	resp += "\tReskinnable Items:"
+	for(var/atom/reskin as anything in reskin_rewards)
+		resp += "\t\t[initial(reskin.name)]"
+	resp += "<span class='fakespan4'>----------</span>"
 
 	for(var/line in resp)
 		to_chat(user, "<span class='donator'>[line]</span>")
@@ -170,24 +214,42 @@ GLOBAL_PROTECT(donators)
 		return FALSE
 
 	var/list/flats = get_valid_flats()
-	var/list/converts = get_valid_conversions()
+	var/list/converts = get_valid_conversions(user)
+	var/list/reskins = get_valid_reskins(user)
 
-	var/r_flat = length(flats)
-	var/r_conv = length(converts)
+	var/r_flat = !!length(flats)
+	var/r_conv = !!length(converts)
+	var/r_resk = !!length(reskins)
+	var/r_all = r_flat + r_conv + r_resk
 
-	if(!r_flat && !r_conv)
+	if(!r_all)
 		to_chat(user, "<span class='notice'>You do not have any rewards able to be redeemed currently.</span>")
 		return FALSE
 
-	var/choice = r_flat ? REWARD_FLAT : REWARD_CONV
+	var/choice
 
-	if(r_flat && r_conv)
-		var/resp = tgui_alert(user, "Type of Reward?", "Choice Time", list("Flat", "Conversion", "Cancel"))
-		switch(resp)
-			if(null, "Cancel")
-				return FALSE
-			if("Conversion")
-				choice = REWARD_CONV
+	var/list/available = list()
+	if(r_flat)
+		available += "Flat"
+	if(r_conv)
+		available += "Conversion"
+	if(r_resk)
+		available += "Reskin"
+	available += "Cancel"
+
+	var/resp = tgui_alert(user, "Type of Reward?", "Choice Time", available)
+	switch(resp)
+		if("Flat")
+			choice = REWARD_FLAT
+
+		if("Conversion")
+			choice = REWARD_CONV
+
+		if("Reskin")
+			choice = REWARD_RESK
+
+		if("Cancel")
+			return FALSE
 
 	switch(choice)
 		if(REWARD_FLAT)
@@ -207,6 +269,30 @@ GLOBAL_PROTECT(donators)
 			flat_rewards[reward] = FALSE
 
 			user.put_in_hands(new reward(user_turf))
+			return TRUE
+
+		if(REWARD_RESK)
+			var/list/choices = list()
+			for(var/atom/rtype as anything in reskins)
+				choices[rtype.name] = rtype
+			choices["Cancel"] = TRUE
+
+			var/resp = tgui_input_list(user, "What do you want to reskin?", "Chance Time", choices)
+			if(!resp || resp == "Cancel")
+				return FALSE
+
+			var/obj/item/reward = choices[resp]
+			if(!(reward.type in reskin_rewards))
+				message_admins("Error handling reward conversion for [ckey]. Attempted to redeem an invalid reskin: [reward.type]")
+				return FALSE
+
+			var/reskin_target = tgui_input_list(user, "What do you want it to reskin into?", "Chance Time", reskin_rewards[reward.type] + list("Cancel"))
+			if(!reskin_target || reskin_target == "Cancel")
+				return FALSE
+
+			reward.icon = initial(reward.icon)
+			reward.icon_state = reskin_target
+			reward.update_icon()
 			return TRUE
 
 		if(REWARD_CONV)
@@ -248,4 +334,5 @@ GLOBAL_PROTECT(donators)
 
 #undef REWARD_FLAT
 #undef REWARD_CONV
+#undef REWARD_RESK
 #undef REWARD_JSON_PATH
