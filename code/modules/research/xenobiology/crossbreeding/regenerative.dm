@@ -25,13 +25,13 @@ Regenerative extracts:
 	if(H != user)
 		if(!do_mob(user, H, 10)) // 1 second delay
 			return FALSE
-		user.visible_message("<span class='notice'>[user] crushes the [src] over [H], the milky goo quickly regenerating all of [H.p_their()] injuries!</span>",
-			"<span class='notice'>You squeeze the [src], and it bursts over [H], the milky goo regenerating [H.p_their()] injuries.</span>")
+		user.visible_message("<span class='notice'>[user] crushes the [src] over [H], the milky goo quickly regenerating some of [H.p_their()] injuries!</span>",
+			"<span class='notice'>You squeeze the [src], and it bursts over [H], the milky goo regenerating some of [H.p_their()] injuries.</span>")
 	else
 		if(!do_mob(user, H, 20)) // 2 second delay
 			return FALSE
-		user.visible_message("<span class='notice'>[user] crushes the [src] over [user.p_them()]self, the milky goo quickly regenerating all of [user.p_their()] injuries!</span>",
-			"<span class='notice'>You squeeze the [src], and it bursts in your hand, splashing you with milky goo which quickly regenerates your injuries!</span>")
+		user.visible_message("<span class='notice'>[user] crushes the [src] over [user.p_them()]self, the milky goo quickly regenerating some of [user.p_their()] injuries!</span>",
+			"<span class='notice'>You squeeze the [src], and it bursts in your hand, splashing you with milky goo which quickly regenerates som of your injuries!</span>")
 	core_effect_before(H, user)
 // Slimes are good at healing clone damage, but don't heal other damage types as much. Additionally heals 10 organ damage.
 	var/oxy_loss = (5 + (H.getOxyLoss() * 0.35))
