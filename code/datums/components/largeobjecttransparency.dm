@@ -36,14 +36,14 @@
 	return ..()
 
 /datum/component/largetransparency/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/OnMove)
-	RegisterWithTurfs()
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/on_move)
+	register_with_turfs()
 
 /datum/component/largetransparency/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
-	UnregisterFromTurfs()
+	unregister_with_turfs()
 
-/datum/component/largetransparency/proc/RegisterWithTurfs()
+/datum/component/largetransparency/proc/register_with_turfs()
 	var/turf/current_tu = get_turf(parent)
 	if(!current_tu)
 		return
@@ -54,57 +54,57 @@
 	for(var/regist_tu in registered_turfs)
 		if(!regist_tu)
 			continue
-		RegisterSignal(regist_tu, list(COMSIG_ATOM_ENTERED, COMSIG_ATOM_CREATED), .proc/objectEnter)
-		RegisterSignal(regist_tu, COMSIG_ATOM_EXITED, .proc/objectLeave)
-		RegisterSignal(regist_tu, COMSIG_TURF_CHANGE, .proc/OnTurfChange)
+		RegisterSignal(regist_tu, list(COMSIG_ATOM_ENTERED, COMSIG_ATOM_CREATED), .proc/object_enter)
+		RegisterSignal(regist_tu, COMSIG_ATOM_EXITED, .proc/object_leave)
+		RegisterSignal(regist_tu, COMSIG_TURF_CHANGE, .proc/on_turf_change)
 		for(var/thing in regist_tu)
 			var/atom/check_atom = thing
 			if(!(check_atom.flags_1 & SHOW_BEHIND_LARGE_ICONS_1))
 				continue
 			amounthidden++
 	if(amounthidden)
-		reduceAlpha()
+		reduce_alpha()
 
-/datum/component/largetransparency/proc/UnregisterFromTurfs()
+/datum/component/largetransparency/proc/unregister_with_turfs()
 	var/list/signal_list = list(COMSIG_ATOM_ENTERED, COMSIG_ATOM_EXITED, COMSIG_TURF_CHANGE, COMSIG_ATOM_CREATED)
 	for(var/regist_tu in registered_turfs)
 		UnregisterSignal(regist_tu, signal_list)
 	registered_turfs.Cut()
 
-/datum/component/largetransparency/proc/OnMove()
+/datum/component/largetransparency/proc/on_move()
 	SIGNAL_HANDLER
 	amounthidden = 0
-	restoreAlpha()
-	UnregisterFromTurfs()
-	RegisterWithTurfs()
+	restore_alpha()
+	unregister_with_turfs()
+	register_with_turfs()
 
-/datum/component/largetransparency/proc/OnTurfChange()
+/datum/component/largetransparency/proc/on_turf_change()
 	SIGNAL_HANDLER
-	addtimer(CALLBACK(src, .proc/OnMove), 1, TIMER_UNIQUE|TIMER_OVERRIDE) //*pain
+	addtimer(CALLBACK(src, .proc/on_move), 1, TIMER_UNIQUE|TIMER_OVERRIDE) //*pain
 
-/datum/component/largetransparency/proc/objectEnter(datum/source, atom/enterer)
+/datum/component/largetransparency/proc/object_enter(datum/source, atom/enterer)
 	SIGNAL_HANDLER
 	if(!(enterer.flags_1 & SHOW_BEHIND_LARGE_ICONS_1))
 		return
 	if(!amounthidden)
-		reduceAlpha()
+		reduce_alpha()
 	amounthidden++
 
-/datum/component/largetransparency/proc/objectLeave(datum/source, atom/leaver, direction)
+/datum/component/largetransparency/proc/object_leave(datum/source, atom/leaver, direction)
 	SIGNAL_HANDLER
 	if(!(leaver.flags_1 & SHOW_BEHIND_LARGE_ICONS_1))
 		return
 	amounthidden = max(0, amounthidden - 1)
 	if(!amounthidden)
-		restoreAlpha()
+		restore_alpha()
 
-/datum/component/largetransparency/proc/reduceAlpha()
+/datum/component/largetransparency/proc/reduce_alpha()
 	var/atom/par_atom = parent
 	par_atom.alpha = target_alpha
 	if(toggle_click)
 		par_atom.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
-/datum/component/largetransparency/proc/restoreAlpha()
+/datum/component/largetransparency/proc/restore_alpha()
 	var/atom/par_atom = parent
 	par_atom.alpha = initial_alpha
 	if(toggle_click)
