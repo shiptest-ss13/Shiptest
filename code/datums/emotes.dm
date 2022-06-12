@@ -61,7 +61,13 @@
 		return
 
 	user.log_message(msg, LOG_EMOTE)
-	var/space = should_have_space_before_emote(html_encode(msg)[1]) ? " " : ""
+
+	//Removing space if necessary, and adding punctuation to the end
+	var/space = should_have_space_before_emote(html_encode(msg)) ? " " : ""
+	var/end = copytext(msg, length(msg))
+	if(!(end in list("!", ".", "?", ":", "\"", "-")))
+		msg += "."
+
 	var/dchatmsg = "<b>[user]</b>[space][msg]"
 
 	var/tmp_sound = get_sound(user)
@@ -199,5 +205,6 @@
  * Returns TRUE if there should be a space, FALSE if there shouldn't.
  */
 /proc/should_have_space_before_emote(string)
-	var/static/regex/no_spacing_emote_characters = regex(@"(,|')")
+	var/static/regex/no_spacing_emote_characters = regex(@"^(,|&.*39)")
 	return no_spacing_emote_characters.Find(string) ? FALSE : TRUE
+// &#39;
