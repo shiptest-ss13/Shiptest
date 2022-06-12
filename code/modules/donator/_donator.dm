@@ -237,8 +237,7 @@ GLOBAL_PROTECT(donators)
 		available += "Reskin"
 	available += "Cancel"
 
-	var/resp = tgui_alert(user, "Type of Reward?", "Choice Time", available)
-	switch(resp)
+	switch(tgui_alert(user, "Type of Reward?", "Choice Time", available))
 		if("Flat")
 			choice = REWARD_FLAT
 
@@ -248,7 +247,7 @@ GLOBAL_PROTECT(donators)
 		if("Reskin")
 			choice = REWARD_RESK
 
-		if("Cancel")
+		if("Cancel", null)
 			return FALSE
 
 	switch(choice)
