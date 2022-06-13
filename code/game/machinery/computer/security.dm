@@ -268,9 +268,9 @@ What a mess.*/
 	. = ..()
 	if(.)
 		return .
-	if(!( GLOB.data_core.general.Find(active1) ))
+	if(!(GLOB.data_core.general.Find(active1)))
 		active1 = null
-	if(!( GLOB.data_core.security.Find(active2) ))
+	if(!(GLOB.data_core.security.Find(active2)))
 		active2 = null
 	if(usr.contents.Find(src) || (in_range(src, usr) && isturf(loc)) || issilicon(usr) || isAdminGhostAI(usr))
 		usr.set_machine(src)
@@ -367,12 +367,12 @@ What a mess.*/
 							to_chat(usr, "<span class='warning'>Fines can only be paid with holochips!</span>")
 
 			if("Print Record")
-				if(!( printing ))
+				if(!(printing))
 					printing = 1
 					GLOB.data_core.securityPrintCount++
 					playsound(loc, 'sound/items/poster_being_created.ogg', 100, TRUE)
 					sleep(30)
-					var/obj/item/paper/P = new /obj/item/paper( loc )
+					var/obj/item/paper/P = new /obj/item/paper(loc)
 					P.info = "<CENTER><B>Security Record - (SR-[GLOB.data_core.securityPrintCount])</B></CENTER><BR>"
 					if((istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)))
 						P.info += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
@@ -412,7 +412,7 @@ What a mess.*/
 					P.update_icon()
 					printing = null
 			if("Print Poster")
-				if(!( printing ))
+				if(!(printing))
 					var/wanted_name = stripped_input(usr, "Please enter an alias for the criminal:", "Print Wanted Poster", active1.fields["name"])
 					if(wanted_name)
 						var/default_description = "A poster declaring [wanted_name] to be a dangerous individual, wanted by Nanotrasen. Report any sightings to security immediately."
@@ -435,7 +435,7 @@ What a mess.*/
 								new /obj/item/poster/wanted(loc, photo.picture.picture_image, wanted_name, info, headerText)
 							printing = 0
 			if("Print Missing")
-				if(!( printing ))
+				if(!(printing))
 					var/missing_name = stripped_input(usr, "Please enter an alias for the missing person:", "Print Missing Persons Poster", active1.fields["name"])
 					if(missing_name)
 						var/default_description = "A poster declaring [missing_name] to be a missing individual, missed by Nanotrasen. Report any sightings to security immediately."
@@ -467,7 +467,7 @@ What a mess.*/
 				temp = "All Security records deleted."
 
 			if("Add Entry")
-				if(!( istype(active2, /datum/data/record) ))
+				if(!(istype(active2, /datum/data/record)))
 					return
 				var/a2 = active2
 				var/t1 = stripped_multiline_input("Add Comment:", "Secure. records", null, null)
@@ -495,7 +495,7 @@ What a mess.*/
 					active2.fields[text("com_[]", href_list["del_c"])] = "<B>Deleted</B>"
 //RECORD CREATE
 			if("New Record (Security)")
-				if((istype(active1, /datum/data/record) && !( istype(active2, /datum/data/record) )))
+				if((istype(active1, /datum/data/record) && !(istype(active2, /datum/data/record))))
 					var/datum/data/record/R = new /datum/data/record()
 					R.fields["name"] = active1.fields["name"]
 					R.fields["id"] = active1.fields["id"]

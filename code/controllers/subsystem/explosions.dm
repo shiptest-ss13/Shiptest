@@ -408,7 +408,7 @@ SUBSYSTEM_DEF(explosions)
 	var/c_dist = 1
 	L += t_center
 
-	while( c_dist <= dist )
+	while(c_dist <= dist)
 		y = t_center.y + c_dist
 		x = t_center.x - c_dist + 1
 		for(x in x to t_center.x+c_dist)

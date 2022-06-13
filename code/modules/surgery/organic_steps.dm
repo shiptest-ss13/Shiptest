@@ -55,7 +55,7 @@
 		target.heal_bodypart_damage(20,0)
 	if (ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.bleed_rate = max( (H.bleed_rate - 3), 0)
+		H.bleed_rate = max((H.bleed_rate - 3), 0)
 	return ..()
 
 //retract skin
@@ -94,7 +94,7 @@
 		target.heal_bodypart_damage(45,0)
 	if (ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.bleed_rate = max( (H.bleed_rate - 3), 0)
+		H.bleed_rate = max((H.bleed_rate - 3), 0)
 	return ..()
 
 

@@ -29,7 +29,7 @@
 
 						var maintable_data = document.getElementById('maintable_data');
 						var ltr = maintable_data.getElementsByTagName("tr");
-						for ( var i = 0; i < ltr.length; ++i )
+						for (var i = 0; i < ltr.length; ++i)
 						{
 							try{
 								var tr = ltr\[i\];
@@ -40,7 +40,7 @@
 								var td = ltd\[0\];
 								var lsearch = td.getElementsByClassName("filter_data");
 								var search = lsearch\[0\];
-								if ( search.innerText.toLowerCase().indexOf(filter) == -1 )
+								if (search.innerText.toLowerCase().indexOf(filter) == -1)
 								{
 									tr.innerHTML = "";
 									i--;

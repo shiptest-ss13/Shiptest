@@ -395,7 +395,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					inserted_scan_id = id_to_insert
 					updateUsrDialog()
 		if ("auth")
-			if ((!( authenticated ) && (inserted_scan_id || issilicon(usr)) || mode))
+			if ((!(authenticated) && (inserted_scan_id || issilicon(usr)) || mode))
 				if (check_access(inserted_scan_id))
 					region_access = list()
 					head_subordinates = list()
@@ -427,7 +427,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 							get_subordinates("Chief Engineer")
 						if(region_access)
 							authenticated = 1
-			else if ((!( authenticated ) && issilicon(usr)) && (!inserted_modify_id))
+			else if ((!(authenticated) && issilicon(usr)) && (!inserted_modify_id))
 				to_chat(usr, "<span class='warning'>You can't modify an ID without an ID inserted to modify! Once one is in the modify slot on the computer, you can log in.</span>")
 		if ("logout")
 			region_access = null
@@ -471,7 +471,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					if(inserted_modify_id.registered_account)
 						inserted_modify_id.registered_account.account_job = jobdatum // this is a terrible idea and people will grief but sure whatever
 
-					inserted_modify_id.access = ( istype(src, /obj/machinery/computer/card/centcom) ? get_centcom_access(t1) : jobdatum.get_access() )
+					inserted_modify_id.access = (istype(src, /obj/machinery/computer/card/centcom) ? get_centcom_access(t1) : jobdatum.get_access())
 				if (inserted_modify_id)
 					inserted_modify_id.assignment = t1
 					playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
@@ -566,10 +566,10 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 		if ("print")
-			if (!( printing ))
+			if (!(printing))
 				printing = 1
 				sleep(50)
-				var/obj/item/paper/P = new /obj/item/paper( loc )
+				var/obj/item/paper/P = new /obj/item/paper(loc)
 				var/t1 = "<B>Crew Manifest:</B><BR>"
 				for(var/datum/data/record/t in sortRecord(GLOB.data_core.general))
 					t1 += t.fields["name"] + " - " + t.fields["rank"] + "<br>"

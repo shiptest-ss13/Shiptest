@@ -73,7 +73,7 @@ SUBSYSTEM_DEF(vote)
 						greatest_votes = choices[GLOB.master_mode]
 			else if(mode == "transfer")
 				var/factor = 1
-				switch(world.time / (1 MINUTES ))
+				switch(world.time / (1 MINUTES))
 					if(0 to 60)
 						factor = 0.5
 					if(61 to 120)

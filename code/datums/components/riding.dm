@@ -278,7 +278,7 @@
 	if(H.buckle_lying)
 		return list(TEXT_NORTH = list(0, 6), TEXT_SOUTH = list(0, 6), TEXT_EAST = list(0, 6), TEXT_WEST = list(0, 6))
 	else
-		return list(TEXT_NORTH = list(0, 6), TEXT_SOUTH = list(0, 6), TEXT_EAST = list(-6, 4), TEXT_WEST = list( 6, 4))
+		return list(TEXT_NORTH = list(0, 6), TEXT_SOUTH = list(0, 6), TEXT_EAST = list(-6, 4), TEXT_WEST = list(6, 4))
 
 
 /datum/component/riding/human/force_dismount(mob/living/user)
@@ -321,7 +321,7 @@
 		AM.layer = MOB_LAYER
 
 /datum/component/riding/cyborg/get_offsets(pass_index) // list(dir = x, y, layer)
-	return list(TEXT_NORTH = list(0, 4), TEXT_SOUTH = list(0, 4), TEXT_EAST = list(-6, 3), TEXT_WEST = list( 6, 3))
+	return list(TEXT_NORTH = list(0, 4), TEXT_SOUTH = list(0, 4), TEXT_EAST = list(-6, 3), TEXT_WEST = list(6, 3))
 
 /datum/component/riding/cyborg/handle_vehicle_offsets(dir)
 	var/atom/movable/AM = parent

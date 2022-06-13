@@ -45,7 +45,7 @@
 /obj/structure/poddoor_assembly/attackby(obj/item/item_used, mob/user, params)
 	if(istype(item_used, /obj/item/pen))
 		var/new_name = stripped_input(user, "Enter the name for the assembly.", name, created_name,MAX_NAME_LEN)
-		if(!new_name || (!in_range(src, usr) && loc != usr) )
+		if(!new_name || (!in_range(src, usr) && loc != usr))
 			return
 		created_name = new_name
 
@@ -139,7 +139,7 @@
 		user.visible_message("<span class='notice'>[user] installs the electronics into [src].</span>", \
 							"<span class='notice'>You start to install electronics into [src]...</span>")
 		if(do_after(user, 4 SECONDS, target = src))
-			if( state != AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
+			if(state != AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 				return
 			if(!user.transferItemToLoc(item_used, src))
 				return

@@ -1061,7 +1061,7 @@ Nothing else in the console has ID requirements.
 				D.category -= "Imported"
 			else
 				for(var/x in D.materials)
-					if( !(x in list(/datum/material/iron, /datum/material/glass)))
+					if(!(x in list(/datum/material/iron, /datum/material/glass)))
 						autolathe_friendly = FALSE
 						D.category -= "Imported"
 

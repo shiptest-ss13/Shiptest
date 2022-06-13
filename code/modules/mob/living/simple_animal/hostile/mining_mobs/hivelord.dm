@@ -366,9 +366,9 @@
 			if(prob(20))
 				suit = pickweight(list(/obj/item/clothing/suit/hooded/explorer = 18, /obj/item/clothing/suit/hooded/cloak/goliath = 2))
 			if(prob(30))
-				r_pocket = pickweight(list(/obj/item/stack/marker_beacon = 20, /obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/damage = 1 ))
+				r_pocket = pickweight(list(/obj/item/stack/marker_beacon = 20, /obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/damage = 1))
 			if(prob(10))
-				l_pocket = pickweight(list(/obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/cooldown = 1 ))
+				l_pocket = pickweight(list(/obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/cooldown = 1))
 			if(prob(85))
 				back = /obj/item/storage/backpack/explorer
 				backpack_contents = list()
@@ -379,7 +379,7 @@
 				if(prob(70))
 					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
 				if(prob(30))
-					backpack_contents += list(/obj/item/reagent_containers/hypospray/medipen/survival = pickweight(list( 1 = 3, 2 = 2, 3 = 1)))
+					backpack_contents += list(/obj/item/reagent_containers/hypospray/medipen/survival = pickweight(list(1 = 3, 2 = 2, 3 = 1)))
 				if(prob(30))
 					backpack_contents += /obj/item/gun/energy/kinetic_accelerator
 			else
@@ -404,7 +404,7 @@
 				if(prob(70))
 					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
 				if(prob(30))
-					backpack_contents += list(/obj/item/reagent_containers/hypospray/medipen/survival = pickweight(list( 1 = 3, 2 = 2, 3 = 1)))
+					backpack_contents += list(/obj/item/reagent_containers/hypospray/medipen/survival = pickweight(list(1 = 3, 2 = 2, 3 = 1)))
 				if(prob(30))
 					backpack_contents += /obj/item/gun/energy/kinetic_accelerator/old
 			else
@@ -412,9 +412,9 @@
 			if(prob(30))
 				belt = /obj/item/storage/belt/mining/alt
 			if(prob(30))
-				r_pocket = pickweight(list(/obj/item/stack/marker_beacon = 20, /obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/damage = 1 ))
+				r_pocket = pickweight(list(/obj/item/stack/marker_beacon = 20, /obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/damage = 1))
 			if(prob(30))
-				l_pocket = pickweight(list(/obj/item/stack/spacecash/c1000 = 5, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/cooldown = 1 ))
+				l_pocket = pickweight(list(/obj/item/stack/spacecash/c1000 = 5, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/cooldown = 1))
 		if("Ashwalker")
 			mob_species = /datum/species/lizard/ashwalker
 			uniform = /obj/item/clothing/under/costume/gladiator/ash_walker
@@ -495,9 +495,9 @@
 			if(prob(70))
 				backpack_contents += pick(list(/obj/item/stamp/clown = 1, /obj/item/reagent_containers/spray/waterflower = 1, /obj/item/reagent_containers/food/snacks/grown/banana = 1, /obj/item/megaphone/clown = 1, /obj/item/reagent_containers/food/drinks/soda_cans/canned_laughter = 1, /obj/item/pneumatic_cannon/pie = 1))
 			if(prob(30))
-				backpack_contents += list(/obj/item/stack/sheet/mineral/bananium = pickweight(list( 1 = 3, 2 = 2, 3 = 1)))
+				backpack_contents += list(/obj/item/stack/sheet/mineral/bananium = pickweight(list(1 = 3, 2 = 2, 3 = 1)))
 			if(prob(10))
-				l_pocket = pickweight(list(/obj/item/bikehorn/golden = 3, /obj/item/bikehorn/airhorn= 1 ))
+				l_pocket = pickweight(list(/obj/item/bikehorn/golden = 3, /obj/item/bikehorn/airhorn= 1))
 			if(prob(10))
 				r_pocket = /obj/item/implanter/sad_trombone
 		if("Golem")

@@ -133,11 +133,11 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 				if(C1.loc == C2.loc)
 					output += "<li>Overlapping cameras at [ADMIN_VERBOSEJMP(C1)] Networks: [json_encode(C1.network)] and [json_encode(C2.network)]</li>"
 		var/turf/T = get_step(C1,turn(C1.dir,180))
-		if(!T || !isturf(T) || !T.density )
+		if(!T || !isturf(T) || !T.density)
 			if(!(locate(/obj/structure/grille) in T))
 				var/window_check = 0
 				for(var/obj/structure/window/W in T)
-					if (W.dir == turn(C1.dir,180) || (W.dir in list(NORTHEAST,SOUTHEAST,NORTHWEST,SOUTHWEST)) )
+					if (W.dir == turn(C1.dir,180) || (W.dir in list(NORTHEAST,SOUTHEAST,NORTHWEST,SOUTHWEST)))
 						window_check = 1
 						break
 				if(!window_check)

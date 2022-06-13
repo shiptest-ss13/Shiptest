@@ -138,7 +138,7 @@
 	var/threatcount = 0
 
 	//Securitrons can't identify monkeys
-	if( !(judgment_criteria & JUDGE_IGNOREMONKEYS) && (judgment_criteria & JUDGE_IDCHECK) )
+	if(!(judgment_criteria & JUDGE_IGNOREMONKEYS) && (judgment_criteria & JUDGE_IDCHECK))
 		threatcount += 4
 
 	//Lasertag bullshit
@@ -154,7 +154,7 @@
 		return threatcount
 
 	//Check for weapons
-	if( (judgment_criteria & JUDGE_WEAPONCHECK) && weaponcheck )
+	if((judgment_criteria & JUDGE_WEAPONCHECK) && weaponcheck)
 		for(var/obj/item/I in held_items) //if they're holding a gun
 			if(weaponcheck.Invoke(I))
 				threatcount += 4

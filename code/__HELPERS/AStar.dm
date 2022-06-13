@@ -104,7 +104,7 @@ Actual Adjacent procs :
 	if(!start || !end)
 		stack_trace("Invalid A* start or destination")
 		return FALSE
-	if( start.virtual_z() != end.virtual_z() || start == end ) //no pathfinding between z levels
+	if(start.virtual_z() != end.virtual_z() || start == end) //no pathfinding between z levels
 		return FALSE
 	if(maxnodes)
 		//if start turf is farther than maxnodes from end turf, no need to do anything
@@ -149,7 +149,7 @@ Actual Adjacent procs :
 						if(CN)
 						//is already in open list, check if it's a better way from the current turf
 							CN.bf &= 15^r //we have no closed, so just cut off exceed dir.00001111 ^ reverse_dir.We don't need to expand to checked turf.
-							if((newg < CN.g) )
+							if((newg < CN.g))
 								if(call(cur.source,adjacent)(caller, T, id, simulated_only))
 									CN.setp(cur,newg,CN.h,cur.nt+1)
 									open.ReSort(CN)//reorder the changed element in the list

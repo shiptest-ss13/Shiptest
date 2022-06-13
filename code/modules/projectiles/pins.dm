@@ -219,7 +219,7 @@
 
 /obj/item/firing_pin/paywall/attack_self(mob/user)
 	multi_payment = !multi_payment
-	to_chat(user, "<span class='notice'>You set the pin to [( multi_payment ) ? "process payment for every shot" : "one-time license payment"].</span>")
+	to_chat(user, "<span class='notice'>You set the pin to [(multi_payment) ? "process payment for every shot" : "one-time license payment"].</span>")
 
 /obj/item/firing_pin/paywall/examine(mob/user)
 	. = ..()
@@ -234,9 +234,9 @@
 	forceMove(gun)
 	gun.pin = src
 	if(multi_payment)
-		gun.desc += "<span class='notice'> This [gun.name] has a per-shot cost of [payment_amount] credit[( payment_amount > 1 ) ? "s" : ""].</span>"
+		gun.desc += "<span class='notice'> This [gun.name] has a per-shot cost of [payment_amount] credit[(payment_amount > 1) ? "s" : ""].</span>"
 		return
-	gun.desc += "<span class='notice'> This [gun.name] has a license permit cost of [payment_amount] credit[( payment_amount > 1 ) ? "s" : ""].</span>"
+	gun.desc += "<span class='notice'> This [gun.name] has a license permit cost of [payment_amount] credit[(payment_amount > 1) ? "s" : ""].</span>"
 	return
 
 
@@ -288,7 +288,7 @@
 				return FALSE
 			return TRUE
 		if(credit_card_details && !active_prompt)
-			var/license_request = alert(usr, "Do you wish to pay [payment_amount] credit[( payment_amount > 1 ) ? "s" : ""] for [( multi_payment ) ? "each shot of [gun.name]" : "usage license of [gun.name]"]?", "Weapon Purchase", "Yes", "No")
+			var/license_request = alert(usr, "Do you wish to pay [payment_amount] credit[(payment_amount > 1) ? "s" : ""] for [(multi_payment) ? "each shot of [gun.name]" : "usage license of [gun.name]"]?", "Weapon Purchase", "Yes", "No")
 			active_prompt = TRUE
 			if(!user.canUseTopic(src, BE_CLOSE))
 				active_prompt = FALSE

@@ -98,7 +98,7 @@
 		var/obj/item/computer_hardware/hard_drive/hard_drive = all_components[MC_HDD]
 		robotact = hard_drive.find_file_by_name("robotact")
 		if(!robotact)
-			stack_trace("Cyborg [borgo] ( [borgo.type] ) was somehow missing their self-manage app in their tablet. A new copy has been created.")
+			stack_trace("Cyborg [borgo] ([borgo.type]) was somehow missing their self-manage app in their tablet. A new copy has been created.")
 			robotact = new(hard_drive)
 			if(!hard_drive.store_file(robotact))
 				qdel(robotact)

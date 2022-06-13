@@ -121,7 +121,7 @@
 /obj/item/sbeacondrop/attack_self(mob/user)
 	if(user)
 		to_chat(user, "<span class='notice'>Locked In.</span>")
-		new droptype( user.loc )
+		new droptype(user.loc)
 		playsound(src, 'sound/effects/pop.ogg', 100, TRUE, TRUE)
 		qdel(src)
 	return

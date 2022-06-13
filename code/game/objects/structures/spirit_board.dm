@@ -50,7 +50,7 @@
 	if(M.ckey == lastuser)
 		bonus = 10 //Give some other people a chance, hog.
 
-	if(next_use - bonus > world.time )
+	if(next_use - bonus > world.time)
 		return FALSE //No feedback here, hiding the cooldown a little makes it harder to tell who's really picking letters.
 
 	//lighting check

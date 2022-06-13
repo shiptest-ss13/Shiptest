@@ -46,7 +46,7 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 
 	// Loop through all linked machines and send the signal or copy.
 	for(var/obj/machinery/telecomms/machine in links)
-		if(filter && !istype( machine, filter ))
+		if(filter && !istype(machine, filter))
 			continue
 		if(!machine.on)
 			continue

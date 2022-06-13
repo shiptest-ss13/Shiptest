@@ -33,7 +33,7 @@
 			else if(I.tool_behaviour == TOOL_CROWBAR && !anchored)
 				I.play_tool_sound(src, 75)
 				to_chat(user, "<span class='notice'>You dismantle the turret construction.</span>")
-				new /obj/item/stack/sheet/metal( loc, 5)
+				new /obj/item/stack/sheet/metal(loc, 5)
 				qdel(src)
 				return
 

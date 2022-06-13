@@ -115,7 +115,7 @@ GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants an
 		"<span class='notice'>You lean on the back of [src] and start pushing the tray open... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
 		"<span class='hear'>You hear a metallic creaking from [src].</span>")
 	if(do_after(user,(breakout_time), target = src))
-		if(!user || user.stat != CONSCIOUS || user.loc != src )
+		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return
 		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
 			"<span class='notice'>You successfully break out of [src]!</span>")

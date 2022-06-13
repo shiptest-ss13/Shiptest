@@ -436,7 +436,7 @@
 	TRAY_NAME_UPDATE
 
 /obj/machinery/hydroponics/proc/mutateweed() // If the weeds gets the mutagent instead. Mind you, this pretty much destroys the old plant
-	if( weedlevel > 5 )
+	if(weedlevel > 5)
 		if(myseed)
 			qdel(myseed)
 			myseed = null
@@ -534,7 +534,7 @@
 		yieldmod = 1.3
 		mutmod = 0
 		mutate_yield = 0
-		adjustNutri(round(S.get_reagent_amount(/datum/reagent/plantnutriment/robustharvestnutriment) *1 ))
+		adjustNutri(round(S.get_reagent_amount(/datum/reagent/plantnutriment/robustharvestnutriment) *1))
 
 	// Ambrosia Gaia produces earthsblood.
 	if(S.has_reagent(/datum/reagent/medicine/earthsblood))
@@ -720,7 +720,7 @@
 
 /obj/machinery/hydroponics/attackby(obj/item/O, mob/user, params)
 	//Called when mob user "attacks" it with object O
-	if(istype(O, /obj/item/reagent_containers) )  // Syringe stuff (and other reagent containers now too)
+	if(istype(O, /obj/item/reagent_containers))  // Syringe stuff (and other reagent containers now too)
 		var/obj/item/reagent_containers/reagent_source = O
 
 		if(istype(reagent_source, /obj/item/reagent_containers/syringe))

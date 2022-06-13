@@ -108,7 +108,7 @@
 
 			if(tool.tool_behaviour == required_tool_type)
 				// Cancel the surgery if a cautery is used AND it's not the tool used in the next step.
-				attempt_cancel_surgery( src, tool, target, user )
+				attempt_cancel_surgery(src, tool, target, user)
 				return TRUE
 			to_chat(user, "<span class='warning'>This step requires a different tool!</span>")
 			return TRUE

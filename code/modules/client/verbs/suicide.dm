@@ -71,7 +71,7 @@
 					return
 
 				//If something went wrong, just do normal oxyloss
-				if(!(damagetype & (BRUTELOSS | FIRELOSS | TOXLOSS | OXYLOSS) ))
+				if(!(damagetype & (BRUTELOSS | FIRELOSS | TOXLOSS | OXYLOSS)))
 					adjustOxyLoss(max(200 - getToxLoss() - getFireLoss() - getBruteLoss() - getOxyLoss(), 0))
 
 				death(FALSE)
