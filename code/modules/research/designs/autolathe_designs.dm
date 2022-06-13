@@ -1165,3 +1165,11 @@
 	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
 	build_path = /obj/item/assembly/control
 	category = list("initial","Misc")
+
+/datum/design/trashbag
+	name="Trash Bag"
+	id="trashbag"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/plastic = 5000)
+	build_path = /obj/item/storage/bag/trash
+	category = list("initial","Tools","Tool Designs","Misc")
