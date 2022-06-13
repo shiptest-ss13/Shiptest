@@ -1,7 +1,15 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
-/turf/template_noop,
-/area/template_noop)
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/atmospherics/components/unary/tank/toxins{
+	dir = 8
+	},
+/obj/structure/cable,
+/turf/open/floor/grass,
+/area/ship/crew/hydroponics)
 "ac" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -361,6 +369,10 @@
 /turf/open/floor/pod,
 /area/ship/crew/hydroponics)
 "oh" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/light{
+	dir = 1
+	},
 /obj/item/clothing/suit/hooded/explorer/old,
 /obj/item/gps/mining,
 /obj/item/clothing/gloves/explorer/old,
@@ -387,18 +399,18 @@
 /turf/open/floor/pod,
 /area/ship/cargo)
 "oM" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/item/clothing/suit/hooded/explorer/old,
+/obj/item/gps/mining,
+/obj/item/clothing/gloves/explorer/old,
+/obj/item/clothing/mask/gas/explorer/old,
+/obj/item/pickaxe/silver,
+/obj/structure/closet/toolcloset/empty{
+	name = "mining gear closet";
+	anchored = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/obj/structure/transit_tube{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/hallway/central)
+/obj/item/mining_scanner,
+/turf/open/floor/pod,
+/area/ship/cargo)
 "oO" = (
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/ship/bridge)
@@ -440,15 +452,17 @@
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "pN" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/structure/window/reinforced/survival_pod/spawner/west,
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/donk,
-/area/ship/crew/dorm)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "qb" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/pod,
@@ -495,9 +509,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/structure/transit_tube/station/dispenser/flipped{
-	dir = 1
-	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "tf" = (
@@ -514,18 +525,15 @@
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "uc" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/obj/structure/transit_tube{
+/obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
 	},
-/turf/open/floor/plating,
-/area/ship/hallway/central)
+/obj/structure/window/reinforced/survival_pod/spawner/west,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/carpet/donk,
+/area/ship/crew/dorm)
 "uj" = (
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
@@ -541,33 +549,29 @@
 /turf/open/floor/pod,
 /area/ship/cargo)
 "uJ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/beige/half{
-	color = "#ba774c"
-	},
-/obj/effect/turf_decal/corner/beige/half{
-	color = "#ba774c";
+/obj/machinery/door/window/survival_pod{
 	dir = 8
 	},
-/obj/effect/turf_decal/spline/fancy/lightgrey{
-	dir = 10
+/obj/machinery/door/window/survival_pod{
+	dir = 4
 	},
-/mob/living/simple_animal/hostile/swarmer/ai{
-	faction = list("neutral");
-	name = "Wheatley";
-	desc = "A heavily modified Swarmer which is completely safe. Should have a cap on, but doesn't. Sad.";
-	loot = list(/obj/effect/decal/cleanable/robot_debris);
-	response_help_continuous = "pets";
-	response_help_simple = "pet";
-	verb_ask = "queries";
-	verb_exclaim = "declares";
-	verb_say = "states";
-	verb_yell = "alarms"
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/pod,
-/area/ship/cargo)
+/area/ship/hallway/central)
 "uQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -587,16 +591,29 @@
 /turf/open/floor/grass,
 /area/ship/hallway/central)
 "uV" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/machinery/power/apc/auto_name/south,
-/obj/machinery/atmospherics/components/unary/tank/toxins{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
-/obj/structure/cable,
-/turf/open/floor/grass,
-/area/ship/crew/hydroponics)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 8
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 4
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "vD" = (
 /obj/item/gun/energy/kinetic_accelerator/old,
 /obj/structure/closet/crate{
@@ -634,20 +651,33 @@
 /turf/open/floor/pod,
 /area/ship/cargo)
 "wN" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/structure/transit_tube{
-	dir = 4
+/obj/effect/turf_decal/corner/beige/half{
+	color = "#ba774c"
 	},
-/turf/open/floor/plating,
-/area/ship/hallway/central)
+/obj/effect/turf_decal/corner/beige/half{
+	color = "#ba774c";
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/lightgrey{
+	dir = 10
+	},
+/mob/living/simple_animal/hostile/swarmer/ai{
+	faction = list("neutral");
+	name = "Wheatley";
+	desc = "A heavily modified Swarmer which is completely safe. Should have a cap on, but doesn't. Sad.";
+	loot = list(/obj/effect/decal/cleanable/robot_debris);
+	response_help_continuous = "pets";
+	response_help_simple = "pet";
+	verb_ask = "queries";
+	verb_exclaim = "declares";
+	verb_say = "states";
+	verb_yell = "alarms"
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "wW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber,
 /turf/open/floor/plating,
@@ -671,17 +701,14 @@
 /area/ship/hallway/central)
 "xx" = (
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "4-8"
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 1
 	},
-/obj/structure/window/reinforced/survival_pod/spawner/west,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/carpet/donk,
-/area/ship/crew/dorm)
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "xO" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
 	dir = 1
@@ -732,32 +759,25 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/structure/transit_tube{
-	dir = 4
-	},
-/turf/open/floor/pod,
-/area/ship/cargo)
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "AQ" = (
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "0-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/obj/structure/transit_tube{
+/obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
 	},
-/turf/open/floor/pod,
-/area/ship/hallway/central)
+/obj/structure/window/reinforced/survival_pod/spawner/west,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/carpet/donk,
+/area/ship/crew/dorm)
 "Bi" = (
 /obj/docking_port/mobile{
 	dir = 2
@@ -1007,18 +1027,8 @@
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "Ku" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/obj/structure/transit_tube/station/dispenser,
-/turf/open/floor/pod,
-/area/ship/hallway/central)
+/turf/template_noop,
+/area/template_noop)
 "KX" = (
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/electrical,
@@ -1080,11 +1090,6 @@
 	},
 /turf/open/floor/pod,
 /area/ship/crew/hydroponics)
-"Nd" = (
-/obj/machinery/door/airlock/external,
-/obj/structure/fans/tiny,
-/turf/open/floor/pod,
-/area/ship/crew/dorm)
 "Ne" = (
 /obj/structure/window/reinforced/survival_pod/spawner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -1144,11 +1149,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/structure/transit_tube{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -1179,22 +1181,10 @@
 /turf/open/floor/pod,
 /area/ship/bridge)
 "SZ" = (
-/obj/machinery/airalarm/directional/north,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/item/clothing/suit/hooded/explorer/old,
-/obj/item/gps/mining,
-/obj/item/clothing/gloves/explorer/old,
-/obj/item/clothing/mask/gas/explorer/old,
-/obj/item/pickaxe/silver,
-/obj/structure/closet/toolcloset/empty{
-	name = "mining gear closet";
-	anchored = 1
-	},
-/obj/item/mining_scanner,
+/obj/machinery/door/airlock/external,
+/obj/structure/fans/tiny,
 /turf/open/floor/pod,
-/area/ship/cargo)
+/area/ship/crew/dorm)
 "Te" = (
 /obj/effect/turf_decal/corner/beige/bordercorner{
 	color = "#ba774c"
@@ -1441,31 +1431,31 @@
 /area/ship/bridge)
 
 (1,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 IP
 IP
 IP
-ab
+Ku
 IP
 IP
 IP
-ab
+Ku
 IP
 IP
 IP
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (2,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 IP
 lh
 IP
@@ -1477,16 +1467,16 @@ IP
 IP
 vD
 IP
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (3,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 UR
 jV
 uv
@@ -1498,16 +1488,16 @@ uv
 uv
 uv
 WE
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (4,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 UR
 WP
 uv
@@ -1519,16 +1509,16 @@ uv
 uv
 uv
 WE
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (5,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 UR
 WP
 uv
@@ -1540,16 +1530,16 @@ uv
 uv
 uv
 WE
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (6,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 IP
 Xe
 uv
@@ -1561,16 +1551,16 @@ uv
 uv
 UI
 IP
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (7,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 tf
 uv
 uv
@@ -1582,37 +1572,37 @@ Lr
 uv
 uv
 Bi
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (8,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 tf
 uv
 uv
 kg
 Ej
-uJ
+wN
 hj
 XJ
 uv
 uv
 tf
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (9,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 tf
 uv
 uv
@@ -1624,16 +1614,16 @@ XJ
 uv
 uv
 tf
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (10,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 tf
 uv
 GX
@@ -1645,18 +1635,18 @@ XJ
 uv
 uv
 tf
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (11,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 IP
-SZ
+oh
 uv
 Cq
 ed
@@ -1666,18 +1656,18 @@ yd
 NN
 Ts
 IP
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (12,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 Vz
-oh
+oM
 uv
 uv
 kb
@@ -1687,18 +1677,18 @@ uv
 uv
 uv
 Vz
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (13,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 Vz
-oh
+oM
 uv
 uv
 kb
@@ -1708,16 +1698,16 @@ uv
 uv
 XY
 Vz
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (14,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 Vz
 MA
 KX
@@ -1729,16 +1719,16 @@ uv
 uv
 YZ
 Vz
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (15,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 IP
 IP
 IP
@@ -1750,217 +1740,217 @@ IP
 IP
 IP
 IP
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (16,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 IP
 IP
-ab
+Ku
 IP
 IP
-AE
+uV
 IP
 IP
-ab
+Ku
 IP
 IP
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (17,1,1) = {"
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 GH
-QC
+pN
 qR
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 "}
 (18,1,1) = {"
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 GH
-wN
+QC
 Qx
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 "}
 (19,1,1) = {"
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 GH
-wN
+QC
 Qx
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 "}
 (20,1,1) = {"
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 xk
-uc
+AE
 Qx
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 "}
 (21,1,1) = {"
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 wW
 NK
-oM
+xx
 Ne
 xO
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 "}
 (22,1,1) = {"
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 mP
 mP
-AQ
+uJ
 mP
 mP
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 "}
 (23,1,1) = {"
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-mP
-JF
 Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+mP
+JF
+eF
 JF
 mP
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 "}
 (24,1,1) = {"
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 mP
 JB
 eF
 JB
 mP
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
+Ku
 "}
 (25,1,1) = {"
 nk
 oV
 nk
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 mP
 JB
 eF
 JB
 mP
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 lN
 kd
 lN
@@ -1990,8 +1980,8 @@ lN
 nk
 Ir
 CE
-xx
-pN
+AQ
+uc
 nk
 mP
 mP
@@ -2046,7 +2036,7 @@ BA
 Ip
 Yb
 Jt
-uV
+ab
 lN
 "}
 (30,1,1) = {"
@@ -2115,7 +2105,7 @@ lN
 (33,1,1) = {"
 nk
 nk
-Nd
+SZ
 nk
 nk
 oO
@@ -2134,9 +2124,9 @@ lN
 lN
 "}
 (34,1,1) = {"
-ab
-ab
-ab
+Ku
+Ku
+Ku
 oO
 oO
 oO
@@ -2150,15 +2140,15 @@ bS
 oO
 oO
 oO
-ab
-ab
-ab
+Ku
+Ku
+Ku
 "}
 (35,1,1) = {"
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 oO
 oO
 Ze
@@ -2170,17 +2160,17 @@ GG
 GG
 oO
 oO
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
 "}
 (36,1,1) = {"
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
 oO
 cY
 GG
@@ -2190,18 +2180,18 @@ CG
 Sw
 iH
 oO
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
 "}
 (37,1,1) = {"
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
 oO
 oO
 Hs
@@ -2211,9 +2201,9 @@ Hs
 Hs
 Hs
 oO
-ab
-ab
-ab
-ab
-ab
+Ku
+Ku
+Ku
+Ku
+Ku
 "}
