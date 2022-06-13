@@ -40,6 +40,6 @@ standards:
   - exactly: [0, 'incorrect indentations', '^(?:  +)(?!\*)']
   - exactly: [0, 'superflous whitespace', '[ \t]+$']
   - exactly: [28, 'mixed indentation', '^( +\t+|\t+ +)']
-  - exactly: [0, 'padding inside parentheses', '\(([\t ]+([^)"\n\\]*)|([^("\n]+)[\t ]+)\)']
+  - exactly: [22, 'padding inside parentheses', '\(([\t ]+([^)"\n\\]*)|([^("\n]+)[\t ]+)\)']
 
   - no_more: [0, 'indentions inside defines', '^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))']
