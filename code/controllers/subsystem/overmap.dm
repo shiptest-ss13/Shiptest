@@ -207,6 +207,7 @@ SUBSYSTEM_DEF(overmap)
 	var/datum/map_generator/mapgen
 	var/area/target_area
 	var/turf/surface = /turf/open/space
+	var/datum/weather_controller/weather_controller_type
 	if(planet_type)
 		switch(planet_type)
 			if(DYNAMIC_WORLD_LAVA)
@@ -214,21 +215,25 @@ SUBSYSTEM_DEF(overmap)
 				mapgen = new /datum/map_generator/cave_generator/lavaland
 				target_area = /area/overmap_encounter/planetoid/lava
 				surface = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
+				weather_controller_type = /datum/weather_controller/lavaland
 			if(DYNAMIC_WORLD_ICE)
 				ruin_list = SSmapping.ice_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/icemoon
 				target_area = /area/overmap_encounter/planetoid/ice
 				surface = /turf/open/floor/plating/asteroid/snow/icemoon
+				weather_controller_type = /datum/weather_controller/snow_planet
 			if(DYNAMIC_WORLD_SAND)
 				ruin_list = SSmapping.sand_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/whitesands
 				target_area = /area/overmap_encounter/planetoid/sand
 				surface = /turf/open/floor/plating/asteroid/whitesands
+				weather_controller_type = /datum/weather_controller/desert
 			if(DYNAMIC_WORLD_JUNGLE)
 				ruin_list = SSmapping.jungle_ruins_templates
 				mapgen = new /datum/map_generator/jungle_generator
 				target_area = /area/overmap_encounter/planetoid/jungle
 				surface = /turf/open/floor/plating/dirt/jungle
+				weather_controller_type = /datum/weather_controller/lush
 			if(DYNAMIC_WORLD_ASTEROID)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
@@ -237,6 +242,7 @@ SUBSYSTEM_DEF(overmap)
 				mapgen = new /datum/map_generator/cave_generator/rockplanet
 				target_area = /area/overmap_encounter/planetoid/rockplanet
 				surface = /turf/open/floor/plating/asteroid
+				weather_controller_type = /datum/weather_controller/chlorine //let's go??
 			if(DYNAMIC_WORLD_REEBE)
 				ruin_list = SSmapping.yellow_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/reebe
@@ -276,6 +282,9 @@ SUBSYSTEM_DEF(overmap)
 		log_shuttle("SSOVERMAP: START_DYN_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
 		mapgen.generate_terrain(vlevel.get_unreserved_block())
 		log_shuttle("SSOVERMAP: START_DYN_E: MAPGEN REF [REF(mapgen)] RETURNED FOR VLEV [vlevel.id] OF TYPE [mapgen.type]. IT MAY NOT BE FINISHED YET.")
+
+	if(weather_controller_type)
+		new weather_controller_type(mapzone)
 
 	// locates the first dock in the bottom left, accounting for padding and the border
 	var/turf/primary_docking_turf = locate(

@@ -218,8 +218,36 @@
 
 /obj/item/clothing/accessory/medal/gold/captain
 	name = "medal of captaincy"
-	desc = "A golden medal awarded exclusively to those promoted to the rank of captain. It signifies the codified responsibilities of a captain to Nanotrasen, and their undisputable authority over their crew."
+	desc = "A golden medal awarded exclusively to those promoted to the rank of captain. It signifies the codified responsibilities of a captain to their ship, and their undisputable authority over their crew."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	var/obj/item/key/ship/shipkey
+
+/obj/item/clothing/accessory/medal/gold/captain/attackby(obj/item/key/ship/shipkey, mob/user, params)
+	if(!istype(shipkey))
+		return ..()
+
+	if(!QDELETED(src.shipkey))
+		to_chat(user, "<span class='notice'>[src] already contains [src.shipkey].</span>")
+		return TRUE
+
+	src.shipkey = shipkey
+	shipkey.forceMove(src)
+	to_chat(user, "<span class='notice'>You slot [shipkey] into [src].</span>")
+
+/obj/item/clothing/accessory/medal/gold/captain/AltClick(mob/user)
+	if(!shipkey || !Adjacent(user) || !isliving(user))
+		return ..()
+	shipkey.forceMove(get_turf(src))
+	user.put_in_hands(shipkey)
+	to_chat(user, "<span class='notice'>You remove [shipkey] from [src].</span>")
+	shipkey = null
+
+/obj/item/clothing/accessory/medal/gold/captain/examine(mob/user)
+	. = ..()
+	if(shipkey)
+		. += "[shipkey] could be removed by Alt Clicking."
+	else
+		. += "It has space for a ship key."
 
 /obj/item/clothing/accessory/medal/gold/heroism
 	name = "medal of exceptional heroism"

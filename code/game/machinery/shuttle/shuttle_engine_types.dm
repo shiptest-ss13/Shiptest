@@ -117,6 +117,12 @@
 	///Amount, in kilojoules, needed for a full burn.
 	var/power_per_burn = 50000
 
+/obj/machinery/power/shuttle/engine/electric/premium
+	name = "high performance ion thruster"
+	desc = "An expensive variant of a standard ion thruster, using highest quality components in order to achieve much better performance."
+	thrust = 30
+	power_per_burn = 65000
+
 /obj/machinery/power/smes/shuttle
 	name = "electric engine precharger"
 	desc = "A medium-capacity, high transfer superconducting magnetic energy storage unit specially made for use with shuttle engines."
