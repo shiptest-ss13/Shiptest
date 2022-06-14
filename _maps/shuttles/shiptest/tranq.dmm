@@ -534,7 +534,8 @@
 	dir = 1
 	},
 /obj/machinery/door/window/eastright{
-	dir = 8
+	dir = 8;
+	req_access_txt = "12"
 	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
@@ -2009,6 +2010,8 @@
 /obj/item/clothing/suit/radiation,
 /obj/item/clothing/head/radiation,
 /obj/item/geiger_counter,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass/twenty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "qa" = (
@@ -3838,7 +3841,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/door/window/eastleft,
+/obj/machinery/door/window/eastleft{
+	req_access_txt = "12"
+	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "DS" = (
