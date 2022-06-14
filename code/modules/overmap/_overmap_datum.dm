@@ -108,10 +108,9 @@
 	var/old_y = y
 	x = new_x
 	y = new_y
-	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVED, old_x, old_y, x, y)
-
 	// Updates the token with the new position.
 	token.abstract_move(OVERMAP_TOKEN_TURF(x, y))
+	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVED, old_x, old_y)
 	return TRUE
 
 /**

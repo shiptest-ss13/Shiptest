@@ -34,7 +34,7 @@
 
 	source_outpost = _outpost
 	RegisterSignal(source_outpost, COMSIG_PARENT_QDELETING, .proc/on_vital_delete)
-	. = ..()
+	return ..()
 
 /datum/mission/proc/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	accepted = TRUE
@@ -43,13 +43,11 @@
 	LAZYADD(servant.missions, src)
 	RegisterSignal(servant, COMSIG_PARENT_QDELETING, .proc/on_vital_delete)
 	dur_timer = addtimer(VARSET_CALLBACK(src, failed, TRUE), duration, TIMER_STOPPABLE)
-	return
 
 /datum/mission/proc/on_vital_delete()
 	qdel(src)
 
 /datum/mission/Destroy()
-	. = ..()
 	deltimer(dur_timer)
 	LAZYREMOVE(source_outpost.missions, src)
 	source_outpost = null
@@ -58,16 +56,14 @@
 		servant = null
 	for(var/bound in bound_atoms)
 		remove_bound(bound)
-
+	return ..()
 
 /datum/mission/proc/turn_in()
 	servant.ship_account.adjust_money(value)
 	qdel(src)
-	return
 
 /datum/mission/proc/give_up()
 	qdel(src)
-	return
 
 /datum/mission/proc/can_complete()
 	return !failed
@@ -136,7 +132,7 @@
 	if(!weighted_missions)
 		weighted_missions = list()
 		var/list/mission_types = subtypesof(/datum/mission)
-		for(var/datum/mission/M as anything in mission_types)
-			if(initial(M.weight) > 0)
-				weighted_missions[M] = initial(M.weight)
+		for(var/datum/mission/mis_type as anything in mission_types)
+			if(initial(mis_type.weight) > 0)
+				weighted_missions[mis_type] = initial(mis_type.weight)
 	return pickweight_float(weighted_missions)

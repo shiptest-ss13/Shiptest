@@ -15,17 +15,16 @@
 /datum/mission/research/New(...)
 	num_wanted = rand(num_wanted - 1, num_wanted + 1)
 	value += num_wanted * 50
-	. = ..()
+	return ..()
 
 /datum/mission/research/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
 	scanner = spawn_bound(/obj/machinery/mission_scanner, accept_loc, VARSET_CALLBACK(src, scanner, null))
 	RegisterSignal(servant, COMSIG_OVERMAP_MOVED, .proc/ship_moved)
-	return
 
 /datum/mission/research/Destroy()
-	. = ..()
 	scanner = null
+	return ..()
 
 /datum/mission/research/turn_in()
 	recall_bound(scanner)
@@ -45,19 +44,18 @@
 	var/obj/docking_port/mobile/scanner_port = SSshuttle.get_containing_shuttle(scanner)
 	return . && (num_current >= num_wanted) && (scanner_port?.current_ship == servant)
 
-/datum/mission/research/proc/ship_moved(datum/overmap/ship/controlled/S, old_x, old_y, new_x, new_y)
+/datum/mission/research/proc/ship_moved(datum/overmap/ship/controlled/ship, old_x, old_y)
 	SIGNAL_HANDLER
 
 	var/datum/overmap/over_obj
 	var/obj/docking_port/mobile/scanner_port
 	if(failed || (num_current >= num_wanted))
 		return
-	over_obj = locate(objective_type) in SSovermap.overmap_container[new_x][new_y]
+	over_obj = locate(objective_type) in SSovermap.overmap_container[ship.x][ship.y]
 	scanner_port = SSshuttle.get_containing_shuttle(scanner)
 	if(!over_obj || !scanner.is_operational() || scanner_port?.current_ship != servant)
 		return
 	num_current++
-	return
 
 /datum/mission/research/ion
 	name = "Ion storm research mission"
@@ -95,8 +93,8 @@
 	return ..() && anchored
 
 /obj/machinery/mission_scanner/wrench_act(mob/living/user, obj/item/I)
-	..()
-	if(default_unfasten_wrench(user, I))
+	. = ..()
+	if(!. && default_unfasten_wrench(user, I))
 		return TRUE
 
 /obj/machinery/mission_scanner/set_anchored(anchorvalue)

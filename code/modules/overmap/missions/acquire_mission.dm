@@ -16,8 +16,8 @@
 	container = spawn_bound(container_type, accept_loc, VARSET_CALLBACK(src, container, null))
 
 /datum/mission/acquire/Destroy()
-	. = ..()
 	container = null
+	return ..()
 
 /datum/mission/acquire/can_complete()
 	. = ..()
@@ -41,29 +41,28 @@
 	if(!container)
 		return 0
 	var/num = 0
-	for(var/A in container.contents)
-		num += atom_effective_count(A)
+	for(var/target in container.contents)
+		num += atom_effective_count(target)
 		if(num >= num_wanted)
 			return num
 	return num
 
-/datum/mission/acquire/proc/atom_effective_count(atom/movable/A)
-	if(allow_subtypes ? !istype(A, objective_type) : A.type != objective_type)
+/datum/mission/acquire/proc/atom_effective_count(atom/movable/target)
+	if(allow_subtypes ? !istype(target, objective_type) : target.type != objective_type)
 		return 0
-	if(count_stacks && istype(A, /obj/item/stack))
-		var/obj/item/stack/S = A
-		return S.amount
+	if(count_stacks && istype(target, /obj/item/stack))
+		var/obj/item/stack/target_stack = target
+		return target_stack.amount
 	return 1
 
 /datum/mission/acquire/proc/del_container()
 	var/turf/cont_loc = get_turf(container)
-	for(var/atom/movable/A in container.contents)
-		if(atom_effective_count(A))
-			qdel(A)
+	for(var/atom/movable/target in container.contents)
+		if(atom_effective_count(target))
+			qdel(target)
 		else
-			A.forceMove(cont_loc)
+			target.forceMove(cont_loc)
 	recall_bound(container)
-	return
 
 /*
 	Acquire: True Love
@@ -124,13 +123,13 @@
 	num_wanted = 1
 	count_stacks = FALSE
 
-/datum/mission/acquire/creature/atom_effective_count(atom/movable/A)
+/datum/mission/acquire/creature/atom_effective_count(atom/movable/target)
 	. = ..()
 	if(!.)
 		return
-	var/mob/M = A
-	if(M.stat == DEAD)
-		return FALSE
+	var/mob/creature = target
+	if(creature.stat == DEAD)
+		return 0
 
 /datum/mission/acquire/creature/legion
 	name = "Capture a legion"
