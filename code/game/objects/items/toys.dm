@@ -1407,6 +1407,15 @@
 	icon_state = "warden"
 	toysay = "Seventeen minutes for coughing at an officer!"
 
+/obj/item/toy/figure/inteq
+	name = "Enforcer action figure"
+	icon_state = "inteq"
+	toysay = "Fuck you, pay me."
+
+/obj/item/toy/figure/vanguard
+	name = "Vanguard action figure"
+	icon_state = "vanguard"
+	toysay = "I'm too old for this shit."
 
 /obj/item/toy/dummy
 	name = "ventriloquist dummy"

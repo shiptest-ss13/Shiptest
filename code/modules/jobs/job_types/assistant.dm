@@ -98,6 +98,11 @@ Assistant
 
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 
+/datum/outfit/job/assistant/inteq
+	name = "IRMG Recruit (Inteq)"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq
+
 /datum/outfit/job/assistant/intern
 	name = "Assistant (Intern)"
 	uniform = /obj/item/clothing/under/suit/black
