@@ -4,6 +4,7 @@
 	suit_type = /obj/item/clothing/suit/space/hardsuit/mining;
 	name = "Heavy-duty mining gear storage"
 	},
+/obj/effect/turf_decal/corner/bar/border,
 /turf/open/floor/pod,
 /area/ship/cargo)
 "ac" = (
@@ -21,6 +22,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 4
 	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
@@ -70,6 +74,12 @@
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
+"cP" = (
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 8
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "cY" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/storage/box/donkpockets,
@@ -84,6 +94,9 @@
 /obj/structure/window/reinforced/survival_pod/spawner/east,
 /obj/machinery/conveyor/auto{
 	dir = 1
+	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 8
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
@@ -123,6 +136,9 @@
 /obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 8
 	},
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 10
+	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "ey" = (
@@ -155,6 +171,9 @@
 /obj/machinery/conveyor/auto{
 	dir = 9
 	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 8
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "fz" = (
@@ -164,6 +183,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 1
 	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
@@ -178,6 +200,14 @@
 /obj/effect/turf_decal/spline/fancy/bottlegreen{
 	dir = 8
 	},
+/obj/effect/turf_decal/spline/fancy/corner/bottlegreen{
+	color = "#57967f";
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/corner/bottlegreen{
+	color = "#57967f";
+	dir = 4
+	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "ga" = (
@@ -188,8 +218,26 @@
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 10
 	},
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 5
+	},
 /turf/open/floor/pod,
 /area/ship/crew/hydroponics)
+"gl" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 8
+	},
+/turf/open/floor/pod,
+/area/ship/hallway/central)
 "gw" = (
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
@@ -210,6 +258,9 @@
 /obj/machinery/conveyor/auto{
 	dir = 5
 	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 8
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "ik" = (
@@ -220,6 +271,12 @@
 	reagent_id = /datum/reagent/plantnutriment/eznutriment;
 	name = "high-capacity nutrient tank";
 	desc = "A highly pressurized E-Z-Nutrient tank made to hold gargantuan amounts of E-Z-Nutrient."
+	},
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 1
 	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
@@ -236,6 +293,9 @@
 /obj/structure/closet/crate{
 	desc = "A rectangular steel crate. There's a note on it that says, 'The crusher's cursed, use this to upgrade it.'";
 	name = "Processor Upgrade Crate"
+	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 1
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
@@ -273,6 +333,9 @@
 	desc = "Some kind of machine. Looks old from a long time of no use.";
 	input_dir = 2
 	},
+/obj/effect/turf_decal/corner/bar/bordercee{
+	dir = 4
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "lt" = (
@@ -281,6 +344,9 @@
 	dir = 4
 	},
 /obj/machinery/autolathe,
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 5
+	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "lI" = (
@@ -301,10 +367,26 @@
 /obj/machinery/conveyor/auto{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/bar/bordercorner{
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
+"lJ" = (
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 6
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "lN" = (
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/area/ship/crew/hydroponics)
+"lT" = (
+/obj/machinery/hydroponics/constructable,
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 4
+	},
+/turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "lY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -323,6 +405,9 @@
 /obj/machinery/microwave,
 /obj/structure/table/wood/reinforced,
 /obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 1
+	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "mt" = (
@@ -340,6 +425,9 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 8
+	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "mP" = (
@@ -368,6 +456,9 @@
 /obj/machinery/button/door{
 	id = 6
 	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 4
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "oD" = (
@@ -395,6 +486,9 @@
 	},
 /obj/item/bedsheet/random,
 /obj/structure/bed,
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 5
+	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "oV" = (
@@ -424,6 +518,9 @@
 /obj/machinery/firealarm{
 	pixel_y = 26
 	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 1
+	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "pN" = (
@@ -431,22 +528,32 @@
 	dir = 4
 	},
 /obj/machinery/hydroponics/constructable,
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 4
+	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "qb" = (
 /obj/structure/tank_dispenser/oxygen,
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 1
+	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "qc" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/bar/border,
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "qM" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 4
 	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
@@ -460,6 +567,9 @@
 /area/ship/hallway/central)
 "sk" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 1
+	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "sz" = (
@@ -483,9 +593,25 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/pod,
 /area/ship/cargo)
+"tE" = (
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 4
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
+"tI" = (
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 8
+	},
+/turf/open/floor/carpet/donk,
+/area/ship/crew/dorm)
 "tW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/corner/brown{
+	color = "#997C4F";
+	dir = 8
 	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
@@ -500,6 +626,9 @@
 	anchored = 1
 	},
 /obj/item/mining_scanner,
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 1
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "uj" = (
@@ -510,6 +639,9 @@
 /obj/machinery/power/apc/auto_name/east,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 6
 	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
@@ -525,6 +657,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/turf_decal/spline/fancy/bottlegreen,
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "uQ" = (
@@ -543,6 +676,15 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 1
+	},
 /turf/open/floor/grass,
 /area/ship/hallway/central)
 "uV" = (
@@ -556,6 +698,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = 13
+	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "vD" = (
@@ -563,6 +708,9 @@
 /obj/structure/closet/crate{
 	name = "Prototype Mining Tool";
 	desc = "A rectangular steel crate containing a prototype mining tool."
+	},
+/obj/effect/turf_decal/corner/bar/bordercee{
+	dir = 4
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
@@ -577,6 +725,9 @@
 	icon_state = "0-8"
 	},
 /obj/structure/window/reinforced/survival_pod/spawner/west,
+/obj/machinery/door/poddoor/shutters{
+	id = 13
+	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "vK" = (
@@ -588,6 +739,12 @@
 	},
 /turf/open/floor/pod,
 /area/ship/bridge)
+"wk" = (
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 4
+	},
+/turf/open/floor/carpet/donk,
+/area/ship/crew/dorm)
 "wl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
@@ -600,6 +757,7 @@
 	suit_type = /obj/item/clothing/suit/space/hardsuit/mining;
 	name = "Heavy-duty mining gear storage"
 	},
+/obj/effect/turf_decal/corner/bar/border,
 /turf/open/floor/pod,
 /area/ship/cargo)
 "wW" = (
@@ -612,6 +770,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 1
 	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
@@ -682,6 +843,19 @@
 	},
 /turf/open/floor/pod,
 /area/ship/bridge)
+"yE" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/ship/hallway/central)
 "Af" = (
 /obj/item/hatchet,
 /obj/item/plant_analyzer,
@@ -693,6 +867,9 @@
 	dir = 1
 	},
 /obj/item/reagent_containers/glass/bucket,
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 4
+	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "Ak" = (
@@ -763,8 +940,20 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 8
+	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
+"CC" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/bar/bordercorner{
+	dir = 4
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "CE" = (
 /obj/effect/turf_decal/spline/fancy/corner/brown{
 	color = "#997C4F";
@@ -772,10 +961,19 @@
 	},
 /obj/item/bedsheet/random,
 /obj/structure/bed,
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 10
+	},
+/obj/machinery/button{
+	dir = 4;
+	id = 12;
+	pixel_x = -24
+	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "CG" = (
-/obj/machinery/computer/security{
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband{
 	dir = 8
 	},
 /turf/open/floor/pod,
@@ -784,6 +982,9 @@
 /obj/machinery/mineral/unloading_machine{
 	input_dir = 4;
 	output_dir = 8
+	},
+/obj/effect/turf_decal/corner/bar/bordercorner{
+	dir = 8
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
@@ -802,6 +1003,9 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = 13
+	},
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
 "Fh" = (
@@ -816,6 +1020,17 @@
 	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
+"Gp" = (
+/obj/effect/turf_decal/corner/bar/bordercorner,
+/turf/open/floor/pod,
+/area/ship/cargo)
+"GC" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 8
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "GG" = (
 /turf/open/floor/pod,
 /area/ship/bridge)
@@ -844,6 +1059,9 @@
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/mapping_helpers/airlock/abandoned,
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 1
+	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "GX" = (
@@ -865,6 +1083,13 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/brown,
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 4
 	},
 /turf/open/floor/carpet/donk,
 /area/ship/hallway/central)
@@ -896,6 +1121,9 @@
 "HZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
+	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 5
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
@@ -930,6 +1158,9 @@
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 9
+	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "IP" = (
@@ -946,17 +1177,26 @@
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "JB" = (
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 1
+	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "JD" = (
 /obj/machinery/cryopod{
 	dir = 1
 	},
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 10
+	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "JF" = (
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 10
 	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
@@ -968,8 +1208,22 @@
 	icon_state = "0-8"
 	},
 /obj/structure/window/reinforced/survival_pod/spawner/west,
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 9
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = 13
+	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
+"Kq" = (
+/obj/effect/turf_decal/spline/fancy/bottlegreen,
+/turf/open/floor/grass,
+/area/ship/crew/hydroponics)
+"Kr" = (
+/obj/effect/turf_decal/corner/bar/border,
+/turf/open/floor/pod,
+/area/ship/hallway/central)
 "Ku" = (
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/light{
@@ -985,6 +1239,9 @@
 	anchored = 1
 	},
 /obj/item/mining_scanner,
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 1
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "KX" = (
@@ -1023,6 +1280,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = 13
+	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "Lr" = (
@@ -1053,6 +1313,9 @@
 /area/ship/cargo)
 "MA" = (
 /obj/machinery/hydroponics/constructable,
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 6
+	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "MH" = (
@@ -1063,11 +1326,17 @@
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 5
 	},
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 9
+	},
 /turf/open/floor/pod,
 /area/ship/crew/hydroponics)
 "Nd" = (
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/hydroponics/constructable,
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 4
+	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "Ne" = (
@@ -1077,6 +1346,15 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
+/area/ship/hallway/central)
+"NB" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 9
+	},
+/turf/open/floor/pod,
 /area/ship/hallway/central)
 "NK" = (
 /obj/structure/window/reinforced/survival_pod/spawner/north,
@@ -1109,6 +1387,9 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = 13
+	},
 /turf/open/floor/pod,
 /area/ship/crew/hydroponics)
 "PY" = (
@@ -1138,11 +1419,17 @@
 /obj/machinery/power/port_gen/pacman,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/structure/cable,
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 6
+	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "QP" = (
 /obj/structure/reagent_dispensers/watertank/high{
 	reagent_id = /datum/reagent/plantnutriment/eznutriment
+	},
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 1
 	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
@@ -1152,10 +1439,14 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/spline/fancy/brown{
+	dir = 4
+	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "Sw" = (
-/obj/machinery/modular_computer/console/preset/civilian{
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom{
 	dir = 8
 	},
 /turf/open/floor/pod,
@@ -1204,6 +1495,7 @@
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
 /obj/machinery/light,
+/obj/effect/turf_decal/corner/bar/border,
 /turf/open/floor/pod,
 /area/ship/cargo)
 "Tx" = (
@@ -1234,6 +1526,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 4
 	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
@@ -1266,6 +1561,9 @@
 /obj/item/stack/cable_coil/red,
 /obj/item/stack/cable_coil/red,
 /obj/item/stack/cable_coil/red,
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 5
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "UR" = (
@@ -1290,6 +1588,20 @@
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/pod,
 /area/ship/hallway/central)
+"Vp" = (
+/obj/effect/turf_decal/spline/fancy/brown,
+/turf/open/floor/carpet/donk,
+/area/ship/crew/dorm)
+"Vx" = (
+/obj/effect/turf_decal/corner/bar/border,
+/turf/open/floor/pod,
+/area/ship/cargo)
+"VD" = (
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "VF" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1300,11 +1612,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/pod,
 /area/ship/bridge)
 "VG" = (
 /obj/effect/turf_decal/spline/fancy/bottlegreen{
 	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 8
 	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
@@ -1343,6 +1659,14 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/turf_decal/spline/fancy/bottlegreen{
+	dir = 8
+	},
+/obj/machinery/button{
+	dir = 4;
+	id = 13;
+	pixel_x = -24
+	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "WD" = (
@@ -1361,10 +1685,16 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 4
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "WP" = (
 /obj/structure/ore_box,
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 1
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "Xe" = (
@@ -1372,6 +1702,9 @@
 	dir = 1
 	},
 /obj/structure/ore_box,
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 1
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "Xg" = (
@@ -1382,6 +1715,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/bar/border,
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "XJ" = (
@@ -1395,10 +1729,12 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 8
 	},
+/obj/effect/turf_decal/spline/fancy/bottlegreen,
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "XY" = (
 /obj/machinery/selling_pad,
+/obj/effect/turf_decal/corner/bar/border,
 /turf/open/floor/pod,
 /area/ship/cargo)
 "Yb" = (
@@ -1411,6 +1747,26 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
+	},
+/turf/open/floor/grass,
+/area/ship/crew/hydroponics)
+"Ym" = (
+/obj/effect/turf_decal/corner/bar/border,
+/obj/effect/turf_decal/corner/bar/bordercorner{
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
+"YC" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/spline/fancy/corner/bottlegreen{
+	dir = 4;
+	color = "#57967f"
 	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
@@ -1434,8 +1790,28 @@
 /obj/machinery/computer/selling_pad_control{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 6
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
+"Zb" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/corner/brown{
+	color = "#997C4F";
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/corner/brown{
+	color = "#997C4F"
+	},
+/turf/open/floor/carpet/donk,
+/area/ship/crew/dorm)
 "Ze" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
@@ -1491,14 +1867,14 @@ oM
 oM
 dP
 jV
-uv
-GX
+cP
+GC
 lI
 uv
 Df
-uv
-uv
-uv
+cP
+cP
+Ym
 UR
 oM
 oM
@@ -1574,7 +1950,7 @@ oM
 oM
 oM
 tf
-uv
+VD
 uv
 Te
 lY
@@ -1582,7 +1958,7 @@ Tg
 YR
 Lr
 uv
-uv
+Vx
 Bi
 oM
 oM
@@ -1595,7 +1971,7 @@ oM
 oM
 oM
 tf
-uv
+VD
 uv
 kg
 Ej
@@ -1603,7 +1979,7 @@ KX
 hj
 XJ
 uv
-uv
+Vx
 tf
 oM
 oM
@@ -1616,7 +1992,7 @@ oM
 oM
 oM
 tf
-uv
+VD
 uv
 kg
 kb
@@ -1624,7 +2000,7 @@ wl
 uv
 XJ
 uv
-uv
+Vx
 tf
 oM
 oM
@@ -1637,7 +2013,7 @@ oM
 oM
 oM
 tf
-uv
+VD
 GX
 YI
 HH
@@ -1645,7 +2021,7 @@ Tx
 Mg
 XJ
 uv
-uv
+Vx
 tf
 oM
 oM
@@ -1687,7 +2063,7 @@ kr
 WD
 uv
 uv
-uv
+Vx
 sC
 oM
 oM
@@ -1723,12 +2099,12 @@ oM
 sC
 UI
 oh
-uv
-kb
+tE
+CC
 VP
-uv
-uv
-uv
+Gp
+tE
+tE
 YZ
 sC
 oM
@@ -1747,7 +2123,7 @@ IP
 IP
 HZ
 WE
-uv
+lJ
 IP
 IP
 IP
@@ -1913,8 +2289,8 @@ oM
 oM
 oM
 mP
-JF
-eF
+NB
+gl
 JF
 mP
 oM
@@ -1936,7 +2312,7 @@ oM
 mP
 JB
 eF
-JB
+Kr
 mP
 oM
 oM
@@ -1957,7 +2333,7 @@ oM
 mP
 JB
 eF
-JB
+Kr
 mP
 oM
 oM
@@ -1978,7 +2354,7 @@ mP
 mP
 JB
 eF
-JB
+Kr
 mP
 mP
 mP
@@ -2015,16 +2391,16 @@ xd
 tW
 Cs
 mD
-gw
+tI
 JD
 mP
 JB
 eF
-JB
+Kr
 mP
 MH
 VG
-bL
+YC
 bL
 uj
 XV
@@ -2037,9 +2413,9 @@ OM
 pI
 Wg
 Wj
-Wj
+Zb
 Hj
-Xg
+yE
 UZ
 Xg
 uQ
@@ -2058,18 +2434,18 @@ ac
 PY
 FX
 gw
-gw
+Vp
 mP
 pM
 eF
-JB
+Kr
 mP
 QP
 uj
 uj
 uj
 Lu
-uj
+Kq
 lN
 "}
 (31,1,1) = {"
@@ -2079,24 +2455,24 @@ gw
 PY
 FX
 gw
-gw
+Vp
 mP
 qb
 eF
-JB
+Kr
 mP
 ik
 uj
 uj
 uj
 uj
-uj
+Kq
 lN
 "}
 (32,1,1) = {"
 nk
 oT
-gw
+wk
 qM
 by
 RN
@@ -2108,7 +2484,7 @@ uo
 mP
 ga
 Af
-MA
+lT
 pN
 Nd
 MA
