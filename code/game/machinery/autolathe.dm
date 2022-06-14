@@ -4,7 +4,7 @@
 
 /obj/machinery/autolathe
 	name = "autolathe"
-	desc = "It produces items using iron and glass."
+	desc = "It produces items using metal and glass, can take design disks. Alt-click to remove disk."
 	icon_state = "autolathe"
 	density = TRUE
 	use_power = IDLE_POWER_USE
@@ -22,6 +22,7 @@
 	var/hack_wire
 	var/disable_wire
 	var/shock_wire
+	var/obj/item/disk/design_disk/d_disk    //Stores the design disk.
 
 	var/busy = FALSE
 
@@ -44,8 +45,7 @@
 							"Machinery",
 							"Medical",
 							"Misc",
-							"Dinnerware",
-							"Imported"
+							"Dinnerware"
 							)
 
 /obj/machinery/autolathe/Initialize()
@@ -57,6 +57,9 @@
 	matching_designs = list()
 
 /obj/machinery/autolathe/Destroy()
+	if(d_disk) // Drops the design disk on the floor when destroyed
+		d_disk.forceMove(get_turf(src))
+		d_disk = null
 	QDEL_NULL(wires)
 	return ..()
 
@@ -96,13 +99,22 @@
 		data["designs"] = handle_designs(matching_designs, FALSE)
 	return data
 
-/obj/machinery/autolathe/proc/handle_designs(list/designs, categorycheck)
+/obj/machinery/autolathe/proc/handle_designs(list/researched_designs, categorycheck)
 	var/list/output = list()
-	for(var/v in designs)
-		var/datum/design/D = categorycheck ? SSresearch.techweb_design_by_id(v) : v
-		if(categorycheck)
-			if(!(selected_category in D.category))
+	var/list/blueprints = list()
+	if (d_disk && selected_category == d_disk?.name)
+		for(var/datum/design/w in d_disk.blueprints)
+			if(!(w.build_type & AUTOLATHE)) // Only list if it has the autolathe build_type
 				continue
+			blueprints += w
+	else
+		for(var/w in researched_designs)
+			var/datum/design/d = categorycheck ? SSresearch.techweb_design_by_id(w) : w
+			if(categorycheck)
+				if(!(selected_category in d.category))
+					continue
+			blueprints += d
+	for(var/datum/design/D in blueprints)
 		var/unbuildable = FALSE // we can't build the design currently
 		var/m10 = FALSE // 10x mult
 		var/m25 = FALSE // 25x mult
@@ -175,7 +187,7 @@
 		if (!busy)
 			/////////////////
 			//href protection
-			being_built = stored_research.isDesignResearchedID(params["id"])
+			being_built = SSresearch.techweb_design_by_id(params["id"]) // Search for ID within all research, who cares if its researched
 			if(!being_built)
 				return
 
@@ -194,7 +206,7 @@
 			for(var/MAT in being_built.materials)
 				total_amount += being_built.materials[MAT]
 
-			var/power = max(2000, (total_amount)*multiplier/5) //Change this to use all materials
+			var/power = max(active_power_usage, (total_amount)*multiplier/5) //Change this to use all materials
 
 			var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 
@@ -231,6 +243,9 @@
 			to_chat(usr, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
 
 /obj/machinery/autolathe/on_deconstruction()
+	if(d_disk) // Drops the design disk on the floor when destroyed
+		d_disk.forceMove(get_turf(src))
+		d_disk = null
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	materials.retrieve_all()
 
@@ -256,19 +271,34 @@
 		return TRUE
 
 	if(istype(O, /obj/item/disk/design_disk))
-		user.visible_message("<span class='notice'>[user] begins to load \the [O] in \the [src]...</span>",
-			"<span class='notice'>You begin to load a design from \the [O]...</span>",
-			"<span class='hear'>You hear the chatter of a floppy drive.</span>")
-		busy = TRUE
-		var/obj/item/disk/design_disk/D = O
-		if(do_after(user, 14.4, target = src))
-			for(var/B in D.blueprints)
-				if(B)
-					stored_research.add_design(B)
-		busy = FALSE
+		if(d_disk)
+			to_chat(user, "<span class='warning'>A design disk is already loaded!</span>")
+			return TRUE
+		if(!user.transferItemToLoc(O, src))
+			to_chat(user, "<span class='warning'>[O] is stuck to your hand!</span>")
+			return TRUE
+		to_chat(user, "<span class='notice'>You insert [O] into \the [src]!</span>")
+		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+		d_disk = O
+		categories += d_disk.name
 		return TRUE
 
 	return ..()
+
+/obj/machinery/autolathe/proc/eject(mob/living/user)
+	if(!d_disk)
+		return
+	if(!istype(user) || !Adjacent(user) || !user.put_in_active_hand(d_disk))
+		d_disk.forceMove(drop_location())
+	categories -= d_disk.name
+	d_disk = null
+
+/obj/machinery/autolathe/AltClick(mob/user)
+	if(d_disk && user.canUseTopic(src, !issilicon(user)))
+		to_chat(user, "<span class='notice'>You take out [d_disk] from [src].</span>")
+		playsound(src, 'sound/machines/click.ogg', 50, FALSE)
+		eject(user)
+	return
 
 
 /obj/machinery/autolathe/proc/AfterMaterialInsert(obj/item/item_inserted, id_inserted, amount_inserted)
@@ -325,6 +355,8 @@
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	if(in_range(user, src) || isobserver(user))
 		. += "<span class='notice'>The status display reads: Storing up to <b>[materials.max_amount]</b> material units.<br>Material consumption at <b>[creation_efficiency*100]%</b>.</span>"
+		if (d_disk)
+			. += "<span class='notice'>Alt-click to eject the [d_disk.name].</span>"
 
 /obj/machinery/autolathe/proc/can_build(datum/design/D, amount = 1)
 	if(D.make_reagents.len)
