@@ -1,5 +1,7 @@
 {
 	"map_name": "Nemo-class Fauna Research Vessel",
+	"prefix": "ISV",
+	"namelists": ["NATURAL"],
 	"map_short_name": "Nemo-class",
 	"map_path": "_maps/shuttles/shiptest/nemo-class.dmm",
 	"map_id": "nemo-class",
@@ -10,19 +12,22 @@
                 "slots": 1
             },
 		"Fauna Retrieval Specialist": {
-                "outfit": "/datum/outfit/job/paramedic",
+                "outfit": "/datum/outfit/job/miner/scientist",
+                "slots": 1
+            },
+		"Excavator": {
+                "outfit": "/datum/outfit/job/miner/hazard",
                 "slots": 1
             },
 		"Mech Pilot": {
-                "outfit": "/datum/outfit/job/roboticist",
+                "outfit": "/datum/outfit/job/roboticist/technician",
                 "slots": 1
             },
 		"Ship Engineer": {
-                "outfit": "/datum/outfit/job/engineer",
+                "outfit": "/datum/outfit/job/engineer/maintenancetechnician",
                 "slots": 1
             },
 		"Atmospheric Technician": 1,
-		"Shaft Miner": 1,
 		"Curator": 1,
 		"Assistant": 1
 	},
