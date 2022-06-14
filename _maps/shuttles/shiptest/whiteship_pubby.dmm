@@ -47,7 +47,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "whiteshipubby_Engines"
+	id = "whiteshipubbyEngines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -266,8 +266,8 @@
 /obj/machinery/light,
 /obj/structure/closet/wall/blue{
 	dir = 1;
-	pixel_y = -28;
-	name = "Captain's locker"
+	name = "Captain's locker";
+	pixel_y = -28
 	},
 /obj/item/gun/ballistic/automatic/pistol/commander,
 /obj/item/ammo_box/magazine/co9mm,
@@ -335,9 +335,9 @@
 /area/ship/hallway/central)
 "iu" = (
 /obj/structure/closet/wall/white{
-	pixel_y = -30;
 	dir = 1;
-	name = "Medicine storage"
+	name = "Medicine storage";
+	pixel_y = -30
 	},
 /obj/item/storage/firstaid/ancient{
 	pixel_x = 6;
@@ -748,16 +748,16 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/item/stack/spacecash/c1000{
-	pixel_y = -14;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -14
 	},
 /obj/item/stack/spacecash/c1000{
-	pixel_y = -14;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -14
 	},
 /obj/item/stack/spacecash/c1000{
-	pixel_y = -16;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -926,7 +926,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "whiteshipubby_Engines"
+	id = "whiteshipubbyEngines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -936,9 +936,9 @@
 	},
 /obj/structure/table/wood,
 /obj/machinery/computer/med_data/laptop{
+	dir = 4;
 	pixel_x = -12;
-	pixel_y = 6;
-	dir = 4
+	pixel_y = 6
 	},
 /obj/item/trash/can/food{
 	pixel_x = 6;
@@ -1097,20 +1097,20 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/box/stockparts/basic{
-	pixel_y = 4;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 4
 	},
 /obj/item/circuitboard/machine/protolathe/department/cargo{
-	pixel_y = 9;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 9
 	},
 /obj/item/circuitboard/machine/rdserver{
 	pixel_x = 4;
 	pixel_y = 3
 	},
 /obj/item/circuitboard/computer/rdconsole{
-	pixel_y = 8;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 8
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/plasteel/tech,
@@ -1560,7 +1560,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "whiteshipubby_Engines"
+	id = "whiteshipubbyEngines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1897,12 +1897,12 @@
 	},
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab{
-	pixel_y = 10;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 10
 	},
 /obj/item/reagent_containers/food/snacks/meat/slab{
-	pixel_y = 1;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 1
 	},
 /obj/item/storage/box/ingredients/vegetarian,
 /obj/item/storage/box/ingredients/vegetarian,
@@ -1979,7 +1979,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "whiteshipubby_Engines"
+	id = "whiteshipubbyEngines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2003,8 +2003,8 @@
 	},
 /obj/structure/closet/wall{
 	dir = 8;
-	pixel_x = 30;
-	name = "Uniform Closet"
+	name = "Uniform Closet";
+	pixel_x = 30
 	},
 /obj/item/clothing/under/suit/charcoal,
 /obj/item/clothing/under/suit/charcoal,
@@ -2090,8 +2090,8 @@
 	pixel_y = -2
 	},
 /obj/item/flashlight/lamp{
-	pixel_y = 8;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing{
@@ -2139,8 +2139,8 @@
 	},
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets{
-	pixel_y = 2;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plastic,
@@ -2155,8 +2155,8 @@
 /obj/structure/table/reinforced,
 /obj/item/pod_parts/armor/industrial,
 /obj/item/pod_parts/armor/security/red{
-	pixel_y = 2;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 2
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -2407,8 +2407,8 @@
 /obj/machinery/cell_charger,
 /obj/item/stock_parts/cell/hyper,
 /obj/item/stock_parts/cell/hyper{
-	pixel_y = 4;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 4
 	},
 /obj/item/storage/fancy/cigarettes/cigpack_shadyjims{
 	pixel_x = -7;
@@ -2420,8 +2420,8 @@
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/spawner/lootdrop/maintenance/two{
-	pixel_y = 5;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -2457,8 +2457,8 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/item/stack/sheet/plasteel/twenty,
 /obj/item/stack/sheet/metal/twenty{
-	pixel_y = 5;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /obj/item/stack/sheet/glass/fifty{
 	pixel_x = 4;
