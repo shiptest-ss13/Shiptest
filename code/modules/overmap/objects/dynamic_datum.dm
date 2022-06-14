@@ -97,7 +97,7 @@
 		DYNAMIC_WORLD_WASTEPLANET = min(length(SSmapping.waste_ruins_templates), 20),
 		DYNAMIC_WORLD_ROCKPLANET = min(length(SSmapping.rock_ruins_templates), 20),
 		DYNAMIC_WORLD_BEACHPLANET = min(length(SSmapping.beach_ruins_templates), 20),
-		DYNAMIC_WORLD_REEBE = 0, //unspawnable because of major lack of skill.
+		//DYNAMIC_WORLD_REEBE = 0, //unspawnable because of major lack of skill. //you fucking probablitiy zero does not equal one you dumbass
 		DYNAMIC_WORLD_ASTEROID = 30)
 
 	if(force_encounter)
