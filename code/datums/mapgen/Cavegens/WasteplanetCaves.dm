@@ -11,9 +11,9 @@
 
 	mob_spawn_list = list(
 		//hivebots, not too difficult
-		/mob/living/simple_animal/hostile/hivebot/strong = 70,
-		/mob/living/simple_animal/hostile/hivebot/range = 40,
-		/mob/living/simple_animal/hostile/hivebot/rapid = 30,
+		/mob/living/simple_animal/hostile/hivebot/strong/rockplanet = 70,
+		/mob/living/simple_animal/hostile/hivebot/range/rockplanet = 40,
+		/mob/living/simple_animal/hostile/hivebot/rapid/rockplanet = 30,
 		//crystal mobs, very difficult
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1,
