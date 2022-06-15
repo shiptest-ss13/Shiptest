@@ -123,6 +123,13 @@
 	head = /obj/item/clothing/head/hardhat/dblue
 	suit =  /obj/item/clothing/suit/hazardvest
 
+/datum/outfit/job/engineer/inteq
+	name = "IRMG Artificer (Inteq)"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
+	head = /obj/item/clothing/head/soft/inteq
+	shoes = /obj/item/clothing/shoes/combat
+
 /datum/outfit/job/engineer/solgov
 	name = "Ship Engineer (SolGov)"
 
@@ -184,3 +191,20 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	alt_uniform = null
 	glasses = null
+
+/datum/outfit/job/engineer/independent/ship_engineer
+	name = "Ship Engineer (Independent)"
+
+	belt = /obj/item/storage/belt/utility/full/engi
+	uniform = /obj/item/clothing/under/rank/security/officer/military/eng
+	suit = /obj/item/clothing/suit/toggle/hazard
+	shoes = /obj/item/clothing/shoes/workboots
+
+	head = null
+	backpack = /obj/item/storage/backpack
+	satchel = /obj/item/storage/backpack/satchel/
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger
+	l_pocket = /obj/item/radio
+	r_pocket = /obj/item/analyzer
+	glasses = /obj/item/clothing/glasses/welding

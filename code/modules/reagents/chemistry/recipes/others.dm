@@ -688,6 +688,7 @@
 
 /datum/chemical_reaction/herbal_brute
 	required_reagents = list(/datum/reagent/ash_fibers = 10, /datum/reagent/consumable/vitfro = 10, /datum/reagent/consumable/ethanol = 10, /datum/reagent/stabilizing_agent = 5)
+	mob_react = FALSE
 
 /datum/chemical_reaction/herbal_brute/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -696,6 +697,7 @@
 
 /datum/chemical_reaction/herbal_burn
 	required_reagents = list(/datum/reagent/calcium = 10, /datum/reagent/consumable/pyre_elementum = 10, /datum/reagent/silver = 10, /datum/reagent/toxin/plasma = 5)
+	mob_react = FALSE
 
 /datum/chemical_reaction/herbal_burn/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)

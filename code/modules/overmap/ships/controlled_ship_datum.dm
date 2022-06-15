@@ -73,6 +73,9 @@
 		job_slots = source_template.job_slots?.Copy()
 		if(create_shuttle)
 			shuttle_port = SSshuttle.load_template(creation_template, src)
+			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
+				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
+				return
 			calculate_mass()
 			refresh_engines()
 
@@ -88,7 +91,8 @@
 	SSovermap.controlled_ships -= src
 	if(!QDELETED(shuttle_port))
 		shuttle_port.intoTheSunset()
-	QDEL_NULL(ship_account)
+	if(!QDELETED(ship_account))
+		QDEL_NULL(ship_account)
 	return ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()

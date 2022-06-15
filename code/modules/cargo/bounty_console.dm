@@ -6,13 +6,16 @@
 	icon_screen = "bounty"
 	circuit = /obj/item/circuitboard/computer/bounty
 	light_color = COLOR_BRIGHT_ORANGE
-	var/printer_ready = 0 //cooldown var
-	var/static/datum/bank_account/cargocash
+	COOLDOWN_DECLARE(printer_ready)
+	var/datum/bank_account/cargocash
+
+/obj/machinery/computer/bounty/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	cargocash = port.current_ship.ship_account
 
 /obj/machinery/computer/bounty/Initialize()
 	. = ..()
-	printer_ready = world.time + PRINTER_TIMEOUT
-	cargocash = SSeconomy.get_dep_account(ACCOUNT_CAR)
+	COOLDOWN_START(src, printer_ready, PRINTER_TIMEOUT)
 
 /obj/machinery/computer/bounty/proc/print_paper()
 	new /obj/item/paper/bounty_printout(loc)
@@ -25,15 +28,15 @@
 	info = "<h2>Nanotrasen Cargo Bounties</h2></br>"
 	update_icon()
 
-	for(var/datum/bounty/B in GLOB.bounties_list)
-		if(B.claimed)
+	for(var/datum/bounty/bounty as anything in GLOB.bounties_list)
+		if(bounty.claimed)
 			continue
-		info += {"<h3>[B.name]</h3>
-		<ul><li>Reward: [B.reward_string()]</li>
-		<li>Completed: [B.completion_string()]</li></ul>"}
+		info += {"<h3>[bounty.name]</h3>
+		<ul><li>Reward: [bounty.reward_string()]</li>
+		<li>Completed: [bounty.completion_string()]</li></ul>"}
 
 /obj/machinery/computer/bounty/ui_interact(mob/user, datum/tgui/ui)
-	if(!GLOB.bounties_list.len)
+	if(!length(GLOB.bounties_list))
 		setup_bounties()
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -43,9 +46,9 @@
 /obj/machinery/computer/bounty/ui_data(mob/user)
 	var/list/data = list()
 	var/list/bountyinfo = list()
-	for(var/datum/bounty/B in GLOB.bounties_list)
-		bountyinfo += list(list("name" = B.name, "description" = B.description, "reward_string" = B.reward_string(), "completion_string" = B.completion_string() , "claimed" = B.claimed, "can_claim" = B.can_claim(), "priority" = B.high_priority, "bounty_ref" = REF(B)))
-	data["stored_cash"] = cargocash.account_balance
+	for(var/datum/bounty/bounty as anything in GLOB.bounties_list) //This should probably be static data.
+		bountyinfo += list(list("name" = bounty.name, "description" = bounty.description, "reward_string" = bounty.reward_string(), "completion_string" = bounty.completion_string() , "claimed" = bounty.claimed, "can_claim" = bounty.can_claim(), "priority" = bounty.high_priority, "bounty_ref" = REF(bounty)))
+	data["stored_cash"] = cargocash?.account_balance
 	data["bountydata"] = bountyinfo
 	return data
 
@@ -57,10 +60,10 @@
 		if("ClaimBounty")
 			var/datum/bounty/cashmoney = locate(params["bounty"]) in GLOB.bounties_list
 			if(cashmoney)
-				cashmoney.claim()
+				cashmoney.claim(cargocash)
 			return TRUE
 		if("Print")
-			if(printer_ready < world.time)
-				printer_ready = world.time + PRINTER_TIMEOUT
+			if(COOLDOWN_FINISHED(src, printer_ready))
+				COOLDOWN_START(src, printer_ready, PRINTER_TIMEOUT)
 				print_paper()
-				return
+				return TRUE
