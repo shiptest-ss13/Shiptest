@@ -726,6 +726,16 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/medical)
+"nj" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plating/airless,
+/area/ship/engineering)
 "nl" = (
 /obj/machinery/camera/autoname{
 	network = list("carrier");
@@ -1020,14 +1030,8 @@
 /turf/open/floor/plating/airless,
 /area/ship/cargo)
 "wb" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 1
-	},
 /turf/open/floor/plating/airless,
-/area/ship/external)
+/area/template_noop)
 "wc" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -1369,9 +1373,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/spawner/lootdrop/random_machine_circuit_mech,
-/obj/effect/spawner/lootdrop/random_machine_circuit_mech,
-/obj/effect/spawner/lootdrop/random_machine_circuit_mech,
+/obj/item/pipe_dispenser,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Gw" = (
@@ -1440,7 +1442,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plating/airless,
-/area/ship/external)
+/area/ship/crew/dorm)
 "IY" = (
 /obj/machinery/computer/cargo/express,
 /turf/open/floor/carpet/nanoweave/purple,
@@ -2035,6 +2037,7 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/plasmaglass/fifty,
 /obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Yv" = (
@@ -2304,7 +2307,7 @@ NE
 Li
 FO
 JG
-IK
+nj
 dG
 dG
 "}
@@ -2335,7 +2338,7 @@ Bh
 eL
 gq
 JG
-IK
+nj
 dG
 dG
 "}
@@ -2366,7 +2369,7 @@ nR
 So
 nJ
 wP
-wb
+Kq
 dG
 dG
 "}
@@ -2519,7 +2522,7 @@ BX
 ow
 vZ
 hY
-dG
+wb
 LN
 rI
 dG
@@ -2676,7 +2679,7 @@ mQ
 VB
 VB
 UY
-wb
+cj
 dG
 dG
 "}
