@@ -123,12 +123,15 @@
 
 	LAZYCLEARLIST(client_mobs_in_contents)
 
-	LAZYCLEARLIST(important_recursive_contents)
-
-	vis_contents.Cut()
-
 	moveToNullspace()
 
+	//This absolutely must be after moveToNullspace()
+	//We rely on Entered and Exited to manage this list, and the copy of this list that is on any /atom/movable "Containers"
+	//If we clear this before the nullspace move, a ref to this object will be hung in any of its movable containers
+	LAZYCLEARLIST(important_recursive_contents)
+
+	vis_locs = null
+	vis_contents.Cut()
 
 /atom/movable/proc/update_emissive_block()
 	if(blocks_emissive != EMISSIVE_BLOCK_GENERIC)
