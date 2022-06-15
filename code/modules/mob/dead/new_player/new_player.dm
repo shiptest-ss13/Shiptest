@@ -331,6 +331,11 @@
 			employmentCabinet.addFile(employee)
 
 /mob/dead/new_player/proc/LateChoices()
+	//stops the window from even showing up if there's a lock on joining
+	if(!GLOB.enter_allowed)
+		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+		return
+
 	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
 
 	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)
@@ -357,7 +362,7 @@
 		close_spawn_windows()
 		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
 		var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template)
-		if(!istype(target))
+		if(!target?.shuttle_port)
 			to_chat(usr, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
 			new_player_panel()
 			return
@@ -388,10 +393,6 @@
 
 	if(!SSticker?.IsRoundInProgress())
 		to_chat(usr, "<span class='danger'>The round is either not ready, or has already finished...</span>")
-		return
-
-	if(!GLOB.enter_allowed)
-		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
 		return
 
 	var/relevant_cap

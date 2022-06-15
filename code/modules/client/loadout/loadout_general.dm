@@ -67,7 +67,7 @@
 
 /datum/gear/tablet
 	display_name = "tablet computer"
-	path = /obj/item/modular_computer/tablet
+	path = /obj/item/modular_computer/tablet/preset/cheap
 
 /datum/gear/pen
 	display_name = "pen, black"

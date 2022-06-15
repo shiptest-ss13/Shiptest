@@ -7,6 +7,8 @@
 	icon_state = "disk_map"
 	drop_sound = 'sound/items/handling/disk_drop.ogg'
 	pickup_sound =  'sound/items/handling/disk_pickup.ogg'
+	//use the blueshifted pallete instead of a greyscale one? Looks good with anything colored, anything not is reccomended to turn this to false
+	var/blueshift_pallete = TRUE
 	var/random_color = TRUE
 	var/illustration = "generic"
 	var/static/list/random_disk_colors = list(
@@ -21,7 +23,10 @@
 
 /obj/item/disk/Initialize()
 	. = ..()
-	icon_state = "disk"
+	if(blueshift_pallete)
+		icon_state = "disk_bs"
+	else
+		icon_state = "disk"
 	if(random_color) //random colors!
 		var/our_color = pick(random_disk_colors)
 		add_atom_colour(random_disk_colors[our_color], FIXED_COLOUR_PRIORITY)
@@ -32,8 +37,16 @@
 
 /obj/item/disk/update_overlays()
 	. = ..()
-	var/mutable_appearance/label = mutable_appearance(icon, "label")
-	var/mutable_appearance/protect = mutable_appearance(icon, "protect")
+	var/mutable_appearance/label
+	if(blueshift_pallete)
+		label = mutable_appearance(icon, "label_bs")
+	else
+		label = mutable_appearance(icon, "label")
+	var/mutable_appearance/protect
+	if(blueshift_pallete)
+		protect = mutable_appearance(icon, "protect_bs")
+	else
+		protect = mutable_appearance(icon, "protect")
 	protect.appearance_flags = RESET_COLOR
 	label.appearance_flags = RESET_COLOR
 	. += label

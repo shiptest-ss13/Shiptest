@@ -9,6 +9,12 @@
 	description = "A recently abandoned standard SolGov exploration pod. It may not be powerful or resilient, but it can fly in a pinch."
 	suffix = "jungle_surface_abandonedsolgov.dmm"
 
+/datum/map_template/ruin/jungle/monke
+	name = "Enlightenment"
+	id = "jungle-monkies"
+	description = "Ook. Ooh Ooh Aah. AAH. OOK OOK OOK. OOK OOK AAH AAAH AAAAAAAAAAAAAAAH!"
+	suffix = "jungle_surface_monkies.dmm"
+
 /datum/map_template/ruin/jungle/ai_ikea
 	name = "Space Ikea AI Shipment"
 	id = "ikea-ai"
@@ -20,6 +26,13 @@
 	id = "coffinpirate"
 	description = "An odd coffin shaped pirate hut that the inhabitant of died in."
 	suffix = "jungle_surface_coffinpirate.dmm"
+
+/datum/map_template/ruin/jungle/medtech
+	name = "MedTech facility"
+	id = "medtech-facility"
+	description = "A MedTech pharmaceutical manufacturing plant where something went terribly wrong."
+	suffix = "jungle_medtech_outbreak.dmm"
+
 
 ///how bad can i possibly be?
 /datum/map_template/ruin/jungle/onceler
@@ -79,6 +92,12 @@
 	id = "hangar"
 	description = "An abandoned hangar containing exosuits."
 	suffix = "jungle_hangar.dmm"
+
+/datum/map_template/ruin/jungle/skeleton
+	name = "Skeleton Pile"
+	id = "skeletonjungle"
+	description = "You will get boned."
+	suffix = "jungle_skeleton.dmm"
 
 /datum/map_template/ruin/jungle/spider
 	name = "Jungle Spiders"
