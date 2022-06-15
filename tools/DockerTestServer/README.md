@@ -1,6 +1,6 @@
 # Docker-Compose Test Server
 
-This is a directory made for easily spinning up a /tg/station server using Docker-Compose.
+This is a directory made for easily spinning up a Shiptest server using Docker-Compose.
 Also with some tweaks done to read environment variables, like database config and ranks.
 
 # How to use this?
@@ -13,8 +13,8 @@ Also with some tweaks done to read environment variables, like database config a
 ## Quickstart:
 
 1) Open a terminal (bash,powershell,cmd,whatever)
-2) Clone [the /tg/station repository](https://github.com/tgstation/tgstation) ( CLI: `git clone https://github.com/tgstation/tgstation`)
-3) Enter this directory (`cd tgstation/tools/DockerTestServer`)
+2) Clone [the Shiptest repository](https://github.com/shiptest-ss13/Shiptest) ( CLI: `git clone https://github.com/shiptest-ss13/Shiptest`)
+3) Enter this directory (`cd Shiptest/tools/DockerTestServer`)
 4) Make a copy of the `example.env` file and call it `.env` (`cp example.env .env`)
 5) Edit the values in `.env` (the content and commented out sections, seriously, read it)
 6) When all and dandy, start the server by doing `docker-compose up`

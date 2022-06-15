@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  # /tg/ DM server
+  # Shiptest DM server
   dreammaker:
     image: shiptest:latest
     restart: unless-stopped
@@ -19,7 +19,7 @@ services:
       - ./entrypoint.sh:/entrypoint.sh:ro #
       - ../../config:/gamecfg_ro:ro # Contains the default configuration, as defined in config/ 
       - ./gamecfg:/gamecfg:ro # Contains the override config files, entrypoint.sh overrides using these
-      - gamedata:/tgstation/data # Contains the game data, contained nicely in a volume
+      - gamedata:/shiptest/data # Contains the game data, contained nicely in a volume
 
   # MariaDB/MySQL database: game 
   # (if you don't really need this, feel free to remove this section.)
@@ -28,7 +28,7 @@ services:
     restart: unless-stopped
     environment:
       - MYSQL_RANDOM_ROOT_PASSWORD=yes
-      - MYSQL_DATABASE=tgstation
+      - MYSQL_DATABASE=shiptest
       - MYSQL_USER=gamelord
       - MYSQL_PASSWORD=gamelord
     volumes: 
@@ -43,7 +43,7 @@ services:
     environment:
       ADMINER_DEFAULT_DB_DRIVER: mysql
       ADMINER_DEFAULT_DB_HOST: db
-      ADMINER_DEFAULT_DB_NAME: tgstation
+      ADMINER_DEFAULT_DB_NAME: shiptest
       ADMINER_DESIGN: nette
       ADMINER_PLUGINS: tables-filter tinymce
     ports:
