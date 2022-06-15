@@ -1453,7 +1453,7 @@
 	dir = 8;
 	pixel_x = 23;
 	pixel_y = -19;
-	id = cell1
+	id = "Cell 1"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -4485,10 +4485,15 @@
 "MA" = (
 /obj/item/clothing/under/rank/prisoner,
 /obj/item/clothing/under/rank/prisoner,
-/obj/item/clothing/under/rank/prisoner,
 /obj/item/clothing/shoes/sneakers/orange,
 /obj/item/clothing/shoes/sneakers/orange,
-/obj/item/clothing/shoes/sneakers/orange,
+/obj/machinery/button/massdriver{
+	id = "starlauncherone";
+	name = "starboard launcher one button";
+	pixel_x = 4;
+	dir = 1;
+	pixel_y = 10
+	},
 /obj/structure/bed,
 /obj/item/bedsheet/orange,
 /obj/effect/turf_decal/corner/orange/bordercee,
