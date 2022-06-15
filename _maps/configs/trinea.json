@@ -1,0 +1,23 @@
+{
+	"map_name": "Trinea-Class Cargo",
+	"map_short_name": "Trinea",
+	"prefix": "ISV",
+	"namelists": ["BEASTS", "SPACE" ],
+	"map_path": "_maps/shuttles/shiptest/trinea.dmm",
+	"map_id" : "Trinea-Class",
+	"job_slots": {
+		"Overseer":{
+			"outfit":"/datum/outfit/job/quartermaster",
+			"slots": 1},
+		"Station Engineer": 1,
+		"Security":{
+			"outfit": "/datum/job/officer",
+			"slots": 1},
+		"Janitor": 1,
+		"Physician ": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 1},
+		"Cargo Technician": 1
+	},
+	"cost": 420
+}
