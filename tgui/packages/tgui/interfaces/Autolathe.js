@@ -12,6 +12,7 @@ export const Autolathe = (props, context) => {
     materials = [],
     categories = [],
     designs = [],
+    hasDisk,
     active,
   } = data;
   const [
@@ -26,7 +27,17 @@ export const Autolathe = (props, context) => {
       width={600}
       height={600}>
       <Window.Content scrollable>
-        <Section title="Total Materials">
+        <Section
+        title="Total Materials"
+        buttons={(
+          <Button
+            icon="eject"
+            content="Eject design disk"
+            disabled={!hasDisk}
+            onClick={() => {
+               act('diskEject');
+            }} />
+        )}>
           <LabeledList>
             <LabeledList.Item
               label="Total Materials">

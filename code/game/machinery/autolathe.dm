@@ -4,7 +4,7 @@
 
 /obj/machinery/autolathe
 	name = "autolathe"
-	desc = "It produces items using metal and glass, can take design disks. Alt-click to remove disk."
+	desc = "It produces items using metal and glass and maybe other materials, can take design disks."
 	icon_state = "autolathe"
 	density = TRUE
 	use_power = IDLE_POWER_USE
@@ -49,7 +49,7 @@
 							)
 
 /obj/machinery/autolathe/Initialize()
-	AddComponent(/datum/component/material_container, SSmaterials.materialtypes_by_category[MAT_CATEGORY_RIGID], 0, TRUE, null, null, CALLBACK(src, .proc/AfterMaterialInsert))
+	AddComponent(/datum/component/material_container,list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/gold, /datum/material/plasma, /datum/material/uranium, /datum/material/titanium), 0, TRUE, null, null, CALLBACK(src, .proc/AfterMaterialInsert))
 	. = ..()
 
 	wires = new /datum/wires/autolathe(src)
@@ -83,7 +83,7 @@
 	data["categories"] = categories
 	data["designs"] = list()
 	data["active"] = busy
-
+	data["hasDisk"] = d_disk ? TRUE : FALSE
 	for(var/mat_id in materials.materials)
 		var/datum/material/M = mat_id
 		var/mineral_count = materials.materials[mat_id]
@@ -182,6 +182,8 @@
 			if(findtext(D.name,params["to_search"]))
 				matching_designs.Add(D)
 		. = TRUE
+	if(action == "diskEject")
+		eject(usr)
 
 	if(action == "make")
 		if (!busy)
@@ -356,7 +358,7 @@
 	if(in_range(user, src) || isobserver(user))
 		. += "<span class='notice'>The status display reads: Storing up to <b>[materials.max_amount]</b> material units.<br>Material consumption at <b>[creation_efficiency*100]%</b>.</span>"
 		if (d_disk)
-			. += "<span class='notice'>Alt-click to eject the [d_disk.name].</span>"
+			. += "<span class='notice'>[d_disk.name] is loaded, Alt-Click to remove.</span>"
 
 /obj/machinery/autolathe/proc/can_build(datum/design/D, amount = 1)
 	if(D.make_reagents.len)
