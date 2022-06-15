@@ -56,6 +56,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = MINING
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_ASTEROID
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/aux_base
 	name = "Auxiliary Base Construction"
@@ -187,6 +189,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = MEDICAL
 	lighting_colour_tube = "#e7f8ff"
 	lighting_colour_bulb = "#d5f2ff"
+	min_ambience_cooldown = 90 SECONDS
+	max_ambience_cooldown = 180 SECONDS
 
 /area/ship/medical/surgery
 	name = "Surgical Bay"

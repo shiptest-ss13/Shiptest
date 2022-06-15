@@ -71,7 +71,7 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
 	jump_mode = BS_JUMP_CALLED
 	jump_timer = addtimer(CALLBACK(src, .proc/initiate_jump), jump_request_time * modifier, TIMER_STOPPABLE)
-	priority_announce("Preparing for jump. ETD: [jump_request_time * modifier / 600] minutes.", null, null, "Priority")
+	priority_announce("Preparing for jump. ETD: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, "Priority")
 
 /// Cancels a currently requested bluespace jump. Can only be done after the jump has been requested but before the jump has actually begun.
 /datum/controller/subsystem/shuttle/proc/cancel_jump()
@@ -88,8 +88,8 @@ SUBSYSTEM_DEF(shuttle)
 		M.hyperspace_sound(HYPERSPACE_WARMUP, M.shuttle_areas)
 		M.on_emergency_launch()
 
-	priority_announce("Jump initiated. ETA: [jump_completion_time / 600] minutes.", null, null, "Priority")
-	jump_timer = addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), jump_completion_time)
+	jump_timer = addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), jump_completion_time, TIMER_STOPPABLE)
+	priority_announce("Jump initiated. ETA: [jump_completion_time / (1 MINUTES)] minutes.", null, null, "Priority")
 
 /datum/controller/subsystem/shuttle/proc/request_transit_dock(obj/docking_port/mobile/M)
 	if(!istype(M))

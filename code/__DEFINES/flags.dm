@@ -43,6 +43,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define RAD_NO_CONTAMINATE_1 (1 << 18)
 ///Use when this shouldn't be obscured by large icons, like trees.
 #define SHOW_BEHIND_LARGE_ICONS_1 (1<<12)
+/// Should we use the initial icon for display? Mostly used by overlay only objects
+#define HTML_USE_INITAL_ICON_1 (1<<20)
 
 /// If the thing can reflect light (lasers/energy)
 #define RICOCHET_SHINY (1<<0)

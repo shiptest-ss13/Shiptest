@@ -21,6 +21,9 @@
 	ambientsounds = MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA
 	sound_environment = SOUND_AREA_STANDARD_STATION
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
+
 
 /area/mine/unexplored
 	name = "Mine"
@@ -35,6 +38,9 @@
 	flags_1 = NONE
 	ambientsounds = MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED | CAVES_ALLOWED
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
+
 
 /area/mine/lobby
 	name = "Mining Station"
@@ -106,6 +112,8 @@
 	power_light = FALSE
 	requires_power = TRUE
 	ambientsounds = MINING
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/lavaland/underground
 	name = "Lavaland Caves"
@@ -117,6 +125,8 @@
 	power_equip = FALSE
 	power_light = FALSE
 	ambientsounds = MINING
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 
 /area/lavaland/surface/outdoors
@@ -158,6 +168,8 @@
 	ambientsounds = MINING
 	poweralm = FALSE
 	area_flags = UNIQUE_AREA | FLORA_ALLOWED
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/icemoon/surface/outdoors // weather happens here
 	name = "Icemoon Wastes"
@@ -198,6 +210,8 @@
 	poweralm = FALSE
 	area_flags = UNIQUE_AREA | FLORA_ALLOWED
 	map_generator = /datum/map_generator/cave_generator/icemoon
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/icemoon/underground/unexplored // mobs and megafauna and ruins spawn here
 	name = "Icemoon Caves"

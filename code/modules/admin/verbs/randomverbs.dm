@@ -856,6 +856,12 @@
 	for(var/mob/living/carbon/M in GLOB.mob_list)
 		immerse_player(M, toggle=FALSE, remove=remove)
 
+/proc/pie_smite(mob/living/target)
+	if(QDELETED(target))
+		return
+	var/obj/item/reagent_containers/food/snacks/pie/cream/creamy = new(get_turf(target))
+	creamy.splat(target)
+
 /client/proc/toggle_hub()
 	set category = "Server"
 	set name = "Toggle Hub"
@@ -875,7 +881,7 @@
 	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
 		return
 
-	var/list/punishment_list = list(ADMIN_PUNISHMENT_BREAK_BONES, ADMIN_PUNISHMENT_LIGHTNING, ADMIN_PUNISHMENT_BRAINDAMAGE, ADMIN_PUNISHMENT_GIB, ADMIN_PUNISHMENT_BSA, ADMIN_PUNISHMENT_FIREBALL, ADMIN_PUNISHMENT_ROD, ADMIN_PUNISHMENT_SUPPLYPOD_QUICK, ADMIN_PUNISHMENT_SUPPLYPOD, ADMIN_PUNISHMENT_MAZING, ADMIN_PUNISHMENT_IMMERSE, ADMIN_PUNISHMENT_NYA)//WS Edit - Admin Punishment: Cat Tongue
+	var/list/punishment_list = list(ADMIN_PUNISHMENT_BREAK_BONES, ADMIN_PUNISHMENT_LIGHTNING, ADMIN_PUNISHMENT_BRAINDAMAGE, ADMIN_PUNISHMENT_GIB, ADMIN_PUNISHMENT_BSA, ADMIN_PUNISHMENT_FIREBALL, ADMIN_PUNISHMENT_ROD, ADMIN_PUNISHMENT_SUPPLYPOD_QUICK, ADMIN_PUNISHMENT_SUPPLYPOD, ADMIN_PUNISHMENT_MAZING, ADMIN_PUNISHMENT_IMMERSE, ADMIN_PUNISHMENT_NYA, ADMIN_PUNISHMENT_PIE)
 
 	var/punishment = input("Choose a punishment", "DIVINE SMITING") as null|anything in sortList(punishment_list)
 
@@ -946,15 +952,24 @@
 				return
 		if(ADMIN_PUNISHMENT_IMMERSE)
 			immerse_player(target)
-		if(ADMIN_PUNISHMENT_NYA)//WS Start - Admin Punishment: Cat Tongue
+		if(ADMIN_PUNISHMENT_NYA)
 			if(!iscarbon(target))
 				to_chat(usr,"<span class='warning'>This must be used on a carbon mob.</span>")
 				return
 			to_chat(target, "<span class='userdanger'>You do nyat feew vewy good!</span>", confidential = TRUE)
 			var/mob/living/carbon/dude = target
 			var/obj/item/organ/tongue/felinid/tonje = new
-			tonje.Insert(dude, TRUE, FALSE)//WS End - Admin Punishment: Cat Tongue
-
+			tonje.Insert(dude, TRUE, FALSE)
+		if(ADMIN_PUNISHMENT_PIE)
+			var/pie_count = input("How many pies do you want to deploy?:","Armageddon") as num|null
+			var/delay_counter = 1
+			if(!pie_count)
+				return
+			for(var/x in 1 to pie_count)
+				if(QDELETED(target))
+					return
+				addtimer(CALLBACK(GLOBAL_PROC, .proc/pie_smite, target), delay_counter)
+				delay_counter += 1
 	punish_log(target, punishment)
 
 /client/proc/punish_log(whom, punishment)
