@@ -1,22 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ac" = (
-/obj/machinery/atmospherics/components/unary/vent_pump{
-	dir = 8
-	},
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
-"bm" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/turf/open/floor/plating/snowed,
-/area/overmap_encounter/planetoid/ice)
 "br" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/snowed,
@@ -71,16 +53,6 @@
 /obj/item/melee/greykingsword,
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
-"bT" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/turf/open/floor/plating,
-/area/overmap_encounter/planetoid/ice)
 "bU" = (
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plating/snowed,
@@ -121,7 +93,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 1
 	},
@@ -137,8 +108,11 @@
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "dV" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/ice/icemoon,
+/obj/effect/turf_decal/corner/bar/border{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "ed" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -196,15 +170,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/ice/icemoon,
 /area/overmap_encounter/planetoid/ice)
-"fz" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/effect/turf_decal/spline/fancy/brown{
-	dir = 1
-	},
-/turf/open/floor/plating/snowed,
-/area/overmap_encounter/planetoid/ice)
 "fC" = (
 /obj/effect/decal/cleanable/food/flour,
 /turf/open/floor/pod,
@@ -213,7 +178,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
@@ -345,6 +309,9 @@
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "kb" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
@@ -444,33 +411,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
-"md" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/table/wood/reinforced,
-/obj/machinery/airalarm/directional/north,
-/obj/effect/turf_decal/spline/fancy/brown{
-	dir = 1
-	},
-/obj/structure/frame/machine,
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
 "mg" = (
 /obj/effect/turf_decal/spline/fancy/brown{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
-"mt" = (
-/obj/machinery/door/window/survival_pod{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating,
 /area/overmap_encounter/planetoid/ice)
 "mX" = (
 /obj/structure/cable,
@@ -515,9 +461,6 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/beige/half{
 	color = "#ba774c";
 	dir = 8
@@ -530,25 +473,7 @@
 "oM" = (
 /turf/template_noop,
 /area/template_noop)
-"oT" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/bed,
-/obj/effect/turf_decal/spline/fancy/brown{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
 "pI" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
@@ -588,12 +513,6 @@
 /obj/effect/turf_decal/corner/bar/border,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
 	dir = 1
-	},
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
-"qM" = (
-/obj/effect/turf_decal/spline/fancy/brown{
-	dir = 4
 	},
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
@@ -651,14 +570,6 @@
 /obj/item/electronics/airlock,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/ice)
-"tW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/glass,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
-	dir = 4
-	},
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
 "uo" = (
 /obj/structure/cable,
 /obj/machinery/light{
@@ -676,9 +587,6 @@
 "uJ" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/spline/fancy/bottlegreen,
-/obj/machinery/atmospherics/components/unary/vent_pump{
-	dir = 1
-	},
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "uQ" = (
@@ -714,16 +622,6 @@
 	},
 /turf/open/floor/plating/snowed,
 /area/overmap_encounter/planetoid/ice)
-"uV" = (
-/obj/effect/turf_decal/spline/fancy/brown{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/mob_spawn/human/corpse/cargo_tech,
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
 "vD" = (
 /obj/effect/turf_decal/corner/bar/bordercee{
 	dir = 4
@@ -737,9 +635,6 @@
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "vI" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
@@ -764,15 +659,6 @@
 "wN" = (
 /obj/machinery/light,
 /obj/effect/turf_decal/corner/bar/border,
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
-"xd" = (
-/obj/machinery/computer/cryopod{
-	pixel_y = 32
-	},
-/obj/effect/turf_decal/spline/fancy/brown{
-	dir = 1
-	},
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "xi" = (
@@ -806,16 +692,7 @@
 	},
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
-"xO" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/overmap_encounter/planetoid/ice)
 "yd" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/turf_decal/corner/beige/bordercorner{
 	color = "#ba774c";
 	dir = 1
@@ -918,11 +795,6 @@
 	},
 /turf/open/floor/plating/snowed,
 /area/overmap_encounter/planetoid/ice)
-"AQ" = (
-/obj/machinery/door/airlock/external,
-/obj/structure/fans/tiny,
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
 "Bb" = (
 /turf/open/floor/plating/snowed,
 /area/overmap_encounter/planetoid/ice)
@@ -931,9 +803,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
 /obj/effect/turf_decal/spline/fancy/corner/bottlegreen{
 	dir = 4;
 	color = "#57967f"
@@ -960,14 +829,6 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/ice)
-"CE" = (
-/obj/effect/turf_decal/spline/fancy/corner/brown{
-	color = "#997C4F";
-	dir = 8
-	},
-/obj/structure/bed,
-/turf/open/floor/plating/snowed,
 /area/overmap_encounter/planetoid/ice)
 "CG" = (
 /obj/structure/table/reinforced,
@@ -1011,21 +872,6 @@
 /obj/structure/girder,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/ice)
-"Ej" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/beige/half{
-	color = "#ba774c"
-	},
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
-"Fh" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
 "GG" = (
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
@@ -1035,22 +881,6 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/ice)
-"GJ" = (
-/obj/structure/table/wood/reinforced,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/turf_decal/spline/fancy/brown{
-	dir = 1
-	},
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
-"GX" = (
-/obj/machinery/atmospherics/components/unary/vent_pump,
-/turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "GZ" = (
 /obj/structure/window/reinforced/survival_pod/spawner/north,
@@ -1100,7 +930,6 @@
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "HH" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/effect/turf_decal/corner/beige/half{
 	color = "#ba774c"
 	},
@@ -1133,9 +962,6 @@
 /area/overmap_encounter/planetoid/ice)
 "Ia" = (
 /obj/effect/turf_decal/spline/fancy/brown,
-/obj/machinery/atmospherics/pipe/simple/supply{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
@@ -1152,29 +978,6 @@
 	},
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/ice)
-"Ir" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/closet/wall/white{
-	pixel_y = 32
-	},
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/effect/turf_decal/spline/fancy/brown{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 8
-	},
-/turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "IG" = (
 /obj/effect/turf_decal/spline/fancy/brown{
@@ -1195,9 +998,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
-	},
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "JB" = (
@@ -1244,28 +1044,12 @@
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/plating/snowed,
 /area/overmap_encounter/planetoid/ice)
-"Lb" = (
-/obj/effect/turf_decal/spline/fancy/brown{
-	dir = 10
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
 "Lr" = (
 /obj/effect/turf_decal/corner/beige/bordercorner{
 	color = "#ba774c";
 	dir = 4
 	},
 /obj/item/wirecutters/old,
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
-"Lu" = (
-/obj/effect/decal/cleanable/food/plant_smudge,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
-	dir = 8
-	},
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "LU" = (
@@ -1324,18 +1108,8 @@
 /area/overmap_encounter/planetoid/ice)
 "Ne" = (
 /obj/structure/window/reinforced/survival_pod/spawner,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/ice)
-"Nh" = (
-/obj/effect/turf_decal/corner/bar/border{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump,
-/turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "NF" = (
 /obj/effect/turf_decal/corner/bar/border{
@@ -1384,18 +1158,6 @@
 	},
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
-"OM" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 10
-	},
-/turf/open/floor/pod,
-/area/overmap_encounter/planetoid/ice)
 "OW" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 8
@@ -1437,9 +1199,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	dir = 1
-	},
 /turf/open/floor/plating/snowed,
 /area/overmap_encounter/planetoid/ice)
 "QM" = (
@@ -1465,9 +1224,6 @@
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "Sa" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
@@ -1561,9 +1317,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/bar/border{
 	dir = 4
 	},
@@ -1651,25 +1404,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plating/snowed,
 /area/overmap_encounter/planetoid/ice)
 "Wj" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
@@ -1779,12 +1518,6 @@
 /obj/effect/turf_decal/spline/fancy/bottlegreen,
 /turf/open/floor/plating/snowed,
 /area/overmap_encounter/planetoid/ice)
-"XY" = (
-/obj/effect/turf_decal/spline/fancy/brown{
-	dir = 4
-	},
-/turf/open/floor/plating/snowed,
-/area/overmap_encounter/planetoid/ice)
 "Yb" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1793,9 +1526,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
 /turf/open/floor/pod,
 /area/overmap_encounter/planetoid/ice)
 "YI" = (
@@ -1859,7 +1589,7 @@ nk
 Eb
 oM
 nk
-nk
+wn
 Eb
 oM
 oM
@@ -1871,7 +1601,7 @@ oM
 oM
 oM
 oM
-nk
+wn
 lh
 nk
 nk
@@ -1895,7 +1625,7 @@ oM
 dP
 qb
 cE
-Nh
+Dz
 lI
 nk
 Df
@@ -1917,7 +1647,7 @@ dP
 WP
 Mh
 GG
-kb
+GG
 cJ
 Mh
 GG
@@ -1960,7 +1690,7 @@ Xe
 GG
 GG
 bE
-Fh
+GG
 oa
 zr
 jx
@@ -2001,7 +1731,7 @@ tf
 qb
 br
 kg
-Ej
+kg
 Tx
 hj
 HP
@@ -2041,7 +1771,7 @@ oM
 oM
 tf
 qb
-GX
+GG
 YI
 HH
 Tx
@@ -2106,7 +1836,7 @@ sC
 qb
 Bb
 GG
-kb
+GG
 Sa
 GG
 GG
@@ -2128,7 +1858,7 @@ UI
 vG
 oh
 fY
-VP
+Xp
 iO
 vG
 vG
@@ -2146,7 +1876,7 @@ oM
 oM
 nk
 nk
-nk
+wn
 nk
 HZ
 WE
@@ -2275,9 +2005,9 @@ oM
 oM
 wn
 NK
-bT
+kr
 Ne
-xO
+wn
 oM
 oM
 oM
@@ -2308,14 +2038,14 @@ oM
 oM
 "}
 (23,1,1) = {"
-nk
-WU
-nk
 oM
 oM
 oM
 oM
-nk
+oM
+oM
+oM
+wn
 zt
 hH
 JF
@@ -2329,16 +2059,16 @@ WU
 nk
 "}
 (24,1,1) = {"
-nk
-re
-nk
-WU
-WU
-nk
+oM
+oM
+oM
+oM
+oM
+oM
 oM
 nk
 CY
-bm
+AI
 ZG
 Eb
 oM
@@ -2350,12 +2080,12 @@ re
 nk
 "}
 (25,1,1) = {"
-nk
-kd
-nk
-re
-re
-nk
+oM
+oM
+oM
+oM
+oM
+oM
 oM
 nk
 qb
@@ -2371,16 +2101,16 @@ kd
 nk
 "}
 (26,1,1) = {"
-nk
-OW
-nk
-mt
-mt
-nk
+oM
+oM
+oM
+oM
+oM
+oM
 nk
 nk
 fe
-eF
+kb
 ZG
 nk
 nk
@@ -2392,12 +2122,12 @@ OW
 nk
 "}
 (27,1,1) = {"
-nk
-Ir
-CE
-uV
-Lb
-nk
+oM
+oM
+oM
+oM
+oM
+oM
 nk
 nk
 sk
@@ -2413,11 +2143,11 @@ ek
 nk
 "}
 (28,1,1) = {"
-nk
-xd
-tW
-os
-Xp
+oM
+oM
+oM
+oM
+oM
 IG
 JD
 nk
@@ -2434,9 +2164,9 @@ XV
 nk
 "}
 (29,1,1) = {"
-Eb
-fz
-OM
+oM
+oM
+oM
 pI
 Wg
 Wj
@@ -2455,36 +2185,36 @@ uJ
 Eb
 "}
 (30,1,1) = {"
-nk
-md
-ac
-dV
+oM
+oM
+oM
+oM
 GG
 Bb
 gw
 nk
 pM
-eF
+VP
 JB
 nk
 QP
 GG
 GG
 fC
-Lu
+PC
 Wy
 nk
 "}
 (31,1,1) = {"
-nk
-GJ
-GG
+oM
+oM
+oM
 PY
 LZ
 uq
 Ia
 nk
-qb
+dV
 RN
 JB
 nk
@@ -2497,10 +2227,10 @@ xi
 nk
 "}
 (32,1,1) = {"
-nk
-oT
-qM
-XY
+oM
+oM
+oM
+oM
 mg
 by
 QM
@@ -2515,12 +2245,12 @@ st
 pN
 Nd
 MA
-nk
+wn
 "}
 (33,1,1) = {"
-nk
-Eb
-AQ
+oM
+oM
+oM
 nk
 nk
 nk
@@ -2564,8 +2294,8 @@ oM
 oM
 oM
 oM
-nk
-nk
+wn
+wn
 Ze
 GG
 Mh
