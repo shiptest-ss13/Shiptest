@@ -35,7 +35,7 @@ export const Autolathe = (props, context) => {
               content="Eject design disk"
               disabled={!hasDisk}
               onClick={() => {
-                  act('diskEject');
+                act('diskEject');
               }} />
           )}>
           <LabeledList>
