@@ -42,7 +42,18 @@
 	check_harden()
 	update_stats()
 
-// todo: switch drying color to atom_colors??? maybe????????
+/turf/closed/wall/concrete/copyTurf(turf/T, copy_air, flags)
+	. = ..()
+	// by this point it's guaranteed to be a concrete wall
+	var/turf/closed/wall/concrete/conc_wall = T
+	if(conc_wall.health != health || conc_wall.harden_lvl != harden_lvl)
+		conc_wall.harden_lvl = harden_lvl
+		conc_wall.health = health
+		// very much not a fan of all the repetition here,
+		// but there's unfortunately no easy way around it
+		conc_wall.check_harden()
+		conc_wall.update_stats()
+
 /turf/closed/wall/concrete/update_icon()
 	. = ..()
 	if(!.)
