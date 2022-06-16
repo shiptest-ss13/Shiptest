@@ -1,0 +1,8926 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"ah" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"ao" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/hallway/aft)
+"as" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"au" = (
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"aw" = (
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"aB" = (
+/obj/machinery/power/terminal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/green,
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"aC" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"aN" = (
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-10"
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering/engine{
+	name = "Port Thruser Room"
+	})
+"aT" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"aV" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"ba" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/maintenance/port)
+"bb" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"bk" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"bl" = (
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"bp" = (
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/docking_port/mobile{
+	dir = 2
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "sternshutters";
+	name = "Stern Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"bt" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bridgeshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"bx" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/structure/chair/office/light{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/blue/bordercorner{
+	dir = 4
+	},
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"bD" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"bQ" = (
+/obj/structure/chair,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/bottlegreen/border,
+/obj/effect/landmark/start/medical_doctor,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"bR" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "1-6"
+	},
+/obj/structure/cable/green{
+	icon_state = "6-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"bS" = (
+/obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder{
+	pixel_y = 7
+	},
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"ca" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/janitor)
+"cg" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = -9
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 6
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"ci" = (
+/obj/effect/turf_decal/corner_steel_grid/full{
+	dir = 4
+	},
+/obj/structure/chair/sofa/corner{
+	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = -6
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 6
+	},
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"cl" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/airalarm/directional/west,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"cy" = (
+/obj/machinery/door/airlock/security/brig/glass{
+	id = "Cell 1";
+	name = "Cell 1";
+	req_access = list(1)
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security)
+"cD" = (
+/turf/template_noop,
+/area/template_noop)
+"cE" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"cG" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/corner/blue/bordercee{
+	icon_state = "bordercolorcorner"
+	},
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/blue/bordercorner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"cL" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering/engine{
+	name = "Port Thruser Room"
+	})
+"cQ" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"dm" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "1-6"
+	},
+/obj/structure/cable/green{
+	icon_state = "6-9"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-10"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"do" = (
+/obj/effect/turf_decal/corner/red/three_quarters{
+	dir = 4
+	},
+/obj/machinery/computer/secure_data,
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/machinery/newscaster/security_unit{
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"dD" = (
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/security,
+/obj/effect/turf_decal/corner/red/full,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/security)
+"dE" = (
+/obj/machinery/power/terminal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	icon_state = "1-9"
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 12
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"dQ" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"dR" = (
+/obj/structure/catwalk/over,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"dU" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"ea" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"ei" = (
+/obj/machinery/power/port_gen/pacman/super,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"el" = (
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"eq" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "med";
+	name = "paramedic's locker"
+	},
+/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/storage/backpack/medic,
+/obj/item/storage/backpack/medic,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/item/clothing/head/beret/med,
+/obj/item/clothing/head/beret/med,
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 10
+	},
+/obj/machinery/airalarm/directional/south,
+/obj/item/clothing/under/rank/medical/doctor/blue,
+/obj/item/clothing/under/rank/medical/doctor/blue,
+/obj/item/clothing/accessory/armband/med,
+/obj/item/clothing/accessory/armband/med,
+/obj/item/clothing/under/rank/medical/paramedic,
+/obj/item/clothing/under/rank/medical/paramedic/skirt,
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"ev" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"eD" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"eE" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"eS" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"fe" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/orange{
+	icon_state = "0-1"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"fg" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Janitor's Closet"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/janitor)
+"fi" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	piping_layer = 2
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"fm" = (
+/obj/machinery/computer/apc_control{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/yellow/full,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"ft" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"fw" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/hallway/aft)
+"fy" = (
+/obj/item/clothing/under/rank/prisoner,
+/obj/item/clothing/under/rank/prisoner,
+/obj/item/clothing/under/rank/prisoner,
+/obj/item/clothing/shoes/sneakers/orange,
+/obj/item/clothing/shoes/sneakers/orange,
+/obj/item/clothing/shoes/sneakers/orange,
+/obj/structure/bed,
+/obj/item/bedsheet/orange,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = -18
+	},
+/obj/effect/turf_decal/corner/orange/bordercee,
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/structure/closet/wall{
+	pixel_y = 29
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/camera/autoname{
+	dir = 8;
+	pixel_y = -12
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security)
+"fz" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"fB" = (
+/obj/effect/turf_decal/corner/red{
+	dir = 4
+	},
+/obj/machinery/door/window/brigdoor/eastright{
+	req_access = list(58)
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"fJ" = (
+/obj/structure/cable/green{
+	icon_state = "8-9"
+	},
+/obj/structure/cable/green{
+	icon_state = "2-9"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"fK" = (
+/obj/structure/table/reinforced,
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/machinery/recharger{
+	pixel_x = 6
+	},
+/obj/machinery/recharger{
+	pixel_x = -6
+	},
+/obj/structure/cable/green{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"fS" = (
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"fU" = (
+/obj/effect/turf_decal/corner/blue/half{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/west,
+/obj/structure/rack,
+/obj/item/storage/bag/ore{
+	pixel_x = -3
+	},
+/obj/item/storage/bag/ore{
+	pixel_x = 5;
+	pixel_y = 2
+	},
+/obj/item/storage/bag/ore{
+	pixel_x = 1;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"fY" = (
+/obj/structure/sink/kitchen{
+	pixel_y = 26
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/port)
+"gd" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 6
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"ge" = (
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/closet/crate/radiation{
+	name = "fuel crate"
+	},
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/structure/cable/orange{
+	icon_state = "1-5"
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-1"
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"gf" = (
+/obj/machinery/door/airlock/public,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/dorm)
+"gi" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"gv" = (
+/obj/effect/turf_decal/corner/orange/border,
+/obj/structure/closet/emcloset/anchored,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/eva,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/port)
+"gI" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"gM" = (
+/obj/machinery/deepfryer,
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 5
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"gP" = (
+/obj/effect/turf_decal/corner/blue/half{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/suit_storage_unit/mining/eva,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"gQ" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"gT" = (
+/obj/structure/table/wood/bar,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"ha" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"hd" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/machinery/newscaster{
+	pixel_y = 30
+	},
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/freezer,
+/area/ship/maintenance/port)
+"hf" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/green{
+	icon_state = "2-6"
+	},
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"ho" = (
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor{
+	id = "portpodbay";
+	name = "Port Podbay blast door"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"hB" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"hD" = (
+/obj/machinery/power/terminal,
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_y = -10
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-1"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-5"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"hN" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 9
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/firealarm{
+	pixel_y = 24;
+	pixel_x = 5
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -7
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"hR" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"hU" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"hW" = (
+/obj/structure/table,
+/obj/machinery/microwave{
+	pixel_y = 9
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"hX" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"hZ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"id" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"ie" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"if" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/blue/full,
+/obj/effect/landmark/start/captain,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"il" = (
+/obj/machinery/door/window/eastleft{
+	req_access = list(19)
+	},
+/obj/effect/turf_decal/corner/lime/border{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/science/ai_chamber)
+"ip" = (
+/obj/effect/turf_decal/corner/bottlegreen/bordercorner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"iF" = (
+/obj/structure/chair,
+/obj/effect/turf_decal/corner/blue/three_quarters{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"iG" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/orange,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"iW" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ship/hallway/port)
+"iY" = (
+/obj/effect/turf_decal/corner/yellow/bordercorner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"ja" = (
+/obj/effect/turf_decal/corner_steel_grid/full,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"jd" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"je" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/hallway/port)
+"jf" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"jv" = (
+/obj/effect/turf_decal/corner/blue/bordercorner,
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/structure/cable/orange{
+	icon_state = "5-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 2
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"jx" = (
+/obj/machinery/mineral/ore_redemption{
+	input_dir = 2;
+	output_dir = 1
+	},
+/obj/effect/turf_decal/corner/blue/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"jz" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/door/airlock/maintenance,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"jB" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"jW" = (
+/obj/effect/turf_decal/corner/red/bordercorner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/door/airlock/command/glass,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bridgeshutters"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"kk" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
+"kx" = (
+/obj/structure/bed,
+/obj/item/bedsheet/blue,
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/structure/curtain/cloth,
+/obj/machinery/door/window/westleft,
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"kA" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/table,
+/obj/effect/turf_decal/corner/red/full,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/recharger{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"kE" = (
+/obj/structure/bed,
+/obj/item/bedsheet/blue,
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/structure/curtain/cloth,
+/obj/machinery/door/window/westleft,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"kG" = (
+/obj/structure/window/reinforced,
+/obj/effect/turf_decal/corner/red/three_quarters{
+	dir = 1
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/obj/machinery/rnd/production/protolathe/department/security{
+	pixel_y = 3;
+	pixel_x = -1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"kH" = (
+/obj/structure/table/wood/bar,
+/obj/item/reagent_containers/food/drinks/shaker,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"kN" = (
+/obj/effect/turf_decal/corner/blue/half{
+	dir = 4
+	},
+/obj/machinery/suit_storage_unit/mining/eva,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"kR" = (
+/obj/effect/turf_decal/corner/white/mono,
+/obj/effect/turf_decal/corner/blue/bordercee{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"la" = (
+/obj/structure/chair,
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"le" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/blue/three_quarters,
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"li" = (
+/obj/structure/cable/orange{
+	icon_state = "2-5"
+	},
+/obj/structure/chair,
+/obj/effect/turf_decal/corner/red{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"lk" = (
+/obj/structure/cable/orange{
+	icon_state = "5-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"ll" = (
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = -10
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"lp" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/canteen/kitchen)
+"ls" = (
+/obj/machinery/door/window/northleft,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"lt" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/hallway/fore)
+"lu" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/machinery/camera/autoname{
+	dir = 5;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"ly" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Port Thruser Room"
+	})
+"lH" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable/orange{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"lI" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/turf_decal/corner/orange/bordercorner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/port)
+"lL" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/red{
+	dir = 9
+	},
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"lW" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"mg" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable/green{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"mD" = (
+/obj/structure/chair,
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"mE" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"mH" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"mS" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"mV" = (
+/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"nc" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/blue/full,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"nj" = (
+/obj/machinery/vending/boozeomat/all_access{
+	pixel_y = 32
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"nk" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"nm" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-4"
+	},
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Port Thruser Room"
+	})
+"nq" = (
+/obj/machinery/door/airlock/public/glass,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"ns" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"nx" = (
+/obj/effect/turf_decal/corner/lime/border{
+	dir = 5
+	},
+/obj/structure/AIcore/latejoin_inactive,
+/obj/effect/landmark/start/ai,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/science/ai_chamber)
+"nG" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate{
+	name = "Explosives Crate"
+	},
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"nH" = (
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/camera/autoname{
+	dir = 9;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"nR" = (
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"nS" = (
+/obj/structure/bed,
+/obj/item/bedsheet/captain,
+/turf/open/floor/carpet/executive,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"nZ" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"oc" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"om" = (
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"os" = (
+/obj/structure/catwalk/over,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "starlaunchertwoshutters";
+	name = "Shutter Control";
+	pixel_x = 25;
+	pixel_y = -1
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"oG" = (
+/obj/machinery/stasis,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"oK" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"oM" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"oO" = (
+/obj/effect/turf_decal/corner/red{
+	dir = 9
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"oT" = (
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"pa" = (
+/obj/item/roller{
+	pixel_x = 5
+	},
+/obj/item/roller{
+	pixel_y = 5
+	},
+/obj/item/roller{
+	pixel_x = -5;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/glass/bottle/formaldehyde{
+	pixel_x = -6
+	},
+/obj/item/storage/box/syringes{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/clothing/suit/apron/surgical,
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/structure/closet/crate/medical,
+/obj/item/reagent_containers/glass/bottle/epinephrine{
+	pixel_x = 9
+	},
+/obj/item/reagent_containers/glass/bottle/epinephrine{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/glass/bottle/formaldehyde{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"pc" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/orange{
+	icon_state = "5-10"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"pd" = (
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 5
+	},
+/obj/structure/closet/wall{
+	dir = 8;
+	pixel_x = 28
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/rice,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"pi" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"pj" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = -10
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Port Thruser Room"
+	})
+"pp" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"pq" = (
+/obj/effect/turf_decal/corner/red{
+	dir = 6
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable/orange{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"pt" = (
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"pw" = (
+/obj/structure/closet/emcloset/wall{
+	dir = 8;
+	pixel_x = 28
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 6
+	},
+/obj/machinery/light/small{
+	pixel_x = -12
+	},
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/mask/breath,
+/obj/item/flashlight,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/port)
+"pC" = (
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"pF" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "portpodbay";
+	name = "Port Podbay blast door"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"pI" = (
+/obj/effect/turf_decal/corner/red/three_quarters{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/wall{
+	dir = 4;
+	icon_state = "sec_wall";
+	pixel_x = -28;
+	req_access = list(1)
+	},
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs/cable,
+/obj/item/flashlight/seclite,
+/obj/item/clothing/under/rank/security/officer/blueshirt,
+/obj/item/clothing/suit/space/hardsuit/security,
+/obj/item/clothing/glasses/hud/security,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/jackboots,
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
+/obj/item/storage/belt/security/webbing,
+/obj/item/clothing/suit/armor/vest,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"pJ" = (
+/obj/machinery/mass_driver{
+	dir = 1;
+	id = "portlauncherone"
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = -8
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"pN" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"pO" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"pV" = (
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "portlauncheroneshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"qb" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/northleft,
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"qd" = (
+/obj/structure/closet/crate{
+	name = "Explosives Crate"
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"qj" = (
+/obj/machinery/power/terminal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	icon_state = "1-5"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"qm" = (
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable/green{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"qs" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"qw" = (
+/obj/effect/turf_decal/corner/purple/three_quarters{
+	icon_state = "borderfloor_white";
+	dir = 9
+	},
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/obj/item/pen/fountain{
+	pixel_x = -5
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"qx" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/structure/closet/crate{
+	name = "Explosives Crate"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"qy" = (
+/obj/machinery/door/poddoor{
+	id = "portpodbay";
+	name = "Port Podbay blast door"
+	},
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"qJ" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/blue/three_quarters{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/ore_box,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"qM" = (
+/obj/machinery/mass_driver{
+	dir = 1;
+	id = "starlaunchertwo"
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_y = -10
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"qN" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"qR" = (
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"rc" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/bottlegreen/bordercorner{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = -6
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"rf" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"rh" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"rm" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/turf/open/floor/carpet/executive,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"rr" = (
+/obj/effect/turf_decal/corner_steel_grid/full,
+/obj/effect/turf_decal/corner/black{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/hallway/port)
+"rv" = (
+/obj/machinery/vending/dinnerware,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable/green{
+	icon_state = "0-2"
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"rx" = (
+/obj/machinery/door/airlock/public,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
+"rA" = (
+/obj/machinery/computer/secure_data{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/red/full,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"rB" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 10
+	},
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"rD" = (
+/obj/structure/chair/office/light{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/carpet/executive,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"rH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"rI" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"rL" = (
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"rQ" = (
+/obj/structure/chair/stool/bar{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/effect/landmark/start/paramedic,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"rY" = (
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 8
+	},
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"sb" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"sd" = (
+/obj/effect/turf_decal/corner/white/mono,
+/obj/effect/turf_decal/corner/blue/bordercee{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"sf" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/camera/autoname{
+	dir = 4;
+	pixel_y = -4
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"sg" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"sj" = (
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"sk" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/item/storage/firstaid/fire{
+	pixel_x = -8;
+	pixel_y = 5
+	},
+/obj/item/storage/firstaid/brute{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_x = -8;
+	pixel_y = -5
+	},
+/obj/item/storage/firstaid/toxin{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/obj/effect/turf_decal/corner/blue/border,
+/obj/structure/closet/wall/white/med{
+	dir = 1;
+	name = "medbay equipment locker";
+	pixel_y = -28
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"sn" = (
+/obj/structure/chair/stool/bar{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "2-9"
+	},
+/obj/effect/landmark/start/security_officer,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"su" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"sD" = (
+/obj/structure/chair,
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 4
+	},
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"sM" = (
+/obj/structure/table,
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = 6;
+	pixel_x = -6
+	},
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/machinery/button/massdriver{
+	id = "starlaunchertwo";
+	name = "starboard launcher two button";
+	pixel_x = 9;
+	dir = 1;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"sO" = (
+/obj/effect/turf_decal/corner/blue/border,
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"tb" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"tj" = (
+/obj/structure/table/wood,
+/obj/machinery/newscaster{
+	dir = 8;
+	pixel_x = 31;
+	pixel_y = -28
+	},
+/obj/item/flashlight/lamp{
+	pixel_x = -9;
+	pixel_y = 12
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/item/paper_bin{
+	pixel_x = 6
+	},
+/obj/item/pen/blue,
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 5
+	},
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"tn" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"to" = (
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"tr" = (
+/obj/structure/chair/comfy/teal{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -28
+	},
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"tx" = (
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs/cable,
+/obj/item/flashlight/seclite,
+/obj/item/clothing/under/rank/security/officer/blueshirt,
+/obj/item/clothing/suit/space/hardsuit/security,
+/obj/item/clothing/glasses/hud/security,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/jackboots,
+/obj/machinery/light/small{
+	pixel_x = -15
+	},
+/obj/structure/closet/secure_closet/wall{
+	dir = 1;
+	icon_state = "sec_wall";
+	req_access = list(1);
+	pixel_y = -28
+	},
+/obj/effect/turf_decal/corner/red{
+	dir = 10
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/item/storage/belt/security/webbing,
+/obj/item/clothing/suit/armor/vest,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"tA" = (
+/obj/effect/turf_decal/corner/bottlegreen/border,
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"tF" = (
+/obj/machinery/computer/communications,
+/turf/open/floor/carpet/executive,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"tK" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"tM" = (
+/obj/spacepod/prebuilt/sec{
+	locked = 0
+	},
+/turf/open/floor/pod/dark,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"tP" = (
+/obj/effect/turf_decal/corner/purple/three_quarters{
+	icon_state = "borderfloor_white";
+	dir = 6
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
+"tQ" = (
+/obj/effect/turf_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"tU" = (
+/obj/effect/turf_decal/corner/red/full,
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"tW" = (
+/obj/effect/turf_decal/corner/red/three_quarters{
+	dir = 4
+	},
+/obj/item/kirbyplants/random,
+/obj/machinery/camera/autoname,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"ut" = (
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = -8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"uv" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"uA" = (
+/obj/structure/disposalpipe/broken{
+	dir = 1
+	},
+/turf/template_noop,
+/area/template_noop)
+"uD" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/orange/bordercorner{
+	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = -10
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"uX" = (
+/obj/structure/chair/sofa/right{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"uZ" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"ve" = (
+/obj/effect/turf_decal/corner/white/mono,
+/obj/effect/turf_decal/corner/blue/bordercorner,
+/obj/effect/turf_decal/corner/blue/bordercorner{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/blue/bordercorner{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/blue/bordercorner{
+	dir = 8
+	},
+/obj/machinery/holopad/emergency/medical,
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"vi" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"vk" = (
+/obj/structure/table/wood/bar,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"vt" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"vB" = (
+/obj/structure/cable/orange{
+	icon_state = "2-5"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"vH" = (
+/obj/effect/turf_decal/corner/red/border{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"vI" = (
+/obj/structure/closet/crate{
+	name = "Explosives Crate"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"vJ" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"vN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/security,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/medical)
+"vO" = (
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"vS" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/engineering/engine{
+	name = "Port Thruser Room"
+	})
+"vY" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/science/ai_chamber)
+"wb" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"wf" = (
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 22
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"wh" = (
+/obj/effect/turf_decal/corner/red{
+	dir = 9
+	},
+/obj/structure/chair/office/light{
+	dir = 1
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/effect/landmark/start/security_officer,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"wi" = (
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 10
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"wj" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Port Thruser Room"
+	})
+"wl" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 2
+	},
+/obj/effect/turf_decal/corner/orange/border,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/port)
+"wo" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/frame/computer{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/lime/border{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/science/ai_chamber)
+"wq" = (
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"wr" = (
+/obj/effect/turf_decal/corner/blue/border,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"ws" = (
+/obj/machinery/portable_atmospherics/scrubber,
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 5
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"wF" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/structure/fans/tiny,
+/obj/machinery/button/door{
+	id = "sternshudders";
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "sternshutters";
+	name = "Stern Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"wG" = (
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"wJ" = (
+/obj/machinery/mass_driver{
+	dir = 1;
+	id = "starlauncherone"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"wL" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"wN" = (
+/obj/machinery/door/airlock/maintenance,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/port)
+"wO" = (
+/obj/effect/turf_decal/corner/red/three_quarters,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = -5
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 6
+	},
+/obj/machinery/holopad,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"wP" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"wQ" = (
+/obj/machinery/computer/operating,
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"wY" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"xd" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/port)
+"xh" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = -9
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 6
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"xj" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"xl" = (
+/obj/structure/closet/firecloset/full,
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 10
+	},
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"xm" = (
+/obj/effect/turf_decal/corner/purple/three_quarters{
+	icon_state = "borderfloor_white";
+	dir = 8
+	},
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/effect/landmark/start/scientist,
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"xr" = (
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/button/door{
+	dir = 8;
+	id = "portlauncheroneshutters";
+	name = "Shutter Control";
+	pixel_x = 25;
+	pixel_y = -1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"xt" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/red/full,
+/obj/effect/landmark/start/lieutenant,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"xz" = (
+/obj/effect/turf_decal/corner/blue/border,
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"xH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"xJ" = (
+/obj/structure/table,
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = 6;
+	pixel_x = 5
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/machinery/button/massdriver{
+	id = "starlauncherone";
+	name = "starboard launcher one button";
+	pixel_x = -8;
+	dir = 1;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"xN" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"xU" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"xV" = (
+/obj/structure/table/wood/bar,
+/obj/item/soap/nanotrasen,
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = 11;
+	pixel_x = -20
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"xX" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 10
+	},
+/obj/machinery/vending/cola/random,
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"xY" = (
+/obj/structure/closet/crate{
+	name = "Explosives Crate"
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"yb" = (
+/obj/structure/closet/secure_closet/captains,
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/machinery/light,
+/turf/open/floor/carpet/executive,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"yc" = (
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"yj" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue/half{
+	dir = 4
+	},
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"yk" = (
+/obj/machinery/mass_driver{
+	dir = 1;
+	id = "starlauncherone"
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"yo" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/command{
+	name = "Captain's Quarters";
+	req_access = list(20)
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/tech,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"ys" = (
+/obj/machinery/computer/crew{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/red/full,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"yt" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/red{
+	dir = 9
+	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	pixel_y = -4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"yv" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"yx" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/effect/turf_decal/corner/blue/full,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"yF" = (
+/obj/structure/table/wood/bar,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/item/storage/box/drinkingglasses{
+	pixel_x = 5
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"yG" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue/three_quarters{
+	dir = 8
+	},
+/obj/structure/ore_box,
+/obj/machinery/camera/autoname{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"yI" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"yJ" = (
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = null
+	},
+/obj/structure/cable/green{
+	icon_state = "1-9"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"yN" = (
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "starlauncheroneshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"yU" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"zl" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/security/glass,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"zq" = (
+/obj/effect/turf_decal/corner/red{
+	dir = 9
+	},
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"zs" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering/engine{
+	name = "Port Thruser Room"
+	})
+"zz" = (
+/turf/closed/wall/mineral/titanium,
+/area/template_noop)
+"zB" = (
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"zD" = (
+/obj/structure/closet/crate{
+	name = "Explosives Crate"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"zO" = (
+/obj/effect/turf_decal/corner/blue/bordercorner,
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/structure/cable/orange{
+	icon_state = "5-10"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-10"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"zQ" = (
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 10
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_y = 12
+	},
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"zR" = (
+/turf/open/floor/plasteel/stairs/right{
+	dir = 1
+	},
+/area/ship/hallway/fore)
+"zS" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate{
+	name = "Explosives Crate"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"Ab" = (
+/obj/structure/sink/kitchen{
+	dir = 8;
+	pixel_x = 11;
+	pixel_y = 6
+	},
+/obj/structure/mirror{
+	pixel_x = 24;
+	pixel_y = 6
+	},
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"Af" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"Ak" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
+"Am" = (
+/obj/effect/turf_decal/corner/lime/border{
+	dir = 5
+	},
+/obj/structure/frame/computer{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable/green{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/science/ai_chamber)
+"Aq" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"AB" = (
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera{
+	name = "spare parts crate"
+	},
+/obj/structure/closet/crate/science,
+/obj/item/circuitboard/computer/borgupload,
+/obj/item/circuitboard/machine/cyborgrecharger,
+/obj/item/circuitboard/computer/aiupload,
+/obj/item/aiModule/core/full/corp,
+/obj/item/aiModule/core/full/asimov,
+/obj/structure/window/reinforced/spawner,
+/obj/effect/turf_decal/corner/lime/border,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/science/ai_chamber)
+"AJ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"AK" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/table,
+/obj/machinery/recharger{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/effect/turf_decal/corner/red/full,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"AM" = (
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"AZ" = (
+/obj/machinery/door/window/brigdoor/eastleft{
+	req_access = list(1)
+	},
+/obj/effect/turf_decal/corner/red/three_quarters{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"Ba" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/fore)
+"Be" = (
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 1
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -22
+	},
+/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Bf" = (
+/obj/effect/turf_decal/corner/blue/half{
+	dir = 8
+	},
+/obj/machinery/suit_storage_unit/mining/eva,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"Bl" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-6"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"Bn" = (
+/obj/structure/cable/orange{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"BI" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/canteen/kitchen)
+"BJ" = (
+/obj/structure/cable/orange{
+	icon_state = "1-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"BL" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"BP" = (
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"BV" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/structure/filingcabinet,
+/turf/open/floor/carpet/executive,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"Cb" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"Cc" = (
+/obj/structure/reagent_dispensers/fueltank,
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"Cq" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"Cx" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"Cy" = (
+/obj/structure/table/optable,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/defibrillator/loaded,
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"Cz" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"CF" = (
+/obj/effect/turf_decal/corner/yellow/full,
+/obj/machinery/computer/monitor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"CG" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/security,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/hallway/port)
+"CK" = (
+/turf/open/floor/plasteel/stairs/medium{
+	dir = 1
+	},
+/area/ship/hallway/fore)
+"CN" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable/orange{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/port)
+"CR" = (
+/obj/machinery/airalarm/directional/east,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"CT" = (
+/obj/effect/turf_decal/corner/red/bordercorner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"CU" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/medical)
+"CZ" = (
+/obj/machinery/modular_computer/console/preset/command,
+/obj/effect/turf_decal/corner/blue/full,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Db" = (
+/obj/effect/turf_decal/corner/blue/bordercorner{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 10
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"Dd" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"Dl" = (
+/obj/machinery/door/airlock/security/glass,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"Dn" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"Dy" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"DB" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/machinery/cryopod,
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"DH" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"DJ" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering/engine{
+	name = "Port Thruser Room"
+	})
+"DO" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable/green{
+	icon_state = "0-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"DP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/corner/blue/full,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"DR" = (
+/obj/structure/catwalk/over,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"DY" = (
+/obj/structure/closet/secure_closet/engineering_personal{
+	req_access = null
+	},
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over,
+/obj/structure/catwalk/over,
+/obj/item/clothing/under/rank/engineering/engineer/telecomm_specialist{
+	name = "Engineering Specialist Jumpsuit"
+	},
+/obj/item/clothing/under/rank/engineering/engineer/telecomm_specialist{
+	name = "Engineering Specialist Jumpsuit"
+	},
+/obj/item/clothing/accessory/armband/engine,
+/obj/item/clothing/accessory/armband/engine,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"Ed" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"Ex" = (
+/obj/machinery/holopad/emergency/engineering,
+/obj/structure/catwalk/over,
+/obj/effect/landmark/start/station_engineer,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"Ey" = (
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"EA" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"EB" = (
+/obj/structure/reagent_dispensers/foamtank,
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable/green{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"EC" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 8
+	},
+/obj/machinery/vending/medical{
+	pixel_x = 3
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"EH" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
+"EK" = (
+/obj/machinery/autolathe,
+/obj/effect/turf_decal/corner/blue/half{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"EP" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 6
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = -9
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"EQ" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/lime/border{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"EV" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "starboardpodbay";
+	name = "Starboard Podbay blast door"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"Fc" = (
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"Fd" = (
+/obj/effect/turf_decal/corner/yellow/full,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/computer/station_alert{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Fh" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-10"
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"Fl" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"Fo" = (
+/obj/machinery/door/airlock/engineering,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Port Thruser Room"
+	})
+"Fv" = (
+/obj/machinery/mass_driver{
+	dir = 1;
+	id = "portlaunchertwo"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"FA" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/starboard)
+"FB" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"FE" = (
+/turf/open/floor/pod/dark,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"FH" = (
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = -10
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = 2;
+	pixel_y = 9
+	},
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"FP" = (
+/obj/machinery/processor,
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"FU" = (
+/obj/structure/cable/orange{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/computer/atmos_alert{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"FX" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"FY" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 6
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"FZ" = (
+/obj/effect/turf_decal/corner/black{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/hallway/port)
+"Gc" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/camera/autoname{
+	dir = 5;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/stairs/left{
+	dir = 1
+	},
+/area/ship/hallway/fore)
+"Gk" = (
+/obj/structure/tank_dispenser,
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/port)
+"Go" = (
+/obj/structure/closet/emcloset/wall{
+	dir = 8;
+	pixel_x = 28
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/mask/breath,
+/obj/item/flashlight,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/port)
+"Gp" = (
+/obj/machinery/vending/tool,
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 10
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"Gy" = (
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "starlaunchertwoshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"GC" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/orange{
+	icon_state = "0-1"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-5"
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_y = -10
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/camera/autoname{
+	dir = 4;
+	pixel_y = -4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Port Thruser Room"
+	})
+"GF" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"GG" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/janitor)
+"GI" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks/beer,
+/obj/machinery/camera/autoname{
+	dir = 9;
+	pixel_y = 3
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"GS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"GW" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"GY" = (
+/obj/structure/chair/stool/bar{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/effect/landmark/start/security_officer,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"Ha" = (
+/turf/open/floor/plasteel/stairs/right,
+/area/ship/hallway/aft)
+"Hk" = (
+/obj/effect/turf_decal/corner/blue/diagonal{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/yellow/diagonal,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Hw" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"Hy" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/pod/dark,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"HB" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"HC" = (
+/obj/effect/turf_decal/corner/orange/bordercee{
+	dir = 1
+	},
+/obj/machinery/flasher{
+	id = "Cell 1";
+	pixel_x = 24
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security)
+"HD" = (
+/obj/effect/turf_decal/corner/lime/bordercorner{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/science/ai_chamber)
+"HJ" = (
+/obj/effect/turf_decal/corner_steel_grid/full,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"HM" = (
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "portlaunchertwoshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"HR" = (
+/obj/effect/turf_decal/corner/yellow/bordercorner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/door/airlock/command/glass,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bridgeshutters"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"HY" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue/full,
+/obj/structure/rack,
+/obj/item/pickaxe/drill{
+	pixel_x = -2;
+	pixel_y = -6
+	},
+/obj/item/pickaxe/drill{
+	pixel_y = 5
+	},
+/obj/item/pickaxe/drill,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -7
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24;
+	pixel_x = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"Ia" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"Ie" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"If" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/hallway/port)
+"Ig" = (
+/obj/structure/catwalk/over,
+/obj/machinery/door/window/northleft,
+/obj/machinery/button/door{
+	dir = 4;
+	id = "starlauncheroneshutters";
+	name = "Shutter Control";
+	pixel_x = -25;
+	pixel_y = -1
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"Ij" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "1-6"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"Il" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/orange{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = -10
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"Iv" = (
+/obj/effect/turf_decal/corner/red/three_quarters,
+/obj/machinery/vending/security,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"IA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"IB" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -7
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24;
+	pixel_x = 5
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"IF" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/machinery/holopad/emergency/bar,
+/obj/effect/landmark/start/security_officer,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen/kitchen)
+"IM" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"IN" = (
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"IT" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"IW" = (
+/obj/machinery/door/airlock/engineering,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"Jb" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 9
+	},
+/obj/machinery/vending/snack/random,
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"Jc" = (
+/obj/machinery/button/door{
+	id = "portpodbay";
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/open/floor/pod/dark,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"Jk" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-5"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"Jp" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/maintenance/port)
+"JI" = (
+/obj/machinery/door/airlock/security,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"JK" = (
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 6
+	},
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/obj/structure/closet/crate/freezer/blood,
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
+/obj/machinery/light,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -7;
+	pixel_y = -23
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25;
+	pixel_x = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"JR" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"JV" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"JW" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/airlock/engineering,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"JZ" = (
+/obj/item/kirbyplants/random,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"Kf" = (
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 8
+	},
+/obj/structure/closet/wall{
+	dir = 4;
+	pixel_x = -28
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"Kh" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security)
+"Kk" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"Km" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"Ko" = (
+/obj/item/mop,
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/soap/nanotrasen,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 14;
+	pixel_y = -2
+	},
+/obj/item/clothing/head/soft/purple,
+/obj/item/storage/belt/janitor,
+/obj/item/clothing/shoes/galoshes,
+/obj/item/clothing/gloves/color/fyellow/old,
+/obj/item/clothing/under/rank/civilian/janitor/sanitation_tech,
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/structure/closet/wall{
+	dir = 4;
+	pixel_x = -28
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/effect/landmark/start/janitor,
+/turf/open/floor/plating,
+/area/ship/crew/janitor)
+"Kq" = (
+/obj/structure/closet/wall/blue{
+	dir = 4;
+	pixel_x = -29
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 8
+	},
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/clothing/under/color/jumpskirt/darkblue,
+/obj/item/clothing/under/dress/skirt/blue,
+/obj/item/clothing/under/color/darkblue,
+/obj/item/clothing/under/color/darkblue,
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"Ky" = (
+/obj/machinery/light/floor,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue/bordercee{
+	icon_state = "bordercolorcorner"
+	},
+/obj/effect/turf_decal/corner/blue/bordercee{
+	icon_state = "bordercolorcorner";
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/blue,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"Kz" = (
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/cell/high/plus,
+/obj/item/stock_parts/cell/high/plus,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 9
+	},
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"KA" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/canteen/kitchen)
+"KD" = (
+/obj/structure/cable/green{
+	icon_state = "5-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"KE" = (
+/obj/structure/chair/stool/bar{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"KJ" = (
+/obj/machinery/holopad/emergency/command,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"KO" = (
+/obj/machinery/door/airlock/security,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"KP" = (
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/tank/air{
+	piping_layer = 2
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"KT" = (
+/obj/effect/turf_decal/corner/blue/bordercorner,
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/structure/cable/orange{
+	icon_state = "5-10"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"KX" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"Lh" = (
+/obj/structure/cable/orange{
+	icon_state = "4-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"Li" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"Ll" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 12
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 12
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"Lr" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/corner/blue/full,
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"LD" = (
+/obj/effect/turf_decal/corner/white/mono,
+/obj/effect/turf_decal/corner/blue/bordercee,
+/obj/structure/chair/office/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"LH" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"LN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"LQ" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/purple/three_quarters{
+	icon_state = "borderfloor_white";
+	dir = 1
+	},
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"LW" = (
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 6
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"LY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"Me" = (
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"Mg" = (
+/obj/effect/turf_decal/corner/red{
+	dir = 9
+	},
+/obj/structure/closet/secure_closet/wall{
+	dir = 4;
+	icon_state = "sec_wall";
+	pixel_x = -28;
+	req_access = list(1)
+	},
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs/cable,
+/obj/item/flashlight/seclite,
+/obj/item/clothing/under/rank/security/officer/blueshirt,
+/obj/item/clothing/suit/space/hardsuit/security,
+/obj/item/clothing/glasses/hud/security,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/storage/belt/security/webbing,
+/obj/item/clothing/suit/armor/vest,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"Mi" = (
+/obj/machinery/door/window/westright,
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"Mv" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"My" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 1;
+	pixel_y = -28
+	},
+/obj/structure/cable/green{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"MF" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"MG" = (
+/obj/structure/table/wood/bar,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"MV" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/reagent_dispensers/watertank/high,
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 22
+	},
+/obj/structure/cable/green{
+	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = -16
+	},
+/turf/open/floor/plating,
+/area/ship/crew/janitor)
+"Nq" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = -10
+	},
+/obj/machinery/mass_driver{
+	dir = 1;
+	id = "portlaunchertwo"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"Nx" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/effect/landmark/start/bartender,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"Nz" = (
+/obj/effect/turf_decal/corner/blue/diagonal,
+/obj/effect/turf_decal/corner/red/diagonal{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"NB" = (
+/obj/machinery/computer/security{
+	network = list("carrier");
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/red/full,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"ND" = (
+/obj/machinery/door/airlock/public/glass,
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"NF" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"NK" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/blue/half{
+	dir = 8
+	},
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"NL" = (
+/obj/structure/cable/green{
+	icon_state = "1-6"
+	},
+/obj/structure/cable/green{
+	icon_state = "6-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"NO" = (
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/trimline/neutral,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -7;
+	pixel_y = -23
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25;
+	pixel_x = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"NP" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/yellow/full,
+/obj/effect/landmark/start/chief_engineer,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"NQ" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/maintenance,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/port)
+"NW" = (
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 6
+	},
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable/green{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "2-10"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"NY" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"Ob" = (
+/obj/machinery/cryopod,
+/obj/machinery/computer/cryopod{
+	dir = 8;
+	pixel_x = 22
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 6
+	},
+/obj/machinery/light,
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"On" = (
+/obj/effect/turf_decal/corner/yellow/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Op" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/stairs/medium,
+/area/ship/hallway/aft)
+"Ow" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"OG" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/west{
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"OH" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/port)
+"OL" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"OM" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"OO" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"OQ" = (
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/obj/item/pen/blue,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/purple/three_quarters{
+	icon_state = "borderfloor_white";
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"OR" = (
+/obj/machinery/door/window/northright,
+/obj/machinery/holopad,
+/turf/open/floor/carpet/executive,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"OS" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = -6
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Starboard Thruser Room"
+	})
+"OV" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"OW" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"OY" = (
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/carpet/executive,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"OZ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"Pd" = (
+/obj/effect/turf_decal/corner/white/mono,
+/obj/effect/turf_decal/corner/blue/bordercee{
+	dir = 4
+	},
+/obj/structure/chair/office/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"Pk" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"Pl" = (
+/obj/structure/table,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = 6;
+	pixel_x = 5
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/machinery/button/massdriver{
+	id = "portlaunchertwo";
+	name = "port launcher two button";
+	pixel_x = -8;
+	dir = 1;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"Pn" = (
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_y = -10
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"Pu" = (
+/obj/effect/turf_decal/corner/blue/bordercorner{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/blue/border,
+/obj/effect/turf_decal/corner/blue/bordercorner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"PA" = (
+/obj/spacepod/prebuilt/sec{
+	locked = 0
+	},
+/turf/open/floor/pod/dark,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"PG" = (
+/obj/machinery/door/window/eastright,
+/obj/structure/curtain/cloth,
+/obj/machinery/shower{
+	pixel_y = 19
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/freezer,
+/area/ship/maintenance/port)
+"PI" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"PJ" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/dorm)
+"PK" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
+"PN" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"Qa" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/orange{
+	icon_state = "0-1"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine{
+	name = "Port Thruser Room"
+	})
+"Qp" = (
+/obj/machinery/door/airlock/engineering,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"Qq" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/dorm)
+"Qs" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"Qt" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"Qv" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/green,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"QC" = (
+/obj/structure/table,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = 6;
+	pixel_x = -6
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/button/massdriver{
+	id = "portlauncherone";
+	name = "port launcher one button";
+	dir = 1;
+	pixel_x = 9;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"QD" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"QO" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"QQ" = (
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/west,
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"QT" = (
+/obj/structure/cable/orange{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"QV" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/door{
+	id = "condorwindows";
+	pixel_x = -7;
+	dir = 1;
+	pixel_y = -27;
+	name = "Ship Window Shutters"
+	},
+/obj/machinery/button/door{
+	id = "bridgeshutters";
+	pixel_x = 8;
+	dir = 1;
+	pixel_y = -27;
+	name = "Bridge Lockdown Shutters"
+	},
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/obj/machinery/button/massdriver{
+	id = "portlauncherone";
+	name = "port launcher one button";
+	dir = 1;
+	pixel_x = -4;
+	pixel_y = 10
+	},
+/obj/machinery/button/massdriver{
+	id = "starlaunchertwo";
+	name = "starboard launcher two button";
+	pixel_x = 9;
+	dir = 1
+	},
+/obj/machinery/button/massdriver{
+	id = "portlaunchertwo";
+	name = "port launcher two button";
+	pixel_x = -9;
+	dir = 1
+	},
+/obj/machinery/button/massdriver{
+	id = "starlauncherone";
+	name = "starboard launcher one button";
+	pixel_x = 4;
+	dir = 1;
+	pixel_y = 10
+	},
+/obj/structure/cable/orange,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"QX" = (
+/obj/machinery/computer/helm,
+/obj/effect/turf_decal/corner/blue/full,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Ru" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/corner/blue/full,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"Rw" = (
+/obj/machinery/button/door{
+	id = "starboardpodbay";
+	dir = 4;
+	pixel_x = -25
+	},
+/turf/open/floor/pod/dark,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"RC" = (
+/obj/machinery/door/airlock/security,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"RD" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_y = 12
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"RJ" = (
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 6
+	},
+/obj/machinery/light,
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"RM" = (
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"RQ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/orange{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"RT" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable/orange{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"Sb" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/maintenance/port)
+"Sl" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/science/ai_chamber)
+"Sn" = (
+/obj/effect/turf_decal/corner/red/three_quarters{
+	dir = 8
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/button/flasher{
+	dir = 8;
+	pixel_x = 23;
+	pixel_y = -19;
+	id = "Cell 1"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"So" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/mineral/titanium/twenty{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/stack/sheet/mineral/titanium/twenty{
+	pixel_x = 4
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/port)
+"SE" = (
+/obj/effect/turf_decal/corner/red/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"SN" = (
+/obj/machinery/power/port_gen/pacman/super,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"SO" = (
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	dir = 8
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"SS" = (
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"SV" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"To" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"Tq" = (
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 6
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -7;
+	pixel_y = -23
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25;
+	pixel_x = 5
+	},
+/obj/structure/closet/emcloset/anchored,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/eva,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/port)
+"TA" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/orange,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"TH" = (
+/obj/machinery/door/airlock/public/glass,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"TJ" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"TO" = (
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"TZ" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"Ud" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"Ug" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 9
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable/orange{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"Ul" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/structure/chair/sofa/left{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"Um" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/security)
+"Up" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/corner/blue/three_quarters{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/camera/autoname{
+	dir = 4;
+	pixel_y = -13
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"Ut" = (
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"Uu" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"UF" = (
+/obj/machinery/door/airlock/maintenance,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"UL" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"UP" = (
+/obj/effect/turf_decal/corner/purple/three_quarters{
+	icon_state = "borderfloor_white";
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"UR" = (
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 9
+	},
+/obj/structure/closet/secure_closet/engineering_welding{
+	req_access = null
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"UY" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"Vg" = (
+/obj/effect/turf_decal/corner/purple/three_quarters{
+	icon_state = "borderfloor_white";
+	dir = 9
+	},
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"Vj" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/security,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 2
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"Vn" = (
+/obj/structure/cable/green{
+	icon_state = "4-10"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Vo" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"Vq" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "2-5"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"Vx" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/wall{
+	dir = 8;
+	icon_state = "sec_wall";
+	pixel_x = 28;
+	name = "Lieutenants Equipment";
+	req_access = list(58)
+	},
+/obj/effect/turf_decal/corner/red/three_quarters{
+	dir = 8
+	},
+/obj/item/clothing/under/rank/command/lieutenant/nt,
+/obj/item/clothing/under/rank/command/lieutenant/nt/skirt,
+/obj/item/flashlight/seclite,
+/obj/item/storage/box/handcuffs,
+/obj/item/restraints/handcuffs,
+/obj/item/clothing/suit/space/hardsuit/security,
+/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/suit/armor/bulletproof,
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	name = "\improper Infantry"
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	name = "\improper Infantry"
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	name = "\improper Infantry"
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	name = "\improper Infantry"
+	},
+/obj/item/gun/ballistic/automatic/pistol/commissar{
+	name = "\improper Lieutenant"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"Vz" = (
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"VF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"VX" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate{
+	name = "Explosives Crate"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"Wp" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/structure/fans/tiny,
+/obj/machinery/button/door{
+	id = "sternshudders";
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "sternshutters";
+	name = "Stern Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"Wq" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"Ww" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/closet/firecloset/full,
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/port)
+"Wx" = (
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/cryopod,
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 10
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = -10
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"WA" = (
+/obj/structure/cable/orange{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"WH" = (
+/obj/structure/chair,
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"WI" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"WJ" = (
+/obj/effect/turf_decal/corner/blue/three_quarters,
+/turf/closed/wall/mineral/titanium,
+/area/ship/medical)
+"WN" = (
+/obj/effect/turf_decal/corner_steel_grid/full,
+/obj/effect/turf_decal/corner/black{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
+"WP" = (
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/structure/closet/crate/radiation{
+	name = "fuel crate"
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"WU" = (
+/obj/effect/turf_decal/corner/blue/half{
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable/green{
+	icon_state = "0-8"
+	},
+/obj/structure/rack,
+/obj/item/mining_scanner{
+	pixel_x = 5
+	},
+/obj/item/mining_scanner{
+	pixel_x = -5;
+	pixel_y = -3
+	},
+/obj/item/mining_scanner{
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"Xb" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"Xj" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Port Engineering"
+	})
+"Xm" = (
+/obj/machinery/airalarm/directional/north,
+/obj/structure/closet/firecloset/wall{
+	dir = 8;
+	pixel_x = 28
+	},
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"Xo" = (
+/obj/structure/table/wood,
+/obj/item/areaeditor/shuttle{
+	pixel_y = 8
+	},
+/obj/item/paper_bin,
+/obj/item/pen/fountain/captain,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -7;
+	pixel_y = -23
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25;
+	pixel_x = 5
+	},
+/turf/open/floor/carpet/executive,
+/area/ship/crew{
+	name = "Captain's Quarters";
+	icon_state = "Sleep"
+	})
+"Xq" = (
+/obj/machinery/mass_driver{
+	dir = 1;
+	id = "portlauncherone"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"Xy" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/maintenance/starboard)
+"Xz" = (
+/obj/structure/dresser,
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 5
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew/dorm)
+"XA" = (
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 6
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = -6
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"XE" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/pod/dark,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"XH" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "1-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"XK" = (
+/turf/open/floor/plasteel/stairs/left,
+/area/ship/hallway/aft)
+"XN" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/lime/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"XV" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ship/hallway/fore)
+"XZ" = (
+/obj/structure/table,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"Yd" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = -10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"Yg" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/science/ai_chamber)
+"Yp" = (
+/obj/structure/chair,
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"Yu" = (
+/obj/effect/turf_decal/corner/purple/three_quarters{
+	icon_state = "borderfloor_white";
+	dir = 1
+	},
+/obj/structure/frame/computer,
+/obj/item/circuitboard/computer/rdconsole,
+/obj/machinery/camera/autoname{
+	pixel_x = -5
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"Yw" = (
+/obj/machinery/door/window/northleft,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/button/door{
+	dir = 4;
+	id = "portlaunchertwoshutters";
+	name = "Shutter Control";
+	pixel_x = -25;
+	pixel_y = -1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Port Launcher Two"
+	})
+"Yx" = (
+/obj/machinery/mass_driver{
+	dir = 1;
+	id = "starlaunchertwo"
+	},
+/turf/open/floor/plating,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
+"Yz" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/green,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"YB" = (
+/turf/open/floor/pod/dark,
+/area/ship/security{
+	name = "Starboard Podbay"
+	})
+"YD" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/janitor)
+"YM" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"YS" = (
+/obj/effect/turf_decal/corner/bottlegreen/border,
+/obj/structure/closet/crate/engineering{
+	anchored = 1
+	},
+/obj/item/pipe_dispenser,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/storage/box/lights/bulbs,
+/obj/item/lightreplacer,
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/starboard)
+"YU" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"YV" = (
+/obj/effect/turf_decal/corner/red/three_quarters{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/wall{
+	dir = 4;
+	icon_state = "sec_wall";
+	pixel_x = -28;
+	req_access = list(1)
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs/cable,
+/obj/item/flashlight/seclite,
+/obj/item/clothing/under/rank/security/officer/blueshirt,
+/obj/item/clothing/suit/space/hardsuit/security,
+/obj/item/clothing/glasses/hud/security,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/storage/belt/security/webbing,
+/obj/item/clothing/suit/armor/vest,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"YY" = (
+/obj/effect/turf_decal/corner_steel_grid/full{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/port)
+"Za" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/corner/blue/full,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/aft)
+"Zd" = (
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable/orange{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"Zf" = (
+/obj/effect/turf_decal/corner/purple/three_quarters{
+	icon_state = "borderfloorcorner_white";
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"Zl" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/ship/security{
+	name = "Port Podbay"
+	})
+"Zo" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
+"Zp" = (
+/obj/machinery/computer/communications,
+/obj/effect/turf_decal/corner/blue/full,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Zs" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/security)
+"Zt" = (
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"Zy" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"ZJ" = (
+/obj/effect/turf_decal/corner/red{
+	dir = 9
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/west,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
+"ZK" = (
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+"ZL" = (
+/obj/effect/turf_decal/corner/blue/bordercorner{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 5
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"ZM" = (
+/obj/machinery/power/terminal,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable/green,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"ZN" = (
+/obj/effect/turf_decal/corner/blue/border{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/sink/kitchen{
+	dir = 4;
+	name = "chemical sink";
+	pixel_x = -5;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"ZP" = (
+/obj/structure/table/wood/bar,
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"ZR" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/engineering{
+	name = "Starboard Engineering"
+	})
+"ZS" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/maintenance/starboard)
+"ZU" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/window/northright,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
+"ZX" = (
+/obj/machinery/door/window/southright,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 24;
+	pixel_y = -6
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 6
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"ZZ" = (
+/obj/structure/frame/machine,
+/obj/effect/turf_decal/corner/purple/three_quarters{
+	icon_state = "borderfloor_white";
+	dir = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/hallway/port)
+
+(1,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+ie
+ie
+ie
+GF
+yI
+yI
+GF
+GF
+GF
+GF
+ie
+ie
+Ie
+Ie
+Ie
+zs
+DJ
+DJ
+DJ
+zs
+zs
+cD
+"}
+(2,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+HM
+Fv
+Yw
+el
+LY
+Il
+RD
+cl
+sf
+vJ
+JI
+GS
+xj
+hZ
+Fo
+pj
+nm
+GC
+wj
+vS
+cD
+"}
+(3,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+HM
+Nq
+nR
+la
+Pl
+wG
+qd
+vI
+qd
+ea
+ie
+Ww
+eE
+So
+DJ
+cL
+aN
+Qa
+ly
+vS
+cD
+"}
+(4,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+ie
+ie
+GF
+yI
+yI
+yI
+GF
+ie
+GF
+ba
+ba
+ba
+Sb
+jz
+Jp
+zs
+zs
+DJ
+qN
+zs
+zs
+cD
+"}
+(5,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+zz
+ba
+hd
+ba
+fY
+Jk
+hD
+bb
+OH
+cD
+cD
+cD
+cD
+cD
+"}
+(6,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+ba
+PG
+ba
+pc
+LN
+fe
+gI
+OH
+cD
+cD
+cD
+cD
+cD
+"}
+(7,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+Jp
+ba
+CN
+Kk
+rI
+Tq
+ba
+Jp
+Jp
+cD
+cD
+cD
+cD
+cD
+"}
+(8,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+EA
+EA
+EA
+EA
+Zo
+OL
+OL
+OL
+Zo
+EA
+EA
+EA
+Zo
+Jp
+ba
+Gk
+lI
+aV
+gv
+ba
+Jp
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+"}
+(9,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+pV
+Xq
+ls
+Pn
+Ut
+Yp
+QC
+QQ
+xY
+zD
+xY
+rB
+ba
+Gk
+ft
+QO
+rI
+wl
+tb
+uA
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+"}
+(10,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+pV
+pJ
+xr
+nH
+wq
+wq
+Li
+cg
+VF
+FB
+gi
+Ed
+Vj
+Yd
+oK
+Go
+Go
+pw
+ba
+Jp
+cD
+cD
+OO
+cD
+cD
+cD
+cD
+"}
+(11,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+EA
+EA
+Zo
+Zo
+Zo
+OL
+OL
+OL
+Zo
+Zo
+EA
+EA
+je
+If
+If
+wN
+je
+je
+je
+ev
+ev
+ev
+Ia
+nZ
+Ia
+ev
+ev
+cD
+"}
+(12,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+xd
+Jb
+OG
+YU
+lu
+Qt
+xX
+Ia
+fi
+RT
+ge
+FU
+TA
+Af
+eD
+cD
+"}
+(13,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+je
+If
+bk
+vB
+JR
+qs
+Fl
+Fl
+JW
+hX
+Fh
+TO
+au
+iG
+yU
+eD
+cD
+"}
+(14,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+je
+If
+hN
+jv
+LW
+EC
+Mi
+ZN
+eq
+Ia
+IB
+wL
+LH
+SO
+iG
+uv
+eD
+cD
+"}
+(15,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+je
+xd
+xd
+FZ
+Ug
+zO
+rf
+oG
+IA
+jd
+SS
+JK
+Ia
+hU
+SN
+oM
+KP
+iG
+JV
+eD
+cD
+"}
+(16,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+je
+If
+qw
+xm
+UP
+KT
+pN
+Cy
+Pd
+fz
+Dy
+WJ
+CU
+Ia
+Ia
+ev
+Ia
+ev
+Xj
+ev
+ev
+cD
+"}
+(17,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+Zs
+Zs
+Zs
+Zs
+Zs
+Vg
+Zf
+ZK
+lk
+sO
+wQ
+LD
+ve
+kR
+sk
+CU
+UR
+uD
+Zl
+FE
+XE
+qy
+cD
+cD
+cD
+cD
+"}
+(18,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+Zs
+Um
+Um
+Kh
+YV
+Mg
+pI
+Kh
+Yu
+ZK
+Lh
+Dn
+cE
+ZU
+Zy
+sd
+tK
+RQ
+vN
+wb
+ad
+FE
+tM
+XE
+pF
+cD
+cD
+cD
+cD
+"}
+(19,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+Zs
+Um
+Um
+Kh
+do
+wh
+kG
+AZ
+fB
+tx
+Kh
+LQ
+QT
+WA
+OM
+xz
+pa
+oT
+Zt
+mH
+RJ
+CU
+Zd
+lH
+FE
+FE
+XE
+pF
+cD
+cD
+cD
+cD
+"}
+(20,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+Zs
+Kh
+fy
+HC
+cy
+Sn
+pq
+wO
+tU
+Vx
+Iv
+Zs
+ZZ
+yc
+mD
+OQ
+tP
+bt
+bt
+bt
+HR
+Ak
+Ak
+Xm
+jf
+Jc
+FE
+XE
+ho
+cD
+cD
+cD
+cD
+"}
+(21,1,1) = {"
+MF
+oc
+oc
+as
+MF
+Ba
+lt
+Zs
+Kh
+Kh
+Zs
+Kh
+Kh
+Kh
+dD
+Zs
+Zs
+Kh
+iW
+ND
+iW
+Ak
+Ak
+Fd
+fm
+CF
+tQ
+QV
+Ak
+fw
+Dl
+ao
+ao
+fw
+ao
+xN
+xN
+ao
+ao
+"}
+(22,1,1) = {"
+oc
+tF
+rD
+Xo
+as
+tW
+ZJ
+zq
+oO
+li
+kA
+AK
+lL
+yt
+om
+pp
+nq
+Gc
+cG
+Bn
+Db
+bt
+Zp
+Hk
+NP
+On
+iY
+fK
+Ak
+qJ
+Me
+Bf
+fU
+Bf
+EK
+XK
+NK
+Up
+Wp
+"}
+(23,1,1) = {"
+oc
+rm
+OR
+OY
+yo
+IT
+DH
+IT
+BJ
+OZ
+xH
+OZ
+OZ
+OZ
+xU
+JZ
+XV
+CK
+zB
+Ky
+wr
+bt
+QX
+if
+qR
+KJ
+Vn
+NO
+EH
+HY
+DP
+nc
+Za
+Ru
+Ru
+Op
+yx
+Lr
+bp
+"}
+(24,1,1) = {"
+oc
+nS
+BV
+yb
+as
+iF
+wf
+EP
+WI
+WI
+WI
+gd
+WI
+WI
+wP
+BP
+mV
+zR
+ZL
+aT
+Pu
+bt
+CZ
+Nz
+xt
+SE
+CT
+tr
+Ak
+yG
+NY
+kN
+WU
+gP
+jx
+Ha
+yj
+le
+wF
+"}
+(25,1,1) = {"
+MF
+oc
+oc
+as
+MF
+Ba
+lt
+ca
+ca
+ca
+GG
+Qq
+Qq
+Qq
+gf
+Qq
+Qq
+Qq
+iW
+TH
+iW
+Ak
+Ak
+ys
+NB
+rA
+vH
+Be
+Ak
+fw
+zl
+ao
+ao
+ao
+fw
+xN
+xN
+ao
+ao
+"}
+(26,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+GG
+GG
+MV
+Ko
+fg
+Kq
+Kq
+Kq
+Ij
+TZ
+Wx
+Qq
+YY
+AJ
+AM
+su
+WN
+bt
+bt
+bt
+jW
+Ak
+Ak
+EB
+IM
+Rw
+YB
+Hy
+EV
+cD
+cD
+cD
+cD
+"}
+(27,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+GG
+ca
+YD
+ca
+Xz
+kE
+kx
+bx
+fJ
+wY
+rx
+Xb
+bl
+Dd
+NL
+Cz
+jB
+jB
+jB
+rh
+HJ
+If
+TJ
+Mv
+YB
+YB
+Hy
+EV
+cD
+cD
+cD
+cD
+"}
+(28,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+GG
+PJ
+Qq
+Qq
+tj
+DB
+Ob
+Qq
+XN
+il
+EQ
+KE
+sn
+rQ
+GY
+OV
+bR
+Cx
+CG
+Qs
+hR
+YB
+PA
+Hy
+EV
+cD
+cD
+cD
+cD
+"}
+(29,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+PJ
+kk
+Qq
+Qq
+PJ
+nx
+HD
+AB
+yF
+kH
+MG
+vk
+IF
+ns
+My
+If
+Cc
+rc
+pO
+YB
+Hy
+EV
+cD
+cD
+cD
+cD
+"}
+(30,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+vY
+Sl
+Am
+wo
+rv
+Wq
+Nx
+rL
+vk
+fS
+To
+rr
+If
+tn
+tn
+tn
+tn
+tn
+hB
+dU
+dU
+cD
+"}
+(31,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+vY
+Yg
+Yg
+KA
+GI
+hW
+KX
+xV
+Ey
+To
+AM
+ja
+tn
+cQ
+ei
+Pk
+FH
+Yz
+Hw
+YM
+cD
+"}
+(32,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+BI
+KA
+Ow
+UL
+ZP
+aw
+sj
+PN
+PN
+Qp
+Bl
+Ud
+Vq
+ZR
+Yz
+id
+YM
+cD
+"}
+(33,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+BI
+BI
+nj
+gT
+Ey
+KD
+XZ
+Ul
+tn
+DO
+dm
+Ex
+Vz
+Yz
+qb
+YM
+cD
+"}
+(34,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+lp
+Ab
+ZX
+XH
+sb
+uX
+ci
+tn
+WP
+mg
+yJ
+DY
+Qv
+aC
+YM
+cD
+"}
+(35,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+vi
+vi
+nk
+nk
+nk
+FX
+FX
+FX
+nk
+nk
+vi
+vi
+BI
+KA
+KA
+je
+NQ
+If
+If
+dU
+dU
+dU
+dU
+hB
+tn
+dU
+dU
+cD
+"}
+(36,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+yN
+yk
+Ig
+IN
+to
+to
+ha
+ll
+mE
+PI
+PK
+eS
+RC
+bD
+bD
+RM
+Kf
+xl
+Xy
+ZS
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+"}
+(37,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+yN
+wJ
+DR
+ut
+pt
+sD
+xJ
+qm
+zS
+qx
+zS
+FY
+Xy
+pd
+ip
+Aq
+ah
+bQ
+QD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+"}
+(38,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+vi
+vi
+vi
+vi
+nk
+FX
+FX
+FX
+nk
+vi
+vi
+vi
+nk
+ZS
+Xy
+gM
+ip
+Km
+YS
+Xy
+ZS
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+"}
+(39,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+ZS
+Xy
+FP
+Aq
+Cb
+Gp
+Xy
+ZS
+ZS
+cD
+cD
+cD
+cD
+cD
+"}
+(40,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+uZ
+bS
+pC
+vt
+tA
+qj
+NF
+FA
+cD
+cD
+cD
+cD
+cD
+"}
+(41,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+zz
+Xy
+ws
+XA
+rH
+NW
+ZM
+HB
+FA
+cD
+cD
+cD
+cD
+cD
+"}
+(42,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+UY
+UY
+dQ
+gQ
+gQ
+gQ
+dQ
+dQ
+dQ
+Xy
+Xy
+Xy
+UF
+Xy
+Xy
+yv
+pi
+pi
+qN
+yv
+yv
+cD
+"}
+(43,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+Gy
+qM
+dR
+WH
+sM
+Uu
+nG
+VX
+VX
+wi
+ZS
+SV
+rY
+zQ
+pi
+Kz
+hf
+aB
+Cq
+mS
+cD
+"}
+(44,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+Gy
+Yx
+os
+Fc
+GW
+xh
+Ll
+CR
+BL
+OW
+KO
+Vo
+sg
+sg
+IW
+OS
+vO
+dE
+lW
+mS
+cD
+"}
+(45,1,1) = {"
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+cD
+UY
+UY
+UY
+dQ
+gQ
+gQ
+dQ
+dQ
+dQ
+UY
+UY
+ZS
+QD
+QD
+QD
+yv
+pi
+pi
+pi
+yv
+yv
+cD
+"}

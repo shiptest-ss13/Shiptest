@@ -1,0 +1,42 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Condor-Class Interceptor",
+	"prefix": "NTSV",
+	"namelists": [ "BRITISH_NAVY", "MYTHOLOGICAL", "WEAPONS"],
+	"map_short_name": "Condor-class",
+	"map_path": "_maps/shuttles/shiptest/ntsv_condor.dmm",
+	"map_id": "ntsv_condor",
+	"limit": 0,
+	"job_slots": {
+		"Commander": {
+			"outfit": "/datum/outfit/job/captain/nt",
+			"officer": true,
+			"slots": 1
+		},
+		"Lieutenant": {
+			"outfit": "/datum/outfit/job/hos/nanotrasen",
+			"officer": true,
+			"slots": 1
+		},
+		"Infantry":{
+			"outfit":"/datum/outfit/job/security/nanotrasen",
+			"slots": 4
+			},
+		"Chief Engineer": 1,
+		"Maintenance Specialist":{
+			"outfit":"/datum/outfit/job/engineer/telecomsspecialist",
+			"slots":1
+			},
+		"Scientist": 1,
+		"Paramedic": 1,
+		"Medical Doctor": 1,
+		"Barkeep": {
+			"outfit": "/datum/outfit/job/bartender",
+			"slots":1},
+		"Recruit": {
+			"outfit":"/datum/outfit/job/assistant",
+			"slots":5},
+		"Janitor": 1,
+		"AI": 1
+	}
+}
