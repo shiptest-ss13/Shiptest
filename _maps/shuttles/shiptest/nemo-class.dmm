@@ -184,7 +184,6 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/structure/chair/office,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "cj" = (
@@ -417,8 +416,10 @@
 /obj/effect/turf_decal/siding/purple{
 	dir = 8
 	},
-/obj/structure/table/reinforced,
-/obj/machinery/cell_charger,
+/obj/structure/frame/machine,
+/obj/item/paper{
+	info = "Missing protolathe. Lost in transit."
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "eS" = (
@@ -573,6 +574,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/chair/office{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "hi" = (
@@ -664,9 +668,8 @@
 	dir = 8;
 	pixel_x = 28
 	},
-/obj/machinery/mecha_part_fabricator{
-	dir = 4
-	},
+/obj/machinery/recharge_station,
+/obj/item/mmi/posibrain,
 /turf/open/floor/circuit,
 /area/ship/science)
 "iz" = (
@@ -1016,7 +1019,7 @@
 	dir = 5
 	},
 /obj/structure/table/glass,
-/obj/machinery/computer/med_data/laptop,
+/obj/machinery/cell_charger,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "mj" = (
@@ -1885,9 +1888,6 @@
 /obj/effect/turf_decal/siding/blue/corner{
 	dir = 4
 	},
-/obj/structure/chair/office/light{
-	dir = 1
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Bl" = (
@@ -2114,10 +2114,6 @@
 	name = "Full Lockdown";
 	pixel_x = -7;
 	pixel_y = 24
-	},
-/obj/structure/frame/machine,
-/obj/item/paper{
-	info = "Missing protolathe. Lost in transit."
 	},
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
@@ -2381,8 +2377,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/recharge_station,
-/obj/item/mmi/posibrain,
+/obj/machinery/mecha_part_fabricator{
+	dir = 8
+	},
 /turf/open/floor/circuit,
 /area/ship/science)
 "JG" = (
