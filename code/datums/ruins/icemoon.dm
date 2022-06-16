@@ -19,6 +19,12 @@
 	description = "Slime ranchin with the bud."
 	suffix = "icemoon_surface_slimerancher.dmm"
 
+/datum/map_template/ruin/icemoon/enigmaruins
+	name = "Enigma Ruins"
+	id = "enigmaruins"
+	description = "Remains of an Enigma Shipworks ship, now inhabited by a posessed shipbreaker."
+	suffix = "icemoon_surface_enigmaruins.dmm"
+
 // above and below ground together
 
 
