@@ -47,8 +47,9 @@
 /turf/closed/wall/copyTurf(turf/T, copy_air, flags)
 	. = ..()
 	var/turf/closed/wall/wall_copy = T
-	wall_copy.dent_decals = dent_decals.Copy()
-	wall_copy.update_icon()
+	if(LAZYLEN(dent_decals))
+		wall_copy.dent_decals = dent_decals.Copy()
+		wall_copy.update_icon()
 
 /turf/closed/wall/update_overlays()
 	. = ..()
