@@ -2078,6 +2078,10 @@
 /obj/structure/closet/crate{
 	name = "Explosives Crate"
 	},
+/obj/item/paper/fluff{
+	name = "IOU";
+	desc = "IOU- 3x Explosives per crate, call Centrall Command if these have not arrived before combat."
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Starboard Launcher One"
@@ -2771,6 +2775,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/paper/fluff{
+	name = "IOU";
+	desc = "IOU- 3x Explosives per crate, call Centrall Command if these have not arrived before combat."
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Port Launcher Two"
@@ -3338,6 +3346,19 @@
 /obj/effect/turf_decal/corner/blue/full,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
+"yD" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate{
+	name = "Explosives Crate"
+	},
+/obj/item/paper/fluff{
+	name = "IOU";
+	desc = "IOU- 3x Explosives per crate, call Centrall Command if these have not arrived before combat."
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher Two"
+	})
 "yF" = (
 /obj/structure/table/wood/bar,
 /obj/effect/turf_decal/siding/wood{
@@ -3457,6 +3478,10 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/paper/fluff{
+	name = "IOU";
+	desc = "IOU- 3x Explosives per crate, call Centrall Command if these have not arrived before combat."
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Port Launcher One"
@@ -8827,7 +8852,7 @@ WH
 sM
 Uu
 nG
-VX
+yD
 VX
 wi
 ZS
