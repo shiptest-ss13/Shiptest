@@ -217,8 +217,8 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/components/unary/tank/air{
-	piping_layer = 2;
-	dir = 8
+	dir = 8;
+	piping_layer = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -233,8 +233,8 @@
 	pixel_y = 1
 	},
 /obj/item/pen/fountain{
-	pixel_y = 2;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 2
 	},
 /obj/item/paicard{
 	pixel_x = -7;
@@ -438,8 +438,8 @@
 /area/ship/engineering)
 "iB" = (
 /obj/structure/closet/wall{
-	pixel_y = 30;
-	name = "uniform closet"
+	name = "uniform closet";
+	pixel_y = 30
 	},
 /obj/item/clothing/under/syndicate,
 /obj/item/clothing/under/syndicate,
@@ -721,27 +721,25 @@
 	dir = 1
 	},
 /obj/structure/closet/crate/science,
-/obj/item/slime_extract,
-/obj/item/slime_extract{
-	pixel_x = -1;
-	pixel_y = -7
-	},
-/obj/item/slime_extract{
-	pixel_y = 3;
-	pixel_x = 4
-	},
-/obj/item/slime_extract{
-	pixel_x = -6;
-	pixel_y = -4
-	},
 /obj/item/circuitboard/machine/processor/slime,
 /obj/item/circuitboard/machine/monkey_recycler,
 /obj/item/circuitboard/computer/xenobiology,
-/obj/item/slime_scanner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/slime_extract/grey,
+/obj/item/slime_extract/grey,
+/obj/item/slime_extract/grey{
+	pixel_x = -2;
+	pixel_y = -2
+	},
+/obj/item/slime_extract/grey{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/slime_extract/grey,
+/obj/item/slime_scanner,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "mR" = (
@@ -933,8 +931,8 @@
 	},
 /obj/item/reagent_containers/dropper,
 /obj/item/storage/box/monkeycubes{
-	pixel_y = 2;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 2
 	},
 /obj/item/storage/box/monkeycubes,
 /turf/open/floor/plasteel/white,
@@ -1033,8 +1031,8 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/storage/box/disks{
-	pixel_y = 6;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 6
 	},
 /obj/item/storage/pill_bottle/mannitol{
 	pixel_x = 10;
@@ -1063,8 +1061,8 @@
 	},
 /obj/item/storage/box/stockparts/t2,
 /obj/item/circuitboard/machine/protolathe/department/medical{
-	pixel_y = -6;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -6
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -1268,8 +1266,8 @@
 	pixel_x = 26
 	},
 /obj/item/clothing/gloves/color/latex/nitrile/evil{
-	pixel_y = -3;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = -3
 	},
 /obj/machinery/firealarm{
 	dir = 1;
@@ -1570,14 +1568,14 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/clothing/head/beret/cargo{
-	pixel_y = 9;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 9
 	},
 /obj/item/megaphone/cargo,
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000{
-	pixel_y = 4;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 4
 	},
 /obj/item/gps/mining{
 	pixel_x = -17;
@@ -1693,16 +1691,16 @@
 	name = "Monkey-neutralizer"
 	},
 /obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_y = 10;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 10
 	},
 /obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_y = 10;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 10
 	},
 /obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_y = 10;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 10
 	},
 /obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/syringe,
@@ -1738,8 +1736,8 @@
 	dir = 8;
 	generic_canpass = 0;
 	pass_flags = 0;
-	pixel_y = 5;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1762,20 +1760,20 @@
 /area/ship/bridge)
 "Dw" = (
 /obj/item/reagent_containers/food/snacks/monkeycube{
-	pixel_y = -1;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = -1
 	},
 /obj/item/reagent_containers/food/snacks/monkeycube{
-	pixel_y = 5;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/snacks/monkeycube{
-	pixel_y = -1;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = -1
 	},
 /obj/item/reagent_containers/food/snacks/monkeycube{
-	pixel_y = 1;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 1
 	},
 /turf/open/floor/plating/beach/coastline_t{
 	dir = 1
@@ -1829,10 +1827,10 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/door{
+	dir = 1;
 	id = "Cascade_engine";
 	name = "engine lockdown";
-	pixel_y = -25;
-	dir = 1
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 8
@@ -1890,8 +1888,8 @@
 	dir = 8
 	},
 /obj/machinery/firealarm{
-	pixel_y = -28;
-	dir = 1
+	dir = 1;
+	pixel_y = -28
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -1922,8 +1920,8 @@
 /obj/item/clothing/head/hardhat/weldhat,
 /obj/structure/closet/wall/orange{
 	dir = 4;
-	pixel_x = -30;
-	name = "Engineering locker"
+	name = "Engineering locker";
+	pixel_x = -30
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals1,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2012,8 +2010,8 @@
 	pixel_y = 9
 	},
 /obj/item/clothing/shoes/magboots/syndie{
-	pixel_y = -5;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -2092,8 +2090,7 @@
 	dir = 4
 	},
 /obj/machinery/camera/autoname{
-	dir = 10;
-	network = list("Vault")
+	dir = 1
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/science)
@@ -2165,8 +2162,8 @@
 /obj/effect/turf_decal/corner/red/diagonal,
 /obj/structure/table/reinforced,
 /obj/item/storage/box/bodybags{
-	pixel_y = 9;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 9
 	},
 /obj/item/storage/box/masks,
 /obj/item/roller,
@@ -2174,8 +2171,8 @@
 	pixel_y = 5
 	},
 /obj/item/roller{
-	pixel_y = 10;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 10
 	},
 /obj/machinery/camera/autoname{
 	dir = 10;
@@ -2322,10 +2319,10 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/door{
+	dir = 1;
 	id = "Cascade_engine";
 	name = "engine lockdown";
-	pixel_y = -25;
-	dir = 1
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4
@@ -2346,11 +2343,11 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
+	dir = 8;
 	id = "Cascadelab";
 	name = "Window Shutters";
 	pixel_x = 22;
-	pixel_y = 7;
-	dir = 8
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/security)
@@ -2378,8 +2375,8 @@
 /obj/item/sequence_scanner,
 /obj/structure/closet/wall/white{
 	dir = 4;
-	pixel_x = -29;
-	name = "Genetic locker"
+	name = "Genetic locker";
+	pixel_x = -29
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/science)
@@ -2409,16 +2406,16 @@
 	dir = 1
 	},
 /obj/item/storage/fancy/cigarettes/cigars/havana{
-	pixel_y = 7;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 7
 	},
 /obj/item/lighter{
-	pixel_y = -3;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = -3
 	},
 /obj/item/reagent_containers/hypospray/medipen/stimulants{
-	pixel_y = -4;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -4
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
@@ -2662,8 +2659,8 @@
 	pixel_y = 7
 	},
 /obj/item/clothing/glasses/hud/spacecop/hidden{
-	pixel_y = -3;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -2696,8 +2693,8 @@
 	dir = 1
 	},
 /obj/machinery/computer/cryopod{
-	pixel_x = -25;
-	dir = 4
+	dir = 4;
+	pixel_x = -25
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -2717,12 +2714,12 @@
 	},
 /obj/effect/turf_decal/corner/red/diagonal,
 /obj/item/clothing/glasses/hud/health{
-	pixel_y = 10;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 10
 	},
 /obj/item/clothing/glasses/hud/health{
-	pixel_y = 7;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 7
 	},
 /obj/item/clothing/glasses/hud/health/prescription{
 	pixel_y = 13
@@ -2785,13 +2782,13 @@
 	},
 /obj/structure/closet/wall/orange{
 	dir = 1;
-	pixel_y = -32;
-	name = "Fuel locker"
+	name = "Fuel locker";
+	pixel_y = -32
 	},
 /obj/item/stack/sheet/mineral/plasma/fifty,
 /obj/item/stack/sheet/mineral/uranium/five{
-	pixel_y = -4;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -2991,8 +2988,8 @@
 /obj/item/clothing/head/hardhat/atmos,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/structure/closet/wall{
-	name = "Atmospheric locker";
 	dir = 4;
+	name = "Atmospheric locker";
 	pixel_x = -30
 	},
 /obj/effect/turf_decal/spline/fancy/orange{
@@ -3008,22 +3005,22 @@
 "XB" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
+	dir = 8;
 	id = "cascadewindows";
 	name = "Window Shutters";
 	pixel_x = -6;
-	pixel_y = 6;
-	dir = 8
+	pixel_y = 6
 	},
 /obj/machinery/button/door{
+	dir = 8;
 	id = "cascadebridge";
 	name = "Bridge Lockdown";
 	pixel_x = -6;
-	pixel_y = -5;
-	dir = 8
+	pixel_y = -5
 	},
 /obj/item/radio/intercom/wideband{
-	pixel_x = 1;
-	dir = 8
+	dir = 8;
+	pixel_x = 1
 	},
 /obj/structure/railing{
 	dir = 4
@@ -3062,8 +3059,8 @@
 "Yr" = (
 /obj/structure/closet/wall/blue{
 	dir = 1;
-	pixel_y = -28;
-	name = "Chief medical officer's locker"
+	name = "Chief medical officer's locker";
+	pixel_y = -28
 	},
 /obj/item/gun/syringe/syndicate,
 /obj/item/areaeditor/shuttle{
@@ -3152,8 +3149,8 @@
 	},
 /obj/structure/table/glass,
 /obj/machinery/recharger{
-	pixel_y = 4;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 4
 	},
 /obj/item/clothing/glasses/hud/health{
 	pixel_x = 5;
@@ -3194,8 +3191,8 @@
 	},
 /obj/item/clothing/neck/cloak/qm,
 /obj/item/circuitboard/machine/ore_redemption{
-	pixel_y = 5;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 5
 	},
 /obj/item/circuitboard/machine/ore_silo,
 /obj/item/vibro_weapon/weak,
