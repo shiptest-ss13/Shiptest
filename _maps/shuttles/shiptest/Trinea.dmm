@@ -452,6 +452,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "hF" = (
@@ -575,6 +579,7 @@
 /obj/item/pickaxe/mini,
 /obj/item/pickaxe/mini,
 /obj/effect/spawner/lootdrop/gloves,
+/obj/item/resonator/upgraded,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "ke" = (
@@ -893,11 +898,11 @@
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
 	},
-/obj/machinery/door/window/eastleft{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = 31
 	},
 /turf/open/floor/eighties,
 /area/ship/crew/dorm)
@@ -919,10 +924,6 @@
 /area/ship/bridge)
 "rI" = (
 /obj/item/supplypod_beacon,
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 2
-	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "rM" = (
@@ -1130,8 +1131,8 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 1
 	},
-/obj/machinery/door/window/eastleft{
-	dir = 1
+/obj/machinery/door/poddoor/shutters{
+	id = 31
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -1442,6 +1443,13 @@
 "FO" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
+/obj/machinery/button/door{
+	id = 31sssssss;
+	pixel_y = -36;
+	name = "Engine";
+	pixel_x = -23;
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Gp" = (
@@ -1544,11 +1552,11 @@
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
 	},
-/obj/machinery/door/window/eastleft{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = 31
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -2003,8 +2011,8 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 1
 	},
-/obj/machinery/door/window/eastleft{
-	dir = 1
+/obj/machinery/door/poddoor/shutters{
+	id = 31
 	},
 /turf/open/floor/eighties,
 /area/ship/crew/dorm)
@@ -2203,7 +2211,7 @@
 /obj/machinery/button/door{
 	id = 22;
 	pixel_y = 1;
-	name = "security"s;
+	name = "security";
 	pixel_x = 27;
 	dir = 8
 	},
