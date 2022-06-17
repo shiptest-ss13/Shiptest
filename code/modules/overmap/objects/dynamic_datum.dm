@@ -302,13 +302,6 @@
 	area_flags = HIDDEN_AREA | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
 
-/area/overmap_encounter/planetoid/reebe/Entered(atom/movable/AM)
-	. = ..()
-	if(ismob(AM))
-		var/mob/M = AM
-		if(M.client)
-			addtimer(CALLBACK(M.client, /client/proc/play_reebe_ambience), 900)
-
 /datum/overmap/dynamic/empty
 	name = "Empty Space"
 
