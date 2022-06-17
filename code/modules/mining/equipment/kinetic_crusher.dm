@@ -282,11 +282,32 @@
 	if(missing_health > 0)
 		target.adjustBruteLoss(missing_health) //and do that much damage
 
+//crystal goliath
+/obj/item/crusher_trophy/goliath_crystal
+	name = "goliath crystal"
+	desc = "A crystal ripped off from a goliath infected by the strange crystals. You can see the original skin of the goliath deeply embeded in it."
+	icon_state = "goliath_crystal"
+	denied_type = /obj/item/crusher_trophy/elder_tentacle
+	bonus_value = 4
+	var/missing_health_ratio = 0.1
+	var/missing_health_desc = 5
+
+/obj/item/crusher_trophy/goliath_crystal/effect_desc()
+	return "waveform collapse to stun creatures for <b>[bonus_value*0.1]</b> second\s"
+
+/obj/item/crusher_trophy/goliath_crystal/on_mark_detonation(mob/living/simple_animal/target, mob/living/user)
+	if(!ishostile(target))
+		return
+	var/mob/living/simple_animal/hostile/hostile_target = target
+	var/hostile_ai_status = hostile_target.AIStatus
+	hostile_target.AIStatus = AI_OFF
+	addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status), bonus_value*0.1 SECONDS)
+
 //watcher
 /obj/item/crusher_trophy/watcher_wing
 	name = "watcher wing"
 	desc = "A wing ripped from a watcher."
-	icon_state = "watcher_wing"
+	icon_state = "watcher_wing_crystal"
 	denied_type = /obj/item/crusher_trophy/watcher_wing
 	bonus_value = 5
 
@@ -355,6 +376,39 @@
 			else
 				H.ranged_cooldown = bonus_value + world.time
 
+//forgotten watcher
+/obj/item/crusher_trophy/watcher_wing_forgotten
+	name = "forgotten watcher wing"
+	desc = "A wing with a terminal infection of the strange crystals."
+	icon_state = "watcher_wing_crystal"
+	denied_type = /obj/item/crusher_trophy/watcher_wing_forgotten
+	gender = NEUTER
+	bonus_value = 20
+	var/deadly_shot = FALSE
+
+/obj/item/crusher_trophy/watcher_wing_forgotten/effect_desc()
+	return "waveform collapse to make the next magnetic pulse deal <b>[bonus_value]</b> damage"
+
+/obj/item/crusher_trophy/watcher_wing_forgotten/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
+
+/obj/item/crusher_trophy/watcher_wing_forgotten/on_projectile_fire(obj/projectile/destabilizer/marker, mob/living/user)
+	if(deadly_shot)
+		marker.name = "crystal [marker.name]"
+		marker.icon_state = "crystal_shard"
+		marker.damage = bonus_value
+		marker.nodamage = FALSE
+		marker.speed = 2
+		deadly_shot = FALSE
+
+/obj/item/crusher_trophy/watcher_wing_forgotten/on_mark_detonation(mob/living/target, mob/living/user)
+	deadly_shot = TRUE
+	addtimer(CALLBACK(src, .proc/reset_deadly_shot), 300, TIMER_UNIQUE|TIMER_OVERRIDE)
+
+/obj/item/crusher_trophy/watcher_wing_forgotten/proc/reset_deadly_shot()
+	deadly_shot = FALSE
+
 //legion
 /obj/item/crusher_trophy/legion_skull
 	name = "legion skull"
@@ -401,6 +455,49 @@
 	. = ..()
 	if(.)
 		H.charge_time += bonus_value
+
+
+//disfigured legion
+/obj/item/crusher_trophy/legion_skull_crystal
+	name = "disfigured legion skull"
+	desc = "A dead and lifeless legion skull. The crystals keep it alive, even in agony."
+	icon_state = "legion_skull_crystal"
+	denied_type = /obj/item/crusher_trophy/legion_skull_crystal
+	bonus_value = 1
+
+/obj/item/crusher_trophy/legion_skull_crystal/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
+
+/obj/item/crusher_trophy/legion_skull_crystal/effect_desc()
+	return "waveform collapse to shoot 3 projectiles that only hits hostile fauna"
+
+/obj/item/crusher_trophy/legion_skull_crystal/on_mark_detonation(mob/living/target, mob/living/user)
+	for(var/i in 0 to 5)
+		var/obj/projectile/projectile_to_shoot = new /obj/projectile/crystalline_crusher(get_turf(src))
+		projectile_to_shoot.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
+		projectile_to_shoot.firer = user
+		projectile_to_shoot.fire(i*(360/5))
+	return ..()
+
+/obj/projectile/crystalline_crusher
+	name = "Crystalline Shard"
+	icon_state = "crystal_shard"
+	damage = 25
+	damage_type = BRUTE
+	speed = 3
+
+/obj/projectile/crystalline_crusher/on_hit(atom/target, blocked)
+	. = ..()
+	var/turf/turf_hit = get_turf(target)
+	new /obj/effect/temp_visual/goliath_tentacle/crystal/visual_only(turf_hit,firer)
+
+/obj/projectile/crystalline_crusher/can_hit_target(atom/target, list/passthrough, direct_target, ignore_loc)
+	if(!(istype(target,/mob/living/simple_animal/hostile/asteroid)))
+		if(isturf(target))
+			return ..()
+		return FALSE
+	return ..()
 
 //blood-drunk hunter
 /obj/item/crusher_trophy/miner_eye

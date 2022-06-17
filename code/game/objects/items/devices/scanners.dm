@@ -536,8 +536,8 @@ GENE SCANNER
 				to_chat(user, "<span class='warning'>[src]'s barometer function says that the next storm will breeze on by.</span>")
 		else
 			var/next_hit = weather_controller.next_weather
-			var/fixed = next_hit ? timeleft(next_hit) : -1
-			if(fixed < 0)
+			var/fixed = next_hit - world.time
+			if(fixed <= 0)
 				to_chat(user, "<span class='warning'>[src]'s barometer function was unable to trace any weather patterns.</span>")
 			else
 				to_chat(user, "<span class='warning'>[src]'s barometer function says a storm will land in approximately [butchertime(fixed)].</span>")

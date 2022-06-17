@@ -148,6 +148,7 @@
 	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	can_be_tied = FALSE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/shoes/jackboots/fast
 	slowdown = -1
@@ -164,6 +165,7 @@
 	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/shoes/workboots
 	name = "work boots"
@@ -177,6 +179,7 @@
 	equip_delay_other = 40
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/shoes/winterboots/ice_boots
 	name = "ice hiking boots"

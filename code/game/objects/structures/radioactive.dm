@@ -65,6 +65,7 @@
 	name = "stack of nuclear waste"
 	desc = "Discarded nuclar waste. If enough of this builds up around a planet, radioactive toxins can poison the whole atmosphere."
 	icon_state = "barrel_3"
+	anchored = TRUE
 	rad_power = 300
 	rad_prob = 50
 

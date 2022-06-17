@@ -25,7 +25,7 @@
 	resistance_flags = NONE
 	max_integrity = 300
 	greyscale_icon_state = "backpack"
-	greyscale_colors = list(list(13, 17))
+	greyscale_colors = list(list(19, 14), list(12, 22))
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
@@ -226,6 +226,8 @@
 	icon_state = "satchel-norm"
 	item_state = "satchel-norm"
 	species_exception = list(/datum/species/kepori)
+	greyscale_icon_state = "satchel"
+	greyscale_colors = list(list(15, 16), list(15, 16))
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
@@ -326,6 +328,9 @@
 
 	qdel(C)
 
+/obj/item/storage/backpack/satchel/flat/with_drip/PopulateContents()
+	new /obj/item/clothing/under/drip(src)
+
 /obj/item/storage/backpack/satchel/flat/with_tools/PopulateContents()
 	new /obj/item/stack/tile/plasteel(src)
 	new /obj/item/crowbar(src)
@@ -346,6 +351,8 @@
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "courierbag"
 	item_state = "courierbag"
+	greyscale_icon_state = "satchel"
+	greyscale_colors = list(list(15, 16), list(15, 17))
 
 /obj/item/storage/backpack/messenger/chem
 	name = "chemistry messenger bag"
