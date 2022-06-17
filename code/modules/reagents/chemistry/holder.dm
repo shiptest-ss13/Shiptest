@@ -92,6 +92,12 @@
 		my_atom.reagents = null
 	my_atom = null
 
+/datum/reagents/proc/get_total_accelerant_quality()
+	var/quality = 0
+	for(var/datum/reagent/reagent as anything in reagent_list)
+		quality += reagent.volume * reagent.accelerant_quality
+	return quality
+
 /**
   * Used in attack logs for reagents in pills and such
   *
@@ -353,45 +359,14 @@
 	if(C)
 		expose_temperature(C.bodytemperature, 0.25)
 	var/need_mob_update = 0
-	for(var/reagent in cached_reagents)
-		var/datum/reagent/R = reagent
+	for(var/datum/reagent/R as anything in cached_reagents)
 		if(QDELETED(R.holder))
 			continue
 
 		if(!C)
 			C = R.holder.my_atom
-
-		//WS begin - IPCs
-		if(ishuman(C))
-			var/mob/living/carbon/human/H = C
-			//Check if this mob's species is set and can process this type of reagent
-			var/can_process = FALSE
-			//If we somehow avoided getting a species or reagent_tag set, we'll assume we aren't meant to process ANY reagents (CODERS: SET YOUR SPECIES AND TAG!)
-			if(H.dna && H.dna.species.reagent_tag)
-				if((R.process_flags & SYNTHETIC) && (H.dna.species.reagent_tag & PROCESS_SYNTHETIC))		//SYNTHETIC-oriented reagents require PROCESS_SYNTHETIC
-					can_process = TRUE
-				if((R.process_flags & ORGANIC) && (H.dna.species.reagent_tag & PROCESS_ORGANIC))		//ORGANIC-oriented reagents require PROCESS_ORGANIC
-					can_process = TRUE
-
-			//If handle_reagents returns 0, it's doing the reagent removal on its own
-			var/species_handled = !(H.dna.species.handle_reagents(H, R))
-			can_process = can_process && !species_handled
-			//If the mob can't process it, remove the reagent at it's normal rate without doing any addictions, overdoses, or on_mob_life() for the reagent
-			if(!can_process)
-				if(!species_handled)
-					R.holder.remove_reagent(R.type, R.metabolization_rate)
-				continue
-		//We'll assume that non-human mobs lack the ability to process synthetic-oriented reagents (adjust this if we need to change that assumption)
-		else
-			if(R.process_flags == SYNTHETIC)
-				R.holder.remove_reagent(R.type, R.metabolization_rate)
-				continue
-		//If you got this far, that means we can process whatever reagent this iteration is for. Handle things normally from here.
-		//WS End
-
-
 		if(C && R)
-			if(C.reagent_check(R) != TRUE)
+			if(!C.handled_by_species(R))
 				if(liverless && !R.self_consuming) //need to be metabolized
 					continue
 				if(!R.metabolizing)
@@ -420,8 +395,7 @@
 	if(can_overdose)
 		if(addiction_tick == 6)
 			addiction_tick = 1
-			for(var/addiction in cached_addictions)
-				var/datum/reagent/R = addiction
+			for(var/datum/reagent/R as anything in cached_addictions)
 				if(C && R)
 					R.addiction_stage++
 					switch(R.addiction_stage)

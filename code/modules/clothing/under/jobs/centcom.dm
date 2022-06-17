@@ -2,8 +2,6 @@
 	icon = 'icons/obj/clothing/under/centcom.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/centcom.dmi'
 
-/*WS Edit - Better Command Uniforms
-
 /obj/item/clothing/under/rank/centcom/officer
 	name = "\improper CentCom officer's jumpsuit"
 	desc = "It's a jumpsuit worn by CentCom Officers."
@@ -24,4 +22,3 @@
 	item_state = "g_suit"
 	can_adjust = FALSE
 
-WS End */

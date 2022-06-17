@@ -137,6 +137,7 @@
 #define BODYTYPE_BOXHEAD (1<<3) //TV Head
 #define BODYTYPE_DIGITIGRADE (1<<4) //Cancer
 #define BODYTYPE_KEPORI (1<<5) //Just Kepori
+#define BODYTYPE_VOX (1<<6) //Big Vox
 
 // Health/damage defines
 #define MAX_LIVING_HEALTH 100
@@ -340,24 +341,6 @@
 
 #define SHADOW_SPECIES_LIGHT_THRESHOLD 0.2
 
-// Offsets defines
-
-#define OFFSET_UNIFORM "uniform"
-#define OFFSET_ID "id"
-#define OFFSET_GLOVES "gloves"
-#define OFFSET_GLASSES "glasses"
-#define OFFSET_EARS "ears"
-#define OFFSET_SHOES "shoes"
-#define OFFSET_S_STORE "s_store"
-#define OFFSET_FACEMASK "mask"
-#define OFFSET_HEAD "head"
-#define OFFSET_FACE "face"
-#define OFFSET_BELT "belt"
-#define OFFSET_BACK "back"
-#define OFFSET_SUIT "suit"
-#define OFFSET_NECK "neck"
-#define OFFSET_ACCESSORY "accessory"
-
 //MINOR TWEAKS/MISC
 #define AGE_MIN 17 //youngest a character can be
 #define AGE_MAX 85 //oldest a character can be
@@ -449,3 +432,8 @@
 /// Breathing types. Lungs can access either by these or by a string, which will be considered a gas ID.
 #define BREATH_OXY /datum/breathing_class/oxygen
 #define BREATH_PLASMA /datum/breathing_class/plasma
+
+/// Throw modes, defines whether or not to turn off throw mode after
+#define THROW_MODE_DISABLED 0
+#define THROW_MODE_TOGGLE 1
+#define THROW_MODE_HOLD 2

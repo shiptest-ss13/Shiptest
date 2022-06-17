@@ -3,7 +3,6 @@
 	"editor.autoIndent": "keep",
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
-	"editor.renderIndentGuides": true,
 	"editor.wrappingIndent": "indent",
 	"editor.renderWhitespace": "all",
 	"editor.trimAutoWhitespace": true,
@@ -17,9 +16,6 @@
 	"search.exclude": {
 		"tgui/.yarn": true,
 		"tgui/.pnp.*": true
-	},
-	"workbench.editorAssociations": {
-		"*.dmi": "imagePreview.previewEditor"
 	},
 	"gitlens.advanced.blame.customArguments": ["-w"],
 
@@ -47,5 +43,6 @@
 		"gitlens.codeLens.scopes": [
 			"document"
 		]
-	}
+	},
+	"editor.guides.indentation": true
 }

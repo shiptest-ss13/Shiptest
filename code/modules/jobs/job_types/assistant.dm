@@ -17,6 +17,8 @@ Assistant
 	paycheck_department = ACCOUNT_CIV
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT
 	wiki_page = "Assistant" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Crewmate", "Deckhand", "Engineering Specialist", "Medical Specialist", "Science Specialist", "Entertainer")
+	senior_title = "Greytider"
 
 /datum/job/assistant/get_access()
 	if(CONFIG_GET(flag/assistants_have_maint_access) || !CONFIG_GET(flag/jobs_have_minimal_access)) //Config has assistant maint access set
@@ -29,6 +31,7 @@ Assistant
 	name = "Assistant"
 	jobtype = /datum/job/assistant
 	r_pocket = /obj/item/radio
+	belt = /obj/item/pda
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -95,6 +98,11 @@ Assistant
 
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 
+/datum/outfit/job/assistant/inteq
+	name = "IRMG Recruit (Inteq)"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq
+
 /datum/outfit/job/assistant/intern
 	name = "Assistant (Intern)"
 	uniform = /obj/item/clothing/under/suit/black
@@ -150,6 +158,13 @@ Assistant
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = /obj/item/clothing/under/syndicate
 
+/datum/outfit/job/assistant/independent/crewmatefancy
+	name = "Crewmate (Independent)"
+
+	uniform = /obj/item/clothing/under/misc/assistantformal
+	shoes = /obj/item/clothing/shoes/laceup
+	gloves = /obj/item/clothing/gloves/color/white
+
 /datum/outfit/job/assistant/ex_prisoner
 	name = "Assistant (Ex-Prisoner)"
 
@@ -157,3 +172,11 @@ Assistant
 	uniform = /obj/item/clothing/under/rank/prisoner
 	shoes = /obj/item/clothing/shoes/sneakers/orange
 	accessory = /obj/item/clothing/accessory/armband/deputy
+
+/datum/outfit/job/assistant/waiter
+	name = "Assistant (Waiter)"
+
+	uniform = /obj/item/clothing/under/suit/waiter
+	shoes = /obj/item/clothing/shoes/laceup
+	ears = /obj/item/radio/headset/headset_srv
+	gloves = /obj/item/clothing/gloves/color/white

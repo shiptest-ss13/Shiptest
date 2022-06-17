@@ -15,6 +15,7 @@
 	maxHealth = 200
 	health = 200
 	obj_damage = 40
+	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	attack_verb_continuous = "claws"
@@ -22,9 +23,7 @@
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	vision_range = 2 // don't aggro unless you basically antagonize it, though they will kill you worse than a goliath will
 	aggro_vision_range = 9
-	move_force = MOVE_FORCE_VERY_STRONG
 	move_resist = MOVE_FORCE_VERY_STRONG
-	pull_force = MOVE_FORCE_VERY_STRONG
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 1)
 	loot = list()
