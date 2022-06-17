@@ -1,10 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ac" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering)
 "ae" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -155,7 +149,7 @@
 	dir = 8;
 	pixel_x = -7
 	},
-/obj/machinery/atmospherics/components/binary/volume_pump/on/layer2{
+/obj/machinery/atmospherics/components/binary/pump/layer2{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -588,12 +582,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
-"kg" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 1
-	},
-/turf/open/floor/eighties,
-/area/ship/crew/dorm)
 "ki" = (
 /obj/machinery/computer/cryopod{
 	pixel_y = -1;
@@ -1104,9 +1092,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ship/cargo)
-"wb" = (
-/turf/open/floor/plating/airless,
-/area/template_noop)
 "wc" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -1930,7 +1915,7 @@
 	pixel_x = 7
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
-/obj/machinery/atmospherics/components/binary/volume_pump{
+/obj/machinery/atmospherics/components/binary/pump{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2393,7 +2378,7 @@ cd
 Rn
 oE
 By
-ac
+wP
 Kq
 dG
 dG
@@ -2672,7 +2657,7 @@ BX
 fs
 OO
 hY
-wb
+dG
 LN
 rI
 dG
@@ -2951,7 +2936,7 @@ Gw
 ks
 DV
 sd
-kg
+UY
 cj
 dG
 dG
