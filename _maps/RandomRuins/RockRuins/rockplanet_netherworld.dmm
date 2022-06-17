@@ -74,8 +74,8 @@
 /area/ruin/powered)
 "dG" = (
 /obj/item/shard{
-	pixel_y = -12;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = -12
 	},
 /obj/structure/destructible/cult/talisman,
 /turf/open/floor/engine,
@@ -191,10 +191,10 @@
 /area/ruin/powered)
 "hi" = (
 /obj/structure/spawner/ice_moon/demonic_portal{
-	name = "netherworld link";
-	max_mobs = 5;
 	faction = list("nether");
-	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/asteroid/ice_demon,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile)
+	max_mobs = 5;
+	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/asteroid/ice_demon,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile);
+	name = "netherworld link"
 	},
 /turf/open/indestructible/necropolis,
 /area/ruin/powered)
@@ -210,8 +210,8 @@
 /area/ruin/powered)
 "iQ" = (
 /obj/structure/radioactive/supermatter{
-	name = "object #752-2";
-	desc = "An strange crystal with the power to leak large amout of radiation."
+	desc = "An strange crystal with the power to leak large amout of radiation.";
+	name = "object #752-2"
 	},
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor4"
@@ -269,10 +269,10 @@
 /area/ruin/powered)
 "lq" = (
 /obj/structure/spawner/ice_moon/demonic_portal{
-	name = "netherworld link";
-	max_mobs = 5;
 	faction = list("nether");
-	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/asteroid/ice_demon,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile)
+	max_mobs = 5;
+	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/asteroid/ice_demon,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile);
+	name = "netherworld link"
 	},
 /obj/effect/gibspawner/generic/animal,
 /turf/open/indestructible/necropolis,
@@ -321,14 +321,11 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/powered)
-"mK" = (
-/obj/effect/decal/fakelattice,
-/obj/structure/foamedmetal,
-/turf/open/space/basic,
-/area/ruin/powered)
 "mN" = (
 /obj/structure/closet/syndicate,
-/obj/machinery/light/dim,
+/obj/machinery/light/dim{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "nF" = (
@@ -383,11 +380,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
-"pf" = (
-/obj/effect/decal/fakelattice,
-/obj/structure/foamedmetal,
-/turf/open/floor/plating,
 /area/ruin/powered)
 "pr" = (
 /obj/effect/gibspawner/generic/animal,
@@ -503,8 +495,8 @@
 "yc" = (
 /obj/effect/gibspawner/generic/animal,
 /mob/living/simple_animal/hostile/clown/mutant/blob{
-	name = "Something that was once a human";
-	faction = list("nether")
+	faction = list("nether");
+	name = "Something that was once a human"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
@@ -604,8 +596,8 @@
 "DC" = (
 /obj/effect/gibspawner/generic/animal,
 /obj/item/clothing/glasses/godeye{
-	name = "eye of Yog-Soggoth";
-	desc = "A strange eye, said to belong to a very old being with the power to twist the world around him."
+	desc = "A strange eye, said to belong to a very old being with the power to twist the world around him.";
+	name = "eye of Yog-Soggoth"
 	},
 /turf/open/indestructible/necropolis{
 	icon_state = "necro3"
@@ -643,10 +635,10 @@
 /area/ruin/powered)
 "Gq" = (
 /obj/structure/spawner/ice_moon/demonic_portal{
-	name = "netherworld link";
-	max_mobs = 5;
 	faction = list("nether");
-	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/asteroid/ice_demon,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile)
+	max_mobs = 5;
+	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/asteroid/ice_demon,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile);
+	name = "netherworld link"
 	},
 /obj/effect/gibspawner/human,
 /turf/open/indestructible/necropolis{
@@ -702,10 +694,10 @@
 /area/ruin/powered)
 "IY" = (
 /obj/structure/spawner/ice_moon/demonic_portal{
-	name = "netherworld link";
-	max_mobs = 5;
 	faction = list("nether");
-	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/asteroid/ice_demon,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile)
+	max_mobs = 5;
+	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/asteroid/ice_demon,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile);
+	name = "netherworld link"
 	},
 /obj/effect/gibspawner/generic/animal,
 /obj/effect/gibspawner/generic/animal,
@@ -802,10 +794,10 @@
 /area/ruin/powered)
 "LS" = (
 /obj/structure/spawner/ice_moon/demonic_portal{
-	name = "netherworld link";
-	max_mobs = 5;
 	faction = list("nether");
-	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/asteroid/ice_demon,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile)
+	max_mobs = 5;
+	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/asteroid/ice_demon,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile);
+	name = "netherworld link"
 	},
 /turf/open/floor/plasteel/vaporwave,
 /area/ruin/powered)
@@ -818,14 +810,10 @@
 /obj/item/reagent_containers/spray/chemsprayer/janitor,
 /turf/open/floor/engine,
 /area/ruin/powered)
-"Md" = (
-/obj/structure/foamedmetal,
-/turf/template_noop,
-/area/ruin/powered)
 "Mp" = (
 /mob/living/simple_animal/hostile/clown/mutant/blob{
-	name = "Something that was once a human";
-	faction = list("nether")
+	faction = list("nether");
+	name = "Something that was once a human"
 	},
 /turf/open/floor/engine,
 /area/ruin/powered)
@@ -909,10 +897,10 @@
 /area/ruin/powered)
 "Qo" = (
 /obj/structure/spawner/ice_moon/demonic_portal{
-	name = "netherworld link";
-	max_mobs = 5;
 	faction = list("nether");
-	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/asteroid/ice_demon,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile)
+	max_mobs = 5;
+	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo,/mob/living/simple_animal/hostile/netherworld,/mob/living/simple_animal/hostile/netherworld/blankbody,/mob/living/simple_animal/hostile/eyeball,/mob/living/simple_animal/hostile/asteroid/ice_demon,/mob/living/simple_animal/hostile/blob/blobspore,/mob/living/simple_animal/hostile/illusion,/mob/living/simple_animal/imp,/mob/living/simple_animal/hostile/skeleton,/mob/living/simple_animal/hostile/faithless,/mob/living/simple_animal/hostile/retaliate/spaceman,/mob/living/simple_animal/hostile/killertomato,/mob/living/simple_animal/hostile/construct/proteon/hostile);
+	name = "netherworld link"
 	},
 /obj/effect/gibspawner/generic/animal,
 /turf/open/indestructible/necropolis{
@@ -948,10 +936,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
-"RI" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/foam,
-/area/ruin/powered)
 "St" = (
 /turf/open/floor/engine,
 /area/ruin/powered)
@@ -962,8 +946,8 @@
 "Tt" = (
 /obj/effect/gibspawner/generic/animal,
 /mob/living/simple_animal/hostile/clown/mutant/blob{
-	name = "Something that was once a human";
-	faction = list("nether")
+	faction = list("nether");
+	name = "Something that was once a human"
 	},
 /obj/item/documents/nanotrasen,
 /turf/open/indestructible/necropolis{
@@ -987,8 +971,8 @@
 "TP" = (
 /obj/structure/table/reinforced,
 /obj/item/stock_parts/cell/infinite{
-	name = "object #378 ";
-	desc = "A label says the word ouroboros."
+	desc = "A label says the word ouroboros.";
+	name = "object #378 "
 	},
 /obj/effect/turf_decal/industrial/warning/full,
 /turf/open/floor/engine,
@@ -1095,9 +1079,6 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/ruin/powered)
-"ZO" = (
-/turf/closed/wall/r_wall,
-/area/space)
 "ZQ" = (
 /obj/effect/gibspawner/human,
 /obj/effect/decal/cleanable/blood{
@@ -1182,11 +1163,11 @@ lg
 lg
 fO
 fO
-fO
-mK
 IA
 IA
-fO
+IA
+IA
+IA
 fO
 fO
 fO
@@ -1213,13 +1194,13 @@ ea
 ea
 lg
 fO
-fO
-Md
+IA
+IA
 St
 St
 St
 IA
-fO
+IA
 fO
 fO
 fO
@@ -1245,7 +1226,7 @@ Tt
 Zb
 IA
 fO
-pf
+IA
 St
 ou
 St
@@ -1255,7 +1236,7 @@ IA
 IA
 IA
 IA
-Rp
+IA
 cm
 Nb
 kD
@@ -1278,8 +1259,8 @@ hi
 IA
 fO
 IA
-RI
-RI
+yD
+yD
 ro
 Jm
 iJ
@@ -1310,7 +1291,7 @@ DC
 IA
 fO
 IA
-RI
+yD
 yD
 LX
 tq
@@ -1341,13 +1322,13 @@ rI
 rI
 lg
 fO
-fO
+IA
 IA
 yD
 yD
 St
 IA
-fO
+IA
 fO
 fO
 fO
@@ -1374,11 +1355,11 @@ fg
 lg
 fO
 fO
-fO
 IA
 IA
 IA
-fO
+IA
+IA
 fO
 fO
 fO
@@ -1422,8 +1403,8 @@ fO
 IA
 OU
 IA
-ZO
-ZO
+IA
+IA
 fO
 fO
 fO
@@ -1438,11 +1419,11 @@ uZ
 IA
 fO
 fO
-fO
+lg
 IA
 lg
 lg
-fO
+IA
 fO
 fO
 fO
@@ -1469,13 +1450,13 @@ Rp
 dP
 lg
 fO
-fO
+lg
 lg
 Eh
 St
 St
 lg
-fO
+lg
 fO
 ex
 ex
@@ -1509,7 +1490,7 @@ eE
 St
 lg
 lg
-ZW
+cm
 lg
 lg
 yQ
@@ -1853,7 +1834,7 @@ cm
 tu
 IA
 fO
-ZW
+cm
 Ou
 PS
 iQ
@@ -1917,13 +1898,13 @@ Hk
 IA
 IA
 fO
-fO
+lg
 lg
 gn
 Ds
 St
 lg
-fO
+IA
 fO
 fO
 fO
@@ -1950,11 +1931,11 @@ Ju
 IA
 fO
 fO
-fO
+lg
 IA
 lg
 ZW
-fO
+IA
 fO
 fO
 fO
