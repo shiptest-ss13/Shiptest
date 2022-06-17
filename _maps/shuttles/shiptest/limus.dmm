@@ -319,6 +319,12 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/door/poddoor{
+	id = "slimebridgeshutters"
+	},
+/obj/machinery/door/window/brigdoor/northleft{
+	req_access_txt = "55"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "eN" = (
@@ -1016,6 +1022,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
 "rv" = (
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/capacitor,
 /turf/open/floor/carpet/donk,
 /area/ship/crew/janitor)
 "rM" = (
@@ -1274,6 +1282,12 @@
 /obj/item/clothing/suit/hooded/wintercoat/science,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
+"vz" = (
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/micro_laser,
+/obj/item/stock_parts/scanning_module,
+/turf/open/floor/carpet/donk,
+/area/ship/crew/janitor)
 "vE" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/window/reinforced/spawner{
@@ -1736,6 +1750,10 @@
 /obj/item/storage/box/lights/bulbs,
 /obj/item/storage/box/lights/tubes,
 /turf/open/floor/mineral/titanium/tiled/purple,
+/area/ship/crew/janitor)
+"CL" = (
+/obj/item/grown/bananapeel,
+/turf/open/floor/plating,
 /area/ship/crew/janitor)
 "CX" = (
 /obj/machinery/door/airlock/maintenance_hatch,
@@ -2229,6 +2247,9 @@
 /area/ship/science/xenobiology)
 "Jy" = (
 /obj/machinery/light,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/micro_laser,
+/obj/item/stock_parts/scanning_module,
 /turf/open/floor/carpet/donk,
 /area/ship/crew/janitor)
 "JH" = (
@@ -2573,6 +2594,10 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/ship/external)
+"Pj" = (
+/obj/structure/closet/crate/engineering,
+/turf/open/floor/plating,
+/area/ship/crew/janitor)
 "Pl" = (
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/hydroponics)
@@ -2714,6 +2739,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/capacitor,
 /turf/open/floor/carpet/donk,
 /area/ship/crew/janitor)
 "RC" = (
@@ -3549,7 +3576,7 @@ VR
 VR
 FT
 qE
-Tc
+CL
 Tc
 Tc
 IP
@@ -3585,7 +3612,7 @@ st
 qE
 rv
 rv
-rv
+vz
 IP
 RC
 SI
@@ -3651,8 +3678,8 @@ VR
 VR
 FT
 qE
-rv
-rv
+vz
+vz
 rv
 IP
 mn
@@ -3687,7 +3714,7 @@ XR
 qE
 Qk
 Tc
-Tc
+Pj
 IP
 Ig
 qM
