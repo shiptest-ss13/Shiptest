@@ -65,7 +65,6 @@
 /datum/biome/ocean
 	open_turf_types = list(/turf/open/water/beach = 1)
 	mob_spawn_list = list(
-		/mob/living/simple_animal/beachcarp = 1,
 //		/mob/living/simple_animal/hostile/carp = 1,
 		/mob/living/simple_animal/beachcarp/bass = 1,
 		/mob/living/simple_animal/beachcarp/trout = 1,
