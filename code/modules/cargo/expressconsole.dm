@@ -48,7 +48,7 @@
 		port = current_area.mobile_port
 	if(!port)
 		return
-	charge_account = port.current_ship?.ship_account
+	charge_account = port.current_ship.ship_account
 	landingzone = locate(/area/ship/cargo) in port.shuttle_areas
 
 /obj/machinery/computer/cargo/express/Destroy()

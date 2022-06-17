@@ -94,6 +94,7 @@ other types of metals and chemistry for reagents).
 /obj/item/disk/design_disk/ammo_38_hunting
 	name = "Design Disk - .38 Hunting Ammo"
 	desc = "A design disk containing the pattern for a refill ammo box for Winchester rifles and Detective Specials."
+	illustration = "ammo"
 
 /obj/item/disk/design_disk/ammo_38_hunting/Initialize()
 	. = ..()
@@ -116,7 +117,7 @@ other types of metals and chemistry for reagents).
 	. = ..()
 	blueprints[1] = new /datum/design/n762()
 
-/obj/item/disk/design_disk/disposable_gun
+/obj/item/disk/design_disk/adv/disposable_gun
 	name = "design disk - disposable gun"
 	desc = "A design disk containing designs for a cheap and disposable gun."
 	illustration = "gun"
