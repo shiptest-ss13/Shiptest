@@ -463,6 +463,9 @@
 "dR" = (
 /obj/structure/catwalk/over,
 /obj/machinery/door/window/northleft,
+/obj/effect/turf_decal/arrows{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/security{
 	name = "Starboard Launcher Two"
@@ -676,9 +679,6 @@
 "fB" = (
 /obj/effect/turf_decal/corner/red{
 	dir = 4
-	},
-/obj/machinery/door/window/brigdoor/eastright{
-	req_access = list(58)
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -1306,13 +1306,13 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "la" = (
-/obj/structure/chair,
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/machinery/power/emitter/welded,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Port Launcher Two"
@@ -1380,6 +1380,9 @@
 	},
 /obj/structure/catwalk/over,
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/arrows{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/security{
 	name = "Port Launcher One"
@@ -1595,12 +1598,10 @@
 /area/ship/science/ai_chamber)
 "nG" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate{
-	name = "Explosives Crate"
-	},
 /obj/machinery/camera/autoname{
 	dir = 5
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Starboard Launcher Two"
@@ -1630,6 +1631,9 @@
 	},
 /obj/structure/catwalk/over,
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/arrows{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/security{
 	name = "Port Launcher Two"
@@ -1888,6 +1892,7 @@
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 4
 	},
+/obj/machinery/power/emitter/welded,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Starboard Launcher One"
@@ -1948,6 +1953,11 @@
 	},
 /obj/item/storage/belt/security/webbing,
 /obj/item/clothing/suit/armor/vest,
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	name = "\improper Infantry"
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/gun/energy/disabler,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "pJ" = (
@@ -2008,10 +2018,8 @@
 	name = "Starboard Engineering"
 	})
 "qd" = (
-/obj/structure/closet/crate{
-	name = "Explosives Crate"
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Port Launcher Two"
@@ -2075,13 +2083,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/structure/closet/crate{
-	name = "Explosives Crate"
-	},
-/obj/item/paper/fluff{
-	name = "IOU";
-	desc = "IOU- 3x Explosives per crate, call Centrall Command if these have not arrived before combat."
-	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Starboard Launcher One"
@@ -2228,10 +2230,10 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/orange/border{
+/obj/machinery/camera/autoname{
 	dir = 10
 	},
-/obj/machinery/camera/autoname{
+/obj/effect/turf_decal/corner/orange/border{
 	dir = 10
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2423,25 +2425,13 @@
 	name = "Starboard Launcher One"
 	})
 "sM" = (
-/obj/structure/table,
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 6;
-	pixel_x = -6
-	},
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/machinery/button/massdriver{
-	id = "starlaunchertwo";
-	name = "starboard launcher two button";
-	pixel_x = 9;
-	dir = 1;
-	pixel_y = 3
-	},
+/obj/structure/chair,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Starboard Launcher Two"
@@ -2531,11 +2521,13 @@
 /obj/effect/turf_decal/corner/red{
 	dir = 10
 	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /obj/item/storage/belt/security/webbing,
 /obj/item/clothing/suit/armor/vest,
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	name = "\improper Infantry"
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/gun/energy/disabler,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "tA" = (
@@ -2768,17 +2760,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "vI" = (
-/obj/structure/closet/crate{
-	name = "Explosives Crate"
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/paper/fluff{
-	name = "IOU";
-	desc = "IOU- 3x Explosives per crate, call Centrall Command if these have not arrived before combat."
-	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Port Launcher Two"
@@ -2974,6 +2960,26 @@
 	},
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 4
+	},
+/obj/structure/table,
+/obj/machinery/button/massdriver{
+	id = "portemittertwo";
+	name = "port emitter two button";
+	pixel_x = -8;
+	dir = 1;
+	pixel_y = -2
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = 6;
+	pixel_x = 5
+	},
+/obj/machinery/button/massdriver{
+	id = "portlaunchertwo";
+	name = "port launcher two button";
+	pixel_x = -8;
+	dir = 1;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -3230,10 +3236,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "xY" = (
-/obj/structure/closet/crate{
-	name = "Explosives Crate"
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Port Launcher One"
@@ -3346,19 +3350,6 @@
 /obj/effect/turf_decal/corner/blue/full,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
-"yD" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate{
-	name = "Explosives Crate"
-	},
-/obj/item/paper/fluff{
-	name = "IOU";
-	desc = "IOU- 3x Explosives per crate, call Centrall Command if these have not arrived before combat."
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
 "yF" = (
 /obj/structure/table/wood/bar,
 /obj/effect/turf_decal/siding/wood{
@@ -3471,17 +3462,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "zD" = (
-/obj/structure/closet/crate{
-	name = "Explosives Crate"
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/paper/fluff{
-	name = "IOU";
-	desc = "IOU- 3x Explosives per crate, call Centrall Command if these have not arrived before combat."
-	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Port Launcher One"
@@ -3517,9 +3502,7 @@
 /area/ship/hallway/fore)
 "zS" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate{
-	name = "Explosives Crate"
-	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Starboard Launcher One"
@@ -3968,6 +3951,9 @@
 /obj/machinery/door/window/eastright{
 	dir = 1;
 	name = "Engine Access"
+	},
+/obj/effect/turf_decal/arrows{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/security{
@@ -4638,7 +4624,9 @@
 	})
 "Iv" = (
 /obj/effect/turf_decal/corner/red/three_quarters,
-/obj/machinery/vending/security,
+/obj/machinery/vending/security/marine/nanotrasen{
+	products = list(/obj/item/restraints/handcuffs = 10, /obj/item/assembly/flash/handheld = 10, /obj/item/flashlight/seclite = 10, /obj/item/ammo_box/magazine/aknt = 10, /obj/item/storage/box/lethalshot = 5, /obj/item/grenade/c4 = 5, /obj/item/grenade/frag = 5, /obj/item/grenade/flashbang = 10, /obj/item/grenade/barrier = 10, /obj/item/melee/transforming/energy/sword/saber/blue = 5)
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "IA" = (
@@ -5224,6 +5212,11 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/item/storage/belt/security/webbing,
 /obj/item/clothing/suit/armor/vest,
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	name = "\improper Infantry"
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/gun/energy/disabler,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Mi" = (
@@ -5651,25 +5644,13 @@
 	name = "Starboard Engineering"
 	})
 "Pl" = (
-/obj/structure/table,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
-	},
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 6;
-	pixel_x = 5
 	},
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 4
 	},
-/obj/machinery/button/massdriver{
-	id = "portlaunchertwo";
-	name = "port launcher two button";
-	pixel_x = -8;
-	dir = 1;
-	pixel_y = 2
-	},
+/obj/structure/chair,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Port Launcher Two"
@@ -5834,7 +5815,14 @@
 	name = "port launcher one button";
 	dir = 1;
 	pixel_x = 9;
-	pixel_y = 2
+	pixel_y = -1
+	},
+/obj/machinery/button/massdriver{
+	id = "portlauncherone";
+	name = "port launcher one button";
+	dir = 1;
+	pixel_x = 9;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -6267,6 +6255,7 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 8
 	},
+/obj/machinery/power/emitter/welded,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Port Launcher One"
@@ -6278,6 +6267,19 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
+	},
+/obj/structure/table,
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = 6;
+	pixel_x = -6
+	},
+/obj/machinery/button/massdriver{
+	id = "starlaunchertwo";
+	name = "starboard launcher two button";
+	pixel_x = 9;
+	dir = 1;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -6431,21 +6433,11 @@
 /obj/item/tank/internals/emergency_oxygen/double,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/suit/armor/bulletproof,
-/obj/item/gun/ballistic/automatic/pistol/commander{
-	name = "\improper Infantry"
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander{
-	name = "\improper Infantry"
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander{
-	name = "\improper Infantry"
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander{
-	name = "\improper Infantry"
-	},
 /obj/item/gun/ballistic/automatic/pistol/commissar{
 	name = "\improper Lieutenant"
 	},
+/obj/item/gun/ballistic/automatic/ak47/nt,
+/obj/item/ammo_box/magazine/aknt,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Vz" = (
@@ -6475,9 +6467,7 @@
 	})
 "VX" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate{
-	name = "Explosives Crate"
-	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Starboard Launcher Two"
@@ -6544,13 +6534,13 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "WH" = (
-/obj/structure/chair,
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/machinery/power/emitter/welded,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Starboard Launcher Two"
@@ -6910,6 +6900,11 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/item/storage/belt/security/webbing,
 /obj/item/clothing/suit/armor/vest,
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	name = "\improper Infantry"
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/gun/energy/disabler,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "YY" = (
@@ -8852,7 +8847,7 @@ WH
 sM
 Uu
 nG
-yD
+VX
 VX
 wi
 ZS
