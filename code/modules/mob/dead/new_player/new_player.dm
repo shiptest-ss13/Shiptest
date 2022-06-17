@@ -283,8 +283,8 @@
 
 	SSjob.AssignRole(src, job, 1)
 
-	var/mob/living/character = create_character(TRUE)	//creates the human and transfers vars and mind
-	var/equip = job.EquipRank(character)
+	var/mob/living/carbon/human/character = create_character(TRUE)	//creates the human and transfers vars and mind
+	var/equip = job.EquipRank(character, ship)
 	if(isliving(equip))	//Borgs get borged in the equip, so we need to make sure we handle the new mob.
 		character = equip
 
@@ -331,6 +331,11 @@
 			employmentCabinet.addFile(employee)
 
 /mob/dead/new_player/proc/LateChoices()
+	//stops the window from even showing up if there's a lock on joining
+	if(!GLOB.enter_allowed)
+		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+		return
+
 	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
 
 	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)
@@ -388,10 +393,6 @@
 
 	if(!SSticker?.IsRoundInProgress())
 		to_chat(usr, "<span class='danger'>The round is either not ready, or has already finished...</span>")
-		return
-
-	if(!GLOB.enter_allowed)
-		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
 		return
 
 	var/relevant_cap

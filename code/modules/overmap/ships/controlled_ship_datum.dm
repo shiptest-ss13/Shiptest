@@ -25,6 +25,8 @@
 	VAR_FINAL/obj/docking_port/mobile/shuttle_port
 	///The map template the shuttle was spawned from, if it was indeed created from a template. CAN BE NULL (ex. custom-built ships).
 	var/datum/map_template/shuttle/source_template
+	///Whether objects on the ship require an ID with ship access granted
+	var/unique_ship_access = FALSE
 
 	///Assoc list of remaining open job slots (job = remaining slots)
 	var/list/job_slots = list(new /datum/job/captain() = 1, new /datum/job/assistant() = 5)
@@ -70,6 +72,7 @@
 	. = ..()
 	if(creation_template)
 		source_template = creation_template
+		unique_ship_access = source_template.unique_ship_access
 		job_slots = source_template.job_slots?.Copy()
 		if(create_shuttle)
 			shuttle_port = SSshuttle.load_template(creation_template, src)

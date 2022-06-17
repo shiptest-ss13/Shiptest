@@ -17,6 +17,7 @@
 	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
 	var/prefix = "SV"
+	var/unique_ship_access = FALSE
 
 /datum/map_template/shuttle/proc/prerequisites_met()
 	return TRUE

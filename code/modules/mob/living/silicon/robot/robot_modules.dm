@@ -824,6 +824,7 @@
 		/obj/item/stack/cable_coil/cyborg,
 		/obj/item/borg/apparatus/beaker/service)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/borgshaker/hacked)
+	cyborg_base_icon = "service_m" // display as butlerborg for radial model selection
 	moduleselect_icon = "service"
 	special_light_key = "service"
 	hat_offset = 0

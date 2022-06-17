@@ -118,7 +118,7 @@
 
 
 //Gives the player the stuff he should have with his rank
-/datum/job/proc/EquipRank(mob/living/living_mob)
+/datum/job/proc/EquipRank(mob/living/living_mob, datum/overmap/ship/controlled/ship)
 	living_mob.job = title
 
 	SEND_SIGNAL(living_mob, COMSIG_JOB_RECEIVED, living_mob.job)
@@ -159,6 +159,11 @@
 		living_mob.add_memory("Your account ID is [wageslave.account_id].")
 	if(living_mob)
 		after_spawn(living_mob, living_mob) // note: this happens before the mob has a key! living_mob will always have a client, H might not.
+
+	if ( ship )
+		var/obj/item/card/id/idcard = living_mob.get_idcard( TRUE )
+		if ( idcard )
+			idcard.add_ship_access( ship )
 
 	return living_mob
 

@@ -98,6 +98,11 @@ Assistant
 
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 
+/datum/outfit/job/assistant/inteq
+	name = "IRMG Recruit (Inteq)"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq
+
 /datum/outfit/job/assistant/intern
 	name = "Assistant (Intern)"
 	uniform = /obj/item/clothing/under/suit/black
@@ -153,6 +158,13 @@ Assistant
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = /obj/item/clothing/under/syndicate
 
+/datum/outfit/job/assistant/independent/crewmatefancy
+	name = "Crewmate (Independent)"
+
+	uniform = /obj/item/clothing/under/misc/assistantformal
+	shoes = /obj/item/clothing/shoes/laceup
+	gloves = /obj/item/clothing/gloves/color/white
+
 /datum/outfit/job/assistant/ex_prisoner
 	name = "Assistant (Ex-Prisoner)"
 
@@ -178,3 +190,7 @@ Assistant
 	shoes = /obj/item/clothing/shoes/laceup
 	gloves = /obj/item/clothing/gloves/color/white
 	accessory = /obj/item/clothing/neck/scarf/darkblue
+
+/datum/outfit/job/assistant/waiter/syndicate
+	name = "Assistant (Syndicate Waiter)"
+	uniform = /obj/item/clothing/under/suit/waiter/syndicate
