@@ -1666,6 +1666,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/camera/autoname{
+	dir = 9
+	},
 /turf/open/floor/plating/grass,
 /area/ship/science)
 "BU" = (
@@ -1789,9 +1792,6 @@
 /obj/structure/railing,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
-"DR" = (
-/turf/closed/wall/r_wall/syndicate,
-/area/ship/engineering)
 "DW" = (
 /obj/effect/turf_decal/corner/lime/border{
 	dir = 4
@@ -2089,9 +2089,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/science)
 "HO" = (
@@ -2242,6 +2239,10 @@
 	pixel_x = 4
 	},
 /obj/item/storage/firstaid/fire,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = -7;
+	pixel_y = 14
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "LR" = (
@@ -3255,7 +3256,7 @@ US
 pD
 RJ
 RJ
-DR
+pD
 ur
 ur
 ur
@@ -3287,7 +3288,7 @@ US
 bH
 jK
 US
-DR
+pD
 ur
 ur
 ur
@@ -3476,7 +3477,7 @@ oh
 aD
 Sa
 US
-DR
+pD
 ur
 "}
 (9,1,1) = {"
@@ -3538,7 +3539,7 @@ FZ
 LR
 Wk
 US
-DR
+pD
 ur
 "}
 (11,1,1) = {"
@@ -3721,7 +3722,7 @@ US
 wC
 hg
 US
-DR
+pD
 ur
 ur
 ur
@@ -3751,7 +3752,7 @@ rN
 pD
 US
 iC
-DR
+pD
 ur
 ur
 ur
