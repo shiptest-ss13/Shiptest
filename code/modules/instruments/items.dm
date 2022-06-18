@@ -327,7 +327,7 @@
 
 /obj/item/instrument/guitar/ukulele/attack(mob/living/attacked_mob, mob/living/user)
 	. = ..()
-	try_shock()
+	try_shock(attacked_mob, user)
 
 /obj/item/instrument/guitar/ukulele/proc/on_fire(mob/user, atom/target, angle)
 	SIGNAL_HANDLER
