@@ -199,3 +199,4 @@
 	icon_state = "pad-idle-o"
 	deconstructible = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	pixel_y = 8

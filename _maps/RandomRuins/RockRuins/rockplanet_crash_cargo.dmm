@@ -42,10 +42,8 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered)
 "bt" = (
-/obj/structure/fluff/teleporter{
-	pixel_y = 8
-	},
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/structure/fluff/teleporter,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "bw" = (
@@ -62,6 +60,10 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/powered)
+"bB" = (
+/obj/structure/lattice,
+/turf/open/floor/plating/asteroid,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "bG" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -243,6 +245,10 @@
 /obj/effect/gibspawner/human,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered)
+"hC" = (
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/powered)
 "hG" = (
 /obj/item/pipe,
 /turf/open/floor/engine,
@@ -339,6 +345,10 @@
 /obj/structure/girder/displaced,
 /turf/open/floor/plating,
 /area/ruin/powered)
+"lr" = (
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/powered)
 "lt" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced/survival_pod{
@@ -382,6 +392,7 @@
 /area/ruin/powered)
 "mH" = (
 /obj/item/shard,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/powered)
 "mI" = (
@@ -408,6 +419,10 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered)
+"nG" = (
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/template_noop)
 "nR" = (
 /turf/open/floor/plasteel/stairs{
 	dir = 4
@@ -509,6 +524,10 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered)
+"rx" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/ruin/powered)
 "rG" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
@@ -518,6 +537,7 @@
 /area/ruin/powered)
 "rR" = (
 /obj/effect/mob_spawn/human/skeleton,
+/obj/structure/lattice/catwalk,
 /turf/open/floor/plating/asteroid,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "rZ" = (
@@ -542,6 +562,19 @@
 /obj/item/reagent_containers/glass/bottle,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
+"tf" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating/asteroid,
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"tk" = (
+/obj/machinery/light/small,
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/powered)
+"tI" = (
+/obj/structure/shuttle/engine/large,
+/turf/open/floor/plating/asteroid,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "tR" = (
 /turf/closed/mineral/random/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -555,6 +588,10 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered)
+"uf" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
 "ug" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -836,6 +873,10 @@
 /obj/structure/closet/crate/hydroponics,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered)
+"Cp" = (
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/asteroid,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Cu" = (
 /mob/living/simple_animal/hostile/netherworld/asteroid,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -967,6 +1008,11 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/powered)
+"Gr" = (
+/obj/structure/lattice,
+/obj/structure/frame/machine,
+/turf/template_noop,
+/area/template_noop)
 "Gv" = (
 /obj/machinery/door/poddoor/multi_tile/three_tile_ver,
 /turf/open/floor/plasteel/tech/grid,
@@ -1012,6 +1058,10 @@
 /obj/structure/rack,
 /turf/open/floor/engine,
 /area/ruin/powered)
+"HA" = (
+/obj/structure/frame/machine,
+/turf/open/floor/plating/asteroid,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "HF" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/asteroid,
@@ -1416,6 +1466,11 @@
 	},
 /turf/open/floor/circuit/green/anim,
 /area/ruin/powered)
+"SG" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/girder/reinforced,
+/turf/template_noop,
+/area/template_noop)
 "SL" = (
 /obj/structure/salvageable/machine,
 /turf/open/floor/plasteel/tech/grid,
@@ -1459,6 +1514,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "TA" = (
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/powered)
 "TM" = (
@@ -1562,6 +1618,10 @@
 /obj/structure/grille,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered)
+"WV" = (
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/engine,
+/area/ruin/powered)
 "Xy" = (
 /obj/structure/railing{
 	dir = 1
@@ -1589,6 +1649,11 @@
 /obj/item/kirbyplants/fullysynthetic,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered)
+"Yf" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/frame/machine,
+/turf/template_noop,
+/area/template_noop)
 "Ym" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/cigbutt,
@@ -1667,7 +1732,7 @@ jV
 jV
 jV
 jV
-jV
+SG
 jV
 jV
 jV
@@ -1687,51 +1752,51 @@ jV
 (2,1,1) = {"
 jV
 jV
+Yf
 jV
 jV
 jV
 jV
+nG
+uf
+uf
+uf
+uf
+jV
+uf
+uf
+uf
+nG
+jV
+HA
 jV
 jV
 jV
 jV
+uf
+Yf
 jV
 jV
-jV
-jV
-jV
-jV
-jV
-jV
-hO
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
+nG
 jV
 "}
 (3,1,1) = {"
 jV
+hO
+uf
+uf
+hO
+tI
+uf
 jV
 jV
 jV
 jV
+nG
 jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
+UR
+hO
+hO
 jV
 hO
 hO
@@ -1739,92 +1804,92 @@ hO
 jV
 jV
 jV
+Gr
 jV
 jV
 jV
-jV
-jV
-jV
+Gr
+hO
 "}
 (4,1,1) = {"
 jV
+Zn
+hO
 jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
+bB
+hO
+hO
+HA
+hO
+bB
+bB
+hO
+hO
+hO
+HA
+Zn
 hO
 Ad
 hO
 hO
+bB
 hO
+jV
+nG
+jV
+jV
+jV
 hO
-jV
-jV
-jV
-jV
-jV
-jV
-jV
+UR
 "}
 (5,1,1) = {"
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
 hO
 hO
+Cp
+hO
+Cp
+hO
+Cp
+hO
+hO
+Cp
+hO
+Cp
+hO
+Cp
+hO
+hO
+hO
+Cp
 hO
 rR
+bB
+Cp
+tf
 hO
+Cp
+Zn
 hO
-hO
-jV
-jV
-jV
-jV
-jV
-jV
+bB
+Cp
 "}
 (6,1,1) = {"
-jV
-jV
+hO
+hO
 qh
 Qg
 Qg
 aC
 qh
-jV
-jV
+Zn
+hO
 qh
 HT
 HT
 Gv
 qh
 hO
-jV
+hO
 hO
 qh
 aV
@@ -1832,7 +1897,7 @@ aV
 Mh
 qh
 hO
-jV
+hO
 qh
 aV
 aV
@@ -1840,29 +1905,29 @@ wn
 qh
 "}
 (7,1,1) = {"
-jV
 hO
+UR
 qh
 oq
 hG
 Zl
 qh
-jV
-jV
+hO
+hO
 qh
 pE
 gA
 ZI
 qh
 hO
-hO
+UR
 hO
 qh
 aV
 aV
 aV
 qh
-hO
+Zn
 hO
 qh
 HT
@@ -1878,8 +1943,8 @@ Hq
 Qg
 Pl
 qh
-jV
-jV
+hO
+hO
 qh
 LP
 Lc
@@ -1909,8 +1974,8 @@ tR
 vG
 iN
 qh
-jV
-jV
+hO
+hO
 qh
 CD
 AR
@@ -1940,8 +2005,8 @@ tR
 io
 oq
 qh
-jV
-jV
+hO
+hO
 qh
 SZ
 Cd
@@ -1971,8 +2036,8 @@ tR
 tR
 Tb
 qh
-jV
-jV
+hO
+hO
 qh
 DH
 UO
@@ -1980,7 +2045,7 @@ AR
 qh
 tR
 hO
-hO
+tf
 qh
 ug
 Oa
@@ -2002,8 +2067,8 @@ tR
 tR
 Bk
 qh
-jV
-jV
+hO
+hO
 qh
 xU
 Jv
@@ -2033,8 +2098,8 @@ tR
 By
 Uv
 qh
-jV
-jV
+hO
+hO
 qh
 IY
 xU
@@ -2064,8 +2129,8 @@ tR
 bY
 JH
 qh
-jV
-jV
+hO
+hO
 qh
 bI
 pE
@@ -2095,7 +2160,7 @@ fW
 un
 hG
 qh
-jV
+hO
 hO
 qh
 Lc
@@ -2139,7 +2204,7 @@ qh
 tR
 Bd
 Oa
-Be
+tk
 qh
 tR
 tR
@@ -2246,7 +2311,7 @@ qh
 jV
 jV
 qh
-Qg
+WV
 Ir
 Qg
 qh
@@ -2378,7 +2443,7 @@ In
 In
 In
 PP
-aV
+lr
 aV
 aV
 aV
@@ -2386,7 +2451,7 @@ Bd
 eJ
 aV
 aV
-aV
+lr
 aV
 eI
 eI
@@ -2416,7 +2481,7 @@ aV
 RE
 Bd
 Oa
-aV
+lr
 aV
 aV
 AZ
@@ -3104,7 +3169,7 @@ BU
 qh
 tR
 tR
-TA
+hC
 rp
 qh
 jV
@@ -3650,7 +3715,7 @@ jV
 jV
 tR
 tR
-yn
+rx
 DJ
 pR
 jg
@@ -3689,7 +3754,7 @@ tR
 tR
 tR
 tR
-tR
+jV
 jV
 jV
 jV
@@ -3747,7 +3812,7 @@ tR
 tR
 tR
 tR
-jV
+tR
 jV
 jV
 jV
@@ -3777,7 +3842,7 @@ jV
 jV
 jV
 tR
-jV
+tR
 jV
 jV
 jV
