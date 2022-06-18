@@ -159,8 +159,8 @@
 /area/ruin/powered)
 "fd" = (
 /turf/open/chasm{
-	name = "bottomless pit";
-	desc = "I sure hope it doesn't have a bottom."
+	desc = "I sure hope it doesn't have a bottom.";
+	name = "bottomless pit"
 	},
 /area/ruin/powered)
 "fi" = (
@@ -573,9 +573,9 @@
 /area/ruin/powered)
 "uJ" = (
 /obj/machinery/button/door{
+	dir = 1;
 	id = "contactlight3";
-	pixel_y = -32;
-	dir = 1
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/stairs/right{
 	dir = 8
@@ -733,9 +733,9 @@
 "zq" = (
 /obj/machinery/door/poddoor/multi_tile/three_tile_ver{
 	density = 0;
-	opacity = 0;
 	icon_state = "open";
-	id = "contactlight4"
+	id = "contactlight4";
+	opacity = 0
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered)
@@ -1059,9 +1059,9 @@
 /area/ruin/powered)
 "IY" = (
 /mob/living/simple_animal/bot/cleanbot{
-	name = "HAN-D";
+	health = 150;
 	maxHealth = 150;
-	health = 150
+	name = "HAN-D"
 	},
 /obj/structure/closet/crate/critter,
 /turf/open/floor/plasteel/tech/grid,
@@ -1101,9 +1101,9 @@
 "Kg" = (
 /obj/machinery/door/poddoor/multi_tile/three_tile_ver{
 	density = 0;
-	opacity = 0;
 	icon_state = "open";
-	id = "contactlight3
+	id = "contactlight3;
+	opacity = 0
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered)
@@ -1186,8 +1186,8 @@
 "Mh" = (
 /obj/machinery/door/poddoor/multi_tile/three_tile_ver{
 	density = 0;
-	opacity = 0;
-	icon_state = "open"
+	icon_state = "open";
+	opacity = 0
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered)
@@ -1227,9 +1227,9 @@
 /area/ruin/powered)
 "Nu" = (
 /obj/machinery/button/door{
+	dir = 1;
 	id = "contactlight4";
-	pixel_y = -32;
-	dir = 1
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/stairs/right{
 	dir = 8
@@ -1292,8 +1292,8 @@
 	dir = 8
 	},
 /obj/item/wrench{
-	pixel_y = 4;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 4
 	},
 /obj/item/flashlight/pen,
 /obj/effect/turf_decal/industrial/outline/blue,
@@ -1396,9 +1396,9 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
+	dir = 1;
 	id = "contactlight5";
-	pixel_y = -32;
-	dir = 1
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered)
@@ -1619,8 +1619,8 @@
 /area/ruin/powered)
 "Zi" = (
 /obj/machinery/button/door{
-	id = "contactlight6";
 	dir = 8;
+	id = "contactlight6";
 	pixel_x = 32
 	},
 /obj/item/stack/ore/salvage/scrapmetal,
