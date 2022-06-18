@@ -214,10 +214,10 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 5
 	},
-/obj/structure/weightmachine/weightlifter,
 /obj/machinery/camera/autoname{
 	dir = 9
 	},
+/obj/machinery/washing_machine,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "bL" = (
@@ -534,8 +534,7 @@
 	dir = 1
 	},
 /obj/machinery/door/window/eastright{
-	dir = 8;
-	req_access_txt = "12"
+	dir = 8
 	},
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
@@ -1054,13 +1053,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "iG" = (
-/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/machinery/bookbinder,
 /turf/open/floor/wood,
 /area/ship/crew/crewthree)
 "iH" = (
@@ -3652,13 +3651,8 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/structure/rack,
-/obj/item/clothing/under/costume/jabroni,
-/obj/item/clothing/under/shorts/black,
-/obj/item/clothing/under/shorts/blue,
-/obj/item/clothing/under/shorts/purple,
-/obj/item/clothing/gloves/boxing,
-/obj/item/clothing/gloves/boxing/yellow,
+/obj/structure/table,
+/obj/structure/bedsheetbin,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "Cy" = (
@@ -3841,9 +3835,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/door/window/eastleft{
-	req_access_txt = "12"
-	},
+/obj/machinery/door/window/eastleft,
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "DS" = (
@@ -5120,6 +5112,9 @@
 	name = "External Shutters";
 	pixel_x = -6
 	},
+/obj/item/areaeditor/shuttle{
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Nj" = (
@@ -5533,10 +5528,10 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 1
 	},
-/obj/structure/weightmachine/stacklifter,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/washing_machine,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "QO" = (
@@ -5822,10 +5817,10 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "SC" = (
@@ -5835,10 +5830,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "SF" = (
-/obj/machinery/bookbinder,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/machinery/libraryscanner,
 /turf/open/floor/wood,
 /area/ship/crew/crewthree)
 "SG" = (
