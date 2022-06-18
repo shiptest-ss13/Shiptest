@@ -1,17 +1,24 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/jungle,
-/area/mine/unexplored)
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
 "b" = (
 /obj/item/reagent_containers/food/drinks/bottle/sake,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/mine/unexplored)
+"e" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/mine/unexplored)
 "f" = (
 /obj/item/reagent_containers/food/snacks/fortunecookie,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/yew,
-/area/mine/unexplored)
+/area/ruin/unpowered)
+"g" = (
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/ruin/unpowered)
 "h" = (
 /obj/structure/fluff/divine/convertaltar{
 	desc = "An altar dedicated to a kami.";
@@ -26,22 +33,22 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/yew,
-/area/mine/unexplored)
+/area/ruin/unpowered)
 "i" = (
 /mob/living/simple_animal/hostile/jungle/mega_arachnid,
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/mine/unexplored)
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/ruin/unpowered)
 "j" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/mine/unexplored)
 "l" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/yew,
-/area/mine/unexplored)
+/area/ruin/unpowered)
 "o" = (
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/mine/unexplored)
 "u" = (
 /obj/item/clothing/suit/shrine_maiden,
@@ -50,14 +57,21 @@
 /obj/effect/decal/remains/human,
 /obj/item/gohei,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/mine/unexplored)
+/area/ruin/unpowered)
 "y" = (
 /obj/item/seeds/wheat/rice,
 /turf/open/water/jungle,
 /area/mine/unexplored)
 "A" = (
 /turf/closed/wall/mineral/wood,
-/area/mine/unexplored)
+/area/ruin/unpowered)
+"B" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
+"D" = (
+/turf/template_noop,
+/area/template_noop)
 "G" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/yew,
@@ -71,25 +85,33 @@
 /area/mine/unexplored)
 "J" = (
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/mine/unexplored)
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/ruin/unpowered)
+"K" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/yew,
+/area/ruin/unpowered)
 "N" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/yew,
-/area/mine/unexplored)
+/area/ruin/unpowered)
 "R" = (
 /turf/template_noop,
 /area/mine/unexplored)
 "T" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass/jungle,
+/turf/open/floor/plating/grass/jungle/lit,
 /area/mine/unexplored)
 "U" = (
 /obj/structure/mineral_door/paperframe,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/yew,
-/area/mine/unexplored)
+/area/ruin/unpowered)
+"X" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/ruin/unpowered)
 
 (1,1,1) = {"
 H
@@ -97,15 +119,15 @@ H
 H
 H
 T
-R
-R
-R
-R
-R
+D
+D
+D
+D
+D
 T
-a
+e
 T
-a
+e
 "}
 (2,1,1) = {"
 H
@@ -113,11 +135,11 @@ H
 o
 o
 j
-G
-o
-R
-R
-R
+K
+g
+D
+D
+D
 A
 A
 A
@@ -129,156 +151,156 @@ o
 A
 A
 A
-G
-o
-o
-R
-R
-R
-R
+K
+g
+g
+D
+D
+D
+D
 A
 R
 "}
 (4,1,1) = {"
 o
 o
-R
-R
-R
-R
-R
+D
+D
+D
+D
+D
 a
 u
-R
+D
 l
-R
-R
-G
+D
+D
+K
 "}
 (5,1,1) = {"
-R
-R
-R
+D
+D
+D
 l
-R
-R
-R
-j
-T
-R
-G
-R
-R
-R
+D
+D
+D
+B
+X
+D
+K
+D
+D
+D
 "}
 (6,1,1) = {"
-R
-R
-R
-G
-R
-R
+D
+D
+D
+K
+D
+D
 N
-G
-R
-R
-R
-R
+K
+D
+D
+D
+D
 A
-R
+D
 "}
 (7,1,1) = {"
-R
-R
-G
-o
+D
+D
+K
+g
 i
-R
-G
+D
+K
 h
-R
-R
+D
+D
 j
 o
 U
-R
+D
 "}
 (8,1,1) = {"
-R
-R
-R
-o
-R
-R
-R
-G
-G
-R
-a
+D
+D
+D
+g
+D
+D
+D
+K
+K
+D
+e
 o
 A
-R
+D
 "}
 (9,1,1) = {"
-R
+D
+K
+D
+D
+K
+D
+g
+g
+g
+D
+o
+o
 G
-R
-R
-G
-R
-o
-o
-o
-R
-o
-o
-G
-R
+D
 "}
 (10,1,1) = {"
 T
 j
-R
-R
-R
-R
+D
+D
+D
+D
 J
-o
-R
-R
+g
+D
+D
 b
 o
 A
-R
+D
 "}
 (11,1,1) = {"
 H
 H
-o
+g
 f
-o
+g
+D
+g
 R
-o
-R
-G
-R
-R
-R
+K
+D
+D
+D
 A
-a
+e
 "}
 (12,1,1) = {"
 H
 y
 H
 A
-o
-o
-R
-R
-R
-o
-R
+g
+g
+D
+D
+D
+g
+D
 l
 A
 T
@@ -287,31 +309,31 @@ T
 H
 I
 H
-R
-R
-R
-R
-R
-R
-G
+D
+D
+D
+D
+D
+D
+K
 A
-R
+D
 j
-R
+D
 "}
 (14,1,1) = {"
 H
 H
 H
+D
+D
+D
+D
+D
+D
 R
 R
-R
-R
-R
-R
-R
-R
-R
-R
-R
+D
+D
+D
 "}

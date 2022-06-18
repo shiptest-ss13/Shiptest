@@ -72,7 +72,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "kh" = (
 /turf/closed/wall/mineral/wood,
@@ -138,7 +138,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "tG" = (
 /turf/open/water/jungle,
@@ -146,9 +146,6 @@
 "uf" = (
 /obj/structure/closet/crate/goldcrate,
 /turf/open/floor/wood,
-/area/ruin/unpowered)
-"xd" = (
-/turf/open/floor/plating/dirt/jungle,
 /area/ruin/unpowered)
 "xT" = (
 /obj/structure/bonfire/prelit,
@@ -174,11 +171,11 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "BV" = (
 /obj/structure/bonfire/prelit,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "CG" = (
 /obj/structure/curtain/bounty,
@@ -228,7 +225,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "IH" = (
 /obj/item/reagent_containers/glass/bucket/wooden,
@@ -239,7 +236,7 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Kl" = (
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "KD" = (
 /obj/machinery/grill,
@@ -335,7 +332,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "UX" = (
 /mob/living/simple_animal/hostile/pirate/melee,
@@ -391,8 +388,8 @@
 (1,1,1) = {"
 Qq
 Qq
-xd
-xd
+Kl
+Kl
 Kl
 Kl
 tG
@@ -408,7 +405,7 @@ Qq
 (2,1,1) = {"
 Qq
 BV
-xd
+Kl
 Kl
 Kl
 tG
@@ -679,8 +676,8 @@ Kl
 "}
 (18,1,1) = {"
 Qq
-xd
-xd
+Kl
+Kl
 Kl
 tG
 tG
@@ -697,7 +694,7 @@ Qq
 (19,1,1) = {"
 Qq
 BV
-xd
+Kl
 Kl
 Kl
 Kl
@@ -714,9 +711,9 @@ Qq
 (20,1,1) = {"
 Qq
 Qq
-xd
-xd
-xd
+Kl
+Kl
+Kl
 Kl
 Kl
 Kl

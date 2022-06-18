@@ -5,7 +5,9 @@
 /area/ruin/unpowered)
 "b" = (
 /obj/structure/bed/dogbed,
-/mob/living/simple_animal/pet/cat,
+/mob/living/simple_animal/pet/cat{
+	faction = list("Wizard")
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/gibs/up,
 /turf/open/floor/wood,
@@ -37,7 +39,7 @@
 /area/ruin/unpowered)
 "n" = (
 /obj/structure/flora/tree/jungle,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "o" = (
 /obj/effect/decal/cleanable/blood/gibs/torso,
@@ -48,10 +50,10 @@
 /area/ruin/unpowered)
 "s" = (
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "t" = (
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "w" = (
 /obj/structure/flora/junglebush/large,
@@ -66,16 +68,16 @@
 /area/ruin/unpowered)
 "y" = (
 /obj/effect/spawner/trap,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "z" = (
 /obj/structure/bonfire/prelit,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "A" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/effect/spawner/trap,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "B" = (
 /obj/effect/spawner/trap,
@@ -83,7 +85,7 @@
 /area/ruin/unpowered)
 "E" = (
 /obj/effect/decal/remains/human,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "G" = (
 /obj/item/clothing/suit/wizrobe/marisa,
@@ -126,7 +128,7 @@
 /area/ruin/unpowered)
 "Q" = (
 /obj/structure/flora/junglebush,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "R" = (
 /obj/structure/flora/junglebush,
@@ -135,15 +137,15 @@
 /area/ruin/unpowered)
 "S" = (
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "T" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "U" = (
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "V" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -154,14 +156,14 @@
 /area/ruin/unpowered)
 "Z" = (
 /obj/structure/flora/rock/jungle,
-/turf/open/floor/plating/dirt/jungle/dark,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 
 (1,1,1) = {"
 T
 y
 f
-f
+t
 U
 E
 s
