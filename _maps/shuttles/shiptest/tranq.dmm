@@ -67,7 +67,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "aM" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Engineering"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -90,7 +92,8 @@
 /area/ship/engineering/electrical)
 "aP" = (
 /obj/machinery/door/airlock/wood{
-	id_tag = "apartment_1"
+	id_tag = "apartment_1";
+	name = "Apartment 1"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -455,7 +458,9 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/port)
 "ee" = (
-/obj/machinery/door/airlock/command/glass,
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge"
+	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/patterned/ridged{
 	color = "#4c535b"
@@ -632,7 +637,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
 "fD" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Supply Closet"
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -844,7 +851,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "hn" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Workshop"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1028,13 +1037,15 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "iA" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/structure/mineral_door/wood{
+	name = "Bedroom"
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm/dormthree)
@@ -1118,7 +1129,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
 "je" = (
-/obj/structure/mineral_door/wood,
+/obj/structure/mineral_door/wood{
+	name = "Bedroom"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1396,7 +1409,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "kY" = (
-/obj/machinery/door/airlock/command/glass,
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1769,7 +1784,8 @@
 /area/ship/crew/crewfive)
 "oF" = (
 /obj/machinery/door/airlock/grunge{
-	id_tag = "apartment_5"
+	id_tag = "apartment_5";
+	name = "Apartment 5"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1789,10 +1805,10 @@
 /turf/open/floor/plasteel/patterned/ridged{
 	color = "#4c535b"
 	},
-/area/ship/hallway/starboard)
+/area/ship/crew/crewfour)
 "oG" = (
 /obj/machinery/door/airlock{
-	name = "WC"
+	name = "Cryogenics"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1913,13 +1929,15 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm/dormfive)
 "pp" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/structure/mineral_door/wood{
+	name = "Bedroom"
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm/dormtwo)
@@ -2475,7 +2493,6 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
 "tI" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2490,6 +2507,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/structure/mineral_door/wood{
+	name = "Bedroom"
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm/dormfive)
@@ -2852,7 +2872,8 @@
 /area/ship/crew/canteen)
 "wI" = (
 /obj/machinery/door/airlock/wood{
-	id_tag = "apartment_3"
+	id_tag = "apartment_3";
+	name = "Apartment 3"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2882,7 +2903,6 @@
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "xc" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2891,6 +2911,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/public/glass{
+	name = "Dining Room"
 	},
 /turf/open/floor/plasteel/patterned/ridged{
 	color = "#4c535b"
@@ -3309,6 +3332,7 @@
 	},
 /obj/machinery/computer/security/telescreen{
 	dir = 4;
+	network = list("ss13");
 	pixel_x = -30
 	},
 /obj/effect/turf_decal/techfloor{
@@ -3750,7 +3774,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "Do" = (
-/obj/machinery/door/airlock/wood,
+/obj/machinery/door/airlock/wood{
+	name = "Cryogenics"
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4222,7 +4248,9 @@
 /turf/open/floor/carpet,
 /area/ship/crew/crewfive)
 "He" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Maintenance"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -4563,7 +4591,9 @@
 /turf/open/floor/plating/rust,
 /area/ship/crew/dorm)
 "Jg" = (
-/obj/machinery/door/airlock/medical/glass,
+/obj/machinery/door/airlock/medical/glass{
+	name = "Medical Bay"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -5071,7 +5101,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "MO" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -5083,6 +5112,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/public/glass{
+	name = "Dining Room"
 	},
 /turf/open/floor/plasteel/patterned/ridged{
 	color = "#4c535b"
@@ -5596,7 +5628,9 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "QW" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Sleeping Quarters"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -5628,6 +5662,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
+"Rn" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/crewfour)
 "Rs" = (
 /obj/item/toy/plush/lizardplushie{
 	name = "Charts-The-Stars";
@@ -5776,7 +5813,8 @@
 /area/ship/engineering/engine)
 "St" = (
 /obj/machinery/door/airlock/wood{
-	id_tag = "apartment_2"
+	id_tag = "apartment_2";
+	name = "Apartment 2"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5801,6 +5839,20 @@
 /obj/structure/sign/poster/contraband/power,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/electrical)
+"Sw" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Dining Room"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/ridged{
+	color = "#4c535b"
+	},
+/area/ship/crew/canteen)
 "Sx" = (
 /obj/structure/chair/sofa/right{
 	dir = 8
@@ -5850,12 +5902,14 @@
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "SL" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/public/glass{
+	name = "Dining Room"
 	},
 /turf/open/floor/plasteel/patterned/ridged{
 	color = "#4c535b"
@@ -6340,7 +6394,8 @@
 /area/ship/crew/crewfour)
 "Xd" = (
 /obj/machinery/door/airlock/wood{
-	id_tag = "apartment_4"
+	id_tag = "apartment_4";
+	name = "Apartment 4"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6567,7 +6622,9 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/port)
 "Zt" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Maintenance"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -6621,7 +6678,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "ZI" = (
-/obj/machinery/door/airlock/wood,
+/obj/machinery/door/airlock/wood{
+	name = "Garden"
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -7111,7 +7170,7 @@ fe
 PL
 Fq
 Fq
-SL
+Sw
 Fq
 xc
 Fq
@@ -7609,7 +7668,7 @@ Jz
 Jz
 Jz
 Jz
-kS
+Rn
 oF
 Ay
 Ay
