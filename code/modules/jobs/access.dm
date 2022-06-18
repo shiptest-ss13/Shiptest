@@ -7,7 +7,10 @@
 	if(issilicon(M))
 		if(ispAI(M))
 			return FALSE
-		return TRUE	//AI can do whatever it wants
+		// return TRUE	//AI can do whatever it wants
+		if ( check_ship_ai_access( M ) )
+			// No, AI can't do whatever it wants anymore :)
+			return TRUE
 	if(isAdminGhostAI(M))
 		//Access can't stop the abuse
 		return TRUE
@@ -63,9 +66,20 @@
 		for(var/b in text2access(req_one_access_txt))
 			req_one_access += b
 
+// Call this before using req_ship_access directly
+/obj/proc/gen_ship_access( datum/overmap/ship/controlled/ship )
+	if ( !req_ship_access )
+		return TRUE
+
+	if ( !( ship?.unique_ship_access ) )
+		return TRUE
+
 // Check if an item has access to this object
-/obj/proc/check_access(obj/item/I)
-	return check_access_list(I ? I.GetAccess() : null)
+/obj/proc/check_access(obj/item/item)
+	if ( !check_ship_access( item ) )
+		return FALSE
+
+	return check_access_list(item ? item.GetAccess() : null)
 
 /obj/proc/check_access_list(list/access_list)
 	gen_access()
@@ -92,6 +106,29 @@
 
 /obj/proc/check_access_ntnet(datum/netdata/data)
 	return check_access_list(data.passkey)
+
+// Checks the referenced item (if it has an ID) for ship access and returns true if authorized,
+// or if the ship/object being access is not checking for unique ship access at this time
+/obj/proc/check_ship_access( obj/item/item )
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+	if ( gen_ship_access( ship ) )
+		return TRUE
+
+	var/obj/item/card/id/id = item?.GetID()
+	if ( id?.has_ship_access( ship ) )
+		return TRUE
+
+	return FALSE
+
+/obj/proc/check_ship_ai_access( mob/living/silicon/robot )
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+	if ( gen_ship_access( ship ) )
+		return TRUE
+
+	if ( robot.has_ship_access( ship ) )
+		return TRUE
+
+	return FALSE
 
 /proc/get_centcom_access(job)
 	switch(job)
