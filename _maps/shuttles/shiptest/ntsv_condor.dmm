@@ -1006,13 +1006,13 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/components/binary/pump/on/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
 /obj/structure/catwalk/over,
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering{
 	name = "Port Engineering"
@@ -3199,7 +3199,14 @@
 	name = "starboard launcher one button";
 	pixel_x = -8;
 	dir = 1;
-	pixel_y = 3
+	pixel_y = 9
+	},
+/obj/machinery/button/massdriver{
+	id = "staremitterone";
+	name = "starboard emitter one button";
+	pixel_x = -8;
+	dir = 1;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -5115,6 +5122,14 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
+"LB" = (
+/obj/structure/closet/wall/red{
+	dir = 8;
+	name = "uniform closet";
+	pixel_x = 28
+	},
+/turf/template_noop,
+/area/template_noop)
 "LD" = (
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/blue/bordercee,
@@ -6072,10 +6087,10 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/components/binary/pump/layer2{
 	dir = 8
 	},
-/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering{
 	name = "Port Engineering"
@@ -6279,7 +6294,14 @@
 	name = "starboard launcher two button";
 	pixel_x = 9;
 	dir = 1;
-	pixel_y = 3
+	pixel_y = 8
+	},
+/obj/machinery/button/massdriver{
+	id = "staremittertwo";
+	name = "starboard emitter two button";
+	pixel_x = 9;
+	dir = 1;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -7805,7 +7827,7 @@ cD
 cD
 cD
 cD
-cD
+LB
 cD
 cD
 cD
