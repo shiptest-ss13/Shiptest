@@ -4625,7 +4625,7 @@
 "Iv" = (
 /obj/effect/turf_decal/corner/red/three_quarters,
 /obj/machinery/vending/security/marine/nanotrasen{
-	products = list(/obj/item/restraints/handcuffs = 10, /obj/item/assembly/flash/handheld = 10, /obj/item/flashlight/seclite = 10, /obj/item/ammo_box/magazine/aknt = 10, /obj/item/storage/box/lethalshot = 5, /obj/item/grenade/c4 = 5, /obj/item/grenade/frag = 5, /obj/item/grenade/flashbang = 10, /obj/item/grenade/barrier = 10, /obj/item/melee/transforming/energy/sword/saber/blue = 5)
+	products = list(/obj/item/restraints/handcuffs=10,/obj/item/assembly/flash/handheld=10,/obj/item/flashlight/seclite=10,/obj/item/ammo_box/magazine/aknt=10,/obj/item/storage/box/lethalshot=5,/obj/item/grenade/c4=5,/obj/item/grenade/frag=5,/obj/item/grenade/flashbang=10,/obj/item/grenade/barrier=10,/obj/item/melee/transforming/energy/sword/saber/blue=5)
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -7033,6 +7033,10 @@
 "ZP" = (
 /obj/structure/table/wood/bar,
 /obj/machinery/door/firedoor/border_only,
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_x = 5;
+	pixel_y = 5
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "ZR" = (
