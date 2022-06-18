@@ -54,6 +54,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"bf" = (
+/obj/structure/sign/nanotrasen,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "bh" = (
 /obj/machinery/airalarm/directional{
 	dir = 1;
@@ -373,10 +377,6 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/engineering)
-"hx" = (
-/obj/structure/sign/nanotrasen,
-/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "hJ" = (
 /obj/structure/window/reinforced{
@@ -1159,10 +1159,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/ship/cargo)
-"yw" = (
-/obj/structure/sign/nanotrasen,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/cargo)
 "yQ" = (
 /obj/structure/sink{
 	dir = 8;
@@ -1263,7 +1259,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/spacepod/prebuilt/sec,
+/obj/spacepod/prebuilt,
 /turf/open/floor/engine,
 /area/ship/cargo)
 "Ai" = (
@@ -1304,6 +1300,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"BP" = (
+/obj/structure/sign/nanotrasen,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo)
 "Cs" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1696,8 +1696,6 @@
 	name = "Pilots locker";
 	pixel_x = -29
 	},
-/obj/item/clothing/suit/space/officer,
-/obj/item/clothing/suit/space/officer,
 /obj/item/clothing/under/suit/black,
 /obj/item/clothing/under/suit/black,
 /obj/item/clothing/suit/jacket,
@@ -1716,6 +1714,14 @@
 	},
 /obj/item/clothing/under/rank/security/officer{
 	name = "pilot's jumpsuit"
+	},
+/obj/item/clothing/suit/jacket/leather/duster{
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0);
+	name = "Pilots duster"
+	},
+/obj/item/clothing/suit/jacket/leather/duster{
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0);
+	name = "Pilots duster"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
@@ -2643,7 +2649,7 @@ lT
 qO
 "}
 (9,1,1) = {"
-hx
+bf
 lT
 EK
 EK
@@ -2655,7 +2661,7 @@ lT
 EK
 EK
 lT
-hx
+bf
 "}
 (10,1,1) = {"
 Ep
@@ -2718,7 +2724,7 @@ VW
 Va
 "}
 (14,1,1) = {"
-yw
+BP
 vC
 vC
 KB
@@ -2730,7 +2736,7 @@ cs
 KB
 vC
 vC
-yw
+BP
 "}
 (15,1,1) = {"
 kU
