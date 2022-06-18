@@ -308,13 +308,35 @@
 		It was said that he was a son of a god, gifted with the power of lighting himself. \
 		People say that he was the most humble man, and that his music was simply...  electric!"
 	force = 15
+	slot_flags = ITEM_SLOT_BACK
 	var/lightning_chance = 35
 	var/lightning_damage = 30
 	var/lightning_range = 6
 	var/list/lightning_targets = list()
 
+/obj/item/instrument/guitar/ukulele/equipped(mob/user, slot, initial)
+	. = ..()
+	if(slot == ITEM_SLOT_BACK)
+		RegisterSignal(user, COMSIG_PROJECTILE_FIRER_ON_HIT, .proc/on_fire)
+	else
+		UnregisterSignal(user, COMSIG_PROJECTILE_FIRER_ON_HIT)
+
+/obj/item/instrument/guitar/ukulele/dropped(mob/user, silent)
+	. = ..()
+	UnregisterSignal(user, COMSIG_PROJECTILE_FIRER_ON_HIT)
+
 /obj/item/instrument/guitar/ukulele/attack(mob/living/attacked_mob, mob/living/user)
 	. = ..()
+	try_shock()
+
+/obj/item/instrument/guitar/ukulele/proc/on_fire(mob/user, atom/target, angle)
+	SIGNAL_HANDLER
+
+	if(!isliving(target))
+		return
+	try_shock(target, user)
+
+/obj/item/instrument/guitar/ukulele/proc/try_shock(mob/living/attacked_mob, mob/living/user)
 	if(length(lightning_targets) || !prob(lightning_chance))
 		return
 	if(!shock(attacked_mob))

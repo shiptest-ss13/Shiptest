@@ -1272,9 +1272,9 @@
 	rolling = TRUE
 	ADD_TRAIT(user, TRAIT_IMMOBILIZED, type)
 	user.add_filter("roll_blur", 1, angular_blur_filter(size = 15))
-	user.add_filter("roll_outline", 2, outline_filter(color = "#000000AA"))
+	user.add_filter("roll_outline", 2, outline_filter(color = "#00000099"))
 	user.throw_at(get_ranged_target_turf_direct(user, target, range = 6), range = 6, speed = 2, spin = FALSE, thrower = user, gentle = TRUE, callback = CALLBACK(src, .proc/stop_roll, user))
-	user.SpinAnimation(speed = 5, loops = 1, clockwise = (user.dir & (NORTH|EAST)))
+	user.SpinAnimation(speed = 5, clockwise = (user.dir & (NORTH|EAST)))
 	playsound(src, 'sound/items/roll.ogg', 50, TRUE)
 
 /obj/item/clothing/suit/space/hardsuit/commando/proc/stop_roll(mob/living/user)
@@ -1282,3 +1282,4 @@
 	REMOVE_TRAIT(user, TRAIT_IMMOBILIZED, type)
 	user.remove_filter("roll_blur")
 	user.remove_filter("roll_outline")
+	animate(user)

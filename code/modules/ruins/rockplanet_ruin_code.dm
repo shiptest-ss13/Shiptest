@@ -111,3 +111,91 @@
 	if(give_to_user)
 		user.put_in_hands(result)
 	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")
+
+/obj/structure/summon_beacon
+	name = "strange beacon"
+	desc = "This broken ship beacon seems to have sent out a distress signal. Curious, maybe it can be repaired?"
+	icon = 'icons/obj/machines/dominator.dmi'
+	icon_state = "dominator-broken"
+	density = TRUE
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/structure/summon_beacon/Initialize()
+	. = ..()
+	AddComponent(/datum/component/gps, "Distress Signal")
+
+/obj/structure/summon_beacon/examine(mob/user)
+	. = ..()
+	. += "<span class='userdanger'>Not fixable yet!</span>"
+
+/obj/structure/closet/crate/chest
+	name = "chest"
+	anchored = TRUE
+	anchorable = FALSE
+
+/obj/structure/closet/crate/chest/PopulateContents()
+	..()
+	var/obj/item/spawned_item = pick(
+		/obj/item/reagent_containers/food/snacks/grown/mushroom/plumphelmet,
+		/obj/item/reagent_containers/food/snacks/egg,
+		/obj/item/reagent_containers/food/snacks/nugget,
+		/obj/item/reagent_containers/syringe/contraband/methamphetamine,
+		/obj/item/clothing/suit/nerdshirt,
+		/obj/item/clothing/gloves/boxing,
+		/obj/item/clothing/neck/stripedgreenscarf,
+		/obj/item/clothing/glasses/red,
+		/obj/item/clothing/mask/gas/mime,
+		/obj/item/clothing/head/bearpelt,
+		/obj/item/clothing/shoes/workboots,
+		/obj/item/storage/firstaid/regular,
+		/obj/item/storage/box/hug,
+		/obj/item/storage/bag/books,
+		/obj/item/bodypart/head/alien,
+		/obj/item/bodypart/r_leg/zombie,
+		/obj/item/seeds/random,
+		/obj/item/kirbyplants/fullysynthetic,
+		/obj/item/restraints/handcuffs,
+		/obj/item/banner/command/mundane,
+		/obj/item/dice/d6,
+		/obj/item/hourglass,
+		/obj/item/grenade/flashbang,
+		/obj/item/crowbar/red,
+		/obj/item/kitchen/knife,
+		/obj/item/hatchet,
+		/obj/item/scythe,
+		/obj/item/tank/internals/plasma/full,
+		/obj/item/tank/jetpack/carbondioxide,
+		/obj/item/stock_parts/cell/hyper,
+		/obj/item/organ/heart/cybernetic/tier3,
+		/obj/item/kitchen/knife/bloodletter,
+		/obj/item/gun/energy/laser/captain,
+		/obj/item/gun/ballistic/rocketlauncher/unrestricted,
+	)
+	new spawned_item(src)
+
+/obj/machinery/door/keycard/medbay
+	name = "medbay airlock"
+	puzzle_id = "contactlightmdb"
+
+/obj/item/keycard/medbay
+	name = "medbay keycard"
+	puzzle_id = "contactlightmdb"
+	color = "#0099ff"
+
+/obj/machinery/door/keycard/storage
+	name = "storage airlock"
+	puzzle_id = "contactlightstrg"
+
+/obj/item/keycard/storage
+	name = "storage keycard"
+	puzzle_id = "contactlightstrg"
+	color = "#cc9900"
+
+/obj/structure/fluff/teleporter
+	name = "ancient teleporter"
+	desc = "An old, nonfunctional teleporter. What is it doing here?"
+	icon = 'icons/obj/telescience.dmi'
+	icon_state = "pad-idle-o"
+	deconstructible = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF

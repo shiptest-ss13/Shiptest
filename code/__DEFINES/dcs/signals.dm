@@ -542,6 +542,7 @@
 // /obj/projectile signals (sent to the firer)
 #define COMSIG_PROJECTILE_SELF_ON_HIT "projectile_self_on_hit" // from base of /obj/projectile/proc/on_hit(): (atom/movable/firer, atom/target, Angle)
 #define COMSIG_PROJECTILE_ON_HIT "projectile_on_hit" // from base of /obj/projectile/proc/on_hit(): (atom/movable/firer, atom/target, Angle)
+#define COMSIG_PROJECTILE_FIRER_ON_HIT "projectile_firer_on_hit"// from base of /obj/projectile/proc/on_hit(): (atom/target, Angle)
 #define COMSIG_PROJECTILE_BEFORE_FIRE "projectile_before_fire" // from base of /obj/projectile/proc/fire(): (obj/projectile, atom/original_target)
 #define COMSIG_PROJECTILE_FIRE "projectile_fire" // from the base of /obj/projectile/proc/fire(): ()
 #define COMSIG_PROJECTILE_PREHIT "com_proj_prehit" // sent to targets during the process_hit proc of projectiles
