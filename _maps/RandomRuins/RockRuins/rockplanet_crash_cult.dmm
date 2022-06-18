@@ -265,12 +265,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"ks" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "kE" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Crew Quarters"
@@ -404,7 +398,7 @@
 /obj/item/flashlight/glowstick/red{
 	on = 1
 	},
-/turf/open/floor/plating/asteroid/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "oA" = (
 /obj/structure/table,
@@ -650,12 +644,6 @@
 /obj/machinery/door/airlock/cult/friendly,
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
-"wu" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 10
-	},
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "ww" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor5";
@@ -825,9 +813,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
-"Bf" = (
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Bz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump,
 /obj/machinery/advanced_airlock_controller{
@@ -976,7 +961,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
-/turf/open/floor/plating/asteroid/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Gz" = (
 /obj/effect/rune/narsie,
@@ -1235,7 +1220,7 @@
 "PU" = (
 /obj/item/pickaxe/rusted,
 /obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plating/asteroid/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "QK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -1273,10 +1258,6 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
-"RA" = (
-/obj/structure/marker_beacon,
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Sm" = (
 /obj/machinery/hydroponics/constructable,
 /obj/effect/turf_decal/corner/green{
@@ -1288,10 +1269,6 @@
 /obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"Sz" = (
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "SC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/gibs/old,
@@ -1437,12 +1414,12 @@
 /area/ruin/unpowered)
 
 (1,1,1) = {"
-Bf
-Bf
-Bf
-RA
-Sz
-Bf
+Es
+Es
+Es
+SP
+jU
+Es
 Es
 Nt
 Dj
@@ -1450,11 +1427,11 @@ Ax
 UA
 Es
 Us
-Bf
-RA
-Bf
-Bf
-Bf
+Es
+SP
+Es
+Es
+Es
 "}
 (2,1,1) = {"
 Nt
@@ -1603,7 +1580,7 @@ Jh
 dh
 Ru
 Nt
-Bf
+Es
 xD
 IO
 Jh
@@ -1623,7 +1600,7 @@ KV
 bl
 Sq
 xD
-Bf
+Es
 EQ
 Wm
 Rq
@@ -1643,7 +1620,7 @@ xD
 Nt
 Nt
 xD
-Bf
+Es
 EQ
 xI
 hD
@@ -1657,24 +1634,24 @@ Nt
 Nt
 "}
 (12,1,1) = {"
-Bf
-Bf
-Bf
-RA
-Bf
+Es
+Es
+Es
+SP
+Es
 ou
-Bf
+Es
 xD
 IO
 KV
 EQ
 Es
 Es
-Bf
-RA
-Bf
-Bf
-Bf
+Es
+SP
+Es
+Es
+Es
 "}
 (13,1,1) = {"
 xD
@@ -1683,7 +1660,7 @@ Nt
 Nt
 xD
 xD
-Bf
+Es
 xD
 zP
 Ba
@@ -1703,7 +1680,7 @@ II
 mx
 qS
 Nt
-Bf
+Es
 Nt
 Wm
 dh
@@ -1817,7 +1794,7 @@ Nt
 Nt
 "}
 (20,1,1) = {"
-Bf
+Es
 Es
 Es
 Es
@@ -1830,15 +1807,15 @@ Jh
 Nt
 xY
 aS
-wu
-Bf
-Bf
-Bf
+li
+Es
+Es
+Es
 XI
 "}
 (21,1,1) = {"
 XI
-Bf
+Es
 Us
 Es
 Es
@@ -1850,7 +1827,7 @@ hm
 nv
 xD
 Us
-ks
+eK
 ou
 XI
 XI
@@ -1858,8 +1835,8 @@ XI
 "}
 (22,1,1) = {"
 XI
-Bf
-Bf
+Es
+Es
 jU
 Es
 Nt
@@ -1870,7 +1847,7 @@ in
 fg
 xD
 xD
-ks
+eK
 XI
 XI
 XI
@@ -1879,8 +1856,8 @@ XI
 (23,1,1) = {"
 XI
 XI
-Bf
-RA
+Es
+SP
 Es
 as
 sX
@@ -1892,14 +1869,14 @@ UE
 as
 Fn
 PU
-Bf
-RA
-Bf
+Es
+SP
+Es
 "}
 (24,1,1) = {"
 XI
 XI
-Bf
+Es
 ou
 Es
 as
@@ -1910,17 +1887,17 @@ Rq
 Ht
 ct
 xD
-Bf
-Sz
+Es
+jU
 XI
 XI
-Bf
+Es
 "}
 (25,1,1) = {"
 XI
 XI
 XI
-Bf
+Es
 Es
 as
 as
@@ -1930,7 +1907,7 @@ xT
 GW
 xD
 xD
-Bf
+Es
 XI
 XI
 XI
@@ -1941,18 +1918,18 @@ XI
 XI
 XI
 XI
-Bf
-Bf
+Es
+Es
 as
 as
 as
 as
 xD
 xD
-Bf
-Bf
-Bf
-Bf
+Es
+Es
+Es
+Es
 XI
 XI
 "}

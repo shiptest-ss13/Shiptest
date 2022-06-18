@@ -18,7 +18,7 @@
 
 /datum/biome/jungle/dense
 	flora_spawn_chance = 100
-	open_turf_types = list(/turf/open/floor/plating/grass/jungle = 1, /turf/open/floor/plating/dirt/jungle/dark = 9)
+	open_turf_types = list(/turf/open/floor/plating/grass/jungle/lit = 1, /turf/open/floor/plating/dirt/jungle/dark/lit = 9)
 	flora_spawn_list = list(
 		/obj/structure/flora/grass/jungle = 1,
 		/obj/structure/flora/grass/jungle/b = 1,
@@ -78,7 +78,7 @@
 	mob_spawn_chance = 1
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/asteroid/wolf/random = 1, /mob/living/simple_animal/hostile/retaliate/bat = 1, /mob/living/simple_animal/hostile/retaliate/poison/snake)
 	feature_spawn_chance = 1
-	feature_spawn_list = list(/obj/item/pickaxe/rusted = 1, /obj/structure/closet/crate/grave/lead_researcher = 1, /obj/structure/closet/crate/grave = 1, /obj/item/shovel = 1, /obj/structure/closet/crate/secure/loot = 1)
+	feature_spawn_list = list(/obj/item/pickaxe/rusted = 1)
 
 /datum/biome/cave/jungle/dirt
 	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/wasteland = 1)

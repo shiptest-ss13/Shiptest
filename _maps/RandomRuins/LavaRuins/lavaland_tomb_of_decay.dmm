@@ -646,7 +646,6 @@
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
-/obj/item/slimepotion/slime/sentience/nuclear,
 /obj/structure/bookcase/random{
 	books_to_load = 11;
 	load_random_books = 9
@@ -687,14 +686,8 @@
 /turf/open/floor/grass/fairy,
 /area/ruin/unpowered/icecropolis)
 "jW" = (
-/obj/structure/closet/crate/grave/lead_researcher,
+/obj/structure/table/wood,
 /turf/open/floor/plating/asteroid/basalt/wasteland,
-/area/ruin/unpowered/icecropolis)
-"jX" = (
-/obj/effect/spawner/lootdrop/snowdin/dungeonmid,
-/turf/open/floor/plating/asteroid/basalt/wasteland{
-	icon_state = "wasteland9"
-	},
 /area/ruin/unpowered/icecropolis)
 "jZ" = (
 /obj/structure/sink/oil_well,
@@ -1421,9 +1414,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/icecropolis)
-"yp" = (
-/turf/closed/indestructible/riveted/boss,
-/area/template_noop)
 "ys" = (
 /obj/structure/fluff/paper/stack{
 	dir = 1
@@ -2981,7 +2971,7 @@ gX
 Mb
 EM
 EM
-DW
+jW
 Rv
 aX
 gx
@@ -3020,7 +3010,7 @@ gN
 Nw
 FO
 EM
-jW
+gx
 FG
 hp
 gx
@@ -4035,7 +4025,7 @@ EM
 Da
 EM
 EM
-yp
+EM
 "}
 (26,1,1) = {"
 ou
@@ -4217,7 +4207,7 @@ Yf
 EM
 EM
 da
-jX
+hp
 do
 uw
 EM

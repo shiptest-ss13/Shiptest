@@ -7,20 +7,14 @@
 /turf/open/indestructible/boss/air,
 /area/ruin/powered)
 "az" = (
-/mob/living/carbon/monkey/angry,
-/mob/living/carbon/monkey/angry,
-/mob/living/carbon/monkey/angry,
-/mob/living/carbon/monkey/angry,
-/obj/item/clothing/glasses/blindfold/white,
-/obj/structure/stone_tile/slab,
-/turf/open/indestructible/boss/air,
-/area/ruin/powered)
-"bv" = (
-/obj/structure/displaycase{
-	start_showpiece_type = /obj/item/wendigo_blood
+/obj/machinery/door/poddoor/crusher/automatic{
+	color = "#483C32";
+	damage_deflection = 50;
+	name = "Ancient crusher"
 	},
 /obj/structure/stone_tile/slab,
-/turf/open/floor/plating/ice/icemoon,
+/obj/effect/gibspawner/generic,
+/turf/open/indestructible/boss/air,
 /area/ruin/powered)
 "cJ" = (
 /obj/item/crusher_trophy/wolf_ear,
@@ -43,20 +37,17 @@
 /area/ruin/powered)
 "ey" = (
 /obj/item/clothing/shoes/winterboots/ice_boots,
-/obj/item/slime_cookie/darkblue,
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
 /area/ruin/powered)
 "eE" = (
-/obj/machinery/door/poddoor/crusher/automatic{
-	close_sound = 'sound/clockwork/ark_damage.ogg';
-	color = "#483C32";
-	damage_deflection = 50;
-	name = "Ancient crusher";
-	open_sound = 'sound/clockwork/ark_damage.ogg'
-	},
 /obj/structure/stone_tile/slab,
 /obj/effect/gibspawner/generic,
+/obj/machinery/door/poddoor/crusher/automatic{
+	color = "#483C32";
+	damage_deflection = 50;
+	name = "Ancient crusher"
+	},
 /turf/open/indestructible/boss/air,
 /area/ruin/powered)
 "fc" = (
@@ -69,7 +60,6 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "gib1"
 	},
-/obj/effect/gibspawner/human,
 /turf/open/indestructible/boss/air,
 /area/ruin/powered)
 "gi" = (
@@ -115,9 +105,6 @@
 "lP" = (
 /obj/item/keycard/library{
 	puzzle_id = "DIE"
-	},
-/obj/effect/temp_visual/hierophant/wall/crusher{
-	duration = 10
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
@@ -247,13 +234,6 @@
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
 /area/ruin/powered)
-"tw" = (
-/obj/structure/displaycase{
-	start_showpiece_type = /obj/item/slimepotion/spaceproof
-	},
-/obj/structure/stone_tile/slab,
-/turf/open/floor/plating/ice/icemoon,
-/area/ruin/powered)
 "tz" = (
 /obj/item/crusher_trophy/ice_wing,
 /obj/structure/stone_tile/slab,
@@ -295,11 +275,6 @@
 /obj/effect/spawner/lootdrop/maintenance/eight,
 /obj/structure/barricade/wooden/snowed,
 /turf/open/floor/plating/ice/icemoon,
-/area/ruin/powered)
-"yL" = (
-/obj/item/slime_cookie/darkblue,
-/obj/structure/stone_tile/slab,
-/turf/open/indestructible/boss/air,
 /area/ruin/powered)
 "zc" = (
 /obj/machinery/door/keycard/gates{
@@ -370,11 +345,6 @@
 "EN" = (
 /turf/open/floor/plating/ice/icemoon,
 /area/ruin/powered)
-"Fi" = (
-/obj/item/kinetic_crusher/old,
-/obj/structure/stone_tile/slab,
-/turf/open/indestructible/boss/air,
-/area/ruin/powered)
 "Gg" = (
 /mob/living/simple_animal/hostile/asteroid/polarbear,
 /obj/structure/stone_tile/slab,
@@ -407,7 +377,7 @@
 "HR" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/table/wood/fancy/royalblue,
-/obj/item/clothing/suit/space/hardsuit/shielded,
+/obj/item/slime_cookie/darkblue,
 /turf/open/floor/plating/ice/icemoon,
 /area/ruin/powered)
 "Ic" = (
@@ -459,22 +429,14 @@
 	light_color = "#EEEEEE"
 	},
 /area/ruin/powered)
-"Mp" = (
-/obj/structure/table/wood/fancy/blue,
-/obj/structure/stone_tile/slab,
-/obj/effect/spawner/lootdrop/snowdin/dungeonmid,
-/turf/open/indestructible/boss/air,
-/area/ruin/powered)
 "NS" = (
 /obj/structure/statue/snow/snowlegion,
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
 /area/ruin/powered)
 "NV" = (
-/obj/structure/displaycase{
-	start_showpiece_type = /obj/item/uplink/old
-	},
 /obj/structure/stone_tile/slab,
+/obj/item/shard,
 /turf/open/floor/plating/ice/icemoon,
 /area/ruin/powered)
 "Qc" = (
@@ -497,13 +459,6 @@
 /turf/open/floor/plating/ice/icemoon,
 /area/ruin/powered)
 "SY" = (
-/obj/machinery/door/poddoor/crusher/automatic{
-	close_sound = 'sound/clockwork/ark_damage.ogg';
-	color = "#483C32";
-	damage_deflection = 50;
-	name = "Ancient crusher";
-	open_sound = 'sound/clockwork/ark_damage.ogg'
-	},
 /obj/effect/mob_spawn/human/corpse/syndicatestormtrooper,
 /obj/structure/stone_tile/slab,
 /obj/effect/decal/cleanable/blood{
@@ -513,13 +468,11 @@
 	icon_state = "floor4"
 	},
 /obj/effect/gibspawner/human,
-/turf/open/indestructible/boss/air,
-/area/ruin/powered)
-"Tf" = (
-/mob/living/carbon/monkey/angry,
-/mob/living/carbon/monkey/angry,
-/mob/living/carbon/monkey/angry,
-/obj/structure/stone_tile/slab,
+/obj/machinery/door/poddoor/crusher/automatic{
+	color = "#483C32";
+	damage_deflection = 50;
+	name = "Ancient crusher"
+	},
 /turf/open/indestructible/boss/air,
 /area/ruin/powered)
 "Tv" = (
@@ -556,21 +509,9 @@
 /obj/effect/spawner/lootdrop/maintenance/eight,
 /turf/open/floor/plating/ice/icemoon,
 /area/ruin/powered)
-"Vd" = (
-/obj/effect/temp_visual/hierophant/wall/crusher{
-	duration = 10
-	},
-/obj/structure/stone_tile/slab,
-/turf/open/indestructible/boss/air,
-/area/ruin/powered)
 "Wf" = (
 /obj/item/clothing/shoes/winterboots/ice_boots,
 /turf/open/floor/plating/ice/icemoon,
-/area/ruin/powered)
-"Wk" = (
-/obj/structure/stone_tile/slab,
-/obj/effect/gibspawner/generic,
-/turf/open/indestructible/boss/air,
 /area/ruin/powered)
 "WT" = (
 /obj/item/gun/energy/kinetic_accelerator/old,
@@ -584,13 +525,6 @@
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
 /area/ruin/powered)
-"Xw" = (
-/obj/structure/displaycase{
-	start_showpiece_type = /obj/item/clothing/head/helmet/space/hostile_environment
-	},
-/obj/structure/stone_tile/slab,
-/turf/open/floor/plating/ice/icemoon,
-/area/ruin/powered)
 "YO" = (
 /obj/effect/portal/permanent/one_way{
 	id = 333
@@ -599,12 +533,6 @@
 /area/ruin/powered)
 "ZC" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing,
-/obj/structure/stone_tile/slab,
-/turf/open/indestructible/boss/air,
-/area/ruin/powered)
-"ZO" = (
-/obj/item/crusher_trophy/broodmother_tongue,
-/obj/structure/table/wood/fancy/blue,
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
 /area/ruin/powered)
@@ -906,7 +834,7 @@ vu
 vu
 vu
 Sg
-ZO
+Xm
 rn
 nq
 Sg
@@ -2279,8 +2207,8 @@ vu
 vu
 vu
 Sg
-bv
-tw
+NV
+nD
 Sg
 UP
 Sg
@@ -2384,7 +2312,7 @@ vu
 Sg
 Sg
 Aj
-Xw
+nD
 Sg
 EN
 EN
@@ -2837,7 +2765,7 @@ Sg
 Sg
 vu
 vu
-az
+tT
 vu
 Sg
 vu
@@ -3090,7 +3018,7 @@ dG
 dG
 Sg
 Sg
-Vd
+vu
 vu
 iq
 vu
@@ -3141,8 +3069,8 @@ dG
 dG
 Sg
 Sg
-Tf
-Vd
+vu
+vu
 Qc
 tT
 vu
@@ -3192,9 +3120,9 @@ dG
 dG
 Sg
 Sg
-Vd
+vu
 lP
-Vd
+vu
 vu
 vu
 rP
@@ -3244,11 +3172,11 @@ Sg
 Sg
 Sg
 Sg
-Tf
-Vd
 vu
 vu
-yL
+vu
+vu
+vu
 rP
 vu
 vu
@@ -3296,11 +3224,11 @@ Sg
 Sg
 Sg
 Sg
-Vd
-Vd
-Vd
+vu
+vu
+vu
 cJ
-Fi
+vu
 rP
 rP
 rP
@@ -3333,13 +3261,13 @@ Sg
 vu
 vu
 Sg
-Wk
-Wk
-Wk
+vu
+vu
+vu
 Sg
 fl
-Wk
-Wk
+vu
+vu
 Sg
 vu
 NS
@@ -3349,12 +3277,12 @@ vu
 DL
 Sg
 Sg
-Tf
-Vd
+vu
+vu
 vu
 ey
-Vd
-Tf
+vu
+vu
 Sg
 Sg
 vu
@@ -3387,7 +3315,7 @@ vu
 Sg
 eE
 Sg
-eE
+az
 Sg
 SY
 Sg
@@ -3398,14 +3326,14 @@ vu
 vu
 vu
 vu
-Mp
+Xm
 Sg
 Sg
 Sg
-Vd
+vu
 vu
 tz
-Vd
+vu
 Sg
 Sg
 vu
@@ -3437,13 +3365,13 @@ vu
 Sg
 vu
 Sg
-Wk
+vu
 Sg
-Wk
+vu
 Sg
-Wk
+vu
 Sg
-Wk
+vu
 Sg
 vu
 vu
@@ -3487,7 +3415,7 @@ vu
 vu
 vu
 Sg
-Wk
+vu
 Sg
 eE
 Sg
@@ -3497,7 +3425,7 @@ eE
 Sg
 eE
 Sg
-Wk
+vu
 vu
 vu
 ZC
@@ -3539,16 +3467,16 @@ vu
 Sg
 Sg
 Sg
-Wk
-Wk
-Wk
+vu
+vu
+vu
 Sg
-Wk
-Wk
-Wk
+vu
+vu
+vu
 Sg
-Wk
-Wk
+vu
+vu
 vu
 vu
 vu

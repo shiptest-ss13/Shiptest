@@ -133,9 +133,6 @@
 /obj/machinery/door/poddoor/shutters,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
-"kD" = (
-/turf/open/floor/plating/asteroid/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "lv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
@@ -154,7 +151,7 @@
 /area/ruin/unpowered)
 "nm" = (
 /obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "nS" = (
 /obj/effect/decal/cleanable/dirt,
@@ -213,7 +210,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
 "ra" = (
-/turf/open/floor/plating/asteroid/wasteplanet,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "rm" = (
 /obj/structure/table,
@@ -385,7 +382,7 @@
 /area/ruin/unpowered)
 "Fk" = (
 /obj/effect/mine/shrapnel,
-/turf/open/floor/plating/asteroid/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "FH" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
@@ -411,9 +408,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/structure/frame/machine{
-	anchored = 1
-	},
+/obj/machinery/rnd/production/protolathe/department/science,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
 "HD" = (
@@ -500,7 +495,7 @@
 /area/ruin/unpowered)
 "NP" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/wasteplanet,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/unpowered)
 "Od" = (
 /obj/structure/table,
@@ -531,9 +526,7 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered)
 "ON" = (
-/obj/structure/frame/machine{
-	anchored = 1
-	},
+/obj/machinery/mecha_part_fabricator,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered)
 "Pn" = (
@@ -719,7 +712,7 @@ MQ
 rW
 MQ
 Ts
-kD
+ra
 "}
 (3,1,1) = {"
 AX
@@ -869,7 +862,7 @@ MQ
 MQ
 MQ
 Ts
-kD
+ra
 "}
 (9,1,1) = {"
 Ts
@@ -914,7 +907,7 @@ Ts
 FH
 Vx
 Cu
-kD
+ra
 Cq
 Cq
 Cq
@@ -940,7 +933,7 @@ zz
 YE
 tW
 Fk
-kD
+ra
 Cq
 Cq
 Cq
@@ -964,10 +957,10 @@ hN
 pz
 nS
 oa
-kD
-kD
-kD
-kD
+ra
+ra
+ra
+ra
 Cq
 Cq
 "}
@@ -989,9 +982,9 @@ aI
 uE
 YE
 tW
-kD
-kD
-kD
+ra
+ra
+ra
 Fk
 Cq
 Cq
