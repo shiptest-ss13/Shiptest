@@ -2590,6 +2590,26 @@
 /datum/sprite_accessory/kepori_body_feathers/none
 	name = "None"
 
+/datum/sprite_accessory/kepori_tail_feathers
+	color_src = FACEHAIR
+	icon = 'icons/mob/kepori_parts.dmi'
+
+/datum/sprite_accessory/kepori_tail_feathers/fan
+	name = "Fan"
+	icon_state = "fan"
+
+/datum/sprite_accessory/kepori_tail_feathers/back
+	name = "Back"
+	icon_state = "back"
+
+/datum/sprite_accessory/kepori_tail_feathers/fanback
+	name = "Fan and Back"
+	icon_state = "fanback"
+
+/datum/sprite_accessory/kepori_tail_feathers/none
+	name = "None"
+
+// Moth
 /datum/sprite_accessory/moth_wings/brown
 	name = "Brown"
 	icon_state = "brown"
@@ -2642,6 +2662,10 @@
 /datum/sprite_accessory/vox_head_quills/shaggy
 	name = "Shaggy"
 	icon_state = "shaggy"
+
+/datum/sprite_accessory/vox_head_quills/tailfeather
+	name = "Tailfeather"
+	icon_state = "tailfeather"
 
 /datum/sprite_accessory/vox_head_quills/mange
 	name = "Mange"
