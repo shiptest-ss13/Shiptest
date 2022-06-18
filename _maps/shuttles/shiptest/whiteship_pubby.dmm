@@ -54,10 +54,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"bf" = (
-/obj/structure/sign/nanotrasen,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering)
 "bh" = (
 /obj/machinery/airalarm/directional{
 	dir = 1;
@@ -149,6 +145,10 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"cx" = (
+/obj/structure/sign/nanotrasen,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "dg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -707,12 +707,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_box/magazine/m45,
-/obj/item/ammo_box/magazine/m45,
-/obj/item/ammo_box/magazine/m45,
-/obj/item/ammo_box/magazine/m45,
-/obj/item/gun/ballistic/automatic/pistol/m1911,
-/obj/item/gun/ballistic/automatic/pistol/m1911,
 /obj/structure/closet/wall/red{
 	dir = 8;
 	name = "Firearm Locker";
@@ -721,6 +715,12 @@
 /obj/effect/turf_decal/spline/fancy/black{
 	dir = 1
 	},
+/obj/item/gun/ballistic/automatic/pistol/commander,
+/obj/item/gun/ballistic/automatic/pistol/commander,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "pz" = (
@@ -1123,12 +1123,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "xL" = (
-/obj/machinery/suit_storage_unit/independent/mining/eva,
 /obj/effect/turf_decal/siding/brown,
 /obj/effect/turf_decal/spline/fancy/black{
 	dir = 5
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/mining/eva,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/office)
 "ye" = (
@@ -1285,9 +1285,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Bh" = (
-/obj/machinery/suit_storage_unit/independent/mining/eva,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/siding/brown,
+/obj/machinery/suit_storage_unit/mining/eva,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/office)
 "Bx" = (
@@ -1300,10 +1300,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"BP" = (
-/obj/structure/sign/nanotrasen,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/cargo)
 "Cs" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1408,6 +1404,10 @@
 /obj/effect/turf_decal/box/corners,
 /turf/open/floor/engine,
 /area/ship/cargo)
+"DH" = (
+/obj/structure/sign/nanotrasen,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "DW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -1709,20 +1709,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
 	},
-/obj/item/clothing/under/rank/security/officer{
-	name = "pilot's jumpsuit"
-	},
-/obj/item/clothing/under/rank/security/officer{
-	name = "pilot's jumpsuit"
-	},
-/obj/item/clothing/suit/jacket/leather/duster{
-	armor = list("melee" = 15, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0);
-	name = "Pilots duster"
-	},
-/obj/item/clothing/suit/jacket/leather/duster{
-	armor = list("melee" = 15, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0);
-	name = "Pilots duster"
-	},
+/obj/item/clothing/under/rank/security/officer/nt,
+/obj/item/clothing/under/rank/security/officer/nt,
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "JH" = (
@@ -1739,9 +1727,6 @@
 	name = "Captain's locker";
 	pixel_y = -28
 	},
-/obj/item/gun/ballistic/automatic/pistol/commander,
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm,
 /obj/item/clothing/suit/space/hardsuit/mining/heavy,
 /obj/item/clothing/suit/hooded/wintercoat/captain,
 /obj/effect/decal/cleanable/dirt,
@@ -1754,6 +1739,7 @@
 /obj/item/clothing/head/caphat/nt,
 /obj/item/clothing/under/rank/command/captain/nt,
 /obj/item/clothing/under/rank/command/captain/nt/skirt,
+/obj/item/gun/energy/laser,
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
 "Kh" = (
@@ -2649,7 +2635,7 @@ lT
 qO
 "}
 (9,1,1) = {"
-bf
+DH
 lT
 EK
 EK
@@ -2661,7 +2647,7 @@ lT
 EK
 EK
 lT
-bf
+DH
 "}
 (10,1,1) = {"
 Ep
@@ -2724,7 +2710,7 @@ VW
 Va
 "}
 (14,1,1) = {"
-BP
+cx
 vC
 vC
 KB
@@ -2736,7 +2722,7 @@ cs
 KB
 vC
 vC
-BP
+cx
 "}
 (15,1,1) = {"
 kU
