@@ -2563,6 +2563,9 @@
 	name = "Bun"
 	icon_state = "bun"
 
+/datum/sprite_accessory/kepori_body_feathers/none
+	name = "None"
+
 /datum/sprite_accessory/kepori_body_feathers
 	color_src = FACEHAIR
 	icon = 'icons/mob/kepori_parts.dmi'
@@ -2587,7 +2590,7 @@
 	name = "Wings"
 	icon_state = "wings"
 
-/datum/sprite_accessory/kepori_body_feathers/none
+/datum/sprite_accessory/kepori_tail_feathers/none
 	name = "None"
 
 /datum/sprite_accessory/kepori_tail_feathers
@@ -2606,10 +2609,8 @@
 	name = "Fan and Back"
 	icon_state = "fanback"
 
-/datum/sprite_accessory/kepori_tail_feathers/none
-	name = "None"
-
 // Moth
+
 /datum/sprite_accessory/moth_wings/brown
 	name = "Brown"
 	icon_state = "brown"
