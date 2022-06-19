@@ -56,13 +56,11 @@ GLOBAL_PROTECT(donators)
 	/// list of conversion rewards for this donator
 	/// Expected format: base type -> list of convertible types
 	var/list/conversion_rewards = list(
-		/obj/item/screwdriver = list(/obj/item/screwdriver/old, /obj/item/screwdriver/caravan),
 	)
 
 	/// list of reskin rewards for this donator
 	/// Should be an assosciative list indexed by type with a value which is a list of skins
 	var/list/reskin_rewards = list(
-		/obj/item/screwdriver = list("fakeiconstate", "alsonotreal")
 	)
 
 	/// list of redeemed conversion types
