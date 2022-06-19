@@ -235,6 +235,12 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/manifold/purple/visible/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "cj" = (
@@ -288,12 +294,13 @@
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "cP" = (
-/obj/machinery/button{
-	id = "kodiakcargo";
-	pixel_y = 23
-	},
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "kodiakcargo";
+	name = "Toggle Cargo Blast Doors";
+	pixel_y = 23
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -399,6 +406,7 @@
 /area/ship/engineering)
 "do" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/atmospherics/pipe/simple/green,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "dq" = (
@@ -441,10 +449,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
 /turf/open/floor/plating,
-/area/ship/engineering/electrical{
-	name = "Left Nacelle"
-	})
+/area/ship/engineering/nacelle/left)
 "dD" = (
 /obj/machinery/atmospherics/components/binary/valve/layer4,
 /turf/open/floor/plating,
@@ -508,21 +515,25 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light,
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "ee" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
-/obj/machinery/button{
+/obj/machinery/button/door{
 	dir = 4;
-	id = "kodiakengineshutterright";
-	name = "Toggle Engine Shutters";
+	id = "kodiaknacelleright";
+	name = "Toggle Engine Blast Doors";
 	pixel_x = -23
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "ei" = (
 /obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input,
 /turf/open/floor/engine/o2,
 /area/ship/engineering/nacelle/left)
 "em" = (
@@ -535,6 +546,10 @@
 /area/ship/engineering/engine)
 "eq" = (
 /obj/effect/decal/cleanable/ash,
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5,
+/obj/machinery/atmospherics/pipe/simple/green{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "es" = (
@@ -549,6 +564,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 5
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
@@ -597,10 +615,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "eB" = (
+/obj/machinery/atmospherics/components/binary/valve/layer4,
 /turf/open/floor/plating,
-/area/ship/engineering/electrical{
-	name = "Left Nacelle"
-	})
+/area/ship/engineering/nacelle/left)
 "eG" = (
 /obj/machinery/shower{
 	dir = 4
@@ -641,6 +658,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/green,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "eV" = (
@@ -655,6 +673,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 10
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
@@ -682,7 +703,7 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/door/poddoor{
-	id = "kodiakengineshutterright"
+	id = "kodiaknacelleright"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
@@ -692,6 +713,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
+"fB" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5,
+/turf/open/floor/plating,
+/area/ship/engineering/nacelle/left)
 "fC" = (
 /obj/structure/railing{
 	dir = 4
@@ -766,10 +791,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "fZ" = (
+/obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer4{
 	dir = 1
 	},
-/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "gh" = (
@@ -784,6 +809,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/trinary/filter{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "gk" = (
@@ -885,6 +913,9 @@
 	pixel_y = -25
 	},
 /obj/machinery/light,
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "hd" = (
@@ -1150,6 +1181,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 6
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "kq" = (
@@ -1217,6 +1251,12 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1311,6 +1351,9 @@
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5{
+	dir = 4
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -1450,6 +1493,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "nI" = (
@@ -1546,7 +1592,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer4{
 	dir = 1
 	},
-/turf/open/floor/engine,
+/turf/open/floor/engine{
+	initial_gas_mix = "o2=100;TEMP=50000"
+	},
 /area/ship/engineering/engine)
 "oB" = (
 /obj/structure/chair/comfy/brown{
@@ -1568,11 +1616,10 @@
 /area/ship/crew/captain)
 "oC" = (
 /obj/machinery/photocopier,
-/obj/machinery/button{
+/obj/machinery/button/door{
 	id = "kodiakarmoury";
 	name = "Toggle Armoury Shutters";
-	pixel_y = 25;
-	req_access_txt = "3"
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -1817,9 +1864,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "qU" = (
-/obj/machinery/atmospherics/pipe/simple/purple/visible{
-	dir = 10
+/obj/machinery/atmospherics/components/trinary/mixer/airmix,
+/obj/item/paper{
+	info = "Remember, 33/67 oxygen to plasma ratio works just fine. Don't go make another Sarajevo out of the engine bay, please. - Maintenance"
 	},
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "qV" = (
@@ -1837,7 +1886,9 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 1
 	},
-/turf/open/floor/engine,
+/turf/open/floor/engine{
+	initial_gas_mix = "o2=100;TEMP=50000"
+	},
 /area/ship/engineering/engine)
 "ro" = (
 /obj/effect/turf_decal/industrial/warning/dust{
@@ -1904,6 +1955,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
@@ -2209,11 +2263,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "uF" = (
-/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
-	dir = 8
-	},
-/obj/item/paper{
-	info = "Remember, 33/67 oxygen to plasma ratio works just fine. Don't go make another Sarajevo out of the engine bay, please. - Maintenance"
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -2221,6 +2272,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "uN" = (
@@ -2358,6 +2410,10 @@
 	icon_state = "1-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/purple/visible/layer4,
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5{
+	dir = 9
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "vM" = (
@@ -2414,6 +2470,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "ws" = (
@@ -2433,6 +2491,7 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = -32
 	},
+/obj/machinery/atmospherics/pipe/simple/green,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "wz" = (
@@ -2442,7 +2501,7 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/door/poddoor{
-	id = "kodiakengineshuttersleft"
+	id = "kodiaknacelleleft"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
@@ -2545,10 +2604,6 @@
 /area/ship/crew)
 "xC" = (
 /obj/structure/table/wood/fancy/black,
-/obj/machinery/button{
-	id = "kodiakcaptain";
-	name = "Toggle Window Blastdoor"
-	},
 /obj/item/storage/fancy/cigarettes/cigars/cohiba{
 	pixel_y = 15
 	},
@@ -2561,6 +2616,10 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "kodiakcaptain";
+	name = "Toggle Window Blast Door"
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/captain)
@@ -2683,6 +2742,7 @@
 /area/ship/hallway/fore)
 "yA" = (
 /obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/toxin_input,
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/nacelle/left)
 "yC" = (
@@ -2719,6 +2779,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
+"yS" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
+/turf/open/floor/plating,
+/area/ship/engineering/nacelle/right)
 "yU" = (
 /obj/structure/chair/greyscale{
 	dir = 1
@@ -2729,10 +2794,10 @@
 /obj/structure/cable,
 /obj/machinery/power/terminal,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/button{
+/obj/machinery/button/door{
 	dir = 8;
-	id = "kodiakengineshuttersleft";
-	name = "Toggle Engine Shutters";
+	id = "kodiaknacelleleft";
+	name = "Toggle Engine Blast Doors";
 	pixel_x = 23
 	},
 /turf/open/floor/plating,
@@ -2792,7 +2857,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "kodiakengineshuttersleft"
+	id = "kodiaknacelleleft"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
@@ -2893,12 +2958,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "AG" = (
-/obj/machinery/button{
+/obj/machinery/button/door{
 	dir = 8;
 	id = "kodiaksniper";
 	name = "Toggle Secure Storage";
-	pixel_x = 25;
-	req_access_txt = "3"
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -2932,6 +2996,12 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -3101,6 +3171,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
+/obj/item/paper{
+	info = "Don't bother with the igniter, shit won't work. We just prehetaed some O2 and stuck it in there, have fun. - Maintenance"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "CF" = (
@@ -3127,6 +3203,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5{
+	dir = 6
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -3178,6 +3258,7 @@
 /obj/machinery/computer/atmos_control/tank/oxygen_tank{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/green,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "DU" = (
@@ -3233,6 +3314,9 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
@@ -3532,7 +3616,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Hz" = (
-/turf/open/floor/engine,
+/turf/open/floor/engine{
+	initial_gas_mix = "o2=100;TEMP=50000"
+	},
 /area/ship/engineering/engine)
 "HB" = (
 /obj/effect/turf_decal/techfloor{
@@ -3546,15 +3632,15 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/button{
+/obj/machinery/button/door{
+	id = "kodiakbridge";
+	name = "Toggle Bridge Blast Doors";
+	pixel_x = -7
+	},
+/obj/machinery/button/door{
 	id = "bridgelockdown";
 	name = "Toggle Bridge Lockdown";
 	pixel_x = 7
-	},
-/obj/machinery/button{
-	id = "kodiakbridge";
-	name = "Toggle Bridge Shutters";
-	pixel_x = -7
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -3631,6 +3717,12 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
@@ -3770,6 +3862,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "JB" = (
@@ -3878,6 +3973,9 @@
 /obj/machinery/computer/atmos_control/tank/toxin_tank{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/manifold/green{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "KF" = (
@@ -3954,6 +4052,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Ln" = (
@@ -4020,6 +4121,9 @@
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/green{
+	dir = 9
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "LS" = (
@@ -4190,6 +4294,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Nm" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/green{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/nacelle/left)
 "Nn" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
@@ -4368,6 +4481,7 @@
 /obj/structure/window/plasma/reinforced/spawner{
 	dir = 4
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output,
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/nacelle/left)
 "Ph" = (
@@ -4427,9 +4541,12 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Pz" = (
-/obj/machinery/atmospherics/pipe/simple/purple/visible,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "PI" = (
@@ -4440,6 +4557,13 @@
 /obj/item/radio/intercom{
 	dir = 4;
 	pixel_x = -22
+	},
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1;
+	piping_layer = 5
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -4638,6 +4762,7 @@
 /area/template_noop)
 "Rv" = (
 /obj/effect/decal/cleanable/robot_debris/gib,
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "Rz" = (
@@ -4689,6 +4814,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer5{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "RU" = (
@@ -4706,6 +4837,10 @@
 /area/ship/cargo)
 "Sd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "Sn" = (
@@ -4743,7 +4878,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "kodiakengineshutterright"
+	id = "kodiaknacelleright"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
@@ -4813,6 +4948,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "TM" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "TO" = (
@@ -4844,7 +4980,9 @@
 /area/ship/cargo)
 "TV" = (
 /obj/machinery/igniter/incinerator_atmos,
-/turf/open/floor/engine,
+/turf/open/floor/engine{
+	initial_gas_mix = "o2=100;TEMP=50000"
+	},
 /area/ship/engineering/engine)
 "TW" = (
 /turf/closed/wall/mineral/tialloy,
@@ -4868,6 +5006,9 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -4920,6 +5061,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "Uy" = (
@@ -4952,6 +5096,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/atmospherics/pipe/simple/green,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "UO" = (
@@ -5023,6 +5168,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Wt" = (
@@ -5158,6 +5304,7 @@
 	dir = 8
 	},
 /obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output,
 /turf/open/floor/engine/o2,
 /area/ship/engineering/nacelle/left)
 "XE" = (
@@ -5248,6 +5395,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "Zj" = (
@@ -5318,6 +5468,10 @@
 /area/ship/crew)
 "ZE" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
+/obj/machinery/atmospherics/pipe/simple/green{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "ZJ" = (
@@ -5519,7 +5673,7 @@ wu
 DP
 KC
 UL
-wQ
+Nm
 wQ
 ly
 zC
@@ -5618,7 +5772,7 @@ XP
 Hj
 XD
 TM
-TM
+fB
 eq
 ci
 Sd
@@ -6540,7 +6694,7 @@ cC
 zc
 eV
 uK
-xO
+yS
 dD
 fu
 JN
