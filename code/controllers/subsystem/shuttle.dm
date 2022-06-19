@@ -223,9 +223,9 @@ SUBSYSTEM_DEF(shuttle)
 			return port
 
 // Returns the ship the atom belongs to by also getting the shuttle port's current_ship
-/datum/controller/subsystem/shuttle/proc/get_ship( atom/object )
-	var/obj/docking_port/mobile/port = get_containing_shuttle( object )
-	if ( port?.current_ship )
+/datum/controller/subsystem/shuttle/proc/get_ship(atom/object)
+	var/obj/docking_port/mobile/port = get_containing_shuttle(object)
+	if (port?.current_ship)
 		return port.current_ship
 
 /datum/controller/subsystem/shuttle/proc/get_containing_docks(atom/A)

@@ -265,8 +265,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		var/target_owner = (inserted_modify_id && inserted_modify_id.registered_name) ? html_encode(inserted_modify_id.registered_name) : "--------"
 		var/target_rank = (inserted_modify_id && inserted_modify_id.assignment) ? html_encode(inserted_modify_id.assignment) : "Unassigned"
 		var/target_age = (inserted_modify_id && inserted_modify_id.registered_age) ? html_encode(inserted_modify_id.registered_age) : "--------"
-		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
-		var/target_ship_access = ( inserted_modify_id && inserted_modify_id.has_ship_access( ship ) )
+		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
+		var/target_ship_access = (inserted_modify_id && inserted_modify_id.has_ship_access(ship))
 
 		if(!authenticated)
 			header += {"<br><i>Please insert the cards into the slots</i><br>
@@ -457,26 +457,26 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						playsound(src, "terminal_type", 50, FALSE)
 		if ( "toggle_id_ship_access" )
 			if (authenticated == AUTHENTICATED_ALL)
-				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
-				if ( inserted_modify_id.has_ship_access( ship ) )
-					inserted_modify_id.remove_ship_access( ship )
+				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
+				if (inserted_modify_id.has_ship_access(ship))
+					inserted_modify_id.remove_ship_access(ship)
 				else
-					inserted_modify_id.add_ship_access( ship )
+					inserted_modify_id.add_ship_access(ship)
 				playsound(src, "terminal_type", 50, FALSE)
 
 		if ( "toggle_unique_ship_access" )
 			if (authenticated == AUTHENTICATED_ALL)
-				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
 				ship.unique_ship_access = !ship.unique_ship_access
 				playsound(src, "terminal_type", 50, FALSE)
 
 		if ( "print_silicon_access_chip" )
-			if ( authenticated == AUTHENTICATED_ALL )
+			if (authenticated == AUTHENTICATED_ALL)
 				if(!COOLDOWN_FINISHED(src, silicon_access_print_cooldown))
 					say("Printer unavailable. Please allow a short time before attempting to print.")
 					return
-				var/obj/item/borg/upgrade/ship_access_chip/chip = new( get_turf( src ) )
-				chip.ship = SSshuttle.get_ship( src )
+				var/obj/item/borg/upgrade/ship_access_chip/chip = new(get_turf(src))
+				chip.ship = SSshuttle.get_ship(src)
 				playsound(src, "terminal_type", 50, FALSE)
 				COOLDOWN_START(src, silicon_access_print_cooldown, 10 SECONDS)
 

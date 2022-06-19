@@ -229,7 +229,7 @@
 			if(myseed.instability >= 40)
 				if(prob(myseed.instability))
 					hardmutate()
-			if(myseed.instability >= 20 )
+			if(myseed.instability >= 20)
 				if(prob(myseed.instability))
 					mutate()
 

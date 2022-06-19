@@ -299,12 +299,12 @@
 	if(!O)
 		return 0
 
-	if ( O.equip(src, visualsOnly, preference_source) ) // Need the mob equipped to access its ID
-		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
-		if ( ship )
-			var/obj/item/card/id/idcard = get_idcard( TRUE )
-			if ( idcard )
-				idcard.add_ship_access( ship )
+	if (O.equip(src, visualsOnly, preference_source)) // Need the mob equipped to access its ID
+		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
+		if (ship)
+			var/obj/item/card/id/idcard = get_idcard(TRUE)
+			if (idcard)
+				idcard.add_ship_access(ship)
 
 		return TRUE
 
