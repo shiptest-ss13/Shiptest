@@ -147,6 +147,16 @@ Assistant
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
 
+/datum/outfit/job/assistant/syndicate/aclf
+	name = "Private (Assistant)"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	ears = /obj/item/radio/headset/syndicate
+	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/jackboots
+	r_pocket = /obj/item/radio
+
 /datum/outfit/job/assistant/syndicate/gorlex
 	name = "Junior Agent (Gorlex Marauders)"
 

@@ -101,6 +101,30 @@
 	accessory = /obj/item/clothing/accessory/waistcoat
 	head = /obj/item/clothing/head/HoS/cowboy
 
+/datum/outfit/job/head_of_personnel/aclf
+	name = "Lieutenant (ACLF)"
+	uniform = /obj/item/clothing/under/syndicate/aclf
+	id = /obj/item/card/id/syndicate_command/crew_id
+	shoes = /obj/item/clothing/shoes/jackboots
+	ears = /obj/item/radio/headset/syndicate/alt
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	gloves = null
+//okay so, buges so far:
+//- forgot a lot of bulbs
+//- distro pipe fuckery, wrong vent in left nacelle
+//- O2 is immediately flowing
+//- O2 and plasma tanks don't look right, pipes dont lead into the TEG mixer
+//- catwalks vanish immediately
+//- shutters are ALL fucked
+//- lieutenant spawn can't get the right access
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+	backpack_contents = list(/obj/item/storage/box/ids=1,\
+		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+
 /datum/outfit/job/head_of_personnel/minutemen
 	name = "Bridge Officer (Colonial Minutemen)"
 

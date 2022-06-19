@@ -180,6 +180,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	flags_1 = CULT_PERMITTED_1
 	sound_environment = SOUND_AREA_SMALL_ENCLOSED
 
+/area/ship/crew/captain
+	name = "Captain's Quarters"
+	icon_state = "bridge"
+	sound_environment = SOUND_AREA_WOODFLOOR
+
 /// Medical Bay ///
 /area/ship/medical
 	name = "Infirmary"
@@ -251,6 +256,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/engineering/engine
 	name = "Engine Room"
 	icon_state = "engine_sm"
+
+/area/ship/engineering/nacelle/right
+	name = "Right Nacelle"
+	icon_state = "engine_smes"
+
+/area/ship/engineering/nacelle/left
+	name = "Left Nacelle"
+	icon_state = "engine_smes"
 
 /// Security ///
 /area/ship/security

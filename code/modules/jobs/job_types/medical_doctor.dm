@@ -147,3 +147,13 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/syndicate/alt
+
+/datum/outfit/job/doctor/syndicate/aclf
+	name = "Field Surgeon (Medical Doctor)"
+
+	uniform = /obj/item/clothing/under/syndicate
+	accessory = /obj/item/clothing/accessory/armband/medblue
+	id = /obj/item/card/id/syndicate_command/crew_id
+	shoes = /obj/item/clothing/shoes/jackboots
+	ears = /obj/item/radio/headset/syndicate
+	suit = null
