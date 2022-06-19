@@ -181,6 +181,10 @@ Assistant
 	ears = /obj/item/radio/headset/headset_srv
 	gloves = /obj/item/clothing/gloves/color/white
 
+/datum/outfit/job/assistant/waiter/syndicate
+	name = "Assistant (Syndicate Waiter)"
+	uniform = /obj/item/clothing/under/suit/waiter/syndicate
+
 /datum/outfit/job/assistant/roumain
 	name = "Shadow (Saint-Roumain Militia)"
 

@@ -30,6 +30,11 @@
 	icon_state = "waiter"
 	item_state = "waiter"
 
+/obj/item/clothing/under/suit/waiter/syndicate
+	name = "syndicate waiter's outfit"
+	icon_state = "waiter_s"
+	item_state = "waiter_s"
+
 /obj/item/clothing/under/suit/blacktwopiece
 	name = "black two piece suit"
 	desc = "A black suit and red tie. Very formal."
