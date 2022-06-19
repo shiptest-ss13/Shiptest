@@ -288,8 +288,8 @@ SUBSYSTEM_DEF(overmap)
 
 	// locates the first dock in the bottom left, accounting for padding and the border
 	var/turf/primary_docking_turf = locate(
-		vlevel.low_x+RESERVE_DOCK_DEFAULT_PADDING+1 + vlevel.reserved_margin,
-		vlevel.low_y+RESERVE_DOCK_DEFAULT_PADDING+1 + vlevel.reserved_margin,
+		vlevel.low_x+RESERVE_DOCK_DEFAULT_PADDING + vlevel.reserved_margin,
+		vlevel.low_y+RESERVE_DOCK_DEFAULT_PADDING + vlevel.reserved_margin,
 		vlevel.z_value
 		)
 	// now we need to offset to account for the first dock
@@ -323,14 +323,14 @@ SUBSYSTEM_DEF(overmap)
 		// no ruin, so we can make more docks upward
 		var/turf/tertiary_docking_turf = locate(
 			primary_docking_turf.x,
-			primary_docking_turf.y+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING,
+			primary_docking_turf.y+RESERVE_DOCK_MAX_SIZE_SHORT+RESERVE_DOCK_DEFAULT_PADDING,
 			primary_docking_turf.z
 			)
 		// rinse and repeat
 		var/turf/quaternary_docking_turf = locate(
-			primary_docking_turf.x+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING,
-			primary_docking_turf.y+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING,
-			primary_docking_turf.z
+			secondary_docking_turf.x,
+			secondary_docking_turf.y+RESERVE_DOCK_MAX_SIZE_SHORT+RESERVE_DOCK_DEFAULT_PADDING,
+			secondary_docking_turf.z
 			)
 
 		var/obj/docking_port/stationary/tertiary_dock = new(tertiary_docking_turf)

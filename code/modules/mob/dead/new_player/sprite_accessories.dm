@@ -2515,73 +2515,77 @@
 /datum/sprite_accessory/kepori_feathers/none
 	name = "None"
 
-/datum/sprite_accessory/kepori_feathers/plain
-	name = "Plain"
-	icon_state = "plain"
+/datum/sprite_accessory/kepori_feathers/sleek
+	name = "Sleek"
+	icon_state = "sleek"
 
-/datum/sprite_accessory/kepori_feathers/spiky
-	name = "Spiky"
-	icon_state = "spiky"
+/datum/sprite_accessory/kepori_feathers/peel
+	name = "The Peel"
+	icon_state = "peel"
 
-/datum/sprite_accessory/kepori_feathers/bushy
-	name = "Bushy"
-	icon_state = "bushy"
+/datum/sprite_accessory/kepori_feathers/sweep
+	name = "Swept Up"
+	icon_state = "sweep"
+
+/datum/sprite_accessory/kepori_feathers/aerodynamic
+	name = "Aerodynamic"
+	icon_state = "aerodynamic"
 
 /datum/sprite_accessory/kepori_feathers/mohawk
-	name = "Mohawk"
+	name = "Mo-Hawk"
 	icon_state = "mohawk"
 
-/datum/sprite_accessory/kepori_feathers/pointy
-	name = "Pointy"
-	icon_state = "pointy"
+/datum/sprite_accessory/kepori_feathers/cowlick
+	name = "Cow-lick"
+	icon_state = "cowlick"
 
-/datum/sprite_accessory/kepori_feathers/upright
-	name = "Upright"
-	icon_state = "upright"
+/datum/sprite_accessory/kepori_feathers/spikey
+	name = "Spikey"
+	icon_state = "spikey"
 
-/datum/sprite_accessory/kepori_feathers/mane
-	name = "Mane"
-	icon_state = "mane"
+/datum/sprite_accessory/kepori_feathers/soap
+	name = "Soap"
+	icon_state = "soap"
 
-/datum/sprite_accessory/kepori_feathers/droopy
-	name = "Droopy"
-	icon_state = "droopy"
+/datum/sprite_accessory/kepori_feathers/crowned
+	name = "Crowned"
+	icon_state = "crowned"
 
-/datum/sprite_accessory/kepori_feathers/mushroom
-	name = "Mushroom"
-	icon_state = "mushroom"
+/datum/sprite_accessory/kepori_feathers/crested
+	name = "Crested"
+	icon_state = "crested"
 
-/datum/sprite_accessory/kepori_feathers/backstrafe
-	name = "Backstrafe"
-	icon_state = "backstrafe"
+/datum/sprite_accessory/kepori_feathers/ponytail
+	name = "Ponytail"
+	icon_state = "ponytail"
 
-/datum/sprite_accessory/kepori_feathers/longway
-	name = "Longway"
-	icon_state = "longway"
-
-/datum/sprite_accessory/kepori_feathers/tree
-	name = "Tree"
-	icon_state = "tree"
-
-/datum/sprite_accessory/kepori_feathers/thin_mohawk
-	name = "Thin Mohawk"
-	icon_state = "thinmohawk"
-
-/datum/sprite_accessory/kepori_feathers/twies
-	name = "Twies"
-	icon_state = "twies"
-
-/datum/sprite_accessory/kepori_feathers/thin
-	name = "Thin"
-	icon_state = "thin"
+/datum/sprite_accessory/kepori_feathers/bun
+	name = "Bun"
+	icon_state = "bun"
 
 /datum/sprite_accessory/kepori_body_feathers
 	color_src = FACEHAIR
 	icon = 'icons/mob/kepori_parts.dmi'
 
-/datum/sprite_accessory/kepori_body_feathers/plain
-	name = "Plain"
-	icon_state = "plain"
+/datum/sprite_accessory/kepori_body_feathers/aftik
+	name = "Aftik"
+	icon_state = "aftik"
+
+/datum/sprite_accessory/kepori_body_feathers/belly
+	name = "Belly"
+	icon_state = "belly"
+
+/datum/sprite_accessory/kepori_body_feathers/shirt
+	name = "Shirt"
+	icon_state = "shirt"
+
+/datum/sprite_accessory/kepori_body_feathers/soap
+	name = "Soap"
+	icon_state = "soap"
+
+/datum/sprite_accessory/kepori_body_feathers/wings
+	name = "Wings"
+	icon_state = "wings"
 
 /datum/sprite_accessory/kepori_body_feathers/none
 	name = "None"

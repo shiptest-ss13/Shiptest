@@ -199,6 +199,8 @@ SUBSYSTEM_DEF(mapping)
 			S.prefix = data["prefix"]
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
+		if ( isnum( data[ "unique_ship_access" ] && data["unique_ship_access"] ) )
+			S.unique_ship_access = data[ "unique_ship_access" ]
 
 		S.job_slots = list()
 		var/list/job_slot_list = data["job_slots"]

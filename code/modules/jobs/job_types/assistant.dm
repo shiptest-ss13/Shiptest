@@ -180,3 +180,7 @@ Assistant
 	shoes = /obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/headset_srv
 	gloves = /obj/item/clothing/gloves/color/white
+
+/datum/outfit/job/assistant/waiter/syndicate
+	name = "Assistant (Syndicate Waiter)"
+	uniform = /obj/item/clothing/under/suit/waiter/syndicate
