@@ -760,6 +760,10 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 9
 	},
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
 "gd" = (
@@ -947,10 +951,6 @@
 	})
 "hD" = (
 /obj/machinery/power/terminal,
-/obj/machinery/light/small{
-	dir = 8;
-	pixel_y = -10
-	},
 /obj/structure/cable/orange{
 	icon_state = "0-1"
 	},
@@ -1330,7 +1330,8 @@
 	req_access = null;
 	locked = 0;
 	idle_power_usage = 100;
-	active_power_usage = 400
+	active_power_usage = 750;
+	projectile_type = /obj/projectile/beam/pulse/condor
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -1926,7 +1927,8 @@
 	req_access = null;
 	locked = 0;
 	idle_power_usage = 100;
-	active_power_usage = 400
+	active_power_usage = 750;
+	projectile_type = /obj/projectile/beam/pulse/condor
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -2520,7 +2522,7 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	icon_state = "1-2"
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -2974,10 +2976,6 @@
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 5
 	},
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 12
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "wF" = (
@@ -3003,13 +3001,6 @@
 	dir = 4
 	},
 /obj/structure/table,
-/obj/machinery/button/massdriver{
-	id = "portemittertwo";
-	name = "port emitter two button";
-	pixel_x = -8;
-	dir = 1;
-	pixel_y = -2
-	},
 /obj/item/radio/intercom{
 	dir = 1;
 	pixel_y = 6;
@@ -3020,7 +3011,7 @@
 	name = "port launcher two button";
 	pixel_x = -8;
 	dir = 1;
-	pixel_y = 9
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -3243,14 +3234,7 @@
 	name = "starboard launcher one button";
 	pixel_x = -8;
 	dir = 1;
-	pixel_y = 9
-	},
-/obj/machinery/button/massdriver{
-	id = "staremitterone";
-	name = "starboard emitter one button";
-	pixel_x = -8;
-	dir = 1;
-	pixel_y = -1
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -3507,15 +3491,15 @@
 	name = "Port Thruser Room"
 	})
 "zz" = (
-/obj/effect/turf_decal/corner/orange/border{
-	dir = 4
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 8
 	},
-/obj/structure/cable/orange{
-	icon_state = "2-8"
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
-	name = "Port Launcher One"
+	name = "Starboard Launcher One"
 	})
 "zB" = (
 /obj/effect/turf_decal/corner/blue/border{
@@ -4393,9 +4377,6 @@
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 10
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "Gy" = (
@@ -5171,10 +5152,6 @@
 	dir = 4;
 	pixel_y = 12
 	},
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 12
-	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -5190,15 +5167,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
 "LB" = (
-/obj/effect/turf_decal/corner/bottlegreen/border{
-	dir = 8
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 4
 	},
-/obj/structure/cable/green{
-	icon_state = "2-4"
+/obj/structure/cable/orange{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
-	name = "Starboard Launcher One"
+	name = "Port Launcher One"
 	})
 "LD" = (
 /obj/effect/turf_decal/corner/white/mono,
@@ -5910,14 +5887,7 @@
 	name = "port launcher one button";
 	dir = 1;
 	pixel_x = 9;
-	pixel_y = -1
-	},
-/obj/machinery/button/massdriver{
-	id = "portlauncherone";
-	name = "port launcher one button";
-	dir = 1;
-	pixel_x = 9;
-	pixel_y = 10
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -6201,9 +6171,6 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 6
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = -7;
@@ -6359,7 +6326,8 @@
 	req_access = null;
 	locked = 0;
 	idle_power_usage = 100;
-	active_power_usage = 400
+	active_power_usage = 750;
+	projectile_type = /obj/projectile/beam/pulse/condor
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -6384,14 +6352,7 @@
 	name = "starboard launcher two button";
 	pixel_x = 9;
 	dir = 1;
-	pixel_y = 8
-	},
-/obj/machinery/button/massdriver{
-	id = "staremittertwo";
-	name = "starboard emitter two button";
-	pixel_x = 9;
-	dir = 1;
-	pixel_y = -2
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -6661,7 +6622,8 @@
 	req_access = null;
 	locked = 0;
 	idle_power_usage = 100;
-	active_power_usage = 400
+	active_power_usage = 750;
+	projectile_type = /obj/projectile/beam/pulse/condor
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -6812,6 +6774,10 @@
 	dir = 8;
 	pixel_x = 24;
 	pixel_y = -6
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
@@ -7419,7 +7385,7 @@ cD
 cD
 cD
 cD
-ie
+Jp
 ba
 hd
 ba
@@ -7615,7 +7581,7 @@ pV
 pJ
 xr
 nH
-zz
+LB
 wq
 Li
 cg
@@ -8681,8 +8647,8 @@ yN
 yk
 Ig
 IN
-LB
 to
+zz
 ha
 ll
 mE
@@ -8895,7 +8861,7 @@ cD
 cD
 cD
 cD
-UY
+ZS
 Xy
 ws
 XA
