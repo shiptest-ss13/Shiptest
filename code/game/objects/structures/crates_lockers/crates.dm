@@ -164,6 +164,10 @@
 	new /obj/item/bodypart/l_leg/robot/surplus(src)
 	new /obj/item/bodypart/r_leg/robot/surplus(src)
 	new /obj/item/bodypart/r_leg/robot/surplus(src)
+	new /obj/item/bodypart/l_arm/robot/surplus/kepori(src)
+	new /obj/item/bodypart/r_arm/robot/surplus/kepori(src)
+	new /obj/item/bodypart/l_leg/robot/surplus/kepori(src)
+	new /obj/item/bodypart/r_leg/robot/surplus/kepori(src)
 
 /obj/structure/closet/crate/radiation
 	desc = "A crate with a radiation sign on it."
