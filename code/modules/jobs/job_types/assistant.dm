@@ -98,6 +98,11 @@ Assistant
 
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 
+/datum/outfit/job/assistant/inteq
+	name = "IRMG Recruit (Inteq)"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq
+
 /datum/outfit/job/assistant/intern
 	name = "Assistant (Intern)"
 	uniform = /obj/item/clothing/under/suit/black
@@ -175,3 +180,7 @@ Assistant
 	shoes = /obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/headset_srv
 	gloves = /obj/item/clothing/gloves/color/white
+
+/datum/outfit/job/assistant/waiter/syndicate
+	name = "Assistant (Syndicate Waiter)"
+	uniform = /obj/item/clothing/under/suit/waiter/syndicate

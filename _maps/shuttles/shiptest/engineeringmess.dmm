@@ -35,10 +35,10 @@
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "aq" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
+/obj/machinery/conveyor_switch{
+	id = "Con2"
 	},
-/obj/structure/window/reinforced/spawner{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -359,9 +359,6 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "1-6"
-	},
-/obj/machinery/light{
-	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
@@ -1075,6 +1072,12 @@
 	dir = 4
 	},
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "jx" = (
@@ -1104,7 +1107,7 @@
 	icon_state = "steering_wheel";
 	pixel_y = 6
 	},
-/obj/structure/table/wood,
+/obj/structure/table/reinforced,
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "jL" = (
@@ -1215,8 +1218,6 @@
 /obj/item/circuitboard/machine/shuttle/smes,
 /obj/item/circuitboard/machine/shuttle/smes,
 /obj/item/circuitboard/machine/smes,
-/obj/item/circuitboard/machine/vendor,
-/obj/item/circuitboard/machine/vendor,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "kG" = (
@@ -1276,7 +1277,6 @@
 /obj/effect/turf_decal/corner/brown/border{
 	dir = 1
 	},
-/obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "ll" = (
@@ -1529,12 +1529,6 @@
 /obj/effect/turf_decal/corner/brown/border{
 	dir = 5
 	},
-/obj/structure/mopbucket,
-/obj/item/mop,
-/obj/item/caution,
-/obj/item/caution,
-/obj/item/caution,
-/obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "pg" = (
@@ -2072,7 +2066,17 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "tm" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
 	dir = 10
 	},
@@ -2359,6 +2363,15 @@
 	},
 /turf/open/floor/engine/airless,
 /area/ship/engineering/atmospherics)
+"vF" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer2,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "vJ" = (
 /obj/structure/sink{
 	dir = 8;
@@ -2395,12 +2408,6 @@
 "wg" = (
 /turf/open/floor/plating/airless,
 /area/ship/external)
-"wh" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering/atmospherics)
 "wk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2804,12 +2811,6 @@
 /turf/closed/wall/mineral/titanium/survival,
 /area/ship/engineering/engine)
 "zK" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
-/obj/structure/window/reinforced/spawner{
-	dir = 8
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
 "zL" = (
@@ -3335,6 +3336,12 @@
 	dir = 4
 	},
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "FP" = (
@@ -3686,6 +3693,12 @@
 /area/ship/storage)
 "In" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "Is" = (
@@ -3706,7 +3719,17 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "IG" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2,
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
@@ -3904,9 +3927,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "KQ" = (
-/obj/machinery/light{
-	dir = 4
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
 "KT" = (
@@ -3989,7 +4009,13 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "LL" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -4035,12 +4061,6 @@
 "Mb" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/space_heater,
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
-"Mg" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Mk" = (
@@ -4117,6 +4137,10 @@
 /area/ship/hallway)
 "MR" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
@@ -4138,7 +4162,17 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
 "Nj" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
 	dir = 9
 	},
@@ -4712,7 +4746,6 @@
 	dir = 1
 	},
 /obj/structure/lattice/catwalk,
-/obj/item/borg/upgrade/modkit/indoors,
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
 "TC" = (
@@ -5105,10 +5138,7 @@
 /obj/structure/cable/green{
 	icon_state = "2-8"
 	},
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
-/obj/structure/window/reinforced/spawner{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -5151,9 +5181,15 @@
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
 "Xq" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
 	dir = 6
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -6513,7 +6549,7 @@ Nj
 Wh
 tm
 IG
-LL
+vF
 bC
 dK
 Xo
@@ -6740,7 +6776,7 @@ Uq
 yP
 Yt
 NO
-wh
+nG
 JO
 AS
 sw
@@ -6837,7 +6873,7 @@ Zg
 Zg
 Zg
 bT
-Mg
+CB
 yj
 FQ
 KT

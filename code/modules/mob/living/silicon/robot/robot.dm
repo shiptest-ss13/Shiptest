@@ -33,7 +33,7 @@
 	var/atom/movable/screen/inv3 = null
 	var/atom/movable/screen/hands = null
 
-	var/shown_robot_modules = 0	//Used to determine whether they have the module menu shown or not
+	var/shown_robot_modules = FALSE	//Used to determine whether they have the module menu shown or not
 	var/atom/movable/screen/robot_modules_background
 
 //3 Modules can be activated at any one time.
@@ -46,10 +46,10 @@
 	var/mob/living/silicon/ai/connected_ai = null
 	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high ///If this is a path, this gets created as an object in Initialize.
 
-	var/opened = 0
+	var/opened = FALSE
 	var/emagged = FALSE
 	var/emag_cooldown = 0
-	var/wiresexposed = 0
+	var/wiresexposed = FALSE
 
 	/// Random serial number generated for each cyborg upon its initialization
 	var/ident = 0
@@ -63,12 +63,12 @@
 	var/ionpulse_on = FALSE // Jetpack-like effect.
 	var/datum/effect_system/trail_follow/ion/ion_trail // Ionpulse effect.
 
-	var/low_power_mode = 0 //whether the robot has no charge left.
+	var/low_power_mode = FALSE //whether the robot has no charge left.
 	var/datum/effect_system/spark_spread/spark_system // So they can initialize sparks whenever/N
 
-	var/lawupdate = 1 //Cyborgs will sync their laws with their AI by default
-	var/scrambledcodes = 0 // Used to determine if a borg shows up on the robotics console.  Setting to one hides them.
-	var/lockcharge //Boolean of whether the borg is locked down or not
+	var/lawupdate = TRUE //Cyborgs will sync their laws with their AI by default
+	var/scrambledcodes = FALSE // Used to determine if a borg shows up on the robotics console.  Setting to one hides them.
+	var/lockcharge = FALSE //Boolean of whether the borg is locked down or not
 
 	var/toner = 0
 	var/tonermax = 40
@@ -234,7 +234,14 @@
 	if(!CONFIG_GET(flag/disable_secborg))
 		modulelist["Security"] = /obj/item/robot_module/security
 
-	var/input_module = input("Please, select a module!", "Robot", null, null) as null|anything in sortList(modulelist)
+	// Create radial menu for choosing borg model
+	var/list/module_icons = list()
+	for(var/option in modulelist)
+		var/obj/item/robot_module/module = modulelist[option]
+		var/module_icon = initial(module.cyborg_base_icon)
+		module_icons[option] = image(icon = 'icons/mob/robots.dmi', icon_state = module_icon)
+
+	var/input_module = show_radial_menu(src, src, module_icons, radius = 42)
 	if(!input_module || module.type != /obj/item/robot_module)
 		return
 
