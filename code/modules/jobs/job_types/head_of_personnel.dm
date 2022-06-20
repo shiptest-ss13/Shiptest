@@ -109,15 +109,6 @@
 	ears = /obj/item/radio/headset/syndicate/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	gloves = null
-//okay so, buges so far:
-//- forgot a lot of bulbs
-//- distro pipe fuckery, wrong vent in left nacelle
-//- O2 is immediately flowing
-//- O2 and plasma tanks don't look right, pipes dont lead into the TEG mixer
-//- catwalks vanish immediately
-//- shutters are ALL fucked
-//- lieutenant spawn can't get the right access
-
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
