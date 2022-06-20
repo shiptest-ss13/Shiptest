@@ -122,7 +122,7 @@
 				O.resistance_flags &= ~UNACIDABLE
 			if(O.armor.acid == 100) //acid proof armor will probably be acid proof
 				continue
-			O.acid_act(500, 500)
+			O.acid_act(50, 100)
 
 		else if (isliving(thing))
 			. = TRUE
@@ -154,7 +154,7 @@
 
 			L.adjustFireLoss(20)
 			if(L) //mobs turning into object corpses could get deleted here.
-				L.acid_act(500, 500)
+				L.acid_act(50, 100)
 
 /turf/open/acid/whitesands
 	planetary_atmos = TRUE
