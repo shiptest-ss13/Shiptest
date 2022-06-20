@@ -35,7 +35,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
 /obj/structure/cable/yellow{
@@ -123,6 +123,19 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"bd" = (
+/obj/docking_port/mobile{
+	dir = 2
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/starboard)
 "bg" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -185,6 +198,16 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/engine,
 /area/ship/cargo)
+"bJ" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 9;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/tialloy,
+/area/ship/security/armory)
 "bY" = (
 /obj/machinery/sleeper/syndie{
 	dir = 1
@@ -218,9 +241,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "ci" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -230,6 +250,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer5{
 	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
@@ -320,9 +346,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -385,21 +408,17 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 1
 	},
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "do" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/machinery/atmospherics/pipe/simple/green,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "dq" = (
@@ -451,16 +470,6 @@
 /obj/machinery/atmospherics/components/binary/valve,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
-"dE" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/preopen{
-	id = "kodiakbridge"
-	},
-/obj/machinery/door/poddoor/preopen{
-	id = "kodiakbridge"
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "dM" = (
 /obj/item/clothing/suit/space/syndicate/black/blue,
 /obj/effect/mob_spawn/human/skeleton,
@@ -471,6 +480,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/bridge)
+"dN" = (
+/obj/effect/turf_decal/techfloor/orange/corner,
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "dS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -516,7 +529,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/light,
@@ -527,18 +540,17 @@
 /area/ship/engineering/engine)
 "ee" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable,
 /obj/machinery/button/door{
 	dir = 4;
 	id = "kodiaknacelleright";
 	name = "Toggle Engine Blast Doors";
 	pixel_x = -23
 	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "ei" = (
 /obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input,
 /turf/open/floor/engine/o2,
 /area/ship/engineering/nacelle/left)
 "em" = (
@@ -552,10 +564,10 @@
 "eq" = (
 /obj/effect/decal/cleanable/ash,
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer5,
-/obj/machinery/atmospherics/pipe/simple/green{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "es" = (
@@ -570,9 +582,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
 	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/green{
-	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -638,9 +647,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -670,16 +676,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/green,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "eV" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -689,13 +688,25 @@
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
 	dir = 10
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/nacelle/right)
+"fa" = (
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/scrubber,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "fc" = (
-/obj/machinery/power/apc/auto_name/west,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2{
 	dir = 4
 	},
@@ -724,7 +735,6 @@
 /obj/machinery/door/window/southleft{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/orange,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "fz" = (
@@ -822,6 +832,16 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"ga" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 5;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/tialloy,
+/area/ship/bridge)
 "gh" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
@@ -834,9 +854,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/green{
-	dir = 5
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "gk" = (
@@ -935,7 +952,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/button/door{
@@ -1001,6 +1018,16 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
+"hJ" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 10;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/tialloy,
+/area/ship/bridge)
 "hK" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1011,16 +1038,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
-"hR" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 10;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
-	},
-/turf/closed/wall/mineral/tialloy,
-/area/ship/cargo)
 "ia" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1229,24 +1246,11 @@
 /obj/item/storage/box/firingpins,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
-"kl" = (
-/obj/docking_port/mobile{
-	dir = 2
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/hallway/starboard)
 "km" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
@@ -1309,15 +1313,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "kR" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1329,6 +1324,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer5{
 	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
@@ -1391,7 +1392,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1441,6 +1442,14 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"mb" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/nacelle/right)
 "md" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
@@ -1537,10 +1546,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
-"nl" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating,
-/area/template_noop)
 "ns" = (
 /turf/closed/wall/mineral/tialloy,
 /area/ship/engineering)
@@ -1568,7 +1573,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
@@ -1576,16 +1581,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"nG" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 4;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
-	},
-/turf/closed/wall/mineral/tialloy,
-/area/ship/bridge)
 "nI" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Armoury";
@@ -1808,9 +1803,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "pv" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1887,7 +1879,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /turf/open/floor/engine,
@@ -2046,7 +2038,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "rZ" = (
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2071,11 +2063,8 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
 "sk" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/robot_debris/old,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2200,6 +2189,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "ta" = (
@@ -2328,6 +2318,9 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/captain)
@@ -2509,10 +2502,10 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2573,7 +2566,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
@@ -2595,7 +2588,6 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = -32
 	},
-/obj/machinery/atmospherics/pipe/simple/green,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "wz" = (
@@ -2610,12 +2602,11 @@
 /obj/machinery/door/window/southleft{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/orange,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "wI" = (
 /obj/machinery/door/airlock/maintenance_hatch,
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2740,12 +2731,25 @@
 "xF" = (
 /turf/closed/wall/mineral/tialloy,
 /area/ship/crew/cryo)
+"xG" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 4;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/tialloy,
+/area/ship/bridge)
 "xL" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/captain)
@@ -2815,9 +2819,6 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "ye" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/light{
 	dir = 8
 	},
@@ -2843,20 +2844,6 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
-"yq" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plasteel/tech,
-/area/ship/hallway/starboard)
 "yt" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2874,7 +2861,6 @@
 /area/ship/hallway/fore)
 "yA" = (
 /obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/toxin_input,
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/nacelle/left)
 "yC" = (
@@ -2911,16 +2897,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
-"yP" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 6;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
-	},
-/turf/closed/wall/mineral/tialloy,
-/area/ship/bridge)
 "yU" = (
 /obj/structure/chair/greyscale{
 	dir = 1
@@ -2942,15 +2918,25 @@
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "zc" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /obj/machinery/atmospherics/components/binary/pump/layer2{
 	dir = 8;
 	name = "Distro to Pump"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
+"zf" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/door/airlock/external,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/starboard)
 "zh" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
@@ -3161,7 +3147,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -3261,6 +3247,16 @@
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/tialloy,
 /area/ship/medical)
+"BE" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 9;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/tialloy,
+/area/ship/cargo)
 "BN" = (
 /turf/closed/wall/mineral/tialloy,
 /area/ship/cargo)
@@ -3281,8 +3277,8 @@
 /area/ship/hallway/fore)
 "Cg" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "Cj" = (
@@ -3336,6 +3332,15 @@
 /obj/item/pen,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/fore)
+"Cq" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/nacelle/left)
 "Cx" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3344,7 +3349,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
@@ -3379,7 +3384,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
@@ -3406,16 +3411,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/fore)
-"Dw" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 9;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
-	},
-/turf/closed/wall/mineral/tialloy,
-/area/ship/cargo)
 "Dy" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/spawner/structure/window/plasma,
@@ -3454,7 +3449,6 @@
 /obj/machinery/computer/atmos_control/tank/oxygen_tank{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/green,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "DU" = (
@@ -3500,26 +3494,18 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
-"Ed" = (
-/obj/structure/sign/warning/docking{
-	pixel_x = -32
-	},
-/turf/template_noop,
-/area/template_noop)
 "Ej" = (
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "Ek" = (
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "2-8"
 	},
-/obj/machinery/light{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	dir = 8
-	},
+/obj/machinery/power/apc/auto_name/east,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "Er" = (
@@ -3601,7 +3587,10 @@
 /area/ship/engineering)
 "EU" = (
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
@@ -3672,9 +3661,6 @@
 /area/ship/medical)
 "FE" = (
 /obj/effect/turf_decal/techfloor/orange,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 1
@@ -3714,10 +3700,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
-"FY" = (
-/obj/effect/turf_decal/techfloor/orange/corner,
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
 "FZ" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -3725,7 +3707,7 @@
 /obj/machinery/holopad/emergency/medical,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 1
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3780,13 +3762,13 @@
 "GG" = (
 /obj/structure{
 	desc = "Looks menacing, but it's rusted in place.";
-	dir = 9;
+	dir = 5;
 	icon = 'icons/obj/turrets.dmi';
 	icon_state = "syndie_off";
 	name = "defunct ship turret"
 	},
 /turf/closed/wall/mineral/tialloy,
-/area/ship/security/armory)
+/area/ship/crew)
 "GQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3799,6 +3781,16 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
+"Ha" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 10;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/tialloy,
+/area/ship/cargo)
 "Hd" = (
 /obj/structure/sign/poster/contraband/syndicate_recruitment{
 	pixel_x = 4;
@@ -3809,15 +3801,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
-"Hg" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/nacelle/left)
 "Hi" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
@@ -3843,14 +3826,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Hz" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 5;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
 	},
-/turf/closed/wall/mineral/tialloy,
+/turf/open/floor/carpet/red,
 /area/ship/crew)
 "HB" = (
 /obj/effect/turf_decal/techfloor{
@@ -3905,19 +3884,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
-"HP" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 8
-	},
-/obj/machinery/door/airlock/external,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/hallway/starboard)
 "HZ" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 5
@@ -3973,6 +3939,9 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer5{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "Ip" = (
@@ -4001,6 +3970,12 @@
 /obj/machinery/vending/cigarette/syndicate,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
+"It" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	piping_layer = 5
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/nacelle/left)
 "IB" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4039,11 +4014,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
-"IM" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/layer_manifold/visible,
-/turf/open/floor/plating,
-/area/ship/engineering/nacelle/right)
 "IO" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -4121,7 +4091,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
@@ -4129,12 +4099,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"JA" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	piping_layer = 5
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/nacelle/left)
 "JB" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -4241,19 +4205,8 @@
 /obj/machinery/computer/atmos_control/tank/toxin_tank{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/green,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
-"KE" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	dir = 1
-	},
-/obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/plating,
-/area/ship/engineering/nacelle/right)
 "KF" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -4264,11 +4217,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "KJ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
+/obj/effect/turf_decal/arrows/red{
+	dir = 1
 	},
-/turf/open/floor/carpet/red,
-/area/ship/crew)
+/obj/effect/turf_decal/trimline/red/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/hallway/fore)
 "KK" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4320,7 +4276,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
@@ -4329,12 +4285,11 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Ln" = (
-/obj/effect/turf_decal/arrows/red{
+/obj/structure/chair/greyscale{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/red/line{
-	dir = 1
-	},
+/obj/structure/railing,
+/obj/effect/turf_decal/trimline/red/line,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/fore)
 "Lp" = (
@@ -4375,24 +4330,24 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "LP" = (
-/obj/machinery/power/apc/auto_name/east,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/green{
-	dir = 9
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "LS" = (
-/obj/structure/chair/greyscale{
-	dir = 1
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 10;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
 	},
-/obj/structure/railing,
-/obj/effect/turf_decal/trimline/red/line,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/hallway/fore)
+/turf/closed/wall/mineral/tialloy,
+/area/ship/security/armory)
 "LY" = (
 /turf/open/floor/engine/hull,
 /area/ship/external)
@@ -4568,13 +4523,13 @@
 "Nn" = (
 /obj/structure{
 	desc = "Looks menacing, but it's rusted in place.";
-	dir = 10;
+	dir = 6;
 	icon = 'icons/obj/turrets.dmi';
 	icon_state = "syndie_off";
 	name = "defunct ship turret"
 	},
 /turf/closed/wall/mineral/tialloy,
-/area/ship/security/armory)
+/area/ship/hallway/fore)
 "No" = (
 /obj/structure/chair/office,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -4583,10 +4538,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
 "Nx" = (
-/obj/machinery/power/port_gen/pacman/super,
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/terminal,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "Nz" = (
@@ -4731,7 +4686,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -4827,7 +4781,7 @@
 /area/ship/engineering/engine)
 "PI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/item/radio/intercom{
@@ -4847,11 +4801,11 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "PJ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
@@ -5032,16 +4986,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
-"Rb" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 10;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
-	},
-/turf/closed/wall/mineral/tialloy,
-/area/ship/bridge)
 "Rg" = (
 /obj/structure/closet/wall/red{
 	pixel_y = 30
@@ -5100,7 +5044,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
 "RL" = (
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5132,8 +5076,8 @@
 /area/ship/cargo)
 "Sd" = (
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
@@ -5192,6 +5136,16 @@
 "SL" = (
 /turf/closed/wall/mineral/tialloy,
 /area/ship/medical)
+"SM" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 6;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/tialloy,
+/area/ship/bridge)
 "Tg" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5211,9 +5165,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
@@ -5224,6 +5175,20 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/starboard)
+"Tr" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "TG" = (
 /obj/machinery/computer/cargo/express{
@@ -5258,10 +5223,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "TQ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/item/storage/toolbox/emergency/shuttle/electric,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "TT" = (
@@ -5314,6 +5279,9 @@
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Uf" = (
@@ -5354,8 +5322,18 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
+"Un" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "kodiakbridge"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "kodiakbridge"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Uv" = (
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5395,8 +5373,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "UL" = (
-/obj/machinery/airalarm/directional/west,
-/obj/machinery/atmospherics/pipe/simple/green,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -5467,7 +5443,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/structure/sign/warning/enginesafety{
@@ -5499,11 +5475,12 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/fore)
 "Wz" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
+	},
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
@@ -5515,9 +5492,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -5568,10 +5542,12 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
 "Xi" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
 "Xm" = (
@@ -5586,15 +5562,11 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
 "Xz" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 6;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
+/obj/structure/sign/warning/docking{
+	pixel_x = -32
 	},
-/turf/closed/wall/mineral/tialloy,
-/area/ship/hallway/fore)
+/turf/template_noop,
+/area/template_noop)
 "XB" = (
 /obj/structure/closet/crate{
 	icon_state = "engi_e_crate";
@@ -5668,15 +5640,10 @@
 /obj/structure/closet/radiation,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"Yx" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 1
-	},
+"Yo" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/ship/engineering/nacelle/left)
+/area/template_noop)
 "YB" = (
 /turf/closed/wall/mineral/tialloy,
 /area/ship/bridge)
@@ -5705,15 +5672,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "YP" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -5723,18 +5681,11 @@
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/right)
-"Ze" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 5;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
-	},
-/turf/closed/wall/mineral/tialloy,
-/area/ship/bridge)
 "Zj" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5807,9 +5758,6 @@
 "ZE" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
-/obj/machinery/atmospherics/pipe/simple/green{
-	dir = 6
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/nacelle/left)
 "ZJ" = (
@@ -5935,7 +5883,7 @@ Rm
 Rm
 Rm
 Rm
-Dw
+BE
 BN
 cP
 Cn
@@ -5947,7 +5895,7 @@ yi
 fC
 TG
 BN
-hR
+Ha
 Rm
 Rm
 Rm
@@ -6011,8 +5959,8 @@ wu
 DP
 KC
 UL
-Yx
-Hg
+Cq
+wQ
 ly
 zC
 gh
@@ -6024,7 +5972,7 @@ Rm
 Rm
 Rm
 Rm
-GG
+bJ
 LG
 LG
 LG
@@ -6032,7 +5980,7 @@ LG
 LG
 LG
 LG
-Nn
+LS
 Rm
 IW
 Rm
@@ -6109,7 +6057,7 @@ Rm
 XP
 Hj
 XD
-JA
+It
 fB
 eq
 ci
@@ -6122,7 +6070,7 @@ NO
 (6,1,1) = {"
 Rm
 Rm
-GG
+bJ
 LG
 LG
 gB
@@ -6336,8 +6284,8 @@ LG
 oH
 No
 IH
+KJ
 Ln
-LS
 aR
 IB
 NK
@@ -6460,7 +6408,7 @@ ns
 md
 ev
 wP
-FY
+dN
 Yd
 TK
 tX
@@ -6801,7 +6749,7 @@ Gn
 zJ
 fX
 aS
-yq
+Tr
 NT
 tV
 Mr
@@ -6902,7 +6850,7 @@ qV
 zE
 zE
 ZT
-HP
+zf
 ZT
 ZT
 ZT
@@ -6938,7 +6886,7 @@ TW
 (22,1,1) = {"
 Rm
 Rm
-Hz
+GG
 qV
 fV
 iq
@@ -6947,7 +6895,7 @@ mv
 jD
 qk
 qk
-KJ
+Hz
 zk
 qV
 zE
@@ -7004,7 +6952,7 @@ qV
 zE
 zE
 ZT
-kl
+bd
 ZT
 YB
 YB
@@ -7032,7 +6980,7 @@ cC
 zc
 eV
 uK
-IM
+mb
 dD
 fu
 JN
@@ -7044,7 +6992,7 @@ Rm
 Rm
 Rm
 Rm
-Hz
+GG
 qV
 qV
 qV
@@ -7052,10 +7000,10 @@ qV
 qV
 qV
 qV
-Xz
+Nn
 Rm
-Ed
-nl
+Xz
+Yo
 Rm
 Rm
 Rm
@@ -7067,7 +7015,7 @@ gx
 nt
 am
 YB
-Rb
+hJ
 Rm
 Rm
 Rm
@@ -7082,7 +7030,7 @@ Be
 RU
 PJ
 sk
-EU
+kq
 EU
 Hi
 SB
@@ -7118,7 +7066,7 @@ nS
 Sn
 zL
 Qj
-dE
+Un
 Rm
 Rm
 Rm
@@ -7134,7 +7082,7 @@ XB
 Nx
 Wz
 Xi
-KE
+fa
 Cg
 SB
 La
@@ -7169,7 +7117,7 @@ kC
 Kn
 YG
 jE
-dE
+Un
 Rm
 Rm
 Rm
@@ -7220,7 +7168,7 @@ Jk
 Xm
 et
 xd
-dE
+Un
 Rm
 Rm
 Rm
@@ -7263,15 +7211,15 @@ Rm
 Rm
 Rm
 Rm
-Ze
+ga
 py
 py
 py
-nG
+xG
 py
 py
 py
-yP
+SM
 Rm
 Rm
 Rm
