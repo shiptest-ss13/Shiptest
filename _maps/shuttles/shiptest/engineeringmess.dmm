@@ -1012,6 +1012,7 @@
 /obj/item/vending_refill/engivend,
 /obj/item/vending_refill/medical,
 /obj/item/vending_refill/mining_equipment,
+/obj/item/vending_refill/medical,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "iR" = (
@@ -1179,7 +1180,7 @@
 /obj/machinery/disposal/deliveryChute{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "kp" = (
 /obj/machinery/door/window,
@@ -1330,6 +1331,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "mi" = (
@@ -2940,7 +2942,6 @@
 /obj/effect/turf_decal/corner/yellow/border{
 	dir = 1
 	},
-/obj/item/storage/backpack/satchel/flat/with_drip,
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "Be" = (
@@ -3516,6 +3517,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/blue/diagonal,
+/obj/item/tank/internals/anesthetic,
+/obj/item/tank/internals/anesthetic,
+/obj/item/clothing/mask/breath/medical,
+/obj/item/clothing/mask/breath/medical,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Hi" = (
@@ -3846,7 +3851,7 @@
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
 "Kr" = (
-/obj/machinery/vending/dinnerware,
+/obj/machinery/grill,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "Kt" = (
@@ -4055,6 +4060,7 @@
 /area/ship/engineering/engine)
 "Mb" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Mk" = (
@@ -4336,6 +4342,7 @@
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 6
 	},
+/obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Pe" = (
@@ -4491,7 +4498,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Rc" = (
-/obj/machinery/telecomms/server/presets/engineering,
+/obj/item/circuitboard/machine/rdserver,
+/obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "Rn" = (
@@ -4625,8 +4633,8 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "SQ" = (
-/obj/effect/turf_decal/dept/bar,
-/turf/closed/wall/mineral/wood,
+/obj/machinery/vending/dinnerware,
+/turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "ST" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2,
@@ -4975,8 +4983,9 @@
 /turf/open/floor/engine/airless,
 /area/ship/engineering/atmospherics)
 "Vr" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/crew/canteen)
+/obj/structure/mineral_door/wood,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Vt" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -5215,6 +5224,8 @@
 	},
 /obj/effect/turf_decal/corner/blue/diagonal,
 /obj/item/storage/firstaid/brute,
+/obj/item/storage/box/gloves,
+/obj/item/storage/box/masks,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "XJ" = (
@@ -5638,7 +5649,7 @@ Zg
 Zg
 Zg
 Zg
-Zg
+tt
 tt
 aP
 Kz
@@ -5696,12 +5707,12 @@ Zg
 Zg
 Zg
 Zg
-Zg
 tt
+iw
 Hb
 rW
 fU
-Vr
+tt
 tM
 qz
 wP
@@ -5754,9 +5765,9 @@ Zg
 Zg
 Zg
 Zg
-Zg
 tt
-iw
+SQ
+Hb
 bX
 ch
 Nw
@@ -5812,12 +5823,12 @@ Zg
 Zg
 Zg
 Zg
-Zg
+tt
 tt
 Kr
 iA
 cc
-SQ
+tt
 Rn
 Hb
 Fb
@@ -5875,7 +5886,7 @@ tt
 tt
 xo
 bD
-SQ
+tt
 jb
 Hb
 xv
@@ -5933,7 +5944,7 @@ Zg
 tt
 CC
 rD
-SQ
+tt
 Yx
 zB
 qs
@@ -6639,7 +6650,7 @@ hR
 eZ
 Hi
 Xn
-nG
+CB
 bT
 Hu
 kN
@@ -6697,7 +6708,7 @@ iG
 xA
 HT
 bT
-NO
+Vr
 bT
 sk
 hv
