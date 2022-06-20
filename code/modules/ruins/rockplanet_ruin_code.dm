@@ -120,6 +120,10 @@
 	density = TRUE
 	anchored = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	var/screwed = FALSE
+	var/welded = FALSE
+	var/powered = FALSE
+	var/used = FALSE
 
 /obj/structure/summon_beacon/Initialize()
 	. = ..()
@@ -127,7 +131,59 @@
 
 /obj/structure/summon_beacon/examine(mob/user)
 	. = ..()
-	. += "<span class='userdanger'>Not fixable yet!</span>"
+	var/msg = "It looks fully functional."
+	if(!powered)
+		msg = "It's missing a <b>bluespace crystal</b>."
+	if(!welded)
+		msg = "It needs to be <b>welded</b> together."
+	if(!screwed)
+		msg = "It needs to be <b>screwed</b> together."
+	. += "<span class='notice'>[msg]</span>"
+
+/obj/structure/summon_beacon/attackby(obj/item/attacking_item, mob/living/user, params)
+	if(!screwed)
+		if(attacking_item.tool_behaviour == TOOL_SCREWDRIVER)
+			if(attacking_item.use_tool(src, user, 3 SECONDS, volume = 50))
+				to_chat(user, "<span class='notice'>You screw [src] together.")
+				screwed = TRUE
+				update_icon_state()
+			return
+		else
+			return ..()
+	if(!welded)
+		if(attacking_item.tool_behaviour == TOOL_WELDER)
+			if(attacking_item.use_tool(src, user, 5 SECONDS, amount = 3, volume = 50))
+				to_chat(user, "<span class='notice'>You weld [src] together.")
+				welded = TRUE
+				update_icon_state()
+			return
+		else
+			return ..()
+	if(!powered)
+		if(istype(attacking_item, /obj/item/stack/ore/bluespace_crystal))
+			if(attacking_item.use_tool(src, user, 3 SECONDS, amount = 1))
+				to_chat(user, "<span class='notice'>You finish [src] with [attacking_item].")
+				powered = TRUE
+				update_icon_state()
+			return
+		else
+			return ..()
+	return ..()
+
+/obj/structure/summon_beacon/update_icon_state()
+	icon_state = "dominator-broken"
+	if(screwed)
+		icon_state = "dominator"
+	if(welded)
+		icon_state = "dominator-active"
+	if(powered)
+		icon_state = "dominator-blue"
+
+/obj/structure/summon_beacon/attack_hand(mob/user)
+	if(!powered || used)
+		return ..()
+	used = TRUE
+	new /mob/living/simple_animal/hostile/boss/paper_wizard(loc)
 
 /obj/structure/closet/crate/chest
 	name = "chest"
