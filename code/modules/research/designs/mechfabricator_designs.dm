@@ -103,45 +103,25 @@
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/prosthetic_l_arm
+/datum/design/prosthetic_l_arm/kepori
 	name = "Surplus Prosthetic Kepori Left Arm"
 	id = "kprosthetic_l_arm"
-	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/l_arm/robot/surplus/kepori
-	materials = list(/datum/material/iron=3000)
-	construction_time = 50
-	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/prosthetic_r_arm
+/datum/design/prosthetic_r_arm/kepori
 	name = "Surplus Prosthetic Kepori Right Arm"
 	id = "kprosthetic_r_arm"
-	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/r_arm/robot/surplus/kepori
-	materials = list(/datum/material/iron=3000)
-	construction_time = 50
-	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/prosthetic_l_leg
+/datum/design/prosthetic_l_leg/kepori
 	name = "Surplus Prosthetic Kepori Left Leg"
 	id = "kprosthetic_l_leg"
-	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/l_leg/robot/surplus/kepori
-	materials = list(/datum/material/iron=3000)
-	construction_time = 50
-	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/prosthetic_r_leg
+/datum/design/prosthetic_r_leg/kepori
 	name = "Surplus Prosthetic Kepori Right Leg"
 	id = "kprosthetic_r_leg"
-	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/r_leg/robot/surplus/kepori
-	materials = list(/datum/material/iron=3000)
-	construction_time = 50
-	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 //Ripley
 /datum/design/ripley_chassis
