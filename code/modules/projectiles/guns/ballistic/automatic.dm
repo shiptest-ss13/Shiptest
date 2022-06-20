@@ -66,8 +66,8 @@
 	mag_type = /obj/item/ammo_box/magazine/smgm45
 	fire_delay = 2
 	burst_size = 2
-	pin = /obj/item/firing_pin/implant/pindicate
 	can_bayonet = TRUE
+	can_suppress = FALSE
 	knife_x_offset = 26
 	knife_y_offset = 12
 	mag_display = TRUE
@@ -80,6 +80,14 @@
 /obj/item/gun/ballistic/automatic/c20r/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/gun/ballistic/automatic/c20r/cobra
+	name = "\improper Cobra 20"
+	desc = "An older model of SMG manufactured by Scarborough Arms, a predecessor to the military C-20 series. Chambered in .45. "
+	can_bayonet = FALSE
+
+	icon_state = "cobra20"
+	item_state = "c20r"
 
 /obj/item/gun/ballistic/automatic/wt550
 	name = "\improper WT-550 Automatic Rifle"

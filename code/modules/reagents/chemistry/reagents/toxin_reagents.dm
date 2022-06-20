@@ -16,6 +16,11 @@
 		. = TRUE
 	..()
 
+/datum/reagent/toxin/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 0.05) * toxpwr)
+
 /datum/reagent/toxin/amatoxin
 	name = "Amatoxin"
 	description = "A powerful poison derived from certain species of mushroom."
@@ -49,6 +54,12 @@
 /datum/reagent/toxin/mutagen/on_mob_life(mob/living/carbon/C)
 	C.apply_effect(5,EFFECT_IRRADIATE,0)
 	return ..()
+
+/datum/reagent/toxin/mutagen/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.mutation_roll(user)
+		mytray.adjustToxic(1.5) //It is still toxic, mind you, but not to the same degree
 
 #define LIQUID_PLASMA_BP (50+T0C)
 
@@ -285,10 +296,24 @@
 				var/damage = min(round(0.4*reac_volume, 0.1),10)
 				C.adjustToxLoss(damage)
 
+/datum/reagent/toxin/plantbgone/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 10))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 6))
+		mytray.adjustWeeds(-rand(4,8))
+
 /datum/reagent/toxin/plantbgone/weedkiller
 	name = "Weed Killer"
 	description = "A harmful toxic mixture to kill weeds. Do not ingest!"
 	color = "#4B004B" // rgb: 75, 0, 75
+
+//Weed Spray
+/datum/reagent/toxin/plantbgone/weedkiller/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 0.5))
+		mytray.adjustWeeds(-rand(1,2))
 
 /datum/reagent/toxin/pestkiller
 	name = "Pest Killer"
@@ -301,6 +326,12 @@
 	if(M.mob_biotypes & MOB_BUG)
 		var/damage = min(round(0.4*reac_volume, 0.1),10)
 		M.adjustToxLoss(damage)
+
+/datum/reagent/toxin/pestkiller/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type)))
+		mytray.adjustPests(-rand(1,2))
 
 /datum/reagent/toxin/spore
 	name = "Spore Toxin"
@@ -869,6 +900,13 @@
 	reac_volume = round(reac_volume,0.1)
 	T.acid_act(acidpwr, reac_volume)
 
+/datum/reagent/toxin/acid/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type)))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 1.5))
+		mytray.adjustWeeds(-rand(1,2))
+
 /datum/reagent/toxin/acid/fluacid
 	name = "Fluorosulfuric acid"
 	description = "Fluorosulfuric acid is an extremely corrosive chemical substance."
@@ -880,6 +918,13 @@
 	M.adjustFireLoss(current_cycle/10, 0)
 	. = 1
 	..()
+
+/datum/reagent/toxin/acid/fluacid/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 2))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 3))
+		mytray.adjustWeeds(-rand(1,4))
 
 /datum/reagent/toxin/acid/nitracid
 	name = "Nitric acid"

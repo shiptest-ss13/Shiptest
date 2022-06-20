@@ -41,7 +41,7 @@
 	addiction_threshold = 10
 	taste_description = "smoke"
 	trippy = FALSE
-	overdose_threshold=15
+	overdose_threshold = 30
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 
 /datum/reagent/drug/nicotine/on_mob_life(mob/living/carbon/M)

@@ -73,12 +73,12 @@
 		if(defib)
 			to_chat(user, "<span class='warning'>There's already a defibrillator in [src]!</span>")
 			return
-		if(HAS_TRAIT(I, TRAIT_NODROP) || !user.transferItemToLoc(I, src))
-			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
-			return
 		var/obj/item/defibrillator/D = I
 		if(!D.get_cell())
 			to_chat(user, "<span class='warning'>Only defibrilators containing a cell can be hooked up to [src]!</span>")
+			return
+		if(HAS_TRAIT(I, TRAIT_NODROP) || !user.transferItemToLoc(I, src))
+			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
 			return
 		user.visible_message("<span class='notice'>[user] hooks up [I] to [src]!</span>", \
 		"<span class='notice'>You press [I] into the mount, and it clicks into place.</span>")

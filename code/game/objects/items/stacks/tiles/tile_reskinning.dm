@@ -30,6 +30,15 @@ GLOBAL_LIST_EMPTY(tile_reskin_lists)
 	var/obj/item/stack/tile/choice = show_radial_menu(user, src, tile_reskin_types, radius = 48, require_near = TRUE)
 	if(!choice || choice == type)
 		return
+	if ( iscyborg( user ) )
+		// Do a cheap replace to retain the cyborg module state. Creating new cyborg subtypes of tiles caused new issues
+		name = initial( choice.name )
+		icon_state = initial( choice.icon_state )
+		turf_type = initial( choice.turf_type )
+		merge_type = initial( choice.merge_type )
+		update_icon()
+		return
+
 	choice = new choice(user.drop_location(), amount)
 	moveToNullspace()
 	if(!QDELETED(choice)) // Tile could have merged with stuff on the ground. The user will have to pick it up if so.
