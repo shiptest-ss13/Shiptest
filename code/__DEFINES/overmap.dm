@@ -1,24 +1,20 @@
 #define OVERMAP_GENERATOR_SOLAR "solar_system"
 #define OVERMAP_GENERATOR_RANDOM "random"
 
-//Add new star types here
-#define SMALLSTAR 1
-#define TWOSTAR 2
-#define MEDSTAR 3
-#define BIGSTAR 4
-
-//Star classes
-#define STARO 1 //Extremely bright blue main sequence star or (super)giant
-#define STARB 2 //Bright blue main sequence star or (super)giant
-#define STARA 3 //Light blue main sequence star
-#define STARF 4 //White main sequence star
-#define STARG 5 //Yellow main sequence star or supergiant
-#define STARK 6 //Orange dwarf, main sequence star, or hypergiant
-#define STARM 7 //Red dwarf or red (super)giant
-#define STARL 8 //Cool red dwarf
-#define START 9 //Methane dwarf
-#define STARY 10 //Sad lame brown dwarf
-#define STARD 11 //White dwarf
+// Star spectral types. A star's visible color is based on this.
+// Only loosely adherent to real spectral types, because real spectral types
+// are actually just a tool for classifying stellar emission spectra and
+// don't exactly correspond to different "types" of star.
+#define STAR_O 0 // Very hot/bright blue giant (IRL some of these are main-sequence)
+#define STAR_B 1 // Bright blue main sequence star / blue giant / white dwarf
+#define STAR_A 2 // Light blue main sequence star / cool blue giant/dwarf
+#define STAR_F 3 // White main sequence star
+#define STAR_G 4 // Yellow main sequence star / yellow giant
+#define STAR_K 5 // Orange main sequence star / hot red giant
+#define STAR_M 6 // Red dwarf or red giant
+#define STAR_L 7 // Cool red dwarf/giant OR very warm brown dwarf
+#define STAR_T 8 // Medium brown dwarf
+#define STAR_Y 9 // Very cool brown dwarf
 
 //Amount of times the overmap generator will attempt to place something before giving up
 #define MAX_OVERMAP_PLACEMENT_ATTEMPTS 5

@@ -53,7 +53,7 @@ SUBSYSTEM_DEF(overmap)
 
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		var/datum/overmap/star/center
-		var/startype = pick(/datum/overmap/star, /datum/overmap/star/medium, /datum/overmap/star/big, /datum/overmap/star/binary)
+		var/startype = pick(subtypesof(/datum/overmap/star))
 		center = new startype(list("x" = size / 2, "y" = size / 2))
 		radius_positions = list()
 		for(var/x in 1 to size)
@@ -63,6 +63,13 @@ SUBSYSTEM_DEF(overmap)
 	create_map()
 
 	return ..()
+
+/datum/controller/subsystem/overmap/proc/test_spawn_star(datum/overmap/star/star_type = null)
+	for(var/datum/overmap/star/old in overmap_objects)
+		QDEL_NULL(old)
+	if(!star_type)
+		star_type = pick(subtypesof(/datum/overmap/star))
+	new star_type(list("x" = size / 2, "y" = size / 2))
 
 /datum/controller/subsystem/overmap/fire()
 	if(events_enabled)
