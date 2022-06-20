@@ -412,38 +412,34 @@
 	var/obj/item/bodypart/old_part = H.get_bodypart(limb_slot)
 	var/obj/item/bodypart/prosthetic
 	switch(limb_slot)
-		if(iskepori(h))
-			(BODY_ZONE_L_ARM)
-			prosthetic = new/obj/item/bodypart/l_arm/robot/surplus/kepori(quirk_holder)
-			slot_string = "left arm"
-		else
-			(BODY_ZONE_L_ARM)
-			prosthetic = new/obj/item/bodypart/l_arm/robot/surplus(quirk_holder)
-			slot_string = "left arm"
-		if(iskepori(h))
-			(BODY_ZONE_R_ARM)
-			prosthetic = new/obj/item/bodypart/r_arm/robot/surplus/kepori(quirk_holder)
-			slot_string = "right arm"
-		else
-			(BODY_ZONE_R_ARM)
-			prosthetic = new/obj/item/bodypart/r_arm/robot/surplus(quirk_holder)
-			slot_string = "right arm"
-		if(iskepori(h))
-			(BODY_ZONE_L_LEG)
-			prosthetic = new/obj/item/bodypart/l_leg/robot/surplus/kepori(quirk_holder)
-			slot_string = "left leg"
-		else
-			(BODY_ZONE_L_LEG)
-			prosthetic = new/obj/item/bodypart/l_leg/robot/surplus(quirk_holder)
-			slot_string = "left leg"
-		if(iskepori(h))
-			(BODY_ZONE_R_LEG)
-			prosthetic = new/obj/item/bodypart/r_leg/robot/surplus/kepori(quirk_holder)
-			slot_string = "right leg"
-		else
-			(BODY_ZONE_R_LEG)
-			prosthetic = new/obj/item/bodypart/r_leg/robot/surplus(quirk_holder)
-			slot_string = "right leg"
+		if(BODY_ZONE_L_ARM)
+			if(iskepori(H))
+				prosthetic = new/obj/item/bodypart/l_arm/robot/surplus/kepori(quirk_holder)
+				slot_string = "left arm"
+			else
+				prosthetic = new/obj/item/bodypart/l_arm/robot/surplus(quirk_holder)
+				slot_string = "left arm"
+		if(BODY_ZONE_R_ARM)
+			if(iskepori(H))
+				prosthetic = new/obj/item/bodypart/r_arm/robot/surplus/kepori(quirk_holder)
+				slot_string = "right arm"
+			else
+				prosthetic = new/obj/item/bodypart/r_arm/robot/surplus(quirk_holder)
+				slot_string = "right arm"
+		if(BODY_ZONE_L_LEG)
+			if(iskepori(H))
+				prosthetic = new/obj/item/bodypart/l_leg/robot/surplus/kepori(quirk_holder)
+				slot_string = "left leg"
+			else
+				prosthetic = new/obj/item/bodypart/l_leg/robot/surplus(quirk_holder)
+				slot_string = "left leg"
+		if(BODY_ZONE_R_LEG)
+			if(iskepori(H))
+				prosthetic = new/obj/item/bodypart/r_leg/robot/surplus/kepori(quirk_holder)
+				slot_string = "right leg"
+			else
+				prosthetic = new/obj/item/bodypart/r_leg/robot/surplus(quirk_holder)
+				slot_string = "right leg"
 	prosthetic.replace_limb(H)
 	qdel(old_part)
 	H.regenerate_icons()
