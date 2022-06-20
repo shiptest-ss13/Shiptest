@@ -101,7 +101,7 @@
 	accessory = /obj/item/clothing/accessory/waistcoat
 	head = /obj/item/clothing/head/HoS/cowboy
 
-/datum/outfit/job/head_of_personnel/aclf
+/datum/outfit/job/head_of_personnel/syndicate/aclf
 	name = "Lieutenant (ACLF)"
 	uniform = /obj/item/clothing/under/syndicate/aclf
 	id = /obj/item/card/id/syndicate_command/crew_id
@@ -113,8 +113,7 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
-	backpack_contents = list(/obj/item/storage/box/ids=1,\
-		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+	head = null
 
 /datum/outfit/job/head_of_personnel/minutemen
 	name = "Bridge Officer (Colonial Minutemen)"
