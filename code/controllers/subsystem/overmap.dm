@@ -64,13 +64,6 @@ SUBSYSTEM_DEF(overmap)
 
 	return ..()
 
-/datum/controller/subsystem/overmap/proc/test_spawn_star(datum/overmap/star/star_type = null)
-	for(var/datum/overmap/star/old in overmap_objects)
-		QDEL_NULL(old)
-	if(!star_type)
-		star_type = pick(subtypesof(/datum/overmap/star))
-	new star_type(list("x" = size / 2, "y" = size / 2))
-
 /datum/controller/subsystem/overmap/fire()
 	if(events_enabled)
 		for(var/datum/overmap/event/E as anything in events)
