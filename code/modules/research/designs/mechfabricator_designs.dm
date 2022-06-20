@@ -62,6 +62,87 @@
 	construction_time = 200
 	category = list("Cyborg")
 
+//Prosthetics
+/datum/design/prosthetic_l_arm
+	name = "Surplus Prosthetic Left Arm"
+	id = "prosthetic_l_arm"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/l_arm/robot/surplus
+	materials = list(/datum/material/iron=3000)
+	construction_time = 50
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/prosthetic_r_arm
+	name = "Surplus Prosthetic Right Arm"
+	id = "prosthetic_r_arm"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/r_arm/robot/surplus
+	materials = list(/datum/material/iron=3000)
+	construction_time = 50
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/prosthetic_l_leg
+	name = "Surplus Prosthetic Left Leg"
+	id = "prosthetic_l_leg"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/l_leg/robot/surplus
+	materials = list(/datum/material/iron=3000)
+	construction_time = 50
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/prosthetic_r_leg
+	name = "Surplus Prosthetic Right Leg"
+	id = "prosthetic_r_leg"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/r_leg/robot/surplus
+	materials = list(/datum/material/iron=3000)
+	construction_time = 50
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/prosthetic_l_arm
+	name = "Surplus Prosthetic Kepori Left Arm"
+	id = "kprosthetic_l_arm"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/l_arm/robot/surplus/kepori
+	materials = list(/datum/material/iron=3000)
+	construction_time = 50
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/prosthetic_r_arm
+	name = "Surplus Prosthetic Kepori Right Arm"
+	id = "kprosthetic_r_arm"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/r_arm/robot/surplus/kepori
+	materials = list(/datum/material/iron=3000)
+	construction_time = 50
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/prosthetic_l_leg
+	name = "Surplus Prosthetic Kepori Left Leg"
+	id = "kprosthetic_l_leg"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/l_leg/robot/surplus/kepori
+	materials = list(/datum/material/iron=3000)
+	construction_time = 50
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/prosthetic_r_leg
+	name = "Surplus Prosthetic Kepori Right Leg"
+	id = "kprosthetic_r_leg"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/bodypart/r_leg/robot/surplus/kepori
+	materials = list(/datum/material/iron=3000)
+	construction_time = 50
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
 //Ripley
 /datum/design/ripley_chassis
 	name = "Exosuit Chassis (APLU \"Ripley\")"
