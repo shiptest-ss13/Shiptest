@@ -814,8 +814,8 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	name = "titanium alloy"
 	singular_name = "titanium alloy sheet"
 	desc = "This sheet is an alloy of plasteel and titanium."
-	icon_state = "sheet-plastitanium"
-	item_state = "sheet-plastitanium"
+	icon_state = "sheet-tialloy"
+	item_state = "sheet-tialloy"
 	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT, /datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
 	sheettype = "tialloy"
 	force = 5
