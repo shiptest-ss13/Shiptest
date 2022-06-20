@@ -157,3 +157,4 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/syndicate
 	suit = null
+	suit_store = null
