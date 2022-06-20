@@ -48,7 +48,6 @@ SUBSYSTEM_DEF(mapping)
 	repopulate_sorted_areas()
 	process_teleport_locs()			//Sets up the wizard teleport locations
 	preloadTemplates()
-	run_map_generation()
 
 	// Add the transit levels
 	init_reserved_levels()
@@ -94,10 +93,6 @@ SUBSYSTEM_DEF(mapping)
 	z_list = SSmapping.z_list
 
 #define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)
-
-/datum/controller/subsystem/mapping/proc/run_map_generation()
-	for(var/area/A in world)
-		A.RunGeneration()
 
 /datum/controller/subsystem/mapping/proc/mapvote()
 	SSvote.initiate_vote("map", "automatic map rotation", TRUE) //WS Edit - Ghost Voting Rework
