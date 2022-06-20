@@ -281,6 +281,9 @@
 	pixel_x = 25;
 	pixel_y = 6
 	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/security{
 	name = "Port Launcher One"
@@ -508,6 +511,9 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -886,6 +892,9 @@
 	dir = 6
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/security{
 	name = "Starboard Launcher One"
@@ -922,7 +931,7 @@
 	id = "portpodbay";
 	name = "Port Podbay blast door"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/pod/light,
 /area/ship/security{
 	name = "Port Podbay"
 	})
@@ -1010,7 +1019,7 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over,
-/obj/machinery/atmospherics/components/binary/pump/layer2{
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1312,7 +1321,17 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/power/emitter/welded,
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/emitter/energycannon{
+	dir = 1;
+	active = 0;
+	req_access = null;
+	locked = 0;
+	idle_power_usage = 100;
+	active_power_usage = 400
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Port Launcher Two"
@@ -1361,6 +1380,9 @@
 	pixel_x = -25;
 	pixel_y = 6
 	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/security{
 	name = "Starboard Launcher One"
@@ -1397,6 +1419,9 @@
 /obj/machinery/camera/autoname{
 	dir = 5;
 	pixel_y = 5
+	},
+/obj/effect/turf_decal/borderfloor/corner2{
+	dir = 8
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
@@ -1892,7 +1917,17 @@
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 4
 	},
-/obj/machinery/power/emitter/welded,
+/obj/structure/cable/green{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/emitter/energycannon{
+	dir = 1;
+	active = 0;
+	req_access = null;
+	locked = 0;
+	idle_power_usage = 100;
+	active_power_usage = 400
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Starboard Launcher One"
@@ -1924,7 +1959,7 @@
 	name = "Port Podbay blast door"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/turf/open/floor/plating,
+/turf/open/floor/pod/light,
 /area/ship/security{
 	name = "Port Podbay"
 	})
@@ -2095,7 +2130,7 @@
 	},
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/turf/open/floor/plating,
+/turf/open/floor/pod/light,
 /area/ship/security{
 	name = "Port Podbay"
 	})
@@ -2483,6 +2518,9 @@
 "to" = (
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -2920,6 +2958,9 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 4
 	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Port Launcher One"
@@ -2943,7 +2984,7 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/fans/tiny,
 /obj/machinery/button/door{
-	id = "sternshudders";
+	id = "sternshutters";
 	dir = 8;
 	pixel_x = 25
 	},
@@ -3104,6 +3145,9 @@
 	pixel_x = 25;
 	pixel_y = 6
 	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/security{
 	name = "Starboard Launcher Two"
@@ -3240,6 +3284,9 @@
 	dir = 10
 	},
 /obj/machinery/vending/cola/random,
+/obj/effect/turf_decal/borderfloor/corner2{
+	dir = 9
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "xY" = (
@@ -3460,8 +3507,16 @@
 	name = "Port Thruser Room"
 	})
 "zz" = (
-/turf/closed/wall/mineral/titanium,
-/area/template_noop)
+/obj/effect/turf_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Port Launcher One"
+	})
 "zB" = (
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 1
@@ -4105,7 +4160,7 @@
 	name = "Starboard Podbay blast door"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/turf/open/floor/plating,
+/turf/open/floor/pod/light,
 /area/ship/security{
 	name = "Starboard Podbay"
 	})
@@ -4115,6 +4170,9 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
@@ -4404,6 +4462,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/security{
 	name = "Starboard Launcher Two"
@@ -4624,6 +4685,9 @@
 	dir = 4;
 	pixel_x = -25;
 	pixel_y = 6
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/security{
@@ -5094,6 +5158,9 @@
 	dir = 10
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/security{
 	name = "Port Launcher One"
@@ -5123,13 +5190,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
 "LB" = (
-/obj/structure/closet/wall/red{
-	dir = 8;
-	name = "uniform closet";
-	pixel_x = 28
+/obj/effect/turf_decal/corner/bottlegreen/border{
+	dir = 8
 	},
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/security{
+	name = "Starboard Launcher One"
+	})
 "LD" = (
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/blue/bordercee,
@@ -5198,6 +5268,9 @@
 	dir = 6
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/security{
 	name = "Port Launcher Two"
@@ -5507,6 +5580,9 @@
 /obj/machinery/airalarm/directional/west{
 	pixel_y = 6
 	},
+/obj/effect/turf_decal/borderfloor/corner2{
+	dir = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "OH" = (
@@ -5561,6 +5637,10 @@
 /obj/effect/turf_decal/corner/purple/three_quarters{
 	icon_state = "borderfloor_white";
 	dir = 4
+	},
+/obj/effect/turf_decal/corner/purple/three_quarters{
+	icon_state = "borderfloorcorner2_white";
+	dir = 6
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
@@ -6088,7 +6168,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over,
-/obj/machinery/atmospherics/components/binary/pump/layer2{
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -6270,7 +6350,17 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 8
 	},
-/obj/machinery/power/emitter/welded,
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/emitter/energycannon{
+	dir = 1;
+	active = 0;
+	req_access = null;
+	locked = 0;
+	idle_power_usage = 100;
+	active_power_usage = 400
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Port Launcher One"
@@ -6498,7 +6588,7 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/fans/tiny,
 /obj/machinery/button/door{
-	id = "sternshudders";
+	id = "sternshutters";
 	dir = 4;
 	pixel_x = -25
 	},
@@ -6562,7 +6652,17 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/power/emitter/welded,
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/emitter/energycannon{
+	dir = 1;
+	active = 0;
+	req_access = null;
+	locked = 0;
+	idle_power_usage = 100;
+	active_power_usage = 400
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security{
 	name = "Starboard Launcher Two"
@@ -7122,6 +7222,10 @@
 	icon_state = "borderfloor_white";
 	dir = 5
 	},
+/obj/effect/turf_decal/corner/purple/three_quarters{
+	icon_state = "borderfloorcorner2_white";
+	dir = 5
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 
@@ -7315,7 +7419,7 @@ cD
 cD
 cD
 cD
-zz
+ie
 ba
 hd
 ba
@@ -7511,7 +7615,7 @@ pV
 pJ
 xr
 nH
-wq
+zz
 wq
 Li
 cg
@@ -7827,7 +7931,7 @@ cD
 cD
 cD
 cD
-LB
+cD
 cD
 cD
 cD
@@ -8577,7 +8681,7 @@ yN
 yk
 Ig
 IN
-to
+LB
 to
 ha
 ll
@@ -8791,7 +8895,7 @@ cD
 cD
 cD
 cD
-zz
+UY
 Xy
 ws
 XA
