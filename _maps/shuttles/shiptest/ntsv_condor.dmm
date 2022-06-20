@@ -76,9 +76,7 @@
 	},
 /obj/structure/cable/green,
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "aC" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -110,9 +108,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering/engine{
-	name = "Port Thruser Room"
-	})
+/area/ship/thrusters/portthrusters)
 "aT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -285,9 +281,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "ci" = (
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 4
@@ -321,9 +315,7 @@
 	dir = 6
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "cy" = (
 /obj/machinery/door/airlock/security/brig/glass{
 	id = "Cell 1";
@@ -346,6 +338,7 @@
 "cE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/trimline/blue/filled/warning,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "cG" = (
@@ -377,9 +370,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering/engine{
-	name = "Port Thruser Room"
-	})
+/area/ship/thrusters/portthrusters)
 "cQ" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
@@ -412,15 +403,15 @@
 	name = "Starboard Engineering"
 	})
 "do" = (
-/obj/effect/turf_decal/corner/red/three_quarters{
-	dir = 4
-	},
 /obj/machinery/computer/secure_data,
 /obj/structure/cable/orange{
 	icon_state = "2-8"
 	},
 /obj/machinery/newscaster/security_unit{
 	pixel_y = 30
+	},
+/obj/effect/turf_decal/corner/bar/three_quarters{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -429,7 +420,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/security,
-/obj/effect/turf_decal/corner/red/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -439,6 +429,8 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/effect/turf_decal/corner/bar/full,
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "dE" = (
@@ -455,14 +447,10 @@
 	pixel_y = 12
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "dQ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "dR" = (
 /obj/structure/catwalk/over,
 /obj/machinery/door/window/northleft,
@@ -470,9 +458,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "dU" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering{
@@ -489,9 +475,7 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "ei" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable/yellow{
@@ -516,9 +500,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "eq" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 8
@@ -590,9 +572,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "fe" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -683,7 +663,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "fB" = (
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/bar{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -773,6 +753,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "ge" = (
@@ -813,6 +796,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
 "gi" = (
@@ -825,9 +809,7 @@
 	dir = 2
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "gv" = (
 /obj/effect/turf_decal/corner/orange/border,
 /obj/structure/closet/emcloset/anchored,
@@ -880,9 +862,7 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "gT" = (
 /obj/structure/table/wood/bar,
 /obj/structure/window/reinforced/spawner{
@@ -900,9 +880,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "hd" = (
 /obj/structure/toilet{
 	dir = 4
@@ -925,9 +903,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "ho" = (
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning/fulltile,
@@ -1057,9 +1033,7 @@
 	})
 "ie" = (
 /turf/closed/wall/mineral/titanium,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "if" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -1096,6 +1070,9 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
@@ -1246,13 +1223,18 @@
 	icon_state = "1-2"
 	},
 /obj/structure/table,
-/obj/effect/turf_decal/corner/red/full,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
 /obj/machinery/recharger{
 	pixel_x = -6;
 	pixel_y = 4
+	},
+/obj/effect/turf_decal/corner/bar{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/bar/line{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
@@ -1274,15 +1256,15 @@
 /area/ship/crew/dorm)
 "kG" = (
 /obj/structure/window/reinforced,
-/obj/effect/turf_decal/corner/red/three_quarters{
-	dir = 1
-	},
 /obj/structure/cable/orange{
 	icon_state = "1-4"
 	},
 /obj/machinery/rnd/production/protolathe/department/security{
 	pixel_y = 3;
 	pixel_x = -1
+	},
+/obj/effect/turf_decal/corner/bar/three_quarters{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -1334,9 +1316,7 @@
 	projectile_type = /obj/projectile/beam/pulse/condor
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "le" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/light/small{
@@ -1351,8 +1331,11 @@
 	icon_state = "2-5"
 	},
 /obj/structure/chair,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/bar{
 	dir = 9
+	},
+/obj/effect/turf_decal/trimline/bar/line{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
@@ -1385,9 +1368,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "lp" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -1407,9 +1388,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "lt" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/fore)
@@ -1442,9 +1421,7 @@
 	name = "Engine Access"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Port Thruser Room"
-	})
+/area/ship/thrusters/portthrusters)
 "lH" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable/orange{
@@ -1465,11 +1442,14 @@
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/corner/red{
-	dir = 9
-	},
 /obj/structure/chair{
 	dir = 1
+	},
+/obj/effect/turf_decal/corner/bar{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/bar/line{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
@@ -1489,9 +1469,7 @@
 	name = "Engine Access"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "mg" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable/green{
@@ -1515,14 +1493,15 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "mH" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/structure/cable/orange{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/blue/filled/warning{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1536,15 +1515,16 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating/airless,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "mV" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "nc" = (
@@ -1573,9 +1553,7 @@
 /area/ship/crew/canteen/kitchen)
 "nk" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "nm" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/orange{
@@ -1586,9 +1564,7 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Port Thruser Room"
-	})
+/area/ship/thrusters/portthrusters)
 "nq" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/structure/cable/orange{
@@ -1600,6 +1576,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "ns" = (
@@ -1628,10 +1607,8 @@
 	dir = 5
 	},
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/starboard/launchertwo)
 "nH" = (
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 4
@@ -1644,9 +1621,7 @@
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "nR" = (
 /obj/machinery/door/window/eastright{
 	dir = 1;
@@ -1661,9 +1636,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "nS" = (
 /obj/structure/bed,
 /obj/item/bedsheet/captain,
@@ -1709,6 +1682,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "os" = (
@@ -1725,9 +1701,7 @@
 	pixel_y = -1
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "oG" = (
 /obj/machinery/stasis,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -1758,11 +1732,14 @@
 	name = "Port Engineering"
 	})
 "oO" = (
-/obj/effect/turf_decal/corner/red{
-	dir = 9
-	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/bar{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/bar/line{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
@@ -1862,9 +1839,7 @@
 /area/ship/maintenance/starboard)
 "pi" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "pj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -1884,9 +1859,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Port Thruser Room"
-	})
+/area/ship/thrusters/portthrusters)
 "pp" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -1895,12 +1868,12 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "pq" = (
-/obj/effect/turf_decal/corner/red{
-	dir = 6
-	},
 /obj/structure/cable/orange{
 	icon_state = "0-8"
 	},
@@ -1912,6 +1885,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/corner/bar{
+	dir = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "pt" = (
@@ -1931,9 +1907,7 @@
 	projectile_type = /obj/projectile/beam/pulse/condor
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "pw" = (
 /obj/structure/closet/emcloset/wall{
 	dir = 8;
@@ -1966,9 +1940,6 @@
 	name = "Port Podbay"
 	})
 "pI" = (
-/obj/effect/turf_decal/corner/red/three_quarters{
-	dir = 1
-	},
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
 	icon_state = "sec_wall";
@@ -1995,6 +1966,9 @@
 	},
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/gun/energy/disabler,
+/obj/effect/turf_decal/corner/bar/three_quarters{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "pJ" = (
@@ -2007,9 +1981,7 @@
 	pixel_y = -8
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "pN" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 4
@@ -2035,9 +2007,7 @@
 	id = "portlauncheroneshutters"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "qb" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -2057,10 +2027,8 @@
 "qd" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/port/launchertwo)
 "qj" = (
 /obj/machinery/power/terminal,
 /obj/effect/turf_decal/industrial/warning{
@@ -2081,9 +2049,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "qs" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -2121,10 +2087,8 @@
 	dir = 8
 	},
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/starboard/launcherone)
 "qy" = (
 /obj/machinery/door/poddoor{
 	id = "portpodbay";
@@ -2159,9 +2123,7 @@
 	pixel_y = -10
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "qN" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -2169,9 +2131,7 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "qR" = (
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2274,9 +2234,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "rD" = (
 /obj/structure/chair/office/light{
 	dir = 8
@@ -2370,9 +2328,7 @@
 	pixel_y = -4
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "sg" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/green{
@@ -2458,9 +2414,7 @@
 	},
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "sM" = (
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 8
@@ -2470,9 +2424,7 @@
 	},
 /obj/structure/chair,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "sO" = (
 /obj/effect/turf_decal/corner/blue/border,
 /turf/open/floor/plasteel/white,
@@ -2525,9 +2477,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "tr" = (
 /obj/structure/chair/comfy/teal{
 	dir = 4
@@ -2558,9 +2508,6 @@
 	req_access = list(1);
 	pixel_y = -28
 	},
-/obj/effect/turf_decal/corner/red{
-	dir = 10
-	},
 /obj/item/storage/belt/security/webbing,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/gun/ballistic/automatic/pistol/commander{
@@ -2568,6 +2515,9 @@
 	},
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/gun/energy/disabler,
+/obj/effect/turf_decal/corner/bar{
+	dir = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "tA" = (
@@ -2630,7 +2580,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "tU" = (
-/obj/effect/turf_decal/corner/red/full,
 /obj/structure/cable/orange{
 	icon_state = "1-4"
 	},
@@ -2640,14 +2589,18 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/effect/turf_decal/corner/bar/full,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "tW" = (
-/obj/effect/turf_decal/corner/red/three_quarters{
-	dir = 4
-	},
 /obj/item/kirbyplants/random,
 /obj/machinery/camera/autoname,
+/obj/effect/turf_decal/corner/bar/three_quarters{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/bar/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "ut" = (
@@ -2662,9 +2615,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "uv" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -2747,9 +2698,7 @@
 /area/ship/medical)
 "vi" = (
 /turf/closed/wall/mineral/titanium,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "vk" = (
 /obj/structure/table/wood/bar,
 /obj/machinery/door/firedoor/border_only,
@@ -2805,10 +2754,8 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/port/launchertwo)
 "vJ" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -2819,9 +2766,7 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "vN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/orange{
@@ -2845,9 +2790,7 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "vS" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
@@ -2858,9 +2801,7 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating/airless,
-/area/ship/engineering/engine{
-	name = "Port Thruser Room"
-	})
+/area/ship/thrusters/portthrusters)
 "vY" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/science/ai_chamber)
@@ -2884,12 +2825,12 @@
 /obj/effect/turf_decal/corner/blue{
 	dir = 6
 	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "wh" = (
-/obj/effect/turf_decal/corner/red{
-	dir = 9
-	},
 /obj/structure/chair/office/light{
 	dir = 1
 	},
@@ -2906,6 +2847,9 @@
 	dir = 4
 	},
 /obj/effect/landmark/start/security_officer,
+/obj/effect/turf_decal/corner/bar{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "wi" = (
@@ -2919,9 +2863,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "wj" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -2935,9 +2877,7 @@
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/door/window/northleft,
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Port Thruser Room"
-	})
+/area/ship/thrusters/portthrusters)
 "wl" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -2964,9 +2904,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "wr" = (
 /obj/effect/turf_decal/corner/blue/border,
 /turf/open/floor/plasteel/mono/dark,
@@ -3014,18 +2952,14 @@
 	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "wJ" = (
 /obj/machinery/mass_driver{
 	dir = 1;
 	id = "starlauncherone"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "wL" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -3065,7 +2999,6 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "wO" = (
-/obj/effect/turf_decal/corner/red/three_quarters,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -3085,6 +3018,7 @@
 	pixel_y = 6
 	},
 /obj/machinery/holopad,
+/obj/effect/turf_decal/corner/bar/three_quarters,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "wP" = (
@@ -3094,6 +3028,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "wQ" = (
@@ -3140,9 +3075,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "xj" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -3196,9 +3129,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "xt" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -3237,9 +3168,7 @@
 	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "xN" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -3276,10 +3205,8 @@
 "xY" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/port/launcherone)
 "yb" = (
 /obj/structure/closet/secure_closet/captains,
 /obj/machinery/airalarm/directional/east,
@@ -3325,9 +3252,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "yo" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -3364,20 +3289,21 @@
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/corner/red{
-	dir = 9
-	},
 /obj/machinery/camera/autoname{
 	dir = 4;
 	pixel_y = -4
+	},
+/obj/effect/turf_decal/corner/bar{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/bar/line{
+	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "yv" = (
 /turf/closed/wall/mineral/titanium,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "yx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -3421,9 +3347,7 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "yJ" = (
 /obj/structure/closet/secure_closet/engineering_electrical{
 	req_access = null
@@ -3443,9 +3367,7 @@
 	id = "starlauncheroneshutters"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "yU" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -3479,17 +3401,18 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
 "zq" = (
-/obj/effect/turf_decal/corner/red{
+/obj/machinery/vending/cigarette,
+/obj/effect/turf_decal/corner/bar{
 	dir = 9
 	},
-/obj/machinery/vending/cigarette,
+/obj/effect/turf_decal/trimline/bar/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "zs" = (
 /turf/closed/wall/mineral/titanium,
-/area/ship/engineering/engine{
-	name = "Port Thruser Room"
-	})
+/area/ship/thrusters/portthrusters)
 "zz" = (
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 8
@@ -3498,9 +3421,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "zB" = (
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 1
@@ -3513,10 +3434,8 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/port/launcherone)
 "zO" = (
 /obj/effect/turf_decal/corner/blue/bordercorner,
 /obj/effect/turf_decal/borderfloor/corner{
@@ -3549,10 +3468,8 @@
 "zS" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/starboard/launcherone)
 "Ab" = (
 /obj/structure/sink/kitchen{
 	dir = 8;
@@ -3660,7 +3577,12 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
-/obj/effect/turf_decal/corner/red/full,
+/obj/effect/turf_decal/corner/bar{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/bar/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "AM" = (
@@ -3670,11 +3592,11 @@
 /obj/machinery/door/window/brigdoor/eastleft{
 	req_access = list(1)
 	},
-/obj/effect/turf_decal/corner/red/three_quarters{
-	dir = 8
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/effect/turf_decal/corner/bar/three_quarters{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3755,10 +3677,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "BP" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "BV" = (
@@ -3806,9 +3729,7 @@
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/door/window/northleft,
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "Cx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3874,9 +3795,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "CT" = (
 /obj/effect/turf_decal/corner/red/bordercorner{
 	dir = 4
@@ -3970,9 +3889,7 @@
 /area/ship/hallway/fore)
 "DJ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/engine{
-	name = "Port Thruser Room"
-	})
+/area/ship/thrusters/portthrusters)
 "DO" = (
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable/green{
@@ -4002,9 +3919,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "DY" = (
 /obj/structure/closet/secure_closet/engineering_personal{
 	req_access = null
@@ -4038,9 +3953,7 @@
 	dir = 2
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "Ex" = (
 /obj/machinery/holopad/emergency/engineering,
 /obj/structure/catwalk/over,
@@ -4066,9 +3979,7 @@
 /area/ship/hallway/port)
 "EA" = (
 /turf/closed/wall/mineral/titanium,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "EB" = (
 /obj/structure/reagent_dispensers/foamtank,
 /obj/machinery/power/apc/auto_name/north,
@@ -4123,6 +4034,9 @@
 	pixel_x = 25;
 	pixel_y = 6
 	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "EQ" = (
@@ -4159,9 +4073,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "Fd" = (
 /obj/effect/turf_decal/corner/yellow/full,
 /obj/machinery/light{
@@ -4172,6 +4084,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"Fe" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/thrusters/portthrusters)
 "Fh" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
@@ -4213,18 +4133,14 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Port Thruser Room"
-	})
+/area/ship/thrusters/portthrusters)
 "Fv" = (
 /obj/machinery/mass_driver{
 	dir = 1;
 	id = "portlaunchertwo"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "FA" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
@@ -4247,9 +4163,7 @@
 	dir = 10
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "FE" = (
 /turf/open/floor/pod/dark,
 /area/ship/security{
@@ -4311,9 +4225,7 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "FY" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -4328,9 +4240,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "FZ" = (
 /obj/effect/turf_decal/corner/black{
 	dir = 4
@@ -4386,9 +4296,7 @@
 	id = "starlaunchertwoshutters"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "GC" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -4409,14 +4317,10 @@
 	pixel_y = -4
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Port Thruser Room"
-	})
+/area/ship/thrusters/portthrusters)
 "GF" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "GG" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/janitor)
@@ -4429,6 +4333,15 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
+"GQ" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/fore)
 "GS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/orange{
@@ -4447,9 +4360,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "GY" = (
 /obj/structure/chair/stool/bar{
 	dir = 4
@@ -4554,9 +4465,7 @@
 	id = "portlaunchertwoshutters"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "HR" = (
 /obj/effect/turf_decal/corner/yellow/bordercorner{
 	dir = 4
@@ -4636,9 +4545,7 @@
 	pixel_y = -1
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "Ij" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -4671,14 +4578,12 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "Iv" = (
-/obj/effect/turf_decal/corner/red/three_quarters,
 /obj/machinery/vending/security/marine/nanotrasen{
 	products = list(/obj/item/restraints/handcuffs=10,/obj/item/assembly/flash/handheld=10,/obj/item/flashlight/seclite=10,/obj/item/ammo_box/magazine/aknt=10,/obj/item/storage/box/lethalshot=5,/obj/item/grenade/c4=5,/obj/item/grenade/frag=5,/obj/item/grenade/flashbang=10,/obj/item/grenade/barrier=10,/obj/item/melee/transforming/energy/sword/saber/blue=5)
 	},
+/obj/effect/turf_decal/corner/bar/three_quarters,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "IA" = (
@@ -4750,9 +4655,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "IT" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -4773,9 +4676,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "Jb" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
@@ -4825,9 +4726,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "JK" = (
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 6
@@ -5041,9 +4940,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "KA" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen/kitchen)
@@ -5143,9 +5040,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "Ll" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/small{
@@ -5157,9 +5052,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "Lr" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/corner/blue/full,
@@ -5174,9 +5067,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "LD" = (
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/blue/bordercee,
@@ -5249,16 +5140,11 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "Me" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
 "Mg" = (
-/obj/effect/turf_decal/corner/red{
-	dir = 9
-	},
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
 	icon_state = "sec_wall";
@@ -5282,6 +5168,9 @@
 	},
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/gun/energy/disabler,
+/obj/effect/turf_decal/corner/bar{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Mi" = (
@@ -5299,6 +5188,9 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
@@ -5370,9 +5262,7 @@
 	id = "portlaunchertwo"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "Nx" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -5580,9 +5470,7 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "OM" = (
 /obj/structure/chair{
 	dir = 4
@@ -5648,9 +5536,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Starboard Thruser Room"
-	})
+/area/ship/thrusters/starboardthrusters)
 "OV" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -5670,9 +5556,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "OY" = (
 /obj/structure/cable/orange{
 	icon_state = "2-8"
@@ -5724,9 +5608,7 @@
 	},
 /obj/structure/chair,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "Pn" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -5739,9 +5621,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "Pu" = (
 /obj/effect/turf_decal/corner/blue/bordercorner{
 	dir = 1
@@ -5781,9 +5661,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "PJ" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/dorm)
@@ -5795,9 +5673,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher One"
-	})
+/area/ship/launcher/starboard/launcherone)
 "PN" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -5813,9 +5689,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/engineering/engine{
-	name = "Port Thruser Room"
-	})
+/area/ship/thrusters/portthrusters)
 "Qp" = (
 /obj/machinery/door/airlock/engineering,
 /obj/structure/cable/green{
@@ -5890,9 +5764,7 @@
 	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "QD" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -5919,9 +5791,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "QT" = (
 /obj/structure/cable/orange{
 	icon_state = "2-4"
@@ -6029,9 +5899,7 @@
 	pixel_y = 12
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "RJ" = (
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 6
@@ -6081,9 +5949,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/science/ai_chamber)
 "Sn" = (
-/obj/effect/turf_decal/corner/red/three_quarters{
-	dir = 8
-	},
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
@@ -6095,6 +5960,9 @@
 	pixel_x = 23;
 	pixel_y = -19;
 	id = "Cell 1"
+	},
+/obj/effect/turf_decal/corner/bar/three_quarters{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -6330,9 +6198,7 @@
 	projectile_type = /obj/projectile/beam/pulse/condor
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "Uu" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/effect/turf_decal/corner/bottlegreen/border{
@@ -6355,9 +6221,7 @@
 	pixel_y = 3
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "UF" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -6412,9 +6276,7 @@
 	})
 "UY" = (
 /turf/closed/wall/mineral/titanium,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "Vg" = (
 /obj/effect/turf_decal/corner/purple/three_quarters{
 	icon_state = "borderfloor_white";
@@ -6493,9 +6355,6 @@
 	name = "Lieutenants Equipment";
 	req_access = list(58)
 	},
-/obj/effect/turf_decal/corner/red/three_quarters{
-	dir = 8
-	},
 /obj/item/clothing/under/rank/command/lieutenant/nt,
 /obj/item/clothing/under/rank/command/lieutenant/nt/skirt,
 /obj/item/flashlight/seclite,
@@ -6511,6 +6370,9 @@
 	},
 /obj/item/gun/ballistic/automatic/ak47/nt,
 /obj/item/ammo_box/magazine/aknt,
+/obj/effect/turf_decal/corner/bar/three_quarters{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Vz" = (
@@ -6535,16 +6397,12 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "VX" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/starboard/launchertwo)
 "Wp" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/fans/tiny,
@@ -6626,12 +6484,13 @@
 	projectile_type = /obj/projectile/beam/pulse/condor
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "WI" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 6
+	},
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
@@ -6748,9 +6607,7 @@
 	id = "portlauncherone"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "Xy" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/starboard)
@@ -6858,9 +6715,7 @@
 	},
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "Yu" = (
 /obj/effect/turf_decal/corner/purple/three_quarters{
 	icon_state = "borderfloor_white";
@@ -6888,18 +6743,14 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Port Launcher Two"
-	})
+/area/ship/launcher/port/launchertwo)
 "Yx" = (
 /obj/machinery/mass_driver{
 	dir = 1;
 	id = "starlaunchertwo"
 	},
 /turf/open/floor/plating,
-/area/ship/security{
-	name = "Starboard Launcher Two"
-	})
+/area/ship/launcher/starboard/launchertwo)
 "Yz" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/green,
@@ -6964,9 +6815,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "YV" = (
-/obj/effect/turf_decal/corner/red/three_quarters{
-	dir = 4
-	},
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
 	icon_state = "sec_wall";
@@ -6993,6 +6841,9 @@
 	},
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/gun/energy/disabler,
+/obj/effect/turf_decal/corner/bar/three_quarters{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "YY" = (
@@ -7042,9 +6893,7 @@
 	})
 "Zo" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/security{
-	name = "Port Launcher One"
-	})
+/area/ship/launcher/port/launcherone)
 "Zp" = (
 /obj/machinery/computer/communications,
 /obj/effect/turf_decal/corner/blue/full,
@@ -7071,13 +6920,16 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ZJ" = (
-/obj/effect/turf_decal/corner/red{
-	dir = 9
-	},
 /obj/structure/cable/orange{
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/west,
+/obj/effect/turf_decal/corner/bar{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/bar/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "ZK" = (
@@ -7354,7 +7206,7 @@ Jp
 zs
 zs
 DJ
-qN
+Fe
 zs
 zs
 cD
@@ -8152,7 +8004,7 @@ WI
 WI
 gd
 WI
-WI
+GQ
 wP
 BP
 mV

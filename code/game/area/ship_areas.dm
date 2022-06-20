@@ -234,6 +234,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffbc6f"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 
+/area/ship/engineering/port
+	name = "Port Engineering"
+
+/area/ship/engineering/starboard
+	name = "Starboard Engineering"
+
 /area/ship/engineering/atmospherics
 	name = "Atmospherics"
 	icon_state = "atmos"
@@ -251,6 +257,45 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/engineering/engine
 	name = "Engine Room"
 	icon_state = "engine_sm"
+
+/// Thrusters ///
+/area/ship/thrusters
+	name = "Thruster Room"
+	icon_state = "shuttlegrn"
+	ambientsounds = ENGINEERING
+	lighting_colour_tube = "#ffce93"
+	lighting_colour_bulb = "#ffbc6f"
+
+/area/ship/thrusters/portthrusters
+	name = "Port Thruster Room"
+
+/area/ship/thrusters/starboardthrusters
+	name = "Starboard Thruster Room"
+
+/// Launcher ///
+/area/ship/launcher
+	name = "Launcher"
+	icon_state = "green"
+
+/area/ship/launcher/port
+	name = "Port Launcher"
+	icon_state = "dk_yellow"
+
+/area/ship/launcher/port/launcherone
+	name = "Port Launcher One"
+
+/area/ship/launcher/port/launchertwo
+	name = "Port Launcher Two"
+
+/area/ship/launcher/starboard
+	name = "Starboard Launcher"
+	icon_state = "purple"
+
+/area/ship/launcher/starboard/launcherone
+	name = "Starboard Launcher One"
+
+/area/ship/launcher/starboard/launchertwo
+	name = "Starboard Launcher Two"
 
 /// Security ///
 /area/ship/security
@@ -357,4 +402,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/external
 	name = "External"
 	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
+	icon_state = "space_near"
+
+/area/ship/externaldark
+	name = "External Dark"
 	icon_state = "space_near"
