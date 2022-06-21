@@ -22,7 +22,6 @@
 	var/rad_record = 0
 	var/grace_count = 0
 	var/datum/looping_sound/geiger/soundloop
-	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/Initialize()
 	. = ..()
