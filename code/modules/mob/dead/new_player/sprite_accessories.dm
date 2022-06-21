@@ -2664,10 +2664,6 @@
 	name = "Shaggy"
 	icon_state = "shaggy"
 
-/datum/sprite_accessory/vox_head_quills/tailfeather
-	name = "Tailfeather"
-	icon_state = "tailfeather"
-
 /datum/sprite_accessory/vox_head_quills/mange
 	name = "Mange"
 	icon_state = "mange"
