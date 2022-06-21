@@ -115,6 +115,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
+	var/list/prosthetic_limbs = list(BODY_ZONE_L_ARM = "normal", BODY_ZONE_R_ARM = "normal", BODY_ZONE_L_LEG = "normal", BODY_ZONE_R_LEG = "normal")
 	var/phobia = "spiders"
 	var/list/alt_titles_preferences = list()
 
@@ -432,6 +433,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<br><span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br></td>"
+
+			dat += "<h3>Prosthetic Limbs</h3>"
+
+			var/list/limb_display_list = list()
+			for(var/index in prosthetic_limbs)
+				var/bodypart_name = parse_zone(index)
+				if(prosthetic_limbs[index] != "normal")
+					limb_display_list += "[bodypart_name]: [prosthetic_limbs[index]]"
+				dat += "<a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[bodypart_name]</a>"
+			dat += "<b>Current Modifications:</b> [length(limb_display_list) ? limb_display_list.Join("; ") : "None"]<BR>"
 
 			//Mutant stuff
 			var/mutant_category = 0
@@ -2033,6 +2044,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						facial_hairstyle = random_facial_hairstyle(gender)
 						hairstyle = random_hairstyle(gender)
 
+				if("limbs")
+					if(href_list["customize_limb"])
+						var/limb = href_list["customize_limb"]
+						var/status = input(user, "You are modifying your [parse_zone(limb)], what should it be changed to?", "Character Preference", prosthetic_limbs[limb]) as null|anything in list("normal","prosthetic","amputated")
+						if(status)
+							prosthetic_limbs[limb] = status
+
 				if("hotkeys")
 					hotkeys = !hotkeys
 					if(hotkeys)
@@ -2366,6 +2384,30 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
+
+	for(var/L in prosthetic_limbs)
+		var/obj/item/bodypart/old_part = character.get_bodypart(L)
+		switch(prosthetic_limbs[L])
+			if(PROSTHETIC_NORMAL)
+				continue
+			if(PROSTHETIC_AMPUTATED)
+				if(old_part)
+					old_part.drop_limb(special = TRUE)
+					qdel(old_part)
+			if(PROSTHETIC_ROBOTIC)
+				var/obj/item/bodypart/prosthetic
+				var/typepath
+				if(character.dna.species.unique_prosthesis) // Checks for if the species has a unique limb type, otherwise defaults to human
+					typepath = text2path("/obj/item/bodypart/[L]/robot/surplus/[character.dna.species.id]")
+				else
+					typepath = text2path("/obj/item/bodypart/[L]/robot/surplus")
+				if(!ispath(typepath))
+					to_chat(character, "<span class='warning'>Problem initializing [L] prosthetic for species [character.dna.species], it will be a normal limb. Make a bug report on github!</span>")
+					continue
+				prosthetic = new typepath(character)
+				prosthetic.replace_limb(character, special = TRUE)
+				if(old_part)
+					qdel(old_part)
 
 	if(icon_updates)
 		character.update_body()

@@ -68,7 +68,7 @@
 	display_name = "Basic Medical Equipment"
 	description = "Basic medical tools and equipment."
 	design_ids = list("cybernetic_liver", "cybernetic_heart", "cybernetic_lungs", "cybernetic_stomach", "scalpel", "circular_saw", "surgicaldrill", "retractor", "cautery", "hemostat",
-					"syringe", "plumbing_rcd", "beaker", "large_beaker", "xlarge_beaker", "dropper", "defibmountdefault", "portable_chem_mixer", "prosthetic_l_arm", "prosthetic_r_arm", "prosthetic_l_leg", "prosthetic_r_leg", "kprosthetic_l_arm", "kprosthetic_r_arm", "kprosthetic_l_leg", "kprosthetic_r_leg")
+					"syringe", "plumbing_rcd", "beaker", "large_beaker", "xlarge_beaker", "dropper", "defibmountdefault", "portable_chem_mixer")
 
 /////////////////////////Biotech/////////////////////////
 /datum/techweb_node/biotech
@@ -76,7 +76,7 @@
 	display_name = "Biological Technology"
 	description = "What makes us tick."	//the MC, silly!
 	prereq_ids = list("base")
-	design_ids = list("sleeper", "chem_heater", "chem_master", "chem_dispenser", "pandemic", "defibrillator", "defibmount", "operating", "soda_dispenser", "beer_dispenser", "healthanalyzer", "medigel","genescanner", "med_spray_bottle", "chem_pack", "blood_pack", "medical_kiosk", "crewpinpointerprox", "medipen_refiller")
+	design_ids = list("sleeper", "chem_heater", "chem_master", "chem_dispenser", "pandemic", "defibrillator", "defibmount", "operating", "soda_dispenser", "beer_dispenser", "healthanalyzer", "medigel","genescanner", "med_spray_bottle", "chem_pack", "blood_pack", "medical_kiosk", "crewpinpointerprox", "medipen_refiller", "prosthetic_l_arm", "prosthetic_r_arm", "prosthetic_l_leg", "prosthetic_r_leg", "kprosthetic_l_arm", "kprosthetic_r_arm", "kprosthetic_l_leg", "kprosthetic_r_leg", "vprosthetic_l_arm", "vprosthetic_r_arm", "vprosthetic_l_leg", "vprosthetic_r_leg")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 

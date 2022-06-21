@@ -123,6 +123,26 @@
 	id = "kprosthetic_r_leg"
 	build_path = /obj/item/bodypart/r_leg/robot/surplus/kepori
 
+/datum/design/prosthetic_l_arm/vox
+	name = "Surplus Prosthetic Vox Left Arm"
+	id = "vprosthetic_l_arm"
+	build_path = /obj/item/bodypart/l_arm/robot/surplus/vox
+
+/datum/design/prosthetic_r_arm/vox
+	name = "Surplus Prosthetic Vox Right Arm"
+	id = "vprosthetic_r_arm"
+	build_path = /obj/item/bodypart/r_arm/robot/surplus/vox
+
+/datum/design/prosthetic_l_leg/vox
+	name = "Surplus Prosthetic Vox Left Leg"
+	id = "vprosthetic_l_leg"
+	build_path = /obj/item/bodypart/l_leg/robot/surplus/vox
+
+/datum/design/prosthetic_r_leg/vox
+	name = "Surplus Prosthetic Vox Right Leg"
+	id = "vprosthetic_r_leg"
+	build_path = /obj/item/bodypart/r_leg/robot/surplus/vox
+
 //Ripley
 /datum/design/ripley_chassis
 	name = "Exosuit Chassis (APLU \"Ripley\")"

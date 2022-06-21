@@ -121,3 +121,8 @@
 #define RANDOM_FACIAL_HAIRSTYLE "random_facial_hairstyle"
 #define RANDOM_SKIN_TONE "random_skin_tone"
 #define RANDOM_EYE_COLOR "random_eye_color"
+
+//prosthetics stuff
+#define PROSTHETIC_NORMAL "normal"
+#define PROSTHETIC_AMPUTATED "amputated"
+#define PROSTHETIC_ROBOTIC "prosthetic"
