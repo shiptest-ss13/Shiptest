@@ -42,7 +42,7 @@
 	var/skill_mod = 2
 
 	// Does this species have unique robotic limbs? (currently used in: kepori and vox)
-	var/unique_prosthesis = TRUE
+	unique_prosthesis = TRUE
 
 	species_chest = /obj/item/bodypart/chest/kepori
 	species_head = /obj/item/bodypart/head/kepori
