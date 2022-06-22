@@ -880,7 +880,7 @@
 
 /obj/item/slimepotion/speed
 	name = "slime speed potion"
-	desc = "A potent chemical mix that will remove the slowdown from any item."
+	desc = "A potent chemical mix that will reduce the slowdown from any item."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "potyellow"
 
