@@ -539,10 +539,6 @@
 /obj/item/modular_computer/laptop/preset/civilian,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
-"jb" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/medical)
 "jp" = (
 /obj/effect/turf_decal/corner/beige{
 	dir = 5
@@ -1192,6 +1188,7 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/eighties,
 /area/ship/crew/dorm)
 "zp" = (
@@ -1255,6 +1252,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "CA" = (
@@ -2499,7 +2499,7 @@ xQ
 wc
 Mn
 ZA
-dw
+xQ
 nR
 So
 nJ
@@ -2705,7 +2705,7 @@ pH
 et
 et
 Pz
-jb
+Pz
 Pz
 FC
 Pz
