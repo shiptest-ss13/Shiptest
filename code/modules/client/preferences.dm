@@ -2386,7 +2386,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
 
 	for(var/pros_limbs in prosthetic_limbs)
-		var/obj/item/bodypart/old_part = character.get_bodypart(L)
+		var/obj/item/bodypart/old_part = character.get_bodypart(pros_limbs)
 		switch(prosthetic_limbs[pros_limbs])
 			if(PROSTHETIC_NORMAL)
 				continue
