@@ -1234,6 +1234,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/commando
 	slowdown = 0
 	var/roll_cooldown = 0
+	var/roll_cooldown_time = 6 SECONDS
 	var/rolling = FALSE
 
 /obj/item/clothing/suit/space/hardsuit/commando/examine(mob/user)
@@ -1262,9 +1263,9 @@
 		helmet.display_visor_message("Already rolling!")
 		return COMSIG_MOB_CANCEL_CLICKON
 	if(roll_cooldown > world.time)
-		helmet.display_visor_message("Roll functionality cooling down... [(roll_cooldown - world.time) / 10] seconds left...")
+		helmet.display_visor_message("Roll functionality cooling down... [(roll_cooldown - world.time) / 1 SECONDS] seconds left...")
 		return COMSIG_MOB_CANCEL_CLICKON
-	roll_cooldown = world.time + 6 SECONDS
+	roll_cooldown = world.time + roll_cooldown
 	INVOKE_ASYNC(src, .proc/dodge_roll, user, target)
 	return COMSIG_MOB_CANCEL_CLICKON
 
@@ -1274,7 +1275,7 @@
 	user.add_filter("roll_blur", 1, angular_blur_filter(size = 15))
 	user.add_filter("roll_outline", 2, outline_filter(color = "#00000066"))
 	user.throw_at(get_ranged_target_turf_direct(user, target, range = 7), range = 7, speed = 2, spin = FALSE, thrower = user, gentle = TRUE, callback = CALLBACK(src, .proc/stop_roll, user))
-	user.SpinAnimation(speed = 5, clockwise = (user.dir & (NORTH|EAST)))
+	user.SpinAnimation(speed = 3, clockwise = (user.dir & (NORTH|EAST)))
 	playsound(src, 'sound/items/roll.ogg', 50, TRUE)
 
 /obj/item/clothing/suit/space/hardsuit/commando/proc/stop_roll(mob/living/user)
@@ -1282,4 +1283,7 @@
 	REMOVE_TRAIT(user, TRAIT_IMMOBILIZED, type)
 	user.remove_filter("roll_blur")
 	user.remove_filter("roll_outline")
+	addtimer(CALLBACK(src, .proc/end_animation, user), 0.1 SECONDS) //need this to prevent funny stuff
+
+/obj/item/clothing/suit/space/hardsuit/commando/proc/end_animation(mob/living/user)
 	animate(user)
