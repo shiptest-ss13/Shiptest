@@ -231,11 +231,11 @@ const MaterialRow = (props, context) => {
             </Box>
           </Table.Cell>
           <Table.Cell collapsing textAlign="right">
-              <Button
+            <Button
               disabled={material.sheets_amount< 1}
               content="x1"
               onClick={() => onRelease(1)} />
-              <Button
+            <Button
               disabled={material.sheets_amount< 5}
               content="x5"
               onClick={() => onRelease(5)} />
