@@ -469,9 +469,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "hP" = (
@@ -1148,6 +1145,9 @@
 /obj/machinery/power/terminal,
 /obj/structure/cable{
 	icon_state = "2-5"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/eighties,
 /area/ship/crew/dorm)
