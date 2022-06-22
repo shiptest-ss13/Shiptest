@@ -14,6 +14,7 @@
 	var/Uses = 1 ///uses before it goes inert
 	var/qdel_timer = null ///deletion timer, for delayed reactions
 	var/effectmod ///Which type of crossbred
+	var/crossbreed_modifier = 1 //Modifies how many extracts are needed to cross a core.
 	var/list/activate_reagents = list() ///Reagents required for activation
 	var/recurring = FALSE
 	var/research ///Research point value for slime cores. These are defines stored in [/__DEFINES/research] - the actual values are updated there.
@@ -78,13 +79,14 @@
 
 	if(!M.effectmod)
 		M.effectmod = effectmod
+		M.crossbreed_modifier = crossbreed_modifier
 
 	M.applied++
 	qdel(src)
 	to_chat(user, "<span class='notice'>You feed the slime [src], [M.applied == 1 ? "starting to mutate its core." : "further mutating its core."]</span>")
 	playsound(M, 'sound/effects/attackblob.ogg', 50, TRUE)
 
-	if(M.applied >= SLIME_EXTRACT_CROSSING_REQUIRED)
+	if(M.applied >= (SLIME_EXTRACT_CROSSING_REQUIRED * crossbreed_modifier))
 		M.spawn_corecross()
 
 /obj/item/slime_extract/grey
@@ -199,6 +201,7 @@
 	name = "purple slime extract"
 	icon_state = "purple slime extract"
 	effectmod = "regenerative"
+	crossbreed_modifier = 0.5
 	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma)
 	research = SLIME_RESEARCH_TIER_1
 
@@ -264,6 +267,7 @@
 	name = "yellow slime extract"
 	icon_state = "yellow slime extract"
 	effectmod = "charged"
+	crossbreed_modifier = 0.8
 	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma,/datum/reagent/water)
 	research = SLIME_RESEARCH_TIER_2
 
@@ -546,6 +550,7 @@
 	name = "pyrite slime extract"
 	icon_state = "pyrite slime extract"
 	effectmod = "prismatic"
+	crossbreed_modifier = 0.5
 	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma)
 	research = SLIME_RESEARCH_TIER_3
 
