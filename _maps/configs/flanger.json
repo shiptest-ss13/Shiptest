@@ -1,0 +1,33 @@
+{
+	"map_name": "Flanger-class Multipurpose Shuttle",
+	"prefix": "NTSV",
+	"namelists": ["GENERAL", "BRITISH_NAVY", "MYTHOLOGICAL"],
+	"map_short_name": "Flanger-class",
+	"map_path": "_maps/shuttles/shiptest/flanger.dmm",
+	"map_id": "flanger",
+	"job_slots": {
+		"Pilot": {
+			"outfit": "/datum/outfit/job/cargo_tech/pilot",
+			"officer": true,
+			"slots": 1
+		},
+		"Deliveries Officer": {
+			"outfit": "/datum/outfit/job/cargo_tech/deliveriesofficer",
+			"officer": true,
+			"slots": 1
+		},
+		"Ship Mechanic": {
+			"outfit": "/datum/outfit/job/engineer/nt",
+			"slots": 1
+		},
+		"Surveyer": {
+			"outfit": "/datum/outfit/job/miner/hazard",
+			"slots": 1
+		},
+		"Transport Guard": {
+			"outfit": "/datum/outfit/job/security/nanotrasen",
+			"slots": 1
+		}
+	},
+	"cost": 800
+}
