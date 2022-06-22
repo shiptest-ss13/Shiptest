@@ -69,7 +69,7 @@
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/l_arm/robot/surplus
 	materials = list(/datum/material/iron=3000)
-	construction_time = 50
+	construction_time = 5 SECONDS
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -79,7 +79,7 @@
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/r_arm/robot/surplus
 	materials = list(/datum/material/iron=3000)
-	construction_time = 50
+	construction_time = 5 SECONDS
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -89,7 +89,7 @@
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/l_leg/robot/surplus
 	materials = list(/datum/material/iron=3000)
-	construction_time = 50
+	construction_time = 5 SECONDS
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -99,7 +99,7 @@
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/bodypart/r_leg/robot/surplus
 	materials = list(/datum/material/iron=3000)
-	construction_time = 50
+	construction_time = 5 SECONDS
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 

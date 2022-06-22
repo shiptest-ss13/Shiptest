@@ -2385,9 +2385,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
 
-	for(var/L in prosthetic_limbs)
+	for(var/pros_limbs in prosthetic_limbs)
 		var/obj/item/bodypart/old_part = character.get_bodypart(L)
-		switch(prosthetic_limbs[L])
+		switch(prosthetic_limbs[pros_limbs])
 			if(PROSTHETIC_NORMAL)
 				continue
 			if(PROSTHETIC_AMPUTATED)
@@ -2398,11 +2398,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/obj/item/bodypart/prosthetic
 				var/typepath
 				if(character.dna.species.unique_prosthesis) // Checks for if the species has a unique limb type, otherwise defaults to human
-					typepath = text2path("/obj/item/bodypart/[L]/robot/surplus/[character.dna.species.id]")
+					typepath = text2path("/obj/item/bodypart/[pros_limbs]/robot/surplus/[character.dna.species.id]")
 				else
-					typepath = text2path("/obj/item/bodypart/[L]/robot/surplus")
+					typepath = text2path("/obj/item/bodypart/[pros_limbs]/robot/surplus")
 				if(!ispath(typepath))
-					to_chat(character, "<span class='warning'>Problem initializing [L] prosthetic for species [character.dna.species], it will be a normal limb. Make a bug report on github!</span>")
+					to_chat(character, "<span class='warning'>Problem initializing [pros_limbs] prosthetic for species [character.dna.species], it will be a normal limb. Make a bug report on github!</span>")
 					continue
 				prosthetic = new typepath(character)
 				prosthetic.replace_limb(character, special = TRUE)
