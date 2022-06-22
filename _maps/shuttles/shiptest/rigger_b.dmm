@@ -667,8 +667,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/chapel)
 "kM" = (
-/obj/structure/catwalk,
-/turf/template_noop,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/external)
 "kP" = (
 /obj/structure/cable{
@@ -2570,9 +2570,15 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/vending/security/wall{
-	pixel_x = 28
+/obj/structure/closet/wall/red{
+	dir = 8;
+	name = "equipment closet";
+	pixel_x = 28;
+	req_access_txt = "1"
 	},
+/obj/item/storage/box/zipties,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/zipties,
 /turf/open/floor/wood/maple,
 /area/ship/security/armory)
 "Hg" = (
