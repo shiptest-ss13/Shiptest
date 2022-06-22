@@ -2563,12 +2563,12 @@
 	name = "Bun"
 	icon_state = "bun"
 
-/datum/sprite_accessory/kepori_body_feathers/none
-	name = "None"
-
 /datum/sprite_accessory/kepori_body_feathers
 	color_src = FACEHAIR
 	icon = 'icons/mob/kepori_parts.dmi'
+
+/datum/sprite_accessory/kepori_body_feathers/none
+	name = "None"
 
 /datum/sprite_accessory/kepori_body_feathers/aftik
 	name = "Aftik"
@@ -2590,12 +2590,13 @@
 	name = "Wings"
 	icon_state = "wings"
 
-/datum/sprite_accessory/kepori_tail_feathers/none
-	name = "None"
 
 /datum/sprite_accessory/kepori_tail_feathers
 	color_src = FACEHAIR
 	icon = 'icons/mob/kepori_parts.dmi'
+
+/datum/sprite_accessory/kepori_tail_feathers/none
+	name = "None"
 
 /datum/sprite_accessory/kepori_tail_feathers/fan
 	name = "Fan"
