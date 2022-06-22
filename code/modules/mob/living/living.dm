@@ -707,7 +707,7 @@
 	stop_sound_channel(CHANNEL_HEARTBEAT)
 
 //proc used to heal a mob, but only damage types specified.
-/mob/living/proc/specific_heal(blood_amt = 0, brute_amt = 0, fire_amt = 0, tox_amt = 0, oxy_amt = 0, clone_amt = 0, organ_amt = 0, stam_amt = 0, specific_revive = FALSE)
+/mob/living/proc/specific_heal(blood_amt = 0, brute_amt = 0, fire_amt = 0, tox_amt = 0, oxy_amt = 0, clone_amt = 0, organ_amt = 0, stam_amt = 0, specific_revive = FALSE, specific_bones = FALSE)
 	if(iscarbon(src))
 		var/mob/living/carbon/C = src
 		if(!(C.dna?.species && (NOBLOOD in C.dna.species.species_traits)))
@@ -718,6 +718,10 @@
 			if(O.organ_flags & ORGAN_SYNTHETIC)
 				continue
 			O.applyOrganDamage(organ_amt*-1)//1 = 5 organ damage healed
+
+		if(specific_bones)
+			for(var/obj/item/bodypart/B in C.bodyparts)
+				B.fix_bone()
 
 	if(specific_revive)
 		revive()
