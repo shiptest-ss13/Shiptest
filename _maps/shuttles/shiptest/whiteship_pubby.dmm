@@ -723,6 +723,9 @@
 /obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"oN" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/template_noop)
 "pz" = (
 /obj/structure/closet/crate/bin,
 /obj/item/trash/pistachios{
@@ -888,6 +891,15 @@
 /obj/effect/turf_decal/spline/fancy/black,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"td" = (
+/obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/emcloset/wall{
+	dir = 1;
+	pixel_y = -28
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "ti" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1002,7 +1014,6 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/machinery/door/airlock/public,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1014,6 +1025,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/machinery/door/airlock/public/glass,
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "vS" = (
@@ -2090,15 +2102,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"SG" = (
-/obj/machinery/light,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering)
 "Tc" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -2141,9 +2144,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/ship/cargo)
-"TI" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/template_noop)
 "TL" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2447,20 +2447,6 @@
 /obj/structure/sign/number/one,
 /turf/open/floor/engine,
 /area/ship/cargo)
-"YD" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8;
-	name = "engine fuel pump"
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/spawner/lootdrop/maintenance/two,
-/obj/item/stack/sheet/mineral/wood/fifty,
-/obj/structure/closet/crate,
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
 "YQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2541,6 +2527,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"ZN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "engine fuel pump"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/structure/closet/crate,
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 
 (1,1,1) = {"
 sl
@@ -2551,7 +2551,7 @@ sl
 lT
 bN
 lT
-TI
+oN
 TQ
 vW
 sl
@@ -2565,7 +2565,7 @@ UK
 lT
 lT
 AZ
-SG
+td
 lT
 Qv
 hJ
@@ -2582,7 +2582,7 @@ lT
 CA
 lT
 vu
-YD
+ZN
 lL
 lT
 sl
