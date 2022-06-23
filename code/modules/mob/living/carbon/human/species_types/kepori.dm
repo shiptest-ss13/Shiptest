@@ -41,7 +41,6 @@
 	/// See: [/datum/component/tackler/var/skill_mod]
 	var/skill_mod = 2
 
-	// Does this species have unique robotic limbs? (currently used in: kepori and vox)
 	unique_prosthesis = TRUE
 
 	species_chest = /obj/item/bodypart/chest/kepori

@@ -27,7 +27,6 @@
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
 
-	// Does this species have unique robotic limbs? (currently used in: kepori and vox)
 	unique_prosthesis = TRUE
 
 	species_chest = /obj/item/bodypart/chest/vox
