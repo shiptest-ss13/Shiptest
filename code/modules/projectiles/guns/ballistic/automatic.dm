@@ -65,7 +65,6 @@
 	item_state = "c20r"
 	mag_type = /obj/item/ammo_box/magazine/smgm45
 	fire_rate = 4
-	burst_size = 2
 	pin = /obj/item/firing_pin/implant/pindicate
 	can_bayonet = TRUE
 	knife_x_offset = 26
