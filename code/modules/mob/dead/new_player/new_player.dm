@@ -52,8 +52,8 @@
 		return
 
 	if(CONFIG_GET(flag/auth_only))
-		if(!src.client?.holder && CONFIG_GET(flag/auth_admin_testing))
-			to_chat(src, "<span class='userdanger'>This server is allowed to be used for admin testing. Please ensure you are able to clean up anything you do. If the server needs to be restarted contact someone with TGS access</span>")
+		if(!client?.holder && CONFIG_GET(flag/auth_admin_testing))
+			to_chat(src, "<span class='userdanger'>This server is allowed to be used for admin testing. Please ensure you are able to clean up anything you do. If the server needs to be restarted contact someone with TGS access.</span>")
 		else
 			to_chat(src, "<span class='userdanger'>This server is for authentication only.</span>")
 			auth_check = TRUE
