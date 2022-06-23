@@ -17,6 +17,9 @@
 	//Used to make sure someone doesn't get spammed with messages if they're ineligible for roles
 	var/ineligible_for_roles = FALSE
 
+	/// is this an auth server
+	var/auth_check = FALSE
+
 /mob/dead/new_player/Initialize()
 	if(client && SSticker.state == GAME_STATE_STARTUP)
 		var/atom/movable/screen/splash/S = new(client, TRUE, TRUE)
@@ -45,6 +48,17 @@
   * This proc generates the panel that opens to all newly joining players, allowing them to join, observe, view polls, view the current crew manifest, and open the character customization menu.
   */
 /mob/dead/new_player/proc/new_player_panel()
+	if(auth_check)
+		return
+
+	if(CONFIG_GET(flag/auth_only))
+		if(client?.holder && CONFIG_GET(flag/auth_admin_testing))
+			to_chat(src, "<span class='userdanger'>This server is allowed to be used for admin testing. Please ensure you are able to clean up anything you do. If the server needs to be restarted contact someone with TGS access.</span>")
+		else
+			to_chat(src, "<span class='userdanger'>This server is for authentication only.</span>")
+			auth_check = TRUE
+			return
+
 	if (client?.interviewee)
 		return
 
@@ -111,6 +125,9 @@
 		return output
 
 /mob/dead/new_player/Topic(href, href_list[])
+	if(auth_check)
+		return
+
 	if(src != usr)
 		return 0
 
@@ -196,6 +213,9 @@
 
 //When you cop out of the round (NB: this HAS A SLEEP FOR PLAYER INPUT IN IT)
 /mob/dead/new_player/proc/make_me_an_observer()
+	if(auth_check)
+		return
+
 	if(QDELETED(src) || !src.client)
 		ready = PLAYER_NOT_READY
 		return FALSE
@@ -265,6 +285,9 @@
 	return JOB_AVAILABLE
 
 /mob/dead/new_player/proc/AttemptLateSpawn(datum/job/job, datum/overmap/ship/controlled/ship)
+	if(auth_check)
+		return
+
 	var/error = IsJobUnavailable(job, ship)
 	if(error != JOB_AVAILABLE)
 		alert(src, get_job_unavailable_error_message(error, job))
@@ -331,6 +354,9 @@
 			employmentCabinet.addFile(employee)
 
 /mob/dead/new_player/proc/LateChoices()
+	if(auth_check)
+		return
+
 	//stops the window from even showing up if there's a lock on joining
 	if(!GLOB.enter_allowed)
 		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
@@ -411,6 +437,9 @@
 	AttemptLateSpawn(selected_job, selected_ship)
 
 /mob/dead/new_player/proc/create_character(transfer_after)
+	if(auth_check)
+		return
+
 	spawning = 1
 	close_spawn_windows()
 
@@ -450,6 +479,9 @@
 		transfer_character()
 
 /mob/dead/new_player/proc/transfer_character()
+	if(auth_check)
+		return
+
 	. = new_character
 	if(.)
 		new_character.key = key		//Manually transfer the key to log them in,
