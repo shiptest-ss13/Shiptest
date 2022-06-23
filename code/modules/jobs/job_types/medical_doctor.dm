@@ -149,7 +149,7 @@
 	ears = /obj/item/radio/headset/syndicate/alt
 
 
-/datum/outfit/job/doctor/syndicate/komodo
+/datum/outfit/job/doctor/syndicate_komodo
 	name = "Ship Medical Doctor"
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	glasses = /obj/item/clothing/glasses/hud/health/prescription
