@@ -104,6 +104,10 @@
 
 /datum/config_entry/flag/allow_vote_mode	// allow votes to change mode
 
+/datum/config_entry/flag/auth_only // server can only be used for authentication
+
+/datum/config_entry/flag/auth_admin_testing // auth server allows admin testing and other actions
+
 /datum/config_entry/number/vote_delay	// minimum time between voting sessions (deciseconds, 10 minute default)
 	config_entry_value = 6000
 	integer = FALSE
