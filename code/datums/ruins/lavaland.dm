@@ -303,9 +303,3 @@
 	id = "spooky_crash"
 	description = "A spooky looking crash."
 	suffix = "lavaland_surface_SPOOKYCRASH.dmm"
-
-/datum/map_template/ruin/lavaland/tomb_of_decay
-	name = "Tomb of decay"
-	id = "tomb_of_decay"
-	description = "It seems that only in decay, does the danger reveal itself"
-	suffix = "lavaland_tomb_of_decay.dmm"
