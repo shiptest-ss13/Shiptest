@@ -57,7 +57,7 @@
 
 /turf/open/floor/plating/asteroid/rockplanet
 	name = "iron sand"
-	icon_state = "dry_soft0"
+	icon_state = "dry_soft"
 	base_icon_state = "dry_soft"
 	floor_variance = 100
 	max_icon_states = 7
