@@ -2416,7 +2416,7 @@
 	name = "Cross"
 	icon_state = "cross"
 
-/datum/sprite_accessory/ipc_antennas/nyaru // feeling hopeless rn
+/datum/sprite_accessory/ipc_antennas/nyaru
 	name = "Nyaru"
 	icon_state = "nyaru"
 
