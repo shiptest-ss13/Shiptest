@@ -147,3 +147,12 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/syndicate/alt
+
+
+/datum/outfit/syndicate_empty/sbc/med_Komodo
+	name = "Ship Medical Doctor"
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	glasses = /obj/item/clothing/glasses/hud/health/prescription
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	back = /obj/item/storage/backpack/duffelbag/syndie/med
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
