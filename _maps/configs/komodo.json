@@ -1,0 +1,40 @@
+{
+	"map_name": "Komodo-class Warship",
+	"map_short_name": "Komodo-class",
+	"map_path": "_maps/shuttles/shiptest/gorlex_Komodo",
+	"map_id": "komodo_class",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Sergeant": {
+			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/operative",
+			"officer": true,
+			"slots": 1
+		},
+		"Medic":{
+			"outfit": "/datum/outfit/syndicate_empty/sbc/med",
+			"slots": 1
+		},
+		"Mechanic":{
+			"outfit": "/datum/outfit/syndicate_empty/sbc/engi",
+			"slots": 1
+		},
+		"Trooper":{
+			"outfit": "/datum/outfit/syndicate_empty/sbc/assault",
+			"slots": 3
+		},
+		"Deck Assistant":{
+			"outfit": "/datum/outfit/syndicate_empty/sbc",
+			"slots": 2
+		},
+		"Bridge officer":{
+			"outfit": "/datum/outfit/job/head_of_personnel/syndicate",
+			"slots": 1}
+
+
+
+	}
+}
