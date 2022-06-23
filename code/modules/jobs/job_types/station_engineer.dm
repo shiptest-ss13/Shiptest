@@ -214,7 +214,7 @@
 	r_pocket = /obj/item/analyzer
 	glasses = /obj/item/clothing/glasses/welding
 
-	/datum/outfit/syndicate_empty/sbc/engi_komodo
+	/datum/outfit/job/engineer/syndicate/komodo
 	name = "Ship Engineer"
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	r_pocket = /obj/item/analyzer
