@@ -976,13 +976,7 @@
 /area/ship/bridge)
 "vu" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate,
-/obj/item/stack/sheet/mineral/wood/fifty,
-/obj/effect/spawner/lootdrop/maintenance/two,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "vC" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1187,7 +1181,8 @@
 /area/ship/hallway/central)
 "yT" = (
 /obj/structure/bed/dogbed{
-	name = "citrus's bed"
+	name = "citrus's bed";
+	anchored = 1
 	},
 /obj/effect/turf_decal/spline/fancy/black{
 	dir = 9
@@ -1273,15 +1268,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light,
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 28
 	},
 /obj/machinery/atmospherics/components/binary/dp_vent_pump{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Bh" = (
@@ -1609,6 +1603,7 @@
 	dir = 10;
 	layer = 4.1
 	},
+/obj/effect/turf_decal/spline/fancy/black,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Ic" = (
@@ -1619,6 +1614,9 @@
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/structure/sign/poster/official/random{
 	pixel_y = -32
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -1991,6 +1989,10 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/glass,
+/obj/structure/tank_dispenser/oxygen,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "QM" = (
@@ -2088,6 +2090,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"SG" = (
+/obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/emcloset/wall{
+	dir = 1;
+	pixel_y = -28
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "Tc" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -2130,6 +2141,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/ship/cargo)
+"TI" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/template_noop)
 "TL" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2433,6 +2447,20 @@
 /obj/structure/sign/number/one,
 /turf/open/floor/engine,
 /area/ship/cargo)
+"YD" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "engine fuel pump"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/structure/closet/crate,
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "YQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2523,7 +2551,7 @@ sl
 lT
 bN
 lT
-sl
+TI
 TQ
 vW
 sl
@@ -2537,7 +2565,7 @@ UK
 lT
 lT
 AZ
-lT
+SG
 lT
 Qv
 hJ
@@ -2554,7 +2582,7 @@ lT
 CA
 lT
 vu
-yW
+YD
 lL
 lT
 sl
