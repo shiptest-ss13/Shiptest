@@ -36,7 +36,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	if(T.dir != dir)
 		T.setDir(dir)
 	if(T.smoothing_flags != smoothing_flags)
-		T.smoothing_flags
+		T.smoothing_flags = smoothing_flags
 		QUEUE_SMOOTH(T)
 		QUEUE_SMOOTH_NEIGHBORS(T)
 	return T
