@@ -13,6 +13,7 @@
 	type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab/monkey
 	gib_type = /obj/effect/decal/cleanable/blood/gibs
 	unique_name = TRUE
+	can_be_shoved_into = TRUE
 	blocks_emissive = EMISSIVE_BLOCK_UNIQUE
 	bodyparts = list(
 		/obj/item/bodypart/chest/monkey,
@@ -23,6 +24,8 @@
 		/obj/item/bodypart/l_leg/monkey,
 		)
 	hud_type = /datum/hud/monkey
+	melee_damage_lower = 1
+	melee_damage_upper = 3
 
 /mob/living/carbon/monkey/Initialize(mapload, cubespawned=FALSE, mob/spawner)
 	add_verb(src, /mob/living/proc/mob_sleep)

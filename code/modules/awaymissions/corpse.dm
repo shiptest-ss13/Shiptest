@@ -276,9 +276,9 @@
 	S.colour = mobcolour
 
 /obj/effect/mob_spawn/facehugger/create(ckey) //Creates a squashed facehugger
-	var/obj/item/clothing/mask/facehugger/O = new(src.loc) //variable O is a new facehugger at the location of the landmark
-	O.name = src.name
-	O.Die() //call the facehugger's death proc
+	var/mob/living/simple_animal/hostile/facehugger/object = new(src.loc) //variable object is a new facehugger at the location of the landmark
+	object.name = src.name
+	object.death() //call the facehugger's death proc
 	qdel(src)
 
 /obj/effect/mob_spawn/mouse
