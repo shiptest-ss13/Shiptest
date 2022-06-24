@@ -148,6 +148,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/syndicate/alt
 
+<<<<<<< HEAD
 /datum/outfit/job/doctor/syndicate/aclf
 	name = "Field Surgeon (Medical Doctor)"
 
@@ -158,3 +159,20 @@
 	ears = /obj/item/radio/headset/syndicate
 	suit = null
 	suit_store = null
+=======
+/datum/outfit/job/doctor/roumain
+	name = "Hunter Doctor (Saint-Roumain Militia)"
+
+	uniform = /obj/item/clothing/under/suit/roumain
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/toggle/labcoat/roumain_med
+
+	head = /obj/item/clothing/head/cowboy/sec/roumain/med
+	mask = /obj/item/clothing/mask/gas/plaguedoctor
+	gloves = null
+	backpack = /obj/item/storage/backpack
+	satchel  = /obj/item/storage/backpack/satchel
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger
+>>>>>>> ee5a1d7b4d8d97eb0b79e5d1b0c4bf728523ec72
