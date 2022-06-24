@@ -2642,12 +2642,6 @@
 "NU" = (
 /turf/open/floor/carpet/purple,
 /area/ship/science)
-"Oi" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/external)
 "On" = (
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/camera/autoname,
@@ -2804,6 +2798,9 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "slimebridgeshutters"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -4037,7 +4034,7 @@ Wl
 iL
 rl
 PP
-Oi
+EG
 "}
 (16,1,1) = {"
 ej
