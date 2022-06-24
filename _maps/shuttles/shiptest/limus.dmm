@@ -423,6 +423,7 @@
 "gX" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/item/circuitboard/machine/hydroponics,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "gY" = (
@@ -2354,6 +2355,7 @@
 	name = "Blessed Twikie"
 	},
 /obj/structure/curtain/cloth/fancy,
+/obj/item/circuitboard/machine/seed_extractor,
 /turf/open/floor/carpet/donk,
 /area/ship/crew/janitor)
 "JH" = (
@@ -2642,6 +2644,12 @@
 "NU" = (
 /turf/open/floor/carpet/purple,
 /area/ship/science)
+"Oi" = (
+/obj/item/kirbyplants/random,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/item/circuitboard/machine/hydroponics,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/xenobiology)
 "On" = (
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/camera/autoname,
@@ -3711,7 +3719,7 @@ qE
 qE
 qE
 WX
-dX
+Oi
 hZ
 ZZ
 Jx
