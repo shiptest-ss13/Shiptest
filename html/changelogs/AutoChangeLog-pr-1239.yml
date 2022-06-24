@@ -1,0 +1,5 @@
+author: tmtmtl30
+delete-after: true
+changes:
+  - bugfix: Fixed some instances in the code where biotypes were assumed to be lists,
+      instead of bitflags, when they're supposed to be bitflags.
