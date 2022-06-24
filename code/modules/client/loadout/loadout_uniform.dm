@@ -233,6 +233,14 @@
 	display_name = "sundress"
 	path = /obj/item/clothing/under/dress/sundress
 
+/datum/gear/uniform/suit/dress_suit
+	display_name = "dress-suit, navy"
+	path = /obj/item/clothing/under/suit/dresssuit
+
+/datum/gear/uniform/suit/dress_suit/skirt
+	display_name = "dress-suitskirt, navy"
+	path = /obj/item/clothing/under/suit/dresssuit/skirt
+
 //Premium
 /datum/gear/uniform/tacticool
 	display_name = "tacticool turtleneck"

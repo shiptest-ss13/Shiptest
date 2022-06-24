@@ -376,6 +376,27 @@
 		/obj/item/melee/baton,
 	)
 
+/obj/item/clothing/suit/armor/roumain
+	name = "saint-roumain duster"
+	desc = "A coat made from hard leather. Meant to withstand long hunts in harsh wilderness."
+	icon_state = "rouma_coat"
+	item_state = "rouma_coat"
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	heat_protection = CHEST|GROIN|ARMS
+
+/obj/item/clothing/suit/armor/roumain/shadow
+	name = "saint-roumain shadow duster"
+	desc = "A coat made from hard leather. Its rough, barely-treated finish is typical of one of the Saint-Roumain Militia's trainees."
+	icon_state = "rouma_shadow_coat"
+	item_state = "rouma_shadow_coat"
+
+/obj/item/clothing/suit/armor/hos/roumain/montagne
+	name = "saint-roumain montagne coat"
+	desc = "A stylish red coat to indicate that you are, in fact, a Hunter Montagne. Made of extra hard exotic leather, treated with bullet-resistant materials, and lined with the fur of some unidentifiable creature."
+	icon_state = "rouma_montagne_coat"
+	item_state = "rouma_montagne_coat"
+
 /obj/item/clothing/suit/armor/vest/lieutenant
 	name = "lieutenant's armor"
 	desc = "An armored vest with a lieutenant's insignia imprinted on it."
