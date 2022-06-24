@@ -50,7 +50,7 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_BLOODCRAWL_EAT, "innate")
 	set_varspeed(1)
-	addtimer(CALLBACK(src, /mob/living/simple_animal/proc/set_varspeed, 0), 30)
+	addtimer(CALLBACK(src, /mob/living/proc/set_varspeed, 0), 30)
 
 /datum/antagonist/imp
 	name = "Imp"

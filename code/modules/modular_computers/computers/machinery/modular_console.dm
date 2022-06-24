@@ -16,6 +16,7 @@
 	light_strength = 2
 	max_integrity = 300
 	integrity_failure = 0.5
+	req_ship_access = TRUE
 	var/console_department = "" // Used in New() to set network tag according to our area.
 
 /obj/machinery/modular_computer/console/buildable/Initialize()
