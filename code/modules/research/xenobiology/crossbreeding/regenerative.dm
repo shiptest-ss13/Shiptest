@@ -46,7 +46,7 @@ Regenerative extracts:
 		user.visible_message("<span class='notice'>[user] crushes the [src] over [H], the milky goo quickly regenerating some of [H.p_their()] injuries!</span>",
 			"<span class='notice'>You squeeze the [src], and it bursts over [H], the milky goo regenerating some of [H.p_their()] injuries.</span>")
 	else
-		if(!do_mob(user, H, (slime_delay * 2))) // 2 second delay
+		if(!do_mob(user, H, (slime_delay * 1.5))) // 1.5 second delay
 			return FALSE
 		user.visible_message("<span class='notice'>[user] crushes the [src] over [user.p_them()]self, the milky goo quickly regenerating some of [user.p_their()] injuries!</span>",
 			"<span class='notice'>You squeeze the [src], and it bursts in your hand, splashing you with milky goo which quickly regenerates some of your injuries!</span>")
@@ -78,9 +78,13 @@ Regenerative extracts:
 
 /obj/item/slimecross/regenerative/purple
 	colour = "purple"
-	effect_desc = "Partially heals the target and injects them with some additional regen jelly."
+	effect_desc = "Weakly heals the target, but treats toxin damage especially well. Additionally injects them with some additional regen jelly."
+
+/obj/item/slimecross/regenerative/purple/core_effect_before(mob/living/target, mob/user)
+	slime_heal_modifier = 0.75
 
 /obj/item/slimecross/regenerative/purple/core_effect(mob/living/target, mob/user)
+	tox_loss = (10 + (target.getBruteLoss() * 0.8))
 	jelly_amount += 10
 
 /obj/item/slimecross/regenerative/blue
@@ -121,7 +125,7 @@ Regenerative extracts:
 
 /obj/item/slimecross/regenerative/yellow/core_effect_before(mob/living/target, mob/user)
 	if(target.stat == DEAD)
-		slime_heal_modifier = 0.1
+		slime_heal_modifier = 0.1 //use surgery to fix wounds
 	else
 		slime_heal_modifier = 0.75 //discourages spamming these to revive a target, combine with other cores
 
@@ -135,8 +139,8 @@ Regenerative extracts:
 		ToCharge.charge = ToCharge.maxcharge
 		to_chat(target, "<span class='notice'>You feel a strange electrical pulse, and one of your electrical items was recharged.</span>")
 	if(target.stat == DEAD)
-		blood_loss = 50
-		organ_loss = 2
+		blood_loss = 100
+		organ_loss = 30 // More effective at fixing organs if the target is dead
 		jelly_amount *= 0.2
 		target.visible_message("<span class='warning'>The [src] sparks as it tries to revive [target]!</span>")
 
