@@ -7,6 +7,8 @@
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dcba97"
 	wiki_page = "Shaft_Miner" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Explorer", "Righand")
+	senior_title = "Senior Miner"
 
 	outfit = /datum/outfit/job/miner
 
@@ -147,3 +149,22 @@
 		/obj/item/reagent_containers/hypospray/medipen/survival,\
 		/obj/item/gun/energy/kinetic_accelerator/old=1,\
 		/obj/item/stack/marker_beacon/ten=1)
+
+/datum/outfit/job/miner/righand
+	name = "Righand"
+	backpack_contents = list(
+		/obj/item/flashlight/seclite=1,
+		/obj/item/kitchen/knife/combat/survival=1,
+		/obj/item/mining_voucher=1,
+		/obj/item/pinpointer/deepcore=1,
+		/obj/item/wrench=1
+	)
+
+/datum/outfit/job/miner/seniorminer
+	backpack_contents = list(
+		/obj/item/flashlight/seclite=1,
+		/obj/item/kitchen/knife/combat/survival=1,
+		/obj/item/mining_voucher=1,
+		/obj/item/stack/marker_beacon/ten=1,
+		/obj/item/borg/upgrade/modkit/aoe=1
+	)

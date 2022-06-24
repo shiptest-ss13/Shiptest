@@ -410,6 +410,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_ipc_brain"], features["ipc_brain"])
 	READ_FILE(S["feature_kepori_feathers"], features["kepori_feathers"])
 	READ_FILE(S["feature_kepori_body_feathers"], features["kepori_body_feathers"])
+	READ_FILE(S["feature_kepori_tail_feathers"], features["kepori_tail_feathers"])
 	READ_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
 	READ_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
 	READ_FILE(S["alt_titles_preferences"], alt_titles_preferences)
@@ -533,6 +534,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["ipc_brain"] = sanitize_inlist(features["ipc_brain"], GLOB.ipc_brain_list)
 	features["kepori_feathers"] = sanitize_inlist(features["kepori_feathers"], GLOB.kepori_feathers_list, "Plain")
 	features["kepori_body_feathers"] = sanitize_inlist(features["kepori_body_feathers"], GLOB.kepori_body_feathers_list, "Plain")
+	features["kepori_tail_feathers"] = sanitize_inlist(features["kepori_tail_feathers"], GLOB.kepori_tail_feathers_list, "Fan")
 	features["vox_head_quills"] = sanitize_inlist(features["vox_head_quills"], GLOB.vox_head_quills_list, "None")
 	features["vox_neck_quills"] = sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
@@ -607,6 +609,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_ipc_brain"]			, features["ipc_brain"])
 	WRITE_FILE(S["feature_kepori_feathers"]	, features["kepori_feathers"])
 	WRITE_FILE(S["feature_kepori_body_feathers"], features["kepori_body_feathers"])
+	WRITE_FILE(S["feature_kepori_tail_feathers"], features["kepori_tail_feathers"])
 	WRITE_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
 	WRITE_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
 

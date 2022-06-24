@@ -11,6 +11,8 @@
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Security Guard", "Junior Officer")
+	senior_title = "Senior Officer"
 
 	outfit = /datum/outfit/job/security
 
@@ -224,7 +226,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1)
 
 /datum/outfit/job/security/inteq
-	name = "IRMG Enforcer"
+	name = "IRMG Enforcer (Inteq)"
 
 	head = /obj/item/clothing/head/helmet/inteq
 	suit = /obj/item/clothing/suit/armor/vest/alt
@@ -237,7 +239,15 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	gloves = /obj/item/clothing/gloves/combat
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1,/obj/item/pda/security )
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/m45=1, /obj/item/gun_voucher=1,/obj/item/pda/security )
+
+/datum/outfit/job/security/inteq/naked
+	name = "IRMG Enforcer (Inteq) (Naked)"
+	head = null
+	suit = null
+	belt = null
+	mask = null
+	gloves = null
 
 /datum/outfit/job/security/nanotrasen
 	name = "Security Officer (Nanotrasen)"

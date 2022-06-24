@@ -497,7 +497,7 @@
 	item_state = "xenos_helm"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-	allowed = list(/obj/item/clothing/mask/facehugger/toy)
+	allowed = list(/mob/living/simple_animal/hostile/facehugger/toy)
 
 /obj/item/clothing/suit/nemes
 	name = "pharoah tunic"
@@ -838,3 +838,12 @@
 	icon_state = "DutchJacket"
 	item_state = "DutchJacket"
 	body_parts_covered = ARMS
+
+/obj/item/clothing/suit/aclf
+	name = "\improper 2nd Battlegroup jacket"
+	desc = "An armored jacket worn by the Gorlex Marauders 2nd Battlegroup."
+	body_parts_covered = CHEST|GROIN|ARMS|HANDS
+	icon_state = "aclfjacket"
+	item_state = "aclfjacket"
+	blood_overlay_type = "coat"
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)

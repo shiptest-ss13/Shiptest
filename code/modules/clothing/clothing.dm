@@ -83,23 +83,27 @@
 	else
 		return ..()
 
-/obj/item/clothing/attackby(obj/item/W, mob/user, params)
-	if(W.get_sharpness() && cuttable)
-		if (alert(user, "Are you sure you want to cut the [src] into strips?", "Cut clothing:", "Yes", "No") != "Yes")
+/obj/item/clothing/attackby(obj/item/tool, mob/user, params)
+	if(tool.get_sharpness() && cuttable)
+		if(tgui_alert(user, "Are you sure you want to cut \the [src] into strips?", "Cut clothing:", list("Yes", "No")) != "Yes")
+			return
+		if(QDELETED(src))
 			return
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
-		to_chat(user, "<span class='notice'>You cut the [src] into strips with [W].</span>")
-		var/obj/item/stack/sheet/cotton/cloth/C = new (get_turf(src), clothamnt)
-		user.put_in_hands(C)
+		to_chat(user, "<span class='notice'>You cut the [src] into strips with [tool].</span>")
+		var/obj/item/stack/sheet/cotton/cloth/cloth = new (get_turf(src), clothamnt)
+		user.put_in_hands(cloth)
 		qdel(src)
 
-	if(damaged_clothes && istype(W, /obj/item/stack/sheet/cotton/cloth))
-		var/obj/item/stack/sheet/cotton/cloth/C = W
-		C.use(1)
+	if(damaged_clothes && istype(tool, /obj/item/stack/sheet/cotton/cloth))
+		var/obj/item/stack/sheet/cotton/cloth/cloth = tool
+		if(!cloth.use(1))
+			to_chat(user, "<span class='notice'>You fail to fix the damage on [src].</span>")
+			return TRUE
 		update_clothes_damaged_state(FALSE)
 		obj_integrity = max_integrity
-		to_chat(user, "<span class='notice'>You fix the damage on [src] with [C].</span>")
-		return 1
+		to_chat(user, "<span class='notice'>You fix the damage on [src] with [cloth].</span>")
+		return TRUE
 	return ..()
 
 /obj/item/clothing/Destroy()
@@ -283,13 +287,37 @@
 	female_clothing_icon 			= fcopy_rsc(female_clothing_icon)
 	GLOB.female_clothing_icons[index] = female_clothing_icon
 
-/obj/item/proc/generate_species_clothing(file2use, state2use, datum/species/species)
-	if(!icon_exists(species.species_clothing_path, greyscale_icon_state))
+/obj/item/proc/generate_species_clothing(file2use, state2use, layer, datum/species/mob_species)
+	if(!icon_exists(file2use, state2use))
 		return
 
 	var/icon/human_clothing_icon = icon(file2use, state2use)
 
-	var/icon/species_icon = icon(species.species_clothing_path, greyscale_icon_state)
+	if("[layer]" in mob_species.offset_clothing)
+		// This code taken from Baystation 12
+		var/icon/final_I = icon('icons/blanks/32x32.dmi', "nothing")
+		var/list/shifts = mob_species.offset_clothing["[layer]"]
+
+		// Apply all pixel shifts for each direction.
+		for(var/shift_facing in shifts)
+			var/list/facing_list = shifts[shift_facing]
+			var/use_dir = text2num(shift_facing)
+			var/icon/equip = icon(file2use, icon_state = state2use, dir = use_dir)
+			var/icon/canvas = icon('icons/blanks/32x32.dmi', "nothing")
+			canvas.Blend(equip, ICON_OVERLAY, facing_list["x"]+1, facing_list["y"]+1)
+			final_I.Insert(canvas, dir = use_dir)
+		final_I = fcopy_rsc(final_I)
+		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = final_I
+		return TRUE
+
+	if(!greyscale_colors || !greyscale_icon_state)
+		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = human_clothing_icon
+		return
+
+	if(!icon_exists(mob_species.species_clothing_path, greyscale_icon_state))
+		return
+
+	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_icon_state)
 	var/list/final_list = list()
 	for(var/i in 1 to 3)
 		if(length(greyscale_colors) < i)
@@ -303,7 +331,7 @@
 
 	species_icon.MapColors(final_list[1], final_list[2], final_list[3])
 	species_icon = fcopy_rsc(species_icon)
-	GLOB.species_clothing_icons[species.id]["[file2use]-[state2use]"] = species_icon
+	GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = species_icon
 
 	return TRUE
 
