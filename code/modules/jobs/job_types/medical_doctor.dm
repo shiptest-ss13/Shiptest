@@ -148,7 +148,6 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/syndicate/alt
 
-<<<<<<< HEAD
 /datum/outfit/job/doctor/syndicate/aclf
 	name = "Field Surgeon (Medical Doctor)"
 
@@ -159,7 +158,7 @@
 	ears = /obj/item/radio/headset/syndicate
 	suit = null
 	suit_store = null
-=======
+
 /datum/outfit/job/doctor/roumain
 	name = "Hunter Doctor (Saint-Roumain Militia)"
 
@@ -175,4 +174,3 @@
 	satchel  = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
->>>>>>> ee5a1d7b4d8d97eb0b79e5d1b0c4bf728523ec72
