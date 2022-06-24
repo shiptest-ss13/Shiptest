@@ -2590,7 +2590,6 @@
 	name = "Wings"
 	icon_state = "wings"
 
-
 /datum/sprite_accessory/kepori_tail_feathers
 	color_src = FACEHAIR
 	icon = 'icons/mob/kepori_parts.dmi'
@@ -2609,6 +2608,11 @@
 /datum/sprite_accessory/kepori_tail_feathers/fanback
 	name = "Fan and Back"
 	icon_state = "fanback"
+
+/datum/sprite_accessory/kepori_tail_feathers/prosthetic
+	name = "Prosthetic Tail"
+	icon_state = "prosthetic"
+	color_src = null
 
 // Moth
 
