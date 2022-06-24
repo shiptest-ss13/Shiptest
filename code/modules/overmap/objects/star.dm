@@ -8,7 +8,6 @@
 	Rename(gen_star_name())
 	token.desc = token_desc
 	alter_token_appearance()
-	token.SpinAnimation(rand(1 MINUTES, 4 MINUTES))
 
 /datum/overmap/star/proc/gen_star_name()
 	return "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"
