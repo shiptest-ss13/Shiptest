@@ -49,9 +49,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/light{
-	dir = 4
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/xenobiology)
 "aT" = (
@@ -97,6 +94,9 @@
 /obj/structure/window/reinforced/spawner,
 /obj/structure/disposalpipe/segment{
 	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	id = "slime_iso"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/xenobiology)
@@ -174,6 +174,12 @@
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/tech,
+/area/ship/science/xenobiology)
+"bQ" = (
+/obj/item/kirbyplants/random,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/item/circuitboard/machine/hydroponics,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ship/science/xenobiology)
 "cu" = (
 /obj/effect/turf_decal/corner/brown/border,
@@ -455,13 +461,18 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "hf" = (
-/obj/effect/turf_decal/corner/purple/border{
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 8
+/obj/structure/window/reinforced/spawner{
+	dir = 4
 	},
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/poddoor/shutters{
+	id = "westslimeshutters"
+	},
+/turf/open/floor/engine,
 /area/ship/science/xenobiology)
 "hh" = (
 /turf/open/floor/carpet/donk,
@@ -545,8 +556,16 @@
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/science/xenobiology)
 "ig" = (
-/obj/machinery/light{
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "eastslimeshutters"
 	},
 /turf/open/floor/engine,
 /area/ship/science/xenobiology)
@@ -1130,6 +1149,7 @@
 /obj/structure/curtain/cloth/fancy,
 /obj/item/stack/tile/carpet/red/fifty,
 /obj/effect/spawner/bundle/costume/maid,
+/obj/item/stack/tile/carpet/red/fifty,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/janitor)
 "sY" = (
@@ -1990,6 +2010,20 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/xenobiology)
+"Fc" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "eastslimeshutters"
+	},
+/turf/open/floor/engine,
+/area/ship/science/xenobiology)
 "Fk" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -2159,6 +2193,9 @@
 /obj/structure/window/reinforced/spawner,
 /obj/structure/disposalpipe/segment{
 	dir = 9
+	},
+/obj/machinery/door/poddoor{
+	id = "slime_iso"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/xenobiology)
@@ -2645,10 +2682,15 @@
 /turf/open/floor/carpet/purple,
 /area/ship/science)
 "Oi" = (
-/obj/item/kirbyplants/random,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/circuitboard/machine/hydroponics,
-/turf/open/floor/mineral/titanium/tiled,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/turf/open/floor/engine,
 /area/ship/science/xenobiology)
 "On" = (
 /obj/structure/disposalpipe/trunk,
@@ -3083,6 +3125,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
+/obj/machinery/door/poddoor{
+	id = "slime_iso"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/xenobiology)
 "Uh" = (
@@ -3128,6 +3173,14 @@
 /obj/machinery/door/window/eastleft,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/science/xenobiology)
+"UN" = (
+/obj/effect/turf_decal/corner/purple/border{
+	dir = 1
+	},
+/obj/structure/frame/machine,
+/obj/item/circuitboard/machine/techfab/department/engineering,
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering/engine)
 "US" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -3202,8 +3255,16 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Ws" = (
-/obj/machinery/light{
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/window/reinforced/spawner{
 	dir = 8
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "slime_iso"
 	},
 /turf/open/floor/engine,
 /area/ship/science/xenobiology)
@@ -3379,6 +3440,9 @@
 /obj/item/wallframe/camera,
 /obj/item/wallframe/camera,
 /obj/item/wallframe/camera,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/engine,
 /area/ship/science/xenobiology)
 "Yr" = (
@@ -3719,7 +3783,7 @@ qE
 qE
 qE
 WX
-Oi
+bQ
 hZ
 ZZ
 Jx
@@ -3817,18 +3881,18 @@ Sk
 Pg
 qE
 qE
-qE
-qE
-qE
+Oi
+Oi
+Oi
 qE
 Ga
 NT
 Kx
 wA
 qE
-qE
-qE
-qE
+Oi
+Oi
+Oi
 qE
 RB
 hh
@@ -3918,9 +3982,9 @@ BL
 HE
 HE
 qE
-qE
-qE
-qE
+hf
+hf
+hf
 qE
 Ri
 Ri
@@ -3930,7 +3994,7 @@ Ri
 qE
 qE
 qE
-qE
+hf
 qE
 qE
 qE
@@ -3952,7 +4016,7 @@ BL
 HE
 Fl
 AG
-hf
+AG
 gF
 pa
 Gx
@@ -3990,10 +4054,10 @@ uc
 Rl
 qE
 qE
-qE
+Ws
+Ws
+Ws
 WX
-qE
-qE
 db
 pP
 CZ
@@ -4024,7 +4088,7 @@ IO
 Vf
 qE
 Yk
-Ws
+VR
 VR
 VR
 qE
@@ -4137,7 +4201,7 @@ Ko
 Ro
 Go
 qE
-oK
+UN
 RF
 Ks
 hJ
@@ -4160,7 +4224,7 @@ IG
 Qi
 qE
 Yk
-ig
+VR
 VR
 VR
 qE
@@ -4194,10 +4258,10 @@ Ke
 Ju
 qE
 qE
-qE
+Ws
+Ws
+Ws
 WX
-qE
-qE
 PL
 pP
 wf
@@ -4258,9 +4322,9 @@ BL
 HE
 HE
 qE
-qE
-qE
-qE
+ig
+ig
+ig
 qE
 Ri
 Ri
@@ -4270,7 +4334,7 @@ Ri
 qE
 qE
 qE
-qE
+Fc
 qE
 qE
 DH
@@ -4361,18 +4425,18 @@ Yh
 Pg
 qE
 qE
-qE
-qE
-qE
+Oi
+Oi
+Oi
 qE
 kY
 SX
 Kx
 NJ
 qE
-qE
-qE
-qE
+Oi
+Oi
+Oi
 qE
 hM
 Lv
