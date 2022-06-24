@@ -876,6 +876,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["kepori_body_feathers"] || H.dna.features["kepori_body_feathers"] == "None" || (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT)))
 			bodyparts_to_add -= "kepori_body_feathers"
 
+	if("kepori_tail_feathers" in mutant_bodyparts)
+		if(!H.dna.features["kepori_tail_feathers"] || H.dna.features["kepori_tail_feathers"] == "None")
+			bodyparts_to_add -= "kepori_tail_feathers"
+
 	if("kepori_feathers" in mutant_bodyparts)
 		if(!H.dna.features["kepori_feathers"] || H.dna.features["kepori_feathers"] == "None" || (H.head && (H.head.flags_inv & HIDEHAIR)) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD) //HD.status == BODYTYPE_ROBOTIC) and here too
 			bodyparts_to_add -= "kepori_feathers"
@@ -978,6 +982,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.spider_mandibles_list[H.dna.features["spider_mandibles"]]
 				if("kepori_body_feathers")
 					S = GLOB.kepori_body_feathers_list[H.dna.features["kepori_body_feathers"]]
+				if("kepori_tail_feathers")
+					S = GLOB.kepori_tail_feathers_list[H.dna.features["kepori_tail_feathers"]]
 				if("kepori_feathers")
 					S = GLOB.kepori_feathers_list[H.dna.features["kepori_feathers"]]
 				if("vox_head_quills")
