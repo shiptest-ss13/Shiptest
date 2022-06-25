@@ -27,6 +27,7 @@
 	no_equip = list(ITEM_SLOT_BACK)
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
+	var/datum/action/innate/keptackle/keptackle
 	/// # Inherit tackling variables #
 	/// See: [/datum/component/tackler/var/stamina_cost]
 	var/tackle_stam_cost = 10
@@ -78,9 +79,32 @@
 
 /datum/species/kepori/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	..()
-	C.AddComponent(/datum/component/tackler, stamina_cost= tackle_stam_cost, base_knockdown= base_knockdown, range= tackle_range, speed= tackle_speed, skill_mod= skill_mod, min_distance= min_distance)
-
+	if(ishuman(C))
+		keptackle = new
+		keptackle.Grant(C)
 
 /datum/species/kepori/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
-	. = ..()
+	if(keptackle)
+		keptackle.Remove(C)
 	qdel(C.GetComponent(/datum/component/tackler))
+	..()
+
+
+/datum/action/innate/keptackle
+	name = "Pounce"
+	desc = "Ready yourself to pounce."
+	check_flags = AB_CHECK_CONSCIOUS
+	button_icon_state = "tackle"
+	icon_icon = 'icons/obj/clothing/gloves.dmi'
+	background_icon_state = "bg_alien"
+
+/datum/action/innate/keptackle/Activate()
+	var/mob/living/carbon/human/H = owner
+	var/datum/species/kepori/kep = H.dna.species
+	if(H.GetComponent(/datum/component/tackler))
+		qdel(H.GetComponent(/datum/component/tackler))
+		to_chat(H, "<span class='notice'>You relax, no longer ready to pounce.</span>")
+		return
+	H.AddComponent(/datum/component/tackler, stamina_cost= kep.tackle_stam_cost, base_knockdown= kep.base_knockdown, range= kep.tackle_range, speed= kep.tackle_speed, skill_mod= kep.skill_mod, min_distance= kep.min_distance)
+	H.visible_message("<span class='notice'>[H] gets ready to pounce!</span>", \
+		"<span class='notice'>You ready yourself to pounce!</span>", null, COMBAT_MESSAGE_RANGE)
