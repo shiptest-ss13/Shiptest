@@ -222,12 +222,11 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "eV" = (
-/obj/machinery/door/airlock/command,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
 "eW" = (
 /obj/machinery/holopad/emergency/medical,
@@ -380,15 +379,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/office)
-"iO" = (
-/obj/machinery/door/airlock/vault{
-	id_tag = "30"
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "30"
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/medical)
 "ja" = (
 /obj/machinery/button/door{
 	dir = 4;
@@ -2773,7 +2763,7 @@ Mr
 eA
 BR
 mI
-iO
+mI
 il
 mI
 MD
