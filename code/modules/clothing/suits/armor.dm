@@ -347,7 +347,7 @@
 	desc = "A luxurious brown coat with an crossweave of Kevlar and fur from genuine wolves, as protective as it is stylish."
 	icon_state = "inteq_battlecoat"
 	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"
