@@ -49,7 +49,7 @@
 							)
 
 /obj/machinery/autolathe/Initialize()
-	AddComponent(/datum/component/material_container,list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/gold, /datum/material/plasma, /datum/material/uranium, /datum/material/titanium), 0, TRUE, null, null, CALLBACK(src, .proc/AfterMaterialInsert))
+	AddComponent(/datum/component/material_container,list(/datum/material/iron, /datum/material/glass, /datum/material/plastic, /datum/material/silver, /datum/material/gold, /datum/material/plasma, /datum/material/uranium, /datum/material/titanium), 0, TRUE, null, null, CALLBACK(src, .proc/AfterMaterialInsert))
 	. = ..()
 
 	wires = new /datum/wires/autolathe(src)
@@ -87,9 +87,11 @@
 	for(var/mat_id in materials.materials)
 		var/datum/material/M = mat_id
 		var/mineral_count = materials.materials[mat_id]
+		var/sheets_count = CEILING(mineral_count / MINERAL_MATERIAL_AMOUNT, 0.1)
 		var/list/material_data = list(
 			name = M.name,
 			mineral_amount = mineral_count,
+			sheets_amount = sheets_count,
 			matcolour = M.color,
 		)
 		data["materials"] += list(material_data)
@@ -184,6 +186,21 @@
 		. = TRUE
 	if(action == "diskEject")
 		eject(usr)
+
+	if(action == "materialEject")
+		var/material_name = params["materialName"]
+		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+		var/amount = text2num(params["amount"])
+		if(amount <= 0 || amount > 50)
+			return
+
+		for(var/mat in materials.materials)
+			var/datum/material/M = mat
+			if("[M]" == material_name)
+				stack_trace("Found [M] for [material_name], attempting to eject [amount]")
+				materials.retrieve_sheets(amount, M, get_turf(src))
+				. = TRUE
+				break
 
 	if(action == "make")
 		if (!busy)

@@ -147,3 +147,19 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/syndicate/alt
+
+/datum/outfit/job/doctor/roumain
+	name = "Hunter Doctor (Saint-Roumain Militia)"
+
+	uniform = /obj/item/clothing/under/suit/roumain
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/toggle/labcoat/roumain_med
+
+	head = /obj/item/clothing/head/cowboy/sec/roumain/med
+	mask = /obj/item/clothing/mask/gas/plaguedoctor
+	gloves = null
+	backpack = /obj/item/storage/backpack
+	satchel  = /obj/item/storage/backpack/satchel
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger
