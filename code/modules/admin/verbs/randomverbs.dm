@@ -968,7 +968,6 @@
 				return
 		if(ADMIN_PUNISHMENT_IMMERSE)
 			immerse_player(target)
-<<<<<<<
 		if(ADMIN_PUNISHMENT_FAT)
 			target.set_nutrition(NUTRITION_LEVEL_FAT*2)
 		if(ADMIN_PUNISHMENT_FAKEBWOINK)
@@ -1069,19 +1068,13 @@
 				to_chat(usr,"<span class='warning'>[dude] does not have knottable shoes!</span>", confidential = TRUE)
 				return
 			sick_kicks.adjust_laces(SHOES_KNOTTED)
-		if(ADMIN_PUNISHMENT_NYA)//WS Start - Admin Punishment: Cat Tongue
-=======
 		if(ADMIN_PUNISHMENT_NYA)
->>>>>>>
 			if(!iscarbon(target))
 				to_chat(usr,"<span class='warning'>This must be used on a carbon mob.</span>")
 				return
 			to_chat(target, "<span class='userdanger'>You do nyat feew vewy good!</span>", confidential = TRUE)
 			var/mob/living/carbon/dude = target
 			var/obj/item/organ/tongue/felinid/tonje = new
-<<<<<<<
-			tonje.Insert(dude, TRUE, FALSE)//WS End - Admin Punishment: Cat Tongue
-=======
 			tonje.Insert(dude, TRUE, FALSE)
 		if(ADMIN_PUNISHMENT_PIE)
 			var/pie_count = input("How many pies do you want to deploy?:","Armageddon") as num|null
@@ -1093,7 +1086,6 @@
 					return
 				addtimer(CALLBACK(GLOBAL_PROC, .proc/pie_smite, target), delay_counter)
 				delay_counter += 1
->>>>>>>
 	punish_log(target, punishment)
 
 /**
