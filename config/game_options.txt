@@ -451,6 +451,7 @@ ROUNDSTART_RACES felinid
 #ROUNDSTART_RACES squid
 ROUNDSTART_RACES kepori
 ROUNDSTART_RACES rachnid
+ROUNDSTART_RACES vox
 
 ## Races that are better than humans in some ways, but worse in others
 ROUNDSTART_RACES ethereal
@@ -604,3 +605,9 @@ OVERMAP_GENERATOR_TYPE solar_system
 ## The time required before a ship is allowed to bluespace jump. -1 disables it entirely
 ## In deciseconds, valid values are -1 to INFINITY
 BLUESPACE_JUMP_WAIT 12000
+
+## Whether this server is an authentication server
+#AUTH_ONLY
+
+## If admins are allowed to use the authentication server as a regular server for testing
+AUTH_ADMIN_TESTING

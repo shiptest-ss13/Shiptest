@@ -9,6 +9,8 @@
 		diag_hud.add_to_hud(src)
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
+	if(speed)
+		update_living_varspeed()
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
@@ -1509,15 +1511,15 @@
 /**
  * get_body_temp_normal Returns the mobs normal body temperature with any modifications applied
  *
- * This applies the result from proc/get_body_temp_normal_change() against the BODYTEMP_NORMAL and returns the result
+ * This applies the result from proc/get_body_temp_normal_change() against the HUMAN_BODYTEMP_NORMAL and returns the result
  *
  * arguments:
  * * apply_change (optional) Default True This applies the changes to body temperature normal
  */
 /mob/living/proc/get_body_temp_normal(apply_change=TRUE)
 	if(!apply_change)
-		return BODYTEMP_NORMAL
-	return BODYTEMP_NORMAL + get_body_temp_normal_change()
+		return HUMAN_BODYTEMP_NORMAL
+	return HUMAN_BODYTEMP_NORMAL + get_body_temp_normal_change()
 
 ///Checks if the user is incapacitated or on cooldown.
 /mob/living/proc/can_look_up()
@@ -1873,3 +1875,26 @@
 		AdjustParalyzed(howfuck)
 		AdjustKnockdown(howfuck)
 		Jitter(rand(150,200))
+
+/**
+ * Sets the mob's speed variable and then calls update_living_varspeed().
+ *
+ * Sets the mob's speed variable, which does nothing by itself.
+ * It then calls update_living_varspeed(), which then actually applies the movespeed change.
+ * Arguments:
+ * * var_value - The new value of speed.
+ */
+/mob/living/proc/set_varspeed(var_value)
+	speed = var_value
+	update_living_varspeed()
+
+/**
+ * Applies the mob's speed variable to a movespeed modifier.
+ *
+ * Applies the speed variable to a movespeed variable.  If the speed is 0, removes the movespeed modifier.
+ */
+/mob/living/proc/update_living_varspeed()
+	if(speed == 0)
+		remove_movespeed_modifier(/datum/movespeed_modifier/living_varspeed)
+		return
+	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/living_varspeed, multiplicative_slowdown = speed)

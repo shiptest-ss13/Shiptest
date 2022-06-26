@@ -1,3 +1,12 @@
+/**
+ * # Alien
+ *
+ * The base subtype of all aliens.  Used to establish the basic mechanics (such as organs) they use.
+ *
+ * The normal alien subtpe, which no xeno actually uses.  This is used to solely to establish mechanics
+ * that all aliens inherit, such as organs, bodyparts, temperature handling, and so on.  Also allows
+ * aliens to receive an overlay on mobs with alien embryos inside of them.
+ */
 /mob/living/carbon/alien
 	name = "alien"
 	icon = 'icons/mob/alien.dmi'
@@ -13,16 +22,18 @@
 	type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab/xeno
 
 	var/obj/item/card/id/wear_id = null // Fix for station bounced radios -- Skie
-	var/has_fine_manipulation = 0
-	var/move_delay_add = 0 // movement delay to add
+	var/has_fine_manipulation = FALSE
 
 	status_flags = CANUNCONSCIOUS|CANPUSH
 
 	heat_protection = 0.5 // minor heat insulation
 
-	var/leaping = 0
 	gib_type = /obj/effect/decal/cleanable/xenoblood/xgibs
-	unique_name = 1
+	unique_name = TRUE
+
+	/// Determines whether or not the alien is leaping.  Currently only used by the hunter.
+	var/leaping = FALSE
+	/// Used to detmine how to name the alien.
 
 	var/static/regex/alien_name_regex = new("alien (larva|sentinel|drone|hunter|praetorian|queen)( \\(\\d+\\))?")
 
@@ -53,7 +64,7 @@
 	// this balances body temp to the enviroment and natural stabilization
 	. = ..()
 
-	if(bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
+	if(bodytemperature > HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT)
 		//Body temperature is too hot.
 		throw_alert("alien_fire", /atom/movable/screen/alert/alien_fire)
 		switch(bodytemperature)
@@ -69,7 +80,7 @@
 	else
 		clear_alert("alien_fire")
 
-/mob/living/carbon/alien/reagent_check(datum/reagent/R) //can metabolize all reagents
+/mob/living/carbon/alien/handled_by_species(datum/reagent/R) //can metabolize all reagents
 	return 0
 
 /mob/living/carbon/alien/IsAdvancedToolUser()
@@ -84,38 +95,66 @@
 		return pick (list("xltrails_1", "xltrails2"))
 	else
 		return pick (list("xttrails_1", "xttrails2"))
-/*----------------------------------------
-Proc: AddInfectionImages()
-Des: Gives the client of the alien an image on each infected mob.
-----------------------------------------*/
-/mob/living/carbon/alien/proc/AddInfectionImages()
-	if (client)
-		for (var/i in GLOB.mob_living_list)
-			var/mob/living/L = i
-			if(HAS_TRAIT(L, TRAIT_XENO_HOST))
-				var/obj/item/organ/body_egg/alien_embryo/A = L.getorgan(/obj/item/organ/body_egg/alien_embryo)
-				if(A)
-					var/I = image('icons/mob/alien.dmi', loc = L, icon_state = "infected[A.stage]")
-					client.images += I
-	return
-
-
-/*----------------------------------------
-Proc: RemoveInfectionImages()
-Des: Removes all infected images from the alien.
-----------------------------------------*/
-/mob/living/carbon/alien/proc/RemoveInfectionImages()
-	if (client)
-		for(var/image/I in client.images)
-			var/searchfor = "infected"
-			if(findtext(I.icon_state, searchfor, 1, length(searchfor) + 1))
-				qdel(I)
-	return
 
 /mob/living/carbon/alien/canBeHandcuffed()
 	if(num_hands < 2)
 		return FALSE
 	return TRUE
+
+
+/mob/living/carbon/alien/can_hold_items()
+	return has_fine_manipulation
+
+/mob/living/carbon/alien/on_lying_down(new_lying_angle)
+	. = ..()
+	update_icons()
+
+/mob/living/carbon/alien/on_standing_up()
+	. = ..()
+	update_icons()
+
+/**
+ * Renders an icon on mobs with alien embryos inside them.
+ *
+ * Renders an icon on mobs with alien embryos inside them for the client.
+ * Only aliens can see these, with others not seeing anything at all.
+ */
+/mob/living/carbon/alien/proc/AddInfectionImages()
+	if(!client)
+		return
+	for(var/lb in GLOB.mob_living_list)
+		var/mob/living/livingbeing = lb
+		if(!HAS_TRAIT(livingbeing, TRAIT_XENO_HOST))
+			return
+		var/obj/item/organ/body_egg/alien_embryo/embryo = livingbeing.getorgan(/obj/item/organ/body_egg/alien_embryo)
+		if(!embryo)
+			return
+		var/embryo_image = image('icons/mob/alien.dmi', loc = livingbeing, icon_state = "infected[embryo.stage]")
+		client.images += embryo_image
+
+/**
+ * Removes all client embryo displays.
+ *
+ * Removes the embryo icon visuals from the client controlling the alien.
+ */
+/mob/living/carbon/alien/proc/RemoveInfectionImages()
+	if(!client)
+		return
+	for(var/i in client.images)
+		var/image/image = i
+		var/searchfor = "infected"
+		if(findtext(image.icon_state, searchfor, 1, length(searchfor) + 1))
+			qdel(image)
+
+/**
+ * Handles the transformations of one alien type to another.
+ *
+ * Handles the transformation of an alien into another type of alien.
+ * Gives them some message fluff, transfers their mind (important as to transfer other antag statuses)
+ * and then also transfers their nanites should the original body have them.
+ * Arguments:
+ * * new_xeno - The new body of the alien.
+ */
 
 /mob/living/carbon/alien/get_standard_pixel_y_offset(lying = 0)
 	return initial(pixel_y)
@@ -137,9 +176,6 @@ Des: Removes all infected images from the alien.
 		new_xeno.AddComponent(/datum/component/nanites, nanites.linked_techweb, nanites.nanite_volume)
 		SEND_SIGNAL(new_xeno, COMSIG_NANITE_SYNC, nanites)
 	qdel(src)
-
-/mob/living/carbon/alien/can_hold_items()
-	return has_fine_manipulation
 
 /mob/living/carbon/alien/on_lying_down(new_lying_angle)
 	. = ..()

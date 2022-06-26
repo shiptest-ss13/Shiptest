@@ -28,6 +28,8 @@
 	//For some reason everything was exploding if this was static.
 	var/list/sub_managers
 
+	COOLDOWN_DECLARE(silicon_access_print_cooldown)
+
 /datum/computer_file/program/card_mod/New(obj/item/modular_computer/comp)
 	. = ..()
 	sub_managers = list(
@@ -61,6 +63,11 @@
 /datum/computer_file/program/card_mod/proc/authenticate(mob/user, obj/item/card/id/id_card)
 	if(!id_card)
 		return
+
+	if ( computer.req_ship_access )
+		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
+		if ( ship?.unique_ship_access && !( id_card?.has_ship_access( SSshuttle.get_ship( computer ) ) ) )
+			return FALSE
 
 	region_access = list()
 	if(!target_dept && (ACCESS_CHANGE_IDS in id_card.access))
@@ -230,6 +237,45 @@
 					id_card.access |= access_type
 				playsound(computer, "terminal_type", 50, FALSE)
 				return TRUE
+		if ( "PRG_grantship" )
+			if(!computer || !authenticated || !computer.req_ship_access) // Only stationary computers can grant ship access. Prevents funny tablet exploits
+				return
+			id_card.add_ship_access( SSshuttle.get_ship( computer ) )
+			playsound(computer, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+			return TRUE
+		if ( "PRG_denyship" )
+			if(!computer || !authenticated || !computer.req_ship_access)
+				return
+			id_card.remove_ship_access( SSshuttle.get_ship( computer ) )
+			playsound(computer, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
+			return TRUE
+		if ( "PRG_enableuniqueaccess" )
+			if(!computer || !authenticated || !computer.req_ship_access)
+				return
+			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
+			ship?.unique_ship_access = TRUE
+			playsound(computer, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+			return TRUE
+		if ( "PRG_disableuniqueaccess" )
+			if(!computer || !authenticated || !computer.req_ship_access)
+				return
+			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
+			ship?.unique_ship_access = FALSE
+			playsound(computer, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
+			return TRUE
+		if ( "PRG_printsiliconaccess" )
+			if(!computer || !authenticated || !computer.req_ship_access)
+				return
+			if(!COOLDOWN_FINISHED(src, silicon_access_print_cooldown))
+				computer.say("Printer unavailable. Please allow a short time before attempting to print.")
+				return
+			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
+			if ( ship )
+				var/obj/item/borg/upgrade/ship_access_chip/chip = new( get_turf( computer ) )
+				chip.ship = ship
+				COOLDOWN_START(src, silicon_access_print_cooldown, 10 SECONDS)
+			playsound(computer, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+			return TRUE
 		if("PRG_grantall")
 			if(!computer || !authenticated || minor)
 				return
@@ -348,6 +394,13 @@
 			data["id_rank"] = id_card.assignment ? id_card.assignment : "Unassigned"
 			data["id_owner"] = id_card.registered_name ? id_card.registered_name : "-----"
 			data["access_on_card"] = id_card.access
+
+		data[ "req_ship_access" ] = computer.req_ship_access // Only stationary computers can grant ship access. Prevents funny tablet exploits
+		if ( id_card )
+			data[ "id_has_ship_access" ] = id_card.has_ship_access( SSshuttle.get_ship( computer ) )
+		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
+		if ( ship )
+			data[ "ship_has_unique_access" ] = ship.unique_ship_access
 
 	return data
 

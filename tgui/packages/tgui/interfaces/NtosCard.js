@@ -30,6 +30,9 @@ export const NtosCardContent = (props, context) => {
     have_printer,
     have_id_slot,
     id_name,
+    req_ship_access,
+    id_has_ship_access,
+    ship_has_unique_access,
   } = data;
   const [
     selectedDepartment,
@@ -91,22 +94,41 @@ export const NtosCardContent = (props, context) => {
               onClick={() => setTab(2)}>
               Jobs
             </Tabs.Tab>
+            <Tabs.Tab
+              selected={tab === 3}
+              onClick={() => setTab(3)}>
+              Ship Auth
+            </Tabs.Tab>
           </Tabs>
           {tab === 1 && (
-            <AccessList
-              accesses={regions}
-              selectedList={access_on_card}
-              accessMod={ref => act('PRG_access', {
-                access_target: ref,
-              })}
-              grantAll={() => act('PRG_grantall')}
-              denyAll={() => act('PRG_denyall')}
-              grantDep={dep => act('PRG_grantregion', {
-                region: dep,
-              })}
-              denyDep={dep => act('PRG_denyregion', {
-                region: dep,
-              })} />
+            <>
+              {req_ship_access === 1 && (
+                <Section
+                  title={"ID Ship Access: " + (id_has_ship_access?"Granted":"Denied")}
+                  buttons={(
+                    <Button
+                      icon={id_has_ship_access?"user-minus":"user-plus"}
+                      content={id_has_ship_access?"Deny":"Grant"}
+                      color={id_has_ship_access?"bad":"good"}
+                      onClick={() => act(id_has_ship_access?"PRG_denyship":"PRG_grantship")} />
+                  )}
+                />
+              )}
+              <AccessList
+                accesses={regions}
+                selectedList={access_on_card}
+                accessMod={ref => act('PRG_access', {
+                  access_target: ref,
+                })}
+                grantAll={() => act('PRG_grantall')}
+                denyAll={() => act('PRG_denyall')}
+                grantDep={dep => act('PRG_grantregion', {
+                  region: dep,
+                })}
+                denyDep={dep => act('PRG_denyregion', {
+                  region: dep,
+                })} />
+            </>
           )}
           {tab === 2 && (
             <Section
@@ -151,6 +173,29 @@ export const NtosCardContent = (props, context) => {
                 </Flex.Item>
               </Flex>
             </Section>
+          )}
+          {(tab === 3 && req_ship_access === 1) && (
+            <>
+              <Section
+                title={"Unique Ship Access: " + (ship_has_unique_access?"Enabled":"Disabled")}
+                buttons={(
+                  <Button
+                    icon={ship_has_unique_access?"lock-open":"lock"}
+                    content={ship_has_unique_access?"Disable":"Enable"}
+                    color={ship_has_unique_access?"bad":"good"}
+                    onClick={() => act(ship_has_unique_access?'PRG_disableuniqueaccess':'PRG_enableuniqueaccess')} />
+                )} />
+              <Section
+                title="Print Silicon Access Chip"
+                buttons={(
+                  <Button
+                    icon="microchip"
+                    content="Print"
+                    color="good"
+                    onClick={() => act("PRG_printsiliconaccess")}
+                  />
+                )} />
+            </>
           )}
         </Box>
       )}

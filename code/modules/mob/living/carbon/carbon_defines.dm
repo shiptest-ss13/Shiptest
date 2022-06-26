@@ -61,6 +61,8 @@
 
 	var/static/list/limb_icon_cache = list()
 
+	var/layered_hands //Does the mob have "layered hands" and require using HANDS_UNDER_BODY_LAYER?
+
 	//halucination vars
 	var/image/halimage
 	var/image/halbody
@@ -86,3 +88,6 @@
 
 	/// Timer to remove the dream_sequence timer when the mob is deleted
 	var/dream_timer
+
+	/// Can other carbons be shoved into this one to make it fall?
+	var/can_be_shoved_into = FALSE

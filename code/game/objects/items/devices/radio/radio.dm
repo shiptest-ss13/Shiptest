@@ -4,6 +4,8 @@
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
 	desc = "A basic handheld radio that communicates with local telecommunication networks."
+	pickup_sound =  'sound/items/handling/device_pickup.ogg'
+	drop_sound = 'sound/items/handling/device_drop.ogg'
 	dog_fashion = /datum/dog_fashion/back
 
 	flags_1 = CONDUCT_1
@@ -159,6 +161,8 @@
 	. = ..()
 	if(.)
 		return
+	if(isliving(usr) && in_range(src, usr))
+		playsound(src, "button", 10)
 	switch(action)
 		if("frequency")
 			if(freqlock)
