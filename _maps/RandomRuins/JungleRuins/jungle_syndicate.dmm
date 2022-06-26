@@ -149,7 +149,7 @@
 /area/ruin/powered)
 "kr" = (
 /mob/living/simple_animal/hostile/syndicate{
-	desc = "God dammit Jerry! Why the fuck are you barracading yourself in with all of our weapon supplies?";
+	desc = "God dammit Jerry! Why the fuck are you barricading yourself in with all of our weapon supplies?";
 	name = "Jerry";
 	unsuitable_atmos_damage = 0
 	},
@@ -249,6 +249,11 @@
 "uB" = (
 /obj/structure/sign/poster/contraband/revolver,
 /turf/closed/wall,
+/area/ruin/powered)
+"ve" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small,
+/turf/open/floor/plating,
 /area/ruin/powered)
 "vh" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -463,11 +468,6 @@
 	initial_gas_mix = "ws_atmos"
 	},
 /area/ruin/powered)
-"SA" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small,
-/turf/open/floor/plating,
-/area/ruin/powered)
 "Td" = (
 /turf/closed/wall,
 /area/ruin/powered)
@@ -659,7 +659,7 @@ ud
 zM
 hF
 rN
-SA
+ve
 Td
 hF
 hF
