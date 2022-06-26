@@ -266,6 +266,54 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/protolathe/department/science
+	name = "Machine Design (Science Departmental Protolathe Board)"
+	desc = "The circuit board for a science departmental protolathe."
+	id = "sci_protolathe"
+	build_path = /obj/item/circuitboard/machine/protolathe/department/science
+	category = list("Research Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/protolathe/department/security
+	name = "Machine Design (Security Departmental Protolathe Board)"
+	desc = "The circuit board for a security departmental protolathe."
+	id = "sec_protolathe"
+	build_path = /obj/item/circuitboard/machine/protolathe/department/security
+	category = list("Research Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/protolathe/department/cargo
+	name = "Machine Design (Cargo Departmental Protolathe Board)"
+	desc = "The circuit board for a cargo departmental protolathe."
+	id = "car_protolathe"
+	build_path = /obj/item/circuitboard/machine/protolathe/department/cargo
+	category = list("Research Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/protolathe/department/medical
+	name = "Machine Design (Medical Departmental Protolathe Board)"
+	desc = "The circuit board for a medical departmental protolathe."
+	id = "med_protolathe"
+	build_path = /obj/item/circuitboard/machine/protolathe/department/medical
+	category = list("Research Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/protolathe/department/engineering
+	name = "Machine Design (Engineering Departmental Protolathe Board)"
+	desc = "The circuit board for a engineering departmental protolathe."
+	id = "eng_protolathe"
+	build_path = /obj/item/circuitboard/machine/protolathe/department/engineering
+	category = list("Research Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/protolathe/department/service
+	name = "Machine Design (Service Departmental Protolathe Board)"
+	desc = "The circuit board for a service departmental protolathe."
+	id = "ser_protolathe"
+	build_path = /obj/item/circuitboard/machine/protolathe/department/service
+	category = list("Research Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
 /datum/design/board/circuit_imprinter
 	name = "Machine Design (Circuit Imprinter Board)"
 	desc = "The circuit board for a circuit imprinter."
