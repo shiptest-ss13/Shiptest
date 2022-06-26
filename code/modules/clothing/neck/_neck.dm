@@ -7,7 +7,7 @@
 	equip_delay_other = 40
 	cuttable = TRUE
 	clothamnt = 1
-	greyscale_colors = list(list(15, 19), list(15, 21), list(15, 12))
+	greyscale_colors = list(list(15, 20), list(16	, 21), list(14, 19))
 	greyscale_icon_state = "scarf"
 
 /obj/item/clothing/neck/worn_overlays(isinhands = FALSE)
