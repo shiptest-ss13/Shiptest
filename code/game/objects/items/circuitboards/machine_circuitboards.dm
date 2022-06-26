@@ -458,7 +458,7 @@
 	req_components = list()
 
 /obj/item/circuitboard/machine/protolathe
-	name = "Protolathe (Machine Board)"
+	name = "Universal Protolathe (Machine Board)"
 	icon_state = "generic"
 	build_path = /obj/machinery/rnd/production/protolathe
 	req_components = list(
