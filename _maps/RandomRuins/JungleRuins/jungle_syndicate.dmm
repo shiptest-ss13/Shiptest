@@ -97,6 +97,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/machinery/light/small,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered)
 "gQ" = (
@@ -391,6 +392,7 @@
 	pixel_x = 9;
 	pixel_y = 14
 	},
+/obj/machinery/light/small,
 /turf/open/floor/plating{
 	icon_state = "panelscorched";
 	initial_gas_mix = "ws_atmos"
@@ -435,6 +437,7 @@
 /obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop,
 /obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop,
 /obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop,
+/obj/machinery/light/small,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Oq" = (
@@ -459,6 +462,11 @@
 	icon_state = "panelscorched";
 	initial_gas_mix = "ws_atmos"
 	},
+/area/ruin/powered)
+"SA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small,
+/turf/open/floor/plating,
 /area/ruin/powered)
 "Td" = (
 /turf/closed/wall,
@@ -501,12 +509,18 @@
 /mob/living/simple_animal/hostile/syndicate{
 	unsuitable_atmos_damage = 0
 	},
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Wl" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/syndicate,
 /obj/item/gun/ballistic/automatic/pistol,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Wz" = (
@@ -645,7 +659,7 @@ ud
 zM
 hF
 rN
-eX
+SA
 Td
 hF
 hF
