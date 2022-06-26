@@ -149,7 +149,8 @@
 "kr" = (
 /mob/living/simple_animal/hostile/syndicate{
 	desc = "God dammit Jerry! Why the fuck are you barracading yourself in with all of our weapon supplies?";
-	name = "Jerry"
+	name = "Jerry";
+	unsuitable_atmos_damage = 0
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -481,7 +482,9 @@
 /area/ruin/powered)
 "Ur" = (
 /obj/structure/chair/plastic,
-/mob/living/simple_animal/hostile/syndicate/ranged,
+/mob/living/simple_animal/hostile/syndicate/ranged{
+	unsuitable_atmos_damage = 0
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Uu" = (
@@ -495,7 +498,9 @@
 /area/ruin/powered)
 "Vi" = (
 /obj/structure/cable,
-/mob/living/simple_animal/hostile/syndicate,
+/mob/living/simple_animal/hostile/syndicate{
+	unsuitable_atmos_damage = 0
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Wl" = (
@@ -505,7 +510,9 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Wz" = (
-/mob/living/simple_animal/hostile/syndicate,
+/mob/living/simple_animal/hostile/syndicate{
+	unsuitable_atmos_damage = 0
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/powered)
