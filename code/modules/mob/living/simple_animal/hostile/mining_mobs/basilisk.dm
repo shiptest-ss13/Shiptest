@@ -25,6 +25,7 @@
 	health = 175
 	harm_intent_damage = 5
 	obj_damage = 60
+	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 7
 	melee_damage_upper = 15
 	attack_verb_continuous = "bites into"
