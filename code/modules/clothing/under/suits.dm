@@ -17,7 +17,7 @@
 	item_state = "scratch"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/sl
 	desc = "It's a very amish looking suit."
@@ -29,6 +29,11 @@
 	desc = "It's a very smart uniform with a special pocket for tip."
 	icon_state = "waiter"
 	item_state = "waiter"
+
+/obj/item/clothing/under/suit/waiter/syndicate
+	name = "syndicate waiter's outfit"
+	icon_state = "waiter_s"
+	item_state = "waiter_s"
 
 /obj/item/clothing/under/suit/blacktwopiece
 	name = "black two piece suit"
@@ -50,7 +55,7 @@
 	item_state = "bar_suit"
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/black_really
 	name = "executive suit"
@@ -65,7 +70,7 @@
 	item_state = "really_black_suit_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/black/female
 	name = "executive suit"
@@ -138,3 +143,23 @@
 	item_state = "henchmen"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS|HEAD
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEEARS|HIDEEYES|HIDEHAIR
+
+/obj/item/clothing/under/suit/roumain
+	name = "saint-roumain's worksuit"
+	desc = "A simple, hard-wearing suit designed for the hardworking hunters of the Saint-Roumain Militia."
+	icon_state = "rouma_work"
+	item_state = "rouma_work"
+
+/obj/item/clothing/under/suit/dresssuit
+	name = "navy dress-suit"
+	desc = "A very strange piece of clothing. Mostly navy, but with a pink undershirt. Who would even wear this?"
+	icon_state = "nicole"
+	item_state = "nicole"
+
+/obj/item/clothing/under/suit/dresssuit/skirt
+	name = "navy dress-suitskirt"
+	icon_state = "nicole_skirt"
+	item_state = "nicole_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON

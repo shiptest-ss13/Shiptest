@@ -79,7 +79,7 @@
 					"id" = I.type,
 					"name" = I.name,
 					"cost" = I.price,
-					"amount" = I.stock,
+					"amount" = I.unlimited ? "INF" : I.stock,
 					"desc" = I.desc || I.name
 				))
 	return data

@@ -23,8 +23,6 @@
 	mutanttongue = /obj/item/organ/tongue/vox
 	species_language_holder = /datum/language_holder/vox
 
-	offset_features = list(OFFSET_BELT = list(9,0))
-
 	bodytemp_heat_divisor = VOX_BODYTEMP_HEAT_DIVISOR
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
@@ -56,6 +54,12 @@
 			/datum/reagent/medicine/stimulants,
 			/datum/reagent/medicine/inaprovaline
 		)
+	)
+
+/datum/species/vox/New()
+	. = ..()
+	offset_clothing = list(
+		"[BELT_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = 9), "[EAST]" = list("x" = 0, "y" = 9), "[SOUTH]" = list("x" = 0, "y" = 9), "[WEST]" = list("x" =  0, "y" = 9)),
 	)
 
 /datum/species/vox/random_name(gender,unique,lastname,attempts)

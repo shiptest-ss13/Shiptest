@@ -184,7 +184,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/canMouseDown = FALSE
 
-
 /obj/item/Initialize()
 
 	if(attack_verb)

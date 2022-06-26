@@ -46,13 +46,6 @@
 	speed = 7
 	move_to_delay = 7
 
-/mob/living/simple_animal/hostile/asteroid/polarbear/Life()
-	. = ..()
-	if(target)
-		return
-	adjustHealth(-maxHealth*0.025)
-	aggressive_message_said = FALSE
-
 /mob/living/simple_animal/hostile/asteroid/polarbear/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT

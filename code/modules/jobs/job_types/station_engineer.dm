@@ -24,7 +24,7 @@
 	display_order = JOB_DISPLAY_ORDER_STATION_ENGINEER
 
 /datum/outfit/job/engineer
-	name = "Station Engineer"
+	name = "Mechanic"
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
@@ -34,7 +34,7 @@
 	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard //WS Edit - Alt Uniforms
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/workboots
-	head = /obj/item/clothing/head/hardhat
+	head = /obj/item/clothing/head/hardhat/dblue
 	r_pocket = /obj/item/t_scanner
 
 	backpack = /obj/item/storage/backpack/industrial
@@ -47,18 +47,23 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 /datum/outfit/job/engineer/gloved
-	name = "Station Engineer (Gloves)"
+	name = "Mechanic (Gloves)"
 	gloves = /obj/item/clothing/gloves/color/yellow
 
 /datum/outfit/job/engineer/gloved/rig
-	name = "Station Engineer (Hardsuit)"
+	name = "Mechanic (Space suit)"
 	mask = /obj/item/clothing/mask/breath
-	suit = /obj/item/clothing/suit/space/hardsuit/engine
+	suit = /obj/item/clothing/suit/space/engineer
+	head = /obj/item/clothing/head/helmet/space/light/engineer
 	suit_store = /obj/item/tank/internals/oxygen
 	head = null
 	internals_slot = ITEM_SLOT_SUITSTORE
 
-//WS Edit Start - Alt-Job Titles
+/datum/outfit/job/engineer/nt
+	name = "Engineer (Nanotrasen)"
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt
+	head = /obj/item/clothing/head/hardhat
+
 /datum/outfit/job/engineer/electrician
 	name = "Station Engineer (Electrician)"
 
@@ -122,6 +127,13 @@
 	accessory = /obj/item/clothing/accessory/armband/engine
 	head = /obj/item/clothing/head/hardhat/dblue
 	suit =  /obj/item/clothing/suit/hazardvest
+
+/datum/outfit/job/engineer/inteq
+	name = "IRMG Artificer (Inteq)"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
+	head = /obj/item/clothing/head/soft/inteq
+	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/job/engineer/solgov
 	name = "Ship Engineer (SolGov)"

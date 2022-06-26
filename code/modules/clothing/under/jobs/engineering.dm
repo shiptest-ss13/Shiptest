@@ -20,7 +20,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/atmospheric_technician
 	desc = "It's a jumpsuit worn by atmospheric technicians."
@@ -37,32 +37,39 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/engineer
-	desc = "It's an orange high visibility jumpsuit worn by engineers. It has minor radiation shielding."
-	name = "engineer's jumpsuit"
+	desc = "A thick blue jumpsuit worn by civilian mechanics. It's made from fire-resistant materials."
+	name = "mechanic's jumpsuit"
 	icon_state = "engine"
-	item_state = "engi_suit"
+	item_state = "b_suit"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 60, "acid" = 20)
 	resistance_flags = NONE
 
-/obj/item/clothing/under/rank/engineering/engineer/hazard
-	name = "engineer's hazard jumpsuit"
-	desc = "A high visibility jumpsuit made from heat and radiation resistant materials."
-	icon_state = "hazard"
-	item_state = "suit-orange"
-	alt_covers_chest = TRUE
+/obj/item/clothing/under/rank/engineering/engineer/nt
+	desc = "It's an yellow high visibility jumpsuit worn by Nanotrasen contracted engineers. It has minor radiation shielding."
+	name = "engineer's jumpsuit"
+	icon_state = "engine_nt"
+	item_state = "engi_suit"
 
-/obj/item/clothing/under/rank/engineering/engineer/skirt
+/obj/item/clothing/under/rank/engineering/engineer/nt/skirt
 	name = "engineer's jumpskirt"
-	desc = "It's an orange high visibility jumpskirt worn by engineers."
-	icon_state = "engine_skirt"
+	desc = "It's an orange high visibility jumpskirt worn by Nanotrasen contracted engineers."
+	icon_state = "engine_nt_skirt"
 	item_state = "engi_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+
+/obj/item/clothing/under/rank/engineering/engineer/hazard
+	name = "engineer's hazard jumpsuit"
+	desc = "A high visibility jumpsuit made from heat and radiation resistant materials."
+	icon_state = "hazard_eng"
+	item_state = "suit-orange"
+	alt_covers_chest = TRUE
+
 
 //Alt job clothing
 
@@ -78,7 +85,7 @@
 	icon_state = "junior_engineer_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/engineer/electrician
 	name = "electrician jumpsuit"
@@ -92,7 +99,7 @@
 	icon_state = "electrician_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech
 	name = "maintenance technician jumpsuit"
@@ -106,7 +113,7 @@
 	icon_state = "maintenance_tech_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/engineer/telecomm_specialist
 	name = "telecommunications specialist jumpsuit"
@@ -120,7 +127,7 @@
 	icon_state = "telecomm_specialist_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/ce
 	name = "engineering coordinator suit"
@@ -138,7 +145,7 @@
 	icon_state = "engineering_coordinator_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/senior_engineer
 	name = "senior engineer suit"
@@ -156,7 +163,7 @@
 	icon_state = "senior_engineer_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/senior_atmos
 	name = "senior atmospheric technician suit"
@@ -172,7 +179,7 @@
 	icon_state = "senior_atmos_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/atmospheric_technician/life_support_specialist
 	name = "life support specialists's jumpsuit"
@@ -187,7 +194,7 @@
 	icon_state = "life_support_specialist_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 
 /obj/item/clothing/under/rank/engineering/atmospheric_technician/firefighter
@@ -203,4 +210,4 @@
 	icon_state = "firefighter_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
