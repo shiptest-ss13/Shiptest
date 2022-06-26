@@ -518,6 +518,9 @@
 "cT" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "cruisetegwindows"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dd" = (
@@ -5659,6 +5662,12 @@
 /obj/effect/turf_decal/industrial/radiation/corner{
 	dir = 8
 	},
+/obj/machinery/button/door{
+	id = "cruisetegwindows";
+	name = "Chamber Window";
+	pixel_x = -28;
+	pixel_y = -8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Mf" = (
@@ -7166,6 +7175,9 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/borderfloor/corner{
+	dir = 4
+	},
+/obj/structure/railing/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
