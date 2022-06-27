@@ -834,7 +834,7 @@
 			to_chat(H, "<span class='notice'>You start channeling some power through the APC into your body.</span>")
 			while(do_after(user, APC_DRAIN_TIME, target = src)) //WS edit
 				E.drain_time = world.time + APC_DRAIN_TIME //WS edit
-				if(cell.charge <= (cell.maxcharge / 2) || (stomach.crystal_charge > charge_limit))
+				if(cell.charge <= (cell.maxcharge / 20) || (stomach.crystal_charge > charge_limit))
 					return
 				if(istype(stomach))
 					to_chat(H, "<span class='notice'>You receive some charge from the APC.</span>")
