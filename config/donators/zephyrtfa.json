@@ -1,0 +1,19 @@
+{
+	"ckey": "zephyrtfa",
+	"flat": [
+		"/obj/item/screwdriver",
+		"/obj/item/multitool"
+	],
+	"convert": {
+		"/obj/item/crowbar": [
+			"/obj/item/weldingtool",
+			"/obj/item/multitool"
+		]
+	},
+	"reskin": {
+		"/obj/item/multitool": [
+			"invalid_iconstate",
+			"also_invalid_oops"
+		]
+	}
+}
