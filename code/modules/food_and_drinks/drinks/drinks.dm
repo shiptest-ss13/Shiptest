@@ -728,7 +728,7 @@
 	desc = "Shocking for the Elzu!"
 	icon_state = "monkey_energy"
 	item_state = "monkey_energy"
-	list_reagents = list(,/datum/reagent/consumable/electrolytes = 50)
+	list_reagents = list(/datum/reagent/consumable/electrolytes = 50)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/air
 	name = "canned air"
