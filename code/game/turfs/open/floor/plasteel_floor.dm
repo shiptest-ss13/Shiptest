@@ -262,3 +262,7 @@
 
 /turf/open/floor/plasteel/median/whitetogrime/fullcorner
 	icon_state = "WG-fullcorner"
+
+/turf/open/floor/plasteel
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	baseturfs = /turf/open/openspace/icemoon

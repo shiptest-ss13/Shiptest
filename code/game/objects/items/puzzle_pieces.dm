@@ -30,6 +30,19 @@
 /obj/item/keycard/gatedrop
 	icon_state = "golden_key"
 
+/obj/item/keycard/tedtalk/first
+	name = "guard key"
+	desc = "The key the guard has."
+	color = "#210b87"
+	puzzle_id = "guardkey123"
+
+/obj/item/keycard/tedtalk/second
+	name = "dragon keycard"
+	desc = "This is the card teh dragon has."
+	color = "#f05812"
+	puzzle_id = "dragonkey123"
+	icon_state = "golden_key"
+
 /obj/item/keycard/gatedrop/drakelair
 	name = "Drake's Key"
 	desc = "A dull, golden key originally kept by a menacing ash drake."
@@ -124,6 +137,9 @@
 	desc = "If nautical nonsense be something you wish."
 	puzzle_id = "swordfish"
 
+/obj/machinery/door/keycard/tedtalk/guard
+	puzzle_id = "guardkey123"
+
 /obj/machinery/door/keycard/gates
 	gender = PLURAL
 	name = "locked gates"
@@ -155,6 +171,9 @@
 
 /obj/machinery/door/keycard/gates/drakelair
 	puzzle_id = "drakelairkey"
+
+/obj/machinery/door/keycard/gates/tedtalk/dragon
+	puzzle_id = "dragonkey123"
 
 /obj/machinery/door/keycard/gates/disciple
 	name = "Tithe Gates"

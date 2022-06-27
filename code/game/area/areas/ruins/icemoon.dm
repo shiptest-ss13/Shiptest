@@ -86,3 +86,18 @@
 	icon_state = "dk_yellow"
 	mood_bonus = -10
 	mood_message = "<span class='boldwarning'>I want to leave this place.</span>\n"
+
+/area/ruin/unpowered/ted/vault
+	name = "Vault"
+	icon_state = "dk_yellow"
+	color = "#f05812"
+
+/area/ruin/unpowered/ted/reception
+	name = "Reception Area"
+	icon_state = "dk_yellow"
+	color = "#361290"
+
+/area/ruin/unpowered/ted/halls
+	name = "Hallway Primary"
+	icon_state = "dk_yellow"
+	color = "#0b9d25"

@@ -630,3 +630,8 @@ Difficulty: Medium
 	for(var/obj/effect/landmark/ashdrake_ghost_spawn/L in GLOB.landmarks_list)
 		L.create_roles()
 	..()
+
+/mob/living/simple_animal/hostile/megafauna/dragon/tedtalk
+	name = "jim"
+	loot = list(/obj/item/keycard/tedtalk/second)
+
