@@ -25,7 +25,7 @@ const ShipOwnerContent = (props, context) => {
     pending,
     joinMode,
     cooldown = 1,
-    applications = []
+    applications = [],
   } = data;
   return (
     <Section
@@ -111,7 +111,7 @@ const ShipOwnerContent = (props, context) => {
                         color="good"
                         onClick={() => act('setApplication', {
                           key: app.key,
-                          newStatus: "yes"
+                          newStatus: "yes",
                         })}
                       />
                       <Button
@@ -119,7 +119,7 @@ const ShipOwnerContent = (props, context) => {
                         color="bad"
                         onClick={() => act('setApplication', {
                           key: app.key,
-                          newStatus: "no"
+                          newStatus: "no",
                         })}
                       />
                     </>
@@ -133,7 +133,7 @@ const ShipOwnerContent = (props, context) => {
                         content="Delete"
                         color="black"
                         onClick={() => act('removeApplication', {
-                          key: app.key
+                          key: app.key,
                         })}
                       />
                     </>
@@ -145,45 +145,43 @@ const ShipOwnerContent = (props, context) => {
         </>
       )}
       {tab === 2 && (
-        <>
-          <Table>
-            <Table.Row header>
+        <Table>
+          <Table.Row header>
+            <Table.Cell>
+              Crewmember
+            </Table.Cell>
+            <Table.Cell>
+              Can be owner
+            </Table.Cell>
+            <Table.Cell>
+              Transfer Ownership
+            </Table.Cell>
+          </Table.Row>
+          {crew.map(mind => (
+            <Table.Row key={mind.name}>
               <Table.Cell>
-                Crewmember
+                {mind.name}
               </Table.Cell>
               <Table.Cell>
-                Can be owner
+                <Button.Checkbox
+                  content="Candidate"
+                  checked={mind.allowed}
+                  onClick={() => act('toggleCandidate', {
+                    ref: mind.ref,
+                  })}
+                />
               </Table.Cell>
               <Table.Cell>
-                Transfer Ownership
+                <Button
+                  content="Transfer Owner"
+                  onClick={() => act('transferOwner', {
+                    ref: mind.ref,
+                  })}
+                />
               </Table.Cell>
             </Table.Row>
-            {crew.map(mind => (
-              <Table.Row key={mind.name}>
-                <Table.Cell>
-                  {mind.name}
-                </Table.Cell>
-                <Table.Cell>
-                  <Button.Checkbox
-                    content="Candidate"
-                    checked={mind.allowed}
-                    onClick={() => act('toggleCandidate', {
-                      ref: mind.ref,
-                    })}
-                  />
-                </Table.Cell>
-                <Table.Cell>
-                  <Button
-                    content="Transfer Owner"
-                    onClick={() => act('transferOwner', {
-                      ref: mind.ref,
-                    })}
-                  />
-                </Table.Cell>
-              </Table.Row>
-            ))}
-          </Table>
-        </>
+          ))}
+        </Table>
       )}
       {tab === 3 && (
         <>
