@@ -93,3 +93,9 @@
 	id = "demonlab"
 	description = "Some abandoned research outpost"
 	suffix = "icemoon_demonlab.dmm"
+
+/datum/map_template/ruin/icemoon/tedtalk
+	name = "The Ted Talk Ruin"
+	id = "tedtalk"
+	description = "A ruin for a class."
+	suffix = "icemoon_underground_tedtalk.dmm"
