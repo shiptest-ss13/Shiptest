@@ -18,14 +18,13 @@
 	health = 300
 	obj_damage = 15
 	environment_smash = ENVIRONMENT_SMASH_MINERALS
-	armour_penetration = 20
 	melee_damage_lower = 20
 	melee_damage_upper = 20
 	attack_verb_continuous = "chomps"
 	attack_verb_simple = "chomp"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
-	vision_range = 7
-	aggro_vision_range = 7
+	vision_range = 5
+	aggro_vision_range = 5
 	move_resist = MOVE_FORCE_VERY_STRONG
 	butcher_results = list(/obj/item/stack/ore/diamond = 3, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 10, /obj/item/stack/sheet/animalhide/ashdrake = 1)
 	loot = list()
@@ -42,12 +41,6 @@
 	var/turf/T = get_ranged_target_turf_direct(src, target, fire_range)
 	var/list/burn_turfs = getline(src, T) - get_turf(src)
 	dragon_fire_line(src, burn_turfs)
-
-/mob/living/simple_animal/hostile/asteroid/ice_whelp/Life()
-	. = ..()
-	if(!. || target)
-		return
-	adjustHealth(-maxHealth*0.025)
 
 /mob/living/simple_animal/hostile/asteroid/ice_whelp/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT

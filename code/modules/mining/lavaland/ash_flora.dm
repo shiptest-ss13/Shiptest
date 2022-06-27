@@ -275,6 +275,7 @@
 	name = "fire blossom"
 	desc = "A flower from a fire blossom."
 	icon_state = "fireblossom"
+	slot_flags = ITEM_SLOT_HEAD
 	seed = /obj/item/seeds/lavaland/whitesands/fireblossom
 	wine_power = 40
 

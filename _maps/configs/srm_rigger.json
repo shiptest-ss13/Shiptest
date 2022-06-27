@@ -1,0 +1,27 @@
+{
+	"map_name": "Saint-Roumain Modified Rigoureux-class Auxiliary Cutter",
+	"prefix": "SRSV",
+	"namelists": ["MYTHOLOGICAL", "BEASTS"],
+	"map_short_name": "Rigoureux-class",
+	"map_path": "_maps/shuttles/shiptest/rigger_b.dmm",
+	"map_id": "rigger_b",
+	"job_slots": {
+		"Hunter Montagne": {
+			"outfit": "/datum/outfit/job/chaplain/roumain",
+			"officer": true,
+			"slots": 1
+		},
+		"Hunter Doctor": {
+			"outfit": "/datum/outfit/job/doctor/roumain",
+			"slots": 2
+		},
+		"Hunter": {
+			"outfit": "/datum/outfit/job/security/roumain",
+			"slots": 3
+		},
+		"Shadow": {
+			"outfit": "/datum/outfit/job/assistant/roumain",
+			"slots": 3
+		}
+	}
+}
