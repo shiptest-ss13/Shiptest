@@ -144,8 +144,7 @@
 	prereq_ids = list("base")
 	design_ids = list(
 		"survey-handheld-advanced",
-		"design_disk_adv",
-		"sci_protolathe"
+		"design_disk_adv"
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
@@ -171,6 +170,15 @@
 	prereq_ids = list("engineering", "emp_basic")
 	design_ids = list("engine_goggles", "magboots", "forcefield_projector", "weldingmask", "rcd_loaded", "rpd_loaded", "sheetifier", "eng_protolathe")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 5000
+
+/datum/techweb_node/universal_lathe
+	id = "universal_lathe"
+	display_name = "Experimental Machines"
+	description = "Experimental machine designs, merging many functions of other machines into one with the same footprint."
+	prereq_ids = list("practical_bluespace", "adv_weaponry", "adv_biotech", "janitor", "adv_mining", "comptech")
+	design_ids = list("uni_protolathe")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
 /datum/techweb_node/anomaly
@@ -242,7 +250,7 @@
 	display_name = "Applied Bluespace Research"
 	description = "Using bluespace to make things faster and better."
 	prereq_ids = list("bluespace_basic", "engineering")
-	design_ids = list("bs_rped","minerbag_holding", "bluespacebeaker", "bluespacesyringe", "phasic_scanning", "roastingstick", "ore_silo", "uni_protolathe")
+	design_ids = list("bs_rped","minerbag_holding", "bluespacebeaker", "bluespacesyringe", "phasic_scanning", "roastingstick", "ore_silo")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
@@ -414,6 +422,7 @@
 		"seccamera",
 		"survey-handheld-elite",
 		"design_disk_super",
+		"sci_protolathe"
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 	export_price = 5000
@@ -599,7 +608,7 @@
 	id = "exp_tools"
 	display_name = "Experimental Tools"
 	description = "Highly advanced tools."
-	design_ids = list("exwelder", "jawsoflife", "handdrill", "laserscalpel", "mechanicalpinches", "searingtool")
+	design_ids = list("exwelder", "jawsoflife", "handdrill", "laserscalpel", "mechanicalpinches", "searingtool"")
 	prereq_ids = list("adv_engi")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
@@ -608,7 +617,7 @@
 	id = "sec_basic"
 	display_name = "Basic Security Equipment"
 	description = "Standard equipment used by security."
-	design_ids = list("seclite", "pepperspray", "bola_energy", "zipties", "evidencebag", "sec_protolathe")
+	design_ids = list("seclite", "pepperspray", "bola_energy", "zipties", "evidencebag")
 	prereq_ids = list("base")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
 	export_price = 5000
@@ -646,7 +655,7 @@
 	display_name = "Advanced Weapon Development Technology"
 	description = "Our weapons are breaking the rules of reality by now."
 	prereq_ids = list("adv_engi", "weaponry")
-	design_ids = list("pin_loyalty","gun_cell_upgraded", "gun_cell_large")
+	design_ids = list("pin_loyalty","gun_cell_upgraded", "gun_cell_large", "sec_protolathe")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
