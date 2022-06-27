@@ -1,43 +1,12 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ao" = (
-/obj/structure/cable/pink{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
 "bu" = (
-/obj/machinery/door/keycard/gates/tedtalk/dragon,
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"cd" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"cW" = (
-/obj/structure/table/abductor,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"dp" = (
-/obj/machinery/atmospherics/components/unary/tank/air{
-	piping_layer = 2
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"dx" = (
-/obj/machinery/power/port_gen/pacman,
-/obj/item/stack/sheet/mineral/plasma/twenty,
-/obj/item/wrench,
-/obj/structure/cable/pink,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"dD" = (
+/area/ruin/unpowered/ted/reception)
+"ct" = (
 /obj/machinery/door/airlock/vault,
 /obj/structure/cable/pink{
 	icon_state = "1-2"
@@ -47,48 +16,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/halls)
 "em" = (
-/obj/machinery/power/apc/auto_name/north,
-/obj/structure/cable/pink{
-	icon_state = "0-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"eB" = (
-/obj/structure/cable/pink{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"eZ" = (
-/obj/structure/cable/pink{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"gi" = (
-/obj/item/firing_pin,
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"gv" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"hY" = (
 /mob/living/simple_animal/hostile/megafauna/dragon/tedtalk,
 /obj/structure/cable/pink{
 	icon_state = "1-2"
@@ -101,10 +28,138 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/halls)
-"jN" = (
+"fb" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/reception)
-"kA" = (
+"fo" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"gi" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable/pink{
+	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"gx" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
+/turf/open/floor/plasteel/icemoon,
+/area/ruin/unpowered)
+"gC" = (
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"gU" = (
+/obj/structure/cable/pink{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"hi" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"hQ" = (
+/obj/machinery/door/keycard/tedtalk/guard,
+/obj/structure/cable/pink{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"hT" = (
+/obj/structure/cable/pink{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"id" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"iF" = (
+/obj/structure/cable/pink{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"jd" = (
+/obj/structure/table/abductor,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"kY" = (
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"li" = (
+/obj/structure/chair/comfy{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"ly" = (
+/obj/machinery/power/smes/magical,
+/obj/structure/cable/pink{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"mz" = (
+/turf/open/floor/plasteel/icemoon,
+/area/ruin/unpowered)
+"mL" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable/pink{
+	icon_state = "0-4"
+	},
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
+"mN" = (
+/obj/structure/cable/pink{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"nT" = (
+/obj/machinery/door/keycard/gates/tedtalk/dragon,
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
+"pa" = (
 /obj/structure/cable/pink{
 	icon_state = "4-8"
 	},
@@ -119,28 +174,22 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/halls)
-"mY" = (
+"pD" = (
 /obj/structure/cable/pink{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"nE" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"oy" = (
-/obj/item/gun/energy/beam_rifle,
 /turf/open/floor/vault,
 /area/ruin/unpowered/ted/vault)
-"pr" = (
+"qq" = (
+/obj/structure/table/abductor,
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
+"qT" = (
+/turf/closed/indestructible/riveted/plastinum,
+/area/ruin/unpowered/ted/vault)
+"sJ" = (
 /obj/structure/closet/emcloset/wall{
 	pixel_y = 28
 	},
@@ -149,167 +198,7 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/reception)
-"pC" = (
-/obj/structure/table/abductor,
-/obj/item/dragons_blood,
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"pQ" = (
-/obj/machinery/button{
-	dir = 8;
-	pixel_x = 23;
-	pixel_y = 6;
-	id = "testerman1";
-	req_access = "10000020312312";
-	req_one_access = "10000020312312"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"pZ" = (
-/obj/structure/cable/pink{
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"qd" = (
-/obj/structure/cable/pink{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"qC" = (
-/obj/machinery/door/airlock/external,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"qI" = (
-/obj/item/stock_parts/cell/gun,
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"qP" = (
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"qT" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/unpowered/ted/reception)
-"rr" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"rR" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable/pink{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"sY" = (
-/obj/machinery/power/smes/magical,
-/obj/structure/cable/pink{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"tp" = (
-/obj/structure/cable/pink{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/cyan{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"tG" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"tI" = (
-/obj/structure/chair/comfy{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"ul" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"uO" = (
-/obj/structure/closet/firecloset/full{
-	anchored = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"vI" = (
-/mob/living/simple_animal/hostile/nanotrasen{
-	name = "\improper Nanotrasen Private Security Officer;
-	desc = "An officer part of Nanotrasen's private security force, he seems rath
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"wo" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/unpowered/ted/halls)
-"yO" = (
-/obj/machinery/power/apc/auto_name/north,
-/obj/structure/cable/pink{
-	icon_state = "0-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"zo" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"zQ" = (
-/obj/machinery/atmospherics/pipe/simple/cyan{
-	dir = 9
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"AL" = (
-/turf/open/floor/plasteel/icemoon,
-/area/ruin/unpowered)
-"AU" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"Bf" = (
+"sO" = (
 /obj/machinery/door/airlock/grunge{
 	id_tag = "testerman1"
 	},
@@ -324,7 +213,43 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/reception)
-"CS" = (
+"sW" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"tf" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"tg" = (
+/obj/structure/cable/pink{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
+"tP" = (
+/obj/structure/closet/firecloset/full{
+	anchored = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"wn" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"wz" = (
 /obj/structure/cable/pink{
 	icon_state = "4-8"
 	},
@@ -337,26 +262,73 @@
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/visible/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/halls)
-"EE" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
+"wF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/reception)
-"ER" = (
+"wM" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"wO" = (
+/obj/item/gun/energy/beam_rifle,
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
+"wV" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/halls)
-"Fn" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+"xC" = (
+/obj/machinery/door/keycard/tedtalk/guard,
+/obj/structure/cable/pink{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"xL" = (
+/mob/living/simple_animal/hostile/nanotrasen{
+	desc = "An officer part of Nanotrasen's private security force, he seems rath"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/reception)
-"Fp" = (
+"yy" = (
+/obj/structure/cable/pink{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"zC" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"zJ" = (
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = -26
 	},
@@ -365,30 +337,136 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/reception)
-"Hu" = (
-/obj/machinery/door/keycard/tedtalk/guard,
+"Bw" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"BH" = (
+/obj/machinery/door/airlock/external,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"BK" = (
+/obj/item/stock_parts/cell/gun,
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
+"BP" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"Dh" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"Eo" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"Ez" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
+"FP" = (
+/obj/structure/cable/pink{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
+"FV" = (
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"FX" = (
+/obj/item/firing_pin,
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
+"Gj" = (
+/obj/machinery/door/keycard/gates/tedtalk/dragon,
 /obj/structure/cable/pink{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"HU" = (
-/obj/machinery/door/airlock/external,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"HX" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"Ks" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
+"Gm" = (
+/obj/structure/cable/pink{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
+"JA" = (
+/obj/structure/cable/pink{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"JY" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	piping_layer = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/halls)
-"Ku" = (
+"KP" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable/pink{
+	icon_state = "0-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"KR" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/unpowered/ted/halls)
+"KW" = (
+/obj/structure/table/abductor,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"Ls" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"MY" = (
+/obj/structure/table/abductor,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"NA" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/item/wrench,
+/obj/structure/cable/pink,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"NS" = (
 /obj/structure/cable/pink{
 	icon_state = "1-4"
 	},
@@ -400,22 +478,22 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/halls)
-"KL" = (
-/obj/structure/cable/pink{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+"Or" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
 	dir = 4
 	},
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"KN" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/reception)
-"KQ" = (
-/obj/machinery/door/keycard/tedtalk/guard,
+"Ou" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/pink{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"Oy" = (
 /obj/structure/cable/pink{
 	icon_state = "4-8"
 	},
@@ -427,23 +505,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/halls)
-"Lm" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"LE" = (
+"OS" = (
 /obj/structure/table/abductor,
+/obj/item/dragons_blood,
 /turf/open/floor/vault,
 /area/ruin/unpowered/ted/vault)
-"Mj" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"Mv" = (
+"Po" = (
 /obj/structure/cable/pink{
 	icon_state = "4-8"
 	},
@@ -452,147 +519,10 @@
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/ted/vault)
-"MS" = (
-/obj/structure/table/abductor,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel,
+"PN" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/unpowered/ted/reception)
-"Nz" = (
-/obj/structure/cable/pink{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"NN" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"Of" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"OZ" = (
-/obj/structure/cable/pink{
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"Ps" = (
-/obj/machinery/door/keycard/gates/tedtalk/dragon,
-/obj/structure/cable/pink{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"PD" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"Qm" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"QT" = (
-/obj/structure/cable/pink{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"RV" = (
-/obj/machinery/power/apc/auto_name/north,
-/obj/structure/cable/pink{
-	icon_state = "0-4"
-	},
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"Vl" = (
-/obj/structure/cable/pink{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"Vv" = (
-/obj/item/keycard/tedtalk/first,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"VD" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"VK" = (
-/obj/structure/table/abductor,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"Wm" = (
-/obj/machinery/door/window,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"Xl" = (
-/obj/machinery/atmospherics/components/binary/pump/on/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/halls)
-"Xv" = (
-/turf/template_noop,
-/area/template_noop)
-"YR" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/ted/reception)
-"Zg" = (
-/turf/open/floor/vault,
-/area/ruin/unpowered/ted/vault)
-"Zh" = (
-/turf/closed/indestructible/riveted/plastinum,
-/area/ruin/unpowered/ted/vault)
-"Zt" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
-/turf/open/floor/plasteel/icemoon,
-/area/ruin/unpowered)
-"ZS" = (
+"Rq" = (
 /obj/structure/sign/poster/official/nanotrasen_logo{
 	pixel_y = 31
 	},
@@ -601,1012 +531,1081 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/ted/halls)
+"RK" = (
+/obj/structure/cable/pink{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/cyan{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"Sg" = (
+/turf/template_noop,
+/area/template_noop)
+"SE" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"SV" = (
+/obj/item/keycard/tedtalk/first,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"Ti" = (
+/obj/machinery/atmospherics/pipe/simple/cyan{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"TH" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"TZ" = (
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
+"Vz" = (
+/obj/machinery/button{
+	dir = 8;
+	pixel_x = 23;
+	pixel_y = 6;
+	id = "testerman1";
+	req_access = "10000020312312";
+	req_one_access = "10000020312312"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"WU" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/halls)
+"Ye" = (
+/obj/machinery/door/window,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/ted/reception)
+"Yx" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/vault,
+/area/ruin/unpowered/ted/vault)
 
 (1,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-qT
-qT
-qT
-qT
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+PN
+PN
+PN
+PN
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (2,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-qT
-jN
-jN
-qT
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+PN
+kY
+kY
+PN
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (3,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-qT
-jN
-jN
-qT
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+PN
+kY
+kY
+PN
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (4,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-qT
-jN
-jN
-qT
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+PN
+kY
+kY
+PN
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (5,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-qT
-jN
-jN
-qT
-qT
-qT
-qT
-qT
-qT
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+PN
+kY
+kY
+PN
+PN
+PN
+PN
+PN
+PN
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (6,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Zh
-Zh
-Zh
-Zh
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
 qT
-zo
-Fn
-jN
-Vv
-Wm
-jN
-tI
 qT
-Xv
-Xv
-Xv
-Xv
-Xv
+qT
+qT
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+PN
+fb
+hi
+kY
+SV
+Ye
+kY
+li
+PN
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (7,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Zh
-LE
-LE
-Zh
-Zh
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
 qT
-tG
-ul
-KN
-vI
-cW
-jN
-tI
+qq
+qq
 qT
 qT
-qT
-qT
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+PN
+BP
+wF
+fo
+xL
+MY
+kY
+li
+PN
+PN
+PN
+PN
+Sg
+Sg
 "}
 (8,1,1) = {"
-Xv
-Xv
-Zh
-Zh
-Zh
-Zh
-RV
-Zg
-LE
-Zh
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-wo
-wo
-wo
-wo
-wo
-wo
-Xv
-Xv
-Xv
+Sg
+Sg
 qT
-jN
-jN
-jN
-AU
-cW
-Fn
-zo
-EE
-HX
-Fp
-rr
-AL
-Xv
+qT
+qT
+qT
+mL
+TZ
+qq
+qT
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+KR
+KR
+KR
+KR
+KR
+KR
+Sg
+Sg
+Sg
+PN
+kY
+kY
+kY
+Dh
+MY
+hi
+fb
+SE
+sW
+zJ
+Bw
+mz
+Sg
 "}
 (9,1,1) = {"
-Xv
-Xv
-Zh
-Zg
-Zg
+Sg
+Sg
+qT
+TZ
+TZ
+nT
+Po
+Ez
+qq
+qT
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+gC
+gC
+wV
+wM
+KR
+Sg
+Sg
+Sg
+PN
+PN
+PN
+PN
+jd
+KW
 bu
-Mv
-PD
-LE
-Zh
-wo
-wo
-wo
-wo
-wo
-wo
-wo
-wo
-qP
-qP
-ER
-Ks
-wo
-Xv
-Xv
-Xv
-qT
-qT
-qT
-qT
-VK
-MS
-NN
-gv
-qC
-Mj
-YR
-HU
-AL
-Xv
+wn
+zC
+id
+Or
+BH
+mz
+Sg
 "}
 (10,1,1) = {"
-Xv
-Xv
-Zh
-qI
-Zg
-bu
-KL
-Lm
-Zg
-bu
-qP
-qP
-qP
-Ks
-ER
-qP
-qP
-wo
-qP
-VD
-nE
-Of
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
 qT
-AU
-jN
-jN
-jN
-qT
-pr
-uO
-qT
-AL
-Xv
+BK
+TZ
+nT
+Gm
+Yx
+TZ
+nT
+gC
+gC
+gC
+wM
+wV
+gC
+gC
+KR
+gC
+WU
+tf
+Eo
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+PN
+Dh
+kY
+kY
+kY
+PN
+sJ
+tP
+PN
+mz
+Sg
 "}
 (11,1,1) = {"
-Xv
-Xv
-Zh
-gi
-Zg
-bu
-pZ
-Nz
-eB
-Ps
-qd
-qd
-qd
-eZ
-mY
-qd
-qd
-dD
-qd
-hY
-Ku
-qP
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
 qT
+FX
+TZ
+nT
+tg
+FP
+pD
+Gj
+hT
+hT
+hT
+yy
+iF
+hT
+hT
+ct
+hT
 em
-jN
-jN
-tI
-qT
-qT
-qT
-qT
-Xv
-Xv
+NS
+gC
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+PN
+gi
+kY
+kY
+li
+PN
+PN
+PN
+PN
+Sg
+Sg
 "}
 (12,1,1) = {"
-Xv
-Xv
-Zh
-oy
-Zg
-bu
-Zg
-Zg
-Zg
-bu
-qP
-qP
-qP
-qP
-qP
-qP
-qP
-wo
-qP
-qP
-QT
-qP
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
 qT
-ao
-jN
-jN
-tI
-qT
-Xv
-Xv
-Xv
-Xv
-Xv
+wO
+TZ
+nT
+TZ
+TZ
+TZ
+nT
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+KR
+gC
+gC
+Oy
+gC
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+PN
+JA
+kY
+kY
+li
+PN
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (13,1,1) = {"
-Xv
-Xv
-Zh
-Zg
-Zg
-bu
-Zg
-Zg
-LE
-Zh
-wo
-wo
-wo
-wo
-wo
-wo
-wo
-wo
-qP
-qP
-QT
-qP
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
 qT
-ao
-pQ
-jN
-tI
+TZ
+TZ
+nT
+TZ
+TZ
+qq
 qT
-Xv
-Xv
-Xv
-Xv
-Xv
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+gC
+gC
+Oy
+gC
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+PN
+JA
+Vz
+kY
+li
+PN
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (14,1,1) = {"
-Xv
-Xv
-Zh
-Zh
-Zh
-Zh
-Zg
-Zg
-LE
-Zh
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-wo
-wo
-wo
-KQ
-wo
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-qT
-Bf
+Sg
+Sg
 qT
 qT
 qT
 qT
-Xv
-Xv
-Xv
-Xv
-Xv
+TZ
+TZ
+qq
+qT
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+KR
+KR
+KR
+xC
+KR
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+PN
+sO
+PN
+PN
+PN
+PN
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (15,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Zh
-pC
-LE
-Zh
-Zh
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-wo
-QT
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-wo
-QT
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+qT
+OS
+qq
+qT
+qT
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+KR
+Oy
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+KR
+Oy
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (16,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Zh
-Zh
-Zh
-Zh
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-wo
-QT
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-wo
-QT
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+qT
+qT
+qT
+qT
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+KR
+Oy
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+KR
+Oy
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (17,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-wo
-wo
-KQ
-wo
-wo
-wo
-wo
-Xv
-Xv
-Xv
-wo
-wo
-KQ
-wo
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+KR
+KR
+xC
+KR
+KR
+KR
+KR
+Sg
+Sg
+Sg
+KR
+KR
+xC
+KR
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (18,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-wo
-Ks
-QT
-ER
-qP
-dp
-wo
-wo
-wo
-wo
-wo
-ER
-QT
-Ks
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+KR
+wM
+Oy
+wV
+gC
+JY
+KR
+KR
+KR
+KR
+KR
+wV
+Oy
+wM
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (19,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-wo
-ZS
-CS
-mY
-qd
-tp
-Hu
-qd
-qd
-qd
-Hu
-mY
-OZ
-Of
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+KR
+Rq
+wz
+iF
+hT
+RK
+hQ
+hT
+hT
+hT
+hQ
+iF
+gU
+Eo
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (20,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-wo
-yO
-kA
-Xl
-Qm
-zQ
-wo
-wo
-wo
-wo
-wo
-qP
-qP
-qP
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+KR
+KP
+pa
+FV
+Ls
+Ti
+KR
+KR
+KR
+KR
+KR
+gC
+gC
+gC
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (21,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Zt
-cd
-Of
-sY
-rR
-Vl
-dx
-wo
-Xv
-Xv
-Xv
-wo
-wo
-wo
-wo
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+gx
+TH
+Eo
+ly
+Ou
+mN
+NA
+KR
+Sg
+Sg
+Sg
+KR
+KR
+KR
+KR
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (22,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-wo
-wo
-wo
-wo
-wo
-wo
-wo
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (23,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
 (24,1,1) = {"
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
-Xv
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
+Sg
 "}
