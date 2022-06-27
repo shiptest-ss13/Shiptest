@@ -93,9 +93,3 @@
 	description = "A abandoned and broken off chunk of a space station. It somehow survived the crash, though, whatever was inside also survived..."
 	id = "rockplanet_netherworld"
 	suffix = "rockplanet_netherworld.dmm"
-
-/datum/map_template/ruin/rockplanet/eldrich
-	name = "Eldrich Outpost"
-	description = "An outpost for a long lost colony. It seems whatever made the outpost lost is still there..."
-	id = "rockplanet_eldrich_base"
-	suffix = "rockplanet_eldrich_base.dmm"
