@@ -29,7 +29,8 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/ert/med,
+/obj/item/clothing/suit/space/hardsuit/ert/lp/med,
+/obj/item/clothing/shoes/magboots,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "aK" = (
@@ -96,9 +97,6 @@
 /area/space)
 "cN" = (
 /obj/structure/rack,
-/obj/item/implantcase/mindshield,
-/obj/item/implantcase/mindshield,
-/obj/item/implanter,
 /obj/item/firing_pin/implant/mindshield,
 /obj/item/firing_pin/implant/mindshield,
 /turf/open/floor/vault,
@@ -146,6 +144,21 @@
 /area/space)
 "dw" = (
 /obj/structure/table/wood,
+/obj/item/lighter/greyscale{
+	pixel_y = 9;
+	pixel_x = -6
+	},
+/obj/item/clothing/mask/cigarette/cigar/havana{
+	pixel_x = -8;
+	pixel_y = 10
+	},
+/obj/item/coin/runite{
+	pixel_y = -2;
+	pixel_x = -7
+	},
+/obj/item/paicard{
+	pixel_x = 6
+	},
 /turf/open/floor/carpet/royalblue,
 /area/space)
 "dC" = (
@@ -154,7 +167,8 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/ert/engi,
+/obj/item/clothing/suit/space/hardsuit/ert/lp/engi,
+/obj/item/clothing/shoes/magboots,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "dK" = (
@@ -272,7 +286,8 @@
 "hm" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window,
-/obj/item/toy/prize/gygax,
+/obj/item/paper_bin,
+/obj/item/pen/fountain,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "hH" = (
@@ -316,17 +331,18 @@
 	dir = 4
 	},
 /obj/item/kitchen/knife/combat/survival,
-/obj/item/clothing/under/rank/medical/doctor,
-/obj/item/clothing/under/rank/medical/doctor/skirt,
-/obj/item/clothing/under/rank/medical/paramedic/emt,
-/obj/item/clothing/under/rank/medical/paramedic/emt/skirt,
 /obj/item/storage/firstaid,
 /obj/item/healthanalyzer,
 /obj/item/storage/firstaid/tactical,
 /obj/item/holosign_creator/medical,
 /obj/item/clothing/gloves/color/latex/nitrile,
-/obj/item/storage/backpack/ert/medical,
 /obj/item/flashlight/seclite,
+/obj/item/clothing/suit/hooded/wintercoat/medical,
+/obj/item/clothing/under/rank/medical/paramedic/lp,
+/obj/item/clothing/under/rank/medical/paramedic/skirt/lp,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/reagent_containers/hypospray,
+/obj/item/gps,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "jk" = (
@@ -342,10 +358,6 @@
 /obj/structure/closet/wardrobe/pjs,
 /turf/open/floor/carpet/royalblue,
 /area/space)
-"kw" = (
-/obj/item/clothing/under/rank/security/head_of_security/nt/skirt,
-/turf/open/floor/plasteel/dark,
-/area/space)
 "la" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/plasteel/white,
@@ -357,11 +369,11 @@
 /turf/open/floor/plating,
 /area/space)
 "lK" = (
-/obj/item/clothing/suit/space/hardsuit/ert/clown,
-/turf/open/space/basic,
+/obj/machinery/holopad/emergency,
+/turf/open/floor/carpet/royalblue,
 /area/space)
 "lO" = (
-/obj/structure/mecha_wreckage/gygax/dark,
+/obj/structure/mecha_wreckage/durand,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "lW" = (
@@ -439,6 +451,10 @@
 	dir = 9
 	},
 /obj/structure/table/reinforced,
+/obj/item/flashlight/lamp/green{
+	pixel_x = -6;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "oz" = (
@@ -491,6 +507,10 @@
 /obj/structure/table/reinforced,
 /obj/item/stack/sheet/plasteel/fifty,
 /obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/plastic/five,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "rz" = (
@@ -521,7 +541,7 @@
 	},
 /obj/item/stock_parts/cell/gun,
 /obj/item/storage/belt/security,
-/obj/item/gun/energy/e_gun,
+/obj/item/gun/energy/e_gun/mindshield,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "sm" = (
@@ -539,7 +559,12 @@
 	},
 /obj/item/stock_parts/cell/gun,
 /obj/item/storage/belt/medical,
-/obj/item/gun/energy/e_gun,
+/obj/item/gun/energy/e_gun/mindshield,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/item/reagent_containers/medigel/silver_sulf,
+/obj/item/reagent_containers/medigel/styptic,
+/obj/item/storage/pill_bottle/charcoal/less,
+/obj/item/reagent_containers/hypospray/medipen,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "sR" = (
@@ -623,7 +648,7 @@
 "vm" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
-	pixel_x = -6;
+	pixel_x = 5;
 	pixel_y = 10
 	},
 /turf/open/floor/carpet/royalblue,
@@ -671,6 +696,7 @@
 /area/space)
 "xd" = (
 /obj/structure/bed,
+/obj/item/bedsheet/nanotrasen,
 /turf/open/floor/carpet/royalblue,
 /area/space)
 "xg" = (
@@ -696,10 +722,9 @@
 /obj/structure/table/reinforced,
 /obj/item/stack/cable_coil/green,
 /obj/item/stack/cable_coil/green,
-/turf/open/floor/plasteel/dark,
-/area/space)
-"xF" = (
-/obj/item/clothing/under/rank/security/head_of_security/nt,
+/obj/item/multitool,
+/obj/item/multitool,
+/obj/item/clothing/gloves/color/yellow,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "xW" = (
@@ -784,14 +809,16 @@
 	},
 /obj/item/melee/classic_baton/telescopic,
 /obj/item/kitchen/knife/combat/survival,
-/obj/item/clothing/under/rank/command/lieutenant/nt/skirt,
-/obj/item/clothing/under/rank/command/lieutenant/nt,
-/obj/item/clothing/under/rank/command/lieutenant,
-/obj/item/clothing/under/rank/command/lieutenant/skirt,
 /obj/item/pinpointer/crew,
 /obj/item/clothing/gloves/color/black,
-/obj/item/storage/backpack/ert,
 /obj/item/flashlight/seclite,
+/obj/item/clothing/suit/jacket,
+/obj/item/clothing/suit/jacket/miljacket,
+/obj/item/clothing/suit/jacket/leather/duster/command,
+/obj/item/clothing/under/rank/security/head_of_security/alt/lp,
+/obj/item/clothing/under/rank/security/head_of_security/alt/skirt/lp,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/gps,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Be" = (
@@ -906,6 +933,8 @@
 "Dw" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/table/reinforced,
+/obj/item/storage/firstaid,
+/obj/item/assembly/prox_sensor,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "DA" = (
@@ -934,10 +963,11 @@
 /turf/open/floor/engine/hull,
 /area/space)
 "Eq" = (
-/obj/machinery/computer/helm{
-	dir = 8
-	},
-/turf/open/space/basic,
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/rods/twentyfive,
+/obj/item/stack/sheet/metal/fifty,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "EJ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -948,6 +978,10 @@
 /obj/structure/chair/stool/bar{
 	dir = 4
 	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Fx" = (
+/obj/item/storage/backpack/satchel/flat/with_clown,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "FB" = (
@@ -966,6 +1000,24 @@
 	icon_state = "0-5"
 	},
 /turf/open/floor/plating,
+/area/space)
+"FQ" = (
+/obj/structure/rack,
+/obj/item/ammo_casing/shotgun,
+/obj/item/ammo_casing/shotgun,
+/obj/item/ammo_casing/shotgun,
+/obj/item/ammo_casing/shotgun,
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/item/ammo_casing/shotgun/buckshot,
+/obj/item/ammo_casing/shotgun/dragonsbreath,
+/obj/item/ammo_casing/shotgun/dragonsbreath,
+/obj/item/ammo_casing/shotgun/incendiary,
+/obj/item/ammo_casing/shotgun/incendiary,
+/obj/item/ammo_casing/shotgun/laserslug,
+/obj/item/ammo_casing/shotgun/laserslug,
+/turf/open/floor/vault,
 /area/space)
 "FW" = (
 /obj/structure/fans/tiny,
@@ -1047,7 +1099,10 @@
 	},
 /obj/item/stock_parts/cell/gun,
 /obj/item/storage/belt/utility/chief,
-/obj/item/gun/energy/e_gun,
+/obj/item/gun/energy/e_gun/mindshield,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "HX" = (
@@ -1061,10 +1116,11 @@
 /obj/item/gun/ballistic/revolver/detective,
 /obj/item/ammo_box/c45,
 /obj/item/kitchen/knife/combat/survival,
-/turf/open/floor/plasteel/dark,
-/area/space)
-"Il" = (
-/obj/item/clothing/under/rank/security/head_of_security/alt,
+/obj/item/clothing/under/rank/civilian/lawyer/bluesuit/skirt,
+/obj/item/clothing/under/rank/civilian/lawyer/bluesuit,
+/obj/item/clothing/under/rank/civilian/lawyer/female,
+/obj/item/clothing/under/rank/civilian/lawyer/female/skirt,
+/obj/item/clothing/shoes/jackboots,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Ir" = (
@@ -1076,8 +1132,13 @@
 	dir = 8
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/ert,
+/obj/item/clothing/suit/space/hardsuit/ert/lp,
+/obj/item/clothing/shoes/magboots,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"Iu" = (
+/obj/item/clothing/suit/space/hardsuit/ert/lp/clown,
+/turf/open/space/basic,
 /area/space)
 "IR" = (
 /obj/structure/window/reinforced/spawner{
@@ -1085,7 +1146,8 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/ert/sec,
+/obj/item/clothing/suit/space/hardsuit/ert/sec/lp,
+/obj/item/clothing/shoes/magboots,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "IT" = (
@@ -1155,11 +1217,14 @@
 /obj/item/clothing/suit/armor/vest/security,
 /obj/item/clothing/glasses/hud/security/prescription,
 /obj/item/clothing/glasses/hud/security/sunglasses,
-/obj/item/clothing/under/rank/security/officer/nt,
 /obj/item/holosign_creator/security,
 /obj/item/clothing/gloves/color/black,
-/obj/item/storage/backpack/ert/security,
 /obj/item/flashlight/seclite,
+/obj/item/clothing/suit/hooded/wintercoat/security,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/rank/security/head_of_security/nt/lp,
+/obj/item/clothing/under/rank/security/head_of_security/nt/skirt/lp,
+/obj/item/gps,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Ko" = (
@@ -1177,9 +1242,7 @@
 	dir = 8
 	},
 /obj/item/kitchen/knife/combat/survival,
-/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech,
 /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/skirt,
-/obj/item/clothing/under/rank/engineering/engineer/nt/skirt,
 /obj/item/clothing/under/rank/engineering/engineer/nt,
 /obj/item/pipe_dispenser,
 /obj/item/clothing/glasses/meson/gar,
@@ -1190,8 +1253,12 @@
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/weldingtool,
 /obj/item/multitool,
-/obj/item/storage/backpack/ert/engineer,
 /obj/item/flashlight/seclite,
+/obj/item/clothing/suit/hooded/wintercoat/engineering,
+/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/lp,
+/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/skirt/lp,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/gps,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "KC" = (
@@ -1221,9 +1288,9 @@
 	},
 /obj/item/storage/belt/military/assault,
 /obj/item/stock_parts/cell/gun,
-/obj/item/gun_voucher/nanotrasen,
 /obj/item/kitchen/knife/hunting,
-/obj/item/gun/energy/e_gun,
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube/mindshield,
+/obj/item/gun/energy/e_gun/mindshield,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Lk" = (
@@ -1335,6 +1402,12 @@
 /area/space)
 "OQ" = (
 /obj/structure/rack,
+/obj/item/implantcase/mindshield,
+/obj/item/implantcase/mindshield,
+/obj/item/implantcase/mindshield,
+/obj/item/implantcase/mindshield,
+/obj/item/implantcase/mindshield,
+/obj/item/implanter,
 /turf/open/floor/vault,
 /area/space)
 "Pe" = (
@@ -1352,6 +1425,7 @@
 "Pi" = (
 /obj/structure/rack,
 /obj/item/melee/chainofcommand,
+/obj/item/grenade/chem_grenade/ez_clean,
 /turf/open/floor/vault,
 /area/space)
 "PB" = (
@@ -1497,11 +1571,12 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "TG" = (
-/obj/item/flashlight/lamp/green{
-	pixel_x = -6;
-	pixel_y = 10
-	},
-/turf/open/space/basic,
+/obj/structure/table/reinforced,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "TK" = (
 /obj/machinery/suit_storage_unit/independent/mining/eva,
@@ -1519,6 +1594,10 @@
 "Uj" = (
 /obj/machinery/computer/telecomms/server,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"Ur" = (
+/obj/machinery/holopad/emergency,
+/turf/open/floor/plasteel/white,
 /area/space)
 "UR" = (
 /obj/machinery/door/airlock/highsecurity,
@@ -1554,6 +1633,21 @@
 /obj/item/storage/firstaid/o2,
 /obj/item/storage/firstaid/toxin,
 /turf/open/floor/plasteel/white,
+/area/space)
+"Vz" = (
+/obj/structure/table/reinforced,
+/obj/item/clothing/mask/gas/welding{
+	pixel_x = -6
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = -6;
+	pixel_x = 3
+	},
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 7;
+	pixel_x = 3
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "VH" = (
 /obj/machinery/power/smes,
@@ -1701,25 +1795,8 @@
 /obj/machinery/cell_charger,
 /turf/open/floor/plasteel/dark,
 /area/space)
-"ZR" = (
-/obj/item/clothing/under/rank/security/head_of_security/alt/skirt,
-/turf/open/floor/plasteel/dark,
-/area/space)
 
 (1,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -1777,19 +1854,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 LV
 LV
 LV
@@ -1823,19 +1887,6 @@ zW
 zW
 "}
 (3,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -1891,19 +1942,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 LV
 LV
 LV
@@ -1920,7 +1958,7 @@ pf
 PW
 LV
 ZL
-kw
+pf
 pf
 pf
 pf
@@ -1948,19 +1986,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 rz
 fG
 cR
@@ -1978,14 +2003,14 @@ pf
 pf
 Zf
 ZL
-xF
+pf
 Ir
 Aa
 pf
 pf
 sV
 Ph
-OQ
+FQ
 LV
 zW
 zW
@@ -1997,19 +2022,6 @@ zW
 zW
 "}
 (6,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -2031,12 +2043,12 @@ LV
 cX
 pf
 eh
-hd
+Vz
 pf
 pf
 hm
 pf
-ZR
+pf
 IR
 Kl
 pf
@@ -2064,19 +2076,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 GL
 RO
 cv
@@ -2094,7 +2093,7 @@ pf
 pf
 Dw
 as
-Il
+pf
 dC
 Kv
 pf
@@ -2113,19 +2112,6 @@ zW
 zW
 "}
 (8,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -2185,19 +2171,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 WR
 Be
 WR
@@ -2229,19 +2202,6 @@ zW
 zW
 "}
 (10,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -2301,19 +2261,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 WR
 Be
 WR
@@ -2327,7 +2274,7 @@ zW
 zW
 LV
 LV
-hd
+Eq
 hd
 pf
 LV
@@ -2345,19 +2292,6 @@ zW
 zW
 "}
 (12,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -2417,19 +2351,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-lK
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 WR
 RB
 YH
@@ -2461,19 +2382,6 @@ zW
 zW
 "}
 (14,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -2524,19 +2432,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 LV
 LV
 LV
@@ -2577,19 +2472,6 @@ zW
 zW
 "}
 (16,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 LV
@@ -2636,19 +2518,6 @@ zW
 "}
 (17,1,1) = {"
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 LV
 LV
 JR
@@ -2693,19 +2562,6 @@ zW
 zW
 "}
 (18,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 LV
 Jw
@@ -2752,19 +2608,6 @@ zW
 "}
 (19,1,1) = {"
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 LV
 JR
 QI
@@ -2810,19 +2653,6 @@ zW
 "}
 (20,1,1) = {"
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 LV
 JR
 QI
@@ -2842,7 +2672,7 @@ Dj
 pf
 Dj
 pf
-pf
+Fx
 pf
 pf
 pf
@@ -2867,19 +2697,6 @@ wq
 zW
 "}
 (21,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 LV
 JR
@@ -2926,19 +2743,6 @@ zW
 "}
 (22,1,1) = {"
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 LV
 Jw
 QI
@@ -2983,19 +2787,6 @@ LV
 zW
 "}
 (23,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 LV
 LV
@@ -3043,19 +2834,6 @@ zW
 (24,1,1) = {"
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 LV
 LV
 LV
@@ -3099,19 +2877,6 @@ zW
 zW
 "}
 (25,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -3171,19 +2936,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 WR
 Be
 WR
@@ -3229,19 +2981,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 WR
 Ek
 YH
@@ -3252,7 +2991,7 @@ LV
 LV
 LV
 zW
-TG
+zW
 zW
 LV
 MH
@@ -3273,19 +3012,6 @@ zW
 zW
 "}
 (28,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -3345,19 +3071,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 WR
 Be
 WR
@@ -3367,7 +3080,7 @@ zW
 zW
 zW
 zW
-Eq
+zW
 zW
 LV
 LV
@@ -3381,7 +3094,7 @@ zW
 zW
 zW
 zW
-zW
+Iu
 zW
 zW
 zW
@@ -3389,19 +3102,6 @@ zW
 zW
 "}
 (30,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -3461,19 +3161,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 WR
 Be
 WR
@@ -3505,19 +3192,6 @@ zW
 zW
 "}
 (32,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -3572,19 +3246,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 GL
 RO
 lc
@@ -3607,7 +3268,7 @@ pf
 tj
 Zv
 hL
-hL
+lK
 hL
 tu
 Hy
@@ -3621,19 +3282,6 @@ zW
 zW
 "}
 (34,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -3688,19 +3336,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 rz
 fG
 cR
@@ -3710,7 +3345,7 @@ gE
 LV
 LV
 LV
-hd
+TG
 pf
 LV
 uw
@@ -3747,19 +3382,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 LV
 LV
 LV
@@ -3773,7 +3395,7 @@ pf
 LV
 BC
 mb
-mb
+Ur
 mb
 Vw
 LV
@@ -3795,19 +3417,6 @@ zW
 zW
 "}
 (37,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -3853,19 +3462,6 @@ zW
 zW
 "}
 (38,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW
@@ -3927,19 +3523,6 @@ zW
 zW
 zW
 zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 gJ
 wq
 wq
@@ -3969,19 +3552,6 @@ zW
 zW
 "}
 (40,1,1) = {"
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
-zW
 zW
 zW
 zW

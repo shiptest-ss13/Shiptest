@@ -331,6 +331,9 @@
 /obj/item/storage/backpack/satchel/flat/with_drip/PopulateContents()
 	new /obj/item/clothing/under/drip(src)
 
+/obj/item/storage/backpack/satchel/flat/with_clown/PopulateContents()
+	new /obj/item/clothing/suit/space/hardsuit/ert/lp/clown(src)
+
 /obj/item/storage/backpack/satchel/flat/with_tools/PopulateContents()
 	new /obj/item/stack/tile/plasteel(src)
 	new /obj/item/crowbar(src)

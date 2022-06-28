@@ -469,3 +469,83 @@ Contains:
 	armor = list("melee" = 40, "bullet" = 20, "laser" = 20,"energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75)
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
+
+//The funny power rangers.
+/obj/item/clothing/suit/space/hardsuit/ert/lp
+	name = "Loss Prevention Lieutenant Hardsuit"
+	desc = "The middlemanagement of the ERT world, the Lieutenant of the LP team is given this slightly downgraded version of the ERT Commander hardsuit."
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp
+	resistance_flags = null
+	max_heat_protection_temperature = null
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/lp
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
+	name = "Loss Prevention Lieutenant Hardsuit Helmet"
+	desc = "The helmet that comes attached to the LP Team Lieutenant Hardsuit."
+	resistance_flags = null
+	max_heat_protection_temperature = null
+
+/obj/item/clothing/suit/space/hardsuit/ert/sec/lp
+	armor = list("melee" = 35, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/sec
+	name = "Loss Prevention Security Hardsuit"
+	desc = "The best of the best security staff get assigned to the ERT. Second best are given this Hardsuit as a part of the LP Team."
+	icon_state = "ert_security"
+	item_state = "ert_security"
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/lp/sec
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 30,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	hardsuit_type = "ert_security"
+	name = "Loss Prevention Security Hardsuit Helmet"
+	desc = "The helmet that comes attached to the LP Team Security Hardsuit."
+	icon_state = "hardsuit0-ert_security"
+	item_state = "hardsuit0-ert_security"
+
+/obj/item/clothing/suit/space/hardsuit/ert/lp/engi
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 75)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/engi
+	name = "Loss Prevention Engineering Hardsuit"
+	desc = "The best of the best engineering staff get assigned to the ERT. Second best are given this Hardsuit as a part of the LP Team."
+	icon_state = "ert_engineer"
+	item_state = "ert_engineer"
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/lp/engi
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 75)
+	name = "Loss Prevention Engineering Hardsuit Helmet"
+	desc = "The helmet that comes attached to the LP Team Engineering Hardsuit."
+	icon_state = "hardsuit0-ert_engineer"
+	item_state = "hardsuit0-ert_engineer"
+	hardsuit_type = "ert_engineer"
+
+/obj/item/clothing/suit/space/hardsuit/ert/lp/med
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 75)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/med
+	name = "Loss Prevention Medical Hardsuit"
+	desc = "The best of the best medical staff get assigned to the ERT. Second best are given this Hardsuit as a part of the LP Team."
+	icon_state = "ert_medical"
+	item_state = "ert_medical"
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/lp/med
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 75)
+	name = "Loss Prevention Medical Hardsuit Helmet"
+	desc = "The helmet that comes attached to the LP Team Medical Hardsuit."
+	icon_state = "hardsuit0-ert_medical"
+	item_state = "hardsuit0-ert_medical"
+	hardsuit_type = "ert_medical"
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/lp/clown
+	name = "LP Funny Hardsuit Helmet"
+	desc = "Every dog has its day, and every Funny Hardsuit has a Funny Helmet attached to it."
+	armor = list("melee" = 10, "bullet" = 5, "laser" = 10, "energy" = 10, "bomb" = 75, "bio" = 100, "rad" = 15, "fire" = 75, "acid" = 50)
+	icon_state = "hardsuit0-ert_clown"
+	item_state = "hardsuit0-ert_clown"
+	hardsuit_type = "ert_clown"
+
+/obj/item/clothing/suit/space/hardsuit/ert/lp/clown
+	name = "LP Funny Hardsuit"
+	desc = "Only the most faithful of those in service to the Honkmother make it anywhere aside from the mass driver. Let alone the LP."
+	armor = list("melee" = 10, "bullet" = 5, "laser" = 10, "energy" = 10, "bomb" = 75, "bio" = 100, "rad" = 15, "fire" = 75, "acid" = 50)
+	icon_state = "ert_clown"
+	item_state = "ert_clown"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/clown

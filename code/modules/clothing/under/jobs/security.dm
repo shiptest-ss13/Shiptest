@@ -289,3 +289,44 @@
 	desc = "A jumpsuit worn by low ranking members of the Colonial Minutemen."
 	icon_state = "minuteman"
 	item_state = "b_suit"
+
+//LP Power Rangers
+/obj/item/clothing/under/rank/security/head_of_security/nt/skirt/lp
+	name = "LP Security Specialist's Jumpskirt"
+	desc = "A standard Jumpskirt belonging to the Security Specialist of the Loss Previention team."
+
+/obj/item/clothing/under/rank/security/head_of_security/nt/lp
+	name = "LP Security Specialist's Jumpsuit"
+	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Lieutenant."
+
+/obj/item/clothing/under/rank/security/head_of_security/alt/lp
+	name = "LP Lieutentant's 'Dramatic' Jumpsuit"
+	desc = "The first LP Lieutenant wasn't satisfied with the standard outfits given to them. So they requested something more 'Dramatic'."
+
+/obj/item/clothing/under/rank/security/head_of_security/alt/skirt/lp
+	name = "LP Lieutenant's 'Dramatic' Jumpskirt"
+	desc = "The first LP Lieutenant wasn't satisfied with the standard outfits given to them. So they requested something more 'Dramatic'."
+
+/obj/item/clothing/under/rank/security/warden/skirt/lp
+	name = "LP Lieutenant's Jumpskirt"
+	desc = "A standard Jumpskirt belonging to the Lieutenant of the Loss Previention team."
+
+/obj/item/clothing/under/rank/security/warden/lp
+	name = "LP Lieutenant's Jumpsuit"
+	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Lieutenant."
+
+/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/lp
+	name = "LP Engineering Specialist's Jumpsuit"
+	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Engineering Specialist."
+
+/obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/skirt/lp
+	name = "LP Engineering Specialist's Jumpskirt"
+	desc = "A standard Jumpskirt belonging to the Engineering Specialist of the Loss Previention team."
+
+/obj/item/clothing/under/rank/medical/paramedic/lp
+	name = "LP Medical Specialist's Jumpsuit"
+	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Medical Specialist."
+
+/obj/item/clothing/under/rank/medical/paramedic/skirt/lp
+	name = "LP Medical Specialist's Jumpskirt"
+	desc = "A standard Jumpskirt belonging to the Medical Specialist of the Loss Previention team."
