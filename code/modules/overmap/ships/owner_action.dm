@@ -78,7 +78,9 @@
 		if(app.status == SHIP_APPLICATION_PENDING)
 			.["pending"] = TRUE
 		.["applications"] += list(list(
-			key = app.app_key,
+			// we could send along the key to identify, but we don't want to expose that to the owner if show_key is false
+			ref = REF(app),
+			key = (app.show_key ? app.app_key : "<Empty>"),
 			name = app.app_name,
 			text = app.app_msg,
 			status = app.status
@@ -116,7 +118,7 @@
 
 	var/mob/user = usr
 	// admins get to use the panel even if they're not the owner
-	if(user != parent_ship.owner_mob && !user.client.holder)
+	if(!user.client?.holder && user != parent_ship.owner_mob)
 		return TRUE
 
 	switch(action)
@@ -143,8 +145,9 @@
 			return TRUE
 
 		if("setApplication")
-			var/datum/ship_application/target_app = parent_ship.applications[ckey(params["key"])]
-			if(!target_app)
+			var/datum/ship_application/target_app = locate(params["ref"])
+			// if the app isn't found, or it's not in the parent ship's application list
+			if(!target_app || target_app != parent_ship.applications[ckey(target_app.app_key)])
 				return TRUE
 			switch(params["newStatus"])
 				if("yes")
@@ -155,8 +158,9 @@
 			return TRUE
 
 		if("removeApplication")
-			var/datum/ship_application/target_app = parent_ship.applications[ckey(params["key"])]
-			if(!target_app)
+			var/datum/ship_application/target_app = locate(params["ref"])
+			// if the app isn't found, or it's not in the parent ship's application list
+			if(!target_app || target_app != parent_ship.applications[ckey(target_app.app_key)])
 				return TRUE
 			qdel(target_app)
 			return TRUE
@@ -178,7 +182,7 @@
 			if(!new_owner)
 				to_chat(user, "<span class='notice'>Selected candidate is currently ineligible for ownership.</span>", MESSAGE_TYPE_INFO)
 				return TRUE
-			else if(new_owner == user)
+			else if(!user.client?.holder && new_owner == user) // admins get an exception, in case they want to reclaim ownership
 				to_chat(user, "<span class='notice'>You can't transfer ownership to yourself!</span>", MESSAGE_TYPE_INFO)
 				return TRUE
 

@@ -3,24 +3,26 @@
 	var/datum/overmap/ship/controlled/parent_ship
 	/// The applicant's new player mob. We keep track of it to send them an update message if they haven't joined a ship yet.
 	var/mob/dead/new_player/app_mob
+	/// Whether to expose the user's key to the application recipient. Even if this is false, we still store apps using the key.
+	var/show_key = FALSE
 	/// The character name of the applicant at the time they applied. Isn't involved in the application logic,
 	/// but it's nice to have, in case the ship owner recognizes the name but not the key.
 	var/app_name
 	/// The applicant's key. Comparisons are done using ckeys to ensure consistence, but we store the key so
-	/// that the application message is formatted more nicely. If the application is made by a stealthmin,
-	/// it's their fakekey instead.
+	/// that if we send it in the application message it's in a format that might be more familiar to the recipient.
 	var/app_key
 	/// The extra message sent by the applicant.
 	var/app_msg
 	/// The application's status -- whether or not it has been accepted, rejected, or hasn't been answered yet.
 	var/status = SHIP_APPLICATION_PENDING
 
-/datum/ship_application/New(datum/overmap/ship/controlled/parent, mob/dead/new_player/applicant, msg)
+/datum/ship_application/New(datum/overmap/ship/controlled/parent, mob/dead/new_player/applicant, _show_key, msg)
 	parent_ship = parent
 	app_mob = applicant
 	app_name = app_mob.client?.prefs.real_name
 	// If the admin is in stealth mode, we use their fakekey.
 	app_key = app_mob.client?.holder?.fakekey ? app_mob.client.holder.fakekey : applicant.key
+	show_key = _show_key
 	app_msg = msg
 	RegisterSignal(app_mob, COMSIG_PARENT_QDELETING, .proc/applicant_deleting)
 
@@ -33,7 +35,7 @@
 
 	SEND_SOUND(parent_ship.owner_mob, sound('sound/misc/server-ready.ogg', volume=50))
 	var/message = \
-		"<span class='looc'>[app_key] (as [app_name]) applied to your ship: [app_msg]\n" + \
+		"<span class='looc'>[app_name] [show_key ? "([app_key]) " : null]applied to your ship: [app_msg]\n" + \
 		"<a href=?src=[REF(src)];application_accept=1>(ACCEPT)</a> / <a href=?src=[REF(src)];application_deny=1>(DENY)</a></span>"
 	to_chat(parent_ship.owner_mob, message, MESSAGE_TYPE_INFO)
 

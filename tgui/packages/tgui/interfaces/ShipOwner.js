@@ -80,7 +80,7 @@ const ShipOwnerContent = (props, context) => {
           <Table>
             <Table.Row header>
               <Table.Cell>
-                Key
+                CKey
               </Table.Cell>
               <Table.Cell>
                 Character Name
@@ -93,7 +93,7 @@ const ShipOwnerContent = (props, context) => {
               </Table.Cell>
             </Table.Row>
             {applications.map(app => (
-              <Table.Row key={app.key}>
+              <Table.Row key={app.ref}>
                 <Table.Cell>
                   {app.key}
                 </Table.Cell>
@@ -110,7 +110,7 @@ const ShipOwnerContent = (props, context) => {
                         content="Approve"
                         color="good"
                         onClick={() => act('setApplication', {
-                          key: app.key,
+                          ref: app.ref,
                           newStatus: "yes",
                         })}
                       />
@@ -118,7 +118,7 @@ const ShipOwnerContent = (props, context) => {
                         content="Deny"
                         color="bad"
                         onClick={() => act('setApplication', {
-                          key: app.key,
+                          ref: app.ref,
                           newStatus: "no",
                         })}
                       />
@@ -133,7 +133,7 @@ const ShipOwnerContent = (props, context) => {
                         content="Delete"
                         color="black"
                         onClick={() => act('removeApplication', {
-                          key: app.key,
+                          ref: app.ref,
                         })}
                       />
                     </>

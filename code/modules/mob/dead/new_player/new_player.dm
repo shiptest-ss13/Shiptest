@@ -446,8 +446,10 @@
 	AttemptLateSpawn(selected_job, selected_ship)
 
 /mob/dead/new_player/proc/send_application(datum/overmap/ship/controlled/target_ship)
+	var/key_pref = tgui_alert(src, "Send your ckey along with the application? You will still only get one application to this ship.", "Send ckey?", list("Withold ckey", "Send ckey"))
+	var/show_key = key_pref == "Send ckey"
 	var/msg = sanitize(stripped_multiline_input(usr, "If you would like to add additional information to your application, enter it here. OOC information is allowed.", "Ship Application"))
-	new /datum/ship_application(target_ship, src, msg)
+	new /datum/ship_application(target_ship, src, show_key, msg)
 	to_chat(usr, "<span class='notice'>Ship application sent. You will be notified if the application is accepted.</span>")
 	return
 
