@@ -415,7 +415,7 @@
 	var/combat_slowdown = 0 //slowdown when in combat mode
 
 //Crimson Syndie suit
-/obj/item/clothing/suit/space/helmet/hardsuit/syndi/crimson
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/crimson
 	name = "crimson hardsuit helmet"
 	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. It is in EVA mode. Manufactured by Donk Co."
 	alt_desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. It is in combat mode. Manufactured by Donk Co."
