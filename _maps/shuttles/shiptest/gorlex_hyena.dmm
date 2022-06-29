@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ar" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "aF" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -2012,7 +2016,8 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/crimson,
 /obj/item/clothing/mask/breath,
 /obj/machinery/suit_storage_unit/inherit/industrial{
-	req_access = list(48)
+	req_access = null;
+	req_one_access = list(48, 56)
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -2596,10 +2601,6 @@
 /obj/structure/sign/warning/vacuum/external,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
-"RR" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
 "Sd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2885,11 +2886,12 @@
 /obj/effect/turf_decal/industrial/outline,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/suit_storage_unit/inherit/industrial{
-	req_access = list(48)
-	},
 /obj/item/clothing/suit/space/hardsuit/syndi/crimson,
 /obj/item/clothing/mask/breath,
+/obj/machinery/suit_storage_unit/inherit/industrial{
+	req_access = null;
+	req_one_access = list(48, 56)
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "VY" = (
@@ -3644,7 +3646,7 @@ WN
 sH
 Ap
 Ln
-RR
+ar
 PT
 FQ
 zn
