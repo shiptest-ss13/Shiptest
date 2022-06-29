@@ -435,6 +435,8 @@
 	item_state = "syndie_hardsuit"
 	hardsuit_type = "syndi"
 	//end temporary vars
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/crimson
+	jetpack = null
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	combat_slowdown = 0.5
 
