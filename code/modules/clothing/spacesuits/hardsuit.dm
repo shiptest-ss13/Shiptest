@@ -388,7 +388,7 @@
 		else
 			linkedsuit.name += " (combat)"
 			linkedsuit.desc = linkedsuit.alt_desc
-			linkedsuit.slowdown = 0
+			linkedsuit.slowdown = linkedsuit.combat_slowdown
 			linkedsuit.clothing_flags &= ~STOPSPRESSUREDAMAGE
 			linkedsuit.cold_protection &= ~(CHEST | GROIN | LEGS | FEET | ARMS | HANDS)
 
@@ -412,6 +412,31 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	jetpack = /obj/item/tank/jetpack/suit
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	var/combat_slowdown = 0 //slowdown when in combat mode
+
+//Crimson Syndie suit
+/obj/item/clothing/suit/space/helmet/hardsuit/syndi/crimson
+	name = "crimson hardsuit helmet"
+	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. It is in EVA mode. Manufactured by Donk Co."
+	alt_desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. It is in combat mode. Manufactured by Donk Co."
+	//TEMP: Using blood-red sprites, replace with crimson when available
+	icon_state = "hardsuit0-syndi"
+	item_state = "syndie_helm"
+	hardsuit_type = "syndi"
+	//end temporary vars
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/crimson
+	name = "crimson hardsuit"
+	desc = "A standardized dual-mode hardsuit derived from more advanced special operations hardsuits. It is in EVA mode. Manufactured by Donk Co."
+	alt_desc = "A standardized dual-mode hardsuit derived from more advanced special operations hardsuits. It is in combat mode. Manufactured by Donk Co."
+	//TEMP: Using blood-red sprites, replace with crimson when available
+	icon_state = "hardsuit0-syndi"
+	item_state = "syndie_hardsuit"
+	hardsuit_type = "syndi"
+	//end temporary vars
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	combat_slowdown = 0.5
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -991,7 +1016,7 @@
 	item_state = "independent_sec_hardsuit"
 	hardsuit_type = "independent-sec"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 	//Mining
 /obj/item/clothing/head/helmet/space/hardsuit/mining/independent
