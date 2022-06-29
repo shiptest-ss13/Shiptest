@@ -34,12 +34,12 @@
 	description = "After a logging incident gone wrong, the Syndicate invade this factory to stop the beast."
 	suffix = "jungle_surface_tumblr_sexyman.dmm"
 
-//industrial society blah blah blah
-/datum/map_template/ruin/jungle/unabomber
+//far more tasteful than its predecessor...
+/datum/map_template/ruin/jungle/lessonintrickery
 	name = "Bombmaker's Cabin"
-	id = "unabomber-cabin"
-	description = "The Industrial Revolution and its consequences have been a disaster for the human race."
-	suffix = "jungle_surface_unabomber_cabin.dmm"
+	id = "bombmakers-cabin"
+	description = "Playing with bombs again, are we?"
+	suffix = "jungle_surface_bombmakers_cabin.dmm"
 
 /datum/map_template/ruin/jungle/weedshack
 	name = "Stoner's Cabin"
