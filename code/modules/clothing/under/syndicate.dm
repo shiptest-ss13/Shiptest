@@ -17,7 +17,7 @@
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/syndicate/bloodred
 	name = "blood-red sneaksuit"
@@ -50,7 +50,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/syndicate/sniper
 	name = "Tactical turtleneck suit"
@@ -139,7 +139,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/syndicate/donk
 	name = "Donk! Co. employee uniform"
@@ -224,7 +224,7 @@
 	item_state = "bl_suit"
 	has_sensor = HAS_SENSORS
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	alt_covers_chest = TRUE
 	icon = 'icons/obj/clothing/under/syndicate.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/syndicate.dmi'
@@ -237,7 +237,7 @@
 	has_sensor = HAS_SENSORS
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
 
