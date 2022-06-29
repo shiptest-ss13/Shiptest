@@ -1,8 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ar" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
 "aF" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -2092,6 +2088,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/carpet/red,
 /area/ship/crew)
+"Ks" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "Ky" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -2837,7 +2837,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "VD" = (
-/obj/effect/decal/remains/human,
 /obj/item/reagent_containers/food/drinks/bottle/wine{
 	pixel_x = -15;
 	pixel_y = 13
@@ -2845,6 +2844,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/remains/human,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "VG" = (
@@ -2888,10 +2888,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/suit/space/hardsuit/syndi/crimson,
 /obj/item/clothing/mask/breath,
-/obj/machinery/suit_storage_unit/inherit/industrial{
-	req_access = null;
-	req_one_access = list(48, 56)
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "VY" = (
@@ -3161,8 +3157,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Zb" = (
-/obj/structure/lattice,
-/turf/template_noop,
+/obj/effect/decal/fakelattice,
+/turf/open/floor/plating,
 /area/ship/external)
 "Zg" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -3646,7 +3642,7 @@ WN
 sH
 Ap
 Ln
-ar
+Ks
 PT
 FQ
 zn
