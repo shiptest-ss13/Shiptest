@@ -7,6 +7,10 @@
 	"map_id": "tour_cruise_ship",
 	"job_slots": {
 		"Captain": 1,
+		"Cruise Director": {
+			"outfit": "/datum/outfit/job/head_of_personnel",
+			"slots": 1
+		},
 		"Security Officer": 2,
 		"Medical Doctor": 1,
 		"Ship Engineer": {
