@@ -214,10 +214,3 @@
 	r_pocket = /obj/item/analyzer
 	glasses = /obj/item/clothing/glasses/welding
 
-	/datum/outfit/job/engineer/syndicate_komodo
-	name = "Ship Engineer"
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	r_pocket = /obj/item/analyzer
-	belt = /obj/item/storage/belt/utility
-	back = /obj/item/storage/backpack/industrial
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)

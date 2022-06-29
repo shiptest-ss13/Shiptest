@@ -249,7 +249,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	mask = null
 	gloves = null
 
-/datum/outfit/job/security/nanotrasen
+/datum/outfit/job
+/security/nanotrasen
 	name = "Security Officer (Nanotrasen)"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/nt
