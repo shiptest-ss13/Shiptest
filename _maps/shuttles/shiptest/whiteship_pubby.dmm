@@ -564,6 +564,8 @@
 /obj/structure/closet/crate,
 /obj/item/rcl,
 /obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/item/circuitboard/mecha/pod,
+/obj/item/pod_parts/core,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "lQ" = (
@@ -1319,6 +1321,7 @@
 /obj/item/reagent_containers/food/condiment/milk,
 /obj/item/reagent_containers/food/condiment/soymilk,
 /obj/item/reagent_containers/food/condiment/soysauce,
+/obj/item/storage/fancy/egg_box,
 /turf/open/floor/plastic,
 /area/ship/crew/office)
 "CA" = (
@@ -1407,6 +1410,18 @@
 "Eb" = (
 /turf/open/floor/engine/hull,
 /area/ship/engineering)
+"Eg" = (
+/obj/machinery/suit_storage_unit/independent/pilot,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "Ep" = (
 /obj/structure/spacepoddoor{
 	dir = 4
@@ -2329,6 +2344,7 @@
 	},
 /obj/item/spacepod_equipment/weaponry/laser,
 /obj/item/spacepod_equipment/cargo/large/ore,
+/obj/item/spacepod_equipment/cargo/chair,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "WE" = (
@@ -2720,7 +2736,7 @@ Va
 cx
 vC
 vC
-KB
+Eg
 RH
 uB
 QY
