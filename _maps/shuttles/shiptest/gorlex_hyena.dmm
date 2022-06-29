@@ -383,6 +383,10 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
+"hT" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "ia" = (
 /obj/effect/turf_decal/arrows{
 	dir = 8
@@ -1993,7 +1997,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "JB" = (
-/obj/structure/filingcabinet/security,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
@@ -2002,6 +2005,8 @@
 	pixel_y = -16
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/documents/syndicate/mining,
+/obj/structure/filingcabinet,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "JF" = (
@@ -2088,10 +2093,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/carpet/red,
 /area/ship/crew)
-"Ks" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
 "Ky" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -2888,6 +2889,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/suit/space/hardsuit/syndi/crimson,
 /obj/item/clothing/mask/breath,
+/obj/machinery/suit_storage_unit/inherit/industrial{
+	req_access = null;
+	req_one_access = list(48, 56)
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "VY" = (
@@ -3642,7 +3647,7 @@ WN
 sH
 Ap
 Ln
-Ks
+hT
 PT
 FQ
 zn
