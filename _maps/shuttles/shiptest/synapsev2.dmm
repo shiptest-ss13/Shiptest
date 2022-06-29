@@ -31,9 +31,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/storage/toolbox/mechanical,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -259,6 +261,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "en" = (
@@ -408,6 +413,9 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/blood,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "fI" = (
@@ -610,6 +618,24 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
+"js" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/north,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/door/window{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "jy" = (
 /obj/machinery/vending/cola/random,
 /obj/effect/turf_decal/trimline/black/filled/line{
@@ -1072,6 +1098,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "qv" = (
@@ -1451,9 +1478,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/morgue)
 "uX" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1773,24 +1797,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
-"yV" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/window/reinforced/spawner/north,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 9
-	},
-/obj/machinery/door/window{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "ze" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -1920,6 +1926,9 @@
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2727,9 +2736,6 @@
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
 "MW" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 4
 	},
@@ -2740,6 +2746,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "MY" = (
@@ -3938,7 +3945,7 @@ FY
 Du
 En
 YQ
-yV
+js
 Vm
 hZ
 "}
