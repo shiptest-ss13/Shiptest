@@ -2601,6 +2601,109 @@
 		else
 			addtimer(CALLBACK(L, /mob/living.proc/gib), 5 SECONDS)
 
+/datum/reagent/cement
+	name = "Cement"
+	description = "A sophisticated binding agent used to produce concrete."
+	color = "#c4c0bc"
+	taste_description = "cement"
+	harmful = TRUE
+	var/potency = 2
+	var/concrete_type = /datum/reagent/concrete
+	var/units_per_aggregate = 5
+
+// make changes to dip_object -- remove H?
+/datum/reagent/cement/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	if(!istype(I, /obj/item/stack/ore/glass))
+		return FALSE
+	var/obj/item/stack/ore/glass/aggregate = I
+	// the maximum amount of aggregate we can use
+	var/agg_used = min(round(volume / units_per_aggregate), aggregate.get_amount())
+	if(!agg_used)
+		return FALSE
+	var/amt = agg_used * units_per_aggregate
+	aggregate.use(agg_used)
+	H.reagents.remove_reagent(src.type, amt)
+	H.reagents.add_reagent(concrete_type, amt)
+	return TRUE
+
+/datum/reagent/cement/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+	. = ..()
+	if(!. || method != INGEST)
+		return
+	var/age = 6
+	if(ishuman(M))
+		var/mob/living/carbon/human/conc_eater = M
+		age = conc_eater.age
+	message_admins("[M] was forced to eat cement when [M.p_they()] [M.p_were()] [age]!")
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "cement", /datum/mood_event/cement)
+
+/datum/reagent/cement/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	if(prob(min(current_cycle/2, 5)))
+		M.adjustToxLoss(potency*REM)
+	if(prob(min(current_cycle/4, 10)))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN,potency*REM)
+
+/datum/reagent/cement/hexement
+	name = "Hexement"
+	description = "An advanced, space-age binding agent used to produce reinforced concrete."
+	color = "#969390"
+	potency = 4
+	concrete_type = /datum/reagent/concrete/hexacrete
+	units_per_aggregate = 2
+
+/datum/reagent/concrete
+	name = "Concrete"
+	description = "A mix of cement and aggregate, commonly used as a bulk building material."
+	color = "#a8988a"
+	taste_description = "rocks"
+	var/units_per_wall = 10
+	var/units_per_floor = 2
+	var/turf/closed/wall/concrete/wall_type = /turf/closed/wall/concrete
+	var/turf/open/floor/concrete/floor_type = /turf/open/floor/concrete
+
+/datum/reagent/concrete/expose_obj(obj/O, volume)
+	var/girder_type = initial(wall_type.girder_type)
+	if(istype(O, girder_type))
+		return concify_girder(O, volume)
+	if(istype(O, /obj/structure/catwalk))
+		return concify_catwalk(O, volume)
+
+/datum/reagent/concrete/proc/concify_girder(obj/O, volume)
+	if(volume < units_per_wall)
+		return
+	var/turf/open/wall_turf = get_turf(O)
+	if(!istype(wall_turf))
+		return
+	var/turf/closed/wall/concrete/conc_wall = wall_turf.PlaceOnTop(wall_type)
+	O.transfer_fingerprints_to(conc_wall)
+	conc_wall.harden_lvl = 0
+	conc_wall.check_harden()
+	conc_wall.update_stats()
+	qdel(O)
+	return
+
+/datum/reagent/concrete/proc/concify_catwalk(obj/O, volume)
+	if(volume < units_per_floor)
+		return
+	var/turf/open/floor/plating/floor_turf = get_turf(O)
+	if(!istype(floor_turf))
+		return
+	var/turf/open/floor/concrete/conc_floor = floor_turf.PlaceOnTop(floor_type)
+	O.transfer_fingerprints_to(conc_floor)
+	conc_floor.harden_lvl = 0
+	conc_floor.check_harden()
+	conc_floor.update_icon()
+	qdel(O)
+	return
+
+/datum/reagent/concrete/hexacrete
+	name = "Hexacrete"
+	description = "Made with fortified cement, this mix of binder and aggregate is a useful, sturdy building material."
+	color = "#7b6e60"
+	wall_type = /turf/closed/wall/concrete/reinforced
+	floor_type = /turf/open/floor/concrete/reinforced
+
 /datum/reagent/calcium
 	name = "Calcium"
 	description = "A dull gray metal important to bones."
