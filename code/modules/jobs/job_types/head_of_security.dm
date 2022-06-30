@@ -80,7 +80,7 @@
 	uniform = /obj/item/clothing/under/syndicate/combat
 	head = /obj/item/clothing/head/warden
 	suit = /obj/item/clothing/suit/armor/vest/syndie
-	id = /obj/item/card/id/syndicate_command/operative
+	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
 
 /datum/outfit/job/hos/inteq

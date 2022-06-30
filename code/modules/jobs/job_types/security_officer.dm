@@ -278,6 +278,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	belt = /obj/item/storage/belt/military
 	back = /obj/item/storage/backpack
 	suit = /obj/item/clothing/suit/armor/vest
+	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
 
 //Shiptest outfits end

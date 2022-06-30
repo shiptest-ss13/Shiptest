@@ -154,6 +154,7 @@
 	glasses = /obj/item/clothing/glasses/hud/health/prescription
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
+	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
 
 /datum/outfit/job/doctor/roumain
