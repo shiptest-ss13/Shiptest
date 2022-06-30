@@ -1,6 +1,6 @@
 /datum/job/lp/lieutenant
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617, 5592, 5832, 2398)
+	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617, 5592, 5832, 2398)
 
 /datum/outfit/job/lp/lieutenant
 	name = "LP Lieutenant"
@@ -23,8 +23,8 @@
 
 
 /datum/job/lp/security
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 5592, 5376)
+	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 5592, 5376)
 
 /datum/outfit/job/lp/security
 	name = "LP Security Specialist"
@@ -47,8 +47,8 @@
 
 
 /datum/job/lp/engineer
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 5832, 8357)
+	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 5832, 8357)
 
 /datum/outfit/job/lp/engineer
 	name = "LP Engineering Specialist"
@@ -71,8 +71,8 @@
 
 
 /datum/job/lp/medic
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617, 9377)
+	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617, 9377)
 
 /datum/outfit/job/lp/medic
 	name = "LP Medical specialist"
@@ -96,8 +96,8 @@
 
 
 /datum/job/lp/commissioner
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617, 5832, 6732)
+	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617, 5832, 6732)
 
 /datum/outfit/job/lp/commissioner
 	name = "LP Commissioner"
@@ -118,14 +118,35 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
 
+
+/datum/job/scientist/lp
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 5832)
+	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 5832)
+
 /datum/outfit/job/scientist/lp
 	id = /obj/item/card/id/scilp
+	jobtype = /datum/job/scientist/lp
+
+/datum/job/miner/lp
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425)
+	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425)
 
 /datum/outfit/job/miner/lp
 	id = /obj/item/card/id/minelp
+	jobtype = /datum/job/miner/lp
+
+
+/datum/job/doctor/lp
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617)
+	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617)
 
 /datum/outfit/job/doctor/lp
 	id = /obj/item/card/id/doclp
+	jobtype = /datum/job/doctor/lp
+
+/datum/job/bartender/lp
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425)
+	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425)
 
 /datum/outfit/job/bartender/lp
 	id = /obj/item/card/id/barlp

@@ -986,7 +986,7 @@ update_label()
 	name = "LP Standing Doctor"
 	desc = "The LP standing doctor's ID card."
 	icon_state = "nanotrasen"
-	ship_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617, )
+	ship_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617)
 
 /obj/item/card/id/lpcomm
 	name = "LP Commissioner's ID"
