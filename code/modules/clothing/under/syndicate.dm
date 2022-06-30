@@ -273,12 +273,4 @@
 	var/obj/item/clothing/accessory/maidapron/inteq/A = new (src)
 	attach_accessory(A)
 
-/datum/outfit/syndicate/assult_komodo
-	name = "Syndicate Battlecruiser Assault Operative"
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	l_pocket = /obj/item/ammo_box/magazine/m10mm
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/storage/belt/military
-	back = /obj/item/storage/backpack
-	suit = /obj/item/clothing/suit/armor/vest
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
+

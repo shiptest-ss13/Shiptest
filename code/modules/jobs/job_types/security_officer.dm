@@ -258,7 +258,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 /datum/outfit/syndicate_empty/sbc/assault_komodo
 	name = "Syndicate Battlecruiser Assault Operative"
 	uniform = /obj/item/clothing/under/syndicate/gorlex
-	l_pocket = /obj/item/ammo_box/magazine/m10mm
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	belt = /obj/item/storage/belt/military
 	back = /obj/item/storage/backpack
