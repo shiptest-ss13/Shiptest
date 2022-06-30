@@ -115,6 +115,9 @@
 	default_cartridge = /obj/item/cartridge/head_of_personnel
 	icon_state = "pda-hop"
 
+/obj/item/pda/heads/lp/commissioner
+	name = "commissioner PDA"
+
 /obj/item/pda/heads/hos
 	name = "head of security PDA"
 	default_cartridge = /obj/item/cartridge/hos
