@@ -45,7 +45,7 @@
 	if(!M.environment_smash)
 		return
 	if(M.environment_smash & ENVIRONMENT_SMASH_RWALLS)
-		dismantle_wall(TRUE)
+		dismantle_wall(devastated = TRUE)
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)

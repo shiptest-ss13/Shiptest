@@ -179,7 +179,7 @@
 		if(istype(W, /obj/item/hatchet) || istype(W, /obj/item/fireaxe))
 			duration /= 4 //Much better with hatchets and axes.
 		if(do_after(user, duration*10, target=src)) //Into deciseconds.
-			dismantle_wall(FALSE)
+			dismantle_wall(devastated = FALSE)
 			return
 	return ..()
 

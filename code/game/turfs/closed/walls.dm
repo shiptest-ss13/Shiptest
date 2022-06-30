@@ -95,7 +95,7 @@
 
 /turf/closed/wall/ex_act(severity, target)
 	if(target == src)
-		dismantle_wall(TRUE)
+		dismantle_wall(devastated = TRUE)
 		return
 	switch(severity)
 		if(EXPLODE_DEVASTATE)
@@ -105,12 +105,12 @@
 			return
 		if(EXPLODE_HEAVY)
 			if (prob(50))
-				dismantle_wall(TRUE)
+				dismantle_wall(devastated = TRUE)
 			else
-				dismantle_wall(FALSE)
+				dismantle_wall(devastated = FALSE)
 		if(EXPLODE_LIGHT)
 			if (prob(hardness))
-				dismantle_wall(FALSE)
+				dismantle_wall(devastated = FALSE)
 	if(!density)
 		..()
 
@@ -129,7 +129,7 @@
 			M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
 							"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
 			if(prob(hardness + M.force) && M.force > 20)
-				dismantle_wall(TRUE)
+				dismantle_wall(devastated = TRUE)
 				playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 			else
 				add_dent(WALL_DENT_HIT)
@@ -148,7 +148,7 @@
 	M.do_attack_animation(src)
 	if((M.environment_smash & ENVIRONMENT_SMASH_WALLS) || (M.environment_smash & ENVIRONMENT_SMASH_RWALLS))
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-		dismantle_wall(TRUE)
+		dismantle_wall(devastated = TRUE)
 		return
 
 /turf/closed/wall/attack_hulk(mob/living/carbon/user)
@@ -159,7 +159,7 @@
 	if(prob(hardness))
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 		user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
-		dismantle_wall(TRUE)
+		dismantle_wall(devastated = TRUE)
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		add_dent(WALL_DENT_HIT)
@@ -283,7 +283,7 @@
 	. = ..()
 
 /turf/closed/wall/acid_melt()
-	dismantle_wall(TRUE)
+	dismantle_wall(devastated = TRUE)
 
 /turf/closed/wall/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)
