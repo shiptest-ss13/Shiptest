@@ -255,15 +255,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	uniform = /obj/item/clothing/under/rank/security/officer/nt
 	alt_uniform = null
 
-/datum/outfit/syndicate_empty/sbc/assault_komodo
-	name = "Syndicate Battlecruiser Assault Operative"
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/storage/belt/military
-	back = /obj/item/storage/backpack
-	suit = /obj/item/clothing/suit/armor/vest
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
-
 /datum/outfit/job/security/roumain
 	name = "Hunter (Saint-Roumain Militia)"
 
@@ -279,6 +270,15 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 	backpack_contents = null
+
+/datum/outfit/job/security/syndicate/gorlex
+	name = "Syndicate Battlecruiser Assault Operative"
+	uniform = /obj/item/clothing/under/syndicate
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	belt = /obj/item/storage/belt/military
+	back = /obj/item/storage/backpack
+	suit = /obj/item/clothing/suit/armor/vest
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
 
 //Shiptest outfits end
 
