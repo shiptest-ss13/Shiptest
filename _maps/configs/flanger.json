@@ -5,6 +5,7 @@
 	"map_short_name": "Flanger-class",
 	"map_path": "_maps/shuttles/shiptest/flanger.dmm",
 	"map_id": "flanger",
+	"limit": 3,
 	"job_slots": {
 		"Pilot": {
 			"outfit": "/datum/outfit/job/cargo_tech/pilot",
@@ -20,8 +21,8 @@
 			"outfit": "/datum/outfit/job/engineer/nt",
 			"slots": 1
 		},
-		"Surveyer": {
-			"outfit": "/datum/outfit/job/miner/hazard",
+		"Surveyor": {
+			"outfit": "/datum/outfit/job/miner/old",
 			"slots": 1
 		},
 		"Transport Guard": {
@@ -29,5 +30,5 @@
 			"slots": 1
 		}
 	},
-	"cost": 800
+	"cost": 8000
 }
