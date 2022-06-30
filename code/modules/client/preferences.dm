@@ -434,16 +434,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br></td>"
 
-			dat += "<h3>Prosthetic Limbs</h3>"
-
-			var/list/limb_display_list = list()
-			for(var/index in prosthetic_limbs)
-				var/bodypart_name = parse_zone(index)
-				if(prosthetic_limbs[index] != PROSTHETIC_NORMAL)
-					limb_display_list += "[bodypart_name]: [prosthetic_limbs[index]]"
-				dat += "<a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[bodypart_name]</a>"
-			dat += "<b>Current Modifications:</b> [length(limb_display_list) ? limb_display_list.Join("; ") : "None"]<BR>"
-
 			//Mutant stuff
 			var/mutant_category = 0
 
@@ -789,6 +779,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "</td>"
 				mutant_category = 0
 			dat += "</tr></table>"
+
+			dat += "<h3>Prosthetic Limbs</h3>"
+
+			var/list/limb_display_list = list()
+			for(var/index in prosthetic_limbs)
+				var/bodypart_name = parse_zone(index)
+				if(prosthetic_limbs[index] != PROSTHETIC_NORMAL)
+					limb_display_list += "[bodypart_name]: [prosthetic_limbs[index]]"
+				dat += "<a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[bodypart_name]</a>"
+			dat += "<b>Current Modifications:</b> [length(limb_display_list) ? limb_display_list.Join("; ") : "None"]<BR>"
 
 		if(2) //Loadout
 			if(path)
@@ -2372,27 +2372,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		pref_species = new /datum/species/human
 		save_character()
 
-	character.dna.features = features.Copy()
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
-	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
-	character.dna.real_name = character.real_name
-	character.hair_color = hair_color
-	character.facial_hair_color = facial_hair_color
-
-	character.hairstyle = hairstyle
-	character.facial_hairstyle = facial_hairstyle
-
-	if("tail_lizard" in pref_species.default_features)
-		character.dna.species.mutant_bodyparts |= "tail_lizard"
-
 	for(var/pros_limbs in prosthetic_limbs)
 		var/obj/item/bodypart/old_part = character.get_bodypart(pros_limbs)
+		if(old_part)
+			icon_updates = TRUE
 		switch(prosthetic_limbs[pros_limbs])
 			if(PROSTHETIC_NORMAL)
-				continue
+				if(old_part)
+					old_part.drop_limb(TRUE)
+					qdel(old_part)
+				character.regenerate_limb(pros_limbs)
 			if(PROSTHETIC_AMPUTATED)
 				if(old_part)
-					old_part.drop_limb(special = TRUE)
+					old_part.drop_limb(TRUE)
 					qdel(old_part)
 			if(PROSTHETIC_ROBOTIC)
 				var/obj/item/bodypart/prosthetic
@@ -2408,6 +2400,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				prosthetic.replace_limb(character, special = TRUE)
 				if(old_part)
 					qdel(old_part)
+
+	character.dna.features = features.Copy()
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
+	character.dna.real_name = character.real_name
+	character.hair_color = hair_color
+	character.facial_hair_color = facial_hair_color
+
+	character.hairstyle = hairstyle
+	character.facial_hairstyle = facial_hairstyle
+
+	if("tail_lizard" in pref_species.default_features)
+		character.dna.species.mutant_bodyparts |= "tail_lizard"
 
 	if(icon_updates)
 		character.update_body()
