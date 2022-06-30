@@ -536,7 +536,7 @@
 		if(AIRLOCK_DENY, AIRLOCK_OPENING, AIRLOCK_CLOSING, AIRLOCK_EMAG)
 			icon_state = "nonexistenticonstate" //MADNESS
 	set_airlock_overlays(state)
-
+/*
 /obj/machinery/door/airlock/proc/set_airlock_overlays(state)
 	var/mutable_appearance/frame_overlay
 	var/mutable_appearance/filling_overlay
@@ -704,7 +704,7 @@
 	add_overlay(hatch_overlay) //WS edit - Drone hatches
 	add_overlay(seal_overlay)
 	check_unres()
-
+*/
 /proc/get_airlock_overlay(icon_state, icon_file)
 	var/obj/machinery/door/airlock/A
 	pass(A)	//suppress unused warning
