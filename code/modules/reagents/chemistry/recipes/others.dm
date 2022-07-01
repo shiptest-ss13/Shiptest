@@ -690,6 +690,18 @@
 	results = list(/datum/reagent/mutationtoxin/plasma = 1)
 	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/toxin/plasma = 60, /datum/reagent/uranium = 20)
 
+/datum/chemical_reaction/cement
+	results = list(/datum/reagent/cement = 6)
+	required_reagents = list(/datum/reagent/carbon = 2, /datum/reagent/hydrogen = 2, /datum/reagent/oxygen = 2, /datum/reagent/water = 1)
+	required_temp = 400
+	mix_message = "The mixture boils off a grey vapor..."//The water boils off, leaving the cement
+
+/datum/chemical_reaction/hexement
+	results = list(/datum/reagent/cement/hexement = 1)
+	required_reagents = list(/datum/reagent/cement = 6, /datum/reagent/phenol = 1)
+	required_temp = 400
+	mix_message = "The mixture rapidly condenses and darkens in color..."
+
 /datum/chemical_reaction/cellulose_carbonization/ash		// Sub for cellulose
 	required_reagents = list(/datum/reagent/ash_fibers)
 
