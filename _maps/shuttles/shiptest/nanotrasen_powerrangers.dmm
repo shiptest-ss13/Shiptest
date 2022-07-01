@@ -515,11 +515,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "eH" = (
-/obj/structure/chair/comfy/teal{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/structure/chair/comfy/black{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
@@ -798,12 +798,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/port)
 "hH" = (
-/obj/structure/chair/comfy/teal{
-	dir = 4
-	},
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable/cyan{
 	icon_state = "0-4"
+	},
+/obj/structure/chair/comfy/black{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
@@ -1954,11 +1954,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "xA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/ntlogo{
 	pixel_x = 16;
 	pixel_y = 16
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "xF" = (
@@ -2238,14 +2238,14 @@
 /turf/open/floor/circuit/telecomms/server,
 /area/ship/hallway/central)
 "Bl" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/cyan{
+	icon_state = "1-9"
+	},
 /obj/effect/turf_decal/ntlogo{
 	dir = 4;
 	pixel_x = -16;
 	pixel_y = 16
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable/cyan{
-	icon_state = "1-9"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
@@ -2262,7 +2262,7 @@
 /turf/open/floor/circuit/red/airless,
 /area/ship/science/ai_chamber)
 "Bv" = (
-/obj/structure/chair/comfy/teal{
+/obj/structure/chair/comfy/black{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -2420,11 +2420,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "CW" = (
-/obj/structure/chair/comfy/teal{
-	dir = 8
-	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/chair/comfy/black{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
@@ -3251,16 +3251,16 @@
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/port)
 "Mm" = (
-/obj/effect/turf_decal/ntlogo{
-	dir = 1;
-	pixel_x = 16;
-	pixel_y = -16
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/structure/cable/cyan{
 	icon_state = "6-8"
+	},
+/obj/effect/turf_decal/ntlogo{
+	dir = 1;
+	pixel_x = 16;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
@@ -3353,13 +3353,13 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "NY" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /obj/effect/turf_decal/ntlogo{
 	dir = 8;
 	pixel_x = -16;
 	pixel_y = -16
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)

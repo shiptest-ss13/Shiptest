@@ -935,67 +935,48 @@ update_label()
 	department_name = ACCOUNT_SEC_NAME
 	icon_state = "sec_budget"
 
-//Power rangers IDs
-//lieutenant locked - 2398
-//seccie locked - 5376
-//engi = 8357
-//medi = 9377
-//facilities = 6425
-//comm = 6732
-//OR = 3617
-//vault = 5592
-//bridge = 7921
-//AI = 5832
+
 /obj/item/card/id/lpengie
 	desc = "The LP Engineering Specialist's ID card."
 	icon_state = "ert_engineer"
-	ship_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 5832, 8357)
 	name = "LP Engineering Specialist"
 
 /obj/item/card/id/lpmed
 	desc = "The LP Medical Specialist's ID card."
 	icon_state = "ert_medic"
-	ship_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617, 9377)
 	name = "LP Medical Specialist"
 
 /obj/item/card/id/lpsec
 	desc = "The LP Security Specialist's ID card."
 	icon_state = "ert_security"
-	ship_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 5592, 5376)
 	name = "LP Security Specialist"
 
 /obj/item/card/id/scilp
 	name = "LP Standing Scientist"
 	desc = "The LP Standing Scientist's ID card."
 	icon_state = "nanotrasen"
-	ship_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 5832)
 
 /obj/item/card/id/minelp
 	name = "LP Standing Miner"
 	desc = "The LP Standing Miner's ID card."
 	icon_state = "nanotrasen"
-	ship_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425)
 
 /obj/item/card/id/barlp
 	name = "LP Standing Bartender"
 	desc = "The LP Standing Bartender's ID card."
 	icon_state = "nanotrasen"
-	ship_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425)
 
 /obj/item/card/id/doclp
 	name = "LP Standing Doctor"
 	desc = "The LP standing doctor's ID card."
 	icon_state = "nanotrasen"
-	ship_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617)
 
 /obj/item/card/id/lpcomm
 	name = "LP Commissioner's ID"
 	desc = "The LP Commissioner's ID card."
 	icon_state = "centcom"
-	ship_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617, 5832, 6732)
 
 /obj/item/card/id/lplieu
 	name = "LP Lieutenant's ID"
 	desc = "The LP Lieutenant's ID card."
 	icon_state = "ert_commander"
-	ship_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, 6425, 7921, 3617, 5592, 5832, 2398)

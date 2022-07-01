@@ -486,7 +486,7 @@ Contains:
 	resistance_flags = null
 	max_heat_protection_temperature = null
 
-/obj/item/clothing/suit/space/hardsuit/ert/sec/lp
+/obj/item/clothing/suit/space/hardsuit/ert/lp/sec
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/sec
 	name = "Loss Prevention Security Hardsuit"
