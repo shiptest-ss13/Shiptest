@@ -507,7 +507,7 @@
 /obj/structure/fans/tiny,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "im" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1238,6 +1238,12 @@
 "Bk" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
+"Bv" = (
+/obj/effect/turf_decal/corner/beige{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "By" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/machinery/space_heater,
@@ -1592,7 +1598,7 @@
 	},
 /obj/structure/fans/tiny,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "KY" = (
 /obj/structure/window/reinforced{
@@ -1939,7 +1945,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "TF" = (
 /obj/structure/cable{
@@ -2716,7 +2722,7 @@ FC
 Pz
 aP
 WW
-Kw
+Bv
 yq
 kW
 NT
