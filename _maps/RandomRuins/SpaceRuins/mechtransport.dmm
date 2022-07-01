@@ -12,6 +12,12 @@
 "d" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/space/has_grav/powered/mechtransport)
+"e" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 1
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ruin/space/has_grav/powered/mechtransport)
 "f" = (
 /obj/structure/closet/crate/secure/loot,
 /obj/effect/decal/cleanable/cobweb,
@@ -64,6 +70,12 @@
 	req_access_txt = "101"
 	},
 /turf/open/floor/mineral/titanium,
+/area/ruin/space/has_grav/powered/mechtransport)
+"q" = (
+/obj/machinery/power/smes/shuttle{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/mechtransport)
 "r" = (
 /obj/effect/decal/cleanable/dirt,
@@ -175,6 +187,9 @@
 /area/ruin/space/has_grav/powered/mechtransport)
 "Q" = (
 /obj/structure/mecha_wreckage/gygax,
+/obj/structure/cable{
+	icon_state = "4-6"
+	},
 /turf/open/floor/mineral/titanium/airless,
 /area/ruin/space/has_grav/powered/mechtransport)
 "R" = (
@@ -189,13 +204,35 @@
 "T" = (
 /turf/template_noop,
 /area/ruin/space/has_grav/powered/mechtransport)
+"U" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/turf/template_noop,
+/area/ruin/space/has_grav/powered/mechtransport)
 "V" = (
 /obj/item/stack/rods,
 /turf/template_noop,
 /area/ruin/space/has_grav/powered/mechtransport)
+"W" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/mineral/titanium/airless,
+/area/ruin/space/has_grav/powered/mechtransport)
 "X" = (
-/obj/structure/shuttle/engine/propulsion,
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 1
+	},
 /turf/template_noop,
+/area/ruin/space/has_grav/powered/mechtransport)
+"Z" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/mechtransport)
 
 (1,1,1) = {"
@@ -313,8 +350,8 @@ y
 w
 w
 Q
-d
-b
+H
+e
 X
 "}
 (8,1,1) = {"
@@ -329,10 +366,10 @@ w
 w
 B
 y
-s
-d
-d
-X
+W
+Z
+q
+U
 "}
 (9,1,1) = {"
 a
@@ -347,7 +384,7 @@ D
 D
 D
 d
+d
 b
 b
-X
 "}

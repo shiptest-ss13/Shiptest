@@ -82,15 +82,11 @@
 /turf/closed/wall/mineral/titanium/interior,
 /area/ruin/space/has_grav/derelictoutpost/dockedship)
 "ar" = (
-/obj/structure/shuttle/engine/propulsion/burst/right{
-	dir = 1
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/derelictoutpost/dockedship)
 "as" = (
-/obj/structure/shuttle/engine/propulsion/burst/left{
-	dir = 1
-	},
+/obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/derelictoutpost/dockedship)
 "at" = (
@@ -120,9 +116,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/shuttle/engine/heater{
-	dir = 1
-	},
+/obj/machinery/power/smes/shuttle,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ruin/space/has_grav/derelictoutpost/dockedship)
 "ay" = (
@@ -162,6 +156,9 @@
 "aE" = (
 /obj/structure/closet/crate/medical,
 /obj/item/storage/firstaid/o2,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ruin/space/has_grav/derelictoutpost/dockedship)
 "aF" = (
@@ -1947,6 +1944,14 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
+"tN" = (
+/obj/structure/closet/crate/engineering,
+/obj/item/storage/toolbox/mechanical,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/ruin/space/has_grav/derelictoutpost/dockedship)
 "uV" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -2714,9 +2719,9 @@ ae
 ag
 ae
 am
-ar
+as
 ax
-aH
+tN
 aH
 aV
 bg
@@ -2750,7 +2755,7 @@ ae
 ag
 ae
 am
-as
+ar
 ay
 aI
 aI

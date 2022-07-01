@@ -36,8 +36,8 @@
 "ag" = (
 /obj/machinery/porta_turret{
 	dir = 8;
-	set_obj_flags = "EMAGGED";
-	installation = /obj/item/gun/energy/lasercannon
+	installation = /obj/item/gun/energy/lasercannon;
+	set_obj_flags = "EMAGGED"
 	},
 /turf/open/floor/engine,
 /area/awaymission/BMPship/Aft)
@@ -1131,6 +1131,9 @@
 /area/awaymission/BMPship/Aft)
 "dq" = (
 /obj/item/multitool,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/awaymission/BMPship/Aft)
 "dr" = (
@@ -1143,8 +1146,8 @@
 /turf/open/floor/engine/airless,
 /area/awaymission/BMPship/Aft)
 "ds" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 4
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 8
 	},
 /turf/template_noop,
 /area/awaymission/BMPship/Aft)
@@ -1913,6 +1916,9 @@
 /obj/item/stack/sheet/mineral/uranium{
 	amount = 50
 	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/awaymission/BMPship/Aft)
 "ft" = (
@@ -2186,8 +2192,8 @@
 "gl" = (
 /obj/machinery/porta_turret{
 	dir = 8;
-	set_obj_flags = "EMAGGED";
-	installation = /obj/item/gun/energy/lasercannon
+	installation = /obj/item/gun/energy/lasercannon;
+	set_obj_flags = "EMAGGED"
 	},
 /turf/open/floor/engine,
 /area/awaymission/BMPship/Fore)
@@ -2522,6 +2528,15 @@
 "hE" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/awaymission/BMPship/Fore)
+"uv" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle{
+	dir = 8
+	},
+/turf/open/floor/engine/airless,
+/area/awaymission/BMPship/Aft)
 "vh" = (
 /turf/template_noop,
 /area/space/nearstation)
@@ -2541,6 +2556,12 @@
 "Mx" = (
 /turf/closed/mineral/random,
 /area/awaymission/BMPship/Midship)
+"Pe" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 8
+	},
+/turf/template_noop,
+/area/awaymission/BMPship/Aft)
 "QM" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -5541,14 +5562,14 @@ aa
 aa
 aa
 ht
-dr
+uv
 dr
 dr
 ht
 ht
 dr
 dr
-dr
+uv
 ht
 aa
 aa
@@ -5593,12 +5614,12 @@ aa
 aa
 ae
 ds
-ds
-ds
+Pe
+Pe
 ae
 ae
-ds
-ds
+Pe
+Pe
 ds
 ae
 aa
