@@ -1,6 +1,7 @@
 /datum/job/lp/lieutenant
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_OPERATING_ROOM, ACCESS_LP_VAULT, ACCESS_LP_AI, ACCESS_LP_LIEUTENANT)
 	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_OPERATING_ROOM, ACCESS_LP_VAULT, ACCESS_LP_AI, ACCESS_LP_LIEUTENANT)
+	outfit = /datum/outfit/job/lp/lieutenant
 
 /datum/outfit/job/lp/lieutenant
 	name = "LP Lieutenant"
@@ -25,6 +26,7 @@
 /datum/job/lp/security
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_VAULT, ACCESS_LP_SECURITY)
 	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_VAULT, ACCESS_LP_SECURITY)
+	outfit = /datum/outfit/job/lp/security
 
 /datum/outfit/job/lp/security
 	name = "LP Security Specialist"
@@ -49,6 +51,7 @@
 /datum/job/lp/engineer
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_AI, ACCESS_LP_ENGINEER)
 	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_AI, ACCESS_LP_ENGINEER)
+	outfit = /datum/outfit/job/lp/engineer
 
 /datum/outfit/job/lp/engineer
 	name = "LP Engineering Specialist"
@@ -73,6 +76,7 @@
 /datum/job/lp/medic
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_OPERATING_ROOM, ACCESS_LP_MEDIC)
 	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_OPERATING_ROOM, ACCESS_LP_MEDIC)
+	outfit = /datum/outfit/job/lp/medic
 
 /datum/outfit/job/lp/medic
 	name = "LP Medical specialist"
@@ -98,6 +102,7 @@
 /datum/job/lp/commissioner
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_OPERATING_ROOM, ACCESS_LP_AI, ACCESS_LP_COMMISSIONER)
 	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_OPERATING_ROOM, ACCESS_LP_AI, ACCESS_LP_COMMISSIONER)
+	outfit = /datum/outfit/job/lp/commissioner
 
 /datum/outfit/job/lp/commissioner
 	name = "LP Commissioner"
@@ -122,6 +127,7 @@
 /datum/job/scientist/lp
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_AI)
 	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_AI)
+	outfit = /datum/outfit/job/scientist/lp
 
 /datum/outfit/job/scientist/lp
 	id = /obj/item/card/id/scilp
@@ -130,6 +136,7 @@
 /datum/job/miner/lp
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES)
 	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES)
+	outfit = /datum/outfit/job/miner/lp
 
 /datum/outfit/job/miner/lp
 	id = /obj/item/card/id/minelp
@@ -139,6 +146,7 @@
 /datum/job/doctor/lp
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_OPERATING_ROOM)
 	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_OPERATING_ROOM)
+	outfit = /datum/outfit/job/doctor/lp
 
 /datum/outfit/job/doctor/lp
 	id = /obj/item/card/id/doclp
@@ -147,6 +155,7 @@
 /datum/job/bartender/lp
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES)
 	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES)
+	outfit = /datum/outfit/job/bartender/lp
 
 /datum/outfit/job/bartender/lp
 	id = /obj/item/card/id/barlp
