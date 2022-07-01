@@ -1,3 +1,6 @@
+/datum/job/lp
+	faction = "Station"
+
 /datum/job/lp/lieutenant
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_OPERATING_ROOM, ACCESS_LP_VAULT, ACCESS_LP_AI, ACCESS_LP_LIEUTENANT)
 	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_OPERATING_ROOM, ACCESS_LP_VAULT, ACCESS_LP_AI, ACCESS_LP_LIEUTENANT)
@@ -133,14 +136,14 @@
 	id = /obj/item/card/id/scilp
 	jobtype = /datum/job/scientist/lp
 
-/datum/job/miner/lp
+/datum/job/mining/lp
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES)
 	minimal_access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES)
 	outfit = /datum/outfit/job/miner/lp
 
 /datum/outfit/job/miner/lp
 	id = /obj/item/card/id/minelp
-	jobtype = /datum/job/miner/lp
+	jobtype = /datum/job/mining/lp
 
 
 /datum/job/doctor/lp
