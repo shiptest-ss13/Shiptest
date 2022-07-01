@@ -51,6 +51,9 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/hallway/central)
 "bo" = (
+/obj/structure/chair/office/light{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/morgue)
 "bx" = (
@@ -380,6 +383,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/structure/chair/office/light{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/morgue)
 "fs" = (
@@ -480,9 +486,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 8
-	},
-/obj/structure/chair/office/light{
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
@@ -973,6 +976,18 @@
 	color = "#4c535b"
 	},
 /area/ship/cargo)
+"oe" = (
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_y = 6;
+	pixel_x = 7
+	},
+/obj/item/pen{
+	pixel_y = 8;
+	pixel_x = 6
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
 "ou" = (
 /obj/machinery/chem_master,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
@@ -1583,7 +1598,7 @@
 	},
 /area/ship/cargo)
 "wc" = (
-/obj/structure/table,
+/obj/structure/filingcabinet,
 /turf/open/floor/plating,
 /area/ship/storage)
 "ws" = (
@@ -2292,6 +2307,7 @@
 	dir = 4
 	},
 /obj/structure/closet,
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plating,
 /area/ship/storage)
 "Hz" = (
@@ -2403,6 +2419,9 @@
 /obj/item/reagent_containers/glass/bottle/cold,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/machinery/reagentgrinder/constructed,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "IN" = (
@@ -2725,6 +2744,11 @@
 	pixel_y = -28
 	},
 /obj/structure/closet,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
 /turf/open/floor/plating,
 /area/ship/storage)
 "MT" = (
@@ -3425,6 +3449,7 @@
 	},
 /obj/item/megaphone/command,
 /obj/item/stamp/cmo,
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "YD" = (
@@ -3981,7 +4006,7 @@ hZ
 hZ
 Nr
 Hf
-wc
+oe
 wc
 MQ
 Nr
