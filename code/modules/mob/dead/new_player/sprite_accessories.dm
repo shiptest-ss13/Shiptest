@@ -2412,9 +2412,9 @@
 	name = "Cross"
 	icon_state = "cross"
 
-/datum/sprite_accessory/ipc_antennas/nyaru
-	name = "Nyaru"
-	icon_state = "nyaru"
+/datum/sprite_accessory/ipc_antennas/sidepanels
+	name = "Side Panels"
+	icon_state = "sidepanels"
 
 /datum/sprite_accessory/ipc_antennas/horns
 	name = "Horns"
