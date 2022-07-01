@@ -2396,10 +2396,6 @@
 	name = "Drone Eyes"
 	icon_state = "droneeyes"
 
-/datum/sprite_accessory/ipc_antennas/light
-	name = "Light"
-	icon_state = "light"
-
 /datum/sprite_accessory/ipc_antennas/sidelights
 	name = "Sidelights"
 	icon_state = "sidelights"
