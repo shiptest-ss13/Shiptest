@@ -909,6 +909,12 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
+"iU" = (
+/obj/machinery/power/tracker,
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/cyan,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "iZ" = (
 /obj/structure/closet,
 /obj/structure/window/reinforced/spawner{
@@ -1191,7 +1197,7 @@
 "mR" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/solar,
-/turf/open/floor/engine/hull,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "na" = (
 /obj/machinery/door/airlock/command/glass,
@@ -1445,6 +1451,12 @@
 "rt" = (
 /obj/structure/cable/cyan{
 	icon_state = "2-5"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
@@ -2105,12 +2117,6 @@
 /obj/machinery/mineral/ore_redemption{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "zB" = (
@@ -2224,7 +2230,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "Bg" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -2538,7 +2544,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-4"
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "Em" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
@@ -2708,8 +2714,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "GE" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "GL" = (
@@ -3502,18 +3512,18 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Pw" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable/cyan{
 	icon_state = "0-8"
 	},
 /obj/structure/cable/cyan{
 	icon_state = "1-9"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
@@ -3637,7 +3647,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "RO" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater,
@@ -3942,7 +3952,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-8"
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "Vg" = (
 /obj/effect/turf_decal/corner/blue/mono,
@@ -4095,7 +4105,7 @@
 "WR" = (
 /obj/machinery/power/solar,
 /obj/effect/turf_decal/solarpanel,
-/turf/open/floor/engine/hull,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "WT" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -4260,7 +4270,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "YM" = (
 /obj/machinery/vending/cola/pwr_game,
@@ -4280,7 +4290,7 @@
 /area/ship/science/ai_chamber)
 "YU" = (
 /obj/structure/cable/cyan,
-/turf/open/floor/engine/hull,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "YW" = (
 /obj/effect/turf_decal/corner/blue/mono,
@@ -4417,7 +4427,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-4"
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "ZL" = (
 /obj/machinery/suit_storage_unit/independent/mining/eva,
@@ -5701,7 +5711,7 @@ WR
 Ek
 YH
 YH
-sR
+iU
 zW
 zW
 zW
