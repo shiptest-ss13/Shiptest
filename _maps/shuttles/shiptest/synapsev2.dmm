@@ -637,6 +637,9 @@
 /obj/machinery/door/window{
 	dir = 8
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "49"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "jy" = (
@@ -2622,6 +2625,11 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
+/obj/machinery/button/door{
+	id = "49";
+	name = "Blast Door Control";
+	pixel_y = 32
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "LE" = (
@@ -3199,6 +3207,9 @@
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/door/window{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "49"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
