@@ -16,6 +16,11 @@
 /area/ship/hallway/central)
 "aq" = (
 /obj/machinery/door/airlock/highsecurity,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
 "as" = (
@@ -183,9 +188,6 @@
 	pixel_x = 7;
 	id = "entrance_shutt";
 	name = "Entrance Shutters"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
 	},
 /obj/item/radio/intercom{
 	dir = 1
@@ -1320,7 +1322,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
 "po" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
@@ -1328,6 +1329,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-6"
 	},
+/obj/machinery/atmospherics/components/binary/pump/on/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "pr" = (
@@ -2790,6 +2792,11 @@
 /turf/open/floor/plating,
 /area/ship/science/ai_chamber)
 "HA" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
 "HK" = (
@@ -2925,6 +2932,9 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3874,11 +3884,11 @@
 /area/ship/hallway/port)
 "Ut" = (
 /obj/machinery/door/airlock/command/glass,
-/obj/machinery/atmospherics/components/binary/pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
 "Uv" = (
