@@ -24,7 +24,8 @@
 	var/slicing_duration = 100  //default time taken to slice the wall
 	var/sheet_type = /obj/item/stack/sheet/metal
 	var/sheet_amount = 2
-	var/girder_type = /obj/structure/girder
+	var/obj/girder_type = /obj/structure/girder
+	var/break_sound = 'sound/items/welder.ogg'
 
 	var/list/dent_decals
 
@@ -43,6 +44,18 @@
 		fixed_underlay = string_assoc_list(fixed_underlay)
 		underlays += underlay_appearance
 
+/turf/closed/wall/copyTurf(turf/T, copy_air, flags)
+	. = ..()
+	var/turf/closed/wall/wall_copy = T
+	if(LAZYLEN(dent_decals))
+		wall_copy.dent_decals = dent_decals.Copy()
+		wall_copy.update_icon()
+
+/turf/closed/wall/update_overlays()
+	. = ..()
+	for(var/decal in dent_decals)
+		. += decal
+
 /turf/closed/wall/examine(mob/user)
 	. += ..()
 	. += deconstruction_hints(user)
@@ -53,47 +66,51 @@
 /turf/closed/wall/attack_tk()
 	return
 
-/turf/closed/wall/proc/dismantle_wall(devastated=0, explode=0)
+/turf/closed/wall/proc/dismantle_wall(devastated = FALSE)
+	create_sheets()
+	var/obj/newgirder = create_girder()
 	if(devastated)
-		devastate_wall()
+		if(newgirder)
+			// destroy the girder if we got devastated
+			newgirder.deconstruct(FALSE)
 	else
-		playsound(src, 'sound/items/welder.ogg', 100, TRUE)
-		var/newgirder = break_wall()
-		if(newgirder) //maybe we don't /want/ a girder!
+		if(newgirder)
 			transfer_fingerprints_to(newgirder)
+		playsound(src, break_sound, 100, TRUE)
 
 	for(var/obj/structure/sign/poster/P in src.contents) //Eject contents!
 		P.roll_and_drop(src)
 
 	ScrapeAway()
 
-/turf/closed/wall/proc/break_wall()
-	new sheet_type(src, sheet_amount)
-	return new girder_type(src)
+/turf/closed/wall/proc/create_sheets()
+	if(sheet_type)
+		return new sheet_type(src, sheet_amount)
+	return null
 
-/turf/closed/wall/proc/devastate_wall()
-	new sheet_type(src, sheet_amount)
+/turf/closed/wall/proc/create_girder()
 	if(girder_type)
-		new /obj/item/stack/sheet/metal(src)
+		return new girder_type(src)
+	return null
 
 /turf/closed/wall/ex_act(severity, target)
 	if(target == src)
-		dismantle_wall(1,1)
+		dismantle_wall(devastated = TRUE)
 		return
 	switch(severity)
-		if(1)
+		if(EXPLODE_DEVASTATE)
 			//SN src = null
 			var/turf/NT = ScrapeAway()
 			NT.contents_explosion(severity, target)
 			return
-		if(2)
+		if(EXPLODE_HEAVY)
 			if (prob(50))
-				dismantle_wall(0,1)
+				dismantle_wall(devastated = TRUE)
 			else
-				dismantle_wall(1,1)
-		if(3)
+				dismantle_wall(devastated = FALSE)
+		if(EXPLODE_LIGHT)
 			if (prob(hardness))
-				dismantle_wall(0,1)
+				dismantle_wall(devastated = FALSE)
 	if(!density)
 		..()
 
@@ -112,7 +129,7 @@
 			M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
 							"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
 			if(prob(hardness + M.force) && M.force > 20)
-				dismantle_wall(1)
+				dismantle_wall(devastated = TRUE)
 				playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 			else
 				add_dent(WALL_DENT_HIT)
@@ -120,7 +137,6 @@
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 		if(TOX)
 			playsound(src, 'sound/effects/spray2.ogg', 100, TRUE)
-			return FALSE
 
 /turf/closed/wall/attack_paw(mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -132,20 +148,18 @@
 	M.do_attack_animation(src)
 	if((M.environment_smash & ENVIRONMENT_SMASH_WALLS) || (M.environment_smash & ENVIRONMENT_SMASH_RWALLS))
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-		dismantle_wall(1)
+		dismantle_wall(devastated = TRUE)
 		return
 
 /turf/closed/wall/attack_hulk(mob/living/carbon/user)
 	..()
 	var/obj/item/bodypart/arm = user.hand_bodyparts[user.active_hand_index]
-	if(!arm)
-		return
-	if(arm.bodypart_disabled)
+	if(!arm || arm.bodypart_disabled)
 		return
 	if(prob(hardness))
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 		user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
-		dismantle_wall(1)
+		dismantle_wall(devastated = TRUE)
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		add_dent(WALL_DENT_HIT)
@@ -195,8 +209,8 @@
 		if(W.use_tool(src, user, 0, volume=100))
 			if(iswallturf(src) && LAZYLEN(dent_decals))
 				to_chat(user, "<span class='notice'>You fix some dents on the wall.</span>")
-				cut_overlay(dent_decals)
-				dent_decals.Cut()
+				dent_decals = null
+				update_icon()
 			return TRUE
 
 	return FALSE
@@ -269,7 +283,7 @@
 	. = ..()
 
 /turf/closed/wall/acid_melt()
-	dismantle_wall(1)
+	dismantle_wall(devastated = TRUE)
 
 /turf/closed/wall/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)
@@ -298,13 +312,7 @@
 
 	decal.pixel_x = x
 	decal.pixel_y = y
-
-	if(LAZYLEN(dent_decals))
-		cut_overlay(dent_decals)
-		dent_decals += decal
-	else
-		dent_decals = list(decal)
-
-	add_overlay(dent_decals)
+	LAZYADD(dent_decals, decal)
+	update_icon()
 
 #undef MAX_DENT_DECALS
