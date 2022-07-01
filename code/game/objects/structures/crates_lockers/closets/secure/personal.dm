@@ -3,6 +3,9 @@
 	name = "personal closet"
 	req_access = list(ACCESS_ALL_PERSONAL_LOCKERS)
 	var/registered_name = null
+	locked_icon = "cabinet_locked"
+	unlocked_icon = "cabinet_unlocked"
+	off_icon = "cabinet_off"
 
 /obj/structure/closet/secure_closet/personal/PopulateContents()
 	..()

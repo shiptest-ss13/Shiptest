@@ -1,6 +1,6 @@
 /obj/machinery/light
 	icon = 'starbloom_modules/aesthetics/lights/icons/lighting.dmi'
-	overlay_icon = 'starbloom_modules/aesthetics/lights/icons/lighting_overlay.dmi'
+	overlayicon = 'starbloom_modules/aesthetics/lights/icons/lighting_overlay.dmi'
 	var/maploaded = FALSE //So we don't have a lot of stress on startup.
 	var/turning_on = FALSE //More stress stuff.
 	var/constant_flickering = FALSE // Are we always flickering?
@@ -56,7 +56,7 @@
 		deltimer(flicker_timer)
 		flicker_timer = null
 
-	set_on(has_power())
+	seton(has_power())
 
 /obj/machinery/light/proc/alter_flicker(enable = TRUE)
 	if(!constant_flickering)
