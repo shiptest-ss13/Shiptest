@@ -321,33 +321,28 @@
 	name = "commissioner's closet"
 	desc = "It's the Commissioner's closet."
 	icon_state = "cap"
-	icon_door = "cap_door"
 	req_access = list(ACCESS_LP_COMMISSIONER)
 
 /obj/structure/closet/secure_closet/lp/lieutenant
 	name = "lietenant's closet"
 	desc = "It's the lieutenant's closet."
 	icon_state = "blueshield"
-	icon_door = "blueshield_door"
 	req_access = list(ACCESS_LP_LIEUTENANT)
 
 /obj/structure/closet/secure_closet/lp/security
 	name = "security specialist's closet"
 	desc = "It's the security specialist's closet."
 	icon_state = "hos"
-	icon_door = "hos_door"
-	req_access = list(ACCESS_LP_SECURITY)
+	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_SECURITY)
 
 /obj/structure/closet/secure_closet/lp/engineer
 	name = "engineering specialist's closet"
 	desc = "It's the engineering specialist's closet."
 	icon_state = "eng"
-	icon_door = "eng_secure_door"
-	req_access = list(ACCESS_LP_ENGINEER)
+	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_ENGINEER)
 
 /obj/structure/closet/secure_closet/lp/medical
 	name = "medical specialist's closet"
 	desc = "It's the medical specialist's closet."
 	icon_state = "med"
-	icon_door = "med_door"
-	req_access = list(ACCESS_LP_MEDIC)
+	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_MEDIC)

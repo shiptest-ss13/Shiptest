@@ -633,16 +633,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"fz" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/door/airlock/command/glass/lp/cargo,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "fA" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/light_switch{
@@ -689,6 +679,10 @@
 /area/ship/bridge)
 "fV" = (
 /turf/closed/wall/r_wall,
+/area/ship/security)
+"fX" = (
+/obj/machinery/door/airlock/vault/lp/vault,
+/turf/open/floor/vault,
 /area/ship/security)
 "fZ" = (
 /obj/structure/table/reinforced,
@@ -739,6 +733,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
+/mob/living/simple_animal/pet/dog/corgi/Lisa,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "gE" = (
@@ -800,6 +795,10 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = -2;
+	pixel_x = 3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -1534,7 +1533,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/tank/air{
-	piping_layer = 2
+	piping_layer = 2;
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
@@ -1653,7 +1653,6 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
-/obj/structure/closet,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "rL" = (
@@ -1708,6 +1707,8 @@
 /obj/machinery/door/window/lp/security{
 	dir = 1
 	},
+/obj/item/grenade/chem_grenade/teargas,
+/obj/item/grenade/chem_grenade/teargas,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "sm" = (
@@ -1798,13 +1799,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"ts" = (
-/obj/effect/turf_decal/corner/blue/diagonal,
-/obj/machinery/door/window/lp/operatingroom{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/medical)
 "tu" = (
 /obj/machinery/computer/operating{
 	dir = 1
@@ -1812,6 +1806,20 @@
 /obj/effect/turf_decal/corner/blue/diagonal,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"tv" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/command/glass/lp/commissioner,
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "commissioner's shutters";
+	id = "commshut"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "tC" = (
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
@@ -2233,6 +2241,7 @@
 	icon_state = "0-10"
 	},
 /obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/item/wrench,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "yC" = (
@@ -2835,10 +2844,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
-"EX" = (
-/obj/machinery/door/airlock/vault/lp/vault,
-/turf/open/floor/vault,
-/area/ship/security)
 "Fh" = (
 /obj/structure/chair/stool/bar{
 	dir = 4
@@ -3058,6 +3063,7 @@
 	},
 /obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/machinery/power/port_gen/pacman/super,
+/obj/item/wrench,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Hy" = (
@@ -3087,6 +3093,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
+"HS" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "commissioner's shutters";
+	id = "commshut"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "HU" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced/spawner{
@@ -3527,6 +3541,7 @@
 /obj/machinery/door/window/lp/lieu{
 	dir = 1
 	},
+/obj/item/storage/belt/bandolier,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Lk" = (
@@ -4262,14 +4277,6 @@
 /obj/item/aiModule/core/freeformcore,
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
-"Un" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/shutters/preopen{
-	name = "commissioner's shutters";
-	id = "commshut"
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "Ur" = (
 /turf/closed/wall/r_wall,
 /area/ship/science/ai_chamber)
@@ -4479,6 +4486,16 @@
 /obj/item/storage/backpack/satchel/flat/with_clown,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Wa" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/command/glass/lp/cargo,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "Wj" = (
 /obj/structure/closet/crate/trashcart,
 /obj/item/storage/bag/trash,
@@ -4491,6 +4508,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light/floor,
+/obj/structure/chair/comfy/black,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Wx" = (
@@ -4745,6 +4763,13 @@
 /obj/effect/turf_decal/corner/purple,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
+"Zi" = (
+/obj/effect/turf_decal/corner/blue/diagonal,
+/obj/machinery/door/window/lp/operatingroom{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "Zk" = (
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -4792,6 +4817,10 @@
 	pixel_x = -7;
 	id = "commshut";
 	name = "commissioner shutters button"
+	},
+/obj/item/areaeditor/shuttle{
+	pixel_y = 9;
+	pixel_x = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4915,20 +4944,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
-"ZY" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/door/airlock/command/glass/lp/commissioner,
-/obj/machinery/door/poddoor/shutters/preopen{
-	name = "commissioner's shutters";
-	id = "commshut"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 
 (1,1,1) = {"
 zW
@@ -5129,7 +5144,7 @@ Ir
 Aa
 Ib
 CA
-EX
+fX
 gz
 FQ
 fV
@@ -5664,7 +5679,7 @@ Lk
 Lk
 Lk
 Lk
-fz
+Wa
 Lk
 tj
 tj
@@ -5832,10 +5847,10 @@ Lk
 Lk
 Lk
 Lk
-ZY
+tv
 Lk
 aM
-Un
+HS
 Lk
 Lk
 Lk
@@ -6347,7 +6362,7 @@ vm
 mp
 dw
 dP
-ts
+Zi
 Zp
 uW
 up

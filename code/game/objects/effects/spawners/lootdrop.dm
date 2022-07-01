@@ -554,3 +554,55 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 		/obj/item/gun/ballistic/automatic/aks74u = 0.1,
 		/obj/item/ammo_box/magazine/aks74u = 0.4
 	)
+
+/obj/effect/spawner/lootdrop/lpcombat
+	name = "LP Combat Missions"
+	lootdoubles = FALSE
+
+	loot = list(
+		/obj/item/disk/holodisk/lp/combat/syndicate1 = 1,
+		/obj/item/disk/holodisk/lp/combat/syndicate2 = 1,
+		/obj/item/disk/holodisk/lp/combat/syndicate3 = 1,
+		/obj/item/disk/holodisk/lp/combat/syndicate4 = 1,
+		/obj/item/disk/holodisk/lp/combat/syndicate5 = 1,
+		/obj/item/disk/holodisk/lp/combat/megafauna = 5,
+		/obj/item/disk/holodisk/lp/combat/bdm = 5,
+		/obj/item/disk/holodisk/lp/combat/tumor = 5,
+		/obj/item/disk/holodisk/lp/combat/bloodred = 5
+	)
+
+	lootcount = 2
+
+/obj/effect/spawner/lootdrop/lpretrieval
+	name = "LP Retrieval Missions"
+	lootdoubles = FALSE
+
+	loot = list(
+		/obj/item/disk/holodisk/lp/retrieval/rnd =1,
+		/obj/item/disk/holodisk/lp/retrieval/supersuit = 1,
+		/obj/item/disk/holodisk/lp/retrieval/phazon = 1,
+		/obj/item/disk/holodisk/lp/retrieval/durand = 1,
+		/obj/item/disk/holodisk/lp/retrieval/gunstock = 1,
+		/obj/item/disk/holodisk/lp/retrieval/artifact = 1,
+		/obj/item/disk/holodisk/lp/retrieval/research = 1,
+		/obj/item/disk/holodisk/lp/retrieval/materials = 1
+	)
+
+	lootcount = 2
+
+/obj/effect/spawner/lootdrop/lpaid
+	name = "LP Aid Missions"
+	lootdoubles = FALSE
+
+	loot = list(
+		/obj/item/disk/holodisk/lp/aid/telepad = 1,
+		/obj/item/disk/holodisk/lp/aid/telecomm = 1,
+		/obj/item/disk/holodisk/lp/aid/recruits = 1,
+		/obj/item/disk/holodisk/lp/aid/repairs = 1,
+		/obj/item/disk/holodisk/lp/aid/rescure = 1,
+		/obj/item/disk/holodisk/lp/aid/guard = 1,
+		/obj/item/disk/holodisk/lp/aid/ai = 1,
+		/obj/item/disk/holodisk/lp/aid/ripley = 1
+	)
+
+	lootcount = 2

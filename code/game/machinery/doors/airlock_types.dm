@@ -631,7 +631,7 @@
 
 /obj/machinery/door/airlock/command/glass/lp/commissioner
 	name = "commissioner's office"
-	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_COMMISSIONER)
+	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_COMMISSIONER)
 
 /obj/machinery/door/airlock/command/glass/lp/
 	req_access = list(ACCESS_LP_FACILITIES)

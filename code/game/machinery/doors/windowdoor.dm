@@ -507,13 +507,13 @@
 	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_LIEUTENANT)
 
 /obj/machinery/door/window/lp/engi
-	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_ENGINEER)
+	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_ENGINEER)
 
 /obj/machinery/door/window/lp/security
-	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_SECURITY)
+	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_SECURITY)
 
 /obj/machinery/door/window/lp/medic
-	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_MEDIC)
+	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_MEDIC)
 
 /obj/machinery/door/window/lp/operatingroom
 	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_OPERATING_ROOM)
