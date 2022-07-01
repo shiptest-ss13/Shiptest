@@ -144,7 +144,7 @@
 	var/footstep_type
 
 	///How much wounding power it has
-	var/wound_bonus = 10
+	var/wound_bonus = 5
 	///How much bare wounding power it has
 	var/bare_wound_bonus = 0
 	///If the attacks from this are sharp
