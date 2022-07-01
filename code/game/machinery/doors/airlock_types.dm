@@ -628,3 +628,47 @@
 
 /obj/machinery/door/airlock/glass_large/narsie_act()
 	return
+
+/obj/machinery/door/airlock/command/glass/lp/commissioner
+	name = "commissioner's office"
+	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_COMMISSIONER)
+
+/obj/machinery/door/airlock/command/glass/lp/
+	req_access = list(ACCESS_LP_FACILITIES)
+
+/obj/machinery/door/airlock/command/glass/lp/port_hallway
+	name = "Port Hallway"
+
+/obj/machinery/door/airlock/command/glass/lp/security
+	name = "Security and Research"
+
+/obj/machinery/door/airlock/command/glass/lp/research
+	name = "Research"
+
+/obj/machinery/door/airlock/command/glass/lp/engines
+	name = "Engines"
+
+/obj/machinery/door/airlock/command/glass/lp/dorms
+	name = "Dorms"
+
+/obj/machinery/door/airlock/command/glass/lp/mining
+	name = "Mining"
+
+/obj/machinery/door/airlock/command/glass/lp/cargo
+	name = "Cargo"
+
+/obj/machinery/door/airlock/command/glass/lp/bridge
+	name = "Bridge"
+	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE)
+
+/obj/machinery/door/airlock/medical/glass/lp/medical
+	name = "Medbay"
+	req_access = list(ACCESS_LP_FACILITIES)
+
+/obj/machinery/door/airlock/vault/lp/vault
+	name = "Vault"
+	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_VAULT)
+
+/obj/machinery/door/airlock/highsecurity/lp/aisat
+	name = "AI chamber"
+	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_AI)
