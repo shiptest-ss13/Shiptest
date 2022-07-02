@@ -964,7 +964,8 @@
 	callTime = 250;
 	launch_status = 0;
 	name = "Ranger-class";
-	preferred_direction = 2
+	preferred_direction = 2;
+	port_direction = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
@@ -975,6 +976,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
+"ix" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/machinery/power/smes/shuttle/precharged,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "iz" = (
 /obj/structure/table/reinforced,
 /obj/item/aicard,
@@ -1129,6 +1137,9 @@
 /area/ship/science/ai_chamber)
 "jL" = (
 /obj/machinery/power/shuttle/engine/electric,
+/obj/machinery/door/poddoor{
+	id = "thrusterblasts"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "jZ" = (
@@ -1645,6 +1656,9 @@
 /area/ship/science)
 "rz" = (
 /obj/machinery/power/shuttle/engine/electric,
+/obj/machinery/door/poddoor{
+	id = "thrusterblasts"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "rB" = (
@@ -2262,6 +2276,11 @@
 "yz" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	pixel_y = 24;
+	id = "thrusterblasts";
+	name = "Thruster Blast Doors"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -3034,6 +3053,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "GL" = (
+/obj/machinery/door/poddoor{
+	id = "thrusterblasts"
+	},
 /obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3100,6 +3122,11 @@
 "Hr" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	pixel_y = 24;
+	id = "thrusterblasts";
+	name = "Thruster Blast Doors"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3310,6 +3337,9 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "IV" = (
+/obj/machinery/door/poddoor{
+	id = "thrusterblasts"
+	},
 /obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -4587,6 +4617,7 @@
 /area/ship/external)
 "WT" = (
 /obj/structure/cable/cyan,
+/obj/item/stack/cable_coil/yellow,
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "WY" = (
@@ -5188,7 +5219,7 @@ zW
 zW
 zW
 jL
-Pl
+ix
 oQ
 tq
 CB
