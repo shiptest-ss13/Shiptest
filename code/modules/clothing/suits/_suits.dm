@@ -11,7 +11,7 @@
 	var/togglename = null
 	var/suittoggled = FALSE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo //WS Edit - Exowear Pockets
-	greyscale_colors = list(list(13, 15))
+	greyscale_colors = list(list(13, 16), list(10, 18), list(13, 21))
 	greyscale_icon_state = "coat"
 	supports_variations = VOX_VARIATION
 

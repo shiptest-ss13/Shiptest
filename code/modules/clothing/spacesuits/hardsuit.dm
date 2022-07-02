@@ -108,7 +108,7 @@
 	var/obj/item/tank/jetpack/suit/jetpack = null
 	var/hardsuit_type
 	pocket_storage_component_path = FALSE //WS Edit - Exowear Pockets
-	greyscale_colors = list(list(10, 20), list(14, 15), list(22, 12))
+	greyscale_colors = list(list(11, 19), list(22, 12), list(16, 9))
 	greyscale_icon_state = "hardsuit"
 
 

@@ -25,7 +25,7 @@
 	resistance_flags = NONE
 	max_integrity = 300
 	greyscale_icon_state = "backpack"
-	greyscale_colors = list(list(19, 14), list(12, 22))
+	greyscale_colors = list(list(13, 17), list(12, 17), list(12, 21))
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
@@ -225,9 +225,8 @@
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
 	item_state = "satchel-norm"
-	species_exception = list(/datum/species/kepori)
 	greyscale_icon_state = "satchel"
-	greyscale_colors = list(list(15, 16), list(15, 16))
+	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
@@ -352,7 +351,7 @@
 	icon_state = "courierbag"
 	item_state = "courierbag"
 	greyscale_icon_state = "satchel"
-	greyscale_colors = list(list(15, 16), list(15, 17))
+	greyscale_colors = list(list(15, 16), list(19, 13), list(13, 18))
 
 /obj/item/storage/backpack/messenger/chem
 	name = "chemistry messenger bag"
@@ -424,6 +423,7 @@
 	icon_state = "duffel"
 	item_state = "duffel"
 	slowdown = 1
+	greyscale_colors = list(list(21, 11), list(14, 19), list(15, 16))
 
 /obj/item/storage/backpack/duffelbag/ComponentInitialize()
 	. = ..()
