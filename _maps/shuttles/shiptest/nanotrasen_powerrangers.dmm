@@ -597,14 +597,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
-"eW" = (
-/obj/machinery/power/smes/shuttle/precharged,
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
-/obj/structure/cable/cyan,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "fd" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 10
@@ -3200,7 +3192,6 @@
 	dir = 6
 	},
 /obj/item/gun/ballistic/revolver/detective,
-/obj/item/ammo_box/c45,
 /obj/item/kitchen/knife/combat/survival,
 /obj/item/clothing/under/rank/civilian/lawyer/bluesuit/skirt,
 /obj/item/clothing/under/rank/civilian/lawyer/bluesuit,
@@ -3214,6 +3205,8 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/lp/commissioner,
+/obj/item/ammo_box/c38/hotshot,
+/obj/item/ammo_box/c38_box,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "HZ" = (
@@ -3947,10 +3940,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Pl" = (
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
-/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/cyan,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -4140,6 +4133,14 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
+"RF" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/cable/cyan,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "RO" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater,
 /obj/structure/window/reinforced/spawner{
@@ -5137,7 +5138,7 @@ zW
 zW
 zW
 jL
-eW
+Pl
 Ub
 Kj
 RS
@@ -5219,7 +5220,7 @@ zW
 zW
 zW
 jL
-Pl
+RF
 oQ
 tq
 CB
