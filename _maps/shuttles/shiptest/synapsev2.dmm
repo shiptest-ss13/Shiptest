@@ -686,10 +686,12 @@
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "jW" = (
-/obj/structure/frame/machine,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 32
+	},
+/obj/machinery/computer/cargo/express{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
