@@ -228,6 +228,7 @@
 /obj/machinery/atmospherics/pipe/manifold/brown/visible{
 	dir = 4
 	},
+/obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "cy" = (
@@ -596,6 +597,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"eW" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/structure/cable/cyan,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "fd" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 10
@@ -1127,6 +1136,9 @@
 /obj/machinery/door/poddoor{
 	id = "thrusterblasts"
 	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "jZ" = (
@@ -1198,6 +1210,7 @@
 /obj/machinery/atmospherics/pipe/manifold/brown/visible{
 	dir = 8
 	},
+/obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "ld" = (
@@ -1645,6 +1658,9 @@
 /obj/machinery/power/shuttle/engine/electric,
 /obj/machinery/door/poddoor{
 	id = "thrusterblasts"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -3650,13 +3666,6 @@
 	},
 /turf/open/floor/carpet/executive,
 /area/ship/crew/dorm)
-"LT" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
-/obj/machinery/power/smes/shuttle/precharged,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "LU" = (
 /obj/structure/bed,
 /obj/item/bedsheet/nanotrasen,
@@ -3938,10 +3947,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Pl" = (
-/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/cable/cyan,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Po" = (
@@ -4597,6 +4607,7 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
+/obj/structure/cable/cyan,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "WR" = (
@@ -5126,7 +5137,7 @@ zW
 zW
 zW
 jL
-Pl
+eW
 Ub
 Kj
 RS
@@ -5208,7 +5219,7 @@ zW
 zW
 zW
 jL
-LT
+Pl
 oQ
 tq
 CB
