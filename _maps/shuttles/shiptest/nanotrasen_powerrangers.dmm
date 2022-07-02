@@ -286,10 +286,10 @@
 /turf/open/floor/vault,
 /area/ship/security)
 "cP" = (
-/obj/structure/cable/cyan{
-	icon_state = "6-10"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "cR" = (
@@ -371,12 +371,11 @@
 /turf/open/floor/circuit/red/airless,
 /area/ship/science/ai_chamber)
 "dp" = (
-/obj/machinery/power/smes,
-/obj/structure/cable/cyan{
-	icon_state = "0-10"
+/obj/machinery/power/solar_control{
+	dir = 8
 	},
 /obj/structure/cable/cyan{
-	icon_state = "4-9"
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -501,12 +500,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "ec" = (
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-4"
+	icon_state = "1-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -572,18 +571,15 @@
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
 "eR" = (
-/obj/structure/cable/cyan{
-	icon_state = "0-4"
-	},
 /obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable/cyan{
-	icon_state = "5-9"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -704,16 +700,16 @@
 /turf/open/floor/circuit/airless,
 /area/ship/hallway/central)
 "gs" = (
-/obj/structure/cable/cyan{
-	icon_state = "1-10"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "6-10"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "4-10"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/cyan{
+	icon_state = "6-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "gz" = (
@@ -745,9 +741,6 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable/cyan{
-	icon_state = "5-9"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -977,7 +970,9 @@
 /area/ship/hallway/fore)
 "il" = (
 /obj/structure/fans/tiny,
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "miningblastlp"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "iz" = (
@@ -985,6 +980,15 @@
 /obj/item/aicard,
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
+"iC" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "iD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -1345,6 +1349,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"nf" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "miningblastlp"
+	},
+/obj/machinery/door/poddoor{
+	id = "miningblastlp"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
 "ng" = (
 /obj/machinery/holopad/emergency,
 /obj/machinery/light_switch{
@@ -1363,18 +1377,14 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "of" = (
-/obj/machinery/power/terminal,
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/machinery/power/solar_control{
-	dir = 8
-	},
 /obj/structure/cable/cyan{
-	icon_state = "0-4"
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/port)
 "oh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
@@ -1449,6 +1459,9 @@
 /area/ship/maintenance/starboard)
 "pa" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "pf" = (
@@ -1546,6 +1559,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"pK" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "qb" = (
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/trimline/grey/filled/line{
@@ -1600,12 +1625,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "qZ" = (
-/obj/structure/cable/cyan{
-	icon_state = "1-10"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-9"
-	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "rd" = (
@@ -1950,7 +1969,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "vb" = (
-/obj/item/banner/medical,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable/cyan{
@@ -1972,6 +1990,10 @@
 /area/ship/crew/dorm)
 "vk" = (
 /obj/machinery/airalarm/directional/south,
+/obj/machinery/power/port_gen/pacman/super,
+/obj/item/stack/sheet/mineral/uranium/fifty,
+/obj/item/wrench,
+/obj/structure/cable/cyan,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "vm" = (
@@ -1985,12 +2007,13 @@
 /turf/open/floor/circuit/green/anim,
 /area/ship/science/ai_chamber)
 "vE" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/power/solar,
+/obj/effect/turf_decal/solarpanel,
 /obj/structure/cable/cyan{
-	icon_state = "2-4"
+	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "vS" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
@@ -2005,10 +2028,7 @@
 /area/ship/external)
 "vT" = (
 /obj/structure/cable/cyan{
-	icon_state = "1-6"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-5"
+	icon_state = "2-6"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2066,6 +2086,16 @@
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"wl" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable/cyan{
+	icon_state = "4-5"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "wq" = (
 /turf/open/floor/engine/hull,
 /area/ship/external)
@@ -2247,14 +2277,14 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
 "yt" = (
-/obj/structure/cable/cyan{
-	icon_state = "2-4"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "2-5"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-10"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-10"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -2262,12 +2292,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/cyan{
-	icon_state = "0-10"
-	},
-/obj/item/stack/sheet/mineral/plasma/twenty,
-/obj/item/wrench,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "yC" = (
@@ -2284,7 +2308,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "inner aft shutters";
-	id = "outer inner"
+	id = "outerinner"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2546,14 +2570,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ce" = (
-/obj/structure/cable/cyan{
-	icon_state = "5-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 4
+	},
+/obj/structure/cable/cyan{
+	icon_state = "5-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2582,14 +2606,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Cx" = (
-/obj/structure/cable/cyan{
-	icon_state = "2-8"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "2-9"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
+	},
+/obj/structure/cable/cyan{
+	icon_state = "6-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-6"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2601,16 +2625,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "CB" = (
-/obj/structure/cable/cyan{
-	icon_state = "6-8"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-6"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "6-10"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/cyan{
+	icon_state = "4-10"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "CD" = (
@@ -2709,7 +2733,7 @@
 /obj/machinery/door/airlock/external,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "inner aft shutters";
-	id = "outer inner"
+	id = "outerinner"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2771,7 +2795,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "inner aft shutters";
-	id = "outer inner"
+	id = "outerinner"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2797,6 +2821,13 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
+"DH" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "DR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -2919,6 +2950,9 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-5"
 	},
+/obj/structure/cable/cyan{
+	icon_state = "6-10"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "FQ" = (
@@ -3002,6 +3036,13 @@
 	},
 /obj/effect/turf_decal/corner/orange{
 	dir = 6
+	},
+/obj/machinery/button{
+	dir = 8;
+	pixel_y = -9;
+	pixel_x = 24;
+	id = "miningblastlp";
+	name = "Mining Blast Doors"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
@@ -3089,12 +3130,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/structure/cable/cyan{
-	icon_state = "0-6"
-	},
-/obj/item/stack/sheet/mineral/uranium/twenty,
-/obj/machinery/power/port_gen/pacman/super,
-/obj/item/wrench,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Hy" = (
@@ -3272,6 +3307,15 @@
 	},
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
+"II" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "IM" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 6
@@ -3532,6 +3576,9 @@
 /area/ship/storage)
 "Kz" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "KC" = (
@@ -3745,6 +3792,12 @@
 /area/ship/hallway/fore)
 "Nx" = (
 /obj/machinery/airalarm/directional/south,
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/obj/item/wrench,
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/cyan{
+	icon_state = "0-9"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "NC" = (
@@ -3754,10 +3807,13 @@
 "NR" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable/cyan{
-	icon_state = "4-8"
+	icon_state = "2-4"
 	},
 /obj/structure/cable/cyan{
-	icon_state = "1-8"
+	icon_state = "1-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-10"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3963,6 +4019,18 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
+"PP" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "PW" = (
 /obj/machinery/autolathe,
 /obj/machinery/light,
@@ -3998,6 +4066,18 @@
 	},
 /turf/open/floor/circuit/airless,
 /area/ship/hallway/central)
+"QC" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "5-9"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "QI" = (
 /turf/open/floor/circuit/green/anim,
 /area/ship/science/ai_chamber)
@@ -4110,18 +4190,13 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Sh" = (
-/obj/machinery/power/solar_control{
-	dir = 4
-	},
-/obj/machinery/power/terminal,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
+/obj/machinery/power/solar,
+/obj/effect/turf_decal/solarpanel,
 /obj/structure/cable/cyan{
-	icon_state = "0-8"
+	icon_state = "0-4"
 	},
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Sl" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 9
@@ -4132,6 +4207,9 @@
 	pixel_x = -24;
 	pixel_y = -10
 	},
+/obj/effect/spawner/lootdrop/lpretrieval,
+/obj/effect/spawner/lootdrop/lpaid,
+/obj/effect/spawner/lootdrop/lpcombat,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "SA" = (
@@ -4145,29 +4223,29 @@
 	icon_state = "1-9"
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/button{
+/obj/machinery/button/door{
 	pixel_y = -4;
 	pixel_x = -7;
-	id = "outerinner";
-	name = "Inner Aft Shutters"
+	name = "Inner Aft Shutters";
+	id = "outerinner"
 	},
-/obj/machinery/button{
-	pixel_x = 5;
-	pixel_y = -4;
-	id = "outerouter";
-	name = "Outer Aft Shutters."
-	},
-/obj/machinery/button{
-	pixel_y = 8;
+/obj/machinery/button/door{
+	pixel_y = 6;
 	pixel_x = -7;
-	id = "innerinner";
-	name = "Inner Fore Shutters"
+	name = "Inner Fore Shutters";
+	id = "innerinner"
 	},
-/obj/machinery/button{
+/obj/machinery/button/door{
+	pixel_y = 6;
 	pixel_x = 5;
-	pixel_y = 8;
-	id = "innerouter";
-	name = "Outer Fore Shutters"
+	name = "Outer Fore Shutters";
+	id = "innerouter"
+	},
+/obj/machinery/button/door{
+	pixel_y = -4;
+	pixel_x = 5;
+	name = "Outer Aft Shutters";
+	id = "outerouter"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4201,10 +4279,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "SZ" = (
-/obj/structure/cable/cyan{
-	icon_state = "6-10"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ta" = (
@@ -4475,12 +4553,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "VH" = (
-/obj/machinery/power/smes,
-/obj/structure/cable/cyan{
-	icon_state = "0-6"
+/obj/machinery/power/solar_control{
+	dir = 4
 	},
 /obj/structure/cable/cyan{
-	icon_state = "5-8"
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -4567,12 +4644,13 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "WT" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/power/solar,
+/obj/effect/turf_decal/solarpanel,
 /obj/structure/cable/cyan{
-	icon_state = "2-8"
+	icon_state = "0-2"
 	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "WY" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -4855,15 +4933,15 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/button{
-	pixel_y = -2;
-	pixel_x = -7;
-	id = "commshut";
-	name = "commissioner shutters button"
-	},
 /obj/item/areaeditor/shuttle{
 	pixel_y = 9;
 	pixel_x = 2
+	},
+/obj/machinery/button/door{
+	pixel_y = -2;
+	pixel_x = -7;
+	id = "commshut";
+	name = "Commissioner's Office Shutters"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4927,6 +5005,18 @@
 "ZG" = (
 /obj/structure/cable/cyan{
 	icon_state = "0-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"ZK" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
@@ -5255,8 +5345,8 @@ cv
 bC
 Ow
 dp
-of
 zc
+QC
 QT
 lW
 ld
@@ -5296,9 +5386,9 @@ QT
 QT
 QT
 QT
-WT
-NR
 pa
+NR
+DH
 QT
 aP
 Gc
@@ -5338,10 +5428,10 @@ zW
 zW
 zW
 zW
-WR
-Be
-WR
-WR
+WT
+II
+Sh
+Sh
 aP
 aP
 aP
@@ -5380,10 +5470,10 @@ zW
 zW
 zW
 zW
-WR
-RB
-YH
-YH
+WT
+pK
+ZK
+ZK
 sR
 zW
 zW
@@ -5424,8 +5514,8 @@ zW
 zW
 WR
 Be
-WR
-WR
+vE
+vE
 zW
 zW
 zW
@@ -6180,8 +6270,8 @@ zW
 zW
 WR
 Be
-WR
-WR
+Sh
+Sh
 zW
 zW
 zW
@@ -6220,10 +6310,10 @@ zW
 zW
 zW
 zW
-WR
-Ek
-YH
-YH
+WT
+PP
+ZK
+ZK
 Rn
 zW
 zW
@@ -6262,10 +6352,10 @@ zW
 zW
 zW
 zW
-WR
-Be
-WR
-WR
+WT
+iC
+vE
+vE
 Tb
 Tb
 Tb
@@ -6304,9 +6394,9 @@ LV
 LV
 LV
 LV
-vE
-ec
 Kz
+ec
+wl
 LV
 Tb
 rd
@@ -6347,8 +6437,8 @@ lc
 cB
 fx
 VH
-Sh
 FK
+of
 LV
 DA
 ZU
@@ -6395,9 +6485,9 @@ LV
 wQ
 Kx
 Tb
-no
-no
-no
+yJ
+yJ
+yJ
 no
 yk
 yJ
@@ -6560,7 +6650,7 @@ LV
 LV
 Tb
 il
-il
+nf
 il
 Tb
 yJ
