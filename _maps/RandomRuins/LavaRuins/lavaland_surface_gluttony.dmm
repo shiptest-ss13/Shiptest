@@ -12,7 +12,11 @@
 /turf/open/lava/smooth,
 /area/ruin/powered/gluttony)
 "f" = (
-/obj/item/reagent_containers/syringe/gluttony,
+/obj/item/melee/transforming/cleaving_saw,
+/obj/vehicle/ridden/scooter{
+	desc = "After eating that much junk, you will probably need this... If you can even get it out of this room!";
+	name = "mobility scooter"
+	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/gluttony)
 "g" = (
