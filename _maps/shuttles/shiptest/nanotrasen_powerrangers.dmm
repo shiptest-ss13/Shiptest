@@ -980,15 +980,6 @@
 /obj/item/aicard,
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
-"iC" = (
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "iD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -1559,18 +1550,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"pK" = (
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "2-8"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "qb" = (
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/trimline/grey/filled/line{
@@ -1991,9 +1970,9 @@
 "vk" = (
 /obj/machinery/airalarm/directional/south,
 /obj/machinery/power/port_gen/pacman/super,
-/obj/item/stack/sheet/mineral/uranium/fifty,
 /obj/item/wrench,
 /obj/structure/cable/cyan,
+/obj/item/stack/sheet/mineral/uranium/twenty,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "vm" = (
@@ -2006,14 +1985,6 @@
 /obj/machinery/computer/upload/borg,
 /turf/open/floor/circuit/green/anim,
 /area/ship/science/ai_chamber)
-"vE" = (
-/obj/machinery/power/solar,
-/obj/effect/turf_decal/solarpanel,
-/obj/structure/cable/cyan{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "vS" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
@@ -3037,12 +3008,12 @@
 /obj/effect/turf_decal/corner/orange{
 	dir = 6
 	},
-/obj/machinery/button{
+/obj/machinery/button/door{
 	dir = 8;
 	pixel_y = -9;
-	pixel_x = 24;
+	pixel_x = 22;
 	id = "miningblastlp";
-	name = "Mining Blast Doors"
+	name = "Mining Bay Blast Doors"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
@@ -3307,15 +3278,6 @@
 	},
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
-"II" = (
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "IM" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 6
@@ -3792,12 +3754,12 @@
 /area/ship/hallway/fore)
 "Nx" = (
 /obj/machinery/airalarm/directional/south,
-/obj/item/stack/sheet/mineral/plasma/fifty,
 /obj/item/wrench,
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/cyan{
 	icon_state = "0-9"
 	},
+/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "NC" = (
@@ -4019,18 +3981,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
-"PP" = (
-/obj/structure/cable/cyan{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "2-4"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "PW" = (
 /obj/machinery/autolathe,
 /obj/machinery/light,
@@ -4189,14 +4139,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"Sh" = (
-/obj/machinery/power/solar,
-/obj/effect/turf_decal/solarpanel,
-/obj/structure/cable/cyan{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "Sl" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 9
@@ -4644,11 +4586,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "WT" = (
-/obj/machinery/power/solar,
-/obj/effect/turf_decal/solarpanel,
-/obj/structure/cable/cyan{
-	icon_state = "0-2"
-	},
+/obj/structure/cable/cyan,
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "WY" = (
@@ -5010,13 +4948,7 @@
 /area/ship/external)
 "ZK" = (
 /obj/structure/cable/cyan{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-4"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "1-8"
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
@@ -5428,10 +5360,10 @@ zW
 zW
 zW
 zW
-WT
-II
-Sh
-Sh
+WR
+Be
+WR
+WR
 aP
 aP
 aP
@@ -5470,9 +5402,9 @@ zW
 zW
 zW
 zW
+WR
+RB
 WT
-pK
-ZK
 ZK
 sR
 zW
@@ -5514,8 +5446,8 @@ zW
 zW
 WR
 Be
-vE
-vE
+WR
+WR
 zW
 zW
 zW
@@ -6270,8 +6202,8 @@ zW
 zW
 WR
 Be
-Sh
-Sh
+mR
+mR
 zW
 zW
 zW
@@ -6310,9 +6242,9 @@ zW
 zW
 zW
 zW
+mR
+Ek
 WT
-PP
-ZK
 ZK
 Rn
 zW
@@ -6352,10 +6284,10 @@ zW
 zW
 zW
 zW
-WT
-iC
-vE
-vE
+mR
+Be
+mR
+mR
 Tb
 Tb
 Tb
