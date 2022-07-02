@@ -819,12 +819,12 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 28
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
@@ -1184,7 +1184,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2732,11 +2732,11 @@
 	dir = 1;
 	pixel_y = -22
 	},
+/obj/item/kirbyplants/random,
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
-/obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/communications)
 "Ga" = (
@@ -2902,7 +2902,6 @@
 	},
 /obj/structure/catwalk/over,
 /obj/machinery/firealarm{
-	dir = 1;
 	pixel_y = 28
 	},
 /turf/open/floor/plating,
@@ -3023,9 +3022,7 @@
 	dir = 4;
 	pixel_x = -32
 	},
-/obj/machinery/computer/crew{
-	dir = 4
-	},
+/obj/structure/filingcabinet/employment,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "IV" = (
@@ -3354,7 +3351,7 @@
 	},
 /obj/structure/closet/crate,
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /obj/effect/spawner/lootdrop/maintenance/three,
@@ -3399,6 +3396,7 @@
 /area/ship/bridge)
 "OV" = (
 /obj/structure/table/reinforced,
+/obj/item/paper_bin,
 /obj/item/folder/blue,
 /obj/item/stamp/captain{
 	pixel_x = -7;
@@ -3603,7 +3601,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/structure/filingcabinet/employment,
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/carpet/blue,
 /area/ship/engineering/communications)
 "Rf" = (
@@ -3672,13 +3670,11 @@
 /area/ship/bridge)
 "RH" = (
 /obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = 10
-	},
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
+/obj/machinery/photocopier/faxmachine/longrange,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "RO" = (
@@ -3819,8 +3815,7 @@
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
-/obj/structure/table/reinforced,
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/carpet/blue,
 /area/ship/engineering/communications)
 "TD" = (
@@ -3913,13 +3908,13 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 28
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/corner/yellow/diagonal,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Ul" = (
@@ -4193,11 +4188,11 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/effect/spawner/lootdrop/maintenance,
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
-/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Xm" = (
@@ -4208,12 +4203,12 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/office)
 "Xw" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 28
-	},
 /obj/machinery/vending/cigarette,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/office)
 "XD" = (
