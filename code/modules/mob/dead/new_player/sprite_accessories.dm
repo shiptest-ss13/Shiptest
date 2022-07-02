@@ -2396,10 +2396,6 @@
 	name = "Drone Eyes"
 	icon_state = "droneeyes"
 
-/datum/sprite_accessory/ipc_antennas/light
-	name = "Light"
-	icon_state = "light"
-
 /datum/sprite_accessory/ipc_antennas/sidelights
 	name = "Sidelights"
 	icon_state = "sidelights"
@@ -2411,6 +2407,26 @@
 /datum/sprite_accessory/ipc_antennas/tv
 	name = "TV Antenna"
 	icon_state = "tvantennae"
+
+/datum/sprite_accessory/ipc_antennas/cross
+	name = "Cross"
+	icon_state = "cross"
+
+/datum/sprite_accessory/ipc_antennas/sidepanels
+	name = "Side Panels"
+	icon_state = "sidepanels"
+
+/datum/sprite_accessory/ipc_antennas/horns
+	name = "Horns"
+	icon_state = "horns"
+
+/datum/sprite_accessory/ipc_antennas/langle
+	name = "Left Angle"
+	icon_state = "langle"
+
+/datum/sprite_accessory/ipc_antennas/rangle
+	name = "Right Angle"
+	icon_state = "rangle"
 
 /datum/sprite_accessory/ipc_chassis // Used for changing limb icons, doesn't need to hold the actual icon. That's handled in ipc.dm
 	icon = null
