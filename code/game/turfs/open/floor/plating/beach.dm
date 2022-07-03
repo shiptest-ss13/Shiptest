@@ -7,6 +7,7 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS //custom atmos? lots of oxygen, hot?
 	digResult = /obj/item/stack/ore/glass
 	planetary_atmos = TRUE
+	digResult = /obj/item/stack/ore/glass/beach
 
 /turf/open/floor/plating/asteroid/sand/Initialize(mapload, inherited_virtual_z)
 	. = ..()

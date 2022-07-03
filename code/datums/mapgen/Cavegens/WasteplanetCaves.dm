@@ -86,6 +86,7 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/asteroid/wasteplanet
+	digResult = /obj/item/stack/ore/glass/wasteplanet
 
 //CUSTOM MOB
 /mob/living/simple_animal/hostile/abandoned_minebot

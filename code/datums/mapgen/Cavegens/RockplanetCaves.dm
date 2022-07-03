@@ -65,6 +65,7 @@
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet
+	digResult = /obj/item/stack/ore/glass/rockplanet
 
 /turf/open/floor/plating/asteroid/rockplanet/lit
 	light_range = 2
