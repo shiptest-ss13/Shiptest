@@ -23,7 +23,7 @@
 	/// The max amount of unique icons, plus one
 	var/max_icon_states = 12
 	/// Itemstack to drop when dug by a shovel
-	var/obj/item/stack/digResult = /obj/item/stack/ore/glass/basalt
+	var/obj/item/stack/digResult = /obj/item/stack/ore/glass
 	/// Whether the turf has been dug or not
 	var/dug
 
