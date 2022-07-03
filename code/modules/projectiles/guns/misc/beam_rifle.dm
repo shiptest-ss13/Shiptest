@@ -453,7 +453,7 @@
 		if(prob(wall_devastate))
 			if(iswallturf(A))
 				var/turf/closed/wall/W = A
-				W.dismantle_wall(TRUE, TRUE)
+				W.dismantle_wall(devastated = TRUE)
 			else
 				SSexplosions.medturf += A
 		++wall_pierce

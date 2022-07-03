@@ -137,7 +137,7 @@
 	..()
 
 /turf/closed/wall/mineral/plasma/proc/PlasmaBurn(temperature)
-	new girder_type(src)
+	create_girder()
 	ScrapeAway()
 	var/turf/open/T = src
 	T.atmos_spawn_air("plasma=400;TEMP=[temperature]")
@@ -179,7 +179,7 @@
 		if(istype(W, /obj/item/hatchet) || istype(W, /obj/item/fireaxe))
 			duration /= 4 //Much better with hatchets and axes.
 		if(do_after(user, duration*10, target=src)) //Into deciseconds.
-			dismantle_wall(FALSE,FALSE)
+			dismantle_wall(devastated = FALSE)
 			return
 	return ..()
 

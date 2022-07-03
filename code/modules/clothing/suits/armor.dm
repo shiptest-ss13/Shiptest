@@ -10,7 +10,7 @@
 	max_integrity = 250
 	resistance_flags = NONE
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	greyscale_colors = list(list(14, 18))
+	greyscale_colors = list(list(18, 19), list(13, 18), list(20, 15))
 	greyscale_icon_state = "armor"
 
 /obj/item/clothing/suit/armor/Initialize()

@@ -17,8 +17,9 @@ GLOBAL_PROTECT(donators)
 
 /client/Destroy()
 	. = ..()
-	donator.owner = null
-	donator = null
+	if(donator) // it's possible that a client was qdel'd inside the initializer
+		donator.owner = null
+		donator = null
 
 /client/proc/do_donator_redemption()
 	set name = "Redeem Donator Reward"
