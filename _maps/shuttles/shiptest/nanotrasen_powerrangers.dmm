@@ -23,20 +23,6 @@
 /obj/machinery/door/airlock/highsecurity/lp/aisat,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
-"as" = (
-/obj/structure/table/reinforced,
-/obj/machinery/recharger,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/grey/filled/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "ay" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/dark,
@@ -339,6 +325,9 @@
 /obj/machinery/cell_charger,
 /obj/effect/turf_decal/trimline/grey/filled/line{
 	dir = 5
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -1019,7 +1008,6 @@
 /obj/item/kitchen/knife/combat/survival,
 /obj/item/storage/firstaid,
 /obj/item/healthanalyzer,
-/obj/item/storage/firstaid/tactical,
 /obj/item/holosign_creator/medical,
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/item/flashlight/seclite,
@@ -1033,6 +1021,8 @@
 /obj/item/gun/syringe,
 /obj/structure/closet/secure_closet/lp/medical,
 /obj/machinery/door/window/lp/medic,
+/obj/item/storage/firstaid/advanced,
+/obj/item/pinpointer/crew,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "jf" = (
@@ -1650,7 +1640,6 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/plastic/five,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2133,6 +2122,7 @@
 /obj/effect/turf_decal/corner/orange{
 	dir = 5
 	},
+/obj/item/vending_refill/mining_equipment,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "xd" = (
@@ -3439,10 +3429,10 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/cell_charger,
 /obj/effect/turf_decal/trimline/grey/filled/line{
 	dir = 1
 	},
+/obj/machinery/recharger,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "JO" = (
@@ -3760,6 +3750,9 @@
 	dir = 4
 	},
 /obj/item/storage/toolbox/electrical,
+/obj/item/stack/sheet/rglass{
+	amount = 25
+	},
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
 "MH" = (
@@ -3906,6 +3899,9 @@
 	},
 /obj/effect/turf_decal/trimline/mauve/filled/corner{
 	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -4979,6 +4975,9 @@
 /obj/effect/turf_decal/trimline/mauve/filled/line{
 	dir = 8
 	},
+/obj/structure/cable/cyan{
+	icon_state = "1-6"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ZC" = (
@@ -5342,7 +5341,7 @@ Iu
 Iu
 Ao
 Dw
-as
+Lt
 iF
 dC
 Kv
