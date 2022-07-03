@@ -158,9 +158,9 @@
 	vision_correction = 1
 
 /obj/item/clothing/glasses/meson/sunglasses
-	name = "optical meson scannerglasses"
+	name = "optical meson scanner sunglasses"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting conditions. This pair is built into a pair of sunglasses."
-	icon_state = "sunnmeson"
+	icon_state = "sunmeson"
 	flash_protect = FLASH_PROTECTION_FLASH
 
 #undef MODE_NONE

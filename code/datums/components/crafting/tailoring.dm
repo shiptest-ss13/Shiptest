@@ -121,6 +121,26 @@
 	reqs = list(/obj/item/clothing/glasses/hud/diagnostic/sunglasses = 1)
 	category = CAT_CLOTHING
 
+/datum/crafting_recipe/sunmeson
+	name = "Meson Scanner Sunglasses"
+	result = /obj/item/clothing/glasses/meson/sunglasses
+	time = 20
+	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	reqs = list(
+		/obj/item/clothing/glasses/meson = 1,
+		/obj/item/clothing/glasses/sunglasses = 1,
+		/obj/item/stack/cable_coil = 5
+	)
+	category = CAT_CLOTHING
+
+/datum/crafting_recipe/sunmesonremoval
+	name = "Meson Scanner Removal"
+	result = /obj/item/clothing/glasses/sunglasses
+	time = 20
+	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	reqs = list(/obj/item/clothing/glasses/meson/sunglasses = 1)
+	category = CAT_CLOTHING
+
 /datum/crafting_recipe/sciencesunglasses
 	name = "Science Sunglasses"
 	result = /obj/item/clothing/glasses/sunglasses/chemical
