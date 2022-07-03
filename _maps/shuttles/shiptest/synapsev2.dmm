@@ -302,12 +302,12 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
 "eA" = (
-/obj/structure/table/greyscale,
 /obj/structure/window/reinforced/spawner,
 /obj/item/paper/pamphlet{
 	info = "Get well soon!"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/structure/table,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "eF" = (
@@ -562,8 +562,8 @@
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 1
 	},
-/obj/structure/table/greyscale,
 /obj/item/toy/plush/hornet/gay,
+/obj/structure/table,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ig" = (
@@ -1075,6 +1075,9 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	pixel_x = -8
 	},
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/patterned{
 	color = "#4c535b"
 	},
