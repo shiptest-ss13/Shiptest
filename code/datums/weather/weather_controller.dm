@@ -99,8 +99,8 @@
 
 /datum/weather_controller/chlorine
 	possible_weathers = list(
-		/datum/weather/acid_rain = 40,
-		/datum/weather/nuclear_fallout = 30,
+		/datum/weather/acid_rain = 30,
+		/datum/weather/nuclear_fallout = 40,
 		/datum/weather/nuclear_fallout/normal = 10,
 	)
 
