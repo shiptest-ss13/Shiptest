@@ -5,7 +5,7 @@
 	broken_states = list("concdam_1", "concdam_2", "concdam_3", "concdam_4")
 	floor_tile = null
 	tiled_dirt = FALSE
-	footstep = FOOTSTEP_FLOOR
+	footstep = FOOTSTEP_CONCRETE
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
