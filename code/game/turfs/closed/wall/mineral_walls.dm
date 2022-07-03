@@ -384,3 +384,20 @@
 	canSmoothWith = list(SMOOTH_GROUP_TIALLOY_WALLS,  SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM, SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE)
 	hardness = 10
 	rad_insulation = RAD_HEAVY_INSULATION
+
+/turf/closed/wall/mineral/tialloy/diagonal
+	name = "titanium-alloy wall"
+	desc = "A heavily armoured tan wall, used in military vehicles and installations."
+	icon = 'icons/turf/walls/fleet_wall.dmi'
+	icon_state = "fleet_wall-0"
+	base_icon_state = "fleet_wall"
+	opacity = TRUE
+	density = TRUE
+	sheet_type = /obj/item/stack/sheet/tialloy
+	sheet_amount = 1
+	explosion_block = 2
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TIALLOY_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_TIALLOY_WALLS,  SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM, SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE)
+	hardness = 10
+	rad_insulation = RAD_HEAVY_INSULATION
