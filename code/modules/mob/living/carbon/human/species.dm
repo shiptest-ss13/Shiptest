@@ -357,7 +357,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	for(var/path in mutant_organs)
 		var/obj/item/organ/I = new path()
-		I.Insert(C, drop_if_replaced = FALSE)
+		var/obj/item/organ/old = C.getorgan(I)
+		if(old)
+			QDEL_NULL(old)
+		I.Insert(C)
 
 /datum/species/proc/replace_body(mob/living/carbon/C, var/datum/species/new_species)
 	new_species ||= C.dna.species //If no new species is provided, assume its src.
