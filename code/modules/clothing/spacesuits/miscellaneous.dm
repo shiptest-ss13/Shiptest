@@ -549,3 +549,20 @@ Contains:
 	icon_state = "ert_clown"
 	item_state = "ert_clown"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/clown
+
+/obj/item/clothing/head/helmet/space/hardsuit/lp
+	name = "RIG heatsuit helmet"
+	desc = "The helmet to the RIG heat suit. It's packed with heat diverting materials, coolant pipes, and a two inch thick face screen."
+	armor = list("melee" = 1, "bullet" = 1, "laser" = 1, "energy" = 1, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75)
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = ACID_PROOF | FIRE_PROOF
+
+/obj/item/clothing/suit/space/hardsuit/ancient/lp
+	name = "RIG heat suit"
+	desc = "A fully heat resistance suit based on an early RIG hardsuit prototype. It sacrifices armor of any kind for intricate heatsinks. It remains rather bulky as a result."
+	armor = list("melee" = 1, "bullet" = 1, "laser" = 1, "energy" = 1, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ancient
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = ACID_PROOF | FIRE_PROOF
