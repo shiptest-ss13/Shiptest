@@ -409,8 +409,7 @@
 	if(length(myseed.mutatelist))
 		var/mutantseed = pick(myseed.mutatelist)
 		QDEL_NULL(myseed)
-		myseed = new mutantseed
-		myseed.loc = src
+		myseed = new mutantseed(src)
 	else
 		return
 
