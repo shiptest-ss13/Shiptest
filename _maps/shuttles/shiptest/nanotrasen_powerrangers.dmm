@@ -1344,6 +1344,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"mz" = (
+/obj/machinery/door/poddoor{
+	id = "thrusterblasts"
+	},
+/obj/machinery/power/shuttle/engine/electric,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "mQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1391,6 +1398,13 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
+"nv" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/machinery/power/smes/shuttle/precharged,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "of" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -1472,13 +1486,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
-"oS" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
-/obj/machinery/power/smes/shuttle/precharged,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "pa" = (
@@ -1901,6 +1908,10 @@
 /obj/item/reagent_containers/food/snacks/burger/plain,
 /obj/item/reagent_containers/food/snacks/burger/plain,
 /obj/item/reagent_containers/food/snacks/spaghetti/pastatomato,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/bbqribs,
 /turf/open/floor/plasteel/grimy,
 /area/ship/hallway/fore)
 "uk" = (
@@ -2497,7 +2508,7 @@
 	},
 /obj/machinery/power/smes/shuttle/precharged,
 /turf/open/floor/plating,
-/area/ship/maintenance/port)
+/area/ship/maintenance/starboard)
 "AZ" = (
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -4207,13 +4218,6 @@
 /obj/structure/cable/cyan,
 /turf/open/floor/plating/airless,
 /area/ship/external)
-"Rt" = (
-/obj/machinery/door/poddoor{
-	id = "thrusterblasts"
-	},
-/obj/machinery/power/shuttle/engine/electric,
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
 "RB" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
@@ -4364,6 +4368,7 @@
 /obj/machinery/reagentgrinder/constructed{
 	pixel_x = -8
 	},
+/obj/item/kitchen/knife,
 /turf/open/floor/plasteel/grimy,
 /area/ship/hallway/fore)
 "Tb" = (
@@ -5354,7 +5359,7 @@ zW
 zW
 zW
 GQ
-oS
+AY
 oQ
 Om
 SZ
@@ -6529,8 +6534,8 @@ zW
 zW
 zW
 zW
-Rt
-AY
+mz
+nv
 cR
 Do
 cP
