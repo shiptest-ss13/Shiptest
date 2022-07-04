@@ -8,7 +8,7 @@
 	construction_state = SPACEPOD_ARMOR_WELDED
 
 /obj/spacepod/prebuilt/Initialize()
-	..()
+	. = ..()
 	add_armor(new armor_type(src))
 	if(cell_type)
 		cell = new cell_type(src)

@@ -243,7 +243,7 @@
 	var/obj/item/mmi/stored_mmi
 
 /obj/item/organ/brain/mmi_holder/Initialize(mapload, obj/item/mmi/M)
-	..()
+	. = ..()
 	if(M && istype(M))
 		stored_mmi = M
 		M.forceMove(src)
