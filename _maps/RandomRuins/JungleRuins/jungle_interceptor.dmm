@@ -651,9 +651,6 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starhall)
 "fi" = (
-/obj/effect/turf_decal/corner/yellow/bordercorner{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -791,11 +788,18 @@
 /obj/structure/chair/comfy/teal{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -28
-	},
 /obj/effect/decal/cleanable/robot_debris/gib,
-/turf/open/floor/plasteel/tech,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25;
+	pixel_x = 5
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -7;
+	pixel_y = -23
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/interceptor/bridge)
 "fZ" = (
 /obj/structure/cable/orange{
@@ -1437,14 +1441,18 @@
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/interceptor/porthall)
 "ls" = (
-/obj/effect/turf_decal/trimline/neutral,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/item/light/bulb/broken,
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/trimline/blue/filled{
+	icon_state = "c2,0"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/interceptor/bridge)
 "lw" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/blue/line,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/interceptor/bridge)
 "lx" = (
@@ -1619,7 +1627,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/interceptor/bridge)
 "ny" = (
 /obj/structure/grille,
@@ -1707,7 +1715,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red/full,
+/obj/effect/turf_decal/corner/bar/full,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/interceptor/bridge)
 "oi" = (
@@ -2086,8 +2094,8 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
 "rd" = (
-/obj/effect/turf_decal/corner/red/border{
-	dir = 4
+/obj/effect/turf_decal/trimline/bar/line{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/interceptor/bridge)
@@ -2401,9 +2409,6 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/interceptor/porthall)
 "un" = (
-/obj/effect/turf_decal/corner/yellow/border{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -2414,7 +2419,12 @@
 	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/robot_debris/gib,
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/trimline/blue/filled{
+	icon_state = "c0,1"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/interceptor/bridge)
 "us" = (
 /obj/machinery/door/airlock/public/glass,
@@ -3266,7 +3276,12 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/trimline/blue/filled{
+	icon_state = "c2,1"
+	},
+/obj/item/shard,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/interceptor/bridge)
 "BG" = (
 /turf/open/floor/plating/rust,
@@ -3977,9 +3992,6 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starhall)
 "Ik" = (
-/obj/effect/turf_decal/corner/red/bordercorner{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -4431,7 +4443,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/plating/rust,
+/obj/effect/turf_decal/trimline/blue/filled{
+	icon_state = "c3,1"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/interceptor/bridge)
 "LW" = (
 /obj/machinery/airalarm/directional/north,
@@ -4655,7 +4673,7 @@
 	pixel_y = 10
 	},
 /obj/structure/cable/orange,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/interceptor/bridge)
 "NN" = (
 /obj/structure/lattice{
@@ -4799,9 +4817,6 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/afthall)
 "OD" = (
-/obj/effect/turf_decal/corner/red/border{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -4812,7 +4827,11 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/robot_debris/gib,
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/trimline/blue/filled{
+	icon_state = "c4,1"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/interceptor/bridge)
 "OI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -6293,11 +6312,11 @@
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/interceptor/crashsite)
 "Zt" = (
-/obj/effect/turf_decal/corner/red/full,
 /obj/structure/frame/computer{
 	anchored = 1;
 	dir = 8
 	},
+/obj/effect/turf_decal/corner/bar/full,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/interceptor/bridge)
 "Zx" = (
