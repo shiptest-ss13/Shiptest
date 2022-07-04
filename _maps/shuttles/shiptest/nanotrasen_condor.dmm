@@ -708,6 +708,9 @@
 /obj/structure/cable/orange{
 	icon_state = "1-8"
 	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "fJ" = (
@@ -1272,7 +1275,6 @@
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
 "kG" = (
-/obj/structure/window/reinforced,
 /obj/structure/cable/orange{
 	icon_state = "1-4"
 	},
@@ -1283,6 +1285,7 @@
 /obj/effect/turf_decal/corner/bar/three_quarters{
 	dir = 1
 	},
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "kH" = (
@@ -2155,7 +2158,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "rm" = (
-/obj/structure/window/reinforced/spawner{
+/obj/structure/window/reinforced/survival_pod{
 	dir = 8
 	},
 /turf/open/floor/carpet/executive,
@@ -3552,9 +3555,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/launcher/port/launcherone)
 "AZ" = (
-/obj/machinery/door/window/brigdoor/eastleft{
-	req_access = list(1)
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -3563,6 +3563,9 @@
 	},
 /obj/structure/cable/orange{
 	icon_state = "2-4"
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3649,10 +3652,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "BV" = (
-/obj/structure/window/reinforced/spawner{
+/obj/structure/filingcabinet,
+/obj/structure/window/reinforced/survival_pod{
 	dir = 1
 	},
-/obj/structure/filingcabinet,
 /turf/open/floor/carpet/executive,
 /area/ship/crew/captain)
 "Cb" = (
@@ -5402,8 +5405,10 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "OR" = (
-/obj/machinery/door/window/northright,
 /obj/machinery/holopad,
+/obj/machinery/door/window/survival_pod{
+	dir = 1
+	},
 /turf/open/floor/carpet/executive,
 /area/ship/crew/captain)
 "OS" = (
@@ -6231,9 +6236,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/starboard)
 "Vx" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/structure/closet/secure_closet/wall{
 	dir = 8;
 	icon_state = "sec_wall";
@@ -6258,6 +6260,9 @@
 /obj/item/ammo_box/magazine/aknt,
 /obj/effect/turf_decal/corner/bar/three_quarters{
 	dir = 8
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
