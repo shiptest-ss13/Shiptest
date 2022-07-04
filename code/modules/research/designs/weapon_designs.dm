@@ -352,7 +352,7 @@
 	name = "Ammo Box (5.56mm HITP caseless)"
 	id = "c556mmHITP"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 18000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c556mmHITP
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
