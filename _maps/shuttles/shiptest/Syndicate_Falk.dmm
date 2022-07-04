@@ -433,6 +433,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/spline/fancy/black{
+	dir = 4
+	},
 /turf/open/floor/plasteel/stairs,
 /area/ship/engineering)
 "gd" = (
@@ -472,6 +475,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light,
+/obj/effect/turf_decal/spline/fancy/black{
+	dir = 8
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
 "gq" = (
@@ -566,6 +572,7 @@
 "hp" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/spline/fancy/wood,
+/obj/effect/turf_decal/spline/fancy/black,
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
@@ -618,7 +625,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline,
-/obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -1990,8 +1996,8 @@
 /obj/item/clothing/gloves/color/latex,
 /obj/item/clothing/head/beret/sci,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/item/card/emag,
 /obj/item/clothing/suit/longcoat/robowhite,
+/obj/item/robot_module/medical,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/robotics)
 "yp" = (
@@ -2118,6 +2124,9 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/effect/turf_decal/spline/fancy/black{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "zD" = (
@@ -2132,6 +2141,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/spline/fancy/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/black{
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -2634,6 +2646,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/spline/fancy/black{
+	dir = 8
+	},
 /turf/open/floor/plasteel/stairs,
 /area/ship/engineering)
 "EH" = (
@@ -2729,6 +2744,9 @@
 	pixel_y = -5
 	},
 /obj/item/circuitboard/machine/biogenerator,
+/obj/effect/turf_decal/spline/fancy/black{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Go" = (
@@ -3423,6 +3441,9 @@
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals4,
 /obj/item/robot_suit/prebuilt,
+/obj/effect/turf_decal/spline/fancy/black{
+	dir = 8
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
 "Ne" = (
@@ -3496,6 +3517,7 @@
 /obj/item/desk_flag{
 	pixel_x = -10
 	},
+/obj/effect/turf_decal/spline/fancy/black,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "NI" = (
@@ -3999,6 +4021,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/effect/turf_decal/spline/fancy/black,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Uf" = (
@@ -4253,6 +4276,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/effect/turf_decal/spline/fancy/black,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Xa" = (
