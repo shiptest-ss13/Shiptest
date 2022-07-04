@@ -139,18 +139,6 @@
 	file_name = "infiltrator_advanced"
 	name = "advanced syndicate infiltrator"
 
-/// Aux base templates
-/datum/map_template/shuttle/aux_base
-	category = "aux_base"
-
-/datum/map_template/shuttle/aux_base/default
-	file_name = "aux_base_default"
-	name = "auxilliary base (Default)"
-
-/datum/map_template/shuttle/aux_base/small
-	file_name = "aux_base_small"
-	name = "auxilliary base (Small)"
-
 /// Pirate ship templates
 /datum/map_template/shuttle/pirate
 	category = "pirate"
