@@ -187,14 +187,3 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
-/// Escape pod map templates
-/datum/map_template/shuttle/escape_pod
-	category = "escape_pod"
-
-/datum/map_template/shuttle/escape_pod/default
-	file_name = "escape_pod_default"
-	name = "escape pod (Default)"
-
-/datum/map_template/shuttle/escape_pod/large
-	file_name = "escape_pod_large"
-	name = "escape pod (Large)"
