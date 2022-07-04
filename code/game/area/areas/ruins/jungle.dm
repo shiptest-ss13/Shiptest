@@ -32,21 +32,6 @@
 	icon_state = "bridge"
 	always_unpowered = TRUE
 
-/area/ruin/jungle/interceptor/portmaints
-	name = "NTSV Retribution Port Maintenance"
-	icon_state = "pmaint"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/starmaints
-	name = "NTSV Retribution Starboard Maintenance"
-	icon_state = "smaint"
-	always_unpowered = TRUE
-
-/area/ruin/jungle/interceptor/security
-	name = "NTSV Retribution Security"
-	icon_state = "security"
-	always_unpowered = TRUE
-
 /area/ruin/jungle/interceptor/security
 	name = "NTSV Retribution Security"
 	icon_state = "security"
