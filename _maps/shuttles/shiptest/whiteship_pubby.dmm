@@ -229,7 +229,7 @@
 	pixel_x = 5;
 	pixel_y = 26
 	},
-/obj/machinery/computer/station_alert,
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "eO" = (
@@ -1171,8 +1171,8 @@
 /area/ship/hallway/central)
 "yT" = (
 /obj/structure/bed/dogbed{
-	name = "citrus's bed";
-	anchored = 1
+	anchored = 1;
+	name = "citrus's bed"
 	},
 /obj/effect/turf_decal/spline/fancy/black{
 	dir = 9

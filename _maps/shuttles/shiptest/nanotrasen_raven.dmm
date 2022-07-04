@@ -60,12 +60,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ai" = (
-/obj/machinery/computer/atmos_alert{
-	dir = 8
-	},
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -24
+	},
+/obj/machinery/computer/cargo/express{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2009,6 +2009,10 @@
 	name = "Cockpit Window Blast Doors";
 	pixel_x = -7;
 	req_access_txt = "19"
+	},
+/obj/item/radio/intercom/wideband{
+	pixel_x = -4;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)

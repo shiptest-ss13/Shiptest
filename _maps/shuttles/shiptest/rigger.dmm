@@ -3017,13 +3017,12 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "IT" = (
-/obj/structure/frame/computer{
-	anchored = 1;
-	dir = 4
-	},
 /obj/machinery/newscaster/security_unit{
 	dir = 4;
 	pixel_x = -32
+	},
+/obj/machinery/computer/cargo/express{
+	dir = 4
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)

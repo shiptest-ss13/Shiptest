@@ -107,8 +107,8 @@
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 1
+	dir = 1;
+	network = list("carrier")
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
@@ -201,8 +201,8 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/light/small,
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 1
+	dir = 1;
+	network = list("carrier")
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
@@ -298,8 +298,8 @@
 "dL" = (
 /obj/machinery/vending/security,
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 4
+	dir = 4;
+	network = list("carrier")
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -514,8 +514,8 @@
 /obj/structure/mecha_wreckage/seraph,
 /obj/effect/turf_decal/trimline/blue,
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 4
+	dir = 4;
+	network = list("carrier")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/science/robotics)
@@ -765,8 +765,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/fans/tiny,
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 8
+	dir = 8;
+	network = list("carrier")
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -821,8 +821,8 @@
 	dir = 4
 	},
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 4
+	dir = 4;
+	network = list("carrier")
 	},
 /turf/open/floor/carpet,
 /area/ship/crew)
@@ -1611,8 +1611,8 @@
 	dir = 4
 	},
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 9
+	dir = 9;
+	network = list("carrier")
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2178,8 +2178,8 @@
 	dir = 4
 	},
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 1
+	dir = 1;
+	network = list("carrier")
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -2813,8 +2813,8 @@
 "Ie" = (
 /obj/structure/fans/tiny,
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 4
+	dir = 4;
+	network = list("carrier")
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -3356,8 +3356,8 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 6
+	dir = 6;
+	network = list("carrier")
 	},
 /obj/structure/window/reinforced/survival_pod{
 	dir = 5
@@ -3397,8 +3397,8 @@
 /area/ship/science/robotics)
 "PS" = (
 /obj/machinery/door/window/survival_pod{
-	req_one_access_txt = "1;4";
-	dir = 4
+	dir = 4;
+	req_one_access_txt = "1;4"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
@@ -3441,8 +3441,8 @@
 /area/ship/hallway/central)
 "QU" = (
 /obj/machinery/door/window/survival_pod{
-	req_one_access_txt = "1;4";
-	dir = 8
+	dir = 8;
+	req_one_access_txt = "1;4"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
@@ -3457,8 +3457,8 @@
 /obj/structure/cable,
 /obj/structure/window/reinforced/survival_pod,
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 4
+	dir = 4;
+	network = list("carrier")
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
@@ -3710,12 +3710,12 @@
 	pixel_x = -9
 	},
 /obj/item/radio{
-	pixel_y = 7;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 7
 	},
 /obj/item/radio{
-	pixel_y = 7;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 7
 	},
 /obj/item/radio{
 	pixel_y = 14
@@ -3935,11 +3935,11 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "Wr" = (
-/obj/machinery/computer/atmos_alert{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 10
+	},
+/obj/machinery/computer/cargo/express{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -3954,8 +3954,8 @@
 /obj/item/stock_parts/cell/gun/mini,
 /obj/item/stock_parts/cell/gun/mini,
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 4
+	dir = 4;
+	network = list("carrier")
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -4035,8 +4035,8 @@
 "YD" = (
 /obj/effect/turf_decal/corner/yellow,
 /obj/machinery/camera/autoname{
-	network = list("carrier");
-	dir = 1
+	dir = 1;
+	network = list("carrier")
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)

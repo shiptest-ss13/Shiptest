@@ -854,9 +854,6 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "pI" = (
-/obj/structure/frame/computer{
-	dir = 1
-	},
 /obj/item/radio/intercom/wideband{
 	dir = 8;
 	pixel_x = 22
@@ -865,6 +862,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/cargo/express{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "pP" = (

@@ -233,6 +233,17 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "fd" = (
+/obj/structure/closet/crate/internals,
+/obj/machinery/light/small,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/mask/breath/medical,
+/obj/item/clothing/mask/breath/medical,
+/obj/item/clothing/mask/breath/medical,
+/obj/item/storage/toolbox/emergency,
+/obj/item/clothing/suit/space/orange,
+/obj/item/clothing/head/helmet/space/orange,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1012,17 +1023,10 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "DL" = (
-/obj/structure/closet/crate/internals,
 /obj/machinery/light/small,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/clothing/mask/breath/medical,
-/obj/item/clothing/mask/breath/medical,
-/obj/item/clothing/mask/breath/medical,
-/obj/item/storage/toolbox/emergency,
-/obj/item/clothing/suit/space/orange,
-/obj/item/clothing/head/helmet/space/orange,
+/obj/machinery/computer/cargo/express{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "DO" = (
