@@ -1348,6 +1348,7 @@
 	},
 /obj/structure/closet/firecloset,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "qp" = (
@@ -3166,7 +3167,6 @@
 	dir = 1;
 	name = "Engine Access"
 	},
-/obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
 	id = "osprey_thruster_port";
 	name = "thruster blast door"
@@ -4085,6 +4085,7 @@
 "Vj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Vk" = (
@@ -4318,11 +4319,6 @@
 "YJ" = (
 /obj/item/melee/classic_baton/telescopic,
 /obj/item/clothing/under/syndicate,
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
-	icon_state = "sec_wall";
-	pixel_y = -28
-	},
 /obj/item/storage/belt/security,
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
 /obj/item/clothing/head/beret/sec/hos{
@@ -4341,6 +4337,11 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/gun/energy,
+/obj/structure/closet/wall/red{
+	dir = 1;
+	name = "Officer's locker";
+	pixel_y = -29
+	},
 /turf/open/floor/carpet/red,
 /area/ship/security)
 "YL" = (
