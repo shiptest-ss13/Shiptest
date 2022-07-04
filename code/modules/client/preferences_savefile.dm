@@ -258,7 +258,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
 	key_bindings 	= sanitize_keybindings(key_bindings)
 	favorite_outfits = SANITIZE_LIST(favorite_outfits)
-	equipped_gear	= SANITIZE_LIST(equipped_gear)
+	equipped_gear	= sanitize_each_inlist(equipped_gear, GLOB.gear_datums)
 
 	if(needs_update >= 0) //save the updated version
 		var/old_default_slot = default_slot
