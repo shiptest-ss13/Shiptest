@@ -6,6 +6,11 @@
 	caliber = "10mm"
 	projectile_type = /obj/projectile/bullet/c10mm
 
+/obj/item/ammo_casing/c10mm/surplus
+	name = "10mm surplus bullet casing"
+	desc = "A 10mm surplus bullet casing."
+	projectile_type = /obj/projectile/bullet/c10mm_surplus
+
 /obj/item/ammo_casing/c10mm/ap
 	name = "10mm armor-piercing bullet casing"
 	desc = "A 10mm armor-piercing bullet casing."
@@ -34,6 +39,11 @@
 	caliber = "9mm"
 	projectile_type = /obj/projectile/bullet/c9mm
 
+/obj/item/ammo_casing/c9mm/surplus
+	name = "9mm surplus bullet casing"
+	desc = "A 9mm surplus bullet casing."
+	projectile_type = /obj/projectile/bullet/c9mm_surplus
+
 /obj/item/ammo_casing/c9mm/ap
 	name = "9mm armor-piercing bullet casing"
 	desc = "A 9mm armor-piercing bullet casing."
@@ -61,6 +71,11 @@
 	desc = "A .45 bullet casing."
 	caliber = ".45"
 	projectile_type = /obj/projectile/bullet/c45
+
+/obj/item/ammo_casing/c45/surplus
+	name = ".45 surplus bullet casing"
+	desc = "A .45 surplus bullet casing."
+	projectile_type = /obj/projectile/bullet/c45_surplus
 
 /obj/item/ammo_casing/c45/ap
 	name = ".45 armor-piercing bullet casing"
