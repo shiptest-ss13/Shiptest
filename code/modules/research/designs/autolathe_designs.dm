@@ -840,7 +840,7 @@
 	name = "Ammo Box (10mm surplus)"
 	id = "c10mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 30000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c10mm/surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -848,7 +848,7 @@
 	name = "Ammo Box (.45)"
 	id = "c45-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 30000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c45/surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -856,7 +856,7 @@
 	name = "Ammo Box (9mm surplus)"
 	id = "c9mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 30000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c9mm/surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -864,7 +864,7 @@
 	name = "Ammo Box (surplus 5.56mm HITP caseless)"
 	id = "c556mmHITP-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 30000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c556mmHITP/surplus
 	category = list("initial", "Security", "Ammo")
 
