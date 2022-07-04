@@ -131,10 +131,6 @@
 /datum/map_template/shuttle/infiltrator
 	category = "infiltrator"
 
-/datum/map_template/shuttle/infiltrator/basic
-	file_name = "infiltrator_basic"
-	name = "basic syndicate infiltrator"
-
 /datum/map_template/shuttle/infiltrator/advanced
 	file_name = "infiltrator_advanced"
 	name = "advanced syndicate infiltrator"
