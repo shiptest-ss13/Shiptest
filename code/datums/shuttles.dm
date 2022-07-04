@@ -123,14 +123,6 @@
 	file_name = "infiltrator_advanced"
 	name = "advanced syndicate infiltrator"
 
-/// Pirate ship templates
-/datum/map_template/shuttle/pirate
-	category = "pirate"
-
-/datum/map_template/shuttle/pirate/default
-	file_name = "pirate_default"
-	name = "pirate ship (Default)"
-
 /// Fugitive hunter ship templates
 /datum/map_template/shuttle/hunter
 	category = "hunter"
