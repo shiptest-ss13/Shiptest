@@ -151,6 +151,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Chapel Office"
 	icon_state = "chapeloffice"
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
+
+/area/ship/crew/captain
+	name = "Captain's Quarters"
+	icon_state = "Sleep"
+	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 /area/ship/crew/library
 	name = "Library"
 	icon_state = "library"
@@ -320,6 +325,20 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/security/armory
 	name = "Armory"
 	icon_state = "armory"
+
+/// Podbay ///
+/area/ship/podbay
+	name = "Podbay"
+	icon_state = "security"
+
+/area/ship/podbay/port
+	name = "Port Podbay"
+	icon_state = "security"
+
+/area/ship/podbay/starboard
+	name = "Starboard Podbay"
+	icon_state = "security"
+
 
 /// Cargo Bay ///
 /area/ship/cargo

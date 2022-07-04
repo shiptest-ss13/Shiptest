@@ -8,9 +8,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
 "ah" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -49,10 +47,7 @@
 /area/ship/hallway/aft)
 "as" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "au" = (
 /obj/structure/cable/orange{
 	icon_state = "1-4"
@@ -71,9 +66,7 @@
 	dir = 9
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "aw" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
@@ -89,13 +82,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
+"aA" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/thrusters/portthrusters)
 "aB" = (
 /obj/machinery/power/terminal,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/structure/cable/green,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/thrusters/starboardthrusters)
 "aC" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -112,9 +109,7 @@
 	name = "Engine Access"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "aN" = (
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable/orange{
@@ -126,7 +121,8 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/thrusters/portthrusters)
 "aT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -307,7 +303,8 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launcherone)
 "ci" = (
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 4
@@ -340,7 +337,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
+"cq" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/thrusters/portthrusters)
 "cy" = (
 /obj/machinery/door/airlock/security/brig/glass{
 	id = "Cell 1";
@@ -399,7 +400,8 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 5
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/thrusters/portthrusters)
 "cQ" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
@@ -407,9 +409,7 @@
 	},
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "dm" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -428,9 +428,7 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "do" = (
 /obj/machinery/computer/secure_data,
 /obj/structure/cable/orange{
@@ -475,19 +473,19 @@
 	dir = 4;
 	pixel_y = 12
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/thrusters/starboardthrusters)
 "dR" = (
 /obj/structure/catwalk/over,
 /obj/machinery/door/window/northleft,
 /obj/effect/turf_decal/arrows{
 	dir = 1
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launchertwo)
 "dU" = (
 /turf/closed/wall/mineral/titanium,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "ea" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -498,7 +496,8 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 6
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launchertwo)
 "ei" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable/yellow{
@@ -509,9 +508,7 @@
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "el" = (
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 8
@@ -522,7 +519,8 @@
 /obj/structure/cable/orange{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launchertwo)
 "eq" = (
 /obj/structure/cable/orange{
 	icon_state = "1-4"
@@ -557,9 +555,7 @@
 /area/ship/medical)
 "ev" = (
 /turf/closed/wall/mineral/titanium,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "eD" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
@@ -570,9 +566,7 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "eE" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -584,6 +578,23 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"eF" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/ship/thrusters/starboardthrusters)
 "eS" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -593,7 +604,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launcherone)
 "fe" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -621,9 +633,7 @@
 	piping_layer = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "fm" = (
 /obj/machinery/computer/apc_control{
 	dir = 4
@@ -647,6 +657,11 @@
 "fw" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/hallway/aft)
+"fx" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/starboard/launcherone)
 "fy" = (
 /obj/item/clothing/under/rank/prisoner,
 /obj/item/clothing/under/rank/prisoner,
@@ -806,9 +821,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "gf" = (
 /obj/machinery/door/airlock/public,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -838,7 +851,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 2
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launcherone)
 "gv" = (
 /obj/effect/turf_decal/corner/orange/border,
 /obj/structure/closet/emcloset/anchored,
@@ -900,7 +914,8 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launcherone)
 "hd" = (
 /obj/structure/toilet{
 	dir = 4
@@ -922,14 +937,13 @@
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/thrusters/starboardthrusters)
 "ho" = (
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/pod/light,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
 "hB" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -937,9 +951,7 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "hD" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -980,9 +992,7 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "hU" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
@@ -990,9 +1000,7 @@
 	},
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "hW" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -1014,9 +1022,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "hZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -1043,9 +1049,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "if" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -1055,9 +1059,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "il" = (
-/obj/machinery/door/window/eastleft{
-	req_access = list(19)
-	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
@@ -1066,6 +1067,9 @@
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 6
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
@@ -1098,9 +1102,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "iW" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
@@ -1141,9 +1143,7 @@
 "jf" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
 "jv" = (
 /obj/effect/turf_decal/corner/blue/bordercorner,
 /obj/effect/turf_decal/borderfloor/corner{
@@ -1193,6 +1193,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
+"jR" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/thrusters/starboardthrusters)
 "jW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -1329,7 +1332,8 @@
 	active_power_usage = 750;
 	projectile_type = /obj/projectile/beam/pulse/condor
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launchertwo)
 "le" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/light/small{
@@ -1380,7 +1384,8 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launcherone)
 "lp" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -1399,7 +1404,8 @@
 /obj/effect/turf_decal/arrows{
 	dir = 1
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launcherone)
 "lt" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/fore)
@@ -1431,16 +1437,18 @@
 	dir = 1;
 	name = "Engine Access"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/thrusters/portthrusters)
+"lF" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/launcher/port/launchertwo)
 "lH" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable/orange{
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
 "lI" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/corner/orange/bordercorner{
@@ -1469,9 +1477,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "mD" = (
 /obj/structure/chair,
 /turf/open/floor/plasteel/white,
@@ -1485,7 +1491,8 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launcherone)
 "mH" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -1506,7 +1513,8 @@
 	id = "condorwindows";
 	name = "external shutters"
 	},
-/turf/open/floor/plating/airless)
+/turf/open/floor/plating/airless,
+/area/ship/thrusters/starboardthrusters)
 "mV" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor/border_only{
@@ -1551,7 +1559,8 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/airalarm/directional/west,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/thrusters/portthrusters)
 "nq" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/structure/cable/orange{
@@ -1591,7 +1600,8 @@
 	dir = 5
 	},
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/grid)
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/starboard/launchertwo)
 "nH" = (
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 4
@@ -1603,7 +1613,11 @@
 	dir = 9;
 	pixel_y = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launcherone)
+"nO" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/launcher/starboard/launcherone)
 "nR" = (
 /obj/machinery/door/window/eastright{
 	dir = 1;
@@ -1617,15 +1631,13 @@
 /obj/effect/turf_decal/arrows{
 	dir = 1
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
 "nS" = (
 /obj/structure/bed,
 /obj/item/bedsheet/captain,
 /turf/open/floor/carpet/executive,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "nZ" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1636,9 +1648,7 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "oc" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -1646,10 +1656,7 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "om" = (
 /obj/structure/cable/orange{
 	icon_state = "2-8"
@@ -1681,7 +1688,16 @@
 	pixel_x = 25;
 	pixel_y = -1
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launchertwo)
+"oz" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launchertwo)
 "oG" = (
 /obj/machinery/stasis,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -1708,9 +1724,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "oO" = (
 /obj/machinery/light{
 	dir = 8
@@ -1832,7 +1846,8 @@
 	pixel_x = -25;
 	pixel_y = 6
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/thrusters/portthrusters)
 "pp" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -1875,7 +1890,8 @@
 	active_power_usage = 750;
 	projectile_type = /obj/projectile/beam/pulse/condor
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launcherone)
 "pw" = (
 /obj/structure/closet/emcloset/wall{
 	dir = 8;
@@ -1903,9 +1919,7 @@
 	id = "starboardpodbay"
 	},
 /turf/open/floor/pod/light,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "pI" = (
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
@@ -1951,7 +1965,8 @@
 	dir = 4;
 	pixel_y = -8
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launcherone)
 "pN" = (
 /obj/effect/turf_decal/trimline/blue/filled{
 	icon_state = "c2,2"
@@ -1963,16 +1978,18 @@
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
+"pU" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/launcher/port/launcherone)
 "pV" = (
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor/shutters{
 	id = "portlauncheroneshutters"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launcherone)
 "qb" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -1986,9 +2003,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "qj" = (
 /obj/machinery/power/terminal,
 /obj/effect/turf_decal/industrial/warning{
@@ -2008,7 +2023,8 @@
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launcherone)
 "qs" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -2046,7 +2062,8 @@
 	dir = 8
 	},
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/grid)
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/starboard/launcherone)
 "qy" = (
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning/fulltile,
@@ -2054,9 +2071,15 @@
 	id = "portpodbay"
 	},
 /turf/open/floor/pod/light,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
+"qB" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/thrusters/starboardthrusters)
 "qJ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -2079,14 +2102,16 @@
 	dir = 8;
 	pixel_y = -10
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launchertwo)
 "qN" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
 	name = "external shutters"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launcherone)
 "qR" = (
 /obj/effect/turf_decal/trimline/blue/line,
 /turf/open/floor/plasteel/dark,
@@ -2110,9 +2135,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "rf" = (
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 6
@@ -2136,10 +2159,7 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/executive,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "rr" = (
 /obj/effect/turf_decal/corner_steel_grid/full,
 /obj/effect/turf_decal/corner/black{
@@ -2192,17 +2212,15 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 10
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launcherone)
 "rD" = (
 /obj/structure/chair/office/light{
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/carpet/executive,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "rH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2285,7 +2303,8 @@
 	dir = 4;
 	pixel_y = -4
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
 "sg" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/green{
@@ -2370,7 +2389,8 @@
 	dir = 4
 	},
 /obj/effect/landmark/start/assistant,
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launcherone)
 "sM" = (
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 8
@@ -2379,7 +2399,8 @@
 	dir = 4
 	},
 /obj/structure/chair,
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launchertwo)
 "sO" = (
 /obj/effect/turf_decal/corner/blue/border,
 /obj/structure/window/reinforced/survival_pod,
@@ -2422,9 +2443,7 @@
 /area/ship/crew/dorm)
 "tn" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "to" = (
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 8
@@ -2432,7 +2451,8 @@
 /obj/structure/cable/green{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launcherone)
 "tr" = (
 /obj/structure/chair/comfy/teal{
 	dir = 4
@@ -2495,10 +2515,7 @@
 "tF" = (
 /obj/machinery/computer/communications,
 /turf/open/floor/carpet/executive,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "tK" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -2516,9 +2533,7 @@
 	locked = 0
 	},
 /turf/open/floor/pod/dark,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
 "tP" = (
 /obj/effect/turf_decal/corner/purple/three_quarters{
 	icon_state = "borderfloor_white";
@@ -2568,6 +2583,23 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
+"ue" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plating,
+/area/ship/thrusters/portthrusters)
+"ui" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/launcher/starboard/launcherone)
 "ut" = (
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 4
@@ -2579,7 +2611,8 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launcherone)
 "uv" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -2593,9 +2626,7 @@
 	},
 /obj/machinery/door/window/northleft,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "uA" = (
 /obj/structure/disposalpipe/broken{
 	dir = 1
@@ -2621,9 +2652,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
 "uX" = (
 /obj/structure/chair/sofa/right{
 	dir = 8
@@ -2718,7 +2747,8 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/grid)
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/port/launchertwo)
 "vJ" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -2728,7 +2758,8 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
 "vN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/orange{
@@ -2751,7 +2782,8 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/airalarm/directional/east,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/thrusters/starboardthrusters)
 "vY" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/science/ai_chamber)
@@ -2764,9 +2796,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
 "wf" = (
 /obj/item/radio/intercom{
 	dir = 8;
@@ -2812,7 +2842,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launchertwo)
 "wl" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -2822,13 +2853,13 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
 "wo" = (
-/obj/structure/window/reinforced/spawner,
 /obj/structure/frame/computer{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 4
 	},
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/ai_chamber)
 "wq" = (
@@ -2838,7 +2869,8 @@
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launcherone)
 "wr" = (
 /obj/effect/turf_decal/corner/blue/border,
 /turf/open/floor/plasteel/mono/dark,
@@ -2850,6 +2882,11 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
+"wt" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/starboard/launchertwo)
 "wF" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/fans/tiny,
@@ -2885,13 +2922,15 @@
 	dir = 1;
 	pixel_y = 3
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launchertwo)
 "wJ" = (
 /obj/machinery/mass_driver{
 	dir = 1;
 	id = "starlauncherone"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launcherone)
 "wL" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -2910,9 +2949,7 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "wN" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -3009,7 +3046,8 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launchertwo)
 "xj" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -3062,7 +3100,8 @@
 	pixel_y = -1
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launcherone)
 "xt" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -3077,6 +3116,14 @@
 /obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
+"xD" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
 "xH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -3101,7 +3148,8 @@
 	dir = 1;
 	pixel_y = 3
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launcherone)
 "xN" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -3138,7 +3186,8 @@
 "xY" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/grid)
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/port/launchertwo)
 "yb" = (
 /obj/structure/closet/secure_closet/captains,
 /obj/machinery/airalarm/directional/east,
@@ -3147,10 +3196,7 @@
 	},
 /obj/machinery/light,
 /turf/open/floor/carpet/executive,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "yc" = (
 /obj/structure/cable/orange{
 	icon_state = "4-8"
@@ -3183,7 +3229,8 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launcherone)
 "yo" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -3202,10 +3249,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "ys" = (
 /obj/machinery/computer/crew{
 	dir = 8
@@ -3279,16 +3323,15 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "yN" = (
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor/shutters{
 	id = "starlauncheroneshutters"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launcherone)
 "yU" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -3305,9 +3348,7 @@
 	name = "Engine Access"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "zl" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -3331,6 +3372,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
+"zr" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/launcher/starboard/launchertwo)
 "zz" = (
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 8
@@ -3338,7 +3382,8 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launcherone)
 "zB" = (
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 1
@@ -3351,7 +3396,8 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/tech/grid)
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/port/launcherone)
 "zO" = (
 /obj/effect/turf_decal/corner/blue/bordercorner,
 /obj/effect/turf_decal/borderfloor/corner{
@@ -3418,9 +3464,7 @@
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/door/window/northleft,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "Ak" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -3469,10 +3513,10 @@
 /obj/item/circuitboard/computer/aiupload,
 /obj/item/aiModule/core/full/corp,
 /obj/item/aiModule/core/full/asimov,
-/obj/structure/window/reinforced/spawner,
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 10
 	},
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/ai_chamber)
 "AJ" = (
@@ -3504,6 +3548,9 @@
 "AM" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
+"AW" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/launcher/port/launcherone)
 "AZ" = (
 /obj/machinery/door/window/brigdoor/eastleft{
 	req_access = list(1)
@@ -3563,9 +3610,7 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "Bn" = (
 /obj/structure/cable/orange{
 	icon_state = "1-8"
@@ -3595,7 +3640,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launchertwo)
 "BP" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -3608,10 +3654,7 @@
 	},
 /obj/structure/filingcabinet,
 /turf/open/floor/carpet/executive,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "Cb" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3631,9 +3674,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "Cq" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -3646,7 +3687,8 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/door/window/northleft,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/thrusters/starboardthrusters)
 "Cx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3711,7 +3753,8 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launchertwo)
 "CT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3810,9 +3853,7 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "DP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3831,7 +3872,8 @@
 /obj/effect/turf_decal/arrows{
 	dir = 1
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launcherone)
 "DY" = (
 /obj/structure/closet/secure_closet/engineering_personal{
 	req_access = null
@@ -3850,9 +3892,7 @@
 /obj/item/clothing/accessory/armband/engine,
 /obj/item/clothing/accessory/armband/engine,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "Ed" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -3864,15 +3904,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 2
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launcherone)
 "Ex" = (
 /obj/machinery/holopad/emergency/engineering,
 /obj/structure/catwalk/over,
 /obj/effect/landmark/start/station_engineer,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "Ey" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
@@ -3898,9 +3937,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "EC" = (
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 8
@@ -3948,14 +3985,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "EQ" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 6
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
@@ -3963,9 +4000,7 @@
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/pod/light,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "Fc" = (
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 4
@@ -3976,7 +4011,8 @@
 /obj/structure/cable/green{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launchertwo)
 "Fd" = (
 /obj/effect/turf_decal/corner/yellow/full,
 /obj/machinery/light{
@@ -4003,9 +4039,7 @@
 /obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "Fl" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -4027,13 +4061,15 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/thrusters/portthrusters)
 "Fv" = (
 /obj/machinery/mass_driver{
 	dir = 1;
 	id = "portlaunchertwo"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
 "FA" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
@@ -4055,12 +4091,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launcherone)
 "FE" = (
 /turf/open/floor/pod/dark,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
 "FH" = (
 /obj/structure/cable/green{
 	icon_state = "2-4"
@@ -4085,9 +4120,7 @@
 	},
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "FP" = (
 /obj/machinery/processor,
 /obj/effect/turf_decal/corner/bottlegreen/border{
@@ -4107,9 +4140,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "FY" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -4123,7 +4154,8 @@
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launcherone)
 "FZ" = (
 /obj/effect/turf_decal/corner/black{
 	dir = 4
@@ -4178,7 +4210,11 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "starlaunchertwoshutters"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launchertwo)
+"GA" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/launcher/port/launchertwo)
 "GC" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -4198,9 +4234,11 @@
 	dir = 4;
 	pixel_y = -4
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/thrusters/portthrusters)
 "GF" = (
-/turf/closed/wall/mineral/titanium/nodiagonal)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/launcher/starboard/launchertwo)
 "GG" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/janitor)
@@ -4230,7 +4268,8 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launchertwo)
 "GY" = (
 /obj/structure/chair/stool/bar{
 	dir = 4
@@ -4267,15 +4306,11 @@
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/door/window/northleft,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "Hy" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/pod/dark,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "HB" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -4339,7 +4374,8 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "portlaunchertwoshutters"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
 "HR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -4391,9 +4427,7 @@
 /area/ship/hallway/aft)
 "Ia" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "Ie" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -4415,7 +4449,8 @@
 	pixel_x = -25;
 	pixel_y = -1
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launcherone)
 "Ij" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -4453,7 +4488,8 @@
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
 "Iv" = (
 /obj/machinery/vending/security/marine/nanotrasen{
 	products = list(/obj/item/restraints/handcuffs=10,/obj/item/assembly/flash/handheld=10,/obj/item/flashlight/seclite=10,/obj/item/ammo_box/magazine/aknt=10,/obj/item/storage/box/lethalshot=5,/obj/item/grenade/c4=5,/obj/item/grenade/frag=5,/obj/item/grenade/flashbang=10,/obj/item/grenade/barrier=10,/obj/item/melee/transforming/energy/sword/saber/blue=5)
@@ -4496,9 +4532,7 @@
 	pixel_x = 5
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "IF" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -4516,9 +4550,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "IN" = (
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 8
@@ -4529,7 +4561,8 @@
 /obj/machinery/camera/autoname{
 	dir = 5
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launcherone)
 "IT" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -4549,7 +4582,8 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/thrusters/starboardthrusters)
 "Jb" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
@@ -4564,9 +4598,7 @@
 	pixel_x = 25
 	},
 /turf/open/floor/pod/dark,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
 "Jk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -4598,7 +4630,8 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
 "JK" = (
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 6
@@ -4654,9 +4687,7 @@
 	name = "Engine Access"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "JW" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -4670,9 +4701,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "JZ" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -4812,7 +4841,8 @@
 /obj/machinery/camera/autoname{
 	dir = 5
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/thrusters/starboardthrusters)
 "KA" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen/kitchen)
@@ -4853,7 +4883,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+/area/ship/launcher/starboard/launchertwo)
 "KP" = (
 /obj/structure/cable/orange{
 	icon_state = "2-8"
@@ -4865,9 +4895,7 @@
 	piping_layer = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "KT" = (
 /obj/effect/turf_decal/corner/blue/bordercorner,
 /obj/effect/turf_decal/borderfloor/corner{
@@ -4910,7 +4938,8 @@
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launcherone)
 "Ll" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light/small{
@@ -4921,7 +4950,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launchertwo)
 "Lr" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/corner/blue/full,
@@ -4935,7 +4965,8 @@
 /obj/structure/cable/orange{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launcherone)
 "LD" = (
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/blue/bordercee,
@@ -4956,9 +4987,7 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "LN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -5007,7 +5036,8 @@
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
 "Me" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
@@ -5073,9 +5103,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "My" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -5091,10 +5119,7 @@
 /area/ship/hallway/port)
 "MF" = (
 /turf/closed/wall/mineral/titanium,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "MG" = (
 /obj/structure/table/wood/bar,
 /obj/item/reagent_containers/food/condiment/peppermill,
@@ -5133,7 +5158,19 @@
 	dir = 1;
 	id = "portlaunchertwo"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
+"Nw" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/thrusters/portthrusters)
 "Nx" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -5339,7 +5376,8 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/plating/airless)
+/turf/open/floor/plating/airless,
+/area/ship/externaldark)
 "OQ" = (
 /obj/structure/table,
 /obj/item/paper_bin{
@@ -5367,10 +5405,7 @@
 /obj/machinery/door/window/northright,
 /obj/machinery/holopad,
 /turf/open/floor/carpet/executive,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "OS" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -5389,7 +5424,8 @@
 	pixel_x = 25;
 	pixel_y = 6
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/thrusters/starboardthrusters)
 "OV" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -5408,7 +5444,8 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launchertwo)
 "OY" = (
 /obj/structure/cable/orange{
 	icon_state = "2-8"
@@ -5420,10 +5457,7 @@
 	dir = 10
 	},
 /turf/open/floor/carpet/executive,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "OZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -5448,9 +5482,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "Pl" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -5459,7 +5491,8 @@
 	dir = 4
 	},
 /obj/structure/chair,
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launchertwo)
 "Pn" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -5471,7 +5504,8 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launcherone)
 "Pu" = (
 /obj/effect/turf_decal/corner/blue/bordercorner{
 	dir = 1
@@ -5487,9 +5521,7 @@
 	locked = 0
 	},
 /turf/open/floor/pod/dark,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "PG" = (
 /obj/machinery/door/window/eastright,
 /obj/structure/curtain/cloth,
@@ -5510,7 +5542,8 @@
 	dir = 6
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launcherone)
 "PJ" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/dorm)
@@ -5521,7 +5554,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launcherone)
 "PN" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -5536,7 +5570,8 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/thrusters/portthrusters)
 "Qp" = (
 /obj/machinery/door/airlock/engineering,
 /obj/structure/cable/green{
@@ -5547,9 +5582,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "Qq" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm)
@@ -5562,9 +5595,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "Qt" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -5587,9 +5618,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "QC" = (
 /obj/structure/table,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -5610,7 +5639,8 @@
 	pixel_x = 9;
 	pixel_y = 3
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launcherone)
 "QD" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -5636,7 +5666,8 @@
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launcherone)
 "QT" = (
 /obj/structure/cable/orange{
 	icon_state = "2-4"
@@ -5716,9 +5747,15 @@
 	pixel_x = -25
 	},
 /turf/open/floor/pod/dark,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
+"RA" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/launcher/port/launcherone)
 "RC" = (
 /obj/machinery/door/airlock/security,
 /obj/structure/cable/green{
@@ -5743,7 +5780,8 @@
 	dir = 8;
 	pixel_y = 12
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
 "RJ" = (
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 6
@@ -5780,9 +5818,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "Sb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -5836,9 +5872,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "SO" = (
 /obj/structure/cable/orange{
 	icon_state = "2-8"
@@ -5854,9 +5888,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "SS" = (
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -5912,9 +5944,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "TH" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5939,9 +5969,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "TO" = (
 /obj/structure/cable/orange{
 	icon_state = "2-8"
@@ -5952,9 +5980,7 @@
 /obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "TZ" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable/green{
@@ -5980,9 +6006,7 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "Ug" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
@@ -6025,6 +6049,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
+"Uq" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/launcher/port/launcherone)
 "Ut" = (
 /obj/effect/turf_decal/corner/orange/border{
 	dir = 8
@@ -6041,7 +6070,8 @@
 	active_power_usage = 750;
 	projectile_type = /obj/projectile/beam/pulse/condor
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launcherone)
 "Uu" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/effect/turf_decal/corner/bottlegreen/border{
@@ -6063,7 +6093,8 @@
 	dir = 1;
 	pixel_y = 3
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launchertwo)
 "UF" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -6121,9 +6152,15 @@
 /obj/item/spacepod_key/sec,
 /obj/item/spacepod_key/sec,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
+"Vf" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "external shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/thrusters/portthrusters)
 "Vg" = (
 /obj/effect/turf_decal/corner/purple/three_quarters{
 	icon_state = "borderfloor_white";
@@ -6192,9 +6229,7 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "Vx" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -6235,9 +6270,7 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "VF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -6247,7 +6280,8 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launcherone)
 "Wp" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/fans/tiny,
@@ -6328,7 +6362,8 @@
 	active_power_usage = 750;
 	projectile_type = /obj/projectile/beam/pulse/condor
 	},
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/starboard/launchertwo)
 "WI" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 6
@@ -6360,9 +6395,7 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "WU" = (
 /obj/effect/turf_decal/corner/blue/half{
 	dir = 4
@@ -6400,9 +6433,7 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Port Engineering"
-	})
+/area/ship/engineering/port)
 "Xm" = (
 /obj/machinery/airalarm/directional/north,
 /obj/structure/closet/firecloset/wall{
@@ -6413,9 +6444,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
 "Xo" = (
 /obj/structure/table/wood,
 /obj/item/areaeditor/shuttle{
@@ -6441,16 +6470,14 @@
 	pixel_x = 5
 	},
 /turf/open/floor/carpet/executive,
-/area/ship/crew{
-	name = "Captain's Quarters";
-	icon_state = "Sleep"
-	})
+/area/ship/crew/captain)
 "Xq" = (
 /obj/machinery/mass_driver{
 	dir = 1;
 	id = "portlauncherone"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launcherone)
 "Xy" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/starboard)
@@ -6485,9 +6512,7 @@
 "XE" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/pod/dark,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
 "XH" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -6507,9 +6532,6 @@
 /turf/open/floor/plasteel/stairs/left,
 /area/ship/hallway/aft)
 "XN" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -6518,6 +6540,9 @@
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 6
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
@@ -6578,7 +6603,8 @@
 	dir = 8
 	},
 /obj/effect/landmark/start/assistant,
-/turf/open/floor/plasteel/tech/techmaint)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/launcher/port/launcherone)
 "Yu" = (
 /obj/effect/turf_decal/corner/purple/three_quarters{
 	icon_state = "borderfloor_white";
@@ -6605,13 +6631,15 @@
 	pixel_y = -1
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/port/launchertwo)
 "Yx" = (
 /obj/machinery/mass_driver{
 	dir = 1;
 	id = "starlaunchertwo"
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/ship/launcher/starboard/launchertwo)
 "Yz" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/green,
@@ -6622,14 +6650,10 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "YB" = (
 /turf/open/floor/pod/dark,
-/area/ship/security{
-	name = "Starboard Podbay"
-	})
+/area/ship/podbay/starboard)
 "YD" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -6648,9 +6672,7 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "YS" = (
 /obj/effect/turf_decal/corner/bottlegreen/border,
 /obj/structure/closet/crate/engineering{
@@ -6734,9 +6756,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
 "Zf" = (
 /obj/effect/turf_decal/corner/purple/three_quarters{
 	icon_state = "borderfloorcorner_white";
@@ -6749,9 +6769,10 @@
 	dir = 8
 	},
 /turf/open/floor/pod/dark,
-/area/ship/security{
-	name = "Port Podbay"
-	})
+/area/ship/podbay/port)
+"Zm" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/thrusters/starboardthrusters)
 "Zp" = (
 /obj/machinery/computer/communications,
 /obj/effect/turf_decal/corner/blue/full,
@@ -6852,9 +6873,7 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ship/engineering{
-	name = "Starboard Engineering"
-	})
+/area/ship/engineering/starboard)
 "ZS" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/maintenance/starboard)
@@ -6919,27 +6938,27 @@ cD
 cD
 cD
 cD
-yv
-yv
-yv
-GF
-qN
-qN
-GF
-GF
-GF
-GF
-yv
-yv
+lF
+lF
+lF
+GA
+xD
+xD
+GA
+GA
+GA
+GA
+lF
+lF
 Ie
 Ie
 Ie
-yv
-GF
-GF
-GF
-yv
-yv
+cq
+aA
+aA
+aA
+cq
+cq
 cD
 "}
 (2,1,1) = {"
@@ -6979,8 +6998,8 @@ Fo
 pj
 nm
 GC
-Cq
-mS
+ue
+Nw
 cD
 "}
 (3,1,1) = {"
@@ -7012,16 +7031,16 @@ xY
 vI
 xY
 ea
-yv
+lF
 Ww
 eE
 So
-GF
+aA
 cL
 aN
 Qa
 ly
-mS
+Nw
 cD
 "}
 (4,1,1) = {"
@@ -7042,27 +7061,27 @@ cD
 cD
 cD
 cD
-yv
-yv
-GF
-qN
-qN
-qN
-GF
-yv
-GF
+lF
+lF
+GA
+xD
+xD
+xD
+GA
+lF
+GA
 ba
 ba
 ba
 Sb
 jz
 Jp
-yv
-yv
-GF
-qN
-yv
-yv
+cq
+cq
+aA
+Vf
+cq
+cq
 cD
 "}
 (5,1,1) = {"
@@ -7200,19 +7219,19 @@ cD
 cD
 cD
 cD
-yv
-yv
-yv
-yv
-GF
-qN
-qN
-qN
-GF
-yv
-yv
-yv
-GF
+pU
+pU
+pU
+pU
+AW
+RA
+RA
+RA
+AW
+pU
+pU
+pU
+AW
 Jp
 ba
 Gk
@@ -7250,9 +7269,9 @@ Ut
 Yp
 QC
 QQ
-xY
+Uq
 zD
-xY
+Uq
 rB
 ba
 Gk
@@ -7323,19 +7342,19 @@ cD
 cD
 cD
 cD
-yv
-yv
-GF
-GF
-GF
-qN
-qN
-qN
-GF
-GF
-yv
-yv
-je
+pU
+pU
+AW
+AW
+AW
+RA
+RA
+RA
+AW
+AW
+pU
+pU
+pU
 If
 If
 wN
@@ -8307,19 +8326,19 @@ cD
 cD
 cD
 cD
-yv
-yv
-GF
-GF
-GF
+nO
+nO
+ui
+ui
+ui
 qN
 qN
 qN
-GF
-GF
-yv
-yv
-BI
+ui
+ui
+nO
+nO
+nO
 KA
 KA
 je
@@ -8398,9 +8417,9 @@ pt
 sD
 xJ
 qm
-xY
+fx
 qx
-xY
+fx
 FY
 Xy
 pd
@@ -8430,19 +8449,19 @@ cD
 cD
 cD
 cD
-yv
-yv
-yv
-yv
-GF
+nO
+nO
+nO
+nO
+ui
 qN
 qN
 qN
-GF
-yv
-yv
-yv
-GF
+ui
+nO
+nO
+nO
+ui
 ZS
 Xy
 gM
@@ -8600,12 +8619,12 @@ cD
 cD
 cD
 cD
-yv
-yv
+zr
+zr
 GF
-qN
-qN
-qN
+oz
+oz
+oz
 GF
 GF
 GF
@@ -8615,12 +8634,12 @@ Xy
 UF
 Xy
 Xy
-yv
-GF
-GF
-qN
-yv
-yv
+jR
+Zm
+Zm
+qB
+jR
+jR
 cD
 "}
 (43,1,1) = {"
@@ -8649,14 +8668,14 @@ WH
 sM
 Uu
 nG
-xY
-xY
+wt
+wt
 wi
-ZS
+zr
 SV
 rY
 zQ
-GF
+Zm
 Kz
 hf
 aB
@@ -8701,7 +8720,7 @@ IW
 OS
 vO
 dE
-ly
+eF
 mS
 cD
 "}
@@ -8723,26 +8742,26 @@ cD
 cD
 cD
 cD
-yv
-yv
-yv
+zr
+zr
+zr
 GF
-qN
-qN
+oz
+oz
 GF
 GF
 GF
 yv
 yv
-ZS
+zr
 QD
 QD
 QD
-yv
-GF
-GF
-GF
-yv
-yv
+jR
+Zm
+Zm
+Zm
+jR
+jR
 cD
 "}
