@@ -26,7 +26,7 @@
 	if(path)
 		mappath = path
 	else
-		mappath = "_maps/shuttles/misc/[category]/[file_name].dmm"
+		mappath = "_maps/shuttles/[category]/[file_name].dmm"
 	. = ..()
 
 /datum/map_template/shuttle/preload_size(path, cache)
