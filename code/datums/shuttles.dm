@@ -115,18 +115,6 @@
 	job_slots = list(new /datum/job/assistant = 5) // There will already be a captain, probably!
 	file_name = "custom_shuttle" // Dummy
 
-/// Mining shuttles
-/datum/map_template/shuttle/mining
-	category = "mining"
-
-/datum/map_template/shuttle/mining/kilo
-	file_name = "mining_kilo"
-	name = "mining shuttle (Kilo)"
-
-/datum/map_template/shuttle/mining/large
-	file_name = "mining_large"
-	name = "mining shuttle (Large)"
-
 /// Syndicate Infiltrator variants
 /datum/map_template/shuttle/infiltrator
 	category = "infiltrator"
