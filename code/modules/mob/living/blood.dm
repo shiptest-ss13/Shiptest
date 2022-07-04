@@ -281,7 +281,12 @@
 			return
 
 	// Find a blood decal or create a new one.
-	var/obj/effect/decal/cleanable/blood/B = locate() in T
+	var/obj/effect/decal/cleanable/blood/B
+	for (var/obj/effect/decal/cleanable/blood/candidate in T)
+		if (QDELETED(T))
+			continue
+		B = candidate
+		break
 	if(!B)
 		B = new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
 	B.bloodiness = min((B.bloodiness + BLOOD_AMOUNT_PER_DECAL),MAX_SHOE_BLOODINESS)
