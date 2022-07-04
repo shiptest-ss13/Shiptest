@@ -1349,6 +1349,9 @@
 	id = "thrusterblasts"
 	},
 /obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "mQ" = (
@@ -1403,6 +1406,7 @@
 	dir = 1
 	},
 /obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/cable/cyan,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "of" = (
@@ -2502,13 +2506,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"AY" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
-/obj/machinery/power/smes/shuttle/precharged,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "AZ" = (
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -3152,6 +3149,9 @@
 	id = "thrusterblasts"
 	},
 /obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "GT" = (
@@ -5359,7 +5359,7 @@ zW
 zW
 zW
 GQ
-AY
+RF
 oQ
 Om
 SZ
