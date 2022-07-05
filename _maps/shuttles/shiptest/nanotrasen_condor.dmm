@@ -434,11 +434,12 @@
 /obj/structure/cable/orange{
 	icon_state = "2-8"
 	},
-/obj/machinery/newscaster/security_unit{
-	pixel_y = 30
-	},
 /obj/effect/turf_decal/corner/bar/three_quarters{
 	dir = 4
+	},
+/obj/machinery/door_timer{
+	id = "Cell 1";
+	pixel_y = 30
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -1874,6 +1875,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/bar{
 	dir = 6
+	},
+/obj/machinery/newscaster/security_unit{
+	pixel_x = 30;
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -5838,12 +5843,6 @@
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/button/flasher{
-	dir = 8;
-	pixel_x = 23;
-	pixel_y = -19;
-	id = "Cell 1"
-	},
 /obj/effect/turf_decal/corner/bar/three_quarters{
 	dir = 8
 	},
