@@ -21,6 +21,24 @@
 	},
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
+"ai" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner_techfloor_grid,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner,
+/obj/effect/turf_decal/spline/fancy/corner/green{
+	color = "#99BB76"
+	},
+/obj/effect/turf_decal/spline/fancy/corner/green{
+	dir = 8;
+	color = "#99BB76"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
 "am" = (
 /obj/machinery/microwave,
 /obj/structure/table,
@@ -34,20 +52,20 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "aJ" = (
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_y = -1
-	},
-/obj/machinery/light/dim,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/caseless{
-	pixel_x = 6;
-	pixel_y = 6;
-	dir = 5
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "bd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -65,6 +83,8 @@
 	pixel_x = 6;
 	pixel_y = 5
 	},
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/green,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "bq" = (
@@ -74,6 +94,12 @@
 	pixel_y = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "bv" = (
@@ -82,6 +108,22 @@
 	pixel_y = -9;
 	pixel_x = -9;
 	dir = 5
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"bA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -98,7 +140,8 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
 /area/ruin/powered/hydroponicslab)
 "bV" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -108,6 +151,12 @@
 /obj/structure/table,
 /obj/item/seeds/replicapod{
 	pixel_y = -1
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -122,15 +171,11 @@
 	pixel_y = 12
 	},
 /obj/item/toy/figure/botanist,
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plating,
 /area/ruin/powered/hydroponicslab)
 "dw" = (
-/obj/effect/decal/cleanable/blood/gibs/torso,
-/obj/item/ammo_casing/caseless{
-	pixel_y = 12;
-	pixel_x = -7
-	},
-/turf/open/floor/plasteel/tech,
+/obj/item/toy/katana,
+/turf/open/floor/plating,
 /area/ruin/powered/hydroponicslab)
 "dB" = (
 /obj/effect/decal/cleanable/food/plant_smudge,
@@ -138,6 +183,14 @@
 /area/ruin/powered/hydroponicslab)
 "dD" = (
 /obj/machinery/door/airlock/maintenance,
+/obj/effect/turf_decal/corner_techfloor_grid/diagonal{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
+/obj/effect/turf_decal/spline/fancy/grey,
+/obj/effect/turf_decal/spline/fancy/grey{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "ed" = (
@@ -149,15 +202,9 @@
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "eD" = (
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_y = 10
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/caseless{
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/turf/open/floor/plasteel/tech,
+/mob/living/simple_animal/hostile/venus_human_trap,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "eX" = (
 /obj/effect/decal/cleanable/blood/gibs,
@@ -179,6 +226,12 @@
 /obj/item/reagent_containers/blood/OMinus{
 	desc = "Contains blood used for transfusion. Must be attached to an IV drip. Something is scribbled on the back in blue letters: "DAEDALUS""
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "gb" = (
@@ -188,6 +241,38 @@
 	pixel_x = -3
 	},
 /turf/open/floor/plasteel/rockvault,
+/area/ruin/powered/hydroponicslab)
+"gf" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/caseless{
+	pixel_y = -9;
+	pixel_x = 11;
+	dir = 10
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"gz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/corner/lime{
+	dir = 4;
+	color = "#B7D993"
+	},
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "gA" = (
 /turf/open/floor/plating/snowed/temperatre{
@@ -203,9 +288,33 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "gM" = (
-/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab,
-/turf/closed/mineral/snowmountain/icemoon,
-/area/icemoon/surface/outdoors)
+/obj/item/ammo_casing/caseless{
+	pixel_x = 8;
+	pixel_y = 4;
+	dir = 8
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/corner/orange{
+	dir = 8;
+	color = "#C3630C"
+	},
+/obj/effect/turf_decal/spline/fancy/corner/orange{
+	dir = 4;
+	color = "#C3630C"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
 "gO" = (
 /obj/structure/table,
 /obj/item/shovel/spade{
@@ -217,7 +326,18 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/green{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"gP" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/fernybush,
+/turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "gU" = (
 /obj/structure/curtain,
@@ -227,21 +347,51 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hydroponicslab)
 "hd" = (
-/obj/machinery/light/dim{
-	dir = 1
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
-/obj/structure/table,
-/obj/item/multitool{
-	pixel_x = 4;
-	pixel_y = 7
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
 	},
-/obj/item/storage/toolbox/mechanical,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "hg" = (
 /mob/living/simple_animal/hostile/venus_human_trap,
 /obj/machinery/door/window/brigdoor,
 /turf/open/floor/plasteel/rockvault,
+/area/ruin/powered/hydroponicslab)
+"hs" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"hw" = (
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = -3;
+	pixel_y = 2
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_casing/caseless{
+	pixel_x = -8;
+	pixel_y = 6;
+	dir = 9
+	},
+/obj/effect/turf_decal/corner_techfloor_grid,
+/obj/effect/turf_decal/techfloor/corner,
+/obj/effect/turf_decal/spline/fancy/corner/orange{
+	color = "#C3630C"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"hz" = (
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/lime,
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "hF" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -261,6 +411,12 @@
 	pixel_y = 6
 	},
 /turf/open/floor/wood/walnut,
+/area/ruin/powered/hydroponicslab)
+"ic" = (
+/obj/effect/decal/cleanable/food/tomato_smudge,
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/orange,
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "ij" = (
 /obj/effect/decal/cleanable/dirt,
@@ -293,6 +449,12 @@
 	pixel_y = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/orange{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "iB" = (
@@ -312,19 +474,22 @@
 /obj/item/ammo_box/magazine/m45{
 	pixel_y = 0
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "iJ" = (
-/obj/structure/chair/office{
-	dir = 4
+/obj/item/trash/chips{
+	pixel_x = -1
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/caseless{
-	pixel_y = -9;
-	pixel_x = 11;
-	dir = 10
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "iQ" = (
 /obj/structure/table,
@@ -336,10 +501,28 @@
 	pixel_x = 4;
 	pixel_y = 10
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/green{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"iY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/lime,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "jl" = (
 /obj/effect/decal/cleanable/food/salt,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/purple{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "jr" = (
@@ -347,6 +530,21 @@
 /obj/item/circuitboard/machine/hydroponics{
 	pixel_x = -4;
 	pixel_y = 2
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"jC" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/purple{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -358,26 +556,46 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "kw" = (
-/obj/structure/table,
-/obj/item/seeds/cannabis{
-	pixel_x = 5;
-	pixel_y = 4
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
-/obj/item/paper/fluff/ruins/hydroponicslab/botanist{
-	pixel_x = -2;
-	pixel_y = 2
+/turf/open/floor/carpet,
+/area/ruin/powered/hydroponicslab)
+"kS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 6
 	},
-/obj/item/pen{
-	pixel_x = -9
+/obj/effect/turf_decal/spline/fancy/orange{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"kU" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/corner/purple{
+	dir = 1;
+	color = "#AE8CA8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "lj" = (
-/obj/item/trash/chips{
-	pixel_x = -1
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
 	},
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
@@ -388,6 +606,12 @@
 	pixel_y = 4
 	},
 /obj/item/cultivator,
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/fancy/green{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "lF" = (
@@ -402,9 +626,52 @@
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
+"lO" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/corner/lime{
+	dir = 4;
+	color = "#B7D993"
+	},
+/obj/effect/turf_decal/spline/fancy/corner/lime{
+	dir = 1;
+	color = "#B7D993"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"mb" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/corner/lime{
+	dir = 8;
+	color = "#B7D993"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"md" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/grassybush,
+/turf/open/floor/grass,
+/area/ruin/powered/hydroponicslab)
 "me" = (
-/obj/item/toy/katana,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "mQ" = (
 /obj/structure/frame/computer{
@@ -416,6 +683,12 @@
 	},
 /obj/item/shard{
 	pixel_x = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -434,14 +707,29 @@
 /area/ruin/powered/hydroponicslab)
 "mW" = (
 /obj/effect/decal/cleanable/blood/drip{
-	pixel_x = -3;
-	pixel_y = 2
+	pixel_y = 12;
+	pixel_x = 11
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/splatter,
 /obj/item/ammo_casing/caseless{
-	pixel_x = -8;
-	pixel_y = 6;
-	dir = 9
+	pixel_y = 4;
+	dir = 5;
+	pixel_x = 2
+	},
+/obj/effect/turf_decal/corner_techfloor_grid,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/corner/purple{
+	color = "#AE8CA8"
+	},
+/obj/effect/turf_decal/spline/fancy/corner/purple{
+	dir = 8;
+	color = "#AE8CA8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -450,11 +738,30 @@
 /obj/structure/window/reinforced,
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
+"ni" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/corner/green{
+	dir = 1;
+	color = "#99BB76"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
 "nj" = (
 /obj/structure/table,
 /obj/item/circuitboard/machine/hydroponics{
 	pixel_y = 2;
 	pixel_x = -3
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -465,10 +772,26 @@
 	pixel_x = 8;
 	pixel_y = 6
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/orange{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"nq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "nt" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "nD" = (
@@ -480,6 +803,26 @@
 /obj/item/wallframe/camera{
 	pixel_x = -8;
 	pixel_y = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/orange{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"nI" = (
+/obj/effect/decal/cleanable/food/plant_smudge,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/corner/orange{
+	dir = 4;
+	color = "#C3630C"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -495,6 +838,12 @@
 /obj/item/screwdriver{
 	pixel_x = 2
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "nP" = (
@@ -505,6 +854,47 @@
 /area/ruin/powered/hydroponicslab)
 "nS" = (
 /obj/structure/closet/secure_closet/hydroponics,
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/purple{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"oo" = (
+/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag{
+	pixel_x = 2;
+	pixel_y = -3
+	},
+/obj/item/ammo_casing/caseless{
+	pixel_x = -5;
+	pixel_y = 9;
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"oK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner_techfloor_grid,
+/obj/effect/turf_decal/techfloor/corner,
+/obj/effect/turf_decal/spline/fancy/corner/lime{
+	color = "#B7D993"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"oO" = (
+/mob/living/simple_animal/hostile/killertomato,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/corner/green{
+	dir = 1;
+	color = "#99BB76"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "oT" = (
@@ -545,6 +935,12 @@
 /obj/item/reagent_containers/glass/bottle{
 	pixel_x = -6
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/green{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "pG" = (
@@ -559,8 +955,26 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hydroponicslab)
 "pR" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/carpet,
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/item/multitool{
+	pixel_x = 4;
+	pixel_y = 7
+	},
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/wood/walnut,
+/area/ruin/powered/hydroponicslab)
+"qc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/purple{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "qh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -573,6 +987,12 @@
 	pixel_x = -1;
 	pixel_y = 4
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/green{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "qt" = (
@@ -582,6 +1002,12 @@
 	pixel_y = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/obj/effect/turf_decal/spline/fancy/green{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "ri" = (
@@ -595,12 +1021,31 @@
 /obj/machinery/door/airlock/maintenance,
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
+"sr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
 "ss" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "sx" = (
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"sM" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/orange{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "tk" = (
@@ -614,10 +1059,19 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "to" = (
-/obj/machinery/light/small{
-	dir = 4
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_y = -1
 	},
-/turf/open/floor/carpet,
+/obj/machinery/light/dim,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/caseless{
+	pixel_x = 6;
+	pixel_y = 6;
+	dir = 5
+	},
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/orange,
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "tE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -625,16 +1079,35 @@
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "tQ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "tS" = (
-/obj/item/pen/blue{
-	pixel_y = -2;
-	pixel_x = -6
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/junglebush,
+/turf/open/floor/grass,
+/area/ruin/powered/hydroponicslab)
+"uo" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/grass,
+/area/ruin/powered/hydroponicslab)
+"uR" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 4
 	},
-/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab/researcher{
-	pixel_x = 3;
-	pixel_y = 2
+/obj/effect/turf_decal/corner_techfloor_grid,
+/obj/effect/turf_decal/techfloor/corner,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/corner/purple{
+	dir = 1;
+	color = "#AE8CA8"
+	},
+/obj/effect/turf_decal/spline/fancy/corner/purple{
+	color = "#AE8CA8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -644,11 +1117,25 @@
 /obj/machinery/light/dim{
 	dir = 1
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/orange{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "uZ" = (
 /obj/machinery/door/airlock/grunge,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/turf_decal/corner_techfloor_grid/diagonal{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
+/obj/effect/turf_decal/spline/fancy/grey{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/grey,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "vg" = (
@@ -678,31 +1165,59 @@
 	pixel_x = -4;
 	pixel_y = 2
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plating/rust,
+/area/ruin/powered/hydroponicslab)
+"xq" = (
+/mob/living/simple_animal/hostile/killertomato,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/tile/plasteel/tech,
+/turf/open/floor/plating,
 /area/ruin/powered/hydroponicslab)
 "xx" = (
-/mob/living/simple_animal/hostile/venus_human_trap,
-/turf/open/floor/grass,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/carpet,
+/area/ruin/powered/hydroponicslab)
+"xE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"xJ" = (
+/obj/effect/decal/cleanable/blood/gibs/torso,
+/obj/item/ammo_casing/caseless{
+	pixel_y = 12;
+	pixel_x = -7
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
 /area/ruin/powered/hydroponicslab)
 "yi" = (
-/obj/item/trash/sosjerky{
-	pixel_x = 4;
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/item/trash/boritos{
+	pixel_x = -2;
 	pixel_y = 2
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "ys" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/carpet,
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "yV" = (
-/obj/structure/chair/plastic{
-	dir = 1
-	},
-/turf/open/floor/carpet,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "zw" = (
 /obj/structure/table/wood,
@@ -712,16 +1227,52 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
-"zN" = (
+"zy" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_box/magazine/m45{
-	pixel_y = 0
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/purple,
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"zH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/can{
+	pixel_x = 5;
+	pixel_y = -6
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/ruin/powered/hydroponicslab)
+"zN" = (
+/obj/item/pen/blue{
+	pixel_y = -2;
+	pixel_x = -6
+	},
+/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab/researcher{
+	pixel_x = 3;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"zO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "zV" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
+/obj/effect/turf_decal/corner_techfloor_grid/diagonal{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/grey{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/grey{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Ac" = (
@@ -730,15 +1281,35 @@
 	pixel_x = 15
 	},
 /obj/effect/decal/cleanable/blood/splatter,
-/turf/open/floor/plasteel/tech,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
 /area/ruin/powered/hydroponicslab)
 "AL" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/plastic,
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 1
+	},
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "AT" = (
 /turf/open/floor/vault,
+/area/ruin/powered/hydroponicslab)
+"Bc" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/light/small/broken{
+	dir = 1
+	},
+/obj/item/ammo_casing/caseless{
+	pixel_y = -1;
+	dir = 5;
+	pixel_x = 3
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Bx" = (
 /turf/open/floor/plasteel/rockvault,
@@ -754,15 +1325,47 @@
 /area/ruin/powered/hydroponicslab)
 "Cr" = (
 /obj/machinery/biogenerator,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/purple{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"CD" = (
+/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab,
+/turf/closed/mineral/snowmountain/icemoon,
+/area/icemoon/surface/outdoors)
+"CG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "Dj" = (
 /obj/machinery/chem_dispenser/mutagensaltpeter,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/green{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "DH" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /turf/open/floor/wood/walnut,
+/area/ruin/powered/hydroponicslab)
+"DK" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "DO" = (
 /obj/effect/decal/cleanable/dirt,
@@ -771,6 +1374,24 @@
 "DV" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
+"Eb" = (
+/obj/effect/turf_decal/corner_techfloor_grid,
+/obj/effect/turf_decal/techfloor/corner,
+/obj/effect/turf_decal/spline/fancy/corner/lime{
+	color = "#B7D993"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"Eo" = (
+/obj/item/trash/sosjerky{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/carpet,
+/area/ruin/powered/hydroponicslab)
 "Ey" = (
 /turf/template_noop,
 /area/template_noop)
@@ -785,12 +1406,24 @@
 	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/green{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Fy" = (
 /obj/structure/table,
 /obj/item/circuitboard/machine/hydroponics{
 	pixel_y = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -801,6 +1434,26 @@
 	pixel_y = -4
 	},
 /obj/effect/decal/cleanable/shreds,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/corner/red{
+	dir = 4;
+	color = "#B4696A"
+	},
+/obj/effect/turf_decal/spline/fancy/corner/red{
+	dir = 1;
+	color = "#B4696A"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Gr" = (
@@ -818,9 +1471,28 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
+"GE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/tile/plasteel/tech,
+/turf/open/floor/plating/rust,
+/area/ruin/powered/hydroponicslab)
 "GK" = (
-/turf/closed/mineral/snowmountain/icemoon,
-/area/icemoon/surface/outdoors)
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_y = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/caseless{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/orange{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
 "GN" = (
 /obj/machinery/door/airlock/maintenance,
 /turf/open/floor/plasteel/stairs,
@@ -831,7 +1503,8 @@
 	pixel_x = 1;
 	pixel_y = 10
 	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
 /area/ruin/powered/hydroponicslab)
 "He" = (
 /obj/structure/table,
@@ -850,22 +1523,35 @@
 /obj/machinery/light,
 /turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
+"HK" = (
+/obj/structure/chair/plastic{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/carpet,
+/area/ruin/powered/hydroponicslab)
 "Ik" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
-"IR" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/machinery/light/small/broken{
+"IQ" = (
+/obj/machinery/hydroponics/constructable,
+/obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/item/ammo_casing/caseless{
-	pixel_y = -1;
-	dir = 5;
-	pixel_x = 3
+/obj/effect/turf_decal/spline/fancy/orange{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"IR" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "Jn" = (
 /obj/structure/table,
@@ -874,6 +1560,26 @@
 	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/green{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"JD" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/fancy/orange{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"JS" = (
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/orange,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "JZ" = (
@@ -882,6 +1588,10 @@
 	pixel_y = 5
 	},
 /turf/open/floor/wood/walnut,
+/area/ruin/powered/hydroponicslab)
+"Kj" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
 /area/ruin/powered/hydroponicslab)
 "Kr" = (
 /obj/structure/chair/office,
@@ -915,11 +1625,23 @@
 "Mx" = (
 /mob/living/simple_animal/hostile/killertomato,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/green{
+	dir = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Mz" = (
 /obj/effect/decal/cleanable/blood,
 /obj/item/gun/ballistic/automatic/pistol/m1911/no_mag,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "MN" = (
@@ -935,6 +1657,26 @@
 /area/ruin/powered/hydroponicslab)
 "MZ" = (
 /obj/effect/decal/cleanable/food/tomato_smudge,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/corner/green{
+	dir = 8;
+	color = "#99BB76"
+	},
+/obj/effect/turf_decal/spline/fancy/corner/green{
+	dir = 4;
+	color = "#99BB76"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Nf" = (
@@ -949,14 +1691,20 @@
 /obj/machinery/light/dim{
 	dir = 1
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/purple{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Nv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
-/obj/item/trash/boritos{
-	pixel_x = -2;
-	pixel_y = 2
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
@@ -976,6 +1724,26 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
+"NT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"Oz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/lime{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
 "Pa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -988,6 +1756,12 @@
 /obj/item/reagent_containers/glass/bottle{
 	pixel_x = -6;
 	pixel_y = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/green{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -1009,22 +1783,33 @@
 	},
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
+"PE" = (
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/purple,
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
 "PQ" = (
-/obj/structure/chair/plastic{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/plastic,
+/obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "PR" = (
-/obj/structure/showcase/machinery/tv,
-/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/open/floor/grass,
+/area/ruin/powered/hydroponicslab)
+"PY" = (
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "Qm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/trash/can{
-	pixel_x = 5;
-	pixel_y = -6
+/obj/structure/showcase/machinery/tv,
+/obj/structure/table,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
@@ -1037,17 +1822,58 @@
 /obj/structure/table,
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
+"Qu" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/ruin/powered/hydroponicslab)
 "QA" = (
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_y = 12;
-	pixel_x = 11
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
 	},
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/item/ammo_casing/caseless{
-	pixel_y = 4;
-	dir = 5;
-	pixel_x = 2
+/turf/open/floor/carpet,
+/area/ruin/powered/hydroponicslab)
+"QT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 1
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/carpet,
+/area/ruin/powered/hydroponicslab)
+"Ri" = (
+/obj/machinery/hydroponics/constructable,
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/green,
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"Rn" = (
+/obj/machinery/door/airlock/grunge,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/turf_decal/corner_techfloor_grid/diagonal{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
+/obj/effect/turf_decal/spline/fancy/grey{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/grey{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"RV" = (
+/mob/living/simple_animal/hostile/killertomato,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/green,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "RX" = (
@@ -1060,15 +1886,29 @@
 	pixel_x = 3;
 	pixel_y = 2
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/green{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "So" = (
+/obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/greenglow,
+/obj/effect/turf_decal/spline/fancy/purple,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Sq" = (
 /obj/effect/decal/cleanable/food/tomato_smudge,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "SW" = (
@@ -1077,14 +1917,46 @@
 	pixel_y = -4
 	},
 /obj/effect/decal/cleanable/glass,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Ti" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
 /turf/open/floor/carpet,
+/area/ruin/powered/hydroponicslab)
+"TJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/obj/effect/turf_decal/spline/fancy/purple{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "TR" = (
 /turf/open/floor/wood/walnut,
+/area/ruin/powered/hydroponicslab)
+"UF" = (
+/obj/structure/table,
+/obj/item/pen{
+	pixel_x = -6
+	},
+/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab/officer{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/red,
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "UK" = (
 /obj/structure/toilet{
@@ -1104,18 +1976,18 @@
 	pixel_y = 8
 	},
 /obj/structure/table,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/purple{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Vo" = (
-/obj/structure/table,
-/obj/item/pen{
-	pixel_x = -6
-	},
-/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab/officer{
-	pixel_x = 3;
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "Vy" = (
 /obj/structure/table,
@@ -1129,29 +2001,41 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
-"VN" = (
-/obj/item/ammo_casing/caseless{
-	pixel_x = 8;
-	pixel_y = 4;
-	dir = 8
+"VH" = (
+/obj/structure/table,
+/obj/item/seeds/cannabis{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/paper/fluff/ruins/hydroponicslab/botanist{
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/item/pen{
+	pixel_x = -9
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/fancy/purple{
+	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"VN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "We" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/powered/hydroponicslab)
 "Wi" = (
-/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag{
-	pixel_x = 2;
-	pixel_y = -3
+/obj/structure/marker_beacon,
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/obj/item/ammo_casing/caseless{
-	pixel_x = -5;
-	pixel_y = 9;
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/powered/hydroponicslab)
+/area/icemoon/surface/outdoors)
 "WK" = (
 /obj/item/stack/cable_coil/yellow{
 	pixel_x = 4;
@@ -1161,6 +2045,12 @@
 /obj/item/wallframe/camera{
 	pixel_x = -7;
 	pixel_y = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/purple{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -1176,23 +2066,52 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
+"XC" = (
+/obj/effect/decal/cleanable/food/tomato_smudge,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner_techfloor_grid,
+/obj/effect/turf_decal/techfloor/corner,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/corner/orange{
+	dir = 1;
+	color = "#C3630C"
+	},
+/obj/effect/turf_decal/spline/fancy/corner/orange{
+	color = "#C3630C"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
 "YO" = (
 /obj/machinery/computer/security{
 	dir = 1
 	},
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/red,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Zd" = (
-/obj/structure/marker_beacon,
-/turf/open/floor/plating/snowed/temperatre{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/closed/mineral/snowmountain/icemoon,
 /area/icemoon/surface/outdoors)
+"ZI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/tile/plasteel/tech,
+/turf/open/floor/plating,
+/area/ruin/powered/hydroponicslab)
 "ZN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/grown/mushroom/amanita{
 	pixel_y = 5
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/fancy/orange{
+	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -1209,18 +2128,18 @@ Ey
 Ey
 Ey
 Ey
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 Ey
 Ey
 Ey
 Ey
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 Ey
 Ey
 Ey
@@ -1242,21 +2161,21 @@ Ey
 Ey
 Ey
 Ey
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 Ey
 Ey
 Ey
@@ -1274,25 +2193,25 @@ Ey
 Ey
 Ey
 Ey
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 DV
 Ey
 Ey
@@ -1306,28 +2225,28 @@ Ey
 Ey
 Ey
 Ey
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 DV
 DV
 Ey
@@ -1340,28 +2259,28 @@ Ey
 (5,1,1) = {"
 Ey
 Ey
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 hJ
 We
 hJ
 hJ
-GK
-GK
-GK
+Zd
+Zd
+Zd
 DV
 DV
 DV
@@ -1374,34 +2293,34 @@ Ey
 "}
 (6,1,1) = {"
 Ey
-GK
-GK
-GK
-GK
-gM
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+CD
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 hJ
 UK
 gU
 hJ
-GK
-GK
+Zd
+Zd
 DV
 DV
 DV
 DV
-GK
-GK
+Zd
+Zd
 Ey
 Ey
 Ey
@@ -1409,18 +2328,18 @@ Ey
 "}
 (7,1,1) = {"
 Ey
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 hJ
 We
 We
@@ -1429,33 +2348,33 @@ hJ
 pL
 MN
 hJ
-GK
-GK
+Zd
+Zd
 DV
 DV
 DV
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
 Ey
 Ey
 "}
 (8,1,1) = {"
 Ey
-GK
-GK
-GK
+Zd
+Zd
+Zd
 We
 hJ
 We
 hJ
 We
 hJ
-GK
-GK
-GK
+Zd
+Zd
+Zd
 hJ
 am
 Qt
@@ -1464,136 +2383,136 @@ We
 si
 hJ
 hJ
-GK
+Zd
 DV
 DV
 DV
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 Ey
 "}
 (9,1,1) = {"
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 We
-kw
+VH
 WK
 jl
-sx
+jC
 hJ
-GK
-GK
-GK
+Zd
+Zd
+Zd
 We
 bD
-pR
-tQ
+CG
+me
 Va
 TR
 DO
 We
-GK
+Zd
 DV
 DV
 DV
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 Ey
 "}
 (10,1,1) = {"
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 hJ
 Cr
-sx
+ZI
 GP
-fd
+zy
 We
 hJ
 We
 hJ
 hJ
-hd
-tQ
-tQ
-Qm
-PQ
-yi
+pR
+IR
+lj
+zH
+Nv
+Eo
 We
-GK
+Zd
 DV
 DV
 DV
 DV
 DV
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
 Ey
 "}
 (11,1,1) = {"
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 hJ
 Nl
 bV
 He
 So
 hJ
-iJ
+gf
 SW
 mQ
 hJ
 Pj
-lj
-PR
-AL
-Nv
-yV
+iJ
+Qm
+PQ
+yi
+HK
 hJ
-GK
-GK
+Zd
+Zd
 DV
 DV
 DV
 DV
 DV
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 Ey
 "}
 (12,1,1) = {"
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 We
 Vd
 dB
 xb
-sx
+PE
 hJ
-IR
+Bc
 pG
 YO
 We
@@ -1604,64 +2523,64 @@ We
 hJ
 hJ
 hJ
-GK
-GK
-GK
+Zd
+Zd
+Zd
 DV
 DV
 DV
 DV
 DV
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 "}
 (13,1,1) = {"
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 hJ
 nS
-sx
+kU
 Vy
-QA
+mW
 zV
 FO
-dw
-Vo
+xJ
+UF
 hJ
 si
 hJ
 hJ
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 DV
 DV
 DV
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 "}
 (14,1,1) = {"
 Ey
-GK
-GK
-GK
+Zd
+Zd
+Zd
 hJ
 hJ
-fd
-sx
-fd
+qc
+uR
+TJ
 We
 bv
 Mz
@@ -1671,28 +2590,28 @@ TR
 DO
 We
 hJ
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 DV
 DV
 DV
 DV
-GK
-GK
-GK
+Zd
+Zd
+Zd
 "}
 (15,1,1) = {"
 Ey
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 We
 hJ
 dD
@@ -1702,78 +2621,78 @@ We
 Ik
 We
 hJ
-ys
-tQ
+QT
+me
 DO
 hJ
 hJ
 We
 hJ
 hJ
-GK
-GK
-GK
 Zd
+Zd
+Zd
+Wi
 gA
 DV
 DV
 DV
-GK
-GK
-GK
+Zd
+Zd
+Zd
 "}
 (16,1,1) = {"
 Ey
-GK
-GK
-GK
+Zd
+Zd
+Zd
 hJ
 hJ
-sx
-VN
-eD
+JD
+gM
+GK
 nD
 hJ
 TR
 TR
 zw
-tQ
-Ti
+IR
+xx
 TR
 hJ
 mU
 ag
 oT
 hJ
-GK
 Zd
+Wi
 gA
 gA
 gA
 gA
 gA
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 "}
 (17,1,1) = {"
 Ey
-GK
-GK
-GK
+Zd
+Zd
+Zd
 hJ
 ZN
-dB
+nI
 gC
 KD
-sx
+JS
 hJ
 Pa
 Kr
 Xt
-Ti
-Ti
+aJ
+xx
 TR
 ed
 AT
@@ -1785,193 +2704,193 @@ gA
 gA
 gA
 gA
+Wi
 Zd
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 "}
 (18,1,1) = {"
 Ey
-GK
-GK
-GK
+Zd
+Zd
+Zd
 hJ
-cu
-fd
+IQ
+Kj
 pn
 Nf
-aJ
+to
 hJ
 TR
 DO
 JZ
-tQ
-tQ
+IR
+PY
 DO
 We
 AT
 Pz
 ab
 hJ
-GK
-gA
 Zd
 gA
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Wi
+gA
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 "}
 (19,1,1) = {"
 Ey
-GK
-GK
-GK
+Zd
+Zd
+Zd
 We
 uX
 sx
 pj
 da
-MZ
+ic
 We
 vH
 vH
 vH
-Ti
-Ti
+aJ
+xx
 jY
 We
 hJ
 hJ
 We
 hJ
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 "}
 (20,1,1) = {"
 Ey
-GK
-GK
-GK
+Zd
+Zd
+Zd
 hJ
 iz
 fd
 dB
-mW
-fd
+hw
+kS
 GN
-tQ
+AL
+hd
+kw
 Ti
-tQ
-tQ
-Ti
+QA
 hZ
 hJ
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 "}
 (21,1,1) = {"
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 hJ
 nn
-sx
-MZ
-fd
+sM
+XC
+kS
 hJ
 hJ
 hJ
 tQ
-to
-Ti
+Qu
+QA
 TR
 hJ
 hJ
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 "}
 (22,1,1) = {"
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 hJ
 We
 hJ
 uZ
 We
 hJ
-me
+dw
 We
 hJ
 hJ
 We
 hJ
 We
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 hJ
 hJ
 We
 hJ
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
 "}
 (23,1,1) = {"
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 hJ
 lw
 EV
@@ -1980,33 +2899,33 @@ Mx
 hJ
 hJ
 hJ
-fd
+nq
 kr
-fd
+Oz
 hJ
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 hJ
 hJ
 We
-nt
-Gr
+tS
+gP
 hJ
 hJ
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 "}
 (24,1,1) = {"
 Ey
-GK
-GK
-GK
+Zd
+Zd
+Zd
 hJ
 pE
 Ac
@@ -2015,9 +2934,9 @@ Sq
 Ph
 hJ
 fN
-bV
+gz
 cu
-bV
+iY
 We
 hJ
 hJ
@@ -2028,31 +2947,31 @@ hJ
 hJ
 gb
 nh
-Gr
-nt
+uo
+Vo
 ac
 We
-GK
-GK
-GK
+Zd
+Zd
+Zd
 Ey
 "}
 (25,1,1) = {"
 Ey
-GK
-GK
-GK
+Zd
+Zd
+Zd
 We
 Dj
 Gy
 vm
 MV
-cu
+Ri
 hJ
 jr
-Wi
-zN
-sx
+oo
+ZI
+mb
 Fy
 nL
 nj
@@ -2063,34 +2982,34 @@ bd
 We
 lF
 iw
-Gr
-ij
 nt
+ij
+ys
 We
-GK
-GK
-GK
+Zd
+Zd
+Zd
 Ey
 "}
 (26,1,1) = {"
 Ey
-GK
-GK
-GK
+Zd
+Zd
+Zd
 We
 gO
 tk
 NA
-fd
+Kj
 bg
 We
-fd
+NT
 iB
-tS
+zN
 sx
 sx
-fd
-sx
+GE
+hz
 ss
 AT
 eh
@@ -2099,33 +3018,33 @@ ss
 Bx
 hg
 Gr
-nt
+VN
 Hg
 hJ
-GK
-GK
-GK
+Zd
+Zd
+Zd
 Ey
 "}
 (27,1,1) = {"
 Ey
-GK
-GK
-GK
+Zd
+Zd
+Zd
 hJ
 RX
-MV
+oO
 cu
-MV
-sx
-uZ
-sx
+xq
+ai
+Rn
+lO
 bP
-sx
-sx
-bV
-fd
-fd
+ZI
+Eb
+bA
+xE
+sr
 hJ
 tE
 ri
@@ -2134,30 +3053,30 @@ hJ
 Ks
 vg
 hF
-xx
-nt
+eD
+VN
 hJ
-GK
-GK
-GK
+Zd
+Zd
+Zd
 Ey
 "}
 (28,1,1) = {"
 Ey
-GK
-GK
-GK
+Zd
+Zd
+Zd
 hJ
 hJ
 qh
-sx
+ni
 dB
-Mx
+RV
 hJ
-sx
+DK
 eX
-fd
-sx
+oK
+hs
 hJ
 hJ
 We
@@ -2168,21 +3087,21 @@ We
 hJ
 Cg
 nh
-hF
-nt
+zO
+PR
 ac
 We
-GK
-GK
-GK
+Zd
+Zd
+Zd
 Ey
 "}
 (29,1,1) = {"
 Ey
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 hJ
 We
 Jn
@@ -2194,31 +3113,31 @@ aC
 bq
 We
 hJ
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 hJ
 We
 We
-nt
-Gr
+yV
+md
 hJ
 hJ
-GK
-GK
-GK
+Zd
+Zd
+Zd
 Ey
 "}
 (30,1,1) = {"
 Ey
 Ey
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
 hJ
 hJ
 We
@@ -2228,57 +3147,57 @@ hJ
 hJ
 We
 We
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 hJ
 hJ
 hJ
 hJ
-GK
-GK
-GK
+Zd
+Zd
+Zd
 Ey
 Ey
 "}
 (31,1,1) = {"
 Ey
 Ey
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 Ey
 Ey
 "}
@@ -2286,33 +3205,33 @@ Ey
 Ey
 Ey
 Ey
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 Ey
 Ey
 Ey
@@ -2323,30 +3242,30 @@ Ey
 Ey
 Ey
 Ey
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
+Zd
 Ey
 Ey
 Ey
 Ey
 Ey
-GK
-GK
-GK
-GK
-GK
+Zd
+Zd
+Zd
+Zd
+Zd
 Ey
 Ey
 Ey
