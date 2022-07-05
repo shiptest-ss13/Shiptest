@@ -1594,8 +1594,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "nx" = (
-/obj/structure/AIcore,
-/obj/item/mmi/posibrain,
+/obj/structure/AIcore/latejoin_inactive,
+/obj/effect/landmark/start/ai,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/ai_chamber)
 "nG" = (
@@ -3525,6 +3525,8 @@
 	dir = 10
 	},
 /obj/structure/window/reinforced/survival_pod,
+/obj/item/aiModule/supplied/freeform,
+/obj/item/aiModule/core/full/ntdominance,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/ai_chamber)
 "AJ" = (
