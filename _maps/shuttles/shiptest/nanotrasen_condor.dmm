@@ -898,15 +898,15 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
 "gT" = (
 /obj/structure/table/wood/bar,
-/obj/structure/window/reinforced/spawner{
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
-/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "ha" = (
@@ -1300,7 +1300,7 @@
 /obj/effect/turf_decal/corner/blue/half{
 	dir = 4
 	},
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
 "kR" = (
@@ -3115,7 +3115,9 @@
 /area/ship/bridge)
 "xz" = (
 /obj/effect/turf_decal/corner/blue/border,
-/obj/item/kirbyplants/random,
+/obj/item/kirbyplants/random{
+	pixel_y = 9
+	},
 /obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
@@ -3279,8 +3281,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
-"yv" = (
-/turf/closed/wall/mineral/titanium)
 "yx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -3598,7 +3598,7 @@
 /obj/effect/turf_decal/corner/blue/half{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
 "Bl" = (
@@ -5774,7 +5774,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+/area/ship/launcher/starboard/launcherone)
 "RD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/orange{
@@ -6189,7 +6189,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
-/area/ship/maintenance/port)
+/area/ship/launcher/port/launcherone)
 "Vn" = (
 /obj/structure/cable/green{
 	icon_state = "4-10"
@@ -6888,7 +6888,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ZX" = (
-/obj/machinery/door/window/southright,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -6910,6 +6909,7 @@
 	pixel_y = 6
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/window/survival_pod,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "ZZ" = (
@@ -7278,7 +7278,7 @@ Uq
 zD
 Uq
 rB
-ba
+AW
 Gk
 ft
 QO
@@ -8426,7 +8426,7 @@ fx
 qx
 fx
 FY
-Xy
+ui
 pd
 ip
 Aq
@@ -8467,7 +8467,7 @@ nO
 nO
 nO
 ui
-ZS
+nO
 Xy
 gM
 ip
@@ -8756,8 +8756,8 @@ oz
 GF
 GF
 GF
-yv
-yv
+zr
+zr
 zr
 QD
 QD
