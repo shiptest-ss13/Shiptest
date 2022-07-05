@@ -1,5 +1,5 @@
 import { useBackend, useLocalState } from '../backend';
-import { Button, LabeledList, Section, ProgressBar, Flex, Box, Table, Collapsible, Input, Dimmer, Icon } from '../components';
+import { Button, LabeledList, Section, ProgressBar, Flex, Box, Table, Collapsible, Input, NumberInput, Dimmer, Icon } from '../components';
 import { Window } from '../layouts';
 import { capitalize } from "common/string";
 
@@ -57,21 +57,15 @@ export const Autolathe = (props, context) => {
               {filteredmaterials.length > 0 && (
                 <Collapsible title="Materials">
                   <LabeledList>
-                    {filteredmaterials.map(filteredmaterial => (
-                      <LabeledList.Item
-                        key={filteredmaterial.id}
-                        label={capitalize(filteredmaterial.name)}>
-                        <ProgressBar
-                          style={{
-                            transform: 'scaleX(-1) scaleY(1)',
-                          }}
-                          value={materialsmax - filteredmaterial.mineral_amount}
-                          maxValue={materialsmax}
-                          color="black"
-                          backgroundColor={filteredmaterial.matcolour}>
-                          <div style={{ transform: 'scaleX(-1)' }}>{filteredmaterial.mineral_amount + ' cm³'}</div>
-                        </ProgressBar>
-                      </LabeledList.Item>
+                    {filteredmaterials.map(material => (
+                      <MaterialRow
+                        key={material.id}
+                        material={material}
+                        materialsmax={materialsmax}
+                        onRelease={amount => act('materialEject', {
+                          materialName: material.name,
+                          amount: amount,
+                        })} />
                     ))}
                   </LabeledList>
                 </Collapsible>)}
@@ -210,5 +204,80 @@ export const Autolathe = (props, context) => {
         )}
       </Window.Content>
     </Window>
+  );
+};
+
+
+const MaterialRow = (props, context) => {
+  const { material, materialsmax, onRelease } = props;
+
+  const [
+    amount,
+    setAmount,
+  ] = useLocalState(context, "amount" + material.name, 1);
+
+  const amountAvailable = Math.floor(material.amount);
+  return (
+    <LabeledList.Item
+      key={material.id}>
+      <Table width="100%">
+        <Table.Row>
+          <Table.Cell>
+            {capitalize(material.name)}
+          </Table.Cell>
+          <Table.Cell textAlign="right">
+            <Box mr={2} color="label" inline>
+              {material.sheets_amount} sheets
+            </Box>
+          </Table.Cell>
+          <Table.Cell collapsing textAlign="right">
+            <Button
+              disabled={material.sheets_amount< 1}
+              content="x1"
+              onClick={() => onRelease(1)} />
+            <Button
+              disabled={material.sheets_amount< 5}
+              content="x5"
+              onClick={() => onRelease(5)} />
+            <Button
+              disabled={material.sheets_amount< 10}
+              content="x10"
+              onClick={() => onRelease(10)} />
+            <Button
+              disabled={material.sheets_amount< 25}
+              content="x25"
+              onClick={() => onRelease(25)} />
+          </Table.Cell>
+          <Table.Cell collapsing textAlign="right">
+            <NumberInput
+              width="32px"
+              step={1}
+              stepPixelSize={5}
+              minValue={1}
+              maxValue={material.sheets_amount}
+              value={amount}
+              onChange={(e, value) => setAmount(value)} />
+            <Button
+              disabled={material.sheets_amount< 1}
+              content="Release"
+              onClick={() => onRelease(amount)} />
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell colspan="4">
+            <ProgressBar
+              style={{
+                transform: 'scaleX(-1) scaleY(1)',
+              }}
+              value={materialsmax - material.mineral_amount}
+              maxValue={materialsmax}
+              color="black"
+              backgroundColor={material.matcolour}>
+              <div style={{ transform: 'scaleX(-1)' }}>{material.mineral_amount + ' cm³'}</div>
+            </ProgressBar>
+          </Table.Cell>
+        </Table.Row>
+      </Table>
+    </LabeledList.Item>
   );
 };

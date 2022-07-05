@@ -116,6 +116,18 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffdbb4"
 	lighting_brightness_tube = 6
 
+/area/ship/crew/crewtwo
+	name = "Crew Quarters 2"
+
+/area/ship/crew/crewthree
+	name = "Crew Quarters 3"
+
+/area/ship/crew/crewfour
+	name = "Crew Quarters 4"
+
+/area/ship/crew/crewfive
+	name = "Crew Quarters 5"
+
 /area/ship/crew/cryo
 	name = "Cryopod Room"
 	icon_state = "cryopod"
@@ -125,6 +137,18 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/dorm
 	name = "Dormitory"
 	icon_state = "Sleep"
+
+/area/ship/crew/dorm/dormtwo
+	name = "Dormitory 2"
+
+/area/ship/crew/dorm/dormthree
+	name = "Dormitory 3"
+
+/area/ship/crew/dorm/dormfour
+	name = "Dormitory 4"
+
+/area/ship/crew/dorm/dormfive
+	name = "Dormitory 5"
 
 /area/ship/crew/toilet
 	name = "Restrooms"
@@ -156,7 +180,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/library
 	name = "Library"
 	icon_state = "library"
-	flags_1 = CULT_PERMITTED_1
 	lighting_colour_tube = "#ffce99"
 	lighting_colour_bulb = "#ffdbb4"
 	sound_environment = SOUND_AREA_WOODFLOOR
@@ -179,7 +202,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/janitor
 	name = "Custodial Closet"
 	icon_state = "janitor"
-	flags_1 = CULT_PERMITTED_1
 	sound_environment = SOUND_AREA_SMALL_ENCLOSED
 
 /// Medical Bay ///

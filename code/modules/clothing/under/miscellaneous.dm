@@ -182,4 +182,4 @@
 	icon_state = "utility_skirt"
 	item_state = "utility_skirt"
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
