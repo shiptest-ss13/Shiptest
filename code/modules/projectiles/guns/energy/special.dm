@@ -140,9 +140,6 @@
 	toolspeed = 0.7 //plasmacutters can be used as welders, and are faster than standard welders
 	internal_cell = TRUE //so you don't cheese through the need for plasma - WS EDIT
 	var/charge_weld = 25 //amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of welding
-	weapon_weight = WEAPON_LIGHT
-	fire_rate = 3
-	automatic = 1
 
 /obj/item/gun/energy/plasmacutter/ComponentInitialize()
 	. = ..()
@@ -282,8 +279,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/c3dbullet)
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
-	automatic = 1
-	fire_rate = 6
 
 /obj/item/gun/energy/printer/ComponentInitialize()
 	. = ..()
@@ -336,8 +331,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)
 	cell_type = "/obj/item/stock_parts/cell/gun/upgraded"
 	ammo_x_offset = 2
-	automatic = 1
-	fire_rate = 4
 	pin = null
 
 /obj/item/gun/energy/temperature/security

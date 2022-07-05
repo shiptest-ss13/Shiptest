@@ -23,8 +23,9 @@
 	bolt_wording = "pump"
 	cartridge_wording = "shell"
 	tac_reloads = FALSE
-	fire_rate = 1 //reee
 	pickup_sound =  'sound/items/handling/shotgun_pickup.ogg'
+
+	pb_knockback = 2
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	. = 0
@@ -141,8 +142,6 @@
 	semi_auto = TRUE
 	internal_magazine = FALSE
 	tac_reloads = TRUE
-	fire_rate = 2
-	automatic = 1
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
 
@@ -177,7 +176,6 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	can_be_sawn_off  = TRUE
 	pb_knockback = 3 // it's a super shotgun!
-	fire_rate = 2 //being double barrelled, you don't rely on internal mechanisms.
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/AltClick(mob/user)
 	. = ..()
