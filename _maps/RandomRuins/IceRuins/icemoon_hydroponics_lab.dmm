@@ -37,8 +37,17 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "aJ" = (
-/obj/item/toy/katana,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_y = -1
+	},
+/obj/machinery/light/dim,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/caseless{
+	pixel_x = 6;
+	pixel_y = 6;
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "bd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -116,15 +125,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "dw" = (
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_y = 12;
-	pixel_x = 11
-	},
-/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/gibs/torso,
 /obj/item/ammo_casing/caseless{
-	pixel_y = 4;
-	dir = 5;
-	pixel_x = 2
+	pixel_y = 12;
+	pixel_x = -7
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -145,13 +149,13 @@
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "eD" = (
-/obj/item/pen/blue{
-	pixel_y = -2;
-	pixel_x = -6
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_y = 10
 	},
-/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab/researcher{
-	pixel_x = 3;
-	pixel_y = 2
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/caseless{
+	pixel_x = 8;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -199,10 +203,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "gM" = (
-/obj/structure/marker_beacon,
-/turf/open/floor/plating/snowed/temperatre{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab,
+/turf/closed/mineral/snowmountain/icemoon,
 /area/icemoon/surface/outdoors)
 "gO" = (
 /obj/structure/table,
@@ -225,12 +227,16 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hydroponicslab)
 "hd" = (
-/obj/item/ammo_casing/caseless{
-	pixel_x = 8;
-	pixel_y = 4;
-	dir = 8
+/obj/machinery/light/dim{
+	dir = 1
 	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/table,
+/obj/item/multitool{
+	pixel_x = 4;
+	pixel_y = 7
+	},
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "hg" = (
 /mob/living/simple_animal/hostile/venus_human_trap,
@@ -295,29 +301,30 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "iH" = (
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_x = -3;
-	pixel_y = 2
+/obj/structure/closet,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/suit/hooded/wintercoat/security{
+	pixel_y = 0
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_casing/caseless{
-	pixel_x = -8;
-	pixel_y = 6;
-	dir = 9
+/obj/item/clothing/shoes/winterboots{
+	pixel_y = 0
+	},
+/obj/item/ammo_box/magazine/m45{
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "iJ" = (
-/obj/machinery/light/dim{
-	dir = 1
+/obj/structure/chair/office{
+	dir = 4
 	},
-/obj/structure/table,
-/obj/item/multitool{
-	pixel_x = 4;
-	pixel_y = 7
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/caseless{
+	pixel_y = -9;
+	pixel_x = 11;
+	dir = 10
 	},
-/obj/item/storage/toolbox/mechanical,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "iQ" = (
 /obj/structure/table,
@@ -396,15 +403,8 @@
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "me" = (
-/obj/structure/table,
-/obj/item/pen{
-	pixel_x = -6
-	},
-/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab/officer{
-	pixel_x = 3;
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/tech,
+/obj/item/toy/katana,
+/turf/open/floor/plating,
 /area/ruin/powered/hydroponicslab)
 "mQ" = (
 /obj/structure/frame/computer{
@@ -433,14 +433,15 @@
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "mW" = (
-/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag{
-	pixel_x = 2;
-	pixel_y = -3
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = -3;
+	pixel_y = 2
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/ammo_casing/caseless{
-	pixel_x = -5;
-	pixel_y = 9;
-	dir = 4
+	pixel_x = -8;
+	pixel_y = 6;
+	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -627,14 +628,13 @@
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "tS" = (
-/obj/structure/chair/office{
-	dir = 4
+/obj/item/pen/blue{
+	pixel_y = -2;
+	pixel_x = -6
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/caseless{
-	pixel_y = -9;
-	pixel_x = 11;
-	dir = 10
+/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab/researcher{
+	pixel_x = 3;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -681,21 +681,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "xx" = (
-/obj/structure/closet,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/suit/hooded/wintercoat/security{
-	pixel_y = 0
-	},
-/obj/item/clothing/shoes/winterboots{
-	pixel_y = 0
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_y = 0
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_y = 0
-	},
-/turf/open/floor/plasteel/tech,
+/mob/living/simple_animal/hostile/venus_human_trap,
+/turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "yi" = (
 /obj/item/trash/sosjerky{
@@ -869,13 +856,14 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "IR" = (
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_y = 10
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/light/small/broken{
+	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/caseless{
-	pixel_x = 8;
-	pixel_y = -5
+	pixel_y = -1;
+	dir = 5;
+	pixel_x = 3
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -1050,10 +1038,15 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "QA" = (
-/obj/effect/decal/cleanable/blood/gibs/torso,
-/obj/item/ammo_casing/caseless{
+/obj/effect/decal/cleanable/blood/drip{
 	pixel_y = 12;
-	pixel_x = -7
+	pixel_x = 11
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/item/ammo_casing/caseless{
+	pixel_y = 4;
+	dir = 5;
+	pixel_x = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -1114,14 +1107,13 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Vo" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/machinery/light/small/broken{
-	dir = 1
+/obj/structure/table,
+/obj/item/pen{
+	pixel_x = -6
 	},
-/obj/item/ammo_casing/caseless{
-	pixel_y = -1;
-	dir = 5;
-	pixel_x = 3
+/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab/officer{
+	pixel_x = 3;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -1138,20 +1130,27 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "VN" = (
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_y = -1
-	},
-/obj/machinery/light/dim,
-/obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/caseless{
-	pixel_x = 6;
-	pixel_y = 6;
-	dir = 5
+	pixel_x = 8;
+	pixel_y = 4;
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "We" = (
 /turf/closed/wall/r_wall/rust,
+/area/ruin/powered/hydroponicslab)
+"Wi" = (
+/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag{
+	pixel_x = 2;
+	pixel_y = -3
+	},
+/obj/item/ammo_casing/caseless{
+	pixel_x = -5;
+	pixel_y = 9;
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "WK" = (
 /obj/item/stack/cable_coil/yellow{
@@ -1184,8 +1183,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Zd" = (
-/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab,
-/turf/closed/mineral/snowmountain/icemoon,
+/obj/structure/marker_beacon,
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/icemoon/surface/outdoors)
 "ZN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1377,7 +1378,7 @@ GK
 GK
 GK
 GK
-Zd
+gM
 GK
 GK
 GK
@@ -1526,7 +1527,7 @@ hJ
 We
 hJ
 hJ
-iJ
+hd
 tQ
 tQ
 Qm
@@ -1557,7 +1558,7 @@ bV
 He
 So
 hJ
-tS
+iJ
 SW
 mQ
 hJ
@@ -1592,7 +1593,7 @@ dB
 xb
 sx
 hJ
-Vo
+IR
 pG
 YO
 We
@@ -1625,11 +1626,11 @@ hJ
 nS
 sx
 Vy
-dw
+QA
 zV
 FO
-QA
-me
+dw
+Vo
 hJ
 si
 hJ
@@ -1664,7 +1665,7 @@ fd
 We
 bv
 Mz
-xx
+iH
 hJ
 TR
 DO
@@ -1712,7 +1713,7 @@ hJ
 GK
 GK
 GK
-gM
+Zd
 gA
 DV
 DV
@@ -1729,8 +1730,8 @@ GK
 hJ
 hJ
 sx
-hd
-IR
+VN
+eD
 nD
 hJ
 TR
@@ -1745,7 +1746,7 @@ ag
 oT
 hJ
 GK
-gM
+Zd
 gA
 gA
 gA
@@ -1784,7 +1785,7 @@ gA
 gA
 gA
 gA
-gM
+Zd
 GK
 GK
 GK
@@ -1801,7 +1802,7 @@ cu
 fd
 pn
 Nf
-VN
+aJ
 hJ
 TR
 DO
@@ -1816,7 +1817,7 @@ ab
 hJ
 GK
 gA
-gM
+Zd
 gA
 GK
 GK
@@ -1870,7 +1871,7 @@ hJ
 iz
 fd
 dB
-iH
+mW
 fd
 GN
 tQ
@@ -1942,7 +1943,7 @@ hJ
 uZ
 We
 hJ
-aJ
+me
 We
 hJ
 hJ
@@ -2049,7 +2050,7 @@ MV
 cu
 hJ
 jr
-mW
+Wi
 zN
 sx
 Fy
@@ -2085,7 +2086,7 @@ bg
 We
 fd
 iB
-eD
+tS
 sx
 sx
 fd
@@ -2133,7 +2134,7 @@ hJ
 Ks
 vg
 hF
-Gr
+xx
 nt
 hJ
 GK
