@@ -187,9 +187,7 @@
 	icon_state = "esmg"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/smg, /obj/item/ammo_casing/energy/laser/smg)
 	ammo_x_offset = 2
-	fire_rate = 5
 	charge_sections = 3
-	automatic = 1
 	weapon_weight = WEAPON_LIGHT
 
 /obj/item/gun/energy/e_gun/iot

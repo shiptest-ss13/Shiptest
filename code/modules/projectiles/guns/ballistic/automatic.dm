@@ -14,18 +14,6 @@
 	weapon_weight = WEAPON_MEDIUM
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
-/obj/item/gun/ballistic/automatic/proto
-	name = "\improper Nanotrasen Saber SMG"
-	desc = "A prototype full auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
-	icon_state = "saber"
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm
-	pin = null
-	bolt_type = BOLT_TYPE_LOCKING
-	mag_display = TRUE
-
-/obj/item/gun/ballistic/automatic/proto/unrestricted
-	pin = /obj/item/firing_pin
-
 /obj/item/gun/ballistic/automatic/update_overlays()
 	. = ..()
 	if(!select)
@@ -57,13 +45,30 @@
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 
+/obj/item/gun/ballistic/automatic/proto
+	name = "\improper Nanotrasen Saber SMG"
+	desc = "A prototype full auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
+	icon_state = "saber"
+	burst_size = 1
+	actions_types = list()
+	mag_type = /obj/item/ammo_box/magazine/smgm9mm
+	pin = null
+	bolt_type = BOLT_TYPE_LOCKING
+	mag_display = TRUE
+
+/obj/item/gun/ballistic/automatic/proto/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+
+/obj/item/gun/ballistic/automatic/proto/unrestricted
+	pin = /obj/item/firing_pin
+
 /obj/item/gun/ballistic/automatic/c20r
 	name = "\improper C-20r SMG"
 	desc = "A bullpup two-round burst .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
 	icon_state = "c20r"
 	item_state = "c20r"
 	mag_type = /obj/item/ammo_box/magazine/smgm45
-	fire_rate = 4
 	can_bayonet = TRUE
 	can_suppress = FALSE
 	knife_x_offset = 26
@@ -95,7 +100,7 @@
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
 	fire_delay = 2
 	can_suppress = FALSE
-	burst_size = 0
+	burst_size = 1
 	actions_types = list()
 	can_bayonet = TRUE
 	knife_x_offset = 25
@@ -103,6 +108,11 @@
 	mag_display = TRUE
 	mag_display_ammo = TRUE
 	empty_indicator = TRUE
+
+
+/obj/item/gun/ballistic/automatic/wt550/Initialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
 
 /obj/item/gun/ballistic/automatic/mini_uzi
 	name = "\improper Type U3 Uzi"
@@ -195,9 +205,14 @@
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
 	can_suppress = FALSE
-	burst_size = 3 // If you raise this, increase the fire delay.
-	fire_delay = 2 //Lowering this is a bad idea, unless you wanna basically give players the ability to vaporize with even less effort.
+	burst_size = 1
+	actions_types = list()
+	fire_delay = 1
 	bolt_type = BOLT_TYPE_OPEN
+
+/obj/item/gun/ballistic/automatic/tommygun/Initialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
 
 /obj/item/gun/ballistic/automatic/ar
 	name = "\improper NT-ARG 'Boarder'"
@@ -223,10 +238,10 @@
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/mm712x82
 	weapon_weight = WEAPON_HEAVY
-	var/cover_open = FALSE
+	burst_size = 1
+	actions_types = list()
 	can_suppress = FALSE
-	burst_size = 3
-	fire_delay = 1
+
 	spread = 7
 	pin = /obj/item/firing_pin/implant/pindicate
 	bolt_type = BOLT_TYPE_OPEN
@@ -236,10 +251,14 @@
 	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
 	rack_sound = 'sound/weapons/gun/l6/l6_rack.ogg'
 	suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
+	var/cover_open = FALSE
 
 /obj/item/gun/ballistic/automatic/l6_saw/unrestricted
 	pin = /obj/item/firing_pin
 
+/obj/item/gun/ballistic/automatic/l6_saw/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/gun/ballistic/automatic/l6_saw/examine(mob/user)
 	. = ..()
@@ -360,7 +379,6 @@
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/rifle47x33mm
 	can_suppress = FALSE
-	fire_rate = 5
 	actions_types = list()
 	can_bayonet = FALSE
 	mag_display = TRUE
@@ -440,7 +458,6 @@
 	desc = "A pre-FTL era carbine, the \"curio\" status of the weapon and its relative cheap cost to manufacture make it perfect for bandits, pirates and colonists on a budget."
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "aks74u"
-	fire_rate = 10
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	item_state = "aks74u"
@@ -455,7 +472,6 @@
 	fire_sound = 'sound/weapons/gun/rifle/ak47.ogg'
 	icon_state = "ak47"
 	item_state = "ak47"
-	fire_rate = 5
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
@@ -469,7 +485,6 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ak47_nt"
 	item_state = "ak47_nt"
-	fire_rate = 5
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
@@ -523,8 +538,6 @@
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/tec9
-	fire_rate = 6
-	automatic = 1
 	mag_display = TRUE
 
 /obj/item/gun/ballistic/automatic/ebr
@@ -536,7 +549,6 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ebr"
 	item_state = "ebr"
-	fire_rate = 2
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
@@ -552,7 +564,6 @@
 	bolt_type = BOLT_TYPE_LOCKING
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
-	fire_rate = 4
 
 /obj/item/gun/ballistic/automatic/zip_pistol
 	name = "makeshift pistol"
@@ -565,7 +576,6 @@
 	can_bayonet = FALSE
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
-	fire_rate = 3
 
 /obj/item/gun/ballistic/automatic/ak47/inteq
 	name = "\improper AKM"
@@ -586,7 +596,6 @@
 	fire_sound = 'sound/weapons/gun/rifle/m16.ogg'
 	icon_state = "p16"
 	item_state = "p16"
-	fire_rate = 5
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
