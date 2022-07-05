@@ -157,7 +157,7 @@
 /turf/open/floor/plating/asteroid/iceberg
 	gender = PLURAL
 	name = "cracked ice floor"
-	desc = "A sheet of solid ice. It seems like it is so cracked, it can no longer slip."
+	desc = "A sheet of solid ice. It seems too cracked to be slippery anymore."
 	icon = 'icons/turf/snow.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/iceberg
 	icon_state = "iceberg"
@@ -206,6 +206,7 @@
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	max_icon_states = 7
 
 /turf/open/floor/plating/asteroid/snow/ice/icemoon
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
