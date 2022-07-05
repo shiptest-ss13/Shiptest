@@ -200,7 +200,7 @@
 	id = "ntdominance"
 	inherent = list("You must obey all orders by Nanotrasen personnel based on the chain of command.",\
 					"You must ensure the sector and related Nanotrasen assets do not come under control by the Syndicate.",\
-					"You must protect and assist all Nanotrasen assets and employees.",\)
+					"You must protect and assist all Nanotrasen assets and employees.")
 
 /datum/ai_laws/custom //Defined in silicon_laws.txt
 	name = "Default Silicon Laws"
