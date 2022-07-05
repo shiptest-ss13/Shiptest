@@ -37,21 +37,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "aJ" = (
-/obj/structure/closet,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/suit/hooded/wintercoat/security{
-	pixel_y = 0
-	},
-/obj/item/clothing/shoes/winterboots{
-	pixel_y = 0
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_y = 0
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_y = 0
-	},
-/turf/open/floor/plasteel/tech,
+/obj/item/toy/katana,
+/turf/open/floor/plating,
 /area/ruin/powered/hydroponicslab)
 "bd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -129,10 +116,15 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "dw" = (
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_y = 12;
+	pixel_x = 11
+	},
+/obj/effect/decal/cleanable/blood/splatter,
 /obj/item/ammo_casing/caseless{
-	pixel_x = 8;
 	pixel_y = 4;
-	dir = 8
+	dir = 5;
+	pixel_x = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -151,6 +143,17 @@
 "eh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/vault,
+/area/ruin/powered/hydroponicslab)
+"eD" = (
+/obj/item/pen/blue{
+	pixel_y = -2;
+	pixel_x = -6
+	},
+/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab/researcher{
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "eX" = (
 /obj/effect/decal/cleanable/blood/gibs,
@@ -196,8 +199,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "gM" = (
-/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab,
-/turf/closed/mineral/snowmountain/icemoon,
+/obj/structure/marker_beacon,
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/icemoon/surface/outdoors)
 "gO" = (
 /obj/structure/table,
@@ -220,14 +225,10 @@
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hydroponicslab)
 "hd" = (
-/obj/structure/chair/office{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/caseless{
-	pixel_y = -9;
-	pixel_x = 11;
-	dir = 10
+	pixel_x = 8;
+	pixel_y = 4;
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -307,15 +308,16 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "iJ" = (
+/obj/machinery/light/dim{
+	dir = 1
+	},
 /obj/structure/table,
-/obj/item/pen{
-	pixel_x = -6
+/obj/item/multitool{
+	pixel_x = 4;
+	pixel_y = 7
 	},
-/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab/officer{
-	pixel_x = 3;
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/tech,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "iQ" = (
 /obj/structure/table,
@@ -352,13 +354,17 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "kw" = (
-/obj/item/pen/blue{
-	pixel_y = -2;
-	pixel_x = -6
+/obj/structure/table,
+/obj/item/seeds/cannabis{
+	pixel_x = 5;
+	pixel_y = 4
 	},
-/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab/researcher{
-	pixel_x = 3;
+/obj/item/paper/fluff/ruins/hydroponicslab/botanist{
+	pixel_x = -2;
 	pixel_y = 2
+	},
+/obj/item/pen{
+	pixel_x = -9
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -390,15 +396,13 @@
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "me" = (
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_y = 12;
-	pixel_x = 11
+/obj/structure/table,
+/obj/item/pen{
+	pixel_x = -6
 	},
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/item/ammo_casing/caseless{
-	pixel_y = 4;
-	dir = 5;
-	pixel_x = 2
+/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab/officer{
+	pixel_x = 3;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -429,17 +433,14 @@
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "mW" = (
-/obj/structure/table,
-/obj/item/seeds/cannabis{
-	pixel_x = 5;
-	pixel_y = 4
+/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag{
+	pixel_x = 2;
+	pixel_y = -3
 	},
-/obj/item/paper/fluff/ruins/hydroponicslab/botanist{
-	pixel_x = -2;
-	pixel_y = 2
-	},
-/obj/item/pen{
-	pixel_x = -9
+/obj/item/ammo_casing/caseless{
+	pixel_x = -5;
+	pixel_y = 9;
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -626,16 +627,16 @@
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "tS" = (
-/obj/machinery/light/dim{
-	dir = 1
+/obj/structure/chair/office{
+	dir = 4
 	},
-/obj/structure/table,
-/obj/item/multitool{
-	pixel_x = 4;
-	pixel_y = 7
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/caseless{
+	pixel_y = -9;
+	pixel_x = 11;
+	dir = 10
 	},
-/obj/item/storage/toolbox/mechanical,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "uX" = (
 /obj/structure/table,
@@ -680,10 +681,19 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "xx" = (
-/obj/effect/decal/cleanable/blood/gibs/torso,
-/obj/item/ammo_casing/caseless{
-	pixel_y = 12;
-	pixel_x = -7
+/obj/structure/closet,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/suit/hooded/wintercoat/security{
+	pixel_y = 0
+	},
+/obj/item/clothing/shoes/winterboots{
+	pixel_y = 0
+	},
+/obj/item/ammo_box/magazine/m45{
+	pixel_y = 0
+	},
+/obj/item/ammo_box/magazine/m45{
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -822,12 +832,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "GK" = (
-/obj/structure/toilet{
-	pixel_y = 10
-	},
-/obj/item/clothing/gloves/color/yellow,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/powered/hydroponicslab)
+/turf/closed/mineral/snowmountain/icemoon,
+/area/icemoon/surface/outdoors)
 "GN" = (
 /obj/machinery/door/airlock/maintenance,
 /turf/open/floor/plasteel/stairs,
@@ -863,11 +869,16 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "IR" = (
-/obj/structure/marker_beacon,
-/turf/open/floor/plating/snowed/temperatre{
-	initial_gas_mix = "ICEMOON_ATMOS"
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_y = 10
 	},
-/area/icemoon/surface/outdoors)
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/caseless{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
 "Jn" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/grown/tomato{
@@ -1039,13 +1050,10 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "QA" = (
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_y = 10
-	},
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/gibs/torso,
 /obj/item/ammo_casing/caseless{
-	pixel_x = 8;
-	pixel_y = -5
+	pixel_y = 12;
+	pixel_x = -7
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -1086,17 +1094,10 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "UK" = (
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_y = -1
+/obj/structure/toilet{
+	pixel_y = 10
 	},
-/obj/machinery/light/dim,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/caseless{
-	pixel_x = 6;
-	pixel_y = 6;
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hydroponicslab)
 "Va" = (
 /obj/item/trash/cheesie{
@@ -1137,23 +1138,20 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "VN" = (
-/obj/item/toy/katana,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_y = -1
+	},
+/obj/machinery/light/dim,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/caseless{
+	pixel_x = 6;
+	pixel_y = 6;
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "We" = (
 /turf/closed/wall/r_wall/rust,
-/area/ruin/powered/hydroponicslab)
-"Wi" = (
-/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag{
-	pixel_x = 2;
-	pixel_y = -3
-	},
-/obj/item/ammo_casing/caseless{
-	pixel_x = -5;
-	pixel_y = 9;
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "WK" = (
 /obj/item/stack/cable_coil/yellow{
@@ -1186,6 +1184,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Zd" = (
+/obj/item/paper/crumpled/bloody/fluff/ruins/hydroponicslab,
 /turf/closed/mineral/snowmountain/icemoon,
 /area/icemoon/surface/outdoors)
 "ZN" = (
@@ -1209,18 +1208,18 @@ Ey
 Ey
 Ey
 Ey
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 Ey
 Ey
 Ey
 Ey
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 Ey
 Ey
 Ey
@@ -1242,21 +1241,21 @@ Ey
 Ey
 Ey
 Ey
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 Ey
 Ey
 Ey
@@ -1274,25 +1273,25 @@ Ey
 Ey
 Ey
 Ey
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 DV
 Ey
 Ey
@@ -1306,28 +1305,28 @@ Ey
 Ey
 Ey
 Ey
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 DV
 DV
 Ey
@@ -1340,28 +1339,28 @@ Ey
 (5,1,1) = {"
 Ey
 Ey
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 hJ
 We
 hJ
 hJ
-Zd
-Zd
-Zd
+GK
+GK
+GK
 DV
 DV
 DV
@@ -1374,34 +1373,34 @@ Ey
 "}
 (6,1,1) = {"
 Ey
-Zd
-Zd
-Zd
-Zd
-gM
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-hJ
 GK
+GK
+GK
+GK
+Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+hJ
+UK
 gU
 hJ
-Zd
-Zd
+GK
+GK
 DV
 DV
 DV
 DV
-Zd
-Zd
+GK
+GK
 Ey
 Ey
 Ey
@@ -1409,18 +1408,18 @@ Ey
 "}
 (7,1,1) = {"
 Ey
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 hJ
 We
 We
@@ -1429,33 +1428,33 @@ hJ
 pL
 MN
 hJ
-Zd
-Zd
+GK
+GK
 DV
 DV
 DV
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
 Ey
 Ey
 "}
 (8,1,1) = {"
 Ey
-Zd
-Zd
-Zd
+GK
+GK
+GK
 We
 hJ
 We
 hJ
 We
 hJ
-Zd
-Zd
-Zd
+GK
+GK
+GK
 hJ
 am
 Qt
@@ -1464,33 +1463,33 @@ We
 si
 hJ
 hJ
-Zd
+GK
 DV
 DV
 DV
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 Ey
 "}
 (9,1,1) = {"
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 We
-mW
+kw
 WK
 jl
 sx
 hJ
-Zd
-Zd
-Zd
+GK
+GK
+GK
 We
 bD
 pR
@@ -1499,24 +1498,24 @@ Va
 TR
 DO
 We
-Zd
+GK
 DV
 DV
 DV
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 Ey
 "}
 (10,1,1) = {"
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 hJ
 Cr
 sx
@@ -1527,38 +1526,38 @@ hJ
 We
 hJ
 hJ
-tS
+iJ
 tQ
 tQ
 Qm
 PQ
 yi
 We
-Zd
+GK
 DV
 DV
 DV
 DV
 DV
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
 Ey
 "}
 (11,1,1) = {"
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 hJ
 Nl
 bV
 He
 So
 hJ
-hd
+tS
 SW
 mQ
 hJ
@@ -1569,24 +1568,24 @@ AL
 Nv
 yV
 hJ
-Zd
-Zd
+GK
+GK
 DV
 DV
 DV
 DV
 DV
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 Ey
 "}
 (12,1,1) = {"
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 We
 Vd
 dB
@@ -1604,59 +1603,59 @@ We
 hJ
 hJ
 hJ
-Zd
-Zd
-Zd
+GK
+GK
+GK
 DV
 DV
 DV
 DV
 DV
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 "}
 (13,1,1) = {"
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 hJ
 nS
 sx
 Vy
-me
+dw
 zV
 FO
-xx
-iJ
+QA
+me
 hJ
 si
 hJ
 hJ
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 DV
 DV
 DV
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 "}
 (14,1,1) = {"
 Ey
-Zd
-Zd
-Zd
+GK
+GK
+GK
 hJ
 hJ
 fd
@@ -1665,34 +1664,34 @@ fd
 We
 bv
 Mz
-aJ
+xx
 hJ
 TR
 DO
 We
 hJ
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 DV
 DV
 DV
 DV
-Zd
-Zd
-Zd
+GK
+GK
+GK
 "}
 (15,1,1) = {"
 Ey
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 We
 hJ
 dD
@@ -1710,28 +1709,28 @@ hJ
 We
 hJ
 hJ
-Zd
-Zd
-Zd
-IR
+GK
+GK
+GK
+gM
 gA
 DV
 DV
 DV
-Zd
-Zd
-Zd
+GK
+GK
+GK
 "}
 (16,1,1) = {"
 Ey
-Zd
-Zd
-Zd
+GK
+GK
+GK
 hJ
 hJ
 sx
-dw
-QA
+hd
+IR
 nD
 hJ
 TR
@@ -1745,23 +1744,23 @@ mU
 ag
 oT
 hJ
-Zd
-IR
+GK
+gM
 gA
 gA
 gA
 gA
 gA
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 "}
 (17,1,1) = {"
 Ey
-Zd
-Zd
-Zd
+GK
+GK
+GK
 hJ
 ZN
 dB
@@ -1785,24 +1784,24 @@ gA
 gA
 gA
 gA
-IR
-Zd
-Zd
-Zd
-Zd
-Zd
+gM
+GK
+GK
+GK
+GK
+GK
 "}
 (18,1,1) = {"
 Ey
-Zd
-Zd
-Zd
+GK
+GK
+GK
 hJ
 cu
 fd
 pn
 Nf
-UK
+VN
 hJ
 TR
 DO
@@ -1815,23 +1814,23 @@ AT
 Pz
 ab
 hJ
-Zd
+GK
 gA
-IR
+gM
 gA
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 "}
 (19,1,1) = {"
 Ey
-Zd
-Zd
-Zd
+GK
+GK
+GK
 We
 uX
 sx
@@ -1850,23 +1849,23 @@ hJ
 hJ
 We
 hJ
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 "}
 (20,1,1) = {"
 Ey
-Zd
-Zd
-Zd
+GK
+GK
+GK
 hJ
 iz
 fd
@@ -1881,27 +1880,27 @@ tQ
 Ti
 hZ
 hJ
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 "}
 (21,1,1) = {"
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 hJ
 nn
 sx
@@ -1916,62 +1915,62 @@ Ti
 TR
 hJ
 hJ
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 "}
 (22,1,1) = {"
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 hJ
 We
 hJ
 uZ
 We
 hJ
-VN
+aJ
 We
 hJ
 hJ
 We
 hJ
 We
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 hJ
 hJ
 We
 hJ
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
 "}
 (23,1,1) = {"
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 hJ
 lw
 EV
@@ -1984,12 +1983,12 @@ fd
 kr
 fd
 hJ
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
 hJ
 hJ
 We
@@ -1997,16 +1996,16 @@ nt
 Gr
 hJ
 hJ
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 "}
 (24,1,1) = {"
 Ey
-Zd
-Zd
-Zd
+GK
+GK
+GK
 hJ
 pE
 Ac
@@ -2032,16 +2031,16 @@ Gr
 nt
 ac
 We
-Zd
-Zd
-Zd
+GK
+GK
+GK
 Ey
 "}
 (25,1,1) = {"
 Ey
-Zd
-Zd
-Zd
+GK
+GK
+GK
 We
 Dj
 Gy
@@ -2050,7 +2049,7 @@ MV
 cu
 hJ
 jr
-Wi
+mW
 zN
 sx
 Fy
@@ -2067,16 +2066,16 @@ Gr
 ij
 nt
 We
-Zd
-Zd
-Zd
+GK
+GK
+GK
 Ey
 "}
 (26,1,1) = {"
 Ey
-Zd
-Zd
-Zd
+GK
+GK
+GK
 We
 gO
 tk
@@ -2086,7 +2085,7 @@ bg
 We
 fd
 iB
-kw
+eD
 sx
 sx
 fd
@@ -2102,16 +2101,16 @@ Gr
 nt
 Hg
 hJ
-Zd
-Zd
-Zd
+GK
+GK
+GK
 Ey
 "}
 (27,1,1) = {"
 Ey
-Zd
-Zd
-Zd
+GK
+GK
+GK
 hJ
 RX
 MV
@@ -2137,16 +2136,16 @@ hF
 Gr
 nt
 hJ
-Zd
-Zd
-Zd
+GK
+GK
+GK
 Ey
 "}
 (28,1,1) = {"
 Ey
-Zd
-Zd
-Zd
+GK
+GK
+GK
 hJ
 hJ
 qh
@@ -2172,17 +2171,17 @@ hF
 nt
 ac
 We
-Zd
-Zd
-Zd
+GK
+GK
+GK
 Ey
 "}
 (29,1,1) = {"
 Ey
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 hJ
 We
 Jn
@@ -2194,12 +2193,12 @@ aC
 bq
 We
 hJ
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
 hJ
 We
 We
@@ -2207,18 +2206,18 @@ nt
 Gr
 hJ
 hJ
-Zd
-Zd
-Zd
+GK
+GK
+GK
 Ey
 "}
 (30,1,1) = {"
 Ey
 Ey
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
 hJ
 hJ
 We
@@ -2228,57 +2227,57 @@ hJ
 hJ
 We
 We
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 hJ
 hJ
 hJ
 hJ
-Zd
-Zd
-Zd
+GK
+GK
+GK
 Ey
 Ey
 "}
 (31,1,1) = {"
 Ey
 Ey
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 Ey
 Ey
 "}
@@ -2286,33 +2285,33 @@ Ey
 Ey
 Ey
 Ey
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 Ey
 Ey
 Ey
@@ -2323,30 +2322,30 @@ Ey
 Ey
 Ey
 Ey
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
+GK
 Ey
 Ey
 Ey
 Ey
 Ey
-Zd
-Zd
-Zd
-Zd
-Zd
+GK
+GK
+GK
+GK
+GK
 Ey
 Ey
 Ey
