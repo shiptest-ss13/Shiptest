@@ -48,11 +48,6 @@
 
 //Misc
 
-/datum/gear/accessory/armband_red
-	display_name = "armband"
-	path = /obj/item/clothing/accessory/armband
-	slot = null
-
 /datum/gear/accessory/waistcoat
 	display_name = "waistcoat"
 	path = /obj/item/clothing/accessory/waistcoat
@@ -71,6 +66,9 @@
 /datum/gear/accessory/maidneckpiece
 	display_name = "maid neckpiece"
 	path = /obj/item/clothing/neck/maid
+
+/datum/gear/accessory/gloves
+	subtype_path = /datum/gear/accessory/gloves
 
 /datum/gear/accessory/gloves/evening
 	display_name = "evening gloves"

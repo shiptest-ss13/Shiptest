@@ -1,9 +1,21 @@
+/**
+ * # Alien Praetorian
+ *
+ * A larget, tankier alien who wields an impressive amount of health at the cost of speed and ventcrawling.
+ *
+ * A subtype of alien which acts as a tanky bruiser.  Like the queen, it can use tail whip to stun enemies,
+ * and has access to neurotoxin and acid, along with being able to create structures via resin spinner.
+ * It is also the only caste which can evolve into alien, albeit only if one currently does not exist and
+ * the limit for queens in a round hasn't already been met.
+ */
+
 /mob/living/carbon/alien/humanoid/royal/praetorian
 	name = "alien praetorian"
 	caste = "p"
 	maxHealth = 250
 	health = 250
 	icon_state = "alienp"
+	speed = 1
 
 /mob/living/carbon/alien/humanoid/royal/praetorian/Initialize()
 	real_name = name

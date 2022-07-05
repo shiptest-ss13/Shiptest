@@ -41,6 +41,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define RAD_PROTECT_CONTENTS_1 (1 << 17)
 /// should this object be allowed to be contaminated
 #define RAD_NO_CONTAMINATE_1 (1 << 18)
+/// Should we use the initial icon for display? Mostly used by overlay only objects
+#define HTML_USE_INITAL_ICON_1 (1<<20)
 
 /// If the thing can reflect light (lasers/energy)
 #define RICOCHET_SHINY (1<<0)
@@ -51,8 +53,6 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define NOJAUNT_1 (1<<0)
 /// If a turf can be made dirty at roundstart. This is also used in areas.
 #define CAN_BE_DIRTY_1 (1<<1)
-/// If blood cultists can draw runes or build structures on this turf
-#define CULT_PERMITTED_1 (1<<2)
 /// Blocks lava rivers being generated on the turf
 #define NO_LAVA_GEN_1 (1<<3)
 /// Blocks ruins spawning on the turf

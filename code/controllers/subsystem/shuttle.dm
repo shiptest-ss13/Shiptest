@@ -71,7 +71,7 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
 	jump_mode = BS_JUMP_CALLED
 	jump_timer = addtimer(CALLBACK(src, .proc/initiate_jump), jump_request_time * modifier, TIMER_STOPPABLE)
-	priority_announce("Preparing for jump. ETD: [jump_request_time * modifier / 600] minutes.", null, null, "Priority")
+	priority_announce("Preparing for jump. ETD: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, "Priority")
 
 /// Cancels a currently requested bluespace jump. Can only be done after the jump has been requested but before the jump has actually begun.
 /datum/controller/subsystem/shuttle/proc/cancel_jump()
@@ -88,8 +88,8 @@ SUBSYSTEM_DEF(shuttle)
 		M.hyperspace_sound(HYPERSPACE_WARMUP, M.shuttle_areas)
 		M.on_emergency_launch()
 
-	priority_announce("Jump initiated. ETA: [jump_completion_time / 600] minutes.", null, null, "Priority")
-	jump_timer = addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), jump_completion_time)
+	jump_timer = addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), jump_completion_time, TIMER_STOPPABLE)
+	priority_announce("Jump initiated. ETA: [jump_completion_time / (1 MINUTES)] minutes.", null, null, "Priority")
 
 /datum/controller/subsystem/shuttle/proc/request_transit_dock(obj/docking_port/mobile/M)
 	if(!istype(M))
@@ -222,6 +222,12 @@ SUBSYSTEM_DEF(shuttle)
 		if(port.is_in_shuttle_bounds(A))
 			return port
 
+// Returns the ship the atom belongs to by also getting the shuttle port's current_ship
+/datum/controller/subsystem/shuttle/proc/get_ship( atom/object )
+	var/obj/docking_port/mobile/port = get_containing_shuttle( object )
+	if ( port?.current_ship )
+		return port.current_ship
+
 /datum/controller/subsystem/shuttle/proc/get_containing_docks(atom/A)
 	. = list()
 	for(var/obj/docking_port/port as anything in stationary)
@@ -311,7 +317,8 @@ SUBSYSTEM_DEF(shuttle)
 	loading_zone.fill_in(turf_type = /turf/open/space/transit/south)
 
 	var/turf/BL = locate(loading_zone.low_x, loading_zone.low_y, loading_zone.z_value)
-	template.load(BL, centered = FALSE, register = FALSE)
+	if(!template.load(BL, centered = FALSE, register = FALSE))
+		return
 
 	var/affected = template.get_affected_turfs(BL, centered=FALSE)
 

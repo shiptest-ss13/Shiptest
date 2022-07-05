@@ -391,8 +391,8 @@
 
 /obj/item/nullrod/claymore/saber/pirate
 	name = "nautical energy sword"
-	icon_state = "cutlass1"
-	item_state = "cutlass1"
+	icon_state = "cutlassred"
+	item_state = "cutlassred"
 	desc = "Convincing HR that your religion involved piracy was no mean feat."
 
 /obj/item/nullrod/sord

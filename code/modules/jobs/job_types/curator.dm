@@ -70,7 +70,7 @@
 	)
 /datum/outfit/job/curator/dungeonmaster
 	name = "Dungeon Master"
-	uniform = /obj/item/clothing/under/misc/pj
+	uniform = /obj/item/clothing/under/misc/pj/red
 	suit = /obj/item/clothing/suit/nerdshirt
 	backpack_contents = list(
 		/obj/item/choice_beacon/hero = 1,

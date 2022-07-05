@@ -164,10 +164,19 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			QDEL_NULL(stashed_air)
 			return
 		var/turf/open/newTurf = .
+		var/turf_fire_ref
+		if(turf_fire)
+			if(isgroundlessturf(newTurf))
+				qdel(turf_fire)
+			else
+				turf_fire_ref = turf_fire
+		newTurf.turf_fire = turf_fire_ref
 		newTurf.air.copy_from(stashed_air)
 		update_air_ref(planetary_atmos ? 1 : 2)
 		QDEL_NULL(stashed_air)
 	else
+		if(turf_fire)
+			qdel(turf_fire)
 		if(ispath(path,/turf/closed))
 			flags |= CHANGETURF_RECALC_ADJACENT
 			update_air_ref(-1)
@@ -225,7 +234,6 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	if(!length(baseturfs))
 		baseturfs = list(baseturfs)
 	baseturfs = baseturfs_string_list(new_baseturfs + baseturfs, src)
-	baseturfs.Insert(1, new_baseturfs)
 
 // Make a new turf and put it on top
 // The args behave identical to PlaceOnBottom except they go on top
