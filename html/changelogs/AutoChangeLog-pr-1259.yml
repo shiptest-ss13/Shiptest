@@ -1,6 +1,0 @@
-author: tmtmtl30
-delete-after: true
-changes:
-  - refactor: Removed mob.computer_id; moved mob.lastKnownIP to player_details.last_known_ip
-  - code_imp: Borers and split personalities now move the mind reference before swapping
-      player control. This may or may not alleviate some bugs.
