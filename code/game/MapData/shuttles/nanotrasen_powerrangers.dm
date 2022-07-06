@@ -95,10 +95,9 @@
 
 
 //IDs
-/obj/item/pda/lieutenant
-	name = "lieutenant PDA"
-	default_cartridge = /obj/item/cartridge/hos
-	icon_state = "pda-h"
+/obj/item/pda/heads/lp/commissioner
+	name = "commissioner PDA"
+
 /obj/item/card/id/lpengie
 	desc = "The LP Engineering Specialist's ID card."
 	icon_state = "ert_engineer"
@@ -235,10 +234,6 @@
 
 /proc/get_lpmedic_access()
 	return get_all_accesses() + list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_OPERATING_ROOM, ACCESS_LP_MEDIC, ACCESS_ENGINE, ACCESS_ATMOSPHERICS, ACCESS_EVA)
-
-/proc/get_all_centcom_access()
-	return list(ACCESS_CENT_GENERAL, ACCESS_CENT_THUNDER, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_LIVING, ACCESS_CENT_STORAGE, ACCESS_CENT_TELEPORTER, ACCESS_CENT_CAPTAIN)
-
 
 //Backpack
 /obj/item/storage/backpack/satchel/flat/with_clown/PopulateContents()
