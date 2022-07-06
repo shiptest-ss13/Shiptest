@@ -684,43 +684,19 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		to_chat(victim, "<span class='userdanger'>You feel a strange shifting sensation behind your eyes as an alien consciousness displaces yours.</span>")
 
 		// host -> brain
-		var/h2b_id = victim.computer_id
-		var/h2b_ip= victim.lastKnownIP
-		victim.computer_id = null
-		victim.lastKnownIP = null
-
 		qdel(host_brain)
 		host_brain = new(src)
 
-		host_brain.ckey = victim.ckey
-
 		host_brain.name = victim.name
-
 		if(victim.mind)
 			host_brain.mind = victim.mind
-
-		if(!host_brain.computer_id)
-			host_brain.computer_id = h2b_id
-
-		if(!host_brain.lastKnownIP)
-			host_brain.lastKnownIP = h2b_ip
+		host_brain.ckey = victim.ckey
 
 		to_chat(host_brain, "You are trapped in your own mind. You feel that there must be a way to resist!")
 
 		// self -> host
-		var/s2h_id = src.computer_id
-		var/s2h_ip= src.lastKnownIP
-		src.computer_id = null
-		src.lastKnownIP = null
-
-		victim.ckey = src.ckey
 		victim.mind = src.mind
-
-		if(!victim.computer_id)
-			victim.computer_id = s2h_id
-
-		if(!victim.lastKnownIP)
-			victim.lastKnownIP = s2h_ip
+		victim.ckey = src.ckey
 
 		bonding = FALSE
 		controlling = TRUE
@@ -833,40 +809,13 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 
 	if(host_brain)
 
-		// these are here so bans and multikey warnings are not triggered on the wrong people when ckey is changed.
-		// computer_id and IP are not updated magically on their own in offline mobs -walter0o
-
 		// host -> self
-		var/h2s_id = victim.computer_id
-		var/h2s_ip= victim.lastKnownIP
-		victim.computer_id = null
-		victim.lastKnownIP = null
-
-		ckey = victim.ckey
 		mind = victim.mind
-
-
-		if(!computer_id)
-			computer_id = h2s_id
-
-		if(!host_brain.lastKnownIP)
-			lastKnownIP = h2s_ip
+		ckey = victim.ckey
 
 		// brain -> host
-		var/b2h_id = host_brain.computer_id
-		var/b2h_ip= host_brain.lastKnownIP
-		host_brain.computer_id = null
-		host_brain.lastKnownIP = null
-
-		victim.ckey = host_brain.ckey
-
 		victim.mind = host_brain.mind
-
-		if(!victim.computer_id)
-			victim.computer_id = b2h_id
-
-		if(!victim.lastKnownIP)
-			victim.lastKnownIP = b2h_ip
+		victim.ckey = host_brain.ckey
 
 	log_game("[src]/([src.ckey]) released control of [victim]/([victim.ckey]")
 

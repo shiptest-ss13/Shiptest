@@ -54,7 +54,6 @@
 
 /area/ruin/unpowered/cultaltar
 	name = "Cult Altar"
-	flags_1 = CULT_PERMITTED_1
 	ambientsounds = SPOOKY
 
 //Syndicate lavaland base

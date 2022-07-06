@@ -182,7 +182,6 @@ SUBSYSTEM_DEF(traumas)
 		"aliens" = typecacheof(list(
 			/datum/species/abductor, /datum/species/jelly, /datum/species/pod,
 			/datum/species/shadow, /datum/species/squid)),
-		"anime" = typecacheof(list(/datum/species/human/felinid)),
 		"spiders" = typecacheof(list(/datum/species/spider))
 	)
 

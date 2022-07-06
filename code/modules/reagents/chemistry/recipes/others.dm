@@ -615,10 +615,6 @@
 	results = list(/datum/reagent/mutationtoxin/lizard = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/liquidgibs = 10)
 
-/datum/chemical_reaction/mutationtoxin/felinid
-	results = list(/datum/reagent/mutationtoxin/felinid = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/toxin/fentanyl = 10, /datum/reagent/impedrezene = 10)
-
 /datum/chemical_reaction/mutationtoxin/fly
 	results = list(/datum/reagent/mutationtoxin/fly = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/toxin/mutagen = 10)

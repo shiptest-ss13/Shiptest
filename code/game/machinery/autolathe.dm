@@ -197,7 +197,6 @@
 		for(var/mat in materials.materials)
 			var/datum/material/M = mat
 			if("[M]" == material_name)
-				stack_trace("Found [M] for [material_name], attempting to eject [amount]")
 				materials.retrieve_sheets(amount, M, get_turf(src))
 				. = TRUE
 				break
