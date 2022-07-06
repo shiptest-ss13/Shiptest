@@ -241,8 +241,13 @@
 	//i need to create a body part manually using a set icon (otherwise it doesnt appear)
 	var/obj/item/bodypart/limb
 	limb = new buildpath(loc)
-	limb.name = "\improper synthetic [selected_category] [limb.plaintext_zone]"
-	limb.limb_id = selected_category
+	limb.name = "\improper synthetic [limb.bodytype & BODYTYPE_DIGITIGRADE ? "digitigrade ":""][selected_category] [limb.plaintext_zone]"
+	//super snowflake code to make digitigrade work with the rest of the limbs
+	if(limb.bodytype & BODYTYPE_DIGITIGRADE)
+		limb.limb_id = "digitigrade"
+	else
+		limb.limb_id = selected_category
+	//fun override colors
 	limb.mutation_color = random_color()
 	limb.update_icon_dropped()
 
@@ -253,6 +258,9 @@
 	var/path
 	if(species == SPECIES_HUMAN) //Humans use the parent type.
 		path = "/obj/item/bodypart/[part_type]"
+	else if(istype(being_built,/datum/design/digitigrade))
+		path = being_built.build_path
+		return path
 	else
 		path = "/obj/item/bodypart/[part_type]/[species]"
 	return text2path(path)

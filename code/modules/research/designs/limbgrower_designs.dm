@@ -34,15 +34,19 @@
 	build_path = /obj/item/bodypart/r_leg
 	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI)
 
-/datum/design/leftleg/digitigrade
+/datum/design/digitigrade/leftleg
 	name = "Digitigrade Left Leg"
-	id = "r_leg_d"
+	id = "digi_l_leg"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/l_leg/digitigrade
 	category = list("initial",SPECIES_LIZARD)
 
-/datum/design/rightleg/digitigrade
+/datum/design/digitigrade/rightleg
 	name = "Digitigrade Right Leg"
-	id = "l_leg_d"
+	id = "digi_r_leg"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/r_leg/digitigrade
 	category = list("initial",SPECIES_LIZARD)
 
