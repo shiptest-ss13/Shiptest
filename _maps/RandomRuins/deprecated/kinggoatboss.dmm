@@ -2,34 +2,29 @@
 "af" = (
 /obj/structure/closet/crate/necropolis/tendril,
 /mob/living/simple_animal/hostile/retaliate/goat/harem,
-/turf/open/floor/plasteel/rockvault,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/plasteel/rockvault)
 "ak" = (
 /obj/item/kinetic_crusher,
 /obj/structure/lattice/lava{
 	icon = 'whitesands/icons/obj/smooth_structures/catwalk.dmi'
 	},
-/turf/open/lava,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/lava)
 "bO" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/carpet/red)
 "bQ" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/lattice/lava{
 	icon = 'whitesands/icons/obj/smooth_structures/catwalk.dmi'
 	},
-/turf/open/lava,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/lava)
 "cK" = (
 /obj/structure/fluff/big_chain,
 /turf/open/indestructible{
 	icon_state = "engine"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "dX" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -56,8 +51,7 @@
 /turf/open/indestructible{
 	icon_state = "silver";
 	initial_gas_mix = "o2=14;n2=30;TEMP=293.15"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "jG" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors/explored)
@@ -65,8 +59,7 @@
 /obj/structure/lattice/lava{
 	icon = 'whitesands/icons/obj/smooth_structures/catwalk.dmi'
 	},
-/turf/open/lava,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/lava)
 "kR" = (
 /obj/structure/stone_tile/slab/cracked,
 /mob/living/simple_animal/hostile/retaliate/goat{
@@ -90,8 +83,7 @@
 /area/lavaland/surface/outdoors/explored)
 "oF" = (
 /obj/structure/closet/crate/goldcrate,
-/turf/open/floor/plasteel/rockvault,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/plasteel/rockvault)
 "pq" = (
 /obj/structure/stone_tile/block/burnt,
 /obj/structure/stone_tile{
@@ -128,8 +120,7 @@
 	icon_state = "goat_guard_dead";
 	stat = 4
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/carpet/red)
 "qI" = (
 /turf/open/floor/wood,
 /area/ruin/powered)
@@ -137,8 +128,7 @@
 /obj/structure/dresser,
 /turf/open/floor/carpet/red{
 	initial_gas_mix = "o2=14;n2=30;TEMP=293.15"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "se" = (
 /obj/machinery/door/poddoor/gates/indestructible{
 	glass = 0;
@@ -146,8 +136,7 @@
 	},
 /turf/open/floor/carpet/red{
 	initial_gas_mix = "o2=14;n2=30;TEMP=293.15"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "sL" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/carpet/red,
@@ -155,8 +144,7 @@
 "sN" = (
 /turf/open/indestructible{
 	icon_state = "engine"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "tb" = (
 /obj/structure/mineral_door/silver,
 /turf/open/floor/carpet/red,
@@ -165,19 +153,16 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/carpet/red)
 "tO" = (
 /mob/living/simple_animal/hostile/retaliate/goat/harem,
 /turf/open/floor/carpet/red{
 	initial_gas_mix = "o2=14;n2=30;TEMP=293.15"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "uo" = (
 /turf/open/indestructible{
 	icon_state = "gold"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "vK" = (
 /obj/effect/decal/cleanable/blood/old,
 /mob/living/simple_animal/hostile/retaliate/goat{
@@ -211,26 +196,22 @@
 /obj/machinery/light/floor,
 /turf/open/indestructible{
 	icon_state = "diamond"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "zJ" = (
 /obj/effect/portal/permanent/one_way{
 	id = "king goat arena";
 	name = "king goat arena portal";
 	teleport_channel = "free"
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/carpet/red)
 "AH" = (
-/turf/open/floor/carpet/red,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/carpet/red)
 "AM" = (
 /obj/machinery/door/poddoor/gates/indestructible{
 	id = "king goat dead"
 	},
 /obj/structure/fans/tiny/invisible,
-/turf/open/floor/carpet/red,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/carpet/red)
 "Cl" = (
 /turf/open/floor/carpet/cyan,
 /area/ruin/powered)
@@ -243,8 +224,7 @@
 	desc = "Once you go in the portal past this door there is no going back...";
 	name = "POINT OF NO RETURN"
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/carpet/red)
 "Dm" = (
 /turf/closed/wall/mineral/gold,
 /area/ruin/powered)
@@ -259,24 +239,21 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors/explored)
 "DT" = (
-/turf/open/floor/plasteel/rockvault,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/plasteel/rockvault)
 "EG" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /turf/open/indestructible{
 	icon_state = "engine"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "EM" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/indestructible{
 	icon_state = "engine"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "EN" = (
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors/explored)
@@ -290,15 +267,13 @@
 	icon_state = "goat_guard_dead";
 	stat = 4
 	},
-/turf/open/lava,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/lava)
 "FT" = (
 /turf/closed/indestructible/riveted/uranium{
 	base_icon_state = "iron_wall";
 	icon = 'icons/turf/walls/iron_wall.dmi';
 	icon_state = "iron_wall-0"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "Gg" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
@@ -324,8 +299,7 @@
 /obj/structure/lattice/lava{
 	icon = 'whitesands/icons/obj/smooth_structures/catwalk.dmi'
 	},
-/turf/open/lava,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/lava)
 "HC" = (
 /obj/structure/mineral_door/transparent/diamond{
 	sheetAmount = 1
@@ -340,8 +314,7 @@
 /mob/living/simple_animal/hostile/megafauna/king,
 /turf/open/indestructible{
 	icon_state = "gold"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "IT" = (
 /obj/structure/stone_tile/surrounding_tile,
 /turf/open/lava/smooth/lava_land_surface,
@@ -370,20 +343,17 @@
 /mob/living/simple_animal/hostile/retaliate/goat/guard/pope,
 /turf/open/indestructible{
 	icon_state = "gold"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "Nc" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/carpet/red)
 "Nx" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/carpet/red)
 "NG" = (
 /obj/structure/mineral_door/iron,
 /turf/open/floor/carpet/red,
@@ -398,15 +368,13 @@
 /obj/structure/lattice/lava{
 	icon = 'whitesands/icons/obj/smooth_structures/catwalk.dmi'
 	},
-/turf/open/lava,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/lava)
 "Oz" = (
 /obj/machinery/door/poddoor/gates/indestructible{
 	glass = 0;
 	id = "king goat dead"
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/carpet/red)
 "OE" = (
 /obj/effect/decal/cleanable/blood/old,
 /mob/living/simple_animal/hostile/retaliate/goat/guard{
@@ -421,20 +389,17 @@
 /obj/item/bedsheet/red,
 /turf/open/floor/carpet/red{
 	initial_gas_mix = "o2=14;n2=30;TEMP=293.15"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "Qk" = (
 /obj/machinery/light/floor,
 /turf/open/floor/carpet/red{
 	initial_gas_mix = "o2=14;n2=30;TEMP=293.15"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "Qy" = (
 /turf/open/indestructible{
 	icon_state = "silver";
 	initial_gas_mix = "o2=14;n2=30;TEMP=293.15"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "RD" = (
 /obj/effect/landmark/portal_exit{
 	id = "king goat arena"
@@ -442,11 +407,9 @@
 /turf/open/indestructible{
 	icon_state = "silver";
 	initial_gas_mix = "o2=14;n2=30;TEMP=293.15"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "RT" = (
-/turf/open/lava,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/lava)
 "Se" = (
 /turf/open/floor/mineral/diamond,
 /area/ruin/powered)
@@ -465,18 +428,15 @@
 "SF" = (
 /turf/open/floor/carpet/red{
 	initial_gas_mix = "o2=14;n2=30;TEMP=293.15"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "UX" = (
 /obj/structure/bonfire/prelit,
 /turf/open/indestructible{
 	icon_state = "diamond"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "Vg" = (
 /obj/structure/closet/crate/necropolis/tendril,
-/turf/open/floor/plasteel/rockvault,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/plasteel/rockvault)
 "Vj" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -503,8 +463,7 @@
 /obj/structure/table/wood,
 /turf/open/floor/carpet/red{
 	initial_gas_mix = "o2=14;n2=30;TEMP=293.15"
-	},
-/area/ruin/powered/kinggoat_arena)
+	})
 "Zw" = (
 /obj/item/hatchet,
 /turf/open/floor/carpet/red,
@@ -513,8 +472,7 @@
 /obj/effect/landmark/portal_exit{
 	id = "king goat walkway"
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/powered/kinggoat_arena)
+/turf/open/floor/carpet/red)
 
 (1,1,1) = {"
 HK
