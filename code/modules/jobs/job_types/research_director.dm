@@ -66,3 +66,12 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/rd
 	suit_store = /obj/item/tank/internals/oxygen
 	internals_slot = ITEM_SLOT_SUITSTORE
+
+
+/datum/outfit/job/rd/syndicate
+	name = "Research Director (Gorlex Marauders)"
+
+	uniform = /obj/item/clothing/under/syndicate/aclf
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/beret/rd
+	suit = /obj/item/clothing/suit/longcoat/science

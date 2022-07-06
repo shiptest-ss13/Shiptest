@@ -1,0 +1,54 @@
+{
+		"prefix": "SSV",
+	"namelists": ["GENERAL", "NATURAL_AGGRESSIVE", "WEAPONS"],
+	"map_name": "Falk-class Robotics vessel",
+	"map_short_name": "Falk-class",
+	"map_path": "_maps/shuttles/shiptest/Syndicate_Falk.dmm",
+	"map_id": "Syndicate_Falk",
+	"job_slots": {
+
+		"Research director": {
+			"outfit": "/datum/outfit/job/rd/syndicate",
+			"officer": true,
+			"slots": 1
+		},
+
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/engineer/gec",
+			"officer": true,
+			"slots": 1
+		},
+
+		"Deck assistant": {
+			"outfit": "/datum/outfit/job/assistant/syndicate/gorlex",
+			"slots": 1
+		},
+
+		"cargo tech": {
+		"outfit": "/datum/outfit/job/cargo_tech/syndicate",
+		"slots": 1
+		},
+
+		"Compliance officer":{
+			"outfit": "/datum/outfit/job/head_of_personnel/cybersun",
+			"slots": 1
+			},
+
+		"Roboticist":{
+			"outfit": "/datum/outfit/job/roboticist/syndicate",
+			"slots": 2
+		},
+
+		"Medical tech":{
+			"outfit": "/datum/outfit/job/doctor/cybersun",
+			"slots": 1
+		},
+
+		"Security officer":{
+			"outfit": "/datum/outfit/job/security/syndicate/gorlex",
+			"slots": 1
+		}
+
+	},
+	"cost": 500
+}

@@ -101,3 +101,11 @@
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
+
+/datum/outfit/job/roboticist/syndicate
+	name = "Roboticist"
+	uniform = /obj/item/clothing/under/syndicate/cybersun
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
+	ears = /obj/item/radio/headset/syndicate/alt
+	belt = /obj/item/storage/belt/utility/full

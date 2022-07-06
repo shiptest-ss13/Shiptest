@@ -48,6 +48,9 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "aO" = (
@@ -81,11 +84,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "bp" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/inherit,
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/clothing/suit/space/syndicate/black/engie,
+/obj/item/clothing/head/helmet/space/syndicate/black/engie,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "bE" = (
@@ -127,7 +132,8 @@
 	id = "FalkCargo";
 	name = "Cargo Blast Doors";
 	pixel_x = 26;
-	pixel_y = 9
+	pixel_y = 9;
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -415,6 +421,21 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"fZ" = (
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "Falk_engines";
+	name = "thruster blast door"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "ga" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -439,9 +460,6 @@
 /turf/open/floor/plasteel/stairs,
 /area/ship/engineering)
 "gd" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -451,8 +469,11 @@
 	name = "Engine Access"
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
 /obj/machinery/door/poddoor{
-	id = "osprey_thruster_starboard";
+	id = "Falk_engines";
 	name = "thruster blast door"
 	},
 /turf/open/floor/plating,
@@ -1029,7 +1050,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "nb" = (
-/obj/machinery/mecha_part_fabricator,
+/obj/machinery/mecha_part_fabricator{
+	dir = 4
+	},
 /obj/item/radio/intercom{
 	dir = 8;
 	pixel_x = 22
@@ -1558,8 +1581,9 @@
 /obj/machinery/button/door{
 	id = "FalkCargo";
 	name = "Cargo Blast Doors";
-	pixel_x = 26;
-	pixel_y = 9
+	pixel_x = 25;
+	pixel_y = 9;
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -1933,6 +1957,11 @@
 /area/ship/engineering)
 "xp" = (
 /obj/machinery/atmospherics/components/binary/pump,
+/obj/machinery/button/door{
+	id = "Falk_engines";
+	name = "Engine blastdoors";
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "xv" = (
@@ -1953,14 +1982,12 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "xO" = (
-/obj/machinery/suit_storage_unit/syndicate{
-	name = "Director's suit storage unit";
-	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/elite
-	},
 /obj/item/tank/internals/emergency_oxygen/double,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/hardsuit/rd,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "yc" = (
@@ -1997,7 +2024,7 @@
 /obj/item/clothing/head/beret/sci,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/item/clothing/suit/longcoat/robowhite,
-/obj/item/robot_module/medical,
+/obj/item/robot_module/syndicate_medical,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/robotics)
 "yp" = (
@@ -2043,7 +2070,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "yB" = (
-/obj/structure/closet/secure_closet/engineering_electrical,
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = null
+	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 4
 	},
@@ -2384,12 +2413,10 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/microwave{
-	pixel_y = 5
-	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
+/obj/machinery/microwave,
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
 "BQ" = (
@@ -2603,6 +2630,7 @@
 "DS" = (
 /obj/machinery/recharge_station,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/ai_chamber)
 "DV" = (
@@ -2995,6 +3023,9 @@
 "JD" = (
 /obj/machinery/recharge_station,
 /obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/ai_chamber)
 "JE" = (
@@ -3013,16 +3044,20 @@
 	id = "Falkwindows";
 	name = "Window Shutters";
 	pixel_x = -6;
-	pixel_y = -3
+	pixel_y = -3;
+	dir = 8
 	},
 /obj/machinery/button/door{
 	id = "Falkbridge";
 	name = "Bridge Lockdown";
-	pixel_x = 6;
-	pixel_y = -3
+	pixel_x = -6;
+	pixel_y = 8;
+	dir = 8
 	},
 /obj/item/radio/intercom/wideband{
-	pixel_y = 4
+	pixel_y = 2;
+	dir = 8;
+	pixel_x = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -3186,7 +3221,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "osprey_thruster_port";
+	id = "Falk_engines";
 	name = "thruster blast door"
 	},
 /turf/open/floor/plating,
@@ -3262,6 +3297,9 @@
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable/cyan{
 	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/ai_chamber)
@@ -3881,7 +3919,9 @@
 /obj/structure/railing{
 	dir = 9
 	},
-/obj/effect/decal/cleanable/insectguts,
+/obj/effect/decal/cleanable/insectguts{
+	color = "#808080"
+	},
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/science/ai_chamber)
@@ -4067,11 +4107,11 @@
 	dir = 1;
 	name = "Engine Access"
 	},
+/obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
-	id = "osprey_thruster_port";
+	id = "Falk_engines";
 	name = "thruster blast door"
 	},
-/obj/structure/window/plasma/reinforced/spawner/east,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "UZ" = (
@@ -4283,7 +4323,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/engineering_welding,
+/obj/structure/closet/secure_closet/engineering_welding{
+	req_access = null
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Xf" = (
@@ -5021,7 +5063,7 @@ qM
 FL
 Pn
 HU
-UF
+fZ
 Dh
 "}
 (12,1,1) = {"

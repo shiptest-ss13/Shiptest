@@ -92,3 +92,13 @@
 		/obj/item/export_scanner = 1,
 		/obj/item/kitchen/knife/hunting = 1
 	)
+
+/datum/outfit/job/cargo_tech/syndicate
+	name = "Cargo tech"
+
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	accessory = /obj/item/clothing/accessory/armband/cargo
+	ears = /obj/item/radio/headset/syndicate/alt
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/fingerless
+	glasses = /obj/item/clothing/glasses/sunglasses/big
