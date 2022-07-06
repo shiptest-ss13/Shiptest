@@ -2282,6 +2282,10 @@
 	name = "Mono-eye"
 	icon_state = "monoeye"
 
+/datum/sprite_accessory/ipc_screens/nyaru
+	name = "Nyaru"
+	icon_state = "nyaru"
+
 /datum/sprite_accessory/ipc_screens/nature
 	name = "Nature"
 	icon_state = "nature"
@@ -2453,6 +2457,10 @@
 /datum/sprite_accessory/ipc_chassis/hephaestussindustries2
 	name = "Hephaestus Industries 2.0"
 	limbs_id = "hi2ipc"
+
+/datum/sprite_accessory/ipc_chassis/pawsitronsunited
+	name = "Pawsitrons United"
+	limbs_id = "pawsitrons"
 
 /datum/sprite_accessory/ipc_chassis/shellguardmunitions
 	name = "Shellguard Munitions Standard Series"
