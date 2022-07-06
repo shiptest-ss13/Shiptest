@@ -300,21 +300,6 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"dH" = (
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/door/window/eastright{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "Falk_engines";
-	name = "thruster blast door"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "dM" = (
 /obj/machinery/door/poddoor{
 	id = "FalkCargo";
@@ -326,6 +311,22 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"dW" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/poddoor{
+	id = "Falk_engines";
+	name = "thruster blast door"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "ec" = (
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -3293,7 +3294,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/light/floor,
 /obj/structure/AIcore,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/ai_chamber)
@@ -4093,15 +4093,14 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "UF" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 1
-	},
 /obj/structure/window/plasma/reinforced/spawner,
 /obj/machinery/door/window/eastright{
 	dir = 1;
 	name = "Engine Access"
 	},
-/obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
 /obj/machinery/door/poddoor{
 	id = "Falk_engines";
 	name = "thruster blast door"
@@ -4817,7 +4816,7 @@ CS
 LV
 wX
 Cw
-UF
+dW
 Dh
 "}
 (7,1,1) = {"
@@ -5057,7 +5056,7 @@ qM
 FL
 Pn
 HU
-dH
+UF
 Dh
 "}
 (12,1,1) = {"
