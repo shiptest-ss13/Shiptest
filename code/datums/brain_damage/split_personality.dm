@@ -89,39 +89,16 @@
 
 	//Body to backseat
 
-	var/h2b_id = to_swap.computer_id
-	var/h2b_ip= to_swap.lastKnownIP
-	to_swap.computer_id = null
-	to_swap.lastKnownIP = null
-
-	free_backseat.ckey = to_swap.ckey
-
-	free_backseat.name = to_swap.name
 
 	if(to_swap.mind)
 		free_backseat.mind = to_swap.mind
-
-	if(!free_backseat.computer_id)
-		free_backseat.computer_id = h2b_id
-
-	if(!free_backseat.lastKnownIP)
-		free_backseat.lastKnownIP = h2b_ip
+	free_backseat.name = to_swap.name
+	free_backseat.ckey = to_swap.ckey
 
 	//Backseat to body
 
-	var/s2h_id = current_backseat.computer_id
-	var/s2h_ip= current_backseat.lastKnownIP
-	current_backseat.computer_id = null
-	current_backseat.lastKnownIP = null
-
-	to_swap.ckey = current_backseat.ckey
 	to_swap.mind = current_backseat.mind
-
-	if(!to_swap.computer_id)
-		to_swap.computer_id = s2h_id
-
-	if(!to_swap.lastKnownIP)
-		to_swap.lastKnownIP = s2h_ip
+	to_swap.ckey = current_backseat.ckey
 
 	current_controller = !current_controller
 

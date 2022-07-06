@@ -2282,6 +2282,10 @@
 	name = "Mono-eye"
 	icon_state = "monoeye"
 
+/datum/sprite_accessory/ipc_screens/nyaru
+	name = "Nyaru"
+	icon_state = "nyaru"
+
 /datum/sprite_accessory/ipc_screens/nature
 	name = "Nature"
 	icon_state = "nature"
@@ -2396,10 +2400,6 @@
 	name = "Drone Eyes"
 	icon_state = "droneeyes"
 
-/datum/sprite_accessory/ipc_antennas/light
-	name = "Light"
-	icon_state = "light"
-
 /datum/sprite_accessory/ipc_antennas/sidelights
 	name = "Sidelights"
 	icon_state = "sidelights"
@@ -2411,6 +2411,26 @@
 /datum/sprite_accessory/ipc_antennas/tv
 	name = "TV Antenna"
 	icon_state = "tvantennae"
+
+/datum/sprite_accessory/ipc_antennas/cross
+	name = "Cross"
+	icon_state = "cross"
+
+/datum/sprite_accessory/ipc_antennas/sidepanels
+	name = "Side Panels"
+	icon_state = "sidepanels"
+
+/datum/sprite_accessory/ipc_antennas/horns
+	name = "Horns"
+	icon_state = "horns"
+
+/datum/sprite_accessory/ipc_antennas/langle
+	name = "Left Angle"
+	icon_state = "langle"
+
+/datum/sprite_accessory/ipc_antennas/rangle
+	name = "Right Angle"
+	icon_state = "rangle"
 
 /datum/sprite_accessory/ipc_chassis // Used for changing limb icons, doesn't need to hold the actual icon. That's handled in ipc.dm
 	icon = null
@@ -2437,6 +2457,10 @@
 /datum/sprite_accessory/ipc_chassis/hephaestussindustries2
 	name = "Hephaestus Industries 2.0"
 	limbs_id = "hi2ipc"
+
+/datum/sprite_accessory/ipc_chassis/pawsitronsunited
+	name = "Pawsitrons United"
+	limbs_id = "pawsitrons"
 
 /datum/sprite_accessory/ipc_chassis/shellguardmunitions
 	name = "Shellguard Munitions Standard Series"
@@ -2590,7 +2614,6 @@
 	name = "Wings"
 	icon_state = "wings"
 
-
 /datum/sprite_accessory/kepori_tail_feathers
 	color_src = FACEHAIR
 	icon = 'icons/mob/kepori_parts.dmi'
@@ -2609,6 +2632,11 @@
 /datum/sprite_accessory/kepori_tail_feathers/fanback
 	name = "Fan and Back"
 	icon_state = "fanback"
+
+/datum/sprite_accessory/kepori_tail_feathers/prosthetic
+	name = "Prosthetic Tail"
+	icon_state = "prosthetic"
+	color_src = null
 
 // Moth
 

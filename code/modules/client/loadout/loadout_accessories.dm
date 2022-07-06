@@ -67,6 +67,9 @@
 	display_name = "maid neckpiece"
 	path = /obj/item/clothing/neck/maid
 
+/datum/gear/accessory/gloves
+	subtype_path = /datum/gear/accessory/gloves
+
 /datum/gear/accessory/gloves/evening
 	display_name = "evening gloves"
 	description = "Excessively fancy elbow-length gloves."
