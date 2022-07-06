@@ -40,12 +40,6 @@
 /area/ruin/space/has_grav/powered/dinner_for_two
 	name = "Dinner for Two"
 
-/area/ruin/space/has_grav/powered/cat_man
-	name = "Kitty Den"
-
-/area/ruin/space/has_grav/powered/authorship
-	name = "Authorship"
-
 /area/ruin/space/has_grav/powered/aesthetic
 	name = "Aesthetic"
 	ambientsounds = list('sound/ambience/ambivapor1.ogg')
@@ -71,20 +65,6 @@
 /area/ruin/space/has_grav/derelictoutpost/dockedship
 	name = "Derelict Outpost Docked Ship"
 	icon_state = "red"
-
-//Ruin of turretedoutpost
-
-/area/ruin/space/has_grav/turretedoutpost
-	name = "Turreted Outpost"
-	icon_state = "red"
-
-
-//Ruin of old teleporter
-
-/area/ruin/space/oldteleporter
-	name = "Old Teleporter"
-	icon_state = "teleporter"
-
 
 //Ruin of mech transport
 
@@ -136,13 +116,6 @@
 /area/ruin/space/has_grav/deepstorage/crusher
 	name = "Deep Storage Recycler"
 	icon_state = "storage"
-
-
-//Ruin of Abandoned Zoo
-
-/area/ruin/space/has_grav/abandonedzoo
-	name = "Abandoned Zoo"
-	icon_state = "green"
 
 
 //Ruin of ancient Space Station
@@ -309,13 +282,6 @@
 	name = "DJ Station Solars"
 	icon_state = "DJ"
 	has_gravity = STANDARD_GRAVITY
-
-//ABANDONED TELEPORTER
-
-/area/ruin/space/abandoned_tele
-	name = "Abandoned Teleporter"
-	icon_state = "teleporter"
-	ambientsounds = list('sound/ambience/ambimalf.ogg', 'sound/ambience/signal.ogg')
 
 //OLD AI SAT
 

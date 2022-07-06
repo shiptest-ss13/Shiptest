@@ -27,13 +27,6 @@
 	description = "An odd coffin shaped pirate hut that the inhabitant of died in."
 	suffix = "jungle_surface_coffinpirate.dmm"
 
-///how bad can i possibly be?
-/datum/map_template/ruin/jungle/onceler
-	name = "Thneed Factory"
-	id = "tumblr-sexyman"
-	description = "After a logging incident gone wrong, the Syndicate invade this factory to stop the beast."
-	suffix = "jungle_surface_tumblr_sexyman.dmm"
-
 //far more tasteful than its predecessor...
 /datum/map_template/ruin/jungle/lessonintrickery
 	name = "Bombmaker's Cabin"
