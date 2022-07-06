@@ -164,7 +164,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/ethanol = 20)
 	build_path = /obj/item/organ/dwarfgland
-	category = (SPECIES_DWARF)
+	category = list(SPECIES_DWARF)
 
 /datum/design/dwarf_liver
 	name = "Dwarf Liver"
@@ -172,7 +172,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/ethanol = 20)
 	build_path = /obj/item/organ/liver/dwarf
-	category = (SPECIES_DWARF)
+	category = list(SPECIES_DWARF)
 
 /datum/design/dwarf_tongue
 	name = "Dwarf Tongue"
@@ -180,7 +180,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10, /datum/reagent/consumable/ethanol = 10)
 	build_path = /obj/item/organ/tongue/dwarf
-	category = (SPECIES_DWARF)
+	category = list(SPECIES_DWARF)
 
 /datum/design/lizard_tongue
 	name = "Lizard Tongue"
@@ -188,7 +188,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/tongue/lizard
-	category = (SPECIES_LIZARD)
+	category = list(SPECIES_LIZARD)
 
 /datum/design/plasmaman_lungs
 	name = "Plasma Filter"
