@@ -89,6 +89,15 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
+/datum/techweb_node/xenoorgan_biotech
+	id = "xenoorgan_bio"
+	display_name = "Xeno-organ Biology"
+	description = "Plasmaman, Elzuose, Sarathi... What makes our non-human crewmembers tick?"
+	prereq_ids = list("adv_biotech")
+	design_ids = list("limbdesign_felinid", "limbdesign_dwarf", "limbdesign_lizard", "limbdesign_plasmaman", "limbdesign_ethereal", "limbdesign_moth", "limbdesign_spider", "limbdesign_kepori", "limbdesign_vox")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 5000
+
 /datum/techweb_node/bio_process
 	id = "bio_process"
 	display_name = "Biological Processing"
