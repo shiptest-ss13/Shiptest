@@ -595,7 +595,7 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 	lootdoubles = FALSE
 
 	loot = list(
-		/obj/item/disk/holodisk/lp/aid/telepad = 1,
+		/obj/item/disk/holodisk/lp/aid/teleporter = 1,
 		/obj/item/disk/holodisk/lp/aid/telecomm = 1,
 		/obj/item/disk/holodisk/lp/aid/recruits = 1,
 		/obj/item/disk/holodisk/lp/aid/repairs = 1,
