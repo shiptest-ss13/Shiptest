@@ -6,6 +6,7 @@
 "ac" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/hydroponics/constructable,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "ag" = (
@@ -131,14 +132,15 @@
 /area/ruin/powered/hydroponicslab)
 "ct" = (
 /obj/structure/table,
-/obj/item/seeds/replicapod{
-	pixel_y = -1
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
 /obj/effect/turf_decal/spline/fancy/lime{
 	dir = 5
+	},
+/obj/item/seeds/cabbage{
+	pixel_x = -2;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -164,7 +166,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "dD" = (
-/obj/machinery/door/airlock/maintenance,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal{
 	dir = 4
 	},
@@ -173,10 +174,11 @@
 /obj/effect/turf_decal/spline/fancy/grey{
 	dir = 1
 	},
+/obj/machinery/door/airlock/research,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "ed" = (
-/obj/machinery/door/airlock/highsecurity,
+/obj/machinery/door/airlock/hatch,
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "eh" = (
@@ -184,9 +186,16 @@
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "eD" = (
-/mob/living/simple_animal/hostile/venus_human_trap,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/grass,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/turf_decal/spline/plain/bar{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "eX" = (
 /obj/effect/decal/cleanable/blood/gibs,
@@ -217,15 +226,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "fO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/stack/tile/plasteel/tech,
 /turf/open/floor/plating/rust,
 /area/ruin/powered/hydroponicslab)
 "gb" = (
-/obj/structure/table,
-/obj/item/seeds/kudzu{
-	pixel_y = 2;
-	pixel_x = -3
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/fancy/bar{
+	dir = 9
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
@@ -246,6 +254,17 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"gl" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/turf_decal/spline/plain/bar{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "gz" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -268,9 +287,8 @@
 /area/icemoon/surface/outdoors)
 "gC" = (
 /obj/structure/table,
-/obj/item/storage/bag/plants/portaseeder{
-	pixel_x = 3;
-	pixel_y = 0
+/obj/item/seeds/berry{
+	pixel_x = 3
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -324,6 +342,7 @@
 "gP" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/fernybush,
+/mob/living/simple_animal/hostile/venus_human_trap,
 /turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "gU" = (
@@ -348,8 +367,13 @@
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "hg" = (
-/mob/living/simple_animal/hostile/venus_human_trap,
-/obj/machinery/door/window/brigdoor,
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/corner/bar{
+	dir = 1;
+	color = "#791500"
+	},
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "hs" = (
@@ -380,8 +404,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "hF" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/grass,
+/mob/living/simple_animal/hostile/venus_human_trap,
+/turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "hJ" = (
 /turf/closed/wall/r_wall,
@@ -405,22 +429,21 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "ij" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/venus_human_trap,
-/turf/open/floor/grass,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/bar{
+	dir = 8
+	},
+/turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "iw" = (
-/obj/effect/decal/cleanable/glass,
-/obj/item/stack/rods{
-	pixel_x = -6;
-	pixel_y = -2
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 8
 	},
-/obj/item/shard{
-	pixel_x = -1;
-	pixel_y = 4
-	},
-/obj/item/shard{
-	pixel_x = 4
+/obj/effect/turf_decal/spline/fancy/corner/bar{
+	dir = 8;
+	color = "#791500"
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
@@ -479,13 +502,13 @@
 /area/ruin/powered/hydroponicslab)
 "iQ" = (
 /obj/structure/table,
+/obj/item/reagent_containers/food/snacks/grown/tomato/blood{
+	pixel_x = 7;
+	pixel_y = 7
+	},
 /obj/item/seeds/tomato/killer{
 	pixel_y = -9;
 	pixel_x = -2
-	},
-/obj/item/reagent_containers/food/snacks/grown/tomato/blue{
-	pixel_x = 4;
-	pixel_y = 10
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -500,6 +523,14 @@
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/spline/fancy/lime,
 /turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"jh" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "jl" = (
 /obj/effect/decal/cleanable/food/salt,
@@ -564,6 +595,7 @@
 /obj/effect/turf_decal/spline/fancy/lime{
 	dir = 6
 	},
+/obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "lj" = (
@@ -602,12 +634,13 @@
 /area/ruin/powered/hydroponicslab)
 "lF" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
-/obj/item/seeds/nettle/death{
-	pixel_x = 3;
-	pixel_y = 4
-	},
 /obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel/rockvault,
@@ -635,6 +668,17 @@
 	dir = 10
 	},
 /turf/open/floor/carpet,
+/area/ruin/powered/hydroponicslab)
+"mu" = (
+/mob/living/simple_animal/hostile/venus_human_trap,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/bar{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "mQ" = (
 /obj/structure/frame/computer{
@@ -698,7 +742,13 @@
 /area/ruin/powered/hydroponicslab)
 "nh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/window/reinforced,
+/obj/machinery/door/window/brigdoor/northright,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/bar{
+	dir = 5
+	},
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "ni" = (
@@ -716,12 +766,16 @@
 /area/ruin/powered/hydroponicslab)
 "nj" = (
 /obj/structure/table,
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/item/stack/cable_coil/yellow{
+	pixel_x = 5;
+	pixel_y = 6
+	},
 /obj/item/circuitboard/machine/hydroponics{
 	pixel_y = 2;
 	pixel_x = -3
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 10
 	},
 /obj/effect/turf_decal/spline/fancy/lime{
 	dir = 10
@@ -989,11 +1043,16 @@
 /obj/item/stack/tile/plasteel/tech,
 /turf/open/floor/plating,
 /area/ruin/powered/hydroponicslab)
+"qN" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered/hydroponicslab)
 "ri" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/warning/biohazard{
 	pixel_x = 32
 	},
+/obj/structure/closet/emcloset,
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "si" = (
@@ -1004,6 +1063,15 @@
 /obj/machinery/door/airlock/highsecurity,
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/vault,
+/area/ruin/powered/hydroponicslab)
+"sv" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/bar{
+	dir = 5
+	},
+/turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "sx" = (
 /turf/open/floor/plasteel/tech,
@@ -1052,6 +1120,17 @@
 /obj/structure/closet/l3closet/scientist,
 /turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
+"tP" = (
+/obj/structure/table,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/turf_decal/spline/plain/bar{
+	dir = 10
+	},
+/obj/structure/sign/warning/radiation{
+	pixel_x = -32
+	},
+/turf/open/floor/vault,
+/area/ruin/powered/hydroponicslab)
 "tQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -1065,7 +1144,24 @@
 /area/ruin/powered/hydroponicslab)
 "uo" = (
 /obj/structure/flora/ausbushes/fullgrass,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
+/area/ruin/powered/hydroponicslab)
+"up" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/turf_decal/spline/plain/bar{
+	dir = 9
+	},
+/obj/structure/sign/warning/securearea{
+	pixel_x = -32
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "uz" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
@@ -1100,7 +1196,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "uZ" = (
-/obj/machinery/door/airlock/grunge,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal{
 	dir = 4
@@ -1110,10 +1205,32 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/spline/fancy/grey,
+/obj/machinery/door/airlock,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
+"vc" = (
+/obj/structure/table,
+/obj/structure/sign/poster/contraband/kudzu{
+	pixel_x = -32
+	},
+/obj/item/seeds/kudzu{
+	pixel_y = 2;
+	pixel_x = -3
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/turf_decal/spline/plain/bar{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered/hydroponicslab)
 "vg" = (
-/obj/structure/window/reinforced,
+/obj/machinery/door/window/brigdoor{
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "vm" = (
@@ -1147,14 +1264,8 @@
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "xE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/spline/fancy/lime{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
+/obj/machinery/door/airlock,
+/turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "xJ" = (
 /obj/effect/decal/cleanable/blood/gibs/torso,
@@ -1178,14 +1289,26 @@
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "ys" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/junglebush/c,
-/turf/open/floor/grass,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/bar{
+	dir = 4
+	},
+/turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "yV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/junglebush/b,
-/turf/open/floor/grass,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 6
+	},
+/obj/effect/turf_decal/spline/fancy/bar{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "zw" = (
 /obj/structure/table/wood,
@@ -1226,6 +1349,9 @@
 "zO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "zT" = (
@@ -1244,7 +1370,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "zV" = (
-/obj/machinery/door/airlock/highsecurity,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal{
@@ -1256,6 +1381,7 @@
 /obj/effect/turf_decal/spline/fancy/grey{
 	dir = 8
 	},
+/obj/machinery/door/airlock/security,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Ac" = (
@@ -1295,6 +1421,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Bx" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "BC" = (
@@ -1308,13 +1435,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Cg" = (
-/obj/item/seeds/kudzu{
-	pixel_y = 3;
-	pixel_x = 3
-	},
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/rockvault,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/turf_decal/spline/plain/bar,
+/obj/structure/sign/warning/fire{
+	pixel_y = 32
+	},
+/turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "Cr" = (
 /obj/machinery/biogenerator,
@@ -1346,6 +1474,14 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
+/area/ruin/powered/hydroponicslab)
+"DA" = (
+/obj/effect/turf_decal/spline/plain/bar{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/window/brigdoor/eastright,
+/turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "DH" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
@@ -1408,17 +1544,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Fy" = (
-/obj/structure/table,
-/obj/item/circuitboard/machine/hydroponics{
-	pixel_y = 4
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/effect/turf_decal/spline/fancy/lime{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech,
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/spline/fancy/bar,
+/turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "FO" = (
 /obj/effect/decal/cleanable/blood,
@@ -1450,6 +1578,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Gr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/hydroponics/constructable,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "Gy" = (
@@ -1482,7 +1616,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "GN" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/engineering,
 /turf/open/floor/plasteel/stairs,
 /area/ruin/powered/hydroponicslab)
 "GP" = (
@@ -1508,7 +1642,7 @@
 /area/ruin/powered/hydroponicslab)
 "Hg" = (
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "HF" = (
@@ -1526,17 +1660,21 @@
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "Ik" = (
-/obj/machinery/door/airlock/highsecurity,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/security,
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "IQ" = (
-/obj/machinery/hydroponics/constructable,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /obj/effect/turf_decal/spline/fancy/orange{
 	dir = 1
+	},
+/obj/structure/table,
+/obj/item/storage/bag/plants/portaseeder{
+	pixel_x = 3;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -1545,6 +1683,23 @@
 	dir = 1
 	},
 /turf/open/floor/carpet,
+/area/ruin/powered/hydroponicslab)
+"Je" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/stack/rods{
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/obj/item/shard{
+	pixel_x = -1;
+	pixel_y = 4
+	},
+/obj/item/shard{
+	pixel_x = 4
+	},
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/spline/fancy/bar,
+/turf/open/floor/plasteel/rockvault,
 /area/ruin/powered/hydroponicslab)
 "Jn" = (
 /obj/structure/table,
@@ -1590,14 +1745,16 @@
 "Ks" = (
 /obj/structure/table,
 /obj/item/flamethrower/full/tank{
-	pixel_x = 4;
+	pixel_x = 11;
 	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small{
-	dir = 1
+/obj/structure/window/reinforced{
+	dir = 8
 	},
-/turf/open/floor/plasteel/rockvault,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/turf_decal/spline/plain/bar,
+/turf/open/floor/vault,
 /area/ruin/powered/hydroponicslab)
 "KD" = (
 /obj/structure/table,
@@ -1691,6 +1848,17 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
+"Nd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/reinforced,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/bar{
+	dir = 10
+	},
+/turf/open/floor/plasteel/rockvault,
+/area/ruin/powered/hydroponicslab)
 "Nf" = (
 /obj/item/paper/guides/jobs/hydroponics{
 	pixel_y = 5
@@ -1727,9 +1895,9 @@
 	pixel_x = 7;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/grown/tomato/blue{
+/obj/item/reagent_containers/food/snacks/grown/tomato/blood{
 	pixel_x = -5;
-	pixel_y = 10
+	pixel_y = 7
 	},
 /obj/item/reagent_containers/glass/bottle/nutrient/rh{
 	pixel_y = 1
@@ -1744,6 +1912,7 @@
 /obj/effect/turf_decal/spline/fancy/lime{
 	dir = 1
 	},
+/obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
 "Oz" = (
@@ -1974,6 +2143,9 @@
 "Vo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/ausbushes/ywflowers,
+/obj/machinery/door/window/brigdoor{
+	dir = 1
+	},
 /turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "Vy" = (
@@ -2012,6 +2184,7 @@
 "VN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/light,
 /turf/open/floor/grass,
 /area/ruin/powered/hydroponicslab)
 "We" = (
@@ -2380,7 +2553,7 @@ am
 Qt
 DH
 We
-si
+xE
 hJ
 hJ
 Zd
@@ -2874,12 +3047,12 @@ Zd
 Zd
 Zd
 Zd
-Zd
-Zd
 hJ
 hJ
 We
 hJ
+We
+Zd
 Zd
 Zd
 Zd
@@ -2907,15 +3080,15 @@ Zd
 Zd
 Zd
 Zd
-Zd
-Zd
 hJ
 hJ
 We
-tS
-gP
+up
+vc
+tP
 hJ
-hJ
+Zd
+Zd
 Zd
 Zd
 Zd
@@ -2940,16 +3113,16 @@ iY
 We
 hJ
 hJ
-hJ
 We
 We
-hJ
 hJ
 gb
-nh
-uo
-Vo
-ac
+Nd
+gl
+DA
+eD
+hJ
+We
 We
 Zd
 Zd
@@ -2972,20 +3145,20 @@ jr
 oo
 sK
 mb
-Fy
 nL
 nj
 We
 bd
 nP
-bd
 We
 lF
 iw
-nt
 ij
-ys
-We
+mu
+jh
+uo
+tS
+hJ
 Zd
 Zd
 Zd
@@ -3007,18 +3180,18 @@ NT
 iB
 zN
 sx
-sx
 fO
 Uh
 ss
 AT
 eh
-AT
 ss
-Bx
+sv
 hg
-Gr
-VN
+Bx
+Fy
+Vo
+nt
 Hg
 hJ
 Zd
@@ -3040,20 +3213,20 @@ uz
 zT
 LM
 bP
-sK
+qN
 Eb
 bA
-xE
 kS
 hJ
 tE
 ri
-ab
 hJ
 Ks
 vg
 hF
-eD
+Je
+nt
+gP
 VN
 hJ
 Zd
@@ -3078,15 +3251,15 @@ eX
 oK
 hs
 hJ
-hJ
 We
 hJ
 hJ
 hJ
-We
 hJ
 Cg
 nh
+ys
+yV
 zO
 PR
 ac
@@ -3117,12 +3290,12 @@ Zd
 Zd
 Zd
 Zd
-Zd
-Zd
 hJ
 We
 We
-yV
+hJ
+We
+Gr
 md
 hJ
 hJ
@@ -3156,7 +3329,7 @@ Zd
 Zd
 Zd
 Zd
-hJ
+We
 hJ
 hJ
 hJ
