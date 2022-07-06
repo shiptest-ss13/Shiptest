@@ -75,7 +75,7 @@
 
 /obj/item/ammo_casing/energy/tesla_cannon
 	fire_sound = 'sound/magic/lightningshock.ogg'
-	e_cost = 30
+	e_cost = 300
 	select_name = "shock"
 	projectile_type = /obj/projectile/energy/tesla_cannon
 

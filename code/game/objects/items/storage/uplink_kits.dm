@@ -194,7 +194,7 @@
 
 		if("made_man")
 			new /obj/effect/spawner/lootdrop/mafia_outfit(src) // 0 TC, just an outfit for the new 'don of this family
-			new /obj/item/gun/ballistic/automatic/tommygun(src) // 20 TC, a gun with 50 .45 bullets on a three round burst is kinda outstanding
+			new /obj/item/gun/ballistic/automatic/smg/thompson/drum(src) // 20 TC, a gun with 50 .45 bullets on a three round burst is kinda outstanding
 			new /obj/item/switchblade(src) // 3 TC? It's nice, but it's really a stealth/oh fuck I'm out of ammo weapon
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src) // 5 TC, free molotov assemblies
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src)
@@ -306,7 +306,7 @@
 		/obj/item/storage/box/syndie_kit/imp_radio,
 		/obj/item/storage/box/syndie_kit/imp_uplink,
 		/obj/item/clothing/gloves/krav_maga/combatglovesplus,
-		/obj/item/gun/ballistic/automatic/c20r/toy/unrestricted/riot,
+		/obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted/riot,
 		/obj/item/reagent_containers/hypospray/medipen/stimulants,
 		/obj/item/storage/box/syndie_kit/imp_freedom,
 		/obj/item/toy/eightball/haunted

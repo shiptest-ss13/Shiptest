@@ -314,7 +314,7 @@
 						/obj/item/hierophant_club,
 						/obj/item/his_grace,
 						/obj/item/gun/energy/minigun,
-						/obj/item/gun/ballistic/automatic/l6_saw,
+						/obj/item/gun/ballistic/automatic/hmg/l6_saw,
 						/obj/item/gun/magic/staff/chaos,
 						/obj/item/gun/magic/staff/spellblade,
 						/obj/item/gun/magic/wand/death,
