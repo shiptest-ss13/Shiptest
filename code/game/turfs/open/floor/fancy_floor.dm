@@ -35,6 +35,9 @@
 /turf/open/floor/wood/bamboo
 	color = WOOD_COLOR_PALE2
 
+/turf/open/floor/wood/birch
+	color = WOOD_COLOR_PALE3
+
 /turf/open/floor/wood/yew
 	color = WOOD_COLOR_YELLOW
 

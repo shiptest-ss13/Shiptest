@@ -94,6 +94,7 @@ GLOBAL_LIST_INIT(admin_verbs_sounds, list(
 GLOBAL_PROTECT(admin_verbs_sounds)
 GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/cmd_select_equipment,
+	/client/proc/cmd_admin_rejuvenate,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/cmd_change_command_name,
 	/client/proc/cmd_admin_create_centcom_report,
