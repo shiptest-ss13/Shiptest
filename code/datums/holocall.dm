@@ -383,9 +383,6 @@
 /datum/preset_holoimage/miner
 	outfit_type = /datum/outfit/job/miner
 
-/datum/preset_holoimage/commissioner
-	outfit_type = /datum/outfit/job/lp/commissioner
-
 /obj/item/disk/holodisk/donutstation/whiteship
 	name = "Blackbox Print-out #DS024"
 	desc = "A holodisk containing the last viable recording of DS024's blackbox."

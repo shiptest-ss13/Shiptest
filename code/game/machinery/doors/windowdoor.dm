@@ -493,28 +493,3 @@
 	dir = SOUTH
 	icon_state = "rightsecure"
 	base_state = "rightsecure"
-
-/obj/machinery/door/window/lp
-	req_access = list(ACCESS_LP_FACILITIES)
-
-/obj/machinery/door/window/lp/commissioner
-	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_COMMISSIONER)
-
-/obj/machinery/door/window/lp/ai
-	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_AI)
-
-/obj/machinery/door/window/lp/lieu
-	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_LIEUTENANT)
-
-/obj/machinery/door/window/lp/engi
-	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_ENGINEER)
-
-/obj/machinery/door/window/lp/security
-	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_SECURITY)
-
-/obj/machinery/door/window/lp/medic
-	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_MEDIC)
-
-/obj/machinery/door/window/lp/operatingroom
-	req_access = list(ACCESS_LP_FACILITIES, ACCESS_LP_OPERATING_ROOM)
-

@@ -491,23 +491,3 @@
 /obj/item/storage/pill_bottle/trophazole/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/trophazole(src)
-
-/obj/item/storage/firstaid/lp
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "bezerk"
-	name = "Loss Prevention Medkit"
-	desc = "A medikit filled with the second finest equipment for the second finest team."
-
-/obj/item/storage/firstaid/lp/PopulateContents()
-	if(empty)
-		return
-	var/static/items_inside = list(
-		/obj/item/lighter = 1,
-		/obj/item/storage/fancy/cigarettes = 1,
-		/obj/item/stack/medical/mesh/advanced = 2,
-		/obj/item/stack/medical/suture/medicated = 2,
-		/obj/item/healthanalyzer = 1,
-		/obj/item/defibrillator/compact/loaded = 1,
-		/obj/item/reagent_containers/hypospray/medipen/penacid = 1,
-		/obj/item/storage/pill_bottle/trophazole = 1)
-	generate_items_inside(items_inside,src)

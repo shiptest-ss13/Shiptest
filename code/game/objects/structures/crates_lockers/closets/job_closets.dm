@@ -316,33 +316,3 @@
 	new /obj/item/clothing/under/rank/civilian/curator/treasure_hunter(src)
 	new /obj/item/clothing/shoes/workboots/mining(src)
 	new /obj/item/storage/backpack/satchel/explorer(src)
-
-/obj/structure/closet/secure_closet/lp/commissioner
-	name = "commissioner's closet"
-	desc = "It's the Commissioner's closet."
-	icon_state = "cap"
-	req_access = list(ACCESS_LP_COMMISSIONER)
-
-/obj/structure/closet/secure_closet/lp/lieutenant
-	name = "lietenant's closet"
-	desc = "It's the lieutenant's closet."
-	icon_state = "blueshield"
-	req_access = list(ACCESS_LP_LIEUTENANT)
-
-/obj/structure/closet/secure_closet/lp/security
-	name = "security specialist's closet"
-	desc = "It's the security specialist's closet."
-	icon_state = "hos"
-	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_SECURITY)
-
-/obj/structure/closet/secure_closet/lp/engineer
-	name = "engineering specialist's closet"
-	desc = "It's the engineering specialist's closet."
-	icon_state = "eng_secure"
-	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_ENGINEER)
-
-/obj/structure/closet/secure_closet/lp/medical
-	name = "medical specialist's closet"
-	desc = "It's the medical specialist's closet."
-	icon_state = "med"
-	req_one_access = list(ACCESS_LP_LIEUTENANT, ACCESS_LP_MEDIC)

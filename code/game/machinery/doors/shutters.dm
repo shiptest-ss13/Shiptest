@@ -51,24 +51,3 @@
 	glass = TRUE
 	density = FALSE
 	opacity = FALSE
-
-
-/obj/machinery/door/poddoor/shutters/preopen/lp/foreinner
-	name = "Inner Fore Shutters"
-	id = ""
-
-/obj/machinery/door/poddoor/shutters/preopen/lp/foreinner
-	name = ""
-	id = ""
-
-/obj/machinery/door/poddoor/shutters/preopen/lp/foreinner
-	name = ""
-	id = ""
-
-/obj/machinery/door/poddoor/shutters/preopen/lp/foreinner
-	name = ""
-	id = ""
-
-/obj/machinery/door/poddoor/shutters/preopen/lp/foreinner
-	name = ""
-	id = ""

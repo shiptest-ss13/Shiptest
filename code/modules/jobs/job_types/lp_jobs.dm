@@ -129,7 +129,8 @@
 	outfit = /datum/outfit/job/lp/commissioner
 
 /datum/job/lp/commissioner/get_access()
-	return get_lpcomm_access()
+	return
+
 
 /datum/outfit/job/lp/commissioner
 	name = "LP Commissioner"
