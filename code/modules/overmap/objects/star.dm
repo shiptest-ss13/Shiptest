@@ -143,7 +143,7 @@ Known as a \"brown dwarf\", it is unable to sustain hydrogen fusion, and is warm
 	// we don't call the parent proc, since we do colors our own way
 	var/mutable_appearance/star_1
 	var/mutable_appearance/star_2
-	var/list/spectral_types = list(
+	var/static/list/spectral_types = list(
 		STAR_B,
 		STAR_F,
 		STAR_G,
