@@ -12,6 +12,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/hallway/fore)
 "am" = (
+/obj/structure/chair/pew/left,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "aq" = (
@@ -423,6 +424,7 @@
 /area/ship/security)
 "dE" = (
 /obj/item/banner/command,
+/obj/effect/turf_decal/siding/blue/end,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dK" = (
@@ -561,6 +563,12 @@
 /obj/item/aiModule/reset/purge,
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
+"eN" = (
+/obj/effect/turf_decal/siding/thinplating/light/end{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "eR" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -617,6 +625,12 @@
 /obj/item/circuitboard/machine/teleporter_station,
 /obj/item/beacon,
 /obj/item/beacon,
+/obj/effect/turf_decal/siding/thinplating/light/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "fr" = (
@@ -1141,6 +1155,12 @@
 "jA" = (
 /turf/closed/wall/r_wall,
 /area/ship/hallway/port)
+"jB" = (
+/obj/effect/turf_decal/siding/thinplating/light{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "jC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1194,9 +1214,13 @@
 /turf/open/floor/plating,
 /area/ship/science/ai_chamber)
 "ks" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6
+/obj/structure/railing/corner{
+	dir = 8
 	},
+/obj/effect/turf_decal/siding/thinplating/light/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/light,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "kI" = (
@@ -1420,6 +1444,7 @@
 /area/ship/medical)
 "nh" = (
 /obj/machinery/telecomms/server,
+/obj/machinery/camera/autoname,
 /turf/open/floor/circuit/airless,
 /area/ship/hallway/central)
 "no" = (
@@ -1614,7 +1639,7 @@
 	pixel_x = 22;
 	pixel_y = -9
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/stairs,
 /area/ship/hallway/central)
 "qb" = (
 /obj/machinery/vending/coffee,
@@ -1657,7 +1682,7 @@
 /obj/effect/turf_decal/trimline/black/line{
 	pixel_y = -5
 	},
-/obj/structure/railing{
+/obj/structure/chair/greyscale{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -1876,7 +1901,8 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "tk" = (
-/obj/effect/turf_decal/industrial/warning,
+/obj/structure/railing,
+/obj/effect/turf_decal/siding/thinplating/light,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "tq" = (
@@ -2051,6 +2077,12 @@
 "vm" = (
 /turf/closed/wall/r_wall,
 /area/ship/medical)
+"vz" = (
+/obj/effect/turf_decal/siding/thinplating/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "vD" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -2090,9 +2122,9 @@
 /obj/effect/turf_decal/trimline/black/line{
 	pixel_y = -5
 	},
-/obj/machinery/light,
+/obj/machinery/vending/snack/random,
 /obj/machinery/camera/autoname{
-	dir = 5
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -2144,6 +2176,9 @@
 /area/ship/external)
 "wu" = (
 /obj/structure/chair/greyscale{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/light{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -2255,6 +2290,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
+"xv" = (
+/obj/structure/chair/pew/right,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
+"xw" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/siding/thinplating/light{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "xA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/trimline/bottlegreen/filled/line,
@@ -2269,6 +2315,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"xK" = (
+/obj/structure/chair/pew,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "xS" = (
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/black/line{
@@ -2457,6 +2507,9 @@
 /obj/item/circuitboard/machine/telecomms/relay,
 /obj/item/circuitboard/machine/telecomms/hub,
 /obj/item/circuitboard/machine/telecomms/bus,
+/obj/effect/turf_decal/siding/thinplating/light/end{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "zF" = (
@@ -2990,7 +3043,8 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 6
 	},
-/obj/structure/railing{
+/obj/machinery/light,
+/obj/structure/chair/greyscale{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -3002,6 +3056,20 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
+"EW" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "Fh" = (
 /obj/structure/chair/stool/bar{
 	dir = 4
@@ -3491,6 +3559,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"Jn" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/stairs,
+/area/ship/hallway/central)
 "Jq" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -3778,6 +3852,9 @@
 	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/blue/end{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4093,6 +4170,9 @@
 "Pk" = (
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/blue/end{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4455,9 +4535,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/railing{
-	dir = 1
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "TR" = (
@@ -6005,8 +6082,8 @@ VQ
 GN
 Xg
 zh
-Xg
-Xg
+EW
+EW
 GW
 Mz
 Ar
@@ -6132,8 +6209,8 @@ JO
 Zq
 Lk
 eq
-am
-tk
+jB
+xw
 am
 jv
 cI
@@ -6176,7 +6253,7 @@ Lk
 pA
 wu
 tk
-am
+xK
 xS
 VJ
 CP
@@ -6216,9 +6293,9 @@ NZ
 Lk
 Lk
 Xy
-am
+vz
 tk
-am
+xv
 AF
 QV
 CP
@@ -6260,7 +6337,7 @@ sJ
 zB
 ff
 ks
-am
+Jn
 AF
 QV
 aK
@@ -6301,7 +6378,7 @@ zW
 sJ
 sJ
 sJ
-am
+eN
 pB
 kN
 aW
