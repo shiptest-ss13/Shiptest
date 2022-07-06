@@ -421,21 +421,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"fZ" = (
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/door/window/eastright{
-	dir = 1;
-	name = "Engine Access"
-	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "Falk_engines";
-	name = "thruster blast door"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "ga" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1955,6 +1940,21 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"xh" = (
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "Falk_engines";
+	name = "thruster blast door"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "xp" = (
 /obj/machinery/atmospherics/components/binary/pump,
 /obj/machinery/button/door{
@@ -3286,11 +3286,9 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "Lj" = (
-/obj/structure/AIcore,
 /obj/machinery/light/floor{
 	color = "#FF7F7F";
 	critical_machine = 1;
-	flicker_chance = 0;
 	light_color = "#FF7F7F";
 	nightshift_light_color = "#660000"
 	},
@@ -3301,6 +3299,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/structure/AIcore,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/ai_chamber)
 "Lp" = (
@@ -5063,7 +5062,7 @@ qM
 FL
 Pn
 HU
-fZ
+xh
 Dh
 "}
 (12,1,1) = {"
