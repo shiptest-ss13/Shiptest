@@ -202,7 +202,7 @@
 	DELAY 25
 	"}
 
-/obj/item/disk/holodisk/lp/aid/telepad
+/obj/item/disk/holodisk/lp/aid/teleporter
 	name = "Aid Mission Quantum Link"
 	desc = "A holodisk containing an aid mission for the LP."
 	preset_image_type = /datum/preset_holoimage/commissioner
@@ -210,7 +210,7 @@
 	NAME Commissioner Gorre Donn
 	SAY This mission, should you choose to accept it, revolves around an aid objective. The LP will need to provide aid to local vessels not hostile or syndicate.
 	DELAY 25
-	SAY The Ranger-Class is set up with a space to install quantum pad links to other vessels. Create a quantum pad link to 3 other allied or friendly, non-syndicate vessels.
+	SAY The Ranger-Class is set up with a space to install a teleporter. Set your own teleportation machines, then procede to do so on 2 other allied or friendly, non-syndicate vessels.
 	DELAY 25
 	"}
 

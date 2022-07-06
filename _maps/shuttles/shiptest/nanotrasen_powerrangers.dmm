@@ -247,7 +247,6 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	pixel_y = 6
 	},
-/obj/effect/turf_decal/trimline/lightgrey,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -258,6 +257,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/floor,
+/obj/effect/turf_decal/trimline/white,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "cN" = (
@@ -607,6 +607,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"ff" = (
+/obj/structure/table/reinforced,
+/obj/item/circuitboard/machine/teleporter_hub,
+/obj/item/circuitboard/machine/teleporter_hub,
+/obj/item/circuitboard/computer/teleporter,
+/obj/item/circuitboard/computer/teleporter,
+/obj/item/circuitboard/machine/teleporter_station,
+/obj/item/circuitboard/machine/teleporter_station,
+/obj/item/beacon,
+/obj/item/beacon,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "fr" = (
 /obj/machinery/camera/autoname{
 	dir = 5
@@ -800,7 +812,20 @@
 	pixel_y = 7;
 	pixel_x = 3
 	},
-/obj/item/screwdriver,
+/obj/item/screwdriver{
+	pixel_y = 3
+	},
+/obj/item/screwdriver{
+	pixel_x = 2
+	},
+/obj/item/screwdriver{
+	pixel_x = 3;
+	pixel_y = -5
+	},
+/obj/item/screwdriver{
+	pixel_x = -5;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "hf" = (
@@ -1584,9 +1609,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "pB" = (
-/obj/item/circuitboard/machine/quantumpad,
-/obj/item/circuitboard/machine/quantumpad,
-/obj/structure/table/reinforced,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 22;
@@ -1899,7 +1921,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "tD" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/reagent_containers/food/snacks/carrotfries,
 /obj/item/reagent_containers/food/snacks/cubancarp,
 /obj/item/reagent_containers/food/snacks/sashimi,
@@ -1916,6 +1937,11 @@
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/bbqribs,
+/obj/structure/closet/secure_closet/freezer{
+	name = "Refrigerator";
+	desc = "A refrigerated cabinet for food."
+	},
+/obj/item/reagent_containers/food/snacks/store/bread/meat,
 /turf/open/floor/plasteel/grimy,
 /area/ship/hallway/fore)
 "uk" = (
@@ -1969,6 +1995,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/storage/box,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "uH" = (
@@ -2028,7 +2055,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/machinery/computer/upload/borg,
+/mob/living/silicon/robot/shell,
 /turf/open/floor/circuit/green/anim,
 /area/ship/science/ai_chamber)
 "vS" = (
@@ -2116,6 +2143,12 @@
 "wq" = (
 /turf/open/floor/engine/hull,
 /area/ship/external)
+"wu" = (
+/obj/structure/chair/greyscale{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "wD" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 5
@@ -2268,11 +2301,19 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ye" = (
-/obj/structure/closet/cabinet,
-/obj/item/storage/box/beanbag,
-/obj/item/gun/ballistic/shotgun/doublebarrel,
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder/constructed{
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/food/drinks/shaker{
+	pixel_x = 7
+	},
+/obj/item/kitchen/knife,
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/hallway/fore)
@@ -2411,6 +2452,12 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/table/reinforced,
+/obj/item/circuitboard/machine/telecomms/processor,
+/obj/item/circuitboard/machine/telecomms/server,
+/obj/item/circuitboard/machine/telecomms/relay,
+/obj/item/circuitboard/machine/telecomms/hub,
+/obj/item/circuitboard/machine/telecomms/bus,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "zF" = (
@@ -2994,6 +3041,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/item/storage/box,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "FK" = (
@@ -3333,7 +3381,6 @@
 	dir = 1;
 	pixel_y = -6
 	},
-/obj/effect/turf_decal/trimline/lightgrey,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
@@ -3344,6 +3391,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/floor,
+/obj/effect/turf_decal/trimline/white,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "IA" = (
@@ -3377,6 +3425,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/item/storage/box,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "IR" = (
@@ -3822,16 +3871,12 @@
 /obj/item/stack/sheet/rglass{
 	amount = 25
 	},
+/obj/item/wrench,
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
 "MH" = (
-/obj/structure/table/reinforced,
-/obj/item/circuitboard/machine/telecomms/bus,
-/obj/item/circuitboard/machine/telecomms/hub,
-/obj/item/circuitboard/machine/telecomms/relay,
-/obj/item/circuitboard/machine/telecomms/server,
-/obj/item/circuitboard/machine/telecomms/processor,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/jukebox,
+/turf/open/floor/plasteel/grimy,
 /area/ship/hallway/central)
 "MY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3930,12 +3975,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "Oh" = (
-/obj/structure/chair/stool/bar{
-	dir = 4
-	},
 /obj/item/radio/intercom{
 	dir = 1;
 	pixel_y = -23
+	},
+/obj/structure/chair/stool/bar{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -4029,7 +4074,11 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/item/radio/intercom/wideband,
+/obj/item/radio/intercom/wideband{
+	dir = 1;
+	pixel_y = 4;
+	pixel_x = -2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Ph" = (
@@ -4355,20 +4404,19 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ta" = (
-/obj/structure/table/reinforced,
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
-/obj/item/reagent_containers/food/drinks/shaker{
-	pixel_x = 7
-	},
-/obj/item/reagent_containers/glass/rag{
-	pixel_y = -6
-	},
-/obj/machinery/reagentgrinder/constructed{
-	pixel_x = -8
-	},
-/obj/item/kitchen/knife,
+/obj/structure/closet/cabinet,
+/obj/item/storage/box/beanbag,
+/obj/item/gun/ballistic/shotgun/doublebarrel,
+/obj/item/clothing/under/rank/civilian/bartender/purple,
+/obj/item/clothing/under/rank/civilian/bartender/skirt,
+/obj/item/clothing/suit/apron/purple_bartender,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/toy/figure/bartender,
+/obj/item/table_bell/brass,
+/obj/item/clothing/head/collectable/tophat,
 /turf/open/floor/plasteel/grimy,
 /area/ship/hallway/fore)
 "Tb" = (
@@ -4670,6 +4718,7 @@
 	},
 /obj/effect/turf_decal/plaque,
 /obj/item/storage/backpack/satchel/flat/with_clown,
+/obj/effect/turf_decal/floordetail/pryhole,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Wa" = (
@@ -4820,7 +4869,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/machinery/computer/upload/ai,
 /turf/open/floor/circuit/green/anim,
 /area/ship/science/ai_chamber)
 "XW" = (
@@ -6089,7 +6137,7 @@ JO
 Zq
 Lk
 eq
-eq
+am
 tk
 am
 jv
@@ -6131,7 +6179,7 @@ NC
 GO
 Lk
 pA
-pA
+wu
 tk
 am
 xS
@@ -6173,7 +6221,7 @@ NZ
 Lk
 Lk
 Xy
-Xy
+am
 tk
 am
 AF
@@ -6215,7 +6263,7 @@ Lk
 Lk
 sJ
 zB
-am
+ff
 ks
 am
 AF

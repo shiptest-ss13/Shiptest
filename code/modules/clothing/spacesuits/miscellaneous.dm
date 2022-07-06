@@ -478,6 +478,7 @@ Contains:
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/lp
 	resistance_flags = null
 	max_heat_protection_temperature = null
+	slowdown = 1.2
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/lp
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
