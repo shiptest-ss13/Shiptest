@@ -513,7 +513,7 @@
 	dir = 2;
 	pixel_y = 28
 	},
-/turf/open/floor/eighties,
+/turf/open/floor/light/colour_cycle/dancefloor_b,
 /area/ship/storage)
 "cS" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1529,7 +1529,8 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/eighties,
+/obj/machinery/computer/arcade,
+/turf/open/floor/light/colour_cycle/dancefloor_b,
 /area/ship/storage)
 "jw" = (
 /obj/structure/chair/comfy,
@@ -1753,9 +1754,16 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "ln" = (
-/obj/machinery/vending/games,
-/turf/open/floor/light/colour_cycle/dancefloor_b,
-/area/ship/storage)
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible,
+/obj/effect/turf_decal/trimline/purple/arrow_cw{
+	dir = 8
+	},
+/obj/item/geiger_counter,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "lo" = (
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
@@ -2230,6 +2238,9 @@
 /obj/effect/turf_decal/trimline/green/arrow_ccw{
 	dir = 8
 	},
+/obj/structure/sign/warning/radiation{
+	pixel_x = 32
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "oP" = (
@@ -2277,7 +2288,7 @@
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
 "oW" = (
-/obj/machinery/vending/cigarette/beach,
+/obj/machinery/vending/cigarette/syndicate,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
 "pc" = (
@@ -2420,9 +2431,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "pP" = (
-/obj/machinery/computer/arcade{
-	dir = 8
-	},
+/obj/machinery/vending/games,
 /turf/open/floor/light/colour_cycle/dancefloor_b,
 /area/ship/storage)
 "pQ" = (
@@ -2705,7 +2714,8 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/turf/open/floor/eighties,
+/obj/machinery/computer/arcade,
+/turf/open/floor/light/colour_cycle/dancefloor_b,
 /area/ship/storage)
 "rD" = (
 /obj/structure/railing,
@@ -2923,7 +2933,7 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
 	},
-/turf/open/floor/eighties,
+/turf/open/floor/light/colour_cycle/dancefloor_b,
 /area/ship/storage)
 "ta" = (
 /turf/open/floor/plating/beach/coastline_t,
@@ -3804,6 +3814,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/trimline/green/arrow_ccw,
+/obj/item/geiger_counter,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "yO" = (
@@ -4057,6 +4068,7 @@
 /obj/structure/closet/crate/miningcar,
 /obj/item/pickaxe/emergency,
 /obj/item/pickaxe/emergency,
+/obj/item/mining_scanner,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "AB" = (
@@ -4961,6 +4973,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/white/border,
+/obj/structure/sign/departments/custodian{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "GE" = (
@@ -6134,10 +6149,7 @@
 /turf/open/floor/carpet,
 /area/ship/crew/chapel)
 "PE" = (
-/obj/structure/chair/stool/bar{
-	dir = 4
-	},
-/turf/open/floor/light/colour_cycle/dancefloor_b,
+/turf/open/floor/eighties,
 /area/ship/storage)
 "PF" = (
 /obj/structure/window/reinforced/spawner/east,
@@ -6917,6 +6929,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
+"TX" = (
+/obj/structure/table,
+/obj/item/clothing/shoes/wheelys{
+	pixel_x = 4;
+	pixel_y = 9
+	},
+/obj/item/melee/skateboard/hoverboard{
+	pixel_x = -4
+	},
+/turf/open/floor/eighties,
+/area/ship/storage)
 "Ua" = (
 /obj/structure/window/plasma/reinforced/spawner,
 /obj/structure/window/plasma/reinforced/spawner/east,
@@ -7957,7 +7980,7 @@ Js
 Bl
 iP
 Ew
-bn
+ln
 bn
 eX
 yu
@@ -9682,7 +9705,7 @@ iq
 cR
 dZ
 rC
-ln
+dZ
 PL
 iq
 sa
@@ -9723,7 +9746,7 @@ yD
 Jq
 tH
 PE
-PE
+TX
 zc
 rD
 ZK
@@ -9762,7 +9785,7 @@ iq
 sT
 dZ
 jt
-pP
+dZ
 pP
 iq
 rD
