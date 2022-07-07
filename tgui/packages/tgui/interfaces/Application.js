@@ -59,7 +59,7 @@ export const Application = (props, context) => {
                   lineHeight={2}
                   onClick={() => act("submit", {
                     text: message,
-                    ckey: showCkey
+                    ckey: showCkey,
                   })}
                 />
               </Stack.Item>
