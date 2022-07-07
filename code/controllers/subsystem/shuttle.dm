@@ -475,14 +475,16 @@ SUBSYSTEM_DEF(shuttle)
 			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
 			if(!port)
 				return
-			user.client.debug_variables(port)
+			if(user.client)
+				user.client.debug_variables(port)
 			return TRUE
 
 		if("vv_ship")
 			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
 			if(!port || !port.current_ship)
 				return
-			user.client.debug_variables(port.current_ship)
+			if(user.client)
+				user.client.debug_variables(port.current_ship)
 			return TRUE
 
 		if("fly")

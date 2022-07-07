@@ -57,6 +57,8 @@ SUBSYSTEM_DEF(server_maint)
 	var/kick_inactive = CONFIG_GET(flag/kick_inactive)
 	var/afk_period = CONFIG_GET(number/afk_period)
 	for(var/client/C as anything in currentrun)
+		if(!C)
+			continue
 		if(C.is_afk() && (world.time - C.inactivity) > C.last_seen_afk)
 			SEND_SIGNAL(C.mob, COMSIG_MOB_GO_INACTIVE)
 			C.last_seen_afk = world.time
