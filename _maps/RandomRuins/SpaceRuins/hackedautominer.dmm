@@ -45,6 +45,9 @@
 "bp" = (
 /turf/template_noop,
 /area/template_noop)
+"bK" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/powered/autominer/pmaint)
 "bV" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -89,10 +92,10 @@
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "cU" = (
 /obj/effect/turf_decal/box/red,
-/mob/living/simple_animal/hostile/mining_drone/virusbot{
-	dir = 4
-	},
 /turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/powered/autominer/hall)
+"cY" = (
+/turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "cZ" = (
 /obj/machinery/door/window/northleft,
@@ -152,6 +155,9 @@
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/plating/rust,
 /area/ruin/space/autominer/sbmaint)
+"dJ" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/powered/autominer/hall)
 "dT" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
@@ -253,9 +259,6 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/robotics)
-"gt" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/autominer/hall)
 "gw" = (
 /obj/effect/turf_decal/trimline/blue/line{
 	dir = 1
@@ -270,6 +273,9 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /obj/item/stack/ore/salvage/scrapgold,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/bridge)
 "gB" = (
@@ -313,7 +319,7 @@
 /area/ruin/space/has_grav/powered/autominer/bridge)
 "hM" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/autominer/hall)
+/area/ruin/space/has_grav/powered/autominer/bridge)
 "hS" = (
 /obj/machinery/door/window/northleft,
 /obj/structure/window/reinforced{
@@ -335,7 +341,7 @@
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "hZ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/autominer/pmaint)
+/area/ruin/space/has_grav/powered/autominer/robotics)
 "ia" = (
 /obj/effect/turf_decal/trimline/bottlegreen/corner{
 	dir = 4
@@ -355,6 +361,9 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/autominer/bridge)
+"iR" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/autominer/robotics)
 "iS" = (
 /obj/machinery/door/window/northright{
 	req_access_txt = "20"
@@ -385,6 +394,9 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "Bridge"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/bridge)
@@ -505,6 +517,10 @@
 /turf/open/floor/plasteel/stairs/right{
 	dir = 1
 	},
+/area/ruin/space/has_grav/powered/autominer/hall)
+"mx" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "my" = (
 /obj/structure/lattice{
@@ -628,7 +644,7 @@
 /obj/machinery/light{
 	dir = 8;
 	bulb_colour = "#e2feff";
-	light_color = "#e2feff"
+	light_color = COLOR_VIVID_RED
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -702,8 +718,7 @@
 	},
 /obj/machinery/light{
 	dir = 4;
-	bulb_colour = "#e2feff";
-	light_color = "#e2feff"
+	light_color = COLOR_VIVID_RED
 	},
 /obj/effect/turf_decal/trimline/bar/corner{
 	dir = 8
@@ -716,9 +731,6 @@
 	},
 /turf/template_noop,
 /area/ruin/space/autominer/sbmaint)
-"rV" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/autominer/bridge)
 "sp" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -791,9 +803,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/autominer/robotics)
-"uw" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/autominer/pmaint)
 "vd" = (
 /obj/machinery/recharge_station,
 /obj/structure/window/reinforced/survival_pod{
@@ -899,7 +908,8 @@
 	},
 /obj/machinery/light/small{
 	dir = 4;
-	pixel_y = -11
+	pixel_y = -11;
+	light_color = COLOR_VIVID_RED
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
@@ -966,6 +976,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/bar/corner,
+/mob/living/simple_animal/hostile/mining_drone/virusbot{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "xB" = (
@@ -1075,6 +1088,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/autominer/bridge)
+"zD" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/autominer/robotics)
 "zU" = (
 /obj/item/stack/cable_coil/cut/cyan,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1083,7 +1100,8 @@
 /area/ruin/space/autominer/sbmaint)
 "zW" = (
 /obj/machinery/light/small{
-	dir = 4
+	dir = 4;
+	light_color = COLOR_VIVID_RED
 	},
 /obj/structure/frame/machine,
 /obj/item/stack/ore/salvage/scrapmetal,
@@ -1151,6 +1169,9 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/grunge,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "Bu" = (
@@ -1288,7 +1309,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "Gg" = (
-/turf/closed/mineral/random/asteroid,
+/turf/closed/mineral/random/high_chance,
 /area/ruin/space/has_grav/autominer/asteroid)
 "GH" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
@@ -1303,11 +1324,11 @@
 /obj/machinery/door/window/survival_pod{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only/closed{
+	dir = 8
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/robotics)
-"GJ" = (
-/turf/closed/mineral/random/high_chance,
-/area/ruin/space/has_grav/autominer/asteroid)
 "GO" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/autominer/sbmaint)
@@ -1339,7 +1360,8 @@
 /obj/structure/catwalk/over,
 /obj/machinery/light/small{
 	dir = 8;
-	pixel_y = -16
+	pixel_y = -16;
+	light_color = COLOR_VIVID_RED
 	},
 /obj/item/weldingtool/empty,
 /turf/open/floor/plating/rust,
@@ -1426,9 +1448,6 @@
 	},
 /obj/effect/turf_decal/trimline/bar/corner{
 	dir = 8
-	},
-/mob/living/simple_animal/hostile/mining_drone/virusbot{
-	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/autominer/robotics)
@@ -1533,9 +1552,6 @@
 /obj/effect/turf_decal/trimline/bar/line,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/hall)
-"MF" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/autominer/bridge)
 "MI" = (
 /obj/effect/turf_decal/trimline/bar/corner{
 	dir = 1
@@ -1625,6 +1641,9 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 1
 	},
+/mob/living/simple_animal/hostile/mining_drone/virusbot{
+	dir = 1
+	},
 /turf/open/floor/plasteel/stairs/old,
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "Oq" = (
@@ -1669,7 +1688,8 @@
 /area/ruin/space/autominer/external)
 "OK" = (
 /obj/machinery/light/small{
-	dir = 8
+	dir = 8;
+	light_color = COLOR_VIVID_RED
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -1702,7 +1722,8 @@
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "Py" = (
 /obj/machinery/light/small{
-	dir = 1
+	dir = 1;
+	light_color = COLOR_VIVID_RED
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
@@ -1729,11 +1750,13 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/machinery/light{
 	dir = 4;
-	bulb_colour = "#e2feff";
-	light_color = "#e2feff"
+	light_color = COLOR_VIVID_RED
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/autominer/bridge)
+"PC" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/autominer/pmaint)
 "PI" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
@@ -1820,7 +1843,7 @@
 "QH" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/autominer/hall)
+/area/ruin/space/has_grav/powered/autominer/bridge)
 "QI" = (
 /obj/structure/cable/green{
 	icon_state = "0-2"
@@ -1840,8 +1863,7 @@
 	},
 /obj/machinery/light{
 	dir = 8;
-	bulb_colour = "#e2feff";
-	light_color = "#e2feff"
+	light_color = COLOR_VIVID_RED
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/autominer/bridge)
@@ -1888,10 +1910,15 @@
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/hall)
+"RZ" = (
+/turf/closed/mineral/random/asteroid,
+/area/ruin/space/has_grav/autominer/asteroid)
+"Sl" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/powered/autominer/bridge)
 "So" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline,
-/obj/structure/railing,
 /obj/item/stack/ore/silver{
 	amount = 10
 	},
@@ -1901,6 +1928,7 @@
 /obj/item/stack/ore/iron{
 	amount = 15
 	},
+/obj/structure/railing,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "Sw" = (
@@ -1908,7 +1936,8 @@
 	dir = 6
 	},
 /obj/machinery/light/small{
-	dir = 4
+	dir = 4;
+	light_color = COLOR_VIVID_RED
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/powered/autominer/robotics)
@@ -1937,10 +1966,6 @@
 /obj/effect/turf_decal/trimline/bar/line,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/bridge)
-"Ug" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/autominer/robotics)
 "Ul" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -1968,7 +1993,8 @@
 	light_color = "#e2feff"
 	},
 /obj/effect/turf_decal/techfloor{
-	dir = 6
+	dir = 6;
+	light_color = COLOR_VIVID_RED
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/robotics)
@@ -2055,9 +2081,6 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/rust,
 /area/ruin/space/autominer/sbmaint)
-"Xv" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/autominer/robotics)
 "Xx" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -2079,9 +2102,6 @@
 /obj/item/stock_parts/cell,
 /obj/item/stock_parts/cell,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/powered/autominer/robotics)
-"XB" = (
-/turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "XM" = (
 /obj/structure/lattice{
@@ -2116,10 +2136,6 @@
 "Yt" = (
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/autominer/hall)
-"Yu" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/autominer/bridge)
 "YZ" = (
 /obj/structure/grille,
 /obj/item/shard,
@@ -2138,20 +2154,20 @@ bp
 bp
 bp
 oS
-Gg
-Gg
+RZ
+RZ
 oS
-Gg
+RZ
 bp
 bp
 bp
 bp
 bp
 bp
-Gg
-Gg
+RZ
+RZ
 oS
-Gg
+RZ
 bp
 bp
 bp
@@ -2181,24 +2197,24 @@ bp
 bp
 bp
 oS
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 oS
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 bp
 bp
 bp
@@ -2226,24 +2242,24 @@ bp
 bp
 oS
 oS
-Gg
-GJ
-GJ
-GJ
-GJ
-GJ
+RZ
 Gg
 Gg
 Gg
 Gg
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
+Gg
+RZ
+RZ
+RZ
+RZ
 Gg
 Gg
+Gg
+Gg
+Gg
+Gg
+RZ
+RZ
 oS
 bp
 bp
@@ -2268,28 +2284,28 @@ bp
 bp
 bp
 bp
+RZ
+RZ
+RZ
+RZ
 Gg
 Gg
 Gg
 Gg
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
 Gg
 Gg
 Gg
 Gg
-GJ
-GJ
-GJ
+Gg
+RZ
+RZ
+RZ
+RZ
 Gg
 Gg
+Gg
+RZ
+RZ
 bp
 bp
 bp
@@ -2312,30 +2328,30 @@ bp
 bp
 bp
 bp
-Gg
-Gg
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
+RZ
+RZ
 Gg
 Gg
 Gg
 Gg
 Gg
 Gg
+Gg
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 SB
+RZ
+RZ
+RZ
 Gg
 Gg
 Gg
-GJ
-GJ
-GJ
-Gg
-Gg
+RZ
+RZ
 bp
 bp
 bp
@@ -2357,31 +2373,31 @@ bp
 bp
 bp
 bp
-Gg
-GJ
-GJ
+RZ
 Gg
 Gg
+RZ
+RZ
+RZ
 Gg
-GJ
-GJ
-GJ
 Gg
+Gg
+RZ
 oS
 oS
 oS
-Gg
-Gg
+RZ
+RZ
 oS
 oS
 oS
+RZ
 Gg
-GJ
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
 bp
 bp
 bp
@@ -2402,29 +2418,29 @@ bp
 bp
 bp
 oS
+RZ
 Gg
-GJ
-GJ
 Gg
+RZ
 SB
+RZ
 Gg
-GJ
-GJ
-GJ
 Gg
+Gg
+RZ
 oS
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 oS
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
 oS
-Gg
+RZ
 oS
 bp
 bp
@@ -2446,27 +2462,27 @@ bp
 bp
 bp
 oS
+RZ
+RZ
 Gg
 Gg
-GJ
-GJ
-Gg
+RZ
 oS
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
 oS
+RZ
+RZ
+RZ
 Gg
 Gg
-Gg
-GJ
-GJ
-Gg
+RZ
 oS
-Gg
-Gg
+RZ
+RZ
 oS
 oS
 oS
@@ -2490,12 +2506,25 @@ bp
 (9,1,1) = {"
 bp
 bp
+RZ
+RZ
+RZ
 Gg
 Gg
+RZ
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+RZ
 Gg
-GJ
-GJ
 Gg
+RZ
 oS
 oS
 oS
@@ -2503,31 +2532,18 @@ oS
 oS
 oS
 oS
-oS
-oS
-Gg
-GJ
-GJ
-Gg
-oS
-oS
-oS
-oS
-oS
-oS
-oS
-hM
-QH
+cY
+mx
 YZ
-gt
-gt
+dJ
+dJ
 sB
-gt
-rV
-rV
-rV
-MF
-rV
+dJ
+hM
+hM
+hM
+Sl
+hM
 bp
 bp
 bp
@@ -2535,33 +2551,33 @@ bp
 (10,1,1) = {"
 bp
 bp
+RZ
+RZ
 Gg
 Gg
-GJ
-GJ
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 oS
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 oS
 oS
 oS
-hM
-gt
-gt
+cY
+dJ
+dJ
 vz
 CL
 Po
@@ -2572,39 +2588,39 @@ Hu
 Ro
 zb
 hs
-MF
-rV
+Sl
+hM
 bp
 bp
 "}
 (11,1,1) = {"
 bp
-Gg
-Gg
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-Gg
-oS
-oS
-oS
-oS
+RZ
+RZ
 Gg
 Gg
 Gg
+Gg
+Gg
+Gg
+Gg
+Gg
+Gg
+Gg
+Gg
+Gg
+RZ
 oS
 oS
 oS
-gt
+oS
+RZ
+RZ
+RZ
+oS
+oS
+oS
+dJ
 eV
 nj
 cF
@@ -2613,26 +2629,19 @@ So
 BG
 WS
 Yt
-rV
+hM
 Oq
 TB
 ia
 lH
-MF
+Sl
 Ov
 Df
 "}
 (12,1,1) = {"
 bp
-Gg
-Gg
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
+RZ
+RZ
 Gg
 Gg
 Gg
@@ -2640,11 +2649,18 @@ Gg
 Gg
 Gg
 Gg
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 oS
 oS
 oS
-Gg
-Gg
+RZ
+RZ
 oS
 oS
 oS
@@ -2658,33 +2674,33 @@ Dh
 vf
 Me
 Os
-rV
+hM
 UM
 bV
 Oi
 og
-Yu
+QH
 bp
 bp
 "}
 (13,1,1) = {"
 oS
+RZ
+RZ
 Gg
 Gg
-GJ
-GJ
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 oS
 oS
 oS
 oS
-Gg
-Gg
+RZ
+RZ
 oS
 oS
 oS
@@ -2708,33 +2724,33 @@ Qm
 Fx
 oI
 MI
-Yu
+QH
 bp
 bp
 "}
 (14,1,1) = {"
 bp
+RZ
+RZ
 Gg
 Gg
-GJ
-GJ
-Gg
+RZ
 oS
 oS
 oS
-Gg
-Gg
+RZ
+RZ
 oS
-Gg
-Gg
-oS
+RZ
+RZ
 oS
 oS
 oS
 oS
 oS
-Gg
-Gg
+oS
+RZ
+RZ
 oS
 oS
 oS
@@ -2748,43 +2764,43 @@ ml
 RR
 kL
 Nm
-rV
+hM
 RA
 jA
 gw
 jE
-Yu
+QH
 bp
 bp
 "}
 (15,1,1) = {"
 bp
+RZ
+RZ
+RZ
 Gg
-Gg
-Gg
-GJ
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
 oS
-Gg
-Gg
+RZ
+RZ
 oS
-Gg
-Gg
-Gg
-Gg
-Gg
-oS
-oS
-oS
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
 oS
 oS
 oS
+RZ
+RZ
 oS
-gt
+oS
+oS
+oS
+dJ
 Py
 LR
 mf
@@ -2798,52 +2814,52 @@ RA
 Ry
 oA
 Lo
-MF
+Sl
 Ov
 Df
 "}
 (16,1,1) = {"
-Gg
-Gg
+RZ
+RZ
 oS
+RZ
 Gg
-GJ
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
 oS
-Gg
-Gg
+RZ
+RZ
 oS
-Gg
-GJ
-GJ
+RZ
 Gg
 Gg
-Gg
+RZ
+RZ
+RZ
 oS
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
 oS
 oS
 oS
-hM
-gt
-gt
+cY
+dJ
+dJ
 eG
 xk
 gB
 qY
 wu
 xm
-rV
+hM
 PB
 ic
 Ul
-MF
-rV
+Sl
+hM
 bp
 bp
 "}
@@ -2851,85 +2867,85 @@ bp
 oS
 oS
 oS
+RZ
 Gg
-GJ
-Gg
+RZ
 Qf
 oS
 oS
-Gg
-Gg
+RZ
+RZ
 oS
-Gg
-GJ
-GJ
-GJ
-GJ
+RZ
 Gg
 Gg
 Gg
-GJ
-GJ
+Gg
+RZ
+RZ
+RZ
 Gg
 Gg
-oS
-oS
+RZ
+RZ
 oS
 oS
-hM
+oS
+oS
+cY
 fJ
-QH
-gt
-gt
+mx
+dJ
+dJ
 cB
-gt
-rV
-rV
-rV
-MF
-rV
+dJ
+hM
+hM
+hM
+Sl
+hM
 bp
 bp
 bp
 "}
 (18,1,1) = {"
+RZ
+RZ
+RZ
+RZ
 Gg
-Gg
-Gg
-Gg
-GJ
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
 oS
-Gg
-Gg
+RZ
+RZ
 oS
-Gg
-Gg
-GJ
-GJ
-GJ
-GJ
-Gg
-Gg
-GJ
-GJ
-GJ
+RZ
+RZ
 Gg
 Gg
 Gg
+Gg
+RZ
+RZ
+Gg
+Gg
+Gg
+RZ
+RZ
+RZ
 oS
 oS
 oS
 oS
 bp
-uw
-hZ
+PC
+bK
 IC
 HS
 AN
-hZ
+bK
 bp
 bp
 bp
@@ -2939,43 +2955,43 @@ bp
 "}
 (19,1,1) = {"
 bp
+RZ
+RZ
+RZ
 Gg
-Gg
-Gg
-GJ
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
 oS
-Gg
-Gg
+RZ
+RZ
 oS
+RZ
+RZ
+RZ
+RZ
 Gg
 Gg
 Gg
 Gg
-GJ
-GJ
-GJ
-GJ
+RZ
+RZ
+RZ
 Gg
 Gg
-Gg
-GJ
-GJ
-Gg
-Gg
+RZ
+RZ
 oS
-Gg
-Gg
+RZ
+RZ
 bp
 bp
-hZ
+bK
 ot
 PI
 eA
-hZ
-uw
+bK
+PC
 bp
 bp
 bp
@@ -2985,42 +3001,42 @@ bp
 (20,1,1) = {"
 bp
 bp
+RZ
+RZ
 Gg
 Gg
-GJ
-GJ
-GJ
 Gg
+RZ
 oS
 oS
 oS
 oS
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-GJ
-GJ
-Gg
+RZ
 oS
-Gg
-GJ
-GJ
+RZ
 Gg
 Gg
+RZ
+RZ
 oS
-Gg
+RZ
 bp
 bp
 bp
-uw
-hZ
+PC
+bK
 NB
 wb
 KQ
-hZ
+bK
 bp
 bp
 bp
@@ -3029,44 +3045,44 @@ bp
 "}
 (21,1,1) = {"
 bp
+RZ
+RZ
+RZ
 Gg
 Gg
 Gg
-GJ
-GJ
-GJ
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 oS
 oS
 oS
+RZ
 Gg
-GJ
-GJ
 Gg
+RZ
 oS
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
 oS
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
 bp
 bp
-hZ
+bK
 dd
 oz
 aW
-hZ
-uw
+bK
+PC
 bp
 bp
 bp
@@ -3074,44 +3090,44 @@ bp
 "}
 (22,1,1) = {"
 bp
-Gg
+RZ
 oS
+RZ
 Gg
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
 Gg
+Gg
+Gg
+Gg
+Gg
+Gg
+Gg
+Gg
+RZ
 oS
-Gg
+RZ
 oS
-Gg
-Gg
-Gg
-Gg
-oS
-oS
-oS
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
 oS
 oS
-Gg
-Gg
+oS
+RZ
+RZ
+oS
+oS
+RZ
+RZ
 bp
 bp
 bp
-uw
-hZ
+PC
+bK
 zX
 FN
 xQ
-hZ
+bK
 bp
 bp
 bp
@@ -3120,127 +3136,127 @@ bp
 (23,1,1) = {"
 bp
 oS
+RZ
+RZ
 Gg
 Gg
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
 Gg
+Gg
+Gg
+Gg
+Gg
+Gg
+Gg
+RZ
 oS
-Gg
-oS
-oS
+RZ
 oS
 oS
 oS
 oS
-Gg
 oS
-Gg
-Gg
 oS
-Gg
-Gg
-Gg
+RZ
+oS
+RZ
+RZ
+oS
+RZ
+RZ
+RZ
 bp
 bp
 bp
 bp
-hZ
+bK
 wC
 kt
 Ao
-hZ
-uw
+bK
+PC
 bp
 bp
 bp
 "}
 (24,1,1) = {"
 bp
-Gg
+RZ
 oS
+RZ
+RZ
 Gg
 Gg
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
 Gg
+Gg
+Gg
+Gg
+Gg
+Gg
+RZ
 oS
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 oS
-Gg
+RZ
 oS
-Gg
-Gg
+RZ
+RZ
 oS
-Gg
-Gg
+RZ
+RZ
 bp
 bp
 bp
-XB
-Xv
-Xv
-XB
+iR
+hZ
+hZ
+iR
 Bi
-XB
-XB
-XB
-Xv
-XB
+iR
+iR
+iR
+hZ
+iR
 bp
 "}
 (25,1,1) = {"
 bp
+RZ
+RZ
+RZ
+RZ
 Gg
 Gg
 Gg
 Gg
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
 Gg
+Gg
+Gg
+Gg
+RZ
 oS
+RZ
 Gg
-GJ
-GJ
 Gg
-oS
-oS
-oS
-Gg
+RZ
 oS
 oS
 oS
+RZ
 oS
-Gg
-Gg
+oS
+oS
+oS
+RZ
+RZ
 bp
 PL
-Xv
-Xv
+hZ
+hZ
 MZ
 pw
 Fl
@@ -3249,38 +3265,38 @@ kQ
 fH
 pn
 wN
-Xv
-XB
+hZ
+iR
 "}
 (26,1,1) = {"
 bp
 bp
-Gg
+RZ
 oS
+RZ
+RZ
 Gg
 Gg
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
 Gg
+Gg
+Gg
+Gg
+Gg
+RZ
 oS
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 bp
 bp
 bp
@@ -3295,36 +3311,36 @@ Yb
 lm
 tu
 yd
-Ug
+zD
 "}
 (27,1,1) = {"
 bp
 bp
 bp
-Gg
+RZ
 oS
+RZ
+RZ
 Gg
 Gg
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
 Gg
+Gg
+Gg
+Gg
+RZ
 oS
 oS
 tW
-Gg
-GJ
-GJ
-GJ
-GJ
+RZ
 Gg
 Gg
 Gg
 Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
 bp
 bp
 bp
@@ -3340,7 +3356,7 @@ cK
 ar
 Kk
 vd
-Ug
+zD
 "}
 (28,1,1) = {"
 bp
@@ -3348,25 +3364,25 @@ bp
 bp
 bp
 oS
-Gg
-Gg
-Gg
-GJ
-GJ
-GJ
-GJ
-GJ
+RZ
+RZ
+RZ
 Gg
 Gg
 Gg
 Gg
 Gg
-GJ
-GJ
-GJ
-GJ
+RZ
+RZ
+RZ
+RZ
+RZ
 Gg
 Gg
+Gg
+Gg
+RZ
+RZ
 oS
 oS
 bp
@@ -3374,8 +3390,8 @@ bp
 bp
 PL
 Ov
-Xv
-Xv
+hZ
+hZ
 un
 Px
 IB
@@ -3385,7 +3401,7 @@ HK
 SA
 hV
 hV
-Xv
+hZ
 "}
 (29,1,1) = {"
 bp
@@ -3393,24 +3409,24 @@ bp
 bp
 bp
 bp
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 Gg
 Gg
 Gg
 Gg
 Gg
 Gg
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
-GJ
 Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
 bp
 bp
 bp
@@ -3430,7 +3446,7 @@ qF
 GH
 bh
 Qy
-Ug
+zD
 "}
 (30,1,1) = {"
 bp
@@ -3440,19 +3456,19 @@ bp
 bp
 bp
 bp
-Gg
-Gg
+RZ
+RZ
 oS
+RZ
+RZ
 Gg
-Gg
-GJ
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
+RZ
 oS
 bp
 bp
@@ -3475,7 +3491,7 @@ fL
 jh
 pC
 oo
-Ug
+zD
 "}
 (31,1,1) = {"
 bp
@@ -3489,14 +3505,14 @@ bp
 oS
 oS
 oS
-Gg
-Gg
-Gg
-Gg
+RZ
+RZ
+RZ
+RZ
 bp
 bp
 oS
-Gg
+RZ
 oS
 bp
 bp
@@ -3509,8 +3525,8 @@ bp
 bp
 bp
 PL
-Xv
-Xv
+hZ
+hZ
 Wz
 Sw
 vR
@@ -3519,8 +3535,8 @@ XA
 fn
 yC
 Uu
-Xv
-XB
+hZ
+iR
 "}
 (32,1,1) = {"
 bp
@@ -3535,7 +3551,7 @@ bp
 bp
 bp
 bp
-Gg
+RZ
 bp
 bp
 bp
@@ -3555,15 +3571,15 @@ bp
 bp
 bp
 bp
-XB
-Xv
-XB
-XB
-XB
-XB
-Ug
-Ug
-XB
-XB
+iR
+hZ
+iR
+iR
+iR
+iR
+zD
+zD
+iR
+iR
 bp
 "}
