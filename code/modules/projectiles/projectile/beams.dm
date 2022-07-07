@@ -130,6 +130,9 @@
 /obj/projectile/beam/pulse/shotgun
 	damage = 40
 
+/obj/projectile/beam/pulse/condor
+	range = 128
+
 /obj/projectile/beam/pulse/heavy
 	name = "heavy pulse laser"
 	icon_state = "pulse1_bl"
