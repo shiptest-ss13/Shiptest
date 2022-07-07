@@ -48,8 +48,8 @@
 	color_vary = 0.25
 
 /datum/overmap/star/dwarf/brown
-	token_desc = "Clocking in at only several dozen septillion tons, this body is much lighter than true stars. \
-Known as a \"brown dwarf\", it is unable to sustain hydrogen fusion, and is warmed by deuterium fusion instead."
+	token_desc = "Clocking in at only several dozen septillion tons, this body is much lighter than true stars. " +\
+				"Known as a \"brown dwarf\", it is unable to sustain hydrogen fusion, and is warmed by deuterium fusion instead."
 	spectral_type = STAR_T
 	color_vary = 1
 
