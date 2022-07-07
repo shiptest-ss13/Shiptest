@@ -12,6 +12,7 @@
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_ENGINEERING
+	officer = TRUE
 	wiki_page = "Chief_Engineer" //WS Edit - Wikilinks/Warning
 	alt_titles = list("Engineering Coordinator", "Maintenance Supervisor")
 
