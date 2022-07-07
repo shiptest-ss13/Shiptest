@@ -93,3 +93,9 @@
 	id = "demonlab"
 	description = "Some abandoned research outpost"
 	suffix = "icemoon_demonlab.dmm"
+
+/datum/map_template/ruin/icemoon/gasstation
+	name = "Gas Station"
+	id = "gasstation"
+	description = "A rusted out gas station, now home to some very angry folks."
+	suffix = "icemoon_gasstation.dmm"
