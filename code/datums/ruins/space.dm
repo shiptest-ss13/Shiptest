@@ -307,3 +307,9 @@
 	suffix = "lab4071.dmm"
 	name = "Syndicate Laboratory 4071"
 	description = "A Syndicate laboratory run by syndicate scientists."
+
+/datum/map_template/ruin/space/autominer
+	id = "autominer"
+	suffix = "hackeddroneship.dmm"
+	name = "Auto-Miner STXNET"
+	description = "A hacked automated mining ship, riddled with viruses."

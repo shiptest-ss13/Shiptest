@@ -577,3 +577,34 @@
 	name = "Syndicate Laboratory 4071 Surrounding Area"
 	icon_state = "dk_yellow"
 	color = "#26773a88"
+
+//Hacked Auto-Miner
+
+/area/ruin/space/autominer/sbmaint
+	name = "S%$^$##"
+	icon_state = "smaint"
+
+/area/ruin/space/autominer/external
+	name = "%*&$@ $!*$#"
+	icon_state = "space_near"
+
+/area/ruin/space/has_grav/autominer/asteroid
+	name = "Asteroid"
+	icon_state = "dk_yellow"
+	color = "#93b0ee88"
+
+/area/ruin/space/has_grav/powered/autominer/hall
+	name = "%*!$#^$&%*
+	icon_state = "hallC"
+
+/area/ruin/space/has_grav/powered/autominer/pmaint
+	name = "$@!%$#"
+	icon_state = "pmaint"
+
+/area/ruin/space/has_grav/powered/autominer/robotics
+	name = "*!!$&#@"
+	icon_state = "purple"
+
+/area/ruin/space/has_grav/powered/autominer/bridge
+	name = "@!%$&*!@"
+	icon_state = "bridge"
