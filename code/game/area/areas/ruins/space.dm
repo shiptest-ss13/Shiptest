@@ -580,43 +580,34 @@
 
 //Hacked Auto-Miner
 
-
-
-/area/ruin/space/autominer/external
-	name = "%*&$@ $!*$#"
-	icon_state = "space_near"
-	vacuum = 1
-
 /area/ruin/space/has_grav/autominer/asteroid
 	name = "Asteroid"
 	icon_state = "dk_yellow"
 	color = "#93b0ee88"
 
-/area/ruin/space/has_grav/powered/wautominer/sbmaint
+/area/ruin/space/has_grav/powered/autominer
+	fire = 1
+	vacuum = TRUE
+
+/area/ruin/space/has_grav/powered/autominer/sbmaint
 	name = "S%$^$##"
 	icon_state = "smaint"
-	fire = 1
-	vacuum = 1
+
 /area/ruin/space/has_grav/powered/autominer/hall
 	name = "%*!$#^$&%*"
 	icon_state = "hallC"
-	fire = 1
-	vacuum = 1
+
 
 /area/ruin/space/has_grav/powered/autominer/pmaint
 	name = "$@!%$#"
 	icon_state = "pmaint"
-	fire = 1
-	vacuum = 1
+
 
 /area/ruin/space/has_grav/powered/autominer/robotics
 	name = "*!!$&#@"
 	icon_state = "purple"
-	fire = 1
-	vacuum = 1
 
 /area/ruin/space/has_grav/powered/autominer/bridge
 	name = "@!%$&*!@"
 	icon_state = "bridge"
-	fire = 1
-	vacuum = 1
+
