@@ -306,10 +306,10 @@
 	id = "lab4071"
 	suffix = "lab4071.dmm"
 	name = "Syndicate Laboratory 4071"
-	description = "A Syndicate laboratory run by syndicate scientists."
+description = "A Syndicate laboratory run by syndicate scientists."
 
 /datum/map_template/ruin/space/autominer
 	id = "autominer"
 	suffix = "hackedautominer.dmm"
-	name = "D@!!RESS#& A*TO-#INER "
+	name = "Auto-Miner #!^$%%#@ "
 	description = "A hacked automated mining ship, riddled with malfunctioning mining bots."
