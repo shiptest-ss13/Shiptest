@@ -594,7 +594,7 @@
 	color = "#93b0ee88"
 
 /area/ruin/space/has_grav/powered/autominer/hall
-	name = "%*!$#^$&%*
+	name = "%*!$#^$&%*"
 	icon_state = "hallC"
 
 /area/ruin/space/has_grav/powered/autominer/pmaint
