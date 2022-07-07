@@ -263,11 +263,11 @@
 	},
 /obj/effect/decal/cleanable/robot_debris,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/oil,
+/obj/item/stack/ore/salvage/scrapgold,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/oil,
-/obj/item/stack/ore/salvage/scrapgold,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 1
 	},
@@ -278,7 +278,9 @@
 	dir = 8
 	},
 /obj/structure/closet/crate,
-/obj/structure/railing,
+/obj/structure/railing{
+	pixel_y = -8
+	},
 /obj/effect/turf_decal/corner/bar/full,
 /obj/effect/turf_decal/industrial/outline,
 /obj/item/stack/ore/diamond{
@@ -312,9 +314,6 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/bridge)
-"hu" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/autominer/sbmaint)
 "hM" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/autominer/bridge)
@@ -416,9 +415,7 @@
 /obj/machinery/door/window/survival_pod{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/mining_drone/virusbot{
-	dir = 4
-	},
+/mob/living/simple_animal/hostile/abandoned_minebot/hacked,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/bridge)
 "jG" = (
@@ -490,11 +487,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "lH" = (
-/obj/structure/AIcore/deactivated{
-	icon_state = "ai-red_dead";
-	name = "Hacked AI";
-	desc = "It appears this AI has some sort of virus; you watch as it is stuck in a constant state of crashing and restarting."
-	},
+/obj/structure/AIcore/deactivated/hacked,
 /turf/open/floor/circuit/red,
 /area/ruin/space/has_grav/powered/autominer/bridge)
 "mf" = (
@@ -756,7 +749,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/black/line,
-/obj/structure/door_assembly/door_assembly_grunge,
+/obj/structure/door_assembly/door_assembly_grunge{
+	anchored = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "sS" = (
@@ -778,10 +773,6 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/robotics)
-"tW" = (
-/mob/living/simple_animal/hostile/mining_drone/virusbot,
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/space/has_grav/autominer/asteroid)
 "un" = (
 /obj/structure/catwalk/over,
 /obj/machinery/power/apc/auto_name/north,
@@ -823,6 +814,9 @@
 	},
 /obj/effect/turf_decal/trimline/black/line{
 	dir = 6
+	},
+/obj/structure/railing/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/hall)
@@ -950,6 +944,7 @@
 /obj/effect/turf_decal/corner/bar/full,
 /obj/effect/turf_decal/box/red,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/abandoned_minebot/hacked,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "xm" = (
@@ -973,9 +968,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/bar/corner,
-/mob/living/simple_animal/hostile/mining_drone/virusbot{
-	dir = 4
-	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "xB" = (
@@ -985,9 +977,7 @@
 /area/ruin/space/has_grav/powered/autominer/sbmaint)
 "xQ" = (
 /obj/structure/catwalk/over,
-/mob/living/simple_animal/hostile/mining_drone/virusbot{
-	dir = 1
-	},
+/mob/living/simple_animal/hostile/abandoned_minebot/hacked,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/autominer/pmaint)
 "xU" = (
@@ -1140,7 +1130,9 @@
 /area/ruin/space/has_grav/powered/autominer/pmaint)
 "AT" = (
 /obj/structure/closet/crate,
-/obj/structure/railing,
+/obj/structure/railing{
+	pixel_y = -8
+	},
 /obj/effect/turf_decal/corner/bar/full,
 /obj/effect/turf_decal/industrial/outline,
 /obj/item/stack/ore/plasma{
@@ -1197,7 +1189,7 @@
 /obj/effect/decal/cleanable/glass,
 /obj/effect/turf_decal/box/red,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/mining_drone/virusbot,
+/mob/living/simple_animal/hostile/abandoned_minebot/hacked,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "Da" = (
@@ -1228,7 +1220,7 @@
 /area/ruin/space/has_grav/powered/autominer/hall)
 "DP" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/mining_drone/virusbot,
+/mob/living/simple_animal/hostile/abandoned_minebot/hacked,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "ET" = (
@@ -1241,6 +1233,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/hall)
+"Fd" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/autominer/sbmaint)
 "Fl" = (
 /obj/structure/railing,
 /obj/machinery/power/smes/magical,
@@ -1635,10 +1630,10 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/survival_pod{
-	dir = 1
+	dir = 4
 	},
 /obj/structure/window/reinforced/survival_pod{
-	dir = 4
+	dir = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/bridge)
@@ -1646,9 +1641,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/mining_drone/virusbot{
-	dir = 1
-	},
+/mob/living/simple_animal/hostile/abandoned_minebot/hacked,
 /turf/open/floor/plasteel/stairs/old,
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "Oq" = (
@@ -1703,8 +1696,10 @@
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "Po" = (
 /obj/machinery/ore_silo,
-/obj/structure/railing,
 /obj/effect/turf_decal/industrial/outline,
+/obj/structure/railing{
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "Px" = (
@@ -1778,12 +1773,6 @@
 	},
 /turf/template_noop,
 /area/ruin/space/has_grav/powered/autominer/robotics)
-"Qf" = (
-/mob/living/simple_animal/hostile/mining_drone/virusbot{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/space/has_grav/autominer/asteroid)
 "Qm" = (
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
@@ -1809,6 +1798,9 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/bridge)
+"Qs" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/powered/autominer/sbmaint)
 "Qy" = (
 /obj/structure/closet{
 	name = "Drone Closet"
@@ -1908,6 +1900,9 @@
 /obj/effect/turf_decal/trimline/bar/line{
 	dir = 10
 	},
+/obj/structure/railing/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "So" = (
@@ -1922,7 +1917,9 @@
 /obj/item/stack/ore/iron{
 	amount = 15
 	},
-/obj/structure/railing,
+/obj/structure/railing{
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "Sw" = (
@@ -1947,9 +1944,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "SB" = (
-/mob/living/simple_animal/hostile/mining_drone/virusbot{
-	dir = 8
-	},
+/mob/living/simple_animal/hostile/abandoned_minebot/hacked,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav/autominer/asteroid)
 "TB" = (
@@ -1966,8 +1961,6 @@
 /obj/effect/turf_decal/corner_techfloor_grid,
 /obj/item/dronespeak_manual,
 /obj/item/aiModule/reset,
-/obj/item/aiModule/supplied/freeform,
-/obj/item/aiModule/core/full/tyrant,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 1
 	},
@@ -1977,6 +1970,7 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/robot_debris/limb,
+/obj/item/aiModule/core/full/glitched,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/bridge)
 "Uu" = (
@@ -2065,9 +2059,6 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/mining_drone/virusbot{
-	dir = 8
-	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "Xq" = (
@@ -2098,15 +2089,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "XM" = (
-/obj/structure/lattice{
-	icon_state = "lattice-79"
-	},
 /obj/item/stack/ore/salvage/scrapmetal,
-/turf/open/space/basic,
+/turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/autominer/hall)
-"XT" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/autominer/sbmaint)
 "Yb" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 5
@@ -2131,6 +2116,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "Yt" = (
+/mob/living/simple_animal/hostile/abandoned_minebot/hacked,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/autominer/hall)
 "YZ" = (
@@ -2358,7 +2344,7 @@ Jy
 VN
 zU
 ad
-hu
+Qs
 bp
 bp
 bp
@@ -2398,12 +2384,12 @@ Gg
 bp
 bp
 bp
-XT
-hu
+Fd
+Qs
 VH
 fl
 eh
-hu
+Qs
 bp
 bp
 bp
@@ -2443,12 +2429,12 @@ bp
 bp
 bp
 bp
-hu
+Qs
 wQ
 Ln
 UO
-hu
-XT
+Qs
+Fd
 bp
 bp
 bp
@@ -2487,8 +2473,8 @@ oS
 oS
 bp
 bp
-XT
-hu
+Fd
+Qs
 UH
 dq
 MX
@@ -2732,7 +2718,7 @@ Gg
 Ly
 Ly
 Gg
-oS
+SB
 oS
 oS
 Gg
@@ -2867,7 +2853,7 @@ oS
 Gg
 Ly
 Gg
-Qf
+oS
 oS
 oS
 Gg
@@ -3327,7 +3313,7 @@ Ly
 Gg
 oS
 oS
-tW
+SB
 Gg
 Ly
 Ly

@@ -45,10 +45,6 @@
 
 /mob/living/simple_animal/hostile/mining_drone/rockplanet
 
-/mob/living/simple_animal/hostile/mining_drone/virusbot
-	name = "Hacked minebot"
-	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/ore/diamond)
-
 /mob/living/simple_animal/hostile/mining_drone/Initialize()
 	. = ..()
 	stored_gun = new(src)
