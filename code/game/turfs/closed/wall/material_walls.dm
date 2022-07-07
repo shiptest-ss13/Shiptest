@@ -17,3 +17,7 @@
 /turf/closed/wall/material/mat_update_desc(mat)
 	desc = "A huge chunk of [mat] used to separate rooms."
 
+/turf/closed/wall/material/yesdiag
+	icon_state = "materialwall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
+
