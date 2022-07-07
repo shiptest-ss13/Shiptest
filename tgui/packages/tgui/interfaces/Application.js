@@ -4,8 +4,8 @@ import { Button, TextArea, Section, BlockQuote, NoticeBox, LabeledList, Stack } 
 
 export const Application = (props, context) => {
   const { act, data } = useBackend(context);
-  const [ message, setMessage ] = useLocalState(context, 'message', '');
-  const [ showCkey, setShowCkey ] = useLocalState(context, 'showCkey', false)
+  const [message, setMessage] = useLocalState(context, 'message', '');
+  const [showCkey, setShowCkey] = useLocalState(context, 'showCkey', false);
   const { ship_name, player_name } = data;
 
   return (
@@ -18,10 +18,12 @@ export const Application = (props, context) => {
         <Stack fill vertical>
           <Stack.Item grow>
             <p>
-              This ship is <b>application-only.</b> To join, your application must be
-              approved by the current ship owner. This is an <b>OOC</b> utility.
+              This ship is <b>application-only.</b> To join, your application
+              must be approved by the current ship owner. This is an <b>OOC</b>
+              utility.
               <br /><br />
-              <b>You only get one application per ship. Different characters use the same application.</b>
+              <b>You only get one application per ship. Different characters
+              use the same application.</b>
               <br /><br />
               Applications are sorted via ckey, but your ckey is only shown
               to the ship owner if this setting is enabled:
@@ -29,8 +31,7 @@ export const Application = (props, context) => {
               <Button.Checkbox
                 content="Show ckey to ship owner"
                 checked={showCkey}
-                onClick={() => setShowCkey(!showCkey)}
-              />
+                onClick={() => setShowCkey(!showCkey)} />
             </p>
             <TextArea
               value={message}
@@ -38,7 +39,7 @@ export const Application = (props, context) => {
               height={25}
               maxLength={1024}
               placeholder="Please enter your application. No more than 1024 characters."
-              onChange={(e, input) => setMessage(input)}/>
+              onChange={(e, input) => setMessage(input)} />
           </Stack.Item>
           <Stack.Item>
             <Stack textAlign="center">
