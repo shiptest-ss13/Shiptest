@@ -123,8 +123,6 @@
 		qdel(applications[a_key])
 	// set ourselves to ownerless to unregister signals
 	set_owner_mob(null)
-	// remove the owner check timer created by set_owner_mob() when passed null
-	deltimer(owner_check_timer_id)
 	return ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()
@@ -319,6 +317,7 @@
 		owner_mind = null
 		if(owner_act)
 			QDEL_NULL(owner_act)
+		// this gets automatically deleted in /datum/Destroy() if we are being destroyed
 		owner_check_timer_id = addtimer(CALLBACK(src, .proc/check_owner), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP)
 		return
 

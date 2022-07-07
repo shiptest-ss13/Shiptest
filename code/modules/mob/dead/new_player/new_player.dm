@@ -416,9 +416,7 @@
 	if(selected_ship.join_mode == SHIP_JOIN_MODE_APPLY)
 		var/datum/ship_application/current_application = selected_ship.get_application(src)
 		if(isnull(current_application))
-			var/app_status = tgui_alert(src, "This ship is application-only.", "Ship Application", list("Send Application", "Cancel"))
-			if(app_status == "Send Application")
-				send_application(selected_ship)
+			send_application(selected_ship)
 			return LateChoices()
 		switch(current_application.status)
 			if(SHIP_APPLICATION_ACCEPTED)
@@ -446,11 +444,12 @@
 	AttemptLateSpawn(selected_job, selected_ship)
 
 /mob/dead/new_player/proc/send_application(datum/overmap/ship/controlled/target_ship)
-	var/key_pref = tgui_alert(src, "Send your ckey along with the application? You will still only get one application to this ship.", "Send ckey?", list("Withold ckey", "Send ckey"))
-	var/show_key = key_pref == "Send ckey"
-	var/msg = sanitize(stripped_multiline_input(usr, "If you would like to add additional information to your application, enter it here. OOC information is allowed.", "Ship Application"))
-	new /datum/ship_application(target_ship, src, show_key, msg)
-	to_chat(usr, "<span class='notice'>Ship application sent. You will be notified if the application is accepted.</span>")
+	var/datum/ship_application/app = new(src, target_ship)
+	var/application_sent = app.get_user_response()
+	if(application_sent)
+		to_chat(usr, "<span class='notice'>Ship application sent. You will be notified if the application is accepted.</span>")
+	else
+		to_chat(usr, "<span class='notice'>Application cancelled, or there was an error sending the application.</span>")
 	return
 
 /mob/dead/new_player/proc/can_join_round(silent = FALSE)

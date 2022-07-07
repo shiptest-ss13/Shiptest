@@ -45,9 +45,11 @@
 #define SHIP_JOIN_MODE_APPLY "Apply"
 #define SHIP_JOIN_MODE_OPEN "Open"
 
-// Ship application states. The string values are player-facing, so be careful modifying them.
-#define SHIP_APPLICATION_ACCEPTED "accepted"
+// Ship application states. Some of the string values are player-facing, so be careful modifying them.
+#define SHIP_APPLICATION_UNFINISHED "unfinished"
+#define SHIP_APPLICATION_CANCELLED "cancelled"
 #define SHIP_APPLICATION_PENDING "pending"
+#define SHIP_APPLICATION_ACCEPTED "accepted"
 #define SHIP_APPLICATION_DENIED "denied"
 
 ///Used to get the turf on the "physical" overmap representation.
