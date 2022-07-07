@@ -3,7 +3,8 @@
 /obj/structure/AIcore/deactivated/hacked
 	name = "Hacked AI"
 	icon_state = "ai-red_dead"
-	desc = /obj/structure/AIcore/deactivated
+	desc = "It appears this AI has some sort of virus, it is stuck in a constant state of booting then crashing."
+
 
 /mob/living/simple_animal/hostile/abandoned_minebot/hacked
 	name = "Hacked minebot"

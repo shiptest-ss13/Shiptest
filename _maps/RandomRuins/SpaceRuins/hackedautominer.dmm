@@ -773,6 +773,10 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/robotics)
+"tW" = (
+/mob/living/simple_animal/hostile/abandoned_minebot/hacked,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/autominer/asteroid)
 "un" = (
 /obj/structure/catwalk/over,
 /obj/machinery/power/apc/auto_name/north,
@@ -1515,6 +1519,7 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/effect/decal/cleanable/oil,
 /obj/item/stack/ore/salvage/scrapgold,
+/obj/item/aiModule/core/full/glitched,
 /turf/open/floor/circuit/off,
 /area/ruin/space/has_grav/powered/autominer/bridge)
 "Ly" = (
@@ -1943,10 +1948,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/autominer/robotics)
-"SB" = (
-/mob/living/simple_animal/hostile/abandoned_minebot/hacked,
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/space/has_grav/autominer/asteroid)
 "TB" = (
 /obj/structure/cable/green{
 	icon_state = "1-4"
@@ -1970,7 +1971,6 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/robot_debris/limb,
-/obj/item/aiModule/core/full/glitched,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/bridge)
 "Uu" = (
@@ -2326,7 +2326,7 @@ Gg
 Gg
 Gg
 Gg
-SB
+tW
 Gg
 Gg
 Gg
@@ -2405,7 +2405,7 @@ Gg
 Ly
 Ly
 Gg
-SB
+tW
 Gg
 Ly
 Ly
@@ -2718,7 +2718,7 @@ Gg
 Ly
 Ly
 Gg
-SB
+tW
 oS
 oS
 Gg
@@ -3313,7 +3313,7 @@ Ly
 Gg
 oS
 oS
-SB
+tW
 Gg
 Ly
 Ly
