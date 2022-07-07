@@ -22,8 +22,8 @@ export const Application = (props, context) => {
               must be approved by the current ship owner. This is an <b>OOC</b>
               utility.
               <br /><br />
-              <b>You only get one application per ship.</b> Different characters
-              use the same application.
+              <b>You only get one application per ship.</b> Different
+              characters use the same application.
               <br /><br />
               Applications are sorted via ckey, but your ckey is only shown
               to the ship owner if this setting is enabled:
