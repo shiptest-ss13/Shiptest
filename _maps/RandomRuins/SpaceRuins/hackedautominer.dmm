@@ -253,6 +253,9 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/robotics)
+"gt" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/powered/autominer/hall)
 "gw" = (
 /obj/effect/turf_decal/trimline/blue/line{
 	dir = 1
@@ -310,7 +313,7 @@
 /area/ruin/space/has_grav/powered/autominer/bridge)
 "hM" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/autominer/pmaint)
+/area/ruin/space/has_grav/powered/autominer/hall)
 "hS" = (
 /obj/machinery/door/window/northleft,
 /obj/structure/window/reinforced{
@@ -332,7 +335,7 @@
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "hZ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/autominer/bridge)
+/area/ruin/space/has_grav/powered/autominer/pmaint)
 "ia" = (
 /obj/effect/turf_decal/trimline/bottlegreen/corner{
 	dir = 4
@@ -484,9 +487,6 @@
 	},
 /turf/open/floor/circuit/red,
 /area/ruin/space/has_grav/powered/autominer/bridge)
-"lX" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/autominer/robotics)
 "mf" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -506,9 +506,6 @@
 	dir = 1
 	},
 /area/ruin/space/has_grav/powered/autominer/hall)
-"mn" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/autominer/pmaint)
 "my" = (
 /obj/structure/lattice{
 	icon_state = "lattice-141"
@@ -719,9 +716,9 @@
 	},
 /turf/template_noop,
 /area/ruin/space/autominer/sbmaint)
-"ru" = (
+"rV" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/autominer/hall)
+/area/ruin/space/has_grav/powered/autominer/bridge)
 "sp" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -762,10 +759,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/autominer/hall)
-"td" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/autominer/bridge)
 "tu" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 10
@@ -775,9 +768,6 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/robotics)
-"tw" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/autominer/hall)
 "tW" = (
 /mob/living/simple_animal/hostile/mining_drone/virusbot,
 /turf/open/floor/plating/asteroid/airless,
@@ -801,6 +791,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/autominer/robotics)
+"uw" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/autominer/pmaint)
 "vd" = (
 /obj/machinery/recharge_station,
 /obj/structure/window/reinforced/survival_pod{
@@ -926,9 +919,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/powered/autominer/pmaint)
-"wK" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/autominer/robotics)
 "wN" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 10
@@ -1315,6 +1305,9 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/robotics)
+"GJ" = (
+/turf/closed/mineral/random/high_chance,
+/area/ruin/space/has_grav/autominer/asteroid)
 "GO" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/autominer/sbmaint)
@@ -1540,6 +1533,9 @@
 /obj/effect/turf_decal/trimline/bar/line,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/powered/autominer/hall)
+"MF" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/powered/autominer/bridge)
 "MI" = (
 /obj/effect/turf_decal/trimline/bar/corner{
 	dir = 1
@@ -1824,7 +1820,7 @@
 "QH" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/autominer/robotics)
+/area/ruin/space/has_grav/powered/autominer/hall)
 "QI" = (
 /obj/structure/cable/green{
 	icon_state = "0-2"
@@ -1941,6 +1937,10 @@
 /obj/effect/turf_decal/trimline/bar/line,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/powered/autominer/bridge)
+"Ug" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/autominer/robotics)
 "Ul" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -2039,9 +2039,6 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/rust,
 /area/ruin/space/autominer/sbmaint)
-"VQ" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/autominer/bridge)
 "Wz" = (
 /obj/effect/decal/cleanable/robot_debris,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -2058,6 +2055,9 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/rust,
 /area/ruin/space/autominer/sbmaint)
+"Xv" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/powered/autominer/robotics)
 "Xx" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -2065,10 +2065,6 @@
 /obj/machinery/power/shuttle/engine/electric,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/autominer/robotics)
-"Xy" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/autominer/hall)
 "XA" = (
 /obj/machinery/camera/autoname{
 	dir = 8
@@ -2083,6 +2079,9 @@
 /obj/item/stock_parts/cell,
 /obj/item/stock_parts/cell,
 /turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/powered/autominer/robotics)
+"XB" = (
+/turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/autominer/robotics)
 "XM" = (
 /obj/structure/lattice{
@@ -2117,6 +2116,10 @@
 "Yt" = (
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/autominer/hall)
+"Yu" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/autominer/bridge)
 "YZ" = (
 /obj/structure/grille,
 /obj/item/shard,
@@ -2224,21 +2227,21 @@ bp
 oS
 oS
 Gg
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 Gg
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 Gg
 oS
@@ -2269,22 +2272,22 @@ Gg
 Gg
 Gg
 Gg
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 Gg
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
 Gg
 Gg
 bp
@@ -2311,13 +2314,13 @@ bp
 bp
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 Gg
 Gg
@@ -2328,9 +2331,9 @@ SB
 Gg
 Gg
 Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
 Gg
 Gg
 bp
@@ -2355,25 +2358,25 @@ bp
 bp
 bp
 Gg
+GJ
+GJ
 Gg
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-oS
-oS
-oS
-Gg
+GJ
+GJ
+GJ
 Gg
 oS
 oS
 oS
 Gg
 Gg
+oS
+oS
+oS
+Gg
+GJ
 Gg
 Gg
 Gg
@@ -2400,14 +2403,14 @@ bp
 bp
 oS
 Gg
-Gg
-Gg
+GJ
+GJ
 Gg
 SB
 Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
 Gg
 oS
 Gg
@@ -2445,14 +2448,8 @@ bp
 oS
 Gg
 Gg
-Gg
-Gg
-Gg
-oS
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
 Gg
 oS
 Gg
@@ -2460,6 +2457,12 @@ Gg
 Gg
 Gg
 Gg
+oS
+Gg
+Gg
+Gg
+GJ
+GJ
 Gg
 oS
 Gg
@@ -2490,21 +2493,8 @@ bp
 Gg
 Gg
 Gg
-Gg
-Gg
-Gg
-oS
-oS
-oS
-oS
-oS
-oS
-oS
-oS
-oS
-Gg
-Gg
-Gg
+GJ
+GJ
 Gg
 oS
 oS
@@ -2513,18 +2503,31 @@ oS
 oS
 oS
 oS
-ru
-Xy
+oS
+oS
+Gg
+GJ
+GJ
+Gg
+oS
+oS
+oS
+oS
+oS
+oS
+oS
+hM
+QH
 YZ
-tw
-tw
+gt
+gt
 sB
-tw
-VQ
-VQ
-VQ
-hZ
-VQ
+gt
+rV
+rV
+rV
+MF
+rV
 bp
 bp
 bp
@@ -2534,8 +2537,8 @@ bp
 bp
 Gg
 Gg
-Gg
-Gg
+GJ
+GJ
 Gg
 Gg
 Gg
@@ -2556,9 +2559,9 @@ Gg
 oS
 oS
 oS
-ru
-tw
-tw
+hM
+gt
+gt
 vz
 CL
 Po
@@ -2569,8 +2572,8 @@ Hu
 Ro
 zb
 hs
-hZ
-VQ
+MF
+rV
 bp
 bp
 "}
@@ -2578,30 +2581,30 @@ bp
 bp
 Gg
 Gg
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+oS
+oS
+oS
+oS
 Gg
 Gg
 Gg
 oS
 oS
 oS
-oS
-Gg
-Gg
-Gg
-oS
-oS
-oS
-tw
+gt
 eV
 nj
 cF
@@ -2610,12 +2613,12 @@ So
 BG
 WS
 Yt
-VQ
+rV
 Oq
 TB
 ia
 lH
-hZ
+MF
 Ov
 Df
 "}
@@ -2623,13 +2626,13 @@ Df
 bp
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 Gg
 Gg
@@ -2655,12 +2658,12 @@ Dh
 vf
 Me
 Os
-VQ
+rV
 UM
 bV
 Oi
 og
-td
+Yu
 bp
 bp
 "}
@@ -2668,8 +2671,8 @@ bp
 oS
 Gg
 Gg
-Gg
-Gg
+GJ
+GJ
 Gg
 Gg
 Gg
@@ -2705,7 +2708,7 @@ Qm
 Fx
 oI
 MI
-td
+Yu
 bp
 bp
 "}
@@ -2713,8 +2716,8 @@ bp
 bp
 Gg
 Gg
-Gg
-Gg
+GJ
+GJ
 Gg
 oS
 oS
@@ -2745,12 +2748,12 @@ ml
 RR
 kL
 Nm
-VQ
+rV
 RA
 jA
 gw
 jE
-td
+Yu
 bp
 bp
 "}
@@ -2759,16 +2762,16 @@ bp
 Gg
 Gg
 Gg
+GJ
 Gg
 Gg
+Gg
+oS
 Gg
 Gg
 oS
 Gg
 Gg
-oS
-Gg
-Gg
 Gg
 Gg
 Gg
@@ -2781,7 +2784,7 @@ oS
 oS
 oS
 oS
-tw
+gt
 Py
 LR
 mf
@@ -2795,7 +2798,7 @@ RA
 Ry
 oA
 Lo
-hZ
+MF
 Ov
 Df
 "}
@@ -2804,43 +2807,43 @@ Gg
 Gg
 oS
 Gg
-Gg
-Gg
-Gg
-Gg
-oS
-Gg
-Gg
-oS
-Gg
-Gg
-Gg
+GJ
 Gg
 Gg
 Gg
 oS
 Gg
 Gg
+oS
+Gg
+GJ
+GJ
+Gg
+Gg
+Gg
+oS
+Gg
+Gg
 Gg
 Gg
 oS
 oS
 oS
-ru
-tw
-tw
+hM
+gt
+gt
 eG
 xk
 gB
 qY
 wu
 xm
-VQ
+rV
 PB
 ic
 Ul
-hZ
-VQ
+MF
+rV
 bp
 bp
 "}
@@ -2849,7 +2852,7 @@ oS
 oS
 oS
 Gg
-Gg
+GJ
 Gg
 Qf
 oS
@@ -2858,33 +2861,33 @@ Gg
 Gg
 oS
 Gg
+GJ
+GJ
+GJ
+GJ
 Gg
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
 Gg
 Gg
 oS
 oS
 oS
 oS
-ru
+hM
 fJ
-Xy
-tw
-tw
+QH
+gt
+gt
 cB
-tw
-VQ
-VQ
-VQ
-hZ
-VQ
+gt
+rV
+rV
+rV
+MF
+rV
 bp
 bp
 bp
@@ -2894,7 +2897,7 @@ Gg
 Gg
 Gg
 Gg
-Gg
+GJ
 Gg
 Gg
 Gg
@@ -2904,15 +2907,15 @@ Gg
 oS
 Gg
 Gg
+GJ
+GJ
+GJ
+GJ
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
 Gg
 Gg
 Gg
@@ -2921,12 +2924,12 @@ oS
 oS
 oS
 bp
-hM
-mn
+uw
+hZ
 IC
 HS
 AN
-mn
+hZ
 bp
 bp
 bp
@@ -2939,7 +2942,7 @@ bp
 Gg
 Gg
 Gg
-Gg
+GJ
 Gg
 Gg
 Gg
@@ -2951,15 +2954,15 @@ Gg
 Gg
 Gg
 Gg
+GJ
+GJ
+GJ
+GJ
 Gg
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
 Gg
 Gg
 oS
@@ -2967,12 +2970,12 @@ Gg
 Gg
 bp
 bp
-mn
+hZ
 ot
 PI
 eA
-mn
-hM
+hZ
+uw
 bp
 bp
 bp
@@ -2984,27 +2987,27 @@ bp
 bp
 Gg
 Gg
+GJ
+GJ
+GJ
 Gg
-Gg
-Gg
-Gg
+oS
 oS
 oS
 oS
+Gg
+Gg
+Gg
+Gg
+Gg
+Gg
+GJ
+GJ
+Gg
 oS
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-oS
-Gg
-Gg
-Gg
+GJ
+GJ
 Gg
 Gg
 oS
@@ -3012,12 +3015,12 @@ Gg
 bp
 bp
 bp
-hM
-mn
+uw
+hZ
 NB
 wb
 KQ
-mn
+hZ
 bp
 bp
 bp
@@ -3029,9 +3032,9 @@ bp
 Gg
 Gg
 Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
 Gg
 Gg
 Gg
@@ -3043,8 +3046,8 @@ oS
 oS
 oS
 Gg
-Gg
-Gg
+GJ
+GJ
 Gg
 oS
 Gg
@@ -3058,12 +3061,12 @@ Gg
 Gg
 bp
 bp
-mn
+hZ
 dd
 oz
 aW
-mn
-hM
+hZ
+uw
 bp
 bp
 bp
@@ -3074,15 +3077,15 @@ bp
 Gg
 oS
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 oS
 Gg
@@ -3103,12 +3106,12 @@ Gg
 bp
 bp
 bp
-hM
-mn
+uw
+hZ
 zX
 FN
 xQ
-mn
+hZ
 bp
 bp
 bp
@@ -3119,15 +3122,15 @@ bp
 oS
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 oS
 Gg
@@ -3149,12 +3152,12 @@ bp
 bp
 bp
 bp
-mn
+hZ
 wC
 kt
 Ao
-mn
-hM
+hZ
+uw
 bp
 bp
 bp
@@ -3165,14 +3168,14 @@ Gg
 oS
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 oS
 Gg
@@ -3192,16 +3195,16 @@ Gg
 bp
 bp
 bp
-lX
-wK
-wK
-lX
+XB
+Xv
+Xv
+XB
 Bi
-lX
-lX
-lX
-wK
-lX
+XB
+XB
+XB
+Xv
+XB
 bp
 "}
 (25,1,1) = {"
@@ -3210,19 +3213,19 @@ Gg
 Gg
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 oS
 Gg
-Gg
-Gg
+GJ
+GJ
 Gg
 oS
 oS
@@ -3236,8 +3239,8 @@ Gg
 Gg
 bp
 PL
-wK
-wK
+Xv
+Xv
 MZ
 pw
 Fl
@@ -3246,8 +3249,8 @@ kQ
 fH
 pn
 wN
-wK
-lX
+Xv
+XB
 "}
 (26,1,1) = {"
 bp
@@ -3256,13 +3259,13 @@ Gg
 oS
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 oS
 Gg
@@ -3292,7 +3295,7 @@ Yb
 lm
 tu
 yd
-QH
+Ug
 "}
 (27,1,1) = {"
 bp
@@ -3302,21 +3305,21 @@ Gg
 oS
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 oS
 oS
 tW
 Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
+GJ
 Gg
 Gg
 Gg
@@ -3337,7 +3340,7 @@ cK
 ar
 Kk
 vd
-QH
+Ug
 "}
 (28,1,1) = {"
 bp
@@ -3348,20 +3351,20 @@ oS
 Gg
 Gg
 Gg
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 Gg
 Gg
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
+GJ
 Gg
 Gg
 oS
@@ -3371,8 +3374,8 @@ bp
 bp
 PL
 Ov
-wK
-wK
+Xv
+Xv
 un
 Px
 IB
@@ -3382,7 +3385,7 @@ HK
 SA
 hV
 hV
-wK
+Xv
 "}
 (29,1,1) = {"
 bp
@@ -3396,13 +3399,13 @@ Gg
 Gg
 Gg
 Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
-Gg
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
+GJ
 Gg
 Gg
 Gg
@@ -3427,7 +3430,7 @@ qF
 GH
 bh
 Qy
-QH
+Ug
 "}
 (30,1,1) = {"
 bp
@@ -3442,7 +3445,7 @@ Gg
 oS
 Gg
 Gg
-Gg
+GJ
 Gg
 Gg
 Gg
@@ -3472,7 +3475,7 @@ fL
 jh
 pC
 oo
-QH
+Ug
 "}
 (31,1,1) = {"
 bp
@@ -3506,8 +3509,8 @@ bp
 bp
 bp
 PL
-wK
-wK
+Xv
+Xv
 Wz
 Sw
 vR
@@ -3516,8 +3519,8 @@ XA
 fn
 yC
 Uu
-wK
-lX
+Xv
+XB
 "}
 (32,1,1) = {"
 bp
@@ -3552,15 +3555,15 @@ bp
 bp
 bp
 bp
-lX
-wK
-lX
-lX
-lX
-lX
-QH
-QH
-lX
-lX
+XB
+Xv
+XB
+XB
+XB
+XB
+Ug
+Ug
+XB
+XB
 bp
 "}

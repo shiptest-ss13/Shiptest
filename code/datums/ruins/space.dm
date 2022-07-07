@@ -310,6 +310,6 @@
 
 /datum/map_template/ruin/space/autominer
 	id = "autominer"
-	suffix = "hackeddroneship.dmm"
+	suffix = "hackedautominer.dmm"
 	name = "Auto-Miner STXNET"
 	description = "A hacked automated mining ship, riddled with viruses."
