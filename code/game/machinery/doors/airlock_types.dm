@@ -361,6 +361,7 @@
 	overlays_file = 'icons/obj/doors/airlocks/station2/overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_public
 	hatch_colour = "#eaeaea"
+	req_ship_access = FALSE
 
 /obj/machinery/door/airlock/public/glass
 	opacity = FALSE

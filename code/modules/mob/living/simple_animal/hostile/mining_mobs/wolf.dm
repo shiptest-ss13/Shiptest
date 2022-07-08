@@ -113,13 +113,6 @@
 		visible_message("<span class='warning'>You notice a damaged ear that might be salvagable.</span>")
 	..()
 
-/mob/living/simple_animal/hostile/asteroid/wolf/Life()
-	. = ..()
-	if(!. || target)
-		return
-	adjustHealth(-maxHealth*0.025)
-	retreat_message_said = FALSE
-
 /obj/item/crusher_trophy/wolf_ear
 	name = "wolf ear"
 	desc = "The battered remains of a wolf's ear. You could attach it to a crusher, or use the fur to craft a trophy."

@@ -94,6 +94,7 @@ GLOBAL_LIST_INIT(admin_verbs_sounds, list(
 GLOBAL_PROTECT(admin_verbs_sounds)
 GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/cmd_select_equipment,
+	/client/proc/cmd_admin_rejuvenate,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/cmd_change_command_name,
 	/client/proc/cmd_admin_create_centcom_report,
@@ -202,7 +203,8 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/datum/admins/proc/open_borgopanel,
 	/datum/admins/proc/overmap_view, /* Opens HTML overmap viewer UI */
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
-	/client/proc/toggle_cdn
+	/client/proc/toggle_cdn,
+	/client/proc/check_timer_sources
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)

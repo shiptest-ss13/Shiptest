@@ -349,9 +349,12 @@
 			continue
 		if(length(thing.baseturfs) < 2)
 			continue
+		if(/turf/baseturf_skipover/shuttle in thing.baseturfs)
+			continue
 		//Add the shuttle base shit to the shuttle
-		if(!(/turf/baseturf_skipover/shuttle in thing.baseturfs))
-			thing.baseturfs.Insert(3, /turf/baseturf_skipover/shuttle)
+		var/list/sanity = thing.baseturfs.Copy()
+		sanity.Insert(3, /turf/baseturf_skipover/shuttle)
+		thing.baseturfs = baseturfs_string_list(sanity, thing)
 
 	var/list/firedoors = oldA.firedoors
 	for(var/door in firedoors)
