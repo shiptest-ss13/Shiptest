@@ -52,8 +52,7 @@ export const OutpostComms = (props, context) => {
                   })} />
               </Stack.Item>
             </Stack>
-          )}>
-        </Section>
+          )} />
         {tab === 'cargo' && (
           <CargoExpressContent />
         )}
