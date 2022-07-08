@@ -7,6 +7,7 @@
 	alt_covers_chest = TRUE
 	icon = 'icons/obj/clothing/under/syndicate.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/syndicate.dmi'
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/skirt
 	name = "tactical skirtleneck"
@@ -81,6 +82,7 @@
 	desc = "With a suit lined with this many pockets, you are ready to operate."
 	icon_state = "syndicate_combat"
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/rus_army
 	name = "advanced military tracksuit"
@@ -182,7 +184,6 @@
 	desc = "A jumpsuit worn by GEC engineers. This one is worn by high ranking chiefengineers."
 	icon_state = "gec_ce"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 80, "acid" = 40)
-
 
 /obj/item/clothing/under/syndicate/skirt/maid
 	name = "tactical maid outfit"
