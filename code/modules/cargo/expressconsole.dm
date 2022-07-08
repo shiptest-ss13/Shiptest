@@ -254,6 +254,8 @@
 			if(!istype(outpost) || mission.source_outpost != outpost) // important to check these to prevent href fuckery
 				return
 			if(!mission.accepted)
+				if(LAZYLEN(ship.missions) >= ship.max_missions)
+					return
 				mission.accept(ship, loc)
 				return TRUE
 			else if(mission.servant == ship)
