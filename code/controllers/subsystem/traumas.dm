@@ -48,7 +48,7 @@ SUBSYSTEM_DEF(traumas)
 		"doctors"   = typecacheof(list(/mob/living/simple_animal/bot/medbot)),
 		"the supernatural"   = typecacheof(list(/mob/living/simple_animal/hostile/construct,
 		/mob/living/simple_animal/revenant, /mob/living/simple_animal/shade)),
-		"aliens"   = typecacheof(list(/mob/living/carbon/alien, /mob/living/simple_animal/slime)),
+		"aliens" = typecacheof(list(/mob/living/carbon/alien, /mob/living/simple_animal/slime, /mob/living/simple_animal/hostile/facehugger)),
 		"conspiracies" = typecacheof(list(/mob/living/simple_animal/bot/secbot, /mob/living/simple_animal/drone,
 		/mob/living/simple_animal/pet/penguin)),
 		"birds" = typecacheof(list(/mob/living/simple_animal/parrot, /mob/living/simple_animal/chick, /mob/living/simple_animal/chicken,
@@ -136,7 +136,7 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/nullrod, /obj/item/clothing/under/rank/civilian/chaplain)),
 
 		"aliens"   = typecacheof(list(
-			/obj/item/clothing/mask/facehugger, /obj/item/organ/body_egg/alien_embryo,
+			/obj/item/clothing/mask/facehugger_item, /obj/item/organ/body_egg/alien_embryo,
 			/obj/structure/alien, /obj/item/toy/toy_xeno,
 			/obj/item/clothing/suit/armor/abductor, /obj/item/abductor, /obj/item/gun/energy/alien,
 			/obj/item/melee/baton/abductor, /obj/item/radio/headset/abductor, /obj/item/scalpel/alien, /obj/item/hemostat/alien,
@@ -182,7 +182,6 @@ SUBSYSTEM_DEF(traumas)
 		"aliens" = typecacheof(list(
 			/datum/species/abductor, /datum/species/jelly, /datum/species/pod,
 			/datum/species/shadow, /datum/species/squid)),
-		"anime" = typecacheof(list(/datum/species/human/felinid)),
 		"spiders" = typecacheof(list(/datum/species/spider))
 	)
 

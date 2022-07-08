@@ -84,9 +84,29 @@
 	name = "Advanced Design Storage Disk"
 	desc = "Produce additional disks for storing device designs."
 	id = "design_disk_adv"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 100, /datum/material/silver=50)
 	build_path = /obj/item/disk/design_disk/adv
+	category = list("Electronics")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/design_disk_super
+	name = "Super Design Storage Disk"
+	desc = "Produce additional disks for storing device designs."
+	id = "design_disk_super"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/iron = 300, /datum/material/glass = 100, /datum/material/silver=50, /datum/material/gold=50 )
+	build_path = /obj/item/disk/design_disk/super
+	category = list("Electronics")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/design_disk_elite
+	name = "Elite Design Storage Disk"
+	desc = "Produce additional disks for storing device designs."
+	id = "design_disk_elite"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron=300, /datum/material/glass=100, /datum/material/silver =100, /datum/material/gold=100, /datum/material/bluespace=50)
+	build_path = /obj/item/disk/design_disk/elite
 	category = list("Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 

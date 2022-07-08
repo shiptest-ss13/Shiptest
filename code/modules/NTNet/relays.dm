@@ -119,3 +119,5 @@
 	name = "Integrated NTNet Quantum Relay"
 	use_power = NO_POWER_USE
 	circuit = null
+	active_power_usage = 0
+	idle_power_usage = 0

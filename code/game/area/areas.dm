@@ -54,7 +54,7 @@
 	var/parallax_movedir = 0
 
 	var/list/ambientsounds = GENERIC
-	flags_1 = CAN_BE_DIRTY_1 | CULT_PERMITTED_1
+	flags_1 = CAN_BE_DIRTY_1
 
 	var/list/firedoors
 	var/list/cameras
@@ -76,11 +76,13 @@
 	var/lighting_brightness_bulb = 6
 	var/lighting_brightness_night = 6
 
-	///This datum, if set, allows terrain generation behavior to be ran on Initialize()
-	var/datum/map_generator/map_generator
-
 	///Used to decide what kind of reverb the area makes sound have
 	var/sound_environment = SOUND_ENVIRONMENT_NONE
+
+	///Used to decide what the minimum time between ambience is
+	var/min_ambience_cooldown = 30 SECONDS
+	///Used to decide what the maximum time between ambience is
+	var/max_ambience_cooldown = 90 SECONDS
 
 	/// Whether area is underground, important for weathers which shouldn't affect caves etc.
 	var/underground = FALSE
@@ -182,22 +184,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /area/LateInitialize()
 	power_change()		// all machines set to current power level, also updates icon
 	update_beauty()
-
-/area/proc/RunGeneration()
-	if(map_generator)
-		map_generator = new map_generator()
-		var/list/turfs = list()
-		for(var/turf/T in contents)
-			turfs += T
-		map_generator.generate_terrain(turfs)
-
-/area/proc/test_gen()
-	if(map_generator)
-		var/list/turfs = list()
-		for(var/turf/T in contents)
-			turfs += T
-		map_generator.generate_terrain(turfs)
-
 
 /**
   * Register this area as belonging to a z level
@@ -595,21 +581,9 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	if(!L.ckey)
 		return
 
-	// Ambience goes down here -- make sure to list each area separately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
-	if(L.client && !L.client.ambience_playing && L.client.prefs.toggles & SOUND_SHIP_AMBIENCE)
-		L.client.ambience_playing = 1
+	//Ship ambience just loops if turned on.
+	if(L.client?.prefs.toggles & SOUND_SHIP_AMBIENCE)
 		SEND_SOUND(L, sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 35, channel = CHANNEL_BUZZ))
-
-	if(!(L.client && (L.client.prefs.toggles & SOUND_AMBIENCE)))
-		return //General ambience check is below the ship ambience so one can play without the other
-
-	if(prob(35))
-		var/sound = pick(ambientsounds)
-
-		if(!L.client.played)
-			SEND_SOUND(L, sound(sound, repeat = 0, wait = 0, volume = 25, channel = CHANNEL_AMBIENCE))
-			L.client.played = TRUE
-			addtimer(CALLBACK(L.client, /client/proc/ResetAmbiencePlayed), 600)
 
 ///Divides total beauty in the room by roomsize to allow us to get an average beauty per tile.
 /area/proc/update_beauty()
@@ -631,11 +605,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	SEND_SIGNAL(src, COMSIG_AREA_EXITED, gone, direction)
 	SEND_SIGNAL(gone, COMSIG_EXIT_AREA, src) //The atom that exits the area
 
-/**
-  * Reset the played var to false on the client
-  */
-/client/proc/ResetAmbiencePlayed()
-	played = FALSE
 
 /**
   * Setup an area (with the given name)

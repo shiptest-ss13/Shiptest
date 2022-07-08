@@ -10,7 +10,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDESUITSTORAGE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/cloak //WS Edit - Exowear Pockets
-	greyscale_colors = list(list(11, 15), list(12, 22))
+	greyscale_colors = list(list(11, 15), list(12, 22), list(12, 22))
 	greyscale_icon_state = "cloak"
 
 /obj/item/clothing/neck/cloak/suicide_act(mob/user)
@@ -51,6 +51,11 @@
 	name = "head of personnel's cloak"
 	desc = "Worn by the Head of Personnel. It smells faintly of bureaucracy."
 	icon_state = "hopcloak"
+
+/obj/item/clothing/neck/cloak/trans
+	name = "vampire cloak"
+	desc = "Worn by high ranking vampires of the transylvanian society of vampires."
+	icon_state = "trans"
 
 /obj/item/clothing/suit/hooded/cloak/goliath
 	name = "goliath cloak"
