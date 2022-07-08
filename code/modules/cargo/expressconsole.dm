@@ -120,8 +120,7 @@
 	data["numMissions"] = ship ? LAZYLEN(ship.missions) : 0
 	data["maxMissions"] = ship ? ship.max_missions : 0
 	data["outpostDocked"] = outpost_docked
-	if(charge_account)
-		data["points"] = charge_account.account_balance
+	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege
 	data["beaconzone"] = beacon ? get_area(beacon) : ""//where is the beacon located? outputs in the tgui
 	data["usingBeacon"] = usingBeacon //is the mode set to deliver to the beacon or the cargobay?
@@ -166,6 +165,20 @@
 		return
 
 	switch(action)
+		if("withdrawCash")
+			var/val = text2num(params["value"])
+			// no giving yourself money
+			if(!charge_account || !val || val <= 0)
+				return
+			if(charge_account.adjust_money(-val))
+				var/obj/item/holochip/cash_chip = new /obj/item/holochip(drop_location(), val)
+				if(ishuman(usr))
+					var/mob/living/carbon/human/user = usr
+					user.put_in_hands(cash_chip)
+				playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
+				src.visible_message("<span class='notice'>[src] dispenses a holochip.</span>")
+			return TRUE
+
 		if("LZCargo")
 			usingBeacon = FALSE
 			if (beacon)

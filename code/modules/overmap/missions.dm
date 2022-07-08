@@ -69,7 +69,7 @@
 	return !failed
 
 /datum/mission/proc/get_tgui_info()
-	var/time_remaining = dur_timer ? timeleft(dur_timer) : duration
+	var/time_remaining = max(dur_timer ? timeleft(dur_timer) : duration, 0)
 
 	var/act_str = "Give up"
 	if(!accepted)

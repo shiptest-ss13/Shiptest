@@ -1,5 +1,5 @@
 import { useBackend, useSharedState } from '../backend';
-import { ProgressBar, Section, Tabs, Button, LabeledList, Box, AnimatedNumber } from '../components';
+import { ProgressBar, Section, Tabs, Button, LabeledList, Box, AnimatedNumber, Stack } from '../components';
 import { Window } from '../layouts';
 import { CargoCatalog } from './Cargo';
 
@@ -12,30 +12,47 @@ export const OutpostComms = (props, context) => {
       height={700}
       resizable>
       <Window.Content scrollable>
-        <Section fitted>
-          <Tabs>
-            {!!data.outpostDocked && (
-              <Tabs.Tab
-                selected={tab === 'cargo'}
-                onClick={() => setTab('cargo')}>
-                Cargo
-              </Tabs.Tab>
-            )}
-            {!!data.onShip && (
-              <Tabs.Tab
-                selected={tab === 'shipMissions'}
-                onClick={() => setTab('shipMissions')}>
-                Current Missions
-              </Tabs.Tab>
-            )}
-            {!!data.outpostDocked && (
-              <Tabs.Tab
-                selected={tab === 'outpostMissions'}
-                onClick={() => setTab('outpostMissions')}>
-                Available Missions
-              </Tabs.Tab>
-            )}
-          </Tabs>
+        <Section
+          fitted
+          title={Math.round(data.points) + " credits"}
+          buttons={(
+            <Stack textAlign="center">
+              <Stack.Item>
+                <Tabs>
+                  {!!data.outpostDocked && (
+                    <Tabs.Tab
+                      selected={tab === 'cargo'}
+                      onClick={() => setTab('cargo')}>
+                      Cargo
+                    </Tabs.Tab>
+                  )}
+                  {!!data.onShip && (
+                    <Tabs.Tab
+                      selected={tab === 'shipMissions'}
+                      onClick={() => setTab('shipMissions')}>
+                      Current Missions
+                    </Tabs.Tab>
+                  )}
+                  {!!data.outpostDocked && (
+                    <Tabs.Tab
+                      selected={tab === 'outpostMissions'}
+                      onClick={() => setTab('outpostMissions')}>
+                      Available Missions
+                    </Tabs.Tab>
+                  )}
+                </Tabs>
+              </Stack.Item>
+              <Stack.Item>
+                <Button.Input
+                  content="Withdraw Cash"
+                  currentValue={100}
+                  defaultValue={100}
+                  onCommit={(e, value) => act('withdrawCash', {
+                    value: value,
+                  })} />
+              </Stack.Item>
+            </Stack>
+          )}>
         </Section>
         {tab === 'cargo' && (
           <CargoExpressContent />
@@ -56,14 +73,7 @@ const CargoExpressContent = (props, context) => {
   return (
     <>
       <Section
-        title="Cargo Express"
-        buttons={(
-          <Box inline bold>
-            <AnimatedNumber
-              value={Math.round(data.points)} />
-            {' credits'}
-          </Box>
-        )}>
+        title="Cargo Express">
         <LabeledList>
           <LabeledList.Item label="Landing Location">
             <Button
@@ -95,13 +105,6 @@ const ShipMissionsContent = (props, context) => {
   const { act, data } = useBackend(context);
   return (
     <Section
-      buttons={(
-        <Box inline bold>
-          <AnimatedNumber
-            value={Math.round(data.points)} />
-          {' credits'}
-        </Box>
-      )}
       title={"Current Missions " + data.numMissions + "/" + data.maxMissions}>
       <MissionsList
         showButton={data.outpostDocked}
@@ -114,13 +117,6 @@ const OutpostMissionsContent = (props, context) => {
   const { act, data } = useBackend(context);
   return (
     <Section
-      buttons={(
-        <Box inline bold>
-          <AnimatedNumber
-            value={Math.round(data.points)} />
-          {' credits'}
-        </Box>
-      )}
       title={"Available Missions " + data.numMissions + "/" + data.maxMissions}>
       <MissionsList
         showButton={data.outpostDocked}
