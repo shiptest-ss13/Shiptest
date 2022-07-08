@@ -373,6 +373,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "dZ" = (
@@ -579,6 +582,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -1675,6 +1681,9 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "wk" = (
@@ -3642,10 +3651,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
 	},
-/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Xb" = (
@@ -3896,6 +3905,9 @@
 	pixel_y = 29
 	},
 /obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ZK" = (
