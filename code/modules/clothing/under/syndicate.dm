@@ -272,3 +272,5 @@
 	. = ..()
 	var/obj/item/clothing/accessory/maidapron/inteq/A = new (src)
 	attach_accessory(A)
+
+

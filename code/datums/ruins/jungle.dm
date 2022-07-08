@@ -119,3 +119,10 @@
 	id = "ninjashrine"
 	description = "A ninja shrine."
 	suffix = "jungle_surface_ninjashrine.dmm"
+
+/datum/map_template/ruin/jungle/interceptor
+	name = "Old Crashed Interceptor"
+	id = "crashedcondor"
+	description = "An overgrown crashed Condor Class, a forgotten remnant of the Corporate Wars."
+	suffix = "jungle_interceptor.dmm"
+
