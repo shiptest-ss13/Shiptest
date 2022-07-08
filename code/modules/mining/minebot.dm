@@ -45,6 +45,7 @@
 
 /mob/living/simple_animal/hostile/mining_drone/rockplanet
 
+
 /mob/living/simple_animal/hostile/mining_drone/Initialize()
 	. = ..()
 	stored_gun = new(src)
