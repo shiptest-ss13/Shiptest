@@ -275,7 +275,6 @@
 		"Elzuose" = /datum/species/ethereal,
 		"Pod" = /datum/species/pod,
 		"Fly" = /datum/species/fly,
-		"Felinid" = /datum/species/human/felinid,
 		"Jelly" = /datum/species/jelly,
 		"IPC" = /datum/species/ipc,
 		"Kepori" = /datum/species/kepori,
