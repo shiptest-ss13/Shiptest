@@ -595,6 +595,9 @@
 /obj/machinery/atmospherics/components/unary/tank/toxins,
 /obj/effect/turf_decal/atmos/plasma,
 /obj/machinery/light/small,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "gR" = (
@@ -714,6 +717,9 @@
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/techfloor/hole/right,
 /obj/effect/turf_decal/techfloor/hole,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
 "ic" = (
@@ -1159,6 +1165,9 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "oU" = (
@@ -1280,6 +1289,12 @@
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/techfloor/hole,
 /obj/effect/turf_decal/techfloor/hole/right,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "rn" = (
@@ -1379,6 +1394,9 @@
 "tn" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
 /obj/effect/turf_decal/atmos/air,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "tq" = (
@@ -1492,6 +1510,8 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/effect/spawner/lootdrop/maintenance/three,
 /obj/structure/catwalk/over,
+/obj/item/circuitboard/machine/pacman,
+/obj/item/circuitboard/machine/pacman/super,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uo" = (
@@ -1609,12 +1629,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "vG" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/components/binary/pump{
 	name = "engine fuel pump"
 	},
@@ -1622,6 +1636,12 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/oil,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "vW" = (
@@ -3240,6 +3260,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
 "Ta" = (
@@ -3320,6 +3343,9 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "TS" = (
@@ -3395,6 +3421,9 @@
 /obj/structure/catwalk/over,
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/effect/decal/cleanable/glass,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Vp" = (
@@ -3536,6 +3565,9 @@
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/techfloor/hole,
 /obj/effect/turf_decal/techfloor/hole/right,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Wf" = (
@@ -3797,6 +3829,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/reagent_dispensers/fueltank,
 /obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Zj" = (
