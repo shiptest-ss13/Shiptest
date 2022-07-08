@@ -28,7 +28,7 @@
 /datum/surgery_step/heal/mechanic
 	name = "repair components"
 	implements = list(TOOL_WELDER = 100, TOOL_CAUTERY = 60, /obj/item/melee/transforming/energy = 40, /obj/item/gun/energy/laser = 20, TOOL_WIRECUTTER = 100, TOOL_HEMOSTAT = 60, TOOL_RETRACTOR = 60)
-	time = 20
+	time = 2 SECONDS
 	missinghpbonus = 10
 
 /datum/surgery_step/heal/mechanic/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -37,10 +37,13 @@
 		brutehealing = 5
 		burnhealing = 0
 		repairtype = "dents"
+		preop_sound = 'sound/items/welder.ogg'
+		success_sound = 'sound/items/welder2.ogg'
 	if(tool.tool_behaviour == TOOL_WIRECUTTER || tool.tool_behaviour == TOOL_HEMOSTAT || tool.tool_behaviour == TOOL_RETRACTOR)
 		burnhealing = 5
 		brutehealing = 0
 		repairtype = "wiring"
+		success_sound = 'sound/items/wirecutter.ogg'
 	if(istype(surgery,/datum/surgery/healing))
 		var/datum/surgery/healing/the_surgery = surgery
 		if(!the_surgery.antispam)

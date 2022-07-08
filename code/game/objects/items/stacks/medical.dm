@@ -18,6 +18,8 @@
 	var/other_delay = 0
 	var/repeating = FALSE
 	var/experience_given = 1
+	/// Shiptest Edit - Sound/Sounds to play when this is applied
+	var/apply_sounds
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
 	. = ..()
@@ -28,17 +30,20 @@
 	if(!M.can_inject(user, TRUE))
 		return
 	if(M == user)
+		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25) // Shiptest Edit
 		if(!silent)
 			user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [user.p_them()]self...</span>", "<span class='notice'>You begin applying \the [src] on yourself...</span>")
 		if(!do_mob(user, M, self_delay, extra_checks=CALLBACK(M, /mob/living/proc/can_inject, user, TRUE)))
 			return
 	else if(other_delay)
+		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25) // Shiptest Edit
 		if(!silent)
 			user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [M].</span>", "<span class='notice'>You begin applying \the [src] on [M]...</span>")
 		if(!do_mob(user, M, other_delay, extra_checks=CALLBACK(M, /mob/living/proc/can_inject, user, TRUE)))
 			return
 
 	if(heal(M, user))
+		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25) // Shiptest Edit
 		user?.mind.adjust_experience(/datum/skill/healing, experience_given)
 		log_combat(user, M, "healed", src.name)
 		use(1)
@@ -104,6 +109,7 @@
 	icon_state = "brutepack"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	apply_sounds = list('whitesands/sound/effects/rip1.ogg', 'whitesands/sound/effects/rip2.ogg') // Shiptest Edit
 	var/heal_brute = 40
 	self_delay = 20
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 10)
@@ -137,6 +143,7 @@
 	gender = PLURAL
 	singular_name = "medical gauze"
 	icon_state = "gauze"
+	apply_sounds = list('whitesands/sound/effects/rip1.ogg', 'whitesands/sound/effects/rip2.ogg') // Shiptest Edit
 	var/stop_bleeding = 1800
 	self_delay = 20
 	max_amount = 12
@@ -193,6 +200,7 @@
 	icon_state = "ointment"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	apply_sounds = 'whitesands/sound/effects/ointment.ogg' // Shiptest Edit
 	var/heal_burn = 40
 	self_delay = 20
 	grind_results = list(/datum/reagent/medicine/silver_sulfadiazine = 10)
@@ -336,6 +344,7 @@
 	desc = "A healing paste you can apply on wounds."
 
 	icon_state = "aloe_paste"
+	apply_sounds = 'whitesands/sound/effects/ointment.ogg' // Shiptest Edit
 	self_delay = 20
 	other_delay = 10
 	novariants = TRUE
@@ -383,6 +392,7 @@
 	singular_name = "splint"
 	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
 	icon_state = "splint"
+	apply_sounds = list('whitesands/sound/effects/rip1.ogg', 'whitesands/sound/effects/rip2.ogg') // Shiptest Edit
 	self_delay = 40
 	other_delay = 15
 	splint_fracture = TRUE
