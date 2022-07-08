@@ -24,7 +24,7 @@
 	/// Our internal techweb for limbgrower designs.
 	var/datum/techweb/stored_research
 	/// All the categories of organs we can print.
-	var/list/categories = list(SPECIES_HUMAN,SPECIES_FELINID,SPECIES_DWARF,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_KEPORI,SPECIES_VOX,"other")
+	var/list/categories = list(SPECIES_HUMAN,SPECIES_DWARF,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_KEPORI,SPECIES_VOX,"other")
 	//yogs grower a little different because we're going to allow meats to be converted to synthflesh because hugbox
 	var/list/accepted_biomass = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/monkey = 25,
@@ -33,6 +33,7 @@
 		/obj/item/stack/sheet/animalhide/human = 50
 		)
 	var/biomass_per_slab = 20
+
 /obj/machinery/limbgrower/Initialize(mapload)
 	create_reagents(100, OPENCONTAINER)
 	stored_research = new /datum/techweb/specialized/autounlocking/limbgrower
@@ -122,8 +123,10 @@
 		busy = TRUE
 		var/obj/item/disk/design_disk/limbs/limb_design_disk = user_item
 		if(do_after(user, 2 SECONDS, target = src))
-			for(var/datum/design/found_design in limb_design_disk.blueprints)
-				stored_research.add_design(found_design)
+			if(!categories.Find(limb_design_disk.species))
+				categories += limb_design_disk.species
+			// for(var/datum/design/found_design in limb_design_disk.blueprints)
+			// 	stored_research.add_design(found_design)
 			update_static_data(user)
 		busy = FALSE
 		return
@@ -218,7 +221,6 @@
 
 	var/built_typepath = being_built.build_path
 	if(ispath(built_typepath, /obj/item/bodypart))
-		message_admins("building")
 		build_limb(create_buildpath())
 	else
 		//Just build whatever it is

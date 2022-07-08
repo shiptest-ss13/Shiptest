@@ -22,7 +22,7 @@ export const Limbgrower = (props, context) => {
     <Window
       title="Limb Grower"
       width={500}
-      height={450}
+      height={Math.max(460, 195 + categories.length * 23) + (reagents.length*25)}
       resizable>
       {!!busy && (
         <Dimmer fontSize="32px">

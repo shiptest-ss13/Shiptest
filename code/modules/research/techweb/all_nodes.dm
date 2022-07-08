@@ -92,9 +92,9 @@
 /datum/techweb_node/xenoorgan_biotech
 	id = "xenoorgan_bio"
 	display_name = "Xeno-organ Biology"
-	description = "Plasmaman, Elzuose, Sarathi... What makes our non-human crewmembers tick?"
+	description = "Phytosians, Golems, even Skeletons... We finally understand the less well known species enough to replicate their anatomy."
 	prereq_ids = list("adv_biotech")
-	design_ids = list("limbdesign_felinid", "limbdesign_dwarf", "limbdesign_lizard", "limbdesign_plasmaman", "limbdesign_ethereal", "limbdesign_moth", "limbdesign_spider", "limbdesign_kepori", "limbdesign_vox")
+	design_ids = list("limbdesign_abductor", "limbdesign_fly", "limbdesign_golem", "limbdesign_pod", "limbdesign_skeleton", "limbdesign_snail")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 

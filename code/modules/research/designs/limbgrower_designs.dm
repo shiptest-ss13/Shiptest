@@ -8,7 +8,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/l_arm
-	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI)
+	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_GOLEM,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/rightarm
 	name = "Right Arm"
@@ -16,7 +16,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/r_arm
-	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI)
+	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_GOLEM,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/leftleg
 	name = "Left Leg"
@@ -24,7 +24,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/l_leg
-	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI)
+	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_GOLEM,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/rightleg
 	name = "Right Leg"
@@ -32,7 +32,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/r_leg
-	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI)
+	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_GOLEM,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/digitigrade/leftleg
 	name = "Digitigrade Left Leg"
@@ -58,7 +58,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 30)
 	build_path = /obj/item/organ/heart
-	category = list(SPECIES_HUMAN,"initial")
+	category = list("initial", SPECIES_HUMAN)
 
 /datum/design/lungs
 	name = "Lungs"
@@ -66,7 +66,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
 	build_path = /obj/item/organ/lungs
-	category = list(SPECIES_HUMAN,"initial")
+	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/liver
 	name = "Liver"
@@ -74,7 +74,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
 	build_path = /obj/item/organ/liver
-	category = list(SPECIES_HUMAN,"initial")
+	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/stomach
 	name = "Stomach"
@@ -82,7 +82,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 15)
 	build_path = /obj/item/organ/stomach
-	category = list(SPECIES_HUMAN,"initial")
+	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/appendix
 	name = "Appendix"
@@ -90,7 +90,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 5) //why would you need this
 	build_path = /obj/item/organ/appendix
-	category = list(SPECIES_HUMAN,"initial")
+	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/eyes
 	name = "Eyes"
@@ -98,7 +98,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/eyes
-	category = list(SPECIES_HUMAN,"initial")
+	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/ears
 	name = "Ears"
@@ -106,7 +106,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/ears
-	category = list(SPECIES_HUMAN,"initial")
+	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/tongue
 	name = "Tongue"
@@ -114,7 +114,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/tongue
-	category = list(SPECIES_HUMAN,"initial")
+	category = list("initial",SPECIES_HUMAN)
 
 // Grows a fake lizard tail - not usable in lizard wine and other similar recipes.
 /datum/design/lizard_tail
@@ -123,7 +123,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
 	build_path = /obj/item/organ/tail/lizard/fake
-	category = list(SPECIES_LIZARD)
+	category = list("initial",SPECIES_LIZARD)
 
 /datum/design/lizard_tongue
 	name = "Forked Tongue"
@@ -131,7 +131,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/tongue/lizard
-	category = list(SPECIES_LIZARD)
+	category = list("initial",SPECIES_LIZARD)
 
 //  someday this will get uncommented
 // /datum/design/monkey_tail
@@ -148,7 +148,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
 	build_path = /obj/item/organ/tail/cat
-	category = list(SPECIES_FELINID)
+	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/cat_ears
 	name = "Cat Ears"
@@ -156,7 +156,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/ears/cat
-	category = list(SPECIES_FELINID)
+	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/dwarf_gland
 	name = "Dwarf Gland"
@@ -164,7 +164,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/ethanol = 20)
 	build_path = /obj/item/organ/dwarfgland
-	category = list(SPECIES_DWARF)
+	category = list("initial",SPECIES_DWARF)
 
 /datum/design/dwarf_liver
 	name = "Dwarf Liver"
@@ -172,7 +172,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/ethanol = 20)
 	build_path = /obj/item/organ/liver/dwarf
-	category = list(SPECIES_DWARF)
+	category = list("initial",SPECIES_DWARF)
 
 /datum/design/dwarf_tongue
 	name = "Dwarf Tongue"
@@ -180,7 +180,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10, /datum/reagent/consumable/ethanol = 10)
 	build_path = /obj/item/organ/tongue/dwarf
-	category = list(SPECIES_DWARF)
+	category = list("initial",SPECIES_DWARF)
 
 /datum/design/lizard_tongue
 	name = "Lizard Tongue"
@@ -188,7 +188,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/tongue/lizard
-	category = list(SPECIES_LIZARD)
+	category = list("initial",SPECIES_LIZARD)
 
 /datum/design/plasmaman_lungs
 	name = "Plasma Filter"
@@ -196,7 +196,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/toxin/plasma = 20)
 	build_path = /obj/item/organ/lungs/plasmaman
-	category = list(SPECIES_PLASMAMAN)
+	category = list("initial",SPECIES_PLASMAMAN)
 
 /datum/design/plasmaman_tongue
 	name = "Plasma Bone Tongue"
@@ -204,7 +204,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10, /datum/reagent/toxin/plasma = 10)
 	build_path = /obj/item/organ/tongue/bone/plasmaman
-	category = list(SPECIES_PLASMAMAN)
+	category = list("initial",SPECIES_PLASMAMAN)
 
 /datum/design/plasmaman_liver
 	name = "Reagent Processing Crystal"
@@ -212,7 +212,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/toxin/plasma = 20)
 	build_path = /obj/item/organ/liver/plasmaman
-	category = list(SPECIES_PLASMAMAN)
+	category = list("initial",SPECIES_PLASMAMAN)
 
 /datum/design/plasmaman_stomach
 	name = "Digestive Crystal"
@@ -220,7 +220,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/toxin/plasma = 20)
 	build_path = /obj/item/organ/stomach/plasmaman
-	category = list(SPECIES_PLASMAMAN)
+	category = list("initial",SPECIES_PLASMAMAN)
 
 /datum/design/ethereal_stomach
 	name = "Biological Battery"
@@ -228,7 +228,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/liquidelectricity = 20)
 	build_path = /obj/item/organ/stomach/ethereal
-	category = list(SPECIES_ETHEREAL)
+	category = list("initial",SPECIES_ETHEREAL)
 
 /datum/design/ethereal_tongue
 	name = "Ethereal Tongue"
@@ -236,7 +236,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10, /datum/reagent/consumable/liquidelectricity = 10)
 	build_path = /obj/item/organ/tongue/ethereal
-	category = list(SPECIES_ETHEREAL)
+	category = list("initial",SPECIES_ETHEREAL)
 
 /datum/design/moth_eyes
 	name = "Moth Eyes"
@@ -244,7 +244,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/eyes/compound
-	category = list(SPECIES_MOTH)
+	category = list("initial",SPECIES_MOTH)
 
 /datum/design/moth_tongue
 	name = "Moth Tongue"
@@ -252,7 +252,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/tongue/moth
-	category = list(SPECIES_MOTH)
+	category = list("initial",SPECIES_MOTH)
 
 /datum/design/spider_tongue
 	name = "Spider Tongue"
@@ -260,7 +260,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/tongue/spider
-	category = list(SPECIES_RACHNID)
+	category = list("initial",SPECIES_RACHNID)
 
 /datum/design/spider_eyes
 	name = "Spider Eyes"
@@ -268,7 +268,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
 	build_path = /obj/item/organ/eyes/night_vision/spider
-	category = list(SPECIES_RACHNID)
+	category = list("initial",SPECIES_RACHNID)
 
 /datum/design/kepori_tongue
 	name = "Kepori Tongue"
@@ -276,7 +276,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/tongue/kepori
-	category = list(SPECIES_KEPORI)
+	category = list("initial",SPECIES_KEPORI)
 
 /datum/design/vox_tongue
 	name = "Vox Tongue"
@@ -284,7 +284,95 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
 	build_path = /obj/item/organ/tongue/vox
-	category = list(SPECIES_VOX)
+	category = list("initial",SPECIES_VOX)
+
+/datum/design/abductor_tongue
+	name = "Abductor Tongue"
+	id = "abductortongue"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
+	build_path = /obj/item/organ/tongue/abductor
+	category = list("initial",SPECIES_ABDUCTOR)
+
+/datum/design/fly_tongue
+	name = "Flyperson Tongue"
+	id = "flytongue"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
+	build_path = /obj/item/organ/tongue/fly
+	category = list("initial",SPECIES_FLYPERSON)
+
+/datum/design/fly_liver
+	name = "Flyperson Liver"
+	id = "flyliver"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
+	build_path = /obj/item/organ/liver/fly
+	category = list("initial",SPECIES_FLYPERSON)
+
+/datum/design/fly_stomach
+	name = "Flyperson Stomach"
+	id = "flystomach"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
+	build_path = /obj/item/organ/stomach/fly
+	category = list("initial",SPECIES_FLYPERSON)
+
+/datum/design/golem_tongue
+	name = "Golem Tongue"
+	id = "golemtongue"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
+	build_path = /obj/item/organ/tongue/golem_base
+	category = list("initial",SPECIES_GOLEM)
+
+/datum/design/golem_vocal_chords
+	name = "Adamantine Vocal Chords"
+	id = "golemvocalchords"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
+	build_path = /obj/item/organ/vocal_cords/adamantine
+	category = list("initial",SPECIES_GOLEM)
+
+/datum/design/golem_resonator
+	name = "Adamantine Resonator"
+	id = "golemresonator"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
+	build_path = /obj/item/organ/adamantine_resonator
+	category = list("initial",SPECIES_GOLEM)
+
+/datum/design/golem_vocal_chords
+	name = "Adamantine Vocal Chords"
+	id = "golemvocalchords"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
+	build_path = /obj/item/organ/vocal_cords/adamantine
+	category = list("initial",SPECIES_GOLEM)
+
+/datum/design/skeleton_tongue
+	name = "Skeleton... Tongue?"
+	id = "skeletontongue"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 10, /datum/reagent/consumable/milk = 20)
+	build_path = /obj/item/organ/tongue/bone
+	category = list("initial",SPECIES_SKELETON)
+
+/datum/design/snail_tongue
+	name = "Snail Tongue"
+	id = "snailtongue"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
+	build_path = /obj/item/organ/tongue/snail
+	category = list("initial",SPECIES_SNAIL)
+
+/datum/design/snail_eyes
+	name = "Snail Eyes"
+	id = "snaileyes"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
+	build_path = /obj/item/organ/eyes/snail
+	category = list("initial",SPECIES_SNAIL)
 
 /datum/design/armblade
 	name = "Arm Blade"
@@ -298,19 +386,31 @@
 /obj/item/disk/design_disk/limbs
 	name = "Limb Design Disk"
 	desc = "A disk containing limb and organ designs for a limbgrower."
-	/// List of all limb designs this disk contains.
-	var/list/limb_designs = list()
+	var/species = "debug"
 
 /obj/item/disk/design_disk/limbs/Initialize()
-	. = ..()
-	max_blueprints = limb_designs.len
-	for(var/design in limb_designs)
-		var/datum/design/new_design = design
-		blueprints += new new_design
+	.=..()
+	var/race
+	switch(species)
+		if(SPECIES_ABDUCTOR)
+			race = "Abductor"
+		if(SPECIES_FLYPERSON)
+			race = "Flyperson"
+		if(SPECIES_GOLEM)
+			race = "Golem"
+		if(SPECIES_POD)
+			race = "Phytosian"
+		if(SPECIES_SKELETON)
+			race = "Skeleton"
+		if(SPECIES_SNAIL)
+			race = "Snailperson"
+		else
+			race = "Alien"
+	desc += " This one contains designs for [race] anatomy."
 
 /datum/design/limb_disk
 	name = "Limb Design Disk"
-	desc = "Contains designs for various limbs."
+	desc = "Contains designs for various limbs and organs."
 	id = "limbdesign_parent"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
@@ -318,92 +418,62 @@
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/obj/item/disk/design_disk/limbs/felinid
-	name = "Felinid Limb Design Disk"
-	limb_designs = list(/datum/design/cat_tail, /datum/design/cat_ears)
+/obj/item/disk/design_disk/limbs/abductor
+	name = "Abductor Limb Design Disk"
+	species = SPECIES_ABDUCTOR
 
-/datum/design/limb_disk/felinid
-	name = "Felinid Limb Design Disk"
-	desc = "Contains designs for felinid bodyparts for the limbgrower - Felinid ears and tail."
-	id = "limbdesign_felinid"
-	build_path = /obj/item/disk/design_disk/limbs/felinid
+/datum/design/limb_disk/abductor
+	name = "Abductor Limb Design Disk"
+	desc = "Contains designs for abductor bodyparts and organs for the limbgrower."
+	id = "limbdesign_abductor"
+	build_path = /obj/item/disk/design_disk/limbs/abductor
 
-/obj/item/disk/design_disk/limbs/dwarf
-	name = "Dwarf Limb Design Disk"
-	limb_designs = list(/datum/design/dwarf_gland, /datum/design/dwarf_liver, /datum/design/dwarf_tongue)
+/obj/item/disk/design_disk/limbs/fly
+	name = "Flyperson Limb Design Disk"
+	species = SPECIES_FLYPERSON
 
-/datum/design/limb_disk/dwarf
-	name = "Dwarf Limb Design Disk"
-	desc = "Contains designs for dwarf bodyparts for the limbgrower - Dwarf liver, gland, and tongue."
-	id = "limbdesign_dwarf"
-	build_path = /obj/item/disk/design_disk/limbs/dwarf
+/datum/design/limb_disk/fly
+	name = "Fly Limb Design Disk"
+	desc = "Contains designs for flyperson bodyparts and organs for the limbgrower."
+	id = "limbdesign_fly"
+	build_path = /obj/item/disk/design_disk/limbs/fly
 
-/obj/item/disk/design_disk/limbs/lizard
-	name = "Sarathi Limb Design Disk"
-	limb_designs = list(/datum/design/lizard_tail, /datum/design/lizard_tongue)
+/obj/item/disk/design_disk/limbs/golem
+	name = "Golem Limb Design Disk"
+	species = SPECIES_GOLEM
 
-/datum/design/limb_disk/lizard
-	name = "Sarathi Limb Design Disk"
-	desc = "Contains designs for sarathi bodyparts for the limbgrower - Sarathi tongue, and tail"
-	id = "limbdesign_lizard"
-	build_path = /obj/item/disk/design_disk/limbs/lizard
+/datum/design/limb_disk/golem
+	name = "Golem Limb Design Disk"
+	desc = "Contains designs for golem bodyparts and organs for the limbgrower."
+	id = "limbdesign_golem"
+	build_path = /obj/item/disk/design_disk/limbs/golem
 
-/obj/item/disk/design_disk/limbs/plasmaman
-	name = "Plasmaman Limb Design Disk"
-	limb_designs = list(/datum/design/plasmaman_stomach, /datum/design/plasmaman_liver, /datum/design/plasmaman_lungs, /datum/design/plasmaman_tongue)
+/obj/item/disk/design_disk/limbs/pod
+	name = "Phytosian Limb Design Disk"
+	species = SPECIES_POD
 
-/datum/design/limb_disk/plasmaman
-	name = "Plasmaman Limb Design Disk"
-	desc = "Contains designs for plasmaman organs for the limbgrower - Plasmaman tongue, liver, stomach, and lungs."
-	id = "limbdesign_plasmaman"
-	build_path = /obj/item/disk/design_disk/limbs/plasmaman
+/datum/design/limb_disk/pod
+	name = "Phytosian Limb Design Disk"
+	desc = "Contains designs for phytosian bodyparts and organs for the limbgrower."
+	id = "limbdesign_pod"
+	build_path = /obj/item/disk/design_disk/limbs/pod
 
-/obj/item/disk/design_disk/limbs/ethereal
-	name = "Elzuose Limb Design Disk"
-	limb_designs = list(/datum/design/ethereal_stomach)
+/obj/item/disk/design_disk/limbs/skeleton
+	name = "Skeleton Limb Design Disk"
+	species = SPECIES_SKELETON
 
-/datum/design/limb_disk/ethereal
-	name = "Elzuose Limb Design Disk"
-	desc = "Contains designs for elzuose organs for the limbgrower - Elzuose tongue and stomach."
-	id = "limbdesign_ethereal"
-	build_path = /obj/item/disk/design_disk/limbs/ethereal
+/datum/design/limb_disk/skeleton
+	name = "Skeleton Limb Design Disk"
+	desc = "Contains designs for skeleton bodyparts and organs for the limbgrower."
+	id = "limbdesign_skeleton"
+	build_path = /obj/item/disk/design_disk/limbs/skeleton
 
-/obj/item/disk/design_disk/limbs/moth
-	name = "Moth Limb Design Disk"
-	limb_designs = list(/datum/design/moth_eyes, /datum/design/moth_tongue)
+/obj/item/disk/design_disk/limbs/snail
+	name = "Snail Limb Design Disk"
+	species = SPECIES_SNAIL
 
-/datum/design/limb_disk/moth
-	name = "Moth Limb Design Disk"
-	desc = "Contains designs for moth organs for the limbgrower - Moth tongue and eyes."
-	id = "limbdesign_moth"
-	build_path = /obj/item/disk/design_disk/limbs/moth
-
-/obj/item/disk/design_disk/limbs/spider
-	name = "Rachnid Limb Design Disk"
-	limb_designs = list(/datum/design/spider_eyes, /datum/design/spider_tongue)
-
-/datum/design/limb_disk/spider
-	name = "Rachnid Limb Design Disk"
-	desc = "Contains designs for rachnid organs for the limbgrower - Rachnid tongue and eyes."
-	id = "limbdesign_spider"
-	build_path = /obj/item/disk/design_disk/limbs/spider
-
-/obj/item/disk/design_disk/limbs/kepori
-	name = "Kepori Limb Design Disk"
-	limb_designs = list(/datum/design/kepori_tongue)
-
-/datum/design/limb_disk/kepori
-	name = "Kepori Limb Design Disk"
-	desc = "Contains designs for kepori organs for the limbgrower - Kepori tongue."
-	id = "limbdesign_kepori"
-	build_path = /obj/item/disk/design_disk/limbs/kepori
-
-/obj/item/disk/design_disk/limbs/vox
-	name = "Vox Limb Design Disk"
-	limb_designs = list(/datum/design/vox_tongue)
-
-/datum/design/limb_disk/vox
-	name = "Vox Limb Design Disk"
-	desc = "Contains designs for vox organs for the limbgrower - Vox tongue."
-	id = "limbdesign_vox"
-	build_path = /obj/item/disk/design_disk/limbs/vox
+/datum/design/limb_disk/snail
+	name = "Snail Limb Design Disk"
+	desc = "Contains designs for snail bodyparts and organs for the limbgrower."
+	id = "limbdesign_snail"
+	build_path = /obj/item/disk/design_disk/limbs/snail
