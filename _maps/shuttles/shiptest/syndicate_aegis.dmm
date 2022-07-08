@@ -329,7 +329,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/north,
 /obj/machinery/door/poddoor/preopen{
-	id = engine
+	id = "engine"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
@@ -2338,7 +2338,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = engine
+	id = "engine"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
@@ -2795,7 +2795,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/button/door{
-	id = engine;
+	id = "engine";
 	name = "Engine blast doors";
 	pixel_x = -24
 	},
