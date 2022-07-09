@@ -254,6 +254,15 @@
 	build_path = /obj/item/organ/tongue/moth
 	category = list("initial",SPECIES_MOTH)
 
+/datum/design/moth_wings
+	name = "Moth Wings"
+	id = "mothwings"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
+	build_path = /obj/item/organ/moth_wings
+	category = list("initial",SPECIES_MOTH)
+
+
 /datum/design/spider_tongue
 	name = "Spider Tongue"
 	id = "spidertongue"
