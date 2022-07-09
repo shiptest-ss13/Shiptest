@@ -201,86 +201,29 @@ SUBSYSTEM_DEF(overmap)
   * * target - The ruin to spawn, if any
   * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
   */
-/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
+/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(datum/overmap/dynamic/dynamic_datum, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
 	log_shuttle("SSOVERMAP: SPAWNING DYNAMIC ENCOUNTER STARTED")
-	var/list/ruin_list
-	var/datum/map_generator/mapgen
-	var/area/target_area
-	var/turf/surface = /turf/open/space
-	var/datum/weather_controller/weather_controller_type
+	var/list/ruin_list = dynamic_datum.ruin_list
+	var/datum/map_generator/mapgen = new dynamic_datum.mapgen
+	var/area/target_area = dynamic_datum.target_area
+	var/turf/surface = dynamic_datum.surface
+	var/datum/weather_controller/weather_controller_type = dynamic_datum.weather_controller_type
 	///A planet template that contains a list of biomes to use
-	var/datum/planet/planet_template
-	if(planet_type)
-		switch(planet_type)
-			if(DYNAMIC_WORLD_LAVA)
-				ruin_list = SSmapping.lava_ruins_templates
-				mapgen = new /datum/map_generator/planet_generator/lava
-				target_area = /area/overmap_encounter/planetoid/lava
-				surface = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-				planet_template = /datum/planet/lava
-				weather_controller_type = /datum/weather_controller/lavaland
-			if(DYNAMIC_WORLD_ICE)
-				ruin_list = SSmapping.ice_ruins_templates
-				mapgen = new /datum/map_generator/planet_generator/snow
-				target_area = /area/overmap_encounter/planetoid/ice
-				surface = /turf/open/floor/plating/asteroid/snow/icemoon
-				planet_template = /datum/planet/snow
-				weather_controller_type = /datum/weather_controller/snow_planet
-			if(DYNAMIC_WORLD_SAND)
-				ruin_list = SSmapping.sand_ruins_templates
-				mapgen = new /datum/map_generator/planet_generator/sand
-				target_area = /area/overmap_encounter/planetoid/sand
-				surface = /turf/open/floor/plating/asteroid/whitesands
-				planet_template = /datum/planet/sand //TODO, MAKE NEW PLANET TEMPLATE
-				weather_controller_type = /datum/weather_controller/desert
-			if(DYNAMIC_WORLD_JUNGLE)
-				ruin_list = SSmapping.jungle_ruins_templates
-				mapgen = new /datum/map_generator/planet_generator
-				target_area = /area/overmap_encounter/planetoid/jungle
-				surface = /turf/open/floor/plating/dirt/jungle
-				planet_template = /datum/planet/jungle
-				weather_controller_type = /datum/weather_controller/lush
-			if(DYNAMIC_WORLD_ASTEROID)
-				ruin_list = null
-				mapgen = new /datum/map_generator/cave_generator/asteroid
-			if(DYNAMIC_WORLD_WASTEPLANET)
-				ruin_list = SSmapping.waste_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/wasteplanet
-				target_area = /area/overmap_encounter/planetoid/wasteplanet
-				surface = /turf/open/floor/plating/asteroid/wasteplanet
-				weather_controller_type = /datum/weather_controller/chlorine //let's go??
-				//planet_template = /datum/planet/lava //TODO, MAKE NEW PLANET TEMPLATE
-			if(DYNAMIC_WORLD_ROCKPLANET)
-				ruin_list = SSmapping.rock_ruins_templates
-				mapgen = new /datum/map_generator/planet_generator/lava //TODO, MAKE NEW PLANETGEN
-				target_area = /area/overmap_encounter/planetoid/rockplanet
-				surface = /turf/open/floor/plating/asteroid
-				weather_controller_type = /datum/weather_controller/rockplanet
-				planet_template = /datum/planet/rock
-			if(DYNAMIC_WORLD_BEACHPLANET)
-				ruin_list = SSmapping.beach_ruins_templates
-				mapgen = new /datum/map_generator/planet_generator/beach
-				target_area = /area/overmap_encounter/planetoid/beachplanet
-				surface = /turf/open/floor/plating/asteroid/sand/lit
-				planet_template = /datum/planet/beach
-				weather_controller_type = /datum/weather_controller/lush
-			if(DYNAMIC_WORLD_REEBE)
-				ruin_list = SSmapping.yellow_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/reebe
-				target_area = /area/overmap_encounter/planetoid/reebe
-				surface = /turf/open/chasm/reebe_void
-			if(DYNAMIC_WORLD_SPACERUIN)
-				ruin_list = SSmapping.space_ruins_templates
+	var/datum/planet/planet_template = dynamic_datum.planet_template
+	if(!dynamic_datum)
+		CRASH("spawn_dynamic_encounter called without any datum to spawn!")
 
 	if(ruin && ruin_list && !ruin_type)
 		ruin_type = ruin_list[pick(ruin_list)]
 		if(ispath(ruin_type))
 			ruin_type = new ruin_type
 
-	var/height = QUADRANT_MAP_SIZE
-	var/width = QUADRANT_MAP_SIZE
+	var/height = dynamic_datum.vlevel_height
+	var/width = dynamic_datum.vlevel_width
 
 	var/encounter_name = "Dynamic Overmap Encounter"
+	if(dynamic_datum.planet_name)
+		encounter_name = dynamic_datum.planet_name
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, width, height, ALLOCATION_QUADRANT, QUADRANT_MAP_SIZE)
 

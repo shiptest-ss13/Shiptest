@@ -305,6 +305,11 @@
 	text += " vine."
 	. += text
 
+
+/obj/structure/spacevine/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	qdel(src)
+
 /obj/structure/spacevine/Destroy()
 	for(var/datum/spacevine_mutation/SM in mutations)
 		SM.on_death(src)
