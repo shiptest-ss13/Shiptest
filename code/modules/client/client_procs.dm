@@ -16,6 +16,45 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 #define CURRENT_MINUTE 3
 #define MINUTE_COUNT 4
 #define ADMINSWARNED_AT 5
+
+/client/var/verblist
+/client/Command(text)
+	if(connection != "telnet")
+		to_chat(src, "<span class='danger'>Invalid command!</span>")
+		return
+	
+	if(!verblist)
+		var/list/verblist = list()
+		var/list/verbstoprocess = verbs.Copy()
+		if(mob)
+			verbstoprocess += mob.verbs
+			for(var/AM in mob?.contents)
+				var/atom/movable/thing = AM
+				verbstoprocess += thing.verbs
+		for(var/thing in verbstoprocess)
+			var/procpath/verb_to_init = thing
+			if(!verb_to_init)
+				continue
+			if(!istext(verb_to_init.category))
+				continue
+			verblist[verb_to_init.name] = thing
+	
+	var/parts = splittext(text)
+	var/command = parts[1]
+	
+	var/verbtocall = verblist[command]
+	if(!verbtocall)
+		to_chat(src, "<span class='danger'>Invalid command!</span>")
+		return
+	
+	var/args = list()
+	if(parts.len >= 2)
+		args = parts.Copy(2)
+	
+	call(verbtocall)(arglist(args))
+	
+	
+
 	/*
 	When somebody clicks a link in game, this Topic is called first.
 	It does the stuff in this proc and  then is redirected to the Topic() proc for the src=[0xWhatever]
@@ -211,7 +250,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/tdata = TopicData //save this for later use
 	TopicData = null							//Prevent calls to client.Topic from connect
 
-	if(connection != "seeker" && connection != "web")//Invalid connection type.
+	if(connection != "seeker" && connection != "web" && connection != "telnet")//Invalid connection type.
 		return null
 
 	GLOB.clients += src
