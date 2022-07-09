@@ -127,7 +127,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	is_team_borer = FALSE
 	borer_alert = "Become a neutered cortical borer? (Warning, You can no longer be cloned!)"
 
-/mob/living/simple_animal/borer/sterile/Initialize(mapload)
+/mob/living/simple_animal/borer/sterile/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/rename_on_login)
 	AddElement(/datum/element/appearance_on_login/borer)
