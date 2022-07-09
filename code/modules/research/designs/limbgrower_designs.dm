@@ -383,6 +383,62 @@
 	build_path = /obj/item/organ/eyes/snail
 	category = list("initial",SPECIES_SNAIL)
 
+/datum/design/xeno_tongue
+	name = "Xenomorph Tongue"
+	id = "xenotongue"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
+	build_path = /obj/item/organ/tongue/alien
+	category = list("initial",SPECIES_XENOMORPH)
+
+/datum/design/xeno_eyes
+	name = "Xenomorph Eyes"
+	id = "xenoeyes"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 40)
+	build_path = /obj/item/organ/eyes/night_vision/alien
+	category = list("initial",SPECIES_XENOMORPH)
+
+/datum/design/xeno_liver
+	name = "Xenomorph Liver"
+	id = "xenoliver"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
+	build_path = /obj/item/organ/liver/alien
+	category = list("initial",SPECIES_XENOMORPH)
+
+/datum/design/xeno_vessel
+	name = "Xenomorph Plasma Vessel"
+	id = "xenovessel"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 40, /datum/reagent/toxin/acid = 20, /datum/reagent/toxin/plasma = 20)
+	build_path = /obj/item/organ/alien/plasmavessel
+	category = list("initial",SPECIES_XENOMORPH)
+
+/datum/design/xeno_resin
+	name = "Xenomorph Resin Spinner"
+	id = "xenoresin"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 40, /datum/reagent/toxin/acid = 20)
+	build_path = /obj/item/organ/alien/resinspinner
+	category = list("initial",SPECIES_XENOMORPH)
+
+/datum/design/xeno_acid
+	name = "Xenomorph Acid Gland"
+	id = "xenoacid"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 40, /datum/reagent/toxin/acid = 20)
+	build_path = /obj/item/organ/alien/acid
+	category = list("initial",SPECIES_XENOMORPH)
+
+/datum/design/xeno_neurotoxin
+	name = "Xenomorph Neurotoxin Gland"
+	id = "xenoneurotoxin"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 40, /datum/reagent/toxin/acid = 20)
+	build_path = /obj/item/organ/alien/neurotoxin
+	category = list("initial",SPECIES_XENOMORPH)
+
 /datum/design/armblade
 	name = "Arm Blade"
 	id = "armblade"
@@ -413,6 +469,8 @@
 			race = "Skeleton"
 		if(SPECIES_SNAIL)
 			race = "Snailperson"
+		if(SPECIES_XENOMORPH)
+			race = "Xenomorph"
 		else
 			race = "Alien"
 	desc += " This one contains designs for [race] anatomy."
@@ -486,3 +544,13 @@
 	desc = "Contains designs for snail bodyparts and organs for the limbgrower."
 	id = "limbdesign_snail"
 	build_path = /obj/item/disk/design_disk/limbs/snail
+
+/obj/item/disk/design_disk/limbs/xeno
+	name = "Xenomorph Limb Design Disk"
+	species = SPECIES_XENOMORPH
+
+/datum/design/limb_disk/xeno
+	name = "Xenomorph Limb Design Disk"
+	desc = "Contains designs for xenomorph bodyparts and organs for the limbgrower."
+	id = "limbdesign_xenomorph"
+	build_path = /obj/item/disk/design_disk/limbs/xeno
