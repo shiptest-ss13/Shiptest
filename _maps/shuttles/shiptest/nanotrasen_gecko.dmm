@@ -623,18 +623,6 @@
 	dir = 4
 	},
 /area/ship/maintenance/fore)
-"gH" = (
-/obj/machinery/door/airlock/mining{
-	name = "Starboard Cargo Bay"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/firedoor/heavy,
-/obj/machinery/door/poddoor/preopen{
-	id = "gecko_starboard_int"
-	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/cargo/starboard)
 "gQ" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1248,7 +1236,6 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/brown/hidden,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "nm" = (
@@ -1949,20 +1936,6 @@
 /obj/structure/sign/warning,
 /turf/closed/wall,
 /area/ship/hallway/central)
-"vq" = (
-/obj/machinery/door/airlock/mining{
-	frequency = 1331;
-	id_tag = "port_cargo_interior";
-	name = "Port Cargo Bay"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/firedoor/heavy,
-/obj/machinery/door/poddoor/preopen{
-	id = "gecko_port_int"
-	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/cargo/port)
 "vv" = (
 /turf/closed/wall,
 /area/ship/crew/toilet)
@@ -5550,11 +5523,11 @@ mx
 Tv
 BW
 An
-vq
+vY
 pc
 DK
 fF
-gH
+Qb
 Qy
 Tz
 rc
