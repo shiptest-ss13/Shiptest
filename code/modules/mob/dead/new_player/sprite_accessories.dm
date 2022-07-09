@@ -2442,6 +2442,10 @@
 	limbs_id = "mcgipc"
 	color_src = MUTCOLORS
 
+/datum/sprite_accessory/ipc_chassis/hivis
+	name = "Bajaran Blasting Co. High-Visibility Frame"
+	limbs_id = "vis"
+
 /datum/sprite_accessory/ipc_chassis/bishopcyberkinetics
 	name = "Bishop Cyberkinetics"
 	limbs_id = "bshipc"
