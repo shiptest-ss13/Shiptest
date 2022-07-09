@@ -14,7 +14,7 @@
 	layer = EDGED_TURF_LAYER
 	initial_temperature = TCMB
 	base_icon_state = "smoothrocks"
-	var/smooth_icon = 'icons/turf/smoothrocks.dmi'
+	var/smooth_icon = 'icons/turf/walls/smoothrocks.dmi'
 	var/environment_type = "asteroid"
 	var/turf/open/floor/plating/turf_type = /turf/open/floor/plating/asteroid/airless
 	var/obj/item/stack/ore/mineralType = null
@@ -246,9 +246,8 @@
 	turf_type = /turf/open/floor/plating/asteroid/icerock
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	has_borders = FALSE
 	defer_change = TRUE
-	mineralChance = 30 //as most caves is snowy, might as well bump up the chance
+	mineralChance = 20 //as most caves is snowy, might as well bump up the chance
 
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10, /obj/item/stack/ore/titanium = 11,
@@ -262,7 +261,6 @@
 	icon_state = "icewall-0"
 	base_icon_state = "icewall"
 	defer_change = TRUE
-	has_borders = FALSE
 	environment_type = "snow_cavern"
 	turf_type = /turf/open/floor/plating/asteroid/iceberg/lit
 	baseturfs = /turf/open/floor/plating/asteroid/iceberg/lit
@@ -443,8 +441,6 @@
 	environment_type = "snow"
 	turf_type = /turf/open/floor/plating/asteroid/icerock
 	defer_change = TRUE
-	x_offset = -6
-	y_offset = -6
 
 /turf/closed/mineral/snowmountain/icemoon
 	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
@@ -499,7 +495,7 @@
 
 /turf/closed/mineral/gibtonite/proc/explosive_reaction(mob/user = null, triggered_by_explosion = 0)
 	if(stage == GIBTONITE_UNSTRUCK)
-		activated_overlay = mutable_appearance('icons/turf/smoothrocks.dmi', "rock_Gibtonite_active", ON_EDGED_TURF_LAYER)
+		activated_overlay = mutable_appearance('icons/turf/walls/smoothrocks.dmi', "rock_Gibtonite_active", ON_EDGED_TURF_LAYER)
 		add_overlay(activated_overlay)
 		name = "gibtonite deposit"
 		desc = "An active gibtonite reserve. Run!"
@@ -589,7 +585,6 @@
 	turf_type = /turf/open/floor/plating/asteroid/icerock
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	has_borders = FALSE
 	defer_change = TRUE
 
 /turf/closed/mineral/strong
@@ -746,6 +741,20 @@
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
 	has_borders = FALSE
+
+/turf/closed/mineral/random/jungle
+	name = "mountain wall"
+	icon = 'icons/turf/walls/jungle_wall.dmi'
+	smooth_icon = 'icons/turf/walls/jungle_wall.dmi'
+	icon_state = "jungle_wall-0"
+	base_icon_state = "jungle_wall"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	turf_type = /turf/open/floor/plating/dirt/jungle
+	baseturfs = /turf/open/floor/plating/dirt/jungle
+	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 11,
+		/obj/item/stack/ore/bluespace_crystal = 1)
 
 /turf/closed/mineral/random/beach
 	baseturfs = /turf/open/floor/plating/asteroid/sand/dense

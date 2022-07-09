@@ -251,7 +251,7 @@
 			token.color = null
 			ruin_list = SSmapping.space_ruins_templates
 
-	if(vlevel_height <= 255 && vlevel_width <= 255)
+	if(vlevel_height >= 255 && vlevel_width >= 255)
 		planet_name = "LV-[pick(rand(11111,99999))]"
 		Rename(planet_name)
 
@@ -264,9 +264,6 @@
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
-	if(vlevel_height <= 255 && vlevel_width <= 255)
-		. += "LV-"
-		. += "[pick(rand(11111,999999))]"
 	switch(rand(1,10))
 		if(1 to 4)
 			for(var/i in 1 to rand(2,3))
