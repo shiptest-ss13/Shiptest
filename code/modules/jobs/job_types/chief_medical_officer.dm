@@ -2,7 +2,7 @@
 	title = "Chief Medical Officer"
 	department_head = list("Captain")
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	head_announce = list(RADIO_CHANNEL_MEDICAL)
+	head_announce = list(RADIO_CHANNEL_COMMAND)
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -36,7 +36,7 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/pda/heads/cmo
 	l_pocket = /obj/item/pinpointer/crew
-	ears = /obj/item/radio/headset/heads/cmo
+	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer
 	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/blue //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/sneakers/brown
@@ -93,6 +93,6 @@
 	name = "Medical Director (NSV-M)"
 
 	uniform = /obj/item/clothing/under/syndicate
-	ears = /obj/item/radio/headset/syndicate/alt/leader
+	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
 	shoes = /obj/item/clothing/shoes/jackboots

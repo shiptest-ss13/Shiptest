@@ -2,7 +2,7 @@
 	title = "Head of Security"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
 	department_head = list("Captain")
-	head_announce = list(RADIO_CHANNEL_SECURITY)
+	head_announce = list(RADIO_CHANNEL_COMMAND)
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -41,7 +41,7 @@
 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/pda/heads/hos
-	ears = /obj/item/radio/headset/heads/hos/alt
+	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/security/head_of_security
 	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/alt
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -75,8 +75,9 @@
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/gun/energy/e_gun=1, /obj/item/ammo_box/magazine/co9mm=1) //WS edit - free lethals
 
 /datum/outfit/job/hos/syndicate
-	name = "Sergeant (Head of Security)"
+	name = "Sergeant (Syndicate)"
 
+	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/combat
 	head = /obj/item/clothing/head/warden
 	suit = /obj/item/clothing/suit/armor/vest/syndie
@@ -86,6 +87,7 @@
 /datum/outfit/job/hos/inteq
 	name = "IRMG Vanguard (Inteq)"
 
+	ears = /obj/item/radio/headset/inteq/alt/captain
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	head = /obj/item/clothing/head/beret/sec/hos/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
@@ -113,6 +115,7 @@
 /datum/outfit/job/hos/nanotrasen
 	name = "Head of Security (Nanotrasen)"
 
+	ears = /obj/item/radio/headset/nanotrasen/alt
 	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt
 	alt_uniform = null
 	head = /obj/item/clothing/head/beret/sec/hos

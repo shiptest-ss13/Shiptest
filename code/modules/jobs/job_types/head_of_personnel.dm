@@ -2,7 +2,7 @@
 	title = "Head of Personnel"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	department_head = list("Captain")
-	head_announce = list(RADIO_CHANNEL_SUPPLY, RADIO_CHANNEL_SERVICE)
+	head_announce = list(RADIO_CHANNEL_COMMAND)
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -44,7 +44,7 @@
 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/pda/heads/head_of_personnel
-	ears = /obj/item/radio/headset/heads/head_of_personnel
+	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/command/head_of_personnel
 	alt_uniform = /obj/item/clothing/under/rank/command/head_of_personnel/suit //WS Edit - Alt Uniforms
 	alt_suit = /obj/item/clothing/suit/ianshirt
@@ -68,6 +68,7 @@
 
 /datum/outfit/job/head_of_personnel/nt
 	name = "First Officer (Nanotrasen)"
+	ears = /obj/item/radio/headset/nanotrasen
 	uniform = /obj/item/clothing/under/rank/command/head_of_personnel/nt
 	alt_uniform = null
 	alt_suit = null
@@ -76,6 +77,7 @@
 
 /datum/outfit/job/head_of_personnel/solgov
 	name = "Executive Officer (SolGov)"
+	ears = /obj/item/radio/headset/solgov
 	uniform = /obj/item/clothing/under/rank/command/lieutenant
 	head = /obj/item/clothing/head/solgov
 	shoes = /obj/item/clothing/shoes/laceup
@@ -86,6 +88,7 @@
 
 /datum/outfit/job/head_of_personnel/pirate
 	name = "First Mate (Pirate)"
+	ears = /obj/item/radio/headset/pirate
 	uniform = /obj/item/clothing/under/costume/russian_officer
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate
@@ -104,7 +107,7 @@
 /datum/outfit/job/head_of_personnel/minutemen
 	name = "Bridge Officer (Colonial Minutemen)"
 
-	ears = /obj/item/radio/headset/heads/hos/alt
+	ears = /obj/item/radio/headset/minutemen/alt
 	uniform = /obj/item/clothing/under/rank/command/minutemen
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen

@@ -9,8 +9,8 @@
 	health = 25
 	maxHealth = 25
 
-	radio_key = /obj/item/encryptionkey/headset_eng
-	radio_channel = RADIO_CHANNEL_ENGINEERING
+	radio_key = /obj/item/encryptionkey
+	radio_channel = RADIO_CHANNEL_COMMON
 	bot_type = FLOOR_BOT
 	model = "Floorbot"
 	bot_core = /obj/machinery/bot_core/floorbot
