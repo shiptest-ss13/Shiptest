@@ -104,6 +104,7 @@
 	name = "brown bear"
 	desc = "A ferocious brown bear, ready to maul."
 	icon_state = "brownbear"
+	icon_living = "brownbear"
 	icon_dead = "brownbear_dead"
 	icon_gib = "brownbear_gib"
 	maxHealth = 70

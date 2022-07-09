@@ -1,46 +1,46 @@
 /datum/planet/beach
 	biomes = list(
 		"coldest" = list(
-			"biome_lowest_humidity" = /datum/biome/grass,
-			"biome_low_humidity" = /datum/biome/beach,
-			"biome_medium_humidity" = /datum/biome/beach/dense,
-			"biome_high_humidity" = /datum/biome/ocean,
-			"biome_highest_humidity" = /datum/biome/ocean/deep
-		),
-		"cold" = list(
-			"biome_lowest_humidity" = /datum/biome/grass,
-			"biome_low_humidity" = /datum/biome/beach,
-			"biome_medium_humidity" = /datum/biome/beach/dense,
-			"biome_high_humidity" = /datum/biome/ocean,
-			"biome_highest_humidity" = /datum/biome/ocean/deep
-		),
-		"warm" = list(
-			"biome_lowest_humidity" = /datum/biome/grass,
-			"biome_low_humidity" = /datum/biome/grass/dense,
-			"biome_medium_humidity" = /datum/biome/beach,
-			"biome_high_humidity" = /datum/biome/ocean,
-			"biome_highest_humidity" = /datum/biome/ocean/deep
-		),
-		"perfect" = list(
-			"biome_lowest_humidity" = /datum/biome/beach/dense,
-			"biome_low_humidity" = /datum/biome/jungle/dense,
+			"biome_lowest_humidity" = /datum/biome/ocean/deep,
+			"biome_low_humidity" = /datum/biome/ocean,
 			"biome_medium_humidity" = /datum/biome/beach,
 			"biome_high_humidity" = /datum/biome/beach,
-			"biome_highest_humidity" = /datum/biome/beach
+			"biome_highest_humidity" = /datum/biome/grass
+		),
+		"cold" = list(
+			"biome_lowest_humidity" = /datum/biome/ocean/deep,
+			"biome_low_humidity" = /datum/biome/ocean,
+			"biome_medium_humidity" = /datum/biome/beach,
+			"biome_high_humidity" = /datum/biome/grass/dense,
+			"biome_highest_humidity" = /datum/biome/jungle/dense
+		),
+		"warm" = list(
+			"biome_lowest_humidity" = /datum/biome/ocean/deep,
+			"biome_low_humidity" = /datum/biome/ocean,
+			"biome_medium_humidity" = /datum/biome/beach,
+			"biome_high_humidity" = /datum/biome/grass/dense,
+			"biome_highest_humidity" = /datum/biome/grass
+		),
+		"perfect" = list(
+			"biome_lowest_humidity" = /datum/biome/ocean/deep,
+			"biome_low_humidity" = /datum/biome/ocean,
+			"biome_medium_humidity" = /datum/biome/beach/dense,
+			"biome_high_humidity" = /datum/biome/beach,
+			"biome_highest_humidity" = /datum/biome/grass
 		),
 		"hot" = list(
-			"biome_lowest_humidity" = /datum/biome/jungle/dense,
-			"biome_low_humidity" = /datum/biome/grass/dense,
-			"biome_medium_humidity" = /datum/biome/beach,
-			"biome_high_humidity" = /datum/biome/ocean,
-			"biome_highest_humidity" = /datum/biome/ocean/deep
+			"biome_lowest_humidity" = /datum/biome/ocean/deep,
+			"biome_low_humidity" = /datum/biome/ocean,
+			"biome_medium_humidity" = /datum/biome/beach/dense,
+			"biome_high_humidity" = /datum/biome/beach,
+			"biome_highest_humidity" = /datum/biome/grass,
 		),
 		"hottest" = list(
-			"biome_lowest_humidity" = /datum/biome/grass,
-			"biome_low_humidity" = /datum/biome/beach,
-			"biome_medium_humidity" = /datum/biome/beach,
-			"biome_high_humidity" = /datum/biome/ocean,
-			"biome_highest_humidity" = /datum/biome/ocean/deep
+			"biome_lowest_humidity" = /datum/biome/ocean/deep,
+			"biome_low_humidity" = /datum/biome/ocean,
+			"biome_medium_humidity" = /datum/biome/beach/dense,
+			"biome_high_humidity" = /datum/biome/beach,
+			"biome_highest_humidity" = /datum/biome/grass
 		),
 		"coldest_cave" = list(
 			"biome_lowest_humidity" = /datum/biome/cave/beach/cove,
