@@ -53,7 +53,7 @@ SUBSYSTEM_DEF(overmap)
 
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		var/datum/overmap/star/center
-		var/startype = pick(/datum/overmap/star, /datum/overmap/star/medium, /datum/overmap/star/big, /datum/overmap/star/binary)
+		var/startype = pick(subtypesof(/datum/overmap/star))
 		center = new startype(list("x" = size / 2, "y" = size / 2))
 		radius_positions = list()
 		for(var/x in 1 to size)
