@@ -24,8 +24,8 @@
 
 //WS Begin - SGR, Overmaps
 #define RADIO_CHANNEL_SOLGOV "SolGov"
-#define RADIO_KEY_SOLGOV "z"
-#define RADIO_TOKEN_SOLGOV ":z"
+#define RADIO_KEY_SOLGOV "s"
+#define RADIO_TOKEN_SOLGOV ":s"
 
 #define RADIO_CHANNEL_NANOTRASEN "Nanotrasen"
 #define RADIO_KEY_NANOTRASEN "n"
@@ -40,8 +40,8 @@
 #define RADIO_TOKEN_INTEQ ":i"
 
 #define RADIO_CHANNEL_PIRATE "Pirate"
-#define RADIO_KEY_PIRATE "x"
-#define RADIO_TOKEN_PIRATE ":x"
+#define RADIO_KEY_PIRATE "y"
+#define RADIO_TOKEN_PIRATE ":y"
 
 #define RADIO_CHANNEL_WIDEBAND "Wideband"
 //WS End
