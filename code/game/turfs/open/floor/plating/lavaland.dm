@@ -74,18 +74,21 @@
 	desc = "Common grass, tinged to unnatural colours by chemicals in the atmosphere."
 	baseturfs = /turf/open/floor/plating/grass/lava
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	icon_state = "grass"
+	icon_state = "grass-255"
 	base_icon_state = "grass"
 	planetary_atmos = TRUE
+	icon = 'icons/turf/floors/lava_grass_red.dmi'
 	smooth_icon = 'icons/turf/floors/lava_grass_red.dmi'
 	light_power = 1
 	light_range = 2
 	gender = PLURAL
 
 /turf/open/floor/plating/grass/lava/orange
+	icon = 'icons/turf/floors/lava_grass_orange.dmi'
 	smooth_icon = 'icons/turf/floors/lava_grass_orange.dmi'
 	baseturfs = /turf/open/floor/plating/grass/lava/orange
 
 /turf/open/floor/plating/grass/lava/purple
 	baseturfs = /turf/open/floor/plating/grass/lava/purple
+	icon = 'icons/turf/floors/lava_grass_purple.dmi'
 	smooth_icon = 'icons/turf/floors/lava_grass_purple.dmi'
