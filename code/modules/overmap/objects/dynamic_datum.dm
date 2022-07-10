@@ -157,9 +157,9 @@
 			token.icon_state = "strange_event"
 			token.color = null
 
-	#ifndef QUICK_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
+#ifdef FULL_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
 	load_level() //Load the level whenever it's randomised
-	#endif
+#endif
 
 	if(!preserve_level)
 		token.desc += "It may not still be here if you leave it."

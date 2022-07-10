@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(redbot)
-	name = "Bot Comms"
+	name = "Redbot"
 	flags = SS_NO_FIRE
 
 /datum/controller/subsystem/redbot/Initialize(timeofday)
