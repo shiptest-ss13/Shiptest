@@ -79,7 +79,7 @@
 	autolinkers = list("nanotrasen")
 
 /obj/machinery/telecomms/server/presets/solgov
-	id = "Solgov Server"
+	id = "SolGov Server"
 	freq_listening = list(FREQ_SOLGOV)
 	autolinkers = list("solgov")
 
