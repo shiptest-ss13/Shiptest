@@ -287,7 +287,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	suit = /obj/item/clothing/suit/jacket/leather/duster/armoured
-	backpack_contents = list(/obj/item/storage/box/survival/security=1 /obj/item/clothing/glasses/welding=1)
+	backpack_contents = list(/obj/item/storage/box/survival/security=1)
 
 //Shiptest outfits end
 
