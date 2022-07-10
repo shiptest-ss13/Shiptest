@@ -420,7 +420,7 @@
 	cold_protection = CHEST|GROIN|ARMS|LEGS
 
 /obj/item/clothing/suit/jacket/leather/duster/armoured
-	name = "leather duster"
+	name = "armoured leather duster"
 	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, and dust. This one is armoured"
 	icon_state = "duster"
 	item_state = "duster"
