@@ -204,7 +204,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(datum/overmap/dynamic/dynamic_datum, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
 	log_shuttle("SSOVERMAP: SPAWNING DYNAMIC ENCOUNTER STARTED")
 	var/list/ruin_list = dynamic_datum.ruin_list
-	var/datum/map_generator/mapgen
+	var/datum/map_generator/mapgen = new dynamic_datum.mapgen
 	var/area/target_area = dynamic_datum.target_area
 	var/turf/surface = dynamic_datum.surface
 	var/datum/weather_controller/weather_controller_type = dynamic_datum.weather_controller_type
@@ -230,7 +230,6 @@ SUBSYSTEM_DEF(overmap)
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
 	if(mapgen) /// If we have a map generator, don't ChangeTurf's in fill_in. Just to ChangeTurf them once again.
-		mapgen = new dynamic_datum.mapgen
 		surface = null
 	vlevel.fill_in(surface, target_area)
 
