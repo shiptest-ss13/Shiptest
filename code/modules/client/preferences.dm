@@ -782,13 +782,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<h3>Prosthetic Limbs</h3>"
 
-			var/list/limb_display_list = list()
+			dat += "<table>"
 			for(var/index in prosthetic_limbs)
 				var/bodypart_name = parse_zone(index)
-				if(prosthetic_limbs[index] != PROSTHETIC_NORMAL)
-					limb_display_list += "[bodypart_name]: [prosthetic_limbs[index]]"
-				dat += "<a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[bodypart_name]</a>"
-			dat += "<b>Current Modifications:</b> [length(limb_display_list) ? limb_display_list.Join("; ") : "None"]<BR>"
+				dat += "<tr><td>[bodypart_name]:</td>"
+				dat += "<td><a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[prosthetic_limbs[index]]</a></td></tr>"
+			dat += "</table><br>"
 
 		if(2) //Loadout
 			if(path)
