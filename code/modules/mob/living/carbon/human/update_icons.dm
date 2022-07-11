@@ -140,6 +140,9 @@ There are several things that need to be remembered:
 			else if((dna.species.bodytype & BODYTYPE_VOX) && (U.supports_variations & VOX_VARIATION))
 				icon_file = VOX_UNIFORM_PATH
 
+			else if((dna.species.bodytype & BODYTYPE_KEPORI) && (U.supports_variations & KEPORI_VARIATION))
+				icon_file = KEPORI_UNIFORM_PATH
+
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(U))))
 				handled_by_bodytype = FALSE
 				icon_file = U.mob_overlay_icon || DEFAULT_UNIFORM_PATH
