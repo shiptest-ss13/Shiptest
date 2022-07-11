@@ -3,15 +3,17 @@
 	"map_short_name": "Trinea",
 	"prefix": "ISV",
 	"namelists": ["BEASTS", "SPACE" ],
-	"map_path": "_maps/shuttles/shiptest/independent_trinea.dmm",
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_trinea.dmm",
 	"map_id" : "Trinea-Class",
 	"job_slots": {
 		"Overseer":{
 			"outfit":"/datum/outfit/job/quartermaster",
 			"slots": 1},
-		"Station Engineer": 1,
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/engineer/maintenancetechnician",
+			"slots":1},
 		"Security":{
-			"outfit": "/datum/job/officer",
+			"outfit": "/datum/outfit/job/security/nanotrasen",
 			"slots": 1},
 		"Janitor": 1,
 		"Physician ": {

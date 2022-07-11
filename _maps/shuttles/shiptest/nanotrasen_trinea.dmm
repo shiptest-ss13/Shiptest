@@ -63,10 +63,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "bg" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = 22
 	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
 "bj" = (
@@ -230,7 +230,7 @@
 /area/ship/cargo)
 "dw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "dF" = (
 /obj/machinery/camera/autoname,
@@ -266,10 +266,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "et" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = 23
 	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
 "eG" = (
@@ -292,13 +292,13 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "eO" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = 13
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating/airless,
 /area/ship/crew/canteen)
 "eT" = (
@@ -312,7 +312,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "eV" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/titanium,
 /area/ship/medical)
 "eW" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -395,11 +395,11 @@
 /turf/open/floor/plasteel/vaporwave,
 /area/ship/crew/canteen)
 "fM" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen)
 "fP" = (
 /obj/structure/reagent_dispensers/peppertank,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security)
 "ga" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
@@ -428,7 +428,7 @@
 /turf/open/floor/eighties,
 /area/ship/crew/dorm)
 "hn" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
 "hr" = (
 /obj/structure/table,
@@ -581,6 +581,8 @@
 /obj/item/pickaxe/mini,
 /obj/effect/spawner/lootdrop/gloves,
 /obj/item/resonator/upgraded,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "ke" = (
@@ -645,7 +647,7 @@
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm)
 "kC" = (
 /obj/structure/cable{
@@ -868,7 +870,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "oH" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/dorm)
 "oI" = (
 /obj/structure/railing{
@@ -903,7 +905,7 @@
 /turf/open/floor/eighties,
 /area/ship/crew/dorm)
 "qb" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/titanium,
 /area/ship/crew/canteen)
 "qy" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -912,6 +914,13 @@
 "qL" = (
 /obj/machinery/autolathe,
 /turf/open/floor/plating/catwalk_floor,
+/area/ship/cargo)
+"qR" = (
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/tank/internals/oxygen,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "rH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1098,10 +1107,10 @@
 /turf/open/floor/plating/airless,
 /area/ship/cargo)
 "wc" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = 12
 	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "wL" = (
@@ -1151,7 +1160,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "xQ" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "yb" = (
 /obj/machinery/power/terminal,
@@ -1191,7 +1200,7 @@
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/bridge)
 "yU" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/titanium,
 /area/ship/engineering)
 "zm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1236,7 +1245,7 @@
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/medical)
 "Bk" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
 "Bv" = (
 /obj/effect/turf_decal/corner/beige{
@@ -1530,10 +1539,10 @@
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/bridge)
 "Jp" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = 21
 	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
 "JB" = (
@@ -1638,10 +1647,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Lt" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = 13
 	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating/airless,
 /area/ship/crew/canteen)
 "Lu" = (
@@ -1699,13 +1708,13 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "Mn" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = 12
 	},
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "Mp" = (
@@ -1727,7 +1736,7 @@
 	pixel_y = 28
 	},
 /obj/item/radio/intercom/wideband{
-	pixel_y = 33;
+	pixel_y = 37;
 	pixel_x = 1
 	},
 /obj/item/mmi/posibrain,
@@ -1742,7 +1751,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "MT" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/titanium,
 /area/ship/security)
 "MV" = (
 /obj/structure/cable{
@@ -1824,7 +1833,7 @@
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/bridge)
 "Pz" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
 "PL" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -1883,7 +1892,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "QS" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/titanium,
 /area/ship/crew/dorm)
 "Rh" = (
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2114,7 +2123,7 @@
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/cargo)
 "WB" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security)
 "WC" = (
 /obj/machinery/mech_bay_recharge_port,
@@ -2624,7 +2633,7 @@ MV
 bg
 CB
 NC
-CB
+qR
 so
 dK
 Hl
@@ -2877,7 +2886,7 @@ Pz
 Pz
 fM
 yg
-qb
+fM
 VF
 SH
 hP
