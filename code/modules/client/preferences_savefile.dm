@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 40
+#define SAVEFILE_VERSION_MAX 41
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -83,10 +83,17 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(current_version < 39)
 		var/species_id
 		READ_FILE(S["species"], species_id)
-		if(species_id == SPECIES_KEPORI)
+		if(species_id == "teshari")
 			pref_species = new /datum/species/kepori
 			READ_FILE(S["feature_teshari_feathers"], features["kepori_feathers"])
 			READ_FILE(S["feature_teshari_body_feathers"], features["kepori_body_feathers"])
+	if(current_version < 41)
+		var/species_id
+		READ_FILE(S["species"], species_id)
+		if(species_id == "felinid")
+			pref_species = new /datum/species/human
+			features["tail_human"] = "Cat"
+			features["ears"] = "Cat"
 
 /// checks through keybindings for outdated unbound keys and updates them
 /datum/preferences/proc/check_keybindings()

@@ -80,7 +80,6 @@
 #define SPECIES_CORPORATE "corporate"
 #define SPECIES_DULLAHAN "dullahan"
 #define SPECIES_ETHEREAL "ethereal"
-#define SPECIES_FELINID "felinid"
 #define SPECIES_FLYPERSON "fly"
 #define SPECIES_HUMAN "human"
 #define SPECIES_IPC "ipc"
@@ -118,17 +117,15 @@
 #define ORGANIC 1
 #define SYNTHETIC 2
 
-//Species bitflags for sprite sheets. If this somehow ever gets above 23 Bee has larger problems.
+//Species bitflags for sprite sheets. If this somehow ever gets above 23 we have larger problems.
 #define FLAG_HUMAN (1<<0)
 #define FLAG_IPC (1<<1)
 #define FLAG_ETHEREAL (1<<2)
 #define FLAG_PLASMAMAN (1<<3)
 #define FLAG_MOTH (1<<4)
 #define FLAG_LIZARD (1<<5)
-#define FLAG_FELINID (1<<6)
-#define FLAG_OOZELING (1<<7)
-#define FLAG_FLY (1<<8)
-#define FLAG_MONKEY (1<<9)
+#define FLAG_FLY (1<<6)
+#define FLAG_MONKEY (1<<7)
 
 //Bodytype defines for how things can be worn.
 #define BODYTYPE_ORGANIC (1<<0)
