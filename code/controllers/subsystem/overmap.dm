@@ -204,12 +204,13 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(datum/overmap/dynamic/dynamic_datum, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
 	log_shuttle("SSOVERMAP: SPAWNING DYNAMIC ENCOUNTER STARTED")
 	var/list/ruin_list = dynamic_datum.ruin_list
-	var/datum/map_generator/mapgen = new dynamic_datum.mapgen
+	var/datum/map_generator/mapgen
 	var/area/target_area = dynamic_datum.target_area
 	var/turf/surface = dynamic_datum.surface
 	var/datum/weather_controller/weather_controller_type = dynamic_datum.weather_controller_type
 	///A planet template that contains a list of biomes to use
 	var/datum/planet/planet_template = dynamic_datum.planet_template
+
 	if(!dynamic_datum)
 		CRASH("spawn_dynamic_encounter called without any datum to spawn!")
 
@@ -229,7 +230,8 @@ SUBSYSTEM_DEF(overmap)
 
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
-	if(mapgen) /// If we have a map generator, don't ChangeTurf's in fill_in. Just to ChangeTurf them once again.
+	if(dynamic_datum.mapgen) /// If we have a map generator, don't ChangeTurf's in fill_in. Just to ChangeTurf them once again.
+		mapgen = new dynamic_datum.mapgen
 		surface = null
 	vlevel.fill_in(surface, target_area)
 
