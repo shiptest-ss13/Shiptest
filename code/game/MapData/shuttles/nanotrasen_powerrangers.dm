@@ -1,3 +1,11 @@
+//Notes
+/obj/item/paper/fluff/ranger/airrecycler
+	name = "Air Recycler Setup"
+	info = {"Congratulations on your new Ranger-Class vessel! You may enjoy a number of amenities upon this ship, one of which is easily recycled air! Yes the air recycler is easy to use. There are 3 scrubbers, one in once chamber, two in the other. The lone scrubber can be set to
+	 siphon and extended area without worry, do so and turn it on. The other two scrubbers are more particular. One is attached to a blue pipe, set that one to scrub out N2 and 02 then turn it on. The other one connected to a gray pipe should be set to scrub out everything
+	 else that isn't N2 and O2, then turn it on. And voila! You have air recycling. Note that if you have an O2 or N2 leak, you may need to install a mixer or filter in response."}
+
+
 //Clothes
 /obj/item/clothing/under/rank/security/head_of_security/nt/skirt/lp
 	name = "LP Security Specialist's Jumpskirt"
@@ -112,26 +120,6 @@
 	desc = "The LP Security Specialist's ID card."
 	icon_state = "ert_security"
 	name = "LP Security Specialist"
-
-/obj/item/card/id/scilp
-	name = "LP Standing Scientist"
-	desc = "The LP Standing Scientist's ID card."
-	icon_state = "nanotrasen"
-
-/obj/item/card/id/minelp
-	name = "LP Standing Miner"
-	desc = "The LP Standing Miner's ID card."
-	icon_state = "nanotrasen"
-
-/obj/item/card/id/barlp
-	name = "LP Standing Bartender"
-	desc = "The LP Standing Bartender's ID card."
-	icon_state = "nanotrasen"
-
-/obj/item/card/id/doclp
-	name = "LP Standing Doctor"
-	desc = "The LP standing doctor's ID card."
-	icon_state = "nanotrasen"
 
 /obj/item/card/id/lpcomm
 	name = "LP Commissioner's ID"

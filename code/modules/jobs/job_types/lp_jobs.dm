@@ -50,7 +50,7 @@
 	ears = /obj/item/radio/headset/headset_com
 	id = /obj/item/card/id/lpsec
 	belt = /obj/item/pda/security
-	gloves = /obj/item/clothing/gloves/color/captain
+	gloves = /obj/item/clothing/gloves/color/black
 	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/skirt/lp
 	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/lp
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
@@ -79,7 +79,7 @@
 	ears = /obj/item/radio/headset/headset_com
 	id = /obj/item/card/id/lpengie
 	belt = /obj/item/pda/engineering
-	gloves = /obj/item/clothing/gloves/color/captain
+	gloves = /obj/item/clothing/gloves/color/yellow
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/lp
 	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech/skirt/lp
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
@@ -160,7 +160,6 @@
 
 /datum/outfit/job/scientist/lp
 	ears = /obj/item/radio/headset/binary
-	id = /obj/item/card/id/scilp
 	jobtype = /datum/job/scientist/lp
 
 /datum/job/mining/lp
@@ -170,9 +169,7 @@
 
 /datum/outfit/job/miner/lp
 	ears = /obj/item/radio/headset/binary
-	id = /obj/item/card/id/minelp
 	jobtype = /datum/job/mining/lp
-
 
 /datum/job/doctor/lp
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_PHARMACY, ACCESS_CHEMISTRY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, ACCESS_EVA, ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_LP_FACILITIES, ACCESS_LP_BRIDGE, ACCESS_LP_OPERATING_ROOM)
@@ -181,7 +178,6 @@
 
 /datum/outfit/job/doctor/lp
 	ears = /obj/item/radio/headset/binary
-	id = /obj/item/card/id/doclp
 	jobtype = /datum/job/doctor/lp
 
 /datum/job/bartender/lp
@@ -190,6 +186,5 @@
 	outfit = /datum/outfit/job/bartender/lp
 
 /datum/outfit/job/bartender/lp
-	id = /obj/item/card/id/barlp
 	ears = /obj/item/radio/headset/binary
 	jobtype = /datum/job/bartender/lp
