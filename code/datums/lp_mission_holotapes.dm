@@ -297,3 +297,18 @@
 	SAY A well equipped Ripley will help any vessel in hard times. Provide 2 allied or otherwise friendly, non-syndicate vessels with an equipped Ripley exosuit.
 	DELAY 25
 	"}
+
+/obj/item/disk/holodisk/lp/airrecycler
+	name = "Air Recycler Setup"
+	desc = "A holodisk containing instructions for setting up an air recycling system."
+	preset_image_type =  /datum/preset_holoimage/engineer
+	preset_record_text = {"
+	NAME Jim
+	SAY Congratulations on your new Ranger-Class vessel! You may enjoy a number of amenities upon this ship, one of which is easily recycled air! Yes the air recycler is easy to use. There are 3 scrubbers, one in once chamber, two in the other.
+	DELAY 20
+	SAY The lone scrubber can be set to siphon and extended area without worry, do so and turn it on. The other two scrubbers are more particular. One is attached to a blue pipe, set that one to scrub out N2 and 02 then turn it on.
+	DELAY 20
+	SAY The other one connected to a gray pipe should be set to scrub out everything else that isn't N2 and O2, then turn it on. And voila!
+	DELAY 20
+	SAY You have air recycling. Note that if you have an O2 or N2 leak, you may need to install a mixer or filter in response.
+	"}
