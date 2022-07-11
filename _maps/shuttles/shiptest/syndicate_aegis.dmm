@@ -49,6 +49,7 @@
 /obj/item/scalpel/advanced,
 /obj/item/retractor/advanced,
 /obj/item/surgicaldrill/advanced,
+/obj/item/storage/belt/sabre,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "av" = (
@@ -1042,6 +1043,7 @@
 	},
 /obj/structure/table,
 /obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/clothing/gloves/color/latex,
 /obj/item/storage/backpack/duffelbag/med/surgery{
 	pixel_x = 7;
 	pixel_y = 8
@@ -2354,10 +2356,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "CF" = (
-/obj/structure/table,
 /obj/item/tank/internals/anesthetic,
 /obj/item/clothing/mask/breath/medical,
-/obj/item/clothing/mask/surgical,
 /obj/item/clothing/mask/surgical,
 /obj/item/clothing/mask/surgical,
 /obj/item/clothing/mask/surgical,
@@ -2373,6 +2373,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/structure/closet/crate/freezer/blood,
+/obj/machinery/iv_drip,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "CG" = (
@@ -2592,6 +2594,7 @@
 	dir = 8
 	},
 /obj/item/hypospray/mkii,
+/obj/item/clothing/mask/surgical,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Ee" = (
@@ -3100,6 +3103,7 @@
 	dir = 6
 	},
 /obj/item/hypospray/mkii,
+/obj/item/clothing/mask/surgical,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "JY" = (
