@@ -46,7 +46,7 @@ em						{font-style: normal;	font-weight: bold;}
 .pirradio				{color: #a30000;}
 .cmmradio				{color: #337296;}
 .irmgradio				{color: #885231;}
-.syndradio				{color: #6d3f40;}
+.syndradio				{color: ##612425;}
 .centcomradio			{color: #686868;}
 .aiprivradio			{color: #ff00ff;}
 .redteamradio			{color: #ff0000;}
