@@ -24,4 +24,4 @@
 #define VOX_HEAD_PATH 'icons/mob/species/vox/onmob_head_vox.dmi'
 
 ///KEPORI PATHS
-#define KEPORI_UNIFORM_PATH 'icons/mob/species/vox/onmob_uniform_kepori.dmi'
+#define KEPORI_UNIFORM_PATH 'icons/mob/species/kepori/onmob_uniform_kepori.dmi'
