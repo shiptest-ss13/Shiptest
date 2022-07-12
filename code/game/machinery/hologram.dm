@@ -262,7 +262,7 @@ Possible to do for anyone motivated enough:
 			if(usr.loc == loc)
 				var/list/callnames = list()
 				for(var/obj/machinery/holopad/pad as anything in holopads)
-					if (pad.is_operational())
+					if (pad.is_operational)
 						var/area/area = get_area(pad)
 						if(area)
 							LAZYADD(callnames[area], pad)
