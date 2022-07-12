@@ -539,6 +539,16 @@
 	damage = 0
 	stamina = 40
 
+//pirate version
+/obj/item/gun/magic/hook/pirate
+	name = "boarding hook"
+	desc = "A long metal chain, with a large hook connected to the end. Once used to board ancient Merchant vessels, now used to drag un-suspecting Planet-crabs closer to you."
+	ammo_type = /obj/item/ammo_casing/magic/hook/bounty
+
+/obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
+	..()
+	user.changeNext_move(CLICK_CD_MELEE * 1)//quick to swing. 15 force can be quite something with this attack frequency.
+
 //Immortality Talisman: Now with state-of-the-art panic button technology
 /obj/item/immortality_talisman
 	name = "\improper Immortality Talisman"
