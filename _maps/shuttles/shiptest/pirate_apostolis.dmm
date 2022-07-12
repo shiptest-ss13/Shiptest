@@ -37,8 +37,8 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/spacepod/prebuilt/jousting/red,
 /obj/effect/decal/cleanable/dirt,
+/obj/spacepod/prebuilt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "aI" = (
@@ -106,8 +106,8 @@
 /obj/item/sparkler{
 	pixel_x = -9
 	},
-/obj/item/stack/circuit_stack,
 /obj/item/stack/cable_coil,
+/obj/item/stack/circuit_stack,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "bN" = (
@@ -121,6 +121,11 @@
 /area/ship/security)
 "bR" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stack/ore/glass/basalt{
+	amount = 15;
+	pixel_x = -6;
+	pixel_y = -8
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "cd" = (
@@ -360,6 +365,11 @@
 /obj/item/pod_parts/pod_frame/fore_port{
 	pixel_y = -9
 	},
+/obj/item/pod_parts/armor/industrial,
+/obj/item/pod_parts/armor/black{
+	pixel_y = -3;
+	pixel_x = -3
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security)
 "hD" = (
@@ -455,6 +465,15 @@
 	},
 /obj/item/storage/firstaid/advanced{
 	pixel_x = 5
+	},
+/obj/item/stack/medical/bruise_pack/herb,
+/obj/item/stack/medical/ointment/herb{
+	pixel_x = -6;
+	pixel_y = -8
+	},
+/obj/item/sensor_device{
+	pixel_x = -9;
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/hallway/port)
@@ -701,6 +720,8 @@
 	},
 /obj/item/circuitboard/machine/rdserver,
 /obj/effect/mob_spawn/human/scientist,
+/obj/item/clothing/head/peaceflower,
+/obj/item/stack/medical/suture/medicated,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "mu" = (
@@ -941,6 +962,7 @@
 	dir = 8;
 	pixel_x = 32
 	},
+/obj/item/stack/sticky_tape,
 /turf/open/floor/pod,
 /area/ship/engineering/atmospherics)
 "pV" = (
@@ -1588,6 +1610,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
+/obj/item/stack/arcadeticket{
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Ar" = (
@@ -1699,6 +1724,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/sheet/mineral/wood/fifty,
 /obj/item/hatchet/wooden,
+/obj/item/stack/ducts{
+	amount = 10
+	},
+/obj/item/rack_parts{
+	pixel_x = -5;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "Bg" = (
@@ -1932,6 +1964,7 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = -32
 	},
+/obj/item/roller,
 /obj/item/reagent_containers/food/drinks/beer{
 	pixel_x = -4
 	},
@@ -2039,6 +2072,10 @@
 /obj/structure/closet/emcloset/wall{
 	dir = 4;
 	pixel_x = -28
+	},
+/obj/item/skub{
+	pixel_x = -5;
+	pixel_y = 6
 	},
 /turf/open/floor/pod,
 /area/ship/engineering/electrical)
@@ -2253,7 +2290,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/hallway/central)
 "Hv" = (
-/obj/structure/bed,
 /obj/item/bedsheet/dorms,
 /obj/structure/curtain/bounty,
 /obj/effect/decal/cleanable/dirt,
@@ -2262,6 +2298,9 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "8-10"
+	},
+/obj/structure/bed{
+	icon_state = "dirty_mattress"
 	},
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
