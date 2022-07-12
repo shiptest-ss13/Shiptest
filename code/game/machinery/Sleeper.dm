@@ -93,7 +93,7 @@
 		container_resist_act(user)
 
 /obj/machinery/sleeper/proc/stasis_running()
-	return can_stasis && stasis_enabled && is_operational()
+	return can_stasis && stasis_enabled && is_operational
 
 /obj/machinery/sleeper/proc/chill_out(mob/living/target)
 	if(target != occupant || !can_stasis)
