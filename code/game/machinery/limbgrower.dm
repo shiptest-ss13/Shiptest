@@ -85,7 +85,7 @@
 			name = category,
 			designs = list(),
 		)
-		for(var/datum/design/found_design in species_categories[category])
+		for(var/datum/design/found_design as anything in species_categories[category])
 			var/list/all_reagents = list()
 			for(var/reagent_typepath in found_design.reagents_list)
 				var/datum/reagent/reagent_id = find_reagent_object_from_type(reagent_typepath)
