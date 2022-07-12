@@ -797,7 +797,7 @@
 	category = list("hacked", "Security")
 
 /datum/design/c38
-	name = "Ammo Box(.38)"
+	name = "Ammo Box (.38)"
 	id = "c38"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
@@ -845,7 +845,7 @@
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/c45_surplus
-	name = "Ammo Box (.45)"
+	name = "Ammo Box (.45 surplus)"
 	id = "c45-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
