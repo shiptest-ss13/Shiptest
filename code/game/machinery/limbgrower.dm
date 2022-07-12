@@ -123,7 +123,7 @@
 		busy = TRUE
 		var/obj/item/disk/design_disk/limbs/limb_design_disk = user_item
 		if(do_after(user, 2 SECONDS, target = src))
-			if(!categories.Find(limb_design_disk.species))
+			if(!(limb_design_disk.species in categories))
 				categories += limb_design_disk.species
 			// for(var/datum/design/found_design in limb_design_disk.blueprints)
 			// 	stored_research.add_design(found_design)
