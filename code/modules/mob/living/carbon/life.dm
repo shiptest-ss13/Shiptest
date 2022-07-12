@@ -535,6 +535,9 @@ All effects don't start immediately, but rather get worse over time; the rate is
  * * environment The environment gas mix
  */
 /mob/living/carbon/proc/natural_bodytemperature_stabilization(datum/gas_mixture/environment)
+	if(!dna)
+		return
+
 	var/areatemp = get_temperature(environment)
 	var/body_temperature_difference = get_body_temp_normal() - bodytemperature
 	var/natural_change = 0
@@ -643,7 +646,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		amount += hardsuit_fix
 
 	// Use the bodytemp divisors to get the change step, with max step size
-	if(use_steps)
+	if(use_steps && dna)
 		amount = (amount > 0) ? min(amount / dna.species.bodytemp_heat_divisor, dna.species.bodytemp_heating_rate_max) : max(amount / dna.species.bodytemp_cold_divisor, dna.species.bodytemp_cooling_rate_max)
 
 	if(bodytemperature >= min_temp && bodytemperature <= max_temp)

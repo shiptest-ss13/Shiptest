@@ -333,6 +333,8 @@
 	if(H.dna.species.id in list("shadow", "nightmare"))
 		return //we're tied with the dark, so we don't get scared of it; don't cleanse outright to avoid cheese
 	var/turf/T = get_turf(quirk_holder)
+	if(!T)
+		return //why is this happening?
 	var/lums = T.get_lumcount()
 	if(lums <= 0.2)
 		if(quirk_holder.m_intent == MOVE_INTENT_RUN)
