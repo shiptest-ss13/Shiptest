@@ -781,11 +781,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</tr></table>"
 
 			dat += "<h3>Prosthetic Limbs</h3>"
+			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</A><br>"
 
 			dat += "<table>"
 			for(var/index in prosthetic_limbs)
 				var/bodypart_name = parse_zone(index)
-				dat += "<tr><td>[bodypart_name]:</td>"
+				dat += "<tr><td><b>[bodypart_name]:</b></td>"
 				dat += "<td><a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[prosthetic_limbs[index]]</a></td></tr>"
 			dat += "</table><br>"
 
@@ -1582,7 +1583,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					undershirt = random_undershirt(gender)
 				if("socks")
 					socks = random_socks()
-				if(BODY_ZONE_PRECISE_EYES)
+				if("eyes")
 					eye_color = random_eye_color()
 				if("s_tone")
 					skin_tone = random_skin_tone()
@@ -2322,6 +2323,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if((randomise[RANDOM_NAME] || randomise[RANDOM_NAME_ANTAG] && antagonist) && !character_setup)
 		slot_randomized = TRUE
 		real_name = pref_species.random_name(gender)
+
+	if(randomise[RANDOM_PROSTHETIC] && !character_setup)
+		prosthetic_limbs = random_prosthetic()
 
 	if(roundstart_checks)
 		if(CONFIG_GET(flag/humans_need_surnames) && (pref_species.id == SPECIES_HUMAN))
