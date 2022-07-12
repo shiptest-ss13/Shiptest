@@ -391,6 +391,8 @@
 			linkedsuit.slowdown = linkedsuit.combat_slowdown
 			linkedsuit.clothing_flags &= ~STOPSPRESSUREDAMAGE
 			linkedsuit.cold_protection &= ~(CHEST | GROIN | LEGS | FEET | ARMS | HANDS)
+			if(linkedsuit.lightweight)
+				linkedsuit.flags_inv &= ~(HIDEGLOVES | HIDESHOES | HIDEJUMPSUIT)
 
 		linkedsuit.icon_state = "hardsuit[on]-[hardsuit_type]"
 		linkedsuit.update_icon()
@@ -413,6 +415,7 @@
 	jetpack = /obj/item/tank/jetpack/suit
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	var/combat_slowdown = 0 //slowdown when in combat mode
+	var/lightweight = 0 //used for flags when toggling
 
 //Scarlet Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/scarlet
@@ -432,6 +435,7 @@
 	item_state = "scarlet_hardsuit"
 	hardsuit_type = "scarlet"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/scarlet
+	lightweight = 1
 	jetpack = null
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	combat_slowdown = 0.5
