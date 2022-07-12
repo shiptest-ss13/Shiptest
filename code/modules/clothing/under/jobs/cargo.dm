@@ -51,7 +51,7 @@
 	icon_state = "explorer"
 	item_state = "explorer"
 	can_adjust = TRUE
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 //Shiptest alt jumpsuits
 
@@ -68,7 +68,6 @@
 	slowdown = 0.1
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 5,"energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 80, "acid" = 0)
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/suit/qm
 	name = "supply chief suit"

@@ -7,7 +7,7 @@
 	alt_covers_chest = TRUE
 	icon = 'icons/obj/clothing/under/syndicate.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/syndicate.dmi'
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/under/syndicate/skirt
 	name = "tactical skirtleneck"
@@ -82,7 +82,6 @@
 	desc = "With a suit lined with this many pockets, you are ready to operate."
 	icon_state = "syndicate_combat"
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/rus_army
 	name = "advanced military tracksuit"
