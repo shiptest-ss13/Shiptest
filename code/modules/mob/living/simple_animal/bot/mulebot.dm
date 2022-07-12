@@ -24,7 +24,6 @@
 	mob_size = MOB_SIZE_LARGE
 
 	radio_key = /obj/item/encryptionkey
-	radio_channel = RADIO_CHANNEL_COMMON
 
 	bot_type = MULE_BOT
 	model = "MULE"
@@ -648,7 +647,6 @@
 // called when bot reaches current target
 /mob/living/simple_animal/bot/mulebot/proc/at_target()
 	if(!reached_target)
-		radio_channel = RADIO_CHANNEL_COMMON //Supply channel
 		buzz(CHIME)
 		reached_target = TRUE
 

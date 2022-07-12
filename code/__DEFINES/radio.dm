@@ -19,8 +19,8 @@
 #define RADIO_TOKEN_SYNDICATE ":t"
 
 #define RADIO_CHANNEL_CENTCOM "CentCom"
-#define RADIO_KEY_CENTCOM "y"
-#define RADIO_TOKEN_CENTCOM ":y"
+#define RADIO_KEY_CENTCOM "e"
+#define RADIO_TOKEN_CENTCOM ":e"
 
 //WS Begin - SGR, Overmaps
 #define RADIO_CHANNEL_SOLGOV "SolGov"
