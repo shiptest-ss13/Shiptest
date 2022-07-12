@@ -5,9 +5,13 @@
 	"map_path": "_maps/shuttles/shiptest/syndicate_aegis.dmm",
 	"map_id": "syndicate_aegis",
 	"job_slots": {
-	"Chief Medical Officer": {
+	"Captain": {
+			"outfit": "/datum/outfit/job/captain/syndicate",
+			"officer": true,
+			"slots": 1
+	},
+	"Lead Doctor": {
 		"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
-		"officer": true,
 		"slots": 1
 	},
 	"Ship Doctor":{
@@ -16,15 +20,11 @@
 	},
 	"Mechanic": {
 		"outfit": "/datum/outfit/job/engineer/syndicate",
-		"slots": 2
+		"slots": 1
 	},
 	"Deck Service Assistant": {
 		"outfit": "/datum/outfit/job/botanist/syndicate/nsv",
-		"slots": 2
-	},
-	"Wrecker": {
-		"outfit": "/datum/outfit/job/miner/syndicate",
-		"slots": 1
+		"slots": 3
 	},
 	"Ship Psychologist": {
 		"outfit": "/datum/outfit/job/psychologist/syndicate/nsv",
