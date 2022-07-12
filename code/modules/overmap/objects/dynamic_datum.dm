@@ -371,7 +371,6 @@
 	name = "\improper Planetoid Cavern"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
-	outdoors = FALSE
 
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
