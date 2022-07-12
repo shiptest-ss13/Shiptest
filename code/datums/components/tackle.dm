@@ -257,7 +257,7 @@
 		defense_mod -= 2
 	if(HAS_TRAIT(target, TRAIT_GIANT))
 		defense_mod += 2
-	if(HAS_TRAIT(target, TRAIT_HOLDABLE))
+	if(HAS_TRAIT(target, TRAIT_SCOOPABLE))
 		defense_mod -= 1
 
 	var/leg_wounds = 0 // -1 defense per 2 leg wounds
