@@ -22,8 +22,7 @@
 
 	status_flags = (CANPUSH | CANSTUN)
 
-	radio_key = /obj/item/encryptionkey/headset_com
-	radio_channel = RADIO_CHANNEL_COMMON
+	radio_key = /obj/item/encryptionkey
 
 	bot_type = MED_BOT
 	model = "Medibot"
