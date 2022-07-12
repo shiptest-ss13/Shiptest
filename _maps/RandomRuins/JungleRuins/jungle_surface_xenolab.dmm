@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ag" = (
+/obj/effect/mob_spawn/human/corpse/damaged,
+/turf/open/floor/plating/dirt/jungle,
+/area/space)
 "ap" = (
 /obj/structure/fence/door,
 /turf/open/space/basic,
@@ -13,6 +17,17 @@
 "ar" = (
 /turf/open/floor/plasteel/dark,
 /area/space)
+"as" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"av" = (
+/obj/effect/decal/cleanable/xenoblood/xgibs/larva,
+/turf/open/floor/plating,
+/area/space)
 "ay" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 6
@@ -23,6 +38,43 @@
 "aE" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating,
+/area/space)
+"aI" = (
+/obj/effect/decal/cleanable/robot_debris/old,
+/obj/item/assembly/mousetrap/armed,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/space)
+"aQ" = (
+/obj/structure/rack,
+/obj/item/storage/belt/security/webbing,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"aS" = (
+/obj/structure/closet/emcloset,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/space)
+"aU" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"aW" = (
+/obj/structure/rack,
+/obj/item/book/manual/random,
+/obj/item/book/manual/random,
+/turf/open/floor/plating,
+/area/space)
+"aY" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/xenoblood/xgibs/body,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "bf" = (
 /obj/structure/fence/corner{
@@ -36,6 +88,9 @@
 /area/space)
 "bo" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 8
+	},
+/obj/machinery/light/broken{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
@@ -68,8 +123,52 @@
 /obj/structure/sign/warning,
 /turf/open/floor/plating/dirt/jungle,
 /area/space)
+"bM" = (
+/obj/item/shard,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plating,
+/area/space)
+"bR" = (
+/obj/structure/alien/weeds,
+/obj/item/grenade/frag,
+/turf/open/floor/plating,
+/area/space)
+"bS" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/item/restraints/legcuffs/beartrap,
+/turf/open/floor/plating,
+/area/space)
+"bT" = (
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"cc" = (
+/obj/machinery/light/broken{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "cd" = (
 /obj/structure/door_assembly/door_assembly_med,
+/turf/open/floor/plating,
+/area/space)
+"cf" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/space)
+"ck" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"co" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/flamethrower,
 /turf/open/floor/plating,
 /area/space)
 "cr" = (
@@ -88,11 +187,37 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/clothing/under/rank/security/officer/minutemen,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"cw" = (
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"cx" = (
+/obj/structure/chair/greyscale{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"cz" = (
+/obj/effect/decal/cleanable/robot_debris/old,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/xenoblood/xgibs/larva,
+/turf/open/floor/plating,
 /area/space)
 "cB" = (
 /obj/machinery/door/airlock/glass,
 /turf/open/floor/wood/walnut,
+/area/space)
+"cD" = (
+/obj/effect/decal/cleanable/robot_debris/old,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/assembly/mousetrap/armed,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
 /area/space)
 "cP" = (
 /obj/structure/fence{
@@ -109,6 +234,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"cW" = (
+/obj/machinery/light/broken,
+/turf/open/floor/plasteel/mono,
+/area/space)
 "dj" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/store/cake/birthday,
@@ -124,12 +253,28 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"do" = (
+/obj/item/kitchen/knife/hunting,
+/turf/open/floor/plating/dirt/jungle,
+/area/space)
+"dp" = (
+/obj/structure/alien/weeds,
+/obj/item/flamethrower,
+/turf/open/floor/plasteel/white,
+/area/space)
 "ds" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/door/window{
 	dir = 4
 	},
+/obj/machinery/light/broken,
 /turf/open/floor/plasteel/white,
+/area/space)
+"dv" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "r"
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "dz" = (
 /obj/structure/chair/office{
@@ -159,6 +304,30 @@
 	dir = 1
 	},
 /obj/structure/frame/computer,
+/obj/structure/sign/minutemen{
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"ea" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "y"
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"eb" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/plating,
+/area/space)
+"ed" = (
+/obj/structure/alien/weeds,
+/obj/machinery/light/dim{
+	dir = 8
+	},
+/obj/structure/bed/nest,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "ej" = (
@@ -181,14 +350,39 @@
 /obj/item/storage/box/mousetraps,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"eW" = (
+/obj/item/shard,
+/obj/effect/decal/cleanable/plasma,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/space)
 "eY" = (
 /obj/item/shard/plasma,
 /turf/open/floor/plating,
+/area/space)
+"fe" = (
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "fh" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"fj" = (
+/obj/item/flashlight/glowstick,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/space)
+"fn" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/wood/walnut,
 /area/space)
 "fs" = (
 /obj/structure/alien/resin/membrane,
@@ -202,6 +396,11 @@
 "fy" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/item/grenade/frag,
 /turf/open/floor/plasteel/white,
 /area/space)
 "fA" = (
@@ -209,6 +408,11 @@
 	pixel_y = 24
 	},
 /turf/open/floor/plasteel/white,
+/area/space)
+"fE" = (
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/decal/cleanable/xenoblood,
+/turf/open/floor/plating,
 /area/space)
 "fM" = (
 /obj/structure/frame/computer,
@@ -220,11 +424,28 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/concrete,
 /area/space)
+"fR" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plating,
+/area/space)
+"fV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/space)
 "fW" = (
 /obj/structure/window/plasma/reinforced/spawner{
 	dir = 8
 	},
 /turf/open/floor/engine,
+/area/space)
+"gi" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plating,
 /area/space)
 "gp" = (
 /obj/structure/fence/corner{
@@ -241,10 +462,54 @@
 /obj/structure/door_assembly/door_assembly_mhatch,
 /turf/open/floor/plating,
 /area/space)
+"gL" = (
+/obj/structure/alien/weeds,
+/obj/item/shard,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/white,
+/area/space)
+"gV" = (
+/obj/structure/chair/greyscale{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"ha" = (
+/obj/effect/decal/cleanable/shreds,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/space)
+"hb" = (
+/obj/structure/rack,
+/obj/item/cartridge/security,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"hh" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/item/gun/energy/e_gun/mini,
+/turf/open/floor/plating,
+/area/space)
+"hj" = (
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/obj/structure/bed/nest,
+/obj/structure/alien/weeds,
+/turf/open/floor/concrete,
+/area/space)
 "hq" = (
 /obj/structure/alien/weeds,
 /obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plasteel/white,
+/area/space)
+"hu" = (
+/obj/structure/alien/weeds,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/plating,
 /area/space)
 "hy" = (
 /obj/effect/turf_decal/corner/purple/border{
@@ -261,6 +526,11 @@
 /obj/structure/closet/secure_closet/security,
 /turf/open/floor/plasteel/tech,
 /area/space)
+"hC" = (
+/obj/structure/alien/weeds,
+/obj/item/flamethrower,
+/turf/open/floor/wood/walnut,
+/area/space)
 "hE" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 4
@@ -268,25 +538,79 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech,
 /area/space)
+"hF" = (
+/obj/effect/decal/cleanable/blood/gibs/torso,
+/turf/open/floor/wood/walnut,
+/area/space)
 "hH" = (
 /obj/effect/turf_decal/trimline/red/filled/line,
 /obj/structure/chair/office{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/tech,
+/area/space)
+"hM" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
+"hT" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/space)
+"hU" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "hW" = (
 /obj/item/clothing/mask/gas/sechailer/minutemen,
 /turf/open/space/basic,
 /area/space)
+"ib" = (
+/obj/structure/alien/weeds,
+/obj/structure/bed/nest,
+/obj/effect/mob_spawn/human/corpse/damaged,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
 "if" = (
 /obj/item/clothing/head/cowboy/sec/minutemen,
 /turf/open/space/basic,
 /area/space)
+"io" = (
+/obj/structure/alien/weeds,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space)
+"iv" = (
+/obj/item/weldingtool/empty,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/space)
 "iw" = (
 /obj/effect/turf_decal/corner/blue/diagonal,
 /obj/structure/table/reinforced,
+/obj/item/healthanalyzer/advanced,
 /turf/open/floor/plasteel/white,
+/area/space)
+"iJ" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating,
 /area/space)
 "iO" = (
 /obj/machinery/door/poddoor/multi_tile/three_tile_hor,
@@ -317,6 +641,11 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"jk" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/plating,
+/area/space)
 "jm" = (
 /obj/structure/chair/plastic{
 	dir = 8
@@ -326,6 +655,9 @@
 	},
 /obj/effect/turf_decal/corner/white{
 	dir = 1
+	},
+/obj/machinery/light/dim{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
@@ -337,6 +669,13 @@
 /obj/effect/mine/gas/plasma,
 /obj/machinery/igniter/on,
 /turf/open/floor/plating/dirt/jungle,
+/area/space)
+"ju" = (
+/obj/structure/toilet,
+/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/xenoblood/xgibs/body,
+/turf/open/floor/plasteel/white,
 /area/space)
 "jw" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -354,6 +693,17 @@
 /area/space)
 "jC" = (
 /obj/structure/door_assembly,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"jF" = (
+/obj/structure/alien/weeds,
+/obj/machinery/light/broken,
+/turf/open/floor/plasteel/white,
+/area/space)
+"jH" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "w"
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "jM" = (
@@ -382,6 +732,33 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
+"kd" = (
+/obj/structure/alien/weeds,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/plating,
+/area/space)
+"kf" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"kg" = (
+/obj/item/grenade/frag,
+/turf/open/floor/plating,
+/area/space)
+"kh" = (
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"kj" = (
+/obj/structure/alien/weeds,
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/plating,
+/area/space)
 "kk" = (
 /obj/structure/table/reinforced,
 /obj/item/watertank/janitor,
@@ -390,15 +767,76 @@
 "kn" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plasteel/tech,
+/area/space)
+"kr" = (
+/obj/structure/alien/weeds,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/space)
+"kw" = (
+/obj/machinery/light/broken{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
+"kG" = (
+/obj/effect/decal/cleanable/shreds,
+/turf/open/floor/plating,
+/area/space)
+"kH" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/molten_object,
+/turf/open/floor/plating,
 /area/space)
 "kJ" = (
 /obj/structure/closet/wardrobe/pjs,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"kK" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/xenoblood/xgibs/limb,
+/turf/open/floor/plating,
+/area/space)
+"kM" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/space)
+"kS" = (
+/obj/structure/bed/nest,
+/obj/structure/alien/weeds,
+/obj/item/chainsaw,
+/turf/open/floor/concrete,
+/area/space)
+"kZ" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/plating,
+/area/space)
 "ld" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/grass,
+/area/space)
+"le" = (
+/obj/structure/table/glass,
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_x = 3
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = 6;
+	pixel_x = -8
+	},
+/turf/open/floor/concrete,
 /area/space)
 "lf" = (
 /obj/item/gun/energy/beam_rifle,
@@ -409,6 +847,23 @@
 /obj/item/grenade/clusterbuster/cleaner,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"lj" = (
+/obj/structure/alien/weeds,
+/obj/item/flamethrower,
+/turf/open/floor/plating,
+/area/space)
+"lk" = (
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
+"lo" = (
+/obj/structure/rack,
+/obj/item/clothing/under/rank/security/officer/minutemen,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "ls" = (
 /obj/structure/fence/corner{
 	dir = 6
@@ -417,6 +872,7 @@
 /area/space)
 "lD" = (
 /obj/structure/table/reinforced,
+/obj/item/gun/ballistic/shotgun,
 /turf/open/floor/plasteel/white,
 /area/space)
 "lE" = (
@@ -425,21 +881,61 @@
 /obj/item/shard,
 /turf/open/floor/grass,
 /area/space)
+"lI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/poster/random_contraband,
+/turf/open/floor/plating,
+/area/space)
+"lP" = (
+/obj/structure/rack,
+/obj/item/melee/classic_baton/telescopic,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "lR" = (
 /obj/structure/alien/resin/membrane,
 /turf/open/space/basic,
 /area/space)
 "lY" = (
 /obj/item/stack/cable_coil/cut/red,
+/obj/item/grenade/frag,
 /turf/open/floor/plating,
+/area/space)
+"lZ" = (
+/obj/item/restraints/legcuffs/beartrap,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "mc" = (
 /obj/structure/fence,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
+/area/space)
+"me" = (
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plating,
 /area/space)
 "mj" = (
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"mp" = (
+/obj/structure/alien/weeds,
+/obj/structure/bed/nest,
+/turf/open/floor/concrete,
+/area/space)
+"mu" = (
+/obj/structure/alien/weeds,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/plating,
+/area/space)
+"mv" = (
+/obj/structure/rack,
+/obj/item/paicard,
+/obj/item/poster/random_contraband,
+/turf/open/floor/plating,
 /area/space)
 "mx" = (
 /obj/structure/mineral_door/wood,
@@ -449,16 +945,51 @@
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"mF" = (
+/obj/item/shard,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/xenoblood/xgibs/limb,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "mM" = (
 /obj/structure/alien/weeds,
 /obj/structure/table_frame,
 /obj/item/shard,
 /turf/open/floor/plasteel/white,
 /area/space)
+"mQ" = (
+/obj/machinery/door/airlock/highsecurity,
+/turf/open/floor/concrete,
+/area/space)
+"mT" = (
+/obj/structure/alien/weeds,
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating,
+/area/space)
+"mV" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/space)
+"mX" = (
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/plasteel/tech,
+/area/space)
 "nd" = (
 /obj/structure/table_frame,
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/white,
+/area/space)
+"nf" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/item/flamethrower/full/tank,
+/turf/open/floor/plating,
 /area/space)
 "ni" = (
 /obj/structure/fence{
@@ -471,9 +1002,31 @@
 /obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"ny" = (
+/obj/item/ammo_casing/a556,
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "nz" = (
 /obj/structure/chair/pew,
 /turf/open/floor/grass,
+/area/space)
+"nF" = (
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/innards,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"nI" = (
+/obj/machinery/light/broken,
+/obj/effect/decal/cleanable/blood/gibs/limb,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"nL" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/blood/splatter,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/plating,
 /area/space)
 "nO" = (
 /obj/structure/fence{
@@ -492,6 +1045,9 @@
 	dir = 1
 	},
 /obj/item/shard,
+/obj/machinery/light/broken{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/space)
 "oc" = (
@@ -524,7 +1080,22 @@
 "ov" = (
 /obj/structure/alien/weeds,
 /obj/item/stack/cable_coil/cut/red,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/structure/bed/nest,
 /turf/open/floor/plasteel/tech,
+/area/space)
+"ow" = (
+/obj/structure/alien/weeds,
+/obj/machinery/light/broken{
+	dir = 4
+	},
+/turf/open/floor/concrete,
+/area/space)
+"oD" = (
+/obj/structure/table/glass,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "oH" = (
 /obj/effect/turf_decal/borderfloor{
@@ -542,6 +1113,13 @@
 /area/space)
 "oM" = (
 /obj/structure/barricade/security,
+/turf/open/floor/plating,
+/area/space)
+"oO" = (
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/space)
 "oR" = (
@@ -566,6 +1144,12 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/wood/walnut,
 /area/space)
+"pb" = (
+/mob/living/simple_animal/hostile/rat,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/space)
 "pd" = (
 /obj/structure/alien/weeds,
 /obj/item/shard,
@@ -578,6 +1162,7 @@
 /area/space)
 "pm" = (
 /obj/structure/toilet,
+/mob/living/simple_animal/hostile/alien,
 /turf/open/floor/plasteel/white,
 /area/space)
 "pp" = (
@@ -589,6 +1174,9 @@
 "pz" = (
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/space)
 "pG" = (
@@ -597,21 +1185,45 @@
 /area/space)
 "pK" = (
 /obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "pT" = (
 /obj/structure/closet/wardrobe/mixed,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"pZ" = (
+/obj/item/clothing/under/rank/security/officer/minutemen,
+/turf/open/floor/plating,
+/area/space)
 "qa" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 4
 	},
+/obj/machinery/light/dim{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"qg" = (
+/obj/structure/bed/nest,
+/obj/structure/alien/weeds,
+/obj/effect/mob_spawn/human/corpse/damaged,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "qk" = (
 /obj/machinery/door/window,
 /turf/open/space/basic,
+/area/space)
+"qw" = (
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "qz" = (
 /obj/structure/alien/weeds,
@@ -630,6 +1242,21 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"qD" = (
+/obj/machinery/light/dim{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"qF" = (
+/obj/effect/decal/cleanable/sprayweb,
+/turf/open/floor/plating,
+/area/space)
+"qH" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plating,
+/area/space)
 "qI" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/pizzaparty,
@@ -640,7 +1267,13 @@
 /obj/effect/decal/cleanable/glass,
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/item/shard,
+/obj/item/clothing/under/rank/security/officer/minutemen,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"qM" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/maintenance/five,
+/turf/open/floor/plating,
 /area/space)
 "qO" = (
 /obj/structure/fence/corner{
@@ -655,6 +1288,9 @@
 /area/space)
 "qT" = (
 /obj/item/stack/cable_coil/cut/red,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "qV" = (
@@ -668,6 +1304,9 @@
 /obj/effect/turf_decal/corner/blue/diagonal,
 /obj/structure/table_frame,
 /obj/effect/decal/cleanable/glass,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
 /turf/open/floor/plasteel/white,
 /area/space)
 "ra" = (
@@ -681,6 +1320,11 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"rm" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plating,
+/area/space)
 "rp" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/alien/weeds,
@@ -693,6 +1337,9 @@
 	dir = 1
 	},
 /obj/structure/closet/secure_closet,
+/obj/item/clothing/under/rank/security/officer/minutemen,
+/obj/item/clothing/under/rank/security/officer/minutemen,
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "rI" = (
@@ -713,6 +1360,9 @@
 /area/space)
 "rU" = (
 /obj/structure/frame/machine,
+/obj/machinery/light/broken{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "rV" = (
@@ -741,9 +1391,27 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/wood/walnut,
 /area/space)
+"sp" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/structure/sign/minutemen{
+	pixel_y = 30
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
 "sr" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plating,
+/area/space)
+"su" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "sx" = (
 /obj/structure/window/reinforced/spawner{
@@ -752,6 +1420,13 @@
 /obj/structure/window/reinforced/spawner,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"sF" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
 "sJ" = (
 /obj/item/clothing/suit/armor/vest/capcarapace/minutemen,
 /turf/open/space/basic,
@@ -759,7 +1434,23 @@
 "sK" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/resin/membrane,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
+/area/space)
+"sR" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/wood/walnut,
+/area/space)
+"sT" = (
+/mob/living/simple_animal/hostile/rat,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
 /area/space)
 "sU" = (
 /obj/item/storage/box/bodybags{
@@ -778,6 +1469,10 @@
 /area/space)
 "td" = (
 /turf/open/floor/concrete/slab_3,
+/area/space)
+"tf" = (
+/obj/machinery/light/dim,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "th" = (
 /obj/structure/alien/egg/burst,
@@ -802,8 +1497,19 @@
 /obj/item/shard,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"ts" = (
+/obj/item/flashlight/glowstick,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/space)
 "tF" = (
 /obj/structure/rack,
+/turf/open/floor/plating,
+/area/space)
+"tG" = (
+/obj/structure/alien/weeds,
+/obj/structure/closet/firecloset,
 /turf/open/floor/plating,
 /area/space)
 "tI" = (
@@ -832,6 +1538,16 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"ub" = (
+/obj/structure/alien/weeds,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating,
+/area/space)
+"uc" = (
+/obj/structure/alien/weeds,
+/obj/item/weldingtool/empty,
+/turf/open/floor/plating,
+/area/space)
 "uh" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
@@ -843,6 +1559,11 @@
 /obj/item/shard,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"uo" = (
+/obj/effect/decal/cleanable/robot_debris/old,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/space)
 "us" = (
 /obj/structure/door_assembly/door_assembly_eng,
 /obj/structure/firelock_frame,
@@ -853,6 +1574,12 @@
 /obj/effect/turf_decal/corner/blue/diagonal,
 /obj/structure/table_frame,
 /turf/open/floor/plasteel/white,
+/area/space)
+"uD" = (
+/obj/structure/table_frame/wood,
+/obj/structure/alien/weeds,
+/obj/effect/mob_spawn/human/corpse/damaged,
+/turf/open/floor/plating,
 /area/space)
 "uJ" = (
 /obj/structure/alien/weeds,
@@ -896,6 +1623,14 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/space)
+"vr" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/grass,
+/area/space)
 "vs" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/space/basic,
@@ -936,6 +1671,11 @@
 /obj/structure/alien/resin/membrane,
 /turf/open/floor/plating,
 /area/space)
+"vM" = (
+/obj/structure/alien/weeds,
+/obj/machinery/light/broken,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "vO" = (
 /obj/effect/turf_decal/corner/white{
 	dir = 4
@@ -956,6 +1696,17 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plating,
 /area/space)
+"vV" = (
+/obj/effect/decal/cleanable/plasma,
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/plating,
+/area/space)
+"wb" = (
+/obj/structure/alien/weeds,
+/obj/item/shard,
+/obj/structure/alien/resin/membrane,
+/turf/open/floor/plasteel/white,
+/area/space)
 "wc" = (
 /obj/machinery/shower{
 	dir = 1
@@ -963,12 +1714,23 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/white,
 /area/space)
+"wd" = (
+/obj/item/shard,
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/plasma,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/plating,
+/area/space)
 "wi" = (
 /obj/structure/chair/office{
 	dir = 1
 	},
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/white,
+/area/space)
+"wq" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/plating,
 /area/space)
 "ws" = (
 /obj/structure/chair/pew/left{
@@ -978,12 +1740,44 @@
 /area/space)
 "wv" = (
 /obj/effect/decal/cleanable/molten_object/large,
+/obj/machinery/light/broken{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono,
+/area/space)
+"wD" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating,
+/area/space)
+"wM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/assembly/mousetrap/armed,
+/turf/open/floor/plating,
 /area/space)
 "wR" = (
 /obj/structure/table_frame,
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plasteel/white,
+/area/space)
+"xa" = (
+/obj/structure/rack,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"xb" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/resin/membrane,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
+"xo" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "xr" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
@@ -992,12 +1786,20 @@
 /obj/structure/frame/computer,
 /turf/open/floor/plasteel/tech,
 /area/space)
+"xw" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "xy" = (
 /obj/effect/turf_decal/corner/purple/border{
 	dir = 1
 	},
 /obj/structure/alien/weeds,
 /obj/structure/alien/resin/membrane,
+/obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/white,
 /area/space)
 "xz" = (
@@ -1015,25 +1817,54 @@
 "xO" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/space)
 "xQ" = (
 /obj/effect/turf_decal/borderfloor,
+/obj/machinery/light/broken,
 /turf/open/floor/plasteel/white,
 /area/space)
 "xS" = (
-/obj/structure/rack,
-/obj/item/flamethrower/full/tank,
-/turf/open/floor/plasteel/dark,
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/xenoblood/xgibs/larva,
+/turf/open/floor/plating,
+/area/space)
+"xZ" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/xenoblood/xgibs/core,
+/turf/open/floor/plating,
+/area/space)
+"yb" = (
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plating,
 /area/space)
 "yd" = (
-/obj/structure/alien/egg/grown,
 /obj/structure/alien/weeds/node,
+/obj/structure/alien/egg,
 /turf/open/floor/concrete,
 /area/space)
 "ye" = (
 /obj/machinery/door/airlock/glass,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"yj" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
+"yB" = (
+/obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
 /area/space)
 "yD" = (
 /obj/effect/mine/gas/plasma,
@@ -1043,6 +1874,7 @@
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
 /obj/item/storage/belt/military/minutemen,
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plasteel/white,
 /area/space)
 "yM" = (
@@ -1058,6 +1890,12 @@
 /obj/item/shard,
 /turf/open/floor/engine,
 /area/space)
+"yV" = (
+/obj/structure/chair/greyscale{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "yY" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/resin/membrane,
@@ -1066,11 +1904,21 @@
 "zb" = (
 /obj/structure/alien/weeds,
 /obj/item/stack/cable_coil/cut/red,
+/mob/living/simple_animal/hostile/alien/queen,
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"zf" = (
+/obj/effect/turf_decal/industrial/outline/red,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "zm" = (
 /obj/item/shard,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"zo" = (
+/obj/effect/turf_decal/corner/blue/diagonal,
+/obj/item/flamethrower,
+/turf/open/floor/plasteel/white,
 /area/space)
 "zp" = (
 /obj/structure/alien/weeds/node,
@@ -1081,6 +1929,11 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"zx" = (
+/obj/structure/rack,
+/obj/item/gun/ballistic/shotgun/doublebarrel/improvised,
+/turf/open/floor/plating,
 /area/space)
 "zz" = (
 /obj/mecha/combat/combat_tank/minutemen/loaded,
@@ -1102,9 +1955,28 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/white,
 /area/space)
+"zG" = (
+/obj/structure/chair/greyscale{
+	dir = 1
+	},
+/obj/machinery/light/dim,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "zH" = (
 /obj/machinery/washing_machine,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"zJ" = (
+/obj/structure/alien/weeds/node,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/white,
+/area/space)
+"zM" = (
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/space)
 "zU" = (
 /obj/item/clothing/head/helmet/alt/minutemen,
@@ -1121,6 +1993,16 @@
 /area/space)
 "zZ" = (
 /obj/item/stack/sheet/metal/twenty,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plating,
+/area/space)
+"Aa" = (
+/obj/structure/filingcabinet/security,
+/obj/structure/sign/minutemen{
+	pixel_y = 30
+	},
 /turf/open/floor/plating,
 /area/space)
 "Ac" = (
@@ -1128,7 +2010,14 @@
 	dir = 4;
 	pixel_x = -28
 	},
+/mob/living/simple_animal/hostile/alien/maid/barmaid,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"Ai" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/obj/effect/decal/cleanable/molten_object,
+/turf/open/floor/plating,
 /area/space)
 "Aj" = (
 /obj/structure/fence/door/opened,
@@ -1142,19 +2031,85 @@
 "Ar" = (
 /obj/item/bedsheet/wiz,
 /obj/structure/bed,
+/mob/living/simple_animal/hostile/alien,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"Av" = (
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/xenoblood,
+/turf/open/floor/plating,
+/area/space)
+"AD" = (
+/obj/structure/fence,
+/turf/open/floor/plating,
+/area/space)
+"AH" = (
+/obj/structure/alien/weeds,
+/obj/item/ammo_casing/shotgun,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut,
 /area/space)
 "AK" = (
 /turf/open/floor/plating/dirt/jungle,
+/area/space)
+"AO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/xenoblood/xgibs/larva,
+/turf/open/floor/plating,
+/area/space)
+"AP" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating,
+/area/space)
+"AR" = (
+/obj/structure/rack,
+/obj/item/gun/energy/disabler,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"AT" = (
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "AX" = (
 /obj/mecha/combat/combat_tank/minutemen,
 /turf/open/space/basic,
 /area/space)
+"Ba" = (
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating,
+/area/space)
+"Bl" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space)
 "Bv" = (
 /obj/structure/alien/weeds,
 /obj/structure/door_assembly/door_assembly_highsecurity,
 /turf/open/floor/plasteel/white,
+/area/space)
+"BB" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space)
+"BC" = (
+/obj/machinery/computer/monitor/secret,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "BN" = (
 /turf/open/floor/concrete/slab_4,
@@ -1166,6 +2121,11 @@
 "Cb" = (
 /obj/machinery/door/poddoor/shutters,
 /turf/open/floor/concrete,
+/area/space)
+"Ce" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/toy/plush/goatplushie,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Co" = (
 /obj/structure/table/wood/fancy/red,
@@ -1179,6 +2139,12 @@
 /obj/item/stack/cable_coil/cut/red,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"Cy" = (
+/obj/structure/alien/weeds,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/wood/walnut,
+/area/space)
 "CB" = (
 /obj/effect/turf_decal/corner/blue/diagonal,
 /turf/open/floor/plasteel/white,
@@ -1187,8 +2153,24 @@
 /obj/structure/alien/weeds,
 /turf/closed/wall/concrete,
 /area/space)
+"CI" = (
+/obj/structure/chair/wood/wings,
+/obj/effect/decal/cleanable/blood,
+/obj/item/kitchen/knife/combat,
+/turf/open/floor/wood/walnut,
+/area/space)
+"CJ" = (
+/obj/structure/closet/emcloset,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/space)
 "CP" = (
 /obj/structure/table_frame,
+/turf/open/floor/plating,
+/area/space)
+"CT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/space)
 "CW" = (
@@ -1200,6 +2182,21 @@
 /obj/structure/alien/weeds,
 /obj/structure/door_assembly,
 /turf/open/floor/plating,
+/area/space)
+"Dc" = (
+/obj/structure/alien/weeds,
+/obj/item/poster/random_contraband,
+/turf/open/floor/plating,
+/area/space)
+"Df" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/space)
+"Dk" = (
+/obj/structure/chair/office,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Dw" = (
 /obj/structure/cloth_pile,
@@ -1214,28 +2211,91 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/space)
+"DE" = (
+/obj/structure/closet/firecloset,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/space)
+"DG" = (
+/obj/effect/turf_decal/trimline/red/arrow_cw{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/red/arrow_ccw{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "DL" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/space)
+"DM" = (
+/obj/effect/decal/cleanable/shreds,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/plating,
+/area/space)
 "DN" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass,
+/area/space)
+"DP" = (
+/obj/structure/alien/weeds,
+/obj/machinery/light/broken{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
+"DX" = (
+/obj/structure/alien/weeds/node,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/plating,
 /area/space)
 "DZ" = (
 /obj/machinery/autolathe/hacked,
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/white,
 /area/space)
+"Ea" = (
+/obj/structure/alien/weeds,
+/obj/item/flashlight/glowstick,
+/turf/open/floor/plating,
+/area/space)
 "Ec" = (
 /obj/effect/decal/cleanable/molten_object,
 /turf/open/floor/plasteel/mono,
 /area/space)
+"Ee" = (
+/obj/structure/alien/weeds/node,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/alien/sentinel,
+/turf/open/floor/plasteel/white,
+/area/space)
+"Ej" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating,
+/area/space)
+"Ek" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/blood/innards,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Em" = (
 /obj/item/key/janitor,
 /turf/open/floor/plating/dirt/jungle,
+/area/space)
+"Eq" = (
+/obj/item/flashlight/glowstick,
+/obj/item/poster/random_contraband,
+/turf/open/floor/plating,
 /area/space)
 "Ew" = (
 /obj/structure/alien/weeds,
@@ -1256,16 +2316,50 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 4
 	},
+/obj/machinery/light/dim{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"EJ" = (
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "EL" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
 /obj/item/gun/energy/beam_rifle,
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plasteel/white,
+/area/space)
+"EM" = (
+/obj/structure/chair/wood/wings,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/wood/walnut,
 /area/space)
 "ET" = (
 /turf/open/floor/engine,
+/area/space)
+"EW" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/structure/bed/nest,
+/obj/item/flamethrower,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"EZ" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/plasteel/white,
 /area/space)
 "Fn" = (
 /obj/structure/fence/corner{
@@ -1274,19 +2368,35 @@
 /obj/structure/fence/post,
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"Fp" = (
+/obj/structure/rack,
+/obj/item/ammo_box/c556mmHITP,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Fr" = (
 /obj/structure/alien/weeds,
 /obj/structure/table_frame,
 /turf/open/floor/plasteel/white,
 /area/space)
+"Fs" = (
+/obj/structure/alien/weeds,
+/mob/living/simple_animal/hostile/alien/sentinel,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
 "Fv" = (
 /obj/structure/window/reinforced/spawner,
 /obj/effect/decal/cleanable/glass,
 /obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/clothing/under/rank/security/officer/minutemen,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "FF" = (
 /turf/open/floor/concrete/reinforced,
+/area/space)
+"FJ" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/structure/table/reinforced,
+/turf/open/floor/plating,
 /area/space)
 "FO" = (
 /obj/structure/rack,
@@ -1316,6 +2426,11 @@
 /obj/structure/table_frame/wood,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Gi" = (
+/obj/structure/alien/weeds,
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/concrete,
+/area/space)
 "Gp" = (
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/dark,
@@ -1324,8 +2439,20 @@
 /obj/structure/closet/secure_closet,
 /turf/open/floor/plating,
 /area/space)
+"Gv" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood/gibs/limb,
+/turf/open/floor/plating,
+/area/space)
 "Gz" = (
 /obj/structure/chair/wood/wings,
+/turf/open/floor/wood/walnut,
+/area/space)
+"GD" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/space)
 "GK" = (
@@ -1336,10 +2463,36 @@
 /obj/structure/table/wood/fancy/red,
 /turf/open/floor/wood/walnut,
 /area/space)
+"Hc" = (
+/obj/effect/turf_decal/trimline/red/arrow_ccw{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/red/arrow_cw{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Hd" = (
+/obj/structure/rack,
+/obj/item/poster/random_contraband,
+/turf/open/floor/plating,
+/area/space)
 "Hk" = (
 /turf/open/floor/plasteel/median,
 /area/space)
+"Hl" = (
+/obj/item/shard,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating,
+/area/space)
+"Ho" = (
+/obj/structure/table/wood/fancy/red,
+/obj/item/toy/toy_xeno,
+/turf/open/floor/wood/walnut,
+/area/space)
 "Hq" = (
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Ht" = (
@@ -1356,16 +2509,38 @@
 /obj/structure/chair/wood/wings{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/item/grenade/frag,
 /turf/open/floor/plating,
+/area/space)
+"Hy" = (
+/obj/structure/alien/weeds,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/plasteel/white,
 /area/space)
 "Hz" = (
 /obj/machinery/power/smes,
 /turf/open/floor/plasteel/mono,
 /area/space)
+"HD" = (
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood/gibs/limb,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating,
+/area/space)
 "HG" = (
 /obj/structure/alien/weeds,
 /obj/item/shard,
 /turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"HJ" = (
+/obj/effect/decal/cleanable/shreds,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
 /area/space)
 "HQ" = (
 /obj/item/shard,
@@ -1375,11 +2550,31 @@
 /obj/structure/chair/pew/left,
 /turf/open/floor/grass,
 /area/space)
+"HU" = (
+/obj/structure/alien/weeds,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/plating,
+/area/space)
+"HV" = (
+/obj/machinery/computer/monitor/secret{
+	dir = 1
+	},
+/turf/open/floor/concrete,
+/area/space)
+"HY" = (
+/obj/item/flashlight/glowstick,
+/turf/open/floor/plating,
+/area/space)
 "Ia" = (
 /obj/structure/chair/wood/wings{
 	dir = 4
 	},
 /turf/open/floor/wood/walnut,
+/area/space)
+"Ic" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/table_bell/brass,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Ih" = (
 /obj/structure/frame/computer{
@@ -1400,13 +2595,37 @@
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/white,
 /area/space)
+"Is" = (
+/obj/structure/rack,
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/obj/item/grenade/frag,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Iw" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/item/gun/energy/e_gun/mini,
+/turf/open/floor/plating,
+/area/space)
 "IF" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
 /obj/structure/table/optable,
 /obj/item/clothing/mask/surgical,
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plasteel/white,
+/area/space)
+"IG" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "IJ" = (
 /obj/structure/table/wood/reinforced,
@@ -1417,6 +2636,36 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/resin/wall,
 /turf/open/floor/plasteel/white,
+/area/space)
+"IP" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/item/ammo_casing/shotgun,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/space)
+"IS" = (
+/obj/item/assembly/mousetrap/armed,
+/turf/open/floor/plating,
+/area/space)
+"Jd" = (
+/obj/structure/barricade/security,
+/obj/item/ammo_casing/a556,
+/turf/open/floor/plating,
+/area/space)
+"Ji" = (
+/obj/machinery/light/broken{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Jk" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
 /area/space)
 "Jn" = (
 /obj/structure/chair/sofa/corner,
@@ -1438,11 +2687,21 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Jw" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "u"
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Jx" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
 	},
 /turf/open/floor/plasteel/white,
+/area/space)
+"JA" = (
+/obj/effect/decal/cleanable/xenoblood,
+/turf/open/floor/plating,
 /area/space)
 "JD" = (
 /turf/open/floor/grass,
@@ -1473,6 +2732,18 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/white,
 /area/space)
+"Kf" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/folder/red{
+	pixel_y = -1;
+	pixel_x = -4
+	},
+/obj/item/folder/blue{
+	pixel_y = 5;
+	pixel_x = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Kg" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 8
@@ -1480,13 +2751,27 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/engine,
 /area/space)
+"Kk" = (
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plating,
+/area/space)
 "Kn" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/clothing/under/rank/security/officer/minutemen,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Kt" = (
 /obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"Kx" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/wood/walnut,
+/area/space)
+"KB" = (
+/obj/structure/alien/weeds,
+/mob/living/simple_animal/hostile/alien/sentinel,
+/turf/open/floor/concrete,
 /area/space)
 "KC" = (
 /obj/structure/fence,
@@ -1495,6 +2780,11 @@
 "KE" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/plating,
+/area/space)
+"KG" = (
+/obj/structure/alien/weeds,
+/mob/living/simple_animal/hostile/alien/sentinel,
+/turf/open/floor/plasteel/white,
 /area/space)
 "KR" = (
 /obj/structure/frame/computer,
@@ -1514,6 +2804,19 @@
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/plasteel/white,
 /area/space)
+"Lg" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plating,
+/area/space)
+"Li" = (
+/obj/structure/alien/weeds,
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Lj" = (
 /obj/structure/chair/pew/right{
 	dir = 1
@@ -1523,13 +2826,38 @@
 "Lk" = (
 /turf/open/floor/plasteel/white,
 /area/space)
+"Lr" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/table_frame,
+/obj/item/hemostat,
+/obj/item/scalpel/advanced,
+/obj/item/retractor,
+/obj/item/cautery,
+/turf/open/floor/plasteel/white,
+/area/space)
+"Lt" = (
+/obj/machinery/light/dim{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "Lx" = (
 /obj/structure/table/wood,
+/obj/item/grenade/frag,
 /turf/open/floor/grass,
 /area/space)
 "LA" = (
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"LB" = (
+/obj/item/shard,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/space)
 "LZ" = (
 /obj/effect/decal/cleanable/glass,
@@ -1540,8 +2868,15 @@
 /obj/structure/rack,
 /turf/open/floor/plating,
 /area/space)
+"Mk" = (
+/obj/structure/holosign/barrier/medical,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Ms" = (
 /obj/structure/fence/door{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1550,17 +2885,57 @@
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plating,
 /area/space)
+"Mz" = (
+/obj/structure/rack,
+/obj/item/flashlight/seclite,
+/obj/item/restraints/handcuffs,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"MC" = (
+/obj/effect/decal/cleanable/blood/innards,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"MD" = (
+/obj/structure/rack,
+/obj/item/weldingtool/empty,
+/obj/item/poster/random_contraband,
+/turf/open/floor/plating,
+/area/space)
 "ME" = (
 /obj/structure/chair/sofa{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"MK" = (
+/obj/structure/alien/weeds,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
+"MN" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/xenoblood,
+/turf/open/floor/plating,
+/area/space)
 "MQ" = (
 /obj/structure/alien/weeds,
 /obj/effect/spawner/lootdrop/two_percent_xeno_egg_spawner,
 /obj/structure/alien/weeds,
 /turf/open/floor/concrete,
+/area/space)
+"MT" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/item/flamethrower,
+/turf/open/floor/plating,
 /area/space)
 "MV" = (
 /obj/structure/alien/weeds,
@@ -1576,6 +2951,12 @@
 /obj/item/flamethrower/full,
 /obj/structure/bed/nest,
 /turf/open/floor/plasteel/white,
+/area/space)
+"Nh" = (
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/gibs/up,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Nu" = (
 /obj/structure/alien/weeds/node,
@@ -1593,7 +2974,20 @@
 "Ny" = (
 /obj/structure/bed/nest,
 /obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/item/clothing/head/cowboy/sec/minutemen,
+/obj/item/clothing/under/rank/command/minutemen,
 /turf/open/floor/plasteel/tech,
+/area/space)
+"NA" = (
+/obj/structure/alien/weeds,
+/obj/structure/closet/emcloset,
+/turf/open/floor/plating,
+/area/space)
+"NK" = (
+/obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
 /area/space)
 "NN" = (
 /obj/item/flamethrower/full,
@@ -1610,11 +3004,15 @@
 /area/space)
 "On" = (
 /obj/structure/alien/weeds/node,
+/obj/structure/bed/nest,
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "Op" = (
 /obj/structure/alien/weeds/node,
 /obj/structure/alien/weeds,
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/space)
 "Oq" = (
@@ -1632,12 +3030,20 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 5
 	},
-/obj/machinery/sleeper,
+/obj/structure/sink{
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/white,
 /area/space)
 "Oy" = (
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/space/basic,
+/area/space)
+"Oz" = (
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono,
 /area/space)
 "OF" = (
 /obj/effect/decal/cleanable/glass,
@@ -1653,14 +3059,33 @@
 /obj/machinery/deepfryer,
 /turf/open/floor/plasteel/white,
 /area/space)
+"OT" = (
+/obj/structure/alien/weeds,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating,
+/area/space)
 "OW" = (
 /obj/effect/turf_decal/corner/white/mono,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"OY" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space)
 "Pa" = (
 /obj/item/stack/cable_coil/cut/red,
 /obj/structure/door_assembly,
+/obj/effect/decal/cleanable/plasma,
 /turf/open/floor/plating,
+/area/space)
+"Pb" = (
+/obj/item/ammo_casing/shotgun/buckshot,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Pd" = (
 /turf/open/floor/wood/walnut,
@@ -1669,31 +3094,77 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/grass,
 /area/space)
+"Py" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/space)
+"Pz" = (
+/obj/structure/alien/weeds,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/plasteel/white,
+/area/space)
 "PB" = (
 /obj/item/clothing/suit/toggle/lawyer/minutemen,
 /turf/open/space/basic,
 /area/space)
 "PG" = (
-/obj/item/flamethrower/full/tank,
+/obj/effect/decal/cleanable/molten_object,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
 /turf/open/floor/plating,
+/area/space)
+"PJ" = (
+/obj/item/ammo_casing/a556,
+/turf/open/floor/plating,
+/area/space)
+"PM" = (
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/mob_spawn/human/corpse/damaged,
+/turf/open/floor/plating,
+/area/space)
+"PN" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/innards,
+/obj/effect/decal/cleanable/xenoblood/xgibs/limb,
+/turf/open/floor/plating,
+/area/space)
+"PX" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
 /area/space)
 "PY" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
 /obj/structure/table_frame,
+/obj/item/gun/syringe,
 /turf/open/floor/plasteel/white,
 /area/space)
 "Qa" = (
 /obj/structure/fence{
 	dir = 4
 	},
+/obj/structure/sign/warning,
 /turf/open/floor/concrete/slab_2,
+/area/space)
+"Qj" = (
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 4
+	},
+/obj/machinery/light/broken,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Qm" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
-/obj/item/keycard/entry,
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/concrete,
 /area/space)
 "Qq" = (
@@ -1703,6 +3174,7 @@
 "Qt" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
+/obj/item/gun/energy/laser,
 /turf/open/floor/plasteel/white,
 /area/space)
 "Qw" = (
@@ -1720,6 +3192,12 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/white,
 /area/space)
+"QE" = (
+/obj/structure/table/glass,
+/obj/item/flashlight/seclite,
+/obj/item/restraints/handcuffs,
+/turf/open/floor/concrete,
+/area/space)
 "QL" = (
 /obj/structure/sign/minutemen{
 	pixel_y = 30
@@ -1736,18 +3214,63 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/grass,
 /area/space)
+"QU" = (
+/obj/effect/decal/cleanable/shreds,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/plating,
+/area/space)
+"QW" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/turf/open/floor/grass,
+/area/space)
 "Rc" = (
 /obj/structure/fence/corner,
 /turf/open/space/basic,
+/area/space)
+"Rd" = (
+/obj/effect/decal/cleanable/molten_object,
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/turf/open/floor/plating,
 /area/space)
 "Rg" = (
 /obj/structure/alien/weeds/node,
 /obj/item/shard,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Rj" = (
+/obj/structure/rack,
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Rm" = (
+/obj/structure/alien/weeds,
+/obj/item/flamethrower,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Rn" = (
 /obj/structure/closet/crate/trashcart,
+/obj/item/weldingtool/empty,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/gun/energy/laser/retro,
+/obj/item/poster/random_contraband,
 /turf/open/floor/plating,
+/area/space)
+"Ro" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/paper_bin/carbon,
+/obj/item/pen/fourcolor,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Ru" = (
 /obj/structure/chair/wood/wings{
@@ -1759,11 +3282,19 @@
 /obj/structure/fence/door{
 	dir = 4
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Rz" = (
 /obj/structure/sign/minutemen,
 /turf/open/space/basic,
+/area/space)
+"RG" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/mob_spawn/human/corpse/damaged,
+/turf/open/floor/plating,
 /area/space)
 "RK" = (
 /obj/structure/chair/plastic{
@@ -1780,6 +3311,12 @@
 "RN" = (
 /obj/item/clothing/under/rank/command/minutemen,
 /turf/open/space/basic,
+/area/space)
+"RT" = (
+/obj/item/shard,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating,
 /area/space)
 "RU" = (
 /obj/effect/decal/cleanable/glass,
@@ -1798,6 +3335,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Sb" = (
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
+"Sm" = (
+/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "So" = (
 /obj/structure/alien/weeds,
 /obj/structure/chair/wood/wings{
@@ -1809,9 +3360,37 @@
 /obj/structure/table_frame,
 /turf/open/floor/plasteel/white,
 /area/space)
+"Ss" = (
+/obj/structure/closet/secure_closet,
+/obj/item/clothing/under/rank/security/officer/minutemen,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Su" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/plating,
+/area/space)
 "Sw" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/resin/wall,
+/turf/open/floor/plating,
+/area/space)
+"Sx" = (
+/obj/structure/alien/weeds,
+/mob/living/simple_animal/hostile/alien/queen/large,
+/turf/open/floor/concrete,
+/area/space)
+"SI" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
+"SL" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/space)
 "SS" = (
@@ -1825,6 +3404,12 @@
 	dir = 9
 	},
 /turf/open/floor/concrete/slab_1,
+/area/space)
+"Tc" = (
+/obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
 /area/space)
 "Td" = (
 /obj/structure/window/reinforced/spawner{
@@ -1840,15 +3425,32 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/concrete,
+/area/space)
+"Ti" = (
+/obj/effect/decal/cleanable/glass,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/plating,
+/area/space)
+"Tm" = (
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Tn" = (
 /obj/effect/turf_decal/trimline/red/filled/line,
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Tp" = (
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech,
+/area/space)
+"Tv" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "a"
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Tw" = (
 /obj/structure/barricade/wooden,
@@ -1866,8 +3468,17 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"TC" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space)
 "TI" = (
 /obj/item/stack/sheet/glass/twenty,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/xenoblood/xgibs/limb,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "TR" = (
@@ -1882,10 +3493,23 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/white,
 /area/space)
+"Ue" = (
+/obj/structure/alien/weeds,
+/obj/item/shard,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "Uf" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"Ug" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/shreds,
+/turf/open/floor/plating,
 /area/space)
 "Ut" = (
 /obj/item/electronics/airlock,
@@ -1926,6 +3550,10 @@
 /obj/item/kitchen/knife,
 /turf/open/floor/grass,
 /area/space)
+"Va" = (
+/obj/effect/decal/cleanable/blood/gibs/torso,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Vr" = (
 /obj/structure/window/plasma/reinforced/spawner,
 /obj/structure/window/plasma/reinforced/spawner{
@@ -1933,10 +3561,22 @@
 	},
 /turf/open/floor/engine,
 /area/space)
+"VF" = (
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating,
+/area/space)
 "VI" = (
 /obj/structure/door_assembly/door_assembly_mhatch,
 /obj/structure/alien/weeds,
 /turf/open/floor/plating,
+/area/space)
+"VJ" = (
+/obj/machinery/computer/arcade,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "VK" = (
 /obj/structure/bed,
@@ -1944,9 +3584,29 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"VM" = (
+/obj/structure/table_frame,
+/obj/item/shard,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plating,
+/area/space)
 "VO" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/wood/walnut,
+/area/space)
+"VR" = (
+/obj/item/reagent_containers/glass/mortar/gold,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/space)
+"Wd" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Wh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/xenoblood/xgibs/larva,
+/turf/open/floor/plating,
 /area/space)
 "Wm" = (
 /obj/structure/fence/corner{
@@ -1963,6 +3623,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Wp" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/kitchen/knife/combat,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Wu" = (
 /obj/structure/table/reinforced,
 /obj/structure/alien/weeds,
@@ -1973,6 +3638,7 @@
 	dir = 8
 	},
 /obj/structure/alien/weeds,
+/mob/living/simple_animal/hostile/alien,
 /turf/open/floor/wood/walnut,
 /area/space)
 "WD" = (
@@ -1992,6 +3658,23 @@
 /obj/structure/sign/warning,
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"WN" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/alien/sentinel,
+/turf/open/floor/plasteel/white,
+/area/space)
+"WP" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "WT" = (
 /obj/structure/door_assembly,
 /turf/open/floor/grass,
@@ -2000,10 +3683,31 @@
 /obj/structure/chair/pew/right,
 /turf/open/floor/grass,
 /area/space)
+"WZ" = (
+/obj/structure/flora/ausbushes/brflowers,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/grass,
+/area/space)
 "Xa" = (
-/obj/structure/alien/weeds,
-/obj/item/stack/cable_coil/cut/red,
-/turf/open/floor/plasteel/white,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/mob_spawn/human/corpse/damaged,
+/turf/open/floor/grass,
+/area/space)
+"Xe" = (
+/obj/structure/rack,
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/obj/item/ammo_box/magazine/p16{
+	pixel_y = 4;
+	pixel_x = -7
+	},
+/obj/item/ammo_box/magazine/p16{
+	pixel_y = 5;
+	pixel_x = 4
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Xi" = (
 /turf/open/space/basic,
@@ -2018,6 +3722,13 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/mono,
 /area/space)
+"Xq" = (
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 8
+	},
+/obj/machinery/light/dim,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Xu" = (
 /obj/structure/fence,
 /turf/open/floor/concrete/slab_1,
@@ -2026,15 +3737,33 @@
 /obj/structure/closet/secure,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"XB" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space)
 "XC" = (
 /obj/structure/fence/corner{
 	dir = 8
 	},
 /turf/open/floor/grass,
 /area/space)
+"XD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/flamethrower,
+/turf/open/floor/plating,
+/area/space)
 "XF" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/molten_object,
+/obj/structure/bed/nest,
+/obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "XH" = (
@@ -2046,6 +3775,16 @@
 /obj/item/shard,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"XJ" = (
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"XK" = (
+/obj/item/storage/firstaid/advanced,
+/turf/open/floor/plating/dirt/jungle,
+/area/space)
 "XP" = (
 /obj/effect/turf_decal/trimline/red/filled/line,
 /obj/structure/closet/secure_closet,
@@ -2053,6 +3792,11 @@
 /area/space)
 "XS" = (
 /turf/open/floor/concrete/tiles,
+/area/space)
+"XV" = (
+/obj/structure/alien/weeds,
+/obj/item/assembly/mousetrap/armed,
+/turf/open/floor/plating,
 /area/space)
 "Yc" = (
 /obj/structure/alien/weeds,
@@ -2081,15 +3825,37 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/space)
+"Yw" = (
+/obj/item/assembly/mousetrap/armed,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/space)
+"Yx" = (
+/obj/effect/decal/cleanable/molten_object,
+/turf/open/floor/plating,
+/area/space)
 "Yz" = (
 /obj/structure/chair/office{
 	dir = 1
 	},
 /turf/open/floor/plating,
 /area/space)
+"YC" = (
+/obj/effect/decal/cleanable/blood/innards,
+/obj/effect/decal/cleanable/blood/gibs/core,
+/obj/effect/decal/cleanable/blood/gibs/torso,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"YI" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
 "YL" = (
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
+/obj/item/ammo_casing/a556,
+/obj/item/ammo_casing/a556,
 /turf/open/floor/plasteel/tech,
 /area/space)
 "YP" = (
@@ -2102,8 +3868,24 @@
 /obj/item/clothing/under/rank/security/officer/minutemen,
 /turf/open/space/basic,
 /area/space)
+"YT" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/weeds,
+/obj/item/flamethrower,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"YW" = (
+/obj/structure/alien/weeds,
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/plating,
+/area/space)
 "Za" = (
 /turf/closed/wall/concrete/reinforced,
+/area/space)
+"Zf" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/item/grenade/frag,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Zj" = (
 /obj/effect/decal/cleanable/glass,
@@ -2115,6 +3897,23 @@
 /obj/item/shard,
 /turf/open/floor/plasteel/white,
 /area/space)
+"Zu" = (
+/obj/structure/alien/weeds/node,
+/obj/structure/alien/resin/membrane,
+/turf/open/floor/plasteel/white,
+/area/space)
+"Zv" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Zy" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "n"
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Zz" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/grass,
@@ -2124,6 +3923,15 @@
 /obj/structure/table_frame,
 /obj/item/shard,
 /turf/open/floor/plasteel/white,
+/area/space)
+"ZQ" = (
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/red{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "ZR" = (
 /obj/structure/fence/corner{
@@ -3018,10 +4826,10 @@ AK
 Za
 Ew
 Ew
+DP
 Ew
 Ew
-Ew
-Ew
+DP
 Za
 AK
 Nc
@@ -3159,7 +4967,7 @@ AK
 AK
 Za
 jY
-Ew
+DP
 Ew
 Wu
 nd
@@ -3231,9 +5039,9 @@ AK
 Za
 Za
 hq
-Ew
+KG
 UM
-Xa
+IL
 yK
 Ew
 Ew
@@ -3305,8 +5113,8 @@ JH
 pd
 Ew
 Ew
-Ew
-Ew
+IL
+IL
 UM
 Ew
 jz
@@ -3318,7 +5126,7 @@ IL
 dl
 vP
 kc
-dl
+LA
 jM
 Nc
 AK
@@ -3378,13 +5186,13 @@ wi
 Ew
 Ew
 pd
+IL
+IL
 Ew
-Ew
-Ew
-Ew
+jF
 Za
 Fr
-Ew
+KG
 UM
 IL
 XF
@@ -3447,11 +5255,11 @@ AK
 Za
 JH
 UM
-Ew
+KG
 EL
 UM
 pd
-Ew
+IL
 Ew
 UM
 Ub
@@ -3459,11 +5267,11 @@ Ew
 Ew
 Ew
 Yc
-jj
+uh
 zb
-jj
+uh
 un
-pK
+ed
 Tp
 jM
 jM
@@ -3533,12 +5341,12 @@ UM
 Yc
 Cq
 jj
-bH
-jj
-pK
+qg
+YI
+su
 Ny
 jM
-vS
+ub
 jM
 AK
 AK
@@ -3595,22 +5403,22 @@ GK
 tp
 GK
 GK
-vS
-pd
+Sw
+wb
 pd
 Za
 QA
 Ew
 Ew
 IL
-uh
+ib
 zp
 jj
 tr
 ov
 Tp
 jM
-vS
+OT
 jM
 AK
 AK
@@ -3661,15 +5469,15 @@ oq
 AK
 AK
 Za
-ra
+hj
 th
 fN
 fN
-fN
+KB
 th
 vb
-UM
-Ew
+Zu
+jF
 Za
 QA
 UM
@@ -3679,10 +5487,10 @@ ZS
 ZS
 bH
 nj
-pK
+EW
 vu
 jM
-vS
+ub
 jM
 jM
 jM
@@ -3733,14 +5541,14 @@ oq
 Nc
 AK
 Za
-ra
 fN
+Sx
 fN
 Nu
 Nu
 fN
 vS
-Ew
+Yc
 pd
 Za
 Nw
@@ -3750,14 +5558,14 @@ Ew
 jj
 ZS
 ZS
-jj
+Fs
 pK
 kn
 jM
-vS
-vS
-vS
-vS
+bR
+lj
+Ea
+mT
 jM
 AK
 AK
@@ -3810,7 +5618,7 @@ fN
 yd
 nR
 fN
-fN
+mp
 Za
 Za
 Za
@@ -3819,14 +5627,14 @@ jM
 jM
 jM
 Ew
-Ew
+Pz
 Ew
 IL
 Yc
-Yc
+xb
 IL
 jM
-vS
+kj
 My
 vS
 Op
@@ -3879,29 +5687,29 @@ AK
 Za
 fN
 fN
-fN
+Gi
 Qm
 Qx
-ra
+kS
 Za
 KE
 fs
 Mi
 jW
-tF
+MD
 jM
 Bv
 Ew
+dp
 Ew
 Ew
-Ew
-Ew
-Ew
+yj
+SI
 jM
 vS
 vS
 vS
-vS
+mT
 jM
 Nc
 AK
@@ -3950,17 +5758,17 @@ AK
 AK
 Za
 th
-fN
+ow
 th
 fN
-fN
+ow
 MQ
 Za
 Cp
 fs
 MV
 vS
-vS
+Ea
 vS
 Ew
 Ew
@@ -3968,9 +5776,9 @@ UM
 Qt
 Bv
 Ew
-UM
+Ee
 jM
-vS
+Dc
 VI
 vS
 vS
@@ -4040,10 +5848,10 @@ jM
 jM
 jM
 jM
-Ew
+PX
 jM
 vS
-vS
+xS
 vS
 VI
 jM
@@ -4092,27 +5900,27 @@ AK
 AK
 AK
 jM
+YW
 vS
-vS
-vS
+lj
 vS
 My
 vS
-vS
-vS
+xS
+XV
 vS
 vS
 MV
+kj
 vS
 vS
-vS
-vS
+xS
 vS
 vS
 My
 Sw
-vS
-Ew
+qH
+PX
 vS
 My
 vS
@@ -4166,7 +5974,7 @@ jM
 jM
 vS
 Cp
-vS
+Ea
 jM
 jM
 jM
@@ -4184,11 +5992,11 @@ jM
 jM
 jM
 jM
-Ew
+PX
 jM
 jM
 jM
-vS
+NA
 My
 jM
 AK
@@ -4232,7 +6040,7 @@ Xi
 (30,1,1) = {"
 aq
 AK
-AK
+ag
 jM
 vS
 vS
@@ -4242,25 +6050,25 @@ vS
 jM
 pm
 mx
-Lk
+Lt
 wc
 jM
 My
 jM
 Ar
 tk
-ar
+qD
 XH
 CW
 jM
 Gp
 Uf
 hy
-Ew
+PX
 zB
 Ew
 jM
-vS
+tG
 vS
 jM
 AK
@@ -4306,7 +6114,7 @@ oq
 AK
 Nc
 jM
-vS
+XV
 jM
 jM
 jM
@@ -4325,15 +6133,15 @@ ar
 rl
 xB
 jM
-Uf
-Gp
+Zv
+hU
 xy
 fy
-pd
-Ew
+gL
+SI
 jM
 vS
-vS
+XV
 jM
 AK
 AK
@@ -4384,7 +6192,7 @@ WJ
 ez
 Gp
 jM
-pm
+ju
 mx
 Lk
 wc
@@ -4398,11 +6206,11 @@ XH
 VK
 jM
 Gp
-Gp
+as
 Gd
-Ew
-UM
-Ew
+EZ
+zJ
+PX
 aE
 vS
 My
@@ -4454,7 +6262,7 @@ vS
 jM
 kk
 Gp
-Gp
+vM
 jM
 jM
 jM
@@ -4467,16 +6275,16 @@ jC
 ar
 Gp
 rJ
-Gp
+Li
 Gp
 rJ
-Gp
+as
 zE
-Ew
-Ew
-pd
+yj
+WP
+Ue
 jM
-vS
+YW
 vS
 jM
 AK
@@ -4522,14 +6330,14 @@ oq
 AK
 AK
 jM
-vS
+xS
 jM
 lg
-ar
+Tm
 Gp
 ye
 ar
-ar
+cc
 uJ
 Gp
 JU
@@ -4539,7 +6347,7 @@ Gp
 Gp
 Gp
 qz
-Gp
+vM
 jM
 jM
 sK
@@ -4594,7 +6402,7 @@ oq
 AK
 AK
 jM
-vS
+uc
 jM
 ar
 ar
@@ -4602,19 +6410,19 @@ ar
 jM
 Xv
 uJ
+Li
 Gp
 Gp
-Gp
-uJ
+YT
 CE
 iZ
-mj
+Wp
 Gh
 TB
 vR
 jM
 Aq
-so
+GD
 Aq
 oh
 so
@@ -4666,7 +6474,7 @@ oq
 Nc
 AK
 jM
-vS
+kj
 jM
 Kt
 KS
@@ -4677,7 +6485,7 @@ Gp
 zH
 IJ
 zH
-Gp
+vM
 jM
 Jn
 ME
@@ -4687,13 +6495,13 @@ rJ
 jM
 so
 xO
-vS
+qH
 so
 so
-vS
+kd
 MV
 jM
-vS
+ub
 jM
 AK
 AK
@@ -4758,14 +6566,14 @@ vS
 GK
 jM
 so
-vS
-vS
+kr
+mV
 Da
 vt
 vS
 JO
 jM
-vS
+Ea
 jM
 AK
 AK
@@ -4813,7 +6621,7 @@ jM
 vS
 vS
 vS
-KE
+FJ
 jM
 Fv
 qK
@@ -4831,7 +6639,7 @@ GK
 jM
 Pd
 vt
-vS
+BB
 vS
 GT
 GT
@@ -4885,7 +6693,7 @@ jM
 jM
 vS
 vS
-KE
+FJ
 jM
 LZ
 Kn
@@ -4903,9 +6711,9 @@ DN
 GK
 GK
 so
-so
+Jk
 vS
-GT
+Ho
 Lk
 lD
 jM
@@ -4955,19 +6763,19 @@ AK
 AK
 AK
 jM
-vS
-vS
+XV
+Ea
 vS
 jM
 cu
 oc
 Rg
 Xj
-Gp
+vM
 jM
 JD
 QS
-QS
+WZ
 QS
 Ps
 Ps
@@ -4975,7 +6783,7 @@ DN
 DN
 GK
 VO
-so
+sR
 vS
 GT
 Ew
@@ -5028,12 +6836,12 @@ AK
 Nc
 jM
 jM
-vS
+NA
 My
 vS
 uJ
 Uf
-Gp
+Rm
 Gp
 Gh
 jM
@@ -5047,13 +6855,13 @@ Ps
 DN
 jM
 VO
-vS
+BB
 vS
 Ez
 Ew
 Sr
 jM
-vS
+XV
 jM
 AK
 AK
@@ -5100,15 +6908,15 @@ XC
 AK
 AK
 jM
-vS
+tG
 vS
 jM
-LZ
+bT
 SS
 zm
 Gp
-Cp
-Cp
+me
+yb
 Cp
 Ps
 nz
@@ -5119,9 +6927,9 @@ Ps
 JD
 cB
 VO
+Iw
 vS
-vS
-Ez
+uD
 Ew
 Ij
 jM
@@ -5178,8 +6986,8 @@ jM
 JU
 ar
 ar
-Cp
-Cp
+kg
+yb
 Cp
 WT
 JD
@@ -5191,13 +6999,13 @@ JD
 JD
 jM
 VO
-Cp
-vS
+OY
+kd
 Ez
-Ew
+Hy
 Ir
 jM
-vS
+kj
 jM
 AK
 AK
@@ -5250,21 +7058,21 @@ jM
 Ht
 Gh
 Ut
-Cp
+yb
 kJ
 jM
 Oq
 Ps
 Ps
 Ps
-bA
+Xa
 QS
 JD
 ft
 GK
 VO
-Pd
-vS
+lk
+mu
 Co
 Ew
 OM
@@ -5329,14 +7137,14 @@ jM
 Zz
 UW
 JD
-QS
+vr
 bA
 ft
 GK
 GK
 so
-vS
-My
+io
+DX
 Ez
 Qw
 Lk
@@ -5389,31 +7197,31 @@ AK
 AK
 AK
 jM
-Cp
-Cp
+Kk
+tF
 jM
 Jx
-Cp
+pZ
 ej
 UW
-ej
+Ti
 jM
 GK
-Cp
+yb
 UW
-Ps
+QW
 ft
 GK
 GK
 Ia
 oL
-vS
+BB
 vS
 dN
 Ew
 Ir
 jM
-vS
+XV
 jM
 AK
 AK
@@ -5461,8 +7269,8 @@ AK
 AK
 AK
 jM
-Cp
-Cp
+aI
+Hd
 jM
 PY
 uB
@@ -5471,12 +7279,12 @@ UD
 cd
 jM
 GK
-HQ
-Cp
-ej
+bM
+me
+Lg
 GK
 GK
-Gz
+CI
 GT
 GT
 Hx
@@ -5533,27 +7341,27 @@ AK
 AK
 Nc
 jM
-Cp
-Cp
+ts
+Hd
 jM
 nW
 ej
-Cp
+Yx
 Nv
 xQ
 jM
 Ia
-ej
-Cp
-HQ
+fR
+Yx
+LB
 Pd
-Pd
-so
+Kx
+hC
 WA
 So
-so
-so
-vS
+MK
+fn
+mV
 so
 Pd
 jM
@@ -5605,11 +7413,11 @@ AK
 AK
 AK
 jM
-Cp
+ha
 jM
 jM
 rZ
-Cp
+eb
 Ka
 pj
 Ut
@@ -5617,7 +7425,7 @@ jM
 GT
 oM
 RU
-Cp
+TC
 oM
 so
 so
@@ -5625,7 +7433,7 @@ so
 vt
 so
 so
-vS
+sF
 cr
 jM
 jM
@@ -5677,27 +7485,27 @@ AK
 AK
 AK
 jM
-Cp
+AO
 jM
 oH
 ol
 UW
-Cp
+eb
 Cp
 Zs
 jM
 GT
+Kx
 Pd
-Pd
-Cp
+MN
+hu
 vS
-vS
-Gz
+EM
 GT
 GT
 oX
-so
-so
+Cy
+GD
 GT
 jM
 vS
@@ -5747,32 +7555,32 @@ JD
 oq
 AK
 Nc
-AK
+XK
 jM
-Cp
+Tc
 jM
 IF
 CB
 UW
-CB
+zo
 sU
 ZE
 jM
 Ru
-Cp
+Su
 oS
-Cp
+xZ
 Pd
-Pd
+hF
 Gz
 GT
 GT
 vg
 so
-so
+AH
 Ru
 jM
-Cp
+Eq
 vS
 jM
 AK
@@ -5821,19 +7629,19 @@ AK
 AK
 AK
 jM
-Cp
+CT
 jM
-PY
-Cp
+Lr
+me
 HQ
 Cp
 qY
 dD
 jM
 jM
-Cp
-Cp
-Cp
+HD
+me
+gi
 oM
 jM
 jM
@@ -5841,11 +7649,11 @@ jM
 jM
 jM
 jM
-so
+sp
 Ia
 jM
 Cp
-Cp
+IS
 jM
 Nc
 AK
@@ -5893,31 +7701,31 @@ AK
 AK
 AK
 jM
-Cp
+CT
 jM
 YP
-Cp
+PM
 Dz
 CB
 iw
 HQ
 ar
-Cp
-Cp
+me
+bS
 HQ
-Cp
-ar
+iJ
+Va
 bk
 Ih
 rU
 bk
 jC
 jM
-Pd
+Sb
 GT
 jM
-Cp
-Cp
+kM
+NK
 jM
 AK
 AK
@@ -5965,31 +7773,31 @@ AK
 AK
 AK
 jM
-Cp
+HJ
 jM
-YP
-Cp
+WN
+eb
 CB
 cd
 Dw
 ds
 jM
-bk
-Cp
-Cp
+rm
+Ej
+PN
 ej
 bk
 bk
-ar
+kf
 lY
-Cp
-Cp
-ar
-Pd
+Gv
+Rd
+Wd
+hM
 Ru
 jM
-Cp
-Cp
+iv
+co
 jM
 AK
 AK
@@ -6037,7 +7845,7 @@ AK
 AK
 Nc
 jM
-Cp
+IS
 jM
 Ot
 Yr
@@ -6047,21 +7855,21 @@ Yr
 bz
 jM
 Pa
-Cp
-ar
+JA
+ny
 zZ
-ar
-ar
-HQ
-Cp
-Cp
-Cp
+qw
+aY
+RT
+Ba
+kK
+Df
 jM
 jM
 jM
 jM
 Cp
-Cp
+wD
 jM
 AK
 AK
@@ -6118,22 +7926,22 @@ jM
 jM
 jM
 jM
-Cp
+nf
 cd
-LZ
-Cp
-Cp
-ar
+ck
+AP
+fE
+kh
 ej
-Cp
+RG
 bk
 bk
 jM
-Cp
-Cp
-Cp
-Cp
-Cp
+ts
+ha
+CT
+Tc
+Py
 jM
 AK
 Nc
@@ -6183,29 +7991,29 @@ AK
 jM
 vS
 vS
-Cp
-Cp
-Cp
-Cp
-Cp
-Cp
+qF
+VR
+CT
+Tc
+DM
+sT
 jM
-Cp
+VF
 TI
-Cp
+bS
 PG
-HQ
+Hl
 qT
-ar
+lZ
 oR
-ej
+nL
 pG
 jM
-Cp
-Cp
-Cp
-Cp
-Cp
+cf
+pb
+CT
+ha
+wq
 jM
 AK
 AK
@@ -6260,21 +8068,21 @@ Za
 Za
 Za
 Za
-Cp
+fj
 jM
-ar
+kf
+Ek
+eW
+IP
+kZ
 LZ
-HQ
-Cp
-Cp
-LZ
-Cp
-ar
-ar
-ar
+Av
+nF
+XJ
+nI
 jM
-Cp
-Cp
+Py
+Py
 jM
 jM
 jM
@@ -6332,26 +8140,26 @@ ar
 Ac
 rI
 Za
-Cp
+CT
 jM
 oR
-ar
-Cp
-Cp
-Cp
-zm
-ej
-Cp
+Zf
+XB
+PJ
+hh
+mF
+MT
+jk
 HQ
-ar
+MC
 jM
-Cp
-Cp
+CJ
+XD
 jM
 AK
 AK
 AK
-AK
+Nc
 AK
 AK
 AK
@@ -6373,7 +8181,7 @@ tL
 JK
 ra
 ra
-ra
+le
 JK
 tL
 JD
@@ -6397,32 +8205,32 @@ AK
 AK
 AK
 jM
-Cp
+CT
 Za
-rI
+Xe
 ar
-ar
-rI
+aU
+AR
 Za
-Cp
+Yw
 aE
 Cp
-oM
-Cp
-oM
-ar
-ar
-Cp
+Jd
+XB
+Jd
+Ji
+Nh
+Yx
 Tw
 Tw
 Tw
 jM
-Cp
-Cp
+DE
+lI
 jM
-AK
 AK
 Nc
+AK
 AK
 AK
 AK
@@ -6442,10 +8250,10 @@ ra
 ra
 Ok
 tL
+mQ
 ra
 ra
-ra
-ra
+HV
 JK
 tL
 JD
@@ -6469,18 +8277,18 @@ AK
 AK
 AK
 jM
-Cp
+CT
 Za
 Za
-rI
-ar
-rI
+Fp
+aU
+AR
 Za
 jM
 jM
 jM
 jM
-Cp
+zM
 jM
 jM
 aE
@@ -6489,8 +8297,8 @@ jM
 mC
 jM
 jM
-Cp
-Cp
+ha
+fV
 jM
 AK
 jM
@@ -6517,7 +8325,7 @@ tL
 JK
 ra
 ra
-ra
+QE
 JK
 tL
 JD
@@ -6542,34 +8350,34 @@ Nc
 AK
 jM
 Cp
-Cp
+Kk
 Za
+lo
+aU
 rI
-ar
-xS
 Za
 xr
 bo
 sr
-Cp
-Cp
+hT
+SL
 Gt
 jM
-Cp
-Cp
-jM
-Tw
-jM
-Cp
-Cp
-Cp
-jM
-AK
+CT
+iv
 jM
 ar
-ar
-ar
-ar
+jM
+zx
+fV
+yB
+jM
+do
+jM
+Ss
+gV
+gV
+Mz
 jM
 AK
 AK
@@ -6588,7 +8396,7 @@ Ok
 tL
 jM
 JK
-ra
+mQ
 JK
 jM
 tL
@@ -6614,20 +8422,20 @@ AK
 AK
 jM
 jM
-Cp
+IS
 Za
-rI
-ar
-ar
+Is
+aU
+xo
 Za
 dV
-pz
-UD
+wd
+VM
 pz
 oM
 Yz
 jM
-Cp
+yB
 jM
 jM
 mC
@@ -6686,41 +8494,41 @@ AK
 AK
 AK
 jM
-Cp
+QU
 Za
-rI
+hb
 ar
-ar
+aU
 sh
 DL
-Cp
+yb
 CP
-Cp
+Bl
 ej
 hH
 jM
-Cp
+cz
 jM
 Tw
 Tw
 Tw
-ar
+Pb
 ar
 ar
 jM
 AK
 jM
-mc
+IG
 Ry
-mc
-mc
+IG
+IG
 jM
 AK
 jM
 Sa
-mj
+oD
 ED
-mj
+oD
 qC
 jM
 tL
@@ -6758,34 +8566,34 @@ AK
 Nc
 AK
 jM
-Cp
+fV
 Za
 Za
-rI
-ar
+xa
+xw
 Za
-HQ
-Hq
-HQ
-Cp
-Cp
+Aa
+YC
+RT
+oO
+vV
 XP
 jM
 vS
 jM
+Ce
 mj
 mj
-mj
+dv
 ar
-ar
-ar
+tf
 jM
 jM
 jM
-ar
-ar
-ar
-ar
+EJ
+EJ
+ZQ
+Xq
 jM
 jM
 jM
@@ -6830,36 +8638,36 @@ AK
 AK
 AK
 jM
-Cp
-Cp
+Wh
+Py
 Za
-rI
-ar
+Rj
+Sm
 Za
 Yf
 Hq
 vq
-Hq
+fe
 Qq
 gB
 jM
-vS
+HU
 jM
+BC
 ar
-ar
-mj
-ar
+Ro
+Jw
 ar
 ar
 ar
 ar
 mC
 ar
-ar
-ar
-ar
+zf
+DG
+Hc
 ZZ
-ar
+Mk
 ZZ
 vA
 vO
@@ -6903,33 +8711,33 @@ AK
 AK
 jM
 jM
-Cp
+NK
 Za
-rI
-ar
+lP
+kf
 Za
 rG
 Hq
 CP
 YL
-Hq
+mX
 Tn
 jM
 vS
 jM
+BC
+Dk
+Ic
+Zy
 ar
-ar
-mj
-ar
-ar
-ar
+yV
 jM
 jM
 jM
-ar
-ar
-ar
-ar
+AT
+AT
+AT
+Qj
 jM
 jM
 jM
@@ -6939,7 +8747,7 @@ Or
 cT
 ar
 jM
-tL
+QL
 Ok
 ra
 ra
@@ -6975,9 +8783,9 @@ AK
 AK
 AK
 jM
-Cp
+Py
 Za
-rI
+aQ
 ar
 Za
 hB
@@ -6987,14 +8795,14 @@ qa
 xz
 jg
 jM
-Cp
+HY
 jM
+Oe
 ar
+Kf
 ar
-mj
-ar
-ar
-ar
+Tv
+oD
 jM
 AK
 jM
@@ -7006,12 +8814,12 @@ jM
 AK
 jM
 RK
-mj
+oD
 jm
-mj
+oD
 Jv
 jM
-QL
+tL
 Ok
 ra
 ra
@@ -7047,7 +8855,7 @@ XC
 AK
 AK
 jM
-Cp
+Py
 Za
 Za
 ar
@@ -7059,14 +8867,14 @@ jM
 zv
 ay
 jM
-Cp
+uo
 jM
-ar
+cw
 ar
 ex
 ar
-ar
-ar
+jH
+yV
 jM
 AK
 jM
@@ -7124,28 +8932,28 @@ vS
 Za
 Za
 Za
-Cp
-Cp
-Cp
+qM
+mv
+aW
 jM
 jM
 jM
 jM
-Cp
+wM
 jM
 mj
 mj
 mj
 ar
-ar
-ar
+Tv
+oD
 jM
 AK
 jM
-ar
-ar
-ar
-ar
+Ss
+cx
+cx
+Mz
 jM
 AK
 AK
@@ -7193,24 +9001,24 @@ AK
 jM
 jM
 vS
-Cp
-Cp
-Cp
+fV
+cD
+CT
 Cp
 vS
 vS
-Cp
-Cp
-Cp
-Cp
-Cp
+Py
+CT
+CT
+yB
+CT
 jM
 Tw
 Tw
 Tw
 ar
-ar
-ar
+ea
+zG
 jM
 AK
 jM
@@ -7266,12 +9074,12 @@ AK
 jM
 jM
 jM
-Cp
-Cp
-vS
-vS
-Cp
-Cp
+ts
+CT
+Ug
+HU
+av
+kG
 jM
 jM
 jM
@@ -7280,9 +9088,9 @@ jM
 jM
 us
 jM
+VJ
 ar
-ar
-ar
+oD
 jM
 AK
 AK
@@ -7338,12 +9146,12 @@ AK
 AK
 jM
 Rn
-Cp
-Cp
+CT
+Tc
 Cp
 vS
-Cp
-Cp
+fV
+Kk
 Cp
 Cp
 wv
@@ -7352,9 +9160,9 @@ Cp
 Cp
 TW
 jM
+VJ
 ar
-ar
-ar
+yV
 jM
 AK
 AK
@@ -7413,16 +9221,16 @@ jM
 jM
 jM
 jM
-Cp
-Cp
+aS
+DE
 jM
 jM
 Cp
 TW
 TW
 Cp
-Cp
-TW
+Yx
+cW
 jM
 jM
 jM
@@ -7561,7 +9369,7 @@ AK
 jM
 Gg
 Cp
-Cp
+Yx
 Cp
 Gg
 Cp
@@ -7631,14 +9439,14 @@ AK
 AK
 AK
 jM
-TW
+Oz
 Cp
 Cp
 Cp
 Gg
 Cp
-UW
-Cp
+Ai
+Yx
 ET
 Uv
 jM
@@ -7709,8 +9517,8 @@ HQ
 Cp
 Gg
 Xl
-Cp
-ej
+Yx
+kH
 oU
 vF
 jM
@@ -7773,7 +9581,7 @@ AK
 AK
 AK
 AK
-AK
+Nc
 jM
 Hz
 Cp
@@ -7852,7 +9660,7 @@ Cp
 Cp
 eY
 Cp
-Cp
+kw
 eY
 qS
 jn
@@ -7920,7 +9728,7 @@ XC
 AK
 AK
 Cp
-Cp
+Yx
 Cp
 jM
 jM
@@ -7998,7 +9806,7 @@ AK
 AK
 AK
 AK
-AK
+Nc
 AK
 AK
 AK
@@ -8068,7 +9876,7 @@ eY
 AK
 AK
 AK
-AK
+Nc
 AK
 AK
 AK
@@ -8134,9 +9942,9 @@ JD
 JD
 er
 vv
-Cp
-Cp
-AK
+AD
+AD
+vv
 vv
 KC
 KC
@@ -8206,7 +10014,7 @@ JD
 JD
 JD
 JD
-Cp
+Yx
 Cp
 Cp
 JD
