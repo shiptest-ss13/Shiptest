@@ -108,6 +108,10 @@
 	},
 /obj/item/stack/cable_coil,
 /obj/item/stack/circuit_stack,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "bN" = (
@@ -351,6 +355,10 @@
 "ht" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
 "hu" = (
@@ -459,10 +467,6 @@
 	dir = 4
 	},
 /obj/structure/rack,
-/obj/item/storage/firstaid/regular{
-	pixel_x = -4;
-	pixel_y = -4
-	},
 /obj/item/storage/firstaid/advanced{
 	pixel_x = 5
 	},
@@ -1020,6 +1024,9 @@
 	pixel_y = 6
 	},
 /obj/structure/rack,
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "rP" = (
@@ -1142,6 +1149,13 @@
 /obj/item/ammo_box/magazine/zip_ammo_9mm{
 	pixel_x = -1
 	},
+/obj/item/ammo_box/c38,
+/obj/item/ammo_box/c38,
+/obj/item/ammo_box/c38_box,
+/obj/item/storage/box/lethalshot,
+/obj/item/storage/box/lethalshot,
+/obj/item/storage/box/lethalshot,
+/obj/item/ammo_box/c38_box,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "tq" = (
@@ -1261,6 +1275,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "uO" = (
@@ -1270,7 +1288,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/storage/box/syndie_kit/throwing_weapons{
-	pixel_x = -3;
+	pixel_x = 10;
 	pixel_y = 5
 	},
 /obj/item/storage/box/syndie_kit/cutouts{
@@ -1285,6 +1303,9 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/recharger{
+	pixel_x = -5
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "uR" = (
@@ -1719,7 +1740,8 @@
 /obj/structure/closet/cardboard,
 /obj/item/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 22;
+	pixel_y = 3
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/sheet/mineral/wood/fifty,
@@ -1730,6 +1752,11 @@
 /obj/item/rack_parts{
 	pixel_x = -5;
 	pixel_y = -6
+	},
+/obj/machinery/light_switch{
+	pixel_x = 22;
+	dir = 8;
+	pixel_y = -11
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
@@ -1806,6 +1833,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light,
 /obj/machinery/vending/cigarette/syndicate,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Cm" = (
@@ -2123,6 +2154,10 @@
 	pixel_y = 1
 	},
 /obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "FO" = (
@@ -2231,6 +2266,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-10"
 	},
+/obj/item/gun/ballistic/revolver/detective,
+/obj/item/gun/ballistic/shotgun/winchester,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "Gr" = (
@@ -2600,6 +2637,9 @@
 /area/ship/hallway/port)
 "Nv" = (
 /obj/machinery/smartfridge/organ,
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/hallway/port)
 "NQ" = (
@@ -2633,6 +2673,11 @@
 	},
 /obj/effect/turf_decal/spline/fancy/black{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	pixel_x = 22;
+	dir = 8;
+	pixel_y = -8
 	},
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
@@ -3086,6 +3131,10 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security)
 "VZ" = (
@@ -3118,6 +3167,11 @@
 	pixel_y = -32
 	},
 /obj/machinery/light,
+/obj/machinery/light_switch{
+	pixel_x = 20;
+	dir = 8;
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Wq" = (
@@ -3145,6 +3199,11 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals1,
+/obj/machinery/light_switch{
+	pixel_x = 21;
+	dir = 8;
+	pixel_y = -11
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security)
 "WS" = (
