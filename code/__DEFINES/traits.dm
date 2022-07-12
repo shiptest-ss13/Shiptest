@@ -253,6 +253,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ANTENNAE "antennae"
 /// The holder of this trait can be picked up and held by another mob that does NOT have this trait.
 #define TRAIT_HOLDABLE "holdable"
+/// the holder of this trait will be scooped instead of fireman carried
+#define TRAIT_SCOOPABLE "scoopable"
 
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
