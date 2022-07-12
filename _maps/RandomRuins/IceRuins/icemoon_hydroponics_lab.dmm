@@ -1466,12 +1466,16 @@
 /turf/open/floor/carpet,
 /area/ruin/powered/hydroponicslab)
 "Dj" = (
-/obj/machinery/chem_dispenser/mutagensaltpeter,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /obj/effect/turf_decal/spline/fancy/green{
 	dir = 1
+	},
+/obj/structure/table,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez{
+	pixel_x = 4;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
@@ -2128,15 +2132,16 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/powered/hydroponicslab)
 "Vd" = (
-/obj/machinery/plantgenes/seedvault{
-	pixel_y = 8
-	},
 /obj/structure/table,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /obj/effect/turf_decal/spline/fancy/purple{
 	dir = 1
+	},
+/obj/item/reagent_containers/glass/bottle/diethylamine{
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/hydroponicslab)
