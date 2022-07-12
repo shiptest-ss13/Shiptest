@@ -419,15 +419,6 @@
 	heat_protection = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|ARMS|LEGS
 
-/obj/item/clothing/suit/jacket/leather/duster/armoured
-	name = "armoured leather duster"
-	desc = "A long, utilitarian leather coat. Ideal for protecting its wearer from rain, sun, and dust. This one is armoured"
-	icon_state = "duster"
-	item_state = "duster"
-	heat_protection = CHEST|GROIN|ARMS|LEGS
-	cold_protection = CHEST|GROIN|ARMS|LEGS
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 10,"energy" = 15, "bomb" = 10, "bio" = 50, "rad" = 0, "fire" = 0, "acid" = 0)
-
 /obj/item/clothing/suit/jacket/leather/duster/command
 	name = "officer's duster"
 	desc = "A long, supple leather coat. Ideal for protecting its wearer from rain, sun, dust, and paperwork."
