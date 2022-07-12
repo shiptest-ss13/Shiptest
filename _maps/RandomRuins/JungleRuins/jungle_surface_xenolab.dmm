@@ -13,6 +13,13 @@
 "ar" = (
 /turf/open/floor/plasteel/dark,
 /area/space)
+"ay" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 6
+	},
+/obj/structure/closet/secure_closet/security,
+/turf/open/floor/plasteel/tech,
+/area/space)
 "aE" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating,
@@ -23,9 +30,32 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/space)
+"bk" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating,
+/area/space)
+"bo" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"bz" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/white,
+/area/space)
 "bA" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass,
+/area/space)
+"bB" = (
+/obj/effect/turf_decal/corner/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "bH" = (
 /obj/structure/frame/machine,
@@ -38,11 +68,46 @@
 /obj/structure/sign/warning,
 /turf/open/floor/plating/dirt/jungle,
 /area/space)
+"cd" = (
+/obj/structure/door_assembly/door_assembly_med,
+/turf/open/floor/plating,
+/area/space)
+"cr" = (
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
+/obj/structure/alien/weeds,
+/turf/open/floor/wood/walnut,
+/area/space)
+"cu" = (
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/personal/cabinet,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"cB" = (
+/obj/machinery/door/airlock/glass,
+/turf/open/floor/wood/walnut,
+/area/space)
 "cP" = (
 /obj/structure/fence{
 	dir = 4
 	},
 /turf/open/space/basic,
+/area/space)
+"cT" = (
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "dj" = (
 /obj/structure/table/wood,
@@ -59,10 +124,42 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"ds" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/door/window{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
+"dz" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/obj/structure/alien/weeds,
+/obj/item/shard,
+/turf/open/floor/plasteel/white,
+/area/space)
+"dD" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/white,
+/area/space)
 "dE" = (
 /obj/structure/table/wood,
 /obj/item/a_gift,
 /turf/open/floor/grass,
+/area/space)
+"dN" = (
+/obj/structure/table/wood/fancy/red,
+/obj/structure/alien/weeds,
+/turf/open/floor/plating,
+/area/space)
+"dV" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 1
+	},
+/obj/structure/frame/computer,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "ej" = (
 /obj/effect/decal/cleanable/glass,
@@ -84,10 +181,19 @@
 /obj/item/storage/box/mousetraps,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"eY" = (
+/obj/item/shard/plasma,
+/turf/open/floor/plating,
+/area/space)
 "fh" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"fs" = (
+/obj/structure/alien/resin/membrane,
+/obj/structure/alien/weeds,
+/turf/open/floor/plating,
 /area/space)
 "ft" = (
 /obj/structure/flora/ausbushes/sunnybush,
@@ -102,6 +208,12 @@
 /obj/structure/sink{
 	pixel_y = 24
 	},
+/turf/open/floor/plasteel/white,
+/area/space)
+"fM" = (
+/obj/structure/frame/computer,
+/obj/structure/alien/weeds,
+/obj/item/stack/cable_coil/cut/red,
 /turf/open/floor/plasteel/white,
 /area/space)
 "fN" = (
@@ -120,6 +232,15 @@
 	},
 /turf/open/floor/grass,
 /area/space)
+"gB" = (
+/obj/item/shard,
+/obj/effect/turf_decal/trimline/red/filled/line,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"gC" = (
+/obj/structure/door_assembly/door_assembly_mhatch,
+/turf/open/floor/plating,
+/area/space)
 "hq" = (
 /obj/structure/alien/weeds,
 /obj/effect/mob_spawn/human/corpse/damaged,
@@ -130,7 +251,29 @@
 	dir = 1
 	},
 /obj/structure/alien/weeds,
+/obj/structure/alien/resin/wall,
 /turf/open/floor/plasteel/white,
+/area/space)
+"hB" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 5
+	},
+/obj/structure/closet/secure_closet/security,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"hE" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"hH" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/structure/chair/office{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "hW" = (
 /obj/item/clothing/mask/gas/sechailer/minutemen,
@@ -139,6 +282,11 @@
 "if" = (
 /obj/item/clothing/head/cowboy/sec/minutemen,
 /turf/open/space/basic,
+/area/space)
+"iw" = (
+/obj/effect/turf_decal/corner/blue/diagonal,
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/white,
 /area/space)
 "iO" = (
 /obj/machinery/door/poddoor/multi_tile/three_tile_hor,
@@ -160,13 +308,35 @@
 /obj/effect/decal/cleanable/glass/plasma,
 /turf/open/floor/plating,
 /area/space)
+"jg" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/tech,
+/area/space)
 "jj" = (
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"jm" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "jn" = (
 /obj/effect/decal/cleanable/glass/plasma,
 /turf/open/floor/engine,
+/area/space)
+"jt" = (
+/obj/effect/mine/gas/plasma,
+/obj/machinery/igniter/on,
+/turf/open/floor/plating/dirt/jungle,
 /area/space)
 "jw" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -208,7 +378,8 @@
 /area/space)
 "kc" = (
 /obj/item/circuitboard/machine/protolathe,
-/obj/structure/frame/machine,
+/obj/structure/bed/nest,
+/obj/structure/alien/weeds,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "kk" = (
@@ -217,8 +388,13 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "kn" = (
-/obj/structure/table_frame,
+/obj/structure/alien/weeds,
+/obj/structure/bed/nest,
 /turf/open/floor/plasteel/tech,
+/area/space)
+"kJ" = (
+/obj/structure/closet/wardrobe/pjs,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "ld" = (
 /obj/structure/flora/tree/jungle,
@@ -239,14 +415,27 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/space)
+"lD" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/white,
+/area/space)
 "lE" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/alien/weeds,
+/obj/item/shard,
 /turf/open/floor/grass,
 /area/space)
 "lR" = (
 /obj/structure/alien/resin/membrane,
 /turf/open/space/basic,
+/area/space)
+"lY" = (
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plating,
+/area/space)
+"mc" = (
+/obj/structure/fence,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "mj" = (
 /obj/structure/table/wood/reinforced,
@@ -254,6 +443,16 @@
 /area/space)
 "mx" = (
 /obj/structure/mineral_door/wood,
+/turf/open/floor/plasteel/white,
+/area/space)
+"mC" = (
+/obj/machinery/door/airlock/grunge,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"mM" = (
+/obj/structure/alien/weeds,
+/obj/structure/table_frame,
+/obj/item/shard,
 /turf/open/floor/plasteel/white,
 /area/space)
 "nd" = (
@@ -288,6 +487,18 @@
 /obj/structure/alien/weeds/node,
 /turf/open/floor/concrete,
 /area/space)
+"nW" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/item/shard,
+/turf/open/floor/plasteel/white,
+/area/space)
+"oc" = (
+/obj/structure/alien/weeds,
+/obj/structure/window/reinforced/spawner,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "oh" = (
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/wood/walnut,
@@ -298,11 +509,72 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"ol" = (
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "oq" = (
 /obj/structure/fence{
 	dir = 4
 	},
 /turf/open/floor/grass,
+/area/space)
+"ov" = (
+/obj/structure/alien/weeds,
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"oH" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 9
+	},
+/obj/structure/frame/computer,
+/turf/open/floor/plasteel/white,
+/area/space)
+"oL" = (
+/obj/structure/alien/weeds,
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
+"oM" = (
+/obj/structure/barricade/security,
+/turf/open/floor/plating,
+/area/space)
+"oR" = (
+/obj/item/storage/box/emptysandbags,
+/turf/open/floor/plating,
+/area/space)
+"oS" = (
+/obj/structure/barricade/security,
+/turf/open/floor/wood/walnut,
+/area/space)
+"oU" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/item/shard,
+/turf/open/floor/engine,
+/area/space)
+"oX" = (
+/obj/structure/chair/wood/wings{
+	dir = 1
+	},
+/obj/structure/alien/weeds,
+/turf/open/floor/wood/walnut,
+/area/space)
+"pd" = (
+/obj/structure/alien/weeds,
+/obj/item/shard,
+/turf/open/floor/plasteel/white,
+/area/space)
+"pj" = (
+/obj/machinery/iv_drip,
+/obj/item/shard,
+/turf/open/floor/plating,
 /area/space)
 "pm" = (
 /obj/structure/toilet,
@@ -314,8 +586,27 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/space)
+"pz" = (
+/obj/item/shard,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/space)
+"pG" = (
+/obj/item/stack/sheet/metal/twenty,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "pK" = (
 /obj/structure/alien/weeds,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"pT" = (
+/obj/structure/closet/wardrobe/mixed,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"qa" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "qk" = (
@@ -327,16 +618,57 @@
 /obj/structure/door_assembly,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"qC" = (
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "qI" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/pizzaparty,
 /turf/open/floor/grass,
+/area/space)
+"qK" = (
+/obj/structure/window/reinforced/spawner,
+/obj/effect/decal/cleanable/glass,
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/shard,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "qO" = (
 /obj/structure/fence/corner{
 	dir = 5
 	},
 /turf/open/floor/concrete/slab_1,
+/area/space)
+"qS" = (
+/obj/effect/decal/cleanable/glass/plasma,
+/obj/item/shard/plasma,
+/turf/open/floor/plating,
+/area/space)
+"qT" = (
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"qV" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"qY" = (
+/obj/effect/turf_decal/corner/blue/diagonal,
+/obj/structure/table_frame,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/white,
 /area/space)
 "ra" = (
 /turf/open/floor/concrete,
@@ -353,7 +685,15 @@
 /obj/effect/decal/cleanable/glass,
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds,
+/obj/item/shard,
 /turf/open/floor/grass,
+/area/space)
+"rG" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "rI" = (
 /obj/structure/rack,
@@ -371,6 +711,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"rU" = (
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "rV" = (
 /obj/structure/window/plasma/reinforced/spawner,
 /obj/structure/window/plasma/reinforced/spawner{
@@ -379,6 +723,16 @@
 /obj/effect/turf_decal/atmos/mix,
 /turf/open/floor/engine,
 /area/space)
+"rZ" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/glass,
+/obj/structure/sink{
+	pixel_y = 24
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "sh" = (
 /obj/machinery/door/keycard,
 /turf/open/floor/plasteel/dark,
@@ -386,6 +740,10 @@
 "so" = (
 /obj/structure/alien/weeds,
 /turf/open/floor/wood/walnut,
+/area/space)
+"sr" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plating,
 /area/space)
 "sx" = (
 /obj/structure/window/reinforced/spawner{
@@ -397,6 +755,22 @@
 "sJ" = (
 /obj/item/clothing/suit/armor/vest/capcarapace/minutemen,
 /turf/open/space/basic,
+/area/space)
+"sK" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/resin/membrane,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"sU" = (
+/obj/item/storage/box/bodybags{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/structure/table_frame,
+/obj/item/storage/box/syringes{
+	pixel_x = -8
+	},
+/turf/open/floor/plating,
 /area/space)
 "sZ" = (
 /obj/structure/alien/weeds,
@@ -423,6 +797,11 @@
 	},
 /turf/open/floor/concrete,
 /area/space)
+"tr" = (
+/obj/structure/alien/weeds,
+/obj/item/shard,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
 "tF" = (
 /obj/structure/rack,
 /turf/open/floor/plating,
@@ -436,6 +815,11 @@
 "tL" = (
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"tN" = (
+/obj/structure/alien/weeds/node,
+/obj/structure/alien/resin/wall,
+/turf/open/floor/plasteel/white,
+/area/space)
 "tS" = (
 /obj/structure/table/wood,
 /obj/item/pizzabox/margherita,
@@ -448,15 +832,27 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"uh" = (
+/obj/structure/alien/weeds,
+/obj/structure/bed/nest,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
 "un" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass,
+/obj/item/shard,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "us" = (
+/obj/structure/door_assembly/door_assembly_eng,
 /obj/structure/firelock_frame,
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plasteel/mono,
+/area/space)
+"uB" = (
+/obj/effect/turf_decal/corner/blue/diagonal,
+/obj/structure/table_frame,
+/turf/open/floor/plasteel/white,
 /area/space)
 "uJ" = (
 /obj/structure/alien/weeds,
@@ -469,15 +865,36 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/space)
+"uW" = (
+/obj/structure/table_frame,
+/obj/structure/alien/weeds,
+/obj/item/shard,
+/turf/open/floor/plasteel/white,
+/area/space)
 "uX" = (
 /obj/vehicle/ridden/janicart,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"vb" = (
+/obj/structure/alien/weeds,
+/obj/item/shard,
+/turf/open/floor/plating,
 /area/space)
 "vg" = (
 /obj/structure/chair/wood/wings{
 	dir = 1
 	},
 /turf/open/floor/wood/walnut,
+/area/space)
+"vj" = (
+/obj/structure/alien/weeds,
+/obj/item/electronics/airlock,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"vq" = (
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
 /area/space)
 "vs" = (
 /obj/effect/spawner/lootdrop/maintenance,
@@ -497,12 +914,43 @@
 /obj/structure/fence,
 /turf/open/floor/plating/dirt/jungle,
 /area/space)
+"vA" = (
+/obj/effect/turf_decal/corner/white{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "vF" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
 /turf/open/floor/engine,
+/area/space)
+"vH" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/weeds,
+/obj/structure/alien/resin/membrane,
+/turf/open/floor/plating,
+/area/space)
+"vO" = (
+/obj/effect/turf_decal/corner/white{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"vP" = (
+/obj/structure/frame/machine,
+/obj/item/shard,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"vR" = (
+/obj/structure/alien/weeds,
+/obj/item/shard,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "vS" = (
 /obj/structure/alien/weeds,
@@ -537,18 +985,46 @@
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plasteel/white,
 /area/space)
+"xr" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 9
+	},
+/obj/structure/frame/computer,
+/turf/open/floor/plasteel/tech,
+/area/space)
 "xy" = (
 /obj/effect/turf_decal/corner/purple/border{
 	dir = 1
 	},
 /obj/structure/alien/weeds,
-/obj/structure/table_frame,
+/obj/structure/alien/resin/membrane,
 /turf/open/floor/plasteel/white,
+/area/space)
+"xz" = (
+/obj/effect/turf_decal/trimline/red/filled/corner{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"xB" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "xO" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/structure/alien/weeds,
 /turf/open/floor/wood/walnut,
+/area/space)
+"xQ" = (
+/obj/effect/turf_decal/borderfloor,
+/turf/open/floor/plasteel/white,
+/area/space)
+"xS" = (
+/obj/structure/rack,
+/obj/item/flamethrower/full/tank,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "yd" = (
 /obj/structure/alien/egg/grown,
@@ -560,10 +1036,8 @@
 /turf/open/floor/plasteel/dark,
 /area/space)
 "yD" = (
-/obj/structure/fence/corner{
-	dir = 10
-	},
-/turf/open/floor/concrete/slab_1,
+/obj/effect/mine/gas/plasma,
+/turf/open/floor/plating/dirt/jungle,
 /area/space)
 "yK" = (
 /obj/structure/alien/weeds,
@@ -571,17 +1045,42 @@
 /obj/item/storage/belt/military/minutemen,
 /turf/open/floor/plasteel/white,
 /area/space)
+"yM" = (
+/obj/item/shard,
+/turf/open/floor/plating/dirt/jungle,
+/area/space)
 "yS" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
 /obj/effect/turf_decal/atmos/plasma,
+/obj/item/shard,
 /turf/open/floor/engine,
+/area/space)
+"yY" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/resin/membrane,
+/turf/open/floor/wood/walnut,
+/area/space)
+"zb" = (
+/obj/structure/alien/weeds,
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"zm" = (
+/obj/item/shard,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "zp" = (
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"zv" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "zz" = (
 /obj/mecha/combat/combat_tank/minutemen/loaded,
@@ -589,6 +1088,7 @@
 /area/space)
 "zB" = (
 /obj/structure/door_assembly/door_assembly_highsecurity,
+/obj/structure/alien/weeds,
 /turf/open/floor/plasteel/white,
 /area/space)
 "zE" = (
@@ -598,6 +1098,8 @@
 /obj/machinery/door/window{
 	dir = 1
 	},
+/obj/structure/alien/resin/wall,
+/obj/structure/alien/weeds,
 /turf/open/floor/plasteel/white,
 /area/space)
 "zH" = (
@@ -607,6 +1109,19 @@
 "zU" = (
 /obj/item/clothing/head/helmet/alt/minutemen,
 /turf/open/space/basic,
+/area/space)
+"zV" = (
+/obj/effect/turf_decal/corner/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"zZ" = (
+/obj/item/stack/sheet/metal/twenty,
+/turf/open/floor/plating,
 /area/space)
 "Ac" = (
 /obj/machinery/button/door{
@@ -661,11 +1176,20 @@
 /area/space)
 "Cq" = (
 /obj/structure/table/reinforced,
+/obj/item/stack/cable_coil/cut/red,
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"CB" = (
+/obj/effect/turf_decal/corner/blue/diagonal,
+/turf/open/floor/plasteel/white,
 /area/space)
 "CE" = (
 /obj/structure/alien/weeds,
 /turf/closed/wall/concrete,
+/area/space)
+"CP" = (
+/obj/structure/table_frame,
+/turf/open/floor/plating,
 /area/space)
 "CW" = (
 /obj/structure/bed,
@@ -676,6 +1200,25 @@
 /obj/structure/alien/weeds,
 /obj/structure/door_assembly,
 /turf/open/floor/plating,
+/area/space)
+"Dw" = (
+/obj/structure/cloth_pile,
+/turf/open/floor/plating,
+/area/space)
+"Dz" = (
+/obj/effect/turf_decal/corner/blue/diagonal,
+/obj/item/storage/belt/medical,
+/obj/item/reagent_containers/glass/bottle{
+	list_reagents = list(/datum/reagent/medicine/thializid=30);
+	name = "thializid bottle"
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
+"DL" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "DN" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -700,7 +1243,20 @@
 /area/space)
 "Ez" = (
 /obj/structure/table_frame/wood,
+/obj/structure/alien/weeds,
 /turf/open/floor/plating,
+/area/space)
+"ED" = (
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 10
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "EL" = (
 /obj/structure/alien/weeds,
@@ -711,22 +1267,45 @@
 "ET" = (
 /turf/open/floor/engine,
 /area/space)
+"Fn" = (
+/obj/structure/fence/corner{
+	dir = 10
+	},
+/obj/structure/fence/post,
+/turf/open/floor/concrete/slab_1,
+/area/space)
 "Fr" = (
 /obj/structure/alien/weeds,
 /obj/structure/table_frame,
 /turf/open/floor/plasteel/white,
 /area/space)
+"Fv" = (
+/obj/structure/window/reinforced/spawner,
+/obj/effect/decal/cleanable/glass,
+/obj/structure/closet/secure_closet/personal/cabinet,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "FF" = (
 /turf/open/floor/concrete/reinforced,
+/area/space)
+"FO" = (
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/p16/minutemen,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"FU" = (
+/obj/structure/closet/lasertag/blue,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Gd" = (
 /obj/effect/turf_decal/corner/purple/border{
 	dir = 1
 	},
-/obj/structure/table/reinforced,
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
+/obj/structure/alien/resin/wall,
+/obj/structure/alien/weeds,
 /turf/open/floor/plasteel/white,
 /area/space)
 "Gg" = (
@@ -740,6 +1319,10 @@
 "Gp" = (
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"Gt" = (
+/obj/structure/closet/secure_closet,
+/turf/open/floor/plating,
 /area/space)
 "Gz" = (
 /obj/structure/chair/wood/wings,
@@ -757,8 +1340,10 @@
 /turf/open/floor/plasteel/median,
 /area/space)
 "Hq" = (
-/obj/structure/door_assembly/door_assembly_mhatch,
-/obj/structure/alien/weeds,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"Ht" = (
+/obj/structure/table/wood,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "Hu" = (
@@ -766,9 +1351,25 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plating,
 /area/space)
+"Hx" = (
+/obj/structure/alien/weeds,
+/obj/structure/chair/wood/wings{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/space)
 "Hz" = (
 /obj/machinery/power/smes,
 /turf/open/floor/plasteel/mono,
+/area/space)
+"HG" = (
+/obj/structure/alien/weeds,
+/obj/item/shard,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"HQ" = (
+/obj/item/shard,
+/turf/open/floor/plating,
 /area/space)
 "HR" = (
 /obj/structure/chair/pew/left,
@@ -780,17 +1381,42 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/space)
+"Ih" = (
+/obj/structure/frame/computer{
+	dir = 4
+	},
+/obj/item/shard,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Ij" = (
 /obj/structure/table/reinforced,
-/turf/open/floor/wood/walnut,
+/obj/machinery/chem_dispenser/drinks/beer/fullupgrade,
+/turf/open/floor/plasteel/white,
 /area/space)
 "Ik" = (
 /turf/open/floor/plasteel/patterned/monofloor,
+/area/space)
+"Ir" = (
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/white,
+/area/space)
+"IF" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/table/optable,
+/obj/item/clothing/mask/surgical,
+/turf/open/floor/plasteel/white,
 /area/space)
 "IJ" = (
 /obj/structure/table/wood/reinforced,
 /obj/structure/bedsheetbin,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"IL" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/resin/wall,
+/turf/open/floor/plasteel/white,
 /area/space)
 "Jn" = (
 /obj/structure/chair/sofa/corner,
@@ -799,6 +1425,24 @@
 "Ju" = (
 /obj/item/clothing/head/caphat/minutemen,
 /turf/open/space/basic,
+/area/space)
+"Jv" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Jx" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
 /area/space)
 "JD" = (
 /turf/open/floor/grass,
@@ -824,12 +1468,21 @@
 /obj/structure/door_assembly/door_assembly_mhatch,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Ka" = (
+/obj/effect/turf_decal/corner/blue/diagonal,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/white,
+/area/space)
 "Kg" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/engine,
+/area/space)
+"Kn" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Kt" = (
 /obj/structure/reagent_dispensers/watertank/high,
@@ -852,6 +1505,14 @@
 /obj/item/mop,
 /obj/item/storage/bag/trash,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"La" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/glass,
+/obj/structure/closet/crate/freezer/blood,
+/turf/open/floor/plasteel/white,
 /area/space)
 "Lj" = (
 /obj/structure/chair/pew/right{
@@ -879,6 +1540,12 @@
 /obj/structure/rack,
 /turf/open/floor/plating,
 /area/space)
+"Ms" = (
+/obj/structure/fence/door{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "My" = (
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plating,
@@ -895,6 +1562,11 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/concrete,
 /area/space)
+"MV" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/resin/membrane,
+/turf/open/floor/plating,
+/area/space)
 "Nc" = (
 /obj/effect/mine/explosive,
 /turf/open/floor/plating/dirt/jungle,
@@ -909,9 +1581,19 @@
 /obj/structure/alien/weeds/node,
 /turf/open/floor/concrete,
 /area/space)
+"Nv" = (
+/obj/structure/table_frame,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/space)
 "Nw" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/white,
+/area/space)
+"Ny" = (
+/obj/structure/bed/nest,
+/obj/structure/alien/weeds,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "NN" = (
 /obj/item/flamethrower/full,
@@ -937,7 +1619,21 @@
 /area/space)
 "Oq" = (
 /obj/structure/flora/junglebush,
+/obj/structure/closet/lasertag/red,
 /turf/open/floor/grass,
+/area/space)
+"Or" = (
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Ot" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 5
+	},
+/obj/machinery/sleeper,
+/turf/open/floor/plasteel/white,
 /area/space)
 "Oy" = (
 /obj/effect/spawner/lootdrop/maintenance/two,
@@ -953,6 +1649,19 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"OM" = (
+/obj/machinery/deepfryer,
+/turf/open/floor/plasteel/white,
+/area/space)
+"OW" = (
+/obj/effect/turf_decal/corner/white/mono,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Pa" = (
+/obj/item/stack/cable_coil/cut/red,
+/obj/structure/door_assembly,
+/turf/open/floor/plating,
+/area/space)
 "Pd" = (
 /turf/open/floor/wood/walnut,
 /area/space)
@@ -963,6 +1672,17 @@
 "PB" = (
 /obj/item/clothing/suit/toggle/lawyer/minutemen,
 /turf/open/space/basic,
+/area/space)
+"PG" = (
+/obj/item/flamethrower/full/tank,
+/turf/open/floor/plating,
+/area/space)
+"PY" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/table_frame,
+/turf/open/floor/plasteel/white,
 /area/space)
 "Qa" = (
 /obj/structure/fence{
@@ -976,9 +1696,18 @@
 /obj/item/keycard/entry,
 /turf/open/floor/concrete,
 /area/space)
+"Qq" = (
+/obj/structure/door_assembly/door_assembly_grunge,
+/turf/open/floor/plating,
+/area/space)
 "Qt" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
+/turf/open/floor/plasteel/white,
+/area/space)
+"Qw" = (
+/obj/effect/decal/cleanable/glass,
+/obj/structure/alien/weeds,
 /turf/open/floor/plasteel/white,
 /area/space)
 "Qx" = (
@@ -1011,6 +1740,11 @@
 /obj/structure/fence/corner,
 /turf/open/space/basic,
 /area/space)
+"Rg" = (
+/obj/structure/alien/weeds/node,
+/obj/item/shard,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Rn" = (
 /obj/structure/closet/crate/trashcart,
 /turf/open/floor/plating,
@@ -1021,17 +1755,70 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/space)
+"Ry" = (
+/obj/structure/fence/door{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Rz" = (
 /obj/structure/sign/minutemen,
 /turf/open/space/basic,
+/area/space)
+"RK" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "RN" = (
 /obj/item/clothing/under/rank/command/minutemen,
 /turf/open/space/basic,
 /area/space)
+"RU" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/turf/open/floor/wood/walnut,
+/area/space)
+"Sa" = (
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"So" = (
+/obj/structure/alien/weeds,
+/obj/structure/chair/wood/wings{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
 "Sr" = (
 /obj/structure/table_frame,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/plasteel/white,
+/area/space)
+"Sw" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/resin/wall,
+/turf/open/floor/plating,
+/area/space)
+"SS" = (
+/obj/structure/alien/weeds,
+/obj/item/electronics/airlock,
+/obj/item/shard,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "SY" = (
 /obj/structure/fence/corner{
@@ -1055,6 +1842,10 @@
 /obj/structure/bed/nest,
 /turf/open/floor/concrete,
 /area/space)
+"Tn" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/turf/open/floor/plasteel/tech,
+/area/space)
 "Tp" = (
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech,
@@ -1075,6 +1866,10 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"TI" = (
+/obj/item/stack/sheet/glass/twenty,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "TR" = (
 /obj/item/storage/belt/military/minutemen,
 /turf/open/space/basic,
@@ -1092,6 +1887,17 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Ut" = (
+/obj/item/electronics/airlock,
+/turf/open/floor/plating,
+/area/space)
+"Uu" = (
+/obj/structure/fence/corner{
+	dir = 6
+	},
+/obj/structure/fence/post,
+/turf/open/floor/concrete/slab_1,
+/area/space)
 "Uv" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner{
@@ -1100,9 +1906,19 @@
 /obj/effect/turf_decal/atmos/oxygen,
 /turf/open/floor/engine,
 /area/space)
+"UD" = (
+/obj/structure/table_frame,
+/obj/item/shard,
+/turf/open/floor/plating,
+/area/space)
 "UM" = (
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plasteel/white,
+/area/space)
+"UW" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/turf/open/floor/plating,
 /area/space)
 "UY" = (
 /obj/structure/table/wood,
@@ -1138,10 +1954,26 @@
 	},
 /turf/open/floor/grass,
 /area/space)
+"Wo" = (
+/obj/effect/turf_decal/corner/white{
+	dir = 6
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Wu" = (
 /obj/structure/table/reinforced,
 /obj/structure/alien/weeds,
 /turf/open/floor/plasteel/white,
+/area/space)
+"WA" = (
+/obj/structure/chair/wood/wings{
+	dir = 8
+	},
+/obj/structure/alien/weeds,
+/turf/open/floor/wood/walnut,
 /area/space)
 "WD" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
@@ -1160,12 +1992,27 @@
 /obj/structure/sign/warning,
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"WT" = (
+/obj/structure/door_assembly,
+/turf/open/floor/grass,
+/area/space)
 "WY" = (
 /obj/structure/chair/pew/right,
 /turf/open/floor/grass,
 /area/space)
+"Xa" = (
+/obj/structure/alien/weeds,
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plasteel/white,
+/area/space)
 "Xi" = (
 /turf/open/space/basic,
+/area/space)
+"Xj" = (
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Xl" = (
 /obj/effect/decal/cleanable/glass,
@@ -1196,10 +2043,30 @@
 	},
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass,
+/obj/item/shard,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"XP" = (
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/structure/closet/secure_closet,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "XS" = (
 /turf/open/floor/concrete/tiles,
+/area/space)
+"Yc" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/resin/membrane,
+/turf/open/floor/plasteel/white,
+/area/space)
+"Yf" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 1
+	},
+/obj/item/vending_refill/security,
+/obj/item/circuitboard/machine/vending,
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "Ym" = (
 /obj/structure/fence{
@@ -1207,6 +2074,29 @@
 	},
 /obj/structure/sign/warning/explosives/alt,
 /turf/open/floor/plating/dirt/jungle,
+/area/space)
+"Yr" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
+"Yz" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/space)
+"YL" = (
+/obj/item/shard,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"YP" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
 /area/space)
 "YR" = (
 /obj/item/clothing/under/rank/security/officer/minutemen,
@@ -1220,9 +2110,20 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plating,
 /area/space)
+"Zs" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/item/shard,
+/turf/open/floor/plasteel/white,
+/area/space)
 "Zz" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/grass,
+/area/space)
+"ZE" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/structure/table_frame,
+/obj/item/shard,
+/turf/open/floor/plasteel/white,
 /area/space)
 "ZR" = (
 /obj/structure/fence/corner{
@@ -1231,9 +2132,13 @@
 /turf/open/floor/grass,
 /area/space)
 "ZS" = (
-/obj/structure/table_frame,
 /obj/structure/alien/weeds,
+/obj/structure/alien/resin/wall,
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"ZZ" = (
+/obj/machinery/door/airlock/highsecurity,
+/turf/open/floor/plasteel/dark,
 /area/space)
 
 (1,1,1) = {"
@@ -2328,14 +3233,14 @@ Za
 hq
 Ew
 UM
-Ew
+Xa
 yK
 Ew
 Ew
 hq
 Za
 Fr
-wi
+dz
 Nd
 DZ
 jM
@@ -2397,7 +3302,7 @@ AK
 AK
 Za
 JH
-Ew
+pd
 Ew
 Ew
 Ew
@@ -2406,12 +3311,12 @@ UM
 Ew
 jz
 Za
-Fr
+mM
 UM
 Ew
-Ew
+IL
 dl
-dl
+vP
 kc
 dl
 jM
@@ -2468,11 +3373,11 @@ oq
 AK
 Nc
 Za
-JH
+fM
 wi
 Ew
 Ew
-Ew
+pd
 Ew
 Ew
 Ew
@@ -2481,9 +3386,9 @@ Za
 Fr
 Ew
 UM
-Ew
+IL
 XF
-LA
+HG
 On
 LA
 jM
@@ -2545,7 +3450,7 @@ UM
 Ew
 EL
 UM
-Ew
+pd
 Ew
 Ew
 UM
@@ -2553,9 +3458,9 @@ Ub
 Ew
 Ew
 Ew
-Ew
+Yc
 jj
-jj
+zb
 jj
 un
 pK
@@ -2618,20 +3523,20 @@ Wu
 Ew
 nd
 nd
-nd
+uW
 Ew
 Ew
 Ub
 Ew
 Ew
 UM
-Ew
+Yc
 Cq
 jj
 bH
 jj
 pK
-kn
+Ny
 jM
 vS
 jM
@@ -2691,18 +3596,18 @@ tp
 GK
 GK
 vS
-Ew
-Ew
+pd
+pd
 Za
 QA
 Ew
 Ew
-Ew
-ZS
+IL
+uh
 zp
 jj
-jj
-pK
+tr
+ov
 Tp
 jM
 vS
@@ -2762,16 +3667,16 @@ fN
 fN
 fN
 th
-vS
+vb
 UM
 Ew
 Za
 QA
 UM
-Ew
-UM
+Yc
+tN
 ZS
-jj
+ZS
 bH
 nj
 pK
@@ -2836,15 +3741,15 @@ Nu
 fN
 vS
 Ew
-Ew
+pd
 Za
 Nw
 Ew
+Yc
 Ew
-Ew
 jj
-jj
-jj
+ZS
+ZS
 jj
 pK
 kn
@@ -2916,10 +3821,10 @@ jM
 Ew
 Ew
 Ew
-fy
-Ew
-UM
-Ew
+IL
+Yc
+Yc
+IL
 jM
 vS
 My
@@ -2980,7 +3885,7 @@ Qx
 ra
 Za
 KE
-Cp
+fs
 Mi
 jW
 tF
@@ -3052,8 +3957,8 @@ fN
 MQ
 Za
 Cp
-Cp
-vS
+fs
+MV
 vS
 vS
 vS
@@ -3125,7 +4030,7 @@ Za
 Za
 KE
 WD
-Hu
+vH
 My
 vS
 jM
@@ -3197,7 +4102,7 @@ vS
 vS
 vS
 vS
-vS
+MV
 vS
 vS
 vS
@@ -3205,7 +4110,7 @@ vS
 vS
 vS
 My
-vS
+Sw
 vS
 Ew
 vS
@@ -3260,7 +4165,7 @@ jM
 jM
 jM
 vS
-jM
+Cp
 vS
 jM
 jM
@@ -3332,8 +4237,8 @@ jM
 vS
 vS
 My
-jM
-Gp
+gC
+vS
 jM
 pm
 mx
@@ -3353,7 +4258,7 @@ Uf
 hy
 Ew
 zB
-Lk
+Ew
 jM
 vS
 vS
@@ -3418,13 +4323,13 @@ ar
 ex
 ar
 rl
-LZ
+xB
 jM
 Uf
 Gp
 xy
 fy
-Ew
+pd
 Ew
 jM
 vS
@@ -3548,7 +4453,7 @@ jM
 vS
 jM
 kk
-Hq
+Gp
 Gp
 jM
 jM
@@ -3567,9 +4472,9 @@ Gp
 rJ
 Gp
 zE
-Lk
-Lk
 Ew
+Ew
+pd
 jM
 vS
 vS
@@ -3637,7 +4542,7 @@ qz
 Gp
 jM
 jM
-Gp
+sK
 jM
 jM
 jM
@@ -3706,7 +4611,7 @@ iZ
 mj
 Gh
 TB
-Gp
+vR
 jM
 Aq
 so
@@ -3714,8 +4619,8 @@ Aq
 oh
 so
 Hu
-so
-vS
+yY
+MV
 vS
 jM
 AK
@@ -3786,7 +4691,7 @@ vS
 so
 so
 vS
-vS
+MV
 jM
 vS
 jM
@@ -3910,11 +4815,11 @@ vS
 vS
 KE
 jM
-ar
-ar
+Fv
+qK
 Gp
 jC
-ar
+pT
 jM
 jM
 jM
@@ -3982,11 +4887,11 @@ vS
 vS
 KE
 jM
-ar
-ar
-Gp
-Gp
-ar
+LZ
+Kn
+Uf
+vj
+FU
 jM
 jM
 QS
@@ -3997,12 +4902,12 @@ lE
 DN
 GK
 GK
-Pd
-Pd
+so
+so
 vS
 GT
-Pd
-Ij
+Lk
+lD
 jM
 vS
 jM
@@ -4054,10 +4959,10 @@ vS
 vS
 vS
 jM
-ar
-Gp
-rJ
-Gp
+cu
+oc
+Rg
+Xj
 Gp
 jM
 JD
@@ -4073,7 +4978,7 @@ VO
 so
 vS
 GT
-Pd
+Ew
 Sr
 jM
 vS
@@ -4127,10 +5032,10 @@ vS
 My
 vS
 uJ
+Uf
 Gp
 Gp
-Gp
-ar
+Gh
 jM
 Ps
 Ps
@@ -4142,10 +5047,10 @@ Ps
 DN
 jM
 VO
-Cp
-Cp
+vS
+vS
 Ez
-Pd
+Ew
 Sr
 jM
 vS
@@ -4198,13 +5103,13 @@ jM
 vS
 vS
 jM
-ar
+LZ
+SS
+zm
 Gp
-ar
-Gp
-Gp
-ar
-JD
+Cp
+Cp
+Cp
 Ps
 nz
 dj
@@ -4212,12 +5117,12 @@ UY
 Tx
 Ps
 JD
-Pd
+cB
 VO
-Cp
-Cp
+vS
+vS
 Ez
-Pd
+Ew
 Ij
 jM
 vS
@@ -4228,15 +5133,15 @@ oq
 JD
 JD
 tI
-Nc
-Nc
-Nc
-Nc
-Nc
-Nc
-Nc
-Nc
-Nc
+jt
+yD
+yD
+yD
+jt
+yD
+yD
+yD
+jt
 bI
 JD
 JD
@@ -4273,10 +5178,10 @@ jM
 JU
 ar
 ar
-ar
-ar
-jM
-JD
+Cp
+Cp
+Cp
+WT
 JD
 WY
 dE
@@ -4287,10 +5192,10 @@ JD
 jM
 VO
 Cp
-Cp
+vS
 Ez
-Cp
-Pd
+Ew
+Ir
 jM
 vS
 jM
@@ -4300,7 +5205,7 @@ oq
 JD
 JD
 tI
-Nc
+yD
 Za
 Za
 Za
@@ -4308,7 +5213,7 @@ Za
 Za
 Za
 Za
-Nc
+yD
 ls
 JD
 JD
@@ -4342,11 +5247,11 @@ AK
 jM
 vS
 jM
-ar
-ar
-ar
-ar
-ar
+Ht
+Gh
+Ut
+Cp
+kJ
 jM
 Oq
 Ps
@@ -4359,10 +5264,10 @@ ft
 GK
 VO
 Pd
-Cp
+vS
 Co
-Cp
-Pd
+Ew
+OM
 jM
 vS
 jM
@@ -4372,7 +5277,7 @@ oq
 JD
 JD
 tI
-Nc
+yD
 Za
 ra
 ra
@@ -4417,24 +5322,24 @@ jM
 jM
 jM
 jM
-ar
+Cp
 jM
 jM
 jM
 Zz
-ej
+UW
 JD
 QS
 bA
 ft
 GK
 GK
-Pd
-Cp
-Cp
+so
+vS
+My
 Ez
-ej
-Pd
+Qw
+Lk
 jM
 vS
 jM
@@ -4444,7 +5349,7 @@ aq
 JD
 JD
 tI
-Nc
+yD
 Za
 ra
 ra
@@ -4486,27 +5391,27 @@ AK
 jM
 Cp
 Cp
-Cp
-Cp
 jM
-ar
-ar
-ar
+Jx
+Cp
+ej
+UW
+ej
 jM
 GK
 Cp
-ej
+UW
 Ps
 ft
 GK
 GK
 Ia
-Pd
-Cp
-Cp
-Co
-Cp
-Pd
+oL
+vS
+vS
+dN
+Ew
+Ir
 jM
 vS
 jM
@@ -4516,7 +5421,7 @@ nO
 JD
 JD
 tI
-Nc
+yD
 Za
 ra
 ra
@@ -4558,26 +5463,26 @@ AK
 jM
 Cp
 Cp
-Cp
-Cp
 jM
-ar
-ar
-ar
+PY
+uB
+UD
+UD
+cd
 jM
 GK
-Cp
+HQ
 Cp
 ej
 GK
 GK
 Gz
 GT
-vg
-Cp
-Pd
-Pd
-Cp
+GT
+Hx
+so
+so
+vS
 OF
 jM
 vS
@@ -4588,7 +5493,7 @@ oq
 JD
 JD
 tI
-Nc
+yD
 Za
 Za
 Za
@@ -4596,7 +5501,7 @@ Za
 Za
 Za
 Za
-Nc
+yD
 uS
 JD
 JD
@@ -4630,26 +5535,26 @@ Nc
 jM
 Cp
 Cp
-Cp
-Cp
 jM
-ar
-ar
-ar
+nW
+ej
+Cp
+Nv
+xQ
 jM
 Ia
 ej
 Cp
-Cp
+HQ
 Pd
 Pd
-Pd
-Ru
-Pd
-Pd
-Pd
-Cp
-Pd
+so
+WA
+So
+so
+so
+vS
+so
 Pd
 jM
 My
@@ -4660,15 +5565,15 @@ oq
 JD
 JD
 tI
-Nc
-Nc
-Nc
-Nc
-Nc
-Nc
-Nc
-Nc
-Nc
+jt
+yD
+yD
+yD
+jt
+yD
+yD
+yD
+jt
 Ym
 JD
 JD
@@ -4703,28 +5608,28 @@ jM
 Cp
 jM
 jM
-jM
-jM
-ar
-jM
-jM
+rZ
+Cp
+Ka
+pj
+Ut
 jM
 GT
+oM
+RU
 Cp
-OF
-Cp
-Cp
-Pd
-Pd
-Pd
-Pd
-Pd
-Pd
-Cp
-Ia
-jM
-jM
+oM
+so
+so
+so
+vt
+so
+so
 vS
+cr
+jM
+jM
+MV
 jM
 AK
 AK
@@ -4774,25 +5679,25 @@ AK
 jM
 Cp
 jM
-ar
-ar
-ar
-ar
-ar
-ar
+oH
+ol
+UW
+Cp
+Cp
+Zs
 jM
 GT
 Pd
 Pd
 Cp
-Cp
-Cp
+vS
+vS
 Gz
 GT
 GT
-vg
-Pd
-Pd
+oX
+so
+so
 GT
 jM
 vS
@@ -4846,16 +5751,16 @@ AK
 jM
 Cp
 jM
-ar
-ar
-ar
-ar
-ar
-ar
+IF
+CB
+UW
+CB
+sU
+ZE
 jM
 Ru
-Pd
-Pd
+Cp
+oS
 Cp
 Pd
 Pd
@@ -4863,8 +5768,8 @@ Gz
 GT
 GT
 vg
-Pd
-Pd
+so
+so
 Ru
 jM
 Cp
@@ -4918,25 +5823,25 @@ AK
 jM
 Cp
 jM
-ar
-ar
-ar
-ar
-ar
-ar
+PY
+Cp
+HQ
+Cp
+qY
+dD
+jM
+jM
+Cp
+Cp
+Cp
+oM
 jM
 jM
 jM
 jM
-ar
 jM
 jM
-jM
-jM
-jM
-jM
-jM
-Pd
+so
 Ia
 jM
 Cp
@@ -4990,23 +5895,23 @@ AK
 jM
 Cp
 jM
-ar
-ar
-ar
-ar
-ar
-ar
-ar
+YP
+Cp
+Dz
+CB
+iw
+HQ
 ar
 Cp
-ar
-ar
-ar
-ar
-ar
-ar
+Cp
+HQ
 Cp
 ar
+bk
+Ih
+rU
+bk
+jC
 jM
 Pd
 GT
@@ -5062,21 +5967,21 @@ AK
 jM
 Cp
 jM
-ar
-ar
-ar
-ar
-ar
-ar
+YP
+Cp
+CB
+cd
+Dw
+ds
 jM
+bk
 Cp
 Cp
-Cp
+ej
+bk
+bk
 ar
-Cp
-Cp
-ar
-Cp
+lY
 Cp
 Cp
 ar
@@ -5134,20 +6039,20 @@ Nc
 jM
 Cp
 jM
-ar
-ar
-ar
-ar
-ar
-ar
+Ot
+Yr
+La
+Yr
+Yr
+bz
 jM
-Cp
-Cp
-ar
+Pa
 Cp
 ar
+zZ
 ar
-Cp
+ar
+HQ
 Cp
 Cp
 Cp
@@ -5204,7 +6109,7 @@ AK
 AK
 AK
 jM
-Cp
+vS
 jM
 jM
 jM
@@ -5214,15 +6119,15 @@ jM
 jM
 jM
 Cp
+cd
+LZ
+Cp
 Cp
 ar
+ej
 Cp
-Cp
-ar
-Cp
-Cp
-Cp
-Cp
+bk
+bk
 jM
 Cp
 Cp
@@ -5276,8 +6181,8 @@ AK
 AK
 AK
 jM
-Cp
-Cp
+vS
+vS
 Cp
 Cp
 Cp
@@ -5286,15 +6191,15 @@ Cp
 Cp
 jM
 Cp
+TI
+Cp
+PG
+HQ
+qT
 ar
-Cp
-Cp
-Cp
-ar
-ar
-Cp
-Cp
-ar
+oR
+ej
+pG
 jM
 Cp
 Cp
@@ -5348,7 +6253,7 @@ Nc
 AK
 AK
 jM
-Cp
+vS
 Za
 Za
 Za
@@ -5358,11 +6263,11 @@ Za
 Cp
 jM
 ar
-ar
+LZ
+HQ
 Cp
 Cp
-Cp
-ar
+LZ
 Cp
 ar
 ar
@@ -5422,22 +6327,22 @@ AK
 jM
 Cp
 Za
-rI
+FO
 ar
 Ac
 rI
 Za
 Cp
 jM
-ar
-ar
-Cp
-Cp
-Cp
+oR
 ar
 Cp
 Cp
 Cp
+zm
+ej
+Cp
+HQ
 ar
 jM
 Cp
@@ -5501,16 +6406,16 @@ rI
 Za
 Cp
 aE
-ar
-ar
-ar
-ar
+Cp
+oM
+Cp
+oM
 ar
 ar
 Cp
-Cp
-Cp
-ar
+Tw
+Tw
+Tw
 jM
 Cp
 Cp
@@ -5573,15 +6478,15 @@ rI
 Za
 jM
 jM
-ar
 jM
 jM
+Cp
 jM
 jM
 aE
 jM
 jM
-ar
+mC
 jM
 jM
 Cp
@@ -5641,19 +6546,19 @@ Cp
 Za
 rI
 ar
-rI
+xS
 Za
-ar
-ar
-ar
-ar
-ar
-ar
+xr
+bo
+sr
+Cp
+Cp
+Gt
 jM
 Cp
 Cp
 jM
-ar
+Tw
 jM
 Cp
 Cp
@@ -5715,17 +6620,17 @@ rI
 ar
 ar
 Za
-ar
-ar
-ar
-ar
-ar
-ar
+dV
+pz
+UD
+pz
+oM
+Yz
 jM
 Cp
 jM
 jM
-ar
+mC
 jM
 jM
 jM
@@ -5746,7 +6651,7 @@ jM
 jM
 jM
 jM
-dn
+Uu
 Ok
 ra
 ra
@@ -5787,36 +6692,36 @@ rI
 ar
 ar
 sh
-ar
-ar
-ar
-ar
-ar
-ar
+DL
+Cp
+CP
+Cp
+ej
+hH
 jM
 Cp
 jM
-ar
-ar
-ar
-ar
-ar
-ar
-jM
-AK
-jM
-ar
+Tw
+Tw
+Tw
 ar
 ar
 ar
 jM
 AK
 jM
-ar
-ar
-ar
-ar
-ar
+mc
+Ry
+mc
+mc
+jM
+AK
+jM
+Sa
+mj
+ED
+mj
+qC
 jM
 tL
 Ok
@@ -5859,18 +6764,18 @@ Za
 rI
 ar
 Za
-ar
-ar
-ar
-ar
-ar
-ar
-jM
+HQ
+Hq
+HQ
 Cp
+Cp
+XP
 jM
-ar
-ar
-ar
+vS
+jM
+mj
+mj
+mj
 ar
 ar
 ar
@@ -5885,9 +6790,9 @@ jM
 jM
 jM
 Oe
-ar
-ar
-ar
+cT
+bB
+zV
 ar
 jM
 QL
@@ -5931,37 +6836,37 @@ Za
 rI
 ar
 Za
-ar
-ar
-ar
-ar
-ar
-ar
+Yf
+Hq
+vq
+Hq
+Qq
+gB
 jM
-Cp
+vS
 jM
 ar
 ar
+mj
 ar
 ar
 ar
 ar
 ar
+mC
 ar
 ar
 ar
 ar
+ZZ
 ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
+ZZ
+vA
+vO
+OW
+Or
+Wo
+ZZ
 tL
 Ok
 ra
@@ -6003,37 +6908,37 @@ Za
 rI
 ar
 Za
+rG
+Hq
+CP
+YL
+Hq
+Tn
+jM
+vS
+jM
 ar
 ar
+mj
+ar
+ar
+ar
+jM
+jM
+jM
 ar
 ar
 ar
 ar
 jM
-Cp
 jM
+jM
+Oe
+zV
+Or
+cT
 ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
-ar
+jM
 tL
 Ok
 ra
@@ -6075,36 +6980,36 @@ Za
 rI
 ar
 Za
-ar
-ar
-ar
-ar
-ar
-ar
+hB
+hE
+qV
+qa
+xz
+jg
 jM
 Cp
 jM
 ar
 ar
-ar
-ar
-ar
-ar
-jM
-jM
-jM
-ar
+mj
 ar
 ar
 ar
 jM
+AK
 jM
+mc
+Ms
+mc
+mc
 jM
-Oe
-ar
-ar
-ar
-ar
+AK
+jM
+RK
+mj
+jm
+mj
+Jv
 jM
 QL
 Ok
@@ -6151,34 +7056,34 @@ jM
 jM
 jM
 jM
-ar
-ar
+zv
+ay
 jM
 Cp
 jM
 ar
 ar
-ar
-ar
-ar
-ar
-jM
-AK
-jM
-ar
+ex
 ar
 ar
 ar
 jM
 AK
 jM
-ar
-ar
+Oe
 ar
 ar
 ar
 jM
-tL
+AK
+jM
+jM
+jM
+jM
+jM
+jM
+jM
+Fn
 Ok
 ra
 ra
@@ -6214,8 +7119,8 @@ oq
 AK
 AK
 jM
-Cp
-Cp
+vS
+vS
 Za
 Za
 Za
@@ -6228,29 +7133,29 @@ jM
 jM
 Cp
 jM
-ar
-ar
-ar
+mj
+mj
+mj
 ar
 ar
 ar
 jM
 AK
 jM
-Oe
+ar
 ar
 ar
 ar
 jM
 AK
-jM
-jM
-jM
-jM
-jM
-jM
-jM
-yD
+AK
+AK
+AK
+AK
+AK
+AK
+AK
+QN
 Ok
 ra
 ra
@@ -6287,13 +7192,13 @@ AK
 AK
 jM
 jM
+vS
 Cp
 Cp
 Cp
 Cp
-Cp
-Cp
-Cp
+vS
+vS
 Cp
 Cp
 Cp
@@ -6309,16 +7214,16 @@ ar
 jM
 AK
 jM
-ar
-ar
-ar
-ar
+jM
+jM
+jM
+jM
 jM
 AK
 AK
 AK
 AK
-AK
+Nc
 AK
 AK
 AK
@@ -6363,8 +7268,8 @@ jM
 jM
 Cp
 Cp
-Cp
-Cp
+vS
+vS
 Cp
 Cp
 jM
@@ -6380,17 +7285,17 @@ ar
 ar
 jM
 AK
-jM
-jM
-jM
-jM
-jM
-jM
 AK
 AK
 AK
 AK
-Nc
+AK
+AK
+AK
+AK
+AK
+AK
+AK
 AK
 AK
 AK
@@ -6436,10 +7341,10 @@ Rn
 Cp
 Cp
 Cp
+vS
 Cp
 Cp
 Cp
-aE
 Cp
 wv
 Ec
@@ -6584,11 +7489,11 @@ jM
 jM
 jM
 TW
-Cp
+gC
 Cp
 KR
-Cp
-Cp
+HQ
+HQ
 Cp
 Kg
 yS
@@ -6732,7 +7637,7 @@ Cp
 Cp
 Gg
 Cp
-ej
+UW
 Cp
 ET
 Uv
@@ -6800,13 +7705,13 @@ AK
 jM
 TW
 TW
-Cp
+HQ
 Cp
 Gg
 Xl
 Cp
 ej
-Td
+oU
 vF
 jM
 AK
@@ -6872,7 +7777,7 @@ AK
 jM
 Hz
 Cp
-Cp
+HQ
 Cp
 TW
 TW
@@ -6945,11 +7850,11 @@ jM
 Cp
 Cp
 Cp
+eY
 Cp
 Cp
-Cp
-Cp
-jc
+eY
+qS
 jn
 Vr
 jM
@@ -7086,7 +7991,7 @@ JD
 oq
 AK
 Cp
-Cp
+HQ
 Cp
 Cp
 AK
@@ -7159,7 +8064,7 @@ oq
 AK
 Cp
 Cp
-Cp
+eY
 AK
 AK
 AK
@@ -7374,7 +8279,7 @@ JD
 JD
 JD
 Cp
-AK
+yM
 JD
 JD
 JD
