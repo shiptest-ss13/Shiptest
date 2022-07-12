@@ -14,8 +14,8 @@
 	var/atom/A = parent
 
 	var/turf/open/T = get_turf(A)
-	if(!istype(T) || T.return_air().return_pressure() > (WARNING_HIGH_PRESSURE - 10))
-		return
+	if(!istype(T) || isspaceturf(T) || T.return_air().return_pressure() > (WARNING_HIGH_PRESSURE - 10))
+		return // space turfs do not have return air
 
 	var/datum/gas_mixture/stank = new
 	stank.set_moles(GAS_MIASMA, amount)
