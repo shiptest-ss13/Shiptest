@@ -278,6 +278,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Engine Room"
 	icon_state = "engine_sm"
 
+/area/ship/engineering/incinerator
+	name = "Incinerator"
+	icon_state = "disposal"
+
 /// Security ///
 /area/ship/security
 	name = "Brig"
