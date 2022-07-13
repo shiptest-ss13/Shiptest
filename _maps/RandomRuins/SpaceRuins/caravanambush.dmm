@@ -16,8 +16,8 @@
 /area/template_noop)
 "ae" = (
 /obj/structure/fluff/broken_flooring{
-	icon_state = "plating";
-	dir = 4
+	dir = 4;
+	icon_state = "plating"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -93,8 +93,8 @@
 "an" = (
 /obj/structure/lattice,
 /obj/structure/fluff/broken_flooring{
-	icon_state = "plating";
-	dir = 4
+	dir = 4;
+	icon_state = "plating"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -105,8 +105,8 @@
 "ap" = (
 /obj/structure/lattice,
 /obj/structure/fluff/broken_flooring{
-	icon_state = "pile";
-	dir = 8
+	dir = 8;
+	icon_state = "pile"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -244,8 +244,8 @@
 /area/template_noop)
 "aE" = (
 /obj/structure/fluff/broken_flooring{
-	icon_state = "pile";
-	dir = 4
+	dir = 4;
+	icon_state = "pile"
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -406,6 +406,12 @@
 /obj/item/shard,
 /turf/template_noop,
 /area/template_noop)
+"ds" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/caravan/freighter3)
 "dD" = (
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/unpowered)
@@ -487,8 +493,8 @@
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "gq" = (
-/obj/structure/shuttle/engine/propulsion/burst/left{
-	dir = 8
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter3)
@@ -540,10 +546,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/shuttle/caravan/freighter3)
 "gP" = (
-/obj/structure/shuttle/engine/propulsion/burst{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
+/turf/template_noop,
 /area/shuttle/caravan/freighter3)
 "gQ" = (
 /obj/structure/shuttle/engine/heater{
@@ -733,12 +736,6 @@
 	icon_state = "damaged2"
 	},
 /area/shuttle/caravan/freighter3)
-"hQ" = (
-/obj/structure/shuttle/engine/propulsion/burst/left{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/shuttle/caravan/freighter2)
 "hS" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/effect/decal/cleanable/dirt,
@@ -877,8 +874,8 @@
 	},
 /area/shuttle/caravan/freighter3)
 "io" = (
-/obj/structure/shuttle/engine/propulsion/burst{
-	dir = 8
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter2)
@@ -1175,8 +1172,8 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter2)
 "jV" = (
-/obj/structure/shuttle/engine/propulsion/burst/right{
-	dir = 8
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter2)
@@ -1276,15 +1273,17 @@
 /area/ruin/unpowered)
 "lD" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
 /area/ruin/unpowered)
 "tH" = (
-/obj/structure/shuttle/engine/propulsion/burst{
-	dir = 8
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 4
 	},
-/turf/closed/wall/mineral/plastitanium,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/space/basic,
 /area/ruin/unpowered)
 "vE" = (
 /obj/machinery/door/airlock/external{
@@ -1305,6 +1304,15 @@
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter2)
+"Sp" = (
+/turf/open/floor/plating/airless,
+/area/shuttle/caravan/freighter3)
+"Wr" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/caravan/freighter3)
 
 (1,1,1) = {"
 aa
@@ -3464,7 +3472,7 @@ aa
 aa
 aa
 hm
-hQ
+jV
 io
 io
 io
@@ -5179,8 +5187,8 @@ aa
 fZ
 gq
 gP
-gP
-gP
+Sp
+Wr
 bs
 ab
 aE
@@ -5231,7 +5239,7 @@ aa
 ga
 ga
 gQ
-gQ
+ds
 gQ
 iz
 bs
