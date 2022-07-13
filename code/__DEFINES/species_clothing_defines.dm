@@ -22,3 +22,6 @@
 #define VOX_MASK_PATH 'icons/mob/species/vox/onmob_mask_vox.dmi'
 #define VOX_SUIT_PATH 'icons/mob/species/vox/onmob_suit_vox.dmi'
 #define VOX_HEAD_PATH 'icons/mob/species/vox/onmob_head_vox.dmi'
+
+///KEPORI PATHS
+#define KEPORI_UNIFORM_PATH 'icons/mob/species/kepori/onmob_uniform_kepori.dmi'
