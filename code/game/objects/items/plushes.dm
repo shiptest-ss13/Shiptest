@@ -601,69 +601,6 @@
 	icon_state = "realgoat"
 	squeak_override = list('sound/items/goatsound.ogg'=1)
 
-/obj/item/toy/plush/goatplushie/angry/kinggoat
-	name = "King Goat Plushie"
-	desc = "A plushie depicting the king of all goats."
-	icon_state = "kinggoat"
-	throwforce = 25
-	force = 25
-	attack_verb = list("chomped")
-	gender = MALE
-
-/obj/item/toy/plush/goatplushie/angry/kinggoat/ascendedkinggoat
-	name = "Ascended King Goat Plushie"
-	desc = "A plushie depicting the god of all goats."
-	icon_state = "ascendedkinggoat"
-	throwforce = 30
-	force = 30
-	divine = TRUE
-
-/obj/item/toy/plush/goatplushie/angry/kinggoat/ascendedkinggoat/attackby(obj/item/I,mob/living/user,params)
-	if(I.get_sharpness())
-		user.visible_message("<span class='notice'>[user] attempts to destroy [src]!</span>", "<span class='suicide'>[I] bounces off [src]'s back before breaking into millions of pieces... [src] glares at [user]!</span>") // You fucked up now son
-		I.play_tool_sound(src)
-		qdel(I)
-		user.gib()
-
-/obj/item/toy/plush/goatplushie/angry/kinggoat/attackby(obj/item/I,mob/living/user,params)
-	if(I.get_sharpness())
-		user.visible_message("<span class='notice'>[user] rips [src] to shreds!</span>", "<span class='notice'>[src]'s death has attracted the attention of the king goat plushie guards!</span>")
-		I.play_tool_sound(src)
-		qdel(src)
-		var/turf/location = get_turf(user)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat/masterguardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat/masterguardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat/masterguardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat/masterguardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-	if(istype(I, /obj/item/reagent_containers/food/snacks/grown/cabbage))
-		user.visible_message("<span class='notice'>[user] watches as [src] takes a bite out of the cabbage!</span>", "<span class='notice'>[src]'s fur starts glowing. It seems they have ascended!</span>")
-		playsound(src, 'sound/items/eatfood.ogg', 50, 1)
-		qdel(I)
-		qdel(src)
-		var/turf/location = get_turf(user)
-		new/obj/item/toy/plush/goatplushie/angry/kinggoat/ascendedkinggoat(location)
-
-
-/obj/item/toy/plush/goatplushie/angry/guardgoat
-	name = "guard goat plushie"
-	desc = "A plushie depicting one of the King Goat's guards, tasked to protect the king at all costs."
-	icon_state = "guardgoat"
-	throwforce = 10
-
-/obj/item/toy/plush/goatplushie/angry/guardgoat/masterguardgoat
-	name = "royal guard goat plushie"
-	desc = "A plushie depicting one of the royal King Goat's guards, tasked to protecting the king at all costs and training new goat guards."
-	icon_state = "royalguardgoat"
-	throwforce = 15
-
 /obj/item/toy/plush/moth
 	name = "moth plushie"
 	desc = "A plushie depicting an adorable mothperson, featuring realistic mothperson agony sounds every time you hug it."
