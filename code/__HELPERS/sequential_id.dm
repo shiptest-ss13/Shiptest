@@ -21,7 +21,7 @@
 /proc/allocate_nameid(list/names, id_tag)
 	for (var/i in 1 to names.len)
 		if (names[i] == id_tag)
-		 	// this id_tag already has a name
+			// this id_tag already has a name
 			return i
 		if (names[i] == null)
 			// found empty slot in the array
