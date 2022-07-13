@@ -173,6 +173,12 @@
 	..()
 	. = 1
 
+/datum/reagent/consumable/sugar/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustWeeds(rand(2,3))
+		mytray.adjustPests(rand(1,2))
+
 /datum/reagent/consumable/virus_food
 	name = "Virus Food"
 	description = "A mixture of water and milk. Virus cells can use this mixture to reproduce."

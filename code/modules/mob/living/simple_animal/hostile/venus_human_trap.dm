@@ -86,9 +86,10 @@
 	ranged = TRUE
 	harm_intent_damage = 5
 	obj_damage = 60
-	melee_damage_lower = 25
-	melee_damage_upper = 25
+	melee_damage_lower = 18
+	melee_damage_upper = 18
 	a_intent = INTENT_HARM
+	ranged_cooldown_time = 45
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 0
@@ -103,18 +104,11 @@
 	/// How far away a plant can attach a vine to something
 	var/vine_grab_distance = 5
 	/// Whether or not this plant is ghost possessable
-	var/playable_plant = TRUE
+	var/playable_plant = FALSE
 
 /mob/living/simple_animal/hostile/venus_human_trap/Life()
 	. = ..()
 	pull_vines()
-
-/mob/living/simple_animal/hostile/venus_human_trap/AttackingTarget()
-	. = ..()
-	if(isliving(target))
-		var/mob/living/L = target
-		if(L.stat != DEAD)
-			adjustHealth(-maxHealth * 0.1)
 
 /mob/living/simple_animal/hostile/venus_human_trap/OpenFire(atom/the_target)
 	for(var/datum/beam/B in vines)
@@ -136,7 +130,7 @@
 	vines += newVine
 	if(isliving(the_target))
 		var/mob/living/L = the_target
-		L.Paralyze(20)
+		L.Paralyze(12)
 	ranged_cooldown = world.time + ranged_cooldown_time
 
 /mob/living/simple_animal/hostile/venus_human_trap/Login()
@@ -148,6 +142,11 @@
 	if(.)
 		return
 	humanize_plant(user)
+
+/mob/living/simple_animal/hostile/venus_human_trap/Destroy()
+	for(var/datum/beam/vine as anything in vines)
+		qdel(vine) // reference is automatically deleted by remove_vine
+	return ..()
 
 /**
   * Sets a ghost to control the plant if the plant is eligible

@@ -85,8 +85,8 @@
 					/obj/item/storage/backpack/industrial = 3,
 					/obj/item/storage/backpack/satchel/eng = 3,
 					/obj/item/clothing/suit/hooded/wintercoat/engineering = 3,
-					/obj/item/clothing/under/rank/engineering/engineer = 3,
-					/obj/item/clothing/under/rank/engineering/engineer/skirt = 3,
+					/obj/item/clothing/under/rank/engineering/engineer/nt = 3,
+					/obj/item/clothing/under/rank/engineering/engineer/nt/skirt = 3,
 					/obj/item/clothing/under/rank/engineering/engineer/hazard = 3,
 					/obj/item/clothing/head/beret/eng = 3, //WS edit - Berets
 					/obj/item/clothing/head/beret/eng/hazard = 3, //WS edit - Berets

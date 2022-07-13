@@ -156,6 +156,7 @@
 	var/id_type_name = "identification card"
 	var/mining_points = 0 //For redeeming at mining equipment vendors
 	var/list/access = list()
+	var/list/ship_access = list()
 	var/registered_name = null // The name registered_name on the card
 	var/assignment = null
 	var/access_txt // mapping aid
@@ -343,6 +344,11 @@
 		msg += "The card indicates that the holder is [registered_age] years old. [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 	if(mining_points)
 		msg += "There's [mining_points] mining equipment redemption point\s loaded onto this card."
+	if( length( ship_access ) )
+		var/list/ship_names = list()
+		for( var/datum/overmap/ship/controlled/ship in ship_access )
+			ship_names += ship.name
+		msg += "The card has access to the following ships: [ship_names.Join(", ")]"
 	if(registered_account)
 		msg += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
 		if(registered_account.account_job)
@@ -397,6 +403,21 @@
 	if(uses_overlays)
 		return "[icon2html(get_cached_flat_icon(), user)] [thats? "That's ":""][get_examine_name(user)]" //displays all overlays in chat
 	return ..()
+
+// Adds the referenced ship directly to the card
+/obj/item/card/id/proc/add_ship_access( var/datum/overmap/ship/controlled/ship )
+	if ( ship )
+		ship_access += ship
+
+// Removes the referenced ship from the card
+/obj/item/card/id/proc/remove_ship_access( var/datum/overmap/ship/controlled/ship )
+	if ( ship )
+		ship_access -= ship
+
+// Finds the referenced ship in the list
+/obj/item/card/id/proc/has_ship_access( var/datum/overmap/ship/controlled/ship )
+	if ( ship )
+		return ship_access.Find( ship )
 
 /*
 Usage:
@@ -598,6 +619,7 @@ update_label()
 /obj/item/card/id/captains_spare/Initialize()
 	var/datum/job/captain/J = new/datum/job/captain
 	access = J.get_access()
+	add_ship_access( SSshuttle.get_ship( src ) )
 	. = ..()
 	update_label()
 
@@ -621,6 +643,9 @@ update_label()
 /obj/item/card/id/centcom/Initialize()
 	access = get_all_centcom_access()
 	. = ..()
+
+/obj/item/card/id/centcom/has_ship_access( var/datum/overmap/ship/controlled/ship )
+	return TRUE
 
 /obj/item/card/id/ert
 	name = "\improper CentCom ID"

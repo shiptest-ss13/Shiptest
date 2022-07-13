@@ -1,3 +1,13 @@
+
+/**
+ * # Alien Royal
+ *
+ * A subtype of alien which is used for the larger alien castes (queen and praetorian)
+ *
+ * A subtype of alien used for the larger types of alien, which currently only includes praetorians and queens.
+ * This subtype essentially just has them inherit proper sprite alignment, no ventcrawling, and large amounts of
+ * pressure resistance and more butcher results than a normal alien.
+ */
 /mob/living/carbon/alien/humanoid/royal
 	//Common stuffs for Praetorian and Queen
 	icon = 'icons/mob/alienqueen.dmi'
@@ -11,17 +21,32 @@
 	pressure_resistance = 200 //Because big, stompy xenos should not be blown around like paper.
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 20, /obj/item/stack/sheet/animalhide/xeno = 3)
 
+	/// The alternate appearance for items being held by an alien royal.
 	var/alt_inhands_file = 'icons/mob/alienqueen.dmi'
 
 /mob/living/carbon/alien/humanoid/royal/can_inject()
-	return 0
+	return FALSE
 
+/**
+ * # Alien Queen
+ *
+ * The most important alien caste, the queen is the only reproductive member of the set.
+ *
+ * A subtype of alien which acts as the sole reproductive member of the alien castes.  The queen
+ * boasts the most health and damage of all the xeno types, but is also the slowest.  She can
+ * lay eggs which will create facehuggers, promote other xenos to praetorians, and also call_shuttle
+ * the emergency shuttle after 15 minutes of being alive.
+ */
 /mob/living/carbon/alien/humanoid/royal/queen
 	name = "alien queen"
 	caste = "q"
-	maxHealth = 400
-	health = 400
+	maxHealth = 500
+	health = 500
 	icon_state = "alienq"
+	melee_damage_lower = 50
+	melee_damage_upper = 50
+	speed = 2.5
+	/// The queen's small sprite action.
 	var/datum/action/small_sprite/smallsprite = new/datum/action/small_sprite/queen()
 
 /mob/living/carbon/alien/humanoid/royal/queen/Initialize()
@@ -37,6 +62,7 @@
 
 	real_name = src.name
 
+	AddComponent(/datum/component/gps, "Regal Signal")
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse/xeno(src))
 	AddAbility(new/obj/effect/proc_holder/alien/royal/queen/promote())
 	smallsprite.Grant(src)

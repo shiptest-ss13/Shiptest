@@ -16,7 +16,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/cargo/tech
 	name = "cargo technician's jumpsuit"
@@ -24,7 +24,7 @@
 	icon_state = "cargotech"
 	item_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/rank/cargo/tech/skirt
@@ -33,7 +33,7 @@
 	icon_state = "cargo_skirt"
 	item_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
 
@@ -51,6 +51,7 @@
 	icon_state = "explorer"
 	item_state = "explorer"
 	can_adjust = TRUE
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 //Shiptest alt jumpsuits
 
@@ -81,7 +82,7 @@
 	icon_state = "supply_chief_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/cargo_tech
 	name = "deliveries officer suit"
@@ -98,7 +99,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/cargo/tech/mailroom_technician
 	name = "mailroom technician's jumpsuit"
@@ -115,4 +116,4 @@
 	desc = "Skirts and lost mail makes up this jumpskirt."
 	icon_state = "mailroom_technician_skirt"
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION

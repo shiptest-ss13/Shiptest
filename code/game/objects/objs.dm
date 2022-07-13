@@ -28,6 +28,8 @@
 	var/req_access_txt = "0"
 	var/list/req_one_access
 	var/req_one_access_txt = "0"
+	// If the object resides in a ship area, determines if the object also requires the ID to have access to the ship
+	var/req_ship_access = FALSE
 	/// Custom fire overlay icon
 	var/custom_fire_overlay
 

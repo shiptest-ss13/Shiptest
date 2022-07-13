@@ -124,29 +124,34 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_ALIEN_RESIN, SMOOTH_GROUP_ALIEN_WEEDS)
 	canSmoothWith = list(SMOOTH_GROUP_ALIEN_WEEDS, SMOOTH_GROUP_WALLS)
-	var/last_expand = 0 //last world.time this weed expanded
-	var/growth_cooldown_low = 150
-	var/growth_cooldown_high = 200
-	var/static/list/blacklisted_turfs
+	///the range of the weeds going to be affected by the node
+	var/node_range = NODERANGE
+	///the parent node that will determine if we grow or die
+	var/obj/structure/alien/weeds/node/parent_node
+	///the list of turfs that the weeds will not be able to grow over
+	var/static/list/blacklisted_turfs = list(
+		/turf/open/space,
+		/turf/open/chasm,
+		/turf/open/lava,
+		/turf/open/water,
+		/turf/open/openspace,
+	)
 
 
 /obj/structure/alien/weeds/Initialize()
+	//so the sprites line up right in the map editor
 	pixel_x = -4
-	pixel_y = -4 //so the sprites line up right in the map editor
+	pixel_y = -4
 
 	. = ..()
 
-	if(!blacklisted_turfs)
-		blacklisted_turfs = typecacheof(list(
-			/turf/open/space,
-			/turf/open/chasm,
-			/turf/open/lava,
-			/turf/open/openspace))
-
 	set_base_icon()
 
-	last_expand = world.time + rand(growth_cooldown_low, growth_cooldown_high)
-
+/obj/structure/alien/weeds/Destroy()
+	if(parent_node)
+		UnregisterSignal(parent_node, COMSIG_PARENT_QDELETING)
+		parent_node = null
+	return ..()
 
 ///Randomizes the weeds' starting icon, gets redefined by children for them not to share the behavior.
 /obj/structure/alien/weeds/proc/set_base_icon()
@@ -164,27 +169,69 @@
 	set_smoothed_icon_state(smoothing_junction)
 
 
-/obj/structure/alien/weeds/proc/expand()
-	var/turf/U = get_turf(src)
-	if(is_type_in_typecache(U, blacklisted_turfs))
+/**
+ * Called when the node is trying to grow/expand
+ */
+/obj/structure/alien/weeds/proc/try_expand()
+	//we cant grow without a parent node
+	if(!parent_node)
+		return
+	//lets make sure we are still on a valid location
+	var/turf/src_turf = get_turf(src)
+	if(is_type_in_list(src_turf, blacklisted_turfs))
 		qdel(src)
-		return FALSE
-
-	for(var/turf/T in U.GetAtmosAdjacentTurfs())
-		if(locate(/obj/structure/alien/weeds) in T)
+		return
+	//lets try to grow in a direction
+	for(var/turf/check_turf in src_turf.GetAtmosAdjacentTurfs())
+		//we cannot grow on blacklisted turfs
+		if(is_type_in_list(check_turf, blacklisted_turfs))
 			continue
 
-		if(is_type_in_typecache(T, blacklisted_turfs))
+		var/obj/structure/alien/weeds/check_weed = locate() in check_turf
+		//we cannot grow onto other weeds
+		if(check_weed)
+			continue
+		//spawn a new one in the turf
+		check_weed = new(check_turf)
+		//set the new one's parent node to our parent node
+		check_weed.parent_node = parent_node
+		check_weed.RegisterSignal(parent_node, COMSIG_PARENT_QDELETING, .proc/after_parent_destroyed)
+
+/**
+ * Called when the parent node is destroyed
+ */
+/obj/structure/alien/weeds/proc/after_parent_destroyed()
+	if(!find_new_parent())
+		var/random_time = rand(2 SECONDS, 8 SECONDS)
+		addtimer(CALLBACK(src, .proc/do_qdel), random_time)
+
+/**
+ * Called when trying to find a new parent after our previous parent died
+ * Will return false if it can't find a new_parent
+ * Will return the new parent if it can find one
+ */
+/obj/structure/alien/weeds/proc/find_new_parent()
+	var/previous_node = parent_node
+	parent_node = null
+	for(var/obj/structure/alien/weeds/node/new_parent in range(node_range, src))
+		if(new_parent == previous_node)
 			continue
 
-		new /obj/structure/alien/weeds(T)
-	return TRUE
+		parent_node = new_parent
+		RegisterSignal(parent_node, COMSIG_PARENT_QDELETING, .proc/after_parent_destroyed)
+		return parent_node
+	return FALSE
+
+/**
+ * Called to delete the weed
+ */
+/obj/structure/alien/weeds/proc/do_qdel()
+	qdel(src)
 
 /obj/structure/alien/weeds/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > 300)
 		take_damage(5, BURN, 0, 0)
 
-//Weed nodes
 /obj/structure/alien/weeds/node
 	name = "glowing resin"
 	desc = "Blue bioluminescence shines from beneath the surface."
@@ -194,28 +241,44 @@
 	light_color = LIGHT_COLOR_BLUE
 	light_power = 0.5
 	var/lon_range = 4
-	var/node_range = NODERANGE
+	///the minimum time it takes for another weed to spread from this one
+	var/minimum_growtime = 5 SECONDS
+	///the maximum time it takes for another weed to spread from this one
+	var/maximum_growtime = 10 SECONDS
+	//the cooldown between each growth
+	COOLDOWN_DECLARE(growtime)
 
 
 /obj/structure/alien/weeds/node/Initialize()
 	. = ..()
+	//give it light
 	set_light(lon_range)
-	var/obj/structure/alien/weeds/W = locate(/obj/structure/alien/weeds) in loc
-	if(W && W != src)
-		qdel(W)
-	START_PROCESSING(SSobj, src)
+	//we are the parent node
+	parent_node = src
 
+	//destroy any non-node weeds on turf
+	var/obj/structure/alien/weeds/check_weed = locate(/obj/structure/alien/weeds) in loc
+	if(check_weed && check_weed != src)
+		qdel(check_weed)
+
+	//start the cooldown
+	COOLDOWN_START(src, growtime, rand(minimum_growtime, maximum_growtime))
+
+	//start processing
+	START_PROCESSING(SSobj, src)
 
 /obj/structure/alien/weeds/node/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-
 /obj/structure/alien/weeds/node/process()
-	for(var/obj/structure/alien/weeds/W in range(node_range, src))
-		if(W.last_expand <= world.time)
-			if(W.expand())
-				W.last_expand = world.time + rand(growth_cooldown_low, growth_cooldown_high)
+	//we need to have a cooldown, so check and then add
+	if(!COOLDOWN_FINISHED(src, growtime))
+		return
+	COOLDOWN_START(src, growtime, rand(minimum_growtime, maximum_growtime))
+	//attempt to grow all weeds in range
+	for(var/obj/structure/alien/weeds/growing_weed in range(node_range, src))
+		growing_weed.try_expand()
 
 
 /obj/structure/alien/weeds/node/set_base_icon()
@@ -233,8 +296,7 @@
 #define BURST "burst"
 #define GROWING "growing"
 #define GROWN "grown"
-#define MIN_GROWTH_TIME 900	//time it takes to grow a hugger
-#define MAX_GROWTH_TIME 1500
+#define GROWTH_TIME 2 MINUTES
 
 /obj/structure/alien/egg
 	name = "egg"
@@ -247,7 +309,7 @@
 	integrity_failure = 0.05
 	var/status = GROWING	//can be GROWING, GROWN or BURST; all mutually exclusive
 	layer = MOB_LAYER
-	var/obj/item/clothing/mask/facehugger/child
+	var/mob/living/simple_animal/hostile/facehugger/child
 
 /obj/structure/alien/egg/Initialize(mapload)
 	. = ..()
@@ -255,7 +317,7 @@
 	if(status == GROWING || status == GROWN)
 		child = new(src)
 	if(status == GROWING)
-		addtimer(CALLBACK(src, .proc/Grow), rand(MIN_GROWTH_TIME, MAX_GROWTH_TIME))
+		addtimer(CALLBACK(src, .proc/Grow), GROWTH_TIME)
 	proximity_monitor = new(src, status == GROWN ? 1 : 0)
 	if(status == BURST)
 		obj_integrity = integrity_failure * max_integrity
@@ -318,11 +380,10 @@
 		// TECHNICALLY you could put non-facehuggers in the child var
 		if(istype(child))
 			if(kill)
-				child.Die()
+				child.death()
 			else
 				for(var/mob/M in range(1,src))
-					if(CanHug(M))
-						child.Leap(M)
+					if(child.TryCoupling(M))
 						break
 
 /obj/structure/alien/egg/obj_break(damage_flag)
@@ -336,15 +397,14 @@
 
 
 /obj/structure/alien/egg/HasProximity(atom/movable/AM)
-	if(status == GROWN)
-		if(!CanHug(AM))
-			return
+	if(status != GROWN || !iscarbon(AM))
+		return
 
-		var/mob/living/carbon/C = AM
-		if(C.stat == CONSCIOUS && C.getorgan(/obj/item/organ/body_egg/alien_embryo))
-			return
+	var/mob/living/carbon/potential_host = AM
+	if(isalien(potential_host) || (potential_host.stat == CONSCIOUS && potential_host.getorgan(/obj/item/organ/body_egg/alien_embryo)))
+		return
 
-		Burst(kill=FALSE)
+	Burst(kill=FALSE)
 
 /obj/structure/alien/egg/grown
 	status = GROWN
@@ -357,5 +417,4 @@
 #undef BURST
 #undef GROWING
 #undef GROWN
-#undef MIN_GROWTH_TIME
-#undef MAX_GROWTH_TIME
+#undef GROWTH_TIME

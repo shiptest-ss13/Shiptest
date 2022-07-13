@@ -241,11 +241,12 @@
 					used_materials[SSmaterials.GetMaterialRef(i)] = recipe.req_amount / recipe.res_amount * (MINERAL_MATERIAL_AMOUNT / custom_materials.len)
 				O.set_custom_materials(used_materials)
 
+			if(!QDELETED(O) && isitem(O))
+				usr.put_in_hands(O)
+
 			if(QDELETED(O))
 				return //It's a stack and has already been merged
 
-			if(isitem(O))
-				usr.put_in_hands(O)
 			O.add_fingerprint(usr)
 
 			//BubbleWrap - so newly formed boxes are empty

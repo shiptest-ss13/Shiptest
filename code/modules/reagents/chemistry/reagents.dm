@@ -194,6 +194,15 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 		to_chat(M, "<span class='danger'>You have an intense craving for [name].</span>")
 	return
 
+/**
+  * New, standardized method for chemicals to affect hydroponics trays.
+  * Defined on a per-chem level as opposed to by the tray.
+  * Can affect plant's health, stats, or cause the plant to react in certain ways.
+  */
+/datum/reagent/proc/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	if(!mytray)
+		return
+
 /// Called when addiction hits stage4, see [/datum/reagents/proc/metabolize]
 /datum/reagent/proc/addiction_act_stage4(mob/living/M)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/withdrawal_critical, name)

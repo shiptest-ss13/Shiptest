@@ -25,6 +25,8 @@
 	VAR_FINAL/obj/docking_port/mobile/shuttle_port
 	///The map template the shuttle was spawned from, if it was indeed created from a template. CAN BE NULL (ex. custom-built ships).
 	var/datum/map_template/shuttle/source_template
+	///Whether objects on the ship require an ID with ship access granted
+	var/unique_ship_access = FALSE
 
 	///Assoc list of remaining open job slots (job = remaining slots)
 	var/list/job_slots = list(new /datum/job/captain() = 1, new /datum/job/assistant() = 5)
@@ -70,6 +72,7 @@
 	. = ..()
 	if(creation_template)
 		source_template = creation_template
+		unique_ship_access = source_template.unique_ship_access
 		job_slots = source_template.job_slots?.Copy()
 		if(create_shuttle)
 			shuttle_port = SSshuttle.load_template(creation_template, src)
@@ -268,13 +271,41 @@
 
 /obj/item/key/ship
 	name = "ship key"
+	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck."
+	icon_state = "keyship"
 	var/datum/overmap/ship/controlled/master_ship
+	var/static/list/key_colors = list(
+		"blue" = "#4646fc",
+		"red" = "#fd4b54",
+		"salmon" = "#faacac",
+		"brown" = "#a36933",
+		"green" = "#3dc752",
+		"lime" = "#7ffd6e",
+		"cyan" = "#00ffdd",
+		"purple" = "#8c3cf5",
+		"yellow" = "#ffdd44"
+	)
+	var/random_color = TRUE //if the key uses random coloring (logic stolen from screwdriver.dm)
+	slot_flags = ITEM_SLOT_NECK
 
 /obj/item/key/ship/Initialize(mapload, datum/overmap/ship/controlled/master_ship)
 	. = ..()
 	src.master_ship = master_ship
 	master_ship.shipkey = src
+	if(random_color) //random colors!
+		icon_state = "shipkey_plasticbod"
+		var/our_color = pick(key_colors)
+		add_atom_colour(key_colors[our_color], FIXED_COLOUR_PRIORITY)
+		update_icon()
 	name = "ship key ([master_ship.name])"
+
+/obj/item/key/ship/update_overlays()
+	. = ..()
+	if(!random_color) //icon override
+		return
+	var/mutable_appearance/base_overlay = mutable_appearance(icon, "shipkey_metalybits")
+	base_overlay.appearance_flags = RESET_COLOR
+	. += base_overlay
 
 /obj/item/key/ship/Destroy()
 	master_ship.shipkey = null
@@ -287,3 +318,7 @@
 
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
 	return TRUE
+
+/obj/item/key/ship/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] is stabbing [src] into [user.p_their()] [pick("temple", "heart")] and turns it off. It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	return(OXYLOSS)

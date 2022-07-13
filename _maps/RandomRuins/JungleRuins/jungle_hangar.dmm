@@ -2,7 +2,7 @@
 "cv" = (
 /obj/machinery/button,
 /obj/structure/cable,
-/turf/closed/indestructible/reinforced,
+/turf/closed/wall,
 /area/ruin/powered)
 "cD" = (
 /obj/effect/decal/cleanable/wrapping,
@@ -32,7 +32,6 @@
 /area/ruin/unpowered)
 "jb" = (
 /obj/structure/closet/firecloset,
-/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "jx" = (
@@ -72,6 +71,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/powered)
+"oE" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/book/manual/ripley_build_and_repair,
+/turf/open/floor/plating,
+/area/ruin/powered)
 "ph" = (
 /obj/item/storage/toolbox/mechanical,
 /obj/effect/decal/cleanable/plasma,
@@ -82,11 +87,12 @@
 /obj/structure/table/reinforced,
 /obj/item/clothing/under/costume/mech_suit/white,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "sL" = (
-/turf/closed/indestructible/reinforced,
+/obj/structure/cable,
+/obj/item/toy/prize/ripley,
+/turf/open/floor/plating,
 /area/ruin/powered)
 "ua" = (
 /obj/structure/cable,
@@ -103,7 +109,6 @@
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "xt" = (
@@ -123,14 +128,12 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "zC" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/plasma,
-/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Ad" = (
@@ -140,6 +143,7 @@
 "Ap" = (
 /obj/structure/cable,
 /obj/structure/closet/crate/secure/plasma,
+/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "EK" = (
@@ -152,7 +156,6 @@
 /area/ruin/powered)
 "HM" = (
 /obj/structure/closet/emcloset,
-/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Jd" = (
@@ -161,7 +164,6 @@
 /area/ruin/powered)
 "LS" = (
 /obj/machinery/door/poddoor/shutters/preopen,
-/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "LZ" = (
@@ -189,7 +191,6 @@
 /obj/structure/table/reinforced,
 /obj/item/clothing/under/costume/mech_suit,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "SG" = (
@@ -229,7 +230,6 @@
 /area/ruin/powered)
 "Xv" = (
 /obj/machinery/door/poddoor/shutters/indestructible,
-/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Xy" = (
@@ -240,7 +240,6 @@
 "XF" = (
 /obj/effect/decal/cleanable/plasma,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/fakelattice,
 /obj/structure/mecha_wreckage/ripley/mkii,
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -251,12 +250,10 @@
 "YQ" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/under/costume/mech_suit/blue,
-/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Zc" = (
 /obj/structure/mecha_wreckage/marauder,
-/obj/effect/decal/fakelattice,
 /turf/open/floor/plating,
 /area/ruin/powered)
 
@@ -287,7 +284,7 @@ HM
 Zc
 jb
 XF
-sL
+Gd
 eS
 "}
 (4,1,1) = {"
@@ -311,9 +308,9 @@ LS
 va
 "}
 (6,1,1) = {"
-sL
+Gd
 VH
-zf
+sL
 nW
 nW
 UI
@@ -321,7 +318,7 @@ LS
 ka
 "}
 (7,1,1) = {"
-sL
+Gd
 UT
 SG
 WW
@@ -345,7 +342,7 @@ xY
 Qm
 nW
 nW
-nW
+oE
 Yi
 Xv
 gA
@@ -371,8 +368,8 @@ xY
 gA
 "}
 (12,1,1) = {"
-sL
-sL
+Gd
+Gd
 Gd
 Gd
 xY

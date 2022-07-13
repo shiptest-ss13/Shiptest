@@ -85,13 +85,16 @@
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
 		to_chat(user, "<span class='notice'>You fill [src] with [trans] unit\s of the contents of [target].</span>")
 
-	else if(reagents.total_volume)
-		if(user.a_intent == INTENT_HARM)
-			user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
-								"<span class='notice'>You splash the contents of [src] onto [target].</span>")
-			reagents.expose(target, TOUCH)
-			reagents.clear_reagents()
-			playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+	else if(reagents.total_volume && is_drainable())
+		switch(user.a_intent)
+			if(INTENT_HELP)
+				attempt_pour(target, user)
+			if(INTENT_HARM)
+				user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
+									"<span class='notice'>You splash the contents of [src] onto [target].</span>")
+				reagents.expose(target, TOUCH)
+				reagents.clear_reagents()
+				playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 
 /obj/item/reagent_containers/glass/attackby(obj/item/I, mob/user, params)
 	var/hotness = I.get_temperature()
@@ -334,9 +337,12 @@
 		to_chat(user, "<span class='notice'>You fill [src] with [trans] unit\s of the contents of [target].</span>")
 
 	else if(reagents.total_volume)
-		if(user.a_intent == INTENT_HARM)
-			user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
-								"<span class='notice'>You splash the contents of [src] onto [target].</span>")
-			reagents.expose(target, TOUCH)
-			reagents.clear_reagents()
-			playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+		switch(user.a_intent)
+			if(INTENT_HELP)
+				attempt_pour(target, user)
+			if(INTENT_HARM)
+				user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
+									"<span class='notice'>You splash the contents of [src] onto [target].</span>")
+				reagents.expose(target, TOUCH)
+				reagents.clear_reagents()
+				playsound(src, 'sound/items/glass_splash.ogg', 50, 1)

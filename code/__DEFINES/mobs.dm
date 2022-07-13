@@ -80,7 +80,6 @@
 #define SPECIES_CORPORATE "corporate"
 #define SPECIES_DULLAHAN "dullahan"
 #define SPECIES_ETHEREAL "ethereal"
-#define SPECIES_FELINID "felinid"
 #define SPECIES_FLYPERSON "fly"
 #define SPECIES_HUMAN "human"
 #define SPECIES_IPC "ipc"
@@ -118,17 +117,15 @@
 #define ORGANIC 1
 #define SYNTHETIC 2
 
-//Species bitflags for sprite sheets. If this somehow ever gets above 23 Bee has larger problems.
+//Species bitflags for sprite sheets. If this somehow ever gets above 23 we have larger problems.
 #define FLAG_HUMAN (1<<0)
 #define FLAG_IPC (1<<1)
 #define FLAG_ETHEREAL (1<<2)
 #define FLAG_PLASMAMAN (1<<3)
 #define FLAG_MOTH (1<<4)
 #define FLAG_LIZARD (1<<5)
-#define FLAG_FELINID (1<<6)
-#define FLAG_OOZELING (1<<7)
-#define FLAG_FLY (1<<8)
-#define FLAG_MONKEY (1<<9)
+#define FLAG_FLY (1<<6)
+#define FLAG_MONKEY (1<<7)
 
 //Bodytype defines for how things can be worn.
 #define BODYTYPE_ORGANIC (1<<0)
@@ -340,24 +337,6 @@
 #define MEGAFAUNA_DEFAULT_RECOVERY_TIME 5
 
 #define SHADOW_SPECIES_LIGHT_THRESHOLD 0.2
-
-// Offsets defines
-
-#define OFFSET_UNIFORM "uniform"
-#define OFFSET_ID "id"
-#define OFFSET_GLOVES "gloves"
-#define OFFSET_GLASSES "glasses"
-#define OFFSET_EARS "ears"
-#define OFFSET_SHOES "shoes"
-#define OFFSET_S_STORE "s_store"
-#define OFFSET_FACEMASK "mask"
-#define OFFSET_HEAD "head"
-#define OFFSET_FACE "face"
-#define OFFSET_BELT "belt"
-#define OFFSET_BACK "back"
-#define OFFSET_SUIT "suit"
-#define OFFSET_NECK "neck"
-#define OFFSET_ACCESSORY "accessory"
 
 //MINOR TWEAKS/MISC
 #define AGE_MIN 17 //youngest a character can be

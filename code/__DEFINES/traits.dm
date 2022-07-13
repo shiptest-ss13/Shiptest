@@ -259,6 +259,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_EYESCLOSED "eyesclosed"
 /// The person is snoring. Visual only
 #define TRAIT_SNORE "snoring"
+/// the holder of this trait will be scooped instead of fireman carried
+#define TRAIT_SCOOPABLE "scoopable"
 
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.

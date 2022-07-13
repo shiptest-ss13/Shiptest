@@ -166,9 +166,30 @@ Nothing else in the console has ID requirements.
 		else
 			to_chat(user, "<span class='warning'>Machine cannot accept disks in that format.</span>")
 			return
+		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		to_chat(user, "<span class='notice'>You insert [D] into \the [src]!</span>")
 	else if(!(linked_destroy && linked_destroy.busy) && !(linked_lathe && linked_lathe.busy) && !(linked_imprinter && linked_imprinter.busy))
 		. = ..()
+
+/obj/machinery/computer/rdconsole/AltClick(mob/user)
+	if(d_disk && user.canUseTopic(src, !issilicon(user)))
+		say("Ejecting [d_disk.name]")
+		eject_disk("design", user)
+	return
+
+/obj/machinery/computer/rdconsole/CtrlClick(mob/user)
+	if(t_disk && user.canUseTopic(src, !issilicon(user)))
+		say("Ejecting [t_disk.name]")
+		eject_disk("tech", user)
+	return
+
+/obj/machinery/computer/rdconsole/examine(mob/user)
+	. += ..()
+	if(in_range(user, src) || isobserver(user))
+		if (t_disk)
+			. += "<span class='notice'>[t_disk.name] is loaded, Ctrl-Click to remove.</span>"
+		if (d_disk)
+			. += "<span class='notice'>[d_disk.name] is loaded, Alt-Click to remove.</span>"
 
 /obj/machinery/computer/rdconsole/proc/research_node(id, mob/user)
 	if(!stored_research.available_nodes[id] || stored_research.researched_nodes[id])
@@ -268,9 +289,9 @@ Nothing else in the console has ID requirements.
 	if(research_control)
 		l += "<H2><a href='?src=[REF(src)];switch_screen=[RDSCREEN_TECHWEB]'>Technology</a>"
 	if(d_disk)
-		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_DESIGNDISK]'>Design Disk</a>"
+		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_DESIGNDISK]'>[d_disk.name]</a>"
 	if(t_disk)
-		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_TECHDISK]'>Tech Disk</a>"
+		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_TECHDISK]'>[t_disk.name]</a>"
 	if(linked_destroy)
 		l += "<hr><a href='?src=[REF(src)];switch_screen=[RDSCREEN_DECONSTRUCT]'>Destructive Analyzer</a>"
 	if(linked_lathe)
@@ -583,7 +604,7 @@ Nothing else in the console has ID requirements.
 		l += "<div class='statusDisplay'>"
 		if(d_disk.blueprints[i])
 			var/datum/design/D = d_disk.blueprints[i]
-			l += "<A href='?src=[REF(src)];view_design=[D.id]'>[D.name]</A>"
+			l += "[D.icon_html(usr)] <A href='?src=[REF(src)];view_design=[D.id]'>[D.name]</A>"
 			l += "Operations: <A href='?src=[REF(src)];updt_design=[i]'>Upload to database</A> <A href='?src=[REF(src)];clear_design=[i]'>Clear Slot</A>"
 		else
 			l += "Empty Slot Operations: <A href='?src=[REF(src)];switch_screen=[RDSCREEN_DESIGNDISK_UPLOAD];disk_slot=[i]'>Load Design to Slot</A>"
@@ -597,7 +618,7 @@ Nothing else in the console has ID requirements.
 	l += "<h3>Load Design to Disk:</h3>"
 	for(var/v in stored_research.researched_designs)
 		var/datum/design/D = SSresearch.techweb_design_by_id(v)
-		l += "[D.name] "
+		l += "[D.icon_html(usr)] [D.name] "
 		l += "<A href='?src=[REF(src)];copy_design=[disk_slot_selected];copy_design_ID=[D.id]'>Copy to Disk</A>"
 	l += "</div>"
 	return l
@@ -946,13 +967,13 @@ Nothing else in the console has ID requirements.
 				linked_imprinter.linked_console = null
 				linked_imprinter = null
 	if(ls["eject_design"]) //Eject the design disk.
-		eject_disk("design")
+		eject_disk("design",usr)
 		screen = RDSCREEN_MENU
-		say("Ejecting Design Disk")
+		say("Ejecting [d_disk.name]")
 	if(ls["eject_tech"]) //Eject the technology disk.
-		eject_disk("tech")
+		eject_disk("tech", usr)
 		screen = RDSCREEN_MENU
-		say("Ejecting Technology Disk")
+		say("Ejecting [t_disk.name]")
 	if(ls["deconstruct"])
 		if(QDELETED(linked_destroy))
 			say("No Destructive Analyzer Linked!")
@@ -1053,22 +1074,18 @@ Nothing else in the console has ID requirements.
 			say("No Design Disk Inserted!")
 			return
 		var/slot = text2num(ls["copy_design"])
-		var/datum/design/D = SSresearch.techweb_design_by_id(ls["copy_design_ID"])
-		if(D)
+		var/datum/design/design = SSresearch.techweb_design_by_id(ls["copy_design_ID"])
+		if(design)
 			var/autolathe_friendly = TRUE
-			if(D.reagents_list.len)
+			if(design.reagents_list.len)
 				autolathe_friendly = FALSE
-				D.category -= "Imported"
 			else
-				for(var/x in D.materials)
-					if( !(x in list(/datum/material/iron, /datum/material/glass)))
+				for(var/material in list_keys(design.materials)) // Only if it can be built using glass, iron, plastic, gold, silver, uranium or titanium. No bluespace or diamond!
+					if( !("[material]" in list("iron", "glass", "plastic", "plasma", "gold", "silver", "uranium", "titanium"))) // God I was having a hell with assoc lists and material datums, so made it all strings. I SWEAR TO GOD
 						autolathe_friendly = FALSE
-						D.category -= "Imported"
-
-			if(D.build_type & (AUTOLATHE|PROTOLATHE|CRAFTLATHE)) // Specifically excludes circuit imprinter and mechfab
-				D.build_type = autolathe_friendly ? (D.build_type | AUTOLATHE) : D.build_type
-				D.category |= "Imported"
-			d_disk.blueprints[slot] = D
+			if(design.build_type & (AUTOLATHE|PROTOLATHE)) // Specifically excludes circuit imprinter and mechfab
+				design.build_type = autolathe_friendly ? (design.build_type | AUTOLATHE) : design.build_type
+			d_disk.blueprints[slot] = design
 		screen = RDSCREEN_DESIGNDISK
 	if(ls["eject_item"]) //Eject the item inside the destructive analyzer.
 		if(QDELETED(linked_destroy))
@@ -1118,12 +1135,15 @@ Nothing else in the console has ID requirements.
 	ddisk_uple = FALSE
 	updateUsrDialog()
 
-/obj/machinery/computer/rdconsole/proc/eject_disk(type)
+/obj/machinery/computer/rdconsole/proc/eject_disk(type, mob/living/user)
+	playsound(src, 'sound/machines/click.ogg', 50, FALSE)
 	if(type == "design")
-		d_disk.forceMove(get_turf(src))
+		if(!istype(user) || !Adjacent(user) || !user.put_in_active_hand(d_disk))
+			d_disk.forceMove(drop_location())
 		d_disk = null
 	if(type == "tech")
-		t_disk.forceMove(get_turf(src))
+		if(!istype(user) || !Adjacent(user) || !user.put_in_active_hand(t_disk))
+			t_disk.forceMove(drop_location())
 		t_disk = null
 
 /obj/machinery/computer/rdconsole/proc/rescan_views()

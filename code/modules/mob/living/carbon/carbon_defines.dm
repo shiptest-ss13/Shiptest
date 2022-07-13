@@ -88,3 +88,6 @@
 
 	/// Timer to remove the dream_sequence timer when the mob is deleted
 	var/dream_timer
+
+	/// Can other carbons be shoved into this one to make it fall?
+	var/can_be_shoved_into = FALSE

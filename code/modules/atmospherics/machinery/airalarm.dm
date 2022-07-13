@@ -72,6 +72,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 30)
 	resistance_flags = FIRE_PROOF
 	clicksound = 'sound/machines/terminal_select.ogg'
+	req_ship_access = TRUE
 
 	FASTDMM_PROP(\
 		set_instance_vars(\
@@ -261,7 +262,7 @@
 /obj/machinery/airalarm/ui_data(mob/user)
 	var/data = list(
 		"locked" = locked,
-		"siliconUser" = user.has_unlimited_silicon_privilege,
+		"siliconUser" = user.has_unlimited_silicon_privilege && check_ship_ai_access( user ),
 		"emagged" = (obj_flags & EMAGGED ? 1 : 0),
 		"danger_level" = danger_level,
 	)

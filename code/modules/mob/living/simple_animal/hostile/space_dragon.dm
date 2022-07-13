@@ -116,7 +116,7 @@
 		if(do_after(src, timetotear, target = thewall))
 			if(istype(thewall, /turf/open))
 				return
-			thewall.dismantle_wall(1)
+			thewall.dismantle_wall(devastated = TRUE)
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 		return
 	if(isliving(target)) //Swallows corpses like a snake to regain health.

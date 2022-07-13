@@ -27,8 +27,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///Maximum species age
 	var/species_age_max = 85
 
-	///Clothing offsets. If a species has a different body than other species, you can offset clothing so they look less weird.
-	var/list/offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,0), OFFSET_EARS = list(0,0), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0), OFFSET_ACCESSORY = list(0, 0))
+	var/list/offset_clothing = list()
 
 	//The maximum number of bodyparts this species can have.
 	var/max_bodypart_count = 6
@@ -291,20 +290,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/copy_properties_from(datum/species/old_species)
 	return
 
-/**
-  * Checks if this carbon is allowed to be a certain job or rank.
-  *
-  * Override this locally if you want to define when this species qualifies for what rank if human authority is enforced.
-  * Arguments:
-  * * rank - Rank to be tested.
-  * * features - Features of a species that factors into rank qualifications, like a human with cat ears being unable to join command positions.
-  */
-/datum/species/proc/qualifies_for_rank(rank, list/features)
-	if(rank in GLOB.command_positions)
-		return 0
-	return 1
-
-
 /** regenerate_organs
   * Corrects organs in a carbon, removing ones it doesn't need and adding ones it does
   *
@@ -360,6 +345,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	for(var/path in mutant_organs)
 		var/obj/item/organ/I = new path()
+		var/obj/item/organ/old = C.getorgan(I)
+		if(old)
+			QDEL_NULL(old)
 		I.Insert(C)
 
 /datum/species/proc/replace_body(mob/living/carbon/C, var/datum/species/new_species)
@@ -701,9 +689,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				else
 					hair_overlay.color = forced_colour
 				hair_overlay.alpha = hair_alpha
-				if(OFFSET_FACE in H.dna.species.offset_features)
-					hair_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-					hair_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
 		if(hair_overlay.icon)
 			standing += hair_overlay
 			standing += gradient_overlay
@@ -733,9 +718,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(H.lip_style && (LIPS in species_traits))
 			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/human_face.dmi', "lips_[H.lip_style]", -BODY_LAYER)
 			lip_overlay.color = H.lip_color
-			if(OFFSET_FACE in H.dna.species.offset_features)
-				lip_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-				lip_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
 			standing += lip_overlay
 
 		// eyes
@@ -749,12 +731,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					sclera_overlay = mutable_appearance('icons/mob/human_face.dmi', eyes.sclera_icon_state, -BODY_LAYER)
 					if((EYECOLOR in species_traits) && eyes)
 						eye_overlay.color = "#" + H.eye_color
-					if(OFFSET_FACE in H.dna.species.offset_features)
-						eye_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-						eye_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
-						if(eyes)
-							sclera_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-							sclera_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
 					if((SCLERA in species_traits) && eyes)
 						sclera_overlay.color = "#" + H.sclera_color
 						standing += sclera_overlay
@@ -763,16 +739,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			// blush
 			if (HAS_TRAIT(H, TRAIT_BLUSHING)) // Caused by either the *blush emote or the "drunk" mood event
 				var/mutable_appearance/blush_overlay = mutable_appearance('icons/mob/human_face.dmi', "blush", -BODY_ADJ_LAYER) //should appear behind the eyes
-				blush_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-				blush_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
 				blush_overlay.color = COLOR_BLUSH_PINK
 				standing += blush_overlay
 
 			// snore
 			if (HAS_TRAIT(H, TRAIT_SNORE)) // Caused by the snore emote
 				var/mutable_appearance/snore_overlay = mutable_appearance('icons/mob/human_face.dmi', "snore", BODY_ADJ_LAYER) //should appear behind the eyes
-				snore_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-				snore_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
 				standing += snore_overlay
 
 	//Underwear, Undershirts & Socks
@@ -910,13 +882,17 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["squid_face"] || H.dna.features["squid_face"] == "None" || H.head && (H.head.flags_inv & HIDEFACE) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEFACE)) || !HD) // || HD.status == BODYTYPE_ROBOTIC
 			bodyparts_to_add -= "squid_face"
 
-	if("kepori_feathers" in mutant_bodyparts)
-		if(!H.dna.features["kepori_feathers"] || H.dna.features["kepori_feathers"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD) //HD.status == BODYTYPE_ROBOTIC) and here too
-			bodyparts_to_add -= "kepori_feathers"
-
 	if("kepori_body_feathers" in mutant_bodyparts)
-		if(!H.dna.features["kepori_body_feathers"] || H.dna.features["kepori_body_feathers"] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+		if(!H.dna.features["kepori_body_feathers"] || H.dna.features["kepori_body_feathers"] == "None" || (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT)))
 			bodyparts_to_add -= "kepori_body_feathers"
+
+	if("kepori_tail_feathers" in mutant_bodyparts)
+		if(!H.dna.features["kepori_tail_feathers"] || H.dna.features["kepori_tail_feathers"] == "None")
+			bodyparts_to_add -= "kepori_tail_feathers"
+
+	if("kepori_feathers" in mutant_bodyparts)
+		if(!H.dna.features["kepori_feathers"] || H.dna.features["kepori_feathers"] == "None" || (H.head && (H.head.flags_inv & HIDEHAIR)) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD) //HD.status == BODYTYPE_ROBOTIC) and here too
+			bodyparts_to_add -= "kepori_feathers"
 
 	if("vox_head_quills" in mutant_bodyparts)
 		if(!H.dna.features["vox_head_quills"] || H.dna.features["vox_head_quills"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
@@ -1008,16 +984,20 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.ipc_antennas_list[H.dna.features["ipc_antenna"]]
 				if("ipc_chassis")
 					S = GLOB.ipc_chassis_list[H.dna.features["ipc_chassis"]]
+				if("ipc_brain")
+					S = GLOB.ipc_brain_list[H.dna.features["ipc_brain"]]
 				if("spider_legs")
 					S = GLOB.spider_legs_list[H.dna.features["spider_legs"]]
 				if("spider_spinneret")
 					S = GLOB.spider_spinneret_list[H.dna.features["spider_spinneret"]]
 				if ("spider_mandibles")
 					S = GLOB.spider_mandibles_list[H.dna.features["spider_mandibles"]]
-				if("kepori_feathers")
-					S = GLOB.kepori_feathers_list[H.dna.features["kepori_feathers"]]
 				if("kepori_body_feathers")
 					S = GLOB.kepori_body_feathers_list[H.dna.features["kepori_body_feathers"]]
+				if("kepori_tail_feathers")
+					S = GLOB.kepori_tail_feathers_list[H.dna.features["kepori_tail_feathers"]]
+				if("kepori_feathers")
+					S = GLOB.kepori_feathers_list[H.dna.features["kepori_feathers"]]
 				if("vox_head_quills")
 					S = GLOB.vox_head_quills_list[H.dna.features["vox_head_quills"]]
 				if("vox_neck_quills")
@@ -1637,106 +1617,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(user.loc == target.loc)
 		return FALSE
 	else
-		user.do_attack_animation(target, ATTACK_EFFECT_DISARM)
-		playsound(target, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
-
-		if(target.w_uniform)
-			target.w_uniform.add_fingerprint(user)
-		SEND_SIGNAL(target, COMSIG_HUMAN_DISARM_HIT, user, user.zone_selected)
-
-		var/turf/target_oldturf = target.loc
-		var/shove_dir = get_dir(user.loc, target_oldturf)
-		var/turf/target_shove_turf = get_step(target.loc, shove_dir)
-		var/mob/living/carbon/human/target_collateral_human
-		var/obj/structure/table/target_table
-		var/obj/machinery/disposal/bin/target_disposal_bin
-		var/shove_blocked = FALSE //Used to check if a shove is blocked so that if it is knockdown logic can be applied
-
-		//Thank you based whoneedsspace
-		target_collateral_human = locate(/mob/living/carbon/human) in target_shove_turf.contents
-		if(target_collateral_human)
-			shove_blocked = TRUE
-		else
-			target.Move(target_shove_turf, shove_dir)
-			if(get_turf(target) == target_oldturf)
-				target_table = locate(/obj/structure/table) in target_shove_turf.contents
-				target_disposal_bin = locate(/obj/machinery/disposal/bin) in target_shove_turf.contents
-				shove_blocked = TRUE
-
-		if(target.IsKnockdown() && !target.IsParalyzed())
-			target.Paralyze(SHOVE_CHAIN_PARALYZE)
-			target.visible_message("<span class='danger'>[user.name] kicks [target.name] onto [target.p_their()] side!</span>",
-							"<span class='userdanger'>You're kicked onto your side by [user.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, user)
-			to_chat(user, "<span class='danger'>You kick [target.name] onto [target.p_their()] side!</span>")
-			addtimer(CALLBACK(target, /mob/living/proc/SetKnockdown, 0), SHOVE_CHAIN_PARALYZE)
-			log_combat(user, target, "kicks", "onto their side (paralyzing)")
-
-		if(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)
-			var/directional_blocked = FALSE
-			if(shove_dir in GLOB.cardinals) //Directional checks to make sure that we're not shoving through a windoor or something like that
-				var/target_turf = get_turf(target)
-				for(var/obj/O in target_turf)
-					if(O.flags_1 & ON_BORDER_1 && O.dir == shove_dir && O.density)
-						directional_blocked = TRUE
-						break
-				if(target_turf != target_shove_turf) //Make sure that we don't run the exact same check twice on the same tile
-					for(var/obj/O in target_shove_turf)
-						if(O.flags_1 & ON_BORDER_1 && O.dir == turn(shove_dir, 180) && O.density)
-							directional_blocked = TRUE
-							break
-			if((!target_table && !target_collateral_human && !target_disposal_bin) || directional_blocked)
-				target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
-				target.visible_message("<span class='danger'>[user.name] shoves [target.name], knocking [target.p_them()] down!</span>",
-								"<span class='userdanger'>You're knocked down from a shove by [user.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, user)
-				to_chat(user, "<span class='danger'>You shove [target.name], knocking [target.p_them()] down!</span>")
-				log_combat(user, target, "shoved", "knocking them down")
-			else if(target_table)
-				target.Knockdown(SHOVE_KNOCKDOWN_TABLE)
-				target.visible_message("<span class='danger'>[user.name] shoves [target.name] onto \the [target_table]!</span>",
-								"<span class='userdanger'>You're shoved onto \the [target_table] by [user.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, user)
-				to_chat(user, "<span class='danger'>You shove [target.name] onto \the [target_table]!</span>")
-				target.throw_at(target_table, 1, 1, null, FALSE) //1 speed throws with no spin are basically just forcemoves with a hard collision check
-				log_combat(user, target, "shoved", "onto [target_table] (table)")
-			else if(target_collateral_human)
-				target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
-				target_collateral_human.Knockdown(SHOVE_KNOCKDOWN_COLLATERAL)
-				target.visible_message("<span class='danger'>[user.name] shoves [target.name] into [target_collateral_human.name]!</span>",
-					"<span class='userdanger'>You're shoved into [target_collateral_human.name] by [user.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, user)
-				to_chat(user, "<span class='danger'>You shove [target.name] into [target_collateral_human.name]!</span>")
-				log_combat(user, target, "shoved", "into [target_collateral_human.name]")
-			else if(target_disposal_bin)
-				target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
-				target.forceMove(target_disposal_bin)
-				target.visible_message("<span class='danger'>[user.name] shoves [target.name] into \the [target_disposal_bin]!</span>",
-								"<span class='userdanger'>You're shoved into \the [target_disposal_bin] by [target.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, user)
-				to_chat(user, "<span class='danger'>You shove [target.name] into \the [target_disposal_bin]!</span>")
-				log_combat(user, target, "shoved", "into [target_disposal_bin] (disposal bin)")
-		else
-			target.visible_message("<span class='danger'>[user.name] shoves [target.name]!</span>",
-							"<span class='userdanger'>You're shoved by [user.name]!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", COMBAT_MESSAGE_RANGE, user)
-			to_chat(user, "<span class='danger'>You shove [target.name]!</span>")
-			var/target_held_item = target.get_active_held_item()
-			var/knocked_item = FALSE
-			if(!is_type_in_typecache(target_held_item, GLOB.shove_disarming_types))
-				target_held_item = null
-			if(!target.has_movespeed_modifier(/datum/movespeed_modifier/shove))
-				target.add_movespeed_modifier(/datum/movespeed_modifier/shove)
-				if(target_held_item)
-					target.visible_message("<span class='danger'>[target.name]'s grip on \the [target_held_item] loosens!</span>",
-						"<span class='warning'>Your grip on \the [target_held_item] loosens!</span>", null, COMBAT_MESSAGE_RANGE)
-				addtimer(CALLBACK(target, /mob/living/carbon/human/proc/clear_shove_slowdown), SHOVE_SLOWDOWN_LENGTH)
-			else if(target_held_item)
-				target.dropItemToGround(target_held_item)
-				knocked_item = TRUE
-				target.visible_message("<span class='danger'>[target.name] drops \the [target_held_item]!</span>",
-					"<span class='warning'>You drop \the [target_held_item]!</span>", null, COMBAT_MESSAGE_RANGE)
-			var/append_message = ""
-			if(target_held_item)
-				if(knocked_item)
-					append_message = "causing [target.p_them()] to drop [target_held_item]"
-				else
-					append_message = "loosening [target.p_their()] grip on [target_held_item]"
-			log_combat(user, target, "shoved", append_message)
+		user.disarm(target)
 
 /datum/species/proc/spec_hitby(atom/movable/AM, mob/living/carbon/human/H)
 	return
@@ -1928,6 +1809,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(/obj/projectile/energy/floramut) // overwritten by plants/pods
 			H.show_message("<span class='notice'>The radiation beam dissipates harmlessly through your body.</span>")
 		if(/obj/projectile/energy/florayield)
+			H.show_message("<span class='notice'>The radiation beam dissipates harmlessly through your body.</span>")
+		if(/obj/projectile/energy/florarevolution)
 			H.show_message("<span class='notice'>The radiation beam dissipates harmlessly through your body.</span>")
 
 /datum/species/proc/bullet_act(obj/projectile/P, mob/living/carbon/human/H)
@@ -2234,14 +2117,36 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 ////////////////
 
 /datum/species/proc/can_wag_tail(mob/living/carbon/human/H)
-	return FALSE
+	return (locate(/obj/item/organ/tail) in H.internal_organs)
 
 /datum/species/proc/is_wagging_tail(mob/living/carbon/human/H)
-	return FALSE
+	return ("waggingtail_human" in mutant_bodyparts) || ("waggingtail_lizard" in mutant_bodyparts)
 
 /datum/species/proc/start_wagging_tail(mob/living/carbon/human/H)
+	if("tail_human" in mutant_bodyparts)
+		mutant_bodyparts -= "tail_human"
+		mutant_bodyparts |= "waggingtail_human"
+
+	else if("tail_lizard" in mutant_bodyparts)
+		mutant_bodyparts -= "tail_lizard"
+		mutant_bodyparts -= "spines"
+		mutant_bodyparts |= "waggingtail_lizard"
+		mutant_bodyparts |= "waggingspines"
+
+	H.update_body()
 
 /datum/species/proc/stop_wagging_tail(mob/living/carbon/human/H)
+	if("waggingtail_human" in mutant_bodyparts)
+		mutant_bodyparts -= "waggingtail_human"
+		mutant_bodyparts |= "tail_human"
+
+	else if("waggingtail_lizard" in mutant_bodyparts)
+		mutant_bodyparts -= "waggingtail_lizard"
+		mutant_bodyparts -= "waggingspines"
+		mutant_bodyparts |= "tail_lizard"
+		mutant_bodyparts |= "spines"
+
+	H.update_body()
 
 ///////////////
 //FLIGHT SHIT//

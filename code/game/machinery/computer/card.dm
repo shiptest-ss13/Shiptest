@@ -9,6 +9,10 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 #define JOB_MAX_POSITIONS -1 // Trying to reduce the number of slots below that of current holders of that job, or trying to open more slots than allowed
 #define JOB_DENIED 0
 
+#define UNAUTHENTICATED 0
+#define AUTHENTICATED_DEPARTMENT 1
+#define AUTHENTICATED_ALL 2
+
 /obj/machinery/computer/card
 	name = "identification console"
 	desc = "You can use this to manage jobs and ID access."
@@ -51,6 +55,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	var/list/region_access = null
 	var/list/head_subordinates = null
 
+	COOLDOWN_DECLARE(silicon_access_print_cooldown)
 
 /obj/machinery/computer/card/proc/get_jobs()
 	return get_all_jobs()
@@ -209,7 +214,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				<td>"}
 			switch(can_open_job(job))
 				if(JOB_ALLOWED)
-					if(authenticated == 2)
+					if(authenticated == AUTHENTICATED_ALL)
 						dat += "<a href='?src=[REF(src)];choice=make_job_available;job=[job.title]'>Open Position</a><br>"
 					else
 						dat += "Open Position"
@@ -223,7 +228,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			dat += "</td><td>"
 			switch(can_close_job(job))
 				if(JOB_ALLOWED)
-					if(authenticated == 2)
+					if(authenticated == AUTHENTICATED_ALL)
 						dat += "<a href='?src=[REF(src)];choice=make_job_unavailable;job=[job.title]'>Close Position</a>"
 					else
 						dat += "Close Position"
@@ -239,7 +244,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				if(0)
 					dat += "Denied"
 				else
-					if(authenticated == 2)
+					if(authenticated == AUTHENTICATED_ALL)
 						if(job in SSjob.prioritized_jobs)
 							dat += "<a href='?src=[REF(src)];choice=prioritize_job;job=[job.title]'>Deprioritize</a>"
 						else
@@ -260,6 +265,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		var/target_owner = (inserted_modify_id && inserted_modify_id.registered_name) ? html_encode(inserted_modify_id.registered_name) : "--------"
 		var/target_rank = (inserted_modify_id && inserted_modify_id.assignment) ? html_encode(inserted_modify_id.assignment) : "Unassigned"
 		var/target_age = (inserted_modify_id && inserted_modify_id.registered_age) ? html_encode(inserted_modify_id.registered_age) : "--------"
+		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+		var/target_ship_access = ( inserted_modify_id && inserted_modify_id.has_ship_access( ship ) )
 
 		if(!authenticated)
 			header += {"<br><i>Please insert the cards into the slots</i><br>
@@ -271,6 +278,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				Confirm Identity: <a href='?src=[REF(src)];choice=inserted_scan_id'>Remove [scan_name]</a><br>
 				<a href='?src=[REF(src)];choice=mode;mode_target=1'>Access Crew Manifest</a><br>
 				[!target_dept ? "<a href='?src=[REF(src)];choice=mode;mode_target=2'>Job Management</a><br>" : ""]
+				Unique Ship Access: [ship.unique_ship_access?"Enabled":"Disabled"] <a href='?src=[REF(src)];choice=toggle_unique_ship_access'>[ship.unique_ship_access?"Disable":"Enable"]</a><br>
+				Print Silicon Access Chip <a href='?src=[REF(src)];choice=print_silicon_access_chip'>Print</a></div>
 				<a href='?src=[REF(src)];choice=logout'>Log Out</a></div>"}
 
 		header += "<hr>"
@@ -280,7 +289,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		if (authenticated && inserted_modify_id)
 			var/list/carddesc = list()
 			var/list/jobs = list()
-			if (authenticated == 2)
+			if (authenticated == AUTHENTICATED_ALL)
 				var/list/jobs_all = list()
 				for(var/job in (list("Unassigned") + get_jobs() + "Custom"))
 					jobs_all += "<a href='?src=[REF(src)];choice=assign;assign_target=[job]'>[replacetext(job, " ", "&nbsp;")]</a> " //make sure there isn't a line break in the middle of a job
@@ -309,6 +318,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					<b>registered age:</b> <input type='number' id='namefield' name='setage' value='[target_age]' style='width:50px; background-color:white;' onchange='markRed()'>
 					<input type='submit' value='Submit' onclick='markGreen()'>
 					</form>
+					<b>has ship access: [target_ship_access?"granted":"denied"]</b> <a href='?src=[REF(src)];choice=toggle_id_ship_access'>[target_ship_access?"Deny":"Grant"]</a>
 					<b>Assignment:</b> "}
 
 				jobs += "<span id='alljobsslot'><a href='#' onclick='showAll()'>[target_rank]</a></span>" //CHECK THIS
@@ -330,12 +340,12 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					<table style='width:100%'>
 					<tr>"}
 				for(var/i = 1; i <= 7; i++)
-					if(authenticated == 1 && !(i in region_access))
+					if(authenticated == AUTHENTICATED_DEPARTMENT && !(i in region_access))
 						continue
 					accesses += "<td style='width:14%'><b>[get_region_accesses_name(i)]:</b></td>"
 				accesses += "</tr><tr>"
 				for(var/i = 1; i <= 7; i++)
-					if(authenticated == 1 && !(i in region_access))
+					if(authenticated == AUTHENTICATED_DEPARTMENT && !(i in region_access))
 						continue
 					accesses += "<td style='width:14%' valign='top'>"
 					for(var/A in get_region_accesses(i))
@@ -403,9 +413,9 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						if(target_dept)
 							head_subordinates = get_all_jobs()
 							region_access |= target_dept
-							authenticated = 1
+							authenticated = AUTHENTICATED_DEPARTMENT
 						else
-							authenticated = 2
+							authenticated = AUTHENTICATED_ALL
 						playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
 
 					else
@@ -426,7 +436,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 							region_access |= 5
 							get_subordinates("Chief Engineer")
 						if(region_access)
-							authenticated = 1
+							authenticated = AUTHENTICATED_DEPARTMENT
 			else if ((!( authenticated ) && issilicon(usr)) && (!inserted_modify_id))
 				to_chat(usr, "<span class='warning'>You can't modify an ID without an ID inserted to modify! Once one is in the modify slot on the computer, you can log in.</span>")
 		if ("logout")
@@ -445,8 +455,33 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						if(access_allowed == 1)
 							inserted_modify_id.access += access_type
 						playsound(src, "terminal_type", 50, FALSE)
+		if ( "toggle_id_ship_access" )
+			if (authenticated == AUTHENTICATED_ALL)
+				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+				if ( inserted_modify_id.has_ship_access( ship ) )
+					inserted_modify_id.remove_ship_access( ship )
+				else
+					inserted_modify_id.add_ship_access( ship )
+				playsound(src, "terminal_type", 50, FALSE)
+
+		if ( "toggle_unique_ship_access" )
+			if (authenticated == AUTHENTICATED_ALL)
+				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+				ship.unique_ship_access = !ship.unique_ship_access
+				playsound(src, "terminal_type", 50, FALSE)
+
+		if ( "print_silicon_access_chip" )
+			if ( authenticated == AUTHENTICATED_ALL )
+				if(!COOLDOWN_FINISHED(src, silicon_access_print_cooldown))
+					say("Printer unavailable. Please allow a short time before attempting to print.")
+					return
+				var/obj/item/borg/upgrade/ship_access_chip/chip = new( get_turf( src ) )
+				chip.ship = SSshuttle.get_ship( src )
+				playsound(src, "terminal_type", 50, FALSE)
+				COOLDOWN_START(src, silicon_access_print_cooldown, 10 SECONDS)
+
 		if ("assign")
-			if (authenticated == 2)
+			if (authenticated == AUTHENTICATED_ALL)
 				var/t1 = href_list["assign_target"]
 				if(t1 == "Custom")
 					var/newJob = reject_bad_text(input("Enter a custom job assignment.", "Assignment", inserted_modify_id ? inserted_modify_id.assignment : "Unassigned"), MAX_NAME_LEN)
@@ -634,3 +669,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 #undef JOB_COOLDOWN
 #undef JOB_MAX_POSITIONS
 #undef JOB_DENIED
+
+
+#undef UNAUTHENTICATED
+#undef AUTHENTICATED_DEPARTMENT
+#undef AUTHENTICATED_ALL
