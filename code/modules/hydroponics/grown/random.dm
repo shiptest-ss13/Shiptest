@@ -11,6 +11,7 @@
 	icon_dead = "xpod-dead"
 	icon_harvest = "xpod-harvest"
 	growthstages = 4
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/seeds/random/Initialize()
 	. = ..()
