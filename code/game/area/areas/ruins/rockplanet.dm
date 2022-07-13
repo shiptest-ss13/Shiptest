@@ -1,9 +1,9 @@
 /**********************Rock Planet Areas**************************/
 
-/area/ruin/mine/rockplanet
+/area/mine/rockplanet
 	name = "Abandoned Syndicate Mining Facility"
 
-/area/ruin/mine/rockplanet_nanotrasen
+/area/mine/rockplanet_nanotrasen
 	name = "Abandoned Mining Facility"
 
 /area/ruin/warehouse/secoffice
