@@ -1,7 +1,6 @@
 /datum/job/cyborg
 	title = "Cyborg"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SILICON
-	faction = "Station"
 	total_positions = 0
 	spawn_positions = 1
 	supervisors = "your laws and the AI"	//Nodrak

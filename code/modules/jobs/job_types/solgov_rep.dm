@@ -4,7 +4,6 @@ SolGov Representative
 
 /datum/job/solgov
 	title = "SolGov Representative"
-	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "The Captain, SolGov, and Space Law"

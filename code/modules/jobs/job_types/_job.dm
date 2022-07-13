@@ -6,17 +6,8 @@
 	var/list/minimal_access = list()		//Useful for servers which prefer to only have access given to the places a job absolutely needs (Larger server population)
 	var/list/access = list()				//Useful for servers which either have fewer players, so each person needs to fill more than one role, or servers which like to give more access, so players can't hide forever in their super secure departments (I'm looking at you, chemistry!)
 
-	//Determines who can demote this position
-	var/department_head = list()
-
-	//Tells the given channels that the given mob is the new department head. See communications.dm for valid channels.
-	var/list/head_announce = null
-
 	//Bitflags for the job
 	var/auto_deadmin_role_flags = NONE
-
-	//Players will be allowed to spawn in as jobs that are set to "Station"
-	var/faction = "None"
 
 	//How many players can be this job
 	var/total_positions = 0
@@ -46,10 +37,6 @@
 
 	/// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
 	var/wiki_page = ""
-
-	//The amount of good boy points playing this role will earn you towards a higher chance to roll antagonist next round
-	//can be overridden by antag_rep.txt config
-	var/antag_rep = 10
 
 	var/paycheck = PAYCHECK_MINIMAL
 	var/paycheck_department = ACCOUNT_CIV
@@ -100,22 +87,12 @@
 		else if(!spawnee.put_in_hands(loadout_dumper, TRUE))
 			to_chat("Unable to place loadout box.")
 
-/datum/job/proc/announce(mob/living/carbon/human/H)
-	if(head_announce)
-		announce_head(H, head_announce)
-
 /datum/job/proc/override_latejoin_spawn(mob/living/carbon/human/H)		//Return TRUE to force latejoining to not automatically place the person in latejoin shuttle/whatever.
 	return FALSE
 
 //Used for a special check of whether to allow a client to latejoin as this job.
 /datum/job/proc/special_check_latejoin(client/C)
 	return TRUE
-
-/datum/job/proc/GetAntagRep()
-	. = CONFIG_GET(keyed_list/antag_rep)[lowertext(title)]
-	if(. == null)
-		return antag_rep
-
 
 //Gives the player the stuff he should have with his rank
 /datum/job/proc/EquipRank(mob/living/living_mob, datum/overmap/ship/controlled/ship)
@@ -135,8 +112,6 @@
 	var/new_mob = equip(living_mob, null, null, null, living_mob.client)//silicons override this proc to return a mob
 	if(ismob(new_mob))
 		living_mob = new_mob
-
-	SSpersistence.antag_rep_change[living_mob.client.ckey] += GetAntagRep()
 
 	if(living_mob.client.holder)
 		if(CONFIG_GET(flag/auto_deadmin_players) || (living_mob.client.prefs?.toggles & DEADMIN_ALWAYS))
@@ -194,9 +169,6 @@
 	// WS Edit - Alt-Job Titles
 
 	H.dna.species.after_equip_job(src, H, visualsOnly)
-
-	if(!visualsOnly && announce)
-		announce(H)
 
 /datum/job/proc/get_access()
 	if(!config)	//Needed for robots.

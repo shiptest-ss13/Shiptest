@@ -1,7 +1,6 @@
 /datum/job/ai
 	title = "AI"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SILICON
-	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = "#ccffcc"
@@ -46,10 +45,6 @@
 			if(LAI.is_available())
 				return TRUE
 	return FALSE
-
-/datum/job/ai/announce(mob/living/silicon/ai/AI)
-	. = ..()
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "[AI] has been downloaded to an empty bluespace-networked AI core at [AREACOORD(AI)]."))
 
 /datum/job/ai/config_check()
 	return CONFIG_GET(flag/allow_ai)

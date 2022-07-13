@@ -53,7 +53,6 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	var/obj/item/card/id/inserted_scan_id
 	var/obj/item/card/id/inserted_modify_id
 	var/list/region_access = null
-	var/list/head_subordinates = null
 
 	COOLDOWN_DECLARE(silicon_access_print_cooldown)
 
@@ -408,10 +407,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			if ((!( authenticated ) && (inserted_scan_id || issilicon(usr)) || mode))
 				if (check_access(inserted_scan_id))
 					region_access = list()
-					head_subordinates = list()
 					if(ACCESS_CHANGE_IDS in inserted_scan_id.access)
 						if(target_dept)
-							head_subordinates = get_all_jobs()
 							region_access |= target_dept
 							authenticated = AUTHENTICATED_DEPARTMENT
 						else
@@ -422,26 +419,20 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						if((ACCESS_HOP in inserted_scan_id.access) && ((target_dept==1) || !target_dept))
 							region_access |= 1
 							region_access |= 6
-							get_subordinates("Head of Personnel")
 						if((ACCESS_HOS in inserted_scan_id.access) && ((target_dept==2) || !target_dept))
 							region_access |= 2
-							get_subordinates("Head of Security")
 						if((ACCESS_CMO in inserted_scan_id.access) && ((target_dept==3) || !target_dept))
 							region_access |= 3
-							get_subordinates("Chief Medical Officer")
 						if((ACCESS_RD in inserted_scan_id.access) && ((target_dept==4) || !target_dept))
 							region_access |= 4
-							get_subordinates("Research Director")
 						if((ACCESS_CE in inserted_scan_id.access) && ((target_dept==5) || !target_dept))
 							region_access |= 5
-							get_subordinates("Chief Engineer")
 						if(region_access)
 							authenticated = AUTHENTICATED_DEPARTMENT
 			else if ((!( authenticated ) && issilicon(usr)) && (!inserted_modify_id))
 				to_chat(usr, "<span class='warning'>You can't modify an ID without an ID inserted to modify! Once one is in the modify slot on the computer, you can log in.</span>")
 		if ("logout")
 			region_access = null
-			head_subordinates = null
 			authenticated = 0
 			playsound(src, 'sound/machines/terminal_off.ogg', 50, FALSE)
 
@@ -511,7 +502,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					inserted_modify_id.assignment = t1
 					playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 		if ("demote")
-			if(inserted_modify_id.assignment in head_subordinates || inserted_modify_id.assignment == "Assistant")
+			if(ACCESS_CHANGE_IDS in inserted_scan_id.access)
 				inserted_modify_id.assignment = "Unassigned"
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			else
@@ -615,11 +606,6 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	if (inserted_modify_id)
 		inserted_modify_id.update_label()
 	updateUsrDialog()
-
-/obj/machinery/computer/card/proc/get_subordinates(rank)
-	for(var/datum/job/job in SSjob.occupations)
-		if(rank in job.department_head)
-			head_subordinates += job.title
 
 /obj/machinery/computer/card/centcom
 	name = "\improper CentCom identification console"

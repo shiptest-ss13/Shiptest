@@ -1,7 +1,5 @@
 /datum/job/virologist
 	title = "Virologist"
-	department_head = list("Chief Medical Officer")
-	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the chief medical officer"

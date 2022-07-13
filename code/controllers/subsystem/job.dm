@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(job)
 		SetupOccupations()
 	return ..()
 
-/datum/controller/subsystem/job/proc/SetupOccupations(faction = "Station")
+/datum/controller/subsystem/job/proc/SetupOccupations()
 	occupations = list()
 	var/list/all_jobs = subtypesof(/datum/job)
 	if(!all_jobs.len)
@@ -25,8 +25,6 @@ SUBSYSTEM_DEF(job)
 	for(var/J in all_jobs)
 		var/datum/job/job = new J()
 		if(!job)
-			continue
-		if(job.faction != faction)
 			continue
 		if(!job.config_check())
 			continue
@@ -118,7 +116,6 @@ SUBSYSTEM_DEF(job)
 		if((player) && (player.mind))
 			player.mind.assigned_role = null
 			player.mind.special_role = null
-			SSpersistence.antag_rep_change[player.ckey] = 0
 	SetupOccupations()
 	return
 

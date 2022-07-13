@@ -1,7 +1,5 @@
 /datum/job/engineer
 	title = "Station Engineer"
-	department_head = list("Chief Engineer")
-	faction = "Station"
 	total_positions = 5
 	spawn_positions = 5
 	supervisors = "the chief engineer"

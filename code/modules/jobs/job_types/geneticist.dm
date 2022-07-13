@@ -1,7 +1,5 @@
 /datum/job/geneticist
-	title = "Geneticist"
-	department_head = list("Chief Medical Officer")		//WS Edit - More Gen/Sci Split
-	faction = "Station"
+	title = "Geneticist"		//WS Edit - More Gen/Sci Split
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the chief medical officer" //WS Edit - Gen/Sci Split

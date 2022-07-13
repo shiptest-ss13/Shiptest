@@ -1,7 +1,5 @@
 /datum/job/cargo_tech
 	title = "Cargo Technician"
-	department_head = list("Head of Personnel")
-	faction = "Station"
 	total_positions = 3
 	spawn_positions = 2
 	supervisors = "the quartermaster and the head of personnel"
