@@ -1,94 +1,1428 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/open/floor/plating/asteroid,
-/area/space)
-"b" = (
-/obj/machinery/door/poddoor/preopen,
-/turf/open/floor/plating,
-/area/space)
-"h" = (
-/mob/living/simple_animal/hostile/pirate/ranged/space,
-/turf/open/floor/plating/asteroid,
-/area/space)
-"j" = (
-/obj/machinery/light/small{
-	dir = 1
+"ag" = (
+/obj/machinery/light,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"an" = (
+/obj/structure/table/reinforced,
+/obj/item/melee/transforming/energy/sword/saber/pirate{
+	pixel_y = 5
 	},
-/turf/open/floor/concrete/slab_4,
-/area/space)
-"n" = (
+/obj/item/melee/transforming/energy/sword/saber/pirate,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"ao" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"ap" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"aw" = (
+/obj/item/reagent_containers/food/drinks/waterbottle/empty,
+/obj/item/trash/can/food/peaches,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/toolshed)
+"aE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"aG" = (
+/obj/structure/railing,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/warehouse/cargobay)
+"aN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/rnd/server,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"aW" = (
+/obj/machinery/door/airlock/vault,
+/obj/effect/mapping_helpers/airlock/abandoned,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"aZ" = (
+/obj/effect/spawner/structure/window/reinforced/indestructable,
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"bj" = (
+/obj/item/stack/sheet/mineral/sandbags,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"bn" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/engineer,
+/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"bB" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"bE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/firstaid{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"bI" = (
+/obj/machinery/power/apc/away{
+	pixel_y = -25
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"bK" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/warehouse/reception)
+"bS" = (
+/turf/closed/mineral/random/asteroid/rockplanet,
+/area/ruin/warehouse/reception)
+"bU" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"bW" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid,
-/area/space)
-"o" = (
-/mob/living/simple_animal/hostile/pirate/melee/space,
-/turf/open/floor/plating/asteroid,
-/area/space)
-"r" = (
-/obj/machinery/porta_turret/syndicate{
-	dir = 10
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"cd" = (
+/obj/mecha/working/ripley/cargo,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
-/turf/closed/wall/concrete/reinforced,
-/area/space)
-"s" = (
-/obj/effect/decal/cleanable/robot_debris/old,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"ck" = (
+/obj/effect/mob_spawn/human/corpse/pirate/ranged,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"cm" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/warehouse/reception)
+"cr" = (
+/obj/item/mecha_parts/chassis,
+/obj/item/mecha_parts/part/phazon_torso,
+/obj/item/mecha_parts/part/phazon_right_arm{
+	pixel_x = 8;
+	pixel_y = 1
+	},
+/turf/open/floor/mech_bay_recharge_floor,
+/area/ruin/warehouse/toolshed)
+"cw" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"cz" = (
+/obj/structure/falsewall/plastitanium,
+/turf/open/floor/plating,
+/area/ruin/warehouse/boardingcraft)
+"cE" = (
+/turf/open/floor/plating,
+/area/ruin/warehouse/reception)
+"cS" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"db" = (
+/obj/machinery/mech_bay_recharge_port,
 /turf/open/floor/concrete/reinforced,
-/area/space)
-"t" = (
-/obj/machinery/porta_turret/syndicate{
-	dir = 6
+/area/ruin/warehouse/loadingbay)
+"dd" = (
+/obj/structure/closet/crate,
+/obj/item/grenade/c4,
+/obj/item/grenade/c4,
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/reception)
+"dk" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"dr" = (
+/obj/effect/mob_spawn/human/corpse/pirate/ranged,
+/obj/effect/decal/cleanable/blood/gibs/core,
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "floor1"
 	},
+/turf/open/floor/plating/asteroid,
+/area)
+"dx" = (
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "floor1"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"dC" = (
+/mob/living/simple_animal/hostile/nanotrasen/screaming,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"dO" = (
+/turf/open/floor/plating/asteroid,
+/area)
+"dT" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"ea" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"ef" = (
+/obj/effect/turf_decal/industrial/firstaid{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"es" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 8
+	},
+/obj/structure/salvageable/autolathe,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"ex" = (
 /turf/closed/wall/concrete/reinforced,
-/area/space)
-"v" = (
+/area/ruin/warehouse/ce)
+"eB" = (
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/toolshed)
+"eC" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/warehouse/reception)
+"eI" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/large,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"eK" = (
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"eT" = (
+/obj/structure/closet/secure_closet/engineering_welding,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/cargobay)
+"eY" = (
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/toolshed)
+"fb" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/multiz,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"fn" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/away{
+	pixel_x = -25
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"fA" = (
+/obj/machinery/computer/mech_bay_power_console{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"fH" = (
+/obj/item/multitool,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"fI" = (
 /turf/closed/indestructible/rock{
 	icon_state = "redrock"
 	},
-/area/space)
-"x" = (
-/obj/effect/mob_spawn/human/corpse/pirate,
-/turf/open/floor/plating/asteroid,
-/area/space)
-"y" = (
-/obj/machinery/door/airlock/vault,
-/turf/open/floor/concrete/slab_4,
-/area/space)
-"A" = (
+/area/ruin/warehouse/reception)
+"fL" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"fR" = (
+/turf/open/floor/mech_bay_recharge_floor,
+/area/ruin/warehouse/loadingbay)
+"fU" = (
+/obj/effect/decal/cleanable/oil,
+/obj/machinery/computer/security/wooden_tv,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"gn" = (
+/obj/structure/shuttle/engine/heater,
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"gu" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/warehouse/cargobay)
+"gw" = (
+/obj/item/ammo_box/magazine/co9mm,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"gO" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"gQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"hf" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/salvageable/machine,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"hi" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/gibs/old,
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"hn" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/warehouse/reception)
+"hp" = (
+/obj/structure/door_assembly/door_assembly_grunge,
+/turf/open/floor/plating,
+/area/ruin/warehouse/reception)
+"hz" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/wooden,
+/obj/item/statuebust/hippocratic,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"hA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/defective,
+/obj/item/wallframe/apc,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"hC" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"hG" = (
+/obj/structure/table/reinforced,
+/obj/machinery/computer/message_monitor,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"hI" = (
 /obj/effect/mine/shrapnel,
 /obj/item/stack/sheet/cardboard,
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
-/area/space)
-"D" = (
-/obj/structure/mecha_wreckage/ripley/deathripley,
+/area/ruin/warehouse/toolshed)
+"ik" = (
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "floor1"
+	},
 /turf/open/floor/plating/asteroid,
-/area/space)
-"E" = (
-/obj/structure/closet/crate,
-/obj/item/grenade/c4,
-/obj/item/grenade/c4,
+/area)
+"iv" = (
+/mob/living/simple_animal/hostile/pirate/melee/space,
 /turf/open/floor/plating/asteroid,
-/area/space)
-"H" = (
+/area/ruin/warehouse/reception)
+"iH" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"iI" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/mecha_parts/mecha_equipment/drill/diamonddrill,
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"iL" = (
+/obj/item/flashlight/lantern,
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/cargobay)
+"iQ" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"iT" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"jb" = (
+/obj/effect/mob_spawn/human/corpse/pirate/ranged,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"jf" = (
+/obj/structure/chair/greyscale{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"js" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"jt" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"kf" = (
+/obj/machinery/computer/mech_bay_power_console,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/cargobay)
+"kh" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 1
+	},
+/obj/structure/salvageable/computer,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"ki" = (
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"kj" = (
+/obj/structure/cable/yellow,
+/obj/machinery/power/apc/away{
+	pixel_y = -25
+	},
+/obj/machinery/power/terminal,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"km" = (
+/obj/machinery/light/small/broken{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/reception)
+"kz" = (
+/obj/effect/turf_decal/plaque{
+	desc = "A plaque, commemorating the opening of the storage facility. Unveiled by Northwind Shipping CFO Armaund Deville in 499 FS."
+	},
+/mob/living/simple_animal/hostile/pirate/melee/space,
+/turf/open/floor/wood/ebony,
+/area/ruin/warehouse/reception)
+"kG" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"kM" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/mob/living/simple_animal/hostile/nanotrasen/screaming,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"kP" = (
+/obj/structure/falsewall/plastitanium,
+/obj/machinery/porta_turret/syndicate{
+	dir = 9;
+	faction = list("pirate")
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/boardingcraft)
+"lb" = (
+/mob/living/simple_animal/hostile/nanotrasen/screaming,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"le" = (
+/obj/machinery/mech_bay_recharge_port{
+	dir = 2
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/cargobay)
+"lf" = (
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"lm" = (
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"ln" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"ly" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"lH" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/toxin,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"lU" = (
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"lV" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"lX" = (
+/turf/closed/indestructible/rock{
+	icon_state = "redrock"
+	},
+/area/ruin/warehouse/cargobay)
+"lZ" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "ce"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"mc" = (
+/obj/structure/railing{
+	dir = 5
+	},
+/obj/structure/table/reinforced,
+/obj/item/ammo_box/c9mm/hp,
+/obj/item/ammo_box/c9mm/ap,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"mi" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/stack/cable_coil/cut/yellow,
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/reception)
+"mv" = (
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"mw" = (
+/obj/machinery/door/poddoor/shutters/preopen,
+/obj/effect/turf_decal/industrial/warning,
+/obj/item/wrench,
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"nc" = (
+/obj/structure/chair/office,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"nx" = (
+/obj/structure/table/reinforced,
+/obj/item/papercutter,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"nA" = (
+/obj/structure/table/reinforced,
+/obj/item/toy/redbutton{
+	desc = "A big, red button. The label on the top reads 'PANIC'.";
+	name = "red button"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"nH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/showcase/machinery/cloning_pod{
+	desc = "A damaged cloning pod, with a missing control panel and cracked glass. There appears to be some kind of red residue inside... strange.";
+	name = "defective cloning pod"
+	},
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"nQ" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plating/asteroid,
+/area)
+"nT" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"nV" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"nX" = (
+/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/loadingbay)
+"oa" = (
+/obj/machinery/syndicatebomb/training,
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"oc" = (
+/obj/structure/salvageable/autolathe,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"og" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"om" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/sign/poster/contraband/cc64k_ad{
+	pixel_x = -32
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"oE" = (
+/obj/structure/chair/greyscale{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"oG" = (
+/obj/structure/table/reinforced,
+/obj/item/folder/blue,
+/obj/item/folder/red,
+/obj/item/folder/yellow,
+/obj/item/folder/white,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"oP" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"oQ" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"pa" = (
+/turf/closed/mineral/random/asteroid/rockplanet,
+/area/ruin/warehouse/loadingbay)
+"ph" = (
+/obj/structure/railing{
+	dir = 6
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/o2,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"pw" = (
+/obj/item/circuitboard/machine/autolathe,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"pC" = (
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"pD" = (
+/obj/structure/firelock_frame/heavy,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"pT" = (
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"pW" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"qc" = (
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "floor1"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"qi" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_4,
+/area/ruin/warehouse/reception)
+"qm" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"qC" = (
+/obj/effect/decal/fakelattice,
+/obj/structure/door_assembly/door_assembly_grunge,
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/reception)
+"qN" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"qO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/toolshed)
+"qT" = (
+/obj/structure/table/reinforced,
+/obj/item/paper{
+	info = "Tch, another pointless day of sitting on my ass, waiting for something to happen. The LAST incident was some dumbass techie dropping a crate on his foot, and that's THAT. At least I ain't working on a station... hey, what's that noi-  *The note is cut off, suddenly.*"
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"qW" = (
+/obj/machinery/door/airlock/vault,
+/obj/effect/mapping_helpers/airlock/abandoned,
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"rp" = (
+/turf/template_noop,
+/area)
+"rr" = (
+/obj/structure/closet/crate/secure/weapon{
+	icon_state = "weaponcrateopen"
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander,
+/obj/item/gun/ballistic/automatic/pistol/commander,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"rE" = (
+/obj/structure/closet/crate{
+	icon_state = "radiationopen"
+	},
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/geiger_counter,
+/obj/item/storage/firstaid/toxin,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"rL" = (
+/mob/living/simple_animal/hostile/nanotrasen/screaming,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"rQ" = (
 /turf/closed/wall/concrete/reinforced,
-/area/space)
-"L" = (
+/area/ruin/warehouse/cargobay)
+"rX" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"sc" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"si" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/warehouse/cargobay)
+"sj" = (
+/obj/structure/mecha_wreckage/ripley/firefighter,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"sl" = (
+/obj/item/paper/crumpled{
+	info = "Those fuckers attacked the facility, I only got out in the nick of time! I'm holing up in here, anyone who comes in here is a dead motherfucker... - Chief Engineer Clarke"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/toolshed)
+"ss" = (
+/obj/item/clothing/shoes/magboots/advance,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/toolshed)
+"st" = (
+/obj/structure/closet/crate{
+	icon_state = "engi_crate"
+	},
+/obj/item/clothing/gloves/tackler/combat/insulated,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"sA" = (
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"sW" = (
+/obj/structure/frame/machine,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"te" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"tf" = (
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/boardingcraft)
+"th" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/abstract/turf_fire,
+/obj/structure/mecha_wreckage/ripley/deathripley,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"tk" = (
+/obj/machinery/power/apc/away{
+	pixel_x = -25
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"tu" = (
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"tA" = (
+/turf/open/floor/carpet/orange,
+/area/ruin/warehouse/cargobay)
+"tM" = (
+/obj/effect/decal/cleanable/robot_debris/old,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/reception)
+"tQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"tX" = (
+/turf/open/floor/concrete/slab_4,
+/area/ruin/warehouse/reception)
+"tY" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"uc" = (
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"ui" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"uj" = (
+/obj/structure/fluff/empty_sleeper/nanotrasen,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"up" = (
+/obj/effect/turf_decal/industrial/defective,
+/obj/item/wallframe/button,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"us" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"uA" = (
+/mob/living/simple_animal/hostile/pirate/ranged/space,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"uN" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"uQ" = (
+/obj/structure/closet/crate,
+/obj/item/storage/belt/utility,
+/obj/item/storage/belt/utility,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
-/area/space)
-"M" = (
-/obj/item/mecha_parts/mecha_equipment/drill,
+/area/ruin/warehouse/loadingbay)
+"uW" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"vm" = (
+/obj/machinery/firealarm{
+	pixel_y = 25
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"vn" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"vs" = (
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"vt" = (
+/obj/structure/chair/stool{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/nanotrasen/elite{
+	name = "Chief Engineer Clarke"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/toolshed)
+"vu" = (
+/obj/structure/barricade/sandbags,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"vD" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/away{
+	pixel_y = 25
+	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"vY" = (
+/obj/structure/shuttle/engine/propulsion,
+/turf/open/floor/plating,
+/area/ruin/warehouse/boardingcraft)
+"wb" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/electronics/airlock,
+/obj/item/stack/cable_coil/cut,
 /turf/open/floor/plating/asteroid,
-/area/space)
-"N" = (
-/obj/machinery/door/keycard,
+/area/ruin/warehouse/reception)
+"we" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"wk" = (
+/obj/effect/decal/cleanable/blood/gibs/down,
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"wl" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "ecase"
+	},
+/turf/open/floor/carpet/orange,
+/area/ruin/warehouse/cargobay)
+"ww" = (
+/obj/effect/abstract/turf_fire,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"xa" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"xc" = (
+/obj/machinery/light,
+/obj/structure/girder/displaced,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"xd" = (
+/obj/item/melee/baton/cattleprod,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"xg" = (
+/turf/open/floor/plating,
+/area/ruin/warehouse/boardingcraft)
+"xj" = (
+/obj/item/stack/sheet/metal/five,
+/obj/item/shard,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/loadingbay)
+"xl" = (
+/obj/machinery/door/poddoor/shutters/preopen,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "bubblegumfoot"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"xA" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"xL" = (
+/obj/machinery/button/door{
+	pixel_x = 26
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"xN" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"xR" = (
+/obj/machinery/door/keycard{
+	name = "Tool Shed"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating/asteroid,
-/area/space)
-"O" = (
+/area/ruin/warehouse/toolshed)
+"xS" = (
+/obj/structure/door_assembly/door_assembly_vault,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/warehouse/reception)
+"xY" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/secure/science,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"ya" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"yb" = (
+/obj/structure/window/reinforced/survival_pod/spawner/west,
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"yf" = (
+/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"yj" = (
+/obj/structure/railing,
+/obj/structure/bed/roller,
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"yq" = (
+/obj/machinery/door/poddoor/shutters/preopen,
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"ys" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/warehouse/boardingcraft)
+"yG" = (
+/obj/structure/shuttle/engine/large,
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/boardingcraft)
+"yI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/secure/weapon{
+	icon_state = "weaponcrateopen"
+	},
+/obj/item/gun/ballistic/automatic/wt550,
+/obj/item/gun/ballistic/automatic/wt550,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"yJ" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/engineering,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"yX" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/ebony,
+/area/ruin/warehouse/reception)
+"zd" = (
+/obj/structure/closet/crate{
+	icon_state = "engi_e_crateopen"
+	},
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical,
+/obj/item/clothing/glasses/meson/engine,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"zx" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"zy" = (
+/obj/item/pickaxe/mini,
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/cargobay)
+"zB" = (
+/obj/item/kirbyplants/photosynthetic,
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"zR" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"zX" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Ap" = (
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/hostile/mining_drone,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"Aw" = (
+/obj/structure/closet/crate,
+/obj/item/storage/firstaid,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"AK" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"AS" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"AT" = (
+/obj/structure/table/reinforced,
+/obj/machinery/computer/monitor,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"AY" = (
+/obj/item/paper{
+	info = "Ugh, another long shift in this dump. I hope something interesting happens, I still need to fix that hole in the wall though..."
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"Bb" = (
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"Bc" = (
+/obj/structure/table/reinforced,
+/obj/machinery/computer/secure_data/laptop,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"Bh" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/toolshed)
+"Bn" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"BA" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/spawner/lootdrop/crate_spawner,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"BD" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"BI" = (
+/mob/living/simple_animal/hostile/pirate/ranged/space,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"BK" = (
+/obj/structure/closet/secure_closet,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"BP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"BW" = (
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/warehouse/cargobay)
+"BY" = (
+/obj/structure/falsewall/plastitanium,
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/boardingcraft)
+"Ca" = (
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"Cn" = (
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/reception)
+"Cq" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/carpet/orange,
+/area/ruin/warehouse/cargobay)
+"Cx" = (
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"CA" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/reception)
+"CC" = (
+/obj/structure/barricade/sandbags,
+/obj/machinery/button/door{
+	pixel_x = -26
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"CL" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/decal/cleanable/oil,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"CU" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Dh" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"Ds" = (
+/obj/structure/railing{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Dv" = (
+/obj/item/storage/belt/utility/chief/full,
+/obj/item/clothing/mask/gas/atmos,
+/obj/structure/closet/secure_closet{
+	icon_state = "ce"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"DA" = (
+/obj/effect/mob_spawn/human/engineer,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"DB" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen/blue,
+/obj/item/stamp/law,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"DE" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"DV" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/pirate/melee/space,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"DW" = (
+/obj/structure/table/reinforced,
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/loadingbay)
+"Ef" = (
 /obj/structure{
 	desc = "Looks menacing, but it's offline.";
 	dir = 10;
@@ -96,2240 +1430,3375 @@
 	icon_state = "syndie_off";
 	name = "defunct auto-turret"
 	},
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
-/area/space)
-"Q" = (
-/obj/machinery/door/poddoor,
+/area/ruin/warehouse/reception)
+"Eo" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/warehouse/reception)
+"Eq" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/item/melee/classic_baton,
+/turf/open/floor/wood/ebony,
+/area/ruin/warehouse/reception)
+"Ez" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/warehouse/reception)
+"EO" = (
+/obj/effect/turf_decal/industrial/firstaid,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"ER" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
-/area/space)
-"R" = (
-/turf/closed/indestructible/rock,
-/area/space)
-"U" = (
-/obj/structure/door_assembly/door_assembly_vault,
+/area/ruin/warehouse/cargobay)
+"ET" = (
+/obj/machinery/door/poddoor/shutters/preopen,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Fb" = (
+/obj/item/chair/stool,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"FD" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"FE" = (
+/obj/effect/mob_spawn/human/engineer,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"FH" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 1
+	},
+/obj/structure/salvageable/machine,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"FV" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"Gb" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 1
+	},
+/obj/machinery/telecomms/bus,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Gh" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"Gi" = (
+/obj/structure/window/reinforced/survival_pod/spawner/east,
+/obj/machinery/suit_storage_unit/industrial,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"Gm" = (
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"Gn" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Go" = (
+/obj/effect/turf_decal/industrial/defective,
+/obj/machinery{
+	desc = "A departmental protolathe, which while still powered, is responding to any input, and the screen is showing a garbled mess.";
+	icon = 'icons/obj/machines/research.dmi';
+	icon_state = "protolathe";
+	name = "corrupted protolathe"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Gz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/firstaid,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"GF" = (
+/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/asteroid,
-/area/space)
-"Z" = (
+/area)
+"GG" = (
+/turf/closed/mineral/random/asteroid/rockplanet,
+/area/ruin/warehouse/cargobay)
+"GM" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/reception)
+"GS" = (
+/obj/effect/mob_spawn/human/doctor,
+/obj/item/circular_saw,
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"GZ" = (
+/obj/machinery/door/poddoor/preopen,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"Hs" = (
+/turf/closed/indestructible/rock{
+	icon_state = "redrock"
+	},
+/area/ruin/warehouse/toolshed)
+"Hv" = (
+/obj/effect/decal/cleanable/blood/gibs/up,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/reception)
+"Hz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"HC" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/sign/poster/official/wtf_is_co2{
+	pixel_y = 32
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"HD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/warehouse/reception)
+"HE" = (
+/obj/structure/table/wood,
+/turf/open/floor/carpet/orange,
+/area/ruin/warehouse/cargobay)
+"HF" = (
+/obj/structure/sign/poster/official/pda_ad{
+	pixel_y = 32
+	},
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/away{
+	pixel_x = 25
+	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"HJ" = (
+/obj/effect/turf_decal/industrial/firstaid{
+	dir = 8
+	},
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"HQ" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"HR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/nanotrasen/screaming,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"Ij" = (
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"Is" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Ix" = (
+/obj/machinery/airalarm/directional/west,
+/obj/item/mecha_parts/part/phazon_left_leg,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"IG" = (
+/obj/item/book/manual/wiki/atmospherics,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/toolshed)
+"IK" = (
+/obj/structure/table/reinforced,
+/obj/machinery/microwave,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"IO" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"IT" = (
+/obj/structure/bookcase/manuals/engineering,
+/turf/open/floor/carpet/orange,
+/area/ruin/warehouse/cargobay)
+"IX" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/item/mecha_parts/part/phazon_head,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/toolshed)
+"IY" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"Je" = (
+/obj/machinery/shieldgen,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Jg" = (
+/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp/kill,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"Jh" = (
+/obj/item/spear,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"Jt" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"JF" = (
+/obj/machinery/computer/mech_bay_power_console,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"JL" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 8
+	},
+/obj/structure/salvageable/protolathe,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"JM" = (
+/obj/structure/table/reinforced,
+/obj/item/pickaxe/drill/diamonddrill,
+/obj/item/t_scanner/adv_mining_scanner,
+/obj/item/gun/energy/plasmacutter/adv,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"JV" = (
+/obj/structure/railing,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"JY" = (
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/warehouse/cargobay)
+"JZ" = (
+/obj/machinery/light/floor,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/warehouse/boardingcraft)
+"Kc" = (
+/obj/machinery/door/airlock/grunge,
+/turf/open/floor/carpet/orange,
+/area/ruin/warehouse/cargobay)
+"Kg" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Ki" = (
+/obj/effect/decal/cleanable/blood/gibs/down,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"Kn" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"Kt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/defective,
+/obj/structure/table/reinforced,
+/obj/item/clothing/head/welding,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"KF" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/warehouse/reception)
+"KH" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"KL" = (
+/obj/effect/turf_decal/industrial/firstaid{
+	dir = 1
+	},
+/obj/item/gun/energy/laser,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"KN" = (
+/mob/living/simple_animal/hostile/pirate/ranged/space,
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/reception)
+"KU" = (
+/obj/structure/table/reinforced,
+/obj/item/papercutter,
+/obj/structure/sign/poster/official/nanotrasen_logo{
+	pixel_y = 32
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"KY" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/blood/gibs/up,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"Lb" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"Le" = (
+/obj/structure/chair/stool{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"Lh" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/engineering/electrical,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Lk" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/lethalshot,
+/obj/item/storage/box/lethalshot,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"Lp" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"Lt" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 8
+	},
+/obj/item/paper_bin/carbon{
+	pixel_x = -7
+	},
+/obj/item/pen/blue,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"Lw" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 4
+	},
+/obj/item/pod_parts/pod_frame/fore_port,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Ly" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 8
+	},
+/obj/item/wallframe/apc,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"LA" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 10
+	},
+/obj/structure/salvageable/machine,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"LE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"LG" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"LI" = (
+/obj/machinery/mech_bay_recharge_port{
+	dir = 2
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/cargobay)
+"LU" = (
+/mob/living/simple_animal/hostile/pirate/melee/space,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"LW" = (
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"Mc" = (
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Mf" = (
+/obj/structure/filingcabinet/chestdrawer,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"Mk" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"Mo" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/warehouse/reception)
+"Mu" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"Mv" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Mx" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/sign/departments/medbay{
+	pixel_x = 32
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"MA" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/five,
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"MB" = (
+/obj/machinery/light/small/built{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"MH" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"Nk" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/ammo_box/c9mm,
+/obj/item/ammo_box/c9mm,
+/obj/item/ammo_box/c9mm,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Nl" = (
+/mob/living/simple_animal/hostile/nanotrasen/screaming,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"Ns" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"Nz" = (
+/obj/structure/chair/greyscale{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/pirate/melee/space,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"NA" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/crowbar/large,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"NM" = (
+/obj/structure/salvageable/protolathe,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"NO" = (
+/obj/item/trash/syndi_cakes,
+/obj/machinery/light/small,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"Ol" = (
+/obj/structure/railing{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Ov" = (
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Ow" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"Ox" = (
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"OC" = (
+/mob/living/simple_animal/hostile/pirate/melee/space,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"OE" = (
+/obj/structure/railing{
+	dir = 10
+	},
+/obj/structure/table/reinforced,
+/obj/item/scalpel,
+/obj/item/hemostat,
+/obj/item/retractor,
+/obj/item/cautery,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"OF" = (
+/obj/item/stack/cable_coil/cut/yellow,
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/reception)
+"OJ" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"OR" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"OS" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/scrubber/huge/movable,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Pc" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"Pl" = (
+/obj/item/bedsheet/ce,
+/obj/structure/bed,
+/turf/open/floor/carpet/orange,
+/area/ruin/warehouse/cargobay)
+"Pt" = (
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/cargobay)
+"PA" = (
+/obj/item/pod_parts/pod_frame/fore_starboard,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"PI" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/reception)
+"PV" = (
+/obj/effect/decal/cleanable/oil,
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid,
+/obj/item/storage/firstaid,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"PX" = (
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"Qa" = (
+/obj/machinery/light,
+/obj/structure/closet/crate/bin,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"Qg" = (
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"Qq" = (
+/obj/machinery/photocopier,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"Qt" = (
+/mob/living/simple_animal/hostile/syndicate/mecha_pilot/no_mech/nanotrasen,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"Qw" = (
+/obj/structure/chair/greyscale{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/splatter{
+	icon_state = "bubblegumfoot"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"QS" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"Rn" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"Ro" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/decal/cleanable/oil,
+/obj/effect/spawner/lootdrop/crate_spawner,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Rp" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/sign/poster/official/moth/hardhats{
+	pixel_y = 32
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"RA" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/radiation,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"RB" = (
+/obj/item/kitchen/knife/combat,
+/turf/open/floor/plating/asteroid,
+/area)
+"Sa" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/elevator,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"Sc" = (
+/obj/machinery/door/airlock/command,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"Sf" = (
+/obj/structure/girder/displaced,
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"Sl" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"Sx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"Sy" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"Sz" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/pirate/ranged/space,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"SG" = (
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"SL" = (
+/obj/effect/decal/cleanable/blood/gibs/core,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"SQ" = (
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"SZ" = (
+/obj/machinery/firealarm{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"Ta" = (
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/cargobay)
+"Te" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"Tl" = (
+/obj/structure/falsewall/plastitanium,
+/obj/machinery/porta_turret/syndicate{
+	dir = 5;
+	faction = list("pirate")
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/boardingcraft)
+"Tm" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"Tn" = (
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Tr" = (
+/obj/structure/door_assembly/door_assembly_vault,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/warehouse/reception)
+"Ty" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"TB" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/warehouse/boardingcraft)
+"TH" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"TJ" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen/blue,
+/obj/item/stamp,
+/obj/item/stamp/denied,
+/obj/item/stamp/qm,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"TO" = (
+/obj/machinery/mech_bay_recharge_port{
+	dir = 2
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"Um" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/warehouse/boardingcraft)
+"Uy" = (
+/turf/closed/indestructible/rock{
+	icon_state = "redrock"
+	},
+/area/ruin/warehouse/loadingbay)
+"UN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/reception)
+"UO" = (
+/obj/effect/turf_decal/industrial/firstaid{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"UR" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"Va" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/salvageable/server,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"Vk" = (
+/obj/structure/railing{
+	dir = 6
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/warehouse/cargobay)
+"Vq" = (
+/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/reception)
+"Vs" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"Vu" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/defective{
+	dir = 1
+	},
+/obj/machinery/power/shuttle/engine/fueled/plasma,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"VC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9/wtap,
+/obj/item/ammo_box/magazine/wt550m9/wtap,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"VG" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/loadingbay)
+"VJ" = (
+/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"VM" = (
+/obj/structure/railing{
+	dir = 9
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/warehouse/cargobay)
+"VU" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"VV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/cargobay)
+"Wf" = (
+/obj/structure/table/reinforced,
+/obj/item/construction/rcd/loaded,
+/obj/item/pipe_dispenser,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/toolshed)
+"WH" = (
+/obj/structure/salvageable/destructive_analyzer,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"WK" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"WO" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
 /turf/open/floor/concrete/slab_4,
-/area/space)
+/area/ruin/warehouse/reception)
+"WQ" = (
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/warehouse/cargobay)
+"Xm" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"Xn" = (
+/obj/item/storage/toolbox/ammo,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/toolshed)
+"Xp" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/warehouse/reception)
+"Xt" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"Xv" = (
+/obj/structure/sign/poster/official/here_for_your_safety{
+	pixel_y = 32
+	},
+/obj/item/light/tube/broken,
+/obj/machinery/light/built{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"XB" = (
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"XC" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"XL" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"XP" = (
+/obj/structure/salvageable/computer,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"XS" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/mech_bay_recharge_floor,
+/area/ruin/warehouse/cargobay)
+"Ya" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/pod/dark,
+/area/ruin/warehouse/loadingbay)
+"Yz" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 9
+	},
+/obj/item/wallframe/defib_mount,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"YI" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/secure/exo,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"YJ" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen/fourcolor,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"YL" = (
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/warehouse/reception)
+"YP" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/iv_drip,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"YV" = (
+/obj/structure/filingcabinet/chestdrawer,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/warehouse/loadingbay)
+"YY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/warehouse/reception)
+"Zc" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/warehouse/reception)
+"Zf" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/clothing/gloves/explorer,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/clothing/mask/gas/explorer,
+/obj/item/gun/energy/kinetic_accelerator,
+/obj/item/mining_scanner,
+/obj/item/clothing/glasses/meson,
+/obj/item/borg/upgrade/modkit/cooldown,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/loadingbay)
+"Zg" = (
+/obj/structure/mecha_wreckage/ripley/mkii,
+/turf/open/floor/mech_bay_recharge_floor,
+/area/ruin/warehouse/cargobay)
+"Zm" = (
+/obj/effect/abstract/turf_fire,
+/turf/open/floor/plating,
+/area/ruin/warehouse/loadingbay)
+"Zr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/warehouse/reception)
+"Zu" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/ruin/warehouse/cargobay)
+"Zw" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/warehouse/cargobay)
+"ZQ" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 6
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/warehouse/cargobay)
+"ZV" = (
+/mob/living/simple_animal/hostile/pirate/ranged{
+	desc = "A fearsome pirate captain, armed with a stolen X-ray rifle prototype. Doesn't have a beard, despite the name.";
+	health = 200;
+	name = "Captain Plasmabeard";
+	projectiletype = /obj/projectile/beam/xray
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/warehouse/boardingcraft)
 
 (1,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
 "}
 (2,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-o
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+OF
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+iv
+rp
+rp
+rp
+rp
+rp
+bS
+bS
+bS
+rp
+rp
 "}
 (3,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-U
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+rp
+rp
+rp
+rp
+rp
+KF
+cm
+cm
+cm
+cm
+Cn
+cm
+cm
+cm
+cm
+Cn
+cm
+cm
+cm
+Tr
+cm
+cm
+cm
+eC
+rp
+rp
+rp
+rp
+rp
+bS
+bS
+bS
+bS
+bS
+rp
 "}
 (4,1,1) = {"
-a
-a
-v
-v
-v
-A
-v
-v
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-h
-a
-U
-a
-E
-a
-a
-a
-a
-a
-a
-a
-a
-a
+rp
+rp
+Hs
+Hs
+qO
+hI
+eY
+Hs
+rp
+rp
+rp
+rp
+rp
+OF
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+KN
+rp
+xS
+rp
+dd
+rp
+rp
+rp
+bS
+bS
+bS
+bS
+bS
+rp
 "}
 (5,1,1) = {"
-a
-v
-H
-H
-H
-N
-H
-H
-v
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+rp
+Hs
+OJ
+OJ
+OJ
+xR
+OJ
+OJ
+Hs
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+Xp
+rp
+rp
+rp
+rp
+rp
+bS
+bS
+bS
+bS
+bS
+rp
 "}
 (6,1,1) = {"
-a
-v
-H
-a
-a
-a
-a
-H
-v
-v
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-n
-a
-a
-n
-v
-v
-a
-a
-a
-a
-a
-a
-a
-a
+rp
+Hs
+OJ
+TO
+cr
+iQ
+Ix
+OJ
+Hs
+Hs
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+fI
+fI
+fI
+mi
+Cn
+CA
+wb
+fI
+fI
+rp
+rp
+rp
+bS
+bS
+bS
+bS
+rp
 "}
 (7,1,1) = {"
-a
-v
-H
-a
-a
-a
-a
-H
-v
-v
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-H
-H
-L
-a
-H
-H
-v
-v
-a
-a
-a
-a
-a
-a
-a
+rp
+Hs
+OJ
+JF
+eB
+IX
+kj
+OJ
+Hs
+Hs
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+fI
+fI
+hn
+hn
+cE
+Cn
+hn
+hn
+fI
+fI
+rp
+rp
+rp
+bS
+bS
+bS
+rp
 "}
 (8,1,1) = {"
-a
-v
-H
-a
-a
-a
-a
-H
-v
-v
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-H
-O
-Z
-L
-s
-H
-v
-v
-v
-a
-a
-a
-a
-a
-a
+rp
+Hs
+OJ
+UR
+Bh
+Bh
+UR
+OJ
+Hs
+Hs
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+fI
+fI
+fI
+hn
+Ef
+tX
+PI
+tM
+hn
+fI
+fI
+fI
+rp
+rp
+rp
+bS
+bS
+rp
 "}
 (9,1,1) = {"
-a
-v
-H
-a
-a
-a
-a
-H
-v
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-H
-H
-y
-y
-H
-H
-v
-v
-v
-v
-a
-a
-a
-a
-a
+rp
+Hs
+OJ
+lV
+Xn
+vt
+bj
+OJ
+Hs
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+fI
+fI
+fI
+fI
+hn
+hn
+qW
+aW
+hn
+hn
+fI
+fI
+fI
+fI
+rp
+rp
+rp
+rp
+rp
 "}
 (10,1,1) = {"
-a
-v
-H
-a
-a
-a
-a
-H
-v
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-H
-j
-Z
-H
-v
-v
-v
-v
-v
-v
-a
-a
-a
-a
+rp
+Hs
+OJ
+yb
+aw
+sl
+NO
+OJ
+Hs
+rp
+rp
+rp
+rp
+rp
+rp
+fI
+fI
+fI
+fI
+fI
+fI
+hn
+WO
+qi
+hn
+fI
+fI
+fI
+fI
+fI
+fI
+rp
+rp
+rp
+rp
 "}
 (11,1,1) = {"
-a
-v
-H
-a
-a
-a
-a
-H
-v
-v
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-v
-H
-Z
-Z
-H
-v
-v
-v
-v
-v
-v
-v
-a
-a
-a
+rp
+Hs
+OJ
+Gi
+ss
+IG
+fH
+OJ
+Hs
+Hs
+rp
+rp
+rp
+rp
+fI
+fI
+fI
+fI
+fI
+fI
+fI
+hn
+YY
+qi
+hn
+fI
+fI
+fI
+fI
+fI
+fI
+fI
+rp
+rp
+rp
 "}
 (12,1,1) = {"
-a
-v
-H
-a
-a
-a
-a
-H
-v
-v
-a
-a
-a
-a
-v
-v
-H
-H
-H
-H
-H
-H
-y
-y
-H
-H
-H
-H
-H
-H
-v
-v
-a
-a
-a
+rp
+Hs
+OJ
+LG
+eB
+eB
+lf
+OJ
+Hs
+Hs
+rp
+rp
+rp
+rp
+fI
+fI
+hn
+hn
+hn
+hn
+hn
+hn
+qW
+aW
+hn
+hn
+hn
+hn
+hn
+hn
+fI
+fI
+rp
+rp
+rp
 "}
 (13,1,1) = {"
-a
-v
-H
-a
-a
-a
-a
-H
-v
-v
-a
-a
-a
-a
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
-a
+rp
+Hs
+OJ
+JM
+Wf
+Dv
+st
+OJ
+Hs
+Hs
+rp
+rp
+rp
+rp
+fI
+fI
+hn
+SQ
+SQ
+qT
+Le
+vu
+VU
+uW
+ly
+BI
+qc
+lU
+ln
+hn
+fI
+fI
+fI
+rp
+rp
 "}
 (14,1,1) = {"
-a
-v
-H
-H
-H
-H
-H
-H
-v
-v
-a
-a
-a
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
-a
+rp
+Hs
+OJ
+OJ
+OJ
+OJ
+OJ
+OJ
+Hs
+Hs
+rp
+rp
+rp
+fI
+fI
+fI
+hn
+XL
+Qg
+gw
+ao
+Lb
+uA
+xA
+ao
+Qg
+Qg
+Qg
+IK
+hn
+fI
+fI
+fI
+rp
+rp
 "}
 (15,1,1) = {"
-a
-v
-v
-v
-v
-v
-v
-v
-v
-a
-a
-a
-a
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
-a
+rp
+Hs
+Hs
+Hs
+Hs
+Hs
+Hs
+Hs
+Hs
+rp
+rp
+rp
+rp
+fI
+fI
+fI
+hn
+Vq
+hn
+hn
+Xv
+Qg
+oE
+UN
+jf
+HD
+Eq
+Mo
+Sl
+hn
+fI
+fI
+fI
+rp
+rp
 "}
 (16,1,1) = {"
-a
-a
-v
-v
-v
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
-a
+rp
+rp
+Hs
+Hs
+Hs
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+fI
+fI
+fI
+hn
+SZ
+Qg
+nV
+SQ
+OC
+Qw
+cw
+oE
+Ez
+kz
+yX
+Qa
+hn
+fI
+fI
+fI
+rp
+rp
 "}
 (17,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-v
-a
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+fI
+fI
+hn
+Mf
+uA
+LW
+dx
+Qg
+oE
+xd
+Nz
+Eo
+bK
+Zc
+Qq
+hn
+fI
+fI
+fI
+fI
+rp
 "}
 (18,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-v
-a
+rp
+rp
+rp
+pa
+pa
+pa
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+fI
+fI
+hn
+nA
+nc
+FD
+SQ
+jt
+oE
+xA
+oE
+Qg
+ck
+Fb
+nx
+hn
+fI
+fI
+fI
+fI
+rp
 "}
 (19,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
-a
+rp
+rp
+rp
+pa
+pa
+pa
+pa
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+fI
+fI
+hn
+TJ
+iT
+Pc
+Jh
+Zr
+Qg
+Ki
+cE
+YL
+Lt
+FD
+oG
+hn
+fI
+fI
+fI
+rp
+rp
 "}
 (20,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-H
-H
-H
-H
-a
-a
-a
-a
-a
-a
-H
-H
-H
-H
-v
-v
-v
-a
-a
+rp
+rp
+rp
+pa
+pa
+pa
+pa
+pa
+rp
+rp
+rp
+rp
+fI
+fI
+fI
+fI
+hn
+hn
+hn
+hn
+HF
+MB
+Hv
+SL
+km
+hp
+hn
+hn
+hn
+hn
+fI
+fI
+fI
+rp
+rp
 "}
 (21,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-v
-H
-H
-H
-a
-a
-H
-H
-H
-v
-v
-v
-v
-v
-a
-a
-a
+rp
+rp
+pa
+pa
+pa
+pa
+pa
+pa
+rp
+rp
+rp
+rp
+fI
+fI
+fI
+fI
+fI
+fI
+fI
+hn
+hn
+hn
+qC
+GM
+hn
+hn
+hn
+fI
+fI
+fI
+fI
+fI
+rp
+rp
+rp
 "}
 (22,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-H
-H
-H
-H
-H
-t
-a
-a
-a
+rp
+rp
+pa
+pa
+pa
+pa
+pa
+rp
+rp
+rp
+rp
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+sc
+vs
+DE
+Cx
+WK
+DE
+BD
+sc
+Uy
+Uy
+Uy
+Uy
+Uy
+rp
+rp
+rp
 "}
 (23,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-v
-H
-H
-H
-H
-H
-a
-a
-a
-a
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
+rp
+rp
+pa
+pa
+pa
+pa
+rp
+rp
+rp
+rp
+Uy
+Uy
+Uy
+Uy
+Uy
+sc
+sc
+sc
+sc
+sc
+vm
+pD
+pT
+MH
+Cx
+Zm
+sc
+rp
+rp
+rp
+rp
+rp
+gn
+vY
+rp
 "}
 (24,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-H
-H
-H
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-b
-R
-R
-R
-a
-a
-a
-a
-a
+rp
+rp
+rp
+pa
+pa
+pa
+rp
+rp
+rp
+Uy
+Uy
+sc
+sc
+sc
+sc
+sc
+fA
+db
+tY
+fn
+ww
+th
+us
+uQ
+wk
+kP
+cz
+BY
+bB
+bB
+bB
+bB
+bB
+xg
+yG
 "}
 (25,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-H
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-R
-R
-R
-R
-R
-R
-a
-M
-a
-a
+rp
+rp
+pa
+pa
+pa
+rp
+rp
+rp
+rp
+Uy
+Uy
+sc
+YV
+Xt
+BK
+sc
+Cx
+fR
+zd
+WK
+iI
+hi
+Jg
+vn
+AS
+GZ
+lm
+FV
+DV
+FV
+FV
+Um
+bB
+xg
+tf
 "}
 (26,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-R
-R
-R
-R
-R
-R
-R
-R
-D
-a
-a
+rp
+rp
+pa
+pa
+rp
+rp
+rp
+rp
+Uy
+Uy
+Uy
+sc
+vD
+AK
+qm
+xj
+Ca
+Xm
+cS
+Rn
+AK
+Mk
+KY
+XC
+Cx
+GZ
+TB
+TB
+JZ
+ys
+ZV
+an
+bB
+bB
+rp
 "}
 (27,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-H
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
-R
-R
-R
-R
-R
-R
-R
-a
-a
-x
-a
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+Uy
+Uy
+Uy
+sc
+Bc
+js
+Gm
+nT
+xN
+AK
+Mk
+cd
+mv
+jb
+Zf
+PX
+Cx
+GZ
+LU
+rX
+rX
+Sz
+Ns
+Lk
+bB
+xg
+yG
 "}
 (28,1,1) = {"
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-R
-R
-Q
-a
-R
-R
-a
-a
-a
-a
-a
+rp
+rp
+rp
+rp
+rp
+rp
+Uy
+Uy
+Uy
+Uy
+Uy
+sc
+DB
+eK
+vs
+DW
+Sf
+pT
+MA
+Aw
+pT
+fL
+pw
+ww
+vs
+Tl
+cz
+BY
+bB
+bB
+bB
+bB
+bB
+xg
+tf
 "}
 (29,1,1) = {"
-a
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-v
-H
-H
-H
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-R
-H
-a
-a
-a
-a
-a
-a
-a
-a
+rp
+rp
+rp
+rp
+rp
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+sc
+sc
+sc
+sc
+sc
+pW
+pT
+GS
+WK
+pT
+rE
+sj
+pT
+fL
+uc
+sc
+rp
+rp
+rp
+rp
+rp
+gn
+vY
+rp
 "}
 (30,1,1) = {"
-a
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-H
-H
-H
-H
-r
-a
-a
-a
+rp
+rp
+rp
+rp
+lX
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+Uy
+sc
+xL
+vs
+vs
+MH
+vs
+vs
+iH
+vs
+zx
+sW
+sc
+Uy
+Uy
+Uy
+Uy
+lX
+rp
+rp
+rp
 "}
 (31,1,1) = {"
-a
-a
-a
-a
-v
-v
-v
-v
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-v
-v
-a
-a
+rp
+rp
+rp
+rp
+lX
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+sc
+sc
+Ya
+Ya
+VG
+Ya
+Ya
+sc
+nX
+sc
+sc
+sc
+rQ
+rQ
+rQ
+rQ
+lX
+lX
+rp
+rp
 "}
 (32,1,1) = {"
-a
-a
-a
-a
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+rp
+rp
+rp
+lX
+rQ
+le
+XS
+yq
+SG
+SG
+SG
+Kn
+SG
+SG
+SG
+Kn
+Gh
+Gh
+og
+Gh
+Gh
+CC
+Gh
+SG
+SG
+Kn
+SG
+SG
+SG
+rQ
+lX
+lX
+lX
+rp
 "}
 (33,1,1) = {"
-a
-a
-a
-a
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+rp
+rp
+rp
+lX
+rQ
+LI
+Zg
+ET
+SG
+Vs
+Ij
+Ij
+VJ
+Ij
+Ij
+Ij
+VJ
+SG
+KH
+SG
+rL
+Ij
+Ij
+Ij
+Ij
+Ij
+Ij
+VJ
+SG
+rQ
+lX
+lX
+lX
+rp
 "}
 (34,1,1) = {"
-a
-a
-a
-v
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+rp
+rp
+lX
+lX
+rQ
+kf
+DA
+mw
+SG
+Ij
+Ds
+ap
+Jt
+Jt
+ap
+Mc
+Ij
+Qt
+CL
+tQ
+bU
+Gn
+oP
+HJ
+HJ
+YP
+OE
+Ij
+SG
+rQ
+lX
+lX
+lX
+rp
 "}
 (35,1,1) = {"
-a
-a
-v
-v
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+rp
+lX
+lX
+lX
+rQ
+eT
+Ov
+xl
+SG
+Mu
+ya
+Lh
+xa
+eI
+xY
+JV
+Ij
+SG
+KH
+SG
+bU
+yf
+sA
+yf
+Hz
+sA
+yj
+Ij
+SG
+rQ
+lX
+lX
+lX
+rp
 "}
 (36,1,1) = {"
-a
-v
-v
-v
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+lX
+lX
+lX
+lX
+rQ
+rQ
+rQ
+rQ
+SG
+Ij
+zX
+xa
+Ro
+RA
+xa
+ea
+Ij
+Ta
+KH
+Ox
+Ij
+KL
+OR
+tu
+yI
+tu
+Gz
+Ij
+SG
+rQ
+lX
+lX
+lX
+rp
 "}
 (37,1,1) = {"
-a
-v
-v
-v
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+rQ
+SG
+Ij
+zX
+xa
+yJ
+hz
+xa
+ea
+ag
+rQ
+KH
+rQ
+Rp
+ef
+Kg
+XB
+tu
+tu
+EO
+Sx
+SG
+rQ
+lX
+lX
+lX
+lX
 "}
 (38,1,1) = {"
-a
-v
-v
-H
-H
-H
-H
-H
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+lX
+lX
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+SG
+Ij
+ya
+eI
+NA
+YI
+BA
+JV
+Ij
+Ox
+KH
+SG
+Ij
+Nk
+rr
+Hz
+tu
+sA
+PV
+Vs
+Lp
+rQ
+lX
+lX
+lX
+lX
 "}
 (39,1,1) = {"
-a
-v
-v
-H
-a
-a
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+lX
+lX
+rQ
+Tn
+YJ
+tk
+zB
+aZ
+SG
+Ij
+ki
+TH
+Ty
+Ty
+TH
+Ol
+Ij
+SG
+KH
+SG
+Ij
+mc
+VC
+bE
+UO
+lH
+ph
+Ij
+SG
+rQ
+lX
+lX
+lX
+lX
 "}
 (40,1,1) = {"
-a
-v
-v
-H
-a
-a
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+lX
+lX
+rQ
+KU
+SG
+oQ
+SG
+aZ
+SG
+Bn
+Ij
+Ij
+Ij
+bW
+Ij
+Ij
+rL
+hC
+KH
+hC
+IY
+Ij
+aE
+Mx
+uN
+Ij
+Ij
+Bn
+SG
+rQ
+lX
+lX
+lX
+lX
 "}
 (41,1,1) = {"
-a
-v
-v
-H
-a
-a
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+lX
+lX
+rQ
+hG
+HQ
+oQ
+SG
+aZ
+SG
+rQ
+SG
+SG
+SG
+rQ
+Sy
+SG
+SG
+rQ
+KH
+rQ
+tQ
+dC
+tQ
+rQ
+tQ
+tQ
+SG
+rQ
+tQ
+rQ
+lX
+lX
+lX
+rp
 "}
 (42,1,1) = {"
-a
-v
-v
-H
-a
-a
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-a
-a
+rp
+lX
+lX
+rQ
+AT
+SG
+AY
+IO
+Sc
+IO
+Tm
+Ow
+Ow
+Ow
+Ow
+Zw
+Ow
+Ow
+Ow
+kG
+Ow
+zR
+Ow
+Zw
+Ow
+Ow
+zR
+zR
+gO
+bI
+rQ
+lX
+lX
+lX
+rp
 "}
 (43,1,1) = {"
-a
-v
-v
-H
-a
-a
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-a
-a
+rp
+lX
+lX
+rQ
+Ap
+SG
+SG
+SG
+aZ
+SG
+rQ
+lb
+Dh
+SG
+rQ
+tQ
+SG
+SG
+rQ
+KH
+ui
+SG
+tQ
+BP
+rQ
+SG
+SG
+tQ
+ui
+tQ
+rQ
+lX
+lX
+lX
+rp
 "}
 (44,1,1) = {"
-a
-v
-v
-H
-a
-a
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+lX
+lX
+rQ
+lZ
+Is
+tu
+Mv
+aZ
+SG
+te
+SG
+Ij
+Ij
+om
+Ij
+Vs
+Ij
+we
+KH
+Nl
+Ij
+aE
+Ij
+te
+Ij
+FE
+Ij
+HR
+tQ
+rQ
+lX
+lX
+rp
+rp
 "}
 (45,1,1) = {"
-a
-v
-v
-H
-H
-a
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+lX
+lX
+rQ
+rQ
+rQ
+Kc
+rQ
+rQ
+SG
+Ij
+SG
+Ij
+VM
+gu
+gu
+WQ
+Ij
+SG
+KH
+tQ
+Ij
+Yz
+es
+JL
+OS
+Ly
+LA
+Vs
+SG
+rQ
+lX
+lX
+lX
+rp
 "}
 (46,1,1) = {"
-a
-v
-v
-v
-H
-a
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-a
-a
+rp
+lX
+lX
+lX
+rQ
+wl
+tA
+IT
+rQ
+SG
+Ij
+tQ
+Ij
+Zu
+JY
+JY
+aG
+fb
+Ow
+ER
+tQ
+Ij
+Gb
+oc
+WH
+hf
+fU
+Go
+Ij
+SG
+rQ
+lX
+lX
+lX
+lX
 "}
 (47,1,1) = {"
-a
-v
-v
-v
-H
-a
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-a
-a
-a
+rp
+lX
+lX
+lX
+rQ
+HE
+tA
+tA
+rQ
+SG
+Vs
+SG
+LE
+Zu
+JY
+JY
+aG
+QS
+rQ
+KH
+ui
+HC
+kh
+uj
+dk
+oa
+NM
+up
+Ij
+SG
+rQ
+lX
+lX
+lX
+lX
 "}
 (48,1,1) = {"
-a
-v
-v
-v
-H
-a
-a
-a
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-a
-a
+rp
+lX
+lX
+lX
+rQ
+HE
+Cq
+Pl
+rQ
+SG
+Ij
+SG
+Ij
+BW
+si
+si
+Vk
+Vs
+pC
+KH
+tQ
+Ij
+Vu
+Va
+nH
+oc
+Je
+hA
+Ij
+SG
+rQ
+lX
+lX
+lX
+rp
 "}
 (49,1,1) = {"
-a
-v
-v
-v
-H
-H
-H
-H
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+lX
+lX
+lX
+ex
+ex
+ex
+ex
+rQ
+SG
+Ij
+SG
+Ij
+Ij
+Ij
+Ij
+Sa
+Ij
+tQ
+kM
+tQ
+Ij
+FH
+aN
+XP
+PA
+gQ
+Kt
+Ij
+tQ
+rQ
+lX
+lX
+lX
+rp
 "}
 (50,1,1) = {"
-a
-v
-v
-v
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-v
-a
+rp
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+rQ
+tQ
+Bn
+tQ
+SG
+SG
+SG
+SG
+SG
+tQ
+tQ
+qN
+SG
+Ij
+CU
+Lw
+bn
+dT
+dT
+ZQ
+Ij
+tQ
+rQ
+lX
+lX
+lX
+rp
 "}
 (51,1,1) = {"
-a
-v
-v
-v
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-a
-a
+rp
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+rQ
+SG
+rQ
+VV
+Ij
+Ij
+Ij
+Ij
+Vs
+xc
+rQ
+KH
+rQ
+Te
+Ij
+Ij
+Ij
+Ij
+Ij
+Ij
+Ij
+SG
+rQ
+lX
+lX
+rp
+rp
 "}
 (52,1,1) = {"
-a
-a
-v
-v
-v
-v
-v
-v
-H
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-H
-v
-v
-a
-a
+rp
+rp
+lX
+lX
+lX
+lX
+lX
+lX
+rQ
+SG
+SG
+SG
+SG
+SG
+tQ
+tQ
+tQ
+SG
+tQ
+tQ
+tQ
+SG
+SG
+SG
+lb
+SG
+SG
+SG
+SG
+SG
+rQ
+lX
+lX
+rp
+rp
 "}
 (53,1,1) = {"
-a
-a
-a
-v
-v
-v
-v
-v
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-H
-v
-v
-a
-a
+rp
+rp
+dO
+lX
+lX
+lX
+lX
+lX
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+Bb
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+rQ
+lX
+lX
+rp
+rp
 "}
 (54,1,1) = {"
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-a
-a
-a
+rp
+rp
+nQ
+dO
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+Pt
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+rp
+rp
+rp
 "}
 (55,1,1) = {"
-a
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-a
-a
-a
+rp
+rp
+GF
+nQ
+dr
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+Pt
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+rp
+rp
+rp
 "}
 (56,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-a
-a
-a
-v
-v
-v
-v
-v
-v
-a
-a
-a
-a
+GG
+GG
+GG
+RB
+nQ
+GF
+dO
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+iL
+zy
+lX
+lX
+lX
+lX
+lX
+rp
+rp
+rp
+lX
+lX
+lX
+lX
+lX
+lX
+rp
+rp
+GG
+GG
 "}
 (57,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+GG
+GG
+GG
+GG
+GG
+ik
+rp
+rp
+rp
+rp
+rp
+lX
+lX
+lX
+lX
+Pt
+lX
+lX
+lX
+lX
+lX
+lX
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+GG
+GG
+GG
 "}
 (58,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-v
-v
-v
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+GG
+GG
+GG
+GG
+GG
+dO
+rp
+rp
+rp
+rp
+rp
+rp
+lX
+lX
+lX
+Pt
+lX
+lX
+lX
+lX
+lX
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+GG
+GG
+GG
+GG
 "}
 (59,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-v
-v
-v
-v
-v
-v
-v
-v
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+GG
+GG
+GG
+GG
+GG
+GG
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+lX
+lX
+GG
+lX
+lX
+lX
+lX
+lX
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+GG
+GG
+GG
+GG
+GG
+GG
 "}
 (60,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+GG
+GG
+GG
+GG
+GG
+GG
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+rp
+GG
+GG
+GG
+GG
+GG
+GG
 "}
