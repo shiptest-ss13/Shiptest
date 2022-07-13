@@ -57,6 +57,7 @@
 #define DEPARTMENTAL_FLAG_SCIENCE (1<<3)
 #define DEPARTMENTAL_FLAG_ENGINEERING (1<<4)
 #define DEPARTMENTAL_FLAG_SERVICE (1<<5)
+#define DEPARTMENTAL_FLAG_BASIC (1<<6)//for making generalized, unassigned protolathes
 
 #define DESIGN_ID_IGNORE "IGNORE_THIS_DESIGN" ///For instances where we don't want a design showing up due to it being for debug/sanity purposes
 
@@ -77,11 +78,19 @@
 ///R&D point value for a maxcap bomb. Can be adjusted if need be. Current Value Cap Radius: 100
 #define TECHWEB_BOMB_POINTCAP 50000
 
-///Research point values for slime extracts, see: [/modules/research/xenobiology/xenobio_camera][xenobio_camera]
-#define SLIME_RESEARCH_TIER_0 100
-#define SLIME_RESEARCH_TIER_1 500
-#define SLIME_RESEARCH_TIER_2 1000
-#define SLIME_RESEARCH_TIER_3 1500
-#define SLIME_RESEARCH_TIER_4 2000
-#define SLIME_RESEARCH_TIER_5 2500
-#define SLIME_RESEARCH_TIER_RAINBOW 5000
+///Research point values for slime extracts, see the R&D console's attackby code
+#define SLIME_RESEARCH_TIER_0 500
+#define SLIME_RESEARCH_TIER_1 1500
+#define SLIME_RESEARCH_TIER_2 3000
+#define SLIME_RESEARCH_TIER_3 6000
+#define SLIME_RESEARCH_TIER_4 9000
+#define SLIME_RESEARCH_TIER_5 15000
+#define SLIME_RESEARCH_TIER_RAINBOW 20000
+
+///Research point values for plant discoveries
+#define PLANT_RESEARCH_TIER_0 500
+#define PLANT_RESEARCH_TIER_1 1000
+#define PLANT_RESEARCH_TIER_2 2000
+#define PLANT_RESEARCH_TIER_3 4000
+#define PLANT_RESEARCH_TIER_4 8000
+#define PLANT_RESEARCH_TIER_5 16000
