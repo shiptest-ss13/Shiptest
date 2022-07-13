@@ -13,9 +13,6 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	baseturfs = /turf/open/floor/plating/dirt
-	//light_range = 2
-	//light_power = 0.6
-	//light_color = COLOR_VERY_LIGHT_GRAY
 
 /turf/open/floor/plating/dirt/dark
 	icon_state = "greenerdirt"
@@ -69,20 +66,6 @@
 	base_icon_state = "junglegrass"
 	baseturfs = /turf/open/floor/plating/dirt/jungle
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
-
-/turf/closed/mineral/random/jungle
-	name = "mountain wall"
-	icon = 'icons/turf/walls/jungle_wall.dmi'
-	smooth_icon = 'icons/turf/walls/jungle_wall.dmi'
-	icon_state = "jungle_wall-0"
-	base_icon_state = "jungle_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
-	turf_type = /turf/open/floor/plating/dirt/jungle
-	baseturfs = /turf/open/floor/plating/dirt/jungle
-	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10,
-		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 11,
-		/obj/item/stack/ore/bluespace_crystal = 1)
 
 /turf/open/floor/plating/grass/jungle/lit
 	baseturfs = /turf/open/floor/plating/dirt/jungle/lit
