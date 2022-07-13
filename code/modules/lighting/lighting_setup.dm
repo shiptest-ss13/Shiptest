@@ -1,6 +1,7 @@
 /proc/create_all_lighting_objects()
 	for(var/turf/T in world)
-		if(IS_DYNAMIC_LIGHTING(T) && IS_DYNAMIC_LIGHTING(T.loc))
+		var/area/A = T.loc
+		if(IS_DYNAMIC_LIGHTING(T) && IS_DYNAMIC_LIGHTING(A))
 			new/atom/movable/lighting_object(T)
 
 		// Initial starlight updates used to be done in lighting_object initialize,
