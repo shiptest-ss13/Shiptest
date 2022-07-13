@@ -9,5 +9,9 @@
 				continue
 
 			new/atom/movable/lighting_object(T)
+			// Initial starlight updates used to be done in lighting_object initialize,
+			// but doing them here means ChangeTurf doesn't occasionally recalculate starlight twice.
+			for(var/turf/open/space/S in RANGE_TURFS(1, T))
+				S.update_starlight()
 			CHECK_TICK
 		CHECK_TICK
