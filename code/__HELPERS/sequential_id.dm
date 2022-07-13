@@ -35,10 +35,10 @@
 	Free the previously used sequential number for vent/scrubber so it can be used again
 */
 /proc/deallocate_nameid(list/names, id_tag)
-    var/i = names.Find(id_tag)
-    if (i == 0)
-        // name for this tag was never allocated
-        return FALSE
-    // erase id_tag value
-    names[i] = null
-    return TRUE
+	var/i = names.Find(id_tag)
+	if (i == 0)
+		// name for this tag was never allocated
+		return FALSE
+	// erase id_tag value
+	names[i] = null
+	return TRUE
