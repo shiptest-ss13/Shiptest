@@ -2,60 +2,6 @@
 //////////////////Power/////////////////
 ////////////////////////////////////////
 
-/datum/design/basic_cell
-	name = "Basic Power Cell"
-	desc = "A basic power cell that holds 1 MJ of energy."
-	id = "basic_cell"
-	build_type = PROTOLATHE | AUTOLATHE |MECHFAB
-	materials = list(/datum/material/iron = 700, /datum/material/glass = 50)
-	construction_time=100
-	build_path = /obj/item/stock_parts/cell/empty
-	category = list("Misc","Power Designs","Machinery","initial")
-
-/datum/design/high_cell
-	name = "High-Capacity Power Cell"
-	desc = "A power cell that holds 10 MJ of energy."
-	id = "high_cell"
-	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 700, /datum/material/glass = 60)
-	construction_time=100
-	build_path = /obj/item/stock_parts/cell/high/empty
-	category = list("Misc","Power Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
-
-/datum/design/super_cell
-	name = "Super-Capacity Power Cell"
-	desc = "A power cell that holds 20 MJ of energy."
-	id = "super_cell"
-	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 700, /datum/material/glass = 70)
-	construction_time=100
-	build_path = /obj/item/stock_parts/cell/super/empty
-	category = list("Misc","Power Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
-
-/datum/design/hyper_cell
-	name = "Hyper-Capacity Power Cell"
-	desc = "A power cell that holds 30 MJ of energy."
-	id = "hyper_cell"
-	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 700, /datum/material/gold = 150, /datum/material/silver = 150, /datum/material/glass = 80)
-	construction_time=100
-	build_path = /obj/item/stock_parts/cell/hyper/empty
-	category = list("Misc","Power Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
-
-/datum/design/bluespace_cell
-	name = "Bluespace Power Cell"
-	desc = "A power cell that holds 40 MJ of energy."
-	id = "bluespace_cell"
-	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 800, /datum/material/gold = 120, /datum/material/glass = 160, /datum/material/diamond = 160, /datum/material/titanium = 300, /datum/material/bluespace = 100)
-	construction_time=100
-	build_path = /obj/item/stock_parts/cell/bluespace/empty
-	category = list("Misc","Power Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
-
 /datum/design/light_replacer
 	name = "Light Replacer"
 	desc = "A device to automatically replace lights. Refill with working light bulbs."

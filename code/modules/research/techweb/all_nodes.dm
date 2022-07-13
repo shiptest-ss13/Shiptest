@@ -8,8 +8,6 @@
 	display_name = "Basic Research Technology"
 	description = "NT default research technologies."
 	design_ids = list(
-		// Basic Parts
-		"basic_matter_bin", "basic_cell", "basic_scanning", "basic_capacitor", "basic_micro_laser", "micro_mani",
 		// Cargo Stuff
 		"c-reader", "desttagger", "salestagger", "handlabel", "packagewrap",
 		// Research Stuff
@@ -156,8 +154,8 @@
 	display_name = "Industrial Engineering"
 	description = "A refresher course on modern engineering technology."
 	prereq_ids = list("base")
-	design_ids = list("solarcontrol", "solarassembly", "recharger", "powermonitor", "rped", "pacman", "adv_capacitor", "adv_scanning", "emitter", "high_cell", "adv_matter_bin", "scanner_gate",
-	"atmosalerts", "atmos_control", "recycler", "autolathe", "high_micro_laser", "nano_mani", "mesons", "welding_goggles", "thermomachine", "rad_collector", "tesla_coil", "grounding_rod",
+	design_ids = list("solarcontrol", "solarassembly", "recharger", "powermonitor", "rped", "pacman", "emitter", "scanner_gate",
+	"atmosalerts", "atmos_control", "recycler", "autolathe", "mesons", "welding_goggles", "thermomachine", "rad_collector", "tesla_coil", "grounding_rod",
 	"apc_control", "cell_charger", "power control", "airlock_board", "firelock_board", "aac_electronics", "airalarm_electronics", "firealarm_electronics", "cell_charger", "stack_console", "stack_machine",
 	"oxygen_tank", "plasma_tank", "emergency_oxygen", "emergency_oxygen_engi", "plasmaman_tank_belt", "pneumatic_seal", "shieldwallgen", "shieldwallgen_atmos") //WS edit, solar assemblies from lathe
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
@@ -186,7 +184,6 @@
 	display_name = "High Efficiency Parts"
 	description = "Finely-tooled manufacturing techniques allowing for picometer-perfect precision levels."
 	prereq_ids = list("engineering", "datatheory")
-	design_ids = list("pico_mani", "super_matter_bin")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	export_price = 5000
 
@@ -195,7 +192,7 @@
 	display_name = "Advanced Power Manipulation"
 	description = "How to get more zap."
 	prereq_ids = list("engineering")
-	design_ids = list("smes", "super_cell", "hyper_cell", "super_capacitor", "superpacman", "mrspacman", "power_turbine", "power_turbine_console", "power_compressor", "circulator", "teg")
+	design_ids = list("smes", "superpacman", "mrspacman", "power_turbine", "power_turbine_console", "power_compressor", "circulator", "teg")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -223,7 +220,7 @@
 	display_name = "Miniaturized Bluespace Research"
 	description = "Extreme reduction in space required for bluespace engines, leading to portable bluespace technology."
 	prereq_ids = list("bluespace_travel", "practical_bluespace", "high_efficiency")
-	design_ids = list("bluespace_matter_bin", "femto_mani", "bluespacebodybag", "triphasic_scanning", "quantum_keycard", "wormholeprojector", "swapper")
+	design_ids = list("bluespacebodybag", "quantum_keycard", "wormholeprojector", "swapper")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
@@ -241,7 +238,7 @@
 	display_name = "Applied Bluespace Research"
 	description = "Using bluespace to make things faster and better."
 	prereq_ids = list("bluespace_basic", "engineering")
-	design_ids = list("bs_rped","minerbag_holding", "bluespacebeaker", "bluespacesyringe", "phasic_scanning", "roastingstick", "ore_silo")
+	design_ids = list("bs_rped","minerbag_holding", "bluespacebeaker", "bluespacesyringe", "roastingstick", "ore_silo")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
@@ -250,7 +247,6 @@
 	display_name = "Bluespace Power Technology"
 	description = "Even more powerful.. power!"
 	prereq_ids = list("adv_power", "practical_bluespace")
-	design_ids = list("bluespace_cell", "quadratic_capacitor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
