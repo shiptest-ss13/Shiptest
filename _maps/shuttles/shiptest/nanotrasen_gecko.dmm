@@ -1314,8 +1314,7 @@
 "ok" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/radiation,
-/obj/effect/turf_decal/radiation,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "on" = (
@@ -2177,7 +2176,6 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
 	dir = 10
 	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yd" = (
@@ -3854,7 +3852,7 @@
 /area/ship/external)
 "OZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/reagent_dispensers/watertank,
+/obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Pc" = (
