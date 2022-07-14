@@ -126,3 +126,8 @@
 	description = "An overgrown crashed Condor Class, a forgotten remnant of the Corporate Wars."
 	suffix = "jungle_interceptor.dmm"
 
+/datum/map_template/ruin/jungle/hostel
+	id = "jungle_hostel-ruin"
+	suffix = "jungle_hostel.dmm"
+	name = "Adbandoned Hostel"
+	description = "A long abandoned hostel reclaimed by the local mutated plantlife."
