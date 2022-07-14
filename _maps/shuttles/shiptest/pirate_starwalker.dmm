@@ -112,6 +112,11 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/item/storage/box/ingredients/vegetarian,
+/obj/item/storage/box/ingredients/carnivore{
+	pixel_x = -4;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "bN" = (
@@ -2241,8 +2246,8 @@
 	icon_state = "2-10"
 	},
 /obj/item/gun/magic/hook/pirate,
-/obj/item/gun/ballistic/shotgun/doublebarrel,
-/obj/item/gun/ballistic/shotgun/doublebarrel,
+/obj/item/gun/ballistic/shotgun/lethal,
+/obj/item/gun/ballistic/shotgun/lethal,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "Gr" = (
