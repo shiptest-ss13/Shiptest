@@ -811,9 +811,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "is" = (
@@ -821,16 +818,17 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "iw" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
-/area/ship/engineering/engine)
+/area/ship/engineering/incinerator)
 "ix" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 4
@@ -1315,8 +1313,9 @@
 /area/ship/engineering/engine)
 "ok" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/radiation,
+/obj/effect/turf_decal/radiation,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "on" = (
@@ -1820,12 +1819,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/power/apc/auto_name/west,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/machinery/light/small,
 /turf/open/floor/plating,
-/area/ship/engineering/incinerator)
+/area/ship/engineering/engine)
 "tH" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
@@ -2058,6 +2054,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "wB" = (
@@ -2178,6 +2177,7 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
 	dir = 10
 	},
+/obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yd" = (
@@ -2663,9 +2663,6 @@
 "Ds" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Dv" = (
@@ -3335,6 +3332,9 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Jb" = (
@@ -3354,6 +3354,9 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Jk" = (
@@ -3850,8 +3853,8 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external)
 "OZ" = (
-/obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Pc" = (
@@ -4112,13 +4115,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Si" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/fire{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4936,9 +4933,6 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "YA" = (
@@ -5081,9 +5075,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "ZS" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/disposal/bin,
 /obj/item/weldingtool,
@@ -5171,7 +5162,7 @@ hu
 Ug
 Ug
 Ea
-Ic
+Ug
 Ic
 zw
 ix
@@ -5229,7 +5220,7 @@ Ug
 OZ
 Ml
 Tb
-Si
+Tb
 ZS
 WN
 Sv
@@ -5292,7 +5283,7 @@ on
 cy
 UP
 hX
-Cj
+Si
 SQ
 QD
 kL
@@ -5316,12 +5307,12 @@ Ug
 hq
 on
 Ga
-ZF
+on
 on
 wY
 xN
 FZ
-on
+ZF
 on
 Fq
 on
