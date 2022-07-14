@@ -59,11 +59,11 @@
 
 	/area/ruin/jungle/hostel/sidebuilding
 	name = "Hostel Side Building"
-	icon_state = "yellow"
+	icon_state = "blue"
 	needs_power = FALSE
 
 	/area/ruin/jungle/hostel/shed
-	name = "Hostel Side Building"
+	name = "Shed"
 	icon_state = "green"
 	needs_power = FALSE
 
