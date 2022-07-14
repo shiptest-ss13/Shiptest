@@ -35,6 +35,7 @@
 
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()
+	air_update_turf(1)
 	CalculateAffectingAreas()
 
 /obj/machinery/door/firedoor/examine(mob/user)
@@ -70,6 +71,7 @@
 
 /obj/machinery/door/firedoor/Destroy()
 	remove_from_areas()
+	air_update_turf(1)
 	affecting_areas.Cut()
 	return ..()
 
