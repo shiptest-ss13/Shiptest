@@ -55,19 +55,19 @@
 /area/ruin/jungle/hostel/mainbuilding
 	name = "Hostel Main Building"
 	icon_state = "yellow"
-	needs_power = FALSE
+	always_unpowered = FALSE
 
-	/area/ruin/jungle/hostel/sidebuilding
+/area/ruin/jungle/hostel/sidebuilding
 	name = "Hostel Side Building"
 	icon_state = "blue"
-	needs_power = FALSE
+	always_unpowered = FALSE
 
-	/area/ruin/jungle/hostel/shed
+/area/ruin/jungle/hostel/shed
 	name = "Shed"
 	icon_state = "green"
-	needs_power = FALSE
+	always_unpowered = FALSE
 
-	/area/ruin/jungle/hostel/clearing
+/area/ruin/jungle/hostel/clearing
 	name = "Clearing"
 	icon_state = "red"
 	always_unpowered = TRUE
