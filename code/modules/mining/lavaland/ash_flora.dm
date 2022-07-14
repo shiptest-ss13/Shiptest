@@ -317,6 +317,7 @@
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	growthstages = 2
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.04, /datum/reagent/consumable/vitfro = 0.08)
+	research = PLANT_RESEARCH_TIER_1
 
 /obj/item/seeds/lavaland/polypore
 	name = "pack of polypore mycelium"
@@ -328,6 +329,7 @@
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	reagents_add = list(/datum/reagent/consumable/sugar = 0.06, /datum/reagent/consumable/ethanol = 0.04, /datum/reagent/stabilizing_agent = 0.06, /datum/reagent/toxin/minttoxin = 0.02)
+	research = PLANT_RESEARCH_TIER_1
 
 /obj/item/seeds/lavaland/porcini
 	name = "pack of porcini mycelium"
@@ -339,7 +341,7 @@
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.06, /datum/reagent/consumable/vitfro = 0.04, /datum/reagent/drug/nicotine = 0.04)
-
+	research = PLANT_RESEARCH_TIER_1
 
 /obj/item/seeds/lavaland/inocybe
 	name = "pack of inocybe mycelium"
@@ -351,6 +353,7 @@
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	reagents_add = list(/datum/reagent/toxin/mindbreaker = 0.04, /datum/reagent/consumable/entpoly = 0.08, /datum/reagent/drug/mushroomhallucinogen = 0.04)
+	research = PLANT_RESEARCH_TIER_1
 
 /obj/item/seeds/lavaland/ember
 	name = "pack of embershroom mycelium"
@@ -362,6 +365,7 @@
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/glow, /datum/plant_gene/trait/fire_resistance)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	reagents_add = list(/datum/reagent/consumable/tinlux = 0.04, /datum/reagent/consumable/nutriment/vitamin = 0.02, /datum/reagent/drug/space_drugs = 0.02)
+	research = PLANT_RESEARCH_TIER_1
 
 /obj/item/seeds/lavaland/whitesands
 	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
@@ -379,6 +383,7 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fern
 	genes = list(/datum/plant_gene/trait/fire_resistance, /datum/plant_gene/trait/plant_type/weed_hardy)
 	reagents_add = list(/datum/reagent/ash_fibers = 0.10)
+	research = PLANT_RESEARCH_TIER_1
 
 /obj/item/seeds/lavaland/whitesands/fern/Initialize(mapload,nogenes)
 	. = ..()
@@ -395,6 +400,7 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fireblossom
 	genes = list(/datum/plant_gene/trait/fire_resistance, /datum/plant_gene/trait/glow/yellow)
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.03, /datum/reagent/carbon = 0.05, /datum/reagent/consumable/pyre_elementum = 0.08)
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/seeds/lavaland/whitesands/puce
 	name = "puce cluster"
@@ -406,6 +412,7 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/puce
 	genes = list(/datum/plant_gene/trait/plant_type/crystal)
 	reagents_add = list(/datum/reagent/medicine/puce_essence = 0.10)
+	research = PLANT_RESEARCH_TIER_3
 
 /obj/item/seeds/lavaland/whitesands/puce/Initialize(mapload,nogenes)
 	. = ..()

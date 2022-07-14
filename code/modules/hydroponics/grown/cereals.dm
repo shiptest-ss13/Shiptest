@@ -35,6 +35,7 @@
 	plantname = "Oat Stalks"
 	product = /obj/item/reagent_containers/food/snacks/grown/oat
 	mutatelist = list()
+	research = PLANT_RESEARCH_TIER_0
 
 /obj/item/reagent_containers/food/snacks/grown/oat
 	seed = /obj/item/seeds/wheat/oat
@@ -82,6 +83,7 @@
 	plantname = "Meatwheat"
 	product = /obj/item/reagent_containers/food/snacks/grown/meatwheat
 	mutatelist = list()
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/meatwheat
 	name = "meatwheat"
