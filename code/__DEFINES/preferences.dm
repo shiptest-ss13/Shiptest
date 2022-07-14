@@ -121,3 +121,6 @@
 #define RANDOM_FACIAL_HAIRSTYLE "random_facial_hairstyle"
 #define RANDOM_SKIN_TONE "random_skin_tone"
 #define RANDOM_EYE_COLOR "random_eye_color"
+#define RANDOM_HAIR_GRADIENT_STYLE "random_grad_style"
+#define RANDOM_HAIR_GRADIENT_COLOR "random_grad_color"
+
