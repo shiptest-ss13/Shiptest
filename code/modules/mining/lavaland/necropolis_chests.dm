@@ -547,7 +547,7 @@
 
 /obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
 	..()
-	user.changeNext_move(CLICK_CD_MELEE)//quick to swing. 15 force can be quite something with this attack frequency.
+	user.changeNext_move(CLICK_CD_MELEE)
 
 //Immortality Talisman: Now with state-of-the-art panic button technology
 /obj/item/immortality_talisman
