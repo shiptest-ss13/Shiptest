@@ -74,10 +74,10 @@
 		return NO_REACTION
 	if (air.return_temperature() <= WATER_VAPOR_FREEZE)
 		if(location && location.freon_gas_act())
-			return = REACTING
+			return REACTING
 	else if(location && location.water_vapor_gas_act())
 		air.adjust_moles(GAS_H2O, -MOLES_GAS_VISIBLE)
-		return = REACTING
+		return REACTING
 
 // no test cause it's entirely based on location
 
