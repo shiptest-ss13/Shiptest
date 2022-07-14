@@ -116,7 +116,7 @@
 	priority = -1 //fire should ALWAYS be last, but tritium fires happen before plasma fires
 	name = "Tritium Combustion"
 	id = "tritfire"
-	exclude = TRIE
+	exclude = TRUE
 
 /datum/gas_reaction/tritfire/init_reqs()
 	min_requirements = list(
@@ -197,7 +197,7 @@
 	priority = -2 //fire should ALWAYS be last, but plasma fires happen after tritium fires
 	name = "Plasma Combustion"
 	id = "plasmafire"
-	exclude = FALSE
+	exclude = TRUE
 
 /datum/gas_reaction/plasmafire/init_reqs()
 	min_requirements = list(
