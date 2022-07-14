@@ -34,6 +34,7 @@
 
 /datum/outfit/job/bartender/syndicate
 	id = /obj/item/card/id/syndicate_command/crew_id
+	head = obj/item/clothing/head/HoS/beret/syndicate
 
 /datum/outfit/job/bartender/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()

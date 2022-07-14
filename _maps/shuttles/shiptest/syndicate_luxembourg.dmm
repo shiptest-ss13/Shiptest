@@ -10,6 +10,10 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
+"aM" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/dorm)
 "ba" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
@@ -145,10 +149,6 @@
 /obj/effect/turf_decal/trimline/blue/filled/warning,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"dQ" = (
-/obj/machinery/washing_machine,
-/turf/open/floor/plasteel/patterned,
-/area/ship/crew/dorm)
 "ea" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
@@ -197,16 +197,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"ev" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/carpet/red_gold,
-/area/ship/crew/dorm)
 "ez" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -365,14 +355,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
-"iR" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/plasteel/patterned,
-/area/ship/crew/dorm)
 "ji" = (
 /obj/machinery/light{
 	dir = 4
@@ -400,6 +382,16 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage)
+"jp" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/carpet/red_gold,
+/area/ship/crew/dorm)
 "jr" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
@@ -603,6 +595,17 @@
 /obj/item/grenade/c4,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
+"mQ" = (
+/obj/structure/table,
+/obj/item/lighter/greyscale{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate{
+	pixel_x = 6
+	},
+/turf/open/floor/carpet/red_gold,
+/area/ship/crew/dorm)
 "mS" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -699,6 +702,15 @@
 /obj/structure/catwalk/over/plated_catwalk/white,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"oC" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/trimline/orange/filled/warning,
+/turf/open/floor/plasteel/patterned,
+/area/ship/crew/dorm)
 "oH" = (
 /obj/machinery/light,
 /obj/item/banner/cargo,
@@ -707,6 +719,24 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
+"oJ" = (
+/obj/item/toy/figure/cargotech,
+/obj/item/clothing/suit/hooded/wintercoat/cargo,
+/obj/item/stack/sheet/cardboard/fifty,
+/obj/item/hand_labeler,
+/obj/item/hand_labeler_refill,
+/obj/item/clothing/under/syndicate/donk,
+/obj/item/clothing/suit/hazardvest/donk,
+/obj/structure/closet/wall/orange{
+	dir = 4;
+	name = "Employee's Locker";
+	pixel_x = -32
+	},
+/obj/item/stack/wrapping_paper,
+/obj/item/stack/packageWrap,
+/obj/structure/railing,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/engineering)
 "oW" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -813,17 +843,6 @@
 /obj/effect/turf_decal/trimline/blue/filled/warning,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"qz" = (
-/obj/structure/table,
-/obj/item/lighter/greyscale{
-	pixel_x = -3;
-	pixel_y = 4
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_syndicate{
-	pixel_x = 6
-	},
-/turf/open/floor/carpet/red_gold,
-/area/ship/crew/dorm)
 "qI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -871,9 +890,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
-"rE" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
 "rQ" = (
 /obj/machinery/light{
@@ -976,14 +992,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
-"tT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/autodrobe/all_access{
-	default_price = 0;
-	extra_price = 0
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/dorm)
 "ua" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
@@ -1025,6 +1033,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
+"uH" = (
+/obj/machinery/washing_machine,
+/turf/open/floor/plasteel/patterned,
+/area/ship/crew/dorm)
 "uK" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/toxin_input{
 	dir = 8
@@ -1045,15 +1057,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage)
-"uY" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/trimline/orange/filled/warning,
-/turf/open/floor/plasteel/patterned,
-/area/ship/crew/dorm)
+"vl" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hallway/central)
 "vn" = (
 /obj/structure/table,
 /obj/item/radio/intercom/wideband,
@@ -1251,17 +1257,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"yQ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/carpet/red_gold,
-/area/ship/crew/dorm)
 "yW" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1362,10 +1357,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"AA" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/dorm)
 "AE" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
@@ -1447,7 +1438,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage)
-"BE" = (
+"BJ" = (
 /obj/effect/turf_decal/siding/blue{
 	dir = 8
 	},
@@ -1489,6 +1480,14 @@
 /obj/effect/turf_decal/siding/red,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
+"DN" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/plasteel/patterned,
+/area/ship/crew/dorm)
 "Ec" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1580,24 +1579,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
-"FJ" = (
-/obj/item/toy/figure/cargotech,
-/obj/item/clothing/suit/hooded/wintercoat/cargo,
-/obj/item/stack/sheet/cardboard/fifty,
-/obj/item/hand_labeler,
-/obj/item/hand_labeler_refill,
-/obj/item/clothing/under/syndicate/donk,
-/obj/item/clothing/suit/hazardvest/donk,
-/obj/structure/closet/wall/orange{
-	dir = 4;
-	name = "Employee's Locker";
-	pixel_x = -32
-	},
-/obj/item/stack/wrapping_paper,
-/obj/item/stack/packageWrap,
-/obj/structure/railing,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering)
 "Gj" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1903,6 +1884,14 @@
 /obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
+"Mg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/autodrobe/all_access{
+	default_price = 0;
+	extra_price = 0
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "MS" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2158,6 +2147,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"RP" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/red_gold,
+/area/ship/crew/dorm)
 "RQ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/eastright,
@@ -2170,7 +2170,9 @@
 "RU" = (
 /obj/item/card/emag,
 /obj/item/tank/internals/emergency_oxygen/double,
-/obj/item/storage/backpack/duffelbag/syndie,
+/obj/item/storage/backpack/duffelbag/syndie{
+	name = "manager's duffel bag"
+	},
 /obj/structure/closet/wall/blue{
 	dir = 4;
 	name = "Manager's Locker";
@@ -2716,8 +2718,8 @@ Nr
 Nr
 Nr
 Nr
-rE
-rE
+vl
+vl
 nL
 fw
 QD
@@ -2745,7 +2747,7 @@ hd
 Nr
 OE
 OE
-rE
+vl
 JN
 nE
 tO
@@ -2784,12 +2786,12 @@ xO
 xO
 EY
 PP
-BE
+BJ
 vp
 RU
 jC
 PD
-FJ
+oJ
 ua
 pR
 lq
@@ -2861,7 +2863,7 @@ Er
 Nr
 OE
 OE
-rE
+vl
 db
 nW
 Lj
@@ -2890,8 +2892,8 @@ Nr
 Nr
 Nr
 Nr
-rE
-rE
+vl
+vl
 tR
 Fn
 ez
@@ -2934,8 +2936,8 @@ fN
 nk
 Lo
 dv
-iR
-uY
+DN
+oC
 oW
 VU
 Ec
@@ -2962,8 +2964,8 @@ zZ
 Eq
 MS
 Om
-AA
-dQ
+aM
+uH
 vT
 vp
 uK
@@ -2986,11 +2988,11 @@ GK
 ej
 mS
 bp
-ev
-yQ
+jp
+RP
 yW
 KB
-tT
+Mg
 EO
 AM
 EO
@@ -3017,7 +3019,7 @@ EH
 Xh
 NC
 gH
-qz
+mQ
 EO
 AM
 EO
