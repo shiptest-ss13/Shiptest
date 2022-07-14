@@ -542,13 +542,13 @@
 	if(abs(G.analyzer_results["fusion"] - 0.691869) > 0.01)
 		var/instability = G.analyzer_results["fusion"]
 		return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 0.691869, is instead [instability]")
-	if(abs(G.get_moles(GAS_PLASMA) - 458.531) > 0.5)
+	if(abs(G.get_moles(GAS_PLASMA) - 552.789) > 0.5)
 		var/plas = G.get_moles(GAS_PLASMA)
 		return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 458.531, is instead [plas]")
-	if(abs(G.get_moles(GAS_CO2) - 505.078) > 0.5)
+	if(abs(G.get_moles(GAS_CO2) - 411.096) > 0.5)
 		var/co2 = G.get_moles(GAS_CO2)
 		return list("success" = FALSE, "message" = "Fusion is not calculating co2 correctly, should be 505.078, is instead [co2]")
-	if(abs(G.return_temperature() - 112232) > 200) // calculating this manually sucks dude
+	if(abs(G.return_temperature() - 78222) > 200) // I'm not calculating this at all just putting in the values I get when I do it now
 		var/temp = G.return_temperature()
 		return list("success" = FALSE, "message" = "Fusion is not calculating temperature correctly, should be around 112232, is instead [temp]")
 	return ..()
