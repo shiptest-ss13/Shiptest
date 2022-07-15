@@ -22,6 +22,8 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
+	var/list/holodeck_templates = list()
+
 	var/list/areas_in_z = list()
 
 	var/loading_ruins = FALSE
@@ -89,6 +91,7 @@ SUBSYSTEM_DEF(mapping)
 	ice_ruins_templates = SSmapping.ice_ruins_templates
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
+	holodeck_templates = SSmapping.holodeck_templates
 
 	z_list = SSmapping.z_list
 
@@ -109,6 +112,7 @@ SUBSYSTEM_DEF(mapping)
 	preloadShuttleTemplates()
 	load_ship_templates()
 	preloadShelterTemplates()
+	preloadHolodeckTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
 	// Still supporting bans by filename
@@ -254,10 +258,25 @@ SUBSYSTEM_DEF(mapping)
 		var/area/A = B
 		A.reg_in_areas_in_z()
 
+
 /// Creates basic physical levels so we dont have to do that during runtime every time, nothing bad will happen if this wont run, as allocation will handle adding new levels
 /datum/controller/subsystem/mapping/proc/init_reserved_levels()
 	add_new_zlevel("Free Allocation Level", allocation_type = ALLOCATION_FREE)
 	add_new_zlevel("Quadrant Allocation Level", allocation_type = ALLOCATION_QUADRANT)
+
+/datum/controller/subsystem/mapping/proc/preloadHolodeckTemplates()
+	for(var/item in subtypesof(/datum/map_template/holodeck))
+		var/datum/map_template/holodeck/holodeck_type = item
+		if(!(initial(holodeck_type.mappath)))
+			continue
+		var/datum/map_template/holodeck/holo_template = new holodeck_type()
+
+		holodeck_templates[holo_template.template_id] = holo_template
+		map_templates[holo_template.template_id] = holo_template
+
+//////////////////
+// RESERVATIONS //
+//////////////////
 
 
 /datum/controller/subsystem/mapping/proc/safety_clear_transit_dock(obj/docking_port/stationary/transit/T, obj/docking_port/mobile/M, list/returning)
