@@ -21,8 +21,10 @@
 	var/failed = FALSE
 	var/dur_timer
 
-	// document this
-	var/list/atom/bound_atoms
+	/// Assoc list of atoms "bound" to this mission; each atom is associated with a 2-element list. The first
+	/// entry in that list is a bool that determines if the mission should fail when the atom qdeletes; the second
+	/// is a callback to be invoked upon the atom's qdeletion.
+	var/list/atom/movable/bound_atoms
 
 /datum/mission/New(_outpost)
 	var/old_dur = duration
@@ -48,7 +50,6 @@
 	qdel(src)
 
 /datum/mission/Destroy()
-	deltimer(dur_timer)
 	LAZYREMOVE(source_outpost.missions, src)
 	source_outpost = null
 	if(servant)
@@ -56,6 +57,7 @@
 		servant = null
 	for(var/bound in bound_atoms)
 		remove_bound(bound)
+	dur_timer = null
 	return ..()
 
 /datum/mission/proc/turn_in()
@@ -92,22 +94,46 @@
 /datum/mission/proc/get_progress_string()
 	return "null"
 
-// document these
-/datum/mission/proc/spawn_bound(atom/a_type, turf/a_loc, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
-	var/atom/bound = new a_type(a_loc)
+/**
+  * Spawns a "bound" atom of the given type at the given location. When the "bound" atom
+  * is qdeleted, the passed-in callback is invoked, and, by default, the mission fails.
+  *
+  * Intended to be used to spawn mission-linked atoms that can have
+  * references saved without causing harddels.
+  *
+  * Arguments:
+  * * a_type - The type of the atom to be spawned. Must be of type /atom/movable.
+  * * a_loc - The location to spawn the bound atom at.
+  * * destroy_cb - The callback to invoke when the bound atom is qdeleted. Default is null.
+  * * fail_on_delete - Bool; whether the mission should fail when the bound atom is qdeleted. Default TRUE.
+  * * sparks - Whether to spawn sparks after spawning the bound atom. Default TRUE.
+  */
+/datum/mission/proc/spawn_bound(atom/movable/a_type, a_loc, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
+	if(!istype(a_type))
+		CRASH("[src] attempted to spawn bound atom of invalid type [a_type]!")
+	var/atom/movable/bound = new a_type(a_loc)
 	if(sparks)
-		do_sparks(3, FALSE, a_loc)
+		do_sparks(3, FALSE, get_turf(bound))
 	LAZYSET(bound_atoms, bound, list(fail_on_delete, destroy_cb))
 	RegisterSignal(bound, COMSIG_PARENT_QDELETING, .proc/bound_deleted)
 	return bound
 
-/datum/mission/proc/recall_bound(atom/bound, sparks = TRUE)
+/**
+  * Removes the given atom from the mission's bound items, then qdeletes it.
+  * Does not invoke the callback or fail the mission; optionally creates sparks.
+  *
+  * Arguments:
+  * * bound - The bound atom to recall.
+  * * sparks - Whether to spawn sparks on the turf the bound atom is located on. Default TRUE.
+  */
+/datum/mission/proc/recall_bound(atom/movable/bound, sparks = TRUE)
 	if(sparks)
 		do_sparks(3, FALSE, get_turf(bound))
 	remove_bound(bound)
 	qdel(bound)
 
-/datum/mission/proc/bound_deleted(atom/bound, force)
+/// Signal handler for the qdeletion of bound atoms.
+/datum/mission/proc/bound_deleted(atom/movable/bound, force)
 	SIGNAL_HANDLER
 	var/list/bound_info = bound_atoms[bound]
 	// first value in bound_info is whether to fail on item destruction
@@ -118,7 +144,14 @@
 		CB.Invoke()
 	remove_bound(bound)
 
-/datum/mission/proc/remove_bound(atom/bound)
+/**
+  * Removes the given bound atom from the list of bound atoms.
+  * Does not invoke the associated callback or fail the mission.
+  *
+  * Arguments:
+  * * bound - The bound atom to remove.
+  */
+/datum/mission/proc/remove_bound(atom/movable/bound)
 	UnregisterSignal(bound, COMSIG_PARENT_QDELETING)
 	// delete the callback
 	qdel(LAZYACCESSASSOC(bound_atoms, bound, 2))

@@ -9,13 +9,12 @@
 	/// List of missions that can be accepted at this outpost.
 	var/list/datum/mission/missions
 	var/max_missions = 15
-	var/mission_regen_timer
 
 /datum/overmap/outpost/Initialize(...)
 	. = ..()
 	Rename(gen_outpost_name())
 	fill_missions()
-	mission_regen_timer = addtimer(CALLBACK(src, .proc/fill_missions), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP)
+	addtimer(CALLBACK(src, .proc/fill_missions), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy()
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -24,9 +23,6 @@
 	if(mapzone)
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
-	if(mission_regen_timer)
-		deltimer(mission_regen_timer)
-		mission_regen_timer = null
 	return ..()
 
 /datum/overmap/dynamic/get_jump_to_turf()
