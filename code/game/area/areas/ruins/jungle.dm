@@ -76,6 +76,7 @@
 /area/ruin/jungle/paradise/shuttle
 	name = "crashed escape shuttle"
 	icon_state = "dk_yellow"
+	always_unpowered = TRUE
 
 /area/ruin/jungle/paradise/med
 	name = "surgical medical pod"
@@ -84,3 +85,7 @@
 /area/ruin/jungle/paradise/misc
 	name = "Paradise"
 	icon_state = "green"
+
+/area/ruin/jungle/paradise/cargo
+	name = "cargo dump"
+	icon_state = "dk_yellow"
