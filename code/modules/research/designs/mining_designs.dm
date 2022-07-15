@@ -12,16 +12,6 @@
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
-/datum/design/bluespace_pod
-	name = "Supply Drop Pod Upgrade Disk"
-	desc = "Allows the Outpost Comms Console to call down the Bluespace Drop Pod, greatly increasing user safety."//who?
-	id = "bluespace_pod"//the coder reading this
-	build_type = PROTOLATHE
-	materials = list(/datum/material/glass = 1000)
-	build_path = /obj/item/disk/cargo/bluespace_pod
-	category = list("Mining Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
 /datum/design/drill
 	name = "Mining Drill"
 	desc = "Yours is the drill that will pierce through the rock walls."

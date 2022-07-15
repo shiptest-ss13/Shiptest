@@ -22,11 +22,11 @@
 	/// Area instance that cargo pods are sent to
 	var/area/landingzone
 	/// The pod type used to deliver orders
-	var/podType = /obj/structure/closet/supplypod
+	var/podType = /obj/structure/closet/supplypod/centcompod
 	/// Cooldown to prevent printing supplypod beacon spam
 	var/cooldown = 0
 	/// Is the console in beacon mode? exists to let beacon know when a pod may come in
-	var/usingBeacon = FALSE
+	var/use_beacon = FALSE
 	/// The account to charge purchases to, defaults to the cargo budget
 	var/datum/bank_account/charge_account
 
@@ -65,11 +65,6 @@
 	if(value)
 		charge_account.adjust_money(value)
 		to_chat(user, "<span class='notice'>You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr.</span>")
-		qdel(W)
-		return TRUE
-	if(istype(W, /obj/item/disk/cargo/bluespace_pod))
-		podType = /obj/structure/closet/supplypod/bluespacepod//doesnt effect circuit board, making reversal possible
-		to_chat(user, "<span class='notice'>You insert the disk into [src], allowing for advanced supply delivery vehicles.</span>")
 		qdel(W)
 		return TRUE
 	else if(istype(W, /obj/item/supplypod_beacon))
@@ -123,10 +118,10 @@
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access( user )
 	data["beaconzone"] = beacon ? get_area(beacon) : ""//where is the beacon located? outputs in the tgui
-	data["usingBeacon"] = usingBeacon //is the mode set to deliver to the beacon or the cargobay?
-	data["canBeacon"] = !usingBeacon || canBeacon //is the mode set to beacon delivery, and is the beacon in a valid location?
+	data["usingBeacon"] = use_beacon //is the mode set to deliver to the beacon or the cargobay?
+	data["canBeacon"] = !use_beacon || canBeacon //is the mode set to beacon delivery, and is the beacon in a valid location?
 	data["canBuyBeacon"] = charge_account ? (cooldown <= 0 && charge_account.account_balance >= BEACON_COST) : FALSE
-	data["beaconError"] = usingBeacon && !canBeacon ? "(BEACON ERROR)" : ""//changes button text to include an error alert if necessary
+	data["beaconError"] = use_beacon && !canBeacon ? "(BEACON ERROR)" : ""//changes button text to include an error alert if necessary
 	data["hasBeacon"] = beacon != null//is there a linked beacon?
 	data["beaconName"] = beacon ? beacon.name : "No Beacon Found"
 	data["printMsg"] = cooldown > 0 ? "Print Beacon for [BEACON_COST] credits ([cooldown])" : "Print Beacon for [BEACON_COST] credits"//buttontext for printing beacons
@@ -134,9 +129,9 @@
 	message = "Sales are near-instantaneous - please choose carefully."
 	if(SSshuttle.supplyBlocked)
 		message = blockade_warning
-	if(usingBeacon && !beacon)
+	if(use_beacon && !beacon)
 		message = "BEACON ERROR: BEACON MISSING"//beacon was destroyed
-	else if (usingBeacon && !canBeacon)
+	else if (use_beacon && !canBeacon)
 		message = "BEACON ERROR: MUST BE EXPOSED"//beacon's loc/user's loc must be a turf
 	data["message"] = message
 	if(!meme_pack_data)
@@ -180,11 +175,11 @@
 			return TRUE
 
 		if("LZCargo")
-			usingBeacon = FALSE
+			use_beacon = FALSE
 			if (beacon)
 				beacon.update_status(SP_UNREADY) //ready light on beacon will turn off
 		if("LZBeacon")
-			usingBeacon = TRUE
+			use_beacon = TRUE
 			if (beacon)
 				beacon.update_status(SP_READY) //turns on the beacon's ready light
 		if("printBeacon")
@@ -195,56 +190,50 @@
 				printed_beacons++//printed_beacons starts at 0, so the first one out will be called beacon # 1
 				beacon.name = "Supply Pod Beacon #[printed_beacons]"
 
-		if("add")//Generate Supply Order first
+		if("add")
 			var/area/ship/current_area = get_area(src)
-			if(!istype(current_area))
+			var/datum/supply_pack/pack = SSshuttle.supply_packs[text2path(params["id"])]
+			if( \
+				!pack || !charge_account?.has_money(pack.cost) || !istype(current_area) || \
+				!istype(current_area.mobile_port.current_ship.docked_to, /datum/overmap/outpost) \
+			)
 				return
-			// you have to be at an outpost to trade
-			if(!istype(current_area.mobile_port.current_ship.docked_to, /datum/overmap/outpost))
-				return
-			var/id = text2path(params["id"])
-			var/datum/supply_pack/pack = SSshuttle.supply_packs[id]
-			if(!istype(pack))
-				return
-			var/name = "*None Provided*"
-			var/rank = "*None Provided*"
-			var/ckey = usr.ckey
-			if(ishuman(usr))
-				var/mob/living/carbon/human/H = usr
-				name = H.get_authentification_name()
-				rank = H.get_assignment(hand_first = TRUE)
-			else if(issilicon(usr))
-				name = usr.real_name
-				rank = "Silicon"
-			var/reason = ""
-			var/list/empty_turfs
-			var/datum/supply_order/SO = new(pack, name, rank, ckey, reason)
-			var/points_to_check
-			if(charge_account)
-				points_to_check = charge_account.account_balance
-			if(SO.pack.cost <= points_to_check)
-				var/LZ
-				if (istype(beacon) && usingBeacon)//prioritize beacons over landing in cargobay
-					LZ = get_turf(beacon)
-					beacon.update_status(SP_LAUNCH)
-				else if (!usingBeacon)//find a suitable supplypod landing zone in cargobay
+
+			var/turf/landing_turf
+			if(!isnull(beacon) && use_beacon) // prioritize beacons over landing in cargobay
+				landing_turf = get_turf(beacon)
+				beacon.update_status(SP_LAUNCH)
+			else if(!use_beacon)// find a suitable supplypod landing zone in cargobay
+				var/list/empty_turfs = list()
+				if(!landingzone)
+					reconnect()
 					if(!landingzone)
-						reconnect()
-					if (!landingzone)
 						WARNING("[src] couldnt find a Ship/Cargo (aka cargobay) area on a ship, and as such it has set the supplypod landingzone to the area it resides in.")
 						landingzone = get_area(src)
-					for(var/turf/open/floor/T in landingzone.contents)//uses default landing zone
-						if(T.is_blocked_turf())
-							continue
-						LAZYADD(empty_turfs, T)
-						CHECK_TICK
-					if(empty_turfs && empty_turfs.len)
-						LZ = pick(empty_turfs)
-				if (SO.pack.cost <= points_to_check && LZ)//we need to call the cost check again because of the CHECK_TICK call
-					charge_account.adjust_money(-SO.pack.cost)
-					new /obj/effect/DPtarget(LZ, podType, SO)
-					. = TRUE
-					update_icon()
+				for(var/turf/open/floor/T in landingzone.contents)//uses default landing zone
+					if(T.is_blocked_turf())
+						continue
+					empty_turfs += T
+					CHECK_TICK
+				landing_turf = pick(empty_turfs)
+
+			// note that, because of CHECK_TICK above, we aren't sure if we can
+			// afford the pack, even though we checked earlier. luckily adjust_money
+			// returns false if the account can't afford the price
+			if(landing_turf && charge_account.adjust_money(-pack.cost))
+				var/name = "*None Provided*"
+				var/rank = "*None Provided*"
+				if(ishuman(usr))
+					var/mob/living/carbon/human/H = usr
+					name = H.get_authentification_name()
+					rank = H.get_assignment(hand_first = TRUE)
+				else if(issilicon(usr))
+					name = usr.real_name
+					rank = "Silicon"
+				var/datum/supply_order/SO = new(pack, name, rank, usr.ckey, "")
+				new /obj/effect/DPtarget(landing_turf, podType, SO)
+				update_icon() // ??????????????????
+				return TRUE
 
 		if("mission-act")
 			var/datum/mission/mission = locate(params["ref"])
