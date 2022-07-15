@@ -288,3 +288,14 @@
 	. = ..()
 	laws = new /datum/ai_laws/syndicate_override()
 	radio.on = FALSE
+
+/obj/item/mmi/ipc //for use in IPC with human brains
+	desc = "An MMI designed specifically to be compatible with IPCs. Unfortunately leaving the brain unable to be removed without killing it."
+
+/obj/item/mmi/ipc/attackby(obj/item/O, mob/user)
+	return
+
+/obj/item/mmi/ipc/attack_self(mob/user)
+	radio.on = !radio.on
+	to_chat(user, "<span class='notice'>You toggle [src]'s radio system [radio.on==1 ? "on" : "off"].</span>")
+	return

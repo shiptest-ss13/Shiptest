@@ -7,7 +7,7 @@
 	equip_delay_other = 40
 	cuttable = TRUE
 	clothamnt = 1
-	greyscale_colors = list(list(15, 19))
+	greyscale_colors = list(list(15, 20), list(16, 21), list(14, 19))
 	greyscale_icon_state = "scarf"
 
 /obj/item/clothing/neck/worn_overlays(isinhands = FALSE)
@@ -53,7 +53,7 @@
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
 	custom_price = 60
-	greyscale_colors = list(list(16, 20))
+	greyscale_colors = list(list(16, 20), list(16, 16), list(16, 18))
 	greyscale_icon_state = "tie"
 
 /obj/item/clothing/neck/tie/blue
@@ -288,7 +288,7 @@
 	name = "pet collar"
 	desc = "It's for pets. But some people wear it anyways for reasons unknown."
 	icon_state = "petcollar"
-	greyscale_colors = list(list(16,21), list(16,19))
+	greyscale_colors = list(list(16,21), list(16,19), list(16,19))
 	greyscale_icon_state = "collar"
 	var/tagname = null
 

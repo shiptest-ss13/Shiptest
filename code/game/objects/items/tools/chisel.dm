@@ -20,6 +20,9 @@
 	if(ismob(target))
 		return ..()
 	if(isturf(target))
+		if(istype(target, /turf/open/floor/concrete))
+			var/turf/open/floor/concrete/conc_floor = target
+			return conc_floor.handle_shape(user)
 		if(turf_options == NO_TURFS)
 			return ..()
 		switch(turf_options)

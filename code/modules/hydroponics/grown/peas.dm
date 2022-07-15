@@ -16,7 +16,6 @@
 	mutatelist = list(/obj/item/seeds/peas/laugh) // TODO: Add /obj/item/seeds/peas/shoot at a later date, for the peashooter mutation line
 	reagents_add = list (/datum/reagent/consumable/nutriment/vitamin = 0.1, /datum/reagent/consumable/nutriment = 0.05, /datum/reagent/water = 0.05)
 
-
 /obj/item/reagent_containers/food/snacks/grown/peas
 	seed = /obj/item/seeds/peas
 	name = "peapod"
@@ -50,7 +49,7 @@
 	mutatelist = list (/obj/item/seeds/peas/laugh/peace)
 	reagents_add = list (/datum/reagent/consumable/laughter = 0.05, /datum/reagent/consumable/sugar = 0.05, /datum/reagent/consumable/nutriment = 0.07)
 	rarity = 25 //It actually might make Central Command Officials loosen up a smidge, eh?
-
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/laugh
 	seed = /obj/item/seeds/peas/laugh
@@ -86,7 +85,7 @@
 	genes = list (/datum/plant_gene/trait/glow/blue)
 	reagents_add = list (/datum/reagent/pax = 0.15, /datum/reagent/drug/happiness = 0.1, /datum/reagent/consumable/nutriment = 0.15)
 	rarity = 50 // This absolutely will make even the most hardened Syndicate Operators relax, and lay down their arms.
-
+	research = PLANT_RESEARCH_TIER_4
 
 /obj/item/reagent_containers/food/snacks/grown/peace
 	seed = /obj/item/seeds/peas/laugh/peace

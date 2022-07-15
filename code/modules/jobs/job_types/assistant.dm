@@ -194,3 +194,13 @@ Assistant
 /datum/outfit/job/assistant/waiter/syndicate
 	name = "Assistant (Syndicate Waiter)"
 	uniform = /obj/item/clothing/under/suit/waiter/syndicate
+
+/datum/outfit/job/assistant/roumain
+	name = "Shadow (Saint-Roumain Militia)"
+
+	uniform = /obj/item/clothing/under/suit/roumain
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/armor/roumain/shadow
+
+	head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
