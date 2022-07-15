@@ -82,6 +82,8 @@
 		dir_amount = 4\
 	)
 
+	COOLDOWN_DECLARE(decomp_alarm)
+
 	var/danger_level = 0
 	var/mode = AALARM_MODE_SCRUBBING
 
@@ -730,7 +732,7 @@
 	var/new_area_danger_level = 0
 	for(var/obj/machinery/airalarm/AA in A)
 		if (!(AA.machine_stat & (NOPOWER|BROKEN)) && !AA.shorted)
-			new_area_danger_level = clamp(max(new_area_danger_level, AA.danger_level), 0,1)
+			new_area_danger_level = clamp(max(new_area_danger_level, AA.danger_level), 0, 2)
 	if(A.atmosalert(new_area_danger_level,src)) //if area was in normal state or if area was in alert state
 		post_alert(new_area_danger_level)
 
@@ -869,6 +871,12 @@
 			I.obj_integrity = I.max_integrity * 0.5
 		new /obj/item/stack/cable_coil(loc, 3)
 	qdel(src)
+
+/obj/machinery/airalarm/proc/handle_decomp_alarm()
+	if(!COOLDOWN_FINISHED(src, decomp_alarm))
+		return
+	playsound(loc, 'goon/sound/machinery/FireAlarm.ogg', 75)
+	COOLDOWN_START(src, decomp_alarm, 1 SECONDS)
 
 #undef AALARM_MODE_SCRUBBING
 #undef AALARM_MODE_VENTING

@@ -4,7 +4,6 @@
 	desc = "Upon closer examination, it's still dirt."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "dirt"
-	initial_gas_mix = OPENTURF_LOW_PRESSURE
 	planetary_atmos = TRUE
 	attachment_holes = FALSE
 	footstep = FOOTSTEP_SAND
@@ -16,6 +15,7 @@
 
 /turf/open/floor/plating/dirt/dark
 	icon_state = "greenerdirt"
+	baseturfs = /turf/open/floor/plating/dirt/dark
 
 /turf/open/floor/plating/dirt/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return
@@ -33,6 +33,7 @@
 
 /turf/open/floor/plating/dirt/jungle/dark
 	icon_state = "greenerdirt"
+	baseturfs = /turf/open/floor/plating/dirt/jungle/dark
 
 /turf/open/floor/plating/dirt/jungle/dark/lit
 	light_range = 2
@@ -44,6 +45,7 @@
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "wasteland"
 	slowdown = 1
+	baseturfs = /turf/open/floor/plating/dirt/jungle/wasteland
 	var/floor_variance = 15
 
 /turf/open/floor/plating/dirt/jungle/wasteland/lit
@@ -59,13 +61,13 @@
 
 /turf/open/floor/plating/grass/jungle
 	name = "jungle grass"
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	desc = "Greener on the other side."
 	icon_state = "junglegrass"
 	base_icon_state = "junglegrass"
 	baseturfs = /turf/open/floor/plating/dirt/jungle
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
+	baseturfs = /turf/open/floor/plating/grass/jungle
 
 /turf/open/floor/plating/grass/jungle/lit
 	baseturfs = /turf/open/floor/plating/dirt/jungle/lit
