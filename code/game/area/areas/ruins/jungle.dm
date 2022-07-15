@@ -71,11 +71,11 @@
 
 /area/ruin/jungle/paradise/mine
 	name = "Mineshaft"
-	icon_state = "brown"
+	icon_state = "yellow"
 
 /area/ruin/jungle/paradise/shuttle
 	name = "crashed escape shuttle"
-	icon_state = "white"
+	icon_state = "dk_yellow"
 
 /area/ruin/jungle/paradise/med
 	name = "surgical medical pod"
