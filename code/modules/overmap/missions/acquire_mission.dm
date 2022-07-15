@@ -81,8 +81,8 @@
 /datum/mission/acquire/true_love/New(...)
 	var/datum/species/beloved = pick(subtypesof(/datum/species))
 
-	desc = "I was going to gift \a [initial(objective_type.name)] to my [pick(list("beautiful", "handsome", "lovely"))] \
-			[initial(beloved.name)] [pick(list("boyfriend", "girlfriend", "lover", "SO", "spouse", "husband", "wife", "boywife"))], \
+	desc = "I was going to gift \a [initial(objective_type.name)] to my [pick("beautiful", "handsome", "lovely")] \
+			[initial(beloved.name)] [pick("boyfriend", "girlfriend", "lover", "SO", "spouse", "husband", "wife", "boywife")], \
 			but I just lost it! Could you please find me a replacement? I don't have long!"
 	. = ..()
 
@@ -151,8 +151,7 @@
 	desc = "I require a live ice demon for research purposes. Trap one within the given \
 			Lifeform Containment Unit and return it to me and you will be paid handsomely."
 	value = 1500
-	weight = 3
-	value = 2
+	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_demon
 
 /datum/mission/acquire/creature/migo
