@@ -685,6 +685,10 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-5"
 	},
+/obj/structure/closet/firecloset/wall{
+	dir = 4;
+	pixel_x = -31
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "fU" = (
@@ -1535,6 +1539,10 @@
 /obj/machinery/camera/autoname{
 	dir = 5
 	},
+/obj/structure/closet/emcloset/wall{
+	dir = 4;
+	pixel_x = -30
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "oQ" = (
@@ -1688,6 +1696,10 @@
 	},
 /obj/structure/chair/greyscale{
 	dir = 1
+	},
+/obj/structure/closet/firecloset/wall{
+	dir = 1;
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -2392,7 +2404,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/command/glass/lp/dorms,
-/turf/open/floor/carpet/executive,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "yo" = (
 /obj/structure/mineral_door/wood,
@@ -3065,9 +3077,12 @@
 /obj/effect/turf_decal/corner/white{
 	dir = 6
 	},
-/obj/machinery/light,
 /obj/structure/chair/greyscale{
 	dir = 1
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 1;
+	pixel_y = -33
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -4538,6 +4553,14 @@
 /obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
+"Tz" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/turf_decal/industrial/stand_clear,
+/obj/structure/closet/emcloset/wall{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "TG" = (
 /obj/structure/table/reinforced,
 /obj/item/gps,
@@ -5135,6 +5158,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
+"Ze" = (
+/obj/effect/turf_decal/corner/blue/mono,
+/obj/effect/turf_decal/trimline/black/line,
+/obj/effect/turf_decal/trimline/black/line{
+	pixel_y = -5
+	},
+/obj/structure/chair/greyscale{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "Zf" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/table/reinforced,
@@ -5304,6 +5339,14 @@
 	},
 /turf/open/floor/circuit/green/anim,
 /area/ship/science/ai_chamber)
+"ZS" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/turf_decal/industrial/stand_clear,
+/obj/structure/closet/firecloset/wall{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "ZU" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -5868,7 +5911,7 @@ Be
 WR
 WR
 Lk
-jb
+Tz
 rB
 ZZ
 Lk
@@ -5910,9 +5953,9 @@ Be
 WR
 Lk
 Lk
+ZS
 EJ
-EJ
-EJ
+jb
 EP
 Lk
 Lk
@@ -5922,7 +5965,7 @@ Yn
 yW
 FW
 Vg
-qJ
+Ze
 gg
 fA
 dK
