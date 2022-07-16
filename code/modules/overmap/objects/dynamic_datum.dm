@@ -242,7 +242,7 @@
 			token.color = COLOR_GRAY
 
 			ruin_list = null // asteroid ruins when
-			mapgen = new /datum/map_generator/cave_generator/asteroid
+			mapgen = /datum/map_generator/cave_generator/asteroid
 		if(DYNAMIC_WORLD_SPACERUIN)
 			Rename("weak energy signal")
 			token.desc = "A very weak energy signal emenating from space."
