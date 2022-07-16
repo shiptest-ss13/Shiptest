@@ -183,7 +183,13 @@
 	if(!powered || used)
 		return ..()
 	used = TRUE
-	new /mob/living/simple_animal/hostile/boss/paper_wizard(loc)
+	new /mob/living/simple_animal/hostile/megafauna/heretic(loc)
+
+/mob/living/simple_animal/hostile/megafauna/heretic
+	name = "heretic"
+	desc = "Now you've done it."
+	icon = 'icons/mob/lavaland/40x40megafauna.dmi'
+	icon_state = "heretic"
 
 /obj/structure/closet/crate/chest
 	name = "chest"
