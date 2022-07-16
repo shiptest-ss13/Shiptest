@@ -195,12 +195,6 @@ const GASES = [
     'label': 'Pluoxium',
     'color': 'blue',
   },
-  {
-    'id': 'miasma',
-    'name': 'Miasma',
-    'label': 'Miasma',
-    'color': 'olive',
-  },
 ];
 
 export const getGasLabel = (gasId, fallbackValue) => {
