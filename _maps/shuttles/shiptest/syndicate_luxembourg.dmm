@@ -1,7 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aA" = (
 /obj/structure/table,
-/obj/machinery/reagentgrinder,
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
@@ -36,18 +35,13 @@
 /area/ship/crew/dorm)
 "br" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/item/kitchen/knife{
-	pixel_x = -8
-	},
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/machinery/reagentgrinder,
 /obj/item/reagent_containers/food/drinks/shaker{
 	pixel_x = 10
 	},
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/machinery/airalarm/directional/east,
+/obj/item/kitchen/knife{
+	pixel_x = -8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "by" = (
@@ -1051,7 +1045,16 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
-/obj/machinery/light/small,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/medical{
+	pixel_x = -5;
+	pixel_y = -4
+	},
+/obj/structure/closet/wall/white/med{
+	dir = 1;
+	name = "medicine locker";
+	pixel_y = -28
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
 "wd" = (
@@ -1267,33 +1270,16 @@
 /area/ship/hallway/central)
 "zr" = (
 /obj/structure/table,
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate{
+	pixel_x = 6
+	},
 /obj/item/lighter/greyscale{
 	pixel_x = -3;
 	pixel_y = 4
 	},
-/obj/item/storage/fancy/cigarettes/cigpack_syndicate{
-	pixel_x = 6
-	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm)
 "zR" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
 /obj/effect/turf_decal/siding/red,
 /obj/machinery/firealarm{
 	dir = 1;
@@ -1305,6 +1291,8 @@
 	pixel_x = 6;
 	pixel_y = -24
 	},
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/vending/dinnerware,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "zZ" = (
@@ -1419,6 +1407,7 @@
 	dir = 4
 	},
 /obj/structure/curtain,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
 "CL" = (
@@ -1617,6 +1606,10 @@
 	default_price = 0;
 	extra_price = 0
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "GJ" = (
@@ -1695,7 +1688,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/north,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
 "Jl" = (
@@ -1990,10 +1985,6 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -24
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "OE" = (
@@ -2012,7 +2003,27 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/vending/dinnerware,
+/obj/structure/closet/secure_closet/freezer{
+	anchored = 1;
+	locked = 0;
+	name = "fridge"
+	},
+/obj/item/storage/box/donkpockets/donkpocketgondola,
+/obj/item/storage/box/donkpockets/donkpocketgondola,
+/obj/item/storage/box/donkpockets/donkpocketgondola,
+/obj/item/storage/box/donkpockets/donkpocketgondola,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "PB" = (
