@@ -75,7 +75,7 @@
 /area/ship/crew/dorm)
 "az" = (
 /obj/structure/sign/syndicate,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/dorm)
 "aG" = (
 /obj/structure/table/reinforced{
@@ -119,7 +119,7 @@
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
 "aL" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/office)
 "aO" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -587,9 +587,8 @@
 /turf/open/floor/carpet/blue,
 /area/ship/medical)
 "dZ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/dorm)
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew/janitor)
 "ei" = (
 /obj/effect/decal/cleanable/glass,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -815,9 +814,8 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "gq" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/dorm)
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "gx" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 5
@@ -2068,7 +2066,7 @@
 /area/ship/bridge)
 "tW" = (
 /obj/structure/sign/poster/official/moth/meth,
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/medical)
 "uc" = (
 /obj/machinery/modular_computer/console/preset/command,
@@ -2836,7 +2834,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "Bh" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/medical)
 "Bn" = (
 /obj/structure/cable/yellow{
@@ -3119,7 +3117,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "DC" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/science)
 "DH" = (
 /obj/effect/turf_decal/techfloor{
@@ -3545,7 +3543,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Im" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/hydroponics)
 "It" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3790,7 +3788,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
 "JZ" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/hallway/central)
 "Ku" = (
 /obj/structure/cable/yellow{
@@ -4011,7 +4009,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Mv" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering)
 "Mz" = (
 /obj/effect/turf_decal/syndicateemblem/middle/middle,
@@ -4528,7 +4526,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/hydroponics)
 "Ss" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/dorm)
 "St" = (
 /obj/structure/cable/yellow{
@@ -4544,7 +4542,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "SF" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
 "SN" = (
 /obj/machinery/power/apc/auto_name/west,
@@ -4988,6 +4986,9 @@
 "WQ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/office)
+"WR" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew/canteen)
 "WX" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -5380,8 +5381,8 @@ wk
 wk
 wk
 Ss
-xO
-hl
+Ss
+WR
 iq
 iq
 iq
@@ -5410,9 +5411,9 @@ wk
 wk
 wk
 Ss
-xO
-xO
-xO
+Ss
+Ss
+Ss
 xO
 Oz
 hl
@@ -5443,7 +5444,7 @@ wk
 wk
 wk
 wk
-xO
+Ss
 cw
 es
 xO
@@ -5477,7 +5478,7 @@ wk
 wk
 wk
 Ss
-xO
+Ss
 Zm
 fk
 md
@@ -5576,7 +5577,7 @@ wk
 wk
 "}
 (7,1,1) = {"
-xO
+Ss
 bf
 Zu
 QC
@@ -5589,7 +5590,7 @@ xO
 iq
 iq
 iq
-zv
+JZ
 rk
 AA
 Dp
@@ -5610,7 +5611,7 @@ sI
 wk
 "}
 (8,1,1) = {"
-xO
+Ss
 bV
 ah
 xO
@@ -5644,11 +5645,11 @@ sb
 wk
 "}
 (9,1,1) = {"
-xO
+Ss
 cp
 xO
-xO
-xO
+Ss
+Ss
 xO
 Ss
 wk
@@ -5660,7 +5661,7 @@ wk
 wk
 wk
 wk
-zv
+JZ
 zv
 Ft
 cs
@@ -5695,7 +5696,7 @@ wk
 wk
 wk
 wk
-zv
+JZ
 zv
 IL
 VF
@@ -5755,11 +5756,11 @@ wk
 wk
 wk
 wk
-TE
+gq
 gW
 gW
 gW
-TE
+gq
 wk
 wk
 wk
@@ -5788,13 +5789,13 @@ wk
 wk
 wk
 wk
-TE
+gq
 uM
 wO
 jW
 oh
 uM
-TE
+gq
 wk
 JZ
 JZ
@@ -5811,7 +5812,7 @@ It
 It
 It
 It
-It
+Mv
 "}
 (14,1,1) = {"
 wk
@@ -5828,7 +5829,7 @@ hR
 tJ
 hR
 Wf
-TE
+uM
 JZ
 zv
 Rm
@@ -5862,7 +5863,7 @@ hR
 FY
 nK
 tg
-TE
+gq
 te
 Dv
 Gx
@@ -5964,7 +5965,7 @@ pu
 PM
 hR
 Xa
-TE
+uM
 JZ
 zv
 Bc
@@ -5992,13 +5993,13 @@ wk
 wk
 wk
 wk
-TE
+gq
 uM
 yi
 mE
 qv
 uM
-TE
+gq
 wk
 JZ
 JZ
@@ -6015,7 +6016,7 @@ It
 It
 It
 It
-It
+Mv
 "}
 (20,1,1) = {"
 wk
@@ -6027,11 +6028,11 @@ wk
 wk
 wk
 wk
-TE
+gq
 gW
 gW
 gW
-TE
+gq
 wk
 wk
 wk
@@ -6086,9 +6087,9 @@ It
 wk
 "}
 (22,1,1) = {"
-Bs
+dZ
 aR
-Bs
+dZ
 wk
 wk
 wk
@@ -6103,7 +6104,7 @@ wk
 wk
 wk
 wk
-zv
+JZ
 zv
 MF
 WL
@@ -6123,9 +6124,9 @@ wk
 kj
 di
 kj
-Bs
-Bs
-Bs
+kj
+kj
+kj
 DC
 wk
 wk
@@ -6136,7 +6137,7 @@ wk
 wk
 wk
 wk
-zv
+JZ
 zv
 sm
 QS
@@ -6161,15 +6162,15 @@ Pf
 CG
 mJ
 Fo
-DC
-DC
+Fo
+Fo
 DC
 wk
 wk
 wk
 Bh
-Bh
-Bh
+TS
+TS
 TS
 aO
 MP
@@ -6201,7 +6202,7 @@ Fo
 YK
 YK
 YK
-Bh
+TS
 zA
 CC
 TS
@@ -6222,7 +6223,7 @@ sI
 wk
 "}
 (26,1,1) = {"
-Bs
+dZ
 kj
 kj
 kj
@@ -6257,7 +6258,7 @@ wk
 "}
 (27,1,1) = {"
 wk
-Bs
+dZ
 kj
 kj
 kj
@@ -6293,7 +6294,7 @@ wk
 wk
 wk
 Bh
-TS
+Bh
 dY
 nS
 Fo
@@ -6327,7 +6328,7 @@ wk
 wk
 wk
 wk
-TS
+Bh
 nA
 uA
 xT
