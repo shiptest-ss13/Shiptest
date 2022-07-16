@@ -508,6 +508,9 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating/rust,
 /area/ship/engineering)
 "jq" = (
@@ -1171,6 +1174,9 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "xj" = (
@@ -1223,6 +1229,9 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating/rust,
 /area/ship/engineering)
 "xx" = (
@@ -1631,7 +1640,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/mob/living/silicon/robot/shellandcell,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
@@ -2002,7 +2010,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/mob/living/silicon/robot/shellandcell,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 8
 	},
