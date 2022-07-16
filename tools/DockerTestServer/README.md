@@ -1,6 +1,6 @@
 # Docker-Compose Test Server
 
-This is a directory made for easily spinning up a Shiptest server using Docker-Compose.
+This is a directory made for easily spinning up a /tg/station server using Docker-Compose.
 Also with some tweaks done to read environment variables, like database config and ranks.
 
 # How to use this?
