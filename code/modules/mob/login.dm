@@ -3,8 +3,6 @@
   *
   * Things it does:
   * * Adds player to player_list
-  * * sets lastKnownIP
-  * * sets computer_id
   * * logs the login
   * * tells the world to update it's status (for player count)
   * * create mob huds for the mob if needed
@@ -26,8 +24,6 @@
 	if(!client)
 		return FALSE
 	add_to_player_list()
-	lastKnownIP	= client.address
-	computer_id	= client.computer_id
 	log_access("Mob Login: [key_name(src)] was assigned to a [type]")
 	world.update_status()
 	client.screen = list()				//remove hud items just in case

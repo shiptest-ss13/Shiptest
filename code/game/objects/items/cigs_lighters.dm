@@ -805,6 +805,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		. = "<span class='rose'>[user] spits fire at [A], igniting it.</span>"
 		playsound(src, 'sound/magic/fireball.ogg', 10, TRUE)
 
+/obj/item/lighter/enigma
+	name = "/improper Enigma Shipworks Lighter"
+	desc = "A lighter from a now defunct company. Feels nice to hold."
+	icon_state = "enigmaburner"
+	heat = 1500
+	overlay_state = "enigma2"
+
 ///////////
 //ROLLING//
 ///////////

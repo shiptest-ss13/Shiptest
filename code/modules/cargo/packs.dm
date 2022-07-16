@@ -2248,7 +2248,7 @@
 	crate_type = /obj/structure/closet/crate/hydroponics
 
 /datum/supply_pack/organic/catgrill
-	name = "Felinid-Style Grilling Kit"
+	name = "Feline-Style Grilling Kit"
 	desc = "Request: \"Nic catgrill gf plz\" has been successfully processed! As the original client seems to have mysteriously dissapeared, we're selling these in bulk to the open market."
 	cost = 12000
 	crate_type = /obj/structure/closet/crate/trashcart
@@ -2809,7 +2809,7 @@
 		if(prob(50))
 			the_toy = pickweight(GLOB.arcade_prize_pool)
 		else
-			the_toy = pick(subtypesof(/obj/item/toy/plush) - typesof(/obj/item/toy/plush/goatplushie/angry/kinggoat))
+			the_toy = pick(subtypesof(/obj/item/toy/plush))
 		new the_toy(.)
 
 /datum/supply_pack/costumes_toys/wizard

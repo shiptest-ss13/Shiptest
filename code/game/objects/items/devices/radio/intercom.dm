@@ -156,6 +156,7 @@
 	frequency = FREQ_WIDEBAND
 	freqlock = TRUE
 	freerange = TRUE
+	wallframe = /obj/item/wallframe/intercom/wideband
 
 /obj/item/radio/intercom/wideband/Initialize(mapload, ndir, building)
 	. = ..()

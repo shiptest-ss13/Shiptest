@@ -27,7 +27,9 @@
 
 	maxHealth = 150
 	health = 150
-	healable = 0
+	healable = FALSE
+	melee_damage_lower = 5
+	melee_damage_upper = 25
 
 	see_in_dark = 8
 
@@ -79,6 +81,7 @@
 	///////////CORE-CROSSING CODE
 
 	var/effectmod //What core modification is being used.
+	var/crossbreed_modifier = 1 // modifies how many extracts are needed
 	var/applied = 0 //How many extracts of the modtype have been applied.
 
 
@@ -366,7 +369,7 @@
 				qdel(S)
 				applied++
 				hasFound = TRUE
-			if(applied >= SLIME_EXTRACT_CROSSING_REQUIRED)
+			if(applied >= (SLIME_EXTRACT_CROSSING_REQUIRED * crossbreed_modifier))
 				to_chat(user, "<span class='notice'>You feed the slime as many of the extracts from the bag as you can, and it mutates!</span>")
 				playsound(src, 'sound/effects/attackblob.ogg', 50, TRUE)
 				spawn_corecross()

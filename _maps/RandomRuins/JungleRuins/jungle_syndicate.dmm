@@ -1,11 +1,140 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/template_noop,
-/area/template_noop)
-"b" = (
+"aj" = (
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/pizzaslice/donkpocket,
+/obj/item/reagent_containers/food/snacks/pizzaslice/donkpocket,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets/donkpocketberry,
+/obj/effect/spawner/lootdrop/donkpockets,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"al" = (
+/obj/machinery/nuclearbomb/beer{
+	desc = "A beer keg designed to look like a nuclear fission explosive. Its old and incredibly dusty. There seems to be a tap on the back.";
+	name = "Syndicate Beer Keg"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"bP" = (
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/powered)
+"bW" = (
+/obj/item/ammo_casing/spent{
+	dir = 6;
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"dw" = (
+/obj/item/trash/syndi_cakes,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"dP" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/ammo_casing/spent{
+	dir = 1;
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"ef" = (
+/mob/living/simple_animal/hostile/syndicate/space,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/unpowered)
+"eX" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"fi" = (
+/obj/structure/closet/crate/secure/science,
+/obj/item/research_notes/loot/medium,
+/obj/item/stack/sheet/plastic/twenty,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"fn" = (
+/obj/structure/table,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"ft" = (
+/obj/structure/flora/grass/jungle,
+/obj/effect/decal/cleanable/blood/gibs/down,
+/turf/open/floor/plating/dirt,
+/area/ruin/unpowered)
+"gf" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/powered)
+"gK" = (
+/obj/structure/sign/poster/contraband/free_key,
 /turf/closed/wall,
 /area/ruin/powered)
-"c" = (
+"gO" = (
+/obj/structure/table,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/machinery/light/small,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"gQ" = (
+/obj/item/trash/can/food{
+	pixel_x = 8;
+	pixel_y = -3
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"ho" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_casing/spent{
+	dir = 9;
+	pixel_x = 3;
+	pixel_y = -9
+	},
+/obj/item/trash/can/food{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/powered)
+"hF" = (
+/turf/closed/wall/rust,
+/area/ruin/powered)
+"hZ" = (
+/obj/item/trash/syndi_cakes,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"ii" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"jh" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/cable{
@@ -13,80 +142,120 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
-"e" = (
-/obj/structure/sign/poster/contraband/revolver,
-/turf/closed/wall,
+"jy" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating,
 /area/ruin/powered)
-"g" = (
+"kr" = (
+/mob/living/simple_animal/hostile/syndicate{
+	desc = "God dammit Jerry! Why the fuck are you barricading yourself in with all of our weapon supplies?";
+	name = "Jerry";
+	unsuitable_atmos_damage = 0
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"kJ" = (
 /obj/structure/punji_sticks,
-/obj/structure/flora/grass/jungle,
-/obj/effect/decal/cleanable/blood/gibs/down,
+/obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
-"h" = (
+"kP" = (
+/obj/item/ammo_casing/spent{
+	dir = 5;
+	pixel_x = 10;
+	pixel_y = -2
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/powered)
+"lH" = (
+/obj/effect/decal/remains/human,
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/dirt,
+/area/ruin/unpowered)
+"lS" = (
+/obj/item/trash/chips{
+	pixel_x = -10
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"pF" = (
+/obj/effect/turf_decal/syndicateemblem/bottom/right,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"qx" = (
+/obj/machinery/suit_storage_unit/open,
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/powered)
+"rN" = (
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/gun/ballistic/automatic/c20r,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"rW" = (
 /obj/structure/punji_sticks,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
-"i" = (
-/obj/structure/table,
-/obj/item/kitchen/knife/combat,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"j" = (
-/obj/structure/rack,
-/obj/item/storage/toolbox/syndicate,
-/obj/item/stack/sheet/mineral/plasma,
-/obj/item/gun/ballistic/automatic/pistol,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"k" = (
-/obj/effect/decal/cleanable/dirt/dust,
+"sY" = (
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/dirt,
+/area/ruin/unpowered)
+"th" = (
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/syndicateemblem/top/middle,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered)
-"l" = (
+"tt" = (
 /obj/structure/cable{
-	icon_state = "1-4"
+	icon_state = "5-8"
 	},
-/turf/open/floor/plating,
-/area/ruin/powered)
-"m" = (
-/obj/structure/punji_sticks,
-/obj/structure/flora/junglebush,
-/obj/effect/decal/remains/human,
-/turf/open/floor/plating/dirt,
-/area/ruin/unpowered)
-"n" = (
-/obj/structure/flora/junglebush/c,
-/turf/open/floor/plating/dirt,
-/area/ruin/unpowered)
-"o" = (
-/obj/structure/barricade/sandbags,
+/obj/effect/turf_decal/syndicateemblem/top/left,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered)
-"p" = (
-/obj/effect/decal/remains/human,
-/turf/open/floor/plating,
+"tZ" = (
+/obj/structure/bed,
+/obj/item/trash/plate,
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
 /area/ruin/powered)
-"q" = (
+"ud" = (
 /obj/structure/punji_sticks,
-/obj/structure/flora/rock/jungle,
-/obj/effect/decal/remains/human,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/effect/decal/cleanable/blood/gibs/torso,
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
-"r" = (
-/obj/structure/table,
-/obj/item/grenade/frag,
-/obj/item/grenade/frag,
-/obj/item/grenade/frag,
+"uh" = (
+/obj/structure/closet/crate/secure/gear,
+/obj/item/folder/syndicate,
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
 /turf/open/floor/plating,
 /area/ruin/powered)
-"t" = (
+"uB" = (
+/obj/structure/sign/poster/contraband/revolver,
+/turf/closed/wall,
+/area/ruin/powered)
+"ve" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"vh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/porta_turret/syndicate/pod,
 /obj/structure/cable{
@@ -94,127 +263,34 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
-"u" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/porta_turret/syndicate/pod,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating,
-/area/ruin/powered)
-"v" = (
-/obj/structure/flora/junglebush/large,
-/turf/open/floor/plating/dirt,
-/area/ruin/unpowered)
-"w" = (
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"x" = (
-/obj/structure/table,
-/obj/item/grenade/smokebomb,
-/obj/item/grenade/smokebomb,
-/obj/item/grenade/smokebomb,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"y" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating,
-/area/ruin/powered)
-"A" = (
-/obj/structure/rack,
-/obj/item/ammo_box/magazine/mm712x82,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"C" = (
-/obj/structure/table,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/mask/gas/syndicate,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"E" = (
-/obj/structure/punji_sticks,
-/obj/structure/flora/ausbushes/fernybush,
-/obj/effect/decal/cleanable/blood/gibs/limb,
-/turf/open/floor/plating/dirt,
-/area/ruin/unpowered)
-"F" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"G" = (
-/obj/structure/cable,
-/mob/living/simple_animal/hostile/syndicate,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"H" = (
-/obj/structure/punji_sticks,
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/plating/dirt,
-/area/ruin/unpowered)
-"I" = (
-/turf/closed/wall/rust,
-/area/ruin/powered)
-"J" = (
-/obj/structure/punji_sticks,
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/effect/decal/remains/human,
-/turf/open/floor/plating/dirt,
-/area/ruin/unpowered)
-"K" = (
-/obj/structure/chair/plastic,
-/mob/living/simple_animal/hostile/syndicate/ranged,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"M" = (
-/obj/structure/sign/poster/contraband/syndicate_recruitment,
-/turf/closed/wall/rust,
-/area/ruin/powered)
-"N" = (
-/obj/structure/punji_sticks,
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/effect/decal/cleanable/blood/gibs/up,
-/turf/open/floor/plating/dirt,
-/area/ruin/unpowered)
-"R" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"S" = (
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/obj/structure/cable{
-	icon_state = "5-9"
-	},
-/turf/open/floor/plating,
-/area/ruin/powered)
-"T" = (
-/obj/structure/punji_sticks,
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/effect/decal/cleanable/blood/gibs/torso,
-/turf/open/floor/plating/dirt,
-/area/ruin/unpowered)
-"U" = (
+"vJ" = (
 /obj/machinery/door/airlock/hatch,
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"wo" = (
+/obj/structure/table,
+/obj/item/kitchen/knife/combat,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"wq" = (
+/turf/template_noop,
+/area/template_noop)
+"xm" = (
+/obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/powered)
-"V" = (
+"xv" = (
 /turf/open/floor/plating,
 /area/ruin/powered)
-"W" = (
-/obj/structure/flora/tree/jungle,
-/turf/open/floor/plating/dirt,
-/area/ruin/unpowered)
-"X" = (
+"ys" = (
+/obj/effect/turf_decal/syndicateemblem/bottom/left,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"yx" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -224,113 +300,528 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
-"Y" = (
-/obj/structure/sign/poster/contraband/free_key,
+"yD" = (
+/obj/structure/table,
+/obj/item/grenade/frag,
+/obj/item/grenade/frag,
+/obj/item/grenade/frag,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"yZ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"zM" = (
+/turf/open/floor/plating/dirt,
+/area/ruin/powered)
+"Al" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/syndicateemblem/middle/right,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Au" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Cp" = (
+/obj/structure/sign/donk,
+/turf/closed/wall/rust,
+/area/ruin/powered)
+"Dt" = (
+/obj/structure/sign/poster/contraband/syndicate_recruitment,
 /turf/closed/wall,
 /area/ruin/powered)
-"Z" = (
+"Ee" = (
+/obj/structure/sign/poster/contraband/syndicate_recruitment,
+/turf/closed/wall/rust,
+/area/ruin/powered)
+"ER" = (
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-4"
 	},
+/obj/effect/turf_decal/syndicateemblem/middle/middle,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Fj" = (
+/obj/structure/bed/pod{
+	name = "bunk bed";
+	pixel_x = 32
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/powered)
+"FP" = (
+/obj/structure/punji_sticks,
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/effect/decal/remains/human,
+/turf/open/floor/plating/dirt,
+/area/ruin/unpowered)
+"GR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/porta_turret/syndicate/pod,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Hb" = (
+/obj/item/ammo_casing/spent{
+	dir = 8;
+	pixel_x = -8;
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Hx" = (
+/obj/structure/flora/ausbushes/fernybush,
+/obj/effect/decal/cleanable/blood/gibs/limb,
+/turf/open/floor/plating/dirt,
+/area/ruin/unpowered)
+"Il" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Iv" = (
+/obj/item/trash/candle{
+	pixel_x = 9;
+	pixel_y = 14
+	},
+/obj/machinery/light/small,
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/powered)
+"Ji" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Kw" = (
+/obj/structure/punji_sticks,
+/obj/structure/flora/rock/jungle,
+/obj/effect/decal/remains/human,
+/turf/open/floor/plating/dirt,
+/area/ruin/unpowered)
+"KP" = (
+/obj/item/toy/snappop,
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"KV" = (
+/obj/structure/closet/crate/secure/gear,
+/obj/item/storage/box/syndimaid,
+/obj/item/storage/box/syndimaid,
+/obj/item/blackmarket_uplink,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Ma" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/space/basic,
+/area/ruin/powered)
+"Mo" = (
+/obj/structure/bed/pod{
+	name = "bunk bed";
+	pixel_y = 15
+	},
+/obj/structure/curtain/cloth/fancy,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Oe" = (
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop,
+/obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop,
+/obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop,
+/obj/machinery/light/small,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Oq" = (
+/obj/structure/punji_sticks,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/effect/decal/cleanable/blood/gibs/up,
+/turf/open/floor/plating/dirt,
+/area/ruin/unpowered)
+"OL" = (
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Ph" = (
+/obj/machinery/suit_storage_unit/open,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"QT" = (
+/obj/machinery/suit_storage_unit/open,
+/obj/item/toy/nuke,
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/powered)
+"Td" = (
+/turf/closed/wall,
+/area/ruin/powered)
+"TK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/ruin/powered)
+"Uc" = (
+/obj/effect/mine/stun,
+/turf/open/floor/plating/dirt,
+/area/ruin/powered)
+"Uo" = (
+/obj/machinery/suit_storage_unit/syndicate{
+	storage_type = /obj/item/toy/balloon/syndicate
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Ur" = (
+/obj/structure/chair/plastic,
+/mob/living/simple_animal/hostile/syndicate/ranged{
+	unsuitable_atmos_damage = 0
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Uu" = (
+/obj/structure/sign/poster/contraband/syndicate,
+/turf/closed/wall,
+/area/ruin/powered)
+"UQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/syndicateemblem/bottom/middle,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Vi" = (
+/obj/structure/cable,
+/mob/living/simple_animal/hostile/syndicate{
+	unsuitable_atmos_damage = 0
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Wl" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/gun/ballistic/automatic/pistol,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Wz" = (
+/mob/living/simple_animal/hostile/syndicate{
+	unsuitable_atmos_damage = 0
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"WG" = (
+/obj/structure/closet/crate/secure/plasma,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/mineral/plasma/five,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"XE" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/dirt,
+/area/ruin/unpowered)
+"Ya" = (
+/obj/item/ammo_casing/spent{
+	dir = 9;
+	pixel_x = 10;
+	pixel_y = 3
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Yk" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/syndicateemblem/top/right,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"YF" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/dirt,
+/area/ruin/unpowered)
+"YP" = (
+/obj/item/ammo_casing/spent{
+	dir = 6;
+	pixel_x = -8;
+	pixel_y = 10
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"ZT" = (
+/obj/item/storage/cans/sixbeer,
 /turf/open/floor/plating,
 /area/ruin/powered)
 
 (1,1,1) = {"
-a
-a
-J
-g
-H
-m
-a
-a
-a
+wq
+wq
+wq
+wq
+wq
+wq
+zM
+wq
+wq
+wq
+YF
+wq
+wq
+wq
+wq
 "}
 (2,1,1) = {"
-a
-I
-I
-u
-w
-b
-b
-a
-a
+wq
+wq
+hF
+hF
+wq
+zM
+Uc
+wq
+FP
+ft
+kJ
+lH
+wq
+wq
+wq
 "}
 (3,1,1) = {"
-a
-I
-c
-k
-F
-i
-M
-b
-a
+wq
+Td
+uh
+KV
+hF
+wq
+wq
+hF
+hF
+GR
+ii
+Td
+Td
+wq
+wq
 "}
 (4,1,1) = {"
-W
-b
-j
-S
-V
-p
-C
-o
-T
+wq
+Td
+eX
+dw
+Ma
+wq
+wq
+hF
+jh
+Au
+Il
+wo
+Ee
+hF
+wq
 "}
 (5,1,1) = {"
-v
-U
-X
-Z
-l
-F
-K
-R
-q
+wq
+Dt
+kr
+xv
+Td
+wq
+sY
+Td
+Wl
+yZ
+Ya
+OL
+gO
+hF
+ud
 "}
 (6,1,1) = {"
-n
-Y
-G
-V
-y
-V
-A
-w
-a
+zM
+hF
+rN
+ve
+Td
+hF
+hF
+Td
+WG
+yZ
+Ji
+kP
+YP
+Td
+wq
 "}
 (7,1,1) = {"
-a
-b
-x
-r
-y
-e
-I
-I
-a
+zM
+Td
+ii
+ii
+Td
+QT
+qx
+Uu
+gQ
+tt
+bP
+ys
+bW
+ii
+wq
 "}
 (8,1,1) = {"
-a
-b
-w
-o
-t
-b
-a
-a
-a
+zM
+KP
+xv
+TK
+KP
+eX
+ef
+vJ
+yx
+th
+ER
+UQ
+Ur
+jy
+Kw
 "}
 (9,1,1) = {"
-a
-a
-N
-E
-h
-a
-a
-a
-a
+zM
+Td
+Wz
+TK
+Td
+Ph
+Uo
+Uu
+Fj
+Yk
+Al
+pF
+lS
+ii
+wq
+"}
+(10,1,1) = {"
+zM
+Cp
+tZ
+Iv
+hF
+hF
+Td
+Td
+Mo
+ho
+yZ
+hZ
+Ji
+Td
+wq
+"}
+(11,1,1) = {"
+zM
+hF
+aj
+eX
+hF
+wq
+XE
+gK
+Vi
+Ji
+gf
+Hb
+Oe
+Td
+wq
+"}
+(12,1,1) = {"
+wq
+hF
+al
+eX
+Ma
+wq
+wq
+Td
+fn
+yD
+dP
+uB
+hF
+hF
+wq
+"}
+(13,1,1) = {"
+wq
+Td
+ZT
+fi
+Td
+wq
+wq
+Td
+ii
+xm
+vh
+Td
+wq
+wq
+wq
+"}
+(14,1,1) = {"
+wq
+wq
+Td
+Td
+wq
+wq
+Uc
+wq
+Oq
+Hx
+rW
+YF
+wq
+wq
+wq
+"}
+(15,1,1) = {"
+wq
+wq
+wq
+wq
+wq
+wq
+wq
+wq
+wq
+wq
+wq
+YF
+wq
+wq
+wq
 "}

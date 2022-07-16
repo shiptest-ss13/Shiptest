@@ -1083,3 +1083,9 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 10
 	armour_penetration = 15
 	block_chance = 30
+
+/obj/item/vibro_weapon/weak
+	armour_penetration = 10
+	block_chance = 5
+	force = 15
+	throwforce = 20

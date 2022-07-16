@@ -20,7 +20,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/atmospheric_technician
 	desc = "It's a jumpsuit worn by atmospheric technicians."
@@ -37,7 +37,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/engineer
 	desc = "A thick blue jumpsuit worn by civilian mechanics. It's made from fire-resistant materials."
@@ -61,7 +61,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/engineer/hazard
 	name = "engineer's hazard jumpsuit"
@@ -85,7 +85,7 @@
 	icon_state = "junior_engineer_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/engineer/electrician
 	name = "electrician jumpsuit"
@@ -99,7 +99,7 @@
 	icon_state = "electrician_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech
 	name = "maintenance technician jumpsuit"
@@ -113,7 +113,7 @@
 	icon_state = "maintenance_tech_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/engineer/telecomm_specialist
 	name = "telecommunications specialist jumpsuit"
@@ -127,7 +127,7 @@
 	icon_state = "telecomm_specialist_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/ce
 	name = "engineering coordinator suit"
@@ -145,7 +145,7 @@
 	icon_state = "engineering_coordinator_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/senior_engineer
 	name = "senior engineer suit"
@@ -163,7 +163,7 @@
 	icon_state = "senior_engineer_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/suit/senior_atmos
 	name = "senior atmospheric technician suit"
@@ -179,7 +179,7 @@
 	icon_state = "senior_atmos_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/engineering/atmospheric_technician/life_support_specialist
 	name = "life support specialists's jumpsuit"
@@ -194,7 +194,7 @@
 	icon_state = "life_support_specialist_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 
 /obj/item/clothing/under/rank/engineering/atmospheric_technician/firefighter
@@ -210,4 +210,4 @@
 	icon_state = "firefighter_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
