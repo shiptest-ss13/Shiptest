@@ -109,7 +109,7 @@
   * * sparks - Whether to spawn sparks after spawning the bound atom. Default TRUE.
   */
 /datum/mission/proc/spawn_bound(atom/movable/a_type, a_loc, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
-	if(!istype(a_type))
+	if(!ispath(a_type, /atom/movable))
 		CRASH("[src] attempted to spawn bound atom of invalid type [a_type]!")
 	var/atom/movable/bound = new a_type(a_loc)
 	if(sparks)
