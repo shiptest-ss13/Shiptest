@@ -1,6 +1,5 @@
 #!/bin/bash
 set -euo pipefail
-
 source dependencies.sh
 
 find . -name "*.php" -print0 | xargs -0 -n1 php -l
