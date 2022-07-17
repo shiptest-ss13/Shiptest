@@ -856,6 +856,7 @@
 /obj/machinery/light/small,
 /obj/item/stack/cable_coil/pink,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/girder,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "ng" = (
@@ -1074,7 +1075,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
 "ru" = (
-/obj/structure/girder,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1385,7 +1385,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "vH" = (
-/obj/structure/girder,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/corner/purple/border{
 	dir = 1
@@ -1714,7 +1713,6 @@
 /turf/open/floor/plating,
 /area/ship/science/xenobiology)
 "Br" = (
-/obj/structure/girder,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1931,13 +1929,9 @@
 /turf/open/floor/carpet/purple,
 /area/ship/crew/dorm)
 "DR" = (
-/obj/structure/girder,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/machinery/smartfridge/food,
 /turf/open/floor/plating,
-/area/ship/engineering/engine)
+/area/ship/crew/hydroponics)
 "DZ" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
@@ -2218,6 +2212,13 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/item/gun/energy/temperature,
+/obj/structure/closet/wall{
+	dir = 8;
+	icon_door = "grey_wall";
+	name = "slime breach equipment";
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/xenobiology)
@@ -2720,6 +2721,7 @@
 /obj/item/reagent_containers/glass/bottle/nutrient/ez,
 /obj/item/reagent_containers/glass/bottle/nutrient/ez,
 /obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/storage/bag/plants,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/hydroponics)
 "OE" = (
@@ -4100,7 +4102,7 @@ ZF
 DZ
 vg
 ru
-DR
+Wl
 Wl
 Wl
 iL
@@ -4338,7 +4340,7 @@ Fc
 qE
 qE
 DH
-eN
+DR
 eN
 pX
 Zk
