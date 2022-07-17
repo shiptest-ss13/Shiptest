@@ -64,11 +64,13 @@
 	///Lazylist of movable atoms providing opacity sources.
 	var/list/atom/movable/opacity_sources
 
-	/// ID of the virtual level we're in
+	// ID of the virtual level we're in
 	var/virtual_z = 0
 	/// Translation of the virtual z to a virtual level
 	var/static/list/virtual_z_translation
 
+	///the holodeck can load onto this turf if TRUE
+	var/holodeck_compatible = FALSE
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")
@@ -118,7 +120,7 @@
 		add_overlay(/obj/effect/fullbright)
 
 	if(requires_activation)
-		CALCULATE_ADJACENT_TURFS(src)
+		ImmediateCalculateAdjacentTurfs()
 
 	if (light_power && light_range)
 		update_light()
@@ -160,7 +162,7 @@
 /turf/proc/set_temperature()
 
 /turf/proc/Initalize_Atmos(times_fired)
-	CALCULATE_ADJACENT_TURFS(src)
+	ImmediateCalculateAdjacentTurfs()
 
 /turf/Destroy(force)
 	. = QDEL_HINT_IWILLGC

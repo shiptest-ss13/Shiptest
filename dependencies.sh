@@ -24,4 +24,4 @@ export SPACEMAN_DMM_VERSION=suite-1.7.1
 export PYTHON_VERSION=3.9.10
 
 #auxmos version
-export AUXMOS_VERSION=v0.2.8
+export AUXMOS_VERSION=v1.1.2
