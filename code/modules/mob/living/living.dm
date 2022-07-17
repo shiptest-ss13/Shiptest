@@ -728,8 +728,8 @@
 			O.applyOrganDamage(organ_amt*-1)//1 = 5 organ damage healed
 
 		if(specific_bones)
-			for(var/obj/item/bodypart/B in C.bodyparts)
-				B.fix_bone()
+			for(var/datum/wound/current_wound in C.all_wounds)
+				current_wound.remove_wound()
 
 	if(specific_revive)
 		revive()
