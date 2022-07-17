@@ -62,7 +62,7 @@
 	visor_flags_inv = HIDEEYES|HIDEFACE
 
 // WS Begin - plasmeme command helmets buff - used for RD bomb scanner
-/obj/item/clothing/head/helmet/space/plasmaman/proc/display_visor_message(var/msg)
+/obj/item/clothing/head/helmet/space/plasmaman/proc/display_visor_message(msg)
 	var/mob/wearer = loc
 	if(msg && ishuman(wearer))
 		wearer.show_message("[icon2html(src, wearer)]<b><span class='robot'>[msg]</span></b>", MSG_VISUAL)

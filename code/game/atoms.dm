@@ -1535,7 +1535,7 @@
 /atom/proc/container_resist_act(mob/living/user)
 
 ///Setter for the "base_pixel_x" var to append behavior related to it's changing
-/atom/proc/set_base_pixel_x(var/new_value)
+/atom/proc/set_base_pixel_x(new_value)
 	if(base_pixel_x == new_value)
 		return
 	. = base_pixel_x

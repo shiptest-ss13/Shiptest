@@ -33,7 +33,7 @@ AI MODULES
 	..()
 	show_laws(user)
 
-/obj/item/aiModule/proc/show_laws(var/mob/user as mob)
+/obj/item/aiModule/proc/show_laws(mob/user as mob)
 	if(laws.len)
 		to_chat(user, "<B>Programmed Law[(laws.len > 1) ? "s" : ""]:</B>")
 		for(var/law in laws)

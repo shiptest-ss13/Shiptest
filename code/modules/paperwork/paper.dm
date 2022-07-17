@@ -428,7 +428,7 @@
 /obj/item/paper/evilfax/proc/evilpaper_specialaction(target)
 	addtimer(CALLBACK(src, .proc/handle_specialaction, target), 30)
 
-/obj/item/paper/evilfax/proc/handle_specialaction(var/mob/living/carbon/target)
+/obj/item/paper/evilfax/proc/handle_specialaction(mob/living/carbon/target)
 	if(istype(target,/mob/living/carbon))
 		if(myeffect == "Borgification")
 			to_chat(target,"<span class='userdanger'>You seem to comprehend the AI a little better. Why are your muscles so stiff?</span>")

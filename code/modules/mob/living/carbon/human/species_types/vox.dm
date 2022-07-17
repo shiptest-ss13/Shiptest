@@ -179,7 +179,7 @@
 	if(held_item)
 		examine_list += "<span class='notice'>[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.</span>"
 
-/datum/action/innate/tail_hold/proc/handle_sprite_magic(var/mob/M, var/olddir, var/newdir, var/force = FALSE)
+/datum/action/innate/tail_hold/proc/handle_sprite_magic(mob/M, var/olddir, var/newdir, var/force = FALSE)
 	if(!held_item)
 		if(held_item_overlay)
 			owner.cut_overlay(held_item_overlay)
