@@ -119,31 +119,6 @@
 /datum/quirk/monochromatic/remove()
 	if(quirk_holder)
 		quirk_holder.remove_client_colour(/datum/client_colour/monochrome)
-
-/datum/quirk/colorist
-	name = "Colorist"
-	desc = "You like carrying around a hair dye spray to quickly apply color patterns to your hair."
-	value = 0
-	medical_record_text = "Patient enjoys dyeing their hair with pretty colors."
-	var/where
-
-/datum/quirk/colorist/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/dyespray/spraycan = new(get_turf(H))
-	var/list/slots = list(
-		"in your left pocket" = ITEM_SLOT_LPOCKET,
-		"in your right pocket" = ITEM_SLOT_RPOCKET,
-		"in your backpack" = ITEM_SLOT_BACKPACK
-	)
-	where = H.equip_in_one_of_slots(spraycan, slots, FALSE) || "at your feet"
-
-/datum/quirk/colorist/post_add()
-	if(where == "in your backpack")
-		var/mob/living/carbon/human/H = quirk_holder
-		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
-
-	to_chat(quirk_holder, "<span class='notice'>Your bottle of hair dye spray is [where].</span>")
-
 /datum/quirk/phobia
 	name = "Phobia"
 	desc = "You are irrationally afraid of something."
