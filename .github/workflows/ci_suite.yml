@@ -43,7 +43,7 @@ jobs:
         run: |
           bash tools/ci/check_filedirs.sh shiptest.dme
           bash tools/ci/check_changelogs.sh
-          tools/build/build --ci lint tgui-test
+          bash tools/ci/check_tgui.sh
           bash tools/ci/check_grep.sh
           tools/bootstrap/python -m ci.check_regex --log-changes-only
           tools/bootstrap/python -m dmi.test
