@@ -91,7 +91,7 @@ if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/stairs/(?<type>[/\w]*),\n[^)]*?/o
     echo "ERROR: found multiple identical stairs on the same tile, please remove them."
 	st=1
 fi;
-if grep -rzoP 'machinery/door.*{([^}]|\n)*name = .*("|\s)(?!of|and|to)[a-z].*\n' _maps/**/*.dmm;	then
+if grep -rzoP 'machinery/door.*{([^}]|\n)*name = .*("|\s)(?!for|of|and|to)[a-z].*\n' _maps/**/*.dmm;	then
     echo
     echo "ERROR: found door names without proper upper-casing. Please upper-case your door names."
     st=1
