@@ -119,6 +119,7 @@
 /datum/quirk/monochromatic/remove()
 	if(quirk_holder)
 		quirk_holder.remove_client_colour(/datum/client_colour/monochrome)
+
 /datum/quirk/phobia
 	name = "Phobia"
 	desc = "You are irrationally afraid of something."
