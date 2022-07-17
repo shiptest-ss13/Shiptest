@@ -299,7 +299,7 @@
 		user.update_inv_head()
 
 /obj/item/clothing/head/wig/suicide_act(mob/living/user)
-	if (ishumanbasic(user) ||  isfelinid(user) || isvampire(user))		// (Semi)non degenerates
+	if (ishumanbasic(user) ||  isvampire(user))		// (Semi)non degenerates
 		user.visible_message("<span class='suicide'>[user] strangles [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		return OXYLOSS
 	if (iszombie(user))		// No oxy damage

@@ -408,9 +408,8 @@
 	var/oldPlantName = myseed.plantname
 	if(length(myseed.mutatelist))
 		var/mutantseed = pick(myseed.mutatelist)
-		qdel(myseed)
-		myseed = null
-		myseed = new mutantseed
+		QDEL_NULL(myseed)
+		myseed = new mutantseed(src)
 	else
 		return
 

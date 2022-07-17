@@ -52,6 +52,11 @@
 	desc = "Worn by the Head of Personnel. It smells faintly of bureaucracy."
 	icon_state = "hopcloak"
 
+/obj/item/clothing/neck/cloak/trans
+	name = "vampire cloak"
+	desc = "Worn by high ranking vampires of the transylvanian society of vampires."
+	icon_state = "trans"
+
 /obj/item/clothing/suit/hooded/cloak/goliath
 	name = "goliath cloak"
 	icon_state = "goliath_cloak"

@@ -1251,8 +1251,6 @@
 		// WS - More fun with cookies - Start
 		else if(islizard(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/nugget
-		else if(isfelinid(H))
-			cookiealt = /obj/item/reagent_containers/food/snacks/deadmouse
 		else if(issquidperson(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/fishfingers
 		if(H.recieve_gift(cookiealt))

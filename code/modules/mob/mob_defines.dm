@@ -51,7 +51,6 @@
 	/// The zone this mob is currently targeting
 	var/zone_selected = BODY_ZONE_CHEST
 
-	var/computer_id = null
 	var/list/logging = list()
 
 	/// The machine the mob is interacting with (this is very bad old code btw)
@@ -109,9 +108,6 @@
 	var/list/possible_a_intents = null//Living
 	/// The movement intent of the mob (run/wal)
 	var/m_intent = MOVE_INTENT_RUN//Living
-
-	/// The last known IP of the client who was in this mob
-	var/lastKnownIP = null
 
 	/// movable atom we are buckled to
 	var/atom/movable/buckled = null//Living
