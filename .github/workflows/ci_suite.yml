@@ -43,7 +43,7 @@ jobs:
           bash tools/ci/check_changelogs.sh
           find . -name "*.php" -print0 | xargs -0 -n1 php -l
           find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 tools/bootstrap/python ./tools/json_verifier.py
-          tgui/bin/tgui --lint
+          tools/build/build --ci lint tgui-test
           bash tools/ci/check_grep.sh
           tools/bootstrap/python -m ci.check_regex --log-changes-only
           tools/bootstrap/python -m dmi.test
@@ -79,10 +79,9 @@ jobs:
         run: bash tools/ci/install_byond.sh
       - name: Compile All Maps
         run: |
+          bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
-          tools/bootstrap/python tools/ci/template_dm_generator.py
-          tgui/bin/tgui --build
-          bash tools/ci/dm.sh -DCIBUILDING -DCITESTING -DALL_MAPS shiptest.dme
+          tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS
 
   run_all_tests:
     name: Integration Tests
@@ -124,9 +123,9 @@ jobs:
           bash tools/ci/install_auxmos.sh
       - name: Compile and run tests
         run: |
+          bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
-          tgui/bin/tgui --build
-          bash tools/ci/dm.sh -DCIBUILDING shiptest.dme
+          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
           bash tools/ci/run_server.sh
 
   test_windows:
