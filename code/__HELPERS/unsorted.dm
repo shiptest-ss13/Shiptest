@@ -602,15 +602,15 @@ Turf and target are separate in case you want to teleport some distance from a t
 
 /*
 
- Gets the turf this atom's *ICON* appears to inhabit
- It takes into account:
+Gets the turf this atom's *ICON* appears to inhabit
+It takes into account:
  * Pixel_x/y
  * Matrix x/y
 
- NOTE: if your atom has non-standard bounds then this proc
- will handle it, but:
+NOTE: if your atom has non-standard bounds then this proc
+will handle it, but:
  * if the bounds are even, then there are an even amount of "middle" turfs, the one to the EAST, NORTH, or BOTH is picked
- (this may seem bad, but you're atleast as close to the center of the atom as possible, better than byond's default loc being all the way off)
+(this may seem bad, but you're atleast as close to the center of the atom as possible, better than byond's default loc being all the way off)
  * if the bounds are odd, the true middle turf of the atom is returned
 
 */

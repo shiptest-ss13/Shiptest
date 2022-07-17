@@ -2,12 +2,12 @@
 #define SHIP_NAMES_FILE "ship_names.json"
 
 /**
-  * # Simulated overmap ship
-  *
-  * A ship that corresponds to an actual, physical shuttle.
-  *
-  * Can be docked to any other overmap datum that has a valid docking process.
-  */
+ * # Simulated overmap ship
+ *
+ * A ship that corresponds to an actual, physical shuttle.
+ *
+ * Can be docked to any other overmap datum that has a valid docking process.
+ */
 /datum/overmap/ship/controlled
 	token_type = /obj/overmap/rendered
 	dock_time = 10 SECONDS
@@ -65,9 +65,9 @@
 	return TRUE
 
 /**
-  * * creation_template - The template used to create the ship.
-  * * target_port - The port to dock the new ship to.
-  */
+ * * creation_template - The template used to create the ship.
+ * * target_port - The port to dock the new ship to.
+ */
 /datum/overmap/ship/controlled/Initialize(position, datum/map_template/shuttle/creation_template, create_shuttle = TRUE)
 	. = ..()
 	if(creation_template)
@@ -171,8 +171,8 @@
 		shuttle_port.shuttle_areas += docker_port.shuttle_port.shuttle_areas
 
 /**
-  * Docks to an empty dynamic encounter. Used for intership interaction, structural modifications, and such
-  */
+ * Docks to an empty dynamic encounter. Used for intership interaction, structural modifications, and such
+ */
 /datum/overmap/ship/controlled/proc/dock_in_empty_space()
 	var/datum/overmap/dynamic/empty/E = locate() in SSovermap.overmap_container[x][y]
 	if(!E)
@@ -201,8 +201,8 @@
 		decelerate(thrust_used)
 
 /**
-  * Just double checks all the engines on the shuttle
-  */
+ * Just double checks all the engines on the shuttle
+ */
 /datum/overmap/ship/controlled/proc/refresh_engines()
 	var/calculated_thrust
 	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
@@ -212,8 +212,8 @@
 	est_thrust = calculated_thrust
 
 /**
-  * Calculates the mass based on the amount of turfs in the shuttle's areas
-  */
+ * Calculates the mass based on the amount of turfs in the shuttle's areas
+ */
 /datum/overmap/ship/controlled/proc/calculate_mass()
 	. = 0
 	var/list/areas = shuttle_port.shuttle_areas
@@ -222,8 +222,8 @@
 	mass = .
 
 /**
-  * Calculates the average fuel fullness of all engines.
-  */
+ * Calculates the average fuel fullness of all engines.
+ */
 /datum/overmap/ship/controlled/proc/calculate_avg_fuel()
 	var/fuel_avg = 0
 	var/engine_amnt = 0
@@ -243,22 +243,22 @@
 	return ..()
 
 /**
-  * Bastardized version of GLOB.manifest.manifest_inject, but used per ship
-  *
-  * * H - Human mob to add to the manifest
-  * * C - client of the mob to add to the manifest
-  * * human_job - Job of the human mob to add to the manifest
-  */
+ * Bastardized version of GLOB.manifest.manifest_inject, but used per ship
+ *
+ * * H - Human mob to add to the manifest
+ * * C - client of the mob to add to the manifest
+ * * human_job - Job of the human mob to add to the manifest
+ */
 /datum/overmap/ship/controlled/proc/manifest_inject(mob/living/carbon/human/H, client/C, datum/job/human_job)
 	if(H.mind && (H.mind.assigned_role != H.mind.special_role))
 		manifest[H.real_name] = human_job
 
 /**
-  * Connects a new shuttle port to the ship datum. Should be used very shortly after the ship is created, if at all.
-  * Used to connect the shuttle port to a ship datum that was created without a template.
-  *
-  * * new_port - The new shuttle port to connect to the ship.
-  */
+ * Connects a new shuttle port to the ship datum. Should be used very shortly after the ship is created, if at all.
+ * Used to connect the shuttle port to a ship datum that was created without a template.
+ *
+ * * new_port - The new shuttle port to connect to the ship.
+ */
 /datum/overmap/ship/controlled/proc/connect_new_shuttle_port(obj/docking_port/mobile/new_port)
 	if(shuttle_port)
 		CRASH("Attempted to connect a new port to a ship that already has a port!")
