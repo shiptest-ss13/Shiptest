@@ -36,19 +36,6 @@ if grep -P 'pixel_[^xy]' _maps/**/*.dmm;	then
     echo "ERROR: incorrect pixel offset variables detected in maps, please remove them."
     st=1
 fi;
-if grep -P '/obj/structure/cable(/\w+)+\{' _maps/**/*.dmm;	then
-    echo "ERROR: vareditted cables detected, please remove them."
-    st=1
-fi;
-if grep -P '\td[1-2] =' _maps/**/*.dmm;	then
-    echo "ERROR: d1/d2 cable variables detected in maps, please remove them."
-    st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/cable,\n[^)]*?/obj/structure/cable,\n[^)]*?/area/.+?\)' _maps/**/*.dmm;	then
-	echo
-    echo "ERROR: found multiple cables on the same tile, please remove them."
-    st=1
-fi;
 if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/lattice[/\w]*?,\n[^)]*?/obj/structure/lattice[/\w]*?,\n[^)]*?/area/.+?\)' _maps/**/*.dmm;	then
 	echo
     echo "ERROR: found multiple lattices on the same tile, please remove them."
