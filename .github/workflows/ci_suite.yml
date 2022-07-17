@@ -11,10 +11,7 @@ jobs:
     name: Run Linters
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/checkout@v3
-        with:
-          ref: master
+      - uses: actions/checkout@v2
       - uses: actions/setup-python@v3
         with:
           python-version: '3.9.10'
@@ -33,6 +30,7 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - name: Install Tools
+      - uses: actions/checkout@v2
         run: |
           pip3 install setuptools
           bash tools/ci/install_node.sh
@@ -45,10 +43,15 @@ jobs:
           bash tools/ci/check_changelogs.sh
           bash tools/ci/check_misc.sh
           bash tools/ci/check_grep.sh
-          tools/bootstrap/python -m ci.check_regex --log-changes-only
           tools/bootstrap/python -m dmi.test
           tools/bootstrap/python -m mapmerge2.dmm_test
           ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
+      - name: Run Check Regex
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+        run: |
+          tools/bootstrap/python -m ci.check_regex --log-changes-only
       - name: Annotate Regex Matches
         if: always()
         run: |
