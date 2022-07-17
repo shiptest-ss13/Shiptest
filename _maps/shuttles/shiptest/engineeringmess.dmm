@@ -4124,6 +4124,10 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "NB" = (
+/obj/structure/closet/firecloset/wall{
+	dir = 8;
+	pixel_x = 28
+	},
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -4140,10 +4144,6 @@
 "NC" = (
 /obj/structure/closet/emcloset/wall{
 	pixel_y = 28
-	},
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
