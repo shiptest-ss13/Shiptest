@@ -719,6 +719,10 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "fB" = (
@@ -1495,9 +1499,8 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 28
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
-	dir = 4;
-	layer = 2.35
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -2749,8 +2752,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 8
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 4;
+	layer = 2.35
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
