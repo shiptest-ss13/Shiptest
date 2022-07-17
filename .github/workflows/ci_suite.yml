@@ -30,7 +30,7 @@ jobs:
         run: bash tools/ci/install_spaceman_dmm.sh dreamchecker
       - name: Install Tools
         run: |
-          pip install setuptools
+          pip3 install setuptools
           bash tools/ci/install_node.sh
           bash tools/ci/install_spaceman_dmm.sh dreamchecker
           bash tools/ci/install_auxmos.sh
