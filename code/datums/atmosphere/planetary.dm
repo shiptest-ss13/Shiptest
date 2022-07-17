@@ -39,7 +39,6 @@
 	restricted_gases = list(
 		GAS_PLASMA=0.1,
 		GAS_H2O=0.1,
-		GAS_MIASMA=1.2,
 	)
 	restricted_chance = 50
 

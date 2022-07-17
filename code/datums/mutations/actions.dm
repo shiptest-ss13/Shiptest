@@ -40,14 +40,7 @@
 	var/sensitivity = 1
 
 /obj/effect/proc_holder/spell/targeted/olfaction/cast(list/targets, mob/living/user = usr)
-	//can we sniff? is there miasma in the air?
-	var/datum/gas_mixture/air = user.loc.return_air()
-
-	if(air.get_moles(GAS_MIASMA))
-		user.adjust_disgust(sensitivity * 45)
-		to_chat(user, "<span class='warning'>With your overly sensitive nose, you get a whiff of stench and feel sick! Try moving to a cleaner area!</span>")
-		return
-
+	//can we sniff?
 	var/atom/sniffed = user.get_active_held_item()
 	if(sniffed)
 		var/old_target = tracking_target
