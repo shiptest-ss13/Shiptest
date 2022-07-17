@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 
 services:
   # /tg/ DM server
@@ -10,7 +10,7 @@ services:
       dockerfile: Dockerfile
     entrypoint: bash /entrypoint.sh
     env_file:
-     - .env
+      - .env
     ports:
       - "1337:1337"
     depends_on:
@@ -32,8 +32,8 @@ services:
       - MYSQL_USER=gamelord
       - MYSQL_PASSWORD=gamelord
     volumes:
-        - ../../SQL/tgstation_schema.sql:/docker-entrypoint-initdb.d/tgstation_schema.sql:ro
-        - database:/var/lib/mysql
+      - ../../SQL/tgstation_schema.sql:/docker-entrypoint-initdb.d/tgstation_schema.sql:ro
+      - database:/var/lib/mysql
 
   # Adminer, for managing the DB, has the 'donotstart' profile attached by default. Remove this line if this is needed
   adminer:

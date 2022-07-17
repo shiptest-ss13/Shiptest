@@ -1,5 +1,5 @@
 HOW TO USE:
-Drag one of the scripts in the “Scripts” folder onto the .bat file “Update Paths” to open it with the .bat file. Let the script run. 
+Drag one of the scripts in the “Scripts” folder onto the .bat file “Update Paths” to open it with the .bat file. Let the script run.
 
 Use this tool before using mapmerge or opening the map in an editor.
 
@@ -29,4 +29,3 @@ The path on the left is the old, the path on the right is the new. It is seperat
 If you want to make multiple path changes in one script, simply add more changes on new lines.
 
 If you get lost, look at other scripts for examples.
-

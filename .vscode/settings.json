@@ -23,9 +23,7 @@
 	"gitlens.advanced.blame.customArguments": ["-w"],
 	"tgstationTestExplorer.project.resultsType": "json",
 	"[python]": {
-		"gitlens.codeLens.symbolScopes": [
-			"!Module"
-		],
+		"gitlens.codeLens.symbolScopes": ["!Module"],
 		"editor.wordBasedSuggestions": false,
 		"editor.insertSpaces": true,
 		"editor.tabSize": 4
@@ -34,18 +32,14 @@
 		"editor.insertSpaces": true,
 		"editor.tabSize": 2,
 		"editor.autoIndent": "advanced",
-		"gitlens.codeLens.scopes": [
-			"document"
-		]
+		"gitlens.codeLens.scopes": ["document"]
 	},
 	"[json]": {
 		"editor.quickSuggestions": {
 			"strings": true
 		},
 		"editor.suggest.insertMode": "replace",
-		"gitlens.codeLens.scopes": [
-			"document"
-		]
+		"gitlens.codeLens.scopes": ["document"]
 	},
 	"[javascript]": {
 		"editor.rulers": [80],

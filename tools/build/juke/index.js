@@ -8,20 +8,27 @@ var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __defNormalProp = (obj, key, value) =>
+  key in obj
+    ? __defProp(obj, key, {
+        enumerable: true,
+        configurable: true,
+        writable: true,
+        value,
+      })
+    : (obj[key] = value);
 var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
+    if (__hasOwnProp.call(b, prop)) __defNormalProp(a, prop, b[prop]);
   if (__getOwnPropSymbols)
     for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
+      if (__propIsEnum.call(b, prop)) __defNormalProp(a, prop, b[prop]);
     }
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
+var __markAsModule = (target) =>
+  __defProp(target, "__esModule", { value: true });
 var __objRest = (source, exclude) => {
   var target = {};
   for (var prop in source)
@@ -34,186 +41,214 @@ var __objRest = (source, exclude) => {
     }
   return target;
 };
-var __commonJS = (cb, mod) => function __require() {
-  return mod || (0, cb[Object.keys(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
-};
+var __commonJS = (cb, mod) =>
+  function __require() {
+    return (
+      mod || (0, cb[Object.keys(cb)[0]])((mod = { exports: {} }).exports, mod),
+      mod.exports
+    );
+  };
 var __export = (target, all) => {
   __markAsModule(target);
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
 };
 var __reExport = (target, module2, desc) => {
-  if (module2 && typeof module2 === "object" || typeof module2 === "function") {
+  if (
+    (module2 && typeof module2 === "object") ||
+    typeof module2 === "function"
+  ) {
     for (let key of __getOwnPropNames(module2))
       if (!__hasOwnProp.call(target, key) && key !== "default")
-        __defProp(target, key, { get: () => module2[key], enumerable: !(desc = __getOwnPropDesc(module2, key)) || desc.enumerable });
+        __defProp(target, key, {
+          get: () => module2[key],
+          enumerable:
+            !(desc = __getOwnPropDesc(module2, key)) || desc.enumerable,
+        });
   }
   return target;
 };
 var __toModule = (module2) => {
-  return __reExport(__markAsModule(__defProp(module2 != null ? __create(__getProtoOf(module2)) : {}, "default", module2 && module2.__esModule && "default" in module2 ? { get: () => module2.default, enumerable: true } : { value: module2, enumerable: true })), module2);
+  return __reExport(
+    __markAsModule(
+      __defProp(
+        module2 != null ? __create(__getProtoOf(module2)) : {},
+        "default",
+        module2 && module2.__esModule && "default" in module2
+          ? { get: () => module2.default, enumerable: true }
+          : { value: module2, enumerable: true }
+      )
+    ),
+    module2
+  );
 };
 
 // pnp:color-name-npm-1.1.4-025792b0ea-b044585952.zip/node_modules/color-name/index.js
 var require_color_name = __commonJS({
-  "pnp:color-name-npm-1.1.4-025792b0ea-b044585952.zip/node_modules/color-name/index.js"(exports, module2) {
+  "pnp:color-name-npm-1.1.4-025792b0ea-b044585952.zip/node_modules/color-name/index.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     module2.exports = {
-      "aliceblue": [240, 248, 255],
-      "antiquewhite": [250, 235, 215],
-      "aqua": [0, 255, 255],
-      "aquamarine": [127, 255, 212],
-      "azure": [240, 255, 255],
-      "beige": [245, 245, 220],
-      "bisque": [255, 228, 196],
-      "black": [0, 0, 0],
-      "blanchedalmond": [255, 235, 205],
-      "blue": [0, 0, 255],
-      "blueviolet": [138, 43, 226],
-      "brown": [165, 42, 42],
-      "burlywood": [222, 184, 135],
-      "cadetblue": [95, 158, 160],
-      "chartreuse": [127, 255, 0],
-      "chocolate": [210, 105, 30],
-      "coral": [255, 127, 80],
-      "cornflowerblue": [100, 149, 237],
-      "cornsilk": [255, 248, 220],
-      "crimson": [220, 20, 60],
-      "cyan": [0, 255, 255],
-      "darkblue": [0, 0, 139],
-      "darkcyan": [0, 139, 139],
-      "darkgoldenrod": [184, 134, 11],
-      "darkgray": [169, 169, 169],
-      "darkgreen": [0, 100, 0],
-      "darkgrey": [169, 169, 169],
-      "darkkhaki": [189, 183, 107],
-      "darkmagenta": [139, 0, 139],
-      "darkolivegreen": [85, 107, 47],
-      "darkorange": [255, 140, 0],
-      "darkorchid": [153, 50, 204],
-      "darkred": [139, 0, 0],
-      "darksalmon": [233, 150, 122],
-      "darkseagreen": [143, 188, 143],
-      "darkslateblue": [72, 61, 139],
-      "darkslategray": [47, 79, 79],
-      "darkslategrey": [47, 79, 79],
-      "darkturquoise": [0, 206, 209],
-      "darkviolet": [148, 0, 211],
-      "deeppink": [255, 20, 147],
-      "deepskyblue": [0, 191, 255],
-      "dimgray": [105, 105, 105],
-      "dimgrey": [105, 105, 105],
-      "dodgerblue": [30, 144, 255],
-      "firebrick": [178, 34, 34],
-      "floralwhite": [255, 250, 240],
-      "forestgreen": [34, 139, 34],
-      "fuchsia": [255, 0, 255],
-      "gainsboro": [220, 220, 220],
-      "ghostwhite": [248, 248, 255],
-      "gold": [255, 215, 0],
-      "goldenrod": [218, 165, 32],
-      "gray": [128, 128, 128],
-      "green": [0, 128, 0],
-      "greenyellow": [173, 255, 47],
-      "grey": [128, 128, 128],
-      "honeydew": [240, 255, 240],
-      "hotpink": [255, 105, 180],
-      "indianred": [205, 92, 92],
-      "indigo": [75, 0, 130],
-      "ivory": [255, 255, 240],
-      "khaki": [240, 230, 140],
-      "lavender": [230, 230, 250],
-      "lavenderblush": [255, 240, 245],
-      "lawngreen": [124, 252, 0],
-      "lemonchiffon": [255, 250, 205],
-      "lightblue": [173, 216, 230],
-      "lightcoral": [240, 128, 128],
-      "lightcyan": [224, 255, 255],
-      "lightgoldenrodyellow": [250, 250, 210],
-      "lightgray": [211, 211, 211],
-      "lightgreen": [144, 238, 144],
-      "lightgrey": [211, 211, 211],
-      "lightpink": [255, 182, 193],
-      "lightsalmon": [255, 160, 122],
-      "lightseagreen": [32, 178, 170],
-      "lightskyblue": [135, 206, 250],
-      "lightslategray": [119, 136, 153],
-      "lightslategrey": [119, 136, 153],
-      "lightsteelblue": [176, 196, 222],
-      "lightyellow": [255, 255, 224],
-      "lime": [0, 255, 0],
-      "limegreen": [50, 205, 50],
-      "linen": [250, 240, 230],
-      "magenta": [255, 0, 255],
-      "maroon": [128, 0, 0],
-      "mediumaquamarine": [102, 205, 170],
-      "mediumblue": [0, 0, 205],
-      "mediumorchid": [186, 85, 211],
-      "mediumpurple": [147, 112, 219],
-      "mediumseagreen": [60, 179, 113],
-      "mediumslateblue": [123, 104, 238],
-      "mediumspringgreen": [0, 250, 154],
-      "mediumturquoise": [72, 209, 204],
-      "mediumvioletred": [199, 21, 133],
-      "midnightblue": [25, 25, 112],
-      "mintcream": [245, 255, 250],
-      "mistyrose": [255, 228, 225],
-      "moccasin": [255, 228, 181],
-      "navajowhite": [255, 222, 173],
-      "navy": [0, 0, 128],
-      "oldlace": [253, 245, 230],
-      "olive": [128, 128, 0],
-      "olivedrab": [107, 142, 35],
-      "orange": [255, 165, 0],
-      "orangered": [255, 69, 0],
-      "orchid": [218, 112, 214],
-      "palegoldenrod": [238, 232, 170],
-      "palegreen": [152, 251, 152],
-      "paleturquoise": [175, 238, 238],
-      "palevioletred": [219, 112, 147],
-      "papayawhip": [255, 239, 213],
-      "peachpuff": [255, 218, 185],
-      "peru": [205, 133, 63],
-      "pink": [255, 192, 203],
-      "plum": [221, 160, 221],
-      "powderblue": [176, 224, 230],
-      "purple": [128, 0, 128],
-      "rebeccapurple": [102, 51, 153],
-      "red": [255, 0, 0],
-      "rosybrown": [188, 143, 143],
-      "royalblue": [65, 105, 225],
-      "saddlebrown": [139, 69, 19],
-      "salmon": [250, 128, 114],
-      "sandybrown": [244, 164, 96],
-      "seagreen": [46, 139, 87],
-      "seashell": [255, 245, 238],
-      "sienna": [160, 82, 45],
-      "silver": [192, 192, 192],
-      "skyblue": [135, 206, 235],
-      "slateblue": [106, 90, 205],
-      "slategray": [112, 128, 144],
-      "slategrey": [112, 128, 144],
-      "snow": [255, 250, 250],
-      "springgreen": [0, 255, 127],
-      "steelblue": [70, 130, 180],
-      "tan": [210, 180, 140],
-      "teal": [0, 128, 128],
-      "thistle": [216, 191, 216],
-      "tomato": [255, 99, 71],
-      "turquoise": [64, 224, 208],
-      "violet": [238, 130, 238],
-      "wheat": [245, 222, 179],
-      "white": [255, 255, 255],
-      "whitesmoke": [245, 245, 245],
-      "yellow": [255, 255, 0],
-      "yellowgreen": [154, 205, 50]
+      aliceblue: [240, 248, 255],
+      antiquewhite: [250, 235, 215],
+      aqua: [0, 255, 255],
+      aquamarine: [127, 255, 212],
+      azure: [240, 255, 255],
+      beige: [245, 245, 220],
+      bisque: [255, 228, 196],
+      black: [0, 0, 0],
+      blanchedalmond: [255, 235, 205],
+      blue: [0, 0, 255],
+      blueviolet: [138, 43, 226],
+      brown: [165, 42, 42],
+      burlywood: [222, 184, 135],
+      cadetblue: [95, 158, 160],
+      chartreuse: [127, 255, 0],
+      chocolate: [210, 105, 30],
+      coral: [255, 127, 80],
+      cornflowerblue: [100, 149, 237],
+      cornsilk: [255, 248, 220],
+      crimson: [220, 20, 60],
+      cyan: [0, 255, 255],
+      darkblue: [0, 0, 139],
+      darkcyan: [0, 139, 139],
+      darkgoldenrod: [184, 134, 11],
+      darkgray: [169, 169, 169],
+      darkgreen: [0, 100, 0],
+      darkgrey: [169, 169, 169],
+      darkkhaki: [189, 183, 107],
+      darkmagenta: [139, 0, 139],
+      darkolivegreen: [85, 107, 47],
+      darkorange: [255, 140, 0],
+      darkorchid: [153, 50, 204],
+      darkred: [139, 0, 0],
+      darksalmon: [233, 150, 122],
+      darkseagreen: [143, 188, 143],
+      darkslateblue: [72, 61, 139],
+      darkslategray: [47, 79, 79],
+      darkslategrey: [47, 79, 79],
+      darkturquoise: [0, 206, 209],
+      darkviolet: [148, 0, 211],
+      deeppink: [255, 20, 147],
+      deepskyblue: [0, 191, 255],
+      dimgray: [105, 105, 105],
+      dimgrey: [105, 105, 105],
+      dodgerblue: [30, 144, 255],
+      firebrick: [178, 34, 34],
+      floralwhite: [255, 250, 240],
+      forestgreen: [34, 139, 34],
+      fuchsia: [255, 0, 255],
+      gainsboro: [220, 220, 220],
+      ghostwhite: [248, 248, 255],
+      gold: [255, 215, 0],
+      goldenrod: [218, 165, 32],
+      gray: [128, 128, 128],
+      green: [0, 128, 0],
+      greenyellow: [173, 255, 47],
+      grey: [128, 128, 128],
+      honeydew: [240, 255, 240],
+      hotpink: [255, 105, 180],
+      indianred: [205, 92, 92],
+      indigo: [75, 0, 130],
+      ivory: [255, 255, 240],
+      khaki: [240, 230, 140],
+      lavender: [230, 230, 250],
+      lavenderblush: [255, 240, 245],
+      lawngreen: [124, 252, 0],
+      lemonchiffon: [255, 250, 205],
+      lightblue: [173, 216, 230],
+      lightcoral: [240, 128, 128],
+      lightcyan: [224, 255, 255],
+      lightgoldenrodyellow: [250, 250, 210],
+      lightgray: [211, 211, 211],
+      lightgreen: [144, 238, 144],
+      lightgrey: [211, 211, 211],
+      lightpink: [255, 182, 193],
+      lightsalmon: [255, 160, 122],
+      lightseagreen: [32, 178, 170],
+      lightskyblue: [135, 206, 250],
+      lightslategray: [119, 136, 153],
+      lightslategrey: [119, 136, 153],
+      lightsteelblue: [176, 196, 222],
+      lightyellow: [255, 255, 224],
+      lime: [0, 255, 0],
+      limegreen: [50, 205, 50],
+      linen: [250, 240, 230],
+      magenta: [255, 0, 255],
+      maroon: [128, 0, 0],
+      mediumaquamarine: [102, 205, 170],
+      mediumblue: [0, 0, 205],
+      mediumorchid: [186, 85, 211],
+      mediumpurple: [147, 112, 219],
+      mediumseagreen: [60, 179, 113],
+      mediumslateblue: [123, 104, 238],
+      mediumspringgreen: [0, 250, 154],
+      mediumturquoise: [72, 209, 204],
+      mediumvioletred: [199, 21, 133],
+      midnightblue: [25, 25, 112],
+      mintcream: [245, 255, 250],
+      mistyrose: [255, 228, 225],
+      moccasin: [255, 228, 181],
+      navajowhite: [255, 222, 173],
+      navy: [0, 0, 128],
+      oldlace: [253, 245, 230],
+      olive: [128, 128, 0],
+      olivedrab: [107, 142, 35],
+      orange: [255, 165, 0],
+      orangered: [255, 69, 0],
+      orchid: [218, 112, 214],
+      palegoldenrod: [238, 232, 170],
+      palegreen: [152, 251, 152],
+      paleturquoise: [175, 238, 238],
+      palevioletred: [219, 112, 147],
+      papayawhip: [255, 239, 213],
+      peachpuff: [255, 218, 185],
+      peru: [205, 133, 63],
+      pink: [255, 192, 203],
+      plum: [221, 160, 221],
+      powderblue: [176, 224, 230],
+      purple: [128, 0, 128],
+      rebeccapurple: [102, 51, 153],
+      red: [255, 0, 0],
+      rosybrown: [188, 143, 143],
+      royalblue: [65, 105, 225],
+      saddlebrown: [139, 69, 19],
+      salmon: [250, 128, 114],
+      sandybrown: [244, 164, 96],
+      seagreen: [46, 139, 87],
+      seashell: [255, 245, 238],
+      sienna: [160, 82, 45],
+      silver: [192, 192, 192],
+      skyblue: [135, 206, 235],
+      slateblue: [106, 90, 205],
+      slategray: [112, 128, 144],
+      slategrey: [112, 128, 144],
+      snow: [255, 250, 250],
+      springgreen: [0, 255, 127],
+      steelblue: [70, 130, 180],
+      tan: [210, 180, 140],
+      teal: [0, 128, 128],
+      thistle: [216, 191, 216],
+      tomato: [255, 99, 71],
+      turquoise: [64, 224, 208],
+      violet: [238, 130, 238],
+      wheat: [245, 222, 179],
+      white: [255, 255, 255],
+      whitesmoke: [245, 245, 245],
+      yellow: [255, 255, 0],
+      yellowgreen: [154, 205, 50],
     };
-  }
+  },
 });
 
 // pnp:color-convert-npm-2.0.1-79730e935b-79e6bdb9fd.zip/node_modules/color-convert/conversions.js
 var require_conversions = __commonJS({
-  "pnp:color-convert-npm-2.0.1-79730e935b-79e6bdb9fd.zip/node_modules/color-convert/conversions.js"(exports, module2) {
+  "pnp:color-convert-npm-2.0.1-79730e935b-79e6bdb9fd.zip/node_modules/color-convert/conversions.js"(
+    exports,
+    module2
+  ) {
     var cssKeywords = require_color_name();
     var reverseKeywords = {};
     for (const key of Object.keys(cssKeywords)) {
@@ -234,7 +269,7 @@ var require_conversions = __commonJS({
       ansi256: { channels: 1, labels: ["ansi256"] },
       hcg: { channels: 3, labels: ["h", "c", "g"] },
       apple: { channels: 3, labels: ["r16", "g16", "b16"] },
-      gray: { channels: 1, labels: ["gray"] }
+      gray: { channels: 1, labels: ["gray"] },
     };
     module2.exports = convert;
     for (const model of Object.keys(convert)) {
@@ -253,7 +288,7 @@ var require_conversions = __commonJS({
       Object.defineProperty(convert[model], "channels", { value: channels });
       Object.defineProperty(convert[model], "labels", { value: labels });
     }
-    convert.rgb.hsl = function(rgb) {
+    convert.rgb.hsl = function (rgb) {
       const r = rgb[0] / 255;
       const g = rgb[1] / 255;
       const b = rgb[2] / 255;
@@ -285,7 +320,7 @@ var require_conversions = __commonJS({
       }
       return [h, s * 100, l * 100];
     };
-    convert.rgb.hsv = function(rgb) {
+    convert.rgb.hsv = function (rgb) {
       let rdif;
       let gdif;
       let bdif;
@@ -296,7 +331,7 @@ var require_conversions = __commonJS({
       const b = rgb[2] / 255;
       const v = Math.max(r, g, b);
       const diff = v - Math.min(r, g, b);
-      const diffc = function(c) {
+      const diffc = function (c) {
         return (v - c) / 6 / diff + 1 / 2;
       };
       if (diff === 0) {
@@ -320,22 +355,18 @@ var require_conversions = __commonJS({
           h -= 1;
         }
       }
-      return [
-        h * 360,
-        s * 100,
-        v * 100
-      ];
+      return [h * 360, s * 100, v * 100];
     };
-    convert.rgb.hwb = function(rgb) {
+    convert.rgb.hwb = function (rgb) {
       const r = rgb[0];
       const g = rgb[1];
       let b = rgb[2];
       const h = convert.rgb.hsl(rgb)[0];
-      const w = 1 / 255 * Math.min(r, Math.min(g, b));
-      b = 1 - 1 / 255 * Math.max(r, Math.max(g, b));
+      const w = (1 / 255) * Math.min(r, Math.min(g, b));
+      b = 1 - (1 / 255) * Math.max(r, Math.max(g, b));
       return [h, w * 100, b * 100];
     };
-    convert.rgb.cmyk = function(rgb) {
+    convert.rgb.cmyk = function (rgb) {
       const r = rgb[0] / 255;
       const g = rgb[1] / 255;
       const b = rgb[2] / 255;
@@ -348,7 +379,7 @@ var require_conversions = __commonJS({
     function comparativeDistance(x, y) {
       return (x[0] - y[0]) ** 2 + (x[1] - y[1]) ** 2 + (x[2] - y[2]) ** 2;
     }
-    convert.rgb.keyword = function(rgb) {
+    convert.rgb.keyword = function (rgb) {
       const reversed = reverseKeywords[rgb];
       if (reversed) {
         return reversed;
@@ -365,10 +396,10 @@ var require_conversions = __commonJS({
       }
       return currentClosestKeyword;
     };
-    convert.keyword.rgb = function(keyword) {
+    convert.keyword.rgb = function (keyword) {
       return cssKeywords[keyword];
     };
-    convert.rgb.xyz = function(rgb) {
+    convert.rgb.xyz = function (rgb) {
       let r = rgb[0] / 255;
       let g = rgb[1] / 255;
       let b = rgb[2] / 255;
@@ -380,7 +411,7 @@ var require_conversions = __commonJS({
       const z = r * 0.0193 + g * 0.1192 + b * 0.9505;
       return [x * 100, y * 100, z * 100];
     };
-    convert.rgb.lab = function(rgb) {
+    convert.rgb.lab = function (rgb) {
       const xyz = convert.rgb.xyz(rgb);
       let x = xyz[0];
       let y = xyz[1];
@@ -396,7 +427,7 @@ var require_conversions = __commonJS({
       const b = 200 * (y - z);
       return [l, a, b];
     };
-    convert.hsl.rgb = function(hsl) {
+    convert.hsl.rgb = function (hsl) {
       const h = hsl[0] / 360;
       const s = hsl[1] / 100;
       const l = hsl[2] / 100;
@@ -415,7 +446,7 @@ var require_conversions = __commonJS({
       const t1 = 2 * l - t2;
       const rgb = [0, 0, 0];
       for (let i = 0; i < 3; i++) {
-        t3 = h + 1 / 3 * -(i - 1);
+        t3 = h + (1 / 3) * -(i - 1);
         if (t3 < 0) {
           t3++;
         }
@@ -435,7 +466,7 @@ var require_conversions = __commonJS({
       }
       return rgb;
     };
-    convert.hsl.hsv = function(hsl) {
+    convert.hsl.hsv = function (hsl) {
       const h = hsl[0];
       let s = hsl[1] / 100;
       let l = hsl[2] / 100;
@@ -445,10 +476,10 @@ var require_conversions = __commonJS({
       s *= l <= 1 ? l : 2 - l;
       smin *= lmin <= 1 ? lmin : 2 - lmin;
       const v = (l + s) / 2;
-      const sv = l === 0 ? 2 * smin / (lmin + smin) : 2 * s / (l + s);
+      const sv = l === 0 ? (2 * smin) / (lmin + smin) : (2 * s) / (l + s);
       return [h, sv * 100, v * 100];
     };
-    convert.hsv.rgb = function(hsv) {
+    convert.hsv.rgb = function (hsv) {
       const h = hsv[0] / 60;
       const s = hsv[1] / 100;
       let v = hsv[2] / 100;
@@ -473,7 +504,7 @@ var require_conversions = __commonJS({
           return [v, p, q];
       }
     };
-    convert.hsv.hsl = function(hsv) {
+    convert.hsv.hsl = function (hsv) {
       const h = hsv[0];
       const s = hsv[1] / 100;
       const v = hsv[2] / 100;
@@ -488,7 +519,7 @@ var require_conversions = __commonJS({
       l /= 2;
       return [h, sl * 100, l * 100];
     };
-    convert.hwb.rgb = function(hwb) {
+    convert.hwb.rgb = function (hwb) {
       const h = hwb[0] / 360;
       let wh = hwb[1] / 100;
       let bl = hwb[2] / 100;
@@ -544,7 +575,7 @@ var require_conversions = __commonJS({
       }
       return [r * 255, g * 255, b * 255];
     };
-    convert.cmyk.rgb = function(cmyk) {
+    convert.cmyk.rgb = function (cmyk) {
       const c = cmyk[0] / 100;
       const m = cmyk[1] / 100;
       const y = cmyk[2] / 100;
@@ -554,7 +585,7 @@ var require_conversions = __commonJS({
       const b = 1 - Math.min(1, y * (1 - k) + k);
       return [r * 255, g * 255, b * 255];
     };
-    convert.xyz.rgb = function(xyz) {
+    convert.xyz.rgb = function (xyz) {
       const x = xyz[0] / 100;
       const y = xyz[1] / 100;
       const z = xyz[2] / 100;
@@ -572,7 +603,7 @@ var require_conversions = __commonJS({
       b = Math.min(Math.max(0, b), 1);
       return [r * 255, g * 255, b * 255];
     };
-    convert.xyz.lab = function(xyz) {
+    convert.xyz.lab = function (xyz) {
       let x = xyz[0];
       let y = xyz[1];
       let z = xyz[2];
@@ -587,7 +618,7 @@ var require_conversions = __commonJS({
       const b = 200 * (y - z);
       return [l, a, b];
     };
-    convert.lab.xyz = function(lab) {
+    convert.lab.xyz = function (lab) {
       const l = lab[0];
       const a = lab[1];
       const b = lab[2];
@@ -608,45 +639,49 @@ var require_conversions = __commonJS({
       z *= 108.883;
       return [x, y, z];
     };
-    convert.lab.lch = function(lab) {
+    convert.lab.lch = function (lab) {
       const l = lab[0];
       const a = lab[1];
       const b = lab[2];
       let h;
       const hr = Math.atan2(b, a);
-      h = hr * 360 / 2 / Math.PI;
+      h = (hr * 360) / 2 / Math.PI;
       if (h < 0) {
         h += 360;
       }
       const c = Math.sqrt(a * a + b * b);
       return [l, c, h];
     };
-    convert.lch.lab = function(lch) {
+    convert.lch.lab = function (lch) {
       const l = lch[0];
       const c = lch[1];
       const h = lch[2];
-      const hr = h / 360 * 2 * Math.PI;
+      const hr = (h / 360) * 2 * Math.PI;
       const a = c * Math.cos(hr);
       const b = c * Math.sin(hr);
       return [l, a, b];
     };
-    convert.rgb.ansi16 = function(args, saturation = null) {
+    convert.rgb.ansi16 = function (args, saturation = null) {
       const [r, g, b] = args;
       let value = saturation === null ? convert.rgb.hsv(args)[2] : saturation;
       value = Math.round(value / 50);
       if (value === 0) {
         return 30;
       }
-      let ansi = 30 + (Math.round(b / 255) << 2 | Math.round(g / 255) << 1 | Math.round(r / 255));
+      let ansi =
+        30 +
+        ((Math.round(b / 255) << 2) |
+          (Math.round(g / 255) << 1) |
+          Math.round(r / 255));
       if (value === 2) {
         ansi += 60;
       }
       return ansi;
     };
-    convert.hsv.ansi16 = function(args) {
+    convert.hsv.ansi16 = function (args) {
       return convert.rgb.ansi16(convert.hsv.rgb(args), args[2]);
     };
-    convert.rgb.ansi256 = function(args) {
+    convert.rgb.ansi256 = function (args) {
       const r = args[0];
       const g = args[1];
       const b = args[2];
@@ -657,61 +692,71 @@ var require_conversions = __commonJS({
         if (r > 248) {
           return 231;
         }
-        return Math.round((r - 8) / 247 * 24) + 232;
+        return Math.round(((r - 8) / 247) * 24) + 232;
       }
-      const ansi = 16 + 36 * Math.round(r / 255 * 5) + 6 * Math.round(g / 255 * 5) + Math.round(b / 255 * 5);
+      const ansi =
+        16 +
+        36 * Math.round((r / 255) * 5) +
+        6 * Math.round((g / 255) * 5) +
+        Math.round((b / 255) * 5);
       return ansi;
     };
-    convert.ansi16.rgb = function(args) {
+    convert.ansi16.rgb = function (args) {
       let color = args % 10;
       if (color === 0 || color === 7) {
         if (args > 50) {
           color += 3.5;
         }
-        color = color / 10.5 * 255;
+        color = (color / 10.5) * 255;
         return [color, color, color];
       }
       const mult = (~~(args > 50) + 1) * 0.5;
       const r = (color & 1) * mult * 255;
-      const g = (color >> 1 & 1) * mult * 255;
-      const b = (color >> 2 & 1) * mult * 255;
+      const g = ((color >> 1) & 1) * mult * 255;
+      const b = ((color >> 2) & 1) * mult * 255;
       return [r, g, b];
     };
-    convert.ansi256.rgb = function(args) {
+    convert.ansi256.rgb = function (args) {
       if (args >= 232) {
         const c = (args - 232) * 10 + 8;
         return [c, c, c];
       }
       args -= 16;
       let rem;
-      const r = Math.floor(args / 36) / 5 * 255;
-      const g = Math.floor((rem = args % 36) / 6) / 5 * 255;
-      const b = rem % 6 / 5 * 255;
+      const r = (Math.floor(args / 36) / 5) * 255;
+      const g = (Math.floor((rem = args % 36) / 6) / 5) * 255;
+      const b = ((rem % 6) / 5) * 255;
       return [r, g, b];
     };
-    convert.rgb.hex = function(args) {
-      const integer = ((Math.round(args[0]) & 255) << 16) + ((Math.round(args[1]) & 255) << 8) + (Math.round(args[2]) & 255);
+    convert.rgb.hex = function (args) {
+      const integer =
+        ((Math.round(args[0]) & 255) << 16) +
+        ((Math.round(args[1]) & 255) << 8) +
+        (Math.round(args[2]) & 255);
       const string = integer.toString(16).toUpperCase();
       return "000000".substring(string.length) + string;
     };
-    convert.hex.rgb = function(args) {
+    convert.hex.rgb = function (args) {
       const match = args.toString(16).match(/[a-f0-9]{6}|[a-f0-9]{3}/i);
       if (!match) {
         return [0, 0, 0];
       }
       let colorString = match[0];
       if (match[0].length === 3) {
-        colorString = colorString.split("").map((char) => {
-          return char + char;
-        }).join("");
+        colorString = colorString
+          .split("")
+          .map((char) => {
+            return char + char;
+          })
+          .join("");
       }
       const integer = parseInt(colorString, 16);
-      const r = integer >> 16 & 255;
-      const g = integer >> 8 & 255;
+      const r = (integer >> 16) & 255;
+      const g = (integer >> 8) & 255;
       const b = integer & 255;
       return [r, g, b];
     };
-    convert.rgb.hcg = function(rgb) {
+    convert.rgb.hcg = function (rgb) {
       const r = rgb[0] / 255;
       const g = rgb[1] / 255;
       const b = rgb[2] / 255;
@@ -728,7 +773,7 @@ var require_conversions = __commonJS({
       if (chroma <= 0) {
         hue = 0;
       } else if (max === r) {
-        hue = (g - b) / chroma % 6;
+        hue = ((g - b) / chroma) % 6;
       } else if (max === g) {
         hue = 2 + (b - r) / chroma;
       } else {
@@ -738,7 +783,7 @@ var require_conversions = __commonJS({
       hue %= 1;
       return [hue * 360, chroma * 100, grayscale * 100];
     };
-    convert.hsl.hcg = function(hsl) {
+    convert.hsl.hcg = function (hsl) {
       const s = hsl[1] / 100;
       const l = hsl[2] / 100;
       const c = l < 0.5 ? 2 * s * l : 2 * s * (1 - l);
@@ -748,7 +793,7 @@ var require_conversions = __commonJS({
       }
       return [hsl[0], c * 100, f * 100];
     };
-    convert.hsv.hcg = function(hsv) {
+    convert.hsv.hcg = function (hsv) {
       const s = hsv[1] / 100;
       const v = hsv[2] / 100;
       const c = s * v;
@@ -758,7 +803,7 @@ var require_conversions = __commonJS({
       }
       return [hsv[0], c * 100, f * 100];
     };
-    convert.hcg.rgb = function(hcg) {
+    convert.hcg.rgb = function (hcg) {
       const h = hcg[0] / 360;
       const c = hcg[1] / 100;
       const g = hcg[2] / 100;
@@ -766,7 +811,7 @@ var require_conversions = __commonJS({
         return [g * 255, g * 255, g * 255];
       }
       const pure = [0, 0, 0];
-      const hi = h % 1 * 6;
+      const hi = (h % 1) * 6;
       const v = hi % 1;
       const w = 1 - v;
       let mg = 0;
@@ -805,10 +850,10 @@ var require_conversions = __commonJS({
       return [
         (c * pure[0] + mg) * 255,
         (c * pure[1] + mg) * 255,
-        (c * pure[2] + mg) * 255
+        (c * pure[2] + mg) * 255,
       ];
     };
-    convert.hcg.hsv = function(hcg) {
+    convert.hcg.hsv = function (hcg) {
       const c = hcg[1] / 100;
       const g = hcg[2] / 100;
       const v = c + g * (1 - c);
@@ -818,7 +863,7 @@ var require_conversions = __commonJS({
       }
       return [hcg[0], f * 100, v * 100];
     };
-    convert.hcg.hsl = function(hcg) {
+    convert.hcg.hsl = function (hcg) {
       const c = hcg[1] / 100;
       const g = hcg[2] / 100;
       const l = g * (1 - c) + 0.5 * c;
@@ -830,13 +875,13 @@ var require_conversions = __commonJS({
       }
       return [hcg[0], s * 100, l * 100];
     };
-    convert.hcg.hwb = function(hcg) {
+    convert.hcg.hwb = function (hcg) {
       const c = hcg[1] / 100;
       const g = hcg[2] / 100;
       const v = c + g * (1 - c);
       return [hcg[0], (v - c) * 100, (1 - v) * 100];
     };
-    convert.hwb.hcg = function(hwb) {
+    convert.hwb.hcg = function (hwb) {
       const w = hwb[1] / 100;
       const b = hwb[2] / 100;
       const v = 1 - b;
@@ -847,44 +892,59 @@ var require_conversions = __commonJS({
       }
       return [hwb[0], c * 100, g * 100];
     };
-    convert.apple.rgb = function(apple) {
-      return [apple[0] / 65535 * 255, apple[1] / 65535 * 255, apple[2] / 65535 * 255];
+    convert.apple.rgb = function (apple) {
+      return [
+        (apple[0] / 65535) * 255,
+        (apple[1] / 65535) * 255,
+        (apple[2] / 65535) * 255,
+      ];
     };
-    convert.rgb.apple = function(rgb) {
-      return [rgb[0] / 255 * 65535, rgb[1] / 255 * 65535, rgb[2] / 255 * 65535];
+    convert.rgb.apple = function (rgb) {
+      return [
+        (rgb[0] / 255) * 65535,
+        (rgb[1] / 255) * 65535,
+        (rgb[2] / 255) * 65535,
+      ];
     };
-    convert.gray.rgb = function(args) {
-      return [args[0] / 100 * 255, args[0] / 100 * 255, args[0] / 100 * 255];
+    convert.gray.rgb = function (args) {
+      return [
+        (args[0] / 100) * 255,
+        (args[0] / 100) * 255,
+        (args[0] / 100) * 255,
+      ];
     };
-    convert.gray.hsl = function(args) {
+    convert.gray.hsl = function (args) {
       return [0, 0, args[0]];
     };
     convert.gray.hsv = convert.gray.hsl;
-    convert.gray.hwb = function(gray) {
+    convert.gray.hwb = function (gray) {
       return [0, 100, gray[0]];
     };
-    convert.gray.cmyk = function(gray) {
+    convert.gray.cmyk = function (gray) {
       return [0, 0, 0, gray[0]];
     };
-    convert.gray.lab = function(gray) {
+    convert.gray.lab = function (gray) {
       return [gray[0], 0, 0];
     };
-    convert.gray.hex = function(gray) {
-      const val = Math.round(gray[0] / 100 * 255) & 255;
+    convert.gray.hex = function (gray) {
+      const val = Math.round((gray[0] / 100) * 255) & 255;
       const integer = (val << 16) + (val << 8) + val;
       const string = integer.toString(16).toUpperCase();
       return "000000".substring(string.length) + string;
     };
-    convert.rgb.gray = function(rgb) {
+    convert.rgb.gray = function (rgb) {
       const val = (rgb[0] + rgb[1] + rgb[2]) / 3;
-      return [val / 255 * 100];
+      return [(val / 255) * 100];
     };
-  }
+  },
 });
 
 // pnp:color-convert-npm-2.0.1-79730e935b-79e6bdb9fd.zip/node_modules/color-convert/route.js
 var require_route = __commonJS({
-  "pnp:color-convert-npm-2.0.1-79730e935b-79e6bdb9fd.zip/node_modules/color-convert/route.js"(exports, module2) {
+  "pnp:color-convert-npm-2.0.1-79730e935b-79e6bdb9fd.zip/node_modules/color-convert/route.js"(
+    exports,
+    module2
+  ) {
     var conversions = require_conversions();
     function buildGraph() {
       const graph = {};
@@ -892,7 +952,7 @@ var require_route = __commonJS({
       for (let len = models.length, i = 0; i < len; i++) {
         graph[models[i]] = {
           distance: -1,
-          parent: null
+          parent: null,
         };
       }
       return graph;
@@ -917,7 +977,7 @@ var require_route = __commonJS({
       return graph;
     }
     function link(from, to) {
-      return function(args) {
+      return function (args) {
         return to(from(args));
       };
     }
@@ -933,7 +993,7 @@ var require_route = __commonJS({
       fn.conversion = path2;
       return fn;
     }
-    module2.exports = function(fromModel) {
+    module2.exports = function (fromModel) {
       const graph = deriveBFS(fromModel);
       const conversion = {};
       const models = Object.keys(graph);
@@ -947,18 +1007,21 @@ var require_route = __commonJS({
       }
       return conversion;
     };
-  }
+  },
 });
 
 // pnp:color-convert-npm-2.0.1-79730e935b-79e6bdb9fd.zip/node_modules/color-convert/index.js
 var require_color_convert = __commonJS({
-  "pnp:color-convert-npm-2.0.1-79730e935b-79e6bdb9fd.zip/node_modules/color-convert/index.js"(exports, module2) {
+  "pnp:color-convert-npm-2.0.1-79730e935b-79e6bdb9fd.zip/node_modules/color-convert/index.js"(
+    exports,
+    module2
+  ) {
     var conversions = require_conversions();
     var route = require_route();
     var convert = {};
     var models = Object.keys(conversions);
     function wrapRaw(fn) {
-      const wrappedFn = function(...args) {
+      const wrappedFn = function (...args) {
         const arg0 = args[0];
         if (arg0 === void 0 || arg0 === null) {
           return arg0;
@@ -974,7 +1037,7 @@ var require_color_convert = __commonJS({
       return wrappedFn;
     }
     function wrapRounded(fn) {
-      const wrappedFn = function(...args) {
+      const wrappedFn = function (...args) {
         const arg0 = args[0];
         if (arg0 === void 0 || arg0 === null) {
           return arg0;
@@ -997,8 +1060,12 @@ var require_color_convert = __commonJS({
     }
     models.forEach((fromModel) => {
       convert[fromModel] = {};
-      Object.defineProperty(convert[fromModel], "channels", { value: conversions[fromModel].channels });
-      Object.defineProperty(convert[fromModel], "labels", { value: conversions[fromModel].labels });
+      Object.defineProperty(convert[fromModel], "channels", {
+        value: conversions[fromModel].channels,
+      });
+      Object.defineProperty(convert[fromModel], "labels", {
+        value: conversions[fromModel].labels,
+      });
       const routes = route(fromModel);
       const routeModels = Object.keys(routes);
       routeModels.forEach((toModel) => {
@@ -1008,25 +1075,34 @@ var require_color_convert = __commonJS({
       });
     });
     module2.exports = convert;
-  }
+  },
 });
 
 // pnp:ansi-styles-npm-4.3.0-245c7d42c7-513b44c3b2.zip/node_modules/ansi-styles/index.js
 var require_ansi_styles = __commonJS({
-  "pnp:ansi-styles-npm-4.3.0-245c7d42c7-513b44c3b2.zip/node_modules/ansi-styles/index.js"(exports, module2) {
+  "pnp:ansi-styles-npm-4.3.0-245c7d42c7-513b44c3b2.zip/node_modules/ansi-styles/index.js"(
+    exports,
+    module2
+  ) {
     "use strict";
-    var wrapAnsi16 = (fn, offset) => (...args) => {
-      const code = fn(...args);
-      return `[${code + offset}m`;
-    };
-    var wrapAnsi256 = (fn, offset) => (...args) => {
-      const code = fn(...args);
-      return `[${38 + offset};5;${code}m`;
-    };
-    var wrapAnsi16m = (fn, offset) => (...args) => {
-      const rgb = fn(...args);
-      return `[${38 + offset};2;${rgb[0]};${rgb[1]};${rgb[2]}m`;
-    };
+    var wrapAnsi16 =
+      (fn, offset) =>
+      (...args) => {
+        const code = fn(...args);
+        return `[${code + offset}m`;
+      };
+    var wrapAnsi256 =
+      (fn, offset) =>
+      (...args) => {
+        const code = fn(...args);
+        return `[${38 + offset};5;${code}m`;
+      };
+    var wrapAnsi16m =
+      (fn, offset) =>
+      (...args) => {
+        const rgb = fn(...args);
+        return `[${38 + offset};2;${rgb[0]};${rgb[1]};${rgb[2]}m`;
+      };
     var ansi2ansi = (n) => n;
     var rgb2rgb = (r, g, b) => [r, g, b];
     var setLazyProperty = (object, property, get) => {
@@ -1036,12 +1112,12 @@ var require_ansi_styles = __commonJS({
           Object.defineProperty(object, property, {
             value,
             enumerable: true,
-            configurable: true
+            configurable: true,
           });
           return value;
         },
         enumerable: true,
-        configurable: true
+        configurable: true,
       });
     };
     var colorConvert;
@@ -1072,7 +1148,7 @@ var require_ansi_styles = __commonJS({
           underline: [4, 24],
           inverse: [7, 27],
           hidden: [8, 28],
-          strikethrough: [9, 29]
+          strikethrough: [9, 29],
         },
         color: {
           black: [30, 39],
@@ -1090,7 +1166,7 @@ var require_ansi_styles = __commonJS({
           blueBright: [94, 39],
           magentaBright: [95, 39],
           cyanBright: [96, 39],
-          whiteBright: [97, 39]
+          whiteBright: [97, 39],
         },
         bgColor: {
           bgBlack: [40, 49],
@@ -1108,8 +1184,8 @@ var require_ansi_styles = __commonJS({
           bgBlueBright: [104, 49],
           bgMagentaBright: [105, 49],
           bgCyanBright: [106, 49],
-          bgWhiteBright: [107, 49]
-        }
+          bgWhiteBright: [107, 49],
+        },
       };
       styles.color.gray = styles.color.blackBright;
       styles.bgColor.bgGray = styles.bgColor.bgBlackBright;
@@ -1119,62 +1195,93 @@ var require_ansi_styles = __commonJS({
         for (const [styleName, style] of Object.entries(group)) {
           styles[styleName] = {
             open: `[${style[0]}m`,
-            close: `[${style[1]}m`
+            close: `[${style[1]}m`,
           };
           group[styleName] = styles[styleName];
           codes.set(style[0], style[1]);
         }
         Object.defineProperty(styles, groupName, {
           value: group,
-          enumerable: false
+          enumerable: false,
         });
       }
       Object.defineProperty(styles, "codes", {
         value: codes,
-        enumerable: false
+        enumerable: false,
       });
       styles.color.close = "[39m";
       styles.bgColor.close = "[49m";
-      setLazyProperty(styles.color, "ansi", () => makeDynamicStyles(wrapAnsi16, "ansi16", ansi2ansi, false));
-      setLazyProperty(styles.color, "ansi256", () => makeDynamicStyles(wrapAnsi256, "ansi256", ansi2ansi, false));
-      setLazyProperty(styles.color, "ansi16m", () => makeDynamicStyles(wrapAnsi16m, "rgb", rgb2rgb, false));
-      setLazyProperty(styles.bgColor, "ansi", () => makeDynamicStyles(wrapAnsi16, "ansi16", ansi2ansi, true));
-      setLazyProperty(styles.bgColor, "ansi256", () => makeDynamicStyles(wrapAnsi256, "ansi256", ansi2ansi, true));
-      setLazyProperty(styles.bgColor, "ansi16m", () => makeDynamicStyles(wrapAnsi16m, "rgb", rgb2rgb, true));
+      setLazyProperty(styles.color, "ansi", () =>
+        makeDynamicStyles(wrapAnsi16, "ansi16", ansi2ansi, false)
+      );
+      setLazyProperty(styles.color, "ansi256", () =>
+        makeDynamicStyles(wrapAnsi256, "ansi256", ansi2ansi, false)
+      );
+      setLazyProperty(styles.color, "ansi16m", () =>
+        makeDynamicStyles(wrapAnsi16m, "rgb", rgb2rgb, false)
+      );
+      setLazyProperty(styles.bgColor, "ansi", () =>
+        makeDynamicStyles(wrapAnsi16, "ansi16", ansi2ansi, true)
+      );
+      setLazyProperty(styles.bgColor, "ansi256", () =>
+        makeDynamicStyles(wrapAnsi256, "ansi256", ansi2ansi, true)
+      );
+      setLazyProperty(styles.bgColor, "ansi16m", () =>
+        makeDynamicStyles(wrapAnsi16m, "rgb", rgb2rgb, true)
+      );
       return styles;
     }
     Object.defineProperty(module2, "exports", {
       enumerable: true,
-      get: assembleStyles
+      get: assembleStyles,
     });
-  }
+  },
 });
 
 // pnp:has-flag-npm-4.0.0-32af9f0536-261a135703.zip/node_modules/has-flag/index.js
 var require_has_flag = __commonJS({
-  "pnp:has-flag-npm-4.0.0-32af9f0536-261a135703.zip/node_modules/has-flag/index.js"(exports, module2) {
+  "pnp:has-flag-npm-4.0.0-32af9f0536-261a135703.zip/node_modules/has-flag/index.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     module2.exports = (flag, argv = process.argv) => {
       const prefix = flag.startsWith("-") ? "" : flag.length === 1 ? "-" : "--";
       const position = argv.indexOf(prefix + flag);
       const terminatorPosition = argv.indexOf("--");
-      return position !== -1 && (terminatorPosition === -1 || position < terminatorPosition);
+      return (
+        position !== -1 &&
+        (terminatorPosition === -1 || position < terminatorPosition)
+      );
     };
-  }
+  },
 });
 
 // pnp:supports-color-npm-7.2.0-606bfcf7da-3dda818de0.zip/node_modules/supports-color/index.js
 var require_supports_color = __commonJS({
-  "pnp:supports-color-npm-7.2.0-606bfcf7da-3dda818de0.zip/node_modules/supports-color/index.js"(exports, module2) {
+  "pnp:supports-color-npm-7.2.0-606bfcf7da-3dda818de0.zip/node_modules/supports-color/index.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var os = require("os");
     var tty = require("tty");
     var hasFlag = require_has_flag();
     var { env } = process;
     var forceColor;
-    if (hasFlag("no-color") || hasFlag("no-colors") || hasFlag("color=false") || hasFlag("color=never")) {
+    if (
+      hasFlag("no-color") ||
+      hasFlag("no-colors") ||
+      hasFlag("color=false") ||
+      hasFlag("color=never")
+    ) {
       forceColor = 0;
-    } else if (hasFlag("color") || hasFlag("colors") || hasFlag("color=true") || hasFlag("color=always")) {
+    } else if (
+      hasFlag("color") ||
+      hasFlag("colors") ||
+      hasFlag("color=true") ||
+      hasFlag("color=always")
+    ) {
       forceColor = 1;
     }
     if ("FORCE_COLOR" in env) {
@@ -1183,7 +1290,10 @@ var require_supports_color = __commonJS({
       } else if (env.FORCE_COLOR === "false") {
         forceColor = 0;
       } else {
-        forceColor = env.FORCE_COLOR.length === 0 ? 1 : Math.min(parseInt(env.FORCE_COLOR, 10), 3);
+        forceColor =
+          env.FORCE_COLOR.length === 0
+            ? 1
+            : Math.min(parseInt(env.FORCE_COLOR, 10), 3);
       }
     }
     function translateLevel(level) {
@@ -1194,14 +1304,18 @@ var require_supports_color = __commonJS({
         level,
         hasBasic: true,
         has256: level >= 2,
-        has16m: level >= 3
+        has16m: level >= 3,
       };
     }
     function supportsColor(haveStream, streamIsTTY) {
       if (forceColor === 0) {
         return 0;
       }
-      if (hasFlag("color=16m") || hasFlag("color=full") || hasFlag("color=truecolor")) {
+      if (
+        hasFlag("color=16m") ||
+        hasFlag("color=full") ||
+        hasFlag("color=truecolor")
+      ) {
         return 3;
       }
       if (hasFlag("color=256")) {
@@ -1222,19 +1336,34 @@ var require_supports_color = __commonJS({
         return 1;
       }
       if ("CI" in env) {
-        if (["TRAVIS", "CIRCLECI", "APPVEYOR", "GITLAB_CI", "GITHUB_ACTIONS", "BUILDKITE"].some((sign) => sign in env) || env.CI_NAME === "codeship") {
+        if (
+          [
+            "TRAVIS",
+            "CIRCLECI",
+            "APPVEYOR",
+            "GITLAB_CI",
+            "GITHUB_ACTIONS",
+            "BUILDKITE",
+          ].some((sign) => sign in env) ||
+          env.CI_NAME === "codeship"
+        ) {
           return 1;
         }
         return min;
       }
       if ("TEAMCITY_VERSION" in env) {
-        return /^(9\.(0*[1-9]\d*)\.|\d{2,}\.)/.test(env.TEAMCITY_VERSION) ? 1 : 0;
+        return /^(9\.(0*[1-9]\d*)\.|\d{2,}\.)/.test(env.TEAMCITY_VERSION)
+          ? 1
+          : 0;
       }
       if (env.COLORTERM === "truecolor") {
         return 3;
       }
       if ("TERM_PROGRAM" in env) {
-        const version2 = parseInt((env.TERM_PROGRAM_VERSION || "").split(".")[0], 10);
+        const version2 = parseInt(
+          (env.TERM_PROGRAM_VERSION || "").split(".")[0],
+          10
+        );
         switch (env.TERM_PROGRAM) {
           case "iTerm.app":
             return version2 >= 3 ? 3 : 2;
@@ -1245,7 +1374,11 @@ var require_supports_color = __commonJS({
       if (/-256(color)?$/i.test(env.TERM)) {
         return 2;
       }
-      if (/^screen|^xterm|^vt100|^vt220|^rxvt|color|ansi|cygwin|linux/i.test(env.TERM)) {
+      if (
+        /^screen|^xterm|^vt100|^vt220|^rxvt|color|ansi|cygwin|linux/i.test(
+          env.TERM
+        )
+      ) {
         return 1;
       }
       if ("COLORTERM" in env) {
@@ -1260,14 +1393,17 @@ var require_supports_color = __commonJS({
     module2.exports = {
       supportsColor: getSupportLevel,
       stdout: translateLevel(supportsColor(true, tty.isatty(1))),
-      stderr: translateLevel(supportsColor(true, tty.isatty(2)))
+      stderr: translateLevel(supportsColor(true, tty.isatty(2))),
     };
-  }
+  },
 });
 
 // pnp:chalk-npm-4.1.2-ba8b67ab80-fe75c9d5c7.zip/node_modules/chalk/source/util.js
 var require_util = __commonJS({
-  "pnp:chalk-npm-4.1.2-ba8b67ab80-fe75c9d5c7.zip/node_modules/chalk/source/util.js"(exports, module2) {
+  "pnp:chalk-npm-4.1.2-ba8b67ab80-fe75c9d5c7.zip/node_modules/chalk/source/util.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var stringReplaceAll = (string, substring, replacer) => {
       let index = string.indexOf(substring);
@@ -1278,7 +1414,8 @@ var require_util = __commonJS({
       let endIndex = 0;
       let returnValue = "";
       do {
-        returnValue += string.substr(endIndex, index - endIndex) + substring + replacer;
+        returnValue +=
+          string.substr(endIndex, index - endIndex) + substring + replacer;
         endIndex = index + substringLength;
         index = string.indexOf(substring, endIndex);
       } while (index !== -1);
@@ -1290,7 +1427,11 @@ var require_util = __commonJS({
       let returnValue = "";
       do {
         const gotCR = string[index - 1] === "\r";
-        returnValue += string.substr(endIndex, (gotCR ? index - 1 : index) - endIndex) + prefix + (gotCR ? "\r\n" : "\n") + postfix;
+        returnValue +=
+          string.substr(endIndex, (gotCR ? index - 1 : index) - endIndex) +
+          prefix +
+          (gotCR ? "\r\n" : "\n") +
+          postfix;
         endIndex = index + 1;
         index = string.indexOf("\n", endIndex);
       } while (index !== -1);
@@ -1299,19 +1440,24 @@ var require_util = __commonJS({
     };
     module2.exports = {
       stringReplaceAll,
-      stringEncaseCRLFWithFirstIndex
+      stringEncaseCRLFWithFirstIndex,
     };
-  }
+  },
 });
 
 // pnp:chalk-npm-4.1.2-ba8b67ab80-fe75c9d5c7.zip/node_modules/chalk/source/templates.js
 var require_templates = __commonJS({
-  "pnp:chalk-npm-4.1.2-ba8b67ab80-fe75c9d5c7.zip/node_modules/chalk/source/templates.js"(exports, module2) {
+  "pnp:chalk-npm-4.1.2-ba8b67ab80-fe75c9d5c7.zip/node_modules/chalk/source/templates.js"(
+    exports,
+    module2
+  ) {
     "use strict";
-    var TEMPLATE_REGEX = /(?:\\(u(?:[a-f\d]{4}|\{[a-f\d]{1,6}\})|x[a-f\d]{2}|.))|(?:\{(~)?(\w+(?:\([^)]*\))?(?:\.\w+(?:\([^)]*\))?)*)(?:[ \t]|(?=\r?\n)))|(\})|((?:.|[\r\n\f])+?)/gi;
+    var TEMPLATE_REGEX =
+      /(?:\\(u(?:[a-f\d]{4}|\{[a-f\d]{1,6}\})|x[a-f\d]{2}|.))|(?:\{(~)?(\w+(?:\([^)]*\))?(?:\.\w+(?:\([^)]*\))?)*)(?:[ \t]|(?=\r?\n)))|(\})|((?:.|[\r\n\f])+?)/gi;
     var STYLE_REGEX = /(?:^|\.)(\w+)(?:\(([^)]*)\))?/g;
     var STRING_REGEX = /^(['"])((?:\\.|(?!\1)[^\\])*)\1$/;
-    var ESCAPE_REGEX = /\\(u(?:[a-f\d]{4}|{[a-f\d]{1,6}})|x[a-f\d]{2}|.)|([^\\])/gi;
+    var ESCAPE_REGEX =
+      /\\(u(?:[a-f\d]{4}|{[a-f\d]{1,6}})|x[a-f\d]{2}|.)|([^\\])/gi;
     var ESCAPES = new Map([
       ["n", "\n"],
       ["r", "\r"],
@@ -1322,12 +1468,15 @@ var require_templates = __commonJS({
       ["0", "\0"],
       ["\\", "\\"],
       ["e", ""],
-      ["a", "\x07"]
+      ["a", "\x07"],
     ]);
     function unescape(c) {
       const u = c[0] === "u";
       const bracket = c[1] === "{";
-      if (u && !bracket && c.length === 5 || c[0] === "x" && c.length === 3) {
+      if (
+        (u && !bracket && c.length === 5) ||
+        (c[0] === "x" && c.length === 3)
+      ) {
         return String.fromCharCode(parseInt(c.slice(1), 16));
       }
       if (u && bracket) {
@@ -1343,10 +1492,16 @@ var require_templates = __commonJS({
         const number = Number(chunk);
         if (!Number.isNaN(number)) {
           results.push(number);
-        } else if (matches = chunk.match(STRING_REGEX)) {
-          results.push(matches[2].replace(ESCAPE_REGEX, (m, escape, character) => escape ? unescape(escape) : character));
+        } else if ((matches = chunk.match(STRING_REGEX))) {
+          results.push(
+            matches[2].replace(ESCAPE_REGEX, (m, escape, character) =>
+              escape ? unescape(escape) : character
+            )
+          );
         } else {
-          throw new Error(`Invalid Chalk template style argument: ${chunk} (in style '${name}')`);
+          throw new Error(
+            `Invalid Chalk template style argument: ${chunk} (in style '${name}')`
+          );
         }
       }
       return results;
@@ -1381,7 +1536,10 @@ var require_templates = __commonJS({
         if (!(styleName in current)) {
           throw new Error(`Unknown Chalk style: ${styleName}`);
         }
-        current = styles2.length > 0 ? current[styleName](...styles2) : current[styleName];
+        current =
+          styles2.length > 0
+            ? current[styleName](...styles2)
+            : current[styleName];
       }
       return current;
     }
@@ -1389,55 +1547,64 @@ var require_templates = __commonJS({
       const styles = [];
       const chunks = [];
       let chunk = [];
-      temporary.replace(TEMPLATE_REGEX, (m, escapeCharacter, inverse, style, close, character) => {
-        if (escapeCharacter) {
-          chunk.push(unescape(escapeCharacter));
-        } else if (style) {
-          const string = chunk.join("");
-          chunk = [];
-          chunks.push(styles.length === 0 ? string : buildStyle(chalk5, styles)(string));
-          styles.push({ inverse, styles: parseStyle(style) });
-        } else if (close) {
-          if (styles.length === 0) {
-            throw new Error("Found extraneous } in Chalk template literal");
+      temporary.replace(
+        TEMPLATE_REGEX,
+        (m, escapeCharacter, inverse, style, close, character) => {
+          if (escapeCharacter) {
+            chunk.push(unescape(escapeCharacter));
+          } else if (style) {
+            const string = chunk.join("");
+            chunk = [];
+            chunks.push(
+              styles.length === 0 ? string : buildStyle(chalk5, styles)(string)
+            );
+            styles.push({ inverse, styles: parseStyle(style) });
+          } else if (close) {
+            if (styles.length === 0) {
+              throw new Error("Found extraneous } in Chalk template literal");
+            }
+            chunks.push(buildStyle(chalk5, styles)(chunk.join("")));
+            chunk = [];
+            styles.pop();
+          } else {
+            chunk.push(character);
           }
-          chunks.push(buildStyle(chalk5, styles)(chunk.join("")));
-          chunk = [];
-          styles.pop();
-        } else {
-          chunk.push(character);
         }
-      });
+      );
       chunks.push(chunk.join(""));
       if (styles.length > 0) {
-        const errMessage = `Chalk template literal is missing ${styles.length} closing bracket${styles.length === 1 ? "" : "s"} (\`}\`)`;
+        const errMessage = `Chalk template literal is missing ${
+          styles.length
+        } closing bracket${styles.length === 1 ? "" : "s"} (\`}\`)`;
         throw new Error(errMessage);
       }
       return chunks.join("");
     };
-  }
+  },
 });
 
 // pnp:chalk-npm-4.1.2-ba8b67ab80-fe75c9d5c7.zip/node_modules/chalk/source/index.js
 var require_source = __commonJS({
-  "pnp:chalk-npm-4.1.2-ba8b67ab80-fe75c9d5c7.zip/node_modules/chalk/source/index.js"(exports, module2) {
+  "pnp:chalk-npm-4.1.2-ba8b67ab80-fe75c9d5c7.zip/node_modules/chalk/source/index.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var ansiStyles = require_ansi_styles();
     var { stdout: stdoutColor, stderr: stderrColor } = require_supports_color();
-    var {
-      stringReplaceAll,
-      stringEncaseCRLFWithFirstIndex
-    } = require_util();
+    var { stringReplaceAll, stringEncaseCRLFWithFirstIndex } = require_util();
     var { isArray } = Array;
-    var levelMapping = [
-      "ansi",
-      "ansi",
-      "ansi256",
-      "ansi16m"
-    ];
+    var levelMapping = ["ansi", "ansi", "ansi256", "ansi16m"];
     var styles = Object.create(null);
     var applyOptions = (object, options = {}) => {
-      if (options.level && !(Number.isInteger(options.level) && options.level >= 0 && options.level <= 3)) {
+      if (
+        options.level &&
+        !(
+          Number.isInteger(options.level) &&
+          options.level >= 0 &&
+          options.level <= 3
+        )
+      ) {
         throw new Error("The `level` option should be an integer from 0 to 3");
       }
       const colorLevel = stdoutColor ? stdoutColor.level : 0;
@@ -1451,11 +1618,14 @@ var require_source = __commonJS({
     var chalkFactory = (options) => {
       const chalk6 = {};
       applyOptions(chalk6, options);
-      chalk6.template = (...arguments_) => chalkTag(chalk6.template, ...arguments_);
+      chalk6.template = (...arguments_) =>
+        chalkTag(chalk6.template, ...arguments_);
       Object.setPrototypeOf(chalk6, Chalk.prototype);
       Object.setPrototypeOf(chalk6.template, chalk6);
       chalk6.template.constructor = () => {
-        throw new Error("`chalk.constructor()` is deprecated. Use `new chalk.Instance()` instead.");
+        throw new Error(
+          "`chalk.constructor()` is deprecated. Use `new chalk.Instance()` instead."
+        );
       };
       chalk6.template.Instance = ChalkClass;
       return chalk6.template;
@@ -1466,10 +1636,14 @@ var require_source = __commonJS({
     for (const [styleName, style] of Object.entries(ansiStyles)) {
       styles[styleName] = {
         get() {
-          const builder = createBuilder(this, createStyler(style.open, style.close, this._styler), this._isEmpty);
+          const builder = createBuilder(
+            this,
+            createStyler(style.open, style.close, this._styler),
+            this._isEmpty
+          );
           Object.defineProperty(this, styleName, { value: builder });
           return builder;
-        }
+        },
       };
     }
     styles.visible = {
@@ -1477,18 +1651,31 @@ var require_source = __commonJS({
         const builder = createBuilder(this, this._styler, true);
         Object.defineProperty(this, "visible", { value: builder });
         return builder;
-      }
+      },
     };
-    var usedModels = ["rgb", "hex", "keyword", "hsl", "hsv", "hwb", "ansi", "ansi256"];
+    var usedModels = [
+      "rgb",
+      "hex",
+      "keyword",
+      "hsl",
+      "hsv",
+      "hwb",
+      "ansi",
+      "ansi256",
+    ];
     for (const model of usedModels) {
       styles[model] = {
         get() {
           const { level } = this;
-          return function(...arguments_) {
-            const styler = createStyler(ansiStyles.color[levelMapping[level]][model](...arguments_), ansiStyles.color.close, this._styler);
+          return function (...arguments_) {
+            const styler = createStyler(
+              ansiStyles.color[levelMapping[level]][model](...arguments_),
+              ansiStyles.color.close,
+              this._styler
+            );
             return createBuilder(this, styler, this._isEmpty);
           };
-        }
+        },
       };
     }
     for (const model of usedModels) {
@@ -1496,25 +1683,31 @@ var require_source = __commonJS({
       styles[bgModel] = {
         get() {
           const { level } = this;
-          return function(...arguments_) {
-            const styler = createStyler(ansiStyles.bgColor[levelMapping[level]][model](...arguments_), ansiStyles.bgColor.close, this._styler);
+          return function (...arguments_) {
+            const styler = createStyler(
+              ansiStyles.bgColor[levelMapping[level]][model](...arguments_),
+              ansiStyles.bgColor.close,
+              this._styler
+            );
             return createBuilder(this, styler, this._isEmpty);
           };
-        }
+        },
       };
     }
-    var proto = Object.defineProperties(() => {
-    }, __spreadProps(__spreadValues({}, styles), {
-      level: {
-        enumerable: true,
-        get() {
-          return this._generator.level;
+    var proto = Object.defineProperties(
+      () => {},
+      __spreadProps(__spreadValues({}, styles), {
+        level: {
+          enumerable: true,
+          get() {
+            return this._generator.level;
+          },
+          set(level) {
+            this._generator.level = level;
+          },
         },
-        set(level) {
-          this._generator.level = level;
-        }
-      }
-    }));
+      })
+    );
     var createStyler = (open, close, parent) => {
       let openAll;
       let closeAll;
@@ -1530,7 +1723,7 @@ var require_source = __commonJS({
         close,
         openAll,
         closeAll,
-        parent
+        parent,
       };
     };
     var createBuilder = (self, _styler, _isEmpty) => {
@@ -1538,7 +1731,10 @@ var require_source = __commonJS({
         if (isArray(arguments_[0]) && isArray(arguments_[0].raw)) {
           return applyStyle(builder, chalkTag(builder, ...arguments_));
         }
-        return applyStyle(builder, arguments_.length === 1 ? "" + arguments_[0] : arguments_.join(" "));
+        return applyStyle(
+          builder,
+          arguments_.length === 1 ? "" + arguments_[0] : arguments_.join(" ")
+        );
       };
       Object.setPrototypeOf(builder, proto);
       builder._generator = self;
@@ -1563,7 +1759,12 @@ var require_source = __commonJS({
       }
       const lfIndex = string.indexOf("\n");
       if (lfIndex !== -1) {
-        string = stringEncaseCRLFWithFirstIndex(string, closeAll, openAll, lfIndex);
+        string = stringEncaseCRLFWithFirstIndex(
+          string,
+          closeAll,
+          openAll,
+          lfIndex
+        );
       }
       return openAll + string + closeAll;
     };
@@ -1576,7 +1777,10 @@ var require_source = __commonJS({
       const arguments_ = strings.slice(1);
       const parts = [firstString.raw[0]];
       for (let i = 1; i < firstString.length; i++) {
-        parts.push(String(arguments_[i - 1]).replace(/[{}\\]/g, "\\$&"), String(firstString.raw[i]));
+        parts.push(
+          String(arguments_[i - 1]).replace(/[{}\\]/g, "\\$&"),
+          String(firstString.raw[i])
+        );
       }
       if (template === void 0) {
         template = require_templates();
@@ -1589,12 +1793,15 @@ var require_source = __commonJS({
     chalk5.stderr = Chalk({ level: stderrColor ? stderrColor.level : 0 });
     chalk5.stderr.supportsColor = stderrColor;
     module2.exports = chalk5;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/lowercase.js
 var require_lowercase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/lowercase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/lowercase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     function lowercase(str) {
       str = String(str);
@@ -1603,16 +1810,19 @@ var require_lowercase = __commonJS({
       }
       return str.toLowerCase();
     }
-    lowercase.isLowercase = function(str) {
+    lowercase.isLowercase = function (str) {
       return str && !/[A-Z]+/.test(str);
     };
     module2.exports = lowercase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/uppercase.js
 var require_uppercase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/uppercase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/uppercase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     function uppercase(str) {
       str = String(str);
@@ -1621,25 +1831,28 @@ var require_uppercase = __commonJS({
       }
       return str.toUpperCase();
     }
-    uppercase.isUppercase = function(str) {
+    uppercase.isUppercase = function (str) {
       return str && !/[a-z]+/.test(str);
     };
     module2.exports = uppercase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/camelcase.js
 var require_camelcase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/camelcase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/camelcase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var lowercase = require_lowercase();
     var uppercase = require_uppercase();
     var replacing = {
       from: /[\-_:\.\s]([a-zA-Z])([a-zA-Z]*)/g,
-      to: function(match, $1, $2, offset, src) {
+      to: function (match, $1, $2, offset, src) {
         const len = $1.length;
         return uppercase($1) + $2;
-      }
+      },
     };
     function camelcase2(str) {
       if (camelcase2.isCamelcase(str)) {
@@ -1652,18 +1865,27 @@ var require_camelcase = __commonJS({
       if (uppercase.isUppercase(str)) {
         str = lowercase(str);
       }
-      return lowercase(str[0]) + str.replace(replacing.from, replacing.to).slice(1).replace(/^([A-Z]+)([A-Z])/, (match, $1, $2) => lowercase($1) + $2);
+      return (
+        lowercase(str[0]) +
+        str
+          .replace(replacing.from, replacing.to)
+          .slice(1)
+          .replace(/^([A-Z]+)([A-Z])/, (match, $1, $2) => lowercase($1) + $2)
+      );
     }
-    camelcase2.isCamelcase = function(str) {
+    camelcase2.isCamelcase = function (str) {
       return str && /^[a-zA-Z]+$/.test(str) && lowercase(str[0]) === str[0];
     };
     module2.exports = camelcase2;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/capitalcase.js
 var require_capitalcase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/capitalcase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/capitalcase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var uppercase = require_uppercase();
     function capitalcase(str) {
@@ -1674,12 +1896,15 @@ var require_capitalcase = __commonJS({
       return uppercase(str[0]) + str.slice(1);
     }
     module2.exports = capitalcase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/snakecase.js
 var require_snakecase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/snakecase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/snakecase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var lowercase = require_lowercase();
     var uppercase = require_uppercase();
@@ -1697,9 +1922,10 @@ var require_snakecase = __commonJS({
         if (isOneWord) {
           return prefix + lowercase($1);
         }
-        const replaced = lowercase($1.substr(0, len - 1)) + JOINER + lowercase($1[len - 1]);
+        const replaced =
+          lowercase($1.substr(0, len - 1)) + JOINER + lowercase($1[len - 1]);
         return prefix + replaced;
-      }
+      },
     };
     function snakecase(str) {
       if (snakecase.isSnakecase(str)) {
@@ -1714,16 +1940,19 @@ var require_snakecase = __commonJS({
       }
       return str.replace(replacing.from, replacing.to).replace(/_+/g, "_");
     }
-    snakecase.isSnakecase = function(str) {
+    snakecase.isSnakecase = function (str) {
       return str && /^[a-z_]+$/.test(str);
     };
     module2.exports = snakecase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/constcase.js
 var require_constcase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/constcase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/constcase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var uppercase = require_uppercase();
     var snakecase = require_snakecase();
@@ -1733,28 +1962,34 @@ var require_constcase = __commonJS({
       }
       return uppercase(snakecase(str));
     }
-    constcase2.isConstcase = function(str) {
+    constcase2.isConstcase = function (str) {
       return str && /^[A-Z_]+$/.test(str);
     };
     module2.exports = constcase2;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/cramcase.js
 var require_cramcase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/cramcase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/cramcase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var snakecase = require_snakecase();
     function cramcase(str) {
       return snakecase(str).replace(/_/g, "");
     }
     module2.exports = cramcase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/decapitalcase.js
 var require_decapitalcase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/decapitalcase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/decapitalcase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var lowercase = require_lowercase();
     function capitalcase(str) {
@@ -1765,36 +2000,45 @@ var require_decapitalcase = __commonJS({
       return lowercase(str[0]) + str.slice(1);
     }
     module2.exports = capitalcase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/dotcase.js
 var require_dotcase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/dotcase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/dotcase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var snakecase = require_snakecase();
     function dotcase(str) {
       return snakecase(str).replace(/_/g, ".");
     }
     module2.exports = dotcase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/enumcase.js
 var require_enumcase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/enumcase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/enumcase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var snakecase = require_snakecase();
     function enumcase(str) {
       return snakecase(str).replace(/_/g, ":");
     }
     module2.exports = enumcase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/pascalcase.js
 var require_pascalcase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/pascalcase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/pascalcase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var camelcase2 = require_camelcase();
     var capitalcase = require_capitalcase();
@@ -1802,35 +2046,44 @@ var require_pascalcase = __commonJS({
       return capitalcase(camelcase2(str));
     }
     module2.exports = pascalcase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/pathcase.js
 var require_pathcase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/pathcase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/pathcase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var snakecase = require_snakecase();
     function pathcase(str) {
       return snakecase(str).replace(/_/g, "/");
     }
     module2.exports = pathcase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/trimcase.js
 var require_trimcase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/trimcase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/trimcase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     function trimcase(str) {
       return String(str).trim();
     }
     module2.exports = trimcase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/sentencecase.js
 var require_sentencecase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/sentencecase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/sentencecase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var lowercase = require_lowercase();
     var trimcase = require_trimcase();
@@ -1845,36 +2098,45 @@ var require_sentencecase = __commonJS({
       return capitalcase(snakecase(trimcase(str)).replace(/_/g, JOINER));
     }
     module2.exports = sentencecase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/spacecase.js
 var require_spacecase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/spacecase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/spacecase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var snakecase = require_snakecase();
     function spacecase(str) {
       return snakecase(str).replace(/_/g, " ");
     }
     module2.exports = spacecase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/spinalcase.js
 var require_spinalcase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/spinalcase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/spinalcase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var snakecase = require_snakecase();
     function spinalcase2(str) {
       return snakecase(str).replace(/_/g, "-");
     }
     module2.exports = spinalcase2;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/titlecase.js
 var require_titlecase = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/titlecase.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/titlecase.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var snakecase = require_snakecase();
     var lowercase = require_lowercase();
@@ -1882,22 +2144,29 @@ var require_titlecase = __commonJS({
     var capitalcase = require_capitalcase();
     var LOWERCASE_WORDS = "a,the,and,or,not,but,for,of".split(",");
     function titlecase(str) {
-      return snakecase(str).split(/_/g).map(trimcase).map(function(word) {
-        var lower = !!~LOWERCASE_WORDS.indexOf(word);
-        if (lower) {
-          return lowercase(word);
-        } else {
-          return capitalcase(word);
-        }
-      }).join(" ");
+      return snakecase(str)
+        .split(/_/g)
+        .map(trimcase)
+        .map(function (word) {
+          var lower = !!~LOWERCASE_WORDS.indexOf(word);
+          if (lower) {
+            return lowercase(word);
+          } else {
+            return capitalcase(word);
+          }
+        })
+        .join(" ");
     }
     module2.exports = titlecase;
-  }
+  },
 });
 
 // pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/index.js
 var require_lib = __commonJS({
-  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/index.js"(exports, module2) {
+  "pnp:stringcase-npm-4.3.1-2f1c329337-741a448632.zip/node_modules/stringcase/lib/index.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     var camelcase2 = require_camelcase();
     var capitalcase = require_capitalcase();
@@ -1950,14 +2219,16 @@ var require_lib = __commonJS({
       spinalcase: spinalcase2,
       titlecase,
       trimcase,
-      uppercase
+      uppercase,
     };
-  }
+  },
 });
 
 // pnp:fs.realpath-npm-1.0.0-c8f05d8126-99ddea01a7.zip/node_modules/fs.realpath/old.js
 var require_old = __commonJS({
-  "pnp:fs.realpath-npm-1.0.0-c8f05d8126-99ddea01a7.zip/node_modules/fs.realpath/old.js"(exports) {
+  "pnp:fs.realpath-npm-1.0.0-c8f05d8126-99ddea01a7.zip/node_modules/fs.realpath/old.js"(
+    exports
+  ) {
     var pathModule = require("path");
     var isWindows = process.platform === "win32";
     var fs4 = require("fs");
@@ -1967,8 +2238,7 @@ var require_old = __commonJS({
       if (DEBUG) {
         var backtrace = new Error();
         callback = debugCallback;
-      } else
-        callback = missingCallback;
+      } else callback = missingCallback;
       return callback;
       function debugCallback(err) {
         if (err) {
@@ -1979,14 +2249,11 @@ var require_old = __commonJS({
       }
       function missingCallback(err) {
         if (err) {
-          if (process.throwDeprecation)
-            throw err;
+          if (process.throwDeprecation) throw err;
           else if (!process.noDeprecation) {
             var msg = "fs: missing callback " + (err.stack || err.message);
-            if (process.traceDeprecation)
-              console.trace(msg);
-            else
-              console.error(msg);
+            if (process.traceDeprecation) console.trace(msg);
+            else console.error(msg);
           }
         }
       }
@@ -2012,7 +2279,9 @@ var require_old = __commonJS({
       if (cache && Object.prototype.hasOwnProperty.call(cache, p)) {
         return cache[p];
       }
-      var original = p, seenLinks = {}, knownHard = {};
+      var original = p,
+        seenLinks = {},
+        knownHard = {};
       var pos;
       var current;
       var base;
@@ -2036,7 +2305,7 @@ var require_old = __commonJS({
         current += result[0];
         base = previous + result[1];
         pos = nextPartRe.lastIndex;
-        if (knownHard[base] || cache && cache[base] === base) {
+        if (knownHard[base] || (cache && cache[base] === base)) {
           continue;
         }
         var resolvedLink;
@@ -2046,8 +2315,7 @@ var require_old = __commonJS({
           var stat = fs4.lstatSync(base);
           if (!stat.isSymbolicLink()) {
             knownHard[base] = true;
-            if (cache)
-              cache[base] = base;
+            if (cache) cache[base] = base;
             continue;
           }
           var linkTarget = null;
@@ -2062,16 +2330,13 @@ var require_old = __commonJS({
             linkTarget = fs4.readlinkSync(base);
           }
           resolvedLink = pathModule.resolve(previous, linkTarget);
-          if (cache)
-            cache[base] = resolvedLink;
-          if (!isWindows)
-            seenLinks[id] = linkTarget;
+          if (cache) cache[base] = resolvedLink;
+          if (!isWindows) seenLinks[id] = linkTarget;
         }
         p = pathModule.resolve(resolvedLink, p.slice(pos));
         start();
       }
-      if (cache)
-        cache[original] = p;
+      if (cache) cache[original] = p;
       return p;
     };
     exports.realpath = function realpath(p, cache, cb) {
@@ -2083,7 +2348,9 @@ var require_old = __commonJS({
       if (cache && Object.prototype.hasOwnProperty.call(cache, p)) {
         return process.nextTick(cb.bind(null, null, cache[p]));
       }
-      var original = p, seenLinks = {}, knownHard = {};
+      var original = p,
+        seenLinks = {},
+        knownHard = {};
       var pos;
       var current;
       var base;
@@ -2096,9 +2363,8 @@ var require_old = __commonJS({
         base = m[0];
         previous = "";
         if (isWindows && !knownHard[base]) {
-          fs4.lstat(base, function(err) {
-            if (err)
-              return cb(err);
+          fs4.lstat(base, function (err) {
+            if (err) return cb(err);
             knownHard[base] = true;
             LOOP();
           });
@@ -2108,8 +2374,7 @@ var require_old = __commonJS({
       }
       function LOOP() {
         if (pos >= p.length) {
-          if (cache)
-            cache[original] = p;
+          if (cache) cache[original] = p;
           return cb(null, p);
         }
         nextPartRe.lastIndex = pos;
@@ -2118,7 +2383,7 @@ var require_old = __commonJS({
         current += result[0];
         base = previous + result[1];
         pos = nextPartRe.lastIndex;
-        if (knownHard[base] || cache && cache[base] === base) {
+        if (knownHard[base] || (cache && cache[base] === base)) {
           return process.nextTick(LOOP);
         }
         if (cache && Object.prototype.hasOwnProperty.call(cache, base)) {
@@ -2127,12 +2392,10 @@ var require_old = __commonJS({
         return fs4.lstat(base, gotStat);
       }
       function gotStat(err, stat) {
-        if (err)
-          return cb(err);
+        if (err) return cb(err);
         if (!stat.isSymbolicLink()) {
           knownHard[base] = true;
-          if (cache)
-            cache[base] = base;
+          if (cache) cache[base] = base;
           return process.nextTick(LOOP);
         }
         if (!isWindows) {
@@ -2141,22 +2404,18 @@ var require_old = __commonJS({
             return gotTarget(null, seenLinks[id], base);
           }
         }
-        fs4.stat(base, function(err2) {
-          if (err2)
-            return cb(err2);
-          fs4.readlink(base, function(err3, target) {
-            if (!isWindows)
-              seenLinks[id] = target;
+        fs4.stat(base, function (err2) {
+          if (err2) return cb(err2);
+          fs4.readlink(base, function (err3, target) {
+            if (!isWindows) seenLinks[id] = target;
             gotTarget(err3, target);
           });
         });
       }
       function gotTarget(err, target, base2) {
-        if (err)
-          return cb(err);
+        if (err) return cb(err);
         var resolvedLink = pathModule.resolve(previous, target);
-        if (cache)
-          cache[base2] = resolvedLink;
+        if (cache) cache[base2] = resolvedLink;
         gotResolvedLink(resolvedLink);
       }
       function gotResolvedLink(resolvedLink) {
@@ -2164,12 +2423,15 @@ var require_old = __commonJS({
         start();
       }
     };
-  }
+  },
 });
 
 // pnp:fs.realpath-npm-1.0.0-c8f05d8126-99ddea01a7.zip/node_modules/fs.realpath/index.js
 var require_fs = __commonJS({
-  "pnp:fs.realpath-npm-1.0.0-c8f05d8126-99ddea01a7.zip/node_modules/fs.realpath/index.js"(exports, module2) {
+  "pnp:fs.realpath-npm-1.0.0-c8f05d8126-99ddea01a7.zip/node_modules/fs.realpath/index.js"(
+    exports,
+    module2
+  ) {
     module2.exports = realpath;
     realpath.realpath = realpath;
     realpath.sync = realpathSync;
@@ -2183,7 +2445,13 @@ var require_fs = __commonJS({
     var ok = /^v[0-5]\./.test(version2);
     var old = require_old();
     function newError(er) {
-      return er && er.syscall === "realpath" && (er.code === "ELOOP" || er.code === "ENOMEM" || er.code === "ENAMETOOLONG");
+      return (
+        er &&
+        er.syscall === "realpath" &&
+        (er.code === "ELOOP" ||
+          er.code === "ENOMEM" ||
+          er.code === "ENAMETOOLONG")
+      );
     }
     function realpath(p, cache, cb) {
       if (ok) {
@@ -2193,7 +2461,7 @@ var require_fs = __commonJS({
         cb = cache;
         cache = null;
       }
-      origRealpath(p, cache, function(er, result) {
+      origRealpath(p, cache, function (er, result) {
         if (newError(er)) {
           old.realpath(p, cache, cb);
         } else {
@@ -2223,47 +2491,53 @@ var require_fs = __commonJS({
       fs4.realpath = origRealpath;
       fs4.realpathSync = origRealpathSync;
     }
-  }
+  },
 });
 
 // pnp:concat-map-npm-0.0.1-85a921b7ee-902a9f5d89.zip/node_modules/concat-map/index.js
 var require_concat_map = __commonJS({
-  "pnp:concat-map-npm-0.0.1-85a921b7ee-902a9f5d89.zip/node_modules/concat-map/index.js"(exports, module2) {
-    module2.exports = function(xs, fn) {
+  "pnp:concat-map-npm-0.0.1-85a921b7ee-902a9f5d89.zip/node_modules/concat-map/index.js"(
+    exports,
+    module2
+  ) {
+    module2.exports = function (xs, fn) {
       var res = [];
       for (var i = 0; i < xs.length; i++) {
         var x = fn(xs[i], i);
-        if (isArray(x))
-          res.push.apply(res, x);
-        else
-          res.push(x);
+        if (isArray(x)) res.push.apply(res, x);
+        else res.push(x);
       }
       return res;
     };
-    var isArray = Array.isArray || function(xs) {
-      return Object.prototype.toString.call(xs) === "[object Array]";
-    };
-  }
+    var isArray =
+      Array.isArray ||
+      function (xs) {
+        return Object.prototype.toString.call(xs) === "[object Array]";
+      };
+  },
 });
 
 // pnp:balanced-match-npm-1.0.0-951a2ad706-9b67bfe558.zip/node_modules/balanced-match/index.js
 var require_balanced_match = __commonJS({
-  "pnp:balanced-match-npm-1.0.0-951a2ad706-9b67bfe558.zip/node_modules/balanced-match/index.js"(exports, module2) {
+  "pnp:balanced-match-npm-1.0.0-951a2ad706-9b67bfe558.zip/node_modules/balanced-match/index.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     module2.exports = balanced;
     function balanced(a, b, str) {
-      if (a instanceof RegExp)
-        a = maybeMatch(a, str);
-      if (b instanceof RegExp)
-        b = maybeMatch(b, str);
+      if (a instanceof RegExp) a = maybeMatch(a, str);
+      if (b instanceof RegExp) b = maybeMatch(b, str);
       var r = range(a, b, str);
-      return r && {
-        start: r[0],
-        end: r[1],
-        pre: str.slice(0, r[0]),
-        body: str.slice(r[0] + a.length, r[1]),
-        post: str.slice(r[1] + b.length)
-      };
+      return (
+        r && {
+          start: r[0],
+          end: r[1],
+          pre: str.slice(0, r[0]),
+          body: str.slice(r[0] + a.length, r[1]),
+          post: str.slice(r[1] + b.length),
+        }
+      );
     }
     function maybeMatch(reg, str) {
       var m = str.match(reg);
@@ -2300,12 +2574,15 @@ var require_balanced_match = __commonJS({
       }
       return result;
     }
-  }
+  },
 });
 
 // pnp:brace-expansion-npm-1.1.11-fb95eb05ad-faf34a7bb0.zip/node_modules/brace-expansion/index.js
 var require_brace_expansion = __commonJS({
-  "pnp:brace-expansion-npm-1.1.11-fb95eb05ad-faf34a7bb0.zip/node_modules/brace-expansion/index.js"(exports, module2) {
+  "pnp:brace-expansion-npm-1.1.11-fb95eb05ad-faf34a7bb0.zip/node_modules/brace-expansion/index.js"(
+    exports,
+    module2
+  ) {
     var concatMap = require_concat_map();
     var balanced = require_balanced_match();
     module2.exports = expandTop;
@@ -2318,18 +2595,36 @@ var require_brace_expansion = __commonJS({
       return parseInt(str, 10) == str ? parseInt(str, 10) : str.charCodeAt(0);
     }
     function escapeBraces(str) {
-      return str.split("\\\\").join(escSlash).split("\\{").join(escOpen).split("\\}").join(escClose).split("\\,").join(escComma).split("\\.").join(escPeriod);
+      return str
+        .split("\\\\")
+        .join(escSlash)
+        .split("\\{")
+        .join(escOpen)
+        .split("\\}")
+        .join(escClose)
+        .split("\\,")
+        .join(escComma)
+        .split("\\.")
+        .join(escPeriod);
     }
     function unescapeBraces(str) {
-      return str.split(escSlash).join("\\").split(escOpen).join("{").split(escClose).join("}").split(escComma).join(",").split(escPeriod).join(".");
+      return str
+        .split(escSlash)
+        .join("\\")
+        .split(escOpen)
+        .join("{")
+        .split(escClose)
+        .join("}")
+        .split(escComma)
+        .join(",")
+        .split(escPeriod)
+        .join(".");
     }
     function parseCommaParts(str) {
-      if (!str)
-        return [""];
+      if (!str) return [""];
       var parts = [];
       var m = balanced("{", "}", str);
-      if (!m)
-        return str.split(",");
+      if (!m) return str.split(",");
       var pre = m.pre;
       var body = m.body;
       var post = m.post;
@@ -2344,8 +2639,7 @@ var require_brace_expansion = __commonJS({
       return parts;
     }
     function expandTop(str) {
-      if (!str)
-        return [];
+      if (!str) return [];
       if (str.substr(0, 2) === "{}") {
         str = "\\{\\}" + str.substr(2);
       }
@@ -2366,8 +2660,7 @@ var require_brace_expansion = __commonJS({
     function expand(str, isTop) {
       var expansions = [];
       var m = balanced("{", "}", str);
-      if (!m || /\$$/.test(m.pre))
-        return [str];
+      if (!m || /\$$/.test(m.pre)) return [str];
       var isNumericSequence = /^-?\d+\.\.-?\d+(?:\.\.-?\d+)?$/.test(m.body);
       var isAlphaSequence = /^[a-zA-Z]\.\.[a-zA-Z](?:\.\.-?\d+)?$/.test(m.body);
       var isSequence = isNumericSequence || isAlphaSequence;
@@ -2388,7 +2681,7 @@ var require_brace_expansion = __commonJS({
           n = expand(n[0], false).map(embrace);
           if (n.length === 1) {
             var post = m.post.length ? expand(m.post, false) : [""];
-            return post.map(function(p) {
+            return post.map(function (p) {
               return m.pre + n[0] + p;
             });
           }
@@ -2414,58 +2707,56 @@ var require_brace_expansion = __commonJS({
           var c;
           if (isAlphaSequence) {
             c = String.fromCharCode(i);
-            if (c === "\\")
-              c = "";
+            if (c === "\\") c = "";
           } else {
             c = String(i);
             if (pad) {
               var need = width - c.length;
               if (need > 0) {
                 var z = new Array(need + 1).join("0");
-                if (i < 0)
-                  c = "-" + z + c.slice(1);
-                else
-                  c = z + c;
+                if (i < 0) c = "-" + z + c.slice(1);
+                else c = z + c;
               }
             }
           }
           N.push(c);
         }
       } else {
-        N = concatMap(n, function(el) {
+        N = concatMap(n, function (el) {
           return expand(el, false);
         });
       }
       for (var j = 0; j < N.length; j++) {
         for (var k = 0; k < post.length; k++) {
           var expansion = pre + N[j] + post[k];
-          if (!isTop || isSequence || expansion)
-            expansions.push(expansion);
+          if (!isTop || isSequence || expansion) expansions.push(expansion);
         }
       }
       return expansions;
     }
-  }
+  },
 });
 
 // pnp:minimatch-npm-3.0.4-6e76f51c23-66ac295f8a.zip/node_modules/minimatch/minimatch.js
 var require_minimatch = __commonJS({
-  "pnp:minimatch-npm-3.0.4-6e76f51c23-66ac295f8a.zip/node_modules/minimatch/minimatch.js"(exports, module2) {
+  "pnp:minimatch-npm-3.0.4-6e76f51c23-66ac295f8a.zip/node_modules/minimatch/minimatch.js"(
+    exports,
+    module2
+  ) {
     module2.exports = minimatch;
     minimatch.Minimatch = Minimatch;
     var path2 = { sep: "/" };
     try {
       path2 = require("path");
-    } catch (er) {
-    }
-    var GLOBSTAR = minimatch.GLOBSTAR = Minimatch.GLOBSTAR = {};
+    } catch (er) {}
+    var GLOBSTAR = (minimatch.GLOBSTAR = Minimatch.GLOBSTAR = {});
     var expand = require_brace_expansion();
     var plTypes = {
       "!": { open: "(?:(?!(?:", close: "))[^/]*?)" },
       "?": { open: "(?:", close: ")?" },
       "+": { open: "(?:", close: ")+" },
       "*": { open: "(?:", close: ")*" },
-      "@": { open: "(?:", close: ")" }
+      "@": { open: "(?:", close: ")" },
     };
     var qmark = "[^/]";
     var star = qmark + "*?";
@@ -2473,7 +2764,7 @@ var require_minimatch = __commonJS({
     var twoStarNoDot = "(?:(?!(?:\\/|^)\\.).)*?";
     var reSpecials = charSet("().*{}+?[]^$\\!");
     function charSet(s) {
-      return s.split("").reduce(function(set, c) {
+      return s.split("").reduce(function (set, c) {
         set[c] = true;
         return set;
       }, {});
@@ -2482,7 +2773,7 @@ var require_minimatch = __commonJS({
     minimatch.filter = filter;
     function filter(pattern, options) {
       options = options || {};
-      return function(p, i, list) {
+      return function (p, i, list) {
         return minimatch(p, pattern, options);
       };
     }
@@ -2490,17 +2781,16 @@ var require_minimatch = __commonJS({
       a = a || {};
       b = b || {};
       var t = {};
-      Object.keys(b).forEach(function(k) {
+      Object.keys(b).forEach(function (k) {
         t[k] = b[k];
       });
-      Object.keys(a).forEach(function(k) {
+      Object.keys(a).forEach(function (k) {
         t[k] = a[k];
       });
       return t;
     }
-    minimatch.defaults = function(def) {
-      if (!def || !Object.keys(def).length)
-        return minimatch;
+    minimatch.defaults = function (def) {
+      if (!def || !Object.keys(def).length) return minimatch;
       var orig = minimatch;
       var m = function minimatch2(p, pattern, options) {
         return orig.minimatch(p, pattern, ext(def, options));
@@ -2510,22 +2800,19 @@ var require_minimatch = __commonJS({
       };
       return m;
     };
-    Minimatch.defaults = function(def) {
-      if (!def || !Object.keys(def).length)
-        return Minimatch;
+    Minimatch.defaults = function (def) {
+      if (!def || !Object.keys(def).length) return Minimatch;
       return minimatch.defaults(def).Minimatch;
     };
     function minimatch(p, pattern, options) {
       if (typeof pattern !== "string") {
         throw new TypeError("glob pattern string required");
       }
-      if (!options)
-        options = {};
+      if (!options) options = {};
       if (!options.nocomment && pattern.charAt(0) === "#") {
         return false;
       }
-      if (pattern.trim() === "")
-        return p === "";
+      if (pattern.trim() === "") return p === "";
       return new Minimatch(pattern, options).match(p);
     }
     function Minimatch(pattern, options) {
@@ -2535,8 +2822,7 @@ var require_minimatch = __commonJS({
       if (typeof pattern !== "string") {
         throw new TypeError("glob pattern string required");
       }
-      if (!options)
-        options = {};
+      if (!options) options = {};
       pattern = pattern.trim();
       if (path2.sep !== "/") {
         pattern = pattern.split(path2.sep).join("/");
@@ -2550,12 +2836,10 @@ var require_minimatch = __commonJS({
       this.empty = false;
       this.make();
     }
-    Minimatch.prototype.debug = function() {
-    };
+    Minimatch.prototype.debug = function () {};
     Minimatch.prototype.make = make;
     function make() {
-      if (this._made)
-        return;
+      if (this._made) return;
       var pattern = this.pattern;
       var options = this.options;
       if (!options.nocomment && pattern.charAt(0) === "#") {
@@ -2567,19 +2851,18 @@ var require_minimatch = __commonJS({
         return;
       }
       this.parseNegate();
-      var set = this.globSet = this.braceExpand();
-      if (options.debug)
-        this.debug = console.error;
+      var set = (this.globSet = this.braceExpand());
+      if (options.debug) this.debug = console.error;
       this.debug(this.pattern, set);
-      set = this.globParts = set.map(function(s) {
+      set = this.globParts = set.map(function (s) {
         return s.split(slashSplit);
       });
       this.debug(this.pattern, set);
-      set = set.map(function(s, si, set2) {
+      set = set.map(function (s, si, set2) {
         return s.map(this.parse, this);
       }, this);
       this.debug(this.pattern, set);
-      set = set.filter(function(s) {
+      set = set.filter(function (s) {
         return s.indexOf(false) === -1;
       });
       this.debug(this.pattern, set);
@@ -2591,17 +2874,19 @@ var require_minimatch = __commonJS({
       var negate = false;
       var options = this.options;
       var negateOffset = 0;
-      if (options.nonegate)
-        return;
-      for (var i = 0, l = pattern.length; i < l && pattern.charAt(i) === "!"; i++) {
+      if (options.nonegate) return;
+      for (
+        var i = 0, l = pattern.length;
+        i < l && pattern.charAt(i) === "!";
+        i++
+      ) {
         negate = !negate;
         negateOffset++;
       }
-      if (negateOffset)
-        this.pattern = pattern.substr(negateOffset);
+      if (negateOffset) this.pattern = pattern.substr(negateOffset);
       this.negate = negate;
     }
-    minimatch.braceExpand = function(pattern, options) {
+    minimatch.braceExpand = function (pattern, options) {
       return braceExpand(pattern, options);
     };
     Minimatch.prototype.braceExpand = braceExpand;
@@ -2629,10 +2914,8 @@ var require_minimatch = __commonJS({
         throw new TypeError("pattern is too long");
       }
       var options = this.options;
-      if (!options.noglobstar && pattern === "**")
-        return GLOBSTAR;
-      if (pattern === "")
-        return "";
+      if (!options.noglobstar && pattern === "**") return GLOBSTAR;
+      if (pattern === "") return "";
       var re = "";
       var hasMagic = !!options.nocase;
       var escaping = false;
@@ -2642,7 +2925,12 @@ var require_minimatch = __commonJS({
       var inClass = false;
       var reClassStart = -1;
       var classStart = -1;
-      var patternStart = pattern.charAt(0) === "." ? "" : options.dot ? "(?!(?:^|\\/)\\.{1,2}(?:$|\\/))" : "(?!\\.)";
+      var patternStart =
+        pattern.charAt(0) === "."
+          ? ""
+          : options.dot
+          ? "(?!(?:^|\\/)\\.{1,2}(?:$|\\/))"
+          : "(?!\\.)";
       var self = this;
       function clearStateChar() {
         if (stateChar) {
@@ -2663,7 +2951,11 @@ var require_minimatch = __commonJS({
           stateChar = false;
         }
       }
-      for (var i = 0, len = pattern.length, c; i < len && (c = pattern.charAt(i)); i++) {
+      for (
+        var i = 0, len = pattern.length, c;
+        i < len && (c = pattern.charAt(i));
+        i++
+      ) {
         this.debug("%s	%s %s %j", pattern, i, re, c);
         if (escaping && reSpecials[c]) {
           re += "\\" + c;
@@ -2685,16 +2977,14 @@ var require_minimatch = __commonJS({
             this.debug("%s	%s %s %j <-- stateChar", pattern, i, re, c);
             if (inClass) {
               this.debug("  in class");
-              if (c === "!" && i === classStart + 1)
-                c = "^";
+              if (c === "!" && i === classStart + 1) c = "^";
               re += c;
               continue;
             }
             self.debug("call clearStateChar %j", stateChar);
             clearStateChar();
             stateChar = c;
-            if (options.noext)
-              clearStateChar();
+            if (options.noext) clearStateChar();
             continue;
           case "(":
             if (inClass) {
@@ -2710,7 +3000,7 @@ var require_minimatch = __commonJS({
               start: i - 1,
               reStart: re.length,
               open: plTypes[stateChar].open,
-              close: plTypes[stateChar].close
+              close: plTypes[stateChar].close,
             });
             re += stateChar === "!" ? "(?:(?!(?:" : "(?:";
             this.debug("plType %j %j", stateChar, re);
@@ -2791,14 +3081,15 @@ var require_minimatch = __commonJS({
       for (pl = patternListStack.pop(); pl; pl = patternListStack.pop()) {
         var tail = re.slice(pl.reStart + pl.open.length);
         this.debug("setting tail", re, pl);
-        tail = tail.replace(/((?:\\{2}){0,64})(\\?)\|/g, function(_, $1, $2) {
+        tail = tail.replace(/((?:\\{2}){0,64})(\\?)\|/g, function (_, $1, $2) {
           if (!$2) {
             $2 = "\\";
           }
           return $1 + $1 + $2 + "|";
         });
         this.debug("tail=%j\n   %s", tail, tail, pl, re);
-        var t = pl.type === "*" ? star : pl.type === "?" ? qmark : "\\" + pl.type;
+        var t =
+          pl.type === "*" ? star : pl.type === "?" ? qmark : "\\" + pl.type;
         hasMagic = true;
         re = re.slice(0, pl.reStart) + t + "\\(" + tail;
       }
@@ -2855,29 +3146,39 @@ var require_minimatch = __commonJS({
       regExp._src = re;
       return regExp;
     }
-    minimatch.makeRe = function(pattern, options) {
+    minimatch.makeRe = function (pattern, options) {
       return new Minimatch(pattern, options || {}).makeRe();
     };
     Minimatch.prototype.makeRe = makeRe;
     function makeRe() {
-      if (this.regexp || this.regexp === false)
-        return this.regexp;
+      if (this.regexp || this.regexp === false) return this.regexp;
       var set = this.set;
       if (!set.length) {
         this.regexp = false;
         return this.regexp;
       }
       var options = this.options;
-      var twoStar = options.noglobstar ? star : options.dot ? twoStarDot : twoStarNoDot;
+      var twoStar = options.noglobstar
+        ? star
+        : options.dot
+        ? twoStarDot
+        : twoStarNoDot;
       var flags = options.nocase ? "i" : "";
-      var re = set.map(function(pattern) {
-        return pattern.map(function(p) {
-          return p === GLOBSTAR ? twoStar : typeof p === "string" ? regExpEscape(p) : p._src;
-        }).join("\\/");
-      }).join("|");
+      var re = set
+        .map(function (pattern) {
+          return pattern
+            .map(function (p) {
+              return p === GLOBSTAR
+                ? twoStar
+                : typeof p === "string"
+                ? regExpEscape(p)
+                : p._src;
+            })
+            .join("\\/");
+        })
+        .join("|");
       re = "^(?:" + re + ")$";
-      if (this.negate)
-        re = "^(?!" + re + ").*$";
+      if (this.negate) re = "^(?!" + re + ").*$";
       try {
         this.regexp = new RegExp(re, flags);
       } catch (ex) {
@@ -2885,10 +3186,10 @@ var require_minimatch = __commonJS({
       }
       return this.regexp;
     }
-    minimatch.match = function(list, pattern, options) {
+    minimatch.match = function (list, pattern, options) {
       options = options || {};
       var mm = new Minimatch(pattern, options);
-      list = list.filter(function(f) {
+      list = list.filter(function (f) {
         return mm.match(f);
       });
       if (mm.options.nonull && !list.length) {
@@ -2899,12 +3200,9 @@ var require_minimatch = __commonJS({
     Minimatch.prototype.match = match;
     function match(f, partial) {
       this.debug("match", f, this.pattern);
-      if (this.comment)
-        return false;
-      if (this.empty)
-        return f === "";
-      if (f === "/" && partial)
-        return true;
+      if (this.comment) return false;
+      if (this.empty) return f === "";
+      if (f === "/" && partial) return true;
       var options = this.options;
       if (path2.sep !== "/") {
         f = f.split(path2.sep).join("/");
@@ -2917,8 +3215,7 @@ var require_minimatch = __commonJS({
       var i;
       for (i = f.length - 1; i >= 0; i--) {
         filename = f[i];
-        if (filename)
-          break;
+        if (filename) break;
       }
       for (i = 0; i < set.length; i++) {
         var pattern = set[i];
@@ -2928,26 +3225,27 @@ var require_minimatch = __commonJS({
         }
         var hit = this.matchOne(file, pattern, partial);
         if (hit) {
-          if (options.flipNegate)
-            return true;
+          if (options.flipNegate) return true;
           return !this.negate;
         }
       }
-      if (options.flipNegate)
-        return false;
+      if (options.flipNegate) return false;
       return this.negate;
     }
-    Minimatch.prototype.matchOne = function(file, pattern, partial) {
+    Minimatch.prototype.matchOne = function (file, pattern, partial) {
       var options = this.options;
-      this.debug("matchOne", { "this": this, file, pattern });
+      this.debug("matchOne", { this: this, file, pattern });
       this.debug("matchOne", file.length, pattern.length);
-      for (var fi = 0, pi = 0, fl = file.length, pl = pattern.length; fi < fl && pi < pl; fi++, pi++) {
+      for (
+        var fi = 0, pi = 0, fl = file.length, pl = pattern.length;
+        fi < fl && pi < pl;
+        fi++, pi++
+      ) {
         this.debug("matchOne loop");
         var p = pattern[pi];
         var f = file[fi];
         this.debug(pattern, p, f);
-        if (p === false)
-          return false;
+        if (p === false) return false;
         if (p === GLOBSTAR) {
           this.debug("GLOBSTAR", [pattern, p, f]);
           var fr = fi;
@@ -2955,7 +3253,11 @@ var require_minimatch = __commonJS({
           if (pr === pl) {
             this.debug("** at the end");
             for (; fi < fl; fi++) {
-              if (file[fi] === "." || file[fi] === ".." || !options.dot && file[fi].charAt(0) === ".")
+              if (
+                file[fi] === "." ||
+                file[fi] === ".." ||
+                (!options.dot && file[fi].charAt(0) === ".")
+              )
                 return false;
             }
             return true;
@@ -2967,7 +3269,11 @@ var require_minimatch = __commonJS({
               this.debug("globstar found match!", fr, fl, swallowee);
               return true;
             } else {
-              if (swallowee === "." || swallowee === ".." || !options.dot && swallowee.charAt(0) === ".") {
+              if (
+                swallowee === "." ||
+                swallowee === ".." ||
+                (!options.dot && swallowee.charAt(0) === ".")
+              ) {
                 this.debug("dot detected!", file, fr, pattern, pr);
                 break;
               }
@@ -2977,8 +3283,7 @@ var require_minimatch = __commonJS({
           }
           if (partial) {
             this.debug("\n>>> no match, partial?", file, fr, pattern, pr);
-            if (fr === fl)
-              return true;
+            if (fr === fl) return true;
           }
           return false;
         }
@@ -2994,8 +3299,7 @@ var require_minimatch = __commonJS({
           hit = f.match(p);
           this.debug("pattern match", p, f, hit);
         }
-        if (!hit)
-          return false;
+        if (!hit) return false;
       }
       if (fi === fl && pi === pl) {
         return true;
@@ -3013,12 +3317,15 @@ var require_minimatch = __commonJS({
     function regExpEscape(s) {
       return s.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
     }
-  }
+  },
 });
 
 // pnp:inherits-npm-2.0.4-c66b3957a0-4a48a73384.zip/node_modules/inherits/inherits_browser.js
 var require_inherits_browser = __commonJS({
-  "pnp:inherits-npm-2.0.4-c66b3957a0-4a48a73384.zip/node_modules/inherits/inherits_browser.js"(exports, module2) {
+  "pnp:inherits-npm-2.0.4-c66b3957a0-4a48a73384.zip/node_modules/inherits/inherits_browser.js"(
+    exports,
+    module2
+  ) {
     if (typeof Object.create === "function") {
       module2.exports = function inherits(ctor, superCtor) {
         if (superCtor) {
@@ -3028,8 +3335,8 @@ var require_inherits_browser = __commonJS({
               value: ctor,
               enumerable: false,
               writable: true,
-              configurable: true
-            }
+              configurable: true,
+            },
           });
         }
       };
@@ -3037,41 +3344,46 @@ var require_inherits_browser = __commonJS({
       module2.exports = function inherits(ctor, superCtor) {
         if (superCtor) {
           ctor.super_ = superCtor;
-          var TempCtor = function() {
-          };
+          var TempCtor = function () {};
           TempCtor.prototype = superCtor.prototype;
           ctor.prototype = new TempCtor();
           ctor.prototype.constructor = ctor;
         }
       };
     }
-  }
+  },
 });
 
 // pnp:inherits-npm-2.0.4-c66b3957a0-4a48a73384.zip/node_modules/inherits/inherits.js
 var require_inherits = __commonJS({
-  "pnp:inherits-npm-2.0.4-c66b3957a0-4a48a73384.zip/node_modules/inherits/inherits.js"(exports, module2) {
+  "pnp:inherits-npm-2.0.4-c66b3957a0-4a48a73384.zip/node_modules/inherits/inherits.js"(
+    exports,
+    module2
+  ) {
     try {
       util = require("util");
-      if (typeof util.inherits !== "function")
-        throw "";
+      if (typeof util.inherits !== "function") throw "";
       module2.exports = util.inherits;
     } catch (e) {
       module2.exports = require_inherits_browser();
     }
     var util;
-  }
+  },
 });
 
 // pnp:path-is-absolute-npm-1.0.1-31bc695ffd-060840f92c.zip/node_modules/path-is-absolute/index.js
 var require_path_is_absolute = __commonJS({
-  "pnp:path-is-absolute-npm-1.0.1-31bc695ffd-060840f92c.zip/node_modules/path-is-absolute/index.js"(exports, module2) {
+  "pnp:path-is-absolute-npm-1.0.1-31bc695ffd-060840f92c.zip/node_modules/path-is-absolute/index.js"(
+    exports,
+    module2
+  ) {
     "use strict";
     function posix(path2) {
       return path2.charAt(0) === "/";
     }
     function win32(path2) {
-      var splitDeviceRe = /^([a-zA-Z]:|[\\\/]{2}[^\\\/]+[\\\/]+[^\\\/]+)?([\\\/])?([\s\S]*?)$/;
+      var splitDeviceRe =
+        /^([a-zA-Z]:|[\\\/]{2}[^\\\/]+[\\\/]+[^\\\/]+)?([\\\/])?([\s\S]*?)$/;
       var result = splitDeviceRe.exec(path2);
       var device = result[1] || "";
       var isUnc = Boolean(device && device.charAt(1) !== ":");
@@ -3080,12 +3392,14 @@ var require_path_is_absolute = __commonJS({
     module2.exports = process.platform === "win32" ? win32 : posix;
     module2.exports.posix = posix;
     module2.exports.win32 = win32;
-  }
+  },
 });
 
 // pnp:glob-npm-7.1.7-5698ad9c48-b61f48973b.zip/node_modules/glob/common.js
 var require_common = __commonJS({
-  "pnp:glob-npm-7.1.7-5698ad9c48-b61f48973b.zip/node_modules/glob/common.js"(exports) {
+  "pnp:glob-npm-7.1.7-5698ad9c48-b61f48973b.zip/node_modules/glob/common.js"(
+    exports
+  ) {
     exports.setopts = setopts;
     exports.ownProp = ownProp;
     exports.makeAbs = makeAbs;
@@ -3105,8 +3419,7 @@ var require_common = __commonJS({
     }
     function setupIgnores(self, options) {
       self.ignore = options.ignore || [];
-      if (!Array.isArray(self.ignore))
-        self.ignore = [self.ignore];
+      if (!Array.isArray(self.ignore)) self.ignore = [self.ignore];
       if (self.ignore.length) {
         self.ignore = self.ignore.map(ignoreMap);
       }
@@ -3119,12 +3432,11 @@ var require_common = __commonJS({
       }
       return {
         matcher: new Minimatch(pattern, { dot: true }),
-        gmatcher
+        gmatcher,
       };
     }
     function setopts(self, pattern, options) {
-      if (!options)
-        options = {};
+      if (!options) options = {};
       if (options.matchBase && pattern.indexOf("/") === -1) {
         if (options.noglobstar) {
           throw new Error("base matching requires globstar");
@@ -3140,8 +3452,7 @@ var require_common = __commonJS({
       self.dot = !!options.dot;
       self.mark = !!options.mark;
       self.nodir = !!options.nodir;
-      if (self.nodir)
-        self.mark = true;
+      if (self.nodir) self.mark = true;
       self.sync = !!options.sync;
       self.nounique = !!options.nounique;
       self.nonull = !!options.nonull;
@@ -3157,8 +3468,7 @@ var require_common = __commonJS({
       setupIgnores(self, options);
       self.changedCwd = false;
       var cwd = process.cwd();
-      if (!ownProp(options, "cwd"))
-        self.cwd = cwd;
+      if (!ownProp(options, "cwd")) self.cwd = cwd;
       else {
         self.cwd = path2.resolve(options.cwd);
         self.changedCwd = self.cwd !== cwd;
@@ -3184,41 +3494,35 @@ var require_common = __commonJS({
         if (!matches || Object.keys(matches).length === 0) {
           if (self.nonull) {
             var literal = self.minimatch.globSet[i];
-            if (nou)
-              all.push(literal);
-            else
-              all[literal] = true;
+            if (nou) all.push(literal);
+            else all[literal] = true;
           }
         } else {
           var m = Object.keys(matches);
-          if (nou)
-            all.push.apply(all, m);
+          if (nou) all.push.apply(all, m);
           else
-            m.forEach(function(m2) {
+            m.forEach(function (m2) {
               all[m2] = true;
             });
         }
       }
-      if (!nou)
-        all = Object.keys(all);
-      if (!self.nosort)
-        all = all.sort(alphasort);
+      if (!nou) all = Object.keys(all);
+      if (!self.nosort) all = all.sort(alphasort);
       if (self.mark) {
         for (var i = 0; i < all.length; i++) {
           all[i] = self._mark(all[i]);
         }
         if (self.nodir) {
-          all = all.filter(function(e) {
+          all = all.filter(function (e) {
             var notDir = !/\/$/.test(e);
             var c = self.cache[e] || self.cache[makeAbs(self, e)];
-            if (notDir && c)
-              notDir = c !== "DIR" && !Array.isArray(c);
+            if (notDir && c) notDir = c !== "DIR" && !Array.isArray(c);
             return notDir;
           });
         }
       }
       if (self.ignore.length)
-        all = all.filter(function(m2) {
+        all = all.filter(function (m2) {
           return !isIgnored(self, m2);
         });
       self.found = all;
@@ -3230,10 +3534,8 @@ var require_common = __commonJS({
       if (c) {
         var isDir = c === "DIR" || Array.isArray(c);
         var slash = p.slice(-1) === "/";
-        if (isDir && !slash)
-          m += "/";
-        else if (!isDir && slash)
-          m = m.slice(0, -1);
+        if (isDir && !slash) m += "/";
+        else if (!isDir && slash) m = m.slice(0, -1);
         if (m !== p) {
           var mabs = makeAbs(self, m);
           self.statCache[mabs] = self.statCache[abs];
@@ -3253,30 +3555,33 @@ var require_common = __commonJS({
       } else {
         abs = path2.resolve(f);
       }
-      if (process.platform === "win32")
-        abs = abs.replace(/\\/g, "/");
+      if (process.platform === "win32") abs = abs.replace(/\\/g, "/");
       return abs;
     }
     function isIgnored(self, path3) {
-      if (!self.ignore.length)
-        return false;
-      return self.ignore.some(function(item) {
-        return item.matcher.match(path3) || !!(item.gmatcher && item.gmatcher.match(path3));
+      if (!self.ignore.length) return false;
+      return self.ignore.some(function (item) {
+        return (
+          item.matcher.match(path3) ||
+          !!(item.gmatcher && item.gmatcher.match(path3))
+        );
       });
     }
     function childrenIgnored(self, path3) {
-      if (!self.ignore.length)
-        return false;
-      return self.ignore.some(function(item) {
+      if (!self.ignore.length) return false;
+      return self.ignore.some(function (item) {
         return !!(item.gmatcher && item.gmatcher.match(path3));
       });
     }
-  }
+  },
 });
 
 // pnp:glob-npm-7.1.7-5698ad9c48-b61f48973b.zip/node_modules/glob/sync.js
 var require_sync = __commonJS({
-  "pnp:glob-npm-7.1.7-5698ad9c48-b61f48973b.zip/node_modules/glob/sync.js"(exports, module2) {
+  "pnp:glob-npm-7.1.7-5698ad9c48-b61f48973b.zip/node_modules/glob/sync.js"(
+    exports,
+    module2
+  ) {
     module2.exports = globSync;
     globSync.GlobSync = GlobSync;
     var fs4 = require("fs");
@@ -3295,19 +3600,20 @@ var require_sync = __commonJS({
     var isIgnored = common.isIgnored;
     function globSync(pattern, options) {
       if (typeof options === "function" || arguments.length === 3)
-        throw new TypeError("callback provided to sync glob\nSee: https://github.com/isaacs/node-glob/issues/167");
+        throw new TypeError(
+          "callback provided to sync glob\nSee: https://github.com/isaacs/node-glob/issues/167"
+        );
       return new GlobSync(pattern, options).found;
     }
     function GlobSync(pattern, options) {
-      if (!pattern)
-        throw new Error("must provide pattern");
+      if (!pattern) throw new Error("must provide pattern");
       if (typeof options === "function" || arguments.length === 3)
-        throw new TypeError("callback provided to sync glob\nSee: https://github.com/isaacs/node-glob/issues/167");
-      if (!(this instanceof GlobSync))
-        return new GlobSync(pattern, options);
+        throw new TypeError(
+          "callback provided to sync glob\nSee: https://github.com/isaacs/node-glob/issues/167"
+        );
+      if (!(this instanceof GlobSync)) return new GlobSync(pattern, options);
       setopts(this, pattern, options);
-      if (this.noprocess)
-        return this;
+      if (this.noprocess) return this;
       var n = this.minimatch.set.length;
       this.matches = new Array(n);
       for (var i = 0; i < n; i++) {
@@ -3315,29 +3621,27 @@ var require_sync = __commonJS({
       }
       this._finish();
     }
-    GlobSync.prototype._finish = function() {
+    GlobSync.prototype._finish = function () {
       assert(this instanceof GlobSync);
       if (this.realpath) {
         var self = this;
-        this.matches.forEach(function(matchset, index) {
-          var set = self.matches[index] = Object.create(null);
+        this.matches.forEach(function (matchset, index) {
+          var set = (self.matches[index] = Object.create(null));
           for (var p in matchset) {
             try {
               p = self._makeAbs(p);
               var real = rp.realpathSync(p, self.realpathCache);
               set[real] = true;
             } catch (er) {
-              if (er.syscall === "stat")
-                set[self._makeAbs(p)] = true;
-              else
-                throw er;
+              if (er.syscall === "stat") set[self._makeAbs(p)] = true;
+              else throw er;
             }
           }
         });
       }
       common.finish(this);
     };
-    GlobSync.prototype._process = function(pattern, index, inGlobStar) {
+    GlobSync.prototype._process = function (pattern, index, inGlobStar) {
       assert(this instanceof GlobSync);
       var n = 0;
       while (typeof pattern[n] === "string") {
@@ -3357,27 +3661,28 @@ var require_sync = __commonJS({
       }
       var remain = pattern.slice(n);
       var read;
-      if (prefix === null)
-        read = ".";
+      if (prefix === null) read = ".";
       else if (isAbsolute(prefix) || isAbsolute(pattern.join("/"))) {
-        if (!prefix || !isAbsolute(prefix))
-          prefix = "/" + prefix;
+        if (!prefix || !isAbsolute(prefix)) prefix = "/" + prefix;
         read = prefix;
-      } else
-        read = prefix;
+      } else read = prefix;
       var abs = this._makeAbs(read);
-      if (childrenIgnored(this, read))
-        return;
+      if (childrenIgnored(this, read)) return;
       var isGlobStar = remain[0] === minimatch.GLOBSTAR;
       if (isGlobStar)
         this._processGlobStar(prefix, read, abs, remain, index, inGlobStar);
-      else
-        this._processReaddir(prefix, read, abs, remain, index, inGlobStar);
+      else this._processReaddir(prefix, read, abs, remain, index, inGlobStar);
     };
-    GlobSync.prototype._processReaddir = function(prefix, read, abs, remain, index, inGlobStar) {
+    GlobSync.prototype._processReaddir = function (
+      prefix,
+      read,
+      abs,
+      remain,
+      index,
+      inGlobStar
+    ) {
       var entries = this._readdir(abs, inGlobStar);
-      if (!entries)
-        return;
+      if (!entries) return;
       var pn = remain[0];
       var negate = !!this.minimatch.negate;
       var rawGlob = pn._glob;
@@ -3392,23 +3697,18 @@ var require_sync = __commonJS({
           } else {
             m = e.match(pn);
           }
-          if (m)
-            matchedEntries.push(e);
+          if (m) matchedEntries.push(e);
         }
       }
       var len = matchedEntries.length;
-      if (len === 0)
-        return;
+      if (len === 0) return;
       if (remain.length === 1 && !this.mark && !this.stat) {
-        if (!this.matches[index])
-          this.matches[index] = Object.create(null);
+        if (!this.matches[index]) this.matches[index] = Object.create(null);
         for (var i = 0; i < len; i++) {
           var e = matchedEntries[i];
           if (prefix) {
-            if (prefix.slice(-1) !== "/")
-              e = prefix + "/" + e;
-            else
-              e = prefix + e;
+            if (prefix.slice(-1) !== "/") e = prefix + "/" + e;
+            else e = prefix + e;
           }
           if (e.charAt(0) === "/" && !this.nomount) {
             e = path2.join(this.root, e);
@@ -3421,36 +3721,28 @@ var require_sync = __commonJS({
       for (var i = 0; i < len; i++) {
         var e = matchedEntries[i];
         var newPattern;
-        if (prefix)
-          newPattern = [prefix, e];
-        else
-          newPattern = [e];
+        if (prefix) newPattern = [prefix, e];
+        else newPattern = [e];
         this._process(newPattern.concat(remain), index, inGlobStar);
       }
     };
-    GlobSync.prototype._emitMatch = function(index, e) {
-      if (isIgnored(this, e))
-        return;
+    GlobSync.prototype._emitMatch = function (index, e) {
+      if (isIgnored(this, e)) return;
       var abs = this._makeAbs(e);
-      if (this.mark)
-        e = this._mark(e);
+      if (this.mark) e = this._mark(e);
       if (this.absolute) {
         e = abs;
       }
-      if (this.matches[index][e])
-        return;
+      if (this.matches[index][e]) return;
       if (this.nodir) {
         var c = this.cache[abs];
-        if (c === "DIR" || Array.isArray(c))
-          return;
+        if (c === "DIR" || Array.isArray(c)) return;
       }
       this.matches[index][e] = true;
-      if (this.stat)
-        this._stat(e);
+      if (this.stat) this._stat(e);
     };
-    GlobSync.prototype._readdirInGlobStar = function(abs) {
-      if (this.follow)
-        return this._readdir(abs, false);
+    GlobSync.prototype._readdirInGlobStar = function (abs) {
+      if (this.follow) return this._readdir(abs, false);
       var entries;
       var lstat;
       var stat;
@@ -3463,22 +3755,18 @@ var require_sync = __commonJS({
       }
       var isSym = lstat && lstat.isSymbolicLink();
       this.symlinks[abs] = isSym;
-      if (!isSym && lstat && !lstat.isDirectory())
-        this.cache[abs] = "FILE";
-      else
-        entries = this._readdir(abs, false);
+      if (!isSym && lstat && !lstat.isDirectory()) this.cache[abs] = "FILE";
+      else entries = this._readdir(abs, false);
       return entries;
     };
-    GlobSync.prototype._readdir = function(abs, inGlobStar) {
+    GlobSync.prototype._readdir = function (abs, inGlobStar) {
       var entries;
       if (inGlobStar && !ownProp(this.symlinks, abs))
         return this._readdirInGlobStar(abs);
       if (ownProp(this.cache, abs)) {
         var c = this.cache[abs];
-        if (!c || c === "FILE")
-          return null;
-        if (Array.isArray(c))
-          return c;
+        if (!c || c === "FILE") return null;
+        if (Array.isArray(c)) return c;
       }
       try {
         return this._readdirEntries(abs, fs4.readdirSync(abs));
@@ -3487,21 +3775,19 @@ var require_sync = __commonJS({
         return null;
       }
     };
-    GlobSync.prototype._readdirEntries = function(abs, entries) {
+    GlobSync.prototype._readdirEntries = function (abs, entries) {
       if (!this.mark && !this.stat) {
         for (var i = 0; i < entries.length; i++) {
           var e = entries[i];
-          if (abs === "/")
-            e = abs + e;
-          else
-            e = abs + "/" + e;
+          if (abs === "/") e = abs + e;
+          else e = abs + "/" + e;
           this.cache[e] = true;
         }
       }
       this.cache[abs] = entries;
       return entries;
     };
-    GlobSync.prototype._readdirError = function(f, er) {
+    GlobSync.prototype._readdirError = function (f, er) {
       switch (er.code) {
         case "ENOTSUP":
         case "ENOTDIR":
@@ -3522,68 +3808,62 @@ var require_sync = __commonJS({
           break;
         default:
           this.cache[this._makeAbs(f)] = false;
-          if (this.strict)
-            throw er;
-          if (!this.silent)
-            console.error("glob error", er);
+          if (this.strict) throw er;
+          if (!this.silent) console.error("glob error", er);
           break;
       }
     };
-    GlobSync.prototype._processGlobStar = function(prefix, read, abs, remain, index, inGlobStar) {
+    GlobSync.prototype._processGlobStar = function (
+      prefix,
+      read,
+      abs,
+      remain,
+      index,
+      inGlobStar
+    ) {
       var entries = this._readdir(abs, inGlobStar);
-      if (!entries)
-        return;
+      if (!entries) return;
       var remainWithoutGlobStar = remain.slice(1);
       var gspref = prefix ? [prefix] : [];
       var noGlobStar = gspref.concat(remainWithoutGlobStar);
       this._process(noGlobStar, index, false);
       var len = entries.length;
       var isSym = this.symlinks[abs];
-      if (isSym && inGlobStar)
-        return;
+      if (isSym && inGlobStar) return;
       for (var i = 0; i < len; i++) {
         var e = entries[i];
-        if (e.charAt(0) === "." && !this.dot)
-          continue;
+        if (e.charAt(0) === "." && !this.dot) continue;
         var instead = gspref.concat(entries[i], remainWithoutGlobStar);
         this._process(instead, index, true);
         var below = gspref.concat(entries[i], remain);
         this._process(below, index, true);
       }
     };
-    GlobSync.prototype._processSimple = function(prefix, index) {
+    GlobSync.prototype._processSimple = function (prefix, index) {
       var exists = this._stat(prefix);
-      if (!this.matches[index])
-        this.matches[index] = Object.create(null);
-      if (!exists)
-        return;
+      if (!this.matches[index]) this.matches[index] = Object.create(null);
+      if (!exists) return;
       if (prefix && isAbsolute(prefix) && !this.nomount) {
         var trail = /[\/\\]$/.test(prefix);
         if (prefix.charAt(0) === "/") {
           prefix = path2.join(this.root, prefix);
         } else {
           prefix = path2.resolve(this.root, prefix);
-          if (trail)
-            prefix += "/";
+          if (trail) prefix += "/";
         }
       }
-      if (process.platform === "win32")
-        prefix = prefix.replace(/\\/g, "/");
+      if (process.platform === "win32") prefix = prefix.replace(/\\/g, "/");
       this._emitMatch(index, prefix);
     };
-    GlobSync.prototype._stat = function(f) {
+    GlobSync.prototype._stat = function (f) {
       var abs = this._makeAbs(f);
       var needDir = f.slice(-1) === "/";
-      if (f.length > this.maxLength)
-        return false;
+      if (f.length > this.maxLength) return false;
       if (!this.stat && ownProp(this.cache, abs)) {
         var c = this.cache[abs];
-        if (Array.isArray(c))
-          c = "DIR";
-        if (!needDir || c === "DIR")
-          return c;
-        if (needDir && c === "FILE")
-          return false;
+        if (Array.isArray(c)) c = "DIR";
+        if (!needDir || c === "DIR") return c;
+        if (needDir && c === "FILE") return false;
       }
       var exists;
       var stat = this.statCache[abs];
@@ -3609,32 +3889,32 @@ var require_sync = __commonJS({
       }
       this.statCache[abs] = stat;
       var c = true;
-      if (stat)
-        c = stat.isDirectory() ? "DIR" : "FILE";
+      if (stat) c = stat.isDirectory() ? "DIR" : "FILE";
       this.cache[abs] = this.cache[abs] || c;
-      if (needDir && c === "FILE")
-        return false;
+      if (needDir && c === "FILE") return false;
       return c;
     };
-    GlobSync.prototype._mark = function(p) {
+    GlobSync.prototype._mark = function (p) {
       return common.mark(this, p);
     };
-    GlobSync.prototype._makeAbs = function(f) {
+    GlobSync.prototype._makeAbs = function (f) {
       return common.makeAbs(this, f);
     };
-  }
+  },
 });
 
 // pnp:wrappy-npm-1.0.2-916de4d4b3-159da4805f.zip/node_modules/wrappy/wrappy.js
 var require_wrappy = __commonJS({
-  "pnp:wrappy-npm-1.0.2-916de4d4b3-159da4805f.zip/node_modules/wrappy/wrappy.js"(exports, module2) {
+  "pnp:wrappy-npm-1.0.2-916de4d4b3-159da4805f.zip/node_modules/wrappy/wrappy.js"(
+    exports,
+    module2
+  ) {
     module2.exports = wrappy;
     function wrappy(fn, cb) {
-      if (fn && cb)
-        return wrappy(fn)(cb);
+      if (fn && cb) return wrappy(fn)(cb);
       if (typeof fn !== "function")
         throw new TypeError("need wrapper function");
-      Object.keys(fn).forEach(function(k) {
+      Object.keys(fn).forEach(function (k) {
         wrapper[k] = fn[k];
       });
       return wrapper;
@@ -3646,64 +3926,68 @@ var require_wrappy = __commonJS({
         var ret = fn.apply(this, args);
         var cb2 = args[args.length - 1];
         if (typeof ret === "function" && ret !== cb2) {
-          Object.keys(cb2).forEach(function(k) {
+          Object.keys(cb2).forEach(function (k) {
             ret[k] = cb2[k];
           });
         }
         return ret;
       }
     }
-  }
+  },
 });
 
 // pnp:once-npm-1.4.0-ccf03ef07a-cd0a885013.zip/node_modules/once/once.js
 var require_once = __commonJS({
-  "pnp:once-npm-1.4.0-ccf03ef07a-cd0a885013.zip/node_modules/once/once.js"(exports, module2) {
+  "pnp:once-npm-1.4.0-ccf03ef07a-cd0a885013.zip/node_modules/once/once.js"(
+    exports,
+    module2
+  ) {
     var wrappy = require_wrappy();
     module2.exports = wrappy(once);
     module2.exports.strict = wrappy(onceStrict);
-    once.proto = once(function() {
+    once.proto = once(function () {
       Object.defineProperty(Function.prototype, "once", {
-        value: function() {
+        value: function () {
           return once(this);
         },
-        configurable: true
+        configurable: true,
       });
       Object.defineProperty(Function.prototype, "onceStrict", {
-        value: function() {
+        value: function () {
           return onceStrict(this);
         },
-        configurable: true
+        configurable: true,
       });
     });
     function once(fn) {
-      var f = function() {
-        if (f.called)
-          return f.value;
+      var f = function () {
+        if (f.called) return f.value;
         f.called = true;
-        return f.value = fn.apply(this, arguments);
+        return (f.value = fn.apply(this, arguments));
       };
       f.called = false;
       return f;
     }
     function onceStrict(fn) {
-      var f = function() {
-        if (f.called)
-          throw new Error(f.onceError);
+      var f = function () {
+        if (f.called) throw new Error(f.onceError);
         f.called = true;
-        return f.value = fn.apply(this, arguments);
+        return (f.value = fn.apply(this, arguments));
       };
       var name = fn.name || "Function wrapped with `once`";
       f.onceError = name + " shouldn't be called more than once";
       f.called = false;
       return f;
     }
-  }
+  },
 });
 
 // pnp:inflight-npm-1.0.6-ccedb4b908-f4f76aa072.zip/node_modules/inflight/inflight.js
 var require_inflight = __commonJS({
-  "pnp:inflight-npm-1.0.6-ccedb4b908-f4f76aa072.zip/node_modules/inflight/inflight.js"(exports, module2) {
+  "pnp:inflight-npm-1.0.6-ccedb4b908-f4f76aa072.zip/node_modules/inflight/inflight.js"(
+    exports,
+    module2
+  ) {
     var wrappy = require_wrappy();
     var reqs = Object.create(null);
     var once = require_once();
@@ -3729,7 +4013,7 @@ var require_inflight = __commonJS({
         } finally {
           if (cbs.length > len) {
             cbs.splice(0, len);
-            process.nextTick(function() {
+            process.nextTick(function () {
               RES.apply(null, args);
             });
           } else {
@@ -3741,16 +4025,18 @@ var require_inflight = __commonJS({
     function slice(args) {
       var length = args.length;
       var array = [];
-      for (var i = 0; i < length; i++)
-        array[i] = args[i];
+      for (var i = 0; i < length; i++) array[i] = args[i];
       return array;
     }
-  }
+  },
 });
 
 // pnp:glob-npm-7.1.7-5698ad9c48-b61f48973b.zip/node_modules/glob/glob.js
 var require_glob = __commonJS({
-  "pnp:glob-npm-7.1.7-5698ad9c48-b61f48973b.zip/node_modules/glob/glob.js"(exports, module2) {
+  "pnp:glob-npm-7.1.7-5698ad9c48-b61f48973b.zip/node_modules/glob/glob.js"(
+    exports,
+    module2
+  ) {
     module2.exports = glob2;
     var fs4 = require("fs");
     var rp = require_fs();
@@ -3771,19 +4057,16 @@ var require_glob = __commonJS({
     var isIgnored = common.isIgnored;
     var once = require_once();
     function glob2(pattern, options, cb) {
-      if (typeof options === "function")
-        cb = options, options = {};
-      if (!options)
-        options = {};
+      if (typeof options === "function") (cb = options), (options = {});
+      if (!options) options = {};
       if (options.sync) {
-        if (cb)
-          throw new TypeError("callback provided to sync glob");
+        if (cb) throw new TypeError("callback provided to sync glob");
         return globSync(pattern, options);
       }
       return new Glob2(pattern, options, cb);
     }
     glob2.sync = globSync;
-    var GlobSync = glob2.GlobSync = globSync.GlobSync;
+    var GlobSync = (glob2.GlobSync = globSync.GlobSync);
     glob2.glob = glob2;
     function extend(origin, add) {
       if (add === null || typeof add !== "object") {
@@ -3796,18 +4079,15 @@ var require_glob = __commonJS({
       }
       return origin;
     }
-    glob2.hasMagic = function(pattern, options_) {
+    glob2.hasMagic = function (pattern, options_) {
       var options = extend({}, options_);
       options.noprocess = true;
       var g = new Glob2(pattern, options);
       var set = g.minimatch.set;
-      if (!pattern)
-        return false;
-      if (set.length > 1)
-        return true;
+      if (!pattern) return false;
+      if (set.length > 1) return true;
       for (var j = 0; j < set[0].length; j++) {
-        if (typeof set[0][j] !== "string")
-          return true;
+        if (typeof set[0][j] !== "string") return true;
       }
       return false;
     };
@@ -3819,12 +4099,10 @@ var require_glob = __commonJS({
         options = null;
       }
       if (options && options.sync) {
-        if (cb)
-          throw new TypeError("callback provided to sync glob");
+        if (cb) throw new TypeError("callback provided to sync glob");
         return new GlobSync(pattern, options);
       }
-      if (!(this instanceof Glob2))
-        return new Glob2(pattern, options, cb);
+      if (!(this instanceof Glob2)) return new Glob2(pattern, options, cb);
       setopts(this, pattern, options);
       this._didRealPath = false;
       var n = this.minimatch.set.length;
@@ -3832,7 +4110,7 @@ var require_glob = __commonJS({
       if (typeof cb === "function") {
         cb = once(cb);
         this.on("error", cb);
-        this.on("end", function(matches) {
+        this.on("end", function (matches) {
           cb(null, matches);
         });
       }
@@ -3841,10 +4119,8 @@ var require_glob = __commonJS({
       this._emitQueue = [];
       this._processQueue = [];
       this.paused = false;
-      if (this.noprocess)
-        return this;
-      if (n === 0)
-        return done();
+      if (this.noprocess) return this;
+      if (n === 0) return done();
       var sync = true;
       for (var i = 0; i < n; i++) {
         this._process(this.minimatch.set[i], i, false, done);
@@ -3854,7 +4130,7 @@ var require_glob = __commonJS({
         --self._processing;
         if (self._processing <= 0) {
           if (sync) {
-            process.nextTick(function() {
+            process.nextTick(function () {
               self._finish();
             });
           } else {
@@ -3863,49 +4139,38 @@ var require_glob = __commonJS({
         }
       }
     }
-    Glob2.prototype._finish = function() {
+    Glob2.prototype._finish = function () {
       assert(this instanceof Glob2);
-      if (this.aborted)
-        return;
-      if (this.realpath && !this._didRealpath)
-        return this._realpath();
+      if (this.aborted) return;
+      if (this.realpath && !this._didRealpath) return this._realpath();
       common.finish(this);
       this.emit("end", this.found);
     };
-    Glob2.prototype._realpath = function() {
-      if (this._didRealpath)
-        return;
+    Glob2.prototype._realpath = function () {
+      if (this._didRealpath) return;
       this._didRealpath = true;
       var n = this.matches.length;
-      if (n === 0)
-        return this._finish();
+      if (n === 0) return this._finish();
       var self = this;
-      for (var i = 0; i < this.matches.length; i++)
-        this._realpathSet(i, next);
+      for (var i = 0; i < this.matches.length; i++) this._realpathSet(i, next);
       function next() {
-        if (--n === 0)
-          self._finish();
+        if (--n === 0) self._finish();
       }
     };
-    Glob2.prototype._realpathSet = function(index, cb) {
+    Glob2.prototype._realpathSet = function (index, cb) {
       var matchset = this.matches[index];
-      if (!matchset)
-        return cb();
+      if (!matchset) return cb();
       var found = Object.keys(matchset);
       var self = this;
       var n = found.length;
-      if (n === 0)
-        return cb();
-      var set = this.matches[index] = Object.create(null);
-      found.forEach(function(p, i) {
+      if (n === 0) return cb();
+      var set = (this.matches[index] = Object.create(null));
+      found.forEach(function (p, i) {
         p = self._makeAbs(p);
-        rp.realpath(p, self.realpathCache, function(er, real) {
-          if (!er)
-            set[real] = true;
-          else if (er.syscall === "stat")
-            set[p] = true;
-          else
-            self.emit("error", er);
+        rp.realpath(p, self.realpathCache, function (er, real) {
+          if (!er) set[real] = true;
+          else if (er.syscall === "stat") set[p] = true;
+          else self.emit("error", er);
           if (--n === 0) {
             self.matches[index] = set;
             cb();
@@ -3913,23 +4178,23 @@ var require_glob = __commonJS({
         });
       });
     };
-    Glob2.prototype._mark = function(p) {
+    Glob2.prototype._mark = function (p) {
       return common.mark(this, p);
     };
-    Glob2.prototype._makeAbs = function(f) {
+    Glob2.prototype._makeAbs = function (f) {
       return common.makeAbs(this, f);
     };
-    Glob2.prototype.abort = function() {
+    Glob2.prototype.abort = function () {
       this.aborted = true;
       this.emit("abort");
     };
-    Glob2.prototype.pause = function() {
+    Glob2.prototype.pause = function () {
       if (!this.paused) {
         this.paused = true;
         this.emit("pause");
       }
     };
-    Glob2.prototype.resume = function() {
+    Glob2.prototype.resume = function () {
       if (this.paused) {
         this.emit("resume");
         this.paused = false;
@@ -3952,11 +4217,10 @@ var require_glob = __commonJS({
         }
       }
     };
-    Glob2.prototype._process = function(pattern, index, inGlobStar, cb) {
+    Glob2.prototype._process = function (pattern, index, inGlobStar, cb) {
       assert(this instanceof Glob2);
       assert(typeof cb === "function");
-      if (this.aborted)
-        return;
+      if (this.aborted) return;
       this._processing++;
       if (this.paused) {
         this._processQueue.push([pattern, index, inGlobStar, cb]);
@@ -3980,32 +4244,53 @@ var require_glob = __commonJS({
       }
       var remain = pattern.slice(n);
       var read;
-      if (prefix === null)
-        read = ".";
+      if (prefix === null) read = ".";
       else if (isAbsolute(prefix) || isAbsolute(pattern.join("/"))) {
-        if (!prefix || !isAbsolute(prefix))
-          prefix = "/" + prefix;
+        if (!prefix || !isAbsolute(prefix)) prefix = "/" + prefix;
         read = prefix;
-      } else
-        read = prefix;
+      } else read = prefix;
       var abs = this._makeAbs(read);
-      if (childrenIgnored(this, read))
-        return cb();
+      if (childrenIgnored(this, read)) return cb();
       var isGlobStar = remain[0] === minimatch.GLOBSTAR;
       if (isGlobStar)
         this._processGlobStar(prefix, read, abs, remain, index, inGlobStar, cb);
       else
         this._processReaddir(prefix, read, abs, remain, index, inGlobStar, cb);
     };
-    Glob2.prototype._processReaddir = function(prefix, read, abs, remain, index, inGlobStar, cb) {
+    Glob2.prototype._processReaddir = function (
+      prefix,
+      read,
+      abs,
+      remain,
+      index,
+      inGlobStar,
+      cb
+    ) {
       var self = this;
-      this._readdir(abs, inGlobStar, function(er, entries) {
-        return self._processReaddir2(prefix, read, abs, remain, index, inGlobStar, entries, cb);
+      this._readdir(abs, inGlobStar, function (er, entries) {
+        return self._processReaddir2(
+          prefix,
+          read,
+          abs,
+          remain,
+          index,
+          inGlobStar,
+          entries,
+          cb
+        );
       });
     };
-    Glob2.prototype._processReaddir2 = function(prefix, read, abs, remain, index, inGlobStar, entries, cb) {
-      if (!entries)
-        return cb();
+    Glob2.prototype._processReaddir2 = function (
+      prefix,
+      read,
+      abs,
+      remain,
+      index,
+      inGlobStar,
+      entries,
+      cb
+    ) {
+      if (!entries) return cb();
       var pn = remain[0];
       var negate = !!this.minimatch.negate;
       var rawGlob = pn._glob;
@@ -4020,23 +4305,18 @@ var require_glob = __commonJS({
           } else {
             m = e.match(pn);
           }
-          if (m)
-            matchedEntries.push(e);
+          if (m) matchedEntries.push(e);
         }
       }
       var len = matchedEntries.length;
-      if (len === 0)
-        return cb();
+      if (len === 0) return cb();
       if (remain.length === 1 && !this.mark && !this.stat) {
-        if (!this.matches[index])
-          this.matches[index] = Object.create(null);
+        if (!this.matches[index]) this.matches[index] = Object.create(null);
         for (var i = 0; i < len; i++) {
           var e = matchedEntries[i];
           if (prefix) {
-            if (prefix !== "/")
-              e = prefix + "/" + e;
-            else
-              e = prefix + e;
+            if (prefix !== "/") e = prefix + "/" + e;
+            else e = prefix + e;
           }
           if (e.charAt(0) === "/" && !this.nomount) {
             e = path2.join(this.root, e);
@@ -4050,109 +4330,85 @@ var require_glob = __commonJS({
         var e = matchedEntries[i];
         var newPattern;
         if (prefix) {
-          if (prefix !== "/")
-            e = prefix + "/" + e;
-          else
-            e = prefix + e;
+          if (prefix !== "/") e = prefix + "/" + e;
+          else e = prefix + e;
         }
         this._process([e].concat(remain), index, inGlobStar, cb);
       }
       cb();
     };
-    Glob2.prototype._emitMatch = function(index, e) {
-      if (this.aborted)
-        return;
-      if (isIgnored(this, e))
-        return;
+    Glob2.prototype._emitMatch = function (index, e) {
+      if (this.aborted) return;
+      if (isIgnored(this, e)) return;
       if (this.paused) {
         this._emitQueue.push([index, e]);
         return;
       }
       var abs = isAbsolute(e) ? e : this._makeAbs(e);
-      if (this.mark)
-        e = this._mark(e);
-      if (this.absolute)
-        e = abs;
-      if (this.matches[index][e])
-        return;
+      if (this.mark) e = this._mark(e);
+      if (this.absolute) e = abs;
+      if (this.matches[index][e]) return;
       if (this.nodir) {
         var c = this.cache[abs];
-        if (c === "DIR" || Array.isArray(c))
-          return;
+        if (c === "DIR" || Array.isArray(c)) return;
       }
       this.matches[index][e] = true;
       var st = this.statCache[abs];
-      if (st)
-        this.emit("stat", e, st);
+      if (st) this.emit("stat", e, st);
       this.emit("match", e);
     };
-    Glob2.prototype._readdirInGlobStar = function(abs, cb) {
-      if (this.aborted)
-        return;
-      if (this.follow)
-        return this._readdir(abs, false, cb);
+    Glob2.prototype._readdirInGlobStar = function (abs, cb) {
+      if (this.aborted) return;
+      if (this.follow) return this._readdir(abs, false, cb);
       var lstatkey = "lstat\0" + abs;
       var self = this;
       var lstatcb = inflight(lstatkey, lstatcb_);
-      if (lstatcb)
-        fs4.lstat(abs, lstatcb);
+      if (lstatcb) fs4.lstat(abs, lstatcb);
       function lstatcb_(er, lstat) {
-        if (er && er.code === "ENOENT")
-          return cb();
+        if (er && er.code === "ENOENT") return cb();
         var isSym = lstat && lstat.isSymbolicLink();
         self.symlinks[abs] = isSym;
         if (!isSym && lstat && !lstat.isDirectory()) {
           self.cache[abs] = "FILE";
           cb();
-        } else
-          self._readdir(abs, false, cb);
+        } else self._readdir(abs, false, cb);
       }
     };
-    Glob2.prototype._readdir = function(abs, inGlobStar, cb) {
-      if (this.aborted)
-        return;
+    Glob2.prototype._readdir = function (abs, inGlobStar, cb) {
+      if (this.aborted) return;
       cb = inflight("readdir\0" + abs + "\0" + inGlobStar, cb);
-      if (!cb)
-        return;
+      if (!cb) return;
       if (inGlobStar && !ownProp(this.symlinks, abs))
         return this._readdirInGlobStar(abs, cb);
       if (ownProp(this.cache, abs)) {
         var c = this.cache[abs];
-        if (!c || c === "FILE")
-          return cb();
-        if (Array.isArray(c))
-          return cb(null, c);
+        if (!c || c === "FILE") return cb();
+        if (Array.isArray(c)) return cb(null, c);
       }
       var self = this;
       fs4.readdir(abs, readdirCb(this, abs, cb));
     };
     function readdirCb(self, abs, cb) {
-      return function(er, entries) {
-        if (er)
-          self._readdirError(abs, er, cb);
-        else
-          self._readdirEntries(abs, entries, cb);
+      return function (er, entries) {
+        if (er) self._readdirError(abs, er, cb);
+        else self._readdirEntries(abs, entries, cb);
       };
     }
-    Glob2.prototype._readdirEntries = function(abs, entries, cb) {
-      if (this.aborted)
-        return;
+    Glob2.prototype._readdirEntries = function (abs, entries, cb) {
+      if (this.aborted) return;
       if (!this.mark && !this.stat) {
         for (var i = 0; i < entries.length; i++) {
           var e = entries[i];
-          if (abs === "/")
-            e = abs + e;
-          else
-            e = abs + "/" + e;
+          if (abs === "/") e = abs + e;
+          else e = abs + "/" + e;
           this.cache[e] = true;
         }
       }
       this.cache[abs] = entries;
       return cb(null, entries);
     };
-    Glob2.prototype._readdirError = function(f, er, cb) {
-      if (this.aborted)
-        return;
+    Glob2.prototype._readdirError = function (f, er, cb) {
+      if (this.aborted) return;
       switch (er.code) {
         case "ENOTSUP":
         case "ENOTDIR":
@@ -4178,33 +4434,55 @@ var require_glob = __commonJS({
             this.emit("error", er);
             this.abort();
           }
-          if (!this.silent)
-            console.error("glob error", er);
+          if (!this.silent) console.error("glob error", er);
           break;
       }
       return cb();
     };
-    Glob2.prototype._processGlobStar = function(prefix, read, abs, remain, index, inGlobStar, cb) {
+    Glob2.prototype._processGlobStar = function (
+      prefix,
+      read,
+      abs,
+      remain,
+      index,
+      inGlobStar,
+      cb
+    ) {
       var self = this;
-      this._readdir(abs, inGlobStar, function(er, entries) {
-        self._processGlobStar2(prefix, read, abs, remain, index, inGlobStar, entries, cb);
+      this._readdir(abs, inGlobStar, function (er, entries) {
+        self._processGlobStar2(
+          prefix,
+          read,
+          abs,
+          remain,
+          index,
+          inGlobStar,
+          entries,
+          cb
+        );
       });
     };
-    Glob2.prototype._processGlobStar2 = function(prefix, read, abs, remain, index, inGlobStar, entries, cb) {
-      if (!entries)
-        return cb();
+    Glob2.prototype._processGlobStar2 = function (
+      prefix,
+      read,
+      abs,
+      remain,
+      index,
+      inGlobStar,
+      entries,
+      cb
+    ) {
+      if (!entries) return cb();
       var remainWithoutGlobStar = remain.slice(1);
       var gspref = prefix ? [prefix] : [];
       var noGlobStar = gspref.concat(remainWithoutGlobStar);
       this._process(noGlobStar, index, false, cb);
       var isSym = this.symlinks[abs];
       var len = entries.length;
-      if (isSym && inGlobStar)
-        return cb();
+      if (isSym && inGlobStar) return cb();
       for (var i = 0; i < len; i++) {
         var e = entries[i];
-        if (e.charAt(0) === "." && !this.dot)
-          continue;
+        if (e.charAt(0) === "." && !this.dot) continue;
         var instead = gspref.concat(entries[i], remainWithoutGlobStar);
         this._process(instead, index, true, cb);
         var below = gspref.concat(entries[i], remain);
@@ -4212,77 +4490,63 @@ var require_glob = __commonJS({
       }
       cb();
     };
-    Glob2.prototype._processSimple = function(prefix, index, cb) {
+    Glob2.prototype._processSimple = function (prefix, index, cb) {
       var self = this;
-      this._stat(prefix, function(er, exists) {
+      this._stat(prefix, function (er, exists) {
         self._processSimple2(prefix, index, er, exists, cb);
       });
     };
-    Glob2.prototype._processSimple2 = function(prefix, index, er, exists, cb) {
-      if (!this.matches[index])
-        this.matches[index] = Object.create(null);
-      if (!exists)
-        return cb();
+    Glob2.prototype._processSimple2 = function (prefix, index, er, exists, cb) {
+      if (!this.matches[index]) this.matches[index] = Object.create(null);
+      if (!exists) return cb();
       if (prefix && isAbsolute(prefix) && !this.nomount) {
         var trail = /[\/\\]$/.test(prefix);
         if (prefix.charAt(0) === "/") {
           prefix = path2.join(this.root, prefix);
         } else {
           prefix = path2.resolve(this.root, prefix);
-          if (trail)
-            prefix += "/";
+          if (trail) prefix += "/";
         }
       }
-      if (process.platform === "win32")
-        prefix = prefix.replace(/\\/g, "/");
+      if (process.platform === "win32") prefix = prefix.replace(/\\/g, "/");
       this._emitMatch(index, prefix);
       cb();
     };
-    Glob2.prototype._stat = function(f, cb) {
+    Glob2.prototype._stat = function (f, cb) {
       var abs = this._makeAbs(f);
       var needDir = f.slice(-1) === "/";
-      if (f.length > this.maxLength)
-        return cb();
+      if (f.length > this.maxLength) return cb();
       if (!this.stat && ownProp(this.cache, abs)) {
         var c = this.cache[abs];
-        if (Array.isArray(c))
-          c = "DIR";
-        if (!needDir || c === "DIR")
-          return cb(null, c);
-        if (needDir && c === "FILE")
-          return cb();
+        if (Array.isArray(c)) c = "DIR";
+        if (!needDir || c === "DIR") return cb(null, c);
+        if (needDir && c === "FILE") return cb();
       }
       var exists;
       var stat = this.statCache[abs];
       if (stat !== void 0) {
-        if (stat === false)
-          return cb(null, stat);
+        if (stat === false) return cb(null, stat);
         else {
           var type = stat.isDirectory() ? "DIR" : "FILE";
-          if (needDir && type === "FILE")
-            return cb();
-          else
-            return cb(null, type, stat);
+          if (needDir && type === "FILE") return cb();
+          else return cb(null, type, stat);
         }
       }
       var self = this;
       var statcb = inflight("stat\0" + abs, lstatcb_);
-      if (statcb)
-        fs4.lstat(abs, statcb);
+      if (statcb) fs4.lstat(abs, statcb);
       function lstatcb_(er, lstat) {
         if (lstat && lstat.isSymbolicLink()) {
-          return fs4.stat(abs, function(er2, stat2) {
-            if (er2)
-              self._stat2(f, abs, null, lstat, cb);
-            else
-              self._stat2(f, abs, er2, stat2, cb);
+          return fs4.stat(abs, function (er2, stat2) {
+            if (er2) self._stat2(f, abs, null, lstat, cb);
+            else self._stat2(f, abs, er2, stat2, cb);
           });
         } else {
           self._stat2(f, abs, er, lstat, cb);
         }
       }
     };
-    Glob2.prototype._stat2 = function(f, abs, er, stat, cb) {
+    Glob2.prototype._stat2 = function (f, abs, er, stat, cb) {
       if (er && (er.code === "ENOENT" || er.code === "ENOTDIR")) {
         this.statCache[abs] = false;
         return cb();
@@ -4292,14 +4556,12 @@ var require_glob = __commonJS({
       if (abs.slice(-1) === "/" && stat && !stat.isDirectory())
         return cb(null, false, stat);
       var c = true;
-      if (stat)
-        c = stat.isDirectory() ? "DIR" : "FILE";
+      if (stat) c = stat.isDirectory() ? "DIR" : "FILE";
       this.cache[abs] = this.cache[abs] || c;
-      if (needDir && c === "FILE")
-        return cb();
+      if (needDir && c === "FILE") return cb();
       return cb(null, c, stat);
     };
-  }
+  },
 });
 
 // pnp:/Users/style/Documents/Projects/juke-build/src/index.ts
@@ -4317,7 +4579,7 @@ __export(exports, {
   rm: () => rm,
   runner: () => runner,
   setup: () => setup,
-  sleep: () => sleep
+  sleep: () => sleep,
 });
 var import_chalk4 = __toModule(require_source());
 var import_module = __toModule(require("module"));
@@ -4365,7 +4627,7 @@ var trap = (signals, handler) => {
   if (process.platform === "win32") {
     readline = require("readline").createInterface({
       input: process.stdin,
-      output: process.stdout
+      output: process.stdout,
     });
   }
   for (const signal of signals) {
@@ -4390,13 +4652,9 @@ var ExitCode = class extends Error {
   }
 };
 var exec = (executable, args = [], options = {}) => {
-  const _a = options, {
-    silent = false,
-    throw: canThrow = true
-  } = _a, spawnOptions = __objRest(_a, [
-    "silent",
-    "throw"
-  ]);
+  const _a = options,
+    { silent = false, throw: canThrow = true } = _a,
+    spawnOptions = __objRest(_a, ["silent", "throw"]);
   return new Promise((resolve, reject) => {
     if (import_fs2.default.existsSync(executable)) {
       executable = (0, import_path2.resolve)(executable);
@@ -4404,7 +4662,11 @@ var exec = (executable, args = [], options = {}) => {
     if (process.env.JUKE_DEBUG) {
       console.log(import_chalk.default.grey("$", executable, ...args));
     }
-    const child = (0, import_child_process.spawn)(executable, args, spawnOptions);
+    const child = (0, import_child_process.spawn)(
+      executable,
+      args,
+      spawnOptions
+    );
     children.add(child);
     let stdout = "";
     let stderr = "";
@@ -4438,7 +4700,7 @@ var exec = (executable, args = [], options = {}) => {
         signal,
         stdout,
         stderr,
-        combined
+        combined,
       });
     });
   });
@@ -4451,22 +4713,42 @@ var logger = {
     console.log(...args);
   },
   error: (...args) => {
-    console.log(import_chalk2.default.bold(import_chalk2.default.redBright("=>"), import_chalk2.default.whiteBright(...args)));
+    console.log(
+      import_chalk2.default.bold(
+        import_chalk2.default.redBright("=>"),
+        import_chalk2.default.whiteBright(...args)
+      )
+    );
   },
   action: (...args) => {
-    console.log(import_chalk2.default.bold(import_chalk2.default.greenBright("=>"), import_chalk2.default.whiteBright(...args)));
+    console.log(
+      import_chalk2.default.bold(
+        import_chalk2.default.greenBright("=>"),
+        import_chalk2.default.whiteBright(...args)
+      )
+    );
   },
   warn: (...args) => {
-    console.log(import_chalk2.default.bold(import_chalk2.default.yellowBright("=>"), import_chalk2.default.whiteBright(...args)));
+    console.log(
+      import_chalk2.default.bold(
+        import_chalk2.default.yellowBright("=>"),
+        import_chalk2.default.whiteBright(...args)
+      )
+    );
   },
   info: (...args) => {
-    console.log(import_chalk2.default.bold(import_chalk2.default.blueBright("::"), import_chalk2.default.whiteBright(...args)));
+    console.log(
+      import_chalk2.default.bold(
+        import_chalk2.default.blueBright("::"),
+        import_chalk2.default.whiteBright(...args)
+      )
+    );
   },
   debug: (...args) => {
     if (process.env.JUKE_DEBUG) {
       console.log(import_chalk2.default.gray(...args));
     }
-  }
+  },
 };
 
 // pnp:/Users/style/Documents/Projects/juke-build/src/string.ts
@@ -4495,18 +4777,15 @@ var Parameter = class {
     return this.type.endsWith("[]");
   }
   toKebabCase() {
-    if (!this.name)
-      return;
+    if (!this.name) return;
     return toKebabCase(this.name);
   }
   toConstCase() {
-    if (!this.name)
-      return;
+    if (!this.name) return;
     return toConstCase(this.name);
   }
   toCamelCase() {
-    if (!this.name)
-      return;
+    if (!this.name) return;
     return toCamelCase(this.name);
   }
 };
@@ -4517,7 +4796,12 @@ var import_chalk3 = __toModule(require_source());
 var import_events = __toModule(require("events"));
 
 // pnp:/Users/style/Documents/Projects/juke-build/src/argparse.ts
-var stringToBoolean = (str) => str !== void 0 && str !== null && str !== "false" && str !== "0" && str !== "null";
+var stringToBoolean = (str) =>
+  str !== void 0 &&
+  str !== null &&
+  str !== "false" &&
+  str !== "0" &&
+  str !== "null";
 var prepareArgs = (args, singleTarget = false) => {
   let inGlobalContext = true;
   const globalFlags = [];
@@ -4622,7 +4906,12 @@ var parseArgs = (args, parameters) => {
           value = null;
         }
       }
-      const parameter = parameters.find((p) => p.name === name || p.toKebabCase() === name || p.toCamelCase() === name);
+      const parameter = parameters.find(
+        (p) =>
+          p.name === name ||
+          p.toKebabCase() === name ||
+          p.toCamelCase() === name
+      );
       if (!parameter) {
         continue;
       }
@@ -4643,7 +4932,9 @@ var parseArgs = (args, parameters) => {
     }
   }
   for (const [key, value] of Object.entries(process.env)) {
-    const parameter = parameters.find((p) => p.name === key || p.toConstCase() === key);
+    const parameter = parameters.find(
+      (p) => p.name === key || p.toConstCase() === key
+    );
     if (!parameter || parameterMap.has(parameter)) {
       continue;
     }
@@ -4714,9 +5005,11 @@ var Glob = class {
   toFiles() {
     const paths = import_glob.glob.sync(this.path, {
       strict: false,
-      silent: true
+      silent: true,
     });
-    return paths.map((path2) => new File(path2)).filter((file) => file.exists());
+    return paths
+      .map((path2) => new File(path2))
+      .filter((file) => file.exists());
   }
 };
 var compareFiles = (sources, targets) => {
@@ -4752,15 +5045,14 @@ var compareFiles = (sources, targets) => {
 var glob = (globPath) => {
   const unsafePaths = import_glob.glob.sync(globPath, {
     strict: false,
-    silent: true
+    silent: true,
   });
   const safePaths = [];
   for (let path2 of unsafePaths) {
     try {
       import_fs3.default.lstatSync(path2);
       safePaths.push(path2);
-    } catch {
-    }
+    } catch {}
   }
   return safePaths;
 };
@@ -4783,7 +5075,7 @@ var rm = (path2, options = {}) => {
 };
 
 // pnp:/Users/style/Documents/Projects/juke-build/src/runner.ts
-var runner = new class Runner {
+var runner = new (class Runner {
   constructor() {
     this.config = {};
     this.targets = [];
@@ -4797,7 +5089,10 @@ var runner = new class Runner {
   }
   async start() {
     const startedAt = Date.now();
-    const { globalFlags, taskArgs } = prepareArgs(process.argv.slice(2), this.config.singleTarget);
+    const { globalFlags, taskArgs } = prepareArgs(
+      process.argv.slice(2),
+      this.config.singleTarget
+    );
     const globalParameterMap = parseArgs(globalFlags, this.parameters);
     const targetsToRun = new Map();
     const showListOfTargets = () => {
@@ -4807,7 +5102,12 @@ var runner = new class Runner {
       }
       logger.info("Available parameters:");
       for (const parameter of this.parameters) {
-        logger.log(" --" + parameter.name + (parameter.alias ? `, -${parameter.alias}` : "") + ` (type: ${parameter.type})`);
+        logger.log(
+          " --" +
+            parameter.name +
+            (parameter.alias ? `, -${parameter.alias}` : "") +
+            ` (type: ${parameter.type})`
+        );
       }
     };
     if (globalFlags.includes("-h") || globalFlags.includes("--help")) {
@@ -4831,7 +5131,7 @@ var runner = new class Runner {
         process.exit(1);
       }
       targetsToRun.set(this.config.default, {
-        args: []
+        args: [],
       });
     }
     let toVisit = Array.from(targetsToRun.entries());
@@ -4856,12 +5156,17 @@ var runner = new class Runner {
               return returnValue !== void 0 ? returnValue : null;
             }
           },
-          args: meta.args
+          args: meta.args,
         };
       }
       if (!meta.dependsOn) {
-        const optionalDependsOn = (typeof target.dependsOn === "function" ? await target.dependsOn(meta.context) : target.dependsOn) || [];
-        meta.dependsOn = optionalDependsOn.filter((dep) => typeof dep === "object" && dep !== null);
+        const optionalDependsOn =
+          (typeof target.dependsOn === "function"
+            ? await target.dependsOn(meta.context)
+            : target.dependsOn) || [];
+        meta.dependsOn = optionalDependsOn.filter(
+          (dep) => typeof dep === "object" && dep !== null
+        );
       }
       for (const dependency of meta.dependsOn) {
         if (!targetsToRun.has(dependency)) {
@@ -4895,11 +5200,16 @@ var runner = new class Runner {
         }
       });
     }
-    const resolutions = await Promise.all(this.workers.map((worker) => new Promise((resolve) => {
-      worker.onFinish(() => resolve(true));
-      worker.onFail(() => resolve(false));
-      worker.start();
-    })));
+    const resolutions = await Promise.all(
+      this.workers.map(
+        (worker) =>
+          new Promise((resolve) => {
+            worker.onFinish(() => resolve(true));
+            worker.onFail(() => resolve(false));
+            worker.start();
+          })
+      )
+    );
     const hasFailedWorkers = resolutions.includes(false);
     if (!hasFailedWorkers) {
       const time = (Date.now() - startedAt) / 1e3 + "s";
@@ -4908,7 +5218,7 @@ var runner = new class Runner {
     }
     return Number(hasFailedWorkers);
   }
-}();
+})();
 var Worker = class {
   constructor(target, context, dependsOn) {
     this.target = target;
@@ -4969,9 +5279,13 @@ var Worker = class {
     }
     this.debugLog("Comparing inputs and outputs");
     const fileMapper = async (fileIo) => {
-      const optionalPaths = (typeof fileIo === "function" ? await fileIo(this.context) : fileIo) || [];
+      const optionalPaths =
+        (typeof fileIo === "function" ? await fileIo(this.context) : fileIo) ||
+        [];
       const paths = optionalPaths.filter((path2) => typeof path2 === "string");
-      return paths.flatMap((path2) => path2.includes("*") ? new Glob(path2).toFiles() : new File(path2));
+      return paths.flatMap((path2) =>
+        path2.includes("*") ? new Glob(path2).toFiles() : new File(path2)
+      );
     };
     const inputs = await fileMapper(this.target.inputs);
     const outputs = await fileMapper(this.target.outputs);
@@ -5003,9 +5317,13 @@ var Worker = class {
         const timeStr2 = import_chalk3.default.magenta(time2);
         if (err instanceof ExitCode) {
           const codeStr = import_chalk3.default.red(err.code);
-          logger.error(`Target '${nameStr}' failed in ${timeStr2}, exit code: ${codeStr}`);
+          logger.error(
+            `Target '${nameStr}' failed in ${timeStr2}, exit code: ${codeStr}`
+          );
         } else {
-          logger.error(`Target '${nameStr}' failed in ${timeStr2}, unhandled exception:`);
+          logger.error(
+            `Target '${nameStr}' failed in ${timeStr2}, unhandled exception:`
+          );
           console.error(err);
         }
         this.emitter.emit("fail");
@@ -5048,7 +5366,9 @@ var setup = async (config) => {
     process.exit(1);
   }
   let buildModule = await import(config.file);
-  const isCommonJs = Boolean((0, import_module.createRequire)(config.file).cache[config.file]);
+  const isCommonJs = Boolean(
+    (0, import_module.createRequire)(config.file).cache[config.file]
+  );
   if (isCommonJs) {
     buildModule = buildModule.default;
   }
@@ -5061,20 +5381,27 @@ var setup = async (config) => {
     const obj = buildModule[name];
     if (obj instanceof Target) {
       if (!obj.name) {
-        obj.name = name !== "Target" ? toKebabCase(name.replace(/Target$/, "")) : "target";
+        obj.name =
+          name !== "Target"
+            ? toKebabCase(name.replace(/Target$/, ""))
+            : "target";
       }
       targets.push(obj);
       continue;
     }
     if (obj instanceof Parameter) {
       if (!obj.name) {
-        obj.name = name !== "Parameter" ? toKebabCase(name.replace(/Parameter$/, "")) : "parameter";
+        obj.name =
+          name !== "Parameter"
+            ? toKebabCase(name.replace(/Parameter$/, ""))
+            : "parameter";
       }
       parameters.push(obj);
       continue;
     }
   }
-  const DefaultTarget = buildModule.default || buildModule.DefaultTarget || buildModule.Default;
+  const DefaultTarget =
+    buildModule.default || buildModule.DefaultTarget || buildModule.Default;
   if (DefaultTarget && !(DefaultTarget instanceof Target)) {
     logger.error(`Default export is not a valid 'Target' object.`);
     process.exit(1);
@@ -5083,7 +5410,7 @@ var setup = async (config) => {
     parameters,
     targets,
     default: DefaultTarget,
-    singleTarget: config.singleTarget
+    singleTarget: config.singleTarget,
   });
   return runner.start().then((code) => {
     lastExitCode = code;
@@ -5110,19 +5437,20 @@ var exceptionHandler = (err) => {
 process.on("unhandledRejection", exceptionHandler);
 process.on("uncaughtException", exceptionHandler);
 // Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  ExitCode,
-  Parameter,
-  Target,
-  chalk,
-  chdir,
-  createParameter,
-  createTarget,
-  exec,
-  glob,
-  logger,
-  rm,
-  runner,
-  setup,
-  sleep
-});
+0 &&
+  (module.exports = {
+    ExitCode,
+    Parameter,
+    Target,
+    chalk,
+    chdir,
+    createParameter,
+    createTarget,
+    exec,
+    glob,
+    logger,
+    rm,
+    runner,
+    setup,
+    sleep,
+  });

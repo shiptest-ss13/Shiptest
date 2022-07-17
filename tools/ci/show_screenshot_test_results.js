@@ -4,7 +4,12 @@ import path from "path";
 import process from "process";
 
 const createComment = (screenshotFailures, zipFileUrl) => {
-	const formatScreenshotFailure = ({ directory, diffUrl, newUrl, oldUrl }) => {
+	const formatScreenshotFailure = ({
+		directory,
+		diffUrl,
+		newUrl,
+		oldUrl,
+	}) => {
 		const img = (url) => {
 			if (url) {
 				return `![](${url})`;
@@ -13,13 +18,19 @@ const createComment = (screenshotFailures, zipFileUrl) => {
 			}
 		};
 
-		return `| ${directory} | ${img(oldUrl)} | ${img(newUrl)} | ${img(diffUrl)} |`;
+		return `| ${directory} | ${img(oldUrl)} | ${img(newUrl)} | ${img(
+			diffUrl
+		)} |`;
 	};
 
 	return `
 		Screenshot tests failed!
 
-		${zipFileUrl ? `[Download zip file of new screenshots.](${zipFileUrl})` : "No zip file could be produced, this is a bug!"}
+		${
+			zipFileUrl
+				? `[Download zip file of new screenshots.](${zipFileUrl})`
+				: "No zip file could be produced, this is a bug!"
+		}
 
 		## Diffs
 		<details>
@@ -64,20 +75,24 @@ const createComment = (screenshotFailures, zipFileUrl) => {
 
 			If you need help, you can ask maintainers either on Discord or on this pull request.
 		</details>
-	`.replace(/\t/g, ''); // If we keep tabs, it'll become a code block.
+	`.replace(/\t/g, ""); // If we keep tabs, it'll become a code block.
 };
 
 export async function showScreenshotTestResults({ github, context, exec }) {
 	const { FILE_HOUSE_KEY } = process.env;
 
 	// Check if bad-screenshots is in the artifacts
-	const { data: { artifacts } } = await github.rest.actions.listWorkflowRunArtifacts({
+	const {
+		data: { artifacts },
+	} = await github.rest.actions.listWorkflowRunArtifacts({
 		owner: context.repo.owner,
 		repo: context.repo.repo,
 		run_id: context.payload.workflow_run.id,
 	});
 
-	const badScreenshots = artifacts.find(({ name }) => name === 'bad-screenshots');
+	const badScreenshots = artifacts.find(
+		({ name }) => name === "bad-screenshots"
+	);
 	if (!badScreenshots) {
 		console.log("No bad screenshots found");
 		return;
@@ -95,7 +110,10 @@ export async function showScreenshotTestResults({ github, context, exec }) {
 
 	await exec.exec("unzip bad-screenshots.zip -d bad-screenshots");
 
-	const prNumberFile = path.join("bad-screenshots", "pull_request_number.txt");
+	const prNumberFile = path.join(
+		"bad-screenshots",
+		"pull_request_number.txt"
+	);
 
 	if (!fs.existsSync(prNumberFile)) {
 		console.log("No PR number found");
@@ -111,7 +129,8 @@ export async function showScreenshotTestResults({ github, context, exec }) {
 	fs.rmSync(prNumberFile);
 
 	// Validate the PR
-	const result = await github.graphql(`query($owner:String!, $repo:String!, $prNumber:Int!) {
+	const result = await github.graphql(
+		`query($owner:String!, $repo:String!, $prNumber:Int!) {
 		repository(owner: $owner, name: $repo) {
 			pullRequest(number: $prNumber) {
 				commits(last: 1) {
@@ -127,24 +146,23 @@ export async function showScreenshotTestResults({ github, context, exec }) {
 				}
 			}
 		}
-	}`, {
-		owner: context.repo.owner,
-		repo: context.repo.repo,
-		prNumber,
-	});
+	}`,
+		{
+			owner: context.repo.owner,
+			repo: context.repo.repo,
+			prNumber,
+		}
+	);
 
-	const validPr = result
-		.repository
-		.pullRequest
-		.commits
-		.nodes[0]
-		.commit
-		.checkSuites
-		.nodes
-		.some(({ id }) => id === context.payload.workflow_run.check_suite_node_id);
+	const validPr =
+		result.repository.pullRequest.commits.nodes[0].commit.checkSuites.nodes.some(
+			({ id }) => id === context.payload.workflow_run.check_suite_node_id
+		);
 
 	if (!validPr) {
-		console.log(`PR #${prNumber} is not valid (expected check suite ID ${context.payload.workflow_run.check_suite_node_id})`);
+		console.log(
+			`PR #${prNumber} is not valid (expected check suite ID ${context.payload.workflow_run.check_suite_node_id})`
+		);
 		return;
 	}
 
@@ -167,8 +185,8 @@ export async function showScreenshotTestResults({ github, context, exec }) {
 			method: "POST",
 			body: formData,
 		})
-			.then(response => response.json())
-			.then(response => {
+			.then((response) => response.json())
+			.then((response) => {
 				console.log(response);
 				return response;
 			})
@@ -185,9 +203,15 @@ export async function showScreenshotTestResults({ github, context, exec }) {
 		let oldUrl;
 
 		await Promise.all([
-			uploadFile(path.join("bad-screenshots", directory, "new.png")).then(url => newUrl = url),
-			uploadFile(path.join("bad-screenshots", directory, "old.png")).then(url => oldUrl = url),
-			uploadFile(path.join("bad-screenshots", directory, "diff.png")).then(url => diffUrl = url),
+			uploadFile(path.join("bad-screenshots", directory, "new.png")).then(
+				(url) => (newUrl = url)
+			),
+			uploadFile(path.join("bad-screenshots", directory, "old.png")).then(
+				(url) => (oldUrl = url)
+			),
+			uploadFile(
+				path.join("bad-screenshots", directory, "diff.png")
+			).then((url) => (diffUrl = url)),
 		]);
 
 		console.log(`New URL (${directory}): ${newUrl}`);
@@ -206,16 +230,19 @@ export async function showScreenshotTestResults({ github, context, exec }) {
 	const zipFilePath = path.join("data", "screenshot-update");
 	const finalDestination = path.join(
 		zipFilePath,
-		"code", "modules", "unit_tests", "screenshots",
-	)
+		"code",
+		"modules",
+		"unit_tests",
+		"screenshots"
+	);
 
 	fs.mkdirSync(finalDestination, { recursive: true });
 
 	for (const { directory } of screenshotFailures) {
 		fs.copyFileSync(
 			path.join("bad-screenshots", directory, "new.png"),
-			path.join(finalDestination, `${directory}.png`),
-		)
+			path.join(finalDestination, `${directory}.png`)
+		);
 	}
 
 	await exec.exec("zip", ["-r", `../screenshot-update.zip`, "."], {
