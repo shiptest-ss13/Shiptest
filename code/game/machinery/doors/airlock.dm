@@ -55,6 +55,8 @@
 	hud_possible = list(DIAG_AIRLOCK_HUD)
 	req_ship_access = TRUE
 
+	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
+
 	FASTDMM_PROP(\
 		pinned_vars = list("req_access_txt", "req_one_access_txt", "name")\
 	)
