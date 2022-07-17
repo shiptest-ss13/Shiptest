@@ -44,6 +44,9 @@ jobs:
           tools/bootstrap/python -m mapmerge2.dmm_test
           ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
       - name: Run Check Regex
+        uses: actions/checkout@v2
+        with:
+          ref: master
         run: |
           tools/bootstrap/python -m ci.check_regex --log-changes-only
       - name: Annotate Regex Matches
