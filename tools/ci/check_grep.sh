@@ -41,11 +41,6 @@ if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/lattice[/\w]*?,\n[^)]*?/obj/struc
     echo "ERROR: found multiple lattices on the same tile, please remove them."
     st=1
 fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/machinery/atmospherics/pipe/(?<type>[/\w]*),\n[^)]*?/obj/machinery/atmospherics/pipe/\g{type},\n[^)]*?/area/.+\)' _maps/**/*.dmm;	then
-	echo
-    echo "ERROR: found multiple identical pipes on the same tile, please remove them."
-    st=1
-fi;
 if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/barricade/(?<type>[/\w]*),\n[^)]*?/obj/structure/barricade/\g{type},\n[^)]*?/area/.+\)' _maps/**/*.dmm;	then
 	echo
     echo "ERROR: found multiple identical barricades on the same tile, please remove them."
@@ -207,6 +202,9 @@ if grep -i '/obj/effect/mapping_helpers/custom_icon' _maps/**/*.dmm; then
 fi;
 for json in _maps/*.json
 do
+    if [[ "$json" == "_maps/example_ship_config.json" || "$json" == "_maps/ship_config_schema.json" ]];then
+        continue
+    fi
     map_path=$(jq -r '.map_path' $json)
     while read map_file; do
         filename="_maps/$map_path/$map_file"
