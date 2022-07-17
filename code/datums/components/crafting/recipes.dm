@@ -118,6 +118,7 @@
 	result = /obj/item/tailclub
 	reqs = list(/obj/item/organ/tail/lizard = 1,
 				/obj/item/stack/sheet/metal = 1)
+	blacklist = list(/obj/item/organ/tail/lizard/fake)
 	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
@@ -127,6 +128,7 @@
 	result = /obj/item/melee/chainofcommand/tailwhip
 	reqs = list(/obj/item/organ/tail/lizard = 1,
 				/obj/item/stack/cable_coil = 1)
+	blacklist = list(/obj/item/organ/tail/lizard/fake)
 	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
