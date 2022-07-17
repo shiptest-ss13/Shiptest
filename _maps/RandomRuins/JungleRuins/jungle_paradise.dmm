@@ -13,7 +13,7 @@
 	},
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ag" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -39,7 +39,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/south{
+	start_charge = 0
+	},
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle,
@@ -57,6 +59,13 @@
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
+"ap" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/paradise/comms)
 "as" = (
 /obj/structure/spacevine,
 /obj/structure/fence/cut/large,
@@ -81,6 +90,9 @@
 "aC" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/door/airlock/highsecurity,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/comms)
 "aJ" = (
@@ -96,7 +108,7 @@
 	pixel_x = 3
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "aL" = (
 /obj/structure/flora/rock/pile/largejungle{
 	pixel_x = -14;
@@ -104,7 +116,7 @@
 	},
 /obj/machinery/light/dim,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "aM" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/water/jungle,
@@ -121,7 +133,7 @@
 	dir = 10
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "aY" = (
 /turf/open/floor/plasteel/stairs{
 	barefootstep = "woodbarefoot";
@@ -129,7 +141,7 @@
 	footstep = "wood";
 	dir = 1
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ba" = (
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/paradise/comms)
@@ -158,7 +170,7 @@
 "bh" = (
 /obj/item/clothing/under/rank/civilian/cookjorts,
 /turf/closed/mineral/random/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "bj" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/jungle/paradise/power)
@@ -199,7 +211,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "bt" = (
 /obj/machinery/vending/wallmed{
 	name = "Emergency NanoMed";
@@ -223,7 +235,7 @@
 	dir = 1
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "bz" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -233,7 +245,7 @@
 	dir = 8
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "bC" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -255,14 +267,14 @@
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "bF" = (
 /obj/structure/flora/rock/jungle{
 	pixel_y = 5;
 	pixel_x = 15
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "bJ" = (
 /obj/structure/flora/ausbushes/reedbush{
 	pixel_x = -3;
@@ -273,11 +285,11 @@
 	pixel_y = 1
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "bN" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "bR" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/techfloor{
@@ -338,7 +350,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "cg" = (
 /obj/structure/chair/office,
 /turf/open/floor/plasteel/tech,
@@ -379,7 +391,7 @@
 	pixel_y = 7
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ct" = (
 /obj/structure/flora/ausbushes/sparsegrass{
 	pixel_y = 13
@@ -401,7 +413,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "cz" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/pod,
@@ -443,7 +455,7 @@
 	dir = 5
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "cS" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -458,7 +470,7 @@
 	icon_state = "lattice-5"
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "cX" = (
 /obj/structure/rack,
 /obj/item/crowbar,
@@ -481,7 +493,7 @@
 	pixel_y = 4
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "df" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -491,7 +503,7 @@
 	dir = 1
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "dg" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -529,6 +541,13 @@
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/jungle/paradise/shuttle)
+"du" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/paradise/comms)
 "dv" = (
 /obj/effect/turf_decal/box/corners,
 /obj/structure/closet/crate/freezer/blood,
@@ -551,8 +570,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/paradise/misc)
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/darkmisc)
 "dz" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/jungle/paradise/comms)
@@ -574,6 +593,9 @@
 /obj/structure/noticeboard{
 	pixel_y = 31
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/comms)
 "dO" = (
@@ -588,7 +610,7 @@
 	pixel_x = -33
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "dU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/broken{
@@ -612,7 +634,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "dY" = (
 /obj/effect/turf_decal/box/corners,
 /obj/structure/mopbucket,
@@ -636,7 +658,7 @@
 	dir = 6
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "eg" = (
 /obj/structure/flora/grass/jungle{
 	pixel_x = -9;
@@ -651,7 +673,7 @@
 "em" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "en" = (
 /obj/structure/lattice{
 	icon_state = "lattice-12"
@@ -677,11 +699,8 @@
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
 "ex" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
-	icon_state = "0-2"
+	icon_state = "1-2"
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/jungle/paradise/power)
@@ -704,7 +723,7 @@
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "eE" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -727,7 +746,7 @@
 "eK" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "eL" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -772,7 +791,7 @@
 	icon_state = "basalt2"
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "fn" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/glass,
@@ -790,7 +809,7 @@
 	},
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/grass/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "fs" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -800,13 +819,13 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "fv" = (
 /obj/structure/flora/rock/pile{
 	pixel_x = 12
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "fw" = (
 /obj/structure/closet/crate/miningcar,
 /obj/item/resonator,
@@ -821,7 +840,7 @@
 	icon_state = "8-9"
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "fA" = (
 /obj/structure/flora/junglebush/b,
 /obj/structure/railing{
@@ -835,7 +854,7 @@
 	dir = 6
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "fD" = (
 /obj/structure/flora/ausbushes/fullgrass{
 	pixel_x = 6;
@@ -846,7 +865,7 @@
 	dir = 10
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "fE" = (
 /obj/structure/flora/rock/jungle{
 	pixel_y = 10
@@ -861,7 +880,7 @@
 	icon_state = "6-10"
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "fM" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -876,12 +895,22 @@
 	pixel_x = 5
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "fR" = (
 /mob/living/simple_animal/hostile/rat,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/misc)
 "fT" = (
+/obj/item/stack/ore/glass{
+	pixel_x = -5;
+	pixel_y = 4;
+	amount = 30
+	},
+/obj/item/stack/ore/iron{
+	pixel_y = -6;
+	pixel_x = 7;
+	amount = 15
+	},
 /turf/open/floor/concrete/slab_3,
 /area/ruin/jungle/paradise/construction)
 "fU" = (
@@ -905,7 +934,7 @@
 	icon_state = "basalt2"
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "fW" = (
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
@@ -950,13 +979,13 @@
 	pixel_x = -17
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "gd" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "gg" = (
 /obj/structure/flora/grass/jungle/b{
 	pixel_y = -11;
@@ -968,7 +997,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "gh" = (
 /obj/effect/turf_decal/sand,
 /obj/structure/spacevine,
@@ -987,7 +1016,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "gs" = (
 /obj/structure/rack,
 /obj/item/seeds/soya,
@@ -997,6 +1026,9 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
+"gv" = (
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "gw" = (
 /obj/machinery/door/airlock/external{
 	name = "Emergency Recovery Airlock"
@@ -1041,6 +1073,11 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
+"gG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/rods,
+/turf/open/floor/mineral/titanium,
+/area/ruin/jungle/paradise/shuttle)
 "gK" = (
 /obj/structure/flora/rock/jungle{
 	pixel_x = -12;
@@ -1075,7 +1112,7 @@
 	icon_state = "lattice-6"
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "hc" = (
 /obj/machinery/suit_storage_unit/mining,
 /obj/effect/turf_decal/industrial/warning{
@@ -1096,14 +1133,14 @@
 	dir = 5
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "he" = (
 /obj/structure/flora/ausbushes/stalkybush{
 	pixel_x = 17;
 	pixel_y = 7
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "hh" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -1134,7 +1171,7 @@
 	},
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "hp" = (
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/jungle/b,
@@ -1142,14 +1179,14 @@
 	dir = 4
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "hr" = (
 /obj/structure/flora/ausbushes/stalkybush{
 	pixel_x = 16;
 	pixel_y = 17
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ht" = (
 /obj/structure/flora/rock/jungle{
 	pixel_x = 7;
@@ -1160,7 +1197,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "hy" = (
 /obj/effect/decal/cleanable/greenglow,
 /obj/effect/decal/cleanable/dirt,
@@ -1191,14 +1228,14 @@
 	},
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "hH" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "hM" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1246,14 +1283,14 @@
 "hY" = (
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating/ashplanet/wateryrock,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ib" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "id" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -1313,7 +1350,16 @@
 	dir = 8
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
+"iB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/ore/diamond{
+	pixel_x = 6;
+	pixel_y = -6;
+	amount = 2
+	},
+/turf/open/floor/concrete/slab_3,
+/area/ruin/jungle/paradise/construction)
 "iH" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1323,7 +1369,7 @@
 	dir = 8
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "iL" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -1342,7 +1388,7 @@
 	pixel_y = 12
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "iN" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -1428,7 +1474,7 @@
 	pixel_y = 11
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "iY" = (
 /obj/structure/flora/grass/jungle{
 	pixel_x = -4;
@@ -1463,7 +1509,7 @@
 	dir = 1
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "jf" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1518,7 +1564,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "jw" = (
 /obj/effect/decal/cleanable/robot_debris/limb,
 /turf/open/floor/plating{
@@ -1553,7 +1599,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "jK" = (
 /obj/structure/rack,
 /obj/item/tank/internals/oxygen/red,
@@ -1569,9 +1615,9 @@
 	pixel_y = 8
 	},
 /obj/item/radio/intercom{
-	dir = 2;
+	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = -31
+	pixel_y = -24
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
@@ -1610,7 +1656,7 @@
 "jZ" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ka" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1618,7 +1664,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "kb" = (
 /obj/effect/turf_decal/industrial/caution{
 	dir = 4
@@ -1635,7 +1681,7 @@
 	pixel_y = -15
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "kf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/glass/bottle{
@@ -1659,7 +1705,7 @@
 	dir = 6
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "kp" = (
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
@@ -1686,7 +1732,7 @@
 	dir = 6
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "kC" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
@@ -1807,7 +1853,7 @@
 	dir = 1
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "lq" = (
 /obj/structure/table,
 /obj/machinery/recharger{
@@ -1821,8 +1867,8 @@
 "lr" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/paradise/misc)
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/darkmisc)
 "lw" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/plasteel/stairs{
@@ -1859,7 +1905,7 @@
 	dir = 9
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "lH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine,
@@ -1873,7 +1919,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "lV" = (
 /obj/structure/flora/grass/jungle{
 	pixel_y = 11;
@@ -1890,7 +1936,7 @@
 /area/ruin/jungle/paradise/misc)
 "lX" = (
 /turf/closed/wall/rust,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "lZ" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -1932,7 +1978,7 @@
 	pixel_y = -14
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "mf" = (
 /obj/structure/frame/computer{
 	anchored = 1;
@@ -1957,7 +2003,7 @@
 	pixel_y = -24
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "mk" = (
 /obj/machinery/porta_turret/syndicate/pod{
 	dir = 6;
@@ -1982,7 +2028,7 @@
 	dir = 4
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "mr" = (
 /obj/machinery/light{
 	dir = 1
@@ -2024,14 +2070,11 @@
 	},
 /area/ruin/jungle/paradise/shuttle)
 "mA" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/jungle/paradise/power)
@@ -2076,7 +2119,7 @@
 "mQ" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "mW" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/berry,
@@ -2094,7 +2137,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "nb" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -2102,12 +2145,22 @@
 	},
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
+"ne" = (
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/mineral/gold/five,
+/obj/item/stack/sheet/mineral/diamond,
+/obj/item/stack/sheet/mineral/diamond,
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/silver/twenty,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/jungle/paradise/construction)
 "nf" = (
 /obj/item/radio/intercom{
-	dir = 2;
+	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = -31
+	pixel_y = -24
 	},
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
@@ -2124,7 +2177,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "nh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/syringe/contraband{
@@ -2146,7 +2199,7 @@
 	pixel_y = 20
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "np" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -2157,7 +2210,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "nr" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -2240,7 +2293,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "nK" = (
 /obj/structure/flora/rock/pile{
 	pixel_x = -17
@@ -2261,7 +2314,7 @@
 	pixel_y = 12
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "nP" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -2281,7 +2334,7 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "nT" = (
 /obj/structure/flora/rock/pile/largejungle{
 	pixel_y = 5;
@@ -2303,7 +2356,7 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "nX" = (
 /obj/structure/girder/displaced,
 /obj/structure/spacevine,
@@ -2323,7 +2376,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "os" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine/dense,
@@ -2367,7 +2420,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "oH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -2382,7 +2435,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-10"
 	},
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/north{
+	start_charge = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/jungle/paradise/cargo)
 "oO" = (
@@ -2446,7 +2501,7 @@
 	pixel_x = -8
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "oY" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -2498,7 +2553,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/wasteland,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "pq" = (
 /obj/item/stack/ore/salvage/scrapuranium/five{
 	pixel_x = -8;
@@ -2555,7 +2610,7 @@
 	icon_state = "6-8"
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "px" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -2565,7 +2620,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "pA" = (
 /turf/open/floor/plasteel,
 /area/ruin/jungle/paradise/construction)
@@ -2577,7 +2632,7 @@
 /obj/structure/barricade/wooden,
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "pJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2604,7 +2659,7 @@
 	pixel_x = 3
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "pP" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -2697,8 +2752,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/paradise/misc)
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/darkmisc)
 "qt" = (
 /obj/effect/turf_decal/sand,
 /obj/structure/spacevine,
@@ -2717,12 +2772,18 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
+"qy" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "qz" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "qE" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/titanium/blue{
@@ -2732,6 +2793,12 @@
 "qH" = (
 /turf/open/floor/pod/dark,
 /area/ruin/jungle/paradise/dorms)
+"qJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "qM" = (
 /turf/closed/wall,
 /area/ruin/jungle/paradise/comms)
@@ -2794,12 +2861,12 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ro" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating/ashplanet/wateryrock,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "rp" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/security/glass{
@@ -2821,14 +2888,14 @@
 	pixel_y = -2
 	},
 /turf/open/floor/plating/grass/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "rw" = (
 /obj/structure/flora/rock/pile/largejungle{
 	pixel_x = -14;
 	pixel_y = -22
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "rz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2863,7 +2930,7 @@
 	pixel_y = 13
 	},
 /obj/item/radio/intercom{
-	dir = 2;
+	dir = 4;
 	name = "Station Intercom (General)";
 	pixel_x = -27
 	},
@@ -2875,7 +2942,7 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "rT" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle,
@@ -2919,7 +2986,7 @@
 	pixel_y = 2
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "sj" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -2929,7 +2996,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "sk" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
@@ -2938,7 +3005,7 @@
 /obj/structure/flora/rock/pile,
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "sm" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 10
@@ -2993,6 +3060,19 @@
 "sB" = (
 /obj/structure/fermenting_barrel,
 /obj/effect/decal/cleanable/cobweb,
+/obj/item/reagent_containers/food/snacks/grown/berries,
+/obj/item/reagent_containers/food/snacks/grown/berries{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/snacks/grown/berries{
+	pixel_x = 1;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/snacks/grown/berries{
+	pixel_x = -2;
+	pixel_y = 10
+	},
 /turf/open/floor/pod,
 /area/ruin/jungle/paradise/comms)
 "sD" = (
@@ -3000,7 +3080,10 @@
 	icon_state = "6-10"
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
+"sE" = (
+/turf/open/floor/plating/dirt/jungle/wasteland,
+/area/ruin/jungle/paradise/darkmisc)
 "sG" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -3032,7 +3115,7 @@
 	pixel_y = 13
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "sS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
@@ -3044,7 +3127,7 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "sY" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/electrical{
@@ -3082,7 +3165,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-5"
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/south{
+	start_charge = 0
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/paradise/dorms)
@@ -3108,7 +3193,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "tj" = (
 /obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plating/rust,
@@ -3121,7 +3206,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "tB" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -3185,6 +3270,13 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/misc)
+"uf" = (
+/obj/item/stack/rods{
+	pixel_y = 1;
+	pixel_x = -9
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/ruin/jungle/paradise/shuttle)
 "uh" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -3204,7 +3296,7 @@
 	icon_state = "rock3"
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "uk" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -3214,7 +3306,7 @@
 	dir = 4
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ul" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -3224,6 +3316,10 @@
 "un" = (
 /turf/closed/wall/rust,
 /area/ruin/jungle/paradise/comms)
+"up" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "ur" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -3234,7 +3330,11 @@
 	pixel_y = 6
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
+"ut" = (
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "uu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine/dense,
@@ -3293,8 +3393,8 @@
 	pixel_x = 12;
 	pixel_y = 16
 	},
-/turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/paradise/misc)
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/darkmisc)
 "uH" = (
 /obj/machinery/hydroponics/soil,
 /turf/open/floor/plating/grass/jungle,
@@ -3326,7 +3426,7 @@
 "uR" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "uV" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -3370,7 +3470,7 @@
 	footstep = "wood";
 	dir = 8
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "vk" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle,
@@ -3386,12 +3486,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/jungle/paradise/construction)
 "vp" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-5"
-	},
-/obj/machinery/power/smes,
 /obj/structure/railing{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-5"
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/jungle/paradise/power)
@@ -3415,7 +3514,9 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/south{
+	start_charge = 0
+	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
 "vA" = (
@@ -3432,7 +3533,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "vD" = (
 /obj/effect/decal/cleanable/plasma,
 /obj/machinery/light/broken{
@@ -3494,17 +3595,20 @@
 	pixel_y = 17
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "vX" = (
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/pod,
-/area/ruin/jungle/paradise/comms)
+/area/ruin/jungle/paradise/misc)
 "wj" = (
 /obj/structure/railing/corner{
 	dir = 1;
 	color = "#A47449"
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "wo" = (
 /turf/open/floor/pod/dark,
 /area/ruin/jungle/paradise/misc)
@@ -3597,7 +3701,7 @@
 "wK" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "wN" = (
 /obj/effect/decal/cleanable/garbage,
 /turf/open/floor/mineral/titanium,
@@ -3607,7 +3711,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/ashplanet/wateryrock,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "wT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/jungle/b{
@@ -3622,7 +3726,7 @@
 "wZ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/ashplanet/wateryrock,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "xb" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/paradise/shuttle)
@@ -3657,7 +3761,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "xn" = (
 /obj/structure/lattice{
 	icon_state = "lattice-12"
@@ -3686,7 +3790,7 @@
 	dir = 8
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "xy" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/turf_decal/sand,
@@ -3699,7 +3803,7 @@
 	pixel_x = 15
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "xD" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/grass/jungle{
@@ -3735,7 +3839,7 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "xN" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -3754,7 +3858,7 @@
 	dir = 10
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "xP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -3791,7 +3895,7 @@
 	icon_state = "busha2"
 	},
 /turf/open/floor/plating/grass/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ye" = (
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -3847,7 +3951,7 @@
 	dir = 1
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "yz" = (
 /obj/structure/flora/ausbushes/fullgrass{
 	pixel_y = 11;
@@ -3875,12 +3979,12 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "yK" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/paradise/misc)
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/darkmisc)
 "yS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/girder,
@@ -3941,24 +4045,24 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "zp" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "zq" = (
 /obj/structure/flora/rock/pile/largejungle{
 	pixel_x = -10
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "zt" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/closed/mineral/random/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "zw" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -3984,7 +4088,7 @@
 	dir = 6
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "zG" = (
 /obj/structure/flora/rock/pile/largejungle{
 	pixel_x = -1;
@@ -4014,10 +4118,11 @@
 	icon_state = "lattice-137"
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "zN" = (
 /obj/effect/turf_decal/sand,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
 "zP" = (
@@ -4030,7 +4135,7 @@
 	pixel_y = -6
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "zR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine{
@@ -4077,7 +4182,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
+"Ac" = (
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/darkmisc)
 "Ae" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -4087,7 +4195,7 @@
 	dir = 5
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Ag" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/blood/drip,
@@ -4115,7 +4223,7 @@
 	},
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Am" = (
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating/dirt/jungle,
@@ -4136,7 +4244,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Ax" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
@@ -4215,10 +4323,16 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
+"AY" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "Ba" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/dirt/jungle/wasteland,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Be" = (
 /obj/machinery/light/broken{
 	dir = 4
@@ -4278,13 +4392,13 @@
 	dir = 2
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "BE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "BG" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/paradise/shuttle)
@@ -4295,11 +4409,11 @@
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "BN" = (
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "BW" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -4309,12 +4423,12 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "BX" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Ca" = (
 /obj/effect/decal/cleanable/greenglow/ecto,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4375,7 +4489,7 @@
 	icon_state = "lattice-3"
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Cr" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -4405,6 +4519,9 @@
 	icon_state = "4-9"
 	},
 /obj/machinery/light,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/comms)
 "CD" = (
@@ -4420,7 +4537,7 @@
 	pixel_y = 18
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "CF" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-5"
@@ -4430,6 +4547,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
+"CJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "CL" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -4512,7 +4635,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Dr" = (
 /obj/structure/chair/office{
 	dir = 8
@@ -4530,14 +4653,26 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-1"
 	},
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/west{
+	start_charge = 0
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/jungle/paradise/construction)
+"DD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/paradise/darkmisc)
 "DE" = (
 /obj/item/stack/ore/salvage/scrapgold/five{
 	pixel_y = 9;
 	pixel_x = -3
+	},
+/obj/item/stack/rods{
+	pixel_y = -11;
+	pixel_x = 9
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/shuttle)
@@ -4571,7 +4706,7 @@
 	dir = 2
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "DS" = (
 /obj/machinery/ntnet_relay,
 /obj/effect/turf_decal/techfloor{
@@ -4597,7 +4732,7 @@
 	pixel_y = 7
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "DW" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8;
@@ -4652,14 +4787,19 @@
 	icon_state = "lattice-10"
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
-"Ev" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-9"
+/area/ruin/jungle/paradise/darkmisc)
+"Er" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
 	},
-/obj/machinery/power/smes,
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
+"Ev" = (
 /obj/structure/railing{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "2-9"
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/jungle/paradise/power)
@@ -4687,7 +4827,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-5"
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/south{
+	start_charge = 0
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/jungle/paradise/med)
 "ED" = (
@@ -4696,7 +4838,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "EE" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -4705,7 +4847,7 @@
 	pixel_y = 10
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "EL" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -4733,7 +4875,7 @@
 "EV" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "EW" = (
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/mineral/titanium/blue,
@@ -4777,7 +4919,7 @@
 	pixel_y = -11
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Fq" = (
 /obj/structure/flora/ausbushes/sparsegrass{
 	pixel_x = -6;
@@ -4808,7 +4950,7 @@
 	icon = 'icons/effects/32x64.dmi'
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Fx" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
@@ -4821,7 +4963,7 @@
 	icon_state = "4-5"
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "FE" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_3,
@@ -4868,11 +5010,10 @@
 	icon_state = "lattice-3"
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "FU" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/turf/closed/mineral/random/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "FW" = (
 /obj/effect/turf_decal/industrial/caution{
 	dir = 4
@@ -4891,7 +5032,7 @@
 	dir = 8
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "FZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine,
@@ -4905,7 +5046,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-10"
 	},
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/east{
+	start_charge = 0
+	},
 /obj/structure/cable/yellow,
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi'
@@ -4963,7 +5106,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "GB" = (
 /obj/structure/flora/grass/jungle/b{
 	pixel_x = -2;
@@ -4986,6 +5129,12 @@
 /obj/structure/reagent_dispensers/peppertank,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/paradise/shuttle)
+"GN" = (
+/obj/structure/cable/yellow{
+	icon_state = "5-6"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/paradise/comms)
 "GO" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/berry/poison,
@@ -4998,7 +5147,7 @@
 	pixel_y = -39
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "GX" = (
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/jungle/b{
@@ -5010,7 +5159,7 @@
 	pixel_x = -11
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Hb" = (
 /obj/machinery/conveyor{
 	dir = 8;
@@ -5034,7 +5183,7 @@
 /obj/structure/barricade/wooden,
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Hk" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/jungle,
@@ -5052,7 +5201,7 @@
 	pixel_x = -19
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Ho" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/dirt/jungle,
@@ -5064,10 +5213,10 @@
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "HC" = (
 /turf/open/floor/plating/ashplanet/wateryrock,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "HE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/glass,
@@ -5098,8 +5247,8 @@
 /area/ruin/jungle/paradise/construction)
 "HP" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/paradise/misc)
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/darkmisc)
 "HQ" = (
 /obj/machinery/conveyor{
 	id = "mining_internal"
@@ -5117,7 +5266,7 @@
 	pixel_y = -4
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "HW" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -5147,7 +5296,7 @@
 	pixel_x = -6
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Ik" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/jungle/paradise/dorms)
@@ -5161,7 +5310,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Iu" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -5172,8 +5321,14 @@
 /area/ruin/jungle/paradise/shuttle)
 "Iw" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/paradise/misc)
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/darkmisc)
+"Iz" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "IA" = (
 /obj/structure/flora/grass/jungle/b{
 	pixel_y = 19
@@ -5188,7 +5343,7 @@
 "IH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "IJ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/grass/jungle/b{
@@ -5196,7 +5351,7 @@
 	pixel_x = -5
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "IT" = (
 /obj/machinery/light/broken,
 /turf/open/floor/mineral/titanium/blue,
@@ -5234,7 +5389,7 @@
 /area/ruin/jungle/paradise/misc)
 "Jc" = (
 /turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Jg" = (
 /obj/structure/flora/grass/jungle{
 	pixel_x = 24;
@@ -5244,8 +5399,8 @@
 /area/ruin/jungle/paradise/misc)
 "Jh" = (
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/paradise/misc)
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "Ji" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -5260,7 +5415,14 @@
 /obj/effect/decal/cleanable/greenglow,
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
+"Jp" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/obj/item/stack/rods,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/paradise/shuttle)
 "Js" = (
 /obj/structure/flora/grass/jungle{
 	pixel_y = 6;
@@ -5275,7 +5437,7 @@
 "Jt" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Ju" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8;
@@ -5300,14 +5462,14 @@
 	dir = 2
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Jz" = (
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 2
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "JA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -5354,10 +5516,16 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Kh" = (
 /obj/structure/lattice/catwalk,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/power/apc/auto_name/east{
+	start_charge = 0
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/comms)
 "Ki" = (
@@ -5365,7 +5533,7 @@
 	pixel_x = 3
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Ko" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -5375,7 +5543,7 @@
 	dir = 10
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Kp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5395,7 +5563,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Ku" = (
 /obj/structure/flora/junglebush/large{
 	pixel_x = -27;
@@ -5438,7 +5606,7 @@
 	dir = 5
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "KO" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -5448,7 +5616,7 @@
 	pixel_y = 10
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "KP" = (
 /obj/structure/sink/puddle,
 /turf/open/floor/plating/dirt/jungle,
@@ -5547,7 +5715,7 @@
 	pixel_y = -14
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Lx" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5626,7 +5794,7 @@
 	icon_state = "5-9"
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "LO" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plating/dirt/dark,
@@ -5680,7 +5848,7 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Mb" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/flora/ausbushes/stalkybush{
@@ -5699,7 +5867,7 @@
 	pixel_y = -5
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Mn" = (
 /obj/machinery/smartfridge/bloodbank/preloaded,
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
@@ -5741,7 +5909,7 @@
 	pixel_y = -11
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Mx" = (
 /obj/structure/flora/junglebush/large{
 	pixel_x = -12;
@@ -5752,7 +5920,7 @@
 "MC" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "MD" = (
 /obj/structure/flora/grass/jungle{
 	pixel_x = -14;
@@ -5900,7 +6068,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Nq" = (
 /obj/structure/punji_sticks,
 /obj/structure/flora/junglebush{
@@ -5997,7 +6165,7 @@
 /obj/structure/barricade/wooden,
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Oi" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -6039,7 +6207,7 @@
 	pixel_y = -20
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Op" = (
 /obj/structure/flora/junglebush/large{
 	pixel_x = -22;
@@ -6071,9 +6239,9 @@
 	pixel_y = 2
 	},
 /obj/item/radio/intercom{
-	dir = 2;
+	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = -31
+	pixel_y = -23
 	},
 /obj/item/book/manual/wiki/security_space_law{
 	pixel_x = -4;
@@ -6113,13 +6281,13 @@
 	pixel_x = 24
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "OL" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ON" = (
 /obj/structure/flora/ausbushes/sparsegrass{
 	pixel_y = 8;
@@ -6131,7 +6299,7 @@
 	},
 /obj/structure/destructible/tribal_torch,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "OP" = (
 /obj/machinery/mech_bay_recharge_port,
 /turf/open/floor/plating,
@@ -6159,7 +6327,7 @@
 	color = "#A47449"
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Pa" = (
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -6169,7 +6337,7 @@
 	dir = 8
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Pe" = (
 /obj/effect/mob_spawn/human/miner/old,
 /obj/effect/decal/cleanable/vomit/old{
@@ -6240,7 +6408,7 @@
 	pixel_y = -6
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "PG" = (
 /obj/effect/turf_decal/sand,
 /obj/structure/spacevine,
@@ -6281,13 +6449,13 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "PY" = (
 /obj/machinery/light/broken{
 	dir = 1
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "PZ" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -6321,7 +6489,7 @@
 /area/ruin/jungle/paradise/dorms)
 "Qu" = (
 /turf/closed/wall/r_wall/rust,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Qv" = (
 /obj/structure/spacevine,
 /obj/structure/punji_sticks,
@@ -6375,7 +6543,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "QR" = (
 /obj/structure/flora/grass/jungle{
 	pixel_x = -17;
@@ -6386,7 +6554,7 @@
 "QS" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/ashplanet/wateryrock,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "QW" = (
 /obj/structure/rack,
 /obj/item/storage/bag/plants,
@@ -6416,7 +6584,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Rc" = (
 /obj/machinery/door/airlock/medical/glass{
 	name = "Escape Shuttle Infirmary"
@@ -6490,7 +6658,7 @@
 	dir = 4
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "RM" = (
 /turf/open/floor/mineral/titanium,
 /area/ruin/jungle/paradise/shuttle)
@@ -6500,7 +6668,7 @@
 	pixel_x = -23
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "RV" = (
 /obj/structure/flora/ausbushes/reedbush{
 	pixel_x = -20;
@@ -6518,7 +6686,7 @@
 	dir = 6
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Se" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle,
@@ -6536,7 +6704,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Sh" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -6575,11 +6743,11 @@
 	icon_state = "lattice-12"
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Sy" = (
 /obj/machinery/anomalous_crystal/helpers,
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "SB" = (
 /obj/machinery/conveyor{
 	dir = 8;
@@ -6626,7 +6794,7 @@
 	dir = 1
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "SK" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -6635,7 +6803,7 @@
 	icon_state = "lattice-3"
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "SM" = (
 /obj/structure/ore_box,
 /turf/open/floor/plasteel/tech/grid,
@@ -6646,7 +6814,7 @@
 	pixel_y = -4
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "SV" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle,
@@ -6665,7 +6833,7 @@
 	},
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Tj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine{
@@ -6692,7 +6860,7 @@
 	pixel_x = -1
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Ts" = (
 /obj/structure/flora/rock/pile/largejungle{
 	pixel_x = -7;
@@ -6752,7 +6920,7 @@
 	dir = 9
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "TR" = (
 /obj/structure/lattice{
 	icon_state = "lattice-78"
@@ -6795,7 +6963,7 @@
 "Ug" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Ul" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/spacevine,
@@ -6820,7 +6988,7 @@
 	dir = 9
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Uz" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -6831,7 +6999,7 @@
 	pixel_y = -9
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "UA" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -6848,8 +7016,8 @@
 	},
 /obj/structure/barricade/wooden,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "UH" = (
 /obj/item/stack/ore/salvage/scrapbluespace/five{
 	pixel_x = -4
@@ -6863,7 +7031,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "UJ" = (
 /obj/machinery/light/broken{
 	dir = 4
@@ -6895,7 +7063,7 @@
 	pixel_x = -13
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "UP" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -6916,7 +7084,7 @@
 	pixel_x = -4
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Vf" = (
 /obj/structure/railing/corner{
 	dir = 8;
@@ -6934,7 +7102,7 @@
 	pixel_y = -11
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Vg" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/wasteland,
@@ -6972,7 +7140,7 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Vw" = (
 /obj/structure/flora/tree/jungle/small{
 	pixel_x = -36
@@ -6995,7 +7163,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "VE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine,
@@ -7008,7 +7176,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "VI" = (
 /obj/structure/table,
 /obj/item/storage/firstaid/toxin,
@@ -7029,7 +7197,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "VK" = (
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/ruin/jungle/paradise/med)
@@ -7042,7 +7210,7 @@
 	pixel_y = 16
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "VQ" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -7077,7 +7245,7 @@
 	dir = 8
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Wc" = (
 /obj/structure/table,
 /obj/item/storage/firstaid/fire,
@@ -7097,7 +7265,7 @@
 	pixel_y = -8
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Wo" = (
 /obj/structure/closet/body_bag,
 /turf/open/floor/plating/dirt/jungle,
@@ -7128,7 +7296,7 @@
 	icon_state = "2-5"
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Wt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -7156,7 +7324,7 @@
 	pixel_x = 2
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "WD" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/grass/jungle,
@@ -7187,7 +7355,7 @@
 	icon_state = "9-10"
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "WM" = (
 /obj/structure/flora/ausbushes/fullgrass{
 	pixel_x = -7;
@@ -7226,7 +7394,7 @@
 "WT" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "WV" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -7235,7 +7403,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "WX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7260,7 +7428,10 @@
 	pixel_y = -8
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
+"Xe" = (
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "Xh" = (
 /obj/machinery/light,
 /turf/open/floor/plating/dirt/jungle,
@@ -7302,12 +7473,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/wasteland,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Xy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/paradise/misc)
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "XD" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/pod/dark,
@@ -7328,7 +7500,7 @@
 	pixel_y = -6
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "XJ" = (
 /obj/structure/flora/ausbushes/fullgrass{
 	pixel_x = 11;
@@ -7339,7 +7511,7 @@
 	dir = 10
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "XK" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
@@ -7352,7 +7524,7 @@
 	pixel_x = -1
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "XO" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -7363,7 +7535,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "XP" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 10
@@ -7441,7 +7613,7 @@
 	pixel_x = 10
 	},
 /turf/open/water/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Yu" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/grass/jungle,
@@ -7516,7 +7688,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "YT" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
 /obj/effect/decal/cleanable/blood{
@@ -7571,14 +7743,14 @@
 	icon_state = "4-9"
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Ze" = (
 /obj/structure/flora/rock/jungle{
 	pixel_x = 11;
 	pixel_y = 14
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "Zg" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -7639,7 +7811,7 @@
 	pixel_y = 13
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ZB" = (
 /obj/effect/decal/cleanable/glass{
 	dir = 8;
@@ -7656,7 +7828,7 @@
 	color = "#A47449";
 	footstep = "wood"
 	},
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ZF" = (
 /obj/structure/punji_sticks{
 	pixel_x = -4
@@ -7698,7 +7870,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/ashplanet/wateryrock,
-/area/ruin/jungle/paradise/misc)
+/area/ruin/jungle/paradise/darkmisc)
 "ZV" = (
 /turf/closed/wall/concrete,
 /area/ruin/jungle/paradise/construction)
@@ -7744,13 +7916,13 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -7810,18 +7982,18 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -7875,21 +8047,21 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 yo
 yo
 yo
 yo
 yo
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -7942,11 +8114,11 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 yo
 OC
 MP
@@ -7955,10 +8127,10 @@ yo
 yo
 yo
 yo
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -7983,12 +8155,12 @@ sc
 "}
 (5,1,1) = {"
 sc
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -8008,25 +8180,25 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 yo
 Lv
 Dr
-gn
+GN
 gn
 Dl
 yt
 yo
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -8050,14 +8222,14 @@ sc
 sc
 "}
 (6,1,1) = {"
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -8076,26 +8248,26 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 gB
 La
 SM
 DW
 yo
 yo
+ap
 XQ
-XQ
-XQ
+kC
 gn
 tG
 yo
 yo
 yo
 yo
-oL
-oL
+FU
+FU
 sc
 sc
 sc
@@ -8118,15 +8290,15 @@ sc
 sc
 "}
 (7,1,1) = {"
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -8144,9 +8316,9 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 mc
 fW
 CF
@@ -8162,8 +8334,8 @@ ZP
 Oi
 sA
 yo
-oL
-oL
+FU
+FU
 sc
 sc
 sc
@@ -8186,15 +8358,15 @@ sc
 sc
 "}
 (8,1,1) = {"
-oL
-oL
+FU
+FU
 Ag
 Db
 Db
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -8212,26 +8384,26 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 xN
 bf
 hO
 Xn
 oO
 PL
-XQ
+du
 qM
-XQ
+du
 gn
 sJ
 Nj
 xG
 mb
 yo
-oL
-oL
+FU
+FU
 sc
 sc
 sc
@@ -8254,15 +8426,15 @@ sc
 sc
 "}
 (9,1,1) = {"
-oL
-oL
+FU
+FU
 bY
 nx
 Db
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 sc
 Rv
 Rv
@@ -8280,8 +8452,8 @@ FH
 Zk
 Rv
 sc
-oL
-oL
+FU
+FU
 Qu
 oM
 Yx
@@ -8291,15 +8463,15 @@ LC
 sr
 CA
 un
-XQ
+du
 gn
 nR
 uh
 kp
 dI
 rf
-oL
-oL
+FU
+FU
 sc
 sc
 sc
@@ -8322,15 +8494,15 @@ sc
 sc
 "}
 (10,1,1) = {"
-oL
-oL
+FU
+FU
 JX
 nx
 vH
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 Rv
 Pa
 CT
@@ -8348,9 +8520,9 @@ Pa
 Zk
 TW
 Rv
-oL
-oL
-oL
+FU
+FU
+FU
 AS
 fW
 Rn
@@ -8359,15 +8531,15 @@ lB
 hW
 cr
 un
-XQ
+du
 gn
 MW
 Za
 SW
 ul
 Vl
-oL
-oL
+FU
+FU
 sc
 sc
 sc
@@ -8390,15 +8562,15 @@ sc
 sc
 "}
 (11,1,1) = {"
-oL
-oL
+FU
+FU
 PK
 nx
 nx
 Vg
-oL
-oL
-oL
+FU
+FU
+FU
 Rv
 Rv
 TW
@@ -8415,10 +8587,10 @@ Zk
 Qv
 CT
 Vw
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 pd
 fW
 Ej
@@ -8427,15 +8599,15 @@ yo
 ba
 kC
 qM
-XQ
+du
 cg
 cP
 bV
 ys
 XP
 yo
-oL
-oL
+FU
+FU
 sc
 sc
 sc
@@ -8458,15 +8630,15 @@ sc
 sc
 "}
 (12,1,1) = {"
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 nx
 hy
 Vg
-oL
-oL
+FU
+FU
 FZ
 Pn
 Lx
@@ -8483,14 +8655,14 @@ qt
 is
 Wt
 tO
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 yo
 hW
 cr
@@ -8502,9 +8674,9 @@ DS
 WO
 Xq
 yo
-oL
-oL
-oL
+FU
+FU
+FU
 sc
 sc
 sc
@@ -8526,15 +8698,15 @@ sc
 sc
 "}
 (13,1,1) = {"
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 nx
 nx
 Qe
-oL
-oL
+FU
+FU
 rW
 Gq
 Ey
@@ -8551,14 +8723,14 @@ JA
 fh
 xY
 AL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 dz
 jX
 Oj
@@ -8570,9 +8742,9 @@ yo
 yo
 yo
 yo
-oL
-oL
-oL
+FU
+FU
+FU
 sc
 sc
 sc
@@ -8594,14 +8766,14 @@ sc
 sc
 "}
 (14,1,1) = {"
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 mw
 aM
 nx
-oL
+FU
 wV
 wV
 wV
@@ -8619,8 +8791,8 @@ Ly
 dO
 eA
 tj
-oL
-oL
+FU
+FU
 VK
 VK
 Mn
@@ -8631,17 +8803,17 @@ dz
 Oj
 mD
 dz
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -8662,11 +8834,11 @@ sc
 sc
 "}
 (15,1,1) = {"
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 Ry
 nx
 kF
@@ -8687,8 +8859,8 @@ hV
 Sf
 jY
 hV
-oL
-oL
+FU
+FU
 VK
 pY
 Cp
@@ -8702,15 +8874,15 @@ dz
 sB
 Fv
 rS
-oL
-oL
+FU
+FU
 lX
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -8730,15 +8902,15 @@ sc
 sc
 "}
 (16,1,1) = {"
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 Ca
-oL
-oL
+FU
+FU
 Am
 wV
 wV
@@ -8756,7 +8928,7 @@ hV
 hV
 AB
 lX
-oL
+FU
 VK
 Dd
 vb
@@ -8774,12 +8946,12 @@ Nv
 Kq
 iq
 uw
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 Rv
 Rv
 Rv
@@ -8799,15 +8971,15 @@ sc
 "}
 (17,1,1) = {"
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 wV
 wv
 Wy
@@ -8823,8 +8995,8 @@ hV
 hV
 hV
 hV
-oL
-oL
+FU
+FU
 VK
 qX
 eG
@@ -8843,11 +9015,11 @@ Rv
 vs
 Pa
 QW
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 Rv
 Pa
 Pa
@@ -8868,13 +9040,13 @@ sc
 (18,1,1) = {"
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 Pu
 wV
 wv
@@ -8891,8 +9063,8 @@ Hf
 wv
 wv
 hV
-oL
-oL
+FU
+FU
 VK
 bR
 jQ
@@ -8912,11 +9084,11 @@ Rv
 Rv
 Rv
 Rv
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 tL
 AN
 Pa
@@ -8936,12 +9108,12 @@ sc
 (19,1,1) = {"
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 Ps
 wV
 wV
@@ -8959,8 +9131,8 @@ Xm
 wv
 wv
 jH
-oL
-oL
+FU
+FU
 VK
 VK
 VK
@@ -8982,9 +9154,9 @@ mW
 Rv
 Pa
 Mr
-oL
-oL
-oL
+FU
+FU
+FU
 zw
 nr
 vL
@@ -9005,10 +9177,10 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 lX
 ta
 wV
@@ -9027,13 +9199,13 @@ CX
 Ji
 wv
 wv
-oL
-oL
-oL
-Pa
+FU
+FU
+FU
+gv
 aY
 pv
-ms
+DD
 Ka
 YS
 sD
@@ -9050,9 +9222,9 @@ Rv
 Rv
 Pa
 gK
-oL
-oL
-oL
+FU
+FU
+FU
 LR
 KR
 ZR
@@ -9073,11 +9245,11 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 LS
 wv
 wv
@@ -9095,8 +9267,8 @@ CX
 CX
 Ji
 wv
-oL
-oL
+FU
+FU
 lX
 PY
 Ko
@@ -9118,9 +9290,9 @@ GO
 Rv
 Pa
 SD
-oL
-oL
-oL
+FU
+FU
+FU
 MD
 ak
 eE
@@ -9142,10 +9314,10 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 LS
 wv
 wv
@@ -9163,9 +9335,9 @@ XK
 sS
 kK
 wv
-oL
-oL
-oL
+FU
+FU
+FU
 Fm
 lp
 Pd
@@ -9187,9 +9359,9 @@ Rv
 Pa
 Xh
 lX
-oL
-oL
-oL
+FU
+FU
+FU
 Pa
 Pa
 ak
@@ -9210,10 +9382,10 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 LS
 wv
 wv
@@ -9232,16 +9404,16 @@ Ef
 yS
 wv
 wv
-oL
-oL
+FU
+FU
 dR
 je
-LW
-Az
-pV
-pV
-pV
-pV
+up
+Xe
+qJ
+qJ
+qJ
+qJ
 FY
 iH
 sV
@@ -9254,10 +9426,10 @@ lx
 KB
 Rx
 gs
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 kq
 MV
 Pa
@@ -9278,10 +9450,10 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 Wo
 wv
 Oq
@@ -9300,16 +9472,16 @@ Qa
 VW
 wv
 wv
-oL
-oL
+FU
+FU
 RU
-ak
-tH
+AY
+Xy
 Az
-Az
-Az
-tH
-Az
+Xe
+Xe
+Xy
+Xe
 Xd
 Jz
 fL
@@ -9320,12 +9492,12 @@ bj
 bj
 bj
 bj
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 Rv
 Rv
 Rv
@@ -9346,11 +9518,11 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 wv
 BG
 BG
@@ -9368,17 +9540,17 @@ BG
 BG
 wv
 wv
-oL
-oL
-oL
+FU
+FU
+FU
 Hn
 Fm
-ak
-Az
-wH
+AY
+Xe
+ut
 zq
-Yo
-Az
+Iz
+Xe
 Jz
 hH
 LN
@@ -9388,12 +9560,12 @@ vp
 mA
 yH
 bj
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 Rv
 Rv
 Rv
@@ -9413,11 +9585,11 @@ Rv
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 wv
 wv
 BG
@@ -9435,18 +9607,18 @@ Lg
 Oz
 BG
 wv
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 UN
 Vq
 gg
 zp
 hr
-zf
+CJ
 xW
-Az
+Xe
 Jz
 yJ
 Ws
@@ -9456,13 +9628,13 @@ Um
 YV
 Sn
 bj
-oL
+FU
 Ba
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 Rv
 Rv
 Rv
@@ -9481,10 +9653,10 @@ Rv
 sc
 sc
 sc
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 uB
 wv
 wv
@@ -9503,18 +9675,18 @@ Kp
 Lg
 VW
 wv
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 Ze
 vA
 eK
 iM
-ew
+Er
 IJ
-Yo
+Iz
 Jz
 hH
 LN
@@ -9526,11 +9698,11 @@ yH
 bj
 KG
 Ar
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 Yu
 QR
 Rv
@@ -9549,9 +9721,9 @@ Rv
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 lX
 mr
 wv
@@ -9572,17 +9744,17 @@ CP
 VW
 wv
 wv
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 hp
 ui
 kc
 fZ
-Yo
+Iz
 Jz
 jI
 uR
@@ -9594,9 +9766,9 @@ bj
 bj
 Ks
 ZA
-oL
-oL
-oL
+FU
+FU
+FU
 ip
 ip
 sx
@@ -9617,11 +9789,11 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 wv
 wv
 Gg
@@ -9640,17 +9812,17 @@ Lg
 BG
 wv
 wv
-CT
-oL
-oL
-oL
-oL
-oL
+Jh
+FU
+FU
+FU
+FU
+FU
 lX
-oL
-zW
-Pa
-Yo
+FU
+Ac
+gv
+Iz
 Jx
 hH
 LN
@@ -9660,11 +9832,11 @@ Hw
 XM
 bN
 Jc
-zW
+Ac
 Ih
 lX
-oL
-oL
+FU
+FU
 Hk
 zh
 ip
@@ -9685,11 +9857,11 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 wv
 wv
 VQ
@@ -9708,31 +9880,31 @@ BG
 BG
 wv
 wv
-CT
+Jh
 jZ
 Lw
 GR
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 bF
-zW
-Yo
+Ac
+Iz
 BB
 fL
 BX
 Uz
 Az
 iW
-zf
+CJ
 Pa
 zW
-zW
+Ac
 WB
-oL
-oL
-oL
+FU
+FU
+FU
 nT
 WM
 ip
@@ -9753,11 +9925,11 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 wv
 Fh
 qc
@@ -9776,31 +9948,31 @@ rO
 BG
 wv
 wv
-Pa
+gv
 jZ
-CT
+Jh
 jZ
 XH
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 Ae
 RI
 WV
 UI
 uk
 Ak
-Az
-ew
+Xe
+Er
 KP
 zW
 oX
 bh
-oL
-oL
-oL
+FU
+FU
+FU
 kU
 bD
 ct
@@ -9821,11 +9993,11 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 nX
 sk
 er
@@ -9844,18 +10016,18 @@ lH
 ZX
 sk
 wv
-Pa
+gv
 jZ
-CT
+Jh
 IH
 IH
 IH
 Wi
-Pa
+gv
 OL
 ZD
 lG
-ms
+DD
 px
 nS
 FD
@@ -9864,10 +10036,10 @@ kn
 ON
 vU
 vj
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 eg
 fX
 Fq
@@ -9890,10 +10062,10 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 wv
 wv
 VW
@@ -9913,13 +10085,13 @@ ZX
 jt
 wv
 jZ
-CT
-CT
-Pa
-Pa
+Jh
+Jh
+gv
+gv
 IH
 zX
-Pa
+gv
 OL
 ZD
 gd
@@ -9928,9 +10100,9 @@ qz
 zk
 VJ
 ib
-ms
+DD
 ib
-ms
+DD
 aX
 lw
 zW
@@ -9958,11 +10130,11 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 wv
 TS
 Yw
@@ -9971,7 +10143,7 @@ Zz
 gi
 EW
 jr
-BJ
+uf
 gi
 Da
 ik
@@ -9980,17 +10152,17 @@ VI
 BG
 rT
 sk
-CT
-CT
+Jh
+Jh
 jZ
 jZ
 zP
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 VF
 XJ
 gd
@@ -10027,10 +10199,10 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 wv
 cJ
 wv
@@ -10048,14 +10220,14 @@ kJ
 BG
 wv
 rT
-CT
+Jh
 jZ
 Ir
 ST
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 nm
 da
 pO
@@ -10065,11 +10237,11 @@ ht
 DT
 hH
 Zd
-oL
-oL
+FU
+FU
 lX
-oL
-oL
+FU
+FU
 DM
 jf
 Cl
@@ -10096,9 +10268,9 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 wv
 Uf
 rT
@@ -10116,28 +10288,28 @@ jK
 BG
 wv
 rT
-CT
+Jh
 jZ
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 PF
 AN
 BN
 CD
 Ys
-pV
+qJ
 xO
 sV
 rn
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 KY
 ak
 pP
@@ -10164,17 +10336,17 @@ sc
 sc
 sc
 sc
-oL
-oL
+FU
+FU
 lX
 LA
 Oq
-Oq
+Jp
 xn
 Ue
 bt
 qx
-jr
+gG
 Ls
 gi
 Uu
@@ -10184,29 +10356,29 @@ Pr
 yI
 wv
 rT
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 fv
 KO
 EE
-Az
-Az
+Xe
+Xe
 OY
 kz
 sV
 bE
 lX
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 cj
 wB
 zW
@@ -10232,9 +10404,9 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 wv
 sk
 rT
@@ -10251,14 +10423,14 @@ az
 Bu
 TG
 wv
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 lX
-oL
-oL
+FU
+FU
 TN
 iu
 mp
@@ -10269,11 +10441,11 @@ nb
 lG
 cy
 rn
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 ip
 ip
 ip
@@ -10300,9 +10472,9 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 sk
 nX
 vk
@@ -10319,11 +10491,11 @@ NB
 NB
 ZL
 wv
-oL
-oL
-EL
+FU
+FU
+qy
 Rb
-pV
+qJ
 xv
 sg
 Wa
@@ -10341,7 +10513,7 @@ Ik
 Ik
 Ik
 Ik
-oL
+FU
 ip
 OQ
 fU
@@ -10368,9 +10540,9 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 sk
 uv
 aw
@@ -10386,12 +10558,12 @@ GG
 wV
 wv
 Gf
-oL
-oL
+FU
+FU
 VN
-Az
+Xe
 Dn
-tH
+Xy
 tH
 cs
 Jz
@@ -10409,7 +10581,7 @@ rg
 UA
 tb
 Ik
-oL
+FU
 ip
 jW
 RG
@@ -10436,9 +10608,9 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 wv
 wv
 Fa
@@ -10453,9 +10625,9 @@ Ex
 Tm
 wV
 wV
-oL
-oL
-oL
+FU
+FU
+FU
 SK
 Cq
 Jo
@@ -10477,7 +10649,7 @@ vT
 iZ
 Qn
 Ik
-oL
+FU
 ip
 jW
 wq
@@ -10504,9 +10676,9 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 Ho
 wv
 uy
@@ -10519,15 +10691,15 @@ TR
 hn
 AA
 lz
-oL
-oL
-oL
-oL
-EL
-Az
+FU
+FU
+FU
+FU
+qy
+Xe
 Oo
-oL
-oL
+FU
+FU
 Ug
 eD
 Jz
@@ -10535,7 +10707,7 @@ hH
 UI
 Ux
 wj
-Az
+Xe
 bJ
 OY
 mp
@@ -10545,7 +10717,7 @@ uW
 iT
 fY
 Ik
-oL
+FU
 ip
 pu
 wq
@@ -10572,11 +10744,11 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 Cm
 QF
 Ny
@@ -10587,22 +10759,22 @@ CU
 wV
 nP
 rX
-oL
-oL
-oL
-EL
-tH
+FU
+FU
+FU
+qy
+Xy
 OK
-oL
-oL
-oL
+FU
+FU
+FU
 mi
-Pa
+gv
 ho
 np
 BX
 df
-Az
+Xe
 Az
 Az
 Jz
@@ -10613,7 +10785,7 @@ fM
 qH
 iV
 Ik
-oL
+FU
 ip
 ip
 ip
@@ -10641,9 +10813,9 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 wV
 wV
 ox
@@ -10654,14 +10826,14 @@ wV
 wV
 Lu
 ze
-oL
-oL
-oL
-EL
+FU
+FU
+FU
+qy
 BK
 hY
 QS
-oL
+FU
 ZV
 ZV
 ZV
@@ -10670,7 +10842,7 @@ ZV
 hH
 QM
 SG
-Az
+Xe
 lW
 Az
 DO
@@ -10681,8 +10853,8 @@ Vi
 gz
 AM
 Ik
-oL
-oL
+FU
+FU
 yj
 Pa
 Rv
@@ -10709,24 +10881,24 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 UH
 wV
 wV
 wV
-oL
-oL
-oL
+FU
+FU
+FU
 uy
 Bu
-oL
-oL
-oL
+FU
+FU
+FU
 Mu
-Yo
-wH
+Iz
+ut
 HC
 ZV
 ZV
@@ -10738,8 +10910,8 @@ ZV
 VC
 BX
 df
-tH
-tH
+Xy
+Xy
 he
 Jz
 nG
@@ -10749,8 +10921,8 @@ wJ
 Yi
 EU
 Ik
-oL
-oL
+FU
+FU
 Pa
 Rv
 Rv
@@ -10778,23 +10950,23 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 ws
 wv
 wV
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-EL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+qy
 MC
-ew
+Er
 Ki
 ZV
 HN
@@ -10817,8 +10989,8 @@ Ik
 Ik
 Ik
 Ik
-oL
-oL
+FU
+FU
 Rv
 Rv
 WD
@@ -10847,22 +11019,22 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 wv
 zc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-EL
-Az
-ew
-zW
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+qy
+Xe
+Er
+Ac
 ED
 ZV
 qo
@@ -10880,11 +11052,11 @@ md
 UU
 aL
 lX
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 oL
 oL
 Rv
@@ -10915,23 +11087,23 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 lX
-oL
-oL
-Cw
+FU
+FU
+sE
 uG
-EL
-pV
-pV
-Az
-wH
+qy
+qJ
+qJ
+Xe
+ut
 mQ
 em
-oL
+FU
 ZV
 ZV
 ZV
@@ -10945,12 +11117,12 @@ by
 fr
 ru
 sl
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 Oc
 Pa
 Pa
@@ -10984,23 +11156,23 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-Jc
-EL
+FU
+FU
+FU
+FU
+FU
+FU
+gv
+qy
 Fw
 Jt
 fV
-Az
-ew
+Xe
+Er
 zt
-oL
-oL
-oL
+FU
+FU
+FU
 Ez
 FW
 rz
@@ -11015,9 +11187,9 @@ ZV
 oF
 ZV
 ZV
-oL
-oL
-oL
+FU
+FU
+FU
 YY
 Ts
 pV
@@ -11051,24 +11223,24 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-Jc
-Jc
+FU
+FU
+FU
+FU
+FU
+Ac
+Ac
 gU
 FQ
 cU
-Az
-Az
-wH
-oL
-oL
-oL
-oL
-oL
+Xe
+Xe
+ut
+FU
+FU
+FU
+FU
+FU
 hc
 jz
 bp
@@ -11081,11 +11253,11 @@ WN
 JM
 hM
 Dy
-fT
+ne
 ZV
-oL
-oL
-oL
+FU
+FU
+FU
 XY
 jR
 Wp
@@ -11119,23 +11291,23 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 ro
-EL
+qy
 HV
 Sx
 Sy
 Sx
-Az
-Az
-ew
-oL
-oL
-oL
-oL
+Xe
+Xe
+Er
+FU
+FU
+FU
+FU
 ZV
 sP
 di
@@ -11151,8 +11323,8 @@ eX
 ly
 SB
 ZV
-oL
-oL
+FU
+FU
 Cw
 Pa
 oD
@@ -11187,22 +11359,22 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 wZ
-Az
-Az
+Xe
+Xe
 Ep
 FQ
 zM
 Jt
-ew
+Er
 HC
-oL
-oL
-oL
+FU
+FU
+FU
 CM
 DI
 On
@@ -11219,8 +11391,8 @@ sy
 RZ
 Hb
 ZV
-oL
-oL
+FU
+FU
 Rv
 Rv
 Pa
@@ -11254,23 +11426,23 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 ZT
-Az
-Az
+Xe
+Xe
 fm
-Az
+Xe
 Fw
-Az
+Xe
 HC
 HC
-oL
-oL
-oL
+FU
+FU
+FU
 CM
 DI
 dg
@@ -11279,7 +11451,7 @@ MS
 DI
 CM
 CM
-FE
+iB
 ly
 RZ
 ly
@@ -11287,8 +11459,8 @@ RZ
 RZ
 Hb
 ZV
-oL
-oL
+FU
+FU
 Rv
 kq
 Rv
@@ -11322,23 +11494,23 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 wZ
 HC
-Az
-Az
-Az
-Az
-Az
+Xe
+Xe
+Xe
+Xe
+Xe
 HC
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 CM
 DI
 bl
@@ -11355,8 +11527,8 @@ HQ
 HQ
 Zm
 ZV
-oL
-oL
+FU
+FU
 sc
 sc
 Rv
@@ -11390,22 +11562,22 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 wZ
 wS
 HP
-Az
+Xe
 HC
 HC
 HC
 HC
-oL
-oL
-oL
+FU
+FU
+FU
 CM
 CM
 DI
@@ -11423,7 +11595,7 @@ ZV
 ZV
 ZV
 ZV
-oL
+FU
 sc
 sc
 sc
@@ -11458,22 +11630,22 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 HC
 Xw
 Iw
-Cw
+sE
 wZ
-FU
+Iw
 ty
 BE
 UC
 lr
-oL
+FU
 CM
 qO
 cG
@@ -11483,15 +11655,15 @@ vt
 Cr
 yf
 DI
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -11526,17 +11698,17 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 yK
 Iw
-Jc
-Xy
+gv
+ty
 wZ
-Jc
+gv
 Jh
 dx
 pE
@@ -11551,14 +11723,14 @@ hB
 ZK
 bU
 CM
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -11595,19 +11767,19 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 pp
-Cw
-oL
-oL
-oL
-oL
-oL
-oL
+sE
+FU
+FU
+FU
+FU
+FU
+FU
 Oh
 Hh
 CM
@@ -11619,13 +11791,13 @@ ZK
 Bv
 KE
 CM
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -11663,19 +11835,19 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 re
 re
 re
@@ -11687,12 +11859,12 @@ fw
 oH
 qj
 CM
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -11731,18 +11903,18 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 Fx
 Fx
 re
@@ -11755,10 +11927,10 @@ oH
 Sw
 Bv
 DI
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -11800,16 +11972,16 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 Rz
 Fx
 Bv
@@ -11823,9 +11995,9 @@ pa
 Bv
 Bv
 CM
-oL
-oL
-oL
+FU
+FU
+FU
 sc
 sc
 sc
@@ -11868,15 +12040,15 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 Rz
 Rz
 ZK
@@ -11891,9 +12063,9 @@ zU
 Bv
 Ni
 CM
-oL
-oL
-oL
+FU
+FU
+FU
 sc
 sc
 sc
@@ -11937,14 +12109,14 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 Rz
 Rz
 Rz
@@ -11959,9 +12131,9 @@ Bv
 Ni
 Ni
 CM
-oL
-oL
-oL
+FU
+FU
+FU
 sc
 sc
 sc
@@ -12006,13 +12178,13 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 CM
 VV
 Rz
@@ -12027,9 +12199,9 @@ Ni
 Ni
 Ri
 DI
-oL
-oL
-oL
+FU
+FU
+FU
 sc
 sc
 sc
@@ -12078,9 +12250,9 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
+FU
+FU
+FU
 CM
 CM
 CM
@@ -12095,9 +12267,9 @@ Ni
 Ni
 Ni
 CM
-oL
-oL
-oL
+FU
+FU
+FU
 sc
 sc
 sc
@@ -12147,8 +12319,8 @@ sc
 sc
 sc
 sc
-oL
-oL
+FU
+FU
 CM
 CM
 CM
@@ -12163,9 +12335,9 @@ CM
 Ni
 CM
 CM
-oL
-oL
-oL
+FU
+FU
+FU
 sc
 sc
 sc
@@ -12216,23 +12388,23 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -12285,22 +12457,22 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -12355,19 +12527,19 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
@@ -12428,11 +12600,11 @@ sc
 sc
 sc
 sc
-oL
-oL
-oL
-oL
-oL
+FU
+FU
+FU
+FU
+FU
 sc
 sc
 sc
