@@ -11,6 +11,10 @@ jobs:
     name: Run Linters
     runs-on: ubuntu-20.04
     steps:
+      - name: Python setup
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.9"
       - uses: actions/checkout@v2
       - uses: actions/checkout@v2
         with:
