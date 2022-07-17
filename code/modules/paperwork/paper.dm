@@ -382,7 +382,7 @@
 	var/countdown = 60
 	var/activate_on_timeout = FALSE
 
-/obj/item/paper/evilfax/examine(var/mob/user, var/forceshow = FALSE, var/forcestars = FALSE, var/infolinks = FALSE, var/view = TRUE)
+/obj/item/paper/evilfax/examine(mob/user, forceshow = FALSE, forcestars = FALSE, infolinks = FALSE, view = TRUE)
 	if(user == mytarget)
 		if(istype(user, /mob/living/carbon))
 			var/mob/living/carbon/C = user

@@ -2360,7 +2360,7 @@
 			return
 		GLOB.interviews.ui_interact(usr)
 
-/datum/admins/proc/handle_sendall(obj/machinery/photocopier/faxmachine/F, var/obj/item/paper/P)
+/datum/admins/proc/handle_sendall(obj/machinery/photocopier/faxmachine/F, obj/item/paper/P)
 	if(F.receivefax(P) == FALSE)
 		to_chat(owner, "<span class='warning'>Message transmission to [F.department] failed.</span>")
 

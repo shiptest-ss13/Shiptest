@@ -15,7 +15,7 @@
  * * user - Checks if we can remove the object from the inventory
  * *
  */
-/proc/seedify(obj/item/O, t_max, var/l_user, var/d_item, obj/machinery/seed_extractor/extractor, mob/living/user)
+/proc/seedify(obj/item/O, t_max, l_user, d_item, obj/machinery/seed_extractor/extractor, mob/living/user)
 	var/t_amount = 0
 	var/list/seeds = list()
 	if(t_max == -1)

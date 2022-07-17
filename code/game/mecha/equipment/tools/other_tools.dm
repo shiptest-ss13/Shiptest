@@ -554,7 +554,7 @@
 		return FALSE
 	. = ..()
 
-/obj/item/mecha_parts/mecha_equipment/thrusters/gas/thrust(var/movement_dir)
+/obj/item/mecha_parts/mecha_equipment/thrusters/gas/thrust(movement_dir)
 	if(!chassis || !chassis.internal_tank)
 		return FALSE
 	var/moles = chassis.internal_tank.air_contents.total_moles()
@@ -574,7 +574,7 @@
 	salvageable = FALSE
 	effect_type = /obj/effect/particle_effect/ion_trails
 
-/obj/item/mecha_parts/mecha_equipment/thrusters/ion/thrust(var/movement_dir)
+/obj/item/mecha_parts/mecha_equipment/thrusters/ion/thrust(movement_dir)
 	if(!chassis)
 		return FALSE
 	if(chassis.use_power(chassis.step_energy_drain))

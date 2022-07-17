@@ -529,7 +529,7 @@
 		occupant_message("<span class='warning'>Air port connection has been severed!</span>")
 		log_message("Lost connection to gas port.", LOG_MECHA)
 
-/obj/mecha/Process_Spacemove(var/movement_dir = 0)
+/obj/mecha/Process_Spacemove(movement_dir = 0)
 	. = ..()
 	if(.)
 		return TRUE
@@ -630,7 +630,7 @@
 		play_stepsound()
 	step_silent = FALSE
 
-/obj/mecha/Bump(var/atom/obstacle)
+/obj/mecha/Bump(atom/obstacle)
 	if(phasing && get_charge() >= phasing_energy_drain && !throwing)
 		if(!can_move)
 			return
@@ -1155,7 +1155,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 ////// Ammo stuff /////
 ///////////////////////
 
-/obj/mecha/proc/ammo_resupply(obj/item/mecha_ammo/A, mob/user,var/fail_chat_override = FALSE)
+/obj/mecha/proc/ammo_resupply(obj/item/mecha_ammo/A, mob/user,fail_chat_override = FALSE)
 	if(!A.rounds)
 		if(!fail_chat_override)
 			to_chat(user, "<span class='warning'>This box of ammo is empty!</span>")

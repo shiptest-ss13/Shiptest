@@ -11,7 +11,7 @@
 	device_type = MC_NET
 	var/static/ntnet_card_uid = 1
 
-/obj/item/computer_hardware/network_card/diagnostics(var/mob/user)
+/obj/item/computer_hardware/network_card/diagnostics(mob/user)
 	..()
 	to_chat(user, "NIX Unique ID: [identification_id]")
 	to_chat(user, "NIX User Tag: [identification_string]")
@@ -22,7 +22,7 @@
 	if(ethernet)
 		to_chat(user, "OpenEth (Physical Connection) - Physical network connection port")
 
-/obj/item/computer_hardware/network_card/New(var/l)
+/obj/item/computer_hardware/network_card/New(l)
 	..()
 	identification_id = ntnet_card_uid++
 

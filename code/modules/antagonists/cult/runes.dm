@@ -171,7 +171,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	icon_state = "[rand(1,7)]"
 	color = rgb(rand(0,255), rand(0,255), rand(0,255))
 
-/obj/effect/rune/malformed/invoke(var/list/invokers)
+/obj/effect/rune/malformed/invoke(list/invokers)
 	..()
 	qdel(src)
 
@@ -189,7 +189,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 /obj/effect/rune/convert/do_invoke_glow()
 	return
 
-/obj/effect/rune/convert/invoke(var/list/invokers)
+/obj/effect/rune/convert/invoke(list/invokers)
 	if(rune_in_use)
 		return
 	var/list/myriad_targets = list()
@@ -320,7 +320,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	color = RUNE_COLOR_TALISMAN
 	construct_invoke = FALSE
 
-/obj/effect/rune/empower/invoke(var/list/invokers)
+/obj/effect/rune/empower/invoke(list/invokers)
 	. = ..()
 	var/mob/living/user = invokers[1] //the first invoker is always the user
 	for(var/datum/action/innate/cult/blood_magic/BM in user.actions)
@@ -350,7 +350,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	GLOB.teleport_runes -= src
 	return ..()
 
-/obj/effect/rune/teleport/invoke(var/list/invokers)
+/obj/effect/rune/teleport/invoke(list/invokers)
 	var/mob/living/user = invokers[1] //the first invoker is always the user
 	var/list/potential_runes = list()
 	var/list/teleportnames = list()
@@ -471,7 +471,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 /obj/effect/rune/narsie/conceal() //can't hide this, and you wouldn't want to
 	return
 
-/obj/effect/rune/narsie/invoke(var/list/invokers)
+/obj/effect/rune/narsie/invoke(list/invokers)
 	if(used)
 		return
 	var/mob/living/user = invokers[1]
@@ -522,7 +522,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	if(iscultist(user) || user.stat == DEAD)
 		. += "<b>Sacrifices unrewarded:</b> [LAZYLEN(GLOB.sacrificed) - sacrifices_used]"
 
-/obj/effect/rune/raise_dead/invoke(var/list/invokers)
+/obj/effect/rune/raise_dead/invoke(list/invokers)
 	var/turf/T = get_turf(src)
 	var/mob/living/mob_to_revive
 	var/list/potential_revive_mobs = list()
@@ -627,7 +627,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 /obj/effect/rune/wall/BlockThermalConductivity()
 	return density
 
-/obj/effect/rune/wall/invoke(var/list/invokers)
+/obj/effect/rune/wall/invoke(list/invokers)
 	if(recharging)
 		return
 	var/mob/living/user = invokers[1]
@@ -691,7 +691,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	icon_state = "3"
 	color = RUNE_COLOR_SUMMON
 
-/obj/effect/rune/summon/invoke(var/list/invokers)
+/obj/effect/rune/summon/invoke(list/invokers)
 	var/mob/living/user = invokers[1]
 	var/list/cultists = list()
 	for(var/datum/mind/M in SSticker.mode.cult)
@@ -750,7 +750,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 /obj/effect/rune/blood_boil/do_invoke_glow()
 	return
 
-/obj/effect/rune/blood_boil/invoke(var/list/invokers)
+/obj/effect/rune/blood_boil/invoke(list/invokers)
 	if(rune_in_use)
 		return
 	..()
@@ -823,7 +823,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 		return list()
 	return ..()
 
-/obj/effect/rune/manifest/invoke(var/list/invokers)
+/obj/effect/rune/manifest/invoke(list/invokers)
 	. = ..()
 	var/mob/living/user = invokers[1]
 	var/turf/T = get_turf(src)
@@ -932,7 +932,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	req_cultists = 3
 	scribe_delay = 100
 
-/obj/effect/rune/apocalypse/invoke(var/list/invokers)
+/obj/effect/rune/apocalypse/invoke(list/invokers)
 	if(rune_in_use)
 		return
 	. = ..()

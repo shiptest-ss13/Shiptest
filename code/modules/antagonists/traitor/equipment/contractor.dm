@@ -112,7 +112,7 @@
 	limited = 2
 	cost = 0
 
-/datum/contractor_item/contract_reroll/handle_purchase(var/datum/contractor_hub/hub)
+/datum/contractor_item/contract_reroll/handle_purchase(datum/contractor_hub/hub)
 	. = ..()
 
 	if (.)
@@ -159,7 +159,7 @@
 	cost = 2
 	var/datum/mind/partner_mind = null
 
-/datum/contractor_item/contractor_partner/handle_purchase(var/datum/contractor_hub/hub, mob/living/user)
+/datum/contractor_item/contractor_partner/handle_purchase(datum/contractor_hub/hub, mob/living/user)
 	. = ..()
 
 	if (.)
@@ -238,7 +238,7 @@
 	limited = 2
 	cost = 3
 
-/datum/contractor_item/blackout/handle_purchase(var/datum/contractor_hub/hub)
+/datum/contractor_item/blackout/handle_purchase(datum/contractor_hub/hub)
 	. = ..()
 
 	if (.)

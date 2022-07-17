@@ -405,17 +405,17 @@
 	return ..()
 
 // Adds the referenced ship directly to the card
-/obj/item/card/id/proc/add_ship_access( var/datum/overmap/ship/controlled/ship )
+/obj/item/card/id/proc/add_ship_access(datum/overmap/ship/controlled/ship )
 	if ( ship )
 		ship_access += ship
 
 // Removes the referenced ship from the card
-/obj/item/card/id/proc/remove_ship_access( var/datum/overmap/ship/controlled/ship )
+/obj/item/card/id/proc/remove_ship_access(datum/overmap/ship/controlled/ship )
 	if ( ship )
 		ship_access -= ship
 
 // Finds the referenced ship in the list
-/obj/item/card/id/proc/has_ship_access( var/datum/overmap/ship/controlled/ship )
+/obj/item/card/id/proc/has_ship_access(datum/overmap/ship/controlled/ship )
 	if ( ship )
 		return ship_access.Find( ship )
 
@@ -644,7 +644,7 @@ update_label()
 	access = get_all_centcom_access()
 	. = ..()
 
-/obj/item/card/id/centcom/has_ship_access( var/datum/overmap/ship/controlled/ship )
+/obj/item/card/id/centcom/has_ship_access(datum/overmap/ship/controlled/ship )
 	return TRUE
 
 /obj/item/card/id/ert

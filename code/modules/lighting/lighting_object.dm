@@ -34,7 +34,7 @@
 	needs_update = TRUE
 	SSlighting.objects_queue += src
 
-/atom/movable/lighting_object/Destroy(var/force)
+/atom/movable/lighting_object/Destroy(force)
 	if (force)
 		SSlighting.objects_queue -= src
 		if (loc != myturf)
