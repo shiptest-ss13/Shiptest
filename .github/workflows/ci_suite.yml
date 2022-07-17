@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          ref: master
       - name: Restore SpacemanDMM cache
         uses: actions/cache@v3
         with:
@@ -40,15 +43,14 @@ jobs:
           find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 tools/bootstrap/python ./tools/json_verifier.py
           tools/build/build --ci lint tgui-test
           bash tools/ci/check_grep.sh
-        # disabled temporarily
-        # tools/bootstrap/python -m ci.check_regex --log-changes-only
+          tools/bootstrap/python -m ci.check_regex --log-changes-only
           tools/bootstrap/python -m dmi.test
           tools/bootstrap/python -m mapmerge2.dmm_test
           ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
-      # - name: Annotate Regex Matches
-      #   if: always()
-      #   run: |
-      #     cat check_regex_output.txt
+      - name: Annotate Regex Matches
+        if: always()
+        run: |
+          cat check_regex_output.txt
       - name: Annotate Lints
         uses: yogstation13/DreamAnnotate@v1
         if: always()
