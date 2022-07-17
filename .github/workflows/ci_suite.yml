@@ -43,21 +43,21 @@ jobs:
           tools/bootstrap/python -m dmi.test
           tools/bootstrap/python -m mapmerge2.dmm_test
           ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
-      - name: Run Check Regex
-        uses: actions/checkout@v2
+      - name: Annotate Lints
+        uses: yogstation13/DreamAnnotate@v1
+        if: always()
+        with:
+          outputFile: output-annotations.txt
+      - uses: actions/checkout@v2
         with:
           ref: master
+      - name: Run Check Regex
         run: |
           tools/bootstrap/python -m ci.check_regex --log-changes-only
       - name: Annotate Regex Matches
         if: always()
         run: |
           cat check_regex_output.txt
-      - name: Annotate Lints
-        uses: yogstation13/DreamAnnotate@v1
-        if: always()
-        with:
-          outputFile: output-annotations.txt
 
   compile_all_maps:
     name: Compile Maps
