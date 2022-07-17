@@ -12,9 +12,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v3
-        with:
-          python-version: '3.9.10'
       - name: Restore SpacemanDMM cache
         uses: actions/cache@v3
         with:
