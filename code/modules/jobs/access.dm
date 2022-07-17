@@ -391,7 +391,7 @@
 		if(ACCESS_LP_MEDIC)
 			return "LP Medical Specialist"
 		if(ACCESS_LP_ENGINEER)
-			return "Lp Engineering Specialist"
+			return "LP Engineering Specialist"
 
 //WS Begin
 		if(ACCESS_CLONING)
