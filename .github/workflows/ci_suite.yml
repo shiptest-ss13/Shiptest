@@ -59,6 +59,22 @@ jobs:
         with:
           outputFile: output-annotations.txt
 
+  find_all_maps:
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    name: Find Maps to Test
+    runs-on: ubuntu-20.04
+    outputs:
+      maps: ${{ steps.map_finder.outputs.maps }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Find Maps
+        id: map_finder
+        run: |
+          echo "$(ls -mw0 _maps/configs/*.json)" > maps_output.txt
+          sed -i -e s+_maps/+\"+g -e s+.json+\"+g maps_output.txt
+          echo "Maps: $(cat maps_output.txt)"
+          echo "::set-output name=maps::{\"paths\":[$(cat maps_output.txt)]}"
+
   compile_all_maps:
     name: Compile Maps
     runs-on: ubuntu-20.04
@@ -86,6 +102,11 @@ jobs:
   run_all_tests:
     name: Integration Tests
     runs-on: ubuntu-20.04
+    needs: [find_all_maps]
+    strategy:
+      fail-fast: false
+      matrix:
+        map: ${{ fromJSON(needs.find_all_maps.outputs.maps).paths }}
     services:
       mysql:
         image: mysql:latest
@@ -121,12 +142,15 @@ jobs:
       - name: Install auxmos
         run: |
           bash tools/ci/install_auxmos.sh
-      - name: Compile and run tests
+      - name: Compile Tests
         run: |
           bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
           tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
-          bash tools/ci/run_server.sh
+      - name: Run Tests
+        run: |
+          source $HOME/BYOND/byond/bin/byondsetup
+          bash tools/ci/run_server.sh ${{ matrix.map }}
 
   test_windows:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
