@@ -42,8 +42,6 @@ jobs:
         run: |
           bash tools/ci/check_filedirs.sh shiptest.dme
           bash tools/ci/check_changelogs.sh
-          find . -name "*.php" -print0 | xargs -0 -n1 php -l
-          find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 tools/bootstrap/python ./tools/json_verifier.py
           tools/build/build --ci lint tgui-test
           bash tools/ci/check_grep.sh
           tools/bootstrap/python -m ci.check_regex --log-changes-only
