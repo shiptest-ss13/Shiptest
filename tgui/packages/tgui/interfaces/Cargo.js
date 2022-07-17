@@ -1,22 +1,26 @@
 import { toArray } from 'common/collections';
 import { useBackend, useSharedState } from '../backend';
-import { AnimatedNumber, Box, Button, Flex, LabeledList, Section, Table, Tabs } from '../components';
+import {
+  AnimatedNumber,
+  Box,
+  Button,
+  Flex,
+  LabeledList,
+  Section,
+  Table,
+  Tabs,
+} from '../components';
 import { formatMoney } from '../format';
 import { Window } from '../layouts';
 
 export const Cargo = (props, context) => {
   const { act, data } = useBackend(context);
   const [tab, setTab] = useSharedState(context, 'tab', 'catalog');
-  const {
-    requestonly,
-  } = data;
+  const { requestonly } = data;
   const cart = data.cart || [];
   const requests = data.requests || [];
   return (
-    <Window
-      width={780}
-      height={750}
-      resizable>
+    <Window width={780} height={750} resizable>
       <Window.Content scrollable>
         <CargoStatus />
         <Section fitted>
@@ -24,40 +28,33 @@ export const Cargo = (props, context) => {
             <Tabs.Tab
               icon="list"
               selected={tab === 'catalog'}
-              onClick={() => setTab('catalog')}>
+              onClick={() => setTab('catalog')}
+            >
               Catalog
             </Tabs.Tab>
             <Tabs.Tab
               icon="envelope"
-              textColor={tab !== 'requests'
-                && requests.length > 0
-                && 'yellow'}
+              textColor={tab !== 'requests' && requests.length > 0 && 'yellow'}
               selected={tab === 'requests'}
-              onClick={() => setTab('requests')}>
+              onClick={() => setTab('requests')}
+            >
               Requests ({requests.length})
             </Tabs.Tab>
             {!requestonly && (
               <Tabs.Tab
                 icon="shopping-cart"
-                textColor={tab !== 'cart'
-                  && cart.length > 0
-                  && 'yellow'}
+                textColor={tab !== 'cart' && cart.length > 0 && 'yellow'}
                 selected={tab === 'cart'}
-                onClick={() => setTab('cart')}>
+                onClick={() => setTab('cart')}
+              >
                 Checkout ({cart.length})
               </Tabs.Tab>
             )}
           </Tabs>
         </Section>
-        {tab === 'catalog' && (
-          <CargoCatalog />
-        )}
-        {tab === 'requests' && (
-          <CargoRequests />
-        )}
-        {tab === 'cart' && (
-          <CargoCart />
-        )}
+        {tab === 'catalog' && <CargoCatalog />}
+        {tab === 'requests' && <CargoRequests />}
+        {tab === 'cart' && <CargoCart />}
       </Window.Content>
     </Window>
   );
@@ -65,36 +62,28 @@ export const Cargo = (props, context) => {
 
 const CargoStatus = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    away,
-    docked,
-    location,
-    message,
-    points,
-    requestonly,
-  } = data;
+  const { away, docked, location, message, points, requestonly } = data;
   return (
     <Section
       title="Cargo"
-      buttons={(
+      buttons={
         <Box inline bold>
           <AnimatedNumber
             value={points}
-            format={value => formatMoney(value)} />
+            format={(value) => formatMoney(value)}
+          />
           {' credits'}
         </Box>
-      )}>
+      }
+    >
       <LabeledList>
         <LabeledList.Item label="Shuttle">
-          {docked && !requestonly && (
-            <Button
-              content={location}
-              onClick={() => act('send')} />
-          ) || location}
+          {(docked && !requestonly && (
+            <Button content={location} onClick={() => act('send')} />
+          )) ||
+            location}
         </LabeledList.Item>
-        <LabeledList.Item label="CentCom Message">
-          {message}
-        </LabeledList.Item>
+        <LabeledList.Item label="CentCom Message">{message}</LabeledList.Item>
       </LabeledList>
     </Section>
   );
@@ -103,38 +92,42 @@ const CargoStatus = (props, context) => {
 export const CargoCatalog = (props, context) => {
   const { express } = props;
   const { act, data } = useBackend(context);
-  const {
-    self_paid,
-  } = data;
+  const { self_paid } = data;
   const supplies = toArray(data.supplies);
-  const [
-    activeSupplyName,
-    setActiveSupplyName,
-  ] = useSharedState(context, 'supply', supplies[0]?.name);
-  const activeSupply = supplies.find(supply => {
+  const [activeSupplyName, setActiveSupplyName] = useSharedState(
+    context,
+    'supply',
+    supplies[0]?.name
+  );
+  const activeSupply = supplies.find((supply) => {
     return supply.name === activeSupplyName;
   });
   return (
     <Section
       title="Catalog"
-      buttons={!express && (
-        <>
-          <CargoCartButtons />
-          <Button.Checkbox
-            ml={2}
-            content="Buy Privately"
-            checked={self_paid}
-            onClick={() => act('toggleprivate')} />
-        </>
-      )}>
+      buttons={
+        !express && (
+          <>
+            <CargoCartButtons />
+            <Button.Checkbox
+              ml={2}
+              content="Buy Privately"
+              checked={self_paid}
+              onClick={() => act('toggleprivate')}
+            />
+          </>
+        )
+      }
+    >
       <Flex>
         <Flex.Item ml={-1} mr={1}>
           <Tabs vertical>
-            {supplies.map(supply => (
+            {supplies.map((supply) => (
               <Tabs.Tab
                 key={supply.name}
                 selected={supply.name === activeSupplyName}
-                onClick={() => setActiveSupplyName(supply.name)}>
+                onClick={() => setActiveSupplyName(supply.name)}
+              >
                 {supply.name} ({supply.packs.length})
               </Tabs.Tab>
             ))}
@@ -142,7 +135,7 @@ export const CargoCatalog = (props, context) => {
         </Flex.Item>
         <Flex.Item grow={1} basis={0}>
           <Table>
-            {activeSupply?.packs.map(pack => {
+            {activeSupply?.packs.map((pack) => {
               const tags = [];
               if (pack.small_item) {
                 tags.push('Small');
@@ -151,31 +144,25 @@ export const CargoCatalog = (props, context) => {
                 tags.push('Restricted');
               }
               return (
-                <Table.Row
-                  key={pack.name}
-                  className="candystripe">
-                  <Table.Cell>
-                    {pack.name}
-                  </Table.Cell>
-                  <Table.Cell
-                    collapsing
-                    color="label"
-                    textAlign="right">
+                <Table.Row key={pack.name} className="candystripe">
+                  <Table.Cell>{pack.name}</Table.Cell>
+                  <Table.Cell collapsing color="label" textAlign="right">
                     {tags.join(', ')}
                   </Table.Cell>
-                  <Table.Cell
-                    collapsing
-                    textAlign="right">
+                  <Table.Cell collapsing textAlign="right">
                     <Button
                       fluid
                       tooltip={pack.desc}
                       tooltipPosition="left"
-                      onClick={() => act('add', {
-                        id: pack.id,
-                      })}>
-                      {formatMoney(self_paid
-                        ? Math.round(pack.cost * 1.1)
-                        : pack.cost)}
+                      onClick={() =>
+                        act('add', {
+                          id: pack.id,
+                        })
+                      }
+                    >
+                      {formatMoney(
+                        self_paid ? Math.round(pack.cost * 1.1) : pack.cost
+                      )}
                       {' cr'}
                     </Button>
                   </Table.Cell>
@@ -191,38 +178,32 @@ export const CargoCatalog = (props, context) => {
 
 const CargoRequests = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    requestonly,
-  } = data;
+  const { requestonly } = data;
   const requests = data.requests || [];
   // Labeled list reimplementation to squeeze extra columns out of it
   return (
     <Section
       title="Active Requests"
-      buttons={!requestonly && (
-        <Button
-          icon="times"
-          content="Clear"
-          color="transparent"
-          onClick={() => act('denyall')} />
-      )}>
-      {requests.length === 0 && (
-        <Box color="good">
-          No Requests
-        </Box>
-      )}
+      buttons={
+        !requestonly && (
+          <Button
+            icon="times"
+            content="Clear"
+            color="transparent"
+            onClick={() => act('denyall')}
+          />
+        )
+      }
+    >
+      {requests.length === 0 && <Box color="good">No Requests</Box>}
       {requests.length > 0 && (
         <Table>
-          {requests.map(request => (
-            <Table.Row
-              key={request.id}
-              className="candystripe">
+          {requests.map((request) => (
+            <Table.Row key={request.id} className="candystripe">
               <Table.Cell collapsing color="label">
                 #{request.id}
               </Table.Cell>
-              <Table.Cell>
-                {request.object}
-              </Table.Cell>
+              <Table.Cell>{request.object}</Table.Cell>
               <Table.Cell>
                 <b>{request.orderer}</b>
               </Table.Cell>
@@ -237,15 +218,21 @@ const CargoRequests = (props, context) => {
                   <Button
                     icon="check"
                     color="good"
-                    onClick={() => act('approve', {
-                      id: request.id,
-                    })} />
+                    onClick={() =>
+                      act('approve', {
+                        id: request.id,
+                      })
+                    }
+                  />
                   <Button
                     icon="times"
                     color="bad"
-                    onClick={() => act('deny', {
-                      id: request.id,
-                    })} />
+                    onClick={() =>
+                      act('deny', {
+                        id: request.id,
+                      })
+                    }
+                  />
                 </Table.Cell>
               )}
             </Table.Row>
@@ -258,9 +245,7 @@ const CargoRequests = (props, context) => {
 
 const CargoCartButtons = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    requestonly,
-  } = data;
+  const { requestonly } = data;
   const cart = data.cart || [];
   const total = cart.reduce((total, entry) => total + entry.cost, 0);
   if (requestonly) {
@@ -271,55 +256,36 @@ const CargoCartButtons = (props, context) => {
       <Box inline mx={1}>
         {cart.length === 0 && 'Cart is empty'}
         {cart.length === 1 && '1 item'}
-        {cart.length >= 2 && cart.length + ' items'}
-        {' '}
+        {cart.length >= 2 && cart.length + ' items'}{' '}
         {total > 0 && `(${formatMoney(total)} cr)`}
       </Box>
       <Button
         icon="times"
         color="transparent"
         content="Clear"
-        onClick={() => act('clear')} />
+        onClick={() => act('clear')}
+      />
     </>
   );
 };
 
 const CargoCart = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    requestonly,
-    away,
-    docked,
-    location,
-  } = data;
+  const { requestonly, away, docked, location } = data;
   const cart = data.cart || [];
   return (
-    <Section
-      title="Current Cart"
-      buttons={(
-        <CargoCartButtons />
-      )}>
-      {cart.length === 0 && (
-        <Box color="label">
-          Nothing in cart
-        </Box>
-      )}
+    <Section title="Current Cart" buttons={<CargoCartButtons />}>
+      {cart.length === 0 && <Box color="label">Nothing in cart</Box>}
       {cart.length > 0 && (
         <Table>
-          {cart.map(entry => (
-            <Table.Row
-              key={entry.id}
-              className="candystripe">
+          {cart.map((entry) => (
+            <Table.Row key={entry.id} className="candystripe">
               <Table.Cell collapsing color="label">
                 #{entry.id}
               </Table.Cell>
-              <Table.Cell>
-                {entry.object}
-              </Table.Cell>
+              <Table.Cell>{entry.object}</Table.Cell>
               <Table.Cell collapsing>
-                {!!entry.paid && (
-                  <b>[Paid Privately]</b>
-                )}
+                {!!entry.paid && <b>[Paid Privately]</b>}
               </Table.Cell>
               <Table.Cell collapsing textAlign="right">
                 {formatMoney(entry.cost)} cr
@@ -327,9 +293,12 @@ const CargoCart = (props, context) => {
               <Table.Cell collapsing>
                 <Button
                   icon="minus"
-                  onClick={() => act('remove', {
-                    id: entry.id,
-                  })} />
+                  onClick={() =>
+                    act('remove', {
+                      id: entry.id,
+                    })
+                  }
+                />
               </Table.Cell>
             </Table.Row>
           ))}
@@ -337,7 +306,7 @@ const CargoCart = (props, context) => {
       )}
       {cart.length > 0 && !requestonly && (
         <Box mt={2}>
-          {away === 1 && docked === 1 && (
+          {(away === 1 && docked === 1 && (
             <Button
               color="green"
               style={{
@@ -345,12 +314,9 @@ const CargoCart = (props, context) => {
                 'padding': '0 12px',
               }}
               content="Confirm the order"
-              onClick={() => act('send')} />
-          ) || (
-            <Box opacity={0.5}>
-              Shuttle in {location}.
-            </Box>
-          )}
+              onClick={() => act('send')}
+            />
+          )) || <Box opacity={0.5}>Shuttle in {location}.</Box>}
         </Box>
       )}
     </Section>

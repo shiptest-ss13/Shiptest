@@ -1,16 +1,18 @@
 import { useBackend } from '../backend';
-import { AnimatedNumber, Box, Button, LabeledList, Section } from '../components';
+import {
+  AnimatedNumber,
+  Box,
+  Button,
+  LabeledList,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 import { CargoCatalog } from './Cargo';
-import { InterfaceLockNoticeBox } from './common/InterfaceLockNoticeBox';
 
 export const CargoExpress = (props, context) => {
   const { act, data } = useBackend(context);
   return (
-    <Window
-      width={600}
-      height={700}
-      resizable>
+    <Window width={600} height={700} resizable>
       <Window.Content scrollable>
         <CargoExpressContent />
       </Window.Content>
@@ -24,33 +26,34 @@ const CargoExpressContent = (props, context) => {
     <>
       <Section
         title="Cargo Express"
-        buttons={(
+        buttons={
           <Box inline bold>
-            <AnimatedNumber
-              value={Math.round(data.points)} />
+            <AnimatedNumber value={Math.round(data.points)} />
             {' credits'}
           </Box>
-        )}>
+        }
+      >
         <LabeledList>
           <LabeledList.Item label="Landing Location">
             <Button
               content="Cargo Bay"
               selected={!data.usingBeacon}
-              onClick={() => act('LZCargo')} />
+              onClick={() => act('LZCargo')}
+            />
             <Button
               selected={data.usingBeacon}
               disabled={!data.hasBeacon}
-              onClick={() => act('LZBeacon')}>
+              onClick={() => act('LZBeacon')}
+            >
               {data.beaconzone} ({data.beaconName})
             </Button>
             <Button
               content={data.printMsg}
               disabled={!data.canBuyBeacon}
-              onClick={() => act('printBeacon')} />
+              onClick={() => act('printBeacon')}
+            />
           </LabeledList.Item>
-          <LabeledList.Item label="Notice">
-            {data.message}
-          </LabeledList.Item>
+          <LabeledList.Item label="Notice">{data.message}</LabeledList.Item>
         </LabeledList>
       </Section>
       <CargoCatalog express />
