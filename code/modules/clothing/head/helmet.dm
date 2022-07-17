@@ -565,7 +565,7 @@
 
 /obj/item/clothing/head/helmet/x11
 	name = "\improper Type X11 Helmet"
-	desc = "A large, but protective helmet. Standard issue of the Zohil Ground Forces. It's large size gives extra space for Sarthini frills and horns, and is considerably more armored."
+	desc = "A large, but protective helmet. Standard issue of the Zohil Ground Forces. It's large size gives extra space for Sarathi frills and horns, and is considerably more armored."
 	icon_state = "x11helm"
 	can_flashlight = TRUE
 	dog_fashion = null
