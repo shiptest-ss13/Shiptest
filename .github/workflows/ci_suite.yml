@@ -35,6 +35,7 @@ jobs:
           tools/bootstrap/python -c ''
       - name: Run Linters
         run: |
+          tools/build/build --ci lint tgui-test
           bash tools/ci/check_filedirs.sh shiptest.dme
           bash tools/ci/check_changelogs.sh
           bash tools/ci/check_misc.sh
