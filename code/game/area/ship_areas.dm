@@ -180,7 +180,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/library
 	name = "Library"
 	icon_state = "library"
-	flags_1 = CULT_PERMITTED_1
 	lighting_colour_tube = "#ffce99"
 	lighting_colour_bulb = "#ffdbb4"
 	sound_environment = SOUND_AREA_WOODFLOOR
@@ -203,7 +202,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/janitor
 	name = "Custodial Closet"
 	icon_state = "janitor"
-	flags_1 = CULT_PERMITTED_1
 	sound_environment = SOUND_AREA_SMALL_ENCLOSED
 
 /// Medical Bay ///

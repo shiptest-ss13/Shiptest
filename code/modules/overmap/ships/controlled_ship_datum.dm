@@ -48,6 +48,11 @@
 	///Shipwide bank account used for cargo consoles and bounty payouts.
 	var/datum/bank_account/ship/ship_account
 
+	/// List of currently-accepted missions.
+	var/list/datum/mission/missions
+	/// The maximum number of currently active missions that a ship may take on.
+	var/max_missions = 2
+
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
@@ -82,7 +87,7 @@
 			calculate_mass()
 			refresh_engines()
 
-	ship_account = new(name, 7500)
+	ship_account = new(name, 2000)
 #ifdef UNIT_TESTS
 	Rename("[source_template]")
 #else
@@ -129,6 +134,8 @@
 	shuttle_port.movement_force = list("KNOCKDOWN" = FLOOR(est_thrust / 50, 1), "THROW" = FLOOR(est_thrust / 500, 1))
 	priority_announce("Beginning docking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
 	shuttle_port.create_ripples(ticket.target_port, dock_time)
+	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.landing_sound)
+	shuttle_port.play_engine_sound(ticket.target_port, shuttle_port.landing_sound)
 
 /datum/overmap/ship/controlled/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	shuttle_port.initiate_docking(ticket.target_port)
@@ -150,6 +157,7 @@
 			SSshuttle.generate_transit_dock(shuttle_port) // We need a port, NOW.
 
 	priority_announce("Beginning undocking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
+	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.takeoff_sound)
 
 	. = ..()
 	dock_time = dock_time_temp // Set it back to the original value if it was changed

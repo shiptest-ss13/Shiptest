@@ -39,12 +39,6 @@
 	description = "A place of shelter for a lone hermit, scraping by to live another day."
 	suffix = "icemoon_underground_hermit.dmm"
 
-/datum/map_template/ruin/icemoon/wendigo_cave
-	name = "Wendigo Cave"
-	id = "wendigocave"
-	description = "Into the jaws of the beast."
-	suffix = "icemoon_underground_wendigo_cave.dmm"
-
 /datum/map_template/ruin/icemoon/corpreject
 	name = "NT Security Solutions Site Gamma"
 	id = "corpreject"
@@ -75,12 +69,6 @@
 	id = "drake-lair"
 	description = "\"First the creature's Flame breathed from beneath the stone, Hot battle-fumes, and the earth rumbled.\""
 	suffix = "icemoon_underground_drakelair.dmm"
-
-/datum/map_template/ruin/icemoon/burnies_lair
-	name = "Burnies's Lair"
-	id = "burnies-lair"
-	description = "Some sort of shack. Who the hell is Burnie?"
-	suffix = "icemoon_underground_burnies_lair.dmm"
 
 /datum/map_template/ruin/icemoon/brazillian_lab
 	name = "Barricaded Compound"

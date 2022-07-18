@@ -545,6 +545,11 @@
 	show_in_roundend = FALSE //These are here for admin tracking purposes only
 	you_are_greet = FALSE
 
+	chem_storage = 25
+	geneticpoints = 2
+	chem_recharge_rate = 0.5
+	dna_max = 3
+
 /datum/antagonist/changeling/roundend_report()
 	var/list/parts = list()
 

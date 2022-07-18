@@ -3,22 +3,12 @@
 /////////////////Mining//////////////////
 /////////////////////////////////////////
 /datum/design/cargo_express
-	name = "Computer Design (Express Supply Console)"//shes beautiful
-	desc = "Allows for the construction of circuit boards used to build an Express Supply Console."//who?
+	name = "Computer Design (Outpost Comms Console)"//shes beautiful
+	desc = "Allows for the construction of circuit boards used to build an outpost communications console."//who?
 	id = "cargoexpress"//the coder reading this
 	build_type = IMPRINTER
 	materials = list(/datum/material/glass = 1000)
 	build_path = /obj/item/circuitboard/computer/cargo/express
-	category = list("Mining Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/bluespace_pod
-	name = "Supply Drop Pod Upgrade Disk"
-	desc = "Allows the Cargo Express Console to call down the Bluespace Drop Pod, greatly increasing user safety."//who?
-	id = "bluespace_pod"//the coder reading this
-	build_type = PROTOLATHE
-	materials = list(/datum/material/glass = 1000)
-	build_path = /obj/item/disk/cargo/bluespace_pod
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
@@ -30,7 +20,6 @@
 	materials = list(/datum/material/iron = 6000, /datum/material/glass = 1000) //expensive, but no need for miners.
 	build_path = /obj/item/pickaxe/drill
 	category = list("Mining Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/drill_diamond
 	name = "Diamond-Tipped Mining Drill"
