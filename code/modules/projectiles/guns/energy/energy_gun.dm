@@ -11,6 +11,9 @@
 	flight_y_offset = 10
 	weapon_weight = WEAPON_MEDIUM
 
+/obj/item/gun/energy/e_gun/mindshield
+	pin = /obj/item/firing_pin/implant/mindshield
+
 /obj/item/gun/energy/e_gun/mini
 	name = "miniature energy gun"
 	desc = "A small, pistol-sized energy gun with a built-in flashlight. It has two settings: disable and kill."
