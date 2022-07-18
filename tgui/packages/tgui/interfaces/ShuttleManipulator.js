@@ -34,18 +34,6 @@ export const ShuttleManipulatorStatus = (props, context) => {
           <Table.Row key={shuttle.id}>
             <Table.Cell>
               <Button
-                content="JMP"
-                key={shuttle.id}
-                onClick={() =>
-                  act('jump_to', {
-                    type: 'mobile',
-                    id: shuttle.id,
-                  })
-                }
-              />
-            </Table.Cell>
-            <Table.Cell>
-              <Button
                 content="Fly"
                 key={shuttle.id}
                 disabled={!shuttle.can_fly}
@@ -55,7 +43,47 @@ export const ShuttleManipulatorStatus = (props, context) => {
                   })
                 }
               />
+              <Button
+                content="JMP"
+                key={shuttle.id}
+                onClick={() =>
+                  act('jump_to', {
+                    type: 'mobile',
+                    id: shuttle.id,
+                  })
+                }
+              />
+              <Button
+                content="OWN"
+                key={shuttle.id}
+                onClick={() =>
+                  act('owner', {
+                    id: shuttle.id,
+                  })
+                }
+              />
+              <Button
+                content="VV (P)"
+                key={shuttle.id}
+                onClick={() =>
+                  act('vv_port', {
+                    id: shuttle.id,
+                  })
+                }
+              />
+              <Button
+                content="VV (S)"
+                key={shuttle.id}
+                onClick={() =>
+                  act('vv_ship', {
+                    id: shuttle.id,
+                  })
+                }
+              />
             </Table.Cell>
+            <Table.Cell>{shuttle.name}</Table.Cell>
+            <Table.Cell>{shuttle.id}</Table.Cell>
+            <Table.Cell>{shuttle.status}</Table.Cell>
             <Table.Cell>{shuttle.name}</Table.Cell>
             <Table.Cell>{shuttle.id}</Table.Cell>
             <Table.Cell>{shuttle.status}</Table.Cell>

@@ -460,6 +460,32 @@ SUBSYSTEM_DEF(shuttle)
 						. = TRUE
 						break
 
+		if("owner")
+			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
+			if(!port || !port.current_ship)
+				return
+			var/datum/overmap/ship/controlled/port_ship = port.current_ship
+			var/datum/action/ship_owner/admin/owner_action = new(port_ship)
+			owner_action.Grant(user)
+			owner_action.Trigger()
+			return TRUE
+
+		if("vv_port")
+			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
+			if(!port)
+				return
+			if(user.client)
+				user.client.debug_variables(port)
+			return TRUE
+
+		if("vv_ship")
+			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
+			if(!port || !port.current_ship)
+				return
+			if(user.client)
+				user.client.debug_variables(port.current_ship)
+			return TRUE
+
 		if("fly")
 			for(var/obj/docking_port/mobile/M as anything in mobile)
 				if(REF(M) == params["id"])
