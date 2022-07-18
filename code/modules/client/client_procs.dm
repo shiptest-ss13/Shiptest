@@ -280,11 +280,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			if(!I || I == src)
 				continue
 			var/client/C = I
-			if(C.key && (C.key != key) )
+			if(C.key && (C.key != key))
 				var/matches
-				if( (C.address == address) )
+				if((C.address == address))
 					matches += "IP ([address])"
-				if( (C.computer_id == computer_id) )
+				if((C.computer_id == computer_id))
 					if(matches)
 						matches += " and "
 					matches += "ID ([computer_id])"
@@ -388,7 +388,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			qdel(src)
 			return 0
 
-	if( (world.address == address || !address) && !GLOB.host )
+	if((world.address == address || !address) && !GLOB.host)
 		GLOB.host = key
 		world.update_status()
 

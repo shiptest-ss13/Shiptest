@@ -48,7 +48,7 @@
 		log.parameters["message"] = Gibberish(signal.data["message"], replace_characters)
 
 	// Give the log a name and store it
-	var/identifier = num2text( rand(-1000,1000) + world.time )
+	var/identifier = num2text(rand(-1000,1000) + world.time)
 	log.name = "data packet ([md5(identifier)])"
 	log_entries.Add(log)
 

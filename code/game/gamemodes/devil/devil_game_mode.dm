@@ -31,7 +31,7 @@
 
 	var/tsc = CONFIG_GET(number/traitor_scaling_coeff)
 	if(tsc)
-		num_devils = max(minimum_devils, min( round(num_players() / (tsc * 3))+ 2 + num_modifier, round(num_players() / (tsc * 1.5)) + num_modifier))
+		num_devils = max(minimum_devils, min(round(num_players() / (tsc * 3))+ 2 + num_modifier, round(num_players() / (tsc * 1.5)) + num_modifier))
 	else
 		num_devils = max(minimum_devils, min(num_players(), traitors_possible))
 

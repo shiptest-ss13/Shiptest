@@ -6,10 +6,10 @@
 
 /obj/machinery/rnd/server/Initialize()
 	. = ..()
-	if ( circuit )
+	if (circuit)
 		return
 	circuit = new /obj/item/circuitboard/machine/rdserver() // For servers on maps
-	circuit.apply_default_parts( src )
+	circuit.apply_default_parts(src)
 	create_research_server()
 
 /obj/machinery/rnd/server/on_construction()

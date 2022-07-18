@@ -914,7 +914,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	if (issilicon(user))
 		return attack_hand(user)
 
-	if ( get_dist(src, user) == 0 )		// trying to unlock the interface
+	if (get_dist(src, user) == 0)		// trying to unlock the interface
 		if (allowed(usr))
 			if(obj_flags & EMAGGED)
 				to_chat(user, "<span class='warning'>The turret control is unresponsive!</span>")
@@ -947,7 +947,7 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/turretid/ui_data(mob/user)
 	var/list/data = list()
 	data["locked"] = locked
-	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access( user )
+	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
 	data["enabled"] = enabled
 	data["lethal"] = lethal
 	data["shootCyborgs"] = shoot_cyborgs

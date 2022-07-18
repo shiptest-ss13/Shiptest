@@ -360,7 +360,7 @@
 			cyborg.cell.use(5)
 		repair_tick = 0
 
-		if((world.time - 2000) > msg_cooldown )
+		if((world.time - 2000) > msg_cooldown)
 			var/msgmode = "standby"
 			if(cyborg.health < 0)
 				msgmode = "critical"
@@ -621,7 +621,7 @@
 	icon_state = "card_mod"
 	var/datum/overmap/ship/controlled/ship
 
-/obj/item/borg/upgrade/ship_access_chip/examine( mob/user )
+/obj/item/borg/upgrade/ship_access_chip/examine(mob/user)
 	. = ..()
 	. += "The chip has access for [ship.name] installed."
 
@@ -636,7 +636,7 @@
 		chip = new(robot.module)
 		robot.module.basic_modules += chip
 		robot.module.add_module(chip, FALSE, TRUE)
-		robot.add_ship_access( ship )
+		robot.add_ship_access(ship)
 
 /obj/item/borg/upgrade/ship_access_chip/deactivate(mob/living/silicon/robot/robot, user = usr)
 	. = ..()
@@ -644,7 +644,7 @@
 		var/obj/item/borg/upgrade/ship_access_chip/chip = locate() in robot.module
 		if (chip)
 			robot.module.remove_module(chip, TRUE)
-		robot.remove_ship_access( ship )
+		robot.remove_ship_access(ship)
 
 /obj/item/borg/upgrade/ship_access_chip/afterattack(mob/living/silicon/ai/ai, mob/user, proximity)
 	. = ..()
@@ -652,12 +652,12 @@
 		return
 	if(!istype(ai))
 		return
-	if( ai.has_ship_access( ship ) )
+	if(ai.has_ship_access(ship))
 		to_chat(user, "<span class='warning'>[ai] already has access to [ship.name]!</span>")
 		return
 
 	to_chat(ai, "<span class='notice'>[user] has upgraded you with access to [ship.name].</span>")
-	ai.add_ship_access( ship )
+	ai.add_ship_access(ship)
 	to_chat(user, "<span class='notice'>You upgrade [ai]. [src] is consumed in the process.</span>")
 	qdel(src)
 

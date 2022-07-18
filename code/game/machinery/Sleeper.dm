@@ -268,7 +268,7 @@
 				total_volume += rs.total_volume
 			if(is_hallucinating && prob(5))
 				chemname = "[pick_list_replacements("hallucination.json", "chemicals")]"
-			chemicals.Add(list(list("title" = chemname, "id" = ckey(temp.name), "volume" = total_volume, "allowed" = chem_allowed(temp) )))
+			chemicals.Add(list(list("title" = chemname, "id" = ckey(temp.name), "volume" = total_volume, "allowed" = chem_allowed(temp))))
 	data["chemicals"] = chemicals
 	data["occupant"] = list()
 	var/mob/living/mob_occupant = occupant

@@ -14,7 +14,7 @@
 	if(istext(new_type))
 		new_type = text2path(new_type)
 
-	if( !ispath(new_type) )
+	if(!ispath(new_type))
 		to_chat(usr, "Invalid type path (new_type = [new_type]) in change_mob_type(). Contact a coder.")
 		return
 
@@ -24,16 +24,16 @@
 
 	var/mob/M
 	if(isturf(location))
-		M = new new_type( location )
+		M = new new_type(location)
 	else
-		M = new new_type( src.loc )
+		M = new new_type(src.loc)
 
 	if(!M || !ismob(M))
 		to_chat(usr, "Type path is not a mob (new_type = [new_type]) in change_mob_type(). Contact a coder.")
 		qdel(M)
 		return
 
-	if( istext(new_name) )
+	if(istext(new_name))
 		M.name = new_name
 		M.real_name = new_name
 	else

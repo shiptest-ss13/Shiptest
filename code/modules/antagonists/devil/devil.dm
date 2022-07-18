@@ -452,7 +452,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 		if(currentMob.mind != owner)
 			message_admins("[key_name_admin(owner)]'s devil resurrection failed due to becoming a new mob.  Aborting.")
 			return -1
-		currentMob.change_mob_type( /mob/living/carbon/human, targetturf, null, 1)
+		currentMob.change_mob_type(/mob/living/carbon/human, targetturf, null, 1)
 		var/mob/living/carbon/human/H = owner.current
 		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/civilian/lawyer/black(H), ITEM_SLOT_ICLOTHING)
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/laceup(H), ITEM_SLOT_FEET)

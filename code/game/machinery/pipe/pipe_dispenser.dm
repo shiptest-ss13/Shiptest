@@ -52,7 +52,7 @@
 			P.add_fingerprint(usr)
 			wait = world.time + 10
 	if(href_list["makemeter"])
-		if(wait < world.time )
+		if(wait < world.time)
 			new /obj/item/pipe_meter(loc)
 			wait = world.time + 15
 	if(href_list["layer_up"])
@@ -112,7 +112,7 @@
 	if (!istype(pipe, /obj/structure/disposalconstruct) && !istype(pipe, /obj/structure/c_transit_tube) && !istype(pipe, /obj/structure/c_transit_tube_pod))
 		return
 
-	if (get_dist(usr, src) > 1 || get_dist(src,pipe) > 1 )
+	if (get_dist(usr, src) > 1 || get_dist(src,pipe) > 1)
 		return
 
 	if (pipe.anchored)

@@ -30,7 +30,7 @@
 			extensions += "|"
 		extensions += "[i]"
 	var/regex/valid_ext = new("\\.([extensions])$", "i")
-	if( !fexists(path) || !(valid_ext.Find(path)) )
+	if(!fexists(path) || !(valid_ext.Find(path)))
 		to_chat(src, "<font color='red'>Error: browse_files(): File not found/Invalid file([path]).</font>")
 		return
 

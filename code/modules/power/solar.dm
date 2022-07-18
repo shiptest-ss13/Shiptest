@@ -411,9 +411,9 @@
 		if(I.use_tool(src, user, 20, volume=50))
 			if (src.machine_stat & BROKEN)
 				to_chat(user, "<span class='notice'>The broken glass falls out.</span>")
-				var/obj/structure/frame/computer/A = new /obj/structure/frame/computer( src.loc )
-				new /obj/item/shard( src.loc )
-				var/obj/item/circuitboard/computer/solar_control/M = new /obj/item/circuitboard/computer/solar_control( A )
+				var/obj/structure/frame/computer/A = new /obj/structure/frame/computer(src.loc)
+				new /obj/item/shard(src.loc)
+				var/obj/item/circuitboard/computer/solar_control/M = new /obj/item/circuitboard/computer/solar_control(A)
 				for (var/obj/C in src)
 					C.forceMove(drop_location())
 				A.circuit = M
@@ -423,8 +423,8 @@
 				qdel(src)
 			else
 				to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
-				var/obj/structure/frame/computer/A = new /obj/structure/frame/computer( src.loc )
-				var/obj/item/circuitboard/computer/solar_control/M = new /obj/item/circuitboard/computer/solar_control( A )
+				var/obj/structure/frame/computer/A = new /obj/structure/frame/computer(src.loc)
+				var/obj/item/circuitboard/computer/solar_control/M = new /obj/item/circuitboard/computer/solar_control(A)
 				for (var/obj/C in src)
 					C.forceMove(drop_location())
 				A.circuit = M

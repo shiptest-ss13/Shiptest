@@ -144,7 +144,7 @@ SUBSYSTEM_DEF(overlays)
 	var/fr_len = remove_overlays.len
 
 	//If not already queued and there is work to be done
-	if(NOT_QUEUED_ALREADY && (fa_len != a_len || fr_len != r_len ))
+	if(NOT_QUEUED_ALREADY && (fa_len != a_len || fr_len != r_len))
 		QUEUE_FOR_COMPILE
 
 /atom/proc/add_overlay(list/overlays)

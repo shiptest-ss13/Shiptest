@@ -42,7 +42,7 @@
 		cavity_object = CH.cavity_item
 		CH.cavity_item = null
 
-	var/mob/living/carbon/monkey/O = new /mob/living/carbon/monkey( loc )
+	var/mob/living/carbon/monkey/O = new /mob/living/carbon/monkey(loc)
 
 	// hash the original name?
 	if(tr_flags & TR_HASHNAME)
@@ -214,7 +214,7 @@
 		cavity_object = CH.cavity_item
 		CH.cavity_item = null
 
-	var/mob/living/carbon/human/O = new( loc )
+	var/mob/living/carbon/human/O = new(loc)
 	for(var/obj/item/C in O.loc)
 		if(C.anchored)
 			continue

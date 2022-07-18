@@ -21,7 +21,7 @@
 		. += E.bang_protect
 
 /mob/living/carbon/is_mouth_covered(head_only = 0, mask_only = 0)
-	if( (!mask_only && head && (head.flags_cover & HEADCOVERSMOUTH)) || (!head_only && wear_mask && (wear_mask.flags_cover & MASKCOVERSMOUTH)) )
+	if((!mask_only && head && (head.flags_cover & HEADCOVERSMOUTH)) || (!head_only && wear_mask && (wear_mask.flags_cover & MASKCOVERSMOUTH)))
 		return TRUE
 
 /mob/living/carbon/is_eyes_covered(check_glasses = TRUE, check_head = TRUE, check_mask = TRUE)
@@ -525,7 +525,7 @@
 			to_chat(src, "<span class='warning'>Your eyes burn.</span>")
 			eyes.applyOrganDamage(rand(2, 4))
 
-		else if( damage >= 3)
+		else if(damage >= 3)
 			to_chat(src, "<span class='warning'>Your eyes itch and burn severely!</span>")
 			eyes.applyOrganDamage(rand(12, 16))
 

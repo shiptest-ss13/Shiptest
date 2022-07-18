@@ -166,7 +166,7 @@
 		to_chat(user, "<span class='notice'>You start to cut [src] apart...</span>")
 		if(I.use_tool(src, user, 20, volume=50, amount=5)) //uses up 5 fuel
 			to_chat(user, "<span class='notice'>You cut [src] apart.</span>")
-			new /obj/item/stack/sheet/plasteel( loc, 5)
+			new /obj/item/stack/sheet/plasteel(loc, 5)
 			qdel(src)
 	else
 		var/old_integ = obj_integrity

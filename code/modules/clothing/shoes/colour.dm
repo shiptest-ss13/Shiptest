@@ -56,7 +56,7 @@
 	if (src.chained)
 		src.chained = null
 		src.slowdown = SHOES_SLOWDOWN
-		new /obj/item/restraints/handcuffs( user.loc )
+		new /obj/item/restraints/handcuffs(user.loc)
 		src.icon_state = "orange"
 	return
 

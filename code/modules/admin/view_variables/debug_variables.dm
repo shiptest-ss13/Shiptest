@@ -1,4 +1,4 @@
-#define VV_HTML_ENCODE(thing) ( sanitize ? html_encode(thing) : thing )
+#define VV_HTML_ENCODE(thing) (sanitize ? html_encode(thing) : thing)
 /// Get displayed variable in VV variable list
 /proc/debug_variable(name, value, level, datum/D, sanitize = TRUE)			//if D is a list, name will be index, and value will be assoc value.
 	var/header

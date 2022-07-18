@@ -27,7 +27,7 @@
 	if(!..())
 		return 0
 	if(!broken && !burnt)
-		if( !(icon_state in icons) )
+		if(!(icon_state in icons))
 			icon_state = initial(icon_state)
 
 //PLASMA

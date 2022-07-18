@@ -65,7 +65,7 @@
 	if(!(flags_1 & NODECONSTRUCT_1))
 		dump()
 		if(!disassembled)
-			new /obj/item/shard( src.loc )
+			new /obj/item/shard(src.loc)
 			trigger_alarm()
 	qdel(src)
 
@@ -73,7 +73,7 @@
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		density = FALSE
 		broken = 1
-		new /obj/item/shard( src.loc )
+		new /obj/item/shard(src.loc)
 		playsound(src, "shatter", 70, TRUE)
 		update_icon()
 		trigger_alarm()
@@ -492,7 +492,7 @@
 			if(isnull(new_price_input) || (payments_acc != potential_acc.registered_account))
 				to_chat(usr, "<span class='warning'>[src] rejects your new price.</span>")
 				return
-			if(!usr.canUseTopic(src, BE_CLOSE, FALSE, NO_TK) )
+			if(!usr.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 				to_chat(usr, "<span class='warning'>You need to get closer!</span>")
 				return
 			new_price_input = clamp(round(new_price_input, 1), 10, 1000)
@@ -530,7 +530,7 @@
 
 /obj/structure/displaycase/forsale/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
-	if(open && user.a_intent == INTENT_HELP )
+	if(open && user.a_intent == INTENT_HELP)
 		if(anchored)
 			to_chat(user, "<span class='notice'>You start unsecuring [src]...</span>")
 		else

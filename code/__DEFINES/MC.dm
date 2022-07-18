@@ -1,4 +1,4 @@
-#define MC_TICK_CHECK ( ( TICK_USAGE > Master.current_ticklimit || src.state != SS_RUNNING ) ? pause() : 0 )
+#define MC_TICK_CHECK ((TICK_USAGE > Master.current_ticklimit || src.state != SS_RUNNING) ? pause() : 0)
 
 #define MC_TICK_REMAINING_MS ((Master.current_ticklimit - TICK_USAGE) * world.tick_lag)
 

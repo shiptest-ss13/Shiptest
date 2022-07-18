@@ -1125,7 +1125,7 @@ Nothing else in the console has ID requirements.
 				autolathe_friendly = FALSE
 			else
 				for(var/material in list_keys(design.materials)) // Only if it can be built using glass, iron, plastic, gold, silver, uranium or titanium. No bluespace or diamond!
-					if( !("[material]" in list("iron", "glass", "plastic", "plasma", "gold", "silver", "uranium", "titanium"))) // God I was having a hell with assoc lists and material datums, so made it all strings. I SWEAR TO GOD
+					if(!("[material]" in list("iron", "glass", "plastic", "plasma", "gold", "silver", "uranium", "titanium"))) // God I was having a hell with assoc lists and material datums, so made it all strings. I SWEAR TO GOD
 						autolathe_friendly = FALSE
 			if(design.build_type & (AUTOLATHE|PROTOLATHE)) // Specifically excludes circuit imprinter and mechfab
 				design.build_type = autolathe_friendly ? (design.build_type | AUTOLATHE) : design.build_type

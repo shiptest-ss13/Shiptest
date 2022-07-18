@@ -478,11 +478,11 @@ GLOBAL_LIST_EMPTY(PDAs)
 				else if((!isnull(cartridge)) && (cartridge.access & CART_ENGINE))
 					scanmode = PDA_SCANNER_HALOGEN
 			if("Honk")
-				if( !(last_noise && world.time < last_noise + 20) )
+				if(!(last_noise && world.time < last_noise + 20))
 					playsound(loc, 'sound/items/bikehorn.ogg', 50, 1)
 					last_noise = world.time
 			if("Trombone")
-				if( !(last_noise && world.time < last_noise + 20) )
+				if(!(last_noise && world.time < last_noise + 20))
 					playsound(loc, 'sound/misc/sadtrombone.ogg', 50, 1)
 					last_noise = world.time
 			if("Gas Scan")

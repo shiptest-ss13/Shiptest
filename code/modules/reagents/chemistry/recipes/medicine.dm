@@ -64,7 +64,7 @@
 
 /datum/chemical_reaction/liquid_solder
 	results = list(/datum/reagent/medicine/liquid_solder = 3)
-	required_reagents = list( /datum/reagent/consumable/ethanol = 1, /datum/reagent/copper = 1, /datum/reagent/silver = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/copper = 1, /datum/reagent/silver = 1)
 	required_temp = 370
 	mix_message = "The mixture becomes a metallic slurry."
 
@@ -246,7 +246,7 @@ WS End*/
 
 /datum/chemical_reaction/psicodine
 	results = list(/datum/reagent/medicine/psicodine = 5)
-	required_reagents = list( /datum/reagent/medicine/mannitol = 2, /datum/reagent/water = 2, /datum/reagent/impedrezene = 1)
+	required_reagents = list(/datum/reagent/medicine/mannitol = 2, /datum/reagent/water = 2, /datum/reagent/impedrezene = 1)
 
 /*WS Begin - No Cobby
 
@@ -315,11 +315,11 @@ WS End */
 	required_reagents = list(/datum/reagent/medicine/lavaland_extract = 1, /datum/reagent/medicine/bonefixingjuice = 1, /datum/reagent/titanium = 5)
 
 /datum/chemical_reaction/pure_soulus_dust_hollow
-	results = list(/datum/reagent/medicine/soulus/pure = 10, )
+	results = list(/datum/reagent/medicine/soulus/pure = 10,)
 	required_reagents = list(/datum/reagent/medicine/soulus = 20, /datum/reagent/medicine/system_cleaner = 1, /datum/reagent/water/hollowwater = 10)
 
 /datum/chemical_reaction/pure_soulus_dust_holy
-	results = list(/datum/reagent/medicine/soulus/pure = 10, )
+	results = list(/datum/reagent/medicine/soulus/pure = 10,)
 	required_reagents = list(/datum/reagent/medicine/soulus = 20, /datum/reagent/medicine/system_cleaner = 1, /datum/reagent/water/holywater = 10)
 
 /datum/chemical_reaction/chartreuse

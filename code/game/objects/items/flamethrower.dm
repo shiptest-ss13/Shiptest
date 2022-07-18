@@ -199,7 +199,7 @@
 		audible_message("<span class='danger'>The [src] sputters.</span>")
 		playsound(src, 'sound/weapons/gun/flamethrower/flamethrower_empty.ogg', 50, TRUE, -3)
 		return
-	playsound(src, pick('sound/weapons/gun/flamethrower/flamethrower1.ogg','sound/weapons/gun/flamethrower/flamethrower2.ogg','sound/weapons/gun/flamethrower/flamethrower3.ogg' ), 50, TRUE, -3)
+	playsound(src, pick('sound/weapons/gun/flamethrower/flamethrower1.ogg','sound/weapons/gun/flamethrower/flamethrower2.ogg','sound/weapons/gun/flamethrower/flamethrower3.ogg'), 50, TRUE, -3)
 
 	operating = TRUE //anti-spam tool, is unset when the flame projectile goes away
 
