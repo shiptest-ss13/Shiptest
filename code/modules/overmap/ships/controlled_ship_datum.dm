@@ -129,6 +129,8 @@
 	shuttle_port.movement_force = list("KNOCKDOWN" = FLOOR(est_thrust / 50, 1), "THROW" = FLOOR(est_thrust / 500, 1))
 	priority_announce("Beginning docking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
 	shuttle_port.create_ripples(ticket.target_port, dock_time)
+	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.landing_sound)
+	shuttle_port.play_engine_sound(ticket.target_port, shuttle_port.landing_sound)
 
 /datum/overmap/ship/controlled/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	shuttle_port.initiate_docking(ticket.target_port)
@@ -150,6 +152,7 @@
 			SSshuttle.generate_transit_dock(shuttle_port) // We need a port, NOW.
 
 	priority_announce("Beginning undocking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
+	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.takeoff_sound)
 
 	. = ..()
 	dock_time = dock_time_temp // Set it back to the original value if it was changed

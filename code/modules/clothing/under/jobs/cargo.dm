@@ -51,6 +51,7 @@
 	icon_state = "explorer"
 	item_state = "explorer"
 	can_adjust = TRUE
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 //Shiptest alt jumpsuits
 

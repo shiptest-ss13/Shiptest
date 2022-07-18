@@ -3,15 +3,6 @@
 /area/ruin/powered/beach
 	icon_state = "dk_yellow"
 
-/area/ruin/powered/clownplanet
-	name = "Clown Planet"
-	icon_state = "dk_yellow"
-	ambientsounds = list('sound/ambience/clown.ogg')
-
-/area/ruin/unpowered/gaia
-	name = "Patch of Eden"
-	icon_state = "dk_yellow"
-
 /area/ruin/powered/snow_biodome
 	icon_state = "dk_yellow"
 
@@ -22,14 +13,8 @@
 	name = "Free Golem Ship"
 	icon_state = "dk_yellow"
 
-/area/ruin/powered/greed
-	icon_state = "dk_yellow"
-
 /area/ruin/unpowered/hierophant
 	name = "Hierophant's Arena"
-	icon_state = "dk_yellow"
-
-/area/ruin/powered/pride
 	icon_state = "dk_yellow"
 
 /area/ruin/powered/seedvault
@@ -101,13 +86,3 @@
 	power_equip = FALSE
 	power_light = FALSE
 	poweralm = FALSE
-
-//ash walker nest
-/area/ruin/unpowered/ash_walkers
-	icon_state = "red"
-
-/area/ruin/powered/kinggoat_arena
-	name = "King Goat Arena"
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
-	area_flags = NOTELEPORT
-	icon_state = "dk_yellow"
