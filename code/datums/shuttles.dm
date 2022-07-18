@@ -115,41 +115,13 @@
 	job_slots = list(new /datum/job/assistant = 5) // There will already be a captain, probably!
 	file_name = "custom_shuttle" // Dummy
 
-/// Mining shuttles
-/datum/map_template/shuttle/mining
-	category = "mining"
-
-/datum/map_template/shuttle/mining/kilo
-	file_name = "mining_kilo"
-	name = "mining shuttle (Kilo)"
-
-/datum/map_template/shuttle/mining/large
-	file_name = "mining_large"
-	name = "mining shuttle (Large)"
-
 /// Syndicate Infiltrator variants
 /datum/map_template/shuttle/infiltrator
 	category = "infiltrator"
 
-/datum/map_template/shuttle/infiltrator/basic
-	file_name = "infiltrator_basic"
-	name = "basic syndicate infiltrator"
-
 /datum/map_template/shuttle/infiltrator/advanced
 	file_name = "infiltrator_advanced"
 	name = "advanced syndicate infiltrator"
-
-/// Aux base templates
-/datum/map_template/shuttle/aux_base
-	category = "aux_base"
-
-/datum/map_template/shuttle/aux_base/default
-	file_name = "aux_base_default"
-	name = "auxilliary base (Default)"
-
-/datum/map_template/shuttle/aux_base/small
-	file_name = "aux_base_small"
-	name = "auxilliary base (Small)"
 
 /// Pirate ship templates
 /datum/map_template/shuttle/pirate
@@ -199,14 +171,3 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
-/// Escape pod map templates
-/datum/map_template/shuttle/escape_pod
-	category = "escape_pod"
-
-/datum/map_template/shuttle/escape_pod/default
-	file_name = "escape_pod_default"
-	name = "escape pod (Default)"
-
-/datum/map_template/shuttle/escape_pod/large
-	file_name = "escape_pod_large"
-	name = "escape pod (Large)"
