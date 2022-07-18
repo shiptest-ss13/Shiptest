@@ -282,7 +282,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
 
 /datum/outfit/job/security/pirate/pilot
-	name = "Pod Jockey (pilot)"
+	name = "Pod Jockey (Pilot)"
 	uniform = /obj/item/clothing/under/costume/singer/yellow
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/sunglasses/big
