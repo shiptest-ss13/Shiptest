@@ -119,3 +119,9 @@
 	description = "An overgrown crashed Condor Class, a forgotten remnant of the Corporate Wars."
 	suffix = "jungle_interceptor.dmm"
 
+/datum/map_template/ruin/jungle/paradise
+	name = "Hidden paradise"
+	id = "paradise"
+	description = "a crashed shuttle, and a hidden beautiful lake."
+	suffix = "jungle_paradise.dmm"
+
