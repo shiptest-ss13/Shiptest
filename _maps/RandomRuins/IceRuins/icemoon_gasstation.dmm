@@ -9,7 +9,6 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/pirate/ranged/space,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "cX" = (
@@ -34,10 +33,6 @@
 "eN" = (
 /obj/structure/rack,
 /obj/structure/window,
-/obj/item/gun/ballistic/automatic/toy/pistol/unrestricted,
-/obj/item/gun/ballistic/automatic/toy/pistol/unrestricted,
-/obj/item/ammo_box/magazine/toy/pistol,
-/obj/item/ammo_box/magazine/toy/pistol,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "eR" = (
@@ -49,7 +44,6 @@
 /obj/structure/window{
 	dir = 4
 	},
-/obj/item/dualsaber/toy,
 /obj/item/toy/foamblade,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
@@ -88,10 +82,10 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "hG" = (
+/obj/effect/turf_decal/corner/red/full,
 /obj/machinery/door/airlock/glass_large{
 	doorOpen = 'sound/machines/defib_success.ogg'
 	},
-/obj/effect/turf_decal/corner/red/full,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "jd" = (
@@ -131,10 +125,6 @@
 /obj/structure/window{
 	dir = 4
 	},
-/obj/item/reagent_containers/food/snacks/cheesyburrito,
-/obj/item/reagent_containers/food/snacks/cheesyburrito,
-/obj/item/reagent_containers/food/snacks/fuegoburrito,
-/obj/item/reagent_containers/food/snacks/fuegoburrito,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "lP" = (
@@ -146,8 +136,7 @@
 /obj/structure/window{
 	dir = 1
 	},
-/obj/item/gun/ballistic/automatic/c20r/toy/unrestricted,
-/obj/item/ammo_box/magazine/toy/smg,
+/obj/item/toy/cards/deck/syndicate,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "mW" = (
@@ -214,8 +203,6 @@
 	},
 /obj/item/reagent_containers/food/snacks/chips,
 /obj/item/reagent_containers/food/snacks/chips,
-/obj/item/reagent_containers/food/snacks/chips,
-/obj/item/reagent_containers/food/snacks/chips,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "sd" = (
@@ -252,7 +239,6 @@
 	dir = 8
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/item/storage/cans/sixbeer,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "ut" = (
@@ -283,11 +269,11 @@
 /area/ruin/unpowered/gasstation)
 "vZ" = (
 /obj/structure/table,
-/obj/item/storage/box/donkpockets,
 /obj/item/storage/box/drinkingglasses,
 /obj/effect/turf_decal/corner/bar/half{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "xX" = (
@@ -323,8 +309,6 @@
 /obj/structure/rack,
 /obj/structure/window,
 /obj/item/gun/ballistic/shotgun/toy,
-/obj/item/gun/ballistic/shotgun/toy,
-/obj/item/ammo_box/foambox,
 /obj/item/ammo_box/foambox,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
@@ -403,9 +387,6 @@
 	dir = 8
 	},
 /obj/item/reagent_containers/food/snacks/sosjerky,
-/obj/item/reagent_containers/food/snacks/sosjerky,
-/obj/item/reagent_containers/food/snacks/no_raisin,
-/obj/item/reagent_containers/food/snacks/no_raisin,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "FK" = (
@@ -433,9 +414,7 @@
 	dir = 1
 	},
 /obj/item/reagent_containers/food/snacks/cornchips,
-/obj/item/reagent_containers/food/snacks/cornchips,
-/obj/item/reagent_containers/food/snacks/cornchips,
-/obj/item/reagent_containers/food/snacks/cornchips,
+/obj/item/trash/boritos,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "IH" = (
@@ -544,7 +523,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/unpowered/gasstation)
 "Pp" = (
-/obj/item/gun/ballistic/rifle/boltaction,
+/obj/item/gun/ballistic/automatic/pistol/disposable,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "Pq" = (
@@ -592,8 +571,6 @@
 	dir = 4
 	},
 /obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/burrito,
-/obj/item/reagent_containers/food/snacks/carneburrito,
 /obj/item/reagent_containers/food/snacks/carneburrito,
 /turf/open/floor/plating,
 /area/ruin/unpowered/gasstation)
@@ -678,7 +655,6 @@
 /obj/structure/window{
 	dir = 8
 	},
-/obj/item/toy/cards/deck/syndicate,
 /obj/item/toy/balloon/syndicate,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
@@ -695,11 +671,11 @@
 	pixel_x = 10;
 	pixel_y = -18
 	},
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans{
+/obj/item/trash/can/food/beans{
 	pixel_x = 5;
 	pixel_y = 15
 	},
+/obj/item/trash/can/food/beans,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered/gasstation)
 "VH" = (
@@ -718,11 +694,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "Wg" = (
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
-	pixel_x = -5;
-	pixel_y = -2
-	},
 /obj/item/reagent_containers/food/drinks/bottle/vodka{
 	pixel_x = 8;
 	pixel_y = -2
@@ -772,10 +743,6 @@
 /obj/structure/window{
 	dir = 8
 	},
-/obj/item/ammo_box/foambox,
-/obj/item/ammo_box/foambox,
-/obj/item/ammo_box/foambox,
-/obj/item/ammo_box/foambox,
 /turf/open/floor/plating,
 /area/ruin/unpowered/gasstation)
 "ZF" = (
@@ -787,8 +754,6 @@
 /obj/structure/window{
 	dir = 1
 	},
-/obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted,
-/obj/item/ammo_box/magazine/toy/m762,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 
@@ -1041,7 +1006,7 @@ JA
 yI
 Dy
 vE
-Nt
+eN
 Rl
 ls
 IF
@@ -1085,7 +1050,7 @@ SN
 FK
 Ih
 ke
-xX
+rd
 mW
 xX
 xX
