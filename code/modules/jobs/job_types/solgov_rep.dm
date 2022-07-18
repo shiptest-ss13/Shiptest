@@ -60,3 +60,23 @@ SolGov Representative
 	uniform = /obj/item/clothing/under/solgov/formal/terragov
 	accessory = /obj/item/clothing/accessory/waistcoat
 	suit = /obj/item/clothing/suit/toggle/solgov/terragov
+
+/datum/outfit/job/solgov/syndicate/aclf
+	name = "Bridge Officer"
+	id = /obj/item/card/id/syndicate_command/crew_id
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = null
+	uniform = /obj/item/clothing/under/syndicate/aclf
+	ears = /obj/item/radio/headset/syndicate
+	glasses = /obj/item/clothing/glasses/sunglasses
+	suit = null
+	head = null
+	accessory = null
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic)
+

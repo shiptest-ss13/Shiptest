@@ -161,7 +161,7 @@
 	name = "shaft miner PDA"
 	icon_state = "pda-miner"
 
-/obj/item/pda/syndicate
+/obj/item/pda/syndicate/nukeop
 	default_cartridge = /obj/item/cartridge/virus/syndicate
 	icon_state = "pda-syndi"
 	name = "military PDA"
