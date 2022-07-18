@@ -81,6 +81,9 @@
 
 	// remove any stragglers just in case, and clear the list
 	remove_ripples()
+
+	play_engine_sound(src, launch_sound)
+	play_engine_sound(old_dock, launch_sound)
 	return DOCKING_SUCCESS
 
 /obj/docking_port/mobile/proc/kill_atmos_infos(list/old_turfs, list/new_turfs)
