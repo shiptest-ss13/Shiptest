@@ -59,13 +59,6 @@
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
-"ap" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/cable/yellow{
-	icon_state = "4-10"
-	},
-/turf/open/floor/plating,
-/area/ruin/jungle/paradise/comms)
 "as" = (
 /obj/structure/spacevine,
 /obj/structure/fence/cut/large,
@@ -447,6 +440,7 @@
 /obj/machinery/computer/telecomms/server{
 	dir = 1
 	},
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/paradise/comms)
 "cQ" = (
@@ -541,13 +535,6 @@
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/jungle/paradise/shuttle)
-"du" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating,
-/area/ruin/jungle/paradise/comms)
 "dv" = (
 /obj/effect/turf_decal/box/corners,
 /obj/structure/closet/crate/freezer/blood,
@@ -564,6 +551,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-5"
 	},
+/obj/effect/turf_decal/techfloor/corner,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
 "dx" = (
@@ -586,6 +574,10 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals7,
+/obj/effect/turf_decal/steeldecal/steel_decals7{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/comms)
 "dJ" = (
@@ -593,6 +585,13 @@
 /obj/structure/noticeboard{
 	pixel_y = 31
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/paradise/comms)
+"dM" = (
+/obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -639,6 +638,7 @@
 /obj/effect/turf_decal/box/corners,
 /obj/structure/mopbucket,
 /obj/item/mop,
+/obj/effect/turf_decal/techfloor/corner,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
 "dZ" = (
@@ -1026,9 +1026,6 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
-"gv" = (
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/darkmisc)
 "gw" = (
 /obj/machinery/door/airlock/external{
 	name = "Emergency Recovery Airlock"
@@ -1071,13 +1068,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
-"gG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/stack/rods,
-/turf/open/floor/mineral/titanium,
-/area/ruin/jungle/paradise/shuttle)
 "gK" = (
 /obj/structure/flora/rock/jungle{
 	pixel_x = -12;
@@ -1110,6 +1105,12 @@
 	},
 /obj/structure/lattice/clockwork{
 	icon_state = "lattice-6"
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
+"ha" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -1351,15 +1352,6 @@
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
-"iB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/stack/ore/diamond{
-	pixel_x = 6;
-	pixel_y = -6;
-	amount = 2
-	},
-/turf/open/floor/concrete/slab_3,
-/area/ruin/jungle/paradise/construction)
 "iH" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1761,6 +1753,13 @@
 /obj/structure/firelock_frame/window,
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/jungle/paradise/shuttle)
+"kP" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/paradise/comms)
 "kU" = (
 /obj/structure/flora/rock/jungle{
 	pixel_x = 2;
@@ -1966,6 +1965,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
 "md" = (
@@ -1984,6 +1986,7 @@
 	anchored = 1;
 	dir = 1
 	},
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/paradise/comms)
 "mg" = (
@@ -2146,16 +2149,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
-"ne" = (
-/obj/structure/closet/crate,
-/obj/item/stack/sheet/mineral/gold/five,
-/obj/item/stack/sheet/mineral/diamond,
-/obj/item/stack/sheet/mineral/diamond,
-/obj/item/stack/sheet/mineral/plasma/twenty,
-/obj/item/stack/sheet/mineral/uranium/five,
-/obj/item/stack/sheet/mineral/silver/twenty,
-/turf/open/floor/concrete/slab_3,
-/area/ruin/jungle/paradise/construction)
 "nf" = (
 /obj/item/radio/intercom{
 	dir = 1;
@@ -2523,6 +2516,9 @@
 	icon_state = "box_corners"
 	},
 /obj/structure/radioactive/stack,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
 "pg" = (
@@ -2568,6 +2564,10 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/jungle/paradise/shuttle)
+"pr" = (
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "pt" = (
 /obj/item/stack/ore/salvage/scrapplasma/five{
 	pixel_x = 8;
@@ -2638,6 +2638,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/paradise/shuttle)
+"pK" = (
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/paradise/comms)
 "pN" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -2772,12 +2778,6 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
-"qy" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/turf/open/water/jungle,
-/area/ruin/jungle/paradise/darkmisc)
 "qz" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -2793,12 +2793,6 @@
 "qH" = (
 /turf/open/floor/pod/dark,
 /area/ruin/jungle/paradise/dorms)
-"qJ" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/water/jungle,
-/area/ruin/jungle/paradise/darkmisc)
 "qM" = (
 /turf/closed/wall,
 /area/ruin/jungle/paradise/comms)
@@ -2822,6 +2816,9 @@
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_y = 24
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /turf/open/floor/pod/light,
 /area/ruin/jungle/paradise/med)
 "qY" = (
@@ -2836,8 +2833,31 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/structure/railing,
 /obj/structure/table/reinforced,
+/obj/item/research_notes/loot/medium{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/item/research_notes/loot/medium{
+	pixel_x = 4
+	},
+/obj/structure/railing{
+	dir = 2;
+	layer = 3.9
+	},
+/obj/item/radio{
+	desc = "An old handheld radio. You could use it, if you really wanted to.";
+	icon_state = "radio";
+	name = "old radio";
+	pixel_y = 5;
+	pixel_x = 4
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals7{
+	dir = 8
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals7{
+	dir = 2
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/comms)
 "rg" = (
@@ -3029,6 +3049,12 @@
 /obj/structure/flora/stump,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
+"su" = (
+/obj/effect/turf_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/paradise/comms)
 "sx" = (
 /obj/structure/flora/grass/jungle/b{
 	pixel_x = -9;
@@ -3081,9 +3107,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle/paradise/darkmisc)
-"sE" = (
-/turf/open/floor/plating/dirt/jungle/wasteland,
-/area/ruin/jungle/paradise/darkmisc)
 "sG" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -3097,6 +3120,9 @@
 "sJ" = (
 /obj/effect/turf_decal/steeldecal/steel_decals9,
 /obj/structure/rack,
+/obj/item/storage/belt/utility/full{
+	pixel_x = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/paradise/comms)
 "sP" = (
@@ -3270,13 +3296,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/misc)
-"uf" = (
-/obj/item/stack/rods{
-	pixel_y = 1;
-	pixel_x = -9
-	},
-/turf/open/floor/mineral/titanium/blue,
-/area/ruin/jungle/paradise/shuttle)
 "uh" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -3316,10 +3335,6 @@
 "un" = (
 /turf/closed/wall/rust,
 /area/ruin/jungle/paradise/comms)
-"up" = (
-/obj/structure/flora/ausbushes/stalkybush,
-/turf/open/water/jungle,
-/area/ruin/jungle/paradise/darkmisc)
 "ur" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -3330,10 +3345,6 @@
 	pixel_y = 6
 	},
 /turf/open/floor/wood,
-/area/ruin/jungle/paradise/darkmisc)
-"ut" = (
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "uu" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3653,6 +3664,7 @@
 /obj/machinery/computer/mech_bay_power_console{
 	dir = 1
 	},
+/obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
@@ -3749,6 +3761,13 @@
 	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
+"xl" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/obj/item/stack/rods,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/paradise/shuttle)
 "xm" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/structure/cable/yellow{
@@ -3872,6 +3891,13 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
+"xS" = (
+/obj/item/stack/rods{
+	pixel_y = 1;
+	pixel_x = -9
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/ruin/jungle/paradise/shuttle)
 "xW" = (
 /obj/structure/flora/grass/jungle{
 	pixel_x = 9;
@@ -3943,6 +3969,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/wrapping,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/paradise/comms)
 "yv" = (
@@ -3959,6 +3988,13 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
+"yB" = (
+/obj/item/flashlight/lantern{
+	pixel_y = -2;
+	pixel_x = 12
+	},
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/mine)
 "yH" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable,
@@ -4089,6 +4125,9 @@
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
+"zF" = (
+/turf/open/floor/plating/dirt/dark,
+/area/ruin/jungle/paradise/darkmisc)
 "zG" = (
 /obj/structure/flora/rock/pile/largejungle{
 	pixel_x = -1;
@@ -4182,9 +4221,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/darkmisc)
-"Ac" = (
-/turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
 "Ae" = (
 /obj/structure/railing{
@@ -4307,6 +4343,9 @@
 	icon_state = "box_corners"
 	},
 /obj/structure/closet/secure_closet/freezer/kitchen/mining,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
 "AT" = (
@@ -4323,12 +4362,11 @@
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
-"AY" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 5
-	},
-/turf/open/water/jungle,
-/area/ruin/jungle/paradise/darkmisc)
+"AX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/rods,
+/turf/open/floor/mineral/titanium,
+/area/ruin/jungle/paradise/shuttle)
 "Ba" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/dirt/jungle/wasteland,
@@ -4385,6 +4423,10 @@
 	icon_state = "titanium_dam4"
 	},
 /area/ruin/jungle/paradise/shuttle)
+"BA" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "BB" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/railing{
@@ -4414,6 +4456,10 @@
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
+"BU" = (
+/obj/effect/turf_decal/steeldecal,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/paradise/comms)
 "BW" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -4547,12 +4593,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
-"CJ" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 10
-	},
-/turf/open/water/jungle,
-/area/ruin/jungle/paradise/darkmisc)
 "CL" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -4611,6 +4651,9 @@
 /area/ruin/jungle/paradise/shuttle)
 "Dd" = (
 /obj/machinery/computer/operating,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /turf/open/floor/pod/light,
 /area/ruin/jungle/paradise/med)
 "Di" = (
@@ -4627,6 +4670,9 @@
 /obj/structure/frame/computer{
 	dir = 4
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/paradise/comms)
 "Dn" = (
@@ -4639,6 +4685,9 @@
 "Dr" = (
 /obj/structure/chair/office{
 	dir = 8
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/paradise/comms)
@@ -4659,12 +4708,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/jungle/paradise/construction)
-"DD" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/turf/open/floor/wood,
-/area/ruin/jungle/paradise/darkmisc)
 "DE" = (
 /obj/item/stack/ore/salvage/scrapgold/five{
 	pixel_y = 9;
@@ -4752,6 +4795,9 @@
 	pixel_y = -3;
 	pixel_x = 3
 	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
 "DX" = (
@@ -4759,6 +4805,16 @@
 /obj/machinery/suit_storage_unit/security,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/paradise/shuttle)
+"DZ" = (
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/mineral/gold/five,
+/obj/item/stack/sheet/mineral/diamond,
+/obj/item/stack/sheet/mineral/diamond,
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/silver/twenty,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/jungle/paradise/construction)
 "Ef" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
@@ -4785,12 +4841,6 @@
 "Ep" = (
 /obj/structure/lattice/clockwork{
 	icon_state = "lattice-10"
-	},
-/turf/open/water/jungle,
-/area/ruin/jungle/paradise/darkmisc)
-"Er" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -4865,6 +4915,15 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/misc)
+"ET" = (
+/obj/structure/cable/yellow{
+	icon_state = "5-6"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals9{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/paradise/comms)
 "EU" = (
 /obj/machinery/microwave{
 	pixel_y = 5
@@ -4919,6 +4978,12 @@
 	pixel_y = -11
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/darkmisc)
+"Fo" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
 /area/ruin/jungle/paradise/darkmisc)
 "Fq" = (
 /obj/structure/flora/ausbushes/sparsegrass{
@@ -5012,7 +5077,8 @@
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "FU" = (
-/turf/closed/mineral/random/jungle,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
 "FW" = (
 /obj/effect/turf_decal/industrial/caution{
@@ -5079,6 +5145,15 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/shuttle)
+"Gt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/ore/diamond{
+	pixel_x = 6;
+	pixel_y = -6;
+	amount = 2
+	},
+/turf/open/floor/concrete/slab_3,
+/area/ruin/jungle/paradise/construction)
 "Gx" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/reagent_containers/food/snacks/grown/berries/poison,
@@ -5129,12 +5204,6 @@
 /obj/structure/reagent_dispensers/peppertank,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/paradise/shuttle)
-"GN" = (
-/obj/structure/cable/yellow{
-	icon_state = "5-6"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/paradise/comms)
 "GO" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/berry/poison,
@@ -5320,14 +5389,7 @@
 	},
 /area/ruin/jungle/paradise/shuttle)
 "Iw" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/paradise/darkmisc)
-"Iz" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/water/jungle,
+/turf/closed/mineral/random/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "IA" = (
 /obj/structure/flora/grass/jungle/b{
@@ -5388,7 +5450,7 @@
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
 "Jc" = (
-/turf/open/floor/plating/dirt/dark,
+/turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "Jg" = (
 /obj/structure/flora/grass/jungle{
@@ -5416,13 +5478,9 @@
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
-"Jp" = (
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/item/stack/rods,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/paradise/shuttle)
+"Jq" = (
+/turf/open/floor/plating/dirt/jungle/wasteland,
+/area/ruin/jungle/paradise/darkmisc)
 "Js" = (
 /obj/structure/flora/grass/jungle{
 	pixel_y = 6;
@@ -5449,6 +5507,9 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
@@ -5504,6 +5565,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/jungle/paradise/construction)
+"JP" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "JX" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5591,6 +5658,9 @@
 	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
+"KC" = (
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/darkmisc)
 "KE" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -5606,6 +5676,12 @@
 	dir = 5
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland,
+/area/ruin/jungle/paradise/darkmisc)
+"KL" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "KO" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -6321,6 +6397,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/construction)
+"OW" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "OY" = (
 /obj/structure/railing/corner{
 	dir = 2;
@@ -6554,6 +6636,12 @@
 "QS" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/ashplanet/wateryrock,
+/area/ruin/jungle/paradise/darkmisc)
+"QT" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "QW" = (
 /obj/structure/rack,
@@ -6946,6 +7034,12 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/jungle/paradise/construction)
+"Ud" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "Ue" = (
 /obj/item/stack/ore/salvage/scrapmetal/five,
 /obj/effect/turf_decal/weather/dirt{
@@ -7116,8 +7210,23 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/structure/railing,
 /obj/structure/table/reinforced,
+/obj/structure/railing{
+	dir = 2;
+	layer = 3.9
+	},
+/obj/machinery/recharger{
+	pixel_x = 7
+	},
+/obj/item/clipboard{
+	pixel_x = -5
+	},
+/obj/item/pen/charcoal{
+	pixel_x = -4
+	},
+/obj/item/taperecorder{
+	pixel_x = -11
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/comms)
 "Vp" = (
@@ -7410,6 +7519,12 @@
 /obj/item/cautery,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/jungle/paradise/shuttle)
+"WY" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "WZ" = (
 /obj/structure/closet/crate/freezer,
 /obj/item/reagent_containers/food/snacks/meat/slab/chicken,
@@ -7427,9 +7542,6 @@
 	pixel_x = -11;
 	pixel_y = -8
 	},
-/turf/open/water/jungle,
-/area/ruin/jungle/paradise/darkmisc)
-"Xe" = (
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "Xh" = (
@@ -7475,9 +7587,6 @@
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/jungle/paradise/darkmisc)
 "Xy" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "XD" = (
@@ -7916,13 +8025,13 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -7982,18 +8091,18 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -8047,21 +8156,21 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 yo
 yo
 yo
 yo
 yo
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -8114,11 +8223,11 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 yo
 OC
 MP
@@ -8127,10 +8236,10 @@ yo
 yo
 yo
 yo
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -8155,12 +8264,12 @@ sc
 "}
 (5,1,1) = {"
 sc
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -8180,25 +8289,25 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 yo
 Lv
 Dr
-GN
-gn
+ET
+pK
 Dl
 yt
 yo
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -8222,14 +8331,14 @@ sc
 sc
 "}
 (6,1,1) = {"
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -8248,16 +8357,16 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 gB
 La
 SM
 DW
 yo
 yo
-ap
+kP
 XQ
 kC
 gn
@@ -8266,8 +8375,8 @@ yo
 yo
 yo
 yo
-FU
-FU
+Iw
+Iw
 sc
 sc
 sc
@@ -8290,15 +8399,15 @@ sc
 sc
 "}
 (7,1,1) = {"
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -8316,9 +8425,9 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 mc
 fW
 CF
@@ -8329,13 +8438,13 @@ aC
 qM
 dJ
 Lz
-gn
+su
 ZP
 Oi
 sA
 yo
-FU
-FU
+Iw
+Iw
 sc
 sc
 sc
@@ -8358,15 +8467,15 @@ sc
 sc
 "}
 (8,1,1) = {"
-FU
-FU
+Iw
+Iw
 Ag
 Db
 Db
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -8384,26 +8493,26 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 xN
 bf
 hO
 Xn
 oO
 PL
-du
+dM
 qM
-du
+dM
 gn
 sJ
 Nj
 xG
 mb
 yo
-FU
-FU
+Iw
+Iw
 sc
 sc
 sc
@@ -8426,15 +8535,15 @@ sc
 sc
 "}
 (9,1,1) = {"
-FU
-FU
+Iw
+Iw
 bY
 nx
 Db
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 sc
 Rv
 Rv
@@ -8452,8 +8561,8 @@ FH
 Zk
 Rv
 sc
-FU
-FU
+Iw
+Iw
 Qu
 oM
 Yx
@@ -8463,15 +8572,15 @@ LC
 sr
 CA
 un
-du
-gn
+dM
+BU
 nR
 uh
 kp
 dI
 rf
-FU
-FU
+Iw
+Iw
 sc
 sc
 sc
@@ -8494,15 +8603,15 @@ sc
 sc
 "}
 (10,1,1) = {"
-FU
-FU
+Iw
+Iw
 JX
 nx
 vH
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 Rv
 Pa
 CT
@@ -8520,9 +8629,9 @@ Pa
 Zk
 TW
 Rv
-FU
-FU
-FU
+Iw
+Iw
+Iw
 AS
 fW
 Rn
@@ -8531,15 +8640,15 @@ lB
 hW
 cr
 un
-du
+dM
 gn
 MW
 Za
 SW
 ul
 Vl
-FU
-FU
+Iw
+Iw
 sc
 sc
 sc
@@ -8562,15 +8671,15 @@ sc
 sc
 "}
 (11,1,1) = {"
-FU
-FU
+Iw
+Iw
 PK
 nx
 nx
 Vg
-FU
-FU
-FU
+Iw
+Iw
+Iw
 Rv
 Rv
 TW
@@ -8587,10 +8696,10 @@ Zk
 Qv
 CT
 Vw
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 pd
 fW
 Ej
@@ -8599,15 +8708,15 @@ yo
 ba
 kC
 qM
-du
+dM
 cg
 cP
 bV
 ys
 XP
 yo
-FU
-FU
+Iw
+Iw
 sc
 sc
 sc
@@ -8630,15 +8739,15 @@ sc
 sc
 "}
 (12,1,1) = {"
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 nx
 hy
 Vg
-FU
-FU
+Iw
+Iw
 FZ
 Pn
 Lx
@@ -8655,14 +8764,14 @@ qt
 is
 Wt
 tO
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 yo
 hW
 cr
@@ -8674,9 +8783,9 @@ DS
 WO
 Xq
 yo
-FU
-FU
-FU
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -8698,15 +8807,15 @@ sc
 sc
 "}
 (13,1,1) = {"
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 nx
 nx
 Qe
-FU
-FU
+Iw
+Iw
 rW
 Gq
 Ey
@@ -8723,14 +8832,14 @@ JA
 fh
 xY
 AL
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 dz
 jX
 Oj
@@ -8742,9 +8851,9 @@ yo
 yo
 yo
 yo
-FU
-FU
-FU
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -8766,14 +8875,14 @@ sc
 sc
 "}
 (14,1,1) = {"
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 mw
 aM
 nx
-FU
+Iw
 wV
 wV
 wV
@@ -8791,8 +8900,8 @@ Ly
 dO
 eA
 tj
-FU
-FU
+Iw
+Iw
 VK
 VK
 Mn
@@ -8803,17 +8912,17 @@ dz
 Oj
 mD
 dz
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -8834,11 +8943,11 @@ sc
 sc
 "}
 (15,1,1) = {"
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 Ry
 nx
 kF
@@ -8859,8 +8968,8 @@ hV
 Sf
 jY
 hV
-FU
-FU
+Iw
+Iw
 VK
 pY
 Cp
@@ -8874,15 +8983,15 @@ dz
 sB
 Fv
 rS
-FU
-FU
+Iw
+Iw
 lX
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -8902,15 +9011,15 @@ sc
 sc
 "}
 (16,1,1) = {"
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 Ca
-FU
-FU
+Iw
+Iw
 Am
 wV
 wV
@@ -8928,7 +9037,7 @@ hV
 hV
 AB
 lX
-FU
+Iw
 VK
 Dd
 vb
@@ -8946,12 +9055,12 @@ Nv
 Kq
 iq
 uw
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 Rv
 Rv
 Rv
@@ -8971,15 +9080,15 @@ sc
 "}
 (17,1,1) = {"
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 wV
 wv
 Wy
@@ -8995,8 +9104,8 @@ hV
 hV
 hV
 hV
-FU
-FU
+Iw
+Iw
 VK
 qX
 eG
@@ -9015,11 +9124,11 @@ Rv
 vs
 Pa
 QW
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 Rv
 Pa
 Pa
@@ -9040,13 +9149,13 @@ sc
 (18,1,1) = {"
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 Pu
 wV
 wv
@@ -9063,8 +9172,8 @@ Hf
 wv
 wv
 hV
-FU
-FU
+Iw
+Iw
 VK
 bR
 jQ
@@ -9084,11 +9193,11 @@ Rv
 Rv
 Rv
 Rv
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 tL
 AN
 Pa
@@ -9108,12 +9217,12 @@ sc
 (19,1,1) = {"
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 Ps
 wV
 wV
@@ -9131,8 +9240,8 @@ Xm
 wv
 wv
 jH
-FU
-FU
+Iw
+Iw
 VK
 VK
 VK
@@ -9154,9 +9263,9 @@ mW
 Rv
 Pa
 Mr
-FU
-FU
-FU
+Iw
+Iw
+Iw
 zw
 nr
 vL
@@ -9177,10 +9286,10 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 lX
 ta
 wV
@@ -9199,13 +9308,13 @@ CX
 Ji
 wv
 wv
-FU
-FU
-FU
-gv
+Iw
+Iw
+Iw
+Jc
 aY
 pv
-DD
+Fo
 Ka
 YS
 sD
@@ -9222,9 +9331,9 @@ Rv
 Rv
 Pa
 gK
-FU
-FU
-FU
+Iw
+Iw
+Iw
 LR
 KR
 ZR
@@ -9245,11 +9354,11 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 LS
 wv
 wv
@@ -9267,8 +9376,8 @@ CX
 CX
 Ji
 wv
-FU
-FU
+Iw
+Iw
 lX
 PY
 Ko
@@ -9290,9 +9399,9 @@ GO
 Rv
 Pa
 SD
-FU
-FU
-FU
+Iw
+Iw
+Iw
 MD
 ak
 eE
@@ -9314,10 +9423,10 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 LS
 wv
 wv
@@ -9335,9 +9444,9 @@ XK
 sS
 kK
 wv
-FU
-FU
-FU
+Iw
+Iw
+Iw
 Fm
 lp
 Pd
@@ -9359,9 +9468,9 @@ Rv
 Pa
 Xh
 lX
-FU
-FU
-FU
+Iw
+Iw
+Iw
 Pa
 Pa
 ak
@@ -9382,10 +9491,10 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 LS
 wv
 wv
@@ -9404,16 +9513,16 @@ Ef
 yS
 wv
 wv
-FU
-FU
+Iw
+Iw
 dR
 je
-up
-Xe
-qJ
-qJ
-qJ
-qJ
+BA
+Xy
+Ud
+Ud
+Ud
+Ud
 FY
 iH
 sV
@@ -9426,10 +9535,10 @@ lx
 KB
 Rx
 gs
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 kq
 MV
 Pa
@@ -9450,10 +9559,10 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 Wo
 wv
 Oq
@@ -9472,16 +9581,16 @@ Qa
 VW
 wv
 wv
-FU
-FU
+Iw
+Iw
 RU
-AY
-Xy
+ha
+JP
 Az
-Xe
-Xe
 Xy
-Xe
+Xy
+JP
+Xy
 Xd
 Jz
 fL
@@ -9492,12 +9601,12 @@ bj
 bj
 bj
 bj
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 Rv
 Rv
 Rv
@@ -9518,11 +9627,11 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 wv
 BG
 BG
@@ -9540,17 +9649,17 @@ BG
 BG
 wv
 wv
-FU
-FU
-FU
+Iw
+Iw
+Iw
 Hn
 Fm
-AY
-Xe
-ut
+ha
+Xy
+pr
 zq
-Iz
-Xe
+OW
+Xy
 Jz
 hH
 LN
@@ -9560,12 +9669,12 @@ vp
 mA
 yH
 bj
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 Rv
 Rv
 Rv
@@ -9585,11 +9694,11 @@ Rv
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 wv
 wv
 BG
@@ -9607,18 +9716,18 @@ Lg
 Oz
 BG
 wv
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 UN
 Vq
 gg
 zp
 hr
-CJ
+KL
 xW
-Xe
+Xy
 Jz
 yJ
 Ws
@@ -9628,13 +9737,13 @@ Um
 YV
 Sn
 bj
-FU
+Iw
 Ba
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 Rv
 Rv
 Rv
@@ -9653,10 +9762,10 @@ Rv
 sc
 sc
 sc
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 uB
 wv
 wv
@@ -9675,18 +9784,18 @@ Kp
 Lg
 VW
 wv
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 Ze
 vA
 eK
 iM
-Er
+QT
 IJ
-Iz
+OW
 Jz
 hH
 LN
@@ -9698,11 +9807,11 @@ yH
 bj
 KG
 Ar
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 Yu
 QR
 Rv
@@ -9721,9 +9830,9 @@ Rv
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 lX
 mr
 wv
@@ -9744,17 +9853,17 @@ CP
 VW
 wv
 wv
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 hp
 ui
 kc
 fZ
-Iz
+OW
 Jz
 jI
 uR
@@ -9766,9 +9875,9 @@ bj
 bj
 Ks
 ZA
-FU
-FU
-FU
+Iw
+Iw
+Iw
 ip
 ip
 sx
@@ -9789,11 +9898,11 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 wv
 wv
 Gg
@@ -9813,16 +9922,16 @@ BG
 wv
 wv
 Jh
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 lX
-FU
-Ac
-gv
-Iz
+Iw
+KC
+Jc
+OW
 Jx
 hH
 LN
@@ -9831,12 +9940,12 @@ Mj
 Hw
 XM
 bN
-Jc
-Ac
+zF
+KC
 Ih
 lX
-FU
-FU
+Iw
+Iw
 Hk
 zh
 ip
@@ -9857,11 +9966,11 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 wv
 wv
 VQ
@@ -9884,27 +9993,27 @@ Jh
 jZ
 Lw
 GR
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 bF
-Ac
-Iz
+KC
+OW
 BB
 fL
 BX
 Uz
 Az
 iW
-CJ
+KL
 Pa
 zW
-Ac
+KC
 WB
-FU
-FU
-FU
+Iw
+Iw
+Iw
 nT
 WM
 ip
@@ -9925,11 +10034,11 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 wv
 Fh
 qc
@@ -9948,31 +10057,31 @@ rO
 BG
 wv
 wv
-gv
+Jc
 jZ
 Jh
 jZ
 XH
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 Ae
 RI
 WV
 UI
 uk
 Ak
-Xe
-Er
+Xy
+QT
 KP
 zW
 oX
 bh
-FU
-FU
-FU
+Iw
+Iw
+Iw
 kU
 bD
 ct
@@ -9993,11 +10102,11 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 nX
 sk
 er
@@ -10016,18 +10125,18 @@ lH
 ZX
 sk
 wv
-gv
+Jc
 jZ
 Jh
 IH
 IH
 IH
 Wi
-gv
+Jc
 OL
 ZD
 lG
-DD
+Fo
 px
 nS
 FD
@@ -10036,10 +10145,10 @@ kn
 ON
 vU
 vj
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 eg
 fX
 Fq
@@ -10062,10 +10171,10 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 wv
 wv
 VW
@@ -10087,11 +10196,11 @@ wv
 jZ
 Jh
 Jh
-gv
-gv
+Jc
+Jc
 IH
 zX
-gv
+Jc
 OL
 ZD
 gd
@@ -10100,9 +10209,9 @@ qz
 zk
 VJ
 ib
-DD
+Fo
 ib
-DD
+Fo
 aX
 lw
 zW
@@ -10130,11 +10239,11 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 wv
 TS
 Yw
@@ -10143,7 +10252,7 @@ Zz
 gi
 EW
 jr
-uf
+xS
 gi
 Da
 ik
@@ -10157,12 +10266,12 @@ Jh
 jZ
 jZ
 zP
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 VF
 XJ
 gd
@@ -10199,10 +10308,10 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 wv
 cJ
 wv
@@ -10224,10 +10333,10 @@ Jh
 jZ
 Ir
 ST
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 nm
 da
 pO
@@ -10237,11 +10346,11 @@ ht
 DT
 hH
 Zd
-FU
-FU
+Iw
+Iw
 lX
-FU
-FU
+Iw
+Iw
 DM
 jf
 Cl
@@ -10268,9 +10377,9 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 wv
 Uf
 rT
@@ -10290,26 +10399,26 @@ wv
 rT
 Jh
 jZ
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 PF
 AN
 BN
 CD
 Ys
-qJ
+Ud
 xO
 sV
 rn
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 KY
 ak
 pP
@@ -10336,17 +10445,17 @@ sc
 sc
 sc
 sc
-FU
-FU
+Iw
+Iw
 lX
 LA
 Oq
-Jp
+xl
 xn
 Ue
 bt
 qx
-gG
+AX
 Ls
 gi
 Uu
@@ -10356,29 +10465,29 @@ Pr
 yI
 wv
 rT
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 fv
 KO
 EE
-Xe
-Xe
+Xy
+Xy
 OY
 kz
 sV
 bE
 lX
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 cj
 wB
 zW
@@ -10404,9 +10513,9 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 wv
 sk
 rT
@@ -10423,14 +10532,14 @@ az
 Bu
 TG
 wv
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 lX
-FU
-FU
+Iw
+Iw
 TN
 iu
 mp
@@ -10441,11 +10550,11 @@ nb
 lG
 cy
 rn
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 ip
 ip
 ip
@@ -10472,9 +10581,9 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 sk
 nX
 vk
@@ -10491,11 +10600,11 @@ NB
 NB
 ZL
 wv
-FU
-FU
-qy
+Iw
+Iw
+WY
 Rb
-qJ
+Ud
 xv
 sg
 Wa
@@ -10513,7 +10622,7 @@ Ik
 Ik
 Ik
 Ik
-FU
+Iw
 ip
 OQ
 fU
@@ -10540,9 +10649,9 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 sk
 uv
 aw
@@ -10558,12 +10667,12 @@ GG
 wV
 wv
 Gf
-FU
-FU
+Iw
+Iw
 VN
-Xe
-Dn
 Xy
+Dn
+JP
 tH
 cs
 Jz
@@ -10581,7 +10690,7 @@ rg
 UA
 tb
 Ik
-FU
+Iw
 ip
 jW
 RG
@@ -10608,9 +10717,9 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 wv
 wv
 Fa
@@ -10625,9 +10734,9 @@ Ex
 Tm
 wV
 wV
-FU
-FU
-FU
+Iw
+Iw
+Iw
 SK
 Cq
 Jo
@@ -10649,7 +10758,7 @@ vT
 iZ
 Qn
 Ik
-FU
+Iw
 ip
 jW
 wq
@@ -10676,9 +10785,9 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 Ho
 wv
 uy
@@ -10691,15 +10800,15 @@ TR
 hn
 AA
 lz
-FU
-FU
-FU
-FU
-qy
-Xe
+Iw
+Iw
+Iw
+Iw
+WY
+Xy
 Oo
-FU
-FU
+Iw
+Iw
 Ug
 eD
 Jz
@@ -10707,7 +10816,7 @@ hH
 UI
 Ux
 wj
-Xe
+Xy
 bJ
 OY
 mp
@@ -10717,7 +10826,7 @@ uW
 iT
 fY
 Ik
-FU
+Iw
 ip
 pu
 wq
@@ -10744,11 +10853,11 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 Cm
 QF
 Ny
@@ -10759,22 +10868,22 @@ CU
 wV
 nP
 rX
-FU
-FU
-FU
-qy
-Xy
+Iw
+Iw
+Iw
+WY
+JP
 OK
-FU
-FU
-FU
+Iw
+Iw
+Iw
 mi
-gv
+Jc
 ho
 np
 BX
 df
-Xe
+Xy
 Az
 Az
 Jz
@@ -10785,7 +10894,7 @@ fM
 qH
 iV
 Ik
-FU
+Iw
 ip
 ip
 ip
@@ -10813,9 +10922,9 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 wV
 wV
 ox
@@ -10826,14 +10935,14 @@ wV
 wV
 Lu
 ze
-FU
-FU
-FU
-qy
+Iw
+Iw
+Iw
+WY
 BK
 hY
 QS
-FU
+Iw
 ZV
 ZV
 ZV
@@ -10842,7 +10951,7 @@ ZV
 hH
 QM
 SG
-Xe
+Xy
 lW
 Az
 DO
@@ -10853,8 +10962,8 @@ Vi
 gz
 AM
 Ik
-FU
-FU
+Iw
+Iw
 yj
 Pa
 Rv
@@ -10881,24 +10990,24 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 UH
 wV
 wV
 wV
-FU
-FU
-FU
+Iw
+Iw
+Iw
 uy
 Bu
-FU
-FU
-FU
+Iw
+Iw
+Iw
 Mu
-Iz
-ut
+OW
+pr
 HC
 ZV
 ZV
@@ -10910,8 +11019,8 @@ ZV
 VC
 BX
 df
-Xy
-Xy
+JP
+JP
 he
 Jz
 nG
@@ -10921,8 +11030,8 @@ wJ
 Yi
 EU
 Ik
-FU
-FU
+Iw
+Iw
 Pa
 Rv
 Rv
@@ -10950,23 +11059,23 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 ws
 wv
 wV
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-qy
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+WY
 MC
-Er
+QT
 Ki
 ZV
 HN
@@ -10989,8 +11098,8 @@ Ik
 Ik
 Ik
 Ik
-FU
-FU
+Iw
+Iw
 Rv
 Rv
 WD
@@ -11019,22 +11128,22 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 wv
 zc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-qy
-Xe
-Er
-Ac
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+WY
+Xy
+QT
+KC
 ED
 ZV
 qo
@@ -11052,11 +11161,11 @@ md
 UU
 aL
 lX
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 oL
 oL
 Rv
@@ -11087,23 +11196,23 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 lX
-FU
-FU
-sE
+Iw
+Iw
+Jq
 uG
-qy
-qJ
-qJ
-Xe
-ut
+WY
+Ud
+Ud
+Xy
+pr
 mQ
 em
-FU
+Iw
 ZV
 ZV
 ZV
@@ -11117,12 +11226,12 @@ by
 fr
 ru
 sl
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 Oc
 Pa
 Pa
@@ -11156,23 +11265,23 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-gv
-qy
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Jc
+WY
 Fw
 Jt
 fV
-Xe
-Er
+Xy
+QT
 zt
-FU
-FU
-FU
+Iw
+Iw
+Iw
 Ez
 FW
 rz
@@ -11187,9 +11296,9 @@ ZV
 oF
 ZV
 ZV
-FU
-FU
-FU
+Iw
+Iw
+Iw
 YY
 Ts
 pV
@@ -11223,24 +11332,24 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-Ac
-Ac
+Iw
+Iw
+Iw
+Iw
+Iw
+KC
+KC
 gU
 FQ
 cU
-Xe
-Xe
-ut
-FU
-FU
-FU
-FU
-FU
+Xy
+Xy
+pr
+Iw
+Iw
+Iw
+Iw
+Iw
 hc
 jz
 bp
@@ -11253,11 +11362,11 @@ WN
 JM
 hM
 Dy
-ne
+DZ
 ZV
-FU
-FU
-FU
+Iw
+Iw
+Iw
 XY
 jR
 Wp
@@ -11291,23 +11400,23 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 ro
-qy
+WY
 HV
 Sx
 Sy
 Sx
-Xe
-Xe
-Er
-FU
-FU
-FU
-FU
+Xy
+Xy
+QT
+Iw
+Iw
+Iw
+Iw
 ZV
 sP
 di
@@ -11323,8 +11432,8 @@ eX
 ly
 SB
 ZV
-FU
-FU
+Iw
+Iw
 Cw
 Pa
 oD
@@ -11359,22 +11468,22 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 wZ
-Xe
-Xe
+Xy
+Xy
 Ep
 FQ
 zM
 Jt
-Er
+QT
 HC
-FU
-FU
-FU
+Iw
+Iw
+Iw
 CM
 DI
 On
@@ -11391,8 +11500,8 @@ sy
 RZ
 Hb
 ZV
-FU
-FU
+Iw
+Iw
 Rv
 Rv
 Pa
@@ -11426,23 +11535,23 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 ZT
-Xe
-Xe
+Xy
+Xy
 fm
-Xe
+Xy
 Fw
-Xe
+Xy
 HC
 HC
-FU
-FU
-FU
+Iw
+Iw
+Iw
 CM
 DI
 dg
@@ -11451,7 +11560,7 @@ MS
 DI
 CM
 CM
-iB
+Gt
 ly
 RZ
 ly
@@ -11459,8 +11568,8 @@ RZ
 RZ
 Hb
 ZV
-FU
-FU
+Iw
+Iw
 Rv
 kq
 Rv
@@ -11494,23 +11603,23 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 wZ
 HC
-Xe
-Xe
-Xe
-Xe
-Xe
+Xy
+Xy
+Xy
+Xy
+Xy
 HC
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 CM
 DI
 bl
@@ -11527,8 +11636,8 @@ HQ
 HQ
 Zm
 ZV
-FU
-FU
+Iw
+Iw
 sc
 sc
 Rv
@@ -11562,22 +11671,22 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 wZ
 wS
 HP
-Xe
+Xy
 HC
 HC
 HC
 HC
-FU
-FU
-FU
+Iw
+Iw
+Iw
 CM
 CM
 DI
@@ -11595,7 +11704,7 @@ ZV
 ZV
 ZV
 ZV
-FU
+Iw
 sc
 sc
 sc
@@ -11630,22 +11739,22 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 HC
 Xw
-Iw
-sE
+FU
+Jq
 wZ
-Iw
+FU
 ty
 BE
 UC
 lr
-FU
+Iw
 CM
 qO
 cG
@@ -11655,15 +11764,15 @@ vt
 Cr
 yf
 DI
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -11698,17 +11807,17 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-yK
 Iw
-gv
+Iw
+Iw
+Iw
+Iw
+yK
+FU
+Jc
 ty
 wZ
-gv
+Jc
 Jh
 dx
 pE
@@ -11723,14 +11832,14 @@ hB
 ZK
 bU
 CM
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -11767,19 +11876,19 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 pp
-sE
-FU
-FU
-FU
-FU
-FU
-FU
+Jq
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 Oh
 Hh
 CM
@@ -11791,13 +11900,13 @@ ZK
 Bv
 KE
 CM
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -11835,19 +11944,19 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 re
 re
 re
@@ -11859,12 +11968,12 @@ fw
 oH
 qj
 CM
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -11903,18 +12012,18 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 Fx
 Fx
 re
@@ -11927,10 +12036,10 @@ oH
 Sw
 Bv
 DI
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -11972,16 +12081,16 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 Rz
 Fx
 Bv
@@ -11993,11 +12102,11 @@ cC
 Bv
 pa
 Bv
-Bv
+yB
 CM
-FU
-FU
-FU
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -12040,15 +12149,15 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 Rz
 Rz
 ZK
@@ -12063,9 +12172,9 @@ zU
 Bv
 Ni
 CM
-FU
-FU
-FU
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -12109,14 +12218,14 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 Rz
 Rz
 Rz
@@ -12131,9 +12240,9 @@ Bv
 Ni
 Ni
 CM
-FU
-FU
-FU
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -12178,13 +12287,13 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 CM
 VV
 Rz
@@ -12199,9 +12308,9 @@ Ni
 Ni
 Ri
 DI
-FU
-FU
-FU
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -12250,9 +12359,9 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
+Iw
+Iw
+Iw
 CM
 CM
 CM
@@ -12267,9 +12376,9 @@ Ni
 Ni
 Ni
 CM
-FU
-FU
-FU
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -12319,8 +12428,8 @@ sc
 sc
 sc
 sc
-FU
-FU
+Iw
+Iw
 CM
 CM
 CM
@@ -12335,9 +12444,9 @@ CM
 Ni
 CM
 CM
-FU
-FU
-FU
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -12388,23 +12497,23 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -12457,22 +12566,22 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -12527,19 +12636,19 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
@@ -12600,11 +12709,11 @@ sc
 sc
 sc
 sc
-FU
-FU
-FU
-FU
-FU
+Iw
+Iw
+Iw
+Iw
+Iw
 sc
 sc
 sc
