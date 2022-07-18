@@ -332,6 +332,12 @@
 	girderpasschance = 0
 	max_integrity = 350
 
+/obj/structure/girder/reinforced/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		var/remains = pick(/obj/item/stack/rods, /obj/item/stack/sheet/metal)
+		new remains(loc, 2)
+	qdel(src)
+
 
 
 //////////////////////////////////////////// cult girder //////////////////////////////////////////////

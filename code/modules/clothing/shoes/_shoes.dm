@@ -7,7 +7,7 @@
 
 	body_parts_covered = FEET
 	slot_flags = ITEM_SLOT_FEET
-	greyscale_colors = list(list(13, 3))
+	greyscale_colors = list(list(13, 3), list(14, 2), list(12, 2))
 	greyscale_icon_state = "shoes"
 
 	permeability_coefficient = 0.5

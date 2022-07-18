@@ -70,6 +70,11 @@
 
 
 
+	/// List of currently-accepted missions.
+	var/list/datum/mission/missions
+	/// The maximum number of currently active missions that a ship may take on.
+	var/max_missions = 2
+
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
@@ -104,7 +109,7 @@
 			calculate_mass()
 			refresh_engines()
 
-	ship_account = new(name, 7500)
+	ship_account = new(name, 2000)
 #ifdef UNIT_TESTS
 	Rename("[source_template]")
 #else
@@ -141,6 +146,8 @@
 	shuttle_port.movement_force = list("KNOCKDOWN" = FLOOR(est_thrust / 50, 1), "THROW" = FLOOR(est_thrust / 500, 1))
 	priority_announce("Beginning docking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
 	shuttle_port.create_ripples(ticket.target_port, dock_time)
+	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.landing_sound)
+	shuttle_port.play_engine_sound(ticket.target_port, shuttle_port.landing_sound)
 
 /datum/overmap/ship/controlled/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	shuttle_port.initiate_docking(ticket.target_port)
@@ -162,6 +169,7 @@
 			SSshuttle.generate_transit_dock(shuttle_port) // We need a port, NOW.
 
 	priority_announce("Beginning undocking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
+	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.takeoff_sound)
 
 	. = ..()
 	dock_time = dock_time_temp // Set it back to the original value if it was changed
@@ -406,13 +414,41 @@
 
 /obj/item/key/ship
 	name = "ship key"
+	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck."
+	icon_state = "keyship"
 	var/datum/overmap/ship/controlled/master_ship
+	var/static/list/key_colors = list(
+		"blue" = "#4646fc",
+		"red" = "#fd4b54",
+		"salmon" = "#faacac",
+		"brown" = "#a36933",
+		"green" = "#3dc752",
+		"lime" = "#7ffd6e",
+		"cyan" = "#00ffdd",
+		"purple" = "#8c3cf5",
+		"yellow" = "#ffdd44"
+	)
+	var/random_color = TRUE //if the key uses random coloring (logic stolen from screwdriver.dm)
+	slot_flags = ITEM_SLOT_NECK
 
 /obj/item/key/ship/Initialize(mapload, datum/overmap/ship/controlled/master_ship)
 	. = ..()
 	src.master_ship = master_ship
 	master_ship.shipkey = src
+	if(random_color) //random colors!
+		icon_state = "shipkey_plasticbod"
+		var/our_color = pick(key_colors)
+		add_atom_colour(key_colors[our_color], FIXED_COLOUR_PRIORITY)
+		update_icon()
 	name = "ship key ([master_ship.name])"
+
+/obj/item/key/ship/update_overlays()
+	. = ..()
+	if(!random_color) //icon override
+		return
+	var/mutable_appearance/base_overlay = mutable_appearance(icon, "shipkey_metalybits")
+	base_overlay.appearance_flags = RESET_COLOR
+	. += base_overlay
 
 /obj/item/key/ship/Destroy()
 	master_ship.shipkey = null
@@ -425,3 +461,7 @@
 
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
 	return TRUE
+
+/obj/item/key/ship/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] is stabbing [src] into [user.p_their()] [pick("temple", "heart")] and turns it off. It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	return(OXYLOSS)

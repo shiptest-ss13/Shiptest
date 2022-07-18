@@ -133,7 +133,6 @@
 	worth += C.air_contents.get_moles(GAS_BZ)*2
 	worth += C.air_contents.get_moles(GAS_STIMULUM)*100
 	worth += C.air_contents.get_moles(GAS_HYPERNOB)*1000
-	worth += C.air_contents.get_moles(GAS_MIASMA)*4
 	worth += C.air_contents.get_moles(GAS_TRITIUM)*4
 	worth += C.air_contents.get_moles(GAS_PLUOXIUM)*5
 	return worth

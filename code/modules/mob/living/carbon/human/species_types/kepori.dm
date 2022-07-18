@@ -3,7 +3,7 @@
 	id = SPECIES_KEPORI
 	default_color = "6060FF"
 	species_traits = list(MUTCOLORS, EYECOLOR, NO_UNDERWEAR)
-	inherent_traits = list(TRAIT_HOLDABLE)
+	inherent_traits = list(TRAIT_SCOOPABLE)
 	mutant_bodyparts = list("kepori_body_feathers", "kepori_tail_feathers", "kepori_feathers")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "kepori_tail_feathers" = "Fan")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
@@ -24,7 +24,6 @@
 	bodytemp_normal = HUMAN_BODYTEMP_NORMAL + 30
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 30
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 30
-	no_equip = list(ITEM_SLOT_BACK)
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
 	var/datum/action/innate/keptackle/keptackle

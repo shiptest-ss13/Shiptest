@@ -5,7 +5,7 @@
 	icon_state = "teg-unassembled"
 	density = TRUE
 	use_power = NO_POWER_USE
-	integrity_failure = 75
+	integrity_failure = 0.375
 
 	var/obj/machinery/atmospherics/components/binary/circulator/cold_circ
 	var/obj/machinery/atmospherics/components/binary/circulator/hot_circ

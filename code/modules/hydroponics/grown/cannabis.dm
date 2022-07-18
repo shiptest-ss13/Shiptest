@@ -19,7 +19,6 @@
 						/obj/item/seeds/cannabis/ultimate)
 	reagents_add = list(/datum/reagent/drug/space_drugs = 0.15, /datum/reagent/toxin/lipolicide = 0.35) // gives u the munchies
 
-
 /obj/item/seeds/cannabis/rainbow
 	name = "pack of rainbow weed seeds"
 	desc = "These seeds grow into rainbow weed. Groovy... and also highly addictive."
@@ -30,6 +29,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/colorful_reagent = 0.05, /datum/reagent/medicine/psicodine = 0.03, /datum/reagent/drug/happiness = 0.1, /datum/reagent/toxin/mindbreaker = 0.1, /datum/reagent/toxin/lipolicide = 0.15)
 	rarity = 40
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/seeds/cannabis/death
 	name = "pack of deathweed seeds"
@@ -41,6 +41,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/toxin/cyanide = 0.35, /datum/reagent/drug/space_drugs = 0.15, /datum/reagent/toxin/lipolicide = 0.15)
 	rarity = 40
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/seeds/cannabis/white
 	name = "pack of lifeweed seeds"
@@ -52,7 +53,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/medicine/omnizine = 0.35, /datum/reagent/drug/space_drugs = 0.15, /datum/reagent/toxin/lipolicide = 0.15)
 	rarity = 40
-
+	research = PLANT_RESEARCH_TIER_3
 
 /obj/item/seeds/cannabis/ultimate
 	name = "pack of omega weed seeds"
@@ -75,7 +76,7 @@
 						/datum/reagent/toxin/lipolicide = 0.15,
 						/datum/reagent/drug/nicotine = 0.1)
 	rarity = 69
-
+	research = PLANT_RESEARCH_TIER_4
 
 // ---------------------------------------------------------------
 

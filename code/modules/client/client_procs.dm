@@ -301,9 +301,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		reconnecting = TRUE
 		player_details = GLOB.player_details[ckey]
 		player_details.byond_version = full_version
+		player_details.last_known_ip = address
 	else
 		player_details = new(ckey)
 		player_details.byond_version = full_version
+		player_details.last_known_ip = address
 		GLOB.player_details[ckey] = player_details
 
 
@@ -505,7 +507,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 				"Someone come hold me :(",\
 				"I need someone on me :(",\
 				"What happened? Where has everyone gone?",\
-				"Forever alone :("\
+				"Forever alone :(",\
+				"All Alone On A Late Night :^(",\
+				"Love me, feed me, don't leave me :("\
 			)
 
 			send2tgs("Server", "[cheesy_message] (No admins online)")

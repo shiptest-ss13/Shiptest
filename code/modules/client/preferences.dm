@@ -759,7 +759,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Ears</h3>"
+				dat += "<h3>Mutant Ears</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=ears;task=input'>[features["ears"]]</a><BR>"
 
@@ -1845,7 +1845,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("ears")
 					var/new_ears
-					new_ears = input(user, "Choose your character's ears:", "Character Preference") as null|anything in GLOB.ears_list
+					new_ears = input(user, "Choose your character's mutant ears:", "Character Preference") as null|anything in GLOB.ears_list
 					if(new_ears)
 						features["ears"] = new_ears
 

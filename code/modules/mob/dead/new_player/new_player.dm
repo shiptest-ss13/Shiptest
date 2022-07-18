@@ -315,7 +315,6 @@
 
 		character.update_parallax_teleport()
 
-	SSticker.minds += character.mind
 	character.client.init_verbs() // init verbs for the late join
 
 	if(ishuman(character))	//These procs all expect humans

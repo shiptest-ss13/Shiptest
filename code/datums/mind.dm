@@ -91,6 +91,7 @@
 	var/list/crew_objectives
 
 /datum/mind/New(_key)
+	SSticker.minds += src
 	key = _key
 	soulOwner = src
 	martial_art = default_martial_art
@@ -824,10 +825,9 @@
 /mob/proc/mind_initialize()
 	if(mind)
 		mind.key = key
-
 	else
 		mind = new /datum/mind(key)
-		SSticker.minds += mind
+
 	if(!mind.name)
 		mind.name = real_name
 	mind.current = src
