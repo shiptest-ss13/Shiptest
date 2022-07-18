@@ -545,9 +545,10 @@
 	desc = "A long metal chain, with a heavy hook connected to the end that can make deadly blows in close quarters. Once used to board ancient merchant vessels, now used to drag unsuspecting victims into close range."
 	ammo_type = /obj/item/ammo_casing/magic/hook/bounty
 
-/obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
-	..()
-	user.changeNext_move(CLICK_CD_MELEE)//quick to swing. 15 force can be quite something with this attack frequency.
+/obj/item/gun/magic/hook/pirate/melee_attack_chain(mob/user, atom/target, params)
+	. = ..()
+	user.changeNext_move(CLICK_CD_MELEE)//makes the hook unquick to swing
+	return .
 
 //Immortality Talisman: Now with state-of-the-art panic button technology
 /obj/item/immortality_talisman
