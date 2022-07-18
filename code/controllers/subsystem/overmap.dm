@@ -177,7 +177,7 @@ SUBSYSTEM_DEF(overmap)
   */
 /datum/controller/subsystem/overmap/proc/spawn_outpost()
 	var/list/S = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
-	new /datum/overmap/outpost(S)
+	new /datum/overmap/dynamic/outpost(S)
 	return
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
