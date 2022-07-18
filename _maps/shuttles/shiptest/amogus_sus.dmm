@@ -573,10 +573,6 @@
 /obj/effect/turf_decal/corner/neutral/half,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
-"gC" = (
-/obj/machinery/computer/cargo/express,
-/turf/open/floor/plasteel,
-/area/ship/cargo)
 "gJ" = (
 /obj/machinery/door/airlock,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2368,14 +2364,13 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Ar" = (
-/obj/structure/frame/computer{
-	anchored = 1;
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/neutral/half{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/computer/cargo/express{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "AG" = (
@@ -5470,7 +5465,7 @@ Ka
 xR
 Do
 Te
-gC
+Yh
 hs
 Yh
 JM
