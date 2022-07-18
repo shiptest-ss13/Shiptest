@@ -260,7 +260,7 @@
 		defense_mod -= 2
 	if(HAS_TRAIT(target, TRAIT_GIANT))
 		defense_mod += 2
-	if(HAS_TRAIT(target, TRAIT_HOLDABLE))
+	if(HAS_TRAIT(target, TRAIT_SCOOPABLE))
 		defense_mod -= 1
 
 	if(ishuman(target))

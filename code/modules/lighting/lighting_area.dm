@@ -1,5 +1,5 @@
 /area
-	luminosity           = TRUE
+	luminosity           = FALSE // This used to be TRUE; it was changed to FALSE, as most areas had it reset to FALSE anyway.
 	var/dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
 
 /area/proc/set_dynamic_lighting(var/new_dynamic_lighting = DYNAMIC_LIGHTING_ENABLED)

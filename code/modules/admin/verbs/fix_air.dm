@@ -13,9 +13,5 @@
 		log_game("[key_name_admin(usr)] fixed air with range [range] in area [T.loc.name]")
 		var/datum/gas_mixture/GM = new
 		for(var/turf/open/F in range(range,T))
-			if(F.blocks_air)
-			//skip walls
-				continue
 			GM.parse_gas_string(F.initial_gas_mix)
 			F.copy_air(GM)
-			F.update_visuals()

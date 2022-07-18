@@ -6,7 +6,6 @@
 	id = "sec_38"
 	build_type = PROTOLATHE
 	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/c38_trac
 	name = "Speed Loader (.38 TRAC)"
@@ -60,7 +59,6 @@
 	id = "sec_bshot"
 	build_type = PROTOLATHE
 	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/shotgun_dart/sec
 	id = "sec_dart"
@@ -94,6 +92,16 @@
 	category = list("Firing Pins")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/pin
+	name = "Standard Firing Pin"
+	desc = "A simple, electronic firing pin which is required in most standardized modern weapons."
+	id = "pin_standard"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/silver = 600, /datum/material/diamond = 600, /datum/material/uranium = 200)
+	build_path = /obj/item/firing_pin
+	category = list("Firing Pins")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/stunrevolver
 	name = "Tesla Canon"
 	desc = "A high-tech cannon that fires internal, reusable bolt cartridges in a revolving cylinder. The cartridges can be recharged using conventional rechargers"
@@ -102,7 +110,7 @@
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 10000, /datum/material/silver = 10000)
 	build_path = /obj/item/gun/energy/tesla_cannon
 	category = list("Weapons")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE//this weapon is an active threat to the user, I think we can safely refile it under "experimental"
 
 /datum/design/nuclear_gun
 	name = "Advanced Energy Gun"
@@ -122,7 +130,6 @@
 	materials = list(/datum/material/iron = 4000, /datum/material/glass = 4000, /datum/material/silver = 300, /datum/material/titanium = 200)
 	build_path = /obj/item/shield/riot/tele
 	category = list("Weapons")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/beamrifle
 	name = "Beam Marksman Rifle"
@@ -143,7 +150,7 @@
 	reagents_list = list(/datum/reagent/toxin/mutagen = 40)
 	build_path = /obj/item/gun/energy/decloner
 	category = list("Weapons")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/rapidsyringe
 	name = "Rapid Syringe Gun"
@@ -278,7 +285,7 @@
 
 /datum/design/commanderammo
 	name = "Commander magazine (9mm)"
-	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm and fit into Nanotrasen's Commander sidearms."
+	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm and fit into Commander sidearms."
 	id = "commanderammo"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
@@ -522,7 +529,7 @@
 	materials = list(/datum/material/iron = 1000, /datum/material/glass = 200)
 	build_path = /obj/item/ammo_casing/shotgun/techshell
 	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/suppressor
 	name = "Suppressor"
@@ -571,7 +578,7 @@
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 4000, /datum/material/silver = 10000, /datum/material/gold = 2000)
 	build_path = /obj/item/melee/baton/boomerang
 	category = list("Weapons")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/gun_cell
 	name = "Weapon Power Cell"
