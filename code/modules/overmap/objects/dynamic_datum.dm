@@ -128,7 +128,7 @@
 			Rename("lava planet")
 			token.desc = "A very weak energy signal originating from a planet with lots of seismic and volcanic activity."
 			planet = DYNAMIC_WORLD_LAVA
-			token.icon_state = "globe_2"
+			token.icon_state = "globe"
 			token.color = COLOR_ORANGE
 			planet_name = gen_planet_name()
 
@@ -142,7 +142,7 @@
 			Rename("frozen planet")
 			token.desc = "A very weak energy signal originating from a planet with traces of water and extremely low temperatures."
 			planet = DYNAMIC_WORLD_ICE
-			token.icon_state = "globe_2"
+			token.icon_state = "globe"
 			token.color = COLOR_BLUE_LIGHT
 			planet_name = gen_planet_name()
 
@@ -170,7 +170,7 @@
 			Rename("sand planet")
 			token.desc = "A very weak energy signal originating from a planet with many traces of silica."
 			planet = DYNAMIC_WORLD_SAND
-			token.icon_state = "globe_2"
+			token.icon_state = "globe"
 			token.color = COLOR_GRAY
 			planet_name = gen_planet_name()
 
@@ -184,7 +184,7 @@
 			Rename("waste disposal planet")
 			token.desc = "A very weak energy signal originating from a planet marked as waste disposal."
 			planet = DYNAMIC_WORLD_WASTEPLANET
-			token.icon_state = "globe_2"
+			token.icon_state = "globe"
 			token.color = "#a9883e"
 			planet_name = gen_planet_name()
 
@@ -198,7 +198,7 @@
 			Rename("rock planet")
 			token.desc = "A very weak energy signal originating from a iron rich and rocky planet."
 			planet = DYNAMIC_WORLD_ROCKPLANET
-			token.icon_state = "globe_2"
+			token.icon_state = "globe"
 			token.color = "#bd1313"
 			planet_name = gen_planet_name()
 
@@ -262,7 +262,6 @@
 
 	if(!preserve_level)
 		token.desc += "It may not still be here if you leave it."
-	token.update_icon()
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
