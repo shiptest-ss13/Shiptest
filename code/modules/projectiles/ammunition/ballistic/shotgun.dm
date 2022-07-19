@@ -138,3 +138,12 @@
 	reagents.add_reagent(/datum/reagent/toxin/mutetoxin, 6) //;HELP OPS IN MAINT
 	reagents.add_reagent(/datum/reagent/toxin/coniine, 6)
 	reagents.add_reagent(/datum/reagent/toxin/sodium_thiopental, 6)
+
+/obj/item/ammo_casing/shotgun/buckshot/twobore
+	name = "two-bore shell"
+	desc = "A massive fucking 12 gauge buckshot shell."
+	caliber = "twobore"
+	projectile_type = /obj/projectile/bullet/pellet/shotgun_buckshot/twobore
+	pellets = 6
+	variance = 20
+	transform = matrix(2, 0, 0, 0, 2, 0)

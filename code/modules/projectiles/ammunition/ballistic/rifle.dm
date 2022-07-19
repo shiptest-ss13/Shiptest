@@ -10,6 +10,15 @@
 /obj/item/ammo_casing/a762/enchanted
 	projectile_type = /obj/projectile/bullet/a762_enchanted
 
+// .300 Magnum (Smile Rifle)
+
+/obj/item/ammo_casing/a300
+	name = ".300 Magnum bullet casing"
+	desc = "A .300 Magnum bullet casing."
+	icon_state = "762-casing"
+	caliber = "a300"
+	projectile_type = /obj/projectile/bullet/a300
+
 // 5.56mm (M-90gl Carbine & P-16)
 
 /obj/item/ammo_casing/a556

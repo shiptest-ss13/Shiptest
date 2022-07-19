@@ -1,8 +1,8 @@
 /obj/item/gun/ballistic/rifle
 	name = "Bolt Rifle"
 	desc = "Some kind of bolt action rifle. You get the feeling you shouldn't have this."
-	icon_state = "moistnugget"
-	item_state = "moistnugget"
+	icon_state = "hunting"
+	item_state = "hunting"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
 	bolt_wording = "bolt"
 	bolt_type = BOLT_TYPE_STANDARD
@@ -51,17 +51,17 @@
 ///////////////////////
 
 /obj/item/gun/ballistic/rifle/boltaction
-	name = "\improper Mosin Nagant"
-	desc = "This piece of junk looks like something that could have been used 700 years ago. It feels slightly moist."
-	sawn_desc = "An extremely sawn-off Mosin Nagant, popularly known as an \"obrez\". There was probably a reason it wasn't manufactured this short to begin with."
+	name = "\improper Illestren Hunting Rifle"
+	desc = "A Hunter's Pride rifle universally renowned for its ability to take down even the strongest of fauna. Despite this, it is very rarely used for hunting, and mostly used for putting holes in people, which it is also renowned for. Chambered in 7.62x54."
+	sawn_desc = "An extremely sawn-off hunting rifle, popularly known as an \"obrez\". There was probably a reason it wasn't manufactured this short to begin with."
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
-	icon_state = "moistnugget"
-	item_state = "moistnugget"
+	icon_state = "hunting"
+	item_state = "hunting"
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
 	can_bayonet = TRUE
@@ -74,13 +74,19 @@
 	if(.)
 		spread = 36
 		can_bayonet = FALSE
-		item_state = "moistnugget_sawn"
+		item_state = "hunting_sawn"
 
 /obj/item/gun/ballistic/rifle/boltaction/blow_up(mob/user)
 	. = 0
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
 		. = 1
+
+/obj/item/gun/ballistic/rifle/boltaction/roumain
+	name = "\improper saint-roumain standard issue 'Smile' rifle"
+	desc = "A bolt action rifle. Usually given to low ranking hunters of the Militia tasked with mercenary work. Chambered in .300 Magnum."
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
+	can_be_sawn_off = FALSE
 
 /obj/item/gun/ballistic/rifle/boltaction/enchanted
 	name = "enchanted bolt action rifle"
@@ -135,7 +141,7 @@
 
 /obj/item/gun/ballistic/rifle/boltaction/polymer
 	name = "polymer survivor rifle"
-	desc = "Chambered in .300 Blackout, and manufactured with cheap tools, this rifle has seen its share of part replacements, repairs, and bubba-hack-jobs to keep it serviceable. Use at your own risk."
+	desc = "Chambered in .300 Blackout, and manufactured with cheap tools, this rifle has seen its share of part replacements, repairs, and bubba-hack-jobs to keep it serviceable."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "crackhead_rifle"
 	item_state = "crackhead_rifle"
