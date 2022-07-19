@@ -5,8 +5,6 @@ import {
   Section,
   Table,
   Tabs,
-  Dimmer,
-  NoticeBox,
   Divider,
 } from '../components';
 import { Window } from '../layouts';

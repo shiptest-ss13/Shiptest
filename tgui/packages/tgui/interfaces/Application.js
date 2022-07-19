@@ -1,14 +1,6 @@
 import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
-import {
-  Button,
-  TextArea,
-  Section,
-  BlockQuote,
-  NoticeBox,
-  LabeledList,
-  Stack,
-} from '../components';
+import { Button, TextArea, Stack } from '../components';
 
 export const Application = (props, context) => {
   const { act, data } = useBackend(context);
