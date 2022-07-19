@@ -173,8 +173,8 @@ SUBSYSTEM_DEF(overmap)
 			spawn_event_cluster(type, location, chance / 2)
 
 /**
-  * Creates a single outpost somewhere near the center of the system.
-  */
+ * Creates a single outpost somewhere near the center of the system.
+ */
 /datum/controller/subsystem/overmap/proc/spawn_outpost()
 	var/list/S = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
 	new /datum/overmap/outpost(S)

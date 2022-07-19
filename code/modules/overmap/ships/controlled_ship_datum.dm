@@ -285,14 +285,14 @@
 	return LAZYACCESS(applications, ckey(index_key))
 
 /**
-  * Bastardized version of GLOB.manifest.manifest_inject, but used per ship.
-  * Adds the passed-in mob to the list of ship owner candidates, and makes them
-  * the ship owner if there is currently none.
-  *
-  * * H - Human mob to add to the manifest
-  * * C - client of the mob to add to the manifest
-  * * human_job - Job of the human mob to add to the manifest
-  */
+ * Bastardized version of GLOB.manifest.manifest_inject, but used per ship.
+ * Adds the passed-in mob to the list of ship owner candidates, and makes them
+ * the ship owner if there is currently none.
+ *
+ * * H - Human mob to add to the manifest
+ * * C - client of the mob to add to the manifest
+ * * human_job - Job of the human mob to add to the manifest
+ */
 /datum/overmap/ship/controlled/proc/manifest_inject(mob/living/carbon/human/H, client/C, datum/job/human_job)
 	// no idea why this check exists
 	if(H.mind.assigned_role != H.mind.special_role)

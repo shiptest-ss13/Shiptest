@@ -93,7 +93,7 @@
 		INVOKE_ASYNC(src, .proc/close)
 
 /obj/machinery/door/poddoor/incinerator_toxmix
-	name = "combustion chamber vent"
+	name = "Combustion Chamber Vent"
 	id = INCINERATOR_TOXMIX_VENT
 
 /obj/machinery/door/poddoor/incinerator_atmos_main
@@ -101,7 +101,7 @@
 	id = INCINERATOR_ATMOS_MAINVENT
 
 /obj/machinery/door/poddoor/incinerator_atmos_aux
-	name = "combustion chamber vent"
+	name = "Combustion Chamber Vent"
 	id = INCINERATOR_ATMOS_AUXVENT
 
 /obj/machinery/door/poddoor/incinerator_syndicatelava_main
@@ -109,7 +109,7 @@
 	id = INCINERATOR_SYNDICATELAVA_MAINVENT
 
 /obj/machinery/door/poddoor/incinerator_syndicatelava_aux
-	name = "combustion chamber vent"
+	name = "Combustion Chamber Vent"
 	id = INCINERATOR_SYNDICATELAVA_AUXVENT
 
 /obj/machinery/door/poddoor/Bumped(atom/movable/AM)
