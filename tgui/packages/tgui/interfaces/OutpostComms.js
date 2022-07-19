@@ -6,7 +6,6 @@ import {
   Button,
   LabeledList,
   Box,
-  AnimatedNumber,
   Stack,
 } from '../components';
 import { Window } from '../layouts';
