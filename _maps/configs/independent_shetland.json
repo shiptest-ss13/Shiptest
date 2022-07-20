@@ -18,11 +18,13 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Medical Doctor": 2,
+		"Medical Doctor": 1,
+		"Paramedic": 1,
 		"Ship's Engineer": {
 			"outfit": "/datum/outfit/job/engineer",
-			"slots": 2
+			"slots": 1
 		},
+		"Atmospheric Technician": 1,
 		"Asteroid Miner": {
 			"outfit": "/datum/outfit/job/miner/hazard",
 			"slots": 2
@@ -31,9 +33,11 @@
 			"outfit": "/datum/outfit/job/security",
 			"slots": 1
 		},
+		"Detective": 1,
+		"Janitor": 1,
 		"Deckhand": {
 			"outfit": "/datum/outfit/job/assistant",
-			"slots": 6
+			"slots": 5
 		}
 	},
 	"cost": 750
