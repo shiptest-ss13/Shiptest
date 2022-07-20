@@ -458,6 +458,28 @@
 				/obj/effect/spawner/bundle/costume/mafia/beige = 5
 				)
 
+/obj/effect/spawner/lootdrop/salvage_machine
+	name = "salvageable machine spawner"
+	loot = list(
+				/obj/structure/salvageable/protolathe,
+				/obj/structure/salvageable/circuit_imprinter,
+				/obj/structure/salvageable/server,
+				/obj/structure/salvageable/machine,
+				/obj/structure/salvageable/autolathe,
+				/obj/structure/salvageable/computer,
+				/obj/structure/salvageable/destructive_analyzer
+				)
+
+/obj/effect/spawner/lootdrop/salvage_50
+	name = "50% salvage spawner"
+	loot = list(
+				/obj/effect/spawner/lootdrop/maintenance = 13,
+				/obj/effect/spawner/lootdrop/salvage_machine = 12,
+				/obj/effect/spawner/lootdrop/whiteship_cere_ripley = 12,
+				/obj/structure/closet/crate/secure/loot = 13,
+				"" = 50
+				)
+
 //finds the probabilities of items spawning from a loot spawner's loot pool
 /obj/item/loot_table_maker
 	icon = 'icons/effects/landmarks_static.dmi'
@@ -575,6 +597,7 @@
 		/obj/machinery/the_singularitygen/tesla = 1,
 		/obj/machinery/the_singularitygen = 1,
 	)
+
 
 GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 	/obj/item/stack/sheet/animalhide/goliath_hide = 0.7,
