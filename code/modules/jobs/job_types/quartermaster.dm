@@ -62,6 +62,8 @@
 
 /datum/outfit/job/quartermaster/donk
 	name = "Manager (Donk! Co.)"
+
+	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/donk/qm
 	suit = /obj/item/clothing/suit/hazardvest/donk/qm
 	ears = /obj/item/radio/headset/syndicate/alt

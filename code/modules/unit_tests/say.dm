@@ -8,7 +8,7 @@
 	test("Hello", "Hello", list())
 	test(";HELP", "HELP", list(MODE_HEADSET = TRUE))
 	test(";%Never gonna give you up", "Never gonna give you up", list(MODE_HEADSET = TRUE, MODE_SING = TRUE))
-	test(".s Gun plz", "Gun plz", list(RADIO_KEY = RADIO_KEY_SECURITY, RADIO_EXTENSION = RADIO_CHANNEL_SECURITY))
+	test(".c Gun plz", "Gun plz", list(RADIO_KEY = RADIO_KEY_COMMAND, RADIO_EXTENSION = RADIO_CHANNEL_COMMAND))
 	test("...What", "...What", list())
 
 /datum/unit_test/get_message_mods/proc/test(message, expected_message, list/expected_mods)

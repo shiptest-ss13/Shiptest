@@ -27,108 +27,43 @@
 	name = "syndicate encryption key"
 	icon_state = "syn_cypherkey"
 	channels = list(RADIO_CHANNEL_SYNDICATE = 1)
-	syndie = TRUE//Signifies that it de-crypts Syndicate transmissions
 
 /obj/item/encryptionkey/binary
 	name = "binary translator key"
 	icon_state = "bin_cypherkey"
 	translate_binary = TRUE
 
-/obj/item/encryptionkey/headset_sec
-	name = "security radio encryption key"
-	icon_state = "sec_cypherkey"
-	channels = list(RADIO_CHANNEL_SECURITY = 1)
+//Shiptest edits start
 
-/obj/item/encryptionkey/headset_eng
-	name = "engineering radio encryption key"
-	icon_state = "eng_cypherkey"
-	channels = list(RADIO_CHANNEL_ENGINEERING = 1)
+/obj/item/encryptionkey/nanotrasen
+	name = "nanotrasen encryption key"
+	icon_state = "hop_cypherkey"
+	channels = list(RADIO_CHANNEL_NANOTRASEN = 1)
 
-/obj/item/encryptionkey/headset_rob
-	name = "robotics radio encryption key"
-	icon_state = "rob_cypherkey"
-	channels = list(RADIO_CHANNEL_SCIENCE = 1, RADIO_CHANNEL_ENGINEERING = 1)
+/obj/item/encryptionkey/minutemen
+	name = "minutemen encryption key"
+	icon_state = "cmm_cypherkey"
+	channels = list(RADIO_CHANNEL_MINUTEMEN = 1)
 
-/obj/item/encryptionkey/headset_med
-	name = "medical radio encryption key"
-	icon_state = "med_cypherkey"
-	channels = list(RADIO_CHANNEL_MEDICAL = 1)
+/obj/item/encryptionkey/inteq
+	name = "inteq encryption key"
+	icon_state = "irmg_cypherkey"
+	channels = list(RADIO_CHANNEL_INTEQ = 1)
 
-/obj/item/encryptionkey/headset_sci
-	name = "science radio encryption key"
-	icon_state = "sci_cypherkey"
-	channels = list(RADIO_CHANNEL_SCIENCE = 1)
-
-/obj/item/encryptionkey/headset_medsci
-	name = "medical research radio encryption key"
-	icon_state = "medsci_cypherkey"
-	channels = list(RADIO_CHANNEL_SCIENCE = 1, RADIO_CHANNEL_MEDICAL = 1)
-
-/obj/item/encryptionkey/headset_srvsec
-	name = "law and order radio encryption key"
-	icon_state = "srvsec_cypherkey"
-	channels = list(RADIO_CHANNEL_SERVICE = 1, RADIO_CHANNEL_SECURITY = 1)
-
-/obj/item/encryptionkey/headset_srvmed
-	name = "psychology radio encryption key"
-	icon_state = "srvmed_cypherkey"
-	channels = list(RADIO_CHANNEL_MEDICAL = 1, RADIO_CHANNEL_SERVICE = 1)
+/obj/item/encryptionkey/pirate
+	name = "pirate encryption key"
+	icon_state = "pirate_cypherkey"
+	channels = list(RADIO_CHANNEL_PIRATE = 1)
 
 /obj/item/encryptionkey/headset_com
 	name = "command radio encryption key"
-	icon_state = "com_cypherkey"
+	icon_state = "comm_cypherkey"
 	channels = list(RADIO_CHANNEL_COMMAND = 1)
 
 /obj/item/encryptionkey/heads/captain
 	name = "\proper the captain's encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_ENGINEERING = 0, RADIO_CHANNEL_SCIENCE = 0, RADIO_CHANNEL_MEDICAL = 0, RADIO_CHANNEL_SUPPLY = 0, RADIO_CHANNEL_SERVICE = 0, RADIO_CHANNEL_WIDEBAND = 0) //WS edit - Wideband radio
-
-/obj/item/encryptionkey/heads/rd
-	name = "\proper the research director's encryption key"
-	icon_state = "rd_cypherkey"
-	channels = list(RADIO_CHANNEL_SCIENCE = 1, RADIO_CHANNEL_COMMAND = 1)
-
-/obj/item/encryptionkey/heads/hos
-	name = "\proper the head of security's encryption key"
-	icon_state = "hos_cypherkey"
-	channels = list(RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_COMMAND = 1)
-
-/obj/item/encryptionkey/heads/ce
-	name = "\proper the chief engineer's encryption key"
-	icon_state = "ce_cypherkey"
-	channels = list(RADIO_CHANNEL_ENGINEERING = 1, RADIO_CHANNEL_COMMAND = 1)
-
-/obj/item/encryptionkey/heads/cmo
-	name = "\proper the chief medical officer's encryption key"
-	icon_state = "cmo_cypherkey"
-	channels = list(RADIO_CHANNEL_MEDICAL = 1, RADIO_CHANNEL_COMMAND = 1)
-
-/obj/item/encryptionkey/heads/head_of_personnel
-	name = "\proper the head of personnel's encryption key"
-	icon_state = "hop_cypherkey"
-	channels = list(RADIO_CHANNEL_SUPPLY = 1, RADIO_CHANNEL_SERVICE = 1, RADIO_CHANNEL_COMMAND = 1)
-
-/obj/item/encryptionkey/heads/lieutenant
-	name = "lieutenant's encryption key"
-	desc = "An encryption key for a radio headset.  Channels are as follows: :c - command."
-	icon_state = "com_cypherkey"
-	channels = list(RADIO_CHANNEL_COMMAND = 1)
-
-/obj/item/encryptionkey/headset_cargo
-	name = "supply radio encryption key"
-	icon_state = "cargo_cypherkey"
-	channels = list(RADIO_CHANNEL_SUPPLY = 1)
-
-/obj/item/encryptionkey/headset_mining
-	name = "mining radio encryption key"
-	icon_state = "cargo_cypherkey"
-	channels = list(RADIO_CHANNEL_SUPPLY = 1, RADIO_CHANNEL_SCIENCE = 1)
-
-/obj/item/encryptionkey/headset_service
-	name = "service radio encryption key"
-	icon_state = "srv_cypherkey"
-	channels = list(RADIO_CHANNEL_SERVICE = 1)
+	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_WIDEBAND = 0) //WS edit - Wideband radio
 
 /obj/item/encryptionkey/headset_cent
 	name = "\improper CentCom radio encryption key"
@@ -137,22 +72,16 @@
 	channels = list(RADIO_CHANNEL_CENTCOM = 1, RADIO_CHANNEL_WIDEBAND = 0) //WS edit- Wideband Radio
 
 /obj/item/encryptionkey/ai //ported from NT, this goes 'inside' the AI.
-	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_ENGINEERING = 1, RADIO_CHANNEL_SCIENCE = 1, RADIO_CHANNEL_MEDICAL = 1, RADIO_CHANNEL_SUPPLY = 1, RADIO_CHANNEL_SERVICE = 1, RADIO_CHANNEL_AI_PRIVATE = 1)
+	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_AI_PRIVATE = 1)
 
 /obj/item/encryptionkey/secbot
-	channels = list(RADIO_CHANNEL_AI_PRIVATE = 1, RADIO_CHANNEL_SECURITY = 1)
-/obj/item/encryptionkey/headset_medsec
-	name = "medical-security encryption key"
-	icon = 'icons/obj/radio.dmi'
-	icon_state = "medsec_cypherkey"
-	channels = list(RADIO_CHANNEL_MEDICAL = 1, RADIO_CHANNEL_SECURITY = 1)
+	channels = list(RADIO_CHANNEL_AI_PRIVATE = 1)
 
 /obj/item/encryptionkey/solgov
 	name = "\improper SolGov encryption key"
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "solgov_cypherkey"
-	independent = TRUE
-	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_SOLGOV = 1)
+	channels = list(RADIO_CHANNEL_SOLGOV = 1)
 
 /obj/item/encryptionkey/wideband
 	name = "wideband encryption key"

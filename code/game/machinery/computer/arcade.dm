@@ -532,11 +532,11 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 
 	if(gamers[gamer] > 2 && prob(20 * gamers[gamer]))
 
-		Radio.set_frequency(FREQ_SECURITY)
-		Radio.talk_into(src, "SECURITY ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please watch for violent behavior.", FREQ_SECURITY)
+		Radio.set_frequency(FREQ_COMMAND)
+		Radio.talk_into(src, "SECURITY ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please watch for violent behavior.", FREQ_COMMAND)
 
-		Radio.set_frequency(FREQ_MEDICAL)
-		Radio.talk_into(src, "PSYCH ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please schedule psych evaluation.", FREQ_MEDICAL)
+		Radio.set_frequency(FREQ_COMMAND)
+		Radio.talk_into(src, "PSYCH ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please schedule psych evaluation.", FREQ_COMMAND)
 
 		gamers[gamer] = -1
 

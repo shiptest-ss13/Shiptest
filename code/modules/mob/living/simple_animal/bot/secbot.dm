@@ -11,7 +11,7 @@
 	pass_flags = PASSMOB
 
 	radio_key = /obj/item/encryptionkey/secbot //AI Priv + Security
-	radio_channel = RADIO_CHANNEL_SECURITY //Security channel
+	radio_channel = RADIO_CHANNEL_COMMAND //Security channel
 	bot_type = SEC_BOT
 	model = "Securitron"
 	bot_core_type = /obj/machinery/bot_core/secbot
