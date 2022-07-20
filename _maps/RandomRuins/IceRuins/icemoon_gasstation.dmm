@@ -63,13 +63,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
-"hq" = (
-/obj/structure/barricade/wooden,
-/obj/effect/turf_decal/corner/bar/half{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/gasstation)
 "ht" = (
 /obj/item/trash/can/food/beans,
 /obj/effect/turf_decal/corner/bar/three_quarters{
@@ -125,6 +118,7 @@
 /obj/structure/window{
 	dir = 4
 	},
+/obj/structure/window,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "lP" = (
@@ -152,9 +146,14 @@
 /area/ruin/unpowered/gasstation)
 "nC" = (
 /mob/living/simple_animal/hostile/russian/ranged/officer{
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	minbodytemp = 0
 	},
 /turf/open/floor/plasteel/grimy,
+/area/ruin/unpowered/gasstation)
+"nO" = (
+/obj/structure/table,
+/turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "ot" = (
 /obj/item/trash/sosjerky,
@@ -190,10 +189,6 @@
 /obj/machinery/vending/boozeomat{
 	products = list(/obj/item/reagent_containers/food/drinks/bottle/gin = 2, /obj/item/reagent_containers/food/drinks/bottle/whiskey = 2, /obj/item/reagent_containers/food/drinks/bottle/tequila = 3, /obj/item/reagent_containers/food/drinks/bottle/vodka = 1, /obj/item/reagent_containers/food/drinks/bottle/vermouth = 3, /obj/item/reagent_containers/food/drinks/bottle/rum = 5, /obj/item/reagent_containers/food/drinks/bottle/wine = 2, /obj/item/reagent_containers/food/drinks/bottle/cognac = 3, /obj/item/reagent_containers/food/drinks/bottle/kahlua = 1, /obj/item/reagent_containers/food/drinks/bottle/absinthe = 2, /obj/item/reagent_containers/food/drinks/ale = 3, /obj/item/reagent_containers/food/drinks/flask = 1)
 	},
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/gasstation)
-"rd" = (
-/obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/gasstation)
 "rs" = (
@@ -465,7 +460,8 @@
 /area/ruin/unpowered/gasstation)
 "Lm" = (
 /mob/living/simple_animal/hostile/russian/ranged{
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	minbodytemp = 0
 	},
 /obj/effect/turf_decal/corner/blue/diagonal,
 /turf/open/floor/plasteel/white,
@@ -507,10 +503,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/unpowered/gasstation)
 "Nt" = (
-/obj/structure/rack,
-/obj/structure/window,
-/obj/effect/spawner/lootdrop/donkpockets,
-/turf/open/floor/plasteel/white,
+/turf/closed/wall/mineral/wood,
 /area/ruin/unpowered/gasstation)
 "Nx" = (
 /obj/effect/turf_decal/corner/red/full,
@@ -639,7 +632,8 @@
 /area/ruin/unpowered/gasstation)
 "Ty" = (
 /mob/living/simple_animal/hostile/russian/ranged/mosin{
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	minbodytemp = 0
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered/gasstation)
@@ -983,8 +977,8 @@ tM
 Sm
 Sm
 Sm
-hq
-rd
+Nt
+Nt
 xX
 xX
 ot
@@ -1006,7 +1000,7 @@ JA
 yI
 Dy
 vE
-eN
+Nt
 Rl
 ls
 IF
@@ -1050,7 +1044,7 @@ SN
 FK
 Ih
 ke
-rd
+nO
 mW
 xX
 xX
