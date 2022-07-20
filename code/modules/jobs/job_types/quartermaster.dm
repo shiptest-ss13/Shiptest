@@ -12,6 +12,8 @@
 	alt_titles = list("Supply Chief", "Requisitions Officer")
 	senior_title = "Chief Economist"
 
+	skills = list(/datum/skill/mining = SKILL_EXP_JOURNEYMAN)
+
 	outfit = /datum/outfit/job/quartermaster
 
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM, ACCESS_VAULT)

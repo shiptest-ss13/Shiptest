@@ -39,6 +39,8 @@
 	var/acti_sound = 'sound/items/welderactivate.ogg'
 	var/deac_sound = 'sound/items/welderdeactivate.ogg'
 	var/start_full = TRUE
+	wound_bonus = 10
+	bare_wound_bonus = 15
 
 /obj/item/weldingtool/empty
 	start_full = FALSE

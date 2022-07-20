@@ -107,7 +107,7 @@
 #define TR_KEEPORGANS (1<<8)
 #define TR_KEEPSTUNS (1<<9)
 #define TR_KEEPREAGENTS (1<<10)
-
+#define TR_KEEPSTAMINADAMAGE (1<<11)
 //species traits for mutantraces
 #define MUTCOLORS 1
 #define HAIR 2
@@ -133,7 +133,12 @@
 #define NOHUSK 21 // Can't be husked.
 #define NOMOUTH 22
 #define NOSOCKS 23 // You cannot wear sock
-#define NO_BONES 24 //WS Edit - Breakable Bones
+
+/// Used for determining which wounds are applicable to this species.
+/// if we have flesh (can suffer slash/piercing/burn wounds, requires they don't have NOBLOOD)
+#define HAS_FLESH 25
+/// if we have bones (can suffer bone wounds)
+#define HAS_BONE 26
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"
@@ -173,6 +178,7 @@
 #define CHROMOSOME_NONE 1
 #define CHROMOSOME_USED 2
 
+//used for mob's genetic gender (mainly just for pronouns, members of sexed species with plural gender refer to their body_type for the actual sprites, which is not genetic)
 #define G_MALE 1
 #define G_FEMALE 2
 #define G_PLURAL 3

@@ -7,6 +7,8 @@
 	icon = 'icons/obj/tapes.dmi'
 	icon_state = "tape_w"
 	var/prefix = "sticky"
+	w_class = WEIGHT_CLASS_TINY
+	full_w_class = WEIGHT_CLASS_TINY
 	item_flags = NOBLUDGEON
 	amount = 5
 	max_amount = 5
@@ -68,9 +70,17 @@
 	prefix = "super pointy"
 	conferred_embed = EMBED_POINTY_SUPERIOR
 
+/obj/item/stack/sticky_tape/surgical
+	name = "surgical tape"
+	singular_name = "surgical tape"
+	desc = "Made for patching broken bones back together alongside bone gel, not for playing pranks."
+	//icon_state = "tape_spikes"
+	prefix = "surgical"
+	conferred_embed = list("embed_chance" = 30, "pain_mult" = 0, "jostle_pain_mult" = 0, "ignore_throwspeed_threshold" = TRUE)
+	custom_price = 500
+
 /obj/item/stack/tape
 	name = "packaging tape"
-	singular_name = "tape strip"
 	desc = "Sticks things together with minimal effort."
 	icon = 'whitesands/icons/obj/tapes.dmi'
 	icon_state = "tape"
@@ -80,9 +90,8 @@
 	grind_results = list(/datum/reagent/cellulose = 5)
 	usesound = 'whitesands/sound/items/tape.ogg'
 
-	var/stop_bleed = 600
 	var/nonorganic_heal = 5
-	var/self_delay = 30 //! Also used for the tapecuff delay
+	var/self_delay = 30 //! Also used for the tapecuff delay/
 	var/other_delay = 10
 	var/prefix = "sticky"
 	var/list/conferred_embed = EMBED_HARMLESS
@@ -173,14 +182,6 @@
 	if(!affecting) //Missing limb?
 		to_chat(user, "<span class='warning'>[C] doesn't have \a [parse_zone(user.zone_selected)]!</span>")
 		return
-	if(!IS_ORGANIC_LIMB(affecting))
-		if(ishuman(C))
-			var/mob/living/carbon/human/H = C
-			if(!H.bleedsuppress && H.bleed_rate)
-				H.suppress_bloodloss(stop_bleed)
-				to_chat(user, "<span class='notice'>You tape up the bleeding of [C]!</span>")
-				return TRUE
-		to_chat(user, "<span class='warning'>[C] has a problem \the [src] won't fix!</span>")
 	else //Robotic patch-up
 		if(affecting.brute_dam)
 			user.visible_message("<span class='notice'>[user] applies \the [src] on [C]'s [affecting.name].</span>", "<span class='green'>You apply \the [src] on [C]'s [affecting.name].</span>")
@@ -272,7 +273,6 @@
 	desc = "This roll of silver sorcery can fix just about anything."
 	icon_state = "tape_d"
 
-	stop_bleed = 800
 	nonorganic_heal = 20
 	prefix = "super sticky"
 	conferred_embed = EMBED_HARMLESS_SUPERIOR
@@ -297,7 +297,6 @@
 	desc = "Specialty insulated strips of adhesive plastic. Made for securing cables."
 	icon_state = "tape_e"
 
-	stop_bleed = 400
 	nonorganic_heal = 10
 	prefix = "insulated sticky"
 	siemens_coefficient = 0
@@ -321,6 +320,5 @@
 	desc = "Now THIS is engineering."
 	icon_state = "tape_y"
 
-	stop_bleed = 1000
 	nonorganic_heal = 30
 	prefix = "industry-standard sticky"

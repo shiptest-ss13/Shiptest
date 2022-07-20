@@ -96,6 +96,10 @@
 	mood_change = -3
 	timeout = 3 MINUTES
 
+/datum/mood_event/table_limbsmash/add_effects(obj/item/bodypart/banged_limb)
+	if(banged_limb)
+		description = "<span class='warning'>My fucking [banged_limb.name], man that hurts...</span>\n"
+
 /datum/mood_event/brain_damage
 	mood_change = -3
 

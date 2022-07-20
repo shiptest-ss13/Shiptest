@@ -85,12 +85,3 @@
 	var/obj/item/organ/brain/B = getorganslot(ORGAN_SLOT_BRAIN)
 	if(B)
 		. = B.cure_all_traumas(resilience)
-
-//////////////////////////////// BROKEN BONES ///////////////////////////
-/mob/living/carbon/proc/mend_fractures()
-	for(var/obj/item/bodypart/B in bodyparts)
-		B.fix_bone()
-
-/mob/living/carbon/proc/break_all_bones()
-	for(var/obj/item/bodypart/B in bodyparts)
-		B.break_bone()

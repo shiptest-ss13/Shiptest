@@ -427,6 +427,9 @@ WS End*/
 		if(method in list(PATCH, TOUCH))
 			var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-1.25 * reac_volume)*-1)
 			var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-1.25 * reac_volume)*-1)
+			for(var/i in carbies.all_wounds)
+				var/datum/wound/iter_wound = i
+				iter_wound.on_synthflesh(reac_volume)
 			carbies.adjustToxLoss((harmies+burnies)*0.66)
 			if(show_message)
 				to_chat(carbies, "<span class='danger'>You feel your burns and bruises healing! It stings like hell!</span>")

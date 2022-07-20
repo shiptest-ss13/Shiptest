@@ -41,9 +41,12 @@
 		missing -= BP.body_zone
 		for(var/obj/item/I in BP.embedded_objects)
 			if(I.isEmbedHarmless())
-				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] stuck to [t_his] [BP.name]!</B>\n"
+				msg += "<B>[t_He] [t_has] [icon2html(I, user)] \a [I] stuck to [t_his] [BP.name]!</B>\n"
 			else
-				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] embedded in [t_his] [BP.name]!</B>\n"
+				msg += "<B>[t_He] [t_has] [icon2html(I, user)] \a [I] embedded in [t_his] [BP.name]!</B>\n"
+		for(var/i in BP.wounds)
+			var/datum/wound/W = i
+			msg += "[W.get_examine_description(user)]\n"
 
 	for(var/X in disabled)
 		var/obj/item/bodypart/BP = X
@@ -100,6 +103,22 @@
 	if(pulledby && pulledby.grab_state)
 		msg += "[t_He] [t_is] restrained by [pulledby]'s grip.\n"
 
+	var/scar_severity = 0
+	for(var/i in all_scars)
+		var/datum/scar/S = i
+		if(S.is_visible(user))
+			scar_severity += S.severity
+
+	switch(scar_severity)
+		if(1 to 4)
+			msg += "<span class='tinynoticeital'>[t_He] [t_has] visible scarring, you can look again to take a closer look...</span>\n"
+		if(5 to 8)
+			msg += "<span class='smallnoticeital'>[t_He] [t_has] several bad scars, you can look again to take a closer look...</span>\n"
+		if(9 to 11)
+			msg += "<span class='notice'><i>[t_He] [t_has] significantly disfiguring scarring, you can look again to take a closer look...</i></span>\n"
+		if(12 to INFINITY)
+			msg += "<span class='notice'><b><i>[t_He] [t_is] just absolutely fucked up, you can look again to take a closer look...</i></b></span>\n"
+
 	msg += "</span>"
 
 	. += msg.Join("")
@@ -142,3 +161,80 @@
 	. += "*---------*</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
+
+/mob/living/carbon/examine_more(mob/user)
+	var/msg = list("<span class='notice'><i>You examine [src] closer, and note the following...</i></span>")
+	var/t_His = p_their(TRUE)
+	var/t_He = p_they(TRUE)
+	var/t_Has = p_have()
+
+	var/any_bodypart_damage = FALSE
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/LB = X
+		if(LB.is_pseudopart)
+			continue
+		var/limb_max_damage = LB.max_damage
+		var/status = ""
+		var/brutedamage = round(LB.brute_dam/limb_max_damage*100)
+		var/burndamage = round(LB.burn_dam/limb_max_damage*100)
+		switch(brutedamage)
+			if(20 to 35)
+				status = LB.light_brute_msg
+			if(36 to 65)
+				status = LB.medium_brute_msg
+			if(66 to 100)
+				status += LB.heavy_brute_msg
+
+		if(burndamage >= 20 && status)
+			status += "and "
+		switch(burndamage)
+			if(20 to 35)
+				status += LB.light_burn_msg
+			if(36 to 65)
+				status += LB.medium_burn_msg
+			if(66 to 100)
+				status += LB.heavy_burn_msg
+
+		if(status)
+			any_bodypart_damage = TRUE
+			msg += "\t<span class='warning'>[t_His] [LB.name] is [status].</span>"
+
+		for(var/thing in LB.wounds)
+			any_bodypart_damage = TRUE
+			var/datum/wound/W = thing
+			switch(W.severity)
+				if(WOUND_SEVERITY_TRIVIAL)
+					msg += "\t<span class='warning'>[t_His] [LB.name] is suffering [W.a_or_from] [W.get_topic_name(user)].</span>"
+				if(WOUND_SEVERITY_MODERATE)
+					msg += "\t<span class='warning'>[t_His] [LB.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!</span>"
+				if(WOUND_SEVERITY_SEVERE)
+					msg += "\t<span class='warning'><b>[t_His] [LB.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!</b></span>"
+				if(WOUND_SEVERITY_CRITICAL)
+					msg += "\t<span class='warning'><b>[t_His] [LB.name] is suffering [W.a_or_from] [W.get_topic_name(user)]!!</b></span>"
+		if(LB.current_gauze)
+			var/datum/bodypart_aid/current_gauze = LB.current_gauze
+			msg += "\t<span class='notice'><i>[t_His] [LB.name] is [current_gauze.desc_prefix] with <a href='?src=[REF(current_gauze)];remove=1'>[current_gauze.get_description()]</a>.</i></span>"
+		if(LB.current_splint)
+			var/datum/bodypart_aid/current_splint = LB.current_splint
+			msg += "\t<span class='notice'><i>[t_His] [LB.name] is [current_splint.desc_prefix] with <a href='?src=[REF(current_splint)];remove=1'>[current_splint.get_description()]</a>.</i></span>"
+
+	if(!any_bodypart_damage)
+		msg += "\t<span class='smallnotice'><i>[t_He] [t_Has] no significantly damaged bodyparts.</i></span>"
+
+	var/list/visible_scars
+	if(all_scars)
+		for(var/i in all_scars)
+			var/datum/scar/S = i
+			if(S.is_visible(user))
+				LAZYADD(visible_scars, S)
+
+	if(!visible_scars)
+		msg |= "\t<span class='smallnotice'><i>[t_He] [t_Has] no visible scars.</i></span>"
+	else
+		for(var/i in visible_scars)
+			var/datum/scar/S = i
+			var/scar_text = S.get_examine_description(user)
+			if(scar_text)
+				msg += "[scar_text]"
+
+	return msg
