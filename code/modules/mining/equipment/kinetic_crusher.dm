@@ -307,7 +307,7 @@
 /obj/item/crusher_trophy/watcher_wing
 	name = "watcher wing"
 	desc = "A wing ripped from a watcher."
-	icon_state = "watcher_wing_crystal"
+	icon_state = "watcher_wing"
 	denied_type = /obj/item/crusher_trophy/watcher_wing
 	bonus_value = 5
 
