@@ -1344,7 +1344,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 //WS Begin - Borers
 /obj/effect/hallucination/simple/borer
-	image_icon = 'whitesands/icons/mob/borer.dmi'
+	image_icon = 'icons/mob/borer.dmi'
 	image_state = "brainslug"
 
 /datum/hallucination/borer
