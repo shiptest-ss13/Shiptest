@@ -123,7 +123,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "bL" = (
-/obj/machinery/door/airlock/command/glass,
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -198,7 +200,9 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/dorm)
 "cr" = (
-/obj/machinery/door/airlock/atmos,
+/obj/machinery/door/airlock/atmos{
+	name = "Atmospherics"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -502,7 +506,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "gH" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Starboard Maintenance"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -789,7 +795,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/research/glass,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -806,8 +811,11 @@
 /obj/effect/turf_decal/siding/purple/corner{
 	dir = 4
 	},
+/obj/machinery/door/airlock/research/glass{
+	name = "Science Lab"
+	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
+/area/ship/science)
 "jG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1133,7 +1141,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "nk" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Port Maintenance"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1559,7 +1569,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/door/airlock/atmos/glass,
+/obj/machinery/door/airlock/atmos/glass{
+	name = "Atmospherics"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
 "vN" = (
@@ -1690,7 +1702,9 @@
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "xx" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "Central Hallway"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -1797,7 +1811,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "Library"
+	},
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
@@ -2168,7 +2184,9 @@
 /obj/effect/turf_decal/siding/brown/corner{
 	dir = 1
 	},
-/obj/machinery/door/airlock/mining/glass,
+/obj/machinery/door/airlock/mining/glass{
+	name = "Cargo Bay"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -2230,7 +2248,9 @@
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "HF" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "Dormitory"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/firedoor/border_only,
@@ -2339,7 +2359,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/research/glass,
+/obj/machinery/door/airlock/research/glass{
+	name = "Science Lab"
+	},
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
@@ -3012,7 +3034,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Sh" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	name = "Electrical"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
