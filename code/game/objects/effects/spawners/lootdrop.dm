@@ -598,6 +598,7 @@
 		/obj/machinery/the_singularitygen = 1,
 	)
 
+
 GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 	/obj/item/stack/sheet/animalhide/goliath_hide = 0.7,
 	/obj/item/stack/sheet/bone = 0.8,
