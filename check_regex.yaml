@@ -38,6 +38,6 @@ standards:
   - exactly: [297, 'non-bitwise << uses', '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)']
   - exactly: [0, 'incorrect indentations', '^(?:  +)(?!\*)']
   - exactly: [0, 'superflous whitespace', '[ \t]+$']
-  - exactly: [28, 'mixed indentation', '^( +\t+|\t+ +)']
+  - exactly: [12, 'mixed indentation', '^( +\t+|\t+ +)']
 
   - no_more: [34, 'indentions inside defines', '^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))']
