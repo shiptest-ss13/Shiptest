@@ -16,14 +16,6 @@
 /obj/machinery/power/terminal,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"aj" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 5;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/maintenance/starboard)
 "am" = (
 /obj/effect/turf_decal/spline/fancy/black{
 	dir = 6
@@ -329,14 +321,6 @@
 /obj/item/hemostat,
 /turf/open/floor/pod/dark,
 /area/ship/medical)
-"du" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 6;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/crew/dorm)
 "dv" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -879,14 +863,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/medical)
-"hN" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 10;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/cargo)
 "hX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -2091,14 +2067,6 @@
 	},
 /turf/open/floor/holofloor/wood,
 /area/ship/bridge)
-"uy" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 10;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/maintenance/port)
 "uA" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
@@ -2115,14 +2083,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
-"uD" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 6;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/maintenance/starboard)
 "uE" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/mineral/plastitanium,
@@ -2671,14 +2631,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"At" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 5;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/hallway/central)
 "Au" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -2749,6 +2701,7 @@
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/accessory/holster,
 /obj/item/clothing/shoes/combat,
+/obj/item/radio/headset/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "AY" = (
@@ -3005,6 +2958,7 @@
 /obj/item/clothing/suit/aclf,
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
+/obj/item/radio/headset/syndicate/alt/leader,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "El" = (
@@ -3015,14 +2969,6 @@
 "Ep" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
-"Er" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 9;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/maintenance/port)
 "Ew" = (
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
@@ -3343,7 +3289,7 @@
 	on = 0
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering)
+/area/ship/bridge)
 "Hb" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -3409,7 +3355,7 @@
 	on = 0
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/security/armory)
+/area/ship/bridge)
 "Hv" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -3968,6 +3914,7 @@
 	},
 /obj/item/melee/classic_baton/telescopic,
 /obj/item/clothing/neck/chameleon,
+/obj/item/radio/headset/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ME" = (
@@ -4168,10 +4115,6 @@
 /area/ship/hallway/central)
 "OO" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/headset/syndicate/alt{
-	pixel_x = -5;
-	pixel_y = 4
-	},
 /obj/effect/turf_decal/industrial/fire/corner{
 	dir = 4
 	},
@@ -4319,14 +4262,6 @@
 /obj/structure/bed/dogbed,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"PG" = (
-/obj/machinery/porta_turret/centcom_shuttle/ballistic{
-	dir = 9;
-	name = "ship turret";
-	on = 0
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/cargo)
 "PK" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
@@ -4592,7 +4527,7 @@
 	on = 0
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering)
+/area/ship/bridge)
 "Tv" = (
 /obj/structure/salvageable/computer,
 /obj/effect/decal/cleanable/wrapping,
@@ -4767,7 +4702,7 @@
 	on = 0
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/hallway/central)
+/area/ship/bridge)
 "UO" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -5352,7 +5287,7 @@
 CM
 CM
 CM
-Er
+UN
 gN
 gN
 gN
@@ -5360,7 +5295,7 @@ gN
 gN
 gN
 gN
-uy
+Te
 CM
 CM
 CM
@@ -5372,14 +5307,14 @@ CM
 CM
 CM
 CM
-PG
+UN
 Vk
 Vk
 Rk
 bA
 bA
 bA
-hN
+Te
 CM
 CM
 CM
@@ -6029,7 +5964,7 @@ TR
 TR
 CM
 CM
-At
+Hr
 bF
 bF
 gE
@@ -6056,7 +5991,7 @@ CM
 CM
 CM
 CM
-aj
+Hr
 OQ
 OQ
 OQ
@@ -6064,7 +5999,7 @@ OQ
 OQ
 OQ
 OQ
-uD
+GS
 CM
 CM
 CM
@@ -6084,7 +6019,7 @@ tf
 gE
 bZ
 bZ
-du
+GS
 CM
 CM
 CM
