@@ -684,7 +684,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 	var/radio_messages = list(
 		"[pick("Is","We think","I'm almost sure","","Oh fuck... I think","I think")] [pick_list_replacements(HAL_LINES_FILE, "people")] is [pick_list_replacements(HAL_LINES_FILE, "accusations")]",\
-		"We [pick("need to", "gotta", "have to", "should","got told to","got ordered to","are going to")] [pick_list_replacements(HAL_LINES_FILE, "threat")] [pick([target.first_name()], [pick_list_replacements(HAL_LINES_FILE, "people")])")
+		"We [pick("need to", "gotta", "have to", "should","got told to","got ordered to","are going to")] [pick_list_replacements(HAL_LINES_FILE, "threat")] [pick([target.first_name()], [pick_list_replacements(HAL_LINES_FILE, "people")])]")
 
 	var/mob/living/carbon/person = null
 	var/datum/language/understood_language = target.get_random_understood_language()
