@@ -2,13 +2,13 @@
 
 GLOBAL_LIST_INIT(hallucination_list, list(
 	/datum/hallucination/chat = 90,
-	/datum/hallucination/message = 60,
-	/datum/hallucination/sounds = 60,
-	/datum/hallucination/battle = 22,
-	/datum/hallucination/dangerflash = 15,
+	/datum/hallucination/message = 50,
+	/datum/hallucination/sounds = 40,
+	/datum/hallucination/battle = 18,
 	/datum/hallucination/hudscrew = 15,
-	/datum/hallucination/fake_alert = 15,
 	/datum/hallucination/stray_bullet = 15,
+	/datum/hallucination/dangerflash = 12,
+	/datum/hallucination/fake_alert = 12,
 	/datum/hallucination/weird_sounds = 10,
 	/datum/hallucination/items_other = 7,
 	/datum/hallucination/husks = 7,
@@ -17,10 +17,10 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	/datum/hallucination/bolts = 6,
 	/datum/hallucination/self_delusion = 4,
 	/datum/hallucination/delusion = 4,
-	/datum/hallucination/shock = 4,
 	/datum/hallucination/items = 4,
-	/datum/hallucination/death = 2,
-	/datum/hallucination/fire = 2,
+	/datum/hallucination/shock = 3,
+	/datum/hallucination/death = 1,
+	/datum/hallucination/fire = 1,
 	/datum/hallucination/oh_yeah = 1
 	))
 
