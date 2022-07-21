@@ -56,6 +56,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = MINING
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_ASTEROID
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/aux_base
 	name = "Auxiliary Base Construction"
@@ -114,6 +116,18 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffdbb4"
 	lighting_brightness_tube = 6
 
+/area/ship/crew/crewtwo
+	name = "Crew Quarters 2"
+
+/area/ship/crew/crewthree
+	name = "Crew Quarters 3"
+
+/area/ship/crew/crewfour
+	name = "Crew Quarters 4"
+
+/area/ship/crew/crewfive
+	name = "Crew Quarters 5"
+
 /area/ship/crew/cryo
 	name = "Cryopod Room"
 	icon_state = "cryopod"
@@ -123,6 +137,18 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/dorm
 	name = "Dormitory"
 	icon_state = "Sleep"
+
+/area/ship/crew/dorm/dormtwo
+	name = "Dormitory 2"
+
+/area/ship/crew/dorm/dormthree
+	name = "Dormitory 3"
+
+/area/ship/crew/dorm/dormfour
+	name = "Dormitory 4"
+
+/area/ship/crew/dorm/dormfive
+	name = "Dormitory 5"
 
 /area/ship/crew/toilet
 	name = "Restrooms"
@@ -159,7 +185,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/library
 	name = "Library"
 	icon_state = "library"
-	flags_1 = CULT_PERMITTED_1
 	lighting_colour_tube = "#ffce99"
 	lighting_colour_bulb = "#ffdbb4"
 	sound_environment = SOUND_AREA_WOODFLOOR
@@ -182,7 +207,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/janitor
 	name = "Custodial Closet"
 	icon_state = "janitor"
-	flags_1 = CULT_PERMITTED_1
 	sound_environment = SOUND_AREA_SMALL_ENCLOSED
 
 /// Medical Bay ///
@@ -192,6 +216,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = MEDICAL
 	lighting_colour_tube = "#e7f8ff"
 	lighting_colour_bulb = "#d5f2ff"
+	min_ambience_cooldown = 90 SECONDS
+	max_ambience_cooldown = 180 SECONDS
 
 /area/ship/medical/surgery
 	name = "Surgical Bay"
@@ -262,6 +288,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/engineering/engine
 	name = "Engine Room"
 	icon_state = "engine_sm"
+  
+/area/ship/engineering/incinerator
+	name = "Incinerator"
+	icon_state = "disposal"
 
 /// Thrusters ///
 /area/ship/thrusters
@@ -353,6 +383,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "quartoffice"
 	sound_environment = SOUND_AREA_STANDARD_STATION
 
+/area/ship/cargo/port
+	name = "Port Cargo Bay"
+
+/area/ship/cargo/starboard
+	name = "Starboard Cargo Bay"
+
 /// Hallways ///
 /area/ship/hallway
 	name = "Hallway"
@@ -409,13 +445,20 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Central Maintenance"
 	icon_state = "maintcentral"
 
+/area/ship/maintenance/external
+	name = "External Hull Access"
+	icon_state = "amaint"
+
 /area/ship/construction
 	name = "Construction Area"
 	icon_state = "construction"
 
+/// Storage Areas ///
+
 /area/ship/storage
 	name = "Storage Bay"
 	icon_state = "storage"
+	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /// External Areas ///
 /area/ship/external

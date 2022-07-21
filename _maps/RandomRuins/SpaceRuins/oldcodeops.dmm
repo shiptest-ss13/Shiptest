@@ -39,8 +39,6 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/storage/backpack,
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/suit/space/swat,
 /obj/item/clothing/under/color/black,
 /obj/item/gun/ballistic/automatic/pistol/deagle,
 /obj/structure/closet{
@@ -48,6 +46,7 @@
 	name = "strange closet"
 	},
 /obj/item/ammo_box/magazine/m50,
+/obj/item/clothing/suit/space/hardsuit/syndi/elite,
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
 "fO" = (
@@ -95,7 +94,6 @@
 "na" = (
 /obj/item/crowbar,
 /obj/item/stack/cable_coil,
-/obj/item/clothing/gloves/color/yellow,
 /obj/item/assembly/prox_sensor,
 /obj/structure/table/greyscale,
 /turf/open/floor/oldshuttle,
@@ -210,7 +208,6 @@
 	},
 /area/ruin/powered)
 "JB" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/space/oldcode,
 /turf/open/floor/circuit,
 /area/ruin/powered)
 "KA" = (
@@ -297,7 +294,6 @@
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
 "Vp" = (
-/obj/item/clothing/gloves/color/yellow,
 /obj/item/assembly/signaler,
 /obj/structure/table/greyscale,
 /turf/open/floor/oldshuttle,
@@ -310,7 +306,6 @@
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
 "Wm" = (
-/obj/item/clothing/gloves/color/yellow,
 /obj/item/assembly/prox_sensor,
 /obj/structure/table/greyscale,
 /turf/open/floor/oldshuttle,
@@ -320,16 +315,8 @@
 /obj/item/bombcore,
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
-"Xm" = (
-/obj/structure/chair/old{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/syndicate/ranged/space/oldcode,
-/turf/open/floor/oldshuttle,
-/area/ruin/powered)
 "XT" = (
 /obj/machinery/cell_charger,
-/obj/item/clothing/gloves/color/yellow,
 /obj/item/assembly/signaler,
 /obj/structure/table/greyscale,
 /turf/open/floor/oldshuttle,
@@ -422,7 +409,7 @@ iW
 iW
 iW
 Td
-zH
+iW
 iW
 iW
 iW
@@ -483,7 +470,7 @@ vk
 Td
 iW
 iW
-pM
+iW
 Td
 Td
 Td
@@ -510,7 +497,7 @@ iW
 iW
 Td
 qQ
-Xm
+fg
 fg
 fg
 fg
@@ -534,7 +521,7 @@ VQ
 iW
 Ge
 iW
-iW
+zH
 iW
 iW
 iW
@@ -563,7 +550,7 @@ MY
 MY
 MY
 iW
-zH
+iW
 iW
 iW
 iW
@@ -579,7 +566,7 @@ vk
 Td
 iW
 iW
-pM
+iW
 Td
 Td
 Td
@@ -634,7 +621,7 @@ vk
 vk
 vk
 FQ
-pM
+iW
 iW
 iW
 Td
@@ -664,7 +651,7 @@ Sw
 Td
 rj
 iW
-pM
+iW
 iW
 iW
 gj

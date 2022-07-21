@@ -72,7 +72,8 @@ other types of metals and chemistry for reagents).
 	name = "Component Design Disk"
 	desc = "A disk for storing device design data for construction in lathes."
 	random_color = FALSE
-	color = "#3C2798"
+	color = "#8b70ff"
+	illustration = "design"
 	custom_materials = list(/datum/material/iron =300, /datum/material/glass =100)
 	var/list/blueprints = list()
 	var/max_blueprints = 1
@@ -86,9 +87,24 @@ other types of metals and chemistry for reagents).
 
 /obj/item/disk/design_disk/adv
 	name = "Advanced Component Design Disk"
-	desc = "A disk for storing device design data for construction in lathes. This one has extra storage space."
+	color = "#bed876"
+	desc = "A disk for storing device design data for construction in lathes. This one has a little bit of extra storage space."
 	custom_materials = list(/datum/material/iron =300, /datum/material/glass = 100, /datum/material/silver = 50)
+	max_blueprints = 3
+
+/obj/item/disk/design_disk/super
+	name = "Super Component Design Disk"
+	color = "#c25454"
+	desc = "A disk for storing device design data for construction in lathes. This one has more extra storage space."
+	custom_materials = list(/datum/material/iron =300, /datum/material/glass = 100, /datum/material/silver = 50, /datum/material/gold = 50)
 	max_blueprints = 5
+
+/obj/item/disk/design_disk/elite
+	name = "Elite Component Design Disk"
+	color = "#333333"
+	desc = "A disk for storing device design data for construction in lathes. This one has absurd amounts of extra storage space."
+	custom_materials = list(/datum/material/iron =300, /datum/material/glass = 100, /datum/material/silver = 100, /datum/material/gold = 100, /datum/material/bluespace = 50)
+	max_blueprints = 10
 
 //Disks with content
 /obj/item/disk/design_disk/ammo_38_hunting

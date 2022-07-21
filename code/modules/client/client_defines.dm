@@ -41,13 +41,6 @@
 	///Current area of the controlled mob
 	var/area = null
 
-		///////////////
-		//SOUND STUFF//
-		///////////////
-	///Currently playing ambience sound
-	var/ambience_playing = null
-	///Whether an ambience sound has been played and one shouldn't be played again, unset by a callback
-	var/played = FALSE
 		////////////
 		//SECURITY//
 		////////////
@@ -193,4 +186,7 @@
 
 	/// If the client is currently under the restrictions of the interview system
 	var/interviewee = FALSE
+
+	/// Used by SSserver_maint to detect if a client is newly AFK.
+	var/last_seen_afk = 0
 

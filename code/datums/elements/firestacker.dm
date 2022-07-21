@@ -1,6 +1,6 @@
 /**
-  * Can be applied to /atom/movable subtypes to make them apply fire stacks to things they hit
-  */
+ * Can be applied to /atom/movable subtypes to make them apply fire stacks to things they hit
+ */
 /datum/element/firestacker
 	element_flags = ELEMENT_BESPOKE
 	id_arg_index = 2

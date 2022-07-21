@@ -355,26 +355,6 @@
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Add Custom AI Law") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/cmd_admin_rejuvenate(mob/living/M in GLOB.mob_list)
-	set category = "Debug"
-	set name = "Rejuvenate"
-
-	if(!check_rights(R_ADMIN))
-		return
-
-	if(!mob)
-		return
-	if(!istype(M))
-		alert("Cannot revive a ghost")
-		return
-	M.revive(full_heal = TRUE, admin_revive = TRUE)
-
-	log_admin("[key_name(usr)] healed / revived [key_name(M)]")
-	var/msg = "<span class='danger'>Admin [key_name_admin(usr)] healed / revived [ADMIN_LOOKUPFLW(M)]!</span>"
-	message_admins(msg)
-	admin_ticket_log(M, msg)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Rejuvinate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
 /client/proc/cmd_admin_create_centcom_report()
 	set category = "Admin.Events"
 	set name = "Create Command Report"
@@ -958,18 +938,9 @@
 				return
 			to_chat(target, "<span class='userdanger'>You do nyat feew vewy good!</span>", confidential = TRUE)
 			var/mob/living/carbon/dude = target
-			var/obj/item/organ/tongue/felinid/tonje = new
+			var/obj/item/organ/tongue/uwuspeak/tonje = new
 			tonje.Insert(dude, TRUE, FALSE)
-		if(ADMIN_PUNISHMENT_PIE)
-			var/pie_count = input("How many pies do you want to deploy?:","Armageddon") as num|null
-			var/delay_counter = 1
-			if(!pie_count)
-				return
-			for(var/x in 1 to pie_count)
-				if(QDELETED(target))
-					return
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/pie_smite, target), delay_counter)
-				delay_counter += 1
+
 	punish_log(target, punishment)
 
 /client/proc/punish_log(whom, punishment)

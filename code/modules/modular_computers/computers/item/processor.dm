@@ -8,6 +8,7 @@
 	icon_state_unpowered = null
 	icon_state_menu = null
 	hardware_flag = 0
+	req_ship_access = TRUE // Used inside modular computer consoles
 
 	var/obj/machinery/modular_computer/machinery_computer = null
 

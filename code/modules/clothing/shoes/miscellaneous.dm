@@ -19,6 +19,7 @@
 	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 12 SECONDS
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/combat/sneakboots
 	name = "sneakboots"
@@ -79,6 +80,7 @@
 	can_be_bloody = FALSE
 	custom_price = 600
 	can_be_tied = FALSE
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/galoshes/dry
 	name = "absorbent galoshes"
@@ -148,6 +150,8 @@
 	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	can_be_tied = FALSE
+	supports_variations = DIGITIGRADE_VARIATION
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/jackboots/fast
 	slowdown = -1
@@ -164,6 +168,8 @@
 	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
+	supports_variations = DIGITIGRADE_VARIATION
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/workboots
 	name = "work boots"
@@ -177,6 +183,8 @@
 	equip_delay_other = 40
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
+	supports_variations = DIGITIGRADE_VARIATION
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/winterboots/ice_boots
 	name = "ice hiking boots"
@@ -201,6 +209,7 @@
 	heat_protection = FEET
 	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
 	lace_time = 10 SECONDS
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/cult/alt
 	name = "cultist boots"
@@ -241,6 +250,7 @@
 	item_state = "griffinboots"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/bhop
 	name = "jump boots"
@@ -259,6 +269,7 @@
 	var/jumpspeed = 3
 	var/recharging_rate = 60 //default 6 seconds between each dash
 	var/recharging_time = 0 //time until next dash
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/bhop/ui_action_click(mob/user, action)
 	if(!isliving(user))
@@ -282,12 +293,14 @@
 	desc = "These boots were made for dancing."
 	icon_state = "ysing"
 	equip_delay_other = 50
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/singerb
 	name = "blue performer's boots"
 	desc = "These boots were made for dancing."
 	icon_state = "bsing"
 	equip_delay_other = 50
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/bronze
 	name = "bronze boots"
@@ -295,6 +308,7 @@
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_treads"
 	lace_time = 8 SECONDS
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/bronze/Initialize()
 	. = ..()
@@ -389,6 +403,7 @@
 	var/list/occupants = list()
 	var/max_occupants = 4
 	can_be_tied = FALSE
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/cowboy/Initialize()
 	. = ..()

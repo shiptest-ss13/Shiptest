@@ -5,6 +5,8 @@
 	var/list/post_logout_callbacks = list()
 	var/list/played_names = list() //List of names this key played under this round
 	var/byond_version = "Unknown"
+	/// The most recent address used by this player, loaded on client/New().
+	var/last_known_ip
 	var/datum/achievement_data/achievements
 
 /datum/player_details/New(key)

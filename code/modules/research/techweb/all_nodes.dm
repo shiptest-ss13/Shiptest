@@ -22,6 +22,8 @@
 		"commanderammo", "stechkinammo", "m1911ammo", "m9cammo", "c9mm", "c10mm", "c45", "c556mmHITP", "rubbershot9mm", "rubbershot10mm", "rubbershot45", "rubbershot556mmHITP",
 		// Construction Materials
 		"rglass", "plasteel", "plastitanium", "plasmaglass", "plasmareinforcedglass", "titaniumglass", "plastitaniumglass",
+		// You People Are Animals
+		"trashbag",
 	)
 
 /datum/techweb_node/mmi
@@ -89,6 +91,29 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
+/datum/techweb_node/xenoorgan_biotech
+	id = "xenoorgan_bio"
+	display_name = "Xeno-organ Biology"
+	description = "Phytosians, Golems, even Skeletons... We finally understand the less well known species enough to replicate their anatomy."
+	prereq_ids = list("adv_biotech")
+	design_ids = list("limbdesign_abductor", "limbdesign_fly", "limbdesign_golem", "limbdesign_pod", "limbdesign_skeleton", "limbdesign_snail")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 5000
+
+/datum/techweb_node/xenomorph_biotech
+	id = "xenomorph_bio"
+	display_name = "Xenomorph Biology"
+	description = "Quite possibly the most dangerous species out there, and we now know the secrets behind their physiology. \
+	One shudders to imagine the destructive capabilities of an army with soldiers enhanced by these designs."
+	prereq_ids = list("adv_biotech", "xenoorgan_bio")
+	design_ids = list("limbdesign_xenomorph")
+	boost_item_paths = list(/obj/item/organ/brain/alien, /obj/item/organ/body_egg/alien_embryo, /obj/item/organ/eyes/night_vision/alien, /obj/item/organ/tongue/alien,
+	/obj/item/organ/liver/alien, /obj/item/organ/ears, /obj/item/organ/alien/plasmavessel, /obj/item/organ/alien/plasmavessel/large, /obj/item/organ/alien/plasmavessel/large/queen,
+	/obj/item/organ/alien/plasmavessel/small, /obj/item/organ/alien/plasmavessel/small/tiny, /obj/item/organ/alien/resinspinner, /obj/item/organ/alien/acid, /obj/item/organ/alien/neurotoxin)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 20000
+	hidden = TRUE
+
 /datum/techweb_node/bio_process
 	id = "bio_process"
 	display_name = "Biological Processing"
@@ -143,7 +168,8 @@
 	description = "Big Data, in space!"
 	prereq_ids = list("base")
 	design_ids = list(
-		"survey-handheld-advanced"
+		"survey-handheld-advanced",
+		"design_disk_adv"
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
@@ -159,7 +185,7 @@
 	"atmosalerts", "atmos_control", "recycler", "autolathe", "high_micro_laser", "nano_mani", "mesons", "welding_goggles", "thermomachine", "rad_collector", "tesla_coil", "grounding_rod",
 	"apc_control", "cell_charger", "power control", "airlock_board", "firelock_board", "aac_electronics", "airalarm_electronics", "firealarm_electronics", "cell_charger", "stack_console", "stack_machine",
 	"oxygen_tank", "plasma_tank", "emergency_oxygen", "emergency_oxygen_engi", "plasmaman_tank_belt", "pneumatic_seal", "shieldwallgen", "shieldwallgen_atmos") //WS edit, solar assemblies from lathe
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
 /datum/techweb_node/adv_engi
@@ -177,7 +203,7 @@
 	description = "Unlock the potential of the mysterious anomalies that appear throughout the sector."
 	prereq_ids = list("adv_engi", "practical_bluespace")
 	design_ids = list("reactive_armour", "anomaly_neutralizer")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
 /datum/techweb_node/high_efficiency
@@ -186,7 +212,7 @@
 	description = "Finely-tooled manufacturing techniques allowing for picometer-perfect precision levels."
 	prereq_ids = list("engineering", "datatheory")
 	design_ids = list("pico_mani", "super_matter_bin")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
 /datum/techweb_node/adv_power
@@ -213,7 +239,7 @@
 	display_name = "Bluespace Travel"
 	description = "Application of Bluespace for static teleportation technology."
 	prereq_ids = list("practical_bluespace")
-	design_ids = list("tele_station", "tele_hub", "teleconsole", "quantumpad", "launchpad", "launchpad_console", "bluespace_pod")
+	design_ids = list("tele_station", "tele_hub", "teleconsole", "quantumpad", "launchpad", "launchpad_console")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
@@ -240,7 +266,7 @@
 	display_name = "Applied Bluespace Research"
 	description = "Using bluespace to make things faster and better."
 	prereq_ids = list("bluespace_basic", "engineering")
-	design_ids = list("bs_rped","minerbag_holding", "bluespacebeaker", "bluespacesyringe", "phasic_scanning", "roastingstick", "ore_silo")
+	design_ids = list("bs_rped","minerbag_holding", "bluespacebeaker", "bluespacesyringe", "phasic_scanning", "roastingstick", "ore_silo", "biobag_holding", "engibag_holding", "plantbag_holding", "chembag_holding")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
@@ -411,6 +437,7 @@
 		"rdcamera",
 		"seccamera",
 		"survey-handheld-elite",
+		"design_disk_super",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 	export_price = 5000
@@ -440,7 +467,7 @@
 	display_name = "Computerized Recordkeeping"
 	description = "Organized record databases and how they're used."
 	prereq_ids = list("comptech")
-	design_ids = list("secdata", "med_data", "prisonmanage", "vendor", "automated_announcement")
+	design_ids = list("secdata", "med_data", "prisonmanage", "vendor", "automated_announcement", "survey-handheld-exp", "design_disk_elite")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
 	export_price = 2000
 
@@ -476,11 +503,20 @@
 /datum/techweb_node/genetics
 	id = "genetics"
 	display_name = "Genetic Engineering"
-	description = "We have the technology to change him."
+	description = "The truest of mad sciences."
 	prereq_ids = list("biotech")
-	design_ids = list("dnascanner", "scan_console", "dna_disk", "clonepod", "cloning")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	export_price = 5000
+	design_ids = list("dnascanner", "scan_console", "dna_disk")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	export_price = 1500
+
+/datum/techweb_node/cloning
+	id = "cloning"
+	display_name = "Full-Body Reconstitution"
+	description = "We can rebuild him, we have the technology."
+	prereq_ids = list("genetics")
+	design_ids = list("clonepod", "cloning")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
+	export_price = 7500
 
 /datum/techweb_node/cryotech
 	id = "cryotech"
@@ -588,7 +624,7 @@
 	display_name = "Botanical Engineering"
 	description = "Botanical tools"
 	prereq_ids = list("adv_engi", "biotech")
-	design_ids = list("diskplantgene", "portaseeder", "flora_gun", "hydro_tray", "biogenerator", "seed_extractor")
+	design_ids = list("diskplantgene", "portaseeder", "flora_gun", "hydro_tray", "biogenerator", "plantgenes", "seed_extractor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -645,6 +681,15 @@
 	prereq_ids = list("adv_engi", "weaponry")
 	design_ids = list("pin_loyalty","gun_cell_upgraded", "gun_cell_large")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	export_price = 5000
+
+/datum/techweb_node/firingpin
+	id = "firingpin"
+	display_name = "Pin Security Decompilation"
+	description = "A resource-intensive hacking operation, allowing for the creation of pins without a mindshield brake."
+	prereq_ids = list("adv_weaponry")
+	design_ids = list("pin_standard")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000)
 	export_price = 5000
 
 /datum/techweb_node/electric_weapons

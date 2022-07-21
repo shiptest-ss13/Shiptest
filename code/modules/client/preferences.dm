@@ -85,6 +85,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/species_looking_at = "human" //used as a helper to keep track of in the species select thingy
 	var/list/features = list(
 							"mcolor" = "FFF",
+							"grad_style" = "None",
+							"grad_color" = "FFF",
 							"ethcolor" = "9c3030",
 							"tail_lizard" = "Smooth",
 							"tail_human" = "None",
@@ -105,9 +107,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"squid_face" = "Squidward",
 							"ipc_screen" = "Blue",
 							"ipc_antenna" = "None",
-							"ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)",
+							"ipc_chassis" = "Morpheus Cyberkinetics (Custom)",
+							"ipc_brain" = "Posibrain",
 							"kepori_feathers" = "Plain",
 							"kepori_body_feathers" = "Plain",
+							"kepori_tail_feathers" = "Fan",
 							"vox_head_quills" = "Plain",
 							"vox_neck_quills" = "Plain",
 							"flavor_text" = "",
@@ -423,6 +427,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<br><span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIR_COLOR]'>[(randomise[RANDOM_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
 
+				dat += "<h3>Hair Gradient</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=hair_gradient_style;task=input'>[features["grad_style"]]</a>"
+
+				dat += "<a href='?_src_=prefs;preference=previous_hair_gradient_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_gradient_style;task=input'>&gt;</a><BR>"
+
+				dat += "<span style='border:1px solid #161616; background-color: #[features["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair_gradient;task=input'>Change</a>"
+
 				dat += "<BR><h3>Facial Hairstyle</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=facial_hairstyle;task=input'>[facial_hairstyle]</a>"
@@ -615,7 +627,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
-			if("ipc_screen" in pref_species.mutant_bodyparts)
+			if("ipc_screen" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
@@ -630,7 +642,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
-			if("ipc_antenna" in pref_species.mutant_bodyparts)
+			if("ipc_antenna" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
@@ -645,7 +657,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
-			if("ipc_chassis" in pref_species.mutant_bodyparts)
+			if("ipc_chassis" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
@@ -658,11 +670,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
+			if("ipc_brain" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Brain Type</h3>"
+				dat += "<a href='?_src_=prefs;preference=ipc_brain;task=input'>[features["ipc_brain"]]</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
 			if("kepori_feathers" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Kepori Head Feathers</h3>"
+				dat += "<h3>Plumage</h3>"
 				dat += "<a href='?_src_=prefs;preference=kepori_feathers;task=input'>[features["kepori_feathers"]]</a><BR>"
 				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><BR>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIR_COLOR]'>[(randomise[RANDOM_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
@@ -676,8 +700,22 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Kepori Body Feathers</h3>"
+				dat += "<h3>Body Feathers</h3>"
 				dat += "<a href='?_src_=prefs;preference=kepori_body_feathers;task=input'>[features["kepori_body_feathers"]]</a><BR>"
+				dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("kepori_tail_feathers" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Tail Feathers</h3>"
+				dat += "<a href='?_src_=prefs;preference=kepori_tail_feathers;task=input'>[features["kepori_tail_feathers"]]</a><BR>"
 				dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
 
@@ -731,7 +769,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Ears</h3>"
+				dat += "<h3>Mutant Ears</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=ears;task=input'>[features["ears"]]</a><BR>"
 
@@ -1101,7 +1139,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 #undef APPEARANCE_CATEGORY_COLUMN
 #undef MAX_MUTANT_ROWS
 
-/datum/preferences/proc/CaptureKeybinding(mob/user, datum/keybinding/kb, var/old_key)
+/datum/preferences/proc/CaptureKeybinding(mob/user, datum/keybinding/kb, old_key)
 	var/HTML = {"
 	<div id='focus' style="outline: 0;" tabindex=0>Keybinding: [kb.full_name]<br>[kb.description]<br><br><b>Press any key to change<br>Press ESC to clear</b></div>
 	<script>
@@ -1726,6 +1764,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						facial_hairstyle = previous_list_item(facial_hairstyle, GLOB.facial_hairstyles_list)
 
+				if("hair_gradient")
+					var/new_hair_gradient_color = input(user, "Choose your character's hair gradient colour:", "Character Preference","#"+features["grad_color"]) as color|null
+					if(new_hair_gradient_color)
+						features["grad_color"] = sanitize_hexcolor(new_hair_gradient_color)
+
+				if("hair_gradient_style")
+					var/new_gradient_style
+					new_gradient_style = input(user, "Choose your character's hair gradient style:", "Character Preference")  as null|anything in GLOB.hair_gradients_list
+					if(new_gradient_style)
+						features["grad_style"] = new_gradient_style
+
+				if("next_hair_gradient_style")
+					features["grad_style"] = next_list_item(features["grad_style"], GLOB.hair_gradients_list)
+
+				if("previous_hair_gradient_style")
+					features["grad_style"] = previous_list_item(features["grad_style"], GLOB.hair_gradients_list)
+
 				if("underwear")
 					var/new_underwear
 					if(gender == MALE)
@@ -1817,7 +1872,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("ears")
 					var/new_ears
-					new_ears = input(user, "Choose your character's ears:", "Character Preference") as null|anything in GLOB.ears_list
+					new_ears = input(user, "Choose your character's mutant ears:", "Character Preference") as null|anything in GLOB.ears_list
 					if(new_ears)
 						features["ears"] = new_ears
 
@@ -1917,17 +1972,29 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_ipc_chassis)
 						features["ipc_chassis"] = new_ipc_chassis
 
+				if("ipc_brain")
+					var/new_ipc_brain
+					new_ipc_brain = input(user, "Choose your character's brain type:", "Character Preference") as null|anything in GLOB.ipc_brain_list
+					if(new_ipc_brain)
+						features["ipc_brain"] = new_ipc_brain
+
 				if("kepori_feathers")
 					var/new_kepori_feathers
-					new_kepori_feathers = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.kepori_feathers_list
+					new_kepori_feathers = input(user, "Choose your character's plumage type:", "Character Preference") as null|anything in GLOB.kepori_feathers_list
 					if (new_kepori_feathers)
 						features["kepori_feathers"] = new_kepori_feathers
 
 				if("kepori_body_feathers")
 					var/new_kepori_feathers
-					new_kepori_feathers = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.kepori_body_feathers_list
+					new_kepori_feathers = input(user, "Choose your character's body feathers:", "Character Preference") as null|anything in GLOB.kepori_body_feathers_list
 					if (new_kepori_feathers)
 						features["kepori_body_feathers"] = new_kepori_feathers
+
+				if("kepori_tail_feathers")
+					var/new_kepori_feathers
+					new_kepori_feathers = input(user, "Choose your character's tail feathers:", "Character Preference") as null|anything in GLOB.kepori_tail_feathers_list
+					if (new_kepori_feathers)
+						features["kepori_tail_feathers"] = new_kepori_feathers
 
 				if("vox_head_quills")
 					var/new_vox_head_quills
@@ -2360,9 +2427,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.real_name = character.real_name
 	character.hair_color = hair_color
 	character.facial_hair_color = facial_hair_color
+	character.grad_color = features["grad_color"]
 
 	character.hairstyle = hairstyle
 	character.facial_hairstyle = facial_hairstyle
+	character.grad_style = features["grad_style"]
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"

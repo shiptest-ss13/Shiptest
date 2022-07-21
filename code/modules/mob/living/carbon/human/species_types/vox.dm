@@ -23,8 +23,6 @@
 	mutanttongue = /obj/item/organ/tongue/vox
 	species_language_holder = /datum/language_holder/vox
 
-	offset_features = list(OFFSET_BELT = list(9,0))
-
 	bodytemp_heat_divisor = VOX_BODYTEMP_HEAT_DIVISOR
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
@@ -56,6 +54,12 @@
 			/datum/reagent/medicine/stimulants,
 			/datum/reagent/medicine/inaprovaline
 		)
+	)
+
+/datum/species/vox/New()
+	. = ..()
+	offset_clothing = list(
+		"[BELT_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = 9), "[EAST]" = list("x" = 0, "y" = 9), "[SOUTH]" = list("x" = 0, "y" = 9), "[WEST]" = list("x" =  0, "y" = 9)),
 	)
 
 /datum/species/vox/random_name(gender,unique,lastname,attempts)
@@ -104,7 +108,7 @@
 		return FALSE //Its a bit TOO mean to have the chems not work at all.
 	return ..()
 
-/datum/species/vox/get_item_offsets_for_dir(var/dir, var/hand)
+/datum/species/vox/get_item_offsets_for_dir(dir, hand)
 	////LEFT/RIGHT
 	switch(dir)
 		if(SOUTH)
@@ -175,7 +179,7 @@
 	if(held_item)
 		examine_list += "<span class='notice'>[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.</span>"
 
-/datum/action/innate/tail_hold/proc/handle_sprite_magic(var/mob/M, var/olddir, var/newdir, var/force = FALSE)
+/datum/action/innate/tail_hold/proc/handle_sprite_magic(mob/M, olddir, newdir, force = FALSE)
 	if(!held_item)
 		if(held_item_overlay)
 			owner.cut_overlay(held_item_overlay)
