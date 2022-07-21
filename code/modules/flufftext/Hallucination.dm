@@ -1,26 +1,26 @@
 #define HAL_LINES_FILE "hallucination.json"
 
 GLOBAL_LIST_INIT(hallucination_list, list(
-	/datum/hallucination/chat = 100,
+	/datum/hallucination/chat = 80,
 	/datum/hallucination/message = 60,
-	/datum/hallucination/sounds = 50,
+	/datum/hallucination/sounds = 60,
 	/datum/hallucination/battle = 20,
 	/datum/hallucination/dangerflash = 15,
-	/datum/hallucination/hudscrew = 12,
-	/datum/hallucination/fake_alert = 12,
-	/datum/hallucination/weird_sounds = 8,
+	/datum/hallucination/hudscrew = 15,
+	/datum/hallucination/fake_alert = 15,
+	/datum/hallucination/stray_bullet = 12,
+	/datum/hallucination/weird_sounds = 10,
 	/datum/hallucination/stationmessage = 7,
 	/datum/hallucination/fake_flood = 7,
-	/datum/hallucination/stray_bullet = 7,
 	/datum/hallucination/bolts = 7,
 	/datum/hallucination/items_other = 7,
 	/datum/hallucination/husks = 7,
+	/datum/hallucination/self_delusion = 4,
+	/datum/hallucination/delusion = 4,
+	/datum/hallucination/shock = 4,
 	/datum/hallucination/items = 4,
 	/datum/hallucination/fire = 3,
-	/datum/hallucination/self_delusion = 2,
-	/datum/hallucination/delusion = 2,
-	/datum/hallucination/shock = 1,
-	/datum/hallucination/death = 1,
+	/datum/hallucination/death = 2,
 	/datum/hallucination/oh_yeah = 1
 	))
 
@@ -671,24 +671,20 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	set waitfor = FALSE
 	..()
 	var/target_name = target.first_name()
-	var/speak_messages = list("[pick_list_replacements(HAL_LINES_FILE, "suspicion")]",\
-		"[pick_list_replacements(HAL_LINES_FILE, "conversation")]",\
-		"[pick_list_replacements(HAL_LINES_FILE, "greetings")][target.first_name()]!",\
-		"[pick_list_replacements(HAL_LINES_FILE, "getout")]",\
+	var/speak_messages = list(
+		"[pick_list_replacements(HAL_LINES_FILE, "suspicion")]",\
 		"[pick_list_replacements(HAL_LINES_FILE, "weird")]",\
 		"[pick_list_replacements(HAL_LINES_FILE, "didyouhearthat")]",\
 		"[pick_list_replacements(HAL_LINES_FILE, "doubt")]",\
 		"[pick_list_replacements(HAL_LINES_FILE, "aggressive")]",\
 		"[pick_list_replacements(HAL_LINES_FILE, "help")]!!",\
 		"[pick_list_replacements(HAL_LINES_FILE, "escape")]",\
+		"Help us [pick_list_replacements(HAL_LINES_FILE, "threat")] the [pick_list_replacements(HAL_LINES_FILE, "people")]",\
 		"I'm infected, [pick_list_replacements(HAL_LINES_FILE, "infection_advice")]!")
 
-	var/radio_messages = list("[pick_list_replacements(HAL_LINES_FILE, "people")] is [pick_list_replacements(HAL_LINES_FILE, "accusations")]!",\
-		"Help!",\
-		"[pick_list_replacements(HAL_LINES_FILE, "threat")] in [pick_list_replacements(HAL_LINES_FILE, "location")][prob(50)?"!":"!!"]",\
-		"[pick("Where's [target.first_name()]?", "Set [target.first_name()] to arrest!")]",\
-		"[pick("C","Ai, c","Someone c","Rec")]all the shuttle!",\
-		"AI [pick("rogue", "is dead")]!!")
+	var/radio_messages = list(
+		"[pick_list_replacements(HAL_LINES_FILE, "people")] is [pick_list_replacements(HAL_LINES_FILE, "accusations")]!",\
+		"We [pick("need to", "gotta", "have to", "should","got told to","got ordered to")] [pick_list_replacements(HAL_LINES_FILE, "threat")] [target.first_name()]")
 
 	var/mob/living/carbon/person = null
 	var/datum/language/understood_language = target.get_random_understood_language()
@@ -761,24 +757,33 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			for(var/i in 1 to 5) //increase the odds
 				message_pool.Add("<span class='notice'>[other] puts the [pick(\
 					"revolver","energy sword","cryptographic sequencer","power sink","energy bow",\
-					"hybrid taser","stun baton","flash","syringe gun","circular saw","tank transfer valve",\
+					"stun baton","flash","syringe gun","circular saw","tank transfer valve",\
 					"ritual dagger","spellbook",\
-					"pulse rifle","captain's spare ID","hand teleporter","hypospray","antique laser gun","X-01 MultiPhase Energy Gun","station's blueprints"\
+					"pulse rifle","hypospray","ship blueprints",\
+					"ship keys","M1911","Commander","credits","handcuffs","you",\"
 					)] into [equipped_backpack].</span>")
 
 		message_pool.Add("<B>[other]</B> [pick("sneezes","coughs")].")
 
-	message_pool.Add("<span class='notice'>You hear something squeezing through the ducts...</span>", \
-		"<span class='notice'>Your [pick("arm", "leg", "back", "head")] itches.</span>",\
-		"<span class='warning'>You feel [pick("hot","cold","dry","wet","woozy","faint")].</span>",
+	message_pool.Add("<span class='notice'>You hear something squeezing through the pipes...</span>", \
+		"<span class='warning'>You hear something squelching in the ground beneath you...</span>",
+		"<span class='warning'>You feel something inside your [pick("arm","leg","back","head")].</span>",
+		"<span class='warning'>You feel [pick("angry","empty","dry","woozy")].</span>",
 		"<span class='warning'>Your stomach rumbles.</span>",
 		"<span class='warning'>Your head hurts.</span>",
 		"<span class='warning'>You hear a faint buzz in your head.</span>",
-		"<B>[target]</B> sneezes.")
-	if(prob(10))
+		"<span class='warning'>The edges of your vision go dark.</span>",
+		"<span class='warning'>You feel your head slowly splitting in two.</span>",
+		"<span class='warning'>Your fingers feel like they're melting off.</span>",
+		"<span class='warning'>You can't count how many fingers you have... there are too many.</span>",
+		"<span class='warning'>You start sinking into the ground beneath you.</span>")
+	if(prob(20))
 		message_pool.Add("<span class='warning'>Behind you.</span>",\
-			"<span class='warning'>You hear a faint laughter.</span>",
-			"<span class='warning'>You see something move.</span>",
+			"<span class='warning'>You hear a faint laughter approaching you.</span>",
+			"<span class='warning'>Something darts across your vision.</span>",
+			"<span class='warning'>You hear skittering on the ceiling.</span>",
+			"<span class='warning'>There's something squirming around inside of you.</span>",
+			"<span class='warning'>It has found you.</span>",
 			"<span class='warning'>You hear skittering on the ceiling.</span>",
 			"<span class='warning'>You see an inhumanly tall silhouette moving in the distance.</span>")
 	if(prob(10))
@@ -896,30 +901,13 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	set waitfor = FALSE
 	..()
 	if(!message)
-		message = pick("ratvar","shuttle dock","blob alert","malf ai","meteors","supermatter")
+		message = pick("blob alert","supermatter")
 	feedback_details += "Type: [message]"
 	switch(message)
 		if("blob alert")
 			to_chat(target, "<h1 class='alert'>Biohazard Alert</h1>")
-			to_chat(target, "<br><br><span class='alert'>Confirmed outbreak of level 5 biohazard aboard [station_name()]. All personnel must contain the outbreak.</span><br><br>")
+			to_chat(target, "<br><br><span class='alert'>Confirmed outbreak of level 5 biohazard aboard the ship. All personnel must contain the outbreak.</span><br><br>")
 			SEND_SOUND(target, 'sound/ai/outbreak5.ogg')
-		if("ratvar")
-			target.playsound_local(target, 'sound/machines/clockcult/ark_deathrattle.ogg', 50, FALSE, pressure_affected = FALSE)
-			target.playsound_local(target, 'sound/effects/clockcult_gateway_disrupted.ogg', 50, FALSE, pressure_affected = FALSE)
-			sleep(27)
-			target.playsound_local(target, 'sound/effects/explosion_distant.ogg', 50, FALSE, pressure_affected = FALSE)
-		if("shuttle dock")
-			to_chat(target, "<h1 class='alert'>Priority Announcement</h1>")
-			to_chat(target, "<br><br><span class='alert'>The Emergency Shuttle has docked with the station. You have 3 minutes to board the Emergency Shuttle.</span><br><br>")
-			SEND_SOUND(target, 'sound/ai/shuttledock.ogg')
-		if("malf ai") //AI is doomsdaying!
-			to_chat(target, "<h1 class='alert'>Anomaly Alert</h1>")
-			to_chat(target, "<br><br><span class='alert'>Hostile runtimes detected in all station systems, please deactivate your AI to prevent possible damage to its morality core.</span><br><br>")
-			SEND_SOUND(target, 'sound/ai/aimalf.ogg')
-		if("meteors") //Meteors inbound!
-			to_chat(target, "<h1 class='alert'>Meteor Alert</h1>")
-			to_chat(target, "<br><br><span class='alert'>Meteors have been detected on collision course with the station.</span><br><br>")
-			SEND_SOUND(target, 'sound/ai/meteors.ogg')
 		if("supermatter")
 			SEND_SOUND(target, 'sound/magic/charge.ogg')
 			to_chat(target, "<span class='boldannounce'>You feel reality distort for a moment...</span>")
