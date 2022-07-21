@@ -74,7 +74,7 @@
 
 // returns true if the area has power on given channel (or doesn't require power).
 // defaults to power_channel
-/obj/machinery/proc/powered(var/chan = -1) // defaults to power_channel
+/obj/machinery/proc/powered(chan = -1) // defaults to power_channel
 	if(!loc)
 		return FALSE
 	if(!use_power)
@@ -106,12 +106,12 @@
 	addStaticPower(-value, powerchannel)
 
 /**
-  * Called whenever the power settings of the containing area change
-  *
-  * by default, check equipment channel & set flag, can override if needed
-  *
-  * Returns TRUE if the NOPOWER flag was toggled
-  */
+ * Called whenever the power settings of the containing area change
+ *
+ * by default, check equipment channel & set flag, can override if needed
+ *
+ * Returns TRUE if the NOPOWER flag was toggled
+ */
 /obj/machinery/proc/power_change()
 	SIGNAL_HANDLER
 	SHOULD_CALL_PARENT(1)

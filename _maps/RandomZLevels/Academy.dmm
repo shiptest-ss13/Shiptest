@@ -48,7 +48,7 @@
 	dir = 1;
 	environ = 3;
 	equipment = 3;
-	pixel_y = 23;
+	pixel_y = 25;
 	req_access = null
 	},
 /turf/open/floor/carpet,
@@ -446,7 +446,7 @@
 "bD" = (
 /obj/machinery/button/door{
 	id = "AcademyAuto";
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/academy/classrooms)
@@ -1286,7 +1286,7 @@
 	dir = 1;
 	environ = 3;
 	equipment = 3;
-	pixel_y = 23;
+	pixel_y = 25;
 	req_access = null
 	},
 /turf/open/floor/plasteel/grimy,
@@ -1397,7 +1397,6 @@
 /area/awaymission/academy)
 "eA" = (
 /obj/machinery/door/airlock/public/glass,
-/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
@@ -2646,7 +2645,7 @@
 	dir = 1;
 	environ = 3;
 	equipment = 3;
-	pixel_y = 23;
+	pixel_y = 25;
 	req_access = null
 	},
 /turf/open/floor/plasteel,
@@ -3712,7 +3711,7 @@
 	dir = 1;
 	environ = 3;
 	equipment = 3;
-	pixel_y = 23;
+	pixel_y = 25;
 	req_access = null
 	},
 /obj/structure/cable{
@@ -4059,7 +4058,7 @@
 "lp" = (
 /obj/machinery/power/apc{
 	dir = 1;
-	pixel_y = 23
+	pixel_y = 25
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -4163,7 +4162,7 @@
 "lK" = (
 /obj/effect/immovablerod{
 	dir = 4;
-	
+
 	},
 /obj/structure/cable,
 /obj/structure/cable{
@@ -4507,7 +4506,7 @@
 /obj/machinery/button/door{
 	id = "AcademyGate";
 	name = "Skeleton Storage Control";
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/wood,
 /area/awaymission/academy/headmaster)

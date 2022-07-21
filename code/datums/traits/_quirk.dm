@@ -34,12 +34,12 @@
 
 
 /**
-  * On client connection set quirk preferences.
-  *
-  * Run post_add to set the client preferences for the quirk.
-  * Clear the attached signal for login.
-  * Used when the quirk has been gained and no client is attached to the mob.
-  */
+ * On client connection set quirk preferences.
+ *
+ * Run post_add to set the client preferences for the quirk.
+ * Clear the attached signal for login.
+ * Used when the quirk has been gained and no client is attached to the mob.
+ */
 /datum/quirk/proc/on_quirk_holder_first_login(mob/living/source)
 		SIGNAL_HANDLER
 

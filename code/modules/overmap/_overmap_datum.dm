@@ -1,13 +1,13 @@
 /**
-  * # Overmap objects
-  *
-  * Everything visible on the overmap: stations, ships, ruins, events, and more.
-  *
-  * This base class should be the parent of all objects present on the overmap.
-  * For the control counterparts, see [/obj/machinery/computer/helm].
-  * For the shuttle counterparts (ONLY USED FOR SHIPS), see [/obj/docking_port/mobile].
-  *
-  */
+ * # Overmap objects
+ *
+ * Everything visible on the overmap: stations, ships, ruins, events, and more.
+ *
+ * This base class should be the parent of all objects present on the overmap.
+ * For the control counterparts, see [/obj/machinery/computer/helm].
+ * For the shuttle counterparts (ONLY USED FOR SHIPS), see [/obj/docking_port/mobile].
+ *
+ */
 /datum/overmap
 	/// The name of this overmap datum, propogated to the token, docking port, and areas.
 	var/name
@@ -73,19 +73,19 @@
 	return ..()
 
 /**
-  * This proc is called directly after New(). It's done after the basic creation and placement of the token and setup has been completed.
-  *
-  * * placement_x/y - the X and Y position of the overmap datum.
-  */
+ * This proc is called directly after New(). It's done after the basic creation and placement of the token and setup has been completed.
+ *
+ * * placement_x/y - the X and Y position of the overmap datum.
+ */
 /datum/overmap/proc/Initialize(position, ...)
 	PROTECTED_PROC(TRUE)
 	return
 
 /**
-  * Called whenever you need to move an overmap datum to another position. Can be overridden to add additional movement functionality, as long as it calls the parent proc.
-  *
-  * * new_x/y - the X and Y position to move the overmap datum to. Must be numbers, will CRASH() otherwise.
-  */
+ * Called whenever you need to move an overmap datum to another position. Can be overridden to add additional movement functionality, as long as it calls the parent proc.
+ *
+ * * new_x/y - the X and Y position to move the overmap datum to. Must be numbers, will CRASH() otherwise.
+ */
 /datum/overmap/proc/overmap_move(new_x, new_y)
 	SHOULD_CALL_PARENT(TRUE)
 	if(docking)
@@ -114,11 +114,11 @@
 	return TRUE
 
 /**
-  * Moves the overmap datum in a specific direction a specific number of spaces (magnitude, default 1).
-  *
-  * * dir - The direction to move the overmap datum in. Takes cardinal and diagonal directions.
-  * * magnitude - The number of spaces to move the overmap datum in the direction.
-  */
+ * Moves the overmap datum in a specific direction a specific number of spaces (magnitude, default 1).
+ *
+ * * dir - The direction to move the overmap datum in. Takes cardinal and diagonal directions.
+ * * magnitude - The number of spaces to move the overmap datum in the direction.
+ */
 /datum/overmap/proc/overmap_step(dir, magnitude = 1)
 	SHOULD_NOT_OVERRIDE(TRUE)
 	var/move_x = x
@@ -134,10 +134,10 @@
 	return overmap_move(move_x, move_y)
 
 /**
-  * Proc used to rename an overmap datum and everything related to it.
-  *
-  * * new_name - The new name of the overmap datum.
-  */
+ * Proc used to rename an overmap datum and everything related to it.
+ *
+ * * new_name - The new name of the overmap datum.
+ */
 /datum/overmap/proc/Rename(new_name, force)
 	new_name = sanitize_name(new_name) //sets to a falsey value if it's not a valid name
 	if(!new_name || new_name == name)
@@ -147,16 +147,16 @@
 	return TRUE
 
 /**
-  * Returns all other overmap objects on the tile as a list. Will return an empty list if there are no other objects, or the source object is docked.
-  */
+ * Returns all other overmap objects on the tile as a list. Will return an empty list if there are no other objects, or the source object is docked.
+ */
 /datum/overmap/proc/get_nearby_overmap_objects()
 	if(docked_to)
 		return list()
 	return SSovermap.overmap_container[x][y] - src
 
 /**
-  * Returns a turf that can be jumped to by observers, admins, and such.
-  */
+ * Returns a turf that can be jumped to by observers, admins, and such.
+ */
 /datum/overmap/proc/get_jump_to_turf()
 	RETURN_TYPE(/turf)
 	return
@@ -164,11 +164,11 @@
 ///////////////////////////////////////////////////////////// HERE BE DRAGONS - DOCKING CODE /////////////////////////////////////////////////////////////
 
 /**
-  * Docks the overmap datum to another overmap datum, putting it in the other's contents and removing it from the overmap.
-  * Sets X and Y equal to null. Does not check for distance or nulls.
-  *
-  * * dock_target - The overmap datum to dock to. Cannot be null.
-  */
+ * Docks the overmap datum to another overmap datum, putting it in the other's contents and removing it from the overmap.
+ * Sets X and Y equal to null. Does not check for distance or nulls.
+ *
+ * * dock_target - The overmap datum to dock to. Cannot be null.
+ */
 /datum/overmap/proc/Dock(datum/overmap/dock_target, force = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(!istype(dock_target))
@@ -196,43 +196,43 @@
 		complete_dock(dock_target, ticket)
 
 /**
-  * Called at the very start of a [datum/overmap/proc/Dock] call, on the **TARGET of the docking attempt**. If it returns FALSE, the docking will be aborted.
-  * Called before [datum/overmap/proc/pre_dock] is called on the dock requester.
-  *
-  * * dock_requester - The overmap datum trying to dock with this one. Cannot be null.
-  *
-  * Returns - A docking ticket that will be passed to [datum/overmap/proc/pre_dock] on the dock requester.
-  */
+ * Called at the very start of a [datum/overmap/proc/Dock] call, on the **TARGET of the docking attempt**. If it returns FALSE, the docking will be aborted.
+ * Called before [datum/overmap/proc/pre_dock] is called on the dock requester.
+ *
+ * * dock_requester - The overmap datum trying to dock with this one. Cannot be null.
+ *
+ * Returns - A docking ticket that will be passed to [datum/overmap/proc/pre_dock] on the dock requester.
+ */
 /datum/overmap/proc/pre_docked(datum/overmap/dock_requester)
 	RETURN_TYPE(/datum/docking_ticket)
 	return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 
 /**
-  * Called at the very start of a [datum/overmap/proc/Dock] call. If it returns FALSE, the docking will be aborted.
-  * Will only be called after [datum/overmap/proc/pre_docked] has been called and returned TRUE.
-  *
-  * * dock_target - The overmap datum to dock to. Cannot be null.
-  * * ticket - The docking ticket that was returned from the [datum/overmap/proc/pre_docked] call.
-  */
+ * Called at the very start of a [datum/overmap/proc/Dock] call. If it returns FALSE, the docking will be aborted.
+ * Will only be called after [datum/overmap/proc/pre_docked] has been called and returned TRUE.
+ *
+ * * dock_target - The overmap datum to dock to. Cannot be null.
+ * * ticket - The docking ticket that was returned from the [datum/overmap/proc/pre_docked] call.
+ */
 /datum/overmap/proc/pre_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	return FALSE
 
 /**
-  * For defining custom actual docking behaviour. Called after both [datum/overmap/proc/pre_dock] and [datum/overmap/proc/pre_docked] have been called and they both returned TRUE.
-  *
-  * * dock_target - The overmap datum to dock to. Cannot be null.
-  * * ticket - The docking ticket that was returned from the [datum/overmap/proc/pre_docked] call.
-  */
+ * For defining custom actual docking behaviour. Called after both [datum/overmap/proc/pre_dock] and [datum/overmap/proc/pre_docked] have been called and they both returned TRUE.
+ *
+ * * dock_target - The overmap datum to dock to. Cannot be null.
+ * * ticket - The docking ticket that was returned from the [datum/overmap/proc/pre_docked] call.
+ */
 /datum/overmap/proc/start_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	return
 
 /**
-  * Called after [datum/overmap/proc/start_dock], either instantly or after a time depending on the [datum/overmap/var/dock_time] variable.
-  * Return result is ignored.
-  *
-  * * dock_target - The overmap datum that has been docked to. Cannot be null.
-  * * ticket - The docking ticket that was returned from the [datum/overmap/proc/pre_docked] call.
-  */
+ * Called after [datum/overmap/proc/start_dock], either instantly or after a time depending on the [datum/overmap/var/dock_time] variable.
+ * Return result is ignored.
+ *
+ * * dock_target - The overmap datum that has been docked to. Cannot be null.
+ * * ticket - The docking ticket that was returned from the [datum/overmap/proc/pre_docked] call.
+ */
 /datum/overmap/proc/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	SHOULD_CALL_PARENT(TRUE)
 	SSovermap.overmap_container[x][y] -= src
@@ -248,16 +248,16 @@
 	SEND_SIGNAL(src, COMSIG_OVERMAP_DOCK, dock_target)
 
 /**
-  * Called at the very end of a [datum/overmap/proc/Dock] call, on the **TARGET of the docking attempt**. Return value is ignored.
-  *
-  * * dock_requester - The overmap datum trying to dock with this one. Cannot be null.
-  */
+ * Called at the very end of a [datum/overmap/proc/Dock] call, on the **TARGET of the docking attempt**. Return value is ignored.
+ *
+ * * dock_requester - The overmap datum trying to dock with this one. Cannot be null.
+ */
 /datum/overmap/proc/post_docked(datum/overmap/dock_requester)
 	return
 
 /**
-  * Undocks from the object this datum is docked to currently, and places it back on the overmap at the position of the object that was previously docked to.
-  */
+ * Undocks from the object this datum is docked to currently, and places it back on the overmap at the position of the object that was previously docked to.
+ */
 /datum/overmap/proc/Undock(force = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(!docked_to)
@@ -273,9 +273,9 @@
 		complete_undock()
 
 /**
-  * Called after [datum/overmap/proc/Undock], either instantly or after a time depending on the [datum/overmap/var/dock_time] variable.
-  * Return result is ignored.
-  */
+ * Called after [datum/overmap/proc/Undock], either instantly or after a time depending on the [datum/overmap/var/dock_time] variable.
+ * Return result is ignored.
+ */
 /datum/overmap/proc/complete_undock()
 	SHOULD_CALL_PARENT(TRUE)
 	SSovermap.overmap_container[docked_to.x][docked_to.y] += src
@@ -290,10 +290,10 @@
 	SEND_SIGNAL(src, COMSIG_OVERMAP_UNDOCK, old_docked_to)
 
 /**
-  * Called at the very end of a [datum/overmap/proc/Unock] call (non-blocking/asynchronously), on the **TARGET of the undocking attempt**. Return result is ignored.
-  *
-  * * dock_requester - The overmap datum trying to undock from this one. Cannot be null.
-  */
+ * Called at the very end of a [datum/overmap/proc/Unock] call (non-blocking/asynchronously), on the **TARGET of the undocking attempt**. Return result is ignored.
+ *
+ * * dock_requester - The overmap datum trying to undock from this one. Cannot be null.
+ */
 /datum/overmap/proc/post_undocked(datum/overmap/ship/controlled/dock_requester)
 	return
 
