@@ -10,6 +10,7 @@
 <!-- Please add a short description of why you think these changes would benefit the game. If you can't justify it in words, it might not be worth adding. -->
 
 ## Changelog
+
 :cl:
 add: Added new things
 add: Added more things

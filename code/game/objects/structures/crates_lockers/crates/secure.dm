@@ -50,18 +50,18 @@
 	icon_state = "secgearcrate"
 
 /obj/structure/closet/crate/secure/hydroponics
-	desc = "A crate with a lock on it, painted in the scheme of the Nanotransen's hydroponics division."
+	desc = "A crate with a lock on it, painted in the scheme of the Nanotrasen's hydroponics division."
 	name = "secure hydroponics crate"
 	icon_state = "hydrosecurecrate"
 
 /obj/structure/closet/crate/secure/engineering
-	desc = "A crate with a lock on it, painted in the scheme of the Nanotransen's engineering division."
+	desc = "A crate with a lock on it, painted in the scheme of the Nanotrasen's engineering division."
 	name = "secure engineering crate"
 	icon_state = "engi_secure_crate"
 
 /obj/structure/closet/crate/secure/science
 	name = "secure science crate"
-	desc = "A crate with a lock on it, painted in the scheme of the Nanotransen's research & development division."
+	desc = "A crate with a lock on it, painted in the scheme of the Nanotrasen's research & development division."
 	icon_state = "scisecurecrate"
 
 /obj/structure/closet/crate/secure/owned

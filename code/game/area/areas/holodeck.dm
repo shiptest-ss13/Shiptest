@@ -14,7 +14,7 @@
 	Asserts are to avoid the inevitable infinite loops
 */
 
-/area/holodeck/powered(var/chan)
+/area/holodeck/powered(chan)
 	if(!requires_power)
 		return TRUE
 	if(always_unpowered)

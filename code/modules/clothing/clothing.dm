@@ -210,13 +210,13 @@
 		to_chat(usr, "[readout.Join()]")
 
 /**
-  * Rounds armor_value to nearest 10, divides it by 10 and then expresses it in roman numerals up to 10
-  *
-  * Rounds armor_value to nearest 10, divides it by 10
-  * and then expresses it in roman numerals up to 10
-  * Arguments:
-  * * armor_value - Number we're converting
-  */
+ * Rounds armor_value to nearest 10, divides it by 10 and then expresses it in roman numerals up to 10
+ *
+ * Rounds armor_value to nearest 10, divides it by 10
+ * and then expresses it in roman numerals up to 10
+ * Arguments:
+ * * armor_value - Number we're converting
+ */
 /obj/item/clothing/proc/armor_to_protection_class(armor_value)
 	armor_value = round(armor_value,10) / 10
 	switch (armor_value)

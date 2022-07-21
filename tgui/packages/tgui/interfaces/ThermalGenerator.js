@@ -16,26 +16,28 @@ export const ThermalGenerator = (props, context) => {
     coldCirc,
   } = data;
 
-  const maxPowerDisplay = 6 * (10**9);
+  const maxPowerDisplay = 6 * 10 ** 9;
 
   const hasNoErrors = () => {
     return powernet && hotCirc && coldCirc;
   };
 
   return (
-    <Window
-      width={400}
-      height={250}
-      resizable
-    >
+    <Window width={400} height={250} resizable>
       <Window.Content>
         <Section>
           <LabeledList>
             <LabeledList.Item label="Unit Status">
-              {!powernet && (<Box color="bad">Not connected to power network!</Box>)}
-              {!hotCirc && (<Box color="bad">Could not connect to hot circulator!</Box>)}
-              {!coldCirc && (<Box color="bad">Could not connect to cold circulator!</Box>)}
-              {hasNoErrors() && (<Box color="good">Operational</Box>)}
+              {!powernet && (
+                <Box color="bad">Not connected to power network!</Box>
+              )}
+              {!hotCirc && (
+                <Box color="bad">Could not connect to hot circulator!</Box>
+              )}
+              {!coldCirc && (
+                <Box color="bad">Could not connect to cold circulator!</Box>
+              )}
+              {hasNoErrors() && <Box color="good">Operational</Box>}
             </LabeledList.Item>
             <LabeledList.Item label="Power Output">
               <ProgressBar
@@ -56,7 +58,8 @@ export const ThermalGenerator = (props, context) => {
                   blue: [-Infinity, 293],
                   good: [293, 500],
                   average: [500, Infinity],
-                }}>
+                }}
+              >
                 {coldCircTemp} K {coldCircPressure} kPa
               </ProgressBar>
             </LabeledList.Item>
@@ -69,7 +72,8 @@ export const ThermalGenerator = (props, context) => {
                   blue: [-Infinity, 293],
                   good: [293, 500],
                   average: [500, Infinity],
-                }}>
+                }}
+              >
                 {hotCircTemp} K {hotCircPressure} kPa
               </ProgressBar>
             </LabeledList.Item>
