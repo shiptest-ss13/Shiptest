@@ -715,7 +715,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	chosen = replacetext(chosen, "%TARGETNAME%", target_name)
 
 	var/end = copytext(chosen, length(chosen)) //Hallucinations are given the same punctuation treatment player messages are given, for that slight bit of extra spook
-	if(!(end in list("!", ".", "?", ":", "\"", "-")))
+	if(!(end in list("!",".","?",":","-")))
 		chosen += "."
 
 	var/message = target.compose_message(speaker || person, understood_language, chosen, is_radio ? "[FREQ_COMMON]" : null, spans, face_name = TRUE)
@@ -1184,8 +1184,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			fakemob = target //ever been so lonely you had to haunt yourself?
 		if(fakemob)
 			sleep(rand(20, 50))
-			to_chat(target, "<span class='deadsay'><b>DEAD: [fakemob.name]</b> says, \"[pick("rip","why did i just drop dead?","hey [target.first_name()]","git gud","you too?","is the AI rogue?",\
-			"i[prob(50)?" fucking":""] hate [pick("blood cult", "clock cult", "revenants", "this round","this","myself","admins","you")]")]\"</span>")
+			to_chat(target, "<span class='deadsay'><b>DEAD: [fakemob.name]</b> says, [pick("We've missed you","That whole ship is dying","Heyyyy [target.first_name()]","Come watch this with us [target.first_name()]","I think someone poisoned everyone on that ship")]</span>")
 	sleep(rand(70,90))
 	target.set_screwyhud(SCREWYHUD_NONE)
 	target.SetParalyzed(0)
