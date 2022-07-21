@@ -18,7 +18,7 @@
 	generate_features(new_turf)
 	CHECK_TICK
 
-/datum/biome/cave/proc/generate_caves(var/turf/gen_turf, var/string_gen)
+/datum/biome/cave/proc/generate_caves(turf/gen_turf, string_gen)
 	var/area/A = gen_turf.loc
 	if(!(A.area_flags & CAVES_ALLOWED))
 		return

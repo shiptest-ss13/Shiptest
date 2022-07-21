@@ -1,9 +1,9 @@
 /**
-  * # Dynamic Overmap Encounters
-  *
-  * These overmap objects can be docked with and will create a dynamically generated area of many different types depending on the planet variable.
-  * When undocked with, it checks if there's anyone left on the planet, and if not, will move to another random location and wait to create a new encounter.
-  */
+ * # Dynamic Overmap Encounters
+ *
+ * These overmap objects can be docked with and will create a dynamically generated area of many different types depending on the planet variable.
+ * When undocked with, it checks if there's anyone left on the planet, and if not, will move to another random location and wait to create a new encounter.
+ */
 /datum/overmap/dynamic
 	name = "weak energy signature"
 	char_rep = "?"
@@ -103,8 +103,8 @@
 	choose_level_type()
 
 /**
-  * Chooses a type of level for the dynamic level to use.
-  */
+ * Chooses a type of level for the dynamic level to use.
+ */
 /datum/overmap/dynamic/proc/choose_level_type() //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
 	var/chosen
 	if(!probabilities)
@@ -277,9 +277,9 @@
 			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
 
 /**
-  * Load a level for a ship that's visiting the level.
-  * * visiting shuttle - The docking port of the shuttle visiting the level.
-  */
+ * Load a level for a ship that's visiting the level.
+ * * visiting shuttle - The docking port of the shuttle visiting the level.
+ */
 /datum/overmap/dynamic/proc/load_level()
 	if(mapzone)
 		return TRUE

@@ -304,7 +304,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	return ..()
 
 ///Timed action involving one mob user. Target is optional.
-/proc/do_after(mob/user, var/delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
+/proc/do_after(mob/user, delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
 	if(!user)
 		return FALSE
 	var/atom/Tloc = null
@@ -633,7 +633,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	return .
 
 //Find an active ai with the least borgs. VERBOSE PROCNAME HUH!
-/proc/select_active_ai_with_fewest_borgs(var/z)
+/proc/select_active_ai_with_fewest_borgs(z)
 	var/mob/living/silicon/ai/selected
 	var/list/active = active_ais(FALSE, z)
 	for(var/mob/living/silicon/ai/A in active)
@@ -651,7 +651,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			. = pick(borgs)
 	return .
 
-/proc/select_active_ai(mob/user, var/z = null)
+/proc/select_active_ai(mob/user, z = null)
 	var/list/ais = active_ais(FALSE, z)
 	if(ais.len)
 		if(user)

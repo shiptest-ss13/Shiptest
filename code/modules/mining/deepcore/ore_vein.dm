@@ -6,7 +6,7 @@ GLOBAL_LIST_EMPTY(ore_vein_landmarks)
 	var/material_rate = 0
 	var/obj/machinery/deepcore/drill/miner
 
-/obj/effect/landmark/ore_vein/Initialize(mapload, var/datum/material/mat)
+/obj/effect/landmark/ore_vein/Initialize(mapload, datum/material/mat)
 	. = ..()
 	GLOB.ore_vein_landmarks += src
 	// Key = Material path; Value = Material Rate
