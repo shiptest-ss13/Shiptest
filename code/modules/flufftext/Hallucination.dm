@@ -679,12 +679,13 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		"[pick_list_replacements(HAL_LINES_FILE, "aggressive")]",\
 		"[pick_list_replacements(HAL_LINES_FILE, "help")]!!",\
 		"[pick_list_replacements(HAL_LINES_FILE, "escape")]",\
-		"[pick("We need you to","Cap said to","I need your help to","Are you going to","We are going to")] [pick_list_replacements(HAL_LINES_FILE, "threat")] the [pick_list_replacements(HAL_LINES_FILE, "people")]",\
-		"I'm infected, [pick_list_replacements(HAL_LINES_FILE, "infection_advice")]!")
+		"[pick("We think you're","Are you","We know you're","I think you're","I'm almost sure you're","The crew doesn't know yet, but I know you're","I know you're","They think you're")] [pick_list_replacements(HAL_LINES_FILE, "accusations")]",\
+		"[pick("We need you to","Cap said to","Hey... let's","I need your help to","Are you going to","We are going to")] [pick_list_replacements(HAL_LINES_FILE, "threat")] the [pick_list_replacements(HAL_LINES_FILE, "people")]",\
+		"[pick("I think I'm infected, I'm infected with something","I'm infected","NonononoNO, I'm infected")], [pick_list_replacements(HAL_LINES_FILE, "infection_advice")]!")
 
 	var/radio_messages = list(
-		"[pick_list_replacements(HAL_LINES_FILE, "people")] is [pick_list_replacements(HAL_LINES_FILE, "accusations")]!",\
-		"We [pick("need to", "gotta", "have to", "should","got told to","got ordered to")] [pick_list_replacements(HAL_LINES_FILE, "threat")] [target.first_name()]")
+		"[pick("Is","We think","I'm almost sure","","Oh fuck... I think","I think")] [pick_list_replacements(HAL_LINES_FILE, "people")] is [pick_list_replacements(HAL_LINES_FILE, "accusations")]!",\
+		"We [pick("need to", "gotta", "have to", "should","got told to","got ordered to","are going to",)] [pick_list_replacements(HAL_LINES_FILE, "threat")] [target.first_name()]")
 
 	var/mob/living/carbon/person = null
 	var/datum/language/understood_language = target.get_random_understood_language()
