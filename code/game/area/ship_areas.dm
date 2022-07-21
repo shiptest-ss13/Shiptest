@@ -278,6 +278,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Engine Room"
 	icon_state = "engine_sm"
 
+/area/ship/engineering/incinerator
+	name = "Incinerator"
+	icon_state = "disposal"
+
 /// Security ///
 /area/ship/security
 	name = "Brig"
@@ -314,6 +318,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Cargo Office"
 	icon_state = "quartoffice"
 	sound_environment = SOUND_AREA_STANDARD_STATION
+
+/area/ship/cargo/port
+	name = "Port Cargo Bay"
+
+/area/ship/cargo/starboard
+	name = "Starboard Cargo Bay"
 
 /// Hallways ///
 /area/ship/hallway
@@ -371,13 +381,20 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Central Maintenance"
 	icon_state = "maintcentral"
 
+/area/ship/maintenance/external
+	name = "External Hull Access"
+	icon_state = "amaint"
+
 /area/ship/construction
 	name = "Construction Area"
 	icon_state = "construction"
 
+/// Storage Areas ///
+
 /area/ship/storage
 	name = "Storage Bay"
 	icon_state = "storage"
+	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /// External Areas ///
 /area/ship/external

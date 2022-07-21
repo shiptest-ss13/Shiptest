@@ -49,7 +49,7 @@ function envvar_override () {
     OPTION=`echo $p | cut -d "=" -f 1 | sed s/"$PREFIX"//`
     VALUE=`echo $p | cut -d "=" -f 2`
     # Comment out logic, comments line out if value is #
-    if [[ "${VALUE}" == "#" ]]; then 
+    if [[ "${VALUE}" == "#" ]]; then
       echo "Commenting out option \"$OPTION\" in $FILENAME"
       sed -i -r 's/^'"$OPTION"'.*/#&/' "$FILENAME"
     else

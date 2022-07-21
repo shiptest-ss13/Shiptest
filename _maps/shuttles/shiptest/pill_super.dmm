@@ -62,7 +62,7 @@
 "i" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/layer2,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	filter_types = list("co2","bz","o2","plasma","water_vapor","nob","no2","tritium","freon","miasma","pluox","stim")
+	filter_types = list("co2","bz","o2","plasma","water_vapor","nob","no2","tritium","freon","pluox","stim")
 	},
 /obj/machinery/power/supermatter_crystal/shard,
 /obj/structure/window/plasma/reinforced/spawner{
@@ -115,7 +115,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/west{
-	pixel_x = -6
+	pixel_x = -25
 	},
 /obj/structure/window/reinforced/tinted,
 /obj/structure/window/reinforced/tinted{

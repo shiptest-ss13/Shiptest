@@ -79,6 +79,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define issquidperson(A) (is_species(A, /datum/species/squid))
 #define isipc(A) (is_species(A, /datum/species/ipc))
 #define isspiderperson(A) (is_species(A, /datum/species/spider))
+#define isdwarf(A) (is_species(A, /datum/species/dwarf))
 
 //more carbon mobs
 #define ismonkey(A) (istype(A, /mob/living/carbon/monkey))
@@ -221,6 +222,8 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 #define is_glass_sheet(O) (is_type_in_typecache(O, GLOB.glass_sheet_types))
 
 #define iseffect(O) (istype(O, /obj/effect))
+
+#define isholoeffect(O) (istype(O, /obj/effect/holodeck_effect))
 
 #define isblobmonster(O) (istype(O, /mob/living/simple_animal/hostile/blob))
 

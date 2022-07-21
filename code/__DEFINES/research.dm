@@ -75,8 +75,9 @@
 	TECHWEB_POINT_TYPE_NANITES = "Nanite Research" \
 	)
 
-///R&D point value for a maxcap bomb. Can be adjusted if need be. Current Value Cap Radius: 100
-#define TECHWEB_BOMB_POINTCAP 50000
+#define BOMB_TARGET_POINTS 50000 //Adjust as needed. Actual hard cap is double this, but will never be reached due to hyperbolic curve.
+#define BOMB_TARGET_SIZE 200 // The shockwave radius required for a bomb to get TECHWEB_BOMB_MIDPOINT points.
+#define BOMB_SUB_TARGET_EXPONENT 2 // The power of the points curve below the target size. Higher = less points for worse bombs, below target.
 
 ///Research point values for slime extracts, see the R&D console's attackby code
 #define SLIME_RESEARCH_TIER_0 500

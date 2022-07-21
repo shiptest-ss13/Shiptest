@@ -329,8 +329,8 @@ Possible to do for anyone motivated enough:
 				outgoing_call.Disconnect(src)
 
 /**
-  * hangup_all_calls: Disconnects all current holocalls from the holopad
-  */
+ * hangup_all_calls: Disconnects all current holocalls from the holopad
+ */
 /obj/machinery/holopad/proc/hangup_all_calls()
 	for(var/I in holo_calls)
 		var/datum/holocall/HC = I
@@ -509,9 +509,9 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	return TRUE
 
 /**Can we display holos on the turf T
-  *Area check instead of line of sight check because this is a called a lot if AI wants to move around.
-  * *Areacheck for things that need to get into other areas, such as emergency holograms
-  */
+ *Area check instead of line of sight check because this is a called a lot if AI wants to move around.
+ * *Areacheck for things that need to get into other areas, such as emergency holograms
+ */
 /obj/machinery/holopad/proc/validate_location(turf/T, check_los = FALSE, areacheck = TRUE)
 	if(T.virtual_z() == virtual_z() && get_dist(T, src) <= holo_range && (T.loc == get_area(src) || !areacheck) && anchored)
 		return TRUE
