@@ -1,6 +1,6 @@
 /** # Overmap turfs
-  * Overmap turfs, has no non-aesthetic functionality.
-  */
+ * Overmap turfs, has no non-aesthetic functionality.
+ */
 /turf/open/overmap
 	icon = 'whitesands/icons/turf/overmap.dmi'
 	icon_state = "overmap"
@@ -32,8 +32,8 @@
 		overlays += I
 
 /** # Overmap area
-  * Area that all overmap objects will spawn in at roundstart.
-  */
+ * Area that all overmap objects will spawn in at roundstart.
+ */
 /area/overmap
 	name = "Overmap"
 	icon_state = "yellow"
