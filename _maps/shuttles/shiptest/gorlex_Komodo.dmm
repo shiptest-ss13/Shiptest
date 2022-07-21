@@ -1721,11 +1721,11 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 26
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/wideband{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "rf" = (
@@ -1913,6 +1913,10 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 1
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -26
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
