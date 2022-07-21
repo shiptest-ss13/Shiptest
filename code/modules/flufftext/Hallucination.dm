@@ -767,7 +767,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		message_pool.Add("<B>[other]</B> [pick("sneezes","coughs")].")
 
 	message_pool.Add("<span class='notice'>You hear something squeezing through the pipes...</span>", \
-		"<span class='warning'>You hear something squelching in the ground beneath you...</span>",
+		"<span class='warning'>You hear something squelching in the ground beneath you...</span>", \
 		"<span class='warning'>You feel something inside your [pick("arm","leg","back","head")].</span>",
 		"<span class='warning'>You feel [pick("angry","empty","dry","woozy")].</span>",
 		"<span class='warning'>Your stomach rumbles.</span>",
