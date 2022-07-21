@@ -45,8 +45,8 @@
 	return
 
 /**
-  * This proc generates the panel that opens to all newly joining players, allowing them to join, observe, view polls, view the current crew manifest, and open the character customization menu.
-  */
+ * This proc generates the panel that opens to all newly joining players, allowing them to join, observe, view polls, view the current crew manifest, and open the character customization menu.
+ */
 /mob/dead/new_player/proc/new_player_panel()
 	if(auth_check)
 		return
@@ -293,10 +293,6 @@
 		alert(src, get_job_unavailable_error_message(error, job))
 		return FALSE
 
-	if(SSticker.late_join_disabled)
-		alert(src, "An administrator has disabled late join spawning.")
-		return FALSE
-
 	//Removes a job slot
 	ship.job_slots[job]--
 
@@ -357,19 +353,21 @@
 	if(auth_check)
 		return
 
-	//stops the window from even showing up if there's a lock on joining
-	if(!GLOB.enter_allowed)
-		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+	if(!can_join_round(FALSE))
 		return
 
 	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
 
 	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)
-		if((length(S.shuttle_port.spawn_points) < 1) || (length(S.job_slots) < 1) || !S.join_allowed)
+		if(!S.is_join_option())
 			continue
 		shuttle_choices[S.name + " ([S.source_template.short_name ? S.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
 
-	var/datum/overmap/ship/controlled/selected_ship = shuttle_choices[tgui_input_list(src, "Select ship to spawn on.", "Welcome, [client?.prefs.real_name || "User"].", shuttle_choices)]
+	var/chosen_ship = tgui_input_list(src, "Select ship to spawn on.", "Welcome, [client?.prefs.real_name || "User"].", shuttle_choices)
+	if(!can_join_round(FALSE))
+		return
+
+	var/datum/overmap/ship/controlled/selected_ship = shuttle_choices[chosen_ship]
 	if(!selected_ship)
 		return
 
@@ -398,11 +396,6 @@
 			new_player_panel()
 		return
 
-	if(selected_ship.memo)
-		var/memo_accept = tgui_alert(src, "Current ship memo: [selected_ship.memo]", "[selected_ship.name] Memo", list("OK", "Cancel"))
-		if(memo_accept == "Cancel")
-			return LateChoices() //Send them back to shuttle selection
-
 	var/list/job_choices = list()
 	for(var/datum/job/job as anything in selected_ship.job_slots)
 		if(selected_ship.job_slots[job] < 1)
@@ -413,13 +406,61 @@
 		to_chat(usr, "<span class='danger'>There are no jobs available on this ship!</span>")
 		return LateChoices() //Send them back to shuttle selection
 
+	if(selected_ship.memo)
+		var/memo_accept = tgui_alert(src, "Current ship memo: [selected_ship.memo]", "[selected_ship.name] Memo", list("OK", "Cancel"))
+		if(memo_accept == "Cancel")
+			return LateChoices() //Send them back to shuttle selection
+
+	var/did_application = FALSE
+	if(selected_ship.join_mode == SHIP_JOIN_MODE_APPLY)
+		var/datum/ship_application/current_application = selected_ship.get_application(src)
+		if(isnull(current_application))
+			send_application(selected_ship)
+			return LateChoices()
+		switch(current_application.status)
+			if(SHIP_APPLICATION_ACCEPTED)
+				to_chat(usr, "<span class='notice'>Your ship application was accepted, continuing...</span>")
+			if(SHIP_APPLICATION_PENDING)
+				alert(src, "You already have a pending application for this ship!")
+				return LateChoices()
+			if(SHIP_APPLICATION_DENIED)
+				alert(src, "You can't join this ship, as a previous application was denied!")
+				return LateChoices()
+		did_application = TRUE
+
 	var/datum/job/selected_job = job_choices[tgui_input_list(src, "Select job.", "Welcome, [client.prefs.real_name].", job_choices)]
 	if(!selected_job)
 		return LateChoices() //Send them back to shuttle selection
 
-	if(!SSticker?.IsRoundInProgress())
-		to_chat(usr, "<span class='danger'>The round is either not ready, or has already finished...</span>")
+	if(selected_ship.join_mode == SHIP_JOIN_MODE_CLOSED || (selected_ship.join_mode == SHIP_JOIN_MODE_APPLY && !did_application))
+		to_chat(usr, "<span class='warning'>You cannot join this ship anymore, as its join mode has changed!</span>")
+		return LateChoices()
+
+	// one last check
+	if(!can_join_round(FALSE))
 		return
+
+	AttemptLateSpawn(selected_job, selected_ship)
+
+/mob/dead/new_player/proc/send_application(datum/overmap/ship/controlled/target_ship)
+	var/datum/ship_application/app = new(src, target_ship)
+	var/application_sent = app.get_user_response()
+	if(application_sent)
+		to_chat(usr, "<span class='notice'>Ship application sent. You will be notified if the application is accepted.</span>")
+	else
+		to_chat(usr, "<span class='notice'>Application cancelled, or there was an error sending the application.</span>")
+	return
+
+/mob/dead/new_player/proc/can_join_round(silent = FALSE)
+	if(!GLOB.enter_allowed)
+		if(!silent)
+			to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+		return FALSE
+
+	if(!SSticker?.IsRoundInProgress())
+		if(!silent)
+			to_chat(usr, "<span class='danger'>The round is either not ready, or has already finished...</span>")
+		return FALSE
 
 	var/relevant_cap
 	var/hpc = CONFIG_GET(number/hard_popcap)
@@ -431,10 +472,10 @@
 
 	if(SSticker.queued_players.len && !(ckey(key) in GLOB.admin_datums))
 		if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
-			to_chat(usr, "<span class='warning'>Server is full.</span>")
-			return
-
-	AttemptLateSpawn(selected_job, selected_ship)
+			if(!silent)
+				to_chat(usr, "<span class='warning'>Server is full.</span>")
+			return FALSE
+	return TRUE
 
 /mob/dead/new_player/proc/create_character(transfer_after)
 	if(auth_check)
@@ -539,11 +580,11 @@
 	return TRUE
 
 /**
-  * Prepares a client for the interview system, and provides them with a new interview
-  *
-  * This proc will both prepare the user by removing all verbs from them, as well as
-  * giving them the interview form and forcing it to appear.
-  */
+ * Prepares a client for the interview system, and provides them with a new interview
+ *
+ * This proc will both prepare the user by removing all verbs from them, as well as
+ * giving them the interview form and forcing it to appear.
+ */
 /mob/dead/new_player/proc/register_for_interview()
 	// First we detain them by removing all the verbs they have on client
 	for (var/v in client.verbs)

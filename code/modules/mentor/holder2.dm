@@ -39,7 +39,7 @@ GLOBAL_PROTECT(mentor_datums)
 
 	return FALSE
 
-/proc/check_mentor_other(var/client/C)
+/proc/check_mentor_other(client/C)
 	if(C)
 		var/mentor = GLOB.mentor_datums[C.ckey]
 		if(C.holder && C.holder.rank)

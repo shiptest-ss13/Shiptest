@@ -893,7 +893,7 @@
 
 /datum/supply_pack/engineering/atmossuit
 	name = "Atmospherics Hardsuit Crate"
-	desc = "The iconic hardsuit of Nanotransen's Atmosphere Corps, this hardsuit is known across space as a symbol of defiance in the face of sudden decompression. Smells faintly of plasma. Requires engineering access to open."
+	desc = "The iconic hardsuit of Nanotrasen's Atmosphere Corps, this hardsuit is known across space as a symbol of defiance in the face of sudden decompression. Smells faintly of plasma. Requires engineering access to open."
 	cost = 12000
 	access = ACCESS_ATMOSPHERICS
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine/atmos)

@@ -105,7 +105,7 @@
 	id = "starfurybc_massleft"
 	},
 /obj/machinery/door/window{
-	name = "cannon access";
+	name = "Cannon Access";
 	req_access_txt = "150"
 	},
 /turf/open/floor/plating,
@@ -218,7 +218,7 @@
 /area/ship/medical/surgery)
 "cp" = (
 /obj/machinery/door/window{
-	name = "cannon access";
+	name = "Cannon Access";
 	req_access_txt = "150"
 	},
 /obj/machinery/mass_driver{
@@ -2362,7 +2362,7 @@
 "uY" = (
 /obj/machinery/door/poddoor{
 	id = "sbccargo";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
@@ -2991,7 +2991,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	id = "windows";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
@@ -3175,7 +3175,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	id = "bridgedoors";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -3271,7 +3271,7 @@
 	id = "starfurybcsupermatter";
 	name = "Radiation Shutters";
 	pixel_x = 6;
-	pixel_y = 24;
+	pixel_y = 25;
 	req_access_txt = "150"
 	},
 /obj/machinery/button/door{
@@ -3279,7 +3279,7 @@
 	name = "Supermatter Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -6;
-	pixel_y = 24;
+	pixel_y = 25;
 	req_access_txt = "150";
 	specialfunctions = 4
 	},
@@ -3612,7 +3612,7 @@
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "sbccargo";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -4282,7 +4282,7 @@
 /obj/machinery/power/apc/syndicate{
 	auto_name = 1;
 	dir = 1;
-	pixel_y = 28
+	pixel_y = 25
 	},
 /obj/machinery/power/terminal{
 	dir = 1
@@ -4362,7 +4362,7 @@
 /obj/machinery/button/door{
 	dir = 4;
 	id = "windows";
-	name = "window shutters";
+	name = "Window Shutters";
 	pixel_x = -22;
 	pixel_y = -1
 	},
@@ -4559,12 +4559,12 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window{
 	dir = 8;
-	name = "security desk";
+	name = "Security Desk";
 	req_access_txt = "150"
 	},
 /obj/machinery/door/window{
 	dir = 4;
-	name = "security desk";
+	name = "Security Desk";
 	req_access_txt = "150;3"
 	},
 /turf/open/floor/carpet/nanoweave/red,
@@ -5019,7 +5019,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	id = "windows";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -5533,7 +5533,7 @@
 /obj/machinery/power/apc/syndicate{
 	auto_name = 1;
 	dir = 1;
-	pixel_y = 28
+	pixel_y = 25
 	},
 /obj/machinery/power/terminal{
 	dir = 1
