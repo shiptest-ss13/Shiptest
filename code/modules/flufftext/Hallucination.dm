@@ -679,7 +679,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		"[pick_list_replacements(HAL_LINES_FILE, "aggressive")]",\
 		"[pick_list_replacements(HAL_LINES_FILE, "help")]!!",\
 		"[pick_list_replacements(HAL_LINES_FILE, "escape")]",\
-		"Help us [pick_list_replacements(HAL_LINES_FILE, "threat")] the [pick_list_replacements(HAL_LINES_FILE, "people")]",\
+		"[pick("We need you to","Cap said to","I need your help to","Are you going to","We are going to")] [pick_list_replacements(HAL_LINES_FILE, "threat")] the [pick_list_replacements(HAL_LINES_FILE, "people")]",\
 		"I'm infected, [pick_list_replacements(HAL_LINES_FILE, "infection_advice")]!")
 
 	var/radio_messages = list(
