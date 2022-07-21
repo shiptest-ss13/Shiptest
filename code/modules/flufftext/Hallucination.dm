@@ -603,7 +603,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	A.override = 1
 	if(target.client)
 		if(wabbajack)
-			to_chat(target, "<span class='hear'>...you look down and notice, you aren't the same as you used to be...</span>")
+			to_chat(target, "<span class='hear'>...you look down and notice... you aren't the same as you used to be...</span>")
 		delusion = A
 		target.client.images |= A
 	QDEL_IN(src, duration)
