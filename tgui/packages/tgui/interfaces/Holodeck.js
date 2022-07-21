@@ -12,37 +12,39 @@ export const Holodeck = (props, context) => {
     program,
   } = data;
   return (
-    <Window
-      width={400}
-      height={500}
-      resizable>
+    <Window width={400} height={500} resizable>
       <Window.Content scrollable>
         <Section
           title="Default Programs"
-          buttons={(
+          buttons={
             <Button
-              icon={emagged ? "unlock" : "lock"}
+              icon={emagged ? 'unlock' : 'lock'}
               content="Safeties"
               color="bad"
               disabled={!can_toggle_safety}
               selected={!emagged}
-              onClick={() => act('safety')} />
-          )}>
-          {default_programs.map(def_program => (
+              onClick={() => act('safety')}
+            />
+          }
+        >
+          {default_programs.map((def_program) => (
             <Button
               fluid
               key={def_program.id}
               content={def_program.name.substring(11)}
               textAlign="center"
               selected={def_program.id === program}
-              onClick={() => act('load_program', {
-                id: def_program.id,
-              })} />
+              onClick={() =>
+                act('load_program', {
+                  id: def_program.id,
+                })
+              }
+            />
           ))}
         </Section>
         {!!emagged && (
           <Section title="Dangerous Programs">
-            {emag_programs.map(emag_program => (
+            {emag_programs.map((emag_program) => (
               <Button
                 fluid
                 key={emag_program.id}
@@ -50,9 +52,12 @@ export const Holodeck = (props, context) => {
                 color="bad"
                 textAlign="center"
                 selected={emag_program.id === program}
-                onClick={() => act('load_program', {
-                  id: emag_program.id,
-                })} />
+                onClick={() =>
+                  act('load_program', {
+                    id: emag_program.id,
+                  })
+                }
+              />
             ))}
           </Section>
         )}

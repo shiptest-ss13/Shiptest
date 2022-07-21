@@ -20,11 +20,11 @@ export const createStore = (reducer, enhancer) => {
 
   const getState = () => currentState;
 
-  const subscribe = listener => {
+  const subscribe = (listener) => {
     listeners.push(listener);
   };
 
-  const dispatch = action => {
+  const dispatch = (action) => {
     currentState = reducer(currentState, action);
     for (let i = 0; i < listeners.length; i++) {
       listeners[i]();
@@ -49,6 +49,7 @@ export const createStore = (reducer, enhancer) => {
  * actions.
  */
 export const applyMiddleware = (...middlewares) => {
+  // prettier-ignore
   return createStore => (reducer, ...args) => {
     const store = createStore(reducer, ...args);
 
@@ -80,7 +81,7 @@ export const applyMiddleware = (...middlewares) => {
  * in the state that are not present in the reducers object. This function
  * is also more flexible than the redux counterpart.
  */
-export const combineReducers = reducersObj => {
+export const combineReducers = (reducersObj) => {
   const keys = Object.keys(reducersObj);
   let hasChanged = false;
   return (prevState = {}, action) => {
@@ -94,9 +95,7 @@ export const combineReducers = reducersObj => {
         nextState[key] = nextDomainState;
       }
     }
-    return hasChanged
-      ? nextState
-      : prevState;
+    return hasChanged ? nextState : prevState;
   };
 };
 
@@ -108,15 +107,15 @@ export const combineReducers = reducersObj => {
  * returns the action type, allowing it to be used in reducer logic that
  * is looking for that action type.
  *
- * @param type The action type to use for created actions.
- * @param prepare (optional) a method that takes any number of arguments
+ * @param {string} type The action type to use for created actions.
+ * @param {any} prepare (optional) a method that takes any number of arguments
  * and returns { payload } or { payload, meta }. If this is given, the
  * resulting action creator will pass it's arguments to this method to
  * calculate payload & meta.
  *
  * @public
  */
-export const createAction = (type, prepare) => {
+export const createAction = (type, prepare = null) => {
   const actionCreator = (...args) => {
     if (!prepare) {
       return { type, payload: args[0] };
@@ -136,15 +135,14 @@ export const createAction = (type, prepare) => {
   };
   actionCreator.toString = () => '' + type;
   actionCreator.type = type;
-  actionCreator.match = action => action.type === type;
+  actionCreator.match = (action) => action.type === type;
   return actionCreator;
 };
-
 
 // Implementation specific
 // --------------------------------------------------------
 
-export const useDispatch = context => {
+export const useDispatch = (context) => {
   return context.store.dispatch;
 };
 

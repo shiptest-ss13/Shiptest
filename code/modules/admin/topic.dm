@@ -2255,42 +2255,6 @@
 		fax_panel(usr)
 		return
 
-	else if(href_list["EvilFax"])
-		if(!check_rights(R_FUN))
-			return
-		var/mob/living/carbon/human/H = locate(href_list["EvilFax"])
-		if(!istype(H))
-			to_chat(usr, "<span class='notice'>This can only be used on instances of type /mob/living/carbon/human.</span>")
-			return
-		var/etypes = list("Borgification","Corgification","Death By Fire","Demotion Notice")
-		var/eviltype = input(src.owner, "Which type of evil fax do you wish to send [H]?","Its good to be baaaad...", "") as null|anything in etypes
-		if(!(eviltype in etypes))
-			return
-		var/customname = input(src.owner, "Pick a title for the evil fax.", "Fax Title") as text|null
-		if(!customname)
-			customname = "paper"
-		var/obj/item/paper/evilfax/P = new /obj/item/paper/evilfax(null)
-		var/obj/machinery/photocopier/faxmachine/fax = locate(href_list["originfax"])
-
-		P.name = "Central Command - [customname]"
-		P.info = "<span class='danger'>You really should've known better.</span>"
-		P.myeffect = eviltype
-		P.mytarget = H
-		if(alert("Do you want the Evil Fax to activate automatically if [H] tries to ignore it?",,"Yes", "No") == "Yes")
-			P.activate_on_timeout = TRUE
-		P.x = rand(-2, 0)
-		P.y = rand(-1, 2)
-		P.update_icon()
-		//we have to physically teleport the fax paper
-		fax.handle_animation()
-		P.forceMove(fax.loc)
-		if(istype(H) && H.stat == CONSCIOUS && (istype(H.ears, /obj/item/radio/headset)))
-			to_chat(H, "<span class='notice'>Your headset pings, notifying you that a reply to your fax has arrived.</span>")
-		to_chat(src.owner, "<span class='notice'>You sent a [eviltype] fax to [H].</span>")
-		log_admin("[key_name(src.owner)] sent [key_name(H)] a [eviltype] fax")
-		message_admins("[key_name_admin(src.owner)] replied to [key_name_admin(H)] with a [eviltype] fax")
-		return
-
 	else if(href_list["FaxReplyTemplate"])
 		if(!check_rights(R_FUN))
 			return
@@ -2360,7 +2324,7 @@
 			return
 		GLOB.interviews.ui_interact(usr)
 
-/datum/admins/proc/handle_sendall(var/obj/machinery/photocopier/faxmachine/F, var/obj/item/paper/P)
+/datum/admins/proc/handle_sendall(obj/machinery/photocopier/faxmachine/F, obj/item/paper/P)
 	if(F.receivefax(P) == FALSE)
 		to_chat(owner, "<span class='warning'>Message transmission to [F.department] failed.</span>")
 
