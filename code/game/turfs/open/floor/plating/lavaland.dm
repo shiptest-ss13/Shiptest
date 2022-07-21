@@ -9,8 +9,9 @@
 	digResult = /obj/item/stack/ore/glass/basalt
 
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit
-	light_power = 0.55
 	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
 
 /turf/open/floor/plating/asteroid/basalt/lava //lava underneath
 	baseturfs = /turf/open/lava/smooth
@@ -53,8 +54,9 @@
 	planetary_atmos = TRUE
 
 /turf/open/floor/plating/asteroid/basalt/purple/lit
-	light_power = 1
 	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
 
 /turf/open/floor/plating/asteroid/purple
 	name = "ashen sand"
@@ -66,8 +68,9 @@
 	planetary_atmos = TRUE
 
 /turf/open/floor/plating/asteroid/purple/lit
-	light_power = 1
 	light_range = 2
+	light_power = 0.3
+	light_color = LIGHT_COLOR_FIRE
 
 /turf/open/floor/plating/grass/lava
 	name = "ungodly grass"
