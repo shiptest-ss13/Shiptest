@@ -91,11 +91,11 @@
 	if(network)
 		. += "<span class='info'>This device is registered with a network connected to [length(network.connected)] devices.</span>"
 
-/obj/machinery/deepcore/proc/SetNetwork(var/datum/dcm_net/net)
+/obj/machinery/deepcore/proc/SetNetwork(datum/dcm_net/net)
 	return net.AddMachine(src)
 
 /obj/machinery/deepcore/proc/ClearNetwork()
 	return network.RemoveMachine(src)
 
-/obj/machinery/deepcore/proc/MergeNetwork(var/datum/dcm_net/net)
+/obj/machinery/deepcore/proc/MergeNetwork(datum/dcm_net/net)
 	network.MergeWith(net)

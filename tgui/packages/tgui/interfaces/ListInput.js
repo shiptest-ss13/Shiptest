@@ -14,32 +14,45 @@ let lastScrollTime = 0;
 
 export const ListInput = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    title,
-    message,
-    buttons,
-    timeout,
-  } = data;
+  const { title, message, buttons, timeout } = data;
 
   // Search
   const [showSearchBar, setShowSearchBar] = useLocalState(
-    context, 'search_bar', false);
+    context,
+    'search_bar',
+    false
+  );
   const [displayedArray, setDisplayedArray] = useLocalState(
-    context, 'displayed_array', buttons);
+    context,
+    'displayed_array',
+    buttons
+  );
 
   // KeyPress
   const [searchArray, setSearchArray] = useLocalState(
-    context, 'search_array', []);
+    context,
+    'search_array',
+    []
+  );
   const [searchIndex, setSearchIndex] = useLocalState(
-    context, 'search_index', 0);
+    context,
+    'search_index',
+    0
+  );
   const [lastCharCode, setLastCharCode] = useLocalState(
-    context, 'last_char_code', null);
+    context,
+    'last_char_code',
+    null
+  );
 
   // Selected Button
   const [selectedButton, setSelectedButton] = useLocalState(
-    context, 'selected_button', buttons[0]);
+    context,
+    'selected_button',
+    buttons[0]
+  );
 
-  const handleKeyDown = e => {
+  const handleKeyDown = (e) => {
     e.preventDefault();
     if (lastScrollTime > performance.now()) {
       return;
@@ -64,7 +77,7 @@ export const ListInput = (props, context) => {
     }
 
     if (e.keyCode === KEY_SPACE || e.keyCode === KEY_ENTER) {
-      act("choose", { choice: selectedButton });
+      act('choose', { choice: selectedButton });
       return;
     }
 
@@ -78,15 +91,13 @@ export const ListInput = (props, context) => {
       if (nextIndex < searchArray.length) {
         foundValue = searchArray[nextIndex];
         setSearchIndex(nextIndex);
-      }
-      else {
+      } else {
         foundValue = searchArray[0];
         setSearchIndex(0);
       }
-    }
-    else {
-      const resultArray = displayedArray.filter(value =>
-        value.substring(0, 1).toLowerCase() === charCode
+    } else {
+      const resultArray = displayedArray.filter(
+        (value) => value.substring(0, 1).toLowerCase() === charCode
       );
 
       if (resultArray.length > 0) {
@@ -104,11 +115,7 @@ export const ListInput = (props, context) => {
   };
 
   return (
-    <Window
-      title={title}
-      width={325}
-      height={325}
-      resizable>
+    <Window title={title} width={325} height={325} resizable>
       {timeout !== undefined && <Loader value={timeout} />}
       <Window.Content>
         <Stack fill vertical>
@@ -120,7 +127,7 @@ export const ListInput = (props, context) => {
               title={message}
               tabIndex={0}
               onKeyDown={handleKeyDown}
-              buttons={(
+              buttons={
                 <Button
                   compact
                   icon="search"
@@ -133,8 +140,9 @@ export const ListInput = (props, context) => {
                     setDisplayedArray(buttons);
                   }}
                 />
-              )}>
-              {displayedArray.map(button => (
+              }
+            >
+              {displayedArray.map((button) => (
                 <Button
                   key={button}
                   fluid
@@ -143,13 +151,13 @@ export const ListInput = (props, context) => {
                   selected={selectedButton === button}
                   onClick={() => {
                     if (selectedButton === button) {
-                      act("choose", { choice: button });
-                    }
-                    else {
+                      act('choose', { choice: button });
+                    } else {
                       setSelectedButton(button);
                     }
                     setLastCharCode(null);
-                  }}>
+                  }}
+                >
                   {button}
                 </Button>
               ))}
@@ -159,11 +167,14 @@ export const ListInput = (props, context) => {
             <Stack.Item>
               <Input
                 fluid
-                onInput={(e, value) => setDisplayedArray(
-                  buttons.filter(val => (
-                    val.toLowerCase().search(value.toLowerCase()) !== -1
-                  ))
-                )}
+                onInput={(e, value) =>
+                  setDisplayedArray(
+                    buttons.filter(
+                      (val) =>
+                        val.toLowerCase().search(value.toLowerCase()) !== -1
+                    )
+                  )
+                }
               />
             </Stack.Item>
           )}
@@ -175,7 +186,7 @@ export const ListInput = (props, context) => {
                   color="bad"
                   lineHeight={2}
                   content="Cancel"
-                  onClick={() => act("cancel")}
+                  onClick={() => act('cancel')}
                 />
               </Stack.Item>
               <Stack.Item grow basis={0}>
@@ -185,7 +196,7 @@ export const ListInput = (props, context) => {
                   lineHeight={2}
                   content="Confirm"
                   disabled={selectedButton === null}
-                  onClick={() => act("choose", { choice: selectedButton })}
+                  onClick={() => act('choose', { choice: selectedButton })}
                 />
               </Stack.Item>
             </Stack>
@@ -196,7 +207,7 @@ export const ListInput = (props, context) => {
   );
 };
 
-export const Loader = props => {
+export const Loader = (props) => {
   const { value } = props;
   return (
     <div className="ListInput__Loader">
@@ -204,7 +215,8 @@ export const Loader = props => {
         className="ListInput__LoaderProgress"
         style={{
           width: clamp01(value) * 100 + '%',
-        }} />
+        }}
+      />
     </div>
   );
 };

@@ -22,7 +22,7 @@ jobs:
         if: steps.value_holder.outputs.CL_ENABLED
         uses: actions/setup-python@v1
         with:
-          python-version: '3.9'
+          python-version: "3.9"
       - name: "Install deps"
         if: steps.value_holder.outputs.CL_ENABLED
         run: |

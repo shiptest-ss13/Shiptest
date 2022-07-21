@@ -247,14 +247,14 @@
 
 /obj/item/clothing/under/rank/civilian/janitor
 	name = "janitor's jumpsuit"
-	desc = "It's the official uniform of a nanotransen janitor. It has minor protection from biohazards."
+	desc = "It's the official uniform of a Nanotrasen janitor. It has minor protection from biohazards."
 	icon_state = "janitor"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/civilian/janitor/skirt
 	name = "janitor's jumpskirt"
-	desc = "The official skirt of a nanotransen corporate janitor. It has minor protection from biohazards."
+	desc = "The official skirt of a Nanotrasen corporate janitor. It has minor protection from biohazards."
 	icon_state = "janitor_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
