@@ -604,7 +604,6 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		if(wabbajack)
 			to_chat(target, "<span class='hear'>...you look down and notice, you aren't the same as you used to be...</span>")
-			target.playsound_local(target,'sound/magic/staff_change.ogg', 50, 1)
 		delusion = A
 		target.client.images |= A
 	QDEL_IN(src, duration)
