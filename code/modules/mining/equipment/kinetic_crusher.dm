@@ -6,7 +6,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	name = "proto-magnetic crusher"
-	desc = "A multipurpose disembarkation and self-defense tool designed by EXOCON using an incomplete Nanotransen prototype. \
+	desc = "A multipurpose disembarkation and self-defense tool designed by EXOCON using an incomplete Nanotrasen prototype. \
 	Found in the grime-stained hands of wannabee explorers across the frontier, it cuts rock and hews flora using magnetic osscilation and a heavy cleaving edge."
 	force = 0 //You can't hit stuff unless wielded
 	w_class = WEIGHT_CLASS_BULKY
@@ -722,7 +722,7 @@
 	if(.)
 		H.AddComponent(/datum/component/butchering, 60, 110)
 
-//outdated nanotransen prototype of the crusher. Incredibly heavy, but the blade was made at a premium. //to alter this I had to duplicate some code, big moment.
+//outdated Nanotrasen prototype of the crusher. Incredibly heavy, but the blade was made at a premium. //to alter this I had to duplicate some code, big moment.
 /obj/item/kinetic_crusher/old
 	icon_state = "crusherold"
 	item_state = "crusherold0"

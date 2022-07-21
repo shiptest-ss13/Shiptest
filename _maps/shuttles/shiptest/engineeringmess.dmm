@@ -10,7 +10,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/decal/cleanable/insectguts,
 /turf/open/floor/plating,
@@ -1172,7 +1172,7 @@
 /obj/structure/bedsheetbin,
 /obj/machinery/computer/cryopod{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
@@ -1241,13 +1241,12 @@
 	icon_state = "4-10"
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/railing/corner,
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
 "kM" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1461,7 +1460,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -1487,7 +1486,7 @@
 	dir = 4;
 	id = "Storage Bay Blast";
 	name = "Storage Bay Doors Control";
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
@@ -1629,7 +1628,7 @@
 	dir = 4;
 	id = "C02 Chamber Blast";
 	name = "C02 Chamber Vent Control";
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
@@ -1667,7 +1666,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/corner/brown/border{
 	dir = 1
@@ -2186,7 +2185,7 @@
 "uU" = (
 /obj/machinery/camera/autoname,
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4
@@ -2878,7 +2877,7 @@
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 26;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/carpet/stellar,
 /area/ship/crew/canteen)
@@ -2900,7 +2899,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/turf_decal/industrial/radiation{
 	dir = 4
@@ -2945,7 +2944,7 @@
 "BK" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
@@ -3316,7 +3315,7 @@
 	dir = 4;
 	id = "N2 Chamber Blast";
 	name = "N2 Chamber Vent Control";
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plating,
@@ -3878,7 +3877,7 @@
 /obj/machinery/button/door{
 	dir = 4;
 	name = "02 Chamber Vent Control";
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plating,
@@ -3978,7 +3977,7 @@
 	dir = 4;
 	id = "Storage Bay Blast";
 	name = "Storage Bay Doors Control";
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/turf_decal/industrial/radiation{
 	dir = 10
@@ -4125,6 +4124,10 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "NB" = (
+/obj/structure/closet/firecloset/wall{
+	dir = 8;
+	pixel_x = 28
+	},
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -4142,10 +4145,6 @@
 /obj/structure/closet/emcloset/wall{
 	pixel_y = 28
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -4156,7 +4155,7 @@
 	dir = 4;
 	id = "Plasma Chamber Blast";
 	name = "Plasma Chamber Vent Control";
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -4223,7 +4222,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Om" = (
-/obj/structure/lattice/catwalk,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/atmospherics)
 "Ot" = (
