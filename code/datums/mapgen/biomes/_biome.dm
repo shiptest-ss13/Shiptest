@@ -11,7 +11,7 @@
 	var/closed_turf_types =  list(/turf/closed/mineral/random/volcanic = 1)
 	open_turf_types = list(/turf/open/floor/plating/asteroid = 1)
 
-/datum/biome/proc/generate_overworld(var/turf/gen_turf)
+/datum/biome/proc/generate_overworld(turf/gen_turf)
 	//TURF SPAWNING
 	var/turf/picked_turf = pickweight(open_turf_types)
 	var/turf/open/new_turf = gen_turf.ChangeTurf(picked_turf, initial(picked_turf.baseturfs), CHANGETURF_DEFER_CHANGE)
@@ -47,7 +47,7 @@
 		generate_features(new_turf)
 	CHECK_TICK
 
-/datum/biome/proc/generate_features(var/turf/new_turf)
+/datum/biome/proc/generate_features(turf/new_turf)
 	//FLORA SPAWNING
 	var/atom/spawned_flora
 	var/area/A = new_turf.loc

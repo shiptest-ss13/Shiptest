@@ -10,7 +10,7 @@
 	var/birth_limit = 4
 	var/death_limit = 3
 
-/datum/map_generator/planet_generator/generate_terrain(var/list/turfs, var/datum/planet/planet_type)
+/datum/map_generator/planet_generator/generate_terrain(list/turfs, datum/planet/planet_type)
 	. = ..()
 
 	var/height_seed = rand(0, 50000)
