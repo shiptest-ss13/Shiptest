@@ -341,6 +341,8 @@
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/magazine/m12g,
 /obj/item/ammo_box/magazine/m12g,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
 "dw" = (
@@ -759,9 +761,8 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/scarlet,
 /obj/item/clothing/mask/breath,
+/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "hc" = (
@@ -1706,9 +1707,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/item/gun/ballistic/automatic/c20r/unrestricted{
-	spawnwithmagazine = 0
-	},
+/obj/item/gun/ballistic/automatic/c20r/unrestricted,
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted,
 /turf/open/floor/pod/dark,
 /area/ship/security/armory)
@@ -2139,7 +2138,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "uW" = (
-/obj/machinery/vending/medical/syndicate_access,
+/obj/machinery/vending/medical,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/medical)
 "vg" = (
@@ -2403,17 +2402,28 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "yy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 24
+	},
+/obj/structure/table/reinforced,
 /obj/item/clipboard,
-/obj/item/reagent_containers/hypospray/medipen,
 /obj/item/reagent_containers/hypospray/medipen{
 	pixel_y = 6
 	},
+/obj/item/reagent_containers/hypospray/medipen,
 /obj/item/reagent_containers/hypospray/medipen{
 	pixel_y = -6
 	},
 /obj/item/reagent_containers/glass/bottle/charcoal,
-/obj/structure/table/reinforced,
-/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/glass/bottle/formaldehyde{
+	pixel_x = 4;
+	pixel_y = 1
+	},
 /obj/item/reagent_containers/hypospray/medipen/pumpup{
 	pixel_x = -1;
 	pixel_y = -12
@@ -2421,17 +2431,6 @@
 /obj/item/reagent_containers/hypospray/medipen/pumpup{
 	pixel_x = 3;
 	pixel_y = -10
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/reagent_containers/glass/bottle/formaldehyde{
-	pixel_x = 4;
-	pixel_y = 1
-	},
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 24
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/medical)
@@ -3824,9 +3823,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "LH" = (
-/obj/machinery/sleeper/syndie{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
@@ -3834,6 +3830,10 @@
 	dir = 8;
 	pixel_x = 28
 	},
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/suit/space/syndicate/black/med,
+/obj/item/clothing/head/helmet/space/syndicate/black/med,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/medical)
 "LP" = (
@@ -3884,9 +3884,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/scarlet,
 /obj/item/clothing/mask/breath,
+/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "Mo" = (
@@ -4924,8 +4923,6 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 26
 	},
-/obj/item/clothing/suit/space/syndicate/black/med,
-/obj/item/clothing/head/helmet/space/syndicate/black/med,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
@@ -4933,6 +4930,7 @@
 	dir = 8
 	},
 /obj/item/clothing/mask/breath,
+/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "WT" = (
