@@ -350,7 +350,8 @@
 	pixel_y = -24
 	},
 /obj/machinery/door/window{
-	dir = 8
+	dir = 8;
+	name = "Cargo Bay"
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "cargodoors"
@@ -876,6 +877,7 @@
 /area/ship/engineering)
 "sj" = (
 /obj/machinery/door/window/brigdoor{
+	name = "Bridge";
 	req_access_txt = "41"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -2370,7 +2372,8 @@
 	dir = 8
 	},
 /obj/machinery/door/window{
-	dir = 8
+	dir = 8;
+	name = "Canteen"
 	},
 /obj/effect/turf_decal/siding/red,
 /turf/open/floor/plasteel/mono/dark,
