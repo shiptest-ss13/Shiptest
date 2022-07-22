@@ -501,10 +501,7 @@
 	icon_state = "generic"
 	build_path = /obj/machinery/rnd/production/protolathe/department
 
-/obj/item/circuitboard/machine/protolathe/department/basic
-	name = "Protolathe (Basic)"
-	icon_state = "generic"
-	build_path = /obj/machinery/rnd/production/protolathe/department/basic
+ basic
 
 /obj/item/circuitboard/machine/reagentgrinder
 	name = "Machine Design (All-In-One Grinder)"
@@ -1103,6 +1100,11 @@
 	name = "Protolathe (Machine Board) - Security"
 	icon_state = "security"
 	build_path = /obj/machinery/rnd/production/protolathe/department/security
+
+/obj/item/circuitboard/machine/protolathe/department/ballistics
+	name = "Protolathe (Machine Board) - Ballistics"
+	icon_state = "security"
+	build_path = /obj/machinery/rnd/production/protolathe/department/ballistics
 
 /obj/item/circuitboard/machine/recharger
 	name = "Weapon Recharger (Machine Board)"

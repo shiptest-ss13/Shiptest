@@ -1,0 +1,27 @@
+{
+	"map_name": "Saint-Roumain Militia Glaive-class Hunter Vessel",
+	"prefix": "SRSV",
+	"namelists": ["MYTHOLOGICAL", "BEASTS"],
+	"map_short_name": "Glaive-class",
+	"map_path": "_maps/shuttles/shiptest/srm_glaive.dmm",
+	"map_id": "srm_glaive",
+	"job_slots": {
+		"Hunter Montagne": {
+			"outfit": "/datum/outfit/job/chaplain/roumain",
+			"officer": true,
+			"slots": 1
+		},
+		"Hunter Doctor": {
+			"outfit": "/datum/outfit/job/doctor/roumain",
+			"slots": 1
+		},
+		"Hunter": {
+			"outfit": "/datum/outfit/job/security/roumain",
+			"slots": 3
+		},
+		"Shadow": {
+			"outfit": "/datum/outfit/job/assistant/roumain",
+			"slots": 3
+		}
+	}
+}
