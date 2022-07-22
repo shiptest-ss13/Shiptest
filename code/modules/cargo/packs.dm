@@ -893,7 +893,7 @@
 
 /datum/supply_pack/engineering/atmossuit
 	name = "Atmospherics Hardsuit Crate"
-	desc = "The iconic hardsuit of Nanotransen's Atmosphere Corps, this hardsuit is known across space as a symbol of defiance in the face of sudden decompression. Smells faintly of plasma. Requires engineering access to open."
+	desc = "The iconic hardsuit of Nanotrasen's Atmosphere Corps, this hardsuit is known across space as a symbol of defiance in the face of sudden decompression. Smells faintly of plasma. Requires engineering access to open."
 	cost = 12000
 	access = ACCESS_ATMOSPHERICS
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine/atmos)
@@ -2809,7 +2809,7 @@
 		if(prob(50))
 			the_toy = pickweight(GLOB.arcade_prize_pool)
 		else
-			the_toy = pick(subtypesof(/obj/item/toy/plush) - typesof(/obj/item/toy/plush/goatplushie/angry/kinggoat))
+			the_toy = pick(subtypesof(/obj/item/toy/plush))
 		new the_toy(.)
 
 /datum/supply_pack/costumes_toys/wizard

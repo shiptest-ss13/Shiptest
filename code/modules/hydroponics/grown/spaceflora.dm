@@ -27,6 +27,7 @@
 	icon_dead = "voidmelon-dead"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	reagents_add = list(/datum/reagent/oxygen = 0.1, /datum/reagent/consumable/nutriment = 0.05)
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/voidmelon
 	seed = /obj/item/seeds/voidmelon

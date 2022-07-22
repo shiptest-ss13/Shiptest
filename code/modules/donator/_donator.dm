@@ -348,6 +348,8 @@ GLOBAL_PROTECT(donators)
 
 /obj/item/clothing/examine(mob/user)
 	. = ..()
+	if(!donator_key) // Github I demand you run the checks on this PR
+		return .
 	if(check_donator(user))
 		. += "<span class='notice'><ul>This is one of your donator items, to <b>[(donator_allow_other_usage ? "allow" : "disallow")]</b> sharing <b>CtrlShiftClick</b> it.</ul></span>"
 	else

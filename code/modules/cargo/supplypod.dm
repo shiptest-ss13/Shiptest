@@ -355,12 +355,3 @@
 		M.forceMove(pod)
 	pod.preOpen() //Begin supplypod open procedures. Here effects like explosions, damage, and other dangerous (and potentially admin-caused, if the centcom_podlauncher datum was used) memes will take place
 	qdel(src) //The target's purpose is complete. It can rest easy now
-
-//------------------------------------UPGRADES-------------------------------------//
-/obj/item/disk/cargo/bluespace_pod //Disk that can be inserted into the Express Console to allow for Advanced Bluespace Pods
-	name = "Bluespace Drop Pod Upgrade"
-	desc = "This disk provides a firmware update to the Express Supply Console, granting the use of Nanotrasen's Bluespace Drop Pods to the supply department."
-	icon = 'icons/obj/module.dmi'
-	icon_state = "cargodisk"
-	item_state = "card-id"
-	w_class = WEIGHT_CLASS_SMALL

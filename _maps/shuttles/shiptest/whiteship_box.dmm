@@ -224,7 +224,7 @@
 "aM" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
@@ -290,7 +290,7 @@
 "aV" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/light/small/built,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -356,8 +356,8 @@
 	dir = 1
 	},
 /obj/machinery/light_switch{
-	pixel_x = -24;
-	pixel_y = -24
+	pixel_x = -25;
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel,
@@ -459,7 +459,7 @@
 "bo" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/cable{
 	icon_state = "5-8"
@@ -475,7 +475,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/light/small/built{
 	dir = 1
@@ -596,7 +596,7 @@
 	},
 /obj/effect/turf_decal/corner/neutral,
 /obj/machinery/door/window/southleft{
-	name = "equipment storage"
+	name = "Equipment Storage"
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
@@ -878,13 +878,13 @@
 	id = "whiteship_windows";
 	name = "Windows Blast Door Control";
 	pixel_x = -5;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/button/door{
 	id = "whiteship_bridge";
 	name = "Bridge Blast Door Control";
 	pixel_x = 5;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/button/door{
 	id = "emergencybay_blastdoors";
@@ -948,7 +948,7 @@
 /area/ship/engineering)
 "cs" = (
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/structure/cable{
@@ -1147,7 +1147,7 @@
 	},
 /obj/machinery/vending/wardrobe/medi_wardrobe,
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -1172,7 +1172,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
@@ -1229,8 +1229,8 @@
 	dir = 8
 	},
 /obj/machinery/light_switch{
-	pixel_x = -24;
-	pixel_y = 24
+	pixel_x = -25;
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -1258,7 +1258,7 @@
 /area/ship/crew)
 "cX" = (
 /obj/machinery/computer/cryopod{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/corner/neutral{
 	dir = 8
@@ -1277,7 +1277,7 @@
 /obj/machinery/chem_master,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -1476,15 +1476,15 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/north,
 /obj/machinery/light_switch{
-	pixel_x = -24;
-	pixel_y = 24
+	pixel_x = -25;
+	pixel_y = 25
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
@@ -1623,7 +1623,7 @@
 	pixel_y = 4
 	},
 /obj/machinery/light_switch{
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/corner/neutral{
 	dir = 4
@@ -1666,7 +1666,7 @@
 /obj/machinery/iv_drip,
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
@@ -1755,7 +1755,7 @@
 /obj/structure/table,
 /obj/machinery/microwave,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
@@ -1833,8 +1833,8 @@
 /obj/machinery/button/door{
 	id = "emergencybay_blastdoors";
 	name = "Emergency Bay Blast Door Control";
-	pixel_x = 24;
-	pixel_y = 24
+	pixel_x = 25;
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -2039,7 +2039,7 @@
 /obj/machinery/iv_drip,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)

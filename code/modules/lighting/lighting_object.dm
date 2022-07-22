@@ -28,13 +28,10 @@
 	myturf.lighting_object = src
 	myturf.luminosity = 0
 
-	for(var/turf/open/space/S in RANGE_TURFS(1, src)) //RANGE_TURFS is in code\__HELPERS\game.dm
-		S.update_starlight()
-
 	needs_update = TRUE
 	SSlighting.objects_queue += src
 
-/atom/movable/lighting_object/Destroy(var/force)
+/atom/movable/lighting_object/Destroy(force)
 	if (force)
 		SSlighting.objects_queue -= src
 		if (loc != myturf)

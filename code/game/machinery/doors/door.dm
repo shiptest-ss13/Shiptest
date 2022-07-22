@@ -103,13 +103,13 @@
 	return FALSE
 
 /**
-  * Called when attempting to remove the seal from an airlock
-  *
-  * Here because we need to call it and return if there was a seal so we don't try to open the door
-  * or try its safety lock while it's sealed
-  * Arguments:
-  * * user - the mob attempting to remove the seal
-  */
+ * Called when attempting to remove the seal from an airlock
+ *
+ * Here because we need to call it and return if there was a seal so we don't try to open the door
+ * or try its safety lock while it's sealed
+ * Arguments:
+ * * user - the mob attempting to remove the seal
+ */
 /obj/machinery/door/proc/try_remove_seal(mob/user)
 	return
 
@@ -393,10 +393,10 @@
 		L.visible_message("<span class='warning'>[src] closes on [L], crushing [L.p_them()]!</span>", "<span class='userdanger'>[src] closes on you and crushes you!</span>")
 		if(isalien(L))  //For xenos
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE * 1.5) //Xenos go into crit after aproximately the same amount of crushes as humans.
-			L.emote("roar")
+			L.manual_emote("roar")
 		else if(ishuman(L)) //For humans
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
-			L.emote("scream")
+			L.manual_emote("scream")
 			L.Paralyze(100)
 		else if(ismonkey(L)) //For monkeys
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
