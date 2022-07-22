@@ -11,8 +11,8 @@
 #define SMOOTH_QUEUED (1<<4)
 /// Smooths with objects, and will thus need to scan turfs for contents.
 #define SMOOTH_OBJ (1<<5)
-
-// document
+/// When smoothing, this atom will also use "connectors" if the atom being smoothed into is not one of a set of approved types.
+/// Only works when SMOOTH_BITMASK is also set.
 #define SMOOTH_CONNECTORS (1<<6)
 
 

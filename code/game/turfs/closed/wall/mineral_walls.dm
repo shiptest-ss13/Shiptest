@@ -170,6 +170,24 @@
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS)
 
+// /turf/closed/wall/mineral/wood_2
+// 	name = "wooden wall"
+// 	desc = "A wall with wooden plating. Stiff."
+// 	icon = 'icons/turf/walls/wood_wall_any.dmi'
+// 	icon_state = "wood_wall-0"
+// 	base_icon_state = "wood_wall"
+// 	sheet_type = /obj/item/stack/sheet/mineral/wood
+// 	hardness = 70
+// 	explosion_block = 0
+
+// 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
+// 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
+// 	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS)
+
+// 	connector_icon = 'icons/Testing/connector.dmi'
+// 	no_connector_typecache = list(/turf/closed/wall/mineral/wood_2, /obj/structure/falsewall/wood)
+// 	connector_strict_typing = TRUE
+
 /turf/closed/wall/mineral/wood/nonmetal/icecropolis
 	baseturfs = /turf/open/indestructible/necropolis/air
 
