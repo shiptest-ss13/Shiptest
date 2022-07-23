@@ -139,22 +139,6 @@
 		if(istype(loaded_item,/obj/item/relic))
 			dat += "<b><a href='byond://?src=[REF(src)];item=[REF(loaded_item)];function=[SCANTYPE_DISCOVER]'>Discover</A></b>"
 		dat += "<b><a href='byond://?src=[REF(src)];function=eject'>Eject</A>"
-		var/list/listin = techweb_item_boost_check(src)
-		if(listin)
-			var/list/output = list("<b><font color='purple'>Research Boost Data:</font></b>")
-			var/list/res = list("<b><font color='blue'>Already researched:</font></b>")
-			var/list/boosted = list("<b><font color='red'>Already boosted:</font></b>")
-			for(var/node_id in listin)
-				var/datum/techweb_node/N = SSresearch.techweb_node_by_id(node_id)
-				var/str = "<b>[N.display_name]</b>: [listin[N]] points.</b>"
-				if(linked_techweb.researched_nodes[N.id])
-					res += str
-				else if(linked_techweb.boosted_nodes[N.id])
-					boosted += str
-				if(linked_techweb.visible_nodes[N.id])	//JOY OF DISCOVERY!
-					output += str
-			output += boosted + res
-			dat += output
 	else
 		dat += "<b>Nothing loaded.</b>"
 	dat += "<a href='byond://?src=[REF(src)];function=refresh'>Refresh</A>"
@@ -198,11 +182,6 @@
 				dotype = matchReaction(process,scantype)
 			experiment(dotype,process)
 			use_power(750)
-			if(dotype != FAIL)
-				var/list/nodes = techweb_item_boost_check(process)
-				var/picked = pickweight(nodes)		//This should work.
-				if(linked_console)
-					linked_console.stored_research.boost_with_path(SSresearch.techweb_node_by_id(picked), process.type)
 	updateUsrDialog()
 
 /obj/machinery/rnd/experimentor/proc/matchReaction(matching,reaction)

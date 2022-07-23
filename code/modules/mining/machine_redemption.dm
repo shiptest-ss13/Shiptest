@@ -20,13 +20,13 @@
 	var/list/ore_values = list(/datum/material/iron = 1, /datum/material/glass = 1,  /datum/material/plasma = 15,  /datum/material/silver = 16, /datum/material/gold = 18, /datum/material/titanium = 30, /datum/material/uranium = 30, /datum/material/diamond = 50, /datum/material/bluespace = 50, /datum/material/bananium = 60)
 	/// Variable that holds a timer which is used for callbacks to `send_console_message()`. Used for preventing multiple calls to this proc while the ORM is eating a stack of ores.
 	var/console_notify_timer
-	var/datum/techweb/stored_research
+	var/datum/research_web/stored_research
 	var/obj/item/disk/design_disk/inserted_disk
 	var/datum/component/remote_materials/materials
 
 /obj/machinery/mineral/ore_redemption/Initialize(mapload)
 	. = ..()
-	stored_research = new /datum/techweb/specialized/autounlocking/smelter
+	stored_research = new /datum/research_web/integrated(src, SMELTER)
 	materials = AddComponent(/datum/component/remote_materials, "orm", mapload)
 
 /obj/machinery/mineral/ore_redemption/Destroy()
@@ -191,9 +191,9 @@
 			data["materials"] += list(list("name" = M.name, "id" = ref, "amount" = sheet_amount, "value" = ore_values[M.type]))
 
 		data["alloys"] = list()
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
-			data["alloys"] += list(list("name" = D.name, "id" = D.id, "amount" = can_smelt_alloy(D)))
+		for(var/datum/design/design as anything in stored_research.unlocked_designs)
+			design = stored_research.unlocked_designs[design]
+			data["alloys"] += list(list("name" = design.name, "id" = design.id, "amount" = can_smelt_alloy(design)))
 
 	if (!mat_container)
 		data["disconnected"] = "local mineral storage is unavailable"
@@ -280,10 +280,8 @@
 				inserted_disk = null
 			return TRUE
 		if("diskUpload")
-			var/n = text2num(params["design"])
-			if(inserted_disk && inserted_disk.blueprints && inserted_disk.blueprints[n])
-				stored_research.add_design(inserted_disk.blueprints[n])
-			return TRUE
+			for(var/datum/design/design in inserted_disk.blueprints)
+				stored_research.unlocked_designs[design.id] = design
 		if("Smelt")
 			if(!mat_container)
 				return
@@ -291,7 +289,7 @@
 				to_chat(usr, "<span class='warning'>Mineral access is on hold, please contact the quartermaster.</span>")
 				return
 			var/alloy_id = params["id"]
-			var/datum/design/alloy = stored_research.isDesignResearchedID(alloy_id)
+			var/datum/design/alloy = stored_research.unlocked_designs[alloy_id]
 			var/mob/M = usr
 			var/obj/item/card/id/I = M.get_idcard(TRUE)
 			if((check_access(I) || allowed(usr)) && alloy)

@@ -127,13 +127,13 @@
 	var/on = FALSE
 	var/datum/material/selected_material = null
 	var/selected_alloy = null
-	var/datum/techweb/stored_research
+	var/datum/research_web/stored_research
 
 /obj/machinery/mineral/processing_unit/Initialize()
 	. = ..()
 	proximity_monitor = new(src, 1)
 	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/gold, /datum/material/diamond, /datum/material/plasma, /datum/material/uranium, /datum/material/bananium, /datum/material/titanium, /datum/material/bluespace), INFINITY, TRUE, /obj/item/stack)
-	stored_research = new /datum/techweb/specialized/autounlocking/smelter
+	stored_research = new /datum/research_web/integrated(src, SMELTER)
 	selected_material = SSmaterials.GetMaterialRef(/datum/material/iron)
 
 /obj/machinery/mineral/processing_unit/Destroy()
@@ -169,13 +169,13 @@
 	dat += "<br><br>"
 	dat += "<b>Smelt Alloys</b><br>"
 
-	for(var/v in stored_research.researched_designs)
-		var/datum/design/D = SSresearch.techweb_design_by_id(v)
-		dat += "<span class=\"res_name\">[D.name] "
-		if (selected_alloy == D.id)
+	for(var/datum/design/design as anything in stored_research.unlocked_designs)
+		design = stored_research.unlocked_designs[design]
+		dat += "<span class=\"res_name\">[design.name] "
+		if (selected_alloy == design.id)
 			dat += " <i>Smelting</i>"
 		else
-			dat += " <A href='?src=[REF(CONSOLE)];alloy=[D.id]'><b>Not Smelting</b></A> "
+			dat += " <A href='?src=[REF(CONSOLE)];alloy=[design.id]'><b>Not Smelting</b></A> "
 		dat += "<br>"
 
 	dat += "<br><br>"
@@ -221,7 +221,7 @@
 
 
 /obj/machinery/mineral/processing_unit/proc/smelt_alloy()
-	var/datum/design/alloy = stored_research.isDesignResearchedID(selected_alloy) //check if it's a valid design
+	var/datum/design/alloy = stored_research.unlocked_designs[selected_alloy] //check if it's a valid design
 	if(!alloy)
 		on = FALSE
 		return

@@ -9,7 +9,7 @@
 	circuit = /obj/item/circuitboard/machine/nanite_program_hub
 
 	var/obj/item/disk/nanite_program/disk
-	var/datum/techweb/linked_techweb
+	var/datum/research_web/linked_techweb
 	var/current_category = "Main"
 	var/detail_view = TRUE
 	var/categories = list(
@@ -37,9 +37,8 @@
 			disk = N
 	if(istype(I, /obj/item/multitool))
 		var/obj/item/multitool/multi = I
-		if(istype(multi.buffer, /obj/machinery/rnd/server))
-			var/obj/machinery/rnd/server/serv = multi.buffer
-			linked_techweb = serv.stored_research
+		if(istype(multi.buffer, /datum/research_web))
+			linked_techweb = multi.buffer
 			visible_message("Linked to Server!")
 		return
 	else
@@ -89,17 +88,17 @@
 /obj/machinery/nanite_program_hub/ui_static_data(mob/user)
 	var/list/data = list()
 	data["programs"] = list()
-	for(var/i in linked_techweb.researched_designs)
-		var/datum/design/nanites/D = SSresearch.techweb_design_by_id(i)
-		if(!istype(D))
+	for(var/datum/design/design as anything in linked_techweb.unlocked_designs)
+		design = linked_techweb.unlocked_designs[design]
+		if(!istype(design))
 			continue
-		var/cat_name = D.category[1] //just put them in the first category fuck it
+		var/cat_name = design.category[1] //just put them in the first category fuck it
 		if(isnull(data["programs"][cat_name]))
 			data["programs"][cat_name] = list()
 		var/list/program_design = list()
-		program_design["id"] = D.id
-		program_design["name"] = D.name
-		program_design["desc"] = D.desc
+		program_design["id"] = design.id
+		program_design["name"] = design.name
+		program_design["desc"] = design.desc
 		data["programs"][cat_name] += list(program_design)
 
 	if(!length(data["programs"]))
@@ -118,7 +117,7 @@
 		if("download")
 			if(!disk)
 				return
-			var/datum/design/nanites/downloaded = linked_techweb.isDesignResearchedID(params["program_id"]) //check if it's a valid design
+			var/datum/design/nanites/downloaded = linked_techweb.unlocked_designs[params["program_id"]] //check if it's a valid design
 			if(!istype(downloaded))
 				return
 			if(disk.program)

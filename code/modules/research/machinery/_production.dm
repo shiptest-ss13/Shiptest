@@ -12,7 +12,7 @@
 	var/list/datum/design/cached_designs
 	var/list/datum/design/matching_designs
 	var/department_tag = "Unidentified"			//used for material distribution among other things.
-	var/datum/techweb/stored_research
+	var/datum/research_web/stored_research
 
 	var/screen = RESEARCH_FABRICATOR_SCREEN_MAIN
 	var/selected_category
@@ -39,16 +39,14 @@
 	if(!linked_techweb)
 		visible_message("Warning. No Linked Server!")
 		return
-
-	linked_techweb.copy_research_to(stored_research, TRUE)
 	update_designs()
 
 /obj/machinery/rnd/production/proc/update_designs()
 	cached_designs.Cut()
-	for(var/i in stored_research.researched_designs)
-		var/datum/design/d = SSresearch.techweb_design_by_id(i)
-		if((isnull(allowed_department_flags) || (d.departmental_flags & allowed_department_flags)) && (d.build_type & allowed_buildtypes))
-			cached_designs |= d
+	for(var/datum/design/design as anything in stored_research.unlocked_designs)
+		design = stored_research.unlocked_designs[design]
+		if((isnull(allowed_department_flags) || (design.departmental_flags & allowed_department_flags)) && (design.build_type & allowed_buildtypes))
+			cached_designs |= design
 
 /obj/machinery/rnd/production/RefreshParts()
 	calculate_efficiency()
@@ -127,7 +125,7 @@
 		amount = text2num(amount)
 	if(isnull(amount))
 		amount = 1
-	var/datum/design/D = (linked_console || requires_console)? (linked_console.stored_research.researched_designs[id]? SSresearch.techweb_design_by_id(id) : null) : SSresearch.techweb_design_by_id(id)
+	var/datum/design/D = stored_research?.unlocked_designs[id]
 	if(!istype(D))
 		return FALSE
 	if(!(isnull(allowed_department_flags) || (D.departmental_flags & allowed_department_flags)))
@@ -173,12 +171,12 @@
 
 /obj/machinery/rnd/production/proc/search(string)
 	matching_designs.Cut()
-	for(var/v in stored_research.researched_designs)
-		var/datum/design/D = SSresearch.techweb_design_by_id(v)
-		if(!(D.build_type & allowed_buildtypes) || !(isnull(allowed_department_flags) ||(D.departmental_flags & allowed_department_flags)))
+	for(var/datum/design/design as anything in stored_research.unlocked_designs)
+		design = stored_research.unlocked_designs[design]
+		if(!(design.build_type & allowed_buildtypes) || !(isnull(allowed_department_flags) ||(design.departmental_flags & allowed_department_flags)))
 			continue
-		if(findtext(D.name,string))
-			matching_designs.Add(D)
+		if(findtext(design.name,string))
+			matching_designs.Add(design)
 
 /obj/machinery/rnd/production/proc/generate_ui()
 	var/list/ui = list()
@@ -202,7 +200,7 @@
 
 /obj/machinery/rnd/production/proc/ui_header()
 	var/list/l = list()
-	l += "<div class='statusDisplay'><b>[linked_techweb.organization] [department_tag] Department Lathe</b>"
+	l += "<div class='statusDisplay'><b>[department_tag] Department Lathe</b>"
 	l += "Security protocols: [(obj_flags & EMAGGED)? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]"
 	if (materials.mat_container)
 		l += "<A href='?src=[REF(src)];switch_screen=[RESEARCH_FABRICATOR_SCREEN_MATERIALS]'><B>Material Amount:</B> [materials.format_amount()]</A>"
@@ -352,13 +350,13 @@
 	var/list/l = list()
 	l += "<div class='statusDisplay'><h3>Browsing [selected_category]:</h3>"
 	var/coeff = efficiency_coeff
-	for(var/v in stored_research.researched_designs)
-		var/datum/design/D = SSresearch.techweb_design_by_id(v)
-		if(!(selected_category in D.category)|| !(D.build_type & allowed_buildtypes))
+	for(var/datum/design/design as anything in stored_research.unlocked_designs)
+		design = stored_research.unlocked_designs[design]
+		if(!(selected_category in design.category)|| !(design.build_type & allowed_buildtypes))
 			continue
-		if(!(isnull(allowed_department_flags) || (D.departmental_flags & allowed_department_flags)))
+		if(!(isnull(allowed_department_flags) || (design.departmental_flags & allowed_department_flags)))
 			continue
-		l += design_menu_entry(D, coeff)
+		l += design_menu_entry(design, coeff)
 	l += "</div>"
 	return l
 

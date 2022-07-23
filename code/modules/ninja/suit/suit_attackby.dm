@@ -39,14 +39,17 @@
 	else if(istype(I, /obj/item/disk/tech_disk))//If it's a data disk, we want to copy the research on to the suit.
 		var/obj/item/disk/tech_disk/TD = I
 		var/has_research = FALSE
-		for(var/node in TD.stored_research.researched_nodes)
-			if(!stored_research.researched_nodes[node])
+		for(var/node in TD.stored_research.a_nodes_researched)
+			if(stored_research.a_nodes_not_researched[node])
 				has_research = TRUE
 				break
 		if(has_research)//If it has something on it.
 			to_chat(U, "<span class='notice'>Research information detected, processing...</span>")
 			if(do_after(U,s_delay, target = src))
-				TD.stored_research.copy_research_to(stored_research)
+				for(var/node in TD.stored_research.a_nodes_researched)
+					if(stored_research.a_nodes_researched[node])
+						continue
+					stored_research.handle_node_research_completion(stored_research.node_by_id(node))
 				qdel(TD.stored_research)
 				TD.stored_research = new
 				to_chat(U, "<span class='notice'>Data analyzed and updated. Disk erased.</span>")

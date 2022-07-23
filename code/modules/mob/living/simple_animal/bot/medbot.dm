@@ -58,7 +58,7 @@
 /// silences the medbot if TRUE
 	var/shut_up = FALSE
 /// techweb linked to the medbot
-	var/datum/techweb/linked_techweb
+	var/datum/research_web/linked_techweb
 ///Is the medbot currently tending wounds
 	var/tending = FALSE
 ///How panicked we are about being tipped over (why would you do this?)
@@ -202,9 +202,9 @@
 
 		var/oldheal_amount = heal_amount
 		var/tech_boosters
-		for(var/i in linked_techweb.researched_designs)
-			var/datum/design/surgery/healing/D = SSresearch.techweb_design_by_id(i)
-			if(!istype(D))
+		for(var/datum/design/design as anything in linked_techweb.unlocked_designs)
+			design = linked_techweb.unlocked_designs[design]
+			if(!istype(design, /datum/design/surgery/healing))
 				continue
 			tech_boosters++
 		if(tech_boosters)
@@ -217,9 +217,8 @@
 /mob/living/simple_animal/bot/medbot/attackby(obj/item/W as obj, mob/user as mob, params)
 	if(istype(W, /obj/item/multitool))
 		var/obj/item/multitool/multi = W
-		if(istype(multi.buffer, /obj/machinery/rnd/server))
-			var/obj/machinery/rnd/server/serv = multi.buffer
-			linked_techweb = serv.stored_research
+		if(istype(multi.buffer, /datum/research_web))
+			linked_techweb = multi.buffer
 			visible_message("Linked to Server!")
 		return
 

@@ -122,6 +122,9 @@
 	return
 
 /obj/machinery/rnd/bepis/proc/calcsuccess()
+	if(!linked_techweb)
+		say("Unable to start experiment, no linked techweb for data analysis!")
+		return
 	var/turf/dropturf = null
 	var/gauss_major = 0
 	var/gauss_minor = 0
@@ -143,11 +146,12 @@
 	flick("chamber_flash",src)
 	update_icon_state()
 	banked_cash = 0
-	if((gauss_real >= gauss_major) && (SSresearch.techweb_nodes_experimental.len > 0)) //Major Success.
-		say("Experiment concluded with major success. New technology node discovered on technology disc.")
-		new /obj/item/disk/tech_disk/major(dropturf,1)
-		if(SSresearch.techweb_nodes_experimental.len == 0)
-			say("Expended all available experimental technology nodes. Resorting to minor rewards.")
+	if((gauss_real >= gauss_major) && length(linked_techweb.a_nodes_bepis)) //Major Success.
+		var/datum/research_node/node = linked_techweb.node_by_id(pick(linked_techweb.a_nodes_bepis))
+		linked_techweb.handle_node_research_completion(node)
+		say("Experiment concluded with major success. New technology node '[node.name]' discovered and uploaded.")
+		if(!length(linked_techweb.a_nodes_bepis))
+			say("WARNING: No more experimental nodes detected, reverting to minor rewards.")
 		return
 	if(gauss_real >= gauss_minor) //Minor Success.
 		var/reward = pick(minor_rewards)

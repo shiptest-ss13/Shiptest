@@ -13,14 +13,14 @@
 	var/efficiency = 0
 	var/productivity = 0
 	var/max_items = 40
-	var/datum/techweb/stored_research
+	var/datum/research_web/stored_research
 	var/list/show_categories = list("Food", "Botany Chemicals", "Organic Materials")
 	/// Currently selected category in the UI
 	var/selected_cat
 
 /obj/machinery/biogenerator/Initialize()
 	. = ..()
-	stored_research = new /datum/techweb/specialized/autounlocking/biogenerator
+	stored_research = new /datum/research_web/integrated(src, BIOGENERATOR)
 	create_reagents(1000)
 
 /obj/machinery/biogenerator/Destroy()
@@ -147,9 +147,8 @@
 		processing = TRUE
 		var/obj/item/disk/design_disk/D = O
 		if(do_after(user, 10, target = src))
-			for(var/B in D.blueprints)
-				if(B)
-					stored_research.add_design(B)
+			for(var/datum/design/design in D.blueprints)
+				stored_research.unlocked_designs[design.id] = design
 		processing = FALSE
 		return TRUE
 	else
@@ -286,11 +285,11 @@
 	var/categories = show_categories.Copy()
 	for(var/V in categories)
 		categories[V] = list()
-	for(var/V in stored_research.researched_designs)
-		var/datum/design/D = SSresearch.techweb_design_by_id(V)
+	for(var/datum/design/design as anything in stored_research.unlocked_designs)
+		design = stored_research.unlocked_designs[design]
 		for(var/C in categories)
-			if(C in D.category)
-				categories[C] += D
+			if(C in design.category)
+				categories[C] += design
 
 	for(var/category in categories)
 		var/list/cat = list(
@@ -325,10 +324,10 @@
 			if(!amount)
 				return
 			var/id = params["id"]
-			if(!stored_research.researched_designs.Find(id))
+			if(!(id in stored_research.unlocked_designs))
 				stack_trace("ID did not map to a researched datum [id]")
 				return
-			var/datum/design/D = SSresearch.techweb_design_by_id(id)
+			var/datum/design/D = stored_research.unlocked_designs[id]
 			if(D && !istype(D, /datum/design/error_design))
 				create_product(D, amount)
 			else

@@ -11,7 +11,7 @@
 	circuit = /obj/item/circuitboard/machine/mechfab
 	var/time_coeff = 1
 	var/component_coeff = 1
-	var/datum/techweb/specialized/autounlocking/exofab/stored_research
+	var/datum/research_web/stored_research
 	var/sync = 0
 	var/part_set
 	var/datum/design/being_built
@@ -39,7 +39,6 @@
 								)
 
 /obj/machinery/mecha_part_fabricator/Initialize(mapload)
-	stored_research = new
 	matching_designs = list()
 	rmat = AddComponent(/datum/component/remote_materials, "mechfab", mapload && link_on_init)
 	RefreshParts() //Recalculating local material sizes if the fab isn't linked
@@ -85,15 +84,15 @@
 
 /obj/machinery/mecha_part_fabricator/proc/output_parts_list(set_name)
 	var/output = ""
-	for(var/v in stored_research.researched_designs)
-		var/datum/design/D = SSresearch.techweb_design_by_id(v)
-		if(D.build_type & MECHFAB)
-			if(!(set_name in D.category))
+	for(var/datum/design/design as anything in stored_research.unlocked_designs)
+		design = stored_research.unlocked_designs[design]
+		if(design.build_type & MECHFAB)
+			if(!(set_name in design.category))
 				continue
-			output += "<div class='part'>[output_part_info(D)]<br>"
-			if(check_resources(D))
-				output += "<a href='?src=[REF(src)];part=[D.id]'>Build</a> | "
-			output += "<a href='?src=[REF(src)];add_to_queue=[D.id]'>Add to queue</a><a href='?src=[REF(src)];part_desc=[D.id]'>?</a></div>"
+			output += "<div class='part'>[output_part_info(design)]<br>"
+			if(check_resources(design))
+				output += "<a href='?src=[REF(src)];part=[design.id]'>Build</a> | "
+			output += "<a href='?src=[REF(src)];add_to_queue=[design.id]'>Add to queue</a><a href='?src=[REF(src)];part_desc=[design.id]'>?</a></div>"
 	return output
 
 /obj/machinery/mecha_part_fabricator/proc/output_part_info(datum/design/D)
@@ -160,12 +159,12 @@
 
 /obj/machinery/mecha_part_fabricator/proc/search(string)
 	matching_designs.Cut()
-	for(var/v in stored_research.researched_designs)
-		var/datum/design/D = SSresearch.techweb_design_by_id(v)
-		if(!(D.build_type & MECHFAB))
+	for(var/datum/design/design as anything in stored_research.unlocked_designs)
+		design = stored_research.unlocked_designs[design]
+		if(!(design.build_type & MECHFAB))
 			continue
-		if(findtext(D.name,string))
-			matching_designs.Add(D)
+		if(findtext(design.name,string))
+			matching_designs.Add(design)
 
 /obj/machinery/mecha_part_fabricator/proc/output_ui_search()
 	var/output
@@ -218,12 +217,12 @@
 	return
 
 /obj/machinery/mecha_part_fabricator/proc/add_part_set_to_queue(set_name)
-	if(set_name in part_sets)
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
-			if(D.build_type & MECHFAB)
-				if(set_name in D.category)
-					add_to_queue(D)
+	if(!(set_name in part_sets))
+		CRASH("attempted to add set to queue that doesnt exist!")
+	for(var/datum/design/design as anything in stored_research.unlocked_designs)
+		design = stored_research.unlocked_designs[design]
+		if((design.build_type & MECHFAB) && (set_name in design.category))
+			add_to_queue(design)
 
 /obj/machinery/mecha_part_fabricator/proc/add_to_queue(D)
 	if(!istype(queue))
@@ -276,17 +275,6 @@
 		output += "</ol>"
 		output += "<a href='?src=[REF(src)];process_queue=1'>Process queue</a> | <a href='?src=[REF(src)];clear_queue=1'>Clear queue</a>"
 	return output
-
-/obj/machinery/mecha_part_fabricator/proc/sync()
-	for(var/obj/machinery/computer/rdconsole/RDC in oview(7,src))
-		RDC.stored_research.copy_research_to(stored_research)
-		updateUsrDialog()
-		say("Successfully synchronized with R&D server.")
-		return
-
-	temp = "Unable to connect to local R&D Database.<br>Please check your connections and try again.<br><a href='?src=[REF(src)];clear_temp=1'>Return</a>"
-	updateUsrDialog()
-	return
 
 /obj/machinery/mecha_part_fabricator/proc/get_resource_cost_w_coeff(datum/design/D, datum/material/resource, roundto = 1)
 	return round(D.materials[resource]*component_coeff, roundto)
@@ -372,23 +360,21 @@
 				screen = "parts"
 	if(href_list["part"])
 		var/T = href_list["part"]
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
-			if(D.build_type & MECHFAB)
-				if(D.id == T)
-					if(!processing_queue)
-						build_part(D)
-					else
-						add_to_queue(D)
-					break
+		for(var/datum/design/design as anything in stored_research.unlocked_designs)
+			design = stored_research.unlocked_designs[design]
+			if((design.build_type & MECHFAB) && design.id == T)
+				if(!processing_queue)
+					build_part(design)
+				else
+					add_to_queue(design)
+				break
 	if(href_list["add_to_queue"])
 		var/T = href_list["add_to_queue"]
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
-			if(D.build_type & MECHFAB)
-				if(D.id == T)
-					add_to_queue(D)
-					break
+		for(var/datum/design/design as anything in stored_research.unlocked_designs)
+			design = stored_research.unlocked_designs[design]
+			if((design.build_type & MECHFAB) && design.id == T)
+				add_to_queue(design)
+				break
 		return update_queue_on_page()
 	if(href_list["remove_from_queue"])
 		remove_from_queue(text2num(href_list["remove_from_queue"]))
@@ -413,19 +399,18 @@
 		queue = list()
 		return update_queue_on_page()
 	if(href_list["sync"])
-		sync()
+		say("Recent design innovations now allow research to automatically synchroniz with master research web!")
 	if(href_list["part_desc"])
 		var/T = href_list["part_desc"]
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
-			if(D.build_type & MECHFAB)
-				if(D.id == T)
-					var/obj/part = D.build_path
-					temp = {"<h1>[initial(part.name)] description:</h1>
-								[initial(part.desc)]<br>
-								<a href='?src=[REF(src)];clear_temp=1'>Return</a>
-								"}
-					break
+		for(var/datum/design/design as anything in stored_research.unlocked_designs)
+			design = stored_research.unlocked_designs[design]
+			if((design.build_type & MECHFAB) && design.id == T)
+				var/obj/part = design.build_path
+				temp = {"<h1>[initial(part.name)] description:</h1>
+						[initial(part.desc)]<br>
+						<a href='?src=[REF(src)];clear_temp=1'>Return</a>
+						"}
+				break
 	if(href_list["search"]) //Search for designs with name matching pattern
 		search(href_list["to_search"])
 		screen = "search"
@@ -469,6 +454,13 @@
 		return TRUE
 
 	if(default_deconstruction_crowbar(W))
+		return TRUE
+
+	if(istype(W, /obj/item/multitool))
+		var/obj/item/multitool/multi = W
+		if(istype(multi.buffer, /datum/research_web))
+			stored_research = multi.buffer
+			visible_message("Linked to Server!")
 		return TRUE
 
 	return ..()

@@ -36,6 +36,8 @@
 	var/max_slimes = 5
 	var/monkeys = 0
 
+	var/datum/research_web/stored_research
+
 	icon_screen = "slime_comp"
 	icon_keyboard = "rd_key"
 
@@ -57,6 +59,7 @@
 			connected_recycler.connected += src
 
 /obj/machinery/computer/camera_advanced/xenobio/Destroy()
+	stored_research = null
 	QDEL_NULL(current_potion)
 	for(var/thing in stored_slimes)
 		var/mob/living/simple_animal/slime/S = thing

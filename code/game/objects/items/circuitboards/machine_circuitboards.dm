@@ -1028,7 +1028,7 @@
 	var/server_id = "default-server"
 	var/static/list/all_ids = list()
 	icon_state = "science"
-	build_path = /obj/machinery/rnd/server
+	build_path = /obj/machinery/research_server
 	req_components = list(
 		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/scanning_module = 1)

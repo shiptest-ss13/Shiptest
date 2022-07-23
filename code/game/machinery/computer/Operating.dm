@@ -12,7 +12,7 @@
 	var/obj/structure/table/optable/table
 	var/obj/machinery/stasis/sbed
 	var/list/advanced_surgeries = list()
-	var/datum/techweb/linked_techweb
+	var/datum/research_web/research_web
 	light_color = LIGHT_COLOR_BLUE
 
 /obj/machinery/computer/operating/Initialize()
@@ -28,7 +28,7 @@
 			sbed = locate(/obj/machinery/stasis) in get_step(src, direction)
 			if(sbed && sbed.op_computer == src)
 				sbed.op_computer = null
-	linked_techweb = null
+	research_web = null
 	. = ..()
 
 /obj/machinery/computer/operating/attackby(obj/item/O, mob/user, params)
@@ -43,24 +43,24 @@
 
 	if(istype(O, /obj/item/multitool))
 		var/obj/item/multitool/multi = O
-		if(istype(multi.buffer, /obj/machinery/rnd/server))
-			var/obj/machinery/rnd/server/serv = multi.buffer
-			linked_techweb = serv.stored_research
-			visible_message("Linked to Server!")
+		if(istype(multi.buffer, /datum/research_web))
+			research_web = multi.buffer
+			say("Research Web linked.")
 		return
 
 	return ..()
 
 /obj/machinery/computer/operating/proc/sync_surgeries()
-	if(!linked_techweb)
-		visible_message("Warning: no linked server!")
+	if(!research_web)
+		say("Unable to connect to Research Web.")
 		return
 
-	for(var/i in linked_techweb.researched_designs)
-		var/datum/design/surgery/D = SSresearch.techweb_design_by_id(i)
-		if(!istype(D))
+	advanced_surgeries?.Cut()
+	for(var/datum/design/surgery/surgery as anything in research_web.unlocked_designs)
+		surgery = research_web.unlocked_designs[surgery]
+		if(!istype(surgery))
 			continue
-		advanced_surgeries |= D.surgery
+		advanced_surgeries.Add(surgery.surgery)
 
 /obj/machinery/computer/operating/proc/find_table()
 	for(var/direction in GLOB.alldirs)

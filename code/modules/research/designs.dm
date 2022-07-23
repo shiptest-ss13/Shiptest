@@ -35,7 +35,7 @@ other types of metals and chemistry for reagents).
 	var/lathe_time_factor = 1			//How many times faster than normal is this to build on the protolathe
 	var/dangerous_construction = FALSE	//notify and log for admin investigations if this is printed.
 	var/departmental_flags = ALL			//bitflags for deplathes.
-	var/list/datum/techweb_node/unlocked_by = list()
+	var/list/unlocked_by = list()
 	var/research_icon					//Replaces the item icon in the research console
 	var/research_icon_state
 	var/icon_cache
@@ -43,10 +43,6 @@ other types of metals and chemistry for reagents).
 /datum/design/error_design
 	name = "ERROR"
 	desc = "This usually means something in the database has corrupted. If this doesn't go away automatically, inform Central Comamnd so their techs can fix this ASAP(tm)"
-
-/datum/design/Destroy()
-	SSresearch.techweb_designs -= id
-	return ..()
 
 /datum/design/proc/InitializeMaterials()
 	var/list/temp_list = list()
