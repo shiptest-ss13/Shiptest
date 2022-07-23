@@ -431,6 +431,9 @@
 /area/ship/crew/canteen/kitchen)
 "bu" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/storage/box/ingredients/exotic,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "by" = (
@@ -885,12 +888,6 @@
 "dH" = (
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"dO" = (
-/obj/machinery/firealarm{
-	pixel_y = 28
-	},
-/turf/open/floor/wood,
-/area/ship/hallway/aft)
 "ee" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
@@ -1140,6 +1137,16 @@
 /obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
+"kP" = (
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ship/hallway/starboard)
 "lq" = (
 /obj/structure/chair/wood/wings{
 	dir = 1
@@ -1500,6 +1507,12 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
+"xC" = (
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/turf/open/floor/wood,
+/area/ship/hallway/aft)
 "yQ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile{
@@ -1536,13 +1549,6 @@
 	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
-"zZ" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
-	},
-/turf/open/floor/carpet/royalblack,
-/area/ship/hallway/starboard)
 "An" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
@@ -1556,6 +1562,13 @@
 	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
+"BB" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ship/hallway/starboard)
 "Cc" = (
 /obj/item/reagent_containers/food/drinks/shaker{
 	pixel_x = -1
@@ -1826,6 +1839,15 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"Ig" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
+/obj/machinery/power/terminal,
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -2177,16 +2199,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
-"QP" = (
-/obj/structure/chair/wood/wings{
-	dir = 4
-	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -25
-	},
-/turf/open/floor/carpet/royalblack,
-/area/ship/hallway/starboard)
 "Ro" = (
 /obj/machinery/computer/cargo/express,
 /turf/open/floor/carpet/stellar,
@@ -2384,15 +2396,6 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
-"VH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
-/obj/machinery/power/terminal,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
 "VP" = (
 /obj/item/storage/pill_bottle/dice{
 	icon_state = "magicdicebag";
@@ -2779,7 +2782,7 @@ MA
 NF
 bo
 IN
-dO
+xC
 Ge
 KS
 wj
@@ -2856,7 +2859,7 @@ jC
 ca
 cf
 en
-VH
+Ig
 ck
 cl
 "}
@@ -2965,8 +2968,8 @@ Tt
 Tt
 Tt
 Tt
-zZ
-QP
+BB
+kP
 Ek
 aB
 VP
