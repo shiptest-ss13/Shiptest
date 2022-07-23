@@ -6,33 +6,27 @@
 	"prefix": "ISV",
 	"namelists": "GENREAL, SPACE",
 	"roundstart": true,
-	"job_slots": 
-	{
-		"Captain": 
-		{
+	"job_slots": {
+		"Captain": {
 			"outfit": "/datum/outfit/job/captain/western",
 			"officer": true,
 			"slots": 1
 		},
-		"Ship's Doctor": 
-		{
+		"Ship's Doctor": {
 			"outfit": "/datum/outfit/job/doctor",
 			"slots": 1
 		},
-		"Engine Technician": 
-		{
+		"Engine Technician": {
 			"outfit": "/datum/outfit/job/atmos",
 			"slots": 1
 		},
-		"Asteroid Miner": 
-		{
+		"Asteroid Miner": {
 			"outfit": "/datum/outfit/job/miner/hazard",
-			"slots":1 
+			"slots": 1
 		},
-		"Fauna Researcher": 
-		{
+		"Fauna Researcher": {
 			"outfit": "/datum/job/scientist",
-			"slots":1 
+			"slots": 1
 		},
 		"Assistant": 1
 	},

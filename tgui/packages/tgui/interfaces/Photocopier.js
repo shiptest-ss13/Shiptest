@@ -1,42 +1,36 @@
-import { ProgressBar, NumberInput, Button, Section, Box, Flex } from '../components';
+import {
+  ProgressBar,
+  NumberInput,
+  Button,
+  Section,
+  Box,
+  Flex,
+} from '../components';
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const Photocopier = (props, context) => {
   const { data } = useBackend(context);
-  const {
-    isAI,
-    has_toner,
-    has_item,
-  } = data;
+  const { isAI, has_toner, has_item } = data;
 
   return (
-    <Window
-      title="Photocopier"
-      width={240}
-      height={isAI ? 309 : 234}>
+    <Window title="Photocopier" width={240} height={isAI ? 309 : 234}>
       <Window.Content>
         {has_toner ? (
           <Toner />
         ) : (
           <Section title="Toner">
-            <Box color="average">
-              No inserted toner cartridge.
-            </Box>
+            <Box color="average">No inserted toner cartridge.</Box>
           </Section>
         )}
         {has_item ? (
           <Options />
         ) : (
           <Section title="Options">
-            <Box color="average">
-              No inserted item.
-            </Box>
+            <Box color="average">No inserted item.</Box>
           </Section>
         )}
-        {!!isAI && (
-          <AIOptions />
-        )}
+        {!!isAI && <AIOptions />}
       </Window.Content>
     </Window>
   );
@@ -44,10 +38,7 @@ export const Photocopier = (props, context) => {
 
 export const Toner = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    max_toner,
-    current_toner,
-  } = data;
+  const { max_toner, current_toner } = data;
 
   const average_toner = max_toner * 0.66;
   const bad_toner = max_toner * 0.33;
@@ -59,10 +50,12 @@ export const Toner = (props, context) => {
         <Button
           disabled={!current_toner}
           onClick={() => act('remove_toner')}
-          icon="eject">
+          icon="eject"
+        >
           Eject
         </Button>
-      }>
+      }
+    >
       <ProgressBar
         ranges={{
           good: [average_toner, max_toner],
@@ -71,27 +64,20 @@ export const Toner = (props, context) => {
         }}
         value={current_toner}
         minValue={0}
-        maxValue={max_toner} />
+        maxValue={max_toner}
+      />
     </Section>
   );
 };
 
 export const Options = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    color_mode,
-    is_photo,
-    num_copies,
-    has_enough_toner,
-  } = data;
+  const { color_mode, is_photo, num_copies, has_enough_toner } = data;
 
   return (
     <Section title="Options">
       <Flex>
-        <Flex.Item
-          mt={0.4}
-          width={11}
-          color="label">
+        <Flex.Item mt={0.4} width={11} color="label">
           Make copies:
         </Flex.Item>
         <Flex.Item>
@@ -104,9 +90,12 @@ export const Options = (props, context) => {
             minValue={1}
             maxValue={10}
             value={num_copies}
-            onDrag={(e, value) => act('set_copies', {
-              num_copies: value,
-            })} />
+            onDrag={(e, value) =>
+              act('set_copies', {
+                num_copies: value,
+              })
+            }
+          />
         </Flex.Item>
         <Flex.Item>
           <Button
@@ -114,36 +103,39 @@ export const Options = (props, context) => {
             icon="copy"
             textAlign="center"
             disabled={!has_enough_toner}
-            onClick={() => act('make_copy')}>
+            onClick={() => act('make_copy')}
+          >
             Copy
           </Button>
         </Flex.Item>
       </Flex>
       {!!is_photo && (
         <Flex mt={0.5}>
-          <Flex.Item
-            mr={0.4}
-            width="50%">
+          <Flex.Item mr={0.4} width="50%">
             <Button
               fluid
               textAlign="center"
-              selected={color_mode === "Greyscale"}
-              onClick={() => act('color_mode', {
-                mode: "Greyscale",
-              })}>
+              selected={color_mode === 'Greyscale'}
+              onClick={() =>
+                act('color_mode', {
+                  mode: 'Greyscale',
+                })
+              }
+            >
               Greyscale
             </Button>
           </Flex.Item>
-          <Flex.Item
-            ml={0.4}
-            width="50%">
+          <Flex.Item ml={0.4} width="50%">
             <Button
               fluid
               textAlign="center"
-              selected={color_mode === "Color"}
-              onClick={() => act('color_mode', {
-                mode: "Color",
-              })}>
+              selected={color_mode === 'Color'}
+              onClick={() =>
+                act('color_mode', {
+                  mode: 'Color',
+                })
+              }
+            >
               Color
             </Button>
           </Flex.Item>
@@ -154,7 +146,8 @@ export const Options = (props, context) => {
         textAlign="center"
         icon="reply"
         fluid
-        onClick={() => act('remove')}>
+        onClick={() => act('remove')}
+      >
         Remove item
       </Button>
     </Section>
@@ -173,7 +166,8 @@ export const AIOptions = (props, context) => {
           icon="images"
           textAlign="center"
           disabled={!can_AI_print}
-          onClick={() => act('ai_photo')}>
+          onClick={() => act('ai_photo')}
+        >
           Print photo from database
         </Button>
       </Box>

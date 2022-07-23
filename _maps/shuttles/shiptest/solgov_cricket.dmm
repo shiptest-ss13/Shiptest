@@ -30,7 +30,7 @@
 "at" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -55,7 +55,7 @@
 	dir = 10
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -116,7 +116,7 @@
 /area/ship/cargo)
 "bn" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /mob/living/simple_animal/pet/fox/Renault,
 /obj/structure/bed/dogbed/renault,
@@ -136,7 +136,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "sgwindowshut";
-	name = "external shutters"
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/solgov)
@@ -328,7 +328,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/corner/yellow/border{
 	dir = 6
@@ -354,7 +354,7 @@
 /obj/machinery/light/small,
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -617,7 +617,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "sgwindowshut";
-	name = "external shutters"
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -689,7 +689,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
@@ -827,7 +827,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/light,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -947,7 +947,7 @@
 	},
 /obj/item/oar,
 /obj/machinery/advanced_airlock_controller{
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/closet/emcloset/wall{
 	pixel_x = 32
@@ -1032,7 +1032,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/hallway/port)
@@ -1042,7 +1042,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "sgwindowshut";
-	name = "external shutters"
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1205,7 +1205,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "sgwindowshut";
-	name = "external shutters"
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
@@ -1248,7 +1248,6 @@
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/hallway/aft)
 "ot" = (
-/obj/structure/table,
 /obj/structure/table,
 /obj/item/storage/bag/tray,
 /obj/item/reagent_containers/food/drinks/shaker,
@@ -1440,7 +1439,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -1594,7 +1593,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/hallway/fore)
@@ -1645,7 +1644,7 @@
 /obj/machinery/button/door{
 	id = "sgcargodoor";
 	name = "Blast Door Control";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/mono/dark,
@@ -1666,7 +1665,7 @@
 /obj/machinery/recharger,
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
@@ -1747,7 +1746,7 @@
 "uO" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/corner/yellow/border{
 	dir = 4
@@ -1761,7 +1760,7 @@
 	pixel_x = 12
 	},
 /obj/structure/mirror{
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/dorm)
@@ -1833,8 +1832,8 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/light_switch{
-	pixel_x = -24;
-	pixel_y = 24
+	pixel_x = -25;
+	pixel_y = 25
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
@@ -2127,7 +2126,7 @@
 /area/ship/hallway/aft)
 "zN" = (
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/table/glass,
 /obj/item/reagent_containers/dropper,
@@ -2296,7 +2295,7 @@
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "sgcargodoor";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
@@ -2319,7 +2318,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/firealarm{
 	dir = 4;
@@ -2501,7 +2500,7 @@
 /obj/item/bedsheet/random,
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/camera/autoname{
 	dir = 4;
@@ -2518,8 +2517,8 @@
 	pixel_y = -26
 	},
 /obj/machinery/light_switch{
-	pixel_x = 24;
-	pixel_y = -24
+	pixel_x = 25;
+	pixel_y = -25
 	},
 /turf/open/floor/eighties,
 /area/ship/crew/dorm)
@@ -2559,7 +2558,7 @@
 "Da" = (
 /obj/machinery/airalarm/server{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/light,
 /turf/open/floor/circuit/green/telecomms/mainframe,
@@ -2762,7 +2761,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/rack,
 /obj/item/multitool{
@@ -2796,7 +2795,7 @@
 /area/ship/hallway/aft)
 "FG" = (
 /obj/machinery/door/airlock/external{
-	name = "server room airlock"
+	name = "Server Room Airlock"
 	},
 /obj/effect/turf_decal/corner/blue/diagonal,
 /obj/effect/turf_decal/industrial/warning,
@@ -3078,7 +3077,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3104,7 +3103,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -3174,7 +3173,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -3218,7 +3217,7 @@
 "Kh" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/hallway/aft)
@@ -3246,7 +3245,7 @@
 "KL" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
@@ -3307,13 +3306,13 @@
 	},
 /obj/structure/chair/comfy/teal,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "LN" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/gibber,
 /obj/effect/turf_decal/corner/white{
@@ -3445,7 +3444,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "sgwindowshut";
-	name = "external shutters"
+	name = "External Shutters"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -3594,7 +3593,7 @@
 "OT" = (
 /obj/structure/table/glass,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/reagentgrinder{
 	pixel_y = 6
@@ -3649,7 +3648,7 @@
 /area/ship/cargo)
 "PN" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/carpet/nanoweave/red,
@@ -3700,7 +3699,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -3710,7 +3709,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "sgwindowshut";
-	name = "external shutters"
+	name = "External Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -3763,7 +3762,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 9
@@ -3799,7 +3798,7 @@
 "RI" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/closet/firecloset/full,
 /turf/open/floor/plating,
@@ -4402,7 +4401,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/hallway/aft)

@@ -783,19 +783,11 @@
 	category = list("hacked", "Security")
 
 /datum/design/c38
-	name = "Ammo Box(.38)"
+	name = "Ammo Box (.38)"
 	id = "c38"
-	build_type = AUTOLATHE
+	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c38_box
-	category = list("initial", "Security")
-
-/datum/design/buckshot_shell
-	name = "Buckshot Shell"
-	id = "buckshot_shell"
-	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 4000)
-	build_path = /obj/item/ammo_casing/shotgun/buckshot
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/beanbag_slug
@@ -830,36 +822,36 @@
 	build_path = /obj/item/ammo_casing/a357
 	category = list("emagged", "Security")
 
-/datum/design/c10mm
-	name = "Ammo Box (10mm)"
-	id = "c10mm"
+/datum/design/c10mm_surplus
+	name = "Ammo Box (10mm surplus)"
+	id = "c10mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c10mm
+	build_path = /obj/item/ammo_box/c10mm/surplus
 	category = list("initial", "Security", "Ammo")
 
-/datum/design/c45
-	name = "Ammo Box (.45)"
-	id = "c45"
+/datum/design/c45_surplus
+	name = "Ammo Box (.45 surplus)"
+	id = "c45-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c45
+	build_path = /obj/item/ammo_box/c45/surplus
 	category = list("initial", "Security", "Ammo")
 
-/datum/design/c9mm
-	name = "Ammo Box (9mm)"
-	id = "c9mm"
+/datum/design/c9mm_surplus
+	name = "Ammo Box (9mm surplus)"
+	id = "c9mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c9mm
+	build_path = /obj/item/ammo_box/c9mm/surplus
 	category = list("initial", "Security", "Ammo")
 
-/datum/design/c556mmHITP
-	name = "Ammo Box (5.56mm HITP caseless)"
-	id = "c556mmHITP"
+/datum/design/c556mmHITP_surplus
+	name = "Ammo Box (surplus 5.56mm HITP caseless)"
+	id = "c556mmHITP-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 18000)
-	build_path = /obj/item/ammo_box/c556mmHITP
+	materials = list(/datum/material/iron = 15000)
+	build_path = /obj/item/ammo_box/c556mmHITP/surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/cleaver

@@ -21,24 +21,34 @@
 #
 
 standards:
-  - exactly: [0, 'mangled characters', '[\u0000\uFFFF\uFFFD]']
-  - exactly: [8, 'escapes', '\\\\(red|blue|green|black|b|i[^mc])']
-  - exactly: [9, 'Del()s', '\WDel\(']
+    - exactly: [0, "mangled characters", '[\u0000\uFFFF\uFFFD]']
+    - exactly: [8, "escapes", '\\\\(red|blue|green|black|b|i[^mc])']
+    - exactly: [9, "Del()s", '\WDel\(']
 
-  - exactly: [1, '/atom text paths', '"/atom']
-  - exactly: [1, '/area text paths', '"/area']
-  - exactly: [17, '/datum text paths', '"/datum']
-  - exactly: [4, '/mob text paths', '"/mob']
-  - exactly: [54, '/obj text paths', '"/obj']
-  - exactly: [0, '/turf text paths', '"/turf']
-  - exactly: [118, 'text2path uses', 'text2path']
+    - exactly: [1, "/atom text paths", '"/atom']
+    - exactly: [1, "/area text paths", '"/area']
+    - exactly: [17, "/datum text paths", '"/datum']
+    - exactly: [4, "/mob text paths", '"/mob']
+    - exactly: [54, "/obj text paths", '"/obj']
+    - exactly: [0, "/turf text paths", '"/turf']
+    - exactly: [118, "text2path uses", "text2path"]
 
-  - exactly: [22, 'world<< uses', 'world[ \t]*<<']
-  - exactly: [0, 'world.log<< uses', 'world.log[ \t]*<<']
+    - exactly: [18, "world<< uses", 'world[ \t]*<<']
+    - exactly: [0, "world.log<< uses", 'world.log[ \t]*<<']
 
-  - exactly: [297, 'non-bitwise << uses', '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)']
-  - exactly: [0, 'incorrect indentations', '^(?:  +)(?!\*)']
-  - exactly: [0, 'superflous whitespace', '[ \t]+$']
-  - exactly: [28, 'mixed indentation', '^( +\t+|\t+ +)']
+    - exactly:
+          [
+              292,
+              "non-bitwise << uses",
+              '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)',
+          ]
+    - exactly: [0, "incorrect indentations", '^(?:  +)(?!\*)']
+    - exactly: [0, "superflous whitespace", '[ \t]+$']
+    - exactly: [12, "mixed indentation", '^( +\t+|\t+ +)']
 
-  - no_more: [0, 'indentions inside defines', '^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))']
+    - no_more:
+          [
+              34,
+              "indentions inside defines",
+              '^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))',
+          ]

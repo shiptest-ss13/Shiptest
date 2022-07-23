@@ -133,7 +133,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	/// Sound played when an ability is unlocked
 	var/unlock_sound
 
- /// Applies upgrades
+/// Applies upgrades
 /datum/AI_Module/proc/upgrade(mob/living/silicon/ai/AI)
 	return
 

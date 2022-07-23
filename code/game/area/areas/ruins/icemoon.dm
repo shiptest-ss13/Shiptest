@@ -84,3 +84,7 @@
 /area/ruin/unpowered/gasstation
 	name = "Gas Station"
 	icon_state = "bluenew"
+
+/area/ruin/powered/hydroponicslab
+	name = "Hydroponics Lab"
+	icon_state = "dk_yellow"

@@ -900,7 +900,7 @@
 //A version of the Cave Story refrence that a deranged scientist got their hands on. Better? Not really. Different? Definitely.
 /obj/item/gun/energy/spur
 	name = "Slowpoke"
-	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotransen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
+	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotrasen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
 	icon = 'icons/obj/guns/energy.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
