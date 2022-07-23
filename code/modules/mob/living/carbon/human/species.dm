@@ -118,8 +118,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/reagent_tag = PROCESS_ORGANIC
 	///Does this mob have special gibs?
 	var/species_gibs = "human"
-	///Can this species use numbers in its name?
-	var/allow_numbers_in_name
 
 	///Does this species have a special set of overlay clothing, and if so, what is the name of the folder under .../clothing/species that contains them?
 	var/species_clothing_path
