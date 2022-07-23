@@ -22,7 +22,7 @@
 /obj/structure/chair/pew/left{
 	dir = 1
 	},
-/mob/living/simple_animal/deer,
+/mob/living/simple_animal/chicken,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ship/crew/chapel)
 "au" = (
@@ -32,8 +32,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "aF" = (
-/obj/machinery/atmospherics/components/binary/pump/on,
 /obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/atmospherics/components/binary/pump,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "aH" = (
@@ -106,8 +106,11 @@
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Engine Room"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "bN" = (
@@ -162,6 +165,15 @@
 "co" = (
 /obj/machinery/power/terminal,
 /obj/item/flashlight/lantern,
+/obj/structure/cable/orange{
+	icon_state = "0-9"
+	},
+/obj/structure/cable/orange{
+	icon_state = "8-9"
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-9"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cJ" = (
@@ -438,12 +450,14 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "iu" = (
-/obj/machinery/door/airlock/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/glass{
+	name = "Dormitories"
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
@@ -568,6 +582,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/closed/wall/r_wall,
 /area/ship/engineering/engine)
 "jG" = (
@@ -642,7 +659,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "li" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	name = "Starboard Wing"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/chapel)
 "lk" = (
@@ -739,6 +758,13 @@
 /obj/structure/closet/secure_closet/hunter,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
+"mz" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "mD" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
@@ -757,7 +783,7 @@
 /obj/structure/cable/pink,
 /obj/machinery/door/poddoor/shutters{
 	id = "starboard_shutters";
-	name = "starboard engine shutters"
+	name = "Starboard Engine Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -809,7 +835,6 @@
 "nk" = (
 /obj/structure/closet/secure,
 /obj/item/storage/backpack/duffelbag/mining_conscript,
-/obj/item/kinetic_crusher,
 /obj/item/storage/box/emptysandbags,
 /obj/item/storage/belt/mining,
 /obj/item/reagent_containers/hypospray/medipen/survival,
@@ -987,7 +1012,7 @@
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "port_blasts";
-	name = "port blast door"
+	name = "Port Blast Door"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
@@ -1033,7 +1058,9 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ship/crew/chapel)
 "sr" = (
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	name = "Manufacturing and Expedition"
+	},
 /turf/open/floor/wood/maple,
 /area/ship/science)
 "ss" = (
@@ -1089,7 +1116,9 @@
 /turf/open/floor/plating,
 /area/ship/crew/chapel)
 "ts" = (
-/obj/machinery/door/airlock/glass,
+/obj/machinery/door/airlock/glass{
+	name = "Port Wing"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/chapel)
 "tu" = (
@@ -1153,7 +1182,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "starboard_shutters";
-	name = "starboard engine shutters"
+	name = "Starboard Engine Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1219,7 +1248,9 @@
 /turf/open/floor/plating/grass/jungle,
 /area/ship/crew/chapel)
 "wE" = (
-/obj/machinery/door/airlock/glass,
+/obj/machinery/door/airlock/glass{
+	name = "Port Wing"
+	},
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
@@ -1284,9 +1315,8 @@
 	icon_state = "8-10"
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/item/candle/tribal_torch,
-/obj/item/candle/tribal_torch,
-/obj/item/candle/tribal_torch,
+/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yq" = (
@@ -1475,6 +1505,9 @@
 /area/ship/crew/chapel)
 "AY" = (
 /obj/machinery/power/terminal,
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Bu" = (
@@ -1641,6 +1674,7 @@
 /area/ship/external)
 "DR" = (
 /obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "DS" = (
@@ -1792,7 +1826,10 @@
 /obj/structure/cable/orange{
 	icon_state = "0-5"
 	},
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/item/candle/tribal_torch,
+/obj/item/candle/tribal_torch,
+/obj/item/candle/tribal_torch,
+/obj/item/candle/tribal_torch,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "GM" = (
@@ -1826,6 +1863,17 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/chapel)
+"Ht" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable/pink,
+/obj/machinery/door/poddoor/shutters{
+	id = "port_shutters";
+	name = "Engine Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Hw" = (
 /obj/effect/turf_decal/spline/fancy{
 	dir = 1
@@ -1859,6 +1907,9 @@
 /obj/structure/cable/orange{
 	icon_state = "0-4"
 	},
+/obj/structure/cable/orange{
+	icon_state = "0-6"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Il" = (
@@ -1889,9 +1940,11 @@
 "ID" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/airlock/maintenance_hatch,
 /obj/structure/cable/orange{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Engine Room"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2003,7 +2056,9 @@
 /turf/closed/wall/r_wall,
 /area/ship/storage)
 "LS" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	name = "Restroom"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "Ma" = (
@@ -2011,7 +2066,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "port_shutters"
+	id = "port_shutters";
+	name = "Engine Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2105,13 +2161,15 @@
 /turf/open/floor/wood/maple,
 /area/ship/science)
 "MR" = (
-/obj/machinery/door/airlock/medical/glass,
 /obj/effect/turf_decal/corner/blue/diagonal,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/medical/glass{
+	name = "Medical Bay"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2166,7 +2224,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "Nd" = (
-/obj/machinery/door/airlock/glass,
+/obj/machinery/door/airlock/glass{
+	name = "Dormitories"
+	},
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
@@ -2206,7 +2266,7 @@
 /turf/open/floor/plating/grass/jungle,
 /area/ship/science)
 "NX" = (
-/obj/machinery/atmospherics/components/binary/pump/on,
+/obj/machinery/atmospherics/components/binary/pump,
 /obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2269,7 +2329,6 @@
 /area/ship/crew/chapel)
 "QA" = (
 /obj/effect/turf_decal/corner/blue/diagonal,
-/obj/machinery/door/airlock/medical/glass,
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
@@ -2278,6 +2337,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/medical/glass{
+	name = "Medical Bay"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -2453,6 +2515,18 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "port_shutters"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "port_shutters";
+	name = "Engine Shutters"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "port_shutters";
+	name = "Engine Shutters"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "port_shutters";
+	name = "Engine Shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Tc" = (
@@ -2468,12 +2542,14 @@
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/engineering,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/engineering{
+	name = "Starboard Wing"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
@@ -2882,7 +2958,7 @@ fs
 HS
 AY
 ss
-SL
+Ht
 sH
 sH
 sH
@@ -2952,9 +3028,9 @@ Oo
 Oo
 fs
 Sg
-AY
+mz
 AM
-SL
+Ht
 sH
 sH
 sH
