@@ -82,6 +82,8 @@
 		dir_amount = 4\
 	)
 
+	COOLDOWN_DECLARE(decomp_alarm)
+
 	var/danger_level = 0
 	var/mode = AALARM_MODE_SCRUBBING
 
@@ -100,7 +102,6 @@
 		GAS_O2						= new/datum/tlv(16, 19, 40, 50), // Partial pressure, kpa
 		GAS_N2						= new/datum/tlv(-1, -1, 1000, 1000),
 		GAS_CO2						= new/datum/tlv(-1, -1, 5, 10),
-		GAS_MIASMA					= new/datum/tlv/(-1, -1, 15, 30),
 		GAS_PLASMA					= new/datum/tlv/dangerous,
 		GAS_NITROUS					= new/datum/tlv/dangerous,
 		GAS_BZ						= new/datum/tlv/dangerous,
@@ -120,7 +121,6 @@
 		GAS_O2						= new/datum/tlv/no_checks,
 		GAS_N2						= new/datum/tlv/no_checks,
 		GAS_CO2						= new/datum/tlv/no_checks,
-		GAS_MIASMA					= new/datum/tlv/no_checks,
 		GAS_PLASMA					= new/datum/tlv/no_checks,
 		GAS_NITROUS					= new/datum/tlv/no_checks,
 		GAS_BZ						= new/datum/tlv/no_checks,
@@ -140,7 +140,6 @@
 		GAS_O2						= new/datum/tlv(16, 19, 135, 140), // Partial pressure, kpa
 		GAS_N2						= new/datum/tlv(-1, -1, 1000, 1000),
 		GAS_CO2						= new/datum/tlv(-1, -1, 5, 10),
-		GAS_MIASMA					= new/datum/tlv/(-1, -1, 2, 5),
 		GAS_PLASMA					= new/datum/tlv/dangerous,
 		GAS_NITROUS					= new/datum/tlv/dangerous,
 		GAS_BZ						= new/datum/tlv/dangerous,
@@ -535,7 +534,6 @@
 					"power" = 1,
 					"set_filters" = list(
 						GAS_CO2,
-						GAS_MIASMA,
 						GAS_PLASMA,
 						GAS_H2O,
 						GAS_HYPERNOB,
@@ -730,7 +728,7 @@
 	var/new_area_danger_level = 0
 	for(var/obj/machinery/airalarm/AA in A)
 		if (!(AA.machine_stat & (NOPOWER|BROKEN)) && !AA.shorted)
-			new_area_danger_level = clamp(max(new_area_danger_level, AA.danger_level), 0,1)
+			new_area_danger_level = clamp(max(new_area_danger_level, AA.danger_level), 0, 2)
 	if(A.atmosalert(new_area_danger_level,src)) //if area was in normal state or if area was in alert state
 		post_alert(new_area_danger_level)
 
@@ -869,6 +867,12 @@
 			I.obj_integrity = I.max_integrity * 0.5
 		new /obj/item/stack/cable_coil(loc, 3)
 	qdel(src)
+
+/obj/machinery/airalarm/proc/handle_decomp_alarm()
+	if(!COOLDOWN_FINISHED(src, decomp_alarm))
+		return
+	playsound(loc, 'goon/sound/machinery/FireAlarm.ogg', 75)
+	COOLDOWN_START(src, decomp_alarm, 1 SECONDS)
 
 #undef AALARM_MODE_SCRUBBING
 #undef AALARM_MODE_VENTING

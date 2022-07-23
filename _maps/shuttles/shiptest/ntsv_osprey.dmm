@@ -179,7 +179,7 @@
 /obj/structure/table/optable,
 /obj/effect/turf_decal/borderfloor/full,
 /obj/machinery/defibrillator_mount/loaded{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -216,7 +216,7 @@
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
 	id = "osprey_thruster_starboard";
-	name = "thruster blast door"
+	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -243,7 +243,7 @@
 	dir = 4;
 	id = "ospreydoors";
 	name = "Blast Door Control";
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = 10
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -384,7 +384,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
@@ -543,7 +543,7 @@
 	dir = 8;
 	id = "ospreydoors";
 	name = "Blast Door Control";
-	pixel_x = 24;
+	pixel_x = 25;
 	pixel_y = 10
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -690,7 +690,7 @@
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
 	id = "osprey_thruster_port";
-	name = "thruster blast door"
+	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -699,7 +699,7 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = -32
@@ -737,7 +737,7 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/engine)
@@ -885,7 +885,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
@@ -925,7 +925,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
@@ -1130,7 +1130,7 @@
 	dir = 4;
 	id = "ospreydoors";
 	name = "Blast Door Control";
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = 10
 	},
 /obj/item/radio/intercom{
@@ -1251,7 +1251,7 @@
 	dir = 8;
 	id = "ospreydoors";
 	name = "Blast Door Control";
-	pixel_x = 24;
+	pixel_x = 25;
 	pixel_y = 10
 	},
 /obj/item/taperecorder,
@@ -1319,7 +1319,7 @@
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor{
 	id = "ospreydoors";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/fore)
@@ -1461,7 +1461,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -1602,7 +1602,7 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
@@ -2000,7 +2000,7 @@
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
 	id = "osprey_thruster_port";
-	name = "thruster blast door"
+	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -2009,7 +2009,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2041,7 +2041,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/item/toy/figure/borg,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2123,7 +2123,7 @@
 /obj/structure/filingcabinet,
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -28
@@ -2157,7 +2157,7 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
@@ -2697,7 +2697,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
@@ -2821,7 +2821,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -2979,7 +2979,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/item/circuitboard/machine/protolathe/department/science{
 	pixel_y = -5
@@ -3291,7 +3291,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -3571,7 +3571,7 @@
 /obj/item/storage/box/mousetraps,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/item/storage/box/lights/mixed,
 /obj/item/storage/box/lights/mixed,
@@ -3590,7 +3590,7 @@
 	dir = 8;
 	id = "ospreysci";
 	name = "Shutter Control";
-	pixel_x = 24;
+	pixel_x = 25;
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/white,
@@ -3781,7 +3781,7 @@
 	dir = 4;
 	id = "ospreycargo";
 	name = "Shutter Control";
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel,
@@ -3910,7 +3910,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3925,7 +3925,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -3988,7 +3988,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/corner/grey/mono,
 /obj/effect/turf_decal/corner/neutral/border{
@@ -4047,7 +4047,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -4124,7 +4124,7 @@
 /obj/machinery/light,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -4215,7 +4215,7 @@
 	dir = 8;
 	id = "osprey_thruster_port";
 	name = "Blast Door Control";
-	pixel_x = 24;
+	pixel_x = 25;
 	pixel_y = 5
 	},
 /turf/open/floor/plating,
@@ -4278,7 +4278,7 @@
 	id = "osprey_disposals";
 	name = "disposals button";
 	pixel_x = 7;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/table,
 /obj/item/storage/bag/trash{
@@ -4309,7 +4309,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -4576,7 +4576,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/light/small{
 	dir = 8
@@ -4621,7 +4621,7 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
@@ -5013,7 +5013,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -5241,7 +5241,7 @@
 /obj/item/storage/box/PDAs,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/item/clothing/under/rank/command/head_of_personnel/nt,
 /obj/item/clothing/head/hopcap/nt,
@@ -5277,7 +5277,7 @@
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
 	id = "osprey_thruster_starboard";
-	name = "thruster blast door"
+	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -5302,7 +5302,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -5577,7 +5577,7 @@
 	dir = 4;
 	id = "osprey_thruster_starboard";
 	name = "Blast Door Control";
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = 5
 	},
 /turf/open/floor/plating,
@@ -5751,7 +5751,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/machinery/light/small{
@@ -5762,7 +5762,7 @@
 "Po" = (
 /obj/machinery/door/poddoor{
 	id = "osprey_disposals";
-	name = "disposals blast door"
+	name = "Disposals Blast Door"
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/firedoor/heavy,
@@ -6057,7 +6057,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
@@ -6203,7 +6203,7 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
@@ -6235,7 +6235,7 @@
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
 	id = "osprey_thruster_port";
-	name = "thruster blast door"
+	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -6391,7 +6391,7 @@
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
 	id = "osprey_thruster_starboard";
-	name = "thruster blast door"
+	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -6453,7 +6453,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
 	id = "ospreywindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -6537,7 +6537,7 @@
 	pixel_x = -12
 	},
 /obj/structure/mirror{
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/canteen)
@@ -6650,7 +6650,7 @@
 /obj/machinery/washing_machine,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/firealarm{
 	dir = 8;
@@ -6696,7 +6696,7 @@
 /obj/machinery/vending/cola/random,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)

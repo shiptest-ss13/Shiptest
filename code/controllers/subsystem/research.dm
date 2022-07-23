@@ -29,7 +29,6 @@ SUBSYSTEM_DEF(research)
 	)
 	var/list/errored_datums = list()
 	var/list/point_types = list()				//typecache style type = TRUE list
-	var/list/slime_already_researched = list() 	//Slime cores that have already been researched
 
 /datum/controller/subsystem/research/Initialize()
 	point_types = TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES

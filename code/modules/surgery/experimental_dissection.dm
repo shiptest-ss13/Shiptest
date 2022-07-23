@@ -1,4 +1,4 @@
-#define BASE_HUMAN_REWARD 1500
+#define BASE_HUMAN_REWARD 500
 #define EXPDIS_FAIL_MSG "<span class='notice'>You dissect [target], but do not find anything particularly interesting.</span>"
 #define PUBLIC_TECHWEB_GAIN 0.6 //how many research points go directly into the main pool
 #define PRIVATE_TECHWEB_GAIN (1 - PUBLIC_TECHWEB_GAIN) //how many research points go directly into the main pool
@@ -20,9 +20,12 @@
 
 /datum/surgery/advanced/experimental_dissection/can_start(mob/user, mob/living/target)
 	. = ..()
-	if(HAS_TRAIT_FROM(target, TRAIT_DISSECTED,"[name]"))
+	if(HAS_TRAIT_FROM(target, TRAIT_DISSECTED, "[name]"))
 		return FALSE
 	if(target.stat != DEAD)
+		return FALSE
+	var/datum/surgery_step/dissection/V = new /datum/surgery_step/dissection
+	if(V.check_value(target, src) < 0.01)
 		return FALSE
 
 /datum/surgery_step/dissection
@@ -41,37 +44,39 @@
 	var/multi_surgery_adjust = 0
 
 	//determine bonus applied
-	if(isalienroyal(target))
-		cost = (BASE_HUMAN_REWARD*10)
+	if(isalienqueen(target) || isalienroyal(target))
+		cost = (BASE_HUMAN_REWARD*38)
 	else if(isalienadult(target))
-		cost = (BASE_HUMAN_REWARD*5)
+		cost = (BASE_HUMAN_REWARD*30)
 	else if(ismonkey(target))
 		cost = (BASE_HUMAN_REWARD*0.5)
 	else if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(H?.dna?.species)
 			if(isabductor(H))
-				cost = (BASE_HUMAN_REWARD*4)
-			else if(isgolem(H) || iszombie(H))
-				cost = (BASE_HUMAN_REWARD*3)
-			else if(isjellyperson(H) || ispodperson(H))
-				cost = (BASE_HUMAN_REWARD*2)
+				cost = (BASE_HUMAN_REWARD*24)
+			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H))
+				cost = (BASE_HUMAN_REWARD*20)
+			else if(isjellyperson(H) || ispodperson(H) || issquidperson(H) || isalien(H))
+				cost = (BASE_HUMAN_REWARD*14)
+			else if(isskeleton(H))
+				cost = (BASE_HUMAN_REWARD * 0.5)
 	else
-		cost = (BASE_HUMAN_REWARD * 0.6)
+		cost = (BASE_HUMAN_REWARD * 0.5)
 
 
 
 	//now we do math for surgeries already done (no double dipping!).
 	for(var/i in typesof(/datum/surgery/advanced/experimental_dissection))
-		var/datum/surgery/advanced/experimental_dissection/cringe = i
-		if(HAS_TRAIT_FROM(target,TRAIT_DISSECTED,"[initial(cringe.name)]"))
-			multi_surgery_adjust = max(multi_surgery_adjust,initial(cringe.value_multiplier)) - 1
-
-	multi_surgery_adjust *= cost
+		var/datum/surgery/advanced/experimental_dissection/cringe = new i
+		if(HAS_TRAIT_FROM(target, TRAIT_DISSECTED, "[cringe.name]"))
+			multi_surgery_adjust = max(multi_surgery_adjust, cringe.value_multiplier)
 
 	//multiply by multiplier in surgery
+	multi_surgery_adjust *= cost
 	cost *= ED.value_multiplier
-	return (cost-multi_surgery_adjust)
+	cost -= multi_surgery_adjust
+	return (cost)
 
 /datum/surgery_step/dissection/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/points_earned = check_value(target, surgery)
@@ -110,13 +115,13 @@
 
 /datum/surgery/advanced/experimental_dissection/exp
 	name = "Experimental Dissection"
-	value_multiplier = 5
+	value_multiplier = 4
 	replaced_by = /datum/surgery/advanced/experimental_dissection/alien
 	requires_tech = TRUE
 
 /datum/surgery/advanced/experimental_dissection/alien
 	name = "Extraterrestrial Dissection"
-	value_multiplier = 10
+	value_multiplier = 8
 	requires_tech = TRUE
 	replaced_by = null
 

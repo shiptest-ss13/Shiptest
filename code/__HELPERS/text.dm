@@ -254,16 +254,16 @@
 	return ""
 
 /**
-  * Truncate a string to the given length
-  *
-  * Will only truncate if the string is larger than the length and *ignores unicode concerns*
-  *
-  * This exists soley because trim does other stuff too.
-  *
-  * Arguments:
-  * * text - String
-  * * max_length - integer length to truncate at
-  */
+ * Truncate a string to the given length
+ *
+ * Will only truncate if the string is larger than the length and *ignores unicode concerns*
+ *
+ * This exists soley because trim does other stuff too.
+ *
+ * Arguments:
+ * * text - String
+ * * max_length - integer length to truncate at
+ */
 /proc/truncate(text, max_length)
 	if(length(text) > max_length)
 		return copytext(text, 1, max_length)
@@ -838,7 +838,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	catch
 		return
 
-/proc/num2loadingbar(percent as num, var/numSquares = 20, var/reverse = FALSE)
+/proc/num2loadingbar(percent as num, numSquares = 20, reverse = FALSE)
 	var/loadstring = ""
 	for (var/i in 1 to numSquares)
 		var/limit = reverse ? numSquares - percent*numSquares : percent*numSquares

@@ -93,15 +93,15 @@
 	RegisterSignal(src, COMSIG_SONG_END, .proc/stop_playing)
 
 /**
-  * Called by a component signal when our song starts playing.
-  */
+ * Called by a component signal when our song starts playing.
+ */
 /obj/item/instrument/piano_synth/headphones/proc/start_playing()
 	icon_state = "[initial(icon_state)]_on"
 	update_icon()
 
 /**
-  * Called by a component signal when our song stops playing.
-  */
+ * Called by a component signal when our song stops playing.
+ */
 /obj/item/instrument/piano_synth/headphones/proc/stop_playing()
 	icon_state = "[initial(icon_state)]"
 	update_icon()
@@ -301,3 +301,24 @@
 			var/atom/A = V
 			instruments[initial(A.name)] = A
 	return instruments
+
+/obj/item/choice_beacon/rnd
+	name = "C.R.E.W.M.A.T.E type R&D Choice Beacon"
+	desc = "This aging launch beacon summons a limited production RND package from a nearby orbital satellite, delivered via impact pod."
+	icon_state = "gangtool-sus"
+
+/obj/item/choice_beacon/rnd/generate_display_names()
+	var/static/list/rndboxes
+	if(!rndboxes)
+		rndboxes = list()
+		var/list/templist = list(/obj/item/storage/box/rndengi,
+							/obj/item/storage/box/rndsec,
+							/obj/item/storage/box/rndmining,
+							/obj/item/storage/box/rndmed,
+							/obj/item/storage/box/rndsci,
+							/obj/item/storage/box/rndciv
+							)
+		for(var/V in templist)
+			var/atom/A = V
+			rndboxes[initial(A.name)] = A
+	return rndboxes
