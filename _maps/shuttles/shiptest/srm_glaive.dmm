@@ -49,6 +49,7 @@
 /obj/item/gun/ballistic/derringer,
 /obj/item/ammo_box/c38,
 /obj/structure/closet/secure_closet/shadow,
+/obj/item/lighter,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "aM" = (
@@ -144,6 +145,7 @@
 /obj/item/gun/ballistic/derringer,
 /obj/item/ammo_box/c38,
 /obj/structure/closet/secure_closet/shadow,
+/obj/item/lighter,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "cg" = (
@@ -434,7 +436,7 @@
 /turf/open/floor/engine/airless,
 /area/ship/engineering/engine)
 "iq" = (
-/obj/structure/bonfire,
+/obj/structure/bonfire/dense,
 /turf/open/floor/plating/dirt/jungle,
 /area/ship/crew/chapel)
 "ir" = (
@@ -582,9 +584,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /turf/closed/wall/r_wall,
 /area/ship/engineering/engine)
 "jG" = (
@@ -642,8 +641,6 @@
 /obj/effect/turf_decal/spline/fancy{
 	dir = 1
 	},
-/obj/structure/closet/secure,
-/obj/item/storage/backpack/duffelbag/mining_conscript,
 /obj/item/storage/box/emptysandbags,
 /obj/item/storage/belt/mining,
 /obj/item/reagent_containers/hypospray/medipen/survival,
@@ -656,6 +653,9 @@
 	icon_state = "4-10"
 	},
 /obj/item/shovel,
+/obj/item/gps/mining,
+/obj/item/pickaxe/mini,
+/obj/structure/closet/secure_closet/miningcloset,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "li" = (
@@ -756,15 +756,9 @@
 /obj/item/kitchen/knife/combat/survival,
 /obj/item/gun/ballistic/shotgun/winchester/lethal,
 /obj/structure/closet/secure_closet/hunter,
+/obj/item/lighter,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
-"mz" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable/orange{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "mD" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
@@ -833,8 +827,6 @@
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/chapel)
 "nk" = (
-/obj/structure/closet/secure,
-/obj/item/storage/backpack/duffelbag/mining_conscript,
 /obj/item/storage/box/emptysandbags,
 /obj/item/storage/belt/mining,
 /obj/item/reagent_containers/hypospray/medipen/survival,
@@ -845,6 +837,9 @@
 /obj/item/storage/bag/ore,
 /obj/item/gun/ballistic/shotgun/winchester/mk1/lethal,
 /obj/item/shovel,
+/obj/item/gps/mining,
+/obj/item/pickaxe/mini,
+/obj/structure/closet/secure_closet/miningcloset,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "nt" = (
@@ -880,6 +875,17 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/science)
+"oh" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable/pink,
+/obj/machinery/door/poddoor/shutters{
+	id = "port_shutters";
+	name = "Engine Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "oC" = (
 /obj/effect/turf_decal/corner/blue/diagonal,
 /obj/structure/table/wood,
@@ -1022,6 +1028,19 @@
 /obj/structure/destructible/tribal_torch,
 /turf/open/floor/plating/grass/jungle,
 /area/ship/crew/chapel)
+"qQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ship/crew/chapel)
+"re" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ship/crew/chapel)
 "rj" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -1158,6 +1177,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
+"uI" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ship/crew/chapel)
 "uM" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -1271,6 +1296,10 @@
 /obj/item/storage/toolbox/electrical{
 	pixel_x = -1;
 	pixel_y = 4
+	},
+/obj/item/multitool{
+	pixel_y = 6;
+	pixel_x = -8
 	},
 /obj/item/weldingtool/largetank,
 /obj/item/clothing/head/welding,
@@ -1510,6 +1539,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"AZ" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ship/crew/chapel)
 "Bu" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable/orange{
@@ -1863,17 +1898,6 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/chapel)
-"Ht" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 1
-	},
-/obj/structure/cable/pink,
-/obj/machinery/door/poddoor/shutters{
-	id = "port_shutters";
-	name = "Engine Shutters"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Hw" = (
 /obj/effect/turf_decal/spline/fancy{
 	dir = 1
@@ -1970,6 +1994,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/stairs,
 /area/ship/storage)
+"Jy" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "JD" = (
 /obj/effect/turf_decal/corner/blue/diagonal,
 /obj/structure/cable/orange{
@@ -2174,8 +2205,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "MU" = (
-/obj/structure/closet/secure,
-/obj/item/storage/backpack/duffelbag/mining_conscript,
 /obj/item/kinetic_crusher,
 /obj/item/storage/box/emptysandbags,
 /obj/item/storage/belt/mining,
@@ -2186,6 +2215,9 @@
 /obj/item/t_scanner/adv_mining_scanner,
 /obj/item/storage/bag/ore,
 /obj/item/shovel,
+/obj/item/gps/mining,
+/obj/item/pickaxe/mini,
+/obj/structure/closet/secure_closet/miningcloset,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "MV" = (
@@ -2232,6 +2264,10 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/science)
+"Ng" = (
+/obj/structure/railing,
+/turf/open/floor/plating/dirt/jungle,
+/area/ship/crew/chapel)
 "Nm" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -2257,6 +2293,12 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
 "NL" = (
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ship/crew/chapel)
+"NT" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ship/crew/chapel)
 "NV" = (
@@ -2315,10 +2357,16 @@
 /obj/structure/cable/orange{
 	icon_state = "6-8"
 	},
+/obj/structure/closet/emcloset/wall{
+	pixel_y = 32
+	},
 /turf/open/floor/wood/maple,
 /area/ship/science)
 "Qi" = (
 /obj/structure/destructible/tribal_torch,
+/obj/structure/railing{
+	dir = 8
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ship/crew/chapel)
 "Qm" = (
@@ -2596,6 +2644,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/closet/firecloset/wall{
+	pixel_y = 32
+	},
 /turf/open/floor/wood/maple,
 /area/ship/science)
 "Un" = (
@@ -2850,6 +2901,7 @@
 /obj/item/kitchen/knife/combat/survival,
 /obj/item/gun/ballistic/shotgun/winchester/lethal,
 /obj/structure/closet/secure_closet/hunter,
+/obj/item/lighter,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "ZV" = (
@@ -2958,7 +3010,7 @@ fs
 HS
 AY
 ss
-Ht
+oh
 sH
 sH
 sH
@@ -3028,9 +3080,9 @@ Oo
 Oo
 fs
 Sg
-mz
+Jy
 AM
-Ht
+oh
 sH
 sH
 sH
@@ -3385,9 +3437,9 @@ Xt
 ZV
 QX
 xD
-TO
-VI
-NL
+yA
+qQ
+re
 TO
 VI
 Nm
@@ -3421,9 +3473,9 @@ lf
 cU
 Qm
 US
-TO
+Ng
 iq
-TO
+AZ
 YE
 NL
 al
@@ -3457,9 +3509,9 @@ VI
 TO
 NL
 TO
-NL
+NT
 Qi
-TO
+uI
 CC
 TO
 BO

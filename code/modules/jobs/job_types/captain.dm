@@ -164,3 +164,27 @@
 	courierbag = /obj/item/storage/backpack/messenger
 	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/clothing/accessory/medal/gold/captain=1, /obj/item/stack/spacecash/c10000=1)
 
+/datum/outfit/job/captain/roumain
+	name = "Hunter Montagne (Saint-Roumain Militia)"
+
+	uniform = /obj/item/clothing/under/suit/roumain
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/armor/hos/roumain/montagne
+	backpack = /obj/item/storage/backpack/cultpack
+	satchel = /obj/item/storage/backpack/cultpack
+	duffelbag = /obj/item/storage/backpack/cultpack
+	courierbag = /obj/item/storage/backpack/cultpack
+
+	head = /obj/item/clothing/head/HoS/cowboy/montagne
+	gloves = null
+	id = /obj/item/card/id/gold
+	belt = null
+	dcoat = null
+	accessory = null
+	ears = null
+
+	backpack_contents = list(
+		/obj/item/stamp/chap = 1,
+		/obj/item/melee/classic_baton/telescopic=1
+		)

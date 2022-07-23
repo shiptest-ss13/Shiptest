@@ -31,3 +31,8 @@
 	name = "\proper head of security's locker"
 	req_access = list(ACCESS_HOS)
 	icon_state = "hos"
+
+/obj/structure/closet/secure_closet/miningcloset
+	name = "mining equipment locker"
+	desc = "The closet of mining equipment."
+	icon_state = "mining"

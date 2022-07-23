@@ -501,7 +501,10 @@
 	icon_state = "generic"
 	build_path = /obj/machinery/rnd/production/protolathe/department
 
- basic
+/obj/item/circuitboard/machine/protolathe/department/basic
+	name = "Protolathe (Basic)"
+	icon_state = "generic"
+	build_path = /obj/machinery/rnd/production/protolathe/department/basic
 
 /obj/item/circuitboard/machine/reagentgrinder
 	name = "Machine Design (All-In-One Grinder)"
