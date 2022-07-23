@@ -36,3 +36,42 @@
 	name = "mining equipment locker"
 	desc = "The closet of mining equipment."
 	icon_state = "mining"
+
+/turf/open/floor/plating/dirt/jungle/dark/actuallydark
+	light_range = 0
+	light_power = 0
+	slowdown = 0
+
+/turf/open/floor/plating/grass/jungle/actuallydark
+	light_range = 0
+	light_power = 0
+
+/turf/open/water/jungle/actuallydark
+	light_range = 0
+	light_power = 0
+
+/area/ship/external/dark
+	name = "Dark External"
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
+	icon_state = "space_near"
+
+/datum/preset_holoimage/montagne
+	outfit_type = /datum/outfit/job/chaplain/roumain
+
+/obj/item/disk/holodisk/roumain
+	name = "Grand Ideology Sermon"
+	desc = "A holodisk containing an SRM sermon."
+	preset_image_type = /datum/preset_holoimage/montagne
+	preset_record_text = {"
+	NAME Montagne Gehrman
+	SAY Oh ye followers of the Saint-Roumain.
+	DELAY 25
+	SAY Men and women of The Militia, Conquerers of nature, montagne, hunter, and shadow alike.
+	DELAY 25
+	SAY In His name, we maintain dominion over nature,
+	DELAY 25
+	SAY Dominion over the chaos of our lives and dominion over ourselves.
+	DELAY 25
+	DAY By defending ourselves and others, we defend His embers.
+	DELAY 15
+	"}
