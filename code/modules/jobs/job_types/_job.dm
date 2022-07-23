@@ -147,10 +147,6 @@
 /datum/job/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, datum/outfit/outfit_override = null, client/preference_source)
 	if(!H)
 		return FALSE
-	if(CONFIG_GET(flag/enforce_human_authority) && (title in GLOB.command_positions))
-		if(H.dna.species.id != SPECIES_HUMAN)
-			H.set_species(/datum/species/human)
-			H.apply_pref_name("human", preference_source)
 	if(!visualsOnly)
 		var/datum/bank_account/bank_account = new(H.real_name, src)
 		bank_account.payday(STARTING_PAYCHECKS, TRUE)
@@ -159,14 +155,14 @@
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
 
-	// WS Edit - Alt-Job Titles
+	// Alt-Job Titles
 	if(outfit && preference_source?.prefs?.alt_titles_preferences[title] && !outfit_override)
 		var/outfitholder = "[outfit]/[ckey(preference_source.prefs.alt_titles_preferences[title])]"
 		if(text2path(outfitholder) || !outfitholder)
 			outfit_override = text2path(outfitholder)
+
 	if(outfit_override || outfit)
 		H.equipOutfit(outfit_override ? outfit_override : outfit, visualsOnly, preference_source)
-	// WS Edit - Alt-Job Titles
 
 	H.dna.species.after_equip_job(src, H, visualsOnly)
 
@@ -183,11 +179,6 @@
 
 	if(CONFIG_GET(flag/everyone_has_maint_access)) //Config has global maint access set
 		. |= list(ACCESS_MAINT_TUNNELS)
-
-/datum/job/proc/announce_head(mob/living/carbon/human/H, channels) //tells the given channel that the given mob is the new department head. See communications.dm for valid channels.
-	if(H && GLOB.announcement_systems.len)
-		//timer because these should come after the captain announcement
-		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/_addtimer, CALLBACK(pick(GLOB.announcement_systems), /obj/machinery/announcement_system/proc/announce, "NEWHEAD", H.real_name, H.job, channels), 1))
 
 //If the configuration option is set to require players to be logged as old enough to play certain jobs, then this proc checks that they are, otherwise it just returns 1
 /datum/job/proc/player_old_enough(client/C)
@@ -210,30 +201,6 @@
 		return 0
 
 	return max(0, minimal_player_age - C.player_age)
-
-/datum/job/proc/config_check()
-	return TRUE
-
-/datum/job/proc/map_check()
-	var/list/job_changes = GetMapChanges()
-	if(!job_changes)
-		return FALSE
-	return TRUE
-
-/**
- * Gets the changes dictionary made to the job template by the map config. Returns null if job is removed.
- */
-/datum/job/proc/GetMapChanges()
-	var/string_type = "[type]"
-	var/list/splits = splittext(string_type, "/")
-	var/endpart = splits[splits.len]
-
-
-	var/list/job_changes
-	if(!(endpart in job_changes))
-		return list()
-
-	return job_changes[endpart]
 
 /datum/job/proc/radio_help_message(mob/M)
 	to_chat(M, "<b>Prefix your message with :h to speak on your department's radio. To see other prefixes, look closely at your headset.</b>")

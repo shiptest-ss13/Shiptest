@@ -45,7 +45,3 @@
 			if(LAI.is_available())
 				return TRUE
 	return FALSE
-
-/datum/job/ai/config_check()
-	return CONFIG_GET(flag/allow_ai)
-
