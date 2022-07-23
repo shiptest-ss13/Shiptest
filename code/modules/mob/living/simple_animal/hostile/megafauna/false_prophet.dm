@@ -44,11 +44,6 @@
 	var/leaping = FALSE
 	var/pondering = FALSE
 	var/can_move = TRUE
-	var/mutable_appearance/aggro
-
-/mob/living/simple_animal/hostile/megafauna/prophet/Initialize(mapload)
-	. = ..()
-
 
 /mob/living/simple_animal/hostile/megafauna/prophet/Move(atom/newloc, dir, step_x, step_y)
 	if(!can_move)
@@ -56,8 +51,9 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/megafauna/prophet/AttackingTarget()
-	if(!leaping)
-		return ..()
+	if(leaping || pondering || !can_move)
+		return
+	return ..()
 
 /mob/living/simple_animal/hostile/megafauna/prophet/say(message, bubble_type, list/spans, sanitize, datum/language/language, ignore_spam, forced)
 	. = ..()
@@ -98,21 +94,22 @@
 	truly_see(user)
 
 /mob/living/simple_animal/hostile/megafauna/prophet/proc/begin_stare(mob/victim = target)
+	can_move = FALSE
 	visible_message("<span class='danger'>[src] begins looking towards [victim]!<span>", "<span class='notice'>You move to stare at [victim].</span>")
-	aggro = mutable_appearance('icons/mob/lavaland/64x64megafauna.dmi', "prophetaggro")
-	add_overlay(aggro)
+	add_overlay("prophetaggro")
 	addtimer(CALLBACK(src, .proc/truly_see, victim), 8 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/prophet/proc/truly_see(mob/victim = target)
-	cut_overlay(aggro)
+	can_move = TRUE
+	cut_overlay("prophetaggro")
 	if(stat == DEAD) //we close our eyes if we're dead, they clearly do not want to see
 		return
-	new /obj/effect/temp_visual/mark(get_turf(victim))
 	if(get_dir(src, victim) & victim.dir) //if they aren't looking upon our beautiful face
 		return
 	if(!istype(victim, /mob/living/carbon)) //we only wish for somewhat intelligent beings
 		return
 	var/mob/living/carbon/C = victim
+	new /obj/effect/temp_visual/mark(get_turf(victim))
 
 	if(C.is_blind()) //the blind ones cannot behold our visage
 		return
@@ -169,13 +166,12 @@
 	can_move = FALSE
 	visible_message("<span class='danger'>[src] begins looking around wildly...</span>", "<span class='notice'>We start looking around wildly.</span>")
 	SetRecoveryTime(30, 0)
-	aggro = mutable_appearance('icons/mob/lavaland/64x64megafauna.dmi', "prophetaggro")
-	add_overlay(aggro)
+	add_overlay("prophetaggro")
 	addtimer(CALLBACK(src, .proc/ponder_end), 5 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/prophet/proc/ponder_end()
 	visible_message("<span class='notice'>[src] stops looking around wildly.</span>", "<span class='notice'>We stop looking around wildly.</span>")
-	cut_overlay(aggro)
+	cut_overlay("prophetaggro")
 	pondering = FALSE
 	can_move = TRUE
 	handle_automated_speech(TRUE) //we share an insight we thought of
