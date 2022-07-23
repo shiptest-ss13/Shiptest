@@ -30,7 +30,7 @@
 	var/list/min_requirements
 	var/list/max_requirements
 	var/exclude = FALSE //do it this way to allow for addition/removal of reactions midmatch in the future
-	var/priority = 100 //lower numbers are checked/react later than higher numbers. if two reactions have the same priority they may happen in either order
+	var/priority = 100 //lower numbers are checked/react later than higher numbers. Should be distinct per-reaction; auxmos breaks when two reactions have the same priority.
 	var/name = "reaction"
 	var/id = "r"
 
