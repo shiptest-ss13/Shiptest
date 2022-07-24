@@ -2,7 +2,6 @@
 	name = "Atmospheric Technician"
 	total_positions = 3
 	spawn_positions = 2
-	selection_color = "#fff5cc"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Guide_to_Atmospherics" //WS Edit - Wikilinks/Warning

@@ -2,7 +2,6 @@
 	name = "Chemist"
 	total_positions = 2
 	spawn_positions = 2
-	selection_color = "#ffeef0"
 	exp_type = EXP_TYPE_CREW
 	exp_requirements = 60
 	wiki_page = "Guide_to_Chemistry" //WS Edit - Wikilinks/Warning

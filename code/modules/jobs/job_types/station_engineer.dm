@@ -2,7 +2,6 @@
 	name = "Station Engineer"
 	total_positions = 5
 	spawn_positions = 5
-	selection_color = "#fff5cc"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Station_Engineer" //WS Edit - Wikilinks/Warning

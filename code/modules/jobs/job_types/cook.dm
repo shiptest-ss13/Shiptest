@@ -2,7 +2,6 @@
 	name = "Cook"
 	total_positions = 2
 	spawn_positions = 1
-	selection_color = "#bbe291"
 	wiki_page = "Food" //WS Edit - Wikilinks/Warning
 	var/cooks = 0 //Counts cooks amount
 

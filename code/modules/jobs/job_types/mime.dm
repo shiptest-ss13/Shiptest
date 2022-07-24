@@ -3,7 +3,6 @@
 	total_positions = 1
 	spawn_positions = 1
 	wiki_page = "Mime" //WS Edit - Wikilinks/Warning
-	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/mime
 

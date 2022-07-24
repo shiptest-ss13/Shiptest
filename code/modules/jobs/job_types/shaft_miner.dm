@@ -2,7 +2,6 @@
 	name = "Shaft Miner"
 	total_positions = 3
 	spawn_positions = 3
-	selection_color = "#dcba97"
 	wiki_page = "Shaft_Miner" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/miner

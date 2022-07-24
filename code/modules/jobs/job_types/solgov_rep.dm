@@ -6,7 +6,6 @@ SolGov Representative
 	name = "SolGov Representative"
 	total_positions = 2
 	spawn_positions = 2
-	selection_color = "#b6b6e6"
 	wiki_page = "Government_Attaché"
 	minimal_player_age = 7
 	exp_requirements = 180

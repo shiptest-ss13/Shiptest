@@ -3,7 +3,6 @@
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	total_positions = 1
 	spawn_positions = 1
-	selection_color = "#ddddff"
 	minimal_player_age = 10
 	exp_requirements = 180
 	officer = TRUE

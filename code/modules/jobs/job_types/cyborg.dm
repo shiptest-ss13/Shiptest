@@ -3,7 +3,6 @@
 	auto_deadmin_role_flags = DEADMIN_POSITION_SILICON
 	total_positions = 0
 	spawn_positions = 1	//Nodrak
-	selection_color = "#ddffdd"
 	minimal_player_age = 21
 	exp_requirements = 120
 	exp_type = EXP_TYPE_CREW

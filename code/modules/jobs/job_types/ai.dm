@@ -3,7 +3,6 @@
 	auto_deadmin_role_flags = DEADMIN_POSITION_SILICON
 	total_positions = 1
 	spawn_positions = 1
-	selection_color = "#ccffcc"
 	minimal_player_age = 30
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW

@@ -3,7 +3,6 @@
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	total_positions = 1
 	spawn_positions = 1
-	selection_color = "#ffddff"
 	minimal_player_age = 7
 	exp_type_department = EXP_TYPE_SCIENCE
 	exp_requirements = 180

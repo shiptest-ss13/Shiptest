@@ -3,7 +3,6 @@
 	total_positions = 2
 	spawn_positions = 2
 	wiki_page = "Lawyer" //WS Edit - Wikilinks/Warning
-	selection_color = "#bbe291"
 	var/lawyers = 0 //Counts lawyer amount
 
 	outfit = /datum/outfit/job/lawyer

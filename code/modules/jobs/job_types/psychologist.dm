@@ -3,7 +3,6 @@
 	name = "Psychologist"
 	total_positions = 1
 	spawn_positions = 1
-	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/psychologist
 

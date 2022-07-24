@@ -2,7 +2,6 @@
 	name = "Janitor"
 	total_positions = 2
 	spawn_positions = 1
-	selection_color = "#bbe291"
 	wiki_page = "Janitor" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/janitor

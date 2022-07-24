@@ -2,7 +2,6 @@
 	name = "Bartender"
 	total_positions = 1
 	spawn_positions = 1
-	selection_color = "#bbe291"
 	wiki_page = "Drinks" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/bartender

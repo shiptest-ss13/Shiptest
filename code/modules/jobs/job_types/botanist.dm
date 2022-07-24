@@ -2,7 +2,6 @@
 	name = "Botanist"
 	total_positions = 3
 	spawn_positions = 2
-	selection_color = "#bbe291"
 	wiki_page = "Guide_to_Botany" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/botanist
