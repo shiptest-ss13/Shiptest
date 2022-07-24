@@ -63,8 +63,10 @@
 	name = "production machine console"
 	icon = 'icons/obj/machines/mining_machines.dmi'
 	icon_state = "console"
-	density = TRUE
-	var/obj/machinery/mineral/processing_unit/machine = null
+	density = FALSE
+	///Connected processing unit
+	var/obj/machinery/mineral/processing_unit/machine
+	/// Direction for which console looks for stacking machine to connect to
 	var/machinedir = EAST
 
 /obj/machinery/mineral/processing_unit_console/Initialize()
@@ -72,8 +74,14 @@
 	machine = locate(/obj/machinery/mineral/processing_unit, get_step(src, machinedir))
 	if (machine)
 		machine.CONSOLE = src
-	else
-		return INITIALIZE_HINT_QDEL
+
+/obj/machinery/mineral/processing_unit_console/multitool_act(mob/living/user, obj/item/I) //TEMP newly adding: multitool linkage
+	if(!multitool_check_buffer(user, I))
+		return
+	var/obj/item/multitool/M = I
+	M.buffer = src
+	to_chat(user, "<span class='notice'>You store linkage information in [I]'s buffer.</span>")
+	return TRUE
 
 /obj/machinery/mineral/processing_unit_console/ui_interact(mob/user)
 	. = ..()
@@ -114,6 +122,46 @@
 	return ..()
 
 
+//------------------ new TGUI below, edited from stacking machine (FINISH THIS LATER)
+/*
+/obj/machinery/mineral/processing_unit_console/Initialize()
+	. = ..()
+	machine = locate(/obj/machinery/mineral/stacking_machine, get_step(src, machinedir))
+	if (machine)
+		machine.CONSOLE = src
+
+/obj/machinery/mineral/processing_unit_console/multitool_act(mob/living/user, obj/item/I)
+	if(!multitool_check_buffer(user, I))
+		return
+	var/obj/item/multitool/M = I
+	M.buffer = src
+	to_chat(user, "<span class='notice'>You store linkage information in [I]'s buffer.</span>")
+	return TRUE
+
+/obj/machinery/mineral/processing_unit_console/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ProcessingConsole", name)
+		ui.open()
+
+/obj/machinery/mineral/processing_unit_console/ui_data(mob/user) //COME BACK TO THIS, UGH
+	var/list/data = list()
+	data["machine"] = machine ? TRUE : FALSE
+	data["stacking_amount"] = null
+	data["contents"] = list()
+	if(machine)
+		data["material"] = machine.stack_amt
+		for(var/stack_type in machine.stack_list)
+			var/obj/item/stack/sheet/stored_sheet = machine.stack_list[stack_type]
+			if(stored_sheet.amount <= 0)
+				continue
+			data["contents"] += list(list(
+				"type" = stored_sheet.type,
+				"name" = capitalize(stored_sheet.name),
+				"amount" = stored_sheet.amount,
+			))
+	return data
+*/
 /**********************Mineral processing unit**************************/
 
 
@@ -140,6 +188,14 @@
 	CONSOLE = null
 	QDEL_NULL(stored_research)
 	return ..()
+
+/obj/machinery/mineral/processing_unit/multitool_act(mob/living/user, obj/item/multitool/M)
+	if(istype(M))
+		if(istype(M.buffer, /obj/machinery/mineral/processing_unit_console))
+			CONSOLE = M.buffer
+			CONSOLE.machine = src //this is a problem line and i have no idea why.
+			to_chat(user, "<span class='notice'>You link [src] to the console in [M]'s buffer.</span>")
+			return TRUE
 
 /obj/machinery/mineral/processing_unit/proc/process_ore(obj/item/stack/ore/O)
 	if(QDELETED(O))
