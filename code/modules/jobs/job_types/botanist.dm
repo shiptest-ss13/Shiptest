@@ -4,15 +4,11 @@
 	spawn_positions = 2
 	selection_color = "#bbe291"
 	wiki_page = "Guide_to_Botany" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Gardener", "Herbalist", "Botanical Scientist", "Hydroponicist", "Beekeeper")
-	senior_title = "Master Gardener"
 
 	outfit = /datum/outfit/job/botanist
 
 	access = list(ACCESS_HYDROPONICS, ACCESS_BAR, ACCESS_KITCHEN, ACCESS_MORGUE, ACCESS_MINERAL_STOREROOM)
 	minimal_access = list(ACCESS_HYDROPONICS, ACCESS_MORGUE, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_SRV
 	display_order = JOB_DISPLAY_ORDER_BOTANIST
 
 /datum/outfit/job/botanist

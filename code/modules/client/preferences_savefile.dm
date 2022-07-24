@@ -422,7 +422,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_kepori_tail_feathers"], features["kepori_tail_feathers"])
 	READ_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
 	READ_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
-	READ_FILE(S["alt_titles_preferences"], alt_titles_preferences)
 
 	READ_FILE(S["equipped_gear"], equipped_gear)
 	if(config) //This should *probably* always be there, but just in case.
@@ -430,15 +429,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			to_chat(parent, "<span class='userdanger'>Loadout maximum items exceeded in loaded slot, Your loadout has been cleared! You had [length(equipped_gear)]/[CONFIG_GET(number/max_loadout_items)] equipped items!</span>")
 			equipped_gear = list()
 			WRITE_FILE(S["equipped_gear"]				, equipped_gear)
-
-	alt_titles_preferences = SANITIZE_LIST(alt_titles_preferences)
-	if(SSjob)
-		for(var/datum/job/job in sortList(SSjob.occupations, /proc/cmp_job_display_asc))
-			if(alt_titles_preferences[job.title])
-				if(!((alt_titles_preferences[job.title] in job.alt_titles) || (alt_titles_preferences[job.title] == job.senior_title)))
-					alt_titles_preferences.Remove(job.title)
-
-	//WS End
 
 	READ_FILE(S["feature_human_tail"], features["tail_human"])
 	READ_FILE(S["feature_human_ears"], features["ears"])
@@ -621,9 +611,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_kepori_tail_feathers"], features["kepori_tail_feathers"])
 	WRITE_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
 	WRITE_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
-
-	//Alternate job titles
-	WRITE_FILE(S["alt_titles_preferences"]		,alt_titles_preferences)
 
 	//Flavor text
 	WRITE_FILE(S["feature_flavor_text"], features["flavor_text"])

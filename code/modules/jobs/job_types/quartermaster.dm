@@ -6,15 +6,11 @@
 	wiki_page = "Quartermaster" //WS Edit - Wikilinks/Warning
 	officer = TRUE
 	exp_type_department = EXP_TYPE_SUPPLY // This is so the jobs menu can work properly
-	alt_titles = list("Supply Chief", "Requisitions Officer")
-	senior_title = "Chief Economist"
 
 	outfit = /datum/outfit/job/quartermaster
 
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM, ACCESS_VAULT)
 	minimal_access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM, ACCESS_VAULT)
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_CAR
 
 	display_order = JOB_DISPLAY_ORDER_QUARTERMASTER
 

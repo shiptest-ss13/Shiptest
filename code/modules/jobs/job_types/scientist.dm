@@ -6,15 +6,11 @@
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Scientist" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Xenobiologist", "Nanite Researcher", "Junior Scientist")
-	senior_title = "Senior Scientist"
 
 	outfit = /datum/outfit/job/scientist
 
 	access = list(ACCESS_ROBOTICS, ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE) //WS edit - Gen/Sci Split
 	minimal_access = list(ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_SCI
 
 	display_order = JOB_DISPLAY_ORDER_SCIENTIST
 

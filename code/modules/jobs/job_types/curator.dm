@@ -4,15 +4,11 @@
 	spawn_positions = 1
 	wiki_page = "Curator" //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
-	alt_titles = list("Journalist", "Librarian", "Historian", "Archaeologist")
-	senior_title = "Dungeon Master"
 
 	outfit = /datum/outfit/job/curator
 
 	access = list(ACCESS_LIBRARY, ACCESS_CONSTRUCTION, ACCESS_MINING_STATION)
 	minimal_access = list(ACCESS_LIBRARY, ACCESS_CONSTRUCTION, ACCESS_MINING_STATION)
-	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_CURATOR
 

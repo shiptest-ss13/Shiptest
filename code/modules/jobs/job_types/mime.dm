@@ -4,15 +4,11 @@
 	spawn_positions = 1
 	wiki_page = "Mime" //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
-	alt_titles = list("Performer")
-	senior_title = "Living Statue"
 
 	outfit = /datum/outfit/job/mime
 
 	access = list(ACCESS_THEATRE)
 	minimal_access = list(ACCESS_THEATRE)
-	paycheck = PAYCHECK_MINIMAL
-	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_MIME
 

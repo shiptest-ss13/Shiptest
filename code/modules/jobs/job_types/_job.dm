@@ -38,9 +38,6 @@
 	/// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
 	var/wiki_page = ""
 
-	var/paycheck = PAYCHECK_MINIMAL
-	var/paycheck_department = ACCOUNT_CIV
-
 	var/list/mind_traits // Traits added to the mind of the mob assigned this job
 
 	var/display_order = JOB_DISPLAY_ORDER_DEFAULT
@@ -48,10 +45,6 @@
 
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
-
-
-	var/list/alt_titles = list()
-	var/senior_title
 
 /datum/job/New(new_title, datum/outfit/new_outfit)
 	if(new_title)
@@ -101,11 +94,7 @@
 	if(living_mob.mind)
 		living_mob.mind.assigned_role = title
 
-	var/display_rank = title
-	if(living_mob.client.prefs && living_mob.client.prefs.alt_titles_preferences[title])
-		display_rank = living_mob.client.prefs.alt_titles_preferences[title]
-
-	to_chat(living_mob, "<b>You are the [display_rank].</b>")
+	to_chat(living_mob, "<b>You are the [title].</b>")
 
 	var/new_mob = equip(living_mob, null, null, null, living_mob.client)//silicons override this proc to return a mob
 	if(ismob(new_mob))
@@ -146,17 +135,11 @@
 		return FALSE
 	if(!visualsOnly)
 		var/datum/bank_account/bank_account = new(H.real_name, src)
-		bank_account.payday(STARTING_PAYCHECKS, TRUE)
+		bank_account.adjust_money(officer ? 250 : 100) //just a little bit of money for you
 		H.account_id = bank_account.account_id
 
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
-
-	// Alt-Job Titles
-	if(outfit && preference_source?.prefs?.alt_titles_preferences[title] && !outfit_override)
-		var/outfitholder = "[outfit]/[ckey(preference_source.prefs.alt_titles_preferences[title])]"
-		if(text2path(outfitholder) || !outfitholder)
-			outfit_override = text2path(outfitholder)
 
 	if(outfit_override || outfit)
 		H.equipOutfit(outfit_override ? outfit_override : outfit, visualsOnly, preference_source)
@@ -300,8 +283,6 @@
 		C.registered_name = H.real_name
 		if(H.job)
 			C.assignment = H.job
-		else if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
-			C.assignment = preference_source.prefs.alt_titles_preferences[J.title]
 		else
 			C.assignment = J.title
 		if(H.age)
@@ -321,8 +302,6 @@
 		PDA.owner = H.real_name
 		if(H.job)
 			PDA.ownjob = H.job
-		else if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
-			PDA.ownjob = preference_source.prefs.alt_titles_preferences[J.title]
 		else
 			PDA.ownjob = J.title
 		PDA.update_label()

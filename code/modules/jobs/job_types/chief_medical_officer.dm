@@ -10,7 +10,6 @@
 	exp_type_department = EXP_TYPE_MEDICAL
 	officer = TRUE
 	wiki_page = "Chief_Medical_Officer"
-	alt_titles = list("Medical Director", "Surgeon-General")
 
 	outfit = /datum/outfit/job/cmo
 
@@ -20,8 +19,6 @@
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_PSYCHOLOGY, ACCESS_MORGUE, ACCESS_GENETICS, ACCESS_PHARMACY, ACCESS_HEADS, ACCESS_MINERAL_STOREROOM, //WS edit - Gen/Sci Split
 			ACCESS_CHEMISTRY, ACCESS_VIROLOGY, ACCESS_CMO, ACCESS_SURGERY, ACCESS_RC_ANNOUNCE, ACCESS_MECH_MEDICAL,
 			ACCESS_KEYCARD_AUTH, ACCESS_SEC_DOORS, ACCESS_MAINT_TUNNELS)
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_MED
 
 	display_order = JOB_DISPLAY_ORDER_CHIEF_MEDICAL_OFFICER
 

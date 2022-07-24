@@ -15,8 +15,6 @@
 
 	access = list() 			//See get_access()
 	minimal_access = list() 	//See get_access()
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_SEC
 
 	mind_traits = list(TRAIT_DISK_VERIFIER)
 

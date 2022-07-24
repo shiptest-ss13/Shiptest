@@ -4,15 +4,11 @@
 	spawn_positions = 3
 	selection_color = "#dcba97"
 	wiki_page = "Shaft_Miner" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Explorer", "Righand")
-	senior_title = "Senior Miner"
 
 	outfit = /datum/outfit/job/miner
 
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM)
 	minimal_access = list(ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MAILSORTING, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_HARD
-	paycheck_department = ACCOUNT_CAR
 
 	display_order = JOB_DISPLAY_ORDER_SHAFT_MINER
 

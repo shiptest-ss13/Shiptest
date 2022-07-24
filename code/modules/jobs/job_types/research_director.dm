@@ -10,7 +10,6 @@
 	exp_type = EXP_TYPE_CREW
 	officer = TRUE
 	wiki_page = "Research_Director" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Research Supervisor", "Head Scientist", "Chief Researcher", "Chief Science Officer")
 
 	outfit = /datum/outfit/job/rd
 
@@ -26,8 +25,6 @@
 		ACCESS_RESEARCH, ACCESS_ROBOTICS, ACCESS_XENOBIOLOGY, ACCESS_AI_UPLOAD,
 		ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_GATEWAY, ACCESS_MINERAL_STOREROOM,
 		ACCESS_TECH_STORAGE, ACCESS_MINISAT, ACCESS_MAINT_TUNNELS, ACCESS_NETWORK) //WS edit - Gen/Sci Split
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_SCI
 
 	display_order = JOB_DISPLAY_ORDER_RESEARCH_DIRECTOR
 

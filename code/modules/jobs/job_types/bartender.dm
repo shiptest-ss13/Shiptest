@@ -4,15 +4,11 @@
 	spawn_positions = 1
 	selection_color = "#bbe291"
 	wiki_page = "Drinks" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Barkeep", "Mixologist")
-	senior_title = "Master Mixologist"
 
 	outfit = /datum/outfit/job/bartender
 
 	access = list(ACCESS_HYDROPONICS, ACCESS_BAR, ACCESS_KITCHEN, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM, ACCESS_THEATRE)
 	minimal_access = list(ACCESS_BAR, ACCESS_MINERAL_STOREROOM, ACCESS_THEATRE)
-	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_SRV
 	display_order = JOB_DISPLAY_ORDER_BARTENDER
 
 /datum/outfit/job/bartender

@@ -4,15 +4,11 @@
 	spawn_positions = 2
 	selection_color = "#dcba97"
 	wiki_page = "Cargo_technician" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Mailroom Technician", "Deliveries Officer")
-	senior_title = "Cargonian"
 
 	outfit = /datum/outfit/job/cargo_tech
 
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM)
 	minimal_access = list(ACCESS_MAINT_TUNNELS, ACCESS_CARGO, ACCESS_MAILSORTING, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_CAR
 
 	display_order = JOB_DISPLAY_ORDER_CARGO_TECHNICIAN
 

@@ -4,15 +4,11 @@
 	spawn_positions = 1
 	selection_color = "#bbe291"
 	wiki_page = "Janitor" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Custodian", "Sanitation Technician")
-	senior_title = "Maid"
 
 	outfit = /datum/outfit/job/janitor
 
 	access = list(ACCESS_JANITOR, ACCESS_MAINT_TUNNELS, ACCESS_MINERAL_STOREROOM)
 	minimal_access = list(ACCESS_JANITOR, ACCESS_MAINT_TUNNELS, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_JANITOR
 
