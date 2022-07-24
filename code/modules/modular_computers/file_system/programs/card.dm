@@ -203,7 +203,7 @@
 					var/datum/job/job
 					for(var/jobtype in subtypesof(/datum/job))
 						var/datum/job/J = new jobtype
-						if(J.title == target)
+						if(J.name == target)
 							job = J
 							break
 					if(!job)

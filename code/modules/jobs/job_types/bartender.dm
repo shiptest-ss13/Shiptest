@@ -1,5 +1,5 @@
 /datum/job/bartender
-	title = "Bartender"
+	name = "Bartender"
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = "#bbe291"

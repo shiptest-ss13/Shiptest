@@ -1,5 +1,5 @@
 /datum/job/geneticist
-	title = "Geneticist"		//WS Edit - More Gen/Sci Split
+	name = "Geneticist"		//WS Edit - More Gen/Sci Split
 	total_positions = 2
 	spawn_positions = 2 //WS Edit - Gen/Sci Split
 	selection_color = "#ffeef0"

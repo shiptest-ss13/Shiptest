@@ -723,7 +723,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				.["user"]["name"] = C.registered_account.account_holder
 				.["user"]["cash"] = C.registered_account.account_balance
 				if(C.registered_account.account_job)
-					.["user"]["job"] = C.registered_account.account_job.title
+					.["user"]["job"] = C.registered_account.account_job.name
 				else
 					.["user"]["job"] = "No Job"
 	.["stock"] = list()

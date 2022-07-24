@@ -1,5 +1,5 @@
 /datum/job/cargo_tech
-	title = "Cargo Technician"
+	name = "Cargo Technician"
 	total_positions = 3
 	spawn_positions = 2
 	selection_color = "#dcba97"

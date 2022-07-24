@@ -2,7 +2,7 @@
 Assistant
 */
 /datum/job/assistant
-	title = "Assistant"
+	name = "Assistant"
 	total_positions = 5
 	spawn_positions = 5
 	selection_color = "#dddddd"

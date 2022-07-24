@@ -1,6 +1,6 @@
 /*WS Edit - Fuck Psychologists.
 /datum/job/psychologist
-	title = "Psychologist"
+	name = "Psychologist"
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = "#bbe291"

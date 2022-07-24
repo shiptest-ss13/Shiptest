@@ -1,5 +1,5 @@
 /datum/job/mime
-	title = "Mime"
+	name = "Mime"
 	total_positions = 1
 	spawn_positions = 1
 	wiki_page = "Mime" //WS Edit - Wikilinks/Warning

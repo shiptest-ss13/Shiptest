@@ -1,5 +1,5 @@
 /datum/job/ai
-	title = "AI"
+	name = "AI"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SILICON
 	total_positions = 1
 	spawn_positions = 1

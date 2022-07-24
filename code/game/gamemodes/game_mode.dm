@@ -479,7 +479,7 @@
 		else
 			for(var/name in final_ship.manifest)
 				var/datum/job/their_job = final_ship.manifest[name]
-				. += "<center><h2>[name] as the [their_job.title]</h2></center><br>"
+				. += "<center><h2>[name] as the [their_job.name]</h2></center><br>"
 		. += "<br>"
 
 	. += "<br>"

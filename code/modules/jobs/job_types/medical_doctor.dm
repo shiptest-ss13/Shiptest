@@ -1,5 +1,5 @@
 /datum/job/doctor
-	title = "Medical Doctor"
+	name = "Medical Doctor"
 	total_positions = 5
 	spawn_positions = 3
 	selection_color = "#ffeef0"

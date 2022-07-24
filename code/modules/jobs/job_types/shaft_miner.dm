@@ -1,5 +1,5 @@
 /datum/job/mining
-	title = "Shaft Miner"
+	name = "Shaft Miner"
 	total_positions = 3
 	spawn_positions = 3
 	selection_color = "#dcba97"

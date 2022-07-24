@@ -1,5 +1,5 @@
 /datum/job/head_of_personnel
-	title = "Head of Personnel"
+	name = "Head of Personnel"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	total_positions = 1
 	spawn_positions = 1

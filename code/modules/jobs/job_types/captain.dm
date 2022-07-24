@@ -1,5 +1,5 @@
 /datum/job/captain
-	title = "Captain"
+	name = "Captain"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
 	total_positions = 1
 	spawn_positions = 1

@@ -1,5 +1,5 @@
 /datum/job/cmo
-	title = "Chief Medical Officer"
+	name = "Chief Medical Officer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	total_positions = 1
 	spawn_positions = 1

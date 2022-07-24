@@ -1,5 +1,5 @@
 /datum/job/atmos
-	title = "Atmospheric Technician"
+	name = "Atmospheric Technician"
 	total_positions = 3
 	spawn_positions = 2
 	selection_color = "#fff5cc"

@@ -1,5 +1,5 @@
 /datum/job/virologist
-	title = "Virologist"
+	name = "Virologist"
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = "#ffeef0"

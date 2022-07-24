@@ -1,5 +1,5 @@
 /datum/job/qm
-	title = "Quartermaster"
+	name = "Quartermaster"
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = "#d7b088"

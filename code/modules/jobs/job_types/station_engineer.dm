@@ -1,5 +1,5 @@
 /datum/job/engineer
-	title = "Station Engineer"
+	name = "Station Engineer"
 	total_positions = 5
 	spawn_positions = 5
 	selection_color = "#fff5cc"

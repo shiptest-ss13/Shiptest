@@ -1,5 +1,5 @@
 /datum/job/brig_phys
-	title = "Brig Physician"
+	name = "Brig Physician"
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = "#ffeeee"

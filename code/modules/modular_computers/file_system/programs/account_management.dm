@@ -19,7 +19,7 @@
 			"id" = account.account_id,
 			"holder" = account.account_holder,
 			"balance" = account.account_balance,
-			"job" = account.account_job?.title,
+			"job" = account.account_job?.name,
 			"ref" = REF(account)
 		))
 	data["accounts"] = accounts
@@ -31,7 +31,7 @@
 	var/list/jobs = list()
 	for(var/j in SSjob.occupations)
 		var/datum/job/job = j
-		jobs += job.title
+		jobs += job.name
 	data["jobs"] = jobs
 	data["authed"] = (ACCESS_CHANGE_IDS in user_id?.GetAccess())
 	return data

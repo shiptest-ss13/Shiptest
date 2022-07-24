@@ -1,6 +1,6 @@
 /datum/job
 	///The name of the job , used for preferences, bans and more. Make sure you know what you're doing before changing this.
-	var/title = "NOPE"
+	var/name = "NOPE"
 
 	///Basically determines whether or not more of the job can be opened.
 	var/officer = FALSE
@@ -24,9 +24,6 @@
 	//How many players have this job
 	var/current_positions = 0
 
-	//Sellection screen color
-	var/selection_color = "#ffffff"
-
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
 	var/minimal_player_age = 0
 
@@ -46,9 +43,9 @@
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
 
-/datum/job/New(new_title, datum/outfit/new_outfit)
-	if(new_title)
-		title = new_title
+/datum/job/New(new_name, datum/outfit/new_outfit)
+	if(new_name)
+		name = new_name
 		outfit = new_outfit
 
 //Only override this proc
@@ -87,14 +84,14 @@
 
 //Gives the player the stuff he should have with his rank
 /datum/job/proc/EquipRank(mob/living/living_mob, datum/overmap/ship/controlled/ship)
-	living_mob.job = title
+	living_mob.job = name
 
 	SEND_SIGNAL(living_mob, COMSIG_JOB_RECEIVED, living_mob.job)
 
 	if(living_mob.mind)
-		living_mob.mind.assigned_role = title
+		living_mob.mind.assigned_role = name
 
-	to_chat(living_mob, "<b>You are the [title].</b>")
+	to_chat(living_mob, "<b>You are the [name].</b>")
 
 	var/new_mob = equip(living_mob, null, null, null, living_mob.client)//silicons override this proc to return a mob
 	if(ismob(new_mob))
@@ -104,7 +101,7 @@
 		if(CONFIG_GET(flag/auto_deadmin_players) || (living_mob.client.prefs?.toggles & DEADMIN_ALWAYS))
 			living_mob.client.holder.auto_deadmin()
 		else
-			SSjob.handle_auto_deadmin_roles(living_mob.client, title)
+			SSjob.handle_auto_deadmin_roles(living_mob.client, name)
 
 	radio_help_message(living_mob)
 	//WS Begin - Wikilinks
@@ -112,7 +109,7 @@
 		to_chat(living_mob, "<span class='notice'><a href=[CONFIG_GET(string/wikiurl)]/[wiki_page]>Wiki Page</a></span>")
 	//WS End
 
-	var/related_policy = get_policy(title)
+	var/related_policy = get_policy(name)
 	if(related_policy)
 		to_chat(living_mob,related_policy)
 	if(ishuman(living_mob))
@@ -284,7 +281,7 @@
 		if(H.job)
 			C.assignment = H.job
 		else
-			C.assignment = J.title
+			C.assignment = J.name
 		if(H.age)
 			C.registered_age = H.age
 		C.job_icon = job_icon
@@ -303,7 +300,7 @@
 		if(H.job)
 			PDA.ownjob = H.job
 		else
-			PDA.ownjob = J.title
+			PDA.ownjob = J.name
 		PDA.update_label()
 
 /datum/outfit/job/get_chameleon_disguise_info()

@@ -1,5 +1,5 @@
 /datum/job/warden
-	title = "Warden"
+	name = "Warden"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
 	total_positions = 1
 	spawn_positions = 1

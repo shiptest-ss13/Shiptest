@@ -1,5 +1,5 @@
 /datum/job/cyborg
-	title = "Cyborg"
+	name = "Cyborg"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SILICON
 	total_positions = 0
 	spawn_positions = 1	//Nodrak

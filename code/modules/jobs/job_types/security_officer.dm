@@ -1,5 +1,5 @@
 /datum/job/officer
-	title = "Security Officer"
+	name = "Security Officer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
 	total_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	spawn_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()

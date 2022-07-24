@@ -3,7 +3,7 @@ SolGov Representative
 */
 
 /datum/job/solgov
-	title = "SolGov Representative"
+	name = "SolGov Representative"
 	total_positions = 2
 	spawn_positions = 2
 	selection_color = "#b6b6e6"

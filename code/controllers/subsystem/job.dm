@@ -27,7 +27,7 @@ SUBSYSTEM_DEF(job)
 		if(!job)
 			continue
 		occupations += job
-		name_occupations[job.title] = job
+		name_occupations[job.name] = job
 		type_occupations[J] = job
 
 	return 1
@@ -83,7 +83,7 @@ SUBSYSTEM_DEF(job)
 		INVOKE_ASYNC(src, .proc/RecoverJob, J)
 
 /datum/controller/subsystem/job/proc/RecoverJob(datum/job/J)
-	var/datum/job/newjob = GetJob(J.title)
+	var/datum/job/newjob = GetJob(J.name)
 	if (!istype(newjob))
 		return
 	newjob.total_positions = J.total_positions
@@ -169,7 +169,7 @@ SUBSYSTEM_DEF(job)
 			var/datum/job/crewmember_job = ship.manifest[crewmember]
 			manifest_out["[ship.name] ([ship.source_template.short_name])"] += list(list(
 				"name" = crewmember,
-				"rank" = crewmember_job.title,
+				"rank" = crewmember_job.name,
 				"officer" = crewmember_job.officer
 			))
 

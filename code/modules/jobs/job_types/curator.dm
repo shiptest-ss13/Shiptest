@@ -1,5 +1,5 @@
 /datum/job/curator
-	title = "Curator"
+	name = "Curator"
 	total_positions = 1
 	spawn_positions = 1
 	wiki_page = "Curator" //WS Edit - Wikilinks/Warning

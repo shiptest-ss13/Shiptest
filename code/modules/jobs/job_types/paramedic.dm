@@ -1,5 +1,5 @@
 /datum/job/paramedic
-	title = "Paramedic"
+	name = "Paramedic"
 	total_positions = 2
 	spawn_positions = 2
 	selection_color = "#ffeef0"

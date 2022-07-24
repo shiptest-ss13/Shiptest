@@ -116,10 +116,10 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 //Logic check for Topic() if you can open the job
 /obj/machinery/computer/card/proc/can_open_job(datum/job/job)
 	if(job)
-		if(!job_blacklisted(job.title))
+		if(!job_blacklisted(job.name))
 			if((job.total_positions <= GLOB.player_list.len * (max_relative_positions / 100)))
 				var/delta = (world.time / 10) - GLOB.time_last_changed_position
-				if((change_position_cooldown < delta) || (opened_positions[job.title] < 0))
+				if((change_position_cooldown < delta) || (opened_positions[job.name] < 0))
 					return JOB_ALLOWED
 				return JOB_COOLDOWN
 			return JOB_MAX_POSITIONS
@@ -128,10 +128,10 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 //Logic check for Topic() if you can close the job
 /obj/machinery/computer/card/proc/can_close_job(datum/job/job)
 	if(job)
-		if(!job_blacklisted(job.title))
+		if(!job_blacklisted(job.name))
 			if(job.total_positions > job.current_positions)
 				var/delta = (world.time / 10) - GLOB.time_last_changed_position
-				if((change_position_cooldown < delta) || (opened_positions[job.title] > 0))
+				if((change_position_cooldown < delta) || (opened_positions[job.name] > 0))
 					return JOB_ALLOWED
 				return JOB_COOLDOWN
 			return JOB_MAX_POSITIONS
@@ -206,15 +206,15 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		<td style='width:25%'><b>Open job</b></td><td style='width:25%'><b>Close job</b><td style='width:25%'><b>Prioritize</b></td></td></tr>"}
 		for(var/datum/job/job in SSjob.occupations)
 			dat += "<tr>"
-			if(job.title in blacklisted)
+			if(job.name in blacklisted)
 				continue
-			dat += {"<td>[job.title]</td>
+			dat += {"<td>[job.name]</td>
 				<td>[job.current_positions]/[job.total_positions]</td>
 				<td>"}
 			switch(can_open_job(job))
 				if(JOB_ALLOWED)
 					if(authenticated == AUTHENTICATED_ALL)
-						dat += "<a href='?src=[REF(src)];choice=make_job_available;job=[job.title]'>Open Position</a><br>"
+						dat += "<a href='?src=[REF(src)];choice=make_job_available;job=[job.name]'>Open Position</a><br>"
 					else
 						dat += "Open Position"
 				if(JOB_COOLDOWN)
@@ -228,7 +228,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			switch(can_close_job(job))
 				if(JOB_ALLOWED)
 					if(authenticated == AUTHENTICATED_ALL)
-						dat += "<a href='?src=[REF(src)];choice=make_job_unavailable;job=[job.title]'>Close Position</a>"
+						dat += "<a href='?src=[REF(src)];choice=make_job_unavailable;job=[job.name]'>Close Position</a>"
 					else
 						dat += "Close Position"
 				if(JOB_COOLDOWN)
@@ -245,10 +245,10 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				else
 					if(authenticated == AUTHENTICATED_ALL)
 						if(job in SSjob.prioritized_jobs)
-							dat += "<a href='?src=[REF(src)];choice=prioritize_job;job=[job.title]'>Deprioritize</a>"
+							dat += "<a href='?src=[REF(src)];choice=prioritize_job;job=[job.name]'>Deprioritize</a>"
 						else
 							if(SSjob.prioritized_jobs.len < 5)
-								dat += "<a href='?src=[REF(src)];choice=prioritize_job;job=[job.title]'>Prioritize</a>"
+								dat += "<a href='?src=[REF(src)];choice=prioritize_job;job=[job.name]'>Prioritize</a>"
 							else
 								dat += "Denied"
 					else
@@ -486,7 +486,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					var/datum/job/jobdatum
 					for(var/jobtype in typesof(/datum/job))
 						var/datum/job/J = new jobtype
-						if(ckey(J.title) == ckey(t1))
+						if(ckey(J.name) == ckey(t1))
 							jobdatum = J
 							updateUsrDialog()
 							break
@@ -583,12 +583,12 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					SSjob.prioritized_jobs -= j
 					priority = FALSE
 				else if(j.total_positions <= j.current_positions)
-					to_chat(usr, "<span class='notice'>[j.title] has had all positions filled. Open up more slots before prioritizing it.</span>")
+					to_chat(usr, "<span class='notice'>[j.name] has had all positions filled. Open up more slots before prioritizing it.</span>")
 					updateUsrDialog()
 					return
 				else
 					SSjob.prioritized_jobs += j
-				to_chat(usr, "<span class='notice'>[j.title] has been successfully [priority ? "prioritized" : "unprioritized"]. Potential employees will notice your request.</span>")
+				to_chat(usr, "<span class='notice'>[j.name] has been successfully [priority ? "prioritized" : "unprioritized"]. Potential employees will notice your request.</span>")
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 		if ("print")

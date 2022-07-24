@@ -1,5 +1,5 @@
 /datum/job/hydro
-	title = "Botanist"
+	name = "Botanist"
 	total_positions = 3
 	spawn_positions = 2
 	selection_color = "#bbe291"

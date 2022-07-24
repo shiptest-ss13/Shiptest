@@ -271,7 +271,7 @@
 	var/obj/item/card/id/syndicate/agent_card = target
 	if(istype(agent_card) && istype(job_datum))
 		agent_card.forged = TRUE
-		agent_card.assignment = job_datum.title
+		agent_card.assignment = job_datum.name
 
 /datum/action/item_action/chameleon/change/pda/update_item(obj/item/picked_item)
 	..()
@@ -284,7 +284,7 @@
 	..()
 	var/obj/item/pda/agent_pda = target
 	if(istype(agent_pda) && istype(job_datum))
-		agent_pda.ownjob = job_datum.title
+		agent_pda.ownjob = job_datum.name
 
 
 /obj/item/clothing/under/chameleon
