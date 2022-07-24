@@ -425,7 +425,7 @@
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
 			mothdust += 15;
 		if(istype(dna.species, /datum/species/moth))
-			M.mothdust += 15; // End WS edit
+			M.dust()
 
 		// Warm them up with hugs
 		share_bodytemperature(M)
