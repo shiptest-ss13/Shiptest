@@ -3,7 +3,6 @@
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
 	selection_color = "#ffeeaa"
 	minimal_player_age = 7
 	exp_requirements = 180

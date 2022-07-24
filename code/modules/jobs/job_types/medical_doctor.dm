@@ -2,7 +2,6 @@
 	title = "Medical Doctor"
 	total_positions = 5
 	spawn_positions = 3
-	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
 	wiki_page = "Guide_to_Medicine"
 	alt_titles = list("Nurse", "Surgeon", "Junior Doctor", "Psychiatrist")

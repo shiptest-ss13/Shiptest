@@ -2,7 +2,6 @@
 	title = "Prisoner"
 	total_positions = 0
 	spawn_positions = 2
-	supervisors = "the security team"
 	selection_color = "#ffe1c3"
 	alt_titles = list("Protected Custody", "Indentured Servant")
 	senior_title = "Shotcaller"

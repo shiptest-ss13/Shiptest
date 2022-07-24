@@ -2,7 +2,6 @@
 	title = "Botanist"
 	total_positions = 3
 	spawn_positions = 2
-	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
 	wiki_page = "Guide_to_Botany" //WS Edit - Wikilinks/Warning
 	alt_titles = list("Gardener", "Herbalist", "Botanical Scientist", "Hydroponicist", "Beekeeper")

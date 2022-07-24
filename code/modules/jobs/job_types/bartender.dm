@@ -2,7 +2,6 @@
 	title = "Bartender"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
 	wiki_page = "Drinks" //WS Edit - Wikilinks/Warning
 	alt_titles = list("Barkeep", "Mixologist")

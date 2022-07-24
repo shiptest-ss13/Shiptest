@@ -1,8 +1,7 @@
 /datum/job/geneticist
 	title = "Geneticist"		//WS Edit - More Gen/Sci Split
 	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the chief medical officer" //WS Edit - Gen/Sci Split
+	spawn_positions = 2 //WS Edit - Gen/Sci Split
 	selection_color = "#ffeef0"
 	exp_type = EXP_TYPE_CREW
 	exp_requirements = 60

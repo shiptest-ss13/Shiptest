@@ -2,7 +2,6 @@
 	title = "Shaft Miner"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dcba97"
 	wiki_page = "Shaft_Miner" //WS Edit - Wikilinks/Warning
 	alt_titles = list("Explorer", "Righand")

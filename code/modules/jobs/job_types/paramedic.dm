@@ -2,7 +2,6 @@
 	title = "Paramedic"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
 	wiki_page = "Paramedic"
 	alt_titles = list("Emergency Medical Technician", "Combat Life Saver")

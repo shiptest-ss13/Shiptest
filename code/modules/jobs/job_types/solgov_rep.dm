@@ -6,7 +6,6 @@ SolGov Representative
 	title = "SolGov Representative"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "The Captain, SolGov, and Space Law"
 	selection_color = "#b6b6e6"
 	wiki_page = "Government_Attaché"
 	minimal_player_age = 7

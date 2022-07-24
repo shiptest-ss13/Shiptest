@@ -2,7 +2,6 @@
 	title = "Quartermaster"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
 	selection_color = "#d7b088"
 	wiki_page = "Quartermaster" //WS Edit - Wikilinks/Warning
 	officer = TRUE

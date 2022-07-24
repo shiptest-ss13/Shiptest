@@ -2,7 +2,6 @@
 	title = "Lawyer"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the head of personnel"
 	wiki_page = "Lawyer" //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
 	alt_titles = list("Corporate Representative", "Attorney")

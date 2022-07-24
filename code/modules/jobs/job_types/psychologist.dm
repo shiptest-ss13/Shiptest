@@ -3,7 +3,6 @@
 	title = "Psychologist"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel and the chief medical officer"
 	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/psychologist

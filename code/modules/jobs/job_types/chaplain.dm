@@ -2,7 +2,6 @@
 	title = "Chaplain"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
 	wiki_page = "Chaplain" //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
 	alt_titles = list("Counselor", "Monk", "Imam", "Rabbi")

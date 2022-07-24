@@ -2,7 +2,6 @@
 	title = "Janitor"
 	total_positions = 2
 	spawn_positions = 1
-	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
 	wiki_page = "Janitor" //WS Edit - Wikilinks/Warning
 	alt_titles = list("Custodian", "Sanitation Technician")

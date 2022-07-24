@@ -4,7 +4,6 @@
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = "#ccffcc"
-	supervisors = "your laws"
 	minimal_player_age = 30
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW

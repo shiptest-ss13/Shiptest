@@ -2,7 +2,6 @@
 	title = "Cook"
 	total_positions = 2
 	spawn_positions = 1
-	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
 	wiki_page = "Food" //WS Edit - Wikilinks/Warning
 	alt_titles = list("Culinary Artist", "Butcher", "Grillmaster")

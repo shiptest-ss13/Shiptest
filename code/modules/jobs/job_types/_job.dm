@@ -24,16 +24,11 @@
 	//How many players have this job
 	var/current_positions = 0
 
-	//Supervisors, who this person answers to directly
-	var/supervisors = ""
-
 	//Sellection screen color
 	var/selection_color = "#ffffff"
 
-
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
 	var/minimal_player_age = 0
-
 
 	var/exp_requirements = 0
 
@@ -122,7 +117,6 @@
 		else
 			SSjob.handle_auto_deadmin_roles(living_mob.client, title)
 
-	to_chat(living_mob, "<b>As the [display_rank] you answer directly to [supervisors]. Special circumstances may change this.</b>")
 	radio_help_message(living_mob)
 	//WS Begin - Wikilinks
 	if(wiki_page)
