@@ -55,6 +55,10 @@
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	icon_state = "space_near"
 
+/area/ship/roumain
+	name = "Hunter's Glade"
+	icon_state = "Sleep"
+
 /datum/preset_holoimage/montagne
 	outfit_type = /datum/outfit/job/chaplain/roumain
 
