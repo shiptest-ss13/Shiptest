@@ -408,7 +408,7 @@
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/snacks/spacetwinkie{
 	desc = "Said to have been carried around by the very founder of Donk Co.";
-	name = "Blessed Twikie"
+	name = "Blessed Twinkie"
 	},
 /obj/structure/curtain/cloth/fancy,
 /obj/item/circuitboard/machine/seed_extractor,
@@ -2358,7 +2358,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/science/xenobiology)
 "GT" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	name = "Electrical"
+	},
 /obj/structure/fans/tiny,
 /obj/docking_port/mobile{
 	launch_status = 0;
