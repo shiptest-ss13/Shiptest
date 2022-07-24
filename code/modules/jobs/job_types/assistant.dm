@@ -26,6 +26,7 @@ Assistant
 
 /datum/outfit/job/assistant
 	name = "Assistant"
+	job_icon = "assistant"
 	jobtype = /datum/job/assistant
 	r_pocket = /obj/item/radio
 	belt = /obj/item/pda

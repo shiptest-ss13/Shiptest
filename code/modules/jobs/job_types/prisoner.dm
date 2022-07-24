@@ -13,6 +13,7 @@
 
 /datum/outfit/job/prisoner
 	name = "Prisoner"
+	job_icon = "prisoner"
 
 	uniform = /obj/item/clothing/under/rank/prisoner
 	alt_uniform = /obj/item/clothing/under/rank/prisoner //WS Edit - Alt Uniforms

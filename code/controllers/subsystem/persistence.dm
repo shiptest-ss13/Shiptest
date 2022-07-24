@@ -1,5 +1,3 @@
-#define FILE_ANTAG_REP "data/AntagReputation.json"
-
 SUBSYSTEM_DEF(persistence)
 	name = "Persistence"
 	init_order = INIT_ORDER_PERSISTENCE

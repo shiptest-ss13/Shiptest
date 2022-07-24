@@ -21,6 +21,7 @@
 
 /datum/outfit/job/lawyer
 	name = "Lawyer"
+	job_icon = "lawyer"
 	jobtype = /datum/job/lawyer
 
 	belt = /obj/item/pda/lawyer

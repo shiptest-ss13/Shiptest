@@ -18,6 +18,7 @@
 
 /datum/outfit/job/bartender
 	name = "Bartender"
+	job_icon = "bartender"
 	jobtype = /datum/job/bartender
 
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent

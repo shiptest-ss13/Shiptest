@@ -20,6 +20,7 @@
 
 /datum/outfit/job/cook
 	name = "Cook"
+	job_icon = "cook"
 	jobtype = /datum/job/cook
 
 	belt = /obj/item/pda/cook

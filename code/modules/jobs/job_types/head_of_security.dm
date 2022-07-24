@@ -34,6 +34,7 @@
 
 /datum/outfit/job/hos
 	name = "Head of Security"
+	job_icon = "headofsecurity"
 	jobtype = /datum/job/hos
 
 	id = /obj/item/card/id/silver

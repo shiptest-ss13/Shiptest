@@ -32,6 +32,7 @@
 
 /datum/outfit/job/ce
 	name = "Chief Engineer"
+	job_icon = "chiefengineer"
 	jobtype = /datum/job/chief_engineer
 
 	id = /obj/item/card/id/silver

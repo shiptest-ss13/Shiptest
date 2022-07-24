@@ -19,6 +19,7 @@
 
 /datum/outfit/job/miner
 	name = "Shaft Miner"
+	job_icon = "shaftminer"
 	jobtype = /datum/job/mining
 
 	belt = /obj/item/pda/shaftminer

@@ -21,6 +21,7 @@
 
 /datum/outfit/job/chemist
 	name = "Chemist"
+	job_icon = "chemist"
 	jobtype = /datum/job/chemist
 
 	glasses = /obj/item/clothing/glasses/science

@@ -18,6 +18,7 @@
 
 /datum/outfit/job/botanist
 	name = "Botanist"
+	job_icon = "botanist"
 	jobtype = /datum/job/hydro
 
 	belt = /obj/item/pda/botanist

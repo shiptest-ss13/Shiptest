@@ -117,6 +117,7 @@
 
 /datum/outfit/job/chaplain
 	name = "Chaplain"
+	job_icon = "chaplain"
 	jobtype = /datum/job/chaplain
 
 	belt = /obj/item/pda/chaplain

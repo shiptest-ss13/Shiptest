@@ -259,7 +259,6 @@
 	if(istype(agent_card))
 		var/obj/item/card/id/copied_card = picked_item
 		agent_card.uses_overlays = initial(copied_card.uses_overlays)
-		agent_card.id_type_name = initial(copied_card.id_type_name)
 		if(!agent_card.forged)
 			agent_card.registered_name = initial(copied_card.registered_name)
 			agent_card.assignment = initial(copied_card.assignment)

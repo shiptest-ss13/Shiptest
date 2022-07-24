@@ -24,6 +24,7 @@
 
 /datum/outfit/job/clown
 	name = "Clown"
+	job_icon = "clown"
 	jobtype = /datum/job/clown
 
 	belt = /obj/item/pda/clown

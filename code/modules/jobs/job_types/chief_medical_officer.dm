@@ -28,6 +28,7 @@
 
 /datum/outfit/job/cmo
 	name = "Chief Medical Officer"
+	job_icon = "chiefmedicalofficer"
 	jobtype = /datum/job/cmo
 
 	id = /obj/item/card/id/silver

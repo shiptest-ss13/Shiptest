@@ -19,6 +19,7 @@
 
 /datum/outfit/job/doctor
 	name = "Medical Doctor"
+	job_icon = "medicaldoctor"
 	jobtype = /datum/job/doctor
 
 	belt = /obj/item/pda/medical

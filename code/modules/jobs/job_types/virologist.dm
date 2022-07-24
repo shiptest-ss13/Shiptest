@@ -21,6 +21,7 @@
 
 /datum/outfit/job/virologist
 	name = "Virologist"
+	job_icon = "virologist"
 	jobtype = /datum/job/virologist
 
 	belt = /obj/item/pda/viro

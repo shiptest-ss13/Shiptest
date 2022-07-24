@@ -28,6 +28,7 @@
 
 /datum/outfit/job/captain
 	name = "Captain"
+	job_icon = "captain"
 	jobtype = /datum/job/captain
 
 	id = /obj/item/card/id/gold

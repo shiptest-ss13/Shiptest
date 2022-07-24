@@ -23,6 +23,7 @@
 
 /datum/outfit/job/mime
 	name = "Mime"
+	job_icon = "mime"
 	jobtype = /datum/job/mime
 
 	belt = /obj/item/pda/mime

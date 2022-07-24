@@ -19,6 +19,7 @@
 
 /datum/outfit/job/paramedic
 	name = "Paramedic"
+	job_icon = "paramedic"
 	jobtype = /datum/job/paramedic
 
 	ears = /obj/item/radio/headset/headset_med

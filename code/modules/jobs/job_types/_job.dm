@@ -1,6 +1,12 @@
 /datum/job
-	//The name of the job , used for preferences, bans and more. Make sure you know what you're doing before changing this.
+	///The name of the job , used for preferences, bans and more. Make sure you know what you're doing before changing this.
 	var/title = "NOPE"
+
+	///Basically determines whether or not more of the job can be opened.
+	var/officer = FALSE
+
+	///The outfit this job will recieve upon joining.
+	var/outfit = null
 
 	//Job access. The use of minimal_access or access is determined by a config setting: config.jobs_have_minimal_access
 	var/list/minimal_access = list()		//Useful for servers which prefer to only have access given to the places a job absolutely needs (Larger server population)
@@ -28,7 +34,6 @@
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
 	var/minimal_player_age = 0
 
-	var/outfit = null
 
 	var/exp_requirements = 0
 
@@ -49,8 +54,6 @@
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
 
-	///Basically determines whether or not more of the job can be opened.
-	var/officer = FALSE
 
 	var/list/alt_titles = list()
 	var/senior_title
@@ -221,6 +224,9 @@
 	var/duffelbag = /obj/item/storage/backpack/duffelbag
 	var/courierbag = /obj/item/storage/backpack/messenger
 
+	///The icon this outfit's ID will have when shown on a sechud and ID cards. See [icons\mob\hud.dmi] for a list of icons. Leave null for default.
+	var/job_icon
+
 	var/alt_uniform
 
 	var/alt_suit = null
@@ -306,6 +312,7 @@
 			C.assignment = J.title
 		if(H.age)
 			C.registered_age = H.age
+		C.job_icon = job_icon
 		C.update_label()
 		for(var/A in SSeconomy.bank_accounts)
 			var/datum/bank_account/B = A

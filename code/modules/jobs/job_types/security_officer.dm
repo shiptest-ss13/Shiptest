@@ -92,6 +92,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 /datum/outfit/job/security
 	name = "Security Officer"
+	job_icon = "securityofficer"
 	jobtype = /datum/job/officer
 
 	belt = /obj/item/pda/security

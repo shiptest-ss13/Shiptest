@@ -19,6 +19,7 @@
 
 /datum/outfit/job/curator
 	name = "Curator"
+	job_icon = "curator"
 	jobtype = /datum/job/curator
 
 	shoes = /obj/item/clothing/shoes/laceup

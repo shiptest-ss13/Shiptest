@@ -37,6 +37,7 @@
 
 /datum/outfit/job/head_of_personnel
 	name = "Head of Personnel"
+	job_icon = "headofpersonnel"
 	jobtype = /datum/job/head_of_personnel
 
 	id = /obj/item/card/id/silver

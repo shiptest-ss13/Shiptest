@@ -22,6 +22,7 @@
 
 /datum/outfit/job/atmos
 	name = "Atmospheric Technician"
+	job_icon = "atmospherictechnician"
 	jobtype = /datum/job/atmos
 
 	belt = /obj/item/storage/belt/utility/atmostech

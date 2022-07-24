@@ -21,6 +21,7 @@
 
 /datum/outfit/job/quartermaster
 	name = "Quartermaster"
+	job_icon = "quartermaster"
 	jobtype = /datum/job/qm
 
 	belt = /obj/item/pda/quartermaster

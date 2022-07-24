@@ -19,6 +19,7 @@
 
 /datum/outfit/job/geneticist
 	name = "Geneticist"
+	job_icon = "geneticist"
 	jobtype = /datum/job/geneticist
 
 	belt = /obj/item/pda/geneticist

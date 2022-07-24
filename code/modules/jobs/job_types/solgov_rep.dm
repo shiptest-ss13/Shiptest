@@ -27,6 +27,7 @@ SolGov Representative
 
 /datum/outfit/job/solgov
 	name = "SolGov Representative"
+	job_icon = "solgovrepresentative"
 	jobtype = /datum/job/solgov
 
 	id = /obj/item/card/id/silver

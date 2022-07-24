@@ -23,6 +23,7 @@
 
 /datum/outfit/job/engineer
 	name = "Mechanic"
+	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi

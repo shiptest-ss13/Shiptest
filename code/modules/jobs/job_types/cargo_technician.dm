@@ -19,6 +19,7 @@
 
 /datum/outfit/job/cargo_tech
 	name = "Cargo Technician"
+	job_icon = "cargotechnician"
 	jobtype = /datum/job/cargo_tech
 
 	belt = /obj/item/pda/cargo

@@ -34,6 +34,7 @@
 
 /datum/outfit/job/rd
 	name = "Research Director"
+	job_icon = "researchdirector"
 	jobtype = /datum/job/rd
 
 	id = /obj/item/card/id/silver

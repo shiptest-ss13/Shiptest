@@ -23,6 +23,7 @@
 
 /datum/outfit/job/brig_phys
 	name = "Brig Physician"
+	job_icon = "brigphysician"
 	jobtype = /datum/job/brig_phys
 
 	belt = /obj/item/pda/brig_phys

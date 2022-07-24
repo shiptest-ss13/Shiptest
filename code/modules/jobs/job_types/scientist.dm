@@ -21,6 +21,7 @@
 
 /datum/outfit/job/scientist
 	name = "Scientist"
+	job_icon = "scientist"
 	jobtype = /datum/job/scientist
 
 	belt = /obj/item/pda/toxins

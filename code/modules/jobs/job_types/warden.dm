@@ -30,6 +30,7 @@
 
 /datum/outfit/job/warden
 	name = "Warden"
+	job_icon = "warden"
 	jobtype = /datum/job/warden
 
 	belt = /obj/item/pda/warden

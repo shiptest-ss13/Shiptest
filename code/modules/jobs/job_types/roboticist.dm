@@ -19,6 +19,7 @@
 
 /datum/outfit/job/roboticist
 	name = "Roboticist"
+	job_icon = "roboticist"
 	jobtype = /datum/job/roboticist
 
 	belt = /obj/item/storage/belt/utility/full
