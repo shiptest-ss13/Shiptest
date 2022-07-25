@@ -33,7 +33,7 @@
 	var/perlin_zoom = 65
 
 ///Seeds the rust-g perlin noise with a random number.
-/datum/map_generator/jungle_generator/generate_terrain(var/list/turfs)
+/datum/map_generator/jungle_generator/generate_terrain(list/turfs)
 	. = ..()
 	var/start_time = REALTIMEOFDAY
 	var/height_seed = rand(0, 50000)
@@ -83,13 +83,3 @@
 		selected_biome.generate_turf(gen_turf)
 		CHECK_TICK
 	report_completion(start_time, "Jungle Generator")
-/turf/open/genturf
-	name = "ungenerated turf"
-	desc = "If you see this, and you're not a ghost, yell at coders"
-	icon = 'icons/turf/debug.dmi'
-	icon_state = "genturf"
-
-/area/mine/planetgeneration
-	name = "planet generation area"
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
-	map_generator = /datum/map_generator/jungle_generator

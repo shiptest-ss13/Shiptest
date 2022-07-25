@@ -29,8 +29,8 @@ SUBSYSTEM_DEF(overmap)
 	var/list/list/overmap_container
 
 /**
-  * Creates an overmap object for shuttles, triggers initialization procs for ships
-  */
+ * Creates an overmap object for shuttles, triggers initialization procs for ships
+ */
 /datum/controller/subsystem/overmap/Initialize(start_timeofday)
 	overmap_objects = list()
 	controlled_ships = list()
@@ -53,7 +53,7 @@ SUBSYSTEM_DEF(overmap)
 
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		var/datum/overmap/star/center
-		var/startype = pick(/datum/overmap/star, /datum/overmap/star/medium, /datum/overmap/star/big, /datum/overmap/star/binary)
+		var/startype = pick(subtypesof(/datum/overmap/star))
 		center = new startype(list("x" = size / 2, "y" = size / 2))
 		radius_positions = list()
 		for(var/x in 1 to size)
@@ -108,8 +108,8 @@ SUBSYSTEM_DEF(overmap)
 		user.client.debug_variables(target)
 
 /**
-  * The proc that creates all the objects on the overmap, split into seperate procs for redundancy.
-  */
+ * The proc that creates all the objects on the overmap, split into seperate procs for redundancy.
+ */
 /datum/controller/subsystem/overmap/proc/create_map()
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		spawn_events_in_orbits()
@@ -118,11 +118,12 @@ SUBSYSTEM_DEF(overmap)
 		spawn_events()
 		spawn_ruin_levels()
 
+	spawn_outpost()
 	spawn_initial_ships()
 
 /**
-  * VERY Simple random generation for overmap events, spawns the event in a random turf and sometimes spreads it out similar to ores
-  */
+ * VERY Simple random generation for overmap events, spawns the event in a random turf and sometimes spreads it out similar to ores
+ */
 /datum/controller/subsystem/overmap/proc/spawn_events()
 	var/max_clusters = CONFIG_GET(number/max_overmap_event_clusters)
 	for(var/i in 1 to max_clusters)
@@ -156,8 +157,8 @@ SUBSYSTEM_DEF(overmap)
 			new event_type(position)
 
 /**
-  * See [/datum/controller/subsystem/overmap/proc/spawn_events], spawns "veins" (like ores) of events
-  */
+ * See [/datum/controller/subsystem/overmap/proc/spawn_events], spawns "veins" (like ores) of events
+ */
 /datum/controller/subsystem/overmap/proc/spawn_event_cluster(datum/overmap/event/type, list/location, chance)
 	if(CONFIG_GET(number/max_overmap_events) <= LAZYLEN(events))
 		return
@@ -170,6 +171,14 @@ SUBSYSTEM_DEF(overmap)
 			if(locate(/datum/overmap) in SSovermap.overmap_container[location["x"]][location["y"]])
 				continue
 			spawn_event_cluster(type, location, chance / 2)
+
+/**
+ * Creates a single outpost somewhere near the center of the system.
+ */
+/datum/controller/subsystem/overmap/proc/spawn_outpost()
+	var/list/S = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
+	new /datum/overmap/outpost(S)
+	return
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
 #ifndef UNIT_TESTS
@@ -185,8 +194,8 @@ SUBSYSTEM_DEF(overmap)
 #endif
 
 /**
-  * Creates an overmap object for each ruin level, making them accessible.
-  */
+ * Creates an overmap object for each ruin level, making them accessible.
+ */
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
 	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
 		new /datum/overmap/dynamic()
@@ -196,17 +205,18 @@ SUBSYSTEM_DEF(overmap)
 		new /datum/overmap/dynamic()
 
 /**
-  * Reserves a square dynamic encounter area, and spawns a ruin in it if one is supplied.
-  * * on_planet - If the encounter should be on a generated planet. Required, as it will be otherwise inaccessible.
-  * * target - The ruin to spawn, if any
-  * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
-  */
+ * Reserves a square dynamic encounter area, and spawns a ruin in it if one is supplied.
+ * * on_planet - If the encounter should be on a generated planet. Required, as it will be otherwise inaccessible.
+ * * target - The ruin to spawn, if any
+ * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
+ */
 /datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
 	log_shuttle("SSOVERMAP: SPAWNING DYNAMIC ENCOUNTER STARTED")
 	var/list/ruin_list
 	var/datum/map_generator/mapgen
 	var/area/target_area
 	var/turf/surface = /turf/open/space
+	var/datum/weather_controller/weather_controller_type
 	if(planet_type)
 		switch(planet_type)
 			if(DYNAMIC_WORLD_LAVA)
@@ -214,21 +224,25 @@ SUBSYSTEM_DEF(overmap)
 				mapgen = new /datum/map_generator/cave_generator/lavaland
 				target_area = /area/overmap_encounter/planetoid/lava
 				surface = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
+				weather_controller_type = /datum/weather_controller/lavaland
 			if(DYNAMIC_WORLD_ICE)
 				ruin_list = SSmapping.ice_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/icemoon
 				target_area = /area/overmap_encounter/planetoid/ice
 				surface = /turf/open/floor/plating/asteroid/snow/icemoon
+				weather_controller_type = /datum/weather_controller/snow_planet
 			if(DYNAMIC_WORLD_SAND)
 				ruin_list = SSmapping.sand_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/whitesands
 				target_area = /area/overmap_encounter/planetoid/sand
 				surface = /turf/open/floor/plating/asteroid/whitesands
+				weather_controller_type = /datum/weather_controller/desert
 			if(DYNAMIC_WORLD_JUNGLE)
 				ruin_list = SSmapping.jungle_ruins_templates
 				mapgen = new /datum/map_generator/jungle_generator
 				target_area = /area/overmap_encounter/planetoid/jungle
 				surface = /turf/open/floor/plating/dirt/jungle
+				weather_controller_type = /datum/weather_controller/lush
 			if(DYNAMIC_WORLD_ASTEROID)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
@@ -237,6 +251,7 @@ SUBSYSTEM_DEF(overmap)
 				mapgen = new /datum/map_generator/cave_generator/rockplanet
 				target_area = /area/overmap_encounter/planetoid/rockplanet
 				surface = /turf/open/floor/plating/asteroid
+				weather_controller_type = /datum/weather_controller/chlorine //let's go??
 			if(DYNAMIC_WORLD_REEBE)
 				ruin_list = SSmapping.yellow_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/reebe
@@ -277,10 +292,13 @@ SUBSYSTEM_DEF(overmap)
 		mapgen.generate_terrain(vlevel.get_unreserved_block())
 		log_shuttle("SSOVERMAP: START_DYN_E: MAPGEN REF [REF(mapgen)] RETURNED FOR VLEV [vlevel.id] OF TYPE [mapgen.type]. IT MAY NOT BE FINISHED YET.")
 
+	if(weather_controller_type)
+		new weather_controller_type(mapzone)
+
 	// locates the first dock in the bottom left, accounting for padding and the border
 	var/turf/primary_docking_turf = locate(
-		vlevel.low_x+RESERVE_DOCK_DEFAULT_PADDING+1 + vlevel.reserved_margin,
-		vlevel.low_y+RESERVE_DOCK_DEFAULT_PADDING+1 + vlevel.reserved_margin,
+		vlevel.low_x+RESERVE_DOCK_DEFAULT_PADDING + vlevel.reserved_margin,
+		vlevel.low_y+RESERVE_DOCK_DEFAULT_PADDING + vlevel.reserved_margin,
 		vlevel.z_value
 		)
 	// now we need to offset to account for the first dock
@@ -314,14 +332,14 @@ SUBSYSTEM_DEF(overmap)
 		// no ruin, so we can make more docks upward
 		var/turf/tertiary_docking_turf = locate(
 			primary_docking_turf.x,
-			primary_docking_turf.y+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING,
+			primary_docking_turf.y+RESERVE_DOCK_MAX_SIZE_SHORT+RESERVE_DOCK_DEFAULT_PADDING,
 			primary_docking_turf.z
 			)
 		// rinse and repeat
 		var/turf/quaternary_docking_turf = locate(
-			primary_docking_turf.x+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING,
-			primary_docking_turf.y+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING,
-			primary_docking_turf.z
+			secondary_docking_turf.x,
+			secondary_docking_turf.y+RESERVE_DOCK_MAX_SIZE_SHORT+RESERVE_DOCK_DEFAULT_PADDING,
+			secondary_docking_turf.z
 			)
 
 		var/obj/docking_port/stationary/tertiary_dock = new(tertiary_docking_turf)
@@ -345,10 +363,10 @@ SUBSYSTEM_DEF(overmap)
 	return list(mapzone, docking_ports)
 
 /**
-  * Returns a random, usually empty turf in the overmap
-  * * thing_to_not_have - The thing you don't want to be in the found tile, for example, an overmap event [/datum/overmap/event].
-  * * tries - How many attempts it will try before giving up finding an unused tile.
-  */
+ * Returns a random, usually empty turf in the overmap
+ * * thing_to_not_have - The thing you don't want to be in the found tile, for example, an overmap event [/datum/overmap/event].
+ * * tries - How many attempts it will try before giving up finding an unused tile.
+ */
 /datum/controller/subsystem/overmap/proc/get_unused_overmap_square(thing_to_not_have = /datum/overmap, tries = MAX_OVERMAP_PLACEMENT_ATTEMPTS, force = FALSE)
 	for(var/i in 1 to tries)
 		. = list("x" = rand(1, size), "y" = rand(1, size))
@@ -360,11 +378,11 @@ SUBSYSTEM_DEF(overmap)
 		. = null
 
 /**
-  * Returns a random turf in a radius from the star, or a random empty turf if OVERMAP_GENERATOR_RANDOM is the active generator.
-  * * thing_to_not_have - The thing you don't want to be in the found tile, for example, an overmap event [/datum/overmap/event].
-  * * tries - How many attempts it will try before giving up finding an unused tile..
-  * * radius - The distance from the star to search for an empty tile.
-  */
+ * Returns a random turf in a radius from the star, or a random empty turf if OVERMAP_GENERATOR_RANDOM is the active generator.
+ * * thing_to_not_have - The thing you don't want to be in the found tile, for example, an overmap event [/datum/overmap/event].
+ * * tries - How many attempts it will try before giving up finding an unused tile..
+ * * radius - The distance from the star to search for an empty tile.
+ */
 /datum/controller/subsystem/overmap/proc/get_unused_overmap_square_in_radius(radius, thing_to_not_have = /datum/overmap, tries = MAX_OVERMAP_PLACEMENT_ATTEMPTS, force = FALSE)
 	if(!radius)
 		radius = "[rand(3, length(radius_positions) / 2)]"
@@ -381,9 +399,9 @@ SUBSYSTEM_DEF(overmap)
 		. = null
 
 /**
-  * Gets the parent overmap object (e.g. the planet the atom is on) for a given atom.
-  * * source - The object you want to get the corresponding parent overmap object for.
-  */
+ * Gets the parent overmap object (e.g. the planet the atom is on) for a given atom.
+ * * source - The object you want to get the corresponding parent overmap object for.
+ */
 /datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source)
 	for(var/O in overmap_objects)
 		if(istype(O, /datum/overmap/dynamic))

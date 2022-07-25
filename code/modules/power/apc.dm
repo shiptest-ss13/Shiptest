@@ -895,7 +895,7 @@
 		"chargingStatus" = charging,
 		"totalLoad" = DisplayPower(lastused_total),
 		"coverLocked" = coverlocked,
-		"siliconUser" = user.has_unlimited_silicon_privilege || user.using_power_flow_console(),
+		"siliconUser" = ( user.has_unlimited_silicon_privilege && check_ship_ai_access( user ) ) || user.using_power_flow_console(),
 		"malfStatus" = get_malf_status(user),
 		"malfMaskHackStatus" = malfhackhide,
 		"emergencyLights" = !emergency_lights,
@@ -973,6 +973,7 @@
 		var/mob/living/silicon/robot/robot = user
 		if (																				 \
 			src.aidisabled ||														  \
+			!check_ship_ai_access( user ) || \
 			malfhack && istype(malfai) &&										  \
 			(																				\
 				(istype(AI) && (malfai!=AI && malfai != AI.parent)) ||	\

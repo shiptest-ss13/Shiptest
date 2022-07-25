@@ -4,6 +4,8 @@
 #define CONSTRUCTION_GUTTED 3 //Wires are removed, circuit ready to remove
 #define CONSTRUCTION_NOCIRCUIT 4 //Circuit board removed, can safely weld apart
 
+/datum/var/__auxtools_weakref_id
+
 /obj/machinery/door/firedoor
 	name = "firelock"
 	desc = "Apply crowbar."
@@ -33,6 +35,7 @@
 
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()
+	air_update_turf(1)
 	CalculateAffectingAreas()
 
 /obj/machinery/door/firedoor/examine(mob/user)
@@ -68,14 +71,24 @@
 
 /obj/machinery/door/firedoor/Destroy()
 	remove_from_areas()
+	air_update_turf(1)
 	affecting_areas.Cut()
 	return ..()
 
 /obj/machinery/door/firedoor/Bumped(atom/movable/AM)
 	if(panel_open || operating || welded || (machine_stat & NOPOWER))
 		return
-	if(!density)
-		return ..()
+	if(ismob(AM))
+		var/mob/user = AM
+		if(allow_hand_open(user))
+			add_fingerprint(user)
+			open()
+			return TRUE
+	if(ismecha(AM))
+		var/obj/mecha/M = AM
+		if(M.occupant && allow_hand_open(M.occupant))
+			open()
+			return TRUE
 	return FALSE
 
 
@@ -88,6 +101,10 @@
 	if(.)
 		return
 	if(!welded && !operating && !(machine_stat & NOPOWER) && (!density || allow_hand_open(user)))
+		user.visible_message("[user] tries to open \the [src] manually.",
+								"You operate the manual lever on \the [src].")
+		if (!do_after(user, 30, TRUE, src))
+			return FALSE
 		add_fingerprint(user)
 		if(density)
 			emergency_close_timer = world.time + 30 // prevent it from instaclosing again if in space
@@ -278,11 +295,10 @@
 				T.ImmediateCalculateAdjacentTurfs()
 
 /obj/machinery/door/firedoor/proc/emergency_pressure_stop(consider_timer = TRUE)
-	set waitfor = 0
 	if(density || operating || welded)
 		return
 	if(world.time >= emergency_close_timer || !consider_timer)
-		close()
+		emergency_pressure_close()
 
 /obj/machinery/door/firedoor/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -404,6 +420,44 @@
 		return !density
 	else
 		return TRUE
+
+/obj/machinery/door/firedoor/proc/emergency_pressure_close()
+	SHOULD_NOT_SLEEP(TRUE)
+
+	if(density)
+		return
+	if(operating || welded)
+		return
+	density = TRUE
+	air_update_turf(1)
+	do_animate("closing")
+	update_freelook_sight()
+	if(!(flags_1 & ON_BORDER_1))
+		crush()
+	addtimer(CALLBACK(src, /atom/.proc/update_icon), 5)
+
+/obj/machinery/door/firedoor/border_only/emergency_pressure_close()
+	if(density)
+		return TRUE
+	if(operating || welded)
+		return
+	var/turf/T1 = get_turf(src)
+	var/turf/T2 = get_step(T1, dir)
+	for(var/mob/living/M in T1)
+		if(M.stat == CONSCIOUS && M.pulling && M.pulling.loc == T2 && !M.pulling.anchored && M.pulling.move_resist <= M.move_force)
+			var/mob/living/M2 = M.pulling
+			if(!istype(M2) || !M2.buckled || !M2.buckled.buckle_prevents_pull)
+				to_chat(M, "<span class='notice'>You pull [M.pulling] through [src] right as it closes.</span>")
+				M.pulling.forceMove(T1)
+				INVOKE_ASYNC(M, /atom/movable/.proc/start_pulling)
+	for(var/mob/living/M in T2)
+		if(M.stat == CONSCIOUS && M.pulling && M.pulling.loc == T1 && !M.pulling.anchored && M.pulling.move_resist <= M.move_force)
+			var/mob/living/M2 = M.pulling
+			if(!istype(M2) || !M2.buckled || !M2.buckled.buckle_prevents_pull)
+				to_chat(M, "<span class='notice'>You pull [M.pulling] through [src] right as it closes.</span>")
+				M.pulling.forceMove(T2)
+				INVOKE_ASYNC(M, /atom/movable/.proc/start_pulling)
+	return ..()
 
 /obj/machinery/door/firedoor/heavy
 	name = "heavy firelock"
@@ -720,6 +774,7 @@
 
 /obj/structure/firelock_frame/window/update_icon()
 	return
+
 
 #undef CONSTRUCTION_COMPLETE
 #undef CONSTRUCTION_PANEL_OPEN

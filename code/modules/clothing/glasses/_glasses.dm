@@ -59,7 +59,7 @@
 /obj/item/clothing/glasses/meson
 	name = "optical meson scanner"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting conditions."
-	icon_state = "meson"
+	icon_state = "mesongoggles"
 	item_state = "meson"
 	darkness_view = 2
 	vision_flags = SEE_TURFS
@@ -95,7 +95,7 @@
 /obj/item/clothing/glasses/science
 	name = "science goggles"
 	desc = "A pair of snazzy goggles used to protect against chemical spills. Fitted with an analyzer for scanning items and reagents."
-	icon_state = "purple"
+	icon_state = "scigoggles"
 	item_state = "glasses"
 	clothing_flags = SCAN_REAGENTS //You can see reagents while wearing science goggles
 	actions_types = list(/datum/action/item_action/toggle_research_scanner)
@@ -143,7 +143,7 @@
 /obj/item/clothing/glasses/material
 	name = "optical material scanner"
 	desc = "Very confusing glasses."
-	icon_state = "material"
+	icon_state = "materialgoggles"
 	item_state = "glasses"
 	vision_flags = SEE_OBJS
 	glass_colour_type = /datum/client_colour/glass_colour/lightblue
@@ -151,8 +151,6 @@
 /obj/item/clothing/glasses/material/mining
 	name = "optical material scanner"
 	desc = "Used by miners to detect ores deep within the rock."
-	icon_state = "material"
-	item_state = "glasses"
 	darkness_view = 0
 
 /obj/item/clothing/glasses/material/mining/gar
@@ -356,7 +354,7 @@
 /obj/item/clothing/glasses/thermal
 	name = "optical thermal scanner"
 	desc = "Thermals in the shape of glasses."
-	icon_state = "thermal"
+	icon_state = "thermalgoggles"
 	item_state = "glasses"
 	vision_flags = SEE_MOBS
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE

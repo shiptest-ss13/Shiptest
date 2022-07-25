@@ -63,6 +63,7 @@
 	growthstages = 3
 	growing_icon = 'icons/obj/hydroponics/growing.dmi'
 	icon_dead = "cotton-dead"
+	research = PLANT_RESEARCH_TIER_3
 
 /obj/item/grown/cotton/durathread
 	seed = /obj/item/seeds/cotton/durathread

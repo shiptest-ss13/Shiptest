@@ -98,6 +98,11 @@ Assistant
 
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 
+/datum/outfit/job/assistant/inteq
+	name = "IRMG Recruit (Inteq)"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq
+
 /datum/outfit/job/assistant/intern
 	name = "Assistant (Intern)"
 	uniform = /obj/item/clothing/under/suit/black
@@ -153,6 +158,13 @@ Assistant
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = /obj/item/clothing/under/syndicate
 
+/datum/outfit/job/assistant/independent/crewmatefancy
+	name = "Crewmate (Independent)"
+
+	uniform = /obj/item/clothing/under/misc/assistantformal
+	shoes = /obj/item/clothing/shoes/laceup
+	gloves = /obj/item/clothing/gloves/color/white
+
 /datum/outfit/job/assistant/ex_prisoner
 	name = "Assistant (Ex-Prisoner)"
 
@@ -168,3 +180,27 @@ Assistant
 	shoes = /obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/headset_srv
 	gloves = /obj/item/clothing/gloves/color/white
+
+/datum/outfit/job/assistant/artist
+	name = "Assistant (Artist)"
+
+	uniform = /obj/item/clothing/under/suit/burgundy
+	suit = /obj/item/clothing/suit/toggle/suspenders
+	head = /obj/item/clothing/head/beret/black
+	shoes = /obj/item/clothing/shoes/laceup
+	gloves = /obj/item/clothing/gloves/color/white
+	accessory = /obj/item/clothing/neck/scarf/darkblue
+
+/datum/outfit/job/assistant/waiter/syndicate
+	name = "Assistant (Syndicate Waiter)"
+	uniform = /obj/item/clothing/under/suit/waiter/syndicate
+
+/datum/outfit/job/assistant/roumain
+	name = "Shadow (Saint-Roumain Militia)"
+
+	uniform = /obj/item/clothing/under/suit/roumain
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/armor/roumain/shadow
+
+	head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
