@@ -87,16 +87,12 @@
 
 
 /turf/closed/indestructible/riveted
-	icon = 'icons/turf/walls/wood_wall_any.dmi'
-	icon_state = "wood_wall-0"
-	base_icon_state = "wood_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_OBJ | SMOOTH_CONNECTORS
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_WINDOW_FULLTILE)
-
-	connector_icon = 'icons/Testing/connector.dmi'
-	no_connector_typecache = list(/turf/closed/indestructible/riveted, /obj/structure/falsewall/wood)
-	connector_strict_typing = TRUE
+	icon = 'icons/turf/walls/riveted.dmi'
+	icon_state = "riveted-0"
+	base_icon_state = "riveted"
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
 
 /turf/closed/indestructible/riveted/supermatter
 	name = "wall"
