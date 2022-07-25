@@ -118,8 +118,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/reagent_tag = PROCESS_ORGANIC
 	///Does this mob have special gibs?
 	var/species_gibs = "human"
-	///Can this species use numbers in its name?
-	var/allow_numbers_in_name
 
 	///Does this species have a special set of overlay clothing, and if so, what is the name of the folder under .../clothing/species that contains them?
 	var/species_clothing_path
@@ -205,6 +203,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///Bitflag that controls what in game ways something can select this species as a spawnable source, such as magic mirrors. See [mob defines][code/_DEFINES/mobs.dm] for possible sources.
 	var/changesource_flags = NONE
 	var/loreblurb = "Description not provided. Yell at a coder. Also, please look into cooking fajitas. That stuff is amazing."
+
+	// Does this species have unique robotic limbs? (currently used in: kepori and vox)
+	var/unique_prosthesis = FALSE
 
 	//K-Limbs. If a species doesn't have their own limb types. Do not override this, use the K-Limbs overrides at the top of the species datum.
 	var/obj/item/bodypart/species_chest = /obj/item/bodypart/chest
