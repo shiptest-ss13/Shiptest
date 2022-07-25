@@ -171,7 +171,7 @@
 	icon_state = "furnace"
 	density = TRUE
 	needs_item_input = TRUE
-	var/obj/machinery/mineral/CONSOLE = null
+	var/obj/machinery/mineral/processing_unit_console/CONSOLE = null
 	var/on = FALSE
 	var/datum/material/selected_material = null
 	var/selected_alloy = null
