@@ -909,7 +909,7 @@
 "mn" = (
 /obj/machinery/light,
 /obj/effect/turf_decal/corner/white/mono,
-/obj/effect/turf_decal/corner/green/half{
+/obj/effect/turf_decal/corner/opaque/green/half{
 	dir = 4
 	},
 /obj/item/kirbyplants/random,
@@ -990,7 +990,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/borderfloor,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
 	},
 /obj/structure/window/reinforced{
@@ -1231,7 +1231,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/borderfloor,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
 	},
 /obj/structure/window/reinforced{
@@ -2650,10 +2650,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "DD" = (
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
 	},
-/obj/effect/turf_decal/corner/green/full,
+/obj/effect/turf_decal/corner/opaque/green/full,
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/toxin,
@@ -2704,7 +2704,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/white/mono,
-/obj/effect/turf_decal/corner/green/full,
+/obj/effect/turf_decal/corner/opaque/green/full,
 /obj/machinery/navbeacon{
 	codes_txt = "patrol;next_patrol=brigcells";
 	location = "med"
@@ -2714,7 +2714,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ef" = (
-/obj/effect/turf_decal/corner/green/full,
+/obj/effect/turf_decal/corner/opaque/green/full,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3290,7 +3290,7 @@
 /obj/machinery/navbeacon/wayfinding/med{
 	name = "navigation beacon"
 	},
-/obj/effect/turf_decal/corner/green/full,
+/obj/effect/turf_decal/corner/opaque/green/full,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
@@ -4186,7 +4186,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/white/mono,
-/obj/effect/turf_decal/corner/green/half{
+/obj/effect/turf_decal/corner/opaque/green/half{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/tracks{
