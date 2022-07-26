@@ -46,3 +46,9 @@
 	name = "Protolathe (Basic)"
 	allowed_department_flags = DEPARTMENTAL_FLAG_BASIC
 	department_tag = "General"
+
+/obj/machinery/rnd/production/protolathe/department/ballistics
+	name = "Protolathe (Ballistics)"
+	allowed_department_flags = DEPARTMENTAL_FLAG_BALLISTICS
+	department_tag = "Ballistics"
+	circuit = /obj/item/circuitboard/machine/protolathe/department/ballistics

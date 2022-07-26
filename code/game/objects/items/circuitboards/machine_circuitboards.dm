@@ -1104,6 +1104,11 @@
 	icon_state = "security"
 	build_path = /obj/machinery/rnd/production/protolathe/department/security
 
+/obj/item/circuitboard/machine/protolathe/department/ballistics
+	name = "Protolathe (Machine Board) - Ballistics"
+	icon_state = "security"
+	build_path = /obj/machinery/rnd/production/protolathe/department/ballistics
+
 /obj/item/circuitboard/machine/recharger
 	name = "Weapon Recharger (Machine Board)"
 	icon_state = "security"
