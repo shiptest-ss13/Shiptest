@@ -565,7 +565,7 @@
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 6
 	},
-/obj/effect/turf_decal/trimline/blue/corner,
+/obj/effect/turf_decal/trimline/opaque/blue/corner,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "hf" = (
@@ -872,7 +872,7 @@
 	dir = 8;
 	name = "Oxygen to Chamber"
 	},
-/obj/effect/turf_decal/trimline/blue/arrow_cw,
+/obj/effect/turf_decal/trimline/opaque/blue/arrow_cw,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "kd" = (
@@ -1082,7 +1082,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/blue/line{
+/obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1474,7 +1474,7 @@
 	pixel_y = -25
 	},
 /obj/effect/turf_decal/trimline/purple/arrow_cw,
-/obj/effect/turf_decal/trimline/blue/arrow_ccw{
+/obj/effect/turf_decal/trimline/opaque/blue/arrow_ccw{
 	dir = 1
 	},
 /turf/open/floor/engine,
@@ -1656,7 +1656,7 @@
 /obj/item/paper/crumpled{
 	info = "A mix of 67/33 ratio of oxygen (node 1) and plasma (node 2) works very well, even at 500 kPa."
 	},
-/obj/effect/turf_decal/trimline/blue/line{
+/obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/purple/corner{
@@ -2038,7 +2038,7 @@
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/blue/line,
+/obj/effect/turf_decal/trimline/opaque/blue/line,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "CV" = (
@@ -2279,7 +2279,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
-/obj/effect/turf_decal/trimline/blue/line{
+/obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 6
 	},
 /turf/open/floor/plating,
@@ -3108,7 +3108,7 @@
 	dir = 4;
 	sensors = list("nemo_incinerator_sensor" = "Incinerator Chamber")
 	},
-/obj/effect/turf_decal/trimline/blue/line{
+/obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 6
 	},
 /turf/open/floor/plating,
