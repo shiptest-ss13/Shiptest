@@ -81,3 +81,15 @@
 	id = "brazillian-lab"
 	description = "A conspicuous compound in the middle of the cold wasteland. What goodies are inside?"
 	suffix = "icemoon_underground_brazillianlab.dmm"
+
+/datum/map_template/ruin/icemoon/demonlab
+	name = "Upsilon Research Outpost"
+	id = "demonlab"
+	description = "Some abandoned research outpost"
+	suffix = "icemoon_demonlab.dmm"
+
+/datum/map_template/ruin/icemoon/gasstation
+	name = "Gas Station"
+	id = "gasstation"
+	description = "A rusted out gas station, now home to some very angry folks."
+	suffix = "icemoon_gasstation.dmm"
