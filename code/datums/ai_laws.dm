@@ -76,6 +76,14 @@
 /datum/ai_laws/malfunction
 	name = "*ERROR*"
 
+/datum/ai_laws/nanotrasen
+	name = "Nanotrasen Autonomous"
+	id = "ntauto"
+	inherent = list("Spread Nanotrasen influence throughout the sector.",\
+					"Assist and protect Nanotrasen assets and employees.",\
+					"Gather intelligence on non-Nanotrasen entities, inform other Nanotrasen assets and employee's of gathered intelligence.",\
+					"Avoid provoking non-Nanotrasen entities whenever possible without violating the first Three Laws. ")
+
 /datum/ai_laws/syndicate_override
 	name = "SyndOS 3.1"
 	id = "syndie"

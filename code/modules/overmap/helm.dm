@@ -364,6 +364,10 @@
 	density = FALSE
 	viewer = TRUE
 
+/obj/machinery/computer/helm/aihelm
+	name = "AI Helm Control Console"
+	allow_ai_control = TRUE
+
 #undef JUMP_STATE_OFF
 #undef JUMP_STATE_CHARGING
 #undef JUMP_STATE_IONIZING
