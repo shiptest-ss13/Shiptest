@@ -234,6 +234,9 @@ SUBSYSTEM_DEF(persistence)
 	if(fexists(json_file))
 		json = json_decode(file2text(json_file))
 
+	if(!GLOB.chemical_reactions_list)
+		build_chemical_reactions_list()
+
 	for(var/randomized_type in subtypesof(/datum/chemical_reaction/randomized))
 		var/datum/chemical_reaction/randomized/R = new randomized_type
 		var/loaded = FALSE

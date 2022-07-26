@@ -84,7 +84,7 @@
 /datum/emote/proc/check_cooldown(mob/user, intentional)
 	if(!intentional)
 		return TRUE
-	if(user.emotes_used && user.emotes_used[src] + cooldown > world.time)
+	if(user.emotes_used && user.emotes_used[src] && user.emotes_used[src] + cooldown > world.time)
 		return FALSE
 	if(!user.emotes_used)
 		user.emotes_used = list()
