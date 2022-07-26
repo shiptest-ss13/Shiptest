@@ -2183,7 +2183,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(H.stat || H.body_position == LYING_DOWN)
 		return FALSE
 	if(ismoth(H) && H.dna.features["moth_wings"] == "Burnt Off") //this is so tragic can we get an "F" in the chat
-		to_chat(H, "<span>Your crispy wings won't work anymore!</span>")
+		to_chat(H, "Your crispy wings won't work anymore!")
 		return FALSE
 	if(H.wear_suit && ((H.wear_suit.flags_inv & HIDEJUMPSUIT) && (!H.wear_suit.species_exception || !is_type_in_list(src, H.wear_suit.species_exception))))	//Jumpsuits have tail holes, so it makes sense they have wing holes too
 		to_chat(H, "<span class='warning'>Your suit blocks your wings from extending!</span>")
