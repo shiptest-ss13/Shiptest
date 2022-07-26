@@ -23,7 +23,7 @@
 /obj/machinery/atmospherics/components/unary/relief_valve/update_icon_nopipes()
 	cut_overlays()
 
-	if(!nodes[1] || !opened || !is_operational())
+	if(!nodes[1] || !opened || !is_operational)
 		icon_state = "relief_valve-e"
 		return
 
@@ -32,7 +32,7 @@
 /obj/machinery/atmospherics/components/unary/relief_valve/process_atmos()
 	..()
 
-	if(!is_operational())
+	if(!is_operational)
 		return
 
 	var/datum/gas_mixture/air_contents = airs[1]

@@ -93,7 +93,7 @@
 		container_resist_act(user)
 
 /obj/machinery/sleeper/proc/stasis_running()
-	return can_stasis && stasis_enabled && is_operational()
+	return can_stasis && stasis_enabled && is_operational
 
 /obj/machinery/sleeper/proc/chill_out(mob/living/target)
 	if(target != occupant || !can_stasis)
@@ -148,7 +148,7 @@
 	. = ..()
 	if (. & EMP_PROTECT_SELF)
 		return
-	if(is_operational() && occupant)
+	if(is_operational && occupant)
 		open_machine()
 
 
@@ -318,7 +318,7 @@
 		if("inject")
 			var/reagent_name = params["reagent"]
 			var/datum/reagent/chem = GLOB.name2reagent[reagent_name]
-			if(!is_operational() || !mob_occupant || isnull(chem))
+			if(!is_operational || !mob_occupant || isnull(chem))
 				return
 			if(mob_occupant.health < min_health && chem != /datum/reagent/medicine/epinephrine)
 				return
