@@ -715,8 +715,7 @@
 				to_chat(C, "<span class='notice'><i>You feel nothing but a terrible aftertaste.</i></span>")
 			return ..()
 		if(C.dna.species.has_innate_wings)
-			to_chat(C, "<span class='userdanger'>A terrible pain travels down your back as your wings change shape!</span>")
-			C.dna.features["moth_wings"] = "None"
+			to_chat(C, "<span class='userdanger'>A terrible pain travels down your back as your wings grow stronger!</span>")
 		else
 			to_chat(C, "<span class='userdanger'>A terrible pain travels down your back as wings burst out!</span>")
 		C.dna.species.GiveSpeciesFlight(C)
