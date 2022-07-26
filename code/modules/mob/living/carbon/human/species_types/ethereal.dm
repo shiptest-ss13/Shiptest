@@ -93,6 +93,7 @@
 		ethereal_light.set_light_on(FALSE)
 		fixed_mut_color = rgb(128,128,128)
 	H.update_body()
+	H.update_hair()
 
 /datum/species/ethereal/proc/health_adjusted_color(mob/living/carbon/human/H, default_color)
 	var/health_percent = max(H.health, 0) / 100
