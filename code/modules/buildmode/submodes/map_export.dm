@@ -25,11 +25,10 @@
 	to_chat(c, "<span class='notice'>***********************************************************</span>")
 
 /datum/buildmode_mode/export/handle_selected_area(client/c, params)
-	var/list/pa = params2list(params)
-	var/left_click = pa.Find("left")
+	var/list/modifiers = params2list(params)
 
 	//Ensure the selection is actually done
-	if(!left_click)
+	if(!LAZYACCESS(modifiers, LEFT_CLICK))
 		to_chat(usr, "<span class='warning'>Invalid selection.</span>")
 		return
 

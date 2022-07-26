@@ -449,19 +449,22 @@
 		if (launching) //If the launching param is true, we give the user new mouse icons.
 			holder.mouse_up_icon = 'icons/effects/mouse_pointers/supplypod_target.dmi' //Icon for when mouse is released
 			holder.mouse_down_icon = 'icons/effects/mouse_pointers/supplypod_down_target.dmi' //Icon for when mouse is pressed
-			holder.mouse_pointer_icon = holder.mouse_up_icon //Icon for idle mouse (same as icon for when released)
+			holder.mouse_override_icon = holder.mouse_up_icon //Icon for idle mouse (same as icon for when released)
+			holder.mouse_pointer_icon = holder.mouse_override_icon
 			holder.click_intercept = src //Create a click_intercept so we know where the user is clicking
 		else
 			var/mob/M = holder.mob
 			holder.mouse_up_icon = null
 			holder.mouse_down_icon = null
+			holder.mouse_override_icon = null
 			holder.click_intercept = null
 			if (M)
 				M.update_mouse_pointer() //set the moues icons to null, then call update_moues_pointer() which resets them to the correct values based on what the mob is doing (in a mech, holding a spell, etc)()
 
 /datum/centcom_podlauncher/proc/InterceptClickOn(user,params,atom/target) //Click Intercept so we know where to send pods where the user clicks
-	var/list/pa = params2list(params)
-	var/left_click = pa.Find("left")
+	var/list/modifiers = params2list(params)
+
+	var/left_click = LAZYACCESS(modifiers, LEFT_CLICK)
 	if (launcherActivated)
 		//Clicking on UI elements shouldn't launch a pod
 		if(istype(target,/atom/movable/screen))

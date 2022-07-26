@@ -633,6 +633,6 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 /obj/effect/spawner/lootdrop/whitesands/survivor/gunslinger
 	name = "Whitesands Gunslinger loot spawner"
 	loot = list(
-		/obj/item/gun/ballistic/automatic/aks74u = 0.1,
+		/obj/item/gun/ballistic/automatic/smg/aks74u = 0.1,
 		/obj/item/ammo_box/magazine/aks74u = 0.4
 	)
