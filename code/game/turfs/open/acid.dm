@@ -122,7 +122,7 @@
 				O.resistance_flags &= ~UNACIDABLE
 			if(O.armor.acid == 100) //acid proof armor will probably be acid proof
 				continue
-			O.acid_act(50, 100)
+			O.acid_act(10, 20)
 
 		else if (isliving(thing))
 			. = TRUE
