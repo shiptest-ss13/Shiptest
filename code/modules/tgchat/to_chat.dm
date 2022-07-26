@@ -85,7 +85,8 @@
 	if(!target)
 		return
 	if(!html && !text)
-		CRASH("Empty or null string in to_chat proc call.")
+		// CRASH("Empty or null string in to_chat proc call.")
+		return
 	if(target == world)
 		target = GLOB.clients
 
