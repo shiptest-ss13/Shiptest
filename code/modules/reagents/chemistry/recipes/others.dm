@@ -627,10 +627,6 @@
 	results = list(/datum/reagent/mutationtoxin/pod = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/plantnutriment/eznutriment = 10)
 
-/datum/chemical_reaction/mutationtoxin/golem
-	results = list(/datum/reagent/mutationtoxin/golem = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/liquidadamantine = 20)
-
 /datum/chemical_reaction/mutationtoxin/abductor
 	results = list(/datum/reagent/mutationtoxin/abductor = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/medicine/morphine = 10, /datum/reagent/toxin/mutetoxin = 10)
@@ -642,6 +638,10 @@
 /datum/chemical_reaction/mutationtoxin/squid
 	results = list(/datum/reagent/mutationtoxin/squid = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/water = 20)
+
+/datum/chemical_reaction/mutationtoxin/ipc
+	results = list(/datum/reagent/mutationtoxin/ipc = 1)
+	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/teslium = 20)
 
 //////////////Mutatuion toxins made out of advanced toxin/////////////
 
