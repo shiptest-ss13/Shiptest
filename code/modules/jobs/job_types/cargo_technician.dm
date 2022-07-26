@@ -76,6 +76,7 @@
 
 /datum/outfit/job/cargo_tech/donk
 	name = "Customer Associate (Donk! Co.)"
+	id = /obj/item/card/id/syndicate_command/crew_id
 	uniform = /obj/item/clothing/under/syndicate/donk
 	suit = /obj/item/clothing/suit/hazardvest/donk
 	ears = /obj/item/radio/headset/syndicate/alt
