@@ -42,6 +42,7 @@
 	if (A)
 		A.air_scrub_names -= id_tag
 		A.air_scrub_info -= id_tag
+		deallocate_nameid(A.air_scrub_ids, id_tag)
 
 	SSradio.remove_object(src,frequency)
 	radio_connection = null
@@ -115,7 +116,8 @@
 
 	var/area/A = get_area(src)
 	if(!A.air_scrub_names[id_tag])
-		name = "\improper [A.name] air scrubber #[A.air_scrub_names.len + 1]"
+		var/nameid = allocate_nameid(A.air_scrub_ids, id_tag)
+		name = "\improper [A.name] air scrubber #[nameid]"
 		A.air_scrub_names[id_tag] = name
 
 	A.air_scrub_info[id_tag] = signal.data
