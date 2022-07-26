@@ -51,3 +51,23 @@
 	name = "NTSV Retribution Starboard Launcher Two"
 	icon_state = "red"
 	always_unpowered = TRUE
+
+/area/ruin/jungle/hostel/mainbuilding
+	name = "Hostel Main Building"
+	icon_state = "yellow"
+	always_unpowered = FALSE
+
+/area/ruin/jungle/hostel/sidebuilding
+	name = "Hostel Side Building"
+	icon_state = "blue"
+	always_unpowered = FALSE
+
+/area/ruin/jungle/hostel/shed
+	name = "Shed"
+	icon_state = "green"
+	always_unpowered = FALSE
+
+/area/ruin/jungle/hostel/clearing
+	name = "Clearing"
+	icon_state = "red"
+	always_unpowered = TRUE
