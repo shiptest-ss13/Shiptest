@@ -2192,6 +2192,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(!T)
 		return FALSE
 
+	var/datum/gas_mixture/environment = T.return_air()
+	if(environment && !(environment.return_pressure() > 30))
+		to_chat(H, "<span class='warning'>The atmosphere is too thin for you to fly!</span>")
+		return FALSE
+	else
+		return TRUE
+
 /datum/species/proc/flyslip(mob/living/carbon/human/H)
 	var/obj/buckled_obj
 	if(H.buckled)
