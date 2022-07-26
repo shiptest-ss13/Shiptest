@@ -26,8 +26,11 @@
 	return TRUE
 
 /datum/surgery_step/revive
-	name = "shock body"
+	name = "shock brain"
 	implements = list(/obj/item/shockpaddles = 100, /obj/item/melee/baton = 75, /obj/item/gun/energy = 60)
+	time = 12 SECONDS
+	success_sound = 'sound/magic/lightningbolt.ogg'
+	failure_sound = 'sound/machines/defib_zap.ogg'
 	repeatable = TRUE
 	time = 120
 	experience_given = MEDICAL_SKILL_ADVANCED
@@ -58,11 +61,16 @@
 		"<span class='notice'>[user] prepares to shock [target]'s brain with [tool].</span>")
 	target.notify_ghost_cloning("Someone is trying to zap your brain. Re-enter your corpse if you want to be revived!", source = target)
 
+/datum/surgery_step/revive/play_preop_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	if(istype(tool, /obj/item/shockpaddles))
+		playsound(tool, 'sound/machines/defib_charge.ogg', 75, 0)
+	else
+		..()
+
 /datum/surgery_step/revive/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	display_results(user, target, "<span class='notice'>You successfully shock [target]'s brain with [tool]...</span>",
 		"<span class='notice'>[user] send a powerful shock to [target]'s brain with [tool]...</span>",
 		"<span class='notice'>[user] send a powerful shock to [target]'s brain with [tool]...</span>")
-	playsound(get_turf(target), 'sound/magic/lightningbolt.ogg', 50, TRUE)
 	target.adjustOxyLoss(-50, 0)
 	target.updatehealth()
 	if(target.revive(full_heal = FALSE, admin_revive = FALSE))

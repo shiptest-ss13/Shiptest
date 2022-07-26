@@ -71,6 +71,7 @@
 				var/datum/surgery/procedure = new S.type(M, selected_zone, affecting)
 				user.visible_message("<span class='notice'>[user] prepares to perform \an [procedure.name] on [M]'s [parse_zone(selected_zone)].</span>", \
 					"<span class='notice'>You prepare to perform \an [procedure.name] on [M]'s [parse_zone(selected_zone)].</span>")
+				playsound(get_turf(M), 'sound/items/handling/cloth_drop.ogg', 30, TRUE)
 
 				log_combat(user, M, "operated on", null, "(OPERATION TYPE: [procedure.name]) (TARGET AREA: [selected_zone])")
 			else
