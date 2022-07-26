@@ -84,3 +84,21 @@
 /area/ruin/powered/hydroponicslab
 	name = "Hydroponics Lab"
 	icon_state = "dk_yellow"
+
+//Icemaze ruin
+
+/area/ruin/powered/interiormaze
+	name = "Maze Interior"
+	icon_state = "dk_yellow"
+	mood_bonus = -5
+	mood_message = "<span class='boldwarning''>It's so easy to get lost in here! I better be careful.</span>\n"
+
+/area/ruin/powered/cabin
+	name = "Warm Cabin"
+	icon_state = "dk_yellow"
+	mood_bonus = 10
+	mood_message = "<span class='nicegreen''>This is a very nice cabin!</span>\n"
+
+/area/ruin/unpowered/mazefield
+	name = "Exterior Maze Field"
+	icon_state = "dk_yellow"

@@ -81,3 +81,9 @@
 	id = "brazillian-lab"
 	description = "A conspicuous compound in the middle of the cold wasteland. What goodies are inside?"
 	suffix = "icemoon_underground_brazillianlab.dmm"
+
+/datum/map_template/ruin/icemoon/maze
+	name = "Abandoned Maze"
+	id = "icemaze"
+	description = "A maze long abandoned in the frozen wastes."
+	suffix = "icemoon_surface_maze.dmm"
