@@ -950,6 +950,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.legs_list[H.dna.features["legs"]]
 				if("moth_wings")
 					S = GLOB.moth_wings_list[H.dna.features["moth_wings"]]
+				if("moth_wingsopen")
+					S = GLOB.moth_wingsopen_list[H.dna.features["moth_wings"]]
 				if("moth_fluff")
 					S = GLOB.moth_fluff_list[H.dna.features["moth_fluff"]]
 				if("moth_markings")
@@ -2135,6 +2137,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/GiveSpeciesFlight(mob/living/carbon/human/H)
 	if(flying_species) //species that already have flying traits should not work with this proc
 		return
+	if(ismoth(H) && H.dna.features["moth_wings"]) //if we have mothwings, we keep them and not grow new ones
+		if(isnull(fly))
+			fly = new
+			fly.Grant(H)
+		return
 	flying_species = TRUE
 	if(wings_icons.len > 1)
 		if(!H.client)
@@ -2175,19 +2182,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/CanFly(mob/living/carbon/human/H)
 	if(H.stat || H.body_position == LYING_DOWN)
 		return FALSE
+	if(ismoth(H) && H.dna.features["moth_wings"] == "Burnt Off") //this is so tragic can we get an "F" in the chat
+		to_chat(H, "<span>Your crispy wings won't work anymore!</span>")
+		return FALSE
 	if(H.wear_suit && ((H.wear_suit.flags_inv & HIDEJUMPSUIT) && (!H.wear_suit.species_exception || !is_type_in_list(src, H.wear_suit.species_exception))))	//Jumpsuits have tail holes, so it makes sense they have wing holes too
 		to_chat(H, "<span class='warning'>Your suit blocks your wings from extending!</span>")
 		return FALSE
 	var/turf/T = get_turf(H)
 	if(!T)
 		return FALSE
-
-	var/datum/gas_mixture/environment = T.return_air()
-	if(environment && !(environment.return_pressure() > 30))
-		to_chat(H, "<span class='warning'>The atmosphere is too thin for you to fly!</span>")
-		return FALSE
-	else
-		return TRUE
 
 /datum/species/proc/flyslip(mob/living/carbon/human/H)
 	var/obj/buckled_obj
