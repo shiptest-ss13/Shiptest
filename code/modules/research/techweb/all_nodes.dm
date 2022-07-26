@@ -509,15 +509,6 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
 	export_price = 1500
 
-/datum/techweb_node/cloning
-	id = "cloning"
-	display_name = "Full-Body Reconstitution"
-	description = "We can rebuild him, we have the technology."
-	prereq_ids = list("genetics")
-	design_ids = list("clonepod", "cloning")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
-	export_price = 7500
-
 /datum/techweb_node/cryotech
 	id = "cryotech"
 	display_name = "Cryostasis Technology"
