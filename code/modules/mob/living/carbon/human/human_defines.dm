@@ -28,6 +28,7 @@
 
 	//Eye colour
 	var/eye_color = "000"
+	var/sclera_color = "ebeae8"
 
 	var/skin_tone = "caucasian1"	//Skin tone
 
