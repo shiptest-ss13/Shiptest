@@ -255,7 +255,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/science/robotics)
 "cZ" = (
-/obj/effect/turf_decal/corner/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -280,7 +280,7 @@
 /area/ship/storage)
 "dJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /obj/structure/sign/warning/vacuum/external{
@@ -1016,7 +1016,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "np" = (
-/obj/effect/turf_decal/corner/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -1090,7 +1090,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "nW" = (
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -1408,7 +1408,7 @@
 /area/ship/bridge)
 "rA" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow,
 /obj/structure/ore_box,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -1772,7 +1772,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "uZ" = (
-/obj/effect/turf_decal/corner/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow,
 /obj/structure/ore_box,
 /obj/machinery/firealarm{
 	dir = 8;
@@ -1888,7 +1888,7 @@
 /area/ship/engineering/electrical)
 "wE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow,
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
 /turf/open/floor/plasteel/dark,
@@ -1911,10 +1911,10 @@
 /area/ship/science/robotics)
 "wS" = (
 /obj/machinery/rnd/production/techfab/department/security,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -2411,7 +2411,7 @@
 	},
 /area/ship/construction)
 "CC" = (
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /obj/structure/rack,
@@ -2548,7 +2548,7 @@
 /area/ship/construction)
 "DR" = (
 /obj/machinery/light,
-/obj/effect/turf_decal/corner/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Ej" = (
@@ -3101,7 +3101,7 @@
 /area/ship/engineering)
 "LI" = (
 /obj/machinery/autolathe,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -3474,7 +3474,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/robotics)
 "Rj" = (
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -4029,7 +4029,7 @@
 	},
 /area/ship/construction)
 "YD" = (
-/obj/effect/turf_decal/corner/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow,
 /obj/machinery/camera/autoname{
 	network = list("carrier");
 	dir = 1
