@@ -176,6 +176,30 @@
 	force = 10
 	toolspeed = 0.5
 
+//CODED BY CODY, AGE 7
+/obj/item/circular_saw/best//BESTESTWEPON
+	name = "swabw"
+//spases 4 legibilititie
+
+	icon_state = "swa"
+	icon = 'icons/obj/items_and_weapons.dmi'
+
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
+
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	desc = "Fwo hevy dute cuttinge :)))."
+
+	hitsound = 'sound/items/shitty_drill.ogg'
+	toolspeed = 100//BIIGER NUBER BERTTER
+	force = 11.2345678//see? buig numba. Lots of VALUE!!1!
+	throw_speed = 100
+
+
+
+	attack_verb = list("KILDED", "CUTTED ALL OF THE WAY IN HALF", "STOPPED LIVINGE", "MADE NOT LIFE")
+
+	custom_materials = list(/datum/material/diamond=1)
+
 /obj/item/organ_storage //allows medical cyborgs to manipulate organs without hands
 	name = "organ storage bag"
 	desc = "A container for holding body parts."

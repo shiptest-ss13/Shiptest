@@ -1930,15 +1930,19 @@
 
 /datum/supply_pack/service/hvyminer
 	name = "Heavy Mining Kit"
-	desc = "A set of supplementary premium equipment for particularly challenging frontier expeditions. Comes equipped with an enhanced mining suit, crusher, launch boots, and two emerency stimulant injectors."
-	cost = 7500
+	desc = "A set of premium equipment for particularly challenging frontier mining expeditions. Comes equipped with a variety of heavy-duty equipment for self-defense and resource extraction."
+	cost = 10000
 	access = ACCESS_QM
 	crate_name = "EXOCON Heavy Operations Kit"
 	crate_type = /obj/structure/closet/crate/secure/exo
 	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy,
-					/obj/item/clothing/shoes/bhop,
+					/obj/item/clothing/suit/space/hardsuit/mining/heavy,
 					/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis,
 					/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis,
+					/obj/item/deepcorecapsule,
+					/obj/item/deepcorecapsule,
+					/obj/item/survivalcapsule,
+					/obj/item/pinpointer/deepcore/advanced,
 					/obj/item/kinetic_crusher)
 
 /datum/supply_pack/service/noslipfloor

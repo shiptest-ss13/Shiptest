@@ -64,9 +64,12 @@
 /mob/living/simple_animal/hostile/carp/ranged/xenobiology // these are for the xenobio gold slime pool
 	gold_core_spawnable = HOSTILE_SPAWN
 	allowed_projectile_types = list(/obj/projectile/magic/animate, /obj/projectile/magic/teleport,
-	/obj/projectile/magic/door, /obj/projectile/magic/aoe/fireball, /obj/projectile/magic/spellblade, /obj/projectile/magic/arcane_barrage) //thanks Lett1
+	/obj/projectile/magic/door, /obj/projectile/magic/aoe/fireball, /obj/projectile/magic/spellblade, /obj/projectile/magic/arcane_barrage,
+	/obj/projectile/magic/spell/magic_missile, /obj/projectile/magic/aoe/lightning,  /obj/projectile/magic/locker) //thanks Lett1 /finally, we can synthesize the lockerfish
 
 /mob/living/simple_animal/hostile/carp/ranged/chaos/xenobiology
 	gold_core_spawnable = HOSTILE_SPAWN
-	allowed_projectile_types = list(/obj/projectile/magic/animate, /obj/projectile/magic/teleport,
-	/obj/projectile/magic/door, /obj/projectile/magic/aoe/fireball, /obj/projectile/magic/spellblade, /obj/projectile/magic/arcane_barrage)
+	allowed_projectile_types = list(/obj/projectile/magic/change, /obj/projectile/magic/animate, /obj/projectile/magic/resurrection,
+	/obj/projectile/magic/death, /obj/projectile/magic/teleport, /obj/projectile/magic/door, /obj/projectile/magic/aoe/fireball,
+	/obj/projectile/magic/spellblade, /obj/projectile/magic/arcane_barrage, /obj/projectile/magic/locker, /obj/projectile/magic/nothing,
+	/obj/projectile/magic/aoe/lightning, /obj/projectile/magic/necropotence, /obj/projectile/magic/fortify, /obj/projectile/magic/spell/magic_missile)//now THIS is chaos

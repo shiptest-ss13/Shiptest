@@ -2,7 +2,7 @@
 	open_turf_types = list(/turf/open/floor/plating/asteroid/basalt/lava_land_surface = 1)
 	closed_turf_types =  list(/turf/closed/mineral/random/volcanic = 1)
 
-	feature_spawn_chance = 2
+	feature_spawn_chance = 0.3
 	feature_spawn_list = list(/obj/structure/geyser/random = 2, /obj/structure/elite_tumor = 1)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50, /obj/structure/spawner/lavaland/goliath = 3, \

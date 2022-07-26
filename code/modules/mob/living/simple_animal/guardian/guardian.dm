@@ -62,6 +62,7 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	var/tech_fluff_string = "<span class='holoparasite'>BOOT SEQUENCE COMPLETE. ERROR MODULE LOADED. THIS SHOULDN'T HAPPEN. Submit a bug report!</span>"
 	var/carp_fluff_string = "<span class='holoparasite'>CARP CARP CARP SOME SORT OF HORRIFIC BUG BLAME THE CODERS CARP CARP CARP</span>"
 	var/miner_fluff_string = "<span class='holoparasite'>You encounter... Mythril, it shouldn't exist... Submit a bug report!</span>"
+	var/slime_fluff_string = "<span class='holoparasite'>The crystal grows and creaks, then glitches terribly! Tell a coder if you've seen this!</span>"
 
 /mob/living/simple_animal/hostile/guardian/Initialize(mapload, theme)
 	GLOB.parasites += src
@@ -126,6 +127,20 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 			attack_verb_simple = "bite"
 			attack_sound = 'sound/weapons/bite.ogg'
 			recolorentiresprite = TRUE
+		if("slime")
+			bubble_icon = "guardian"
+			icon_state = "slimebase"
+			icon_living = "slimebase"
+			icon_dead = "slimebase"
+			friendly_verb_continuous = "nourishes"
+			friendly_verb_simple = "nourish"
+			attack_verb_continuous = "glomps"
+			attack_verb_simple = "glomp"
+			speak_emote = list("blorbles")
+			attack_sound = 'sound/effects/blobattack.ogg'
+			desc = "A mysterious slime that stands by its charge, ever vigilant."
+			attack_sound = 'sound/weapons/bite.ogg'
+
 	if(!recolorentiresprite) //we want this to proc before stand logs in, so the overlay isnt gone for some reason
 		cooloverlay = mutable_appearance(icon, theme)
 		add_overlay(cooloverlay)
@@ -478,6 +493,8 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 						to_chat(src, "<span class='holoparasite'><font color=\"[G.guardiancolor]\"><b>[G.real_name]</b></font> has been caught!</span>")
 					if("miner")
 						to_chat(src, "<span class='holoparasite'><font color=\"[G.guardiancolor]\"><b>[G.real_name]</b></font> has appeared!</span>")
+					if("slime")
+						to_chat(src, "<span class='holoparasite'><font color=\"[G.guardiancolor]\"><b>[G.real_name]</b></font> has taken shape!</span>")
 				guardians -= G
 				if(!guardians.len)
 					remove_verb(src, /mob/living/proc/guardian_reset)
@@ -593,6 +610,9 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 		if("Gravitokinetic")
 			pickedtype = /mob/living/simple_animal/hostile/guardian/gravitokinetic
 
+		if("Slime")
+			pickedtype = /mob/living/simple_animal/hostile/guardian/slime
+
 	var/list/guardians = user.hasparasites()
 	if(guardians.len && !allowmultiple)
 		to_chat(user, "<span class='holoparasite'>You already have a [mob_name]!</span>" )
@@ -617,6 +637,9 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 		if("miner")
 			to_chat(user, "[G.miner_fluff_string]")
 			to_chat(user, "<span class='holoparasite'><b>[G.real_name]</b> has appeared!</span>")
+		if("slime")
+			to_chat(user, "[G.slime_fluff_string]")
+			to_chat(user, "<span class='holoparasite'><b>[G.real_name]</b> was created using slime science!</span>")
 	add_verb(user, list(/mob/living/proc/guardian_comm, \
 						/mob/living/proc/guardian_recall, \
 						/mob/living/proc/guardian_reset))
@@ -749,4 +772,18 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	name = "glimmering shard"
 	desc = "Seems to be a very old rock, may have originated from a strange meteor. <b>This one looks exceptionally pure.</b>"
 	possible_guardians = list("Assassin", "Chaos", "Charger", "Dextrous", "Explosive", "Lightning", "Protector", "Ranged", "Standard", "Support")
-	allowmultiple = TRUE//if you *somehow* get the extremely rare minerchoose guardian(25% chance to spawn, for an item in a table of around 30 options) while you already have a guardian, you can stack it. The ultimate gamble.
+	allowmultiple = TRUE//if you *somehow* get the extremely rare minerchoose guardian(25% chance to spawn, for an item in a table of around 30 options) while you already have a guardian, you can stack it. The ultimate gambling.
+
+/obj/item/guardiancreator/slime
+	name = "slime shard"
+	desc = "A shard of crystallized slime."
+	icon = 'icons/obj/lavaland/artefacts.dmi'
+	icon_state = "dustyshard"
+	color = "#00ff15"
+	theme = "slime"
+	mob_name = "Standing Slime"
+	use_message = "<span class='holoparasite'>You squeeze the shard inhand, and it grows warm...</span>"
+	used_message = "<span class='holoparasite'>You squeeze the shard, but nothing happens. Maybe it's been used already.</span>"
+	failure_message = "<span class='holoparasite bold'>The shard grows cold. Maybe try again later?</span>"
+	ling_failure = "<span class='holoparasite bold'>The shard seems to quiver and twist away from you.</span>"
+	possible_guardians = list("Slime")

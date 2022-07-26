@@ -75,3 +75,8 @@
 			blink.choose_targets(src)
 			next_cast = world.time + 10
 			return .
+
+/mob/living/simple_animal/hostile/wizard/planet
+	weather_immunities = list("lava","ash")
+	minbodytemp = 0
+	maxbodytemp = INFINITY
