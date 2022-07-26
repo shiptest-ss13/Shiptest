@@ -36,3 +36,14 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 
 */
+//Shiptest Outfits
+
+/datum/outfit/job/psychologist/syndicate/nsv
+	name = "Ship Psychologist"
+	id = /obj/item/card/id/syndicate_command/crew_id
+	ears = /obj/item/radio/headset/syndicate/alt
+	uniform = /obj/item/clothing/under/rank/medical/psychiatrist
+	suit = /obj/item/clothing/suit/toggle/labcoat
+	shoes = /obj/item/clothing/shoes/laceup
+	alt_uniform = null
+	l_hand = /obj/item/clipboard
