@@ -1,5 +1,7 @@
 {
 	"map_name": "Lamia-class Magery Ship",
+	"prefix": "MSV",
+	"namelists": ["BRITISH_NAVY", "BEASTS", "MAGICAL"],
 	"map_short_name": "Lamia-class",
 	"map_path": "_maps/shuttles/shiptest/lamia.dmm",
 	"map_id": "lamia",
@@ -19,7 +21,7 @@
 			"slots": 1
 		},
 		"Geomancer": {
-			"outfit": "/datum/outfit/job/miner",
+			"outfit": "/datum/outfit/job/miner/hazard",
 			"slots": 1
 		},
 		"Allomancer": {
