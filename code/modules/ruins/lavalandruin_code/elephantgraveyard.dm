@@ -32,17 +32,13 @@
 	name = "cracked earth"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "wasteland"
-	environment_type = "wasteland"
+	base_icon_state = "wasteland"
 	baseturfs = /turf/open/floor/plating/asteroid/basalt/wasteland
 	digResult = /obj/item/stack/ore/glass/basalt
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	slowdown = 0.5
 	floor_variance = 30
-
-/turf/open/floor/plating/asteroid/basalt/wasteland/Initialize(mapload, inherited_virtual_z)
-	.=..()
-	if(prob(floor_variance))
-		icon_state = "[environment_type][rand(0,6)]"
+	max_icon_states = 6
 
 /turf/closed/mineral/strong/wasteland
 	name = "ancient dry rock"

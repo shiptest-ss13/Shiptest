@@ -1,7 +1,7 @@
 /obj/item/deepcorecapsule
 	name = "deepcore drill deployment capsule"
 	desc = "A deepcore mining drill compressed into an easy-to-deploy capsule."
-	icon = 'whitesands/icons/obj/mining.dmi'
+	icon = 'icons/obj/mining.dmi'
 	icon_state = "capsule_dcm"
 	w_class = WEIGHT_CLASS_TINY
 	custom_price = 2000

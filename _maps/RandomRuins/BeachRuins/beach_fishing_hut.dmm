@@ -1,0 +1,539 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ae" = (
+/obj/structure/window/fulltile,
+/turf/open/floor/carpet/royalblack,
+/area/ruin/powered)
+"aF" = (
+/obj/structure/table/wood/fancy/purple,
+/obj/item/toy/plush/carpplushie/dehy_carp,
+/obj/item/toy/plush/carpplushie/dehy_carp,
+/obj/item/toy/plush/carpplushie/dehy_carp,
+/obj/item/grenade/spawnergrenade/spesscarp,
+/turf/open/floor/carpet/royalblack,
+/area/ruin/powered)
+"bE" = (
+/obj/structure/table/wood/fancy,
+/obj/item/reagent_containers/food/snacks/cubancarp,
+/turf/open/floor/carpet/red,
+/area/ruin/powered)
+"dd" = (
+/obj/structure/chair/wood/wings{
+	dir = 5
+	},
+/obj/item/nullrod/carp,
+/turf/open/floor/carpet/red,
+/area/ruin/powered)
+"ep" = (
+/turf/closed/wall/mineral/wood,
+/area/ruin/powered)
+"gT" = (
+/obj/structure/table/wood/fancy/purple,
+/obj/item/storage/backpack/magspear_quiver,
+/obj/item/storage/backpack/magspear_quiver,
+/turf/open/floor/carpet/royalblack,
+/area/ruin/powered)
+"hd" = (
+/obj/structure/table/wood/fancy,
+/obj/item/reagent_containers/food/snacks/burger/fish,
+/turf/open/floor/carpet/red/airless,
+/area/ruin/powered)
+"hH" = (
+/obj/structure/fence/end,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"hK" = (
+/turf/open/floor/carpet/red_gold,
+/area/ruin/powered)
+"jD" = (
+/obj/machinery/door/airlock/wood/glass,
+/turf/open/floor/carpet/royalblack,
+/area/ruin/powered)
+"mr" = (
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/pirate/melee,
+/turf/open/floor/carpet/red/airless,
+/area/ruin/powered)
+"nv" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 4
+	},
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"oE" = (
+/turf/open/floor/carpet/red,
+/area/ruin/powered)
+"pI" = (
+/mob/living/simple_animal/hostile/cat_butcherer{
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	desc = "A profession carp butcher, gone mad due to carptoxin exposure. There seems to be something in their pocket...";
+	faction = list("hostile", "beach");
+	health = 300;
+	loot = list(/obj/effect/mob_spawn/human/corpse/cat_butcher, /obj/item/guardiancreator/carp);
+	maxHealth = 300;
+	maxbodytemp = 10000;
+	melee_damage_lower = 20;
+	melee_damage_upper = 25;
+	minbodytemp = 0;
+	name = "The Butcher";
+	ranged_cooldown_time = 15;
+	ranged_message = "fires the speargun at";
+	real_name = "The Butcher";
+	unique_name = 1
+	},
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"sA" = (
+/obj/structure/table/wood/fancy/purple,
+/obj/item/pneumatic_cannon/speargun,
+/obj/item/pneumatic_cannon/speargun,
+/turf/open/floor/carpet/royalblack,
+/area/ruin/powered)
+"tV" = (
+/mob/living/simple_animal/hostile/pirate/melee,
+/turf/open/floor/carpet/red,
+/area/ruin/powered)
+"tX" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	active_power_usage = 0;
+	faction = list("turret", "beach");
+	idle_power_usage = 0;
+	reqpower = 0
+	},
+/turf/closed/wall/mineral/wood,
+/area/ruin/powered)
+"ut" = (
+/turf/open/floor/carpet/royalblack,
+/area/ruin/powered)
+"uD" = (
+/turf/open/floor/carpet/red/airless,
+/area/ruin/powered)
+"uZ" = (
+/obj/structure/table/wood/fancy,
+/obj/item/reagent_containers/food/snacks/fishandchips,
+/turf/open/floor/carpet/red,
+/area/ruin/powered)
+"vc" = (
+/obj/structure/table/wood/fancy,
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/squid,
+/turf/open/floor/carpet/red/airless,
+/area/ruin/powered)
+"vL" = (
+/obj/structure/kitchenspike,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 4
+	},
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"wH" = (
+/obj/structure/table/wood/fancy,
+/obj/item/reagent_containers/food/drinks/soda_cans/cola,
+/turf/open/floor/carpet/red,
+/area/ruin/powered)
+"Ch" = (
+/obj/structure/table/wood/fancy,
+/turf/open/floor/carpet/red,
+/area/ruin/powered)
+"Ds" = (
+/obj/structure/table/wood/fancy,
+/obj/item/storage/fancy/cigarettes/cigars/havana,
+/turf/open/floor/carpet/red/airless,
+/area/ruin/powered)
+"DM" = (
+/obj/structure/table/wood/fancy,
+/obj/item/reagent_containers/food/drinks/soda_cans/cola,
+/turf/open/floor/carpet/red/airless,
+/area/ruin/powered)
+"DO" = (
+/obj/structure/table/wood/fancy,
+/obj/item/reagent_containers/food/snacks/fishfry,
+/turf/open/floor/carpet/red/airless,
+/area/ruin/powered)
+"Em" = (
+/obj/structure/fence,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Eq" = (
+/obj/machinery/door/airlock/wood/glass,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"FG" = (
+/turf/template_noop,
+/area/template_noop)
+"FK" = (
+/obj/machinery/light/dim,
+/turf/open/floor/carpet/royalblack,
+/area/ruin/powered)
+"Iv" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Kq" = (
+/obj/machinery/light/dim,
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"KY" = (
+/obj/structure/table/wood/fancy,
+/turf/open/floor/carpet/red/airless,
+/area/ruin/powered)
+"Ly" = (
+/turf/open/floor/plasteel/stairs,
+/area/ruin/powered)
+"Mn" = (
+/obj/structure/sink,
+/turf/closed/wall/mineral/wood,
+/area/ruin/powered)
+"Ok" = (
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer/on/coldroom,
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"Os" = (
+/mob/living/simple_animal/hostile/pirate/ranged,
+/turf/open/floor/carpet/red_gold,
+/area/ruin/powered)
+"OE" = (
+/obj/structure/table/rolling,
+/obj/item/kitchen/knife/butcher,
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"PB" = (
+/obj/structure/kitchenspike,
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"Qi" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/reagent_containers/food/snacks/carpmeat,
+/obj/item/reagent_containers/food/snacks/carpmeat,
+/obj/item/reagent_containers/food/snacks/carpmeat,
+/obj/item/reagent_containers/food/snacks/carpmeat,
+/obj/item/reagent_containers/food/snacks/carpmeat,
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"QO" = (
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"Ta" = (
+/obj/structure/table/rolling,
+/obj/machinery/microwave,
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"WT" = (
+/obj/structure/fence/corner{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"Xp" = (
+/obj/structure/table/rolling,
+/obj/item/clothing/suit/space/hardsuit/carp,
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"Xt" = (
+/obj/machinery/deepfryer,
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"YJ" = (
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/carpmeat,
+/obj/item/reagent_containers/food/snacks/carpmeat,
+/obj/item/reagent_containers/food/snacks/carpmeat,
+/obj/item/reagent_containers/food/snacks/carpmeat,
+/obj/item/reagent_containers/food/snacks/carpmeat,
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+"ZG" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/junction,
+/turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
+/area/ruin/powered)
+
+(1,1,1) = {"
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+ep
+FG
+FG
+FG
+FG
+FG
+"}
+(2,1,1) = {"
+ae
+ut
+ut
+aF
+gT
+sA
+ut
+ut
+ep
+FG
+FG
+FG
+FG
+FG
+"}
+(3,1,1) = {"
+ae
+ut
+ut
+ut
+ut
+ut
+ut
+FK
+ep
+ep
+ep
+ep
+ep
+tX
+"}
+(4,1,1) = {"
+ae
+ut
+hK
+hK
+hK
+hK
+hK
+ut
+ep
+Ok
+ZG
+QO
+QO
+ep
+"}
+(5,1,1) = {"
+ae
+ut
+hK
+oE
+oE
+oE
+hK
+ut
+jD
+QO
+QO
+PB
+Kq
+ep
+"}
+(6,1,1) = {"
+ae
+ut
+hK
+oE
+mr
+uD
+hK
+ut
+jD
+QO
+QO
+nv
+QO
+ep
+"}
+(7,1,1) = {"
+ae
+ut
+hK
+uZ
+hd
+vc
+hK
+ut
+Mn
+QO
+QO
+vL
+QO
+ep
+"}
+(8,1,1) = {"
+ae
+ut
+Os
+wH
+KY
+Ds
+hK
+ut
+ep
+OE
+pI
+QO
+QO
+ep
+"}
+(9,1,1) = {"
+ae
+ut
+hK
+Ch
+KY
+DM
+hK
+FK
+ep
+Qi
+QO
+vL
+QO
+ep
+"}
+(10,1,1) = {"
+ae
+ut
+hK
+bE
+KY
+DO
+hK
+ut
+ep
+Ta
+QO
+QO
+QO
+ep
+"}
+(11,1,1) = {"
+ae
+ut
+hK
+oE
+tV
+oE
+hK
+ut
+ep
+Xp
+QO
+vL
+QO
+ep
+"}
+(12,1,1) = {"
+ae
+ut
+hK
+dd
+oE
+oE
+hK
+ut
+ep
+Xt
+QO
+nv
+Kq
+ep
+"}
+(13,1,1) = {"
+ae
+ut
+hK
+hK
+hK
+hK
+hK
+ut
+ep
+YJ
+QO
+QO
+QO
+ep
+"}
+(14,1,1) = {"
+ae
+ut
+ut
+ut
+ut
+ut
+ut
+FK
+ep
+ep
+ep
+ep
+ep
+tX
+"}
+(15,1,1) = {"
+ae
+ut
+ut
+ut
+ut
+ut
+ut
+ut
+ep
+FG
+FG
+FG
+FG
+FG
+"}
+(16,1,1) = {"
+ep
+ep
+ep
+ep
+ep
+Eq
+ep
+ep
+ep
+hH
+FG
+FG
+FG
+FG
+"}
+(17,1,1) = {"
+FG
+FG
+FG
+FG
+Iv
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+FG
+FG
+FG
+"}
+(18,1,1) = {"
+FG
+FG
+FG
+FG
+WT
+Em
+Em
+Em
+Em
+hH
+FG
+FG
+FG
+FG
+"}

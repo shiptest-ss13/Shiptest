@@ -5,7 +5,6 @@
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "riverwater_motion"
 	baseturfs = /turf/open/chasm/lavaland
-	initial_gas_mix = OPENTURF_LOW_PRESSURE
 	planetary_atmos = TRUE
 	slowdown = 1
 	bullet_sizzle = TRUE
@@ -17,7 +16,17 @@
 	heavyfootstep = FOOTSTEP_WATER
 
 /turf/open/water/jungle
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
+
+/turf/open/water/beach
+	color = COLOR_CYAN
+	light_range = 2
+	light_power = 0.80
+	light_color = LIGHT_COLOR_BLUE
+
+/turf/open/water/beach/deep
+	color = "#0099ff"
+	light_color = LIGHT_COLOR_DARK_BLUE
+

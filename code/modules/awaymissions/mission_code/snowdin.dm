@@ -605,11 +605,19 @@
 
 /obj/structure/flora/rock/icy
 	name = "icy rock"
-	color = rgb(204,233,235)
+	icon_state = "icemoonrock1"
+
+/obj/structure/flora/rock/icy/Initialize()
+	. = ..()
+	icon_state = "icemoonrock[rand(1,3)]"
 
 /obj/structure/flora/rock/pile/icy
 	name = "icey rocks"
-	color = rgb(204,233,235)
+	icon_state = "icemoonrock4"
+
+/obj/structure/flora/rock/pile/icy/Initialize()
+	. = ..()
+	icon_state = "icemoonrock4"
 
 //decals//--
 /obj/effect/turf_decal/snowdin_station_sign

@@ -432,3 +432,19 @@
 	if(istype(target,/mob/living/simple_animal/hostile/asteroid))
 		return FALSE
 	return ..()
+
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet
+	name = "gruboid"
+	desc = "A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions."
+	icon_state = "gruboid2"
+	icon_living = "gruboid2"
+	icon_aggro = "gruboid"
+	pre_attack_icon = "gruboid"
+	icon_dead = "gruboid_dead"
+	icon_gib = "syndicate_gib"
+	tentacle_type = /obj/effect/temp_visual/goliath_tentacle/rockplanet
+
+/obj/effect/temp_visual/goliath_tentacle/rockplanet
+	icon_state = "Gruboid_tentacle_wiggle"
+	wiggle = "Gruboid_tentacle_spawn"
+	retract = "Gruboid_tentacle_retract"
