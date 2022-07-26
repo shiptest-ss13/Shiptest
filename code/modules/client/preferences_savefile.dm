@@ -424,7 +424,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_kepori_tail_feathers"], features["kepori_tail_feathers"])
 	READ_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
 	READ_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
-	READ_FILE(S["alt_titles_preferences"], alt_titles_preferences)
 
 	READ_FILE(S["equipped_gear"], equipped_gear)
 	if(config) //This should *probably* always be there, but just in case.
@@ -433,21 +432,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			equipped_gear = list()
 			WRITE_FILE(S["equipped_gear"]				, equipped_gear)
 
-	alt_titles_preferences = SANITIZE_LIST(alt_titles_preferences)
-	if(SSjob)
-		for(var/datum/job/job in sortList(SSjob.occupations, /proc/cmp_job_display_asc))
-			if(alt_titles_preferences[job.title])
-				if(!((alt_titles_preferences[job.title] in job.alt_titles) || (alt_titles_preferences[job.title] == job.senior_title)))
-					alt_titles_preferences.Remove(job.title)
-
-	//WS End
-
-	if(!CONFIG_GET(flag/join_with_mutant_humans))
-		features["tail_human"] = "none"
-		features["ears"] = "none"
-	else
-		READ_FILE(S["feature_human_tail"], features["tail_human"])
-		READ_FILE(S["feature_human_ears"], features["ears"])
+	READ_FILE(S["feature_human_tail"], features["tail_human"])
+	READ_FILE(S["feature_human_ears"], features["ears"])
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
@@ -457,10 +443,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["preferred_ai_core_display"], preferred_ai_core_display)
 	READ_FILE(S["prefered_security_department"], prefered_security_department)
 
-	//Jobs
-	READ_FILE(S["joblessrole"], joblessrole)
-	//Load prefs
-	READ_FILE(S["job_preferences"], job_preferences)
+	//Preview outfit selection
+	READ_FILE(S["selected_outfit"], selected_outfit)
 
 	//Quirks
 	READ_FILE(S["all_quirks"], all_quirks)
@@ -551,12 +535,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["vox_neck_quills"] = sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
-	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
-	//Validate job prefs
-	for(var/j in job_preferences)
-		if(job_preferences[j] != JP_LOW && job_preferences[j] != JP_MEDIUM && job_preferences[j] != JP_HIGH)
-			job_preferences -= j
-
 	all_quirks = SANITIZE_LIST(all_quirks)
 
 	return TRUE
@@ -628,9 +606,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
 	WRITE_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
 
-	//Alternate job titles
-	WRITE_FILE(S["alt_titles_preferences"]		,alt_titles_preferences)
-
 	//Flavor text
 	WRITE_FILE(S["feature_flavor_text"], features["flavor_text"])
 
@@ -644,10 +619,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["preferred_ai_core_display"] ,  preferred_ai_core_display)
 	WRITE_FILE(S["prefered_security_department"] , prefered_security_department)
 
-	//Jobs
-	WRITE_FILE(S["joblessrole"]		, joblessrole)
-	//Write prefs
-	WRITE_FILE(S["job_preferences"] , job_preferences)
+	//Preview outfit selection
+	WRITE_FILE(S["selected_outfit"], selected_outfit)
 
 	//Quirks
 	WRITE_FILE(S["all_quirks"]			, all_quirks)

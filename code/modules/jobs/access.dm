@@ -432,17 +432,3 @@
 
 /proc/get_all_centcom_jobs()
 	return list("Central Command","VIP Guest","Custodian","Thunderdome Overseer","CentCom Official","Medical Officer","Research Officer","Special Ops Officer","Admiral","CentCom Commander","CentCom Bartender","Private Security Force")
-
-/obj/item/proc/GetJobName() //Used in secHUD icon generation
-	var/obj/item/card/id/I = GetID()
-	if(!I)
-		return
-	var/jobName = I.assignment
-	if(jobName in get_all_job_icons()) //Check if the job has a hud icon
-		return jobName
-	if(jobName in get_all_centcom_jobs()) //Return with the NT logo if it is a CentCom job
-		return "CentCom"
-	for(var/datum/job/J in SSjob.occupations)
-		if((jobName in J.alt_titles) || (jobName == J.senior_title) && (J.title in get_all_job_icons()))
-			return J.title
-	return "Unknown" //Return unknown if none of the above apply

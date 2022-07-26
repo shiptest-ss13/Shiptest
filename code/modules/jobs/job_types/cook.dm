@@ -1,27 +1,20 @@
 /datum/job/cook
-	title = "Cook"
-	department_head = list("Head of Personnel")
-	faction = "Station"
+	name = "Cook"
 	total_positions = 2
 	spawn_positions = 1
-	supervisors = "the head of personnel"
-	selection_color = "#bbe291"
 	wiki_page = "Food" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Culinary Artist", "Butcher", "Grillmaster")
-	senior_title = "Chef"
 	var/cooks = 0 //Counts cooks amount
 
 	outfit = /datum/outfit/job/cook
 
 	access = list(ACCESS_HYDROPONICS, ACCESS_BAR, ACCESS_KITCHEN, ACCESS_MORGUE, ACCESS_MINERAL_STOREROOM)
 	minimal_access = list(ACCESS_KITCHEN, ACCESS_MORGUE, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_COOK
 
 /datum/outfit/job/cook
 	name = "Cook"
+	job_icon = "cook"
 	jobtype = /datum/job/cook
 
 	belt = /obj/item/pda/cook

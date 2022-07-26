@@ -20,9 +20,6 @@
 		return
 	H.equipOutfit(/datum/outfit/centcom/centcom_official)
 
-	if(CONFIG_GET(flag/enforce_human_authority))
-		H.set_species(/datum/species/human)
-
 /datum/antagonist/official/create_team(datum/team/new_team)
 	if(istype(new_team))
 		ert_team = new_team

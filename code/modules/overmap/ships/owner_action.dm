@@ -104,7 +104,7 @@
 		if(J.officer)
 			continue
 		.["jobs"] += list(list(
-			name = J.title,
+			name = J.name,
 			slots = parent_ship.job_slots[J],
 			ref = REF(J),
 			def = parent_ship.source_template.job_slots[J],

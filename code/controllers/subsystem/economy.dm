@@ -1,7 +1,7 @@
 SUBSYSTEM_DEF(economy)
 	name = "Economy"
-	wait = 5 MINUTES
 	init_order = INIT_ORDER_ECONOMY
+	flags = SS_NO_FIRE
 	runlevels = RUNLEVEL_GAME
 	var/roundstart_paychecks = 5
 	var/budget_pool = 35000
@@ -48,12 +48,6 @@ SUBSYSTEM_DEF(economy)
 	for(var/A in department_accounts)
 		new /datum/bank_account/department(A, budget_to_hand_out)
 	return ..()
-
-/datum/controller/subsystem/economy/fire(resumed = 0)
-	for(var/A in bank_accounts)
-		var/datum/bank_account/B = A
-		B.payday(1)
-
 
 /datum/controller/subsystem/economy/proc/get_dep_account(dep_id)
 	for(var/datum/bank_account/department/D in generated_accounts)

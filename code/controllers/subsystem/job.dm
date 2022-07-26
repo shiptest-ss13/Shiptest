@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(job)
 		SetupOccupations()
 	return ..()
 
-/datum/controller/subsystem/job/proc/SetupOccupations(faction = "Station")
+/datum/controller/subsystem/job/proc/SetupOccupations()
 	occupations = list()
 	var/list/all_jobs = subtypesof(/datum/job)
 	if(!all_jobs.len)
@@ -26,15 +26,8 @@ SUBSYSTEM_DEF(job)
 		var/datum/job/job = new J()
 		if(!job)
 			continue
-		if(job.faction != faction)
-			continue
-		if(!job.config_check())
-			continue
-		if(!job.map_check())	//Even though we initialize before mapping, this is fine because the config is loaded at new
-			testing("Removed [job.type] due to map config")
-			continue
 		occupations += job
-		name_occupations[job.title] = job
+		name_occupations[job.name] = job
 		type_occupations[J] = job
 
 	return 1
@@ -52,65 +45,6 @@ SUBSYSTEM_DEF(job)
 		SetupOccupations()
 	return type_occupations[jobtype]
 
-/datum/controller/subsystem/job/proc/AssignRole(mob/dead/new_player/player, rank, latejoin = FALSE)
-	JobDebug("Running AR, Player: [player], Rank: [rank], LJ: [latejoin]")
-	if(player && player.mind && rank)
-		var/datum/job/job = GetJob(rank)
-		if(!job)
-			return FALSE
-		if(is_banned_from(player.ckey, rank) || QDELETED(player))
-			return FALSE
-		if(!job.player_old_enough(player.client))
-			return FALSE
-		if(job.required_playtime_remaining(player.client))
-			return FALSE
-		var/position_limit = job.total_positions
-		if(!latejoin)
-			position_limit = job.spawn_positions
-		JobDebug("Player: [player] is now Rank: [rank], JCP:[job.current_positions], JPL:[position_limit]")
-		player.mind.assigned_role = rank
-		job.current_positions++
-		return TRUE
-	JobDebug("AR has failed, Player: [player], Rank: [rank]")
-	return FALSE
-
-/datum/controller/subsystem/job/proc/GiveRandomJob(mob/dead/new_player/player)
-	JobDebug("GRJ Giving random job, Player: [player]")
-	. = FALSE
-	for(var/datum/job/job in shuffle(occupations))
-		if(!job)
-			continue
-
-		if(istype(job, GetJob(SSjob.overflow_role))) // We don't want to give him assistant, that's boring!
-			continue
-
-		if(job.title in GLOB.command_positions) //If you want a command position, select it!
-			continue
-
-		if(is_banned_from(player.ckey, job.title) || QDELETED(player))
-			if(QDELETED(player))
-				JobDebug("GRJ isbanned failed, Player deleted")
-				break
-			JobDebug("GRJ isbanned failed, Player: [player], Job: [job.title]")
-			continue
-
-		if(!job.player_old_enough(player.client))
-			JobDebug("GRJ player not old enough, Player: [player]")
-			continue
-
-		if(job.required_playtime_remaining(player.client))
-			JobDebug("GRJ player not enough xp, Player: [player]")
-			continue
-
-		if(player.mind && (job.title in player.mind.restricted_roles))
-			JobDebug("GRJ incompatible with antagonist role, Player: [player], Job: [job.title]")
-			continue
-
-		if((job.current_positions < job.spawn_positions) || job.spawn_positions == -1)
-			JobDebug("GRJ Random job given, Player: [player], Job: [job]")
-			if(AssignRole(player, job.title))
-				return TRUE
-
 /datum/controller/subsystem/job/proc/ResetOccupations()
 	JobDebug("Occupations reset.")
 	for(var/i in GLOB.new_player_list)
@@ -118,7 +52,6 @@ SUBSYSTEM_DEF(job)
 		if((player) && (player.mind))
 			player.mind.assigned_role = null
 			player.mind.special_role = null
-			SSpersistence.antag_rep_change[player.ckey] = 0
 	SetupOccupations()
 	return
 
@@ -150,7 +83,7 @@ SUBSYSTEM_DEF(job)
 		INVOKE_ASYNC(src, .proc/RecoverJob, J)
 
 /datum/controller/subsystem/job/proc/RecoverJob(datum/job/J)
-	var/datum/job/newjob = GetJob(J.title)
+	var/datum/job/newjob = GetJob(J.name)
 	if (!istype(newjob))
 		return
 	newjob.total_positions = J.total_positions
@@ -236,7 +169,7 @@ SUBSYSTEM_DEF(job)
 			var/datum/job/crewmember_job = ship.manifest[crewmember]
 			manifest_out["[ship.name] ([ship.source_template.short_name])"] += list(list(
 				"name" = crewmember,
-				"rank" = crewmember_job.title,
+				"rank" = crewmember_job.name,
 				"officer" = crewmember_job.officer
 			))
 

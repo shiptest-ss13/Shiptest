@@ -1,26 +1,19 @@
 /datum/job/doctor
-	title = "Medical Doctor"
-	department_head = list("Chief Medical Officer")
-	faction = "Station"
+	name = "Medical Doctor"
 	total_positions = 5
 	spawn_positions = 3
-	supervisors = "the chief medical officer"
-	selection_color = "#ffeef0"
 	wiki_page = "Guide_to_Medicine"
-	alt_titles = list("Nurse", "Surgeon", "Junior Doctor", "Psychiatrist")
-	senior_title = "Senior Medical Doctor"
 
 	outfit = /datum/outfit/job/doctor
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_PHARMACY, ACCESS_CHEMISTRY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, ACCESS_EVA) //WS edit - Gen/Sci Split
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CLONING, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, ACCESS_PHARMACY)
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_MED
 
 	display_order = JOB_DISPLAY_ORDER_MEDICAL_DOCTOR
 
 /datum/outfit/job/doctor
 	name = "Medical Doctor"
+	job_icon = "medicaldoctor"
 	jobtype = /datum/job/doctor
 
 	belt = /obj/item/pda/medical

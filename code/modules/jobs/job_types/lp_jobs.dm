@@ -1,7 +1,4 @@
 /datum/job/lp
-	faction = "Station"
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_SEC
 
 /datum/outfit/job/lp
 	implants = list(/obj/item/implant/mindshield)

@@ -1,12 +1,8 @@
 /datum/job/captain
-	title = "Captain"
+	name = "Captain"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
-	department_head = list("CentCom")
-	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Nanotrasen officials and Space law"
-	selection_color = "#ccccff"
 	minimal_player_age = 30
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
@@ -18,8 +14,6 @@
 
 	access = list() 			//See get_access()
 	minimal_access = list() 	//See get_access()
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_SEC
 
 	mind_traits = list(TRAIT_DISK_VERIFIER)
 
@@ -30,6 +24,7 @@
 
 /datum/outfit/job/captain
 	name = "Captain"
+	job_icon = "captain"
 	jobtype = /datum/job/captain
 
 	id = /obj/item/card/id/gold

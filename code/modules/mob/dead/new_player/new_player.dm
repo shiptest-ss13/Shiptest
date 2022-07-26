@@ -272,7 +272,7 @@
 		return JOB_UNAVAILABLE_GENERIC
 	if(!(ship.job_slots[job] > 0))
 		return JOB_UNAVAILABLE_SLOTFULL
-	if(is_banned_from(ckey, job.title))
+	if(is_banned_from(ckey, job.name))
 		return JOB_UNAVAILABLE_BANNED
 	if(QDELETED(src))
 		return JOB_UNAVAILABLE_GENERIC
@@ -300,8 +300,6 @@
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
 
-	SSjob.AssignRole(src, job, 1)
-
 	var/mob/living/carbon/human/character = create_character(TRUE)	//creates the human and transfers vars and mind
 	var/equip = job.EquipRank(character, ship)
 	if(isliving(equip))	//Borgs get borged in the equip, so we need to make sure we handle the new mob.
@@ -321,7 +319,7 @@
 		var/mob/living/carbon/human/humanc = character
 		ship.manifest_inject(humanc, client, job)
 		GLOB.data_core.manifest_inject(humanc, client)
-		AnnounceArrival(humanc, job.title, ship)
+		AnnounceArrival(humanc, job.name, ship)
 		AddEmploymentContract(humanc)
 		SSblackbox.record_feedback("tally", "species_spawned", 1, humanc.dna.species.name)
 
@@ -339,7 +337,7 @@
 	log_manifest(character.mind.key, character.mind, character, TRUE)
 
 	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
-		minor_announce("[job.title] [character.real_name] on deck!", zlevel = ship.shuttle_port.virtual_z())
+		minor_announce("[job.name] [character.real_name] on deck!", zlevel = ship.shuttle_port.virtual_z())
 	return TRUE
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
@@ -400,7 +398,7 @@
 	for(var/datum/job/job as anything in selected_ship.job_slots)
 		if(selected_ship.job_slots[job] < 1)
 			continue
-		job_choices["[job.title] ([selected_ship.job_slots[job]] positions)"] = job
+		job_choices["[job.name] ([selected_ship.job_slots[job]] positions)"] = job
 
 	if(!length(job_choices))
 		to_chat(usr, "<span class='danger'>There are no jobs available on this ship!</span>")
@@ -559,24 +557,6 @@
 // Doing so would previously allow you to roll for antag, then send you back to lobby if you didn't get an antag role
 // This also does some admin notification and logging as well, as well as some extra logic to make sure things don't go wrong
 /mob/dead/new_player/proc/check_preferences()
-	if(!client)
-		return FALSE //Not sure how this would get run without the mob having a client, but let's just be safe.
-	if(client.prefs.joblessrole != RETURNTOLOBBY)
-		return TRUE
-	// If they have antags enabled, they're potentially doing this on purpose instead of by accident. Notify admins if so.
-	var/has_antags = FALSE
-	if(client.prefs.be_special.len > 0)
-		has_antags = TRUE
-	if(client.prefs.job_preferences.len == 0)
-		if(!ineligible_for_roles)
-			to_chat(src, "<span class='danger'>You have no jobs enabled, along with return to lobby if job is unavailable. This makes you ineligible for any round start role, please update your job preferences.</span>")
-		ineligible_for_roles = TRUE
-		ready = PLAYER_NOT_READY
-		if(has_antags)
-			log_admin("[src.ckey] just got booted back to lobby with no jobs, but antags enabled.")
-			message_admins("[src.ckey] just got booted back to lobby with no jobs enabled, but antag rolling enabled. Likely antag rolling abuse.")
-
-		return FALSE //This is the only case someone should actually be completely blocked from antag rolling as well
 	return TRUE
 
 /**

@@ -92,12 +92,6 @@
 
 #define DEFAULT_CYBORG_NAME "Default Cyborg Name"
 
-
-//Job preferences levels
-#define JP_LOW 1
-#define JP_MEDIUM 2
-#define JP_HIGH 3
-
 //randomised elements
 #define RANDOM_NAME "random_name"
 #define RANDOM_NAME_ANTAG "random_name_antag"
