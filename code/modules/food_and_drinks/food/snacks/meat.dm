@@ -333,6 +333,20 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/chicken
 	tastes = list("chicken" = 1)
 
+/obj/item/reagent_containers/food/snacks/meat/slab/prophet
+	name = "false prophet flesh"
+	icon_state = "meat"
+	desc = "A slab of meat from one of the false prophet abominations. Delicious!"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/prophet
+	tastes = list("odd sweetness" = 1)
+
+/obj/item/reagent_containers/food/snacks/meat/slab/prophet_tail
+	name = "false prophet tail meat slab"
+	icon_state = "meat"
+	desc = "A slab of meat from one of the false prophet abominations. Delicious!"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/prophet_tail
+	tastes = list("odd sweetness" = 1)
+
 ////////////////////////////////////// MEAT STEAKS ///////////////////////////////////////////////////////////
 
 
@@ -410,6 +424,18 @@
 	desc = "A synthetic meat steak. It doesn't look quite right, now does it?"
 	icon_state = "meatsteak_old"
 	tastes = list("meat" = 4, "cryoxandone" = 1)
+
+/obj/item/reagent_containers/food/snacks/meat/steak/prophet
+	name = "false prophet fleshsteak"
+	tastes = list("meat" = 1, "odd sweetness" = 1)
+	list_reagents = list(/datum/reagent/medicine/mannitol = 2, /datum/reagent/consumable/nutriment = 5)
+	bonus_reagents = list(/datum/reagent/medicine/mannitol = 1, /datum/reagent/consumable/nutriment = 2)
+
+/obj/item/reagent_containers/food/snacks/meat/steak/prophet_tail
+	name = "false prophet tail roast"
+	tastes = list("meat" = 1, "odd sweetness" = 1)
+	list_reagents = list(/datum/reagent/medicine/mannitol = 8, /datum/reagent/consumable/nutriment = 20)
+	bonus_reagents = list(/datum/reagent/medicine/mannitol = 4, /datum/reagent/consumable/nutriment = 8)
 
 //////////////////////////////// MEAT CUTLETS ///////////////////////////////////////////////////////
 

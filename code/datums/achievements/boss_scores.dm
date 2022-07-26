@@ -43,6 +43,11 @@
 	desc = "You've killed HOW many?"
 	database_id = LEGION_SCORE
 
+/datum/award/score/prophet_score
+	name = "False Prophets Killed"
+	desc = "You've killed HOW many?"
+	database_id = PROPHET_SCORE
+
 /datum/award/score/swarmer_beacon_score
 	name = "Swarmer Beacons Killed"
 	desc = "You've killed HOW many?"

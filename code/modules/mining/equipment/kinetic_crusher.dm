@@ -920,3 +920,36 @@
 		. += "[icon_state]_uncharged"
 	if(wielded)
 		. += "[icon_state]_lit"
+
+//false prophet
+/obj/item/crusher_trophy/prophet_spine
+	desc = "A spine from the back of a false prophet."
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	icon_state = "prophet_spine"
+	denied_type = /obj/item/crusher_trophy/prophet_spine
+	bonus_value = 10
+	force = 10
+	throwforce = 15
+	throw_speed = 4
+	sharpness = IS_SHARP
+	attack_verb = list("cut", "phased", "oozed")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+
+/obj/item/crusher_trophy/prophet_spine/effect_desc()
+	return "waveform collapses do <b>[bonus_value]</b> stamina damage (brute on non-humanoids) and immobilize them for a very short time."
+
+/obj/item/crusher_trophy/prophet_spine/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
+
+/obj/item/crusher_trophy/prophet_spine/on_mark_detonation(mob/living/target, mob/living/user)
+	for(var/mob/living/L in oview(2, user))
+		if(L.stat == DEAD)
+			continue
+		playsound(L, 'sound/magic/fireball.ogg', 20, TRUE)
+		new /obj/effect/temp_visual/blip(L.loc)
+		if(ishuman(L))
+			L.adjustStaminaLoss(bonus_value, forced = TRUE)
+		else if(!issilicon(L))
+			L.adjustBruteLoss(bonus_value, forced = TRUE)
+			L.Immobilize(rand(1 SECONDS, 2 SECONDS))
