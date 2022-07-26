@@ -1353,7 +1353,7 @@
 /area/ship/crew/dorm)
 "mj" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Cargo bay"
+	name = "Cargo Bay"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2743,7 +2743,7 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "cargo_ageis";
-	name = "Cargo bay"
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -2886,7 +2886,7 @@
 	},
 /obj/machinery/door/window/brigdoor/northleft{
 	dir = 2;
-	name = "secure med storage"
+	name = "Secure Med Storage"
 	},
 /obj/item/defibrillator/compact/loaded,
 /obj/machinery/vending/wallmed{
@@ -3018,7 +3018,7 @@
 	},
 /obj/machinery/door/window/brigdoor/northright{
 	dir = 2;
-	name = "secure med storage"
+	name = "Secure Med Storage"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -3042,9 +3042,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen/kitchen)
 "Cq" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/siding/wood{
@@ -3206,14 +3203,14 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/door/poddoor{
-	id = "cargo_ageis";
-	name = "Cargo bay"
-	},
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	launch_status = 0;
 	port_direction = 2
+	},
+/obj/machinery/door/poddoor{
+	id = "cargo_ageis";
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
