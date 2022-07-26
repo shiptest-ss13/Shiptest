@@ -110,7 +110,7 @@
 	pixel_x = 12
 	},
 /obj/structure/mirror{
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/corner/white{
 	dir = 1
@@ -169,7 +169,7 @@
 	pixel_y = 32
 	},
 /obj/machinery/vending/security/wall{
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/wood,
 /area/ship/security)
@@ -211,7 +211,7 @@
 "cV" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/computer/cryopod{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/dresser,
 /turf/open/floor/wood,
@@ -236,7 +236,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -270,7 +270,7 @@
 "dC" = (
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -331,7 +331,7 @@
 "ec" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/cryopod{
 	dir = 1
@@ -404,7 +404,7 @@
 /obj/machinery/button/door{
 	id = "amogusdoors";
 	name = "Blast Door Control";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/mass_driver{
 	id = "ejected"
@@ -467,7 +467,7 @@
 "fr" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/corner/white/half{
@@ -510,7 +510,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/corner/red/diagonal,
 /turf/open/floor/plasteel/white,
@@ -573,10 +573,6 @@
 /obj/effect/turf_decal/corner/neutral/half,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
-"gC" = (
-/obj/machinery/computer/cargo/express,
-/turf/open/floor/plasteel,
-/area/ship/cargo)
 "gJ" = (
 /obj/machinery/door/airlock,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -605,7 +601,7 @@
 /area/ship/hallway/port)
 "gZ" = (
 /obj/machinery/advanced_airlock_controller{
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer4,
 /turf/open/floor/plasteel/dark,
@@ -634,7 +630,7 @@
 /area/ship/engineering/atmospherics)
 "hk" = (
 /obj/machinery/advanced_airlock_controller{
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer4{
 	dir = 1
@@ -713,7 +709,7 @@
 "ie" = (
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
@@ -780,7 +776,7 @@
 "iO" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/corner/bottlegreen/full,
@@ -795,7 +791,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -830,7 +826,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -978,7 +974,7 @@
 "kK" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/table,
 /obj/machinery/light/small,
@@ -1021,7 +1017,7 @@
 /area/ship/hallway/starboard)
 "lj" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -1305,7 +1301,7 @@
 "oS" = (
 /obj/machinery/door/poddoor{
 	id = "amogusdoors";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
@@ -1368,7 +1364,7 @@
 "pw" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/corner/neutral/three_quarters{
 	dir = 8
@@ -1392,7 +1388,7 @@
 /obj/item/storage/bag/ore,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -1434,7 +1430,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
@@ -1475,7 +1471,7 @@
 "qU" = (
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1600,7 +1596,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
@@ -1723,7 +1719,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -1757,7 +1753,7 @@
 "tt" = (
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -1781,7 +1777,7 @@
 /obj/structure/curtain/bounty,
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
@@ -1838,7 +1834,7 @@
 "uv" = (
 /obj/structure/table/glass,
 /obj/machinery/vending/wallmed{
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/door/window/eastright,
 /obj/item/storage/firstaid/fire,
@@ -1898,7 +1894,7 @@
 /area/ship/engineering)
 "vc" = (
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
@@ -2335,7 +2331,7 @@
 "zT" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/wood,
 /area/ship/crew/office)
@@ -2368,14 +2364,13 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Ar" = (
-/obj/structure/frame/computer{
-	anchored = 1;
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/neutral/half{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/computer/cargo/express{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "AG" = (
@@ -2446,7 +2441,7 @@
 "Bo" = (
 /obj/structure/bookcase/random,
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2552,7 +2547,7 @@
 "Dp" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2809,7 +2804,7 @@
 /area/ship/cargo)
 "GT" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
@@ -2967,7 +2962,7 @@
 "IG" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
@@ -3159,7 +3154,7 @@
 "Kg" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/corner/white/half{
@@ -3183,7 +3178,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/dark,
@@ -3201,7 +3196,7 @@
 /area/ship/medical)
 "KC" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
@@ -3220,7 +3215,7 @@
 "Lb" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/neutral/three_quarters{
@@ -3344,7 +3339,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
@@ -4099,7 +4094,7 @@
 "Uw" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -4172,7 +4167,7 @@
 "Vk" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/carpet/blue,
@@ -4336,7 +4331,7 @@
 "WX" = (
 /obj/machinery/camera/autoname,
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
@@ -4583,7 +4578,7 @@
 /area/ship/security)
 "ZD" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/corner/neutral/three_quarters,
 /turf/open/floor/plasteel/dark,
@@ -5470,7 +5465,7 @@ Ka
 xR
 Do
 Te
-gC
+Yh
 hs
 Yh
 JM

@@ -1,6 +1,6 @@
 /**
-  * A component to reset the parent to its previous state after some time passes
-  */
+ * A component to reset the parent to its previous state after some time passes
+ */
 /datum/component/dejavu
 	/// The turf the parent was on when this components was applied, they get moved back here after the duration
 	var/turf/starting_turf

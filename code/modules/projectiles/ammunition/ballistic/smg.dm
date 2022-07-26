@@ -30,6 +30,11 @@
 	caliber = "5.56mm HITP caseless"
 	projectile_type = /obj/projectile/bullet/c556mmHITP
 
+/obj/item/ammo_casing/caseless/c556mmHITP/surplus
+	name = "5.56mm HITP caseless surplus round"
+	desc = "A 5.56mm HITP caseless surplus round."
+	projectile_type = /obj/projectile/bullet/c556mmHITP_surplus
+
 /obj/item/ammo_casing/caseless/c556mmHITP/ap
 	name = "5.56mm HITP caseless armor piercing round"
 	desc = "A 5.56mm HITP caseless armor piercing round."
