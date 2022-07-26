@@ -166,6 +166,14 @@
 	helmet_type = /obj/item/clothing/head/helmet/space/pilot/random
 	mask_type = /obj/item/clothing/mask/breath
 
+/obj/machinery/suit_storage_unit/commando
+	name = "old suit storage unit"
+	safeties = FALSE
+	locked = TRUE
+	suit_type = /obj/item/clothing/suit/space/hardsuit/commando
+	mask_type = /obj/item/clothing/mask/breath
+	storage_type = /obj/item/instrument/guitar/ukulele
+
 //End shiptest suits
 
 /obj/machinery/suit_storage_unit/open

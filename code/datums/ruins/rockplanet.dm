@@ -151,3 +151,9 @@
 	description = "A crashed part of some unlucky ship. Has been occupied by a cult."
 	id = "crash_cult"
 	suffix = "rockplanet_crash_cult.dmm"
+
+/datum/map_template/ruin/rockplanet/crash_cargo
+	name = "NTSV Contact Dark"
+	id = "crash_cargo"
+	description = "A crashed cargo ship, contains a strange distress beacon."
+	suffix = "rockplanet_crash_cargo.dmm"

@@ -1239,3 +1239,77 @@
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 40, "energy" = 35, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	desc = "The Quixote metaspacial mobility suit is the magnum opus of dimensional navigation equipment, combining durable composite armor with high mobility thrusters and defensive plating rated for all manner of exotic particles."
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/quixote/dimensional
+
+/obj/item/clothing/head/helmet/space/hardsuit/commando
+	name = "\improper commando hardsuit helmet"
+	desc = "An armored spaceproof helmet. The glass has a metallic shine on it."
+	icon_state = "hardsuit0-commando"
+	hardsuit_type = "commando"
+	armor = list("melee" = 40, "bullet" = 10, "laser" = 5, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75)
+	actions_types = list()
+
+/obj/item/clothing/head/helmet/space/hardsuit/commando/attack_self()
+	return
+
+/obj/item/clothing/suit/space/hardsuit/commando
+	icon_state = "hardsuit_commando"
+	name = "\improper commando hardsuit"
+	desc = "An armored spaceproof piece of armor, designed with maximum mobility in mind, this relic of a bygone era is equipped with tiny jets that allow the user to roll to avoid hazards."
+	icon_state = "hardsuit-commando"
+	armor = list("melee" = 40, "bullet" = 10, "laser" = 5, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/commando
+	slowdown = 0
+	var/roll_cooldown = 0
+	var/roll_cooldown_time = 6 SECONDS
+	var/rolling = FALSE
+
+/obj/item/clothing/suit/space/hardsuit/commando/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Middle-click to roll.</span>"
+
+/obj/item/clothing/suit/space/hardsuit/commando/equipped(mob/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_OCLOTHING)
+		RegisterSignal(user, COMSIG_MOB_MIDDLECLICKON, .proc/on_middleclick)
+	else
+		UnregisterSignal(user, COMSIG_MOB_MIDDLECLICKON)
+
+/obj/item/clothing/suit/space/hardsuit/commando/dropped(mob/user)
+	. = ..()
+	UnregisterSignal(user, COMSIG_MOB_MIDDLECLICKON)
+
+/obj/item/clothing/suit/space/hardsuit/commando/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	return rolling
+
+/obj/item/clothing/suit/space/hardsuit/commando/proc/on_middleclick(mob/living/user, atom/target)
+	SIGNAL_HANDLER
+	if(user.incapacitated())
+		return
+	if(rolling)
+		helmet.display_visor_message("Already rolling!")
+		return COMSIG_MOB_CANCEL_CLICKON
+	if(roll_cooldown > world.time)
+		helmet.display_visor_message("Roll functionality cooling down... [(roll_cooldown - world.time) / 1 SECONDS] seconds left...")
+		return COMSIG_MOB_CANCEL_CLICKON
+	roll_cooldown = world.time + roll_cooldown
+	INVOKE_ASYNC(src, .proc/dodge_roll, user, target)
+	return COMSIG_MOB_CANCEL_CLICKON
+
+/obj/item/clothing/suit/space/hardsuit/commando/proc/dodge_roll(mob/living/user, atom/target)
+	rolling = TRUE
+	ADD_TRAIT(user, TRAIT_IMMOBILIZED, type)
+	user.add_filter("roll_blur", 1, angular_blur_filter(size = 15))
+	user.add_filter("roll_outline", 2, outline_filter(color = "#00000066"))
+	user.throw_at(get_ranged_target_turf_direct(user, target, range = 7), range = 7, speed = 2, spin = FALSE, thrower = user, gentle = TRUE, callback = CALLBACK(src, .proc/stop_roll, user))
+	user.SpinAnimation(speed = 3, clockwise = (user.dir & (NORTH|EAST)))
+	playsound(src, 'sound/items/roll.ogg', 50, TRUE)
+
+/obj/item/clothing/suit/space/hardsuit/commando/proc/stop_roll(mob/living/user)
+	rolling = FALSE
+	REMOVE_TRAIT(user, TRAIT_IMMOBILIZED, type)
+	user.remove_filter("roll_blur")
+	user.remove_filter("roll_outline")
+	addtimer(CALLBACK(src, .proc/end_animation, user), 0.1 SECONDS) //need this to prevent funny stuff
+
+/obj/item/clothing/suit/space/hardsuit/commando/proc/end_animation(mob/living/user)
+	animate(user)
