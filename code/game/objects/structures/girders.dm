@@ -239,7 +239,8 @@
 			state = GIRDER_DISASSEMBLED
 			to_chat(user, "<span class='notice'>You disassemble the girder.</span>")
 			var/obj/item/stack/sheet/metal/M = new (loc, 2)
-			M.add_fingerprint(user)
+			if (!QDELETED(M)) // might be a stack that's been merged
+				M.add_fingerprint(user)
 			qdel(src)
 		return TRUE
 

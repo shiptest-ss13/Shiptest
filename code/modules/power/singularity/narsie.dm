@@ -67,10 +67,10 @@
 		if(player.stat != DEAD && player.loc && !iscultist(player) && !isanimal(player))
 			souls_needed[player] = TRUE
 	soul_goal = round(1 + LAZYLEN(souls_needed) * 0.75)
-	SSredbot.send_discord_message("admin","Nar'sie has been summoned.","round ending event")
 	INVOKE_ASYNC(GLOBAL_PROC, .proc/begin_the_end)
 
 /proc/begin_the_end()
+	SSredbot.send_discord_message("admin","Nar'sie has been summoned.","round ending event")
 	sleep(50)
 	if(QDELETED(GLOB.cult_narsie)) // uno
 		priority_announce("Status report? We detected a anomaly, but it disappeared almost immediately.","Central Command Higher Dimensional Affairs", 'sound/misc/notice1.ogg')

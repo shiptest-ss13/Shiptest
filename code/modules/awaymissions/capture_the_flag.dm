@@ -612,7 +612,7 @@
 	invisibility = 0
 
 /obj/effect/ctf/ammo/Initialize(mapload)
-	..()
+	. = ..()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)

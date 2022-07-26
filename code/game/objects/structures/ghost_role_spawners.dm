@@ -516,7 +516,7 @@
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
 	belt = /obj/item/storage/belt/utility/syndicate
 	back = /obj/item/storage/backpack/industrial
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large, /obj/item/stack/sheet/mineral/plastitanium=50)
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large, /obj/item/stack/sheet/mineral/plastitanium=20)
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/medical
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
@@ -899,7 +899,7 @@
 	mob_species = /datum/species/ipc
 
 /obj/effect/mob_spawn/human/lostassistant/Initialize(mapload)
-	..()
+	. = ..()
 	var/area/A = get_area(src)
 	if(A)
 		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)
