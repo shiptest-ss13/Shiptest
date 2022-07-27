@@ -160,10 +160,11 @@
 			token.icon_state = "strange_event"
 			token.color = null
 
-	#ifndef QUICK_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
-	if(load_now)
-		load_level() //Load the level whenever it's randomised
-	#endif
+// - SERVER ISSUE: LOADING ALL PLANETS AT ROUND START KILLS PERFORMANCE BEYOND WHAT IS REASONABLE. OPTIMIZE SSMOBS IF YOU WANT THIS BACK
+// #ifdef FULL_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
+// 	if(load_now)
+// 		load_level() //Load the level whenever it's randomised
+// #endif
 
 	if(!preserve_level)
 		token.desc += "It may not still be here if you leave it."
