@@ -2,11 +2,18 @@
 "aA" = (
 /obj/structure/table,
 /obj/machinery/door/firedoor,
+/obj/item/radio/intercom{
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "aI" = (
 /obj/machinery/selling_pad,
 /obj/effect/turf_decal/box,
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 22
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "ba" = (
@@ -97,7 +104,7 @@
 /obj/machinery/computer/selling_pad_control{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/north,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "dr" = (
@@ -284,7 +291,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "gH" = (
-/obj/structure/chair/plastic,
+/obj/structure/table,
+/obj/item/toy/cards/deck/syndicate,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm)
 "gY" = (
@@ -627,9 +635,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "nL" = (
-/obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/corner/blue{
 	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "cargodoors";
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -742,6 +753,9 @@
 	dir = 4
 	},
 /obj/machinery/space_heater,
+/obj/item/radio/intercom{
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "pR" = (
@@ -936,24 +950,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
-"tR" = (
-/obj/machinery/firealarm{
-	pixel_y = 24
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/chair/plastic{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/red{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/neutral/border{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "ua" = (
 /obj/machinery/power/port_gen/pacman,
@@ -1267,13 +1263,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "zr" = (
-/obj/structure/table,
-/obj/item/storage/fancy/cigarettes/cigpack_syndicate{
-	pixel_x = 6
-	},
-/obj/item/lighter/greyscale{
-	pixel_x = -3;
-	pixel_y = 4
+/obj/structure/chair/plastic{
+	dir = 1
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm)
@@ -1971,6 +1962,7 @@
 	dir = 8;
 	pixel_x = 24
 	},
+/obj/structure/chair/plastic,
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm)
 "NJ" = (
@@ -1994,6 +1986,10 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "OE" = (
@@ -2398,7 +2394,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 24;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -2421,6 +2418,10 @@
 /obj/item/card/emag/limited,
 /obj/item/card/emag/limited,
 /obj/item/card/emag/limited,
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 22
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
 "WH" = (
@@ -2464,10 +2465,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Xv" = (
-/obj/machinery/button/door{
-	id = "cargodoors";
-	pixel_y = 25
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/window{
 	dir = 4
@@ -2475,6 +2472,9 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
 	id = "cargodoors"
+	},
+/obj/item/radio/intercom{
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2509,6 +2509,13 @@
 /obj/structure/table,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate{
+	pixel_x = 6
+	},
+/obj/item/lighter/greyscale{
+	pixel_x = -3;
+	pixel_y = 4
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm)
@@ -2936,7 +2943,7 @@ Nr
 Nr
 XP
 XP
-tR
+Fn
 Fn
 ez
 cH
