@@ -243,6 +243,7 @@
 
 			ruin_list = null // asteroid ruins when
 			mapgen = /datum/map_generator/cave_generator/asteroid
+			weather_controller_type = null
 		if(DYNAMIC_WORLD_SPACERUIN)
 			Rename("weak energy signal")
 			token.desc = "A very weak energy signal emenating from space."
@@ -250,6 +251,8 @@
 			token.icon_state = "strange_event"
 			token.color = null
 			ruin_list = SSmapping.space_ruins_templates
+			mapgen = null
+			weather_controller_type = null
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
