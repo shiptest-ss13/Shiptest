@@ -567,7 +567,6 @@
 	color = "#13BC5E" // rgb: 19, 188, 94
 	race = list(/datum/species/jelly/slime,
 						/datum/species/human,
-						/datum/species/human/felinid,
 						/datum/species/lizard,
 						/datum/species/fly,
 						/datum/species/moth,
@@ -576,13 +575,6 @@
 						/datum/species/abductor,
 						/datum/species/squid)
 	process_flags = ORGANIC | SYNTHETIC
-
-/datum/reagent/mutationtoxin/felinid
-	name = "Felinid Mutation Toxin"
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/human/felinid
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "something nyat good"
 
 /datum/reagent/mutationtoxin/lizard
 	name = "Sarathi Mutation Toxin"
@@ -1557,7 +1549,7 @@
 	color = "#FFFFFF" // white
 	random_color_list = list("#FFFFFF") //doesn't actually change appearance at all
 
- /* used by crayons, can't color living things but still used for stuff like food recipes */
+/* used by crayons, can't color living things but still used for stuff like food recipes */
 
 /datum/reagent/colorful_reagent/powder/red/crayon
 	name = "Red Crayon Powder"

@@ -127,11 +127,11 @@
 		. = (amount)
 
 /**
-  * Builds all recipes in a given recipe list and returns an association list containing them
-  *
-  * Arguments:
-  * * recipe_to_iterate - The list of recipes we are using to build recipes
-  */
+ * Builds all recipes in a given recipe list and returns an association list containing them
+ *
+ * Arguments:
+ * * recipe_to_iterate - The list of recipes we are using to build recipes
+ */
 /obj/item/stack/proc/recursively_build_recipes(list/recipe_to_iterate)
 	var/list/L = list()
 	for(var/recipe in recipe_to_iterate)
@@ -144,11 +144,11 @@
 	return L
 
 /**
-  * Returns a list of properties of a given recipe
-  *
-  * Arguments:
-  * * R - The stack recipe we are using to get a list of properties
-  */
+ * Returns a list of properties of a given recipe
+ *
+ * Arguments:
+ * * R - The stack recipe we are using to get a list of properties
+ */
 /obj/item/stack/proc/build_recipe(datum/stack_recipe/R)
 	return list(
 		"res_amount" = R.res_amount,
@@ -158,12 +158,12 @@
 	)
 
 /**
-  * Checks if the recipe is valid to be used
-  *
-  * Arguments:
-  * * R - The stack recipe we are checking if it is valid
-  * * recipe_list - The list of recipes we are using to check the given recipe
-  */
+ * Checks if the recipe is valid to be used
+ *
+ * Arguments:
+ * * R - The stack recipe we are checking if it is valid
+ * * recipe_list - The list of recipes we are using to check the given recipe
+ */
 /obj/item/stack/proc/is_valid_recipe(datum/stack_recipe/R, list/recipe_list)
 	for(var/S in recipe_list)
 		if(S == R)
@@ -243,11 +243,12 @@
 					used_materials[SSmaterials.GetMaterialRef(i)] = recipe.req_amount / recipe.res_amount * (MINERAL_MATERIAL_AMOUNT / custom_materials.len)
 				O.set_custom_materials(used_materials)
 
+			if(!QDELETED(O) && isitem(O))
+				usr.put_in_hands(O)
+
 			if(QDELETED(O))
 				return //It's a stack and has already been merged
 
-			if(isitem(O))
-				usr.put_in_hands(O)
 			O.add_fingerprint(usr)
 
 			//BubbleWrap - so newly formed boxes are empty

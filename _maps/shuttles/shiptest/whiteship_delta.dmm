@@ -96,7 +96,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/item/paicard,
 /turf/open/floor/wood,
@@ -109,7 +109,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/cryopod{
 	dir = 8
@@ -199,7 +199,7 @@
 "au" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/corner/bar,
@@ -724,7 +724,7 @@
 "bk" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -950,7 +950,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -1141,7 +1141,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1155,7 +1155,7 @@
 /obj/effect/decal/cleanable/cobweb,
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/item/stack/spacecash/c200{
 	pixel_x = 7;
@@ -1340,7 +1340,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/turf_decal/corner/blue{
 	dir = 1
@@ -1426,13 +1426,13 @@
 /obj/machinery/button/door{
 	id = "whiteship_windows";
 	name = "Windows Blast Door Control";
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = -5
 	},
 /obj/machinery/button/door{
 	id = "whiteship_bridge";
 	name = "Bridge Blast Door Control";
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -1456,7 +1456,7 @@
 "cw" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/secure_closet/freezer{
@@ -1550,7 +1550,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/light/small/built{
 	dir = 4
@@ -1618,7 +1618,7 @@
 /obj/item/extinguisher,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/closet/crate/internals,
 /obj/effect/turf_decal/box/corners{
@@ -1633,7 +1633,7 @@
 "cN" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -1747,7 +1747,7 @@
 	},
 /obj/item/radio/off,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/plasteel/dark,
@@ -1882,7 +1882,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1917,7 +1917,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -2172,7 +2172,7 @@
 "dz" = (
 /obj/machinery/door/poddoor{
 	id = "cargobaydoors";
-	name = "cargo bay door"
+	name = "Cargo Bay Door"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
@@ -2450,7 +2450,7 @@
 /obj/machinery/button/door{
 	id = "cargobaydoors";
 	name = "Cargo Bay Door Control";
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -2544,7 +2544,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/light/small/built{
 	dir = 4
@@ -2637,11 +2637,11 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/corner/neutral{
 	dir = 4
@@ -2810,7 +2810,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -2935,7 +2935,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/table,
 /obj/machinery/cell_charger,
@@ -3008,7 +3008,7 @@
 /obj/machinery/button/door{
 	id = "cargobaydoors";
 	name = "Cargo Bay Door Control";
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8

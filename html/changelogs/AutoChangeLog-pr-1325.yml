@@ -1,0 +1,7 @@
+author: MarkSuckerberg
+delete-after: true
+changes:
+  - config: Default overmap sizes reduced significantly to speed up dev environment
+      spin-up time.
+  - code_imp: Renames the "Bot Comms" subsystem to the "Redbot" subsystem because
+      that's what the file and type are. It should match!

@@ -408,9 +408,8 @@
 	var/oldPlantName = myseed.plantname
 	if(length(myseed.mutatelist))
 		var/mutantseed = pick(myseed.mutatelist)
-		qdel(myseed)
-		myseed = null
-		myseed = new mutantseed
+		QDEL_NULL(myseed)
+		myseed = new mutantseed(src)
 	else
 		return
 
@@ -450,9 +449,9 @@
 
 
 /**
-  * Plant Death Proc.
-  * Cleans up various stats for the plant upon death, including pests, harvestability, and plant health.
-  */
+ * Plant Death Proc.
+ * Cleans up various stats for the plant upon death, including pests, harvestability, and plant health.
+ */
 /obj/machinery/hydroponics/proc/plantdies()
 	plant_health = 0
 	harvest = FALSE

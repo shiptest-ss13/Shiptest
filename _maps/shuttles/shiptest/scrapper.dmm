@@ -16,7 +16,7 @@
 	id = "EVAEXTERNAL";
 	name = "Blast Door Control";
 	pixel_x = -8;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/siding/yellow/corner{
 	dir = 8
@@ -36,7 +36,7 @@
 "al" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "internalbridgeshutter";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -347,7 +347,7 @@
 "dp" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -425,7 +425,7 @@
 "ex" = (
 /obj/machinery/door/poddoor{
 	id = "Eject";
-	name = "Door for ejection of Impostors"
+	name = "Door for Ejection of Impostors"
 	},
 /turf/open/floor/plating,
 /area/ship/security)
@@ -491,7 +491,7 @@
 	},
 /obj/machinery/firealarm{
 	pixel_x = 8;
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 5
@@ -503,7 +503,7 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/clothing/glasses/welding,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/light{
 	dir = 1
@@ -542,7 +542,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -567,7 +567,7 @@
 "gn" = (
 /obj/machinery/vending/cigarette,
 /obj/machinery/light_switch{
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = 8
 	},
 /obj/item/radio/intercom{
@@ -605,7 +605,7 @@
 	pixel_y = 8
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 9
@@ -671,7 +671,7 @@
 	id = "EVAEXTERNAL";
 	name = "Blast Door Control";
 	pixel_x = 8;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
@@ -717,7 +717,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/table/glass,
 /obj/machinery/plantgenes,
@@ -763,7 +763,7 @@
 "iS" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -844,7 +844,7 @@
 "kf" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/suit_storage_unit/mining/eva,
 /obj/machinery/light{
@@ -897,7 +897,7 @@
 	name = "Brig Door Control";
 	normaldoorcontrol = 1;
 	pixel_x = -8;
-	pixel_y = 24;
+	pixel_y = 25;
 	specialfunctions = 4
 	},
 /obj/machinery/button/door{
@@ -1174,7 +1174,7 @@
 	id = "EVAINTERNAL";
 	name = "Blast Door Control";
 	pixel_x = -8;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/suit_storage_unit/mining/eva,
 /obj/machinery/power/apc/auto_name/east,
@@ -1225,7 +1225,7 @@
 /obj/effect/turf_decal/siding/red,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
@@ -1361,7 +1361,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/fore)
@@ -1448,14 +1448,14 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 9
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -1483,7 +1483,7 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/clothing/glasses/welding,
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 5
@@ -1500,7 +1500,7 @@
 	dir = 8
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/item/storage/fancy/cigarettes,
 /obj/item/lighter/greyscale{
@@ -1667,8 +1667,8 @@
 /obj/machinery/button/door{
 	id = "EVAEXTERNAL";
 	name = "Blast Door Control";
-	pixel_x = -24;
-	pixel_y = 24
+	pixel_x = -25;
+	pixel_y = 25
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
@@ -1756,7 +1756,7 @@
 	id = "EVAINTERNAL";
 	name = "Blast Door Control";
 	pixel_x = -8;
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -1973,7 +1973,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/space_heater,
@@ -2037,7 +2037,7 @@
 /obj/machinery/vending/coffee,
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
@@ -2178,7 +2178,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor{
 	id = "EVAINTERNAL";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -2221,7 +2221,7 @@
 /area/ship/engineering/engine)
 "zK" = (
 /obj/machinery/advanced_airlock_controller{
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2255,7 +2255,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/closet/secure_closet/freezer/meat/open,
 /mob/living/simple_animal/crab/Coffee,
@@ -2324,7 +2324,7 @@
 "AV" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/closet/firecloset/full,
 /turf/open/floor/plating,
@@ -2345,7 +2345,7 @@
 "Ba" = (
 /obj/machinery/door/poddoor{
 	id = "scrapdoorint";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2368,7 +2368,7 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "EVAEXTERNAL";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
@@ -2420,7 +2420,7 @@
 "BQ" = (
 /obj/machinery/door/poddoor{
 	id = "scrapdoorint";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2443,7 +2443,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -2492,7 +2492,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
@@ -2590,8 +2590,8 @@
 /obj/machinery/button/door{
 	id = "scrapdoorint";
 	name = "Blast Door Control";
-	pixel_x = 24;
-	pixel_y = -24
+	pixel_x = 25;
+	pixel_y = -25
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
@@ -2599,8 +2599,8 @@
 /obj/machinery/button/door{
 	id = "scrapdoorint";
 	name = "Blast Door Control";
-	pixel_x = -24;
-	pixel_y = -24
+	pixel_x = -25;
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -2726,7 +2726,7 @@
 	id = "internalbridgeshutter";
 	name = "EVA Oversight Lockdown";
 	pixel_x = -6;
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/light/dim{
 	dir = 1
@@ -2819,7 +2819,7 @@
 /area/ship/security)
 "Hi" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/closet/firecloset/full,
 /turf/open/floor/plating,
@@ -2832,8 +2832,8 @@
 /obj/machinery/button/door{
 	id = "scrapdoorext";
 	name = "Blast Door Control";
-	pixel_x = 24;
-	pixel_y = -24
+	pixel_x = 25;
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -2871,7 +2871,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
@@ -2933,8 +2933,8 @@
 /obj/machinery/button/door{
 	id = "scrapdoorext";
 	name = "Blast Door Control";
-	pixel_x = -24;
-	pixel_y = -24
+	pixel_x = -25;
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
@@ -2957,15 +2957,15 @@
 /obj/machinery/button/door{
 	id = "EVAEXTERNAL";
 	name = "Blast Door Control";
-	pixel_x = 24;
-	pixel_y = 24
+	pixel_x = 25;
+	pixel_y = 25
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
 "IE" = (
 /obj/machinery/door/poddoor{
 	id = "scrapdoorext";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -3102,7 +3102,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3162,7 +3162,7 @@
 	name = "Bathroom lock";
 	normaldoorcontrol = 1;
 	pixel_x = -8;
-	pixel_y = -24;
+	pixel_y = -25;
 	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/showroomfloor,
@@ -3170,7 +3170,7 @@
 "Ky" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/stasis,
 /obj/effect/turf_decal/siding/blue{
@@ -3206,7 +3206,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/computer/cargo/express{
 	dir = 1
@@ -3226,7 +3226,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
@@ -3291,7 +3291,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "externalbridgeshutter";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -3508,7 +3508,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor{
 	id = "EVAINTERNAL";
-	name = "cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -3633,7 +3633,7 @@
 "PS" = (
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/siding/purple{
 	dir = 5
@@ -3837,7 +3837,7 @@
 /area/ship/medical)
 "RZ" = (
 /obj/machinery/light_switch{
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3882,7 +3882,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
@@ -4013,7 +4013,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/pod/light,
 /area/ship/crew/dorm)
@@ -4027,7 +4027,7 @@
 /area/ship/bridge)
 "TV" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/pod/light,
 /area/ship/crew/dorm)
@@ -4065,7 +4065,7 @@
 "Ui" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
@@ -4273,7 +4273,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/hydroponics/constructable,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/hydroponics)
@@ -4294,7 +4294,7 @@
 /area/ship/maintenance/starboard)
 "WQ" = (
 /obj/machinery/door/airlock/hatch{
-	name = "external access hatch"
+	name = "External Access Hatch"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -4371,7 +4371,7 @@
 "Xr" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/space_heater,
 /turf/open/floor/pod/light,
@@ -4404,7 +4404,7 @@
 /area/ship/medical)
 "XB" = (
 /obj/machinery/door/airlock/hatch{
-	name = "external access hatch"
+	name = "External Access Hatch"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -4592,7 +4592,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/space_heater,
@@ -4624,7 +4624,7 @@
 "ZY" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/chair{
 	dir = 4

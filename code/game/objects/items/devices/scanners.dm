@@ -602,7 +602,7 @@ GENE SCANNER
 
 		if(cached_scan_results && cached_scan_results["fusion"]) //notify the user if a fusion reaction was detected
 			render_list += "<span class='boldnotice'>Large amounts of free neutrons detected in the air indicate that a fusion reaction took place.</span>\
-						 \n<span class='notice'>Instability of the last fusion reaction: [round(cached_scan_results["fusion"], 0.01)].</span>"
+						\n<span class='notice'>Instability of the last fusion reaction: [round(cached_scan_results["fusion"], 0.01)].</span>"
 
 	to_chat(user, jointext(render_list, "\n")) // we let the join apply newlines so we do need handholding
 	return TRUE
@@ -663,7 +663,7 @@ GENE SCANNER
 	to_render += "\nGrowth progress: [T.amount_grown]/[SLIME_EVOLUTION_THRESHOLD]"
 	if(T.effectmod)
 		to_render += "\n<span class='notice'>Core mutation in progress: [T.effectmod]</span>\
-					  \n<span class='notice'>Progress in core mutation: [T.applied] / [SLIME_EXTRACT_CROSSING_REQUIRED]</span>"
+					  \n<span class='notice'>Progress in core mutation: [T.applied] / [(SLIME_EXTRACT_CROSSING_REQUIRED * T.crossbreed_modifier)]</span>"
 	to_chat(user, to_render + "\n========================")
 
 

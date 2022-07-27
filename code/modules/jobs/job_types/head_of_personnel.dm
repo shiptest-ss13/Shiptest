@@ -115,3 +115,15 @@
 	backpack = /obj/item/storage/backpack
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+
+/datum/outfit/job/head_of_personnel/syndicate
+	name = "Bridge Officer (Syndicate)"
+
+	ears = /obj/item/radio/headset/syndicate/alt
+	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+	gloves = /obj/item/clothing/gloves/color/white
+	id = /obj/item/card/id/syndicate_command/crew_id
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	glasses = /obj/item/clothing/glasses/hud/health

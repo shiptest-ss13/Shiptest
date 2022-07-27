@@ -1,5 +1,4 @@
-.dnaBlockNumber
-{
+.dnaBlockNumber {
 	font-family: Fixed, monospace;
 	float: left;
 	color: #ffffff;
@@ -9,37 +8,30 @@
 	margin: 2px 2px 0 10px;
 	text-align: center;
 }
-.dnaBlock
-{
+.dnaBlock {
 	font-family: Fixed, monospace;
 	float: left;
 }
-a.incompleteBlock
-{
+a.incompleteBlock {
 	background: #8a4040;
 }
-a.incompleteBlock:hover
-{
+a.incompleteBlock:hover {
 	color: #40628a;
 	background: #ffffff;
 }
-img.selected
-{
+img.selected {
 	border: 1px solid blue;
 }
-img.unselected
-{
+img.unselected {
 	border: 2px solid black;
 }
-div>table {
+div > table {
 	float: left;
 }
-td
-{
+td {
 	text-align: center;
 }
-a.clean
-{
+a.clean {
 	background: none;
 	border: none;
 	marging: none;

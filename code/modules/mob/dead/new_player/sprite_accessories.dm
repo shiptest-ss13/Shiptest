@@ -16,7 +16,7 @@
 	from doing this unless you absolutely know what you are doing, and have defined a
 	conversion in savefile.dm
 */
-/proc/init_sprite_accessory_subtypes(prototype, list/L, list/male, list/female,var/roundstart = FALSE)//Roundstart argument builds a specific list for roundstart parts where some parts may be locked
+/proc/init_sprite_accessory_subtypes(prototype, list/L, list/male, list/female, roundstart = FALSE)//Roundstart argument builds a specific list for roundstart parts where some parts may be locked
 	if(!istype(L))
 		L = list()
 	if(!istype(male))
@@ -2282,6 +2282,10 @@
 	name = "Mono-eye"
 	icon_state = "monoeye"
 
+/datum/sprite_accessory/ipc_screens/nyaru
+	name = "Nyaru"
+	icon_state = "nyaru"
+
 /datum/sprite_accessory/ipc_screens/nature
 	name = "Nature"
 	icon_state = "nature"
@@ -2453,6 +2457,10 @@
 /datum/sprite_accessory/ipc_chassis/hephaestussindustries2
 	name = "Hephaestus Industries 2.0"
 	limbs_id = "hi2ipc"
+
+/datum/sprite_accessory/ipc_chassis/pawsitronsunited
+	name = "Pawsitrons United"
+	limbs_id = "pawsitrons"
 
 /datum/sprite_accessory/ipc_chassis/shellguardmunitions
 	name = "Shellguard Munitions Standard Series"
