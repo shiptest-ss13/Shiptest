@@ -34,14 +34,7 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/dorm)
 "br" = (
-/obj/structure/table,
-/obj/machinery/reagentgrinder,
-/obj/item/reagent_containers/food/drinks/shaker{
-	pixel_x = 10
-	},
-/obj/item/kitchen/knife{
-	pixel_x = -8
-	},
+/obj/machinery/chem_master/condimaster,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "by" = (
@@ -748,7 +741,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
-/obj/machinery/chem_master,
+/obj/machinery/space_heater,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "pR" = (
@@ -764,6 +757,9 @@
 /area/ship/engineering)
 "pV" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump,
+/obj/machinery/advanced_airlock_controller{
+	pixel_x = -25
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "qe" = (
@@ -1428,6 +1424,27 @@
 /area/ship/engineering)
 "Dl" = (
 /obj/effect/turf_decal/siding/red,
+/obj/structure/closet/secure_closet/freezer/wall{
+	dir = 1;
+	name = "refrigerator";
+	pixel_y = -32
+	},
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpocketgondola,
+/obj/item/storage/box/donkpockets/donkpocketgondola,
+/obj/item/storage/box/donkpockets/donkpocketgondola,
+/obj/item/storage/box/donkpockets/donkpocketgondola,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "DO" = (
@@ -1489,16 +1506,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
-"EH" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/airlock{
-	name = "Canteen"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/crew/canteen)
 "EO" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm)
@@ -2005,27 +2012,8 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/freezer{
-	anchored = 1;
-	locked = 0;
-	name = "fridge"
-	},
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/structure/table,
+/obj/machinery/microwave,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "PB" = (
@@ -2104,7 +2092,13 @@
 /area/ship/cargo)
 "Qo" = (
 /obj/structure/table,
-/obj/machinery/microwave,
+/obj/machinery/reagentgrinder,
+/obj/item/reagent_containers/food/drinks/shaker{
+	pixel_x = 10
+	},
+/obj/item/kitchen/knife{
+	pixel_x = -8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "Qr" = (
@@ -3063,7 +3057,7 @@ br
 qi
 Lz
 Dl
-EH
+Yv
 Xh
 NC
 gH
