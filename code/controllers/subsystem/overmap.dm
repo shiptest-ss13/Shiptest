@@ -278,7 +278,7 @@ SUBSYSTEM_DEF(overmap)
 		surface = null
 	vlevel.fill_in(surface, target_area)
 
-	var/list/ruin_turfs = new
+	var/list/ruin_turfs = list()
 	if(ruin_type)
 		var/turf/ruin_turf = locate(rand(
 			vlevel.low_x+6 + vlevel.reserved_margin,
