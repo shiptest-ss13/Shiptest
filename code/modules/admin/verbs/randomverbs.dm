@@ -905,7 +905,7 @@
 	encounter.load_level()
 	SSblackbox.record_feedback("tally", "adv_spawn_ruin", spawning?.name)
 
-	encounter.preserve_level = 1
+	encounter.preserve_level = TRUE
 	to_chat(usr, span_big("Click here to jump to the overmap token: " + ADMIN_JMP(encounter.token)))
 	to_chat(usr, span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(encounter.reserve_docks[1])))
 	for(var/ruin in encounter.ruin_turfs)
