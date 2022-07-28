@@ -734,7 +734,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/manly_dorf/on_mob_metabolize(mob/living/carbon/human/badlands_chugs)
 	if(!istype(badlands_chugs))
 		return
-	if(!HAS_TRAIT(badlands_chugs, TRAIT_DWARF) && !HAS_TRAIT(badlands_chugs, TRAIT_ALCOHOL_TOLERANCE))
+	if(!HAS_TRAIT(badlands_chugs, TRAIT_DWARF))
 		return
 	to_chat(badlands_chugs, "<span class='notice'>Now THAT is MANLY!</span>")
 	dorf_mode = TRUE
