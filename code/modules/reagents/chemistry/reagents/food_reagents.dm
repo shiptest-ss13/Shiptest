@@ -733,7 +733,7 @@
 
 /datum/reagent/consumable/electrolytes
 	name = "Electrolytes"
-	description = "its what plants crave, and lightbulbs"
+	description = "It's what crystal-plant-dragons crave."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#8effdd"
 
