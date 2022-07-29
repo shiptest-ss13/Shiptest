@@ -720,7 +720,7 @@
 
 /datum/reagent/consumable/liquidelectricity
 	name = "Liquid Electricity"
-	description = "The blood of Elzuose, and the stuff that keeps them going. Great for them, horrid for anyone else."
+	description = "The blood of elzuosa, and the stuff that keeps them going. Great for them, horrid for anyone else."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#97ee63"
 	taste_description = "pure electricity"
