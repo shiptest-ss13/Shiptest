@@ -1,7 +1,7 @@
 import { toFixed } from 'common/math';
 import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, LabeledList, Section, Knob, AnimatedNumber, NumberInput } from '../components';
+import { Box, Button, LabeledList, Section, NumberInput } from '../components';
 import { Window } from '../layouts';
 import { Scrubber, Vent } from './common/AtmosControls';
 import { InterfaceLockNoticeBox } from './common/InterfaceLockNoticeBox';
