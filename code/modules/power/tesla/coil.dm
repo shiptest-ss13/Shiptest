@@ -193,7 +193,7 @@
 
 	return ..()
 
-/obj/machinery/power/grounding_rod/zap_act(var/power)
+/obj/machinery/power/grounding_rod/zap_act(power)
 	if(anchored && !panel_open)
 		flick("grounding_rodhit", src)
 		zap_buckle_check(power)
