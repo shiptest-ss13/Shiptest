@@ -148,6 +148,11 @@
 				number_of_alphanumeric++
 				last_char_group = CHARS_DETECTED
 
+			//0 .. 9
+			if(48 to 57)
+				number_of_alphanumeric++
+				last_char_group = CHARS_DETECTED
+
 			// ' - . ~ | @ : # $ % & * +
 			if(39, 45, 46, 126, 124, 64, 58, 35, 36, 37, 38, 42, 43)
 				number_of_alphanumeric++
