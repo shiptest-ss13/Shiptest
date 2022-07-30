@@ -35,7 +35,7 @@
 /datum/component/taped/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_PARENT_ATTACKBY, COMSIG_PARENT_EXAMINE))
 
-/datum/component/taped/proc/set_tape(var/patch_amount)
+/datum/component/taped/proc/set_tape(patch_amount)
 	var/obj/I = parent
 	var/icon/tape_marks = icon(initial(I.icon), initial(I.icon_state))
 

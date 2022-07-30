@@ -130,7 +130,7 @@
 
 /obj/item/clothing/mask/gas/explorer/old
 	name = "prototype exploration mask"
-	desc = "An outdated nanotransen enviromask, designed for extended deployment in regions without a safe air supply. Armor-plated to a discomfort-inducing fault."
+	desc = "An outdated Nanotrasen enviromask, designed for extended deployment in regions without a safe air supply. Armor-plated to a discomfort-inducing fault."
 	icon_state = "old_mining"
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 15, "energy" = 15, "bomb" = 65, "bio" = 100, "rad" = 75, "fire" = 75, "acid" = 75)
 

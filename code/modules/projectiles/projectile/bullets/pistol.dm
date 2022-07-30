@@ -5,6 +5,10 @@
 	damage = 20
 	embedding = list(embed_chance=15, fall_chance=3, jostle_chance=4, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=5, jostle_pain_mult=6, rip_time=10)
 
+/obj/projectile/bullet/c9mm_surplus
+	name = "9mm surplus bullet"
+	damage = 15
+
 /obj/projectile/bullet/c9mm_ap
 	name = "9mm armor-piercing bullet"
 	damage = 15
@@ -32,6 +36,10 @@
 	name = "10mm bullet"
 	damage = 25
 
+/obj/projectile/bullet/c10mm_surplus
+	name = "10mm surplus bullet"
+	damage = 20
+
 /obj/projectile/bullet/c10mm_ap
 	name = "10mm armor-piercing bullet"
 	damage = 20
@@ -57,6 +65,10 @@
 /obj/projectile/bullet/c45
 	name = ".45 bullet"
 	damage = 25
+
+/obj/projectile/bullet/c45_surplus
+	name = ".45 surplus bullet"
+	damage = 20
 
 /obj/projectile/bullet/c45_ap
 	name = ".45 armor-piercing bullet"

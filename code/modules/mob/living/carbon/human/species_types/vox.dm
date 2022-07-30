@@ -27,6 +27,8 @@
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
 
+	unique_prosthesis = TRUE
+
 	species_chest = /obj/item/bodypart/chest/vox
 	species_head = /obj/item/bodypart/head/vox
 	species_l_arm = /obj/item/bodypart/l_arm/vox
@@ -108,7 +110,7 @@
 		return FALSE //Its a bit TOO mean to have the chems not work at all.
 	return ..()
 
-/datum/species/vox/get_item_offsets_for_dir(var/dir, var/hand)
+/datum/species/vox/get_item_offsets_for_dir(dir, hand)
 	////LEFT/RIGHT
 	switch(dir)
 		if(SOUTH)
@@ -179,7 +181,7 @@
 	if(held_item)
 		examine_list += "<span class='notice'>[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.</span>"
 
-/datum/action/innate/tail_hold/proc/handle_sprite_magic(var/mob/M, var/olddir, var/newdir, var/force = FALSE)
+/datum/action/innate/tail_hold/proc/handle_sprite_magic(mob/M, olddir, newdir, force = FALSE)
 	if(!held_item)
 		if(held_item_overlay)
 			owner.cut_overlay(held_item_overlay)

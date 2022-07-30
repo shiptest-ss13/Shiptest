@@ -2,7 +2,7 @@
 #define ACCESS_SECURITY 1
 /// Brig cells+timers, permabrig, gulag+gulag shuttle, prisoner management console
 #define ACCESS_BRIG 2
- /// Armory, gulag teleporter, execution chamber
+/// Armory, gulag teleporter, execution chamber
 #define ACCESS_ARMORY 3
 ///Detective's office, forensics lockers, security+medical records
 #define ACCESS_FORENSICS_LOCKERS 4
@@ -145,3 +145,15 @@
 #define ACCESS_MECH_SECURITY 302
 #define ACCESS_MECH_SCIENCE 303
 #define ACCESS_MECH_ENGINE 304
+
+//Loss Prevention Accesses
+#define ACCESS_LP_LIEUTENANT 400
+#define ACCESS_LP_COMMISSIONER 401
+#define ACCESS_LP_VAULT 402
+#define ACCESS_LP_AI 403
+#define ACCESS_LP_OPERATING_ROOM 404
+#define ACCESS_LP_BRIDGE 405
+#define ACCESS_LP_FACILITIES 406
+#define ACCESS_LP_SECURITY 407
+#define ACCESS_LP_MEDIC 408
+#define ACCESS_LP_ENGINEER 409

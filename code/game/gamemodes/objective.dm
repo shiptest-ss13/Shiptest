@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	var/completed = 0					//currently only used for custom objectives.
 	var/martyr_compatible = 0			//If the objective is compatible with martyr objective, i.e. if you can still do it while dead.
 
-/datum/objective/New(var/text)
+/datum/objective/New(text)
 	GLOB.objectives += src
 	if(text)
 		explanation_text = text
@@ -982,7 +982,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 	martyr_compatible = 0
 	var/target_count
 
-/datum/objective/hack_apc/New(var/text)
+/datum/objective/hack_apc/New(text)
 	target_count = rand(10, CONFIG_GET(number/max_malf_apc_hack_obj))
 	explanation_text = "Hack [target_count] APCs by the end of the round. You may still spend the processing power as normal."
 	..()

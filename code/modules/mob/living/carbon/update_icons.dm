@@ -84,7 +84,7 @@
 	apply_overlay(HANDS_LAYER)
 
 
-/mob/living/carbon/update_fire(var/fire_icon = "Generic_mob_burning")
+/mob/living/carbon/update_fire(fire_icon = "Generic_mob_burning")
 	remove_overlay(FIRE_LAYER)
 	if(on_fire || islava(loc))
 		var/mutable_appearance/new_fire_overlay = mutable_appearance('icons/mob/OnFire.dmi', fire_icon, -FIRE_LAYER)
@@ -214,7 +214,7 @@
 /mob/living/carbon/update_body()
 	update_body_parts()
 
-/mob/living/carbon/proc/update_body_parts(var/update_limb_data)
+/mob/living/carbon/proc/update_body_parts(update_limb_data)
 	//Check the cache to see if it needs a new sprite
 	update_damage_overlays()
 	var/list/needs_update = list()
@@ -297,7 +297,7 @@
 		layered_hands = FALSE
 		remove_overlay(HANDS_UNDER_BODY_LAYER)
 
-/mob/living/carbon/proc/special_update_hands(var/mob/M, var/olddir, var/newdir, var/override = FALSE)
+/mob/living/carbon/proc/special_update_hands(mob/M, olddir, newdir, override = FALSE)
 	if(olddir == newdir && !override)
 		return
 	if(!newdir)

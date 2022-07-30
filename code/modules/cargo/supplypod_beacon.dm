@@ -12,7 +12,7 @@
 	var/ready = FALSE
 	var/launched = FALSE
 
-/obj/item/supplypod_beacon/proc/update_status(var/consoleStatus)
+/obj/item/supplypod_beacon/proc/update_status(consoleStatus)
 	switch(consoleStatus)
 		if (SP_LINKED)
 			linked = TRUE
@@ -71,7 +71,7 @@
 	express_console = C//set the linked console var to the console
 	express_console.beacon = src//out with the old in with the news
 	update_status(SP_LINKED)
-	if (express_console.usingBeacon)
+	if (express_console.use_beacon)
 		update_status(SP_READY)
 	to_chat(user, "<span class='notice'>[src] linked to [C].</span>")
 

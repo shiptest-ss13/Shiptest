@@ -23,7 +23,7 @@
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag slug"
 	desc = "A weak beanbag slug for riot control."
-	icon_state = "bshell"
+	icon_state = "gshell"
 	custom_materials = list(/datum/material/iron=250)
 	projectile_type = /obj/projectile/bullet/shotgun_beanbag
 
@@ -71,7 +71,7 @@
 /obj/item/ammo_casing/shotgun/buckshot
 	name = "buckshot shell"
 	desc = "A 12 gauge buckshot shell."
-	icon_state = "gshell"
+	icon_state = "rshell"
 	projectile_type = /obj/projectile/bullet/pellet/shotgun_buckshot
 	pellets = 6
 	variance = 25
