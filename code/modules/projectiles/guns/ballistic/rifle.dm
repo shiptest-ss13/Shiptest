@@ -52,7 +52,7 @@
 
 /obj/item/gun/ballistic/rifle/boltaction
 	name = "\improper Illestren Hunting Rifle"
-	desc = "A Hunter's Pride rifle universally renowned for its ability to take down even the strongest of fauna. Despite this, it is very rarely used for hunting, and mostly used for putting holes in people, which it is also renowned for. Chambered in 7.62x54."
+	desc = "A Hunter's Pride rifle universally renowned for its ability to take down even the strongest of fauna. Despite it's intended  purpose, it is very rarely used for actual hunting and more often used for putting holes in people, for which it is also very renowned for. Chambered in 7.62x54."
 	sawn_desc = "An extremely sawn-off hunting rifle, popularly known as an \"obrez\". There was probably a reason it wasn't manufactured this short to begin with."
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -86,6 +86,8 @@
 	name = "\improper saint-roumain standard issue 'Smile' rifle"
 	desc = "A bolt action rifle. Usually given to low ranking hunters of the Militia tasked with mercenary work. Chambered in .300 Magnum."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
+	icon_state = "smile"
+	item_state = "smile"
 	can_be_sawn_off = FALSE
 
 /obj/item/gun/ballistic/rifle/boltaction/enchanted
