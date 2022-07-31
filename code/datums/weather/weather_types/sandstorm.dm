@@ -79,7 +79,7 @@
 	weather_message = "<span class='notice'>Gentle sand wafts down around you like grotesque snow.</span>"
 	weather_overlay = "dust_med"
 
-	end_message = "<span class='notice'>he sandfall slows, stops. Another layer of sand on the mesa beneath your feet.</span>"
+	end_message = "<span class='notice'>The sandfall slows, stops. Another layer of sand on the mesa beneath your feet.</span>"
 	end_overlay = "dust_low"
 
 	aesthetic = TRUE
