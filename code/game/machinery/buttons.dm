@@ -204,7 +204,7 @@
 	..()
 
 /obj/machinery/button/door/incinerator_vent_toxmix
-	name = "combustion chamber vent control"
+	name = "Combustion Chamber Vent control"
 	id = INCINERATOR_TOXMIX_VENT
 	req_access = list(ACCESS_TOX)
 
@@ -214,7 +214,7 @@
 	req_one_access = list(ACCESS_ATMOSPHERICS, ACCESS_MAINT_TUNNELS)
 
 /obj/machinery/button/door/incinerator_vent_atmos_aux
-	name = "combustion chamber vent control"
+	name = "Combustion Chamber Vent control"
 	id = INCINERATOR_ATMOS_AUXVENT
 	req_one_access = list(ACCESS_ATMOSPHERICS, ACCESS_MAINT_TUNNELS)
 
@@ -224,7 +224,7 @@
 	req_access = list(ACCESS_SYNDICATE)
 
 /obj/machinery/button/door/incinerator_vent_syndicatelava_aux
-	name = "combustion chamber vent control"
+	name = "Combustion Chamber Vent control"
 	id = INCINERATOR_SYNDICATELAVA_AUXVENT
 	req_access = list(ACCESS_SYNDICATE)
 

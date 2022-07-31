@@ -156,15 +156,15 @@
 	return 0
 
 /**
-  *
-  *Called by the device when it is emagged.
-  *
-  *Emagging the device allows certain programs to unlock new functions. However, the program will
-  *need to be downloaded first, and then handle the unlock on their own in their run_emag() proc.
-  *The device will allow an emag to be run multiple times, so the user can re-emag to run the
-  *override again, should they download something new. The run_emag() proc should return TRUE if
-  *the emagging affected anything, and FALSE if no change was made (already emagged, or has no
-  *emag functions).
+ *
+ *Called by the device when it is emagged.
+ *
+ *Emagging the device allows certain programs to unlock new functions. However, the program will
+ *need to be downloaded first, and then handle the unlock on their own in their run_emag() proc.
+ *The device will allow an emag to be run multiple times, so the user can re-emag to run the
+ *override again, should they download something new. The run_emag() proc should return TRUE if
+ *the emagging affected anything, and FALSE if no change was made (already emagged, or has no
+ *emag functions).
 **/
 /datum/computer_file/program/proc/run_emag()
 	return FALSE

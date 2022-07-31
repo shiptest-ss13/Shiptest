@@ -23,7 +23,7 @@
 		return
 	attempt_join_gang(user)
 
-/obj/item/gang_induction_package/proc/add_to_gang(var/mob/living/user)
+/obj/item/gang_induction_package/proc/add_to_gang(mob/living/user)
 	var/datum/game_mode/gang/F = SSticker.mode
 	var/datum/antagonist/gang/swappin_sides = new gang_to_use()
 	user.mind.add_antag_datum(swappin_sides)

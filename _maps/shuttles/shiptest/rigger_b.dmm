@@ -3,10 +3,9 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile,
-/turf/closed/wall,
 /area/ship/crew/chapel)
 "aw" = (
 /obj/machinery/power/terminal,
@@ -26,7 +25,7 @@
 "aE" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -36,14 +35,13 @@
 "aJ" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/chapel,
 /obj/structure/table/wood,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/chapel)
 "aT" = (
-/obj/structure/lattice,
 /turf/closed/wall,
 /area/ship/construction)
 "bc" = (
@@ -56,7 +54,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
@@ -112,7 +110,7 @@
 /area/ship/crew)
 "bX" = (
 /obj/item/radio/intercom/wideband{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/chair/wood/wings{
 	dir = 1
@@ -179,7 +177,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/structure/closet/cabinet{
 	name = "hunter cabinet"
@@ -211,7 +209,7 @@
 "eh" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/chair/pew/left{
 	dir = 4
@@ -413,7 +411,7 @@
 	},
 /obj/machinery/flasher{
 	id = "Cell2B";
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/wood/maple,
 /area/ship/security)
@@ -515,7 +513,7 @@
 "iH" = (
 /obj/structure/closet/crate,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/spawner/lootdrop/maintenance/three,
 /obj/item/gun/ballistic/revolver/pepperbox,
@@ -567,7 +565,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerengwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -762,7 +760,7 @@
 "lT" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/smartfridge/drying_rack,
 /turf/open/floor/wood/maple,
@@ -823,7 +821,7 @@
 	dir = 1
 	},
 /obj/machinery/advanced_airlock_controller{
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -871,7 +869,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
@@ -1016,14 +1014,14 @@
 	dir = 4;
 	id = "riggerdoors";
 	name = "Blast Door Control";
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
 	dir = 4;
 	id = "riggerwindows";
 	name = "Window Lockdown";
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = -5
 	},
 /obj/machinery/light{
@@ -1160,7 +1158,7 @@
 "pY" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/light/small{
 	dir = 8
@@ -1173,7 +1171,7 @@
 /area/ship/crew)
 "qk" = (
 /obj/structure/mirror{
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/sink{
 	dir = 8;
@@ -1182,7 +1180,7 @@
 /obj/machinery/light/small,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/wood/birch,
 /area/ship/crew)
@@ -1317,7 +1315,7 @@
 /area/ship/security/armory)
 "rJ" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/reagent_dispensers/watertank/high,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1350,7 +1348,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
@@ -1359,7 +1357,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1400,7 +1398,7 @@
 "sT" = (
 /obj/machinery/door/poddoor{
 	id = "riggerdoors";
-	name = "mech bay blast door"
+	name = "Mechbay Blast Door"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/engine/hull/interior,
@@ -1489,7 +1487,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerengwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1612,7 +1610,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerengwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1818,7 +1816,7 @@
 "yi" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/structure/table,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -1849,7 +1847,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerengwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1900,7 +1898,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerengwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1942,7 +1940,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
@@ -2080,7 +2078,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/chapel)
 "Ce" = (
-/obj/structure/lattice,
 /turf/closed/wall,
 /area/ship/crew)
 "Cf" = (
@@ -2218,7 +2215,7 @@
 "Dr" = (
 /obj/machinery/computer/cryopod{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/industrial/loading{
 	dir = 4
@@ -2301,7 +2298,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
@@ -2325,7 +2322,7 @@
 "EF" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plating,
@@ -2594,7 +2591,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/curtain,
 /obj/structure/window/reinforced/fulltile,
@@ -2859,7 +2856,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
@@ -2955,7 +2952,7 @@
 /obj/machinery/power/apc/auto_name/west,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/chair/pew/left{
 	dir = 4
@@ -2997,7 +2994,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3006,7 +3003,7 @@
 "Nf" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/kitchenspike,
 /obj/effect/decal/cleanable/blood/old,
@@ -3192,7 +3189,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
@@ -3272,7 +3269,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerengwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -3296,7 +3293,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/machinery/atmospherics/components/binary/pump/on/layer4{
 	dir = 8
@@ -3463,7 +3460,7 @@
 /area/ship/crew/chapel)
 "Rw" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood/yew,
@@ -3472,7 +3469,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
@@ -3496,7 +3493,7 @@
 "RO" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 10
@@ -3665,7 +3662,7 @@
 "Uf" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/light/small,
 /obj/structure/ore_box,
@@ -3678,7 +3675,7 @@
 "Ul" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -3721,7 +3718,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
@@ -3770,7 +3767,7 @@
 "VF" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/closet/emcloset,
 /obj/machinery/light/small{
@@ -3802,7 +3799,7 @@
 "VW" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -3975,7 +3972,7 @@
 /area/ship/engineering/atmospherics)
 "Yc" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/cable{
 	icon_state = "4-8"

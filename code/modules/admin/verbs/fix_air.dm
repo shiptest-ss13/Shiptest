@@ -1,5 +1,5 @@
 // Proc taken from yogstation, credit to nichlas0010 for the original
-/client/proc/fix_air(var/turf/open/T in world)
+/client/proc/fix_air(turf/open/T in world)
 	set name = "Fix Air"
 	set category = "Admin.Game"
 	set desc = "Fixes air in specified radius."
@@ -13,9 +13,5 @@
 		log_game("[key_name_admin(usr)] fixed air with range [range] in area [T.loc.name]")
 		var/datum/gas_mixture/GM = new
 		for(var/turf/open/F in range(range,T))
-			if(F.blocks_air)
-			//skip walls
-				continue
 			GM.parse_gas_string(F.initial_gas_mix)
 			F.copy_air(GM)
-			F.update_visuals()

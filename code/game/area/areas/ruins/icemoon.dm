@@ -33,12 +33,6 @@
 /area/ruin/powered/slimerancher/maints
 	name = "Slime Ranching Maints"
 
-/area/ruin/powered/demonlab
-	name = "Upsilon Research Outpost"
-	icon_state = "dk_yellow"
-	mood_bonus = -10
-	mood_message = "<span class='nicegreen'>I want to leave this place.</span>\n"
-
 /area/ruin/unpowered/corprejectrooms
 	name = "NT Security Solutions Site Gamma Rooms"
 	icon_state = "dk_yellow"
@@ -86,3 +80,7 @@
 	icon_state = "dk_yellow"
 	mood_bonus = -10
 	mood_message = "<span class='boldwarning'>I want to leave this place.</span>\n"
+
+/area/ruin/powered/hydroponicslab
+	name = "Hydroponics Lab"
+	icon_state = "dk_yellow"

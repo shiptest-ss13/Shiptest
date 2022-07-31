@@ -19,6 +19,12 @@
 	description = "Slime ranchin with the bud."
 	suffix = "icemoon_surface_slimerancher.dmm"
 
+/datum/map_template/ruin/icemoon/hydroponicslab //Shiptest edit
+	name = "Hydroponics Lab"
+	id = "hydroponicslab"
+	description = "An abandoned hydroponics research facility containing hostile plant fauna."
+	suffix = "icemoon_hydroponics_lab.dmm"
+
 // above and below ground together
 
 
@@ -38,12 +44,6 @@
 	id = "hermitshack"
 	description = "A place of shelter for a lone hermit, scraping by to live another day."
 	suffix = "icemoon_underground_hermit.dmm"
-
-/datum/map_template/ruin/icemoon/wendigo_cave
-	name = "Wendigo Cave"
-	id = "wendigocave"
-	description = "Into the jaws of the beast."
-	suffix = "icemoon_underground_wendigo_cave.dmm"
 
 /datum/map_template/ruin/icemoon/corpreject
 	name = "NT Security Solutions Site Gamma"
@@ -76,20 +76,8 @@
 	description = "\"First the creature's Flame breathed from beneath the stone, Hot battle-fumes, and the earth rumbled.\""
 	suffix = "icemoon_underground_drakelair.dmm"
 
-/datum/map_template/ruin/icemoon/burnies_lair
-	name = "Burnies's Lair"
-	id = "burnies-lair"
-	description = "Some sort of shack. Who the hell is Burnie?"
-	suffix = "icemoon_underground_burnies_lair.dmm"
-
 /datum/map_template/ruin/icemoon/brazillian_lab
 	name = "Barricaded Compound"
 	id = "brazillian-lab"
 	description = "A conspicuous compound in the middle of the cold wasteland. What goodies are inside?"
 	suffix = "icemoon_underground_brazillianlab.dmm"
-
-/datum/map_template/ruin/icemoon/demonlab
-	name = "Upsilon Research Outpost"
-	id = "demonlab"
-	description = "Some abandoned research outpost"
-	suffix = "icemoon_demonlab.dmm"

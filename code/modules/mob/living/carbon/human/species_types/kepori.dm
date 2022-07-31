@@ -3,7 +3,7 @@
 	id = SPECIES_KEPORI
 	default_color = "6060FF"
 	species_traits = list(MUTCOLORS, EYECOLOR, NO_UNDERWEAR)
-	inherent_traits = list(TRAIT_HOLDABLE)
+	inherent_traits = list(TRAIT_SCOOPABLE)
 	mutant_bodyparts = list("kepori_body_feathers", "kepori_tail_feathers", "kepori_feathers")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "kepori_tail_feathers" = "Fan")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
@@ -40,6 +40,8 @@
 	var/tackle_speed = 2
 	/// See: [/datum/component/tackler/var/skill_mod]
 	var/skill_mod = 2
+
+	unique_prosthesis = TRUE
 
 	species_chest = /obj/item/bodypart/chest/kepori
 	species_head = /obj/item/bodypart/head/kepori
