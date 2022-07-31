@@ -485,6 +485,13 @@
 	icon_state = "moonshinebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/moonshine = 100)
 
+/obj/item/reagent_containers/food/drinks/bottle/coconut
+	name = "Tali's Pure Coconut Delight"
+	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
+	icon_state = "coconutbottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 100)
+	isGlass = TRUE
+
 ////////////////////////// MOLOTOV ///////////////////////
 /obj/item/reagent_containers/food/drinks/bottle/molotov
 	name = "molotov cocktail"
