@@ -246,6 +246,7 @@
 			token.color = COLOR_GRAY
 
 			ruin_list = null // asteroid ruins when
+			surface = null
 			mapgen = /datum/map_generator/cave_generator/asteroid
 			weather_controller_type = null
 		if(DYNAMIC_WORLD_SPACERUIN)
@@ -255,6 +256,7 @@
 			token.icon_state = "strange_event"
 			token.color = null
 			ruin_list = SSmapping.space_ruins_templates
+			surface = null
 			mapgen = null
 			weather_controller_type = null
 
