@@ -90,3 +90,20 @@
 /obj/item/gun/ballistic/automatic/hmg/solar/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+
+/obj/item/gun/ballistic/automatic/hmg/smartgun
+	name = "\improper Raummetall-KT	"
+	desc = "The 'smart machine gun', or just 'smartgun,' which nicknamed as such due to it's 'smart' bullets which use bluespace to teleport past"
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/ak47.ogg'
+	icon_state = "ak47"
+	item_state = "ak47"
+	mag_display = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	mag_type = /obj/item/ammo_box/magazine/ak47
+
+/obj/item/gun/ballistic/automatic/assualt/ak47/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)

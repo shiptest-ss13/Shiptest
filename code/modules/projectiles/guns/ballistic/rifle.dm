@@ -52,7 +52,7 @@
 
 /obj/item/gun/ballistic/rifle/boltaction
 	name = "\improper Illestren Hunting Rifle"
-	desc = "A Hunter's Pride rifle universally renowned for its ability to take down even the strongest of fauna. Despite it's intended  purpose, it is very rarely used for actual hunting and more often used for putting holes in people, for which it is also very renowned for. Chambered in 7.62x54."
+	desc = "A Hunter's Pride rifle universally renowned for its ability to take down even the strongest of fauna. Despite it's intended purpose, it is very rarely used for actual hunting and more often used for putting holes in people, for which it is even more renowned for. Chambered in 7.62x54."
 	sawn_desc = "An extremely sawn-off hunting rifle, popularly known as an \"obrez\". There was probably a reason it wasn't manufactured this short to begin with."
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
