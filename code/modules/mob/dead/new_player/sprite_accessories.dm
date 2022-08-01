@@ -1994,7 +1994,7 @@
 /datum/sprite_accessory/moth_wings/luna
 	name = "Luna"
 	icon_state = "luna"
-	
+
 /datum/sprite_accessory/moth_wingsopen/luna
 	name = "Luna"
 	icon_state = "luna"
