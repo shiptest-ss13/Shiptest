@@ -1491,7 +1491,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		balance -= quirk_owned_instance.value
 		switch(change_type)
 			if("species")
-				if(((quirk_owned_instance.species_lock["type"] == "allowed") && !(target_species.id in quirk_owned_instance.species_lock)) || (quirk_owned_instance.species_lock["type"] == "blocked" && (target_species.id in quirk_owned_instance.species_lock)))
+				if(((quirk_owned_instance.species_lock["type"] == "allowed") && !(target_species.id in quirk_owned_instance.species_lock)) || ((quirk_owned_instance.species_lock["type"] == "blocked") && (target_species.id in quirk_owned_instance.species_lock)))
 					all_quirks_new -= quirk_owned_instance.name
 					balance += quirk_owned_instance.value
 			if("mood")
