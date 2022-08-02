@@ -549,7 +549,7 @@
 	. = ..()
 	user.changeNext_move(CLICK_CD_MELEE)//makes the hook unquick to swing
 	return .
-  
+ 
 //Immortality Talisman: Now with state-of-the-art panic button technology
 /obj/item/immortality_talisman
 	name = "\improper Immortality Talisman"
