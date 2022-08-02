@@ -33,12 +33,6 @@
 	//BREATH TEMPERATURE
 	handle_breath_temperature(breath)
 
-/mob/living/carbon/alien/handle_status_effects()
-	..()
-	//natural reduction of movement delay due to stun.
-	if(move_delay_add > 0)
-		move_delay_add = max(0, move_delay_add - rand(1, 2))
-
 /mob/living/carbon/alien/handle_changeling()
 	return
 
@@ -46,4 +40,4 @@
 	. = ..()
 	if(.) //if the mob isn't on fire anymore
 		return
-	adjust_bodytemperature(BODYTEMP_HEATING_MAX) //If you're on fire, you heat up!
+	adjust_bodytemperature(dna.species.bodytemp_heating_rate_max) //If you're on fire, you heat up!

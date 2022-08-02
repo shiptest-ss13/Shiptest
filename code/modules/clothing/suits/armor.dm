@@ -10,7 +10,7 @@
 	max_integrity = 250
 	resistance_flags = NONE
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	greyscale_colors = list(list(14, 18))
+	greyscale_colors = list(list(18, 19), list(13, 18), list(20, 15))
 	greyscale_icon_state = "armor"
 
 /obj/item/clothing/suit/armor/Initialize()
@@ -69,6 +69,15 @@
 	icon_state = "blueshift"
 	item_state = "blueshift"
 	custom_premium_price = 750
+
+/obj/item/clothing/suit/armor/vest/duster
+	name = "black duster"
+	desc = "A long, intimidating black coat. This one is reinforced and ideal for protecting its wearer from rain, sun, dust, and bullets."
+	icon_state = "duster_sec"
+	item_state = "duster_sec"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
 
 /obj/item/clothing/suit/armor/hos
 	name = "armored greatcoat"
@@ -147,6 +156,12 @@
 	name = "colonial minutemen general coat"
 	desc = "A very fancy coat used by generals of the Colonial Minutemen."
 	icon_state = "minuteman_general"
+
+/obj/item/clothing/suit/armor/vest/capcarapace/duster
+	name = "captain's duster"
+	desc = "A long, commanding coat worn over a surprisingly sleek set of armor and decorated with gold embroidery. Ideal for protecting its wearer from rain, sun, dust, mutineers, pirates, bears, hordes of angry legions, and so on."
+	icon_state = "duster_captain"
+	item_state = "duster_captain"
 
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"
@@ -332,4 +347,93 @@
 	desc = "A luxurious brown coat with an crossweave of Kevlar and fur from genuine wolves, as protective as it is stylish."
 	icon_state = "inteq_battlecoat"
 	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+
+/obj/item/clothing/suit/armor/inteq/corpsman
+	name = "inteq corpsman vest"
+	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division medical staff."
+	icon_state = "inteq_labcoat"
+	item_state = "inteq_labcoat"
+	allowed = list(
+		/obj/item/analyzer,
+		/obj/item/stack/medical,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/reagent_containers/hypospray,
+		/obj/item/healthanalyzer,
+		/obj/item/flashlight/pen,
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/reagent_containers/glass/beaker,
+		/obj/item/reagent_containers/pill,
+		/obj/item/storage/pill_bottle,
+		/obj/item/melee/classic_baton/telescopic,
+		/obj/item/soap,
+		/obj/item/sensor_device,
+		/obj/item/tank/internals/emergency_oxygen,
+		/obj/item/tank/internals/plasmaman,
+		/obj/item/ammo_box,
+		/obj/item/gun/ballistic,
+		/obj/item/gun/energy,
+		/obj/item/melee/baton,
+	)
+
+/obj/item/clothing/suit/armor/roumain
+	name = "saint-roumain duster"
+	desc = "A coat made from hard leather. Meant to withstand long hunts in harsh wilderness."
+	icon_state = "rouma_coat"
+	item_state = "rouma_coat"
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	heat_protection = CHEST|GROIN|ARMS
+
+/obj/item/clothing/suit/armor/roumain/shadow
+	name = "saint-roumain shadow duster"
+	desc = "A coat made from hard leather. Its rough, barely-treated finish is typical of one of the Saint-Roumain Militia's trainees."
+	icon_state = "rouma_shadow_coat"
+	item_state = "rouma_shadow_coat"
+
+/obj/item/clothing/suit/armor/hos/roumain/montagne
+	name = "saint-roumain montagne coat"
+	desc = "A stylish red coat to indicate that you are, in fact, a Hunter Montagne. Made of extra hard exotic leather, treated with bullet-resistant materials, and lined with the fur of some unidentifiable creature."
+	icon_state = "rouma_montagne_coat"
+	item_state = "rouma_montagne_coat"
+
+/obj/item/clothing/suit/armor/vest/lieutenant
+	name = "lieutenant's armor"
+	desc = "An armored vest with a lieutenant's insignia imprinted on it."
+	icon_state = "blueshield"
+	item_state = "blueshield"
+
+/obj/item/clothing/suit/armor/vest/solgov
+	name = "\improper SolGov armor vest"
+	desc = "A standard armor vest fielded for SolGov's infantry."
+	icon_state = "armor_solgov"
+	item_state = "armor_solgov"
+
+/obj/item/clothing/suit/armor/vest/solgov/Initialize()
+	. = ..()
+	allowed |= list(/obj/item/gun/energy/laser/terra, /obj/item/gun/energy/pulse/terra, /obj/item/tank)
+
+/obj/item/clothing/suit/armor/vest/solgov/rep
+	name = "\improper SolGov Inspector armor vest"
+	desc = "A type I armor vest emblazoned with the SolGov logo."
+	icon_state = "armor_alt_solgov"
+	item_state = "armor_alt_solgov"
+
+/obj/item/clothing/suit/armor/vest/hop
+	name = "head of personnel's parade jacket"
+	desc = "For when an armoured vest isn't fashionable enough."
+	icon_state = "hopformal"
+	item_state = "capspacesuit"
+
+/obj/item/clothing/suit/armor/vest/syndie
+	name = "\improper Syndicate plate carrier"
+	desc = "A plate carrier vest commonly used by Syndicate forces, regardless of affiliation. Has a few attached pouches."
+	icon_state = "syndiearmor"
+	item_state = "syndiearmor"
+
+/obj/item/clothing/suit/armor/vest/scrap_armor
+	name = "scrap armor"
+	desc = "Who thought this is a good idea for armor?"
+	icon_state = "scraparmor"
+	item_state = "scraparmor"
+	armor = list(melee = 5)

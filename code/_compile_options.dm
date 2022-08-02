@@ -33,10 +33,6 @@
 #endif							//	1 to use the default behaviour;
 								//	2 for preloading absolutely everything;
 
-#ifdef LOWMEMORYMODE
-#define FORCE_MAP "_maps/runtimestation.json"
-#endif
-
 //Update this whenever you need to take advantage of more recent byond features
 #define MIN_COMPILER_VERSION 513
 #define MIN_COMPILER_BUILD 1514
@@ -47,10 +43,12 @@
 #endif
 
 //Update this whenever the byond version is stable so people stop updating to hilariously broken versions
-#define MAX_COMPILER_VERSION 514
-#define MAX_COMPILER_BUILD 1571
+//#define MAX_COMPILER_VERSION 514
+//#define MAX_COMPILER_BUILD 1571
+#ifdef MAX_COMPILER_VERSION
 #if DM_VERSION > MAX_COMPILER_VERSION || DM_BUILD > MAX_COMPILER_BUILD
 #warn WARNING: Your BYOND version is over the recommended version (514.1571)! Stability is not guaranteed.
+#endif
 #endif
 //Log the full sendmaps profile on 514.1556+, any earlier and we get bugs or it not existing
 #if DM_VERSION >= 514 && DM_BUILD >= 1556

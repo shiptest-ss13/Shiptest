@@ -8,6 +8,10 @@
 /obj/effect/projectile/muzzle/laser/blue
 	icon_state = "muzzle_laser_blue"
 
+/obj/effect/projectile/muzzle/laser/emitter
+	name = "emitter flash"
+	icon_state = "muzzle_emitter"
+
 /obj/effect/projectile/muzzle/disabler
 	icon_state = "muzzle_omni"
 

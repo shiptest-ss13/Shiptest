@@ -5,13 +5,6 @@
 	ambientsounds = REEBE
 	always_unpowered = FALSE
 
-/area/ruin/reebe/Entered(atom/movable/AM)
-	. = ..()
-	if(ismob(AM))
-		var/mob/M = AM
-		if(M.client)
-			addtimer(CALLBACK(M.client, /client/proc/play_reebe_ambience), 900)
-
 //TURFS
 /turf/open/chasm/reebe_void
 	name = "void"
@@ -72,20 +65,6 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_LATTICE, SMOOTH_GROUP_CATWALK, SMOOTH_GROUP_OPEN_FLOOR)
 	canSmoothWith = list(SMOOTH_GROUP_CATWALK)
-
-//Reebe ambience replay
-/client/proc/play_reebe_ambience()
-	var/area/A = get_area(mob)
-	if((!istype(A, /area/ruin/reebe)) && (!istype(A, /area/overmap_encounter/planetoid/reebe)))
-		return
-	var/sound = pick(REEBE)
-	if(!played)
-		SEND_SOUND(src, sound(sound, repeat = 0, wait = 0, volume = 25, channel = CHANNEL_AMBIENCE))
-		played = TRUE
-		addtimer(CALLBACK(src, /client/proc/ResetAmbiencePlayed), 600)
-	addtimer(CALLBACK(src, /client/proc/play_reebe_ambience), 900)
-
-
 
 //actual gen
 /datum/map_generator/cave_generator/reebe

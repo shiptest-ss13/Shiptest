@@ -156,6 +156,7 @@
 	var/id_type_name = "identification card"
 	var/mining_points = 0 //For redeeming at mining equipment vendors
 	var/list/access = list()
+	var/list/ship_access = list()
 	var/registered_name = null // The name registered_name on the card
 	var/assignment = null
 	var/access_txt // mapping aid
@@ -343,6 +344,11 @@
 		msg += "The card indicates that the holder is [registered_age] years old. [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 	if(mining_points)
 		msg += "There's [mining_points] mining equipment redemption point\s loaded onto this card."
+	if( length( ship_access ) )
+		var/list/ship_names = list()
+		for( var/datum/overmap/ship/controlled/ship in ship_access )
+			ship_names += ship.name
+		msg += "The card has access to the following ships: [ship_names.Join(", ")]"
 	if(registered_account)
 		msg += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
 		if(registered_account.account_job)
@@ -397,6 +403,21 @@
 	if(uses_overlays)
 		return "[icon2html(get_cached_flat_icon(), user)] [thats? "That's ":""][get_examine_name(user)]" //displays all overlays in chat
 	return ..()
+
+// Adds the referenced ship directly to the card
+/obj/item/card/id/proc/add_ship_access(datum/overmap/ship/controlled/ship )
+	if ( ship )
+		ship_access += ship
+
+// Removes the referenced ship from the card
+/obj/item/card/id/proc/remove_ship_access(datum/overmap/ship/controlled/ship )
+	if ( ship )
+		ship_access -= ship
+
+// Finds the referenced ship in the list
+/obj/item/card/id/proc/has_ship_access(datum/overmap/ship/controlled/ship )
+	if ( ship )
+		return ship_access.Find( ship )
 
 /*
 Usage:
@@ -598,6 +619,7 @@ update_label()
 /obj/item/card/id/captains_spare/Initialize()
 	var/datum/job/captain/J = new/datum/job/captain
 	access = J.get_access()
+	add_ship_access( SSshuttle.get_ship( src ) )
 	. = ..()
 	update_label()
 
@@ -621,6 +643,9 @@ update_label()
 /obj/item/card/id/centcom/Initialize()
 	access = get_all_centcom_access()
 	. = ..()
+
+/obj/item/card/id/centcom/has_ship_access(datum/overmap/ship/controlled/ship )
+	return TRUE
 
 /obj/item/card/id/ert
 	name = "\improper CentCom ID"
@@ -813,6 +838,7 @@ update_label()
 	desc = "A faded Charlie Station ID card. You can make out the rank \"Captain\"."
 	assignment = "Charlie Station Captain"
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_ENGINE, ACCESS_AWAY_SEC)
+
 /obj/item/card/id/away/old/apc
 	name = "APC Access ID"
 	desc = "A special ID card that allows access to APC terminals."
@@ -820,6 +846,32 @@ update_label()
 
 /obj/item/card/id/away/deep_storage //deepstorage.dmm space ruin
 	name = "bunker access ID"
+
+/obj/item/card/id/solgov
+	name = "\improper SolGov Officer ID"
+	id_type_name = "\improper SolGov ID"
+	desc = "A SolGov ID with no proper access to speak of."
+	assignment = "SolGov Officer"
+	icon_state = "solgov"
+	uses_overlays = FALSE
+
+/obj/item/card/id/solgov/commander
+	name = "\improper SolGov Commander ID"
+	id_type_name = "\improper SolGov ID"
+	desc = "A SolGov ID with no proper access to speak of. This one indicates a Commander."
+
+/obj/item/card/id/solgov/elite
+	name = "\improper SolGov Elite ID"
+	id_type_name = "\improper SolGov ID"
+	desc = "A SolGov ID with no proper access to speak of. This one indicates an Elite."
+
+/obj/item/card/id/away/slime //We're ranchin, baby!
+	name = "\improper Slime Ranch access card"
+	desc = "An ID card with access to the farm."
+	assignment = "Slime Rancher"
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_XENOBIOLOGY)
+	registered_name = "Slime Rancher"
+	icon_state = "syndie"
 
 /obj/item/card/id/departmental_budget
 	name = "departmental card (FUCK)"

@@ -505,3 +505,9 @@
 	key = "exhale"
 	key_third_person = "exhales"
 	message = "breathes out."
+
+/datum/emote/living/clack
+	key = "clack"
+	key_third_person = "clacks"
+	message = "clacks their beak."
+	emote_type = EMOTE_VISIBLE

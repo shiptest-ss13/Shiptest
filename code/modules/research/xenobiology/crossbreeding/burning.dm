@@ -71,8 +71,9 @@ Burning extracts:
 	for(var/turf/open/T in range(3, get_turf(user)))
 		T.MakeSlippery(TURF_WET_PERMAFROST, min_wet_time = 10, wet_time_to_add = 5)
 	for(var/mob/living/carbon/M in range(5, get_turf(user)))
-		if(M != user)
-			M.bodytemperature = BODYTEMP_COLD_DAMAGE_LIMIT + 10 //Not quite cold enough to hurt.
+		if(M != user && iscarbon(M))
+			var/mob/living/carbon/C = M
+			M.bodytemperature = C.dna.species.bodytemp_cold_damage_limit + 10 //Not quite cold enough to hurt.
 			to_chat(M, "<span class='danger'>You feel a chill run down your spine, and the floor feels a bit slippery with frost...</span>")
 	..()
 
@@ -82,7 +83,7 @@ Burning extracts:
 
 /obj/item/slimecross/burning/metal/do_effect(mob/user)
 	for(var/turf/closed/wall/W in range(1,get_turf(user)))
-		W.dismantle_wall(1)
+		W.dismantle_wall(devastated = TRUE)
 		playsound(W, 'sound/effects/break_stone.ogg', 50, TRUE)
 	user.visible_message("<span class='danger'>[src] pulses violently, and shatters the walls around it!</span>")
 	..()

@@ -72,7 +72,7 @@
 	// this balances body temp to the enviroment and natural stabilization
 	. = ..()
 
-	if(bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT && !HAS_TRAIT(src, TRAIT_RESISTHEAT))
+	if(bodytemperature > dna.species.bodytemp_heat_damage_limit && !HAS_TRAIT(src, TRAIT_RESISTHEAT))
 		switch(bodytemperature)
 			if(360 to 400)
 				throw_alert("temp", /atom/movable/screen/alert/hot, 1)
@@ -87,7 +87,7 @@
 				else
 					apply_damage(HEAT_DAMAGE_LEVEL_2, BURN)
 
-	else if(bodytemperature < BODYTEMP_COLD_DAMAGE_LIMIT && !HAS_TRAIT(src, TRAIT_RESISTCOLD))
+	else if(bodytemperature < dna.species.bodytemp_cold_damage_limit && !HAS_TRAIT(src, TRAIT_RESISTCOLD))
 		if(!istype(loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 			switch(bodytemperature)
 				if(200 to 260)
@@ -157,5 +157,5 @@
 		var/obj/item/I = X
 		I.fire_act((fire_stacks * 50)) //damage taken is reduced to 2% of this value by fire_act()
 
-	adjust_bodytemperature(BODYTEMP_HEATING_MAX)
+	adjust_bodytemperature(HUMAN_BODYTEMP_HEATING_MAX)
 	SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)

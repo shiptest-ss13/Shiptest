@@ -122,7 +122,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(!has_cover)
 		INVOKE_ASYNC(src, .proc/popUp)
 
-/obj/machinery/porta_turret/proc/toggle_on(var/set_to)
+/obj/machinery/porta_turret/proc/toggle_on(set_to)
 	var/current = on
 	if (!isnull(set_to))
 		on = set_to
@@ -556,6 +556,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	for(var/faction1 in faction)
 		if(faction1 in target.faction)
 			return TRUE
+	if(ismouse(target))
+		return TRUE
 	return FALSE
 
 /obj/machinery/porta_turret/proc/target(atom/movable/target)
@@ -826,6 +828,13 @@ DEFINE_BITFIELD(turret_flags, list(
 	lethal_projectile = /obj/projectile/beam/weak/penetrator
 	faction = list("neutral","silicon","turret")
 
+/obj/machinery/porta_turret/centcom_shuttle/ballistic
+	stun_projectile = /obj/projectile/bullet
+	lethal_projectile = /obj/projectile/bullet
+	lethal_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
+	stun_projectile_sound = 'sound/weapons/gun/smg/shot.ogg'
+	desc = "A ballistic machine gun auto-turret."
+
 ////////////////////////
 //Turret Control Panel//
 ////////////////////////
@@ -938,7 +947,7 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/turretid/ui_data(mob/user)
 	var/list/data = list()
 	data["locked"] = locked
-	data["siliconUser"] = user.has_unlimited_silicon_privilege
+	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access( user )
 	data["enabled"] = enabled
 	data["lethal"] = lethal
 	data["shootCyborgs"] = shoot_cyborgs

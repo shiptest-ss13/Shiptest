@@ -116,6 +116,8 @@
 
 /datum/emote/living/carbon/circle/run_emote(mob/user, params, type_override, intentional)
 	. = ..()
+	if(!.)
+		return
 	var/obj/item/circlegame/N = new(user)
 	if(user.put_in_hands(N))
 		to_chat(user, "<span class='notice'>You make a circle with your hand.</span>")

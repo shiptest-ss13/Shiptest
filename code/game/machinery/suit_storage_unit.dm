@@ -51,6 +51,11 @@
 	icon_state = "industrial"
 	base_icon_state = "industrial"
 
+/obj/machinery/suit_storage_unit/inherit/industrial //i know its dirty but, eh you fix it, i am mapping rn
+	name = "industrial suit storage unit"
+	icon_state = "industrial"
+	base_icon_state = "industrial"
+
 /obj/machinery/suit_storage_unit/standard_unit
 	suit_type = /obj/item/clothing/suit/space/eva
 	helmet_type = /obj/item/clothing/head/helmet/space/eva
@@ -378,12 +383,12 @@
 		add_fingerprint(user)
 
 /**
-  * UV decontamination sequence.
-  * Duration is determined by the uv_cycles var.
-  * Effects determined by the uv_super var.
-  * * If FALSE, all atoms (and their contents) contained are cleared of radiation. If a mob is inside, they are burned every cycle.
-  * * If TRUE, all items contained are destroyed, and burn damage applied to the mob is increased. All wires will be cut at the end.
-  * All atoms still inside at the end of all cycles are ejected from the unit.
+ * UV decontamination sequence.
+ * Duration is determined by the uv_cycles var.
+ * Effects determined by the uv_super var.
+ * * If FALSE, all atoms (and their contents) contained are cleared of radiation. If a mob is inside, they are burned every cycle.
+ * * If TRUE, all items contained are destroyed, and burn damage applied to the mob is increased. All wires will be cut at the end.
+ * All atoms still inside at the end of all cycles are ejected from the unit.
 */
 /obj/machinery/suit_storage_unit/proc/cook()
 	var/mob/living/mob_occupant = occupant

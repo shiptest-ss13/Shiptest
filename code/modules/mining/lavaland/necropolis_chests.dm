@@ -892,7 +892,7 @@
 
 /obj/item/clothing/gloves/gauntlets/proc/rocksmash(mob/living/carbon/human/H, atom/A, proximity)
 	SIGNAL_HANDLER
-	if(!istype(A, /turf/closed/mineral))
+	if(!(istype(A, /turf/closed/mineral) || istype(A, /turf/closed/wall/concrete)))
 		return
 	A.attackby(src, H)
 	return COMPONENT_NO_ATTACK_OBJ
@@ -900,7 +900,7 @@
 //A version of the Cave Story refrence that a deranged scientist got their hands on. Better? Not really. Different? Definitely.
 /obj/item/gun/energy/spur
 	name = "Slowpoke"
-	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotransen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
+	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotrasen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
 	icon = 'icons/obj/guns/energy.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'

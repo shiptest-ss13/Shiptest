@@ -18,7 +18,6 @@
 	var/gps = null
 	var/obj/effect/light_emitter/tendril/emitted_light
 
-
 /obj/structure/spawner/lavaland/goliath
 	mob_types = list(/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril)
 
@@ -27,6 +26,9 @@
 
 /obj/structure/spawner/lavaland/icewatcher
 	mob_types = list(/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing)
+
+/obj/structure/spawner/lavaland/whitesandsbasilisk
+	mob_types = list(/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands)
 
 GLOBAL_LIST_INIT(tendrils, list())
 /obj/structure/spawner/lavaland/Initialize()

@@ -7,6 +7,8 @@
 	supervisors = "the head of personnel"
 	wiki_page = "Clown" //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
+	alt_titles = list("Jester", "Comedian")
+	senior_title = "Master Prankster"
 
 	outfit = /datum/outfit/job/clown
 

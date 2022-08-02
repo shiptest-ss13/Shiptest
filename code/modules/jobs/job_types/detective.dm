@@ -11,6 +11,8 @@
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Forensics Specialist", "Private Investigator")
+	senior_title = "Hard-boiled Detective"
 
 	outfit = /datum/outfit/job/detective
 

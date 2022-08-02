@@ -12,6 +12,8 @@
 	exp_type = EXP_TYPE_CREW
 	officer = TRUE
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Brig Chief", "Master at Arms")
+	senior_title = "Chief Master Sergeant"
 
 	outfit = /datum/outfit/job/warden
 

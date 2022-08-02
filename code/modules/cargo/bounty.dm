@@ -19,11 +19,9 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	return !claimed
 
 // Called when the claim button is clicked. Override to provide fancy rewards.
-/datum/bounty/proc/claim()
-	if(can_claim())
-		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
-		if(D)
-			D.adjust_money(reward)
+/datum/bounty/proc/claim(datum/bank_account/claimer_account)
+	if(can_claim() && claimer_account)
+		claimer_account.adjust_money(reward)
 		claimed = TRUE
 
 // If an item sent in the cargo shuttle can satisfy the bounty.

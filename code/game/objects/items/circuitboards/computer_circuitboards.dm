@@ -254,6 +254,16 @@
 	icon_state = "medical"
 	build_path = /obj/machinery/computer/scan_consolenew
 
+/obj/item/circuitboard/computer/cloning
+	name = "Cloning (Computer Board)"
+	icon_state = "medical"
+	build_path = /obj/machinery/computer/cloning
+
+/obj/item/circuitboard/computer/prototype_cloning
+	name = "Prototype Cloning (Computer Board)"
+	icon_state = "medical"
+	build_path = /obj/machinery/computer/prototype_cloning
+
 //Science
 
 /obj/item/circuitboard/computer/aifixer
@@ -377,20 +387,14 @@
 		to_chat(user, "<span class='notice'>You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband.</span>")
 
 /obj/item/circuitboard/computer/cargo/express
-	name = "Express Supply Console (Computer Board)"
+	name = "Outpost Comms Console (Computer Board)"
 	build_path = /obj/machinery/computer/cargo/express
 
 /obj/item/circuitboard/computer/cargo/express/multitool_act(mob/living/user)
-	. = ..()
-	if (!(obj_flags & EMAGGED))
-		to_chat(user, "<span class='alert'>Routing protocols are already set to: \"factory defaults\".</span>")
-	else
-		to_chat(user, "<span class='notice'>You reset the routing protocols to: \"factory defaults\".</span>")
-		obj_flags &= ~EMAGGED
+	return
 
 /obj/item/circuitboard/computer/cargo/express/emag_act(mob/living/user)
-		to_chat(user, "<span class='notice'>You change the routing protocols, allowing the Drop Pod to land anywhere on the station.</span>")
-		obj_flags |= EMAGGED
+	return
 
 /obj/item/circuitboard/computer/mining
 	name = "Outpost Status Display (Computer Board)"
@@ -401,3 +405,9 @@
 	name = "Cargo hold control terminal (Computer Board)"
 	icon_state = "supply"
 	build_path = /obj/machinery/computer/selling_pad_control
+
+//Shiptesting
+
+/obj/item/circuitboard/computer/shuttle/helm
+	name = "Shuttle Helm (Computer Board)"
+	build_path = /obj/machinery/computer/helm

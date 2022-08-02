@@ -50,29 +50,30 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_FLOOR_ASH_ROCKY S_TURF(7) ///turf/open/floor/plating/ashplanet/rocky
 #define SMOOTH_GROUP_FLOOR_ICE S_TURF(8) ///turf/open/floor/plating/ice
 #define SMOOTH_GROUP_FLOOR_SNOWED S_TURF(9) ///turf/open/floor/plating/snowed
+#define SMOOTH_GROUP_FLOOR_HEXACRETE S_TURF(10) ///turf/open/floor/concrete/reinforced
 
-#define SMOOTH_GROUP_CARPET S_TURF(10) ///turf/open/floor/carpet
-#define SMOOTH_GROUP_CARPET_BLACK S_TURF(11) ///turf/open/floor/carpet/black
-#define SMOOTH_GROUP_CARPET_BLUE S_TURF(12) ///turf/open/floor/carpet/blue
-#define SMOOTH_GROUP_CARPET_CYAN S_TURF(13) ///turf/open/floor/carpet/cyan
-#define SMOOTH_GROUP_CARPET_GREEN S_TURF(14) ///turf/open/floor/carpet/green
-#define SMOOTH_GROUP_CARPET_ORANGE S_TURF(15) ///turf/open/floor/carpet/orange
-#define SMOOTH_GROUP_CARPET_PURPLE S_TURF(16) ///turf/open/floor/carpet/purple
-#define SMOOTH_GROUP_CARPET_RED S_TURF(17) ///turf/open/floor/carpet/red
-#define SMOOTH_GROUP_CARPET_ROYAL_BLACK S_TURF(18) ///turf/open/floor/carpet/royalblack
-#define SMOOTH_GROUP_CARPET_ROYAL_BLUE S_TURF(19) ///turf/open/floor/carpet/royalblue
-#define SMOOTH_GROUP_CARPET_EXECUTIVE S_TURF(20)	///turf/open/floor/carpet/executive
-#define SMOOTH_GROUP_CARPET_STELLAR S_TURF(21)	///turf/open/floor/carpet/stellar
-#define SMOOTH_GROUP_CARPET_DONK S_TURF(22) ///turf/open/floor/carpet/donk
-#define SMOOTH_GROUP_CARPET_RED_GOLD S_TURF(23) ///turf/open/floor/carpet/red_gold
+#define SMOOTH_GROUP_CARPET S_TURF(11) ///turf/open/floor/carpet
+#define SMOOTH_GROUP_CARPET_BLACK S_TURF(12) ///turf/open/floor/carpet/black
+#define SMOOTH_GROUP_CARPET_BLUE S_TURF(13) ///turf/open/floor/carpet/blue
+#define SMOOTH_GROUP_CARPET_CYAN S_TURF(14) ///turf/open/floor/carpet/cyan
+#define SMOOTH_GROUP_CARPET_GREEN S_TURF(15) ///turf/open/floor/carpet/green
+#define SMOOTH_GROUP_CARPET_ORANGE S_TURF(16) ///turf/open/floor/carpet/orange
+#define SMOOTH_GROUP_CARPET_PURPLE S_TURF(17) ///turf/open/floor/carpet/purple
+#define SMOOTH_GROUP_CARPET_RED S_TURF(18) ///turf/open/floor/carpet/red
+#define SMOOTH_GROUP_CARPET_ROYAL_BLACK S_TURF(19) ///turf/open/floor/carpet/royalblack
+#define SMOOTH_GROUP_CARPET_ROYAL_BLUE S_TURF(20) ///turf/open/floor/carpet/royalblue
+#define SMOOTH_GROUP_CARPET_EXECUTIVE S_TURF(21)	///turf/open/floor/carpet/executive
+#define SMOOTH_GROUP_CARPET_STELLAR S_TURF(22)	///turf/open/floor/carpet/stellar
+#define SMOOTH_GROUP_CARPET_DONK S_TURF(23) ///turf/open/floor/carpet/donk
+#define SMOOTH_GROUP_CARPET_RED_GOLD S_TURF(24) ///turf/open/floor/carpet/red_gold
 
-#define SMOOTH_GROUP_CLOSED_TURFS S_TURF(24) ///turf/closed
-#define SMOOTH_GROUP_MATERIAL_WALLS S_TURF(25) ///turf/closed/wall/material
-#define SMOOTH_GROUP_SYNDICATE_WALLS S_TURF(26) ///turf/closed/wall/r_wall/syndicate
-#define SMOOTH_GROUP_HOTEL_WALLS S_TURF(27) ///turf/closed/indestructible/hotelwall
-#define SMOOTH_GROUP_MINERAL_WALLS S_TURF(28) ///turf/closed/mineral, /turf/closed/indestructible
-#define SMOOTH_GROUP_BOSS_WALLS S_TURF(29) ///turf/closed/indestructible/riveted/boss
-#define SMOOTH_GROUP_SURVIVAL_TITANIUM_WALLS S_TURF(30)	///turf/closed/wall/mineral/titanium/survival
+#define SMOOTH_GROUP_CLOSED_TURFS S_TURF(25) ///turf/closed
+#define SMOOTH_GROUP_MATERIAL_WALLS S_TURF(26) ///turf/closed/wall/material
+#define SMOOTH_GROUP_SYNDICATE_WALLS S_TURF(27) ///turf/closed/wall/r_wall/syndicate
+#define SMOOTH_GROUP_HOTEL_WALLS S_TURF(28) ///turf/closed/indestructible/hotelwall
+#define SMOOTH_GROUP_MINERAL_WALLS S_TURF(29) ///turf/closed/mineral, /turf/closed/indestructible
+#define SMOOTH_GROUP_BOSS_WALLS S_TURF(30) ///turf/closed/indestructible/riveted/boss
+#define SMOOTH_GROUP_SURVIVAL_TITANIUM_WALLS S_TURF(31)	///turf/closed/wall/mineral/titanium/survival
 
 #define MAX_S_TURF SMOOTH_GROUP_SURVIVAL_TITANIUM_WALLS //Always match this value with the one above it.
 
@@ -93,15 +94,16 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_ABDUCTOR_WALLS S_OBJ(10) ///turf/closed/wall/mineral/abductor, /obj/structure/falsewall/abductor
 #define SMOOTH_GROUP_TITANIUM_WALLS S_OBJ(11) ///turf/closed/wall/mineral/titanium, /obj/structure/falsewall/titanium
 #define SMOOTH_GROUP_PLASTITANIUM_WALLS S_OBJ(13) ///turf/closed/wall/mineral/plastitanium, /obj/structure/falsewall/plastitanium
-#define SMOOTH_GROUP_SURVIVAL_TIANIUM_POD S_OBJ(14) ///turf/closed/wall/mineral/titanium/survival/pod, /obj/machinery/door/airlock/survival_pod, /obj/structure/window/shuttle/survival_pod
-#define SMOOTH_GROUP_HIERO_WALL S_OBJ(15) ///obj/effect/temp_visual/elite_tumor_wall, /obj/effect/temp_visual/hierophant/wall
+#define SMOOTH_GROUP_CONCRETE_WALLS S_OBJ(14) ///turf/closed/wall/concrete
+#define SMOOTH_GROUP_SURVIVAL_TIANIUM_POD S_OBJ(15) ///turf/closed/wall/mineral/titanium/survival/pod, /obj/machinery/door/airlock/survival_pod, /obj/structure/window/reinforced/fulltile/shuttle/survival_pod
+#define SMOOTH_GROUP_HIERO_WALL S_OBJ(16) ///obj/effect/temp_visual/elite_tumor_wall, /obj/effect/temp_visual/hierophant/wall
 
 #define SMOOTH_GROUP_PAPERFRAME S_OBJ(20) ///obj/structure/window/paperframe, /obj/structure/mineral_door/paperframe
 
 #define SMOOTH_GROUP_WINDOW_FULLTILE S_OBJ(21) ///turf/closed/indestructible/fakeglass, /obj/structure/window/fulltile, /obj/structure/window/reinforced/fulltile, /obj/structure/window/reinforced/tinted/fulltile, /obj/structure/window/plasma/fulltile, /obj/structure/window/plasma/reinforced/fulltile
 #define SMOOTH_GROUP_WINDOW_FULLTILE_BRONZE S_OBJ(22)	///obj/structure/window/bronze/fulltile
 #define SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM S_OBJ(23)	///turf/closed/indestructible/opsglass, /obj/structure/window/plasma/reinforced/plastitanium
-#define SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE S_OBJ(24)	///obj/structure/window/shuttle
+#define SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE S_OBJ(24)	///obj/structure/window/reinforced/fulltile/shuttle
 
 #define SMOOTH_GROUP_LATTICE S_OBJ(30) ///obj/structure/lattice
 #define SMOOTH_GROUP_CATWALK S_OBJ(31) ///obj/structure/lattice/catwalk
@@ -125,7 +127,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 
 #define SMOOTH_GROUP_HEDGE_FLUFF S_OBJ(65) ///obj/structure/fluff/hedge
 
-#define SMOOTH_GROUP_SHUTTLE_PARTS S_OBJ(66) ///obj/structure/window/shuttle, /obj/structure/shuttle/engine/heater
+#define SMOOTH_GROUP_SHUTTLE_PARTS S_OBJ(66) ///obj/structure/window/reinforced/fulltile/shuttle, /obj/structure/shuttle/engine/heater
 
 #define SMOOTH_GROUP_CLEANABLE_DIRT S_OBJ(67) ///obj/effect/decal/cleanable/dirt
 

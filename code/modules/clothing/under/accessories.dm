@@ -100,6 +100,18 @@
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
+/obj/item/clothing/accessory/maidapron/syndicate
+	name = "syndicate maid apron"
+	desc = "Practical? No. Tactical? Also no. Cute? Most definitely yes."
+	icon_state = "maidapronsynd"
+	item_state = "maidapronsynd"
+
+/obj/item/clothing/accessory/maidapron/inteq
+	name = "inteq maid apron"
+	desc = "A 'tactical' apron to protect you from all sorts of spills, from dough to blood!"
+	icon_state = "inteqmaidapron"
+	item_state = "inteqmaidapron"
+
 //////////
 //Medals//
 //////////
@@ -206,8 +218,36 @@
 
 /obj/item/clothing/accessory/medal/gold/captain
 	name = "medal of captaincy"
-	desc = "A golden medal awarded exclusively to those promoted to the rank of captain. It signifies the codified responsibilities of a captain to Nanotrasen, and their undisputable authority over their crew."
+	desc = "A golden medal awarded exclusively to those promoted to the rank of captain. It signifies the codified responsibilities of a captain to their ship, and their undisputable authority over their crew."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	var/obj/item/key/ship/shipkey
+
+/obj/item/clothing/accessory/medal/gold/captain/attackby(obj/item/key/ship/shipkey, mob/user, params)
+	if(!istype(shipkey))
+		return ..()
+
+	if(!QDELETED(src.shipkey))
+		to_chat(user, "<span class='notice'>[src] already contains [src.shipkey].</span>")
+		return TRUE
+
+	src.shipkey = shipkey
+	shipkey.forceMove(src)
+	to_chat(user, "<span class='notice'>You slot [shipkey] into [src].</span>")
+
+/obj/item/clothing/accessory/medal/gold/captain/AltClick(mob/user)
+	if(!shipkey || !Adjacent(user) || !isliving(user))
+		return ..()
+	shipkey.forceMove(get_turf(src))
+	user.put_in_hands(shipkey)
+	to_chat(user, "<span class='notice'>You remove [shipkey] from [src].</span>")
+	shipkey = null
+
+/obj/item/clothing/accessory/medal/gold/captain/examine(mob/user)
+	. = ..()
+	if(shipkey)
+		. += "[shipkey] could be removed by Alt Clicking."
+	else
+		. += "It has space for a ship key."
 
 /obj/item/clothing/accessory/medal/gold/heroism
 	name = "medal of exceptional heroism"
@@ -398,3 +438,73 @@
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
 	attachment_slot = GROIN
 
+/obj/item/clothing/accessory/holster
+	name = "shoulder holster"
+	desc = "A holster to carry a handgun and ammo. WARNING: Badasses only."
+	icon_state = "holster"
+	item_state = "holster"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster
+
+/obj/item/clothing/accessory/holster/detective
+	name = "detective's shoulder holster"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/detective
+
+/obj/item/clothing/accessory/holster/lieutenant
+	name = "lieutenant's shoulder holster"
+	desc = "A modified shoulder holster designed to fit a small egun and power cells."
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/lt
+
+/obj/item/clothing/accessory/holster/detective/Initialize()
+	. = ..()
+	new /obj/item/gun/ballistic/revolver/detective(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
+
+/obj/item/clothing/accessory/holster/nukie
+	name = "operative holster"
+	desc = "A deep shoulder holster capable of holding almost any form of ballistic weaponry."
+	icon_state = "syndicate_holster"
+	item_state = "syndicate_holster"
+	w_class = WEIGHT_CLASS_BULKY
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/nukie
+
+/obj/item/clothing/accessory/holster/chameleon
+	name = "syndicate holster"
+	desc = "A two pouched hip holster that uses chameleon technology to disguise itself and any guns in it."
+	icon_state = "syndicate_holster"
+	item_state = "syndicate_holster"
+	var/datum/action/item_action/chameleon/change/chameleon_action
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/chameleon
+
+/obj/item/clothing/accessory/holster/chameleon/Initialize()
+	. = ..()
+
+	chameleon_action = new(src)
+	chameleon_action.chameleon_type = /obj/item/clothing/accessory
+	chameleon_action.chameleon_name = "Accessory"
+	chameleon_action.initialize_disguises()
+
+/obj/item/clothing/accessory/holster/chameleon/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	chameleon_action.emp_randomise()
+
+/obj/item/clothing/accessory/holster/chameleon/broken/Initialize()
+	. = ..()
+	chameleon_action.emp_randomise(INFINITY)
+
+/obj/item/clothing/accessory/holster/marine
+	name = "marine's holster"
+	desc = "Wearing this makes you feel badass, but you suspect it's just a detective's holster from a surplus somewhere."
+
+/obj/item/clothing/accessory/holster/marine/Initialize()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+
+/obj/item/clothing/accessory/waistcoat/solgov
+	name = "solgov waistcoat"
+	desc = "A standard issue waistcoat in solgov colors."
+	icon_state = "solgov_waistcoat"

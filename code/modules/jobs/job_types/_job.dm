@@ -65,6 +65,9 @@
 	///Basically determines whether or not more of the job can be opened.
 	var/officer = FALSE
 
+	var/list/alt_titles = list()
+	var/senior_title
+
 /datum/job/New(new_title, datum/outfit/new_outfit)
 	if(new_title)
 		title = new_title
@@ -115,7 +118,7 @@
 
 
 //Gives the player the stuff he should have with his rank
-/datum/job/proc/EquipRank(mob/living/living_mob)
+/datum/job/proc/EquipRank(mob/living/living_mob, datum/overmap/ship/controlled/ship)
 	living_mob.job = title
 
 	SEND_SIGNAL(living_mob, COMSIG_JOB_RECEIVED, living_mob.job)
@@ -156,6 +159,11 @@
 		living_mob.add_memory("Your account ID is [wageslave.account_id].")
 	if(living_mob)
 		after_spawn(living_mob, living_mob) // note: this happens before the mob has a key! living_mob will always have a client, H might not.
+
+	if ( ship )
+		var/obj/item/card/id/idcard = living_mob.get_idcard( TRUE )
+		if ( idcard )
+			idcard.add_ship_access( ship )
 
 	return living_mob
 
@@ -207,7 +215,7 @@
 /datum/job/proc/announce_head(mob/living/carbon/human/H, channels) //tells the given channel that the given mob is the new department head. See communications.dm for valid channels.
 	if(H && GLOB.announcement_systems.len)
 		//timer because these should come after the captain announcement
-		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/addtimer, CALLBACK(pick(GLOB.announcement_systems), /obj/machinery/announcement_system/proc/announce, "NEWHEAD", H.real_name, H.job, channels), 1))
+		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/_addtimer, CALLBACK(pick(GLOB.announcement_systems), /obj/machinery/announcement_system/proc/announce, "NEWHEAD", H.real_name, H.job, channels), 1))
 
 //If the configuration option is set to require players to be logged as old enough to play certain jobs, then this proc checks that they are, otherwise it just returns 1
 /datum/job/proc/player_old_enough(client/C)
@@ -241,8 +249,8 @@
 	return TRUE
 
 /**
-  * Gets the changes dictionary made to the job template by the map config. Returns null if job is removed.
-  */
+ * Gets the changes dictionary made to the job template by the map config. Returns null if job is removed.
+ */
 /datum/job/proc/GetMapChanges()
 	var/string_type = "[type]"
 	var/list/splits = splittext(string_type, "/")

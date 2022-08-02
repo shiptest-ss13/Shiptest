@@ -18,7 +18,8 @@
 	force = 5
 	item_flags = NEEDS_PERMIT
 	attack_verb = list("struck", "hit", "bashed")
-	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
+	pickup_sound = 'sound/items/handling/gun_pickup.ogg'
+	drop_sound = 'sound/items/handling/gun_drop.ogg'
 
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
@@ -505,12 +506,12 @@
 	return TRUE
 
 /**
-  * Swaps the gun's seclight, dropping the old seclight if it has not been qdel'd.
-  *
-  * Returns the former gun_light that has now been replaced by this proc.
-  * Arguments:
-  * * new_light - The new light to attach to the weapon. Can be null, which will mean the old light is removed with no replacement.
-  */
+ * Swaps the gun's seclight, dropping the old seclight if it has not been qdel'd.
+ *
+ * Returns the former gun_light that has now been replaced by this proc.
+ * Arguments:
+ * * new_light - The new light to attach to the weapon. Can be null, which will mean the old light is removed with no replacement.
+ */
 /obj/item/gun/proc/set_gun_light(obj/item/flashlight/seclite/new_light)
 	// Doesn't look like this should ever happen? We're replacing our old light with our old light?
 	if(gun_light == new_light)

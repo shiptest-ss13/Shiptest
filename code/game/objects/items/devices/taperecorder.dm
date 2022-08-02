@@ -6,8 +6,9 @@
 	item_state = "analyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	pickup_sound =  'sound/items/handling/device_pickup.ogg'
+	drop_sound = 'sound/items/handling/device_drop.ogg'
 	w_class = WEIGHT_CLASS_SMALL
-	flags_1 = HEAR_1
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=60, /datum/material/glass=30)
 	force = 2
@@ -26,6 +27,7 @@
 	if(starting_tape_type)
 		mytape = new starting_tape_type(src)
 	update_icon()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /obj/item/taperecorder/Destroy()
 	QDEL_NULL(mytape)

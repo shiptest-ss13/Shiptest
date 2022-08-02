@@ -21,6 +21,7 @@
 	STR.max_combined_w_class = 14
 	STR.max_items = 4
 	STR.locked = TRUE
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
 
 /obj/item/storage/lockbox/attackby(obj/item/W, mob/user, params)
 	var/locked = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)

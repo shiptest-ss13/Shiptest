@@ -39,13 +39,13 @@
 
 	if(table_type == /obj/structure/table/glass) //Glass table, jolly ranchers pass
 		if(istype(exiter) && (exiter.pass_flags & PASSGLASS))
-			return TRUE
+			return
 	if(istype(exiter, /obj/projectile))
-		return TRUE
+		return
 	if(direction == dir)
 		exiter.Bump(src)
 		return COMPONENT_ATOM_BLOCK_EXIT
-	return TRUE
+	return
 
 /obj/structure/flippedtable/CtrlShiftClick(mob/user)
 	. = ..()

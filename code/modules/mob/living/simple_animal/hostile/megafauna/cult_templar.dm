@@ -15,12 +15,12 @@
 	movement_type = GROUND
 	speak_emote = list("echoes")
 	speed = 6
+	move_to_delay = 5 //skill issue
 	light_range = 6
 	projectiletype = /obj/projectile/bullet/chaos_bomb
 	projectilesound = 'sound/weapons/gun/l6/shot.ogg'
 	ranged = TRUE
 	ranged_cooldown_time = 20
-	move_to_delay = 4
 	vision_range = 10
 	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 0.5, CLONE = 0.5, STAMINA = 0, OXY = 0.5)
 	loot = list(/obj/item/claymore/cursed, /obj/item/clothing/suit/space/hardsuit/cult/enchanted)

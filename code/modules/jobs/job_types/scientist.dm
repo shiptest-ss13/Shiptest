@@ -9,6 +9,8 @@
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Scientist" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Xenobiologist", "Nanite Researcher", "Junior Scientist")
+	senior_title = "Senior Scientist"
 
 	outfit = /datum/outfit/job/scientist
 

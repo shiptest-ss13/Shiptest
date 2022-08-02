@@ -47,7 +47,9 @@
 	if(chem.type == /datum/reagent/toxin/plantbgone)
 		H.adjustToxLoss(3)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
-		return 1
+		return TRUE
+
+	return ..()
 
 /datum/species/pod/on_hit(obj/projectile/P, mob/living/carbon/human/H)
 	switch(P.type)
@@ -67,3 +69,8 @@
 				H.show_message("<span class='userdanger'>The radiation beam singes you!</span>")
 		if(/obj/projectile/energy/florayield)
 			H.set_nutrition(min(H.nutrition+30, NUTRITION_LEVEL_FULL))
+		if(/obj/projectile/energy/florarevolution)
+			H.show_message("<span class='notice'>The radiation beam leaves you feeling disoriented!</span>")
+			H.Dizzy(15)
+			H.emote("flip")
+			H.emote("spin")
