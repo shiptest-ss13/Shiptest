@@ -44,7 +44,7 @@
 ///If something requires a level to have a weather controller, use this (rad storm, wizard bus events etc, ash staff etc.)
 /datum/map_zone/proc/assert_weather_controller()
 	if(!weather_controller)
-		new /datum/weather_controller(list(src))
+		new /datum/weather_controller(src)
 
 /datum/map_zone/proc/get_client_mobs()
 	return get_alive_client_mobs() + get_dead_client_mobs()

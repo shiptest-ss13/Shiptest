@@ -91,15 +91,6 @@
 	mood_change = -2
 	timeout = 2 MINUTES
 
-/* WS - For shame /TG/... for shame.
-/datum/mood_event/table/add_effects()
-	if(isfelinid(owner))
-		var/mob/living/carbon/human/H = owner
-		H.dna.species.start_wagging_tail(H)
-		addtimer(CALLBACK(H.dna.species, /datum/species.proc/stop_wagging_tail, H), 30)
-		description =  "<span class='nicegreen'>They want to play on the table!</span>\n"
-		mood_change = 2
-*/
 /datum/mood_event/table_headsmash
 	description = "<span class='warning'>My fucking head, that hurts...</span>"
 	mood_change = -3
@@ -297,3 +288,12 @@
 	description = "<span class='warning'>OW!! That was even worse than a regular noogie!</span>\n"
 	mood_change = -4
 	timeout = 1 MINUTES
+
+/datum/mood_event/irritate
+	description = "It feels like I'm itching all over!"
+	mood_change = -2
+
+/datum/mood_event/cement
+	description = "<span class='warning'>I was forced to eat cement...</span>\n"
+	mood_change = -6
+	timeout = 4 MINUTES

@@ -31,6 +31,8 @@
 	desc = "It's so sour, your face will twist."
 	icon_state = "lime"
 	filling_color = "#00FF00"
+	slice_path = /obj/item/garnish/orange
+	slices_num = 3
 	juice_results = list(/datum/reagent/consumable/limejuice = 0)
 
 // Orange
@@ -58,6 +60,8 @@
 	desc = "It's a tangy fruit."
 	icon_state = "orange"
 	filling_color = "#FFA500"
+	slice_path = /obj/item/garnish/orange
+	slices_num = 3
 	juice_results = list(/datum/reagent/consumable/orangejuice = 0)
 	distill_reagent = /datum/reagent/consumable/ethanol/triple_sec
 
@@ -85,6 +89,8 @@
 	desc = "When life gives you lemons, make lemonade."
 	icon_state = "lemon"
 	filling_color = "#FFD700"
+	slice_path = /obj/item/garnish/lemon
+	slices_num = 3
 	juice_results = list(/datum/reagent/consumable/lemonjuice = 0)
 
 // Combustible lemon
@@ -103,6 +109,7 @@
 	endurance = 45
 	yield = 4
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.05)
+	research = PLANT_RESEARCH_TIER_3
 
 /obj/item/reagent_containers/food/snacks/grown/firelemon
 	seed = /obj/item/seeds/firelemon
@@ -117,9 +124,6 @@
 /obj/item/reagent_containers/food/snacks/grown/firelemon/attack_self(mob/living/user)
 	user.visible_message("<span class='warning'>[user] primes [src]!</span>", "<span class='userdanger'>You prime [src]!</span>")
 	log_bomber(user, "primed a", src, "for detonation")
-	if(iscarbon(user))
-		var/mob/living/carbon/C = user
-		C.throw_mode_on()
 	icon_state = "firelemon_active"
 	playsound(loc, 'sound/weapons/armbomb.ogg', 75, TRUE, -3)
 	addtimer(CALLBACK(src, .proc/prime), rand(10, 60))
@@ -176,6 +180,7 @@
 	icon_dead = "lime-dead"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.05, /datum/reagent/medicine/haloperidol = 0.15) //insert joke about the effects of haloperidol and our glorious headcoder here
+	research = PLANT_RESEARCH_TIER_3//wegottastudythis.png
 
 /obj/item/reagent_containers/food/snacks/grown/citrus/orange_3d
 	seed = /obj/item/seeds/orange_3d

@@ -92,7 +92,7 @@ Contents:
 			cell.charge = 0
 			cancel_stealth()
 
-	user.adjust_bodytemperature(BODYTEMP_NORMAL - user.bodytemperature)
+	user.adjust_bodytemperature(HUMAN_BODYTEMP_NORMAL - user.bodytemperature)
 
 //Simply deletes all the attachments and self, killing all related procs.
 /obj/item/clothing/suit/space/space_ninja/proc/terminate()

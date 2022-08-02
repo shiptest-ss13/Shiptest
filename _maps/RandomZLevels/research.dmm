@@ -298,7 +298,7 @@
 	},
 /obj/machinery/airalarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/turf_decal/corner/yellow,
 /obj/effect/turf_decal/corner/yellow{
@@ -837,7 +837,7 @@
 /obj/item/storage/firstaid/regular,
 /obj/machinery/airalarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/research/interior/gateway)
@@ -918,7 +918,7 @@
 	name = "panic lockdown button"
 	},
 /obj/machinery/airalarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/corner/purple{
 	dir = 1
@@ -1653,7 +1653,7 @@
 "eb" = (
 /obj/machinery/door/poddoor{
 	id = "cryopodg2";
-	name = "cryogenetic genetics blastdoor"
+	name = "Cryogenetic Genetics Blastdoor"
 	},
 /turf/open/floor/plasteel/stairs,
 /area/awaymission/research/interior/genetics)
@@ -1688,7 +1688,7 @@
 /area/awaymission/research/interior)
 "ej" = (
 /obj/machinery/airalarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/corner/yellow,
 /obj/effect/turf_decal/corner/yellow{
@@ -1817,7 +1817,7 @@
 /area/awaymission/research/interior/cryo)
 "ew" = (
 /obj/machinery/airalarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/corner/purple{
 	dir = 1
@@ -2032,7 +2032,7 @@
 "eT" = (
 /obj/machinery/airalarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/research/interior/secure)
@@ -2195,7 +2195,7 @@
 /area/awaymission/research/interior/security)
 "fu" = (
 /obj/machinery/airalarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/corner/red,
 /obj/effect/turf_decal/corner/red{
@@ -3090,7 +3090,7 @@
 "hK" = (
 /obj/machinery/door/poddoor{
 	id = "cryopodg1";
-	name = "cryogenetic genetics blastdoor"
+	name = "Cryogenetic Genetics Blastdoor"
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 1
@@ -3141,7 +3141,7 @@
 	},
 /obj/structure/sign/directions/evac{
 	pixel_x = 32;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/corner/green{
 	dir = 1
@@ -3519,7 +3519,7 @@
 	},
 /obj/machinery/airalarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/corner/purple{
 	dir = 1
@@ -3617,7 +3617,7 @@
 /area/awaymission/research/interior/dorm)
 "iZ" = (
 /obj/machinery/airalarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/corner/blue,
 /turf/open/floor/plasteel/white,
@@ -3685,7 +3685,6 @@
 /area/awaymission/research/interior/medbay)
 "ji" = (
 /obj/machinery/door/airlock/glass_large,
-/turf/closed/mineral,
 /area/awaymission/research/exterior)
 "jj" = (
 /obj/structure/dresser,
@@ -4827,7 +4826,7 @@
 	},
 /obj/machinery/airalarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/spline/plain/yellow{
 	dir = 4
@@ -5291,7 +5290,7 @@
 "mX" = (
 /obj/machinery/airalarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/corner/green{
 	dir = 1
@@ -5412,7 +5411,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "Security APC";
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5555,7 +5554,7 @@
 /obj/machinery/power/apc/highcap/fifteen_k{
 	dir = 4;
 	name = "Vault APC";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -5595,7 +5594,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "Escape APC";
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5677,7 +5676,7 @@
 /obj/machinery/power/apc/highcap/five_k{
 	dir = 4;
 	name = "Cryostatis APC";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/corner/purple{
 	dir = 1
@@ -5843,7 +5842,7 @@
 /obj/machinery/power/apc/highcap/five_k{
 	dir = 4;
 	name = "Genetics APC";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/cable,
 /obj/structure/cable{
@@ -5913,7 +5912,7 @@
 /obj/machinery/power/apc/highcap/five_k{
 	dir = 4;
 	name = "Dorms APC";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6115,7 +6114,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "Medbay APC";
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -6126,7 +6125,7 @@
 /obj/machinery/power/apc/highcap/fifteen_k{
 	dir = 4;
 	name = "Gateway APC";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -6339,7 +6338,7 @@
 	auto_name = 1;
 	dir = 4;
 	name = "Engineering APC";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -6533,7 +6532,7 @@
 /obj/machinery/power/apc/highcap/five_k{
 	dir = 4;
 	name = "Genetics APC";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/cable{
 	icon_state = "1-2"

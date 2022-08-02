@@ -38,6 +38,11 @@
 	desc = "A suit that protects against minor chemical spills. Has an orange stripe on the shoulder."
 	icon_state = "labcoat_chem"
 
+/obj/item/clothing/suit/toggle/labcoat/chemist/side
+	name = "pharmacologist labcoat"
+	desc = "A lab coat that buttons on the side, which provides some protection from chemical spills. It in chemistry colors."
+	icon_state = "labcoat_side_chem"
+
 /obj/item/clothing/suit/toggle/labcoat/virologist
 	name = "virologist labcoat"
 	desc = "A suit that protects against minor chemical spills. Offers slightly more protection against biohazards than the standard model. Has a green stripe on the shoulder."
@@ -55,14 +60,22 @@
 	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0, fire = 50, acid = 50)
 
 /obj/item/clothing/suit/toggle/labcoat/raincoat
-	name = "\improper Cybersun raincoat"
-	desc = {"A translucent, uniquely designed labcoat worn by the designers of Cybersun Solutions. It's made from a special material that actively repels fluids.
+	name = "\improper Cybersun labcoat"
+	desc = {"A translucent, uniquely designed labcoat from Cybersun Solutions. It's made from a special material that actively repels fluids.
 You're pretty sure this is just a raincoat.
-<i>Wearing a raincoat inside is like wearing sunglasses at night. A good Cybersun exec does both.</i>"}
+
+<i>Wearing a raincoat inside is like wearing sunglasses at night. A good Cybersun exec does both.</i>
+"}
 	icon_state = "raincoat"
 	icon = 'icons/obj/clothing/suits.dmi' // zeta is a verified dumb dumb idiothead who cannot do anything right - github review suggestion by triplezeta
 	mob_overlay_icon = 'icons/mob/clothing/suit.dmi' // same as above
 	item_state = "raincoat"
+
+/obj/item/clothing/suit/toggle/labcoat/roumain_med
+	name = "saint-roumain medical duster"
+	desc = "A coat made from hard leather and further treated with exotic sterilizing oils and wax. The treatment and its more closed design offers much better protection against biological hazards."
+	icon_state = "rouma_med_coat"
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/suit/longcoat
 	name = "longcoat"

@@ -16,7 +16,7 @@
 /obj/machinery/atmospherics/pipe/New()
 	add_atom_colour(pipe_color, FIXED_COLOUR_PRIORITY)
 	volume = 35 * device_type
-	..()
+	return ..()
 
 ///I have no idea why there's a new and at this point I'm too afraid to ask
 /obj/machinery/atmospherics/pipe/Initialize(mapload)
@@ -49,6 +49,8 @@
 /obj/machinery/atmospherics/pipe/return_air()
 	if(air_temporary)
 		return air_temporary
+	if(!parent)
+		rebuild_pipes()
 	return parent.air
 
 /obj/machinery/atmospherics/pipe/return_analyzable_air()

@@ -6,7 +6,7 @@
 	slot = ORGAN_SLOT_TONGUE
 	attack_verb = list("licked", "slobbered", "slapped", "frenched", "tongued")
 	var/list/languages_possible
-	var/say_mod = null
+	var/say_mod = "says"
 	var/taste_sensitivity = 15 // lower is more sensitive.
 	var/modifies_speech = FALSE
 	var/static/list/languages_possible_base = typecacheof(list(
@@ -33,22 +33,32 @@
 
 /obj/item/organ/tongue/Insert(mob/living/carbon/M, special = 0)
 	..()
-	if(say_mod && M.dna && M.dna.species)
-		M.dna.species.say_mod = say_mod
 	if (modifies_speech)
 		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
 	M.UnregisterSignal(M, COMSIG_MOB_SAY)
 
 /obj/item/organ/tongue/Remove(mob/living/carbon/M, special = 0)
 	..()
-	if(say_mod && M.dna && M.dna.species)
-		M.dna.species.say_mod = initial(M.dna.species.say_mod)
 	UnregisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
 	M.RegisterSignal(M, COMSIG_MOB_SAY, /mob/living/carbon/.proc/handle_tongueless_speech)
 
 /obj/item/organ/tongue/could_speak_language(language)
 	return is_type_in_typecache(language, languages_possible)
 
+//Say_mod-Only Tongues
+/obj/item/organ/tongue/golem_base
+	name = "golem tongue"
+	say_mod = "rumbles"
+
+/obj/item/organ/tongue/golem_honk
+	name = "bananium tongue"
+	say_mod = "honks"
+
+/obj/item/organ/tongue/toma
+	name = "mutated tongue"
+	say_mod = "mumbles"
+
+//Other Tongues
 /obj/item/organ/tongue/lizard
 	name = "forked tongue"
 	desc = "A thin and long muscle typically found in reptilian races, apparently moonlights as a nose."
@@ -275,6 +285,7 @@
 
 /obj/item/organ/tongue/snail
 	name = "snailtongue"
+	say_mod = "slurs"
 	modifies_speech = TRUE
 
 /obj/item/organ/tongue/snail/handle_speech(datum/source, list/speech_args)
@@ -358,3 +369,93 @@
 /obj/item/organ/tongue/slime/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_slime
+/obj/item/organ/tongue/moth
+	name = "proboscis"
+	desc = "A fleshy tube that curls up when not in use. While vaguely reminiscent of the proboscis of their genetic ancestors, \
+	it is effectively vestigial, only useful for speaking buzzwords."
+	say_mod = "flutters"
+	var/static/list/languages_possible_moth = typecacheof(list(
+		/datum/language/common,
+		/datum/language/draconic,
+		/datum/language/codespeak,
+		/datum/language/monkey,
+		/datum/language/narsie,
+		/datum/language/beachbum,
+		/datum/language/aphasia,
+		/datum/language/piratespeak,
+		/datum/language/moffic,
+		/datum/language/sylvan,
+		/datum/language/shadowtongue,
+		/datum/language/terrum,
+		/datum/language/buzzwords
+	))
+
+/obj/item/organ/tongue/moth/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_moth
+
+
+/obj/item/organ/tongue/uwuspeak
+	name = "cat tongue"
+	desc = "Generally found in the mouths of degenerates."
+	say_mod = "meows"
+	modifies_speech = TRUE
+
+/obj/item/organ/tongue/uwuspeak/handle_speech(datum/source, list/speech_args)
+	var/static/regex/uwuspeak_lr2w = new("(\[lr])", "g")
+	var/static/regex/uwuspeak_LR2W = new("(\[LR])", "g")
+	var/static/regex/uwuspeak_nya = new("(\[Nn])(\[aeiou])|(\[n])(\[AEIOU])", "g")
+	var/static/regex/uwuspeak_NYA = new("(N)(\[AEIOU])", "g")
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = uwuspeak_lr2w.Replace(message, "w")
+		message = uwuspeak_LR2W.Replace(message, "W")
+		message = uwuspeak_nya.Replace(message, "$1$3y$2$4")
+		message = uwuspeak_NYA.Replace(message, "$1Y$2")
+	speech_args[SPEECH_MESSAGE] = message
+
+/obj/item/organ/tongue/kepori
+	say_mod = "chirps"
+	var/static/list/languages_possible_kepi = typecacheof(list(
+		/datum/language/common,
+		/datum/language/draconic,
+		/datum/language/codespeak,
+		/datum/language/monkey,
+		/datum/language/narsie,
+		/datum/language/beachbum,
+		/datum/language/aphasia,
+		/datum/language/piratespeak,
+		/datum/language/moffic,
+		/datum/language/sylvan,
+		/datum/language/shadowtongue,
+		/datum/language/terrum,
+		/datum/language/teceti_unified
+	))
+
+/obj/item/organ/tongue/kepori/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_kepi
+
+/obj/item/organ/tongue/vox
+	name = "hindtongue"
+	desc = "Some kind of severed bird tongue."
+	say_mod = "shrieks"
+	var/static/list/languages_possible_vox = typecacheof(list(
+		/datum/language/common,
+		/datum/language/draconic,
+		/datum/language/codespeak,
+		/datum/language/monkey,
+		/datum/language/narsie,
+		/datum/language/beachbum,
+		/datum/language/aphasia,
+		/datum/language/piratespeak,
+		/datum/language/moffic,
+		/datum/language/sylvan,
+		/datum/language/shadowtongue,
+		/datum/language/terrum,
+		/datum/language/vox_pidgin
+	))
+
+/obj/item/organ/tongue/vox/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_vox

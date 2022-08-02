@@ -67,7 +67,7 @@
 		/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium = 3,
 		/obj/item/laser_pointer = 1,
 		/obj/item/pickaxe/diamond = 1,
-		/obj/item/clothing/mask/facehugger/toy = 1,
+		/mob/living/simple_animal/hostile/facehugger/toy = 1,
 		/obj/item/clothing/glasses/meson/gar = 2,
 		/obj/item/survivalcapsule/luxuryelite = 1,
 	)

@@ -67,6 +67,70 @@
 	display_name = "athletic shorts, black"
 	path = /obj/item/clothing/under/shorts/black
 
+/datum/gear/uniform/athshortsgrey
+	display_name = "athletic shorts, grey"
+	path = /obj/item/clothing/under/shorts/grey
+
+/datum/gear/uniform/athshortsblue
+	display_name = "athletic shorts, blue"
+	path = /obj/item/clothing/under/shorts/blue
+
+/datum/gear/uniform/athshortsgreen
+	display_name = "athletic shorts, green"
+	path = /obj/item/clothing/under/shorts/green
+
+/datum/gear/uniform/athshortspurple
+	display_name = "athletic shorts, purple"
+	path = /obj/item/clothing/under/shorts/purple
+
+//Pants
+/datum/gear/uniform/pants
+	subtype_path = /datum/gear/uniform/pants
+
+/datum/gear/uniform/pants/jeans
+	display_name = "jeans"
+	path = /obj/item/clothing/under/pants/jeans
+
+/datum/gear/uniform/pants/classicjeans
+	display_name = "classic jeans"
+	path = /obj/item/clothing/under/pants/classicjeans
+
+/datum/gear/uniform/pants/khaki
+	display_name = "khaki pants"
+	path = /obj/item/clothing/under/pants/khaki
+
+/datum/gear/uniform/pants/tan
+	display_name = "tan pants"
+	path = /obj/item/clothing/under/pants/tan
+
+/datum/gear/uniform/pants/white
+	display_name = "white pants"
+	path = /obj/item/clothing/under/pants/white
+
+/datum/gear/uniform/pants/red
+	display_name = "red pants"
+	path = /obj/item/clothing/under/pants/red
+
+/datum/gear/uniform/pants/track
+	display_name = "track pants"
+	path = /obj/item/clothing/under/pants/track
+
+/datum/gear/uniform/pants/blackjeans
+	display_name = "black jeans"
+	path = /obj/item/clothing/under/pants/blackjeans
+
+/datum/gear/uniform/pants/mustangjeans
+	display_name = "Must Hang jeans"
+	path = /obj/item/clothing/under/pants/mustangjeans
+
+/datum/gear/uniform/pants/black
+	display_name = "black pants"
+	path = /obj/item/clothing/under/pants/black
+
+/datum/gear/uniform/pants/camo
+	display_name = "camo pants"
+	path = /obj/item/clothing/under/pants/camo
+
 //JUMPSUIT "SUITS"
 
 /datum/gear/uniform/suit
@@ -108,13 +172,74 @@
 	display_name = "suit, galaxy"
 	path = /obj/item/clothing/under/rank/civilian/lawyer/galaxy
 
-/datum/gear/uniform/suit/white/skirt
+/datum/gear/uniform/suit/white_skirt
 	display_name = "suitskirt, white shirt"
 	path = /obj/item/clothing/under/suit/black/skirt
+
+/datum/gear/uniform/suit/green_skirt
+	display_name = "suitskirt, green"
+	path = /obj/item/clothing/under/rank/command/captain/suit/skirt
+
+/datum/gear/uniform/suit/teal_skirt
+	display_name = "suitskirt, teal"
+	path = /obj/item/clothing/under/rank/command/head_of_personnel/suit/skirt
 
 /datum/gear/uniform/suit/white_shirt
 	display_name = "suit, white shirt"
 	path = /obj/item/clothing/under/suit/black
+
+/datum/gear/uniform/suit/checkered
+	display_name = "suit, checkered"
+	path = /obj/item/clothing/under/suit/checkered
+
+// Dresses
+/datum/gear/uniform/dress
+	subtype_path = /datum/gear/uniform/dress
+
+/datum/gear/uniform/dress/sailor
+	display_name = "sailor dress"
+	path = /obj/item/clothing/under/dress/sailor
+
+/datum/gear/uniform/dress/striped
+	display_name = "striped dress"
+	path = /obj/item/clothing/under/dress/striped
+
+/datum/gear/uniform/dress/redeveninggown
+	display_name = "red evening gown"
+	path = /obj/item/clothing/under/dress/redeveninggown
+
+/datum/gear/uniform/dress/blacktango
+	display_name = "black tango dress"
+	path = /obj/item/clothing/under/dress/blacktango
+
+/datum/gear/uniform/dress/purpleskirt
+	display_name = "purple skirt"
+	path = /obj/item/clothing/under/dress/skirt/purple
+
+/datum/gear/uniform/dress/blueskirt
+	display_name = "blue skirt"
+	path = /obj/item/clothing/under/dress/skirt/blue
+
+/datum/gear/uniform/dress/redskirt
+	display_name = "red skirt"
+	path = /obj/item/clothing/under/dress/skirt/red
+
+/datum/gear/uniform/dress/blackskirt
+	display_name = "black skirt"
+	path = /obj/item/clothing/under/dress/skirt
+	description = "Actually, it's a black blouse with a salmon skirt. But it's not called that."
+
+/datum/gear/uniform/dress/sundress
+	display_name = "sundress"
+	path = /obj/item/clothing/under/dress/sundress
+
+/datum/gear/uniform/suit/dress_suit
+	display_name = "dress-suit, navy"
+	path = /obj/item/clothing/under/suit/dresssuit
+
+/datum/gear/uniform/suit/dress_suit/skirt
+	display_name = "dress-suitskirt, navy"
+	path = /obj/item/clothing/under/suit/dresssuit/skirt
 
 //Premium
 /datum/gear/uniform/tacticool
@@ -126,5 +251,42 @@
 	path = /obj/item/clothing/under/misc/psyche
 
 /datum/gear/uniform/maid
-	display_name = "maid outfit"
-	path = /obj/item/clothing/under/costume/maid
+	display_name = "maid dress"
+	path = 	/obj/item/clothing/under/costume/maid
+
+//Trek uniforms
+/datum/gear/uniform/trek_tog_command
+	display_name = "original series command uniform"
+	path = /obj/item/clothing/under/trek/command
+
+/datum/gear/uniform/trek_tog_engsec
+	display_name = "original series engineering/security uniform"
+	path = /obj/item/clothing/under/trek/engsec
+
+/datum/gear/uniform/trek_tog_medsci
+	display_name = "original series medical/science uniform"
+	path = /obj/item/clothing/under/trek/medsci
+
+/datum/gear/uniform/trek_tng_command
+	display_name = "next generation command uniform"
+	path = /obj/item/clothing/under/trek/command/next
+
+/datum/gear/uniform/trek_tng_engsec
+	display_name = "next generation engineering/security uniform"
+	path = /obj/item/clothing/under/trek/engsec/next
+
+/datum/gear/uniform/trek_tng_medsci
+	display_name = "next generation medical/science uniform"
+	path = /obj/item/clothing/under/trek/medsci/next
+
+/datum/gear/uniform/trek_ent_command
+	display_name = "enterprise command uniform"
+	path = /obj/item/clothing/under/trek/command/ent
+
+/datum/gear/uniform/trek_ent_engsec
+	display_name = "enterprise engineering/security uniform"
+	path = /obj/item/clothing/under/trek/engsec/ent
+
+/datum/gear/uniform/trek_ent_medsci
+	display_name = "enterprise medical/science uniform"
+	path = /obj/item/clothing/under/trek/medsci/ent

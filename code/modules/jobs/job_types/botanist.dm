@@ -7,6 +7,8 @@
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
 	wiki_page = "Guide_to_Botany" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Gardener", "Herbalist", "Botanical Scientist", "Hydroponicist", "Beekeeper")
+	senior_title = "Master Gardener"
 
 	outfit = /datum/outfit/job/botanist
 

@@ -6,6 +6,9 @@
 	products = list(
 		/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass = 12,
+		/obj/item/reagent_containers/food/drinks/modglass/small = 10,
+		/obj/item/reagent_containers/food/drinks/modglass = 10,
+		/obj/item/reagent_containers/food/drinks/modglass/large = 10,
 		/obj/item/reagent_containers/food/drinks/flask = 3,
 		/obj/item/reagent_containers/food/drinks/ice = 10,
 		/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 4,
@@ -35,8 +38,13 @@
 		/obj/item/reagent_containers/food/drinks/bottle/amaretto = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/sake = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/applejack = 5,
+		/obj/item/reagent_containers/food/drinks/bottle/coconut = 5,
 		/obj/item/reagent_containers/food/drinks/bottle = 15,
-		/obj/item/reagent_containers/food/drinks/bottle/small = 15
+		/obj/item/reagent_containers/food/drinks/bottle/small = 15,
+		/obj/item/garnish/olives = 10,
+		/obj/item/garnish/umbrellared = 10,
+		/obj/item/garnish/umbrellablue = 10,
+		/obj/item/garnish/umbrellagreen = 10
 	)
 	contraband = list(
 		/obj/item/reagent_containers/food/drinks/mug/tea = 12,

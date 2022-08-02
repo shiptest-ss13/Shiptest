@@ -9,6 +9,8 @@
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Guide_to_Atmospherics" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Firefighter", "Life Support Specialist")
+	senior_title = "Chadmos"
 
 	outfit = /datum/outfit/job/atmos
 

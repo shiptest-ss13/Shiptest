@@ -14,6 +14,7 @@
 	exp_type = EXP_TYPE_CREW
 	officer = TRUE
 	wiki_page = "Research_Director" //WS Edit - Wikilinks/Warning
+	alt_titles = list("Research Supervisor", "Head Scientist", "Chief Researcher", "Chief Science Officer")
 
 	outfit = /datum/outfit/job/rd
 

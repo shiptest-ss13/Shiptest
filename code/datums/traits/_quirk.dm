@@ -37,12 +37,12 @@
 
 
 /**
-  * On client connection set quirk preferences.
-  *
-  * Run post_add to set the client preferences for the quirk.
-  * Clear the attached signal for login.
-  * Used when the quirk has been gained and no client is attached to the mob.
-  */
+ * On client connection set quirk preferences.
+ *
+ * Run post_add to set the client preferences for the quirk.
+ * Clear the attached signal for login.
+ * Used when the quirk has been gained and no client is attached to the mob.
+ */
 /datum/quirk/proc/on_quirk_holder_first_login(mob/living/source)
 		SIGNAL_HANDLER
 
@@ -112,6 +112,9 @@
 	for(var/V in roundstart_quirks)
 		var/datum/quirk/T = V
 		T.transfer_mob(to_mob)
+
+/datum/quirk/proc/clone_data() //return additional data that should be remembered by cloning
+/datum/quirk/proc/on_clone(data) //create the quirk from clone data
 
 /*
 

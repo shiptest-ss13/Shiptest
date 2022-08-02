@@ -39,7 +39,7 @@
 		select_direction = pick(try_directions)
 		try_directions -= select_direction
 		var/turf/try_movement = get_step(src, select_direction)
-		if(istype(try_movement, /turf/open/indestructible/supermatter_cascade) || istype(try_movement, /turf/open/space/transit) || istype(try_movement, /turf/closed/indestructible/blank))
+		if(istype(try_movement, /turf/open/indestructible/supermatter_cascade) || istype(try_movement, /turf/open/space/transit) || istype(try_movement, /turf/closed/indestructible/edge))
 			continue
 		try_movement.ChangeTurf(/turf/open/indestructible/supermatter_cascade)
 		break

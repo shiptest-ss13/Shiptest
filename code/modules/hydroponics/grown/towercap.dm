@@ -16,6 +16,7 @@
 	icon_dead = "towercap-dead"
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	mutatelist = list(/obj/item/seeds/tower/steel)
+	research = PLANT_RESEARCH_TIER_0
 
 /obj/item/seeds/tower/steel
 	name = "pack of steel-cap mycelium"
@@ -26,6 +27,7 @@
 	product = /obj/item/grown/log/steel
 	mutatelist = list()
 	rarity = 20
+	research = PLANT_RESEARCH_TIER_3
 
 
 
@@ -115,6 +117,7 @@
 	growing_icon = 'icons/obj/hydroponics/growing.dmi'
 	icon_dead = "bamboo-dead"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/grown/log/bamboo
 	seed = /obj/item/seeds/bamboo

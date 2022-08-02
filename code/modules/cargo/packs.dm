@@ -630,15 +630,16 @@
 
 /datum/supply_pack/security/armory/fire
 	name = "Incendiary Weapons Crate"
-	desc = "Burn, baby burn. Contains three incendiary grenades, three plasma canisters, and a flamethrower. Requires Armory access to open."
+	desc = "Burn, baby burn. Contains three incendiary grenades and three prebuilt flamethrowers. Requires Armory access to open."
 	cost = 4500
-	contains = list(/obj/item/flamethrower/full,
-					/obj/item/tank/internals/plasma,
-					/obj/item/tank/internals/plasma,
-					/obj/item/tank/internals/plasma,
-					/obj/item/grenade/chem_grenade/incendiary,
-					/obj/item/grenade/chem_grenade/incendiary,
-					/obj/item/grenade/chem_grenade/incendiary)
+	contains = list(
+		/obj/item/flamethrower/full,
+		/obj/item/flamethrower/full,
+		/obj/item/flamethrower/full,
+		/obj/item/grenade/chem_grenade/incendiary,
+		/obj/item/grenade/chem_grenade/incendiary,
+		/obj/item/grenade/chem_grenade/incendiary,
+	)
 	crate_name = "incendiary weapons crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	dangerous = TRUE
@@ -892,7 +893,7 @@
 
 /datum/supply_pack/engineering/atmossuit
 	name = "Atmospherics Hardsuit Crate"
-	desc = "The iconic hardsuit of Nanotransen's Atmosphere Corps, this hardsuit is known across space as a symbol of defiance in the face of sudden decompression. Smells faintly of plasma. Requires engineering access to open."
+	desc = "The iconic hardsuit of Nanotrasen's Atmosphere Corps, this hardsuit is known across space as a symbol of defiance in the face of sudden decompression. Smells faintly of plasma. Requires engineering access to open."
 	cost = 12000
 	access = ACCESS_ATMOSPHERICS
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine/atmos)
@@ -2247,7 +2248,7 @@
 	crate_type = /obj/structure/closet/crate/hydroponics
 
 /datum/supply_pack/organic/catgrill
-	name = "Felinid-Style Grilling Kit"
+	name = "Feline-Style Grilling Kit"
 	desc = "Request: \"Nic catgrill gf plz\" has been successfully processed! As the original client seems to have mysteriously dissapeared, we're selling these in bulk to the open market."
 	cost = 12000
 	crate_type = /obj/structure/closet/crate/trashcart
@@ -2808,7 +2809,7 @@
 		if(prob(50))
 			the_toy = pickweight(GLOB.arcade_prize_pool)
 		else
-			the_toy = pick(subtypesof(/obj/item/toy/plush) - typesof(/obj/item/toy/plush/goatplushie/angry/kinggoat))
+			the_toy = pick(subtypesof(/obj/item/toy/plush))
 		new the_toy(.)
 
 /datum/supply_pack/costumes_toys/wizard

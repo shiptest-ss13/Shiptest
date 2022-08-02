@@ -29,6 +29,11 @@
 				latches = "triple_latch"
 	update_icon()
 
+/obj/item/storage/toolbox/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.use_sound = 'sound/items/storage/toolbox.ogg'
+
 /obj/item/storage/toolbox/update_overlays()
 	. = ..()
 	if(has_latches)

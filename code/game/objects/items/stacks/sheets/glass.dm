@@ -38,6 +38,15 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 	is_cyborg = 1
 	cost = 500
 
+/obj/item/stack/sheet/glass/two
+	amount = 2
+
+/obj/item/stack/sheet/glass/five
+	amount = 5
+
+/obj/item/stack/sheet/glass/twenty
+	amount = 20
+
 /obj/item/stack/sheet/glass/fifty
 	amount = 50
 
@@ -198,7 +207,7 @@ GLOBAL_LIST_INIT(prglass_recipes, list ( \
 	. += GLOB.prglass_recipes
 
 GLOBAL_LIST_INIT(titaniumglass_recipes, list(
-	new/datum/stack_recipe("shuttle window", /obj/structure/window/shuttle/unanchored, 2, time = 0, on_floor = TRUE, window_checks = TRUE)
+	new/datum/stack_recipe("shuttle window", /obj/structure/window/reinforced/fulltile/shuttle/unanchored, 2, time = 0, on_floor = TRUE, window_checks = TRUE)
 	))
 
 /obj/item/stack/sheet/titaniumglass

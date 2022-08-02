@@ -70,11 +70,10 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/harmful = FALSE
 	/// Are we from a material? We might wanna know that for special stuff. Like metalgen. Is replaced with a ref of the material on New()
 	var/datum/material/material
-
-
-	//WS Begin
-	var/process_flags = ORGANIC // What can process this? ORGANIC, SYNTHETIC, or ORGANIC | SYNTHETIC?. We'll assume by default that it affects organics.
-	//WS End
+	// What can process this? ORGANIC, SYNTHETIC, or ORGANIC | SYNTHETIC?. We'll assume by default that it affects organics.
+	var/process_flags = ORGANIC
+	///How good of an accelerant is this reagent
+	var/accelerant_quality = 0
 
 /datum/reagent/New()
 	. = ..()
@@ -194,6 +193,15 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	if(prob(30))
 		to_chat(M, "<span class='danger'>You have an intense craving for [name].</span>")
 	return
+
+/**
+ * New, standardized method for chemicals to affect hydroponics trays.
+ * Defined on a per-chem level as opposed to by the tray.
+ * Can affect plant's health, stats, or cause the plant to react in certain ways.
+ */
+/datum/reagent/proc/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	if(!mytray)
+		return
 
 /// Called when addiction hits stage4, see [/datum/reagents/proc/metabolize]
 /datum/reagent/proc/addiction_act_stage4(mob/living/M)

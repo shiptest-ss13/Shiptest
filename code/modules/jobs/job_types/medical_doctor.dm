@@ -7,6 +7,8 @@
 	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
 	wiki_page = "Guide_to_Medicine"
+	alt_titles = list("Nurse", "Surgeon", "Junior Doctor", "Psychiatrist")
+	senior_title = "Senior Medical Doctor"
 
 	outfit = /datum/outfit/job/doctor
 
@@ -102,6 +104,15 @@
 
 //Shiptest outfits
 
+/datum/outfit/job/doctor/minutemen
+	name = "Field Medic (Colonial Minutemen)"
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	accessory = /obj/item/clothing/accessory/armband/medblue
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	head = /obj/item/clothing/head/beret/med
+	suit = null
+	suit_store = null
+
 /datum/outfit/job/doctor/solgov
 	name = "Medical Doctor (SolGov)"
 
@@ -136,3 +147,28 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/syndicate/alt
+
+/datum/outfit/job/doctor/syndicate_komodo
+	name = "Ship Medical Doctor"
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	glasses = /obj/item/clothing/glasses/hud/health/prescription
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	back = /obj/item/storage/backpack/duffelbag/syndie/med
+	id = /obj/item/card/id/syndicate_command/crew_id
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
+
+/datum/outfit/job/doctor/roumain
+	name = "Hunter Doctor (Saint-Roumain Militia)"
+
+	uniform = /obj/item/clothing/under/suit/roumain
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/toggle/labcoat/roumain_med
+
+	head = /obj/item/clothing/head/cowboy/sec/roumain/med
+	mask = /obj/item/clothing/mask/gas/plaguedoctor
+	gloves = null
+	backpack = /obj/item/storage/backpack
+	satchel  = /obj/item/storage/backpack/satchel
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger

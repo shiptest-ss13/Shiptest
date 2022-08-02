@@ -7,6 +7,8 @@
 	supervisors = "the head of personnel"
 	wiki_page = "Lawyer" //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
+	alt_titles = list("Corporate Representative", "Attorney")
+	senior_title = "Ace Attorney"
 	var/lawyers = 0 //Counts lawyer amount
 
 	outfit = /datum/outfit/job/lawyer

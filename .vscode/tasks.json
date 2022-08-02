@@ -7,10 +7,7 @@
 			"windows": {
 				"command": ".\\tools\\build\\build.bat"
 			},
-			"problemMatcher": [
-				"$dreammaker",
-				"$eslint-stylish"
-			],
+			"problemMatcher": ["$dreammaker", "$eslint-stylish"],
 			"group": {
 				"kind": "build",
 				"isDefault": true
@@ -21,9 +18,7 @@
 		{
 			"type": "dreammaker",
 			"dme": "shiptest.dme",
-			"problemMatcher": [
-				"$dreammaker"
-			],
+			"problemMatcher": ["$dreammaker"],
 			"group": "build",
 			"label": "dm: build - shiptest.dme"
 		},
@@ -33,9 +28,7 @@
 			"windows": {
 				"command": ".\\tgui\\bin\\tgui.bat"
 			},
-			"problemMatcher": [
-				"$eslint-stylish"
-			],
+			"problemMatcher": ["$eslint-stylish"],
 			"group": "build",
 			"label": "tgui: build"
 		},

@@ -59,7 +59,7 @@
 /obj/item/clothing/glasses/meson
 	name = "optical meson scanner"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting conditions."
-	icon_state = "meson"
+	icon_state = "mesongoggles"
 	item_state = "meson"
 	darkness_view = 2
 	vision_flags = SEE_TURFS
@@ -95,7 +95,7 @@
 /obj/item/clothing/glasses/science
 	name = "science goggles"
 	desc = "A pair of snazzy goggles used to protect against chemical spills. Fitted with an analyzer for scanning items and reagents."
-	icon_state = "purple"
+	icon_state = "scigoggles"
 	item_state = "glasses"
 	clothing_flags = SCAN_REAGENTS //You can see reagents while wearing science goggles
 	actions_types = list(/datum/action/item_action/toggle_research_scanner)
@@ -107,6 +107,12 @@
 /obj/item/clothing/glasses/science/item_action_slot_check(slot)
 	if(slot == ITEM_SLOT_EYES)
 		return 1
+
+/obj/item/clothing/glasses/science/prescription
+	name = "prescription science goggles"
+	desc = "A pair of prescription glasses fitted with an analyzer for scanning items and reagents. "
+	icon_state = "prescriptionpurple"
+	vision_correction = 1
 
 /obj/item/clothing/glasses/night
 	name = "night vision goggles"
@@ -137,7 +143,7 @@
 /obj/item/clothing/glasses/material
 	name = "optical material scanner"
 	desc = "Very confusing glasses."
-	icon_state = "material"
+	icon_state = "materialgoggles"
 	item_state = "glasses"
 	vision_flags = SEE_OBJS
 	glass_colour_type = /datum/client_colour/glass_colour/lightblue
@@ -145,8 +151,6 @@
 /obj/item/clothing/glasses/material/mining
 	name = "optical material scanner"
 	desc = "Used by miners to detect ores deep within the rock."
-	icon_state = "material"
-	item_state = "glasses"
 	darkness_view = 0
 
 /obj/item/clothing/glasses/material/mining/gar
@@ -350,7 +354,7 @@
 /obj/item/clothing/glasses/thermal
 	name = "optical thermal scanner"
 	desc = "Thermals in the shape of glasses."
-	icon_state = "thermal"
+	icon_state = "thermalgoggles"
 	item_state = "glasses"
 	vision_flags = SEE_MOBS
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
@@ -540,3 +544,13 @@
 		xray = !xray
 		var/mob/living/carbon/human/H = user
 		H.update_sight()
+
+/obj/item/clothing/glasses/cheapsuns
+	name = "cheap sunglasses"
+	desc = "Strangely ancient technology used to help provide rudimentary eye cover."
+	icon_state = "sun"
+	item_state = "sunglasses"
+	darkness_view = 1
+	tint = 1
+	glass_colour_type = /datum/client_colour/glass_colour/gray
+	dog_fashion = /datum/dog_fashion/head

@@ -4,21 +4,22 @@
 # In the event that multiple org members are to be informed of changes
 # to the same file or dir, add them to the end under Multiple Owners
 
-# Kapu1178
-/code/modules/mob/living/carbon/ @Kapu1178
-/code/modules/surgery/bodyparts/ @Kapu1178
-
 # MarkSuckerberg
 /code/controllers/subsystem/shuttle.dm @MarkSuckerberg
 /code/modules/shuttle/ @MarkSuckerberg
-/whitesands/code/modules/overmap/ @MarkSuckerberg
+/code/modules/overmap/ @MarkSuckerberg
 
-# triplezeta
-/icons/ @triplezeta
-/whitesands/icons/ @triplezeta
+# Teams
+
+# Map Maintainers
+/_maps/ @shiptest-ss13/maptainers
+
+# Sprite Maintainers
+/icons/ @shiptest-ss13/spritetainers
+/whitesands/icons/ @shiptest-ss13/spritetainers
 
 # CI and tool chains
-/tools/ @MarkSuckerberg @ZephyrTFA
+/tools/ @shiptest-ss13/admins
 
 #SIC SEMPER TYRANNIS
 /_maps/RandomRuins/LavaRuins/lavaland_surface_sloth.dmm @MarkSuckerberg

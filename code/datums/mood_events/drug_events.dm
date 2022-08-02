@@ -78,3 +78,11 @@
 	description = "<span class='nicegreen'>Eh ah AAAAH! HA HA HA HA HAA! Uuuh.</span>\n"
 	mood_change = 6
 	timeout = 3 MINUTES
+
+/datum/mood_event/legion_good
+	mood_change = 20
+	description = "<span class='nicegreen'>I'm feeling great!</span>\n"
+
+/datum/mood_event/legion_bad
+	mood_change = -20
+	description = "<span class='warning'>That felt awful!</span>\n"
