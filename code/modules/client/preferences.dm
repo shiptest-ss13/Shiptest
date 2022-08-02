@@ -1448,9 +1448,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.open(FALSE)
 
 /**
-  * Proc called to track what quirks conflict with someone's preferences, returns a list with all quirks that conflict.
-  *
-  * Not to be used to actually handle conflicts, see handle_conflicts() for that, which is called once for each possible type of conflict if needed.
+ * Proc called to track what quirks conflict with someone's preferences, returns a list with all quirks that conflict.
+ *
+ * Not to be used to actually handle conflicts, see handle_conflicts() for that, which is called once for each possible type of conflict if needed.
 **/
 /datum/preferences/proc/check_quirk_compatibility(mob/user)
 	var/list/quirk_conflicts = list()
@@ -1469,12 +1469,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				handled_conflicts["species"] = TRUE
 	return quirk_conflicts
 /**
-  * Proc called when there is a need to handle quirk conflicts.
-  *
-  * This evaluates what quirks conflict and removes them, aiming to have a balance of at least 0, and removes any positive quirks as needed for such.
-  * Arguments:
-  * * change_type - Currently can only be "species" or "mood", defines what kind of conflict it should look for.
-  * * additional_argument - Supplies the species datum and can supply something else if this proc gets expanded.
+ * Proc called when there is a need to handle quirk conflicts.
+ *
+ * This evaluates what quirks conflict and removes them, aiming to have a balance of at least 0, and removes any positive quirks as needed for such.
+ * Arguments:
+ * * change_type - Currently can only be "species" or "mood", defines what kind of conflict it should look for.
+ * * additional_argument - Supplies the species datum and can supply something else if this proc gets expanded.
 **/
 /datum/preferences/proc/handle_quirk_conflict(change_type, additional_argument, mob/user)
 	var/list/all_quirks_new = list()
