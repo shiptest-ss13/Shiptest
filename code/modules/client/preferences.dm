@@ -1476,7 +1476,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
   * * change_type - Currently can only be "species" or "mood", defines what kind of conflict it should look for.
   * * additional_argument - Supplies the species datum and can supply something else if this proc gets expanded.
 **/
-/datum/preferences/proc/handle_quirk_conflict(var/change_type, var/additional_argument, mob/user)
+/datum/preferences/proc/handle_quirk_conflict(change_type, additional_argument, mob/user)
 	var/list/all_quirks_new = list()
 	all_quirks_new += all_quirks
 	var/balance
