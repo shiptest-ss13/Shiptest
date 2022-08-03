@@ -373,25 +373,25 @@
 		if(ACCESS_MECH_ENGINE)
 			return "Engineering Mech Access"
 		if(ACCESS_LP_LIEUTENANT)
-			return "LP Lieutenant"
+			return "Away Team Lieutenant"
 		if(ACCESS_LP_COMMISSIONER)
-			return "LP Commissioner"
+			return "Away Team Commissioner"
 		if(ACCESS_LP_VAULT)
-			return "LP Vault"
+			return "Away Team Vault"
 		if(ACCESS_LP_AI)
-			return "LP AI Sat"
+			return "Away Team AI Sat"
 		if(ACCESS_LP_OPERATING_ROOM)
-			return "LP Operating Room"
+			return "Away Team Operating Room"
 		if(ACCESS_LP_BRIDGE)
-			return "LP Bridge"
+			return "Away Team Bridge"
 		if(ACCESS_LP_FACILITIES)
-			return "LP Facilities"
+			return "Away Team Facilities"
 		if(ACCESS_LP_SECURITY)
-			return "LP Security Specialist"
+			return "Away Team Security Specialist"
 		if(ACCESS_LP_MEDIC)
-			return "LP Medical Specialist"
+			return "Away Team Medical Specialist"
 		if(ACCESS_LP_ENGINEER)
-			return "LP Engineering Specialist"
+			return "Away Team Engineering Specialist"
 
 //WS Begin
 		if(ACCESS_CLONING)
