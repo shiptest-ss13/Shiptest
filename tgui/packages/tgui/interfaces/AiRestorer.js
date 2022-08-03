@@ -1,13 +1,17 @@
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, NoticeBox, ProgressBar, Section } from '../components';
+import {
+  Box,
+  Button,
+  LabeledList,
+  NoticeBox,
+  ProgressBar,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 
 export const AiRestorer = () => {
   return (
-    <Window
-      width={370}
-      height={360}
-      resizable>
+    <Window width={370} height={360} resizable>
       <Window.Content scrollable>
         <AiRestorerContent />
       </Window.Content>
@@ -29,30 +33,25 @@ export const AiRestorerContent = (props, context) => {
   } = data;
   return (
     <>
-      {error && (
-        <NoticeBox textAlign="center">
-          {error}
-        </NoticeBox>
-      )}
+      {error && <NoticeBox textAlign="center">{error}</NoticeBox>}
       {!!ejectable && (
         <Button
           fluid
           icon="eject"
-          content={AI_present ? name : "----------"}
+          content={AI_present ? name : '----------'}
           disabled={!AI_present}
-          onClick={() => act('PRG_eject')} />
+          onClick={() => act('PRG_eject')}
+        />
       )}
       {!!AI_present && (
         <Section
-          title={ejectable ? "System Status" : name}
-          buttons={(
-            <Box
-              inline
-              bold
-              color={isDead ? 'bad' : 'good'}>
-              {isDead ? "Nonfunctional" : "Functional"}
+          title={ejectable ? 'System Status' : name}
+          buttons={
+            <Box inline bold color={isDead ? 'bad' : 'good'}>
+              {isDead ? 'Nonfunctional' : 'Functional'}
             </Box>
-          )}>
+          }
+        >
           <LabeledList>
             <LabeledList.Item label="Integrity">
               <ProgressBar
@@ -63,16 +62,12 @@ export const AiRestorerContent = (props, context) => {
                   good: [70, Infinity],
                   average: [50, 70],
                   bad: [-Infinity, 50],
-                }} />
+                }}
+              />
             </LabeledList.Item>
           </LabeledList>
           {!!restoring && (
-            <Box
-              bold
-              textAlign="center"
-              fontSize="20px"
-              color="good"
-              mt={1}>
+            <Box bold textAlign="center" fontSize="20px" color="good" mt={1}>
               RECONSTRUCTION IN PROGRESS
             </Box>
           )}
@@ -82,9 +77,10 @@ export const AiRestorerContent = (props, context) => {
             content="Begin Reconstruction"
             disabled={restoring}
             mt={1}
-            onClick={() => act('PRG_beginReconstruction')} />
+            onClick={() => act('PRG_beginReconstruction')}
+          />
           <Section title="Laws" level={2}>
-            {laws.map(law => (
+            {laws.map((law) => (
               <Box key={law} className="candystripe">
                 {law}
               </Box>

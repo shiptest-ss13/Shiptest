@@ -1,6 +1,6 @@
 GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
-/proc/get_uplink_items(var/datum/game_mode/gamemode = null, allow_sales = TRUE, allow_restricted = TRUE)
+/proc/get_uplink_items(datum/game_mode/gamemode = null, allow_sales = TRUE, allow_restricted = TRUE)
 	var/list/filtered_uplink_items = list()
 	var/list/sale_items = list()
 
@@ -1874,7 +1874,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/role_restricted/his_grace
 	name = "His Grace"
-	desc = "An incredibly dangerous weapon recovered from a Nanotransen station overcome by the grey tide. Once activated, He will thirst for blood and must be used to kill to sate that thirst. \
+	desc = "An incredibly dangerous weapon recovered from a Nanotrasen station overcome by the grey tide. Once activated, He will thirst for blood and must be used to kill to sate that thirst. \
 	His Grace grants gradual regeneration and complete stun immunity to His wielder, but be wary: if He gets too hungry, He will become impossible to drop and eventually kill you if not fed. \
 	However, if left alone for long enough, He will fall back to slumber. \
 	To activate His Grace, simply unlatch Him."

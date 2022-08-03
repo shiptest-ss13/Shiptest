@@ -1,4 +1,4 @@
- //XENO TEAM
+//XENO TEAM
 /datum/team/xeno
 	name = "Aliens"
 	/// How many alien queens have already died

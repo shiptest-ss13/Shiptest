@@ -7,7 +7,6 @@
 	materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT, /datum/material/plasma = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/plasteel
 	category = list("initial", "Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 	maxstack = 50
 
 
@@ -18,7 +17,6 @@
 	materials = list(/datum/material/titanium = MINERAL_MATERIAL_AMOUNT, /datum/material/plasma = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/mineral/plastitanium
 	category = list("initial", "Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 	maxstack = 50
 
 /datum/design/tialloy
@@ -38,7 +36,6 @@
 	materials = list(/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/glass = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/plasmaglass
 	category = list("initial", "Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 	maxstack = 50
 
 /datum/design/plasmarglass_alloy
@@ -48,7 +45,6 @@
 	materials = list(/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/iron = MINERAL_MATERIAL_AMOUNT * 0.5,  /datum/material/glass = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/plasmarglass
 	category = list("initial", "Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 	maxstack = 50
 
 /datum/design/titaniumglass_alloy
@@ -58,7 +54,6 @@
 	materials = list(/datum/material/titanium = MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/glass = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/titaniumglass
 	category = list("initial", "Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 	maxstack = 50
 
 /datum/design/plastitaniumglass_alloy
@@ -68,7 +63,6 @@
 	materials = list(/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/titanium = MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/glass = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/plastitaniumglass
 	category = list("initial", "Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 	maxstack = 50
 
 /datum/design/alienalloy
@@ -79,4 +73,3 @@
 	materials = list(/datum/material/iron = 4000, /datum/material/plasma = 4000)
 	build_path = /obj/item/stack/sheet/mineral/abductor
 	category = list("Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING

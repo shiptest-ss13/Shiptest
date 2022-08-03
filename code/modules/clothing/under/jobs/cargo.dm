@@ -51,6 +51,7 @@
 	icon_state = "explorer"
 	item_state = "explorer"
 	can_adjust = TRUE
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 //Shiptest alt jumpsuits
 
@@ -62,7 +63,7 @@
 
 /obj/item/clothing/under/rank/cargo/miner/lavaland/old
 	icon_state = "explorerold"
-	desc = "A standardized NT jumpsuit line, designed to protect the fragile and profitable bodies of the shaft-charting explorers Nanotransen Resource Operations favoured in the closing years of their golden age. Slightly encumbering, due to heavy protective padding."
+	desc = "A standardized NT jumpsuit line, designed to protect the fragile and profitable bodies of the shaft-charting explorers Nanotrasen Resource Operations favoured in the closing years of their golden age. Slightly encumbering, due to heavy protective padding."
 	name = "prototype shaft miner's jumpsuit"
 	slowdown = 0.1
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 5,"energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 80, "acid" = 0)

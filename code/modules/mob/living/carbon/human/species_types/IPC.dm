@@ -27,7 +27,6 @@
 	reagent_tag = PROCESS_SYNTHETIC
 	species_gibs = "robotic"
 	attack_sound = 'sound/items/trayhit1.ogg'
-	allow_numbers_in_name = TRUE
 	deathsound = "sound/voice/borg_deathsound.ogg"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/ipc
@@ -219,11 +218,12 @@
 	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
 
 	for(var/obj/item/bodypart/BP as anything in C.bodyparts) //Override bodypart data as necessary
-		BP.uses_mutcolor = chassis_of_choice.color_src ? TRUE : FALSE
-		if(BP.uses_mutcolor)
-			BP.should_draw_greyscale = TRUE
-			BP.species_color = C.dna?.features["mcolor"]
+		if(BP.limb_id=="synth")
+			BP.uses_mutcolor = chassis_of_choice.color_src ? TRUE : FALSE
+			if(BP.uses_mutcolor)
+				BP.should_draw_greyscale = TRUE
+				BP.species_color = C.dna?.features["mcolor"]
 
-		BP.limb_id = chassis_of_choice.limbs_id
-		BP.name = "\improper[chassis_of_choice.name] [parse_zone(BP.body_zone)]"
-		BP.update_limb()
+			BP.limb_id = chassis_of_choice.limbs_id
+			BP.name = "\improper[chassis_of_choice.name] [parse_zone(BP.body_zone)]"
+			BP.update_limb()

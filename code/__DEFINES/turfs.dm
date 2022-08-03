@@ -3,6 +3,6 @@
 #define CHANGETURF_FORCEOP 4
 #define CHANGETURF_SKIP 8 // A flag for PlaceOnTop to just instance the new turf instead of calling ChangeTurf. Used for uninitialized turfs NOTHING ELSE
 #define CHANGETURF_INHERIT_AIR 16 // Inherit air from previous turf. Implies CHANGETURF_IGNORE_AIR
-#define CHANGETURF_RECALC_ADJACENT 32 //Immediately recalc adjacent atmos turfs instead of queuing.
+#define CHANGETURF_RECALC_ADJACENT 32 //Recalc adjacent or not
 
 #define IS_OPAQUE_TURF(turf) (turf.directional_opacity == ALL_CARDINALS)

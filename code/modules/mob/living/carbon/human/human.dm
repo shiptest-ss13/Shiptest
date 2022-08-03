@@ -715,10 +715,10 @@
 			dropItemToGround(I)
 
 /**
-  * Wash the hands, cleaning either the gloves if equipped and not obscured, otherwise the hands themselves if they're not obscured.
-  *
-  * Returns false if we couldn't wash our hands due to them being obscured, otherwise true
-  */
+ * Wash the hands, cleaning either the gloves if equipped and not obscured, otherwise the hands themselves if they're not obscured.
+ *
+ * Returns false if we couldn't wash our hands due to them being obscured, otherwise true
+ */
 /mob/living/carbon/human/proc/wash_hands(clean_types)
 	var/list/obscured = check_obscured_slots()
 	if(ITEM_SLOT_GLOVES in obscured)
@@ -734,8 +734,8 @@
 	return TRUE
 
 /**
-  * Cleans the lips of any lipstick. Returns TRUE if the lips had any lipstick and was thus cleaned
-  */
+ * Cleans the lips of any lipstick. Returns TRUE if the lips had any lipstick and was thus cleaned
+ */
 /mob/living/carbon/human/proc/clean_lips()
 	if(isnull(lip_style) && lip_color == initial(lip_color))
 		return FALSE
@@ -745,9 +745,13 @@
 	return TRUE
 
 /**
-  * Called on the COMSIG_COMPONENT_CLEAN_FACE_ACT signal
-  */
+ * Called on the COMSIG_COMPONENT_CLEAN_FACE_ACT signal
+ */
 /mob/living/carbon/human/proc/clean_face(datum/source, clean_types)
+	grad_color = dna.features["gradientstyle"]
+	grad_style = dna.features["gradientcolor"]
+	update_hair()
+
 	if(!is_mouth_covered() && clean_lips())
 		. = TRUE
 
@@ -761,8 +765,8 @@
 		. = TRUE
 
 /**
-  * Called when this human should be washed
-  */
+ * Called when this human should be washed
+ */
 /mob/living/carbon/human/wash(clean_types)
 	. = ..()
 
@@ -1053,13 +1057,16 @@
 
 
 /mob/living/carbon/human/MouseDrop_T(mob/living/target, mob/living/user)
-	if(pulling != target || grab_state != GRAB_AGGRESSIVE || stat != CONSCIOUS || a_intent != INTENT_GRAB)
+	if(pulling != target || stat != CONSCIOUS || a_intent != INTENT_GRAB)
 		return ..()
 
-	//If they can be picked up, and we can't (prevents recursion), try to pick the target mob up as an item.
-	if(HAS_TRAIT(target, TRAIT_HOLDABLE) && !HAS_TRAIT(src, TRAIT_HOLDABLE))
-		if(target.mob_try_pickup(user))
-			return
+	//If they can be scooped, try to scoop the target mob
+	if(HAS_TRAIT(target, TRAIT_SCOOPABLE))
+		if(ishuman(target))
+			if(scoop(target))
+				return
+	if(grab_state != GRAB_AGGRESSIVE)
+		return ..()
 	//If they dragged themselves and we're currently aggressively grabbing them try to piggyback
 	if(user == target)
 		if(can_piggyback(target))
@@ -1171,6 +1178,27 @@
 		visible_message("<span class='warning'>[src] fails to fireman carry [target]!</span>")
 	else
 		to_chat(src, "<span class='warning'>You can't fireman carry [target] while they're standing!</span>")
+
+/mob/living/carbon/human/proc/scoop(mob/living/carbon/target)
+	var/carrydelay = 20 //if you have latex you are faster at grabbing
+	var/skills_space = "" //cobby told me to do this
+	if(HAS_TRAIT(src, TRAIT_QUICKER_CARRY))
+		carrydelay = 10
+		skills_space = "expertly"
+	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY))
+		carrydelay = 15
+		skills_space = "quickly"
+	if(!incapacitated(FALSE, TRUE))
+		visible_message("<span class='notice'>[src] starts [skills_space] scooping [target] into their arms..</span>",
+		//Joe Medic starts quickly/expertly scooping Grey Tider into their arms..
+		"<span class='notice'>[carrydelay < 11 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to scoop [target] into your arms[carrydelay == 15 ? ", while assisted by the nanochips in your gloves.." : "..."]</span>")
+		//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to scoop Grey Tider into your arms(, while assisted by the nanochips in your gloves../...)
+		if(do_after(src, carrydelay, TRUE, target))
+			//Second check to make sure they're still valid to be carried
+			if(!incapacitated(FALSE, TRUE) && !target.buckled)
+				buckle_mob(target, TRUE, TRUE, 90, 1, 0)
+				return TRUE
+		visible_message("<span class='warning'>[src] fails to scoop [target]!</span>")
 
 /mob/living/carbon/human/proc/piggyback(mob/living/carbon/target)
 	if(can_piggyback(target))

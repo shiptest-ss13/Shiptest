@@ -15,6 +15,7 @@
 	rarity = 30
 	var/list/mutations = list()
 	reagents_add = list(/datum/reagent/medicine/charcoal = 0.04, /datum/reagent/consumable/nutriment = 0.02)
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/seeds/kudzu/Copy()
 	var/obj/item/seeds/kudzu/S = ..()
