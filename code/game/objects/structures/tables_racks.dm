@@ -575,7 +575,7 @@
 	canSmoothWith = null
 	can_buckle = 1
 	buckle_lying = NO_BUCKLE_LYING
-	buckle_requires_restraints = TRUE
+	buckle_requires_restraints = FALSE
 	can_flip = FALSE
 	var/mob/living/carbon/human/patient = null
 	var/obj/machinery/computer/operating/computer = null
