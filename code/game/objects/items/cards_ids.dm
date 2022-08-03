@@ -417,7 +417,7 @@
 // Finds the referenced ship in the list
 /obj/item/card/id/proc/has_ship_access(datum/overmap/ship/controlled/ship)
 	if (ship)
-		return ship_access.Find( ship )
+		return ship_access.Find(ship)
 
 /*
 Usage:
