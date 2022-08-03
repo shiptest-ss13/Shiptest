@@ -131,6 +131,6 @@ GLOBAL_LIST_INIT(duplicate_forbidden_vars,list(
 
 	if(toupdate.len)
 		for(var/turf/T1 in toupdate)
-			CALCULATE_ADJACENT_TURFS(T1)
+			T1.ImmediateCalculateAdjacentTurfs()
 
 	return copiedobjs

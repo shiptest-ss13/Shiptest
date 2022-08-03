@@ -73,7 +73,7 @@
 	Adjacency (to anything else):
 	* Must be on a turf
 */
-/atom/movable/Adjacent(var/atom/neighbor)
+/atom/movable/Adjacent(atom/neighbor)
 	var/turf/T = loc
 	if(neighbor == loc)
 		return TRUE

@@ -38,7 +38,7 @@
 /datum/antagonist/gang/get_team()
 	return my_gang
 
-/datum/antagonist/gang/proc/add_gang_points(var/points_to_add)
+/datum/antagonist/gang/proc/add_gang_points(points_to_add)
 	if(my_gang)
 		my_gang.adjust_points(points_to_add)
 
@@ -347,7 +347,7 @@
 	var/list/free_clothes = list()
 	var/datum/antagonist/gang/my_gang_datum
 
-/datum/team/gang/proc/adjust_points(var/points_to_adjust)
+/datum/team/gang/proc/adjust_points(points_to_adjust)
 	points += points_to_adjust
 
 /datum/team/gang/roundend_report()

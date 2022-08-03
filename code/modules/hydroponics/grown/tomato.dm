@@ -38,6 +38,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/blood = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 	rarity = 20
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/tomato/blood
 	seed = /obj/item/seeds/tomato/blood
@@ -64,6 +65,7 @@
 	genes = list(/datum/plant_gene/trait/slip, /datum/plant_gene/trait/repeated_harvest)
 	reagents_add = list(/datum/reagent/lube = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 	rarity = 20
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/tomato/blue
 	seed = /obj/item/seeds/tomato/blue
@@ -87,6 +89,7 @@
 	genes = list(/datum/plant_gene/trait/squash, /datum/plant_gene/trait/slip, /datum/plant_gene/trait/teleport, /datum/plant_gene/trait/repeated_harvest)
 	reagents_add = list(/datum/reagent/lube = 0.2, /datum/reagent/bluespace = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 	rarity = 50
+	research = PLANT_RESEARCH_TIER_3
 
 /obj/item/reagent_containers/food/snacks/grown/tomato/blue/bluespace
 	seed = /obj/item/seeds/tomato/blue/bluespace
@@ -112,6 +115,7 @@
 	icon_dead = "killertomato-dead"
 	mutatelist = list()
 	rarity = 30
+	research = PLANT_RESEARCH_TIER_3
 
 /obj/item/reagent_containers/food/snacks/grown/tomato/killer
 	seed = /obj/item/seeds/tomato/killer

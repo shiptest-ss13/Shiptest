@@ -190,14 +190,14 @@
 	return MANUAL_SUICIDE
 
 /**
-  * Internal function used in the toy singularity suicide
-  *
-  * Cavity implants the toy singularity into the body of the user (arg1), and kills the user.
-  * Makes the user vomit and receive 120 suffocation damage if there already is a cavity implant in the user.
-  * Throwing the singularity away will cause the user to start choking themself to death.
-  * Arguments:
-  * * user - Whoever is doing the suiciding
-  */
+ * Internal function used in the toy singularity suicide
+ *
+ * Cavity implants the toy singularity into the body of the user (arg1), and kills the user.
+ * Makes the user vomit and receive 120 suffocation damage if there already is a cavity implant in the user.
+ * Throwing the singularity away will cause the user to start choking themself to death.
+ * Arguments:
+ * * user - Whoever is doing the suiciding
+ */
 /obj/item/toy/spinningtoy/proc/manual_suicide(mob/living/carbon/human/user)
 	if(!user)
 		return
@@ -862,8 +862,8 @@
 	newobj.resistance_flags = sourceobj.resistance_flags
 
 /**
-  * This proc updates the sprite for when you create a hand of cards
-  */
+ * This proc updates the sprite for when you create a hand of cards
+ */
 /obj/item/toy/cards/cardhand/proc/update_sprite()
 	cut_overlays()
 	var/overlay_cards = currenthand.len

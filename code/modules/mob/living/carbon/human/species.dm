@@ -1,14 +1,14 @@
 GLOBAL_LIST_EMPTY(roundstart_races)
 
 /**
-  * # species datum
-  *
-  * Datum that handles different species in the game.
-  *
-  * This datum handles species in the game, such as lizardpeople, mothmen, zombies, skeletons, etc.
-  * It is used in [carbon humans][mob/living/carbon/human] to determine various things about them, like their food preferences, if they have biological genders, their damage resistances, and more.
-  *
-  */
+ * # species datum
+ *
+ * Datum that handles different species in the game.
+ *
+ * This datum handles species in the game, such as lizardpeople, mothmen, zombies, skeletons, etc.
+ * It is used in [carbon humans][mob/living/carbon/human] to determine various things about them, like their food preferences, if they have biological genders, their damage resistances, and more.
+ *
+ */
 /datum/species
 	///If the game needs to manually check your race to do something not included in a proc here, it will use this.
 	var/id
@@ -118,8 +118,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/reagent_tag = PROCESS_ORGANIC
 	///Does this mob have special gibs?
 	var/species_gibs = "human"
-	///Can this species use numbers in its name?
-	var/allow_numbers_in_name
 
 	///Does this species have a special set of overlay clothing, and if so, what is the name of the folder under .../clothing/species that contains them?
 	var/species_clothing_path
@@ -206,6 +204,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/changesource_flags = NONE
 	var/loreblurb = "Description not provided. Yell at a coder. Also, please look into cooking fajitas. That stuff is amazing."
 
+	// Does this species have unique robotic limbs? (currently used in: kepori and vox)
+	var/unique_prosthesis = FALSE
+
 	//K-Limbs. If a species doesn't have their own limb types. Do not override this, use the K-Limbs overrides at the top of the species datum.
 	var/obj/item/bodypart/species_chest = /obj/item/bodypart/chest
 	var/obj/item/bodypart/species_head = /obj/item/bodypart/head
@@ -227,11 +228,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	..()
 
 /**
-  * Generates species available to choose in character setup at roundstart
-  *
-  * This proc generates which species are available to pick from in character setup.
-  * If there are no available roundstart species, defaults to human.
-  */
+ * Generates species available to choose in character setup at roundstart
+ *
+ * This proc generates which species are available to pick from in character setup.
+ * If there are no available roundstart species, defaults to human.
+ */
 /proc/generate_selectable_species()
 	for(var/I in subtypesof(/datum/species))
 		var/datum/species/S = new I
@@ -242,25 +243,25 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		GLOB.roundstart_races += "human"
 
 /**
-  * Checks if a species is eligible to be picked at roundstart.
-  *
-  * Checks the config to see if this species is allowed to be picked in the character setup menu.
-  * Used by [proc/generate_selectable_species].
-  */
+ * Checks if a species is eligible to be picked at roundstart.
+ *
+ * Checks the config to see if this species is allowed to be picked in the character setup menu.
+ * Used by [proc/generate_selectable_species].
+ */
 /datum/species/proc/check_roundstart_eligible()
 	if(id in (CONFIG_GET(keyed_list/roundstart_races)))
 		return TRUE
 	return FALSE
 
 /**
-  * Generates a random name for a carbon.
-  *
-  * This generates a random unique name based on a human's species and gender.
-  * Arguments:
-  * * gender - The gender that the name should adhere to. Use MALE for male names, use anything else for female names.
-  * * unique - If true, ensures that this new name is not a duplicate of anyone else's name currently on the station.
-  * * lastname - Does this species' naming system adhere to the last name system? Set to false if it doesn't.
-  */
+ * Generates a random name for a carbon.
+ *
+ * This generates a random unique name based on a human's species and gender.
+ * Arguments:
+ * * gender - The gender that the name should adhere to. Use MALE for male names, use anything else for female names.
+ * * unique - If true, ensures that this new name is not a duplicate of anyone else's name currently on the station.
+ * * lastname - Does this species' naming system adhere to the last name system? Set to false if it doesn't.
+ */
 /datum/species/proc/random_name(gender,unique,lastname)
 	if(unique)
 		return random_unique_name(gender)
@@ -279,40 +280,26 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	return randname
 
 /**
-  * Copies some vars and properties over that should be kept when creating a copy of this species.
-  *
-  * Used by slimepeople to copy themselves, and by the DNA datum to hardset DNA to a species
-  * Arguments:
-  * * old_species - The species that the carbon used to be before copying
-  */
+ * Copies some vars and properties over that should be kept when creating a copy of this species.
+ *
+ * Used by slimepeople to copy themselves, and by the DNA datum to hardset DNA to a species
+ * Arguments:
+ * * old_species - The species that the carbon used to be before copying
+ */
 /datum/species/proc/copy_properties_from(datum/species/old_species)
 	return
 
-/**
-  * Checks if this carbon is allowed to be a certain job or rank.
-  *
-  * Override this locally if you want to define when this species qualifies for what rank if human authority is enforced.
-  * Arguments:
-  * * rank - Rank to be tested.
-  * * features - Features of a species that factors into rank qualifications, like a human with cat ears being unable to join command positions.
-  */
-/datum/species/proc/qualifies_for_rank(rank, list/features)
-	if(rank in GLOB.command_positions)
-		return 0
-	return 1
-
-
 /** regenerate_organs
-  * Corrects organs in a carbon, removing ones it doesn't need and adding ones it does
-  *
-  * takes all organ slots, removes organs a species should not have, adds organs a species should have.
-  * can use replace_current to refresh all organs, creating an entirely new set.
-  * Arguments:
-  * * C - carbon, the owner of the species datum AKA whoever we're regenerating organs in
-  * * old_species - datum, used when regenerate organs is called in a switching species to remove old mutant organs.
-  * * replace_current - boolean, forces all old organs to get deleted whether or not they pass the species' ability to keep that organ
-  * * excluded_zones - list, add zone defines to block organs inside of the zones from getting handled. see headless mutation for an example
-  */
+ * Corrects organs in a carbon, removing ones it doesn't need and adding ones it does
+ *
+ * takes all organ slots, removes organs a species should not have, adds organs a species should have.
+ * can use replace_current to refresh all organs, creating an entirely new set.
+ * Arguments:
+ * * C - carbon, the owner of the species datum AKA whoever we're regenerating organs in
+ * * old_species - datum, used when regenerate organs is called in a switching species to remove old mutant organs.
+ * * replace_current - boolean, forces all old organs to get deleted whether or not they pass the species' ability to keep that organ
+ * * excluded_zones - list, add zone defines to block organs inside of the zones from getting handled. see headless mutation for an example
+ */
 /datum/species/proc/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE,list/excluded_zones)
 	//what should be put in if there is no mutantorgan (brains handled seperately)
 	var/list/slot_mutantorgans = list(ORGAN_SLOT_BRAIN = mutantbrain, ORGAN_SLOT_HEART = mutantheart, ORGAN_SLOT_LUNGS = mutantlungs, ORGAN_SLOT_APPENDIX = mutantappendix, \
@@ -357,9 +344,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	for(var/path in mutant_organs)
 		var/obj/item/organ/I = new path()
+		var/obj/item/organ/old = C.getorgan(I)
+		if(old)
+			QDEL_NULL(old)
 		I.Insert(C)
 
-/datum/species/proc/replace_body(mob/living/carbon/C, var/datum/species/new_species)
+/datum/species/proc/replace_body(mob/living/carbon/C, datum/species/new_species)
 	new_species ||= C.dna.species //If no new species is provided, assume its src.
 	//Note for future: Potentionally add a new C.dna.species() to build a template species for more accurate limb replacement
 
@@ -404,15 +394,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				qdel(old_part)
 
 /**
-  * Proc called when a carbon becomes this species.
-  *
-  * This sets up and adds/changes/removes things, qualities, abilities, and traits so that the transformation is as smooth and bugfree as possible.
-  * Produces a [COMSIG_SPECIES_GAIN] signal.
-  * Arguments:
-  * * C - Carbon, this is whoever became the new species.
-  * * old_species - The species that the carbon used to be before becoming this race, used for regenerating organs.
-  * * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
-  */
+ * Proc called when a carbon becomes this species.
+ *
+ * This sets up and adds/changes/removes things, qualities, abilities, and traits so that the transformation is as smooth and bugfree as possible.
+ * Produces a [COMSIG_SPECIES_GAIN] signal.
+ * Arguments:
+ * * C - Carbon, this is whoever became the new species.
+ * * old_species - The species that the carbon used to be before becoming this race, used for regenerating organs.
+ * * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
+ */
 /datum/species/proc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	// Drop the items the new species can't wear
 	if((AGENDER in species_traits))
@@ -488,15 +478,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src, old_species)
 
 /**
-  * Proc called when a carbon is no longer this species.
-  *
-  * This sets up and adds/changes/removes things, qualities, abilities, and traits so that the transformation is as smooth and bugfree as possible.
-  * Produces a [COMSIG_SPECIES_LOSS] signal.
-  * Arguments:
-  * * C - Carbon, this is whoever lost this species.
-  * * new_species - The new species that the carbon became, used for genetics mutations.
-  * * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
-  */
+ * Proc called when a carbon is no longer this species.
+ *
+ * This sets up and adds/changes/removes things, qualities, abilities, and traits so that the transformation is as smooth and bugfree as possible.
+ * Produces a [COMSIG_SPECIES_LOSS] signal.
+ * Arguments:
+ * * C - Carbon, this is whoever lost this species.
+ * * new_species - The new species that the carbon became, used for genetics mutations.
+ * * pref_load - Preferences to be loaded from character setup, loads in preferred mutant things like bodyparts, digilegs, skin color, etc.
+ */
 /datum/species/proc/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	if(C.dna.species.exotic_bloodtype)
 		C.dna.blood_type = random_blood_type()
@@ -537,13 +527,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	SEND_SIGNAL(C, COMSIG_SPECIES_LOSS, src)
 
 /**
-  * Handles hair icons and dynamic hair.
-  *
-  * Handles hiding hair with clothing, hair layers, losing hair due to husking or augmented heads, facial hair, head hair, and hair styles.
-  * Arguments:
-  * * H - Human, whoever we're handling the hair for
-  * * forced_colour - The colour of hair we're forcing on this human. Leave null to not change. Mind the british spelling!
-  */
+ * Handles hair icons and dynamic hair.
+ *
+ * Handles hiding hair with clothing, hair layers, losing hair due to husking or augmented heads, facial hair, head hair, and hair styles.
+ * Arguments:
+ * * H - Human, whoever we're handling the hair for
+ * * forced_colour - The colour of hair we're forcing on this human. Leave null to not change. Mind the british spelling!
+ */
 /datum/species/proc/handle_hair(mob/living/carbon/human/H, forced_colour)
 	H.remove_overlay(HAIR_LAYER)
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
@@ -704,13 +694,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	H.apply_overlay(HAIR_LAYER)
 
 /**
-  * Handles the body of a human
-  *
-  * Handles lipstick, having no eyes, eye color, undergarnments like underwear, undershirts, and socks, and body layers.
-  * Calls [handle_mutant_bodyparts][/datum/species/proc/handle_mutant_bodyparts]
-  * Arguments:
-  * * H - Human, whoever we're handling the body for
-  */
+ * Handles the body of a human
+ *
+ * Handles lipstick, having no eyes, eye color, undergarnments like underwear, undershirts, and socks, and body layers.
+ * Calls [handle_mutant_bodyparts][/datum/species/proc/handle_mutant_bodyparts]
+ * Arguments:
+ * * H - Human, whoever we're handling the body for
+ */
 /datum/species/proc/handle_body(mob/living/carbon/human/H)
 	H.remove_overlay(BODY_LAYER)
 
@@ -768,14 +758,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	handle_mutant_bodyparts(H)
 
 /**
-  * Handles the mutant bodyparts of a human
-  *
-  * Handles the adding and displaying of, layers, colors, and overlays of mutant bodyparts and accessories.
-  * Handles digitigrade leg displaying and squishing.
-  * Arguments:
-  * * H - Human, whoever we're handling the body for
-  * * forced_colour - The forced color of an accessory. Leave null to use mutant color.
-  */
+ * Handles the mutant bodyparts of a human
+ *
+ * Handles the adding and displaying of, layers, colors, and overlays of mutant bodyparts and accessories.
+ * Handles digitigrade leg displaying and squishing.
+ * Arguments:
+ * * H - Human, whoever we're handling the body for
+ * * forced_colour - The forced color of an accessory. Leave null to use mutant color.
+ */
 /datum/species/proc/handle_mutant_bodyparts(mob/living/carbon/human/H, forced_colour)
 	var/list/bodyparts_to_add = mutant_bodyparts.Copy()
 	var/list/relevent_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
@@ -876,6 +866,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["kepori_body_feathers"] || H.dna.features["kepori_body_feathers"] == "None" || (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT)))
 			bodyparts_to_add -= "kepori_body_feathers"
 
+	if("kepori_tail_feathers" in mutant_bodyparts)
+		if(!H.dna.features["kepori_tail_feathers"] || H.dna.features["kepori_tail_feathers"] == "None")
+			bodyparts_to_add -= "kepori_tail_feathers"
+
 	if("kepori_feathers" in mutant_bodyparts)
 		if(!H.dna.features["kepori_feathers"] || H.dna.features["kepori_feathers"] == "None" || (H.head && (H.head.flags_inv & HIDEHAIR)) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD) //HD.status == BODYTYPE_ROBOTIC) and here too
 			bodyparts_to_add -= "kepori_feathers"
@@ -970,6 +964,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.ipc_antennas_list[H.dna.features["ipc_antenna"]]
 				if("ipc_chassis")
 					S = GLOB.ipc_chassis_list[H.dna.features["ipc_chassis"]]
+				if("ipc_brain")
+					S = GLOB.ipc_brain_list[H.dna.features["ipc_brain"]]
 				if("spider_legs")
 					S = GLOB.spider_legs_list[H.dna.features["spider_legs"]]
 				if("spider_spinneret")
@@ -978,6 +974,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.spider_mandibles_list[H.dna.features["spider_mandibles"]]
 				if("kepori_body_feathers")
 					S = GLOB.kepori_body_feathers_list[H.dna.features["kepori_body_feathers"]]
+				if("kepori_tail_feathers")
+					S = GLOB.kepori_tail_feathers_list[H.dna.features["kepori_tail_feathers"]]
 				if("kepori_feathers")
 					S = GLOB.kepori_feathers_list[H.dna.features["kepori_feathers"]]
 				if("vox_head_quills")
@@ -1599,106 +1597,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(user.loc == target.loc)
 		return FALSE
 	else
-		user.do_attack_animation(target, ATTACK_EFFECT_DISARM)
-		playsound(target, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
-
-		if(target.w_uniform)
-			target.w_uniform.add_fingerprint(user)
-		SEND_SIGNAL(target, COMSIG_HUMAN_DISARM_HIT, user, user.zone_selected)
-
-		var/turf/target_oldturf = target.loc
-		var/shove_dir = get_dir(user.loc, target_oldturf)
-		var/turf/target_shove_turf = get_step(target.loc, shove_dir)
-		var/mob/living/carbon/human/target_collateral_human
-		var/obj/structure/table/target_table
-		var/obj/machinery/disposal/bin/target_disposal_bin
-		var/shove_blocked = FALSE //Used to check if a shove is blocked so that if it is knockdown logic can be applied
-
-		//Thank you based whoneedsspace
-		target_collateral_human = locate(/mob/living/carbon/human) in target_shove_turf.contents
-		if(target_collateral_human)
-			shove_blocked = TRUE
-		else
-			target.Move(target_shove_turf, shove_dir)
-			if(get_turf(target) == target_oldturf)
-				target_table = locate(/obj/structure/table) in target_shove_turf.contents
-				target_disposal_bin = locate(/obj/machinery/disposal/bin) in target_shove_turf.contents
-				shove_blocked = TRUE
-
-		if(target.IsKnockdown() && !target.IsParalyzed())
-			target.Paralyze(SHOVE_CHAIN_PARALYZE)
-			target.visible_message("<span class='danger'>[user.name] kicks [target.name] onto [target.p_their()] side!</span>",
-							"<span class='userdanger'>You're kicked onto your side by [user.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, user)
-			to_chat(user, "<span class='danger'>You kick [target.name] onto [target.p_their()] side!</span>")
-			addtimer(CALLBACK(target, /mob/living/proc/SetKnockdown, 0), SHOVE_CHAIN_PARALYZE)
-			log_combat(user, target, "kicks", "onto their side (paralyzing)")
-
-		if(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)
-			var/directional_blocked = FALSE
-			if(shove_dir in GLOB.cardinals) //Directional checks to make sure that we're not shoving through a windoor or something like that
-				var/target_turf = get_turf(target)
-				for(var/obj/O in target_turf)
-					if(O.flags_1 & ON_BORDER_1 && O.dir == shove_dir && O.density)
-						directional_blocked = TRUE
-						break
-				if(target_turf != target_shove_turf) //Make sure that we don't run the exact same check twice on the same tile
-					for(var/obj/O in target_shove_turf)
-						if(O.flags_1 & ON_BORDER_1 && O.dir == turn(shove_dir, 180) && O.density)
-							directional_blocked = TRUE
-							break
-			if((!target_table && !target_collateral_human && !target_disposal_bin) || directional_blocked)
-				target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
-				target.visible_message("<span class='danger'>[user.name] shoves [target.name], knocking [target.p_them()] down!</span>",
-								"<span class='userdanger'>You're knocked down from a shove by [user.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, user)
-				to_chat(user, "<span class='danger'>You shove [target.name], knocking [target.p_them()] down!</span>")
-				log_combat(user, target, "shoved", "knocking them down")
-			else if(target_table)
-				target.Knockdown(SHOVE_KNOCKDOWN_TABLE)
-				target.visible_message("<span class='danger'>[user.name] shoves [target.name] onto \the [target_table]!</span>",
-								"<span class='userdanger'>You're shoved onto \the [target_table] by [user.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, user)
-				to_chat(user, "<span class='danger'>You shove [target.name] onto \the [target_table]!</span>")
-				target.throw_at(target_table, 1, 1, null, FALSE) //1 speed throws with no spin are basically just forcemoves with a hard collision check
-				log_combat(user, target, "shoved", "onto [target_table] (table)")
-			else if(target_collateral_human)
-				target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
-				target_collateral_human.Knockdown(SHOVE_KNOCKDOWN_COLLATERAL)
-				target.visible_message("<span class='danger'>[user.name] shoves [target.name] into [target_collateral_human.name]!</span>",
-					"<span class='userdanger'>You're shoved into [target_collateral_human.name] by [user.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, user)
-				to_chat(user, "<span class='danger'>You shove [target.name] into [target_collateral_human.name]!</span>")
-				log_combat(user, target, "shoved", "into [target_collateral_human.name]")
-			else if(target_disposal_bin)
-				target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
-				target.forceMove(target_disposal_bin)
-				target.visible_message("<span class='danger'>[user.name] shoves [target.name] into \the [target_disposal_bin]!</span>",
-								"<span class='userdanger'>You're shoved into \the [target_disposal_bin] by [target.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, user)
-				to_chat(user, "<span class='danger'>You shove [target.name] into \the [target_disposal_bin]!</span>")
-				log_combat(user, target, "shoved", "into [target_disposal_bin] (disposal bin)")
-		else
-			target.visible_message("<span class='danger'>[user.name] shoves [target.name]!</span>",
-							"<span class='userdanger'>You're shoved by [user.name]!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", COMBAT_MESSAGE_RANGE, user)
-			to_chat(user, "<span class='danger'>You shove [target.name]!</span>")
-			var/target_held_item = target.get_active_held_item()
-			var/knocked_item = FALSE
-			if(!is_type_in_typecache(target_held_item, GLOB.shove_disarming_types))
-				target_held_item = null
-			if(!target.has_movespeed_modifier(/datum/movespeed_modifier/shove))
-				target.add_movespeed_modifier(/datum/movespeed_modifier/shove)
-				if(target_held_item)
-					target.visible_message("<span class='danger'>[target.name]'s grip on \the [target_held_item] loosens!</span>",
-						"<span class='warning'>Your grip on \the [target_held_item] loosens!</span>", null, COMBAT_MESSAGE_RANGE)
-				addtimer(CALLBACK(target, /mob/living/carbon/human/proc/clear_shove_slowdown), SHOVE_SLOWDOWN_LENGTH)
-			else if(target_held_item)
-				target.dropItemToGround(target_held_item)
-				knocked_item = TRUE
-				target.visible_message("<span class='danger'>[target.name] drops \the [target_held_item]!</span>",
-					"<span class='warning'>You drop \the [target_held_item]!</span>", null, COMBAT_MESSAGE_RANGE)
-			var/append_message = ""
-			if(target_held_item)
-				if(knocked_item)
-					append_message = "causing [target.p_them()] to drop [target_held_item]"
-				else
-					append_message = "loosening [target.p_their()] grip on [target_held_item]"
-			log_combat(user, target, "shoved", append_message)
+		user.disarm(target)
 
 /datum/species/proc/spec_hitby(atom/movable/AM, mob/living/carbon/human/H)
 	return
@@ -2198,14 +2097,36 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 ////////////////
 
 /datum/species/proc/can_wag_tail(mob/living/carbon/human/H)
-	return FALSE
+	return (locate(/obj/item/organ/tail) in H.internal_organs)
 
 /datum/species/proc/is_wagging_tail(mob/living/carbon/human/H)
-	return FALSE
+	return ("waggingtail_human" in mutant_bodyparts) || ("waggingtail_lizard" in mutant_bodyparts)
 
 /datum/species/proc/start_wagging_tail(mob/living/carbon/human/H)
+	if("tail_human" in mutant_bodyparts)
+		mutant_bodyparts -= "tail_human"
+		mutant_bodyparts |= "waggingtail_human"
+
+	else if("tail_lizard" in mutant_bodyparts)
+		mutant_bodyparts -= "tail_lizard"
+		mutant_bodyparts -= "spines"
+		mutant_bodyparts |= "waggingtail_lizard"
+		mutant_bodyparts |= "waggingspines"
+
+	H.update_body()
 
 /datum/species/proc/stop_wagging_tail(mob/living/carbon/human/H)
+	if("waggingtail_human" in mutant_bodyparts)
+		mutant_bodyparts -= "waggingtail_human"
+		mutant_bodyparts |= "tail_human"
+
+	else if("waggingtail_lizard" in mutant_bodyparts)
+		mutant_bodyparts -= "waggingtail_lizard"
+		mutant_bodyparts -= "waggingspines"
+		mutant_bodyparts |= "tail_lizard"
+		mutant_bodyparts |= "spines"
+
+	H.update_body()
 
 ///////////////
 //FLIGHT SHIT//
@@ -2325,10 +2246,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.set_resting(FALSE, TRUE)
 
 ///Calls the DMI data for a custom icon for a given bodypart from the Species Datum.
-/datum/species/proc/get_custom_icons(var/part)
+/datum/species/proc/get_custom_icons(part)
 	return
 /*Here's what a species that has a unique icon for every slot would look like. If your species doesnt have any custom icons for a given part, return null.
-/datum/species/kepori/get_custom_icons(var/part)
+/datum/species/kepori/get_custom_icons(part)
 	switch(part)
 		if("uniform")
 			return 'icons/mob/species/kepori/kepori_uniforms.dmi'

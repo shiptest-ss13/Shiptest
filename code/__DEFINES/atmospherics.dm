@@ -324,7 +324,6 @@
 #define GAS_BZ "bz"
 #define GAS_STIMULUM "stim"
 #define GAS_PLUOXIUM "pluox"
-#define GAS_MIASMA "miasma"
 #define GAS_FREON "freon"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
@@ -350,13 +349,6 @@
 #define PIPING_LAYER_DOUBLE_SHIFT(T, PipingLayer) \
 	T.pixel_x = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_X; \
 	T.pixel_y = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_Y;
-
-#ifdef TESTING
-GLOBAL_LIST_INIT(atmos_adjacent_savings, list(0,0))
-#define CALCULATE_ADJACENT_TURFS(T) if (SSadjacent_air.queue[T]) { GLOB.atmos_adjacent_savings[1] += 1 } else { GLOB.atmos_adjacent_savings[2] += 1; SSadjacent_air.queue[T] = 1 }
-#else
-#define CALCULATE_ADJACENT_TURFS(T) SSadjacent_air.queue[T] = 1
-#endif
 
 GLOBAL_VAR(atmos_extools_initialized) // this must be an uninitialized (null) one or init_monstermos will be called twice because reasons
 #define ATMOS_EXTOOLS_CHECK if(!GLOB.atmos_extools_initialized){ \
@@ -384,5 +376,3 @@ GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
 	"yellow" = rgb(255,198,0)
 )))
 
-#define MIASMA_CORPSE_MOLES 0.02
-#define MIASMA_GIBS_MOLES 0.005

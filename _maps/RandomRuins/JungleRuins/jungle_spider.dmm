@@ -16,8 +16,9 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/unpowered)
 "g" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
-/turf/open/floor/plating/dirt/jungle,
+/obj/structure/spider/stickyweb,
+/obj/machinery/door/airlock/research,
+/turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/unpowered)
 "i" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -58,6 +59,7 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/unpowered)
 "s" = (
+/obj/item/paper/guides/jobs/medical/cloning,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "t" = (
@@ -75,6 +77,8 @@
 /obj/item/pda/geneticist,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/circuitboard/machine/dnascanner,
+/obj/item/circuitboard/computer/cloning,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/unpowered)
 "w" = (
@@ -83,6 +87,7 @@
 /area/ruin/unpowered)
 "x" = (
 /obj/effect/decal/cleanable/insectguts,
+/obj/machinery/door/airlock/research,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "y" = (
@@ -90,6 +95,7 @@
 /area/ruin/unpowered)
 "A" = (
 /obj/structure/closet/wardrobe/genetics_white,
+/obj/item/storage/firstaid/toxin,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "C" = (
@@ -103,11 +109,16 @@
 "G" = (
 /obj/structure/spider/spiderling,
 /obj/structure/spider/cocoon,
+/obj/item/research_notes/loot/medium,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "I" = (
 /obj/structure/spider/stickyweb,
 /obj/item/organ/heart/gland/spiderman,
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/spiderlollipop,
+/obj/item/reagent_containers/food/snacks/spiderlollipop,
+/obj/item/reagent_containers/food/snacks/spiderlollipop,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "K" = (
@@ -215,7 +226,7 @@ U
 l
 W
 w
-o
+g
 o
 f
 t
@@ -239,7 +250,7 @@ D
 G
 j
 i
-g
+r
 a
 "}
 (7,1,1) = {"

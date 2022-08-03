@@ -8,7 +8,7 @@ Slimecrossing Weapons
 /obj/item/melee/arm_blade/slime
 	name = "slimy boneblade"
 	desc = "What remains of the bones in your arm. Incredibly sharp, and painful for both you and your opponents."
-	force = 15
+	force = 22.5
 	force_string = "painful"
 
 /obj/item/melee/arm_blade/slime/attack(mob/living/L, mob/user)
@@ -23,13 +23,13 @@ Slimecrossing Weapons
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "rainbowknife"
 	item_state = "rainbowknife"
-	force = 15
+	force = 18
 	throwforce = 15
 	damtype = BRUTE
 
 /obj/item/kitchen/knife/rainbowknife/afterattack(atom/O, mob/user, proximity)
 	if(proximity && istype(O, /mob/living))
-		damtype = pick(BRUTE, BURN, TOX, OXY, CLONE)
+		damtype = pick(BRUTE, BURN, TOX, OXY)
 	switch(damtype)
 		if(BRUTE)
 			hitsound = 'sound/weapons/bladeslice.ogg'
@@ -43,9 +43,6 @@ Slimecrossing Weapons
 		if(OXY)
 			hitsound = 'sound/effects/space_wind.ogg'
 			attack_verb = list("suffocated","winded","vacuumed")
-		if(CLONE)
-			hitsound = 'sound/items/geiger/ext1.ogg'
-			attack_verb = list("irradiated","mutated","maligned")
 	return ..()
 
 //Adamantine shield - Chilling Adamantine

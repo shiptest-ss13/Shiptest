@@ -375,7 +375,7 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "ge" = (
-/obj/structure/frame/computer,
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
 "gf" = (
@@ -993,7 +993,7 @@
 "oh" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/item/radio/intercom{
 	pixel_x = 32
@@ -1010,7 +1010,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1096,7 +1096,7 @@
 	dir = 9
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/science/robotics)
@@ -1725,7 +1725,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
@@ -2899,7 +2899,7 @@
 	},
 /obj/effect/turf_decal/techfloor/orange/corner,
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
