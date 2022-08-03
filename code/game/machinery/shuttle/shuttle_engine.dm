@@ -1,8 +1,8 @@
 /**
-  * ## Engine Thrusters
-  * The workhorse of any movable ship, these engines (usually) take in some kind fuel and produce thrust to move ships.
-  *
-  */
+ * ## Engine Thrusters
+ * The workhorse of any movable ship, these engines (usually) take in some kind fuel and produce thrust to move ships.
+ *
+ */
 /obj/machinery/power/shuttle/engine
 	name = "shuttle thruster"
 	desc = "A thruster for shuttles."
@@ -16,29 +16,29 @@
 	var/thruster_active = FALSE
 
 /**
-  * Uses up a specified percentage of the fuel cost, and returns the amount of thrust if successful.
-  * * percentage - The percentage of total thrust that should be used
-  */
+ * Uses up a specified percentage of the fuel cost, and returns the amount of thrust if successful.
+ * * percentage - The percentage of total thrust that should be used
+ */
 /obj/machinery/power/shuttle/engine/proc/burn_engine(percentage = 100)
 	update_icon_state()
 	return FALSE
 
 /**
-  * Returns how much "Fuel" is left. (For use with engine displays.)
-  */
+ * Returns how much "Fuel" is left. (For use with engine displays.)
+ */
 /obj/machinery/power/shuttle/engine/proc/return_fuel()
 	return
 
 /**
-  * Returns how much "Fuel" can be held. (For use with engine displays.)
-  */
+ * Returns how much "Fuel" can be held. (For use with engine displays.)
+ */
 /obj/machinery/power/shuttle/engine/proc/return_fuel_cap()
 	return
 
 /**
-  * Updates the engine state.
-  * All functions should return if the parent function returns false.
-  */
+ * Updates the engine state.
+ * All functions should return if the parent function returns false.
+ */
 /obj/machinery/power/shuttle/engine/proc/update_engine()
 	thruster_active = TRUE
 	if(panel_open)
@@ -47,8 +47,8 @@
 	return TRUE
 
 /**
-  * Updates the engine's icon and engine state.
-  */
+ * Updates the engine's icon and engine state.
+ */
 /obj/machinery/power/shuttle/engine/update_icon_state()
 	update_engine() //Calls this so it sets the accurate icon
 	if(panel_open)

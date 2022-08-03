@@ -149,7 +149,7 @@
 			if(istype(loc, /turf/closed/wall))
 				var/turf/closed/wall/W = loc
 				if(prob(wallbreak_chance))
-					W.dismantle_wall(TRUE, TRUE)
+					W.dismantle_wall(devastated = TRUE)
 		else
 			switch(amount_destruction)
 				if(EXPLODE_DEVASTATE)

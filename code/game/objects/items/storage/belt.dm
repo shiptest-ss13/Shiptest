@@ -12,7 +12,7 @@
 	equip_sound = 'sound/items/equip/toolbelt_equip.ogg'
 	var/content_overlays = FALSE //If this is true, the belt will gain overlays based on what it's holding
 	greyscale_icon_state = "belt"
-	greyscale_colors = list(list(13, 12))
+	greyscale_colors = list(list(16, 12), list(15, 11), list(13, 12))
 
 /obj/item/storage/belt/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins belting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -614,7 +614,7 @@
 	new /obj/item/holosign_creator(src)
 	new /obj/item/melee/flyswatter(src)
 
- /obj/item/storage/belt/plant
+/obj/item/storage/belt/plant
 	name = "botanical belt"
 	desc = "A belt used to hold most hydroponics supplies. Suprisingly, not green."
 	icon_state = "plantbelt"

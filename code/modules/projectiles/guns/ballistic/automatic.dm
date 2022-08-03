@@ -64,8 +64,7 @@
 	icon_state = "c20r"
 	item_state = "c20r"
 	mag_type = /obj/item/ammo_box/magazine/smgm45
-	fire_delay = 2
-	burst_size = 2
+	fire_rate = 4
 	can_bayonet = TRUE
 	can_suppress = FALSE
 	knife_x_offset = 26

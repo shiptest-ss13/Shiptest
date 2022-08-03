@@ -53,12 +53,12 @@
 
 // ** Ore handling procs **
 
-/datum/dcm_net/proc/Push(var/datum/component/material_container/cont)
+/datum/dcm_net/proc/Push(datum/component/material_container/cont)
 	for(var/O in cont.materials)
 		var/datum/material/M = O
 		cont.transer_amt_to(netHub.container, transfer_limit, M)
 
-/datum/dcm_net/proc/Pull(var/datum/component/material_container/cont)
+/datum/dcm_net/proc/Pull(datum/component/material_container/cont)
 	for(var/O in netHub.container.materials)
 		var/datum/material/M = O
 		netHub.container.transer_amt_to(cont, transfer_limit, M)

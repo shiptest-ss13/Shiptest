@@ -14,7 +14,7 @@
 
 /obj/projectile/bullet/c38
 	name = ".38 bullet"
-	damage = 25
+	damage = 20
 	ricochets_max = 2
 	ricochet_chance = 50
 	ricochet_auto_aim_angle = 10

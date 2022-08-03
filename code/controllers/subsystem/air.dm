@@ -54,17 +54,18 @@ SUBSYSTEM_DEF(air)
 
 	var/planet_equalize_enabled = FALSE
 	// Max number of turfs equalization will grab.
-	var/equalize_turf_limit = 10
+	var/equalize_turf_limit = 30
 	// Max number of turfs to look for a space turf, and max number of turfs that will be decompressed.
 	var/equalize_hard_turf_limit = 2000
 	// Whether equalization should be enabled at all.
-	var/equalize_enabled = FALSE
+	var/equalize_enabled = TRUE
 	// Whether turf-to-turf heat exchanging should be enabled.
 	var/heat_enabled = FALSE
 	// Max number of times process_turfs will share in a tick.
 	var/share_max_steps = 3
 	// Excited group processing will try to equalize groups with total pressure difference less than this amount.
 	var/excited_group_pressure_goal = 1
+
 
 	var/is_test_loading = FALSE
 
@@ -130,6 +131,9 @@ SUBSYSTEM_DEF(air)
 	fix_corrupted_atmos()
 
 /datum/controller/subsystem/air/fire(resumed = 0)
+	if(thread_running())
+		pause()
+		return
 
 	var/timer = TICK_USAGE_REAL
 
@@ -481,6 +485,7 @@ SUBSYSTEM_DEF(air)
 		if(istype(T))
 			T.high_pressure_movements()
 			T.pressure_difference = 0
+			T.pressure_direction = 0
 			T.pressure_specific_target = null
 		if(MC_TICK_CHECK)
 			return

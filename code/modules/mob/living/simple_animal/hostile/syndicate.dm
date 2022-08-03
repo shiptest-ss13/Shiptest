@@ -316,6 +316,8 @@
 	AddComponent(/datum/component/swarming)
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword/space/oldcode
+	melee_damage_lower = 20
+	melee_damage_upper = 20
 	icon = 'whitesands/icons/mob/simple_human.dmi'
 	icon_state = "oldcode_syndicate_csaber"
 	icon_living = "oldcode_syndicate_csaber"
