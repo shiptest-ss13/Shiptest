@@ -142,7 +142,7 @@
 	/// Typecache of atom types that this wall will NOT form connector overlays into when smoothing.
 	var/list/no_connector_typecache = null
 	/// If true, the typecache constructed for no_connector_typecache will NOT include subtypes.
-	var/connector_strict_typing = TRUE
+	var/connector_strict_typing = FALSE
 	/// The current connector junction, saved to stop overlay changes if none are necessary.
 	var/connector_junction = null
 	/// The current connector overlay appearance. Saved so that it can be cut when necessary.
