@@ -11,12 +11,16 @@
 	name = "gold wall"
 	desc = "A wall with gold plating. Swag!"
 	icon = 'icons/turf/walls/gold_wall.dmi'
-	icon_state = "gold"
+	icon_state = "gold_wall-0"
 	base_icon_state = "gold_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/gold
 	explosion_block = 0 //gold is a soft metal you dingus.
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_GOLD_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_GOLD_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_GOLD_WALLS, SMOOTH_GROUP_WALLS)
+
+/turf/closed/wall/mineral/gold/yesdiag
+	icon_state = "gold_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/mineral/silver
 	name = "silver wall"
@@ -27,7 +31,11 @@
 	sheet_type = /obj/item/stack/sheet/mineral/silver
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SILVER_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_SILVER_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_SILVER_WALLS, SMOOTH_GROUP_WALLS)
+
+/turf/closed/wall/mineral/silver/yesdiag
+	icon_state = "silver_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/mineral/diamond
 	name = "diamond wall"
@@ -40,7 +48,11 @@
 	explosion_block = 3
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_DIAMOND_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_DIAMOND_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_DIAMOND_WALLS, SMOOTH_GROUP_WALLS)
+
+/turf/closed/wall/mineral/diamond/yesdiag
+	icon_state = "diamond_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/mineral/bananium
 	name = "bananium wall"
@@ -51,7 +63,11 @@
 	sheet_type = /obj/item/stack/sheet/mineral/bananium
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_BANANIUM_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_BANANIUM_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_BANANIUM_WALLS, SMOOTH_GROUP_WALLS)
+
+/turf/closed/wall/mineral_bananium/yesdiag
+	icon_state = "bananium_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/mineral/sandstone
 	name = "sandstone wall"
@@ -63,7 +79,11 @@
 	explosion_block = 0
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SANDSTONE_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_SANDSTONE_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_SANDSTONE_WALLS, SMOOTH_GROUP_WALLS)
+
+/turf/closed/wall/mineral/sandstone/yesdiag
+	icon_state = "sandstone_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/mineral/uranium
 	article = "a"
@@ -75,7 +95,11 @@
 	sheet_type = /obj/item/stack/sheet/mineral/uranium
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_URANIUM_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_URANIUM_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_URANIUM_WALLS, SMOOTH_GROUP_WALLS)
+
+/turf/closed/wall/mineral/uranium/yesdiag
+	icon_state = "uranium_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/mineral/uranium/proc/radiate()
 	if(!active)
@@ -111,10 +135,14 @@
 	sheet_type = /obj/item/stack/sheet/mineral/uranium
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_URANIUM_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_URANIUM_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_URANIUM_WALLS, SMOOTH_GROUP_WALLS)
 
 /turf/closed/wall/mineral/uranium/safe/radiate()
 	return
+
+/turf/closed/wall/mineral/uranium/safe/yesdiag
+	icon_state = "uranium_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/mineral/plasma
 	name = "plasma wall"
@@ -126,7 +154,11 @@
 	thermal_conductivity = 0.04
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_PLASMA_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_PLASMA_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_PLASMA_WALLS, SMOOTH_GROUP_WALLS)
+
+/turf/closed/wall/mineral/plasma/yesdiag
+	icon_state = "plasma_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/mineral/plasma/attackby(obj/item/W, mob/user, params)
 	if(W.get_temperature() > 300)//If the temperature of the object is over 300, then ignite
@@ -168,7 +200,11 @@
 	explosion_block = 0
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS, SMOOTH_GROUP_WALLS)
+
+/turf/closed/wall/mineral/wood/yesdiag
+	icon_state = "wood_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 	connector_icon = 'icons/turf/connectors/wood_wall_connector.dmi'
 	no_connector_typecache = list(/turf/closed/wall/mineral/wood, /obj/structure/falsewall/wood)
@@ -192,6 +228,10 @@
 	girder_type = /obj/structure/barricade/wooden
 	hardness = 50
 
+/turf/closed/wall/mineral/wood/nonmetal/yesdiag
+	icon_state = "wood_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
+
 /turf/closed/wall/mineral/iron
 	name = "rough metal wall"
 	desc = "A wall with rough metal plating."
@@ -201,7 +241,11 @@
 	sheet_type = /obj/item/stack/rods
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_IRON_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_IRON_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_IRON_WALLS, SMOOTH_GROUP_WALLS)
+
+/turf/closed/wall/mineral/iron/yesdiag
+	icon_state = "iron_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/mineral/iron/icecropolis
 	baseturfs = /turf/open/indestructible/necropolis/air
@@ -224,6 +268,10 @@
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 
+/turf/closed/wall/mineral/snow/yesdiag
+	icon_state = "snow_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
+
 /turf/closed/wall/mineral/abductor
 	name = "alien wall"
 	desc = "A wall with alien alloy plating."
@@ -242,7 +290,7 @@
 /turf/closed/wall/mineral/titanium //has to use this path due to how building walls works
 	name = "wall"
 	desc = "A light-weight titanium wall used in shuttles."
-	icon = 'whitesands/icons/turf/walls/shuttle_wall.dmi'
+	icon = 'icons/turf/walls/shuttle_wall.dmi'
 	icon_state = "shuttle_wall-0"
 	base_icon_state = "shuttle_wall"
 	explosion_block = 3
@@ -251,14 +299,14 @@
 	sheet_type = /obj/item/stack/sheet/mineral/titanium
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TITANIUM_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
+	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/mineral/titanium/exterior
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_TITANIUM_WALLS_EXTERIOR)
-	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS_EXTERIOR, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
+	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS_EXTERIOR, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/mineral/titanium/nodiagonal
-	icon = 'whitesands/icons/turf/walls/shuttle_wall.dmi'
+	icon = 'icons/turf/walls/shuttle_wall.dmi'
 	icon_state = "map-shuttle_nd"
 	base_icon_state = "shuttle_wall"
 	smoothing_flags = SMOOTH_BITMASK
@@ -303,7 +351,7 @@
 	icon_state = "survival_pod_walls-0"
 	base_icon_state = "survival_pod_walls"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
-	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_SHUTTLE_PARTS)
+	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/mineral/titanium/survival/nodiagonal
 	icon = 'icons/turf/walls/survival_pod_walls.dmi'
@@ -327,7 +375,7 @@
 	sheet_type = /obj/item/stack/sheet/mineral/plastitanium
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_PLASTITANIUM_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
+	canSmoothWith = list(SMOOTH_GROUP_PLASTITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/mineral/plastitanium/nodiagonal
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'
