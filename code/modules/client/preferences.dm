@@ -1458,7 +1458,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	for(var/quirk_index in SSquirks.quirk_instances)
 		var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_index]
 		if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
-			quirk_conflicts[quirk_instance.name] = "Mood is disabled."
+			quirk_conflicts[quirk_instance.name] = "Mood and mood quirks are disabled."
 			if(!handled_conflicts["mood"])
 				handle_quirk_conflict("mood", null, user)
 				handled_conflicts["mood"] = TRUE
@@ -1467,6 +1467,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(!handled_conflicts["species"])
 				handle_quirk_conflict("species", pref_species, user)
 				handled_conflicts["species"] = TRUE
+		for(var/blacklist in SSquirks.quirk_blacklist)
+			for(var/quirk_blacklisted in all_quirks)
+				if((quirk_blacklisted in blacklist) && !quirk_conflicts[quirk_instance.name] && (quirk_instance.name in blacklist) && !(quirk_instance.name == quirk_blacklisted))
+					quirk_conflicts[quirk_instance.name] = "Quirk is mutually exclusive with [quirk_blacklisted]."
+					if(!handled_conflicts["blacklist"])
+						handle_quirk_conflict("blacklist", null, user)
+						handled_conflicts["blacklist"] = TRUE
 	return quirk_conflicts
 /**
  * Proc called when there is a need to handle quirk conflicts.
@@ -1498,6 +1505,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(quirk_owned_instance.mood_quirk)
 					all_quirks_new -= quirk_owned_instance.name
 					balance += quirk_owned_instance.value
+			if("blacklist")
+				for(var/blacklist in SSquirks.quirk_blacklist)
+					for(var/quirk_blacklisted in all_quirks_new)
+						if((quirk_blacklisted in blacklist) && (quirk_owned_instance.name in blacklist) && !(quirk_owned_instance.name == quirk_blacklisted))
+							all_quirks_new -= quirk_owned_instance.name
+							balance += quirk_owned_instance.value
 	while(balance < 0)
 		var/list/positive_quirks = list()
 		for(var/quirk_owned in all_quirks_new)
@@ -1514,7 +1527,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			all_quirks = list()
 			save_character()
 			alert(user, "Something went very wrong with your quirks, they have been reset.")
-	if(((target_species.id == pref_species.id) && change_type == "species") || (change_type = "mood" && CONFIG_GET(flag/disable_human_mood)))
+	if(change_type == "blacklist" || ((target_species.id == pref_species.id) && change_type == "species") || (change_type = "mood" && CONFIG_GET(flag/disable_human_mood)))
 		all_quirks = all_quirks_new
 		save_character()
 	if(all_quirks_new != all_quirks)
@@ -1605,12 +1618,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/quirk = href_list["trait"]
 				if(!SSquirks.quirks[quirk])
 					return
-				for(var/V in SSquirks.quirk_blacklist) //V is a list
-					var/list/L = V
-					for(var/Q in all_quirks)
-						if((quirk in L) && (Q in L) && !(Q == quirk)) //two quirks have lined up in the list of the list of quirks that conflict with each other, so return (see quirks.dm for more details)
-							to_chat(user, "<span class='danger'>[quirk] is incompatible with [Q].</span>")
-							return
 				var/value = SSquirks.quirk_points[quirk]
 				var/balance = GetQuirkBalance()
 				if(quirk in all_quirks)
