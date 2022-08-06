@@ -41,6 +41,7 @@
 /datum/gear/lighter
 	display_name = "cheap lighter"
 	path = /obj/item/lighter/greyscale
+
 /datum/gear/zippo
 	display_name = "zippo"
 	path = /obj/item/lighter
@@ -68,6 +69,10 @@
 /datum/gear/tablet
 	display_name = "tablet computer"
 	path = /obj/item/modular_computer/tablet/preset/cheap
+
+/datum/gear/laptop
+	display_name = "laptop computer"
+	path = /obj/item/modular_computer/laptop/preset/civilian
 
 /datum/gear/pen
 	display_name = "pen, black"
