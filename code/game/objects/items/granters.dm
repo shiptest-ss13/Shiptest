@@ -159,7 +159,7 @@
 
 /obj/item/book/granter/spell/fireball/recoil(mob/user)
 	..()
-	explosion(user.loc, 1, 0, 2, 3, FALSE, FALSE, 2)
+	explosion(user.loc, 0, 1, 2, 3, FALSE, FALSE, 2)
 	qdel(src)
 
 /obj/item/book/granter/spell/sacredflame
@@ -265,7 +265,7 @@
 	spellname = "shapechange"
 	icon_state ="bookshapechange"
 	desc = "Half of the book is slash fiction about some kind of young adult novel."
-	remarks = list("There's a beast inside all of us.", "What's an animorph?", "There are rats in the walls.", "This could be worse than useless, or amazing...", "Hide in the fields, run through the forest...", "The pages feel a little furry.", "Can you hear the jungle rhythm?")
+	remarks = list("There's a beast inside all of us.	", "What's an animorph?", "There are rats in the walls.", "This could be worse than useless, or amazing...", "Hide in the fields, run through the forest...", "The pages feel a little furry.", "Can you hear the jungle rhythm?")
 
 /obj/item/book/granter/spell/shapechange/recoil(mob/living/carbon/user)
 	..()
