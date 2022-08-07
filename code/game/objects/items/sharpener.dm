@@ -51,7 +51,7 @@
 	name = "super whetstone"
 	desc = "A block of the frontier's most advanced edge winnowing technology. Be careful, it's sharp!"
 	increment = 15
-	max = 15
+	max = 40
 	prefix = "razor-sharp"
 
 /obj/item/sharpener/giga
