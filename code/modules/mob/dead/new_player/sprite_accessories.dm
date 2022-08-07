@@ -2314,6 +2314,7 @@
 /datum/sprite_accessory/ipc_screens/text
 	name = "Text Lines"
 	icon_state = "text"
+
 /datum/sprite_accessory/ipc_screens/rgb
 	name = "RGB"
 	icon_state = "rgb"
