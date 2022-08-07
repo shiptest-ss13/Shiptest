@@ -7,7 +7,7 @@
 		"crowbar",
 		"multitool",
 		"screwdriver",
-		"tscanner",
+		"t_scanner",
 		"welding_tool",
 		"wirecutters",
 		"wrench",

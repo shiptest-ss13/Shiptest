@@ -70,7 +70,7 @@ SUBSYSTEM_DEF(research_v4)
 /datum/controller/subsystem/research_v4/proc/get_design(id)
 	RETURN_TYPE(/datum/design)
 	if(!(id in instances_design))
-		CRASH("Illegal node ID")
+		CRASH("Illegal design ID")
 	return instances_design[id]
 
 /datum/controller/subsystem/research_v4/proc/all_nodes()

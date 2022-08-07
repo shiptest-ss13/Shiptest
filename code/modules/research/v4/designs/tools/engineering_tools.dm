@@ -54,8 +54,8 @@
 		/obj/item/wirecutters = 1,
 	)
 
-/datum/research_design/weldingtool
-	id = "weldingtool"
+/datum/research_design/welding_tool
+	id = "welding_tool"
 	costs = list(
 		/datum/material/iron = 900,
 	)
@@ -80,4 +80,13 @@
 	)
 	builds = list(
 		/obj/item/multitool = 1,
+	)
+
+/datum/research_design/wirecutters
+	id = "wirecutters"
+	costs = list(
+		/datum/material/iron = 500,
+	)
+	builds = list(
+		/obj/item/wirecutters = 1,
 	)
