@@ -62,15 +62,15 @@
 		src_turf.visible_message("<span class='notice'>Data recorded and enscribed to research packet.</span>")
 		z_history[my_z]++
 
-		var/obj/item/result = new /obj/item/research_notes(user.loc, survey_value * penalty, pick(list("astronomy", "physics", "planets", "space")))
-		if(!user.put_in_hands(result) && istype(user.get_inactive_held_item(), /obj/item/research_notes))
-			var/obj/item/research_notes/research = user.get_inactive_held_item()
-			research.merge(result)
-			continue
+		var/obj/item/result = new /obj/item/research_notes(null, survey_value * penalty, pick(list("astronomy", "physics", "planets", "space")))
 
 		var/obj/item/research_notes/notes = locate() in get_turf(user)
 		if(notes)
 			notes.merge(result)
+		else if(!user.put_in_hands(result) && istype(user.get_inactive_held_item(), /obj/item/research_notes))
+			var/obj/item/research_notes/research = user.get_inactive_held_item()
+			research.merge(result)
+			continue
 
 	active = FALSE
 	z_active[my_z] = FALSE

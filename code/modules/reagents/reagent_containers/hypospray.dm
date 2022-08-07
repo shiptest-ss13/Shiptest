@@ -177,8 +177,8 @@
 	name = "crisis stimpack"
 	icon_state = "stimpen"
 	item_state = "stimpen"
-	desc = "A modified stimulant autoinjector for use in emergency situations, containing a cocktail of potent nerve excitants that greatly improve both speed and stun resistance for a brief period. Popular among soldiers and adrenaline junkies."
-	list_reagents = list(/datum/reagent/medicine/stimulants = 5, /datum/reagent/medicine/ephedrine = 10, /datum/reagent/medicine/omnizine = 10)
+	desc = "A modified stimulant autoinjector, containing a cocktail of potent nerve excitants and long-release healing chemicals. Designed for use in emergency situations where medical help may be hours or days away."
+	list_reagents = list(/datum/reagent/medicine/stimulants = 5, /datum/reagent/medicine/ephedrine = 5, /datum/reagent/medicine/omnizine = 15)
 
 /obj/item/reagent_containers/hypospray/medipen/stimulants
 	name = "stimulant medipen"
