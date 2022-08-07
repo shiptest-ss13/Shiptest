@@ -22,6 +22,10 @@
 	display_name = "vape"
 	path = /obj/item/clothing/mask/vape
 
+/datum/gear/ecigar
+	display_name = "e-cigar"
+	path = /obj/item/clothing/mask/vape/cigar
+
 /datum/gear/bandana
 	display_name = "bandana, red"
 	path = /obj/item/clothing/mask/bandana/red
