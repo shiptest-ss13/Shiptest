@@ -9,6 +9,8 @@
 	/// List of: material typepath -> amount
 	var/list/costs
 
+	var/buildtype
+
 /datum/research_design/proc/make_output(atom/output_loc)
 	for(var/atom/movable/path as anything in builds)
 		for(var/idx in 1 to builds[path])

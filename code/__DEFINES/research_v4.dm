@@ -3,8 +3,9 @@
 #define TECHTYPE_SERVICE 3
 #define TECHTYPE_SECURITY 4
 #define TECHTYPE_MEDICAL 5
+#define TECHTYPE_ADMIN 6
 /// should be equal to the highest index for techtypes
-#define TECHTYPE_MAX TECHTYPE_MEDICAL
+#define TECHTYPE_MAX TECHTYPE_ADMIN
 
 #define TECHLEVEL_NONE 1
 #define TECHLEVEL_SIMPLE 2
@@ -48,4 +49,6 @@
 			return "Security"
 		if(TECHTYPE_MEDICAL)
 			return "Medical"
+		if(TECHTYPE_ADMIN)
+			return "Admin"
 	CRASH("unknown techtype")

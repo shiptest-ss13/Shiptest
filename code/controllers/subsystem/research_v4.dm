@@ -9,6 +9,7 @@ SUBSYSTEM_DEF(research_v4)
 
 	// research web instances
 	var/list/datum/research_web/instances_web
+	var/list/datum/research_web/admin/admin_web
 
 	// recover tally
 	var/last_recover = 0
@@ -18,6 +19,7 @@ SUBSYSTEM_DEF(research_v4)
 	setup_static_instances()
 	initialize_nodes()
 	instances_web = list()
+	admin_web = new
 
 /datum/controller/subsystem/research_v4/Recover()
 	last_recover = SSresearch_v4.last_recover + 1

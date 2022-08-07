@@ -19,6 +19,21 @@
 	// List of research grids, indexed by target node id
 	var/list/datum/research_grid/grids
 
+/mob/verb/debug_rnd()
+	var/obj/machinery/computer/helm/helm = locate() in get_turf(src)
+	if(!helm)
+		return
+
+	var/static/obj/machinery/research_linked/target
+	if(!target)
+		target = new(get_turf(src))
+		target.tech_level = TECHLEVEL_ADMIN
+
+	helm.current_ship.mainframe.nodes_researched -= "debug"
+	helm.current_ship.mainframe.nodes_not_researched |= "debug"
+	helm.current_ship.mainframe.nodes_available |= "debug"
+	helm.current_ship.mainframe.start_research_node(src, target, "debug")
+
 /datum/research_web/New()
 	id = "[next_id++]"
 	initial_lists()
@@ -133,7 +148,7 @@
 		nodes_not_researched |= node.id
 
 	for(var/datum/research_node/unlockable as anything in node.unlocked_nodes)
-		var/should_unlock = TRUE
+		var/should_unlock = unlockable.tech_level != TECHLEVEL_ADMIN
 
 		if(unlockable.id in nodes_researched)
 			continue

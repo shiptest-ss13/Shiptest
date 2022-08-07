@@ -3,6 +3,7 @@
 	id = "starter-engineering"
 	start_researched = TRUE
 	tech_level = TECHLEVEL_NONE
+	points_type = TECHTYPE_ENGINEERING
 	design_ids = list(
 		"crowbar",
 		"multitool",
@@ -18,6 +19,7 @@
 	id = "starter-medical"
 	start_researched = TRUE
 	tech_level = TECHLEVEL_NONE
+	points_type = TECHTYPE_MEDICAL
 	design_ids = list(
 		"cautery",
 		"circular_saw",
@@ -32,6 +34,7 @@
 	id = "starter-cargo"
 	start_researched = TRUE
 	tech_level = TECHLEVEL_NONE
+	points_type = TECHTYPE_SERVICE
 	design_ids = list(
 		"card_reader",
 		"destination_tagger",
@@ -45,6 +48,7 @@
 	id = "starter-parts"
 	start_researched = TRUE
 	tech_level = TECHLEVEL_NONE
+	points_type = TECHTYPE_SCIENCE
 	design_ids = list(
 		"capacitor",
 		"manipulator",
@@ -59,6 +63,7 @@
 	id = "starter-botany"
 	start_researched = TRUE
 	tech_level = TECHLEVEL_NONE
+	points_type = TECHTYPE_SERVICE
 	design_ids = list(
 		"cultivator",
 		"hatchet",
@@ -66,3 +71,26 @@
 		"shovel",
 		"spade",
 	)
+
+/datum/research_node/starter_science
+	name = "Basic Science"
+	id = "starter-science"
+	start_researched = TRUE
+	tech_level = TECHLEVEL_NONE
+	design_ids = list(
+		"bepis",
+		"circuit_imprinter",
+		"design_disk",
+		"destructive_analyzer",
+		"experimentor",
+		"mechfab",
+		"rdconsole",
+		"rdserver",
+		"tech_disk",
+	)
+
+/datum/research_node/debug_only
+	name = "Debug Node"
+	id = "debug"
+	tech_level = TECHLEVEL_ADMIN
+	points_type = TECHTYPE_ADMIN

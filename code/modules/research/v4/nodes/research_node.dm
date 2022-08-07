@@ -5,7 +5,7 @@
 
 	var/tech_level = TECHLEVEL_NONE
 
-	var/points_required
+	var/points_required = 0
 	var/points_type
 
 	/// List of IDs required to reseach this node
