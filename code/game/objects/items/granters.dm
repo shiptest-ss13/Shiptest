@@ -159,7 +159,7 @@
 
 /obj/item/book/granter/spell/fireball/recoil(mob/user)
 	..()
-	explosion(user.loc, 1, 0, 2, 3, FALSE, FALSE, 2)
+	explosion(user.loc, 0, 1, 2, 3, FALSE, FALSE, 2)
 	qdel(src)
 
 /obj/item/book/granter/spell/sacredflame
@@ -265,13 +265,26 @@
 	spellname = "shapechange"
 	icon_state ="bookshapechange"
 	desc = "Half of the book is slash fiction about some kind of young adult novel."
-	remarks = list("There's a beast inside all of us.", "What's an animorph?", "There are rats in the walls. Join them.", "This could be worse than useless, or amazing...", "Run in the fields, hide through the forest...", "The pages feel a little furry.", "Can you hear the jungle rhythm?")
+	remarks = list("There's a beast inside all of us.	", "What's an animorph?", "There are rats in the walls.", "This could be worse than useless, or amazing...", "Hide in the fields, run through the forest...", "The pages feel a little furry.", "Can you hear the jungle rhythm?")
 
 /obj/item/book/granter/spell/shapechange/recoil(mob/living/carbon/user)
 	..()
 	to_chat(user,"<span class='warning'>You're feeling a little primitive...</span>")
 	user.Stun(40, ignore_canstun = TRUE)
 	user.monkeyize(TR_KEEPITEMS | TR_KEEPIMPLANTS | TR_KEEPORGANS | TR_KEEPDAMAGE | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_KEEPSE)
+
+/obj/item/book/granter/spell/traps
+	spell = /obj/effect/proc_holder/spell/aoe_turf/conjure/the_traps
+	spellname = "the traps"
+	icon_state ="booktraps"
+	desc = "A book that uses euphemisms about being a Dungeon Master to teach aspiring wizards how to cast Summon Traps."
+	remarks = list("Traps work best in unexpected situations...", "Where the hell am I supposed to get boiling acid?", "Works best in enclosed spaces...", "Could I use this at point-blank to keep someone from running?", "It's been a trap all along...", "The pages feel like they could snap shut unexpectedly.", "You feel a sense of impending danger.")
+
+/obj/item/book/granter/spell/traps/recoil(mob/living/user)
+	..()
+	to_chat(user, "<span class='danger'><B>The ground shifts beneath your feet!</B></span>")
+	user.Paralyze(100)
+	user.adjustBruteLoss(35)
 
 /obj/item/book/granter/spell/knock
 	spell = /obj/effect/proc_holder/spell/aoe_turf/knock

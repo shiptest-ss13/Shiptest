@@ -488,6 +488,7 @@
 	name = "Gumball"
 	desc = "Why are you seeing this?!"
 	projectile_type = /obj/projectile/bullet/reusable/gumball
+	click_cooldown_override = 2
 
 /obj/item/ammo_casing/caseless/gumball/harmful
 	projectile_type = /obj/projectile/bullet/reusable/gumball/harmful
@@ -517,6 +518,7 @@
 	name = "Lollipop"
 	desc = "Why are you seeing this?!"
 	projectile_type = /obj/projectile/bullet/reusable/lollipop
+	click_cooldown_override = 2
 
 // rejected name: DumDum lollipop (get it, cause it embeds?)
 /obj/item/ammo_casing/caseless/lollipop/harmful
