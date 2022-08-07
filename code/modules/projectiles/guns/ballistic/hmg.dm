@@ -104,6 +104,6 @@
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/ak47
 
-/obj/item/gun/ballistic/automatic/assualt/ak47/ComponentInitialize()
+/obj/item/gun/ballistic/automatic/hmg/smartgun/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
