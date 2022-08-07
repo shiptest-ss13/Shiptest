@@ -111,7 +111,7 @@
 	voucher_items = list(
 		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/stun,
 		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/combat,
-		"Type U3 Uzi" = /obj/item/gun/ballistic/automatic/mini_uzi)
+		"Type U3 Uzi" = /obj/item/gun/ballistic/automatic/smg/mini_uzi)
 
 /obj/machinery/vending/security/marine/syndicate
 	icon_state = "syndicate-marine"
@@ -134,9 +134,9 @@
 		/obj/item/melee/transforming/energy/sword/saber/red = 1,
 		)
 	voucher_items = list(
-		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/m90/unrestricted,
+		"M-90gl Carbine" = /obj/item/gun/ballistic/automatic/smg/m90/unrestricted,
 		"sniper rifle" = /obj/item/gun/ballistic/automatic/sniper_rifle,
-		"C-20r SMG" = /obj/item/gun/ballistic/automatic/c20r/unrestricted,
+		"C-20r SMG" = /obj/item/gun/ballistic/automatic/smg/c20r/unrestricted,
 		"Bulldog Shotgun" = /obj/item/gun/ballistic/shotgun/bulldog/unrestricted)
 
 /obj/machinery/vending/security/marine/solgov
@@ -162,7 +162,7 @@
 		)
 	voucher_items = list(
 		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/stun,
-		"SGV \"Solar\" Assault Rifle" = /obj/item/gun/ballistic/automatic/solar,
+		"SGV \"Solar\" Assault Rifle" = /obj/item/gun/ballistic/automatic/hmg/solar,
 		"TGV \"Edison\" Energy Rifle" = /obj/item/gun/energy/laser/terra)
 
 /obj/machinery/vending/security/marine/nanotrasen
@@ -187,7 +187,7 @@
 		)
 
 	voucher_items = list(
-		"NT-AK" = /obj/item/gun/ballistic/automatic/ak47/nt) //if im being honest, theres no point in addiing other options when this is clearly the best
+		"NT-AK" = /obj/item/gun/ballistic/automatic/assualt/ak47/nt) //if im being honest, theres no point in addiing other options when this is clearly the best
 
 /obj/item/gun_voucher
 	name = "security weapon voucher"
