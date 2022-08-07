@@ -53,7 +53,7 @@
 		return
 	over_obj = locate(objective_type) in SSovermap.overmap_container[ship.x][ship.y]
 	scanner_port = SSshuttle.get_containing_shuttle(scanner)
-	if(!over_obj || !scanner.is_operational() || scanner_port?.current_ship != servant)
+	if(!over_obj || !scanner.is_operational || scanner_port?.current_ship != servant)
 		return
 	num_current++
 
@@ -111,7 +111,7 @@
 
 /obj/machinery/mission_scanner/update_icon_state()
 	. = ..()
-	if(is_operational())
+	if(is_operational)
 		icon_state = "scanner_power"
 	else if(anchored)
 		icon_state = "scanner_depower"
