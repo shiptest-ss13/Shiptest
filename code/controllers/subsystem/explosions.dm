@@ -510,7 +510,7 @@ SUBSYSTEM_DEF(explosions)
 		var/list/high_obj = highobj
 		highobj = list()
 		for(var/obj/O as anything in high_obj)
-			if(!QDELETED(thing))
+			if(!QDELETED(O))
 				O.ex_act(EXPLODE_DEVASTATE)
 		cost_highobj = MC_AVERAGE(cost_highobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
@@ -518,7 +518,7 @@ SUBSYSTEM_DEF(explosions)
 		var/list/med_obj = medobj
 		medobj = list()
 		for(var/obj/O as anything in med_obj)
-			if(!QDELETED(thing))
+			if(!QDELETED(O))
 				O.ex_act(EXPLODE_HEAVY)
 		cost_medobj = MC_AVERAGE(cost_medobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
@@ -526,7 +526,7 @@ SUBSYSTEM_DEF(explosions)
 		var/list/low_obj = lowobj
 		lowobj = list()
 		for(var/obj/O as anything in low_obj)
-			if(!QDELETED(thing))
+			if(!QDELETED(O))
 				O.ex_act(EXPLODE_LIGHT)
 		cost_lowobj = MC_AVERAGE(cost_lowobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
