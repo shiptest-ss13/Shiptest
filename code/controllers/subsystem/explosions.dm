@@ -72,7 +72,7 @@ SUBSYSTEM_DEF(explosions)
 #define SSEX_OBJ "obj"
 
 /datum/controller/subsystem/explosions/proc/is_exploding()
-	return (lowturf.len || medturf.len || highturf.len || flameturf.len || throwturf.len || lowobj.len || medobj.len || highobj.len)
+	return (length(lowturf) || length(medturf) || length(highturf) || length(flameturf) || length(throwturf) || length(lowobj) || length(medobj) || length(highobj))
 
 
 /client/proc/check_bomb_impacts()
