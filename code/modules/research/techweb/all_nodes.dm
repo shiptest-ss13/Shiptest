@@ -8,10 +8,6 @@
 	display_name = "Basic Research Technology"
 	description = "NT default research technologies."
 	design_ids = list(
-		// Basic Parts
-		"basic_matter_bin", "basic_cell", "basic_scanning", "basic_capacitor", "basic_micro_laser", "micro_mani",
-		// Cargo Stuff
-		"c-reader", "desttagger", "salestagger", "handlabel", "packagewrap",
 		// Research Stuff
 		"destructive_analyzer", "circuit_imprinter", "experimentor", "rdconsole", "bepis", "rdserver", "design_disk", "tech_disk", "mechfab",
 		// Miscellaneous Stufff
@@ -61,15 +57,14 @@
 	starting_node = TRUE
 	display_name = "Basic Tools"
 	description = "Basic mechanical, electronic, surgical and botanical tools."
-	design_ids = list("screwdriver", "wrench", "wirecutters", "crowbar", "multitool", "welding_tool", "tscanner", "analyzer", "cable_coil", "pipe_painter", "airlock_painter",
-					"cultivator", "plant_analyzer", "shovel", "spade", "hatchet", "mop", "floor_painter", "decal_painter", "plunger", "spraycan") //WS Edit - Floor Painters
+	design_ids = list("pipe_painter", "airlock_painter", "mop", "floor_painter", "decal_painter", "plunger", "spraycan") //WS Edit - Floor Painters
 
 /datum/techweb_node/basic_medical
 	id = "basic_medical"
 	starting_node = TRUE
 	display_name = "Basic Medical Equipment"
 	description = "Basic medical tools and equipment."
-	design_ids = list("cybernetic_liver", "cybernetic_heart", "cybernetic_lungs", "cybernetic_stomach", "scalpel", "circular_saw", "surgicaldrill", "retractor", "cautery", "hemostat",
+	design_ids = list("cybernetic_liver", "cybernetic_heart", "cybernetic_lungs", "cybernetic_stomach",
 					"syringe", "plumbing_rcd", "beaker", "large_beaker", "xlarge_beaker", "dropper", "defibmountdefault", "portable_chem_mixer")
 
 /////////////////////////Biotech/////////////////////////

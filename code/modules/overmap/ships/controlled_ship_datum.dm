@@ -68,11 +68,8 @@
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
-
-
-
-
-
+	/// Ship's mainframe; aka the research web of the ship
+	var/datum/research_web/mainframe = new
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name

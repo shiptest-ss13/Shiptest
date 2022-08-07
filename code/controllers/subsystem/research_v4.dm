@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(research_v4)
-	name = "Research"
+	name = "Research V4"
 	flags = SS_NO_FIRE
 	init_order = INIT_ORDER_RESEARCH
 
@@ -8,7 +8,7 @@ SUBSYSTEM_DEF(research_v4)
 	var/list/datum/research_design/instances_design
 
 	// research web instances
-	var/list/datum/reseach_web/instances_web
+	var/list/datum/research_web/instances_web
 
 	// recover tally
 	var/last_recover = 0
@@ -17,6 +17,7 @@ SUBSYSTEM_DEF(research_v4)
 	. = ..()
 	setup_static_instances()
 	initialize_nodes()
+	instances_web = list()
 
 /datum/controller/subsystem/research_v4/Recover()
 	last_recover = SSresearch_v4.last_recover + 1

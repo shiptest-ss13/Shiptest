@@ -4,21 +4,21 @@
 	var/abstract = /datum/research_node
 
 	/// Assosciative list of: typepath -> amount
-	var/list/builds_typepath
+	var/list/builds
 
 	/// List of: material typepath -> amount
-	var/list/costs_typepath
+	var/list/costs
 
 /datum/research_design/proc/make_output(atom/output_loc)
-	for(var/atom/movable/path as anything in builds_typepath)
-		for(var/idx in 1 to builds_typepath[path])
+	for(var/atom/movable/path as anything in builds)
+		for(var/idx in 1 to builds[path])
 			path = new path(null) // start in nullspace first, we want to call forceMove
 			path.forceMove(output_loc) // to ensure signals are being sent correctly
 
 /datum/research_design/proc/use_inputs(datum/component/remote_materials/material_store, input_mod = 1)
 	var/list/using = list()
-	for(var/material in costs_typepath)
-		var/mat_needed = costs_typepath[material] * input_mod
+	for(var/material in costs)
+		var/mat_needed = costs[material] * input_mod
 		if(!mat_needed || material_store.mat_container.get_material_amount(material) < mat_needed)
 			return FALSE
 		using[material] = mat_needed

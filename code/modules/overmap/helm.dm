@@ -31,6 +31,7 @@
 	var/jump_timer
 	///is the AI allowed to control this helm console
 	var/allow_ai_control = FALSE
+	var/obj/effect/landmark/observer_start/observer_start
 	/// store an ntnet relay for tablets on the ship
 	var/obj/machinery/ntnet_relay/integrated/ntnet_relay
 
@@ -41,6 +42,7 @@
 	. = ..()
 	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
 	ntnet_relay = new(src)
+	observer_start = new(get_turf(src))
 
 /obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
 	if(jump_allowed < 0)
@@ -69,6 +71,7 @@
 	if(current_ship)
 		current_ship.helms -= src
 		current_ship = null
+	QDEL_NULL(observer_start)
 
 /obj/machinery/computer/helm/proc/cancel_jump()
 	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
