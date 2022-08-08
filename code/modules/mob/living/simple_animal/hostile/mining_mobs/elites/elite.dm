@@ -69,6 +69,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	button_icon_state = ""
 	background_icon_state = "bg_default"
 	var/mob/living/simple_animal/hostile/asteroid/elite/M
+	var/chosen_message
 	var/chosen_attack_num = 0
 
 /datum/action/innate/elite_attack/Grant(mob/living/L)
@@ -79,6 +80,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 
 /datum/action/innate/elite_attack/Activate()
 	M.chosen_attack = chosen_attack_num
+	to_chat(M, chosen_message)
 
 //The Pulsing Tumor, the actual "spawn-point" of elites, handles the spawning, arena, and procs for dealing with basic scenarios.
 
