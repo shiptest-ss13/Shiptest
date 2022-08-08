@@ -38,6 +38,7 @@
 		/obj/item/reagent_containers/food/drinks/bottle/amaretto = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/sake = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/applejack = 5,
+		/obj/item/reagent_containers/food/drinks/bottle/coconut = 5,
 		/obj/item/reagent_containers/food/drinks/bottle = 15,
 		/obj/item/reagent_containers/food/drinks/bottle/small = 15,
 		/obj/item/garnish/olives = 10,

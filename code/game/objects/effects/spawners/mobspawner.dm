@@ -15,7 +15,7 @@
 			loot = list(
 				/obj/effect/spawner/lootdrop/spiderspawner
 			)
-	..()
+	return ..()
 
 /obj/effect/spawner/lootdrop/xenospawner
 	name = "Xenomorph spawner"
