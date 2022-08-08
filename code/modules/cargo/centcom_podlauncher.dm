@@ -485,7 +485,7 @@
 			var/list/bouttaDie = list()
 			for (var/mob/living/M in target)
 				bouttaDie.Add(M)
-			supplypod_punish_log(bouttaDie)
+			supplypod_punish_log(bouttaDie, target)
 			if (!effectBurst) //If we're not using burst mode, just launch normally.
 				launch(target)
 			else
@@ -600,12 +600,12 @@
 	qdel(selector) //Delete the selector effect
 	. = ..()
 
-/datum/centcom_podlauncher/proc/supplypod_punish_log(list/whoDyin)
+/datum/centcom_podlauncher/proc/supplypod_punish_log(list/whoDyin, atom/target)
 	var/podString = effectBurst ? "5 pods" : "a pod"
 	var/whomString = ""
 	if (LAZYLEN(whoDyin))
 		for (var/mob/living/M in whoDyin)
-			whomString += "[key_name(M)], "
+			whomString += "[key_name(M) || "nobody"], "
 
 	var/delayString = temp_pod.landingDelay == initial(temp_pod.landingDelay) ? "" : " Delay=[temp_pod.landingDelay*0.1]s"
 	var/damageString = temp_pod.damage == 0 ? "" : " Dmg=[temp_pod.damage]"
@@ -617,7 +617,7 @@
 			explosionString += "[X]|"
 
 	var/msg = "launched [podString] towards [whomString] [delayString][damageString][explosionString]"
-	message_admins("[key_name_admin(usr)] [msg] in [ADMIN_VERBOSEJMP(specificTarget)].")
+	message_admins("[key_name_admin(usr)] [msg] in [ADMIN_VERBOSEJMP(specificTarget || target)].")
 	if (length(whoDyin))
 		for (var/mob/living/M in whoDyin)
 			admin_ticket_log(M, "[key_name_admin(usr)] [msg]")
