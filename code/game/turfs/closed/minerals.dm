@@ -72,11 +72,10 @@
 		if(last_act + (40 * I.toolspeed) > world.time)//prevents message spam
 			return
 		last_act = world.time
-		to_chat(user, "<span class='notice'>You start picking...</span>")
+		balloon_alert(user, "digging...")
 
 		if(I.use_tool(src, user, 40, volume=50))
 			if(ismineralturf(src))
-				to_chat(user, "<span class='notice'>You finish cutting into the rock.</span>")
 				gets_drilled(user, TRUE)
 				SSblackbox.record_feedback("tally", "pick_used_mining", 1, I.type)
 	else
@@ -109,7 +108,7 @@
 	..()
 
 /turf/closed/mineral/attack_alien(mob/living/carbon/alien/M)
-	to_chat(M, "<span class='notice'>You start digging into the rock...</span>")
+	balloon_alert(user, "digging...")
 	playsound(src, 'sound/effects/break_stone.ogg', 50, TRUE)
 	if(do_after(M, 40, target = src))
 		to_chat(M, "<span class='notice'>You tunnel into the rock.</span>")

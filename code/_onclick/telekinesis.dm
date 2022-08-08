@@ -153,7 +153,7 @@
 /proc/tkMaxRangeCheck(mob/user, atom/target)
 	var/d = get_dist(user, target)
 	if(d > TK_MAXRANGE)
-		to_chat(user, "<span class='warning'>Your mind won't reach that far.</span>")
+		user.balloon_alert(user, "can't reach that far!")
 		return
 	return TRUE
 
