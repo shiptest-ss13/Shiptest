@@ -542,6 +542,8 @@ SUBSYSTEM_DEF(timer)
 	. = "ERROR"
 	if (callBack.object == GLOBAL_PROC)
 		. = "GLOBAL_PROC"
+	else if (!callback.object) //TODO: Remove
+		CRASH("Null object in timer callback. Details - proc: [callBack.delegate] args: [callBack.arguments] usr: [callBack.user.resolve()]")
 	else
 		. = "[callBack.object.type]"
 
