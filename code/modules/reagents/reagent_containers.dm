@@ -61,18 +61,19 @@
 		spillable = TRUE
 
 	update_icon()
-	. += "<span class='notice'>Currently transferring [amount_per_transfer_from_this]u with each pour.</span>"
-/obj/item/reagent_containers/examine(mob/user)
-	if(!can_have_cap)
-		return ..()
 
+/obj/item/reagent_containers/examine(mob/user)
 	. = ..()
-	if(cap_lost)
-		. += "<span class='notice'>The cap seems to be missing.</span>"
-	else if(cap_on)
-		. += "<span class='notice'>The cap is firmly on to prevent spilling. Alt-click to remove the cap.</span>"
+	. += "<span class='notice'>Currently transferring [amount_per_transfer_from_this]u with each pour.</span>"
+	if(!can_have_cap)
+		return
 	else
-		. += "<span class='notice'>The cap has been taken off. Alt-click to put a cap on.</span>"
+		if(cap_lost)
+			. += "<span class='notice'>The cap seems to be missing.</span>"
+		else if(cap_on)
+			. += "<span class='notice'>The cap is firmly on to prevent spilling. Alt-click to remove the cap.</span>"
+		else
+			. += "<span class='notice'>The cap has been taken off. Alt-click to put a cap on.</span>"
 
 /obj/item/reagent_containers/is_injectable(mob/user, allowmobs = TRUE)
 	if(can_have_cap && cap_on)
