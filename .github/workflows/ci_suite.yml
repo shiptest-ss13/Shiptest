@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: master
+      - uses: actions/checkout@v2
       - name: Restore SpacemanDMM cache
         uses: actions/cache@v3
         with:
@@ -48,9 +51,6 @@ jobs:
         if: always()
         with:
           outputFile: output-annotations.txt
-      - uses: actions/checkout@v2
-        with:
-          ref: master
       - uses: actions/setup-python@v1
         with:
           python-version: "3.9"
@@ -84,7 +84,7 @@ jobs:
         run: |
           bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
-          tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS
+          tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS -DFULL_INIT
 
   run_all_tests:
     name: Integration Tests
