@@ -17,13 +17,10 @@
 		if(prob(salvageable_parts[path]))
 			new path (loc)
 
-/obj/structure/salvageable/attackby(obj/item/tool, mob/living/user, params)
-	if((user.a_intent != INTENT_HELP) && tool.tool_behaviour == TOOL_CROWBAR)
-		return
-	return ..()
-
 /obj/structure/salvageable/crowbar_act(mob/living/user, obj/item/tool)
 	. = ..()
+	if(user.a_intent == INTENT_HARM)
+		return FALSE
 	user.visible_message("<span class='notice'>[user] starts dismantling [src].</span>", \
 					"<span class='notice'>You start salvaging anything useful from [src]...</span>")
 	tool.play_tool_sound(src, 100)
@@ -33,6 +30,7 @@
 		dismantle(user)
 		tool.play_tool_sound(src, 100)
 		qdel(src)
+	return TRUE
 
 
 //Types themself, use them, but not the parent object
