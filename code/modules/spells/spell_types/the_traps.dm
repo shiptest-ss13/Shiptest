@@ -9,6 +9,8 @@
 	invocation_type = INVOCATION_SHOUT
 	range = 3
 
+	clothes_req = FALSE
+
 	summon_type = list(
 		/obj/structure/trap/stun,
 		/obj/structure/trap/fire,
