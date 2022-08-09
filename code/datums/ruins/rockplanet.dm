@@ -69,10 +69,16 @@
 
 
 /datum/map_template/ruin/rockplanet/boxsci
-	name = "Honorable deeds storage"
-	id = "Abandoned science wing"
+	name = "Abandoned science wing"
+	id = "abandonedscience"
 	description = "A chunk of a station that broke off.."
 	suffix = "rockplanet_boxsci.dmm"
+
+/datum/map_template/ruin/rockplanet/honorable
+	name = "Honorable deeds storage"
+	id = "honorable"
+	description = "This place must be very honorable and should be disturbed."
+	suffix = "rockplanet_unhonorable.dmm"
 
 /* greeble
 /datum/map_template/ruin/rockplanet/rd_god
@@ -88,8 +94,14 @@
 	id = "crash_cult"
 	suffix = "rockplanet_crash_cult.dmm"
 
-/datum/map_template/ruin/rockplanet/netherworld
-	name = "Crashed Cult Ship"
-	description = "A abandoned and broken off chunk of a space station. It somehow survived the crash, though, whatever was inside also survived..."
-	id = "rockplanet_netherworld"
-	suffix = "rockplanet_netherworld.dmm"
+/datum/map_template/ruin/rockplanet/saloon
+	name = "Abandoned saloon"
+	description = "For whatever reason, someone decided to make a colony with a indie style."
+	id = "rockplanet_saloon"
+	suffix = "rockplanet_saloon.dmm"
+
+/datum/map_template/ruin/rockplanet/harmfactory
+	name = "Harm factory"
+	description = "A factory made for HARM and AGONY."
+	id = "rockplanet_harmfactory"
+	suffix = "rockplanet_harmfactory.dmm"

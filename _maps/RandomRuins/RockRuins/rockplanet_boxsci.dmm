@@ -126,6 +126,7 @@
 "ks" = (
 /obj/machinery/computer/rdconsole/core,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/research_notes/loot/big,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
 "kz" = (
@@ -497,6 +498,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/unpowered)
+"NV" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/unpowered)
 "Od" = (
 /obj/structure/table,
 /obj/item/hemostat,
@@ -665,7 +669,7 @@
 /area/ruin/unpowered)
 
 (1,1,1) = {"
-Ts
+NV
 aO
 Ts
 Ts
@@ -675,18 +679,18 @@ Ts
 Ts
 Ts
 Ts
-Ts
+NV
 Cq
 Cq
 Cq
 Cq
 Cq
 Cq
+NV
 Ts
 Ts
 Ts
-Ts
-Ts
+NV
 Cq
 "}
 (2,1,1) = {"
@@ -700,14 +704,14 @@ Ts
 vc
 HD
 Rg
-Ts
-Ts
+NV
+NV
 Gk
-Ts
-Ts
-Ts
-Ts
-Ts
+NV
+NV
+NV
+NV
+NV
 MQ
 rW
 MQ
@@ -725,14 +729,14 @@ Ts
 Od
 cB
 Gb
-Ts
+NV
 aq
 Cu
-Ts
+NV
 Jg
 LN
 Jg
-Ts
+NV
 MQ
 MQ
 MQ
@@ -753,11 +757,11 @@ oM
 Ts
 Vp
 Vp
-Ts
+NV
 lE
 tc
 yH
-Ts
+NV
 rW
 MQ
 MQ
@@ -778,11 +782,11 @@ oJ
 Ts
 oa
 lv
-Ts
+NV
 UH
 rB
 UH
-Ts
+NV
 MQ
 MQ
 MQ
@@ -807,7 +811,7 @@ TF
 Jx
 lv
 Jx
-Ts
+NV
 MQ
 MQ
 MQ
@@ -828,11 +832,11 @@ Tl
 Ts
 lv
 Vp
-Ts
+NV
 Jx
 NP
 nS
-Ts
+NV
 MQ
 rW
 MQ
@@ -853,11 +857,11 @@ Vp
 Ts
 lv
 Vp
-Ts
+NV
 fB
 WJ
 ha
-Ts
+NV
 MQ
 MQ
 MQ
@@ -878,15 +882,15 @@ uD
 Ts
 Vp
 Vp
-Ts
-Ts
-Ts
-Ts
-Ts
-Ts
+NV
+NV
+NV
+NV
+NV
+NV
 DJ
 Lt
-Ts
+NV
 Cq
 "}
 (10,1,1) = {"
@@ -903,7 +907,7 @@ sO
 Ts
 Vp
 lv
-Ts
+NV
 FH
 Vx
 Cu
@@ -915,7 +919,7 @@ Cq
 Cq
 "}
 (11,1,1) = {"
-Ts
+NV
 Ts
 fp
 uQ
@@ -925,10 +929,10 @@ Jx
 ET
 RV
 oh
-Ts
+NV
 Vp
 Vp
-Ts
+NV
 zz
 YE
 tW
@@ -1016,16 +1020,16 @@ Cq
 "}
 (15,1,1) = {"
 ra
-Ts
-Ts
-Ts
-Ts
-Ts
+NV
+NV
+NV
+NV
+NV
 Ts
 oY
 JY
-Ts
-Ts
+NV
+NV
 Cu
 oa
 aI

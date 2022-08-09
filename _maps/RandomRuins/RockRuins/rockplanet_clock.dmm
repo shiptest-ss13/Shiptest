@@ -38,7 +38,7 @@
 /turf/open/floor/bronze,
 /area/ruin/powered)
 "hb" = (
-/obj/machinery/quantumpad,
+/mob/living/simple_animal/hostile/jungle/mook,
 /turf/open/floor/bronze,
 /area/ruin/powered)
 "hm" = (
@@ -62,6 +62,11 @@
 "iY" = (
 /obj/machinery/door/airlock/bronze/seethru,
 /obj/structure/trap/chill,
+/turf/open/floor/bronze,
+/area/ruin/powered)
+"jG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/jungle/mook,
 /turf/open/floor/bronze,
 /area/ruin/powered)
 "jK" = (
@@ -253,6 +258,11 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/bronze,
 /area/ruin/powered)
+"Ju" = (
+/obj/effect/decal/cleanable/robot_debris/old,
+/mob/living/simple_animal/hostile/jungle/mook,
+/turf/open/floor/bronze,
+/area/ruin/powered)
 "Nr" = (
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -417,7 +427,7 @@ XY
 gA
 Ji
 lm
-NP
+hb
 Bh
 WK
 tI
@@ -567,15 +577,15 @@ OB
 "}
 (13,1,1) = {"
 Qs
-hb
+NP
 NP
 jK
-WK
+jG
 Bh
 WK
 Os
 NP
-zj
+Ju
 YQ
 XY
 EB
