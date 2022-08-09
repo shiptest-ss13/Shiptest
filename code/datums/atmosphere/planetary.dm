@@ -21,8 +21,8 @@
 	minimum_pressure = WARNING_LOW_PRESSURE + 10
 	maximum_pressure = LAVALAND_EQUIPMENT_EFFECT_PRESSURE - 1
 
-	minimum_temp = T20C + 20
-	maximum_temp = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 5
+	minimum_temp = T20C + 80
+	maximum_temp = T20C + 120
 
 /datum/atmosphere/icemoon
 	id = ICEMOON_DEFAULT_ATMOS
