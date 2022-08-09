@@ -69,5 +69,5 @@
 	color = "#222424"
 	light_range = 0
 	slowdown = 2
-	var/datum/reagent/reagent_to_extract = /datum/reagent/asphalt
-	var/extracted_reagent_visible_name = "tar"
+	reagent_to_extract = /datum/reagent/asphalt
+	extracted_reagent_visible_name = "tar"
