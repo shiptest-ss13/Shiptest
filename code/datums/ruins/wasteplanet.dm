@@ -54,3 +54,9 @@
 	id = "oldpod"
 	description = "An abandoned tradepost."
 	suffix = "wasteplanet_tradepost.dmm"
+
+/datum/map_template/ruin/wasteplanet/tarpit
+	name = "Tar pit"
+	id = "tarpit"
+	description = "A facility once constructed over a asphalt deposit."
+	suffix = "wasteplanet_tarpit.dmm"

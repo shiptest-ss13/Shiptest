@@ -82,8 +82,9 @@
 	planetary_atmos = TRUE
 	icon = 'icons/turf/floors/lava_grass_red.dmi'
 	smooth_icon = 'icons/turf/floors/lava_grass_red.dmi'
-	light_power = 1
 	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
 	gender = PLURAL
 
 /turf/open/floor/plating/grass/lava/orange

@@ -14,8 +14,6 @@
 	footstep = FOOTSTEP_SNOW
 	barefootstep = FOOTSTEP_SNOW
 	clawfootstep = FOOTSTEP_SNOW
-	broken_states = list("snow")
-	burnt_states = list("snow")
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 	digResult = /obj/item/stack/sheet/mineral/snow
@@ -84,6 +82,10 @@
 /turf/open/floor/plating/asteroid/snow/burn_tile()
 	ScrapeAway()
 	return TRUE
+
+/turf/open/floor/plating/asteroid/snow/ex_act(severity, target)
+	. = ..()
+	ScrapeAway()
 
 /turf/open/floor/plating/asteroid/snow/lit
 	light_range = 2
