@@ -1,0 +1,15 @@
+author: MemedHams
+delete-after: true
+changes:
+  - rscadd: Balloon Alerts, which appear visually over a character's head and convey
+      a short string of text before disappearing.
+  - rscadd: Area Balloon alerts, the above but visible to anyone nearby.
+  - tweak: Digging into terrain now displays a balloon alert and does not chat log,
+      to prevent spam.
+  - tweak: Guns now do not trigger their "x fires y!" message for the user unless
+      shot at point-blank.
+  - tweak: The Kinetic Accelerator now no longer logs a *click* in chat when fired
+      while on cooldown.
+  - tweak: Reagent containers now balloon alert instead of chat logging when their
+      reagent transfer amount is changed. Their transfer amount can now also be found
+      in their description.
