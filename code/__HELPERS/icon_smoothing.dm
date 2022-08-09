@@ -377,7 +377,7 @@ DEFINE_BITFIELD(smoothing_junction, list(
 		connector_overlay = null
 		return
 
-	connector_overlay = iconstate2appearance(connector_icon, "connector-[connector_junction]")
+	connector_overlay = iconstate2appearance(connector_icon, "[connector_icon_state]-[connector_junction]")
 	add_overlay(connector_overlay)
 
 /turf/closed/set_smoothed_icon_state(new_junction)

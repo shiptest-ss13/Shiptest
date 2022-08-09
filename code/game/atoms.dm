@@ -139,6 +139,8 @@
 	/// The icon file of the connector to use when smoothing.
 	/// Use of connectors requires the smoothing flags SMOOTH_BITMASK and SMOOTH_CONNECTORS.
 	var/connector_icon = null
+	/// The icon state prefix used for connectors. Equivalent to the base_icon_state.
+	var/connector_icon_state = null
 	/// Typecache of atom types that this wall will NOT form connector overlays into when smoothing.
 	var/list/no_connector_typecache = null
 	/// If true, the typecache constructed for no_connector_typecache will NOT include subtypes.
