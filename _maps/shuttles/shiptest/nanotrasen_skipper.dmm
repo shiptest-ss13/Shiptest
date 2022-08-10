@@ -3722,7 +3722,10 @@
 	dir = 4;
 	pixel_x = -25
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Lh" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
@@ -4441,7 +4444,10 @@
 	dir = 8
 	},
 /obj/machinery/suit_storage_unit/standard_unit,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "QM" = (
 /obj/machinery/airalarm/directional/north,
@@ -4542,7 +4548,7 @@
 /area/ship/crew/office)
 "RB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "RK" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input,
@@ -5141,7 +5147,7 @@
 /area/ship/hallway/central)
 "Wv" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "Ww" = (
 /obj/structure/cable{
@@ -5231,7 +5237,7 @@
 "WR" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "WU" = (
 /obj/machinery/atmospherics/components/binary/pump{
@@ -5606,7 +5612,7 @@ Yn
 Uk
 ub
 Oo
-we
+Xe
 Xe
 CR
 CR
