@@ -9,7 +9,8 @@
 	/// List of: material typepath -> amount
 	var/list/costs
 
-	var/buildtype
+	var/buildtype_flags = NONE
+	var/departmental_flags = NONE
 
 /datum/research_design/proc/make_output(atom/output_loc)
 	for(var/atom/movable/path as anything in builds)
@@ -48,3 +49,21 @@
 
 /datum/research_design/proc/get_input_modifier(mob/user, obj/machinery/machine)
 	return 1
+
+/datum/research_design/engineering
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/research_design/science
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/research_design/security
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/research_design/service
+	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
+
+/datum/research_design/cargo
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+
+/datum/research_design/medical
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
