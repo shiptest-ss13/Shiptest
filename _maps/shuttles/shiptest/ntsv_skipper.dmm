@@ -1120,7 +1120,8 @@
 "kV" = (
 /obj/machinery/light_switch{
 	pixel_x = 25;
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1259,7 +1260,8 @@
 	},
 /obj/machinery/light_switch{
 	pixel_x = -25;
-	pixel_y = 7
+	pixel_y = 7;
+	dir = 4
 	},
 /obj/machinery/firealarm{
 	dir = 4;
@@ -1884,7 +1886,8 @@
 /obj/machinery/button/door{
 	id = "coolingshutdown";
 	name = "Shutdown Cooling";
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 4
@@ -1926,7 +1929,8 @@
 	},
 /obj/machinery/light_switch{
 	pixel_x = 25;
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/item/radio/intercom{
 	dir = 1;
@@ -3274,7 +3278,8 @@
 "FL" = (
 /obj/machinery/light_switch{
 	pixel_x = -10;
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -3762,7 +3767,8 @@
 /obj/effect/turf_decal/corner/opaque/red/mono,
 /obj/machinery/light_switch{
 	pixel_x = 25;
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -4026,13 +4032,6 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
-"Nt" = (
-/obj/machinery/light_switch{
-	pixel_x = 8;
-	pixel_y = -25
-	},
-/turf/closed/wall,
-/area/ship/crew/canteen)
 "NB" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 9
@@ -4139,6 +4138,10 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_x = 25;
+	pixel_y = 25
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Om" = (
@@ -4224,14 +4227,14 @@
 /area/ship/engineering/atmospherics)
 "OX" = (
 /obj/structure/table,
-/obj/machinery/newscaster/security_unit{
-	pixel_x = -24
-	},
 /obj/item/modular_computer/laptop/preset/civilian{
 	pixel_y = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 4
+	},
+/obj/machinery/newscaster{
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
@@ -4329,6 +4332,11 @@
 /obj/machinery/door/poddoor/shutters{
 	name = "Closing Shutters";
 	id = "sorrywejustclosed"
+	},
+/obj/machinery/light_switch{
+	pixel_x = 8;
+	pixel_y = -25;
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -4609,6 +4617,10 @@
 "Sl" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
+	},
+/obj/machinery/light_switch{
+	pixel_x = -25;
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
@@ -5045,6 +5057,11 @@
 /obj/machinery/light,
 /obj/machinery/atmospherics/pipe/simple/dark/visible{
 	dir = 9
+	},
+/obj/machinery/light_switch{
+	pixel_x = -10;
+	pixel_y = -25;
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
@@ -6219,7 +6236,7 @@ xE
 xE
 uP
 PC
-Nt
+Zd
 Zd
 pD
 gQ
