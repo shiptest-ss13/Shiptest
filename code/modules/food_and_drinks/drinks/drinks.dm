@@ -731,8 +731,15 @@
 	desc = "Unleash the ape!"
 	icon_state = "monkey_energy"
 	item_state = "monkey_energy"
-	list_reagents = list(/datum/reagent/consumable/monkey_energy = 50)
+	list_reagents = list(/datum/reagent/consumable/monkey_energy = 40, /datum/reagent/consumable/electrolytes = 10)
 	foodtype = SUGAR | JUNKFOOD
+
+/obj/item/reagent_containers/food/drinks/soda_cans/efuel
+	name = "E-Fuel"
+	desc = "Shocking for the Elzu!"
+	icon_state = "monkey_energy"
+	item_state = "monkey_energy"
+	list_reagents = list(/datum/reagent/consumable/electrolytes = 50)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/air
 	name = "canned air"
