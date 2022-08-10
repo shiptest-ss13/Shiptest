@@ -136,7 +136,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/turf/open/floor/carpet/nanoweave,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "by" = (
 /obj/machinery/atmospherics/components/binary/pump{
@@ -726,7 +726,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/turf/open/floor/carpet/nanoweave,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "hi" = (
 /obj/machinery/computer/communications{
@@ -1351,11 +1351,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/dark/visible{
 	dir = 1
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1485,7 +1485,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
-/turf/open/floor/carpet/nanoweave,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "of" = (
 /obj/item/bedsheet/dorms,
@@ -2286,7 +2286,7 @@
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = -8
 	},
-/turf/open/floor/carpet/nanoweave,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "vH" = (
 /obj/machinery/ore_silo,
@@ -2781,7 +2781,7 @@
 /obj/item/trash/candle{
 	pixel_y = 12
 	},
-/turf/open/floor/carpet/nanoweave,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Bh" = (
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
@@ -2866,7 +2866,7 @@
 /area/ship/hallway/central)
 "BT" = (
 /obj/structure/tank_dispenser,
-/obj/machinery/light/small{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -3151,7 +3151,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/turf/open/floor/carpet/nanoweave,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Ff" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
@@ -3415,7 +3415,7 @@
 /area/ship/cargo/office)
 "Hb" = (
 /obj/machinery/pipedispenser,
-/obj/machinery/light/small{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -4522,11 +4522,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Rv" = (
