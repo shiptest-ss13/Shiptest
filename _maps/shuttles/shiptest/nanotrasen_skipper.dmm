@@ -2662,7 +2662,7 @@
 /area/ship/cargo)
 "Aa" = (
 /obj/machinery/door/airlock/command{
-	name = "Bridge";
+	name = "Bridge"
 	},
 /obj/effect/turf_decal/corner/opaque/black/full,
 /obj/structure/cable{
@@ -3628,6 +3628,20 @@
 	},
 /turf/closed/wall,
 /area/ship/engineering/engine)
+"Jn" = (
+/obj/effect/turf_decal/corner/opaque/yellow/diagonal{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "JA" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -6141,7 +6155,7 @@ Tv
 Bh
 LD
 Id
-nX
+Jn
 fo
 ZJ
 cg
