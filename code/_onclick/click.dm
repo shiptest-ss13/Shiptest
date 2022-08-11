@@ -64,7 +64,7 @@
  * * [obj/item/proc/afterattack] (atom,user,adjacent,params) - used both ranged and adjacent
  * * [mob/proc/RangedAttack] (atom,params) - used only ranged, only used for tk and laser eyes but could be changed
  */
-/mob/proc/ClickOn( atom/A, params )
+/mob/proc/ClickOn(atom/A, params)
 	if(world.time <= next_click)
 		return
 	next_click = world.time + 1
@@ -378,7 +378,7 @@
 
 /// Simple helper to face what you clicked on, in case it should be needed in more than one place
 /mob/proc/face_atom(atom/A)
-	if( buckled || stat != CONSCIOUS || !A || !x || !y || !A.x || !A.y )
+	if(buckled || stat != CONSCIOUS || !A || !x || !y || !A.x || !A.y)
 		return
 	var/dx = A.x - x
 	var/dy = A.y - y

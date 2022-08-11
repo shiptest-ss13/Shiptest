@@ -23,7 +23,7 @@
 	matching_designs = list()
 	cached_designs = list()
 	stored_research = new
-	update_research()
+	INVOKE_ASYNC(src, .proc/update_research)
 	materials = AddComponent(/datum/component/remote_materials, "lathe", mapload)
 	RefreshParts()
 

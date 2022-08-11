@@ -1,12 +1,12 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "au" = (
-/obj/effect/turf_decal/corner/neutral/full,
+/obj/effect/turf_decal/corner/transparent/neutral/full,
 /obj/structure/frame/computer,
 /obj/effect/turf_decal/box,
 /turf/open/floor/pod/light,
 /area/ship/bridge)
 "az" = (
-/obj/effect/turf_decal/corner/neutral/full,
+/obj/effect/turf_decal/corner/transparent/neutral/full,
 /obj/machinery/computer/helm,
 /obj/effect/turf_decal/box,
 /turf/open/floor/pod/light,
@@ -249,7 +249,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "mJ" = (
-/obj/effect/turf_decal/corner/neutral/full,
+/obj/effect/turf_decal/corner/transparent/neutral/full,
 /obj/structure/railing,
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 32
@@ -258,7 +258,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "mU" = (
-/obj/effect/turf_decal/corner/neutral/full,
+/obj/effect/turf_decal/corner/transparent/neutral/full,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
@@ -288,7 +288,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "nv" = (
-/obj/effect/turf_decal/corner/neutral/full,
+/obj/effect/turf_decal/corner/transparent/neutral/full,
 /obj/structure/railing,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -303,7 +303,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "nB" = (
-/obj/effect/turf_decal/corner/neutral/full,
+/obj/effect/turf_decal/corner/transparent/neutral/full,
 /obj/structure/railing,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1161,13 +1161,13 @@
 	pixel_y = 28
 	},
 /obj/structure/bed,
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/item/bedsheet/grey,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Ie" = (
 /obj/structure/bed,
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/item/bedsheet/grey,
 /obj/structure/sign/poster/official/obey{
 	pixel_y = 32
@@ -1244,11 +1244,11 @@
 	id = "Cell 1";
 	req_one_access_txt = "2"
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "KD" = (
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "KS" = (
@@ -1259,7 +1259,7 @@
 	id = "Cell 1";
 	pixel_x = 25
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "KV" = (
