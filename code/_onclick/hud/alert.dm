@@ -637,6 +637,13 @@ so as to remain in compliance with the most up-to-date laws."
 		if(NOTIFY_ORBIT)
 			G.ManualFollow(target)
 
+
+//DWARF
+/atom/movable/screen/alert/dorflow
+	name = "Low Alchohol"
+	desc = "Your body's alchohol reserves are running low. Find some booze, or make some yourself by distilling plants in a barrel!"
+	icon_state = "dorf"
+
 //OBJECT-BASED
 
 /atom/movable/screen/alert/restrained/buckled
