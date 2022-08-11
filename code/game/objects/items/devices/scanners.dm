@@ -67,7 +67,7 @@ GENE SCANNER
 	if(!ismob(viewer) || !viewer.client)
 		return
 	var/list/t_ray_images = list()
-	for(var/obj/O in orange(distance, viewer) )
+	for(var/obj/O in orange(distance, viewer))
 
 		if(HAS_TRAIT(O, TRAIT_T_RAY_VISIBLE))
 			var/image/I = new(loc = get_turf(O))

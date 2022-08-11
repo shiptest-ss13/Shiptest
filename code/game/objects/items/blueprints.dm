@@ -157,7 +157,7 @@
 		/area/wizard_station
 	)
 	for (var/type in SPECIALS)
-		if ( istype(A,type) )
+		if (istype(A,type))
 			return AREA_SPECIAL
 	return AREA_STATION
 

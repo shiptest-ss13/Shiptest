@@ -646,7 +646,7 @@
 
 /obj/structure/rack/MouseDrop_T(obj/O, mob/user)
 	. = ..()
-	if ((!( istype(O, /obj/item) ) || user.get_active_held_item() != O))
+	if ((!(istype(O, /obj/item)) || user.get_active_held_item() != O))
 		return
 	if(!user.dropItemToGround(O))
 		return

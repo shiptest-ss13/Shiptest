@@ -10,7 +10,7 @@
 #define TEXT_WEST "[WEST]"
 
 /// Inverse direction, taking into account UP|DOWN if necessary.
-#define REVERSE_DIR(dir) ( ((dir & 85) << 1) | ((dir & 170) >> 1) )
+#define REVERSE_DIR(dir) (((dir & 85) << 1) | ((dir & 170) >> 1))
 
 //Human Overlays Indexes/////////
 #define MUTATIONS_LAYER 31 //mutations. Tk headglows, cold resistance glow, etc
@@ -180,7 +180,7 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 
 
 //subtypesof(), typesof() without the parent path
-#define subtypesof(typepath) ( typesof(typepath) - typepath )
+#define subtypesof(typepath) (typesof(typepath) - typepath)
 
 //Gets the turf this atom inhabits
 #define get_turf(A) (get_step(A, 0))

@@ -65,7 +65,7 @@
 /obj/structure/mirror/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		if(!disassembled)
-			new /obj/item/shard( src.loc )
+			new /obj/item/shard(src.loc)
 	qdel(src)
 
 /obj/structure/mirror/welder_act(mob/living/user, obj/item/I)

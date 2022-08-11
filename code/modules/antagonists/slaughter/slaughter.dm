@@ -65,7 +65,7 @@
 	var/wound_bonus_hitstreak_max = 12
 
 /mob/living/simple_animal/slaughter/Initialize()
-	..()
+	. = ..()
 	ADD_TRAIT(src, TRAIT_BLOODCRAWL_EAT, "innate")
 	var/obj/effect/proc_holder/spell/bloodcrawl/bloodspell = new
 	AddSpell(bloodspell)

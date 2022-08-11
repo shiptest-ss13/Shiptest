@@ -281,7 +281,7 @@
 		"<span class='notice'>You struggle inside [src], kicking the release with your foot... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
 		"<span class='hear'>You hear a thump from [src].</span>")
 	if(do_after(user, breakout_time, target = src))
-		if(!user || user.stat != CONSCIOUS || user.loc != src )
+		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return
 		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
 			"<span class='notice'>You successfully break out of [src]!</span>")

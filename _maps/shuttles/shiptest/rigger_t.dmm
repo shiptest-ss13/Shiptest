@@ -133,8 +133,8 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "ch" = (
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/machinery/vending/dinnerware,
@@ -243,7 +243,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/structure/table,
 /obj/item/paper,
 /obj/item/pen,
@@ -358,7 +358,7 @@
 	id = "Cell 1";
 	req_one_access_txt = "2"
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/effect/turf_decal/number/one{
 	dir = 4
 	},
@@ -410,7 +410,7 @@
 	id = "Cell 2";
 	req_one_access_txt = "2"
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/effect/turf_decal/number/two{
 	dir = 4
 	},
@@ -798,8 +798,8 @@
 /area/ship/bridge)
 "mn" = (
 /obj/machinery/light,
-/obj/effect/turf_decal/corner/white/mono,
-/obj/effect/turf_decal/corner/green/half{
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/effect/turf_decal/corner/opaque/green/half{
 	dir = 4
 	},
 /obj/item/kirbyplants/random,
@@ -876,7 +876,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/borderfloor,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
 	},
 /obj/structure/window/reinforced{
@@ -1126,7 +1126,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/borderfloor,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
 	},
 /obj/structure/window/reinforced{
@@ -1818,8 +1818,8 @@
 /area/ship/crew/canteen)
 "xC" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/effect/landmark/start/cook,
@@ -1916,8 +1916,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
 "yd" = (
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/table,
@@ -2170,8 +2170,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/table,
@@ -2391,10 +2391,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "DD" = (
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
 	},
-/obj/effect/turf_decal/corner/green/full,
+/obj/effect/turf_decal/corner/opaque/green/full,
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/toxin,
@@ -2466,8 +2466,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white/mono,
-/obj/effect/turf_decal/corner/green/full,
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/effect/turf_decal/corner/opaque/green/full,
 /obj/machinery/navbeacon{
 	codes_txt = "patrol;next_patrol=brigcells";
 	location = "med"
@@ -2475,7 +2475,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ef" = (
-/obj/effect/turf_decal/corner/green/full,
+/obj/effect/turf_decal/corner/opaque/green/full,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Em" = (
@@ -2629,10 +2629,10 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "FF" = (
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/white/diagonal,
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "FI" = (
@@ -2652,8 +2652,8 @@
 /obj/structure/window/reinforced/spawner/west{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/table,
@@ -2867,7 +2867,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/corner/white/half{
+/obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/beige,
@@ -2895,7 +2895,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "IX" = (
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /obj/structure/cable{
@@ -2993,14 +2993,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
 "Kr" = (
-/obj/effect/turf_decal/corner/white/half{
+/obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/security)
 "Ku" = (
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/table,
@@ -3017,7 +3017,7 @@
 /obj/machinery/navbeacon/wayfinding/med{
 	name = "navigation beacon"
 	},
-/obj/effect/turf_decal/corner/green/full,
+/obj/effect/turf_decal/corner/opaque/green/full,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "KI" = (
@@ -3112,8 +3112,8 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Mp" = (
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/window/reinforced/spawner,
@@ -3200,8 +3200,8 @@
 	location = "Kitchen";
 	name = "navigation beacon"
 	},
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -3466,8 +3466,8 @@
 /turf/open/floor/plating,
 /area/ship/construction)
 "Qq" = (
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/machinery/door/window/eastright,
@@ -3615,8 +3615,8 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
-/obj/effect/turf_decal/corner/white/mono,
-/obj/effect/turf_decal/corner/green/half{
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/effect/turf_decal/corner/opaque/green/half{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -3684,8 +3684,8 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/starboard)
 "SA" = (
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/machinery/gibber,
@@ -3700,8 +3700,8 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/window/reinforced/spawner,
@@ -3725,7 +3725,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/structure/chair,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
@@ -3880,8 +3880,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/white/mono,
-/obj/effect/turf_decal/corner/green/half{
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/effect/turf_decal/corner/opaque/green/half{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -4014,7 +4014,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/borderfloor,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
 	},
 /obj/machinery/door/window/westleft{
@@ -4074,7 +4074,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/structure/table,
 /obj/item/paper,
 /obj/item/pen,
@@ -4315,8 +4315,8 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/sink/kitchen{

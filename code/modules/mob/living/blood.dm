@@ -78,7 +78,7 @@
 	blood_volume = max(blood_volume - amt, 0)
 
 	//Blood loss still happens in locker, floor stays clean
-	if(isturf(loc) && prob(sqrt(amt)*BLOOD_DRIP_RATE_MOD))
+	if(isturf(loc) && prob(sqrt(amt)*BLOOD_DRIP_RATE_MOD) && !isgroundlessturf(src.loc)))
 		add_splatter_floor(loc, (amt >= 10))
 
 /mob/living/carbon/human/bleed(amt)
@@ -328,7 +328,12 @@
 			return
 
 	// Find a blood decal or create a new one.
-	var/obj/effect/decal/cleanable/blood/B = locate() in T
+	var/obj/effect/decal/cleanable/blood/B
+	for (var/obj/effect/decal/cleanable/blood/candidate in T)
+		if (QDELETED(T))
+			continue
+		B = candidate
+		break
 	if(!B)
 		B = new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
 	B.transfer_mob_blood_dna(src) //give blood info to the blood decal.
