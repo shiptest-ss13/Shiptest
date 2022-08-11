@@ -11,10 +11,10 @@
 	robust_searching = TRUE
 	ranged_ignores_vision = TRUE
 	ranged = TRUE
-	obj_damage = 5
+	obj_damage = 100
 	vision_range = 6
 	aggro_vision_range = 18
-	environment_smash = ENVIRONMENT_SMASH_NONE  //This is to prevent elites smashing up the mining station, we'll make sure they can smash minerals fine below.
+	environment_smash = ENVIRONMENT_SMASH_MINERALS  //This is to prevent elites smashing up the mining station, we'll make sure they can smash minerals fine below.
 	harm_intent_damage = 0 //Punching elites gets you nowhere
 	stat_attack = HARD_CRIT
 	layer = LARGE_MOB_LAYER

@@ -156,7 +156,7 @@
 	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
 
 	if(type)
-		if(type & MSG_VISUAL && is_blind() )//Vision related
+		if(type & MSG_VISUAL && is_blind())//Vision related
 			if(!alt_msg)
 				return
 			else
@@ -689,7 +689,7 @@
 	set name = "Respawn"
 	set category = "OOC"
 
-	if ((stat != DEAD || !( SSticker )) || !isobserver(usr))
+	if ((stat != DEAD || !(SSticker)) || !isobserver(usr))
 		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
 		return
 
@@ -1150,7 +1150,7 @@
 	var/search_pda = 1
 
 	for(var/A in searching)
-		if( search_id && istype(A, /obj/item/card/id) )
+		if(search_id && istype(A, /obj/item/card/id))
 			var/obj/item/card/id/ID = A
 			if(ID.registered_name == oldname)
 				ID.registered_name = newname
@@ -1161,7 +1161,7 @@
 					break
 				search_id = 0
 
-		else if( search_pda && istype(A, /obj/item/pda) )
+		else if(search_pda && istype(A, /obj/item/pda))
 			var/obj/item/pda/PDA = A
 			if(PDA.owner == oldname)
 				PDA.owner = newname

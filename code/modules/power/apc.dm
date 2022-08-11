@@ -895,7 +895,7 @@
 		"chargingStatus" = charging,
 		"totalLoad" = DisplayPower(lastused_total),
 		"coverLocked" = coverlocked,
-		"siliconUser" = ( user.has_unlimited_silicon_privilege && check_ship_ai_access( user ) ) || user.using_power_flow_console(),
+		"siliconUser" = (user.has_unlimited_silicon_privilege && check_ship_ai_access(user)) || user.using_power_flow_console(),
 		"malfStatus" = get_malf_status(user),
 		"malfMaskHackStatus" = malfhackhide,
 		"emergencyLights" = !emergency_lights,
@@ -973,7 +973,7 @@
 		var/mob/living/silicon/robot/robot = user
 		if (																				 \
 			src.aidisabled ||														  \
-			!check_ship_ai_access( user ) || \
+			!check_ship_ai_access(user) || \
 			malfhack && istype(malfai) &&										  \
 			(																				\
 				(istype(AI) && (malfai!=AI && malfai != AI.parent)) ||	\
@@ -1467,7 +1467,7 @@
 /obj/machinery/power/apc/proc/overload_lighting()
 	if(/* !get_connection() || */ !operating || shorted)
 		return
-	if( cell && cell.charge>=20)
+	if(cell && cell.charge>=20)
 		cell.use(20)
 		INVOKE_ASYNC(src, .proc/break_lights)
 

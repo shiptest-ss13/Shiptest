@@ -329,7 +329,7 @@
 				add_event(null, "nutrition", /datum/mood_event/wellfed) // round and full
 		if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
 			add_event(null, "nutrition", /datum/mood_event/wellfed)
-		if( NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
+		if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
 			add_event(null, "nutrition", /datum/mood_event/fed)
 		if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
 			clear_event(null, "nutrition")
