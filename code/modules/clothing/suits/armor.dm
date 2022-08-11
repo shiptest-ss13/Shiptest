@@ -191,6 +191,11 @@
 	strip_delay = 70
 	equip_delay_other = 50
 
+/obj/item/clothing/suit/armor/bulletproof/frontier
+	name = "frontiersmen bulletproof armor"
+	desc = "A piece of armor that can be best described as a plate of metal with kevlar in between. Was once produced by the Frontiersmen pirate fleet."
+	icon_state = "frontier_armor"
+
 /obj/item/clothing/suit/armor/laserproof
 	name = "reflector vest"
 	desc = "A vest that excels in protecting the wearer against energy projectiles, as well as occasionally reflecting them."

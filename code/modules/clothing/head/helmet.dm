@@ -564,7 +564,7 @@
 
 /obj/item/clothing/head/helmet/x11
 	name = "\improper Type X11 Helmet"
-	desc = "A large, but protective helmet. Standard issue of the Zohil Ground Forces. It's large size gives extra space for Sarathi frills and horns, and is considerably more armored."
+	desc = "A large, but protective helmet. Originating from Kalixcis, it's large size gives extra space for Sarathi frills and horns, and is considerably more armored."
 	icon_state = "x11helm"
 	can_flashlight = TRUE
 	dog_fashion = null
@@ -575,3 +575,9 @@
 		"Woodland" = "x11helm_woodland",
 		"Snow" = "x11helm_snow",
 		)
+
+/obj/item/clothing/head/helmet/x11/frontier
+	name = "\improper Frontiersmen X11 Helmet"
+	desc = "A heavily modified X11 that was once produced by the Frontiersmen pirate fleet."
+	icon_state = "x11helm_frontier"
+	unique_reskin = null

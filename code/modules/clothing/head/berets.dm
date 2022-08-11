@@ -226,3 +226,13 @@
 	desc = "A comfortable looking brown beret with a golden insignia. Denotes the wearer as a vanguard of the IRMG. The padding inside feels thicker."
 	icon_state = "inteq_beret"
 	item_state = "inteq_beret"
+
+/obj/item/clothing/head/beret/sec/frontier
+	name = "frontiersmen beret"
+	desc = "A robust beret in the frontiersmen colors.  Uses reinforced fabric to offer sufficient protection. Was once produced by the Frontiersmen pirate fleet."
+	icon_state = "frontier_beret"
+
+/obj/item/clothing/head/beret/sec/frontier/officer
+	name = "frontiersmen oiffcer beret"
+	desc = "A robust beret with the frontiersmen insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection. Was once produced by the Frontiersmen pirate fleet."
+	icon_state = "frontier_officer_beret"
