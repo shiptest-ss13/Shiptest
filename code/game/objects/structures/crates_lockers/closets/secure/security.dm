@@ -322,7 +322,7 @@
 
 /obj/structure/closet/secure_closet/tac/PopulateContents()
 	..()
-	new /obj/item/gun/ballistic/automatic/wt550(src)
+	new /obj/item/gun/ballistic/automatic/smg/wt550(src)
 	new /obj/item/clothing/head/helmet/alt(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
 	new /obj/item/clothing/suit/armor/bulletproof(src)

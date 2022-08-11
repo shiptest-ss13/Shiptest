@@ -312,13 +312,16 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	..(gibbed)
-	visible_message("<span class='userwarning'>[src] falls over with a mighty crash, the remaining legions within it boiling away!</span>")
+	visible_message("<span class='userwarning'>[src] falls over with a mighty crash, the remaining legions within it falling apart!</span>")
 	new /obj/item/crusher_trophy/legion_skull(loc)
 	new /obj/item/crusher_trophy/legion_skull(loc)
 	new /obj/item/crusher_trophy/legion_skull(loc)
+	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
+	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
+	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	if(prob(45))
 		new /obj/item/reagent_containers/glass/bottle/necropolis_seed(loc)
+	..(gibbed)
 
 /mob/living/simple_animal/hostile/big_legion/Initialize()
 	.=..()
@@ -338,7 +341,8 @@
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/dwarf/equip(mob/living/carbon/human/H)
 	. = ..()
-	H.dna.add_mutation(DWARFISM)
+	H.set_species(/datum/species/dwarf)
+	H.transform = H.transform.Scale(0.8, 1)//somehow dwarf squashing is borked when not roundstart. I hate WS code
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize()
 	var/type = pickweight(list("Miner" = 51, "Waldo" = 3, "Ashwalker" = 7, "Soldier" = 3, "Oldminer" = 7, "Kobold" = 5, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4)) //WS Edit - Kobold
@@ -369,15 +373,15 @@
 				r_pocket = pickweight(list(/obj/item/stack/marker_beacon = 20, /obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/damage = 1))
 			if(prob(10))
 				l_pocket = pickweight(list(/obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/cooldown = 1))
-			if(prob(85))
+			if(prob(95))
 				back = /obj/item/storage/backpack/explorer
 				backpack_contents = list()
 				if(prob(70))
-					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
+					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/trigger_guard = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
 				if(prob(70))
-					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
+					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/trigger_guard = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
 				if(prob(70))
-					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
+					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/trigger_guard = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
 				if(prob(30))
 					backpack_contents += list(/obj/item/reagent_containers/hypospray/medipen/survival = pickweight(list(1 = 3, 2 = 2, 3 = 1)))
 				if(prob(30))
@@ -606,7 +610,7 @@
 	icon_aggro = "snowlegion_head"
 	icon_dead = "snowlegion_head"
 
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow/tendril
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril
 	fromtendril = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal

@@ -320,6 +320,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		var/should_have = neworgan.get_availability(src) //organ proc that points back to a species trait (so if the species is supposed to have this organ)
 
 		if(oldorgan && (!should_have || replace_current) && !(oldorgan.zone in excluded_zones))
+			neworgan.damage = oldorgan.damage //apply the damage of the old organ to the new organ
 			if(slot == ORGAN_SLOT_BRAIN)
 				var/obj/item/organ/brain/brain = oldorgan
 				if(!brain.decoy_override)//"Just keep it if it's fake" - confucius, probably
@@ -364,31 +365,43 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		switch(old_part.body_zone)
 			if(BODY_ZONE_HEAD)
 				var/obj/item/bodypart/head/new_part = new new_species.species_head()
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_CHEST)
 				var/obj/item/bodypart/chest/new_part = new new_species.species_chest()
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_L_ARM)
 				var/obj/item/bodypart/l_arm/new_part = new new_species.species_l_arm()
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_R_ARM)
 				var/obj/item/bodypart/r_arm/new_part = new new_species.species_r_arm()
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_L_LEG)
 				var/obj/item/bodypart/l_leg/new_part = new new_species.species_l_leg()
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_R_LEG)
 				var/obj/item/bodypart/r_leg/new_part = new new_species.species_r_leg()
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
