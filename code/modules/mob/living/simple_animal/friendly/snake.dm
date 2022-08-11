@@ -156,8 +156,11 @@
 	glasses = new /obj/item/clothing/glasses/regular(src)
 	grant_all_languages()
 	update_overlays()
-	speak = get_phrases()
+	INVOKE_ASYNC(src, .proc/update_phrases)
 	. = ..()
+
+/mob/living/simple_animal/hostile/retaliate/poison/snake/bookworm/proc/update_phrases()
+	speak = get_phrases()
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/bookworm/proc/get_phrases() //if someone sees this, be sure to actually literally really kill me
 	var/list/phrase_buffer = list()
