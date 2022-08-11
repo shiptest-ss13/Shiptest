@@ -407,7 +407,7 @@
 /obj/structure/sign/poster/official/moth/piping{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/trimline/red/line{
+/obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -565,7 +565,7 @@
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 6
 	},
-/obj/effect/turf_decal/trimline/blue/corner,
+/obj/effect/turf_decal/trimline/opaque/blue/corner,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "hf" = (
@@ -872,7 +872,7 @@
 	dir = 8;
 	name = "Oxygen to Chamber"
 	},
-/obj/effect/turf_decal/trimline/blue/arrow_cw,
+/obj/effect/turf_decal/trimline/opaque/blue/arrow_cw,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "kd" = (
@@ -1082,7 +1082,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/blue/line{
+/obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1159,7 +1159,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/purple/line{
+/obj/effect/turf_decal/trimline/opaque/purple/line{
 	dir = 10
 	},
 /turf/open/floor/plating,
@@ -1219,7 +1219,7 @@
 /obj/item/paper{
 	info = "The igniter in the chamber does not work very well. I suggest throwing lit welders down the disposal chute over there to ignite the chamber."
 	},
-/obj/effect/turf_decal/trimline/red/line{
+/obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 6
 	},
 /turf/open/floor/plating,
@@ -1473,8 +1473,8 @@
 	dir = 1;
 	pixel_y = -25
 	},
-/obj/effect/turf_decal/trimline/purple/arrow_cw,
-/obj/effect/turf_decal/trimline/blue/arrow_ccw{
+/obj/effect/turf_decal/trimline/opaque/purple/arrow_cw,
+/obj/effect/turf_decal/trimline/opaque/blue/arrow_ccw{
 	dir = 1
 	},
 /turf/open/floor/engine,
@@ -1622,7 +1622,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/purple/arrow_cw,
+/obj/effect/turf_decal/trimline/opaque/purple/arrow_cw,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "wr" = (
@@ -1656,10 +1656,10 @@
 /obj/item/paper/crumpled{
 	info = "A mix of 67/33 ratio of oxygen (node 1) and plasma (node 2) works very well, even at 500 kPa."
 	},
-/obj/effect/turf_decal/trimline/blue/line{
+/obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/purple/corner{
+/obj/effect/turf_decal/trimline/opaque/purple/corner{
 	dir = 8
 	},
 /turf/open/floor/engine,
@@ -1772,7 +1772,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/trimline/purple/line,
+/obj/effect/turf_decal/trimline/opaque/purple/line,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "yA" = (
@@ -1866,7 +1866,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/red/arrow_ccw{
+/obj/effect/turf_decal/trimline/opaque/red/arrow_ccw{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -2038,7 +2038,7 @@
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/blue/line,
+/obj/effect/turf_decal/trimline/opaque/blue/line,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "CV" = (
@@ -2279,7 +2279,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
-/obj/effect/turf_decal/trimline/blue/line{
+/obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 6
 	},
 /turf/open/floor/plating,
@@ -2688,7 +2688,7 @@
 /obj/item/clothing/mask/gas/atmos,
 /obj/item/clothing/head/hardhat/atmos,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/trimline/red/line{
+/obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -2822,7 +2822,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/red/arrow_ccw,
+/obj/effect/turf_decal/trimline/opaque/red/arrow_ccw,
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
 "Pd" = (
@@ -3108,7 +3108,7 @@
 	dir = 4;
 	sensors = list("nemo_incinerator_sensor" = "Incinerator Chamber")
 	},
-/obj/effect/turf_decal/trimline/blue/line{
+/obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 6
 	},
 /turf/open/floor/plating,
@@ -3304,7 +3304,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/effect/turf_decal/trimline/red/line{
+/obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 5
 	},
 /turf/open/floor/plating,
@@ -3513,7 +3513,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/effect/turf_decal/trimline/purple/line,
+/obj/effect/turf_decal/trimline/opaque/purple/line,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Zx" = (
@@ -3542,7 +3542,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/trimline/red/line,
+/obj/effect/turf_decal/trimline/opaque/red/line,
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
 
