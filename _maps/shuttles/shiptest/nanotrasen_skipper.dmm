@@ -234,6 +234,12 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "cF" = (
@@ -534,6 +540,10 @@
 	pixel_x = 32;
 	name = "\improper DISPOSAL: LEADS TO INCINERATOR sign";
 	desc = "A warning sign which reads 'DISPOSAL: LEADS TO INCINERATOR'."
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
@@ -1295,7 +1305,6 @@
 /obj/machinery/suit_storage_unit/engine,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/airalarm/directional/west,
-/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "mM" = (
@@ -1303,6 +1312,10 @@
 /area/ship/crew/office)
 "mS" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "mU" = (
@@ -1368,6 +1381,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/visible{
 	dir = 6
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
@@ -1906,6 +1923,10 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/medical)
 "sz" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "sD" = (
@@ -2027,7 +2048,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "tG" = (
-/obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/storage/toolbox/electrical{
 	pixel_x = 1;
@@ -2043,7 +2063,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 28
 	},
-/obj/machinery/door/firedoor/border_only,
+/obj/structure/closet/crate,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "tI" = (
@@ -2075,6 +2095,13 @@
 "ub" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2187,6 +2214,9 @@
 /area/ship/engineering)
 "uX" = (
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "va" = (
@@ -2420,12 +2450,8 @@
 "wC" = (
 /obj/item/storage/box/lights/mixed,
 /obj/item/storage/box/lights/mixed,
-/obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
+/obj/structure/closet/crate,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "wG" = (
@@ -2856,10 +2882,6 @@
 /area/ship/hallway/central)
 "BO" = (
 /obj/machinery/light,
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "BR" = (
@@ -3130,11 +3152,10 @@
 /area/ship/hallway/central)
 "Ew" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/rack,
 /obj/item/storage/belt/utility,
 /obj/item/storage/belt/utility,
 /obj/item/storage/belt/utility,
-/obj/machinery/door/firedoor/border_only,
+/obj/structure/closet/crate,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "EJ" = (
@@ -3425,6 +3446,10 @@
 /obj/machinery/pipedispenser,
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
@@ -4441,6 +4466,12 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "QD" = (
@@ -4576,6 +4607,10 @@
 /area/ship/crew/office)
 "RB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "RK" = (
@@ -5098,6 +5133,13 @@
 /obj/machinery/light,
 /obj/machinery/atmospherics/pipe/simple/dark/visible{
 	dir = 9
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
@@ -5669,14 +5711,14 @@ uH
 Ws
 bA
 Uc
-Xe
+uX
 Kz
 sc
 lW
 bz
 bz
 dO
-uX
+Xe
 BO
 gh
 gh
