@@ -11,7 +11,9 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 	inherent_traits = list(TRAIT_DWARF,TRAIT_SNOB,TRAIT_QUICK_CARRY)
 	use_skintones = 1
 	armor = 15 //True dwarves are a bit sturdier than humans
-	speedmod = 0.5 //They are also slower
+	speedmod = 0.6 //They are also slower
+	staminamod = 1.5//dwarves have a low center of mass and a high relative body weight. They fall hard.
+	stunmod = 1.35//35% longer stuns.
 	punchdamagelow = 5
 	punchdamagehigh = 15 //and a bit stronger
 	punchstunthreshold = 10
@@ -24,7 +26,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 	mutanttongue= /obj/item/organ/tongue/dwarf //A workaround for the language issues I was having
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/dwarf
-	loreblurb = {"Essentially shorter, squatter humans, dwarves are one of the earliest genelines modified from humans, and one of the most divergent in function and form. Developed in Canada at nearly the beginning of humanity's progress into genetic engineering, they require alcohol to survive, and have been around long enough to have both substantial numbers and their own distinct culture."}
+	loreblurb = {"Essentially shorter, squatter humans, dwarves are one of the earliest divergent genelines, and one of the most unique in function and form. Emerging from the ruins of Canada, they took to the stars before most, travelling at sublight speeds to their current home, Helm. The centuries they spent alone on their Clan-ships developed them into a unique, insular culture that values collective effort and contribution to society above all else."}
 
 /mob/living/carbon/human/species/dwarf //species admin spawn path
 	race = /datum/species/dwarf //and the race the path is set to.
@@ -75,7 +77,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 /obj/item/organ/liver/dwarf
 	name = "dwarf liver"
 	icon_state = "liver"
-	desc = "A dwarven liver, theres something magical about seeing one of these up close."
+	desc = "A dwarven liver, containing several secondary lobes designed to store alchohol and process it into usable forms."
 	alcohol_tolerance = 0 //dwarves really shouldn't be dying to alcohol.
 	toxTolerance = 5 //Shrugs off 5 units of toxins damage.
 	maxHealth = 150 //More health than the average liver, as you aren't going to be replacing this.
@@ -83,14 +85,14 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 
 //alcohol gland
 /obj/item/organ/dwarfgland
-	name = "dwarf alcohol gland"
+	name = "ethanovoric glands"
 	icon_state = "plasma" //Yes this is a actual icon in icons/obj/surgery.dmi
-	desc = "A genetically engineered gland which is hopefully a step forward for humanity."
+	desc = "A complex series of supportive glands, webbed around the liver and circulatory tract like a harness. They process alchohol directly into forms that the body can metabolize as cellular fuel."
 	w_class = WEIGHT_CLASS_NORMAL
 	var/stored_alcohol = 250 //They start with 250 units, that ticks down and eventaully bad effects occur
 	var/max_alcohol = 500 //Max they can attain, easier than you think to OD on alcohol.
-	var/heal_rate = 1.25 //The rate they heal damages over 400 alcohol stored. This has been buffed, but is still less effective than dedicated healing chems.
-	var/alcohol_rate = 0.25 //The rate the alcohol ticks down per each iteration of dwarf_eth_ticker completing.
+	var/heal_rate = 0.15 //The rate they heal damages over 350 alcohol stored.
+	var/alcohol_rate = 0.35 //The rate the alcohol ticks down per each iteration of dwarf_eth_ticker completing.
 	//These count in on_life ticks which should be 2 seconds per every increment of 1 in a perfect world.
 	var/dwarf_eth_ticker = 0 //Currently set =< 1, that means this will fire the proc around every 2 seconds
 	var/last_alcohol_spam
@@ -98,6 +100,8 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 /obj/item/organ/dwarfgland/on_life() //Primary loop to hook into to start delayed loops for other loops..
 	. = ..()
 	if(owner && owner.stat != DEAD)
+		if(!owner.client)
+			return
 		dwarf_eth_ticker++
 		if(dwarf_eth_ticker >= 1) //Alcohol reagent check should be around 2 seconds, since a tick is around 2 seconds.
 			dwarf_eth_cycle()
@@ -107,34 +111,42 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 /obj/item/organ/dwarfgland/proc/dwarf_eth_cycle()
 	//BOOZE POWER
 	var/init_stored_alcohol = stored_alcohol
+	var/heal_amt = heal_rate
 	for(var/datum/reagent/R in owner.reagents.reagent_list)
 		if(istype(R, /datum/reagent/consumable/ethanol))
 			var/datum/reagent/consumable/ethanol/E = R
 			stored_alcohol = clamp(stored_alcohol + E.boozepwr / 50, 0, max_alcohol)
-	var/heal_amt = heal_rate
+			if(stored_alcohol >= 350)
+				owner.adjustBruteLoss(-heal_amt * E.quality)
+				owner.adjustFireLoss(-heal_amt * E.quality)
+				owner.adjustToxLoss(-heal_amt * E.quality)
+				owner.adjustOxyLoss(-heal_amt * E.quality / 2)
+				owner.adjustCloneLoss((-heal_amt * E.quality) / 15)
 	stored_alcohol -= alcohol_rate //Subtracts alcohol_Rate from stored alcohol so EX: 250 - 0.25 per each loop that occurs.
-	if(stored_alcohol > 400) //If they are over 400 they start regenerating
-		owner.adjustBruteLoss(-heal_amt) //But its alcohol, there will be other issues here.
-		owner.adjustFireLoss(-heal_amt) //Unless they drink casually all the time.
+	if(stored_alcohol > 200)
+		if(owner.nutrition < 250)
+			owner.nutrition += heal_amt
+	if(stored_alcohol > 350) //If they are over 350 they start regenerating
+		owner.adjustBruteLoss(-heal_amt)
+		owner.adjustFireLoss(-heal_amt)
 		owner.adjustToxLoss(-heal_amt)
-		owner.adjustOxyLoss(-heal_amt)
-		owner.adjustCloneLoss(-heal_amt) //Also they will probably get brain damage if thats a thing here.
-	if(init_stored_alcohol + 0.5 < stored_alcohol) //recovering stored alcohol at a steady rate of +0.75, no spam.
+		owner.adjustOxyLoss(-heal_amt / 2)
+		owner.adjustCloneLoss(-heal_amt  / 15)
+	if(init_stored_alcohol + 0.5 < stored_alcohol)
 		return
 	switch(stored_alcohol)
 		if(0 to 24)
-			if(last_alcohol_spam + 8 SECONDS < world.time)
-				to_chat(owner, "<span class='userdanger'>DAMNATION INCARNATE, WHY AM I CURSED WITH THIS DRY-SPELL? I MUST DRINK.</span>")
-				last_alcohol_spam = world.time
-			owner.adjustToxLoss(2.5)
-		if(25 to 50)
 			if(last_alcohol_spam + 20 SECONDS < world.time)
-				to_chat(owner, "<span class='danger'>Oh DAMN, I need some brew!</span>")
+				to_chat(owner, "<span class='userdanger'>I can feel myself wasting away! I need a drink!.</span>")
 				last_alcohol_spam = world.time
-		if(51 to 75)
+			owner.adjustToxLoss(0.2)
+			owner.nutrition -= 2
+		if(25 to 75)
 			if(last_alcohol_spam + 35 SECONDS < world.time)
 				to_chat(owner, "<span class='warning'>Your body aches, you need to get ahold of some booze...</span>")
 				last_alcohol_spam = world.time
+			owner.adjustToxLoss(0.1)
+			owner.nutrition -= 1
 		if(76 to 100)
 			if(last_alcohol_spam + 40 SECONDS < world.time)
 				to_chat(owner, "<span class='notice'>A pint of anything would really hit the spot right now.</span>")
@@ -143,3 +155,16 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 			if(last_alcohol_spam + 50 SECONDS < world.time)
 				to_chat(owner, "<span class='notice'>You feel like you could use a good brew.</span>")
 				last_alcohol_spam = world.time
+
+//the dwarf counter(real)
+/datum/species/dwarf/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+	if(chem.type == /datum/reagent/medicine/antihol)
+		H.adjustToxLoss(5, 0)
+		H.adjustOrganLoss(ORGAN_SLOT_LIVER, 5)
+		H.reagents.remove_reagent(chem.type * 5, REAGENTS_METABOLISM)
+		var/obj/item/organ/dwarfgland/dwarfgland = H.getorgan(/obj/item/organ/dwarfgland)
+		if(dwarfgland)
+			dwarfgland.stored_alcohol -= 25
+		return TRUE
+
+	return ..()
