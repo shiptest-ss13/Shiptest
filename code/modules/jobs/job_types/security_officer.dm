@@ -220,7 +220,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 /datum/outfit/job/security/minutemen/armed
 	name = "Minuteman (Colonial Minutemen) (Armed)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/p16/minutemen
+	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
 	belt = /obj/item/storage/belt/military/minutemen
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1)
@@ -239,7 +239,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	gloves = /obj/item/clothing/gloves/combat
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/m45=1, /obj/item/gun_voucher=1,/obj/item/pda/security )
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/m45=1, /obj/item/gun_voucher=1,/obj/item/pda/security)
 
 /datum/outfit/job/security/inteq/naked
 	name = "IRMG Enforcer (Inteq) (Naked)"

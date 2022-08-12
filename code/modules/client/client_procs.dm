@@ -280,11 +280,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			if(!I || I == src)
 				continue
 			var/client/C = I
-			if(C.key && (C.key != key) )
+			if(C.key && (C.key != key))
 				var/matches
-				if( (C.address == address) )
+				if((C.address == address))
 					matches += "IP ([address])"
-				if( (C.computer_id == computer_id) )
+				if((C.computer_id == computer_id))
 					if(matches)
 						matches += " and "
 					matches += "ID ([computer_id])"
@@ -388,7 +388,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			qdel(src)
 			return 0
 
-	if( (world.address == address || !address) && !GLOB.host )
+	if((world.address == address || !address) && !GLOB.host)
 		GLOB.host = key
 		world.update_status()
 
@@ -832,14 +832,19 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		ip_intel = res.intel
 
 /client/Click(atom/object, atom/location, control, params)
+	if(click_intercept_time)
+		if(click_intercept_time >= world.time)
+			click_intercept_time = 0 //Reset and return. Next click should work, but not this one.
+			return
+		click_intercept_time = 0 //Just reset. Let's not keep re-checking forever.
 	var/ab = FALSE
-	var/list/L = params2list(params)
+	var/list/modifiers = params2list(params)
 
-	var/dragged = L["drag"]
-	if(dragged && !L[dragged])
+	var/dragged = LAZYACCESS(modifiers, DRAG)
+	if(dragged && !LAZYACCESS(modifiers, dragged)) //I don't know what's going on here, but I don't trust it
 		return
 
-	if (object && object == middragatom && L["left"])
+	if (object && object == middragatom && LAZYACCESS(modifiers, LEFT_CLICK))
 		ab = max(0, 5 SECONDS-(world.time-middragtime)*0.1)
 
 	var/mcl = CONFIG_GET(number/minute_click_limit)

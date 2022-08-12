@@ -49,8 +49,15 @@
 
 /obj/item/sharpener/super
 	name = "super whetstone"
+	desc = "A block of the frontier's most advanced edge winnowing technology. Be careful, it's sharp!"
+	increment = 15
+	max = 40
+	prefix = "razor-sharp"
+
+/obj/item/sharpener/giga
+	name = "giga whetstone"
 	desc = "A block that will make your weapon sharper than Einstein on adderall."
 	increment = 200
 	max = 200
-	prefix = "super-sharpened"
+	prefix = "balance-destroying"
 	requires_sharpness = 0

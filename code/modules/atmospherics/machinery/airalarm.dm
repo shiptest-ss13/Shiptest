@@ -271,7 +271,7 @@
 /obj/machinery/airalarm/ui_data(mob/user)
 	var/data = list(
 		"locked" = locked,
-		"siliconUser" = user.has_unlimited_silicon_privilege && check_ship_ai_access( user ),
+		"siliconUser" = user.has_unlimited_silicon_privilege && check_ship_ai_access(user),
 		"emagged" = (obj_flags & EMAGGED ? 1 : 0),
 		"danger_level" = danger_level,
 	)
@@ -838,7 +838,7 @@
 				if (W.use_tool(src, user, 20))
 					if (buildstage == 1)
 						to_chat(user, "<span class='notice'>You remove the air alarm electronics.</span>")
-						new /obj/item/electronics/airalarm( src.loc )
+						new /obj/item/electronics/airalarm(src.loc)
 						playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 						buildstage = 0
 						update_icon()
@@ -886,7 +886,7 @@
 			if(W.tool_behaviour == TOOL_WRENCH)
 				to_chat(user, "<span class='notice'>You detach \the [src] from the wall.</span>")
 				W.play_tool_sound(src)
-				new /obj/item/wallframe/airalarm( user.loc )
+				new /obj/item/wallframe/airalarm(user.loc)
 				qdel(src)
 				return
 
