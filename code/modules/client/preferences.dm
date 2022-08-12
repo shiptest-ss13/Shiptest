@@ -1645,6 +1645,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/temp_hsv = RGBtoHSV(features["mcolor"])
 				if(features["mcolor"] == "#000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#191919")[3]))
 					features["mcolor"] = pref_species.default_color
+				//also resetting body size to Normal if the species you swap to doesn't allow for it to be changed. no more scrungle birds
+				if(!("body_size" in pref_species.default_features))
+					features["body_size"] = "Normal"
 				user << browse(null, "window=speciespick")
 				ShowChoices(user)
 				age = rand(pref_species.species_age_min, pref_species.species_age_max)
