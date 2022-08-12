@@ -1,0 +1,173 @@
+2022-05-01:
+  MarkSuckerberg:
+  - rscadd: Helm consoles now say what went wrong if docking fails.
+  TypeVar:
+  - rscadd: Adds a new ship
+  triplezeta:
+  - rscadd: you can build shutters now!
+2022-05-05:
+  DatBoiTim:
+  - bugfix: Felinids stop using the uwutongue, that apparently exists.
+  - bugfix: removes felinid saymod from the direct port of my code from Bee.
+  zestybastard:
+  - imageadd: Resprites the softsuit + variants
+2022-05-06:
+  IndusRobot:
+  - bugfix: Fixes modular computers creating double IDs on eject
+2022-05-07:
+  Apogee-dev:
+  - bugfix: Replaced research monitor board on Osprey with rnd console board
+  Kylerace, CoffeeKat:
+  - rscadd: Added a speech controller
+  - code_imp: improved get_hearers_in_view()
+  PrefabQuasar:
+  - rscadd: Added a new set of malleable glasses, which can be reskinned to any of
+      24(!!) different styles
+  - rscadd: Garnishing items can be crafted and placed on these glasses to add some
+      extra flair to your drinks.
+  - tweak: sand and volcanic ash are now primarily silicon, with salt and ash(and
+      microbes) mixed in respectively.
+  bluezorua:
+  - rscadd: Boyardee grill has fuel
+  - tweak: Fixed missplaced floortiles and airlocks in boyardee
+  - bugfix: Boyardee sofa is no longer misaligned
+  - rscadd: Moth Hair
+2022-05-08:
+  Apogee-dev:
+  - rscadd: Added even more names for ship generation
+  The-Moon-Itself:
+  - tweak: Empty wands have a rare chance to activate one last time when used.
+  bluezorua:
+  - rscadd: Assistants now have PDAs
+2022-05-09:
+  Vexylius:
+  - tweak: statpanel appears faster
+2022-05-10:
+  Fikou:
+  - tweak: the tartarus carrier has been improved a bit
+2022-05-11:
+  Zevotech:
+  - rscdel: originalcontent.dmm and originalcontent.dm have been deleted.
+  - rscdel: code mentions of originalcontent.dmm have been deleted.
+  - rscdel: removes the originalcontent items from the icemoon corporate rejects ruin
+  retlaw34:
+  - soundadd: Intercoms and radios now will click when toggling buttons
+  - soundadd: Storage items will have different sounds depening on what they are opening
+  - soundadd: A TON of sounds added when picking up and dropping things
+2022-05-12:
+  Hardly:
+  - rscadd: Mining scanners now have a speaker option.
+  - tweak: Automatic mining scanners have their speakers set to off by default.
+  tiramisuapimancer:
+  - tweak: Diets of humans, moths, kepori, and jellys have been tweaked
+  - tweak: IPCs, sarathi, and rachnids can wear undergarments again
+2022-05-13:
+  Kapu1178, E-MonaRhg, Drawsstuff:
+  - rscadd: Vox species
+  - refactor: Body temperature threshholds have been generalized and dumped into species
+      vars.
+  - refactor: Age is now freeform
+  TheNeoGamer42:
+  - rscdel: Arrowhead-class
+  - rscadd: The Arrowhead-class Long Range Scoutship exists now.
+2022-05-14:
+  bluezorua:
+  - rscadd: Small tweaks around the Boyardee
+2022-05-15:
+  Apogee-dev:
+  - rscadd: Added briefing room and extra cargo space to Carina
+  - rscadd: Added R&D console and seclathe to Carina
+  - tweak: Secure doors and lockers on Carina now require proper access
+  Bokkiewokkie:
+  - bugfix: Fixed plastic plating causing crashes.
+  - code_imp: Minor improvement to turf transparency element
+  - code_imp: Tweaked material datum opacity usage
+  Ebin-Halcyon:
+  - imageadd: Digitigrade Syndicate hardsuits have been updated
+  PositiveEntropy:
+  - imageadd: Resprites the normal and syndicate sleepers!
+  - imagedel: Erases Cryogenics2.dmi from existence.
+  ZephyrTFA:
+  - bugfix: You can no longer infinitely cut items for cloth
+  retlaw34:
+  - rscadd: powered ballistics
+  - bugfix: fixed a bug where the loading sound effect would play when ejecting a
+      magazine
+2022-05-18:
+  Bokkiewokkie:
+  - rscdel: Removed COVID-19 disease
+  - rscdel: Removed 'frank' and anti-COVID lawsets
+  - code_imp: Moved all of the code out of the whitesands folder
+  Recoherent:
+  - bugfix: Changed ash/salt garnish to be created in the crafting menu instead of
+      chemically.
+  kestoloppu:
+  - bugfix: fixed a missing wire on the libertatia-class hauler
+2022-05-21:
+  Iamgoofball:
+  - bugfix: Fixes the lack of Trek uniforms in the loadout.
+  IndusRobot:
+  - rscadd: Adds integrated NTNET relays for just about any machine, and adds it to
+      the helm console
+  Lianvee:
+  - rscadd: You can now craft Prescription HUD Glasses. Diagnostic versions not included:tm:!
+  SandPoot, Mark Suckerberg:
+  - bugfix: Dead people are no longer rolling in their graves.
+  tiramisuapimancer:
+  - bugfix: vox tailfeather actually a neck quill as intended
+2022-05-23:
+  kestoloppu:
+  - rscadd: Added explorer gas mask sprite for vox
+2022-05-25:
+  ZephyrTFA:
+  - rscadd: Helm Consoles can now be locked with a shipkey
+  - rscadd: Shipkeys, if your ship does not already have one , or was destroyed by
+      an idiot, your helm console can print one
+2022-05-26:
+  Thera-Pissed:
+  - rscadd: Bubbles, a new IPC screen
+  retlaw34:
+  - rscadd: Turf fires, again
+  - rscadd: Whitesands ballisks are now unique
+  - rscadd: More stuff to do on the overmap!
+  - rscadd: New crusher trophies for crytsal mobs
+  - balance: Crystal mobs have been rebalanced, and now drop unique trophies!
+  - balance: Cult templar made easier, and by that I mean they are slower now
+  - bugfix: reebe works again, still disabled
+  - rscadd: SolGov has released evidence against Nanotrasen using a bio weapon to
+      wipe out the Blue Moon colony in the outer sectors. Nanotrasen denies any claims
+      despite overwhelming evidence. A spokesperson says....
+2022-05-27:
+  Apogee-dev:
+  - rscadd: Added even more names to the ship namelists
+  HanSolo1519:
+  - rscadd: Superpill
+  Zevotech:
+  - balance: Remapped Jungle_Botany.dmm, removed its ERT hardsuits
+  - balance: Made Ice Whelps no longer tear down walls and murder entire ships (Now
+      also applies to polar bears)
+  - balance: Lowered the amount of hide goliaths drop from 4 to 2, as requested by
+      a lead
+  - bugfix: fixed goliaths, ice whelps, polar bears and ice demons shoving wrenched
+      windows
+  someguyjust:
+  - rscadd: Scav-classed Drifter
+2022-05-28:
+  MarkSuckerberg:
+  - bugfix: The join menu should no longer break randomly.
+2022-05-29:
+  'Irra ':
+  - balance: SMES's now have a EMP interaction
+  - imageadd: Smes sprites
+  SweetBlueSylveon:
+  - rscadd: Added the Rube-Goldberg Class Engineering Project ship.
+  - imageadd: Added a steering wheel (sprite by Dexxiol)
+  phoaly and Any%:
+  - rscadd: Added Lab 4071 space ruin.
+  - rscadd: Added Syndicate Battle Sphere space ruin.
+2022-05-30:
+  Vexylius:
+  - bugfix: A pirate wideband radio jamming station has been taken taken down by a
+      group of unidentified ships. One of them seemed to be a Minuteman Carina-class
+      ship, however Minuteman spokesperson denies Minuteman involvement in this operation
+      (Fixed wideband intercoms)

@@ -1,0 +1,111 @@
+2020-05-09:
+  MarkSuckerberg:
+  - code_imp: Changelogs are now processed slightly differently, but you shouldn't
+      really notice it.
+  - server: No longer will you have to try to run the old, confusing PHP changelog
+      generator. It's now entirely handled by Github actions.
+2020-05-14:
+  CRITAWAKETS:
+  - tweak: Nanotrasen has made revisions of some of their most important energy guns,
+      the only differences are cosmetic however.
+  - rscadd: Added the Quadvolgue, an admin-only shotgun that fires 4 shots. Comes
+      in special variants including golden (shoots only 2 but still has the same mag!)
+      and dual (oh no).
+  DerFlammenwerfer:
+  - tweak: Gives Synthflesh the ability to unhusk corpses
+  MarkSuckerberg:
+  - rscadd: A few more commands are now available on the discord bot. Have a look
+      with `?help`!
+  - admin: Multiple new admin commands have been added to redbot that were previously
+      on the TGS bot. As such, they should be slightly easier to use ~~and abuse~~.
+  - rscadd: OOC is relayed to the discord. Wooo.
+  Sprites by triiodine:
+  - imageadd: New sprites for security clothing, chefs and civilian suits.
+  Superyodeler:
+  - balance: nerfed nanite armor programs
+  TheNeoGamer42:
+  - rscadd: The L666 FUCKYOUINATOR, a modified L6 Saw that is admin only because its
+      overpowered.
+  - tweak: holy shit guns shoot good
+  - tweak: I think it changed some damage values and shit too
+  - rscadd: new fire rate var for guns
+  - tweak: phases out burstfire on guns that don't specifically need it in favor of
+      true automatic fire
+  - tweak: universal fire rate changes
+  - code_imp: fire rate is now tied to gun, and not ammo casing
+  - balance: lowered energy cost of temp gun projectiles by 60%
+  'TheObserver-sys, TripleZeta, and Stewydeadmike ':
+  - rscadd: Added Peas, as well as two mutations.
+  Victor239:
+  - tweak: Input boxes for emotes are now larger.
+  triplezeta:
+  - rscadd: Ported Beestation mutation toxin recipes
+  - bugfix: hypercharged slime cores have their proper recharge rate as well.
+2020-05-18:
+  Victor239:
+  - rscadd: Brig Physician gets a defibrillator in their locker
+  - rscadd: Warden's locker now has a megaphone
+  - rscadd: HOS' locker now has a box of deputy armbands, spare trenchcoat and bowmans
+  - tweak: CMO hardsuit is now flashproof
+  - tweak: Nuke operative chest implants reversed - now you can remove the microbomb
+      implant without having to scrap the firearm authentication implant.
+  - rscadd: Classic EMP grenades now break lights also.
+  - rscadd: Plague doctor costume now available as contraband in the ViroDrobe.
+  dinnerwoerror:
+  - rscadd: plasmaman command envirosuits
+  - rscadd: a new brig physician envirosuit
+2020-05-19:
+  MarkSuckerberg:
+  - rscadd: A new loadout system has been added. Finally, something to spend [currency
+      name] on!
+  - rscadd: A few new sub-departments now have berets in respective wardrobes and
+      lockers.
+  - imageadd: Berets have gotten a resprite, and a few more departments have been
+      given their own versions of them.
+2020-05-20:
+  CRITAWAKETS:
+  - bugfix: Nanotrasen has fixed the power singularity inside of their Box-Pattern
+      Mining Shuttle.
+  Victor239:
+  - rscadd: Tanks now show internal mol
+2020-05-23:
+  Maldaris:
+  - rscadd: blacksuit_skirt and blacksuit to loadout lists
+2020-05-28:
+  BigFatAnimeTiddies:
+  - bugfix: Pubbystation blueprints were reviewed and have had the Disposal lines
+      fixed. Janitors rejoice.
+  Maldaris:
+  - server: yarn.lock refresh for tgui to mitigate build issues
+  Superyodeler:
+  - bugfix: Spacepod armor actually gets removed
+  TheNeoGamer42:
+  - bugfix: you can be a degenerate again
+  Victor239:
+  - rscadd: Added grenade launcher to nukie uplink. Costs 6 TC.
+  - tweak: Grenade launcher now fits on security exosuit storage slots such as the
+      armor vest.
+  - rscadd: Subtler emotes. Use *subtler or the verb in the IC tab to use this emote.
+      It works like a normal hearable or visible emote with a 1 tile radius.
+2020-05-29:
+  BigFatAnimeTiddies:
+  - rscadd: The Atmospherics department on Box have been given a second hardsuit to
+      fit their needs, as well as a large, portable, toxins filter.
+  - tweak: The blueprints for Boxstation have been updated to reduce the amount of
+      pipes in the Atmospherics department, encouraging experimentation. Additional
+      lighting has also been provided.
+  Superyodeler:
+  - bugfix: fixes loadout runtimes
+  Victor239:
+  - rscadd: 'New chaplain traitor item: Cult Construct Kit. Contains two beacons with
+      a construct shell each and a belt full of purified soulstones. Costs 20 TC.'
+2020-05-30:
+  CRITAWAKETS:
+  - rscadd: TerraGov has upped their arsenal (and budget). They now have a base of
+      operations, energy swords, new armor for their elites and a new AR design.
+  - tweak: The old abandoned UFO design around PubbyStation has been taken to NT for
+      recycling. However, it seems another UFO is floating around the station. A bigger
+      mining/scout carrier, the NTSC "Boomer".
+  Superyodeler:
+  - balance: Increased nanite drain of nanite armor programs from 0.5 to 1.0
+  - balance: worn armor and physiological armor stacks multiplicatively
