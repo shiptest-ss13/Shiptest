@@ -58,8 +58,6 @@
 	weapon_weight = WEAPON_HEAVY
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	icon_state = "hunting"
 	item_state = "hunting"
 	slot_flags = ITEM_SLOT_BACK
@@ -86,8 +84,8 @@
 	name = "\improper saint-roumain standard issue 'Smile' rifle"
 	desc = "A bolt action rifle. Usually given to low ranking hunters of the Militia tasked with mercenary work. Chambered in .300 Magnum."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
-	icon_state = "smile"
-	item_state = "smile"
+	icon_state = "roma"
+	item_state = "roma"
 	can_be_sawn_off = FALSE
 
 /obj/item/gun/ballistic/rifle/boltaction/enchanted
