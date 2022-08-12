@@ -139,7 +139,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 		owner.adjust_bodytemperature(7.5)
 		owner.throw_alert("overdorf", /atom/movable/screen/alert/overdorf)
 		if(owner.bodytemperature >= 340)//you're going too far! Slow down there, champ!
-			owner.adjustfireloss(3, 0)
+			owner.adjustFireLoss(3, 0)
 			owner.Jitter(5)
 	else
 		owner.clear_alert("overdorf")
