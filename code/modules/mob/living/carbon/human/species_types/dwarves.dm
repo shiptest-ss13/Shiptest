@@ -117,7 +117,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 			stored_alcohol = clamp(stored_alcohol + E.boozepwr / 50, 0, max_alcohol)
 			var/boozelvl = clamp(E.quality, 0.50, 5)//0 quality has half effect instead of nothing
 			if(stored_alcohol >= 400)//half of dwarf frenzy healing
-				owner.adjustBruteLoss(-heal_amt * boozelvl)//
+				owner.adjustBruteLoss(-heal_amt * boozelvl)
 				owner.adjustFireLoss(-heal_amt * boozelvl)
 				owner.adjustToxLoss(-heal_amt * boozelvl)
 				owner.adjustOxyLoss((-heal_amt * boozelvl) / 2)
@@ -135,7 +135,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 		owner.adjustFireLoss(-heal_amt)
 		owner.adjustToxLoss(-heal_amt)
 		owner.adjustOxyLoss(-heal_amt / 2)
-		owner.adjustCloneLoss(-heal_amt  / 15)
+		owner.adjustCloneLoss(-heal_amt / 15)
 		owner.adjust_bodytemperature(7.5)
 		owner.throw_alert("overdorf", /atom/movable/screen/alert/overdorf)
 		if(owner.bodytemperature >= 340)//you're going too far! Slow down there, champ!
