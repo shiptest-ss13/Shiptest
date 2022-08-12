@@ -67,12 +67,12 @@
 	display_name = "maid neckpiece"
 	path = /obj/item/clothing/neck/maid
 
-/datum/gear/accessory/blackgloves
+/datum/gear/accessory/gloves/black
 	display_name = "black gloves"
 	description = "Standard hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/color/black
 
-/datum/gear/accessory/whitegloves
+/datum/gear/accessory/gloves/white
 	display_name = "white gloves"
 	description = "Standard hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/color/white
