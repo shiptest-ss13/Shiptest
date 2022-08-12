@@ -24,7 +24,7 @@ GLOBAL_DATUM(changelog_tgui, /datum/changelog)
 		return ui.send_asset(changelog_item)
 
 /datum/changelog/ui_static_data()
-	var/list/data = list( "dates" = list() )
+	var/list/data = list("dates" = list())
 	var/regex/ymlRegex = regex(@"\.yml", "g")
 
 	for(var/archive_file in sortList(flist("html/changelogs/archive/")))
