@@ -52,8 +52,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 
 /obj/item/organ/tongue/dwarf
 	name = "squat tongue"
-	desc = "A stout, sturdy slab of muscle and tastebuds well-suited to enjoying strong alcohol and spewing litanies of scathing insults and threats at elves."
-	say_mod = "bellows"
+	desc = "A stout, sturdy slab of muscle and tastebuds well-suited to enjoying strong alcohol and arguing about geology."
 	initial_language_holder = /datum/language_holder/dwarf
 	var/static/list/languages_possible_dwarf = typecacheof(list(
 		/datum/language/common,
@@ -92,7 +91,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 	var/stored_alcohol = 250 //They start with 250 units, that ticks down and eventaully bad effects occur
 	var/max_alcohol = 500 //Max they can attain, easier than you think to OD on alcohol.
 	var/heal_rate = 0.15 //The rate they heal damages over 350 alcohol stored.
-	var/alcohol_rate = 0.35 //The rate the alcohol ticks down per each iteration of dwarf_eth_ticker completing.
+	var/alcohol_rate = 0.25 //The rate the alcohol ticks down per each iteration of dwarf_eth_ticker completing.
 	//These count in on_life ticks which should be 2 seconds per every increment of 1 in a perfect world.
 	var/dwarf_eth_ticker = 0 //Currently set =< 1, that means this will fire the proc around every 2 seconds
 	var/last_alcohol_spam
@@ -116,49 +115,65 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 		if(istype(R, /datum/reagent/consumable/ethanol))
 			var/datum/reagent/consumable/ethanol/E = R
 			stored_alcohol = clamp(stored_alcohol + E.boozepwr / 50, 0, max_alcohol)
-			if(stored_alcohol >= 350)
-				owner.adjustBruteLoss(-heal_amt * E.quality)
-				owner.adjustFireLoss(-heal_amt * E.quality)
-				owner.adjustToxLoss(-heal_amt * E.quality)
-				owner.adjustOxyLoss(-heal_amt * E.quality / 2)
-				owner.adjustCloneLoss((-heal_amt * E.quality) / 15)
+			var/boozelvl = clamp(E.quality, 0.50, 5)//0 quality has half effect instead of nothing
+			if(stored_alcohol >= 400)//half of dwarf frenzy healing
+				owner.adjustBruteLoss(-heal_amt * boozelvl)//
+				owner.adjustFireLoss(-heal_amt * boozelvl)
+				owner.adjustToxLoss(-heal_amt * boozelvl)
+				owner.adjustOxyLoss((-heal_amt * boozelvl) / 2)
+				owner.adjustCloneLoss((-heal_amt * boozelvl) / 15)
 	stored_alcohol -= alcohol_rate //Subtracts alcohol_Rate from stored alcohol so EX: 250 - 0.25 per each loop that occurs.
 	if(stored_alcohol > 200)
 		if(owner.nutrition < 250)
 			owner.nutrition += heal_amt
-	if(stored_alcohol > 350) //If they are over 350 they start regenerating
+	if(stored_alcohol > 400) //If they are over 400 they enter a frenzy
+		alcohol_rate = 0.85//really rev the engine!
+		if(last_alcohol_spam + 90 SECONDS < world.time)
+			to_chat(owner, pick("<span class='notice'>Your blood is racing.</span>", "<span class='notice'>You're past the limit.</span>", "<span class='notice'>You can't stop sweating.</span>"))
+			last_alcohol_spam = world.time
 		owner.adjustBruteLoss(-heal_amt)
 		owner.adjustFireLoss(-heal_amt)
 		owner.adjustToxLoss(-heal_amt)
 		owner.adjustOxyLoss(-heal_amt / 2)
 		owner.adjustCloneLoss(-heal_amt  / 15)
-	if(init_stored_alcohol + 0.5 < stored_alcohol)
+		owner.adjust_bodytemperature(7.5)
+		owner.throw_alert("overdorf", /atom/movable/screen/alert/overdorf)
+		if(owner.bodytemperature >= 340)//you're going too far! Slow down there, champ!
+			owner.adjustfireloss(3, 0)
+			owner.Jitter(5)
+	else
+		owner.clear_alert("overdorf")
+	if(init_stored_alcohol + 55 < stored_alcohol)
 		return
 	switch(stored_alcohol)
 		if(0 to 24)
-			if(last_alcohol_spam + 20 SECONDS < world.time)
+			if(last_alcohol_spam + 35 SECONDS < world.time)
 				to_chat(owner, "<span class='userdanger'>I can feel myself wasting away! I need a drink!.</span>")
 				last_alcohol_spam = world.time
-			owner.adjustToxLoss(0.2)
-			owner.nutrition -= 2
+			owner.adjustToxLoss(0.5)
+			owner.nutrition -= 5
 			owner.throw_alert("dorfcharge", /atom/movable/screen/alert/dorflow, 3)
+			if(prob(5))
+				owner.blur_eyes(6)
+				owner.adjustStaminaLoss(30)
+				to_chat(owner, "<span class='warning'>You feel very dizzy.</span>")
 		if(25 to 75)
-			if(last_alcohol_spam + 35 SECONDS < world.time)
+			if(last_alcohol_spam + 70 SECONDS < world.time)
 				to_chat(owner, "<span class='warning'>Your body aches, you need to get ahold of some booze...</span>")
 				last_alcohol_spam = world.time
 			owner.adjustToxLoss(0.1)
-			owner.nutrition -= 1
+			owner.nutrition -= 2
 			owner.throw_alert("dorfcharge", /atom/movable/screen/alert/dorflow, 2)
 		if(76 to 100)
-			if(last_alcohol_spam + 40 SECONDS < world.time)
+			if(last_alcohol_spam + 100 SECONDS < world.time)
 				to_chat(owner, "<span class='notice'>A pint of anything would really hit the spot right now.</span>")
 				last_alcohol_spam = world.time
-				owner.throw_alert("dorfcharge", /atom/movable/screen/alert/dorflow, 1)
+			owner.throw_alert("dorfcharge", /atom/movable/screen/alert/dorflow, 1)
 		if(101 to 200)
-			if(last_alcohol_spam + 65 SECONDS < world.time)
+			if(last_alcohol_spam + 160 SECONDS < world.time)
 				to_chat(owner, "<span class='notice'>You feel like you could use a good brew.</span>")
 				last_alcohol_spam = world.time
-				owner.throw_alert("dorfcharge", /atom/movable/screen/alert/dorflow, 1)
+			owner.throw_alert("dorfcharge", /atom/movable/screen/alert/dorflow, 1)
 		else
 			owner.clear_alert("dorfcharge")
 
@@ -169,8 +184,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 		H.adjustOrganLoss(ORGAN_SLOT_LIVER, 3)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * 4)
 		var/obj/item/organ/dwarfgland/dwarfgland = H.getorgan(/obj/item/organ/dwarfgland)
-		if(dwarfgland.stored_alchohol > 0)
-			dwarfgland.stored_alcohol -= 25
+		dwarfgland.stored_alcohol -= 25
 		return TRUE
 
 	return ..()
