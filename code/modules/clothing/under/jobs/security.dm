@@ -313,6 +313,6 @@
 	name = "frontiersmen officer fatigues"
 	icon_state = "frontier_officer"
 
-/obj/item/clothing/under/rank/security/officer/frontier/officer
+/obj/item/clothing/under/rank/security/officer/frontier/admiral
 	name = "frontiersmen admiral fatigues"
 	icon_state = "frontier_admiral"
