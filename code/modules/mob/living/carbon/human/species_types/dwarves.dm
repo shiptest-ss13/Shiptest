@@ -180,8 +180,8 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 //the dwarf counter(real)
 /datum/species/dwarf/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(chem.type == /datum/reagent/medicine/antihol)
-		H.adjustToxLoss(2.5, 0)
-		H.adjustOrganLoss(ORGAN_SLOT_LIVER, 3)
+		H.adjustToxLoss(0.5, 0)
+		H.adjustOrganLoss(ORGAN_SLOT_LIVER, 0.2)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * 4)
 		var/obj/item/organ/dwarfgland/dwarfgland = H.getorgan(/obj/item/organ/dwarfgland)
 		dwarfgland.stored_alcohol -= 25
