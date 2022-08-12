@@ -36,6 +36,8 @@
 	var/lip_style = null
 	var/lip_color = "white"
 
+	var/stored_lipstick_trait
+
 	var/mouth = TRUE
 
 /obj/item/bodypart/head/Destroy()
@@ -139,6 +141,7 @@
 		hairstyle = "Bald"
 		facial_hairstyle = "Shaved"
 		lip_style = null
+		stored_lipstick_trait = null
 
 	else if(!animal_origin && ishuman(C))
 		var/mob/living/carbon/human/H = C
