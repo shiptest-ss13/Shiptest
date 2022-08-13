@@ -145,6 +145,7 @@
 		var/list/turfblock = block(beginning, ending)
 		for(var/turf/Turf as anything in turfblock)
 			Turf.ChangeTurf(/turf/closed/indestructible/edge, flags = CHANGETURF_IGNORE_AIR)
+		CHECK_TICK
 
 /datum/virtual_level/proc/selfloop()
 	link_with(NORTH, src)
