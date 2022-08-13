@@ -1,0 +1,5 @@
+author: Apogee-dev
+delete-after: true
+changes:
+  - tweak: Processing consoles can now be linked to processing units with a multitool
+  - bugfix: Processing consoles no longer qdel themself if they can't link to a machine
