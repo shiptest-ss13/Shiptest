@@ -38,13 +38,14 @@ standards:
 
     - exactly:
           [
-              292,
+              291,
               "non-bitwise << uses",
               '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)',
           ]
     - exactly: [0, "incorrect indentations", '^(?:  +)(?!\*)']
     - exactly: [0, "superflous whitespace", '[ \t]+$']
     - exactly: [12, "mixed indentation", '^( +\t+|\t+ +)']
+    - exactly: [21, 'padding inside parentheses', '\(([\t ]+([^)"\n\\]*)|([^("\n]+)[\t ]+)\)']
 
     - no_more:
           [

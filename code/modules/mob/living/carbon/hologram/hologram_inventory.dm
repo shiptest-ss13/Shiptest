@@ -10,9 +10,9 @@
 		update_inv_hands()
 		if(I == internal_storage)
 			internal_storage = null
-		if ( I == l_store )
+		if (I == l_store)
 			l_store = null
-		if ( I == r_store )
+		if (I == r_store)
 			r_store = null
 
 		update_inv_internal_storage()
@@ -31,14 +31,14 @@
 				return FALSE
 			if(l_store)
 				return FALSE
-			if(I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_LPOCKET) )
+			if(I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_LPOCKET))
 				return TRUE
 		if(ITEM_SLOT_RPOCKET)
 			if(HAS_TRAIT(I, TRAIT_NODROP)) //Pockets aren't visible, so you can't move TRAIT_NODROP items into them.
 				return FALSE
 			if(r_store)
 				return FALSE
-			if(I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_LPOCKET) )
+			if(I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_LPOCKET))
 				return TRUE
 	..()
 
