@@ -121,47 +121,6 @@
 	machine = null
 	return ..()
 
-
-//------------------ new TGUI below, edited from stacking machine (FINISH THIS LATER)
-/*
-/obj/machinery/mineral/processing_unit_console/Initialize()
-	. = ..()
-	machine = locate(/obj/machinery/mineral/stacking_machine, get_step(src, machinedir))
-	if (machine)
-		machine.CONSOLE = src
-
-/obj/machinery/mineral/processing_unit_console/multitool_act(mob/living/user, obj/item/I)
-	if(!multitool_check_buffer(user, I))
-		return
-	var/obj/item/multitool/M = I
-	M.buffer = src
-	to_chat(user, "<span class='notice'>You store linkage information in [I]'s buffer.</span>")
-	return TRUE
-
-/obj/machinery/mineral/processing_unit_console/ui_interact(mob/user, datum/tgui/ui)
-	ui = SStgui.try_update_ui(user, src, ui)
-	if(!ui)
-		ui = new(user, src, "ProcessingConsole", name)
-		ui.open()
-
-/obj/machinery/mineral/processing_unit_console/ui_data(mob/user) //COME BACK TO THIS, UGH
-	var/list/data = list()
-	data["machine"] = machine ? TRUE : FALSE
-	data["stacking_amount"] = null
-	data["contents"] = list()
-	if(machine)
-		data["material"] = machine.stack_amt
-		for(var/stack_type in machine.stack_list)
-			var/obj/item/stack/sheet/stored_sheet = machine.stack_list[stack_type]
-			if(stored_sheet.amount <= 0)
-				continue
-			data["contents"] += list(list(
-				"type" = stored_sheet.type,
-				"name" = capitalize(stored_sheet.name),
-				"amount" = stored_sheet.amount,
-			))
-	return data
-*/
 /**********************Mineral processing unit**************************/
 
 
@@ -193,7 +152,7 @@
 	if(istype(M))
 		if(istype(M.buffer, /obj/machinery/mineral/processing_unit_console))
 			CONSOLE = M.buffer
-			CONSOLE.machine = src //this is a problem line and i have no idea why.
+			CONSOLE.machine = src
 			to_chat(user, "<span class='notice'>You link [src] to the console in [M]'s buffer.</span>")
 			return TRUE
 
