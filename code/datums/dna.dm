@@ -302,9 +302,6 @@
 
 	if(!features["body_size"])
 		return
-	//doesn't apply the pref-based bodysize if the species doesn't support it. no more scrungle-birds
-	if(!("body_size" in species.default_features))
-		return
 
 	var/change_multiplier = desired_size / current_body_size
 	var/translate = ((change_multiplier-1) * 32) * 0.5
