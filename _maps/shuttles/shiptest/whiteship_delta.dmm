@@ -232,11 +232,18 @@
 /area/ship/engineering)
 "aD" = (
 /obj/machinery/light/small{
-	dir = 1
+	dir = 1;
+	pixel_x = -13
 	},
 /obj/structure/toilet{
-	dir = 8;
 	pixel_y = 8
+	},
+/obj/structure/mirror{
+	pixel_x = 25
+	},
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = 12
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/hallway/port)
@@ -2908,7 +2915,7 @@ SN
 SN
 "}
 (11,1,1) = {"
-am
+ae
 aD
 op
 oo
