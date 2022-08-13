@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/syndicate/captain
 	name = "syndicate leader headset"
-	desc = "A headset worn by officers of the various Syndicate splinters on the frontier. Protects ears from flashbangs."
+	desc = "A headset worn by officers of the various Syndicate splinters on the frontier."
 	command = TRUE
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 
