@@ -229,7 +229,7 @@
 			if(myseed.instability >= 40)
 				if(prob(myseed.instability))
 					hardmutate()
-			if(myseed.instability >= 20 )
+			if(myseed.instability >= 20)
 				if(prob(myseed.instability))
 					mutate()
 
@@ -347,7 +347,6 @@
 		to_chat(user, "<span class='warning'>It's filled with weeds!</span>")
 	if(pestlevel >= 5)
 		to_chat(user, "<span class='warning'>It's filled with tiny worms!</span>")
-	to_chat(user, "" )
 
 
 
@@ -426,7 +425,7 @@
 	TRAY_NAME_UPDATE
 
 /obj/machinery/hydroponics/proc/mutateweed() // If the weeds gets the mutagent instead. Mind you, this pretty much destroys the old plant
-	if( weedlevel > 5 )
+	if(weedlevel > 5)
 		if(myseed)
 			qdel(myseed)
 			myseed = null
@@ -473,7 +472,7 @@
 
 /obj/machinery/hydroponics/attackby(obj/item/O, mob/user, params)
 	//Called when mob user "attacks" it with object O
-	if(istype(O, /obj/item/reagent_containers) )  // Syringe stuff (and other reagent containers now too)
+	if(istype(O, /obj/item/reagent_containers))  // Syringe stuff (and other reagent containers now too)
 		var/obj/item/reagent_containers/reagent_source = O
 		lastuser = REF(user)
 

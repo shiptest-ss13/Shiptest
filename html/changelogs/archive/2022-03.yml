@@ -1,0 +1,128 @@
+2022-03-01:
+  retlaw34:
+  - imageadd: Stasis beds have been modified to match TG's
+2022-03-02:
+  Apogee-dev:
+  - rscadd: Added .45-70 ammunition and a Hunting Revolver to go with it.
+  - balance: Reduced damage of .357 and 7.62mm Nagant to 35 brute.
+  - tweak: Changed Nagant and Winchester to use single load instead of multiload.
+  Dimasw99:
+  - rscadd: Added Sugarcube Prison bus ship. The pill returns.
+  Phoaly:
+  - rscadd: Adds A new ruin to the Icemoon, the Bloody Hallow.
+  - code_imp: Adds areas and a datum for the Icecropolis (Bloody Hallow) map.
+  - refactor: Refactors a death proc making a specific set of doors open into a mapper
+      helper object anyone can use.
+  - tweak: tweaked icemoon ashdrake map to use keys and gates instead of door opening
+      code.
+  - rscadd: Adds new component file to the DME for the refactor to work.
+  retlaw34:
+  - bugfix: akm sprite fix and it shows in the suit storage slot now
+  - imageadd: new ak47 inhands/onmobs!
+  - rscadd: Limited use Emags
+  - rscadd: Donk co drip
+  - bugfix: blue wall locker now has the correct texture
+2022-03-05:
+  MarkSuckerberg:
+  - rscadd: Empty space docks now have four docking ports instead of two.
+  - admin: You can't just spawn in overmap objects like you used to be able to anymore.
+  - admin: Adds new verb, `View overmap` to view the entire overmap in a really basic
+      HTML window.
+  - code_imp: You no longer have to set launch_status on future ship map docking ports.
+  - rscdel: Removed autopilot console.
+  - rscdel: Mapvotes. They didn't work anyways.
+  - rscdel: Integrity. This was a bad system, it can be re-implemented in another
+      PR in a much better way.
+  - bugfix: Custom shuttles work again.
+  - bugfix: Ruin-loaded shuttles work again.
+  - refactor: Pretty much all of overmap code, for as smooth an experience yet.
+  - admin: The runtime viewer shouldn't hang the server for like 30 seconds anymore.
+2022-03-10:
+  Putnam3145:
+  - code_imp: Added an "open air" unit test that tests open air gas movement and reactions
+      (both uses the same system)
+2022-03-13:
+  Kapu1178:
+  - rscadd: Last Words are now displayed as screen text to nearby players.
+  - tweak: You can now "talk" while in Hard Crit
+  - tweak: Talking in hardcrit instantly kills you, but triggers Last Words.
+  MarkSuckerberg:
+  - bugfix: Zeroes no longer show up in the crew manifest for no reason.
+  retlaw34:
+  - bugfix: fixes the NT captain jumpskirt
+2022-03-17:
+  Kapu1178:
+  - rscadd: 'You can now pick body size for characters: short, normal or tall.'
+  atteria:
+  - rscdel: Removed the autodoc.
+  tetrazeta:
+  - rscadd: Adds uniforms for the GEC faction
+  tiramisuapimancer:
+  - bugfix: you can no longer make infinite cloth from ripping up an item of clothing
+      for more strips than it takes to craft it
+  - bugfix: spider meat bread slices are not invisible anymore
+2022-03-19:
+  Shadowtail117:
+  - rscdel: Captains no longer spawn with a dysfunctional station charter.
+2022-03-22:
+  DatBoiTim:
+  - rscdel: Removed Corporate Species
+  - rscdel: Removed Mushpeople
+2022-03-25:
+  Zevotech:
+  - bugfix: makes expulsion thrusters require fuel
+  someguyjust:
+  - rscadd: glow shrooms can now be grown from the random weeds on soil and the like!!
+  - rscadd: Tiki Mask is now selectable
+2022-03-26:
+  Apogee-dev:
+  - rscadd: Provided almost every ship with a starting budget in cash
+  - rscadd: Added selling pad, selling console, and express console boards to Bubble's
+      cargo bay.
+  - rscdel: Removed selling pads from every ship that has one, except the Luxembourg
+  - rscdel: Disabled selling pad and console blueprints on the tech web.
+  Azarak:
+  - bugfix: Prevents bluespace shelters deploying in illegal turfs
+  MarkSuckerberg:
+  - bugfix: A few minor runtimes.
+  francinum:
+  - bugfix: How much gear you have equipped is checked on load, and your list dumped
+      if you're over capacity.
+  retlaw34:
+  - refactor: how marine vendors are organized
+  - rscadd: Adds a new NT marine vendor
+  - rscadd: Adds a indie marine vendor
+  - rscadd: New NT marine armor, kept indie in case indies want to use it
+  - rscadd: Deployable component
+  - rscdel: Removes vector from the sectech
+  - rscdel: Old mining vendor
+  - tweak: Replaces all instances of the old mining vendor with the new one
+2022-03-27:
+  Azarak:
+  - bugfix: Teleport procs now properly respect virtual levels
+2022-03-28:
+  tiramisuapimancer:
+  - rscadd: slimegirl trafficking poster
+2022-03-29:
+  Azlan, AdipemDragon, retlaw34:
+  - imageadd: A bunch of stack items, mostly related to materials have been redone.
+  MarkSuckerberg:
+  - tweak: Credits now go by ship instead of by department.
+  - bugfix: Credits might work a bit better?
+  someguyjust:
+  - tweak: fixes toes poking through the boots
+2022-03-30:
+  PositiveEntropy:
+  - imageadd: resprite the toolboxes
+  PositiveEntropy, Meyhazah, PacifistDalek:
+  - imageadd: fire extinguishers redone
+  retlaw34:
+  - admin: Adds logging to the trabuco shotgun, or the brazil gun as it's better known
+      as
+2022-03-31:
+  disappointedButNotSuprised:
+  - bugfix: fixes the ashwalker shrine ruin not spawning
+  - bugfix: Cricket-class comms fixed, will now work from the beginning
+  mc_meiler:
+  - tweak: Augment manipulators are deconstructable
+  - rscadd: Added augment manipulator circuit boards to default technologies

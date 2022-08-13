@@ -62,7 +62,7 @@
 	else if(istype(W, /obj/item/holochip))
 		var/obj/item/holochip/H = W
 		value = H.credits
-	if(value)
+	if(value && charge_account)
 		charge_account.adjust_money(value)
 		to_chat(user, "<span class='notice'>You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr.</span>")
 		qdel(W)
@@ -116,7 +116,7 @@
 	data["maxMissions"] = ship ? ship.max_missions : 0
 	data["outpostDocked"] = outpost_docked
 	data["points"] = charge_account ? charge_account.account_balance : 0
-	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access( user )
+	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
 	data["beaconzone"] = beacon ? get_area(beacon) : ""//where is the beacon located? outputs in the tgui
 	data["usingBeacon"] = use_beacon //is the mode set to deliver to the beacon or the cargobay?
 	data["canBeacon"] = !use_beacon || canBeacon //is the mode set to beacon delivery, and is the beacon in a valid location?

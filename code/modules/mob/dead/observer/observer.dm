@@ -214,7 +214,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		updatedir = 1
 	else
 		updatedir = 0	//stop updating the dir in case we want to show accessories with dirs on a ghost sprite without dirs
-		setDir(2 		)//reset the dir to its default so the sprites all properly align up
+		setDir(2)//reset the dir to its default so the sprites all properly align up
 
 	if(ghost_accs == GHOST_ACCS_FULL && (icon_state in GLOB.ghost_forms_with_accessories_list)) //check if this form supports accessories and if the client wants to show them
 		var/datum/sprite_accessory/S
@@ -293,7 +293,7 @@ Works together with spawning an observer, noted above.
 			SStgui.on_transfer(src, ghost) // Transfer NanoUIs.
 			ghost.can_reenter_corpse = can_reenter_corpse
 			ghost.key = key
-			ghost.client.init_verbs()
+			ghost.client?.init_verbs()
 			// this should probably come before the key change? unsure
 			if(!can_reenter_corpse)	// Disassociates observer mind from the body mind
 				ghost.mind = null
@@ -681,7 +681,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/MouseDrop(atom/over)
 	if(!usr || !over)
 		return
-	if (isobserver(usr) && usr.client.holder && (isliving(over) || iscameramob(over)) )
+	if (isobserver(usr) && usr.client.holder && (isliving(over) || iscameramob(over)))
 		if (usr.client.holder.cmd_ghost_drag(src,over))
 			return
 
@@ -880,7 +880,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/dead/observer/CtrlShiftClick(mob/user)
 	if(isobserver(user) && check_rights(R_SPAWN))
-		change_mob_type( /mob/living/carbon/human , null, null, TRUE) //always delmob, ghosts shouldn't be left lingering
+		change_mob_type(/mob/living/carbon/human , null, null, TRUE) //always delmob, ghosts shouldn't be left lingering
 
 /mob/dead/observer/examine(mob/user)
 	. = ..()
@@ -933,7 +933,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	var/list/t_ray_images = list()
 	var/static/list/stored_t_ray_images = list()
-	for(var/obj/O in orange(client.view, src) )
+	for(var/obj/O in orange(client.view, src))
 
 		if(HAS_TRAIT(O, TRAIT_T_RAY_VISIBLE))
 			var/image/I = new(loc = get_turf(O))

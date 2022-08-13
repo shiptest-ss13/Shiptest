@@ -53,7 +53,7 @@
 		return
 	over_obj = locate(objective_type) in SSovermap.overmap_container[ship.x][ship.y]
 	scanner_port = SSshuttle.get_containing_shuttle(scanner)
-	if(!over_obj || !scanner.is_operational() || scanner_port?.current_ship != servant)
+	if(!over_obj || !scanner.is_operational || scanner_port?.current_ship != servant)
 		return
 	num_current++
 
@@ -89,9 +89,6 @@
 	idle_power_usage = 400
 	processing_flags = START_PROCESSING_MANUALLY
 
-/obj/machinery/mission_scanner/is_operational()
-	return ..() && anchored
-
 /obj/machinery/mission_scanner/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(!. && default_unfasten_wrench(user, I))
@@ -103,16 +100,18 @@
 		return
 	density = anchorvalue
 	if(anchorvalue)
+		set_is_operational(TRUE)
 		START_PROCESSING(SSmachines, src)
 		use_power = IDLE_POWER_USE
 	else
+		set_is_operational(FALSE)
 		STOP_PROCESSING(SSmachines, src)
 		use_power = NO_POWER_USE
 	power_change() // calls update_icon(), makes sure we're powered
 
 /obj/machinery/mission_scanner/update_icon_state()
 	. = ..()
-	if(is_operational())
+	if(is_operational)
 		icon_state = "scanner_power"
 	else if(anchored)
 		icon_state = "scanner_depower"

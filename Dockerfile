@@ -30,7 +30,7 @@ RUN git init \
 # Build auxmos
 FROM rust-build as auxmos
 RUN git init \
-    && git remote add origin https://github.com/jupyterkat/auxmos \
+    && git remote add origin https://github.com/Putnam3145/auxmos \
     && /bin/bash -c "source dependencies.sh \
     && git fetch --depth 1 origin \$AUXMOS_VERSION" \
     && git checkout FETCH_HEAD \
