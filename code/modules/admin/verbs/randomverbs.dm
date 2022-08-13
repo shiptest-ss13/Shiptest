@@ -158,7 +158,7 @@
 
 	var/msg = input("Message:", text("Enter the text you wish to appear to your target:")) as text|null
 
-	if( !msg )
+	if(!msg)
 		return
 
 	to_chat(M, msg, confidential = TRUE)

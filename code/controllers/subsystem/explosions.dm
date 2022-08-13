@@ -72,7 +72,7 @@ SUBSYSTEM_DEF(explosions)
 #define SSEX_OBJ "obj"
 
 /datum/controller/subsystem/explosions/proc/is_exploding()
-	return (lowturf.len || medturf.len || highturf.len || flameturf.len || throwturf.len || lowobj.len || medobj.len || highobj.len)
+	return (length(lowturf) || length(medturf) || length(highturf) || length(flameturf) || length(throwturf) || length(lowobj) || length(medobj) || length(highobj))
 
 
 /client/proc/check_bomb_impacts()
@@ -408,7 +408,7 @@ SUBSYSTEM_DEF(explosions)
 	var/c_dist = 1
 	L += t_center
 
-	while( c_dist <= dist )
+	while(c_dist <= dist)
 		y = t_center.y + c_dist
 		x = t_center.x - c_dist + 1
 		for(x in x to t_center.x+c_dist)
@@ -509,27 +509,24 @@ SUBSYSTEM_DEF(explosions)
 		timer = TICK_USAGE_REAL
 		var/list/high_obj = highobj
 		highobj = list()
-		for(var/thing in high_obj)
-			if(thing)
-				var/obj/O = thing
+		for(var/obj/O as anything in high_obj)
+			if(!QDELETED(O))
 				O.ex_act(EXPLODE_DEVASTATE)
 		cost_highobj = MC_AVERAGE(cost_highobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
 		var/list/med_obj = medobj
 		medobj = list()
-		for(var/thing in med_obj)
-			if(thing)
-				var/obj/O = thing
+		for(var/obj/O as anything in med_obj)
+			if(!QDELETED(O))
 				O.ex_act(EXPLODE_HEAVY)
 		cost_medobj = MC_AVERAGE(cost_medobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
 		timer = TICK_USAGE_REAL
 		var/list/low_obj = lowobj
 		lowobj = list()
-		for(var/thing in low_obj)
-			if(thing)
-				var/obj/O = thing
+		for(var/obj/O as anything in low_obj)
+			if(!QDELETED(O))
 				O.ex_act(EXPLODE_LIGHT)
 		cost_lowobj = MC_AVERAGE(cost_lowobj, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 
