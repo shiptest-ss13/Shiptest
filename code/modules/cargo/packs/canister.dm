@@ -21,7 +21,7 @@
 	crate_name = "oxygen canister crate"
 
 /datum/supply_pack/canister/air
-	name = "Oxygen Canister"
+	name = "Air Canister"
 	desc = "Contains a canister of pre-mixed air. Those rooms won't repressurize themselves..."
 	cost = 1000
 	contains = list(/obj/machinery/portable_atmospherics/canister/air)
