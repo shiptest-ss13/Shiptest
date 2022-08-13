@@ -264,8 +264,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		var/target_owner = (inserted_modify_id && inserted_modify_id.registered_name) ? html_encode(inserted_modify_id.registered_name) : "--------"
 		var/target_rank = (inserted_modify_id && inserted_modify_id.assignment) ? html_encode(inserted_modify_id.assignment) : "Unassigned"
 		var/target_age = (inserted_modify_id && inserted_modify_id.registered_age) ? html_encode(inserted_modify_id.registered_age) : "--------"
-		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
-		var/target_ship_access = ( inserted_modify_id && inserted_modify_id.has_ship_access( ship ) )
+		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
+		var/target_ship_access = (inserted_modify_id && inserted_modify_id.has_ship_access(ship))
 
 		if(!authenticated)
 			header += {"<br><i>Please insert the cards into the slots</i><br>
@@ -404,7 +404,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					inserted_scan_id = id_to_insert
 					updateUsrDialog()
 		if ("auth")
-			if ((!( authenticated ) && (inserted_scan_id || issilicon(usr)) || mode))
+			if ((!(authenticated) && (inserted_scan_id || issilicon(usr)) || mode))
 				if (check_access(inserted_scan_id))
 					region_access = list()
 					if(ACCESS_CHANGE_IDS in inserted_scan_id.access)
@@ -429,7 +429,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 							region_access |= 5
 						if(region_access)
 							authenticated = AUTHENTICATED_DEPARTMENT
-			else if ((!( authenticated ) && issilicon(usr)) && (!inserted_modify_id))
+			else if ((!(authenticated) && issilicon(usr)) && (!inserted_modify_id))
 				to_chat(usr, "<span class='warning'>You can't modify an ID without an ID inserted to modify! Once one is in the modify slot on the computer, you can log in.</span>")
 		if ("logout")
 			region_access = null
@@ -448,26 +448,26 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						playsound(src, "terminal_type", 50, FALSE)
 		if ( "toggle_id_ship_access" )
 			if (authenticated == AUTHENTICATED_ALL)
-				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
-				if ( inserted_modify_id.has_ship_access( ship ) )
-					inserted_modify_id.remove_ship_access( ship )
+				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
+				if (inserted_modify_id.has_ship_access(ship))
+					inserted_modify_id.remove_ship_access(ship)
 				else
-					inserted_modify_id.add_ship_access( ship )
+					inserted_modify_id.add_ship_access(ship)
 				playsound(src, "terminal_type", 50, FALSE)
 
 		if ( "toggle_unique_ship_access" )
 			if (authenticated == AUTHENTICATED_ALL)
-				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
 				ship.unique_ship_access = !ship.unique_ship_access
 				playsound(src, "terminal_type", 50, FALSE)
 
 		if ( "print_silicon_access_chip" )
-			if ( authenticated == AUTHENTICATED_ALL )
+			if (authenticated == AUTHENTICATED_ALL)
 				if(!COOLDOWN_FINISHED(src, silicon_access_print_cooldown))
 					say("Printer unavailable. Please allow a short time before attempting to print.")
 					return
-				var/obj/item/borg/upgrade/ship_access_chip/chip = new( get_turf( src ) )
-				chip.ship = SSshuttle.get_ship( src )
+				var/obj/item/borg/upgrade/ship_access_chip/chip = new(get_turf(src))
+				chip.ship = SSshuttle.get_ship(src)
 				playsound(src, "terminal_type", 50, FALSE)
 				COOLDOWN_START(src, silicon_access_print_cooldown, 10 SECONDS)
 
@@ -497,7 +497,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					if(inserted_modify_id.registered_account)
 						inserted_modify_id.registered_account.account_job = jobdatum // this is a terrible idea and people will grief but sure whatever
 
-					inserted_modify_id.access = ( istype(src, /obj/machinery/computer/card/centcom) ? get_centcom_access(t1) : jobdatum.get_access() )
+					inserted_modify_id.access = (istype(src, /obj/machinery/computer/card/centcom) ? get_centcom_access(t1) : jobdatum.get_access())
 				if (inserted_modify_id)
 					inserted_modify_id.assignment = t1
 					playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
@@ -592,10 +592,10 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 		if ("print")
-			if (!( printing ))
+			if (!(printing))
 				printing = 1
 				sleep(50)
-				var/obj/item/paper/P = new /obj/item/paper( loc )
+				var/obj/item/paper/P = new /obj/item/paper(loc)
 				var/t1 = "<B>Crew Manifest:</B><BR>"
 				for(var/datum/data/record/t in sortRecord(GLOB.data_core.general))
 					t1 += t.fields["name"] + " - " + t.fields["rank"] + "<br>"

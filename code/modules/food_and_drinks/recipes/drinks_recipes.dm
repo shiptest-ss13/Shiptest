@@ -44,6 +44,10 @@
 	required_reagents = list(/datum/reagent/consumable/flour = 10)
 	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
 
+/datum/chemical_reaction/lightbeer
+	results = list(/datum/reagent/consumable/ethanol/beer/light = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/beer = 1, /datum/reagent/water = 4) //fifth of the boozepower, so light beer is one parts beer and four parts water
+
 /datum/chemical_reaction/vodka
 	results = list(/datum/reagent/consumable/ethanol/vodka = 10)
 	required_reagents = list(/datum/reagent/consumable/potato_juice = 10)
@@ -441,7 +445,7 @@
 
 /datum/chemical_reaction/stinger
 	results = list(/datum/reagent/consumable/ethanol/stinger = 15)
-	required_reagents = list(/datum/reagent/consumable/ethanol/cognac = 10, /datum/reagent/consumable/ethanol/creme_de_menthe = 5 )
+	required_reagents = list(/datum/reagent/consumable/ethanol/cognac = 10, /datum/reagent/consumable/ethanol/creme_de_menthe = 5)
 
 /datum/chemical_reaction/quintuplesec
 	results = list(/datum/reagent/consumable/ethanol/quintuple_sec = 15)
