@@ -743,3 +743,13 @@
 	build_path = /obj/item/ammo_box/a357
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
+
+/datum/design/nagantrifle
+	name = "Nagant Rifle"
+	desc = "An old model of rifle. Uses 7.62."
+	id = "nagantrifle"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 85000, /datum/material/glass = 1500, /datum/material/silver = 1500)
+	build_path = /obj/item/gun/ballistic/rifle/boltaction
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS

@@ -277,7 +277,7 @@
 /turf/closed/wall,
 /area/ship/engineering)
 "fv" = (
-/obj/structure/tank_dispenser/oxygen,
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "fz" = (
@@ -445,6 +445,12 @@
 /obj/item/shovel,
 /obj/item/seeds/carrot,
 /obj/item/seeds/carrot,
+/obj/item/seeds/lavaland/whitesands/puce,
+/obj/item/seeds/lavaland/whitesands/puce,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/roumain)
 "hT" = (
@@ -1051,6 +1057,7 @@
 /area/ship/crew/toilet)
 "sb" = (
 /obj/effect/turf_decal/industrial/warning,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "sm" = (
@@ -1336,10 +1343,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yp" = (
-/obj/structure/reagent_dispensers/fueltank,
 /obj/structure/cable/orange{
 	icon_state = "4-6"
 	},
+/obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "yq" = (
@@ -1806,7 +1813,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "EN" = (
-/obj/item/storage/box/donkpockets/donkpocketgondola,
+/obj/item/reagent_containers/glass/bottle/diethylamine,
+/obj/item/reagent_containers/glass/bottle/diethylamine,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/construction)
 "EO" = (
@@ -2374,7 +2382,6 @@
 "NV" = (
 /obj/item/reagent_containers/glass/bottle/mutagen,
 /obj/item/reagent_containers/glass/bottle/mutagen,
-/obj/item/reagent_containers/glass/bottle/diethylamine,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/construction)
 "NX" = (
@@ -2516,11 +2523,11 @@
 	},
 /obj/item/circuitboard/machine/rdserver,
 /obj/item/circuitboard/machine/autolathe,
-/obj/item/circuitboard/computer/research,
 /obj/item/disk/design_disk/ammo_n762,
 /obj/item/disk/design_disk/ammo_38_hunting,
 /obj/item/disk/design_disk/ammo_1911,
 /obj/item/circuitboard/machine/protolathe/department/ballistics,
+/obj/item/circuitboard/computer/rdconsole,
 /turf/open/floor/wood/maple,
 /area/ship/construction)
 "RF" = (

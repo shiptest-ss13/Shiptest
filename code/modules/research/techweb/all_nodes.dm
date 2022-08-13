@@ -804,7 +804,7 @@
 	display_name = "Saint-Roumain Specialty Ballistics"
 	description = "Specialty ballistics normally manufactured by the Saint-Roumain Militia."
 	prereq_ids = list("srm_ballistics", "srm_pistols")
-	design_ids = list("srmrevolver", "m1911", "stripper762")
+	design_ids = list("srmrevolver", "m1911", "stripper762", "nagantrifle")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12000)
 	export_price = 5000
 
