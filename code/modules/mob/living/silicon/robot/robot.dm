@@ -157,7 +157,7 @@
 		mmi.brainmob.container = mmi
 		mmi.update_icon()
 
-	updatename()
+	INVOKE_ASYNC(src, .proc/updatename)
 
 	playsound(loc, 'sound/voice/liveagain.ogg', 75, TRUE)
 	aicamera = new/obj/item/camera/siliconcam/robot_camera(src)
@@ -921,7 +921,7 @@
 	hat_offset = module.hat_offset
 
 	magpulse = module.magpulsing
-	updatename()
+	INVOKE_ASYNC(src, .proc/updatename)
 
 
 /mob/living/silicon/robot/proc/place_on_head(obj/item/new_hat)
@@ -1151,7 +1151,7 @@
 	if(stat == DEAD) //Dead borgs log no longer
 		return
 	if(!modularInterface)
-		stack_trace("Cyborg [src] ( [type] ) was somehow missing their integrated tablet. Please make a bug report.")
+		stack_trace("Cyborg [src] ([type]) was somehow missing their integrated tablet. Please make a bug report.")
 		create_modularInterface()
 	modularInterface.borglog += "[station_time_timestamp()] - [string]"
 	var/datum/computer_file/program/robotact/program = modularInterface.get_robotact()

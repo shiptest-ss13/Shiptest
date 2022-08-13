@@ -189,7 +189,7 @@
 	var/random_icon = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/Initialize()
-	..()
+	. = ..()
 	var/picked = pick("none","red","purple","yellow","green","dark")
 	if(random_icon)
 		if(picked == "none")
