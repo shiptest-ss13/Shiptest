@@ -29,7 +29,7 @@ standards:
     - exactly: [1, "/area text paths", '"/area']
     - exactly: [17, "/datum text paths", '"/datum']
     - exactly: [4, "/mob text paths", '"/mob']
-    - exactly: [56, "/obj text paths", '"/obj']
+    - exactly: [53, "/obj text paths", '"/obj']
     - exactly: [0, "/turf text paths", '"/turf']
     - exactly: [120, "text2path uses", "text2path"]
 
@@ -38,13 +38,14 @@ standards:
 
     - exactly:
           [
-              292,
+              291,
               "non-bitwise << uses",
               '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)',
           ]
     - exactly: [0, "incorrect indentations", '^(?:  +)(?!\*)']
     - exactly: [0, "superflous whitespace", '[ \t]+$']
     - exactly: [12, "mixed indentation", '^( +\t+|\t+ +)']
+    - exactly: [21, 'padding inside parentheses', '\(([\t ]+([^)"\n\\]*)|([^("\n]+)[\t ]+)\)']
 
     - no_more:
           [
