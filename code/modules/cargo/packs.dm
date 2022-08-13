@@ -31,5 +31,3 @@
 	else
 		for(var/item in contains)
 			new item(C)
-<<<<<<< HEAD
-=======

@@ -100,8 +100,8 @@
 	name = "WT-550 Auto Rifle Crate"
 	desc = "Contains two high-powered, semiautomatic rifles chambered in 4.6x30mm."
 	cost = 11000
-	contains = list(/obj/item/gun/ballistic/automatic/wt550,
-					/obj/item/gun/ballistic/automatic/wt550)
+	contains = list(/obj/item/gun/ballistic/automatic/smg/wt550,
+					/obj/item/gun/ballistic/automatic/smg/wt550)
 	crate_name = "auto rifle crate"
 
 /*
