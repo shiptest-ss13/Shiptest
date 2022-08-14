@@ -203,6 +203,13 @@
 			)
 		.["engineInfo"] += list(engine_data)
 
+/obj/machinery/computer/helm/ui_status(mob/user)
+	if(current_ship?.interdictor)
+		return UI_DISABLED
+	if(current_ship?.helm_locked)
+		return UI_UPDATE
+	return ..()
+
 /obj/machinery/computer/helm/ui_static_data(mob/user)
 	. = list()
 	.["isViewer"] = viewer || (!allow_ai_control && issilicon(user))
