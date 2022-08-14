@@ -10,9 +10,10 @@
 	parent_ref = WEAKREF(parent)
 
 /datum/research_web/integrated/Destroy(force, ...)
-	var/parent = parent_ref.resolve()
+	var/parent = parent_ref?.resolve()
 	if(parent)
 		UnregisterSignal(parent, COMSIG_ATOM_EMAG_ACT)
+	parent_ref = null
 	return ..()
 
 /datum/research_web/integrated/initial_lists()
