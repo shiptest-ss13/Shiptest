@@ -120,16 +120,16 @@
 	interdicting = target
 	target.interdictor = src
 
-	var/their_speed = target.get_speed()
-	if(their_speed >= 20) // this is gonna hurt, you and me
+	var/speed_diff = abs(target.get_speed() - current_ship.get_speed())
+	if(speed_diff >= 20) // this is gonna hurt, you and me
 		if(tgui_alert(user, "Radars indicitate they are going very quickly. Are you sure you want to do this?", "Interdiction", list("Yes", "No"), 10 SECONDS) != "Yes")
 			interdicting = null
 			target.interdictor = null
 			return
 
 		var/heading = target.get_heading()
-		throw_ship_contents(target, heading, their_speed * SPEED_THROW_STRENGTH_MULT)
-		throw_ship_contents(current_ship, turn(heading, 180), their_speed * SPEED_THROW_STRENGTH_MULT)
+		throw_ship_contents(target, heading, speed_diff * SPEED_THROW_STRENGTH_MULT)
+		throw_ship_contents(current_ship, turn(heading, 180), speed_diff * SPEED_THROW_STRENGTH_MULT)
 
 	var/datum/overmap/dynamic/empty/point = new(list("x" = target_x, "y" = target_y))
 	if(!point)
