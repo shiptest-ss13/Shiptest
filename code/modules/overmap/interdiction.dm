@@ -95,14 +95,14 @@
 				break
 			var/c_x = target.x
 			var/c_y = target.y
-		if(dir & NORTH)
-			c_y++
-		if(dir & SOUTH)
-			c_y--
-		if(dir & EAST)
-			c_x++
-		if(dir & WEST)
-			c_x--
+			if(dir & NORTH)
+				c_y++
+			if(dir & SOUTH)
+				c_y--
+			if(dir & EAST)
+				c_x++
+			if(dir & WEST)
+				c_x--
 			var/list/overmap_square = SSovermap.overmap_container[c_x][c_y]
 			if(length(overmap_square))
 				continue
