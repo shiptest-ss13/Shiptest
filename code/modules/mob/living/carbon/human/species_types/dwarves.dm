@@ -152,12 +152,16 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 				if(last_alcohol_spam + 30 SECONDS < world.time)
 					to_chat(owner, pick("<span class='warning'>Your inner world's on fire.</span>", "<span class='warning'>Your heart's pounding out of your chest!</span>", "<span class='warning'>Your body can't take any more!.</span>"))
 					last_alcohol_spam = world.time
-			if(owner.bodytemperature >= 800)//so essentialy, yer fucked.
+			if(800 to INFINITY)//so essentialy, yer fucked.
 				owner.adjustFireLoss(5.5, 0)
 				owner.Jitter(5)
 				owner.blur_eyes(5)
 				if(last_alcohol_spam + 15 SECONDS < world.time)
 					to_chat(owner, pick("<span class='boldwarning'></b>it burns.</span>", "<span class='boldwarnin'>Everything's going dark...</span>", "<span class='boldwarning'>You can't imagine being warmer than this.</span>", "<span class='boldwarning'>Your blood is boiling in your veins.</span>"))
+					last_alcohol_spam = world.time
+			else
+				if(last_alcohol_spam + 90 SECONDS < world.time)
+					to_chat(owner, pick("<span class='notice'>Your blood is racing.</span>", "<span class='notice'>You're past the limit.</span>", "<span class='notice'>You feel alive!</span>"))
 					last_alcohol_spam = world.time
 	else
 		owner.clear_alert("overdorf")
