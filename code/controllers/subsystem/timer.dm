@@ -542,6 +542,8 @@ SUBSYSTEM_DEF(timer)
 	. = "ERROR"
 	if (callBack.object == GLOBAL_PROC)
 		. = "GLOBAL_PROC"
+	else if (!callBack.object) //TODO: Remove
+		CRASH("Null object in timer callback. Details - proc: [callBack.delegate] args: [callBack.arguments] usr: [callBack.user.resolve()]")
 	else
 		. = "[callBack.object.type]"
 
@@ -563,7 +565,7 @@ SUBSYSTEM_DEF(timer)
 
 	if (callback.object != GLOBAL_PROC && QDELETED(callback.object) && !QDESTROYING(callback.object))
 		stack_trace("addtimer called with a callback assigned to a qdeleted object. In the future such timers will not \
-			be supported and may refuse to run or run with a 0 wait")
+			be supported and may refuse to run or run with a 0 wait - proc: [callback.delegate], args: [json_encode(callback.arguments)] , usr: [callback.user.resolve()]")
 
 	wait = max(CEILING(wait, world.tick_lag), world.tick_lag)
 

@@ -9,7 +9,7 @@
 	CanAtmosPass = ATMOS_PASS_NO
 
 /obj/structure/spacepoddoor/Initialize()
-	..()
+	. = ..()
 	air_update_turf(1)
 
 /obj/structure/spacepoddoor/Destroy()

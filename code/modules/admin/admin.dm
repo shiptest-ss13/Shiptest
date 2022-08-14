@@ -255,7 +255,7 @@
 			dat+="<BR><HR><A href='?src=[REF(src)];[HrefToken()];ac_set_signature=1'>The newscaster recognises you as:<BR> <FONT COLOR='green'>[src.admin_signature]</FONT></A>"
 		if(1)
 			dat+= "Feed Channels<HR>"
-			if( !length(GLOB.news_network.network_channels) )
+			if(!length(GLOB.news_network.network_channels))
 				dat+="<I>No active channels found...</I>"
 			else
 				for(var/datum/newscaster/feed_channel/CHANNEL in GLOB.news_network.network_channels)
@@ -308,7 +308,7 @@
 				dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a Nanotrasen D-Notice.<BR>"
 				dat+="No further feed story additions are allowed while the D-Notice is in effect.</FONT><BR><BR>"
 			else
-				if( !length(src.admincaster_feed_channel.messages) )
+				if(!length(src.admincaster_feed_channel.messages))
 					dat+="<I>No feed messages found in channel...</I><BR>"
 				else
 					var/i = 0
@@ -352,7 +352,7 @@
 			dat+="<B>[src.admincaster_feed_channel.channel_name]: </B><FONT SIZE=1> created by: <FONT COLOR='maroon'>[src.admincaster_feed_channel.returnAuthor(-1)]</FONT> </FONT><BR>"
 			dat+="<FONT SIZE=2><A href='?src=[REF(src)];[HrefToken()];ac_censor_channel_author=[REF(src.admincaster_feed_channel)]'>[(src.admincaster_feed_channel.authorCensor) ? ("Undo Author censorship") : ("Censor channel Author")]</A></FONT><HR>"
 
-			if( !length(src.admincaster_feed_channel.messages) )
+			if(!length(src.admincaster_feed_channel.messages))
 				dat+="<I>No feed messages found in channel...</I><BR>"
 			else
 				for(var/datum/newscaster/feed_message/MESSAGE in src.admincaster_feed_channel.messages)
@@ -369,7 +369,7 @@
 				dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a Nanotrasen D-Notice.<BR>"
 				dat+="No further feed story additions are allowed while the D-Notice is in effect.</FONT><BR><BR>"
 			else
-				if( !length(src.admincaster_feed_channel.messages) )
+				if(!length(src.admincaster_feed_channel.messages))
 					dat+="<I>No feed messages found in channel...</I><BR>"
 				else
 					for(var/datum/newscaster/feed_message/MESSAGE in src.admincaster_feed_channel.messages)
@@ -633,8 +633,8 @@
 	set category = "Server"
 	set desc="People can't enter"
 	set name="Toggle Entering"
-	GLOB.enter_allowed = !( GLOB.enter_allowed )
-	if (!( GLOB.enter_allowed ))
+	GLOB.enter_allowed = !(GLOB.enter_allowed)
+	if (!(GLOB.enter_allowed))
 		to_chat(world, "<B>New players may no longer enter the game.</B>", confidential = TRUE)
 	else
 		to_chat(world, "<B>New players may now enter the game.</B>", confidential = TRUE)
@@ -813,7 +813,7 @@
 	set category = "Debug"
 	set desc="Reduces view range when wearing welding helmets"
 	set name="Toggle tinted welding helmes"
-	GLOB.tinted_weldhelh = !( GLOB.tinted_weldhelh )
+	GLOB.tinted_weldhelh = !(GLOB.tinted_weldhelh)
 	if (GLOB.tinted_weldhelh)
 		to_chat(world, "<B>The tinted_weldhelh has been enabled!</B>", confidential = TRUE)
 	else
