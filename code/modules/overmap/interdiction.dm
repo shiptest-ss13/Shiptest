@@ -143,8 +143,8 @@
 	end_timer = addtimer(CALLBACK(src, .proc/end_interdiction), 20 SECONDS, TIMER_STOPPABLE|TIMER_OVERRIDE|TIMER_UNIQUE)
 	say("Interdiction now in effect for 20 seconds. Dismantle or de-powerment of this console will cause an early release.")
 
-	for(var/obj/announce_target as anything in list(target.helms[1], current_ship.helms[1]))
-		priority_announce("Interdiction is now in effect on target \"[target]\"", "Interdiction Tether Launched", 'sound/misc/announce.ogg', "interdiction", "Interdiction ([current_ship])", zlevel=announce_target.virtual_z())
+	for(var/v_z as anything in list(target.shuttle_port.virtual_z(), current_ship.shuttle_port.virtual_z()))
+		priority_announce("Interdiction is now in effect on target \"[target]\"", "Interdiction Tether Launched", 'sound/misc/announce.ogg', "interdiction", "Interdiction ([current_ship])", zlevel=v_z)
 
 /obj/machinery/computer/interdiction/on_set_is_operational(old_value)
 	. = ..()
@@ -161,7 +161,7 @@
 	if(!interdicting)
 		return
 	QDEL_NULL(tether)
-	for(var/obj/announce_target as anything in list(interdicting.helms[1], current_ship.helms[1]))
-		priority_announce("Interdiction is no longer in effect on target \"[interdicting]\"", "Interdiction Tether Dissipated", 'sound/misc/announce.ogg', "interdiction", "Interdiction ([current_ship])", zlevel=announce_target.virtual_z())
+	for(var/v_z as anything in list(interdicting.shuttle_port.virtual_z(), current_ship.shuttle_port.virtual_z()))
+		priority_announce("Interdiction is no longer in effect on target \"[interdicting]\"", "Interdiction Tether Dissipated", 'sound/misc/announce.ogg', "interdiction", "Interdiction ([current_ship])", zlevel=v_z)
 	interdicting.interdictor = null
 	interdicting = null
