@@ -319,7 +319,8 @@
 	category = list("Computer Boards", "Shuttle Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
-/datum/design/board/interdiction
+// NOT A SUBTYPE OF BOARD BECAUSE IMPRINTERS ARE STUPID
+/datum/design/interdiction_board
 	name = "Computer Design (Interdiction Control)"
 	desc = "Allows for the construction of circuit boards used to interdict other spacecraft."
 	id = "shuttle_interdict"
