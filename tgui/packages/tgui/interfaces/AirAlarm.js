@@ -1,7 +1,7 @@
 import { toFixed } from 'common/math';
 import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, LabeledList, Section } from '../components';
+import { Box, Button, LabeledList, Section, NumberInput } from '../components';
 import { Window } from '../layouts';
 import { Scrubber, Vent } from './common/AtmosControls';
 import { InterfaceLockNoticeBox } from './common/InterfaceLockNoticeBox';
@@ -14,6 +14,7 @@ export const AirAlarm = (props, context) => {
       <Window.Content scrollable>
         <InterfaceLockNoticeBox />
         <AirAlarmStatus />
+        {!locked && <AirAlarmHeatingControls />}
         {!locked && <AirAlarmControl />}
       </Window.Content>
     </Window>
@@ -68,6 +69,18 @@ const AirAlarmStatus = (props, context) => {
               {(data.atmos_alarm && 'Atmosphere Alarm') ||
                 (data.fire_alarm && 'Fire Alarm') ||
                 'Nominal'}
+            </LabeledList.Item>
+            <LabeledList.Item
+              label="Heating Status"
+              color={
+                data.heating.mode === 'Heat'
+                  ? 'average'
+                  : !data.heating.mode
+                  ? 'gray'
+                  : 'good'
+              }
+            >
+              {data.heating.enabled ? data.heating.mode : 'Disabled'}
             </LabeledList.Item>
           </>
         )) || (
@@ -271,5 +284,36 @@ const AirAlarmControlThresholds = (props, context) => {
         ))}
       </tbody>
     </table>
+  );
+};
+
+// Heating
+// --------------------------------------------------------
+
+const AirAlarmHeatingControls = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { enabled, setPoint, maxValue, minValue } = data.heating;
+  return (
+    <Section title="Comfort Controls">
+      <Box mt={1} />
+      <LabeledList>
+        <LabeledList.Item label={'Setpoint'}>
+          <NumberInput
+            value={setPoint}
+            minValue={minValue}
+            maxValue={maxValue}
+            onChange={(e, value) => act('heat_setpoint', { setPoint: value })}
+            unit="K"
+            tooltip="Change the Setpoint of the heater"
+          />
+          <Button
+            icon="fire"
+            content="Toggle Heating"
+            color={enabled ? 'good' : 'average'}
+            onClick={() => act('heat_mode')}
+          />
+        </LabeledList.Item>
+      </LabeledList>
+    </Section>
   );
 };
