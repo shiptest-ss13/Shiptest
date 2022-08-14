@@ -138,8 +138,22 @@
 
 	point.name = "Interdiction Point"
 	point.token.icon_state = "interdiction"
-	target.Dock(point, force=TRUE)
 	tether = point.token.Beam(current_ship.token, time=INFINITY, maxdistance=50)
+
+	// set the icon_state to null to make it appear more responsive to both parties, Dock takes a while to return
+	var/old_icon_state = target.token.icon_state
+	target.token.icon_state = null
+	try
+		target.Dock(point, force=TRUE)
+	catch
+		message_admins("Failed to dock for an interdiction! Originator: [ADMIN_FLW(user)]")
+		target.token.icon_state = old_icon_state
+		target.interdictor = null
+		target = null
+		return
+	target.token.icon_state = old_icon_state
+	// ensure we set the original icon_state back at the end, dont want the ship staying invisible
+
 	end_timer = addtimer(CALLBACK(src, .proc/end_interdiction), 20 SECONDS, TIMER_STOPPABLE|TIMER_OVERRIDE|TIMER_UNIQUE)
 	say("Interdiction now in effect for 20 seconds. Dismantle or de-powerment of this console will cause an early release.")
 
