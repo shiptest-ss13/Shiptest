@@ -159,10 +159,10 @@
 	for(var/obj/announce_target as anything in list(target.helms[1], current_ship.helms[1]))
 		priority_announce("Interdiction is now in effect on target \"[target]\"", "Interdiction Tether Launched", 'sound/misc/announce.ogg', "interdiction", "Interdiction ([current_ship])", zlevel=announce_target.virtual_z())
 
-/obj/machinery/computer/interdiction/power_change()
-	if(!is_operational())
+/obj/machinery/computer/interdiction/on_set_is_operational(old_value)
+	. = ..()
+	if(!is_operational)
 		end_interdiction()
-	return ..()
 
 /obj/machinery/computer/interdiction/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
