@@ -95,7 +95,10 @@
 
 /obj/machinery/computer/helm/proc/do_jump()
 	priority_announce("Bluespace Jump Initiated.", sender_override="[current_ship.name] Bluespace Pylon", sound='sound/magic/lightningbolt.ogg', zlevel=virtual_z())
-	current_ship.shuttle_port.intoTheSunset()
+	if(current_ship)
+		qdel(current_ship)
+	else
+		current_ship.shuttle_port.intoTheSunset()
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	if(current_ship && current_ship != port.current_ship)
@@ -115,8 +118,13 @@
 		current_ship.helms |= src
 
 /obj/machinery/computer/helm/ui_interact(mob/living/user, datum/tgui/ui)
+	user.changeNext_move(CLICK_CD_RAPID)
 	// Update UI
 	if(!current_ship && !reload_ship())
+		return
+
+	if(current_ship.interdictor)
+		say("Interdiction in effect.")
 		return
 
 	if(isliving(user) && !viewer && check_keylock())
@@ -219,6 +227,10 @@
 	if(check_keylock())
 		return
 	. = TRUE
+
+	if(current_ship.interdictor)
+		say("Unable to communication with Ship Mainframe; Interdiction is currently in effect!")
+		return FALSE
 
 	switch(action) // Universal topics
 		if("rename_ship")

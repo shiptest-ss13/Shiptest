@@ -68,11 +68,8 @@
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
-
-
-
-
-
+	/// The overmap object currently controlling this ship, this object should be checked before doing anything to the ship
+	var/interdictor
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
@@ -118,6 +115,7 @@
 
 /datum/overmap/ship/controlled/Destroy()
 	SSovermap.controlled_ships -= src
+	interdictor = null
 	if(!QDELETED(shuttle_port))
 		shuttle_port.intoTheSunset()
 	if(!QDELETED(ship_account))
