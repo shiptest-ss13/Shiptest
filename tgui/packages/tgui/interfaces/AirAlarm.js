@@ -14,9 +14,7 @@ export const AirAlarm = (props, context) => {
       <Window.Content scrollable>
         <InterfaceLockNoticeBox />
         <AirAlarmStatus />
-        {!locked && (
-          <AirAlarmHeatingControls />
-        )}
+        {!locked && <AirAlarmHeatingControls />}
         {!locked && <AirAlarmControl />}
       </Window.Content>
     </Window>
@@ -74,7 +72,14 @@ const AirAlarmStatus = (props, context) => {
             </LabeledList.Item>
             <LabeledList.Item
               label="Heating Status"
-              color={data.heating.mode === 'Heat' ? 'average' : !data.heating.mode ? 'gray' : 'good'}>
+              color={
+                data.heating.mode === 'Heat'
+                  ? 'average'
+                  : !data.heating.mode
+                  ? 'gray'
+                  : 'good'
+              }
+            >
               {data.heating.enabled ? data.heating.mode : 'Disabled'}
             </LabeledList.Item>
           </>
@@ -287,19 +292,12 @@ const AirAlarmControlThresholds = (props, context) => {
 
 const AirAlarmHeatingControls = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    enabled,
-    setPoint,
-    maxValue,
-    minValue,
-  } = data.heating;
+  const { enabled, setPoint, maxValue, minValue } = data.heating;
   return (
-    <Section
-      title="Comfort Controls"
-    >
+    <Section title="Comfort Controls">
       <Box mt={1} />
       <LabeledList>
-        <LabeledList.Item label={"Setpoint"}>
+        <LabeledList.Item label={'Setpoint'}>
           <NumberInput
             value={setPoint}
             minValue={minValue}
@@ -312,7 +310,8 @@ const AirAlarmHeatingControls = (props, context) => {
             icon="fire"
             content="Toggle Heating"
             color={enabled ? 'good' : 'average'}
-            onClick={() => act('heat_mode')} />
+            onClick={() => act('heat_mode')}
+          />
         </LabeledList.Item>
       </LabeledList>
     </Section>
