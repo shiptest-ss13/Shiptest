@@ -1,11 +1,11 @@
 #define SPEED_THROW_STRENGTH_MULT 0.5
 
 /obj/machinery/computer/interdiction
-	name = "interdiction management console"
+	name = "interdiction control"
 	desc = "Used to attempt interdiction on a nearby ship."
 	icon_screen = "navigation"
 	icon_keyboard = "tech_key"
-	// circuit = /obj/item/circuitboard/computer/interdiction
+	circuit = /obj/item/circuitboard/computer/interdiction
 	light_color = LIGHT_COLOR_FLARE
 	clicksound = null
 

@@ -1254,7 +1254,7 @@
 	display_name = "Experimental Shuttle Research"
 	description = "A bunch of engines and related shuttle parts that are likely not really that useful, but could be in strange situations."
 	prereq_ids = list("basic_shuttle")
-	design_ids = list("engine_expulsion")
+	design_ids = list("engine_expulsion", "shuttle_interdict")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 2500
 
