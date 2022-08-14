@@ -2,7 +2,7 @@
 
 /datum/language/dwarf
 	name = "Dwenmar"
-	desc = "A conlang forged by dwarves on their long journey to Helm. "
+	desc = "A conlang forged by dwarves for internal communication. Slowly transforming into a dead language. "
 	speech_verb = "bellows"
 	whisper_verb = "mutters"
 	sing_verb = "sings"
