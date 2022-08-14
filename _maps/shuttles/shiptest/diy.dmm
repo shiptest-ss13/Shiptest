@@ -56,11 +56,6 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
-/obj/structure/fireaxecabinet{
-	dir = 8;
-	pixel_x = 32;
-	name = "temporary shelter deconstructor cabinet"
-	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "gL" = (
@@ -300,6 +295,7 @@
 /obj/item/rcd_ammo/large,
 /obj/item/rcd_ammo/large,
 /obj/item/rcd_ammo/large,
+/obj/item/construction/rcd,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "Ct" = (
@@ -339,7 +335,7 @@
 /obj/item/circuitboard/machine/holopad,
 /obj/item/circuitboard/computer/cargo/express,
 /obj/item/stack/spacecash/c500{
-	amount = 5
+	amount = 15
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
@@ -584,6 +580,10 @@
 	dir = 8
 	},
 /obj/machinery/power/port_gen/pacman,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/structure/closet/crate/engineering/electrical{
+	name = "portable generator crate"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "VH" = (
