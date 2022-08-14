@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/russian
-	name = "Russian"
-	desc = "For the Motherland!"
+	name = "Frontiersman"
+	desc = "For the fleet!"
 	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "russianmelee"
 	icon_living = "russianmelee"
@@ -43,18 +43,53 @@
 
 
 /mob/living/simple_animal/hostile/russian/ranged/mosin
+	icon_state = "russianrangedrifle"
+	icon_living = "russianrangedrifle"
 	loot = list(/obj/effect/mob_spawn/human/corpse/russian/ranged,
 				/obj/item/gun/ballistic/rifle/boltaction)
 	casingtype = /obj/item/ammo_casing/a762
+	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 
 /mob/living/simple_animal/hostile/russian/ranged/trooper
 	icon_state = "russianrangedelite"
 	icon_living = "russianrangedelite"
-	maxHealth = 150
-	health = 150
+	maxHealth = 170
+	health = 170
+	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	loot = list(/obj/effect/mob_spawn/human/corpse/russian/ranged/trooper,
 				/obj/item/gun/ballistic/shotgun/lethal)
+
+/mob/living/simple_animal/hostile/russian/ranged/trooper/ak47
+	icon_state = "russianrangedak47"
+	icon_living = "russianrangedak47"
+	projectilesound = 'sound/weapons/gun/rifle/ak47.ogg'
+	rapid = 4
+	rapid_fire_delay = 3
+	casingtype = /obj/item/ammo_casing/a762_39
+	loot = list(/obj/effect/mob_spawn/human/corpse/russian/ranged/trooper,
+				/obj/item/gun/ballistic/automatic/assualt/ak47)
+
+/mob/living/simple_animal/hostile/russian/ranged/trooper/rifle
+	icon_state = "russianrangedmosin"
+	icon_living = "russianrangedmosin"
+
+	loot = list(/obj/effect/mob_spawn/human/corpse/russian/ranged/trooper,
+				/obj/item/gun/ballistic/rifle/boltaction)
+	casingtype = /obj/item/ammo_casing/a762
+	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
+
+/mob/living/simple_animal/hostile/russian/ranged/trooper/heavy
+	icon_state = "russianrangedminigun"
+	icon_living = "russianrangedminigun"
+	projectilesound = 'sound/weapons/laser4.ogg'
+	maxHealth = 260
+	health = 260
+	rapid = 6
+	rapid_fire_delay = 1.5
+	casingtype = null
+	projectiletype = /obj/projectile/beam/weak/penetrator
+	loot = list(/obj/effect/mob_spawn/human/corpse/russian/ranged/trooper/heavy)
 
 /mob/living/simple_animal/hostile/russian/ranged/officer
 	name = "Russian Officer"
@@ -70,4 +105,4 @@
 /mob/living/simple_animal/hostile/russian/ranged/officer/Aggro()
 	..()
 	summon_backup(15)
-	say("V BOJ!!")
+	say(pick("Help!!", "They're right here!!", "Don't let me die!!"))

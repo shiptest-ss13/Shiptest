@@ -440,3 +440,11 @@
 	icon_state = "scraparmor"
 	item_state = "scraparmor"
 	armor = list(melee = 5)
+
+/obj/item/clothing/suit/armor/frontier
+	name = "reinforced fur coat"
+	desc = "A coat made from hard leather. Once mass produced by the frontiersmen. This one is reinforced, probably was meant for officers."
+	icon_state = "frontier_coat"
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	heat_protection = CHEST|GROIN|ARMS

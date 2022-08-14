@@ -99,54 +99,53 @@
 
 
 /obj/effect/mob_spawn/human/corpse/russian
-	name = "Russian"
+	name = "Frontiersman"
 	outfit = /datum/outfit/russiancorpse
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
 
 /datum/outfit/russiancorpse
-	name = "Russian Corpse"
-	uniform = /obj/item/clothing/under/costume/soviet
+	name = "Frontiersman Corpse"
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/bearpelt
+	head = /obj/item/clothing/head/beret/sec/frontier
 	gloves = /obj/item/clothing/gloves/color/black
-	mask = /obj/item/clothing/mask/gas
-
-
 
 /obj/effect/mob_spawn/human/corpse/russian/ranged
-	outfit = /datum/outfit/russiancorpse/ranged
-
-/datum/outfit/russiancorpse/ranged
-	name = "Ranged Russian Corpse"
-	head = /obj/item/clothing/head/ushanka
-
+	outfit = /datum/outfit/russiancorpse
 
 /obj/effect/mob_spawn/human/corpse/russian/ranged/trooper
-	outfit = /datum/outfit/russiancorpse/ranged/trooper
+	outfit = /datum/outfit/russiancorpse/trooper
 
-/datum/outfit/russiancorpse/ranged/trooper
-	name = "Ranged Russian Trooper Corpse"
-	uniform = /obj/item/clothing/under/syndicate/camo
-	suit = /obj/item/clothing/suit/armor/bulletproof
+/datum/outfit/russiancorpse/trooper
+	name = "Frontiersman Armored Corpse"
+	suit = /obj/item/clothing/suit/armor/bulletproof/frontier
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	ears = /obj/item/radio/headset
-	head = /obj/item/clothing/head/helmet/alt
-	mask = /obj/item/clothing/mask/balaclava
+	head = /obj/item/clothing/head/helmet/x11/frontier
 
 
 /obj/effect/mob_spawn/human/corpse/russian/ranged/officer
-	name = "Russian Officer"
+	name = "Frontiersman Officer"
 	outfit = /datum/outfit/russiancorpse/officer
 
 /datum/outfit/russiancorpse/officer
-	name = "Russian Officer Corpse"
-	uniform = /obj/item/clothing/under/costume/russian_officer
-	suit = /obj/item/clothing/suit/security/officer/russian
+	name = "Frontiersman officer Corpse"
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
+	suit = /obj/item/clothing/suit/armor/frontier
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset
-	head = /obj/item/clothing/head/ushanka
+	head = /obj/item/clothing/head/caphat/frontier
+
+/obj/effect/mob_spawn/human/corpse/russian/ranged/trooper/heavy
+	outfit = /datum/outfit/russiancorpse/trooper/heavy
+
+/datum/outfit/russiancorpse/trooper/heavy
+	name = "Frontiersman Heavy Corpse"
+	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	head = /obj/item/clothing/head/beret/sec/frontier/officer
+	back = /obj/item/minigunpack
 
 
 /obj/effect/mob_spawn/human/corpse/wizard
