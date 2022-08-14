@@ -27,6 +27,7 @@
 	name = "warningr";
 	dir = 8
 	},
+/obj/item/gun/energy/laser/redtag,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "bu" = (
@@ -157,10 +158,11 @@
 /obj/item/flashlight/seclite,
 /obj/item/flashlight/seclite,
 /obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/clothing/suit/armor/vest/alt,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "fa" = (
@@ -170,6 +172,9 @@
 /obj/machinery/newscaster{
 	pixel_y = -30
 	},
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/firstaid/advanced,
+/obj/item/screwdriver,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "fe" = (
@@ -240,7 +245,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "gL" = (
 /turf/closed/wall/r_wall,
@@ -362,33 +367,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/gun/ballistic/automatic/smg/vector{
-	spawnwithmagazine = 0
-	},
-/obj/item/ammo_box/magazine/smgm9mm/rubbershot,
-/obj/item/ammo_box/magazine/smgm9mm/rubbershot,
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
-	},
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
 	icon_state = "sec_wall";
@@ -396,6 +374,24 @@
 	pixel_x = -28;
 	req_access_txt = "5"
 	},
+/obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/gun/ballistic/automatic/assualt/ak47/inteq,
+/obj/item/ammo_box/c45/rubbershot,
+/obj/item/ammo_box/c45/rubbershot,
+/obj/item/ammo_box/c45/rubbershot,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "kH" = (
@@ -405,6 +401,7 @@
 	},
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow,
+/obj/item/storage/box/inteqmaid,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "kR" = (
@@ -458,7 +455,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "lY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -507,7 +504,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "mO" = (
-/obj/machinery/computer/med_data,
+/obj/machinery/computer/secure_data,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "mP" = (
@@ -572,7 +569,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "oH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -583,7 +580,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "oQ" = (
 /obj/structure/table/reinforced,
@@ -603,6 +600,9 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/industrial/hatch/red,
+/obj/machinery/computer/secure_data/laptop{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "oS" = (
@@ -715,9 +715,6 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
-/obj/item/clothing/head/helmet/sec,
-/obj/item/clothing/head/helmet/sec,
-/obj/item/clothing/head/helmet/sec,
 /obj/structure/closet/secure_closet/wall{
 	dir = 8;
 	icon_state = "sec_wall";
@@ -725,6 +722,11 @@
 	pixel_x = 28;
 	req_access_txt = "5"
 	},
+/obj/item/clothing/head/helmet/inteq,
+/obj/item/clothing/head/helmet/inteq,
+/obj/item/clothing/head/helmet/inteq,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "sq" = (
@@ -792,7 +794,7 @@
 	dir = 4;
 	pixel_x = -25
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "tO" = (
 /obj/machinery/airalarm/all_access{
@@ -821,6 +823,13 @@
 /obj/item/storage/backpack/messenger/inteq,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/head/soft/inteq/corpsman,
+/obj/item/clothing/head/soft/inteq,
+/obj/item/clothing/under/syndicate/inteq/corpsman,
+/obj/item/clothing/under/syndicate/inteq/skirt/corpsman,
+/obj/item/clothing/under/syndicate/inteq/skirt/artificer,
+/obj/item/clothing/under/syndicate/inteq/artificer,
+/obj/item/clothing/suit/armor/inteq/corpsman,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "tT" = (
@@ -830,7 +839,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "tW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -866,9 +875,6 @@
 /obj/effect/turf_decal/industrial/hatch/red,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
-"ur" = (
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ship/hallway/aft)
 "uE" = (
 /obj/machinery/light,
 /obj/structure/window/reinforced/tinted/frosted{
@@ -880,13 +886,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "uW" = (
-/obj/structure/chair{
-	dir = 8
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 32
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "ve" = (
 /obj/structure/table/reinforced,
@@ -910,7 +914,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "vn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -991,7 +995,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "yi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1009,6 +1013,7 @@
 	dir = 8;
 	pixel_x = 25
 	},
+/obj/structure/closet/crate/secure/weapon,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "zo" = (
@@ -1253,6 +1258,7 @@
 	name = "warningr";
 	dir = 8
 	},
+/obj/item/gun/energy/laser/bluetag,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "Hl" = (
@@ -1315,13 +1321,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "Ja" = (
 /obj/structure/chair{
 	dir = 4
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "Je" = (
 /obj/machinery/power/terminal,
@@ -1437,6 +1443,7 @@
 	name = "warningr";
 	dir = 8
 	},
+/obj/item/gun/energy/laser/bluetag,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "Lh" = (
@@ -1561,6 +1568,24 @@
 	pixel_y = -28;
 	req_access_txt = "40"
 	},
+/obj/item/gun/ballistic/automatic/assualt/ak47/inteq,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/melee/baton/loaded,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/item/ammo_box/c45/surplus,
+/obj/item/ammo_box/c45/surplus,
+/obj/item/ammo_box/c45,
+/obj/item/ammo_box/c45,
+/obj/item/ammo_box/c45/ap,
+/obj/item/ammo_box/c45/ap,
+/obj/item/ammo_box/c45/hp,
+/obj/item/ammo_box/c45/hp,
+/obj/item/ammo_box/c45/fire,
+/obj/item/ammo_box/c45/surplus,
+/obj/item/ammo_box/c45/surplus,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "Ny" = (
@@ -1659,6 +1684,7 @@
 	name = "warningr";
 	dir = 8
 	},
+/obj/item/gun/energy/laser/redtag,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
 "PH" = (
@@ -1690,7 +1716,7 @@
 /area/ship/storage)
 "Qp" = (
 /obj/machinery/vending/snack/random,
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "Qq" = (
 /turf/closed/wall/r_wall,
@@ -1924,29 +1950,6 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "UX" = (
-/obj/item/gun/ballistic/automatic/smg/vector{
-	spawnwithmagazine = 0
-	},
-/obj/item/ammo_box/magazine/smgm9mm/rubbershot,
-/obj/item/ammo_box/magazine/smgm9mm/rubbershot,
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/ap;
-	name = "Commander magazine (AP 9mm)"
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/sign/poster/contraband/c20r{
 	pixel_y = 32
@@ -1958,10 +1961,24 @@
 	pixel_x = -28;
 	req_access_txt = "5"
 	},
-/obj/item/ammo_box/magazine/co9mm{
-	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot;
-	name = "Commander magazine (Rubbershot 9mm)"
-	},
+/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45/rubbershot,
+/obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m45,
+/obj/item/gun/ballistic/automatic/assualt/ak47/inteq,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/item/ammo_box/c45/rubbershot,
+/obj/item/ammo_box/c45/rubbershot,
+/obj/item/ammo_box/c45/rubbershot,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Vq" = (
@@ -2144,7 +2161,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "YK" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2179,7 +2196,7 @@
 	dir = 8;
 	pixel_x = 25
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 
 (1,1,1) = {"
@@ -2436,11 +2453,11 @@ YM
 EA
 Tq
 oQ
-ur
+HP
 nw
 xa
-ur
-ur
+HP
+HP
 gO
 "}
 (10,1,1) = {"
@@ -2465,11 +2482,11 @@ YK
 RW
 dH
 uq
-ur
+HP
 go
-ur
-ur
-ur
+HP
+HP
+HP
 BN
 "}
 (11,1,1) = {"
@@ -2497,8 +2514,8 @@ Vq
 oH
 lH
 IG
-ur
-ur
+HP
+HP
 gO
 "}
 (12,1,1) = {"
