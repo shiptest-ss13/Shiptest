@@ -24,6 +24,3 @@
 
 /datum/research_web/admin/finish_research_node(mob/user, obj/machinery/research_linked/machine, node_id)
 	return
-
-/datum/research_web/admin/calculate_node_unlocks(datum/research_node/node)
-	return

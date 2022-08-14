@@ -90,7 +90,7 @@ GLOBAL_VAR(test_log)
 			tests_to_run = list(test_to_run)
 			break
 
-	for(var/I in tests_to_run)
+	for(var/I in sortList(tests_to_run, /proc/cmp_path_asc))
 		var/datum/unit_test/test = new I
 
 		GLOB.current_test = test

@@ -18,9 +18,9 @@
 /datum/research_web/integrated/initial_lists()
 	var/types_without_emag = integrated_type & ~EMAG_DESIGN
 	for(var/datum/research_design/design as anything in SSresearch_v4.all_designs())
-		if(!(design.buildtype & types_without_emag))
+		if(!(design.flags_buildtype & types_without_emag))
 			continue
-		if(design.buildtype & EMAG_DESIGN)
+		if(design.flags_buildtype & EMAG_DESIGN)
 			emag_designs |= design.id
 		else
 			type_designs |= design.id
@@ -33,8 +33,6 @@
 	SIGNAL_HANDLER
 
 	designs_available |= emag_designs
-
-// technically these procs should never get called, but its better to be safe than sorry
 
 /datum/research_web/integrated/get_points(techtype)
 	return
@@ -49,7 +47,4 @@
 	return
 
 /datum/research_web/integrated/finish_research_node(mob/user, obj/machinery/research_linked/machine, node_id)
-	return
-
-/datum/research_web/integrated/calculate_node_unlocks(datum/research_node/node)
 	return

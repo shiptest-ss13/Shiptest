@@ -47,7 +47,7 @@
 /datum/research_web/proc/recalculate_available()
 	nodes_available.Cut()
 	for(var/datum/research_node/node as anything in SSresearch_v4.all_nodes())
-		calculate_node_unlocks(node)
+		update_node_unlocks(node)
 
 /datum/research_web/proc/initial_lists()
 	points_available = list()
@@ -124,12 +124,12 @@
 /datum/research_web/proc/finish_research_node(mob/user, obj/machinery/research_linked/machine, node_id)
 	var/datum/research_node/actual = SSresearch_v4.get_node(node_id)
 	actual.on_researched(user, src, machine)
-	calculate_node_unlocks(actual)
+	update_node_unlocks(actual)
 	if(node_id in grids)
 		var/datum/research_grid/grid = grids[node_id]
 		grid.refresh()
 
-/datum/research_web/proc/calculate_node_unlocks(datum/research_node/node)
+/datum/research_web/proc/update_node_unlocks(datum/research_node/node)
 	var/is_unlocked = (node.id in nodes_researched)
 
 	for(var/design in node.design_ids)
@@ -139,7 +139,7 @@
 			designs_available -= design
 
 	if(is_unlocked)
-		for(var/datum/research_node/exclusive as anything in node.exclusive_nodes)
+		for(var/datum/research_node/exclusive as anything in node.nodes_exclusive)
 			nodes_locked |= exclusive.id
 		nodes_researched |= node.id
 		nodes_not_researched -= node.id
@@ -147,7 +147,7 @@
 		nodes_researched -= node.id
 		nodes_not_researched |= node.id
 
-	for(var/datum/research_node/unlockable as anything in node.unlocked_nodes)
+	for(var/datum/research_node/unlockable as anything in node.nodes_unlocked)
 		var/should_unlock = unlockable.tech_level != TECHLEVEL_ADMIN
 
 		if(unlockable.id in nodes_researched)
@@ -168,3 +168,9 @@
 			nodes_available |= unlockable.id
 		else
 			nodes_available -= unlockable.id
+
+/datum/research_web/proc/copy_research_to(datum/research_web/other)
+	var/list/allowed_nodes = nodes_researched - other.nodes_locked
+	var/list/new_nodes = allowed_nodes - other.nodes_researched
+	other.nodes_researched |= new_nodes
+	other.recalculate_available()

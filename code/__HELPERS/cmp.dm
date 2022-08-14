@@ -10,6 +10,12 @@
 /proc/cmp_text_dsc(a,b)
 	return sorttext(a,b)
 
+/proc/cmp_path_asc(a,b)
+	return sorttext("[b]","[a]")
+
+/proc/cmp_path_dsc(a,b)
+	return sorttext("[a]","[b]")
+
 /proc/cmp_name_asc(atom/a, atom/b)
 	return sorttext(b.name, a.name)
 
