@@ -273,6 +273,11 @@
 /obj/effect/turf_decal/box/corners,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
+"zu" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/ship/external)
 "AS" = (
 /obj/effect/turf_decal/box/corners,
 /obj/structure/closet/crate/engineering{
@@ -296,6 +301,12 @@
 /obj/item/rcd_ammo/large,
 /obj/item/rcd_ammo/large,
 /obj/item/construction/rcd,
+/turf/open/floor/plating/airless,
+/area/ship/construction)
+"BL" = (
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "Ct" = (
@@ -689,8 +700,8 @@ SA
 ND
 SA
 SA
-SA
-SA
+ND
+ND
 ND
 Dp
 ND
@@ -706,13 +717,13 @@ SA
 ND
 SA
 SA
-ND
-SA
-ND
+Dp
+Dp
+Dp
 Dp
 ND
 SA
-ND
+SA
 SA
 SA
 ND
@@ -720,9 +731,6 @@ SA
 "}
 (8,1,1) = {"
 SA
-ND
-SA
-ND
 rj
 Pd
 fF
@@ -732,13 +740,13 @@ Pd
 qM
 ND
 SA
+SA
+SA
+SA
 ND
 SA
 "}
 (9,1,1) = {"
-SA
-ND
-SA
 SA
 ke
 Tp
@@ -747,15 +755,15 @@ Fj
 Fj
 Ld
 nq
+ND
+SA
+SA
 SA
 SA
 ND
 SA
 "}
 (10,1,1) = {"
-SA
-ND
-SA
 SA
 gL
 HP
@@ -764,15 +772,15 @@ uG
 Fj
 Vu
 nq
+ND
+SA
+SA
 SA
 SA
 ND
 SA
 "}
 (11,1,1) = {"
-SA
-ND
-SA
 SA
 SK
 Qj
@@ -781,15 +789,15 @@ rS
 Fj
 jj
 nq
+ND
+SA
+SA
 SA
 SA
 ND
 SA
 "}
 (12,1,1) = {"
-SA
-ND
-SA
 SA
 Kq
 Ds
@@ -798,6 +806,9 @@ XT
 Fj
 JY
 nq
+ND
+SA
+SA
 SA
 SA
 ND
@@ -805,9 +816,6 @@ SA
 "}
 (13,1,1) = {"
 Qz
-ND
-ND
-ND
 vK
 vo
 Fj
@@ -815,6 +823,9 @@ ci
 Fj
 AS
 uC
+Dp
+ND
+ND
 ND
 ND
 ND
@@ -822,9 +833,6 @@ Dp
 "}
 (14,1,1) = {"
 nx
-Dp
-Dp
-Dp
 dz
 MA
 ev
@@ -835,13 +843,13 @@ MO
 Dp
 Dp
 Dp
+zu
+Dp
+Dp
 Dp
 "}
 (15,1,1) = {"
 Qz
-ND
-ND
-ND
 Gb
 kh
 Fj
@@ -849,15 +857,15 @@ LK
 Fj
 iE
 of
+Dp
+ND
+ND
 ND
 ND
 ND
 Dp
 "}
 (16,1,1) = {"
-SA
-ND
-SA
 SA
 ke
 vt
@@ -866,15 +874,15 @@ Fj
 Fj
 Ct
 nq
+ND
+SA
+SA
 SA
 SA
 ND
 SA
 "}
 (17,1,1) = {"
-SA
-ND
-SA
 SA
 ke
 aO
@@ -883,6 +891,9 @@ FI
 ck
 mJ
 nq
+ND
+SA
+SA
 SA
 SA
 ND
@@ -890,16 +901,16 @@ SA
 "}
 (18,1,1) = {"
 SA
-ND
-SA
-SA
-VH
+ke
 MA
 HK
 MA
 yQ
 Tc
 wd
+ND
+SA
+SA
 SA
 SA
 ND
@@ -907,15 +918,15 @@ SA
 "}
 (19,1,1) = {"
 SA
-ND
-SA
-SA
-SA
 VH
+BL
 pi
 GN
 hS
 wd
+ND
+ND
+SA
 SA
 SA
 SA
@@ -926,10 +937,10 @@ SA
 SA
 ND
 SA
-SA
-SA
-SA
-ND
+Dp
+Dp
+Dp
+Dp
 Dp
 ND
 SA
@@ -944,7 +955,7 @@ SA
 ND
 SA
 SA
-SA
+ND
 SA
 ND
 Dp
