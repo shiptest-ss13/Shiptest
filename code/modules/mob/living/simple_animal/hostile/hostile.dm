@@ -151,9 +151,8 @@
 
 		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/spacepod)) //WS - add spacepod
 
-		for(var/HM in typecache_filter_list(range(vision_range, targets_from), hostile_machines))
-			if(can_see(targets_from, HM, vision_range))
-				. += HM
+		. += typecache_filter_list(view(vision_range, targets_from), hostile_machines)
+
 	else
 		. = oview(vision_range, targets_from)
 

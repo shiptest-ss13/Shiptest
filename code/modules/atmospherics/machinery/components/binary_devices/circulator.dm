@@ -125,7 +125,7 @@
 
 	icon_state = "circ-assembled-[flipped]"
 
-	if(!is_operational())
+	if(!is_operational)
 		set_light(0)
 		return
 	else

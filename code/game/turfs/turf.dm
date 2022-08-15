@@ -66,8 +66,6 @@
 
 	// ID of the virtual level we're in
 	var/virtual_z = 0
-	/// Translation of the virtual z to a virtual level
-	var/static/list/virtual_z_translation
 
 	///the holodeck can load onto this turf if TRUE
 	var/holodeck_compatible = FALSE
@@ -95,9 +93,6 @@
 	assemble_baseturfs()
 
 	levelupdate()
-
-	if(!virtual_z_translation)
-		virtual_z_translation = SSmapping.virtual_z_translation
 
 	if (length(smoothing_groups))
 		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
