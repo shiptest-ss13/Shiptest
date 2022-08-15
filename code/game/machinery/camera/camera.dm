@@ -141,7 +141,7 @@
 			update_icon()
 			network = list()
 			GLOB.cameranet.removeCamera(src)
-			machine_stat |= EMPED
+			set_machine_stat(machine_stat | EMPED)
 			set_light(0)
 			emped = emped+1  //Increase the number of consecutive EMP's
 			update_icon()
@@ -160,7 +160,7 @@
 	if(emped != thisemp) //Only fix it if the camera hasn't been EMP'd again
 		return
 	network = previous_network
-	machine_stat &= ~EMPED
+	set_machine_stat(machine_stat & ~EMPED)
 	update_icon()
 	if(can_use())
 		GLOB.cameranet.addCamera(src)
@@ -231,7 +231,7 @@
 		return
 	toggle_cam(user, 1)
 	obj_integrity = max_integrity //this is a pretty simplistic way to heal the camera, but there's no reason for this to be complex.
-	machine_stat &= ~BROKEN
+	set_machine_stat(machine_stat & ~BROKEN)
 	I.play_tool_sound(src)
 	return TRUE
 
