@@ -148,6 +148,17 @@
 /area/ship/cargo)
 "eS" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/medical,
+/obj/item/storage/firstaid/medical{
+	pixel_x = -5
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_x = 5
+	},
+/obj/item/storage/box/bodybags,
+/obj/item/roller{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "fb" = (
@@ -1414,7 +1425,7 @@
 /obj/effect/turf_decal/floordetail/edgedrain{
 	dir = 4
 	},
-/obj/machinery/autolathe,
+/obj/machinery/rnd/server,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Hr" = (
@@ -1671,17 +1682,7 @@
 /obj/effect/turf_decal/floordetail/edgedrain{
 	dir = 8
 	},
-/obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid/medical{
-	pixel_x = -5
-	},
-/obj/item/storage/firstaid/regular{
-	pixel_x = 5
-	},
-/obj/item/roller{
-	pixel_y = 5
-	},
-/obj/item/storage/box/bodybags,
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Ls" = (
