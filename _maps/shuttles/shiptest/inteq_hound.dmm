@@ -69,6 +69,10 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/sign/warning/incident{
+	desc = "A sign marking time passed since the last cargo bay decompression. It's a new record!";
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "dz" = (
