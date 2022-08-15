@@ -101,3 +101,76 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3,
 		/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf = 3)
 	generate_items_inside(items_inside,src)
+
+/obj/structure/flora/tree/chapel/srm
+	name = "Montagne's Oak"
+	desc = "A sturdy oak tree imported directly from the homeworld of the Montagne who runs the ship it resides on. It is planted in soil from the same place."
+
+/obj/item/book/manual/srmlore
+	name = "Notes on the SRM"
+	icon_state = "book5"
+	author = "Montagne Gehrman"
+	title = "Notes on the Saint-Roumain Militia"
+	dat = {"<html>
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			</head>
+			<body>
+			Notes on the Saint-Roumain Militia:<br>
+			The SRM originated on the planet Illestren, a planet colonized early in the
+			expansionist period of space exploration by solgov colonists. Formed by large
+			group of hunters who banded together to form a sort of citizen's militia.
+			When these Solgov colonists came to Illestren, the brought with them the
+			tales of the Ashen Hunter, a figure who came to be venerated by this militia.
+			The Ashen Huntsman is a religious figure venerated by the SRM, said to be able
+			to survive any conditions on their own, and fell any man, creature, or beast
+			with just a single shot from their rifle. The origin of this religious figure
+			is largely unknown and debated by many scholars within the SRM. But they likely
+			originate from a survivalist originating from Sol. The stories of the Ashen
+			Huntsman's valor, glorious hunts, extreme survivalism, and dedication to
+			ascectic practices are passed around by members of the SRM who wish to
+			emulate such glory.<br>
+			Many of the SRM are contracted mercenaries, mostly hired aboard independent
+			vessels. The religious habits amongst members of the organization make them
+			less popular hires for many corporate or government factions. However Nanotrasen
+			doesn't disallow veneration of the Ashen Huntsman on their vessels, making
+			them one of the more common factions for SRM members to serve.<br>
+			The SRM itself is structured around individual companies of hunters. Each SRM
+			vessel is led by a Montagne, who usually owns the ship. Around three to five
+			Hunters, and three Shadows serve alongside them. Hunters are the stock of the
+			SRM, serving as the primary worker and employee. Shadows serve under them,
+			studying and practicing the ways of the ship they serve on, and the SRM
+			at large.<br>
+			The primary source on income for the organization comes from a mix of
+			hunting and weapons manufacturing. Hunts by the SRM range from wiping
+			out large hordes of unruly beasts that pose a threat to their local
+			region, to capturing exotic beasts unharmed for collectors or
+			preservation. Farmers and rich landowners are common patrons of the
+			SRM. Most SRM vessels and outposts will include a workshop known as
+			the "Hunter's Pride". This is where the organization manufactures arms
+			in house. For the most part the SRM produce and rely on manual-action
+			firearms, relying on accuracy and high-caliber munitions over high rate
+			fire or advanced technology. Most old-earth weaponry is produced by
+			the SRM.<br>
+			The practices of members of the SRM are generally ascectic in nature.
+			Automatic and technological firearms are disliked by most hunters
+			within the group, typically favoring blades and single-action firearms.
+			Lightweight clothing and armors are the favored garb of an SRM hunter,
+			with dusters and simple working garbs for safer environments. Resting
+			and eating are also important parts of SRM culture. The soil upon an
+			SRM ship will be imported from the home planet of the Montagne running it,
+			and it serves equally as a place of worship, place of meeting, and a place
+			to sleep. Mealtimes often consist of raw or charred meats from animals raised
+			or hunted by the crew of an SRM vessel. Sometimes these meals are supplemented
+			by simple crops grown in house.<br>
+			Ranking amongst the SRM is by and large non-discriminatory. Rank and status
+			within the organization is decided solely by skill and dedication. While
+			many Montagne lack in skill or time spent within the organization, they
+			will almost always be the most dedicated member aboard.
+			Finally, the SRM comes with a sort of Grand Ideology, one that is usually
+			included aboard SRM vessels in one way or another. The ideology reads thus:
+			“In His name, we maintain dominion over nature,
+			dominion over the chaos of our lives and dominion over ourselves.
+			By defending ourselves and others, we defend His embers.”
+			</body>
+			</html>"}
