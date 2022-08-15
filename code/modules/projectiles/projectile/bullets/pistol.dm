@@ -4,6 +4,10 @@
 	name = "9mm bullet"
 	damage = 20
 
+/obj/projectile/bullet/c9mm_surplus
+	name = "9mm surplus bullet"
+	damage = 15
+
 /obj/projectile/bullet/c9mm_ap
 	name = "9mm armor-piercing bullet"
 	damage = 15
@@ -30,6 +34,10 @@
 	name = "10mm bullet"
 	damage = 25
 
+/obj/projectile/bullet/c10mm_surplus
+	name = "10mm surplus bullet"
+	damage = 20
+
 /obj/projectile/bullet/c10mm_ap
 	name = "10mm armor-piercing bullet"
 	damage = 20
@@ -55,6 +63,10 @@
 /obj/projectile/bullet/c45
 	name = ".45 bullet"
 	damage = 25
+
+/obj/projectile/bullet/c45_surplus
+	name = ".45 surplus bullet"
+	damage = 20
 
 /obj/projectile/bullet/c45_ap
 	name = ".45 armor-piercing bullet"

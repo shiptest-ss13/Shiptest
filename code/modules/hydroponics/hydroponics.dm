@@ -347,7 +347,6 @@
 		to_chat(user, "<span class='warning'>It's filled with weeds!</span>")
 	if(pestlevel >= 5)
 		to_chat(user, "<span class='warning'>It's filled with tiny worms!</span>")
-	to_chat(user, "" )
 
 
 
@@ -449,9 +448,9 @@
 
 
 /**
-  * Plant Death Proc.
-  * Cleans up various stats for the plant upon death, including pests, harvestability, and plant health.
-  */
+ * Plant Death Proc.
+ * Cleans up various stats for the plant upon death, including pests, harvestability, and plant health.
+ */
 /obj/machinery/hydroponics/proc/plantdies()
 	plant_health = 0
 	harvest = FALSE

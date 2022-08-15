@@ -85,6 +85,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/species_looking_at = "human" //used as a helper to keep track of in the species select thingy
 	var/list/features = list(
 							"mcolor" = "FFF",
+							"grad_style" = "None",
+							"grad_color" = "FFF",
 							"ethcolor" = "9c3030",
 							"tail_lizard" = "Smooth",
 							"tail_human" = "None",
@@ -117,6 +119,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
+	var/list/prosthetic_limbs = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
 	var/phobia = "spiders"
 	var/list/alt_titles_preferences = list()
 
@@ -424,6 +427,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<br><span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIR_COLOR]'>[(randomise[RANDOM_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
+
+				dat += "<h3>Hair Gradient</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=hair_gradient_style;task=input'>[features["grad_style"]]</a>"
+
+				dat += "<a href='?_src_=prefs;preference=previous_hair_gradient_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_gradient_style;task=input'>&gt;</a><BR>"
+
+				dat += "<span style='border:1px solid #161616; background-color: #[features["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair_gradient;task=input'>Change</a>"
 
 				dat += "<BR><h3>Facial Hairstyle</h3>"
 
@@ -807,6 +818,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				mutant_category = 0
 			dat += "</tr></table>"
 
+			dat += "<h3>Prosthetic Limbs</h3>"
+			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_PROSTHETIC]'>Random Prosthetic: [(randomise[RANDOM_PROSTHETIC]) ? "Yes" : "No"]</A><br>"
+
+			dat += "<table>"
+			for(var/index in prosthetic_limbs)
+				var/bodypart_name = parse_zone(index)
+				dat += "<tr><td><b>[bodypart_name]:</b></td>"
+				dat += "<td><a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[prosthetic_limbs[index]]</a></td></tr>"
+			dat += "</table><br>"
+
 		if(2) //Loadout
 			if(path)
 				var/savefile/S = new /savefile(path)
@@ -1129,7 +1150,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 #undef APPEARANCE_CATEGORY_COLUMN
 #undef MAX_MUTANT_ROWS
 
-/datum/preferences/proc/CaptureKeybinding(mob/user, datum/keybinding/kb, var/old_key)
+/datum/preferences/proc/CaptureKeybinding(mob/user, datum/keybinding/kb, old_key)
 	var/HTML = {"
 	<div id='focus' style="outline: 0;" tabindex=0>Keybinding: [kb.full_name]<br>[kb.description]<br><br><b>Press any key to change<br>Press ESC to clear</b></div>
 	<script>
@@ -1600,7 +1621,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					undershirt = random_undershirt(gender)
 				if("socks")
 					socks = random_socks()
-				if(BODY_ZONE_PRECISE_EYES)
+				if("eyes")
 					eye_color = random_eye_color()
 				if("s_tone")
 					skin_tone = random_skin_tone()
@@ -1674,11 +1695,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							ghost_others = GHOST_OTHERS_SIMPLE
 
 				if("name")
-					var/new_name =  reject_bad_name( input(user, "Choose your character's name:", "Character Preference")  as text|null , pref_species.allow_numbers_in_name)
+					var/new_name =  reject_bad_name( input(user, "Choose your character's name:", "Character Preference")  as text|null)
 					if(new_name)
 						real_name = new_name
 					else
-						to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
+						to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, 0-9, and the following punctuation: ' - . ~ | @ : # $ % & * +</font>")
 
 				if("age")
 					var/new_age = input(user, "Choose your character's age:\n([pref_species.species_age_min]-[pref_species.species_age_max])", "Character Preference") as num|null
@@ -1753,6 +1774,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						facial_hairstyle = previous_list_item(facial_hairstyle, GLOB.facial_hairstyles_female_list)
 					else
 						facial_hairstyle = previous_list_item(facial_hairstyle, GLOB.facial_hairstyles_list)
+
+				if("hair_gradient")
+					var/new_hair_gradient_color = input(user, "Choose your character's hair gradient colour:", "Character Preference","#"+features["grad_color"]) as color|null
+					if(new_hair_gradient_color)
+						features["grad_color"] = sanitize_hexcolor(new_hair_gradient_color)
+
+				if("hair_gradient_style")
+					var/new_gradient_style
+					new_gradient_style = input(user, "Choose your character's hair gradient style:", "Character Preference")  as null|anything in GLOB.hair_gradients_list
+					if(new_gradient_style)
+						features["grad_style"] = new_gradient_style
+
+				if("next_hair_gradient_style")
+					features["grad_style"] = next_list_item(features["grad_style"], GLOB.hair_gradients_list)
+
+				if("previous_hair_gradient_style")
+					features["grad_style"] = previous_list_item(features["grad_style"], GLOB.hair_gradients_list)
 
 				if("underwear")
 					var/new_underwear
@@ -2073,6 +2111,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						facial_hairstyle = random_facial_hairstyle(gender)
 						hairstyle = random_hairstyle(gender)
 
+				if("limbs")
+					if(href_list["customize_limb"])
+						var/limb = href_list["customize_limb"]
+						var/status = input(user, "You are modifying your [parse_zone(limb)], what should it be changed to?", "Character Preference", prosthetic_limbs[limb]) as null|anything in list(PROSTHETIC_NORMAL,PROSTHETIC_ROBOTIC,PROSTHETIC_AMPUTATED)
+						if(status)
+							prosthetic_limbs[limb] = status
+
 				if("hotkeys")
 					hotkeys = !hotkeys
 					if(hotkeys)
@@ -2346,6 +2391,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		slot_randomized = TRUE
 		real_name = pref_species.random_name(gender)
 
+	if(randomise[RANDOM_PROSTHETIC] && !character_setup)
+		prosthetic_limbs = random_prosthetic()
+
 	if(roundstart_checks)
 		if(CONFIG_GET(flag/humans_need_surnames) && (pref_species.id == SPECIES_HUMAN))
 			var/firstspace = findtext(real_name, " ")
@@ -2394,15 +2442,46 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		pref_species = new /datum/species/human
 		save_character()
 
+	for(var/pros_limbs in prosthetic_limbs)
+		var/obj/item/bodypart/old_part = character.get_bodypart(pros_limbs)
+		if(old_part)
+			icon_updates = TRUE
+		switch(prosthetic_limbs[pros_limbs])
+			if(PROSTHETIC_NORMAL)
+				if(old_part)
+					old_part.drop_limb(TRUE)
+					qdel(old_part)
+				character.regenerate_limb(pros_limbs)
+			if(PROSTHETIC_AMPUTATED)
+				if(old_part)
+					old_part.drop_limb(TRUE)
+					qdel(old_part)
+			if(PROSTHETIC_ROBOTIC)
+				var/obj/item/bodypart/prosthetic
+				var/typepath
+				if(character.dna.species.unique_prosthesis) // Checks for if the species has a unique limb type, otherwise defaults to human
+					typepath = text2path("/obj/item/bodypart/[pros_limbs]/robot/surplus/[character.dna.species.id]")
+				else
+					typepath = text2path("/obj/item/bodypart/[pros_limbs]/robot/surplus")
+				if(!ispath(typepath))
+					to_chat(character, "<span class='warning'>Problem initializing [pros_limbs] prosthetic for species [character.dna.species], it will be a normal limb. Make a bug report on github!</span>")
+					continue
+				prosthetic = new typepath(character)
+				prosthetic.replace_limb(character, special = TRUE)
+				if(old_part)
+					qdel(old_part)
+
 	character.dna.features = features.Copy()
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
 	character.dna.real_name = character.real_name
 	character.hair_color = hair_color
 	character.facial_hair_color = facial_hair_color
+	character.grad_color = features["grad_color"]
 
 	character.hairstyle = hairstyle
 	character.facial_hairstyle = facial_hairstyle
+	character.grad_style = features["grad_style"]
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
@@ -2444,9 +2523,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		else
 			return
 	else
-		var/sanitized_name = reject_bad_name(raw_name,namedata["allow_numbers"])
+		var/sanitized_name = reject_bad_name(raw_name)
 		if(!sanitized_name)
-			to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z,[namedata["allow_numbers"] ? ",0-9," : ""] -, ' and .</font>")
+			to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, 0-9, and the following punctuation: ' - . ~ | @ : # $ % & * +</font>")
 			return
 		else
 			custom_names[name_id] = sanitized_name

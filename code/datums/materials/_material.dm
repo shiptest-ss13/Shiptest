@@ -108,7 +108,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 	I.pickup_sound = item_sound_override
 	I.drop_sound = item_sound_override
 
-/datum/material/proc/on_applied_turf(var/turf/T, amount, material_flags)
+/datum/material/proc/on_applied_turf(turf/T, amount, material_flags)
 	if(isopenturf(T))
 		if(turf_sound_override)
 			var/turf/open/O = T
@@ -152,12 +152,12 @@ Simple datum which is instanced once per type and is used for every object of sa
 		RemoveElement(/datum/element/turf_z_transparency, FALSE)
 
 /** Returns the composition of this material.
-  *
-  * Mostly used for alloys when breaking down materials.
-  *
-  * Arguments:
-  * - amount: The amount of the material to break down.
-  * - breakdown_flags: Some flags dictating how exactly this material is being broken down.
-  */
+ *
+ * Mostly used for alloys when breaking down materials.
+ *
+ * Arguments:
+ * - amount: The amount of the material to break down.
+ * - breakdown_flags: Some flags dictating how exactly this material is being broken down.
+ */
 /datum/material/proc/return_composition(amount=1, breakdown_flags=NONE)
 	return list((src) = amount) // Yes we need the parenthesis, without them BYOND stringifies src into "src" and things break.

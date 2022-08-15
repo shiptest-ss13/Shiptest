@@ -11,8 +11,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	pin = /obj/item/firing_pin/implant/pindicate
 	bolt_type = BOLT_TYPE_NO_BOLT
-	weapon_weight = WEAPON_MEDIUM
-	fire_rate = 2
+	fire_delay = 10
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted
 	pin = /obj/item/firing_pin
@@ -39,7 +38,8 @@
 	icon_state = "gyropistol"
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	mag_type = /obj/item/ammo_box/magazine/m75
-	automatic = 0
+	burst_size = 1
+	fire_delay = 0
 	actions_types = list()
 	casing_ejector = FALSE
 

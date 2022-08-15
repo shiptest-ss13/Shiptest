@@ -134,7 +134,7 @@
 	T.ChangeTurf(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 	D.Open()
 
-/obj/projectile/magic/door/proc/OpenDoor(var/obj/machinery/door/D)
+/obj/projectile/magic/door/proc/OpenDoor(obj/machinery/door/D)
 	if(istype(D, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/A = D
 		A.locked = FALSE
@@ -312,7 +312,7 @@
 	target.animate_atom_living(firer)
 	..()
 
-/atom/proc/animate_atom_living(var/mob/living/owner = null)
+/atom/proc/animate_atom_living(mob/living/owner = null)
 	if((isitem(src) || isstructure(src)) && !is_type_in_list(src, GLOB.protected_objects))
 		if(istype(src, /obj/structure/statue/petrified))
 			var/obj/structure/statue/petrified/P = src
@@ -557,6 +557,31 @@
 			spell.recharging = FALSE
 			spell.update_icon()
 
+/obj/projectile/magic/fortify
+	name = "bolt of light"
+	icon_state = "spark"
+
+/obj/projectile/magic/fortify/on_hit(target)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/L = target
+		if(L.anti_magic_check() || !L.mind || !L.mind.hasSoul)
+			L.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			return BULLET_ACT_BLOCK
+		to_chat(L, "<span class='greentext'>You feel your body flood with magical strength! Your flesh feels cleansed, and somehow... tougher.</span>")
+		L.maxHealth += 20
+		L.heal_overall_damage(20, 20)
+		L.apply_damage(-200, CLONE)//cleanses cellular damage
+		if(L.mind.hasSoul == FALSE)//restores consumed souls
+			to_chat(L, "<span class='nicegreen'>You feel a warm light in your chest... the [src] has restored something you'd long forgotten.</span>")
+			L.mind.hasSoul = TRUE
+			if(L.hellbound == 1)
+				L.hellbound = 0//devil economy in shambles
+		for(var/obj/effect/proc_holder/spell/spell in L.mind.spell_list)
+			spell.charge_counter = spell.charge_max
+			spell.recharging = FALSE
+			spell.update_icon()
+
 /obj/projectile/magic/wipe
 	name = "bolt of possession"
 	icon_state = "wipe"
@@ -576,7 +601,7 @@
 		possession_test(M)
 		return BULLET_ACT_HIT
 
-/obj/projectile/magic/wipe/proc/possession_test(var/mob/living/carbon/M)
+/obj/projectile/magic/wipe/proc/possession_test(mob/living/carbon/M)
 	var/datum/brain_trauma/special/imaginary_friend/trapped_owner/trauma = M.gain_trauma(/datum/brain_trauma/special/imaginary_friend/trapped_owner)
 	var/poll_message = "Do you want to play as [M.real_name]?"
 	if(M.mind && M.mind.assigned_role)

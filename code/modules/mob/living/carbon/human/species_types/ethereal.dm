@@ -12,6 +12,7 @@
 	siemens_coeff = 0.5 //They thrive on energy
 	brutemod = 1.25 //They're weak to punches
 	attack_type = BURN //burn bish
+	exotic_blood = /datum/reagent/consumable/liquidelectricity
 	damage_overlay_type = "" //We are too cool for regular damage overlays
 	species_traits = list(DYNCOLORS, AGENDER, HAIR, FACEHAIR)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
@@ -92,7 +93,13 @@
 	else
 		ethereal_light.set_light_on(FALSE)
 		fixed_mut_color = rgb(128,128,128)
+
+	for(var/obj/item/bodypart/parts_to_update as anything in H.bodyparts)
+		parts_to_update.species_color = fixed_mut_color
+		parts_to_update.update_limb()
+
 	H.update_body()
+	H.update_hair()
 
 /datum/species/ethereal/proc/health_adjusted_color(mob/living/carbon/human/H, default_color)
 	var/health_percent = max(H.health, 0) / 100

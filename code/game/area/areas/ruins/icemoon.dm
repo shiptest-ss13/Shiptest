@@ -80,3 +80,7 @@
 	icon_state = "dk_yellow"
 	mood_bonus = -10
 	mood_message = "<span class='boldwarning'>I want to leave this place.</span>\n"
+
+/area/ruin/powered/hydroponicslab
+	name = "Hydroponics Lab"
+	icon_state = "dk_yellow"
