@@ -152,6 +152,15 @@
 	gibamounts[6] = pick(0, 1, 2)
 	return ..()
 
+/obj/effect/gibspawner/robot/bodypartless
+	gibtypes = list(/obj/effect/decal/cleanable/robot_debris/up, /obj/effect/decal/cleanable/robot_debris/down, /obj/effect/decal/cleanable/robot_debris, /obj/effect/decal/cleanable/robot_debris, /obj/effect/decal/cleanable/robot_debris)
+	gibamounts = list(1, 1, 1, 1, 1)
+
+/obj/effect/gibspawner/robot/bodypartless/Initialize()
+	if(!gibdirections.len)
+		gibdirections = list(list(NORTH, NORTHEAST, NORTHWEST),list(SOUTH, SOUTHEAST, SOUTHWEST),list(WEST, NORTHWEST, SOUTHWEST),list(EAST, NORTHEAST, SOUTHEAST), GLOB.alldirs)
+	return ..()
+
 /obj/effect/gibspawner/generic/crystal
 	gibtypes = list(/obj/effect/decal/cleanable/glass/strange, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/core)
 	gibamounts = list(5, 2, 2, 1)
