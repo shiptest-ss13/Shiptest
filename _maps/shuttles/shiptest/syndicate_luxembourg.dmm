@@ -721,6 +721,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "syndiefuck";
+	pixel_x = -20;
+	pixel_y = -26
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "oW" = (
@@ -1369,10 +1375,6 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "Bb" = (
-/obj/machinery/button/door{
-	id = "syndiefuck";
-	pixel_y = -26
-	},
 /obj/machinery/door/poddoor/shutters{
 	id = "syndiefuck"
 	},
@@ -2660,6 +2662,11 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	id = "syndiefuck";
+	pixel_x = -20;
+	pixel_y = 26
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
