@@ -375,7 +375,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/paicard,
+/obj/item/trash/plate,
+/obj/item/kitchen/fork{
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "jq" = (
@@ -1237,10 +1240,15 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
-/obj/item/trash/plate,
-/obj/item/kitchen/fork{
-	pixel_x = 7
+/obj/machinery/jukebox{
+	density = 0;
+	desc = "A battered boombox, probably older than most of the crew. Fortunately, it still works.";
+	icon = 'icons/obj/radio.dmi';
+	icon_state = "radio_angle";
+	name = "boombox";
+	pixel_y = 15
 	},
+/obj/item/paicard,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew)
 "Bl" = (
