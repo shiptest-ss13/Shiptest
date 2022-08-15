@@ -173,7 +173,7 @@
 		for(var/turf/T in return_turfs())
 			T.flags_1 |= NO_RUINS_1
 		if(SSshuttle.initialized) // If the docking port is loaded via map but SSshuttle has already init (therefore this would never be called)
-			load_roundstart()
+			INVOKE_ASYNC(src, .proc/load_roundstart)
 
 	#ifdef DOCKING_PORT_HIGHLIGHT
 	highlight("#f00")
@@ -705,8 +705,8 @@
 		return "00:00"
 
 /**
-  * Gets shuttle location status in a form of string for tgui interfaces
-  */
+ * Gets shuttle location status in a form of string for tgui interfaces
+ */
 /obj/docking_port/mobile/proc/get_status_text_tgui()
 	var/obj/docking_port/stationary/dockedAt = get_docked()
 	var/docked_at = dockedAt?.name || "Unknown"

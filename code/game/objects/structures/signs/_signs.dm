@@ -47,10 +47,10 @@
 	user.examinate(src)
 
 /**
-  * This proc populates GLOBAL_LIST_EMPTY(editable_sign_types)
-  *
-  * The first time a pen is used on any sign, this populates GLOBAL_LIST_EMPTY(editable_sign_types), creating a global list of all the signs that you can set a sign backing to with a pen.
-  */
+ * This proc populates GLOBAL_LIST_EMPTY(editable_sign_types)
+ *
+ * The first time a pen is used on any sign, this populates GLOBAL_LIST_EMPTY(editable_sign_types), creating a global list of all the signs that you can set a sign backing to with a pen.
+ */
 /proc/populate_editable_sign_types()
 	for(var/s in subtypesof(/obj/structure/sign))
 		var/obj/structure/sign/potential_sign = s
@@ -94,7 +94,7 @@
 	user.visible_message(
 		"<span class='notice'>[user] starts repairing [src]...</span>", \
 		"<span class='notice'>You start repairing [src].</span>")
-	if(!I.use_tool(src, user, 4 SECONDS, volume =50 ))
+	if(!I.use_tool(src, user, 4 SECONDS, volume =50))
 		return TRUE
 	user.visible_message(
 		"<span class='notice'>[user] finishes repairing [src].</span>", \
@@ -114,7 +114,7 @@
 	user.visible_message(
 		"<span class='notice'>[user] starts repairing [src]...</span>", \
 		"<span class='notice'>You start repairing [src].</span>")
-	if(!I.use_tool(src, user, 4 SECONDS, volume =50 ))
+	if(!I.use_tool(src, user, 4 SECONDS, volume =50))
 		return TRUE
 	user.visible_message(
 		"<span class='notice'>[user] finishes repairing [src].</span>", \

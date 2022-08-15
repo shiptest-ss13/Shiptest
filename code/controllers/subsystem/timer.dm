@@ -215,8 +215,8 @@ SUBSYSTEM_DEF(timer)
 			break
 
 /**
-  * Generates a string with details about the timed event for debugging purposes
-  */
+ * Generates a string with details about the timed event for debugging purposes
+ */
 /datum/controller/subsystem/timer/proc/get_timer_debug_string(datum/timedevent/TE)
 	. = "Timer: [TE]"
 	. += "Prev: [TE.prev ? TE.prev : "NULL"], Next: [TE.next ? TE.next : "NULL"]"
@@ -228,8 +228,8 @@ SUBSYSTEM_DEF(timer)
 		. += ", NO CALLBACK"
 
 /**
-  * Destroys the existing buckets and creates new buckets from the existing timed events
-  */
+ * Destroys the existing buckets and creates new buckets from the existing timed events
+ */
 /datum/controller/subsystem/timer/proc/reset_buckets()
 	WARNING("Timer buckets has been reset, this may cause timer to lag")
 	bucket_reset_count++
@@ -337,14 +337,14 @@ SUBSYSTEM_DEF(timer)
 	bucket_list |= SStimer.bucket_list
 
 /**
-  * # Timed Event
-  *
-  * This is the actual timer, it contains the callback and necessary data to maintain
-  * the timer.
-  *
-  * See the documentation for the timer subsystem for an explanation of the buckets referenced
-  * below in next and prev
-  */
+ * # Timed Event
+ *
+ * This is the actual timer, it contains the callback and necessary data to maintain
+ * the timer.
+ *
+ * See the documentation for the timer subsystem for an explanation of the buckets referenced
+ * below in next and prev
+ */
 /datum/timedevent
 	/// ID used for timers when the TIMER_STOPPABLE flag is present
 	var/id
@@ -441,8 +441,8 @@ SUBSYSTEM_DEF(timer)
 	return QDEL_HINT_IWILLGC
 
 /**
-  * Removes this timed event from any relevant buckets, or the secondary queue
-  */
+ * Removes this timed event from any relevant buckets, or the secondary queue
+ */
 /datum/timedevent/proc/bucketEject()
 	// Store local references for the bucket list and secondary queue
 	// This is faster than referencing them from the datum itself
@@ -479,13 +479,13 @@ SUBSYSTEM_DEF(timer)
 	bucket_joined = FALSE
 
 /**
-  * Attempts to add this timed event to a bucket, will enter the secondary queue
-  * if there are no appropriate buckets at this time.
-  *
-  * Secondary queueing of timed events will occur when the timespan covered by the existing
-  * buckets is exceeded by the time at which this timed event is scheduled to be invoked.
-  * If the timed event is tracking client time, it will be added to a special bucket.
-  */
+ * Attempts to add this timed event to a bucket, will enter the secondary queue
+ * if there are no appropriate buckets at this time.
+ *
+ * Secondary queueing of timed events will occur when the timespan covered by the existing
+ * buckets is exceeded by the time at which this timed event is scheduled to be invoked.
+ * If the timed event is tracking client time, it will be added to a special bucket.
+ */
 /datum/timedevent/proc/bucketJoin()
 	// Generate debug-friendly name for timer
 	var/static/list/bitfield_flags = list("TIMER_UNIQUE", "TIMER_OVERRIDE", "TIMER_CLIENT_TIME", "TIMER_STOPPABLE", "TIMER_NO_HASH_WAIT", "TIMER_LOOP")
@@ -536,12 +536,14 @@ SUBSYSTEM_DEF(timer)
 	bucket_list[bucket_pos] = src
 
 /**
-  * Returns a string of the type of the callback for this timer
-  */
+ * Returns a string of the type of the callback for this timer
+ */
 /datum/timedevent/proc/getcallingtype()
 	. = "ERROR"
 	if (callBack.object == GLOBAL_PROC)
 		. = "GLOBAL_PROC"
+	else if (!callBack.object) //TODO: Remove
+		CRASH("Null object in timer callback. Details - proc: [callBack.delegate] args: [callBack.arguments] usr: [callBack.user.resolve()]")
 	else
 		. = "[callBack.object.type]"
 
@@ -563,7 +565,7 @@ SUBSYSTEM_DEF(timer)
 
 	if (callback.object != GLOBAL_PROC && QDELETED(callback.object) && !QDESTROYING(callback.object))
 		stack_trace("addtimer called with a callback assigned to a qdeleted object. In the future such timers will not \
-			be supported and may refuse to run or run with a 0 wait")
+			be supported and may refuse to run or run with a 0 wait - proc: [callback.delegate], args: [json_encode(callback.arguments)] , usr: [callback.user.resolve()]")
 
 	wait = max(CEILING(wait, world.tick_lag), world.tick_lag)
 

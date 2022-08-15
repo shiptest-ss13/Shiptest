@@ -12,7 +12,7 @@
  *   default /datum/recipe/ procs does not rely on this parameter.
  *
  *  Functions you need:
- *  /datum/recipe/proc/make(var/obj/container as obj)
+ *  /datum/recipe/proc/make(obj/container as obj)
  *    Creates result inside container,
  *    deletes prerequisite reagents,
  *    transfers reagents from prerequisite objects,
@@ -25,10 +25,10 @@
  *
  *
  *  Functions you do not need to call directly but could:
- *  /datum/recipe/proc/check_reagents(var/datum/reagents/avail_reagents)
+ *  /datum/recipe/proc/check_reagents(datum/reagents/avail_reagents)
  *    //1=precisely,  0=insufficiently, -1=superfluous
  *
- *  /datum/recipe/proc/check_items(var/obj/container as obj)
+ *  /datum/recipe/proc/check_items(obj/container as obj)
  *    //1=precisely, 0=insufficiently, -1=superfluous
  *
  * */
@@ -113,7 +113,7 @@
 		for (var/datum/recipe/recipe in possible_recipes)
 			var/N_i = (recipe.items)?(recipe.items.len):0
 			var/N_r = (recipe.reagents_list)?(recipe.reagents_list.len):0
-			if (N_i > i_count || (N_i== i_count && N_r > r_count ))
+			if (N_i > i_count || (N_i== i_count && N_r > r_count))
 				r_count = N_r
 				i_count = N_i
 				. = recipe

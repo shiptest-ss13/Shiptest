@@ -27,10 +27,10 @@
 	return
 
 /**
-  * Space Initialize
-  *
-  * Doesn't call parent, see [/atom/proc/Initialize]
-  */
+ * Space Initialize
+ *
+ * Doesn't call parent, see [/atom/proc/Initialize]
+ */
 /turf/open/space/Initialize(mapload, inherited_virtual_z)
 	SHOULD_CALL_PARENT(FALSE)
 	icon_state = SPACE_ICON_STATE

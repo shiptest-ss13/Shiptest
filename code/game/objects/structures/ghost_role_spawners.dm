@@ -746,7 +746,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	short_desc = "You are a syndicate operative, awoken deep in hostile space."
-	flavour_text = "Your ship is part of the infamous \"sleeper\" doctrine of syndicate strike forces, who flung unpowered vessels with cryo-frozen crew deep into Nanotransen territory, tasked to cause havoc and carry out covert reconnisance. The chill in your bones informs you that you've been asleep far longer than intended. Your vessel appears to be in a sorry state, and a tinny alarm pierces through your fugue to report unknown contacts aboard the vessel. It's going to be one of those days."
+	flavour_text = "Your ship is part of the infamous \"sleeper\" doctrine of syndicate strike forces, who flung unpowered vessels with cryo-frozen crew deep into Nanotrasen territory, tasked to cause havoc and carry out covert reconnisance. The chill in your bones informs you that you've been asleep far longer than intended. Your vessel appears to be in a sorry state, and a tinny alarm pierces through your fugue to report unknown contacts aboard the vessel. It's going to be one of those days."
 	important_info = "Obey orders given by your captain. Prevent yourself and any syndicate assets from falling into enemy hands."
 	outfit = /datum/outfit/syndicatespace/syndicrew
 	assignedrole = "Cybersun Crewmember"
@@ -770,7 +770,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	short_desc = "You are the captain of a long-slumbering syndicate vessel, stuck deep in enemy territory."
-	flavour_text = "Your ship is part of the infamous \"sleeper\" doctrine of syndicate strike forces, who flung unpowered vessels with cryo-frozen crew deep into Nanotransen territory, tasked to cause havoc and carry out covert reconnisance. The chill in your bones informs you that you've been asleep far longer than intended. Your vessel appears to be in a sorry state, and a tinny alarm pierces through your fugue to report unknown contacts aboard the vessel. It's going to be one of those days."
+	flavour_text = "Your ship is part of the infamous \"sleeper\" doctrine of syndicate strike forces, who flung unpowered vessels with cryo-frozen crew deep into Nanotrasen territory, tasked to cause havoc and carry out covert reconnisance. The chill in your bones informs you that you've been asleep far longer than intended. Your vessel appears to be in a sorry state, and a tinny alarm pierces through your fugue to report unknown contacts aboard the vessel. It's going to be one of those days."
 	important_info = "Protect the ship and secret documents in your backpack with your own life. Secure the syndicate assets present at your covert landing site. Prevent them, your crew, and yourself from falling into corporate hands."
 	outfit = /datum/outfit/syndicatespace/syndicaptain
 	assignedrole = "Cybersun Captain"
@@ -899,7 +899,7 @@
 	mob_species = /datum/species/ipc
 
 /obj/effect/mob_spawn/human/lostassistant/Initialize(mapload)
-	..()
+	. = ..()
 	var/area/A = get_area(src)
 	if(A)
 		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)

@@ -22,7 +22,7 @@
 		"kafel_full", "steel_monofloor", "monotile", "grid", "ridged"
 	)
 
-/obj/item/floor_painter/afterattack(var/atom/A, var/mob/user, proximity, params)
+/obj/item/floor_painter/afterattack(atom/A, mob/user, proximity, params)
 	if(!proximity)
 		return
 
@@ -36,7 +36,7 @@
 	F.dir = floor_dir
 	playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
 
-/obj/item/floor_painter/attack_self(var/mob/user)
+/obj/item/floor_painter/attack_self(mob/user)
 	if(!user)
 		return FALSE
 	user.set_machine(src)
@@ -190,7 +190,7 @@
 	"trimline_arrow_cw_fill","trimline_arrow_ccw_fill","trimline_warn","trimline_warn_fill"
 	)
 
-/obj/item/decal_painter/afterattack(var/atom/A, var/mob/user, proximity, params)
+/obj/item/decal_painter/afterattack(atom/A, mob/user, proximity, params)
 	if(!proximity)
 		return
 
@@ -204,7 +204,7 @@
 		F.AddComponent(/datum/component/decal, 'whitesands/icons/turf/decals.dmi', decal_state, decal_dir, CLEAN_TYPE_PAINT, decal_color, null, null, alpha)
 	playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
 
-/obj/item/decal_painter/attack_self(var/mob/user)
+/obj/item/decal_painter/attack_self(mob/user)
 	if(!user)
 		return FALSE
 	user.set_machine(src)
