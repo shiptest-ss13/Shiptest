@@ -1028,7 +1028,7 @@
 	name = "frontiersmen hardsuit"
 	desc = "An old hardsuit based on a even older model of armored hardsuit. Was once produced by the Frontiersmen pirate fleet."
 	icon_state = "hardsuit_frontier"
-	hardsuit_type = "frontier"
+	hardsuit_type = "hardsuit_frontier"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
 
 	//Mining

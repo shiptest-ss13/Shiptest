@@ -125,7 +125,7 @@
 
 /obj/item/gun/ballistic/automatic/assualt/swiss_cheese
 	name = "\improper Swiss Cheese"
-	desc = "An old, iconic longarm, famous for its boxy and modular design. The unique Dual Matter Type Ammunition System (DMA) allows the user to switch between firing magnet-propelled superheated rods and traditional ammunition. Uses 5.56mm ammunition for Matter mode. It appears the DMA is broken on this unit, likely from age."
+	desc = "An old, iconic longarm, famous for its boxy and modular design. While the DMA would let you switch between firing ammunition and rods, the DMA is broken on this unit, likely from age. Uses 5.56mm ammunition for Matter mode."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/swiss.ogg'
 	icon_state = "swiss"
@@ -133,7 +133,8 @@
 	mag_display = TRUE
 	empty_indicator = TRUE
 	burst_size = 3
-	fire_delay = 1
+	fire_delay = 1.5
+	spread = 8
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
