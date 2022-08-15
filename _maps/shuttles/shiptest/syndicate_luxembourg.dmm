@@ -402,6 +402,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "jC" = (
@@ -536,6 +539,9 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/oil,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "mi" = (
@@ -567,6 +573,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "mz" = (
@@ -702,6 +711,15 @@
 /obj/item/banner/cargo,
 /obj/effect/turf_decal/corner/opaque/brown/border{
 	dir = 10
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	id = "luxembourg_cargo";
+	pixel_x = -10;
+	pixel_y = -25
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -1055,6 +1073,15 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
+"wd" = (
+/obj/effect/turf_decal/corner/opaque/brown/bordercorner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "we" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1094,7 +1121,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
 "wu" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor/shutters{
 	id = "syndiefuck"
 	},
@@ -1350,8 +1376,16 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "syndiefuck"
 	},
-/obj/structure/fans/tiny,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 1;
+	id = "luxembourg_cargo";
+	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Bl" = (
@@ -1368,6 +1402,9 @@
 "Bu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Bz" = (
@@ -1623,6 +1660,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/trimline/opaque/brown/filled/warning,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "GK" = (
@@ -1653,6 +1693,9 @@
 /area/ship/engineering)
 "Hq" = (
 /obj/effect/turf_decal/trimline/opaque/brown/filled/warning,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "HD" = (
@@ -1702,13 +1745,17 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
 "Jl" = (
-/obj/machinery/button/door{
-	id = "syndiefuck";
-	pixel_y = 26
-	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor/shutters{
 	id = "syndiefuck"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	id = "luxembourg_cargo";
+	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -2606,6 +2653,14 @@
 /obj/effect/turf_decal/corner/opaque/brown/border{
 	dir = 9
 	},
+/obj/machinery/button/shieldwallgen{
+	id = "luxembourg_cargo";
+	pixel_x = -10;
+	pixel_y = 25
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "ZE" = (
@@ -2682,7 +2737,7 @@ UC
 hs
 fz
 Ax
-Ai
+wd
 tw
 Xr
 yO
