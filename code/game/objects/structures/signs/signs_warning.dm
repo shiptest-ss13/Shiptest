@@ -173,7 +173,7 @@
 
 /obj/structure/sign/warning/incident
 	name = "\improper DAYS SINCE LAST INCIDENT sign"
-	sign_chance_name = "0 Days Since Last Incident"
+	sign_change_name = "0 Days Since Last Incident"
 	desc = "A sign marking time passed since the last safety incident. It's a new record!"
 	icon_state = "incident"
 	is_editable = TRUE
