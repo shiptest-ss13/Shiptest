@@ -9,6 +9,7 @@
 		return
 	if(W.force && W.damtype != STAMINA && stat != DEAD) //only sparks if real damage is dealt.
 		spark_system.start()
+	diag_hud_set_health()
 	return ..()
 
 /mob/living/silicon/ai/attack_alien(mob/living/carbon/alien/humanoid/M)
