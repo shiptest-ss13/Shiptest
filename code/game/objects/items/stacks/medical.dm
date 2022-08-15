@@ -381,7 +381,7 @@
 	desc = "Used to secure limbs following a fracture."
 	gender = PLURAL
 	singular_name = "splint"
-	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "splint"
 	self_delay = 40
 	other_delay = 15
