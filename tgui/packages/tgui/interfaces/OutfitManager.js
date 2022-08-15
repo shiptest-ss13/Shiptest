@@ -6,10 +6,7 @@ export const OutfitManager = (props, context) => {
   const { act, data } = useBackend(context);
   const { outfits } = data;
   return (
-    <Window
-      title="Outfit Manager"
-      width={300}
-      height={300}>
+    <Window title="Outfit Manager" width={300} height={300}>
       <Window.Content>
         <Section
           fill
@@ -21,29 +18,36 @@ export const OutfitManager = (props, context) => {
                 icon="file-upload"
                 tooltip="Load an outfit from a file"
                 tooltipPosition="left"
-                onClick={() => act("load")} />
+                onClick={() => act('load')}
+              />
               <Button
                 icon="copy"
                 tooltip="Copy an already existing outfit"
                 tooltipPosition="left"
-                onClick={() => act("copy")} />
+                onClick={() => act('copy')}
+              />
               <Button
                 icon="plus"
                 tooltip="Create a new outfit"
                 tooltipPosition="left"
-                onClick={() => act("new")} />
+                onClick={() => act('new')}
+              />
             </>
-          }>
+          }
+        >
           <Stack vertical>
-            {outfits?.map(outfit => (
+            {outfits?.map((outfit) => (
               <Stack.Item key={outfit.ref}>
                 <Stack>
-                  <Stack.Item grow={1} shrink={1}
+                  <Stack.Item
+                    grow={1}
+                    shrink={1}
                     style={{
                       'overflow': 'hidden',
                       'white-space': 'nowrap',
                       'text-overflow': 'ellipsis',
-                    }}>
+                    }}
+                  >
                     <Button
                       fluid
                       style={{
@@ -52,14 +56,16 @@ export const OutfitManager = (props, context) => {
                         'text-overflow': 'ellipsis',
                       }}
                       content={outfit.name}
-                      onClick={() => act("edit", { outfit: outfit.ref })} />
+                      onClick={() => act('edit', { outfit: outfit.ref })}
+                    />
                   </Stack.Item>
                   <Stack.Item ml={0.5}>
                     <Button
                       icon="save"
                       tooltip="Save this outfit to a file"
                       tooltipPosition="left"
-                      onClick={() => act("save", { outfit: outfit.ref })} />
+                      onClick={() => act('save', { outfit: outfit.ref })}
+                    />
                   </Stack.Item>
                   <Stack.Item ml={0.5}>
                     <Button
@@ -67,7 +73,8 @@ export const OutfitManager = (props, context) => {
                       icon="trash-alt"
                       tooltip="Delete this outfit"
                       tooltipPosition="left"
-                      onClick={() => act("delete", { outfit: outfit.ref })} />
+                      onClick={() => act('delete', { outfit: outfit.ref })}
+                    />
                   </Stack.Item>
                 </Stack>
               </Stack.Item>
@@ -78,4 +85,3 @@ export const OutfitManager = (props, context) => {
     </Window>
   );
 };
-

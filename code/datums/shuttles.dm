@@ -11,7 +11,7 @@
 	var/port_x_offset
 	var/port_y_offset
 
-	var/limit
+	var/limit = 2
 	var/cost
 	var/short_name
 	var/list/job_slots = list()
@@ -62,7 +62,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/list/turfs = block(	locate(.[MAP_MINX], .[MAP_MINY], .[MAP_MINZ]),
+	var/list/turfs = block(locate(.[MAP_MINX], .[MAP_MINY], .[MAP_MINZ]),
 							locate(.[MAP_MAXX], .[MAP_MAXY], .[MAP_MAXZ]))
 	for(var/turf/place as anything in turfs)
 		if(istype(place, /turf/open/space)) // This assumes all shuttles are loaded in a single spot then moved to their real destination.
@@ -103,7 +103,7 @@
 			port.load(src)
 
 //Whatever special stuff you want
-/datum/map_template/shuttle/proc/post_load(obj/docking_port/mobile/M)
+/datum/map_template/shuttle/post_load(obj/docking_port/mobile/M)
 	if(movement_force)
 		M.movement_force = movement_force.Copy()
 
@@ -115,41 +115,13 @@
 	job_slots = list(new /datum/job/assistant = 5) // There will already be a captain, probably!
 	file_name = "custom_shuttle" // Dummy
 
-/// Mining shuttles
-/datum/map_template/shuttle/mining
-	category = "mining"
-
-/datum/map_template/shuttle/mining/kilo
-	file_name = "mining_kilo"
-	name = "mining shuttle (Kilo)"
-
-/datum/map_template/shuttle/mining/large
-	file_name = "mining_large"
-	name = "mining shuttle (Large)"
-
 /// Syndicate Infiltrator variants
 /datum/map_template/shuttle/infiltrator
 	category = "infiltrator"
 
-/datum/map_template/shuttle/infiltrator/basic
-	file_name = "infiltrator_basic"
-	name = "basic syndicate infiltrator"
-
 /datum/map_template/shuttle/infiltrator/advanced
 	file_name = "infiltrator_advanced"
 	name = "advanced syndicate infiltrator"
-
-/// Aux base templates
-/datum/map_template/shuttle/aux_base
-	category = "aux_base"
-
-/datum/map_template/shuttle/aux_base/default
-	file_name = "aux_base_default"
-	name = "auxilliary base (Default)"
-
-/datum/map_template/shuttle/aux_base/small
-	file_name = "aux_base_small"
-	name = "auxilliary base (Small)"
 
 /// Pirate ship templates
 /datum/map_template/shuttle/pirate
@@ -199,14 +171,3 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
-/// Escape pod map templates
-/datum/map_template/shuttle/escape_pod
-	category = "escape_pod"
-
-/datum/map_template/shuttle/escape_pod/default
-	file_name = "escape_pod_default"
-	name = "escape pod (Default)"
-
-/datum/map_template/shuttle/escape_pod/large
-	file_name = "escape_pod_large"
-	name = "escape pod (Large)"

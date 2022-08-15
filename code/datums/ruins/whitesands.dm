@@ -3,47 +3,6 @@
 /datum/map_template/ruin/whitesands
 	prefix = "_maps/RandomRuins/SandRuins/"
 
-/datum/map_template/ruin/whitesands/solgov_crash
-	name = "Crashed SolGov Transport"
-	id = "solgov-crash"
-	description = "Not too long ago, a SolGov transporter shuttle needed to get from point A to point B, and not too long after getting near, someone decided \
-					to see how maneuverable the famously unmaneuverable shuttles were."
-	suffix = "whitesands_surface_solgovcrash.dmm"
-	cost = 10
-	allow_duplicates = FALSE
-
-/datum/map_template/ruin/whitesands/hermit
-	name = "Sandstone Cave"
-	id = "hermitsandcave"
-	description = "A place of shelter for a lone hermit, scraping by to live another day."
-	suffix = "whitesands_surface_hermit.dmm"
-	allow_duplicates = FALSE
-	cost = 10
-
-/datum/map_template/ruin/whitesands/abductor_crash
-	name = "Crashed Abductor Ship"
-	id = "ws-abductor-crash"
-	description = "Turns out that keeping your abductees unconscious is really important. Who knew?"
-	suffix = "whitesands_surface_abductor_crash.dmm"
-	allow_duplicates = FALSE
-	cost = 5
-
-/datum/map_template/ruin/whitesands/blood_drunk_miner
-	name = "Blood-Drunk Miner"
-	id = "blooddrunk"
-	description = "A strange arrangement of stone tiles and an insane, beastly miner contemplating them."
-	suffix = "whitesands_surface_blooddrunk1.dmm"
-	cost = 0
-	allow_duplicates = FALSE //will only spawn one variant of the ruin
-
-/datum/map_template/ruin/whitesands/blood_drunk_miner/guidance
-	name = "Blood-Drunk Miner (Guidance)"
-	suffix = "whitesands_surface_blooddrunk2.dmm"
-
-/datum/map_template/ruin/whitesands/blood_drunk_miner/hunter
-	name = "Blood-Drunk Miner (Hunter)"
-	suffix = "whitesands_surface_blooddrunk3.dmm"
-
 /datum/map_template/ruin/whitesands/seed_vault
 	name = "Seed Vault"
 	id = "seed-vault"
@@ -51,20 +10,6 @@
 	However, all the inhabitants seem to do is grow drugs and guns."
 	suffix = "whitesands_surface_seed_vault.dmm"
 	cost = 10
-	allow_duplicates = FALSE
-
-/datum/map_template/ruin/whitesands/sin/envy
-	name = "Ruin of Envy"
-	id = "envy"
-	description = "When you get what they have, then you'll finally be happy."
-	suffix = "whitesands_surface_envy.dmm"
-	allow_duplicates = FALSE
-
-/datum/map_template/ruin/whitesands/water
-	name = "Abandoned Water Extraction Facility"
-	id = "waterplant"
-	description = "An abandoned building that seems to have once used prisoner labour to extract water for a colony."
-	suffix = "whitesands_surface_waterplant.dmm"
 	allow_duplicates = FALSE
 
 /datum/map_template/ruin/whitesands/starfury_crash
@@ -114,13 +59,6 @@
 	id = "ws-onlyaspoonful"
 	description = "Literally a fucking spoon factory"
 	suffix = "whitesands_surface_onlyaspoonful.dmm"
-	allow_duplicates = FALSE
-
-/datum/map_template/ruin/whitesands/onlyaspoonful
-	name = "Abandoned Spacepod Garage"
-	id = "ws-spacepod"
-	description = "A old abandoned spacepod garage. What must it have been used for?"
-	suffix = "whitesands_surface_spacepod_garage.dmm"
 	allow_duplicates = FALSE
 
 /datum/map_template/ruin/whitesands/chokepoint
@@ -191,17 +129,3 @@
 	placement_weight = 0.5
 	suffix = "whitesands_surface_camp_saloon.dmm"
 	allow_duplicates = FALSE
-
-//Crashed Shiptests//
-/datum/map_template/ruin/whitesands/crash_bar
-	name = "Crashed Bar"
-	description = "A crashed part of some unlucky ship. Was once a bar."
-	id = "crash-bar"
-	suffix = "whitesands_surface_crash_bar.dmm"
-
-/datum/map_template/ruin/whitesands/crash_cargo
-	name = "Crashed Cargo Bay"
-	description = "A crashed part of some unlucky ship. Has been taken over by pirates"
-	id = "crash-cargo"
-	suffix = "whitesands_surface_crash_cargo.dmm"
-

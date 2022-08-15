@@ -46,6 +46,11 @@
 
 	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
 
+/datum/outfit/job/miner/classic
+	uniform = /obj/item/clothing/under/rank/cargo/miner
+	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/workboots
+
 /datum/outfit/job/miner/solgov
 	name = "Pioneer (SolGov)"
 

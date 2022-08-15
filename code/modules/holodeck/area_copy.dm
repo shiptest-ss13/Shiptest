@@ -55,7 +55,7 @@ GLOBAL_LIST_INIT(duplicate_forbidden_vars,list(
 	return O
 
 
-/area/proc/copy_contents_to(area/A , platingRequired = 0, nerf_weapons = 0 )
+/area/proc/copy_contents_to(area/A , platingRequired = 0, nerf_weapons = 0)
 	//Takes: Area. Optional: If it should copy to areas that don't have plating
 	//Returns: Nothing.
 	//Notes: Attempts to move the contents of one area to another area.
@@ -131,6 +131,6 @@ GLOBAL_LIST_INIT(duplicate_forbidden_vars,list(
 
 	if(toupdate.len)
 		for(var/turf/T1 in toupdate)
-			CALCULATE_ADJACENT_TURFS(T1)
+			T1.ImmediateCalculateAdjacentTurfs()
 
 	return copiedobjs

@@ -223,9 +223,9 @@ SUBSYSTEM_DEF(shuttle)
 			return port
 
 // Returns the ship the atom belongs to by also getting the shuttle port's current_ship
-/datum/controller/subsystem/shuttle/proc/get_ship( atom/object )
-	var/obj/docking_port/mobile/port = get_containing_shuttle( object )
-	if ( port?.current_ship )
+/datum/controller/subsystem/shuttle/proc/get_ship(atom/object)
+	var/obj/docking_port/mobile/port = get_containing_shuttle(object)
+	if (port?.current_ship)
 		return port.current_ship
 
 /datum/controller/subsystem/shuttle/proc/get_containing_docks(atom/A)
@@ -247,12 +247,12 @@ SUBSYSTEM_DEF(shuttle)
 			.[port] = overlap
 
 /**
-  * This proc loads a shuttle from a specified template. If no destination port is specified, the shuttle will be
-  * spawned at a generated transit doc. Doing this is how most ships are loaded.
-  *
-  * * loading_template - The shuttle map template to load. Can NOT be null.
-  * * destination_port - The port the newly loaded shuttle will be sent to after being fully spawned in. If you want to have a transit dock be created, use [proc/load_template] instead. Should NOT be null.
-  **/
+ * This proc loads a shuttle from a specified template. If no destination port is specified, the shuttle will be
+ * spawned at a generated transit doc. Doing this is how most ships are loaded.
+ *
+ * * loading_template - The shuttle map template to load. Can NOT be null.
+ * * destination_port - The port the newly loaded shuttle will be sent to after being fully spawned in. If you want to have a transit dock be created, use [proc/load_template] instead. Should NOT be null.
+ **/
 /datum/controller/subsystem/shuttle/proc/action_load(datum/map_template/shuttle/loading_template, datum/overmap/ship/controlled/parent, obj/docking_port/stationary/destination_port)
 	if(!destination_port)
 		CRASH("No destination port specified for shuttle load, aborting.")
@@ -266,15 +266,15 @@ SUBSYSTEM_DEF(shuttle)
 	return new_shuttle
 
 /**
-  * This proc replaces the given shuttle with a fresh new one spawned from a template.
-  * spawned at a generated transit doc. Doing this is how most ships are loaded.
-  *
-  * Hopefully this doesn't need to be used, it's a last resort for admin-coders at best,
-  * but I wanted to preserve the functionality of old action_load() in case it was needed.
-  *
-  * * to_replace - The shuttle to replace. Should NOT be null.
-  * * replacement - The shuttle map template to load in place of the old shuttle. Can NOT be null.
-  **/
+ * This proc replaces the given shuttle with a fresh new one spawned from a template.
+ * spawned at a generated transit doc. Doing this is how most ships are loaded.
+ *
+ * Hopefully this doesn't need to be used, it's a last resort for admin-coders at best,
+ * but I wanted to preserve the functionality of old action_load() in case it was needed.
+ *
+ * * to_replace - The shuttle to replace. Should NOT be null.
+ * * replacement - The shuttle map template to load in place of the old shuttle. Can NOT be null.
+ **/
 /datum/controller/subsystem/shuttle/proc/replace_shuttle(obj/docking_port/mobile/to_replace, datum/overmap/ship/controlled/parent, datum/map_template/shuttle/replacement)
 	if(!to_replace || !replacement)
 		return
@@ -301,12 +301,12 @@ SUBSYSTEM_DEF(shuttle)
 	return new_shuttle
 
 /**
-  * This proc is THE proc that loads a shuttle from a specified template. Anything else should go through this
-  * in order to spawn a new shuttle.
-  *
-  * * template - The shuttle map template to load. Can NOT be null.
-  * * spawn_transit - Whether or not to send the new shuttle to a newly-generated transit dock after loading.
-  **/
+ * This proc is THE proc that loads a shuttle from a specified template. Anything else should go through this
+ * in order to spawn a new shuttle.
+ *
+ * * template - The shuttle map template to load. Can NOT be null.
+ * * spawn_transit - Whether or not to send the new shuttle to a newly-generated transit dock after loading.
+ **/
 /datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/template, datum/overmap/ship/controlled/parent, spawn_transit = TRUE)
 	. = FALSE
 	var/loading_mapzone = SSmapping.create_map_zone("Shuttle Loading Zone")
@@ -321,7 +321,6 @@ SUBSYSTEM_DEF(shuttle)
 		return
 
 	var/affected = template.get_affected_turfs(BL, centered=FALSE)
-
 	var/obj/docking_port/mobile/new_shuttle
 	var/list/stationary_ports = list()
 	// Search the turfs for docking ports
@@ -460,6 +459,32 @@ SUBSYSTEM_DEF(shuttle)
 						user.forceMove(get_turf(M))
 						. = TRUE
 						break
+
+		if("owner")
+			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
+			if(!port || !port.current_ship)
+				return
+			var/datum/overmap/ship/controlled/port_ship = port.current_ship
+			var/datum/action/ship_owner/admin/owner_action = new(port_ship)
+			owner_action.Grant(user)
+			owner_action.Trigger()
+			return TRUE
+
+		if("vv_port")
+			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
+			if(!port)
+				return
+			if(user.client)
+				user.client.debug_variables(port)
+			return TRUE
+
+		if("vv_ship")
+			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
+			if(!port || !port.current_ship)
+				return
+			if(user.client)
+				user.client.debug_variables(port.current_ship)
+			return TRUE
 
 		if("fly")
 			for(var/obj/docking_port/mobile/M as anything in mobile)

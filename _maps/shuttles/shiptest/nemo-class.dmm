@@ -50,7 +50,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -253,7 +253,7 @@
 /area/ship/crew/dorm)
 "di" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/suit_storage_unit/mining,
 /obj/effect/turf_decal/siding/brown{
@@ -348,7 +348,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/dark,
@@ -407,7 +407,7 @@
 /obj/structure/sign/poster/official/moth/piping{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/trimline/red/line{
+/obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -541,7 +541,7 @@
 "gO" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -565,7 +565,7 @@
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 6
 	},
-/obj/effect/turf_decal/trimline/blue/corner,
+/obj/effect/turf_decal/trimline/opaque/blue/corner,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "hf" = (
@@ -872,7 +872,7 @@
 	dir = 8;
 	name = "Oxygen to Chamber"
 	},
-/obj/effect/turf_decal/trimline/blue/arrow_cw,
+/obj/effect/turf_decal/trimline/opaque/blue/arrow_cw,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "kd" = (
@@ -1013,7 +1013,7 @@
 /area/ship/crew/library)
 "mg" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/siding/blue{
 	dir = 5
@@ -1082,7 +1082,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/blue/line{
+/obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1159,7 +1159,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/purple/line{
+/obj/effect/turf_decal/trimline/opaque/purple/line{
 	dir = 10
 	},
 /turf/open/floor/plating,
@@ -1187,7 +1187,7 @@
 	},
 /obj/item/radio/intercom/wideband{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
@@ -1219,7 +1219,7 @@
 /obj/item/paper{
 	info = "The igniter in the chamber does not work very well. I suggest throwing lit welders down the disposal chute over there to ignite the chamber."
 	},
-/obj/effect/turf_decal/trimline/red/line{
+/obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 6
 	},
 /turf/open/floor/plating,
@@ -1358,7 +1358,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/library)
@@ -1471,10 +1471,10 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
-/obj/effect/turf_decal/trimline/purple/arrow_cw,
-/obj/effect/turf_decal/trimline/blue/arrow_ccw{
+/obj/effect/turf_decal/trimline/opaque/purple/arrow_cw,
+/obj/effect/turf_decal/trimline/opaque/blue/arrow_ccw{
 	dir = 1
 	},
 /turf/open/floor/engine,
@@ -1622,7 +1622,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/purple/arrow_cw,
+/obj/effect/turf_decal/trimline/opaque/purple/arrow_cw,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "wr" = (
@@ -1656,10 +1656,10 @@
 /obj/item/paper/crumpled{
 	info = "A mix of 67/33 ratio of oxygen (node 1) and plasma (node 2) works very well, even at 500 kPa."
 	},
-/obj/effect/turf_decal/trimline/blue/line{
+/obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/purple/corner{
+/obj/effect/turf_decal/trimline/opaque/purple/corner{
 	dir = 8
 	},
 /turf/open/floor/engine,
@@ -1772,7 +1772,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/trimline/purple/line,
+/obj/effect/turf_decal/trimline/opaque/purple/line,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "yA" = (
@@ -1866,7 +1866,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/red/arrow_ccw{
+/obj/effect/turf_decal/trimline/opaque/red/arrow_ccw{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -2038,7 +2038,7 @@
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/blue/line,
+/obj/effect/turf_decal/trimline/opaque/blue/line,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "CV" = (
@@ -2089,7 +2089,7 @@
 	pixel_x = 28
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/siding/yellow{
 	dir = 5
@@ -2107,13 +2107,13 @@
 	id = "nemobridge";
 	name = "Bridge Lockdown";
 	pixel_x = 7;
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/button/door{
 	id = "nemowindows";
 	name = "Full Lockdown";
 	pixel_x = -7;
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
@@ -2279,7 +2279,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
-/obj/effect/turf_decal/trimline/blue/line{
+/obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 6
 	},
 /turf/open/floor/plating,
@@ -2391,7 +2391,7 @@
 	dir = 6
 	},
 /obj/machinery/vending/wallmed{
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2402,7 +2402,7 @@
 /obj/machinery/cryopod,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/circuit/green,
 /area/ship/crew/dorm)
@@ -2600,7 +2600,7 @@
 "MQ" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/frame/machine,
 /obj/item/circuitboard/machine/circuit_imprinter,
@@ -2688,7 +2688,7 @@
 /obj/item/clothing/mask/gas/atmos,
 /obj/item/clothing/head/hardhat/atmos,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/trimline/red/line{
+/obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -2822,7 +2822,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/red/arrow_ccw,
+/obj/effect/turf_decal/trimline/opaque/red/arrow_ccw,
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
 "Pd" = (
@@ -3070,7 +3070,7 @@
 /area/ship/cargo)
 "SS" = (
 /obj/machinery/advanced_airlock_controller{
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
@@ -3108,7 +3108,7 @@
 	dir = 4;
 	sensors = list("nemo_incinerator_sensor" = "Incinerator Chamber")
 	},
-/obj/effect/turf_decal/trimline/blue/line{
+/obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 6
 	},
 /turf/open/floor/plating,
@@ -3304,7 +3304,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/effect/turf_decal/trimline/red/line{
+/obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 5
 	},
 /turf/open/floor/plating,
@@ -3513,7 +3513,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/effect/turf_decal/trimline/purple/line,
+/obj/effect/turf_decal/trimline/opaque/purple/line,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Zx" = (
@@ -3542,7 +3542,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/trimline/red/line,
+/obj/effect/turf_decal/trimline/opaque/red/line,
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
 

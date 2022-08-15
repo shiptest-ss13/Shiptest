@@ -242,7 +242,7 @@
 
 /obj/item/storage/box/beakers/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/glass/beaker( src )
+		new /obj/item/reagent_containers/glass/beaker(src)
 
 /obj/item/storage/box/beakers/bluespace
 	name = "box of bluespace beakers"
@@ -293,7 +293,7 @@
 
 /obj/item/storage/box/medigels/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/medigel( src )
+		new /obj/item/reagent_containers/medigel(src)
 
 /obj/item/storage/box/injectors
 	name = "box of DNA injectors"
@@ -470,7 +470,7 @@
 
 /obj/item/storage/box/cups/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/food/drinks/sillycup( src )
+		new /obj/item/reagent_containers/food/drinks/sillycup(src)
 
 /obj/item/storage/box/donkpockets
 	name = "box of donk-pockets"
@@ -891,7 +891,7 @@
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"
 	desc = "A box full of beanbag shells."
-	icon_state = "rubbershot_box"
+	icon_state = "beanbag_box"
 	illustration = null
 
 /obj/item/storage/box/beanbag/PopulateContents()
@@ -985,12 +985,12 @@
 	return ..()
 
 /**
-  * check_menu: Checks if we are allowed to interact with a radial menu
-  *
-  * Arguments:
-  * * user The mob interacting with a menu
-  * * P The pen used to interact with a menu
-  */
+ * check_menu: Checks if we are allowed to interact with a radial menu
+ *
+ * Arguments:
+ * * user The mob interacting with a menu
+ * * P The pen used to interact with a menu
+ */
 /obj/item/storage/box/papersack/proc/check_menu(mob/user, obj/item/pen/P)
 	if(!istype(user))
 		return FALSE
@@ -1170,6 +1170,88 @@
 	new /obj/item/circuitboard/machine/protolathe(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/machine/circuit_imprinter(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndboards/old
+	name = "\proper Nanotrasen R&D Construction Kit"
+	desc = "A set of boards for constructing prototype design lathes, dating from a prewar Nanotrasen labratory. These ones are unbraked, and can produce any of the designs in their database without limit."
+
+//departmental RND kits, for shiptests.
+/obj/item/storage/box/rndmining
+	name = "\proper QWIK-RND: M.I.D.A.S. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print resource-extraction and finance related designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndmining/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/cargo(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/cargo(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndengi
+	name = "\proper QWIK-RND: A.T.L.A.S. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print maintenance, construction, and repair related designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndengi/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/engineering(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/engi(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndmed
+	name = "\proper QWIK-RND: C.A.R.E. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print medical and pharmaceutical care related designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndmed/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/medical(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/med(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndsec
+	name = "\proper QWIK-RND: P.E.A.C.E. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print military designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndsec/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/security(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/sec(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndciv
+	name = "\proper QWIK-RND: H.O.M.E. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print a variety of service industry designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndciv/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/service(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/civ(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndbasic
+	name = "\proper QWIK-RND: B.A.S.I.C. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print a variety of low-tier miscellaneous designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndbasic/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/basic(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/basic(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndsci
+	name = "\proper QWIK-RND: K.N.O.W. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print designs related to high-level scientific disciplines."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndsci/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/science(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/science(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 
 /obj/item/storage/box/silver_sulf

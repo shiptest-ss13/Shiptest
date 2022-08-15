@@ -24,6 +24,10 @@
 	damage = 20
 	armour_penetration = 0
 
+/obj/projectile/bullet/c556mmHITP_surplus
+	name = "5.56mm HITP surplus bullet"
+	damage = 15
+
 /obj/projectile/bullet/c556mmHITP_ap
 	name = "5.56mm HITP AP bullet"
 	damage = 15

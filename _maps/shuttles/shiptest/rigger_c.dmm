@@ -3,7 +3,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
@@ -34,7 +34,7 @@
 "aE" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -43,7 +43,7 @@
 "aJ" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/bed/dogbed/renault{
 	name = "Vance's bed"
@@ -95,7 +95,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#9ADEDE"
@@ -157,7 +157,7 @@
 	name = "Helm"
 	},
 /obj/item/radio/intercom/wideband{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/blue,
@@ -165,7 +165,7 @@
 "cb" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/table,
 /obj/machinery/reagentgrinder{
@@ -261,7 +261,7 @@
 "eh" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/chair{
 	dir = 8
@@ -291,7 +291,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/structure/table,
 /obj/item/paper,
 /obj/item/pen,
@@ -339,7 +339,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
@@ -421,13 +421,13 @@
 	id = "Cell 1";
 	req_one_access_txt = "2"
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/effect/turf_decal/number/one{
 	dir = 4
 	},
 /obj/machinery/flasher{
 	id = "Cell1C";
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -456,7 +456,7 @@
 /area/ship/engineering/atmospherics)
 "hn" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/light{
 	dir = 8
@@ -465,13 +465,13 @@
 	id = "Cell 2";
 	req_one_access_txt = "2"
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/effect/turf_decal/number/two{
 	dir = 4
 	},
 /obj/machinery/flasher{
 	id = "Cell2C";
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -523,7 +523,7 @@
 /area/ship/crew)
 "ig" = (
 /obj/item/radio/intercom{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -534,7 +534,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#9ADEDE"
@@ -590,7 +590,7 @@
 "iH" = (
 /obj/structure/closet/crate,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/spawner/lootdrop/maintenance/three,
 /obj/item/gun/ballistic/automatic/pistol/solgov,
@@ -879,7 +879,7 @@
 "lT" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/spawner/lootdrop/gloves,
@@ -908,8 +908,8 @@
 /area/ship/bridge)
 "mn" = (
 /obj/machinery/light,
-/obj/effect/turf_decal/corner/white/mono,
-/obj/effect/turf_decal/corner/green/half{
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/effect/turf_decal/corner/opaque/green/half{
 	dir = 4
 	},
 /obj/item/kirbyplants/random,
@@ -950,7 +950,7 @@
 	dir = 1
 	},
 /obj/machinery/advanced_airlock_controller{
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -990,7 +990,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/borderfloor,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
 	},
 /obj/structure/window/reinforced{
@@ -1012,7 +1012,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
@@ -1080,7 +1080,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#9ADEDE"
@@ -1132,14 +1132,14 @@
 	dir = 4;
 	id = "riggerdoors";
 	name = "Blast Door Control";
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
 	dir = 4;
 	id = "riggerwindows";
 	name = "Window Lockdown";
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = -5
 	},
 /obj/machinery/light{
@@ -1231,7 +1231,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/borderfloor,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
 	},
 /obj/structure/window/reinforced{
@@ -1307,7 +1307,7 @@
 "pY" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/light/small{
 	dir = 8
@@ -1325,7 +1325,7 @@
 /area/ship/bridge)
 "qk" = (
 /obj/structure/mirror{
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/sink{
 	dir = 8;
@@ -1334,7 +1334,7 @@
 /obj/machinery/light/small,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1472,7 +1472,7 @@
 /area/ship/bridge)
 "rJ" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/reagent_dispensers/watertank/high,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1507,7 +1507,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/catwalk/over,
@@ -1577,7 +1577,7 @@
 "sT" = (
 /obj/machinery/door/poddoor{
 	id = "riggerdoors";
-	name = "mech bay blast door"
+	name = "Mechbay Blast Door"
 	},
 /obj/structure/fans/tiny,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2071,8 +2071,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
 "yd" = (
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/table,
@@ -2091,7 +2091,7 @@
 "yi" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/structure/table,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -2219,7 +2219,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
@@ -2370,8 +2370,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/table,
@@ -2408,7 +2408,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#9ADEDE"
@@ -2606,7 +2606,7 @@
 	dir = 1
 	},
 /obj/machinery/computer/cryopod{
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood{
@@ -2650,10 +2650,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "DD" = (
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
 	},
-/obj/effect/turf_decal/corner/green/full,
+/obj/effect/turf_decal/corner/opaque/green/full,
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/toxin,
@@ -2703,8 +2703,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white/mono,
-/obj/effect/turf_decal/corner/green/full,
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/effect/turf_decal/corner/opaque/green/full,
 /obj/machinery/navbeacon{
 	codes_txt = "patrol;next_patrol=brigcells";
 	location = "med"
@@ -2714,7 +2714,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ef" = (
-/obj/effect/turf_decal/corner/green/full,
+/obj/effect/turf_decal/corner/opaque/green/full,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2735,7 +2735,7 @@
 "EF" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2743,7 +2743,7 @@
 /area/ship/maintenance/starboard)
 "EI" = (
 /obj/item/radio/intercom{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = -25
@@ -2869,10 +2869,10 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "FF" = (
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/white/diagonal,
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -2894,8 +2894,8 @@
 /obj/structure/window/reinforced/spawner/west{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/table,
@@ -3019,7 +3019,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
@@ -3218,7 +3218,7 @@
 "Jq" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/radio/intercom{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3272,8 +3272,8 @@
 /turf/open/floor/plating,
 /area/ship/security)
 "Ku" = (
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/table,
@@ -3290,7 +3290,7 @@
 /obj/machinery/navbeacon/wayfinding/med{
 	name = "navigation beacon"
 	},
-/obj/effect/turf_decal/corner/green/full,
+/obj/effect/turf_decal/corner/opaque/green/full,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
@@ -3303,7 +3303,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
@@ -3410,8 +3410,8 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Mp" = (
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/window/reinforced/spawner,
@@ -3429,7 +3429,7 @@
 /obj/machinery/power/apc/auto_name/west,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/chair{
 	dir = 4
@@ -3477,7 +3477,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3489,8 +3489,8 @@
 	location = "Kitchen";
 	name = "navigation beacon"
 	},
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -3542,7 +3542,7 @@
 	dir = 4;
 	id = "riggerdoors";
 	name = "Blast Door Control";
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -3752,7 +3752,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/machinery/atmospherics/components/binary/pump/on/layer4{
 	dir = 8
@@ -3763,8 +3763,8 @@
 /turf/open/floor/plating,
 /area/ship/construction)
 "Qq" = (
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/machinery/door/window/eastright,
@@ -3890,7 +3890,7 @@
 /area/ship/cargo)
 "Rw" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
@@ -3898,7 +3898,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
@@ -3920,7 +3920,7 @@
 "RO" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 10
@@ -3941,7 +3941,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/structure/table,
 /obj/item/paper,
 /obj/item/pen,
@@ -3955,8 +3955,8 @@
 	},
 /area/ship/maintenance/starboard)
 "SA" = (
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/machinery/gibber,
@@ -3997,7 +3997,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/structure/chair,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -4127,7 +4127,7 @@
 "Uf" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/light/small,
 /obj/structure/ore_box,
@@ -4145,7 +4145,7 @@
 "Ul" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle{
@@ -4185,8 +4185,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/white/mono,
-/obj/effect/turf_decal/corner/green/half{
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/effect/turf_decal/corner/opaque/green/half{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/tracks{
@@ -4213,7 +4213,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
 	color = "#E58E2D"
@@ -4270,7 +4270,7 @@
 "VF" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/closet/emcloset,
 /obj/machinery/light/small{
@@ -4284,7 +4284,7 @@
 	pixel_x = -32
 	},
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/ak47/nt{
+/obj/item/gun/ballistic/automatic/assualt/ak47/nt{
 	pixel_x = -12;
 	pixel_y = 7
 	},
@@ -4306,7 +4306,7 @@
 "VW" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "riggerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle{
@@ -4509,7 +4509,7 @@
 /area/ship/engineering/atmospherics)
 "Yc" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4657,8 +4657,8 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/effect/turf_decal/corner/white/diagonal,
-/obj/effect/turf_decal/corner/bar/diagonal{
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
 	},
 /obj/structure/sink/kitchen{
