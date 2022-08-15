@@ -151,7 +151,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Dormitory 5"
 
 /area/ship/crew/toilet
-	name = "Restrooms"
+	name = "Restroom"
 	icon_state = "toilet"
 
 /area/ship/crew/canteen
