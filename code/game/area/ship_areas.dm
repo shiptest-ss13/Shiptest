@@ -396,6 +396,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "storage"
 	sound_environment = SOUND_AREA_STANDARD_STATION
 
+/area/ship/storage/eva
+	name = "EVA Storage"
+	icon_state = "eva"
+
 /// External Areas ///
 /area/ship/external
 	name = "External"

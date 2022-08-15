@@ -238,14 +238,17 @@
 	drop_sound = 'sound/items/handling/ammobox_drop.ogg'
 	pickup_sound =  'sound/items/handling/ammobox_pickup.ogg'
 
-/obj/item/storage/toolbox/ammo/PopulateContents()
-	new /obj/item/ammo_box/a762(src)
-	new /obj/item/ammo_box/a762(src)
-	new /obj/item/ammo_box/a762(src)
-	new /obj/item/ammo_box/a762(src)
-	new /obj/item/ammo_box/a762(src)
-	new /obj/item/ammo_box/a762(src)
-	new /obj/item/ammo_box/a762(src)
+/obj/item/storage/toolbox/ammo/a762/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_box/a762(src)
+
+/obj/item/storage/toolbox/ammo/a762_39/PopulateContents()
+	for (var/i in 1 to 4)
+		new /obj/item/ammo_box/a762_39(src)
+
+/obj/item/storage/toolbox/ammo/c45/PopulateContents()
+	for (var/i in 1 to 4)
+		new /obj/item/ammo_box/c45(src)
 
 /obj/item/storage/toolbox/infiltrator
 	name = "insidious case"
