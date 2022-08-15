@@ -14,6 +14,8 @@
 	var/list/nodes_locked
 	// List of node IDs that are hidden from view
 	var/list/nodes_hidden
+	// List of node IDs that are BEPIS tech, and not yet obtained
+	var/list/nodes_bepis
 	// List of all design IDs that are accessible
 	var/list/designs_available
 	// List of research grids, indexed by target node id
@@ -56,6 +58,7 @@
 	nodes_researched = list()
 	nodes_locked = list()
 	nodes_hidden = list()
+	nodes_bepis = list()
 	designs_available = list()
 	grids = list()
 	for(var/datum/research_node/node as anything in SSresearch_v4.all_nodes())
@@ -67,6 +70,8 @@
 			nodes_locked += node.id
 		if(node.start_hidden)
 			nodes_hidden += node.id
+		if(node.bepis_node)
+			nodes_bepis += node.id
 
 /datum/research_web/proc/get_points(techtype)
 	return points_available[techtype_to_string(techtype)]
@@ -169,8 +174,28 @@
 		else
 			nodes_available -= unlockable.id
 
-/datum/research_web/proc/copy_research_to(datum/research_web/other)
-	var/list/allowed_nodes = nodes_researched - other.nodes_locked
+/datum/research_web/proc/update_nodes()
+	for(var/datum/research_node/node as anything in SSresearch_v4.all_nodes())
+		node.on_techweb_update(src)
+
+/datum/research_web/proc/copy_research_to(datum/research_web/other, force=FALSE, allow_bepis=FALSE, allow_hidden=FALSE, allow_locked=FALSE)
+	var/list/allowed_nodes = nodes_researched
+	for(var/datum/research_node/node as anything in allowed_nodes)
+		node = SSresearch_v4.get_node(node)
+
+		if(node.bepis_node && !allow_bepis)
+			allowed_nodes -= node.id
+			continue
+
+		if(node.start_hidden && !allow_hidden)
+			allowed_nodes -= node.id
+			continue
+
+		if(node.start_locked && !allow_locked)
+			allowed_nodes -= node.id
+			continue
+
 	var/list/new_nodes = allowed_nodes - other.nodes_researched
-	other.nodes_researched |= new_nodes
+	var/list/valid_nodes = new_nodes - other.nodes_locked
+	other.nodes_researched |= valid_nodes
 	other.recalculate_available()

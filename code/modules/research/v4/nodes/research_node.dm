@@ -1,10 +1,17 @@
 /datum/research_node
-	var/id
 	var/abstract = /datum/research_node
+
+	var/id
+	var/name
+	var/desc
+	var/category
 
 	var/start_researched = FALSE
 	var/start_hidden = FALSE
+	var/bepis_node = FALSE
 	var/start_locked = FALSE
+	/// List of typepaths that can be used to unlock this node by default. If you want custom logic for this hook into one of the helper methods.
+	var/list/boost_typepaths
 
 	var/points_required
 	var/points_type
@@ -48,6 +55,9 @@
 	return ..()
 
 /datum/research_node/proc/on_researched(mob/user, datum/research_web/web, obj/machinery/research_linked/machine)
+	return
+
+/datum/research_node/proc/on_techweb_update(datum/research_web/web)
 	return
 
 /datum/research_node/proc/can_user_research(mob/user, datum/research_web/web, obj/machinery/research_linked/machine)
