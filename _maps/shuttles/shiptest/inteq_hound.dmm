@@ -1244,15 +1244,10 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
-/obj/machinery/jukebox{
-	density = 0;
-	desc = "A battered boombox, probably older than most of the crew. Fortunately, it still works.";
-	icon = 'icons/obj/radio.dmi';
-	icon_state = "radio_angle";
-	name = "boombox";
+/obj/item/paicard,
+/obj/machinery/jukebox/boombox{
 	pixel_y = 15
 	},
-/obj/item/paicard,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew)
 "Bl" = (
