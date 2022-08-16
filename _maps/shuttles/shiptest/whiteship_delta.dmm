@@ -193,6 +193,9 @@
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
 	},
+/obj/machinery/door/poddoor{
+	id = "whiteship_windows"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "az" = (
@@ -348,6 +351,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor{
+	id = "whiteship_windows"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
@@ -2202,6 +2208,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "whiteship_windows"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
