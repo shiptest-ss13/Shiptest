@@ -107,6 +107,12 @@
 /obj/machinery/door/poddoor/incinerator_atmos_aux,
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
+"bB" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/pod,
+/area/ship/hallway/central)
 "bI" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -596,6 +602,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "hj" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "hu" = (
@@ -635,6 +644,9 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -1037,6 +1049,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "mk" = (
@@ -1424,6 +1439,9 @@
 	id = "nemo_cargo";
 	pixel_x = -10;
 	pixel_y = 24
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
@@ -2096,6 +2114,21 @@
 /obj/structure/chair/office,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
+"Ep" = (
+/obj/machinery/door/poddoor{
+	id = "nemoblast"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 1;
+	id = "nemo_cargo";
+	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/pod,
+/area/ship/hallway/central)
 "Eq" = (
 /obj/machinery/light{
 	dir = 4
@@ -2858,6 +2891,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "Pm" = (
@@ -2960,18 +2996,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"QD" = (
-/obj/machinery/door/poddoor{
-	id = "nemoblast"
-	},
-/obj/machinery/power/shieldwallgen/atmos{
-	anchored = 1;
-	dir = 1;
-	id = "nemo_cargo";
-	locked = 1
-	},
-/turf/open/floor/pod,
-/area/ship/hallway/central)
 "QI" = (
 /obj/effect/turf_decal/siding/blue{
 	dir = 8
@@ -3026,6 +3050,9 @@
 	id = "nemo_cargo";
 	locked = 1
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/pod,
 /area/ship/hallway/central)
 "Rz" = (
@@ -3055,6 +3082,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"RY" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/pod,
+/area/ship/hallway/central)
 "Sh" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Electrical"
@@ -3176,6 +3212,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -4072,9 +4111,9 @@ tb
 (25,1,1) = {"
 ak
 hj
-hj
-hj
-hj
+RY
+bB
+bB
 TM
 Qj
 el
@@ -4112,7 +4151,7 @@ tb
 (27,1,1) = {"
 hF
 Rw
-QD
+Ep
 UK
 Yk
 gI
