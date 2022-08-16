@@ -291,7 +291,7 @@
 	icon_state = "sec_wall";
 	name = "ammunition locker";
 	pixel_y = -28;
-	req_access_txt = "1";
+	req_access_txt = "57, 41";
 	dir = 1
 	},
 /obj/item/ammo_box/magazine/co9mm,
@@ -999,6 +999,21 @@
 "jS" = (
 /turf/closed/wall,
 /area/ship/crew/dorm)
+"jX" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "skippyshieldywalle";
+	locked = 1
+	},
+/obj/structure/cable,
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor{
+	id = "amogusdoors";
+	name = "Cargo Bay Blast Door"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "jZ" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1738,6 +1753,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
+"pr" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "ps" = (
 /obj/machinery/photocopier,
 /obj/structure/sign/nanotrasen{
@@ -1888,6 +1912,19 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
+"rb" = (
+/obj/machinery/door/poddoor{
+	id = "amogusdoors";
+	name = "Cargo Bay Blast Door"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor{
+	id = "amogusdoors";
+	name = "Cargo Bay Blast Door"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "re" = (
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/cryo)
@@ -1980,6 +2017,9 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/box/lights/mixed,
 /obj/item/storage/box/lights/mixed,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "sj" = (
@@ -2616,12 +2656,12 @@
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/dorm)
 "wU" = (
+/obj/machinery/door/firedoor,
 /obj/machinery/mineral/ore_redemption{
 	dir = 1;
 	input_dir = 2;
 	output_dir = 1
 	},
-/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "wZ" = (
@@ -3201,6 +3241,25 @@
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/crew/office)
+"Dw" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	locked = 1;
+	id = "skippyshieldywalle"
+	},
+/obj/structure/cable,
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor{
+	id = "amogusdoors";
+	name = "Cargo Bay Blast Door"
+	},
+/obj/machinery/door/poddoor{
+	id = "amogusdoors";
+	name = "Cargo Bay Blast Door"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "DN" = (
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/chair/comfy/black{
@@ -3491,6 +3550,9 @@
 "FW" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/portable_atmospherics/pump,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Gb" = (
@@ -3595,6 +3657,11 @@
 	},
 /obj/item/folder/yellow,
 /obj/item/stamp/qm,
+/obj/machinery/button/shieldwallgen{
+	id = "skippyshieldywalle";
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "Hb" = (
@@ -3743,7 +3810,7 @@
 /obj/structure/closet/secure_closet/wall{
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	req_access_txt = "1";
+	req_access_txt = "57, 41";
 	dir = 4;
 	pixel_x = -32
 	},
@@ -3907,6 +3974,9 @@
 "Kv" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/portable_atmospherics/canister/air,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Kz" = (
@@ -4273,8 +4343,8 @@
 /obj/effect/turf_decal/corner/opaque/yellow/border{
 	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
+/obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "NB" = (
@@ -4633,7 +4703,17 @@
 	id = "amogusdoors";
 	name = "Cargo Blast Door Control";
 	pixel_x = 25;
-	dir = 8
+	dir = 8;
+	pixel_y = -4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 8;
+	id = "skippyshieldywalle";
+	pixel_x = 24;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -5275,6 +5355,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "UD" = (
@@ -5319,7 +5402,8 @@
 "UT" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/southright{
-	name = "Requests Desk"
+	name = "Requests Desk";
+	req_one_access_txt = "57, 41"
 	},
 /obj/machinery/door/window/northleft{
 	name = "Requests Desk"
@@ -5691,11 +5775,12 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Ym" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "amogusdoors";
 	name = "Cargo Bay Blast Door"
 	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Yn" = (
@@ -6127,8 +6212,8 @@ Ca
 Sz
 sh
 Kv
-JE
-Ym
+pr
+Dw
 "}
 (11,1,1) = {"
 kz
@@ -6159,7 +6244,7 @@ NI
 WO
 ug
 jv
-Ym
+rb
 "}
 (12,1,1) = {"
 kz
@@ -6283,7 +6368,7 @@ JQ
 UC
 FW
 PL
-Ym
+jX
 "}
 (16,1,1) = {"
 kz
