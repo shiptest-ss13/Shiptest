@@ -275,14 +275,15 @@
 /obj/item/hand_labeler_refill,
 /obj/item/clothing/under/syndicate/donk,
 /obj/item/clothing/suit/hazardvest/donk,
-/obj/structure/closet/wall/orange{
-	dir = 4;
-	name = "Employee's Locker";
-	pixel_x = -32
-	},
 /obj/item/stack/wrapping_paper,
 /obj/item/stack/packageWrap,
 /obj/structure/railing,
+/obj/structure/closet/wall{
+	dir = 4;
+	icon_door = "orange_wall";
+	name = "employee closet";
+	pixel_x = -28
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "gy" = (
@@ -415,13 +416,14 @@
 /obj/item/hand_labeler_refill,
 /obj/item/clothing/under/syndicate/donk,
 /obj/item/clothing/suit/hazardvest/donk,
-/obj/structure/closet/wall/orange{
-	dir = 4;
-	name = "Employee's Locker";
-	pixel_x = -32
-	},
 /obj/item/stack/wrapping_paper,
 /obj/item/stack/packageWrap,
+/obj/structure/closet/wall{
+	dir = 4;
+	icon_door = "orange_wall";
+	name = "employee closet";
+	pixel_x = -28
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "jK" = (
@@ -436,14 +438,15 @@
 /obj/item/hand_labeler_refill,
 /obj/item/clothing/under/syndicate/donk,
 /obj/item/clothing/suit/hazardvest/donk,
-/obj/structure/closet/wall/orange{
-	dir = 8;
-	name = "Employee's Locker";
-	pixel_x = 32
-	},
 /obj/item/stack/wrapping_paper,
 /obj/item/stack/packageWrap,
 /obj/structure/railing,
+/obj/structure/closet/wall{
+	dir = 8;
+	icon_door = "orange_wall";
+	name = "employee closet";
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "kg" = (
@@ -1724,16 +1727,17 @@
 /obj/item/hand_labeler_refill,
 /obj/item/clothing/under/syndicate/donk,
 /obj/item/clothing/suit/hazardvest/donk,
-/obj/structure/closet/wall/orange{
-	dir = 8;
-	name = "Employee's Locker";
-	pixel_x = 32
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
 /obj/item/stack/wrapping_paper,
 /obj/item/stack/packageWrap,
+/obj/structure/closet/wall{
+	dir = 8;
+	icon_door = "orange_wall";
+	name = "employee closet";
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "Ix" = (
@@ -2100,13 +2104,14 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
-/obj/structure/closet/wall/orange{
-	dir = 4;
-	name = "Employee's Locker";
-	pixel_x = -32
-	},
 /obj/item/stack/wrapping_paper,
 /obj/item/stack/packageWrap,
+/obj/structure/closet/wall{
+	dir = 4;
+	icon_door = "orange_wall";
+	name = "employee closet";
+	pixel_x = -28
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "PP" = (
@@ -2260,12 +2265,6 @@
 /obj/item/storage/backpack/duffelbag/syndie{
 	name = "manager's duffel bag"
 	},
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	name = "Manager's Locker";
-	pixel_x = -32;
-	req_access_txt = "41"
-	},
 /obj/item/clothing/under/syndicate/donk/qm,
 /obj/item/clothing/suit/hazardvest/donk/qm,
 /obj/item/melee/classic_baton/telescopic,
@@ -2276,6 +2275,13 @@
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
+/obj/structure/closet/secure_closet/wall{
+	dir = 4;
+	icon_state = "solgov_wall";
+	name = "manager's locker";
+	pixel_x = -28;
+	req_access_txt = "41"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "Sb" = (
