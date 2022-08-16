@@ -2138,7 +2138,10 @@
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/gun/ballistic/shotgun/doublebarrel,
 /obj/item/clothing/under/rank/civilian/bartender,
-/obj/structure/closet/secure_closet/bar,
+/obj/structure/closet/secure_closet/bar{
+	req_access = null;
+	req_one_access_txt = list(25, 41)
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "Qe" = (
