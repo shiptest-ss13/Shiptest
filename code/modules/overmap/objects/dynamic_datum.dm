@@ -256,7 +256,7 @@
 			token.icon_state = "strange_event"
 			token.color = null
 			ruin_list = SSmapping.space_ruins_templates
-			surface = null
+			surface = /turf/open/space
 			mapgen = null
 			weather_controller_type = null
 
