@@ -695,7 +695,7 @@
 	required_reagents = list(/datum/reagent/consumable/vitfro = 5, /datum/reagent/consumable/tinlux = 5, /datum/reagent/consumable/pyre_elementum = 1)
 
 /datum/chemical_reaction/herbal_brute
-	required_reagents = list(/datum/reagent/ash_fibers = 10, /datum/reagent/consumable/vitfro = 10, /datum/reagent/consumable/ethanol = 10, /datum/reagent/stabilizing_agent = 5)
+	required_reagents = list(/datum/reagent/ash_fibers = 12, /datum/reagent/consumable/vitfro = 10, /datum/reagent/consumable/ethanol = 6, /datum/reagent/stabilizing_agent = 8)
 	mob_react = FALSE
 
 /datum/chemical_reaction/herbal_brute/on_reaction(datum/reagents/holder, created_volume)
@@ -704,7 +704,7 @@
 		new /obj/item/stack/medical/bruise_pack/herb(location)
 
 /datum/chemical_reaction/herbal_burn
-	required_reagents = list(/datum/reagent/calcium = 10, /datum/reagent/consumable/pyre_elementum = 10, /datum/reagent/silver = 10, /datum/reagent/toxin/plasma = 5)
+	required_reagents = list(/datum/reagent/calcium = 10, /datum/reagent/consumable/pyre_elementum = 10, /datum/reagent/silver = 10, /datum/reagent/carbon = 8)
 	mob_react = FALSE
 
 /datum/chemical_reaction/herbal_burn/on_reaction(datum/reagents/holder, created_volume)
