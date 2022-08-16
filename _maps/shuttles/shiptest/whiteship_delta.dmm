@@ -319,6 +319,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/structure/closet/firecloset/wall{
+	dir = 1;
+	pixel_y = -28
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "aK" = (
@@ -997,9 +1001,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cm" = (
-/obj/structure/closet/firecloset{
-	anchored = 1
-	},
+/obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "co" = (
@@ -1554,6 +1556,9 @@
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
 	},
+/obj/structure/closet/emcloset/wall{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "dr" = (
@@ -1679,8 +1684,9 @@
 	dir = 5
 	},
 /obj/structure/closet/wall{
+	dir = 4;
 	name = "Emergency Defense Storage";
-	pixel_x = -32
+	pixel_x = -28
 	},
 /obj/item/ammo_box/magazine/co9mm{
 	pixel_x = 5
@@ -1874,8 +1880,9 @@
 	pixel_y = -24
 	},
 /obj/structure/closet/wall{
+	dir = 4;
 	name = "Radio Storage";
-	pixel_x = -32
+	pixel_x = -28
 	},
 /obj/item/radio,
 /obj/item/radio,
@@ -2043,6 +2050,10 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/light/small{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 24
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -2582,10 +2593,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/medical)
-"PD" = (
-/obj/machinery/vending/boozeomat/all_access,
-/turf/open/floor/plating,
-/area/ship/crew)
 "QC" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -2726,11 +2733,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "Zl" = (
-/obj/structure/closet/emcloset/anchored,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 24
-	},
+/obj/machinery/vending/boozeomat/all_access,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "ZY" = (
@@ -3000,7 +3003,7 @@ ev
 dD
 ev
 Zl
-PD
+SN
 dq
 XC
 hi
