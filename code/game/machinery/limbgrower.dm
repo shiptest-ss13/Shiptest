@@ -22,7 +22,7 @@
 	/// The design we're printing currently.
 	var/datum/design/being_built
 	/// Our internal techweb for limbgrower designs.
-	var/datum/techweb/stored_research
+	var/datum/research_web/integrated/stored_research
 	/// All the categories of organs we can print.
 	var/list/categories = list(SPECIES_HUMAN,SPECIES_DWARF,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_KEPORI,SPECIES_VOX,"other")
 	//yogs grower a little different because we're going to allow meats to be converted to synthflesh because hugbox
@@ -36,7 +36,7 @@
 
 /obj/machinery/limbgrower/Initialize(mapload)
 	create_reagents(100, OPENCONTAINER)
-	stored_research = new /datum/techweb/specialized/autounlocking/limbgrower
+	stored_research = new /datum/research_web/integrated(src, LIMBGROWER)
 	. = ..()
 	AddComponent(/datum/component/plumbing/simple_demand)
 
@@ -74,8 +74,8 @@
 	var/species_categories = categories.Copy()
 	for(var/species in species_categories)
 		species_categories[species] = list()
-	for(var/design_id in stored_research.researched_designs)
-		var/datum/design/limb_design = SSresearch.techweb_design_by_id(design_id)
+	for(var/design_id in stored_research.designs_available)
+		var/datum/design/limb_design = SSresearch_v4.get_design(design_id)
 		for(var/found_category in species_categories)
 			if(found_category in limb_design.category)
 				species_categories[found_category] += limb_design
@@ -173,7 +173,7 @@
 			. = TRUE
 
 		if("make_limb")
-			being_built = stored_research.isDesignResearchedID(params["design_id"])
+			being_built = (params["design_id"] in stored_research.designs_available)
 			if(!being_built)
 				CRASH("[src] was passed an invalid design id!")
 
@@ -300,14 +300,10 @@
 /obj/machinery/limbgrower/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
-	for(var/design_id in SSresearch.techweb_designs)
-		var/datum/design/found_design = SSresearch.techweb_design_by_id(design_id)
-		if((found_design.build_type & LIMBGROWER) && ("emagged" in found_design.category))
-			stored_research.add_design(found_design)
+	stored_research.handle_parent_emag()
 	to_chat(user, "<span class='warning'>Safety overrides have been deactivated!</span>")
 	obj_flags |= EMAGGED
 	update_static_data(user)
-
 
 //start yog
 /obj/machinery/limbgrower/proc/handle_biomass(user_item, biomass, user) // updates the value

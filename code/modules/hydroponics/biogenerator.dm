@@ -13,14 +13,14 @@
 	var/efficiency = 0
 	var/productivity = 0
 	var/max_items = 40
-	var/datum/techweb/stored_research
+	var/datum/research_web/integrated/stored_research
 	var/list/show_categories = list("Food", "Botany Chemicals", "Organic Materials")
 	/// Currently selected category in the UI
 	var/selected_cat
 
 /obj/machinery/biogenerator/Initialize()
 	. = ..()
-	stored_research = new /datum/techweb/specialized/autounlocking/biogenerator
+	stored_research = new /datum/research_web/integrated(src, BIOGENERATOR)
 	create_reagents(1000)
 
 /obj/machinery/biogenerator/Destroy()
@@ -140,18 +140,6 @@
 			if(user.transferItemToLoc(O, src))
 				to_chat(user, "<span class='info'>You put [O.name] in [src.name]</span>")
 		return TRUE //no afterattack
-	else if (istype(O, /obj/item/disk/design_disk))
-		user.visible_message("<span class='notice'>[user] begins to load \the [O] in \the [src]...</span>",
-			"<span class='notice'>You begin to load a design from \the [O]...</span>",
-			"<span class='hear'>You hear the chatter of a floppy drive.</span>")
-		processing = TRUE
-		var/obj/item/disk/design_disk/D = O
-		if(do_after(user, 10, target = src))
-			for(var/B in D.blueprints)
-				if(B)
-					stored_research.add_design(B)
-		processing = FALSE
-		return TRUE
 	else
 		to_chat(user, "<span class='warning'>You cannot put this in [src.name]!</span>")
 
@@ -286,8 +274,8 @@
 	var/categories = show_categories.Copy()
 	for(var/V in categories)
 		categories[V] = list()
-	for(var/V in stored_research.researched_designs)
-		var/datum/design/D = SSresearch.techweb_design_by_id(V)
+	for(var/V in stored_research.designs_available)
+		var/datum/design/D = SSresearch_v4.get_design(V)
 		for(var/C in categories)
 			if(C in D.category)
 				categories[C] += D
@@ -325,10 +313,10 @@
 			if(!amount)
 				return
 			var/id = params["id"]
-			if(!stored_research.researched_designs.Find(id))
+			if(!stored_research.designs_available.Find(id))
 				stack_trace("ID did not map to a researched datum [id]")
 				return
-			var/datum/design/D = SSresearch.techweb_design_by_id(id)
+			var/datum/design/D = SSresearch_v4.get_design(id)
 			if(D && !istype(D, /datum/design/error_design))
 				create_product(D, amount)
 			else

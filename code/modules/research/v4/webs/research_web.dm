@@ -1,6 +1,7 @@
 /datum/research_web
 	var/static/next_id = 0
 	var/id
+	var/datum/overmap/ship/controlled/master
 
 	var/list/points_available
 
@@ -18,8 +19,14 @@
 	var/list/nodes_bepis
 	// List of all design IDs that are accessible
 	var/list/designs_available
+	// List of discovered mutations
+	var/list/mutations_discovered
+	// Biggest boom
+	var/largest_bomb_value
 	// List of research grids, indexed by target node id
 	var/list/datum/research_grid/grids
+	// List of consoles accesing us
+	var/list/consoles_accessing
 
 /mob/verb/debug_rnd()
 	var/obj/machinery/computer/helm/helm = locate() in get_turf(src)
@@ -36,14 +43,16 @@
 	helm.current_ship.mainframe.nodes_available |= "debug"
 	helm.current_ship.mainframe.start_research_node(src, target, "debug")
 
-/datum/research_web/New()
+/datum/research_web/New(master)
 	id = "[next_id++]"
+	src.master = master
 	initial_lists()
 	recalculate_available()
 	SSresearch_v4.instances_web[id] = src
 
 /datum/research_web/Destroy(force, ...)
 	QDEL_LIST_ASSOC_VAL(grids)
+	consoles_accessing.Cut()
 	return ..()
 
 /datum/research_web/proc/recalculate_available()
@@ -60,6 +69,8 @@
 	nodes_hidden = list()
 	nodes_bepis = list()
 	designs_available = list()
+	mutations_discovered = list()
+	consoles_accessing = list()
 	grids = list()
 	for(var/datum/research_node/node as anything in SSresearch_v4.all_nodes())
 		if(node.start_researched)
@@ -198,4 +209,6 @@
 	var/list/new_nodes = allowed_nodes - other.nodes_researched
 	var/list/valid_nodes = new_nodes - other.nodes_locked
 	other.nodes_researched |= valid_nodes
+	other.mutations_discovered |= mutations_discovered
 	other.recalculate_available()
+	other.update_nodes()

@@ -112,48 +112,49 @@ Note: Must be placed within 3 tiles of the R&D Console
 	if(!istype(loaded_item) || !istype(linked_console))
 		return FALSE
 
-	if (id && id != RESEARCH_MATERIAL_RECLAMATION_ID)
-		var/datum/techweb_node/TN = SSresearch.techweb_node_by_id(id)
-		if(!istype(TN))
-			return FALSE
-		var/dpath = loaded_item.type
-		var/list/worths = TN.boost_item_paths[dpath]
-		var/list/differences = list()
-		var/list/already_boosted = linked_console.stored_research.boosted_nodes[TN.id]
-		for(var/i in worths)
-			var/used = already_boosted? already_boosted[i] : 0
-			var/value = min(worths[i], TN.research_costs[i]) - used
-			if(value > 0)
-				differences[i] = value
-		if(length(worths) && !length(differences))
-			return FALSE
-		var/choice = input("Are you sure you want to destroy [loaded_item] to [!length(worths) ? "reveal [TN.display_name]" : "boost [TN.display_name] by [json_encode(differences)] point\s"]?") in list("Proceed", "Cancel")
-		if(choice == "Cancel")
-			return FALSE
-		if(QDELETED(loaded_item) || QDELETED(linked_console) || !user.Adjacent(linked_console) || QDELETED(src))
-			return FALSE
-		SSblackbox.record_feedback("nested tally", "item_deconstructed", 1, list("[TN.id]", "[loaded_item.type]"))
-		if(destroy_item(loaded_item))
-			linked_console.stored_research.boost_with_path(SSresearch.techweb_node_by_id(TN.id), dpath)
+	// TODO NODE BOOSTING
+	// if (id && id != RESEARCH_MATERIAL_RECLAMATION_ID)
+	// 	var/datum/techweb_node/TN = SSresearch.techweb_node_by_id(id)
+	// 	if(!istype(TN))
+	// 		return FALSE
+	// 	var/dpath = loaded_item.type
+	// 	var/list/worths = TN.boost_item_paths[dpath]
+	// 	var/list/differences = list()
+	// 	var/list/already_boosted = linked_console.stored_research.boosted_nodes[TN.id]
+	// 	for(var/i in worths)
+	// 		var/used = already_boosted? already_boosted[i] : 0
+	// 		var/value = min(worths[i], TN.research_costs[i]) - used
+	// 		if(value > 0)
+	// 			differences[i] = value
+	// 	if(length(worths) && !length(differences))
+	// 		return FALSE
+	// 	var/choice = input("Are you sure you want to destroy [loaded_item] to [!length(worths) ? "reveal [TN.display_name]" : "boost [TN.display_name] by [json_encode(differences)] point\s"]?") in list("Proceed", "Cancel")
+	// 	if(choice == "Cancel")
+	// 		return FALSE
+	// 	if(QDELETED(loaded_item) || QDELETED(linked_console) || !user.Adjacent(linked_console) || QDELETED(src))
+	// 		return FALSE
+	// 	SSblackbox.record_feedback("nested tally", "item_deconstructed", 1, list("[TN.id]", "[loaded_item.type]"))
+	// 	if(destroy_item(loaded_item))
+	// 		linked_console.stored_research.boost_with_path(SSresearch.techweb_node_by_id(TN.id), dpath)
 
-	else
-		var/list/point_value = techweb_item_point_check(loaded_item)
-		if(linked_console.stored_research.deconstructed_items[loaded_item.type])
-			point_value = list()
-		var/user_mode_string = ""
-		if(length(point_value))
-			user_mode_string = " for [json_encode(point_value)] points"
-		else if(length(loaded_item.custom_materials))
-			user_mode_string = " for material reclamation"
-		var/choice = input("Are you sure you want to destroy [loaded_item][user_mode_string]?") in list("Proceed", "Cancel")
-		if(choice == "Cancel")
-			return FALSE
-		if(QDELETED(loaded_item) || QDELETED(linked_console) || !user.Adjacent(linked_console) || QDELETED(src))
-			return FALSE
-		var/loaded_type = loaded_item.type
-		if(destroy_item(loaded_item))
-			linked_console.stored_research.add_point_list(point_value)
-			linked_console.stored_research.deconstructed_items[loaded_type] = point_value
+	// else
+	// 	var/list/point_value = techweb_item_point_check(loaded_item)
+	// 	if(linked_console.stored_research.deconstructed_items[loaded_item.type])
+	// 		point_value = list()
+	// 	var/user_mode_string = ""
+	// 	if(length(point_value))
+	// 		user_mode_string = " for [json_encode(point_value)] points"
+	// 	else if(length(loaded_item.custom_materials))
+	// 		user_mode_string = " for material reclamation"
+	// 	var/choice = input("Are you sure you want to destroy [loaded_item][user_mode_string]?") in list("Proceed", "Cancel")
+	// 	if(choice == "Cancel")
+	// 		return FALSE
+	// 	if(QDELETED(loaded_item) || QDELETED(linked_console) || !user.Adjacent(linked_console) || QDELETED(src))
+	// 		return FALSE
+	// 	var/loaded_type = loaded_item.type
+	// 	if(destroy_item(loaded_item))
+	// 		linked_console.stored_research.add_point_list(point_value)
+	// 		linked_console.stored_research.deconstructed_items[loaded_type] = point_value
 
 	return TRUE
 

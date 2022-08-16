@@ -11,7 +11,7 @@
 	circuit = /obj/item/circuitboard/machine/mechfab
 	var/time_coeff = 1
 	var/component_coeff = 1
-	var/datum/techweb/specialized/autounlocking/exofab/stored_research
+	var/datum/research_web/integrated/stored_research
 	var/sync = 0
 	var/part_set
 	var/datum/design/being_built
@@ -39,7 +39,7 @@
 								)
 
 /obj/machinery/mecha_part_fabricator/Initialize(mapload)
-	stored_research = new
+	stored_research = new(src, MECHFAB)
 	matching_designs = list()
 	rmat = AddComponent(/datum/component/remote_materials, "mechfab", mapload && link_on_init)
 	RefreshParts() //Recalculating local material sizes if the fab isn't linked
@@ -85,8 +85,8 @@
 
 /obj/machinery/mecha_part_fabricator/proc/output_parts_list(set_name)
 	var/output = ""
-	for(var/v in stored_research.researched_designs)
-		var/datum/design/D = SSresearch.techweb_design_by_id(v)
+	for(var/v in stored_research.designs_available)
+		var/datum/design/D = SSresearch_v4.get_design(v)
 		if(D.build_type & MECHFAB)
 			if(!(set_name in D.category))
 				continue
@@ -160,8 +160,8 @@
 
 /obj/machinery/mecha_part_fabricator/proc/search(string)
 	matching_designs.Cut()
-	for(var/v in stored_research.researched_designs)
-		var/datum/design/D = SSresearch.techweb_design_by_id(v)
+	for(var/v in stored_research.designs_available)
+		var/datum/design/D = SSresearch_v4.get_design(v)
 		if(!(D.build_type & MECHFAB))
 			continue
 		if(findtext(D.name,string))
@@ -219,8 +219,8 @@
 
 /obj/machinery/mecha_part_fabricator/proc/add_part_set_to_queue(set_name)
 	if(set_name in part_sets)
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
+		for(var/v in stored_research.designs_available)
+			var/datum/design/D = SSresearch_v4.get_design(v)
 			if(D.build_type & MECHFAB)
 				if(set_name in D.category)
 					add_to_queue(D)
@@ -372,8 +372,8 @@
 				screen = "parts"
 	if(href_list["part"])
 		var/T = href_list["part"]
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
+		for(var/v in stored_research.designs_available)
+			var/datum/design/D = SSresearch_v4.get_design(v)
 			if(D.build_type & MECHFAB)
 				if(D.id == T)
 					if(!processing_queue)
@@ -383,8 +383,8 @@
 					break
 	if(href_list["add_to_queue"])
 		var/T = href_list["add_to_queue"]
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
+		for(var/v in stored_research.designs_available)
+			var/datum/design/D = SSresearch_v4.get_design(v)
 			if(D.build_type & MECHFAB)
 				if(D.id == T)
 					add_to_queue(D)
@@ -416,8 +416,8 @@
 		sync()
 	if(href_list["part_desc"])
 		var/T = href_list["part_desc"]
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
+		for(var/v in stored_research.designs_available)
+			var/datum/design/D = SSresearch_v4.get_design(v)
 			if(D.build_type & MECHFAB)
 				if(D.id == T)
 					var/obj/part = D.build_path

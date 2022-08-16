@@ -196,7 +196,7 @@
 /obj/machinery/doppler_array/research
 	name = "tachyon-doppler research array"
 	desc = "A specialized tachyon-doppler bomb detection array that uses the results of the highest yield of explosions for research."
-	var/datum/techweb/linked_techweb
+	var/datum/research_web/linked_techweb
 
 /obj/machinery/doppler_array/research/Destroy()
 	linked_techweb = null
@@ -206,9 +206,8 @@
 	. = ..()
 	if(istype(I, /obj/item/multitool))
 		var/obj/item/multitool/multi = I
-		if(istype(multi.buffer, /obj/machinery/rnd/server))
-			var/obj/machinery/rnd/server/serv = multi.buffer
-			linked_techweb = serv.stored_research
+		if(istype(multi.buffer, /datum/research_web))
+			linked_techweb = multi.buffer
 			visible_message("Linked to Server!")
 		return
 
@@ -237,7 +236,7 @@
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_SCI)
 		if(D)
 			D.adjust_money(point_gain)
-			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, point_gain)
+			linked_techweb.add_points(TECHTYPE_SCIENCE, point_gain)
 			say("Explosion details and mixture analyzed and sold to the highest bidder for [point_gain] cr, with a reward of [point_gain] points.")
 
 	else //you've made smaller bombs

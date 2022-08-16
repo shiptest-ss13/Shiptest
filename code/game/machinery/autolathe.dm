@@ -30,7 +30,7 @@
 	var/creation_efficiency = 1.6
 
 	var/datum/design/being_built
-	var/datum/techweb/stored_research
+	var/datum/research_web/integrated/stored_research
 	var/list/datum/design/matching_designs
 	var/selected_category = "None"
 	var/base_price = 25
@@ -53,7 +53,7 @@
 	. = ..()
 
 	wires = new /datum/wires/autolathe(src)
-	stored_research = new /datum/techweb/specialized/autounlocking/autolathe
+	stored_research = new /datum/research_web/integrated(src, AUTOLATHE)
 	matching_designs = list()
 
 /obj/machinery/autolathe/Destroy()
@@ -96,7 +96,7 @@
 		)
 		data["materials"] += list(material_data)
 	if(selected_category != "None" && !length(matching_designs))
-		data["designs"] = handle_designs(stored_research.researched_designs, TRUE)
+		data["designs"] = handle_designs(stored_research.designs_available, TRUE)
 	else
 		data["designs"] = handle_designs(matching_designs, FALSE)
 	return data
@@ -111,7 +111,7 @@
 			blueprints += w
 	else
 		for(var/w in researched_designs)
-			var/datum/design/d = categorycheck ? SSresearch.techweb_design_by_id(w) : w
+			var/datum/design/d = categorycheck ? SSresearch_v4.get_design(w) : w
 			if(categorycheck)
 				if(!(selected_category in d.category))
 					continue
@@ -179,8 +179,8 @@
 	if(action == "search")
 		matching_designs.Cut()
 
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
+		for(var/v in stored_research.designs_available)
+			var/datum/design/D = SSresearch_v4.get_design(v)
 			if(findtext(D.name,params["to_search"]))
 				matching_designs.Add(D)
 		. = TRUE
@@ -205,7 +205,7 @@
 		if (!busy)
 			/////////////////
 			//href protection
-			being_built = SSresearch.techweb_design_by_id(params["id"]) // Search for ID within all research, who cares if its researched
+			being_built = SSresearch_v4.get_design(params["id"]) // Search for ID within all research, who cares if its researched
 			if(!being_built)
 				return
 
@@ -428,15 +428,18 @@
 	else
 		return FALSE
 
+/obj/machinery/autolathe/emag_act(mob/user)
+	. = ..()
+	hacked = TRUE
+
 /obj/machinery/autolathe/proc/adjust_hacked(state)
+	if(state == hacked)
+		return
 	hacked = state
-	for(var/id in SSresearch.techweb_designs)
-		var/datum/design/D = SSresearch.techweb_design_by_id(id)
-		if((D.build_type & AUTOLATHE) && ("hacked" in D.category))
-			if(hacked)
-				stored_research.add_design(D)
-			else
-				stored_research.remove_design(D)
+	if(hacked)
+		stored_research.handle_parent_emag()
+	else
+		stored_research.undo_parent_emag()
 
 /obj/machinery/autolathe/hacked/Initialize()
 	. = ..()

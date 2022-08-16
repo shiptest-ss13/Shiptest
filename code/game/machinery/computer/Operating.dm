@@ -12,7 +12,7 @@
 	var/obj/structure/table/optable/table
 	var/obj/machinery/stasis/sbed
 	var/list/advanced_surgeries = list()
-	var/datum/techweb/linked_techweb
+	var/datum/research_web/linked_techweb
 	light_color = LIGHT_COLOR_BLUE
 
 /obj/machinery/computer/operating/Initialize()
@@ -43,9 +43,8 @@
 
 	if(istype(O, /obj/item/multitool))
 		var/obj/item/multitool/multi = O
-		if(istype(multi.buffer, /obj/machinery/rnd/server))
-			var/obj/machinery/rnd/server/serv = multi.buffer
-			linked_techweb = serv.stored_research
+		if(istype(multi.buffer, /datum/research_web))
+			linked_techweb = multi.buffer
 			visible_message("Linked to Server!")
 		return
 
@@ -56,8 +55,8 @@
 		visible_message("Warning: no linked server!")
 		return
 
-	for(var/i in linked_techweb.researched_designs)
-		var/datum/design/surgery/D = SSresearch.techweb_design_by_id(i)
+	for(var/i in linked_techweb.designs_available)
+		var/datum/design/surgery/D = SSresearch_v4.get_design(i)
 		if(!istype(D))
 			continue
 		advanced_surgeries |= D.surgery

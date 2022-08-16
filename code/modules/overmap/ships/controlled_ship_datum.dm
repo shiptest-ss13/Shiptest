@@ -69,7 +69,7 @@
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
 	/// Ship's mainframe; aka the research web of the ship
-	var/datum/research_web/mainframe = new
+	var/datum/research_web/mainframe
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
@@ -124,6 +124,7 @@
 		qdel(applications[a_key])
 	// set ourselves to ownerless to unregister signals
 	set_owner_mob(null)
+	mainframe = new(src)
 	return ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()

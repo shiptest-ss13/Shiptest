@@ -292,44 +292,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		if(resistance_flags & FIRE_PROOF)
 			. += "[src] is made of fire-retardant materials."
 
-	if(!user.research_scanner)
-		return
-
-	/// Research prospects, including boostable nodes and point values. Deliver to a console to know whether the boosts have already been used.
-	var/list/research_msg = list("<font color='purple'>Research prospects:</font> ")
-	///Separator between the items on the list
-	var/sep = ""
-	///Nodes that can be boosted
-	var/list/boostable_nodes = techweb_item_boost_check(src)
-	if (boostable_nodes)
-		for(var/id in boostable_nodes)
-			var/datum/techweb_node/node = SSresearch.techweb_node_by_id(id)
-			if(!node)
-				continue
-			research_msg += sep
-			research_msg += node.display_name
-			sep = ", "
-	var/list/points = techweb_item_point_check(src)
-	if (length(points))
-		sep = ", "
-		research_msg += techweb_point_display_generic(points)
-
-	if (!sep) // nothing was shown
-		research_msg += "None"
-
-	// Extractable materials. Only shows the names, not the amounts.
-	research_msg += ".<br><font color='purple'>Extractable materials:</font> "
-	if (length(custom_materials))
-		sep = ""
-		for(var/mat in custom_materials)
-			research_msg += sep
-			research_msg += CallMaterialName(mat)
-			sep = ", "
-	else
-		research_msg += "None"
-	research_msg += "."
-	. += research_msg.Join()
-
 /obj/item/interact(mob/user)
 	add_fingerprint(user)
 	ui_interact(user)

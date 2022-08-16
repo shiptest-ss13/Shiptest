@@ -16,24 +16,15 @@
 	parent_ref = null
 	return ..()
 
-/datum/research_web/integrated/initial_lists()
-	var/types_without_emag = integrated_type & ~EMAG_DESIGN
-	for(var/datum/research_design/design as anything in SSresearch_v4.all_designs())
-		if(!(design.flags_buildtype & types_without_emag))
-			continue
-		if(design.flags_buildtype & EMAG_DESIGN)
-			emag_designs |= design.id
-		else
-			type_designs |= design.id
-
-	designs_available = type_designs.Copy()
-	if(integrated_type & EMAG_DESIGN)
-		handle_parent_emag()
-
 /datum/research_web/integrated/proc/handle_parent_emag()
 	SIGNAL_HANDLER
 
 	designs_available |= emag_designs
+
+/datum/research_web/integrated/proc/undo_parent_emag()
+	SIGNAL_HANDLER
+
+	designs_available -= emag_designs
 
 /datum/research_web/integrated/get_points(techtype)
 	return
@@ -49,3 +40,25 @@
 
 /datum/research_web/integrated/finish_research_node(mob/user, obj/machinery/research_linked/machine, node_id)
 	return
+
+/datum/research_web/integrated/update_node_unlocks(datum/research_node/node)
+	return
+
+/datum/research_web/integrated/recalculate_available()
+	src.nodes_available.Cut()
+	src.designs_available.Cut()
+	src.points_available.Cut()
+
+	var/types_without_emag = integrated_type & ~EMAG_DESIGN
+	for(var/datum/research_design/design as anything in SSresearch_v4.all_designs())
+		if(!(design.flags_buildtype & types_without_emag))
+			continue
+		if(design.flags_buildtype & EMAG_DESIGN)
+			emag_designs |= design.id
+		else
+			type_designs |= design.id
+
+	designs_available = type_designs.Copy()
+	if(integrated_type & EMAG_DESIGN)
+		handle_parent_emag()
+

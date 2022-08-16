@@ -14,7 +14,7 @@
 	var/disabled = FALSE
 	var/obj/machinery/computer/rdconsole/linked_console
 	var/obj/item/loaded_item = null //the item loaded inside the machine (currently only used by experimentor and destructive analyzer)
-	var/datum/techweb/linked_techweb
+	var/datum/research_web/linked_techweb
 
 /obj/machinery/rnd/proc/reset_busy()
 	busy = FALSE
@@ -51,9 +51,8 @@
 		return TRUE
 	if(istype(O, /obj/item/multitool))
 		var/obj/item/multitool/multi = O
-		if(multi.buffer && istype(multi.buffer, /obj/machinery/rnd/server) && multi.buffer != src)
-			var/obj/machinery/rnd/server/server = multi.buffer
-			linked_techweb = server.stored_research
+		if(multi.buffer && istype(multi.buffer, /datum/research_web))
+			linked_techweb = multi.buffer
 			visible_message("Linked to [server]!")
 	if(is_refillable() && O.is_drainable())
 		return FALSE //inserting reagents into the machine

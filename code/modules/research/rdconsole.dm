@@ -19,7 +19,7 @@ Nothing else in the console has ID requirements.
 	desc = "A console used to interface with R&D tools."
 	icon_screen = "rdcomp"
 	icon_keyboard = "rd_key"
-	var/datum/techweb/stored_research					//Reference to global science techweb.
+	var/datum/research_web/stored_research					//Reference to global science techweb.
 	var/obj/item/disk/tech_disk/t_disk	//Stores the technology disk.
 	var/obj/item/disk/design_disk/d_disk	//Stores the design disk.
 	circuit = /obj/item/circuitboard/computer/rdconsole
@@ -137,7 +137,7 @@ Nothing else in the console has ID requirements.
 			else
 				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
 				visible_message("<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the extract's chemical makeup!</span>")
-				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
+				stored_research.add_points(TECHTYPE_SCIENCE, E.research)
 				slime_already_researched[E.type] = TRUE
 				qdel(D)
 				return
@@ -156,7 +156,7 @@ Nothing else in the console has ID requirements.
 			else
 				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
 				visible_message("<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!</span>")
-				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
+				stored_research.add_points(TECHTYPE_SERVICE, E.research)
 				plant_already_researched[E.type] = TRUE
 				qdel(D)
 				return
@@ -171,7 +171,7 @@ Nothing else in the console has ID requirements.
 			return
 
 		var/obj/item/research_notes/R = D
-		stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = R.value))
+		stored_research.add_points(R.point_type, R.value)
 		playsound(src,'sound/machines/copier.ogg', 50, TRUE)
 		qdel(R)
 		return TRUE
@@ -236,41 +236,10 @@ Nothing else in the console has ID requirements.
 			. += "<span class='notice'>[d_disk.name] is loaded, Alt-Click to remove.</span>"
 
 /obj/machinery/computer/rdconsole/proc/research_node(id, mob/user)
-	if(!stored_research.available_nodes[id] || stored_research.researched_nodes[id])
+	if(!(id in stored_research.nodes_available) || (id in stored_research.nodes_researched))
 		say("Node unlock failed: Either already researched or not available!")
 		return FALSE
-	var/datum/techweb_node/TN = SSresearch.techweb_node_by_id(id)
-	if(!istype(TN))
-		say("Node unlock failed: Unknown error.")
-		return FALSE
-	var/list/price = TN.get_price(stored_research)
-	if(stored_research.can_afford(price))
-		investigate_log("[key_name(user)] researched [id]([json_encode(price)]) on techweb id [stored_research.id].", INVESTIGATE_RESEARCH)
-		SSblackbox.record_feedback("associative", "science_techweb_unlock", 1, list("id" = "[id]", "name" = TN.display_name, "price" = "[json_encode(price)]", "time" = SQLtime()))
-		if(stored_research.research_node_id(id))
-			say("Successfully researched [TN.display_name].")
-			var/logname = "Unknown"
-			if(isAI(user))
-				logname = "AI: [user.name]"
-			if(iscarbon(user))
-				var/obj/item/card/id/idcard = user.get_active_held_item()
-				if(istype(idcard))
-					logname = "User: [idcard.registered_name]"
-			if(ishuman(user))
-				var/mob/living/carbon/human/H = user
-				var/obj/item/I = H.wear_id
-				if(istype(I))
-					var/obj/item/card/id/ID = I.GetID()
-					if(istype(ID))
-						logname = "User: [ID.registered_name]"
-			var/i = stored_research.research_logs.len
-			stored_research.research_logs += null
-			stored_research.research_logs[++i] = list(TN.display_name, price["General Research"], logname, "[get_area(src)] ([src.x],[src.y],[src.z])")
-			return TRUE
-		else
-			say("Failed to research node: Internal database error!")
-			return FALSE
-	say("Not enough research points...")
+	stored_research.start_research_node(user, src, id)
 	return FALSE
 
 /obj/machinery/computer/rdconsole/on_deconstruction()
@@ -321,7 +290,7 @@ Nothing else in the console has ID requirements.
 	var/list/l = list()
 	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/research_designs)
 	l += "[sheet.css_tag()][RDSCREEN_NOBREAK]"
-	l += "<div class='statusDisplay'><b>[stored_research.organization] Research and Development Network</b>"
+	l += "<div class='statusDisplay'><b>[stored_research.master.name] Research and Development Network</b>"
 	l += "Available points: <BR>[techweb_point_display_rdconsole(stored_research.research_points, stored_research.last_bitcoins)]"
 	l += "Security protocols: [obj_flags & EMAGGED ? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]"
 	l += "<a href='?src=[REF(src)];switch_screen=[RDSCREEN_MENU]'>Main Menu</a> | <a href='?src=[REF(src)];switch_screen=[back]'>Back</a></div>[RDSCREEN_NOBREAK]"

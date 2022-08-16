@@ -48,7 +48,7 @@
 	light_color = LIGHT_COLOR_BLUE
 
 	/// Link to the techweb's stored research. Used to retrieve stored mutations
-	var/datum/techweb/stored_research
+	var/datum/research_web/stored_research
 	/// Maximum number of mutations that DNA Consoles are able to store
 	var/max_storage = 6
 	/// Duration for enzyme radiation pulses
@@ -145,9 +145,8 @@
 /obj/machinery/computer/scan_consolenew/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/multitool))
 		var/obj/item/multitool/multi = I
-		if(istype(multi.buffer, /obj/machinery/rnd/server))
-			var/obj/machinery/rnd/server/serv = multi.buffer
-			stored_research = serv.stored_research
+		if(istype(multi.buffer, /datum/research_web))
+			stored_research = multi.buffer
 			visible_message("Linked to Server!")
 		return
 
@@ -848,11 +847,11 @@
 			// If it's already discovered, end here. Otherwise, add it to the list of
 			//  discovered mutations.
 			// We've already checked for stored_research earlier
-			if(result_path in stored_research.discovered_mutations)
+			if(result_path in stored_research.mutations_discovered)
 				return
 
 			var/datum/mutation/human/HM = GET_INITIALIZED_MUTATION(result_path)
-			stored_research.discovered_mutations += result_path
+			stored_research.mutations_discovered += result_path
 			say("Successfully mutated [HM.name].")
 			return
 
@@ -910,11 +909,11 @@
 			// If it's already discovered, end here. Otherwise, add it to the list of
 			//  discovered mutations
 			// We've already checked for stored_research earlier
-			if(result_path in stored_research.discovered_mutations)
+			if(result_path in stored_research.mutations_discovered)
 				return
 
 			var/datum/mutation/human/HM = GET_INITIALIZED_MUTATION(result_path)
-			stored_research.discovered_mutations += result_path
+			stored_research.mutations_discovered += result_path
 			say("Successfully mutated [HM.name].")
 			return
 
@@ -1632,7 +1631,7 @@
 			var/list/mutation_data = list()
 			var/text_sequence = scanner_occupant.dna.mutation_index[mutation_type]
 			var/default_sequence = scanner_occupant.dna.default_mutation_genes[mutation_type]
-			var/discovered = (stored_research && (mutation_type in stored_research.discovered_mutations))
+			var/discovered = (stored_research && (mutation_type in stored_research.mutations_discovered))
 
 			mutation_data["Alias"] = HM.alias
 			mutation_data["Sequence"] = text_sequence
@@ -1874,9 +1873,9 @@
 		return FALSE
 	if(M.scrambled)
 		return FALSE
-	if(stored_research && !(path in stored_research.discovered_mutations))
+	if(stored_research && !(path in stored_research.mutations_discovered))
 		var/datum/mutation/human/HM = GET_INITIALIZED_MUTATION(path)
-		stored_research.discovered_mutations += path
+		stored_research.mutations_discovered += path
 		say("Successfully discovered [HM.name].")
 		return TRUE
 

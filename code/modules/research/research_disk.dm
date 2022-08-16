@@ -5,13 +5,14 @@
 	random_color = FALSE
 	color = "#973328"
 	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
-	var/datum/techweb/stored_research
+	var/datum/research_web/stored_research
 
 /obj/item/disk/tech_disk/Initialize()
 	. = ..()
 	pixel_x = base_pixel_x + rand(-5, 5)
 	pixel_y = base_pixel_y + rand(-5, 5)
-	stored_research = new /datum/techweb
+	if(!stored_research)
+		stored_research = new /datum/research_web/integrated
 
 /obj/item/disk/tech_disk/debug
 	name = "\improper CentCom technology disk"
@@ -20,19 +21,8 @@
 	custom_materials = null
 
 /obj/item/disk/tech_disk/debug/Initialize()
+	stored_research = new /datum/research_web/admin
 	. = ..()
-	stored_research = new /datum/techweb/admin
-
-/obj/item/disk/tech_disk/major
-	name = "Reformatted technology disk"
-	desc = "A disk containing a new, completed tech from the B.E.P.I.S. Upload the disk to an R&D Console to redeem the tech."
-	color = "#FFBAFF"
-	illustration = "bepis"
-	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
-
-/obj/item/disk/tech_disk/major/Initialize()
-	. = ..()
-	stored_research = new /datum/techweb/bepis
 
 /obj/item/research_notes
 	name = "research notes"

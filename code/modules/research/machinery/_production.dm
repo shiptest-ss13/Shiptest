@@ -12,7 +12,7 @@
 	var/list/datum/design/cached_designs
 	var/list/datum/design/matching_designs
 	var/department_tag = "Unidentified"			//used for material distribution among other things.
-	var/datum/techweb/stored_research
+	var/datum/research_web/integrated/stored_research
 
 	var/screen = RESEARCH_FABRICATOR_SCREEN_MAIN
 	var/selected_category
@@ -22,7 +22,7 @@
 	create_reagents(0, OPENCONTAINER)
 	matching_designs = list()
 	cached_designs = list()
-	stored_research = new
+	stored_research = new(src)
 	update_research()
 	materials = AddComponent(/datum/component/remote_materials, "lathe", mapload)
 	RefreshParts()
@@ -45,8 +45,8 @@
 
 /obj/machinery/rnd/production/proc/update_designs()
 	cached_designs.Cut()
-	for(var/i in stored_research.researched_designs)
-		var/datum/design/d = SSresearch.techweb_design_by_id(i)
+	for(var/i in stored_research.designs_available)
+		var/datum/design/d = SSresearch_v4.get_design(i)
 		if((isnull(allowed_department_flags) || (d.departmental_flags & allowed_department_flags)) && (d.build_type & allowed_buildtypes))
 			cached_designs |= d
 

@@ -30,7 +30,7 @@
 	var/bitcoinmining = FALSE
 	///research points stored
 	var/stored_research = 0
-	var/datum/techweb/linked_techweb
+	var/datum/research_web/linked_techweb
 
 /obj/machinery/power/rad_collector/anchored/Initialize()
 	. = ..()
@@ -74,7 +74,7 @@
 			if(D)
 				D.adjust_money(bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE)
 			stored_research += bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE*PRIVATE_TECHWEB_GAIN
-			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE*PUBLIC_TECHWEB_GAIN)
+			linked_techweb.add_points(TECHTYPE_ENGINEERING, bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE*PUBLIC_TECHWEB_GAIN)
 			stored_energy-=bitcoins_mined
 
 /obj/machinery/power/rad_collector/interact(mob/user)
@@ -174,9 +174,8 @@
 		to_chat(user, "<span class='warning'>[src] is currently active, producing [bitcoinmining ? "research points":"power"].</span>")
 		return TRUE
 	var/obj/item/multitool/multi = I
-	if(istype(multi.buffer, /obj/machinery/rnd/server))
-		var/obj/machinery/rnd/server/serv = multi.buffer
-		linked_techweb = serv.stored_research
+	if(istype(multi.buffer, /datum/research_web))
+		linked_techweb = multi.buffer
 		visible_message("Linked to Server!")
 		return
 	bitcoinmining = !bitcoinmining

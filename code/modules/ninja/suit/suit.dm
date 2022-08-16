@@ -24,7 +24,7 @@ Contents:
 	var/mob/living/carbon/human/affecting = null
 	var/obj/item/stock_parts/cell/cell
 	var/datum/effect_system/spark_spread/spark_system
-	var/datum/techweb/stored_research
+	var/datum/research_web/integrated/stored_research
 	var/obj/item/disk/tech_disk/t_disk//To copy design onto disk.
 	var/obj/item/energy_katana/energyKatana //For teleporting the katana back to the ninja (It's an ability)
 
