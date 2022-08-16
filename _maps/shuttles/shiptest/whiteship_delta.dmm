@@ -1419,6 +1419,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "dj" = (
@@ -1455,6 +1457,9 @@
 /obj/machinery/light/small/built{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /obj/machinery/light_switch{
 	pixel_x = 10;
 	pixel_y = 24
@@ -1480,9 +1485,6 @@
 "dm" = (
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1548,17 +1550,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/camera,
 /obj/effect/turf_decal/corner/opaque/bar,
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/freezer/kitchen/wall{
-	pixel_y = 32
-	},
-/obj/item/storage/cans/sixbeer,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "dr" = (
@@ -1729,6 +1724,13 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -26
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "dI" = (
@@ -1813,9 +1815,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dP" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -1836,13 +1835,17 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "dR" = (
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/south,
-/obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
+/obj/structure/closet/secure_closet/freezer/kitchen/wall{
+	dir = 1;
+	pixel_y = -32
+	},
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/item/storage/cans/sixbeer,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "dS" = (
@@ -2005,16 +2008,15 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science/robotics)
 "hi" = (
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 24
-	},
 /obj/structure/table,
 /obj/machinery/microwave,
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
+/obj/machinery/camera{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "hW" = (
@@ -2580,6 +2582,10 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/medical)
+"PD" = (
+/obj/machinery/vending/boozeomat/all_access,
+/turf/open/floor/plating,
+/area/ship/crew)
 "QC" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -2994,7 +3000,7 @@ ev
 dD
 ev
 Zl
-SN
+PD
 dq
 XC
 hi
