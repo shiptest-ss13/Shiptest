@@ -4,9 +4,12 @@
 	name = "rock"
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "rock"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	connector_icon = 'icons/turf/connectors/smoothrocks_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	no_connector_typecache = list(/turf/closed/mineral)
 	baseturfs = /turf/open/floor/plating/asteroid/airless
 	initial_gas_mix = AIRLESS_ATMOS
 	opacity = TRUE
@@ -237,8 +240,10 @@
 	smooth_icon = 'icons/turf/walls/mountain_wall.dmi'
 	icon_state = "mountainrock"
 	base_icon_state = "mountain_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/mountain_wall_connector.dmi'
+	connector_icon_state = "mountain_wall_connector"
+	no_connector_typecache = list(/turf/closed/mineral/random/snow)
 	defer_change = TRUE
 	environment_type = "snow_cavern"
 	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
@@ -252,7 +257,10 @@
 		icon = 'icons/turf/walls/icerock_wall.dmi'
 		icon_state = "icerock_wall-0"
 		base_icon_state = "icerock_wall"
-		smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+		smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+		connector_icon = 'icons/turf/connectors/icerock_wall_connector.dmi'
+		connector_icon_state = "icerock_wall_connector"
+		no_connector_typecache = list(/turf/closed/mineral/random/snow)
 
 /turf/closed/mineral/random/snow
 	mineralSpawnChanceList = list(
@@ -300,8 +308,10 @@
 	smooth_icon = 'icons/turf/walls/mountain_wall.dmi'
 	icon_state = "mountainrock"
 	base_icon_state = "mountain_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/mountain_wall_connector.dmi'
+	connector_icon_state = "mountain_wall_connector"
+	no_connector_typecache = list(/turf/closed/mineral/random/labormineral/ice)
 	defer_change = TRUE
 	environment_type = "snow"
 	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
@@ -322,7 +332,10 @@
 	icon_state = "icerock_iron"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
 	base_icon_state = "icerock_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/icerock_wall_connector.dmi'
+	connector_icon_state = "icerock_wall_connector"
+	no_connector_typecache = list(/turf/closed/mineral/iron/ice, /turf/closed/mineral/plasma/ice)
 	turf_type = /turf/open/floor/plating/asteroid/snow/ice
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
 	initial_gas_mix = FROZEN_ATMOS
@@ -369,7 +382,10 @@
 	icon_state = "icerock_plasma"
 	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
 	base_icon_state = "icerock_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/icerock_wall_connector.dmi'
+	connector_icon_state = "icerock_wall_connector"
+	no_connector_typecache = list(/turf/closed/mineral/plasma/ice, /turf/closed/mineral/iron/ice)
 	turf_type = /turf/open/floor/plating/asteroid/snow/ice
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
 	initial_gas_mix = FROZEN_ATMOS
@@ -460,6 +476,10 @@
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "redrock"
 	smooth_icon = 'icons/turf/walls/red_wall.dmi'
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/red_wall_connector.dmi'
+	connector_icon_state = "red_wall_connector"
+	no_connector_typecache = list(/turf/closed/mineral/asteroid)
 	base_icon_state = "red_wall"
 
 //GIBTONITE
@@ -630,66 +650,101 @@
 /turf/closed/mineral/iron/whitesands
 	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
 	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/ws_walls_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	no_connector_typecache = list(/turf/closed/mineral/iron/whitesands)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/uranium/whitesands
 	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
 	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/ws_walls_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	no_connector_typecache = list(/turf/closed/mineral/uranium/whitesands)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/diamond/whitesands
 	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
 	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/ws_walls_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	no_connector_typecache = list(/turf/closed/mineral/diamond/whitesands)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/plasma/whitesands
 	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
 	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/ws_walls_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	no_connector_typecache = list(/turf/closed/mineral/plasma/whitesands)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/bscrystal/whitesands
 	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
 	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/ws_walls_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	no_connector_typecache = list(/turf/closed/mineral/bscrystal/whitesands)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/gibtonite/whitesands
 	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
 	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/ws_walls_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	no_connector_typecache = list(/turf/closed/mineral/gibtonite/whitesands)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/random/whitesands
 	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
 	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/ws_walls_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	no_connector_typecache = list(/turf/closed/mineral/random/whitesands)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
@@ -698,34 +753,49 @@
 		/turf/closed/mineral/gibtonite/whitesands = 4, /turf/open/floor/plating/asteroid/whitesands = 2, /obj/item/stack/ore/bluespace_crystal = 1)
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/random/whitesands/high_chance
 	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
 	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/ws_walls_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	no_connector_typecache = list(/turf/closed/mineral/random/whitesands)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/random/labormineral/whitesands
 	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
 	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/ws_walls_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	no_connector_typecache = list(/turf/closed/mineral/random/labormineral/whitesands)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
 
 /turf/closed/mineral/random/low_chance
 	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
 	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	connector_icon = 'icons/turf/connectors/ws_walls_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	no_connector_typecache = list(/turf/closed/mineral/random/low_chance)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
-	has_borders = FALSE
+	has_borders = TRUE
