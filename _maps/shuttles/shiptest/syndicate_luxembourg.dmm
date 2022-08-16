@@ -1747,7 +1747,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
 "Jl" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor/shutters{
 	id = "syndiefuck"
 	},
@@ -2467,7 +2466,9 @@
 	pixel_y = 5
 	},
 /mob/living/simple_animal/bot/mulebot{
+	bot_name = "\proper Christine";
 	desc = "A Multiple Utility Load Effector bot. This one seems oddly menacing...";
+	id = "Christine";
 	name = "\proper Christine"
 	},
 /obj/machinery/navbeacon/wayfinding{
