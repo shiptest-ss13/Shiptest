@@ -115,7 +115,6 @@
 	connector_icon = 'icons/turf/connectors/uranium_wall_connector.dmi'
 	connector_icon_state = "uranium_wall_connector"
 	no_connector_typecache = list(/turf/closed/wall/mineral/uranium, /obj/structure/falsewall/uranium)
-	
 
 /turf/closed/wall/mineral/uranium/yesdiag
 	icon_state = "uranium_wall-255"
