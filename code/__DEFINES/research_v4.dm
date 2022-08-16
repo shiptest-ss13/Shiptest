@@ -3,7 +3,8 @@
 #define TECHTYPE_SERVICE 3
 #define TECHTYPE_SECURITY 4
 #define TECHTYPE_MEDICAL 5
-#define TECHTYPE_ADMIN 6
+#define TECHTYPE_NANITE 6
+#define TECHTYPE_ADMIN 7
 /// should be equal to the highest index for techtypes
 #define TECHTYPE_MAX TECHTYPE_ADMIN
 

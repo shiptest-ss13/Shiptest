@@ -119,39 +119,39 @@ They *could* go in their appropriate files, but this is supposed to be modular
 	for(var/mob/living/silicon/ai/AI in GLOB.player_list)
 		to_chat(AI, alertstr)
 
-//RDCONSOLE//
-/obj/machinery/computer/rdconsole/ninjadrain_act(obj/item/clothing/suit/space/space_ninja/S, mob/living/carbon/human/H, obj/item/clothing/gloves/space_ninja/G)
-	if(!S || !H || !G)
-		return INVALID_DRAIN
+// //RDCONSOLE//
+// /obj/machinery/computer/rdconsole/ninjadrain_act(obj/item/clothing/suit/space/space_ninja/S, mob/living/carbon/human/H, obj/item/clothing/gloves/space_ninja/G)
+// 	if(!S || !H || !G)
+// 		return INVALID_DRAIN
 
-	. = DRAIN_RD_HACK_FAILED
+// 	. = DRAIN_RD_HACK_FAILED
 
-	to_chat(H, "<span class='notice'>Hacking \the [src]...</span>")
-	AI_notify_hack()
+// 	to_chat(H, "<span class='notice'>Hacking \the [src]...</span>")
+// 	AI_notify_hack()
 
-	if(stored_research)
-		to_chat(H, "<span class='notice'>Copying files...</span>")
-		if(do_after(H, S.s_delay, target = src) && G.candrain && src)
-			stored_research.copy_research_to(S.stored_research)
-	to_chat(H, "<span class='notice'>Data analyzed. Process finished.</span>")
+// 	if(stored_research)
+// 		to_chat(H, "<span class='notice'>Copying files...</span>")
+// 		if(do_after(H, S.s_delay, target = src) && G.candrain && src)
+// 			stored_research.copy_research_to(S.stored_research)
+// 	to_chat(H, "<span class='notice'>Data analyzed. Process finished.</span>")
 
-//RD SERVER//
-//Shamelessly copypasted from above, since these two used to be the same proc, but with MANY colon operators
-/obj/machinery/rnd/server/ninjadrain_act(obj/item/clothing/suit/space/space_ninja/S, mob/living/carbon/human/H, obj/item/clothing/gloves/space_ninja/G)
-	if(!S || !H || !G)
-		return INVALID_DRAIN
+// //RD SERVER//
+// //Shamelessly copypasted from above, since these two used to be the same proc, but with MANY colon operators
+// /obj/machinery/rnd/server/ninjadrain_act(obj/item/clothing/suit/space/space_ninja/S, mob/living/carbon/human/H, obj/item/clothing/gloves/space_ninja/G)
+// 	if(!S || !H || !G)
+// 		return INVALID_DRAIN
 
-	. = DRAIN_RD_HACK_FAILED
+// 	. = DRAIN_RD_HACK_FAILED
 
-	to_chat(H, "<span class='notice'>Hacking \the [src]...</span>")
-	AI_notify_hack()
+// 	to_chat(H, "<span class='notice'>Hacking \the [src]...</span>")
+// 	AI_notify_hack()
 
-	if(stored_research)
-		to_chat(H, "<span class='notice'>Copying files...</span>")
-		if(do_after(H, S.s_delay, target = src) && G.candrain && src)
-			stored_research.copy_research_to(S.stored_research)
-	to_chat(H, "<span class='notice'>Data analyzed. Process finished.</span>")
-
+// 	if(stored_research)
+// 		to_chat(H, "<span class='notice'>Copying files...</span>")
+// 		if(do_after(H, S.s_delay, target = src) && G.candrain && src)
+// 			stored_research.copy_research_to(S.stored_research)
+// 	to_chat(H, "<span class='notice'>Data analyzed. Process finished.</span>")
+// ZEPHYR TODO
 
 //WIRE//
 /obj/structure/cable/ninjadrain_act(obj/item/clothing/suit/space/space_ninja/S, mob/living/carbon/human/H, obj/item/clothing/gloves/space_ninja/G)

@@ -19,7 +19,7 @@
 	var/zap_cooldown = 100
 	var/last_zap = 0
 
-	var/datum/techweb/linked_techweb
+	var/datum/research_web/linked_techweb
 
 /obj/machinery/power/tesla_coil/power
 	circuit = /obj/item/circuitboard/machine/tesla_coil/power
@@ -78,9 +78,8 @@
 
 	if(istype(W, /obj/item/multitool))
 		var/obj/item/multitool/multi = W
-		if(istype(multi.buffer, /obj/machinery/rnd/server))
-			var/obj/machinery/rnd/server/serv = multi.buffer
-			linked_techweb = serv.stored_research
+		if(istype(multi.buffer, /datum/research_web))
+			linked_techweb = multi.buffer
 			visible_message("Linked to Server!")
 		return
 
@@ -98,7 +97,7 @@
 		if(D)
 			D.adjust_money(min(power_produced, 1))
 		if(istype(linked_techweb))
-			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 1)) // x4 coils = ~240/m point bonus for R&D
+			linked_techweb.add_points(TECHTYPE_ENGINEERING, min(power_produced, 1))
 		addtimer(CALLBACK(src, .proc/reset_shocked), 10)
 		zap_buckle_check(power)
 		playsound(src.loc, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
@@ -136,7 +135,7 @@
 		if(D)
 			D.adjust_money(min(power_produced, 12))
 		if(istype(linked_techweb))
-			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 12)) // x4 coils with a pulse per second or so = ~720/m point bonus for R&D
+			linked_techweb.add_points(TECHTYPE_ENGINEERING, min(power_produced, 12))
 		addtimer(CALLBACK(src, .proc/reset_shocked), 10)
 		zap_buckle_check(power)
 		playsound(src.loc, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
