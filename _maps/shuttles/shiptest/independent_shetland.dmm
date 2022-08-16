@@ -669,6 +669,14 @@
 /obj/effect/turf_decal/corner/opaque/neutral/half,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"gF" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/patterned/monofloor{
+	dir = 1
+	},
+/area/ship/cargo)
 "gJ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -750,6 +758,22 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"hr" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "hs" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -969,6 +993,9 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "jn" = (
@@ -1092,6 +1119,13 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
+"kt" = (
+/obj/machinery/door/poddoor{
+	id = "amogusdoors";
+	name = "Cargo Bay Blast Door"
+	},
+/turf/open/floor/plasteel/patterned/monofloor,
+/area/ship/cargo)
 "kv" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1473,9 +1507,13 @@
 	id = "shetland_cargo";
 	locked = 1
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/patterned/monofloor,
 /area/ship/cargo)
 "oV" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/patterned/monofloor{
 	dir = 1
 	},
@@ -1582,6 +1620,12 @@
 	id = "shetland_cargo";
 	pixel_x = -23;
 	pixel_y = 10
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/patterned/monofloor{
 	dir = 1
@@ -2074,6 +2118,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"um" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ship/cargo)
 "uv" = (
 /obj/structure/table/glass,
 /obj/machinery/vending/wallmed{
@@ -3089,6 +3140,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
+"Fd" = (
+/obj/machinery/door/poddoor{
+	id = "amogusdoors";
+	name = "Cargo Bay Blast Door"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 8;
+	id = "shetland_cargo";
+	locked = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel/patterned/monofloor,
+/area/ship/cargo)
 "Fi" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -4058,13 +4123,6 @@
 "NZ" = (
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"Og" = (
-/obj/machinery/door/poddoor{
-	id = "amogusdoors";
-	name = "Cargo Bay Blast Door"
-	},
-/turf/open/floor/plasteel/patterned/monofloor,
-/area/ship/cargo)
 "Ov" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 9
@@ -4624,19 +4682,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
-"Ud" = (
-/obj/machinery/door/poddoor{
-	id = "amogusdoors";
-	name = "Cargo Bay Blast Door"
-	},
-/obj/machinery/power/shieldwallgen/atmos{
-	anchored = 1;
-	dir = 8;
-	id = "shetland_cargo";
-	locked = 1
-	},
-/turf/open/floor/plasteel/patterned/monofloor,
-/area/ship/cargo)
 "Uf" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5987,8 +6032,8 @@ lX
 VT
 VW
 Jo
-kP
-uB
+hr
+um
 qb
 oS
 LO
@@ -6019,7 +6064,7 @@ Ah
 kP
 uB
 oV
-Og
+kt
 LO
 LO
 "}
@@ -6048,7 +6093,7 @@ De
 sj
 uB
 oV
-Og
+kt
 LO
 LO
 "}
@@ -6076,8 +6121,8 @@ IK
 YN
 aP
 uB
-oV
-Ud
+gF
+Fd
 LO
 LO
 "}
