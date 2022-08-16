@@ -684,12 +684,11 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
-/obj/structure/closet/crate{
-	icon_state = "radiation";
-	name = "fuel crate"
-	},
 /obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/radiation{
+	name = "fuel crate"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "pe" = (
