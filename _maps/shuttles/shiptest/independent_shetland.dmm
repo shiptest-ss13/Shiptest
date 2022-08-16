@@ -1467,7 +1467,12 @@
 	id = "amogusdoors";
 	name = "Cargo Bay Blast Door"
 	},
-/obj/structure/fans/tiny,
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 4;
+	id = "shetland_cargo";
+	locked = 1
+	},
 /turf/open/floor/plasteel/patterned/monofloor,
 /area/ship/cargo)
 "oV" = (
@@ -1571,6 +1576,12 @@
 	id = "amogusdoors";
 	name = "Blast Door Control";
 	pixel_x = -24
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	id = "shetland_cargo";
+	pixel_x = -23;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/patterned/monofloor{
 	dir = 1
@@ -4047,6 +4058,13 @@
 "NZ" = (
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"Og" = (
+/obj/machinery/door/poddoor{
+	id = "amogusdoors";
+	name = "Cargo Bay Blast Door"
+	},
+/turf/open/floor/plasteel/patterned/monofloor,
+/area/ship/cargo)
 "Ov" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 9
@@ -4606,6 +4624,19 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
+"Ud" = (
+/obj/machinery/door/poddoor{
+	id = "amogusdoors";
+	name = "Cargo Bay Blast Door"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 8;
+	id = "shetland_cargo";
+	locked = 1
+	},
+/turf/open/floor/plasteel/patterned/monofloor,
+/area/ship/cargo)
 "Uf" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5988,7 +6019,7 @@ Ah
 kP
 uB
 oV
-oS
+Og
 LO
 LO
 "}
@@ -6017,7 +6048,7 @@ De
 sj
 uB
 oV
-oS
+Og
 LO
 LO
 "}
@@ -6046,7 +6077,7 @@ YN
 aP
 uB
 oV
-oS
+Ud
 LO
 LO
 "}
