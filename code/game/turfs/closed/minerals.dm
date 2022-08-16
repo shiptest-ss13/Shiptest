@@ -799,4 +799,3 @@
 	initial_gas_mix = WHITESANDS_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
-	
