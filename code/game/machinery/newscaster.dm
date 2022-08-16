@@ -291,7 +291,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 				dat+="<BR><HR>The newscaster recognises you as: <FONT COLOR='green'>[scanned_user]</FONT>"
 			if(1)
 				dat+= "Feed Channels<HR>"
-				if( !length(GLOB.news_network.network_channels) )
+				if(!length(GLOB.news_network.network_channels))
 					dat+="<I>No active channels found...</I>"
 				else
 					for(var/datum/newscaster/feed_channel/CHANNEL in GLOB.news_network.network_channels)
@@ -371,7 +371,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 					dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the sector, and marked with a Nanotrasen D-Notice.<BR>"
 					dat+="No further feed story additions are allowed while the D-Notice is in effect.</FONT><BR><BR>"
 				else
-					if( !length(viewing_channel.messages) )
+					if(!length(viewing_channel.messages))
 						dat+="<I>No feed messages found in channel...</I><BR>"
 					else
 						var/i = 0
@@ -529,7 +529,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 				if(FC.channel_name == channel_name)
 					check = 1
 					break
-			if(channel_name == "" || channel_name == "\[REDACTED\]" || scanned_user == "Unknown" || check || (scanned_user in existing_authors) )
+			if(channel_name == "" || channel_name == "\[REDACTED\]" || scanned_user == "Unknown" || check || (scanned_user in existing_authors))
 				screen=7
 			else
 				var/choice = alert("Please confirm Feed channel creation","Network Channel Handler","Confirm","Cancel")
@@ -542,7 +542,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 		else if(href_list["set_channel_receiving"])
 			var/list/available_channels = list()
 			for(var/datum/newscaster/feed_channel/F in GLOB.news_network.network_channels)
-				if( (!F.locked || F.author == scanned_user) && !F.censored)
+				if((!F.locked || F.author == scanned_user) && !F.censored)
 					available_channels += F.channel_name
 			channel_name = input(usr, "Choose receiving Feed Channel", "Network Channel Handler") in sortList(available_channels)
 			updateUsrDialog()
@@ -741,7 +741,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 					return
 				to_chat(user, "<span class='notice'>You repair [src].</span>")
 				obj_integrity = max_integrity
-				machine_stat &= ~BROKEN
+				set_machine_stat(machine_stat & ~BROKEN)
 				update_icon()
 		else
 			to_chat(user, "<span class='notice'>[src] does not need repairs.</span>")
@@ -815,7 +815,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 					scanned_user = "[P.id.registered_name] ([P.id.assignment])"
 				else
 					scanned_user = "Unknown"
-			else if(istype(human_user.wear_id, /obj/item/card/id) )
+			else if(istype(human_user.wear_id, /obj/item/card/id))
 				var/obj/item/card/id/ID = human_user.wear_id
 				scanned_user ="[ID.registered_name] ([ID.assignment])"
 			else

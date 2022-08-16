@@ -33,9 +33,6 @@
 #endif							//	1 to use the default behaviour;
 								//	2 for preloading absolutely everything;
 
-///Used in dev environments to speed up init times as well as a few other test-hindering processes.
-#define QUICK_INIT
-
 //Update this whenever you need to take advantage of more recent byond features
 #define MIN_COMPILER_VERSION 513
 #define MIN_COMPILER_BUILD 1514

@@ -213,7 +213,7 @@
 
 /obj/structure/sign/poster/contraband/fun_police
 	name = "Fun Police"
-	desc = "A poster condemning Nanotransen's infamous corporate security forces."
+	desc = "A poster condemning Nanotrasen's infamous corporate security forces."
 	icon_state = "poster3"
 
 /obj/structure/sign/poster/contraband/lusty_xenomorph

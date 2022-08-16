@@ -614,7 +614,7 @@
 	new /obj/item/holosign_creator(src)
 	new /obj/item/melee/flyswatter(src)
 
- /obj/item/storage/belt/plant
+/obj/item/storage/belt/plant
 	name = "botanical belt"
 	desc = "A belt used to hold most hydroponics supplies. Suprisingly, not green."
 	icon_state = "plantbelt"

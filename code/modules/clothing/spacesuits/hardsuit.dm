@@ -65,7 +65,7 @@
 	else
 		soundloop.start(user)
 
-/obj/item/clothing/head/helmet/space/hardsuit/proc/display_visor_message(var/msg)
+/obj/item/clothing/head/helmet/space/hardsuit/proc/display_visor_message(msg)
 	var/mob/wearer = loc
 	if(msg && ishuman(wearer))
 		wearer.show_message("[icon2html(src, wearer)]<b><span class='robot'>[msg]</span></b>", MSG_VISUAL)
@@ -311,7 +311,6 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 55, "bio" = 100, "rad" = 75, "fire" = 85, "acid" = 100)
 	light_range = 10
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pinpointer/deepcore, /obj/item/environmental_regulator)
 
 	//Syndicate hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi

@@ -118,7 +118,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	short_desc = "You are a syndicate science technician, employed in a top secret research facility developing biological weapons."
-	flavour_text = "Reports of potential Nanotransen fleet movement in your sector prompted you to initiate Operation Smokescreen, killing base power and taking your crew into cryosleep. You've awoken an unknown amount of time later as base security initiates an emergency reboot. Keep vigilant for whatever reawoke you, continue your research as best you can, and try to keep a low profile."
+	flavour_text = "Reports of potential Nanotrasen fleet movement in your sector prompted you to initiate Operation Smokescreen, killing base power and taking your crew into cryosleep. You've awoken an unknown amount of time later as base security initiates an emergency reboot. Keep vigilant for whatever reawoke you, continue your research as best you can, and try to keep a low profile."
 	important_info = "Prevent yourself and any Syndicate assets from being taken by Corporate forces."
 	outfit = /datum/outfit/lavaland_syndicate
 	assignedrole = "Lavaland Syndicate"
@@ -145,13 +145,13 @@
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms
 	name = "Syndicate Comms Agent"
 	short_desc = "You are a syndicate communications agent, employed in a top secret research facility developing biological weapons."
-	flavour_text = "Reports of potential Nanotransen fleet movement in your sector prompted you to initiate Operation Smokescreen, killing base power and taking your crew into cryosleep. You've awoken an unknown amount of time later as base security initiates an emergency reboot. Keep vigilant for whatever reawoke you, and try to keep a low profile. Use the communication equipment to monitor any local activity. Anyone nearby is presumed to be an agent of nanotransen: Sow disinformation to throw them off your trail. Do not let the base fall into enemy hands!"
+	flavour_text = "Reports of potential Nanotrasen fleet movement in your sector prompted you to initiate Operation Smokescreen, killing base power and taking your crew into cryosleep. You've awoken an unknown amount of time later as base security initiates an emergency reboot. Keep vigilant for whatever reawoke you, and try to keep a low profile. Use the communication equipment to monitor any local activity. Anyone nearby is presumed to be an agent of Nanotrasen: Sow disinformation to throw them off your trail. Do not let the base fall into enemy hands!"
 	important_info = "Prevent yourself and any Syndicate assets from being taken by Corporate forces."
 	outfit = /datum/outfit/lavaland_syndicate/comms
 
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms/space
-	short_desc = "You are a deep-cover syndicate agent, assigned to a small military listening post intended to keep an eye on Nanotransen activity in the area. Increased military operations prompted you to follow Smokescreen protocol and go into cryosleep, leaving your base on minimal power."
-	flavour_text = "Your base's emergency security system has reawoken you and brought the facility back to full power- It can only be presumed Nanotransen personnel are close to locating you. Monitor any local activity as best you can, and try to keep a low profile. Use the communication equipment to attempt parlance, and sow disinformation to throw Nanotrasen off your trail."
+	short_desc = "You are a deep-cover syndicate agent, assigned to a small military listening post intended to keep an eye on Nanotrasen activity in the area. Increased military operations prompted you to follow Smokescreen protocol and go into cryosleep, leaving your base on minimal power."
+	flavour_text = "Your base's emergency security system has reawoken you and brought the facility back to full power- It can only be presumed Nanotrasen personnel are close to locating you. Monitor any local activity as best you can, and try to keep a low profile. Use the communication equipment to attempt parlance, and sow disinformation to throw Nanotrasen off your trail."
 	important_info = "Prevent yourself and any Syndicate assets from being taken by Corporate forces."
 
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms/space/Initialize()

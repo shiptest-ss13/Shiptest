@@ -84,8 +84,8 @@
 			return TRUE
 	return ..()
 /**
-  * Updates the screen object, which is displayed on all connected helms
-  */
+ * Updates the screen object, which is displayed on all connected helms
+ */
 /obj/overmap/proc/update_screen()
 	if(render_map)
 		var/list/visible_turfs = list()

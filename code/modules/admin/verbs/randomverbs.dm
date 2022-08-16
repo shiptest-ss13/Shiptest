@@ -158,7 +158,7 @@
 
 	var/msg = input("Message:", text("Enter the text you wish to appear to your target:")) as text|null
 
-	if( !msg )
+	if(!msg)
 		return
 
 	to_chat(M, msg, confidential = TRUE)
@@ -854,6 +854,63 @@
 		message_admins("WARNING: The server will not show up on the hub because byond is detecting that a filewall is blocking incoming connections.")
 
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggled Hub Visibility", "[GLOB.hub_visibility ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/client/proc/spawn_ruin()
+	set name = "Spawn Planet/Ruin"
+	set category = "Fun"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	var/planet_type = tgui_input_list(usr, "What type of planet?", "Spawn Ruin", DYNAMIC_WORLD_LIST_ALL, 60 SECONDS)
+	if(!planet_type)
+		planet_type = DYNAMIC_WORLD_SPACERUIN
+
+	var/category = tgui_input_list(usr, "What type of ruin?", "Spawn Ruin", RUINTYPE_LIST_ALL + "Everything", 60 SECONDS)
+	var/datum/map_template/spawning
+	if(category)
+		var/list/select_from
+		switch(category)
+			if(RUINTYPE_ICE)
+				select_from = SSmapping.ice_ruins_templates
+			if(RUINTYPE_JUNGLE)
+				select_from = SSmapping.jungle_ruins_templates
+			if(RUINTYPE_LAVA)
+				select_from = SSmapping.lava_ruins_templates
+			if(RUINTYPE_ROCK)
+				select_from = SSmapping.rock_ruins_templates
+			if(RUINTYPE_SAND)
+				select_from = SSmapping.sand_ruins_templates
+			if(RUINTYPE_SPACE)
+				select_from = SSmapping.space_ruins_templates
+			if(RUINTYPE_YELLOW)
+				select_from = SSmapping.yellow_ruins_templates
+			if("Everything")
+				select_from = SSmapping.ruins_templates
+			else
+				select_from = null
+
+		if(select_from)
+			var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)
+			if(selected_ruin)
+				spawning = select_from[selected_ruin]
+				if(!istype(spawning))
+					to_chat(usr, span_boldwarning("Failed to index the given ruin, contact a coder!"))
+					spawning = null
+
+	var/datum/overmap/dynamic/encounter = new(null, FALSE)
+	encounter.force_encounter = planet_type
+	encounter.template = spawning
+
+	to_chat(usr, span_big("Now generating the planet type and ruin!"))
+	encounter.load_level()
+	SSblackbox.record_feedback("tally", "adv_spawn_ruin", spawning?.name)
+
+	encounter.preserve_level = TRUE
+	to_chat(usr, span_big("Click here to jump to the overmap token: " + ADMIN_JMP(encounter.token)))
+	to_chat(usr, span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(encounter.reserve_docks[1])))
+	for(var/ruin in encounter.ruin_turfs)
+		var/turf/ruin_turf = encounter.ruin_turfs[ruin]
+		to_chat(usr, span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
 
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"

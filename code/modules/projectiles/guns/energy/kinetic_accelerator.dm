@@ -29,6 +29,10 @@
 
 	var/recharge_timerid
 
+/obj/item/gun/energy/recharge/kinetic_accelerator/shoot_with_empty_chamber(mob/living/user)
+	playsound(src, dry_fire_sound, 30, TRUE) //click sound but no to_chat message to cut on spam
+	return
+
 /obj/item/gun/energy/kinetic_accelerator/examine(mob/user)
 	. = ..()
 	if(max_mod_capacity)
@@ -609,7 +613,7 @@
 
 /obj/item/gun/energy/kinetic_accelerator/old
 	name = "proto-kinetic accelerator"
-	desc = "A self-recharging concussive blast mining tool, heavily used by Nanotransen Mining Corps both for extracting minerals and dealing with unruly locals. NT's prototype line was produced with top-of-the-line cooling mechanisms. "
+	desc = "A self-recharging concussive blast mining tool, heavily used by Nanotrasen Mining Corps both for extracting minerals and dealing with unruly locals. NT's prototype line was produced with top-of-the-line cooling mechanisms. "
 	icon_state = "kineticgunold"
 	item_state = "kineticgunold"
 	overheat_time = 10

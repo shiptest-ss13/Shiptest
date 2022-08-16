@@ -21,16 +21,16 @@
 	SSovermap.events -= src
 
 /**
-  * The main proc for calling other procs. Called by SSovermap.
-  */
+ * The main proc for calling other procs. Called by SSovermap.
+ */
 /datum/overmap/event/proc/apply_effect()
 	for(var/datum/overmap/ship/controlled/S in get_nearby_overmap_objects())
 		if(prob(chance_to_affect))
 			affect_ship(S)
 
 /**
-  * The proc called on all ships that are currently being affected.
-  */
+ * The proc called on all ships that are currently being affected.
+ */
 /datum/overmap/event/proc/affect_ship(datum/overmap/ship/controlled/S)
 	return
 

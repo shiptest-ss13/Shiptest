@@ -1,5 +1,5 @@
 //This is the lowest supported version, anything below this is completely obsolete and the entire savefile will be wiped.
-#define SAVEFILE_VERSION_MIN 32
+#define SAVEFILE_VERSION_MIN 33
 
 //This is the current version, anything below this will attempt to update (if it's not obsolete)
 //	You do not need to raise this if you are adding new values that have sane defaults.
@@ -382,6 +382,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["skin_tone"], skin_tone)
 	READ_FILE(S["hairstyle_name"], hairstyle)
 	READ_FILE(S["facial_style_name"], facial_hairstyle)
+	READ_FILE(S["feature_grad_style"], features["grad_style"])
+	READ_FILE(S["feature_grad_color"], features["grad_color"])
 	READ_FILE(S["underwear"], underwear)
 	READ_FILE(S["underwear_color"], underwear_color)
 	READ_FILE(S["undershirt"], undershirt)
@@ -392,6 +394,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["phobia"], phobia)
 	READ_FILE(S["randomise"],  randomise)
 	READ_FILE(S["body_size"], features["body_size"])
+	READ_FILE(S["prosthetic_limbs"], prosthetic_limbs)
+	prosthetic_limbs ||= list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
 	READ_FILE(S["feature_mcolor"], features["mcolor"])
 	READ_FILE(S["feature_ethcolor"], features["ethcolor"])
 	READ_FILE(S["feature_lizard_tail"], features["tail_lizard"])
@@ -470,14 +474,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
 
 	//Sanitize
-	real_name = reject_bad_name(real_name, pref_species.allow_numbers_in_name)      // WS Edit - numbers in IPC names load from save
+	real_name = reject_bad_name(real_name)
 	gender = sanitize_gender(gender)
 	if(!real_name)
 		real_name = random_unique_name(gender)
 
 	for(var/custom_name_id in GLOB.preferences_custom_names)
-		var/namedata = GLOB.preferences_custom_names[custom_name_id]
-		custom_names[custom_name_id] = reject_bad_name(custom_names[custom_name_id],namedata["allow_numbers"])
+		custom_names[custom_name_id] = reject_bad_name(custom_names[custom_name_id])
 		if(!custom_names[custom_name_id])
 			custom_names[custom_name_id] = get_default_name(custom_name_id)
 
@@ -516,6 +519,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	jumpsuit_style	= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	exowear		= sanitize_inlist(exowear, GLOB.exowearlist, initial(exowear))
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
+	features["grad_style"]			= sanitize_inlist(features["grad_style"], GLOB.hair_gradients_list)
+	features["grad_color"]		= sanitize_hexcolor(features["grad_color"], 3, 0)
 	features["body_size"] = sanitize_inlist(features["body_size"], GLOB.body_sizes, "Normal")
 	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 3, 0)
 	features["ethcolor"]	= copytext_char(features["ethcolor"], 1, 7)
@@ -572,10 +577,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["age"]			, age)
 	WRITE_FILE(S["hair_color"]			, hair_color)
 	WRITE_FILE(S["facial_hair_color"]			, facial_hair_color)
+	WRITE_FILE(S["feature_grad_color"]	, 	features["grad_color"])
 	WRITE_FILE(S["eye_color"]			, eye_color)
 	WRITE_FILE(S["skin_tone"]			, skin_tone)
 	WRITE_FILE(S["hairstyle_name"]			, hairstyle)
 	WRITE_FILE(S["facial_style_name"]			, facial_hairstyle)
+	WRITE_FILE(S["feature_grad_style"]	, features["grad_style"])
 	WRITE_FILE(S["underwear"]			, underwear)
 	WRITE_FILE(S["underwear_color"]			, underwear_color)
 	WRITE_FILE(S["undershirt"]			, undershirt)
@@ -586,6 +593,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["species"]			, pref_species.id)
 	WRITE_FILE(S["phobia"], phobia)
 	WRITE_FILE(S["body_size"]		, features["body_size"])
+	WRITE_FILE(S["prosthetic_limbs"], prosthetic_limbs)
 	WRITE_FILE(S["feature_mcolor"]					, features["mcolor"])
 	WRITE_FILE(S["feature_ethcolor"]					, features["ethcolor"])
 	WRITE_FILE(S["feature_lizard_tail"]			, features["tail_lizard"])

@@ -12,18 +12,18 @@
 "aT" = (
 /obj/item/radio/intercom{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/table/reinforced,
 /obj/item/gun/ballistic/automatic/toy/pistol/unrestricted,
 /obj/item/ammo_box/magazine/toy/pistol,
 /obj/item/ammo_box/magazine/toy/pistol,
 /obj/item/ammo_box/magazine/toy/pistol,
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 8
 	},
@@ -48,7 +48,7 @@
 "bX" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "window blast door"
+	name = "Window Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -64,7 +64,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "cI" = (
-/obj/effect/turf_decal/trimline/orange/filled/line{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -73,7 +73,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "window blast door"
+	name = "Window Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -102,7 +102,7 @@
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "window blast door"
+	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -118,7 +118,7 @@
 	dir = 9
 	},
 /obj/machinery/computer/cryopod{
-	pixel_y = -24;
+	pixel_y = -25;
 	dir = 1
 	},
 /obj/machinery/light/small{
@@ -187,11 +187,11 @@
 "fn" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/storage/box/lethalshot,
@@ -212,13 +212,13 @@
 /area/ship/maintenance/port)
 "fT" = (
 /obj/item/radio/intercom{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/closet/secure_closet/security,
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted,
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted,
-/obj/item/gun/ballistic/automatic/l6_saw,
-/obj/item/gun/ballistic/automatic/l6_saw,
+/obj/item/gun/ballistic/automatic/hmg/l6_saw,
+/obj/item/gun/ballistic/automatic/hmg/l6_saw,
 /obj/item/ammo_box/magazine/m12g/slug,
 /obj/item/ammo_box/magazine/m12g/slug,
 /obj/item/ammo_box/magazine/m12g/slug,
@@ -299,7 +299,7 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -317,7 +317,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/suit_storage_unit,
 /obj/item/tank/internals/oxygen,
@@ -362,7 +362,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/gun/ballistic/automatic/vector{
+/obj/item/gun/ballistic/automatic/smg/vector{
 	spawnwithmagazine = 0
 	},
 /obj/item/ammo_box/magazine/smgm9mm/rubbershot,
@@ -401,7 +401,7 @@
 "kH" = (
 /obj/item/radio/intercom{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow,
@@ -513,7 +513,7 @@
 "mP" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "window blast door"
+	name = "Window Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -666,12 +666,12 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "qQ" = (
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 4
 	},
@@ -690,7 +690,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 8
 	},
@@ -713,7 +713,7 @@
 /obj/item/flashlight/seclite,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/item/clothing/head/helmet/sec,
 /obj/item/clothing/head/helmet/sec,
@@ -747,7 +747,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/orange/filled/line{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -774,7 +774,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 8
 	},
@@ -790,14 +790,14 @@
 /obj/item/kirbyplants/random,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/aft)
 "tO" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -32
@@ -845,7 +845,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
@@ -899,7 +899,7 @@
 	},
 /obj/item/radio/intercom{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/industrial/hatch/red,
@@ -922,7 +922,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/orange/filled/line{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -1007,7 +1007,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
@@ -1038,7 +1038,7 @@
 /obj/machinery/recharger,
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
@@ -1063,7 +1063,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 8
 	},
@@ -1077,7 +1077,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 8
 	},
@@ -1169,7 +1169,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/orange/filled/line{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -1177,7 +1177,7 @@
 "FE" = (
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/rack,
 /obj/item/gun/energy/e_gun,
@@ -1196,7 +1196,7 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1241,15 +1241,15 @@
 /area/ship/maintenance/starboard)
 "Hk" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/ballistic/automatic/c20r/toy/unrestricted,
+/obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted,
 /obj/item/ammo_box/magazine/toy/smg,
 /obj/item/ammo_box/magazine/toy/smg,
 /obj/item/ammo_box/magazine/toy/smg,
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 8
 	},
@@ -1329,7 +1329,7 @@
 /obj/item/wrench/crescent,
 /obj/item/radio/intercom{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1343,7 +1343,7 @@
 "JA" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "window blast door"
+	name = "Window Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1354,7 +1354,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/power/terminal,
 /obj/structure/cable,
@@ -1366,7 +1366,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
@@ -1395,7 +1395,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/orange/filled/line{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -1412,7 +1412,7 @@
 "KR" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/light{
 	dir = 4
@@ -1425,15 +1425,15 @@
 /area/ship/security/armory)
 "KW" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted,
+/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/unrestricted,
 /obj/item/ammo_box/magazine/toy/m762,
 /obj/item/ammo_box/magazine/toy/m762,
 /obj/item/ammo_box/magazine/toy/m762,
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 8
 	},
@@ -1457,7 +1457,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 8
 	},
@@ -1495,8 +1495,8 @@
 /obj/structure/closet/secure_closet/security,
 /obj/item/gun/ballistic/automatic/pistol/deagle,
 /obj/item/gun/ballistic/automatic/pistol/deagle,
-/obj/item/gun/ballistic/automatic/ak47,
-/obj/item/gun/ballistic/automatic/ak47,
+/obj/item/gun/ballistic/automatic/assualt/ak47,
+/obj/item/gun/ballistic/automatic/assualt/ak47,
 /obj/item/ammo_box/magazine/ak47,
 /obj/item/ammo_box/magazine/ak47,
 /obj/item/ammo_box/magazine/ak47,
@@ -1533,7 +1533,7 @@
 /obj/machinery/light/small,
 /obj/item/radio/intercom{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/cell_charger,
 /turf/open/floor/carpet/nanoweave,
@@ -1574,7 +1574,7 @@
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "window blast door"
+	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1589,7 +1589,7 @@
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "window blast door"
+	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1602,7 +1602,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/light,
 /turf/open/floor/plasteel/dark,
@@ -1610,7 +1610,7 @@
 "Po" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "window blast door"
+	name = "Window Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1625,9 +1625,9 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
-/obj/effect/turf_decal/trimline/orange/filled/line{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -1651,11 +1651,11 @@
 /obj/item/gun/ballistic/shotgun/toy/unrestricted,
 /obj/item/ammo_box/foambox,
 /obj/item/ammo_box/foambox,
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 8
 	},
@@ -1664,7 +1664,7 @@
 "PH" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "window blast door"
+	name = "Window Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1702,7 +1702,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 4
 	},
@@ -1723,7 +1723,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/power/terminal,
 /obj/structure/cable,
@@ -1756,7 +1756,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 8
 	},
@@ -1792,7 +1792,7 @@
 "SH" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
@@ -1834,7 +1834,7 @@
 /obj/structure/filingcabinet/medical,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
@@ -1877,7 +1877,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 4
 	},
@@ -1889,9 +1889,9 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
-/obj/effect/turf_decal/trimline/orange/filled/line{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -1924,7 +1924,7 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "UX" = (
-/obj/item/gun/ballistic/automatic/vector{
+/obj/item/gun/ballistic/automatic/smg/vector{
 	spawnwithmagazine = 0
 	},
 /obj/item/ammo_box/magazine/smgm9mm/rubbershot,
@@ -1982,7 +1982,7 @@
 "Vs" = (
 /obj/item/radio/intercom/wideband{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -2005,7 +2005,7 @@
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
-	name = "window blast door"
+	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2031,7 +2031,7 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "Wd" = (
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 4
 	},
@@ -2045,7 +2045,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/trimline/orange/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	name = "warningr";
 	dir = 8
 	},
@@ -2097,7 +2097,7 @@
 /obj/machinery/light/small,
 /obj/item/radio/intercom{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
@@ -2177,7 +2177,7 @@
 /obj/machinery/vending/cola/random,
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/aft)
