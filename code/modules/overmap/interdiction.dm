@@ -150,8 +150,8 @@
 
 	var/t_range = get_target_range()
 
-	var/msg_base = "Interdiction update: They are"
-	interdicting.announce_to_helms("[msg_base] [state_them] than us! Range is [t_range] sectors. ETA: [DisplayTimeText(tether_target_time - world.time)]")
+	interdicting.announce_to_helms("Interdiction update: They are [state_them] than us! Range is [t_range] sectors. ETA: [DisplayTimeText(tether_target_time - world.time)]")
+	current_ship.announce_to_helms("Interdiction update: They are [state_us] than us! Range is [t_range] sectors. ETA: [DisplayTimeText(tether_target_time - world.time)]")
 
 /obj/machinery/computer/interdiction/proc/do_interdiction(mob/user, datum/overmap/ship/controlled/target)
 	// Calculate the speed differental
