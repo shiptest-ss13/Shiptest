@@ -26,7 +26,7 @@
 
 /obj/machinery/mineral/ore_redemption/Initialize(mapload)
 	. = ..()
-	stored_research = new /datum/techweb/specialized/autounlocking/smelter
+	stored_research = new /datum/research_web/integrated(src, SMELTER)
 	materials = AddComponent(/datum/component/remote_materials, "orm", mapload)
 
 /obj/machinery/mineral/ore_redemption/Destroy()
@@ -191,8 +191,8 @@
 			data["materials"] += list(list("name" = M.name, "id" = ref, "amount" = sheet_amount, "value" = ore_values[M.type]))
 
 		data["alloys"] = list()
-		for(var/v in stored_research.researched_designs)
-			var/datum/design/D = SSresearch.techweb_design_by_id(v)
+		for(var/v in stored_research.designs_available)
+			var/datum/design/D = SSresearch_v4.get_design(v)
 			data["alloys"] += list(list("name" = D.name, "id" = D.id, "amount" = can_smelt_alloy(D)))
 
 	if (!mat_container)
@@ -291,7 +291,12 @@
 				to_chat(usr, "<span class='warning'>Mineral access is on hold, please contact the quartermaster.</span>")
 				return
 			var/alloy_id = params["id"]
-			var/datum/design/alloy = stored_research.isDesignResearchedID(alloy_id)
+			var/allow_check = (alloy_id in stored_research.designs_available)
+			if(!allow_check)
+				to_chat(usr, span_userdanger("Failed to locate alloy ID design. This should never happen! Let admins know how this happened!"))
+				message_debug("[ADMIN_FLW(usr)] somehow sent an invalid allow_id HREF parameter. This is possible HREF forging although its almost certain a coder error.")
+				return
+			var/datum/design/alloy = SSresearch_v4.get_design(allow_id)
 			var/mob/M = usr
 			var/obj/item/card/id/I = M.get_idcard(TRUE)
 			if((check_access(I) || allowed(usr)) && alloy)
