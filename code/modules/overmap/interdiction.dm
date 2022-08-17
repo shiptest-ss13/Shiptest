@@ -2,6 +2,8 @@
 #define INTERDICTION_SPEED_DIFF_MAX 10
 #define INTERDICTION_COOLDOWN_START 1 MINUTES
 #define INTERDICTION_COOLDOWN_VICTIM 20 SECONDS
+// THIS MUST BE LESS THAN THE COOLDOWN FOR STARTING AN INTERDICTION
+#define INTERDICTION_BASE_TIME 30 SECONDS
 
 
 /obj/machinery/computer/interdiction
@@ -134,7 +136,6 @@
 		return end_interdiction()
 
 	if(tether_target_time >= world.time)
-		announce_to_ships("Target locked, Interdiction Tether engaged!")
 		return do_interdiction()
 
 	cur_timer = addtimer(CALLBACK(src, .proc/start_interdiction_callback), min(1, INTERDICTION_CHARGEUP * 0.2), TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_OVERRIDE)
@@ -184,6 +185,10 @@
 	// pull the aggressor towards the interdiction point by half the speed diff
 	// This exists to not penalize poor speed management too hard
 	current_ship.accelerate(current_ship.get_heading(), speed_diff * 0.5)
+
+	var/interdiction_actual = -round(-INTERDICTION_BASE_TIME / effective_penalty)
+	announce_to_ships("Target locked, Interdiction Tether engaged! Calculations show that the Tether will last for [DisplayTimeText(interdiction_actual)].")
+	cur_timer = addtimer(CALLBACK(src, .proc/end_interdiction), interdiction_actual)
 
 /obj/machinery/computer/interdiction/proc/end_interdiction()
 	deltimer(cur_timer)
