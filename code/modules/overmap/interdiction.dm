@@ -148,10 +148,10 @@
 		state_them = (speed_diff_large ? "much slower" : "slightly slower")
 		state_us = (speed_diff_large ? "much faster" : "slightly faster")
 
-	var/range = get_target_range()
+	var/t_range = get_target_range()
 
 	var/msg_base = "Interdiction update: They are"
-	interdicting.announce_to_helms("[msg_base] [state_them] than us! Range is [range] sectors. ETA: [DisplayTimeText(tether_target_time - world.time)]")
+	interdicting.announce_to_helms("[msg_base] [state_them] than us! Range is [t_range] sectors. ETA: [DisplayTimeText(tether_target_time - world.time)]")
 
 /obj/machinery/computer/interdiction/proc/do_interdiction(mob/user, datum/overmap/ship/controlled/target)
 	// Calculate the speed differental
