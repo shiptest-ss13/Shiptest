@@ -65,7 +65,12 @@
 		say("Interdiction array is still cooling down. ETA: [COOLDOWN_TIMELEFT(current_ship, interdiction_cooldown)]")
 		return
 
-	var/list/targets = sortList(scan_for_targets(), .proc/cmp_ship_dist)
+	var/list/raw_targets = scan_for_targets()
+	if(!length(raw_targets))
+		say("No valid targets found, attempt to match their speed or get in range.")
+		return
+
+	var/list/targets = sortList(raw_targets, .proc/cmp_ship_dist)
 	var/list/list_targets = list()
 	for(var/datum/overmap/ship/controlled/target as anything in targets)
 		list_targets["[get_dist(current_ship.token, target.token)] - [target]"] = target
@@ -153,24 +158,24 @@
 	interdicting.announce_to_helms("Interdiction update: They are [state_them] than us! Range is [t_range] sectors. ETA: [DisplayTimeText(tether_target_time - world.time)]")
 	current_ship.announce_to_helms("Interdiction update: They are [state_us] than us! Range is [t_range] sectors. ETA: [DisplayTimeText(tether_target_time - world.time)]")
 
-/obj/machinery/computer/interdiction/proc/do_interdiction(mob/user, datum/overmap/ship/controlled/target)
+/obj/machinery/computer/interdiction/proc/do_interdiction()
 	// Calculate the speed differental
-	var/speed_diff = abs(target.get_speed() - current_ship.get_speed())
+	var/speed_diff = abs(interdicting.get_speed() - current_ship.get_speed())
 	var/speed_mult = 1 + (get_target_range() * 0.1) // every additional tile is 10% more speed penalty, launching a tether from range is dangerous
 	var/effective_penalty = speed_diff * speed_mult
 
 	// Create the interdiction event and immediatly dock the target
-	var/old_is = target.token.icon_state
-	target.token.icon_state = null // this is done to prevent any visible lag time where it looks like their ship just isnt doing anything
-	var/datum/overmap/dynamic/empty/point = new(list("x" = target.x, "y" = target.y)) // TODO: dedicated interdiction subtype, docks literally next to each other
-	target.Dock(point, force=TRUE)
-	target.token.icon_state = old_is
+	var/old_is = interdicting.token.icon_state
+	interdicting.token.icon_state = null // this is done to prevent any visible lag time where it looks like their ship just isnt doing anything
+	var/datum/overmap/dynamic/empty/point = new(list("x" = interdicting.x, "y" = interdicting.y)) // TODO: dedicated interdiction subtype, docks literally next to each other
+	interdicting.Dock(point, force=TRUE)
+	interdicting.token.icon_state = old_is
 
 	// I want the aggressor to take 66% of the force damage, to really penalize for not managing your speed properly
 	var/our_strength = effective_penalty * 0.66
 	var/their_strength = effective_penalty * 0.33
 	throw_ship_contents(current_ship, current_ship.get_heading(), our_strength)
-	throw_ship_contents(interdicting, target.get_heading(), their_strength)
+	throw_ship_contents(interdicting, interdicting.get_heading(), their_strength)
 
 	// remove the old beam and make a new one
 	qdel(tether)
