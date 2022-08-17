@@ -38,11 +38,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "ev" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/airlock/external,
+/obj/structure/plasticflaps,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "eQ" = (
@@ -317,10 +313,6 @@
 /obj/item/circuitboard/machine/autolathe,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
-"Dp" = (
-/obj/structure/lattice/catwalk,
-/turf/template_noop,
-/area/ship/external)
 "Ds" = (
 /obj/item/stack/rods/fifty{
 	pixel_x = 8
@@ -345,7 +337,7 @@
 /obj/item/circuitboard/machine/holopad,
 /obj/item/circuitboard/computer/cargo/express,
 /obj/item/stack/spacecash/c500{
-	amount = 15
+	amount = 25
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
@@ -416,6 +408,7 @@
 /obj/structure/closet/crate/large{
 	name = "sheet metal crate"
 	},
+/obj/item/stack/sheet/plasteel/fifty,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "JY" = (
@@ -616,9 +609,9 @@ SA
 SA
 SA
 SA
-Dp
-Dp
-Dp
+zu
+zu
+zu
 SA
 SA
 SA
@@ -634,7 +627,7 @@ ND
 ND
 ND
 ND
-Dp
+zu
 ND
 ND
 ND
@@ -651,7 +644,7 @@ SA
 SA
 SA
 ND
-Dp
+zu
 ND
 SA
 SA
@@ -668,7 +661,7 @@ SA
 SA
 SA
 ND
-Dp
+zu
 ND
 SA
 SA
@@ -685,7 +678,7 @@ SA
 SA
 SA
 ND
-Dp
+zu
 ND
 SA
 SA
@@ -702,7 +695,7 @@ SA
 ND
 ND
 ND
-Dp
+zu
 ND
 SA
 SA
@@ -716,10 +709,10 @@ SA
 ND
 SA
 SA
-Dp
-Dp
-Dp
-Dp
+zu
+zu
+zu
+zu
 ND
 SA
 SA
@@ -822,13 +815,13 @@ ci
 Fj
 AS
 uC
-Dp
+zu
 ND
 ND
 ND
 ND
 ND
-Dp
+zu
 "}
 (14,1,1) = {"
 nx
@@ -839,13 +832,13 @@ Hf
 ev
 MA
 MO
-Dp
-Dp
-Dp
 zu
-Dp
-Dp
-Dp
+zu
+zu
+zu
+zu
+zu
+zu
 "}
 (15,1,1) = {"
 Qz
@@ -856,13 +849,13 @@ LK
 Fj
 iE
 of
-Dp
+zu
 ND
 ND
 ND
 ND
 ND
-Dp
+zu
 "}
 (16,1,1) = {"
 SA
@@ -936,11 +929,11 @@ SA
 SA
 ND
 SA
-Dp
-Dp
-Dp
-Dp
-Dp
+zu
+zu
+zu
+zu
+zu
 ND
 SA
 SA
@@ -957,7 +950,7 @@ SA
 ND
 SA
 ND
-Dp
+zu
 ND
 SA
 SA
@@ -974,7 +967,7 @@ SA
 SA
 SA
 ND
-Dp
+zu
 ND
 SA
 SA
@@ -991,7 +984,7 @@ SA
 SA
 SA
 ND
-Dp
+zu
 ND
 SA
 SA
@@ -1008,7 +1001,7 @@ SA
 SA
 SA
 ND
-Dp
+zu
 ND
 SA
 SA
@@ -1025,7 +1018,7 @@ ND
 ND
 ND
 ND
-Dp
+zu
 ND
 ND
 ND
@@ -1041,9 +1034,9 @@ SA
 SA
 SA
 SA
-Dp
-Dp
-Dp
+zu
+zu
+zu
 SA
 SA
 SA
