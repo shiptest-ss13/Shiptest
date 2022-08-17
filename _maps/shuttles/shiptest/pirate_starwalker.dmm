@@ -198,8 +198,7 @@
 "cR" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "pcarrier_windows";
-	name = "blast shutters"
+	id = "pcarrier_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/security)
@@ -444,16 +443,14 @@
 "hG" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "pcarrier_windows";
-	name = "blast shutters"
+	id = "pcarrier_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "hH" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "pcarrier_bridge";
-	name = "blast shutters"
+	id = "pcarrier_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -601,8 +598,7 @@
 "kY" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "pcarrier_windows";
-	name = "blast shutters"
+	id = "pcarrier_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -746,8 +742,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/curtain/bounty,
 /obj/machinery/door/poddoor/shutters{
-	id = "pcarrier_windows";
-	name = "blast shutters"
+	id = "pcarrier_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -1772,8 +1767,7 @@
 "Bx" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "pcarrier_windows";
-	name = "blast shutters"
+	id = "pcarrier_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
@@ -2263,6 +2257,12 @@
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/security)
+"GZ" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "pcarrier_windows"
+	},
+/turf/template_noop,
+/area/template_noop)
 "Hg" = (
 /obj/structure/catwalk/over,
 /obj/machinery/door/airlock/glass,
@@ -2809,6 +2809,17 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
+"Rk" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "pcarrier_windows";
+	name = "blast shutters"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "pcarrier_windows"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/port)
 "RI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
@@ -3662,7 +3673,7 @@ Mp
 Cm
 BK
 BK
-Bx
+Rk
 BK
 Bx
 BK
@@ -4008,7 +4019,7 @@ fk
 ih
 WS
 WS
-WS
+GZ
 WS
 WS
 WS
