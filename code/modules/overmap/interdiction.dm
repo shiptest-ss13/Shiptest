@@ -1,4 +1,8 @@
-#define SPEED_THROW_STRENGTH_MULT 0.5
+#define INTERDICTION_CHARGEUP 15 SECONDS
+#define INTERDICTION_SPEED_DIFF_MAX 10
+#define INTERDICTION_COOLDOWN_START 1 MINUTES
+#define INTERDICTION_COOLDOWN_VICTIM 20 SECONDS
+
 
 /obj/machinery/computer/interdiction
 	name = "interdiction control"
@@ -9,38 +13,38 @@
 	light_color = LIGHT_COLOR_FLARE
 	clicksound = null
 
-	COOLDOWN_DECLARE(scan_cooldown)
 	var/datum/overmap/ship/controlled/current_ship
 	var/datum/overmap/ship/controlled/interdicting
-	var/end_timer
+
+
+	var/cur_timer
 	var/datum/beam/tether
 	var/range = 2
+	var/tether_target_time
 
 /obj/machinery/computer/interdiction/Destroy()
 	end_interdiction()
 	current_ship = null
+	if(cur_timer)
+		deltimer(cur_timer)
 	return ..()
 
 /obj/machinery/computer/interdiction/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	current_ship = port.current_ship
 
 /obj/machinery/computer/interdiction/proc/scan_for_targets()
-	if(!current_ship)
-		return FALSE
-
-	if(current_ship.docked_to)
-		say("Cannot perform interdiction while docked.")
-		return FALSE
-
-	if(!COOLDOWN_FINISHED(src, scan_cooldown))
-		say("Sensors recharging.")
-		return FALSE
-	COOLDOWN_START(src, scan_cooldown, 5 SECONDS)
-
 	. = list()
 	for(var/obj/overmap/token in orange(range, current_ship.token))
-		if(istype(token.parent, /datum/overmap/ship/controlled))
-			. += token.parent
+		if(!istype(token.parent, /datum/overmap/ship/controlled))
+			continue
+		var/datum/overmap/ship/controlled/possible = token.parent
+		if(!COOLDOWN_FINISHED(possible, interdiction_cooldown))
+			continue // to prevent three or more ships just constantly bullying someone
+		if(get_dist(token, current_ship.token) > range)
+			continue
+		if(abs(current_ship.get_speed() - possible.get_speed()) > INTERDICTION_SPEED_DIFF_MAX)
+			continue
+		. += possible
 
 /obj/machinery/computer/interdiction/attack_hand(mob/living/user)
 	if(!Adjacent(user))
@@ -48,31 +52,36 @@
 	if(!istype(user))
 		return
 
+	user.changeNext_move(CLICK_CD_RAPID)
+	if(!can_interact(user))
+		say("Access denied.")
+		return
+
 	if(interdicting)
-		if(tgui_alert(user, "Cancel Interdiction", "Interdiction", list("Yes", "No")) != "Yes")
-			return
-		interdicting.interdictor = null
-		interdicting = null
-		say("Released Interdiction.")
+		say("Interdiction is already in effect, and cannot be canceled manually.")
 		return
 
-	var/list/targets = scan_for_targets()
-	if(targets == FALSE)
-		return
-	if(!length(targets))
-		say("No valid targets in sensor range.")
+	if(!COOLDOWN_FINISHED(current_ship, interdiction_cooldown))
+		say("Interdiction array is still cooling down. ETA: [COOLDOWN_TIMELEFT(current_ship, interdiction_cooldown)]")
 		return
 
-	var/list/sorted_targets = sortList(targets, .proc/cmp_ship_dist)
-	var/list/options = list()
-	for(var/datum/overmap/ship/controlled/target as anything in sorted_targets)
-		options["[get_dist(current_ship.token, target.token)] - [target.name]"] = target
+	var/list/targets = sortList(scan_for_targets(), .proc/cmp_ship_dist)
+	var/list/list_targets = list()
+	for(var/datum/overmap/ship/controlled/target as anything in targets)
+		list_targets["[get_dist(current_ship.token, target.token)] - [target]"] = target
 
-	var/target = tgui_input_list(user, "Select Ship", "Interdiction", options)
-	if(!target || !(target in options))
+	var/datum/overmap/ship/controlled/selection = tgui_input_list(user, "Select Target", "Interdiction", list_targets, 10 SECONDS)
+	if(!selection || !(selection in list_targets))
 		return
+	selection = list_targets[selection]
 
-	do_interdiction(user, options[target])
+	message_admins("[ADMIN_LOOKUPFLW(user)] has begun interdiction! [current_ship]([ADMIN_JMP(current_ship.token)]) -> [selection]([ADMIN_JMP(selection.token)])")
+	start_interdiction(user, selection)
+	COOLDOWN_START(current_ship, interdiction_cooldown, INTERDICTION_COOLDOWN_START)
+
+/obj/machinery/computer/interdiction/proc/announce_to_ships(message)
+	for(var/v_z as anything in list(interdicting.shuttle_port.virtual_z(), current_ship.shuttle_port.virtual_z()))
+		priority_announce(message, "Interdiction Notice", 'sound/misc/announce.ogg', "interdiction", "Interdiction ([current_ship])", zlevel=v_z)
 
 /obj/machinery/computer/interdiction/proc/cmp_ship_dist(datum/overmap/t1, datum/overmap/t2)
 	return cmp_numeric_asc(get_dist(current_ship.token, t1.token), get_dist(current_ship.token, t2.token))
@@ -83,99 +92,99 @@
 			var/turf/target_turf = get_edge_target_turf(movable, dir)
 			movable.throw_at(target_turf, 2 * strength, strength)
 
-/obj/machinery/computer/interdiction/proc/do_interdiction(mob/user, datum/overmap/ship/controlled/target)
-	message_admins("[user] is attempting to perform an interdiction to [target] from [current_ship]")
+/obj/machinery/computer/interdiction/proc/get_target_range()
+	. = get_dist(current_ship.token, interdicting.token)
 
-	var/target_x
-	var/target_y
-	if(length(target.get_nearby_overmap_objects()))
-		var/target_found = FALSE
-		for(var/dir in GLOB.cardinals|GLOB.diagonals)
-			if(target_found)
-				break
-			var/c_x = target.x
-			var/c_y = target.y
-			if(dir & NORTH)
-				c_y++
-			if(dir & SOUTH)
-				c_y--
-			if(dir & EAST)
-				c_x++
-			if(dir & WEST)
-				c_x--
-			var/list/overmap_square = SSovermap.overmap_container[c_x][c_y]
-			if(length(overmap_square))
-				continue
-			target_x = c_x
-			target_y = c_y
-			target_found = TRUE
-
-		if(!target_found)
-			say("Failed to find valid Interdiction point!")
-			return
-	else
-		target_x = target.x
-		target_y = target.y
-
+/obj/machinery/computer/interdiction/proc/start_interdiction(mob/user, datum/overmap/ship/controlled/target)
 	interdicting = target
-	target.interdictor = src
+	interdicting.interdictor = current_ship
 
-	var/speed_diff = abs(target.get_speed() - current_ship.get_speed())
-	if(speed_diff >= 20) // this is gonna hurt, you and me
-		if(tgui_alert(user, "Radars indicitate they are going very quickly. Are you sure you want to do this?", "Interdiction", list("Yes", "No"), 10 SECONDS) != "Yes")
-			interdicting = null
-			target.interdictor = null
-			return
+	announce_to_ships("Interdiction Tether Engaged. ETA: [DisplayTimeText(INTERDICTION_CHARGEUP)]")
+	target.announce_to_helms("Interdiction Tether detected; Attempt to escape enemy range or cause their tether to slip by increasing difference in ship speeds!")
+	current_ship.announce_to_helms("Interdiction Tether launched; Attempt to close distance to and match speed of enemy ship!")
 
-		var/heading = target.get_heading()
-		throw_ship_contents(target, heading, speed_diff * SPEED_THROW_STRENGTH_MULT)
-		throw_ship_contents(current_ship, turn(heading, 180), speed_diff * SPEED_THROW_STRENGTH_MULT)
+	tether = target.token.Beam(current_ship.token, time=INFINITY)
+	tether_target_time = world.time + INTERDICTION_CHARGEUP
+	start_interdiction_callback()
 
-	var/datum/overmap/dynamic/empty/point = new(list("x" = target_x, "y" = target_y))
-	if(!point)
-		message_admins("failed to create interdiction event for [src]")
+/obj/machinery/computer/interdiction/proc/start_interdiction_callback()
+	if(QDELETED(src))
 		return
 
-	point.name = "Interdiction Point"
-	point.token.icon_state = "interdiction"
-	tether = point.token.Beam(current_ship.token, time=INFINITY, maxdistance=50)
-
-	// set the icon_state to null to make it appear more responsive to both parties, Dock takes a while to return
-	var/old_icon_state = target.token.icon_state
-	target.token.icon_state = null
-	try
-		target.Dock(point, force=TRUE)
-	catch
-		message_admins("Failed to dock for an interdiction! Originator: [ADMIN_FLW(user)]")
-		target.token.icon_state = old_icon_state
-		target.interdictor = null
-		target = null
-		return
-	target.token.icon_state = old_icon_state
-	// ensure we set the original icon_state back at the end, dont want the ship staying invisible
-
-	end_timer = addtimer(CALLBACK(src, .proc/end_interdiction), 20 SECONDS, TIMER_STOPPABLE|TIMER_OVERRIDE|TIMER_UNIQUE)
-	say("Interdiction now in effect for 20 seconds. Dismantle or de-powerment of this console will cause an early release.")
-
-	for(var/v_z as anything in list(target.shuttle_port.virtual_z(), current_ship.shuttle_port.virtual_z()))
-		priority_announce("Interdiction is now in effect on target \"[target]\"", "Interdiction Tether Launched", 'sound/misc/announce.ogg', "interdiction", "Interdiction ([current_ship])", zlevel=v_z)
-
-/obj/machinery/computer/interdiction/on_set_is_operational(old_value)
-	. = ..()
 	if(!is_operational)
-		end_interdiction()
+		announce_to_ships("Interdiction Tether operational failure.")
+		return end_interdiction()
 
-/obj/machinery/computer/interdiction/attackby(obj/item/I, mob/living/user, params)
-	. = ..()
-	if(panel_open)
-		end_interdiction()
+	if(!powered())
+		announce_to_ships("Interdiction Tether power failure.")
+		return end_interdiction()
+
+	if(get_target_range() < range)
+		announce_to_ships("Target out of range, Interdiction Tether dissipating.")
+		return end_interdiction()
+
+	var/speed_diff = abs(current_ship.get_speed() - interdicting.get_speed())
+	if(speed_diff > INTERDICTION_SPEED_DIFF_MAX)
+		announce_to_ships("Target speed difference too great, Interdiction Tether dissipating.")
+		return end_interdiction()
+
+	if(tether_target_time >= world.time)
+		announce_to_ships("Target locked, Interdiction Tether engaged!")
+		return do_interdiction()
+
+	cur_timer = addtimer(CALLBACK(src, .proc/start_interdiction_callback), min(1, INTERDICTION_CHARGEUP * 0.2), TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_OVERRIDE)
+
+	var/state_us
+	var/state_them
+	var/speed_us = round(current_ship.get_speed(), 0.1)
+	var/speed_them = round(interdicting.get_speed(), 0.1)
+	var/speed_diff_large = abs(speed_us - speed_them) > 10
+	if(speed_us == speed_them)
+		state_us = state_them = "the same speed"
+	else if(speed_us > speed_them)
+		state_them = (speed_diff_large ? "much faster" : "slightly faster")
+		state_us = (speed_diff_large ? "much slower" : "slightly slower")
+	else
+		state_them = (speed_diff_large ? "much slower" : "slightly slower")
+		state_us = (speed_diff_large ? "much faster" : "slightly faster")
+
+	var/range = get_target_range()
+
+	var/msg_base = "Interdiction update: They are"
+	interdicting.announce_to_helms("[msg_base] [state_them] than us! Range is [range] sectors. ETA: [DisplayTimeText(tether_target_time - world.time)]")
+
+/obj/machinery/computer/interdiction/proc/do_interdiction(mob/user, datum/overmap/ship/controlled/target)
+	// Calculate the speed differental
+	var/speed_diff = abs(target.get_speed() - current_ship.get_speed())
+	var/speed_mult = 1 + (get_target_range() * 0.1) // every additional tile is 10% more speed penalty, launching a tether from range is dangerous
+	var/effective_penalty = speed_diff * speed_mult
+
+	// Create the interdiction event and immediatly dock the target
+	var/old_is = target.token.icon_state
+	target.token.icon_state = null // this is done to prevent any visible lag time where it looks like their ship just isnt doing anything
+	var/datum/overmap/dynamic/empty/point = new(list("x" = target.x, "y" = target.y)) // TODO: dedicated interdiction subtype, docks literally next to each other
+	target.Dock(point, force=TRUE)
+	target.token.icon_state = old_is
+
+	// I want the aggressor to take 66% of the force damage, to really penalize for not managing your speed properly
+	var/our_strength = effective_penalty * 0.66
+	var/their_strength = effective_penalty * 0.33
+	throw_ship_contents(current_ship, current_ship.get_heading(), our_strength)
+	throw_ship_contents(interdicting, target.get_heading(), their_strength)
+
+	// remove the old beam and make a new one
+	qdel(tether)
+	tether = point.token.Beam(current_ship.token, time=INFINITY)
+
+	// pull the aggressor towards the interdiction point by half the speed diff
+	// This exists to not penalize poor speed management too hard
+	current_ship.accelerate(current_ship.get_heading(), speed_diff * 0.5)
 
 /obj/machinery/computer/interdiction/proc/end_interdiction()
-	deltimer(end_timer)
-	if(!interdicting)
-		return
-	QDEL_NULL(tether)
-	for(var/v_z as anything in list(interdicting.shuttle_port.virtual_z(), current_ship.shuttle_port.virtual_z()))
-		priority_announce("Interdiction is no longer in effect on target \"[interdicting]\"", "Interdiction Tether Dissipated", 'sound/misc/announce.ogg', "interdiction", "Interdiction ([current_ship])", zlevel=v_z)
-	interdicting.interdictor = null
-	interdicting = null
+	deltimer(cur_timer)
+	if(interdicting)
+		interdicting.interdictor = null
+		interdicting = null
+		COOLDOWN_START(interdicting, interdiction_cooldown, INTERDICTION_COOLDOWN_VICTIM)
+	if(tether)
+		QDEL_NULL(tether)

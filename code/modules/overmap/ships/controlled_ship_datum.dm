@@ -70,6 +70,8 @@
 
 	/// The overmap object currently controlling this ship, this object should be checked before doing anything to the ship
 	var/interdictor
+	/// The cooldown for being targeted by or launching an interdiction
+	COOLDOWN_DECLARE(interdiction_cooldown)
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
@@ -216,6 +218,10 @@
 		accelerate(n_dir, thrust_used)
 	else
 		decelerate(thrust_used)
+
+/datum/overmap/ship/controlled/proc/announce_to_helms(message)
+	for(var/obj/machinery/computer/helm/helm as anything in helms)
+		helm.say(message)
 
 /**
  * Just double checks all the engines on the shuttle
