@@ -125,6 +125,7 @@
 	for(var/a_key in applications)
 		// it handles removal itself
 		qdel(applications[a_key])
+	deltimer(owner_check_timer_id)
 	// set ourselves to ownerless to unregister signals
 	set_owner_mob(null)
 	return ..()
