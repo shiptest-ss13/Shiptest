@@ -58,9 +58,10 @@
 	icon_state = "inteqsmg"
 	item_state = "inteqsmg"
 	mag_type = /obj/item/ammo_box/magazine/smgm10mm
-	can_bayonet = TRUE
-	knife_x_offset = 26
-	knife_y_offset = 14
+	can_bayonet = FALSE
+	can_flashlight = TRUE
+	flight_x_offset = 15
+	flight_y_offset = 10
 	can_suppress = TRUE
 	mag_display = TRUE
 

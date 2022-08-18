@@ -68,6 +68,13 @@
 	caliber = "10mm"
 	max_ammo = 24
 
+/obj/item/ammo_box/magazine/smgm10mm/update_icon()
+	..()
+	if (ammo_count() == 1)
+		icon_state = "smg10mm-1"
+	else
+		icon_state = "smg10mm-[round(ammo_count(),3)]"
+
 /obj/item/ammo_box/magazine/smgm10mm/rubbershot
 	name = "SMG magazine (Rubbershot 10mm)"
 	ammo_type = /obj/item/ammo_casing/c10mm/rubbershot
