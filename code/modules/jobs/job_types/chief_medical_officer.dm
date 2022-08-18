@@ -110,7 +110,6 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/chemist/side
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
 	l_hand = /obj/item/reagent_containers/glass/maunamug
-	suit_store = /obj/item/reagent_scanner
 	backpack = /obj/item/storage/backpack/chemistry
 	satchel = /obj/item/storage/backpack/satchel/chem
 	courierbag = /obj/item/storage/backpack/messenger/chem
