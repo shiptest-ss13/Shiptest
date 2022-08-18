@@ -159,8 +159,8 @@
 	if(!success_sound)
 		return
 	var/sound_file_use
-	if(islist(success_sound ))
-		for(var/typepath in success_sound )//iterate and assign subtype to a list, works best if list is arranged from subtype first and parent last
+	if(islist(success_sound))
+		for(var/typepath in success_sound) //iterate and assign subtype to a list, works best if list is arranged from subtype first and parent last
 			if(istype(tool, typepath))
 				sound_file_use = success_sound [typepath]
 				break
