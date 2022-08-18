@@ -515,7 +515,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/gps{
-	gpstag = PHARM1
+	gpstag = "PHARM1"
 	},
 /obj/machinery/photocopier/faxmachine/longrange,
 /obj/machinery/light{
@@ -795,7 +795,6 @@
 /turf/open/floor/concrete/tiles,
 /area/ship/crew/hydroponics)
 "kh" = (
-/obj/machinery/door/airlock/command/glass/lp/bridge,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -813,6 +812,9 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "pharmbridge"
+	},
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
