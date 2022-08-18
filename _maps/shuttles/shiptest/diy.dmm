@@ -1,4 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"az" = (
+/turf/closed/wall,
+/area/ship/external)
 "aO" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -54,6 +57,15 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
+"fJ" = (
+/obj/machinery/power/apc/auto_name/east{
+	cell_type = /obj/item/stock_parts/cell/high/plus
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "gL" = (
 /obj/item/floor_painter{
 	pixel_x = 5;
@@ -102,7 +114,6 @@
 /obj/item/circuitboard/machine/shuttle/engine/plasma,
 /obj/item/circuitboard/machine/shuttle/engine/plasma,
 /obj/item/circuitboard/machine/shuttle/engine/plasma,
-/obj/item/circuitboard/computer/shuttle/helm,
 /obj/item/areaeditor/shuttle,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
@@ -459,6 +470,7 @@
 /area/ship/construction)
 "Ld" = (
 /obj/structure/frame/computer,
+/obj/item/circuitboard/computer/shuttle/helm,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "LK" = (
@@ -599,6 +611,7 @@
 /obj/item/storage/firstaid/fire{
 	pixel_y = 10
 	},
+/obj/structure/bedsheetbin,
 /turf/open/floor/plating,
 /area/ship/construction)
 
@@ -633,7 +646,7 @@ ND
 ND
 ND
 ND
-ND
+fJ
 SA
 "}
 (3,1,1) = {"
@@ -650,7 +663,7 @@ SA
 SA
 SA
 SA
-ND
+az
 SA
 "}
 (4,1,1) = {"
