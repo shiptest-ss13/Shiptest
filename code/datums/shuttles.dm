@@ -120,7 +120,7 @@
 		outfits = list()
 		for(var/datum/outfit/outfit as anything in subtypesof(/datum/outfit))
 			outfits[initial(outfit.name)] = outfit
-		outfits = sortNames(outfits)
+		outfits = sortList(outfits)
 
 	.["outfits"] = outfits
 
@@ -130,16 +130,15 @@
 	.["templateLimit"] = limit
 	.["templateEnabled"] = !!cost
 
+	.["templateJobs"] = list()
 	for(var/datum/job/job as anything in job_slots)
 		var/list/jobdetails = list()
 		jobdetails["ref"] = REF(job)
 		jobdetails["name"] = job.title
 		jobdetails["officer"] = job.officer
-		jobdetails["outfit"] = job.outfit
+		jobdetails["outfit"] = initial(job.outfit.name)
 		jobdetails["slots"] = job_slots[job]
-		.["jobs"] += list(jobdetails)
-
-	.["templateJobs"] = job_slots
+		.["templateJobs"] += list(jobdetails)
 
 /datum/map_template/shuttle/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
@@ -156,7 +155,7 @@
 			short_name = params["new_template_short_name"]
 			update_static_data(usr, ui)
 			return TRUE
-		if("SetTemplateCategory")
+		if("setTemplateCategory")
 			category = params["new_template_category"]
 			update_static_data(usr, ui)
 			return TRUE
@@ -166,6 +165,10 @@
 			return TRUE
 		if("toggleTemplateEnabled")
 			cost = !cost
+			if(cost)
+				SSmapping.ship_purchase_list += src
+			else
+				SSmapping.ship_purchase_list -= src
 			update_static_data(usr, ui)
 			return TRUE
 
@@ -187,7 +190,8 @@
 				var/new_outfit = params["job_outfit"]
 				if(!(new_outfit in outfits))
 					return
-				job_slot.outfit = new outfits[new_outfit]
+				new_outfit = outfits[new_outfit]
+				job_slot.outfit = new new_outfit
 			if("setJobSlots")
 				job_slots[job_slot] = clamp(params["job_slots"], 0, 100)
 		update_static_data(usr, ui)

@@ -7,7 +7,7 @@ import { Window } from '../layouts';
 export const ShuttleManipulator = (props, context) => {
   const [tab, setTab] = useLocalState(context, 'tab', 1);
   return (
-    <Window title="Shuttle Manipulator" width={800} height={600} resizable>
+    <Window title="Shuttle Manipulator" width={875} height={600} resizable>
       <Window.Content scrollable>
         <Tabs>
           <Tabs.Tab selected={tab === 1} onClick={() => setTab(1)}>
@@ -128,14 +128,24 @@ export const ShuttleManipulatorTemplates = (props, context) => {
                 level={2}
                 key={actualTemplate.file_name}
                 buttons={
-                  <ButtonConfirm
-                    content="Load"
-                    onClick={() =>
-                      act('select_template', {
-                        file_name: actualTemplate.file_name,
-                      })
-                    }
-                  />
+                  <>
+                    <Button
+                      content="Edit"
+                      onClick={() =>
+                        act('edit_template', {
+                          file_name: actualTemplate.file_name,
+                        })
+                      }
+                    />
+                    <ButtonConfirm
+                      content="Load"
+                      onClick={() =>
+                        act('select_template', {
+                          file_name: actualTemplate.file_name,
+                        })
+                      }
+                    />
+                  </>
                 }
               >
                 {(!!actualTemplate.description ||

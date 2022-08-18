@@ -12,15 +12,21 @@ import { Window } from '../layouts';
 
 export const ShipEditor = (props, context) => {
   const { act, data } = useBackend(context);
+  const outfits = [];
+
+  for (let name in data.outfits) {
+    outfits.push(name);
+  }
 
   return (
-    <Window title="Ship Editor" width={400} height={600}>
+    <Window title="Ship Editor" width={500} height={600}>
       <Window.Content>
         <Section title="Details">
           <LabeledList>
             <LabeledList.Item label="Name">
               <Input
                 value={data.templateName}
+                width={20}
                 onChange={(e, value) =>
                   act('setTemplateName', { new_template_name: value })
                 }
@@ -42,7 +48,7 @@ export const ShipEditor = (props, context) => {
             <LabeledList.Item label="Admin Panel Category">
               <Input
                 value={data.templateCategory}
-                onChange={(value) =>
+                onChange={(e, value) =>
                   act('setTemplateCategory', { new_template_category: value })
                 }
               />
@@ -53,7 +59,7 @@ export const ShipEditor = (props, context) => {
                 value={data.templateLimit}
                 minValue={0}
                 maxValue={100}
-                stepPixelsSize={10}
+                stepPixelSize={30}
                 onChange={(e, value) =>
                   act('setTemplateLimit', { new_template_limit: value })
                 }
@@ -80,7 +86,7 @@ export const ShipEditor = (props, context) => {
               <Table.Cell>Slots</Table.Cell>
             </Table.Row>
 
-            {data.jobs.map((job) => (
+            {data.templateJobs.map((job) => (
               <Table.Row key={job.name}>
                 <Table.Cell>
                   <Button
@@ -110,8 +116,9 @@ export const ShipEditor = (props, context) => {
                 <Table.Cell>
                   <Dropdown
                     selected={job.outfit}
-                    options={data.outfits}
-                    onSelect={(value) =>
+                    options={outfits}
+                    width={20}
+                    onSelected={(value) =>
                       act('setJobOutfit', {
                         job_ref: job.ref,
                         job_outfit: value,
