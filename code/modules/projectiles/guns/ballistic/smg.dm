@@ -57,10 +57,10 @@
 	desc = "An extreme modification of an obsolete assault rifle, converted into a compact submachine gun by IRMG. Chambered in 10mm."
 	icon_state = "inteqsmg"
 	item_state = "inteqsmg"
-	mag_type = /obj/ittem/ammo_box/magazine/smgm10mm
+	mag_type = /obj/item/ammo_box/magazine/smgm10mm
 	can_bayonet = TRUE
 	knife_x_offset = 26
-	knife_y_offset - 14
+	knife_y_offset = 14
 	can_suppress = TRUE
 	mag_display = TRUE
 

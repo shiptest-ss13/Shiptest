@@ -69,7 +69,7 @@
 	max_ammo = 24
 
 /obj/item/ammo_box/magazine/smgm10mm/rubbershot
-	name - "SMG magazine (Rubbershot 10mm)"
+	name = "SMG magazine (Rubbershot 10mm)"
 	ammo_type = /obj/item/ammo_casing/c10mm/rubbershot
 
 /obj/item/ammo_box/magazine/smgm45
