@@ -126,7 +126,7 @@
 /obj/machinery/power/smes/shuttle
 	name = "electric engine precharger"
 	desc = "A medium-capacity, high transfer superconducting magnetic energy storage unit specially made for use with shuttle engines."
-	icon = 'whitesands/icons/obj/shuttle.dmi'
+	icon = 'icons/obj/shuttle.dmi'
 	input_level = 0
 	input_level_max = 50000
 	output_level = 50000
