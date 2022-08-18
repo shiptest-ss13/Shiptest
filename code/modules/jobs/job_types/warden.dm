@@ -63,6 +63,7 @@
 /datum/outfit/job/warden/solgov
 	name = "Brig Officer (SolGov)"
 
+	ears = /obj/item/radio/headset/solgov/alt
 	uniform = /obj/item/clothing/under/solgov
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/beret/solgov
@@ -78,6 +79,7 @@
 	name = "Field Commander (Colonial Minutemen)"
 
 	glasses = /obj/item/clothing/glasses/sunglasses
+	ears = /obj/item/radio/headset/minutemen/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/cowboy/sec/minutemen
@@ -103,6 +105,7 @@
 /datum/outfit/job/warden/nanotrasen
 	name = "Warden (Nanotrasen)"
 
+	ears = /obj/item/radio/headset/nanotrasen/alt
 	head = /obj/item/clothing/head/warden/red
 	uniform = /obj/item/clothing/under/rank/security/warden/nt
 	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
