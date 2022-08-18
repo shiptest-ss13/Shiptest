@@ -37,6 +37,7 @@ export const ShipEditor = (props, context) => {
               <Input
                 value={data.templateShortName}
                 placeholder={data.templateName}
+                maxLength={20}
                 onChange={(e, value) =>
                   act('setTemplateShortName', {
                     new_template_short_name: value,

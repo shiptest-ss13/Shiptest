@@ -6,6 +6,7 @@ import { Window } from '../layouts';
 
 export const ShuttleManipulator = (props, context) => {
   const [tab, setTab] = useLocalState(context, 'tab', 1);
+  const { act } = useBackend(context);
   return (
     <Window title="Shuttle Manipulator" width={875} height={600} resizable>
       <Window.Content scrollable>
@@ -15,6 +16,9 @@ export const ShuttleManipulator = (props, context) => {
           </Tabs.Tab>
           <Tabs.Tab selected={tab === 2} onClick={() => setTab(2)}>
             Templates
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => act('new_template')}>
+            Upload New Template
           </Tabs.Tab>
         </Tabs>
         {tab === 1 && <ShuttleManipulatorStatus />}
