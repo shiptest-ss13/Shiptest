@@ -139,7 +139,7 @@
 	if(world.time >= tether_target_time)
 		return do_interdiction()
 
-	cur_timer = addtimer(CALLBACK(src, .proc/start_interdiction_callback), min(1, INTERDICTION_CHARGEUP * 0.2), TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_OVERRIDE)
+	cur_timer = addtimer(CALLBACK(src, .proc/start_interdiction_callback), min(4, INTERDICTION_CHARGEUP * 0.2), TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_OVERRIDE)
 
 	var/state_us
 	var/state_them
@@ -174,8 +174,9 @@
 	// I want the aggressor to take 66% of the force damage, to really penalize for not managing your speed properly
 	var/our_strength = effective_penalty * 0.66
 	var/their_strength = effective_penalty * 0.33
-	throw_ship_contents(current_ship, current_ship.get_heading(), our_strength)
-	throw_ship_contents(interdicting, interdicting.get_heading(), their_strength)
+	if(our_strength) // if one is non-zero so is the other
+		throw_ship_contents(current_ship, current_ship.get_heading(), our_strength)
+		throw_ship_contents(interdicting, interdicting.get_heading(), their_strength)
 
 	// remove the old beam and make a new one
 	qdel(tether)

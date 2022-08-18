@@ -123,10 +123,6 @@
 	if(!current_ship && !reload_ship())
 		return
 
-	if(current_ship.interdictor)
-		say("Interdiction in effect.")
-		return
-
 	if(isliving(user) && !viewer && check_keylock())
 		return
 
@@ -204,8 +200,6 @@
 		.["engineInfo"] += list(engine_data)
 
 /obj/machinery/computer/helm/ui_status(mob/user)
-	if(current_ship?.interdictor)
-		return UI_DISABLED
 	if(current_ship?.helm_locked)
 		return UI_UPDATE
 	return ..()
@@ -234,10 +228,6 @@
 	if(check_keylock())
 		return
 	. = TRUE
-
-	if(current_ship.interdictor)
-		say("Unable to communication with Ship Mainframe; Interdiction is currently in effect!")
-		return FALSE
 
 	switch(action) // Universal topics
 		if("rename_ship")
@@ -276,6 +266,9 @@
 	if(!current_ship.docked_to && !current_ship.docking)
 		switch(action)
 			if("act_overmap")
+				if(current_ship.interdictor)
+					say("Cannot dock due to an active Interdiction Tether!")
+					return
 				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
 					to_chat(usr, "<span class='warning'>Cannot dock due to bluespace jump preperations!</span>")
 					return
@@ -294,6 +287,9 @@
 				current_ship.burn_engines()
 				return
 			if("bluespace_jump")
+				if(current_ship.interdictor)
+					say("Cannot jump due to an active Interdiction Tether!")
+					return
 				if(calibrating)
 					cancel_jump()
 					return
@@ -303,6 +299,9 @@
 					calibrate_jump()
 					return
 			if("dock_empty")
+				if(current_ship.interdictor)
+					say("Cannot dock due to an active Interdiction Tether!")
+					return
 				current_ship.dock_in_empty_space(usr)
 				return
 	else if(current_ship.docked_to)
