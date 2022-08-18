@@ -264,7 +264,7 @@
 				target = null
 				mode = BOT_IDLE
 				return
-		else if( !bot_move(target) )
+		else if(!bot_move(target))
 			target = null
 			mode = BOT_IDLE
 			return

@@ -7,12 +7,11 @@
 	fire_sound = 'sound/items/syringeproj.ogg'
 	force = 0
 	throwforce = 0
+	burst_size = 3
 	can_suppress = TRUE
 	clumsy_check = 0
 	item_flags = NONE
 	casing_ejector = FALSE
-	fire_rate = 3
-	weapon_weight = WEAPON_LIGHT
 
 /obj/item/gun/ballistic/automatic/toy/update_overlays()
 	. = ..()
@@ -32,7 +31,6 @@
 	fire_sound = 'sound/items/syringeproj.ogg'
 	burst_size = 1
 	fire_delay = 0
-	automatic = 0
 	actions_types = list()
 
 /obj/item/gun/ballistic/automatic/toy/pistol/riot
@@ -84,7 +82,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/gun/ballistic/automatic/c20r/toy //This is the syndicate variant with syndicate firing pin and riot darts.
+/obj/item/gun/ballistic/automatic/smg/c20r/toy //This is the syndicate variant with syndicate firing pin and riot darts.
 	name = "donksoft SMG"
 	desc = "A bullpup two-round burst toy SMG, designated 'C-20r'. Ages 8 and up."
 	can_suppress = TRUE
@@ -93,18 +91,18 @@
 	casing_ejector = FALSE
 	clumsy_check = FALSE
 
-/obj/item/gun/ballistic/automatic/c20r/toy/unrestricted //Use this for actual toys
+/obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted //Use this for actual toys
 	pin = /obj/item/firing_pin
 	mag_type = /obj/item/ammo_box/magazine/toy/smgm45
 
-/obj/item/gun/ballistic/automatic/c20r/toy/unrestricted/riot
+/obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted/riot
 	mag_type = /obj/item/ammo_box/magazine/toy/smgm45/riot
 
-/obj/item/gun/ballistic/automatic/c20r/toy/update_overlays()
+/obj/item/gun/ballistic/automatic/smg/c20r/toy/update_overlays()
 	. = ..()
 	. += "[icon_state]_toy"
 
-/obj/item/gun/ballistic/automatic/l6_saw/toy //This is the syndicate variant with syndicate firing pin and riot darts.
+/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy //This is the syndicate variant with syndicate firing pin and riot darts.
 	name = "donksoft LMG"
 	desc = "A heavily modified toy light machine gun, designated 'L6 SAW'. Ages 8 and up."
 	fire_sound = 'sound/items/syringeproj.ogg'
@@ -114,13 +112,13 @@
 	casing_ejector = FALSE
 	clumsy_check = FALSE
 
-/obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted //Use this for actual toys
+/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/unrestricted //Use this for actual toys
 	pin = /obj/item/firing_pin
 	mag_type = /obj/item/ammo_box/magazine/toy/m762
 
-/obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted/riot
+/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/unrestricted/riot
 	mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
 
-/obj/item/gun/ballistic/automatic/l6_saw/toy/update_overlays()
+/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/update_overlays()
 	. = ..()
 	. += "[icon_state]_toy"

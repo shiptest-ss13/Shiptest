@@ -307,7 +307,7 @@
 /obj/item/crusher_trophy/watcher_wing
 	name = "watcher wing"
 	desc = "A wing ripped from a watcher."
-	icon_state = "watcher_wing_crystal"
+	icon_state = "watcher_wing"
 	denied_type = /obj/item/crusher_trophy/watcher_wing
 	bonus_value = 5
 
@@ -440,7 +440,7 @@
 	desc = "Looks like someone hasn't been drinking their milk. Could be used in crafting."
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	icon_state = "shrunk_skull"
-	denied_type = /obj/item/crusher_trophy/legion_skull
+	denied_type = /obj/item/crusher_trophy/dwarf_skull
 	bonus_value = 6
 
 /obj/item/crusher_trophy/dwarf_skull/effect_desc()
@@ -750,7 +750,7 @@
 	item_state = "crusherold[wielded]" // still not supported by 2hcomponent
 
 //100% original syndicate oc, plz do not steal. More effective against human targets then the typical crusher, with a bit of block chance.
-/obj/item/syndie_crusher
+/obj/item/kinetic_crusher/syndie_crusher
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "crushersyndie"
 	item_state = "crushersyndie0"
@@ -776,147 +776,38 @@
 	light_power = 1
 	light_on = FALSE
 	custom_price = 7500//a rare syndicate prototype.
-	var/list/trophies = list()
-	var/charged = TRUE
-	var/charge_time = 15
-	var/detonation_damage = 10
-	var/backstab_bonus = 30
-	var/wielded = FALSE // track wielded status on item
+	charged = TRUE
+	charge_time = 15
+	detonation_damage = 20
+	backstab_bonus = 30
+	wielded = FALSE // track wielded status on item
+	actions_types = list()
 
-/obj/item/syndie_crusher/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
-	set_light_on(wielded)
-	START_PROCESSING(SSobj, src)
-
-/obj/item/syndie_crusher/ComponentInitialize()
+/obj/item/kinetic_crusher/syndie_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 150)
 	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=35)
 
-/obj/item/syndie_crusher/Destroy()
-	QDEL_LIST(trophies)
-	STOP_PROCESSING(SSobj, src)
-	return ..()
-
 /// triggered on wield of two handed item
-/obj/item/syndie_crusher/proc/on_wield(obj/item/source, mob/user)
+/obj/item/kinetic_crusher/syndie_crusher/on_wield(obj/item/source, mob/user)
+	. = ..()
 	wielded = TRUE
 	icon_state = "crushersyndie1"
 	playsound(user, 'sound/weapons/saberon.ogg', 35, TRUE)
 	set_light_on(wielded)
 
 /// triggered on unwield of two handed item
-/obj/item/syndie_crusher/proc/on_unwield(obj/item/source, mob/user)
+/obj/item/kinetic_crusher/syndie_crusher/on_unwield(obj/item/source, mob/user)
+	. = ..()
 	wielded = FALSE
 	icon_state = "crushersyndie"
 	playsound(user, 'sound/weapons/saberoff.ogg', 35, TRUE)
 	set_light_on(wielded)
 
-/obj/item/syndie_crusher/examine(mob/living/user)
-	. = ..()
-	. += "<span class='notice'>Induce magnetism in an enemy by striking them with a magnetospheric wave, then hit them in melee to force a waveform collapse for <b>[force + detonation_damage]</b> damage.</span>"
-	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.</span>"
-	for(var/t in trophies)
-		var/obj/item/crusher_trophy/T = t
-		. += "<span class='notice'>It has \a [T] attached, which causes [T.effect_desc()].</span>"
-
-/obj/item/syndie_crusher/attackby(obj/item/I, mob/living/user)
-	if(I.tool_behaviour == TOOL_CROWBAR)
-		if(LAZYLEN(trophies))
-			to_chat(user, "<span class='notice'>You remove [src]'s trophies.</span>")
-			I.play_tool_sound(src)
-			for(var/t in trophies)
-				var/obj/item/crusher_trophy/T = t
-				T.remove_from(src, user)
-		else
-			to_chat(user, "<span class='warning'>There are no trophies on [src].</span>")
-	else if(istype(I, /obj/item/crusher_trophy))
-		var/obj/item/crusher_trophy/T = I
-		T.add_to(src, user)
-	else
-		return ..()
-
-/obj/item/syndie_crusher/attack(mob/living/target, mob/living/carbon/user)
-	if(!wielded)
-		to_chat(user, "<span class='warning'>[src] is too heavy to use with one hand! You fumble and drop everything.</span>")
-		user.drop_all_held_items()
-		return
-	var/datum/status_effect/crusher_damage/C = target.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
-	var/target_health = target.health
-	..()
-	for(var/t in trophies)
-		if(!QDELETED(target))
-			var/obj/item/crusher_trophy/T = t
-			T.on_melee_hit(target, user)
-	if(!QDELETED(C) && !QDELETED(target))
-		C.total_damage += target_health - target.health //we did some damage, but let's not assume how much we did
-
-/obj/item/syndie_crusher/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
-	. = ..()
-	if(!wielded)
-		return
-	if(!proximity_flag && charged)//Mark a target, or mine a tile.
-		var/turf/proj_turf = user.loc
-		if(!isturf(proj_turf))
-			return
-		var/obj/projectile/destabilizer/D = new /obj/projectile/destabilizer(proj_turf)
-		for(var/t in trophies)
-			var/obj/item/crusher_trophy/T = t
-			T.on_projectile_fire(D, user)
-		D.preparePixelProjectile(target, user, clickparams)
-		D.firer = user
-		D.hammer_synced = src
-		playsound(user, 'sound/weapons/plasma_cutter.ogg', 100, TRUE)
-		D.fire()
-		charged = FALSE
-		update_icon()
-		addtimer(CALLBACK(src, .proc/Recharge), charge_time)
-		return
-	if(proximity_flag && isliving(target))
-		var/mob/living/L = target
-		var/datum/status_effect/crusher_mark/CM = L.has_status_effect(STATUS_EFFECT_CRUSHERMARK)
-		if(!CM || CM.hammer_synced != src || !L.remove_status_effect(STATUS_EFFECT_CRUSHERMARK))
-			return
-		var/datum/status_effect/crusher_damage/C = L.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
-		var/target_health = L.health
-		for(var/t in trophies)
-			var/obj/item/crusher_trophy/T = t
-			T.on_mark_detonation(target, user)
-		if(!QDELETED(L))
-			if(!QDELETED(C))
-				C.total_damage += target_health - L.health //we did some damage, but let's not assume how much we did
-			new /obj/effect/temp_visual/kinetic_blast(get_turf(L))
-			var/backstab_dir = get_dir(user, L)
-			var/def_check = L.getarmor(type = "bomb")
-			if((user.dir & backstab_dir) && (L.dir & backstab_dir))
-				if(!QDELETED(C))
-					C.total_damage += detonation_damage + backstab_bonus //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
-				L.apply_damage(detonation_damage + backstab_bonus, BRUTE, blocked = def_check)
-				playsound(user, 'sound/weapons/kenetic_accel.ogg', 100, TRUE) //Seriously who spelled it wrong
-			else
-				if(!QDELETED(C))
-					C.total_damage += detonation_damage
-				L.apply_damage(detonation_damage, BRUTE, blocked = def_check)
-
-/obj/item/syndie_crusher/proc/Recharge()
-	if(!charged)
-		charged = TRUE
-		update_icon()
-		playsound(src.loc, 'sound/weapons/kenetic_reload.ogg', 60, TRUE)
-
-/obj/item/syndie_crusher/ui_action_click(mob/user, actiontype)
-	set_light_on(!light_on)
-	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
-	update_icon()
-
-/obj/item/syndie_crusher/update_icon_state()
+/obj/item/kinetic_crusher/syndie_crusher/update_icon_state()
 	item_state = "crushersyndie[wielded]" // this is not icon_state and not supported by 2hcomponent
 
-/obj/item/syndie_crusher/update_overlays()
+/obj/item/kinetic_crusher/syndie_crusher/update_overlays()
 	. = ..()
-	if(!charged)
-		. += "[icon_state]_uncharged"
 	if(wielded)
 		. += "[icon_state]_lit"

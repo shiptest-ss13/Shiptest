@@ -23,8 +23,9 @@
 	bolt_wording = "pump"
 	cartridge_wording = "shell"
 	tac_reloads = FALSE
-	fire_rate = 1 //reee
 	pickup_sound =  'sound/items/handling/shotgun_pickup.ogg'
+	fire_delay = 7
+	pb_knockback = 2
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	. = 0
@@ -42,7 +43,6 @@
 	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for non-lethal riot control."
 	icon_state = "riotshotgun"
 	item_state = "shotgun"
-	fire_delay = 7
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
 	can_be_sawn_off  = TRUE
@@ -144,8 +144,6 @@
 	semi_auto = TRUE
 	internal_magazine = FALSE
 	tac_reloads = TRUE
-	fire_rate = 2
-	automatic = 1
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
 
@@ -180,7 +178,6 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	can_be_sawn_off  = TRUE
 	pb_knockback = 3 // it's a super shotgun!
-	fire_rate = 2 //being double barrelled, you don't rely on internal mechanisms.
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/AltClick(mob/user)
 	. = ..()
@@ -359,9 +356,9 @@
 	unique_reskin = null
 	recoil = 10
 	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'whitesands/sound/weapons/gun/shotgun/quadfire.ogg'
-	rack_sound = 'whitesands/sound/weapons/gun/shotgun/quadrack.ogg'
-	load_sound = 'whitesands/sound/weapons/gun/shotgun/quadinsert.ogg'
+	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
+	load_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
 	fire_sound_volume = 50
 	rack_sound_volume = 50
 	can_be_sawn_off = FALSE
@@ -409,6 +406,7 @@
 	name = "Winchester MK.1"
 	desc = "A sturdy lever action rifle. This older pattern appears to be an antique, in excellent condition despite its age."
 	icon_state = "winchestermk1"
+	item_state = "winchestermk1"
 
 /obj/item/gun/ballistic/shotgun/winchester/mk1/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal

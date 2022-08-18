@@ -14,11 +14,12 @@
 	name = "cloning pod"
 	desc = "An electronically-lockable pod for growing organic tissue."
 	density = TRUE
-	icon = 'whitesands/icons/obj/machines/cloning.dmi'
+	icon = 'icons/obj/machines/cloning.dmi'
 	icon_state = "pod_0"
 	req_access = list(ACCESS_CLONING) //FOR PREMATURE UNLOCKING.
 	verb_say = "states"
 	circuit = /obj/item/circuitboard/machine/clonepod
+	processing_flags = NONE
 
 	var/heal_level //The clone is released once its health reaches this level.
 	var/obj/machinery/computer/cloning/connected //So we remember the connected clone machine.
@@ -56,6 +57,9 @@
 		radio.subspace_transmission = TRUE
 		radio.canhear_range = 0
 		radio.recalculateChannels()
+
+	if(is_operational)
+		begin_processing()
 
 /obj/machinery/clonepod/Destroy()
 	var/mob/living/mob_occupant = occupant
@@ -152,7 +156,7 @@
 	var/mob/living/mob_occupant = occupant
 	if(mess)
 		. += "It's filled with blood and viscera. You swear you can see it moving..."
-	if(is_operational() && istype(mob_occupant))
+	if(is_operational && istype(mob_occupant))
 		if(mob_occupant.stat != DEAD)
 			. += "Current clone cycle is [round(get_completion())]% complete."
 
@@ -281,14 +285,7 @@
 /obj/machinery/clonepod/process()
 	var/mob/living/mob_occupant = occupant
 
-	if(!is_operational()) //Autoeject if power is lost
-		if(mob_occupant)
-			go_out()
-			log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to power loss.")
-
-			connected_message("Clone Ejected: Loss of power.")
-
-	else if(mob_occupant && (mob_occupant.loc == src))
+	if(mob_occupant && (mob_occupant.loc == src))
 		if(!beaker.reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
 			go_out()
 			log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to insufficient material.")
@@ -355,6 +352,18 @@
 		if (!mess && !panel_open)
 			icon_state = "pod_0"
 		use_power(200)
+
+/obj/machinery/clonepod/on_set_is_operational(old_value)
+	. = ..()
+	if(old_value) //Turned off
+		if(occupant)
+			go_out()
+			log_cloning("[key_name(occupant)] ejected from [src] at [AREACOORD(src)] due to power loss.")
+
+			connected_message("Clone Ejected: Loss of power.")
+		end_processing()
+	else //Turned on
+		begin_processing()
 
 //Let's unlock this early I guess.  Might be too early, needs tweaking. Mark says: Jesus, even I'm not that indecisive.
 /obj/machinery/clonepod/attackby(obj/item/W, mob/user, params)

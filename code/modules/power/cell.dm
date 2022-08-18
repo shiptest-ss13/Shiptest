@@ -100,7 +100,7 @@
 	if(rigged)
 		. += "<span class='danger'>This power cell seems to be faulty!</span>"
 	else
-		. += "The charge meter reads [round(src.percent() )]%."
+		. += "The charge meter reads [round(src.percent())]%."
 
 /obj/item/stock_parts/cell/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is licking the electrodes of [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -411,7 +411,7 @@
 // gun power cell //
 /obj/item/stock_parts/cell/gun
 	name = "weapon power cell"
-	icon = 'whitesands/icons/obj/power.dmi'
+	icon = 'icons/obj/power.dmi'
 	icon_state = "g-cell"
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=60)
@@ -464,7 +464,7 @@
 
 /obj/item/stock_parts/cell/gun/SolGov
 	name = "SolGov power cell"
-	icon = 'whitesands/icons/obj/power.dmi'
+	icon = 'icons/obj/power.dmi'
 	icon_state = "g-cell"
 	maxcharge = 8000
 	custom_materials = list(/datum/material/glass=60)

@@ -15,7 +15,7 @@
 /obj/item/card
 	name = "card"
 	desc = "Does card things."
-	icon = 'whitesands/icons/obj/card.dmi' //WS Edit - Actually good-looking IDs >:)
+	icon = 'icons/obj/card.dmi'
 	w_class = WEIGHT_CLASS_TINY
 
 	var/list/files = list()
@@ -344,9 +344,9 @@
 		msg += "The card indicates that the holder is [registered_age] years old. [(registered_age < AGE_MINOR) ? "There's a holographic stripe that reads <b><span class='danger'>'MINOR: DO NOT SERVE ALCOHOL OR TOBACCO'</span></b> along the bottom of the card." : ""]"
 	if(mining_points)
 		msg += "There's [mining_points] mining equipment redemption point\s loaded onto this card."
-	if( length( ship_access ) )
+	if(length(ship_access))
 		var/list/ship_names = list()
-		for( var/datum/overmap/ship/controlled/ship in ship_access )
+		for(var/datum/overmap/ship/controlled/ship in ship_access)
 			ship_names += ship.name
 		msg += "The card has access to the following ships: [ship_names.Join(", ")]"
 	if(registered_account)
@@ -405,19 +405,19 @@
 	return ..()
 
 // Adds the referenced ship directly to the card
-/obj/item/card/id/proc/add_ship_access(datum/overmap/ship/controlled/ship )
-	if ( ship )
+/obj/item/card/id/proc/add_ship_access(datum/overmap/ship/controlled/ship)
+	if (ship)
 		ship_access += ship
 
 // Removes the referenced ship from the card
-/obj/item/card/id/proc/remove_ship_access(datum/overmap/ship/controlled/ship )
-	if ( ship )
+/obj/item/card/id/proc/remove_ship_access(datum/overmap/ship/controlled/ship)
+	if (ship)
 		ship_access -= ship
 
 // Finds the referenced ship in the list
-/obj/item/card/id/proc/has_ship_access(datum/overmap/ship/controlled/ship )
-	if ( ship )
-		return ship_access.Find( ship )
+/obj/item/card/id/proc/has_ship_access(datum/overmap/ship/controlled/ship)
+	if (ship)
+		return ship_access.Find(ship)
 
 /*
 Usage:
@@ -619,7 +619,7 @@ update_label()
 /obj/item/card/id/captains_spare/Initialize()
 	var/datum/job/captain/J = new/datum/job/captain
 	access = J.get_access()
-	add_ship_access( SSshuttle.get_ship( src ) )
+	add_ship_access(SSshuttle.get_ship(src))
 	. = ..()
 	update_label()
 
@@ -644,7 +644,7 @@ update_label()
 	access = get_all_centcom_access()
 	. = ..()
 
-/obj/item/card/id/centcom/has_ship_access(datum/overmap/ship/controlled/ship )
+/obj/item/card/id/centcom/has_ship_access(datum/overmap/ship/controlled/ship)
 	return TRUE
 
 /obj/item/card/id/ert

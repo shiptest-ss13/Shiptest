@@ -1,0 +1,258 @@
+2022-07-02:
+  PiperDoots:
+  - rscadd: Added boots, coats, shorts and pants sprites for Kepori
+  - imageadd: Updated Kepori clothes sprites
+  - imageadd: Added new augment sprites for Kepori
+  - imageadd: Added new tail feather style based on the augments
+  - tweak: Kepori can now wear backpacks and duffelbags
+  - bugfix: Kepori legs no longer clip above arms in the side states
+  - bugfix: Fixed matrix coloring issues with Kepori clothes
+  Recoherent:
+  - rscadd: IPCs now have five new antennae options! You may recognize one of them
+      from a certain marketable character.
+  - bugfix: The "lights" option that people kept insisting was a real antenna has
+      been properly scrubbed from reality.
+  Zevotech:
+  - balance: decreased the oldcode sword mob's damage from 30 to 20
+  - tweak: decreased the amount of mobs in oldcodeops.dmm
+  mel-byond:
+  - bugfix: Advanced Airlock Controllers now considers airlocks at edge of map as
+      external
+  spockye:
+  - rscadd: Remade the pubby class light carrier
+  - rscadd: Adds the Cascade-class Genetics ship
+  terg-but-ius:
+  - imageadd: Bronze tiles look prettier now!
+  triplezeta:
+  - bugfix: lack of tongue no longer runtimes
+2022-07-05:
+  Apogee-dev:
+  - bugfix: reduced refund value of ammo boxes to close materials exploit
+  AtlasRules:
+  - balance: C-20r now is full auto and has a doubled fire delay.
+  Chubbygummibear:
+  - tweak: admin aheal proc moved to the right click options on mobs
+  - code_imp: the insert mutant organs part of regenerate organs no longer drops your
+      previous version on the ground if you had one. if you have a tail or wings,
+      it will get replaced by your default and delete the old. if you're missing the
+      organ entirely, you just get a new one
+  - admin: admins who are trying to aheal just right click a mob/player/carbon/pet
+      and select rejuvenate.
+  PiperDoots:
+  - rscadd: Added a new birch wood turf
+  - imageadd: Updated the wood turf dmi
+  - tweak: Reverted default wood coloring to previous color to accommodate older maps
+  - imageadd: added Pawsitronic United IPC frame
+  - imageadd: added Nyaru screen
+  retlaw34:
+  - rscadd: vampire cloak
+  - bugfix: mutated seeds are now harvestable
+  tiramisuapimancer:
+  - rscdel: cringe CAS cards with offensive content in them
+  tmtmtl30:
+  - refactor: Removed mob.computer_id; moved mob.lastKnownIP to player_details.last_known_ip
+  - code_imp: Borers and split personalities now move the mind reference before swapping
+      player control. This may or may not alleviate some bugs.
+2022-07-06:
+  Apogee-dev:
+  - tweak: Made QoL improvements to the Riggs
+  - rscadd: Added cargo console to Riggs
+  - balance: Replaced protolathe board on Riggs with cargo lathe board
+  MarkSuckerberg:
+  - rscdel: Felinid mutation toxin
+  - rscdel: Weird flavouring of tackles were removed. (E.g. pounce vs. tackle)
+  - rscdel: Felinids
+  - rscadd: Humans can now select ears and tails
+  - bugfix: All species are now able to wag tails if they get them.
+  Myco/Yellow:
+  - rscadd: Adds a new jungle ruin, an old crashed interceptor
+  TypeVar:
+  - rscadd: Adds the Lagoon-class Cruise Ship
+  spockye:
+  - rscadd: adds a new ship(Komodo-class Syndicate warship
+2022-07-10:
+  tmtmtl30:
+  - rscadd: Overmap stars now spin automatically.
+  - rscadd: Overmap stars now always have examine text.
+  - rscadd: Yellow giant stars now flicker.
+  - refactor: Refactored overmap star code; star probabilities and colors are altered
+      as a result.
+2022-07-11:
+  Cenrus:
+  - tweak: Shuttle landing now deletes simple mobs
+  tmtmtl30:
+  - bugfix: The CE job is now an officer job; only one may exist per ship.
+  triplezeta:
+  - bugfix: wideband intercoms are now recoverable
+2022-07-12:
+  ForestCranked:
+  - rscadd: The Synapse-Class Viral Study Vessel, and it's corresponding config.
+  - bugfix: Accidentally dropped the json in configs and the shuttles folder, so i
+      fixed that.
+  Ketrai:
+  - balance: xenoling get only 25 max chemicals, limiting ability use.
+  - balance: xenolings generate chemicals half as fast
+  - balance: xenolings only get 2 ability points
+  - balance: xenolings can only store half as much DNA (this affects the strength
+      of some abilities)
+  - balance: changeling fake death cost raised 15 => 30
+  - balance: ALL regenerative extracts now need time to be applied. This is increased
+      when self applying!
+  - balance: Stabilized light pink extract effect decreased by 80%
+  - balance: Slime speed potion has a capped effect, you cannot make armor free of
+      slowdown anymore.
+  - balance: Slime armblade damage raised from 15 => 22.5
+  - balance: Rainbow knife no longer deals clone damage.
+  - balance: Rainbow knife damage increased from 15 => 18
+  - balance: Chilling sepia extract duration crippled from 30 => 7 seconds.
+  - balance: Regenerative extracts no longer Aheal you. Instead, they heal 35% of
+      all damage. Still fully heals clone damage. Heals a little organ damage. Heals
+      10% of the average blood pool.
+  - balance: Some regenerative extracts are better at healing specific damage types.
+  - balance: Some extracts need less cores to be crossbred now.
+  PrefabQuasar:
+  - rscadd: Added the SCOOPABLE trait
+  - tweak: kepori and dwarves now use the SCOOPABLE trait instead of HOLDABLE
+  - bugfix: fixed kepori frying
+  Skies-Of-Blue:
+  - tweak: blind people can now perceive visible emotes
+  - tweak: deaf people can now perceive audible emotes
+  Zevotech:
+  - bugfix: lab4071 ruin has received numerous tweaks and fixes
+  thgvr:
+  - bugfix: Ashwalkers' attire of choice will no longer break their legs.
+  - imageadd: Digitigrade sprites for a majority of syndicate jumpsuits and mining
+      equipment.
+2022-07-13:
+  Apogee-dev:
+  - rscadd: Added the Scarlet Hardsuit, a midline syndicate hardsuit similar to security
+      hardsuits
+  - balance: Rebalanced Syndicate space suits to have much more reasonable armor
+  - tweak: Adjusted Hyena's suit loadout to use the new scarlet hardsuits
+  HometownFunky:
+  - rscadd: Added a new flag for kepori clothing
+  KittyNoodle:
+  - tweak: Elzuose now can regenerate blood.
+  antropod:
+  - bugfix: Makes TEG not break when you sneeze on it
+  phoaly:
+  - rscadd: Adds folder of deprecated ruins and datums.
+  - rscdel: Removes various low quality ruins, attached areas, and datums.
+2022-07-15:
+  MarkSuckerberg:
+  - rscadd: Explosive decomp is back
+2022-07-16:
+  Apogee-dev:
+  - rscdel: Removed Masinyane from roundstart spawning and purchase.
+  Zevotech:
+  - rscdel: Miasma, the stinky corpse gas
+  - rscdel: rot.dm, and corpses/gibs creating miasma
+2022-07-17:
+  Melbert, Chubbygummibear:
+  - rscadd: new Limbgrower tgui interface
+  - rscadd: way more bodypart designs in the limbgrower, such as kepori and vox limbs
+      to the standard limbgrower
+  - rscadd: new research node called Xeno-Organ Biology, which unlocks limbgrower
+      design disks that allow you to print non-roundstart race limbs and organs
+  - rscadd: new hidden research node that functions like illegal tech and alien tools,
+      Xenomorph Biology. Get out there and kill a xeno, bring it back, and extract
+      some organs to deconstruct to unlock it.
+  - rscadd: Limbgrower accepts raw meat as input and grinds it into synthflesh to
+      use as fuel
+  - rscdel: Limbgrower old ui gone
+  - code_imp: Added some Dwarf stuff (don't worry about it)
+  - code_imp: a lot of snowflake code to make digi legs printable. It is a mess and
+      i'm sorry but it works
+  PiperDoots:
+  - imageadd: updated Kepori body sprites to allow for better clothing.
+  - imageadd: updated Kepori body sprites to allow for better clothing.
+2022-07-18:
+  Apogee-dev:
+  - rscadd: Added the Gecko-class Salvage Runner
+  PrefabQuasar:
+  - tweak: minor changes to the tranquility class
+  phoaly:
+  - rscadd: Adds the Nanotrasen Ranger-Class Aid Vessel
+  retlaw34:
+  - soundadd: New sounds for ships docking and undocking have been added.
+  tmtmtl30:
+  - refactor: Minor changes to some area luminosity and starlight code to improve
+      code quality and performance.
+  - rscadd: Added "outposts", spaces on the overmap that ships can use to buy cargo
+      crates and take on and turn in missions. There is not, at present, any physical
+      outpost, though one could be built there by crews that desire to do so.
+  - rscadd: Added missions. They must be accepted at outposts, and turned in before
+      a time limit passes. Successful completion of a mission will earn the ship credits.
+  - tweak: The express cargo console has been changed to the outpost communications
+      console.
+  - rscadd: The Dwayne, Boyardee, and Kugelblitz ships have had outpost communications
+      consoles added to their bridges.
+  - tweak: The express cargo consoles (now outpost comms consoles) on the Shetland
+      and Skipper have been moved to the bridges of their respective ships.
+  - tweak: Ships start with 2000 credits instead of 7500
+2022-07-20:
+  '@nmajask, Truzkawa, Chubbygummibear':
+  - rscadd: Hair Gradient style and color are part of character appearance menu now
+  - rscadd: new neutral quirk colorist that lets you spawn with a bottle of hair dye
+      spray
+  Ketrai:
+  - tweak: Metis is now more randomized!
+  - tweak: Neutered borers are now less intimidating.
+2022-07-23:
+  Apogee-dev:
+  - rscdel: Removed Cascade from purchase
+  - rscadd: Added low-grade "surplus" ammunition for handguns to autolathes
+  - balance: Moved standard ammo & buckshot from autolathes to sec protolathes
+  - balance: Reduced .38 damage to match surplus ammo
+  - imageadd: New icons for surplus ammo & beanbag shells
+  Recoherent:
+  - tweak: Name enforcement is more open now; put those numbers on your agent card
+      or your bizarre-super-soldier-clone-test-project-human's name!
+  - code_imp: Removed reference to allow_numbers from saved preferences.
+  'VaelophisNyx, @Drawsstuff, @That0nePerson, @Chubbygummibear, @MarkSuckerberg ':
+  - rscadd: Adds surplus prosthetics to the protolathe Medical Designs tab , and exosuit
+      fabricator Misc tab. 3000 units of iron each.
+  - rscadd: Adds a set of surplus prosthetics specifically for Kepori, and one set
+      for Vox.
+  - rscadd: Adds the new surplus prosthetics for Kepori and Vox to the surplus prosthetic
+      crate pre-fill.
+  - rscadd: Adds new Prosthetic Limbs character appearance customization options
+  - tweak: Makes surplus prosthetic designs unlocked at Biological Technology.
+  iwishforducks:
+  - rscadd: Added a new ruin on Ice Planets, the Hydroponics Lab.
+2022-07-24:
+  Apogee-dev:
+  - rscdel: Removed Rube Goldberg from the purchase list
+  - config: Ships are now limited to 2 per class by default
+  - config: Updated example ship config with limit variable
+2022-07-26:
+  Recoherent:
+  - bugfix: Numbers in names are back, math is too powerful as a main antagonist to
+      stay dead for longer than one season.
+2022-07-27:
+  MarkSuckerberg:
+  - config: Default overmap sizes reduced significantly to speed up dev environment
+      spin-up time.
+  - code_imp: Renames the "Bot Comms" subsystem to the "Redbot" subsystem because
+      that's what the file and type are. It should match!
+  tiramisuapimancer:
+  - bugfix: light lizard snouts don't layer over glasses masks etc anymore
+2022-07-28:
+  ZephyrTFA:
+  - admin: Spawn a planet and ruin with a brand new verb!
+2022-07-29:
+  Fikou:
+  - balance: nerfs manly dorf's healing powers, it no longer works on people with
+      alcohol tolerance
+  triplezeta:
+  - imageadd: flat caps have been resprited!!
+2022-07-31:
+  MitztheKat:
+  - tweak: you can now buckle others (or yourself) to operating tables, making them
+      much more space-OSHA approved.
+  SpaceVampire:
+  - bugfix: suit_storage slot now shows the item it has equipped
+  - bugfix: Items in the suit storage slot won't turn invisible anymore
+  ZephyrTFA:
+  - bugfix: the spawners on the Metis-Class will no longer hang around after spawning
+      their selected threat
