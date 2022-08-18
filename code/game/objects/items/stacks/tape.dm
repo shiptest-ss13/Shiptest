@@ -72,13 +72,13 @@
 	name = "packaging tape"
 	singular_name = "tape strip"
 	desc = "Sticks things together with minimal effort."
-	icon = 'whitesands/icons/obj/tapes.dmi'
+	icon = 'icons/obj/tapes.dmi'
 	icon_state = "tape"
 	item_flags = NOBLUDGEON | NO_MAT_REDEMPTION
 	amount = 10
 	max_amount = 10
 	grind_results = list(/datum/reagent/cellulose = 5)
-	usesound = 'whitesands/sound/items/tape.ogg'
+	usesound = 'sound/items/tape.ogg'
 
 	var/stop_bleed = 600
 	var/nonorganic_heal = 5
