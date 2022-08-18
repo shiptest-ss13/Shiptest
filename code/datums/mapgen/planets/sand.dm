@@ -41,7 +41,7 @@
 			"biome_low_humidity" = /datum/biome/sand/acid,
 			"biome_medium_humidity" = /datum/biome/sand/riverbed,
 			"biome_high_humidity" = /datum/biome/sand/wasteland,
-			"biome_highest_humidity" = /datum/biome/sand/oasis
+			"biome_highest_humidity" = /datum/biome/sand
 		),
 		//CAVE BIOMES
 		"coldest_cave" = list(

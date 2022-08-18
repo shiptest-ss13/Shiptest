@@ -27,16 +27,6 @@
 		/obj/effect/spawner/lootdrop/maintenance = 40,
 	)
 
-/datum/biome/sand/oasis
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/grass/lit = 1)
-	flora_spawn_list = list(
-		/obj/structure/flora/ash/cacti = 2,
-		/obj/structure/flora/ash/fern = 4,
-		/obj/structure/sink/puddle = 2,
-		/obj/structure/flora/tree/palm = 4,
-	)
-	feature_spawn_list = list(/obj/structure/geyser/random = 1)
-
 /datum/biome/sand/grass
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/grass/lit = 1)
 	flora_spawn_chance = 5
