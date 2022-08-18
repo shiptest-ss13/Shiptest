@@ -17,6 +17,7 @@ for file in sys.argv[2:]:
             for error in sorted(validator.iter_errors(json_data), key=str):
                 print("\nJSON Schema error in {}".format(file))
                 print(error)
+                status = 1
         except ValueError as exception:
             print("JSON error in {}".format(file))
             print(exception)
