@@ -185,7 +185,7 @@
 	// This exists to not penalize poor speed management too hard
 	current_ship.accelerate(current_ship.get_heading(), speed_diff * 0.5)
 
-	var/interdiction_actual = -round(-INTERDICTION_BASE_TIME / effective_penalty)
+	var/interdiction_actual = -round(-INTERDICTION_BASE_TIME / (1 + effective_penalty))
 	announce_to_ships("Target locked, Interdiction Tether engaged! Calculations show that the Tether will last for [DisplayTimeText(interdiction_actual)].")
 	cur_timer = addtimer(CALLBACK(src, .proc/end_interdiction), interdiction_actual)
 
