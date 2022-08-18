@@ -126,7 +126,8 @@
 		announce_to_ships("Interdiction Tether power failure.")
 		return end_interdiction()
 
-	if(get_target_range() < range)
+	var/t_range = get_target_range()
+	if(t_range < range)
 		announce_to_ships("Target out of range, Interdiction Tether dissipating.")
 		return end_interdiction()
 
@@ -135,7 +136,7 @@
 		announce_to_ships("Target speed difference too great, Interdiction Tether dissipating.")
 		return end_interdiction()
 
-	if(tether_target_time >= world.time)
+	if(world.time >= tether_target_time)
 		return do_interdiction()
 
 	cur_timer = addtimer(CALLBACK(src, .proc/start_interdiction_callback), min(1, INTERDICTION_CHARGEUP * 0.2), TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_OVERRIDE)
@@ -153,8 +154,6 @@
 	else
 		state_them = (speed_diff_large ? "much slower" : "slightly slower")
 		state_us = (speed_diff_large ? "much faster" : "slightly faster")
-
-	var/t_range = get_target_range()
 
 	interdicting.announce_to_helms("Interdiction update: They are [state_them] than us! Range is [t_range] sectors. ETA: [DisplayTimeText(tether_target_time - world.time)]")
 	current_ship.announce_to_helms("Interdiction update: They are [state_us] than us! Range is [t_range] sectors. ETA: [DisplayTimeText(tether_target_time - world.time)]")
