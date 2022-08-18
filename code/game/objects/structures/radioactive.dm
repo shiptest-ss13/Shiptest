@@ -3,7 +3,7 @@
 /obj/structure/radioactive
 	name = "nuclear waste barrel"
 	desc = "An old container of radioactive biproducts."
-	icon = 'whitesands/icons/obj/hazard.dmi'
+	icon = 'icons/obj/hazard.dmi'
 	icon_state = "barrel"
 	density = TRUE
 	var/rad_power = 100
