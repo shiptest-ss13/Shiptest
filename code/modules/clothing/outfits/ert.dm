@@ -74,7 +74,7 @@
 		return
 
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/heads/hos
+	R.keyslot = new /obj/item/encryptionkey/headset_com
 	R.recalculateChannels()
 
 /datum/outfit/centcom/ert/security/alert
@@ -109,7 +109,7 @@
 		return
 
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/heads/cmo
+	R.keyslot = new /obj/item/encryptionkey/headset_com
 	R.recalculateChannels()
 
 /datum/outfit/centcom/ert/medic/alert
@@ -144,7 +144,7 @@
 		return
 
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/heads/ce
+	R.keyslot = new /obj/item/encryptionkey/headset_com
 	R.recalculateChannels()
 
 /datum/outfit/centcom/ert/engineer/alert
@@ -238,7 +238,7 @@
 	if(visualsOnly)
 		return
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/heads/head_of_personnel
+	R.keyslot = new /obj/item/encryptionkey/headset_com
 	R.recalculateChannels()
 
 /datum/outfit/centcom/ert/chaplain/inquisitor
@@ -276,7 +276,7 @@
 		return
 
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/headset_service
+	R.keyslot = new /obj/item/encryptionkey/headset_com
 	R.recalculateChannels()
 
 /datum/outfit/centcom/ert/janitor/heavy
@@ -311,7 +311,7 @@
 	if(visualsOnly)
 		return
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/headset_service
+	R.keyslot = new /obj/item/encryptionkey/headset_com
 	R.recalculateChannels()
 	ADD_TRAIT(H, TRAIT_NAIVE, INNATE_TRAIT)
 	H.dna.add_mutation(CLOWNMUT)
@@ -466,7 +466,7 @@
 		return
 
 	var/obj/item/radio/headset = H.ears
-	headset.keyslot = new /obj/item/encryptionkey/heads/hos
+	headset.keyslot = new /obj/item/encryptionkey/headset_com
 	headset.recalculateChannels()
 
 /datum/outfit/centcom/ert/marine/medic
@@ -495,7 +495,7 @@
 		return
 
 	var/obj/item/radio/headset = H.ears
-	headset.keyslot = new /obj/item/encryptionkey/heads/cmo
+	headset.keyslot = new /obj/item/encryptionkey/headset_com
 	headset.recalculateChannels()
 
 /datum/outfit/centcom/ert/marine/engineer
@@ -522,5 +522,5 @@
 		return
 
 	var/obj/item/radio/headset = H.ears
-	headset.keyslot = new /obj/item/encryptionkey/heads/ce
+	headset.keyslot = new /obj/item/encryptionkey/headset_com
 	headset.recalculateChannels()

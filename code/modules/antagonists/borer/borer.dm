@@ -954,7 +954,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	give_back_control_action.Remove(victim)
 
 /datum/action/innate/borer
-	icon_icon = 'whitesands/icons/mob/actions/actions_borer.dmi'
+	icon_icon = 'icons/mob/actions/actions_borer.dmi'
 	background_icon_state = "bg_alien"
 
 /datum/action/innate/borer/talk_to_host
