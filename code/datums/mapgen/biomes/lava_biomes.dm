@@ -4,9 +4,9 @@
 	flora_spawn_list = list(
 		/obj/structure/flora/ausbushes/ywflowers/hell = 10,
 		/obj/structure/flora/ausbushes/sparsegrass/hell = 40,
-		/obj/structure/flora/ash/whitesands/fern = 5,
-		/obj/structure/flora/ash/whitesands/fireblossom = 1,
-		/obj/structure/flora/ash/whitesands/puce = 5
+		/obj/structure/flora/ash/fern = 5,
+		/obj/structure/flora/ash/fireblossom = 1,
+		/obj/structure/flora/ash/puce = 5
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(/obj/structure/flora/rock/hell = 5, /obj/structure/elite_tumor = 1, /obj/structure/geyser/random = 1)
@@ -83,7 +83,7 @@
 /datum/biome/lavaland/lush
 	open_turf_types = list(/turf/open/floor/plating/grass/lava/purple = 20, /turf/open/floor/plating/asteroid/basalt/purple/lit = 1)
 	flora_spawn_list = list(
-		/obj/structure/flora/ash/whitesands/fireblossom = 3,
+		/obj/structure/flora/ash/fireblossom = 3,
 		/obj/structure/flora/tree/dead/hell = 1,
 		/obj/structure/flora/ausbushes/grassybush/hell = 5,
 		/obj/structure/flora/ausbushes/fullgrass/hell = 10,
@@ -128,8 +128,8 @@
 		/obj/structure/flora/ash/stem_shroom = 2,
 		/obj/structure/flora/ash/cacti = 1,
 		/obj/structure/flora/ash/tall_shroom = 2,
-		/obj/structure/flora/ash/whitesands/fern = 2,
-		/obj/structure/flora/ash/whitesands/puce = 2
+		/obj/structure/flora/ash/fern = 2,
+		/obj/structure/flora/ash/puce = 2
 	)
 
 /datum/biome/cave/lavaland/rocky

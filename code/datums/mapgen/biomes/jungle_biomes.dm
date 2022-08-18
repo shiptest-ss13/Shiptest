@@ -73,7 +73,7 @@
 		/obj/structure/flora/ash/leaf_shroom = 1,
 		/obj/structure/flora/ash/cap_shroom = 1,
 		/obj/structure/flora/ash/stem_shroom = 1,
-		/obj/structure/flora/ash/whitesands/puce = 1
+		/obj/structure/flora/ash/puce = 1
 	)
 	mob_spawn_chance = 1
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/asteroid/wolf/random = 1, /mob/living/simple_animal/hostile/retaliate/bat = 1, /mob/living/simple_animal/hostile/retaliate/poison/snake)
