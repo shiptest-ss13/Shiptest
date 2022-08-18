@@ -61,7 +61,7 @@
 	can_bayonet = FALSE
 	can_flashlight = TRUE
 	flight_x_offset = 15
-	flight_y_offset = 10
+	flight_y_offset = 13
 	can_suppress = TRUE
 	mag_display = TRUE
 
