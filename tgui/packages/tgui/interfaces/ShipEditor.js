@@ -45,6 +45,20 @@ export const ShipEditor = (props, context) => {
               />
             </LabeledList.Item>
 
+            <LabeledList.Item label="Description">
+              <Input
+                value={data.templateDescription}
+                width={20}
+                height={10}
+                placeholder={'No description'}
+                onChange={(e, value) =>
+                  act('setTemplateDescription', {
+                    new_template_description: value,
+                  })
+                }
+              />
+            </LabeledList.Item>
+
             <LabeledList.Item label="Admin Panel Category">
               <Input
                 value={data.templateCategory}
@@ -104,6 +118,7 @@ export const ShipEditor = (props, context) => {
                 <Table.Cell>
                   <Input
                     value={job.name}
+                    placeholder={'No name'}
                     onChange={(e, value) =>
                       act('setJobName', {
                         job_ref: job.ref,

@@ -1,10 +1,10 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Lagoon-class Cruise Ship",
 	"prefix": "ISV",
 	"namelists": ["CRUISE"],
 	"map_short_name": "Lagoon-class",
 	"map_path": "_maps/shuttles/shiptest/tour_cruise_ship.dmm",
-	"map_id": "tour_cruise_ship",
 	"job_slots": {
 		"Captain": 1,
 		"Cruise Director": {
@@ -30,5 +30,5 @@
 			"slots": 10
 		}
 	},
-	"cost": 600
+	"enabled": true
 }

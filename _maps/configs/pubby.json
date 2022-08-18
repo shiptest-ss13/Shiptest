@@ -1,10 +1,10 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Pubby-class Light Carrier",
 	"prefix": "NTSV",
 	"namelists": ["GENERAL", "BRITISH_NAVY", "MYTHOLOGICAL", "WEAPONS"],
 	"map_short_name": "Pubby-class",
 	"map_path": "_maps/shuttles/shiptest/whiteship_pubby.dmm",
-	"map_id": "whiteship_pubby",
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/nt",
@@ -21,5 +21,5 @@
 			"slots": 2
 		}
 	},
-	"cost": 500
+	"enabled": true
 }

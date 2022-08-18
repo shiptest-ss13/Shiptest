@@ -12,7 +12,7 @@
 	var/port_y_offset
 
 	var/limit = 2
-	var/cost
+	var/enabled
 	var/short_name
 	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
@@ -126,9 +126,10 @@
 
 	.["templateName"] = name
 	.["templateShortName"] = short_name
+	.["templateDescription"] = description
 	.["templateCategory"] = category
 	.["templateLimit"] = limit
-	.["templateEnabled"] = !!cost
+	.["templateEnabled"] = enabled
 
 	.["templateJobs"] = list()
 	for(var/datum/job/job as anything in job_slots)
@@ -155,6 +156,10 @@
 			short_name = params["new_template_short_name"]
 			update_static_data(usr, ui)
 			return TRUE
+		if("setTemplateDescription")
+			description = params["new_template_description"]
+			update_static_data(usr, ui)
+			return TRUE
 		if("setTemplateCategory")
 			category = params["new_template_category"]
 			update_static_data(usr, ui)
@@ -164,8 +169,8 @@
 			update_static_data(usr, ui)
 			return TRUE
 		if("toggleTemplateEnabled")
-			cost = !cost
-			if(cost)
+			enabled = !enabled
+			if(enabled)
 				SSmapping.ship_purchase_list += src
 			else
 				SSmapping.ship_purchase_list -= src
