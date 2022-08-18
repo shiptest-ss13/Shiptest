@@ -4,9 +4,10 @@
 /obj/structure/window/reinforced/fulltile{
 	color = "#008000"
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
+/obj/machinery/door/poddoor/shutters{
 	id = "wizardship_bridge"
 	},
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "ac" = (
@@ -38,6 +39,10 @@
 	icon_state = "nim";
 	name = "wizard of yendor showcase"
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "aj" = (
@@ -52,6 +57,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /turf/open/floor/carpet/stellar,
@@ -110,6 +119,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "au" = (
@@ -124,6 +139,12 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/carpet/black,
@@ -146,13 +167,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/west,
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "aA" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -172,10 +189,15 @@
 /area/ship/hallway/starboard)
 "aF" = (
 /obj/machinery/vending/snack/random,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
+	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "aG" = (
 /obj/machinery/vending/cola/random,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "aI" = (
@@ -189,6 +211,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/wood,
 /area/ship/science)
@@ -206,6 +232,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "aL" = (
@@ -213,6 +243,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/autolathe,
 /obj/structure/spider/stickyweb,
+/obj/machinery/light_switch{
+	pixel_y = 25
+	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
 "aM" = (
@@ -246,6 +279,10 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "aT" = (
@@ -259,6 +296,10 @@
 /obj/item/storage/fancy/candle_box,
 /obj/item/storage/box/matches{
 	pixel_x = -5
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
 	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
@@ -282,6 +323,7 @@
 "ba" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder{
+	name = "essence extractor";
 	pixel_y = 7
 	},
 /turf/open/floor/wood,
@@ -310,11 +352,16 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
 "bh" = (
 /obj/structure/table,
 /obj/machinery/microwave{
+	name = "phlogiston excitor";
 	pixel_y = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -369,7 +416,8 @@
 "bp" = (
 /obj/machinery/light,
 /obj/item/radio/intercom{
-	pixel_y = -31
+	dir = 1;
+	pixel_y = -26
 	},
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
@@ -383,6 +431,9 @@
 /area/ship/crew/canteen/kitchen)
 "bu" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/storage/box/ingredients/exotic,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "by" = (
@@ -402,6 +453,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ship/storage)
 "bB" = (
@@ -418,6 +473,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ship/crew/toilet)
 "bC" = (
@@ -431,6 +490,9 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "bF" = (
@@ -440,6 +502,7 @@
 /obj/machinery/cryopod{
 	close_state = "bscanner_green";
 	icon_state = "bscanner_open";
+	name = "suspension sanctum";
 	open_state = "bscanner_open"
 	},
 /turf/open/floor/carpet/royalblue,
@@ -449,7 +512,10 @@
 	pixel_y = 28
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/west,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "bH" = (
@@ -580,6 +646,7 @@
 	dir = 1
 	},
 /obj/machinery/door/window/survival_pod,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "bR" = (
@@ -604,6 +671,10 @@
 	pixel_y = 11
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "bW" = (
@@ -615,7 +686,7 @@
 /area/ship/cargo)
 "bY" = (
 /obj/machinery/mineral/ore_redemption{
-	req_access = null
+	name = "arcane smelter"
 	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
@@ -625,10 +696,16 @@
 	color = "#008000"
 	},
 /obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/poddoor/shutters{
+	id = "wizardship_bridge"
+	},
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/science)
 "ca" = (
-/obj/machinery/power/smes,
+/obj/machinery/power/smes{
+	name = "mana crystal bank"
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -646,10 +723,15 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "cc" = (
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/power/port_gen/pacman{
+	name = "mana pylon"
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
+	},
+/obj/machinery/firealarm{
+	pixel_y = 28
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -674,6 +756,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/bronze,
 /area/ship/maintenance/aft)
@@ -701,6 +789,10 @@
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/clothing/suit/space/hardsuit/wizard,
 /obj/machinery/airalarm/directional/south,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
+	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
 "ch" = (
@@ -720,6 +812,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "ck" = (
@@ -731,6 +826,9 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner,
+/obj/machinery/door/poddoor{
+	id = "wizardship_thrusters"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "cl" = (
@@ -801,16 +899,13 @@
 /area/ship/maintenance/aft)
 "en" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -842,8 +937,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/toilet/secret{
 	dir = 1;
-	secret_type = /obj/item/book/granter/spell/knock
+	name = "chamber of secrets";
+	secret_type = null
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "gz" = (
@@ -855,6 +952,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/dogbed/cayenne{
 	name = "Melchom's bed"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 25
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
@@ -871,13 +971,11 @@
 "gF" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/closet/crate/science,
-/obj/item/storage/box/rndboards{
-	desc = "A box containing a gift for worthy wizards.";
-	name = "\proper the archmagus's legacy"
-	},
 /obj/machinery/airalarm/directional/west,
 /obj/structure/window/reinforced/survival_pod,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/storage/box/rndciv,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "gL" = (
@@ -1023,7 +1121,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	pixel_x = 29
+	dir = 8;
+	pixel_x = 26
 	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
@@ -1038,6 +1137,16 @@
 /obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
+"kP" = (
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ship/hallway/starboard)
 "lq" = (
 /obj/structure/chair/wood/wings{
 	dir = 1
@@ -1069,6 +1178,18 @@
 	name = "emerald wall"
 	},
 /area/ship/hallway/starboard)
+"mH" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile{
+	color = "#008000"
+	},
+/obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/poddoor/shutters{
+	id = "wizardship_bridge"
+	},
+/obj/machinery/door/firedoor/window,
+/turf/open/floor/plating,
+/area/ship/crew/canteen/kitchen)
 "ni" = (
 /turf/closed/wall/mineral/uranium/safe{
 	desc = "A wall plated with emerald.";
@@ -1156,6 +1277,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
 "pR" = (
@@ -1175,6 +1300,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "qN" = (
@@ -1188,6 +1316,10 @@
 	launch_status = 0;
 	port_direction = 8
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "wizardship_bridge"
+	},
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/science)
 "qT" = (
@@ -1234,11 +1366,13 @@
 /area/ship/crew/library)
 "rp" = (
 /obj/machinery/computer/bookmanagement{
+	name = "archival servitor";
 	pixel_y = 1
 	},
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/radio/intercom{
-	pixel_y = -31
+	dir = 1;
+	pixel_y = -26
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/crew/library)
@@ -1253,6 +1387,17 @@
 	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
+"rV" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile{
+	color = "#008000"
+	},
+/obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/poddoor/shutters{
+	id = "wizardship_bridge"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "sJ" = (
 /obj/structure/sign/poster/contraband/power,
 /turf/closed/wall/mineral/uranium/safe{
@@ -1290,7 +1435,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/jukebox,
+/obj/machinery/jukebox{
+	name = "altar of rhythm"
+	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1300,6 +1447,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	id = "wizardship_thrusters";
+	name = "thruster shutters";
+	pixel_y = 31
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -1355,6 +1507,21 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
+"xC" = (
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/turf/open/floor/wood,
+/area/ship/hallway/aft)
+"yQ" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile{
+	color = "#008000"
+	},
+/obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/firedoor/window,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "zn" = (
 /obj/machinery/processor,
 /turf/open/floor/wood,
@@ -1395,6 +1562,13 @@
 	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
+"BB" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ship/hallway/starboard)
 "Cc" = (
 /obj/item/reagent_containers/food/drinks/shaker{
 	pixel_x = -1
@@ -1424,6 +1598,10 @@
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
@@ -1516,6 +1694,10 @@
 /area/ship/hallway/aft)
 "Eu" = (
 /obj/structure/table/wood/fancy/purple,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "Ez" = (
@@ -1570,6 +1752,9 @@
 /area/ship/hallway/aft)
 "Gf" = (
 /obj/effect/decal/cleanable/food/egg_smudge,
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "Gh" = (
@@ -1590,6 +1775,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -1617,15 +1806,23 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
+"HQ" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile{
+	color = "#008000"
+	},
+/obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/poddoor/shutters{
+	id = "wizardship_bridge"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
 "HS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "HV" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
@@ -1642,6 +1839,15 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"Ig" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
+/obj/machinery/power/terminal,
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -1713,6 +1919,10 @@
 /obj/item/storage/bag/tray,
 /obj/item/reagent_containers/food/snacks/burger/spell,
 /obj/structure/table/wood/fancy/cyan,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
+	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
 "JS" = (
@@ -1755,6 +1965,7 @@
 	color = "#008000"
 	},
 /obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
 "KS" = (
@@ -1822,6 +2033,10 @@
 	},
 /obj/item/clothing/head/wizard/magus{
 	pixel_y = 11
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -26
 	},
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
@@ -1945,10 +2160,14 @@
 "OQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/libraryscanner,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "OW" = (
-/obj/structure/frame/computer,
+/obj/machinery/modular_computer/console/preset/command,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "PT" = (
@@ -1957,10 +2176,15 @@
 	color = "#008000"
 	},
 /obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "Ql" = (
 /obj/machinery/bookbinder,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 25
+	},
 /turf/open/floor/carpet/orange,
 /area/ship/crew/library)
 "QD" = (
@@ -1970,11 +2194,13 @@
 /turf/open/floor/plating,
 /area/ship/external)
 "QJ" = (
-/obj/machinery/deepfryer,
+/obj/machinery/deepfryer{
+	name = "cauldron of savour"
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "Ro" = (
-/obj/machinery/computer/monitor,
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "RD" = (
@@ -1983,6 +2209,7 @@
 	color = "#008000"
 	},
 /obj/structure/curtain/cloth/fancy,
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/crew/canteen/kitchen)
 "RE" = (
@@ -2009,6 +2236,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "Sf" = (
@@ -2021,6 +2254,7 @@
 /obj/item/radio,
 /obj/structure/window/reinforced/survival_pod,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "Si" = (
@@ -2156,6 +2390,10 @@
 /obj/item/roulette_wheel_beacon,
 /obj/item/etherealballdeployer,
 /obj/item/storage/belt/bandolier,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "VP" = (
@@ -2322,6 +2560,9 @@
 /obj/item/reagent_containers/pill/floorpill{
 	pixel_x = -9
 	},
+/obj/machinery/light_switch{
+	pixel_y = 25
+	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
 
@@ -2376,8 +2617,8 @@ bb
 aT
 oB
 IN
-Kz
-Kz
+HQ
+HQ
 IN
 No
 No
@@ -2541,7 +2782,7 @@ MA
 NF
 bo
 IN
-Vy
+xC
 Ge
 KS
 wj
@@ -2594,7 +2835,7 @@ ab
 OW
 io
 Mb
-ab
+yQ
 aV
 Ee
 Xz
@@ -2618,7 +2859,7 @@ jC
 ca
 cf
 en
-Db
+Ig
 ck
 cl
 "}
@@ -2660,7 +2901,7 @@ ab
 Ro
 af
 wq
-ab
+yQ
 bd
 qJ
 Jo
@@ -2727,8 +2968,8 @@ Tt
 Tt
 Tt
 Tt
-an
-aq
+BB
+kP
 Ek
 aB
 VP
@@ -2748,7 +2989,7 @@ bN
 bT
 jC
 jC
-PT
+rV
 jC
 jC
 jC
@@ -2904,8 +3145,8 @@ bi
 nC
 bu
 IN
-Kz
-Kz
+HQ
+HQ
 IN
 No
 No
@@ -2932,9 +3173,9 @@ No
 No
 Gh
 Gh
-RD
+mH
 Gh
-RD
+mH
 Gh
 Gh
 No
