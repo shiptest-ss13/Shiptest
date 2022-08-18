@@ -396,6 +396,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
 "dy" = (
@@ -848,6 +851,9 @@
 /area/ship/external)
 "ip" = (
 /obj/machinery/holopad,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
 "ix" = (
@@ -961,10 +967,13 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable,
-/obj/structure/closet/secure_closet/engineering_electrical,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/closet/secure_closet/engineering_welding,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "jP" = (
@@ -1110,10 +1119,10 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/structure/closet/secure_closet/engineering_welding,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/closet/secure_closet/engineering_electrical,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "kz" = (
@@ -1364,6 +1373,10 @@
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"mD" = (
+/obj/item/gun/energy/e_gun/mini,
+/turf/closed/wall/r_wall,
+/area/ship/crew/crewtwo)
 "mF" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
@@ -1766,6 +1779,9 @@
 /obj/machinery/photocopier,
 /obj/structure/sign/nanotrasen{
 	pixel_y = 32
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
@@ -3545,6 +3561,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
 "FW" = (
@@ -4181,6 +4200,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
 "Mi" = (
@@ -4528,6 +4550,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
 "OQ" = (
@@ -4563,6 +4588,7 @@
 /obj/machinery/newscaster{
 	pixel_x = -25
 	},
+/obj/structure/bedsheetbin,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "Pf" = (
@@ -5130,6 +5156,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
@@ -6571,7 +6600,7 @@ cg
 Bv
 cR
 ji
-qa
+mD
 XJ
 RV
 qz
