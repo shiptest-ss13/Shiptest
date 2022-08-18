@@ -96,3 +96,22 @@
 	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/cmo/pharma
+	name = "Chief Pharmacist"
+
+	glasses = /obj/item/clothing/glasses/science/prescription/fake//chief pharma is this kind of person
+	neck = /obj/item/clothing/neck/tie/horrible//I debated making it the Ally tie, but big pharma is an ally only to evil
+	l_pocket = /obj/item/reagent_containers/glass/filter
+	ears = /obj/item/radio/headset/heads/cmo
+	uniform = /obj/item/clothing/under/suit/tan
+	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/green
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+	suit = /obj/item/clothing/suit/toggle/labcoat/chemist/side
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
+	l_hand = /obj/item/reagent_containers/glass/maunamug
+	suit_store = /obj/item/reagent_scanner
+	backpack = /obj/item/storage/backpack/chemistry
+	satchel = /obj/item/storage/backpack/satchel/chem
+	courierbag = /obj/item/storage/backpack/messenger/chem
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/storage/bag/chemistry=1)
