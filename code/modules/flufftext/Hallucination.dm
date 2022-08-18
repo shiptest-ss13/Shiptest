@@ -848,7 +848,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			sleep(rand(40,80))
 			target.playsound_local(source, 'sound/machines/airlockforced.ogg', 30, 1)
 		if("speen") //WS - Ghostspeen
-			target.playsound_local(source, 'whitesands/sound/voice/speen.ogg', 50, 1)
+			target.playsound_local(source, 'sound/voice/speen.ogg', 50, 1)
 	qdel(src)
 
 /datum/hallucination/weird_sounds

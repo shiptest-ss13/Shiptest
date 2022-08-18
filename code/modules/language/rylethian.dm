@@ -22,7 +22,4 @@
 	)
 	default_priority = 80
 
-	// WS Edit Start - Whitesands
-	icon = 'whitesands/icons/effects/language.dmi'
 	icon_state = "squiddish"
-	// WS Edit End - Whitesands
