@@ -213,7 +213,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/power/port_gen/pacman/super,
+/obj/item/stack/sheet/mineral/uranium{
+	amount = 20
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "cH" = (
@@ -366,6 +369,9 @@
 	icon_state = "1-8"
 	},
 /obj/item/storage/portable_chem_mixer,
+/obj/item/storage/firstaid,
+/obj/item/hand_labeler,
+/obj/item/hand_labeler_refill,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "eu" = (
@@ -454,6 +460,7 @@
 	dir = 8;
 	pixel_x = 25
 	},
+/obj/effect/decal/cleanable/greenglow/filled,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "fu" = (
@@ -771,6 +778,7 @@
 "jG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/stack/ducts,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "jH" = (
@@ -875,9 +883,6 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "kV" = (
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_y = -5
-	},
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/effect/turf_decal/siding/white,
 /obj/structure/cable{
@@ -886,6 +891,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/item/storage/firstaid/medical,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "ls" = (
@@ -2136,7 +2142,7 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/duct,
+/obj/effect/decal/cleanable/greenglow/filled,
 /turf/open/floor/plating,
 /area/ship/medical)
 "Km" = (
@@ -2215,11 +2221,9 @@
 /turf/open/floor/concrete/tiles,
 /area/ship/crew/hydroponics)
 "Md" = (
-/obj/machinery/washing_machine,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/wood/corner,
+/obj/structure/table/wood,
+/obj/structure/bedsheetbin,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "Me" = (
@@ -2266,6 +2270,8 @@
 /obj/item/pet_carrier,
 /obj/item/wallframe/defib_mount,
 /obj/item/clothing/shoes/sneakers/orange,
+/obj/item/reagent_containers/glass/bottle/vial/large,
+/obj/item/reagent_containers/glass/bottle/vial/large,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "MG" = (
@@ -2400,7 +2406,6 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/cargo)
 "Nz" = (
-/obj/effect/decal/cleanable/greenglow/filled,
 /obj/machinery/power/apc/auto_name/west,
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 6
@@ -2458,11 +2463,31 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "NO" = (
-/obj/structure/table/wood,
-/obj/structure/bedsheetbin,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
+/obj/structure/closet/wall{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/machinery/washing_machine,
+/obj/item/clothing/suit/longcoat/chemist,
+/obj/item/clothing/suit/longcoat/chemist,
+/obj/item/clothing/under/rank/medical/chemist,
+/obj/item/clothing/under/rank/medical/chemist,
+/obj/item/clothing/under/rank/medical/chemist/pharmacist,
+/obj/item/clothing/under/rank/medical/chemist/pharmacist,
+/obj/item/clothing/under/rank/medical/chemist/pharmacist/skirt,
+/obj/item/clothing/under/rank/medical/chemist/pharmacist/skirt,
+/obj/item/clothing/under/rank/medical/chemist/pharmacologist,
+/obj/item/clothing/under/rank/medical/chemist/pharmacologist,
+/obj/item/clothing/under/rank/medical/chemist/pharmacologist/skirt,
+/obj/item/clothing/under/rank/medical/chemist/pharmacologist/skirt,
+/obj/item/clothing/under/suit/senior_chemist,
+/obj/item/clothing/under/suit/senior_chemist/skirt,
+/obj/item/clothing/shoes/sneakers/orange,
+/obj/item/clothing/shoes/sneakers/orange,
+/obj/item/clothing/shoes/sneakers/orange,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "NV" = (
