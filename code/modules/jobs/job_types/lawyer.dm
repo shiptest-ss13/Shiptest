@@ -40,6 +40,7 @@
 /datum/outfit/job/lawyer/corporaterepresentative
 	uniform = /obj/item/clothing/under/suit/navy
 	suit = /obj/item/clothing/suit/toggle/lawyer/navy
+	ears = /obj/item/radio/headset/headset_cent
 	neck = /obj/item/clothing/neck/tie/blue
 	l_hand = /obj/item/clipboard
 	r_pocket = /obj/item/pen/fountain
