@@ -423,7 +423,7 @@
 /area/ship/engineering)
 "fa" = (
 /obj/effect/turf_decal/dept/medical,
-/turf/open/floor/plating/catwalk_floor,
+/turf/open/floor/engine/hull,
 /area/ship/external)
 "fb" = (
 /obj/effect/decal/cleanable/food/egg_smudge,
@@ -1014,7 +1014,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 9
 	},
-/turf/open/floor/plating/catwalk_floor,
+/turf/open/floor/engine/hull,
 /area/ship/external)
 "nK" = (
 /obj/effect/turf_decal/siding/white{
@@ -1220,6 +1220,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/security)
+"rU" = (
+/obj/effect/turf_decal/steeldecal/steel_decals9,
+/turf/open/floor/engine/hull,
+/area/template_noop)
 "rX" = (
 /obj/effect/turf_decal/trimline/transparent/orange/filled/warning{
 	dir = 8
@@ -2176,7 +2180,7 @@
 /area/ship/crew/canteen)
 "KU" = (
 /obj/effect/turf_decal/steeldecal/steel_decals6,
-/turf/open/floor/plating/catwalk_floor,
+/turf/open/floor/engine/hull,
 /area/ship/crew/hydroponics)
 "KW" = (
 /obj/machinery/door/airlock/external/glass,
@@ -3194,6 +3198,10 @@
 "Yr" = (
 /turf/open/floor/concrete/tiles,
 /area/ship/crew/hydroponics)
+"Yw" = (
+/obj/effect/turf_decal/steeldecal/steel_decals_central1,
+/turf/open/floor/engine/hull,
+/area/template_noop)
 "Yx" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -3398,7 +3406,7 @@ Wv
 xJ
 "}
 (5,1,1) = {"
-xJ
+rU
 gT
 iL
 Cb
@@ -3414,7 +3422,7 @@ cN
 cY
 IE
 tR
-xJ
+Yw
 "}
 (6,1,1) = {"
 Fz
