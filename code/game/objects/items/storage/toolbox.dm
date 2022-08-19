@@ -237,6 +237,7 @@
 	item_state = "ammobox"
 	drop_sound = 'sound/items/handling/ammobox_drop.ogg'
 	pickup_sound =  'sound/items/handling/ammobox_pickup.ogg'
+	material_flags = NONE
 
 /obj/item/storage/toolbox/ammo/a762/PopulateContents()
 	for(var/i in 1 to 7)
