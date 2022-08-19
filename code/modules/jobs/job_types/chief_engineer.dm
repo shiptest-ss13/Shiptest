@@ -1,20 +1,14 @@
 /datum/job/chief_engineer
-	title = "Chief Engineer"
+	name = "Chief Engineer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	department_head = list("Captain")
-	head_announce = list(RADIO_CHANNEL_COMMAND)
-	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
-	selection_color = "#ffeeaa"
 	minimal_player_age = 7
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_ENGINEERING
 	officer = TRUE
 	wiki_page = "Chief_Engineer" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Engineering Coordinator", "Maintenance Supervisor")
 
 	outfit = /datum/outfit/job/ce
 
@@ -28,13 +22,12 @@
 		ACCESS_EXTERNAL_AIRLOCKS, ACCESS_ATMOSPHERICS, ACCESS_EVA,
 		ACCESS_HEADS, ACCESS_CONSTRUCTION, ACCESS_SEC_DOORS, ACCESS_MINISAT, ACCESS_MECH_ENGINE,
 		ACCESS_CE, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_TCOMSAT, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_ENG
 
 	display_order = JOB_DISPLAY_ORDER_CHIEF_ENGINEER
 
 /datum/outfit/job/ce
 	name = "Chief Engineer"
+	job_icon = "chiefengineer"
 	jobtype = /datum/job/chief_engineer
 
 	id = /obj/item/card/id/silver
