@@ -94,7 +94,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 		..(gibbed)
 
 /mob/living/simple_animal/mouse/on_entered(datum/source, AM as mob|obj)
-	if( ishuman(AM) )
+	if(ishuman(AM))
 		if(!stat)
 			var/mob/M = AM
 			to_chat(M, "<span class='notice'>[icon2html(src, M)] Squeak!</span>")

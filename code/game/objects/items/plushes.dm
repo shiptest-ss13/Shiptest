@@ -667,10 +667,10 @@
 /obj/item/toy/plush/hornet
 	name = "strange bug plushie"
 	desc = "A cute, soft plush of a long-horned bug."
-	icon = 'whitesands/icons/obj/plushes.dmi'
+	icon = 'icons/obj/plushes.dmi'
 	icon_state = "plushie_hornet"
 	attack_verb = list("poked", "shaws")
-	squeak_override = list('whitesands/sound/hornetnoises/hornet_gitgud.ogg'=1, 'whitesands/sound/hornetnoises/hornet_SHAW.ogg'=10) //i have no clue how this works, the intended effect is that "git gud" will play 1 out of 11 times
+	squeak_override = list('sound/hornetnoises/hornet_gitgud.ogg'=1, 'sound/hornetnoises/hornet_SHAW.ogg'=10) //i have no clue how this works, the intended effect is that "git gud" will play 1 out of 11 times
 	gender = FEMALE
 
 /obj/item/toy/plush/hornet/gay
@@ -681,7 +681,7 @@
 /obj/item/toy/plush/knight
 	name = "odd bug plushie"
 	desc = "A cute, soft plush of a little bug. It sounds like this one didn't come with a voice box."
-	icon = 'whitesands/icons/obj/plushes.dmi'
+	icon = 'icons/obj/plushes.dmi'
 	icon_state = "plushie_knight"
 	attack_verb = list("poked")
 	should_squeak = FALSE
@@ -689,10 +689,10 @@
 /obj/item/toy/plush/among
 	name = "amoung pequeño"
 	desc = "A little pill shaped guy, with a price tag of 3€."
-	icon = 'whitesands/icons/obj/plushes.dmi'
+	icon = 'icons/obj/plushes.dmi'
 	icon_state = "plushie_among"
 	attack_verb = list("killed","stabbed","shot","slapped","stung", "ejected")
-	squeak_override = list('whitesands/sound/hornetnoises/agoguskill.ogg')
+	squeak_override = list('sound/hornetnoises/agoguskill.ogg')
 	var/random_among = TRUE //if the (among) uses random coloring
 	var/rare_among = 1 //chance for rare color variant
 

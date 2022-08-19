@@ -160,10 +160,10 @@
 	if(living_mob)
 		after_spawn(living_mob, living_mob) // note: this happens before the mob has a key! living_mob will always have a client, H might not.
 
-	if ( ship )
-		var/obj/item/card/id/idcard = living_mob.get_idcard( TRUE )
-		if ( idcard )
-			idcard.add_ship_access( ship )
+	if (ship)
+		var/obj/item/card/id/idcard = living_mob.get_idcard(TRUE)
+		if (idcard)
+			idcard.add_ship_access(ship)
 
 	return living_mob
 
@@ -249,8 +249,8 @@
 	return TRUE
 
 /**
-  * Gets the changes dictionary made to the job template by the map config. Returns null if job is removed.
-  */
+ * Gets the changes dictionary made to the job template by the map config. Returns null if job is removed.
+ */
 /datum/job/proc/GetMapChanges()
 	var/string_type = "[type]"
 	var/list/splits = splittext(string_type, "/")

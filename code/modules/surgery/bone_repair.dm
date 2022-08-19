@@ -14,9 +14,10 @@
 
 /datum/surgery_step/set_bone
 	name = "set bone"
-
-	time = 64
+	time = 6.4 SECONDS
 	implements = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 25, TOOL_WRENCH = 35)
+	preop_sound = 'sound/surgery/bone1.ogg'
+	success_sound = 'sound/surgery/bone3.ogg'
 
 /datum/surgery_step/set_bone/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(target_zone == BODY_ZONE_HEAD)

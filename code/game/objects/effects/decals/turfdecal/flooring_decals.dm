@@ -88,10 +88,10 @@
 		icon_state = "trimline_end_fill";				\
 	}													\
 	/obj/effect/turf_decal/trimline/##color_name/filled/arrow_cw { \
-		icon_state = "trimline_cw_fill";				\
+		icon_state = "trimline_arrow_cw_fill";				\
 	}													\
 	/obj/effect/turf_decal/trimline/##color_name/filled/arrow_ccw { \
-		icon_state = "trimline_ccw_fill";				\
+		icon_state = "trimline_arrow_ccw_fill";				\
 	}													\
 	/obj/effect/turf_decal/trimline/##color_name/filled/warning { \
 		icon_state = "trimline_warn_fill";				\
@@ -112,24 +112,55 @@
 		icon_state = "spline_fancy_corner"				\
 	}
 
-TURF_DECAL_COLOR_HELPER(neutral, null, 75)
-TURF_DECAL_COLOR_HELPER(black, COLOR_TILE_GRAY, 255)
-TURF_DECAL_COLOR_HELPER(blue, COLOR_BLUE_GRAY, 255)
-TURF_DECAL_COLOR_HELPER(green, COLOR_GREEN_GRAY, 255)
-TURF_DECAL_COLOR_HELPER(lime, COLOR_PALE_GREEN_GRAY, 255)
-TURF_DECAL_COLOR_HELPER(yellow, COLOR_BROWN, 255)
-TURF_DECAL_COLOR_HELPER(beige, COLOR_BEIGE, 255)
-TURF_DECAL_COLOR_HELPER(red, COLOR_RED_GRAY, 255)
-TURF_DECAL_COLOR_HELPER(bar, "#791500", 130)
-TURF_DECAL_COLOR_HELPER(pink, COLOR_PALE_RED_GRAY, 255)
-TURF_DECAL_COLOR_HELPER(purple, COLOR_PURPLE_GRAY, 255)
-TURF_DECAL_COLOR_HELPER(mauve, COLOR_PALE_PURPLE_GRAY, 255)
-TURF_DECAL_COLOR_HELPER(orange, COLOR_DARK_ORANGE, 255)
-TURF_DECAL_COLOR_HELPER(brown, COLOR_DARK_BROWN, 255)
-TURF_DECAL_COLOR_HELPER(white, COLOR_WHITE, 255)
-TURF_DECAL_COLOR_HELPER(grey, COLOR_FLOORTILE_GRAY, 255)
-TURF_DECAL_COLOR_HELPER(lightgrey, "#a8b2b6", 255)
-TURF_DECAL_COLOR_HELPER(bottlegreen, "#57967f", 255)
+//opaque
+TURF_DECAL_COLOR_HELPER(opaque/neutral, null, 255)
+TURF_DECAL_COLOR_HELPER(opaque/black, COLOR_TILE_GRAY, 255)
+TURF_DECAL_COLOR_HELPER(opaque/blue, COLOR_BLUE_GRAY, 255)
+TURF_DECAL_COLOR_HELPER(opaque/green, COLOR_GREEN_GRAY, 255)
+TURF_DECAL_COLOR_HELPER(opaque/lime, COLOR_PALE_GREEN_GRAY, 255)
+TURF_DECAL_COLOR_HELPER(opaque/yellow, COLOR_BROWN, 255)
+TURF_DECAL_COLOR_HELPER(opaque/beige, COLOR_BEIGE, 255)
+TURF_DECAL_COLOR_HELPER(opaque/red, COLOR_RED_GRAY, 255)
+TURF_DECAL_COLOR_HELPER(opaque/bar, "#791500", 255)
+TURF_DECAL_COLOR_HELPER(opaque/pink, COLOR_PALE_RED_GRAY, 255)
+TURF_DECAL_COLOR_HELPER(opaque/purple, COLOR_PURPLE_GRAY, 255)
+TURF_DECAL_COLOR_HELPER(opaque/mauve, COLOR_PALE_PURPLE_GRAY, 255)
+TURF_DECAL_COLOR_HELPER(opaque/orange, COLOR_DARK_ORANGE, 255)
+TURF_DECAL_COLOR_HELPER(opaque/brown, COLOR_DARK_BROWN, 255)
+TURF_DECAL_COLOR_HELPER(opaque/white, COLOR_WHITE, 255)
+TURF_DECAL_COLOR_HELPER(opaque/grey, COLOR_FLOORTILE_GRAY, 255)
+TURF_DECAL_COLOR_HELPER(opaque/lightgrey, "#a8b2b6", 255)
+TURF_DECAL_COLOR_HELPER(opaque/bottlegreen, "#57967f", 255)
+TURF_DECAL_COLOR_HELPER(opaque/ntblue, "#283674", 255)
+TURF_DECAL_COLOR_HELPER(opaque/solgovblue, "#2d2a4e", 255)
+TURF_DECAL_COLOR_HELPER(opaque/solgovgold, "#eeac2e", 255)
+TURF_DECAL_COLOR_HELPER(opaque/syndiered, "#730622", 255)
+TURF_DECAL_COLOR_HELPER(opaque/inteqbrown, "#4b2a18", 255)
+
+//transparent
+TURF_DECAL_COLOR_HELPER(transparent/neutral, null, 75)
+TURF_DECAL_COLOR_HELPER(transparent/black, COLOR_TILE_GRAY, 140)
+TURF_DECAL_COLOR_HELPER(transparent/blue, COLOR_BLUE_GRAY, 140)
+TURF_DECAL_COLOR_HELPER(transparent/green, COLOR_GREEN_GRAY, 140)
+TURF_DECAL_COLOR_HELPER(transparent/lime, COLOR_PALE_GREEN_GRAY, 140)
+TURF_DECAL_COLOR_HELPER(transparent/yellow, COLOR_BROWN, 140)
+TURF_DECAL_COLOR_HELPER(transparent/beige, COLOR_BEIGE, 140)
+TURF_DECAL_COLOR_HELPER(transparent/red, COLOR_RED_GRAY, 140)
+TURF_DECAL_COLOR_HELPER(transparent/bar, "#791500", 130)
+TURF_DECAL_COLOR_HELPER(transparent/pink, COLOR_PALE_RED_GRAY, 140)
+TURF_DECAL_COLOR_HELPER(transparent/purple, COLOR_PURPLE_GRAY, 140)
+TURF_DECAL_COLOR_HELPER(transparent/mauve, COLOR_PALE_PURPLE_GRAY, 140)
+TURF_DECAL_COLOR_HELPER(transparent/orange, COLOR_DARK_ORANGE, 140)
+TURF_DECAL_COLOR_HELPER(transparent/brown, COLOR_DARK_BROWN, 140)
+TURF_DECAL_COLOR_HELPER(transparent/white, COLOR_WHITE, 140)
+TURF_DECAL_COLOR_HELPER(transparent/grey, COLOR_FLOORTILE_GRAY, 140)
+TURF_DECAL_COLOR_HELPER(transparent/lightgrey, "#a8b2b6", 140)
+TURF_DECAL_COLOR_HELPER(transparent/bottlegreen, "#57967f", 140)
+TURF_DECAL_COLOR_HELPER(transparent/ntblue, "#283674", 140)
+TURF_DECAL_COLOR_HELPER(transparent/solgovblue, "#2d2a4e", 140)
+TURF_DECAL_COLOR_HELPER(transparent/solgovgold, "#eeac2e", 140)
+TURF_DECAL_COLOR_HELPER(transparent/syndiered, "#730622", 140)
+TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/spline/plain
 	icon_state = "spline_plain"
@@ -691,5 +722,5 @@ TURF_DECAL_COLOR_HELPER(bottlegreen, "#57967f", 255)
 
 /obj/effect/turf_decal/solgov //Credit to baystation for these sprites!
 	alpha = 230
-	icon = 'whitesands/icons/obj/solgov_floor.dmi'
+	icon = 'icons/obj/solgov_floor.dmi'
 	icon_state = "center"

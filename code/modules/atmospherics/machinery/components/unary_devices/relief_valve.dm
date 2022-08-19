@@ -1,7 +1,7 @@
 /obj/machinery/atmospherics/components/unary/relief_valve
 	name = "pressure relief valve"
 	desc = "A valve that opens to the air at a certain pressure, then closes once it goes below another."
-	icon = 'whitesands/icons/obj/atmospherics/components/relief_valve.dmi'
+	icon = 'icons/obj/atmospherics/components/relief_valve.dmi'
 	icon_state = "relief_valve-e-map"
 	can_unwrench = TRUE
 	interaction_flags_machine = INTERACT_MACHINE_OFFLINE | INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE
@@ -23,7 +23,7 @@
 /obj/machinery/atmospherics/components/unary/relief_valve/update_icon_nopipes()
 	cut_overlays()
 
-	if(!nodes[1] || !opened || !is_operational())
+	if(!nodes[1] || !opened || !is_operational)
 		icon_state = "relief_valve-e"
 		return
 
@@ -32,7 +32,7 @@
 /obj/machinery/atmospherics/components/unary/relief_valve/process_atmos()
 	..()
 
-	if(!is_operational())
+	if(!is_operational)
 		return
 
 	var/datum/gas_mixture/air_contents = airs[1]

@@ -1,0 +1,139 @@
+2022-08-01:
+  PositiveEntropy:
+  - imageadd: Resprites a variety of clothing related to IRMG!
+  Recoherent:
+  - rscadd: The Booze-O-Mat has a new drink in stock; some kind of promotional coconut
+      liquor?
+  triplezeta:
+  - rscdel: navigationally challenged is no longer automatically applied to newer
+      players
+2022-08-02:
+  triplezeta:
+  - rscadd: light beer can now be mixed. It's one part beer and four parts water.
+  - bugfix: elzu colors should update properly now
+2022-08-03:
+  Apogee-dev:
+  - rscdel: Removed cloning from the tech web
+  triplezeta:
+  - bugfix: rolling down jumpsuits is, finally, fixed.
+  - bugfix: changing species no longer heals all limbs and organs
+2022-08-05:
+  MarkSuckerberg:
+  - bugfix: Mentorchat has been fixed for mentors.
+2022-08-07:
+  Apogee-dev:
+  - rscadd: e-cigars are now available in loadouts
+  MemedHams:
+  - rscadd: THE BEST AND GOODEST TOOL (the world's shittiest item, designed to be
+      admin spawned for memes).
+  - rscadd: A spellbook for The Traps.
+  - rscadd: A slightly better whetstone.
+  - rscadd: The Slime Guardian, a support guardian optimized for healing, feeding
+      slimes, and nourishing players.
+  - tweak: new loot spawners for random stock parts and materials.
+  - tweak: adjusts animorph spellbook wording.
+  - tweak: changes wording on crisis stimpack to make what it does more clear. Reduces
+      stimulants and adds slightly more healing.
+  - tweak: Adds a reverse necropotence bolt. Allows hostile magicarp to have considerably
+      more random spells.
+  - bugfix: allows the Brigador-type cyborg spawner to actually be used by non-nukeops.
+      Also adds functionality for other cyborg spawners that can do the same.
+  - balance: fireball spellbook recoil no longer hardgibs those who are unfortunate
+      enough to read it second.
+  - balance: slightly reduces cursed Katana's self-damage.
+  - balance: boosts netheric portal enemy spawning logic, adds a few new drops.
+  - balance: increases the cost of the Heavy Mining Kit. Doubles suits gained and
+      adds some survival pods and deepcore drill spawners.
+  - balance: GREATLY reduces the frequency of menacing tumor spawns. Elites now drop
+      a chest with 3 necropolis loot items and can once again drop their special loot.
+  - balance: adds a planet atmos immune variant to wizard simplemobs, for netheric
+      portals.
+  - bugfix: fixes way too many tumors spawning. Like, wow.
+  - bugfix: fixes netheric portals only spawning a single snow legion head, instead
+      of the actual mob
+  - bugfix: prevents infinite dwarf legion trophy stacking
+  - bugfix: revises the shitcode I wrote for the syndie crusher to be slightly less
+      awful
+  - bugfix: fixes the normal watcher wing trophy having the crystal wing sprite
+  Yellow-Mushroom:
+  - tweak: adds a much larger variety of text to hallucinations/Reality Dissassociate
+      Discorder, removes LRP/NRP gamemode related hallucinations. Also tweaks occurrence
+      rates
+  retlaw34:
+  - rscadd: Full-Automatic Gun component! Your L6 Saws and Laser Gatling Guns have
+      it now.
+  - rscadd: The Tesla Cannon! A fully automatic replacement to the tesla revolver,
+      it shoots balls of shock.
+  - code_imp: Makes the Laser Gatling Gun less bad.
+  - balance: due to autofire, gun fire rates may be affected slightly.
+  - bugfix: Roumain winchester inhands fixed
+  - imageadd: Roumain winchester now has a back and suit sprite
+  - refactor: Tons of guns were repathed.
+  tmtmtl30:
+  - bugfix: Nitryl now only forms when it should.
+  triplezeta:
+  - bugfix: surveying with your hands full no longer sends your points to hell
+2022-08-09:
+  Any%, PositiveEntropy:
+  - imageadd: Resprites all sneakers, laceups, and combat boots.
+  MemedHams:
+  - rscadd: Balloon Alerts, which appear visually over a character's head and convey
+      a short string of text before disappearing.
+  - rscadd: Area Balloon alerts, the above but visible to anyone nearby.
+  - tweak: Digging into terrain now displays a balloon alert and does not chat log,
+      to prevent spam.
+  - tweak: Guns now do not trigger their "x fires y!" message for the user unless
+      shot at point-blank.
+  - tweak: The Kinetic Accelerator now no longer logs a *click* in chat when fired
+      while on cooldown.
+  - tweak: Reagent containers now balloon alert instead of chat logging when their
+      reagent transfer amount is changed. Their transfer amount can now also be found
+      in their description.
+2022-08-10:
+  MemedHams:
+  - tweak: The dwarf corpses dropped by hivelords are now dwarves by race instead
+      of mutation
+  Recoherent:
+  - rscadd: Layershift verbs have been added to the IC tab. Finally, you can get cozy
+      under blankets without relying on the fickle hand of rng!
+  Yellow/Myco:
+  - rscadd: Adds 5 new faction related decal colors, adds transparent versions for
+      every decal color
+  - tweak: tweaks the look of trimline decals to not be ugly
+  - bugfix: fixes trimline fill arrows just not working, woo
+2022-08-11:
+  Apogee-dev:
+  - rscdel: Removed the Bubble-B
+  MemedHams:
+  - balance: elites can now damage structures and mechs.
+2022-08-13:
+  Mark Suckerberg, Rohesie:
+  - bugfix: GPSes should work now.
+  - bugfix: Shooting yourself point-blank should work now. Whoopee...?
+2022-08-14:
+  Apogee-dev:
+  - tweak: Processing consoles can now be linked to processing units with a multitool
+  - bugfix: Processing consoles no longer qdel themself if they can't link to a machine
+  Recoherent:
+  - rscadd: You can now grab some gloves, labcoats, and even a transparent blindfold
+      in loadouts. Space Radioshack has a new laptop line in stock, too, in case tablets
+      aren't your speed.
+2022-08-15:
+  retlaw34:
+  - rscadd: Added built-in heater to air alarms
+2022-08-16:
+  triplezeta:
+  - bugfix: outpost consoles now work in new ship areas
+2022-08-18:
+  Apogee-dev:
+  - tweak: Updated Shetland with new job datums, outfits, and config options
+  - balance: Replaced Shetland's unlimited RnD kit with an RnD Choice Beacon
+  - rscdel: Removed amogus_sus
+  - tweak: QoL improvements on lamia
+  - balance: replaced rnd kit on lamia with service rnd kit
+  maxspells, TheBoondock, MrMelbert, comma, nmajask:
+  - soundadd: added sounds to surgery steps
+  - soundadd: added sound effects to a bunch of medical items
+  - spellcheck: fixed revive surgery saying "shock body" instead of "shock brain"
+  retlaw34:
+  - rscdel: botagyr

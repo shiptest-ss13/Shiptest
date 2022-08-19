@@ -34,7 +34,7 @@
 	},
 /obj/machinery/computer/cryopod{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/light{
 	dir = 8
@@ -79,7 +79,7 @@
 	dir = 8;
 	id = "masi_engi";
 	name = "engine emergency shielding";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -97,7 +97,7 @@
 	dir = 8;
 	id = "masi_engi";
 	name = "engine emergency shielding";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -128,7 +128,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/external/glass{
-	name = "internal airlock"
+	name = "Internal Airlock"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -146,7 +146,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/hatch{
-	name = "external maintenance hatch"
+	name = "External Maintenance Hatch"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -193,7 +193,7 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "masinyane_blastdoors";
-	name = "masinyane entrance doors"
+	name = "Masinyane Entrance Doors"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -271,7 +271,7 @@
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "masi_engi";
-	name = "emergency engine shielding"
+	name = "Emergency Engine Shielding"
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -304,7 +304,7 @@
 /obj/machinery/power/port_gen/pacman/mrs{
 	anchored = 1
 	},
-/obj/effect/turf_decal/trimline/white/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -315,7 +315,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/external/glass{
-	name = "internal airlock"
+	name = "Internal Airlock"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -354,7 +354,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/effect/turf_decal/trimline/white/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 10
 	},
 /obj/item/storage/secure/safe{
@@ -428,7 +428,7 @@
 /obj/machinery/button/door{
 	id = "masinyane_windowshield";
 	name = "shutters";
-	pixel_x = 24;
+	pixel_x = 25;
 	pixel_y = 30
 	},
 /obj/item/radio/intercom{
@@ -447,7 +447,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "thruster maintenance"
+	name = "Thruster Maintenance"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -471,7 +471,7 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "masinyane_blastdoors";
-	name = "masinyane entrance doors"
+	name = "Masinyane Entrance Doors"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -529,7 +529,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
 	id = "masinyane_windowshield";
-	name = "Cockpit Emergency Blast door"
+	name = "Cockpit Emergency Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -543,7 +543,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/machinery/door/airlock/external/glass{
-	name = "internal airlock"
+	name = "Internal Airlock"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -714,13 +714,13 @@
 /obj/machinery/power/port_gen/pacman/super{
 	anchored = 1
 	},
-/obj/effect/turf_decal/trimline/white/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 1
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
 	name = "air filtration controller";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -745,7 +745,7 @@
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
 	},
-/obj/effect/turf_decal/trimline/white/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 9
 	},
 /turf/open/floor/plasteel/dark,

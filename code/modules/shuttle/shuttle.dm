@@ -173,7 +173,7 @@
 		for(var/turf/T in return_turfs())
 			T.flags_1 |= NO_RUINS_1
 		if(SSshuttle.initialized) // If the docking port is loaded via map but SSshuttle has already init (therefore this would never be called)
-			load_roundstart()
+			INVOKE_ASYNC(src, .proc/load_roundstart)
 
 	#ifdef DOCKING_PORT_HIGHLIGHT
 	highlight("#f00")
@@ -291,6 +291,17 @@
 
 	///List of all stationary docking ports that spawned on the ship roundstart, used for docking to other ships.
 	var/list/obj/docking_port/stationary/docking_points
+
+	/// Does this shuttle play sounds upon landing and takeoff?
+	var/shuttle_sounds = TRUE
+	/// The take off sound to be played
+	var/takeoff_sound = 'sound/vehicles/engine_startup.ogg'
+	/// The launch sound to be played
+	var/launch_sound = 'sound/vehicles/rocketlaunch.ogg'
+	/// The landing sound to be played
+	var/landing_sound = 'sound/vehicles/engine_landing.ogg'
+	/// The sound range coeff for the landing and take off sound effects
+	var/sound_range = 60
 
 /obj/docking_port/mobile/proc/register()
 	SSshuttle.mobile += src
@@ -418,6 +429,7 @@
 		if(SHUTTLE_IDLE, SHUTTLE_IGNITING)
 			destination = S
 			mode = SHUTTLE_IGNITING
+			play_engine_sound(src, takeoff_sound)
 			setTimer(ignitionTime)
 
 //recall the shuttle to where it was previously
@@ -450,6 +462,8 @@
 				previous = S0
 	else
 		WARNING("shuttle \"[name]\" could not enter transit space. S0=[S0 ? S0.name : "null"] S1=[S1 ? S1.name : "null"]")
+	play_engine_sound(S0, launch_sound)
+	play_engine_sound(src, launch_sound)
 
 
 /obj/docking_port/mobile/proc/jumpToNullSpace()
@@ -589,6 +603,8 @@
 			var/tl = timeLeft(1)
 			if(tl <= SHUTTLE_RIPPLE_TIME)
 				create_ripples(destination, tl)
+				play_engine_sound(src, landing_sound)
+				play_engine_sound(destination, landing_sound)
 
 	var/obj/docking_port/stationary/S0 = get_docked()
 	if(istype(S0, /obj/docking_port/stationary/transit) && timeLeft(1) <= PARALLAX_LOOP_TIME)
@@ -689,8 +705,8 @@
 		return "00:00"
 
 /**
-  * Gets shuttle location status in a form of string for tgui interfaces
-  */
+ * Gets shuttle location status in a form of string for tgui interfaces
+ */
 /obj/docking_port/mobile/proc/get_status_text_tgui()
 	var/obj/docking_port/stationary/dockedAt = get_docked()
 	var/docked_at = dockedAt?.name || "Unknown"
@@ -812,3 +828,12 @@
 
 /obj/docking_port/mobile/emergency/on_emergency_dock()
 	return
+
+/obj/docking_port/mobile/proc/play_engine_sound(atom/distant_source, sound)
+	if(distant_source)
+		for(var/mob/target_eardrums in range(sound_range, distant_source))
+			if(target_eardrums && target_eardrums.client)
+				var/dist = get_dist(target_eardrums.loc, distant_source.loc)
+				var/vol = clamp(50-((dist-7)*3), 10, 50) //Every tile decreases sound volume by 3
+				if(target_eardrums.client.prefs.toggles & SOUND_SHIP_AMBIENCE)
+					target_eardrums.playsound_local(distant_source, sound, vol)
