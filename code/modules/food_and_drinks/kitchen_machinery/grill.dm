@@ -150,7 +150,7 @@
 /obj/machinery/grill/cat
 	name = "catgrill"
 	desc = "Is this what the youngins are into now?"
-	icon = 'whitesands/icons/obj/kitchen.dmi'
+	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "catgrill_open"
 	anchored = FALSE
 
