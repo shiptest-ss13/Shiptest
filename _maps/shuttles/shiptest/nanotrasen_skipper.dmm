@@ -291,8 +291,8 @@
 	icon_state = "sec_wall";
 	name = "ammunition locker";
 	pixel_y = -28;
-	req_access_txt = "57, 41";
-	dir = 1
+	dir = 1;
+	req_one_access_txt = "57, 41"
 	},
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/ammo_box/magazine/co9mm,
@@ -384,8 +384,9 @@
 /area/ship/engineering/atmospherics)
 "dv" = (
 /obj/machinery/door/window/brigdoor/southright{
-	name = "Personnel Office";
-	dir = 4
+	name = "Internal Affairs";
+	dir = 4;
+	desc = "A strong door. A robust looking stainless steel plate with 'INTERNAL AFFAIRS' is written on it."
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -968,7 +969,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "jN" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable,
 /obj/effect/turf_decal/techfloor{
@@ -978,6 +978,7 @@
 /obj/item/reagent_containers/glass/bottle/welding_fuel,
 /obj/item/reagent_containers/glass/bottle/welding_fuel,
 /obj/item/reagent_containers/glass/bottle/welding_fuel,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "jP" = (
@@ -1045,7 +1046,7 @@
 /area/ship/crew/canteen)
 "kl" = (
 /obj/machinery/door/airlock{
-	name = "Dorms"
+	name = "Dormitory"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1078,6 +1079,10 @@
 	},
 /obj/item/folder/red{
 	pixel_x = -8
+	},
+/obj/item/stamp/centcom{
+	pixel_y = 4;
+	pixel_x = -7
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/crew/office)
@@ -1115,7 +1120,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1127,6 +1131,7 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/engineering_electrical,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "kz" = (
@@ -2564,14 +2569,10 @@
 	dir = 8;
 	pixel_x = 32
 	},
-/obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/fire/atmos,
-/obj/item/clothing/head/hardhat/atmos,
-/obj/item/watertank/atmos,
-/obj/item/clothing/mask/gas/atmos,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/machinery/suit_storage_unit/industrial/atmos_firesuit,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "we" = (
@@ -2740,7 +2741,8 @@
 /obj/item/radio/intercom{
 	pixel_y = 28
 	},
-/obj/machinery/washing_machine,
+/obj/structure/bedsheetbin,
+/obj/structure/table,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "xV" = (
@@ -3114,7 +3116,8 @@
 /area/ship/crew/canteen/kitchen)
 "BY" = (
 /obj/machinery/door/airlock{
-	name = "The Bathroom"
+	name = "Bathroom";
+	desc = "Throne of kings."
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3389,10 +3392,10 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "Ew" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "EJ" = (
@@ -3499,16 +3502,10 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "FD" = (
-/obj/machinery/shower{
-	dir = 4;
-	pixel_y = 8
-	},
-/obj/structure/curtain{
-	pixel_y = 4
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/machinery/washing_machine,
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/dorm)
 "FK" = (
@@ -3845,9 +3842,9 @@
 /obj/structure/closet/secure_closet/wall{
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	req_access_txt = "57, 41";
 	dir = 4;
-	pixel_x = -32
+	pixel_x = -32;
+	req_one_access_txt = "57, 41"
 	},
 /obj/item/gun/energy/e_gun/mini{
 	pixel_y = 8;
@@ -4399,7 +4396,7 @@
 /area/ship/cargo)
 "ND" = (
 /obj/machinery/door/airlock/command/glass{
-	name = "Corporate Office"
+	name = "Office"
 	},
 /obj/effect/turf_decal/corner/opaque/black/full,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -4763,7 +4760,7 @@
 /area/ship/cargo)
 "Qe" = (
 /obj/machinery/door/airlock/mining{
-	name = "Cargo Bay"
+	name = "Cargo Office"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{

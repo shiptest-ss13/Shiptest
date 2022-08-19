@@ -51,6 +51,12 @@
 	icon_state = "industrial"
 	base_icon_state = "industrial"
 
+/obj/machinery/suit_storage_unit/industrial/atmos_firesuit
+	suit_type = /obj/item/clothing/suit/fire/atmos
+	helmet_type = /obj/item/clothing/head/hardhat/atmos
+	mask_type = /obj/item/clothing/mask/gas/atmos
+	storage_type = /obj/item/watertank/atmos
+
 /obj/machinery/suit_storage_unit/inherit/industrial //i know its dirty but, eh you fix it, i am mapping rn
 	name = "industrial suit storage unit"
 	icon_state = "industrial"
