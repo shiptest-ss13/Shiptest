@@ -19,6 +19,11 @@ DME Edit:
 Sprites:
   - "**/*.dmi"
 
+# Changes to a .dm or anything in the code subfolder
+Code Change:
+  - "**/*.dm"
+  - "code/**"
+
 # Changes to a .dmm or anything in the _map subfolder
 Map Change:
   - "**/*.dmm"

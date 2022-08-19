@@ -36,7 +36,6 @@
 	uniform = /obj/item/clothing/under/syndicate
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/jackboots
-	ears = /obj/item/radio/headset/syndicate/alt
 	glasses = /obj/item/clothing/glasses/science
 	suit =  /obj/item/clothing/suit/toggle/labcoat/chemist
 	suit_store = null

@@ -43,7 +43,7 @@
 	taped_integrity += patch_amount
 
 	tape_marks.Blend("#fff", ICON_ADD)
-	tape_marks.Blend(icon('whitesands/icons/obj/tapes.dmi', "[taped_icon_state]_mask"), ICON_MULTIPLY)
+	tape_marks.Blend(icon('icons/obj/tapes.dmi', "[taped_icon_state]_mask"), ICON_MULTIPLY)
 	taped_icon = new(tape_marks)
 	I.add_overlay(taped_icon)
 	I.update_icon()

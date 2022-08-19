@@ -38,7 +38,7 @@
 	gold_core_spawnable = FRIENDLY_SPAWN
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
-	var/glasses_overlay_file = 'whitesands/icons/mob/pets.dmi'
+	var/glasses_overlay_file = 'icons/mob/pets.dmi'
 	var/obj/item/clothing/glasses/glasses = null //snek glasses
 
 
@@ -144,7 +144,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/bookworm
 	name = "Bookworm"
-	icon = 'whitesands/icons/mob/pets.dmi'
+	icon = 'icons/mob/pets.dmi'
 	icon_state = "bookworm"
 	icon_living = "bookworm"
 	icon_dead = "bookworm_dead"

@@ -5,33 +5,9 @@
 #define RADIO_CHANNEL_COMMON "Common"
 #define RADIO_KEY_COMMON ";"
 
-#define RADIO_CHANNEL_SECURITY "Security"
-#define RADIO_KEY_SECURITY "s"
-#define RADIO_TOKEN_SECURITY ":s"
-
-#define RADIO_CHANNEL_ENGINEERING "Engineering"
-#define RADIO_KEY_ENGINEERING "e"
-#define RADIO_TOKEN_ENGINEERING ":e"
-
 #define RADIO_CHANNEL_COMMAND "Command"
 #define RADIO_KEY_COMMAND "c"
 #define RADIO_TOKEN_COMMAND ":c"
-
-#define RADIO_CHANNEL_SCIENCE "Science"
-#define RADIO_KEY_SCIENCE "n"
-#define RADIO_TOKEN_SCIENCE ":n"
-
-#define RADIO_CHANNEL_MEDICAL "Medical"
-#define RADIO_KEY_MEDICAL "m"
-#define RADIO_TOKEN_MEDICAL ":m"
-
-#define RADIO_CHANNEL_SUPPLY "Supply"
-#define RADIO_KEY_SUPPLY "u"
-#define RADIO_TOKEN_SUPPLY ":u"
-
-#define RADIO_CHANNEL_SERVICE "Service"
-#define RADIO_KEY_SERVICE "v"
-#define RADIO_TOKEN_SERVICE ":v"
 
 #define RADIO_CHANNEL_AI_PRIVATE "AI Private"
 #define RADIO_KEY_AI_PRIVATE "o"
@@ -43,13 +19,29 @@
 #define RADIO_TOKEN_SYNDICATE ":t"
 
 #define RADIO_CHANNEL_CENTCOM "CentCom"
-#define RADIO_KEY_CENTCOM "y"
-#define RADIO_TOKEN_CENTCOM ":y"
+#define RADIO_KEY_CENTCOM "e"
+#define RADIO_TOKEN_CENTCOM ":e"
 
 //WS Begin - SGR, Overmaps
 #define RADIO_CHANNEL_SOLGOV "SolGov"
-#define RADIO_KEY_SOLGOV "z"
-#define RADIO_TOKEN_SOLGOV ":z"
+#define RADIO_KEY_SOLGOV "s"
+#define RADIO_TOKEN_SOLGOV ":s"
+
+#define RADIO_CHANNEL_NANOTRASEN "Nanotrasen"
+#define RADIO_KEY_NANOTRASEN "n"
+#define RADIO_TOKEN_NANOTRASEN ":n"
+
+#define RADIO_CHANNEL_MINUTEMEN "Minutemen"
+#define RADIO_KEY_MINUTEMEN "m"
+#define RADIO_TOKEN_MINUTEMEN ":m"
+
+#define RADIO_CHANNEL_INTEQ "Inteq"
+#define RADIO_KEY_INTEQ "i"
+#define RADIO_TOKEN_INTEQ ":i"
+
+#define RADIO_CHANNEL_PIRATE "Pirate"
+#define RADIO_KEY_PIRATE "y"
+#define RADIO_TOKEN_PIRATE ":y"
 
 #define RADIO_CHANNEL_WIDEBAND "Wideband"
 //WS End
@@ -66,13 +58,11 @@
 #define FREQ_CTF_BLUE 1217 // CTF blue team comms frequency, blue
 #define FREQ_CENTCOM 1337 // CentCom comms frequency, gray
 #define FREQ_SOLGOV 1345 // SolGov comms frequency, dark blue WS ADDITION
-#define FREQ_SUPPLY 1347 // Supply comms frequency, light brown
-#define FREQ_SERVICE 1349 // Service comms frequency, green
-#define FREQ_SCIENCE 1351 // Science comms frequency, plum
+#define FREQ_INTEQ 1347 // Inteq comms frequency, light brown
+#define FREQ_NANOTRASEN 1351 // Nanotrasen comms frequency, plum
 #define FREQ_COMMAND 1353 // Command comms frequency, gold
-#define FREQ_MEDICAL 1355 // Medical comms frequency, soft blue
-#define FREQ_ENGINEERING 1357 // Engineering comms frequency, orange
-#define FREQ_SECURITY 1359 // Security comms frequency, red
+#define FREQ_MINUTEMEN 1355 // Minutemen comms frequency, soft blue
+#define FREQ_PIRATE 1359 // Pirate comms frequency, red
 
 #define FREQ_HOLOGRID_SOLUTION 1433
 #define FREQ_STATUS_DISPLAYS 1435

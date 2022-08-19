@@ -15,7 +15,7 @@
 /obj/item/card
 	name = "card"
 	desc = "Does card things."
-	icon = 'whitesands/icons/obj/card.dmi' //WS Edit - Actually good-looking IDs >:)
+	icon = 'icons/obj/card.dmi'
 	w_class = WEIGHT_CLASS_TINY
 
 	var/list/files = list()

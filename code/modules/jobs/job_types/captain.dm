@@ -30,6 +30,7 @@
 	id = /obj/item/card/id/gold
 	belt = /obj/item/pda/captain
 	gloves = /obj/item/clothing/gloves/color/captain
+	ears = /obj/item/radio/headset/heads/captain
 	uniform =  /obj/item/clothing/under/rank/command/captain
 	alt_uniform = /obj/item/clothing/under/rank/command/captain/parade //WS Edit - Alt Uniforms
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
@@ -56,12 +57,15 @@
 /datum/outfit/job/captain/nt
 	name = "Captain (Nanotrasen)"
 
+	ears = /obj/item/radio/headset/nanotrasen/captain
 	uniform = /obj/item/clothing/under/rank/command/captain/nt
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat/nt
 
 /datum/outfit/job/captain/solgov
 	name = "Captain (SolGov)"
+
+	ears = /obj/item/radio/headset/solgov/captain
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/solgov
 
@@ -71,6 +75,8 @@
 
 /datum/outfit/job/captain/pirate
 	name = "Captain (Pirate)"
+
+	ears = /obj/item/radio/headset/pirate/captain
 	uniform = /obj/item/clothing/under/costume/russian_officer
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate/captain
@@ -94,7 +100,7 @@
 /datum/outfit/job/captain/syndicate
 	name = "Captain (ACLF)"
 	id = /obj/item/card/id/syndicate_command/captain_id
-	ears = /obj/item/radio/headset/syndicate/alt
+	ears = /obj/item/radio/headset/syndicate/alt/captain
 	uniform = /obj/item/clothing/under/syndicate/aclf
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/HoS/syndicate
@@ -133,6 +139,7 @@
 	name = "General (Colonial Minutemen)"
 
 	head = /obj/item/clothing/head/caphat/minutemen
+	ears = /obj/item/radio/headset/heads/captain
 	uniform = /obj/item/clothing/under/rank/command/minutemen
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/minutemen
 	shoes = /obj/item/clothing/shoes/combat

@@ -49,11 +49,11 @@
 	return ..()
 
 /obj/machinery/atmospherics/components/binary/pump/update_icon_nopipes()
-	icon_state = (on && is_operational()) ? "pump_on-[set_overlay_offset(piping_layer)]" : "pump_off-[set_overlay_offset(piping_layer)]"
+	icon_state = (on && is_operational) ? "pump_on-[set_overlay_offset(piping_layer)]" : "pump_off-[set_overlay_offset(piping_layer)]"
 
 /obj/machinery/atmospherics/components/binary/pump/process_atmos()
 //	..()
-	if(!on || !is_operational())
+	if(!on || !is_operational)
 		return
 	var/datum/gas_mixture/air1 = airs[1]
 	var/datum/gas_mixture/air2 = airs[2]
@@ -157,7 +157,7 @@
 
 /obj/machinery/atmospherics/components/binary/pump/can_unwrench(mob/user)
 	. = ..()
-	if(. && on && is_operational())
+	if(. && on && is_operational)
 		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
 		return FALSE
 

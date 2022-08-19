@@ -139,7 +139,6 @@ Assistant
 	name = "Junior Agent (Assistant)"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
-	ears = /obj/item/radio/headset/syndicate
 	uniform = /obj/item/clothing/under/syndicate
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots

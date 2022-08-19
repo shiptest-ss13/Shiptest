@@ -4,7 +4,7 @@
 	density = TRUE
 	obj_integrity = 250
 	max_integrity = 250
-	icon = 'whitesands/icons/obj/shuttle.dmi'
+	icon = 'icons/obj/shuttle.dmi'
 	icon_state = "burst_plasma"
 	circuit = /obj/item/circuitboard/machine/shuttle/engine
 	var/icon_state_closed = "burst_plasma"
