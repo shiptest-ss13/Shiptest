@@ -175,6 +175,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/broadcast_login_logout = TRUE
 	///What outfit typepaths we've favorited in the SelectEquipment menu
 	var/list/favorite_outfits = list()
+	var/whois_visible = FALSE
 
 /datum/preferences/New(client/C)
 	parent = C
