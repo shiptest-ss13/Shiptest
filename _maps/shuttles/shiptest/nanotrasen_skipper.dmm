@@ -619,7 +619,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/command,
+/obj/machinery/door/airlock/command{
+	name = "Personal Quarters"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "fD" = (
@@ -770,7 +772,9 @@
 /turf/closed/wall/r_wall,
 /area/ship/hallway/central)
 "hw" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "Canteen"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -2680,6 +2684,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
+"wX" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/sign/warning/deathsposal{
+	pixel_x = -32
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/ship/hallway/central)
 "wZ" = (
 /obj/effect/spawner/structure/window/reinforced/shutters,
 /obj/machinery/door/poddoor/shutters{
@@ -3302,7 +3314,6 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "DY" = (
-/obj/machinery/door/airlock/medical,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -3317,6 +3328,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/airlock/medical{
+	name = "Infirmary"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
@@ -3800,7 +3814,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "Id" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -3813,6 +3826,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/corner/opaque/black/full,
+/obj/machinery/door/airlock/public/glass{
+	name = "Canteen"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Ir" = (
@@ -4516,7 +4532,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Ou" = (
-/obj/machinery/door/airlock/medical,
+/obj/machinery/door/airlock/medical{
+	name = "Infirmary"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -6467,7 +6485,7 @@ Wv
 WR
 KL
 Wt
-if
+wX
 if
 if
 if
