@@ -297,6 +297,12 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "pharmlobby"
 	},
+/obj/effect/turf_decal/trimline/opaque/green/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/green/warning{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/hydroponics)
 "dE" = (
@@ -2093,7 +2099,10 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/carpet/nanoweave/beige,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/cargo)
 "JF" = (
 /obj/machinery/light/small{
