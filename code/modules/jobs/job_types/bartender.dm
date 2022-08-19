@@ -45,6 +45,7 @@
 		to_chat(H, "<span class='notice'>You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!</span>")
 
 /datum/outfit/job/bartender/pharma
+	name = "Mixologist"
 
 	backpack_contents = list(/obj/item/storage/box/syringes=1, /obj/item/storage/box/drinkingglasses = 1)
 	ears = /obj/item/radio/headset/headset_med
