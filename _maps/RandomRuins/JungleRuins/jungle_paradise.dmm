@@ -54,8 +54,8 @@
 /area/ruin/jungle/paradise/misc)
 "al" = (
 /obj/structure/flora/ausbushes/reedbush{
-	pixel_y = 5;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -90,15 +90,15 @@
 /area/ruin/jungle/paradise/comms)
 "aJ" = (
 /obj/structure/railing/corner{
-	dir = 8;
-	color = "#A47449"
+	color = "#A47449";
+	dir = 8
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 14;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 14
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -131,8 +131,8 @@
 /turf/open/floor/plasteel/stairs{
 	barefootstep = "woodbarefoot";
 	color = "#A47449";
-	footstep = "wood";
-	dir = 1
+	dir = 1;
+	footstep = "wood"
 	},
 /area/ruin/jungle/paradise/darkmisc)
 "ba" = (
@@ -152,8 +152,8 @@
 /area/ruin/jungle/paradise/cargo)
 "bg" = (
 /obj/item/restraints/handcuffs{
-	pixel_y = 14;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 14
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -263,8 +263,8 @@
 /area/ruin/jungle/paradise/darkmisc)
 "bF" = (
 /obj/structure/flora/rock/jungle{
-	pixel_y = 5;
-	pixel_x = 15
+	pixel_x = 15;
+	pixel_y = 5
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
@@ -350,8 +350,8 @@
 /area/ruin/jungle/paradise/comms)
 "cj" = (
 /obj/structure/flora/rock/jungle{
-	pixel_y = -5;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = -5
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/misc)
@@ -361,8 +361,8 @@
 	pixel_y = 9
 	},
 /obj/structure/flora/grass/jungle/b{
-	pixel_y = 9;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 9
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -420,8 +420,8 @@
 	dir = 8
 	},
 /obj/item/flashlight/lantern{
-	pixel_y = 13;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 13
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/mine)
@@ -524,8 +524,8 @@
 	dir = 4
 	},
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 15;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 15
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -542,8 +542,8 @@
 	pixel_x = -6
 	},
 /obj/item/reagent_containers/glass/bottle/salglu_solution{
-	pixel_y = -4;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = -4
 	},
 /obj/structure/cable/yellow{
 	icon_state = "2-6"
@@ -565,8 +565,8 @@
 /area/ruin/jungle/paradise/comms)
 "dF" = (
 /obj/structure/flora/junglebush{
-	pixel_y = 7;
-	pixel_x = 14
+	pixel_x = 14;
+	pixel_y = 7
 	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -605,8 +605,8 @@
 /area/ruin/jungle/paradise/shuttle)
 "dR" = (
 /obj/structure/flora/rock/pile/largejungle{
-	pixel_y = 7;
-	pixel_x = -33
+	pixel_x = -33;
+	pixel_y = 7
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -786,9 +786,9 @@
 /area/ruin/jungle/paradise/shuttle)
 "fm" = (
 /obj/structure/flora/rock{
+	icon_state = "basalt2";
 	pixel_x = 4;
-	pixel_y = 13;
-	icon_state = "basalt2"
+	pixel_y = 13
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -804,8 +804,8 @@
 /area/ruin/jungle/paradise/shuttle)
 "fr" = (
 /obj/structure/flora/rock/jungle{
-	pixel_y = -36;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = -36
 	},
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/grass/jungle,
@@ -891,8 +891,8 @@
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/reedbush{
-	pixel_y = -16;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -16
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -902,36 +902,36 @@
 /area/ruin/jungle/paradise/misc)
 "fT" = (
 /obj/item/stack/ore/glass{
+	amount = 30;
 	pixel_x = -5;
-	pixel_y = 4;
-	amount = 30
+	pixel_y = 4
 	},
 /obj/item/stack/ore/iron{
-	pixel_y = -6;
+	amount = 15;
 	pixel_x = 7;
-	amount = 15
+	pixel_y = -6
 	},
 /turf/open/floor/concrete/slab_3,
 /area/ruin/jungle/paradise/construction)
 "fU" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/spline/fancy/black,
+/obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/item/stack/sheet/animalhide/monkey{
 	pixel_x = 9;
 	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/blood/old{
+	icon_state = "gib5-old";
 	pixel_x = 1;
-	pixel_y = 14;
-	icon_state = "gib5-old"
+	pixel_y = 14
 	},
 /turf/open/floor/pod/light,
 /area/ruin/jungle/paradise/misc)
 "fV" = (
 /obj/structure/flora/rock{
+	icon_state = "basalt2";
 	pixel_x = -5;
-	pixel_y = 11;
-	icon_state = "basalt2"
+	pixel_y = 11
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -967,16 +967,16 @@
 	pixel_y = -5
 	},
 /obj/structure/flora/rock/pile/largejungle{
-	pixel_y = 13;
-	pixel_x = 26
+	pixel_x = 26;
+	pixel_y = 13
 	},
 /obj/structure/flora/rock/pile/largejungle{
-	pixel_y = -4;
-	pixel_x = 43
+	pixel_x = 43;
+	pixel_y = -4
 	},
 /obj/structure/flora/grass/jungle{
-	pixel_y = 16;
-	pixel_x = -17
+	pixel_x = -17;
+	pixel_y = 16
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -988,8 +988,8 @@
 /area/ruin/jungle/paradise/darkmisc)
 "gg" = (
 /obj/structure/flora/grass/jungle/b{
-	pixel_y = -11;
-	pixel_x = -11
+	pixel_x = -11;
+	pixel_y = -11
 	},
 /obj/structure/flora/grass/jungle/b{
 	pixel_x = -27;
@@ -1040,8 +1040,8 @@
 /turf/open/floor/plasteel/stairs{
 	barefootstep = "woodbarefoot";
 	color = "#A47449";
-	footstep = "wood";
-	dir = 1
+	dir = 1;
+	footstep = "wood"
 	},
 /area/ruin/jungle/paradise/misc)
 "gz" = (
@@ -1050,8 +1050,7 @@
 /area/ruin/jungle/paradise/dorms)
 "gB" = (
 /obj/effect/turf_decal/box/corners{
-	dir = 1;
-	icon_state = "box_corners"
+	dir = 1
 	},
 /obj/structure/fermenting_barrel,
 /obj/item/reagent_containers/food/drinks/bottle/lizardwine{
@@ -1161,8 +1160,7 @@
 /area/ruin/jungle/paradise/shuttle)
 "ho" = (
 /obj/structure/railing{
-	color = "#A47449";
-	dir = 2
+	color = "#A47449"
 	},
 /obj/structure/flora/grass/jungle{
 	pixel_y = 19
@@ -1207,8 +1205,8 @@
 /area/ruin/jungle/paradise/shuttle)
 "hB" = (
 /obj/item/stack/rods{
-	pixel_y = -11;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = -11
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle,
@@ -1399,8 +1397,8 @@
 /area/ruin/jungle/paradise/med)
 "iP" = (
 /obj/structure/flora/rock/jungle{
-	pixel_y = 12;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 12
 	},
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/dirt/jungle,
@@ -1427,8 +1425,8 @@
 	icon_state = "1-9"
 	},
 /obj/structure/bedsheetbin{
-	pixel_y = 9;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 9
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/paradise/dorms)
@@ -1677,8 +1675,8 @@
 "kf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/glass/bottle{
-	pixel_y = 9;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 9
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/jungle/paradise/shuttle)
@@ -1792,7 +1790,7 @@
 	color = "#A47449";
 	dir = 9
 	},
-/obj/effect/turf_decal/spline/fancy/brown{
+/obj/effect/turf_decal/spline/fancy/opaque/brown{
 	dir = 9
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -1812,13 +1810,13 @@
 	pixel_y = 8
 	},
 /obj/item/circuitboard/machine/telecomms/processor{
-	pixel_y = -3;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = -3
 	},
 /obj/item/circuitboard/computer/comm_server,
 /obj/item/circuitboard/machine/telecomms/bus{
-	pixel_y = 8;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 8
 	},
 /obj/item/circuitboard/machine/telecomms/relay{
 	pixel_x = -4;
@@ -1845,8 +1843,8 @@
 /area/ruin/jungle/paradise/shuttle)
 "lp" = (
 /obj/structure/railing/corner{
-	dir = 8;
-	color = "#A47449"
+	color = "#A47449";
+	dir = 8
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -1921,8 +1919,8 @@
 /area/ruin/jungle/paradise/darkmisc)
 "lV" = (
 /obj/structure/flora/grass/jungle{
-	pixel_y = 11;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 11
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -1958,8 +1956,7 @@
 /area/ruin/jungle/paradise/comms)
 "mc" = (
 /obj/effect/turf_decal/box/corners{
-	dir = 4;
-	icon_state = "box_corners"
+	dir = 4
 	},
 /obj/structure/ore_box,
 /obj/structure/cable/yellow{
@@ -1972,8 +1969,8 @@
 /area/ruin/jungle/paradise/cargo)
 "md" = (
 /obj/structure/flora/ausbushes/fullgrass{
-	pixel_y = 7;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 7
 	},
 /obj/structure/flora/rock/jungle{
 	pixel_x = 20;
@@ -2248,12 +2245,12 @@
 /area/ruin/jungle/paradise/dorms)
 "nD" = (
 /obj/structure/flora/grass/jungle{
-	pixel_y = 10;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 10
 	},
 /obj/structure/flora/grass/jungle{
-	pixel_y = 6;
-	pixel_x = -31
+	pixel_x = -31;
+	pixel_y = 6
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -2275,8 +2272,8 @@
 	dir = 8
 	},
 /obj/structure/flora/ausbushes/reedbush{
-	pixel_y = 16;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 16
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -2330,16 +2327,16 @@
 /area/ruin/jungle/paradise/darkmisc)
 "nT" = (
 /obj/structure/flora/rock/pile/largejungle{
-	pixel_y = 5;
-	pixel_x = -26
+	pixel_x = -26;
+	pixel_y = 5
 	},
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
 "nU" = (
 /obj/structure/flora/ausbushes/stalkybush{
-	pixel_y = 23;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 23
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -2486,12 +2483,12 @@
 /area/ruin/jungle/paradise/shuttle)
 "oX" = (
 /obj/structure/flora/rock/jungle{
-	pixel_y = -13;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = -13
 	},
 /obj/structure/flora/junglebush{
-	pixel_y = 7;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 7
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
@@ -2512,8 +2509,7 @@
 /area/ruin/jungle/paradise/mine)
 "pd" = (
 /obj/effect/turf_decal/box/corners{
-	dir = 4;
-	icon_state = "box_corners"
+	dir = 4
 	},
 /obj/structure/radioactive/stack,
 /obj/effect/turf_decal/techfloor/corner{
@@ -2591,13 +2587,13 @@
 	},
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,
 /obj/effect/decal/cleanable/blood/old{
-	pixel_x = -6;
-	icon_state = "gib3-old"
+	icon_state = "gib3-old";
+	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/blood/old{
+	icon_state = "gib1-old";
 	pixel_x = -3;
-	pixel_y = -6;
-	icon_state = "gib1-old"
+	pixel_y = -6
 	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/pod/light,
@@ -2660,16 +2656,15 @@
 	pixel_y = 20
 	},
 /obj/structure/flora/rock/jungle{
-	pixel_y = -5;
 	icon_state = "grassb4";
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = -5
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
 "pP" = (
 /obj/structure/railing{
-	color = "#A47449";
-	dir = 2
+	color = "#A47449"
 	},
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -2842,22 +2837,19 @@
 	pixel_x = 4
 	},
 /obj/structure/railing{
-	dir = 2;
 	layer = 3.9
 	},
 /obj/item/radio{
 	desc = "An old handheld radio. You could use it, if you really wanted to.";
 	icon_state = "radio";
 	name = "old radio";
-	pixel_y = 5;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 5
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals7{
 	dir = 8
 	},
-/obj/effect/turf_decal/steeldecal/steel_decals7{
-	dir = 2
-	},
+/obj/effect/turf_decal/steeldecal/steel_decals7,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/comms)
 "rg" = (
@@ -2942,8 +2934,8 @@
 "rO" = (
 /obj/structure/table,
 /obj/item/scalpel{
-	pixel_y = 9;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 9
 	},
 /obj/item/circular_saw{
 	pixel_x = 1;
@@ -3112,7 +3104,7 @@
 	color = "#A47449";
 	dir = 1
 	},
-/obj/effect/turf_decal/spline/fancy/brown{
+/obj/effect/turf_decal/spline/fancy/opaque/brown{
 	dir = 1
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -3278,8 +3270,8 @@
 /area/ruin/jungle/paradise/cargo)
 "tJ" = (
 /obj/structure/flora/ausbushes/sparsegrass{
-	pixel_y = 3;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 3
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -3311,8 +3303,8 @@
 	},
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/grass/jungle/b{
-	pixel_y = 9;
-	icon_state = "rock3"
+	icon_state = "rock3";
+	pixel_y = 9
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -3381,8 +3373,8 @@
 /area/ruin/jungle/paradise/shuttle)
 "uB" = (
 /obj/structure/radioactive{
-	pixel_y = 9;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 9
 	},
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating/dirt/jungle,
@@ -3423,8 +3415,8 @@
 /turf/open/floor/plasteel/stairs{
 	barefootstep = "woodbarefoot";
 	color = "#A47449";
-	footstep = "wood";
-	dir = 4
+	dir = 4;
+	footstep = "wood"
 	},
 /area/ruin/jungle/paradise/comms)
 "uQ" = (
@@ -3451,7 +3443,6 @@
 "uW" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/structure/railing/corner{
-	dir = 2;
 	color = "#A47449";
 	layer = 3.9
 	},
@@ -3478,8 +3469,8 @@
 /turf/open/floor/plasteel/stairs{
 	barefootstep = "woodbarefoot";
 	color = "#A47449";
-	footstep = "wood";
-	dir = 8
+	dir = 8;
+	footstep = "wood"
 	},
 /area/ruin/jungle/paradise/darkmisc)
 "vk" = (
@@ -3554,8 +3545,8 @@
 /area/ruin/jungle/paradise/shuttle)
 "vE" = (
 /obj/item/stack/rods{
-	pixel_y = 1;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 1
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/mine)
@@ -3615,8 +3606,8 @@
 /area/ruin/jungle/paradise/misc)
 "wj" = (
 /obj/structure/railing/corner{
-	dir = 1;
-	color = "#A47449"
+	color = "#A47449";
+	dir = 1
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -3625,7 +3616,7 @@
 /area/ruin/jungle/paradise/misc)
 "wq" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/spline/fancy/black,
+/obj/effect/turf_decal/spline/fancy/opaque/black,
 /turf/open/floor/pod/light,
 /area/ruin/jungle/paradise/misc)
 "ws" = (
@@ -3647,12 +3638,11 @@
 /area/ruin/jungle/paradise/shuttle)
 "wB" = (
 /obj/structure/railing{
-	color = "#A47449";
-	dir = 2
+	color = "#A47449"
 	},
 /obj/structure/flora/rock/jungle{
-	pixel_y = 11;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 11
 	},
 /obj/structure/flora/grass/jungle{
 	pixel_x = -7;
@@ -3693,16 +3683,15 @@
 	},
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/storage/box/ingredients/wildcard{
-	pixel_y = -2;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -2
 	},
 /obj/item/storage/box/ingredients/wildcard{
-	pixel_y = 6;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 6
 	},
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 2;
 	layer = 3.9
 	},
 /obj/machinery/light/small{
@@ -3746,8 +3735,8 @@
 /turf/open/floor/plasteel/stairs{
 	barefootstep = "woodbarefoot";
 	color = "#A47449";
-	footstep = "wood";
-	dir = 4
+	dir = 4;
+	footstep = "wood"
 	},
 /area/ruin/jungle/paradise/comms)
 "xf" = (
@@ -3818,16 +3807,16 @@
 "xA" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass{
-	pixel_y = -13;
-	pixel_x = 15
+	pixel_x = 15;
+	pixel_y = -13
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "xD" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/grass/jungle{
-	pixel_y = -1;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = -1
 	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -3870,8 +3859,7 @@
 /area/ruin/jungle/paradise/cargo)
 "xO" = (
 /obj/structure/railing{
-	color = "#A47449";
-	dir = 2
+	color = "#A47449"
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -3893,8 +3881,8 @@
 /area/ruin/jungle/paradise/misc)
 "xS" = (
 /obj/item/stack/rods{
-	pixel_y = 1;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 1
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/jungle/paradise/shuttle)
@@ -3983,15 +3971,15 @@
 /area/ruin/jungle/paradise/darkmisc)
 "yz" = (
 /obj/structure/flora/ausbushes/fullgrass{
-	pixel_y = 11;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 11
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
 "yB" = (
 /obj/item/flashlight/lantern{
-	pixel_y = -2;
-	pixel_x = 12
+	pixel_x = 12;
+	pixel_y = -2
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/mine)
@@ -4147,7 +4135,7 @@
 	color = "#A47449";
 	dir = 4
 	},
-/obj/effect/turf_decal/spline/fancy/brown{
+/obj/effect/turf_decal/spline/fancy/opaque/brown{
 	dir = 4
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -4192,8 +4180,8 @@
 	pixel_y = 7
 	},
 /obj/item/circuitboard/mecha/ripley/peripherals{
-	pixel_y = -6;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = -6
 	},
 /obj/item/circuitboard/mecha/ripley/main{
 	pixel_x = 5;
@@ -4245,8 +4233,8 @@
 /area/ruin/jungle/paradise/shuttle)
 "Ak" = (
 /obj/structure/railing/corner{
-	dir = 4;
-	color = "#A47449"
+	color = "#A47449";
+	dir = 4
 	},
 /obj/structure/flora/ausbushes/stalkybush{
 	pixel_x = 17;
@@ -4339,8 +4327,7 @@
 /area/ruin/jungle/paradise/misc)
 "AS" = (
 /obj/effect/turf_decal/box/corners{
-	dir = 1;
-	icon_state = "box_corners"
+	dir = 1
 	},
 /obj/structure/closet/secure_closet/freezer/kitchen/mining,
 /obj/effect/turf_decal/techfloor/corner{
@@ -4396,8 +4383,8 @@
 /area/ruin/jungle/paradise/misc)
 "Bm" = (
 /obj/structure/railing/corner{
-	dir = 4;
-	color = "#A47449"
+	color = "#A47449";
+	dir = 4
 	},
 /obj/structure/flora/junglebush{
 	pixel_x = -6;
@@ -4430,8 +4417,7 @@
 "BB" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/railing{
-	color = "#A47449";
-	dir = 2
+	color = "#A47449"
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -4545,8 +4531,8 @@
 "Cv" = (
 /obj/structure/flora/stump,
 /obj/structure/flora/grass/jungle{
-	pixel_y = -15;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = -15
 	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -4699,9 +4685,7 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/shuttle)
 "Dy" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/yellow,
 /obj/machinery/power/apc/auto_name/west{
 	start_charge = 0
 	},
@@ -4710,12 +4694,12 @@
 /area/ruin/jungle/paradise/construction)
 "DE" = (
 /obj/item/stack/ore/salvage/scrapgold/five{
-	pixel_y = 9;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 9
 	},
 /obj/item/stack/rods{
-	pixel_y = -11;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = -11
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/shuttle)
@@ -4745,8 +4729,7 @@
 	pixel_y = 16
 	},
 /obj/structure/railing{
-	color = "#A47449";
-	dir = 2
+	color = "#A47449"
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -4778,8 +4761,7 @@
 /area/ruin/jungle/paradise/darkmisc)
 "DW" = (
 /obj/effect/turf_decal/box/corners{
-	dir = 8;
-	icon_state = "box_corners"
+	dir = 8
 	},
 /obj/structure/rack,
 /obj/item/storage/part_replacer,
@@ -4792,8 +4774,8 @@
 	pixel_y = -3
 	},
 /obj/item/stock_parts/matter_bin/bluespace{
-	pixel_y = -3;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = -3
 	},
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
@@ -4956,8 +4938,8 @@
 /area/ruin/jungle/paradise/shuttle)
 "Fb" = (
 /obj/structure/flora/grass/jungle/b{
-	pixel_y = -4;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = -4
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -4991,8 +4973,8 @@
 	pixel_y = -10
 	},
 /obj/structure/flora/ausbushes/fullgrass{
-	pixel_y = 13;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 13
 	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -5011,8 +4993,8 @@
 /area/ruin/jungle/paradise/comms)
 "Fw" = (
 /obj/structure/girder{
-	icon_state = "crystal";
-	icon = 'icons/effects/32x64.dmi'
+	icon = 'icons/effects/32x64.dmi';
+	icon_state = "crystal"
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -5045,8 +5027,8 @@
 "FM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/syringe/oxandrolone{
-	pixel_y = -7;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -7
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/jungle/paradise/shuttle)
@@ -5055,7 +5037,7 @@
 	color = "#A47449";
 	dir = 8
 	},
-/obj/effect/turf_decal/spline/fancy/brown{
+/obj/effect/turf_decal/spline/fancy/opaque/brown{
 	dir = 8
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -5091,8 +5073,8 @@
 /area/ruin/jungle/paradise/construction)
 "FY" = (
 /obj/structure/railing/corner{
-	dir = 8;
-	color = "#A47449"
+	color = "#A47449";
+	dir = 8
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -5148,9 +5130,9 @@
 "Gt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/ore/diamond{
+	amount = 2;
 	pixel_x = 6;
-	pixel_y = -6;
-	amount = 2
+	pixel_y = -6
 	},
 /turf/open/floor/concrete/slab_3,
 /area/ruin/jungle/paradise/construction)
@@ -5224,8 +5206,8 @@
 	pixel_y = -27
 	},
 /obj/structure/flora/grass/jungle{
-	pixel_y = 10;
-	pixel_x = -11
+	pixel_x = -11;
+	pixel_y = 10
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -5266,8 +5248,8 @@
 	pixel_x = 15
 	},
 /obj/structure/flora/rock/pile/largejungle{
-	pixel_y = 3;
-	pixel_x = -19
+	pixel_x = -19;
+	pixel_y = 3
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
@@ -5329,8 +5311,8 @@
 	dir = 8
 	},
 /obj/structure/girder{
-	icon_state = "crystal";
 	icon = 'icons/effects/32x64.dmi';
+	icon_state = "crystal";
 	pixel_x = 10;
 	pixel_y = -4
 	},
@@ -5361,8 +5343,8 @@
 	pixel_x = -8
 	},
 /obj/item/reagent_containers/food/snacks/grown/berries/poison{
-	pixel_y = 6;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 6
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
@@ -5409,8 +5391,8 @@
 "IJ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/grass/jungle/b{
-	pixel_y = -2;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = -2
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -5483,12 +5465,12 @@
 /area/ruin/jungle/paradise/darkmisc)
 "Js" = (
 /obj/structure/flora/grass/jungle{
-	pixel_y = 6;
-	pixel_x = 12
+	pixel_x = 12;
+	pixel_y = 6
 	},
 /obj/structure/flora/grass/jungle{
-	pixel_y = 17;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 17
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/misc)
@@ -5498,8 +5480,7 @@
 /area/ruin/jungle/paradise/darkmisc)
 "Ju" = (
 /obj/effect/turf_decal/box/corners{
-	dir = 8;
-	icon_state = "box_corners"
+	dir = 8
 	},
 /obj/item/watertank{
 	pixel_x = 10;
@@ -5519,15 +5500,13 @@
 	pixel_y = 19
 	},
 /obj/structure/railing{
-	color = "#A47449";
-	dir = 2
+	color = "#A47449"
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "Jz" = (
 /obj/structure/railing{
-	color = "#A47449";
-	dir = 2
+	color = "#A47449"
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -5625,8 +5604,8 @@
 	pixel_y = 26
 	},
 /obj/effect/mob_spawn/human/corpse/assistant{
-	pixel_y = -5;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -5
 	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -6051,8 +6030,8 @@
 /obj/item/stock_parts/subspace/transmitter,
 /obj/item/stock_parts/subspace/transmitter,
 /obj/item/t_scanner{
-	pixel_y = -11;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = -11
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/paradise/comms)
@@ -6331,8 +6310,8 @@
 /area/ruin/jungle/paradise/comms)
 "OD" = (
 /obj/structure/railing/corner{
-	dir = 1;
-	color = "#A47449"
+	color = "#A47449";
+	dir = 1
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/misc)
@@ -6353,8 +6332,8 @@
 	dir = 6
 	},
 /obj/structure/flora/grass/jungle{
-	pixel_y = -18;
-	pixel_x = 24
+	pixel_x = 24;
+	pixel_y = -18
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -6366,8 +6345,8 @@
 /area/ruin/jungle/paradise/darkmisc)
 "ON" = (
 /obj/structure/flora/ausbushes/sparsegrass{
-	pixel_y = 8;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 8
 	},
 /obj/structure/railing{
 	color = "#A47449";
@@ -6405,7 +6384,6 @@
 /area/ruin/jungle/paradise/darkmisc)
 "OY" = (
 /obj/structure/railing/corner{
-	dir = 2;
 	color = "#A47449"
 	},
 /turf/open/water/jungle,
@@ -6478,8 +6456,8 @@
 /area/ruin/jungle/paradise/mine)
 "PF" = (
 /obj/structure/flora/rock/pile/largejungle{
-	pixel_y = 13;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 13
 	},
 /obj/structure/flora/junglebush/b{
 	pixel_x = -11;
@@ -6611,8 +6589,8 @@
 /area/ruin/jungle/paradise/construction)
 "QK" = (
 /obj/structure/flora/rock/jungle{
-	pixel_y = -5;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = -5
 	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -6687,8 +6665,8 @@
 /area/ruin/jungle/paradise/mine)
 "Rn" = (
 /obj/item/wirerod{
-	pixel_y = 8;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
@@ -6725,11 +6703,11 @@
 /area/ruin/jungle/paradise/mine)
 "RG" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/spline/fancy/black,
+/obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/effect/decal/cleanable/blood/old{
+	icon_state = "gib4-old";
 	pixel_x = -14;
-	pixel_y = 6;
-	icon_state = "gib4-old"
+	pixel_y = 6
 	},
 /turf/open/floor/pod/light,
 /area/ruin/jungle/paradise/misc)
@@ -6752,8 +6730,8 @@
 /area/ruin/jungle/paradise/shuttle)
 "RU" = (
 /obj/structure/flora/rock/pile/largejungle{
-	pixel_y = -2;
-	pixel_x = -23
+	pixel_x = -23;
+	pixel_y = -2
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -6798,8 +6776,8 @@
 	dir = 4
 	},
 /obj/structure/flora/ausbushes/reedbush{
-	pixel_y = 7;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 7
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -6810,8 +6788,8 @@
 "So" = (
 /obj/structure/flora/stump,
 /obj/structure/flora/grass/jungle/b{
-	pixel_y = -11;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -11
 	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -6821,8 +6799,8 @@
 /area/ruin/jungle/paradise/misc)
 "Sw" = (
 /obj/item/stack/rods{
-	pixel_y = 9;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 9
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/mine)
@@ -6861,8 +6839,8 @@
 /area/ruin/jungle/paradise/misc)
 "SF" = (
 /obj/structure/flora/ausbushes/fullgrass{
-	pixel_y = 18;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 18
 	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -6944,8 +6922,8 @@
 	pixel_y = 6
 	},
 /obj/structure/flora/grass/jungle{
-	pixel_y = 5;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 5
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
@@ -7001,7 +6979,6 @@
 /area/ruin/jungle/paradise/dorms)
 "TN" = (
 /obj/structure/railing/corner{
-	dir = 2;
 	color = "#A47449"
 	},
 /obj/effect/turf_decal/weather/dirt{
@@ -7153,8 +7130,8 @@
 	pixel_y = -8
 	},
 /obj/structure/flora/rock/pile/largejungle{
-	pixel_y = -27;
-	pixel_x = -13
+	pixel_x = -13;
+	pixel_y = -27
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/jungle/paradise/darkmisc)
@@ -7170,19 +7147,19 @@
 /area/ruin/jungle/paradise/misc)
 "UU" = (
 /obj/structure/flora/ausbushes/fullgrass{
-	pixel_y = 7;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 7
 	},
 /obj/structure/flora/grass/jungle/b{
-	pixel_y = 14;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 14
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
 "Vf" = (
 /obj/structure/railing/corner{
-	dir = 8;
-	color = "#A47449"
+	color = "#A47449";
+	dir = 8
 	},
 /obj/structure/flora/rock/jungle{
 	pixel_x = -12;
@@ -7212,7 +7189,6 @@
 	},
 /obj/structure/table/reinforced,
 /obj/structure/railing{
-	dir = 2;
 	layer = 3.9
 	},
 /obj/machinery/recharger{
@@ -7347,7 +7323,6 @@
 /area/ruin/jungle/paradise/mine)
 "Wa" = (
 /obj/structure/railing/corner{
-	dir = 2;
 	color = "#A47449"
 	},
 /obj/effect/turf_decal/weather/dirt{
@@ -7429,8 +7404,8 @@
 	pixel_y = 16
 	},
 /obj/item/reagent_containers/food/snacks/grown/berries/poison{
-	pixel_y = 19;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 19
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
@@ -7445,8 +7420,8 @@
 	pixel_y = -13
 	},
 /obj/item/reagent_containers/glass/bottle{
-	pixel_y = 9;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 9
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/jungle/paradise/shuttle)
@@ -7629,8 +7604,8 @@
 /area/ruin/jungle/paradise/shuttle)
 "XM" = (
 /obj/structure/flora/rock/jungle{
-	pixel_y = 5;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 5
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
@@ -7754,7 +7729,7 @@
 	pixel_x = -12;
 	pixel_y = -2
 	},
-/obj/effect/turf_decal/spline/fancy/brown{
+/obj/effect/turf_decal/spline/fancy/opaque/brown{
 	dir = 5
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -7765,9 +7740,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/jungle/paradise/construction)
 "YI" = (
-/obj/structure/fence/corner{
-	dir = 2
-	},
+/obj/structure/fence/corner,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
 "YN" = (
@@ -7811,8 +7784,8 @@
 /area/ruin/jungle/paradise/shuttle)
 "YU" = (
 /obj/structure/flora/ausbushes/fullgrass{
-	pixel_y = 2;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 2
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/misc)
