@@ -537,7 +537,7 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 	prefs.asaycolor = initial(prefs.asaycolor)
 	prefs.save_preferences()
 
-/client/proc/toggle_whois_visibility()
+/client/verb/toggle_whois_visibility()
 	set name = "Toggle WhoIs Visibilty"
 	set desc = "Toggles whether your ckey is visible in WhoIs topic calls"
 	set category = "Preferences"
