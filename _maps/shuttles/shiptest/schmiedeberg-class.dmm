@@ -26,7 +26,6 @@
 /turf/open/floor/plating,
 /area/ship/security)
 "aB" = (
-/obj/machinery/power/terminal,
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -123,9 +122,6 @@
 	dir = 4;
 	pixel_x = -10;
 	pixel_y = 5
-	},
-/obj/machinery/power/terminal{
-	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -1318,9 +1314,6 @@
 	},
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/button/door{
 	id = "pharmwindows";
 	name = "window shutters";
@@ -1559,9 +1552,6 @@
 /area/ship/cargo)
 "zs" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1601,9 +1591,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
-	},
-/obj/machinery/power/terminal{
-	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -2090,9 +2077,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
@@ -2424,9 +2408,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/plumbing/input,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/medical)
@@ -2452,9 +2433,6 @@
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
 	icon_state = "0-2"
-	},
-/obj/machinery/power/terminal{
-	dir = 4
 	},
 /obj/item/gps/mining{
 	gpstag = "PHARM2"
@@ -2877,9 +2855,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "0-2"
-	},
-/obj/machinery/power/terminal{
-	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/concrete/tiles,
