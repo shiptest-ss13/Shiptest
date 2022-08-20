@@ -83,10 +83,12 @@
 	dir = 1
 	},
 /obj/docking_port/mobile{
-	preferred_direction = 4;
+	callTime = 250;
 	dir = 2;
+	launch_status = 0;
 	name = "Scout Courier";
-	port_direction = 2
+	port_direction = 8;
+	preferred_direction = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
@@ -175,15 +177,20 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "dZ" = (
-/obj/structure/grille,
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "intelwindow"
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/space/basic,
 /area/ship/cargo/office)
 "ej" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -213,6 +220,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/stairs,
 /area/ship/cargo)
@@ -258,9 +268,7 @@
 /area/ship/engineering)
 "hT" = (
 /obj/structure/curtain/cloth,
-/obj/machinery/shower{
-	pixel_y = 15
-	},
+/obj/machinery/shower,
 /obj/structure/mirror{
 	pixel_x = -28
 	},
@@ -311,6 +319,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
@@ -397,6 +408,10 @@
 /obj/item/stack/sheet/mineral/wood{
 	amount = 3
 	},
+/obj/item/stack/sheet/metal/ten,
+/obj/item/stack/sheet/metal/ten,
+/obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/glass/five,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "kL" = (
@@ -412,6 +427,10 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "kM" = (
@@ -455,6 +474,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
 "ni" = (
@@ -508,6 +531,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "pa" = (
@@ -872,6 +899,9 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "yG" = (
@@ -1193,9 +1223,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Lr" = (
-/obj/structure/toilet{
-	pixel_y = 14
-	},
+/obj/structure/toilet,
 /obj/structure/sink{
 	dir = 8;
 	pixel_x = 12
@@ -1265,6 +1293,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering)
+"Og" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew)
 "Oi" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1356,6 +1391,9 @@
 /obj/machinery/door/window{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/stairs,
 /area/ship/cargo)
 "Qy" = (
@@ -1429,7 +1467,6 @@
 /area/ship/engineering)
 "Rz" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
 /obj/machinery/door/poddoor{
 	id = "scbridge"
 	},
@@ -1902,7 +1939,7 @@ YQ
 Av
 CP
 Hd
-kM
+Og
 nF
 lZ
 pM
