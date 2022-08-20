@@ -300,13 +300,14 @@
 		ui.open()
 		LAZYSET(user_uis, user, list("tgui" = ui, "interface" = target_ui))
 
+/datum/research_web/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	var/obj/interaction_src = LAZYACCESS(user_consoles, user)
+	return interaction_src.ui_act(action, params, ui, state)
+
 /datum/research_web/ui_status(mob/user, datum/ui_state/state)
 	var/obj/interaction_src = LAZYACCESS(user_consoles, user)
-	if(interaction_src?.can_interact(user))
-		return UI_INTERACTIVE
-	else if(interaction_src?.Adjacent(user))
-		return UI_UPDATE
-	return UI_CLOSE
+	var/src_status = interaction_src?.ui_status(user, state)
+	return isnull(src_status) ? ..() : src_status
 
 /datum/research_web/ui_close(mob/user)
 	LAZYREMOVE(user_uis, user)
