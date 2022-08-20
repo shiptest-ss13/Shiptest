@@ -248,7 +248,8 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "scholo"
+	id = "scholo";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -539,6 +540,17 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"qf" = (
+/obj/machinery/door/poddoor{
+	id = "scbay"
+	},
+/obj/structure/cable,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "scholo";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "qo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
@@ -932,6 +944,12 @@
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"Cr" = (
+/obj/machinery/door/poddoor{
+	id = "scbay"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "CP" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -1799,7 +1817,7 @@ OP
 dq
 Ld
 iN
-gP
+Cr
 YQ
 YQ
 "}
@@ -1816,7 +1834,7 @@ Rr
 Hz
 Oi
 eu
-gP
+qf
 YQ
 YQ
 "}
