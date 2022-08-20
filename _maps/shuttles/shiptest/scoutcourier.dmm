@@ -83,9 +83,10 @@
 	dir = 1
 	},
 /obj/docking_port/mobile{
-	port_direction = 4;
+	port_direction = 8;
 	preferred_direction = 8;
-	dir = 2
+	dir = 2;
+	name = "Scout Courier"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
@@ -427,13 +428,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "lP" = (
-/obj/machinery/atmospherics/components/unary/tank/air,
 /obj/effect/turf_decal/box,
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
+	},
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -465,6 +468,9 @@
 "ni" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -577,6 +583,9 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "qz" = (
@@ -985,6 +994,9 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "DU" = (
@@ -1233,6 +1245,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "NW" = (
