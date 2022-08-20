@@ -799,13 +799,13 @@
 /area/ship/bridge)
 "xf" = (
 /obj/machinery/power/apc/auto_name/south{
-	pixel_y = -35
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/machinery/button/shieldwallgen{
 	name = "Holofield Controls";
 	dir = 1;
-	pixel_y = -21;
+	pixel_y = -33;
 	pixel_x = -6;
 	id = "scholo"
 	},
@@ -814,7 +814,7 @@
 	id = "scbay";
 	name = "Cargo Bay Doors";
 	pixel_x = 3;
-	pixel_y = -22;
+	pixel_y = -35;
 	dir = 1
 	},
 /obj/structure/cable{
