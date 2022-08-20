@@ -45,7 +45,7 @@ other types of metals and chemistry for reagents).
 	desc = "This usually means something in the database has corrupted. If this doesn't go away automatically, inform Central Comamnd so their techs can fix this ASAP(tm)"
 
 /datum/design/Destroy()
-	SSresearch.techweb_designs -= id
+	SSresearch_v4.instances_design -= id
 	return ..()
 
 /datum/design/proc/InitializeMaterials()

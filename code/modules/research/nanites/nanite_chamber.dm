@@ -19,7 +19,7 @@
 	var/busy_icon_state
 	var/busy_message
 	var/message_cooldown = 0
-	var/datum/techweb/linked_techweb
+	var/datum/research_web/linked_techweb
 
 /obj/machinery/nanite_chamber/Initialize()
 	. = ..()
@@ -194,9 +194,9 @@
 /obj/machinery/nanite_chamber/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/multitool))
 		var/obj/item/multitool/multi = I
-		if(istype(multi.buffer, /obj/machinery/rnd/server))
-			var/obj/machinery/rnd/server/server = multi.buffer
-			linked_techweb = server.stored_research
+		if(istype(multi.buffer, /datum/research_web))
+			linked_techweb = multi.buffer
+			visible_message("Linked to Server!")
 
 	if(!occupant && default_deconstruction_screwdriver(user, icon_state, icon_state, I))//sent icon_state is irrelevant...
 		update_icon()//..since we're updating the icon here, since the scanner can be unpowered when opened/closed

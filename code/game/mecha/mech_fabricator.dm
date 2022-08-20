@@ -12,6 +12,7 @@
 	var/time_coeff = 1
 	var/component_coeff = 1
 	var/datum/research_web/integrated/stored_research
+	var/datum/research_web/linked_web
 	var/sync = 0
 	var/part_set
 	var/datum/design/being_built
@@ -37,6 +38,22 @@
 								"IPC components",
 								"Misc"
 								)
+
+/obj/machinery/mecha_part_fabricator/Destroy()
+	QDEL_NULL(stored_research)
+	linked_web = null
+	being_built = null
+	queue.Cut()
+	matching_designs.Cut()
+	QDEL_NULL(rmat)
+	return ..()
+
+/obj/machinery/mecha_part_fabricator/multitool_act(mob/living/user, obj/item/multitool/multi)
+	if(!istype(multi.buffer, /datum/research_web))
+		return
+
+	linked_web = multi.buffer
+	return TRUE
 
 /obj/machinery/mecha_part_fabricator/Initialize(mapload)
 	stored_research = new(src, MECHFAB)
@@ -117,7 +134,7 @@
 		output += "<a href='?src=[REF(src)];screen=resources'><B>Material Amount:</B> [rmat.format_amount()]</A>"
 	else
 		output += "<font color='red'>No material storage connected, please contact the quartermaster.</font>"
-	output += "<br><a href='?src=[REF(src)];sync=1'>Sync with R&D servers</a><br>"
+	output += "<br><a href='?src=[REF(src)];sync=1'>Update Research</a><br>"
 	output += "<a href='?src=[REF(src)];screen=main'>Main Screen</a>"
 	output += "</div>"
 	output += "<form name='search' action='?src=[REF(src)]'>\
@@ -277,17 +294,6 @@
 		output += "<a href='?src=[REF(src)];process_queue=1'>Process queue</a> | <a href='?src=[REF(src)];clear_queue=1'>Clear queue</a>"
 	return output
 
-/obj/machinery/mecha_part_fabricator/proc/sync()
-	for(var/obj/machinery/computer/rdconsole/RDC in oview(7,src))
-		RDC.stored_research.copy_research_to(stored_research)
-		updateUsrDialog()
-		say("Successfully synchronized with R&D server.")
-		return
-
-	temp = "Unable to connect to local R&D Database.<br>Please check your connections and try again.<br><a href='?src=[REF(src)];clear_temp=1'>Return</a>"
-	updateUsrDialog()
-	return
-
 /obj/machinery/mecha_part_fabricator/proc/get_resource_cost_w_coeff(datum/design/D, datum/material/resource, roundto = 1)
 	return round(D.materials[resource]*component_coeff, roundto)
 
@@ -413,7 +419,9 @@
 		queue = list()
 		return update_queue_on_page()
 	if(href_list["sync"])
-		sync()
+		linked_web.copy_research_to(stored_research)
+		say("Updated internal buffer from mainframe.")
+		updateUsrDialog()
 	if(href_list["part_desc"])
 		var/T = href_list["part_desc"]
 		for(var/v in stored_research.designs_available)

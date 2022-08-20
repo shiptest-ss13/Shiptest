@@ -9,7 +9,7 @@
 	circuit = /obj/item/circuitboard/machine/nanite_program_hub
 
 	var/obj/item/disk/nanite_program/disk
-	var/datum/techweb/linked_techweb
+	var/datum/research_web/linked_techweb
 	var/current_category = "Main"
 	var/detail_view = TRUE
 	var/categories = list(
@@ -37,9 +37,8 @@
 			disk = N
 	if(istype(I, /obj/item/multitool))
 		var/obj/item/multitool/multi = I
-		if(istype(multi.buffer, /obj/machinery/rnd/server))
-			var/obj/machinery/rnd/server/serv = multi.buffer
-			linked_techweb = serv.stored_research
+		if(istype(multi.buffer, /datum/research_web))
+			linked_techweb = multi.buffer
 			visible_message("Linked to Server!")
 		return
 	else
@@ -89,8 +88,8 @@
 /obj/machinery/nanite_program_hub/ui_static_data(mob/user)
 	var/list/data = list()
 	data["programs"] = list()
-	for(var/i in linked_techweb.researched_designs)
-		var/datum/design/nanites/D = SSresearch.techweb_design_by_id(i)
+	for(var/i in linked_techweb.designs_available)
+		var/datum/design/nanites/D = SSresearch_v4.get_design(i)
 		if(!istype(D))
 			continue
 		var/cat_name = D.category[1] //just put them in the first category fuck it
@@ -118,9 +117,10 @@
 		if("download")
 			if(!disk)
 				return
-			var/datum/design/nanites/downloaded = linked_techweb.isDesignResearchedID(params["program_id"]) //check if it's a valid design
-			if(!istype(downloaded))
+			var/download_check = (params["program_id"] in linked_techweb.designs_available)
+			if(!download_check)
 				return
+			var/datum/design/nanites/downloaded = SSresearch_v4.get_design(params["program_id"])
 			if(disk.program)
 				qdel(disk.program)
 			disk.program = new downloaded.program_type
