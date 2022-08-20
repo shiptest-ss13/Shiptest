@@ -127,6 +127,60 @@
 	item_state = "tile-wood"
 	turf_type = /turf/open/floor/wood
 	resistance_flags = FLAMMABLE
+	color = WOOD_COLOR_GENERIC
+	tile_reskin_types = list(
+		/obj/item/stack/tile/wood,
+		/obj/item/stack/tile/wood/mahogany,
+		/obj/item/stack/tile/wood/maple,
+		/obj/item/stack/tile/wood/ebony,
+		/obj/item/stack/tile/wood/walnut,
+		/obj/item/stack/tile/wood/bamboo,
+		/obj/item/stack/tile/wood/birch,
+		/obj/item/stack/tile/wood/yew
+		)
+
+/obj/item/stack/tile/wood/mahogany
+	name = "mahogany wood floor tile"
+	color = WOOD_COLOR_RICH
+	turf_type = /turf/open/floor/wood/mahogany
+	merge_type = /obj/item/stack/tile/wood/mahogany
+
+
+/obj/item/stack/tile/wood/maple
+	name = "maple wood floor tile"
+	color = WOOD_COLOR_PALE
+	turf_type = /turf/open/floor/wood/maple
+	merge_type = /obj/item/stack/tile/wood/maple
+
+/obj/item/stack/tile/wood/ebony
+	name = "ebony wood floor tile"
+	color = WOOD_COLOR_BLACK
+	turf_type = /turf/open/floor/wood/ebony
+	merge_type = /obj/item/stack/tile/wood/ebony
+
+/obj/item/stack/tile/wood/walnut
+	name = "walnut wood floor tile"
+	color = WOOD_COLOR_CHOCOLATE
+	turf_type = /turf/open/floor/wood/walnut
+	merge_type = /obj/item/stack/tile/wood/walnut
+
+/obj/item/stack/tile/wood/bamboo
+	name = "bamboo wood floor tile"
+	color = WOOD_COLOR_PALE2
+	turf_type = /turf/open/floor/wood/bamboo
+	merge_type = /obj/item/stack/tile/wood/bamboo
+
+/obj/item/stack/tile/wood/birch
+	name = "birch wood floor tile"
+	color = WOOD_COLOR_PALE3
+	turf_type = /turf/open/floor/wood/bamboo
+	merge_type = /obj/item/stack/tile/wood/bamboo
+
+/obj/item/stack/tile/wood/yew
+	name = "yew wood floor tile"
+	color = WOOD_COLOR_YELLOW
+	turf_type = /turf/open/floor/wood/yew
+	merge_type = /obj/item/stack/tile/wood/yew
 
 //Basalt
 /obj/item/stack/tile/basalt
@@ -238,7 +292,7 @@
 
 /obj/item/stack/tile/carpet/nanoweave
 	name = "nanoweave carpet"
-	icon = 'whitesands/icons/obj/tiles.dmi'
+	icon = 'icons/obj/tiles.dmi'
 	desc = "A piece of nanoweave carpet."
 	icon_state = "dark_carpet_tile"
 	custom_materials = list(/datum/material/iron=500, /datum/material/plasma=500) //basically tiles made of plasteel
@@ -445,33 +499,42 @@
 
 /obj/item/stack/tile/plasteel/dark
 	name = "dark tile"
-	icon_state = "fr_tile"
 	turf_type = /turf/open/floor/plasteel/dark
 	merge_type = /obj/item/stack/tile/plasteel/dark
+	color = COLOR_TILE_GRAY
+
 /obj/item/stack/tile/plasteel/white
 	name = "white tile"
-	icon_state = "tile-bluespace"
 	turf_type = /turf/open/floor/plasteel/white
 	merge_type = /obj/item/stack/tile/plasteel/white
+	color = COLOR_WHITE
+
 /obj/item/stack/tile/plasteel/grimy
 	name = "grimy floor tile"
 	turf_type = /turf/open/floor/plasteel/grimy
 	merge_type = /obj/item/stack/tile/plasteel/grimy
+	color = null
+
 /obj/item/stack/tile/plasteel/tech
 	name = "techfloor tile"
 	icon_state = "tile_podlight"
 	turf_type = /turf/open/floor/plasteel/tech
 	merge_type = /obj/item/stack/tile/plasteel/tech
+	color = null
+
 /obj/item/stack/tile/plasteel/tech/grid
 	name = "techfloor grid tile"
 	icon_state = "tile_poddark"
 	turf_type = /turf/open/floor/plasteel/tech/grid
 	merge_type = /obj/item/stack/tile/plasteel/tech/grid
+	color = null
+
 /obj/item/stack/tile/plasteel/tech/techmaint
 	name = "techmaint tile"
 	icon_state = "tile_pod"
 	turf_type = /turf/open/floor/plasteel/tech/techmaint
 	merge_type = /obj/item/stack/tile/plasteel/tech/techmaint
+	color = null
 
 /obj/item/stack/tile/material
 	name = "floor tile"

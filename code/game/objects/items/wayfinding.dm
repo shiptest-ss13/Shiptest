@@ -11,15 +11,13 @@
 	var/interact_cooldown = 20 SECONDS //time per person for subsequent interactions
 	var/start_bal = 200 //how much money it starts with to cover wayfinder refunds
 	var/refund_amt = 40 //how much money recycling a pinpointer rewards you
-	var/datum/bank_account/synth_acc = new /datum/bank_account/remote
+	var/static/datum/bank_account/synth_acc = new /datum/bank_account/remote
 	var/ppt_cost = 65 //Jan 6 '20: Assistant can buy one roundstart (125 cr starting)
 	var/expression_timer
 
 /obj/machinery/pinpointer_dispenser/Initialize(mapload)
-	..()
-	var/datum/bank_account/civ_acc = SSeconomy.get_dep_account(ACCOUNT_CIV)
-	if(civ_acc)
-		synth_acc.transfer_money(civ_acc, start_bal) //float has to come from somewhere, right?
+	. = ..()
+	synth_acc.adjust_money(start_bal)
 
 	synth_acc.account_holder = name
 

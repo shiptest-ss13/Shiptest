@@ -2,9 +2,9 @@
 #define ENGINE_HEATING_POWER 5000000
 
 /**
-  * ### Fueled engines
-  * Shuttle engines that require a gas or gases to burn.
-  */
+ * ### Fueled engines
+ * Shuttle engines that require a gas or gases to burn.
+ */
 /obj/machinery/power/shuttle/engine/fueled
 	name = "fueled thruster"
 	desc = "A thruster that burns a specific gas that is stored in an adjacent heater."
@@ -102,9 +102,9 @@
 	//All fuel code already handled
 
 /**
-  * ### Ion Engines
-  * Engines that convert electricity to thrust. Yes, I know that's not how it works, it needs a propellant, but this is a video game.
-  */
+ * ### Ion Engines
+ * Engines that convert electricity to thrust. Yes, I know that's not how it works, it needs a propellant, but this is a video game.
+ */
 /obj/machinery/power/shuttle/engine/electric
 	name = "ion thruster"
 	desc = "A thruster that expels charged particles to generate thrust."
@@ -117,10 +117,16 @@
 	///Amount, in kilojoules, needed for a full burn.
 	var/power_per_burn = 50000
 
+/obj/machinery/power/shuttle/engine/electric/premium
+	name = "high performance ion thruster"
+	desc = "An expensive variant of a standard ion thruster, using highest quality components in order to achieve much better performance."
+	thrust = 30
+	power_per_burn = 65000
+
 /obj/machinery/power/smes/shuttle
 	name = "electric engine precharger"
 	desc = "A medium-capacity, high transfer superconducting magnetic energy storage unit specially made for use with shuttle engines."
-	icon = 'whitesands/icons/obj/shuttle.dmi'
+	icon = 'icons/obj/shuttle.dmi'
 	input_level = 0
 	input_level_max = 50000
 	output_level = 50000
@@ -160,9 +166,9 @@
 	return power_per_burn
 
 /**
-  * ### Liquid Fuel Engines
-  * Turns a specific reagent or reagents into thrust.
-  */
+ * ### Liquid Fuel Engines
+ * Turns a specific reagent or reagents into thrust.
+ */
 /obj/machinery/power/shuttle/engine/liquid
 	name = "liquid thruster"
 	desc = "A thruster that burns reagents stored in the engine for fuel."
@@ -214,9 +220,9 @@
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/oil
 
 /**
-  * ### Void Engines
-  * These engines are literally magic. Adminspawn only.
-  */
+ * ### Void Engines
+ * These engines are literally magic. Adminspawn only.
+ */
 /obj/machinery/power/shuttle/engine/void
 	name = "void thruster"
 	desc = "A thruster using technology to breach voidspace for propulsion."

@@ -43,6 +43,7 @@
 	rarity = 20
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/frostoil = 0.25, /datum/reagent/consumable/nutriment/vitamin = 0.02, /datum/reagent/consumable/nutriment = 0.02)
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/icepepper
 	seed = /obj/item/seeds/chili/ice
@@ -70,6 +71,7 @@
 	rarity = 20
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/condensedcapsaicin = 0.3, /datum/reagent/consumable/capsaicin = 0.55, /datum/reagent/consumable/nutriment = 0.04, /datum/reagent/sodium = 0.10)
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/ghost_chili
 	seed = /obj/item/seeds/chili/ghost
@@ -87,7 +89,7 @@
 	. = ..()
 	if(.)
 		return
-	if( ismob(loc) )
+	if(ismob(loc))
 		held_mob = loc
 		START_PROCESSING(SSobj, src)
 

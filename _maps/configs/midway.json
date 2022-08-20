@@ -1,15 +1,29 @@
 {
 	"map_name": "Midway-class Atmospherics Tanker Ship",
+	"prefix": "ISV",
+	"namelists": ["GENERAL", "SPACE", "ENGINEERING", "MYTHOLOGICAL"],
 	"map_short_name": "Midway-class",
 	"map_path": "_maps/shuttles/shiptest/whiteship_midway.dmm",
 	"map_id": "whiteship_midway",
 	"job_slots": {
-		"Captain": 1,
-		"Quartermaster": 1,
-		"Medical Doctor": 1,
-		"Station Engineer": 1,
-		"Atmospheric Technician": 1,
-		"Assistant": 3
+		"Chief Engineer": 1,
+		"Asteroid Miner": {
+			"outfit": "/datum/outfit/job/miner/hazard",
+			"slots": 1
+		},
+		"Ship's Physician": {
+			"outfit": "/datum/outfit/job/paramedic/traumateam",
+			"slots": 1
+		},
+		"Ship's Engineer": {
+			"outfit": "/datum/outfit/job/engineer/hazard",
+			"slots": 2
+		},
+		"Atmospheric Technician": 2,
+		"Junior Engineer": {
+			"outfit": "/datum/outfit/job/engineer/juniorengineer",
+			"slots": 2
+		}
 	},
 	"cost": 500
 }

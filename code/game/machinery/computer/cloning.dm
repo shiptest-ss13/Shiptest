@@ -43,14 +43,14 @@
 			var/obj/machinery/clonepod/pod = P
 			if(pod.occupant && mind && pod.clonemind == mind)
 				return null
-			if(pod.is_operational() && !(pod.occupant || pod.mess))
+			if(pod.is_operational && !(pod.occupant || pod.mess))
 				return pod
 
 /obj/machinery/computer/cloning/proc/HasEfficientPod()
 	if(pods)
 		for(var/P in pods)
 			var/obj/machinery/clonepod/pod = P
-			if(pod.is_operational() && pod.efficiency > 5)
+			if(pod.is_operational && pod.efficiency > 5)
 				return TRUE
 
 /obj/machinery/computer/cloning/proc/GetAvailableEfficientPod(mind = null)
@@ -59,7 +59,7 @@
 			var/obj/machinery/clonepod/pod = P
 			if(pod.occupant && pod.clonemind == mind)
 				return pod
-			else if(!. && pod.is_operational() && !(pod.occupant || pod.mess) && pod.efficiency > 5)
+			else if(!. && pod.is_operational && !(pod.occupant || pod.mess) && pod.efficiency > 5)
 				. = pod
 
 /proc/grow_clone_from_record(obj/machinery/clonepod/pod, datum/data/record/R, empty)
@@ -108,7 +108,7 @@
 		scannerf = locate(/obj/machinery/dna_scannernew, get_step(src, direction))
 
 		// If found and operational, return the scanner
-		if (!isnull(scannerf) && scannerf.is_operational())
+		if (!isnull(scannerf) && scannerf.is_operational)
 			return scannerf
 
 	// If no scanner was found, it will return null
@@ -120,7 +120,7 @@
 	for(var/direction in GLOB.cardinals)
 
 		podf = locate(/obj/machinery/clonepod, get_step(src, direction))
-		if (!isnull(podf) && podf.is_operational())
+		if (!isnull(podf) && podf.is_operational)
 			AttachCloner(podf)
 
 /obj/machinery/computer/cloning/proc/AttachCloner(obj/machinery/clonepod/pod)
@@ -243,7 +243,7 @@
 				dat += "<h4>[active_record.fields["name"]][body_only ? " - BODY-ONLY" : ""]</h4>"
 				dat += "Scan ID [active_record.fields["id"]] \
 					[!body_only ? "<a href='byond://?src=[REF(src)];clone=[active_record.fields["id"]]'>Clone</a>" : "" ]\
-				 	<a href='byond://?src=[REF(src)];clone=[active_record.fields["id"]];empty=TRUE'>Empty Clone</a><br>"
+					<a href='byond://?src=[REF(src)];clone=[active_record.fields["id"]];empty=TRUE'>Empty Clone</a><br>"
 
 				var/obj/item/implant/health/H = locate(active_record.fields["imp"])
 
@@ -348,7 +348,7 @@
 			if("exclude_ue")
 				include_ue = FALSE
 
-	else if ((href_list["scan"]) && !isnull(scanner) && scanner.is_operational())
+	else if ((href_list["scan"]) && !isnull(scanner) && scanner.is_operational)
 		scantemp = ""
 		var/body_only = href_list["body_only"]
 		loading = TRUE
@@ -359,7 +359,7 @@
 		addtimer(CALLBACK(src, .proc/do_scan, usr, body_only), 2 SECONDS)
 
 		//No locking an open scanner.
-	else if ((href_list["lock"]) && !isnull(scanner) && scanner.is_operational())
+	else if ((href_list["lock"]) && !isnull(scanner) && scanner.is_operational)
 		if ((!scanner.locked) && (scanner.occupant))
 			scanner.locked = TRUE
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
@@ -560,11 +560,6 @@
 		scantemp = "<font class='bad'>Mental interface failure.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 		return
-	if(!body_only && SSeconomy.full_ancap)
-		if(!has_bank_account)
-			scantemp = "<font class='average'>Subject is either missing an ID card with a bank account on it, or does not have an account to begin with. Please ensure the ID card is on the body before attempting to scan.</font>"
-			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
-			return
 	var/datum/data/record/R = new()
 	if(dna.species)
 		if(NO_DNA_COPY in dna.species.species_traits)

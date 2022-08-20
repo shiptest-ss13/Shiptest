@@ -1,7 +1,7 @@
 /obj/structure/catwalk
 	name = "catwalk"
 	desc = "A catwalk for easier EVA maneuvering and cable placement."
-	icon = 'whitesands/icons/obj/smooth_structures/catwalk.dmi'
+	icon = 'icons/obj/smooth_structures/more_catwalk.dmi'
 	icon_state = "catwalk"
 	base_icon_state = "catwalk"
 	density = FALSE
@@ -45,7 +45,7 @@
 		var/turf/open/floor/turf_type = initial(plated_tile.turf_type)
 		smoothing_flags &= ~SMOOTH_BITMASK
 		SSicon_smooth.remove_from_queues(src)
-		var/image/I = image('whitesands/icons/obj/catwalks.dmi', "plated")
+		var/image/I = image('icons/obj/smooth_structures/more_catwalk.dmi', "plated")
 		I.color = initial(turf_type.color)
 		overlays += I
 	else

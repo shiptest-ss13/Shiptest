@@ -10,7 +10,6 @@
 	layer = ABOVE_MOB_LAYER
 	density = TRUE
 	circuit = /obj/item/circuitboard/machine/medical_kiosk
-	payment_department = ACCOUNT_MED
 	var/obj/item/scanner_wand
 	var/default_price = 15          //I'm defaulting to a low price on this, but in the future I wouldn't have an issue making it more or less expensive.
 	var/active_price = 15           //Change by using a multitool on the board.
@@ -42,12 +41,6 @@
 	else
 		say("No account detected.")  //No homeless crew.
 		return
-	if(account?.account_job?.paycheck_department == payment_department)
-		use_power(20)
-		paying_customer = TRUE
-		say("Hello, esteemed medical staff!")
-		RefreshParts()
-		return
 	if(!account.has_money(active_price))
 		say("You do not possess the funds to purchase this.")  //No jobless crew, either.
 		return
@@ -71,7 +64,7 @@
 	return
 
 /obj/machinery/medical_kiosk/update_icon_state()
-	if(is_operational())
+	if(is_operational)
 		icon_state = "kiosk_off"
 	else
 		icon_state = "kiosk"

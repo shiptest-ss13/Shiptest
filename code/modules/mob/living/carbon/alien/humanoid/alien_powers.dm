@@ -152,7 +152,7 @@ Doesn't work on other aliens/AI.*/
 
 /obj/effect/proc_holder/alien/acid/proc/corrode(atom/target,mob/living/carbon/user = usr)
 	if(target in oview(1,user))
-		if(target.acid_act(200, 100))
+		if(target.acid_act(400, 100))
 			user.visible_message("<span class='alertalien'>[user] vomits globs of vile stuff all over [target]. It begins to sizzle and melt under the bubbling mess of acid!</span>")
 			return 1
 		else
@@ -284,20 +284,20 @@ Doesn't work on other aliens/AI.*/
 /obj/effect/proc_holder/alien/sneak
 	name = "Sneak"
 	desc = "Blend into the shadows to stalk your prey."
-	active = 0
+	active = FALSE
 
 	action_icon_state = "alien_sneak"
 
 /obj/effect/proc_holder/alien/sneak/fire(mob/living/carbon/alien/humanoid/user)
 	if(!active)
-		user.alpha = 75 //Still easy to see in lit areas with bright tiles, almost invisible on resin.
-		user.sneaking = 1
-		active = 1
+		user.alpha = 25
+		user.sneaking = TRUE
+		active = TRUE
 		to_chat(user, "<span class='noticealien'>You blend into the shadows...</span>")
 	else
 		user.alpha = initial(user.alpha)
-		user.sneaking = 0
-		active = 0
+		user.sneaking = FALSE
+		active = FALSE
 		to_chat(user, "<span class='noticealien'>You reveal yourself!</span>")
 
 

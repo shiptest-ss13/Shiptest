@@ -8,7 +8,7 @@
 	name = "shuttle atmospherics device"
 	desc = "This does something to do with shuttle atmospherics"
 	icon_state = "heater"
-	icon = 'whitesands/icons/obj/shuttle.dmi'
+	icon = 'icons/obj/shuttle.dmi'
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater
 	name = "engine heater"
@@ -118,10 +118,10 @@
 	return air_contents.get_moles(gas_type) >= required
 
 /**
-  * Burns a specific amount of one type of gas. Returns how much was actually used.
-  * * amount - The amount of mols of fuel to burn.
-  * * gas_type - The gas type to burn.
-  */
+ * Burns a specific amount of one type of gas. Returns how much was actually used.
+ * * amount - The amount of mols of fuel to burn.
+ * * gas_type - The gas type to burn.
+ */
 /obj/machinery/atmospherics/components/unary/shuttle/heater/proc/consume_fuel(amount, datum/gas/gas_type)
 	var/datum/gas_mixture/air_contents = use_tank ? fuel_tank?.air_contents : airs[1]
 	if(!air_contents)

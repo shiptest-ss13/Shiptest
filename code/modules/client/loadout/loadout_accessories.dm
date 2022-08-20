@@ -48,11 +48,6 @@
 
 //Misc
 
-/datum/gear/accessory/armband_red
-	display_name = "armband"
-	path = /obj/item/clothing/accessory/armband
-	slot = null
-
 /datum/gear/accessory/waistcoat
 	display_name = "waistcoat"
 	path = /obj/item/clothing/accessory/waistcoat
@@ -71,6 +66,16 @@
 /datum/gear/accessory/maidneckpiece
 	display_name = "maid neckpiece"
 	path = /obj/item/clothing/neck/maid
+
+/datum/gear/accessory/gloves/black
+	display_name = "black gloves"
+	description = "Standard hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/color/black
+
+/datum/gear/accessory/gloves/white
+	display_name = "white gloves"
+	description = "Standard hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/color/white
 
 /datum/gear/accessory/gloves/evening
 	display_name = "evening gloves"

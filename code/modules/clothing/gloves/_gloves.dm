@@ -12,7 +12,7 @@
 	equip_delay_other = 40
 	cuttable = TRUE
 	clothamnt = 2
-	greyscale_colors = list(list(10, 13))
+	greyscale_colors = list(list(10, 13), list(11, 14), list(9, 12))
 	greyscale_icon_state = "gloves"
 
 /obj/item/clothing/gloves/wash(clean_types)

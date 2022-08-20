@@ -64,7 +64,7 @@
 
 /datum/chemical_reaction/liquid_solder
 	results = list(/datum/reagent/medicine/liquid_solder = 3)
-	required_reagents = list( /datum/reagent/consumable/ethanol = 1, /datum/reagent/copper = 1, /datum/reagent/silver = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/copper = 1, /datum/reagent/silver = 1)
 	required_temp = 370
 	mix_message = "The mixture becomes a metallic slurry."
 
@@ -246,7 +246,7 @@ WS End*/
 
 /datum/chemical_reaction/psicodine
 	results = list(/datum/reagent/medicine/psicodine = 5)
-	required_reagents = list( /datum/reagent/medicine/mannitol = 2, /datum/reagent/water = 2, /datum/reagent/impedrezene = 1)
+	required_reagents = list(/datum/reagent/medicine/mannitol = 2, /datum/reagent/water = 2, /datum/reagent/impedrezene = 1)
 
 /*WS Begin - No Cobby
 
@@ -258,18 +258,20 @@ WS End */
 
 /datum/chemical_reaction/medsuture
 	required_reagents = list(/datum/reagent/cellulose = 10, /datum/reagent/toxin/formaldehyde = 20, /datum/reagent/medicine/polypyr = 15) //This might be a bit much, reagent cost should be reviewed after implementation.
+	mob_react = FALSE
 
 /datum/chemical_reaction/medsuture/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
-	for(var/i = 1, i <= created_volume, i++)
+	for(var/i in 1 to created_volume)
 		new /obj/item/stack/medical/suture/medicated(location)
 
 /datum/chemical_reaction/medmesh
 	required_reagents = list(/datum/reagent/cellulose = 20, /datum/reagent/consumable/aloejuice = 20, /datum/reagent/space_cleaner/sterilizine = 10)
+	mob_react = FALSE
 
 /datum/chemical_reaction/medmesh/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
-	for(var/i = 1, i <= created_volume, i++)
+	for(var/i in 1 to created_volume)
 		new /obj/item/stack/medical/mesh/advanced(location)
 
 /datum/chemical_reaction/converbital
@@ -313,11 +315,11 @@ WS End */
 	required_reagents = list(/datum/reagent/medicine/lavaland_extract = 1, /datum/reagent/medicine/bonefixingjuice = 1, /datum/reagent/titanium = 5)
 
 /datum/chemical_reaction/pure_soulus_dust_hollow
-	results = list(/datum/reagent/medicine/soulus/pure = 10, )
+	results = list(/datum/reagent/medicine/soulus/pure = 10,)
 	required_reagents = list(/datum/reagent/medicine/soulus = 20, /datum/reagent/medicine/system_cleaner = 1, /datum/reagent/water/hollowwater = 10)
 
 /datum/chemical_reaction/pure_soulus_dust_holy
-	results = list(/datum/reagent/medicine/soulus/pure = 10, )
+	results = list(/datum/reagent/medicine/soulus/pure = 10,)
 	required_reagents = list(/datum/reagent/medicine/soulus = 20, /datum/reagent/medicine/system_cleaner = 1, /datum/reagent/water/holywater = 10)
 
 /datum/chemical_reaction/chartreuse

@@ -10,8 +10,6 @@
 	circuit = /obj/item/circuitboard/machine/stasis
 	idle_power_usage = 40
 	active_power_usage = 340
-	fair_market_price = 10
-	payment_department = ACCOUNT_MED
 	var/stasis_enabled = TRUE
 	var/last_stasis_sound = FALSE
 	var/stasis_can_toggle = 0
@@ -66,7 +64,7 @@
 	. = ..()
 
 /obj/machinery/stasis/proc/stasis_running()
-	return stasis_enabled && is_operational()
+	return stasis_enabled && is_operational
 
 /obj/machinery/stasis/update_icon_state()
 	if(machine_stat & BROKEN)
@@ -122,7 +120,7 @@
 	if(!can_be_occupant(L))
 		return
 	occupant = L
-	if(stasis_running() && check_nap_violations())
+	if(stasis_running())
 		chill_out(L)
 	update_icon()
 
@@ -133,7 +131,7 @@
 	update_icon()
 
 /obj/machinery/stasis/process()
-	if( !( occupant && isliving(occupant) && check_nap_violations() ) )
+	if(!occupant || !isliving(occupant))
 		use_power = IDLE_POWER_USE
 		return
 	var/mob/living/L_occupant = occupant
@@ -151,8 +149,5 @@
 /obj/machinery/stasis/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
 	return default_deconstruction_crowbar(I) || .
-
-/obj/machinery/stasis/nap_violation(mob/violator)
-	unbuckle_mob(violator, TRUE)
 
 #undef STASIS_TOGGLE_COOLDOWN

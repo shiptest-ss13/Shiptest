@@ -48,7 +48,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("canister", /obj/machinery/portable_atmospherics/canister, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
-	new/datum/stack_recipe("floor tile", /obj/item/stack/tile/plasteel, 1, 4, 20), \
+	new/datum/stack_recipe("plasteel floor tile", /obj/item/stack/tile/plasteel, 1, 4, 20), \
 	new/datum/stack_recipe("metal rod", /obj/item/stack/rods, 1, 2, 60), \
 	null, \
 	new/datum/stack_recipe("wall girders", /obj/structure/girder, 2, time = 40, one_per_turf = TRUE, on_floor = TRUE, trait_booster = TRAIT_QUICK_BUILD, trait_modifier = 0.75), \
@@ -385,7 +385,7 @@ GLOBAL_LIST_INIT(silk_recipes, list ( \
 	name = "silk"
 	desc = "A long soft material. This one is made from cotton rather than spidersilk."
 	singular_name = "Silk Sheet"
-	icon = 'whitesands/icons/obj/stack_objects.dmi'
+	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "sheet-silk"
 	novariants = TRUE
 	merge_type = /obj/item/stack/sheet/silk
@@ -556,10 +556,6 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 /obj/item/stack/sheet/runed_metal/attack_self(mob/living/user)
 	if(!iscultist(user))
 		to_chat(user, "<span class='warning'>Only one with forbidden knowledge could hope to work this metal...</span>")
-		return
-	var/area/A = get_area(user)
-	if(A && !(A.flags_1 & CULT_PERMITTED_1))
-		to_chat(user, "<span class='warning'>The veil is not weak enough here.</span>")
 		return FALSE
 	return ..()
 

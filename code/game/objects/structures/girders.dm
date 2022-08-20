@@ -239,7 +239,8 @@
 			state = GIRDER_DISASSEMBLED
 			to_chat(user, "<span class='notice'>You disassemble the girder.</span>")
 			var/obj/item/stack/sheet/metal/M = new (loc, 2)
-			M.add_fingerprint(user)
+			if (!QDELETED(M)) // might be a stack that's been merged
+				M.add_fingerprint(user)
 			qdel(src)
 		return TRUE
 
@@ -331,6 +332,12 @@
 	state = GIRDER_REINF
 	girderpasschance = 0
 	max_integrity = 350
+
+/obj/structure/girder/reinforced/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		var/remains = pick(/obj/item/stack/rods, /obj/item/stack/sheet/metal)
+		new remains(loc, 2)
+	qdel(src)
 
 
 

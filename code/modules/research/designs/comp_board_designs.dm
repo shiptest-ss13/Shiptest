@@ -102,7 +102,7 @@
 	id = "cloning"
 	build_path = /obj/item/circuitboard/computer/cloning
 	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/comconsole
 	name = "Computer Design (Communications)"
@@ -110,7 +110,6 @@
 	id = "comconsole"
 	build_path = /obj/item/circuitboard/computer/communications
 	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SECURITY				//Honestly should have a bridge techfab for this sometime.
 
 /datum/design/board/idcardconsole
 	name = "Computer Design (ID Console)"
@@ -118,7 +117,6 @@
 	id = "idcardconsole"
 	build_path = /obj/item/circuitboard/computer/card
 	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SECURITY				//Honestly should have a bridge techfab for this sometime.
 
 /datum/design/board/crewconsole
 	name = "Computer Design (Crew monitoring computer)"
@@ -198,7 +196,7 @@
 	id = "mechacontrol"
 	build_path = /obj/item/circuitboard/computer/mecha_control
 	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/mechapower
 	name = "Computer Design (Mech Bay Power Control Console)"
@@ -206,7 +204,7 @@
 	id = "mechapower"
 	build_path = /obj/item/circuitboard/computer/mech_bay_power_console
 	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/rdconsole
 	name = "Computer Design (R&D Console)"

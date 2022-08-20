@@ -13,6 +13,8 @@
 	var/datum/admins/holder = null
 	///Needs to implement InterceptClickOn(user,params,atom) proc
 	var/datum/click_intercept = null
+	///Time when the click was intercepted
+	var/click_intercept_time = 0
 	///Used for admin AI interaction
 	var/AI_Interact = FALSE
 
@@ -41,13 +43,6 @@
 	///Current area of the controlled mob
 	var/area = null
 
-		///////////////
-		//SOUND STUFF//
-		///////////////
-	///Currently playing ambience sound
-	var/ambience_playing = null
-	///Whether an ambience sound has been played and one shouldn't be played again, unset by a callback
-	var/played = FALSE
 		////////////
 		//SECURITY//
 		////////////
@@ -78,6 +73,8 @@
 	var/mouse_up_icon = null
 	///used to make a special mouse cursor, this one for mouse up icon
 	var/mouse_down_icon = null
+	///used to override the mouse cursor so it doesnt get reset
+	var/mouse_override_icon = null
 
 	///Used for ip intel checking to identify evaders, disabled because of issues with traffic
 	var/ip_intel = "Disabled"
@@ -193,4 +190,7 @@
 
 	/// If the client is currently under the restrictions of the interview system
 	var/interviewee = FALSE
+
+	/// Used by SSserver_maint to detect if a client is newly AFK.
+	var/last_seen_afk = 0
 

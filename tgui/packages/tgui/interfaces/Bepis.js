@@ -1,44 +1,50 @@
 import { useBackend } from '../backend';
-import { Box, Button, Grid, LabeledList, NumberInput, Section } from '../components';
+import {
+  Box,
+  Button,
+  Grid,
+  LabeledList,
+  NumberInput,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 
 export const Bepis = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    amount,
-  } = data;
+  const { amount } = data;
   return (
-    <Window
-      width={500}
-      height={480}>
+    <Window width={500} height={480}>
       <Window.Content>
         <Section title="Business Exploration Protocol Incubation Sink">
           <Section
             title="Information"
             backgroundColor="#450F44"
-            buttons={(
+            buttons={
               <Button
                 icon="power-off"
                 content={data.manual_power ? 'Off' : 'On'}
                 selected={!data.manual_power}
-                onClick={() => act('toggle_power')} />
-            )}>
-            All you need to know about the B.E.P.I.S. and you!
-            The B.E.P.I.S. performs hundreds of tests a second
-            using electrical and financial resources to invent
-            new products, or discover new technologies otherwise
-            overlooked for being too risky or too niche to produce!
+                onClick={() => act('toggle_power')}
+              />
+            }
+          >
+            All you need to know about the B.E.P.I.S. and you! The B.E.P.I.S.
+            performs hundreds of tests a second using electrical and financial
+            resources to invent new products, or discover new technologies
+            otherwise overlooked for being too risky or too niche to produce!
           </Section>
           <Section
             title="Payer's Account"
-            buttons={(
+            buttons={
               <Button
                 icon="redo-alt"
                 content="Reset Account"
-                onClick={() => act('account_reset')} />
-            )}>
-            Console is currently being operated
-            by {data.account_owner ? data.account_owner : 'no one'}.
+                onClick={() => act('account_reset')}
+              />
+            }
+          >
+            Console is currently being operated by{' '}
+            {data.account_owner ? data.account_owner : 'no one'}.
           </Section>
           <Grid>
             <Grid.Column size={1.5}>
@@ -53,8 +59,7 @@ export const Bepis = (props, context) => {
                   <LabeledList.Item label="Innovation Bonus">
                     {data.positive_cash_offset}
                   </LabeledList.Item>
-                  <LabeledList.Item label="Risk Offset"
-                    color="bad">
+                  <LabeledList.Item label="Risk Offset" color="bad">
                     {data.negative_cash_offset}
                   </LabeledList.Item>
                   <LabeledList.Item label="Deposit Amount">
@@ -65,9 +70,12 @@ export const Bepis = (props, context) => {
                       maxValue={30000}
                       step={100}
                       stepPixelSize={2}
-                      onChange={(e, value) => act('amount', {
-                        amount: value,
-                      })} />
+                      onChange={(e, value) =>
+                        act('amount', {
+                          amount: value,
+                        })
+                      }
+                    />
                   </LabeledList.Item>
                 </LabeledList>
               </Section>
@@ -75,22 +83,20 @@ export const Bepis = (props, context) => {
                 <Button
                   icon="donate"
                   content="Deposit Credits"
-                  disabled={data.manual_power === 1
-                    || data.silicon_check === 1}
+                  disabled={data.manual_power === 1 || data.silicon_check === 1}
                   onClick={() => act('deposit_cash')}
                 />
                 <Button
                   icon="eject"
                   content="Withdraw Credits"
                   disabled={data.manual_power === 1}
-                  onClick={() => act('withdraw_cash')} />
+                  onClick={() => act('withdraw_cash')}
+                />
               </Box>
             </Grid.Column>
             <Grid.Column>
               <Section title="Market Data and Analysis">
-                <Box>
-                  Average technology cost: {data.mean_value}
-                </Box>
+                <Box>Average technology cost: {data.mean_value}</Box>
                 <Box>
                   Current chance of Success: Est. {data.success_estimate}%
                 </Box>
@@ -105,7 +111,8 @@ export const Bepis = (props, context) => {
                   icon="microscope"
                   disabled={data.manual_power === 1}
                   onClick={() => act('begin_experiment')}
-                  content="Begin Testing" />
+                  content="Begin Testing"
+                />
               </Section>
             </Grid.Column>
           </Grid>

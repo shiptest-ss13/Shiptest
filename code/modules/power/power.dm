@@ -15,6 +15,7 @@
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
 	active_power_usage = 0
+	req_ship_access = TRUE
 
 /obj/machinery/power/Destroy()
 	disconnect_from_network()
@@ -73,7 +74,7 @@
 
 // returns true if the area has power on given channel (or doesn't require power).
 // defaults to power_channel
-/obj/machinery/proc/powered(var/chan = -1) // defaults to power_channel
+/obj/machinery/proc/powered(chan = -1) // defaults to power_channel
 	if(!loc)
 		return FALSE
 	if(!use_power)
@@ -105,12 +106,12 @@
 	addStaticPower(-value, powerchannel)
 
 /**
-  * Called whenever the power settings of the containing area change
-  *
-  * by default, check equipment channel & set flag, can override if needed
-  *
-  * Returns TRUE if the NOPOWER flag was toggled
-  */
+ * Called whenever the power settings of the containing area change
+ *
+ * by default, check equipment channel & set flag, can override if needed
+ *
+ * Returns TRUE if the NOPOWER flag was toggled
+ */
 /obj/machinery/proc/power_change()
 	SIGNAL_HANDLER
 	SHOULD_CALL_PARENT(1)
@@ -121,12 +122,12 @@
 		if(machine_stat & NOPOWER)
 			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_RESTORED)
 			. = TRUE
-		machine_stat &= ~NOPOWER
+		set_machine_stat(machine_stat & ~NOPOWER)
 	else
 		if(!(machine_stat & NOPOWER))
 			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_LOST)
 			. = TRUE
-		machine_stat |= NOPOWER
+		set_machine_stat(machine_stat | NOPOWER)
 	update_icon()
 
 // connect the machine to a powernet if a node cable is present on the turf
@@ -262,7 +263,7 @@
 		P = worklist[index] //get the next power object found
 		index++
 
-		if( istype(P, /obj/structure/cable))
+		if(istype(P, /obj/structure/cable))
 			var/obj/structure/cable/C = P
 			if(C.powernet != PN) //add it to the powernet, if it isn't already there
 				PN.add_cable(C)

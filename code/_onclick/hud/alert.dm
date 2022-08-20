@@ -6,13 +6,13 @@
 /mob/proc/throw_alert(category, type, severity, obj/new_master, override = FALSE)
 
 /* Proc to create or update an alert. Returns the alert if the alert is new or updated, 0 if it was thrown already
- category is a text string. Each mob may only have one alert per category; the previous one will be replaced
- path is a type path of the actual alert type to throw
- severity is an optional number that will be placed at the end of the icon_state for this alert
- For example, high pressure's icon_state is "highpressure" and can be serverity 1 or 2 to get "highpressure1" or "highpressure2"
- new_master is optional and sets the alert's icon state to "template" in the ui_style icons with the master as an overlay.
- Clicks are forwarded to master
- Override makes it so the alert is not replaced until cleared by a clear_alert with clear_override, and it's used for hallucinations.
+category is a text string. Each mob may only have one alert per category; the previous one will be replaced
+path is a type path of the actual alert type to throw
+severity is an optional number that will be placed at the end of the icon_state for this alert
+For example, high pressure's icon_state is "highpressure" and can be serverity 1 or 2 to get "highpressure1" or "highpressure2"
+new_master is optional and sets the alert's icon state to "template" in the ui_style icons with the master as an overlay.
+Clicks are forwarded to master
+Override makes it so the alert is not replaced until cleared by a clear_alert with clear_override, and it's used for hallucinations.
  */
 
 	if(!category || QDELETED(src))
@@ -295,15 +295,15 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	var/obj/item/receiving
 
 /**
-  * Handles assigning most of the variables for the alert that pops up when an item is offered
-  *
-  * Handles setting the name, description and icon of the alert and tracking the person giving
-  * and the item being offered, also registers a signal that removes the alert from anyone who moves away from the giver
-  * Arguments:
-  * * taker - The person receiving the alert
-  * * giver - The person giving the alert and item
-  * * receiving - The item being given by the giver
-  */
+ * Handles assigning most of the variables for the alert that pops up when an item is offered
+ *
+ * Handles setting the name, description and icon of the alert and tracking the person giving
+ * and the item being offered, also registers a signal that removes the alert from anyone who moves away from the giver
+ * Arguments:
+ * * taker - The person receiving the alert
+ * * giver - The person giving the alert and item
+ * * receiving - The item being given by the giver
+ */
 /atom/movable/screen/alert/give/proc/setup(mob/living/carbon/taker, mob/living/carbon/giver, obj/item/receiving)
 	name = "[giver] is offering [receiving]"
 	desc = "[giver] is offering [receiving]. Click this alert to take it."
@@ -724,8 +724,8 @@ so as to remain in compliance with the most up-to-date laws."
 /atom/movable/screen/alert/Click(location, control, params)
 	if(!usr || !usr.client)
 		return
-	var/paramslist = params2list(params)
-	if(paramslist["shift"]) // screen objects don't do the normal Click() stuff so we'll cheat
+	var/list/modifiers = params2list(params)
+	if(LAZYACCESS(modifiers, SHIFT_CLICK)) // screen objects don't do the normal Click() stuff so we'll cheat
 		to_chat(usr, "<span class='boldnotice'>[name]</span> - <span class='info'>[desc]</span>")
 		return
 	if(usr != owner)

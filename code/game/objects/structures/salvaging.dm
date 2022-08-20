@@ -17,22 +17,20 @@
 		if(prob(salvageable_parts[path]))
 			new path (loc)
 
-/obj/structure/salvageable/attackby(obj/item/tool, mob/living/user, params)
-	if((user.a_intent != INTENT_HELP) && tool.tool_behaviour == TOOL_CROWBAR)
-		return
-	return ..()
-
 /obj/structure/salvageable/crowbar_act(mob/living/user, obj/item/tool)
 	. = ..()
-	user.visible_message(user,"<span class='notice'>[user] starts dismantling [src].</span>", \
+	if(user.a_intent == INTENT_HARM)
+		return FALSE
+	user.visible_message("<span class='notice'>[user] starts dismantling [src].</span>", \
 					"<span class='notice'>You start salvaging anything useful from [src]...</span>")
 	tool.play_tool_sound(src, 100)
 	if(do_after(user, 8 SECONDS, target = src))
-		user.visible_message(user, "<span class='notice'>[user] dismantles [src].</span>", \
+		user.visible_message("<span class='notice'>[user] dismantles [src].</span>", \
 						"<span class='notice'>You salvage [src].</span>")
 		dismantle(user)
 		tool.play_tool_sound(src, 100)
 		qdel(src)
+	return TRUE
 
 
 //Types themself, use them, but not the parent object
@@ -509,7 +507,7 @@
 /obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop
 	loot = list(
 			/obj/item/gun/energy/lasercannon/unrestricted = 1,
-			/obj/item/gun/ballistic/automatic/proto/unrestricted = 1,
+			/obj/item/gun/ballistic/automatic/smg/proto/unrestricted = 1,
 			/obj/item/gun/energy/temperature/security = 1,
 		)
 /obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop

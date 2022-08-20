@@ -29,7 +29,7 @@
 
 						var maintable_data = document.getElementById('maintable_data');
 						var ltr = maintable_data.getElementsByTagName("tr");
-						for ( var i = 0; i < ltr.length; ++i )
+						for (var i = 0; i < ltr.length; ++i)
 						{
 							try{
 								var tr = ltr\[i\];
@@ -40,7 +40,7 @@
 								var td = ltd\[0\];
 								var lsearch = td.getElementsByClassName("filter_data");
 								var search = lsearch\[0\];
-								if ( search.innerText.toLowerCase().indexOf(filter) == -1 )
+								if (search.innerText.toLowerCase().indexOf(filter) == -1)
 								{
 									tr.innerHTML = "";
 									i--;
@@ -277,11 +277,13 @@
 			var/M_name = html_encode(M.name)
 			var/M_rname = html_encode(M.real_name)
 			var/M_key = html_encode(M.key)
+			var/M_last_ip = ""
 			var/previous_names = ""
-			if(M_key)
-				var/datum/player_details/P = GLOB.player_details[ckey(M_key)]
+			if(M.ckey)
+				var/datum/player_details/P = GLOB.player_details[M.ckey]
 				if(P)
 					previous_names = P.played_names.Join(",")
+					M_last_ip = P.last_known_ip
 			previous_names = html_encode(previous_names)
 
 			//output for each mob
@@ -300,7 +302,7 @@
 						<span hidden id="data[i]_rname">[M_rname]</span>
 						<span hidden id="data[i]_prevnames">[previous_names]</span>
 						<span hidden id="data[i]_key">[M_key]</span>
-						<span hidden id="data[i]_lastip">[M.lastKnownIP]</span>
+						<span hidden id="data[i]_lastip">[M_last_ip]</span>
 						<span hidden id="data[i]_isantag">[is_antagonist]</span>
 						<span hidden id="data[i]_ref">[REF(M)]</span>
 						</a>

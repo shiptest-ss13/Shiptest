@@ -25,7 +25,7 @@
 	resistance_flags = NONE
 	max_integrity = 300
 	greyscale_icon_state = "backpack"
-	greyscale_colors = list(list(13, 17))
+	greyscale_colors = list(list(13, 17), list(12, 17), list(12, 21))
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
@@ -225,12 +225,13 @@
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
 	item_state = "satchel-norm"
-	species_exception = list(/datum/species/kepori)
+	greyscale_icon_state = "satchel"
+	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
 	desc = "It's a very fancy satchel made with fine leather."
-	icon = 'whitesands/icons/obj/storage.dmi'		//WS Edit - Suitcases
+	icon = 'icons/obj/storage.dmi'		//WS Edit - Suitcases
 	icon_state = "satchel"
 	item_state = "satchel"
 
@@ -345,10 +346,12 @@
 /obj/item/storage/backpack/messenger
 	name = "messenger bag"
 	desc = "A sturdy backpack worn over one shoulder."
-	icon = 'whitesands/icons/obj/storage.dmi'
+	icon = 'icons/obj/storage.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "courierbag"
 	item_state = "courierbag"
+	greyscale_icon_state = "satchel"
+	greyscale_colors = list(list(15, 16), list(19, 13), list(13, 18))
 
 /obj/item/storage/backpack/messenger/chem
 	name = "chemistry messenger bag"
@@ -420,6 +423,7 @@
 	icon_state = "duffel"
 	item_state = "duffel"
 	slowdown = 1
+	greyscale_colors = list(list(21, 11), list(14, 19), list(15, 16))
 
 /obj/item/storage/backpack/duffelbag/ComponentInitialize()
 	. = ..()
@@ -609,7 +613,7 @@
 /obj/item/storage/backpack/duffelbag/syndie/c20rbundle/PopulateContents()
 	new /obj/item/ammo_box/magazine/smgm45(src)
 	new /obj/item/ammo_box/magazine/smgm45(src)
-	new /obj/item/gun/ballistic/automatic/c20r(src)
+	new /obj/item/gun/ballistic/automatic/smg/c20r(src)
 	new /obj/item/suppressor/specialoffer(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle
@@ -627,7 +631,7 @@
 /obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle/PopulateContents()
 	new /obj/item/clothing/shoes/magboots/syndie(src)
 	new /obj/item/storage/firstaid/tactical(src)
-	new /obj/item/gun/ballistic/automatic/l6_saw/toy(src)
+	new /obj/item/gun/ballistic/automatic/hmg/l6_saw/toy(src)
 	new /obj/item/ammo_box/foambox/riot(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/med/bioterrorbundle
@@ -637,7 +641,7 @@
 	new /obj/item/reagent_containers/spray/chemsprayer/bioterror(src)
 	new /obj/item/storage/box/syndie_kit/chemical(src)
 	new /obj/item/gun/syringe/syndicate(src)
-	new /obj/item/gun/ballistic/automatic/c20r/toy(src)
+	new /obj/item/gun/ballistic/automatic/smg/c20r/toy(src)
 	new /obj/item/storage/box/syringes(src)
 	new /obj/item/ammo_box/foambox/riot(src)
 	new /obj/item/grenade/chem_grenade/bioterrorfoam(src)

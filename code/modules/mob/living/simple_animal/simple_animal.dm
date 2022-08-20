@@ -63,9 +63,9 @@
 	///This damage is taken when atmos doesn't fit all the requirements above.
 	var/unsuitable_atmos_damage = 2
 
-	///LETTING SIMPLE ANIMALS ATTACK? WHAT COULD GO WRONG. Defaults to zero so Ian can still be cuddly.
-	var/melee_damage_lower = 0
-	var/melee_damage_upper = 0
+	//Defaults to zero so Ian can still be cuddly. Moved up the tree to living! This allows us to bypass some hardcoded stuff.
+	melee_damage_lower = 0
+	melee_damage_upper = 0
 	///how much damage this simple animal does to objects, if any.
 	var/obj_damage = 0
 	///How much armour they ignore, as a flat reduction from the targets armour value.
@@ -86,8 +86,6 @@
 	///Set to 1 to allow breaking of crates,lockers,racks,tables; 2 for walls; 3 for Rwalls.
 	var/environment_smash = ENVIRONMENT_SMASH_NONE
 
-	///LETS SEE IF I CAN SET SPEEDS FOR SIMPLE MOBS WITHOUT DESTROYING EVERYTHING. Higher speed is slower, negative speed is faster.
-	var/speed = 1
 
 	///Hot simple_animal baby making vars.
 	var/list/childtype = null
@@ -154,7 +152,6 @@
 		real_name = name
 	if(!loc)
 		stack_trace("Simple animal being instantiated in nullspace")
-	update_simplemob_varspeed()
 	if(dextrous)
 		AddComponent(/datum/component/personal_crafting)
 	if(footstep_type)
@@ -232,7 +229,7 @@
 						turns_since_move = 0
 			return 1
 
-/mob/living/simple_animal/proc/handle_automated_speech(var/override)
+/mob/living/simple_animal/proc/handle_automated_speech(override)
 	set waitfor = FALSE
 	if(speak_chance)
 		if(prob(speak_chance) || override)
@@ -373,15 +370,6 @@
 	if(stat)
 		return FALSE
 	return ..()
-
-/mob/living/simple_animal/proc/set_varspeed(var_value)
-	speed = var_value
-	update_simplemob_varspeed()
-
-/mob/living/simple_animal/proc/update_simplemob_varspeed()
-	if(speed == 0)
-		remove_movespeed_modifier(/datum/movespeed_modifier/simplemob_varspeed)
-	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/simplemob_varspeed, multiplicative_slowdown = speed)
 
 /mob/living/simple_animal/get_status_tab_items()
 	. = ..()

@@ -113,7 +113,7 @@
 /area/shuttle/custom
 	name = "Custom player shuttle"
 	area_flags = BLOBS_ALLOWED
-	flags_1 = CAN_BE_DIRTY_1 | CULT_PERMITTED_1
+	flags_1 = CAN_BE_DIRTY_1
 
 /area/shuttle/custom/powered
 	name = "Custom Powered player shuttle"
@@ -156,7 +156,7 @@
 /area/shuttle/escape
 	name = "Emergency Shuttle"
 	area_flags = BLOBS_ALLOWED
-	flags_1 = CAN_BE_DIRTY_1 | CULT_PERMITTED_1
+	flags_1 = CAN_BE_DIRTY_1
 
 /area/shuttle/escape/backup
 	name = "Backup Emergency Shuttle"
@@ -171,7 +171,6 @@
 
 /area/shuttle/escape/meteor
 	name = "\proper a meteor with engines strapped to it"
-	luminosity = NONE
 
 /area/shuttle/transport
 	name = "Transport Shuttle"

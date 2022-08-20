@@ -1,7 +1,7 @@
 /mob/living/simple_animal/turtle
 	name = "Frank"
 	desc = "An adorable, slow moving, Texas pal."
-	icon = 'whitesands/icons/mob/pets.dmi'
+	icon = 'icons/mob/pets.dmi'
 	icon_state = "yeeslow"
 	icon_living = "yeeslow"
 	icon_dead = "yeeslow_dead"
@@ -18,7 +18,7 @@
 	response_harm_simple = "push aside"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	gold_core_spawnable = NO_SPAWN
 	melee_damage_lower = 0.5
 	melee_damage_upper = 1

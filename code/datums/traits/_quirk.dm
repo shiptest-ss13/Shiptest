@@ -19,7 +19,8 @@
 		return
 	quirk_holder = quirk_mob
 	SSquirks.quirk_objects += src
-	to_chat(quirk_holder, gain_text)
+	if(gain_text)
+		to_chat(quirk_holder, gain_text)
 	quirk_holder.roundstart_quirks += src
 	if(mob_trait)
 		ADD_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
@@ -34,12 +35,12 @@
 
 
 /**
-  * On client connection set quirk preferences.
-  *
-  * Run post_add to set the client preferences for the quirk.
-  * Clear the attached signal for login.
-  * Used when the quirk has been gained and no client is attached to the mob.
-  */
+ * On client connection set quirk preferences.
+ *
+ * Run post_add to set the client preferences for the quirk.
+ * Clear the attached signal for login.
+ * Used when the quirk has been gained and no client is attached to the mob.
+ */
 /datum/quirk/proc/on_quirk_holder_first_login(mob/living/source)
 		SIGNAL_HANDLER
 
@@ -50,7 +51,8 @@
 	STOP_PROCESSING(SSquirks, src)
 	remove()
 	if(quirk_holder)
-		to_chat(quirk_holder, lose_text)
+		if(lose_text)
+			to_chat(quirk_holder, lose_text)
 		quirk_holder.roundstart_quirks -= src
 		if(mob_trait)
 			REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)

@@ -4,7 +4,7 @@
 /obj/item/reagent_containers/food/drinks
 	name = "drink"
 	desc = "yummy"
-	icon = 'whitesands/icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks.dmi'
 	icon_state = null
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
@@ -55,7 +55,7 @@
 
 /obj/item/reagent_containers/food/drinks/afterattack(obj/target, mob/user , proximity)
 	. = ..()
-	if(!proximity)
+	if(!proximity || !check_allowed_items(target,target_self=1))
 		return
 
 	if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
@@ -96,6 +96,17 @@
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
 		to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
+
+	else if(reagents.total_volume && is_drainable())
+		switch(user.a_intent)
+			if(INTENT_HELP)
+				attempt_pour(target, user)
+			if(INTENT_HARM)
+				user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
+									"<span class='notice'>You splash the contents of [src] onto [target].</span>")
+				reagents.expose(target, TOUCH)
+				reagents.clear_reagents()
+				playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 
 /obj/item/reagent_containers/food/drinks/attackby(obj/item/I, mob/user, params)
 	var/hotness = I.get_temperature()
@@ -263,7 +274,7 @@
 /obj/item/reagent_containers/food/drinks/waterbottle
 	name = "bottle of water"
 	desc = "A bottle of water filled at an old Earth bottling facility."
-	icon = 'whitesands/icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks.dmi'
 	icon_state = "smallbottle"
 	item_state = "bottle"
 	list_reagents = list(/datum/reagent/water = 49.5, /datum/reagent/fluorine = 0.5)//see desc, don't think about it too hard
@@ -383,7 +394,7 @@
 		return
 	var/obj/item/broken_bottle/B = new (loc)
 	B.icon_state = icon_state
-	var/icon/I = new('whitesands/icons/obj/drinks.dmi', src.icon_state)
+	var/icon/I = new('icons/obj/drinks.dmi', src.icon_state)
 	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
 	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
 	B.icon = I
@@ -442,7 +453,7 @@
 /obj/item/reagent_containers/food/drinks/colocup
 	name = "colo cup"
 	desc = "A cheap, mass produced style of cup, typically used at parties. They never seem to come out red, for some reason..."
-	icon = 'whitesands/icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks.dmi'
 	icon_state = "colocup"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
@@ -720,8 +731,15 @@
 	desc = "Unleash the ape!"
 	icon_state = "monkey_energy"
 	item_state = "monkey_energy"
-	list_reagents = list(/datum/reagent/consumable/monkey_energy = 50)
+	list_reagents = list(/datum/reagent/consumable/monkey_energy = 40, /datum/reagent/consumable/electrolytes = 10)
 	foodtype = SUGAR | JUNKFOOD
+
+/obj/item/reagent_containers/food/drinks/soda_cans/efuel
+	name = "E-Fuel"
+	desc = "Shocking for the Elzu!"
+	icon_state = "monkey_energy"
+	item_state = "monkey_energy"
+	list_reagents = list(/datum/reagent/consumable/electrolytes = 50)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/air
 	name = "canned air"

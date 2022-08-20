@@ -360,7 +360,7 @@
 			cyborg.cell.use(5)
 		repair_tick = 0
 
-		if((world.time - 2000) > msg_cooldown )
+		if((world.time - 2000) > msg_cooldown)
 			var/msgmode = "standby"
 			if(cyborg.health < 0)
 				msgmode = "critical"
@@ -615,6 +615,51 @@
 	var/mob/living/silicon/robot/Cyborg = usr
 	GLOB.crewmonitor.show(Cyborg,Cyborg)
 
+/obj/item/borg/upgrade/ship_access_chip
+	name = "silicon ship access chip"
+	desc = "A module that grants cyborgs and AI access to the ship this was printed from."
+	icon_state = "card_mod"
+	var/datum/overmap/ship/controlled/ship
+
+/obj/item/borg/upgrade/ship_access_chip/examine(mob/user)
+	. = ..()
+	. += "The chip has access for [ship.name] installed."
+
+/obj/item/borg/upgrade/ship_access_chip/action(mob/living/silicon/robot/robot, user = usr)
+	. = ..()
+	if(.)
+		var/obj/item/borg/upgrade/ship_access_chip/chip = locate() in robot.module
+		if(chip)
+			to_chat(user, "<span class='warning'>[robot] already has access to [ship.name]!</span>")
+			return FALSE
+
+		chip = new(robot.module)
+		robot.module.basic_modules += chip
+		robot.module.add_module(chip, FALSE, TRUE)
+		robot.add_ship_access(ship)
+
+/obj/item/borg/upgrade/ship_access_chip/deactivate(mob/living/silicon/robot/robot, user = usr)
+	. = ..()
+	if (.)
+		var/obj/item/borg/upgrade/ship_access_chip/chip = locate() in robot.module
+		if (chip)
+			robot.module.remove_module(chip, TRUE)
+		robot.remove_ship_access(ship)
+
+/obj/item/borg/upgrade/ship_access_chip/afterattack(mob/living/silicon/ai/ai, mob/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+	if(!istype(ai))
+		return
+	if(ai.has_ship_access(ship))
+		to_chat(user, "<span class='warning'>[ai] already has access to [ship.name]!</span>")
+		return
+
+	to_chat(ai, "<span class='notice'>[user] has upgraded you with access to [ship.name].</span>")
+	ai.add_ship_access(ship)
+	to_chat(user, "<span class='notice'>You upgrade [ai]. [src] is consumed in the process.</span>")
+	qdel(src)
 
 /obj/item/borg/upgrade/transform
 	name = "borg module picker (Standard)"

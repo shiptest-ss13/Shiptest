@@ -23,8 +23,9 @@
 	bolt_wording = "pump"
 	cartridge_wording = "shell"
 	tac_reloads = FALSE
-	fire_rate = 1 //reee
 	pickup_sound =  'sound/items/handling/shotgun_pickup.ogg'
+	fire_delay = 7
+	pb_knockback = 2
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	. = 0
@@ -42,7 +43,6 @@
 	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for non-lethal riot control."
 	icon_state = "riotshotgun"
 	item_state = "shotgun"
-	fire_delay = 7
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
 	can_be_sawn_off  = TRUE
@@ -82,6 +82,9 @@
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
 	semi_auto = TRUE
 
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube/mindshield
+	pin = /obj/item/firing_pin/implant/mindshield
+
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Alt-click to pump it.</span>"
@@ -118,6 +121,7 @@
 /obj/item/gun/ballistic/shotgun/bulldog
 	name = "\improper Bulldog Shotgun"
 	desc = "A semi-auto, mag-fed shotgun for combat in narrow corridors, nicknamed 'Bulldog' by boarding parties. Compatible only with specialized 8-round drum magazines."
+	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "bulldog"
 	item_state = "bulldog"
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
@@ -140,8 +144,6 @@
 	semi_auto = TRUE
 	internal_magazine = FALSE
 	tac_reloads = TRUE
-	fire_rate = 2
-	automatic = 1
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
 
@@ -176,7 +178,6 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	can_be_sawn_off  = TRUE
 	pb_knockback = 3 // it's a super shotgun!
-	fire_rate = 2 //being double barrelled, you don't rely on internal mechanisms.
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/AltClick(mob/user)
 	. = ..()
@@ -355,9 +356,9 @@
 	unique_reskin = null
 	recoil = 10
 	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'whitesands/sound/weapons/gun/shotgun/quadfire.ogg'
-	rack_sound = 'whitesands/sound/weapons/gun/shotgun/quadrack.ogg'
-	load_sound = 'whitesands/sound/weapons/gun/shotgun/quadinsert.ogg'
+	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
+	load_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
 	fire_sound_volume = 50
 	rack_sound_volume = 50
 	can_be_sawn_off = FALSE
@@ -385,15 +386,27 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/hundred
 
 /obj/item/gun/ballistic/shotgun/winchester
-	name = "Winchester 2073"
-	desc = "A sturdy lever action rifle. Although this model is a antique model, the design goes even further back, and has been proven reliable over 600 years."
+	name = "Winchester MK.2"
+	desc = "A sturdy lever action rifle. This one is a newer reproduction."
+	icon_state = "winchester"
+	item_state = "winchester"
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
-	icon_state = "winchester"
-	item_state = "winchester"
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+
+/obj/item/gun/ballistic/shotgun/winchester/lethal
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
+
+/obj/item/gun/ballistic/shotgun/winchester/mk1
+	name = "Winchester MK.1"
+	desc = "A sturdy lever action rifle. This older pattern appears to be an antique, in excellent condition despite its age."
+	icon_state = "winchestermk1"
+	item_state = "winchestermk1"
+
+/obj/item/gun/ballistic/shotgun/winchester/mk1/lethal
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal

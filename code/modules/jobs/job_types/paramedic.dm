@@ -1,26 +1,19 @@
 /datum/job/paramedic
-	title = "Paramedic"
-	department_head = list("Chief Medical Officer")
-	faction = "Station"
+	name = "Paramedic"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the chief medical officer"
-	selection_color = "#ffeef0"
 	wiki_page = "Paramedic"
-	alt_titles = list("Emergency Medical Technician", "Combat Life Saver")
-	senior_title = "Field Surgeon"
 
 	outfit = /datum/outfit/job/paramedic
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, ACCESS_MAINT_TUNNELS, ACCESS_EVA) //WS edit - Gen/Sci Split + Reduces Paramed access
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_CLONING, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, ACCESS_MAINT_TUNNELS, ACCESS_EVA)		//WS edit - Reduces paramed access
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_MED
 
 	display_order = JOB_DISPLAY_ORDER_PARAMEDIC
 
 /datum/outfit/job/paramedic
 	name = "Paramedic"
+	job_icon = "paramedic"
 	jobtype = /datum/job/paramedic
 
 	ears = /obj/item/radio/headset/headset_med
@@ -88,3 +81,13 @@
 	head = /obj/item/clothing/head/soft/cybersun
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
+
+/datum/outfit/job/paramedic/inteq
+	name = "IRMG Corpsman (Inteq)"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
+	head = /obj/item/clothing/head/soft/inteq/corpsman
+	suit = /obj/item/clothing/suit/armor/inteq/corpsman
+	shoes = /obj/item/clothing/shoes/combat
+	belt = /obj/item/storage/belt/medical/webbing/paramedic
+	ears = /obj/item/radio/headset/headset_medsec/alt

@@ -29,14 +29,30 @@
 			"uniqueItems": true,
 			"items": {
 				"type": "string",
-				"enum": ["GENERAL", "PIRATES", "BRITISH_NAVY", "MERCANTILE", "REVOLUTIONARY", "SPACE", "NATURAL", "NATURAL_AGGRESSIVE", "BEASTS", "MYTHOLOGICAL", "HISTORICAL", "WEAPONS", "PILLS", "ENGINEERING"]
+				"enum": [
+					"GENERAL",
+					"PIRATES",
+					"BRITISH_NAVY",
+					"MERCANTILE",
+					"REVOLUTIONARY",
+					"SPACE",
+					"NATURAL",
+					"NATURAL_AGGRESSIVE",
+					"BEASTS",
+					"MYTHOLOGICAL",
+					"HISTORICAL",
+					"WEAPONS",
+					"PILLS",
+					"ENGINEERING",
+					"MAGICAL"
+				]
 			}
 		},
 		"map_path": {
 			"title": "Map File Path",
 			"type": "string",
 			"description": "The path to the ship class's map file. Use forward slashes (/) for directories, and include the .dmm extension. Map files must be somewhere under the _maps folder.",
-			"pattern": "^_maps\/([a-zA-Z0-9_/.]*)dmm$"
+			"pattern": "^_maps/([a-zA-Z0-9_/.]*)dmm$"
 		},
 		"map_id": {
 			"title": "Map ID (DEPRECATED)",
@@ -60,7 +76,7 @@
 							"outfit": {
 								"type": "string",
 								"description": "The name of the outfit that will be placed in this slot. Must be exact, will error if not found in the code.",
-								"pattern": "^\/datum\/outfit\/(.*)$"
+								"pattern": "^/datum/outfit/(.*)$"
 							},
 							"officer": {
 								"type": "boolean",
@@ -92,8 +108,5 @@
 		}
 	},
 
-	"required": [
-		"map_name",
-		"map_path"
-	]
+	"required": ["map_name", "map_path"]
 }

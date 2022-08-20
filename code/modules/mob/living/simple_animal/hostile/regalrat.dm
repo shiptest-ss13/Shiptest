@@ -25,6 +25,7 @@
 	attack_sound = 'sound/weapons/punch1.ogg'
 	ventcrawler = VENTCRAWLER_ALWAYS
 	unique_name = TRUE
+	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("rat")
 	var/datum/action/cooldown/coffer
 	var/datum/action/cooldown/riot
@@ -36,6 +37,9 @@
 	riot = new /datum/action/cooldown/riot
 	coffer.Grant(src)
 	riot.Grant(src)
+	INVOKE_ASYNC(src, .proc/get_player)
+
+/mob/living/simple_animal/hostile/regalrat/proc/get_player()
 	var/list/mob/dead/observer/candidates = pollGhostCandidates("Do you want to play as the Royal Rat, cheesey be his crown?", ROLE_SENTIENCE, null, FALSE, 100, POLL_IGNORE_SENTIENCE_POTION)
 	if(LAZYLEN(candidates) && !mind)
 		var/mob/dead/observer/C = pick(candidates)
@@ -74,8 +78,8 @@
 		. += "<span class='warning'>Who is this foolish false king? This will not stand!</span>"
 
 /**
-  *This action creates trash, money, dirt, and cheese.
-  */
+ *This action creates trash, money, dirt, and cheese.
+ */
 /datum/action/cooldown/coffer
 	name = "Fill Coffers"
 	desc = "Your newly granted regality and poise let you scavenge for lost junk, but more importantly, cheese."
@@ -117,8 +121,8 @@
 	StartCooldown()
 
 /**
-  *This action checks all nearby mice, and converts them into hostile rats. If no mice are nearby, creates a new one.
-  */
+ *This action checks all nearby mice, and converts them into hostile rats. If no mice are nearby, creates a new one.
+ */
 
 /datum/action/cooldown/riot
 	name = "Raise Army"

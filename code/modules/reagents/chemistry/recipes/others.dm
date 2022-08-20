@@ -481,11 +481,11 @@
 	..()
 //scream powder
 /datum/chemical_reaction/scream
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/consumable/cream = 5, /datum/reagent/consumable/ethanol/lizardwine = 5	)
+	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/consumable/cream = 5, /datum/reagent/consumable/ethanol/lizardwine = 5)
 	required_temp = 374
 
 /datum/chemical_reaction/scream/on_reaction(datum/reagents/holder, created_volume)
-	playsound(holder.my_atom, pick(list( 'sound/voice/human/malescream_1.ogg', 'sound/voice/human/malescream_2.ogg', 'sound/voice/human/malescream_3.ogg', 'sound/voice/human/malescream_4.ogg', 'sound/voice/human/malescream_5.ogg', 'sound/voice/human/malescream_6.ogg', 'sound/voice/human/femalescream_1.ogg', 'sound/voice/human/femalescream_2.ogg', 'sound/voice/human/femalescream_3.ogg', 'sound/voice/human/femalescream_4.ogg', 'sound/voice/human/femalescream_5.ogg', 'sound/voice/human/wilhelm_scream.ogg')), created_volume*5,TRUE)
+	playsound(holder.my_atom, pick(list('sound/voice/human/malescream_1.ogg', 'sound/voice/human/malescream_2.ogg', 'sound/voice/human/malescream_3.ogg', 'sound/voice/human/malescream_4.ogg', 'sound/voice/human/malescream_5.ogg', 'sound/voice/human/malescream_6.ogg', 'sound/voice/human/femalescream_1.ogg', 'sound/voice/human/femalescream_2.ogg', 'sound/voice/human/femalescream_3.ogg', 'sound/voice/human/femalescream_4.ogg', 'sound/voice/human/femalescream_5.ogg', 'sound/voice/human/wilhelm_scream.ogg')), created_volume*5,TRUE)
 
 /datum/chemical_reaction/hair_dye
 	results = list(/datum/reagent/hair_dye = 5)
@@ -590,7 +590,7 @@
 
 /datum/chemical_reaction/pentaerythritol
 	results = list(/datum/reagent/pentaerythritol = 2)
-	required_reagents = list(/datum/reagent/acetaldehyde = 1, /datum/reagent/toxin/formaldehyde = 3, /datum/reagent/water = 1 )
+	required_reagents = list(/datum/reagent/acetaldehyde = 1, /datum/reagent/toxin/formaldehyde = 3, /datum/reagent/water = 1)
 
 /datum/chemical_reaction/acetaldehyde
 	results = list(/datum/reagent/acetaldehyde = 3)
@@ -614,10 +614,6 @@
 /datum/chemical_reaction/mutationtoxin/lizard
 	results = list(/datum/reagent/mutationtoxin/lizard = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/liquidgibs = 10)
-
-/datum/chemical_reaction/mutationtoxin/felinid
-	results = list(/datum/reagent/mutationtoxin/felinid = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/toxin/fentanyl = 10, /datum/reagent/impedrezene = 10)
 
 /datum/chemical_reaction/mutationtoxin/fly
 	results = list(/datum/reagent/mutationtoxin/fly = 1)
@@ -679,6 +675,18 @@
 	results = list(/datum/reagent/mutationtoxin/plasma = 1)
 	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/toxin/plasma = 60, /datum/reagent/uranium = 20)
 
+/datum/chemical_reaction/cement
+	results = list(/datum/reagent/cement = 6)
+	required_reagents = list(/datum/reagent/carbon = 2, /datum/reagent/hydrogen = 2, /datum/reagent/oxygen = 2, /datum/reagent/water = 1)
+	required_temp = 400
+	mix_message = "The mixture boils off a grey vapor..."//The water boils off, leaving the cement
+
+/datum/chemical_reaction/hexement
+	results = list(/datum/reagent/cement/hexement = 1)
+	required_reagents = list(/datum/reagent/cement = 6, /datum/reagent/phenol = 1)
+	required_temp = 400
+	mix_message = "The mixture rapidly condenses and darkens in color..."
+
 /datum/chemical_reaction/cellulose_carbonization/ash		// Sub for cellulose
 	required_reagents = list(/datum/reagent/ash_fibers)
 
@@ -688,6 +696,7 @@
 
 /datum/chemical_reaction/herbal_brute
 	required_reagents = list(/datum/reagent/ash_fibers = 10, /datum/reagent/consumable/vitfro = 10, /datum/reagent/consumable/ethanol = 10, /datum/reagent/stabilizing_agent = 5)
+	mob_react = FALSE
 
 /datum/chemical_reaction/herbal_brute/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -696,6 +705,7 @@
 
 /datum/chemical_reaction/herbal_burn
 	required_reagents = list(/datum/reagent/calcium = 10, /datum/reagent/consumable/pyre_elementum = 10, /datum/reagent/silver = 10, /datum/reagent/toxin/plasma = 5)
+	mob_react = FALSE
 
 /datum/chemical_reaction/herbal_burn/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
