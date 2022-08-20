@@ -332,6 +332,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
+"gg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/outline,
+/obj/structure/bed/roller,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "gh" = (
 /obj/structure/closet/secure_closet/freezer{
 	anchored = 1;
@@ -606,6 +613,14 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ship/cargo/office)
+"kg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/outline,
+/obj/structure/closet/crate/medical,
+/obj/item/bodybag,
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "kr" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
@@ -670,6 +685,7 @@
 	dir = 4;
 	pixel_x = -25
 	},
+/obj/item/reagent_containers/blood/random,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "lt" = (
@@ -1834,22 +1850,18 @@
 /area/ship/crew/dorm)
 "Ff" = (
 /obj/structure/table/reinforced,
-/obj/structure/closet/wall/white/med{
-	dir = 1;
-	name = "medicine locker";
-	pixel_y = -28
-	},
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/medical{
-	pixel_x = -5;
-	pixel_y = -4
-	},
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
 	pixel_x = -25
 	},
+/obj/structure/closet/wall/white/med{
+	dir = 1;
+	name = "medicine locker";
+	pixel_y = -28
+	},
+/obj/item/storage/pill_bottle/lsd,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/dorm)
 "Fr" = (
@@ -2004,6 +2016,13 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
+"Ii" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/outline,
+/obj/structure/closet/crate/secure/loot,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "Ik" = (
 /obj/structure/window/reinforced/spawner/east,
 /obj/effect/turf_decal/industrial/outline,
@@ -3277,7 +3296,6 @@
 /area/ship/cargo)
 "ZM" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/secure/loot,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -3706,7 +3724,7 @@ rd
 Ap
 lg
 ZM
-Mp
+Ii
 Zi
 bl
 si
@@ -3744,8 +3762,8 @@ mf
 aF
 le
 Ap
-ZM
-Mp
+kg
+gg
 Mp
 iC
 Tg
