@@ -5,6 +5,7 @@
 
 // ZEPHYR TODO: REDO ALL NODES BECAUSE OF OVER-CLUTTER
 
+/**
 /datum/research_node/base
 	id = "base"
 	start_researched = TRUE
@@ -1252,3 +1253,5 @@
 	points_required = 2500
 	start_hidden = TRUE
 	bepis_node = TRUE
+
+**/

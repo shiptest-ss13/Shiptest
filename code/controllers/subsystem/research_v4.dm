@@ -19,7 +19,7 @@ SUBSYSTEM_DEF(research_v4)
 	setup_static_instances()
 	initialize_nodes()
 	instances_web = list()
-	admin_web = new
+	admin_web = new(src)
 
 /datum/controller/subsystem/research_v4/Recover()
 	last_recover = SSresearch_v4.last_recover + 1

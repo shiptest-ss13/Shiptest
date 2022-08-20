@@ -106,6 +106,7 @@
 			refresh_engines()
 
 	ship_account = new(name, 2000)
+	mainframe = new(src)
 #ifdef UNIT_TESTS
 	Rename("[source_template]")
 #else
@@ -124,7 +125,7 @@
 		qdel(applications[a_key])
 	// set ourselves to ownerless to unregister signals
 	set_owner_mob(null)
-	mainframe = new(src)
+	QDEL_NULL(mainframe)
 	return ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()

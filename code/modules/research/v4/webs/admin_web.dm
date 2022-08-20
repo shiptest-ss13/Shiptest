@@ -4,7 +4,6 @@
 /datum/research_web/admin/initial_lists()
 	nodes_researched = list()
 	designs_available = list()
-	grids = list()
 	for(var/datum/research_node/node as anything in SSresearch_v4.all_nodes())
 		nodes_researched |= node.id
 		for(var/design in node.design_ids)

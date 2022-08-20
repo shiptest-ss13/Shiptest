@@ -1,3 +1,5 @@
+// dont go below 1 please, these are list indexes
+
 #define TECHTYPE_ENGINEERING 1
 #define TECHTYPE_SCIENCE 2
 #define TECHTYPE_SERVICE 3

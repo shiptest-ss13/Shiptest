@@ -28,6 +28,11 @@
 	// List of consoles accesing us
 	var/list/consoles_accessing
 
+	/// Assosciative list of user -> console - helps keep track of what console a user is using to interact
+	var/list/user_consoles
+	/// Assosciative list of user -> list("tgui" -> tgui, "interface" -> interface) - see above
+	var/list/user_uis
+
 /mob/verb/debug_rnd()
 	var/obj/machinery/computer/helm/helm = locate() in get_turf(src)
 	if(!helm)
@@ -53,6 +58,9 @@
 /datum/research_web/Destroy(force, ...)
 	QDEL_LIST_ASSOC_VAL(grids)
 	consoles_accessing.Cut()
+	SStgui.close_uis(src)
+	user_consoles.Cut()
+	user_uis.Cut()
 	return ..()
 
 /datum/research_web/proc/recalculate_available()
@@ -188,6 +196,7 @@
 /datum/research_web/proc/update_nodes()
 	for(var/datum/research_node/node as anything in SSresearch_v4.all_nodes())
 		node.on_techweb_update(src)
+	recalculate_available()
 
 /datum/research_web/proc/copy_research_to(datum/research_web/other, force=FALSE, allow_bepis=FALSE, allow_hidden=FALSE, allow_locked=FALSE)
 	var/list/allowed_nodes = nodes_researched
@@ -262,3 +271,39 @@
 	nodes_locked -= node_id
 	recalculate_available()
 	return TRUE
+
+/datum/research_web/proc/console_access(mob/user, obj/interaction_src, target_ui = "ResearchWeb")
+	var/current = user_consoles[user]
+	if(current && current != interaction_src)
+		SStgui.close_user_uis(user, src)
+	if(LAZYACCESSASSOC(user_uis, user, "interface") != target_ui)
+		SStgui.close_user_uis(user, src)
+
+	user_consoles[user] = interaction_src
+	ui_interact(user, LAZYACCESSASSOC(user_uis, user, "tgui"), target_ui)
+
+/datum/research_web/ui_interact(mob/user, datum/tgui/ui, target_ui = "ResearchWeb")
+	if(!user_consoles[user])
+		return
+
+	var/datum/tgui/existing = LAZYACCESSASSOC(user_uis, user, "tgui")
+	if(existing && existing != ui)
+		existing.close()
+
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, target_ui)
+		ui.set_autoupdate(FALSE)
+		ui.open()
+
+	LAZYSET(user_uis, user, list("tgui" = ui, "interface" = target_ui))
+
+/datum/research_web/ui_status(mob/user, datum/ui_state/state)
+	var/obj/interaction_src = user_consoles[user]
+	if(interaction_src?.can_interact(user))
+		return UI_UPDATE
+	return UI_CLOSE
+
+/datum/research_web/ui_close(mob/user)
+	LAZYREMOVE(user_uis, user)
+	LAZYREMOVE(user_consoles, user)
