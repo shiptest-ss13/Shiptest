@@ -1583,6 +1583,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/white,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/science/robotics)
 "dt" = (
@@ -1609,6 +1612,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/white,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/science/robotics)
 "dv" = (
@@ -1620,6 +1626,9 @@
 	},
 /obj/structure/railing,
 /obj/structure/railing/corner,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/stairs/old{
 	dir = 8
 	},
@@ -1629,10 +1638,16 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/science/robotics)
 "dx" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/science/robotics)
 "dA" = (
@@ -1666,6 +1681,9 @@
 	},
 /obj/structure/railing/corner,
 /obj/structure/catwalk/over/plated_catwalk/white,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/science/robotics)
 "dD" = (
@@ -1921,6 +1939,11 @@
 	pixel_y = 24
 	},
 /obj/machinery/computer/mech_bay_power_console,
+/obj/machinery/button/shieldwallgen{
+	id = delta_mechbay;
+	pixel_x = 10;
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "ea" = (
@@ -1957,7 +1980,14 @@
 	id = "cargobaydoors";
 	name = "Cargo Bay Door"
 	},
-/obj/structure/fans/tiny,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 1;
+	id = delta_mechbay;
+	locked = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/robotics)
 "gN" = (
@@ -2170,6 +2200,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "rC" = (
@@ -2228,6 +2261,20 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
+"uC" = (
+/obj/machinery/door/poddoor{
+	id = "cargobaydoors";
+	name = "Cargo Bay Door"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = delta_mechbay;
+	locked = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/science/robotics)
 "uT" = (
 /obj/structure/table/optable,
 /turf/open/floor/plasteel/white,
@@ -2338,6 +2385,13 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
+"AG" = (
+/obj/machinery/door/poddoor{
+	id = "cargobaydoors";
+	name = "Cargo Bay Door"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/science/robotics)
 "Bz" = (
 /obj/machinery/button/door{
 	dir = 4;
@@ -2564,6 +2618,27 @@
 /obj/item/folder/white,
 /turf/open/floor/plasteel,
 /area/ship/medical)
+"ME" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/science/robotics)
+"MN" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/science/robotics)
 "Nm" = (
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/floordetail/edgedrain,
@@ -2700,17 +2775,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Yn" = (
-/obj/machinery/button/door{
-	id = "cargobaydoors";
-	name = "Cargo Bay Door Control";
-	pixel_y = 24
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "Zi" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3232,8 +3296,8 @@ aa
 aa
 HJ
 vf
-pb
-pb
+MN
+ME
 pb
 KS
 HJ
@@ -3251,8 +3315,8 @@ aa
 aa
 ZY
 HJ
-gc
-gc
+uC
+AG
 gc
 HJ
 ZY
@@ -3270,7 +3334,7 @@ aa
 aa
 aa
 Gw
-Yn
+xW
 xW
 xW
 Gw
