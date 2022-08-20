@@ -273,17 +273,17 @@
 	return TRUE
 
 /datum/research_web/proc/console_access(mob/user, obj/interaction_src, target_ui = "ResearchWeb")
-	var/current = user_consoles[user]
+	var/current = LAZYACCESS(user_consoles, user)
 	if(current && current != interaction_src)
 		SStgui.close_user_uis(user, src)
 	if(LAZYACCESSASSOC(user_uis, user, "interface") != target_ui)
 		SStgui.close_user_uis(user, src)
 
-	user_consoles[user] = interaction_src
+	LAZYSET(user_consoles, user, interaction_src)
 	ui_interact(user, LAZYACCESSASSOC(user_uis, user, "tgui"), target_ui)
 
 /datum/research_web/ui_interact(mob/user, datum/tgui/ui, target_ui = "ResearchWeb")
-	if(!user_consoles[user])
+	if(!LAZYACCESS(user_consoles, user))
 		return
 
 	var/datum/tgui/existing = LAZYACCESSASSOC(user_uis, user, "tgui")
@@ -299,7 +299,7 @@
 	LAZYSET(user_uis, user, list("tgui" = ui, "interface" = target_ui))
 
 /datum/research_web/ui_status(mob/user, datum/ui_state/state)
-	var/obj/interaction_src = user_consoles[user]
+	var/obj/interaction_src = LAZYACCESS(user_consoles, user)
 	if(interaction_src?.can_interact(user))
 		return UI_UPDATE
 	return UI_CLOSE
@@ -307,3 +307,11 @@
 /datum/research_web/ui_close(mob/user)
 	LAZYREMOVE(user_uis, user)
 	LAZYREMOVE(user_consoles, user)
+
+/datum/research_web/ui_data(mob/user)
+	var/obj/source = LAZYACCESS(user_consoles, user)
+	return source.ui_data(user)
+
+/datum/research_web/ui_static_data(mob/user)
+	var/obj/source = LAZYACCESS(user_consoles, user)
+	return source.ui_static_data(user)
