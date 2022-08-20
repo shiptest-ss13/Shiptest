@@ -345,14 +345,14 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/item/storage/secure/safe{
-	pixel_x = -30
-	},
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
+	},
+/obj/item/storage/secure/safe/intel{
+	pixel_x = -22
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
@@ -1539,9 +1539,6 @@
 /obj/structure/safe/floor{
 	number_of_tumblers = 0
 	},
-/obj/item/gun/ballistic/automatic/pistol/suppressed,
-/obj/item/ammo_box/magazine/pistolm9mm,
-/obj/item/ammo_box/magazine/pistolm9mm,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "Vw" = (
