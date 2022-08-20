@@ -443,6 +443,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"lZ" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo/office{
+	name = "Intel Office"
+	})
 "mD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -779,7 +784,8 @@
 	name = "Holofield Controls";
 	dir = 1;
 	pixel_y = -21;
-	pixel_x = -6
+	pixel_x = -6;
+	id = "scholo"
 	},
 /obj/machinery/button/door{
 	desc = "A remote control switch.";
@@ -1545,6 +1551,9 @@
 	dir = 4
 	},
 /area/ship/bridge)
+"Xw" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "XJ" = (
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1864,7 +1873,7 @@ CP
 Hd
 kM
 nF
-pM
+lZ
 pM
 pM
 pM
@@ -1998,10 +2007,10 @@ YQ
 YQ
 YQ
 bO
-bO
+Xw
 Xc
 Xc
-bO
+Xw
 bO
 YQ
 YQ
