@@ -1,14 +1,16 @@
-{	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"prefix": "ASV",
+{
 	"map_name": "Pollen-Class Flora Research Shuttle",
-	"map_short_name": "Pollen-class",
+	"prefix": "ASV",
+	"map_short_name": "Pollen-Class",
 	"map_path": "_maps/shuttles/shiptest/pollen.dmm",
-	"map_id": "pollen.dmm",
+	"map_id": "pollen",
 	"job_slots": {
-		"Botanist": 3,
-		"Medical Doctor": 1,
-		"Shaft Miner": 1,
-		"Chief Medical Officer": 1,
-	},
-	"cost": 500
+		"Lead Botanist": {
+			"outfit": "/datum/outfit/job/botanist",
+			"officer": true,
+			"slots": 1
+		},
+		"Botanist": 2,
+		"Medical Doctor": 1
+	}
 }
