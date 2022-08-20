@@ -660,12 +660,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"sb" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_x = 4
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering)
 "so" = (
 /obj/effect/decal/cleanable/oil/streak,
 /obj/structure/reagent_dispensers/watertank,
@@ -1089,7 +1083,7 @@
 /area/ship/cargo)
 "Ia" = (
 /obj/structure/sign/poster/contraband/revolver,
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo/office{
 	name = "Intel Office"
 	})
@@ -1556,6 +1550,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/machinery/advanced_airlock_controller{
+	pixel_x = -27
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "YE" = (
@@ -1639,7 +1636,7 @@ ru
 "}
 (2,1,1) = {"
 Ee
-sb
+ru
 ru
 ru
 NU
