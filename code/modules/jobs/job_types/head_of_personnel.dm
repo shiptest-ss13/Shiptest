@@ -136,4 +136,3 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	glasses = /obj/item/clothing/glasses/sunglasses
-	backpack = obj/item/storage/backpack/satchel/leather
