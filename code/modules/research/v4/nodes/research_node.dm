@@ -29,6 +29,11 @@
 	var/list/datum/research_design/designs_unlocked
 
 /datum/research_node/proc/____generate_lists()
+	nodes_exclusive = list()
+	nodes_required = list()
+	nodes_unlocked = list()
+	designs_unlocked = list()
+
 	for(var/req_id in required_ids)
 		var/datum/research_node/req_node = SSresearch_v4.get_node(req_id)
 		nodes_required |= req_node
