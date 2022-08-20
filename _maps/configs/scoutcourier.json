@@ -1,4 +1,4 @@
-"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+{
 	"prefix": "SSV",
 	"namelists": ["GENERAL"],
 	"map_name": "Slipper-Class Scout Courier",
@@ -17,7 +17,7 @@
 			"slots": 1
 		},
 		"Engineer": {
-			"outfit": "/datum/outfit/job/engineer/syndicate/cybersun",
+			"outfit": "/datum/outfit/job/engineer/syndicate/cy",
 			"slots": 1
 		},
 		"Field Agent": {
@@ -29,5 +29,5 @@
 			"slots": 2
 		}
 	},
-	"cost": 750 #does this even matter???
+	"cost": 750
 }

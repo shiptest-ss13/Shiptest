@@ -173,7 +173,6 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/cybersun
-	alt_uniform = null
 	accessory = /obj/item/clothing/accessory/armband/cargo
 	head = /obj/item/clothing/head/soft/black
 	r_pocket = /obj/item/radio
