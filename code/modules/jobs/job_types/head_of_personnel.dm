@@ -1,13 +1,8 @@
 /datum/job/head_of_personnel
-	title = "Head of Personnel"
+	name = "Head of Personnel"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	department_head = list("Captain")
-	head_announce = list(RADIO_CHANNEL_COMMAND)
-	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
-	selection_color = "#ddddff"
 	minimal_player_age = 10
 	exp_requirements = 180
 	officer = TRUE
@@ -33,13 +28,12 @@
 		ACCESS_MECH_MINING, ACCESS_MECH_ENGINE, ACCESS_MECH_SCIENCE, ACCESS_MECH_SECURITY, ACCESS_MECH_MEDICAL,
 		ACCESS_THEATRE, ACCESS_CHAPEL_OFFICE, ACCESS_LIBRARY, ACCESS_RESEARCH, ACCESS_MINING, ACCESS_VAULT, ACCESS_MINING_STATION,
 		ACCESS_HOP, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_GATEWAY, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_HEAD_OF_PERSONNEL
 
 /datum/outfit/job/head_of_personnel
 	name = "Head of Personnel"
+	job_icon = "headofpersonnel"
 	jobtype = /datum/job/head_of_personnel
 
 	id = /obj/item/card/id/silver
