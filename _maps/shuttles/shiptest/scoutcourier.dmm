@@ -205,6 +205,10 @@
 /obj/effect/turf_decal/trimline/opaque/bar/filled/corner{
 	dir = 8
 	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "eu" = (
@@ -227,12 +231,12 @@
 /obj/machinery/computer/cargo/express{
 	dir = 8
 	},
-/obj/machinery/button{
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -23;
+	pixel_x = -7;
 	id = "intelfucky";
-	pixel_y = -24;
-	pixel_x = -4;
-	name = "Privacy Lock";
-	dir = 1
+	name = "Privacy Lock"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -249,7 +253,6 @@
 /obj/machinery/door/poddoor{
 	id = "scbay"
 	},
-/obj/structure/fans/tiny,
 /obj/structure/cable,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "scholo"
@@ -358,9 +361,6 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
-/obj/item/gun/ballistic/automatic/pistol/suppressed,
-/obj/item/ammo_box/magazine/pistolm9mm,
-/obj/item/ammo_box/magazine/pistolm9mm,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office{
 	name = "Intel Office"
@@ -435,6 +435,9 @@
 "lP" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
 /obj/effect/turf_decal/box,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "mD" = (
@@ -582,6 +585,9 @@
 /obj/item/clothing/suit/space/syndicate/black/red,
 /obj/item/clothing/head/helmet/space/syndicate/black/red,
 /obj/item/tank/jetpack/oxygen/harness,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "qR" = (
@@ -596,6 +602,10 @@
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 4
+	},
+/obj/structure/sign/poster/official/here_for_your_safety{
+	pixel_x = -3;
+	pixel_y = 31
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office{
@@ -740,46 +750,47 @@
 "vN" = (
 /obj/structure/table/reinforced,
 /obj/item/binoculars,
-/obj/machinery/button{
-	id = "scbay";
-	name = "Cargo Bay Doors";
-	pixel_y = 9;
-	pixel_x = -6
-	},
-/obj/machinery/button{
-	pixel_y = 9;
-	pixel_x = 6;
-	name = "Bridge Blast Doors"
-	},
 /obj/machinery/power/apc/auto_name/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/button/door{
+	desc = "A remote control switch.";
+	id = "scbay";
+	name = "Cargo Bay Doors";
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/machinery/button/door{
+	pixel_y = 9;
+	pixel_x = 5;
+	name = "Bridge Blast Shutters"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "xf" = (
-/obj/machinery/button{
-	id = "scbay";
-	pixel_x = 8;
-	name = "Cargo Bay Doors";
-	dir = 1;
-	pixel_y = -23
-	},
 /obj/structure/cable{
 	icon_state = "1-4"
-	},
-/obj/machinery/button{
-	id = "scholo";
-	name = "Holofield Controls";
-	dir = 1;
-	pixel_x = -7;
-	pixel_y = -23
 	},
 /obj/machinery/power/apc/auto_name/south{
 	pixel_y = -35
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
+/obj/machinery/button/shieldwallgen{
+	name = "Holofield Controls";
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = -6
+	},
+/obj/machinery/button/door{
+	desc = "A remote control switch.";
+	id = "scbay";
+	name = "Cargo Bay Doors";
+	pixel_x = 3;
+	pixel_y = -22;
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "yl" = (
@@ -872,6 +883,7 @@
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
+/obj/machinery/light/small,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "zO" = (
@@ -923,6 +935,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
 	dir = 1
 	},
+/obj/machinery/light/small,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "CP" = (
@@ -958,6 +971,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/bar,
+/obj/machinery/light,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ee" = (
@@ -1080,6 +1094,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "IJ" = (
@@ -1104,6 +1121,9 @@
 /obj/item/clothing/suit/space/syndicate/black/red,
 /obj/item/clothing/head/helmet/space/syndicate/black/red,
 /obj/item/tank/jetpack/oxygen/harness,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "Jp" = (
@@ -1170,6 +1190,9 @@
 	pixel_y = 28
 	},
 /obj/effect/turf_decal/trimline/opaque/bar,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "NR" = (
@@ -1459,22 +1482,26 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Vo" = (
-/obj/machinery/button{
-	id = "intelwindow";
-	dir = 4;
-	pixel_y = -6;
-	pixel_x = -23;
-	name = "Window Shutters"
-	},
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/button{
-	id = "thefunny";
+/obj/machinery/button/door{
 	dir = 4;
+	pixel_y = 9;
 	pixel_x = -23;
-	pixel_y = 7
+	id = "thefunny"
 	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_y = -6;
+	pixel_x = -23;
+	id = "intelwindow";
+	name = "Window Shutters"
+	},
+/obj/structure/safe/floor,
+/obj/item/gun/ballistic/automatic/pistol/suppressed,
+/obj/item/ammo_box/magazine/pistolm9mm,
+/obj/item/ammo_box/magazine/pistolm9mm,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office{
 	name = "Intel Office"
@@ -1483,6 +1510,9 @@
 /obj/structure/chair/comfy/black,
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
 	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -1510,6 +1540,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Xc" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "intelfucky"
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
