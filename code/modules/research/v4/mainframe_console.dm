@@ -57,9 +57,11 @@
 	if(isobserver(user))
 		return UI_UPDATE
 	if(!is_operational)
-		return UI_CLOSE
+		return UI_DISABLED
 	if(!Adjacent(user))
-		return UI_CLOSE
+		if(get_dist(src, user) >= 4)
+			return UI_CLOSE
+		return UI_DISABLED
 	if(!can_interact(user))
 		return UI_UPDATE
 	return UI_INTERACTIVE
