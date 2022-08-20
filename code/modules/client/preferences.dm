@@ -1417,6 +1417,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/temp_hsv = RGBtoHSV(features["mcolor"])
 				if(features["mcolor"] == "#000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#191919")[3]))
 					features["mcolor"] = pref_species.default_color
+				handle_quirk_conflict("species", pref_species)
 				user << browse(null, "window=speciespick")
 				ShowChoices(user)
 				age = rand(pref_species.species_age_min, pref_species.species_age_max)
@@ -1531,26 +1532,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("all")
 					random_character(gender)
 
-		if("species")
-			if(href_list["setspecies"])
-				var/sid = href_list["setspecies"]
-				var/newtype = GLOB.species_list[sid]
-				pref_species = new newtype()
-				//Now that we changed our species, we must verify that the mutant colour is still allowed.
-				var/temp_hsv = RGBtoHSV(features["mcolor"])
-				if(features["mcolor"] == "#000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#191919")[3]))
-					features["mcolor"] = pref_species.default_color
-				user << browse(null, "window=speciespick")
-				ShowChoices(user)
-				handle_quirk_conflict("species", pref_species)
-				age = rand(pref_species.species_age_min, pref_species.species_age_max)
-				return TRUE
-
-			if(href_list["lookatspecies"])
-				species_looking_at = href_list["lookatspecies"]
-
-			ShowSpeciesChoices(user)
-			return 1
 
 		if("input")
 
