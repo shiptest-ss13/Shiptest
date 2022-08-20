@@ -4,6 +4,7 @@
 	ammo_type = /obj/item/ammo_casing/p50
 	max_ammo = 6
 	caliber = ".50"
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/sniper_rounds/update_icon()
 	..()

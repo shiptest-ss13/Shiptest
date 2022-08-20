@@ -3,6 +3,7 @@
 /obj/projectile/bullet/n762
 	name = "7.62x38mmR bullet"
 	damage = 35
+	armour_penetration = -20
 
 // .50AE (Desert Eagle)
 
@@ -15,6 +16,7 @@
 /obj/projectile/bullet/c38
 	name = ".38 bullet"
 	damage = 20
+	armour_penetration = -20
 	ricochets_max = 2
 	ricochet_chance = 50
 	ricochet_auto_aim_angle = 10
@@ -34,7 +36,6 @@
 	name = ".38 Rubber bullet"
 	damage = 10
 	stamina = 30
-	armour_penetration = -30
 	ricochets_max = 6
 	ricochet_incidence_leeway = 70
 	ricochet_chance = 130
@@ -44,7 +45,7 @@
 /obj/projectile/bullet/c38/dumdum
 	name = ".38 DumDum bullet"
 	damage = 15
-	armour_penetration = -30
+	armour_penetration = -50
 	ricochets_max = 0
 	shrapnel_type = /obj/item/shrapnel/bullet/c38/dumdum
 
@@ -93,7 +94,7 @@
 /obj/projectile/bullet/c38/hunting //bonus damage to simplemobs
 	name = ".38 hunting"
 	damage = 15
-	var/bonus_damage = 40 // if a simplemob then do this much extra
+	var/bonus_damage = 50 // if a simplemob then do this much extra
 
 /obj/projectile/bullet/c38/hunting/on_hit(atom/target, blocked = FALSE)
 	if(istype(target, /mob/living/simple_animal/hostile/asteroid/))

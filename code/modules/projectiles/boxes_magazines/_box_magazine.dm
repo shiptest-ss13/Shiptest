@@ -10,7 +10,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	custom_materials = list(/datum/material/iron = 15000)
 	throwforce = 2
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	throw_range = 7
 	///list containing the actual ammo within the magazine
@@ -25,6 +25,8 @@
 	var/caliber
 	///Allows multiple bullets to be loaded in from one click of another box/magazine
 	var/multiload = TRUE
+	///Whether or not an ammo box skips the do_after process (e.g. speedloaders)
+	var/instant_load = FALSE
 	///Whether the magazine should start with nothing in it
 	var/start_empty = FALSE
 	///cost of all the bullets in the magazine/box
@@ -92,12 +94,18 @@
 	if(istype(A, /obj/item/ammo_box))
 		var/obj/item/ammo_box/AM = A
 		for(var/obj/item/ammo_casing/AC in AM.stored_ammo)
-			var/did_load = give_round(AC, replace_spent)
-			if(did_load)
-				AM.stored_ammo -= AC
-				num_loaded++
-			if(!did_load || !multiload)
+			if(!((instant_load && AM.instant_load) || do_after(user, 10, target = src)))
 				break
+			var/did_load = give_round(AC, replace_spent)
+			if(!did_load)
+				break
+			AM.stored_ammo -= AC
+			num_loaded++
+			if(!silent)
+				playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
+				A.update_icon()
+				update_icon()
+
 	if(istype(A, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/AC = A
 		if(give_round(AC, replace_spent))
@@ -106,10 +114,7 @@
 
 	if(num_loaded)
 		if(!silent)
-			to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
-			playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
-		A.update_icon()
-		update_icon()
+			to_chat(user, "<span class='notice'>You load [num_loaded] cartridge\s into \the [src]!</span>")
 	return num_loaded
 
 /obj/item/ammo_box/attack_self(mob/user)
@@ -135,6 +140,9 @@
 		material_amount = (material_amount*stored_ammo.len) + base_cost[material]
 		custom_materials[material] = material_amount
 	set_custom_materials(custom_materials)//make sure we setup the correct properties again
+
+/obj/item/ammo_box/magazine
+	w_class = WEIGHT_CLASS_SMALL //Default magazine weight, only differs for tiny mags and drums
 
 ///Count of number of bullets in the magazine
 /obj/item/ammo_box/magazine/proc/ammo_count(countempties = TRUE)

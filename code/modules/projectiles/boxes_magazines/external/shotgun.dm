@@ -5,6 +5,7 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "shotgun"
 	max_ammo = 8
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/m12g/update_icon()
 	..()

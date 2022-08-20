@@ -4,7 +4,7 @@
 	ammo_type = /obj/item/ammo_casing/a762
 	caliber = "a762"
 	max_ammo = 5
-	multiload = 1
+	instant_load = TRUE
 
 /obj/item/ammo_box/magazine/internal/boltaction/enchanted
 	max_ammo = 1
@@ -18,4 +18,3 @@
 	ammo_type = /obj/item/ammo_casing/aac_300blk
 	caliber = ".300BLK"
 	max_ammo = 5
-	multiload = 1

@@ -49,6 +49,7 @@
 	caliber = "foam_force"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
 	max_ammo = 50
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/toy/m762/update_icon()
 	..()

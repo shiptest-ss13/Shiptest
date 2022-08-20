@@ -6,7 +6,7 @@
 	damage = 70
 	paralyze = 100
 	dismemberment = 50
-	armour_penetration = 50
+	armour_penetration = 60
 	var/breakthings = TRUE
 
 /obj/projectile/bullet/p50/on_hit(atom/target, blocked = 0)

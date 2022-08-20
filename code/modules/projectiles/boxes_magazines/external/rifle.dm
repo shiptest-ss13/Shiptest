@@ -27,6 +27,7 @@
 	ammo_type = /obj/item/ammo_casing/caseless/c47x33mm
 	caliber = "4.73x33mm caseless"
 	max_ammo = 50 //brrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/rifle47x33mm/update_icon()
 	..()
@@ -110,3 +111,5 @@
 	ammo_type = /obj/item/ammo_casing/aac_300blk
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
+	w_class = WEIGHT_CLASS_TINY
+	instant_load = TRUE

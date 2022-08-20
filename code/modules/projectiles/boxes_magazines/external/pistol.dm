@@ -129,3 +129,4 @@
 	ammo_type = /obj/item/ammo_casing/c38
 	caliber = ".38"
 	max_ammo = 3
+	w_class = WEIGHT_CLASS_TINY
