@@ -432,6 +432,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "lZ" = (
@@ -678,6 +681,7 @@
 /obj/effect/decal/cleanable/oil/streak,
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/box,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "sR" = (
@@ -785,9 +789,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "xf" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /obj/machinery/power/apc/auto_name/south{
 	pixel_y = -35
 	},
@@ -1064,12 +1065,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"FY" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/cargo)
 "Gb" = (
 /obj/item/radio/intercom{
 	dir = 1;
@@ -1771,7 +1766,7 @@ yF
 cZ
 jj
 jj
-FY
+jj
 ru
 YQ
 "}
