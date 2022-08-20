@@ -83,7 +83,7 @@
 	dir = 1
 	},
 /obj/docking_port/mobile{
-	dir = 2
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
@@ -112,6 +112,9 @@
 /obj/machinery/porta_turret/centcom_shuttle/weak,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
+"cZ" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo)
 "df" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -765,7 +768,8 @@
 /obj/machinery/button/door{
 	pixel_y = 9;
 	pixel_x = 5;
-	name = "Bridge Blast Shutters"
+	name = "Bridge Blast Shutters";
+	id = "scbridge"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -1359,7 +1363,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Ri" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
 "Rj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1728,7 +1732,7 @@ kM
 kM
 Ri
 yF
-jj
+cZ
 jj
 jj
 FY
