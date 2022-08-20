@@ -83,9 +83,9 @@
 	dir = 1
 	},
 /obj/docking_port/mobile{
-	dir = 2;
 	port_direction = 4;
-	preferred_direction = 8
+	preferred_direction = 4;
+	dir = 2
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
@@ -665,6 +665,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/item/wrench,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "so" = (
@@ -1207,6 +1208,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Nu" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering)
 "NR" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/white,
@@ -1338,7 +1342,7 @@
 /area/ship/cargo)
 "Qy" = (
 /obj/structure/sign/poster/official/wtf_is_co2,
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "QN" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1399,6 +1403,9 @@
 /obj/effect/turf_decal/box,
 /obj/structure/sign/poster/contraband/energy_swords{
 	pixel_x = 31
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1663,7 +1670,7 @@ ru
 CU
 CU
 qv
-ru
+Nu
 ru
 ru
 cY
