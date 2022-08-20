@@ -22,7 +22,8 @@
 		return
 	quirk_holder = quirk_mob
 	SSquirks.quirk_objects += src
-	to_chat(quirk_holder, gain_text)
+	if(gain_text)
+		to_chat(quirk_holder, gain_text)
 	quirk_holder.roundstart_quirks += src
 	for(var/T in mob_traits)
 		ADD_TRAIT(quirk_holder, T, ROUNDSTART_TRAIT)
@@ -53,7 +54,8 @@
 	STOP_PROCESSING(SSquirks, src)
 	remove()
 	if(quirk_holder)
-		to_chat(quirk_holder, lose_text)
+		if(lose_text)
+			to_chat(quirk_holder, lose_text)
 		quirk_holder.roundstart_quirks -= src
 		for(var/trait in mob_traits)
 			REMOVE_TRAIT(quirk_holder, trait, ROUNDSTART_TRAIT)

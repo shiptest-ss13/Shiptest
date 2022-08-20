@@ -1113,25 +1113,25 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(ITEM_SLOT_NECK)
 			if(H.wear_neck && !swap)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_NECK) )
+			if(!(I.slot_flags & ITEM_SLOT_NECK))
 				return FALSE
 			return TRUE
 		if(ITEM_SLOT_BACK)
 			if(H.back && !swap)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_BACK) )
+			if(!(I.slot_flags & ITEM_SLOT_BACK))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_OCLOTHING)
 			if(H.wear_suit && !swap)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_OCLOTHING) )
+			if(!(I.slot_flags & ITEM_SLOT_OCLOTHING))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_GLOVES)
 			if(H.gloves && !swap)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_GLOVES) )
+			if(!(I.slot_flags & ITEM_SLOT_GLOVES))
 				return FALSE
 			if(H.num_hands < 2)
 				return FALSE
@@ -1139,7 +1139,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(ITEM_SLOT_FEET)
 			if(H.shoes && !swap)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_FEET) )
+			if(!(I.slot_flags & ITEM_SLOT_FEET))
 				return FALSE
 			if(H.num_legs < 2)
 				return FALSE
@@ -1191,7 +1191,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(ITEM_SLOT_ICLOTHING)
 			if(H.w_uniform && !swap)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_ICLOTHING) )
+			if(!(I.slot_flags & ITEM_SLOT_ICLOTHING))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_ID)
@@ -1203,7 +1203,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(!disable_warning)
 					to_chat(H, "<span class='warning'>You need a jumpsuit before you can attach this [I.name]!</span>")
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_ID) )
+			if(!(I.slot_flags & ITEM_SLOT_ID))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_LPOCKET)
@@ -1218,7 +1218,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(!disable_warning)
 					to_chat(H, "<span class='warning'>You need a jumpsuit before you can attach this [I.name]!</span>")
 				return FALSE
-			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_LPOCKET) )
+			if(I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_LPOCKET))
 				return TRUE
 		if(ITEM_SLOT_RPOCKET)
 			if(HAS_TRAIT(I, TRAIT_NODROP))
@@ -1232,7 +1232,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(!disable_warning)
 					to_chat(H, "<span class='warning'>You need a jumpsuit before you can attach this [I.name]!</span>")
 				return FALSE
-			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_RPOCKET) )
+			if(I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_RPOCKET))
 				return TRUE
 			return FALSE
 		if(ITEM_SLOT_SUITSTORE)
@@ -1252,7 +1252,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(!disable_warning)
 					to_chat(H, "<span class='warning'>The [I.name] is too big to attach!</span>") //should be src?
 				return FALSE
-			if( istype(I, /obj/item/pda) || istype(I, /obj/item/pen) || is_type_in_list(I, H.wear_suit.allowed) )
+			if(istype(I, /obj/item/pda) || istype(I, /obj/item/pen) || is_type_in_list(I, H.wear_suit.allowed))
 				return TRUE
 			return FALSE
 		if(ITEM_SLOT_HANDCUFFED)
@@ -1916,7 +1916,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// Very high pressure, show an alert and take damage
 		if(HAZARD_HIGH_PRESSURE to INFINITY)
 			if(!HAS_TRAIT(H, TRAIT_RESISTHIGHPRESSURE))
-				H.adjustBruteLoss(min(((adjusted_pressure / HAZARD_HIGH_PRESSURE) -1 ) * \
+				H.adjustBruteLoss(min(((adjusted_pressure / HAZARD_HIGH_PRESSURE) -1) * \
 					PRESSURE_DAMAGE_COEFFICIENT, MAX_HIGH_PRESSURE_DAMAGE) * H.physiology.pressure_mod)
 				H.throw_alert("pressure", /atom/movable/screen/alert/highpressure, 2)
 			else

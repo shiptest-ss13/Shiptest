@@ -321,7 +321,7 @@
 	var/saber_color
 
 /obj/item/toy/sword/attack_self(mob/user)
-	active = !( active )
+	active = !(active)
 	if (active)
 		to_chat(user, "<span class='notice'>You extend the plastic blade with a quick flick of your wrist.</span>")
 		playsound(user, 'sound/weapons/saberon.ogg', 20, TRUE)

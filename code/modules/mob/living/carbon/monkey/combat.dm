@@ -152,7 +152,7 @@
 			if(enemies.len)
 				var/list/around = view(src, MONKEY_ENEMY_VISION) // scan for enemies
 				for(var/mob/living/L in around)
-					if( should_target(L) )
+					if(should_target(L))
 						if(L.stat == CONSCIOUS)
 							battle_screech()
 							retaliate(L)
@@ -246,7 +246,7 @@
 
 			// flee from anyone who attacked us and we didn't beat down
 			for(var/mob/living/L in around)
-				if( enemies[L] && L.stat == CONSCIOUS )
+				if(enemies[L] && L.stat == CONSCIOUS)
 					target = L
 
 			if(target != null)
@@ -342,7 +342,7 @@
 
 	// if we arn't enemies, we were likely recruited to attack this target, jobs done if we calm down so go back to idle
 	if(!enemies[L])
-		if( target == L && prob(MONKEY_HATRED_REDUCTION_PROB) )
+		if(target == L && prob(MONKEY_HATRED_REDUCTION_PROB))
 			back_to_idle()
 		return // already de-aggroed
 
@@ -352,7 +352,7 @@
 	// if we are not angry at our target, go back to idle
 	if(enemies[L] <= 0)
 		enemies.Remove(L)
-		if( target == L )
+		if(target == L)
 			back_to_idle()
 
 // get angry are a mob
@@ -382,7 +382,7 @@
 
 /mob/living/carbon/monkey/attackby(obj/item/W, mob/user, params)
 	..()
-	if((W.force) && (!target) && (W.damtype != STAMINA) )
+	if((W.force) && (!target) && (W.damtype != STAMINA))
 		retaliate(user)
 
 /mob/living/carbon/monkey/bullet_act(obj/projectile/Proj)

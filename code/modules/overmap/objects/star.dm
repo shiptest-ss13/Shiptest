@@ -69,7 +69,7 @@
 	color_vary = 0.25
 
 /datum/overmap/star/medium/alter_token_appearance()
-	token.icon = 'whitesands/icons/effects/overmap_large.dmi'
+	token.icon = 'icons/misc/overmap_large.dmi'
 	token.bound_height = 64
 	token.bound_width = 64
 	token.pixel_x = -16
@@ -103,7 +103,7 @@
 	color_vary = 1
 
 /datum/overmap/star/giant/alter_token_appearance()
-	token.icon = 'whitesands/icons/effects/overmap_larger.dmi'
+	token.icon = 'icons/misc/overmap_larger.dmi'
 	token.bound_height = 96
 	token.bound_width = 96
 	token.pixel_x = -32
@@ -153,7 +153,7 @@
 		STAR_T,
 	)
 	token.cut_overlays()
-	token.icon = 'whitesands/icons/effects/overmap_larger.dmi'
+	token.icon = 'icons/misc/overmap_larger.dmi'
 	token.bound_height = 96
 	token.bound_width = 96
 	token.pixel_x = -32

@@ -3,7 +3,7 @@
 	closed_turf_types = list(/turf/closed/mineral/random/snow = 1)
 
 
-	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/structure/elite_tumor = 2)
+	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/structure/elite_tumor = 1)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30, /obj/structure/spawner/ice_moon = 3,
 		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30, /obj/structure/spawner/ice_moon/polarbear = 3,
@@ -18,7 +18,7 @@
 		/obj/structure/flora/rock/pile/icy = 2,
 		/obj/structure/flora/grass/both = 6,
 		/obj/structure/flora/ash/chilly = 2,
-		/obj/structure/flora/ash/whitesands/puce = 2,
+		/obj/structure/flora/ash/puce = 2,
 	)
 
 /datum/map_generator/cave_generator/icemoon/surface

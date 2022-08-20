@@ -260,7 +260,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	if(isliving(target) && target.stat != DEAD)
 		essence += rand(15, 20)
 
-//Transplanted almost directly from the transforming.dm nemesis code. This is how I lost my medical coding license.
 /obj/item/katana/cursed/attack(mob/living/target, mob/living/carbon/human/user)
 	var/nemesis_faction = FALSE
 	if(LAZYLEN(nemesis_factions))
@@ -278,12 +277,12 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	return
 
 /obj/item/katana/cursed/attack(mob/target, mob/living/carbon/human/user)
-	if(user.mind && user.owns_soul() && !is_devil(user))
+	if(user.mind && user.owns_soul())
 		to_chat(user, "<span class='warning'>You feel a terrible chill as the emptiness within [src] devours on your life force!</span>")
 		user.apply_damage(rand(2,3), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
 		user.apply_damage(rand(2,3), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
-		user.apply_damage(rand(3,4), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
-		user.apply_damage(rand(3,4), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
+		user.apply_damage(rand(2,3), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
+		user.apply_damage(rand(2,3), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
 	..()
 
 /obj/item/wirerod
@@ -1075,9 +1074,9 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	desc = "Jagged pieces of bone are tied to what looks like a goliaths femur."
 	icon_state = "bone_sword"
 	item_state = "bone_sword"
-	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/swords_righthand.dmi'
+	icon = 'icons/obj/items_and_weapons.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 15
 	throwforce = 10

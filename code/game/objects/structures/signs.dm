@@ -1,5 +1,5 @@
 /obj/structure/sign/warning/longtermwaste
-	icon = 'whitesands/icons/obj/64x32.dmi'
+	icon = 'icons/obj/64x32.dmi'
 	icon_state = "longwarning"
 	name = "long term nuclear waste warning sign"
 	sign_change_name = "Read further to survive..."

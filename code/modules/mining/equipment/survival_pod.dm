@@ -137,7 +137,7 @@
 
 //Sleeper
 /obj/machinery/sleeper/survival_pod
-	icon = 'whitesands/icons/obj/machines/sleeper.dmi'
+	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "lavaland_sleeper"
 
 /obj/machinery/sleeper/survival_pod/update_overlays()
@@ -313,8 +313,8 @@
 						/obj/item/energy_katana,
 						/obj/item/hierophant_club,
 						/obj/item/his_grace,
-						/obj/item/gun/ballistic/minigun,
-						/obj/item/gun/ballistic/automatic/l6_saw,
+						/obj/item/gun/energy/minigun,
+						/obj/item/gun/ballistic/automatic/hmg/l6_saw,
 						/obj/item/gun/magic/staff/chaos,
 						/obj/item/gun/magic/staff/spellblade,
 						/obj/item/gun/magic/wand/death,

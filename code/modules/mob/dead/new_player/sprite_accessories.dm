@@ -1966,7 +1966,7 @@
 	icon_state = "round"
 
 /datum/sprite_accessory/moth_wings
-	icon = 'whitesands/icons/mob/moth_wings.dmi'
+	icon = 'icons/mob/moth_wings.dmi'
 	color_src = null
 
 /datum/sprite_accessory/moth_wings/plain
@@ -2114,7 +2114,7 @@
 
 //Moth fluff
 /datum/sprite_accessory/moth_fluff
-	icon = 'whitesands/icons/mob/moth_wings.dmi'
+	icon = 'icons/mob/moth_wings.dmi'
 	color_src = null
 
 /datum/sprite_accessory/moth_fluff/plain
@@ -2311,10 +2311,9 @@
 	name = "Red"
 	icon_state = "red"
 
-/datum/sprite_accessory/ipc_screens/redtext
-	name = "Red Text"
-	icon_state = "redtext"
-	color_src = 0
+/datum/sprite_accessory/ipc_screens/text
+	name = "Text Lines"
+	icon_state = "text"
 
 /datum/sprite_accessory/ipc_screens/rgb
 	name = "RGB"
@@ -2483,7 +2482,7 @@
 	limbs_id = "zhpipc"
 
 /datum/sprite_accessory/spider_legs
-	icon = 'whitesands/icons/mob/spider_legs.dmi'
+	icon = 'icons/mob/species/rachnid/spider_legs.dmi'
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/spider_legs/plain
@@ -2499,7 +2498,7 @@
 	icon_state = "spiky"
 
 /datum/sprite_accessory/spider_spinneret
-	icon = 'whitesands/icons/mob/spider_spinneret.dmi'
+	icon = 'icons/mob/species/rachnid/spider_spinneret.dmi'
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/spider_spinneret/plain
@@ -2515,7 +2514,7 @@
 	icon_state = "blackwidow"
 
 /datum/sprite_accessory/spider_mandibles
-	icon = 'whitesands/icons/mob/spider_mandibles.dmi'
+	icon = 'icons/mob/species/rachnid/spider_mandibles.dmi'
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/spider_mandibles/plain
