@@ -66,7 +66,6 @@
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/pet_carrier(src)
 	new /obj/item/door_remote/civilian(src)
-	new /obj/item/circuitboard/machine/techfab/department/service(src)
 	new /obj/item/storage/photo_album/HoP(src)
 	new /obj/item/storage/lockbox/medal/hop(src)
 
@@ -107,7 +106,6 @@
 	new /obj/item/gun/energy/e_gun/hos(src)
 	new /obj/item/gun/ballistic/automatic/pistol/commissar(src) //WS edit - free lethals
 	new /obj/item/pinpointer/nuke(src)
-	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
 	new /obj/item/gun_voucher //WS edit - gun gun gun gun gun gun gun
 

@@ -511,8 +511,6 @@
 					backpack_contents += pick(list(/obj/item/slime_extract/grey = 1, /obj/item/slime_scanner = 1, /obj/item/resonator/upgraded = 1, /obj/item/gps = 1, /obj/item/fulton_core = 2, /obj/item/extraction_pack = 3, /obj/item/stack/sheet/mineral/plasma/twenty = 3, /obj/item/stack/marker_beacon/ten = 3, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 3, /obj/item/flashlight/seclite=3, /obj/item/research_notes/loot/medium = 3, /obj/item/stack/sheet/metal/fifty = 3, /obj/item/research_notes/loot/big = 1))
 				if(prob(75))
 					backpack_contents += pick(list(/obj/item/slime_extract/grey = 1, /obj/item/slime_scanner = 1, /obj/item/resonator/upgraded = 1, /obj/item/gps = 1, /obj/item/fulton_core = 2, /obj/item/extraction_pack = 3, /obj/item/stack/sheet/mineral/plasma/twenty = 3, /obj/item/stack/marker_beacon/ten = 3, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 3, /obj/item/flashlight/seclite=3, /obj/item/research_notes/loot/medium = 3, /obj/item/stack/sheet/metal/fifty = 3, /obj/item/research_notes/loot/big = 1))
-				if(prob(5))
-					backpack_contents += list(/obj/item/storage/box/rndboards)
 				if(prob(20))
 					backpack_contents += pick(list(/obj/item/storage/box/stockparts/basic = 4, /obj/item/storage/box/stockparts/t2 = 3, /obj/item/storage/box/stockparts/t3 = 2, /obj/item/storage/box/stockparts/deluxe = 1))
 			if(prob(30))

@@ -2,6 +2,9 @@
 //Current rate: 135000 research points in 90 minutes
 
 //Base Nodes
+
+// ZEPHYR TODO: REDO ALL NODES BECAUSE OF OVER-CLUTTER
+
 /datum/research_node/base
 	id = "base"
 	start_researched = TRUE
@@ -104,7 +107,7 @@
 	One shudders to imagine the destructive capabilities of an army with soldiers enhanced by these designs."
 	required_ids = list("adv_biotech", "xenoorgan_bio")
 	design_ids = list("limbdesign_xenomorph")
-	boost_typepaths = list(/obj/item/organ/brain/alien, /obj/item/organ/body_egg/alien_embryo, /obj/item/organ/eyes/night_vision/alien, /obj/item/organ/tongue/alien,
+	boost_paths_reveal = list(/obj/item/organ/brain/alien, /obj/item/organ/body_egg/alien_embryo, /obj/item/organ/eyes/night_vision/alien, /obj/item/organ/tongue/alien,
 	/obj/item/organ/liver/alien, /obj/item/organ/ears, /obj/item/organ/alien/plasmavessel, /obj/item/organ/alien/plasmavessel/large, /obj/item/organ/alien/plasmavessel/large/queen,
 	/obj/item/organ/alien/plasmavessel/small, /obj/item/organ/alien/plasmavessel/small/tiny, /obj/item/organ/alien/resinspinner, /obj/item/organ/alien/acid, /obj/item/organ/alien/neurotoxin)
 	points_required = 5000
@@ -982,7 +985,7 @@
 	name = "Alien Technology"
 	desc = "Things used by the greys."
 	required_ids = list("biotech","engineering")
-	boost_typepaths = list(/obj/item/gun/energy/alien, /obj/item/scalpel/alien, /obj/item/hemostat/alien, /obj/item/retractor/alien, /obj/item/circular_saw/alien,
+	boost_paths_reveal = list(/obj/item/gun/energy/alien, /obj/item/scalpel/alien, /obj/item/hemostat/alien, /obj/item/retractor/alien, /obj/item/circular_saw/alien,
 	/obj/item/cautery/alien, /obj/item/surgicaldrill/alien, /obj/item/screwdriver/abductor, /obj/item/wrench/abductor, /obj/item/crowbar/abductor, /obj/item/multitool/abductor,
 	/obj/item/weldingtool/abductor, /obj/item/wirecutters/abductor, /obj/item/circuitboard/machine/abductor, /obj/item/melee/baton/abductor, /obj/item/abductor, /obj/item/gun/energy/shrink_ray)
 	points_required = 5000
@@ -995,7 +998,7 @@
 	desc = "Advanced biological tools."
 	required_ids = list("alientech", "adv_biotech")
 	design_ids = list("alien_scalpel", "alien_hemostat", "alien_retractor", "alien_saw", "alien_drill", "alien_cautery")
-	boost_typepaths = list(/obj/item/gun/energy/alien, /obj/item/scalpel/alien, /obj/item/hemostat/alien, /obj/item/retractor/alien, /obj/item/circular_saw/alien,
+	boost_paths_reveal = list(/obj/item/gun/energy/alien, /obj/item/scalpel/alien, /obj/item/hemostat/alien, /obj/item/retractor/alien, /obj/item/circular_saw/alien,
 	/obj/item/cautery/alien, /obj/item/surgicaldrill/alien, /obj/item/screwdriver/abductor, /obj/item/wrench/abductor, /obj/item/crowbar/abductor, /obj/item/multitool/abductor,
 	/obj/item/weldingtool/abductor, /obj/item/wirecutters/abductor, /obj/item/circuitboard/machine/abductor, /obj/item/melee/baton/abductor, /obj/item/abductor, /obj/item/gun/energy/shrink_ray)
 	points_required = 2500
@@ -1007,7 +1010,7 @@
 	desc = "Alien engineering tools"
 	required_ids = list("alientech", "adv_engi")
 	design_ids = list("alien_wrench", "alien_wirecutters", "alien_screwdriver", "alien_crowbar", "alien_welder", "alien_multitool")
-	boost_typepaths = list(/obj/item/screwdriver/abductor, /obj/item/wrench/abductor, /obj/item/crowbar/abductor, /obj/item/multitool/abductor,
+	boost_paths_reveal = list(/obj/item/screwdriver/abductor, /obj/item/wrench/abductor, /obj/item/crowbar/abductor, /obj/item/multitool/abductor,
 	/obj/item/weldingtool/abductor, /obj/item/wirecutters/abductor, /obj/item/circuitboard/machine/abductor, /obj/item/melee/baton/abductor, /obj/item/abductor,
 	/obj/item/gun/energy/shrink_ray)
 	points_required = 2500
@@ -1024,12 +1027,12 @@
 
 /datum/research_node/syndicate_basic/New()		//Crappy way of making syndicate gear decon supported until there's another way.
 	. = ..()
-	boost_typepaths = list()
+	boost_paths_reveal = list()
 	for(var/path in GLOB.uplink_items)
 		var/datum/uplink_item/UI = new path
 		if(!UI.item || !UI.illegal_tech)
 			continue
-		boost_typepaths |= UI.item	//allows deconning to unlock.
+		boost_paths_reveal |= UI.item	//allows deconning to unlock.
 
 /////////////////////////spacepod tech/////////////////////////
 /datum/research_node/spacepod_basic

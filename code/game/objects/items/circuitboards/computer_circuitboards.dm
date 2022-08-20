@@ -296,15 +296,6 @@
 	icon_state = "science"
 	build_path = /obj/machinery/computer/nanite_cloud_controller
 
-/obj/item/circuitboard/computer/rdconsole
-	name = "R&D Console (Computer Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/computer/rdconsole/core
-
-/obj/item/circuitboard/computer/rdconsole/production
-	name = "R&D Console Production Only (Computer Board)"
-	build_path = /obj/machinery/computer/rdconsole/production
-
 /obj/item/circuitboard/computer/research
 	name = "Research Monitor (Computer Board)"
 	icon_state = "science"

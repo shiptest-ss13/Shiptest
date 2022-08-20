@@ -4,7 +4,7 @@ import { Window } from '../layouts';
 export const ResearchGrid = (props, context) => {
   const { act, data } = useBackend(context);
   return (
-    <Window width={550} height={600} resizable>
+    <Window width={550} height={600}>
       <Window.Content scrollable>
         <button type="button" onClick={() => act('debug-complete')}>
           Force Complete

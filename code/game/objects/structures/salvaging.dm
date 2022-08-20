@@ -167,7 +167,6 @@
 		/obj/item/stack/circuit_stack = 50, //this might be the only way in the game to get a poly circuit, and the only way for many ships to get essensial electronics. huh.
 		/obj/effect/spawner/lootdrop/random_machine_circuit_mech = 45, //with all the wonderful broken mechs lying around, this might be a chance to get something stupidly overpowered.
 		/obj/effect/spawner/lootdrop/random_machine_circuit_common = 50, //well.... "common"
-		/obj/effect/spawner/lootdrop/random_machine_circuit_rare = 5,
 
 		/obj/item/stack/sheet/metal/five = 15, //same as above but more geared towards stuff used by circuit imprinter
 		/obj/item/stack/sheet/glass/five = 15,
@@ -241,7 +240,6 @@
 		/obj/item/research_notes/loot/medium = 20,
 		/obj/item/research_notes/loot/big = 5, //you have a chance at summoning god damn ripley lobster from this thing, might as well
 
-		/obj/item/disk/tech_disk/major = 3,
 		/obj/item/disk/tech_disk = 20,
 		/obj/item/disk/data = 20,
 		/obj/item/disk/holodisk = 20,
@@ -522,7 +520,6 @@
 /obj/effect/spawner/lootdrop/random_machine_circuit_common
 	loot = list(
 			/obj/item/circuitboard/machine/autolathe = 5,
-			/obj/item/circuitboard/machine/bepis = 5,
 			/obj/item/circuitboard/machine/biogenerator = 5,
 			/obj/item/circuitboard/machine/cell_charger = 5,
 			/obj/item/circuitboard/machine/chem_heater = 5,
@@ -531,7 +528,6 @@
 			/obj/item/circuitboard/machine/cryo_tube = 5,
 			/obj/item/circuitboard/machine/cyborgrecharger = 5,
 			/obj/item/circuitboard/machine/deep_fryer = 5,
-			/obj/item/circuitboard/machine/experimentor = 5,
 			/obj/item/circuitboard/machine/holopad = 5,
 			/obj/item/circuitboard/machine/hydroponics = 5,
 			/obj/item/circuitboard/machine/limbgrower = 5,
@@ -549,17 +545,6 @@
 			/obj/item/circuitboard/machine/seed_extractor = 5,
 			/obj/item/circuitboard/machine/selling_pad = 5,
 			/obj/item/circuitboard/machine/emitter = 5,
-		)
-
-/obj/effect/spawner/lootdrop/random_machine_circuit_rare
-	loot = list(
-			/obj/item/circuitboard/aicore = 5,
-			/obj/item/circuitboard/machine/chem_dispenser = 5,
-			/obj/item/circuitboard/machine/circuit_imprinter = 5,
-			/obj/item/circuitboard/machine/protolathe = 5,
-			/obj/item/circuitboard/machine/clonepod/experimental = 5,
-			/obj/item/circuitboard/machine/rad_collector = 5,
-			/obj/item/circuitboard/machine/launchpad = 5,
 		)
 
 /obj/effect/spawner/lootdrop/random_machine_circuit_mech

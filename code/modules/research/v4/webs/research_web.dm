@@ -212,3 +212,53 @@
 	other.mutations_discovered |= mutations_discovered
 	other.recalculate_available()
 	other.update_nodes()
+
+/datum/research_web/proc/check_possible_boosts(obj/item)
+	. = list()
+	if(!ispath(item))
+		if(istype(item))
+			item = item.type
+		else
+			CRASH("Illegal argument [item]")
+
+	for(var/locked in nodes_locked)
+		if(locked in nodes_hidden)
+			continue
+		var/datum/research_node/locked_node = SSresearch_v4.get_node(locked)
+		if(item in locked_node.boost_paths_unlock)
+			LAZYADD(.["unlock"], locked)
+
+	for(var/hidden in nodes_hidden)
+		var/datum/research_node/hidden_node = SSresearch_v4.get_node(hidden)
+		if(item in hidden_node.boost_paths_reveal)
+			LAZYADD(.["unlock"], hidden)
+
+/datum/research_web/proc/node_reveal(node_id, obj/item, destroy=TRUE)
+	if(!(node_id in nodes_hidden))
+		CRASH("node '[node_id]' not hidden")
+
+	var/datum/research_node/target = SSresearch_v4.get_node(node_id)
+	if(!(item.type in target.boost_paths_reveal))
+		return FALSE
+
+	if(destroy)
+		qdel(item)
+	nodes_hidden -= node_id
+	recalculate_available()
+	return TRUE
+
+/datum/research_web/proc/node_boost(node_id, obj/item, destroy=TRUE)
+	if(!(node_id in nodes_locked))
+		CRASH("node '[node_id]' not locked")
+	if(node_id in nodes_hidden)
+		return FALSE
+
+	var/datum/research_node/target = SSresearch_v4.get_node(node_id)
+	if(!(item.type in target.boost_paths_unlock))
+		return FALSE
+
+	if(destroy)
+		qdel(item)
+	nodes_locked -= node_id
+	recalculate_available()
+	return TRUE

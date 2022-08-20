@@ -252,16 +252,6 @@
 		/obj/item/organ/tail/lizard)
 	lootcount = 5
 
-/obj/effect/spawner/lootdrop/rnd
-	name = "random RND spawner"
-	loot = list(
-		/obj/item/storage/box/rndmining,
-		/obj/item/storage/box/rndengi,
-		/obj/item/storage/box/rndsec,
-		/obj/item/storage/box/rndciv,
-		/obj/item/storage/box/rndmed)
-	lootcount = 1
-
 /obj/effect/spawner/lootdrop/two_percent_xeno_egg_spawner
 	name = "2% chance xeno egg spawner"
 	loot = list(
@@ -364,23 +354,6 @@
 				/obj/item/circuitboard/machine/chem_dispenser/drinks,
 				/obj/item/circuitboard/machine/chem_dispenser/drinks/beer,
 				/obj/item/circuitboard/computer/slot_machine
-				)
-
-/obj/effect/spawner/lootdrop/techstorage/rnd
-	name = "RnD circuit board spawner"
-	loot = list(
-				/obj/item/circuitboard/computer/aifixer,
-				/obj/item/circuitboard/machine/rdserver,
-				/obj/item/circuitboard/machine/mechfab,
-				/obj/item/circuitboard/machine/circuit_imprinter/department,
-				/obj/item/circuitboard/computer/teleporter,
-				/obj/item/circuitboard/machine/destructive_analyzer,
-				/obj/item/circuitboard/computer/rdconsole,
-				/obj/item/circuitboard/computer/nanite_chamber_control,
-				/obj/item/circuitboard/computer/nanite_cloud_controller,
-				/obj/item/circuitboard/machine/nanite_chamber,
-				/obj/item/circuitboard/machine/nanite_programmer,
-				/obj/item/circuitboard/machine/nanite_program_hub
 				)
 
 /obj/effect/spawner/lootdrop/techstorage/security

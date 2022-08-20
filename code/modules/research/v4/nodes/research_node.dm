@@ -10,8 +10,10 @@
 	var/start_hidden = FALSE
 	var/bepis_node = FALSE
 	var/start_locked = FALSE
+	/// List of typepaths that can be used to reveal this node by default.
+	var/list/boost_paths_reveal
 	/// List of typepaths that can be used to unlock this node by default. If you want custom logic for this hook into one of the helper methods.
-	var/list/boost_typepaths
+	var/list/boost_paths_unlock
 
 	var/points_required
 	var/points_type

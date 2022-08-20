@@ -257,11 +257,6 @@
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/capacitor = 6)
 
-/obj/item/circuitboard/machine/protolathe/department/engineering
-	name = "Protolathe (Machine Board) - Engineering"
-	icon_state = "engineering"
-	build_path = /obj/machinery/rnd/production/protolathe/department/engineering
-
 /obj/item/circuitboard/machine/rad_collector
 	name = "Radiation Collector (Machine Board)"
 	icon_state = "engineering"
@@ -309,10 +304,6 @@
 		/obj/item/stock_parts/cell = 5,
 		/obj/item/stock_parts/capacitor = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high/empty)
-
-/obj/item/circuitboard/machine/techfab/department/engineering
-	name = "\improper Departmental Techfab (Machine Board) - Engineering"
-	build_path = /obj/machinery/rnd/production/techfab/department/engineering
 
 /obj/item/circuitboard/machine/thermomachine
 	name = "Thermomachine (Machine Board)"
@@ -403,50 +394,6 @@
 
 //Generic
 
-/obj/item/circuitboard/machine/circuit_imprinter
-	name = "Circuit Imprinter (Machine Board)"
-	icon_state = "generic"
-	build_path = /obj/machinery/rnd/production/circuit_imprinter
-	req_components = list(
-		/obj/item/stock_parts/matter_bin = 1,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/reagent_containers/glass/beaker = 2)
-
-/obj/item/circuitboard/machine/circuit_imprinter/department
-	name = "Departmental Circuit Imprinter (Machine Board)"
-	icon_state = "generic"
-	build_path = /obj/machinery/rnd/production/circuit_imprinter/department
-
-/obj/item/circuitboard/machine/circuit_imprinter/department/cargo
-	name = "Circuit Imprinter (M.I.D.A.S)"
-	icon_state = "supply"
-	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/cargo
-
-/obj/item/circuitboard/machine/circuit_imprinter/department/engi
-	name = "Circuit Imprinter (A.T.L.A.S)"
-	icon_state = "engineering"
-	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/engi
-
-/obj/item/circuitboard/machine/circuit_imprinter/department/med
-	name = "Circuit Imprinter (C.A.R.E)"
-	icon_state = "medical"
-	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/med
-
-/obj/item/circuitboard/machine/circuit_imprinter/department/sec
-	name = "Circuit Imprinter (P.E.A.C.E)"
-	icon_state = "security"
-	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/sec
-
-/obj/item/circuitboard/machine/circuit_imprinter/department/civ
-	name = "Circuit Imprinter (H.O.M.E)"
-	icon_state = "service"
-	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/civ
-
-/obj/item/circuitboard/machine/circuit_imprinter/department/basic
-	name = "Circuit Imprinter (B.A.S.I.C)"
-	icon_state = "generic"
-	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/basic
-
 /obj/item/circuitboard/machine/holopad
 	name = "AI Holopad (Machine Board)"
 	icon_state = "generic"
@@ -486,25 +433,6 @@
 	icon_state = "generic"
 	build_path = /obj/machinery/paystand
 	req_components = list()
-
-/obj/item/circuitboard/machine/protolathe
-	name = "Protolathe (Machine Board)"
-	icon_state = "generic"
-	build_path = /obj/machinery/rnd/production/protolathe
-	req_components = list(
-		/obj/item/stock_parts/matter_bin = 2,
-		/obj/item/stock_parts/manipulator = 2,
-		/obj/item/reagent_containers/glass/beaker = 2)
-
-/obj/item/circuitboard/machine/protolathe/department
-	name = "Departmental Protolathe (Machine Board)"
-	icon_state = "generic"
-	build_path = /obj/machinery/rnd/production/protolathe/department
-
-/obj/item/circuitboard/machine/protolathe/department/basic
-	name = "Protolathe (Basic)"
-	icon_state = "generic"
-	build_path = /obj/machinery/rnd/production/protolathe/department/basic
 
 /obj/item/circuitboard/machine/reagentgrinder
 	name = "Machine Design (All-In-One Grinder)"
@@ -556,19 +484,6 @@
 		/obj/item/stock_parts/capacitor = 1,
 		/obj/item/stack/cable_coil = 3)
 	needs_anchored = FALSE
-
-/obj/item/circuitboard/machine/techfab
-	name = "\improper Techfab (Machine Board)"
-	icon_state = "generic"
-	build_path = /obj/machinery/rnd/production/techfab
-	req_components = list(
-		/obj/item/stock_parts/matter_bin = 2,
-		/obj/item/stock_parts/manipulator = 2,
-		/obj/item/reagent_containers/glass/beaker = 2)
-
-/obj/item/circuitboard/machine/techfab/department
-	name = "\improper Departmental Techfab (Machine Board)"
-	build_path = /obj/machinery/rnd/production/techfab/department
 
 /obj/item/circuitboard/machine/vendor
 	name = "Custom Vendor (Machine Board)"
@@ -810,11 +725,6 @@
 		/obj/item/reagent_containers/glass/beaker = 2,
 		/obj/item/stack/sheet/glass = 1)
 
-/obj/item/circuitboard/machine/protolathe/department/medical
-	name = "Protolathe (Machine Board) - Medical"
-	icon_state = "medical"
-	build_path = /obj/machinery/rnd/production/protolathe/department/medical
-
 /obj/item/circuitboard/machine/sleeper
 	name = "Sleeper (Machine Board)"
 	icon_state = "medical"
@@ -853,11 +763,6 @@
 	req_components = list(
 		/obj/item/stock_parts/matter_bin = 1)
 
-/obj/item/circuitboard/machine/techfab/department/medical
-	name = "\improper Departmental Techfab (Machine Board) - Medical"
-	icon_state = "medical"
-	build_path = /obj/machinery/rnd/production/techfab/department/medical
-
 /obj/item/circuitboard/machine/clonepod
 	name = "Clone Pod (Machine Board)"
 	icon_state = "medical"
@@ -887,11 +792,6 @@
 
 //Science
 
-/obj/item/circuitboard/machine/circuit_imprinter/department/science
-	name = "Departmental Circuit Imprinter - Science (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/science
-
 /obj/item/circuitboard/machine/cyborgrecharger
 	name = "Cyborg Recharger (Machine Board)"
 	icon_state = "science"
@@ -901,24 +801,6 @@
 		/obj/item/stock_parts/cell = 1,
 		/obj/item/stock_parts/manipulator = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high)
-
-/obj/item/circuitboard/machine/destructive_analyzer
-	name = "Destructive Analyzer (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/rnd/destructive_analyzer
-	req_components = list(
-		/obj/item/stock_parts/scanning_module = 1,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/micro_laser = 1)
-
-/obj/item/circuitboard/machine/experimentor
-	name = "E.X.P.E.R.I-MENTOR (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/rnd/experimentor
-	req_components = list(
-		/obj/item/stock_parts/scanning_module = 1,
-		/obj/item/stock_parts/manipulator = 2,
-		/obj/item/stock_parts/micro_laser = 2)
 
 /obj/item/circuitboard/machine/mech_recharger
 	name = "Mechbay Recharger (Machine Board)"
@@ -986,11 +868,6 @@
 	icon_state = "science"
 	build_path = /obj/machinery/processor/slime
 
-/obj/item/circuitboard/machine/protolathe/department/science
-	name = "Protolathe (Machine Board) - Science"
-	icon_state = "science"
-	build_path = /obj/machinery/rnd/production/protolathe/department/science
-
 /obj/item/circuitboard/machine/public_nanite_chamber
 	name = "Public Nanite Chamber (Machine Board)"
 	icon_state = "science"
@@ -1023,39 +900,6 @@
 		/obj/item/stack/cable_coil = 1)
 	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
 
-/obj/item/circuitboard/machine/rdserver
-	name = "R&D Server (Machine Board)"
-	var/server_id = "default-server"
-	var/static/list/all_ids = list()
-	icon_state = "science"
-	build_path = /obj/machinery/rnd/server
-	req_components = list(
-		/obj/item/stack/cable_coil = 2,
-		/obj/item/stock_parts/scanning_module = 1)
-
-/obj/item/circuitboard/machine/rdserver/multitool_act(mob/living/user)
-	. = ..()
-	var/new_id = input("Set the server ID", "ServerID ID", server_id) as text|null
-	new_id = replacetext(new_id, " ", "-")
-	if(!new_id || (loc != user))
-		to_chat(user, "<span class='warning'>You must hold the circuitboard to change its Server ID!</span>")
-		return
-
-	if(new_id in all_ids)
-		to_chat(user, "<span class='warning'>Server ID already in use!</span>")
-		return
-
-	if(server_id != initial(server_id))
-		all_ids -= server_id
-
-	server_id = new_id
-	all_ids |= server_id
-
-/obj/item/circuitboard/machine/techfab/department/science
-	name = "\improper Departmental Techfab (Machine Board) - Science"
-	icon_state = "science"
-	build_path = /obj/machinery/rnd/production/techfab/department/science
-
 /obj/item/circuitboard/machine/teleporter_hub
 	name = "Teleporter Hub (Machine Board)"
 	icon_state = "science"
@@ -1075,17 +919,6 @@
 		/obj/item/stack/sheet/glass = 1)
 	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
 
-/obj/item/circuitboard/machine/bepis
-	name = "BEPIS Chamber (Machine Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/rnd/bepis
-	req_components = list(
-		/obj/item/stack/cable_coil = 5,
-		/obj/item/stock_parts/capacitor = 1,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/stock_parts/scanning_module = 1)
-
 /obj/item/circuitboard/machine/bluespace_miner
 	name = "Bluespace Miner (Machine Board)"
 	build_path = /obj/machinery/power/bluespace_miner
@@ -1099,22 +932,12 @@
 
 //Security
 
-/obj/item/circuitboard/machine/protolathe/department/security
-	name = "Protolathe (Machine Board) - Security"
-	icon_state = "security"
-	build_path = /obj/machinery/rnd/production/protolathe/department/security
-
 /obj/item/circuitboard/machine/recharger
 	name = "Weapon Recharger (Machine Board)"
 	icon_state = "security"
 	build_path = /obj/machinery/recharger
 	req_components = list(/obj/item/stock_parts/capacitor = 1)
 	needs_anchored = FALSE
-
-/obj/item/circuitboard/machine/techfab/department/security
-	name = "\improper Departmental Techfab (Machine Board) - Security"
-	icon_state = "security"
-	build_path = /obj/machinery/rnd/production/techfab/department/security
 
 //Service
 
@@ -1260,11 +1083,6 @@
 	else
 		return ..()
 
-/obj/item/circuitboard/machine/protolathe/department/service
-	name = "Protolathe - Service (Machine Board)"
-	icon_state = "service"
-	build_path = /obj/machinery/rnd/production/protolathe/department/service
-
 /obj/item/circuitboard/machine/recycler
 	name = "Recycler (Machine Board)"
 	icon_state = "service"
@@ -1282,11 +1100,6 @@
 		/obj/item/stock_parts/matter_bin = 1,
 		/obj/item/stock_parts/manipulator = 1)
 	needs_anchored = FALSE
-
-/obj/item/circuitboard/machine/techfab/department/service
-	name = "\improper Departmental Techfab - Service (Machine Board)"
-	icon_state = "service"
-	build_path = /obj/machinery/rnd/production/techfab/department/service
 
 /obj/item/circuitboard/machine/vendatray
 	name = "Vend-A-Tray (Machine Board)"
@@ -1314,11 +1127,6 @@
 	build_path = /obj/machinery/ore_silo
 	req_components = list()
 
-/obj/item/circuitboard/machine/protolathe/department/cargo
-	name = "Protolathe (Machine Board) - Cargo"
-	icon_state = "supply"
-	build_path = /obj/machinery/rnd/production/protolathe/department/cargo
-
 /obj/item/circuitboard/machine/stacking_machine
 	name = "Stacking Machine (Machine Board)"
 	icon_state = "supply"
@@ -1334,11 +1142,6 @@
 	req_components = list(
 		/obj/item/stack/sheet/glass = 2,
 		/obj/item/stack/cable_coil = 5)
-
-/obj/item/circuitboard/machine/techfab/department/cargo
-	name = "\improper Departmental Techfab (Machine Board) - Cargo"
-	icon_state = "supply"
-	build_path = /obj/machinery/rnd/production/techfab/department/cargo
 
 /obj/item/circuitboard/machine/selling_pad
 	name = "Cargo hold pad (Machine Board)"
