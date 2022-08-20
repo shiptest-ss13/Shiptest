@@ -1,0 +1,33 @@
+"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "SSV",
+	"namelists": ["GENERAL"],
+	"map_name": "Slipper-Class Scout Courier",
+	"map_short_name": "Scout-Courier",
+	"map_path": "_maps/shuttles/shiptest/scoutcourier.dmm",
+	"map_id": "scoutcourier",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/syndicate/cybersun",
+			"officer": true,
+			"slots": 1
+		},
+		"Intelligence Officer": {
+			"outfit": "/datum/outfit/job/head_of_personnel/syndicate/intel ",
+			"officer": true,
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/engineer/syndicate/gorlex",
+			"slots": 1
+		},
+		"Field Agent": {
+			"outfit": "/datum/outfit/job/miner/syndicate/cybersun",
+			"slots": 2
+		},
+		"Junior Agent": {
+			"outfit": "/datum/outfit/job/assistant/syndicate/cyberagent",
+			"slots": 2
+		}
+	},
+	"cost": 750 #does this even matter???
+}

@@ -195,6 +195,9 @@
 "dZ" = (
 /obj/structure/grille,
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "intelwindow"
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo/office{
 	name = "Intel Office"
@@ -818,6 +821,12 @@
 /obj/item/clothing/glasses/cold,
 /obj/effect/spawner/lootdrop/maintenance/five,
 /obj/effect/turf_decal/box,
+/obj/item/clothing/under/color/black,
+/obj/item/clothing/under/color/black,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/head/beanie/black,
+/obj/item/clothing/head/beanie/black,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "yw" = (
@@ -1125,6 +1134,17 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
+/obj/item/clothing/under/syndicate/cybersun,
+/obj/item/clothing/under/syndicate/cybersun,
+/obj/item/clothing/under/syndicate/cybersun,
+/obj/item/clothing/under/syndicate/cybersun,
+/obj/item/clothing/under/syndicate/cybersun,
+/obj/item/clothing/under/syndicate/cybersun,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "Jt" = (
@@ -1447,6 +1467,13 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Vo" = (
+/obj/machinery/button{
+	id = "intelwindow";
+	dir = 4;
+	pixel_y = -6;
+	pixel_x = -23;
+	name = "Window Shutters"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office{
 	name = "Intel Office"

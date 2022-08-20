@@ -195,3 +195,11 @@ Assistant
 	suit = /obj/item/clothing/suit/armor/roumain/shadow
 
 	head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
+
+/datum/outfit/job/assistant/syndicate/cyberagent
+	name = "Junior Agent (Cybersun)"
+
+	uniform = /obj/item/clothing/under/syndicate/cybersun\
+	shoes = /obj/item/clothing/shoes/jackboots
+	r_pocket = /obj/item/radio
+	head = /obj/item/clothing/head/soft/black
