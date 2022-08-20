@@ -90,10 +90,7 @@
 	pixel_y = 10;
 	pixel_x = -8
 	},
-/obj/item/pen/fountain,
-/obj/item/pen/fourcolor{
-	pixel_x = 3
-	},
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/crew/office)
 "bq" = (
@@ -1197,6 +1194,12 @@
 /obj/item/kitchen/knife/letter_opener{
 	desc = "A military combat utility survival knife, imported from Earth. An expensive paperweight indeed."
 	},
+/obj/item/pen/fourcolor{
+	pixel_x = 3
+	},
+/obj/item/pen/fountain{
+	pixel_x = -3
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "kV" = (
@@ -1642,6 +1645,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/item/storage/fancy/donut_box,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/office)
 "oD" = (
@@ -1885,14 +1889,12 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo/office)
 "qz" = (
-/obj/structure/displaycase/captain{
-	req_access = null;
-	req_access_txt = "20"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/structure/bed/dogbed/ian,
+/mob/living/simple_animal/pet/dog/corgi/Ian,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/crewtwo)
 "qK" = (
@@ -5877,12 +5879,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "YL" = (
-/obj/structure/table/reinforced,
-/obj/item/areaeditor/shuttle,
-/obj/item/storage/fancy/donut_box,
 /obj/effect/turf_decal/corner/opaque/purple,
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
+	},
+/obj/structure/displaycase/captain{
+	req_access = null;
+	req_access_txt = "20"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
