@@ -213,5 +213,5 @@
 	uniform = /obj/item/clothing/under/syndicate/cybersun
 	shoes = /obj/item/clothing/shoes/workboots
 	r_pocket = /obj/item/radio
-	head = /obj/item/head/beanie/black
+	head = /obj/item/clothing/head/beanie/black
 	accessory = /obj/item/clothing/accessory/armband/engine
