@@ -51,6 +51,7 @@
 	if (A)
 		A.dp_air_vent_names -= id_tag
 		A.dp_air_vent_info -= id_tag
+		deallocate_nameid(A.dp_air_vent_ids, id_tag)
 	if(aac)
 		aac.vents -= src
 
@@ -70,7 +71,7 @@
 		icon_state = "vent_welded"
 		return
 
-	if(!on || !is_operational())
+	if(!on || !is_operational)
 		icon_state = "vent_off"
 	else
 		icon_state = pump_direction ? "vent_out" : "vent_in"
@@ -80,7 +81,7 @@
 
 	if(!on)
 		return
-	if(!is_operational())
+	if(!is_operational)
 		return
 	if(!on || welded)
 		return
@@ -152,7 +153,8 @@
 
 	var/area/A = get_area(src)
 	if(!A.dp_air_vent_names[id_tag])
-		name = "\improper [A.name] dual-port air vent #[A.dp_air_vent_names.len + 1]"
+		var/nameid = allocate_nameid(A.dp_air_vent_ids, id_tag)
+		name = "\improper [A.name] dual-port air vent #[nameid]"
 		A.dp_air_vent_names[id_tag] = name
 	A.dp_air_vent_info[id_tag] = signal.data
 
@@ -223,7 +225,7 @@
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/can_unwrench(mob/user)
 	. = ..()
-	if(. && on && is_operational())
+	if(. && on && is_operational)
 		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
 		return FALSE
 

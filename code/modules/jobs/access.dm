@@ -8,7 +8,7 @@
 		if(ispAI(M))
 			return FALSE
 		// return TRUE	//AI can do whatever it wants
-		if ( check_ship_ai_access( M ) )
+		if (check_ship_ai_access(M))
 			// No, AI can't do whatever it wants anymore :)
 			return TRUE
 	if(isAdminGhostAI(M))
@@ -67,16 +67,16 @@
 			req_one_access += b
 
 // Call this before using req_ship_access directly
-/obj/proc/gen_ship_access( datum/overmap/ship/controlled/ship )
-	if ( !req_ship_access )
+/obj/proc/gen_ship_access(datum/overmap/ship/controlled/ship)
+	if (!req_ship_access)
 		return TRUE
 
-	if ( !( ship?.unique_ship_access ) )
+	if (!(ship?.unique_ship_access))
 		return TRUE
 
 // Check if an item has access to this object
 /obj/proc/check_access(obj/item/item)
-	if ( !check_ship_access( item ) )
+	if (!check_ship_access(item))
 		return FALSE
 
 	return check_access_list(item ? item.GetAccess() : null)
@@ -109,23 +109,23 @@
 
 // Checks the referenced item (if it has an ID) for ship access and returns true if authorized,
 // or if the ship/object being access is not checking for unique ship access at this time
-/obj/proc/check_ship_access( obj/item/item )
-	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
-	if ( gen_ship_access( ship ) )
+/obj/proc/check_ship_access(obj/item/item)
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
+	if (gen_ship_access(ship))
 		return TRUE
 
 	var/obj/item/card/id/id = item?.GetID()
-	if ( id?.has_ship_access( ship ) )
+	if (id?.has_ship_access(ship))
 		return TRUE
 
 	return FALSE
 
-/obj/proc/check_ship_ai_access( mob/living/silicon/robot )
-	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
-	if ( gen_ship_access( ship ) )
+/obj/proc/check_ship_ai_access(mob/living/silicon/robot)
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
+	if (gen_ship_access(ship))
 		return TRUE
 
-	if ( robot.has_ship_access( ship ) )
+	if (robot.has_ship_access(ship))
 		return TRUE
 
 	return FALSE
@@ -373,25 +373,25 @@
 		if(ACCESS_MECH_ENGINE)
 			return "Engineering Mech Access"
 		if(ACCESS_LP_LIEUTENANT)
-			return "LP Lieutenant"
+			return "Away Team Lieutenant"
 		if(ACCESS_LP_COMMISSIONER)
-			return "LP Commissioner"
+			return "Away Team Commissioner"
 		if(ACCESS_LP_VAULT)
-			return "LP Vault"
+			return "Away Team Vault"
 		if(ACCESS_LP_AI)
-			return "LP AI Sat"
+			return "Away Team AI Sat"
 		if(ACCESS_LP_OPERATING_ROOM)
-			return "LP Operating Room"
+			return "Away Team Operating Room"
 		if(ACCESS_LP_BRIDGE)
-			return "LP Bridge"
+			return "Away Team Bridge"
 		if(ACCESS_LP_FACILITIES)
-			return "LP Facilities"
+			return "Away Team Facilities"
 		if(ACCESS_LP_SECURITY)
-			return "LP Security Specialist"
+			return "Away Team Security Specialist"
 		if(ACCESS_LP_MEDIC)
-			return "LP Medical Specialist"
+			return "Away Team Medical Specialist"
 		if(ACCESS_LP_ENGINEER)
-			return "LP Engineering Specialist"
+			return "Away Team Engineering Specialist"
 
 //WS Begin
 		if(ACCESS_CLONING)
@@ -432,17 +432,3 @@
 
 /proc/get_all_centcom_jobs()
 	return list("Central Command","VIP Guest","Custodian","Thunderdome Overseer","CentCom Official","Medical Officer","Research Officer","Special Ops Officer","Admiral","CentCom Commander","CentCom Bartender","Private Security Force")
-
-/obj/item/proc/GetJobName() //Used in secHUD icon generation
-	var/obj/item/card/id/I = GetID()
-	if(!I)
-		return
-	var/jobName = I.assignment
-	if(jobName in get_all_job_icons()) //Check if the job has a hud icon
-		return jobName
-	if(jobName in get_all_centcom_jobs()) //Return with the NT logo if it is a CentCom job
-		return "CentCom"
-	for(var/datum/job/J in SSjob.occupations)
-		if((jobName in J.alt_titles) || (jobName == J.senior_title) && (J.title in get_all_job_icons()))
-			return J.title
-	return "Unknown" //Return unknown if none of the above apply

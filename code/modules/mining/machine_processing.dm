@@ -63,8 +63,10 @@
 	name = "production machine console"
 	icon = 'icons/obj/machines/mining_machines.dmi'
 	icon_state = "console"
-	density = TRUE
-	var/obj/machinery/mineral/processing_unit/machine = null
+	density = FALSE
+	///Connected processing unit
+	var/obj/machinery/mineral/processing_unit/machine
+	/// Direction for which console looks for stacking machine to connect to
 	var/machinedir = EAST
 
 /obj/machinery/mineral/processing_unit_console/Initialize()
@@ -72,8 +74,14 @@
 	machine = locate(/obj/machinery/mineral/processing_unit, get_step(src, machinedir))
 	if (machine)
 		machine.CONSOLE = src
-	else
-		return INITIALIZE_HINT_QDEL
+
+/obj/machinery/mineral/processing_unit_console/multitool_act(mob/living/user, obj/item/I) //TEMP newly adding: multitool linkage
+	if(!multitool_check_buffer(user, I))
+		return
+	var/obj/item/multitool/M = I
+	M.buffer = src
+	to_chat(user, "<span class='notice'>You store linkage information in [I]'s buffer.</span>")
+	return TRUE
 
 /obj/machinery/mineral/processing_unit_console/ui_interact(mob/user)
 	. = ..()
@@ -113,7 +121,6 @@
 	machine = null
 	return ..()
 
-
 /**********************Mineral processing unit**************************/
 
 
@@ -123,7 +130,7 @@
 	icon_state = "furnace"
 	density = TRUE
 	needs_item_input = TRUE
-	var/obj/machinery/mineral/CONSOLE = null
+	var/obj/machinery/mineral/processing_unit_console/CONSOLE = null
 	var/on = FALSE
 	var/datum/material/selected_material = null
 	var/selected_alloy = null
@@ -140,6 +147,14 @@
 	CONSOLE = null
 	QDEL_NULL(stored_research)
 	return ..()
+
+/obj/machinery/mineral/processing_unit/multitool_act(mob/living/user, obj/item/multitool/M)
+	if(istype(M))
+		if(istype(M.buffer, /obj/machinery/mineral/processing_unit_console))
+			CONSOLE = M.buffer
+			CONSOLE.machine = src
+			to_chat(user, "<span class='notice'>You link [src] to the console in [M]'s buffer.</span>")
+			return TRUE
 
 /obj/machinery/mineral/processing_unit/proc/process_ore(obj/item/stack/ore/O)
 	if(QDELETED(O))
@@ -212,7 +227,7 @@
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	var/datum/material/mat = selected_material
 	if(mat)
-		var/sheets_to_remove = (materials.materials[mat] >= (MINERAL_MATERIAL_AMOUNT * SMELT_AMOUNT) ) ? SMELT_AMOUNT : round(materials.materials[mat] /  MINERAL_MATERIAL_AMOUNT)
+		var/sheets_to_remove = (materials.materials[mat] >= (MINERAL_MATERIAL_AMOUNT * SMELT_AMOUNT)) ? SMELT_AMOUNT : round(materials.materials[mat] /  MINERAL_MATERIAL_AMOUNT)
 		if(!sheets_to_remove)
 			on = FALSE
 		else

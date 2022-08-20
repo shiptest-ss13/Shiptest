@@ -1,12 +1,8 @@
 /datum/job/captain
-	title = "Captain"
+	name = "Captain"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
-	department_head = list("CentCom")
-	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Nanotrasen officials and Space law"
-	selection_color = "#ccccff"
 	minimal_player_age = 30
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
@@ -18,8 +14,6 @@
 
 	access = list() 			//See get_access()
 	minimal_access = list() 	//See get_access()
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_SEC
 
 	mind_traits = list(TRAIT_DISK_VERIFIER)
 
@@ -30,11 +24,13 @@
 
 /datum/outfit/job/captain
 	name = "Captain"
+	job_icon = "captain"
 	jobtype = /datum/job/captain
 
 	id = /obj/item/card/id/gold
 	belt = /obj/item/pda/captain
 	gloves = /obj/item/clothing/gloves/color/captain
+	ears = /obj/item/radio/headset/heads/captain
 	uniform =  /obj/item/clothing/under/rank/command/captain
 	alt_uniform = /obj/item/clothing/under/rank/command/captain/parade //WS Edit - Alt Uniforms
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
@@ -61,12 +57,15 @@
 /datum/outfit/job/captain/nt
 	name = "Captain (Nanotrasen)"
 
+	ears = /obj/item/radio/headset/nanotrasen/captain
 	uniform = /obj/item/clothing/under/rank/command/captain/nt
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat/nt
 
 /datum/outfit/job/captain/solgov
 	name = "Captain (SolGov)"
+
+	ears = /obj/item/radio/headset/solgov/captain
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/solgov
 
@@ -76,6 +75,8 @@
 
 /datum/outfit/job/captain/pirate
 	name = "Captain (Pirate)"
+
+	ears = /obj/item/radio/headset/pirate/captain
 	uniform = /obj/item/clothing/under/costume/russian_officer
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate/captain
@@ -99,7 +100,7 @@
 /datum/outfit/job/captain/syndicate
 	name = "Captain (ACLF)"
 	id = /obj/item/card/id/syndicate_command/captain_id
-	ears = /obj/item/radio/headset/syndicate/alt
+	ears = /obj/item/radio/headset/syndicate/alt/captain
 	uniform = /obj/item/clothing/under/syndicate/aclf
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/HoS/syndicate
@@ -138,6 +139,7 @@
 	name = "General (Colonial Minutemen)"
 
 	head = /obj/item/clothing/head/caphat/minutemen
+	ears = /obj/item/radio/headset/heads/captain
 	uniform = /obj/item/clothing/under/rank/command/minutemen
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/minutemen
 	shoes = /obj/item/clothing/shoes/combat

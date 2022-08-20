@@ -146,3 +146,8 @@
 	impact_light_intensity = 6
 	impact_light_range = 2.5
 	impact_light_color_override = COLOR_CYAN
+
+/obj/item/ammo_casing/energy/laser/minigun
+	select_name = "kill"
+	projectile_type = /obj/projectile/beam/weak/penetrator
+	variance = 0.8

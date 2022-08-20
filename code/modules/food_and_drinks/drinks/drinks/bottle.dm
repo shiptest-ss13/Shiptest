@@ -43,7 +43,7 @@
 		thrower.put_in_hands(B)
 	B.icon_state = icon_state
 
-	var/icon/I = new('whitesands/icons/obj/drinks.dmi', src.icon_state)
+	var/icon/I = new('icons/obj/drinks.dmi', src.icon_state)
 	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
 	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
 	B.icon = I
@@ -136,7 +136,7 @@
 /obj/item/broken_bottle
 	name = "broken bottle"
 	desc = "A bottle with a sharp broken bottom."
-	icon = 'whitesands/icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks.dmi'
 	icon_state = "broken_bottle"
 	force = 9
 	throwforce = 5
@@ -147,7 +147,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("stabbed", "slashed", "attacked")
 	sharpness = IS_SHARP
-	var/static/icon/broken_outline = icon('whitesands/icons/obj/drinks.dmi', "broken")
+	var/static/icon/broken_outline = icon('icons/obj/drinks.dmi', "broken")
 
 /obj/item/broken_bottle/Initialize()
 	. = ..()
@@ -622,7 +622,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/attack_self(mob/user)
 	if(!is_drainable()) // Uses the reagents.flags cause reagent_flags is only the init value
-		playsound(src, 'whitesands/sound/items/openbottle.ogg', 30, 1)
+		playsound(src, 'sound/items/openbottle.ogg', 30, 1)
 		user.visible_message("<span class='notice'>[user] takes the cap off \the [src].</span>", "<span class='notice'>You take the cap off [src].</span>")
 		reagents.flags |= OPENCONTAINER //Cap's off
 		if(prob(1)) //Lucky you
@@ -642,7 +642,7 @@
 	desc = "Legend says something amazing happens when you collect enough of these."
 	custom_price = 100
 	custom_premium_price = 110
-	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "sandstar"
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/gold = 200)
@@ -650,7 +650,7 @@
 /obj/item/storage/bottles
 	name = "bottle crate"
 	desc = "A small crate for storing bottles"
-	icon = 'whitesands/icons/obj/storage.dmi'
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "bottlecrate"
 	item_state = "deliverypackage"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'

@@ -1,0 +1,152 @@
+2020-07-02:
+  MarkSuckerberg:
+  - rscadd: Added alternate job titles to the game
+  - tweak: If you set an ID's job to an alternate job title, it will actually show
+      the proper overlay.
+2020-07-04:
+  MarkSuckerberg, Superyodeler:
+  - rscadd: Jake from State Fa- er, the Syndicate has been sighted near Nanotrasen
+      space. Be suspicious of any Khaki-wearing crewmembers.
+  triplezeta:
+  - balance: The Head of Security's X-01 energy gun has had its ion bolt lens reshaped
+      slightly, allowing for far more efficiency in projecting ion bolts. It is now
+      capable of firing up to 10 ion bolts before needing to recharge.
+  - balance: The Head of Security's energy gun has additionally had a fourth lens
+      added to its optics array, allowing for the firing of taser electrodes.
+  - imageadd: An assistant offered the Head of Security and Captain a "makeover" for
+      their "crusty, soul covered guns"
+2020-07-05:
+  BigFatAnimeTiddies:
+  - bugfix: Space restaurant, power puzzle, and scav mining space ruins are now spawning
+      properly.
+2020-07-07:
+  MarkSuckerberg:
+  - bugfix: PDA Signaler carts can actually signal again
+2020-07-08:
+  AsciiSquid:
+  - rscadd: Added sword that is also drugs.
+  BigFatAnimeTiddies:
+  - rscadd: The AI core has been relocated to the center of the station, and the gravity
+      generator has been relocated to Engineering. All systems appear to be functional.
+  - rscdel: AI Satellite has been yeeted from existence on Boxstation
+  - rscadd: The maintenance bar has been receiving a lot of work from various assistants
+      throughout every shift, but rumor has it that greyshirts have gone missing and
+      were last seen having a bite to eat there. A Nanotrasen representative was deployed
+      to do an inspection in a recent shift and was served a strange, but still tasty,
+      burger.
+2020-07-10:
+  BigFatAnimeTiddies:
+  - bugfix: The cameras that monitor Pubbystation's engine have been properly reconnected
+      to the right networks.
+  CRITAWAKETS:
+  - balance: Nanotrasen has figured out that simple application of [REDACTED] removed
+      the harmful Tachyite Particles inside of stimulum, making it non-toxic and safe
+      to breathe.
+  Quantum-M:
+  - tweak: Updates the plumbing sprites.
+  TheNeoGamer42:
+  - rscadd: Spacevines now have an announcement when they spawn
+2020-07-11:
+  Maldaris:
+  - bugfix: PDA/ID now properly spawn when a Uniform is selected in loadout preferences
+2020-07-12:
+  MarkSuckerberg:
+  - imageadd: Command and Centcom uniforms have been resprited. Expect 97% less eyebleeding!
+2020-07-13:
+  AsciiSquid:
+  - bugfix: Arachnid mandibles no longer render in front of masks.
+2020-07-14:
+  AsciiSquid:
+  - balance: Bluespace miners now scale with stock parts
+  SynnGraffkin:
+  - bugfix: Tesla engine no longer blows up its own containment when generating energy
+      balls.
+2020-07-15:
+  SynnGraffkin:
+  - tweak: Atmospheric technicians have had their minimal permissions increased on
+      their ID to allow Engine access during a fully staffed team, not just during
+      skeleton shifts.
+2020-07-16:
+  BigFatAnimeTiddies:
+  - rscadd: A new space ruin can be possibly located near the station, known as the
+      Space Gym.
+  Superyodeler:
+  - bugfix: Prevents duping power with SMESs
+  - code_imp: Replaces magic numbers
+2020-07-18:
+  MarkSuckerberg:
+  - rscadd: the original compact combat shottie has been reunited with its family
+2020-07-20:
+  AsciiSquid:
+  - balance: Bluespace miners now violate 20% less laws of physics, and require power
+      to function.
+  BigFatAnimeTiddies:
+  - bugfix: Fixes roundstart atmos issues for a few space ruins.
+  - bugfix: Research and Medical hardsuit designs have been fixed to be more inline
+      with other space worthy suits on the station.
+  Maldaris:
+  - rscadd: Add proboscis organ for moths
+  - tweak: Add buzzwords to moths and arachnids
+  - bugfix: Changes the Rachnidian speak key to not collide with Moffic.
+  MarkSuckerberg:
+  - tweak: People with the spider phobia now are afraid of spiderpeople (arachnids)
+2020-07-25:
+  SynnGraffkin:
+  - rscadd: Engineering suit storage units come stocked with a pair of magboots now,
+      alongside the usual hardsuit equipment.
+  - bugfix: Less runtimes being spammed in unsorted.dm
+2020-07-26:
+  SynnGraffkin:
+  - bugfix: Grilles are no longer shocked by simply existing on a wire. A node is
+      still required to shock them.
+  - bugfix: Wires will no longer burn if they're under a tile that's on fire
+  - code_imp: Reinserted some old checks for if something is over/under a tile
+  - bugfix: Fixes revenant radiation contamination.
+  - refactor: Cleaned up some of the radiation traits and bitflags
+2020-07-27:
+  Maldaris:
+  - rscadd: 'Added Malfunctioning AI "Hack # APCs" objective'
+  - rscadd: Added the ability for an AI to "mask" their presence in an APC for 30
+      to 60 seconds.
+  - balance: Added minimum player count to spawn a Malfunctioning AI.
+  - balance: Reworked objective layout similar to normal Traitors, with less likely
+      murder objectives.
+  - config: Added `MAX_MALF_APC_HACK_OBJ` and `TRAITOR_MALF_AI_MIN_POP` configuration
+      values
+2020-07-28:
+  BigFatAnimeTiddies:
+  - rscadd: Adds a syndicate themed emergency shuttle that costs 20000 credits, and
+      can ONLY be purchased when the communications console is emagged. This shuttle
+      features a fully stocked medbay with self serve sleepers, plenty of room that
+      can fit highpop, a fully featured bridge, ballistic auto turrets, and an armory,
+      EVA prep room, and bar, all of which are only accessible by either an agent
+      ID or through hacking.
+  SynnGraffkin:
+  - rscadd: borgs now use a radial menu to select their module skins.
+  - bugfix: Covers on non-default borg icons now actually show up when you crowbar
+      them open.
+2020-07-29:
+  SynnGraffkin:
+  - tweak: Reintroduces module type to AI shell name
+2020-07-30:
+  LemonInTheDark:
+  - bugfix: Hot ice is worth what it should be again.
+2020-07-31:
+  AsciiSquid:
+  - rscadd: Squids can now spit ink
+  - rscdel: Removed old squid code that wasn't modularized from the old waspcode move
+  - balance: Squids grabs are now much tougher to break
+  - balance: Squids move slower with gravity than without.
+  - soundadd: Added squid footsteps
+  - soundadd: Added squid screaming
+  MarkSuckerberg:
+  - bugfix: No more undeleted mentor queries annoying admins.
+  - tweak: Mentor PMs now show when people start and stop responding to them to other
+      mentors, preventing dog piling on one mhelp.
+  - rscadd: Mentors can now de-mentor (in the mentor panel or using the command bar)
+      so that they don't get accidentally told IC information if they are, for example,
+      an antag or sec.
+  YoshimiWasTaken:
+  - rscadd: Added code I think for a snake skin for the pAI
+  - imageadd: Some danger noodle sprites :)
+  - tweak: Gave a rest sprite to the snake

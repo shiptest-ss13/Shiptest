@@ -331,8 +331,8 @@
 /obj/machinery/door/airlock/titanium
 	name = "shuttle airlock"
 	assemblytype = /obj/structure/door_assembly/door_assembly_titanium
-	icon = 'whitesands/icons/obj/doors/airlocks/shuttle/shuttle.dmi'
-	overlays_file = 'whitesands/icons/obj/doors/airlocks/shuttle/overlays.dmi'
+	icon = 'icons/obj/doors/airlocks/shuttle/shuttle.dmi'
+	overlays_file = 'icons/obj/doors/airlocks/shuttle/old_overlays.dmi'
 	normal_integrity = 400
 	has_hatch = FALSE
 
@@ -478,8 +478,8 @@
 
 /obj/machinery/door/airlock/shuttle
 	name = "shuttle airlock"
-	icon = 'whitesands/icons/obj/doors/airlocks/shuttle/shuttle.dmi' //WS Edit - Classic Shuttle
-	overlays_file = 'whitesands/icons/obj/doors/airlocks/shuttle/overlays.dmi'
+	icon = 'icons/obj/doors/airlocks/shuttle/shuttle.dmi' //WS Edit - Classic Shuttle //I'm leaving this. Your hubris will be remembered.
+	overlays_file = 'icons/obj/doors/airlocks/shuttle/old_overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_shuttle
 	has_hatch = FALSE
 
