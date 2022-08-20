@@ -272,35 +272,39 @@
 	recalculate_available()
 	return TRUE
 
-/datum/research_web/proc/console_access(mob/user, obj/interaction_src, target_ui = "ResearchWeb")
+/datum/research_web/proc/console_access(mob/user, obj/interaction_src, target_ui)
 	var/current = LAZYACCESS(user_consoles, user)
 	if(current && current != interaction_src)
 		SStgui.close_user_uis(user, src)
-	if(LAZYACCESSASSOC(user_uis, user, "interface") != target_ui)
+	var/existing = LAZYACCESSASSOC(user_uis, user, "interface")
+	if(existing && existing != target_ui)
 		SStgui.close_user_uis(user, src)
 
 	LAZYSET(user_consoles, user, interaction_src)
 	ui_interact(user, LAZYACCESSASSOC(user_uis, user, "tgui"), target_ui)
 
-/datum/research_web/ui_interact(mob/user, datum/tgui/ui, target_ui = "ResearchWeb")
+/datum/research_web/ui_interact(mob/user, datum/tgui/ui, target_ui)
 	if(!LAZYACCESS(user_consoles, user))
 		return
 
 	var/datum/tgui/existing = LAZYACCESSASSOC(user_uis, user, "tgui")
 	if(existing && existing != ui)
 		existing.close()
+		ui = null
+	else
+		ui = SStgui.try_update_ui(user, src, ui)
 
-	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, target_ui)
 		ui.set_autoupdate(FALSE)
 		ui.open()
-
-	LAZYSET(user_uis, user, list("tgui" = ui, "interface" = target_ui))
+		LAZYSET(user_uis, user, list("tgui" = ui, "interface" = target_ui))
 
 /datum/research_web/ui_status(mob/user, datum/ui_state/state)
 	var/obj/interaction_src = LAZYACCESS(user_consoles, user)
 	if(interaction_src?.can_interact(user))
+		return UI_INTERACTIVE
+	else if(interaction_src?.Adjacent(user))
 		return UI_UPDATE
 	return UI_CLOSE
 
