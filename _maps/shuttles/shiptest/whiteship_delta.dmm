@@ -1939,7 +1939,7 @@
 	},
 /obj/machinery/computer/mech_bay_power_console,
 /obj/machinery/button/shieldwallgen{
-	id = delta_mechbay;
+	id = "delta_mechbay";
 	pixel_x = 10;
 	pixel_y = 23
 	},
@@ -1984,7 +1984,7 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 1;
-	id = delta_mechbay;
+	id = "delta_mechbay";
 	locked = 1
 	},
 /turf/open/floor/plasteel/tech,
@@ -2269,7 +2269,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = delta_mechbay;
+	id = "delta_mechbay";
 	locked = 1
 	},
 /turf/open/floor/plasteel/tech,
