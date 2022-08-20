@@ -99,9 +99,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -355,17 +352,14 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office{
 	name = "Intel Office"
 	})
 "jW" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -373,6 +367,12 @@
 	icon_state = "1-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/filled/corner,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "kb" = (
@@ -556,6 +556,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office{
 	name = "Intel Office"
@@ -617,6 +620,9 @@
 	pixel_x = -3;
 	pixel_y = 31
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office{
 	name = "Intel Office"
@@ -677,6 +683,9 @@
 "sR" = (
 /obj/structure/chair/office{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office{
@@ -798,6 +807,10 @@
 	pixel_y = -22;
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "yl" = (
@@ -1042,7 +1055,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1431,6 +1443,9 @@
 /obj/structure/cable,
 /obj/structure/chair/office{
 	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office{
