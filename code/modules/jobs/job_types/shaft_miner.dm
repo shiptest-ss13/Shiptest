@@ -167,7 +167,7 @@
 		/obj/item/borg/upgrade/modkit/aoe=1
 	)
 
-/datum/outfit/jobs/miner/syndicate/cybersun
+/datum/outfit/job/miner/syndicate/cybersun
 	name = "Field Agent"
 
 	id = /obj/item/card/id/syndicate_command/crew_id

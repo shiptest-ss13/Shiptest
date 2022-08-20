@@ -166,7 +166,7 @@
 	courierbag = /obj/item/storage/backpack/messenger
 	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/clothing/accessory/medal/gold/captain=1, /obj/item/stack/spacecash/c10000=1)
 
-/datum/outfit/captain/syndicate/cybersun
+/datum/outfit/job/captain/syndicate/cybersun
 	name = "Captain (Syndicate)"
 
 	uniform = /obj/item/clothing/under/syndicate/cybersun
