@@ -682,11 +682,11 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/bay3)
 "gZ" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump{
+	dir = 8
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/atmospereslurper)
@@ -1515,7 +1515,7 @@
 "sJ" = (
 /obj/structure/stairs,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/concrete/reinforced,
+/turf/open/space/basic,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "sM" = (
 /obj/effect/turf_decal/number/one,
@@ -2148,6 +2148,7 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/box/white,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/glass/rag,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "Bj" = (
@@ -2743,11 +2744,11 @@
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/rockplanet/abandoned_mechbay/bay3)
 "Iy" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = -21
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/atmospereslurper)
@@ -3612,7 +3613,7 @@
 "Un" = (
 /obj/structure/stairs,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/concrete/reinforced,
+/turf/open/space/basic,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "Up" = (
 /turf/closed/wall/concrete,
