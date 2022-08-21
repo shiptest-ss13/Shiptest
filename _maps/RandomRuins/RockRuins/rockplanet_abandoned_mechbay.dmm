@@ -3235,7 +3235,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "Og" = (
-/obj/effect/mine/shrapnel,
+/obj/effect/mine/shrapnel/human_only,
 /turf/open/floor/plating/asteroid,
 /area/ruin/rockplanet/abandoned_mechbay/caves)
 "Oj" = (
@@ -3855,10 +3855,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
-"Ys" = (
-/mob/living/simple_animal/hostile/stickman/ranged,
-/turf/template_noop,
-/area/template_noop)
 "Yt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -4952,7 +4948,7 @@ is
 is
 tM
 eb
-Og
+eb
 eb
 eb
 eb
@@ -5001,7 +4997,7 @@ vB
 tM
 eb
 eb
-eb
+Og
 eb
 eb
 eb
@@ -5097,10 +5093,10 @@ vB
 vB
 vB
 vB
-Og
 eb
 eb
-Og
+eb
+eb
 eb
 Hh
 uu
@@ -5196,8 +5192,8 @@ eb
 eb
 eb
 eb
-Og
 eb
+Og
 vB
 vB
 KG
@@ -5871,7 +5867,7 @@ vd
 vd
 "}
 (39,1,1) = {"
-Ys
+vd
 vd
 vd
 vd
