@@ -151,3 +151,9 @@
 	description = "A crashed part of some unlucky ship. Has been occupied by a cult."
 	id = "crash_cult"
 	suffix = "rockplanet_crash_cult.dmm"
+
+/datum/map_template/ruin/rockplanet/abandoned_mechbay
+	name = "Abandoned Mech Bay"
+	description = "A military base formerly used for staging 4 mechs and crew. God knows what's in it now."
+	id = "abandoned_mechbay"
+	suffix = "rockplanet_abandoned_mechbay.dmm"
