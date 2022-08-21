@@ -1317,7 +1317,6 @@
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
 "qq" = (
 /obj/effect/decal/cleanable/blood,
-/mob/living/simple_animal/hostile/syndicate/melee/sword,
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/abandoned_mechbay/medbay)
 "qt" = (
@@ -1676,12 +1675,6 @@
 /mob/living/simple_animal/hostile/syndicate/ranged/smg,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
-"uH" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 9
-	},
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
 "uM" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	pixel_y = 8
@@ -2307,12 +2300,6 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/abandoned_mechbay/engineering)
-"CP" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 10
-	},
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
 "CR" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning,
 /obj/effect/decal/cleanable/generic,
@@ -2460,12 +2447,6 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/crewquarters)
-"Es" = (
-/obj/machinery/porta_turret/syndicate{
-	dir = 1
-	},
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
 "Ew" = (
 /obj/structure/chair/sofa{
 	dir = 8
@@ -5138,7 +5119,7 @@ eb
 eb
 eb
 tM
-Es
+uu
 uu
 YJ
 nr
@@ -5199,11 +5180,11 @@ BJ
 BJ
 BJ
 BJ
-CP
+BJ
 TH
 Bj
 zf
-uH
+Cy
 Cy
 Cy
 Cy
