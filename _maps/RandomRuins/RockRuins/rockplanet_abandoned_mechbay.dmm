@@ -830,6 +830,10 @@
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
 	dir = 4
 	},
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "iy" = (
@@ -1107,12 +1111,14 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/light/broken{
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
@@ -1592,6 +1598,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
 	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
