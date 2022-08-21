@@ -1,6 +1,7 @@
 //Hoods for winter coats and chaplain hoodie etc
 
 /obj/item/clothing/suit/hooded
+	icon = 'icons/obj/clothing/suits/hooded.dmi'
 	actions_types = list(/datum/action/item_action/toggle_hood)
 	var/obj/item/clothing/head/hooded/hood
 	var/hoodtype = /obj/item/clothing/head/hooded/winterhood //so the chaplain hoodie or other hoodies can override this
@@ -93,6 +94,8 @@
 			qdel(src)
 
 //Toggle exosuits for different aesthetic styles (hoodies, suit jacket buttons, etc)
+/obj/item/clothing/suit/toggle
+	icon = 'icons/obj/clothing/suits/toggle.dmi'
 
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
 	..()

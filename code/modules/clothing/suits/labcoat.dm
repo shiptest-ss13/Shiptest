@@ -80,6 +80,7 @@ You're pretty sure this is just a raincoat.
 /obj/item/clothing/suit/longcoat
 	name = "longcoat"
 	desc = "A long, victorian styled labcoat."
+	icon = 'icons/obj/clothing/suits/utility.dmi'
 	icon_state = "labcoat_long"
 	item_state = "labcoat"
 	allowed = list(/obj/item/analyzer, /obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/sensor_device, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
