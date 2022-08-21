@@ -268,11 +268,11 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "dB" = (
-/obj/machinery/door/poddoor{
-	id = "mechbay4"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/poddoor{
+	id = "mechbay3"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/bay3)
@@ -371,6 +371,10 @@
 /turf/closed/wall/concrete,
 /area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
 "ew" = (
+/obj/effect/turf_decal/arrows{
+	pixel_y = -8;
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "ey" = (
@@ -383,7 +387,7 @@
 	pixel_x = 7
 	},
 /obj/machinery/button/door{
-	id = "baseinterior";
+	id = "baseinternal";
 	name = "Interior Blast Doors";
 	dir = 8;
 	pixel_y = -2;
@@ -411,10 +415,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "eB" = (
-/obj/machinery/door/poddoor{
-	id = "mechbay4"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/poddoor{
+	id = "mechbay3"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/bay3)
 "eG" = (
@@ -459,7 +463,15 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/generic,
-/obj/machinery/light,
+/obj/machinery/light/broken{
+	dir = 2
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "mechbay2";
+	pixel_y = -24;
+	name = "Bay Shutters"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
 "fe" = (
@@ -574,8 +586,8 @@
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "fX" = (
 /obj/structure/rack,
-/obj/machinery/light,
 /obj/effect/spawner/lootdrop/maintenance/four,
+/obj/machinery/light/dim,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay4)
 "fY" = (
@@ -601,6 +613,7 @@
 /obj/item/clothing/glasses/heat,
 /obj/item/clothing/glasses/cold,
 /obj/item/clothing/glasses/cheapsuns,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "gj" = (
@@ -742,7 +755,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
 "hv" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
@@ -912,10 +925,15 @@
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 4
 	},
-/obj/machinery/light{
+/obj/effect/decal/cleanable/oil,
+/obj/machinery/light/broken{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/oil,
+/obj/machinery/button/door{
+	id = "mechbay3";
+	pixel_y = 24;
+	name = "Bay Shutters"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay3)
 "kV" = (
@@ -987,8 +1005,8 @@
 "lt" = (
 /obj/effect/turf_decal/box/white,
 /obj/structure/reagent_dispensers/watertank,
-/obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/broken,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay3)
 "ly" = (
@@ -1020,7 +1038,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light{
+/obj/machinery/light/broken{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1548,7 +1566,7 @@
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 8
 	},
-/obj/machinery/light{
+/obj/machinery/light/broken{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -1589,7 +1607,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood,
-/obj/machinery/light,
+/obj/machinery/light/broken{
+	dir = 2
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "tC" = (
@@ -1662,11 +1682,11 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/external)
 "un" = (
-/obj/machinery/door/poddoor{
-	id = "mechbay4"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "mechbay3"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/bay3)
@@ -2007,7 +2027,7 @@
 /obj/machinery/door/airlock/hatch{
 	name = "crew quarters"
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "yi" = (
 /obj/effect/turf_decal/number/three{
@@ -2087,18 +2107,12 @@
 /area/ruin/rockplanet/abandoned_mechbay/engineering)
 "zE" = (
 /obj/structure/sign/warning/securearea,
-/obj/machinery/button/door{
-	dir = 1;
-	id = "mechabay1";
-	pixel_y = 8;
-	name = "Bay Shutters"
-	},
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
 "zH" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/highsecurity,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
 "zM" = (
 /obj/structure/table/reinforced,
@@ -2137,7 +2151,7 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/box/white,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/machinery/light{
+/obj/machinery/light/broken{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -2248,16 +2262,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/external)
-"BR" = (
-/obj/machinery/button/door{
-	dir = 1;
-	id = "mechabay2";
-	pixel_y = 8;
-	name = "Bay Shutters"
-	},
-/obj/structure/sign/warning/securearea,
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/rockplanet/abandoned_mechbay/bay1)
 "BT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -2319,10 +2323,15 @@
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 4
 	},
-/obj/machinery/light{
+/obj/effect/decal/cleanable/oil,
+/obj/machinery/light/broken{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/oil,
+/obj/machinery/button/door{
+	id = "mechbay4";
+	pixel_y = 24;
+	name = "Bay Shutters"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay4)
 "Dd" = (
@@ -2420,10 +2429,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/machinery/light{
+/obj/effect/decal/cleanable/oil,
+/obj/machinery/light/broken{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay3)
 "DU" = (
@@ -2488,10 +2497,10 @@
 /area/ruin/rockplanet/abandoned_mechbay/engineering)
 "Fb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light/dim{
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/machinery/light/broken{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "Ff" = (
@@ -2526,6 +2535,12 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/machinery/button/door{
+	dir = 1;
+	id = "mechbay1";
+	pixel_y = -24;
+	name = "Bay Shutters"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
 "Ft" = (
@@ -2636,6 +2651,10 @@
 /area/ruin/rockplanet/abandoned_mechbay/medbay)
 "Hp" = (
 /obj/effect/decal/cleanable/vomit/old,
+/obj/effect/turf_decal/arrows{
+	pixel_y = -8;
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "Hv" = (
@@ -2686,6 +2705,10 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/blood,
+/obj/effect/turf_decal/arrows{
+	pixel_y = -8;
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "HK" = (
@@ -3017,7 +3040,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "LL" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/corner,
@@ -3570,14 +3593,12 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/machinery/light/small/broken{
+	dir = 8
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "Tq" = (
-/obj/machinery/button/door{
-	id = "mechabay4";
-	pixel_y = -8;
-	name = "Bay Shutters"
-	},
 /obj/structure/sign/warning/securearea{
 	pixel_y = 8
 	},
@@ -3596,6 +3617,7 @@
 /obj/item/clothing/glasses/heat,
 /obj/item/clothing/glasses/cold,
 /obj/item/clothing/glasses/cheapsuns,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "Tw" = (
@@ -3649,7 +3671,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/abandoned_mechbay/bay3)
 "UP" = (
 /turf/closed/wall/concrete/reinforced,
@@ -3692,7 +3714,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/abandoned_mechbay/laundry)
 "Wh" = (
 /obj/structure/cable{
@@ -3748,7 +3770,7 @@
 "WT" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/highsecurity,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/abandoned_mechbay/bay4)
 "WZ" = (
 /obj/structure/reagent_dispensers/fueltank,
@@ -3900,7 +3922,7 @@
 "YP" = (
 /obj/effect/turf_decal/box/white,
 /obj/structure/reagent_dispensers/watertank,
-/obj/machinery/light,
+/obj/machinery/light/dim,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay4)
 "YQ" = (
@@ -3918,11 +3940,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
 "YX" = (
-/obj/machinery/button/door{
-	id = "mechabay3";
-	pixel_y = -8;
-	name = "Bay Shutters"
-	},
 /obj/structure/sign/warning/securearea{
 	pixel_y = 8
 	},
@@ -3974,7 +3991,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/dim{
+/obj/machinery/light/broken{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -5261,7 +5278,7 @@ PF
 ir
 kZ
 fd
-BR
+zE
 iG
 aM
 iU
