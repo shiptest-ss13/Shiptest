@@ -151,7 +151,7 @@
 
 /obj/item/gun/ballistic/revolver/nagant
 	name = "\improper Nagant revolver"
-	desc = "An ancient model of revolver with notoriously poor ergonomics, chambered in 7.62x38mmR. While its unique design prevents the use of speed loaders, it is the only revolver able to use a suppressor.""
+	desc = "An ancient model of revolver with notoriously poor ergonomics, chambered in 7.62x38mmR. While its unique design prevents the use of speed loaders, it is the only revolver able to use a suppressor."
 	icon_state = "nagant"
 	can_suppress = TRUE
 
