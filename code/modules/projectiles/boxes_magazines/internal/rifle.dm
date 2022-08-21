@@ -2,7 +2,7 @@
 	name = "bolt action rifle internal magazine"
 	desc = "Oh god, this shouldn't be here"
 	ammo_type = /obj/item/ammo_casing/a762
-	caliber = "a762"
+	caliber = "7.62x54mmR"
 	max_ammo = 5
 	instant_load = TRUE
 
@@ -16,5 +16,5 @@
 /obj/item/ammo_box/magazine/internal/boltaction/polymer
 	name = "polymer bolt action rifle internal magazine"
 	ammo_type = /obj/item/ammo_casing/aac_300blk
-	caliber = ".300BLK"
+	caliber = ".300 BLK"
 	max_ammo = 5

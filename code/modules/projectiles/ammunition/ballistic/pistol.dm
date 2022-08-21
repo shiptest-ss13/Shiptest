@@ -100,7 +100,7 @@
 // .50AE (Desert Eagle)
 
 /obj/item/ammo_casing/a50AE
-	name = ".50AE bullet casing"
-	desc = "A .50AE bullet casing."
-	caliber = ".50"
+	name = ".50 AE bullet casing"
+	desc = "A .50 AE bullet casing."
+	caliber = ".50 AE"
 	projectile_type = /obj/projectile/bullet/a50AE

@@ -1,6 +1,6 @@
 /obj/item/ammo_box/magazine/m12g
 	name = "shotgun magazine (12g buckshot slugs)"
-	desc = "A drum magazine."
+	desc = "A bulky shotgun drum magazine."
 	icon_state = "m12gb"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "shotgun"

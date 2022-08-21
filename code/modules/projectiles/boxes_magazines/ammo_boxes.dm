@@ -252,7 +252,7 @@
 
 /obj/item/ammo_box/a762
 	// WS Edit Start - Whitesands
-	name = "stripper clip (7.62x54mm)"
+	name = "stripper clip (7.62x54mmR)"
 	desc = "A rifle-cartrige stripper clip."
 	// WS Edit Start - Whitesands
 	icon_state = "762"

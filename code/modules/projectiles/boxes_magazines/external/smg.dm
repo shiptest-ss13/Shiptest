@@ -1,5 +1,6 @@
 /obj/item/ammo_box/magazine/wt550m9
 	name = "wt550 magazine (4.6x30mm)"
+	desc = "A compact top-loading PDW magazine, designed to chamber 4.6x30mm."
 	icon_state = "46x30mmt-20"
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	caliber = "4.6x30mm"
@@ -28,7 +29,8 @@
 	icon_state = "46x30mmtI-[round(ammo_count(),4)]"
 
 /obj/item/ammo_box/magazine/uzim9mm
-	name = "uzi magazine (9mm)"
+	name = "long SMG magazine (9mm)"
+	desc = "A long submachine gun magazine, designed to chamber 9mm."
 	icon_state = "uzi9mm-32"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
@@ -40,6 +42,7 @@
 
 /obj/item/ammo_box/magazine/smgm9mm
 	name = "SMG magazine (9mm)"
+	desc = "A submachine gun magazine, designed to chamber 9mm."
 	icon_state = "smg9mm-42"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
@@ -63,6 +66,7 @@
 
 /obj/item/ammo_box/magazine/smgm45
 	name = "SMG magazine (.45)"
+	desc = "A bullpup submachine gun magazine, designed to chamber .45."
 	icon_state = "c20r45-24"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
@@ -70,6 +74,7 @@
 
 /obj/item/ammo_box/magazine/smgm45/drum
 	name = "drum magazine (.45)"
+	desc = "A bulky drum magazine for submachine guns, designed to chamber .45."
 	icon_state = "drum45"
 	max_ammo = 50
 	w_class = WEIGHT_CLASS_NORMAL
@@ -80,6 +85,7 @@
 
 /obj/item/ammo_box/magazine/pistol556mm
 	name = "handgun magazine (5.56mm HITP caseless)"
+	desc = "A double-stack handgun magazine designed to chamber 5.56mm HITP caseless."
 	icon_state = "5.56mmHITP-12" //ok i did it
 	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP
 	caliber = "5.56mm HITP caseless"
@@ -91,6 +97,7 @@
 
 /obj/item/ammo_box/magazine/tec9
 	name = "machine pistol magazine(9mm AP)"
+	desc = "A very high capacity machine pistol magazine, designed to chamber 9mm."
 	icon_state = "tec_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 	caliber = "9mm"
