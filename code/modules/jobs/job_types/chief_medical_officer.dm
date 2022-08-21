@@ -107,7 +107,7 @@
 	uniform = /obj/item/clothing/under/suit/tan
 	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/green
 	shoes = /obj/item/clothing/shoes/sneakers/brown
-	suit = null
+	suit = /obj/item/clothing/suit/toggle/suspenders/gray
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
 	l_hand = /obj/item/reagent_containers/glass/maunamug
 	backpack = /obj/item/storage/backpack/chemistry
