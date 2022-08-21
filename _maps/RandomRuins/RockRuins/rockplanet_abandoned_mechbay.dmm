@@ -1460,8 +1460,8 @@
 "rT" = (
 /obj/structure/chair/sofa/right,
 /mob/living/simple_animal/hostile/syndicate{
-	name = "Syndicate Launderer";
-	desc = "Death to Dirty Laundry."
+	name = "Syndicate Engineer";
+	desc = "Death to bad mechanics."
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
@@ -2352,7 +2352,9 @@
 	pixel_y = 19
 	},
 /obj/structure/curtain,
-/mob/living/simple_animal/hostile/syndicate/civilian,
+/mob/living/simple_animal/hostile/syndicate/civilian{
+	desc = "Can an armored mook not shower in peace?"
+	},
 /turf/open/floor/carpet/blue,
 /area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "Dy" = (
@@ -2911,8 +2913,8 @@
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/syndicate{
-	name = "Syndicate Launderer";
-	desc = "Death to Dirty Laundry."
+	name = "Syndicate Engineer";
+	desc = "Death to bad mechanics."
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/abandoned_mechbay/engineering)
@@ -3195,8 +3197,8 @@
 	pixel_x = -24
 	},
 /mob/living/simple_animal/hostile/syndicate{
-	name = "Syndicate Launderer";
-	desc = "Death to Dirty Laundry."
+	name = "Syndicate Engineer";
+	desc = "Death to bad mechanics."
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
