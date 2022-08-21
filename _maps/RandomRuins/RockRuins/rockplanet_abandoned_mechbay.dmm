@@ -447,6 +447,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
+"fc" = (
+/obj/structure/railing,
+/turf/open/floor/plating/asteroid,
+/area/ruin/rockplanet/abandoned_mechbay/external)
 "fd" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 4
@@ -1025,6 +1029,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 4
 	},
+/obj/machinery/light/broken{
+	dir = 4
+	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "lR" = (
@@ -1342,6 +1349,10 @@
 /obj/effect/spawner/lootdrop/maintenance/six,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay4)
+"qJ" = (
+/obj/machinery/light/small,
+/turf/open/floor/plating/rockplanet,
+/area/ruin/rockplanet/abandoned_mechbay/external)
 "qN" = (
 /obj/machinery/computer/rdconsole{
 	dir = 1
@@ -1437,7 +1448,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid,
-/area/ruin/rockplanet/abandoned_mechbay/caves)
+/area/ruin/rockplanet/abandoned_mechbay/external)
 "rN" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/stand_clear/white{
@@ -3627,6 +3638,12 @@
 "Up" = (
 /turf/closed/wall/concrete,
 /area/ruin/rockplanet/abandoned_mechbay/laundry)
+"UH" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/rockplanet/abandoned_mechbay/caves)
 "UK" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/highsecurity,
@@ -3806,6 +3823,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
+	dir = 8
+	},
+/obj/machinery/light/broken{
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_4,
@@ -4689,7 +4709,7 @@ eb
 eb
 tM
 eb
-Ww
+fc
 Pj
 sj
 ZL
@@ -4983,7 +5003,7 @@ Og
 eb
 eb
 eb
-eb
+UH
 DE
 bQ
 cP
@@ -5031,7 +5051,7 @@ eb
 kJ
 eb
 eb
-tM
+qJ
 KH
 DE
 Up
@@ -5173,7 +5193,7 @@ vB
 eb
 eb
 eb
-eb
+Hh
 eb
 Og
 vB
