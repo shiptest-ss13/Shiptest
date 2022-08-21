@@ -73,12 +73,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin)
-"bC" = (
-/obj/structure/grille,
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/space)
 "bM" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/item/assembly/igniter,
@@ -110,27 +104,22 @@
 /obj/machinery/light,
 /turf/open/floor/wood,
 /area/ruin)
-"cz" = (
-/obj/structure/grille/broken,
-/turf/open/space/basic,
+"db" = (
+/turf/template_noop,
 /area/space)
 "dd" = (
 /obj/item/stack/ore/uranium,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"dv" = (
+/turf/open/floor/plating,
+/area/ruin)
 "dw" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /turf/open/floor/plating,
 /area/space)
-"dz" = (
-/obj/effect/decal/cleanable/oil/slippery,
-/obj/machinery/modular_computer/console{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin)
 "dH" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -179,6 +168,15 @@
 /obj/structure/mecha_wreckage/ripley/mkii,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"eO" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	dir = 6
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin)
 "eX" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord,
 /turf/open/floor/plating/asteroid/airless,
@@ -202,12 +200,6 @@
 /obj/effect/decal/cleanable/blood/gibs/bubblegum,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
-"fG" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers{
-	dir = 5
-	},
-/turf/open/floor/plasteel,
-/area/ruin)
 "fJ" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/effect/turf_decal/solarpanel,
@@ -234,9 +226,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
-"gq" = (
-/turf/closed/mineral,
-/area/space)
 "gs" = (
 /obj/machinery/door/airlock/alarmlock{
 	name = "Cargo"
@@ -248,6 +237,16 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
+/area/ruin)
+"gv" = (
+/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
 /area/ruin)
 "gH" = (
 /obj/structure/cable{
@@ -300,6 +299,10 @@
 /obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin)
+"hZ" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/ruin)
 "ik" = (
 /obj/structure/sign/poster/retro/smile,
 /turf/closed/wall/rust,
@@ -310,6 +313,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"im" = (
+/obj/structure/grille,
+/turf/template_noop,
+/area/space)
 "in" = (
 /obj/effect/landmark/ore_vein,
 /obj/effect/landmark/ore_vein,
@@ -321,10 +328,6 @@
 	},
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
-"iy" = (
-/obj/structure/closet/crate/engineering,
-/turf/open/floor/plasteel,
-/area/ruin)
 "iA" = (
 /obj/item/stack/ore/uranium,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -428,6 +431,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"ml" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin)
 "mn" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -453,6 +465,12 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
+/area/ruin)
+"mX" = (
+/obj/machinery/modular_computer/console/preset/engineering{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin)
 "nf" = (
 /obj/effect/turf_decal/solarpanel,
@@ -538,7 +556,9 @@
 /area/ruin)
 "oN" = (
 /obj/structure/lattice,
-/turf/open/space/basic,
+/obj/structure/lattice,
+/obj/structure/lattice,
+/turf/template_noop,
 /area/space)
 "oR" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -554,6 +574,12 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"pa" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Solar Control"
+	},
+/turf/closed/mineral,
+/area/asteroid)
 "pv" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -685,22 +711,18 @@
 /obj/machinery/vending/mining_equipment,
 /turf/open/floor/plasteel,
 /area/ruin)
-"tM" = (
+"tF" = (
+/obj/structure/spawner/mining/goliath,
+/turf/open/floor/plating/asteroid/airless,
+/area/asteroid)
+"tU" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers{
-	dir = 6
+	dir = 10
 	},
-/turf/open/floor/plasteel,
-/area/ruin)
-"tS" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
 	},
-/turf/open/floor/plasteel,
-/area/ruin)
-"ub" = (
-/obj/structure/closet/secure_closet/engineering_personal,
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/ruin)
 "vh" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -713,6 +735,11 @@
 "vy" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel,
+/area/ruin)
+"vR" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/atmospherics/components/trinary/filter/atmos/co2,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin)
 "wj" = (
 /obj/machinery/roulette,
@@ -741,10 +768,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
-"wF" = (
+"wO" = (
+/obj/structure/grille,
 /obj/structure/lattice,
-/turf/open/space/basic,
-/area/ruin)
+/obj/structure/lattice,
+/turf/template_noop,
+/area/space)
 "xv" = (
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /turf/open/floor/plasteel,
@@ -853,24 +882,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin)
-"Ar" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin)
 "At" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/multitool,
 /turf/open/floor/plasteel,
 /area/ruin)
-"AB" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/space)
 "AI" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -912,6 +929,15 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
+/area/space)
+"BS" = (
+/mob/living/simple_animal/hostile/asteroid/goliath,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/asteroid/airless,
+/area/asteroid)
+"BV" = (
+/obj/structure/lattice,
+/turf/template_noop,
 /area/space)
 "Cc" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -1025,11 +1051,6 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
-"Ez" = (
-/obj/effect/decal/cleanable/oil/slippery,
-/obj/machinery/atmospherics/components/trinary/filter/atmos/co2,
-/turf/open/floor/plasteel,
-/area/ruin)
 "EH" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1048,6 +1069,10 @@
 	},
 /turf/open/floor/wood,
 /area/ruin)
+"EQ" = (
+/obj/structure/grille/broken,
+/turf/template_noop,
+/area/space)
 "ES" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/pod/old/syndicate,
@@ -1060,13 +1085,14 @@
 	},
 /turf/closed/wall,
 /area/ruin)
-"FW" = (
-/obj/machinery/suit_storage_unit/mining/eva,
-/turf/open/floor/plasteel,
-/area/ruin)
 "Gt" = (
 /turf/closed/wall,
 /area/space)
+"GA" = (
+/obj/machinery/suit_storage_unit/mining/eva,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin)
 "GD" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2{
@@ -1074,11 +1100,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
-"GQ" = (
-/obj/structure/grille/broken,
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/space)
 "GZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -1139,12 +1160,6 @@
 /obj/item/stack/ore/diamond,
 /turf/open/floor/plasteel,
 /area/ruin)
-"Jw" = (
-/obj/structure/grille,
-/obj/structure/grille,
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/space)
 "JA" = (
 /obj/machinery/door/airlock{
 	name = "Preparations"
@@ -1164,7 +1179,7 @@
 "JN" = (
 /obj/structure/grille,
 /obj/structure/lattice,
-/turf/open/space/basic,
+/turf/template_noop,
 /area/space)
 "JT" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -1183,6 +1198,39 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"Kg" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/modular_computer/console{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin)
+"Kz" = (
+/obj/item/pickaxe/drill,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/plating/asteroid/airless,
+/area/asteroid)
+"KC" = (
+/obj/structure/grille/broken,
+/obj/structure/lattice,
+/turf/template_noop,
+/area/space)
+"Lf" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ruin)
 "Ln" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -1192,13 +1240,9 @@
 	},
 /turf/open/floor/plasteel/stairs,
 /area/ruin)
-"Lp" = (
-/obj/structure/grille,
-/turf/open/space/basic,
-/area/space)
 "Lz" = (
-/turf/open/space/basic,
-/area/space)
+/turf/template_noop,
+/area/template_noop)
 "LD" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1236,6 +1280,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"MT" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ruin)
 "MV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1261,6 +1311,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin)
+"Np" = (
+/obj/structure/closet/crate/engineering,
+/turf/open/floor/plating,
+/area/ruin)
 "Nt" = (
 /obj/structure/sign/poster/official/space_cops,
 /turf/closed/wall,
@@ -1277,16 +1331,6 @@
 "NV" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
-/area/ruin)
-"NX" = (
-/obj/machinery/power/apc/auto_name/south,
-/obj/machinery/atmospherics/pipe/simple/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel,
 /area/ruin)
 "Oa" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -1350,6 +1394,12 @@
 	},
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"OJ" = (
+/obj/machinery/modular_computer/console{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin)
 "OU" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -1638,23 +1688,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
-"UE" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Solar Control"
-	},
-/turf/closed/mineral,
+"UV" = (
+/obj/structure/grille,
+/obj/structure/grille,
+/obj/structure/lattice,
+/turf/template_noop,
 /area/space)
 "UZ" = (
 /obj/structure/closet/crate/bin,
 /obj/item/trash/can/food/beans,
 /turf/open/floor/plasteel,
 /area/ruin)
-"Vd" = (
-/obj/machinery/modular_computer/console/preset/engineering,
-/obj/machinery/atmospherics/pipe/simple/scrubbers{
-	dir = 10
-	},
-/turf/open/floor/plasteel,
+"Vf" = (
+/obj/structure/closet/secure_closet/engineering_personal,
+/turf/open/floor/plating,
 /area/ruin)
 "VC" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1715,12 +1762,6 @@
 /obj/structure/closet/crate,
 /turf/open/floor/plasteel,
 /area/ruin)
-"WH" = (
-/obj/machinery/modular_computer/console{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin)
 "WR" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
@@ -1728,21 +1769,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin)
-"Xf" = (
-/obj/effect/decal/cleanable/oil/slippery,
-/obj/machinery/atmospherics/pipe/simple/scrubbers{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+"Xj" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/ruin)
 "Xo" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -1826,12 +1858,12 @@ Lz
 Lz
 Lz
 Lz
+qX
+qX
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
+qX
 Lz
 Lz
 Lz
@@ -1877,14 +1909,14 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+Wk
+qX
+qX
+qX
+qX
+qX
+qX
 Lz
 Lz
 Lz
@@ -1927,18 +1959,18 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+Wk
+in
+qX
+qX
+Wk
+Wk
+qX
+qX
+qX
+qX
 Lz
 Lz
 Lz
@@ -1975,24 +2007,24 @@ Lz
 Lz
 Lz
 Lz
+qX
+qX
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+Wk
+qX
+qX
 Lz
 Lz
 Lz
@@ -2025,20 +2057,9 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
 Lz
 Lz
 qX
@@ -2046,6 +2067,17 @@ qX
 qX
 qX
 qX
+Wp
+Wp
+BS
+Er
+Er
+Kz
+qX
+qX
+qX
+Lz
+Lz
 Lz
 Lz
 Lz
@@ -2076,31 +2108,27 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-qX
-qX
-qX
-qX
 qX
 qX
 Wk
 qX
-gq
-gq
+qX
+Lz
+qX
+Wk
+Wk
+Wp
+Wp
+Wp
+Wp
+qX
+qX
+qX
+qX
+qX
+qX
+Lz
+qX
 Lz
 Lz
 Lz
@@ -2108,9 +2136,13 @@ Lz
 Lz
 Lz
 Lz
-gq
-gq
-gq
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
 Lz
 Lz
 Lz
@@ -2125,43 +2157,43 @@ Lz
 Lz
 Lz
 Lz
+qX
+qX
 Lz
-Lz
-Lz
-Lz
+qX
+Wk
+qX
+Wk
+qX
+qX
+qX
+qX
 Wp
 Wp
-Lz
-Lz
-Lz
-qX
-Lz
-Lz
-Lz
-Lz
-Lz
+Wp
+Wp
 qX
 qX
 qX
 Wk
 qX
 qX
-qX
-Wk
-qX
-qX
-qX
-Wk
-gq
-gq
-gq
 Lz
 Lz
 Lz
 Lz
-gq
-gq
-gq
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
 Lz
 Lz
 Lz
@@ -2175,11 +2207,375 @@ Lz
 Lz
 Lz
 Lz
+qX
+qX
+Wk
+qX
+qX
+qX
+qX
+qX
+qX
+Wk
+qX
+qX
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+qX
+qX
+qX
 Lz
 Lz
 Lz
 Lz
 Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+"}
+(9,1,1) = {"
+Lz
+Lz
+Lz
+qX
+Wk
+qX
+qX
+Wp
+Wp
+qX
+qX
+Wk
+qX
+qX
+qX
+Wp
+Wp
+Wp
+Wk
+qX
+Wp
+Wp
+Wp
+qX
+Wk
+qX
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+"}
+(10,1,1) = {"
+Lz
+Lz
+Lz
+qX
+qX
+Wk
+qX
+Wp
+Wp
+qX
+Wp
+Wp
+qX
+Wp
+Wp
+Wp
+Wp
+qX
+qX
+qX
+qX
+Wp
+tF
+qX
+qX
+qX
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+"}
+(11,1,1) = {"
+Lz
+Lz
+Lz
+qX
+Wk
+qX
+qX
+qX
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+Wk
+qX
+qX
+qX
+qX
+qX
+qX
+Wk
+qX
+qX
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+"}
+(12,1,1) = {"
+Lz
+Lz
+Lz
+qX
+qX
+qX
+qX
+Wk
+qX
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+Wk
+qX
+Wk
+Wk
+Wk
+qX
+Wk
+qX
+qX
+qX
+Wk
+qX
+qX
+qX
+qX
+qX
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+"}
+(13,1,1) = {"
+Lz
+Lz
+Lz
+Lz
+qX
+qX
+Wk
+qX
+qX
+Wp
+Wp
+Wp
+Wp
+Wp
+qX
+qX
+qX
+qX
+Wk
+Wk
+Wk
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+Wk
+qX
+qX
+qX
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+qX
+Wk
+qX
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+"}
+(14,1,1) = {"
+Lz
+Lz
+Lz
+Lz
+Lz
+qX
+qX
+qX
+qX
+Wk
+Wp
+Wp
+Wp
+Wp
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+Wk
+qX
+qX
+qX
+Wk
+qX
+qX
+qX
+Wk
+qX
+qX
+qX
+Lz
+Lz
+Lz
+Lz
+qX
+qX
+qX
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+Lz
+"}
+(15,1,1) = {"
+Lz
+Lz
+Lz
+Lz
+qX
+Wk
+qX
+Wk
+qX
 qX
 qX
 Wp
@@ -2188,9 +2584,9 @@ Wp
 qX
 qX
 qX
-Lz
-Lz
-Lz
+qX
+qX
+qX
 Wk
 Wk
 Wk
@@ -2205,14 +2601,14 @@ re
 qX
 qX
 qX
-gq
-gq
-gq
+qX
+qX
+qX
 Lz
-gq
-gq
-gq
-gq
+qX
+Wk
+qX
+qX
 Lz
 Lz
 Lz
@@ -2222,16 +2618,16 @@ Lz
 Lz
 Lz
 "}
-(9,1,1) = {"
+(16,1,1) = {"
 Lz
 Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
+qX
 qX
 qX
 qX
@@ -2258,13 +2654,13 @@ qX
 qX
 qX
 qX
-gq
-gq
-gq
-gq
-gq
-gq
-gq
+qX
+qX
+qX
+qX
+qX
+qX
+qX
 Lz
 Lz
 Lz
@@ -2274,7 +2670,7 @@ Lz
 Lz
 Lz
 "}
-(10,1,1) = {"
+(17,1,1) = {"
 Lz
 Lz
 Lz
@@ -2282,7 +2678,7 @@ Lz
 Lz
 Lz
 Lz
-Lz
+qX
 qX
 qX
 qX
@@ -2311,13 +2707,13 @@ qz
 qX
 Wk
 qX
-gq
-gq
-UE
+qX
+qX
+pa
 qX
 Wk
-gq
-gq
+qX
+qX
 Lz
 Lz
 Lz
@@ -2326,13 +2722,13 @@ Lz
 Lz
 Lz
 "}
-(11,1,1) = {"
+(18,1,1) = {"
 Lz
 Lz
 Lz
 Lz
 Lz
-Lz
+qX
 qX
 qX
 qX
@@ -2363,14 +2759,14 @@ dd
 Wp
 qX
 qX
-gq
-gq
+qX
+qX
 Gt
 Gt
 Gt
 Gt
 Gt
-gq
+qX
 Lz
 Lz
 Lz
@@ -2378,7 +2774,7 @@ Lz
 Lz
 Lz
 "}
-(12,1,1) = {"
+(19,1,1) = {"
 Lz
 Lz
 Lz
@@ -2391,63 +2787,63 @@ qX
 Wk
 qX
 qX
-Wk
-qX
-qX
-Wp
-Wp
-Wp
-Wp
-Wp
-Wp
-Wp
-Wp
-Wp
-qX
-qX
-qX
-qX
-qX
-Wp
-Wp
-Wp
-Wp
-Wp
-Wp
-qX
-qX
-gq
-Gt
-oY
-yW
-yj
-Gt
-gq
-gq
-Lz
-Lz
-Lz
-Lz
-Lz
-"}
-(13,1,1) = {"
-Lz
-Lz
-Lz
-Lz
-qX
-qX
-qX
-Wk
-Wk
-Wk
-Wk
 Wk
 qX
 qX
 Wp
 ch
 Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+qX
+qX
+qX
+qX
+qX
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+qX
+qX
+qX
+Gt
+oY
+yW
+yj
+Gt
+qX
+qX
+Lz
+Lz
+Lz
+Lz
+Lz
+"}
+(20,1,1) = {"
+Lz
+Lz
+Lz
+Lz
+qX
+qX
+qX
+Wk
+Wk
+Wk
+Wk
+Wk
+qX
+qX
+Wp
+Wp
+Bx
 Wp
 Wp
 Wp
@@ -2474,15 +2870,15 @@ PJ
 Ei
 PJ
 Gt
-gq
 qX
+Wk
 Lz
 Lz
 Lz
 Lz
 Lz
 "}
-(14,1,1) = {"
+(21,1,1) = {"
 Lz
 Lz
 Lz
@@ -2498,7 +2894,7 @@ qX
 Wp
 Wp
 Wp
-Bx
+Wp
 Wp
 Wp
 qX
@@ -2534,7 +2930,7 @@ Lz
 Lz
 Lz
 "}
-(15,1,1) = {"
+(22,1,1) = {"
 Lz
 Lz
 Lz
@@ -2580,13 +2976,13 @@ Gt
 Gt
 qX
 qX
-oN
+BV
 JN
 JN
 JN
 JN
 "}
-(16,1,1) = {"
+(23,1,1) = {"
 Lz
 Lz
 Lz
@@ -2632,13 +3028,13 @@ io
 Wp
 Wp
 Lz
-oN
+BV
 Lz
 Lz
 Lz
 JN
 "}
-(17,1,1) = {"
+(24,1,1) = {"
 Lz
 Lz
 qX
@@ -2684,13 +3080,13 @@ kj
 mn
 Wp
 Lz
-oN
+BV
 Lz
 Lz
 Lz
 JN
 "}
-(18,1,1) = {"
+(25,1,1) = {"
 Lz
 Lz
 qX
@@ -2710,9 +3106,9 @@ re
 qX
 qX
 sw
-tM
-Ez
-fG
+eO
+vR
+MT
 sw
 Qn
 Oa
@@ -2736,13 +3132,13 @@ CO
 nC
 Lz
 Lz
-oN
-oN
-oN
-oN
-oN
+BV
+BV
+BV
+BV
+BV
 "}
-(19,1,1) = {"
+(26,1,1) = {"
 Lz
 qX
 qX
@@ -2762,9 +3158,9 @@ Wp
 qX
 Wk
 am
-Ar
-Rb
-NX
+ml
+dv
+gv
 sw
 sw
 em
@@ -2790,11 +3186,11 @@ Lz
 Lz
 Lz
 Lz
-oN
+BV
 Lz
 JN
 "}
-(20,1,1) = {"
+(27,1,1) = {"
 Lz
 qX
 Wk
@@ -2814,9 +3210,9 @@ Wp
 qX
 qX
 sw
-Vd
-tS
-Xf
+tU
+Xj
+Lf
 Ub
 QY
 oG
@@ -2842,11 +3238,11 @@ Lz
 Lz
 Lz
 Lz
-oN
+BV
 Lz
 JN
 "}
-(21,1,1) = {"
+(28,1,1) = {"
 Lz
 qX
 Wk
@@ -2866,9 +3262,9 @@ fv
 qX
 qX
 em
-iy
-Rb
-ub
+Np
+mX
+Vf
 Ft
 Wh
 CJ
@@ -2888,7 +3284,7 @@ CO
 qX
 qX
 Lz
-oN
+BV
 sj
 Lz
 TF
@@ -2898,7 +3294,7 @@ zn
 Lz
 JN
 "}
-(22,1,1) = {"
+(29,1,1) = {"
 Lz
 qX
 qX
@@ -2940,7 +3336,7 @@ qX
 qX
 Lz
 Lz
-oN
+BV
 EH
 qH
 OU
@@ -2950,7 +3346,7 @@ VL
 Lz
 JN
 "}
-(23,1,1) = {"
+(30,1,1) = {"
 Lz
 qX
 qX
@@ -2992,7 +3388,7 @@ qX
 qX
 qX
 Lz
-oN
+BV
 EH
 Lz
 Oq
@@ -3002,7 +3398,7 @@ nf
 Lz
 JN
 "}
-(24,1,1) = {"
+(31,1,1) = {"
 Lz
 qX
 qX
@@ -3044,17 +3440,17 @@ Wk
 qX
 Lz
 Lz
-oN
+BV
 EH
 Lz
 Lz
 Lz
 Lz
-oN
+BV
 Lz
-oN
+BV
 "}
-(25,1,1) = {"
+(32,1,1) = {"
 Lz
 qX
 Wk
@@ -3096,17 +3492,17 @@ qX
 Lz
 Lz
 Lz
-AB
+oN
 EH
 Lz
 Lz
 Lz
 Lz
-oN
+BV
 Lz
 JN
 "}
-(26,1,1) = {"
+(33,1,1) = {"
 Lz
 qX
 qX
@@ -3147,8 +3543,8 @@ qX
 qX
 qX
 qX
-oN
-oN
+BV
+BV
 EH
 Lz
 TF
@@ -3158,7 +3554,7 @@ zn
 Lz
 JN
 "}
-(27,1,1) = {"
+(34,1,1) = {"
 Lz
 qX
 qX
@@ -3186,7 +3582,7 @@ Wh
 Xu
 UZ
 lE
-FW
+GA
 Qx
 gp
 tu
@@ -3200,7 +3596,7 @@ qX
 qX
 Lz
 Lz
-oN
+BV
 EH
 qH
 OU
@@ -3210,7 +3606,7 @@ VL
 Lz
 JN
 "}
-(28,1,1) = {"
+(35,1,1) = {"
 Lz
 qX
 qX
@@ -3238,7 +3634,7 @@ GZ
 lG
 mx
 lE
-FW
+GA
 oR
 sc
 Px
@@ -3252,7 +3648,7 @@ qX
 Lz
 Lz
 Lz
-oN
+BV
 EH
 Lz
 Oq
@@ -3262,7 +3658,7 @@ nf
 Lz
 JN
 "}
-(29,1,1) = {"
+(36,1,1) = {"
 Lz
 Lz
 Lz
@@ -3290,7 +3686,7 @@ AI
 kS
 OX
 Oz
-FW
+GA
 np
 bz
 Yp
@@ -3304,17 +3700,17 @@ Lz
 Lz
 Lz
 Lz
-oN
+BV
 EH
 Lz
 Lz
 Lz
 Lz
-oN
+BV
 Lz
 JN
 "}
-(30,1,1) = {"
+(37,1,1) = {"
 Lz
 qX
 qX
@@ -3347,26 +3743,26 @@ Sp
 Qk
 VE
 cq
-wF
+hZ
 Lz
 Lz
-oN
-oN
-oN
-oN
-oN
-oN
-oN
+BV
+BV
+BV
+BV
+BV
+BV
+BV
 EH
 Lz
 Lz
 Lz
 Lz
-oN
+BV
 Lz
-oN
+BV
 "}
-(31,1,1) = {"
+(38,1,1) = {"
 Lz
 Lz
 qX
@@ -3397,9 +3793,9 @@ GD
 Rb
 DP
 cq
-wF
-wF
-wF
+hZ
+hZ
+hZ
 Lz
 Lz
 Lz
@@ -3408,7 +3804,7 @@ Lz
 Lz
 Lz
 Lz
-oN
+BV
 sj
 Lz
 TF
@@ -3418,7 +3814,7 @@ zn
 Lz
 JN
 "}
-(32,1,1) = {"
+(39,1,1) = {"
 Lz
 Lz
 Lz
@@ -3448,8 +3844,8 @@ JA
 HX
 NV
 cq
-wF
-wF
+hZ
+hZ
 Lz
 Lz
 Lz
@@ -3460,7 +3856,7 @@ Lz
 Lz
 Lz
 Lz
-oN
+BV
 EH
 qH
 OU
@@ -3470,7 +3866,7 @@ VL
 Lz
 JN
 "}
-(33,1,1) = {"
+(40,1,1) = {"
 Lz
 Lz
 Lz
@@ -3501,18 +3897,18 @@ np
 bM
 cq
 ld
-wF
+hZ
 Lz
-wF
-Lz
-Lz
+hZ
 Lz
 Lz
 Lz
 Lz
 Lz
 Lz
-oN
+Lz
+Lz
+BV
 EH
 Lz
 Oq
@@ -3522,7 +3918,7 @@ nf
 Lz
 JN
 "}
-(34,1,1) = {"
+(41,1,1) = {"
 Lz
 Lz
 Lz
@@ -3553,8 +3949,8 @@ Rb
 sw
 cq
 cq
-wF
-wF
+hZ
+hZ
 qX
 qX
 qX
@@ -3564,17 +3960,17 @@ Lz
 Lz
 Lz
 Lz
-oN
+BV
 EH
 Lz
 Lz
 Lz
 Lz
-oN
+BV
 Lz
-oN
+BV
 "}
-(35,1,1) = {"
+(42,1,1) = {"
 Lz
 Lz
 Lz
@@ -3602,10 +3998,10 @@ xB
 Oz
 lE
 em
-Lz
-Lz
-Lz
-wF
+db
+db
+db
+hZ
 qX
 qX
 qX
@@ -3614,19 +4010,19 @@ Lz
 Lz
 Lz
 Lz
-oN
-oN
-oN
+BV
+BV
+BV
 ke
-oN
-oN
-oN
-oN
-oN
+BV
+BV
+BV
+BV
+BV
 Lz
 JN
 "}
-(36,1,1) = {"
+(43,1,1) = {"
 Lz
 Lz
 Lz
@@ -3654,13 +4050,13 @@ yb
 VC
 sR
 sw
-Lz
-Lz
-wF
-Lz
-wF
-wF
-wF
+db
+db
+hZ
+db
+hZ
+hZ
+hZ
 qX
 qX
 Lz
@@ -3669,7 +4065,7 @@ Lz
 Lz
 Lz
 Lz
-oN
+BV
 Lz
 Lz
 Lz
@@ -3678,7 +4074,7 @@ Lz
 Lz
 JN
 "}
-(37,1,1) = {"
+(44,1,1) = {"
 Lz
 Lz
 Lz
@@ -3706,35 +4102,35 @@ Rb
 xv
 Rb
 sw
-Lz
-wF
-wF
-Lz
-wF
+db
+hZ
+hZ
+db
+hZ
 qX
 qX
 qX
 qX
 qX
-cz
-Lz
-GQ
+EQ
+db
+KC
 JN
-oN
-oN
-oN
+BV
+BV
+BV
 JN
 JN
 JN
-Jw
+UV
 JN
-bC
+wO
 "}
-(38,1,1) = {"
+(45,1,1) = {"
 Lz
-qX
-qX
-qX
+Lz
+Lz
+Lz
 Lz
 Lz
 Lz
@@ -3758,381 +4154,17 @@ yN
 fD
 iY
 sw
-Lz
-Lz
-oN
-Lz
-Lz
-Lz
+db
+db
+BV
+db
+db
+db
 qX
 qX
 qX
-cz
-cz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-"}
-(39,1,1) = {"
-Lz
-qX
-qX
-Wk
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-qX
-qX
-qX
-qX
-qX
-qX
-qX
-qX
-qX
-qX
-JT
-hD
-dz
-WH
-WH
-Rb
-JT
-Lz
-Lz
-oN
-Lz
-Lz
-Lz
-Lz
-qX
-cz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-"}
-(40,1,1) = {"
-Lz
-qX
-qX
-qX
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-qX
-qX
-qX
-qX
-qX
-qX
-qX
-Lz
-JT
-JT
-JT
-JT
-JT
-JT
-JT
-oN
-Lp
-Lp
-Lp
-cz
-cz
-cz
-cz
-cz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-"}
-(41,1,1) = {"
-Lz
-Wk
-qX
-qX
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-qX
-qX
-Wk
-qX
-qX
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-"}
-(42,1,1) = {"
-Lz
-qX
-qX
-qX
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-qX
-qX
-qX
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-"}
-(43,1,1) = {"
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-qX
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-"}
-(44,1,1) = {"
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-"}
-(45,1,1) = {"
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+EQ
+EQ
 Lz
 Lz
 Lz
@@ -4157,32 +4189,32 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+JT
+hD
+Kg
+OJ
+OJ
+Rb
+JT
+db
+db
+BV
+db
+db
+db
+db
+qX
+EQ
 Lz
 Lz
 Lz
@@ -4211,30 +4243,30 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
+qX
+qX
+qX
+qX
+db
+JT
+JT
+JT
+JT
+JT
+JT
+JT
+BV
+im
+im
+im
+EQ
+EQ
+EQ
+EQ
+EQ
 Lz
 Lz
 Lz
@@ -4263,11 +4295,11 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+Wk
+qX
+qX
 Lz
 Lz
 Lz
@@ -4316,9 +4348,9 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
 Lz
 Lz
 Lz
@@ -4370,7 +4402,7 @@ Lz
 Lz
 Lz
 Lz
-Lz
+qX
 Lz
 Lz
 Lz
