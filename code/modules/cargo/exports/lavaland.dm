@@ -28,7 +28,7 @@
 						/obj/item/gun/ballistic/revolver/russian/soul,
 						/obj/item/veilrender/vealrender,
 						/obj/item/nullrod/scythe/talking/necro,
-						/obj/item/clothing/suit/ascetic)
+						/obj/item/clothing/suit/armor/ascetic)
 
 /datum/export/lavaland/major //valuable chest/ruin loot and staff of storms
 	cost = 10000
