@@ -280,6 +280,9 @@
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "inf_deployer"
 	w_class = WEIGHT_CLASS_NORMAL
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BELT
+	force = 8
 
 	var/list/stored_walls = list()
 	var/list/stored_doors = list()
