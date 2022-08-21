@@ -3,6 +3,15 @@
 /obj/item/stack/ore/uranium,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "am" = (
@@ -10,6 +19,12 @@
 /turf/closed/wall/r_wall,
 /area/ruin)
 "aC" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
 /turf/open/floor/plating/catwalk_floor,
 /area/space)
 "aE" = (
@@ -28,6 +43,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"bh" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/asteroid)
 "bn" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -35,6 +56,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-10"
 	},
 /turf/open/floor/wood,
 /area/ruin)
@@ -49,6 +73,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin)
+"bC" = (
+/obj/structure/grille,
+/obj/structure/lattice,
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space)
 "bM" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/item/assembly/igniter,
@@ -88,6 +118,12 @@
 /obj/item/stack/ore/uranium,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"dw" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/space)
 "dz" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/modular_computer/console{
@@ -95,6 +131,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"dH" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/stairs,
+/area/asteroid)
 "dI" = (
 /obj/structure/table/wood,
 /obj/machinery/photocopier/faxmachine,
@@ -170,8 +212,17 @@
 /obj/effect/turf_decal/solarpanel,
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
 /turf/open/floor/plating,
 /area/space)
+"fP" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating,
+/area/asteroid)
 "fU" = (
 /obj/structure/bed,
 /obj/item/bedsheet/dorms,
@@ -198,6 +249,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin)
+"gH" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/north,
+/turf/open/floor/plasteel,
+/area/ruin)
 "gR" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/door/airlock/alarmlock{
@@ -214,6 +272,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin)
@@ -243,6 +304,12 @@
 /obj/structure/sign/poster/retro/smile,
 /turf/closed/wall/rust,
 /area/ruin)
+"il" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "in" = (
 /obj/effect/landmark/ore_vein,
 /obj/effect/landmark/ore_vein,
@@ -266,8 +333,17 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"iE" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/turf/open/floor/plating,
+/area/asteroid)
 "iY" = (
 /obj/item/trash/candy,
 /turf/open/floor/plasteel,
@@ -275,6 +351,32 @@
 "kd" = (
 /obj/structure/sink/puddle,
 /turf/closed/mineral,
+/area/asteroid)
+"ke" = (
+/obj/machinery/power/tracker,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/space)
+"kg" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"kj" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
 /area/asteroid)
 "kq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -304,6 +406,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/machinery/power/apc/auto_name/south,
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/ruin)
 "lE" = (
@@ -319,8 +423,17 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"mn" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/asteroid)
 "mx" = (
 /obj/machinery/vending/cigarette,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -341,6 +454,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"nf" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/railing,
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/turf/open/floor/plating,
+/area/space)
 "np" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer4{
 	dir = 8
@@ -349,10 +471,16 @@
 /area/ruin)
 "nw" = (
 /obj/structure/railing,
-/turf/open/floor/plating/asteroid/airless,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
 /area/asteroid)
 "nC" = (
 /obj/structure/railing,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 8
 	},
@@ -382,6 +510,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"os" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "oC" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/layer_manifold,
@@ -393,6 +530,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
@@ -408,7 +548,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"oY" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/space)
 "pv" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
@@ -419,6 +568,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
@@ -444,17 +596,32 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"qp" = (
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/turf/open/floor/plating,
+/area/asteroid)
 "qz" = (
 /obj/item/stack/ore/uranium,
 /obj/item/stack/ore/uranium,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"qH" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/space)
 "qN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
@@ -464,6 +631,25 @@
 "re" = (
 /turf/closed/mineral/gold,
 /area/asteroid)
+"rg" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"ry" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin)
 "rW" = (
 /obj/effect/mob_spawn/human/miner/rig,
 /obj/effect/decal/cleanable/blood,
@@ -482,6 +668,9 @@
 /area/ruin)
 "sj" = (
 /obj/structure/lattice,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/catwalk_floor,
 /area/space)
 "sw" = (
@@ -489,6 +678,7 @@
 /area/ruin)
 "sR" = (
 /obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/ruin)
 "tu" = (
@@ -528,6 +718,13 @@
 /obj/machinery/roulette,
 /turf/open/floor/plasteel,
 /area/ruin)
+"wC" = (
+/obj/structure/railing,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/space)
 "wD" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -568,11 +765,17 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin)
 "xL" = (
 /obj/structure/lattice,
 /obj/structure/railing,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/catwalk_floor,
 /area/space)
 "yb" = (
@@ -582,19 +785,28 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "yj" = (
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/turf/open/space/basic,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
 /area/space)
 "yk" = (
 /obj/structure/sign/poster/ripped,
 /turf/closed/wall/rust,
 /area/ruin)
 "yC" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/stairs,
 /area/ruin)
 "yN" = (
@@ -603,14 +815,30 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"yQ" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/space)
 "yW" = (
 /obj/machinery/power/smes,
-/turf/open/space/basic,
+/obj/structure/cable,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "zn" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/solar,
 /obj/structure/railing,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
 /turf/open/floor/plating,
 /area/space)
 "zF" = (
@@ -647,6 +875,22 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"AL" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "AV" = (
@@ -664,7 +908,10 @@
 /obj/machinery/door/airlock/engineering{
 	name = "Solar Control"
 	},
-/turf/open/space/basic,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "Cc" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -693,6 +940,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "CE" = (
@@ -719,7 +969,18 @@
 /area/asteroid)
 "Di" = (
 /obj/structure/bed/roller,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
+/area/ruin)
+"Dq" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
 /area/ruin)
 "Dv" = (
 /obj/structure/chair/office/light{
@@ -749,7 +1010,7 @@
 /obj/machinery/power/solar_control{
 	dir = 1
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "En" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -769,6 +1030,12 @@
 /obj/machinery/atmospherics/components/trinary/filter/atmos/co2,
 /turf/open/floor/plasteel,
 /area/ruin)
+"EH" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/space)
 "EN" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/machinery/airalarm/all_access{
@@ -807,12 +1074,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"GQ" = (
+/obj/structure/grille/broken,
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space)
 "GZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
@@ -867,6 +1142,7 @@
 "Jw" = (
 /obj/structure/grille,
 /obj/structure/grille,
+/obj/structure/lattice,
 /turf/open/space/basic,
 /area/space)
 "JA" = (
@@ -880,10 +1156,31 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"JN" = (
+/obj/structure/grille,
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space)
 "JT" = (
 /obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plasteel,
+/area/ruin)
+"Kd" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "Ln" = (
@@ -920,6 +1217,12 @@
 /obj/effect/mob_spawn/human/corpse/russian/ranged/officer,
 /turf/open/floor/wood,
 /area/ruin)
+"MD" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/asteroid)
 "MN" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -980,6 +1283,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "Oa" = (
@@ -1008,6 +1314,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"Oq" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/turf/open/floor/plating,
+/area/space)
 "Ot" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1015,9 +1329,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "Ov" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/wood,
 /area/ruin)
 "Oz" = (
@@ -1030,6 +1350,24 @@
 	},
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"OU" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/space)
 "OX" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/vending/coffee,
@@ -1062,6 +1400,12 @@
 "PB" = (
 /turf/open/floor/plasteel/stairs,
 /area/asteroid)
+"PJ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/space)
 "PS" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
@@ -1116,6 +1460,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "QX" = (
@@ -1137,6 +1484,18 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"QY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
@@ -1212,6 +1571,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"Tm" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "Tn" = (
 /obj/machinery/door/airlock/wood{
 	locked = 1;
@@ -1228,6 +1599,9 @@
 "TF" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
 /turf/open/floor/plating,
 /area/space)
 "Ub" = (
@@ -1244,7 +1618,25 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
+/area/ruin)
+"Un" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
 /area/ruin)
 "UE" = (
 /obj/machinery/door/airlock/engineering{
@@ -1270,6 +1662,9 @@
 	},
 /obj/machinery/light/broken{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
@@ -1303,6 +1698,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"Wh" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "Wk" = (
 /obj/effect/landmark/ore_vein,
 /turf/closed/mineral,
@@ -1322,6 +1723,9 @@
 /area/ruin)
 "WR" = (
 /obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/wood,
 /area/ruin)
 "Xf" = (
@@ -1334,6 +1738,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
@@ -1379,6 +1786,24 @@
 /obj/structure/frame/machine,
 /obj/item/circuitboard/machine/ore_redemption,
 /turf/open/floor/plating,
+/area/ruin)
+"Ys" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall,
+/area/space)
+"ZS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
 /area/ruin)
 
 (1,1,1) = {"
@@ -1993,7 +2418,7 @@ qX
 qX
 gq
 Gt
-Lz
+oY
 yW
 yj
 Gt
@@ -2045,9 +2470,9 @@ Wk
 qX
 qX
 Gt
-Lz
+PJ
 Ei
-Lz
+PJ
 Gt
 gq
 qX
@@ -2097,9 +2522,9 @@ qX
 qX
 qX
 Gt
-Lz
-Lz
-Lz
+PJ
+oY
+dw
 Gt
 qX
 Lz
@@ -2149,17 +2574,17 @@ Wp
 qX
 Wk
 Gt
-Gt
+Ys
 BE
 Gt
 Gt
 qX
 qX
 oN
-Lp
-Lp
-Lp
-Lp
+JN
+JN
+JN
+JN
 "}
 (16,1,1) = {"
 Lz
@@ -2211,7 +2636,7 @@ oN
 Lz
 Lz
 Lz
-Lp
+JN
 "}
 (17,1,1) = {"
 Lz
@@ -2253,17 +2678,17 @@ Wp
 Wp
 Wp
 Wp
-CO
-CO
-CO
-CO
+MD
+bh
+kj
+mn
 Wp
 Lz
 oN
 Lz
 Lz
 Lz
-Lp
+JN
 "}
 (18,1,1) = {"
 Lz
@@ -2305,7 +2730,7 @@ Wp
 Wp
 Wp
 CO
-CO
+fP
 CO
 CO
 nC
@@ -2356,18 +2781,18 @@ Wp
 Wp
 Wp
 CO
-CO
+qp
 CO
 qX
 Wp
-VL
+wC
 Lz
 Lz
 Lz
 Lz
+oN
 Lz
-Lz
-Lp
+JN
 "}
 (20,1,1) = {"
 Lz
@@ -2393,21 +2818,21 @@ Vd
 tS
 Xf
 Ub
-En
+QY
 oG
-En
-En
-mV
+Un
+QY
+AL
 af
 iA
-IR
-LD
-oC
-PB
-CO
-CO
-CO
-CO
+kg
+ry
+Dq
+dH
+kj
+kj
+kj
+iE
 CO
 qX
 qX
@@ -2417,9 +2842,9 @@ Lz
 Lz
 Lz
 Lz
+oN
 Lz
-Lz
-Lp
+JN
 "}
 (21,1,1) = {"
 Lz
@@ -2445,7 +2870,7 @@ iy
 Rb
 ub
 Ft
-Rb
+Wh
 CJ
 Rb
 XP
@@ -2471,7 +2896,7 @@ fJ
 TF
 zn
 Lz
-Lp
+JN
 "}
 (22,1,1) = {"
 Lz
@@ -2516,14 +2941,14 @@ qX
 Lz
 Lz
 oN
-aC
-aC
-aC
-aC
+EH
+qH
+OU
+yQ
 aC
 VL
 Lz
-Lp
+JN
 "}
 (23,1,1) = {"
 Lz
@@ -2549,7 +2974,7 @@ LI
 MN
 fU
 Oz
-Rb
+Wh
 MV
 Oz
 Jn
@@ -2568,14 +2993,14 @@ qX
 qX
 Lz
 oN
-aC
+EH
 Lz
-TF
-TF
-TF
-zn
+Oq
+Oq
+Oq
+nf
 Lz
-Lp
+JN
 "}
 (24,1,1) = {"
 Lz
@@ -2601,7 +3026,7 @@ Rb
 Qg
 En
 pV
-mV
+Kd
 Py
 ik
 vy
@@ -2620,7 +3045,7 @@ qX
 Lz
 Lz
 oN
-aC
+EH
 Lz
 Lz
 Lz
@@ -2653,7 +3078,7 @@ dR
 Tl
 fU
 lE
-Rb
+rg
 MV
 lE
 CE
@@ -2672,14 +3097,14 @@ Lz
 Lz
 Lz
 AB
-aC
+EH
 Lz
 Lz
 Lz
 Lz
 oN
 Lz
-Lp
+JN
 "}
 (26,1,1) = {"
 Lz
@@ -2705,7 +3130,7 @@ lE
 Oz
 Oz
 Nt
-Rb
+Wh
 QK
 lE
 lE
@@ -2724,14 +3149,14 @@ qX
 qX
 oN
 oN
-aC
+EH
 Lz
 TF
-TF
+fJ
 TF
 zn
 Lz
-Lp
+JN
 "}
 (27,1,1) = {"
 Lz
@@ -2757,7 +3182,7 @@ LI
 MN
 fU
 lE
-Rb
+Wh
 Xu
 UZ
 lE
@@ -2776,14 +3201,14 @@ qX
 Lz
 Lz
 oN
-aC
-aC
-aC
-aC
+EH
+qH
+OU
+yQ
 aC
 VL
 Lz
-Lp
+JN
 "}
 (28,1,1) = {"
 Lz
@@ -2828,14 +3253,14 @@ Lz
 Lz
 Lz
 oN
-aC
+EH
 Lz
-TF
-TF
-TF
-zn
+Oq
+Oq
+Oq
+nf
 Lz
-Lp
+JN
 "}
 (29,1,1) = {"
 Lz
@@ -2880,14 +3305,14 @@ Lz
 Lz
 Lz
 oN
-aC
+EH
 Lz
 Lz
 Lz
 Lz
 oN
 Lz
-Lp
+JN
 "}
 (30,1,1) = {"
 Lz
@@ -2913,7 +3338,7 @@ lE
 lE
 lE
 op
-Rb
+Wh
 MV
 Oz
 Oz
@@ -2932,7 +3357,7 @@ oN
 oN
 oN
 oN
-aC
+EH
 Lz
 Lz
 Lz
@@ -2958,14 +3383,14 @@ qX
 qX
 qX
 em
-sR
+Rb
 Pz
 Qo
 QX
 En
 En
 Ln
-En
+ZS
 NL
 lE
 GD
@@ -2991,7 +3416,7 @@ fJ
 TF
 zn
 Lz
-Lp
+JN
 "}
 (32,1,1) = {"
 Lz
@@ -3014,10 +3439,10 @@ wj
 or
 kq
 lE
-Rb
-Rb
+gH
+il
 yC
-Rb
+os
 aX
 JA
 HX
@@ -3036,14 +3461,14 @@ Lz
 Lz
 Lz
 oN
-aC
-aC
-aC
-aC
+EH
+qH
+OU
+yQ
 aC
 VL
 Lz
-Lp
+JN
 "}
 (33,1,1) = {"
 Lz
@@ -3069,7 +3494,7 @@ lE
 lE
 XM
 Oz
-Qo
+Tm
 kq
 lE
 np
@@ -3088,14 +3513,14 @@ Lz
 Lz
 Lz
 oN
-aC
+EH
 Lz
-TF
-TF
-TF
-zn
+Oq
+Oq
+Oq
+nf
 Lz
-Lp
+JN
 "}
 (34,1,1) = {"
 Lz
@@ -3140,12 +3565,12 @@ Lz
 Lz
 Lz
 oN
-aC
+EH
 Lz
 Lz
 Lz
 Lz
-Lz
+oN
 Lz
 oN
 "}
@@ -3192,14 +3617,14 @@ Lz
 oN
 oN
 oN
-aC
+ke
 oN
 oN
 oN
 oN
 oN
 Lz
-Lp
+JN
 "}
 (36,1,1) = {"
 Lz
@@ -3251,7 +3676,7 @@ Lz
 Lz
 Lz
 Lz
-Lp
+JN
 "}
 (37,1,1) = {"
 Lz
@@ -3293,17 +3718,17 @@ qX
 qX
 cz
 Lz
-cz
-Lp
+GQ
+JN
 oN
 oN
 oN
-Lp
-Lp
-Lp
+JN
+JN
+JN
 Jw
-Lp
-Lp
+JN
+bC
 "}
 (38,1,1) = {"
 Lz
