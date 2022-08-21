@@ -61,6 +61,7 @@
 		/obj/item/clothing/gloves,
 		/obj/item/holosign_creator/atmos,
 		/obj/item/holosign_creator/engineering,
+		/obj/item/inflatable_dispenser,
 		/obj/item/forcefield_projector,
 		/obj/item/assembly/signaler,
 		/obj/item/lightreplacer,

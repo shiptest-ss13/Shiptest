@@ -796,6 +796,17 @@
 	for(var/i in 1 to 7)
 		new /obj/item/clothing/accessory/armband/deputy(src)
 
+/obj/item/storage/box/inflatables
+	name = "box of inflatable walls"
+	desc = "A box of tightly-compressed inflatable walls."
+	illustration = "inflatable"
+
+/obj/item/storage/box/inflatables/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/inflatable/wall(src)
+	for(var/i in 1 to 3)
+		new /obj/item/inflatable/door(src)
+
 /obj/item/storage/box/metalfoam
 	name = "box of metal foam grenades"
 	desc = "To be used to rapidly seal hull breaches."
