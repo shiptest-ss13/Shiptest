@@ -684,7 +684,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle
 	name = "shuttle window"
 	desc = "A reinforced, air-locked pod window."
-	icon = 'whitesands/icons/obj/smooth_structures/shuttle_window.dmi'
+	icon = 'icons/obj/smooth_structures/shuttle_window.dmi'
 	icon_state = "shuttle_window-0"
 	base_icon_state = "shuttle_window"
 	wtype = "shuttle"

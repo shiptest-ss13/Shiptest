@@ -82,13 +82,13 @@
 /obj/item/stack/tape
 	name = "packaging tape"
 	desc = "Sticks things together with minimal effort."
-	icon = 'whitesands/icons/obj/tapes.dmi'
+	icon = 'icons/obj/tapes.dmi'
 	icon_state = "tape"
 	item_flags = NOBLUDGEON | NO_MAT_REDEMPTION
 	amount = 10
 	max_amount = 10
 	grind_results = list(/datum/reagent/cellulose = 5)
-	usesound = 'whitesands/sound/items/tape.ogg'
+	usesound = 'sound/items/tape.ogg'
 
 	var/nonorganic_heal = 5
 	var/self_delay = 30 //! Also used for the tapecuff delay/

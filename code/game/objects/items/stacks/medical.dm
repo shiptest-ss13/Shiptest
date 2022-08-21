@@ -22,6 +22,8 @@
 	var/repeating = FALSE
 	/// How much medical XP is given per use?
 	var/experience_given = 1
+	///Sound/Sounds to play when this is applied
+	var/apply_sounds
 	/// How much brute we heal per application. This is the only number that matters for simplemobs
 	var/heal_brute
 	/// How much burn we heal per application
@@ -44,17 +46,20 @@
 	if(!patient.can_inject(user, TRUE))
 		return
 	if(patient == user)
+		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
 		if(!silent)
 			user.visible_message("<span class='notice'>[user] starts to apply [src] on [user.p_them()]self...</span>", "<span class='notice'>You begin applying [src] on yourself...</span>")
 		if(!do_mob(user, patient, self_delay, extra_checks=CALLBACK(patient, /mob/living/proc/can_inject, user, TRUE)))
 			return
 	else if(other_delay)
+		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
 		if(!silent)
 			user.visible_message("<span class='notice'>[user] starts to apply [src] on [patient].</span>", "<span class='notice'>You begin applying [src] on [patient]...</span>")
 		if(!do_mob(user, patient, other_delay, extra_checks=CALLBACK(patient, /mob/living/proc/can_inject, user, TRUE)))
 			return
 
 	if(heal(patient, user))
+		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
 		user?.mind.adjust_experience(/datum/skill/healing, experience_given)
 		log_combat(user, patient, "healed", src.name)
 		use(1)
@@ -111,7 +116,7 @@
 	icon_state = "brutepack"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	heal_brute = 40
+	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	self_delay = 4 SECONDS
 	other_delay = 2 SECONDS
 	grind_results = list(/datum/reagent/medicine/C2/libital = 10)
@@ -127,6 +132,7 @@
 	gender = PLURAL
 	singular_name = "medical gauze"
 	icon_state = "gauze"
+	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	self_delay = 5 SECONDS
 	other_delay = 2 SECONDS
 	max_amount = 12
@@ -344,6 +350,7 @@
 	gender = PLURAL
 	singular_name = "aloe cream"
 	icon_state = "aloe_paste"
+	apply_sounds = 'sound/effects/ointment.ogg'
 	self_delay = 2 SECONDS
 	other_delay = 1 SECONDS
 	novariants = TRUE
@@ -412,8 +419,9 @@
 	desc = "Used to secure limbs following a fracture."
 	gender = PLURAL
 	singular_name = "splint"
-	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "splint"
+	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	self_delay = 5 SECONDS
 	other_delay = 2 SECONDS
 	max_amount = 12

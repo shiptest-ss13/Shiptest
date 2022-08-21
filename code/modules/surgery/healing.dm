@@ -36,7 +36,9 @@
 	name = "repair body"
 	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCREWDRIVER = 65, /obj/item/pen = 55)
 	repeatable = TRUE
-	time = 25
+	time = 2.5 SECONDS
+	success_sound = 'sound/surgery/retractor2.ogg'
+	failure_sound = 'sound/surgery/organ2.ogg'
 	var/brutehealing = 0
 	var/burnhealing = 0
 	var/brute_multiplier = 0 //multiplies the damage that the patient has. if 0 the patient wont get any additional healing from the damage he has.

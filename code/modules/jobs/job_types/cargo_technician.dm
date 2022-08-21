@@ -1,14 +1,8 @@
 /datum/job/cargo_tech
-	title = "Cargo Technician"
-	department_head = list("Head of Personnel")
-	faction = "Station"
+	name = "Cargo Technician"
 	total_positions = 3
 	spawn_positions = 2
-	supervisors = "the quartermaster and the head of personnel"
-	selection_color = "#dcba97"
 	wiki_page = "Cargo_technician" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Mailroom Technician", "Deliveries Officer")
-	senior_title = "Cargonian"
 
 	skills = list(/datum/skill/mining = SKILL_EXP_NOVICE)
 
@@ -16,13 +10,12 @@
 
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM)
 	minimal_access = list(ACCESS_MAINT_TUNNELS, ACCESS_CARGO, ACCESS_MAILSORTING, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_CAR
 
 	display_order = JOB_DISPLAY_ORDER_CARGO_TECHNICIAN
 
 /datum/outfit/job/cargo_tech
 	name = "Cargo Technician"
+	job_icon = "cargotechnician"
 	jobtype = /datum/job/cargo_tech
 
 	belt = /obj/item/pda/cargo
@@ -62,7 +55,6 @@
 /datum/outfit/job/cargo_tech/solgov/pilot
 	name = "Pilot (SolGov)"
 
-	ears = /obj/item/radio/headset/headset_sec/alt/department/supply
 	suit = /obj/item/clothing/suit/jacket
 
 /datum/outfit/job/cargo_tech/pilot
@@ -70,7 +62,6 @@
 
 	uniform = /obj/item/clothing/under/syndicate/camo
 	accessory = /obj/item/clothing/accessory/armband/cargo
-	ears = /obj/item/radio/headset/headset_sec/alt/department/supply
 	suit = /obj/item/clothing/suit/jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/fingerless
@@ -78,6 +69,7 @@
 
 /datum/outfit/job/cargo_tech/donk
 	name = "Customer Associate (Donk! Co.)"
+	id = /obj/item/card/id/syndicate_command/crew_id
 	uniform = /obj/item/clothing/under/syndicate/donk
 	suit = /obj/item/clothing/suit/hazardvest/donk
 	ears = /obj/item/radio/headset/syndicate/alt

@@ -120,7 +120,7 @@
 		organ_flags = ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
 
 /obj/item/organ/liver/cybernetic/upgraded/ipc
-	icon = 'whitesands/icons/obj/surgery.dmi'
+	icon = 'icons/obj/surgery.dmi'
 	name = "substance processor"
 	icon_state = "substance_processor"
 	attack_verb = list("processed")

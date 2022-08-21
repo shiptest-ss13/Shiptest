@@ -1,21 +1,13 @@
 /datum/job/clown
-	title = "Clown"
-	department_head = list("Head of Personnel")
-	faction = "Station"
+	name = "Clown"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
 	wiki_page = "Clown" //WS Edit - Wikilinks/Warning
-	selection_color = "#bbe291"
-	alt_titles = list("Jester", "Comedian")
-	senior_title = "Master Prankster"
 
 	outfit = /datum/outfit/job/clown
 
 	access = list(ACCESS_THEATRE)
 	minimal_access = list(ACCESS_THEATRE)
-	paycheck = PAYCHECK_MINIMAL
-	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_CLOWN
 
@@ -26,6 +18,7 @@
 
 /datum/outfit/job/clown
 	name = "Clown"
+	job_icon = "clown"
 	jobtype = /datum/job/clown
 
 	belt = /obj/item/pda/clown

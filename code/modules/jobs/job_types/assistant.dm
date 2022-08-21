@@ -2,23 +2,14 @@
 Assistant
 */
 /datum/job/assistant
-	title = "Assistant"
-	faction = "Station"
+	name = "Assistant"
 	total_positions = 5
 	spawn_positions = 5
-	department_head = list("Head of Personnel")
-	supervisors = "absolutely everyone"
-	selection_color = "#dddddd"
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()
 	outfit = /datum/outfit/job/assistant
-	antag_rep = 7
-	paycheck = PAYCHECK_ASSISTANT // Get a job. Job reassignment changes your paycheck now. Get over it.
-	paycheck_department = ACCOUNT_CIV
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT
-	wiki_page = "Assistant" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Crewmate", "Deckhand", "Engineering Specialist", "Medical Specialist", "Science Specialist", "Entertainer")
-	senior_title = "Greytider"
+	wiki_page = "Assistant"
 
 	skills = list(/datum/skill/cleaning = SKILL_EXP_NOVICE)
 
@@ -31,6 +22,7 @@ Assistant
 
 /datum/outfit/job/assistant
 	name = "Assistant"
+	job_icon = "assistant"
 	jobtype = /datum/job/assistant
 	r_pocket = /obj/item/radio
 	belt = /obj/item/pda
@@ -149,7 +141,6 @@ Assistant
 	name = "Junior Agent (Assistant)"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
-	ears = /obj/item/radio/headset/syndicate
 	uniform = /obj/item/clothing/under/syndicate
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots

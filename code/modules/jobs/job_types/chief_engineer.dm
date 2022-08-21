@@ -1,20 +1,14 @@
 /datum/job/chief_engineer
-	title = "Chief Engineer"
+	name = "Chief Engineer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	department_head = list("Captain")
-	head_announce = list("Engineering")
-	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
-	selection_color = "#ffeeaa"
 	minimal_player_age = 7
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_ENGINEERING
 	officer = TRUE
 	wiki_page = "Chief_Engineer" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Engineering Coordinator", "Maintenance Supervisor")
 
 	outfit = /datum/outfit/job/ce
 
@@ -28,19 +22,18 @@
 		ACCESS_EXTERNAL_AIRLOCKS, ACCESS_ATMOSPHERICS, ACCESS_EVA,
 		ACCESS_HEADS, ACCESS_CONSTRUCTION, ACCESS_SEC_DOORS, ACCESS_MINISAT, ACCESS_MECH_ENGINE,
 		ACCESS_CE, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_TCOMSAT, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_ENG
 
 	display_order = JOB_DISPLAY_ORDER_CHIEF_ENGINEER
 
 /datum/outfit/job/ce
 	name = "Chief Engineer"
+	job_icon = "chiefengineer"
 	jobtype = /datum/job/chief_engineer
 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/utility/chief/full
 	l_pocket = /obj/item/pda/heads/ce
-	ears = /obj/item/radio/headset/heads/ce
+	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/engineering/chief_engineer
 	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard //WS Edit - Alt Uniforms
 	alt_suit = /obj/item/clothing/suit/hazardvest
@@ -83,6 +76,7 @@
 	gloves = null
 	neck = /obj/item/clothing/neck/tie/green
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/chief/full=1, /obj/item/clothing/gloves/color/black=1)
+
 /datum/outfit/job/ce/gec
 	name = "Chief Engineer (GEC)"
 
@@ -90,7 +84,7 @@
 	suit = /obj/item/clothing/suit/toggle/hazard
 	head = /obj/item/clothing/head/hardhat/white
 	shoes =/obj/item/clothing/shoes/laceup
-	ears = /obj/item/radio/headset/syndicate/alt/leader
+	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
 
 /datum/outfit/job/ce/syndicate
@@ -103,6 +97,7 @@
 /datum/outfit/job/ce/syndicate/gorlex
 	name = "Foreman (Gorlex Marauders)"
 
+	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/hazard
