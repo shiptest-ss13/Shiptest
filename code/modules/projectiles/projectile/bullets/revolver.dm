@@ -8,7 +8,7 @@
 // .50AE (Desert Eagle)
 
 /obj/projectile/bullet/a50AE
-	name = ".50AE bullet"
+	name = ".50 AE bullet"
 	damage = 60
 
 // .38 (Detective's Gun & Winchester)
