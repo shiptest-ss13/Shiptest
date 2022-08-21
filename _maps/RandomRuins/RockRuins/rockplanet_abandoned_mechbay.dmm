@@ -1347,6 +1347,7 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/maintenance/six,
+/obj/item/mecha_parts/mecha_equipment/drill/diamonddrill,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay4)
 "qJ" = (
@@ -2075,17 +2076,6 @@
 /obj/item/toy/cards/deck,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
-"zq" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/porta_turret/syndicate{
-	dir = 9;
-	name = "rusting turret";
-	desc = "A ballistic machine gun auto-turret, it's woven into the hexacrete walls. Despite that, its age is clear, decay has set in.";
-	max_integrity = 60;
-	armor = list("melee" = 25, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
-	},
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
 "zr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2967,7 +2957,10 @@
 	dir = 9;
 	name = "rusting turret";
 	desc = "A ballistic machine gun auto-turret, it's woven into the hexacrete walls. Despite that, it's age is clear, decay has set in.";
-	max_integrity = 60
+	max_integrity = 60;
+	armor = list("melee" = 25, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90);
+	lethal_projectile = /obj/projectile/bullet/lmg;
+	stun_projectile = /obj/projectile/bullet/lmg
 	},
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
@@ -4614,7 +4607,7 @@ eb
 hU
 gu
 cq
-zq
+KH
 Yt
 Yt
 wF
@@ -5237,9 +5230,9 @@ vd
 vd
 vd
 vd
-eb
-eb
-eb
+vd
+vd
+vB
 eb
 eb
 eb
@@ -5286,9 +5279,9 @@ vd
 vd
 vd
 vd
-eb
-eb
-eb
+vd
+vd
+vd
 vB
 vB
 vB
@@ -5336,9 +5329,9 @@ vd
 vd
 vd
 vd
-eb
-eb
-eb
+vd
+vd
+vd
 au
 vB
 vB
@@ -5385,8 +5378,8 @@ vd
 vd
 vd
 vd
-eb
-eb
+vd
+vd
 vd
 vd
 vB
@@ -5434,8 +5427,8 @@ vd
 vd
 vd
 vd
-eb
-eb
+vd
+vd
 vd
 vd
 vd
@@ -5484,7 +5477,7 @@ vd
 vd
 vd
 vd
-eb
+vd
 vd
 vd
 vd
@@ -5533,7 +5526,7 @@ vd
 vd
 vd
 vd
-eb
+vd
 vd
 vd
 vB
@@ -5582,7 +5575,7 @@ vd
 vd
 vd
 vd
-eb
+vd
 vB
 vB
 au
@@ -5630,8 +5623,8 @@ vd
 vd
 vd
 vd
-eb
-eb
+vd
+vd
 eb
 vB
 vB
@@ -5679,8 +5672,8 @@ vd
 vd
 vd
 vd
-eb
-eb
+vd
+vd
 eb
 eb
 eb
@@ -5728,8 +5721,8 @@ vd
 vd
 vd
 vd
-eb
-eb
+vd
+vd
 eb
 eb
 eb
@@ -5777,8 +5770,8 @@ vd
 vd
 vd
 vd
-eb
-eb
+vd
+vd
 eb
 eb
 eb
@@ -5826,8 +5819,8 @@ vd
 vd
 vd
 vd
-eb
-eb
+vd
+vd
 eb
 eb
 eb
@@ -5875,8 +5868,8 @@ vd
 vd
 vd
 vd
-eb
-eb
+vd
+vd
 eb
 eb
 eb
