@@ -115,7 +115,7 @@
 			if(magazine.ammo_count())
 				to_chat(user, "<span class='warning'>You can't modify it!</span>")
 				return TRUE
-			magazine.caliber = "357"
+			magazine.caliber = ".357"
 			fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 			desc = "The barrel and chamber assembly seems to have been modified."
 			to_chat(user, "<span class='notice'>You reinforce the barrel of [src]. Now it will fire .357 rounds.</span>")
@@ -129,7 +129,7 @@
 			if(magazine.ammo_count())
 				to_chat(user, "<span class='warning'>You can't modify it!</span>")
 				return
-			magazine.caliber = "38"
+			magazine.caliber = ".38"
 			fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 			desc = initial(desc)
 			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
