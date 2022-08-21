@@ -166,6 +166,13 @@
 	contains = list(/obj/item/storage/box/metalfoam)
 	crate_name = "metal foam grenade crate"
 
+/datum/supply_pack/emergency/inflatables
+	name = "Inflatable Walls Crate"
+	desc = "Seal breached rooms and erect emergency airlocks with 8 inflatable walls and 6 inflatable doors."
+	cost = 1000
+	contains = list(/obj/item/storage/box/inflatables,
+					/obj/item/storage/box/inflatables)
+
 /datum/supply_pack/emergency/plasma_spacesuit
 	name = "Plasmaman Space Envirosuits"
 	desc = "Contains two space-worthy envirosuits for Plasmamen. Order now and we'll throw in two free helmets! Requires EVA access to open."

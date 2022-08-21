@@ -441,6 +441,7 @@
 		/obj/item/borg/sight/meson,
 		/obj/item/construction/rcd/borg,
 		/obj/item/pipe_dispenser,
+		/obj/item/inflatable_dispenser/borg,
 		/obj/item/extinguisher,
 		/obj/item/weldingtool/largetank/cyborg,
 		/obj/item/screwdriver/cyborg,
