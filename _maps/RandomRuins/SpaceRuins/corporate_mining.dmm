@@ -23,9 +23,17 @@
 	},
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"cq" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin)
 "cr" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
@@ -47,7 +55,7 @@
 /area/ruin)
 "dI" = (
 /obj/structure/table/wood,
-/obj/item/gun/ballistic/automatic/pistol/suppressed,
+/obj/machinery/photocopier/faxmachine,
 /turf/open/floor/wood,
 /area/ruin)
 "em" = (
@@ -62,10 +70,18 @@
 /obj/structure/mecha_wreckage/ripley/mkii,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"eX" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord,
+/turf/open/floor/plating/asteroid/airless,
+/area/asteroid)
 "fg" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 1
 	},
+/turf/open/floor/plating/asteroid/airless,
+/area/asteroid)
+"fv" = (
+/obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
 "fD" = (
@@ -86,15 +102,11 @@
 /obj/machinery/door/airlock{
 	name = "Room 1"
 	},
-/obj/effect/decal/cleanable/blood/tracks{
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin)
-"fY" = (
-/obj/effect/mob_spawn/human/miner/explorer,
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/open/floor/wood,
 /area/ruin)
 "gW" = (
 /obj/structure/table,
@@ -147,11 +159,20 @@
 /obj/machinery/door/airlock{
 	name = "Room 3"
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "kS" = (
 /obj/item/trash/can,
 /turf/open/floor/plasteel,
+/area/ruin)
+"ld" = (
+/obj/structure/girder/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
 /area/ruin)
 "lE" = (
 /turf/closed/wall,
@@ -180,6 +201,11 @@
 /obj/effect/holodeck_effect/cards,
 /turf/open/floor/plasteel,
 /area/ruin)
+"oC" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
+/area/ruin)
 "pd" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
@@ -188,6 +214,12 @@
 "qb" = (
 /obj/machinery/door/airlock/wood/glass{
 	name = "Corporate's Office"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin)
@@ -207,6 +239,12 @@
 "re" = (
 /turf/closed/mineral/gold,
 /area/asteroid)
+"rW" = (
+/obj/effect/mob_spawn/human/miner/rig,
+/obj/effect/decal/cleanable/blood,
+/obj/item/gun/energy/kinetic_accelerator,
+/turf/open/floor/plating/asteroid/airless,
+/area/asteroid)
 "sc" = (
 /obj/machinery/door/airlock{
 	name = "Preparations"
@@ -217,12 +255,19 @@
 "sw" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin)
+"sR" = (
+/obj/machinery/power/apc/auto_name/west,
+/turf/open/floor/plasteel,
+/area/ruin)
 "tu" = (
 /obj/machinery/vending/mining_equipment,
 /turf/open/floor/plasteel,
 /area/ruin)
 "tS" = (
 /obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "ub" = (
@@ -233,14 +278,20 @@
 /obj/machinery/door/airlock/command{
 	name = "Bridge"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "vh" = (
-/obj/effect/mob_spawn/human/miner/explorer,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/gibs/bubblegum,
+/obj/effect/mob_spawn/human/miner/rig,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
 "wj" = (
@@ -314,6 +365,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"CO" = (
+/turf/open/floor/plating,
+/area/asteroid)
 "Di" = (
 /obj/structure/bed/roller,
 /turf/open/floor/plasteel,
@@ -326,6 +380,7 @@
 /area/ruin)
 "DP" = (
 /obj/item/shard,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin)
 "Eg" = (
@@ -334,6 +389,10 @@
 /obj/item/stack/ore/gold,
 /turf/open/floor/plasteel,
 /area/ruin)
+"Er" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/asteroid/airless,
+/area/asteroid)
 "ES" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/pod/old/syndicate,
@@ -341,6 +400,9 @@
 /area/ruin)
 "Ft" = (
 /obj/structure/sign/departments/engineering,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/closed/wall,
 /area/ruin)
 "FW" = (
@@ -352,20 +414,22 @@
 /turf/open/floor/plasteel,
 /area/ruin)
 "Ho" = (
-/obj/effect/mob_spawn/human/miner/explorer,
+/obj/effect/mob_spawn/human/miner/rig,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
 "HL" = (
 /obj/machinery/power/smes,
 /turf/open/floor/plasteel,
 /area/ruin)
-"Im" = (
-/obj/effect/mob_spawn/human/miner/explorer,
-/turf/open/floor/plasteel,
-/area/ruin)
 "It" = (
 /obj/effect/landmark/ore_vein,
 /turf/closed/mineral/gold,
+/area/asteroid)
+"Iy" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
 "IR" = (
 /obj/machinery/door/airlock/external,
@@ -393,9 +457,12 @@
 /turf/open/space/basic,
 /area/space)
 "LB" = (
-/obj/effect/mob_spawn/human/miner/explorer,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plasteel,
+/area/ruin)
+"LD" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2,
+/turf/open/floor/plating,
 /area/ruin)
 "LI" = (
 /obj/structure/closet/secure_closet/personal,
@@ -413,26 +480,31 @@
 /obj/structure/sign/poster/official/space_cops,
 /turf/closed/wall,
 /area/ruin)
+"NM" = (
+/obj/structure/spawner/mining/hivelord,
+/turf/open/floor/plating/asteroid/airless,
+/area/asteroid)
 "Ov" = (
 /turf/open/floor/wood,
 /area/ruin)
 "Oz" = (
 /turf/closed/wall/rust,
 /area/ruin)
-"OT" = (
+"OE" = (
+/obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/tracks{
-	dir = 1
+	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/ruin)
+/turf/open/floor/plating/asteroid/airless,
+/area/asteroid)
 "OX" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/vending/coffee,
 /turf/open/floor/plasteel,
 /area/ruin)
 "Pk" = (
-/obj/effect/mob_spawn/human/miner/explorer,
 /obj/effect/decal/cleanable/blood/old,
+/obj/effect/mob_spawn/human/miner/rig,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
 "Px" = (
@@ -449,9 +521,23 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
+"PS" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/asteroid)
 "Qn" = (
 /obj/structure/closet/cabinet,
+/obj/item/gun/ballistic/automatic/pistol/suppressed,
 /turf/open/floor/wood,
+/area/ruin)
+"QK" = (
+/obj/machinery/power/apc/auto_name/south,
+/turf/open/floor/plasteel,
 /area/ruin)
 "Rb" = (
 /turf/open/floor/plasteel,
@@ -476,12 +562,24 @@
 /obj/machinery/door/airlock/alarmlock{
 	name = "Cargo"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "SK" = (
 /obj/structure/table/wood,
+/obj/item/paper_bin,
+/obj/item/pen/fountain,
 /turf/open/floor/wood,
 /area/ruin)
+"SV" = (
+/obj/item/gibtonite,
+/turf/open/floor/plating/asteroid/airless,
+/area/asteroid)
 "Tl" = (
 /obj/item/trash/sosjerky,
 /turf/open/floor/plasteel,
@@ -540,6 +638,10 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel,
 /area/ruin)
+"WR" = (
+/obj/machinery/power/apc/auto_name/west,
+/turf/open/floor/wood,
+/area/ruin)
 "Xo" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/structure/closet/crate{
@@ -548,12 +650,13 @@
 /obj/item/flashlight,
 /turf/open/floor/plasteel,
 /area/ruin)
-"Xr" = (
-/turf/closed/mineral,
-/area/space)
 "Xy" = (
 /obj/machinery/door/airlock{
 	name = "Room 2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
@@ -575,6 +678,12 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/door/airlock/alarmlock{
 	name = "Cargo"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
@@ -817,7 +926,7 @@ qX
 qX
 Wp
 Wp
-Wp
+eX
 vh
 fg
 fg
@@ -852,7 +961,7 @@ Lz
 Lz
 Lz
 Lz
-Xr
+qX
 qX
 qX
 Wk
@@ -1015,7 +1124,7 @@ Wk
 qX
 qX
 Wp
-Wp
+ch
 Wp
 Wp
 Wp
@@ -1067,7 +1176,7 @@ qX
 Wp
 Wp
 Wp
-Wp
+Bx
 Wp
 Wp
 qX
@@ -1109,7 +1218,7 @@ Lz
 Lz
 Lz
 Lz
-Lz
+qX
 qX
 qX
 qX
@@ -1159,10 +1268,10 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+Wk
+Wk
 qX
 qX
 qX
@@ -1185,7 +1294,7 @@ Ov
 Tn
 bn
 zF
-Ov
+WR
 sw
 qX
 qX
@@ -1210,11 +1319,11 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+Wk
+qX
+qX
 qX
 qX
 qX
@@ -1262,12 +1371,12 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
+qX
+Wp
+Wp
 qX
 qX
 qX
@@ -1279,12 +1388,12 @@ re
 qX
 qX
 sw
-HL
+Rb
 fD
 Rb
 sw
 Qn
-fY
+bn
 qx
 em
 Ov
@@ -1313,17 +1422,17 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
 qX
 Wp
 Wp
+Wp
+Wp
+NM
+qX
+Wp
+fv
 Wp
 fE
 Wp
@@ -1333,7 +1442,7 @@ Wk
 am
 HL
 Rb
-Rb
+QK
 sw
 sw
 em
@@ -1365,18 +1474,18 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+Wk
+qX
 Wp
 Wp
-ch
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+qX
 Wp
 Wp
 Wp
@@ -1395,9 +1504,9 @@ fD
 iA
 iA
 IR
-Rb
-IR
-TE
+LD
+oC
+CO
 Wp
 Wp
 Wp
@@ -1417,21 +1526,21 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Wp
-Wp
-Bx
+qX
+Wk
+qX
 Wp
 Wp
 Wp
+Wp
+fv
+Wp
+Wp
+OE
+qX
+Wp
+Wp
+fv
 qX
 qX
 em
@@ -1447,9 +1556,9 @@ WN
 iA
 Rb
 IR
-Rb
-IR
-TE
+LD
+oC
+CO
 Wp
 Wp
 Wp
@@ -1469,17 +1578,17 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
 Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+Iy
 Wp
 Wp
 Jg
@@ -1521,17 +1630,17 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+NM
 Wp
+Wp
+Wp
+SV
+rW
+Er
+Er
+PS
 Pk
 Wp
 Wp
@@ -1573,16 +1682,16 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
 Wp
 Wp
 Wp
@@ -1625,19 +1734,19 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+Wk
+qX
 Wp
 Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
+fv
 Wp
 qX
 qX
@@ -1677,17 +1786,17 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
 qX
+qX
+Wk
+qX
+qX
+Wp
+Wp
+Wp
+Wp
+Wp
+Wp
 Wp
 qX
 qX
@@ -1700,7 +1809,7 @@ Oz
 Oz
 Nt
 Rb
-Rb
+QK
 lE
 lE
 Oz
@@ -1729,17 +1838,17 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
 qX
 qX
+Wk
+qX
+qX
+Wp
+Wp
+Wp
+Wp
+Wp
+NM
 qX
 qX
 qX
@@ -1781,15 +1890,15 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
+Wk
+Wp
+Wp
+Wp
+Wp
+Wp
 qX
 qX
 qX
@@ -1835,12 +1944,12 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+Wp
+Wp
+Wp
+Wp
 qX
 qX
 qX
@@ -1862,7 +1971,7 @@ Oz
 FW
 Rb
 DP
-UP
+cq
 bY
 Lz
 Lz
@@ -1885,14 +1994,14 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
+qX
+Wk
+qX
+qX
+qX
 qX
 qX
 qX
@@ -1907,15 +2016,15 @@ lE
 lE
 Oz
 op
-Im
+Rb
 Rb
 Oz
 Oz
 JT
 Sp
-UP
+cq
 VE
-UP
+cq
 wF
 Lz
 Lz
@@ -1938,14 +2047,14 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
-Lz
-Lz
 qX
 qX
+qX
+Wk
+qX
+Wk
+Wk
+Wk
 qX
 qX
 qX
@@ -1955,7 +2064,7 @@ Wk
 qX
 qX
 em
-Rb
+sR
 Pz
 Rb
 Oz
@@ -1965,7 +2074,7 @@ lE
 GD
 Rb
 DP
-UP
+cq
 wF
 wF
 wF
@@ -1991,10 +2100,10 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
+qX
 qX
 qX
 qX
@@ -2009,14 +2118,14 @@ qX
 JT
 wj
 or
-OT
+Rb
 fW
-OT
+Rb
 Rb
 sc
 lQ
 UP
-UP
+cq
 wF
 wF
 Lz
@@ -2043,12 +2152,12 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
-Lz
 qX
 qX
+qX
+qX
+Wk
+Wk
 qX
 qX
 Wk
@@ -2068,8 +2177,8 @@ Rb
 lE
 Rb
 fD
-UP
-VE
+cq
+ld
 wF
 Lz
 wF
@@ -2095,9 +2204,9 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
 qX
 qX
 qX
@@ -2120,13 +2229,13 @@ Oz
 lE
 em
 sw
-UP
-UP
+cq
+cq
 wF
 wF
-Lz
-Lz
-Lz
+qX
+qX
+qX
 Lz
 Lz
 Lz
@@ -2169,16 +2278,16 @@ At
 Ur
 Rb
 Rb
-Rb
+sR
 sw
 Lz
 Lz
 Lz
 wF
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
+qX
 Lz
 Lz
 Lz
@@ -2230,8 +2339,8 @@ Lz
 wF
 wF
 wF
-Lz
-Lz
+qX
+qX
 Lz
 Lz
 Lz
@@ -2280,11 +2389,11 @@ wF
 wF
 Lz
 wF
-Lz
-Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
+qX
+qX
 Lz
 Lz
 Lz
@@ -2333,9 +2442,9 @@ Lz
 Lz
 Lz
 Lz
-Lz
-Lz
-Lz
+qX
+qX
+qX
 Lz
 Lz
 Lz
@@ -2386,7 +2495,7 @@ Lz
 Lz
 Lz
 Lz
-Lz
+qX
 Lz
 Lz
 Lz
