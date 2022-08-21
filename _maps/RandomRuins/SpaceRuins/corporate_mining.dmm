@@ -1,15 +1,35 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"af" = (
+/obj/item/stack/ore/uranium,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ruin)
 "am" = (
 /obj/structure/sign/poster/contraband/power,
 /turf/closed/wall/r_wall,
 /area/ruin)
 "aE" = (
 /obj/item/trash/candy,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ruin)
 "bn" = (
 /obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/wood,
+/area/ruin)
+"bM" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/item/assembly/igniter,
+/turf/open/floor/plasteel,
 /area/ruin)
 "bY" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -35,6 +55,12 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "dd" = (
@@ -57,6 +83,13 @@
 /obj/structure/table/wood,
 /obj/machinery/photocopier/faxmachine,
 /turf/open/floor/wood,
+/area/ruin)
+"dR" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/machinery/airalarm/all_access{
+	pixel_y = 24
+	},
+/turf/open/floor/plasteel,
 /area/ruin)
 "em" = (
 /turf/closed/wall/r_wall,
@@ -93,6 +126,12 @@
 /obj/effect/decal/cleanable/blood/gibs/bubblegum,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"fG" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "fU" = (
 /obj/structure/bed,
 /obj/item/bedsheet/dorms,
@@ -105,6 +144,18 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"gp" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
@@ -145,6 +196,12 @@
 /area/ruin)
 "iA" = (
 /obj/item/stack/ore/uranium,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "iY" = (
@@ -163,16 +220,43 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"kq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "kS" = (
 /obj/item/trash/can,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "ld" = (
 /obj/structure/girder/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
+/area/ruin)
+"lj" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
 /area/ruin)
 "lE" = (
 /turf/closed/wall,
@@ -181,8 +265,37 @@
 /obj/item/trash/waffles,
 /turf/open/floor/plasteel,
 /area/ruin)
+"md" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "mx" = (
 /obj/machinery/vending/cigarette,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"mV" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"np" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "nG" = (
@@ -199,6 +312,15 @@
 "or" = (
 /obj/structure/table/wood/poker,
 /obj/effect/holodeck_effect/cards,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "oC" = (
@@ -206,10 +328,33 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
 /area/ruin)
+"oG" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"oR" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ruin)
 "pd" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/wood,
+/area/ruin)
+"pE" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/ruin)
 "qb" = (
 /obj/machinery/door/airlock/wood/glass{
@@ -223,9 +368,16 @@
 	},
 /turf/open/floor/wood,
 /area/ruin)
+"qi" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "qx" = (
 /obj/structure/bed,
 /obj/item/bedsheet/syndie,
+/obj/structure/curtain,
 /turf/open/floor/wood,
 /area/ruin)
 "qz" = (
@@ -233,6 +385,15 @@
 /obj/item/stack/ore/uranium,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"qN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "qX" = (
 /turf/closed/mineral,
 /area/asteroid)
@@ -263,6 +424,12 @@
 /obj/machinery/vending/mining_equipment,
 /turf/open/floor/plasteel,
 /area/ruin)
+"tM" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "tS" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/machinery/atmospherics/pipe/layer_manifold{
@@ -284,6 +451,12 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "vh" = (
@@ -294,12 +467,35 @@
 /obj/effect/mob_spawn/human/miner/rig,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"vy" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel,
+/area/ruin)
+"we" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/wood,
+/area/ruin)
 "wj" = (
 /obj/machinery/roulette,
 /turf/open/floor/plasteel,
 /area/ruin)
 "wD" = (
 /obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -24
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -310,6 +506,15 @@
 /area/ruin)
 "xv" = (
 /obj/effect/decal/cleanable/blood/gibs/torso,
+/turf/open/floor/plasteel,
+/area/ruin)
+"yb" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "yk" = (
@@ -326,12 +531,24 @@
 /obj/structure/chair/office/light{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/wood,
 /area/ruin)
 "At" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/multitool,
+/turf/open/floor/plasteel,
+/area/ruin)
+"AI" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "AV" = (
@@ -350,6 +567,28 @@
 /obj/structure/chair/stool/bar{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"Cz" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"CC" = (
+/obj/item/stack/ore/uranium,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "CE" = (
@@ -362,6 +601,12 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
@@ -376,6 +621,9 @@
 /obj/structure/chair/office/light{
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin)
 "DP" = (
@@ -387,12 +635,42 @@
 /obj/structure/closet/crate,
 /obj/item/stack/ore/gold,
 /obj/item/stack/ore/gold,
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 24
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"En" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "Er" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"Ez" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/atmospherics/components/trinary/filter/atmos/co2,
+/turf/open/floor/plasteel,
+/area/ruin)
+"EN" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -24
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin)
 "ES" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/pod/old/syndicate,
@@ -411,6 +689,18 @@
 /area/ruin)
 "GD" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
+/obj/machinery/atmospherics/components/unary/vent_pump/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"GZ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "Ho" = (
@@ -419,6 +709,9 @@
 /area/asteroid)
 "HL" = (
 /obj/machinery/power/smes,
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "It" = (
@@ -433,6 +726,12 @@
 /area/asteroid)
 "IR" = (
 /obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "Jg" = (
@@ -449,6 +748,12 @@
 /obj/item/stack/ore/diamond,
 /turf/open/floor/plasteel,
 /area/ruin)
+"JM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "JT" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plasteel,
@@ -462,28 +767,88 @@
 /area/ruin)
 "LD" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin)
 "LI" = (
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/plasteel,
 /area/ruin)
-"LU" = (
-/obj/effect/decal/cleanable/blood/tracks,
+"MN" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "MO" = (
 /obj/item/trash/syndi_cakes,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"MV" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "Nt" = (
 /obj/structure/sign/poster/official/space_cops,
 /turf/closed/wall,
 /area/ruin)
+"NA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ruin)
 "NM" = (
 /obj/structure/spawner/mining/hivelord,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"NX" = (
+/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
+"Oa" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin)
+"Of" = (
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -24
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/wood,
+/area/ruin)
+"On" = (
+/obj/machinery/airalarm/all_access{
+	pixel_y = 24
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "Ov" = (
 /turf/open/floor/wood,
 /area/ruin)
@@ -513,10 +878,15 @@
 /area/ruin)
 "Py" = (
 /obj/item/rollingpaper,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ruin)
 "Pz" = (
 /obj/structure/chair/stool/bar{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -530,13 +900,38 @@
 	},
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"Qg" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "Qn" = (
 /obj/structure/closet/cabinet,
 /obj/item/gun/ballistic/automatic/pistol/suppressed,
 /turf/open/floor/wood,
 /area/ruin)
+"Qo" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "QK" = (
 /obj/machinery/power/apc/auto_name/south,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "Rb" = (
@@ -544,6 +939,12 @@
 /area/ruin)
 "Rw" = (
 /obj/item/trash/popcorn,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/wood,
 /area/ruin)
 "Sp" = (
@@ -574,20 +975,36 @@
 /obj/structure/table/wood,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin)
 "SV" = (
 /obj/item/gibtonite,
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid)
+"SW" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/wood,
+/area/ruin)
 "Tl" = (
 /obj/item/trash/sosjerky,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "Tn" = (
 /obj/machinery/door/airlock/wood{
 	locked = 1;
 	name = "Corporate Bedroom"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/wood,
 /area/ruin)
@@ -597,6 +1014,11 @@
 "Ur" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/item/trash/can/food/peaches/maint,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "UP" = (
@@ -609,11 +1031,23 @@
 /area/ruin)
 "Vd" = (
 /obj/machinery/modular_computer/console/preset/engineering,
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	dir = 10
+	},
 /turf/open/floor/plasteel,
 /area/ruin)
 "VE" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating,
+/area/ruin)
+"Wf" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
 /area/ruin)
 "Wk" = (
 /obj/effect/landmark/ore_vein,
@@ -632,15 +1066,22 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin)
-"WN" = (
-/obj/effect/mob_spawn/human/miner/explorer,
-/obj/item/storage/bag/ore,
-/obj/effect/decal/cleanable/blood/tracks,
-/turf/open/floor/plasteel,
-/area/ruin)
 "WR" = (
 /obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/wood,
+/area/ruin)
+"Xf" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/atmospherics/pipe/simple/scrubbers{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
 /area/ruin)
 "Xo" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -650,12 +1091,28 @@
 /obj/item/flashlight,
 /turf/open/floor/plasteel,
 /area/ruin)
+"Xu" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin)
 "Xy" = (
 /obj/machinery/door/airlock{
 	name = "Room 2"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -671,7 +1128,6 @@
 /area/ruin)
 "XP" = (
 /obj/item/flashlight/flare,
-/obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel,
 /area/ruin)
 "Yc" = (
@@ -685,7 +1141,19 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
+/area/ruin)
+"Yp" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/frame/machine,
+/obj/item/circuitboard/machine/ore_redemption,
+/turf/open/floor/plating,
 /area/ruin)
 
 (1,1,1) = {"
@@ -1290,9 +1758,9 @@ qX
 em
 ES
 Dv
-Ov
+Of
 Tn
-bn
+EN
 zF
 WR
 sw
@@ -1342,7 +1810,7 @@ sw
 em
 dI
 Rw
-Ov
+we
 em
 pd
 SK
@@ -1388,15 +1856,15 @@ re
 qX
 qX
 sw
-Rb
-fD
-Rb
+tM
+Ez
+fG
 sw
 Qn
-bn
+Oa
 qx
 em
-Ov
+SW
 bn
 aE
 em
@@ -1442,7 +1910,7 @@ Wk
 am
 HL
 Rb
-QK
+NX
 sw
 sw
 em
@@ -1494,14 +1962,14 @@ qX
 sw
 Vd
 tS
-fD
+Xf
 cr
-Rb
-Rb
-Rb
-Rb
-fD
-iA
+En
+oG
+En
+En
+mV
+af
 iA
 IR
 LD
@@ -1550,11 +2018,11 @@ ub
 Ft
 Rb
 CJ
-LU
-XP
-WN
-iA
 Rb
+XP
+Rb
+CC
+Wf
 IR
 LD
 oC
@@ -1649,15 +2117,15 @@ qX
 Wk
 em
 LI
-Rb
+MN
 fU
 Oz
 Rb
-Rb
+MV
 Oz
 Jn
 Rb
-Rb
+pE
 Wz
 nG
 Xo
@@ -1701,18 +2169,18 @@ qX
 qX
 JT
 Rb
-fD
-Rb
+Qg
+En
 kl
-fD
+mV
 Py
 ik
-Rb
-Rb
-Rb
-fD
-Rb
-Rb
+vy
+qi
+qN
+md
+JM
+lj
 em
 qX
 re
@@ -1752,12 +2220,12 @@ qX
 qX
 qX
 em
-LI
+dR
 Tl
 fU
 lE
 Rb
-Rb
+NA
 lE
 CE
 en
@@ -1857,16 +2325,16 @@ Wk
 qX
 em
 LI
-Rb
+MN
 fU
 lE
 Rb
-fD
+Xu
 UZ
 lE
 FW
 Rb
-Rb
+gp
 tu
 em
 re
@@ -1909,11 +2377,11 @@ qX
 qX
 JT
 Rb
-Rb
-fD
+Cz
+mV
 Xy
-Rb
-Rb
+GZ
+oR
 mx
 lE
 FW
@@ -1960,18 +2428,18 @@ qX
 qX
 qX
 sw
-LI
+dR
 MO
 fU
 lE
-Rb
+AI
 kS
 OX
 Oz
 FW
-Rb
+np
 DP
-cq
+Yp
 bY
 Lz
 Lz
@@ -2017,7 +2485,7 @@ lE
 Oz
 op
 Rb
-Rb
+MV
 Oz
 Oz
 JT
@@ -2069,7 +2537,7 @@ Pz
 Rb
 Oz
 Rb
-Rb
+MV
 lE
 GD
 Rb
@@ -2118,10 +2586,10 @@ qX
 JT
 wj
 or
-Rb
+En
 fW
-Rb
-Rb
+En
+oR
 sc
 lQ
 UP
@@ -2168,15 +2636,15 @@ qX
 Wk
 qX
 em
-Rb
+On
 Cc
 Rb
 lE
-Rb
-Rb
+Qo
+kq
 lE
-Rb
-fD
+np
+bM
 cq
 ld
 wF
@@ -2276,8 +2744,8 @@ qX
 em
 At
 Ur
-Rb
-Rb
+yb
+lj
 sR
 sw
 Lz
