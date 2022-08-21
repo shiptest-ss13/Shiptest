@@ -307,6 +307,10 @@
 /area/ruin/rockplanet/abandoned_mechbay/caves)
 "ec" = (
 /obj/machinery/power/apc/auto_name/south,
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "ee" = (
@@ -666,6 +670,10 @@
 /obj/machinery/camera/autoname{
 	dir = 5
 	},
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
 "gO" = (
@@ -824,6 +832,17 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
+"iy" = (
+/obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/abandoned_mechbay/bay1)
 "iB" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -861,6 +880,16 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
+"jj" = (
+/obj/effect/turf_decal/spline/fancy/opaque/grey{
+	dir = 4
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/open/floor/concrete/slab_4,
+/area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "jx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -910,6 +939,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/camera/autoname{
 	dir = 8
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay4)
@@ -1234,6 +1267,10 @@
 	},
 /obj/machinery/light/broken{
 	dir = 4
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/crewquarters)
@@ -1691,6 +1728,10 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -25
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/laundry)
 "tE" = (
@@ -3310,6 +3351,10 @@
 	dir = 4
 	},
 /obj/item/shard,
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay3)
 "Nq" = (
@@ -3513,6 +3558,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -25
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
 "QD" = (
@@ -3664,6 +3713,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "Sm" = (
@@ -3734,6 +3787,10 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
@@ -4094,6 +4151,10 @@
 /obj/item/storage/firstaid/medical,
 /obj/item/storage/firstaid/regular,
 /obj/item/storage/firstaid/regular,
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/abandoned_mechbay/medbay)
 "YC" = (
@@ -4112,6 +4173,9 @@
 	dir = 1
 	},
 /obj/machinery/camera/autoname,
+/obj/machinery/airalarm/all_access{
+	pixel_y = 25
+	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "YP" = (
@@ -5670,7 +5734,7 @@ yg
 BJ
 AA
 PN
-iR
+iy
 lh
 lG
 wH
@@ -6059,7 +6123,7 @@ hN
 wc
 tJ
 lO
-mV
+jj
 Hz
 Zi
 mV
@@ -6068,7 +6132,7 @@ mV
 KI
 mV
 mV
-mV
+jj
 CF
 gJ
 Bm
