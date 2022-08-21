@@ -543,3 +543,41 @@
 	name = "Syndicate Laboratory 4071 Surrounding Area"
 	icon_state = "dk_yellow"
 	color = "#26773a88"
+
+//Corporate Mining Ruin
+
+/area/ruin/space/has_grav/corporatemine/cargo
+	name = "Corporate Mine Cargo"
+	icon_state = "cargo_bay"
+
+/area/ruin/space/has_grav/corporatemine/solar_array
+	name = "Corporate Mine Solar Array"
+	icon_state = "panels_fs"
+
+area/ruin/space/has_grav/corporatemine/asteroid
+	name = "Asteroid"
+	icon_state = "unknown"
+
+area/ruin/space/has_grav/corporatemine/crewquarters
+	name = "Corporate Mine Crew Quarters"
+	icon_state = "purple"
+
+area/ruin/space/has_grav/corporatemine/corpquarters
+	name = "Corporate Mine Liason's Quarters"
+	icon_state = "law"
+
+area/ruin/space/has_grav/corporatemine/air
+	name = "Corporate Mine Air Supply"
+	icon_state = "atmos"
+
+area/ruin/space/has_grav/corporatemine/bridge
+	name = "Corporate Mine Bridge"
+	icon_state = "bridge"
+
+area/ruin/space/has_grav/corporatemine/hall
+	name = "Corporate Mine Hall"
+	icon_state = "hallC"
+
+area/ruin/space/has_grav/corporatemine/eva
+	name = "Corporate Mine Eva"
+	icon_state = "eva"
