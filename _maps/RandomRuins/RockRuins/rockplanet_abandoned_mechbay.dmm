@@ -1513,9 +1513,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "sJ" = (
-/obj/structure/stairs,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "sM" = (
 /obj/effect/turf_decal/number/one,
@@ -3611,9 +3612,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay4)
 "Un" = (
-/obj/structure/stairs,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "Up" = (
 /turf/closed/wall/concrete,
