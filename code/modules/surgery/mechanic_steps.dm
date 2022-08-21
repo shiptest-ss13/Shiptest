@@ -17,10 +17,10 @@
 
 /datum/surgery_step/mechanic_open/tool_check(mob/user, obj/item/tool)
 	if(istype(tool))
-		if(!tool.get_sharpness())
-			return FALSE
-		if(tool.usesound)
-			preop_sound = tool.usesound
+		preop_sound = tool.usesound
+	else if(!tool.get_sharpness()) //if its not a tool, then we check if its sharp
+		return FALSE
+	. = ..()
 
 //close shell
 /datum/surgery_step/mechanic_close
@@ -41,10 +41,10 @@
 
 /datum/surgery_step/mechanic_close/tool_check(mob/user, obj/item/tool)
 	if(istype(tool))
-		if(!tool.get_sharpness())
-			return FALSE
-		if(tool.usesound)
-			preop_sound = tool.usesound
+		preop_sound = tool.usesound
+	else if(!tool.get_sharpness()) //if its not a tool, then we check if its sharp
+		return FALSE
+	. = ..()
 
 //prepare electronics
 /datum/surgery_step/prepare_electronics
@@ -79,7 +79,7 @@
 /datum/surgery_step/mechanic_unwrench/tool_check(mob/user, obj/item/tool)
 	if(tool.usesound)
 		preop_sound = tool.usesound
-	return TRUE
+	. = ..()
 
 //wrench
 /datum/surgery_step/mechanic_wrench
@@ -98,7 +98,7 @@
 /datum/surgery_step/mechanic_wrench/tool_check(mob/user, obj/item/tool)
 	if(tool.usesound)
 		preop_sound = tool.usesound
-	return TRUE
+	. = ..()
 
 //open hatch
 /datum/surgery_step/open_hatch
