@@ -363,7 +363,10 @@
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "eu" = (
 /obj/machinery/porta_turret/syndicate/energy{
-	dir = 6
+	dir = 6;
+	desc = "An energy blaster auto-turret. It's woven into the hexacrete walls.";
+	stun_projectile = /obj/projectile/energy/beam/disabler;
+	max_integrity = 80
 	},
 /turf/closed/wall/concrete,
 /area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
@@ -2970,7 +2973,10 @@
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
 "Lb" = (
 /obj/machinery/porta_turret/syndicate/energy{
-	dir = 6
+	dir = 6;
+	desc = "An energy blaster auto-turret. It's woven into the hexacrete walls.";
+	stun_projectile = /obj/projectile/energy/beam/disabler;
+	max_integrity = 80
 	},
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
@@ -3772,7 +3778,10 @@
 /area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "Xl" = (
 /obj/machinery/porta_turret/syndicate/energy{
-	dir = 5
+	dir = 5;
+	desc = "An energy blaster auto-turret. It's woven into the hexacrete walls.";
+	stun_projectile = /obj/projectile/energy/beam/disabler;
+	max_integrity = 80
 	},
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
@@ -3860,14 +3869,14 @@
 /obj/structure/closet/wall/white{
 	pixel_y = 29
 	},
-/obj/item/storage/firstaid,
-/obj/item/storage/firstaid,
-/obj/item/storage/firstaid,
 /obj/item/storage/firstaid/toxin,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
 /obj/effect/decal/cleanable/blood/footprints,
+/obj/item/storage/firstaid/medical,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/abandoned_mechbay/medbay)
 "YC" = (
@@ -5917,8 +5926,8 @@ vd
 vd
 vd
 vd
-vB
-vB
+vd
+vd
 vd
 vB
 vB
@@ -5967,7 +5976,7 @@ vd
 vd
 vd
 vd
-vB
+vd
 vd
 vB
 vB
@@ -6015,7 +6024,7 @@ vd
 vd
 vd
 vd
-vB
+vd
 vd
 vB
 vB
