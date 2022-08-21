@@ -105,6 +105,7 @@
 
 /obj/item/clothing/suit/syndicatefake
 	name = "black and red space suit replica"
+	icon = 'icons/obj/clothing/suits/spacesuits.dmi'
 	icon_state = "syndicate-black-red"
 	item_state = "syndicate-black-red"
 	desc = "A plastic replica of the Syndicate space suit. You'll look just like a real murderous Syndicate agent in this! This is a toy, it is not made for use in space!"
