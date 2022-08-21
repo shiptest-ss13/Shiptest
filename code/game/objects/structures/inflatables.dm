@@ -287,7 +287,7 @@
 	var/max_doors = 3
 	var/list/allowed_types = list(/obj/item/inflatable)
 	var/mode = MODE_WALL
-
+/*
 /obj/item/inflatable_dispenser/New()
 	..()
 	for(var/i = 0 to max(max_walls,max_doors))
@@ -366,8 +366,6 @@
 		return 1
 	if(A.type in allowed_types)
 		var/obj/item/inflatable/I = A
-		if(I.inflating)
-			return 0
 		if(istype(I, /obj/item/inflatable/wall))
 			if(stored_walls.len >= max_walls)
 				to_chat(user, "\The [src] can't hold more walls.")
@@ -378,9 +376,35 @@
 				to_chat(usr, "\The [src] can't hold more doors.")
 				return 0
 			stored_doors += I
-		if(istype(I.loc, /obj/item/storage))
-			var/obj/item/storage/S = I.loc
-			S.remove_from_storage(I,src)
+	if(istype(I.loc, /obj/item/storage))
+		var/found_item = FALSE
+		var/items_added = 0
+		var/obj/item/storage/S = I.loc
+		for(var/obj/item/I in S.contents)
+			if(istype(I, /obj/item/inflatable/wall))
+				found_item = TRUE
+				if(stored_walls.len >= max_walls)
+				break
+			stored_walls += I
+			items_added++
+
+			if(istype(I, /obj/item/inflatable/door))
+				found_item = TRUE
+				if(stored_doors.len >= max_doors)
+				break
+			stored_doors += I
+			items_added++
+
+		if(!found_item)
+			to_chat(user, "<span class = 'warning'>\The [S] contains no inflatables.</span>")
+			return 0
+
+		if(!items_added && src.stored_walls == max_walls || src.stored_doors == max_doors)
+			to_chat(user, "<span class='warning'>\The [src] is full!</span>")
+				return
+
+		to_chat(user, "<span class='notice'>You fill \the [src] with inflatables from \the [S]. " + "It has [src.stored_walls.len] wall segment\s and [src.stored_doors.len] door segment\s stored." + "</span>")
+
 		else if(istype(I.loc, /mob))
 			var/mob/M = I.loc
 			if(!M.drop_item(I,src))
@@ -392,6 +416,6 @@
 		visible_message("\The [user] picks up \the [A] with \the [src]!")
 		A.forceMove(src)
 		return 1
-
+*/
 #undef MODE_WALL
 #undef MODE_DOOR
