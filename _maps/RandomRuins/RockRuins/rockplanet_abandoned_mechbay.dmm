@@ -514,6 +514,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "fw" = (
@@ -802,6 +805,16 @@
 "is" = (
 /turf/closed/mineral/gibtonite/rockplanet,
 /area/ruin/rockplanet/abandoned_mechbay/caves)
+"iu" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "iB" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1040,6 +1053,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/light/broken{
 	dir = 8
+	},
+/obj/effect/turf_decal/trimline/transparent/neutral/filled/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
@@ -1489,6 +1505,9 @@
 	name = "Syndicate Engineer";
 	desc = "Death to bad mechanics."
 	},
+/obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "rY" = (
@@ -1901,6 +1920,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/circuit,
 /area/ruin/rockplanet/abandoned_mechbay/mechlab)
+"wo" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
+/area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "wp" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -3186,6 +3212,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "NG" = (
@@ -3458,6 +3487,14 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
+"RJ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "RP" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
 	dir = 4
@@ -3568,6 +3605,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/blood,
+/obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "SS" = (
@@ -3575,6 +3615,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "Tc" = (
@@ -3686,6 +3729,14 @@
 	},
 /turf/open/floor/plasteel/stairs,
 /area/ruin/rockplanet/abandoned_mechbay/mechlab)
+"UV" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
+/area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "Vx" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3703,7 +3754,7 @@
 /area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "VJ" = (
 /obj/machinery/door/airlock/hatch{
-	name = "bathroom"
+	name = "laundry"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3765,11 +3816,15 @@
 "WR" = (
 /obj/structure/chair/sofa/corner,
 /obj/effect/decal/cleanable/blood,
+/obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/abandoned_mechbay/readyroom)
 "WT" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/highsecurity,
+/obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/abandoned_mechbay/bay4)
 "WZ" = (
@@ -3837,7 +3892,7 @@
 /obj/machinery/computer/security{
 	dir = 4
 	},
-/turf/open/floor/plasteel/mono/dark,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
 "XU" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -5124,8 +5179,8 @@ uu
 nA
 uD
 nd
-RR
-RR
+wo
+RJ
 RR
 Oc
 RR
@@ -5173,7 +5228,7 @@ uu
 YJ
 nr
 md
-YC
+UV
 SS
 YC
 ga
@@ -5567,7 +5622,7 @@ hu
 Nq
 fr
 SN
-Wh
+iu
 lK
 yP
 Wh
