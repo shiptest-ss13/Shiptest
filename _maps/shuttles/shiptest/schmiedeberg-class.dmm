@@ -143,6 +143,7 @@
 	dir = 10
 	},
 /obj/structure/window/reinforced/spawner/north,
+/obj/item/storage/pill_bottle/floorpill,
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
 "bH" = (
@@ -183,7 +184,7 @@
 "bP" = (
 /obj/effect/turf_decal/steeldecal/steel_decals6,
 /obj/effect/turf_decal/steeldecal/steel_decals_central1,
-/turf/open/floor/plating/catwalk_floor,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/external)
 "bX" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -215,7 +216,7 @@
 	},
 /obj/machinery/power/port_gen/pacman/super,
 /obj/item/stack/sheet/mineral/uranium{
-	amount = 20
+	amount = 15
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -412,7 +413,6 @@
 "eY" = (
 /obj/structure/closet/crate/secure/loot,
 /obj/item/stack/cable_coil/blue,
-/obj/item/storage/box/monkeycubes,
 /obj/item/circuitboard/computer/pandemic,
 /obj/effect/turf_decal/box/white,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -452,7 +452,6 @@
 /area/ship/cargo)
 "fq" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
@@ -460,7 +459,9 @@
 	dir = 8;
 	pixel_x = 25
 	},
+/obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/greenglow/filled,
+/obj/item/storage/pill_bottle/floorpill,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "fu" = (
@@ -778,7 +779,6 @@
 "jG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/item/stack/ducts,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "jH" = (
@@ -830,7 +830,7 @@
 /area/ship/bridge)
 "kp" = (
 /obj/structure/marker_beacon,
-/turf/open/floor/plating/catwalk_floor,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/hydroponics)
 "kC" = (
 /obj/effect/turf_decal/siding/wood,
@@ -1093,6 +1093,20 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/light,
 /area/ship/crew/canteen)
+"qa" = (
+/obj/structure/rack,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/brigdoor{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "pharmlobby"
+	},
+/obj/item/storage/pill_bottle/floorpill,
+/obj/effect/spawner/lootdrop/maintenance/two,
+/turf/open/floor/wood/walnut,
+/area/ship/cargo)
 "qD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/white,
@@ -1225,7 +1239,7 @@
 "rU" = (
 /obj/effect/turf_decal/steeldecal/steel_decals9,
 /turf/open/floor/engine/hull,
-/area/template_noop)
+/area/ship/external)
 "rX" = (
 /obj/effect/turf_decal/trimline/transparent/orange/filled/warning{
 	dir = 8
@@ -1676,7 +1690,7 @@
 /area/ship/crew/canteen)
 "Bg" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/concrete/slab_4,
 /area/ship/crew/canteen)
 "Bp" = (
 /obj/machinery/door/airlock/grunge,
@@ -1888,8 +1902,8 @@
 /area/ship/security)
 "FA" = (
 /obj/effect/turf_decal/steeldecal/steel_decals_central1,
-/turf/open/floor/plating/catwalk_floor,
-/area/ship/cargo)
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/external)
 "FB" = (
 /obj/machinery/door/window{
 	dir = 8
@@ -2143,6 +2157,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/greenglow/filled,
+/obj/machinery/duct,
 /turf/open/floor/plating,
 /area/ship/medical)
 "Km" = (
@@ -2150,6 +2165,12 @@
 	dir = 6
 	},
 /obj/machinery/light,
+/obj/item/trash/can,
+/obj/item/stock_parts/subspace/amplifier,
+/obj/item/trash/candy,
+/obj/item/trash/popcorn,
+/obj/item/trash/syndi_cakes,
+/obj/structure/closet/crate/bin,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/cargo)
 "KK" = (
@@ -2348,7 +2369,7 @@
 "MT" = (
 /obj/structure/marker_beacon,
 /obj/effect/turf_decal/steeldecal,
-/turf/open/floor/plating/catwalk_floor,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/external)
 "MV" = (
 /obj/effect/turf_decal/siding/white{
@@ -2418,7 +2439,7 @@
 /area/ship/medical)
 "NC" = (
 /obj/effect/turf_decal/steeldecal/steel_decals9,
-/turf/open/floor/plating/catwalk_floor,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/external)
 "NE" = (
 /obj/item/tank/internals/emergency_oxygen/double,
@@ -2552,6 +2573,20 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"OL" = (
+/obj/structure/rack,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/north,
+/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/machinery/door/window/brigdoor/northright{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "pharmlobby"
+	},
+/obj/item/storage/pill_bottle/floorpill,
+/turf/open/floor/wood/walnut,
+/area/ship/cargo)
 "OO" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security)
@@ -2586,7 +2621,7 @@
 "Pi" = (
 /obj/effect/turf_decal/steeldecal/steel_decals6,
 /obj/effect/turf_decal/steeldecal/steel_decals_central2,
-/turf/open/floor/plating/catwalk_floor,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/external)
 "Pj" = (
 /obj/structure/fans/tiny,
@@ -3201,7 +3236,7 @@
 "Yw" = (
 /obj/effect/turf_decal/steeldecal/steel_decals_central1,
 /turf/open/floor/engine/hull,
-/area/template_noop)
+/area/ship/external)
 "Yx" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -3600,9 +3635,9 @@ NC
 Vd
 Vd
 JX
-VY
+qa
 MZ
-JX
+OL
 VY
 YU
 YU

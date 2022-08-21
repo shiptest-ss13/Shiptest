@@ -101,13 +101,13 @@
 	name = "Chief Pharmacist"
 
 	glasses = /obj/item/clothing/glasses/science/prescription/fake//chief pharma is this kind of person
-	neck = /obj/item/clothing/neck/tie/horrible//I debated making it the Ally tie, but big pharma is an ally only to evil
+	neck = /obj/item/clothing/neck/tie/orange//the Horrible Tie was genuinely too hard to look at
 	l_pocket = /obj/item/reagent_containers/glass/filter
 	ears = /obj/item/radio/headset/heads/cmo
 	uniform = /obj/item/clothing/under/suit/tan
 	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/green
 	shoes = /obj/item/clothing/shoes/sneakers/brown
-	suit = /obj/item/clothing/suit/toggle/labcoat/chemist/side
+	suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
 	l_hand = /obj/item/reagent_containers/glass/maunamug
 	backpack = /obj/item/storage/backpack/chemistry
