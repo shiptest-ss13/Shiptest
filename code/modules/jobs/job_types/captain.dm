@@ -169,7 +169,7 @@
 /datum/outfit/job/captain/syndicate/cybersun
 	name = "Captain (Syndicate)"
 
-	uniform = /obj/item/clothing/under/syndicate/cybersun
+	uniform = /obj/item/clothing/under/black_really
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/HoS/syndicate
 	gloves = /obj/item/clothing/gloves/combat

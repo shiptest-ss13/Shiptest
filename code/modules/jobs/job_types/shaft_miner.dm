@@ -171,7 +171,7 @@
 	name = "Field Agent"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
-	ears = /obj/item/radio/headset/syndicate/alt
+	ears = /obj/item/radio/headset
 	uniform = /obj/item/clothing/under/syndicate/cybersun
 	accessory = /obj/item/clothing/accessory/armband/cargo
 	head = /obj/item/clothing/head/soft/black
