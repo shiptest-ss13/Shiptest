@@ -1459,7 +1459,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "HV" = (
-/obj/machinery/computer/secure_data,
 /obj/machinery/button/door{
 	id = "hound_windows";
 	name = "Window Lockdown";
@@ -1473,6 +1472,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central4,
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "HW" = (
