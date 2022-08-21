@@ -116,6 +116,12 @@
 /obj/structure/inflatable/Initialize()
 	. = ..()
 	air_update_turf(TRUE, TRUE)
+	var/matrix/pre_matrix = new
+	pre_matrix.Scale(WALL_DEFLATED_SCALE_X, WALL_DEFLATED_SCALE_Y)
+	transform = pre_matrix
+	var/matrix/post_matrix = new
+	playsound(loc, 'sound/effects/smoke.ogg', vol=70, vary=TRUE, frequency=1.5)
+	animate(src, FAST_INFLATE_TIME, transform = post_matrix)
 	playsound(loc, 'sound/effects/smoke.ogg', vol=70, vary=TRUE, frequency=1.5)
 
 /obj/structure/inflatable/deconstruct(disassembled)
