@@ -17,7 +17,6 @@
 		/mob/living/simple_animal/hostile/netherworld/asteroid = 30,
 		/mob/living/simple_animal/hostile/asteroid/fugu/asteroid = 30,
 		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 20, //mariuce
-//		/mob/living/simple_animal/hostile/ooze/grapes/asteroid = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet = 30,
 		/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet = 50,
 	)
@@ -35,7 +34,6 @@
 		/mob/living/simple_animal/hostile/netherworld/asteroid = 30,
 		/mob/living/simple_animal/hostile/asteroid/fugu/asteroid = 30,
 		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 20, //mariuce
-//		/mob/living/simple_animal/hostile/ooze/grapes/asteroid = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet = 10,
 		/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet = 30,
 	)
@@ -57,7 +55,6 @@
 		/mob/living/simple_animal/hostile/netherworld/asteroid = 20,
 		/mob/living/simple_animal/hostile/asteroid/fugu/asteroid = 20,
 		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 20, //mariuce
-//		/mob/living/simple_animal/hostile/ooze/grapes/asteroid = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet = 30,
 		/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet = 50,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 20,
@@ -76,7 +73,6 @@
 		/mob/living/simple_animal/hostile/netherworld/asteroid = 30,
 		/mob/living/simple_animal/hostile/asteroid/fugu/asteroid = 30,
 		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 20, //mariuce
-//		/mob/living/simple_animal/hostile/ooze/grapes/asteroid = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet = 10,
 		/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet = 30,
 	)

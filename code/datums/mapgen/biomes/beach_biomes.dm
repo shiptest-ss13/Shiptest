@@ -23,10 +23,7 @@
 	flora_spawn_chance = 25
 	mob_spawn_list = list(
 		/mob/living/simple_animal/butterfly = 1,
-//		/mob/living/simple_animal/butterfly/beach = 1,
 		/mob/living/simple_animal/chicken/rabbit/normal = 1,
-//		/mob/living/simple_animal/chicken/beach = 1,
-//		/mob/living/simple_animal/chick/beach = 1,
 		/mob/living/simple_animal/mouse = 1,
 		/mob/living/simple_animal/cow = 1,
 		/mob/living/simple_animal/deer = 1
@@ -65,7 +62,6 @@
 /datum/biome/ocean
 	open_turf_types = list(/turf/open/water/beach = 1)
 	mob_spawn_list = list(
-//		/mob/living/simple_animal/hostile/carp = 1,
 		/mob/living/simple_animal/beachcarp/bass = 1,
 		/mob/living/simple_animal/beachcarp/trout = 1,
 		/mob/living/simple_animal/beachcarp/salmon = 1,
@@ -82,18 +78,11 @@
 	open_turf_types = list(/turf/open/water/beach/deep = 1)
 	mob_spawn_chance = 1.4
 	mob_spawn_list = list(
-//		/mob/living/simple_animal/hostile/carp = 6,
 		/mob/living/simple_animal/beachcarp/bass = 5,
 		/mob/living/simple_animal/beachcarp/trout = 5,
 		/mob/living/simple_animal/beachcarp/salmon = 5,
 		/mob/living/simple_animal/beachcarp/perch = 5,
-//		/mob/living/simple_animal/hostile/pirate/melee/beach/boat = 3,
-//		/mob/living/simple_animal/hostile/pirate/ranged/beach/boat = 1,
 	)
-	feature_spawn_chance = 0.1
-//	feature_spawn_list = list(
-//		/obj/structure/spawner/sea_crystal = 1
-//	)
 
 /datum/biome/cave/beach
 	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/dense = 1)

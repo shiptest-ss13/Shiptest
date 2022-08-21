@@ -1,5 +1,3 @@
-#define ROCKPLANET_DEFAULT_ATMOS "co2=95;n2=3;TEMP=210.15"
-
 /datum/map_generator/cave_generator/rockplanet
 	open_turf_types = list(/turf/open/floor/plating/asteroid/rockplanet = 5,
 						/turf/open/floor/plating/asteroid/rockplanet/cracked = 1)
@@ -13,13 +11,12 @@
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/netherworld/asteroid = 30,
 		/mob/living/simple_animal/hostile/asteroid/fugu/asteroid = 30,
 		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 20, //mariuce
-//		/mob/living/simple_animal/hostile/ooze/grapes/asteroid = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet = 30,
 		/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet = 50,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 20,
 	)
 
-	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/effect/mine/shrapnel/human_only = 1)
+	feature_spawn_list = null
 
 	flora_spawn_list = list(
 		/obj/structure/flora/rock = 3,
