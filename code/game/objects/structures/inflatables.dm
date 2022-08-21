@@ -153,7 +153,7 @@
 	. = ..()
 	// Make sure the projectile is of damage_type BRUTE or BURN
 	// AND that it's damage is above the inflatable's current integrity
-	if((projectile.damage_type == BRUTE || projectile.damage_type == BURN) && ((src.get_integrity() - projectile.damage) <= 0))
+	if((projectile.damage_type == BRUTE || projectile.damage_type == BURN) && ((src.obj_integrity - projectile.damage) <= 0))
 		deflate(violent = TRUE)
 		return
 
@@ -163,7 +163,7 @@
 		return ..()
 
 	// Yes we are shadowing the original integrity and caching it here
-	var/integrity = src.get_integrity()
+	var/integrity = src.obj_integrity
 	var/violently_deflate = FALSE
 
 	// Check if we should pop it immediately
@@ -203,7 +203,7 @@
 	deflating = TRUE
 	playsound(loc, 'sound/effects/smoke.ogg', vol=70, vary=TRUE)
 	animate(src, deflate_time, transform = matrix)
-	set_density(FALSE)
+	density = FALSE
 	air_update_turf(TRUE, TRUE)
 	addtimer(CALLBACK(src, .proc/post_deflate), deflate_time)
 
@@ -225,7 +225,7 @@
 	toggle(user)
 
 /obj/structure/inflatable/door/attack_robot(mob/user)
-	if(user.adjacent(src))
+	if(user.Adjacent(src))
 		toggle(user)
 
 /obj/structure/inflatable/door/proc/toggle(mob/user)
@@ -287,7 +287,7 @@
 	var/max_doors = 3
 	var/list/allowed_types = list(/obj/item/inflatable)
 	var/mode = MODE_WALL
-/*
+
 /obj/item/inflatable_dispenser/New()
 	..()
 	for(var/i = 0 to max(max_walls,max_doors))
@@ -355,7 +355,7 @@
 		stored_doors -= I
 
 	I.forceMove(T)
-	I.inflate()
+	I.pre_inflate()
 	user.visible_message("<span class='danger'>[user] deploy an inflatable [mode ? "door" : "wall"].</span>", \
 	"<span class='notice'>You deploy an inflatable [mode ? "door" : "wall"].</span>")
 
@@ -376,46 +376,46 @@
 				to_chat(usr, "\The [src] can't hold more doors.")
 				return 0
 			stored_doors += I
-	if(istype(I.loc, /obj/item/storage))
-		var/found_item = FALSE
-		var/items_added = 0
-		var/obj/item/storage/S = I.loc
-		for(var/obj/item/I in S.contents)
-			if(istype(I, /obj/item/inflatable/wall))
-				found_item = TRUE
-				if(stored_walls.len >= max_walls)
-				break
-			stored_walls += I
-			items_added++
+		if(istype(I.loc, /obj/item/storage))
+			var/found_item = FALSE
+			var/items_added = 0
+			var/obj/item/storage/S = I.loc
+			for(var/obj/item/O in S.contents)
+				if(istype(O, /obj/item/inflatable/wall))
+					found_item = TRUE
+					if(stored_walls.len >= max_walls)
+						break
+				stored_walls += O
+				items_added++
 
-			if(istype(I, /obj/item/inflatable/door))
-				found_item = TRUE
-				if(stored_doors.len >= max_doors)
-				break
-			stored_doors += I
-			items_added++
+				if(istype(O, /obj/item/inflatable/door))
+					found_item = TRUE
+					if(stored_doors.len >= max_doors)
+						break
+				stored_doors += O
+				items_added++
 
-		if(!found_item)
-			to_chat(user, "<span class = 'warning'>\The [S] contains no inflatables.</span>")
-			return 0
+			if(!found_item)
+				to_chat(user, "<span class = 'warning'>\The [S] contains no inflatables.</span>")
+				return 0
 
-		if(!items_added && src.stored_walls == max_walls || src.stored_doors == max_doors)
-			to_chat(user, "<span class='warning'>\The [src] is full!</span>")
-				return
+			if(!items_added && src.stored_walls == max_walls || src.stored_doors == max_doors)
+				to_chat(user, "<span class='warning'>\The [src] is full!</span>")
+				return 0
 
-		to_chat(user, "<span class='notice'>You fill \the [src] with inflatables from \the [S]. " + "It has [src.stored_walls.len] wall segment\s and [src.stored_doors.len] door segment\s stored." + "</span>")
-
+			to_chat(user, "<span class='notice'>You fill \the [src] with inflatables from \the [S]. " + "It has [src.stored_walls.len] wall segment\s and [src.stored_doors.len] door segment\s stored." + "</span>")
+/*
 		else if(istype(I.loc, /mob))
 			var/mob/M = I.loc
 			if(!M.drop_item(I,src))
 				to_chat(user, "<span class='notice'>You can't let go of \the [I]!</span>")
 				stored_doors -= I
 				stored_walls -= I
-				return 0
-		user.delayNextAttack(8)
+				return 0*/
+		//user.delayNextAttack(8)
 		visible_message("\The [user] picks up \the [A] with \the [src]!")
 		A.forceMove(src)
 		return 1
-*/
+
 #undef MODE_WALL
 #undef MODE_DOOR
