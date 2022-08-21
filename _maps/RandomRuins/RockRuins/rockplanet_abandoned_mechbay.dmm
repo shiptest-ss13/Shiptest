@@ -2792,6 +2792,15 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay3)
+"Jp" = (
+/obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light,
+/mob/living/simple_animal/hostile/syndicate/mecha_pilot/no_mech,
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/abandoned_mechbay/bay1)
 "Js" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -3078,6 +3087,21 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
+"NJ" = (
+/obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -24
+	},
+/mob/living/simple_animal/hostile/syndicate{
+	name = "Syndicate Engineer";
+	desc = "Death to Poor Maintenance Practices."
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/abandoned_mechbay/bay1)
 "NK" = (
 /obj/machinery/mech_bay_recharge_port{
 	dir = 2
@@ -3110,6 +3134,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
+"Og" = (
+/obj/effect/mine/shrapnel,
+/turf/open/floor/plating/asteroid,
+/area/ruin/rockplanet/abandoned_mechbay/caves)
 "Oj" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
@@ -3721,6 +3749,10 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
+"Ys" = (
+/mob/living/simple_animal/hostile/stickman/ranged,
+/turf/template_noop,
+/area/template_noop)
 "Yt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -4520,7 +4552,7 @@ vB
 vB
 eb
 eb
-eb
+Og
 eb
 tM
 Ww
@@ -4677,7 +4709,7 @@ xp
 BJ
 HA
 LL
-PF
+NJ
 gL
 cz
 Fs
@@ -4767,7 +4799,7 @@ tM
 Hh
 tM
 eb
-eb
+Og
 kJ
 DE
 lA
@@ -4813,7 +4845,7 @@ is
 is
 tM
 eb
-eb
+Og
 eb
 eb
 eb
@@ -4876,7 +4908,7 @@ iV
 iR
 sC
 xW
-wH
+Jp
 sM
 kf
 aM
@@ -4958,10 +4990,10 @@ vB
 vB
 vB
 vB
+Og
 eb
 eb
-eb
-eb
+Og
 eb
 Hh
 uu
@@ -5006,7 +5038,7 @@ vB
 vB
 vB
 vB
-eb
+Og
 eb
 eb
 eb
@@ -5057,7 +5089,7 @@ eb
 eb
 eb
 eb
-eb
+Og
 eb
 vB
 vB
@@ -5732,7 +5764,7 @@ vd
 vd
 "}
 (39,1,1) = {"
-vd
+Ys
 vd
 vd
 vd
