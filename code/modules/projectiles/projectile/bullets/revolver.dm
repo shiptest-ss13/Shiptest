@@ -11,7 +11,7 @@
 	name = ".50 AE bullet"
 	damage = 40
 
-/obj/projectile/bullet/a50ae/hp
+/obj/projectile/bullet/a50AE/hp
 	name = ".50 AE hollow point bullet"
 	damage = 60
 	armour_penetration = -50
