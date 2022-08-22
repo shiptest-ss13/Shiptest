@@ -10,9 +10,14 @@
 	instant_load = TRUE
 
 /obj/item/ammo_box/a357/match
-	name = "speed loader (.357 Match)"
+	name = "speed loader (.357 match)"
 	desc = "Designed to quickly reload revolvers. These rounds are manufactured within extremely tight tolerances, making them easy to show off trickshots with."
 	ammo_type = /obj/item/ammo_casing/a357/match
+
+/obj/item/ammo_box/a357/hp
+	name = "speed loader (.357 hollow point)"
+	desc = "Designed to quickly reload revolvers. Loaded with expanding rounds that cause massive tissue damage at the cost of armor penetration."
+	ammo_type = /obj/item/ammo_casing/a357/hp
 
 /obj/item/ammo_box/a4570
 	name = "ammo holder (.45-70)"
@@ -26,13 +31,18 @@
 	instant_load = TRUE
 
 /obj/item/ammo_box/a4570/match
-	name = "ammo holder (.45-70 Match)"
+	name = "ammo holder (.45-70 match)"
 	desc = "Designed to help reload large revolvers. These rounds are manufactured within extremely tight tolerances, making them easy to show off trickshots with."
 	ammo_type = /obj/item/ammo_casing/a4570/match
 
+/obj/item/ammo_box/a4570/hp
+	name = "ammo holder (.45-70 hollow point)"
+	desc = "Designed to help reload large revolvers. Loaded with expanding rounds that cause massive tissue damage at the cost of armor penetration."
+	ammo_type = /obj/item/ammo_casing/a357/hp
+
 /obj/item/ammo_box/a4570/explosive
-	name = "ammo holder (.45-70 Explosive)"
-	desc = "Designed to help reload large revolvers. These rounds contain a tiny explosive charge that detonates on impact, creating especially deadly wounds."
+	name = "ammo holder (.45-70 explosive)"
+	desc = "Designed to help reload large revolvers. These rounds contain a small explosive charge that detonates on impact, creating large wounds and potentially removing limbs."
 	ammo_type = /obj/item/ammo_casing/a4570/explosive
 
 /obj/item/ammo_box/n762_clip
@@ -63,27 +73,27 @@
 	ammo_type = /obj/item/ammo_casing/c38/trac
 
 /obj/item/ammo_box/c38/match
-	name = "speed loader (.38 Match)"
+	name = "speed loader (.38 match)"
 	desc = "Designed to quickly reload revolvers. These rounds are manufactured within extremely tight tolerances, making them easy to show off trickshots with."
 	ammo_type = /obj/item/ammo_casing/c38/match
 
 /obj/item/ammo_box/c38/match/bouncy
-	name = "speed loader (.38 Rubber)"
+	name = "speed loader (.38 rubber)"
 	desc = "Designed to quickly reload revolvers. These rounds are incredibly bouncy and MOSTLY nonlethal, making them great to show off trickshots with."
 	ammo_type = /obj/item/ammo_casing/c38/match/bouncy
 
 /obj/item/ammo_box/c38/dumdum
-	name = "speed loader (.38 DumDum)"
-	desc = "Designed to quickly reload revolvers. DumDum bullets shatter on impact and shred the target's innards, likely getting caught inside."
+	name = "speed loader (.38 dum-dum)"
+	desc = "Designed to quickly reload revolvers. Dum-dum bullets shatter on impact and shred the target's innards, likely getting caught inside."
 	ammo_type = /obj/item/ammo_casing/c38/dumdum
 
 /obj/item/ammo_box/c38/hotshot
-	name = "speed loader (.38 Hot Shot)"
-	desc = "Designed to quickly reload revolvers. Hot Shot bullets contain an incendiary payload."
+	name = "speed loader (.38 hot shot)"
+	desc = "Designed to quickly reload revolvers. Hot shot bullets contain an incendiary payload."
 	ammo_type = /obj/item/ammo_casing/c38/hotshot
 
 /obj/item/ammo_box/c38/iceblox
-	name = "speed loader (.38 Iceblox)"
+	name = "speed loader (.38 iceblox)"
 	desc = "Designed to quickly reload revolvers. Iceblox bullets contain a cryogenic payload."
 	ammo_type = /obj/item/ammo_casing/c38/iceblox
 
@@ -120,13 +130,13 @@
 	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot
 
 /obj/item/ammo_box/c9mm/ap
-	name = "ammo box (9mm AP)"
-	desc = "A box of 9mm armor piercing ammo, designed to penetrate through armor at the cost of total damage."
+	name = "ammo box (9mm armor-piercing)"
+	desc = "A box of 9mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "9mmbox-ap"
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
 /obj/item/ammo_box/c9mm/hp
-	name = "ammo box (9mm HP)"
+	name = "ammo box (9mm hollow point)"
 	desc = "A box of 9mm hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "9mmbox-hp"
 	ammo_type = /obj/item/ammo_casing/c9mm/hp
@@ -157,13 +167,13 @@
 	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot
 
 /obj/item/ammo_box/c10mm/ap
-	name = "ammo box (10mm AP)"
-	desc = "A box of 10mm armor piercing ammo, designed to penetrate through armor at the cost of total damage."
+	name = "ammo box (10mm armor-piercing)"
+	desc = "A box of 10mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "10mmbox-ap"
 	ammo_type = /obj/item/ammo_casing/c10mm/ap
 
 /obj/item/ammo_box/c10mm/hp
-	name = "ammo box (10mm HP)"
+	name = "ammo box (10mm hollow point)"
 	desc = "A box of 10mm hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "10mmbox-hp"
 	ammo_type = /obj/item/ammo_casing/c10mm/hp
@@ -194,13 +204,13 @@
 	ammo_type = /obj/item/ammo_casing/c45/rubbershot
 
 /obj/item/ammo_box/c45/ap
-	name = "ammo box (.45 AP)"
-	desc = "A box of .45 armor piercing ammo, designed to penetrate through armor at the cost of total damage."
+	name = "ammo box (.45 armor-piercing)"
+	desc = "A box of .45 armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "45box-ap"
 	ammo_type = /obj/item/ammo_casing/c45/ap
 
 /obj/item/ammo_box/c45/hp
-	name = "ammo box (.45 HP)"
+	name = "ammo box (.45 hollow point)"
 	desc = "A box of .45 hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "45box-hp"
 	ammo_type = /obj/item/ammo_casing/c45/hp
@@ -231,13 +241,13 @@
 	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP/rubbershot
 
 /obj/item/ammo_box/c556mmHITP/ap
-	name = "ammo box (5.56mm HITP caseless AP)"
-	desc = "A box of 5.56mm HITP caseless armor piercing ammo, designed to penetrate through armor at the cost of total damage."
+	name = "ammo box (5.56mm HITP caseless armor-piercing)"
+	desc = "A box of 5.56mm HITP caseless armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "556mmHITPbox-ap"
 	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP/ap
 
 /obj/item/ammo_box/c556mmHITP/hp
-	name = "ammo box (5.56mm HITP caseless HP)"
+	name = "ammo box (5.56mm HITP caseless hollow point)"
 	desc = "A box of 5.56mm HITP caseless hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "556mmHITPbox-hp"
 	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP/hp
@@ -253,7 +263,7 @@
 /obj/item/ammo_box/a762
 	// WS Edit Start - Whitesands
 	name = "stripper clip (7.62x54mmR)"
-	desc = "A rifle-cartrige stripper clip."
+	desc = "A stripper clip of rimmed rifle cartridges."
 	// WS Edit Start - Whitesands
 	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a762
@@ -265,6 +275,7 @@
 /obj/item/ammo_box/n762
 	name = "ammo box (7.62x38mmR)"
 	icon_state = "n762box"
+	desc = "A box of unusual revolver ammunition with the bullet seated below the mouth of the cartridge."
 	ammo_type = /obj/item/ammo_casing/n762
 	max_ammo = 28
 
@@ -283,7 +294,7 @@
 
 /obj/item/ammo_box/magazine/zip_ammo_9mm
 	name = "budget pistol magazine(9mm)"
-	desc = "A knockoff commander magazine that can only hold 4 rounds."
+	desc = "A cheaply-made, poorly-designed pistol magazine that can only hold 4 rounds."
 	icon_state = "ZipAmmo9mm"
 	ammo_type = /obj/item/ammo_casing/c9mm/surplus
 	caliber = "9mm"

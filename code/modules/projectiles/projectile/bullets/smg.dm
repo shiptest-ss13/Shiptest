@@ -17,7 +17,7 @@
 /obj/projectile/bullet/c47x33mm
 	name = "4.73x33mm bullet"
 	damage = 25
-	armour_penetration = 40
+	armour_penetration = 20
 
 /obj/projectile/bullet/c556mmHITP
 	name = "5.56mm HITP bullet"

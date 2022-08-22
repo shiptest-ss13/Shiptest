@@ -12,7 +12,12 @@
 	caliber = ".357"
 	projectile_type = /obj/projectile/bullet/a357/match
 
-// .45-70 (Hunting Revolver)
+/obj/item/ammo_casing/a357/hp
+	name = ".357 hollow point bullet casing"
+	desc = "A .357 hollow point bullet casing."
+	projectile_type = /obj/projectile/bullet/a357/hp
+
+// .45-70 (Hunting Revolver, Contender)
 
 /obj/item/ammo_casing/a4570
 	name = ".45-70 bullet casing"
@@ -24,6 +29,11 @@
 	name = ".45-70 match bullet casing"
 	desc = "A .45-70 bullet casing, manufactured to exceedingly high standards."
 	projectile_type = /obj/projectile/bullet/a4570/match
+
+/obj/item/ammo_casing/a4570/hp
+	name = ".45-70 hollow point bullet casing"
+	desc = "A .45-70 hollow point bullet casing."
+	projectile_type = /obj/projectile/bullet/a4570/hp
 
 /obj/item/ammo_casing/a4570/explosive
 	name = ".45-70 explosive bullet casing"
@@ -52,28 +62,28 @@
 	projectile_type = /obj/projectile/bullet/c38/trac
 
 /obj/item/ammo_casing/c38/match
-	name = ".38 Match bullet casing"
+	name = ".38 match bullet casing"
 	desc = "A .38 bullet casing, manufactured to exceedingly high standards."
 	projectile_type = /obj/projectile/bullet/c38/match
 
 /obj/item/ammo_casing/c38/match/bouncy
-	name = ".38 Rubber bullet casing"
+	name = ".38 rubber bullet casing"
 	desc = "A .38 rubber bullet casing, manufactured to exceedingly high standards."
 	projectile_type = /obj/projectile/bullet/c38/match/bouncy
 
 /obj/item/ammo_casing/c38/dumdum
-	name = ".38 DumDum bullet casing"
-	desc = "A .38 DumDum bullet casing."
+	name = ".38 dum-dum bullet casing"
+	desc = "A .38 dum-dum bullet casing."
 	projectile_type = /obj/projectile/bullet/c38/dumdum
 
 /obj/item/ammo_casing/c38/hotshot
-	name = ".38 Hot Shot bullet casing"
-	desc = "A .38 Hot Shot bullet casing."
+	name = ".38 hot shot bullet casing"
+	desc = "A .38 hot shot bullet casing."
 	projectile_type = /obj/projectile/bullet/c38/hotshot
 
 /obj/item/ammo_casing/c38/iceblox
-	name = ".38 Iceblox bullet casing"
-	desc = "A .38 Iceblox bullet casing."
+	name = ".38 iceblox bullet casing"
+	desc = "A .38 iceblox bullet casing."
 	projectile_type = /obj/projectile/bullet/c38/iceblox
 
 /obj/item/ammo_casing/c38/hunting

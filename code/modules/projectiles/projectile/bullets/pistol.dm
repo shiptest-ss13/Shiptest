@@ -16,8 +16,8 @@
 	armour_penetration = 20
 
 /obj/projectile/bullet/c9mm_hp
-	name = "9mm hollow-point bullet"
-	damage = 30
+	name = "9mm hollow point bullet"
+	damage = 40
 	armour_penetration = -50
 
 /obj/projectile/bullet/incendiary/c9mm
@@ -50,8 +50,8 @@
 	armour_penetration = 20
 
 /obj/projectile/bullet/c10mm_hp
-	name = "10mm hollow-point bullet"
-	damage = 35
+	name = "10mm hollow point bullet"
+	damage = 45
 	armour_penetration = -50
 
 /obj/projectile/bullet/incendiary/c10mm
@@ -84,8 +84,8 @@
 	armour_penetration = 20
 
 /obj/projectile/bullet/c45_hp
-	name = ".45 hollow-point bullet"
-	damage = 35
+	name = ".45 hollow point bullet"
+	damage = 45
 	armour_penetration = -50
 
 /obj/projectile/bullet/incendiary/c45

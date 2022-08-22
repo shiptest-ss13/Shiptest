@@ -17,8 +17,8 @@
 	projectile_type = /obj/projectile/bullet/c10mm_ap
 
 /obj/item/ammo_casing/c10mm/hp
-	name = "10mm hollow-point bullet casing"
-	desc = "A 10mm hollow-point bullet casing."
+	name = "10mm hollow point bullet casing"
+	desc = "A 10mm hollow point bullet casing."
 	projectile_type = /obj/projectile/bullet/c10mm_hp
 
 /obj/item/ammo_casing/c10mm/fire
@@ -50,8 +50,8 @@
 	projectile_type =/obj/projectile/bullet/c9mm_ap
 
 /obj/item/ammo_casing/c9mm/hp
-	name = "9mm hollow-point bullet casing"
-	desc = "A 9mm hollow-point bullet casing."
+	name = "9mm hollow point bullet casing"
+	desc = "A 9mm hollow point bullet casing."
 	projectile_type = /obj/projectile/bullet/c9mm_hp
 
 /obj/item/ammo_casing/c9mm/inc
@@ -83,8 +83,8 @@
 	projectile_type =/obj/projectile/bullet/c45_ap
 
 /obj/item/ammo_casing/c45/hp
-	name = ".45 hollow-point bullet casing"
-	desc = "A .45 hollow-point bullet casing."
+	name = ".45 hollow point bullet casing"
+	desc = "A .45 hollow point bullet casing."
 	projectile_type = /obj/projectile/bullet/c45_hp
 
 /obj/item/ammo_casing/c45/fire
@@ -104,3 +104,8 @@
 	desc = "A .50 AE bullet casing."
 	caliber = ".50 AE"
 	projectile_type = /obj/projectile/bullet/a50AE
+
+/obj/item/ammo_casing/a50AE/hp
+	name = ".50 AE hollow point bullet casing"
+	desc = "A .50 AE hollow point bullet casing."
+	projectile_type = /obj/projectile/bullet/a50AE/hp
