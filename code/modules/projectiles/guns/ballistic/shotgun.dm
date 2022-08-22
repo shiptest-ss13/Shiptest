@@ -428,9 +428,9 @@
 	force = 20 //heavy ass elephant gun, why wouldnt it be
 	recoil = 4
 	pb_knockback = 12
-	fire_sound = 'whitesands/sound/weapons/gun/shotgun/quadfire.ogg'
-	rack_sound = 'whitesands/sound/weapons/gun/shotgun/quadrack.ogg'
-	load_sound = 'whitesands/sound/weapons/gun/shotgun/quadinsert.ogg'
+	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
+	load_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
 
 	can_be_sawn_off = FALSE
 	fire_sound_volume = 80
