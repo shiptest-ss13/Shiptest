@@ -124,24 +124,24 @@
 /obj/item/gun/ballistic/automatic/pistol/commissar/equipped(mob/living/user, slot)
 	..()
 	if(slot == ITEM_SLOT_HANDS && funnysounds) // We do this instead of equip_sound as we only want this to play when it's wielded
-		playsound(src, 'whitesands/sound/weapons/gun/commissar/pickup.ogg', 30, 0)
+		playsound(src, 'sound/weapons/gun/commissar/pickup.ogg', 30, 0)
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
 	. = ..()
 	if(prob(50) && funnysounds)
-		playsound(src, 'whitesands/sound/weapons/gun/commissar/shot.ogg', 30, 0)
+		playsound(src, 'sound/weapons/gun/commissar/shot.ogg', 30, 0)
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/shoot_with_empty_chamber(mob/living/user)
 	. = ..()
 	if(prob(50) && funnysounds)
-		playsound(src, 'whitesands/sound/weapons/gun/commissar/dry.ogg', 30, 0)
+		playsound(src, 'sound/weapons/gun/commissar/dry.ogg', 30, 0)
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/insert_magazine(mob/user, obj/item/ammo_box/magazine/AM, display_message)
 	. = ..()
 	if(bolt_locked)
 		drop_bolt(user)
 		if(. && funnysounds)
-			playsound(src, 'whitesands/sound/weapons/gun/commissar/magazine.ogg', 30, 0)
+			playsound(src, 'sound/weapons/gun/commissar/magazine.ogg', 30, 0)
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -153,7 +153,7 @@
 		return
 	if((cooldown < world.time - 200) && funnysounds)
 		user.audible_message("<font color='red' size='5'><b>DON'T TURN AROUND!</b></font>")
-		playsound(src, 'whitesands/sound/weapons/gun/commissar/dontturnaround.ogg', 50, 0, 4)
+		playsound(src, 'sound/weapons/gun/commissar/dontturnaround.ogg', 50, 0, 4)
 		cooldown = world.time
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/examine(mob/user)
@@ -189,7 +189,7 @@
 	var/random_icon = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/Initialize()
-	..()
+	. = ..()
 	var/picked = pick("none","red","purple","yellow","green","dark")
 	if(random_icon)
 		if(picked == "none")

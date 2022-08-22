@@ -231,7 +231,7 @@
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
 	desc = "It's a very fancy satchel made with fine leather."
-	icon = 'whitesands/icons/obj/storage.dmi'		//WS Edit - Suitcases
+	icon = 'icons/obj/storage.dmi'		//WS Edit - Suitcases
 	icon_state = "satchel"
 	item_state = "satchel"
 
@@ -346,7 +346,7 @@
 /obj/item/storage/backpack/messenger
 	name = "messenger bag"
 	desc = "A sturdy backpack worn over one shoulder."
-	icon = 'whitesands/icons/obj/storage.dmi'
+	icon = 'icons/obj/storage.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "courierbag"
 	item_state = "courierbag"

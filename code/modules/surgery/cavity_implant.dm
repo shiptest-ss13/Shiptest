@@ -8,10 +8,12 @@
 //handle cavity
 /datum/surgery_step/handle_cavity
 	name = "implant item"
-	accept_hand = 1
+	accept_hand = TRUE
 	implements = list(/obj/item = 100)
 	repeatable = TRUE
-	time = 32
+	time = 3.2 SECONDS
+	preop_sound = 'sound/surgery/organ1.ogg'
+	success_sound = 'sound/surgery/organ2.ogg'
 	var/obj/item/IC = null
 
 /datum/surgery_step/handle_cavity/tool_check(mob/user, obj/item/tool)

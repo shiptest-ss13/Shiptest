@@ -10,7 +10,6 @@
 	anchored = FALSE
 	density = TRUE
 	layer = BELOW_MOB_LAYER //so people can't hide it and it's REALLY OBVIOUS
-	machine_stat = 0
 	verb_say = "states"
 	var/cooldown = 0
 
@@ -121,7 +120,7 @@
 /obj/item/sbeacondrop/attack_self(mob/user)
 	if(user)
 		to_chat(user, "<span class='notice'>Locked In.</span>")
-		new droptype( user.loc )
+		new droptype(user.loc)
 		playsound(src, 'sound/effects/pop.ogg', 100, TRUE, TRUE)
 		qdel(src)
 	return

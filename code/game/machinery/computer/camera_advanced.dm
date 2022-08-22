@@ -74,7 +74,7 @@
 	playsound(src, 'sound/machines/terminal_off.ogg', 25, FALSE)
 
 /obj/machinery/computer/camera_advanced/check_eye(mob/user)
-	if( (machine_stat & (NOPOWER|BROKEN)) || (!Adjacent(user) && !user.has_unlimited_silicon_privilege) || user.is_blind() || user.incapacitated() )
+	if((machine_stat & (NOPOWER|BROKEN)) || (!Adjacent(user) && !user.has_unlimited_silicon_privilege) || user.is_blind() || user.incapacitated())
 		user.unset_machine()
 
 /obj/machinery/computer/camera_advanced/Destroy()
@@ -100,7 +100,7 @@
 	. = ..()
 	if(.)
 		return
-	if(!is_operational()) //you cant use broken machine you chumbis
+	if(!is_operational) //you cant use broken machine you chumbis
 		return
 	if(current_user)
 		to_chat(user, "<span class='warning'>The console is already in use!</span>")
@@ -161,7 +161,7 @@
 	user.remote_control = eyeobj
 	user.reset_perspective(eyeobj)
 	eyeobj.setLoc(eyeobj.loc)
-	if(should_supress_view_changes )
+	if(should_supress_view_changes)
 		user.client.view_size.supress()
 
 /mob/camera/aiEye/remote

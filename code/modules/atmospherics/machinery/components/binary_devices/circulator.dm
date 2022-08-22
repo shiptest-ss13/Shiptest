@@ -42,7 +42,7 @@
 
 /obj/machinery/atmospherics/components/binary/circulator/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS )
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS)
 
 /obj/machinery/atmospherics/components/binary/circulator/Destroy()
 	if(generator)
@@ -125,7 +125,7 @@
 
 	icon_state = "circ-assembled-[flipped]"
 
-	if(!is_operational())
+	if(!is_operational)
 		set_light(0)
 		return
 	else

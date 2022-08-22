@@ -227,7 +227,7 @@
 
 /obj/machinery/suit_storage_unit/power_change()
 	. = ..()
-	if(!is_operational() && state_open)
+	if(!is_operational && state_open)
 		open_machine()
 		dump_contents()
 	update_icon()
@@ -360,7 +360,7 @@
 	if(!state_open)
 		to_chat(user, "<span class='warning'>The unit's doors are shut!</span>")
 		return
-	if(!is_operational())
+	if(!is_operational)
 		to_chat(user, "<span class='warning'>The unit is not operational!</span>")
 		return
 	if(occupant || helmet || suit || storage)
@@ -479,7 +479,7 @@
 		"<span class='notice'>You start kicking against the doors... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
 		"<span class='hear'>You hear a thump from [src].</span>")
 	if(do_after(user,(breakout_time), target = src))
-		if(!user || user.stat != CONSCIOUS || user.loc != src )
+		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return
 		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
 			"<span class='notice'>You successfully break out of [src]!</span>")
@@ -502,7 +502,7 @@
 		open_machine()
 
 /obj/machinery/suit_storage_unit/attackby(obj/item/I, mob/user, params)
-	if(state_open && is_operational())
+	if(state_open && is_operational)
 		if(istype(I, /obj/item/clothing/suit))
 			if(suit)
 				to_chat(user, "<span class='warning'>The unit already contains a suit!.</span>")
@@ -561,7 +561,7 @@
 
 
 /obj/machinery/suit_storage_unit/default_pry_open(obj/item/I)//needs to check if the storage is locked.
-	. = !(state_open || panel_open || is_operational() || locked || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
+	. = !(state_open || panel_open || is_operational || locked || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
 		visible_message("<span class='notice'>[usr] pries open \the [src].</span>", "<span class='notice'>You pry open \the [src].</span>")
