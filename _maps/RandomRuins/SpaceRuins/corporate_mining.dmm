@@ -401,6 +401,7 @@
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "im" = (
 /obj/structure/grille,
+/obj/structure/lattice,
 /turf/template_noop,
 /area/ruin/space/has_grav/corporatemine/asteroid)
 "in" = (
@@ -964,12 +965,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/corporatemine/hall)
-"wO" = (
-/obj/structure/grille,
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/template_noop,
-/area/ruin/space/has_grav/corporatemine/solar_array)
 "wV" = (
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/corporatemine/eva)
@@ -2158,12 +2153,6 @@
 	},
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/corporatemine/air)
-"UV" = (
-/obj/structure/grille,
-/obj/structure/grille,
-/obj/structure/lattice,
-/turf/template_noop,
-/area/ruin/space/has_grav/corporatemine/solar_array)
 "UZ" = (
 /obj/structure/closet/crate/bin,
 /obj/item/trash/can/food/beans,
@@ -4649,9 +4638,9 @@ BV
 JN
 JN
 JN
-UV
 JN
-wO
+JN
+JN
 "}
 (45,1,1) = {"
 Lz
