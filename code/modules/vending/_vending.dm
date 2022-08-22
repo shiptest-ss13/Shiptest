@@ -723,11 +723,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				.["user"]["name"] = C.registered_account.account_holder
 				.["user"]["cash"] = C.registered_account.account_balance
 				if(C.registered_account.account_job)
-					.["user"]["job"] = C.registered_account.account_job.title
-					.["user"]["department"] = C.registered_account.account_job.paycheck_department
+					.["user"]["job"] = C.registered_account.account_job.name
 				else
 					.["user"]["job"] = "No Job"
-					.["user"]["department"] = "No Department"
 	.["stock"] = list()
 	for (var/datum/data/vending_product/R in product_records + coin_records + hidden_records)
 		.["stock"][R.name] = R.amount
@@ -792,8 +790,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 					C.mining_points -= price_to_use
 				else
 					var/datum/bank_account/account = C.registered_account
-					if(account.account_job && account.account_job.paycheck_department == payment_department)
-						price_to_use = 0
 					if(coin_records.Find(R) || hidden_records.Find(R))
 						price_to_use = R.custom_premium_price ? R.custom_premium_price : extra_price
 					if(price_to_use && !account.adjust_money(-price_to_use))

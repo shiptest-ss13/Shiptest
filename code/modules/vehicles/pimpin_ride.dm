@@ -84,11 +84,11 @@
 /obj/vehicle/ridden/lawnmower
 	name = "lawn mower"
 	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace."
-	icon = 'whitesands/icons/obj/vehicles.dmi'
+	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "lawnmower"
 	var/emagged = FALSE
-	var/list/drive_sounds = list('whitesands/sound/effects/mowermove1.ogg', 'whitesands/sound/effects/mowermove2.ogg')
-	var/list/gib_sounds = list('whitesands/sound/effects/mowermovesquish.ogg')
+	var/list/drive_sounds = list('sound/effects/mowermove1.ogg', 'sound/effects/mowermove2.ogg')
+	var/list/gib_sounds = list('sound/effects/mowermovesquish.ogg')
 	var/driver
 
 /obj/vehicle/ridden/lawnmower/Initialize()

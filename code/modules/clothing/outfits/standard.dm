@@ -458,6 +458,7 @@
 
 /datum/outfit/job/lieutenant
 	name = "Lieutenant"
+	job_icon = "lieutenant"
 	//jobtype = /datum/job/lieutenant
 
 	id = /obj/item/card/id/silver

@@ -27,8 +27,8 @@
 	var/reagent_transfer = 0
 
 	var/obj/item/radio/radio
-	var/radio_key = /obj/item/encryptionkey/headset_med
-	var/radio_channel = RADIO_CHANNEL_MEDICAL
+	var/radio_key = /obj/item/encryptionkey/headset_com
+	var/radio_channel = RADIO_CHANNEL_COMMAND
 
 	var/running_anim = FALSE
 

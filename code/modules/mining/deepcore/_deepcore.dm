@@ -43,7 +43,7 @@
 		container - The material container component used for those sweet mats
 \*/
 /obj/machinery/deepcore
-	icon = 'whitesands/icons/obj/machines/deepcore.dmi'
+	icon = 'icons/obj/machines/deepcore.dmi'
 	var/datum/dcm_net/network
 	var/datum/component/material_container/crude/container
 
