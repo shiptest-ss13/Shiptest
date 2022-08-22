@@ -53,6 +53,13 @@
 /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
 	ammo_type = /obj/item/ammo_casing/c38/hunting
 
+/obj/item/ammo_box/magazine/internal/shot/contender
+	name = "contender internal magazine"
+	ammo_type = /obj/item/ammo_casing/a4570
+	caliber = "4570"
+	max_ammo = 1
+	multiload = FALSE
+
 /obj/item/ammo_box/magazine/internal/shot/com/compact/compact
 	name = "compact compact combat shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot

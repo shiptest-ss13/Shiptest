@@ -410,3 +410,38 @@
 
 /obj/item/gun/ballistic/shotgun/winchester/mk1/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
+
+//Break-Action Rifle
+/obj/item/gun/ballistic/shotgun/contender
+	name = "Contender"
+	desc = "A single-shot break-action rifle made by Hunter's Pride. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
+	icon_state = "contender"
+	item_state = "contender"
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	inhand_x_dimension = 32
+	inhand_y_dimension = 32
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/contender
+	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	can_be_sawn_off=TRUE
+	sawn_desc= "A single-shot pistol. It's hard to aim without a front sight."
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_MEDIUM
+	force = 10
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BACK
+	obj_flags = UNIQUE_RENAME
+	rack_sound_volume = 0
+	semi_auto = TRUE
+	bolt_type = BOLT_TYPE_NO_BOLT
+	can_be_sawn_off  = TRUE
+	pb_knockback = 3
+	fire_rate = 2
+
+
+/obj/item/gun/ballistic/shotgun/contender/sawoff(mob/user)
+	. = ..()
+	if(.)
+		item_state = "contender_sawn"
