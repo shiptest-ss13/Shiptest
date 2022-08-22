@@ -1,203 +1,79 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/open/space/basic,
-/area/space)
-"c" = (
-/obj/structure/closet/wall/white{
-	dir = 8;
-	name = "survey gear";
-	pixel_x = 30
-	},
-/obj/item/survey_handheld/elite,
-/obj/item/survey_handheld/advanced,
-/obj/item/survey_handheld/advanced,
-/obj/item/clothing/accessory/armband/science,
-/obj/item/clothing/suit/toggle/labcoat/science,
-/turf/open/floor/plating,
-/area/space)
-"d" = (
-/obj/structure/chair/stool{
-	dir = 4
-	},
-/obj/structure/window{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/space)
-"f" = (
-/obj/structure/table/glass,
-/turf/open/floor/plating,
-/area/space)
-"h" = (
-/obj/structure/chair/stool{
-	dir = 8
-	},
-/obj/structure/window{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/space)
-"i" = (
-/obj/machinery/door/window{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating,
-/area/space)
-"j" = (
+"aC" = (
 /obj/machinery/door/window{
 	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
-/area/space)
-"k" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/space)
-"m" = (
-/obj/structure/window{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/plating,
-/area/space)
-"q" = (
-/obj/machinery/door/airlock/external/glass,
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
-/area/space)
-"r" = (
-/obj/structure/frame/computer{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/titanium/white,
 /area/space)
-"s" = (
+"aJ" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/outlet_injector/layer4,
+/turf/open/floor/plating/rust,
+/area/space)
+"bN" = (
 /obj/structure/table,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer4,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plating,
 /area/space)
-"t" = (
-/turf/closed/wall/mineral/titanium,
-/area/space)
-"v" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating,
-/area/space)
-"w" = (
-/obj/machinery/computer/rdconsole{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/space)
-"z" = (
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/space)
-"A" = (
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/space)
-"B" = (
-/obj/item/bedsheet/rd,
-/obj/structure/bed,
-/turf/open/floor/plating,
-/area/space)
-"C" = (
-/obj/structure/table{
-	name = "thinking table"
-	},
-/turf/open/floor/plating,
-/area/space)
-"G" = (
-/obj/structure/chair/office{
-	dir = 1;
-	name = "thinking chair";
-	desc = "You sit in this. Innovation flows from there."
-	},
-/turf/open/floor/plating,
-/area/space)
-"H" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/terminal{
+"cb" = (
+/obj/structure/chair/stool{
 	dir = 8
 	},
-/turf/open/floor/plating,
-/area/space)
-"I" = (
-/obj/effect/spawner/structure/window/shuttle,
-/turf/open/floor/plating,
-/area/space)
-"K" = (
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/structure/window{
+	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/titanium/blue,
 /area/space)
-"L" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
+"cS" = (
+/obj/machinery/airalarm{
+	dir = 4;
+	pixel_x = -24
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/titanium/white,
 /area/space)
-"N" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+"cU" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
-/turf/open/floor/plating,
-/area/space)
-"O" = (
-/obj/machinery/rnd/server,
-/turf/open/floor/plating,
-/area/space)
-"P" = (
-/obj/structure/cable{
-	icon_state = "0-5"
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	dir = 4
 	},
-/obj/machinery/power/terminal{
+/turf/open/floor/plating,
+/area/space)
+"eA" = (
+/obj/structure/rack,
+/obj/machinery/door/window/brigdoor/security/cell/southleft,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/space)
-"Q" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/space)
-"R" = (
-/obj/structure/fluff/beach_umbrella/science,
-/obj/item/chair/plastic,
-/obj/item/chair/plastic,
-/obj/structure/table_frame/wood,
-/obj/item/stack/sheet/mineral/wood,
-/obj/structure/closet/wall/white{
+"gg" = (
+/obj/machinery/power/shuttle/engine/electric/premium{
 	dir = 4;
-	name = "misc gear";
-	pixel_x = -30
+	desc = "An expensive variant of a standard ion thruster, using highest quality components in order to achieve much better performance. This one seems broken beyond restoration"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/space)
-"S" = (
+"hx" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 8
 	},
@@ -209,7 +85,295 @@
 	},
 /turf/open/floor/plating,
 /area/space)
-"V" = (
+"lB" = (
+/obj/structure/rack,
+/obj/machinery/door/window/brigdoor/security/cell/southright,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/airless,
+/area/space)
+"lI" = (
+/obj/machinery/rnd/server,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/space)
+"lO" = (
+/obj/structure/table{
+	name = "thinking table"
+	},
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/space)
+"nx" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/turf/open/floor/mineral/titanium/white,
+/area/space)
+"oT" = (
+/obj/machinery/airalarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/open/floor/plating,
+/area/space)
+"rt" = (
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space)
+"tv" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space)
+"uA" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/rust,
+/area/space)
+"yM" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/space)
+"zG" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/mineral/titanium/white,
+/area/space)
+"AO" = (
+/turf/open/floor/mineral/titanium/white,
+/area/space)
+"AZ" = (
+/obj/structure/rack,
+/obj/machinery/door/window/brigdoor/northright,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/airless,
+/area/space)
+"Bi" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/space)
+"By" = (
+/obj/structure/fluff/beach_umbrella/science,
+/obj/item/chair/plastic,
+/obj/item/chair/plastic,
+/obj/structure/table_frame/wood,
+/obj/item/stack/sheet/mineral/wood,
+/obj/structure/closet/wall/white{
+	dir = 4;
+	name = "misc gear";
+	pixel_x = -30
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/space)
+"Cy" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/space)
+"EW" = (
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/holopad/emergency/science,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/space)
+"FD" = (
+/obj/effect/turf_decal/industrial/warning/corner,
+/turf/open/floor/plating/rust,
+/area/space)
+"Gr" = (
+/obj/structure/closet/wall/white{
+	dir = 8;
+	name = "survey gear";
+	pixel_x = 30
+	},
+/obj/item/survey_handheld/elite,
+/obj/item/survey_handheld/advanced,
+/obj/item/survey_handheld/advanced,
+/obj/item/clothing/accessory/armband/science,
+/obj/item/clothing/suit/toggle/labcoat/science,
+/obj/item/clothing/glasses/science,
+/obj/item/tank/internals/oxygen,
+/turf/open/floor/mineral/titanium/blue,
+/area/space)
+"Gw" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2,
+/turf/open/floor/plating,
+/area/space)
+"GW" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/space)
+"HV" = (
+/obj/structure/chair/stool{
+	dir = 4
+	},
+/obj/structure/window{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/space)
+"Is" = (
+/obj/item/bedsheet/rd,
+/obj/structure/bed,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/space)
+"Iu" = (
+/obj/structure/rack,
+/obj/machinery/door/window/brigdoor/northleft,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/space)
+"Jg" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/space)
+"KF" = (
+/turf/open/floor/mineral/titanium/blue,
+/area/space)
+"Lz" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/layer2{
+	dir = 8
+	},
+/obj/structure/table/glass,
+/turf/open/floor/mineral/titanium/blue,
+/area/space)
+"LH" = (
+/obj/structure/chair/office{
+	dir = 1;
+	name = "thinking chair";
+	desc = "You sit in this. Innovation flows from there."
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/space)
+"Nt" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/food/snacks/canned/beans,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/space)
+"Oa" = (
+/turf/closed/wall/mineral/titanium,
+/area/space)
+"Oz" = (
+/obj/machinery/computer/rdconsole{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/space)
+"PU" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/space)
+"Rw" = (
+/obj/machinery/door/window{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/space)
+"RJ" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/space)
+"Tl" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/space)
+"TV" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/mineral/titanium/blue,
+/area/space)
+"Ve" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/mineral/titanium/tiled/yellow,
+/area/space)
+"Vf" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer4,
+/obj/structure/table/glass,
+/turf/open/floor/mineral/titanium/blue,
+/area/space)
+"Wz" = (
+/turf/open/space/basic,
+/area/space)
+"WD" = (
+/obj/structure/frame/computer{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/space)
+"WL" = (
+/obj/structure/window{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/space)
+"XV" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/mineral/titanium/white,
+/area/space)
+"Zu" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -218,985 +382,994 @@
 	},
 /turf/open/floor/plating,
 /area/space)
-"W" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2,
+"ZJ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/space)
-"X" = (
-/obj/machinery/power/shuttle/engine/electric/premium{
-	dir = 4;
-	desc = "An expensive variant of a standard ion thruster, using highest quality components in order to achieve much better performance. This one seems broken beyond restoration"
+"ZO" = (
+/obj/machinery/door/window{
+	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
-/area/space)
-"Y" = (
-/obj/machinery/door/airlock/external/glass,
-/turf/open/floor/plating,
-/area/space)
-"Z" = (
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/white,
 /area/space)
 
 (1,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (2,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (3,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (4,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-X
-a
-a
-X
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Oa
+gg
+Wz
+Wz
+gg
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (5,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-t
-t
-S
-t
-t
-S
-t
-t
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Oa
+Oa
+Oa
+hx
+Oa
+Oa
+hx
+Oa
+Oa
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (6,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-t
-H
-Z
-Z
-P
-t
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Oa
+Oa
+tv
+Gw
+GW
+rt
+Oa
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (7,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-V
-k
-N
-Z
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Iu
+Oa
+Zu
+Bi
+cU
+oT
+Oa
+eA
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (8,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-A
-s
-v
-L
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+AZ
+Oa
+Cy
+bN
+ZJ
+yM
+Oa
+lB
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (9,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-t
-t
-t
-j
-m
-t
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Oa
+Oa
+Oa
+Oa
+aC
+WL
+Oa
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (10,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-R
-Z
-v
-O
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Oa
+By
+KF
+Jg
+lI
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (11,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-C
-G
-v
-w
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+PU
+lO
+LH
+Jg
+Oz
+PU
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (12,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-c
-Z
-v
-Z
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Oa
+Gr
+KF
+Jg
+AO
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (13,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-t
-t
-j
-d
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+FD
+Oa
+Oa
+Oa
+ZO
+HV
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (14,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-q
-W
-Y
-v
-f
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+aJ
+zG
+Ve
+XV
+nx
+Nt
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (15,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-t
-t
-i
-h
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+uA
+Oa
+Oa
+Oa
+Rw
+cb
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (16,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-B
-Z
-K
-z
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Oa
+Is
+cS
+RJ
+EW
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (17,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-Z
-Z
-Z
-Q
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Oa
+Vf
+TV
+Tl
+Lz
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (18,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-t
-r
-r
-t
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Oa
+Oa
+WD
+WD
+Oa
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (19,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-t
-t
-I
-I
-t
-t
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Oa
+Oa
+PU
+PU
+Oa
+Oa
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (20,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (21,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (22,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (23,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (24,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (25,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (26,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (27,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (28,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (29,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
 (30,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
+Wz
 "}
