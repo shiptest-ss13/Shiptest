@@ -24,11 +24,9 @@
 "aQ" = (
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "aT" = (
@@ -90,6 +88,7 @@
 	port_direction = 8;
 	preferred_direction = 4
 	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "cw" = (
@@ -138,8 +137,11 @@
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -247,11 +249,11 @@
 /area/ship/bridge)
 "gj" = (
 /obj/item/toy/plush/spider,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
 /obj/structure/closet/emcloset/anchored,
 /obj/item/clothing/head/papersack,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "gP" = (
@@ -945,7 +947,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "yw" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "yF" = (
@@ -1423,13 +1430,13 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering)
 "OD" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+/obj/machinery/light/small,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
+	dir = 8
 	},
-/obj/machinery/light/small,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "OP" = (
@@ -1712,11 +1719,11 @@
 /area/ship/bridge)
 "XJ" = (
 /obj/effect/decal/cleanable/glass,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = -27
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1734,8 +1741,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "YG" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
