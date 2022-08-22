@@ -141,6 +141,12 @@
 /obj/item/stack/ore/uranium,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav/corporatemine/asteroid)
+"dr" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/corporatemine/asteroid)
 "dv" = (
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/corporatemine/air)
@@ -150,7 +156,10 @@
 	},
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
-/turf/open/floor/plating,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/corporatemine/solar_array)
 "dH" = (
 /obj/structure/cable{
@@ -352,6 +361,15 @@
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/cargo)
+"hu" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/corporatemine/solar_array)
 "hD" = (
 /obj/structure/table,
 /turf/open/floor/plasteel,
@@ -1016,7 +1034,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/corporatemine/solar_array)
 "yk" = (
 /obj/structure/sign/poster/ripped,
@@ -1806,7 +1824,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/corporatemine/solar_array)
 "PQ" = (
 /obj/structure/barricade/sandbags,
@@ -3203,7 +3221,7 @@ Wp
 cf
 Wp
 Wp
-Wp
+dr
 AV
 AV
 Wp
@@ -3373,7 +3391,7 @@ ND
 ND
 ND
 Gt
-EA
+hu
 oY
 dw
 Gt
