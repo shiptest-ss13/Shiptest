@@ -6,6 +6,8 @@
 /area/mine/rockplanet_nanotrasen
 	name = "Abandoned Mining Facility"
 
+//Abandoned Mechbay Ruin
+
 /area/ruin/rockplanet/abandoned_mechbay/mainhall
 	name = "Abandoned Mechbay Main Corridor"
 	icon_state = "hallC"
@@ -30,39 +32,39 @@
 	name = "Abandoned Mechbay #4"
 	icon_state = "mechbay"
 
-area/ruin/rockplanet/abandoned_mechbay/readyroom
+/area/ruin/rockplanet/abandoned_mechbay/readyroom
 	name = "Abandoned Mechbay Ready Room"
 	icon_state = "meeting"
 
-area/ruin/rockplanet/abandoned_mechbay/laundry
+/area/ruin/rockplanet/abandoned_mechbay/laundry
 	name = "Abandoned Mechbay Laundry"
 	icon_state = "crew"
 
-area/ruin/rockplanet/abandoned_mechbay/crewquarters
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters
 	name = "Abandoned Mechbay Crew Quarters"
 	icon_state = "crew"
 
-area/ruin/rockplanet/abandoned_mechbay/mechlab
+/area/ruin/rockplanet/abandoned_mechbay/mechlab
 	name = "Abandoned Mech Lab"
 	icon_state = "mechbay"
 
-area/ruin/rockplanet/abandoned_mechbay/medbay
+/area/ruin/rockplanet/abandoned_mechbay/medbay
 	name = "Abandoned Mechbay Medbay"
 	icon_state = "surgery"
 
-area/ruin/rockplanet/abandoned_mechbay/engineering
+/area/ruin/rockplanet/abandoned_mechbay/engineering
 	name = "Abandoned Mechbay Engineering"
 	icon_state = "engine"
 
-area/ruin/rockplanet/abandoned_mechbay/atmospereslurper
+/area/ruin/rockplanet/abandoned_mechbay/atmospereslurper
 	name = "Abandoned Mechbay Air Processing"
 	icon_state = "atmos"
 
-area/ruin/rockplanet/abandoned_mechbay/external
+/area/ruin/rockplanet/abandoned_mechbay/external
 	name = "Abandoned Mechbay Externals"
 	icon_state = "asteroid"
 	requires_power = TRUE
 
-area/ruin/rockplanet/abandoned_mechbay/caves
+/area/ruin/rockplanet/abandoned_mechbay/caves
 	name = "Caves"
 	icon_state = "asteroid"
