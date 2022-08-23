@@ -14,11 +14,11 @@
 	barefootstep = FOOTSTEP_LAVA
 	clawfootstep = FOOTSTEP_LAVA
 	heavyfootstep = FOOTSTEP_LAVA
-	density = TRUE //This will prevent hostile mobs from pathing into acid, while the canpass override will still let it function like an open turf
 
 /turf/open/acid/CanAllowThrough(atom/movable/AM, turf/target)
-	. = ..()
-	return TRUE
+	if(ishostile(AM))
+		return FALSE
+	return ..()
 
 /turf/open/acid/ex_act(severity, target)
 	contents_explosion(severity, target)
