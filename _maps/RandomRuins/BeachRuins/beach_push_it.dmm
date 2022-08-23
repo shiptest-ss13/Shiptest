@@ -22,8 +22,9 @@
 /turf/open/floor/carpet/royalblue,
 /area/ruin/powered)
 "dh" = (
-/mob/living/simple_animal/hostile/russian/ranged/mosin,
-/turf/open/floor/light,
+/obj/machinery/light,
+/mob/living/simple_animal/hostile/russian/ranged,
+/turf/open/floor/carpet/royalblue,
 /area/ruin/powered)
 "ds" = (
 /mob/living/simple_animal/hostile/russian/ranged/trooper,
@@ -58,7 +59,7 @@
 "kc" = (
 /obj/structure/chair/sofa/right,
 /obj/item/research_notes/loot/medium,
-/mob/living/simple_animal/hostile/russian/ranged/trooper,
+/mob/living/simple_animal/hostile/russian/ranged,
 /turf/open/floor/plasteel/vaporwave,
 /area/ruin/powered)
 "kf" = (
@@ -82,10 +83,6 @@
 "nh" = (
 /obj/structure/closet/secure_closet/hydroponics,
 /turf/open/floor/plastic,
-/area/ruin/powered)
-"nz" = (
-/mob/living/simple_animal/hostile/russian,
-/turf/open/floor/light,
 /area/ruin/powered)
 "nS" = (
 /obj/structure/chair/sofa/right{
@@ -114,7 +111,6 @@
 	dir = 1
 	},
 /obj/machinery/light,
-/mob/living/simple_animal/hostile/russian,
 /turf/open/floor/carpet/royalblue,
 /area/ruin/powered)
 "rb" = (
@@ -156,7 +152,7 @@
 /area/ruin/powered)
 "xL" = (
 /obj/structure/chair/sofa,
-/mob/living/simple_animal/hostile/russian/ranged/mosin,
+/mob/living/simple_animal/hostile/russian/ranged/trooper,
 /turf/open/floor/carpet/royalblue,
 /area/ruin/powered)
 "yA" = (
@@ -259,7 +255,7 @@
 /turf/open/floor/light,
 /area/ruin/powered)
 "Mb" = (
-/mob/living/simple_animal/hostile/russian/ranged/mosin,
+/mob/living/simple_animal/hostile/russian/ranged/trooper,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "MB" = (
@@ -281,14 +277,13 @@
 /turf/open/floor/plasteel/vaporwave,
 /area/ruin/powered)
 "Ou" = (
-/mob/living/simple_animal/hostile/russian/ranged/mosin,
+/mob/living/simple_animal/hostile/russian/ranged,
 /turf/open/floor/carpet/cyan,
 /area/ruin/powered)
 "Pq" = (
 /obj/structure/chair/sofa/right{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/russian/ranged/trooper,
 /turf/open/floor/carpet/royalblue,
 /area/ruin/powered)
 "Px" = (
@@ -297,13 +292,6 @@
 "QN" = (
 /obj/item/book/manual/wiki/chemistry,
 /turf/open/floor/plastic,
-/area/ruin/powered)
-"QY" = (
-/obj/structure/chair/sofa/right{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/russian,
-/turf/open/floor/carpet/royalblue,
 /area/ruin/powered)
 "RJ" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
@@ -448,7 +436,7 @@ RS
 JH
 JH
 CI
-MB
+dh
 RS
 Cm
 ZH
@@ -787,10 +775,10 @@ sn
 Px
 RS
 hm
-nz
 uC
 uC
-dh
+uC
+uC
 uC
 Cs
 RS
@@ -1047,7 +1035,7 @@ Vb
 RS
 ve
 TP
-QY
+nS
 rb
 RS
 RS
