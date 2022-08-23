@@ -12,7 +12,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/mineral/titanium/white,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "aJ" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -24,7 +27,8 @@
 /obj/structure/table,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer4,
 /obj/item/storage/toolbox/mechanical,
-/turf/open/floor/plating,
+/obj/structure/railing,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "cb" = (
 /obj/structure/chair/stool{
@@ -33,14 +37,14 @@
 /obj/structure/window{
 	dir = 4
 	},
-/turf/open/floor/mineral/titanium/blue,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "cS" = (
 /obj/machinery/airalarm{
 	dir = 4;
 	pixel_x = -24
 	},
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/plasteel,
 /area/space)
 "cU" = (
 /obj/structure/cable{
@@ -52,7 +56,10 @@
 /obj/machinery/atmospherics/components/binary/pump/layer2{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "eA" = (
 /obj/structure/rack,
@@ -83,7 +90,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "lB" = (
 /obj/structure/rack,
@@ -93,13 +100,13 @@
 /area/space)
 "lI" = (
 /obj/machinery/rnd/server,
-/turf/open/floor/mineral/titanium/tiled/blue,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "lO" = (
 /obj/structure/table{
 	name = "thinking table"
 	},
-/turf/open/floor/mineral/titanium/tiled/blue,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "nx" = (
 /obj/structure/cable{
@@ -110,14 +117,21 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/plasteel,
 /area/space)
 "oT" = (
 /obj/machinery/airalarm{
 	dir = 1;
 	pixel_y = -24
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/corner_techfloor_grid,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "rt" = (
 /obj/structure/cable{
@@ -125,6 +139,9 @@
 	},
 /obj/machinery/power/terminal{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner_techfloor_grid/full{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/space)
@@ -134,6 +151,9 @@
 	},
 /obj/machinery/power/terminal{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner_techfloor_grid/full{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/space)
@@ -147,16 +167,22 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2{
 	dir = 1
 	},
-/turf/open/floor/plating,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "zG" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/plasteel/mono/white,
 /area/space)
 "AO" = (
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/plasteel,
 /area/space)
 "AZ" = (
 /obj/structure/rack,
@@ -168,7 +194,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/ash,
+/obj/effect/turf_decal/industrial/warning/corner,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "By" = (
 /obj/structure/fluff/beach_umbrella/science,
@@ -181,14 +209,15 @@
 	name = "misc gear";
 	pixel_x = -30
 	},
-/turf/open/floor/mineral/titanium/blue,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Cy" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "EW" = (
 /obj/structure/cable,
@@ -197,7 +226,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/turf/open/floor/mineral/titanium/tiled/blue,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "FD" = (
 /obj/effect/turf_decal/industrial/warning/corner,
@@ -216,17 +245,23 @@
 /obj/item/clothing/suit/toggle/labcoat/science,
 /obj/item/clothing/glasses/science,
 /obj/item/tank/internals/oxygen,
-/turf/open/floor/mineral/titanium/blue,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Gw" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "GW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "HV" = (
 /obj/structure/chair/stool{
@@ -235,12 +270,13 @@
 /obj/structure/window{
 	dir = 8
 	},
-/turf/open/floor/mineral/titanium/blue,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Is" = (
 /obj/item/bedsheet/rd,
 /obj/structure/bed,
-/turf/open/floor/mineral/titanium/tiled/blue,
+/obj/structure/curtain,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Iu" = (
 /obj/structure/rack,
@@ -261,17 +297,18 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/plasteel,
 /area/space)
 "KF" = (
-/turf/open/floor/mineral/titanium/blue,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Lz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2{
 	dir = 8
 	},
 /obj/structure/table/glass,
-/turf/open/floor/mineral/titanium/blue,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "LH" = (
 /obj/structure/chair/office{
@@ -279,12 +316,15 @@
 	name = "thinking chair";
 	desc = "You sit in this. Innovation flows from there."
 	},
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/plasteel,
 /area/space)
 "Nt" = (
 /obj/structure/table/glass,
 /obj/item/reagent_containers/food/snacks/canned/beans,
-/turf/open/floor/mineral/titanium/tiled/blue,
+/obj/structure/sign/poster/official/science{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Oa" = (
 /turf/closed/wall/mineral/titanium,
@@ -293,7 +333,7 @@
 /obj/machinery/computer/rdconsole{
 	dir = 1
 	},
-/turf/open/floor/mineral/titanium/tiled/blue,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "PU" = (
 /obj/effect/spawner/structure/window/shuttle,
@@ -315,7 +355,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/plasteel,
 /area/space)
 "RJ" = (
 /obj/structure/cable{
@@ -327,7 +367,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/plasteel,
 /area/space)
 "Tl" = (
 /obj/structure/chair/office{
@@ -336,21 +376,25 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/turf/open/floor/mineral/titanium/blue,
+/turf/open/floor/plasteel/mono/white,
 /area/space)
 "TV" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/mineral/titanium/blue,
+/turf/open/floor/plasteel/mono/white,
 /area/space)
 "Ve" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/mineral/titanium/tiled/yellow,
+/obj/machinery/advanced_airlock_controller{
+	pixel_x = 30
+	},
+/turf/open/floor/plating/rust,
 /area/space)
 "Vf" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer4,
 /obj/structure/table/glass,
-/turf/open/floor/mineral/titanium/blue,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/mono/dark,
 /area/space)
 "Wz" = (
 /turf/open/space/basic,
@@ -359,19 +403,23 @@
 /obj/structure/frame/computer{
 	dir = 8
 	},
-/turf/open/floor/mineral/titanium/tiled/blue,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "WL" = (
-/obj/structure/window{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/turf/open/floor/mineral/titanium/white,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "XV" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/plasteel/mono/white,
 /area/space)
 "Zu" = (
 /obj/structure/cable{
@@ -380,7 +428,13 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "ZJ" = (
 /obj/structure/cable{
@@ -392,7 +446,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/stairs{
+	dir = 4
+	},
 /area/space)
 "ZO" = (
 /obj/machinery/door/window{
@@ -410,7 +466,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/plasteel,
 /area/space)
 
 (1,1,1) = {"
