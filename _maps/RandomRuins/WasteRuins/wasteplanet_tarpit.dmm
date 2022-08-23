@@ -44,7 +44,6 @@
 /obj/effect/turf_decal/road{
 	dir = 5
 	},
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement,
 /area/ruin/unpowered)
@@ -73,7 +72,7 @@
 /turf/open/floor/concrete,
 /area/ruin/unpowered)
 "gj" = (
-/obj/item/grenade/discogrenade,
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/unpowered)
 "gn" = (
@@ -131,13 +130,6 @@
 "jf" = (
 /obj/structure/fence/corner,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin/unpowered)
-"ka" = (
-/obj/effect/turf_decal/road{
-	dir = 4
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
-/turf/open/floor/concrete/pavement,
 /area/ruin/unpowered)
 "kj" = (
 /obj/structure/marker_beacon,
@@ -368,12 +360,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/concrete/pavement,
-/area/ruin/unpowered)
-"yR" = (
-/obj/effect/turf_decal/road/line/edge/opaque/yellow,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/nullrod/claymore/saber/red,
 /turf/open/floor/concrete/pavement,
 /area/ruin/unpowered)
 "yW" = (
@@ -611,7 +597,6 @@
 /area/ruin/unpowered)
 "RT" = (
 /obj/structure/table,
-/obj/item/key,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete,
 /area/ruin/unpowered)
@@ -626,15 +611,6 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin/unpowered)
-"Uf" = (
-/obj/effect/turf_decal/road{
-	dir = 8
-	},
-/obj/item/gun/ballistic/automatic/smg/c20r/cobra{
-	spawnwithmagazine = 0
-	},
-/turf/open/floor/concrete/pavement,
 /area/ruin/unpowered)
 "UZ" = (
 /obj/structure/table,
@@ -652,7 +628,6 @@
 /area/ruin/unpowered)
 "VD" = (
 /obj/structure/table,
-/obj/item/screwdriver/power,
 /turf/open/floor/concrete,
 /area/ruin/unpowered)
 "VE" = (
@@ -667,8 +642,8 @@
 /obj/effect/turf_decal/road/line/edge/opaque/yellow{
 	dir = 1
 	},
-/obj/item/gun/ballistic/rifle/boltaction,
 /obj/effect/decal/cleanable/blood/old,
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
 /turf/open/floor/concrete/pavement,
 /area/ruin/unpowered)
 "Xn" = (
@@ -686,7 +661,6 @@
 /obj/effect/turf_decal/road{
 	dir = 1
 	},
-/obj/vehicle/ridden/atv,
 /obj/item/clothing/head/helmet,
 /turf/open/floor/concrete/pavement,
 /area/ruin/unpowered)
@@ -704,10 +678,6 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/pavement,
-/area/ruin/unpowered)
-"Ys" = (
-/obj/item/ammo_box/magazine/co9mm,
-/turf/open/floor/concrete/slab_1,
 /area/ruin/unpowered)
 "YB" = (
 /turf/open/water/tar,
@@ -1143,7 +1113,7 @@ YB
 YB
 Sx
 YX
-ka
+Yc
 rV
 mr
 xt
@@ -1210,7 +1180,7 @@ YX
 Yc
 sW
 Kd
-Uf
+Xn
 qe
 ku
 ff
@@ -1242,7 +1212,7 @@ YX
 Wr
 Di
 Ka
-Wr
+gj
 qe
 ku
 ff
@@ -1400,7 +1370,7 @@ Wr
 Sx
 YX
 tH
-gj
+Wr
 yG
 xt
 Bk
@@ -1444,7 +1414,7 @@ cA
 hT
 Wr
 tH
-yR
+lC
 th
 Xn
 Bk
@@ -1685,7 +1655,7 @@ KX
 YX
 YX
 dU
-Ys
+YX
 Bk
 Bk
 Bk

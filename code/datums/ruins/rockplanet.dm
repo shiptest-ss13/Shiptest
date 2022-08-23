@@ -55,11 +55,6 @@
 	description = "Some sort of house, baracaded in. It must be baracaded for a reason.."
 	suffix = "rockplanet_house.dmm"
 */
-/datum/map_template/ruin/rockplanet/daniel
-	name = "Oh Hi Daniel"
-	id = "daniel"
-	description = "Mistakes were made.."
-	suffix = "rockplanet_daniel.dmm"
 
 /datum/map_template/ruin/rockplanet/mining_expedition
 	name = "Mining Expedition"
