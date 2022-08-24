@@ -255,6 +255,10 @@
 	for (var/i in 1 to 4)
 		new /obj/item/ammo_box/c9mm(src)
 
+/obj/item/storage/toolbox/ammo/c10mm/PopulateContents()
+	for (var/i in 1 to 4)
+		new /obj/item/ammo_box/c10mm(src)
+
 /obj/item/storage/toolbox/infiltrator
 	name = "insidious case"
 	desc = "Bearing the emblem of the Syndicate, this case contains a full infiltrator stealth suit, and has enough room to fit weaponry if necessary."
