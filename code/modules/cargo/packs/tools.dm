@@ -61,7 +61,7 @@
 	cost = 1000
 	contains = list(
 		/obj/item/pickaxe,
-		/obj/item/pickaxe/compact,
+		/obj/item/pickaxe/mini,
 		/obj/item/storage/bag/ore,
 		/obj/item/storage/bag/ore,
 		/obj/item/mining_scanner,
