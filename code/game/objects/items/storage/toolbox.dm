@@ -232,7 +232,7 @@
 
 /obj/item/storage/toolbox/ammo
 	name = "ammo box"
-	desc = "It contains a few clips."
+	desc = "A metal container for storing multiple boxes of ammunition or grenades."
 	icon_state = "ammobox"
 	item_state = "ammobox"
 	drop_sound = 'sound/items/handling/ammobox_drop.ogg'
@@ -258,6 +258,10 @@
 /obj/item/storage/toolbox/ammo/c10mm/PopulateContents()
 	for (var/i in 1 to 4)
 		new /obj/item/ammo_box/c10mm(src)
+
+/obj/item/storage/toolbox/ammo/shotgun/PopulateContents()
+	for (var/i in 1 to 4)
+		new /obj/item/storage/box/lethalshot(src)
 
 /obj/item/storage/toolbox/infiltrator
 	name = "insidious case"
