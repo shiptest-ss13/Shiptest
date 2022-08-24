@@ -769,7 +769,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/lighter/clockwork //WS edit: Clockwork Zippo, by Tergius. PR #395
 	name = "bronze zippo"
 	desc = "A zippo plated with brass. I mean bronze. Has a neat red flame!"
-	icon = 'whitesands/icons/obj/cigarettes.dmi'
+	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "clockworklighter"
 	heat = 2000 //??????????????????
 	light_color = LIGHT_COLOR_BLOOD_MAGIC
