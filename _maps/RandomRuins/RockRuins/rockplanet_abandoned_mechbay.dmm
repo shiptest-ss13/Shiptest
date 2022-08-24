@@ -360,15 +360,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
-"eu" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 6;
-	desc = "An energy blaster auto-turret. It's woven into the hexacrete walls.";
-	stun_projectile = /obj/projectile/beam/disabler;
-	max_integrity = 80
-	},
-/turf/closed/wall/concrete,
-/area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
 "ew" = (
 /obj/effect/turf_decal/arrows{
 	pixel_y = -8;
@@ -475,7 +466,9 @@
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
 "fe" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/syndicate/mecha_pilot/no_mech,
+/mob/living/simple_animal/hostile/syndicate/melee{
+	name = "Syndicate Mech Pilot"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/bay4)
 "fi" = (
@@ -1837,7 +1830,7 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "uM" = (
@@ -2244,6 +2237,7 @@
 	dir = 8
 	},
 /obj/machinery/light/floor,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "zl" = (
@@ -2767,7 +2761,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/syndicate/melee,
+/mob/living/simple_animal/hostile/syndicate/melee{
+	name = "Syndicate Mech Pilot"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "GE" = (
@@ -2815,7 +2811,9 @@
 /area/ruin/rockplanet/abandoned_mechbay/caves)
 "Hj" = (
 /obj/machinery/light/dim,
-/mob/living/simple_animal/hostile/syndicate/melee,
+/mob/living/simple_animal/hostile/syndicate/melee{
+	name = "Syndicate Mech Pilot"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
 "Hl" = (
@@ -3064,7 +3062,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light,
-/mob/living/simple_animal/hostile/syndicate/mecha_pilot/no_mech,
+/mob/living/simple_animal/hostile/syndicate/melee{
+	name = "Syndicate Mech Pilot"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
 "Js" = (
@@ -3187,15 +3187,6 @@
 /obj/effect/turf_decal/number/two,
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
-"Lb" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 6;
-	desc = "An energy blaster auto-turret. It's woven into the hexacrete walls.";
-	stun_projectile = /obj/projectile/beam/disabler;
-	max_integrity = 80
-	},
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
 "Lo" = (
 /obj/machinery/door/poddoor{
 	id = "baseinternal"
@@ -4093,15 +4084,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/abandoned_mechbay/mechlab)
-"Xl" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 5;
-	desc = "An energy blaster auto-turret. It's woven into the hexacrete walls.";
-	stun_projectile = /obj/projectile/beam/disabler;
-	max_integrity = 80
-	},
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/rockplanet/abandoned_mechbay/commandcontrol)
 "Xp" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	pixel_y = 8
@@ -5389,11 +5371,11 @@ BJ
 BJ
 BJ
 BJ
-Lb
+BJ
 RP
 Fk
 Rh
-Xl
+UP
 UP
 UP
 UP
@@ -6026,7 +6008,7 @@ YQ
 YQ
 YQ
 YQ
-eu
+YQ
 vO
 MR
 KE
