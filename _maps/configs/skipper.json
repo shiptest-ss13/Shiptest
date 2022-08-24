@@ -1,8 +1,17 @@
 {
 	"map_name": "Skipper-class Heavy Cruiser",
 	"map_short_name": "Skipper-class",
-	"map_path": "_maps/shuttles/shiptest/ntsv_skipper.dmm",
-	"map_id": "ntsv_skipper",
+	"prefix": "NTSV",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"BRITISH_NAVY",
+		"MYTHOLOGICAL",
+		"WEAPONS",
+		"MERCANTILE"
+	],
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_skipper.dmm",
+	"map_id": "nanotrasen_skipper",
 	"roundstart": true,
 	"job_slots": {
 		"Captain": {
@@ -15,19 +24,21 @@
 			"officer": true,
 			"slots": 1
 		},
-		"SolGov Representative": 1,
-		"Medical Doctor": 2,
+		"Internal Affairs Agent": {
+			"outfit": "/datum/outfit/job/lawyer/corporaterepresentative",
+			"slots" : 1
+		},
+		"Medical Doctor": 1,
 		"Engineer": {
 			"outfit": "/datum/outfit/job/engineer/nt",
 			"slots": 3
 		},
 		"Shaft Miner": 2,
-		"Cargo Technician": 2,
 		"Security Officer": {
 			"outfit": "/datum/outfit/job/security/nanotrasen",
 			"slots": 1
 		},
-		"Assistant": 5
+		"Assistant": 3
 	},
 	"cost": 750
 }
