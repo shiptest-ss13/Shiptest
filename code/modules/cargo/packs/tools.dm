@@ -55,6 +55,20 @@
 	contains = list(/obj/item/storage/part_replacer)
 	crate_name = "\improper RPED crate"
 
+/datum/supply_pack/tools/mining
+	name = "Basic Mining Crate"
+	desc = "Contains two pickaxes, two ore bags, and two manual mining scanners."
+	cost = 1000
+	contains = list(
+		/obj/item/pickaxe,
+		/obj/item/pickaxe/compact,
+		/obj/item/storage/bag/ore,
+		/obj/item/storage/bag/ore,
+		/obj/item/mining_scanner,
+		/obj/item/mining_scanner
+	)
+	crate_name = "basic mining crate"
+
 /datum/supply_pack/tools/metalfoam
 	name = "Metal Foam Grenade Crate"
 	desc = "Seal up those pesky hull breaches with 7 metal foam grenades."
