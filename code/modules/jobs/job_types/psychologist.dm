@@ -1,19 +1,13 @@
 /*WS Edit - Fuck Psychologists.
 /datum/job/psychologist
-	title = "Psychologist"
-	department_head = list("Head of Personnel","Chief Medical Officer")
-	faction = "Station"
+	name = "Psychologist"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel and the chief medical officer"
-	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/psychologist
 
 	access = list(ACCESS_MEDICAL, ACCESS_PSYCHOLOGY)
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_PSYCHOLOGY)
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_PSYCHOLOGIST
 
