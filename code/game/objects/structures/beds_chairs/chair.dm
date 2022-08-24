@@ -470,3 +470,14 @@
 	custom_materials = list(/datum/material/plastic = 2000)
 	break_chance = 25
 	origin_type = /obj/structure/chair/plastic
+
+/obj/structure/chair/comfy/plastic
+	icon_state = "plastic_chair_throne"
+	name = "plastic chair"
+	desc = "Sitting in this chair is all you need to get motivated for work."
+	custom_materials = list(/datum/material/plastic = 6000)
+	buildstacktype = /obj/item/stack/sheet/plastic
+	buildstackamount = 5
+
+/obj/structure/chair/comfy/plastic/GetArmrest()
+	return mutable_appearance('icons/obj/chairs.dmi', "plastic_chair_throne_armrest")
