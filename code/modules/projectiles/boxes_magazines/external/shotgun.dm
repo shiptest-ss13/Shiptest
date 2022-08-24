@@ -33,5 +33,5 @@
 /obj/item/ammo_box/magazine/m12g/small
 	name = "shotgun box magazine (12g buckshot)"
 	desc = "A single-stack box magazine for a shotgun."
-	icon_state = "m12gbsmall"
+	icon_state = "m12gsmall"
 	max_ammo = 6
