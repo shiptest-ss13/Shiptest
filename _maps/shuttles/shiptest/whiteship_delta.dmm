@@ -885,7 +885,8 @@
 /area/ship/bridge)
 "bV" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
-	dir = 1
+	dir = 1;
+	piping_layer = 2
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/built,
