@@ -49,7 +49,7 @@
 	name = "Scientist (Fauna Researcher)"
 
 	belt = /obj/item/melee/curator_whip
-	suit = /obj/item/clothing/suit/curator
+	suit = /obj/item/clothing/suit/armor/curator
 	head = /obj/item/clothing/head/fedora
 
 	pda_slot = ITEM_SLOT_LPOCKET
