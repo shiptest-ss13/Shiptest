@@ -51,6 +51,7 @@
 	if (A)
 		A.dp_air_vent_names -= id_tag
 		A.dp_air_vent_info -= id_tag
+		deallocate_nameid(A.dp_air_vent_ids, id_tag)
 	if(aac)
 		aac.vents -= src
 
@@ -152,7 +153,8 @@
 
 	var/area/A = get_area(src)
 	if(!A.dp_air_vent_names[id_tag])
-		name = "\improper [A.name] dual-port air vent #[A.dp_air_vent_names.len + 1]"
+		var/nameid = allocate_nameid(A.dp_air_vent_ids, id_tag)
+		name = "\improper [A.name] dual-port air vent #[nameid]"
 		A.dp_air_vent_names[id_tag] = name
 	A.dp_air_vent_info[id_tag] = signal.data
 

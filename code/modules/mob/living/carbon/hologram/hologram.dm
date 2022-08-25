@@ -75,7 +75,7 @@
 			holoitems += content
 
 /mob/living/simple_animal/hologram/proc/icon_setup(outfit, _prefs)
-	var/icon/initial_icon = get_flat_human_icon("hologram_[job_type?.title]", job_type, _prefs, "static", outfit_override = outfit)
+	var/icon/initial_icon = get_flat_human_icon("hologram_[job_type?.name]", job_type, _prefs, "static", outfit_override = outfit)
 	var/icon/alpha_mask = new('icons/effects/effects.dmi', "scanline")//Scanline effect.
 	initial_icon.AddAlphaMask(alpha_mask)
 	icon = initial_icon
@@ -97,7 +97,7 @@
 
 /mob/living/simple_animal/hologram/Move(atom/newloc, direct)
 	. = ..()
-	if(!holopad.anchored || holopad.machine_stat)
+	if(!holopad || !holopad.anchored || holopad.machine_stat)
 		for(var/I in holopad.holopads)
 			var/obj/machinery/holopad/another = I
 			if(another == holopad || another.machine_stat || !another.anchored)

@@ -170,28 +170,24 @@
 /obj/structure/closet/secure_closet/security/cargo/PopulateContents()
 	..()
 	new /obj/item/clothing/accessory/armband/cargo(src)
-	new /obj/item/encryptionkey/headset_cargo(src)
 
 /obj/structure/closet/secure_closet/security/engine
 
 /obj/structure/closet/secure_closet/security/engine/PopulateContents()
 	..()
 	new /obj/item/clothing/accessory/armband/engine(src)
-	new /obj/item/encryptionkey/headset_eng(src)
 
 /obj/structure/closet/secure_closet/security/science
 
 /obj/structure/closet/secure_closet/security/science/PopulateContents()
 	..()
 	new /obj/item/clothing/accessory/armband/science(src)
-	new /obj/item/encryptionkey/headset_sci(src)
 
 /obj/structure/closet/secure_closet/security/med
 
 /obj/structure/closet/secure_closet/security/med/PopulateContents()
 	..()
 	new /obj/item/clothing/accessory/armband/medblue(src)
-	new /obj/item/encryptionkey/headset_med(src)
 
 /obj/structure/closet/secure_closet/detective
 	name = "\improper detective's cabinet"
@@ -390,7 +386,7 @@
 	new	/obj/item/storage/firstaid/regular(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/suit/armor/vest/solgov/rep(src)
-	new /obj/item/clothing/suit/solgov_trenchcoat(src)
+	new /obj/item/clothing/suit/armor/solgov_trenchcoat(src)
 	new /obj/item/clothing/accessory/waistcoat/solgov(src)
 	new /obj/item/clothing/shoes/laceup(src)
 
@@ -408,7 +404,7 @@
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/suit/armor/vest/lieutenant(src)
 	new /obj/item/clothing/suit/toggle/lieutenant(src)
-	new /obj/item/clothing/suit/lieutenant_trenchcoat(src)
+	new /obj/item/clothing/suit/armor/lieutenant_trenchcoat(src)
 	new /obj/item/clothing/accessory/holster/lieutenant(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/head/beret/lt(src)

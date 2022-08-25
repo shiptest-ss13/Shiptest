@@ -284,13 +284,10 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 			var/radio_freq
 			switch(text2num(href_list["emergency"]))
 				if(REQ_EMERGENCY_SECURITY) //Security
-					radio_freq = FREQ_SECURITY
 					emergency = "Security"
 				if(REQ_EMERGENCY_ENGINEERING) //Engineering
-					radio_freq = FREQ_ENGINEERING
 					emergency = "Engineering"
 				if(REQ_EMERGENCY_MEDICAL) //Medical
-					radio_freq = FREQ_MEDICAL
 					emergency = "Medical"
 			if(radio_freq)
 				Radio.set_frequency(radio_freq)
@@ -300,20 +297,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 
 	if(href_list["send"] && message && to_department && priority)
 
-		var/radio_freq
-		switch(ckey(to_department))
-			if("bridge")
-				radio_freq = FREQ_COMMAND
-			if("medbay")
-				radio_freq = FREQ_MEDICAL
-			if("science")
-				radio_freq = FREQ_SCIENCE
-			if("engineering")
-				radio_freq = FREQ_ENGINEERING
-			if("security")
-				radio_freq = FREQ_SECURITY
-			if("cargobay", "mining")
-				radio_freq = FREQ_SUPPLY
+		var/radio_freq = FREQ_COMMAND
 
 		var/datum/signal/subspace/messaging/rc/signal = new(src, list(
 			"sender" = department,

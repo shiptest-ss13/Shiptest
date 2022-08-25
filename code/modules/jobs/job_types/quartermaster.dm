@@ -1,28 +1,21 @@
 /datum/job/qm
-	title = "Quartermaster"
-	department_head = list("Head of Personnel")
-	faction = "Station"
+	name = "Quartermaster"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
-	selection_color = "#d7b088"
 	wiki_page = "Quartermaster" //WS Edit - Wikilinks/Warning
 	officer = TRUE
 	exp_type_department = EXP_TYPE_SUPPLY // This is so the jobs menu can work properly
-	alt_titles = list("Supply Chief", "Requisitions Officer")
-	senior_title = "Chief Economist"
 
 	outfit = /datum/outfit/job/quartermaster
 
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM, ACCESS_VAULT)
 	minimal_access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM, ACCESS_VAULT)
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_CAR
 
 	display_order = JOB_DISPLAY_ORDER_QUARTERMASTER
 
 /datum/outfit/job/quartermaster
 	name = "Quartermaster"
+	job_icon = "quartermaster"
 	jobtype = /datum/job/qm
 
 	belt = /obj/item/pda/quartermaster
@@ -63,6 +56,8 @@
 /datum/outfit/job/quartermaster/donk
 	name = "Manager (Donk! Co.)"
 	id = /obj/item/card/id/syndicate_command/captain_id
+
+	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/donk/qm
 	suit = /obj/item/clothing/suit/hazardvest/donk/qm
 	ears = /obj/item/radio/headset/syndicate/alt

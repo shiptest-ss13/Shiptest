@@ -53,30 +53,6 @@
 		return TRUE
 	return FALSE
 
-/datum/bank_account/proc/payday(amt_of_paychecks, free = FALSE)
-	if(frozen)
-		bank_card_talk("ERROR: Payday aborted, account frozen!")
-		return
-	var/money_to_transfer = account_job.paycheck * amt_of_paychecks
-	if(free)
-		adjust_money(money_to_transfer)
-		SSblackbox.record_feedback("amount", "free_income", money_to_transfer)
-		log_econ("[money_to_transfer] credits were given to [src.account_holder]'s account from income.")
-	else
-		var/datum/bank_account/D = SSeconomy.get_dep_account(account_job.paycheck_department)
-		if(D)
-			if(D.frozen)
-				bank_card_talk("ERROR: Payday aborted, departmental funds frozen!")
-				return
-			if(!transfer_money(D, money_to_transfer))
-				bank_card_talk("ERROR: Payday aborted, departmental funds insufficient.")
-				return FALSE
-			else
-				bank_card_talk("Payday processed, account now holds [account_balance] cr.")
-				return TRUE
-	bank_card_talk("ERROR: Payday aborted, unable to contact departmental account.")
-	return FALSE
-
 /datum/bank_account/proc/bank_card_talk(message, force)
 	if(!message || !bank_cards.len)
 		return
