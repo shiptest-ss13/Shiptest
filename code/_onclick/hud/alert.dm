@@ -311,7 +311,6 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	cut_overlays()
 	add_overlay(receiving)
 	src.receiving = receiving
-	src.offerer = offerer
 	RegisterSignal(taker, COMSIG_MOVABLE_MOVED, .proc/removeAlert)
 	RegisterSignal(taker, COMSIG_MOVABLE_MOVED, .proc/check_in_range, override = TRUE) //Override to prevent runtimes when people offer a item multiple times
 
