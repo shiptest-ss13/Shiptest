@@ -153,6 +153,7 @@
 /obj/item/storage/belt/utility,
 /obj/item/storage/toolbox/electrical,
 /obj/machinery/button/door{
+	dir = 1;
 	id = "pharmairlock";
 	name = "airlock access";
 	pixel_y = -28
@@ -164,7 +165,6 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/box/white,
-/obj/machinery/light,
 /obj/item/flashlight/flare,
 /obj/item/flashlight/flare,
 /obj/item/flashlight/flare,
@@ -311,9 +311,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -324,6 +321,9 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/siding/wood/corner,
+/obj/machinery/newscaster{
+	pixel_y = 32
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "dU" = (
@@ -461,7 +461,6 @@
 	},
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/greenglow/filled,
-/obj/item/storage/pill_bottle/floorpill,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "fu" = (
@@ -558,10 +557,6 @@
 	pixel_y = 11
 	},
 /obj/machinery/light,
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -28
-	},
 /turf/open/floor/circuit,
 /area/ship/medical)
 "gz" = (
@@ -982,12 +977,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
-"mU" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew)
 "nl" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
@@ -1050,12 +1039,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
-"nZ" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew)
 "oa" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/tiles,
@@ -1103,7 +1086,6 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "pharmlobby"
 	},
-/obj/item/storage/pill_bottle/floorpill,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
@@ -1369,6 +1351,9 @@
 	pixel_y = 2
 	},
 /obj/item/reagent_containers/glass/rag,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "vm" = (
@@ -1513,9 +1498,6 @@
 	},
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
-	},
-/obj/machinery/light/small{
-	dir = 1
 	},
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
@@ -1683,8 +1665,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/machinery/light{
-	dir = 8
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -23
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
@@ -1974,6 +1957,9 @@
 /area/ship/bridge)
 "Ig" = (
 /obj/machinery/modular_computer/console/preset/command,
+/obj/item/radio/intercom/wideband{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Iw" = (
@@ -2268,9 +2254,10 @@
 	dir = 1
 	},
 /obj/structure/closet/secure_closet/wall{
+	dir = 8;
 	icon_state = "solgov_wall";
 	name = "Chief Pharmacist's Locker";
-	pixel_x = 28;
+	pixel_x = 32;
 	req_access_txt = "40"
 	},
 /obj/item/storage/bag/medical,
@@ -2300,6 +2287,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/machinery/light/small{
 	dir = 4
 	},
 /turf/open/floor/carpet/blue,
@@ -2355,14 +2345,17 @@
 /obj/machinery/button/door{
 	id = "pharmentrance";
 	name = "Main Entrance";
-	pixel_x = -7;
-	pixel_y = 24
+	pixel_x = -5;
+	pixel_y = 20
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "pharmboothlock"
+	},
+/obj/item/radio/intercom{
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -2384,13 +2377,12 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "MZ" = (
-/obj/effect/turf_decal/trimline/opaque/lightgrey/filled/line{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/stairs{
+	dir = 8
+	},
 /area/ship/cargo)
 "Ne" = (
 /obj/structure/cable{
@@ -2407,6 +2399,10 @@
 "Ni" = (
 /obj/machinery/computer/cargo/express{
 	dir = 1
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -23
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -2765,6 +2761,13 @@
 	dir = 4
 	},
 /obj/machinery/plumbing/pill_press,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
+	},
+/obj/machinery/airalarm/all_access{
+	pixel_y = 25
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/medical)
 "RM" = (
@@ -2782,6 +2785,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmstore";
 	name = "Storefront Shutters";
 	pixel_x = -25
@@ -2857,6 +2861,9 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/box/white,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Te" = (
@@ -3034,6 +3041,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -25
 	},
 /turf/open/floor/concrete/tiles,
 /area/ship/crew/hydroponics)
@@ -3332,7 +3343,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/stairs{
-	dir = 4
+	dir = 8
 	},
 /area/ship/crew/hydroponics)
 "ZP" = (
@@ -3829,12 +3840,12 @@ SC
 Wx
 Vu
 UD
-nZ
+UD
 Md
 IR
 Qi
 fM
-mU
+UD
 xJ
 xJ
 xJ
@@ -3998,11 +4009,11 @@ xJ
 xJ
 xJ
 xJ
-bq
+IT
 Ig
 Vf
 Ni
-bq
+IT
 xJ
 xJ
 xJ

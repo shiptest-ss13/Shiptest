@@ -203,7 +203,7 @@ Assistant
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	accessory = /obj/item/clothing/neck/scarf/orange
 	l_pocket = /obj/item/pda/medical
-	r_pocket = /obj/item/storage/pill_bottle/floorpill
+	r_pocket = /obj/item/reagent_containers/pill/floorpill
 	belt = /obj/item/reagent_scanner
 	backpack_contents = list(/obj/item/book/manual/wiki/chemistry=1)
 
