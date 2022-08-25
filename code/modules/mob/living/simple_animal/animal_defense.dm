@@ -81,21 +81,21 @@
 	. = ..()
 	if(.)
 		var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
-		return attack_threshold_check(damage, M.melee_damage_type)
+		return attack_threshold_check(damage, M.melee_damage_type, armour_pen = M.armour_penetration)
 
 /mob/living/simple_animal/attack_slime(mob/living/simple_animal/slime/M)
 	if(..()) //successful slime attack
 		var/damage = rand(15, 25)
 		if(M.is_adult)
 			damage = rand(20, 35)
-		return attack_threshold_check(damage)
+		return attack_threshold_check(damage, M.melee_damage_type, armour_pen = M.armour_penetration)
 
 /mob/living/simple_animal/attack_drone(mob/living/simple_animal/drone/M)
 	if(M.a_intent == INTENT_HARM) //No kicking dogs even as a rogue drone. Use a weapon.
 		return
 	return ..()
 
-/mob/living/simple_animal/proc/attack_threshold_check(damage, damagetype = BRUTE, armorcheck = "melee")
+/mob/living/simple_animal/proc/attack_threshold_check(damage, damagetype = BRUTE, armor_type = "melee", armour_pen = 0)
 	var/temp_damage = damage
 	if(!damage_coeff[damagetype])
 		temp_damage = 0
@@ -106,7 +106,7 @@
 		visible_message("<span class='warning'>[src] looks unharmed!</span>")
 		return FALSE
 	else
-		apply_damage(damage, damagetype, null, getarmor(null, armorcheck))
+		apply_damage(damage, damagetype, null, run_armor_check(null, armor_type, armour_pen, silent=TRUE))
 		return TRUE
 
 /*		WS Edit - Whitesands

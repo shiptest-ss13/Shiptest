@@ -1,14 +1,26 @@
 {
 	"map_name": "Delta-class Frigate",
+	"prefix": "NTSV",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"BRITISH_NAVY",
+		"MERCANTILE"
+	],
 	"map_short_name": "Delta-class",
 	"map_path": "_maps/shuttles/shiptest/whiteship_delta.dmm",
 	"map_id": "whiteship_delta",
 	"job_slots": {
-		"Captain": 1,
-		"Quartermaster": 1,
-		"Medical Doctor": 1,
-		"Station Engineer": 1,
-		"Shaft Miner": 1,
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/nt",
+			"officer": true,
+			"slots": 1
+		},
+		"Roboticist": 2,
+		"Engineer": {
+			"outfit": "/datum/outfit/job/engineer/nt",
+			"slots": 1
+		},
 		"Assistant": 3
 	},
 	"cost": 500

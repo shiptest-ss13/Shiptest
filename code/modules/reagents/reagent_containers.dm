@@ -64,7 +64,12 @@
 
 /obj/item/reagent_containers/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Currently transferring [amount_per_transfer_from_this]u with each pour.</span>"
+	if(istype(src, /obj/item/reagent_containers/glass))
+		. += "<span class='notice'>Currently transferring [amount_per_transfer_from_this]u with each pour.</span>"
+	if(istype(src, /obj/item/reagent_containers/dropper))
+		. += "<span class='notice'>Currently squeezing out [amount_per_transfer_from_this]u drops.</span>"
+	if(istype(src, /obj/item/reagent_containers/syringe))
+		. += "<span class='notice'>Currently injecting [amount_per_transfer_from_this]u at a time.</span>"
 	if(!can_have_cap)
 		return
 	else
