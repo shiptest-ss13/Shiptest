@@ -129,8 +129,8 @@
 
 	var/health_percent = max(H.health, 0) / 100
 
-	var/light_range = 1 + (2 * health_percent)
-	var/light_power = 1 + (1 * health_percent)
+	var/light_range = 1 + (1 * health_percent)
+	var/light_power = 1 + round(0.5 * health_percent)
 
 	ethereal_light.set_light_range_power_color(light_range, light_power, current_color)
 
