@@ -249,11 +249,15 @@
 			H.visible_message("<span class='danger'>[H]'s EM frequency is scrambled to a random color.</span>")
 		else
 			// select new color
-			var/new_etherealcolor = input(user, "Choose your Elzuosa color", "Character Preference") as null|anything in GLOB.color_list_ethereal
+			var/new_etherealcolor = input(user, "Choose your elzuosa color:", "Character Preference",default_color) as color|null
 			if(new_etherealcolor)
-				default_color = "#" + GLOB.color_list_ethereal[new_etherealcolor]
-				current_color = health_adjusted_color(H, default_color)
-				spec_updatehealth(H)
-				H.visible_message("<span class='notice'>[H] modulates \his EM frequency to [new_etherealcolor].</span>")
+				var/temp_hsv = RGBtoHSV(new_etherealcolor)
+				if(ReadHSV(temp_hsv)[3] >= ReadHSV("#505050")[3]) // elzu colors should be bright ok??
+					default_color = "#" + sanitize_hexcolor(new_etherealcolor, 6)
+					current_color = health_adjusted_color(H, default_color)
+					spec_updatehealth(H)
+					H.visible_message("<span class='notice'>[H] modulates \his EM frequency to [new_etherealcolor].</span>")
+				else
+					to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 	else
 		. = ..()
