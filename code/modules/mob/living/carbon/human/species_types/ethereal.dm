@@ -27,9 +27,10 @@
 	bodytemp_cold_damage_limit = (T20C - 10) // about 10c
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
-	mutant_bodyparts = list("elzu_horns")
-	default_features = list("elzu_horns" = "None")
+	mutant_bodyparts = list("elzu_horns", "tail_elzu")
+	default_features = list("elzu_horns" = "None", "tail_elzu" = "None")
 	species_eye_path = 'icons/mob/ethereal_parts.dmi'
+	mutant_organs = list(/obj/item/organ/tail/elzu)
 
 	species_chest = /obj/item/bodypart/chest/ethereal
 	species_head = /obj/item/bodypart/head/ethereal

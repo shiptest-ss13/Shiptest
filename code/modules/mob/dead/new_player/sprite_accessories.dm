@@ -2811,3 +2811,25 @@
 /datum/sprite_accessory/elzu_horns/clipped
 	name = "Clipped"
 	icon_state = "clipped"
+
+/datum/sprite_accessory/tails/elzu
+	icon = 'icons/mob/ethereal_parts.dmi'
+
+/datum/sprite_accessory/tails_animated/elzu
+	icon = 'icons/mob/ethereal_parts.dmi'
+
+/datum/sprite_accessory/tails/elzu/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/tails_animated/elzu/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/tails/elzu/placeholder
+	name = "Placeholder"
+	icon_state = "placeholder"
+
+/datum/sprite_accessory/tails_animated/elzu/placeholder
+	name = "Placeholder"
+	icon_state = "placeholder"
