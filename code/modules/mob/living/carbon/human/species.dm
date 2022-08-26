@@ -918,6 +918,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["vox_neck_quills"] || H.dna.features["vox_neck_quills"] == "None")
 			bodyparts_to_add -= "vox_neck_quills"
 
+	if("elzu_horns" in mutant_bodyparts)
+		if(!H.dna.features["elzu_horns"] || H.dna.features["elzu_horns"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
+			bodyparts_to_add -= "elzu_horns"
+
 ////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE
 	///Digi handling
 	if(H.dna.species.bodytype & BODYTYPE_DIGITIGRADE)
@@ -1018,6 +1022,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.vox_head_quills_list[H.dna.features["vox_head_quills"]]
 				if("vox_neck_quills")
 					S = GLOB.vox_neck_quills_list[H.dna.features["vox_neck_quills"]]
+				if("elzu_horns")
+					S = GLOB.elzu_horns_list[H.dna.features["elzu_horns"]]
 			if(!S || S.icon_state == "none")
 				continue
 

@@ -103,6 +103,8 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_head_quills, GLOB.vox_head_quills_list)
 	if(!GLOB.vox_neck_quills_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_neck_quills, GLOB.vox_neck_quills_list)
+	if(!GLOB.elzu_horns_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/elzu_horns, GLOB.elzu_horns_list)
 	//For now we will always return none for tail_human and ears.
 	//if you don't keep this alphabetised I'm going to personally steal your shins and sell them online
 	return list(
@@ -137,6 +139,7 @@
 		"vox_head_quills" = pick(GLOB.vox_head_quills_list),
 		"vox_neck_quills" = pick(GLOB.vox_neck_quills_list),
 		"wings" = "None",
+		"elzu_horns" = pick(GLOB.elzu_horns_list)
 	)
 
 /proc/random_hairstyle(gender)

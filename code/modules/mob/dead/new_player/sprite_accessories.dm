@@ -2778,3 +2778,36 @@
 /datum/sprite_accessory/vox_neck_quills/ruffhawk
 	name = "Ruffhawk"
 	icon_state = "ruffhawk"
+
+//Elzuosa
+
+/datum/sprite_accessory/elzu_horns
+	icon = 'icons/mob/ethereal_parts.dmi'
+
+/datum/sprite_accessory/elzu_horns/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/elzu_horns/short
+	name = "Short"
+	icon_state = "short"
+
+/datum/sprite_accessory/elzu_horns/helm
+	name = "Helm"
+	icon_state = "helm"
+
+/datum/sprite_accessory/elzu_horns/lunar
+	name = "Lunar"
+	icon_state = "lunar"
+
+/datum/sprite_accessory/elzu_horns/inward
+	name = "Inward"
+	icon_state = "inward"
+
+/datum/sprite_accessory/elzu_horns/majesty
+	name = "Majesty"
+	icon_state = "majesty"
+
+/datum/sprite_accessory/elzu_horns/clipped
+	name = "Clipped"
+	icon_state = "clipped"

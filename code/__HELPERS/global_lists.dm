@@ -49,6 +49,7 @@
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_tail_feathers, GLOB.kepori_tail_feathers_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_head_quills, GLOB.vox_head_quills_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_neck_quills, GLOB.vox_neck_quills_list)
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/elzu_horns,GLOB.elzu_horns_list)
 	//WS End
 
 	//Species
