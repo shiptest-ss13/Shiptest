@@ -673,7 +673,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ship/crew/canteen)
 "iJ" = (
-/obj/structure/closet/secure_closet/hydroponics,
+/obj/structure/closet/secure_closet/hydroponics{
+	req_access = null
+	},
 /obj/item/storage/box/disks_plantgene,
 /obj/item/circuitboard/machine/hydroponics,
 /obj/item/circuitboard/machine/hydroponics,
@@ -2620,8 +2622,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external)
 "Pj" = (
-/obj/structure/fans/tiny,
 /obj/effect/turf_decal/arrows/white,
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 8;
+	id = "luxembourg_cargo";
+	locked = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Pq" = (
@@ -3193,11 +3200,16 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/cargo)
 "Yc" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor/multi_tile/three_tile_hor{
 	id = "pharmentrance"
 	},
 /obj/effect/turf_decal/arrows/white,
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 4;
+	id = "luxembourg_cargo";
+	locked = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Yh" = (
@@ -3362,7 +3374,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "ZU" = (
-/obj/structure/fans/tiny,
 /obj/docking_port/mobile{
 	callTime = 250;
 	dir = 2;
