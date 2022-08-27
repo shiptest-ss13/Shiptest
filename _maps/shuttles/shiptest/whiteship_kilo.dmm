@@ -149,7 +149,7 @@
 	pixel_y = 32
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 26
 	},
 /obj/machinery/light/small{
@@ -409,16 +409,16 @@
 /obj/machinery/power/smes/engineering{
 	charge = 1e+006
 	},
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 5
-	},
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 32
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cf" = (
@@ -925,7 +925,8 @@
 	pixel_x = 32
 	},
 /obj/machinery/firealarm{
-	pixel_y = -26
+	pixel_y = -26;
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1618,7 +1619,6 @@
 	pixel_y = 4
 	},
 /obj/machinery/firealarm{
-	dir = 1;
 	pixel_y = 26
 	},
 /obj/item/areaeditor/shuttle,
@@ -1834,7 +1834,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /obj/item/gun/energy/e_gun/mini,
@@ -2248,7 +2248,7 @@
 	},
 /obj/machinery/shower{
 	pixel_x = -11;
-	pixel_y = 8
+	pixel_y = 18
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
