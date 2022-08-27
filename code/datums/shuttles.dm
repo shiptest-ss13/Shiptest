@@ -135,7 +135,7 @@
 	for(var/datum/job/job as anything in job_slots)
 		var/list/jobdetails = list()
 		jobdetails["ref"] = REF(job)
-		jobdetails["name"] = job.title
+		jobdetails["name"] = job.name
 		jobdetails["officer"] = job.officer
 		jobdetails["outfit"] = initial(job.outfit.name)
 		jobdetails["slots"] = job_slots[job]
@@ -190,7 +190,7 @@
 			if("toggleJobOfficer")
 				job_slot.officer = !job_slot.officer
 			if("setJobName")
-				job_slot.title = params["job_name"]
+				job_slot.name = params["job_name"]
 			if("setJobOutfit")
 				var/new_outfit = params["job_outfit"]
 				if(!(new_outfit in outfits))
