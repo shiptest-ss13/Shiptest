@@ -211,7 +211,6 @@
 	var/obj/item/kiss_blower = new kiss_type(user)
 	if(user.put_in_hands(kiss_blower))
 		to_chat(user, span_notice("You ready your kiss-blowing hand."))
-		user.balloon_alert_to_viewers("preparing kiss...", TRUE)
 	else
 		qdel(kiss_blower)
 		to_chat(user, span_warning("You're incapable of blowing a kiss in your current state."))
