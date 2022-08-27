@@ -555,14 +555,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
-"cB" = (
-/obj/structure/catwalk,
-/obj/machinery/conveyor{
-	id = "NTMSLoad2";
-	name = "on ramp"
-	},
-/turf/open/floor/plating/rust,
-/area/ship/cargo)
 "cC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/meter,
@@ -708,11 +700,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/carpet,
 /area/ship/crew)
-"de" = (
-/turf/open/floor/plasteel/stairs{
-	dir = 8
-	},
-/area/ship/external)
 "dr" = (
 /obj/machinery/conveyor{
 	id = "NTMSLoad2";
@@ -788,12 +775,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "fs" = (
-/obj/machinery/conveyor{
-	dir = 1;
-	id = "NTMSLoad";
-	name = "off ramp"
-	},
-/turf/open/floor/plating,
+/turf/template_noop,
 /area/ship/cargo)
 "fv" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1079,12 +1061,6 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/bridge)
-"mb" = (
-/obj/structure/railing{
-	dir = 6
-	},
-/turf/open/floor/plating/rust,
-/area/ship/external)
 "mr" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt,
@@ -1160,13 +1136,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"ox" = (
-/obj/structure/catwalk,
-/obj/effect/turf_decal/industrial/stand_clear{
-	dir = 1
-	},
-/turf/open/floor/plating/rust,
-/area/ship/external)
 "oP" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt,
@@ -1235,10 +1204,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"rX" = (
-/obj/structure/catwalk,
-/turf/open/floor/plating,
-/area/ship/external)
 "sl" = (
 /obj/machinery/power/smes/shuttle{
 	dir = 4
@@ -1328,6 +1293,7 @@
 	name = "off ramp"
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/plasticflaps,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "vv" = (
@@ -1644,22 +1610,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"Ca" = (
-/obj/structure/catwalk,
-/obj/docking_port/mobile{
-	callTime = 250;
-	can_move_docking_ports = 1;
-	dir = 2;
-	dwidth = 13;
-	height = 13;
-	launch_status = 0;
-	name = "Salvage Ship";
-	port_direction = 8;
-	preferred_direction = 4;
-	width = 24
-	},
-/turf/open/floor/plating/rust,
-/area/ship/external)
 "Cv" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
@@ -1672,13 +1622,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/titanium/yellow,
-/area/ship/cargo)
-"Cx" = (
-/obj/machinery/conveyor{
-	id = "NTMSLoad2";
-	name = "on ramp"
-	},
-/turf/open/floor/plating,
 /area/ship/cargo)
 "Da" = (
 /obj/structure/chair/comfy/shuttle,
@@ -1751,6 +1694,9 @@
 /obj/machinery/door/poddoor{
 	id = "kilocargo";
 	name = "NTMS-037 Bay Blast Door"
+	},
+/obj/machinery/door/airlock/external{
+	name = "Mining Airlock"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
@@ -1842,11 +1788,6 @@
 "Jf" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/engine)
-"Jz" = (
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/turf/open/floor/plating/rust,
-/area/ship/external)
 "Kz" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/rack,
@@ -2093,15 +2034,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
-"PW" = (
-/obj/structure/catwalk,
-/obj/machinery/conveyor{
-	dir = 1;
-	id = "NTMSLoad";
-	name = "off ramp"
-	},
-/turf/open/floor/plating/rust,
-/area/ship/cargo)
 "Qd" = (
 /obj/machinery/light{
 	dir = 8
@@ -2151,11 +2083,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
-"Rg" = (
-/turf/open/floor/plasteel/stairs{
-	dir = 4
-	},
-/area/ship/external)
 "Rq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/greenglow,
@@ -2346,12 +2273,6 @@
 /obj/machinery/vending/boozeomat/all_access,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
-"Xb" = (
-/obj/structure/railing,
-/turf/open/floor/plasteel/stairs{
-	dir = 4
-	},
-/area/ship/external)
 "XL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/reagent_dispensers/watertank,
@@ -2385,6 +2306,7 @@
 	name = "on ramp"
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/plasticflaps,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Yu" = (
@@ -2420,6 +2342,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/external{
+	name = "Mining Airlock"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "YJ" = (
@@ -2445,16 +2370,7 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
 "Zn" = (
-/obj/structure/railing,
-/turf/open/floor/plasteel/stairs{
-	dir = 8
-	},
-/area/ship/external)
-"Zt" = (
-/obj/structure/railing{
-	dir = 10
-	},
-/turf/open/floor/plating/rust,
+/turf/template_noop,
 /area/ship/external)
 "ZC" = (
 /obj/machinery/porta_turret/centcom_shuttle/weak{
@@ -2679,8 +2595,8 @@ Ti
 aa
 "}
 (12,1,1) = {"
-mb
-de
+Zn
+Zn
 Zn
 ac
 ac
@@ -2697,8 +2613,8 @@ mz
 aa
 "}
 (13,1,1) = {"
-ox
-PW
+Zn
+fs
 fs
 Ih
 LE
@@ -2715,9 +2631,9 @@ mz
 ZC
 "}
 (14,1,1) = {"
-Ca
-Jz
-rX
+Zn
+Zn
+Zn
 Ep
 aL
 YH
@@ -2733,9 +2649,9 @@ HP
 Ti
 "}
 (15,1,1) = {"
-ox
-cB
-Cx
+Zn
+fs
+fs
 dr
 Bx
 XR
@@ -2751,9 +2667,9 @@ nJ
 mz
 "}
 (16,1,1) = {"
-Zt
-Rg
-Xb
+Zn
+Zn
+Zn
 ac
 ac
 ac
