@@ -17,6 +17,8 @@
 				log_admin("[key_name(usr)] checked advanced who in-round")
 			for(var/client/C in GLOB.clients)
 				var/entry = "\t[C.key]"
+				if(!C.prefs?.whois_visible)
+					entry += "\[<b>WhoIs-Invisible</b>\]"
 				if(C.holder && C.holder.fakekey)
 					entry += " <i>(as [C.holder.fakekey])</i>"
 				if (isnewplayer(C.mob))
@@ -49,6 +51,8 @@
 				Lines += entry
 	else
 		for(var/client/C in GLOB.clients)
+			if(!C.prefs?.whois_visible)
+				continue
 			if(C.holder && C.holder.fakekey)
 				Lines += "[C.holder.fakekey] ([round(C.avgping, 1)]ms)"
 			else

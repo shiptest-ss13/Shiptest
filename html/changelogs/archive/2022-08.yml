@@ -178,3 +178,41 @@
 2022-08-21:
   triplezeta:
   - bugfix: ipc surgery works with normal tools again
+2022-08-25:
+  Apogee-dev:
+  - rscadd: Added Inteq Hound-class Corvette
+  - rscadd: Added "boombox" jukebox variant. No, you can't actually pick it up.
+  - imageadd: Added "Days Since Last Incident" sign
+  - balance: Reduced AK-47 magazine capacity to 20 rounds
+  triplezeta:
+  - rscadd: the BYO class has been remapped entirely
+  - rscadd: skipper has been totally reworked
+2022-08-26:
+  Apogee-dev:
+  - tweak: Remapped the Delta-class frigate into a robotics-focused mining ship
+  MarkSuckerberg:
+  - bugfix: Electrical storm events actually work now. They have never worked, isn't
+      that rich?
+  - tweak: Asteroids and electrical storm zaps now approach from the sides of the
+      transit map, instead of just randomly being placed.
+  MemedHams:
+  - bugfix: KA *click* message suppression fixed. Bugged subvariant removed.
+  - bugfix: The reagent pour amount information in examine now shows up on beakers,
+      droppers, and syringes, instead of every single reagent item.
+  Recoherent:
+  - tweak: All roundstart species have a bodysize option in character prefs now. Gone
+      are the days of switching to human, setting your size to Normal, then switching
+      back.
+  Sylphily:
+  - rscdel: Removed the recipes for the race changes, some stuff still obtainable
+      from xeno
+  pitaden:
+  - tweak: mushroom shavings no longer have sugar
+  - tweak: ashen bruise/burn packs should leave less byproducts
+  tiramisuapimancer:
+  - bugfix: glasses fit properly on IPCs from the side now
+  tmtmtl30:
+  - bugfix: Armor penetration now works correctly.
+  - balance: Negative armor penetration no longer causes tiny amounts of armor to
+      protect significantly more damage.
+  - tweak: Simplemob vs. simplemob combat now takes armor penetration into account.

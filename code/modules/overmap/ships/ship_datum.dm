@@ -39,7 +39,7 @@
 	var/offset = 1
 	if(movement_callback_id)
 		var/previous_time = 1 / MAGNITUDE(speed[1], speed[2])
-		offset = timeleft(movement_callback_id) / previous_time
+		offset = clamp(timeleft(movement_callback_id) / previous_time, 0, 1)
 		deltimer(movement_callback_id)
 		movement_callback_id = null //just in case
 

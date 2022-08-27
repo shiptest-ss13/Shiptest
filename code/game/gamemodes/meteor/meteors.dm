@@ -45,9 +45,8 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	var/max_i = 10//number of tries to spawn meteor.
 	while(!isspaceturf(pickedstart))
 		var/startSide = pick(GLOB.cardinals)
-		var/datum/virtual_level/startsub = vlevel || pick(SSmapping.virtual_levels_by_trait(ZTRAIT_STATION))
-		pickedstart = startsub.get_side_turf(startSide, padding)
-		pickedgoal = startsub.get_side_turf(REVERSE_DIR(startSide), padding)
+		pickedstart = vlevel.get_side_turf(startSide, padding)
+		pickedgoal = vlevel.get_side_turf(REVERSE_DIR(startSide), padding)
 		max_i--
 		if(max_i<=0)
 			return
