@@ -12,6 +12,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "am" = (
@@ -33,6 +36,10 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "kiloengine";
+	name = "Engine shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -93,6 +100,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
+/obj/structure/sign/warning/fire{
+	pixel_x = 32;
+	pixel_y = -32
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "aZ" = (
@@ -146,9 +157,9 @@
 	},
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/wallframe/advanced_airlock_controller{
-	pixel_x = -27;
-	pixel_y = 6
+/obj/machinery/advanced_airlock_controller{
+	pixel_x = -28;
+	pixel_y = 3
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
@@ -539,10 +550,6 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_x = -32
 	},
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -25
-	},
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
@@ -550,7 +557,7 @@
 "cK" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/status_display{
-	pixel_x = 32;
+	pixel_x = -32;
 	pixel_y = -32
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -620,6 +627,12 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/machinery/button/door{
+	name = "Shutter Control";
+	dir = 4;
+	pixel_y = -7;
+	pixel_x = -23
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cZ" = (
@@ -669,7 +682,6 @@
 /area/ship/crew)
 "de" = (
 /obj/effect/decal/cleanable/greenglow,
-/obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
@@ -678,7 +690,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/external{
+/obj/machinery/door/airlock/external/glass{
 	name = "Mining Airlock"
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -752,6 +764,10 @@
 /obj/structure/window/reinforced/spawner,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "kiloengine";
+	name = "Engine shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -886,8 +902,6 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
 "ig" = (
@@ -899,8 +913,6 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
 "im" = (
@@ -938,6 +950,17 @@
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "NTMSLoad";
+	name = "Off Ramp";
+	pixel_y = 9;
+	pixel_x = -8
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "NTMSLoad2";
+	name = "On Ramp";
+	pixel_x = 4
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "iT" = (
@@ -952,6 +975,11 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/advanced_airlock_controller{
+	pixel_x = 59;
+	name = "long range advanced airlock controller";
+	desc = "A machine designed to control the operation of cycling airlocks, this one is projecting its UI into the nearby windows."
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "jl" = (
@@ -1143,12 +1171,6 @@
 "qw" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
@@ -1174,10 +1196,6 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "rq" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -1220,19 +1238,17 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "sD" = (
-/obj/structure/chair/sofa/left{
-	color = "#c45c57"
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/chair/sofa/right,
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
 	},
@@ -1324,12 +1340,6 @@
 	name = "Mining Airlock"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -1343,7 +1353,7 @@
 /obj/item/storage/bag/tray,
 /obj/item/reagent_containers/food/snacks/burger/bearger,
 /obj/effect/turf_decal/siding/wood{
-	dir = 6
+	dir = 10
 	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
@@ -1351,9 +1361,11 @@
 /area/ship/crew)
 "xF" = (
 /obj/effect/decal/cleanable/blood/old,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
@@ -1432,29 +1444,21 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
 "zH" = (
-/obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/turf_decal/siding/wood{
+	dir = 2
+	},
+/obj/structure/chair/sofa/left{
+	dir = 8
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
-/area/ship/crew)
-"zM" = (
-/obj/structure/sign/warning/fire,
-/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
 "AB" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external{
 	name = "Mining Airlock"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -1462,7 +1466,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/turf/open/space/basic,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "AE" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -1626,6 +1633,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/chair/sofa/corner,
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
@@ -1643,8 +1651,6 @@
 /obj/machinery/computer/cryopod{
 	pixel_y = 32
 	},
-/obj/item/bedsheet/random,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/wood,
 /area/ship/crew)
 "EU" = (
@@ -2004,12 +2010,6 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
@@ -2089,6 +2089,10 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "kiloengine";
+	name = "Engine shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "To" = (
@@ -2112,14 +2116,14 @@
 /obj/structure/table,
 /obj/machinery/button/door{
 	id = "whiteship_bridge";
-	name = "NTMS-037 Bridge Blast Door Control";
+	name = "Bridge Blast Door Control";
 	pixel_x = -6;
 	pixel_y = -2;
 	dir = 1
 	},
 /obj/machinery/button/door{
 	id = "whiteship_windows";
-	name = "NTMS-037 Windows Blast Door Control";
+	name = "Windows Blast Door Control";
 	pixel_x = -6;
 	pixel_y = 8;
 	dir = 1
@@ -2234,7 +2238,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/greenglow,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/toilet{
 	dir = 4;
 	pixel_x = -7
@@ -2473,7 +2476,7 @@ Jf
 cb
 yd
 cr
-zM
+mz
 mz
 cZ
 Bm
