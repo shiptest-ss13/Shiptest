@@ -90,8 +90,8 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 	w_class = WEIGHT_CLASS_NORMAL
 	var/stored_alcohol = 250 //They start with 250 units, that ticks down and eventaully bad effects occur
 	var/max_alcohol = 500 //Max they can attain, easier than you think to OD on alcohol.
-	var/heal_rate = 0.15 //The rate they heal damages over 350 alcohol stored.
-	var/alcohol_rate = 0.25 //The rate the alcohol ticks down per each iteration of dwarf_eth_ticker completing.
+	var/heal_rate = 0.20 //The rate they heal damages over 350 alcohol stored.
+	var/alcohol_rate = 0.20 //The rate the alcohol ticks down per each iteration of dwarf_eth_ticker completing.
 	//These count in on_life ticks which should be 2 seconds per every increment of 1 in a perfect world.
 	var/dwarf_eth_ticker = 0 //Currently set =< 1, that means this will fire the proc around every 2 seconds
 	var/last_alcohol_spam
@@ -134,16 +134,16 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 		owner.adjustCloneLoss(-heal_amt / 15)
 		owner.throw_alert("overdorf", /atom/movable/screen/alert/overdorf)
 		switch(owner.bodytemperature)
-			if(-300 to 349)
+			if(-300 to 400)
 				if(last_alcohol_spam + 90 SECONDS < world.time)
 					to_chat(owner, pick("<span class='notice'>Your blood is racing.</span>", "<span class='notice'>You're past the limit.</span>", "<span class='notice'>You feel alive!</span>"))
 					last_alcohol_spam = world.time
-				alcohol_rate = 0.25
-				owner.adjust_bodytemperature(8.5)
-			if(350 to 700)//you're going too far! Slow down there, laddie!
+				alcohol_rate = 0.20
+				owner.adjust_bodytemperature(10.5)
+			if(401 to 700)//you're going too far! Slow down there, laddie!
 				owner.adjustFireLoss(1.5, 0)
 				owner.Jitter(5)
-				owner.adjust_bodytemperature(10.5)
+				owner.adjust_bodytemperature(8.5)
 				alcohol_rate = 0.65
 				if(last_alcohol_spam + 60 SECONDS < world.time)
 					to_chat(owner, pick("<span class='warning'>You can't stop sweating.</span>", "<span class='warning'>Your muscles are aching.</span>", "<span class='warning'>You can feel your heart pounding like a pickaxe.</span>"))
@@ -171,7 +171,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 					last_alcohol_spam = world.time
 	else
 		owner.clear_alert("overdorf")
-		alcohol_rate = 0.25
+		alcohol_rate = 0.20
 	if(init_stored_alcohol + 55 < stored_alcohol)
 		return
 	switch(stored_alcohol)
