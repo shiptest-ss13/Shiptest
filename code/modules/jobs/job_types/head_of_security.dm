@@ -92,7 +92,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/ammo_box/magazine/m45=1, /obj/item/pda/heads/hos)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/heads/hos)
 
 /datum/outfit/job/hos/inteq/naked
 	name = "IRMG Vanguard (Inteq) (Naked)"

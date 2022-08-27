@@ -202,9 +202,20 @@
 
 /datum/world_topic/whois/Run(list/input)
 	. = list()
-	.["players"] = GLOB.clients
+	for(var/client/client as anything in GLOB.clients)
+		if(!client?.prefs.whois_visible) // fuck you byond
+			continue
+		.["players"] += client
 
 	return list2params(.)
+
+/datum/world_topic/whois_all
+	keyword = "whoIsAll"
+
+/datum/world_topic/whois_all/Run(list/input)
+	if(!key_valid)
+		return list()
+	return list2params(list("players" = GLOB.clients))
 
 /datum/world_topic/getadmins
 	keyword = "getAdmins"
