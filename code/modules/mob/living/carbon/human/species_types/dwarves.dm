@@ -143,7 +143,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 			if(350 to 700)//you're going too far! Slow down there, laddie!
 				owner.adjustFireLoss(1.5, 0)
 				owner.Jitter(5)
-				owner.adjust_bodytemperature(8.5)
+				owner.adjust_bodytemperature(10.5)
 				alcohol_rate = 0.65
 				if(last_alcohol_spam + 60 SECONDS < world.time)
 					to_chat(owner, pick("<span class='warning'>You can't stop sweating.</span>", "<span class='warning'>Your muscles are aching.</span>", "<span class='warning'>You can feel your heart pounding like a pickaxe.</span>"))
