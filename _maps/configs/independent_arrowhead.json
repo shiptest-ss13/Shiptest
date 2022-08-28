@@ -1,0 +1,27 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Arrowhead-class Long Range Scoutship",
+	"prefix": "ISV",
+	"namelists": ["GENERAL", "SPACE", "MYTHOLOGICAL"],
+	"map_short_name": "Arrowhead-class",
+	"map_path": "_maps/shuttles/shiptest/independent_arrowhead.dmm",
+	"roundstart": true,
+	"job_slots": {
+		"Captain": 1,
+		"Medical Doctor": 1,
+		"Botanist": 1,
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
+		"Field Surveyor": {
+			"outfit": "/datum/outfit/job/miner/hazard",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
