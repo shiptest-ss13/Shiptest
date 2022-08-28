@@ -275,6 +275,9 @@
 /obj/effect/turf_decal/trimline/opaque/lightgrey/filled/line{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "dz" = (
@@ -448,6 +451,9 @@
 /obj/effect/turf_decal/trimline/opaque/lightgrey/filled/line{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "fq" = (
@@ -466,6 +472,9 @@
 "fu" = (
 /obj/effect/turf_decal/corner/transparent/blue/three_quarters{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -907,6 +916,17 @@
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 9
 	},
+/obj/machinery/button/shieldwallgen{
+	id = "holopharm";
+	pixel_x = 25;
+	pixel_y = -7
+	},
+/obj/structure/sign/warning/securearea{
+	desc = "A sign warning viewers of the danger of not properly activating their holofans.";
+	name = "\improper WARNING: HOLOFANS sign";
+	pixel_x = 25;
+	pixel_y = 9
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/cargo)
 "lE" = (
@@ -979,6 +999,14 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
+"mU" = (
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	id = "luxembourg_cargo";
+	locked = 1
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/security)
 "nl" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
@@ -1427,6 +1455,12 @@
 /obj/effect/turf_decal/trimline/opaque/lightgrey/filled/line{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "wQ" = (
@@ -1542,6 +1576,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/transparent/blue/three_quarters,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "yB" = (
@@ -1918,6 +1955,9 @@
 /area/ship/medical)
 "Hx" = (
 /obj/item/kirbyplants/photosynthetic,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "Hz" = (
@@ -2222,6 +2262,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "Mb" = (
@@ -2248,6 +2291,9 @@
 "Mf" = (
 /obj/effect/turf_decal/corner/transparent/blue/three_quarters{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -2333,6 +2379,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -2626,8 +2675,11 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 8;
-	id = "luxembourg_cargo";
+	id = "holopharm";
 	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -3207,8 +3259,11 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 4;
-	id = "luxembourg_cargo";
+	id = "holopharm";
 	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -3390,7 +3445,7 @@
 xJ
 xJ
 xJ
-Fz
+mU
 Yk
 YV
 vn
@@ -3482,8 +3537,8 @@ tR
 Yw
 "}
 (6,1,1) = {"
-Fz
-OO
+Vd
+Vd
 MS
 cH
 OO
