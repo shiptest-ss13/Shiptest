@@ -304,7 +304,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
  * * offerer - The person giving the alert and item
  * * receiving - The item being given by the offerer
  */
-/atom/movable/screen/alert/give/proc/setup(mob/living/carbon/taker, mob/living/carbon/giver, obj/item/receiving)
+/atom/movable/screen/alert/give/proc/setup(mob/living/carbon/taker, mob/living/carbon/offerer, obj/item/receiving)
 	name = "[offerer] is offering [receiving]"
 	desc = "[offerer] is offering [receiving]. Click this alert to take it."
 	icon_state = "template"
