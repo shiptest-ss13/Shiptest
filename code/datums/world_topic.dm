@@ -201,11 +201,11 @@
 	keyword = "whoIs"
 
 /datum/world_topic/whois/Run(list/input)
-	. = list()
+	. = list("players" = list())
 	for(var/client/client as anything in GLOB.clients)
 		if(!client?.prefs.whois_visible) // fuck you byond
 			continue
-		.["players"] += client
+		.["players"] += client.ckey
 
 	return list2params(.)
 
