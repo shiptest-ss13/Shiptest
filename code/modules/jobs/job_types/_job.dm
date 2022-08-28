@@ -6,7 +6,7 @@
 	var/officer = FALSE
 
 	///The outfit this job will recieve upon joining.
-	var/outfit = null
+	var/datum/outfit/job/outfit = null
 
 	//Job access. The use of minimal_access or access is determined by a config setting: config.jobs_have_minimal_access
 	var/list/minimal_access = list()		//Useful for servers which prefer to only have access given to the places a job absolutely needs (Larger server population)
