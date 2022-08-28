@@ -200,6 +200,8 @@ SUBSYSTEM_DEF(mapping)
 			S.name_categories = data["namelists"]
 		if ( isnum( data[ "unique_ship_access" ] && data["unique_ship_access"] ) )
 			S.unique_ship_access = data[ "unique_ship_access" ]
+		if(istext(data["description"]))
+			S.description = data["description"]
 
 		S.job_slots = list()
 		var/list/job_slot_list = data["job_slots"]
@@ -226,8 +228,8 @@ SUBSYSTEM_DEF(mapping)
 				continue
 
 			S.job_slots[job_slot] = slots
-		if(isnum(data["cost"]))
-			S.cost = data["cost"]
+		if(isnum(data["enabled"]) && data["enabled"])
+			S.enabled = TRUE
 			ship_purchase_list[S.name] = S
 		if(isnum(data["limit"]))
 			S.limit = data["limit"]
