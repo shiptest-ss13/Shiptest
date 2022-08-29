@@ -25,6 +25,10 @@
 /obj/effect/decal/cleanable/xenoblood,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/nanotrasen_office/canteen)
+"am" = (
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/nanotrasen_office/canteen)
 "aB" = (
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel,
@@ -569,12 +573,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/nanotrasen_office/entrancearea)
 "pi" = (
-/obj/structure/table/wood,
-/obj/structure/table/wood,
-/obj/item/stamp/denied,
-/obj/item/stamp,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/nanotrasen_office/cubicles)
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/nanotrasen_office/canteen)
 "pu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fluff/paper/stack{
@@ -689,6 +690,7 @@
 "sJ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nanotrasen_office/entrancearea)
 "sK" = (
@@ -990,6 +992,7 @@
 "BF" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
+/obj/structure/grille,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/nanotrasen_office/entrancearea)
 "BK" = (
@@ -1062,10 +1065,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/nanotrasen_office/canteen)
 "EU" = (
-/obj/effect/decal/cleanable/glass,
-/obj/structure/grille/broken,
-/obj/structure/grille/broken,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/nanotrasen_office/entrancearea)
 "EV" = (
 /obj/structure/railing{
@@ -1360,6 +1362,7 @@
 /area/ruin/space/has_grav/nanotrasen_office/canteen)
 "LG" = (
 /obj/machinery/light/broken,
+/obj/item/restraints/legcuffs/beartrap,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nanotrasen_office/canteen)
 "LX" = (
@@ -1676,7 +1679,6 @@
 /area/ruin/space/has_grav/nanotrasen_office/files)
 "Wl" = (
 /obj/structure/table/wood,
-/obj/structure/table/wood,
 /obj/item/stamp/denied,
 /obj/item/stamp,
 /turf/open/floor/wood/ebony,
@@ -1711,7 +1713,6 @@
 /obj/item/folder/red,
 /obj/item/pen,
 /obj/item/folder,
-/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/nanotrasen_office/entrancearea)
@@ -2086,7 +2087,7 @@ Tr
 Gh
 Ue
 Em
-ZM
+pi
 ZM
 LG
 Qj
@@ -2172,7 +2173,7 @@ Vh
 Em
 Yc
 ZM
-ZM
+am
 qB
 fQ
 sP
@@ -2730,7 +2731,7 @@ qM
 bM
 XF
 NO
-vB
+EU
 sJ
 FP
 FP
@@ -2917,7 +2918,7 @@ gk
 gk
 gk
 Kl
-pi
+Wl
 AS
 Gr
 Wl
@@ -3067,7 +3068,7 @@ ix
 ix
 ix
 yx
-EU
+qD
 FP
 FP
 ZQ
