@@ -51,11 +51,7 @@
 		O.r_hand = null
 		O.l_hand = null //It would be confusing if, say, the medical hologram had a fake medkit
 
-	var/icon/initial_icon = get_flat_human_icon("hologram_[job_type?.title]", job_type, _prefs, "static", outfit_override = O)
-	var/icon/alpha_mask = new('icons/effects/effects.dmi', "scanline")//Scanline effect.
-	initial_icon.AddAlphaMask(alpha_mask)
-	icon = initial_icon
-	icon_living = initial_icon
+	INVOKE_ASYNC(src, .proc/icon_setup, O, _prefs)
 
 	access_card = new /obj/item/card/id(src)
 	access_card?.access |= job_type.access //dunno how the access card would delete itself before then, but this is DM, after all
@@ -78,6 +74,13 @@
 		for(var/obj/item/content in to_add.contents)
 			holoitems += content
 
+/mob/living/simple_animal/hologram/proc/icon_setup(outfit, _prefs)
+	var/icon/initial_icon = get_flat_human_icon("hologram_[job_type?.name]", job_type, _prefs, "static", outfit_override = outfit)
+	var/icon/alpha_mask = new('icons/effects/effects.dmi', "scanline")//Scanline effect.
+	initial_icon.AddAlphaMask(alpha_mask)
+	icon = initial_icon
+	icon_living = initial_icon
+
 /mob/living/simple_animal/hologram/Destroy()
 	. = ..()
 	for(var/obj/todelete in holoitems)
@@ -94,7 +97,7 @@
 
 /mob/living/simple_animal/hologram/Move(atom/newloc, direct)
 	. = ..()
-	if(!holopad.anchored || holopad.machine_stat)
+	if(!holopad || !holopad.anchored || holopad.machine_stat)
 		for(var/I in holopad.holopads)
 			var/obj/machinery/holopad/another = I
 			if(another == holopad || another.machine_stat || !another.anchored)

@@ -157,7 +157,7 @@
 		/area/wizard_station
 	)
 	for (var/type in SPECIALS)
-		if ( istype(A,type) )
+		if (istype(A,type))
 			return AREA_SPECIAL
 	return AREA_STATION
 
@@ -323,7 +323,7 @@
 	if(!area_choice)
 		to_chat(creator, "<span class='warning'>No choice selected. The area remains undefined.</span>")
 		return
-	var/area/newA
+	var/area/ship/newA
 	var/area/oldA = get_area(get_turf(creator))
 	if(!isarea(area_choice))
 		var/str = stripped_input(creator,"New area name:", "Blueprint Editing", "", MAX_NAME_LEN)
@@ -364,6 +364,7 @@
 	target_shuttle.shuttle_areas[newA] = TRUE
 
 	newA.connect_to_shuttle(target_shuttle, target_shuttle.get_docked())
+	newA.mobile_port = target_shuttle
 	for(var/atom/thing in newA)
 		thing.connect_to_shuttle(target_shuttle, target_shuttle.get_docked())
 

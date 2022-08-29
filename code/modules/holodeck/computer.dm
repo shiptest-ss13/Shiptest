@@ -190,7 +190,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 	if (program == map_id)
 		return
 
-	if (is_operational())//load_program is called once with a timer (in toggle_power) we dont want this to load anything if its off
+	if (is_operational)//load_program is called once with a timer (in toggle_power) we dont want this to load anything if its off
 		map_id = offline_program
 		force = TRUE
 

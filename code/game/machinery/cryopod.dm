@@ -338,7 +338,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		visible_message("<span class='notice'>\The [src] hums and hisses as it moves [mob_occupant.real_name] into storage.</span>")
 
 	for(var/obj/item/W as anything in mob_occupant.GetAllContents())
-		if(W.loc.loc && (( W.loc.loc == loc ) || (W.loc.loc == control_computer_obj)))
+		if(W.loc.loc && ((W.loc.loc == loc) || (W.loc.loc == control_computer_obj)))
 			continue//means we already moved whatever this thing was in
 			//I'm a professional, okay
 			//what the fuck are you on rn and can I have some

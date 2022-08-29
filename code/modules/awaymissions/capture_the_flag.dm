@@ -177,13 +177,11 @@
 
 /obj/machinery/capture_the_flag/process()
 	for(var/i in spawned_mobs)
-		if(!i)
-			spawned_mobs -= i
-			continue
 		// Anyone in crit, automatically reap
 		var/mob/living/living_participant = i
 		if(HAS_TRAIT(living_participant, TRAIT_CRITICAL_CONDITION) || living_participant.stat == DEAD)
 			ctf_dust_old(living_participant)
+			spawned_mobs -= living_participant
 		else
 			// The changes that you've been hit with no shield but not
 			// instantly critted are low, but have some healing.
@@ -612,7 +610,7 @@
 	invisibility = 0
 
 /obj/effect/ctf/ammo/Initialize(mapload)
-	..()
+	. = ..()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)

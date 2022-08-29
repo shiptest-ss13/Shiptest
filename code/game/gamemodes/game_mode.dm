@@ -91,7 +91,6 @@
 /datum/game_mode/proc/post_setup(report) //Gamemodes can override the intercept report. Passing TRUE as the argument will force a report.
 	if(!report)
 		report = !CONFIG_GET(flag/no_intercept_report)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/display_roundstart_logout_report), ROUNDSTART_LOGOUT_REPORT_TIME)
 
 	if(CONFIG_GET(flag/reopen_roundstart_suicide_roles))
 		var/delay = CONFIG_GET(number/reopen_roundstart_suicide_roles_delay)
@@ -302,59 +301,8 @@
 		set_security_level(SEC_LEVEL_BLUE)
 
 
-// This is a frequency selection system. You may imagine it like a raffle where each player can have some number of tickets. The more tickets you have the more likely you are to
-// "win". The default is 100 tickets. If no players use any extra tickets (earned with the antagonist rep system) calling this function should be equivalent to calling the normal
-// pick() function. By default you may use up to 100 extra tickets per roll, meaning at maximum a player may double their chances compared to a player who has no extra tickets.
-//
-// The odds of being picked are simply (your_tickets / total_tickets). Suppose you have one player using fifty (50) extra tickets, and one who uses no extra:
-//     Player A: 150 tickets
-//     Player B: 100 tickets
-//        Total: 250 tickets
-//
-// The odds become:
-//     Player A: 150 / 250 = 0.6 = 60%
-//     Player B: 100 / 250 = 0.4 = 40%
+// Antag rep used to mostly live here. Now it's dead.
 /datum/game_mode/proc/antag_pick(list/datum/candidates)
-	if(!CONFIG_GET(flag/use_antag_rep)) // || candidates.len <= 1)
-		return pick(candidates)
-
-	// Tickets start at 100
-	var/DEFAULT_ANTAG_TICKETS = CONFIG_GET(number/default_antag_tickets)
-
-	// You may use up to 100 extra tickets (double your odds)
-	var/MAX_TICKETS_PER_ROLL = CONFIG_GET(number/max_tickets_per_roll)
-
-
-	var/total_tickets = 0
-
-	MAX_TICKETS_PER_ROLL += DEFAULT_ANTAG_TICKETS
-
-	var/p_ckey
-	var/p_rep
-
-	for(var/datum/mind/mind in candidates)
-		p_ckey = ckey(mind.key)
-		total_tickets += min(SSpersistence.antag_rep[p_ckey] + DEFAULT_ANTAG_TICKETS, MAX_TICKETS_PER_ROLL)
-
-	var/antag_select = rand(1,total_tickets)
-	var/current = 1
-
-	for(var/datum/mind/mind in candidates)
-		p_ckey = ckey(mind.key)
-		p_rep = SSpersistence.antag_rep[p_ckey]
-
-		var/previous = current
-		var/spend = min(p_rep + DEFAULT_ANTAG_TICKETS, MAX_TICKETS_PER_ROLL)
-		current += spend
-
-		if(antag_select >= previous && antag_select <= (current-1))
-			SSpersistence.antag_rep_change[p_ckey] = -(spend - DEFAULT_ANTAG_TICKETS)
-
-//			WARNING("AR_DEBUG: Player [mind.key] won spending [spend] tickets from starting value [SSpersistence.antag_rep[p_ckey]]")
-
-			return mind
-
-	WARNING("Something has gone terribly wrong. /datum/game_mode/proc/antag_pick failed to select a candidate. Falling back to pick()")
 	return pick(candidates)
 
 /datum/game_mode/proc/get_players_for_role(role)
@@ -458,67 +406,6 @@
 		if(player.mind && (player.mind.assigned_role in GLOB.nonhuman_positions))
 			. |= player.mind
 
-//////////////////////////
-//Reports player logouts//
-//////////////////////////
-/proc/display_roundstart_logout_report()
-	var/list/msg = list("<span class='boldnotice'>Roundstart logout report\n\n</span>")
-	for(var/i in GLOB.mob_living_list)
-		var/mob/living/L = i
-		var/mob/living/carbon/C = L
-		if (istype(C) && !C.last_mind)
-			continue  // never had a client
-
-		if(L.ckey && !GLOB.directory[L.ckey])
-			msg += "<b>[L.name]</b> ([L.key]), the [L.job] (<font color='#ffcc00'><b>Disconnected</b></font>)\n"
-
-
-		if(L.ckey && L.client)
-			var/failed = FALSE
-			if(L.client.inactivity >= (ROUNDSTART_LOGOUT_REPORT_TIME / 2))	//Connected, but inactive (alt+tabbed or something)
-				msg += "<b>[L.name]</b> ([L.key]), the [L.job] (<font color='#ffcc00'><b>Connected, Inactive</b></font>)\n"
-				failed = TRUE //AFK client
-			if(!failed && L.stat)
-				if(L.suiciding)	//Suicider
-					msg += "<b>[L.name]</b> ([L.key]), the [L.job] (<span class='boldannounce'>Suicide</span>)\n"
-					failed = TRUE //Disconnected client
-				if(!failed && (L.stat == UNCONSCIOUS || L.stat == HARD_CRIT))
-					msg += "<b>[L.name]</b> ([L.key]), the [L.job] (Dying)\n"
-					failed = TRUE //Unconscious
-				if(!failed && L.stat == DEAD)
-					msg += "<b>[L.name]</b> ([L.key]), the [L.job] (Dead)\n"
-					failed = TRUE //Dead
-
-			var/p_ckey = L.client.ckey
-//			WARNING("AR_DEBUG: [p_ckey]: failed - [failed], antag_rep_change: [SSpersistence.antag_rep_change[p_ckey]]")
-
-			// people who died or left should not gain any reputation
-			// people who rolled antagonist still lose it
-			if(failed && SSpersistence.antag_rep_change[p_ckey] > 0)
-//				WARNING("AR_DEBUG: Zeroed [p_ckey]'s antag_rep_change")
-				SSpersistence.antag_rep_change[p_ckey] = 0
-
-			continue //Happy connected client
-		for(var/mob/dead/observer/D in GLOB.dead_mob_list)
-			if(D.mind && D.mind.current == L)
-				if(L.stat == DEAD)
-					if(L.suiciding)	//Suicider
-						msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), the [L.job] (<span class='boldannounce'>Suicide</span>)\n"
-						continue //Disconnected client
-					else
-						msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), the [L.job] (Dead)\n"
-						continue //Dead mob, ghost abandoned
-				else
-					if(D.can_reenter_corpse)
-						continue //Adminghost, or cult/wizard ghost
-					else
-						msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), the [L.job] (<span class='boldannounce'>Ghosted</span>)\n"
-						continue //Ghosted while alive
-
-
-	for (var/C in GLOB.admins)
-		to_chat(C, msg.Join())
-
 //If the configuration option is set to require players to be logged as old enough to play certain jobs, then this proc checks that they are, otherwise it just returns 1
 /datum/game_mode/proc/age_check(client/C)
 	if(get_remaining_days(C) == 0)
@@ -592,7 +479,7 @@
 		else
 			for(var/name in final_ship.manifest)
 				var/datum/job/their_job = final_ship.manifest[name]
-				. += "<center><h2>[name] as the [their_job.title]</h2></center><br>"
+				. += "<center><h2>[name] as the [their_job.name]</h2></center><br>"
 		. += "<br>"
 
 	. += "<br>"

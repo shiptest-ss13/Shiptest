@@ -231,7 +231,7 @@
 			new /obj/item/gun/ballistic/shotgun/toy(src)
 			new /obj/item/gun/ballistic/automatic/toy/pistol/unrestricted(src)
 			new /obj/item/gun/ballistic/automatic/toy/unrestricted(src)
-			new /obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted(src)
+			new /obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/unrestricted(src)
 			new /obj/item/ammo_box/foambox(src)
 		if(98)
 			for(var/i in 1 to 3)

@@ -220,7 +220,7 @@
 /obj/item/pinpointer/deepcore
 	name = "dual mining scanner"
 	desc = "A handheld dowsing utility for locating material deep beneath the surface and on the surface. Alt-Click to change modes."
-	icon = 'whitesands/icons/obj/mining.dmi'
+	icon = 'icons/obj/mining.dmi'
 	icon_state = "mining"
 	custom_price = 300
 	custom_premium_price = 300
