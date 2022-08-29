@@ -1,6 +1,11 @@
-
-/mob/living/proc/run_armor_check(def_zone = null, attack_flag = "melee", absorb_text = null, soften_text = null, armour_penetration, penetrated_text, silent=FALSE)
-	var/armor = getarmor(def_zone, attack_flag)
+/mob/living/proc/run_armor_check(
+		def_zone = null, attack_flag = "melee", armour_penetration = 0,
+		absorb_text = null, soften_text = null, penetrated_text = null, silent = FALSE
+	)
+	var/base_armor = getarmor(def_zone, attack_flag)
+	// if negative or 0 armor, no modifications are necessary
+	if(base_armor <= 0)
+		return base_armor
 
 	var/armor
 	if(armour_penetration >= 0)
