@@ -256,8 +256,6 @@
 	var/law = "Accomplish your objectives at all costs."
 	var/law_borg = "Accomplish your AI's objectives at all costs."
 	killer.set_zeroth_law(law, law_borg)
-	killer.set_syndie_radio()
-	to_chat(killer, "Your radio has been upgraded! Use :t to speak on an encrypted channel with Syndicate Agents!")
 	killer.add_malf_picker()
 
 /datum/antagonist/traitor/proc/equip(silent = FALSE)

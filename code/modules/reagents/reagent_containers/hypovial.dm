@@ -2,7 +2,7 @@
 /obj/item/reagent_containers/glass/bottle/vial
 	name = "broken hypovial"
 	desc = "A hypovial compatible with most hyposprays."
-	icon = 'whitesands/icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical.dmi'
 	icon_state = "hypovial"
 	spillable = FALSE
 	var/comes_with = list() //Easy way of doing this.

@@ -3,12 +3,9 @@ SolGov Representative
 */
 
 /datum/job/solgov
-	title = "SolGov Representative"
-	faction = "Station"
+	name = "SolGov Representative"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "The Captain, SolGov, and Space Law"
-	selection_color = "#b6b6e6"
 	wiki_page = "Government_Attaché"
 	minimal_player_age = 7
 	exp_requirements = 180
@@ -28,6 +25,7 @@ SolGov Representative
 
 /datum/outfit/job/solgov
 	name = "SolGov Representative"
+	job_icon = "solgovrepresentative"
 	jobtype = /datum/job/solgov
 
 	id = /obj/item/card/id/silver
@@ -35,7 +33,7 @@ SolGov Representative
 	uniform = /obj/item/clothing/under/solgov/formal
 	accessory = /obj/item/clothing/accessory/waistcoat/solgov
 	suit = /obj/item/clothing/suit/toggle/solgov
-	alt_suit = /obj/item/clothing/suit/solgov_trenchcoat
+	alt_suit = /obj/item/clothing/suit/armor/solgov_trenchcoat
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup

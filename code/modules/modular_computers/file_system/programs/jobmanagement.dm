@@ -34,18 +34,18 @@
 	change_position_cooldown = CONFIG_GET(number/id_console_jobslot_delay)
 
 /datum/computer_file/program/job_management/proc/can_open_job(datum/job/job)
-	if(!(job?.title in blacklisted))
+	if(!(job?.name in blacklisted))
 		if((job.total_positions <= length(GLOB.player_list) * (max_relative_positions / 100)))
 			var/delta = (world.time / 10) - GLOB.time_last_changed_position
-			if((change_position_cooldown < delta) || (opened_positions[job.title] < 0))
+			if((change_position_cooldown < delta) || (opened_positions[job.name] < 0))
 				return TRUE
 	return FALSE
 
 /datum/computer_file/program/job_management/proc/can_close_job(datum/job/job)
-	if(!(job?.title in blacklisted))
+	if(!(job?.name in blacklisted))
 		if(job.total_positions > length(GLOB.player_list) * (max_relative_positions / 100))
 			var/delta = (world.time / 10) - GLOB.time_last_changed_position
-			if((change_position_cooldown < delta) || (opened_positions[job.title] > 0))
+			if((change_position_cooldown < delta) || (opened_positions[job.name] > 0))
 				return TRUE
 	return FALSE
 
@@ -119,11 +119,11 @@
 	var/list/pos = list()
 	for(var/j in SSjob.occupations)
 		var/datum/job/job = j
-		if(job.title in blacklisted)
+		if(job.name in blacklisted)
 			continue
 
 		pos += list(list(
-			"title" = job.title,
+			"title" = job.name,
 			"current" = job.current_positions,
 			"total" = job.total_positions,
 			"status_open" = authed ? can_open_job(job) : FALSE,
@@ -135,7 +135,7 @@
 	var/list/priority = list()
 	for(var/j in SSjob.prioritized_jobs)
 		var/datum/job/job = j
-		priority += job.title
+		priority += job.name
 	data["prioritized"] = priority
 	return data
 

@@ -6,6 +6,8 @@
 /obj/item/clothing/suit/apron
 	name = "apron"
 	desc = "A basic blue apron."
+	icon = 'icons/obj/clothing/suits/utility.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "apron"
 	item_state = "apron"
 	blood_overlay_type = "armor"
@@ -84,6 +86,8 @@
 /obj/item/clothing/suit/hazardvest
 	name = "hazard vest"
 	desc = "A high-visibility vest used in work zones."
+	icon = 'icons/obj/clothing/suits/utility.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "hazard"
 	item_state = "hazard"
 	blood_overlay_type = "armor"
@@ -205,64 +209,12 @@
 	blood_overlay_type = "armor" //it's the less thing that I can put here
 	togglename = "straps"
 
-//Security
-/obj/item/clothing/suit/armor/vest/security
-	item_state = "armor"
-	body_parts_covered = CHEST|GROIN|ARMS
-	cold_protection = CHEST|GROIN|ARMS|HANDS
-	heat_protection = CHEST|GROIN|ARMS|HANDS
-	strip_delay = 70
-	resistance_flags = FLAMMABLE
-	dog_fashion = null
-
-/obj/item/clothing/suit/armor/vest/security/officer
-	name = "security officer's jacket"
-	desc = "This jacket is for those special occasions when a security officer isn't required to wear their armor."
-	icon_state = "officerjacket"
-	body_parts_covered = CHEST|ARMS
-
-/obj/item/clothing/suit/armor/vest/security/warden
-	name = "warden's jacket"
-	desc = "Perfectly suited for the warden that wants to leave an impression of style on those who visit the brig."
-	icon_state = "wardenjacket"
-	body_parts_covered = CHEST|ARMS
-
-/obj/item/clothing/suit/armor/vest/security/hos
-	name = "head of security's jacket"
-	desc = "This piece of clothing was specifically designed for asserting superior authority."
-	icon_state = "hosjacket"
-	body_parts_covered = CHEST|ARMS
-
-/obj/item/clothing/suit/armor/vest/security/brig_phys
-	name = "brig physician's jacket"
-	desc = "A black jacket with dark blue and silver accents, for the brig physician to prove they're a real member of security in style."
-	icon_state = "brigphysjacket"
-	body_parts_covered = CHEST|ARMS
-
-/obj/item/clothing/suit/armor/vest/security/warden/alt
-	name = "warden's armored jacket"
-	desc = "A white jacket with silver rank pips and body armor strapped on top."
-	icon_state = "warden_jacket"
-
 //Surgeon
 /obj/item/clothing/suit/apron/surgical
 	name = "surgical apron"
 	desc = "A sterile blue surgical apron."
 	icon_state = "surgical"
 	allowed = list(/obj/item/scalpel, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
-
-//Curator
-/obj/item/clothing/suit/curator
-	name = "treasure hunter's coat"
-	desc = "Both fashionable and lightly armoured, this jacket is favoured by treasure hunters the galaxy over."
-	icon_state = "curator"
-	item_state = "curator"
-	blood_overlay_type = "coat"
-	body_parts_covered = CHEST|ARMS
-	allowed = list(/obj/item/tank/internals, /obj/item/melee/curator_whip)
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
-	cold_protection = CHEST|ARMS
-	heat_protection = CHEST|ARMS
 
 //Robotocist
 
@@ -283,13 +235,12 @@
 	flags_inv = HIDEHAIR|HIDEEARS
 
 //Lieutenant
-/obj/item/clothing/suit/lieutenant_trenchcoat
+/obj/item/clothing/suit/armor/lieutenant_trenchcoat
 	name = "lieutenant's trenchcoat"
 	desc = "A design taken from a war over 500 years ago. Makes you look like a badass."
-	icon_state = "trenchcoat_blueshield"
+	icon_state = "armor_blueshield_trenchcoat"
 	item_state = "trenchcoat_blueshield"
 	blood_overlay_type = "coat"
-	allowed = list(/obj/item/gun/energy, /obj/item/reagent_containers/spray/pepper, /obj/item/ammo_box, /obj/item/ammo_casing,/obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/flashlight/seclite, /obj/item/melee/classic_baton)
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|ARMS|HANDS
 	cold_protection = CHEST|LEGS|ARMS
@@ -305,16 +256,6 @@
 	body_parts_covered = CHEST|GROIN|ARMS|HANDS
 
 //SolGov suits
-/obj/item/clothing/suit/solgov_trenchcoat
-	name = "\improper SolGov trenchcoat"
-	desc = "A solgov official's trenchcoat. Has a lot of pockets."
-	icon_state = "trenchcoat_solgov"
-	item_state = "trenchcoat_solgov"
-	body_parts_covered = CHEST|LEGS|ARMS
-	allowed = list(/obj/item/gun/energy, /obj/item/reagent_containers/spray/pepper, /obj/item/ammo_box, /obj/item/ammo_casing,/obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/flashlight/seclite, /obj/item/melee/classic_baton)
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	cold_protection = CHEST|LEGS|ARMS
-	heat_protection = CHEST|LEGS|ARMS
 
 /obj/item/clothing/suit/toggle/solgov
 	name = "\improper SolGov coat"

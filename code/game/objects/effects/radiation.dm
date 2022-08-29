@@ -1,6 +1,6 @@
 /obj/effect/radiation
 	name = "background radiation"
-	icon = 'whitesands/icons/effects/effects.dmi'
+	icon = 'icons/effects/effects.dmi'
 	icon_state = "radiation"
 	invisibility = INVISIBILITY_ABSTRACT
 	var/rad_power = 33

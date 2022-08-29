@@ -458,6 +458,7 @@
 
 /datum/outfit/job/lieutenant
 	name = "Lieutenant"
+	job_icon = "lieutenant"
 	//jobtype = /datum/job/lieutenant
 
 	id = /obj/item/card/id/silver
@@ -465,7 +466,7 @@
 	uniform = /obj/item/clothing/under/rank/command/lieutenant
 	alt_uniform = /obj/item/clothing/under/rank/command
 	suit = /obj/item/clothing/suit/toggle/lieutenant
-	alt_suit = /obj/item/clothing/suit/lieutenant_trenchcoat
+	alt_suit = /obj/item/clothing/suit/armor/lieutenant_trenchcoat
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/jackboots

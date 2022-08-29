@@ -161,7 +161,7 @@
 
 /obj/item/organ/ears/robot
 	name = "auditory sensors"
-	icon = 'whitesands/icons/obj/surgery.dmi'
+	icon = 'icons/obj/surgery.dmi'
 	icon_state = "robotic_ears"
 	desc = "A pair of microphones intended to be installed in an IPC head, that grant the ability to hear."
 	zone = "head"

@@ -32,7 +32,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/effect/turf_decal
-	icon = 'whitesands/icons/turf/decals.dmi'
+	icon = 'icons/turf/decals.dmi'
 	icon_state = "warningline"
 	layer = TURF_DECAL_LAYER
 	var/detail_overlay
