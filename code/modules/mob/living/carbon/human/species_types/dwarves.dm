@@ -125,7 +125,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 				owner.adjust_bodytemperature(6 / clamp(boozelvl, 1, 6))
 	stored_alcohol -= alcohol_rate //Subtracts alcohol_Rate from stored alcohol so EX: 250 - 0.25 per each loop that occurs.
 	if(stored_alcohol > 200)
-		if(owner.nutrition < 250)
+		if(owner.nutrition < 300)
 			owner.nutrition += heal_amt
 	if(stored_alcohol > 400) //If they are over 400 they enter a frenzy
 		owner.adjustBruteLoss(-heal_amt)
