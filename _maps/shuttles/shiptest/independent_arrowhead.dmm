@@ -235,7 +235,7 @@
 "es" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ArrowheadRTG";
-	name = "radiation shutter"
+	name = "Radiation Shutter"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -540,7 +540,7 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ArrowheadRTG";
-	name = "radiation shutter"
+	name = "Radiation Shutter"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -581,7 +581,7 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ArrowheadRTG";
-	name = "radiation shutter"
+	name = "Radiation Shutter"
 	},
 /obj/structure/grille,
 /turf/open/floor/plating,
@@ -598,9 +598,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/obj/machinery/door/airlock/external{
-	name = "internal airlock"
-	},
+/obj/machinery/door/airlock/external,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "li" = (
@@ -691,7 +689,7 @@
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor{
 	id = "ArrowheadCargoBlast";
-	name = "Cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -755,7 +753,7 @@
 "nq" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ArrowheadRTG";
-	name = "radiation shutter"
+	name = "Radiation Shutter"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -844,7 +842,7 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "ArrowheadCargoBlast";
-	name = "Cargo bay blast door"
+	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1050,7 +1048,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "ArrowheadEngineBlastdoors"
+	id = "ArrowheadEngineBlastdoors";
+	name = "Engine Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1389,7 +1388,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ArrowheadRTG";
-	name = "radiation shutter"
+	name = "Radiation Shutter"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -1576,9 +1575,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/machinery/door/airlock/external{
-	name = "internal airlock"
-	},
+/obj/machinery/door/airlock/external,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Du" = (
@@ -1620,7 +1617,8 @@
 	},
 /obj/machinery/door/window/eastright,
 /obj/machinery/door/poddoor{
-	id = "ArrowheadEngineBlastdoors"
+	id = "ArrowheadEngineBlastdoors";
+	name = "Engine Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2571,7 +2569,8 @@
 	},
 /obj/machinery/door/window/eastleft,
 /obj/machinery/door/poddoor{
-	id = "ArrowheadEngineBlastdoors"
+	id = "ArrowheadEngineBlastdoors";
+	name = "Engine Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2796,7 +2795,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "ArrowheadEngineBlastdoors"
+	id = "ArrowheadEngineBlastdoors";
+	name = "Engine Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
