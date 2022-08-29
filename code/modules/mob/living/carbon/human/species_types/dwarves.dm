@@ -82,7 +82,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 	maxHealth = 150 //More health than the average liver, as you aren't going to be replacing this.
 	//If it does need replaced with a standard human liver, prepare for hell.
 
-//alcohol gland
+//alcohol gland.
 /obj/item/organ/dwarfgland
 	name = "ethanovoric glands"
 	icon_state = "plasma" //Yes this is a actual icon in icons/obj/surgery.dmi
@@ -116,12 +116,13 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 			var/datum/reagent/consumable/ethanol/E = R
 			stored_alcohol = clamp(stored_alcohol + E.boozepwr / 50, 0, max_alcohol)
 			var/boozelvl = clamp(E.quality, 0.50, 5)//0 quality has half effect instead of nothing
-			if(stored_alcohol >= 400)//half of dwarf frenzy healing
+			if(stored_alcohol >= 400)//alchohol reagents amplify healing and temp gain, for risk-reward that punishes chemstacking in larger amounts.
 				owner.adjustBruteLoss(-heal_amt * boozelvl)
 				owner.adjustFireLoss(-heal_amt * boozelvl)
 				owner.adjustToxLoss(-heal_amt * boozelvl)
 				owner.adjustOxyLoss((-heal_amt * boozelvl) / 2)
 				owner.adjustCloneLoss((-heal_amt * boozelvl) / 15)
+				owner.adjust_bodytemperature(6 / clamp(boozelvl, 1, 6))
 	stored_alcohol -= alcohol_rate //Subtracts alcohol_Rate from stored alcohol so EX: 250 - 0.25 per each loop that occurs.
 	if(stored_alcohol > 200)
 		if(owner.nutrition < 250)
@@ -135,38 +136,35 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 		owner.throw_alert("overdorf", /atom/movable/screen/alert/overdorf)
 		switch(owner.bodytemperature)
 			if(-300 to 400)
-				if(last_alcohol_spam + 90 SECONDS < world.time)
+				if(last_alcohol_spam + 30 SECONDS < world.time)
 					to_chat(owner, pick("<span class='notice'>Your blood is racing.</span>", "<span class='notice'>You're past the limit.</span>", "<span class='notice'>You feel alive!</span>"))
 					last_alcohol_spam = world.time
-				alcohol_rate = 0.20
-				owner.adjust_bodytemperature(10.5)
-			if(401 to 700)//you're going too far! Slow down there, laddie!
-				owner.adjustFireLoss(1.5, 0)
-				owner.Jitter(5)
-				owner.adjust_bodytemperature(8.5)
 				alcohol_rate = 0.65
-				if(last_alcohol_spam + 60 SECONDS < world.time)
+				owner.adjust_bodytemperature(2)//to offset chilling effects slightly
+			if(401 to 700)//you're going too far! Slow down there, laddie!
+				owner.adjustFireLoss(2, 0)
+				owner.Jitter(5)
+				alcohol_rate = 0.65
+				if(last_alcohol_spam + 30 SECONDS < world.time)
 					to_chat(owner, pick("<span class='warning'>You can't stop sweating.</span>", "<span class='warning'>Your muscles are aching.</span>", "<span class='warning'>You can feel your heart pounding like a pickaxe.</span>"))
 					last_alcohol_spam = world.time
 			if(701 to 1200)//burning like a bat out of hell!
-				owner.adjustFireLoss(3, 0)
+				owner.adjustFireLoss(3.5, 0)
 				owner.Jitter(5)
-				owner.adjust_bodytemperature(4.5)
 				alcohol_rate = 0.85
 				if(last_alcohol_spam + 30 SECONDS < world.time)
 					to_chat(owner, pick("<span class='warning'>Your inner world's on fire.</span>", "<span class='warning'>Your heart's pounding out of your chest!</span>", "<span class='warning'>Your body can't take any more!.</span>"))
 					last_alcohol_spam = world.time
-			if(1200 to INFINITY)//so essentialy, yer fucked.
-				owner.adjustFireLoss(5.5, 0)
+			if(1201 to INFINITY)//so essentialy, yer fucked.
+				owner.adjustFireLoss(6.5, 0)
 				owner.Jitter(5)
 				owner.blur_eyes(5)
-				owner.adjust_bodytemperature(2.5)
 				alcohol_rate = 1
 				if(last_alcohol_spam + 15 SECONDS < world.time)
 					to_chat(owner, pick("<span class='boldwarning'></b>it burns.</span>", "<span class='boldwarnin'>Everything's going dark...</span>", "<span class='boldwarning'>You can't imagine being warmer than this.</span>", "<span class='boldwarning'>Your blood is boiling in your veins.</span>"))
 					last_alcohol_spam = world.time
 			else
-				if(last_alcohol_spam + 90 SECONDS < world.time)
+				if(last_alcohol_spam + 30 SECONDS < world.time)
 					to_chat(owner, pick("<span class='notice'>Your blood is racing.</span>", "<span class='notice'>You're past the limit.</span>", "<span class='notice'>You feel alive!</span>"))
 					last_alcohol_spam = world.time
 	else
@@ -217,10 +215,10 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 		return TRUE
 
 	if(chem.type == /datum/reagent/medicine/leporazine)
-		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * 3)//dwarves process leporazine much faster to reduce overdorf exploitation
+		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * 2)//dwarves process leporazine much faster to reduce overdorf exploitation
 		return TRUE
 	if(chem.type == /datum/reagent/medicine/pyroxadone)
-		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * 2)//ditto
+		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * 3)//ditto
 		return TRUE
 	return ..()
 
