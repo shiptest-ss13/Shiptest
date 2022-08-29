@@ -8,7 +8,7 @@
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
 	uses_mutcolor = TRUE
 	limb_id = SPECIES_LIZARD
-	is_dimorphic = TRUE //any made enby humans, while halcy made them gendered, making them todays biggest loser
+	is_dimorphic = TRUE
 
 /obj/item/bodypart/l_arm/lizard
 	icon = 'icons/mob/species/lizard/bodyparts.dmi'
