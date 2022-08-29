@@ -41,7 +41,7 @@
 	return
 
 /turf/open/lava/MakeDry(wet_setting = TURF_WET_WATER)
-	return"#080808"
+	return
 
 /turf/open/lava/airless
 	initial_gas_mix = AIRLESS_ATMOS
