@@ -149,6 +149,14 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
 	pin = /obj/item/firing_pin
+
+/obj/item/gun/ballistic/shotgun/bulldog/inteq
+	name = "\improper Mastiff Shotgun"
+	desc = "A semi-auto, mag-fed shotgun, seized from Syndicate armories by deserting troopers and modified to IRMG's standards. Compatible only with specialized 8-round drum magazines."
+	icon_state = "bulldog-inteq"
+	item_state = "bulldog-inteq"
+	pin = /obj/item/firing_pin
+
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
 /////////////////////////////
