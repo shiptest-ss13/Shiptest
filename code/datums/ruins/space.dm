@@ -174,3 +174,9 @@
 	suffix = "lab4071.dmm"
 	name = "Syndicate Laboratory 4071"
 	description = "A Syndicate laboratory run by syndicate scientists."
+
+/datum/map_template/ruin/space/nanotrasen_office
+	id = "nanotrasenoffice"
+	suffix = "nanotrasen_office.dmm"
+	name = "Nanotrasen Recordkeeping and Approvals"
+	description = "A derilect Nanotrasen office that used to house their records."

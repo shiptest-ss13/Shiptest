@@ -543,3 +543,29 @@
 	name = "Syndicate Laboratory 4071 Surrounding Area"
 	icon_state = "dk_yellow"
 	color = "#26773a88"
+
+// Nanotrasen Office
+
+/area/ruin/space/has_grav/nanotrasen_office/entrancearea
+	name = "Office Entrance"
+	icon_state = "yellow"
+	color = "#73da8d88"
+	requires_power = TRUE
+
+/area/ruin/space/has_grav/nanotrasen_office/canteen
+	name = "Canteen"
+	icon_state = "green"
+	color = "#022e0d88"
+	requires_power = TRUE
+
+/area/ruin/space/has_grav/nanotrasen_office/cubicles
+	name = "Cubicles"
+	icon_state = "blue"
+	color = "#663cb488"
+	requires_power = TRUE
+
+/area/ruin/space/has_grav/nanotrasen_office/files
+	name = "File Room"
+	icon_state = "red"
+	color = "#ee870088"
+	requires_power = TRUE
