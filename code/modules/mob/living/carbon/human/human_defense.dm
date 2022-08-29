@@ -281,7 +281,7 @@
 		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
 		if(!affecting)
 			affecting = get_bodypart(BODY_ZONE_CHEST)
-		var/armor_block = run_armor_check(affecting, "melee","","",10)
+		var/armor_block = run_armor_check(affecting, "melee", 10, silent = TRUE)
 
 		playsound(loc, 'sound/weapons/slice.ogg', 25, TRUE, -1)
 		visible_message("<span class='danger'>[M] slashes at [src]!</span>", \
@@ -370,7 +370,7 @@
 		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
 		if(!affecting)
 			affecting = get_bodypart(BODY_ZONE_CHEST)
-		var/armor_block = run_armor_check(affecting, "melee")
+		var/armor_block = run_armor_check(affecting, "melee", M.armour_penetration)
 		apply_damage(damage, BRUTE, affecting, armor_block, wound_bonus=wound_mod)
 
 /mob/living/carbon/human/mech_melee_attack(obj/mecha/M)

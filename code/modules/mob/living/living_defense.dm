@@ -2,28 +2,25 @@
 /mob/living/proc/run_armor_check(def_zone = null, attack_flag = "melee", absorb_text = null, soften_text = null, armour_penetration, penetrated_text, silent=FALSE)
 	var/armor = getarmor(def_zone, attack_flag)
 
-	if(armor <= 0)
-		return armor
-	if(silent)
-		return max(0, armor - armour_penetration)
-
-	//the if "armor" check is because this is used for everything on /living, including humans
-	if(armour_penetration)
-		armor = max(0, armor - armour_penetration)
-		if(penetrated_text)
-			to_chat(src, "<span class='userdanger'>[penetrated_text]</span>")
-		else
-			to_chat(src, "<span class='userdanger'>Your armor was penetrated!</span>")
-	else if(armor >= 100)
-		if(absorb_text)
-			to_chat(src, "<span class='notice'>[absorb_text]</span>")
-		else
-			to_chat(src, "<span class='notice'>Your armor absorbs the blow!</span>")
+	var/armor
+	if(armour_penetration >= 0)
+		armor = max(0, base_armor - armour_penetration)
 	else
-		if(soften_text)
-			to_chat(src, "<span class='warning'>[soften_text]</span>")
-		else
-			to_chat(src, "<span class='warning'>Your armor softens the blow!</span>")
+		// negative armor penetration increases the effect of armor
+		// armour penetration of -100 or lower would either divide by zero or give neg. armor (bad)
+		armor = armour_penetration > -100 ? base_armor * (100 / (100 + armour_penetration)) : 100
+
+	if(silent)
+		return armor
+
+	if(armor >= 100)
+		to_chat(src, "<span class='notice'>[absorb_text || "Your armor absorbs the blow!"]</span>")
+	else if(armour_penetration <= 0)
+		// armor has to be > 0 due to early return, and no armor pen, so blow was softened
+		to_chat(src, "<span class='warning'>[soften_text || "Your armor softens the blow!"]</span>")
+	else
+		// historic present
+		to_chat(src, "<span class='userdanger'>[penetrated_text || "Your armor is penetrated!"]</span>")
 	return armor
 
 /mob/living/proc/getarmor(def_zone, type)
@@ -48,7 +45,7 @@
 	return BULLET_ACT_HIT
 
 /mob/living/bullet_act(obj/projectile/P, def_zone, piercing_hit = FALSE)
-	var/armor = run_armor_check(def_zone, P.flag, "","",P.armour_penetration)
+	var/armor = run_armor_check(def_zone, P.flag, P.armour_penetration, silent = TRUE)
 	var/on_hit_state = P.on_hit(src, armor, piercing_hit)
 	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK && !QDELETED(src)) //QDELETED literally just for the instagib rifle. Yeah.
 		apply_damage(P.damage, P.damage_type, def_zone, armor, wound_bonus=P.wound_bonus, bare_wound_bonus=P.bare_wound_bonus, sharpness = P.sharpness)

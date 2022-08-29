@@ -203,6 +203,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["tip_delay"], tip_delay)
 	READ_FILE(S["pda_style"], pda_style)
 	READ_FILE(S["pda_color"], pda_color)
+	READ_FILE(S["whois_visible"], whois_visible)
 
 	// Custom hotkeys
 	READ_FILE(S["key_bindings"], key_bindings)
@@ -341,6 +342,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["show_credits"], show_credits)
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["favorite_outfits"], favorite_outfits)
+	WRITE_FILE(S["whois_visible"], whois_visible)
 	return TRUE
 
 /datum/preferences/proc/load_character(slot)

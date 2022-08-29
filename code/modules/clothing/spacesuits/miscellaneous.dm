@@ -70,6 +70,8 @@ Contains:
 /obj/item/clothing/suit/space/officer
 	name = "officer's jacket"
 	desc = "An armored, space-proof jacket used in special operations."
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	icon_state = "detective"
 	item_state = "det_suit"
 	blood_overlay_type = "coat"
@@ -122,6 +124,8 @@ Contains:
 /obj/item/clothing/suit/space/santa
 	name = "Santa's suit"
 	desc = "Festive!"
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	icon_state = "santa"
 	item_state = "santa"
 	slowdown = 0

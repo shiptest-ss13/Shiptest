@@ -158,7 +158,7 @@
 	desc = "A ragged makeshift suit resembling the explorer suit, covered with the emblems of a failed revolution. It's been repaired so many times it's hard to tell if it's more suit or patch. The joints have been redesigned for quicker movement."
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
-	icon_state = "survivor_suit"
+	icon_state = "survivor"
 	item_state = "survivor_suit"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	min_cold_protection_temperature = (FIRE_SUIT_MIN_TEMP_PROTECT * 2)

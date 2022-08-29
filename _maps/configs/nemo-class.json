@@ -1,10 +1,10 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Nemo-class Fauna Research Vessel",
 	"prefix": "ISV",
 	"namelists": ["NATURAL"],
 	"map_short_name": "Nemo-class",
 	"map_path": "_maps/shuttles/shiptest/nemo-class.dmm",
-	"map_id": "nemo-class",
 	"job_slots": {
 		"Research Director": 1,
 		"Fauna Researcher": {
@@ -31,5 +31,5 @@
 		"Curator": 1,
 		"Assistant": 1
 	},
-	"cost": 600
+	"enabled": true
 }

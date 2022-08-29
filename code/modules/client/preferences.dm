@@ -172,6 +172,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/broadcast_login_logout = TRUE
 	///What outfit typepaths we've favorited in the SelectEquipment menu
 	var/list/favorite_outfits = list()
+	var/whois_visible = TRUE
 
 	/// If we have persistent scars enabled
 	var/persistent_scars = TRUE

@@ -14,7 +14,7 @@
 /obj/item/clothing/suit/armor/riot/chaplain
 	name = "crusader armour"
 	desc = "God wills it!"
-	icon_state = "knight_templar"
+	icon_state = "chaplain_templar"
 	item_state = "knight_templar"
 	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 	slowdown = 0
@@ -69,7 +69,7 @@
 /obj/item/clothing/suit/armor/riot/chaplain/studentuni
 	name = "student robe"
 	desc = "The uniform of a bygone institute of learning."
-	icon_state = "studentuni"
+	icon_state = "chaplain_studentuni"
 	item_state = "studentuni"
 	body_parts_covered = ARMS|CHEST
 	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
@@ -101,7 +101,7 @@
 /obj/item/clothing/suit/armor/riot/chaplain/ancient
 	name = "ancient armour"
 	desc = "Defend the treasure..."
-	icon_state = "knight_ancient"
+	icon_state = "chaplain_ancient"
 	item_state = "knight_ancient"
 
 /obj/item/storage/box/holy/witchhunter
@@ -114,7 +114,7 @@
 /obj/item/clothing/suit/armor/riot/chaplain/witchhunter
 	name = "witchunter garb"
 	desc = "This worn outfit saw much use back in the day."
-	icon_state = "witchhunter"
+	icon_state = "chaplain_witchhunter"
 	item_state = "witchhunter"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 
@@ -144,7 +144,7 @@
 /obj/item/clothing/suit/armor/riot/chaplain/adept
 	name = "adept robes"
 	desc = "The ideal outfit for burning the unfaithful."
-	icon_state = "crusader"
+	icon_state = "chaplain_crusader"
 	item_state = "crusader"
 
 /obj/item/storage/box/holy/follower

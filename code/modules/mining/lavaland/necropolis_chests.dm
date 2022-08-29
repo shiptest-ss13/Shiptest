@@ -87,7 +87,7 @@
 		if(29)
 			new /obj/item/gun/energy/spur(src)
 		if(30)
-			new /obj/item/clothing/suit/ascetic(src)
+			new /obj/item/clothing/suit/armor/ascetic(src)
 		if(31)
 			new /obj/item/kitchen/knife/envy(src)
 
@@ -170,7 +170,7 @@
 			if(29)
 				new /obj/item/gun/energy/spur(src)
 			if(30)
-				new /obj/item/clothing/suit/ascetic(src)
+				new /obj/item/clothing/suit/armor/ascetic(src)
 			if(31)
 				new /obj/item/kitchen/knife/envy(src)
 
@@ -1146,13 +1146,10 @@
 	..()
 
 //ascetic's robe, provides quickly-recovering layers of total damage immunity, causes massive damage vulnerability when shield is down. Increases speed slightly.
-/obj/item/clothing/suit/ascetic
+/obj/item/clothing/suit/armor/ascetic
 	name = "dunewalker's garb"
 	desc = "Sand-bitten robes of roughspun cloth, fit for the hardy life of a travelling hermit. There's a strange aura about them- like a fragile desert haze."
-	icon = 'icons/obj/clothing/suits.dmi'
-	icon_state = "britte_master"//suffering
-	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
-	mob_overlay_state = "brittle_master"
+	icon_state = "brittle_master"//suffering
 	equip_delay_other = 80
 	strip_delay = 100//to prevent hotswapping in battle
 	equip_delay_other = 10
@@ -1175,11 +1172,11 @@
 	var/shield_state = "shimmerair"
 	var/shield_on = "shimmerair"
 
-/obj/item/clothing/suit/ascetic/examine(mob/user)
+/obj/item/clothing/suit/armor/ascetic/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>The ascetic's magic woven into this robe increases the owner's speed and deflects harm from their person- however, once it's mirages have melted away, it causes significantly more damage to be taken. The magic can withstand three attacks before it must recover, but it begins regenerating quickly.</span>"
 
-/obj/item/clothing/suit/ascetic/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/clothing/suit/armor/ascetic/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	recharge_cooldown = world.time + recharge_delay
 	if(current_charges > 0)
 		var/datum/effect_system/spark_spread/s = new
@@ -1199,11 +1196,11 @@
 		return 1
 	return 0
 
-/obj/item/clothing/suit/ascetic/Destroy()
+/obj/item/clothing/suit/armor/ascetic/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/clothing/suit/ascetic/process()
+/obj/item/clothing/suit/armor/ascetic/process()
 	if(world.time > recharge_cooldown && current_charges < max_charges)
 		current_charges = clamp((current_charges + recharge_rate), 0, max_charges)
 		playsound(loc, 'sound/effects/magic.ogg', 40, TRUE)
@@ -1215,7 +1212,7 @@
 			var/mob/living/carbon/human/C = loc
 			C.update_inv_wear_suit()
 
-/obj/item/clothing/suit/ascetic/worn_overlays(isinhands)
+/obj/item/clothing/suit/armor/ascetic/worn_overlays(isinhands)
 	. = list()
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER - 0.01)
