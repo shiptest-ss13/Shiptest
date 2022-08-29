@@ -73,7 +73,7 @@
 	Adjacency (to anything else):
 	* Must be on a turf
 */
-/atom/movable/Adjacent(var/atom/neighbor)
+/atom/movable/Adjacent(atom/neighbor)
 	var/turf/T = loc
 	if(neighbor == loc)
 		return TRUE
@@ -109,9 +109,9 @@
 		if(O == target_atom || O == mover || (O.pass_flags_self & LETPASSTHROW)) //check if there's a dense object present on the turf
 			continue // LETPASSTHROW is used for anything you can click through (or the firedoor special case, see above)
 
-		if( O.flags_1&ON_BORDER_1) // windows are on border, check them first
-			if( O.dir & target_dir || O.dir & (O.dir-1) ) // full tile windows are just diagonals mechanically
+		if(O.flags_1&ON_BORDER_1) // windows are on border, check them first
+			if(O.dir & target_dir || O.dir & (O.dir-1)) // full tile windows are just diagonals mechanically
 				return 0								  //O.dir&(O.dir-1) is false for any cardinal direction, but true for diagonal ones
-		else if( !border_only ) // dense, not on border, cannot pass over
+		else if(!border_only) // dense, not on border, cannot pass over
 			return 0
 	return 1

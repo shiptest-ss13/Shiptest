@@ -1,4 +1,3 @@
-
 # syntax=docker/dockerfile:1
 FROM beestation/byond:514.1583 as base
 
@@ -35,9 +34,9 @@ RUN git init \
     && /bin/bash -c "source dependencies.sh \
     && git fetch --depth 1 origin \$AUXMOS_VERSION" \
     && git checkout FETCH_HEAD \
-    && cargo rustc --target=i686-unknown-linux-gnu --release --features=trit_fire_hook,plasma_fire_hook,generic_fire_hook
+    && cargo rustc --target=i686-unknown-linux-gnu --release --features all_reaction_hooks,katmos -- -C target-cpu=native
 
-# Install nodejs which is required to deploy shiptest
+# Install nodejs which is required to deploy Shiptest
 FROM base as node
 COPY dependencies.sh .
 RUN apt-get update \

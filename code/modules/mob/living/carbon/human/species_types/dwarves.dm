@@ -6,7 +6,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 	name = "Dwarf"
 	id = "dwarf" //Also called Homo sapiens pumilionis
 	default_color = "FFFFFF"
-	default_features = list("mcolor" = "FFF", "wings" = "None")
+	default_features = list("mcolor" = "FFF", "wings" = "None", "body_size" = "Normal")
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS)
 	inherent_traits = list(TRAIT_DWARF,TRAIT_SNOB,TRAIT_QUICK_CARRY)
 	use_skintones = 1

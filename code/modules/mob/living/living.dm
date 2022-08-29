@@ -521,8 +521,7 @@
 
 /// Proc to append behavior related to lying down.
 /mob/living/proc/on_lying_down(new_lying_angle)
-	if(layer == initial(layer)) //to avoid things like hiding larvas.
-		layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
+	layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
 	ADD_TRAIT(src, TRAIT_UI_BLOCKED, LYING_DOWN_TRAIT)
 	ADD_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
 	density = FALSE // We lose density and stop bumping passable dense things.
@@ -708,6 +707,32 @@
 	jitteriness = 0
 	stop_sound_channel(CHANNEL_HEARTBEAT)
 
+//proc used to heal a mob, but only damage types specified.
+/mob/living/proc/specific_heal(blood_amt = 0, brute_amt = 0, fire_amt = 0, tox_amt = 0, oxy_amt = 0, clone_amt = 0, organ_amt = 0, stam_amt = 0, specific_revive = FALSE, specific_bones = FALSE)
+	if(iscarbon(src))
+		var/mob/living/carbon/C = src
+		if(!(C.dna?.species && (NOBLOOD in C.dna.species.species_traits)))
+			C.blood_volume += (blood_amt)
+
+		for(var/i in C.internal_organs)
+			var/obj/item/organ/O = i
+			if(O.organ_flags & ORGAN_SYNTHETIC)
+				continue
+			O.applyOrganDamage(organ_amt*-1)//1 = 5 organ damage healed
+
+		if(specific_bones)
+			for(var/obj/item/bodypart/B in C.bodyparts)
+				B.fix_bone()
+
+	if(specific_revive)
+		revive()
+
+	adjustBruteLoss(brute_amt*-1)
+	adjustFireLoss(fire_amt*-1)
+	adjustToxLoss(tox_amt*-1)
+	adjustOxyLoss(oxy_amt*-1)
+	adjustCloneLoss(clone_amt*-1)
+	adjustStaminaLoss(stam_amt*-1)
 
 //proc called by revive(), to check if we can actually ressuscitate the mob (we don't want to revive him and have him instantly die again)
 /mob/living/proc/can_be_revived()
@@ -1238,7 +1263,7 @@
 //Mobs on Fire end
 
 // used by secbot and monkeys Crossed
-/mob/living/proc/knockOver(var/mob/living/carbon/C)
+/mob/living/proc/knockOver(mob/living/carbon/C)
 	if(C.key) //save us from monkey hordes
 		C.visible_message("<span class='warning'>[pick( \
 						"[C] dives out of [src]'s way!", \
@@ -1455,13 +1480,13 @@
 		CRASH(ERROR_ERROR_LANDMARK_ERROR)
 
 /**
-  * Changes the inclination angle of a mob, used by humans and others to differentiate between standing up and prone positions.
-  *
-  * In BYOND-angles 0 is NORTH, 90 is EAST, 180 is SOUTH and 270 is WEST.
-  * This usually means that 0 is standing up, 90 and 270 are horizontal positions to right and left respectively, and 180 is upside-down.
-  * Mobs that do now follow these conventions due to unusual sprites should require a special handling or redefinition of this proc, due to the density and layer changes.
-  * The return of this proc is the previous value of the modified lying_angle if a change was successful (might include zero), or null if no change was made.
-  */
+ * Changes the inclination angle of a mob, used by humans and others to differentiate between standing up and prone positions.
+ *
+ * In BYOND-angles 0 is NORTH, 90 is EAST, 180 is SOUTH and 270 is WEST.
+ * This usually means that 0 is standing up, 90 and 270 are horizontal positions to right and left respectively, and 180 is upside-down.
+ * Mobs that do now follow these conventions due to unusual sprites should require a special handling or redefinition of this proc, due to the density and layer changes.
+ * The return of this proc is the previous value of the modified lying_angle if a change was successful (might include zero), or null if no change was made.
+ */
 /mob/living/proc/set_lying_angle(new_lying)
 	if(new_lying == lying_angle)
 		return

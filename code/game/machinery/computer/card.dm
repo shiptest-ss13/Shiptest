@@ -53,7 +53,6 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	var/obj/item/card/id/inserted_scan_id
 	var/obj/item/card/id/inserted_modify_id
 	var/list/region_access = null
-	var/list/head_subordinates = null
 
 	COOLDOWN_DECLARE(silicon_access_print_cooldown)
 
@@ -117,10 +116,10 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 //Logic check for Topic() if you can open the job
 /obj/machinery/computer/card/proc/can_open_job(datum/job/job)
 	if(job)
-		if(!job_blacklisted(job.title))
+		if(!job_blacklisted(job.name))
 			if((job.total_positions <= GLOB.player_list.len * (max_relative_positions / 100)))
 				var/delta = (world.time / 10) - GLOB.time_last_changed_position
-				if((change_position_cooldown < delta) || (opened_positions[job.title] < 0))
+				if((change_position_cooldown < delta) || (opened_positions[job.name] < 0))
 					return JOB_ALLOWED
 				return JOB_COOLDOWN
 			return JOB_MAX_POSITIONS
@@ -129,10 +128,10 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 //Logic check for Topic() if you can close the job
 /obj/machinery/computer/card/proc/can_close_job(datum/job/job)
 	if(job)
-		if(!job_blacklisted(job.title))
+		if(!job_blacklisted(job.name))
 			if(job.total_positions > job.current_positions)
 				var/delta = (world.time / 10) - GLOB.time_last_changed_position
-				if((change_position_cooldown < delta) || (opened_positions[job.title] > 0))
+				if((change_position_cooldown < delta) || (opened_positions[job.name] > 0))
 					return JOB_ALLOWED
 				return JOB_COOLDOWN
 			return JOB_MAX_POSITIONS
@@ -178,7 +177,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 
 /obj/machinery/computer/card/AltClick(mob/user)
 	..()
-	if(!user.canUseTopic(src, !issilicon(user)) || !is_operational())
+	if(!user.canUseTopic(src, !issilicon(user)) || !is_operational)
 		return
 	if(inserted_modify_id)
 		if(id_eject(user, inserted_modify_id))
@@ -207,15 +206,15 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		<td style='width:25%'><b>Open job</b></td><td style='width:25%'><b>Close job</b><td style='width:25%'><b>Prioritize</b></td></td></tr>"}
 		for(var/datum/job/job in SSjob.occupations)
 			dat += "<tr>"
-			if(job.title in blacklisted)
+			if(job.name in blacklisted)
 				continue
-			dat += {"<td>[job.title]</td>
+			dat += {"<td>[job.name]</td>
 				<td>[job.current_positions]/[job.total_positions]</td>
 				<td>"}
 			switch(can_open_job(job))
 				if(JOB_ALLOWED)
 					if(authenticated == AUTHENTICATED_ALL)
-						dat += "<a href='?src=[REF(src)];choice=make_job_available;job=[job.title]'>Open Position</a><br>"
+						dat += "<a href='?src=[REF(src)];choice=make_job_available;job=[job.name]'>Open Position</a><br>"
 					else
 						dat += "Open Position"
 				if(JOB_COOLDOWN)
@@ -229,7 +228,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			switch(can_close_job(job))
 				if(JOB_ALLOWED)
 					if(authenticated == AUTHENTICATED_ALL)
-						dat += "<a href='?src=[REF(src)];choice=make_job_unavailable;job=[job.title]'>Close Position</a>"
+						dat += "<a href='?src=[REF(src)];choice=make_job_unavailable;job=[job.name]'>Close Position</a>"
 					else
 						dat += "Close Position"
 				if(JOB_COOLDOWN)
@@ -246,10 +245,10 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				else
 					if(authenticated == AUTHENTICATED_ALL)
 						if(job in SSjob.prioritized_jobs)
-							dat += "<a href='?src=[REF(src)];choice=prioritize_job;job=[job.title]'>Deprioritize</a>"
+							dat += "<a href='?src=[REF(src)];choice=prioritize_job;job=[job.name]'>Deprioritize</a>"
 						else
 							if(SSjob.prioritized_jobs.len < 5)
-								dat += "<a href='?src=[REF(src)];choice=prioritize_job;job=[job.title]'>Prioritize</a>"
+								dat += "<a href='?src=[REF(src)];choice=prioritize_job;job=[job.name]'>Prioritize</a>"
 							else
 								dat += "Denied"
 					else
@@ -265,8 +264,8 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		var/target_owner = (inserted_modify_id && inserted_modify_id.registered_name) ? html_encode(inserted_modify_id.registered_name) : "--------"
 		var/target_rank = (inserted_modify_id && inserted_modify_id.assignment) ? html_encode(inserted_modify_id.assignment) : "Unassigned"
 		var/target_age = (inserted_modify_id && inserted_modify_id.registered_age) ? html_encode(inserted_modify_id.registered_age) : "--------"
-		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
-		var/target_ship_access = ( inserted_modify_id && inserted_modify_id.has_ship_access( ship ) )
+		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
+		var/target_ship_access = (inserted_modify_id && inserted_modify_id.has_ship_access(ship))
 
 		if(!authenticated)
 			header += {"<br><i>Please insert the cards into the slots</i><br>
@@ -373,7 +372,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	if(..())
 		return
 
-	if(!usr.canUseTopic(src, !issilicon(usr)) || !is_operational())
+	if(!usr.canUseTopic(src, !issilicon(usr)) || !is_operational)
 		usr.unset_machine()
 		usr << browse(null, "window=id_com")
 		return
@@ -405,13 +404,11 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					inserted_scan_id = id_to_insert
 					updateUsrDialog()
 		if ("auth")
-			if ((!( authenticated ) && (inserted_scan_id || issilicon(usr)) || mode))
+			if ((!(authenticated) && (inserted_scan_id || issilicon(usr)) || mode))
 				if (check_access(inserted_scan_id))
 					region_access = list()
-					head_subordinates = list()
 					if(ACCESS_CHANGE_IDS in inserted_scan_id.access)
 						if(target_dept)
-							head_subordinates = get_all_jobs()
 							region_access |= target_dept
 							authenticated = AUTHENTICATED_DEPARTMENT
 						else
@@ -422,26 +419,20 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						if((ACCESS_HOP in inserted_scan_id.access) && ((target_dept==1) || !target_dept))
 							region_access |= 1
 							region_access |= 6
-							get_subordinates("Head of Personnel")
 						if((ACCESS_HOS in inserted_scan_id.access) && ((target_dept==2) || !target_dept))
 							region_access |= 2
-							get_subordinates("Head of Security")
 						if((ACCESS_CMO in inserted_scan_id.access) && ((target_dept==3) || !target_dept))
 							region_access |= 3
-							get_subordinates("Chief Medical Officer")
 						if((ACCESS_RD in inserted_scan_id.access) && ((target_dept==4) || !target_dept))
 							region_access |= 4
-							get_subordinates("Research Director")
 						if((ACCESS_CE in inserted_scan_id.access) && ((target_dept==5) || !target_dept))
 							region_access |= 5
-							get_subordinates("Chief Engineer")
 						if(region_access)
 							authenticated = AUTHENTICATED_DEPARTMENT
-			else if ((!( authenticated ) && issilicon(usr)) && (!inserted_modify_id))
+			else if ((!(authenticated) && issilicon(usr)) && (!inserted_modify_id))
 				to_chat(usr, "<span class='warning'>You can't modify an ID without an ID inserted to modify! Once one is in the modify slot on the computer, you can log in.</span>")
 		if ("logout")
 			region_access = null
-			head_subordinates = null
 			authenticated = 0
 			playsound(src, 'sound/machines/terminal_off.ogg', 50, FALSE)
 
@@ -457,26 +448,26 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						playsound(src, "terminal_type", 50, FALSE)
 		if ( "toggle_id_ship_access" )
 			if (authenticated == AUTHENTICATED_ALL)
-				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
-				if ( inserted_modify_id.has_ship_access( ship ) )
-					inserted_modify_id.remove_ship_access( ship )
+				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
+				if (inserted_modify_id.has_ship_access(ship))
+					inserted_modify_id.remove_ship_access(ship)
 				else
-					inserted_modify_id.add_ship_access( ship )
+					inserted_modify_id.add_ship_access(ship)
 				playsound(src, "terminal_type", 50, FALSE)
 
 		if ( "toggle_unique_ship_access" )
 			if (authenticated == AUTHENTICATED_ALL)
-				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( src )
+				var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
 				ship.unique_ship_access = !ship.unique_ship_access
 				playsound(src, "terminal_type", 50, FALSE)
 
 		if ( "print_silicon_access_chip" )
-			if ( authenticated == AUTHENTICATED_ALL )
+			if (authenticated == AUTHENTICATED_ALL)
 				if(!COOLDOWN_FINISHED(src, silicon_access_print_cooldown))
 					say("Printer unavailable. Please allow a short time before attempting to print.")
 					return
-				var/obj/item/borg/upgrade/ship_access_chip/chip = new( get_turf( src ) )
-				chip.ship = SSshuttle.get_ship( src )
+				var/obj/item/borg/upgrade/ship_access_chip/chip = new(get_turf(src))
+				chip.ship = SSshuttle.get_ship(src)
 				playsound(src, "terminal_type", 50, FALSE)
 				COOLDOWN_START(src, silicon_access_print_cooldown, 10 SECONDS)
 
@@ -495,7 +486,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					var/datum/job/jobdatum
 					for(var/jobtype in typesof(/datum/job))
 						var/datum/job/J = new jobtype
-						if(ckey(J.title) == ckey(t1))
+						if(ckey(J.name) == ckey(t1))
 							jobdatum = J
 							updateUsrDialog()
 							break
@@ -506,12 +497,12 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					if(inserted_modify_id.registered_account)
 						inserted_modify_id.registered_account.account_job = jobdatum // this is a terrible idea and people will grief but sure whatever
 
-					inserted_modify_id.access = ( istype(src, /obj/machinery/computer/card/centcom) ? get_centcom_access(t1) : jobdatum.get_access() )
+					inserted_modify_id.access = (istype(src, /obj/machinery/computer/card/centcom) ? get_centcom_access(t1) : jobdatum.get_access())
 				if (inserted_modify_id)
 					inserted_modify_id.assignment = t1
 					playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 		if ("demote")
-			if(inserted_modify_id.assignment in head_subordinates || inserted_modify_id.assignment == "Assistant")
+			if(ACCESS_CHANGE_IDS in inserted_scan_id.access)
 				inserted_modify_id.assignment = "Unassigned"
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			else
@@ -592,19 +583,19 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 					SSjob.prioritized_jobs -= j
 					priority = FALSE
 				else if(j.total_positions <= j.current_positions)
-					to_chat(usr, "<span class='notice'>[j.title] has had all positions filled. Open up more slots before prioritizing it.</span>")
+					to_chat(usr, "<span class='notice'>[j.name] has had all positions filled. Open up more slots before prioritizing it.</span>")
 					updateUsrDialog()
 					return
 				else
 					SSjob.prioritized_jobs += j
-				to_chat(usr, "<span class='notice'>[j.title] has been successfully [priority ? "prioritized" : "unprioritized"]. Potential employees will notice your request.</span>")
+				to_chat(usr, "<span class='notice'>[j.name] has been successfully [priority ? "prioritized" : "unprioritized"]. Potential employees will notice your request.</span>")
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 		if ("print")
-			if (!( printing ))
+			if (!(printing))
 				printing = 1
 				sleep(50)
-				var/obj/item/paper/P = new /obj/item/paper( loc )
+				var/obj/item/paper/P = new /obj/item/paper(loc)
 				var/t1 = "<B>Crew Manifest:</B><BR>"
 				for(var/datum/data/record/t in sortRecord(GLOB.data_core.general))
 					t1 += t.fields["name"] + " - " + t.fields["rank"] + "<br>"
@@ -615,11 +606,6 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	if (inserted_modify_id)
 		inserted_modify_id.update_label()
 	updateUsrDialog()
-
-/obj/machinery/computer/card/proc/get_subordinates(rank)
-	for(var/datum/job/job in SSjob.occupations)
-		if(rank in job.department_head)
-			head_subordinates += job.title
 
 /obj/machinery/computer/card/centcom
 	name = "\improper CentCom identification console"

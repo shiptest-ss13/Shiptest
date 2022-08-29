@@ -11,10 +11,10 @@
 	robust_searching = TRUE
 	ranged_ignores_vision = TRUE
 	ranged = TRUE
-	obj_damage = 5
+	obj_damage = 100
 	vision_range = 6
 	aggro_vision_range = 18
-	environment_smash = ENVIRONMENT_SMASH_NONE  //This is to prevent elites smashing up the mining station, we'll make sure they can smash minerals fine below.
+	environment_smash = ENVIRONMENT_SMASH_MINERALS  //This is to prevent elites smashing up the mining station, we'll make sure they can smash minerals fine below.
 	harm_intent_damage = 0 //Punching elites gets you nowhere
 	stat_attack = HARD_CRIT
 	layer = LARGE_MOB_LAYER
@@ -54,7 +54,7 @@
 		M.gets_drilled()
 
 //Elites can't talk (normally)!
-/mob/living/simple_animal/hostile/asteroid/elite/say(message, bubble_type, var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+/mob/living/simple_animal/hostile/asteroid/elite/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	if(can_talk)
 		. = ..()
 		return TRUE
@@ -236,14 +236,13 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	playsound(loc,'sound/effects/tendril_destroyed.ogg', 200, 0, 50, TRUE, TRUE)
 	visible_message("<span class='boldwarning'>[src] begins to convulse violently before beginning to dissipate.</span>")
 	visible_message("<span class='boldwarning'>As [src] closes, something is forced up from down below.</span>")
-	var/obj/structure/closet/crate/necropolis/tendril/lootbox = new /obj/structure/closet/crate/necropolis/tendril(loc)
+	var/obj/structure/closet/crate/necropolis/tendril/greater/lootbox = new /obj/structure/closet/crate/necropolis/tendril/greater(loc)
 	if(!boosted)
 		mychild = null
 		activator = null
 		qdel(src)
 		return
-	var/lootpick = rand(1, 2)
-	if(lootpick == 1 && mychild.loot_drop != null)
+	if(mychild.loot_drop != null)
 		new mychild.loot_drop(lootbox)
 		if(prob(25))
 			new /obj/item/tumor_shard(lootbox)

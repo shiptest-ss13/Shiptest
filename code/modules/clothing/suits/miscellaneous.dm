@@ -105,6 +105,8 @@
 
 /obj/item/clothing/suit/syndicatefake
 	name = "black and red space suit replica"
+	icon = 'icons/obj/clothing/suits/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/spacesuits.dmi'
 	icon_state = "syndicate-black-red"
 	item_state = "syndicate-black-red"
 	desc = "A plastic replica of the Syndicate space suit. You'll look just like a real murderous Syndicate agent in this! This is a toy, it is not made for use in space!"
@@ -351,6 +353,8 @@
 /obj/item/clothing/suit/straight_jacket
 	name = "straight jacket"
 	desc = "A suit that completely restrains the wearer. Manufactured by Antyphun Corp." //Straight jacket is antifun
+	icon = 'icons/obj/clothing/suits/utility.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "straight_jacket"
 	item_state = "straight_jacket"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS

@@ -65,7 +65,7 @@
 	else
 		soundloop.start(user)
 
-/obj/item/clothing/head/helmet/space/hardsuit/proc/display_visor_message(var/msg)
+/obj/item/clothing/head/helmet/space/hardsuit/proc/display_visor_message(msg)
 	var/mob/wearer = loc
 	if(msg && ishuman(wearer))
 		wearer.show_message("[icon2html(src, wearer)]<b><span class='robot'>[msg]</span></b>", MSG_VISUAL)
@@ -311,14 +311,13 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 55, "bio" = 100, "rad" = 75, "fire" = 85, "acid" = 100)
 	light_range = 10
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pinpointer/deepcore, /obj/item/environmental_regulator)
 
 	//Syndicate hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	name = "blood-red hardsuit helmet"
 	desc = "A dual-mode advanced helmet designed for work in special operations. It is in EVA mode. Property of Gorlex Marauders."
 	alt_desc = "A dual-mode advanced helmet designed for work in special operations. It is in combat mode. Property of Gorlex Marauders."
-	icon_state = "hardsuit0-syndi"
+	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_helm"
 	hardsuit_type = "syndi"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
@@ -355,7 +354,7 @@
 			flags_cover |= HEADCOVERSMOUTH
 		flags_inv |= visor_flags_inv
 	else
-		to_chat(user, "<span class='notice'>You switch your hardsuit to combat mode and can now run at full speed.</span>")
+		to_chat(user, "<span class='notice'>You switch your hardsuit to combat mode, sacrificing space protection for improved speed.</span>")
 		name += " (combat)"
 		desc = alt_desc
 		set_light_on(FALSE)
@@ -388,9 +387,11 @@
 		else
 			linkedsuit.name += " (combat)"
 			linkedsuit.desc = linkedsuit.alt_desc
-			linkedsuit.slowdown = 0
+			linkedsuit.slowdown = linkedsuit.combat_slowdown
 			linkedsuit.clothing_flags &= ~STOPSPRESSUREDAMAGE
 			linkedsuit.cold_protection &= ~(CHEST | GROIN | LEGS | FEET | ARMS | HANDS)
+			if(linkedsuit.lightweight)
+				linkedsuit.flags_inv &= ~(HIDEGLOVES | HIDESHOES | HIDEJUMPSUIT)
 
 		linkedsuit.icon_state = "hardsuit[on]-[hardsuit_type]"
 		linkedsuit.update_icon()
@@ -403,7 +404,7 @@
 	name = "blood-red hardsuit"
 	desc = "A dual-mode advanced hardsuit designed for work in special operations. It is in EVA mode. Property of Gorlex Marauders."
 	alt_desc = "A dual-mode advanced hardsuit designed for work in special operations. It is in combat mode. Property of Gorlex Marauders."
-	icon_state = "hardsuit0-syndi"
+	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_hardsuit"
 	hardsuit_type = "syndi"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -412,6 +413,31 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	jetpack = /obj/item/tank/jetpack/suit
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	var/combat_slowdown = 0 //slowdown when in combat mode
+	var/lightweight = 0 //used for flags when toggling
+
+//Scarlet Syndie suit
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/scarlet
+	name = "scarlet hardsuit helmet"
+	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. It is in EVA mode. Manufactured by Donk Co."
+	alt_desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. It is in combat mode. Manufactured by Donk Co."
+	icon_state = "hardsuit1-scarlet"
+	item_state = "scarlet_helm"
+	hardsuit_type = "scarlet"
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/scarlet
+	name = "scarlet hardsuit"
+	desc = "A standardized dual-mode hardsuit derived from more advanced special operations hardsuits. It is in EVA mode. Manufactured by Donk Co."
+	alt_desc = "A standardized dual-mode hardsuit derived from more advanced special operations hardsuits. It is in combat mode. Manufactured by Donk Co."
+	icon_state = "hardsuit1-scarlet"
+	item_state = "scarlet_hardsuit"
+	hardsuit_type = "scarlet"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/scarlet
+	lightweight = 1
+	jetpack = null
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	combat_slowdown = 0.5
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -991,7 +1017,7 @@
 	item_state = "independent_sec_hardsuit"
 	hardsuit_type = "independent-sec"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
 	//Mining
 /obj/item/clothing/head/helmet/space/hardsuit/mining/independent

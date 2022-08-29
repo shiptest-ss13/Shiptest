@@ -140,11 +140,14 @@ There are several things that need to be remembered:
 			else if((dna.species.bodytype & BODYTYPE_VOX) && (U.supports_variations & VOX_VARIATION))
 				icon_file = VOX_UNIFORM_PATH
 
+			else if((dna.species.bodytype & BODYTYPE_KEPORI) && (U.supports_variations & KEPORI_VARIATION))
+				icon_file = KEPORI_UNIFORM_PATH
+
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(U))))
 				handled_by_bodytype = FALSE
 				icon_file = U.mob_overlay_icon || DEFAULT_UNIFORM_PATH
 
-			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, mob_species = CHECK_USE_AUTOGEN)
+			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, override_state = target_overlay, mob_species = CHECK_USE_AUTOGEN)
 
 		if(!uniform_overlay)
 			return
@@ -625,7 +628,7 @@ There are several things that need to be remembered:
 
 /mob/living/carbon/human/proc/update_hud_s_store(obj/item/I)
 	I.screen_loc = ui_sstore1
-	if((client && hud_used) && (hud_used.inventory_shown && hud_used.hud_shown))
+	if(client && hud_used?.hud_shown)
 		client.screen += I
 	update_observer_view(I,TRUE)
 
@@ -671,10 +674,10 @@ There are several things that need to be remembered:
 /*
 Does everything in relation to building the /mutable_appearance used in the mob's overlays list
 covers:
- inhands and any other form of worn item
- centering large appearances
- layering appearances on custom layers
- building appearances from custom icon files
+inhands and any other form of worn item
+centering large appearances
+layering appearances on custom layers
+building appearances from custom icon files
 
 By Remie Richards (yes I'm taking credit because this just removed 90% of the copypaste in update_icons())
 
@@ -745,7 +748,7 @@ generate/load female uniform sprites matching all previously decided variables
 	return standing
 
 
-/obj/item/proc/get_held_offsets(var/direction)
+/obj/item/proc/get_held_offsets(direction)
 	var/list/L
 	if(ismob(loc))
 		if(iscarbon(loc))
@@ -791,7 +794,7 @@ generate/load female uniform sprites matching all previously decided variables
 					break
 
 // Only renders the head of the human
-/mob/living/carbon/human/proc/update_body_parts_head_only(var/update_limb_data)
+/mob/living/carbon/human/proc/update_body_parts_head_only(update_limb_data)
 	if (!dna?.species)
 		return
 

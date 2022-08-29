@@ -43,7 +43,7 @@
 		container - The material container component used for those sweet mats
 \*/
 /obj/machinery/deepcore
-	icon = 'whitesands/icons/obj/machines/deepcore.dmi'
+	icon = 'icons/obj/machines/deepcore.dmi'
 	var/datum/dcm_net/network
 	var/datum/component/material_container/crude/container
 
@@ -91,11 +91,11 @@
 	if(network)
 		. += "<span class='info'>This device is registered with a network connected to [length(network.connected)] devices.</span>"
 
-/obj/machinery/deepcore/proc/SetNetwork(var/datum/dcm_net/net)
+/obj/machinery/deepcore/proc/SetNetwork(datum/dcm_net/net)
 	return net.AddMachine(src)
 
 /obj/machinery/deepcore/proc/ClearNetwork()
 	return network.RemoveMachine(src)
 
-/obj/machinery/deepcore/proc/MergeNetwork(var/datum/dcm_net/net)
+/obj/machinery/deepcore/proc/MergeNetwork(datum/dcm_net/net)
 	network.MergeWith(net)

@@ -5,7 +5,7 @@ Ask ninjanomnom if they're around
 */
 
 #define RAD_BACKGROUND_RADIATION 9 // How much radiation is harmless to a mob, this is also when radiation waves stop spreading
- // WARNING: Lowering this value significantly increases SSradiation load
+// WARNING: Lowering this value significantly increases SSradiation load
 
 // apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), IRRADIATE, blocked)
 #define RAD_MOB_COEFFICIENT 0.20 // Radiation applied is multiplied by this
@@ -14,7 +14,7 @@ Ask ninjanomnom if they're around
 #define RAD_LOSS_PER_TICK 0.5
 #define RAD_TOX_COEFFICIENT 0.08 // Toxin damage per tick coefficient
 #define RAD_OVERDOSE_REDUCTION 0.000001 // Coefficient to the reduction in applied rads once the thing, usualy mob, has too much radiation
- // WARNING: This number is highly sensitive to change, graph is first for best results
+// WARNING: This number is highly sensitive to change, graph is first for best results
 #define RAD_BURN_THRESHOLD 1000 // Applied radiation must be over this to burn
 //Holy shit test after you tweak anything it's said like 6 times in here
 //You probably want to plot any tweaks you make so you can see the curves visually

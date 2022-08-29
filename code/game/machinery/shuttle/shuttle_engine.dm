@@ -1,8 +1,8 @@
 /**
-  * ## Engine Thrusters
-  * The workhorse of any movable ship, these engines (usually) take in some kind fuel and produce thrust to move ships.
-  *
-  */
+ * ## Engine Thrusters
+ * The workhorse of any movable ship, these engines (usually) take in some kind fuel and produce thrust to move ships.
+ *
+ */
 /obj/machinery/power/shuttle/engine
 	name = "shuttle thruster"
 	desc = "A thruster for shuttles."
@@ -14,31 +14,33 @@
 	var/thrust = 0
 	///I don't really know what this is but it's used a lot
 	var/thruster_active = FALSE
+	///Used to store which ship currently has this engine in their thruster list, for Destroy() reasons
+	var/obj/docking_port/mobile/parent_shuttle
 
 /**
-  * Uses up a specified percentage of the fuel cost, and returns the amount of thrust if successful.
-  * * percentage - The percentage of total thrust that should be used
-  */
+ * Uses up a specified percentage of the fuel cost, and returns the amount of thrust if successful.
+ * * percentage - The percentage of total thrust that should be used
+ */
 /obj/machinery/power/shuttle/engine/proc/burn_engine(percentage = 100)
 	update_icon_state()
 	return FALSE
 
 /**
-  * Returns how much "Fuel" is left. (For use with engine displays.)
-  */
+ * Returns how much "Fuel" is left. (For use with engine displays.)
+ */
 /obj/machinery/power/shuttle/engine/proc/return_fuel()
 	return
 
 /**
-  * Returns how much "Fuel" can be held. (For use with engine displays.)
-  */
+ * Returns how much "Fuel" can be held. (For use with engine displays.)
+ */
 /obj/machinery/power/shuttle/engine/proc/return_fuel_cap()
 	return
 
 /**
-  * Updates the engine state.
-  * All functions should return if the parent function returns false.
-  */
+ * Updates the engine state.
+ * All functions should return if the parent function returns false.
+ */
 /obj/machinery/power/shuttle/engine/proc/update_engine()
 	thruster_active = TRUE
 	if(panel_open)
@@ -47,8 +49,8 @@
 	return TRUE
 
 /**
-  * Updates the engine's icon and engine state.
-  */
+ * Updates the engine's icon and engine state.
+ */
 /obj/machinery/power/shuttle/engine/update_icon_state()
 	update_engine() //Calls this so it sets the accurate icon
 	if(panel_open)
@@ -65,11 +67,11 @@
 /obj/machinery/power/shuttle/engine/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
 	port.engine_list |= src
+	parent_shuttle = port
 
 /obj/machinery/power/shuttle/engine/Destroy()
-	var/obj/docking_port/mobile/M = SSshuttle.get_containing_shuttle(src)
-	if(M)
-		M.engine_list -= src
+	if(parent_shuttle)
+		parent_shuttle.engine_list -= src
 	return ..()
 
 /obj/machinery/power/shuttle/engine/on_construction()
