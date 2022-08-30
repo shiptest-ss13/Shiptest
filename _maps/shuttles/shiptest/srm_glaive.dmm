@@ -33,6 +33,9 @@
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
+/obj/structure/cable/orange{
+	icon_state = "4-6"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "aF" = (
@@ -119,6 +122,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "bN" = (
@@ -185,6 +192,21 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"cp" = (
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor{
+	id = "port_blasts";
+	name = "Port Blast Door"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "glaive_shields";
+	locked = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
 "cJ" = (
 /obj/structure/cable/orange{
 	icon_state = "1-4"
@@ -213,10 +235,10 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "cU" = (
-/obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable/orange{
 	icon_state = "0-4"
 	},
+/obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "cW" = (
@@ -247,6 +269,9 @@
 /obj/effect/turf_decal/industrial/caution,
 /obj/structure/cable/orange{
 	icon_state = "4-9"
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
@@ -332,6 +357,9 @@
 "gb" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/caution,
+/obj/structure/cable/orange{
+	icon_state = "1-6"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "gd" = (
@@ -377,7 +405,6 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "gO" = (
-/obj/machinery/airalarm/directional/south,
 /obj/structure/cable/orange{
 	icon_state = "1-4"
 	},
@@ -448,21 +475,17 @@
 /obj/item/shovel,
 /obj/item/seeds/carrot,
 /obj/item/seeds/carrot,
-/obj/item/seeds/lavaland/whitesands/puce,
-/obj/item/seeds/lavaland/whitesands/puce,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
+/obj/item/seeds/lavaland/puce,
+/obj/item/seeds/lavaland/puce,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/roumain)
 "hT" = (
-/obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable/orange{
 	icon_state = "1-8"
-	},
-/obj/structure/cable/orange{
-	icon_state = "0-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -525,6 +548,12 @@
 /obj/machinery/door/airlock/glass{
 	name = "Dormitories"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "iB" = (
@@ -535,6 +564,9 @@
 	dir = 4
 	},
 /obj/structure/fence/door,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/wood/yew,
 /area/ship/roumain)
 "iP" = (
@@ -563,6 +595,9 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/fence{
 	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/roumain)
@@ -712,6 +747,12 @@
 /obj/machinery/door/airlock/engineering{
 	name = "Starboard Wing"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/roumain)
 "lk" = (
@@ -745,9 +786,15 @@
 	},
 /obj/machinery/button/door{
 	id = "port_blasts";
-	name = "port blasts control"
+	name = "port blasts control";
+	pixel_x = -6;
+	pixel_y = 2
 	},
 /obj/structure/table/wood,
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 4;
+	id = "glaive_shields"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "lA" = (
@@ -923,6 +970,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood/maple,
 /area/ship/construction)
 "oC" = (
@@ -967,6 +1015,7 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "qv" = (
@@ -1003,7 +1052,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "qz" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "port_blasts";
 	name = "Port Blast Door"
@@ -1069,6 +1117,10 @@
 /obj/machinery/door/airlock/mining{
 	name = "Manufacturing and Expedition"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood/maple,
 /area/ship/construction)
 "ss" = (
@@ -1130,6 +1182,12 @@
 "ts" = (
 /obj/machinery/door/airlock/glass{
 	name = "Port Wing"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/roumain)
@@ -1287,6 +1345,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
 "xe" = (
@@ -1427,12 +1491,10 @@
 /turf/open/floor/plating,
 /area/ship/roumain)
 "zc" = (
-/obj/machinery/airalarm/directional/south,
-/obj/structure/cable/orange{
-	icon_state = "1-8"
-	},
 /obj/structure/destructible/tribal_torch,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable/orange,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "zv" = (
@@ -1548,6 +1610,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
+"AQ" = (
+/obj/structure/cable/orange{
+	icon_state = "1-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "port_blasts";
+	name = "Port Blast Door"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
 "AY" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -1691,6 +1763,9 @@
 /obj/structure/fence{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/roumain)
 "Du" = (
@@ -1784,10 +1859,6 @@
 	pixel_y = 1;
 	pixel_x = -7
 	},
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fern{
-	pixel_x = -7;
-	pixel_y = -4
-	},
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit{
 	pixel_x = -9;
 	pixel_y = -3
@@ -1800,15 +1871,18 @@
 	pixel_y = 9;
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/puce{
-	pixel_x = 9;
-	pixel_y = -2
-	},
 /obj/item/pestle{
 	pixel_y = 6
 	},
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/puce,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/fireblossom,
+/obj/structure/flora/ash/fern,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "EJ" = (
@@ -1934,6 +2008,12 @@
 /obj/item/candle/tribal_torch,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"Gi" = (
+/obj/structure/cable/orange{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
 "GM" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange,
@@ -1964,6 +2044,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood/maple,
 /area/ship/construction)
 "HB" = (
@@ -2020,6 +2101,10 @@
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Engine Room"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "IF" = (
@@ -2135,6 +2220,12 @@
 /obj/machinery/door/airlock{
 	name = "Restroom"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/toilet)
 "Ma" = (
@@ -2212,6 +2303,7 @@
 /obj/item/flashlight/lantern,
 /obj/item/flashlight/lantern,
 /obj/item/flashlight/lantern,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "Mi" = (
@@ -2257,6 +2349,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood/maple,
 /area/ship/construction)
 "MR" = (
@@ -2270,6 +2363,12 @@
 	name = "Medical Bay"
 	},
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "MU" = (
@@ -2332,6 +2431,12 @@
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/construction)
 "Ng" = (
@@ -2365,9 +2470,7 @@
 /obj/item/seeds/lavaland/inocybe,
 /obj/item/seeds/lavaland/polypore,
 /obj/item/seeds/lavaland/porcini,
-/obj/item/seeds/lavaland/whitesands/fireblossom,
 /obj/item/seeds/lavaland/cactus,
-/obj/item/seeds/lavaland/whitesands/fern,
 /obj/item/cultivator/rake,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/roumain)
@@ -2410,6 +2513,21 @@
 /obj/machinery/vending/mining_equipment,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"OR" = (
+/obj/structure/cable/orange{
+	icon_state = "0-9"
+	},
+/obj/machinery/door/poddoor{
+	id = "port_blasts";
+	name = "Port Blast Door"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	locked = 1;
+	id = "glaive_shields"
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "Py" = (
 /obj/structure/cable/orange{
@@ -2469,6 +2587,12 @@
 	name = "Medical Bay"
 	},
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/construction)
 "QD" = (
@@ -2645,6 +2769,12 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	name = "Starboard Wing"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
@@ -2921,6 +3051,7 @@
 /obj/structure/cable/orange{
 	icon_state = "6-9"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood/maple,
 /area/ship/construction)
 "YP" = (
@@ -2940,6 +3071,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/fence/door,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/wood/maple,
 /area/ship/construction)
 "Zs" = (
@@ -3645,7 +3777,7 @@ MU
 go
 yp
 OF
-qz
+cp
 FA
 "}
 (18,1,1) = {"
@@ -3683,7 +3815,7 @@ nk
 Yi
 JG
 fa
-qz
+AQ
 FA
 "}
 (19,1,1) = {"
@@ -3909,7 +4041,7 @@ IZ
 IZ
 Wr
 jk
-VX
+Gi
 gb
 qz
 FA
@@ -3949,7 +4081,7 @@ fv
 ap
 bi
 sb
-qz
+OR
 FA
 "}
 (26,1,1) = {"

@@ -93,7 +93,7 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
-		/obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/puce = 1,
+		/obj/item/reagent_containers/food/snacks/grown/ash_flora/puce = 1,
 		/obj/item/reagent_containers/glass/mortar = 1,
 		/obj/item/reagent_containers/glass/bowl/mushroom_bowl = 1,
 		/obj/item/pestle = 1,
