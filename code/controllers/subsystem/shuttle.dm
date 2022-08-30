@@ -447,9 +447,18 @@ SUBSYSTEM_DEF(shuttle)
 				var/datum/overmap/ship/controlled/new_ship = new(null, S)
 				if(new_ship?.shuttle_port)
 					user.forceMove(new_ship.get_jump_to_turf())
-					message_admins("[key_name_admin(usr)] loaded [new_ship] ([S]) with the shuttle manipulator.")
-					log_admin("[key_name(usr)] loaded [new_ship] ([S]) with the shuttle manipulator.</span>")
+					message_admins("[key_name_admin(user)] loaded [new_ship] ([S]) with the shuttle manipulator.")
+					log_admin("[key_name(user)] loaded [new_ship] ([S]) with the shuttle manipulator.</span>")
 					SSblackbox.record_feedback("text", "shuttle_manipulator", 1, "[S]")
+
+		if("edit_template")
+			if(S)
+				. = TRUE
+				S.ui_interact(user)
+
+		if("new_template")
+			if(user.client)
+				user.client.map_template_upload()
 
 		if("jump_to")
 			if(params["type"] == "mobile")
