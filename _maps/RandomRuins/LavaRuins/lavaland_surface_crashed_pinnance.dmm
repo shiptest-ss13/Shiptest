@@ -152,6 +152,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/unpowered/crashsite/pinnance)
 "pA" = (
@@ -177,6 +178,7 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/windoor_assembly,
+/obj/item/flashlight/glowstick,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered/crashsite/pinnance)
 "uo" = (
@@ -225,13 +227,15 @@
 /area/ruin/unpowered/crashsite/pinnance)
 "xf" = (
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/south,
 /obj/machinery/holopad/emergency/science,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/shard,
+/obj/machinery/power/apc/auto_name/south{
+	start_charge = 0
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/unpowered/crashsite/pinnance)
 "xo" = (
@@ -447,10 +451,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/crashsite/pinnance)
-"Je" = (
-/obj/item/stack/ore/salvage/scraptitanium/five,
-/turf/template_noop,
-/area/template_noop)
 "Jg" = (
 /obj/structure/frame/machine,
 /obj/machinery/light/small/broken{
@@ -1120,7 +1120,7 @@ Wz
 Wz
 Wz
 Wz
-Je
+Wz
 Wz
 SD
 ni
@@ -1285,7 +1285,7 @@ SD
 SD
 SD
 uA
-Oa
+rr
 Oa
 Oa
 xI

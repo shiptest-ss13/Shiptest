@@ -96,3 +96,4 @@
 /area/ruin/unpowered/crashsite/pinnance
 	name = "Pinnace Wreckage"
 	icon_state = "dk_yellow"
+	always_unpowered = TRUE
