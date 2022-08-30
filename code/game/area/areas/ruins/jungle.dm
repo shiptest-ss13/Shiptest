@@ -96,3 +96,33 @@
 	name = "cargo dump"
 	icon_state = "dk_yellow"
 
+// Syndicate Shitfort
+
+/area/ruin/jungle/shitfort
+	name = "Syndicate Fort"
+	icon_state = "green"
+
+/area/ruin/jungle/shitfort/power
+	name = "Syndicate Power Shack"
+	icon_state = "red"
+
+/area/ruin/jungle/shitfort/ramparts
+	name = "Syndicate Fort Gates"
+	icon_state = "green"
+
+/area/ruin/jungle/shitfort/jerry
+	name = "Syndicate Fort Tower"
+	icon_state = "bridge"
+
+/area/ruin/jungle/shitfort/crewquarters
+	name = "Syndicate Fort Bunks"
+	icon_state = "crew_quarters"
+
+/area/ruin/jungle/shitfort/hall
+	name = "Syndicate Fort Hall"
+	icon_state = "dk_yellow"
+
+/area/ruin/jungle/shitfort/gearroom
+	name = "Syndicate Fort Gear Room"
+	icon_state = "security"
+
