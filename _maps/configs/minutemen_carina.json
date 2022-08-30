@@ -1,10 +1,10 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Carina-Class Patrol Cutter",
 	"prefix": "CMSV",
 	"namelists": ["GENERAL", "BRITISH_NAVY", "MYTHOLOGICAL", "BEASTS"],
 	"map_short_name": "Carina-class",
 	"map_path": "_maps/shuttles/shiptest/minutemen_carina.dmm",
-	"map_id": "minutemen_carina",
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
@@ -38,5 +38,5 @@
 			"slots": 5
 		}
 	},
-	"cost": 750
+	"enabled": true
 }

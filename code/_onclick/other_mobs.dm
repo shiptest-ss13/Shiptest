@@ -105,16 +105,18 @@
 		if(!iscarbon(A))
 			return
 		var/mob/living/carbon/victim = A
-		var/obj/item/bodypart/affecting = null
-		if(ishuman(victim))
-			var/mob/living/carbon/human/human_victim = victim
-			affecting = human_victim.get_bodypart(pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
-		var/armor = victim.run_armor_check(affecting, "melee")
+		var/obj/item/bodypart/affecting
 		if(prob(25))
 			victim.visible_message("<span class='danger'>[src]'s bite misses [victim]!</span>",
 				"<span class='danger'>You avoid [src]'s bite!</span>", "<span class='hear'>You hear jaws snapping shut!</span>", COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, "<span class='danger'>Your bite misses [victim]!</span>")
 			return
+
+		if(ishuman(victim))
+			var/mob/living/carbon/human/human_victim = victim
+			affecting = human_victim.get_bodypart(pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+		var/armor = victim.run_armor_check(affecting, "melee")
+
 		victim.apply_damage(rand(1, 3), BRUTE, affecting, armor)
 		victim.visible_message("<span class='danger'>[name] bites [victim]!</span>",
 			"<span class='userdanger'>[name] bites you!</span>", "<span class='hear'>You hear a chomp!</span>", COMBAT_MESSAGE_RANGE, name)
