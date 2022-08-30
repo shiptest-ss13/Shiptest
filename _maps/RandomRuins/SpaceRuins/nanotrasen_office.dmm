@@ -213,7 +213,7 @@
 /area/ruin/space/has_grav/nanotrasen_office/files)
 "fF" = (
 /obj/structure/closet/crate,
-/obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/item/stack/sheet/mineral/uranium,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nanotrasen_office/canteen)
 "fQ" = (
@@ -423,11 +423,12 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/machinery/power/port_gen/pacman,
 /obj/machinery/power/apc/auto_name/west{
 	start_charge = 0
 	},
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nanotrasen_office/files)
 "kC" = (
@@ -620,11 +621,6 @@
 /obj/structure/sink,
 /turf/closed/wall,
 /area/ruin/space/has_grav/nanotrasen_office/canteen)
-"qD" = (
-/obj/effect/decal/cleanable/glass,
-/obj/structure/grille/broken,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/nanotrasen_office/entrancearea)
 "qM" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/nanotrasen_office/entrancearea)
@@ -687,12 +683,6 @@
 /obj/machinery/door/airlock/command,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/nanotrasen_office/files)
-"sJ" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/nanotrasen_office/entrancearea)
 "sK" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -743,9 +733,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sink{
 	pixel_y = 22
-	},
-/obj/machinery/light/broken{
-	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/nanotrasen_office/cubicles)
@@ -831,6 +818,9 @@
 /area/ruin/space/has_grav/nanotrasen_office/files)
 "yj" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/nanotrasen_office/cubicles)
 "yv" = (
@@ -851,10 +841,18 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/nanotrasen_office/entrancearea)
 "yE" = (
-/obj/effect/decal/cleanable/glass,
-/obj/structure/grille/broken,
-/turf/open/floor/plating/rust,
-/area/ruin/space/has_grav/nanotrasen_office/cubicles)
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/west{
+	start_charge = 0
+	},
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/nanotrasen_office/canteen)
 "yI" = (
 /obj/machinery/light{
 	dir = 4
@@ -991,9 +989,7 @@
 /area/ruin/space/has_grav/nanotrasen_office/cubicles)
 "BF" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/turf_decal/corner_techfloor_grid/diagonal,
-/obj/structure/grille,
-/turf/open/floor/plasteel,
+/turf/open/floor/wood/ebony,
 /area/ruin/space/has_grav/nanotrasen_office/entrancearea)
 "BK" = (
 /obj/structure/filingcabinet/chestdrawer,
@@ -1034,11 +1030,13 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/machinery/power/port_gen/pacman,
 /obj/machinery/power/apc/auto_name/west{
 	start_charge = 0
 	},
 /obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nanotrasen_office/cubicles)
 "DW" = (
@@ -1074,7 +1072,7 @@
 	dir = 8
 	},
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
-/obj/item/gun/ballistic/automatic/pistol/commander,
+/obj/item/melee/baton,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/nanotrasen_office/entrancearea)
 "Fh" = (
@@ -1234,12 +1232,10 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/nanotrasen_office/entrancearea)
 "IL" = (
-/obj/machinery/power/terminal,
-/obj/machinery/power/port_gen/pacman,
-/obj/machinery/power/apc/auto_name/south{
-	start_charge = 0
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/obj/structure/cable,
+/obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nanotrasen_office/canteen)
 "Jb" = (
@@ -1361,8 +1357,10 @@
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/nanotrasen_office/canteen)
 "LG" = (
-/obj/machinery/light/broken,
-/obj/item/restraints/legcuffs/beartrap,
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nanotrasen_office/canteen)
 "LX" = (
@@ -1589,11 +1587,13 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/machinery/power/port_gen/pacman,
 /obj/machinery/power/apc/auto_name/west{
 	start_charge = 0
 	},
 /obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nanotrasen_office/entrancearea)
 "TU" = (
@@ -1769,9 +1769,18 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nanotrasen_office/canteen)
 "ZQ" = (
-/obj/item/shard,
-/turf/open/floor/plating/asteroid/airless,
-/area/template_noop)
+/obj/machinery/light/broken,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/smes{
+	output_attempt = 0;
+	outputting = 0;
+	inputting = 0;
+	input_attempt = 0
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/nanotrasen_office/canteen)
 "ZZ" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/wood/ebony,
@@ -2007,7 +2016,7 @@ JZ
 Jr
 qM
 Qj
-FP
+Qj
 FP
 FP
 KT
@@ -2048,8 +2057,8 @@ Em
 kA
 Dz
 TS
+yE
 Qj
-gk
 gk
 FP
 FP
@@ -2090,8 +2099,8 @@ Em
 pi
 ZM
 LG
+ZQ
 Qj
-gk
 gk
 gk
 gk
@@ -2494,7 +2503,7 @@ KT
 (18,1,1) = {"
 KT
 FP
-yE
+QQ
 Xi
 CA
 Vs
@@ -2578,7 +2587,7 @@ FP
 (20,1,1) = {"
 KT
 FP
-yE
+QQ
 iq
 gK
 bx
@@ -2606,8 +2615,8 @@ KD
 bM
 gm
 vB
-sJ
-sJ
+BF
+BF
 qM
 gk
 gk
@@ -2662,7 +2671,7 @@ FP
 (22,1,1) = {"
 KT
 KT
-yE
+QQ
 ds
 yI
 eF
@@ -2690,8 +2699,8 @@ xx
 KU
 rP
 vB
-sJ
-sJ
+BF
+BF
 qM
 FP
 FP
@@ -2732,7 +2741,7 @@ bM
 XF
 NO
 EU
-sJ
+BF
 FP
 FP
 FP
@@ -2774,7 +2783,7 @@ Bx
 NC
 JT
 vB
-sJ
+BF
 BF
 qM
 FP
@@ -2858,8 +2867,8 @@ Kd
 je
 oo
 NC
-sJ
-sJ
+BF
+BF
 qM
 FP
 FP
@@ -2899,7 +2908,7 @@ Hf
 Dy
 qM
 qM
-sJ
+BF
 qM
 gk
 gk
@@ -3026,8 +3035,8 @@ xm
 Ik
 fx
 Bi
-qD
-ZQ
+BF
+FP
 FP
 Ae
 FP
@@ -3068,10 +3077,10 @@ ix
 ix
 ix
 yx
-qD
+BF
 FP
 FP
-ZQ
+FP
 FP
 FP
 gk
