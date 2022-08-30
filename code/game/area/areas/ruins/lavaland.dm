@@ -86,3 +86,13 @@
 	power_equip = FALSE
 	power_light = FALSE
 	poweralm = FALSE
+
+// Crashed Pinnance
+
+/area/ruin/unpowered/crashsite
+	name = "Crash Site"
+	icon_state = "green"
+
+/area/ruin/unpowered/crashsite/pinnance
+	name = "Pinnace Wreckage"
+	icon_state = "dk_yellow"
