@@ -49,6 +49,7 @@
 	if (A)
 		A.air_vent_names -= id_tag
 		A.air_vent_info -= id_tag
+		deallocate_nameid(A.air_vent_ids, id_tag)
 	if(aac)
 		aac.vents -= src
 
@@ -68,7 +69,7 @@
 		icon_state = "vent_welded"
 		return
 
-	if(!nodes[1] || !on || !is_operational())
+	if(!nodes[1] || !on || !is_operational)
 		if(icon_state == "vent_welded")
 			icon_state = "vent_off"
 			return
@@ -95,7 +96,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/process_atmos()
 	..()
-	if(!is_operational())
+	if(!is_operational)
 		return
 	if(!nodes[1])
 		return
@@ -163,7 +164,8 @@
 
 	var/area/A = get_area(src)
 	if(!A.air_vent_names[id_tag])
-		name = "\improper [A.name] vent pump #[A.air_vent_names.len + 1]"
+		var/nameid = allocate_nameid(A.air_vent_ids, id_tag)
+		name = "\improper [A.name] vent pump #[nameid]"
 		A.air_vent_names[id_tag] = name
 	A.air_vent_info[id_tag] = signal.data
 
@@ -180,7 +182,7 @@
 	..()
 
 /obj/machinery/atmospherics/components/unary/vent_pump/receive_signal(datum/signal/signal)
-	if(!is_operational())
+	if(!is_operational)
 		return
 	// log_admin("DEBUG \[[world.timeofday]\]: /obj/machinery/atmospherics/components/unary/vent_pump/receive_signal([signal.debug_print()])")
 	if(!signal.data["tag"] || (signal.data["tag"] != id_tag) || (signal.data["sigtype"]!="command"))
@@ -271,7 +273,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/can_unwrench(mob/user)
 	. = ..()
-	if(. && on && is_operational())
+	if(. && on && is_operational)
 		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
 		return FALSE
 

@@ -1,10 +1,10 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Colossus-Class Armored Frigate",
 	"prefix": "IRMV",
 	"namelists": ["MYTHOLOGICAL", "BEASTS", "NATURAL_AGGRESSIVE"],
 	"map_short_name": "Colossus-class",
 	"map_path": "_maps/shuttles/shiptest/inteq_colossus.dmm",
-	"map_id": "inteq_colossus",
 	"limit": 1,
 	"job_slots": {
 		"Vanguard": {
@@ -29,5 +29,5 @@
 			"slots": 5
 		}
 	},
-	"cost": 750
+	"enabled": true
 }

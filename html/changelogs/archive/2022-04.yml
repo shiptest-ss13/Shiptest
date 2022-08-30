@@ -1,0 +1,123 @@
+2022-04-03:
+  Mothblocks, Kylerace, ninjanomnom, LemonInTheDark, Rohesie, Wayland-Smithy, Watermelon914, CoffeeKat:
+  - refactor: movement code refactor to speed up crap
+  - code_imp: improves components code
+  ZephyrTFA:
+  - bugfix: AI Eyes no longer get permanently deleted by hyperspace
+2022-04-07:
+  MarkSuckerberg:
+  - admin: Centcom Ban DB now is actually accessible ingame.
+  - admin: The player panel now looks marginally better.
+2022-04-09:
+  disappointedButNotSuprised:
+  - tweak: The wormhole projector a.k.a. portal gun does no longer require an anomaly
+      core to work , costs more materials in return
+  - bugfix: Removed random space tiles on the whitesands farm ruin
+  francinum:
+  - rscdel: The statio.3 has been sold for market value as scrap. The profits from
+      said scrap have been used to offset the transport incurred in the scrapping
+      of said vessel.
+  retlaw34:
+  - rscadd: new minor faction, colonial minutemen
+  - rscadd: m16, pretty much the same as ak
+  - balance: 556 and ak47 ammo nerfed to 30 damage per hit
+  - soundadd: a ton of gun sounds were changed
+  - refactor: ton of files were demodularize
+  tiramisu & nearlyNon:
+  - rscadd: Blank, Buffering, DOOM, no-anim Eyes, and squinty Fortuna eyes IPC screens
+2022-04-11:
+  MarkSuckerberg:
+  - tweak: Planet loading now occurs during init and after departure, so initial docking
+      should be a lot faster, as well as ghost roles will actually appear in time
+      for them to get a foothold on the planet.
+  - bugfix: Ships are no longer blocked from moving until the planet fully deloads
+  PrefabQuasar:
+  - refactor: Udders have been componentized
+  benbot16:
+  - bugfix: AIs can use mech actions now.
+  disappointedButNotSuprised:
+  - bugfix: A cryo console is added to the solar-class as it should be
+  - rscadd: Powering the defibs on Geneva was made more obvious
+  retlaw34:
+  - rscadd: New NT Security sprites
+  - imageadd: Many resprites regarding security stuff
+2022-04-17:
+  IndusRobot:
+  - bugfix: Fixes hologram pockets not resetting its contents
+  retlaw34:
+  - bugfix: ETAR Disabler mode now fires
+  someguyjust:
+  - rscadd: Adds new maid uniform sprites to replace the flat ones
+  tiramisuapimancer:
+  - rscadd: bunch of existing clothing items have been added to loadout
+  - bugfix: capitalization on cowboy hat
+  - bugfix: workboots loadout entry now  actually gives you workboots and not mining
+      boots
+  - soundadd: moth deathsound
+2022-04-24:
+  Apogee-dev:
+  - rscadd: Added basic, sec, command, and captain dusters
+  - rscadd: Added dusters to Riggs
+  - tweak: Adjusted Riggs weapons loadout. Secoff now has M1911 + rubbershot.
+  IndusRobot:
+  - rscadd: Added the dual port air vent to the RPD selection menu
+  - bugfix: Fixes multiplicative speed boosts involving broken legs
+  - bugfix: Fixes scrubbers scrubbing while off
+  - rscadd: Adds an optional surgery step to cancel with a cautery, if the active
+      step does not require a cautery
+  PrefabQuasar:
+  - tweak: The High-class has had its glass flooring removed due to space OSHA
+  Recoherent:
+  - rscadd: Utility closets (fire-safety, emergency, tool, and radiation) are now
+      craftable. Make them using iron, like the normal closet.
+  - tweak: Moved the generic closet to a 'closets' category in the sheetcrafting menu,
+      alongside the new utility closets.
+  disappointedButNotSuprised:
+  - bugfix: fixed radio telekinesis issues
+  tiramisuapimancer:
+  - bugfix: removed natural wig from loadout, was making it impossible to select the
+      colorable one. if you want a natural wig use the bald quirk
+  - tweak: maid dress in the uniforms section is back to just being the uniform. the
+      other pieces of the maid outfit are available on their own in their respective
+      pieces of the loadout, or in the general section you can get the box
+  triplezeta:
+  - rscadd: DIY Shuttle
+2022-04-26:
+  Apogee-dev:
+  - rscdel: Removed SolGov Carina
+  - rscadd: Added Minutemen Carina
+  - tweak: Numerous balance changes to Carina
+  - imageadd: Added icons for 7.62x38mm ammunition
+  Ebin-Halcyon:
+  - imageadd: Syndicate and IRMG maid sprites
+  IndusRobot:
+  - bugfix: Fixes cyborg disablers chambering a new shot where there is no charge
+  SweetBlueSylveon:
+  - tweak: Removed loot and changed a couple enemies in the Icecropolis, demonlab,
+      and corporate reject maps.
+2022-04-28:
+  Fikou, Tastyfish, maxymax13, sergeirocks100, san7890:
+  - imageadd: resprited some goonstation sprites
+  PositiveEntropy:
+  - imageadd: Resprites most crates and the trash cart!
+  - rscdel: Removes crates.dmi from the goon folder.
+  Vexylius:
+  - bugfix: fixed runtimes or whatever
+  - rscdel: removed NAD's ship affection
+  - rscdel: removed highlander antagonist
+2022-04-29:
+  DatBoiTim:
+  - rscadd: Added species specific tongues where needed
+  - refactor: SayMods are now determined by tongues
+  Fikou:
+  - bugfix: fixes wrong flash being used on some maps
+  IndusRobot:
+  - bugfix: Updates the cancel tool for robot type surgery
+  TypeVar:
+  - rscadd: Nemo-class Spacelife research Vessel
+  Vexylius:
+  - rscadd: You can now enter THROWMODE by holding down space(by default)
+  triplezeta:
+  - balance: some windows have had their health numbers changed
+  - bugfix: titanium windows are able to be deconned
+  - bugfix: survival pod windows will now spawn properly

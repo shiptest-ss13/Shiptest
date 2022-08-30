@@ -203,7 +203,7 @@
 		opened = APC_COVER_OPENED
 		operating = FALSE
 		name = "\improper [get_area_name(area, TRUE)] APC"
-		machine_stat |= MAINT
+		set_machine_stat(machine_stat | MAINT)
 		update_icon()
 		addtimer(CALLBACK(src, .proc/update), 5)
 
@@ -513,12 +513,12 @@
 			switch (has_electronics)
 				if (APC_ELECTRONICS_INSTALLED)
 					has_electronics = APC_ELECTRONICS_SECURED
-					machine_stat &= ~MAINT
+					set_machine_stat(machine_stat & ~MAINT)
 					W.play_tool_sound(src)
 					to_chat(user, "<span class='notice'>You screw the circuit electronics into place.</span>")
 				if (APC_ELECTRONICS_SECURED)
 					has_electronics = APC_ELECTRONICS_INSTALLED
-					machine_stat |= MAINT
+					set_machine_stat(machine_stat | MAINT)
 					W.play_tool_sound(src)
 					to_chat(user, "<span class='notice'>You unfasten the electronics.</span>")
 				else
@@ -682,7 +682,7 @@
 		if(do_after(user, 50, target = src))
 			to_chat(user, "<span class='notice'>You replace the damaged APC frame with a new one.</span>")
 			qdel(W)
-			machine_stat &= ~BROKEN
+			set_machine_stat(machine_stat & ~BROKEN)
 			obj_integrity = max_integrity
 			if (opened==APC_COVER_REMOVED)
 				opened = APC_COVER_OPENED
@@ -895,7 +895,7 @@
 		"chargingStatus" = charging,
 		"totalLoad" = DisplayPower(lastused_total),
 		"coverLocked" = coverlocked,
-		"siliconUser" = ( user.has_unlimited_silicon_privilege && check_ship_ai_access( user ) ) || user.using_power_flow_console(),
+		"siliconUser" = (user.has_unlimited_silicon_privilege && check_ship_ai_access(user)) || user.using_power_flow_console(),
 		"malfStatus" = get_malf_status(user),
 		"malfMaskHackStatus" = malfhackhide,
 		"emergencyLights" = !emergency_lights,
@@ -973,7 +973,7 @@
 		var/mob/living/silicon/robot/robot = user
 		if (																				 \
 			src.aidisabled ||														  \
-			!check_ship_ai_access( user ) || \
+			!check_ship_ai_access(user) || \
 			malfhack && istype(malfai) &&										  \
 			(																				\
 				(istype(AI) && (malfai!=AI && malfai != AI.parent)) ||	\
@@ -1068,7 +1068,7 @@
 	return 1
 
 /obj/machinery/power/apc/proc/toggle_breaker(mob/user)
-	if(!is_operational() || failure_timer)
+	if(!is_operational || failure_timer)
 		return
 	operating = !operating
 	add_hiddenprint(user)
@@ -1467,7 +1467,7 @@
 /obj/machinery/power/apc/proc/overload_lighting()
 	if(/* !get_connection() || */ !operating || shorted)
 		return
-	if( cell && cell.charge>=20)
+	if(cell && cell.charge>=20)
 		cell.use(20)
 		INVOKE_ASYNC(src, .proc/break_lights)
 

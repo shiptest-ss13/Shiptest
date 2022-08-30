@@ -1,21 +1,13 @@
 /datum/job/chaplain
-	title = "Chaplain"
-	department_head = list("Head of Personnel")
-	faction = "Station"
+	name = "Chaplain"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
 	wiki_page = "Chaplain" //WS Edit - Wikilinks/Warning
-	selection_color = "#bbe291"
-	alt_titles = list("Counselor", "Monk", "Imam", "Rabbi")
-	senior_title = "Atheist"
 
 	outfit = /datum/outfit/job/chaplain
 
 	access = list(ACCESS_MORGUE, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_THEATRE)
 	minimal_access = list(ACCESS_MORGUE, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_THEATRE)
-	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_CHAPLAIN
 
@@ -119,6 +111,7 @@
 
 /datum/outfit/job/chaplain
 	name = "Chaplain"
+	job_icon = "chaplain"
 	jobtype = /datum/job/chaplain
 
 	belt = /obj/item/pda/chaplain

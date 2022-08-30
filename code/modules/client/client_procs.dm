@@ -280,11 +280,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			if(!I || I == src)
 				continue
 			var/client/C = I
-			if(C.key && (C.key != key) )
+			if(C.key && (C.key != key))
 				var/matches
-				if( (C.address == address) )
+				if((C.address == address))
 					matches += "IP ([address])"
-				if( (C.computer_id == computer_id) )
+				if((C.computer_id == computer_id))
 					if(matches)
 						matches += " and "
 					matches += "ID ([computer_id])"
@@ -388,7 +388,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			qdel(src)
 			return 0
 
-	if( (world.address == address || !address) && !GLOB.host )
+	if((world.address == address || !address) && !GLOB.host)
 		GLOB.host = key
 		world.update_status()
 
@@ -916,7 +916,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 #if (PRELOAD_RSC == 0)
 	var/static/next_external_rsc = 0
 	var/list/external_rsc_urls = CONFIG_GET(keyed_list/external_rsc_urls)
-	if(length(external_rsc_urls.len))
+	if(length(external_rsc_urls))
 		next_external_rsc = WRAP(next_external_rsc+1, 1, external_rsc_urls.len+1)
 		preload_rsc = external_rsc_urls[next_external_rsc]
 #endif

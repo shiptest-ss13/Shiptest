@@ -1,10 +1,10 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Riggs-class Sloop",
 	"prefix": "SV",
 	"namelists": ["GENERAL", "SPACE", "NATURAL", "NATURAL_AGGRESSIVE"],
 	"map_short_name": "Riggs-class",
 	"map_path": "_maps/shuttles/shiptest/independent_rigger.dmm",
-	"map_id": "rigger",
 	"roundstart": true,
 	"limit": 2,
 	"job_slots": {
@@ -43,5 +43,5 @@
 			"slots": 4
 		}
 	},
-	"cost": 750
+	"enabled": true
 }

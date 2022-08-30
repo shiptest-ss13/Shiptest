@@ -140,7 +140,7 @@
 
 /obj/effect/anomaly/grav/high/Initialize(mapload, new_lifespan)
 	. = ..()
-	setup_grav_field()
+	INVOKE_ASYNC(src, .proc/setup_grav_field)
 
 /obj/effect/anomaly/grav/high/proc/setup_grav_field()
 	grav_field = make_field(/datum/proximity_monitor/advanced/gravity, list("current_range" = 7, "host" = src, "gravity_value" = rand(0,3)))
@@ -244,7 +244,7 @@
 
 			var/y_distance = TO.y - FROM.y
 			var/x_distance = TO.x - FROM.x
-			for (var/atom/movable/A in urange(12, FROM )) // iterate thru list of mobs in the area
+			for (var/atom/movable/A in urange(12, FROM)) // iterate thru list of mobs in the area
 				if(istype(A, /obj/item/beacon))
 					continue // don't teleport beacons because that's just insanely stupid
 				if(A.anchored)
@@ -373,7 +373,7 @@
 			step_towards(M,src)
 
 	//Damaging the turf
-	if( T && prob(turf_removal_chance) )
+	if(T && prob(turf_removal_chance))
 		switch(ex_act_force)
 			if(EXPLODE_DEVASTATE)
 				SSexplosions.highturf += T

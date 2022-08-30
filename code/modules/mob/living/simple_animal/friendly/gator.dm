@@ -1,11 +1,12 @@
 /mob/living/simple_animal/hostile/retaliate/gator/steppy
 	name = "Steppy"
 	desc = "Cargo's pet gator. Is he being detained!?"
-	icon = 'whitesands/icons/mob/pets.dmi'
+	icon = 'icons/mob/pets.dmi'
 	icon_state = "steppy"
 	icon_living = "steppy"
 	icon_dead ="steppy_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	environment_smash = ENVIRONMENT_SMASH_NONE
 	speak_emote = list("snaps")
 	emote_hear = list("snaps.","hisses.")
 	emote_see = list("waits apprehensively.", "shuffles.")

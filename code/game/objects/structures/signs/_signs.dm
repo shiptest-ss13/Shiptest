@@ -94,7 +94,7 @@
 	user.visible_message(
 		"<span class='notice'>[user] starts repairing [src]...</span>", \
 		"<span class='notice'>You start repairing [src].</span>")
-	if(!I.use_tool(src, user, 4 SECONDS, volume =50 ))
+	if(!I.use_tool(src, user, 4 SECONDS, volume =50))
 		return TRUE
 	user.visible_message(
 		"<span class='notice'>[user] finishes repairing [src].</span>", \
@@ -114,7 +114,7 @@
 	user.visible_message(
 		"<span class='notice'>[user] starts repairing [src]...</span>", \
 		"<span class='notice'>You start repairing [src].</span>")
-	if(!I.use_tool(src, user, 4 SECONDS, volume =50 ))
+	if(!I.use_tool(src, user, 4 SECONDS, volume =50))
 		return TRUE
 	user.visible_message(
 		"<span class='notice'>[user] finishes repairing [src].</span>", \
@@ -236,14 +236,14 @@
 /obj/structure/sign/solgov_seal
 	name = "Seal of the solarian government"
 	desc = "A seal emblazened with a gold trim depicting the star, sol."
-	icon = 'whitesands/icons/obj/solgov_logos.dmi'
+	icon = 'icons/obj/solgov_logos.dmi'
 	icon_state = "solgovseal"
 	pixel_y = 27
 
 /obj/structure/sign/solgov_flag
 	name = "solgov banner"
 	desc = "A large flag displaying the logo of solgov, the local government of the sol system."
-	icon = 'whitesands/icons/obj/solgov_logos.dmi'
+	icon = 'icons/obj/solgov_logos.dmi'
 	icon_state = "solgovflag-left"
 	pixel_y = 26
 
@@ -261,7 +261,7 @@
 /obj/structure/sign/number
 	name = "zero"
 	desc = "A numeral sign."
-	icon = 'whitesands/icons/turf/decals.dmi'
+	icon = 'icons/turf/decals.dmi'
 	icon_state = "0"
 
 /obj/structure/sign/number/one
