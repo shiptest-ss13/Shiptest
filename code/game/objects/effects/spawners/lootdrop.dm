@@ -633,6 +633,59 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 /obj/effect/spawner/lootdrop/whitesands/survivor/gunslinger
 	name = "Whitesands Gunslinger loot spawner"
 	loot = list(
-		/obj/item/gun/ballistic/automatic/aks74u = 0.1,
+		/obj/item/gun/ballistic/automatic/smg/aks74u = 0.1,
 		/obj/item/ammo_box/magazine/aks74u = 0.4
 	)
+
+/obj/effect/spawner/lootdrop/stockparts
+	name = "random good stock parts"
+	lootcount = 5
+	loot = list(
+				/obj/item/stock_parts/capacitor/adv,
+				/obj/item/stock_parts/capacitor/quadratic,
+				/obj/item/stock_parts/capacitor/super,
+				/obj/item/stock_parts/cell/hyper,
+				/obj/item/stock_parts/cell/super,
+				/obj/item/stock_parts/cell/bluespace,
+				/obj/item/stock_parts/matter_bin/bluespace,
+				/obj/item/stock_parts/matter_bin/super,
+				/obj/item/stock_parts/matter_bin/adv,
+				/obj/item/stock_parts/micro_laser/ultra,
+				/obj/item/stock_parts/micro_laser/quadultra,
+				/obj/item/stock_parts/micro_laser/high,
+				/obj/item/stock_parts/scanning_module/triphasic,
+				/obj/item/stock_parts/scanning_module/phasic,
+				/obj/item/stock_parts/scanning_module/adv,
+				/obj/item/reagent_containers/glass/beaker/bluespace,
+				/obj/item/reagent_containers/glass/beaker/plastic,
+				/obj/item/reagent_containers/glass/beaker/large,
+				/obj/item/stock_parts/manipulator/nano,
+				/obj/item/stock_parts/manipulator/pico,
+				/obj/item/stock_parts/manipulator/femto
+				)
+
+/obj/effect/spawner/lootdrop/materials
+	name = "random materials"
+	lootcount = 3
+	loot = list(
+				/obj/item/stack/sheet/plastic/fifty,
+				/obj/item/stack/sheet/plastic/five,
+				/obj/item/stack/sheet/bluespace_crystal/twenty,
+				/obj/item/stack/sheet/bluespace_crystal/five,
+				/obj/item/stack/sheet/cardboard/fifty,
+				/obj/item/stack/sheet/glass/fifty,
+				/obj/item/stack/sheet/metal/fifty,
+				/obj/item/stack/sheet/metal/twenty,
+				/obj/item/stack/sheet/plasteel/twenty,
+				/obj/item/stack/sheet/mineral/plasma/fifty,
+				/obj/item/stack/sheet/mineral/plasma/twenty,
+				/obj/item/stack/sheet/mineral/silver/fifty,
+				/obj/item/stack/sheet/mineral/titanium/twenty,
+				/obj/item/stack/sheet/mineral/uranium/twenty,
+				/obj/item/stack/sheet/mineral/wood/fifty,
+				/obj/item/stack/sheet/mineral/diamond/twenty,
+				/obj/item/stack/sheet/mineral/gold/fifty,
+				/obj/item/stack/sheet/mineral/adamantine/ten,
+				/obj/item/stack/cable_coil/red,
+				/obj/item/stack/rods/fifty
+				)

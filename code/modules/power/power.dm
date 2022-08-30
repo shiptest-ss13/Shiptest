@@ -122,12 +122,12 @@
 		if(machine_stat & NOPOWER)
 			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_RESTORED)
 			. = TRUE
-		machine_stat &= ~NOPOWER
+		set_machine_stat(machine_stat & ~NOPOWER)
 	else
 		if(!(machine_stat & NOPOWER))
 			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_LOST)
 			. = TRUE
-		machine_stat |= NOPOWER
+		set_machine_stat(machine_stat | NOPOWER)
 	update_icon()
 
 // connect the machine to a powernet if a node cable is present on the turf
@@ -263,7 +263,7 @@
 		P = worklist[index] //get the next power object found
 		index++
 
-		if( istype(P, /obj/structure/cable))
+		if(istype(P, /obj/structure/cable))
 			var/obj/structure/cable/C = P
 			if(C.powernet != PN) //add it to the powernet, if it isn't already there
 				PN.add_cable(C)

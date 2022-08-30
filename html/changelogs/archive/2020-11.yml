@@ -1,0 +1,179 @@
+2020-11-01:
+  Azlanon & Triplezeta:
+  - rscadd: Large weapon powercells, for use in large weapons.
+  - imageadd: new weapon powercell sprites, and Azlan's cell charger resprite
+  SynnGraffkin:
+  - rscadd: Atmospheric gas collections have been implemented in every station's atmospherics
+      department.
+  triplezeta:
+  - imageadd: new pen sprites
+  untrius:
+  - balance: Ethereal charge lasts much longer
+  - bugfix: Ethereal zero charge icon now displays at zero charge
+2020-11-03:
+  Maldaris:
+  - tweak: Weakly decoupled client FPS from server FPS in a way that improves client
+      animation speed, while not affecting the server.
+2020-11-04:
+  TheNeoGamer42:
+  - bugfix: Nanotrasen atmospheric technicians have got around to actually properly
+      piping some places together (specifically meta genetics, and the northern box
+      maints
+2020-11-05:
+  MarkSuckerberg:
+  - bugfix: Papers attached to doors are now readable.
+  - bugfix: Papers sent to centcom are now readable by admins again.
+  - bugfix: Stamps work again. Probably.
+  - admin: Secret documents that are faxed to centcom are now "readable."
+  dinnerwoerror:
+  - bugfix: a syndishit traitor working at the cargo crate construction line sabotaged
+      the access locks on all security crates or some shit, so they got fixed by a
+      purple skeleton
+  - bugfix: there were many inconsistencies in the prices of mineral shipments, but
+      there aren't anymore
+  triplezeta:
+  - tweak: Dylovene (anti-toxin) can now be found in strains of vanilla plants.
+  untrius:
+  - rscadd: Ethereals can select their colors with a multitool
+  - rscadd: Anyone can randomize an Ethereal's color with a multitool
+2020-11-06:
+  Maldaris:
+  - rscadd: A 1911 Ammo Disk for use in an autolathe, in the same ruin that 1911s
+      spawn in.
+2020-11-12:
+  Baldir-Odensen:
+  - rscdel: Removed the RPED is now unable to accept weapon cells.
+  - tweak: The secbelt has been modified to take weapon cells,
+  - tweak: the gun cell design has been moved from power to weapons.
+  triplezeta:
+  - balance: specialist bags are normal sized again
+2020-11-13:
+  <a href="https://github.com/Whitesands13/Whitesands/pull/539">Multiple Authors<a>:
+  - rscadd: Lights are a lot less laggy due to being overlays.
+  - rscadd: Some lights are now directional.
+  - rscadd: Runechat now shows emotes.
+  - rscadd: Eye contect, if you examine someone and they quickly examine you back,
+      you both get shown a small, non-intrusive message.
+  - rscadd: glass floors?
+  - bugfix: You can sing over comms and all that now.
+  - bugfix: Adjusting view range shouldn't break as much when using full screen.
+  MaltVinegar:
+  - rscadd: Digitigrade magboots, normal, syndie, and advanced varieties
+  - rscadd: Adds a way to make shoes wearable by those with digitigrade and plantigrade
+      legs
+2020-11-14:
+  SynnGraffkin:
+  - rscadd: 'New station map: Ministation'
+  brugged:
+  - tweak: blowpipe no longer makes a phantom trigger click sound when empty
+  - refactor: custom dry fire text given to the masses
+2020-11-16:
+  Jack7D1:
+  - tweak: Randomly generated characters now have less neon colored hairs
+  - tweak: Changed the default scaling, widescreen and fit values to the most common
+      values.
+2020-11-17:
+  MarkSuckerberg:
+  - bugfix: turdis works hopefully
+2020-11-18:
+  SynnGraffkin:
+  - bugfix: Packedstation Viro button now properly located
+2020-11-19:
+  AsciiSquid:
+  - imageadd: adds icons related to squids that were previously missing
+  - tweak: squid ink now outlines it's victims
+  Maldaris:
+  - balance: Adjust BSM material generation rates
+  - balance: Increase bluespace crystal requirements for BSMs
+2020-11-21:
+  triplezeta:
+  - balance: mining hardhats have received an armor buff to protect against fires
+      and be usable as an alternative to wearing your explorer suit's hoodie
+  - bugfix: fire safety closets come with actual firefighter helmets now
+2020-11-24:
+  Jared-Fogle, actioninja, Cyberboss, Crossedfall, Mark Suckerberg:
+  - code_imp: CI has been changed somewhat.
+  - code_imp: To be closed, a PR needs to be stale (untouched for 7 days) and then
+      untouched for another 14.
+  - server: Docker actually works now.
+  dinnerwoerror:
+  - balance: the CMO hypospray kit comes with the upgraded chemicals instead of the
+      basic ones, as is befitting of their status
+  untrius & wesoda24:
+  - tweak: Ethereals can be the inducers they were born to be
+  - bugfix: Fixed charge cap on almost full APCs
+  - balance: Ethereals charging from power cells waste less power and charge slightly
+      slower
+  - balance: Ethereals charging from lights gain slightly less power and charge slightly
+      faster
+2020-11-25:
+  Maldaris:
+  - rscadd: temperature gradient support to monstermos immutable mixes
+  Vorak2:
+  - rscadd: Adds midwaystation as a playable map
+  triplezeta:
+  - tweak: bicard plus no longer requires plasma as a catalyst
+2020-11-26:
+  MarkSuckerberg:
+  - rscadd: Sleepers now draw reagents from an attached chembag
+  - rscdel: Sleepers no longer create infinite medicines out of thin air
+  - rscdel: Removed the party pod. Not going to explain why other than <i>why was
+      it in in the first place</i>
+2020-11-27:
+  MarkSuckerberg:
+  - rscadd: 'Departmental loadout support (see: berets)'
+  - rscadd: Loadouts now linked to character slots instead of clients
+  - tweak: You can now have more than one item equipped from the loadout if you have
+      a slot for it
+  - bugfix: The toggle loadout button in the preferences menu now works again
+  - bugfix: Some berets had messed up sprites, which have been fixed
+2020-11-28:
+  Maldaris:
+  - bugfix: Fixed admins being unable to view centcom/syndicate faxes.
+  - admin: Added a reminder string to paper examine as admin to enable Admin AI Interact
+  triplezeta:
+  - bugfix: connector icons
+2020-11-29:
+  Azarak, Bobbahbrown, Mark Suckerberg, ShizCalev, Timberpoes:
+  - bugfix: Mecha lights work again
+  - bugfix: Directional lighting overlays no longer blind anyone looking at security
+      camera feeds
+  - bugfix: Gunlight runtime fully fixed
+  - bugfix: Foods crafted with glowy ingredients no longer glow when in someone's
+      inventory
+  - rscadd: Runechat now appears even in pitch darkness
+  Baldir-Odensen:
+  - rscadd: Voidmelons can now be found in space on certain asterioids. They contain
+      chemical oxygen.
+  - imageadd: They have nice non codersprites provided by Zeta so you can calm down
+      im not murdering your eyes.
+  MarkSuckerberg:
+  - bugfix: Decal Painters' UIs work again.
+  - tweak: Decal painters are available in proto- and autolathes.
+  - tweak: People exempted from job hour requirements are now also exempt from the
+      account age/first connection age check.
+  SynnGraffkin:
+  - bugfix: "Robots can now properly path around the main halls of Packedstation when\
+      \ on Patrol (\uFF40\u2207\xB4\u309E"
+  - bugfix: Floor tiles in maint replaced with plating on Packedstation.
+  - bugfix: Missing wires and piping have been laid down.
+  - bugfix: Modular HoP console on Packed was replaced with standard HoP console.
+  triplezeta:
+  - bugfix: improv jetpack works now
+  untrius:
+  - bugfix: Chadmos get the senior atmos tech uniforms
+2020-11-30:
+  Vorak2:
+  - rscadd: Squid dosent understand vendors but I add them annyway
+  triplezeta:
+  - bugfix: some things i forgot to fix have been fixed
+  - rscadd: Kilo has public mining, as god intended
+  - rscdel: the checkerboarding in kilo's medbay is gone
+  - rscdel: some stray tape bits that were left behind have been sent to caution tape
+      hell
+  - tweak: Kilo's brig infirmary now violates the Geneva convention
+  - tweak: MEGABAR
+  - bugfix: many kilo APCs that were not wired at roundstart are now wired at roundstart
+  - bugfix: CE has his monitor decryption key again on Kilo
+  - bugfix: fax machines are on kilo now
+  - bugfix: the phantom wall mechas on kilo are gone

@@ -21,7 +21,6 @@
 	var/minor = FALSE
 	var/authenticated = FALSE
 	var/list/region_access
-	var/list/head_subordinates
 	///Which departments this computer has access to. Defined as access regions. null = all departments
 	var/target_dept
 
@@ -64,9 +63,9 @@
 	if(!id_card)
 		return
 
-	if ( computer.req_ship_access )
-		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
-		if ( ship?.unique_ship_access && !( id_card?.has_ship_access( SSshuttle.get_ship( computer ) ) ) )
+	if (computer.req_ship_access)
+		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(computer)
+		if (ship?.unique_ship_access && !(id_card?.has_ship_access(SSshuttle.get_ship(computer))))
 			return FALSE
 
 	region_access = list()
@@ -84,14 +83,6 @@
 			region_access += info["region"]
 			//I don't even know what I'm doing anymore
 			head_types += info["head"]
-
-	head_subordinates = list()
-	if(length(head_types))
-		for(var/j in SSjob.occupations)
-			var/datum/job/job = j
-			for(var/head in head_types)//god why
-				if(head in job.department_head)
-					head_subordinates += job.title
 
 	if(length(region_access))
 		minor = TRUE
@@ -173,8 +164,7 @@
 			if(!computer || !authenticated)
 				return
 			if(minor)
-				if(!(id_card.assignment in head_subordinates) && id_card.assignment != "Assistant")
-					return
+				return
 
 			id_card.access -= get_all_centcom_access() + get_all_accesses()
 			id_card.assignment = "Unassigned"
@@ -204,7 +194,7 @@
 					id_card.assignment = custom_name
 					id_card.update_label()
 			else
-				if(minor && !(target in head_subordinates))
+				if(minor)
 					return
 				var/list/new_access = list()
 				if(is_centcom)
@@ -213,7 +203,7 @@
 					var/datum/job/job
 					for(var/jobtype in subtypesof(/datum/job))
 						var/datum/job/J = new jobtype
-						if(J.title == target)
+						if(J.name == target)
 							job = J
 							break
 					if(!job)
@@ -240,26 +230,26 @@
 		if ( "PRG_grantship" )
 			if(!computer || !authenticated || !computer.req_ship_access) // Only stationary computers can grant ship access. Prevents funny tablet exploits
 				return
-			id_card.add_ship_access( SSshuttle.get_ship( computer ) )
+			id_card.add_ship_access(SSshuttle.get_ship(computer))
 			playsound(computer, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			return TRUE
 		if ( "PRG_denyship" )
 			if(!computer || !authenticated || !computer.req_ship_access)
 				return
-			id_card.remove_ship_access( SSshuttle.get_ship( computer ) )
+			id_card.remove_ship_access(SSshuttle.get_ship(computer))
 			playsound(computer, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 			return TRUE
 		if ( "PRG_enableuniqueaccess" )
 			if(!computer || !authenticated || !computer.req_ship_access)
 				return
-			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
+			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(computer)
 			ship?.unique_ship_access = TRUE
 			playsound(computer, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			return TRUE
 		if ( "PRG_disableuniqueaccess" )
 			if(!computer || !authenticated || !computer.req_ship_access)
 				return
-			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
+			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(computer)
 			ship?.unique_ship_access = FALSE
 			playsound(computer, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 			return TRUE
@@ -269,9 +259,9 @@
 			if(!COOLDOWN_FINISHED(src, silicon_access_print_cooldown))
 				computer.say("Printer unavailable. Please allow a short time before attempting to print.")
 				return
-			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
-			if ( ship )
-				var/obj/item/borg/upgrade/ship_access_chip/chip = new( get_turf( computer ) )
+			var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(computer)
+			if (ship)
+				var/obj/item/borg/upgrade/ship_access_chip/chip = new(get_turf(computer))
 				chip.ship = ship
 				COOLDOWN_START(src, silicon_access_print_cooldown, 10 SECONDS)
 			playsound(computer, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
@@ -333,7 +323,7 @@
 		var/list/job_list = departments[department]
 		var/list/department_jobs = list()
 		for(var/job in job_list)
-			if(minor && !(job in head_subordinates))
+			if(minor)
 				continue
 			department_jobs += list(list(
 				"display_name" = replacetext(job, "&nbsp", " "),
@@ -396,10 +386,10 @@
 			data["access_on_card"] = id_card.access
 
 		data[ "req_ship_access" ] = computer.req_ship_access // Only stationary computers can grant ship access. Prevents funny tablet exploits
-		if ( id_card )
-			data[ "id_has_ship_access" ] = id_card.has_ship_access( SSshuttle.get_ship( computer ) )
-		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship( computer )
-		if ( ship )
+		if (id_card)
+			data[ "id_has_ship_access" ] = id_card.has_ship_access(SSshuttle.get_ship(computer))
+		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(computer)
+		if (ship)
 			data[ "ship_has_unique_access" ] = ship.unique_ship_access
 
 	return data
