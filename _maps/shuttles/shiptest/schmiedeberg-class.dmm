@@ -590,6 +590,9 @@
 	dir = 1
 	},
 /obj/machinery/light,
+/obj/structure/curtain/cloth{
+	pixel_y = -32
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "gO" = (
@@ -683,6 +686,7 @@
 /area/ship/crew/canteen)
 "iJ" = (
 /obj/structure/closet/secure_closet/hydroponics{
+	name = "herbalist's equipment";
 	req_access = null
 	},
 /obj/item/storage/box/disks_plantgene,
@@ -701,6 +705,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/item/shovel/spade,
+/obj/item/shovel/spade,
+/obj/item/cultivator,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/hydroponics)
 "iL" = (
@@ -2215,6 +2222,9 @@
 	dir = 1
 	},
 /obj/structure/table,
+/obj/structure/curtain/cloth{
+	pixel_y = -32
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "KU" = (
@@ -3325,11 +3335,11 @@
 /area/ship/crew/hydroponics)
 "YA" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/table_bell,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "pharmstore"
 	},
+/obj/item/table_bell,
 /turf/open/floor/light,
 /area/ship/crew/canteen)
 "YD" = (
@@ -3610,7 +3620,7 @@ MP
 Bg
 WT
 KO
-YU
+oK
 "}
 (10,1,1) = {"
 Pj
@@ -3629,7 +3639,7 @@ kL
 PM
 fb
 gB
-YU
+oK
 "}
 (11,1,1) = {"
 pl
@@ -3640,7 +3650,7 @@ Vd
 bD
 Ne
 kF
-PG
+YA
 lW
 wQ
 Wg
@@ -3659,7 +3669,7 @@ Vd
 XG
 Ne
 Ab
-YA
+PG
 yj
 qU
 fq
