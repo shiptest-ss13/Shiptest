@@ -16,7 +16,7 @@
 	var/expression_timer
 
 /obj/machinery/pinpointer_dispenser/Initialize(mapload)
-	..()
+	. = ..()
 	synth_acc.adjust_money(start_bal)
 
 	synth_acc.account_holder = name

@@ -38,7 +38,7 @@
 /obj/item/ammo_casing/energy/temp
 	projectile_type = /obj/projectile/temp
 	select_name = "freeze"
-	e_cost = 250
+	e_cost = 2500
 	fire_sound = 'sound/weapons/pulse3.ogg'
 
 /obj/item/ammo_casing/energy/temp/hot
@@ -73,11 +73,11 @@
 /obj/item/ammo_casing/energy/instakill/red
 	projectile_type = /obj/projectile/beam/instakill/red
 
-/obj/item/ammo_casing/energy/tesla_revolver
-	fire_sound = 'sound/magic/lightningbolt.ogg'
-	e_cost = 2000
-	select_name = "stun"
-	projectile_type = /obj/projectile/energy/tesla/revolver
+/obj/item/ammo_casing/energy/tesla_cannon
+	fire_sound = 'sound/magic/lightningshock.ogg'
+	e_cost = 300
+	select_name = "shock"
+	projectile_type = /obj/projectile/energy/tesla_cannon
 
 /obj/item/ammo_casing/energy/shrink
 	projectile_type = /obj/projectile/beam/shrink

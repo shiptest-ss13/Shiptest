@@ -34,7 +34,7 @@ SUBSYSTEM_DEF(statpanels)
 	while(length(currentrun))
 		var/client/target = currentrun[length(currentrun)]
 		currentrun.len--
-		if(!target.statbrowser_ready)
+		if(!target?.statbrowser_ready)
 			continue
 		if(target.stat_tab == "Status")
 			var/ping_str = url_encode("Ping: [round(target.lastping, 1)]ms (Average: [round(target.avgping, 1)]ms)")

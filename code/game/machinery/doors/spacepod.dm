@@ -1,7 +1,7 @@
 /obj/structure/spacepoddoor
 	name = "podlock"
 	desc = "Why it no open!!!"
-	icon = 'whitesands/icons/effects/beam.dmi'
+	icon = 'icons/effects/beam.dmi'
 	icon_state = "n_beam"
 	density = 1
 	anchored = 1
@@ -9,7 +9,7 @@
 	CanAtmosPass = ATMOS_PASS_NO
 
 /obj/structure/spacepoddoor/Initialize()
-	..()
+	. = ..()
 	air_update_turf(1)
 
 /obj/structure/spacepoddoor/Destroy()

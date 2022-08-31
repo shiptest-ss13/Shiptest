@@ -156,7 +156,7 @@
 	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
 
 	if(type)
-		if(type & MSG_VISUAL && is_blind() )//Vision related
+		if(type & MSG_VISUAL && is_blind())//Vision related
 			if(!alt_msg)
 				return
 			else
@@ -689,7 +689,7 @@
 	set name = "Respawn"
 	set category = "OOC"
 
-	if ((stat != DEAD || !( SSticker )) || !isobserver(usr))
+	if ((stat != DEAD || !(SSticker)) || !isobserver(usr))
 		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
 		return
 
@@ -1150,7 +1150,7 @@
 	var/search_pda = 1
 
 	for(var/A in searching)
-		if( search_id && istype(A, /obj/item/card/id) )
+		if(search_id && istype(A, /obj/item/card/id))
 			var/obj/item/card/id/ID = A
 			if(ID.registered_name == oldname)
 				ID.registered_name = newname
@@ -1161,7 +1161,7 @@
 					break
 				search_id = 0
 
-		else if( search_pda && istype(A, /obj/item/pda) )
+		else if(search_pda && istype(A, /obj/item/pda))
 			var/obj/item/pda/PDA = A
 			if(PDA.owner == oldname)
 				PDA.owner = newname
@@ -1190,19 +1190,17 @@
 
 ///Update the mouse pointer of the attached client in this mob
 /mob/proc/update_mouse_pointer()
-	if (!client)
+	if(!client)
 		return
 	client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
 	if(examine_cursor_icon && client.keys_held["Shift"]) //mouse shit is hardcoded, make this non hard-coded once we make mouse modifiers bindable
 		client.mouse_pointer_icon = examine_cursor_icon
-	else if (ismecha(loc))
-		var/obj/mecha/M = loc
-		if(M.mouse_pointer)
-			client.mouse_pointer_icon = M.mouse_pointer
-	else if (istype(loc, /obj/vehicle/sealed))
+	if(istype(loc, /obj/vehicle/sealed))
 		var/obj/vehicle/sealed/E = loc
 		if(E.mouse_pointer)
 			client.mouse_pointer_icon = E.mouse_pointer
+	if(client.mouse_override_icon)
+		client.mouse_pointer_icon = client.mouse_override_icon
 
 
 ///This mob is abile to read books

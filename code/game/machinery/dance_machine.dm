@@ -12,6 +12,13 @@
 	/// Volume of the songs played
 	var/volume = 70
 
+/obj/machinery/jukebox/boombox
+	name = "boombox"
+	desc = "A theoretically-portable music player that's much larger and heavier than it really needs to be."
+	icon_state = "boombox"
+	density = FALSE
+
+
 /obj/machinery/jukebox/disco
 	name = "radiant dance machine mark IV"
 	desc = "The first three prototypes were discontinued after mass casualty incidents."
@@ -21,7 +28,6 @@
 	var/list/sparkles = list()
 	/// Precentage change per process of the mob dancing.
 	var/dance_chance = 20
-
 
 /obj/machinery/jukebox/disco/indestructible
 	name = "radiant dance machine mark V"
