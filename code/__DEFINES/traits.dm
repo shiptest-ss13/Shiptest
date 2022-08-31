@@ -253,6 +253,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ANTENNAE "antennae"
 /// The holder of this trait can be picked up and held by another mob that does NOT have this trait.
 #define TRAIT_HOLDABLE "holdable"
+/// This person is blushing
+#define TRAIT_BLUSHING "blushing"
+/// The person has their eyes closed. Visual only
+#define TRAIT_EYESCLOSED "eyesclosed"
+/// The person is snoring. Visual only
+#define TRAIT_SNORE "snoring"
 /// the holder of this trait will be scooped instead of fireman carried
 #define TRAIT_SCOOPABLE "scoopable"
 
