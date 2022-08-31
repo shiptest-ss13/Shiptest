@@ -278,6 +278,10 @@
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	dog_fashion = null
 
+/obj/item/clothing/head/helmet/riot/minutemen
+	name = "minutemen riot helmet"
+	desc = "It's a modified Minutemen ballistic helmet which sacrifices bullet protection for melee protection. While it is mainly used by the CM-BARD against xenofauna, surplus is sometimes used for riot control on some Minutemen member planets."
+	icon_state = "riot_minutemen"
 
 
 /obj/item/clothing/head/helmet/justice

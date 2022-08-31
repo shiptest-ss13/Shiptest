@@ -171,6 +171,12 @@
 	strip_delay = 80
 	equip_delay_other = 60
 
+/obj/item/clothing/suit/armor/riot/minutemen
+	name = "black riot suit"
+	desc = "A suit of riot armor, painted black. While it is mainly used by the CM-BARD against xenofauna, surplus is sometimes used for riot control on some Minutemen member planets."
+	icon_state = "riot_minutemen"
+
+
 /obj/item/clothing/suit/armor/bone
 	name = "bone armor"
 	desc = "A tribal armor plate, crafted from animal bone."
@@ -396,7 +402,7 @@
 
 /obj/item/clothing/suit/armor/vest/solgov/Initialize()
 	. = ..()
-	allowed |= list(/obj/item/gun/energy/laser/terra, /obj/item/gun/energy/pulse/terra, /obj/item/tank)
+	allowed |= list(/obj/item/gun/ballistic/automatic/assualt/swiss_cheese, /obj/item/tank)
 
 /obj/item/clothing/suit/armor/vest/solgov/rep
 	name = "\improper SolGov Inspector armor vest"
