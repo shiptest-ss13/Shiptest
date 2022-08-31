@@ -93,6 +93,7 @@
 "aq" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "ar" = (
@@ -111,13 +112,25 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "au" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/engine,
 /area/ship/engineering)
 "av" = (
 /obj/structure/cable{
@@ -164,6 +177,10 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = 29
 	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "aB" = (
@@ -207,7 +224,7 @@
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/engine,
 /area/ship/engineering)
 "aH" = (
 /obj/structure/cable{
@@ -3831,13 +3848,25 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine,
 /area/ship/engineering/engine)
 "jB" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/engine,
 /area/ship/engineering/engine)
 "jC" = (
 /obj/machinery/power/terminal{
@@ -3916,6 +3945,8 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = 29
 	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "jN" = (
@@ -3968,6 +3999,7 @@
 "jT" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "jU" = (
@@ -3982,6 +4014,32 @@
 	},
 /turf/open/floor/plasteel/stairs,
 /area/ship/external)
+"pd" = (
+/obj/structure/rack,
+/obj/item/stack/marker_beacon/thirty,
+/obj/item/stack/marker_beacon/thirty,
+/obj/item/stack/marker_beacon/thirty,
+/turf/open/floor/plasteel/mono,
+/area/ship/cargo)
+"xQ" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine,
+/area/ship/engineering)
+"yK" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
+"Nc" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/plating,
+/area/ship/engineering)
 
 (1,1,1) = {"
 aa
@@ -4138,8 +4196,8 @@ jk
 (5,1,1) = {"
 ac
 al
-ao
-ao
+xQ
+xQ
 aG
 al
 ac
@@ -4404,7 +4462,7 @@ ad
 (12,1,1) = {"
 ae
 aq
-al
+Nc
 aA
 al
 ac
@@ -4435,7 +4493,7 @@ ad
 jk
 jq
 jM
-jq
+yK
 jT
 ae
 "}
@@ -5261,7 +5319,7 @@ eV
 gH
 hd
 hv
-hq
+pd
 hY
 il
 iG
