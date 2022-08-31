@@ -336,10 +336,10 @@
 		reskin_obj(user)
 
 /**
-* Reskins object based on a user's choice
+*Reskins object based on a user's choice
 *
-* Arguments:
-* * M The mob choosing a reskin option
+*Arguments:
+*M The mob choosing a reskin option
 */
 
 /obj/proc/reskin_obj(mob/M)
