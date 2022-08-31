@@ -385,7 +385,7 @@
 	dir = 1
 	},
 /turf/closed/wall/mineral/titanium,
-/area/ship/engineering/engine)
+/area/ship/engineering/atmospherics)
 "jc" = (
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /obj/machinery/vending/cola/shamblers,
@@ -515,7 +515,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/sign/poster/official/no_erp{
-	step_x = null;
 	pixel_x = -32
 	},
 /turf/open/floor/mineral/titanium/white,
@@ -605,16 +604,21 @@
 	dir = 5
 	},
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/soda_cans/grey_bull,
 /obj/item/reagent_containers/food/drinks/soda_cans/grey_bull{
-	step_x = 4
+	pixel_x = -3;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/drinks/soda_cans/grey_bull{
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/condiment/pack/astrotame{
-	step_y = -7;
-	step_x = -5
+	pixel_y = -6;
+	pixel_x = -9
 	},
 /obj/item/reagent_containers/food/drinks/soda_cans/grey_bull{
-	step_y = -12
+	pixel_x = 4;
+	pixel_y = 1
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -26
@@ -679,7 +683,6 @@
 /area/ship/engineering/atmospherics)
 "nT" = (
 /obj/machinery/airalarm/directional/south,
-/obj/structure/closet/secure_closet/engineering_electrical,
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
 "oo" = (
@@ -982,7 +985,7 @@
 /area/ship/medical)
 "ts" = (
 /obj/structure/sign/warning/vacuum/external{
-	step_y = 5
+	pixel_y = 5
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering/atmospherics)
@@ -1014,12 +1017,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/drinkingglass{
-	step_x = -6;
-	step_y = -1
+	pixel_x = -5
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass{
-	step_x = 5;
-	step_y = 2
+	pixel_x = 3
 	},
 /obj/item/radio/intercom{
 	dir = 4;
@@ -1138,15 +1139,12 @@
 	dir = 4;
 	pixel_x = -32
 	},
+/obj/item/reagent_containers/glass/bottle/ethanol,
 /obj/item/reagent_containers/glass/bottle/ethanol{
-	step_x = null
-	},
-/obj/item/reagent_containers/glass/bottle/ethanol{
-	step_x = 8
+	pixel_x = -9
 	},
 /obj/item/reagent_containers/food/condiment/pack/astrotame{
-	step_y = -7;
-	step_x = -5
+	pixel_x = 6
 	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/canteen)
@@ -1452,7 +1450,6 @@
 /obj/item/clothing/suit/space/hardsuit/engine/atmos,
 /obj/item/clothing/mask/breath,
 /obj/structure/sign/poster/official/bless_this_spess{
-	step_y = null;
 	pixel_y = 32
 	},
 /turf/open/floor/pod/dark,
@@ -1469,7 +1466,7 @@
 "Ej" = (
 /obj/structure/rack,
 /obj/structure/sign/warning/nosmoking{
-	step_y = 30
+	pixel_y = 32
 	},
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
@@ -1859,11 +1856,11 @@
 	},
 /obj/machinery/door/airlock/atmos/glass,
 /turf/open/floor/plating,
-/area/ship/engineering/engine)
+/area/ship/engineering/atmospherics)
 "Lq" = (
 /obj/structure/sign/poster/official/nanotrasen_logo,
 /turf/closed/wall/mineral/titanium,
-/area/ship/engineering/engine)
+/area/ship/engineering/atmospherics)
 "LA" = (
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/pod/dark,
@@ -1914,9 +1911,7 @@
 /obj/machinery/button/shieldwallgen{
 	id = "Tankerholo";
 	pixel_x = -20;
-	pixel_y = -10;
-	step_x = -3;
-	step_y = 2
+	pixel_y = -10
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -1930,7 +1925,7 @@
 /obj/effect/turf_decal/corner/transparent/orange/diagonal,
 /obj/item/wrench/crescent,
 /obj/structure/sign/poster/contraband/power{
-	step_x = -32
+	pixel_x = -32
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering/engine)
@@ -2154,15 +2149,14 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "PH" = (
-/obj/effect/spawner/structure/window/hollow/plasma/directional{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/meter/atmos/layer4,
+/obj/structure/window/plasma/reinforced/spawner/west,
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "PM" = (
@@ -2762,7 +2756,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/atmos/glass,
 /turf/open/floor/plating,
-/area/ship/engineering/engine)
+/area/ship/engineering/atmospherics)
 "ZM" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
@@ -2917,7 +2911,7 @@ Nc
 sh
 lG
 VH
-mb
+qM
 mb
 BY
 BY
@@ -2949,7 +2943,7 @@ rV
 Ds
 dx
 cm
-mb
+qM
 LM
 eQ
 Yz
