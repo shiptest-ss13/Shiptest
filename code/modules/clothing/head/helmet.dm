@@ -474,8 +474,8 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
 
 /obj/item/clothing/head/helmet/rus_ushanka
-	name = "battle ushanka"
-	desc = "100% bear."
+	name = "reinforced trapper hat"
+	desc = "Sometimes trapper hats are a part of uniforms for militaries of colder planets, thus this reinforced leather variant is made."
 	icon_state = "rus_ushanka"
 	item_state = "rus_ushanka"
 	body_parts_covered = HEAD
