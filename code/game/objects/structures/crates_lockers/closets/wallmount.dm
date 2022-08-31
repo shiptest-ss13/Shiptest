@@ -3,7 +3,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "generic_wall"
 
 /obj/structure/closet/wall/red
@@ -31,7 +31,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_door = "blue_wall"
 
 /obj/structure/closet/wardrobe/pink/wall
@@ -39,7 +39,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_door = "pink_wall"
 
 /obj/structure/closet/wardrobe/black/wall
@@ -47,7 +47,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_door = "black_wall"
 
 /obj/structure/closet/wardrobe/green/wall
@@ -55,7 +55,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_door = "green_wall"
 
 /obj/structure/closet/wardrobe/orange/wall
@@ -63,7 +63,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_door = "orange_wall"
 
 /obj/structure/closet/wardrobe/yellow/wall
@@ -71,7 +71,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_door = "yellow_wall"
 
 /obj/structure/closet/wardrobe/white/wall
@@ -79,7 +79,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_door = "white_wall"
 
 /obj/structure/closet/wardrobe/pjs/wall
@@ -87,7 +87,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_door = "white_wall"
 
 /obj/structure/closet/wardrobe/grey/wall
@@ -95,7 +95,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_door = "grey_wall"
 
 /obj/structure/closet/wardrobe/mixed/wall
@@ -103,7 +103,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_door = "mixed_wall"
 
 //special
@@ -113,7 +113,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "fire_wall"
 
 /obj/structure/closet/emcloset/wall
@@ -121,7 +121,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "emergency_wall"
 
 //secure closets/freezers
@@ -130,14 +130,15 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "freezer_wall"
+
 /obj/structure/closet/secure_closet/freezer/wall
 	wall_mounted = TRUE
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "freezer_wall"
 
 /obj/structure/closet/secure_closet/freezer/kitchen/wall
@@ -145,7 +146,7 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "freezer_wall"
 
 /obj/structure/closet/secure_closet/brig/wall
@@ -153,6 +154,6 @@
 	anchored = TRUE
 	density = TRUE
 	can_be_unanchored = FALSE
-	icon = 'whitesands/icons/obj/closet.dmi'
+	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "generic_wall"
 	icon_door = "generic_wall"

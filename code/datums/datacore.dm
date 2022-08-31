@@ -154,11 +154,10 @@
 	for(var/datum/data/record/t in GLOB.data_core.general)
 		var/name = t.fields["name"]
 		var/rank = t.fields["rank"]
-		var/truerank = t.fields["truerank"]
 		var/has_department = FALSE
 		for(var/department in departments)
 			var/list/jobs = departments[department]
-			if((rank in jobs) || (truerank in jobs)) //WS edit - alt titles
+			if((rank in jobs))
 				if(!manifest_out[department])
 					manifest_out[department] = list()
 				// Append to beginning of list if captain or department head
@@ -223,13 +222,6 @@
 		else
 			assignment = "Unassigned"
 
-		//WS begin - Alt job titles
-		var/trueassignment = assignment
-		if(C && C.prefs && C.prefs.alt_titles_preferences[assignment])
-			trueassignment = assignment
-			assignment = C.prefs.alt_titles_preferences[assignment]
-		//WS end
-
 		var/static/record_id_num = 1001
 		var/id = num2hex(record_id_num++,6)
 		if(!C)
@@ -252,7 +244,6 @@
 		G.fields["id"]			= id
 		G.fields["name"]		= H.real_name
 		G.fields["rank"]		= assignment
-		G.fields["truerank"]	= trueassignment //WS edit - This PR Keeps Me Up At Night (Alternate Job Titles) - Artist: Mark Suckerberg
 		G.fields["age"]			= H.age
 		G.fields["species"]	= H.dna.species.name
 		G.fields["fingerprint"]	= md5(H.dna.uni_identity)

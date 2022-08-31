@@ -1,7 +1,7 @@
 /turf/open/floor/plating/asteroid/whitesands
 	name = "salted sand"
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands
-	icon = 'whitesands/icons/turf/floors/whitesands/ws_floors.dmi'
+	icon = 'icons/turf/floors//ws_floors.dmi'
 	icon_state = "sand"
 	icon_plating = "sand"
 	planetary_atmos = TRUE

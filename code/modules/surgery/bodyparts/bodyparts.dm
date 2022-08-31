@@ -447,8 +447,8 @@
 //Updates an organ's brute/burn states for use by update_damage_overlays()
 //Returns 1 if we need to update overlays. 0 otherwise.
 /obj/item/bodypart/proc/update_bodypart_damage_state()
-	var/tbrute	= round( (brute_dam/max_damage)*3, 1 )
-	var/tburn	= round( (burn_dam/max_damage)*3, 1 )
+	var/tbrute	= round((brute_dam/max_damage)*3, 1)
+	var/tburn	= round((burn_dam/max_damage)*3, 1)
 	if((tbrute != brutestate) || (tburn != burnstate))
 		brutestate = tbrute
 		burnstate = tburn
@@ -656,14 +656,14 @@
 /obj/item/bodypart/proc/break_bone()
 	if(!can_break_bone())
 		return
-	if ( bone_status == BONE_FLAG_NORMAL && body_part & LEGS ) // Because arms are not legs
+	if (bone_status == BONE_FLAG_NORMAL && body_part & LEGS) // Because arms are not legs
 		owner.set_broken_legs(owner.broken_legs + 1)
 	bone_status = BONE_FLAG_BROKEN
 	addtimer(CALLBACK(owner, /atom/.proc/visible_message, "<span class='danger'>You hear a cracking sound coming from [owner]'s [name].</span>", "<span class='userdanger'>You feel something crack in your [name]!</span>", "<span class='danger'>You hear an awful cracking sound.</span>"), 1 SECONDS)
 
 /obj/item/bodypart/proc/fix_bone()
 	// owner.update_inv_splints() breaks
-	if ( bone_status != BONE_FLAG_NORMAL && body_part & LEGS )
+	if (bone_status != BONE_FLAG_NORMAL && body_part & LEGS)
 		owner.set_broken_legs(owner.broken_legs - 1)
 	bone_status = BONE_FLAG_NORMAL
 

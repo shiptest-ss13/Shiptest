@@ -89,7 +89,7 @@
 	. = ..()
 	if(.)
 		return
-	if( ismob(loc) )
+	if(ismob(loc))
 		held_mob = loc
 		START_PROCESSING(SSobj, src)
 

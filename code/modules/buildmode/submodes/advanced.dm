@@ -11,7 +11,7 @@
 	to_chat(c, "<span class='notice'>Left Mouse Button + alt on turf/obj    = Copy object type</span>")
 	to_chat(c, "<span class='notice'>Left Mouse Button on turf/obj          = Place objects</span>")
 	to_chat(c, "<span class='notice'>Right Mouse Button                     = Delete objects</span>")
-	to_chat(c, "")
+	to_chat(c, "<br>")
 	to_chat(c, "<span class='notice'>Use the button in the upper left corner to</span>")
 	to_chat(c, "<span class='notice'>change the direction of built objects.</span>")
 	to_chat(c, "<span class='notice'>***********************************************************</span>")

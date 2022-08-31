@@ -1,7 +1,7 @@
 /obj/item/wirecutters
 	name = "wirecutters"
 	desc = "This cuts wires."
-	icon = 'whitesands/icons/obj/tools.dmi' //WS Edit - Better Tool Sprites
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "cutters_map"
 	item_state = "cutters"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -104,3 +104,4 @@
 /obj/item/wirecutters/old
 	desc = "This cuts wires. It also appears to be slightly rusty..."
 	icon = 'icons/obj/tools.dmi'
+	icon_state = "oldcutters"

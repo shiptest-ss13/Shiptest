@@ -415,6 +415,15 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
 	material_flags = MATERIAL_NO_EFFECTS
 	walltype = /turf/closed/wall/mineral/plastitanium
 
+/obj/item/stack/sheet/mineral/plastitanium/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/plastitanium/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/plastitanium/five
+	amount = 5
+
 GLOBAL_LIST_INIT(plastitanium_recipes, list ( \
 	new/datum/stack_recipe("plastitanium tile", /obj/item/stack/tile/mineral/plastitanium, 1, 4, 20), \
 	))

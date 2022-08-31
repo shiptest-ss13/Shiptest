@@ -146,7 +146,10 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 				if (I)
 					name = I.registered_name
 					assignment = I.assignment
-					ijob = jobs[I.GetJobName()] //Why didn't it do this already - WS Edit - Alt Titles
+					if(I.assignment in jobs)
+						ijob = jobs[I.assignment]
+					else
+						ijob = jobs["Unknown"]
 				else
 					name = "Unknown"
 					assignment = ""

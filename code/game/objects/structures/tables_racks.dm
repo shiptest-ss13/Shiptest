@@ -642,7 +642,7 @@
 
 /obj/structure/rack/MouseDrop_T(obj/O, mob/user)
 	. = ..()
-	if ((!( istype(O, /obj/item) ) || user.get_active_held_item() != O))
+	if ((!(istype(O, /obj/item)) || user.get_active_held_item() != O))
 		return
 	if(!user.dropItemToGround(O))
 		return
@@ -733,7 +733,7 @@
 /obj/structure/table/wood/reinforced //a reinforced version of the regular wooden table, primarily for use in solgov outposts or ships
 	name = "reinforced wooden table"
 	desc = "A reinforced version of the four-legged wooden table. Likely as easy to burn as a normal one."
-	icon = 'whitesands/icons/obj/smooth_structures/reinforced_wood_table.dmi'
+	icon = 'icons/obj/smooth_structures/reinforced_wood_table.dmi'
 	icon_state = "reinforced_wood_table-0"
 	base_icon_state = "reinforced_wood_table"
 	deconstruction_ready = 0
