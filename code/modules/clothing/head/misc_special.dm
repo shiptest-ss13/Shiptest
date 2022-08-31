@@ -110,11 +110,11 @@
 	..()
 
 /*
- * Ushanka
+ * Trapper Hat
  */
 /obj/item/clothing/head/ushanka
-	name = "ushanka"
-	desc = "Perfect for winter in Siberia, da?"
+	name = "trapper hat"
+	desc = "Perfect for the cold weather."
 	icon_state = "ushankadown"
 	item_state = "ushankadown"
 	flags_inv = HIDEEARS|HIDEHAIR

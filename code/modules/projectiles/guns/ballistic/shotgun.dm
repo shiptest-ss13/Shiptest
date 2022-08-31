@@ -400,12 +400,11 @@
 	item_state = "winchester"
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/winchester_cocked.ogg'
 
 /obj/item/gun/ballistic/shotgun/winchester/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
