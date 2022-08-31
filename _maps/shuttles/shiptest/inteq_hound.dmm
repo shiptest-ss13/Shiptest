@@ -1243,7 +1243,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
 /obj/item/paicard,
 /obj/machinery/jukebox/boombox{
-	pixel_y = 15
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew)
@@ -1588,28 +1588,25 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/item/ammo_box/magazine/m45{
+/obj/item/ammo_box/magazine/co9mm{
 	pixel_x = 5
 	},
-/obj/item/ammo_box/magazine/m45,
-/obj/item/ammo_box/magazine/m45{
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm{
 	pixel_x = -5
 	},
-/obj/item/ammo_box/magazine/m45{
+/obj/item/ammo_box/magazine/co9mm{
 	pixel_x = 5
 	},
-/obj/item/ammo_box/magazine/m45,
-/obj/item/ammo_box/magazine/m45{
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm{
 	pixel_x = -5
 	},
-/obj/item/gun/ballistic/automatic/pistol/m1911{
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
 	pixel_y = 5
 	},
-/obj/item/gun/ballistic/automatic/pistol/m1911,
-/obj/item/gun/ballistic/automatic/pistol/m1911{
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
 	pixel_y = -5
 	},
 /obj/item/ammo_box/magazine/ak47{
@@ -1627,6 +1624,9 @@
 	name = "weapons lockup";
 	pixel_y = -28;
 	req_one_access_txt = "58"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
@@ -1721,7 +1721,7 @@
 	dir = 4
 	},
 /obj/structure/rack,
-/obj/item/storage/toolbox/ammo/c45,
+/obj/item/storage/toolbox/ammo/c9mm,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Ma" = (
