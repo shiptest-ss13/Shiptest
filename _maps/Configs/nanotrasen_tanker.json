@@ -1,0 +1,33 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "NTSV",
+	"namelists": ["GENERAL", "MYTHOLOGICAL"],
+	"map_name": "Prometheus-Class Plasma Tanker",
+	"map_short_name": "Prometheus-class",
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_tanker.dmm",
+	"limit": 2,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/nt",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Officer": {
+			"outfit": "/datum/outfit/job/doctor/surgeon",
+			"slots": 1
+		},
+		"Plasma Technician": {
+			"outfit": "/datum/outfit/job/atmos/firefighter",
+			"slots": 2
+		},
+		"Security Officer": {
+			"outfit": "/datum/outfit/job/security",
+			"slots": 2
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant/engineeringspecialist",
+			"slots": 1
+		}
+	},
+	"cost": 750
+}
