@@ -6,8 +6,9 @@ import { Window } from '../layouts';
 
 export const ShuttleManipulator = (props, context) => {
   const [tab, setTab] = useLocalState(context, 'tab', 1);
+  const { act } = useBackend(context);
   return (
-    <Window title="Shuttle Manipulator" width={800} height={600} resizable>
+    <Window title="Shuttle Manipulator" width={875} height={600} resizable>
       <Window.Content scrollable>
         <Tabs>
           <Tabs.Tab selected={tab === 1} onClick={() => setTab(1)}>
@@ -15,6 +16,9 @@ export const ShuttleManipulator = (props, context) => {
           </Tabs.Tab>
           <Tabs.Tab selected={tab === 2} onClick={() => setTab(2)}>
             Templates
+          </Tabs.Tab>
+          <Tabs.Tab onClick={() => act('new_template')}>
+            Upload New Template
           </Tabs.Tab>
         </Tabs>
         {tab === 1 && <ShuttleManipulatorStatus />}
@@ -128,14 +132,24 @@ export const ShuttleManipulatorTemplates = (props, context) => {
                 level={2}
                 key={actualTemplate.file_name}
                 buttons={
-                  <ButtonConfirm
-                    content="Load"
-                    onClick={() =>
-                      act('select_template', {
-                        file_name: actualTemplate.file_name,
-                      })
-                    }
-                  />
+                  <>
+                    <Button
+                      content="Edit"
+                      onClick={() =>
+                        act('edit_template', {
+                          file_name: actualTemplate.file_name,
+                        })
+                      }
+                    />
+                    <ButtonConfirm
+                      content="Load"
+                      onClick={() =>
+                        act('select_template', {
+                          file_name: actualTemplate.file_name,
+                        })
+                      }
+                    />
+                  </>
                 }
               >
                 {(!!actualTemplate.description ||

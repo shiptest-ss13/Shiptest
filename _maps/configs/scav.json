@@ -1,10 +1,10 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Scav-class Drifter",
 	"map_short_name": "Scav-class",
 	"prefix": "ISV",
 	"namelists": ["BEASTS", "SPACE"],
 	"map_path": "_maps/shuttles/shiptest/scav.dmm",
-	"map_id": "scav",
 	"roundstart": true,
 	"job_slots": {
 		"Salvage Leader": {
@@ -25,5 +25,5 @@
 			"slots": 1
 		}
 	},
-	"cost": 300
+	"enabled": true
 }

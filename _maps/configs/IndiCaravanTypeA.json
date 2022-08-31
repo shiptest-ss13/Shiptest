@@ -1,10 +1,10 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Caravan-class Modular ship",
 	"map_short_name": "Caravan-class",
 	"map_path": "_maps/shuttles/shiptest/IndiCaravanTypeA.dmm",
-	"map_id": "IndiCaravanTypeA",
 	"prefix": "ISV",
-	"namelists": "GENREAL, SPACE",
+	"namelists": ["GENERAL", "SPACE"],
 	"roundstart": true,
 	"job_slots": {
 		"Captain": {
@@ -25,10 +25,10 @@
 			"slots": 1
 		},
 		"Fauna Researcher": {
-			"outfit": "/datum/job/scientist",
+			"outfit": "/datum/outfit/job/scientist",
 			"slots": 1
 		},
 		"Assistant": 1
 	},
-	"cost": 750
+	"enabled": true
 }

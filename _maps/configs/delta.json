@@ -1,4 +1,5 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Delta-class Frigate",
 	"prefix": "NTSV",
 	"namelists": [
@@ -9,7 +10,6 @@
 	],
 	"map_short_name": "Delta-class",
 	"map_path": "_maps/shuttles/shiptest/whiteship_delta.dmm",
-	"map_id": "whiteship_delta",
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/nt",
@@ -23,5 +23,5 @@
 		},
 		"Assistant": 3
 	},
-	"cost": 500
+	"enabled": true
 }
