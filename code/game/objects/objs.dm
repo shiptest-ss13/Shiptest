@@ -335,7 +335,7 @@
 	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		reskin_obj(user)
 
-/**
+/*
  * Reskins object based on a user's choice
  *
  * Arguments:
