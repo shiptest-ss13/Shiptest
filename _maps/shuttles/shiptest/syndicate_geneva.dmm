@@ -272,6 +272,9 @@
 "fX" = (
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
+"fZ" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "gz" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1088,10 +1091,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "wa" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "spitfireshutters"
 	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/medical/surgery)
 "wd" = (
@@ -1124,7 +1127,7 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner/east,
-/obj/machinery/door/window/northleft,
+/obj/machinery/door/window/northright,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "wL" = (
@@ -1159,7 +1162,7 @@
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
 	},
-/obj/structure/window/reinforced/spawner/north,
+/obj/machinery/door/window/northleft,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "xk" = (
@@ -1357,10 +1360,10 @@
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "Bz" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "spitfireshutters"
 	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "BF" = (
@@ -1536,10 +1539,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Gb" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "spitfireshutters"
 	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/crew/office)
 "Gk" = (
@@ -1559,7 +1562,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Gm" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 2;
@@ -1568,6 +1570,7 @@
 /obj/machinery/door/poddoor/preopen{
 	id = "spitfireshutters"
 	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Gx" = (
@@ -1874,6 +1877,13 @@
 /obj/machinery/door/window/northright,
 /turf/open/floor/plating,
 /area/ship/crew)
+"LB" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "spitfireshutters"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "LG" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
 /obj/machinery/door/airlock/virology/glass{
@@ -2520,10 +2530,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "YF" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "spitfireshutters"
 	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "YH" = (
@@ -2546,10 +2556,10 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "ZG" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "spitfireshutters"
 	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/crew/hydroponics)
 "ZI" = (
@@ -2620,7 +2630,7 @@ YF
 YF
 nm
 nm
-nm
+xn
 Wc
 "}
 (2,1,1) = {"
@@ -2635,12 +2645,12 @@ Wc
 Wc
 Wc
 xn
-nm
+xn
 uc
 bn
 fz
 nm
-nm
+xn
 Wc
 Wc
 "}
@@ -2877,7 +2887,7 @@ Wc
 "}
 (14,1,1) = {"
 Wc
-ti
+fZ
 ti
 ti
 JU
@@ -3003,7 +3013,7 @@ SI
 "}
 (20,1,1) = {"
 Wc
-ti
+fZ
 ti
 ti
 uI
@@ -3265,12 +3275,12 @@ Wc
 Wc
 Wc
 PL
-Eu
+PL
 rx
 Qj
 Dw
 Eu
-Eu
+PL
 Wc
 Wc
 "}
@@ -3287,11 +3297,11 @@ Wc
 Wc
 Wc
 PL
-pe
-pe
-pe
+LB
+LB
+LB
 Eu
 Eu
-Eu
+PL
 Wc
 "}
