@@ -386,6 +386,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/vending/cigarette/syndicate,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "ji" = (
@@ -659,6 +663,9 @@
 /area/ship/engineering)
 "nz" = (
 /obj/machinery/cryopod,
+/obj/machinery/firealarm{
+	pixel_y = 25
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "oc" = (
@@ -1999,11 +2006,14 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "Nw" = (
-/obj/machinery/firealarm{
-	pixel_y = -26
+/obj/effect/turf_decal/trimline/opaque/red/filled/warning,
+/obj/machinery/button/door{
+	id = "syndie4doors";
+	pixel_x = -25;
+	dir = 4
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/medical/surgery)
+/turf/open/floor/plasteel/dark,
+/area/ship/crew)
 "NA" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/wood/yew,
@@ -2362,7 +2372,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
 	id = "syndie3doors";
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -3039,7 +3050,7 @@ cN
 kX
 ki
 SI
-Nw
+SI
 SI
 SI
 Wc
@@ -3061,7 +3072,7 @@ Hj
 lP
 NR
 xM
-FT
+Nw
 un
 Wc
 "}
