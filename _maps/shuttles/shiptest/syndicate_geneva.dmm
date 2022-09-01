@@ -14,20 +14,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ap" = (
-/obj/structure/closet/cabinet,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate/bloodred/sleepytime,
-/obj/item/clothing/under/syndicate/bloodred/sleepytime,
-/obj/item/clothing/under/syndicate/bloodred/sleepytime,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/light{
 	dir = 4
@@ -41,7 +27,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/cryopod,
+/obj/structure/chair/comfy/teal,
+/obj/machinery/newscaster{
+	dir = 4;
+	pixel_x = -28
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "bn" = (
@@ -218,6 +208,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -663,6 +657,10 @@
 "nm" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
+"nz" = (
+/obj/machinery/cryopod,
+/turf/open/floor/carpet/nanoweave/red,
+/area/ship/crew/dorm)
 "oc" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 1
@@ -886,16 +884,15 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "rx" = (
-/obj/structure/closet/wall/red{
-	pixel_y = 30
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
 	},
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/turf/open/floor/carpet/nanoweave/red,
-/area/ship/crew/dorm)
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "rJ" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -1195,6 +1192,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"yt" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/template_noop)
 "yX" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -1238,6 +1238,9 @@
 "zC" = (
 /obj/structure/sink{
 	pixel_y = 28
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
@@ -1688,9 +1691,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Ii" = (
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
@@ -1698,6 +1698,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "It" = (
@@ -1816,9 +1819,7 @@
 /obj/machinery/computer/cryopod{
 	pixel_y = 26
 	},
-/obj/machinery/cryopod{
-	dir = 8
-	},
+/obj/machinery/cryopod,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "KC" = (
@@ -1905,18 +1906,17 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Mo" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 9
-	},
 /obj/effect/turf_decal/corner/opaque/yellow,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25
-	},
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
 /obj/machinery/autolathe,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "MA" = (
@@ -2171,6 +2171,28 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
+/obj/structure/closet/wall/red{
+	dir = 8;
+	pixel_x = 30
+	},
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/under/syndicate/bloodred/sleepytime,
+/obj/item/clothing/under/syndicate/bloodred/sleepytime,
+/obj/item/clothing/under/syndicate/bloodred/sleepytime,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "Qn" = (
@@ -2623,7 +2645,7 @@ Wc
 Wc
 Wc
 Wc
-Wc
+xn
 xn
 YF
 YF
@@ -2645,8 +2667,8 @@ Wc
 Wc
 Wc
 xn
-xn
 uc
+rx
 bn
 fz
 nm
@@ -3275,8 +3297,8 @@ Wc
 Wc
 Wc
 PL
-PL
-rx
+nz
+xk
 Qj
 Dw
 Eu
@@ -3295,10 +3317,10 @@ Wc
 Wc
 Wc
 Wc
-Wc
+yt
 PL
 LB
-LB
+Eu
 LB
 Eu
 Eu
