@@ -2298,6 +2298,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "ej" = (
@@ -2655,7 +2658,6 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen/kitchen)
 "eO" = (
@@ -2827,6 +2829,9 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "ff" = (
@@ -3015,9 +3020,6 @@
 "fx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -4213,6 +4215,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "hB" = (
@@ -4440,15 +4445,13 @@
 /turf/open/floor/grass,
 /area/ship/hallway/central)
 "hR" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
 "hS" = (
@@ -4776,7 +4779,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/hallway/fore)
+/area/ship/hallway/central)
 "iy" = (
 /obj/effect/decal/remains/human,
 /obj/item/clothing/head/papersack/smiley,
@@ -5011,9 +5014,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -6360,7 +6360,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/hallway/fore)
+/area/ship/hallway/central)
 "uO" = (
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7669,6 +7669,9 @@
 "Jn" = (
 /turf/closed/wall,
 /area/ship/hallway/aft)
+"Jo" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/hallway/central)
 "Jq" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -7861,6 +7864,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/stand_clear{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
@@ -8238,6 +8244,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/port)
 "QM" = (
@@ -10775,9 +10782,9 @@ EY
 EY
 iG
 EY
-bX
-bX
-bX
+bg
+bg
+Jo
 rY
 dh
 dQ
@@ -10792,9 +10799,9 @@ en
 CL
 hN
 et
-bX
-bX
-bX
+Jo
+ja
+ja
 EY
 iG
 EY
@@ -10813,7 +10820,7 @@ iG
 EY
 EY
 EY
-bX
+Jo
 XP
 di
 dF
@@ -10828,7 +10835,7 @@ hz
 hJ
 hO
 Yu
-bX
+Jo
 EY
 EY
 EY
@@ -10849,7 +10856,7 @@ iG
 EY
 EY
 EY
-bX
+Jo
 Uk
 dj
 fw
@@ -10864,7 +10871,7 @@ en
 gJ
 hP
 AI
-bX
+Jo
 EY
 EY
 EY
@@ -10885,7 +10892,7 @@ iG
 EY
 EY
 EY
-bX
+Jo
 dp
 dk
 ff
