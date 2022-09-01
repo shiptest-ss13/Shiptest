@@ -1192,9 +1192,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"yt" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/template_noop)
 "yX" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -2142,17 +2139,6 @@
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
-"PH" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/poddoor{
-	id = "syndie3doors"
-	},
-/obj/machinery/button/door{
-	id = "syndie3doors";
-	pixel_x = 25
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
 "PL" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/dorm)
@@ -2374,6 +2360,10 @@
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = "syndie3doors";
+	pixel_x = 25
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Va" = (
@@ -2904,7 +2894,7 @@ vK
 gD
 OK
 UY
-PH
+Bp
 Wc
 "}
 (14,1,1) = {"
@@ -3317,7 +3307,7 @@ Wc
 Wc
 Wc
 Wc
-yt
+PL
 PL
 LB
 Eu
