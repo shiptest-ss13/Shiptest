@@ -171,6 +171,10 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "ntboeng2";
+	name = "Engine Shutters"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering)
 "av" = (
@@ -242,8 +246,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/effect/turf_decal/borderfloor/corner{
-	dir = 8
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
@@ -601,9 +605,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/port)
-"bk" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/space)
 "bl" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -743,9 +744,6 @@
 /turf/open/floor/plating,
 /area/ship/cargo/port)
 "bv" = (
-/obj/item/wallframe/advanced_airlock_controller{
-	pixel_y = -22
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -756,6 +754,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = -25
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/fore)
 "bw" = (
@@ -1639,7 +1640,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/effect/turf_decal/borderfloor/corner,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "dd" = (
@@ -1738,7 +1741,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/b,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/hallway/central)
 "dl" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -2005,7 +2008,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
+/area/ship/cargo)
 "dL" = (
 /obj/machinery/conveyor{
 	name = "Input Belt";
@@ -2055,9 +2058,6 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "dO" = (
-/obj/item/wallframe/advanced_airlock_controller{
-	pixel_y = 27
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
@@ -2069,6 +2069,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/fore)
 "dP" = (
@@ -2232,7 +2235,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/storage)
 "ee" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2282,7 +2285,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/storage)
 "ei" = (
 /obj/machinery/door/airlock/hatch{
@@ -2333,15 +2336,9 @@
 	dir = 8;
 	pixel_x = -9
 	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "el" = (
-/obj/item/wallframe/advanced_airlock_controller{
-	pixel_y = 27
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
@@ -2352,6 +2349,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/fore)
 "em" = (
@@ -2372,9 +2372,6 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 4;
 	pixel_x = 9
-	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
@@ -2531,7 +2528,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
+/area/ship/cargo)
 "eB" = (
 /obj/machinery/conveyor_switch/oneway{
 	id = "ntbocargo1";
@@ -2548,7 +2545,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
+/area/ship/cargo)
 "eC" = (
 /obj/machinery/conveyor{
 	name = "On Belt";
@@ -2618,7 +2615,7 @@
 	},
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/hallway/fore)
 "eJ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -2772,7 +2769,7 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
+/area/ship/cargo)
 "eZ" = (
 /obj/machinery/conveyor{
 	name = "Input Belt";
@@ -2918,10 +2915,16 @@
 /area/ship/hallway/aft)
 "fn" = (
 /obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/aft)
 "fo" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/aft)
 "fp" = (
@@ -3077,7 +3080,7 @@
 /obj/structure/flora/junglebush,
 /obj/structure/flora/junglebush,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/hallway/fore)
 "fF" = (
 /obj/structure/toilet{
@@ -3447,8 +3450,8 @@
 "gp" = (
 /obj/structure/table,
 /obj/machinery/button/door{
-	name = "Lower Bay Shutters";
-	id = "ntoboent1";
+	name = "Hanger Door Override";
+	id = "ntsboent1";
 	dir = 8;
 	pixel_x = 9
 	},
@@ -3459,13 +3462,13 @@
 	},
 /obj/machinery/button/door{
 	name = "Window Shutters";
-	id = "ntobowins";
+	id = "ntsbowins";
 	dir = 8;
 	pixel_y = 10
 	},
 /obj/machinery/button/door{
 	name = "Bar Shutter Override";
-	id = "ntobowins1";
+	id = "ntsbowins1";
 	pixel_y = 10;
 	pixel_x = 9;
 	dir = 8
@@ -3479,7 +3482,7 @@
 	},
 /obj/structure/flora/grass/jungle,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/hallway/fore)
 "gr" = (
 /obj/machinery/atmospherics/components/binary/pump/layer2{
@@ -3933,7 +3936,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
+/area/ship/cargo)
 "hg" = (
 /obj/structure/window{
 	dir = 4
@@ -3945,7 +3948,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
+/area/ship/cargo)
 "hh" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/window{
@@ -3969,7 +3972,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/hallway/fore)
 "hk" = (
 /obj/structure/window/reinforced{
@@ -3978,7 +3981,7 @@
 /obj/structure/window/reinforced,
 /obj/structure/flora/junglebush,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/hallway/fore)
 "hl" = (
 /obj/machinery/atmospherics/components/binary/pump/layer2{
@@ -4048,7 +4051,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/storage)
 "hs" = (
 /obj/machinery/door/airlock/public/glass,
@@ -4298,6 +4301,7 @@
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "hI" = (
@@ -4400,7 +4404,7 @@
 /obj/structure/window/reinforced,
 /obj/structure/flora/junglebush,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/hallway/central)
 "hR" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -4803,7 +4807,7 @@
 	pixel_y = -33
 	},
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "iE" = (
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
@@ -5041,10 +5045,11 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	name = "Bay Shutters";
+	name = "Hangar Shutters";
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 6
+	pixel_y = 6;
+	id = "ntboent1"
 	},
 /obj/machinery/camera/autoname{
 	dir = 1
@@ -5365,6 +5370,10 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "ntboeng1";
+	name = "Engine Shutters"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "jC" = (
@@ -5450,6 +5459,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/stack/sheet/mineral/uranium/twenty,
+/obj/item/wrench,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/engine)
 "jK" = (
@@ -5780,6 +5790,7 @@
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "nJ" = (
@@ -5859,7 +5870,7 @@
 	dir = 1
 	},
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/storage)
 "pj" = (
 /obj/structure/cable{
@@ -5872,6 +5883,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood/corner,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/aft)
 "pn" = (
@@ -6259,9 +6273,6 @@
 	dir = 8;
 	pixel_x = -9
 	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "tT" = (
@@ -6366,7 +6377,7 @@
 	dir = 1
 	},
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/hallway/central)
 "wz" = (
 /obj/structure/chair,
@@ -6404,7 +6415,7 @@
 /obj/structure/window/reinforced,
 /obj/structure/flora/junglebush,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/storage)
 "xe" = (
 /obj/structure/cable{
@@ -6500,6 +6511,12 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/fore)
+"xF" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/hallway/starboard)
 "xG" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -6768,7 +6785,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/c,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/hallway/fore)
 "AR" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -6821,7 +6838,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/storage)
 "Bj" = (
-/obj/structure/closet/secure_closet/engineering_welding,
+/obj/structure/closet/secure_closet/engineering_personal,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "BF" = (
@@ -6972,6 +6989,13 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/button/door{
+	id = "ntboeng2";
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = 8;
+	name = "Engine Shutters"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering)
 "CT" = (
@@ -7092,7 +7116,6 @@
 /area/ship/external)
 "Ed" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/stockparts,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/box/gum/nicotine,
 /obj/item/storage/box/stockparts/t2,
@@ -7147,9 +7170,6 @@
 	dir = 4;
 	pixel_x = 9
 	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "ER" = (
@@ -7187,6 +7207,9 @@
 /obj/effect/turf_decal/corner/opaque/ntblue/border,
 /turf/open/floor/plasteel/mono,
 /area/ship/storage)
+"EY" = (
+/turf/template_noop,
+/area/template_noop)
 "Fd" = (
 /obj/effect/turf_decal/corner/opaque/black/border{
 	dir = 4
@@ -7445,7 +7468,7 @@
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/item/vending_refill/coffee,
 /obj/effect/turf_decal/box,
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/grass,
 /area/ship/storage)
 "Ii" = (
 /obj/structure/cable{
@@ -7801,7 +7824,7 @@
 	pixel_y = 32
 	},
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "Mj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/grey/mono,
@@ -7903,7 +7926,7 @@
 /obj/machinery/firealarm{
 	pixel_y = 28
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/engine)
 "Nc" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -7921,6 +7944,12 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
+"NG" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/hallway/aft)
 "NQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -7945,6 +7974,13 @@
 	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "ntboeng1";
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = -10;
+	name = "Engine Shutters"
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -8298,6 +8334,7 @@
 	dir = 1;
 	pixel_y = -25
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "SF" = (
@@ -8328,6 +8365,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
+/obj/machinery/light,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/aft)
 "Tk" = (
@@ -8537,6 +8575,7 @@
 	dir = 1;
 	pixel_y = -28
 	},
+/obj/machinery/light,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/aft)
 "Vi" = (
@@ -8621,14 +8660,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/hallway/starboard)
-"VX" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	name = "Window Shutters";
-	id = "ntbowins"
-	},
-/obj/effect/spawner/structure/window/shuttle,
-/turf/open/space/basic,
-/area/ship/hallway/starboard)
 "VY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -8680,7 +8711,7 @@
 	},
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
+/area/ship/cargo)
 "Ww" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -8725,7 +8756,7 @@
 	},
 /obj/machinery/button/door{
 	name = "Window Shutters";
-	id = "ntobowins1";
+	id = "ntbowins1";
 	pixel_y = 25;
 	pixel_x = -7
 	},
@@ -8789,7 +8820,7 @@
 /obj/machinery/door/window,
 /obj/effect/turf_decal/corner/opaque/brown/border,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
+/area/ship/cargo)
 "Xp" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -8812,7 +8843,7 @@
 /obj/structure/flora/junglebush,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/storage)
 "Xt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -8849,6 +8880,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/stack/sheet/mineral/uranium/twenty,
+/obj/item/wrench,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "Yc" = (
@@ -8981,7 +9013,7 @@
 	dir = 8
 	},
 /obj/machinery/light/floor,
-/turf/open/floor/plating/grass,
+/turf/open/floor/grass,
 /area/ship/hallway/central)
 "Zk" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -9007,6 +9039,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/cargo/starboard)
+"ZB" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/hallway/port)
 "ZP" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -9078,16 +9116,16 @@
 
 (1,1,1) = {"
 eW
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 bI
 dm
 dm
@@ -9114,15 +9152,15 @@ sy
 "}
 (2,1,1) = {"
 ab
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 bI
 bI
 kX
@@ -9155,9 +9193,9 @@ at
 at
 at
 ac
-ad
-ad
-ad
+EY
+EY
+EY
 bI
 bI
 cG
@@ -9192,7 +9230,7 @@ au
 au
 ac
 ac
-ad
+EY
 bI
 bI
 bI
@@ -9228,7 +9266,7 @@ xQ
 aG
 CM
 ac
-ad
+EY
 bI
 bY
 cl
@@ -9283,7 +9321,7 @@ hA
 gt
 gt
 il
-VX
+iI
 jk
 YI
 jq
@@ -9307,12 +9345,12 @@ UD
 cK
 Kc
 pS
-Dg
+ZB
 Pw
 fj
 ua
 Tk
-Um
+xF
 nL
 hB
 Ly
@@ -9408,7 +9446,7 @@ aI
 fx
 ac
 ac
-ad
+EY
 bJ
 bJ
 cm
@@ -9427,7 +9465,7 @@ fZ
 fZ
 ig
 ig
-ad
+EY
 jk
 jk
 FK
@@ -9437,15 +9475,15 @@ jk
 jk
 "}
 (11,1,1) = {"
-ad
+EY
 ac
 ac
 az
 aJ
 ac
-ad
-ad
-ad
+EY
+EY
+EY
 bJ
 Ys
 Gv
@@ -9462,15 +9500,15 @@ Tt
 SR
 RZ
 ih
-ad
-ad
-ad
+EY
+EY
+EY
 jk
 jF
 jL
 jk
 jk
-ad
+EY
 "}
 (12,1,1) = {"
 Ll
@@ -9479,9 +9517,9 @@ Nc
 aA
 HK
 ac
-ad
-ad
-ad
+EY
+EY
+EY
 bJ
 Ez
 bC
@@ -9498,9 +9536,9 @@ hE
 cv
 hn
 ih
-ad
-ad
-ad
+EY
+EY
+EY
 jk
 Qn
 jM
@@ -9515,9 +9553,9 @@ ac
 ac
 ac
 ac
-ad
-ad
-ad
+EY
+EY
+EY
 sk
 co
 co
@@ -9525,7 +9563,7 @@ co
 dX
 xA
 co
-fm
+NG
 Vh
 fZ
 gy
@@ -9534,9 +9572,9 @@ HV
 gG
 hn
 ih
-ad
-ad
-ad
+EY
+EY
+EY
 jk
 jk
 jk
@@ -9545,15 +9583,15 @@ jk
 Mi
 "}
 (14,1,1) = {"
-ad
+EY
 LI
-ad
+EY
 vW
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 sk
 zW
 cO
@@ -9570,26 +9608,26 @@ hn
 hS
 Yz
 ig
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 OS
-ad
+EY
 LI
-ad
+EY
 "}
 (15,1,1) = {"
-ad
-ad
-ad
+EY
+EY
+EY
 aB
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 cc
 cq
 cP
@@ -9606,26 +9644,26 @@ hn
 gG
 sw
 ig
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 aB
-ad
-ad
-ad
+EY
+EY
+EY
 "}
 (16,1,1) = {"
-ad
-ad
-ad
+EY
+EY
+EY
 aB
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 cc
 cr
 cQ
@@ -9642,26 +9680,26 @@ JY
 yx
 gA
 ig
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 aB
-ad
-ad
-ad
+EY
+EY
+EY
 "}
 (17,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 cc
 cp
 iF
@@ -9678,26 +9716,26 @@ fZ
 fZ
 fZ
 ig
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 aB
-ad
-ad
-ad
+EY
+EY
+EY
 "}
 (18,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 cc
 cq
 cS
@@ -9714,26 +9752,26 @@ xB
 OW
 hT
 ii
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 aB
-ad
-ad
-ad
+EY
+EY
+EY
 "}
 (19,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 cc
 cr
 cT
@@ -9750,26 +9788,26 @@ Gm
 hp
 hU
 ii
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 aB
-ad
-ad
-ad
+EY
+EY
+EY
 "}
 (20,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 sk
 WM
 cR
@@ -9786,25 +9824,25 @@ xS
 xS
 hV
 ii
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 aB
-ad
-ad
-ad
+EY
+EY
+EY
 "}
 (21,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 sk
 sk
 qt
@@ -9823,23 +9861,23 @@ Gm
 Gm
 ij
 ij
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 "}
 (22,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 cB
 cB
 co
@@ -9860,21 +9898,21 @@ gc
 gc
 ij
 il
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 "}
 (23,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
 aO
 cB
 bK
@@ -9896,21 +9934,21 @@ cN
 ik
 iy
 il
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 "}
 (24,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
 aO
 aO
 aO
@@ -9933,19 +9971,19 @@ il
 il
 il
 il
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
 "}
 (25,1,1) = {"
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 aO
 aO
 aE
@@ -9970,18 +10008,18 @@ iz
 iQ
 il
 il
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 "}
 (26,1,1) = {"
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 aO
 bl
 bx
@@ -10006,16 +10044,16 @@ iA
 iR
 jb
 il
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 "}
 (27,1,1) = {"
-ad
-ad
-ad
+EY
+EY
+EY
 xH
 aO
 aO
@@ -10044,15 +10082,15 @@ jc
 il
 il
 jG
-ad
-ad
-ad
+EY
+EY
+EY
 "}
 (28,1,1) = {"
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 aP
 bn
 bs
@@ -10079,16 +10117,16 @@ Yv
 ZS
 Rq
 il
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 "}
 (29,1,1) = {"
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 aQ
 ba
 bo
@@ -10115,16 +10153,16 @@ iH
 gu
 Tn
 jt
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 "}
 (30,1,1) = {"
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 aQ
 ba
 bi
@@ -10151,16 +10189,16 @@ js
 iv
 Lv
 IC
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 "}
 (31,1,1) = {"
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 aQ
 ba
 bo
@@ -10187,16 +10225,16 @@ VP
 Sl
 io
 ju
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 "}
 (32,1,1) = {"
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 aQ
 ba
 bi
@@ -10223,16 +10261,16 @@ iH
 gu
 Tn
 IC
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 "}
 (33,1,1) = {"
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 aS
 bb
 bp
@@ -10259,15 +10297,15 @@ js
 iv
 Tn
 jv
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 "}
 (34,1,1) = {"
-ad
-ad
-ad
+EY
+EY
+EY
 aK
 aO
 aO
@@ -10296,16 +10334,16 @@ GG
 Le
 il
 zj
-ad
-ad
-ad
+EY
+EY
+EY
 "}
 (35,1,1) = {"
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 aO
 br
 bB
@@ -10330,18 +10368,18 @@ Rx
 At
 jg
 aR
-bk
-ad
-ad
-ad
-ad
+il
+EY
+EY
+EY
+EY
 "}
 (36,1,1) = {"
 UM
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 aO
 aO
 LF
@@ -10366,18 +10404,18 @@ Lp
 Wd
 Vi
 Vv
-bk
-ad
-ad
-ad
+il
+EY
+EY
+EY
 UM
 "}
 (37,1,1) = {"
 af
 af
 aw
-ad
-ad
+EY
+EY
 aO
 aO
 aO
@@ -10402,8 +10440,8 @@ iI
 il
 il
 il
-bk
-ad
+il
+EY
 aC
 af
 af
@@ -10556,8 +10594,8 @@ jV
 af
 af
 ax
-ad
-ad
+EY
+EY
 bg
 bg
 bg
@@ -10582,20 +10620,20 @@ iN
 ja
 ja
 ja
-ad
-ad
+EY
+EY
 Lg
 af
 af
 "}
 (43,1,1) = {"
 vr
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 iG
-ad
+EY
 bg
 bW
 uI
@@ -10616,22 +10654,22 @@ ss
 iw
 iO
 ja
-ad
+EY
 iG
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
 vr
 "}
 (44,1,1) = {"
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 iG
-ad
+EY
 bH
 bX
 bX
@@ -10652,24 +10690,24 @@ et
 bX
 bX
 bX
-ad
+EY
 iG
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 "}
 (45,1,1) = {"
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 iG
-ad
-ad
-ad
+EY
+EY
+EY
 bX
 XP
 di
@@ -10686,26 +10724,26 @@ hJ
 hO
 Yu
 bX
-ad
-ad
-ad
+EY
+EY
+EY
 iG
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 "}
 (46,1,1) = {"
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 iG
-ad
-ad
-ad
+EY
+EY
+EY
 bX
 Uk
 dj
@@ -10722,26 +10760,26 @@ gJ
 hP
 AI
 bX
-ad
-ad
-ad
+EY
+EY
+EY
 iG
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 "}
 (47,1,1) = {"
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 iG
-ad
-ad
-ad
+EY
+EY
+EY
 bX
 dp
 dk
@@ -10758,26 +10796,26 @@ VJ
 hQ
 hs
 bX
-ad
-ad
-ad
+EY
+EY
+EY
 iG
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 "}
 (48,1,1) = {"
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 iG
-ad
-ad
-ad
+EY
+EY
+EY
 bX
 cF
 lY
@@ -10794,22 +10832,22 @@ Af
 WE
 cF
 bX
-ad
-ad
-ad
+EY
+EY
+EY
 iG
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 "}
 (49,1,1) = {"
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 nP
 iG
 iG
@@ -10834,23 +10872,23 @@ ab
 iG
 iG
 nP
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
 "}
 (50,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 ab
-ad
+EY
 bX
 bX
 mR
@@ -10865,29 +10903,29 @@ hi
 ck
 bX
 bX
-ad
+EY
 ab
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 "}
 (51,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 ab
-ad
-ad
+EY
+EY
 bX
 LK
 iE
@@ -10900,27 +10938,27 @@ IM
 bX
 ck
 bX
-ad
-ad
+EY
+EY
 ab
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 "}
 (52,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 CU
 ab
 ab
@@ -10939,27 +10977,27 @@ bX
 ab
 ab
 Dh
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 "}
 (53,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 Ps
 nc
 tT
@@ -10972,30 +11010,30 @@ dz
 hj
 nJ
 bX
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 "}
 (54,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 Ps
 Ps
 bX
@@ -11008,32 +11046,32 @@ el
 hk
 bX
 bX
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 "}
 (55,1,1) = {"
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 bX
 bX
 fg
@@ -11043,16 +11081,16 @@ bX
 fg
 bX
 bX
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
+EY
 "}
