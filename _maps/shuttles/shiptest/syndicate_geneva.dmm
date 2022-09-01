@@ -1804,12 +1804,14 @@
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "Kj" = (
-/obj/machinery/door/airlock/centcom,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "Crew Quarters"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
@@ -2211,9 +2213,14 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ri" = (
-/obj/machinery/door/airlock/centcom,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/hatch{
+	name = "Crew Quarters"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "RL" = (
