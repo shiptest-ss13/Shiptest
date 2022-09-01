@@ -4493,10 +4493,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "hZ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/grey/mono,
 /turf/open/floor/plasteel/mono,
 /area/ship/storage)
@@ -5122,8 +5118,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "jh" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/corner{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/grey/mono,
@@ -8681,14 +8676,17 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "Vz" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/corner/opaque/ntblue/border{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
 	},
 /obj/effect/turf_decal/corner/opaque/grey/mono,
 /obj/effect/turf_decal/corner/opaque/ntblue/border{
