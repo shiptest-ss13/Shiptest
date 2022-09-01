@@ -1,8 +1,9 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"prefix": "NTSV",
 	"namelists": ["GENERAL", "SPACE", "MYTHOLOGICAL", "HISTORICAL"],
 	"map_name": "Borea-Class Merchant Cruiser",
-	"map_short_name": "Merchant Cruiser",
+	"map_short_name": "Borea-Class",
 	"map_path": "_maps/shuttles/shiptest/nanotrasen_borea_merchant_cruiser.dmm",
 	"map_id": "nanotrasen_borea_merchant_cruiser",
 	"roundstart": true,
@@ -45,8 +46,8 @@
 		},
 		"Deckhand": {
 			"outfit": "/datum/outfit/job/assistant",
-			"slots": 5,
-		},
+			"slots": 5
+		}
 	},
-	"cost": 750
+	"enabled": true
 }

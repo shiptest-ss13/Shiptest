@@ -174,9 +174,6 @@
 /turf/open/floor/engine,
 /area/ship/engineering)
 "av" = (
-/obj/structure/railing{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/opaque/grey/mono,
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/corner{
 	dir = 1
@@ -325,7 +322,7 @@
 	},
 /obj/item/banner/cargo{
 	name = "Borea-Class Banner";
-	desc = "The banner symbolizing the Borea-Class, a frontier trade ship like no other. Or so they say.";
+	desc = "The banner symbolizing the Borea-Class, a frontier trade ship like no other.";
 	anchored = 1
 	},
 /obj/structure/sign/nanotrasen{
@@ -473,9 +470,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
-"aX" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/hallway/port)
 "aY" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Engine Pod 2"
@@ -893,7 +887,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/hallway/fore)
 "bI" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security)
 "bJ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1280,7 +1274,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/atmospherics)
 "cx" = (
 /obj/effect/turf_decal/industrial/stand_clear{
@@ -2627,7 +2621,7 @@
 /turf/open/floor/plating/grass,
 /area/ship/hallway/fore)
 "eJ" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet)
 "eK" = (
 /turf/closed/wall,
@@ -3301,7 +3295,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "fY" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/atmospherics)
 "fZ" = (
 /turf/closed/wall,
@@ -4490,7 +4484,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/turf/open/floor/plasteel/stairs,
+/obj/effect/turf_decal/corner/opaque/grey/mono,
+/turf/open/floor/plasteel/mono,
 /area/ship/storage)
 "ia" = (
 /obj/effect/turf_decal/industrial/stand_clear{
@@ -4741,9 +4736,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/fore)
-"ix" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/hallway/starboard)
 "iy" = (
 /obj/effect/decal/remains/human,
 /obj/item/clothing/head/papersack/smiley,
@@ -5423,7 +5415,7 @@
 	},
 /obj/item/banner/cargo{
 	name = "Borea-Class Banner";
-	desc = "The banner symbolizing the Borea-Class, a frontier trade ship like no other. Or so they say.";
+	desc = "The banner symbolizing the Borea-Class, a frontier trade ship like no other.";
 	anchored = 1
 	},
 /obj/structure/sign/nanotrasen{
@@ -5473,6 +5465,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/engine)
 "jL" = (
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "jM" = (
@@ -5625,7 +5618,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security)
 "kZ" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -5806,7 +5799,7 @@
 "nP" = (
 /obj/item/banner/cargo{
 	name = "Borea-Class Banner";
-	desc = "The banner symbolizing the Borea-Class, a frontier trade ship like no other. Or so they say.";
+	desc = "The banner symbolizing the Borea-Class, a frontier trade ship like no other.";
 	anchored = 1
 	},
 /turf/open/floor/plating,
@@ -6171,13 +6164,6 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"sI" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/firedoor,
-/turf/open/floor/plasteel/stairs/medium{
-	dir = 1
-	},
-/area/ship/hallway/port)
 "sX" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/chair/stool/bar,
@@ -6218,7 +6204,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/atmospherics)
 "tH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -6532,7 +6518,7 @@
 "xH" = (
 /obj/item/banner/cargo{
 	name = "Borea-Class Banner";
-	desc = "The banner symbolizing the Borea-Class, a frontier trade ship like no other. Or so they say.";
+	desc = "The banner symbolizing the Borea-Class, a frontier trade ship like no other.";
 	anchored = 1
 	},
 /obj/structure/sign/nanotrasen{
@@ -6666,7 +6652,7 @@
 "zj" = (
 /obj/item/banner/cargo{
 	name = "Borea-Class Banner";
-	desc = "The banner symbolizing the Borea-Class, a frontier trade ship like no other. Or so they say.";
+	desc = "The banner symbolizing the Borea-Class, a frontier trade ship like no other.";
 	anchored = 1
 	},
 /obj/structure/sign/nanotrasen{
@@ -7796,7 +7782,7 @@
 "LI" = (
 /obj/item/banner/cargo{
 	name = "Borea-Class Banner";
-	desc = "The banner symbolizing the Borea-Class, a frontier trade ship like no other. Or so they say.";
+	desc = "The banner symbolizing the Borea-Class, a frontier trade ship like no other.";
 	anchored = 1
 	},
 /turf/open/floor/plating/catwalk_floor,
@@ -8299,7 +8285,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/space/basic,
+/turf/open/floor/engine,
 /area/ship/hallway/starboard)
 "Sq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -8634,6 +8620,14 @@
 	dir = 1
 	},
 /turf/open/floor/engine,
+/area/ship/hallway/starboard)
+"VX" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "Window Shutters";
+	id = "ntbowins"
+	},
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/space/basic,
 /area/ship/hallway/starboard)
 "VY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -9271,7 +9265,7 @@ aI
 UK
 ac
 bh
-aX
+aO
 bZ
 bZ
 cJ
@@ -9288,8 +9282,8 @@ gt
 hA
 gt
 gt
-ix
-iI
+il
+VX
 jk
 YI
 jq
@@ -10208,7 +10202,7 @@ ba
 bi
 bi
 bi
-sI
+Ni
 iC
 mv
 Sb
