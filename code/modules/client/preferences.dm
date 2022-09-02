@@ -1306,9 +1306,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /**
  * Proc called when there is a need to handle quirk conflicts.
  *
- * This evaluates what quirks conflict and removes them, aiming to have a balance of at least 0, and removes any positive quirks as needed for such.
+ * This evaluates what quirks conflict and removes them.
  * Arguments:
- * * change_type - Currently can only be "species" or "mood", defines what kind of conflict it should look for.
+ * * change_type - Currently can only be, "blacklist", "species" or "mood", defines what kind of conflict it should look for.
  * * additional_argument - Supplies the species datum and can supply something else if this proc gets expanded.
 **/
 /datum/preferences/proc/handle_quirk_conflict(change_type, additional_argument, mob/user)
@@ -1339,27 +1339,33 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if((quirk_blacklisted in blacklist) && (quirk_owned_instance.name in blacklist) && !(quirk_owned_instance.name == quirk_blacklisted))
 							all_quirks_new -= quirk_owned_instance.name
 							balance += quirk_owned_instance.value
-	while(balance < 0)
-		var/list/positive_quirks = list()
-		for(var/quirk_owned in all_quirks_new)
-			var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
-			var/quirk_value = initial(quirk_owned_datum.value)
-			if(quirk_value > 0)
-				positive_quirks |= quirk_owned_datum
-				var/datum/quirk/positive_quirk = pick(positive_quirks)
-				all_quirks_new -= initial(positive_quirk.name)
-				balance += initial(positive_quirk.value)
-				break
-		if((length(positive_quirks) < 1) && (balance < 0))
-			stack_trace("Client [user?.client?.ckey] has a negative balance without positive quirks.")
-			all_quirks = list()
-			save_character()
-			alert(user, "Something went very wrong with your quirks, they have been reset.")
+	if(balance < 0)
+		all_quirks_new = adjust_quirk_balance(all_quirks_new, balance, user)
 	if(change_type == "blacklist" || ((target_species.id == pref_species.id) && change_type == "species") || (change_type = "mood" && CONFIG_GET(flag/disable_human_mood)))
 		all_quirks = all_quirks_new
 		save_character()
 	if(all_quirks_new != all_quirks)
 		return all_quirks_new
+
+/datum/preferences/proc/adjust_quirk_balance(list/all_quirks_new, balance, mob/user)
+	var/list/positive_quirks = list()
+	for(var/quirk_owned in all_quirks_new)
+		var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
+		var/quirk_value = initial(quirk_owned_datum.value)
+		if(quirk_value > 0)
+			positive_quirks |= quirk_owned_datum
+	while(balance < 0)
+		positive_quirks = sortList(positive_quirks, /proc/cmp_numeric_dsc)
+		var/datum/quirk/positive_quirk = positive_quirks[1]
+		all_quirks_new -= initial(positive_quirk.name)
+		balance += initial(positive_quirk.value)
+		positive_quirks -= positive_quirk
+	if((length(positive_quirks) < 1) && (balance < 0))
+		stack_trace("Client [user?.client?.ckey] has a negative balance without positive quirks.")
+		all_quirks_new = list()
+		alert(user, "Something went very wrong with your quirks, they have been reset.")
+	alert(user, "Your quirks have been altered.")
+	return all_quirks_new
 
 /datum/preferences/proc/GetQuirkBalance()
 	var/bal = 0
