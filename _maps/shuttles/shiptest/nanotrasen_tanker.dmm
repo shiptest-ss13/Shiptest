@@ -951,17 +951,13 @@
 /area/ship/medical)
 "sS" = (
 /obj/machinery/door/airlock/external/glass,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	dwidth = 16;
-	height = 27;
-	launch_status = 0;
-	port_direction = 8;
-	width = 24
-	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	launch_status = 0;
+	port_direction = 4
 	},
 /turf/open/floor/engine,
 /area/ship/crew/janitor)
@@ -2819,39 +2815,6 @@ cy
 cy
 cy
 cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-"}
-(2,1,1) = {"
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
 ki
 QP
 SH
@@ -2868,10 +2831,8 @@ cy
 cy
 cy
 cy
-cy
 "}
-(3,1,1) = {"
-cy
+(2,1,1) = {"
 cy
 BA
 jT
@@ -2900,10 +2861,8 @@ cy
 cy
 cy
 cy
-cy
 "}
-(4,1,1) = {"
-cy
+(3,1,1) = {"
 BA
 pV
 Qk
@@ -2932,10 +2891,8 @@ mb
 cy
 cy
 cy
-cy
 "}
-(5,1,1) = {"
-cy
+(4,1,1) = {"
 jT
 CU
 eu
@@ -2964,10 +2921,8 @@ He
 mb
 cy
 cy
-cy
 "}
-(6,1,1) = {"
-cy
+(5,1,1) = {"
 jT
 qo
 VW
@@ -2996,10 +2951,8 @@ kz
 He
 mb
 cy
-cy
 "}
-(7,1,1) = {"
-cy
+(6,1,1) = {"
 BA
 OA
 Gn
@@ -3028,10 +2981,8 @@ AF
 Eq
 He
 mb
-cy
 "}
-(8,1,1) = {"
-cy
+(7,1,1) = {"
 cy
 BA
 mq
@@ -3060,10 +3011,8 @@ Vx
 hN
 hZ
 Wo
-cy
 "}
-(9,1,1) = {"
-cy
+(8,1,1) = {"
 cy
 um
 um
@@ -3092,10 +3041,8 @@ ht
 hS
 hZ
 Wo
-cy
 "}
-(10,1,1) = {"
-cy
+(9,1,1) = {"
 um
 gg
 ZO
@@ -3124,10 +3071,8 @@ qM
 ev
 yj
 Wo
-cy
 "}
-(11,1,1) = {"
-cy
+(10,1,1) = {"
 or
 Dh
 ui
@@ -3156,10 +3101,8 @@ qM
 Cd
 Xl
 He
-cy
 "}
-(12,1,1) = {"
-cy
+(11,1,1) = {"
 or
 Me
 mQ
@@ -3188,10 +3131,8 @@ qM
 uI
 He
 He
-cy
 "}
-(13,1,1) = {"
-cy
+(12,1,1) = {"
 um
 Jq
 sm
@@ -3220,10 +3161,8 @@ qM
 xZ
 hZ
 Wo
-cy
 "}
-(14,1,1) = {"
-cy
+(13,1,1) = {"
 cy
 um
 um
@@ -3252,10 +3191,8 @@ qM
 hC
 hZ
 Wo
-cy
 "}
-(15,1,1) = {"
-cy
+(14,1,1) = {"
 cy
 xd
 yV
@@ -3284,10 +3221,8 @@ lW
 Px
 hZ
 Wo
-cy
 "}
-(16,1,1) = {"
-cy
+(15,1,1) = {"
 xd
 UK
 mw
@@ -3316,10 +3251,8 @@ mb
 mb
 mb
 mb
-cy
 "}
-(17,1,1) = {"
-cy
+(16,1,1) = {"
 Hy
 XK
 eH
@@ -3348,10 +3281,8 @@ FS
 Xn
 mb
 cy
-cy
 "}
-(18,1,1) = {"
-cy
+(17,1,1) = {"
 Hy
 Ii
 OY
@@ -3380,10 +3311,8 @@ KP
 Xn
 cy
 cy
-cy
 "}
-(19,1,1) = {"
-cy
+(18,1,1) = {"
 xd
 xd
 UK
@@ -3412,49 +3341,14 @@ Xn
 cy
 cy
 cy
-cy
 "}
-(20,1,1) = {"
-cy
+(19,1,1) = {"
 cy
 xd
 UK
 sS
 qy
 ck
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-"}
-(21,1,1) = {"
-cy
-cy
-cy
-cy
-cy
-cy
-cy
-cy
 cy
 cy
 cy
