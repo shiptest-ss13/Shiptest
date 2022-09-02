@@ -1341,35 +1341,28 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							all_quirks_new -= quirk_owned_instance.name
 							balance += quirk_owned_instance.value
 	if(balance < 0)
-		all_quirks_new = adjust_quirk_balance(all_quirks_new, balance, user)
+		var/list/positive_quirks = list()
+		for(var/quirk_owned in all_quirks_new)
+			var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
+			var/quirk_value = initial(quirk_owned_datum.value)
+			if(quirk_value > 0)
+				positive_quirks |= quirk_owned_datum
+		positive_quirks = sortList(positive_quirks, /proc/cmp_quirk_value_dsc)
+		while(balance < 0)
+			var/datum/quirk/positive_quirk = positive_quirks[1]
+			all_quirks_new -= initial(positive_quirk.name)
+			balance += initial(positive_quirk.value)
+			positive_quirks -= positive_quirk
+			if((length(positive_quirks) < 1) && (balance < 0))
+				stack_trace("Client [user?.client?.ckey] has a negative balance without positive quirks.")
+				all_quirks_new = list()
+				alert(user, "Something went very wrong with your quirks, they have been reset.")
 	if(change_type == "blacklist" || ((target_species.id == pref_species.id) && change_type == "species") || (change_type = "mood" && CONFIG_GET(flag/disable_human_mood)))
 		all_quirks = all_quirks_new
 		save_character()
 	if(all_quirks_new != all_quirks)
+		to_chat(user, "<span class='danger'>Your quirks have been altered.</span>")
 		return all_quirks_new
-
-/datum/preferences/proc/adjust_quirk_balance(list/all_quirks_new, balance, mob/user)
-	var/list/positive_quirks = list()
-	for(var/quirk_owned in all_quirks_new)
-		var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
-		var/quirk_value = initial(quirk_owned_datum.value)
-		if(quirk_value > 0)
-			positive_quirks |= quirk_owned_datum
-	while(balance < 0)
-		positive_quirks = sortList(positive_quirks, /proc/cmp_quirk_value_dsc)
-		for(var/datum/quirk/positive_quirk in positive_quirks)
-			all_quirks_new -= initial(positive_quirk.name)
-			balance += initial(positive_quirk.value)
-			positive_quirks -= positive_quirk
-			if(balance >= 0)
-				break
-
-		if((length(positive_quirks) < 1) && (balance < 0))
-			stack_trace("Client [user?.client?.ckey] has a negative balance without positive quirks.")
-			all_quirks_new = list()
-			alert(user, "Something went very wrong with your quirks, they have been reset.")
-	alert(user, "Your quirks have been altered.")
-	return all_quirks_new
 
 /datum/preferences/proc/GetQuirkBalance()
 	var/bal = 0
@@ -1427,10 +1420,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/temp_hsv = RGBtoHSV(features["mcolor"])
 				if(features["mcolor"] == "#000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#191919")[3]))
 					features["mcolor"] = pref_species.default_color
-				handle_quirk_conflict("species", pref_species)
 				user << browse(null, "window=speciespick")
 				ShowChoices(user)
 				age = rand(pref_species.species_age_min, pref_species.species_age_max)
+				handle_quirk_conflict("species", pref_species)
 				return TRUE
 			if("lookatspecies")
 				species_looking_at = href_list["newspecies"]
