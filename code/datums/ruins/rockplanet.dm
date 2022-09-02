@@ -69,14 +69,6 @@
 	description = "A chunk of a station that broke off.."
 	suffix = "rockplanet_boxsci.dmm"
 
-/* greeble
-/datum/map_template/ruin/rockplanet/rd_god
-	id = "rd_god"
-	suffix = "rockplanet_rd_god.dmm"
-	name = "Science experiment"
-	description = "Research Director? The experiment to become god has fai-"
-*/
-
 /datum/map_template/ruin/rockplanet/crash_cult
 	name = "Crashed Cult Ship"
 	description = "A crashed part of some unlucky ship. Has been occupied by a cult."
