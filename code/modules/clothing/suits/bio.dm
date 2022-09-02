@@ -13,6 +13,8 @@
 /obj/item/clothing/suit/bio_suit
 	name = "bio suit"
 	desc = "A suit that protects against biological contamination."
+	icon = 'icons/obj/clothing/suits/utility.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "bio"
 	item_state = "bio_suit"
 	w_class = WEIGHT_CLASS_BULKY
@@ -34,7 +36,6 @@
 
 /obj/item/clothing/suit/bio_suit/general
 	icon_state = "bio_general"
-
 
 //Virology biosuit, green stripe
 /obj/item/clothing/head/bio_hood/virology

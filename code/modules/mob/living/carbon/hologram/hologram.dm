@@ -97,7 +97,7 @@
 
 /mob/living/simple_animal/hologram/Move(atom/newloc, direct)
 	. = ..()
-	if(!holopad.anchored || holopad.machine_stat)
+	if(!holopad || !holopad.anchored || holopad.machine_stat)
 		for(var/I in holopad.holopads)
 			var/obj/machinery/holopad/another = I
 			if(another == holopad || another.machine_stat || !another.anchored)
