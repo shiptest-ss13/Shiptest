@@ -400,7 +400,7 @@
 			dat += "[D.materials[i] * coeff] [i]"
 		else
 			var/datum/material/M = i
-			dat += "[D.materials[i] * coeff] [M.name] "
+			dat += "[D.materials[i] * coeff] [initial(M.name)] "
 	return dat
 
 /obj/machinery/autolathe/proc/reset(wire)

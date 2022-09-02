@@ -73,8 +73,8 @@
 	. += stock
 
 /obj/item/gun/ballistic/automatic/assualt/ak47/inteq
-	name = "\improper AKM"
-	desc = "An AKM that has been tinkered with, and branded with markings denoting it as a weapon from the IRMG."
+	name = "\improper SkM-24"
+	desc = "An obsolete assault rifle seized from some frontier armory and extensively modified to IRMG standards. Chambered in 7.62x39mm."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/akm.ogg'
 	icon_state = "akm"

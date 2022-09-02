@@ -21,7 +21,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/c20r
 	name = "\improper C-20r SMG"
-	desc = "A bullpup two-round burst .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
+	desc = "A bullpup .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
 	icon_state = "c20r"
 	item_state = "c20r"
 	mag_type = /obj/item/ammo_box/magazine/smgm45
@@ -51,6 +51,23 @@
 
 	icon_state = "cobra20"
 	item_state = "cobra20"
+
+/obj/item/gun/ballistic/automatic/smg/inteq
+	name = "\improper SkM-44(k)"
+	desc = "An extreme modification of an obsolete assault rifle, converted into a compact submachine gun by IRMG. Chambered in 10mm."
+	icon_state = "inteqsmg"
+	item_state = "inteqsmg"
+	mag_type = /obj/item/ammo_box/magazine/smgm10mm
+	can_bayonet = FALSE
+	can_flashlight = TRUE
+	flight_x_offset = 15
+	flight_y_offset = 13
+	can_suppress = TRUE
+	mag_display = TRUE
+
+/obj/item/gun/ballistic/automatic/smg/inteq/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"

@@ -1,10 +1,10 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Tartarus-class Military Carrier",
 	"prefix": "NTSV",
 	"namelists": ["GENERAL", "BRITISH_NAVY", "MYTHOLOGICAL", "WEAPONS"],
 	"map_short_name": "Tartarus-class",
 	"map_path": "_maps/shuttles/shiptest/carrier.dmm",
-	"map_id": "carrier",
 	"job_slots": {
 		"Head of Security": {
 			"outfit": "/datum/outfit/job/hos/nanotrasen",
@@ -25,5 +25,5 @@
 			"slots": 3
 		}
 	},
-	"cost": 650
+	"enabled": true
 }

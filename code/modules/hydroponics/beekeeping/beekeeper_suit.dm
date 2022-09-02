@@ -10,6 +10,8 @@
 /obj/item/clothing/suit/beekeeper_suit
 	name = "beekeeper suit"
 	desc = "Keeps the lil buzzing buggers away from your squishy bits."
+	icon = 'icons/obj/clothing/suits/utility.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "beekeeper"
 	item_state = "beekeeper"
 	clothing_flags = THICKMATERIAL

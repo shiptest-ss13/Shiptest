@@ -96,10 +96,10 @@
 
 /obj/item/ammo_box/magazine/co9mm/update_icon()
 	..()
-	if (ammo_count() >= 8)
-		icon_state = "co9mm-8"
+	if (ammo_count() == 1)
+		icon_state = "co9mm-1"
 	else
-		icon_state = "co9mm-[ammo_count()]" //WS edit end - commander
+		icon_state = "co9mm-[round(ammo_count(),2)]"
 
 /obj/item/ammo_box/magazine/pistolm9mm
 	name = "large pistol magazine (9mm)"
