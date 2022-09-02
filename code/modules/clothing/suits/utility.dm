@@ -12,6 +12,8 @@
 /obj/item/clothing/suit/fire
 	name = "emergency firesuit"
 	desc = "A suit that helps protect against fire and heat."
+	icon = 'icons/obj/clothing/suits/utility.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "fire"
 	item_state = "ro_suit"
 	w_class = WEIGHT_CLASS_BULKY
@@ -74,6 +76,8 @@
 /obj/item/clothing/suit/bomb_suit
 	name = "bomb suit"
 	desc = "A suit designed for safety when handling explosives."
+	icon = 'icons/obj/clothing/suits/utility.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "bombsuit"
 	item_state = "bombsuit"
 	w_class = WEIGHT_CLASS_BULKY
@@ -131,6 +135,8 @@
 /obj/item/clothing/suit/radiation
 	name = "radiation suit"
 	desc = "A suit that protects against radiation. The label reads, 'Made with lead. Please do not consume insulation.'"
+	icon = 'icons/obj/clothing/suits/utility.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "rad"
 	item_state = "rad_suit"
 	w_class = WEIGHT_CLASS_BULKY
