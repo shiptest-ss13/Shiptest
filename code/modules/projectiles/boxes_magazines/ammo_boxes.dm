@@ -110,6 +110,31 @@
 	icon_state = "38huntingbox"
 	ammo_type = /obj/item/ammo_casing/c38/hunting
 
+/obj/item/ammo_box/12g
+	name = "ammo box (12ga buckshot)"
+	desc = "A box of 12 gauge buckshot shells, devastating at close range."
+	icon_state = "12gbox-buckshot"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	max_ammo = 25
+
+/obj/item/ammo_box/12g/slug
+	name = "ammo box (12ga slug)"
+	desc = "A box of 12 gauge slugs, for improved accuracy and penetration."
+	icon_state = "12gbox-slug"
+	ammo_type = /obj/item/ammo_casing/shotgun
+
+/obj/item/ammo_box/12g/beanbag
+	name = "ammo box (12ga beanbag)"
+	desc = "A box of 12 gauge beanbag shells, for incapacitating targets."
+	icon_state = "12gbox-beanbag"
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+
+/obj/item/ammo_box/12g/rubbershot
+	name = "ammo box (12ga rubbershot)"
+	desc = "A box of 12 gauge rubbershot shells, designed for riot control."
+	icon_state = "12gbox-rubbershot"
+	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
+
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
 	desc = "A box of standard 9mm ammo."
