@@ -1355,15 +1355,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if(quirk_value > 0)
 			positive_quirks |= quirk_owned_datum
 	while(balance < 0)
-		positive_quirks = sortList(positive_quirks, /proc/cmp_numeric_dsc)
-		var/datum/quirk/positive_quirk = positive_quirks[1]
-		all_quirks_new -= initial(positive_quirk.name)
-		balance += initial(positive_quirk.value)
-		positive_quirks -= positive_quirk
-	if((length(positive_quirks) < 1) && (balance < 0))
-		stack_trace("Client [user?.client?.ckey] has a negative balance without positive quirks.")
-		all_quirks_new = list()
-		alert(user, "Something went very wrong with your quirks, they have been reset.")
+		positive_quirks = sortList(positive_quirks, /proc/cmp_quirk_value_dsc)
+		for(var/datum/quirk/positive_quirk in positive_quirks)
+			all_quirks_new -= initial(positive_quirk.name)
+			balance += initial(positive_quirk.value)
+			positive_quirks -= positive_quirk
+			if(balance >= 0)
+				break
+
+		if((length(positive_quirks) < 1) && (balance < 0))
+			stack_trace("Client [user?.client?.ckey] has a negative balance without positive quirks.")
+			all_quirks_new = list()
+			alert(user, "Something went very wrong with your quirks, they have been reset.")
 	alert(user, "Your quirks have been altered.")
 	return all_quirks_new
 
