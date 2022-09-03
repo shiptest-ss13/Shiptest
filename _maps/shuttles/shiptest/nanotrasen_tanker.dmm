@@ -498,6 +498,9 @@
 	dir = 4;
 	pixel_x = -28
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew/toilet)
 "jE" = (
@@ -619,9 +622,6 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "Tankerbay"
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4{
-	dir = 8
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	id = "Tankerholo";
@@ -630,6 +630,12 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/components/binary/valve/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -743,8 +749,8 @@
 "oo" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 1
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 4
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew/dorm)
@@ -885,6 +891,10 @@
 "qc" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew/toilet)
 "qo" = (
@@ -1365,7 +1375,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "Tankerbay"
 	},
-/obj/machinery/atmospherics/pipe/simple/green/hidden/layer2{
+/obj/machinery/atmospherics/components/binary/valve/layer2{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1703,6 +1713,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning/dust,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew/dorm)
 "Hy" = (
@@ -1727,10 +1741,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "HQ" = (
-/obj/machinery/atmospherics/components/binary/valve/layer2{
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "HT" = (
@@ -1824,6 +1838,9 @@
 /obj/machinery/door/window/survival_pod{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew/toilet)
 "Ji" = (
@@ -1852,6 +1869,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew/dorm)
 "Jy" = (
@@ -1951,6 +1971,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/warning/dust/corner,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew/dorm)
 "Kv" = (
@@ -1970,6 +1993,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm{
 	pixel_y = 28
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 4
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew/dorm)
@@ -2220,6 +2246,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew/toilet)
 "OI" = (
@@ -2489,6 +2518,11 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew/toilet)
 "Rl" = (
@@ -2562,10 +2596,10 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "Su" = (
-/obj/machinery/atmospherics/components/binary/valve/layer4{
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "SC" = (
@@ -2907,6 +2941,10 @@
 	},
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/east,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew/toilet)
 "Zd" = (
