@@ -1333,6 +1333,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "cD" = (
@@ -1860,9 +1863,6 @@
 "dy" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -2384,6 +2384,12 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/corner/opaque/ntblue{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "ep" = (
@@ -2439,7 +2445,7 @@
 	pixel_y = -31
 	},
 /obj/machinery/light,
-/obj/machinery/computer/arcade{
+/obj/machinery/computer/arcade/orion_trail{
 	dir = 1
 	},
 /turf/open/floor/eighties,
@@ -2567,7 +2573,6 @@
 	pixel_x = -3;
 	pixel_y = -5
 	},
-/obj/effect/turf_decal/corner/opaque/ntblue/bordercorner,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "eF" = (
@@ -2583,9 +2588,6 @@
 	pixel_x = -3;
 	pixel_y = 5
 	},
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 6
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "eG" = (
@@ -2597,6 +2599,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/fancy/corner/opaque/ntblue,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "eH" = (
@@ -2789,9 +2795,6 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 6
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "fb" = (
@@ -2800,6 +2803,9 @@
 	name = "Communication chair"
 	},
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 9
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "fc" = (
@@ -2807,9 +2813,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 9
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "fd" = (
@@ -3037,6 +3040,12 @@
 "fA" = (
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
 /obj/machinery/holopad/emergency/command,
+/obj/effect/turf_decal/spline/fancy/corner/opaque/ntblue{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/corner/opaque/ntblue{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "fB" = (
@@ -3048,6 +3057,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/corner/opaque/ntblue{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "fC" = (
@@ -3055,9 +3070,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 8
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "fD" = (
@@ -3252,16 +3264,15 @@
 /area/ship/cargo)
 "fS" = (
 /obj/machinery/airalarm/directional/south,
-/obj/effect/turf_decal/siding/wood/end,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "fU" = (
 /obj/structure/closet/crate/bin,
 /obj/structure/plaque/static_plaque/golden/captain{
 	pixel_x = -32
-	},
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 5
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -3278,6 +3289,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "fW" = (
@@ -3285,9 +3299,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 8
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "fX" = (
@@ -3440,9 +3451,6 @@
 /obj/item/folder{
 	pixel_x = -6
 	},
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 4
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "go" = (
@@ -3453,6 +3461,9 @@
 	name = "Thinking chair"
 	},
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "gp" = (
@@ -3480,9 +3491,6 @@
 	pixel_y = 10;
 	pixel_x = 9;
 	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 10
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -3713,18 +3721,12 @@
 	pixel_x = -32
 	},
 /obj/machinery/photocopier/faxmachine/longrange,
-/obj/effect/turf_decal/corner/opaque/ntblue/bordercorner{
-	dir = 4
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "gN" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
 /obj/structure/filingcabinet,
-/obj/effect/turf_decal/corner/opaque/ntblue/border{
-	dir = 5
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "gO" = (
@@ -5489,6 +5491,12 @@
 /obj/item/clothing/gloves/color/captain,
 /obj/item/door_remote/captain,
 /obj/item/radio/headset/heads/captain,
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 6
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "jO" = (
@@ -6113,7 +6121,7 @@
 /obj/structure/sign/barsign{
 	pixel_y = -32
 	},
-/obj/machinery/computer/arcade{
+/obj/machinery/computer/arcade/battle{
 	dir = 1
 	},
 /turf/open/floor/eighties,
@@ -6149,6 +6157,23 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
+"sv" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/corner/opaque/ntblue{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
 "sw" = (
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt,
@@ -6226,6 +6251,12 @@
 	pixel_y = 1
 	},
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "tH" = (
@@ -6245,7 +6276,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 10
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
@@ -6312,6 +6343,9 @@
 /area/ship/storage)
 "uj" = (
 /obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "uI" = (
@@ -7630,6 +7664,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/table/wood,
+/obj/item/soap/nanotrasen,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "Jj" = (
@@ -7835,6 +7871,10 @@
 /obj/item/storage/backpack/captain,
 /obj/item/clothing/under/rank/command/head_of_personnel/nt,
 /obj/item/clothing/head/hopcap/nt,
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/ntblue,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Lv" = (
@@ -8601,9 +8641,13 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/structure/table/wood,
-/obj/item/soap/nanotrasen,
-/turf/open/floor/plasteel/grimy,
+/obj/structure/chair/stool/bar{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/wood,
 /area/ship/crew/canteen)
 "UK" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -10818,7 +10862,7 @@ di
 dF
 pM
 eG
-fB
+sv
 fV
 cC
 fB
