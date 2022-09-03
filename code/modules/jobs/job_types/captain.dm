@@ -167,7 +167,7 @@
 	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/clothing/accessory/medal/gold/captain=1, /obj/item/stack/spacecash/c10000=1)
 
 /datum/outfit/job/captain/syndicate/cybersun
-	name = "Captain (Syndicate)"
+	name = "Cybersun Commander"
 
 	uniform = /obj/item/clothing/under/suit/black_really
 	shoes = /obj/item/clothing/shoes/jackboots
