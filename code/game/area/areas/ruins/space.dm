@@ -550,14 +550,6 @@
 	name = "Corporate Mine Cargo"
 	icon_state = "cargo_bay"
 
-/area/ruin/space/has_grav/corporatemine/solar_array
-	name = "Corporate Mine Solar Array"
-	icon_state = "panels_fs"
-
-/area/ruin/space/has_grav/corporatemine/asteroid
-	name = "Asteroid"
-	icon_state = "unknown"
-
 /area/ruin/space/has_grav/corporatemine/crewquarters
 	name = "Corporate Mine Crew Quarters"
 	icon_state = "purple"
