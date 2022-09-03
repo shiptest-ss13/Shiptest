@@ -64,7 +64,3 @@
 	name = "Abandoned Mechbay Externals"
 	icon_state = "asteroid"
 	requires_power = TRUE
-
-/area/ruin/rockplanet/abandoned_mechbay/caves
-	name = "Caves"
-	icon_state = "asteroid"
