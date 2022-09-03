@@ -35,7 +35,7 @@
 
 /obj/item/clothing/suit/armor/vest/marine
 	name = "light tactical armor vest"
-	desc = "A set of the finest mass produced, stamped plasteel armor plates. Often the top of the line stuff most non-government groups can afford."
+	desc = "A set of the finest mass-produced stamped plasteel armor plates money can buy."
 	icon_state = "marine_light"
 	item_state = "armor"
 	clothing_flags = THICKMATERIAL
