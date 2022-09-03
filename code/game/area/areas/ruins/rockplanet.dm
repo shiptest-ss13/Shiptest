@@ -59,8 +59,3 @@
 /area/ruin/rockplanet/abandoned_mechbay/atmospereslurper
 	name = "Abandoned Mechbay Air Processing"
 	icon_state = "atmos"
-
-/area/ruin/rockplanet/abandoned_mechbay/external
-	name = "Abandoned Mechbay Externals"
-	icon_state = "asteroid"
-	requires_power = TRUE
