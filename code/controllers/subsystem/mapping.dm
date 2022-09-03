@@ -23,6 +23,9 @@ SUBSYSTEM_DEF(mapping)
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
 	var/list/holodeck_templates = list()
+	// DEBUG: add this to everything it needs to be added to
+	var/list/hangar_templates = list()
+
 
 	var/list/areas_in_z = list()
 
@@ -92,6 +95,7 @@ SUBSYSTEM_DEF(mapping)
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
 	holodeck_templates = SSmapping.holodeck_templates
+	hangar_templates = SSmapping.hangar_templates
 
 	z_list = SSmapping.z_list
 
@@ -113,6 +117,7 @@ SUBSYSTEM_DEF(mapping)
 	load_ship_templates()
 	preloadShelterTemplates()
 	preloadHolodeckTemplates()
+	preloadHangarTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
 	// Still supporting bans by filename
@@ -275,6 +280,22 @@ SUBSYSTEM_DEF(mapping)
 
 		holodeck_templates[holo_template.template_id] = holo_template
 		map_templates[holo_template.template_id] = holo_template
+
+// DEBUG: ugh. i hate the whole SSmapping modus operandi. maybe it can be better?
+/datum/controller/subsystem/mapping/proc/preloadHangarTemplates()
+	for(var/datum/map_template/hangar/hangar_type as anything in subtypesof(/datum/map_template/hangar))
+		// the other preloaders let you just omit the equivalents
+		// i am not so merciful
+		if(!initial(hangar_type.skin))
+			CRASH("Tried to preload hangar [hangar_type] with invalid skin!")
+		if(!initial(hangar_type.port_width))
+			CRASH("Tried to preload hangar [hangar_type] with invalid port_width!")
+		if(!initial(hangar_type.port_height))
+			CRASH("Tried to preload hangar [hangar_type] with invalid port_height!")
+
+		var/datum/map_template/hangar/hangar_template = new hangar_type()
+		hangar_templates[hangar_template.name] = hangar_template
+		map_templates[hangar_template.name] = hangar_template
 
 //////////////////
 // RESERVATIONS //
