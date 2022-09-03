@@ -38,42 +38,42 @@
 
 		switch(humidity)
 			if(0 to 0.20)
-				humidity_level ="biome_lowest_humidity"
+				humidity_level =BIOME_LOWEST_HUMIDITY
 			if(0.20 to 0.40)
-				humidity_level ="biome_low_humidity"
+				humidity_level =BIOME_LOW_HUMIDITY
 			if(0.40 to 0.60)
-				humidity_level ="biome_medium_humidity"
+				humidity_level =BIOME_MEDIUM_HUMIDITY
 			if(0.60 to 0.80)
-				humidity_level ="biome_high_humidity"
+				humidity_level =BIOME_HIGH_HUMIDITY
 			if(0.80 to 1)
-				humidity_level ="biome_highest_humidity"
+				humidity_level =BIOME_HIGHEST_HUMIDITY
 		if(height <= mountain_height)
 			switch(heat)
 				if(0 to 0.20)
-					heat_level = planet_type.biomes["coldest"]
+					heat_level = planet_type.biomes[BIOME_COLDEST]
 				if(0.20 to 0.40)
-					heat_level = planet_type.biomes["cold"]
+					heat_level = planet_type.biomes[BIOME_COLD]
 				if(0.40 to 0.60)
-					heat_level = planet_type.biomes["warm"]
+					heat_level = planet_type.biomes[BIOME_WARM]
 				if(0.60 to 0.65)
-					heat_level = planet_type.biomes["perfect"]
+					heat_level = planet_type.biomes[BIOME_TEMPERATE]
 				if(0.65 to 0.80)
-					heat_level = planet_type.biomes["hot"]
+					heat_level = planet_type.biomes[BIOME_HOT]
 				if(0.80 to 1)
-					heat_level = planet_type.biomes["hottest"]
+					heat_level = planet_type.biomes[BIOME_HOTTEST]
 			selected_biome = heat_level[humidity_level]
 			selected_biome = SSmapping.biomes[selected_biome]
 			selected_biome.generate_overworld(gen_turf)
 		else
 			switch(heat)
 				if(0 to 0.25)
-					heat_level = planet_type.biomes["coldest_cave"]
+					heat_level = planet_type.biomes[BIOME_COLDEST_CAVE]
 				if(0.25 to 0.5)
-					heat_level = planet_type.biomes["cold_cave"]
+					heat_level = planet_type.biomes[BIOME_COLD_CAVE]
 				if(0.5 to 0.75)
-					heat_level = planet_type.biomes["warm_cave"]
+					heat_level = planet_type.biomes[BIOME_WARM_CAVE]
 				if(0.75 to 1)
-					heat_level = planet_type.biomes["hot_cave"]
+					heat_level = planet_type.biomes[BIOME_HOT_CAVE]
 			selected_cave_biome = heat_level[humidity_level]
 			selected_cave_biome = SSmapping.biomes[selected_cave_biome]
 			selected_cave_biome.generate_caves(gen_turf, string_gen)

@@ -18,7 +18,7 @@
 		/obj/structure/flora/ausbushes/stalkybush = 1,
 		/obj/structure/flora/ausbushes/sunnybush = 1,
 		/obj/structure/flora/ausbushes/ywflowers = 1,
-		/obj/structure/flora/tree/palm = 1
+		/obj/structure/flora/tree/palm = 1,
 	)
 	flora_spawn_chance = 25
 	mob_spawn_list = list(

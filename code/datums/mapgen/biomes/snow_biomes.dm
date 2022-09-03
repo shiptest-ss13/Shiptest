@@ -6,7 +6,7 @@
 		/obj/structure/flora/rock/icy = 2,
 		/obj/structure/flora/rock/pile/icy = 2,
 		/obj/structure/flora/grass/both = 6,
-		/obj/structure/flora/ash/chilly = 2
+		/obj/structure/flora/ash/chilly = 2,
 	)
 	flora_spawn_chance = 10
 	mob_spawn_chance = 1

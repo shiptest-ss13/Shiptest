@@ -6,7 +6,7 @@
 		/obj/structure/flora/ausbushes/sparsegrass/hell = 40,
 		/obj/structure/flora/ash/fern = 5,
 		/obj/structure/flora/ash/fireblossom = 1,
-		/obj/structure/flora/ash/puce = 5
+		/obj/structure/flora/ash/puce = 5,
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(/obj/structure/flora/rock/hell = 5, /obj/structure/elite_tumor = 1, /obj/structure/geyser/random = 1)

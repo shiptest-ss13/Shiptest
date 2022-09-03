@@ -22,7 +22,8 @@
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
-		/mob/living/simple_animal/bot/floorbot/rockplanet = 15)
+		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		)
 
 	flora_spawn_list = list(
 		/obj/structure/mecha_wreckage/ripley = 15,
@@ -46,7 +47,8 @@
 		/obj/structure/salvageable/protolathe = 10,
 		/obj/structure/salvageable/circuit_imprinter = 8,
 		/obj/structure/salvageable/destructive_analyzer = 8,
-		/obj/structure/salvageable/server = 8)
+		/obj/structure/salvageable/server = 8,
+		)
 
 	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/effect/mine/shrapnel/human_only = 1)
 
