@@ -19,12 +19,12 @@
 /obj/structure/closet/secure_closet/shadow
 	name = "shadow's locker"
 	desc = "The closet of equipment and attire for the aspiring shadow."
-	icon_door = "black"
+	icon_state = "cabinet"
 
 /obj/structure/closet/secure_closet/hunter
 	name = "hunter's locker"
 	desc = "Everything a hunter will need, held in one secure closet."
-	icon_door = "black"
+	icon_state = "cabinet"
 	req_access = list(ACCESS_SECURITY)
 
 /obj/structure/closet/secure_closet/montagnes
