@@ -253,25 +253,25 @@
 	name = "inteq artificer overalls"
 	desc = "A black set of overalls atop a standard issue turtleneck, for the IRMG's support division engineers."
 	icon_state = "inteqeng"
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/skirt/artificer
 	name = "inteq artificer overall skirt"
 	desc = "A black set of overalls in the likeness of a skirt atop a standard issue turtleneck, for the IRMG's support division engineers."
 	icon_state = "inteqeng_skirt"
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/corpsman
 	name = "inteq corpsman turtleneck"
 	desc = "A sterile white turtleneck with tactical cargo pants, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division corpsmen."
 	icon_state = "inteqmed"
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/skirt/corpsman
 	name = "inteq corpsman skirtleneck"
 	desc = "A sterile white turtleneck with a free flowing black skirt, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division corpsmen."
 	icon_state = "inteqmed_skirt"
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/skirt/maid
 	name = "inteq tactical maid outfit"
@@ -279,7 +279,7 @@
 	icon_state = "inteqmaid"
 	item_state = "inteqmaid"
 	can_adjust = FALSE
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/skirt/maid/Initialize()
 	. = ..()
