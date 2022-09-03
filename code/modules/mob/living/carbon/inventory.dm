@@ -119,7 +119,7 @@
 	else if(I == wear_mask)
 		wear_mask = null
 		if(!QDELETED(src))
-			wear_mask_update(I, toggle_off = 1)
+			wear_mask_update(I, toggle_off = 0)
 	if(I == wear_neck)
 		wear_neck = null
 		if(!QDELETED(src))
