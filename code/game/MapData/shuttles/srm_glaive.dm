@@ -91,7 +91,7 @@
 /obj/item/storage/firstaid/roumain/PopulateContents()
 	if(empty)
 		return
-	var/static/items_inside = list(
+	var/static/list/items_inside = list(
 		/obj/item/healthanalyzer = 1,
 		/obj/item/reagent_containers/food/snacks/grown/ash_flora/puce = 1,
 		/obj/item/reagent_containers/glass/mortar = 1,
@@ -99,8 +99,9 @@
 		/obj/item/pestle = 1,
 		/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit = 3,
 		/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3,
-		/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf = 3)
-	generate_items_inside(items_inside,src)
+		/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf = 3,
+	)
+	generate_items_inside(items_inside, src)
 
 /obj/structure/flora/tree/chapel/srm
 	name = "Montagne's Oak"
