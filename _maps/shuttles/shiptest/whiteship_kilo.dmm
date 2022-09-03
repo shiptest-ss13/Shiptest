@@ -105,7 +105,6 @@
 	pixel_x = 32;
 	pixel_y = -32
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "aZ" = (
@@ -579,7 +578,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/trinary/mixer/flipped/layer2,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cP" = (
@@ -629,8 +627,6 @@
 	pixel_x = -23;
 	id = "kiloengine"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cZ" = (
@@ -817,8 +813,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -835,10 +831,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/trinary/filter/flipped/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "hh" = (
@@ -853,9 +845,6 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1089,10 +1078,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/trinary/filter/flipped/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "nJ" = (
@@ -1123,8 +1108,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "oP" = (
@@ -1418,18 +1401,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
-"yX" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor{
-	id = "whiteship_windows";
-	name = "Exterior Window Blast Door"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "zc" = (
 /obj/structure/table,
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
@@ -1544,7 +1515,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Bm" = (
@@ -1787,7 +1758,6 @@
 	dir = 1;
 	name = "Scrubbers to Outside"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "KR" = (
@@ -1826,9 +1796,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Mj" = (
@@ -1884,8 +1852,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/effect/turf_decal/industrial/warning/corner,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2239,9 +2207,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Vh" = (
@@ -2465,7 +2430,7 @@ cY
 ng
 gC
 oj
-yX
+Un
 aa
 aa
 "}
