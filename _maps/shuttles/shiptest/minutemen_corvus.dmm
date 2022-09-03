@@ -495,10 +495,6 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/door/window/northright{
-	dir = 4;
-	name = "Engine Access"
-	},
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
 	},
@@ -506,6 +502,7 @@
 	id = "minutemen_corvus_engines";
 	name = "Thruster Blast Door"
 	},
+/obj/structure/window/plasma/reinforced/spawner/east,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "jk" = (
@@ -1200,6 +1197,23 @@
 	},
 /turf/open/floor/plastic,
 /area/ship/hallway/central)
+"uP" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "minutemen_corvus_engines";
+	name = "Thruster Blast Door"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/eastleft,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "vg" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Bathroom"
@@ -2714,7 +2728,7 @@ bA
 bA
 Gh
 ja
-Lb
+uP
 Lb
 ja
 Gh
