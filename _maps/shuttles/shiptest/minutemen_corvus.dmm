@@ -1197,23 +1197,6 @@
 	},
 /turf/open/floor/plastic,
 /area/ship/hallway/central)
-"uP" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor{
-	id = "minutemen_corvus_engines";
-	name = "Thruster Blast Door"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/eastleft,
-/turf/open/floor/plating,
-/area/ship/engineering)
 "vg" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Bathroom"
@@ -1418,6 +1401,11 @@
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/item/circuitboard/computer/rdconsole,
+/obj/item/circuitboard/machine/rdserver{
+	pixel_x = 6;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -2463,6 +2451,23 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
+"Ve" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "minutemen_corvus_engines";
+	name = "Thruster Blast Door"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/eastleft,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Vi" = (
 /obj/effect/turf_decal/techfloor/orange/corner{
 	dir = 4
@@ -2500,6 +2505,12 @@
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable/yellow,
+/obj/item/stack/sheet/mineral/plasma/five{
+	pixel_x = -4
+	},
+/obj/item/stack/sheet/mineral/plasma/five{
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "VZ" = (
@@ -2728,7 +2739,7 @@ bA
 bA
 Gh
 ja
-uP
+Ve
 Lb
 ja
 Gh
