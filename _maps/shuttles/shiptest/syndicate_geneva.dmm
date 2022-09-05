@@ -956,7 +956,7 @@
 	id = "spitfireshutters"
 	},
 /turf/open/floor/plating,
-/area/ship/crew/dorm)
+/area/ship/engineering)
 "tg" = (
 /obj/machinery/power/terminal{
 	dir = 4
@@ -1464,11 +1464,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "CQ" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/turf_decal/corner/opaque/bottlegreen/three_quarters{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
 "CR" = (
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -1827,13 +1823,6 @@
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
-"Kj" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/turf_decal/corner/opaque/bottlegreen/three_quarters{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/medical)
 "Kn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
@@ -1919,6 +1908,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/virology/glass,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "LU" = (
@@ -2213,7 +2206,7 @@
 	id = "spitfireshutters"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering)
+/area/ship/crew/dorm)
 "Ri" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/hatch{
@@ -2697,7 +2690,7 @@ Mo
 Ii
 qV
 Bn
-QD
+tb
 Wc
 Wc
 Wc
@@ -2718,7 +2711,7 @@ FK
 Wm
 KK
 vY
-QD
+tb
 Wc
 Wc
 Wc
@@ -2963,7 +2956,7 @@ Ua
 Xf
 ZI
 Ty
-Kj
+CQ
 He
 gz
 jD
@@ -3264,7 +3257,7 @@ Ec
 GB
 xk
 KT
-tb
+QD
 Wc
 Wc
 Wc
@@ -3285,7 +3278,7 @@ Kn
 jn
 pL
 OF
-tb
+QD
 Wc
 Wc
 Wc
