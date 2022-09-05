@@ -30,7 +30,7 @@
 /obj/structure/chair/comfy/teal,
 /obj/machinery/newscaster{
 	dir = 4;
-	pixel_x = -28
+	pixel_x = -30
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
@@ -156,13 +156,19 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "eq" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "eD" = (
@@ -232,12 +238,10 @@
 /area/ship/engineering)
 "fC" = (
 /obj/item/kirbyplants/random,
-/obj/item/seeds/replicapod,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 5
 	},
 /obj/effect/turf_decal/syndicateemblem/top/right,
-/obj/item/seeds/replicapod,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "fG" = (
@@ -738,6 +742,7 @@
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/storage/toolbox/syndicate,
 /obj/item/clothing/glasses/meson,
+/obj/effect/turf_decal/corner/opaque/yellow,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "oJ" = (
@@ -925,6 +930,8 @@
 /obj/structure/table/glass,
 /obj/item/storage/box/masks,
 /obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/seeds/replicapod,
+/obj/item/seeds/replicapod,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "sq" = (
@@ -952,11 +959,17 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/structure/cable,
-/obj/effect/turf_decal/techfloor{
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 8
+	dir = 4
+	},
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -1206,6 +1219,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/terminal,
 /obj/structure/cable,
+/obj/structure/closet/crate,
+/obj/item/circuitboard/machine/shuttle/engine/oil,
+/obj/item/circuitboard/machine/shuttle/engine/oil,
+/obj/item/circuitboard/machine/shuttle/engine/oil,
+/obj/item/circuitboard/machine/shuttle/engine/oil,
+/obj/item/circuitboard/machine/shuttle/engine/oil,
+/obj/item/circuitboard/machine/shuttle/engine/oil,
+/obj/item/pipe_dispenser,
+/obj/item/circuitboard/machine/chem_dispenser,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "zl" = (
@@ -1468,9 +1490,6 @@
 	pixel_y = -4
 	},
 /obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Ec" = (
@@ -1634,9 +1653,9 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 5
 	},
-/obj/machinery/airalarm/directional/north,
 /obj/item/kirbyplants/random,
 /obj/item/clothing/head/hardhat,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Hg" = (
@@ -1803,18 +1822,6 @@
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
-"Kj" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/airlock/hatch{
-	name = "Crew Quarters"
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/crew)
 "Kn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
@@ -2120,15 +2127,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate,
-/obj/item/circuitboard/machine/shuttle/engine/oil,
-/obj/item/circuitboard/machine/shuttle/engine/oil,
-/obj/item/circuitboard/machine/shuttle/engine/oil,
-/obj/item/circuitboard/machine/shuttle/engine/oil,
-/obj/item/circuitboard/machine/shuttle/engine/oil,
-/obj/item/circuitboard/machine/shuttle/engine/oil,
-/obj/item/pipe_dispenser,
-/obj/item/circuitboard/machine/chem_dispenser,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Pn" = (
@@ -2162,6 +2160,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -2213,7 +2214,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ri" = (
-/obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/hatch{
 	name = "Crew Quarters"
@@ -2329,7 +2329,6 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 10
 	},
-/obj/machinery/light,
 /obj/effect/turf_decal/syndicateemblem/bottom/left,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
@@ -2485,7 +2484,6 @@
 /area/ship/medical/surgery)
 "Xf" = (
 /obj/item/kirbyplants/random,
-/obj/item/vending_refill/medical,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 9
 	},
@@ -2494,7 +2492,6 @@
 	dir = 4;
 	pixel_x = -25
 	},
-/obj/item/vending_refill/autodrobe,
 /obj/effect/turf_decal/syndicateemblem/top/left,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
@@ -3152,7 +3149,7 @@ Wc
 Wc
 qy
 qy
-Kj
+qy
 qy
 qy
 ji
