@@ -234,6 +234,7 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
+/obj/machinery/light,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "fC" = (
@@ -632,6 +633,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"mQ" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "spitfireshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "mU" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -1351,7 +1359,6 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
-/obj/machinery/light,
 /obj/structure/table/glass,
 /obj/item/stock_parts/cell/potato{
 	desc = "A rechargeable starch based power cell. This one looks not good enough for the defibrillator...";
@@ -1476,6 +1483,8 @@
 /obj/structure/bed/pod,
 /obj/item/bedsheet/syndie,
 /obj/item/toy/plush/nukeplushie,
+/obj/machinery/light,
+/obj/structure/curtain/cloth/black,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "DP" = (
@@ -1822,6 +1831,13 @@
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
+"Kj" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "spitfireshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "Kn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
@@ -1857,6 +1873,7 @@
 /obj/structure/bed/pod,
 /obj/item/bedsheet/syndie,
 /obj/item/toy/plush/nukeplushie,
+/obj/structure/curtain/cloth/black,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "Lj" = (
@@ -2091,10 +2108,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "OF" = (
-/obj/machinery/light,
 /obj/structure/bed/pod,
 /obj/item/bedsheet/syndie,
 /obj/item/toy/plush/nukeplushie,
+/obj/structure/curtain/cloth/black,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "OG" = (
@@ -2695,7 +2712,7 @@ Mo
 Ii
 qV
 Bn
-nm
+mQ
 Wc
 Wc
 Wc
@@ -2716,7 +2733,7 @@ FK
 Wm
 KK
 vY
-nm
+mQ
 Wc
 Wc
 Wc
@@ -3262,7 +3279,7 @@ Ec
 GB
 xk
 KT
-Eu
+Kj
 Wc
 Wc
 Wc
@@ -3283,7 +3300,7 @@ Kn
 jn
 pL
 OF
-Eu
+Kj
 Wc
 Wc
 Wc
