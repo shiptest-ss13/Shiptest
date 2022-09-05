@@ -132,7 +132,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "dQ" = (
 /obj/machinery/firealarm{
@@ -243,7 +243,7 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/syndicateemblem/top/right,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "fG" = (
 /obj/effect/turf_decal/techfloor,
@@ -378,7 +378,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "iV" = (
 /obj/machinery/light,
@@ -482,7 +482,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "kg" = (
 /obj/machinery/sleeper/syndie,
@@ -633,13 +633,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"mQ" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "mU" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -896,9 +889,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "rn" = (
-/obj/machinery/computer/operating{
-	dir = 1
-	},
+/obj/structure/table/glass,
+/obj/item/defibrillator,
+/obj/item/storage/backpack/duffelbag/syndie/surgery,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "rx" = (
@@ -955,7 +948,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "tb" = (
 /obj/item/kirbyplants/random,
@@ -1054,7 +1047,6 @@
 /area/ship/medical/surgery)
 "uE" = (
 /obj/structure/table/glass,
-/obj/item/storage/backpack/duffelbag/syndie/surgery,
 /obj/item/storage/firstaid/medical,
 /obj/item/storage/firstaid/medical,
 /obj/item/storage/firstaid/toxin,
@@ -1442,6 +1434,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
+/obj/machinery/newscaster{
+	dir = 1;
+	pixel_y = -30
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "Cf" = (
@@ -1656,7 +1652,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "He" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
@@ -2146,6 +2142,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"OR" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "spitfireshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Pn" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -2347,7 +2350,7 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/syndicateemblem/bottom/left,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "TB" = (
 /obj/effect/spawner/structure/window,
@@ -2510,7 +2513,7 @@
 	pixel_x = -25
 	},
 /obj/effect/turf_decal/syndicateemblem/top/left,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "Xg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -2615,7 +2618,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "ZK" = (
 /obj/machinery/computer/crew,
@@ -2625,8 +2628,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/table/glass,
-/obj/item/defibrillator,
+/obj/machinery/computer/operating{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "ZY" = (
@@ -2712,7 +2716,7 @@ Mo
 Ii
 qV
 Bn
-mQ
+OR
 Wc
 Wc
 Wc
@@ -2733,7 +2737,7 @@ FK
 Wm
 KK
 vY
-mQ
+OR
 Wc
 Wc
 Wc
