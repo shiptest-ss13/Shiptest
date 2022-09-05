@@ -73,7 +73,6 @@
 /obj/item/radio/intercom{
 	pixel_y = 22
 	},
-/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "aO" = (
@@ -2404,6 +2403,23 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
+"UJ" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "minutemen_corvus_engines";
+	name = "Thruster Blast Door"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/eastleft,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "UP" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -2451,23 +2467,6 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
-"Ve" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor{
-	id = "minutemen_corvus_engines";
-	name = "Thruster Blast Door"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/eastleft,
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Vi" = (
 /obj/effect/turf_decal/techfloor/orange/corner{
 	dir = 4
@@ -2739,7 +2738,7 @@ bA
 bA
 Gh
 ja
-Ve
+UJ
 Lb
 ja
 Gh
