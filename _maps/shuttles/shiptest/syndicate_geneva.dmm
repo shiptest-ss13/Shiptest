@@ -239,10 +239,10 @@
 /area/ship/engineering)
 "fC" = (
 /obj/item/kirbyplants/random,
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border{
-	dir = 5
-	},
 /obj/effect/turf_decal/syndicateemblem/top/right,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "fG" = (
@@ -369,6 +369,7 @@
 	dir = 4;
 	pixel_x = -25
 	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "iI" = (
@@ -474,14 +475,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "jV" = (
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border{
-	dir = 6
-	},
 /obj/machinery/airalarm/directional/east,
 /obj/effect/turf_decal/syndicateemblem/bottom/right,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
+/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "kg" = (
@@ -744,6 +743,7 @@
 /obj/item/storage/toolbox/syndicate,
 /obj/item/clothing/glasses/meson,
 /obj/effect/turf_decal/corner/opaque/yellow,
+/obj/item/clothing/head/hardhat,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "oJ" = (
@@ -951,9 +951,12 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "tb" = (
-/obj/item/kirbyplants/random,
-/turf/open/floor/wood/yew,
-/area/ship/crew/office)
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "spitfireshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "tg" = (
 /obj/machinery/power/terminal{
 	dir = 4
@@ -978,11 +981,10 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "to" = (
-/obj/effect/turf_decal/corner/opaque/bottlegreen{
-	dir = 5
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/item/kirbyplants/random,
+/obj/effect/turf_decal/corner/opaque/bottlegreen{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "tA" = (
@@ -1462,7 +1464,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "CQ" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/corner/opaque/bottlegreen/three_quarters{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
 /area/ship/medical)
 "CR" = (
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -1605,9 +1611,6 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Gx" = (
-/obj/effect/turf_decal/corner/opaque/bottlegreen{
-	dir = 5
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1656,11 +1659,8 @@
 /area/ship/hallway/central)
 "He" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
-	dir = 5
+	dir = 1
 	},
-/obj/item/kirbyplants/random,
-/obj/item/clothing/head/hardhat,
-/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Hg" = (
@@ -1828,12 +1828,12 @@
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "Kj" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/corner/opaque/bottlegreen/three_quarters{
+	dir = 4
 	},
-/turf/open/floor/plating,
-/area/ship/crew/dorm)
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "Kn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
@@ -1913,17 +1913,11 @@
 /area/ship/crew/dorm)
 "LG" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
-/obj/machinery/door/airlock/virology/glass{
-	name = "Medical Center"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2142,13 +2136,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"OR" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Pn" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -2221,18 +2208,12 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "QD" = (
-/obj/machinery/sleeper/syndie,
-/obj/effect/turf_decal/corner/opaque/bottlegreen{
-	dir = 5
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "spitfireshutters"
 	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/firealarm{
-	pixel_y = 25
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/medical)
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Ri" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/hatch{
@@ -2346,10 +2327,10 @@
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "Ty" = (
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border{
-	dir = 10
-	},
 /obj/effect/turf_decal/syndicateemblem/bottom/left,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "TB" = (
@@ -2504,15 +2485,15 @@
 /area/ship/medical/surgery)
 "Xf" = (
 /obj/item/kirbyplants/random,
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border{
-	dir = 9
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -25
 	},
 /obj/effect/turf_decal/syndicateemblem/top/left,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
+	dir = 4
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "Xg" = (
@@ -2716,7 +2697,7 @@ Mo
 Ii
 qV
 Bn
-OR
+QD
 Wc
 Wc
 Wc
@@ -2737,7 +2718,7 @@ FK
 Wm
 KK
 vY
-OR
+QD
 Wc
 Wc
 Wc
@@ -2962,7 +2943,7 @@ JU
 Bt
 JU
 JU
-QD
+kg
 AY
 JK
 zs
@@ -2982,7 +2963,7 @@ Ua
 Xf
 ZI
 Ty
-CQ
+Kj
 He
 gz
 jD
@@ -3083,7 +3064,7 @@ Wc
 Wc
 Wc
 Gb
-tb
+SY
 NA
 Pr
 Er
@@ -3283,7 +3264,7 @@ Ec
 GB
 xk
 KT
-Kj
+tb
 Wc
 Wc
 Wc
@@ -3304,7 +3285,7 @@ Kn
 jn
 pL
 OF
-Kj
+tb
 Wc
 Wc
 Wc
