@@ -65,11 +65,11 @@
 	icon_state = "ak47_mag-[hasammo]"
 
 /obj/item/ammo_box/magazine/ak47
-	name = "\improper AK-47 Magazine (7.62x39mm FMJ)"
+	name = "\improper AKM Magazine (7.62x39mm)"
 	icon_state = "ak47_mag"
 	ammo_type = /obj/item/ammo_casing/a762_39
 	caliber = "7.62x39mm FMJ"
-	max_ammo = 30
+	max_ammo = 20
 
 /obj/item/ammo_box/magazine/ak47/update_icon()
 	..()

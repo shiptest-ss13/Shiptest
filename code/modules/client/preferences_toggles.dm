@@ -536,3 +536,12 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 		return
 	prefs.asaycolor = initial(prefs.asaycolor)
 	prefs.save_preferences()
+
+/client/verb/toggle_whois_visibility()
+	set name = "Toggle WhoIs Visibilty"
+	set desc = "Toggles whether your ckey is visible in WhoIs topic calls"
+	set category = "Preferences"
+
+	prefs.whois_visible = !prefs.whois_visible
+	to_chat(src, span_notice("You are [(prefs.whois_visible ? "now" : "no longer")] visible to WhoIs topic calls."))
+	prefs.save_preferences()

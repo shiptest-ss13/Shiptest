@@ -610,11 +610,12 @@
 
 /datum/research_node/adv_weaponry
 	id = "adv_weaponry"
-	name = "Advanced Weapon Development Technology"
-	desc = "Our weapons are breaking the rules of reality by now."
-	required_ids = list("adv_engi", "weaponry")
-	design_ids = list("pin_loyalty","gun_cell_upgraded", "gun_cell_large")
-	points_required = 10000
+	display_name = "Advanced Weapon Development Technology"
+	description = "Our weapons are breaking the rules of reality by now."
+	prereq_ids = list("adv_engi", "weaponry")
+	design_ids = list("pin_loyalty", "gun_cell_upgraded", "gun_cell_large")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	export_price = 5000
 
 /datum/research_node/firingpin
 	id = "firingpin"
@@ -626,9 +627,9 @@
 
 /datum/research_node/electric_weapons
 	id = "electronic_weapons"
-	name = "Electric Weapons"
-	desc = "Weapons using electric technology"
-	required_ids = list("weaponry", "adv_power"  , "emp_basic")
+	display_name = "Electric Weapons"
+	description = "Weapons using electric technology"
+	prereq_ids = list("weaponry", "adv_power", "emp_basic")
 	design_ids = list("stunrevolver", "ioncarbine")
 	points_required = 2500
 
@@ -703,6 +704,33 @@
 	required_ids = list("adv_weaponry", "bluespace_travel")
 	design_ids = list("gravitygun", "mech_gravcatapult")
 	points_required = 2500
+
+/datum/techweb_node/srm_ballistics
+	id = "srm_ballistics"
+	display_name = "Saint-Roumain Ballistics"
+	description = "Ballistics normally manufactured by the Saint-Roumain Militia."
+	prereq_ids = list("adv_ballistics")
+	design_ids = list("doublebarrel", "winchmk2")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 5000
+
+/datum/techweb_node/srm_pistols
+	id = "srm_pistols"
+	display_name = "Saint-Roumain Pistols"
+	description = "Pistols normally manufactured by the Saint-Roumain Militia."
+	prereq_ids = list("adv_ballistics")
+	design_ids = list("pepperbox", "nagantrevolver", "derringer", "speedload357")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 5000
+
+/datum/techweb_node/srm_special
+	id = "srm_special"
+	display_name = "Saint-Roumain Specialty Ballistics"
+	description = "Specialty ballistics normally manufactured by the Saint-Roumain Militia."
+	prereq_ids = list("srm_ballistics", "srm_pistols")
+	design_ids = list("srmrevolver", "m1911", "stripper762", "nagantrifle")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12000)
+	export_price = 5000
 
 ////////////////////////mech technology////////////////////////
 /datum/research_node/adv_mecha
