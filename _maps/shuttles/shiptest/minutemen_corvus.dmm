@@ -420,6 +420,10 @@
 /obj/item/reagent_containers/food/drinks/britcup{
 	pixel_x = -6
 	},
+/obj/item/stack/spacecash/c1000{
+	pixel_y = -4;
+	pixel_x = 3
+	},
 /turf/open/floor/plastic,
 /area/ship/hallway/central)
 "gH" = (
@@ -1297,23 +1301,6 @@
 	},
 /turf/open/floor/plastic,
 /area/ship/hallway/central)
-"wZ" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor{
-	id = "minutemen_corvus_engines";
-	name = "Thruster Blast Door"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/eastleft,
-/turf/open/floor/plating,
-/area/ship/engineering)
 "xD" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -1365,10 +1352,13 @@
 	pixel_x = 6;
 	pixel_y = 7
 	},
-/obj/item/paicard{
-	pixel_x = -7;
-	pixel_y = 4
+/obj/item/radio/intercom{
+	pixel_x = -21;
+	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light,
+/obj/item/areaeditor/shuttle,
 /obj/item/radio{
 	desc = "An old handheld radio. You could use it, if you really wanted to.";
 	icon_state = "radio";
@@ -1376,12 +1366,10 @@
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/radio/intercom{
-	pixel_x = -21;
-	dir = 4
+/obj/item/paicard{
+	pixel_x = -7;
+	pixel_y = 4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "xL" = (
@@ -1499,13 +1487,15 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
 /obj/structure/closet/secure_closet{
 	icon_state = "cap";
 	name = "\proper captain's locker";
 	req_access_txt = "20"
 	},
 /obj/item/radio/headset/minutemen/alt/captain,
+/obj/item/gun/ballistic/revolver/detective,
+/obj/item/ammo_box/c38/match,
+/obj/item/ammo_box/c38/match,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "zA" = (
@@ -1953,6 +1943,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
+/obj/item/gps{
+	gpstag = null;
+	pixel_x = -9;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "IF" = (
@@ -2276,6 +2271,23 @@
 	},
 /turf/open/floor/holofloor/wood,
 /area/ship/crew)
+"QJ" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "minutemen_corvus_engines";
+	name = "Thruster Blast Door"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/eastleft,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Rj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plastic,
@@ -2750,7 +2762,7 @@ bA
 bA
 Gh
 ja
-wZ
+QJ
 Lb
 ja
 Gh
