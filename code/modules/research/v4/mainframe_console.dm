@@ -49,6 +49,7 @@
 	connect_to_mainframe(port.current_ship)
 
 /obj/machinery/mainframe_linked/ui_interact(mob/user)
+	SHOULD_NOT_OVERRIDE(TRUE)
 	mainframe.console_access(user, src, target_interface)
 
 /obj/machinery/mainframe_linked/ui_status(mob/user)
@@ -67,8 +68,7 @@
 	return UI_INTERACTIVE
 
 /obj/machinery/mainframe_linked/ui_act(action, list/params)
-	. = ..()
-	if(.)
+	if(. = ..())
 		return .
 
 	switch(action)
@@ -83,14 +83,20 @@
 
 /obj/machinery/mainframe_linked/ui_static_data(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
-	..() // wish I could just not call it, parent call doesnt even do anything
+	. = ..()
+	.["ref_tree"] = ui_ref_tree(user)
+	.["name_tree"] = ui_name_tree(user)
 
+/obj/machinery/mainframe_linked/proc/ui_ref_tree(mob/user)
 	. = list()
+	.["user"] = REF(user)
+	.["machine"] = REF(src)
+
+/obj/machinery/mainframe_linked/proc/ui_name_tree(mob/user)
+	. = list()
+	.["user"] = "[user]"
+	.["machine"] = "[src]"
 
 /obj/machinery/mainframe_linked/ui_data(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
-	..() // I hate you
-
-	. = list()
-	.["machine_name"] = name
-	.["machine_interface"] = target_interface
+	. = ..()
