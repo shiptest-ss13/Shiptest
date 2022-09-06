@@ -5316,7 +5316,9 @@
 	},
 /area/ruin/jungle/starport)
 "QV" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/east{
+	start_charge = 0
+	},
 /obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/tower)
