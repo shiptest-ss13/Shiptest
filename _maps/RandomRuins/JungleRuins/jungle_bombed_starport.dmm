@@ -23,6 +23,11 @@
 	desc = "Upon closer examination, it's dirt, compacted down by much walking"
 	},
 /area/ruin/jungle/starport)
+"aj" = (
+/turf/open/floor/mineral/plastitanium{
+	icon_state = "plastitanium_dam2"
+	},
+/area/ruin/jungle/starport/shed)
 "am" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/grass/jungle/b,
@@ -364,6 +369,7 @@
 /obj/structure/mirror{
 	pixel_y = 30
 	},
+/obj/machinery/light/floor,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
 "cT" = (
@@ -400,6 +406,9 @@
 	desc = "Upon closer examination, it's dirt, compacted down by much walking"
 	},
 /area/ruin/jungle/starport)
+"dh" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/jungle/starport/shed)
 "dk" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
@@ -462,6 +471,9 @@
 	name = "beaten path";
 	desc = "Upon closer examination, it's dirt, compacted down by much walking"
 	},
+/area/ruin/jungle/starport)
+"dP" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/jungle/starport)
 "dQ" = (
 /obj/structure/railing{
@@ -543,6 +555,11 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle,
+/area/ruin/jungle/starport)
+"eu" = (
+/obj/structure/spider/stickyweb,
+/obj/machinery/light,
+/turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "ev" = (
 /obj/machinery/light{
@@ -851,6 +868,9 @@
 /obj/structure/toilet{
 	dir = 8
 	},
+/obj/machinery/light/small/broken{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/jungle/starport)
 "hu" = (
@@ -902,6 +922,7 @@
 /area/ruin/jungle/starport)
 "hJ" = (
 /obj/machinery/vending/games,
+/obj/machinery/light/broken,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "hL" = (
@@ -1514,6 +1535,10 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/starport)
+"mT" = (
+/obj/structure/spacevine,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/jungle/starport/shed)
 "mX" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 8
@@ -1543,12 +1568,22 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/jungle/starport)
+"ni" = (
+/obj/structure/table,
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/starport)
 "nm" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
 /obj/item/radio/intercom{
 	dir = 8;
 	pixel_x = 26
+	},
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
@@ -2573,6 +2608,7 @@
 	pixel_y = 30
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/floor,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
 "uW" = (
@@ -2867,7 +2903,7 @@
 /obj/structure/rack,
 /obj/item/mecha_parts/mecha_equipment/extinguisher,
 /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
-/turf/open/floor/vault,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/jungle/starport/shed)
 "wT" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -3203,6 +3239,7 @@
 /obj/structure/mirror{
 	pixel_y = 30
 	},
+/obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/jungle/starport)
 "zw" = (
@@ -3238,6 +3275,13 @@
 /area/ruin/jungle/starport)
 "zT" = (
 /obj/structure/spacevine,
+/turf/open/floor/plating,
+/area/ruin/jungle/starport)
+"zV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "zZ" = (
@@ -3302,11 +3346,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport)
-"Ay" = (
-/turf/open/floor/mineral/plastitanium{
-	icon_state = "plastitanium_dam3"
-	},
-/area/ruin/jungle/starport/shed)
 "Az" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -3523,7 +3562,7 @@
 /area/ruin/jungle/starport)
 "CR" = (
 /obj/effect/decal/cleanable/blood/drip,
-/obj/machinery/light/broken{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -3548,6 +3587,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/machinery/light/broken,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
 "Da" = (
@@ -3703,6 +3743,15 @@
 	icon_state = "panelscorched"
 	},
 /area/ruin/jungle/starport)
+"DR" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/jungle/starport)
 "DU" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle,
@@ -3777,6 +3826,13 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
+/area/ruin/jungle/starport)
+"ED" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "EE" = (
 /obj/structure/flora/grass/jungle/b,
@@ -4427,6 +4483,9 @@
 	pixel_y = 24
 	},
 /obj/item/stack/sheet/metal,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "JT" = (
@@ -4685,6 +4744,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/machinery/light,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/starport)
 "Mi" = (
@@ -4967,6 +5027,9 @@
 "Pf" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "Pg" = (
@@ -5320,6 +5383,9 @@
 /area/ruin/jungle/starport)
 "Sd" = (
 /obj/structure/closet,
+/obj/machinery/light/broken{
+	dir = 4
+	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -5975,6 +6041,13 @@
 	desc = "Upon closer examination, it's dirt, compacted down by much walking"
 	},
 /area/ruin/jungle/starport)
+"WF" = (
+/obj/item/chair,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/jungle/starport)
 "WG" = (
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/jungle,
@@ -6207,6 +6280,9 @@
 /obj/structure/table,
 /obj/item/radio/intercom{
 	pixel_y = 24
+	},
+/obj/machinery/light/broken{
+	dir = 1
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/jungle/starport)
@@ -6802,17 +6878,17 @@ ZW
 Jo
 qh
 qh
+dh
 zh
 zh
 zh
-zh
-zh
+dh
 wg
+dh
 zh
 zh
 zh
-zh
-zh
+dh
 wg
 ZW
 ZW
@@ -6878,19 +6954,19 @@ ZW
 qh
 qh
 qh
-zh
+dh
 zh
 qP
 Sv
 oq
+dh
 zh
-zh
-zh
+dh
 oq
 yQ
 qP
 zh
-zh
+dh
 wg
 wg
 ZW
@@ -7041,7 +7117,7 @@ Ue
 Yx
 kN
 pP
-ZX
+Te
 ZX
 QO
 zh
@@ -7116,9 +7192,9 @@ id
 kN
 Px
 Yx
-Ay
 ZX
 ZX
+aj
 ZX
 wP
 zh
@@ -7186,19 +7262,19 @@ wg
 wg
 OT
 xr
-zh
+dh
 zh
 oD
 Uc
 EH
 Px
 CF
-kN
+mT
 hW
 rd
 UG
 zh
-zh
+dh
 wg
 DA
 tW
@@ -7264,7 +7340,7 @@ yH
 NC
 wg
 wg
-zh
+dh
 zh
 zh
 zh
@@ -7274,7 +7350,7 @@ qJ
 zh
 zh
 zh
-zh
+dh
 mO
 qh
 wg
@@ -7719,11 +7795,11 @@ Tf
 gM
 cC
 QE
-QE
+dP
 pG
 QE
 pG
-QE
+dP
 QE
 XY
 hB
@@ -7739,11 +7815,11 @@ Tf
 Ld
 cC
 QE
-QE
+dP
 pG
 QE
 pG
-QE
+dP
 QE
 iJ
 XW
@@ -7874,9 +7950,9 @@ XM
 cC
 cC
 QE
-QE
+dP
 Qq
-QE
+dP
 QE
 cC
 jc
@@ -7894,9 +7970,9 @@ jo
 cC
 cC
 QE
-QE
+dP
 Qq
-QE
+dP
 QE
 EG
 iJ
@@ -9955,7 +10031,7 @@ kf
 bE
 kf
 Qr
-QE
+dP
 QE
 Su
 Hr
@@ -10110,7 +10186,7 @@ OT
 bE
 cC
 cK
-QE
+dP
 QE
 Ll
 St
@@ -11037,7 +11113,7 @@ iq
 Zf
 LD
 Gr
-QE
+dP
 QE
 QE
 QE
@@ -11047,7 +11123,7 @@ aq
 QE
 QE
 QE
-QE
+dP
 Bg
 Tz
 BR
@@ -11113,7 +11189,7 @@ Gr
 By
 Zf
 Tz
-QE
+dP
 QE
 LC
 Vu
@@ -11125,7 +11201,7 @@ iL
 Vu
 lR
 QE
-QE
+dP
 Tf
 BR
 BR
@@ -11421,7 +11497,7 @@ wg
 qs
 Zf
 Tf
-QE
+dP
 QE
 SA
 wg
@@ -11433,7 +11509,7 @@ ET
 nY
 wW
 QE
-QE
+dP
 Tf
 Tf
 zI
@@ -11499,7 +11575,7 @@ qs
 Zf
 Tf
 Nl
-QE
+dP
 QE
 QE
 DY
@@ -11509,7 +11585,7 @@ rB
 QE
 QE
 QE
-QE
+dP
 qs
 Tf
 Tf
@@ -11517,7 +11593,7 @@ Nl
 wg
 yH
 Wo
-GP
+ED
 lE
 pI
 Ul
@@ -11533,7 +11609,7 @@ Pq
 yq
 cP
 xl
-wB
+eu
 Wo
 wg
 dY
@@ -12133,7 +12209,7 @@ TM
 tW
 dY
 Wo
-rc
+WF
 py
 fu
 tr
@@ -12661,7 +12737,7 @@ Wl
 Wo
 Ei
 Bx
-hN
+zV
 hN
 hN
 Bx
@@ -12716,7 +12792,7 @@ UE
 UE
 UE
 Bx
-Xz
+ni
 Se
 jf
 dB
@@ -12734,7 +12810,7 @@ dY
 hw
 ri
 Wo
-ht
+DR
 Wo
 ht
 Wo
@@ -13191,12 +13267,12 @@ yH
 tW
 xI
 MT
+dP
 QE
 QE
 QE
 QE
-QE
-QE
+dP
 jU
 ZU
 yH
@@ -13499,12 +13575,12 @@ UD
 UD
 TM
 TM
+dP
 QE
 QE
 QE
 QE
-QE
-QE
+dP
 BR
 yH
 CO
