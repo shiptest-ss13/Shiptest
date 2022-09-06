@@ -806,15 +806,15 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/tower)
 "hi" = (
+/obj/machinery/atmospherics/components/binary/pump,
 /obj/structure{
-	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.;dir = 4;icon = 'icons/obj/turrets.dmi';icon_state = "syndie_off";name = "defunctlasercannon";pixel_x = -26},/obj/machinery/atmospherics/components/binary/pump,/turf/open/floor/concrete/slab_1,/area/space)"f" = (/obj/machinery/door/airlock/external,/turf/open/floor/plating,/area/space)"g" = (/obj/machinery/atmospherics/pipe/simple/orange/visible{dir = 9},/turf/open/floor/plating,/area/space)"h" = (/obj/machinery/atmospherics/pipe/manifold/orange{dir = 8},/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/space)"i" = (/obj/structure/railing,/turf/open/floor/plasteel/stairs{dir = 4},/area/space)"j" = (/obj/machinery/atmospherics/components/unary/shuttle/heater{dir = 4},/obj/structure/window/plasma/reinforced{dir = 8},/turf/open/floor/plating,/area/space)"l" = (/obj/structure/sign/syndicate,/turf/closed/wall/mineral/plastitanium,/area/space)"n" = (/turf/open/floor/concrete/reinforced,/area/space)"q" = (/obj/structure/sign/syndicate{pixel_y = 32},/obj/structure/railing{dir = 10},/turf/open/floor/concrete/slab_1,/area/space)"r" = (/turf/open/floor/mineral/plastitanium,/area/space)"s" = (/turf/closed/wall/concrete/reinforced,/area/space)"t" = (/obj/structure/railing{dir = 8},/turf/open/floor/plasteel/stairs,/area/space)"v" = (/turf/open/floor/concrete,/area/space)"x" = (/obj/structure{desc = "Aformerlydeadlylasercannon,nowstuckrustingonafightercraft.;
+	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.";
 	dir = 8;
 	icon = 'icons/obj/turrets.dmi';
 	icon_state = "syndie_off";
 	name = "defunct laser cannon";
 	pixel_x = 26
 	},
-/obj/machinery/atmospherics/components/binary/pump,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/jungle/starport)
 "hl" = (
@@ -1534,7 +1534,7 @@
 	dir = 1
 	},
 /obj/structure{
-	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.;dir = 4;icon = 'icons/obj/turrets.dmi';icon_state = "syndie_off";name = "defunctlasercannon";pixel_x = -26},/obj/machinery/atmospherics/components/binary/pump,/turf/open/floor/concrete/slab_1,/area/space)"f" = (/obj/machinery/door/airlock/external,/turf/open/floor/plating,/area/space)"g" = (/obj/machinery/atmospherics/pipe/simple/orange/visible{dir = 9},/turf/open/floor/plating,/area/space)"h" = (/obj/machinery/atmospherics/pipe/manifold/orange{dir = 8},/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/space)"i" = (/obj/structure/railing,/turf/open/floor/plasteel/stairs{dir = 4},/area/space)"j" = (/obj/machinery/atmospherics/components/unary/shuttle/heater{dir = 4},/obj/structure/window/plasma/reinforced{dir = 8},/turf/open/floor/plating,/area/space)"l" = (/obj/structure/sign/syndicate,/turf/closed/wall/mineral/plastitanium,/area/space)"n" = (/turf/open/floor/concrete/reinforced,/area/space)"q" = (/obj/structure/sign/syndicate{pixel_y = 32},/obj/structure/railing{dir = 10},/turf/open/floor/concrete/slab_1,/area/space)"r" = (/turf/open/floor/mineral/plastitanium,/area/space)"s" = (/turf/closed/wall/concrete/reinforced,/area/space)"t" = (/obj/structure/railing{dir = 8},/turf/open/floor/plasteel/stairs,/area/space)"v" = (/turf/open/floor/concrete,/area/space)"x" = (/obj/structure{desc = "Aformerlydeadlylasercannon,nowstuckrustingonafightercraft.;
+	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.";
 	dir = 8;
 	icon = 'icons/obj/turrets.dmi';
 	icon_state = "syndie_off";
@@ -2238,6 +2238,10 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/starport)
+"sx" = (
+/obj/structure/rack,
+/turf/open/floor/vault,
+/area/ruin/jungle/starport/shed)
 "sy" = (
 /obj/structure/railing,
 /obj/structure/railing{
@@ -2331,7 +2335,7 @@
 "tc" = (
 /obj/machinery/atmospherics/components/binary/pump,
 /obj/structure{
-	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.;dir = 4;icon = 'icons/obj/turrets.dmi';icon_state = "syndie_off";name = "defunctlasercannon";pixel_x = -26},/obj/machinery/atmospherics/components/binary/pump,/turf/open/floor/concrete/slab_1,/area/space)"f" = (/obj/machinery/door/airlock/external,/turf/open/floor/plating,/area/space)"g" = (/obj/machinery/atmospherics/pipe/simple/orange/visible{dir = 9},/turf/open/floor/plating,/area/space)"h" = (/obj/machinery/atmospherics/pipe/manifold/orange{dir = 8},/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/space)"i" = (/obj/structure/railing,/turf/open/floor/plasteel/stairs{dir = 4},/area/space)"j" = (/obj/machinery/atmospherics/components/unary/shuttle/heater{dir = 4},/obj/structure/window/plasma/reinforced{dir = 8},/turf/open/floor/plating,/area/space)"l" = (/obj/structure/sign/syndicate,/turf/closed/wall/mineral/plastitanium,/area/space)"n" = (/turf/open/floor/concrete/reinforced,/area/space)"q" = (/obj/structure/sign/syndicate{pixel_y = 32},/obj/structure/railing{dir = 10},/turf/open/floor/concrete/slab_1,/area/space)"r" = (/turf/open/floor/mineral/plastitanium,/area/space)"s" = (/turf/closed/wall/concrete/reinforced,/area/space)"t" = (/obj/structure/railing{dir = 8},/turf/open/floor/plasteel/stairs,/area/space)"v" = (/turf/open/floor/concrete,/area/space)"x" = (/obj/structure{desc = "Aformerlydeadlylasercannon,nowstuckrustingonafightercraft.;
+	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.";
 	dir = 4;
 	icon = 'icons/obj/turrets.dmi';
 	icon_state = "syndie_off";
@@ -2648,15 +2652,15 @@
 	},
 /area/ruin/jungle/starport)
 "vB" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
 /obj/structure{
-	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.;dir = 4;icon = 'icons/obj/turrets.dmi';icon_state = "syndie_off";name = "defunctlasercannon";pixel_x = -26},/obj/machinery/atmospherics/components/binary/pump,/turf/open/floor/concrete/slab_1,/area/space)"f" = (/obj/machinery/door/airlock/external,/turf/open/floor/plating,/area/space)"g" = (/obj/machinery/atmospherics/pipe/simple/orange/visible{dir = 9},/turf/open/floor/plating,/area/space)"h" = (/obj/machinery/atmospherics/pipe/manifold/orange{dir = 8},/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/space)"i" = (/obj/structure/railing,/turf/open/floor/plasteel/stairs{dir = 4},/area/space)"j" = (/obj/machinery/atmospherics/components/unary/shuttle/heater{dir = 4},/obj/structure/window/plasma/reinforced{dir = 8},/turf/open/floor/plating,/area/space)"l" = (/obj/structure/sign/syndicate,/turf/closed/wall/mineral/plastitanium,/area/space)"n" = (/turf/open/floor/concrete/reinforced,/area/space)"q" = (/obj/structure/sign/syndicate{pixel_y = 32},/obj/structure/railing{dir = 10},/turf/open/floor/concrete/slab_1,/area/space)"r" = (/turf/open/floor/mineral/plastitanium,/area/space)"s" = (/turf/closed/wall/concrete/reinforced,/area/space)"t" = (/obj/structure/railing{dir = 8},/turf/open/floor/plasteel/stairs,/area/space)"v" = (/turf/open/floor/concrete,/area/space)"x" = (/obj/structure{desc = "Aformerlydeadlylasercannon,nowstuckrustingonafightercraft.;
+	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.";
 	dir = 8;
 	icon = 'icons/obj/turrets.dmi';
 	icon_state = "syndie_off";
 	name = "defunct laser cannon";
 	pixel_x = 26
 	},
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/jungle/starport)
 "vD" = (
@@ -3168,7 +3172,7 @@
 /area/ruin/jungle/starport/shed)
 "zi" = (
 /obj/structure{
-	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.;dir = 4;icon = 'icons/obj/turrets.dmi';icon_state = "syndie_off";name = "defunctlasercannon";pixel_x = -26},/obj/machinery/atmospherics/components/binary/pump,/turf/open/floor/concrete/slab_1,/area/space)"f" = (/obj/machinery/door/airlock/external,/turf/open/floor/plating,/area/space)"g" = (/obj/machinery/atmospherics/pipe/simple/orange/visible{dir = 9},/turf/open/floor/plating,/area/space)"h" = (/obj/machinery/atmospherics/pipe/manifold/orange{dir = 8},/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/space)"i" = (/obj/structure/railing,/turf/open/floor/plasteel/stairs{dir = 4},/area/space)"j" = (/obj/machinery/atmospherics/components/unary/shuttle/heater{dir = 4},/obj/structure/window/plasma/reinforced{dir = 8},/turf/open/floor/plating,/area/space)"l" = (/obj/structure/sign/syndicate,/turf/closed/wall/mineral/plastitanium,/area/space)"n" = (/turf/open/floor/concrete/reinforced,/area/space)"q" = (/obj/structure/sign/syndicate{pixel_y = 32},/obj/structure/railing{dir = 10},/turf/open/floor/concrete/slab_1,/area/space)"r" = (/turf/open/floor/mineral/plastitanium,/area/space)"s" = (/turf/closed/wall/concrete/reinforced,/area/space)"t" = (/obj/structure/railing{dir = 8},/turf/open/floor/plasteel/stairs,/area/space)"v" = (/turf/open/floor/concrete,/area/space)"x" = (/obj/structure{desc = "Aformerlydeadlylasercannon,nowstuckrustingonafightercraft.;
+	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.";
 	dir = 4;
 	icon = 'icons/obj/turrets.dmi';
 	icon_state = "syndie_off";
@@ -3817,6 +3821,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/starport)
+"EP" = (
+/turf/open/floor/mineral/plastitanium,
+/area/template_noop)
 "ET" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/vault,
@@ -5342,6 +5349,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
+"Sl" = (
+/obj/structure/rack,
+/turf/open/floor/vault,
+/area/ruin/jungle/starport)
 "Sq" = (
 /obj/effect/turf_decal/number/zero{
 	pixel_x = -7;
@@ -5512,7 +5523,7 @@
 	dir = 1
 	},
 /obj/structure{
-	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.;dir = 4;icon = 'icons/obj/turrets.dmi';icon_state = "syndie_off";name = "defunctlasercannon";pixel_x = -26},/obj/machinery/atmospherics/components/binary/pump,/turf/open/floor/concrete/slab_1,/area/space)"f" = (/obj/machinery/door/airlock/external,/turf/open/floor/plating,/area/space)"g" = (/obj/machinery/atmospherics/pipe/simple/orange/visible{dir = 9},/turf/open/floor/plating,/area/space)"h" = (/obj/machinery/atmospherics/pipe/manifold/orange{dir = 8},/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/space)"i" = (/obj/structure/railing,/turf/open/floor/plasteel/stairs{dir = 4},/area/space)"j" = (/obj/machinery/atmospherics/components/unary/shuttle/heater{dir = 4},/obj/structure/window/plasma/reinforced{dir = 8},/turf/open/floor/plating,/area/space)"l" = (/obj/structure/sign/syndicate,/turf/closed/wall/mineral/plastitanium,/area/space)"n" = (/turf/open/floor/concrete/reinforced,/area/space)"q" = (/obj/structure/sign/syndicate{pixel_y = 32},/obj/structure/railing{dir = 10},/turf/open/floor/concrete/slab_1,/area/space)"r" = (/turf/open/floor/mineral/plastitanium,/area/space)"s" = (/turf/closed/wall/concrete/reinforced,/area/space)"t" = (/obj/structure/railing{dir = 8},/turf/open/floor/plasteel/stairs,/area/space)"v" = (/turf/open/floor/concrete,/area/space)"x" = (/obj/structure{desc = "Aformerlydeadlylasercannon,nowstuckrustingonafightercraft.;
+	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.";
 	dir = 4;
 	icon = 'icons/obj/turrets.dmi';
 	icon_state = "syndie_off";
@@ -7099,8 +7110,8 @@ wg
 wg
 wg
 zh
-wP
-ZX
+sx
+EP
 id
 kN
 Px
@@ -11180,7 +11191,7 @@ qs
 Zf
 Tf
 QE
-tk
+Sl
 mn
 lr
 Qc
