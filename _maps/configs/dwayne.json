@@ -1,10 +1,10 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Dwayne-class Long Range Mining Transport",
 	"prefix": "SV",
 	"namelists": ["GENERAL", "SPACE", "NATURAL", "MERCANTILE"],
 	"map_short_name": "Dwayne-class",
 	"map_path": "_maps/shuttles/shiptest/mining_ship_all.dmm",
-	"map_id": "mining_ship",
 	"roundstart": true,
 	"job_slots": {
 		"Captain": {
@@ -33,5 +33,5 @@
 			"slots": 3
 		}
 	},
-	"cost": 500
+	"enabled": true
 }

@@ -10,7 +10,7 @@
 #define TEXT_WEST "[WEST]"
 
 /// Inverse direction, taking into account UP|DOWN if necessary.
-#define REVERSE_DIR(dir) ( ((dir & 85) << 1) | ((dir & 170) >> 1) )
+#define REVERSE_DIR(dir) (((dir & 85) << 1) | ((dir & 170) >> 1))
 
 //Human Overlays Indexes/////////
 #define MUTATIONS_LAYER 30 //mutations. Tk headglows, cold resistance glow, etc
@@ -179,7 +179,7 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 
 
 //subtypesof(), typesof() without the parent path
-#define subtypesof(typepath) ( typesof(typepath) - typepath )
+#define subtypesof(typepath) (typesof(typepath) - typepath)
 
 //Gets the turf this atom inhabits
 #define get_turf(A) (get_step(A, 0))
@@ -301,6 +301,9 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define debug2_world_log(msg) if (GLOB.Debug2) log_world("DEBUG: [msg]")
 
 #define INCREMENT_TALLY(L, stat) if(L[stat]){L[stat]++}else{L[stat] = 1}
+
+/// Removes characters incompatible with file names.
+#define SANITIZE_FILENAME(text) (GLOB.filename_forbidden_chars.Replace(text, ""))
 
 //TODO Move to a pref
 #define STATION_GOAL_BUDGET 1
