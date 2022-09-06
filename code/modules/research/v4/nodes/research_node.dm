@@ -61,11 +61,11 @@
 	designs_unlocked.Cut()
 	return ..()
 
-/datum/research_node/proc/on_researched(mob/user, datum/research_web/web, obj/machinery/research_linked/machine)
+/datum/research_node/proc/on_researched(mob/user, datum/research_web/web, obj/machinery/mainframe_linked/machine)
 	return
 
 /datum/research_node/proc/on_techweb_update(datum/research_web/web)
 	return
 
-/datum/research_node/proc/can_user_research(mob/user, datum/research_web/web, obj/machinery/research_linked/machine)
+/datum/research_node/proc/can_user_research(mob/user, datum/research_web/web, obj/machinery/mainframe_linked/machine)
 	return tech_level <= machine.tech_level

@@ -1,15 +1,14 @@
-/obj/machinery/mainframe_linked
+/obj/machinery/mainframe_linked/console
 	name = "Mainframe InterConnect"
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "computer"
 	density = TRUE
 
-	var/datum/research_web/mainframe
 	var/target_interface = "MainframeInterconnect"
 	var/icon_keyboard = "generic_key"
 	var/icon_screen = "generic"
 
-/obj/machinery/mainframe_linked/update_overlays()
+/obj/machinery/mainframe_linked/console/update_overlays()
 	. = ..()
 
 	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
@@ -25,34 +24,11 @@
 	SSvis_overlays.add_vis_overlay(src, icon, overlay_state, layer, plane, dir)
 	SSvis_overlays.add_vis_overlay(src, icon, overlay_state, layer, EMISSIVE_PLANE, dir)
 
-/obj/machinery/mainframe_linked/Initialize(mapload, apply_default_parts)
-	. = ..()
-	addtimer(CALLBACK(src, .proc/connect_mainframe_new), 1)
-
-/obj/machinery/mainframe_linked/proc/connect_mainframe_new()
-	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
-	connect_to_mainframe(port?.current_ship)
-
-/obj/machinery/mainframe_linked/proc/connect_to_mainframe(datum/overmap/ship/controlled/ship)
-	if(mainframe)
-		disconnect_from_mainframe()
-
-	mainframe = ship?.mainframe
-	mainframe.consoles_accessing += src
-
-/obj/machinery/mainframe_linked/proc/disconnect_from_mainframe()
-	mainframe.consoles_accessing -= src
-	mainframe = null
-
-/obj/machinery/mainframe_linked/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	. = ..()
-	connect_to_mainframe(port.current_ship)
-
-/obj/machinery/mainframe_linked/ui_interact(mob/user)
+/obj/machinery/mainframe_linked/console/ui_interact(mob/user)
 	SHOULD_NOT_OVERRIDE(TRUE)
 	mainframe.console_access(user, src, target_interface)
 
-/obj/machinery/mainframe_linked/ui_status(mob/user)
+/obj/machinery/mainframe_linked/console/ui_status(mob/user)
 	if(isAdminGhostAI(user))
 		return UI_INTERACTIVE
 	if(isobserver(user))
@@ -67,7 +43,7 @@
 		return UI_UPDATE
 	return UI_INTERACTIVE
 
-/obj/machinery/mainframe_linked/ui_act(action, list/params)
+/obj/machinery/mainframe_linked/console/ui_act(action, list/params)
 	if(. = ..())
 		return .
 
@@ -81,22 +57,22 @@
 			user_ui.send_full_update(force=TRUE)
 			return TRUE
 
-/obj/machinery/mainframe_linked/ui_static_data(mob/user)
+/obj/machinery/mainframe_linked/console/ui_static_data(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 	. = ..()
 	.["ref_tree"] = ui_ref_tree(user)
 	.["name_tree"] = ui_name_tree(user)
 
-/obj/machinery/mainframe_linked/proc/ui_ref_tree(mob/user)
+/obj/machinery/mainframe_linked/console/proc/ui_ref_tree(mob/user)
 	. = list()
 	.["user"] = REF(user)
 	.["machine"] = REF(src)
 
-/obj/machinery/mainframe_linked/proc/ui_name_tree(mob/user)
+/obj/machinery/mainframe_linked/console/proc/ui_name_tree(mob/user)
 	. = list()
 	.["user"] = "[user]"
 	.["machine"] = "[src]"
 
-/obj/machinery/mainframe_linked/ui_data(mob/user)
+/obj/machinery/mainframe_linked/console/ui_data(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 	. = ..()

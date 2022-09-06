@@ -18,8 +18,8 @@
 /datum/research_web/admin/use_points(techtype, amount, partial=FALSE)
 	return
 
-/datum/research_web/admin/start_research_node(mob/user, obj/machinery/research_linked/machine, node_id)
+/datum/research_web/admin/start_research_node(mob/user, obj/machinery/mainframe_linked/machine, node_id)
 	return
 
-/datum/research_web/admin/finish_research_node(mob/user, obj/machinery/research_linked/machine, node_id)
+/datum/research_web/admin/finish_research_node(mob/user, obj/machinery/mainframe_linked/machine, node_id)
 	return

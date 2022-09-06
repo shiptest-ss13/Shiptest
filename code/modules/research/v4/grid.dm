@@ -1,7 +1,7 @@
 /datum/research_grid
 	var/datum/research_node/parent_node
 	var/datum/research_web/parent_web
-	var/obj/machinery/research_linked/parent_machine
+	var/obj/machinery/mainframe_linked/parent_machine
 
 	var/completed = FALSE
 

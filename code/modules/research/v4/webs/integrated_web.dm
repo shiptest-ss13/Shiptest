@@ -35,10 +35,10 @@
 /datum/research_web/integrated/use_points(techtype, amount, partial=FALSE)
 	return
 
-/datum/research_web/integrated/start_research_node(mob/user, obj/machinery/research_linked/machine, node_id)
+/datum/research_web/integrated/start_research_node(mob/user, obj/machinery/mainframe_linked/machine, node_id)
 	return
 
-/datum/research_web/integrated/finish_research_node(mob/user, obj/machinery/research_linked/machine, node_id)
+/datum/research_web/integrated/finish_research_node(mob/user, obj/machinery/mainframe_linked/machine, node_id)
 	return
 
 /datum/research_web/integrated/update_node_unlocks(datum/research_node/node)

@@ -38,7 +38,7 @@
 	if(!helm)
 		return
 
-	var/static/obj/machinery/research_linked/target
+	var/static/obj/machinery/mainframe_linked/target
 	if(!target)
 		target = new(get_turf(src))
 		target.tech_level = TECHLEVEL_ADMIN
@@ -122,7 +122,7 @@
 	for(var/id in designs_available)
 		. += SSresearch_v4.get_node(id)
 
-/datum/research_web/proc/start_research_node(mob/user, obj/machinery/research_linked/machine, node_id)
+/datum/research_web/proc/start_research_node(mob/user, obj/machinery/mainframe_linked/machine, node_id)
 	if(!(node_id in nodes_available))
 		to_chat(user, span_warning("Cannot research node, not available!"))
 		return FALSE
@@ -145,7 +145,7 @@
 	grids[node_id] = grid
 	grid.ui_interact(user)
 
-/datum/research_web/proc/finish_research_node(mob/user, obj/machinery/research_linked/machine, node_id)
+/datum/research_web/proc/finish_research_node(mob/user, obj/machinery/mainframe_linked/machine, node_id)
 	var/datum/research_node/actual = SSresearch_v4.get_node(node_id)
 	actual.on_researched(user, src, machine)
 	update_node_unlocks(actual)
