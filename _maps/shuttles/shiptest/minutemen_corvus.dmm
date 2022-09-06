@@ -4,7 +4,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/machinery/door/airlock/hatch,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -19,6 +18,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/security)
@@ -511,7 +513,9 @@
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 10
 	},
-/obj/machinery/door/airlock/wood,
+/obj/machinery/door/airlock/wood{
+	name = "Dormitories"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
@@ -532,7 +536,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Security"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -1039,7 +1045,9 @@
 /area/ship/hallway/central)
 "sc" = (
 /obj/effect/turf_decal/borderfloorblack,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Captains Cabin"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "sr" = (
@@ -1252,7 +1260,6 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
-/obj/machinery/door/airlock/highsecurity,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -1267,6 +1274,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "Bridge"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1287,6 +1297,23 @@
 	},
 /turf/open/floor/plastic,
 /area/ship/hallway/central)
+"wZ" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "minutemen_corvus_engines";
+	name = "Thruster Blast Door"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/eastleft,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "xD" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -1548,7 +1575,9 @@
 /obj/effect/turf_decal/corner/opaque/orange{
 	dir = 9
 	},
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Engineering"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -2403,23 +2432,6 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
-"UJ" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor{
-	id = "minutemen_corvus_engines";
-	name = "Thruster Blast Door"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/window/eastleft,
-/turf/open/floor/plating,
-/area/ship/engineering)
 "UP" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -2738,7 +2750,7 @@ bA
 bA
 Gh
 ja
-UJ
+wZ
 Lb
 ja
 Gh
