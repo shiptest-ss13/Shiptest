@@ -15,11 +15,12 @@
 
 	item_state = "electronic"
 
-	var/list/allowed_directions = list("south")
+	var/list/allowed_directions = list("north", "east", "south", "west")
 
 	var/static/list/allowed_states = list(
 		"steel", "dark", "white", "freezer", "tile_full", "cargo_one_full",
-		"kafel_full", "steel_monofloor", "monotile", "grid", "ridged"
+		"kafel_full", "steel_monofloor", "monotile", "grid", "ridged", "stairs",
+		"stairs-l", "stairs-m", "stairs-r", "stairs-old", "stairs-t", "stairs-b"
 	)
 
 /obj/item/floor_painter/afterattack(atom/A, mob/user, proximity, params)
@@ -77,7 +78,6 @@
 		var/state = input("Please select a style", "[src]") as null|anything in allowed_states
 		if(state)
 			floor_state = state
-			check_directional_tile()
 	if(href_list["choose_dir"])
 		var/seldir = input("Please select a direction", "[src]") as null|anything in allowed_directions
 		if(seldir)
@@ -100,32 +100,16 @@
 		if(index < 1)
 			index = allowed_states.len
 		floor_state = allowed_states[index]
-		check_directional_tile()
 	if(href_list["cycleright"])
 		var/index = allowed_states.Find(floor_state)
 		index++
 		if(index > allowed_states.len)
 			index = 1
 		floor_state = allowed_states[index]
-		check_directional_tile()
 
 	floor_icon = icon('icons/turf/floors/tiles.dmi', floor_state, floor_dir)
 	if(usr)
 		attack_self(usr)
-
-/obj/item/floor_painter/proc/check_directional_tile()
-	var/icon/current = icon('icons/turf/floors/tiles.dmi', floor_state, NORTHWEST)
-	if(current.GetPixel(1,1) != null)
-		allowed_directions = GLOB.alldirs
-	else
-		current = icon('icons/turf/floors/tiles.dmi', floor_state, WEST)
-		if(current.GetPixel(1,1) != null)
-			allowed_directions = GLOB.cardinals
-		else
-			allowed_directions = list("south")
-
-	if(!(dir2text(floor_dir) in allowed_directions))
-		floor_dir = SOUTH
 
 // Decal painter
 

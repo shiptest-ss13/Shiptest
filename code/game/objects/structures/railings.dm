@@ -24,8 +24,16 @@
 	climbable = FALSE
 
 /obj/structure/railing/ComponentInitialize()
+	if(.)
+		return ..()
+	. = ..()
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_CLOCKWISE_HALF | ROTATION_COUNTERCLOCKWISE | ROTATION_COUNTERCLOCKWISE_HALF | ROTATION_VERBS ,null,CALLBACK(src, .proc/can_be_rotated),CALLBACK(src,.proc/after_rotation))
+
+
+/obj/structure/railing/corner/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src, .proc/can_be_rotated),CALLBACK(src,.proc/after_rotation))
+
 
 /obj/structure/railing/attackby(obj/item/I, mob/living/user, params)
 	..()
