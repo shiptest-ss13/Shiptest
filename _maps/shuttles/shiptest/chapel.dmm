@@ -259,6 +259,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/mineral/gold,
 /area/ship/bridge)
 "dT" = (
@@ -317,9 +318,15 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/chapel)
 "eE" = (
-/obj/machinery/airalarm/directional/south,
-/turf/open/floor/carpet,
-/area/ship/bridge)
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/obj/structure/curtain/cloth/fancy,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/north,
+/turf/open/floor/wood,
+/area/ship/crew/dorm)
 "eH" = (
 /turf/open/floor/carpet/red,
 /area/ship/crew/library)
@@ -519,6 +526,9 @@
 /obj/structure/sink/greyscale{
 	pixel_y = 20
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -26
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/dorm)
 "iv" = (
@@ -616,15 +626,6 @@
 /obj/structure/catwalk,
 /turf/open/floor/plating,
 /area/ship/external)
-"jJ" = (
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/turf/open/floor/wood,
-/area/ship/crew/dorm)
 "jP" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -716,9 +717,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -26
-	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "kW" = (
@@ -771,9 +769,6 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/crew/chapel/office)
 "lw" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -799,16 +794,9 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/north,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /obj/item/clothing/suit/chaplainsuit/nun,
 /obj/item/clothing/suit/chaplainsuit/nun,
 /obj/item/clothing/suit/chaplainsuit/holidaypriest,
-/obj/structure/sign/poster/official/no_erp{
-	pixel_x = 32
-	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
@@ -840,6 +828,10 @@
 /obj/machinery/cryopod{
 	dir = 4
 	},
+/obj/machinery/computer/cryopod{
+	pixel_y = -26;
+	dir = 1
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "mk" = (
@@ -870,7 +862,6 @@
 /turf/open/floor/plating,
 /area/ship/crew/chapel/office)
 "nn" = (
-/obj/machinery/airalarm/directional/south,
 /obj/machinery/light_switch{
 	pixel_x = 22;
 	pixel_y = -22;
@@ -1112,6 +1103,9 @@
 /area/ship/hallway/fore)
 "rf" = (
 /obj/structure/chair/wood,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "rr" = (
@@ -1176,6 +1170,10 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/tile/bronze/thirty,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "rE" = (
@@ -1498,6 +1496,9 @@
 	},
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/turf_decal/industrial/outline,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 25
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "ve" = (
@@ -1640,6 +1641,9 @@
 /turf/open/floor/wood,
 /area/ship/storage)
 "wD" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "wE" = (
@@ -1872,6 +1876,7 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 1
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "zD" = (
@@ -1882,13 +1887,6 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"zH" = (
-/obj/machinery/computer/cryopod{
-	pixel_y = -26;
-	dir = 1
-	},
-/turf/open/floor/carpet,
-/area/ship/crew/dorm)
 "zL" = (
 /obj/machinery/door/airlock/external,
 /obj/docking_port/mobile{
@@ -2227,7 +2225,6 @@
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
 "DP" = (
-/obj/machinery/light/small,
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -2410,9 +2407,6 @@
 	},
 /obj/machinery/light{
 	dir = 4
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -2988,7 +2982,7 @@
 /area/ship/crew/chapel)
 "OQ" = (
 /obj/structure/cable{
-	icon_state = "5-10"
+	icon_state = "4-10"
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
@@ -3011,6 +3005,10 @@
 "Pf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
 	},
 /turf/open/floor/carpet,
 /area/ship/hallway/port)
@@ -3399,10 +3397,6 @@
 "Tx" = (
 /obj/structure/cable{
 	icon_state = "1-4"
-	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
 	},
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
@@ -3908,10 +3902,6 @@
 	},
 /area/ship/bridge)
 "XP" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -4638,7 +4628,7 @@ ZP
 fV
 nK
 tw
-eE
+fl
 SN
 BO
 qI
@@ -5015,7 +5005,7 @@ ZP
 (25,1,1) = {"
 Ri
 bu
-jJ
+lw
 rf
 cf
 hJ
@@ -5057,7 +5047,7 @@ lw
 wD
 wz
 iH
-zH
+iH
 Wr
 Mh
 wE
@@ -5130,7 +5120,7 @@ ZP
 ZP
 Xn
 Xn
-pw
+eE
 pw
 zB
 Aq
