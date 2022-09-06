@@ -30,7 +30,7 @@
 	var/list/min_requirements
 	var/list/max_requirements
 	var/exclude = FALSE //do it this way to allow for addition/removal of reactions midmatch in the future
-	var/priority = 100 //lower numbers are checked/react later than higher numbers. if two reactions have the same priority they may happen in either order
+	var/priority = 100 //lower numbers are checked/react later than higher numbers. Should be distinct per-reaction; auxmos breaks when two reactions have the same priority.
 	var/name = "reaction"
 	var/id = "r"
 
@@ -343,7 +343,7 @@
 			air.set_temperature((temperature*old_heat_capacity + energy_released)/new_heat_capacity)
 
 /datum/gas_reaction/genericfire
-	priority = -3 // very last reaction
+	priority = -4 // very last reaction
 	name = "Combustion"
 	id = "genericfire"
 
@@ -483,7 +483,7 @@
 	plasma = MODULUS(plasma - (instability*sin(TODEGREES(carbon))), toroidal_size)
 	carbon = MODULUS(carbon - plasma, toroidal_size)
 
-	air.set_moles(GAS_PLASMA, plasma*scale_factor + FUSION_MOLE_THRESHOLD )//Scales the gases back up
+	air.set_moles(GAS_PLASMA, plasma*scale_factor + FUSION_MOLE_THRESHOLD)//Scales the gases back up
 	air.set_moles(GAS_CO2, carbon*scale_factor + FUSION_MOLE_THRESHOLD)
 	var/delta_plasma = min(initial_plasma - air.get_moles(GAS_PLASMA), toroidal_size * scale_factor * 1.5)
 
@@ -571,7 +571,7 @@
 	var/old_heat_capacity = air.heat_capacity()
 	var/heat_efficency = min(temperature/(FIRE_MINIMUM_TEMPERATURE_TO_EXIST*100), air.get_moles(GAS_O2) ,air.get_moles(GAS_N2))
 	var/energy_used = heat_efficency * NITROUS_FORMATION_ENERGY
-	if ((air.get_moles(GAS_O2) - heat_efficency < 0 )|| (air.get_moles(GAS_N2) - heat_efficency < 0)) //Shouldn't produce gas from nothing.
+	if ((air.get_moles(GAS_O2) - heat_efficency < 0)|| (air.get_moles(GAS_N2) - heat_efficency < 0)) //Shouldn't produce gas from nothing.
 		return NO_REACTION
 	if (temperature > 250) //maximum allowed temperature for the reaction
 		return NO_REACTION
@@ -586,7 +586,7 @@
 		return REACTING
 
 /datum/gas_reaction/nitrylformation //The formation of nitryl. Endothermic. Requires N2O as a catalyst.
-	priority = 3
+	priority = 4
 	name = "Nitryl formation"
 	id = "nitrylformation"
 
@@ -604,7 +604,7 @@
 	var/old_heat_capacity = air.heat_capacity()
 	var/heat_efficency = min(temperature/(FIRE_MINIMUM_TEMPERATURE_TO_EXIST*100),air.get_moles(GAS_O2),air.get_moles(GAS_N2))
 	var/energy_used = heat_efficency*NITRYL_FORMATION_ENERGY
-	if ((air.get_moles(GAS_O2) - heat_efficency < 0 )|| (air.get_moles(GAS_N2) - heat_efficency < 0)) //Shouldn't produce gas from nothing.
+	if ((air.get_moles(GAS_O2) - heat_efficency < 0)|| (air.get_moles(GAS_N2) - heat_efficency < 0)) //Shouldn't produce gas from nothing.
 		return NO_REACTION
 	air.adjust_moles(GAS_O2, -heat_efficency)
 	air.adjust_moles(GAS_N2, -heat_efficency)
@@ -631,7 +631,7 @@
 	return ..()
 
 /datum/gas_reaction/bzformation //Formation of BZ by combining plasma and tritium at low pressures. Exothermic.
-	priority = 4
+	priority = 5
 	name = "BZ Gas formation"
 	id = "bzformation"
 
@@ -647,7 +647,7 @@
 	var/old_heat_capacity = air.heat_capacity()
 	var/reaction_efficency = min(1/((pressure/(0.1*ONE_ATMOSPHERE))*(max(air.get_moles(GAS_PLASMA)/air.get_moles(GAS_NITROUS),1))),air.get_moles(GAS_NITROUS),air.get_moles(GAS_PLASMA)/2)
 	var/energy_released = 2*reaction_efficency*FIRE_CARBON_ENERGY_RELEASED
-	if ((air.get_moles(GAS_NITROUS) - reaction_efficency < 0 )|| (air.get_moles(GAS_PLASMA) - (2*reaction_efficency) < 0) || energy_released <= 0) //Shouldn't produce gas from nothing.
+	if ((air.get_moles(GAS_NITROUS) - reaction_efficency < 0)|| (air.get_moles(GAS_PLASMA) - (2*reaction_efficency) < 0) || energy_released <= 0) //Shouldn't produce gas from nothing.
 		return NO_REACTION
 	air.adjust_moles(GAS_BZ, reaction_efficency)
 	if(reaction_efficency == air.get_moles(GAS_NITROUS))
@@ -676,7 +676,7 @@
 	return ..()
 
 /datum/gas_reaction/freonformation
-	priority = 5
+	priority = 6
 	name = "Freon formation"
 	id = "freonformation"
 
@@ -693,7 +693,7 @@
 	var/old_heat_capacity = air.heat_capacity()
 	var/heat_efficency = min(temperature/(FIRE_MINIMUM_TEMPERATURE_TO_EXIST * 10), air.get_moles(GAS_PLASMA), air.get_moles(GAS_CO2), air.get_moles(GAS_BZ))
 	var/energy_used = heat_efficency * 100
-	if ((air.get_moles(GAS_PLASMA) - heat_efficency < 0 ) || (air.get_moles(GAS_CO2) - heat_efficency < 0) || (air.get_moles(GAS_BZ) - heat_efficency < 0)) //Shouldn't produce gas from nothing.
+	if ((air.get_moles(GAS_PLASMA) - heat_efficency < 0) || (air.get_moles(GAS_CO2) - heat_efficency < 0) || (air.get_moles(GAS_BZ) - heat_efficency < 0)) //Shouldn't produce gas from nothing.
 		return NO_REACTION
 	air.adjust_moles(GAS_PLASMA, -(heat_efficency * 5))
 	air.adjust_moles(GAS_CO2, -heat_efficency)
@@ -707,7 +707,7 @@
 		return REACTING
 
 /datum/gas_reaction/stimformation //Stimulum formation follows a strange pattern of how effective it will be at a given temperature, having some multiple peaks and some large dropoffs. Exo and endo thermic.
-	priority = 5
+	priority = 7
 	name = "Stimulum formation"
 	id = "stimformation"
 
@@ -724,7 +724,7 @@
 	var/heat_scale = min(air.return_temperature()/STIMULUM_HEAT_SCALE,air.get_moles(GAS_TRITIUM),air.get_moles(GAS_PLASMA),air.get_moles(GAS_NITRYL))
 	var/stim_energy_change = heat_scale + STIMULUM_FIRST_RISE*(heat_scale**2) - STIMULUM_FIRST_DROP*(heat_scale**3) + STIMULUM_SECOND_RISE*(heat_scale**4) - STIMULUM_ABSOLUTE_DROP*(heat_scale**5)
 
-	if ((air.get_moles(GAS_TRITIUM) - heat_scale < 0 )|| (air.get_moles(GAS_PLASMA) - heat_scale < 0) || (air.get_moles(GAS_NITRYL) - heat_scale < 0)) //Shouldn't produce gas from nothing.
+	if ((air.get_moles(GAS_TRITIUM) - heat_scale < 0)|| (air.get_moles(GAS_PLASMA) - heat_scale < 0) || (air.get_moles(GAS_NITRYL) - heat_scale < 0)) //Shouldn't produce gas from nothing.
 		return NO_REACTION
 	air.adjust_moles(GAS_STIMULUM, heat_scale/10)
 	air.adjust_moles(GAS_TRITIUM, -heat_scale)
@@ -755,7 +755,7 @@
 	return ..()
 
 /datum/gas_reaction/nobliumformation //Hyper-Noblium formation is extrememly endothermic, but requires high temperatures to start. Due to its high mass, hyper-nobelium uses large amounts of nitrogen and tritium. BZ can be used as a catalyst to make it less endothermic.
-	priority = 6
+	priority = 8
 	name = "Hyper-Noblium condensation"
 	id = "nobformation"
 
@@ -793,7 +793,7 @@
 	return ..()
 
 /datum/gas_reaction/stim_ball
-	priority = 7
+	priority = 9
 	name ="Stimulum Energy Ball"
 	id = "stimball"
 

@@ -1,31 +1,24 @@
 /datum/job/detective
-	title = "Detective"
+	name = "Detective"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
-	department_head = list("Head of Security")
-	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of security"
-	selection_color = "#ffeeee"
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Forensics Specialist", "Private Investigator")
-	senior_title = "Hard-boiled Detective"
 
 	outfit = /datum/outfit/job/detective
 
 	access = list(ACCESS_SEC_DOORS, ACCESS_FORENSICS_LOCKERS, ACCESS_MORGUE, ACCESS_MAINT_TUNNELS, ACCESS_MECH_SECURITY, ACCESS_COURT, ACCESS_BRIG, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM, ACCESS_EVA)
 	minimal_access = list(ACCESS_SEC_DOORS, ACCESS_FORENSICS_LOCKERS, ACCESS_MORGUE, ACCESS_MAINT_TUNNELS, ACCESS_MECH_SECURITY, ACCESS_COURT, ACCESS_BRIG, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_SEC
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
 	display_order = JOB_DISPLAY_ORDER_DETECTIVE
 
 /datum/outfit/job/detective
 	name = "Detective"
+	job_icon = "detective"
 	jobtype = /datum/job/detective
 
 	belt = /obj/item/pda/detective

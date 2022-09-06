@@ -261,10 +261,10 @@
 /obj/item/melee/transforming/energy/ctf
 	name = "energy sword"
 	desc = "That cable over there, I'm going to cut it."
-	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "plasmasword0"
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/swords_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	sharpness = IS_SHARP
 	armour_penetration = 200
 	block_chance = 0
@@ -286,5 +286,5 @@
 	force_on = 34 //desword grade, but 0 blocking
 
 /obj/item/melee/transforming/energy/ctf/transform_messages(mob/living/user, supress_message_text)
-	playsound(user, active ? 'whitesands/sound/weapons/SolGov_sword_arm.ogg' : 'sound/weapons/saberoff.ogg', 35, TRUE)
+	playsound(user, active ? 'sound/weapons/SolGov_sword_arm.ogg' : 'sound/weapons/saberoff.ogg', 35, TRUE)
 	to_chat(user, "<span class='notice'>[src] [active ? "is now active":"can now be concealed"].</span>")

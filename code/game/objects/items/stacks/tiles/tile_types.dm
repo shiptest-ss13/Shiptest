@@ -292,7 +292,7 @@
 
 /obj/item/stack/tile/carpet/nanoweave
 	name = "nanoweave carpet"
-	icon = 'whitesands/icons/obj/tiles.dmi'
+	icon = 'icons/obj/tiles.dmi'
 	desc = "A piece of nanoweave carpet."
 	icon_state = "dark_carpet_tile"
 	custom_materials = list(/datum/material/iron=500, /datum/material/plasma=500) //basically tiles made of plasteel
