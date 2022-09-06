@@ -6,7 +6,7 @@ export const ResearchGrid = (props, context) => {
   return (
     <Window width={550} height={600}>
       <Window.Content scrollable>
-        <button type="button" onClick={() => act('debug-complete')}>
+        <button type="button" onClick={() => act('force-complete')}>
           Force Complete
         </button>
       </Window.Content>

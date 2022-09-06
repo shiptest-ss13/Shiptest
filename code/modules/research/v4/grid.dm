@@ -56,5 +56,5 @@
 		return .
 
 	switch(action)
-		if("debug-complete")
+		if("force-complete")
 			complete(usr)
