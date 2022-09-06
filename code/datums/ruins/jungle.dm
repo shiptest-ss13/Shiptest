@@ -129,4 +129,4 @@
 	name = "Bombed Airbase"
 	id = "airbase"
 	description = "A bombed out airbase from the ICW, taken back over by nature"
-	suffix = "jungle_bombed_starport"
+	suffix = "jungle_bombed_starport.dmm"
