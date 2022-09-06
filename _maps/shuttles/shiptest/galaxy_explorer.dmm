@@ -6,18 +6,14 @@
 	},
 /obj/effect/turf_decal/corner/neutral/mono,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "aH" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable,
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/neutral/filled/warning,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "aN" = (
 /obj/structure/window/spawner/west,
 /obj/machinery/power/apc/auto_name/north,
@@ -130,9 +126,7 @@
 "fF" = (
 /obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/plating/airless,
-/area/ship/hallway/aft{
-	name = "Aft Exterior"
-	})
+/area/ship/wing/aft)
 "fN" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable{
@@ -141,9 +135,7 @@
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/neutral/filled/warning,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "fZ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -169,9 +161,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "gS" = (
 /obj/structure/window/spawner/west,
 /obj/structure/cable{
@@ -201,9 +191,7 @@
 "iq" = (
 /obj/effect/turf_decal/corner/blue/mono,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "iI" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -213,9 +201,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "iK" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
@@ -226,9 +212,7 @@
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/neutral/filled/warning,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "kL" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -246,24 +230,18 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/fore{
-	name = "Fore Exterior"
-	})
+/area/ship/wing/fore)
 "lc" = (
 /obj/effect/turf_decal/corner/yellow/half{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/black/half,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "lm" = (
 /obj/effect/turf_decal/corner/blue/mono,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "lr" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -332,9 +310,7 @@
 	width = 28
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "pg" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -343,9 +319,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "pr" = (
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/dark,
@@ -360,17 +334,13 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "pC" = (
 /obj/structure/shuttle/engine/large{
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
-/area/ship/hallway/aft{
-	name = "Aft Exterior"
-	})
+/area/ship/wing/aft)
 "qi" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
@@ -393,9 +363,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/fore{
-	name = "Fore Exterior"
-	})
+/area/ship/wing/fore)
 "rg" = (
 /obj/effect/turf_decal/corner/white{
 	dir = 1
@@ -407,9 +375,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/fore{
-	name = "Fore Exterior"
-	})
+/area/ship/wing/fore)
 "rO" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -431,18 +397,14 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "sS" = (
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/neutral/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "tf" = (
 /obj/effect/turf_decal/corner/yellow/half{
 	dir = 1
@@ -451,9 +413,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "tz" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2,
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -485,9 +445,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/fore{
-	name = "Fore Exterior"
-	})
+/area/ship/wing/fore)
 "ua" = (
 /obj/effect/turf_decal/corner/yellow/half{
 	dir = 1
@@ -497,9 +455,7 @@
 	},
 /obj/effect/turf_decal/corner/black/half,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "uj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -517,9 +473,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "uQ" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -528,14 +482,10 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "vn" = (
 /turf/open/floor/plating/airless,
-/area/ship/hallway/aft{
-	name = "Aft Exterior"
-	})
+/area/ship/wing/aft)
 "vR" = (
 /obj/effect/turf_decal/corner/white{
 	dir = 4
@@ -547,9 +497,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/fore{
-	name = "Fore Exterior"
-	})
+/area/ship/wing/fore)
 "vX" = (
 /obj/machinery/door/airlock/command/glass,
 /obj/structure/cable{
@@ -605,9 +553,7 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/fore{
-	name = "Fore Exterior"
-	})
+/area/ship/wing/fore)
 "ze" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -618,9 +564,7 @@
 	},
 /obj/effect/turf_decal/trimline/neutral/filled/corner,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "zl" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
@@ -631,9 +575,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "zr" = (
 /obj/effect/turf_decal/corner/white,
 /obj/effect/turf_decal/corner/blue{
@@ -643,9 +585,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/fore{
-	name = "Fore Exterior"
-	})
+/area/ship/wing/fore)
 "zz" = (
 /obj/machinery/door/airlock/research,
 /obj/structure/cable{
@@ -676,6 +616,11 @@
 /obj/effect/turf_decal/corner/blue/diagonal,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
+"AJ" = (
+/obj/effect/turf_decal/corner/neutral/mono,
+/obj/structure/marker_beacon,
+/turf/open/floor/plasteel/airless,
+/area/ship/wing/fore)
 "AK" = (
 /obj/effect/turf_decal/corner/yellow/half{
 	dir = 1
@@ -687,9 +632,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "Bn" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -733,9 +676,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "CN" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -747,9 +688,7 @@
 	dir = 4
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/hallway/aft{
-	name = "Aft Exterior"
-	})
+/area/ship/wing/aft)
 "EW" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -774,9 +713,7 @@
 /area/ship/bridge)
 "EY" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/hallway/aft{
-	name = "Aft Exterior"
-	})
+/area/ship/wing/aft)
 "Fa" = (
 /obj/structure/window/spawner/west,
 /obj/machinery/suit_storage_unit/engine,
@@ -796,9 +733,7 @@
 	},
 /obj/effect/turf_decal/corner/neutral/mono,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "Fh" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/corner/blue/border{
@@ -809,9 +744,7 @@
 "FD" = (
 /obj/structure/sign/nanotrasen,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/hallway/aft{
-	name = "Aft Exterior"
-	})
+/area/ship/wing/aft)
 "FK" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 9
@@ -821,9 +754,7 @@
 	},
 /obj/effect/turf_decal/corner/white,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/fore{
-	name = "Fore Exterior"
-	})
+/area/ship/wing/fore)
 "FO" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -836,9 +767,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "FW" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -847,9 +776,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "GA" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -862,9 +789,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "GG" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -905,9 +830,7 @@
 /obj/structure/sign/nanotrasen,
 /obj/effect/turf_decal/corner/neutral/mono,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "Ia" = (
 /obj/machinery/computer/helm{
 	dir = 8
@@ -946,15 +869,11 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "JJ" = (
 /obj/effect/turf_decal/corner/neutral/mono,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "Kn" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 9
@@ -967,9 +886,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "Ku" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/science)
@@ -978,9 +895,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/ship/hallway/aft{
-	name = "Aft Exterior"
-	})
+/area/ship/wing/aft)
 "LC" = (
 /obj/machinery/computer/cargo/express{
 	dir = 8
@@ -1007,9 +922,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "Nq" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
@@ -1018,9 +931,7 @@
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/neutral/filled/warning,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "NX" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1030,9 +941,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "OM" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
@@ -1059,9 +968,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "Ps" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1107,9 +1014,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "Qw" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1130,9 +1035,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "QR" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1143,15 +1046,11 @@
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/neutral/filled/warning,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "Rt" = (
 /obj/effect/turf_decal/corner/neutral/mono,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "RG" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 5
@@ -1160,9 +1059,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/fore{
-	name = "Fore Exterior"
-	})
+/area/ship/wing/fore)
 "RP" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/cable{
@@ -1175,9 +1072,7 @@
 /obj/structure/sign/nanotrasen,
 /obj/effect/turf_decal/corner/neutral/mono,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "Sd" = (
 /obj/effect/turf_decal/corner/white{
 	dir = 8
@@ -1190,9 +1085,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/fore{
-	name = "Fore Exterior"
-	})
+/area/ship/wing/fore)
 "Sj" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1225,17 +1118,13 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "SJ" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
-/area/ship/hallway/aft{
-	name = "Aft Exterior"
-	})
+/area/ship/wing/aft)
 "SX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -1283,9 +1172,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "Ux" = (
 /obj/effect/turf_decal/corner/black/half,
 /obj/effect/turf_decal/corner/black/half,
@@ -1293,9 +1180,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "UA" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -1312,43 +1197,33 @@
 "Vt" = (
 /obj/effect/turf_decal/corner/neutral/mono,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/fore{
-	name = "Fore Exterior"
-	})
+/area/ship/wing/fore)
 "Ww" = (
 /obj/structure/marker_beacon{
 	light_color = "#00FF00";
 	picked_color = Jade
 	},
 /turf/open/floor/plating/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "Wx" = (
 /obj/structure/marker_beacon{
 	light_color = "#FF0000";
 	picked_color = Burgundy
 	},
 /turf/open/floor/plating/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "WV" = (
 /obj/effect/turf_decal/corner/yellow/half,
 /obj/effect/turf_decal/corner/black/half{
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "XD" = (
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/neutral/filled/corner,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "XM" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1361,9 +1236,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "XZ" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
@@ -1390,18 +1263,14 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "Zk" = (
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/neutral/filled/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 "Zy" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -1409,9 +1278,7 @@
 /obj/effect/turf_decal/corner/blue/mono,
 /obj/effect/turf_decal/trimline/neutral/filled/warning,
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/port{
-	name = "Port Wing"
-	})
+/area/ship/wing/port)
 "ZO" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1425,9 +1292,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
-/area/ship/hallway/starboard{
-	name = "Starboard Wing"
-	})
+/area/ship/wing/starboard)
 
 (1,1,1) = {"
 BR
@@ -1880,7 +1745,7 @@ BR
 BR
 BR
 Vt
-Vt
+AJ
 Vt
 BR
 BR

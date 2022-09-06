@@ -353,6 +353,32 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Central Hallway"
 	icon_state = "hallC"
 
+/// Wings ///______qdel_list_wrapper(list/L)
+/area/ship/wing
+	name = "Wing"
+	lighting_colour_tube = "#ffce99"
+	lighting_colour_bulb = "#ffdbb4"
+	lighting_brightness_tube = 7
+	outdoors = TRUE
+	ambientsounds = SPACE
+	sound_environment = SOUND_AREA_SPACE
+
+/area/ship/wing/aft
+	name = "Aft Wing"
+	icon_state = "hallA"
+
+/area/ship/wing/fore
+	name = "Fore Wing"
+	icon_state = "hallF"
+
+/area/ship/wing/starboard
+	name = "Starboard Wing"
+	icon_state = "hallS"
+
+/area/ship/wing/port
+	name = "Port Wing"
+	icon_state = "hallP"
+
 /// Maintenance Areas ///
 /area/ship/maintenance
 	name = "Maintenance"
