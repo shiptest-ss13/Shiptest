@@ -2536,6 +2536,16 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
+"tR" = (
+/obj/effect/radiation{
+	rad_power = 180;
+	rad_range = 2
+	},
+/obj/effect/decal/cleanable/molten_object/large,
+/turf/open/floor/plating/dirt/jungle/wasteland{
+	icon_state = "wasteland_dug"
+	},
+/area/ruin/jungle/starport)
 "tW" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle,
@@ -6257,6 +6267,16 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/jungle/starport/tower)
+"XB" = (
+/obj/effect/decal/cleanable/molten_object/large,
+/obj/effect/radiation{
+	rad_power = 180;
+	rad_range = 3
+	},
+/turf/open/floor/plating/dirt/jungle/wasteland{
+	icon_state = "wasteland_dug"
+	},
+/area/ruin/jungle/starport)
 "XC" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/vomit/old,
@@ -9874,7 +9894,7 @@ Gs
 wg
 wg
 xj
-Tx
+XB
 EJ
 wg
 BR
@@ -12035,7 +12055,7 @@ tE
 wg
 QX
 DY
-rA
+tR
 ui
 bp
 wg
