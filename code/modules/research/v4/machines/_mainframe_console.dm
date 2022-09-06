@@ -44,7 +44,8 @@
 	return UI_INTERACTIVE
 
 /obj/machinery/mainframe_linked/console/ui_act(action, list/params)
-	if(. = ..())
+	. = ..()
+	if(.)
 		return .
 
 	switch(action)
