@@ -558,7 +558,7 @@
 /area/ruin/jungle/starport)
 "eu" = (
 /obj/structure/spider/stickyweb,
-/obj/machinery/light,
+/obj/machinery/light/broken,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
 "ev" = (
@@ -3482,6 +3482,9 @@
 /obj/item/rack_parts,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
+"BD" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/jungle/starport/tower)
 "BF" = (
 /obj/structure/closet/emcloset/anchored,
 /obj/effect/turf_decal/borderfloor{
@@ -5204,7 +5207,7 @@
 /area/ruin/jungle/starport/plasma)
 "Qv" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/machinery/light,
+/obj/machinery/light/broken,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/starport)
 "Qw" = (
@@ -10073,10 +10076,10 @@ bN
 bN
 bN
 he
+BD
 bN
 bN
-bN
-bN
+BD
 wg
 qh
 yH
@@ -10389,9 +10392,9 @@ yH
 wg
 wg
 yH
+dP
 QE
-QE
-QE
+dP
 MT
 MT
 ZW
@@ -10465,11 +10468,11 @@ wg
 yH
 BR
 yH
-QE
-QE
+dP
+dP
 Aq
 Xq
-QE
+dP
 wg
 ZW
 yD
