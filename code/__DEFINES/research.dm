@@ -51,6 +51,7 @@
 #define RESEARCH_FABRICATOR_SCREEN_CATEGORYVIEW 5
 
 ///Department flags for techwebs. Defines which department can print what from each protolathe so Cargo can't print guns, etc.
+#define DEPARTMENTAL_FLAG_BALLISTICS (1<<0)
 #define DEPARTMENTAL_FLAG_SECURITY (1<<0)
 #define DEPARTMENTAL_FLAG_MEDICAL (1<<1)
 #define DEPARTMENTAL_FLAG_CARGO (1<<2)
