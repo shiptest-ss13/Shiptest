@@ -706,6 +706,7 @@
 
 /obj/structure/window/reinforced/fulltile/shuttle/unanchored
 	anchored = FALSE
+	state = WINDOW_OUT_OF_FRAME
 
 /obj/structure/window/plasma/reinforced/plastitanium
 	name = "plastitanium window"
