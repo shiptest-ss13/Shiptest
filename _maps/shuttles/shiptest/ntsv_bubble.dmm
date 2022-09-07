@@ -23,13 +23,14 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "cG" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 1
+	},
 /obj/machinery/advanced_airlock_controller{
 	dir = 4;
 	pixel_x = -25
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cH" = (
@@ -47,7 +48,24 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/closet/wall/blue{
+	dir = 1;
+	pixel_y = -28;
+	name = "Captains Locker"
+	},
+/obj/item/storage/backpack/captain,
+/obj/item/clothing/gloves/color/captain,
+/obj/item/clothing/suit/armor/vest/capcarapace/alt,
+/obj/item/clothing/suit/armor/vest/capcarapace,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/under/rank/command/captain/nt,
+/obj/item/clothing/head/caphat/nt,
+/obj/item/clothing/head/beret/captain,
+/obj/item/clothing/suit/hooded/wintercoat/captain,
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "ec" = (
@@ -90,6 +108,16 @@
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 10
 	},
+/obj/item/storage/box/rndboards{
+	desc = "Smells feighntly of plastic.";
+	name = "research equipment"
+	},
+/obj/structure/closet/wall{
+	dir = 1;
+	icon_door = "white_wall";
+	name = "science closet";
+	pixel_y = -27
+	},
 /turf/open/floor/plasteel,
 /area/ship/science)
 "gl" = (
@@ -121,7 +149,11 @@
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "hh" = (
-/obj/effect/spawner/structure/window/reinforced/shutters,
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bubblebridge";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "hq" = (
@@ -140,15 +172,16 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/spawner/west,
-/obj/machinery/door/window/eastright,
-/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/north,
+/obj/machinery/door/poddoor{
+	id = "bubbethrusters";
+	name = "Thruster Blast Door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "hE" = (
-/obj/structure/sign/poster/official/nanotrasen_logo{
-	pixel_x = 32
-	},
 /obj/effect/turf_decal/corner/opaque/yellow/border,
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 4
@@ -281,7 +314,7 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 6
 	},
-/obj/machinery/suit_storage_unit/independent/mining,
+/obj/machinery/suit_storage_unit/mining/eva,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "mJ" = (
@@ -297,11 +330,14 @@
 /turf/closed/wall,
 /area/ship/cargo)
 "mY" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
-/turf/closed/wall,
-/area/ship/engineering)
+/obj/structure/toilet{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "mZ" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 4
@@ -359,6 +395,12 @@
 /area/ship/maintenance/aft)
 "qk" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/machinery/button/door{
+	id = "bubbethrusters";
+	name = "Engine Shutter Control";
+	pixel_x = 24;
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "qq" = (
@@ -366,6 +408,17 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/purple/border,
+/obj/structure/table/wood,
+/obj/machinery/microwave{
+	pixel_y = 5
+	},
+/obj/item/storage/box/donkpockets{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/storage/box/donkpockets{
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "rj" = (
@@ -471,10 +524,11 @@
 /obj/machinery/button/door{
 	id = "bubbledoors";
 	name = "Blast Door Control";
-	pixel_x = 25
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/machinery/suit_storage_unit/independent/mining,
+/obj/machinery/suit_storage_unit/mining/eva,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "wH" = (
@@ -537,7 +591,9 @@
 /turf/open/floor/plating,
 /area/ship/external)
 "yb" = (
-/obj/machinery/door/airlock/research/glass,
+/obj/machinery/door/airlock/research/glass{
+	name = "Science"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -553,7 +609,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "zu" = (
-/obj/machinery/door/airlock/engineering/glass,
+/obj/machinery/door/airlock/engineering/glass{
+	name = "Engineering"
+	},
 /obj/effect/turf_decal/corner/opaque/yellow/mono,
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering)
@@ -585,6 +643,7 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "AR" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/airlock/external,
 /obj/docking_port/mobile{
 	launch_status = 0;
@@ -687,6 +746,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor{
+	id = "bubbethrusters";
+	name = "Thruster Blast Door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "GF" = (
@@ -736,9 +799,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/obj/machinery/power/port_gen/pacman/super,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/cable/yellow,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Je" = (
@@ -775,6 +840,21 @@
 /obj/machinery/power/apc/auto_name/south,
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 10
+	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = -4
+	},
+/obj/item/folder/blue{
+	pixel_x = -3;
+	pixel_y = -2
+	},
+/obj/item/pen{
+	pixel_x = -5
+	},
+/obj/item/storage/firstaid/medical{
+	pixel_x = 6;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel,
 /area/ship/science)
@@ -863,6 +943,12 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "LA" = (
@@ -931,11 +1017,12 @@
 /turf/open/floor/plasteel,
 /area/ship/science)
 "Rk" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 5
+/obj/effect/turf_decal/corner/opaque/yellow/border,
+/obj/structure/sign/poster/official/nanotrasen_logo{
+	pixel_y = -32
 	},
-/turf/closed/wall,
-/area/ship/engineering)
+/turf/open/floor/plasteel,
+/area/ship/hallway/central)
 "Sx" = (
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/mineral/plasma/fifty,
@@ -960,10 +1047,10 @@
 /obj/structure/sign/poster/official/build{
 	pixel_y = 32
 	},
-/obj/structure/tank_dispenser/oxygen,
 /obj/effect/turf_decal/corner/opaque/green/border{
 	dir = 1
 	},
+/obj/structure/tank_dispenser,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Ul" = (
@@ -980,9 +1067,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/port_gen/pacman,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "UE" = (
@@ -1004,9 +1093,14 @@
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "Vt" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/closed/wall,
-/area/ship/engineering)
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/shower{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "Vw" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1022,15 +1116,18 @@
 /area/ship/hallway/central)
 "Vy" = (
 /obj/item/kirbyplants/random,
-/obj/item/storage/box/rndboards{
-	desc = "Smells feighntly of plastic.";
-	name = "research equipment"
+/obj/item/radio/intercom/wideband{
+	pixel_y = 26;
+	pixel_x = -6
 	},
 /obj/machinery/light{
-	dir = 1
+	dir = 8
 	},
-/obj/item/radio/intercom/wideband{
-	pixel_x = -26
+/obj/machinery/button/door{
+	id = "bubblebridge";
+	name = "Bridge Shutter Control";
+	pixel_x = 8;
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
@@ -1089,7 +1186,6 @@
 /turf/open/floor/plating,
 /area/ship/external)
 "Xi" = (
-/obj/machinery/door/airlock/command/glass,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
@@ -1097,6 +1193,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/blue/mono,
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/bridge)
 "Xn" = (
@@ -1106,7 +1205,6 @@
 /turf/open/floor/plating,
 /area/ship/external)
 "Xy" = (
-/obj/machinery/door/airlock/mining/glass,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1115,6 +1213,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/brown/mono,
+/obj/machinery/door/airlock/mining/glass{
+	name = "Cargo Bay"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "XH" = (
@@ -1158,6 +1259,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor{
+	id = "bubbethrusters";
+	name = "Thruster Blast Door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "ZM" = (
@@ -1172,6 +1277,8 @@
 /turf/open/floor/plasteel,
 /area/ship/science)
 "ZQ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1342,7 +1449,7 @@ VB
 "}
 (9,1,1) = {"
 VB
-Xn
+mY
 VQ
 jr
 LK
@@ -1361,7 +1468,7 @@ VB
 "}
 (10,1,1) = {"
 VB
-gl
+Vt
 VQ
 VQ
 VQ
@@ -1388,13 +1495,13 @@ VI
 MY
 GF
 Ay
-uL
+Rk
 MJ
 vz
 ln
 IL
-Vt
-Rk
+MJ
+MJ
 MJ
 "}
 (12,1,1) = {"
@@ -1431,8 +1538,8 @@ MJ
 AC
 Sx
 UC
-Vt
-mY
+MJ
+MJ
 MJ
 "}
 (14,1,1) = {"
