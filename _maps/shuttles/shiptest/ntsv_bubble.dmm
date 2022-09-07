@@ -56,14 +56,10 @@
 	},
 /obj/item/storage/backpack/captain,
 /obj/item/clothing/gloves/color/captain,
-/obj/item/clothing/suit/armor/vest/capcarapace/alt,
 /obj/item/clothing/suit/armor/vest/capcarapace,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/under/rank/command/captain/nt,
-/obj/item/clothing/head/caphat/nt,
-/obj/item/clothing/head/beret/captain,
-/obj/item/clothing/suit/hooded/wintercoat/captain,
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
 /obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel,
@@ -314,7 +310,7 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 6
 	},
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "mJ" = (
@@ -331,9 +327,9 @@
 /area/ship/cargo)
 "mY" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 9
+	dir = 1
 	},
-/obj/structure/toilet{
+/obj/machinery/shower{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -528,7 +524,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "wH" = (
@@ -557,7 +553,7 @@
 	dir = 4
 	},
 /obj/machinery/computer/cryopod{
-	pixel_y = 32
+	pixel_y = 25
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -852,10 +848,6 @@
 /obj/item/pen{
 	pixel_x = -5
 	},
-/obj/item/storage/firstaid/medical{
-	pixel_x = 6;
-	pixel_y = -4
-	},
 /turf/open/floor/plasteel,
 /area/ship/science)
 "JG" = (
@@ -952,9 +944,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "LA" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
@@ -1017,12 +1006,14 @@
 /turf/open/floor/plasteel,
 /area/ship/science)
 "Rk" = (
-/obj/effect/turf_decal/corner/opaque/yellow/border,
-/obj/structure/sign/poster/official/nanotrasen_logo{
-	pixel_y = -32
+/obj/effect/turf_decal/industrial/warning{
+	dir = 9
 	},
-/turf/open/floor/plasteel,
-/area/ship/hallway/central)
+/obj/structure/toilet{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "Sx" = (
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/mineral/plasma/fifty,
@@ -1092,15 +1083,6 @@
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
-"Vt" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/shower{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/external)
 "Vw" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1449,7 +1431,7 @@ VB
 "}
 (9,1,1) = {"
 VB
-mY
+Rk
 VQ
 jr
 LK
@@ -1468,7 +1450,7 @@ VB
 "}
 (10,1,1) = {"
 VB
-Vt
+mY
 VQ
 VQ
 VQ
@@ -1495,7 +1477,7 @@ VI
 MY
 GF
 Ay
-Rk
+uL
 MJ
 vz
 ln
