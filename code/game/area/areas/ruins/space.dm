@@ -569,7 +569,3 @@
 /area/ruin/space/has_grav/corporatemine/hall
 	name = "Corporate Mine Hall"
 	icon_state = "hallC"
-
-/area/ruin/space/has_grav/corporatemine/eva
-	name = "Corporate Mine Eva"
-	icon_state = "eva"
