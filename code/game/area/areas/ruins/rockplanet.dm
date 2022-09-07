@@ -36,10 +36,6 @@
 	name = "Abandoned Mechbay Ready Room"
 	icon_state = "meeting"
 
-/area/ruin/rockplanet/abandoned_mechbay/laundry
-	name = "Abandoned Mechbay Laundry"
-	icon_state = "crew"
-
 /area/ruin/rockplanet/abandoned_mechbay/crewquarters
 	name = "Abandoned Mechbay Crew Quarters"
 	icon_state = "crew"
@@ -47,10 +43,6 @@
 /area/ruin/rockplanet/abandoned_mechbay/mechlab
 	name = "Abandoned Mech Lab"
 	icon_state = "mechbay"
-
-/area/ruin/rockplanet/abandoned_mechbay/medbay
-	name = "Abandoned Mechbay Medbay"
-	icon_state = "surgery"
 
 /area/ruin/rockplanet/abandoned_mechbay/engineering
 	name = "Abandoned Mechbay Engineering"

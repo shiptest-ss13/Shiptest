@@ -108,7 +108,7 @@
 /obj/structure/table/reinforced,
 /obj/structure/railing,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "bU" = (
 /obj/effect/gibspawner/human,
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler,
@@ -179,7 +179,7 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 4
 	},
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "cW" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/line{
 	pixel_y = 8
@@ -536,9 +536,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/abandoned_mechbay/engineering)
-"fK" = (
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/rockplanet/abandoned_mechbay/medbay)
 "fL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -742,7 +739,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "hu" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Command and Control"
@@ -1085,7 +1082,7 @@
 /obj/effect/spawner/lootdrop/costume,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "lG" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 8
@@ -1445,7 +1442,7 @@
 "qq" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/abandoned_mechbay/medbay)
+/area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "qt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/shreds,
@@ -1692,7 +1689,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "tk" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/camera/autoname{
@@ -1703,7 +1700,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/abandoned_mechbay/medbay)
+/area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "tr" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/concrete/slab_1,
@@ -1737,7 +1734,7 @@
 	pixel_y = -25
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "tE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/mecha_parts/part/gygax_armor,
@@ -1861,7 +1858,7 @@
 	},
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/abandoned_mechbay/medbay)
+/area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "uP" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -2064,7 +2061,7 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/washing_machine,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "wF" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/abandoned_mechbay/atmospereslurper)
@@ -2106,7 +2103,7 @@
 	desc = "Death to Dirty Laundry?"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "xD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -2283,6 +2280,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/abandoned_mechbay/bay4)
+"zZ" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 9;
+	name = "rusting turret";
+	desc = "A ballistic machine gun auto-turret, it's woven into the hexacrete walls. Despite that, it's age is clear, decay has set in.";
+	max_integrity = 60;
+	armor = list("melee"=25,"bullet"=30,"laser"=30,"energy"=30,"bomb"=30,"bio"=0,"rad"=0,"fire"=90,"acid"=90);
+	lethal_projectile = /obj/projectile/bullet/lmg;
+	stun_projectile = /obj/projectile/bullet/lmg
+	},
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "Am" = (
 /obj/machinery/door/poddoor{
 	id = "mechbay4"
@@ -2409,7 +2418,7 @@
 /obj/effect/decal/cleanable/food/salt,
 /obj/item/soap/nanotrasen,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "BJ" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/rockplanet/abandoned_mechbay/bay1)
@@ -2536,9 +2545,6 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
-"DE" = (
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
 "DM" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -2825,7 +2831,7 @@
 	pixel_x = -31
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/rockplanet/abandoned_mechbay/medbay)
+/area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "Hp" = (
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/turf_decal/arrows{
@@ -3132,7 +3138,7 @@
 	},
 /obj/effect/decal/cleanable/blood/footprints,
 /turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/abandoned_mechbay/medbay)
+/area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "KB" = (
 /obj/structure/chair/sofa/corner{
 	dir = 8
@@ -3196,7 +3202,7 @@
 /obj/structure/bed/roller,
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/rockplanet/abandoned_mechbay/medbay)
+/area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "Lw" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3458,7 +3464,7 @@
 "NW" = (
 /obj/structure/bed/roller,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/rockplanet/abandoned_mechbay/medbay)
+/area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "Oc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3777,7 +3783,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/abandoned_mechbay/medbay)
+/area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "Sz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -3884,7 +3890,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/abandoned_mechbay/medbay)
+/area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "TN" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 8
@@ -3903,9 +3909,6 @@
 	dir = 1
 	},
 /area/ruin/rockplanet/abandoned_mechbay/mainhall)
-"Up" = (
-/turf/closed/wall/concrete,
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
 "UH" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -3985,7 +3988,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "Wh" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4105,7 +4108,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/rockplanet/abandoned_mechbay/laundry)
+/area/ruin/rockplanet/abandoned_mechbay/crewquarters)
 "XL" = (
 /obj/machinery/computer/security{
 	dir = 4
@@ -4177,7 +4180,7 @@
 	pixel_x = 25
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/abandoned_mechbay/medbay)
+/area/ruin/rockplanet/abandoned_mechbay/mechlab)
 "YC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -4786,7 +4789,7 @@ DU
 DU
 DU
 dR
-fK
+dR
 eb
 vB
 vB
@@ -4835,8 +4838,8 @@ wk
 or
 DU
 DU
-fK
-fK
+dR
+dR
 vB
 vB
 au
@@ -4885,8 +4888,8 @@ SH
 qN
 DU
 TL
-fK
-fK
+dR
+dR
 au
 vB
 vB
@@ -4935,8 +4938,8 @@ JB
 UR
 uO
 Hm
-fK
-fK
+dR
+dR
 vB
 vB
 vB
@@ -4985,8 +4988,8 @@ DU
 Su
 qq
 NW
-fK
-fK
+dR
+dR
 au
 vB
 vB
@@ -5035,8 +5038,8 @@ Yu
 tk
 Kj
 Lv
-fK
-fK
+dR
+dR
 vB
 vB
 vB
@@ -5063,9 +5066,9 @@ eb
 eb
 eb
 rM
-KH
-DE
-DE
+zZ
+KG
+KG
 BT
 NU
 BJ
@@ -5112,7 +5115,7 @@ eb
 eb
 eb
 eb
-DE
+KG
 wD
 xp
 BJ
@@ -5161,7 +5164,7 @@ eb
 eb
 eb
 tM
-DE
+KG
 ht
 Xy
 BJ
@@ -5210,7 +5213,7 @@ tM
 eb
 Og
 kJ
-DE
+KG
 lA
 tC
 BJ
@@ -5259,7 +5262,7 @@ eb
 eb
 eb
 eb
-DE
+KG
 BF
 sX
 BJ
@@ -5308,7 +5311,7 @@ eb
 eb
 eb
 UH
-DE
+KG
 bQ
 cP
 BJ
@@ -5357,8 +5360,8 @@ eb
 eb
 qJ
 KH
-DE
-Up
+KG
+VG
 VJ
 BJ
 BJ
