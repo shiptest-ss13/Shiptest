@@ -2216,6 +2216,10 @@
 	icon_state = "blue"
 	color_src = 0
 
+/datum/sprite_accessory/ipc_screens/blush
+	name = "Blush"
+	icon_state = "blush"
+
 /datum/sprite_accessory/ipc_screens/bsod
 	name = "BSOD"
 	icon_state = "bsod"
