@@ -740,7 +740,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	dorf_mode = TRUE
 	if(badlands_chugs.dna?.check_mutation(DORFISM))
 		boozepwr = 120 //lifeblood of dwarves (boozepower = nutrition)
-		quality = DRINK_FANTASTIC //dorf drink for dorfs to drink
 	else
 		boozepwr = 5 //We've had worse in the mines
 

@@ -100,6 +100,17 @@
 	armored = TRUE
 	gold_core_spawnable = HOSTILE_SPAWN
 
+/mob/living/simple_animal/hostile/bear/cave
+	name = "brown bear"
+	desc = "A ferocious brown bear, ready to maul."
+	icon_state = "brownbear"
+	icon_living = "brownbear"
+	icon_dead = "brownbear_dead"
+	icon_gib = "brownbear_gib"
+	maxHealth = 70
+	health = 70
+	faction = list("mining")
+
 /obj/item/bear_armor
 	name = "pile of bear armor"
 	desc = "A scattered pile of various shaped armor pieces fitted for a bear, some duct tape, and a nail filer. Crude instructions \
