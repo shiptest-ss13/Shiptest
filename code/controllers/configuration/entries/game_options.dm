@@ -426,3 +426,8 @@
 /datum/config_entry/number/overmap_size
 	config_entry_value = 30
 	min_val = 1
+
+/datum/config_entry/number/overmap_encounter_size
+	max_val = 255
+	config_entry_value = 127
+	min_val = 127
