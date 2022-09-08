@@ -89,6 +89,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/coldmod = 1
 	///multiplier for damage from hot temperature
 	var/heatmod = 1
+	///multiplier for stamina damage
+	var/staminamod = 1
 	///multiplier for stun durations
 	var/stunmod = 1
 	///Type of damage attack does. Ethereals attack with burn damage for example.
@@ -1806,7 +1808,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.clone_mod
 			H.adjustCloneLoss(damage_amount)
 		if(STAMINA)
-			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.stamina_mod
+			var/damage_amount = forced ? damage : damage * hit_percent * staminamod * H.physiology.stamina_mod
 			if(BP)
 				if(BP.receive_damage(0, 0, damage_amount))
 					H.update_stamina()
