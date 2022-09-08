@@ -65,7 +65,7 @@
 /obj/machinery/atmospherics/pipe/simple/purple/visible{
 	dir = 6
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "aV" = (
 /obj/effect/turf_decal/siding/wood{
@@ -78,13 +78,12 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/library)
 "bb" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name/west,
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
@@ -123,9 +122,9 @@
 /area/ship/engineering/electrical)
 "bM" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/heater/on{
-	dir = 1
+	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "bW" = (
 /obj/structure/cable/yellow{
@@ -260,6 +259,9 @@
 	color = "#332521";
 	dir = 9
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "da" = (
@@ -311,7 +313,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "dX" = (
 /obj/structure/bookcase/random/religion,
@@ -327,7 +329,9 @@
 /obj/machinery/plantgenes{
 	pixel_y = 7
 	},
-/obj/item/storage/box/disks_plantgene,
+/obj/item/storage/box/disks_plantgene{
+	pixel_y = -14
+	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
 	dir = 9
@@ -562,13 +566,6 @@
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
 "fl" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/statue/sandstone/venus{
-	anchored = 1;
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
@@ -578,6 +575,13 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
 	dir = 4
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/statue/sandstone/venus{
+	anchored = 1;
+	dir = 8
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
@@ -687,7 +691,7 @@
 /area/ship/crew/hydroponics)
 "gd" = (
 /obj/structure/window/reinforced/spawner/north,
-/obj/structure/closet/crate/hydroponics,
+/obj/structure/closet/crate/wooden,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
 "go" = (
@@ -806,8 +810,10 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
-/obj/machinery/door/window/northleft,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/window/northleft{
+	req_one_access_txt = list("12","22","37")
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/hydroponics)
 "hv" = (
@@ -840,8 +846,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/wood,
-/area/ship/hallway/starboard)
+/area/ship/hallway/fore)
 "hF" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle/actuallydark,
@@ -1200,6 +1207,21 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/port)
+"lg" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "shepherd_left_thrusters";
+	name = "Thruster Shield Control";
+	pixel_x = -6;
+	pixel_y = 25
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "lk" = (
 /turf/closed/wall/r_wall,
 /area/ship/medical/morgue)
@@ -1334,6 +1356,12 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/machinery/button/door{
+	id = "shepherd_right_thrusters";
+	name = "Thruster Shield Control";
+	pixel_x = -6;
+	pixel_y = 25
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -1546,7 +1574,7 @@
 /obj/structure/catwalk,
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/grille,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "oy" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1571,6 +1599,10 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
 	dir = 9
+	},
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
@@ -1608,6 +1640,7 @@
 /area/ship/crew/dorm)
 "pc" = (
 /obj/machinery/atmospherics/pipe/manifold/general/visible,
+/obj/machinery/meter/atmos/distro_loop,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "pi" = (
@@ -1911,6 +1944,9 @@
 	icon_state = "0-8"
 	},
 /obj/structure/window/reinforced/spawner/west,
+/obj/machinery/door/poddoor{
+	id = "shepherd_right_thrusters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "rR" = (
@@ -1952,13 +1988,19 @@
 /area/ship/crew/chapel)
 "sg" = (
 /obj/machinery/airalarm/directional/south,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -32
-	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
 	dir = 10
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/bridge)
+"sk" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
@@ -2164,7 +2206,7 @@
 	dir = 4
 	},
 /obj/structure/grille,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "tE" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2403,6 +2445,10 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
 /turf/open/floor/wood,
 /area/ship/bridge)
 "wh" = (
@@ -2503,10 +2549,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
-	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 32
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
@@ -2973,11 +3015,14 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "BN" = (
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/machinery/power/terminal{
+	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -3013,7 +3058,8 @@
 	id = "chapel_window";
 	name = "Window Shutter Control";
 	pixel_x = -6;
-	pixel_y = -2
+	pixel_y = -2;
+	dir = 1
 	},
 /obj/item/lighter,
 /obj/item/storage/fancy/candle_box{
@@ -3160,8 +3206,10 @@
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
 "CW" = (
-/obj/machinery/door/window/northleft,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/window/northleft{
+	req_one_access_txt = list("12","22","37")
+	},
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/hydroponics)
 "CY" = (
@@ -3522,12 +3570,6 @@
 	},
 /turf/open/floor/grass/fairy,
 /area/ship/crew/hydroponics)
-"FZ" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "Ga" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 8
@@ -3585,8 +3627,8 @@
 /turf/closed/wall,
 /area/ship/bridge)
 "Gx" = (
-/obj/structure/railing/wood,
 /obj/structure/destructible/tribal_torch,
+/obj/structure/railing/wood,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
 "Gy" = (
@@ -3636,7 +3678,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/atmos_waste{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "Hk" = (
 /turf/closed/wall,
@@ -4003,7 +4045,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/grunge{
-	name = "Discussion chamber"
+	name = "Discussion Chamber"
 	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521"
@@ -4245,6 +4287,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood,
+/obj/machinery/newscaster{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "Mh" = (
@@ -4578,6 +4624,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "PF" = (
@@ -4599,7 +4646,10 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -4617,12 +4667,12 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "PM" = (
-/obj/structure/railing{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
+	dir = 4
+	},
+/obj/structure/railing{
 	dir = 4
 	},
 /turf/open/floor/carpet/red_gold,
@@ -4687,7 +4737,7 @@
 /turf/open/floor/wood,
 /area/ship/hallway/port)
 "Qi" = (
-/obj/structure/chair/office{
+/obj/structure/chair/comfy/beige{
 	dir = 4
 	},
 /turf/open/floor/wood/ebony,
@@ -4724,7 +4774,7 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/window/reinforced/spawner/north,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "Qr" = (
 /obj/effect/turf_decal/siding/wood{
@@ -5007,7 +5057,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/airalarm/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/light{
 	dir = 4
@@ -5054,9 +5103,6 @@
 "SP" = (
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
 	},
 /obj/machinery/light,
 /turf/open/floor/plating,
@@ -5415,7 +5461,7 @@
 /obj/machinery/atmospherics/pipe/simple/purple/visible{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "Wg" = (
 /obj/structure/chair/sofa,
@@ -5514,9 +5560,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -5552,6 +5595,9 @@
 	icon_state = "0-8"
 	},
 /obj/structure/window/reinforced/spawner/west,
+/obj/machinery/door/poddoor{
+	id = "shepherd_left_thrusters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Xw" = (
@@ -6232,9 +6278,9 @@ xj
 Hc
 Uf
 Uf
+lg
 PJ
-PJ
-PJ
+BN
 Uf
 xj
 cE
@@ -6272,8 +6318,8 @@ YK
 tC
 DC
 tQ
-FZ
-BN
+iH
+iH
 SP
 Uf
 xj
@@ -7125,7 +7171,7 @@ cK
 sH
 pO
 oJ
-Ub
+sk
 cY
 bb
 iD
