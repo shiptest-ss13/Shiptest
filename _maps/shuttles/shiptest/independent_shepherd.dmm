@@ -3014,18 +3014,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"BN" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "BO" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
@@ -3570,6 +3558,18 @@
 	},
 /turf/open/floor/grass/fairy,
 /area/ship/crew/hydroponics)
+"FZ" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Ga" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 8
@@ -6280,7 +6280,7 @@ Uf
 Uf
 lg
 PJ
-BN
+FZ
 Uf
 xj
 cE
