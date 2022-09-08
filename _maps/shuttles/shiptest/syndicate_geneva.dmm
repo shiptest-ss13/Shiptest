@@ -454,7 +454,6 @@
 /area/ship/crew)
 "jB" = (
 /obj/structure/table/optable,
-/obj/machinery/airalarm/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
@@ -580,7 +579,8 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
 	id = "spitfireshutters";
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8
 	},
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
@@ -1056,6 +1056,7 @@
 /obj/item/storage/firstaid/medical,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/o2,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "uI" = (
