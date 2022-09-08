@@ -220,6 +220,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
+"cM" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/floor/plating/dirt/jungle/dark/actuallydark,
+/area/ship/crew/hydroponics)
 "cO" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/machinery/hydroponics/soil,
@@ -594,12 +600,6 @@
 	},
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/hydroponics)
-"fr" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/floor/plating/dirt/jungle/dark/actuallydark,
-/area/ship/crew/hydroponics)
 "fx" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/machinery/cryopod{
@@ -811,6 +811,11 @@
 	dir = 8
 	},
 /area/ship/crew/canteen)
+"hj" = (
+/obj/structure/table/wood,
+/obj/item/candle/infinite,
+/turf/open/floor/plating/grass/jungle/actuallydark,
+/area/ship/crew/hydroponics)
 "hm" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -900,7 +905,9 @@
 	},
 /area/ship/crew/chapel)
 "hV" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/chair/wood{
+	dir = 4
+	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
@@ -1134,13 +1141,6 @@
 /obj/structure/railing/wood,
 /turf/open/water/jungle/actuallydark,
 /area/ship/crew/hydroponics)
-"kl" = (
-/obj/structure/chair/wood{
-	dir = 4
-	},
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/jungle/actuallydark,
-/area/ship/crew/hydroponics)
 "kp" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood,
@@ -1247,8 +1247,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "lk" = (
-/obj/structure/table/wood,
-/obj/item/candle/infinite,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
 "ll" = (
@@ -1446,10 +1446,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/chapel)
-"nw" = (
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/plating/dirt/jungle/dark/actuallydark,
-/area/ship/crew/hydroponics)
 "nB" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2632,6 +2628,11 @@
 "xj" = (
 /turf/template_noop,
 /area/template_noop)
+"xn" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/jungle/actuallydark,
+/area/ship/crew/hydroponics)
 "xr" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -2901,11 +2902,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
-"Ae" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass/jungle/actuallydark,
-/area/ship/crew/hydroponics)
 "Aj" = (
 /obj/effect/turf_decal/spline/fancy/wood,
 /turf/open/floor/wood/ebony,
@@ -5203,6 +5199,10 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
+"Tj" = (
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/floor/plating/dirt/jungle/dark/actuallydark,
+/area/ship/crew/hydroponics)
 "Tr" = (
 /obj/structure/sink/greyscale{
 	pixel_y = 20
@@ -6484,7 +6484,7 @@ UA
 nJ
 Vf
 uL
-kl
+hV
 UA
 xF
 PU
@@ -6522,7 +6522,7 @@ bj
 lY
 UA
 rB
-lk
+hj
 yz
 rB
 OW
@@ -6670,7 +6670,7 @@ dM
 IF
 UA
 OW
-Ae
+lk
 wR
 TZ
 bj
@@ -6832,7 +6832,7 @@ Va
 HE
 DF
 Nr
-nw
+Tj
 wd
 wd
 fJ
@@ -6955,7 +6955,7 @@ wd
 HQ
 yT
 MV
-fr
+cM
 UA
 UA
 sz
@@ -7025,7 +7025,7 @@ xj
 xj
 am
 am
-Ae
+lk
 kj
 Qr
 tm
@@ -7040,7 +7040,7 @@ UA
 Nr
 Su
 UA
-hV
+xn
 Wn
 UA
 UA
