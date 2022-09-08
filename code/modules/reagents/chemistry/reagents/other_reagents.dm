@@ -2644,6 +2644,13 @@
 	concrete_type = /datum/reagent/concrete/hexacrete
 	units_per_aggregate = 2
 
+/datum/reagent/cement/roadmix
+	name = "Road mixture"
+	description = "A mix of cement and asphalt. Looks less tasty than normal cement."
+	color = "#5c6361"
+	potency = 3
+	concrete_type = /datum/reagent/concrete/pavement
+
 /datum/reagent/concrete
 	name = "Concrete"
 	description = "A mix of cement and aggregate, commonly used as a bulk building material."
@@ -2696,6 +2703,12 @@
 	wall_type = /turf/closed/wall/concrete/reinforced
 	floor_type = /turf/open/floor/concrete/reinforced
 
+/datum/reagent/concrete/pavement
+	name = "Pavement"
+	description = "Road surface, blacktop, asphalt concrete, whatever you call it, it's the most common material used in constructing runways for ships and roadways for vehicles."
+	color = "#3f4543"
+	floor_type = /turf/open/floor/concrete/pavement
+
 /datum/reagent/calcium
 	name = "Calcium"
 	description = "A dull gray metal important to bones."
@@ -2715,6 +2728,19 @@
 	description = "A light, reflective grey metal used in ship construction."
 	reagent_state = SOLID
 	color = "#c2c2c2"
+
+/datum/reagent/asphalt
+	name = "Asphalt"
+	description = "A dark, viscous liquid. Often found in oil deposits, although sometimes it can seep to the surface."
+	color = "#111212"
+	taste_description = "petroleum"
+
+/datum/reagent/asphalt/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	if(prob(min(current_cycle/2, 5)))
+		M.adjustToxLoss(2*REM)
+	if(prob(min(current_cycle/4, 10)))
+		M.adjustOrganLoss(ORGAN_SLOT_STOMACH,3*REM)
 
 /datum/reagent/mutationtoxin/kobold
 	name = "Kobold Mutation Toxin"

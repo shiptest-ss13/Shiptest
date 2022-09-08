@@ -247,3 +247,12 @@
 /obj/item/crusher_trophy/broodmother_tongue/on_mark_detonation(mob/living/target, mob/living/user)
 	if(rand(1, 100) <= bonus_value && target.stat != DEAD)
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother/patch(get_turf(target), user)
+
+/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet
+	name = "baby gruboid"
+	desc = "A young gruboid recently born. As a defense mechanism, they violently explode if killed."
+	icon_state = "gruboid_baby"
+	icon_living = "gruboid_baby"
+	icon_aggro = "gruboid_baby"
+	icon_dead = "gruboid_baby_dead"
+	icon_gib = "syndicate_gib"
