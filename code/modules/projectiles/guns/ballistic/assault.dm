@@ -125,7 +125,7 @@
 
 /obj/item/gun/ballistic/automatic/assualt/swiss_cheese
 	name = "\improper Swiss Cheese"
-	desc = "An old, iconic longarm, famous for its boxy and modular design. While the DMA would let you switch between firing ammunition and rods, the DMA is broken on this unit, likely from age. Uses 5.56mm ammunition for Matter mode."
+	desc = "An ancient longarm famous for its boxy, modular design. The DMA on this unit is, sadly, broken. Uses 5.56mm ammunition for Matter mode."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/swiss.ogg'
 	icon_state = "swiss"
