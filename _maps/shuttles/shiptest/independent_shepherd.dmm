@@ -822,7 +822,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 32
+	pixel_x = 26
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -1865,7 +1865,7 @@
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 28;
-	pixel_y = 5
+	pixel_y = 3
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/chapel/office)
@@ -2204,7 +2204,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 32
+	pixel_x = 26
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
@@ -2302,7 +2302,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
 /obj/machinery/firealarm{
-	pixel_y = 32
+	pixel_y = 26
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
@@ -2515,6 +2515,9 @@
 	dir = 2;
 	id = "chapel_massdriver"
 	},
+/obj/machinery/firealarm{
+	pixel_y = 26
+	},
 /turf/open/floor/wood,
 /area/ship/medical/morgue)
 "wz" = (
@@ -2687,13 +2690,13 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 32
+	pixel_x = 26
 	},
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/crew/chapel/office)
 "xP" = (
@@ -3836,7 +3839,7 @@
 "Id" = (
 /obj/structure/railing/wood,
 /obj/machinery/light_switch{
-	pixel_y = 31
+	pixel_y = 26
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4
@@ -3964,7 +3967,7 @@
 	dir = 10
 	},
 /obj/machinery/firealarm{
-	pixel_y = 32
+	pixel_y = 26
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -4513,7 +4516,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = -32
+	pixel_x = -26
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -5172,8 +5175,8 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/light_switch{
-	pixel_y = 28;
-	pixel_x = -8
+	pixel_y = 26;
+	pixel_x = -4
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
@@ -5277,7 +5280,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	pixel_y = 32
+	pixel_y = 26
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
@@ -5812,13 +5815,13 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 28;
-	pixel_y = -5
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
+	pixel_y = -3
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm/dormtwo)
