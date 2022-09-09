@@ -261,7 +261,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SNORE "snoring"
 /// the holder of this trait will be scooped instead of fireman carried
 #define TRAIT_SCOOPABLE "scoopable"
-
+//your smooches actually deal damage to their target
+#define TRAIT_KISS_OF_DEATH "kiss_of_death"
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
 #define TRAIT_PARALYSIS "paralysis"
@@ -302,6 +303,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SNOB "snob"
 #define TRAIT_BALD "bald"
 #define TRAIT_BADTOUCH "bad_touch"
+#define TRAIT_ANXIOUS "anxious"
+
+/// Trait granted by lipstick
+#define LIPSTICK_TRAIT "lipstick_trait"
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

@@ -290,6 +290,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "dI" = (
@@ -362,6 +363,7 @@
 /obj/effect/turf_decal/floordetail/edgedrain{
 	dir = 1
 	},
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "eD" = (
@@ -1741,6 +1743,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/landmark/start/medical_doctor,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "sD" = (
@@ -1926,9 +1929,7 @@
 /obj/item/clothing/under/syndicate/inteq,
 /obj/item/clothing/suit/armor/hos/inteq,
 /obj/item/clothing/head/beret/sec/hos/inteq,
-/obj/item/radio/headset/heads/captain/alt{
-	name = "\proper the vanguard's bowman headset"
-	},
+/obj/item/radio/headset/inteq/alt/captain,
 /obj/item/areaeditor/shuttle,
 /obj/item/shield/riot/tele,
 /turf/open/floor/carpet/orange,
@@ -1982,6 +1983,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/landmark/start/head_of_security,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "uq" = (
@@ -2863,6 +2865,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/landmark/start/security_officer,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "EC" = (
@@ -3325,9 +3328,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Lp" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/warning{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 1
 	},
@@ -3339,6 +3339,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/trimline/opaque/yellow/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Lr" = (
@@ -3447,6 +3450,13 @@
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
+"Nz" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/landmark/start/security_officer,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/office)
 "NP" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/corner/opaque/yellow,
@@ -3888,6 +3898,7 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/industrial/loading,
+/obj/effect/landmark/start/station_engineer,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Sb" = (
@@ -3998,6 +4009,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Tw" = (
@@ -4087,6 +4099,7 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/oil/streak,
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "UN" = (
@@ -5061,7 +5074,7 @@ Dq
 lU
 dS
 jw
-ry
+Nz
 ry
 Ck
 Od
@@ -5104,7 +5117,7 @@ Wn
 eK
 jw
 sP
-ry
+Nz
 Er
 Pv
 Ur

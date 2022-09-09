@@ -651,3 +651,14 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/stack/sheet/mineral/titanium(location)
+
+/datum/chemical_reaction/asphalt_heat
+	results = list(/datum/reagent/carbon = 0.4, /datum/reagent/acetone = 0.2, /datum/reagent/consumable/ethanol = 0.2, /datum/reagent/consumable/ethanol = 0.2)
+	required_reagents = list(/datum/reagent/asphalt = 1)
+	required_temp = 418
+	mix_message = "The mixture separates."
+
+/datum/chemical_reaction/pavement
+	results = list(/datum/reagent/cement/roadmix = 2)
+	required_reagents = list(/datum/reagent/cement = 1, /datum/reagent/asphalt = 1)
+	mix_message = "The mixture mixing suddenly reminds you of cramped urban worlds."
