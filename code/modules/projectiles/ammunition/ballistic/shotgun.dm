@@ -141,7 +141,7 @@
 
 /obj/item/ammo_casing/shotgun/buckshot/twobore
 	name = "two-bore shell"
-	desc = "A massive fucking 12 gauge buckshot shell."
+	desc = "A massive fucking two-bore shell."
 	caliber = "twobore"
 	projectile_type = /obj/projectile/bullet/pellet/shotgun_buckshot/twobore
 	pellets = 6
