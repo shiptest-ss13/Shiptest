@@ -582,6 +582,6 @@
 
 /obj/item/clothing/head/helmet/x11/frontier
 	name = "\improper Frontiersmen X11 Helmet"
-	desc = "A heavily modified X11 that was once produced by the Frontiersmen pirate fleet."
+	desc = "A heavily modified X11 used by the Frontiersmen pirate fleet."
 	icon_state = "x11helm_frontier"
 	unique_reskin = null
