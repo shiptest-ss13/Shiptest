@@ -291,8 +291,8 @@
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/security/officer/camo
-	name = "\improper fatigues"
-	desc = "Standard combat uniform. Often found in the hands of mercanaries, this outift can change the color of it's camo to match any combat scenario on the fly."
+	name = "fatigues"
+	desc = "A combat uniform most often worn by mercenaries and TPLRC soldiers. Features polychromatic design to adjust to different environments."
 	icon_state = "camo"
 	item_state = "fatigues"
 	can_adjust = FALSE
@@ -304,15 +304,15 @@
 		)
 
 /obj/item/clothing/under/rank/security/officer/frontier
-	name = "frontiersmen fatigues"
-	desc = "Fatigues once worn by members of the frontiersmen pirate fleet."
+	name = "\improper Frontiersmen uniform"
+	desc = "Worn by members of the Frontiersmen pirate fleet. It's less comfortable than it looks."
 	icon_state = "frontier"
 	item_state = "gy_suit"
 
 /obj/item/clothing/under/rank/security/officer/frontier/officer
-	name = "frontiersmen officer fatigues"
+	name = "\improper Frontiersmen officer's uniform"
 	icon_state = "frontier_officer"
 
 /obj/item/clothing/under/rank/security/officer/frontier/admiral
-	name = "frontiersmen admiral fatigues"
+	name = "\improper Frontiersmen admiral's uniform"
 	icon_state = "frontier_admiral"

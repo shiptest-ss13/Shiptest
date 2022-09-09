@@ -279,8 +279,8 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/riot/minutemen
-	name = "minutemen riot helmet"
-	desc = "It's a modified Minutemen ballistic helmet which sacrifices bullet protection for melee protection. While it is mainly used by the CM-BARD against xenofauna, surplus is sometimes used for riot control on some Minutemen member planets."
+	name = "\improper Minutemen riot helmet"
+	desc = "Designed to protect against close range attacks. Mainly used by the CM-BARD against hostile xenofauna, it also sees prolific use on some Minutemen member worlds."
 	icon_state = "riot_minutemen"
 
 
@@ -475,7 +475,7 @@
 
 /obj/item/clothing/head/helmet/rus_ushanka
 	name = "reinforced trapper hat"
-	desc = "Sometimes trapper hats are a part of uniforms for militaries of colder planets, thus this reinforced leather variant is made."
+	desc = "An occasional sight on the heads of soldiers stationed on cold worlds. 200% bear."
 	icon_state = "rus_ushanka"
 	item_state = "rus_ushanka"
 	body_parts_covered = HEAD
@@ -510,7 +510,7 @@
 	can_flashlight = TRUE
 
 /obj/item/clothing/head/helmet/minutemen
-	name = "minutemen ballistic helmet"
+	name = "\improper Minutemen ballistic helmet"
 	desc = "A bulletproof helmet that is worn by members of the Colonial Minutemen."
 	icon_state = "antichristhelm"
 	allow_post_reskins = TRUE

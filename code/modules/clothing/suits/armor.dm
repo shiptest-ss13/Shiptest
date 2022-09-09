@@ -173,7 +173,7 @@
 
 /obj/item/clothing/suit/armor/riot/minutemen
 	name = "black riot suit"
-	desc = "A suit of riot armor, painted black. While it is mainly used by the CM-BARD against xenofauna, surplus is sometimes used for riot control on some Minutemen member planets."
+	desc = "Designed to protect against close range attacks. This one is painted black. Mainly used by the CM-BARD against hostile xenofauna, it also sees prolific use on some Minutemen member worlds."
 	icon_state = "riot_minutemen"
 
 
@@ -197,8 +197,8 @@
 	equip_delay_other = 50
 
 /obj/item/clothing/suit/armor/bulletproof/frontier
-	name = "frontiersmen bulletproof armor"
-	desc = "A piece of armor that can be best described as a plate of metal with kevlar in between. Was once produced by the Frontiersmen pirate fleet."
+	name = "\improper Frontiersmen bulletproof armor"
+	desc = "A scrap piece of armor made of disused protective plates. This one was used to protect the squishy bits of a Frontiersman, once."
 	icon_state = "frontier_armor"
 
 /obj/item/clothing/suit/armor/laserproof
@@ -488,7 +488,7 @@
 
 /obj/item/clothing/suit/armor/frontier
 	name = "reinforced fur coat"
-	desc = "A coat made from hard leather. Once mass produced by the frontiersmen. This one is reinforced, probably was meant for officers."
+	desc = "A stiff coat, meant for frigid conditions."
 	icon_state = "frontier_coat"
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS

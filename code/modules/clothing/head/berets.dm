@@ -228,8 +228,8 @@
 	item_state = "inteq_beret"
 
 /obj/item/clothing/head/beret/sec/frontier
-	name = "frontiersmen beret"
-	desc = "A robust beret in the frontiersmen colors.  Uses reinforced fabric to offer sufficient protection. Was once produced by the Frontiersmen pirate fleet."
+	name = "\improper Frontiersmen beret"
+	desc = "A scratchy olive green beret, worn by Frontiersmen who want to look good while intimidating freighter crew."
 	icon_state = "frontier_beret"
 
 /obj/item/clothing/head/beret/sec/frontier/officer
