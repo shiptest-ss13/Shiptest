@@ -1224,6 +1224,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(!SSquirks)
 		to_chat(user, "<span class='danger'>The quirk subsystem is still initializing! Try again in a minute.</span>")
 		return
+
 	var/list/dat = list()
 	if(!SSquirks.quirks.len)
 		dat += "The quirk subsystem hasn't finished initializing, please hold..."
