@@ -15,8 +15,8 @@
 	clawfootstep = FOOTSTEP_LAVA
 	heavyfootstep = FOOTSTEP_LAVA
 
-/turf/open/acid/CanAllowThrough(atom/movable/AM, turf/target)
-	if(ishostile(AM))
+/turf/open/acid/CanAllowThrough(atom/movable/passing_atom, turf/target)
+	if(ishostile(passing_atom))
 		return FALSE
 	return ..()
 
