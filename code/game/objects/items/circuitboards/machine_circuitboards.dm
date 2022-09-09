@@ -1454,6 +1454,12 @@
 	req_components = list(/obj/item/reagent_containers/glass/beaker = 4,
 		/obj/item/stock_parts/micro_laser = 2)
 
+/obj/item/circuitboard/machine/shuttle/engine/beer
+	name = "Beer Thruster"
+	build_path = obj/machinery/power/shuttle/engine/beer
+	req_components = list(/obj/item/reagent_containers/food/drinks/beer = 4,
+		obj/item/stock_parts/micro_laser = 2)
+
 /obj/item/circuitboard/machine/shuttle/engine/void
 	name = "Void Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/void
