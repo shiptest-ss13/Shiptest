@@ -267,6 +267,10 @@
 		user.drop_all_held_items()
 		user.Paralyze(80)
 
+/obj/item/gun/ballistic/revolver/srm
+	name = "SRM Standard Issue .357 Revolver"
+	desc = "A sturdy, powerful, and reliable revolver. Try not to find yourself on the other end."
+
 /obj/item/gun/ballistic/revolver/pepperbox
 	name = "\improper pepperbox pistol"
 	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. How did it even end up here? While fast to fire, it is extremely inaccurate. Uses .357 ammo."
