@@ -81,8 +81,8 @@
 		. = 1
 
 /obj/item/gun/ballistic/rifle/boltaction/roumain
-	name = "\improper saint-roumain standard issue 'Smile' rifle"
-	desc = "A bolt action rifle. Usually given to low ranking hunters of the Militia tasked with mercenary work. Chambered in .300 Magnum."
+	name = "standard-issue 'Smile' rifle"
+	desc = "A bolt action rifle usually given to mercenary hunters of the Saint-Roumain Militia. Chambered in .300 Magnum."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
 	icon_state = "roma"
 	item_state = "roma"
