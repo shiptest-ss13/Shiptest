@@ -568,7 +568,7 @@
 
 /obj/item/clothing/head/helmet/x11
 	name = "\improper Type X11 Helmet"
-	desc = "A large, but protective helmet. Originating from Kalixcis, it's large size gives extra space for Sarathi frills and horns, and is considerably more armored."
+	desc = "This bulky helmet is a mainstay product of any Bezuts-based armor manufacturer worth their spice. It's a (relatively) comfortable fit for individuals with frills, horns, antlers, thorns, branches, spikes, webbing..."
 	icon_state = "x11helm"
 	can_flashlight = TRUE
 	dog_fashion = null
