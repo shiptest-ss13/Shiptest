@@ -18,6 +18,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/frame/computer{
+	dir = 8
+	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "ax" = (
@@ -72,7 +75,7 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "cd" = (
-/obj/effect/spawner/structure/window,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/crew/hydroponics)
 "cs" = (
@@ -89,11 +92,10 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "cP" = (
-/obj/machinery/stasis,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/three_quarters{
 	dir = 4
 	},
-/obj/machinery/iv_drip,
+/obj/machinery/medical_kiosk,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "cT" = (
@@ -109,13 +111,15 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/structure/table/reinforced,
-/obj/item/circuitboard/machine/pacman,
 /obj/item/storage/belt/utility,
 /obj/item/circuitboard/computer/rdconsole,
 /obj/item/circuitboard/machine/biogenerator,
 /obj/item/circuitboard/machine/limbgrower,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/fifty,
+/obj/item/circuitboard/machine/chem_heater,
+/obj/item/circuitboard/machine/reagentgrinder,
+/obj/item/circuitboard/machine/techfab/department/medical,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "dk" = (
@@ -152,7 +156,8 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 6
 	},
-/obj/machinery/washing_machine,
+/obj/structure/table/wood/bar,
+/obj/machinery/microwave,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "eq" = (
@@ -240,9 +245,6 @@
 "fC" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/syndicateemblem/top/right,
-/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
-	dir = 8
-	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "fG" = (
@@ -253,7 +255,7 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
-/obj/machinery/suit_storage_unit/syndicate,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "fO" = (
@@ -479,16 +481,17 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "kg" = (
-/obj/machinery/sleeper/syndie,
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 5
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/frame/machine{
+	anchored = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -667,6 +670,12 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
+"nN" = (
+/obj/machinery/door/poddoor{
+	id = "syndie3doors"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "oc" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 1
@@ -735,7 +744,6 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/under/syndicate/intern,
 /obj/item/storage/belt/utility,
-/obj/item/radio/headset/syndicate/alt,
 /obj/item/clothing/suit/toggle/hazard,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/head/hardhat,
@@ -904,6 +912,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"rC" = (
+/obj/machinery/door/poddoor{
+	id = "syndie4doors"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 4;
+	id = "geneva_holofield";
+	locked = 1
+	},
+/turf/open/floor/plating,
+/area/ship/crew)
 "rJ" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -931,8 +951,6 @@
 /obj/structure/table/glass,
 /obj/item/storage/box/masks,
 /obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/item/seeds/replicapod,
-/obj/item/seeds/replicapod,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "sq" = (
@@ -997,11 +1015,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "tF" = (
-/obj/machinery/shower{
-	dir = 1
-	},
-/obj/structure/curtain,
-/obj/item/soap/syndie,
+/obj/machinery/washing_machine,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "tS" = (
@@ -1030,9 +1044,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "un" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "syndie4doors"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 8;
+	id = "geneva_holofield";
+	locked = 1
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
@@ -1053,9 +1072,7 @@
 "uE" = (
 /obj/structure/table/glass,
 /obj/item/storage/firstaid/medical,
-/obj/item/storage/firstaid/medical,
 /obj/item/storage/firstaid/toxin,
-/obj/item/storage/firstaid/o2,
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
@@ -1082,16 +1099,10 @@
 	icon_state = "mining";
 	name = "rescue specialist's locker"
 	},
-/obj/item/resonator/upgraded,
-/obj/item/storage/backpack/duffelbag/syndie/c4{
-	name = "bag of rescue charges"
-	},
-/obj/item/t_scanner/adv_mining_scanner/lesser,
 /obj/item/clothing/suit/hooded/wintercoat/medical,
 /obj/item/clothing/under/syndicate/gorlex,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/gloves/explorer,
-/obj/item/radio/headset/syndicate/alt,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -1107,7 +1118,7 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/obj/machinery/suit_storage_unit/syndicate,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "wa" = (
@@ -1228,12 +1239,7 @@
 /obj/structure/closet/crate,
 /obj/item/circuitboard/machine/shuttle/engine/oil,
 /obj/item/circuitboard/machine/shuttle/engine/oil,
-/obj/item/circuitboard/machine/shuttle/engine/oil,
-/obj/item/circuitboard/machine/shuttle/engine/oil,
-/obj/item/circuitboard/machine/shuttle/engine/oil,
-/obj/item/circuitboard/machine/shuttle/engine/oil,
 /obj/item/pipe_dispenser,
-/obj/item/circuitboard/machine/chem_dispenser,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "zl" = (
@@ -1268,11 +1274,14 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
 "zC" = (
-/obj/structure/sink{
-	pixel_y = 28
-	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/mirror{
+	pixel_y = 28
+	},
+/obj/structure/sink{
+	pixel_y = 20
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
@@ -1347,6 +1356,9 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 9
 	},
+/obj/structure/chair/stool{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Bn" = (
@@ -1366,9 +1378,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Bp" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "syndie3doors"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 4;
+	id = "geneva_holofield";
+	locked = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1408,14 +1425,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/terminal,
 /obj/structure/cable,
+/obj/structure/table/wood/bar,
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -4;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "BG" = (
-/obj/machinery/stasis,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/three_quarters{
 	dir = 8
 	},
-/obj/machinery/iv_drip,
+/obj/machinery/sleeper/syndie,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "BL" = (
@@ -1486,7 +1507,7 @@
 /obj/item/bedsheet/syndie,
 /obj/item/toy/plush/nukeplushie,
 /obj/machinery/light,
-/obj/structure/curtain/cloth/black,
+/obj/structure/curtain/cloth/fancy,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "DP" = (
@@ -1496,10 +1517,6 @@
 "DW" = (
 /obj/machinery/door/firedoor,
 /obj/structure/table/wood/bar,
-/obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_x = -4;
-	pixel_y = -4
-	},
 /obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -1526,6 +1543,9 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/stool{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Er" = (
@@ -1554,7 +1574,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Fo" = (
-/obj/effect/spawner/structure/window,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/crew/office)
 "FK" = (
@@ -1871,9 +1891,18 @@
 /obj/structure/bed/pod,
 /obj/item/bedsheet/syndie,
 /obj/item/toy/plush/nukeplushie,
-/obj/structure/curtain/cloth/black,
+/obj/structure/curtain/cloth/fancy,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
+"KW" = (
+/obj/effect/turf_decal/corner/opaque/bottlegreen{
+	dir = 5
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "Lj" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
@@ -1975,16 +2004,11 @@
 	name = "small disk compartmentalizer"
 	},
 /obj/item/storage/box/beakers,
-/obj/item/clothing/glasses/science,
 /obj/item/plant_analyzer,
-/obj/item/clothing/suit/armor/solgov_trenchcoat,
 /obj/item/clothing/suit/hooded/wintercoat/medical,
 /obj/item/storage/box/syringes,
 /obj/item/lighter,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/seeds/replicapod,
-/obj/item/circuitboard/machine/reagentgrinder,
-/obj/item/circuitboard/machine/chem_heater,
 /obj/item/clothing/glasses/science,
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
@@ -1998,13 +2022,15 @@
 /obj/item/pinpointer/crew,
 /obj/item/clothing/suit/hooded/wintercoat/medical,
 /obj/item/storage/belt/medical,
-/obj/item/radio/headset/syndicate/alt,
 /obj/item/clothing/gloves/color/latex/nitrile,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "MZ" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 6
+	},
+/obj/structure/chair/stool{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -2022,9 +2048,11 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Nl" = (
-/obj/structure/mirror{
-	pixel_y = 28
+/obj/machinery/shower{
+	dir = 4
 	},
+/obj/structure/curtain,
+/obj/item/soap/syndie,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "Nw" = (
@@ -2032,7 +2060,14 @@
 /obj/machinery/button/door{
 	id = "syndie4doors";
 	pixel_x = -25;
-	dir = 4
+	dir = 4;
+	pixel_y = 10
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "geneva_holofield";
+	pixel_x = -25;
+	dir = 4;
+	pixel_y = -10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -2059,12 +2094,11 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "Oa" = (
-/obj/effect/turf_decal/corner/opaque/bottlegreen{
-	dir = 5
+/obj/machinery/door/poddoor{
+	id = "syndie4doors"
 	},
-/obj/machinery/medical_kiosk,
-/turf/open/floor/plasteel/white,
-/area/ship/medical)
+/turf/open/floor/plating,
+/area/ship/crew)
 "Ok" = (
 /obj/machinery/door/airlock/engineering/glass{
 	name = "Engineering Bay"
@@ -2107,7 +2141,7 @@
 /obj/structure/bed/pod,
 /obj/item/bedsheet/syndie,
 /obj/item/toy/plush/nukeplushie,
-/obj/structure/curtain/cloth/black,
+/obj/structure/curtain/cloth/fancy,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "OG" = (
@@ -2230,6 +2264,18 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
+"RE" = (
+/obj/machinery/door/poddoor{
+	id = "syndie3doors"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 8;
+	id = "geneva_holofield";
+	locked = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "RL" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -2321,6 +2367,8 @@
 /obj/machinery/firealarm{
 	pixel_y = 25
 	},
+/obj/structure/table/wood/bar,
+/obj/structure/bedsheetbin,
 /turf/open/floor/wood/yew,
 /area/ship/crew)
 "SI" = (
@@ -2334,13 +2382,10 @@
 /area/ship/crew/office)
 "Ty" = (
 /obj/effect/turf_decal/syndicateemblem/bottom/left,
-/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
-	dir = 1
-	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "TB" = (
-/obj/effect/spawner/structure/window,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "TG" = (
@@ -2386,7 +2431,14 @@
 /obj/machinery/button/door{
 	id = "syndie3doors";
 	pixel_x = 25;
-	dir = 8
+	dir = 8;
+	pixel_y = 10
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "geneva_holofield";
+	pixel_x = 25;
+	dir = 8;
+	pixel_y = -10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2395,21 +2447,16 @@
 	icon_state = "cmo";
 	name = "professor's locker"
 	},
-/obj/item/radio/headset/syndicate/captain,
 /obj/item/storage/belt/medical/surgery,
 /obj/item/autosurgeon/cmo,
 /obj/item/clothing/suit/toggle/labcoat/cmo,
 /obj/item/clothing/neck/cloak/cmo,
-/obj/item/circuitboard/machine/techfab/department/medical,
 /obj/item/clothing/gloves/color/latex/nitrile,
-/obj/item/defibrillator/compact/combat,
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/item/clothing/mask/surgical,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/suit/hooded/wintercoat/medical,
-/obj/item/storage/firstaid/tactical,
-/obj/item/card/emag,
 /obj/item/storage/box/hypospray/CMO,
 /obj/item/clothing/glasses/science,
 /obj/item/roller,
@@ -2485,7 +2532,6 @@
 /obj/item/pinpointer/crew,
 /obj/item/clothing/suit/hooded/wintercoat/medical,
 /obj/item/storage/belt/medical,
-/obj/item/radio/headset/syndicate/alt,
 /obj/item/clothing/gloves/color/latex/nitrile,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
@@ -2497,9 +2543,6 @@
 	pixel_x = -25
 	},
 /obj/effect/turf_decal/syndicateemblem/top/left,
-/obj/effect/turf_decal/corner/transparent/bottlegreen/three_quarters{
-	dir = 4
-	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/hallway/central)
 "Xg" = (
@@ -2573,7 +2616,7 @@
 "YH" = (
 /obj/machinery/door/firedoor,
 /obj/structure/table/wood/bar,
-/obj/machinery/microwave,
+/obj/item/toy/cards/deck/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "YZ" = (
@@ -2894,7 +2937,7 @@ ki
 Ao
 pj
 dk
-Bp
+nN
 Wc
 "}
 (13,1,1) = {"
@@ -2915,7 +2958,7 @@ vK
 gD
 OK
 UY
-Bp
+RE
 Wc
 "}
 (14,1,1) = {"
@@ -2949,7 +2992,7 @@ JU
 Bt
 JU
 JU
-kg
+KW
 AY
 JK
 zs
@@ -3054,7 +3097,7 @@ iA
 Kd
 MB
 Fo
-Oa
+GD
 hA
 cN
 kX
@@ -3083,7 +3126,7 @@ lP
 NR
 xM
 Nw
-un
+rC
 Wc
 "}
 (22,1,1) = {"
@@ -3104,7 +3147,7 @@ lg
 zl
 Lj
 FT
-un
+Oa
 Wc
 "}
 (23,1,1) = {"
