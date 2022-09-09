@@ -557,6 +557,31 @@
 			spell.recharging = FALSE
 			spell.update_icon()
 
+/obj/projectile/magic/fortify
+	name = "bolt of light"
+	icon_state = "spark"
+
+/obj/projectile/magic/fortify/on_hit(target)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/L = target
+		if(L.anti_magic_check() || !L.mind || !L.mind.hasSoul)
+			L.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			return BULLET_ACT_BLOCK
+		to_chat(L, "<span class='greentext'>You feel your body flood with magical strength! Your flesh feels cleansed, and somehow... tougher.</span>")
+		L.maxHealth += 20
+		L.heal_overall_damage(20, 20)
+		L.apply_damage(-200, CLONE)//cleanses cellular damage
+		if(L.mind.hasSoul == FALSE)//restores consumed souls
+			to_chat(L, "<span class='nicegreen'>You feel a warm light in your chest... the [src] has restored something you'd long forgotten.</span>")
+			L.mind.hasSoul = TRUE
+			if(L.hellbound == 1)
+				L.hellbound = 0//devil economy in shambles
+		for(var/obj/effect/proc_holder/spell/spell in L.mind.spell_list)
+			spell.charge_counter = spell.charge_max
+			spell.recharging = FALSE
+			spell.update_icon()
+
 /obj/projectile/magic/wipe
 	name = "bolt of possession"
 	icon_state = "wipe"

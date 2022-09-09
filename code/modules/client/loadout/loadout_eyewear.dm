@@ -33,6 +33,11 @@
 	display_name = "blindfold"
 	path = /obj/item/clothing/glasses/blindfold
 
+/datum/gear/eyewear/trickblindfold
+	display_name = "trick blindfold"
+	description = "A blindfold you can still see through."
+	path = /obj/item/clothing/glasses/trickblindfold
+
 /datum/gear/eyewear/hipster_glasses
 	display_name = "Hipster Glasses"
 	path = /obj/item/clothing/glasses/regular/hipster

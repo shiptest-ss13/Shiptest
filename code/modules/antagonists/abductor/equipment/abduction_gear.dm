@@ -267,7 +267,7 @@
 	radio_off(target, user)
 
 /obj/item/abductor/silencer/proc/radio_off(atom/target, mob/living/user)
-	if( !(user in (viewers(7,target))) )
+	if(!(user in (viewers(7,target))))
 		return
 
 	var/turf/targloc = get_turf(target)
@@ -664,10 +664,6 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	icon_state = "abductor_headset"
 	item_state = "abductor_headset"
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
-
-/obj/item/radio/headset/abductor/Initialize(mapload)
-	. = ..()
-	make_syndie()
 
 /obj/item/radio/headset/abductor/ComponentInitialize()
 	. = ..()

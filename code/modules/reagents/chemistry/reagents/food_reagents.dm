@@ -444,7 +444,7 @@
 	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
 	if(hotspot)
 		var/datum/gas_mixture/lowertemp = T.return_air()
-		lowertemp.set_temperature(max( min(lowertemp.return_temperature()-2000,lowertemp.return_temperature() / 2) ,TCMB))
+		lowertemp.set_temperature(max(min(lowertemp.return_temperature()-2000,lowertemp.return_temperature() / 2) ,TCMB))
 		lowertemp.react(src)
 		qdel(hotspot)
 
@@ -720,23 +720,29 @@
 
 /datum/reagent/consumable/liquidelectricity
 	name = "Liquid Electricity"
-	description = "The blood of Ethereals, and the stuff that keeps them going. Great for them, horrid for anyone else."
+	description = "The blood of elzuosa, and the stuff that keeps them going. Great for them, horrid for anyone else."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#97ee63"
 	taste_description = "pure electricity"
-
-/datum/reagent/consumable/liquidelectricity/expose_mob(mob/living/M, method=TOUCH, reac_volume) //can't be on life because of the way blood works.
-	if((method == INGEST || method == INJECT || method == PATCH) && iscarbon(M))
-		var/mob/living/carbon/C = M
-		var/obj/item/organ/stomach/ethereal/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
-		if(istype(stomach))
-			stomach.adjust_charge(reac_volume * REM * ETHEREAL_CHARGE_SCALING_MULTIPLIER)	  //WS Edit -- Ethereal Charge Scaling
 
 /datum/reagent/consumable/liquidelectricity/on_mob_life(mob/living/carbon/M)
 	if(prob(25) && !isethereal(M))
 		M.electrocute_act(rand(10,15), "Liquid Electricity in their body", 1) //lmao at the newbs who eat energy bars
 		playsound(M, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	return ..()
+
+/datum/reagent/consumable/electrolytes
+	name = "Electrolytes"
+	description = "It's what crystal-plant-dragons crave."
+	nutriment_factor = 5 * REAGENTS_METABOLISM
+	color = "#8effdd"
+
+/datum/reagent/consumable/electrolytes/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+	if((method == INGEST || method == INJECT || method == PATCH) && iscarbon(M))
+		var/mob/living/carbon/C = M
+		var/obj/item/organ/stomach/ethereal/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
+		if(istype(stomach))
+			stomach.adjust_charge(reac_volume * REM * ETHEREAL_CHARGE_SCALING_MULTIPLIER)	  //WS Edit -- Ethereal Charge Scaling
 
 /datum/reagent/consumable/astrotame
 	name = "Astrotame"

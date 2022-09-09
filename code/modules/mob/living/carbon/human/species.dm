@@ -46,6 +46,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/grad_style
 	///The gradient color used to color the gradient.
 	var/grad_color
+	///The color used for the "white" of the eye, if the eye has one.
+	var/sclera_color = "e8e8e8"
 
 	///Does the species use skintones or not? As of now only used by humans.
 	var/use_skintones = FALSE
@@ -320,6 +322,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		var/should_have = neworgan.get_availability(src) //organ proc that points back to a species trait (so if the species is supposed to have this organ)
 
 		if(oldorgan && (!should_have || replace_current) && !(oldorgan.zone in excluded_zones))
+			neworgan.damage = oldorgan.damage //apply the damage of the old organ to the new organ
 			if(slot == ORGAN_SLOT_BRAIN)
 				var/obj/item/organ/brain/brain = oldorgan
 				if(!brain.decoy_override)//"Just keep it if it's fake" - confucius, probably
@@ -364,31 +367,43 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		switch(old_part.body_zone)
 			if(BODY_ZONE_HEAD)
 				var/obj/item/bodypart/head/new_part = new new_species.species_head()
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_CHEST)
 				var/obj/item/bodypart/chest/new_part = new new_species.species_chest()
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_L_ARM)
 				var/obj/item/bodypart/l_arm/new_part = new new_species.species_l_arm()
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_R_ARM)
 				var/obj/item/bodypart/r_arm/new_part = new new_species.species_r_arm()
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_L_LEG)
 				var/obj/item/bodypart/l_leg/new_part = new new_species.species_l_leg()
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
 			if(BODY_ZONE_R_LEG)
 				var/obj/item/bodypart/r_leg/new_part = new new_species.species_r_leg()
+				new_part.brute_dam = old_part.brute_dam
+				new_part.burn_dam = old_part.burn_dam
 				new_part.replace_limb(C, TRUE)
 				new_part.update_limb(is_creating = TRUE)
 				qdel(old_part)
@@ -448,6 +463,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(NOMOUTH in species_traits)
 		for(var/obj/item/bodypart/head/head in C.bodyparts)
 			head.mouth = FALSE
+
+	if(SCLERA in species_traits)
+		var/obj/item/organ/eyes/eyes = C.getorganslot(ORGAN_SLOT_EYES)
+		eyes.sclera_color = sclera_color
 
 	for(var/X in inherent_traits)
 		ADD_TRAIT(C, X, SPECIES_TRAIT)
@@ -717,15 +736,30 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		// eyes
 		if(!(NOEYESPRITES in species_traits))
-			var/obj/item/organ/eyes/E = H.getorganslot(ORGAN_SLOT_EYES)
+			var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 			var/mutable_appearance/eye_overlay
-			if(!E)
-				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', "eyes_missing", -BODY_LAYER)
-			else
-				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', E.eye_icon_state, -BODY_LAYER)
-			if((EYECOLOR in species_traits) && E)
-				eye_overlay.color = "#" + H.eye_color
-			standing += eye_overlay
+			var/mutable_appearance/sclera_overlay
+			if(eyes)
+				if(!HAS_TRAIT(H, TRAIT_EYESCLOSED) && !(H.stat == DEAD))
+					eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', eyes.eye_icon_state, -BODY_LAYER)
+					sclera_overlay = mutable_appearance('icons/mob/human_face.dmi', eyes.sclera_icon_state, -BODY_LAYER)
+					if((EYECOLOR in species_traits) && eyes)
+						eye_overlay.color = "#" + H.eye_color
+					if((SCLERA in species_traits) && eyes)
+						sclera_overlay.color = "#" + H.sclera_color
+						standing += sclera_overlay
+					standing += eye_overlay
+		if(EMOTE_OVERLAY in species_traits)
+			// blush
+			if (HAS_TRAIT(H, TRAIT_BLUSHING)) // Caused by either the *blush emote or the "drunk" mood event
+				var/mutable_appearance/blush_overlay = mutable_appearance('icons/mob/human_face.dmi', "blush", -BODY_ADJ_LAYER) //should appear behind the eyes
+				blush_overlay.color = COLOR_BLUSH_PINK
+				standing += blush_overlay
+
+			// snore
+			if (HAS_TRAIT(H, TRAIT_SNORE)) // Caused by the snore emote
+				var/mutable_appearance/snore_overlay = mutable_appearance('icons/mob/human_face.dmi', "snore", BODY_ADJ_LAYER) //should appear behind the eyes
+				standing += snore_overlay
 
 	//Underwear, Undershirts & Socks
 	if(!(NO_UNDERWEAR in species_traits))
@@ -1100,25 +1134,25 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(ITEM_SLOT_NECK)
 			if(H.wear_neck && !swap)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_NECK) )
+			if(!(I.slot_flags & ITEM_SLOT_NECK))
 				return FALSE
 			return TRUE
 		if(ITEM_SLOT_BACK)
 			if(H.back && !swap)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_BACK) )
+			if(!(I.slot_flags & ITEM_SLOT_BACK))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_OCLOTHING)
 			if(H.wear_suit && !swap)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_OCLOTHING) )
+			if(!(I.slot_flags & ITEM_SLOT_OCLOTHING))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_GLOVES)
 			if(H.gloves && !swap)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_GLOVES) )
+			if(!(I.slot_flags & ITEM_SLOT_GLOVES))
 				return FALSE
 			if(H.num_hands < 2)
 				return FALSE
@@ -1126,7 +1160,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(ITEM_SLOT_FEET)
 			if(H.shoes && !swap)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_FEET) )
+			if(!(I.slot_flags & ITEM_SLOT_FEET))
 				return FALSE
 			if(H.num_legs < 2)
 				return FALSE
@@ -1178,7 +1212,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(ITEM_SLOT_ICLOTHING)
 			if(H.w_uniform && !swap)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_ICLOTHING) )
+			if(!(I.slot_flags & ITEM_SLOT_ICLOTHING))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_ID)
@@ -1190,7 +1224,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(!disable_warning)
 					to_chat(H, "<span class='warning'>You need a jumpsuit before you can attach this [I.name]!</span>")
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_ID) )
+			if(!(I.slot_flags & ITEM_SLOT_ID))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_LPOCKET)
@@ -1205,7 +1239,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(!disable_warning)
 					to_chat(H, "<span class='warning'>You need a jumpsuit before you can attach this [I.name]!</span>")
 				return FALSE
-			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_LPOCKET) )
+			if(I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_LPOCKET))
 				return TRUE
 		if(ITEM_SLOT_RPOCKET)
 			if(HAS_TRAIT(I, TRAIT_NODROP))
@@ -1219,7 +1253,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(!disable_warning)
 					to_chat(H, "<span class='warning'>You need a jumpsuit before you can attach this [I.name]!</span>")
 				return FALSE
-			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_RPOCKET) )
+			if(I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_RPOCKET))
 				return TRUE
 			return FALSE
 		if(ITEM_SLOT_SUITSTORE)
@@ -1239,7 +1273,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(!disable_warning)
 					to_chat(H, "<span class='warning'>The [I.name] is too big to attach!</span>") //should be src?
 				return FALSE
-			if( istype(I, /obj/item/pda) || istype(I, /obj/item/pen) || is_type_in_list(I, H.wear_suit.allowed) )
+			if(istype(I, /obj/item/pda) || istype(I, /obj/item/pen) || is_type_in_list(I, H.wear_suit.allowed))
 				return TRUE
 			return FALSE
 		if(ITEM_SLOT_HANDCUFFED)
@@ -1649,7 +1683,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	hit_area = affecting.name
 	var/def_zone = affecting.body_zone
 
-	var/armor_block = H.run_armor_check(affecting, "melee", "<span class='notice'>Your armor has protected your [hit_area]!</span>", "<span class='warning'>Your armor has softened a hit to your [hit_area]!</span>",I.armour_penetration)
+	var/armor_block = H.run_armor_check(affecting, "melee", I.armour_penetration, FALSE, "<span class='notice'>Your armor has protected your [hit_area]!</span>", "<span class='warning'>Your armor has softened a hit to your [hit_area]!</span>")
 	armor_block = min(90,armor_block) //cap damage reduction at 90%
 
 	var/weakness = H.check_weakness(I, user)
@@ -1903,7 +1937,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// Very high pressure, show an alert and take damage
 		if(HAZARD_HIGH_PRESSURE to INFINITY)
 			if(!HAS_TRAIT(H, TRAIT_RESISTHIGHPRESSURE))
-				H.adjustBruteLoss(min(((adjusted_pressure / HAZARD_HIGH_PRESSURE) -1 ) * \
+				H.adjustBruteLoss(min(((adjusted_pressure / HAZARD_HIGH_PRESSURE) -1) * \
 					PRESSURE_DAMAGE_COEFFICIENT, MAX_HIGH_PRESSURE_DAMAGE) * H.physiology.pressure_mod)
 				H.throw_alert("pressure", /atom/movable/screen/alert/highpressure, 2)
 			else

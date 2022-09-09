@@ -8,7 +8,6 @@
 	key = "r"
 	flags = NO_STUTTER | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
 
-	icon = 'whitesands/icons/effects/language.dmi'
 	icon_state = "spider"
 
 /datum/language/spider/scramble(input)

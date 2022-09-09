@@ -54,7 +54,7 @@ SUBSYSTEM_DEF(overmap)
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		var/datum/overmap/star/center
 		var/startype = pick(subtypesof(/datum/overmap/star))
-		center = new startype(list("x" = size / 2, "y" = size / 2))
+		center = new startype(list("x" = round(size / 2 + 1), "y" = round(size / 2 + 1)))
 		radius_positions = list()
 		for(var/x in 1 to size)
 			for(var/y in 1 to size)
@@ -278,6 +278,7 @@ SUBSYSTEM_DEF(overmap)
 		surface = null
 	vlevel.fill_in(surface, target_area)
 
+	var/list/ruin_turfs = list()
 	if(ruin_type)
 		var/turf/ruin_turf = locate(rand(
 			vlevel.low_x+6 + vlevel.reserved_margin,
@@ -286,6 +287,7 @@ SUBSYSTEM_DEF(overmap)
 			vlevel.z_value
 			)
 		ruin_type.load(ruin_turf)
+		ruin_turfs[ruin_type.name] = ruin_turf
 
 	if(mapgen) //If what is going on is what I think it is, this is going to need to return some sort of promise to await.
 		log_shuttle("SSOVERMAP: START_DYN_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
@@ -360,7 +362,7 @@ SUBSYSTEM_DEF(overmap)
 		quaternary_dock.dwidth = 0
 		docking_ports += quaternary_dock
 
-	return list(mapzone, docking_ports)
+	return list(mapzone, docking_ports, ruin_turfs)
 
 /**
  * Returns a random, usually empty turf in the overmap

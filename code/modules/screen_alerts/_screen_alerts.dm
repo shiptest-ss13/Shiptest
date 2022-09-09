@@ -12,7 +12,7 @@
 	text_box.text_to_play = text
 	LAZYADD(client.screen_texts, text_box)
 	if(LAZYLEN(client.screen_texts) == 1) //lets only play one at a time, for thematic effect and prevent overlap
-		INVOKE_ASYNC(text_box, /atom/movable/screen/text/screen_text.proc/play_to_client, client)
+		INVOKE_ASYNC(text_box, /atom/movable/screen/text/screen_text.proc/play_to_mob, src)
 		return
 	client.screen_texts += text_box
 
@@ -51,10 +51,12 @@
 /**
  * proc for actually playing this screen_text on a mob.
  * Arguments:
- * * player: client to play to
+ * * user: mob to play to
  */
-/atom/movable/screen/text/screen_text/proc/play_to_client(client/player)
-	player?.screen += src
+/atom/movable/screen/text/screen_text/proc/play_to_mob(mob/user)
+	if(QDELETED(user))
+		return
+	user.client?.screen += src
 	if(fade_in_time)
 		animate(src, alpha = 255)
 	var/list/lines_to_skip = list()
@@ -77,21 +79,23 @@
 			continue
 		maptext = "[style_open][copytext_char(text_to_play, 1, letter)][style_close]"
 		sleep(play_delay)
-	addtimer(CALLBACK(src, .proc/after_play, player), fade_out_delay)
+	addtimer(CALLBACK(src, .proc/after_play, user), fade_out_delay)
 
 ///handles post-play effects like fade out after the fade out delay
-/atom/movable/screen/text/screen_text/proc/after_play(client/player)
+/atom/movable/screen/text/screen_text/proc/after_play(mob/user)
 	if(!fade_out_time)
-		end_play(player)
+		end_play(user)
 		return
 	animate(src, alpha = 0, time = fade_out_time)
-	addtimer(CALLBACK(src, .proc/end_play, player), fade_out_time)
+	addtimer(CALLBACK(src, .proc/end_play, user), fade_out_time)
 
 ///ends the play then deletes this screen object and plalys the next one in queue if it exists
-/atom/movable/screen/text/screen_text/proc/end_play(client/player)
-	player.screen -= src
-	LAZYREMOVE(player.screen_texts, src)
-	qdel(src)
-	if(!LAZYLEN(player.screen_texts))
+/atom/movable/screen/text/screen_text/proc/end_play(mob/user)
+	if(!user.client)
 		return
-	player.screen_texts[1].play_to_client(player)
+	user.client.screen -= src
+	LAZYREMOVE(user.client.screen_texts, src)
+	qdel(src)
+	if(!LAZYLEN(user.client.screen_texts))
+		return
+	user.client.screen_texts[1].play_to_mob(user)

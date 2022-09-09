@@ -72,11 +72,10 @@
 		if(last_act + (40 * I.toolspeed) > world.time)//prevents message spam
 			return
 		last_act = world.time
-		to_chat(user, "<span class='notice'>You start picking...</span>")
+		balloon_alert(user, "digging...")
 
 		if(I.use_tool(src, user, 40, volume=50))
 			if(ismineralturf(src))
-				to_chat(user, "<span class='notice'>You finish cutting into the rock.</span>")
 				gets_drilled(user, TRUE)
 				SSblackbox.record_feedback("tally", "pick_used_mining", 1, I.type)
 	else
@@ -109,7 +108,7 @@
 	..()
 
 /turf/closed/mineral/attack_alien(mob/living/carbon/alien/M)
-	to_chat(M, "<span class='notice'>You start digging into the rock...</span>")
+	balloon_alert(M, "digging...")
 	playsound(src, 'sound/effects/break_stone.ogg', 50, TRUE)
 	if(do_after(M, 40, target = src))
 		to_chat(M, "<span class='notice'>You tunnel into the rock.</span>")
@@ -628,8 +627,8 @@
 
 
 /turf/closed/mineral/iron/whitesands
-	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
-	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	icon = 'icons/turf/walls/ws_walls.dmi'
+	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
@@ -638,8 +637,8 @@
 	has_borders = FALSE
 
 /turf/closed/mineral/uranium/whitesands
-	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
-	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	icon = 'icons/turf/walls/ws_walls.dmi'
+	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
@@ -648,8 +647,8 @@
 	has_borders = FALSE
 
 /turf/closed/mineral/diamond/whitesands
-	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
-	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	icon = 'icons/turf/walls/ws_walls.dmi'
+	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
@@ -658,8 +657,8 @@
 	has_borders = FALSE
 
 /turf/closed/mineral/plasma/whitesands
-	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
-	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	icon = 'icons/turf/walls/ws_walls.dmi'
+	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
@@ -668,8 +667,8 @@
 	has_borders = FALSE
 
 /turf/closed/mineral/bscrystal/whitesands
-	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
-	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	icon = 'icons/turf/walls/ws_walls.dmi'
+	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
@@ -678,8 +677,8 @@
 	has_borders = FALSE
 
 /turf/closed/mineral/gibtonite/whitesands
-	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
-	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	icon = 'icons/turf/walls/ws_walls.dmi'
+	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
@@ -688,8 +687,8 @@
 	has_borders = FALSE
 
 /turf/closed/mineral/random/whitesands
-	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
-	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	icon = 'icons/turf/walls/ws_walls.dmi'
+	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
@@ -700,9 +699,9 @@
 	defer_change = TRUE
 	has_borders = FALSE
 
-/turf/closed/mineral/random/whitesands/high_chance
-	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
-	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+/turf/closed/mineral/random/high_chance
+	icon = 'icons/turf/walls/ws_walls.dmi'
+	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
@@ -711,8 +710,8 @@
 	has_borders = FALSE
 
 /turf/closed/mineral/random/labormineral/whitesands
-	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
-	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	icon = 'icons/turf/walls/ws_walls.dmi'
+	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
@@ -721,8 +720,8 @@
 	has_borders = FALSE
 
 /turf/closed/mineral/random/low_chance
-	icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
-	smooth_icon = 'whitesands/icons/turf/walls/whitesands/ws_walls.dmi'
+	icon = 'icons/turf/walls/ws_walls.dmi'
+	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried

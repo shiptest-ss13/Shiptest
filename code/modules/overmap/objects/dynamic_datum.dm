@@ -23,10 +23,12 @@
 	var/static/list/probabilities
 	///The planet that will be forced to load
 	var/force_encounter
+	/// list of ruins and their target turf, indexed by name
+	var/list/ruin_turfs
 
-/datum/overmap/dynamic/Initialize(position, ...)
+/datum/overmap/dynamic/Initialize(position, load_now=TRUE, ...)
 	. = ..()
-	choose_level_type()
+	choose_level_type(load_now)
 
 /datum/overmap/dynamic/Destroy()
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -35,6 +37,7 @@
 	if(mapzone)
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
+	ruin_turfs = null
 	return ..()
 
 /datum/overmap/dynamic/get_jump_to_turf()
@@ -86,7 +89,7 @@
 /**
  * Chooses a type of level for the dynamic level to use.
  */
-/datum/overmap/dynamic/proc/choose_level_type()
+/datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE)
 	var/chosen
 	if(!probabilities)
 		probabilities = list(DYNAMIC_WORLD_LAVA = min(length(SSmapping.lava_ruins_templates), 20),
@@ -157,9 +160,11 @@
 			token.icon_state = "strange_event"
 			token.color = null
 
-	#ifndef QUICK_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
-	load_level() //Load the level whenever it's randomised
-	#endif
+// - SERVER ISSUE: LOADING ALL PLANETS AT ROUND START KILLS PERFORMANCE BEYOND WHAT IS REASONABLE. OPTIMIZE SSMOBS IF YOU WANT THIS BACK
+// #ifdef FULL_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
+// 	if(load_now)
+// 		load_level() //Load the level whenever it's randomised
+// #endif
 
 	if(!preserve_level)
 		token.desc += "It may not still be here if you leave it."
@@ -190,6 +195,7 @@
 		return FALSE
 	mapzone = dynamic_encounter_values[1]
 	reserve_docks = dynamic_encounter_values[2]
+	ruin_turfs = dynamic_encounter_values[3]
 	return TRUE
 
 /area/overmap_encounter

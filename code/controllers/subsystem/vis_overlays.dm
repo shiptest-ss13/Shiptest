@@ -48,7 +48,10 @@ SUBSYSTEM_DEF(vis_overlays)
 		unique_vis_overlays += overlay
 		vis_overlay_cache[cache_id] = overlay
 		. = overlay
-	thing.vis_contents += overlay
+	if(overlay == null)
+		message_debug("Somehow someway we generated a null vis_overlay! ([thing.type]|[icon]|[iconstate])")
+	else
+		thing.vis_contents += overlay
 
 	if(!isatom(thing)) // Automatic rotation is not supported on non atoms
 		return
@@ -89,8 +92,11 @@ SUBSYSTEM_DEF(vis_overlays)
 	var/list/overlays_to_remove = list()
 	for(var/i in thing.managed_vis_overlays - unique_vis_overlays)
 		var/obj/effect/overlay/vis/overlay = i
-		add_vis_overlay(thing, overlay.icon, overlay.icon_state, overlay.layer, overlay.plane, turn(overlay.dir, rotation), overlay.alpha, overlay.appearance_flags)
-		overlays_to_remove += overlay
+		if(overlay == null)
+			message_debug("Somehow someway we are processing a null vis_overlay! ([thing.type])")
+		else
+			add_vis_overlay(thing, overlay.icon, overlay.icon_state, overlay.layer, overlay.plane, turn(overlay.dir, rotation), overlay.alpha, overlay.appearance_flags)
+			overlays_to_remove += overlay
 	for(var/i in thing.managed_vis_overlays & unique_vis_overlays)
 		var/obj/effect/overlay/vis/overlay = i
 		overlay.dir = turn(overlay.dir, rotation)

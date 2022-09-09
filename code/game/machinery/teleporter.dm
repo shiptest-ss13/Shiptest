@@ -190,7 +190,7 @@
 	toggle(user)
 
 /obj/machinery/teleport/station/proc/toggle(mob/user)
-	if(machine_stat & (BROKEN|NOPOWER) || !teleporter_hub || !teleporter_console )
+	if(machine_stat & (BROKEN|NOPOWER) || !teleporter_hub || !teleporter_console)
 		return
 	if (teleporter_console.target)
 		if(teleporter_hub.panel_open || teleporter_hub.machine_stat & (BROKEN|NOPOWER))

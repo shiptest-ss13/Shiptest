@@ -1144,7 +1144,7 @@
 								"<span class='hear'>You hear welding.</span>")
 				if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, .proc/weld_checks, W, user)))
 					obj_integrity = max_integrity
-					machine_stat &= ~BROKEN
+					set_machine_stat(machine_stat & ~BROKEN)
 					user.visible_message("<span class='notice'>[user] finishes welding [src].</span>", \
 										"<span class='notice'>You finish repairing the airlock.</span>")
 					update_icon()
@@ -1236,7 +1236,7 @@
 
 
 /obj/machinery/door/airlock/open(forced=0)
-	if( operating || welded || locked || seal )
+	if(operating || welded || locked || seal)
 		return FALSE
 	if(!forced)
 		if(!hasPower() || wires.is_cut(WIRE_OPEN))

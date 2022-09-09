@@ -120,3 +120,11 @@
 
 /obj/structure/railing/proc/after_rotation(mob/user,rotation_type)
 	add_fingerprint(user)
+
+/obj/structure/railing/wood
+	name = "wooden railing"
+	color = "#A47449"
+
+/obj/structure/railing/corner/wood
+	name = "wooden railing"
+	color = "#A47449"

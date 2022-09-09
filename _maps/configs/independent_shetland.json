@@ -1,0 +1,44 @@
+{
+	"map_name": "Shetland-class Multipurpose Frigate",
+	"prefix": "SV",
+	"namelists": ["GENERAL", "SPACE","NATURAL","MYTHOLOGICAL"],
+	"map_short_name": "Shetland-class",
+	"map_path": "_maps/shuttles/shiptest/independent_shetland.dmm",
+	"map_id": "independent_shetland",
+	"roundstart": true,
+	"job_slots": {
+		"Captain": 1,
+		"Lieutenant": {
+			"outfit": "/datum/outfit/job/lieutenant",
+			"officer": true,
+			"slots": 1
+		},
+		"First Mate": {
+			"outfit": "/datum/outfit/job/head_of_personnel",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Doctor": 1,
+		"Paramedic": 1,
+		"Ship's Engineer": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
+		"Atmospheric Technician": 1,
+		"Asteroid Miner": {
+			"outfit": "/datum/outfit/job/miner/hazard",
+			"slots": 2
+		},
+		"Security Detail": {
+			"outfit": "/datum/outfit/job/security",
+			"slots": 1
+		},
+		"Detective": 1,
+		"Janitor": 1,
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 5
+		}
+	},
+	"cost": 750
+}

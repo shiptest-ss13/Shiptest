@@ -1,9 +1,9 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Geneva-class Search and Rescue Vessel",
 	"prefix": "SRV",
 	"map_short_name": "Geneva-class",
 	"map_path": "_maps/shuttles/shiptest/syndicate_geneva.dmm",
-	"map_id": "syndicate_geneva",
 	"job_slots": {
 		"Medical Professor": {
 			"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
@@ -31,5 +31,5 @@
 			"slots": 1
 		}
 	},
-	"cost": 500
+	"enabled": true
 }

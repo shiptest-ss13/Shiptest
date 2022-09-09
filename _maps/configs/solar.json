@@ -1,8 +1,8 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Solar-class Research Vessel",
 	"map_short_name": "Solar-class",
 	"map_path": "_maps/shuttles/shiptest/solar_class.dmm",
-	"map_id": "solar_class",
 	"job_slots": {
 		"Captain": 1,
 		"Head of Personnel": 1,
@@ -13,5 +13,5 @@
 		"Security Officer": 1,
 		"Assistant": 5
 	},
-	"cost": 750
+	"enabled": true
 }
