@@ -18,9 +18,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/frame/computer{
-	dir = 8
-	},
+/obj/structure/filingcabinet/medical,
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "ax" = (
@@ -65,6 +63,10 @@
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew)
+"bS" = (
+/obj/item/trash/cheesie,
+/turf/open/floor/wood/yew,
+/area/ship/crew/office)
 "bV" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband,
@@ -1026,6 +1028,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
+/obj/structure/closet/crate/internals,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "ui" = (
@@ -1131,6 +1134,7 @@
 "wd" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/cmo,
+/obj/item/book/manual/wiki/medical_cloning,
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "wh" = (
@@ -1203,6 +1207,9 @@
 	},
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
@@ -1895,6 +1902,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Lj" = (
@@ -1979,6 +1987,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/closet/crate/medical,
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "MR" = (
@@ -2045,8 +2054,16 @@
 /obj/machinery/shower{
 	dir = 4
 	},
-/obj/structure/curtain,
+/obj/effect/turf_decal/techfloor/hole,
+/obj/effect/turf_decal/techfloor/hole/right,
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
 /obj/item/soap/syndie,
+/obj/structure/curtain,
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
 "Nw" = (
@@ -2561,6 +2578,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/structure/closet/crate/internals,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Xn" = (
@@ -3153,7 +3171,7 @@ Wc
 Wc
 Wc
 Gb
-SY
+bS
 SY
 En
 Va
