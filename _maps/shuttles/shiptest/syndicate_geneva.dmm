@@ -24,7 +24,7 @@
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "ax" = (
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew)
 "aN" = (
 /obj/machinery/light{
@@ -1016,7 +1016,7 @@
 /area/ship/cargo)
 "tF" = (
 /obj/machinery/washing_machine,
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew)
 "tS" = (
 /turf/open/floor/plasteel/dark,
@@ -1161,12 +1161,6 @@
 /obj/machinery/door/window/northright,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"wL" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/medical/surgery)
 "wM" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable,
@@ -1210,7 +1204,7 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 1
 	},
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew)
 "xM" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1283,7 +1277,7 @@
 /obj/structure/sink{
 	pixel_y = 20
 	},
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew)
 "zT" = (
 /obj/machinery/computer/helm,
@@ -2053,7 +2047,7 @@
 	},
 /obj/structure/curtain,
 /obj/item/soap/syndie,
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/freezer,
 /area/ship/crew)
 "Nw" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning,
@@ -2413,6 +2407,9 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "UX" = (
@@ -2974,7 +2971,7 @@ cd
 GD
 hA
 oC
-wL
+SI
 SI
 SI
 SI
