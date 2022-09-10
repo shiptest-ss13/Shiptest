@@ -1,4 +1,4 @@
-﻿<#
+<#
 This is a script designed to parse through your server logs and locate any SQL errors reported.
 If found an email is sent to addresses specified in the configuration file: email_config.ps1.
 A SMTP server is required, if you don't have one the defaults for Gmail's can be used.

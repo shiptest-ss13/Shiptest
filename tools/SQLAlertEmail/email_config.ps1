@@ -1,4 +1,4 @@
-﻿$Path = '..\..\data\logs\' #Server directory up to the year folder, this can be a relative or absolute path; remember the trailing \
+$Path = '..\..\data\logs\' #Server directory up to the year folder, this can be a relative or absolute path; remember the trailing \
 $StringToMatch = 'SQL:'
 $From = 'admin@server.com'
 [string[]]$To = 'email@address.com', 'a_different@address.org' #Email will be sent to each address listed here, you can have as many as you want
