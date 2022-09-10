@@ -110,6 +110,12 @@
 	}													\
 	/obj/effect/turf_decal/spline/fancy/corner/##color_name {	\
 		icon_state = "spline_fancy_corner"				\
+	}													\
+	/obj/effect/turf_decal/road/line/##color_name {		\
+		color = ##tile_color							\
+	}													\
+	/obj/effect/turf_decal/road/line/edge/##color_name {		\
+		color = ##tile_color							\
 	}
 
 //opaque
@@ -724,3 +730,26 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 	alpha = 230
 	icon = 'icons/obj/solgov_floor.dmi'
 	icon_state = "center"
+
+/obj/effect/turf_decal/road
+	name = "roal decal"
+	icon_state = "road"
+	alpha = 180
+
+/obj/effect/turf_decal/road/edge
+	icon_state = "road_edge"
+
+/obj/effect/turf_decal/road/stripes
+	icon_state = "road_stripes"
+
+/obj/effect/turf_decal/road/stop
+	icon_state = "road_stop"
+
+/obj/effect/turf_decal/road/slow
+	icon_state = "road_slow"
+
+/obj/effect/turf_decal/road/line
+	icon_state = "road_line"
+
+/obj/effect/turf_decal/road/line/edge
+	icon_state = "road_line_edge"
