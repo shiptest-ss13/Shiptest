@@ -58,6 +58,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/transparent/ntblue/diagonal,
+/obj/structure/closet/secure_closet/captains,
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
 "cy" = (
@@ -236,8 +237,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/ntblue,
-/obj/item/radio/intercom/wideband,
-/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
 "fN" = (
@@ -370,7 +369,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "hS" = (
@@ -397,6 +395,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/window/reinforced/tinted/frosted,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ib" = (
@@ -992,6 +991,7 @@
 /obj/structure/sign/poster/random{
 	pixel_x = -32
 	},
+/obj/item/toy/gun,
 /turf/open/floor/carpet/red,
 /area/ship/medical)
 "rV" = (
@@ -1152,6 +1152,7 @@
 "uQ" = (
 /obj/structure/table/wood,
 /obj/item/toy/cards/deck,
+/obj/item/toy/eightball,
 /turf/open/floor/wood/birch,
 /area/ship/crew/canteen)
 "uZ" = (
@@ -1308,6 +1309,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/window/reinforced/tinted/frosted,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yJ" = (
@@ -2412,7 +2414,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/ntblue,
-/obj/structure/closet/secure_closet/captains,
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
 "Qj" = (
@@ -3003,14 +3004,35 @@
 	pixel_x = -32
 	},
 /obj/structure/table/reinforced,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/stack/spacecash/c1000,
-/obj/item/toy/gun,
-/obj/item/toy/eightball,
+/obj/item/stack/spacecash/c1000{
+	pixel_y = 12;
+	pixel_x = 8
+	},
 /obj/structure/railing,
+/obj/item/stack/spacecash/c1000{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/stack/spacecash/c1000{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/stack/spacecash/c1000{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/stack/spacecash/c1000{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/stack/spacecash/c1000{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/radio/intercom/wideband{
+	dir = 4;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "ZV" = (
