@@ -224,7 +224,7 @@
 	desc = "Beer is quite possibly the worst thing to use as interstellar propulsion, how these even work is a mystery."
 	max_reagents = 1000
 	thrust = 10
-	fuel_reagents= list(/datum/reagent/consumable/ethanol/beer=50)
+	fuel_reagents= list(/datum/reagent/consumable/ethanol/beer = 50)
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/beer
 
 /**
