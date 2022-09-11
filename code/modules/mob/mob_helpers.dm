@@ -112,6 +112,46 @@
 		. += "[newletter]"
 	return sanitize(.)
 
+/**
+ * Dwarf slurring- around half as intense to represent that dorfs have extreme resistance to inebriating effects
+ */
+/proc/dorfslur(phrase)
+	phrase = html_decode(phrase)
+	var/leng = length(phrase)
+	. = ""
+	var/newletter = ""
+	var/rawchar = ""
+	for(var/i = 1, i <= leng, i += length(rawchar))
+		rawchar = newletter = phrase[i]
+		if(rand(1, 6) == 6)
+			var/lowerletter = lowertext(newletter)
+			if(lowerletter == "o")
+				newletter = "u"
+			else if(lowerletter == "s")
+				newletter = "ch"
+			else if(lowerletter == "a")
+				newletter = "ah"
+			else if(lowerletter == "u")
+				newletter = "oo"
+			else if(lowerletter == "c")
+				newletter = "k"
+		if(rand(1, 30) == 30)
+			if(newletter == " ")
+				newletter = "...huh..."
+			else if(newletter == ".")
+				newletter = " *urp*."
+		switch(rand(1, 50))
+			if(1)
+				newletter += "'"
+			if(25)
+				newletter += "[newletter]"
+			if(50)
+				newletter += "[newletter][newletter]"
+			else
+				// do nothing
+		. += "[newletter]"
+	return sanitize(.)
+
 /// Makes you talk like you got cult stunned, which is slurring but with some dark messages
 /proc/cultslur(phrase) // Inflicted on victims of a stun talisman
 	phrase = html_decode(phrase)
