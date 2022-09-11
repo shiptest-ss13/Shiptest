@@ -1613,7 +1613,10 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
 /area/ship/maintenance/starboard)
 "pp" = (
 /obj/structure/table/optable,
@@ -3450,7 +3453,10 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
 /area/ship/maintenance/port)
 "Hl" = (
 /obj/structure/chair/comfy/shuttle{
@@ -3606,7 +3612,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
 /area/ship/maintenance/starboard)
 "Il" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -4214,7 +4223,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
 /area/ship/maintenance/port)
 "Og" = (
 /obj/machinery/light{
