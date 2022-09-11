@@ -253,9 +253,16 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ANTENNAE "antennae"
 /// The holder of this trait can be picked up and held by another mob that does NOT have this trait.
 #define TRAIT_HOLDABLE "holdable"
+/// This person is blushing
+#define TRAIT_BLUSHING "blushing"
+/// The person has their eyes closed. Visual only
+#define TRAIT_EYESCLOSED "eyesclosed"
+/// The person is snoring. Visual only
+#define TRAIT_SNORE "snoring"
 /// the holder of this trait will be scooped instead of fireman carried
 #define TRAIT_SCOOPABLE "scoopable"
-
+//your smooches actually deal damage to their target
+#define TRAIT_KISS_OF_DEATH "kiss_of_death"
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
 #define TRAIT_PARALYSIS "paralysis"
@@ -296,6 +303,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SNOB "snob"
 #define TRAIT_BALD "bald"
 #define TRAIT_BADTOUCH "bad_touch"
+#define TRAIT_ANXIOUS "anxious"
+
+/// Trait granted by lipstick
+#define LIPSTICK_TRAIT "lipstick_trait"
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

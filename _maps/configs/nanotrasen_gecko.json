@@ -1,10 +1,10 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Gecko-class Salvage Runner",
 	"prefix": "NTSV",
 	"namelists": ["GENERAL", "BRITISH_NAVY", "MERCANTILE", "SPACE"],
 	"map_short_name": "Gecko-class",
 	"map_path": "_maps/shuttles/shiptest/nanotrasen_gecko.dmm",
-	"map_id": "nanotrasen_gecko",
 	"limit": 2,
 	"job_slots": {
 		"Captain": {
@@ -30,5 +30,5 @@
 			"slots": 4
 		}
 	},
-	"cost": 750
+	"enabled": true
 }

@@ -1,28 +1,21 @@
 /datum/job/scientist
-	title = "Scientist"
-	department_head = list("Research Director")
-	faction = "Station"
+	name = "Scientist"
 	total_positions = 5
 	spawn_positions = 3
-	supervisors = "the research director"
-	selection_color = "#ffeeff"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Scientist" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Xenobiologist", "Nanite Researcher", "Junior Scientist")
-	senior_title = "Senior Scientist"
 
 	outfit = /datum/outfit/job/scientist
 
 	access = list(ACCESS_ROBOTICS, ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE) //WS edit - Gen/Sci Split
 	minimal_access = list(ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_SCI
 
 	display_order = JOB_DISPLAY_ORDER_SCIENTIST
 
 /datum/outfit/job/scientist
 	name = "Scientist"
+	job_icon = "scientist"
 	jobtype = /datum/job/scientist
 
 	belt = /obj/item/pda/toxins
@@ -56,7 +49,7 @@
 	name = "Scientist (Fauna Researcher)"
 
 	belt = /obj/item/melee/curator_whip
-	suit = /obj/item/clothing/suit/curator
+	suit = /obj/item/clothing/suit/armor/curator
 	head = /obj/item/clothing/head/fedora
 
 	pda_slot = ITEM_SLOT_LPOCKET

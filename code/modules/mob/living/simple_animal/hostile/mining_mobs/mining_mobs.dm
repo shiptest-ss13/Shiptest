@@ -29,7 +29,7 @@
 	else if (!armor)
 		armor = getArmor()
 	else if (!istype(armor, /datum/armor))
-		stack_trace("Invalid type [armor.type] found in .armor during /mob/living/simple_animal/hostile/asteroid Initialize()")		//WS edit begin - Whitesands
+		stack_trace("Invalid type [armor.type] found in .armor during [src.type] Initialize()")		//WS edit begin - Whitesands
 
 	. = ..()
 	apply_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)

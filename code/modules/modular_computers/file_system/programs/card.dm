@@ -21,7 +21,6 @@
 	var/minor = FALSE
 	var/authenticated = FALSE
 	var/list/region_access
-	var/list/head_subordinates
 	///Which departments this computer has access to. Defined as access regions. null = all departments
 	var/target_dept
 
@@ -84,14 +83,6 @@
 			region_access += info["region"]
 			//I don't even know what I'm doing anymore
 			head_types += info["head"]
-
-	head_subordinates = list()
-	if(length(head_types))
-		for(var/j in SSjob.occupations)
-			var/datum/job/job = j
-			for(var/head in head_types)//god why
-				if(head in job.department_head)
-					head_subordinates += job.title
 
 	if(length(region_access))
 		minor = TRUE
@@ -173,8 +164,7 @@
 			if(!computer || !authenticated)
 				return
 			if(minor)
-				if(!(id_card.assignment in head_subordinates) && id_card.assignment != "Assistant")
-					return
+				return
 
 			id_card.access -= get_all_centcom_access() + get_all_accesses()
 			id_card.assignment = "Unassigned"
@@ -204,7 +194,7 @@
 					id_card.assignment = custom_name
 					id_card.update_label()
 			else
-				if(minor && !(target in head_subordinates))
+				if(minor)
 					return
 				var/list/new_access = list()
 				if(is_centcom)
@@ -213,7 +203,7 @@
 					var/datum/job/job
 					for(var/jobtype in subtypesof(/datum/job))
 						var/datum/job/J = new jobtype
-						if(J.title == target)
+						if(J.name == target)
 							job = J
 							break
 					if(!job)
@@ -333,7 +323,7 @@
 		var/list/job_list = departments[department]
 		var/list/department_jobs = list()
 		for(var/job in job_list)
-			if(minor && !(job in head_subordinates))
+			if(minor)
 				continue
 			department_jobs += list(list(
 				"display_name" = replacetext(job, "&nbsp", " "),

@@ -151,9 +151,8 @@
 
 		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/spacepod)) //WS - add spacepod
 
-		for(var/HM in typecache_filter_list(range(vision_range, targets_from), hostile_machines))
-			if(can_see(targets_from, HM, vision_range))
-				. += HM
+		. += typecache_filter_list(view(vision_range, targets_from), hostile_machines)
+
 	else
 		. = oview(vision_range, targets_from)
 
@@ -599,6 +598,8 @@
 	if(!can_charge_target(target))
 		return FALSE
 	Shake(15, 15, 1 SECONDS)
+	var/obj/effect/temp_visual/decoy/new_decoy = new /obj/effect/temp_visual/decoy(loc,src)
+	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 3)
 	target.visible_message("<span class='danger'>[src] prepares to pounce!</span>")
 	addtimer(CALLBACK(src, .proc/handle_charge_target, target), 1.5 SECONDS, TIMER_STOPPABLE)
 
