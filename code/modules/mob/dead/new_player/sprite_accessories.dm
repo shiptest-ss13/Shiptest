@@ -2833,3 +2833,11 @@
 /datum/sprite_accessory/tails_animated/elzu/placeholder
 	name = "Placeholder"
 	icon_state = "placeholder"
+
+/datum/sprite_accessory/tails/elzu/bifurcated
+	name = "Bifurcated"
+	icon_state = "bifurcated"
+
+/datum/sprite_accessory/tails_animated/elzu/bifurcated
+	name = "Bifurcated"
+	icon_state = "bifurcated"
