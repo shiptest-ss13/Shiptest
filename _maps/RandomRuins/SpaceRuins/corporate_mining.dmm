@@ -24,7 +24,8 @@
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "aE" = (
 /obj/item/trash/candy,
@@ -55,7 +56,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "bn" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -281,7 +282,7 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "fU" = (
 /obj/structure/bed,
@@ -426,7 +427,7 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "iR" = (
 /turf/closed/wall,
@@ -444,6 +445,14 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
+"jB" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space)
 "kd" = (
 /obj/structure/sink/puddle,
 /turf/closed/mineral,
@@ -453,7 +462,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "kg" = (
 /obj/machinery/door/airlock/external,
@@ -504,7 +513,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "ld" = (
 /obj/structure/girder/reinforced,
@@ -554,7 +564,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "mx" = (
 /obj/machinery/vending/cigarette,
@@ -608,7 +618,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/corporatemine/hall)
 "nx" = (
 /obj/structure/chair/office/light{
@@ -772,7 +782,7 @@
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "qu" = (
 /turf/closed/wall/rust,
@@ -838,11 +848,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/corporatemine)
 "sj" = (
-/obj/structure/lattice,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "so" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -928,7 +938,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "wD" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -986,14 +997,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/corporatemine/bridge)
-"xL" = (
-/obj/structure/lattice,
-/obj/structure/railing,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating/catwalk_floor,
-/area/ruin/space)
 "yb" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -1027,6 +1030,12 @@
 /obj/structure/sign/poster/ripped,
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/corporatemine/hall)
+"yp" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space)
 "yw" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 1
@@ -1059,7 +1068,8 @@
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "yW" = (
 /obj/machinery/power/smes,
@@ -1185,9 +1195,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
-"Cy" = (
-/turf/template_noop,
-/area/ruin/space)
 "Cz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -1286,6 +1293,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/corporatemine)
+"DU" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space)
 "DV" = (
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plating/asteroid/airless,
@@ -1344,7 +1354,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "EN" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -1367,6 +1381,14 @@
 /obj/machinery/computer/pod/old/syndicate,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/corporatemine/corpquarters)
+"Fg" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space)
 "Ft" = (
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall,
@@ -1593,7 +1615,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "MN" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1778,7 +1800,8 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "OX" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -2177,7 +2200,8 @@
 /area/ruin/space/has_grav/corporatemine/bridge)
 "VL" = (
 /obj/structure/railing,
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating/airless,
 /area/ruin/space)
 "Wf" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2445,7 +2469,7 @@ Lz
 Lz
 Lz
 Lz
-Cy
+Lz
 ND
 ND
 ND
@@ -3563,7 +3587,7 @@ Wp
 Wp
 MD
 bh
-kj
+yp
 mn
 Wp
 Lz
@@ -3612,10 +3636,10 @@ Wp
 Wp
 Wp
 DV
-CO
+DU
 fP
-CO
-CO
+DU
+DU
 nC
 Lz
 Lz
@@ -3663,9 +3687,9 @@ ND
 RD
 Wp
 Wp
-CO
+DU
 qp
-CO
+DU
 ND
 Wp
 wC
@@ -3716,11 +3740,11 @@ py
 kj
 kj
 iE
-CO
+DU
 ND
 ND
 Wp
-xL
+wC
 Lz
 Lz
 Lz
@@ -3774,7 +3798,7 @@ Lz
 BV
 sj
 Lz
-TF
+jB
 fJ
 TF
 zn
@@ -3876,9 +3900,9 @@ ND
 ND
 Lz
 BV
-EH
+sj
 Lz
-Oq
+Fg
 Oq
 Oq
 nf
@@ -3928,7 +3952,7 @@ ND
 Lz
 Lz
 BV
-EH
+sj
 Lz
 Lz
 Lz
@@ -3980,7 +4004,7 @@ Lz
 Lz
 Lz
 BV
-EH
+sj
 Lz
 Lz
 Lz
@@ -4032,9 +4056,9 @@ ND
 ND
 BV
 BV
-EH
+sj
 Lz
-TF
+jB
 fJ
 TF
 zn
@@ -4136,9 +4160,9 @@ Lz
 Lz
 Lz
 BV
-EH
+sj
 Lz
-Oq
+Fg
 Oq
 Oq
 nf
@@ -4188,7 +4212,7 @@ Lz
 Lz
 Lz
 BV
-EH
+sj
 Lz
 Lz
 Lz
@@ -4240,7 +4264,7 @@ BV
 BV
 BV
 BV
-EH
+sj
 Lz
 Lz
 Lz
@@ -4294,7 +4318,7 @@ Lz
 BV
 sj
 Lz
-TF
+jB
 fJ
 TF
 zn
@@ -4396,9 +4420,9 @@ Lz
 Lz
 Lz
 BV
-EH
+sj
 Lz
-Oq
+Fg
 Oq
 Oq
 nf
@@ -4448,7 +4472,7 @@ Lz
 Lz
 Lz
 BV
-EH
+sj
 Lz
 Lz
 Lz
