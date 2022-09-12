@@ -293,6 +293,16 @@
 		/obj/item/stack/sheet/mineral/uranium = 10,
 		/obj/item/stack/sheet/mineral/plasma = 5)
 
+/obj/item/circuitboard/machine/rtg/geothermal
+	name = "Geothermal Power Tap"
+	build_path = /obj/machinery/power/rtg/geothermal
+	req_components = list(
+	/obj/item/pickaxe/drill = 1,
+	/obj/item/stack/cable_coil = 10,
+	/obj/item/stock_parts/capacitor = 2,
+	/obj/item/stock_parts/micro_laser = 1,
+	/obj/item/stock_parts/manipulator = 4)
+
 /obj/item/circuitboard/machine/scanner_gate
 	name = "Scanner Gate (Machine Board)"
 	icon_state = "engineering"

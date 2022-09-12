@@ -100,3 +100,13 @@
 	..() //extend the zap
 	if(tesla_flags & ZAP_MACHINE_EXPLOSIVE)
 		overload()
+
+// "Geothermal Tap" for relatively hands off power in ruins.
+// They can currently be salvaged (This is bad) and if I can figure out how to make them drop lava when deconstructed. Then I will.
+//try and toss these near lava for more fun
+
+/obj/machinery/power/rtg/geothermal
+	name = "Geothermal Power Tap"
+	desc = "A complex machine that drills into the soil below it to gather thermal power."
+	power_gen = 2500
+	circuit = /obj/item/circuitboard/machine/rtg/geothermal
