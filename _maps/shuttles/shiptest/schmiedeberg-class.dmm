@@ -143,7 +143,6 @@
 	dir = 10
 	},
 /obj/structure/window/reinforced/spawner/north,
-/obj/item/storage/pill_bottle/floorpill,
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
 "bH" = (
@@ -1124,6 +1123,7 @@
 	id = "pharmlobby"
 	},
 /obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/lootdrop/maintenance/four,
 /turf/open/floor/mineral/titanium,
 /area/ship/cargo)
 "qD" = (
@@ -1706,7 +1706,6 @@
 /area/ship/crew/hydroponics)
 "Bb" = (
 /obj/structure/rack,
-/obj/item/storage/pill_bottle/floorpill,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
@@ -1714,6 +1713,7 @@
 	dir = 4;
 	pixel_x = -23
 	},
+/obj/item/storage/pill_bottle/floorpill/full,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "Bg" = (
@@ -2640,7 +2640,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "pharmlobby"
 	},
-/obj/item/storage/pill_bottle/floorpill,
+/obj/effect/spawner/lootdrop/maintenance/four,
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
 "OO" = (
