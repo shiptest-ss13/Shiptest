@@ -5,6 +5,7 @@
 
 	telegraph_duration = 400
 	telegraph_message = "<span class='boldwarning'>Thunder rumbles far above. You hear droplets drumming against the canopy. Seek shelter.</span>"
+	telegraph_overlay = "acid_rain_low"
 
 	weather_message = "<span class='userdanger'><i>Acidic rain pours down around you! Get inside!</i></span>"
 	weather_overlay = "acid_rain"
