@@ -110,3 +110,9 @@
 	desc = "A complex machine that drills into the soil below it to gather thermal power."
 	power_gen = 2500
 	circuit = /obj/item/circuitboard/machine/rtg/geothermal
+
+/obj/machinery/power/rtg/geothermal/Initialize(mapload)
+	. = ..()
+	if(mapload)
+		component_parts -= circuit
+		QDEL_NULL(circuit)
