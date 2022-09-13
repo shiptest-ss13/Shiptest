@@ -331,6 +331,14 @@ Key procs
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/machine = list(LANGUAGE_ATOM))
 
+/datum/language_holder/ipc/lizard
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+								/datum/language/machine = list(LANGUAGE_ATOM),
+								/datum/language/draconic = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+							/datum/language/machine = list(LANGUAGE_ATOM),
+							/datum/language/draconic = list(LANGUAGE_ATOM))
+
 /datum/language_holder/moth
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 								/datum/language/moffic = list(LANGUAGE_ATOM),
