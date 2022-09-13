@@ -830,6 +830,7 @@ update_label()
 	desc = "An ID card with access to the Slime Lab"
 	assignment = "Slime Research Staff"
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_XENOBIOLOGY)
+	registered_name = "Slime Researcher"
 	icon_state = "id"
 
 /obj/item/card/id/departmental_budget
