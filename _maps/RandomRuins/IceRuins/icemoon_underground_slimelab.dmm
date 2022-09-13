@@ -82,7 +82,7 @@
 /area/ruin/powered/slimelab)
 "bS" = (
 /obj/structure/disposalpipe/segment,
-/turf/open/floor/plating/dirt/jungle,
+/turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/powered/slimelab/slimedome)
 "bW" = (
 /obj/structure/table,
@@ -168,6 +168,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/lava)
+"cR" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/slimedome)
 "cU" = (
 /obj/machinery/door/window/brigdoor{
 	dir = 8
@@ -821,6 +826,10 @@
 /obj/structure/chair/stool/bar,
 /turf/open/floor/carpet/green,
 /area/ruin/powered/slimelab/cafe)
+"ld" = (
+/obj/structure/marker_beacon,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/powered/slimelab/slimedome)
 "lg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -1285,6 +1294,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
+"oA" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/slimedome)
 "oE" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -1825,7 +1839,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/mining{
-	name = "mining";
+	name = "Mining";
 	req_access_txt = "200"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2405,6 +2419,11 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab/cafe)
+"Cd" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/slimedome)
 "Cg" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 6
@@ -2484,6 +2503,10 @@
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/slimelab)
+"Df" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/powered/slimelab/slimedome)
 "Dg" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/machinery/door/poddoor/preopen{
@@ -2542,7 +2565,7 @@
 "Eh" = (
 /obj/structure/barricade/wooden/crude,
 /obj/machinery/door/airlock/research{
-	name = "Xenobiological lab";
+	name = "Xenobiological Lab";
 	req_access_txt = "55"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2873,7 +2896,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/research{
-	name = "Xenobiological lab";
+	name = "Xenobiological Lab";
 	req_access_txt = "55"
 	},
 /turf/open/floor/plasteel/tech,
@@ -3121,7 +3144,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/research{
-	name = "Xenobiological lab";
+	name = "Xenobiological Lab";
 	req_access_txt = "55"
 	},
 /turf/open/floor/plasteel/tech,
@@ -3386,6 +3409,9 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/powered/slimelab/lava)
+"OV" = (
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/powered/slimelab/slimedome)
 "OW" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -3796,6 +3822,11 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/slimedome)
+"SF" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/slimedome)
 "SK" = (
 /obj/effect/turf_decal/siding/thinplating,
 /turf/open/floor/plasteel,
@@ -3949,6 +3980,11 @@
 /area/ruin/unpowered)
 "Ul" = (
 /obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/powered/slimelab/slimedome)
+"Un" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/slimedome)
 "Us" = (
@@ -5677,7 +5713,7 @@ Gu
 Hd
 iD
 hx
-hx
+cR
 rg
 nx
 vV
@@ -5727,10 +5763,10 @@ Hd
 Hd
 Hd
 Hd
+GC
 rg
-rg
-Hd
-Hd
+OV
+OV
 nx
 xW
 RZ
@@ -5878,8 +5914,8 @@ rg
 rg
 hx
 rg
-Hd
-Hd
+OV
+OV
 Nb
 Nb
 Hd
@@ -5930,7 +5966,7 @@ Hd
 Qs
 rg
 Ul
-Hd
+OV
 Nb
 Nb
 Pe
@@ -5939,7 +5975,7 @@ Aw
 TF
 Hd
 rg
-VN
+Cd
 rL
 Hd
 Nb
@@ -5994,7 +6030,7 @@ Hd
 rg
 Hd
 Hd
-rg
+SF
 nx
 cm
 xK
@@ -6145,11 +6181,11 @@ Aw
 Aw
 Aw
 Aw
-Hd
+OV
 rg
 rg
 rg
-VN
+Cd
 Pi
 bq
 xD
@@ -6188,7 +6224,7 @@ uh
 uh
 nx
 Hd
-GC
+SF
 rg
 rg
 Hd
@@ -6196,13 +6232,13 @@ Aw
 Aw
 Aw
 Aw
+ld
 Hd
-Hd
-hx
+cR
 rT
 rg
 rg
-Zx
+Df
 bq
 bq
 IW
@@ -6247,14 +6283,14 @@ tj
 rg
 Hd
 AO
-Hd
+OV
 rg
 NC
 rg
 rL
 Gu
 rg
-Zx
+Df
 bq
 ck
 Cp
@@ -6296,7 +6332,7 @@ Nb
 rg
 rg
 rg
-NC
+oA
 rg
 rg
 rL
@@ -6305,7 +6341,7 @@ rg
 cq
 rg
 rg
-Hd
+OV
 bq
 bq
 fX
@@ -6345,11 +6381,11 @@ uh
 uh
 nx
 Nb
-Hd
-Hd
+OV
+OV
 Hd
 rg
-rg
+VN
 Qs
 rg
 cq
@@ -6456,8 +6492,8 @@ rg
 rL
 nl
 rg
-Hd
-Hd
+OV
+OV
 vp
 bq
 vc
@@ -6507,7 +6543,7 @@ Zx
 Zx
 rg
 rg
-rL
+Un
 ts
 bS
 qw
@@ -6557,7 +6593,7 @@ Gu
 Nb
 Nb
 Zx
-Zx
+Df
 rg
 rg
 rg
@@ -6608,10 +6644,10 @@ nx
 nx
 Zx
 rg
+cR
+Df
+Zx
 hx
-Zx
-Zx
-rg
 rg
 rg
 rL
@@ -6662,11 +6698,11 @@ Zx
 Zx
 Gu
 rg
+Df
 Zx
-Zx
-Zx
+Df
 rg
-rL
+Un
 rg
 DE
 Rr
@@ -6712,7 +6748,7 @@ uh
 nx
 nx
 Zx
-Zx
+Df
 rg
 rg
 Sr
@@ -6764,8 +6800,8 @@ uh
 uh
 nx
 nx
-Zx
-Zx
+Df
+Df
 Zx
 nx
 nx
