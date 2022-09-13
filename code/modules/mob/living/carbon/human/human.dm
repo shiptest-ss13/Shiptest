@@ -1457,6 +1457,9 @@
 /mob/living/carbon/human/species/ipc
 	race = /datum/species/ipc
 
+/mob/living/carbon/human/species/ipc/lizard
+	race = /datum/species/ipc/lizard
+
 /mob/living/carbon/human/species/squid
 	race = /datum/species/squid
 
