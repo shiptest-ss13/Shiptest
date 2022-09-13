@@ -83,6 +83,7 @@
 #define SPECIES_FLYPERSON "fly"
 #define SPECIES_HUMAN "human"
 #define SPECIES_IPC "ipc"
+#define SPECIES_LIZIPC "lizard_ipc"
 #define SPECIES_JELLYPERSON "jelly"
 #define SPECIES_SLIMEPERSON "slime_person"
 #define SPECIES_LUMINESCENT "luminescent"
