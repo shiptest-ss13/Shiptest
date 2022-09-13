@@ -277,6 +277,7 @@
 		"Fly" = /datum/species/fly,
 		"Jelly" = /datum/species/jelly,
 		"IPC" = /datum/species/ipc,
+		"IPS" = /datum/species/ipc/lizard,
 		"Kepori" = /datum/species/kepori,
 		"Rachnid" = /datum/species/spider
 	)

@@ -662,6 +662,13 @@
 	race = /datum/species/ipc
 	process_flags = ORGANIC | SYNTHETIC
 
+/datum/reagent/mutationtoxin/ipc/lizard
+	name = "IPS Mutation Toxin"
+	description = "An integrated positronic toxin with a tail."
+	color = "#5EFF3B" //RGB: 94, 255, 59
+	race = /datum/species/ipc/lizard
+	process_flags = ORGANIC | SYNTHETIC
+
 /datum/reagent/mutationtoxin/squid
 	name = "Squid Mutation Toxin"
 	description = "A salty toxin."

@@ -18,6 +18,7 @@
 #define SCANGATE_ZOMBIE "zombie"
 #define SCANGATE_SPIDER "rachnid"
 #define SCANGATE_IPC "ipc"
+#define SCANGATE_LIZIPC "lizard_ipc"
 #define SCANGATE_SQUID "squid"
 #define SCANGATE_ETHEREAL "ethereal"
 #define SCANGATE_KEPORI "kepori"
@@ -151,6 +152,8 @@
 						scan_species = /datum/species/spider
 					if(SCANGATE_IPC)
 						scan_species = /datum/species/ipc
+					if(SCANGATE_LIZIPC)
+						scan_species = /datum/species/ipc/lizard
 					if(SCANGATE_SQUID)
 						scan_species = /datum/species/squid
 					if(SCANGATE_ETHEREAL)

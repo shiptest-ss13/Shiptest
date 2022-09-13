@@ -43,21 +43,17 @@
 	species_l_leg = /obj/item/bodypart/l_leg/ipc
 	species_r_leg = /obj/item/bodypart/r_leg/ipc // REPLACE WITH SYNTHLIZ PLACEHOLDERS
 
-	/// The last screen used when the IPC died.
-	var/saved_screen
-	var/datum/action/innate/change_screen/change_screen
-
-/datum/species/ipc/random_name(unique)
+/datum/species/ipc/lizard/random_name(unique)
 	var/ipc_name = "[pick(GLOB.posibrain_names)]-[rand(100, 999)]"
 	return ipc_name
 
-/datum/species/ipc/New()
+/datum/species/ipc/lizard/New()
 	. = ..()
 	offset_clothing = list(
 		"[GLASSES_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = 0), "[EAST]" = list("x" = 2, "y" = 0), "[SOUTH]" = list("x" = 0, "y" = 0), "[WEST]" = list("x" = -2, "y" = 0)),
 	)
 
-/datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
+/datum/species/ipc/lizard/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
 		if(!change_screen)
@@ -69,18 +65,18 @@
 			mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
 	return ..()
 
-/datum/species/ipc/on_species_loss(mob/living/carbon/C)
+/datum/species/ipc/lizard/on_species_loss(mob/living/carbon/C)
 	. = ..()
 	if(change_screen)
 		change_screen.Remove(C)
 
-/datum/species/ipc/spec_death(gibbed, mob/living/carbon/C)
+/datum/species/ipc/lizard/spec_death(gibbed, mob/living/carbon/C)
 	saved_screen = C.dna.features["ipc_screen"]
 	C.dna.features["ipc_screen"] = "BSOD"
 	C.update_body()
-	addtimer(CALLBACK(src, .proc/post_death, C), 5 SECONDS)
+	addtimer(CALLBACK(src, .proc/post_deathL, C), 5 SECONDS) // PostdeathL until the maintainers roast me for shitcode and tell me how to actually do it
 
-/datum/species/ipc/proc/post_death(mob/living/carbon/C)
+/datum/species/ipc/lizard/proc/post_deathL(mob/living/carbon/C)
 	if(C.stat < DEAD)
 		return
 	C.dna.features["ipc_screen"] = null // Turns off their monitor on death.
@@ -129,7 +125,7 @@
 	if(istype(target, /obj/machinery/power/apc))
 		var/obj/machinery/power/apc/A = target
 		if(A.cell && A.cell.charge > A.cell.maxcharge/4)
-			powerdraw_loop(A, H, TRUE)
+			powerdraw_loopL(A, H, TRUE)
 			return
 		else
 			to_chat(user, "<span class='warning'>There is not enough charge to draw from that APC.</span>")
@@ -139,13 +135,13 @@
 		var/mob/living/carbon/human/target_ethereal = target
 		var/obj/item/organ/stomach/ethereal/eth_stomach = target_ethereal.getorganslot(ORGAN_SLOT_STOMACH)
 		if(target_ethereal.nutrition > 0 && eth_stomach)
-			powerdraw_loop(eth_stomach, H, FALSE)
+			powerdraw_loopL(eth_stomach, H, FALSE)
 			return
 		else
 			to_chat(user, "<span class='warning'>There is not enough charge to draw from that being!</span>")
 			return
 
-/obj/item/apc_powercord/proc/powerdraw_loop(atom/target, mob/living/carbon/human/H, apc_target)
+/obj/item/apc_powercord/proc/powerdraw_loopL(atom/target, mob/living/carbon/human/H, apc_target)
 	H.visible_message("<span class='notice'>[H] inserts a power connector into the [target].</span>", "<span class='notice'>You begin to draw power from the [target].</span>")
 	var/obj/item/organ/stomach/cell/battery = H.getorganslot(ORGAN_SLOT_STOMACH)
 	if(apc_target)
@@ -197,7 +193,7 @@
 	H.visible_message("<span class='notice'>[H] unplugs from the [target].</span>", "<span class='notice'>You unplug from the [target].</span>")
 	return
 
-/datum/species/ipc/spec_life(mob/living/carbon/human/H)
+/datum/species/ipclizard/spec_life(mob/living/carbon/human/H)
 	. = ..()
 	if(H.health <= HEALTH_THRESHOLD_CRIT && H.stat != DEAD) // So they die eventually instead of being stuck in crit limbo.
 		H.adjustFireLoss(6) // After BODYTYPE_ROBOTIC resistance this is ~2/second
@@ -206,20 +202,20 @@
 			H.visible_message("[H]'s cooling system fans stutter and stall. There is a faint, yet rapid beeping coming from inside their chassis.")
 
 
-/datum/species/ipc/spec_revival(mob/living/carbon/human/H)
+/datum/species/ipc/lizard/spec_revival(mob/living/carbon/human/H)
 	H.dna.features["ipc_screen"] = "BSOD"
 	H.update_body()
 	H.say("Reactivating [pick("core systems", "central subroutines", "key functions")]...")
-	addtimer(CALLBACK(src, .proc/post_revival, H), 6 SECONDS)
+	addtimer(CALLBACK(src, .proc/post_revivalL, H), 6 SECONDS)
 
-/datum/species/ipc/proc/post_revival(mob/living/carbon/human/H)
+/datum/species/ipc/lizard/proc/post_revivalL(mob/living/carbon/human/H)
 	if(H.stat < DEAD)
 		return
 	H.say("Unit [H.real_name] is fully functional. Have a nice day.")
 	H.dna.features["ipc_screen"] = saved_screen
 	H.update_body()
 
-/datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species)
+/datum/species/ipc/lizard/replace_body(mob/living/carbon/C, datum/species/new_species)
 	..()
 
 	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
