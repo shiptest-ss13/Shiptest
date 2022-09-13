@@ -1,8 +1,8 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Goon-class Repurposed Emergency Shuttle",
 	"map_short_name": "Goon-class",
 	"map_path": "_maps/shuttles/shiptest/nanotrasen_goon.dmm",
-	"map_id": "nanotrasen_goon",
 	"job_slots": {
 		"Captain": 1,
 		"Shaft Miner": 1,
@@ -10,5 +10,5 @@
 		"Medical Doctor": 1,
 		"Assistant": 3
 	},
-	"cost": 300
+	"enabled": true
 }

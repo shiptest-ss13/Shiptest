@@ -102,7 +102,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/commander
 	name = "\improper Commander"
-	desc = "A modification on the classic 1911 handgun, chambered in 9mm. The smaller cartridge allows for improved magazine capacity."
+	desc = "A classic handgun in a tasteful black and stainless steel color scheme, with an enamel Nanotrasen logo set into the grips. Chambered in 9mm."
 	icon_state = "commander"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
@@ -111,9 +111,18 @@
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag
 	spawnwithmagazine = FALSE
 
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq
+	name = "\improper Commissioner"
+	desc = "A handgun seized from Nanotrasen armories by deserting troopers and modified to IRMG's standards, with a yellow IRMG shield set into the grips. Chambered in 9mm."
+	icon_state = "commander-inteq"
+	item_state = "commander-inteq"
+
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/automatic/pistol/commissar
 	name = "\improper Commissar"
-	desc = "A custom-designed 1911 handgun to further enhance it's effectiveness in troop discipline."
+	desc = "A Nanotrasen-issue handgun, modified to further enhance it's effectiveness in troop discipline."
 	icon_state = "commander"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm

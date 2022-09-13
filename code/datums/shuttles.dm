@@ -12,12 +12,14 @@
 	var/port_y_offset
 
 	var/limit = 2
-	var/cost
+	var/enabled
 	var/short_name
 	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
 	var/prefix = "SV"
 	var/unique_ship_access = FALSE
+
+	var/static/list/outfits
 
 /datum/map_template/shuttle/proc/prerequisites_met()
 	return TRUE
@@ -102,6 +104,104 @@
 
 			port.load(src)
 
+/datum/map_template/shuttle/ui_state(mob/user)
+	return GLOB.admin_debug_state
+
+/datum/map_template/shuttle/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ShipEditor")
+		ui.open()
+
+/datum/map_template/shuttle/ui_static_data(mob/user)
+	. = list()
+
+	if(!outfits)
+		outfits = list()
+		for(var/datum/outfit/outfit as anything in subtypesof(/datum/outfit))
+			outfits[initial(outfit.name)] = outfit
+		outfits = sortList(outfits)
+
+	.["outfits"] = outfits
+
+	.["templateName"] = name
+	.["templateShortName"] = short_name
+	.["templateDescription"] = description
+	.["templateCategory"] = category
+	.["templateLimit"] = limit
+	.["templateEnabled"] = enabled
+
+	.["templateJobs"] = list()
+	for(var/datum/job/job as anything in job_slots)
+		var/list/jobdetails = list()
+		jobdetails["ref"] = REF(job)
+		jobdetails["name"] = job.name
+		jobdetails["officer"] = job.officer
+		jobdetails["outfit"] = initial(job.outfit.name)
+		jobdetails["slots"] = job_slots[job]
+		.["templateJobs"] += list(jobdetails)
+
+/datum/map_template/shuttle/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+
+	switch(action)
+		if("setTemplateName")
+			name = params["new_template_name"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateShortName")
+			short_name = params["new_template_short_name"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateDescription")
+			description = params["new_template_description"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateCategory")
+			category = params["new_template_category"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateLimit")
+			limit = params["new_template_limit"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("toggleTemplateEnabled")
+			enabled = !enabled
+			if(enabled)
+				SSmapping.ship_purchase_list += src
+			else
+				SSmapping.ship_purchase_list -= src
+			update_static_data(usr, ui)
+			return TRUE
+
+		if("addJobSlot")
+			job_slots[new /datum/job] = 0
+			update_static_data(usr, ui)
+			return TRUE
+
+	if("job_ref" in params)
+		var/datum/job/job_slot = locate(params["job_ref"]) in job_slots
+		if(!job_slot)
+			return
+		switch(action)
+			if("toggleJobOfficer")
+				job_slot.officer = !job_slot.officer
+			if("setJobName")
+				job_slot.name = params["job_name"]
+			if("setJobOutfit")
+				var/new_outfit = params["job_outfit"]
+				if(!(new_outfit in outfits))
+					return
+				new_outfit = outfits[new_outfit]
+				job_slot.outfit = new new_outfit
+			if("setJobSlots")
+				job_slots[job_slot] = clamp(params["job_slots"], 0, 100)
+		update_static_data(usr, ui)
+		return TRUE
+
 //Whatever special stuff you want
 /datum/map_template/shuttle/post_load(obj/docking_port/mobile/M)
 	if(movement_force)
@@ -117,7 +217,7 @@
 
 /// Syndicate Infiltrator variants
 /datum/map_template/shuttle/infiltrator
-	category = "infiltrator"
+	category = "misc"
 
 /datum/map_template/shuttle/infiltrator/advanced
 	file_name = "infiltrator_advanced"
@@ -125,7 +225,7 @@
 
 /// Pirate ship templates
 /datum/map_template/shuttle/pirate
-	category = "pirate"
+	category = "misc"
 
 /datum/map_template/shuttle/pirate/default
 	file_name = "pirate_default"
@@ -133,7 +233,7 @@
 
 /// Fugitive hunter ship templates
 /datum/map_template/shuttle/hunter
-	category = "hunter"
+	category = "misc"
 
 /datum/map_template/shuttle/hunter/space_cop
 	file_name = "hunter_space_cop"

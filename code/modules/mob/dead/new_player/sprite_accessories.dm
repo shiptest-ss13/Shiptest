@@ -1687,10 +1687,6 @@
 	name = "Dark Tiger"
 	icon_state = "dtiger"
 
-/datum/sprite_accessory/tails/lizard/ltiger
-	name = "Light Tiger"
-	icon_state = "ltiger"
-
 /datum/sprite_accessory/tails_animated/lizard/ltiger
 	name = "Light Tiger"
 	icon_state = "ltiger"
@@ -2219,6 +2215,10 @@
 	name = "Blue"
 	icon_state = "blue"
 	color_src = 0
+
+/datum/sprite_accessory/ipc_screens/blush
+	name = "Blush"
+	icon_state = "blush"
 
 /datum/sprite_accessory/ipc_screens/bsod
 	name = "BSOD"
