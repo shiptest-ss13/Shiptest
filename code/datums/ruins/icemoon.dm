@@ -81,4 +81,4 @@
 	name = "Slime Lab"
 	id = "slimelab"
 	description = "An underground research facility devoted to researching the uncommon slime lifeform"
-	suffix = "icemoon_underground_slimelab"
+	suffix = "icemoon_underground_slimelab.dmm"

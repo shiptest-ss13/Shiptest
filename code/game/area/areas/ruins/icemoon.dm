@@ -14,16 +14,6 @@
 	mood_bonus = 10
 	mood_message = "<span class='nicegreen'>I wish I could stay here forever.</span>\n"
 
-//todo - put this where walls should go
-
-/turf/closed/wall/bathhouse
-	desc = "It's cool to the touch, pleasantly so."
-	icon = 'icons/turf/shuttleold.dmi'
-	icon_state = "block"
-	base_icon_state = "block"
-	smoothing_flags = NONE
-	canSmoothWith = null
-
 //corporate rejects
 
 /area/ruin/unpowered/corprejectrooms
