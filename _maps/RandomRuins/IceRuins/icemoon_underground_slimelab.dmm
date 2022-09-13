@@ -333,7 +333,17 @@
 "eE" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
-/obj/item/clothing/glasses/science/prescription,
+/obj/item/clothing/glasses/science/prescription{
+	pixel_y = 9;
+	pixel_x = -6
+	},
+/obj/item/storage/box/syringes{
+	pixel_y = 6;
+	pixel_x = 9
+	},
+/obj/item/reagent_containers/dropper{
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
 "eR" = (
@@ -682,9 +692,6 @@
 	icon_state = "reinforced_hull"
 	},
 /area/ruin/powered/slimelab/lava)
-"jE" = (
-/turf/closed/mineral/snowmountain/cavern,
-/area/ruin/unpowered)
 "jJ" = (
 /obj/structure/window/reinforced,
 /obj/structure/table/glass,
@@ -947,9 +954,14 @@
 "lW" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
-/obj/item/slime_scanner,
+/obj/item/slime_scanner{
+	pixel_x = 6
+	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/item/slime_scanner{
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
@@ -1301,6 +1313,8 @@
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /obj/machinery/airalarm/directional/east,
 /obj/item/clothing/gloves/botanic_leather,
+/obj/item/storage/backpack/satchel/hyd,
+/obj/item/clothing/under/rank/civilian/hydroponics,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/slimedome)
 "pl" = (
@@ -2120,6 +2134,9 @@
 /obj/effect/turf_decal/siding/purple{
 	dir = 1
 	},
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
 "zk" = (
@@ -2610,6 +2627,7 @@
 /obj/structure/sign/warning/incident{
 	pixel_y = 32
 	},
+/obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
 "FD" = (
@@ -3189,11 +3207,10 @@
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/slimedome)
 "Nc" = (
-/obj/structure/table/glass,
-/obj/machinery/computer/secure_data/laptop,
 /obj/structure/sign/poster/random{
 	pixel_y = 32
 	},
+/obj/machinery/modular_computer/console,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
 "Nl" = (
@@ -3499,12 +3516,10 @@
 "PX" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/structure/table,
-/obj/item/reagent_containers/glass/beaker/large{
-	pixel_y = 3
-	},
 /obj/effect/turf_decal/siding/purple{
 	dir = 5
 	},
+/obj/item/storage/box/syringes,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
 "Qh" = (
@@ -3542,6 +3557,9 @@
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/gloves/color/black,
 /obj/structure/closet/wardrobe,
+/obj/item/storage/backpack/satchel/tox,
+/obj/item/storage/backpack/satchel/tox,
+/obj/item/storage/backpack/satchel/tox,
 /turf/open/floor/carpet/blue,
 /area/ruin/powered/slimelab)
 "QI" = (
@@ -4173,9 +4191,6 @@
 /obj/item/storage/bag/trash,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
-"Yi" = (
-/turf/closed/mineral/snowmountain/cavern/icemoon,
-/area/ruin/unpowered)
 "Yy" = (
 /obj/structure/closet/crate/hydroponics,
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
@@ -4453,7 +4468,7 @@ uh
 uh
 uh
 uh
-jE
+uh
 uh
 gI
 gI
@@ -4469,8 +4484,8 @@ uh
 uh
 uh
 uh
-Yi
-Yi
+uh
+uh
 uh
 gI
 gI
@@ -4489,10 +4504,10 @@ uh
 uh
 uh
 uh
-jE
-jE
-jE
-jE
+uh
+uh
+uh
+uh
 uh
 uh
 gI
@@ -4503,13 +4518,13 @@ uh
 uh
 uh
 uh
-jE
-jE
-jE
-jE
-jE
-jE
-jE
+uh
+uh
+uh
+uh
+uh
+uh
+uh
 uh
 uh
 uh
@@ -4520,8 +4535,8 @@ uh
 uh
 uh
 uh
-Yi
-Yi
+uh
+uh
 uh
 uh
 gI
@@ -4538,12 +4553,12 @@ yf
 yf
 uh
 uh
-jE
 uh
 uh
 uh
-jE
-jE
+uh
+uh
+uh
 uh
 uh
 uh
@@ -4555,12 +4570,12 @@ uh
 uh
 uh
 uh
-jE
-jE
-jE
-jE
-jE
-jE
+uh
+uh
+uh
+uh
+uh
+uh
 uh
 uh
 uh
@@ -4569,9 +4584,9 @@ Ba
 Ba
 Ba
 uh
-Yi
-Yi
-Yi
+uh
+uh
+uh
 uh
 uh
 uh
@@ -4589,17 +4604,17 @@ uh
 yf
 LG
 LG
-jE
-jE
-jE
-Np
-uh
-jE
 uh
 uh
 uh
 Np
 uh
+uh
+uh
+uh
+uh
+Np
+uh
 Ba
 Ba
 uh
@@ -4608,9 +4623,9 @@ Ba
 Ba
 uh
 uh
-jE
-jE
-Ba
+uh
+uh
+uh
 Ba
 Ba
 uh
@@ -4622,9 +4637,9 @@ HR
 Ba
 Ba
 uh
-Yi
-Yi
-Yi
+uh
+uh
+uh
 uh
 uh
 gI
@@ -4642,7 +4657,7 @@ yf
 LG
 zQ
 zQ
-jE
+uh
 Np
 Np
 Np
@@ -4675,9 +4690,9 @@ Ba
 Ba
 uh
 uh
-Yi
-Yi
-Yi
+uh
+uh
+uh
 uh
 gI
 gI
@@ -4728,8 +4743,8 @@ HR
 Ba
 uh
 uh
-Yi
-Yi
+uh
+uh
 uh
 gI
 gI
@@ -4760,8 +4775,8 @@ Ba
 Ba
 Ba
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 Ba
@@ -4796,7 +4811,7 @@ gI
 gI
 gI
 uh
-jE
+uh
 uh
 uh
 Np
@@ -4811,8 +4826,8 @@ Np
 uh
 Ba
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 Ba
@@ -4864,7 +4879,7 @@ uh
 Ba
 Ba
 uh
-jE
+uh
 uh
 uh
 Ba
@@ -4917,8 +4932,8 @@ Ba
 Ba
 uh
 uh
-jE
-jE
+uh
+uh
 uh
 Em
 Sj
@@ -4927,7 +4942,7 @@ Sj
 Em
 uh
 uh
-Yi
+uh
 uh
 yf
 bk
@@ -4939,7 +4954,7 @@ Ba
 Ba
 Ba
 uh
-Yi
+uh
 uh
 uh
 gI
@@ -4952,7 +4967,7 @@ gI
 gI
 uh
 uh
-jE
+uh
 uh
 uh
 Np
@@ -4968,9 +4983,9 @@ Ba
 Ba
 uh
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 uh
 Em
 op
@@ -4979,8 +4994,8 @@ rQ
 Em
 uh
 uh
-Yi
-Yi
+uh
+uh
 uh
 Ba
 HR
@@ -4991,7 +5006,7 @@ Ba
 Ba
 Ba
 uh
-Yi
+uh
 uh
 uh
 gI
@@ -5003,8 +5018,8 @@ gI
 gI
 gI
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 Np
@@ -5020,9 +5035,9 @@ Ba
 kF
 uh
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 uh
 Em
 tm
@@ -5032,9 +5047,9 @@ Em
 uh
 uh
 uh
-Yi
 uh
 uh
+uh
 Ba
 Ba
 Ba
@@ -5043,7 +5058,7 @@ Ba
 Ba
 Ba
 uh
-Yi
+uh
 uh
 uh
 uh
@@ -5055,9 +5070,9 @@ gI
 gI
 gI
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 Np
 Np
 Np
@@ -5084,8 +5099,8 @@ Em
 uh
 uh
 uh
-Yi
-Yi
+uh
+uh
 uh
 Ba
 uh
@@ -5136,9 +5151,9 @@ Em
 uh
 uh
 uh
-Yi
-Yi
-Yi
+uh
+uh
+uh
 uh
 uh
 uh
@@ -5189,9 +5204,9 @@ uh
 uh
 uh
 uh
-Yi
-Yi
-Yi
+uh
+uh
+uh
 uh
 uh
 mO
@@ -5211,10 +5226,10 @@ gI
 gI
 gI
 uh
-jE
-jE
-jE
-jE
+uh
+uh
+uh
+uh
 uh
 uh
 Np
@@ -5263,8 +5278,8 @@ gI
 gI
 gI
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 uh
@@ -5365,7 +5380,7 @@ Ba
 gI
 uh
 uh
-jE
+uh
 uh
 zs
 zs
@@ -5415,9 +5430,9 @@ Ba
 "}
 (22,1,1) = {"
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 uh
 JV
 Tj
@@ -5467,8 +5482,8 @@ Ba
 "}
 (23,1,1) = {"
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 Wz
@@ -5559,8 +5574,8 @@ th
 hm
 be
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 gI
@@ -5611,9 +5626,9 @@ KJ
 Vj
 be
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 uh
 uh
 gI
@@ -5630,7 +5645,7 @@ uh
 uh
 uh
 uh
-jE
+uh
 uh
 uh
 nx
@@ -5664,9 +5679,9 @@ Fd
 be
 uh
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 uh
 uh
 uh
@@ -5678,10 +5693,10 @@ gI
 gI
 uh
 uh
-jE
-jE
-jE
-jE
+uh
+uh
+uh
+uh
 uh
 uh
 nx
@@ -5717,9 +5732,9 @@ be
 be
 uh
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 uh
 uh
 gI
@@ -5732,8 +5747,8 @@ uh
 uh
 uh
 uh
-jE
-jE
+uh
+uh
 uh
 nx
 nx
@@ -5770,9 +5785,9 @@ be
 be
 uh
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 uh
 gI
 gI
@@ -5784,7 +5799,7 @@ uh
 uh
 uh
 uh
-jE
+uh
 uh
 nx
 nx
@@ -5822,9 +5837,9 @@ pl
 be
 uh
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 uh
 gI
 gI
@@ -5834,8 +5849,8 @@ gI
 gI
 uh
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 nx
@@ -5875,8 +5890,8 @@ be
 uh
 uh
 uh
-jE
-jE
+uh
+uh
 uh
 gI
 gI
@@ -5886,8 +5901,8 @@ gI
 gI
 gI
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 nx
@@ -5928,7 +5943,7 @@ uh
 uh
 uh
 uh
-jE
+uh
 uh
 gI
 gI
@@ -5938,8 +5953,8 @@ gI
 gI
 gI
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 nx
@@ -5990,9 +6005,9 @@ gI
 gI
 gI
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 uh
 nx
 rg
@@ -6043,8 +6058,8 @@ gI
 gI
 uh
 uh
-jE
-jE
+uh
+uh
 uh
 nx
 nx
@@ -6095,8 +6110,8 @@ gI
 gI
 gI
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 nx
@@ -6147,8 +6162,8 @@ gI
 gI
 gI
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 nx
@@ -6199,9 +6214,9 @@ gI
 gI
 gI
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 uh
 nx
 Hd
@@ -6237,7 +6252,7 @@ wc
 bq
 uh
 uh
-jE
+uh
 uh
 gI
 gI
@@ -6252,8 +6267,8 @@ gI
 gI
 uh
 uh
-jE
-jE
+uh
+uh
 uh
 nx
 nx
@@ -6289,7 +6304,7 @@ vA
 bq
 uh
 uh
-jE
+uh
 uh
 gI
 gI
@@ -6305,7 +6320,7 @@ gI
 gI
 uh
 uh
-jE
+uh
 uh
 uh
 nx
@@ -6341,7 +6356,7 @@ jY
 bq
 uh
 uh
-jE
+uh
 uh
 gI
 gI
@@ -6462,7 +6477,7 @@ uh
 uh
 uh
 uh
-jE
+uh
 uh
 uh
 nx
@@ -6514,8 +6529,8 @@ uh
 uh
 uh
 uh
-jE
-jE
+uh
+uh
 uh
 nx
 Gu
@@ -6566,8 +6581,8 @@ gI
 gI
 uh
 uh
-jE
-jE
+uh
+uh
 uh
 nx
 nx
@@ -6618,8 +6633,8 @@ gI
 gI
 gI
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 nx
@@ -6652,9 +6667,9 @@ QS
 SQ
 bq
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 gI
 gI
 gI
@@ -6670,9 +6685,9 @@ gI
 gI
 gI
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 uh
 nx
 nx
@@ -6705,9 +6720,9 @@ Ij
 bq
 uh
 uh
-jE
-jE
-jE
+uh
+uh
+uh
 gI
 gI
 gI
@@ -6723,8 +6738,8 @@ gI
 gI
 uh
 uh
-jE
-jE
+uh
+uh
 uh
 uh
 nx
@@ -6758,8 +6773,8 @@ bq
 uh
 uh
 uh
-jE
-jE
+uh
+uh
 gI
 gI
 gI
@@ -6785,7 +6800,7 @@ nx
 nx
 nx
 nx
-jE
+uh
 nx
 nx
 nx
@@ -6811,7 +6826,7 @@ uh
 uh
 uh
 uh
-jE
+uh
 gI
 gI
 gI
@@ -6836,9 +6851,6 @@ uh
 uh
 uh
 uh
-jE
-jE
-jE
 uh
 uh
 uh
@@ -6854,7 +6866,10 @@ uh
 uh
 uh
 uh
-jE
+uh
+uh
+uh
+uh
 uh
 uh
 uh
@@ -6888,10 +6903,10 @@ uh
 uh
 uh
 uh
-jE
 uh
 uh
 uh
+uh
 gI
 gI
 gI
@@ -6906,10 +6921,10 @@ gI
 uh
 uh
 uh
-jE
-jE
-jE
-jE
+uh
+uh
+uh
+uh
 uh
 gI
 gI
