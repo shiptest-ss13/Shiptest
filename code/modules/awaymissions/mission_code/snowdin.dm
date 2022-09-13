@@ -161,6 +161,7 @@
 		return
 	C.reagents.add_reagent(/datum/reagent/toxin/plasma, rand(5, 10))
 	user.visible_message("<span class='notice'>[user] scoops some plasma from the [src] with \the [C].</span>", "<span class='notice'>You scoop out some plasma from the [src] using \the [C].</span>")
+	return TRUE
 
 /turf/open/lava/plasma/burn_stuff(AM)
 	. = 0
@@ -605,11 +606,19 @@
 
 /obj/structure/flora/rock/icy
 	name = "icy rock"
-	color = rgb(204,233,235)
+	icon_state = "icemoonrock1"
+
+/obj/structure/flora/rock/icy/Initialize()
+	. = ..()
+	icon_state = "icemoonrock[rand(1,3)]"
 
 /obj/structure/flora/rock/pile/icy
 	name = "icey rocks"
-	color = rgb(204,233,235)
+	icon_state = "icemoonrock4"
+
+/obj/structure/flora/rock/pile/icy/Initialize()
+	. = ..()
+	icon_state = "icemoonrock4"
 
 //decals//--
 /obj/effect/turf_decal/snowdin_station_sign

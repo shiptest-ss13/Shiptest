@@ -99,7 +99,6 @@
 	head = null
 	mask = null
 	glasses = null
-	ears = null
 	belt = null
 	suit = null
 	gloves = null
