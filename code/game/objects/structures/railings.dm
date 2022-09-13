@@ -23,7 +23,7 @@
 	density = FALSE
 	climbable = FALSE
 
-/obj/structure/railing/ComponentInitialize(var/skip)
+/obj/structure/railing/ComponentInitialize(skip)
 	if(skip)
 		return ..()
 	. = ..()
