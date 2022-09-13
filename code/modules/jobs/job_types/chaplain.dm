@@ -145,6 +145,7 @@
 
 /datum/outfit/job/chaplain/roumain
 	name = "Hunter Montagne (Saint-Roumain Militia)"
+	jobtype = /datum/job/chaplain/roumain
 
 	uniform = /obj/item/clothing/under/suit/roumain
 	alt_uniform = null
@@ -154,8 +155,20 @@
 	head = /obj/item/clothing/head/HoS/cowboy/montagne
 	gloves = null
 	id = /obj/item/card/id/captains_spare
+	duffelbag = /obj/item/storage/backpack/cultpack
+	courierbag = /obj/item/storage/backpack/cultpack
 
 	backpack_contents = list(
 		/obj/item/stamp/chap = 1,
 		/obj/item/melee/classic_baton/telescopic=1
 		)
+
+
+/datum/job/chaplain/roumain
+	access = list()
+	minimal_access = list()
+	outfit = /datum/outfit/job/chaplain/roumain
+
+/datum/job/chaplain/roumain/get_access()
+	return get_all_accesses()
+

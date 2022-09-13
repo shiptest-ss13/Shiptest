@@ -1,10 +1,10 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Kilo-class Mining Ship",
 	"prefix": "SV",
 	"namelists": ["GENERAL", "SPACE", "NATURAL", "NATURAL_AGGRESSIVE"],
 	"map_short_name": "Kilo-class",
 	"map_path": "_maps/shuttles/shiptest/whiteship_kilo.dmm",
-	"map_id": "whiteship_kilo",
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/western",
@@ -32,5 +32,5 @@
 			"slots": 2
 		}
 	},
-	"cost": 500
+	"enabled": true
 }

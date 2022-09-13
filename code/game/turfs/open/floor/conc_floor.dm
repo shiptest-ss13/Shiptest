@@ -5,7 +5,7 @@
 	broken_states = list("concdam_1", "concdam_2", "concdam_3", "concdam_4")
 	floor_tile = null
 	tiled_dirt = FALSE
-	footstep = FOOTSTEP_FLOOR
+	footstep = FOOTSTEP_CONCRETE
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
@@ -269,3 +269,12 @@
 /turf/open/floor/concrete/reinforced/acid_act(acidpwr, acid_volume)
 	acidpwr = min(acidpwr, 50)
 	return ..()
+
+/turf/open/floor/concrete/pavement
+	name = "pavement"
+	desc = "The hot, coarse, and somewhat pavement. Vehicles driven on this are generally quiter than on traditional concrete, and is prefered for roadways."
+	icon_state = "pavement"
+	broken_states = null
+	shape_types = list(
+		/turf/open/floor/concrete/pavement,
+	)
