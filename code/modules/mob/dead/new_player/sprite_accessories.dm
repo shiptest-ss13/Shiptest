@@ -2779,7 +2779,7 @@
 	name = "Ruffhawk"
 	icon_state = "ruffhawk"
 
-//Elzuosa
+//Elzuosa help
 
 /datum/sprite_accessory/elzu_horns
 	icon = 'icons/mob/ethereal_parts.dmi'
@@ -2845,3 +2845,11 @@
 /datum/sprite_accessory/tails_animated/elzu/bifurcated
 	name = "Bifurcated"
 	icon_state = "bifurcated"
+
+/datum/sprite_accessory/tails/elzu/stubby
+	name = "Stubby"
+	icon_state = "stubby"
+
+/datum/sprite_accessory/tails_animated/elzu/stubby
+	name = "Stubby"
+	icon_state = "stubby"
