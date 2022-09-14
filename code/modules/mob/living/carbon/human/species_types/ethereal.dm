@@ -28,7 +28,7 @@
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
 	mutant_bodyparts = list("elzu_horns", "tail_elzu")
-	default_features = list("elzu_horns" = "None", "tail_elzu" = "None")
+	default_features = list("elzu_horns" = "None", "tail_elzu" = "None", "body_size" = "Normal")
 	species_eye_path = 'icons/mob/ethereal_parts.dmi'
 	mutant_organs = list(/obj/item/organ/tail/elzu)
 
