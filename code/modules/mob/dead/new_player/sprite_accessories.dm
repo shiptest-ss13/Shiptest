@@ -2826,13 +2826,13 @@
 	name = "None"
 	icon_state = "none"
 
-/datum/sprite_accessory/tails/elzu/placeholder
-	name = "Placeholder"
-	icon_state = "placeholder"
+/datum/sprite_accessory/tails/elzu/long
+	name = "Long"
+	icon_state = "long"
 
-/datum/sprite_accessory/tails_animated/elzu/placeholder
-	name = "Placeholder"
-	icon_state = "placeholder"
+/datum/sprite_accessory/tails_animated/elzu/long
+	name = "Long"
+	icon_state = "long"
 
 /datum/sprite_accessory/tails/elzu/bifurcated
 	name = "Bifurcated"

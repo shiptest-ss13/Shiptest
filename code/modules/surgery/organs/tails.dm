@@ -88,7 +88,7 @@
 	name = "\improper Elzuose tail"
 	desc = "A detached Elzuose's tail. You probably shouldn't plant this."
 	color = "#d3e8e9"
-	tail_type = "Placeholder"
+	tail_type = "Long"
 
 /obj/item/organ/tail/elzu/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
 	..()
