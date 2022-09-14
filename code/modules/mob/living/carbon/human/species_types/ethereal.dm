@@ -14,7 +14,7 @@
 	attack_type = BURN //burn bish
 	exotic_blood = /datum/reagent/consumable/liquidelectricity
 	damage_overlay_type = "" //We are too cool for regular damage overlays
-	species_traits = list(DYNCOLORS, EYECOLOR, AGENDER, HAIR, FACEHAIR)
+	species_traits = list(DYNCOLORS, EYECOLOR, HAIR, FACEHAIR)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)
