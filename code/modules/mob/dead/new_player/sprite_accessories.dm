@@ -2812,6 +2812,10 @@
 	name = "Clipped"
 	icon_state = "clipped"
 
+/datum/sprite_accessory/elzu_horns/sharp
+	name = "Sharp"
+	icon_state = "sharp"
+
 /datum/sprite_accessory/tails/elzu
 	icon = 'icons/mob/ethereal_parts.dmi'
 
