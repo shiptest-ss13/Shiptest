@@ -90,9 +90,6 @@
 			return FALSE
 	if(!listening)
 		return FALSE
-	if(freq == FREQ_SYNDICATE)
-		if(!(syndie))
-			return FALSE//Prevents broadcast of messages over devices lacking the encryption
 
 	return TRUE
 
@@ -156,6 +153,12 @@
 	frequency = FREQ_WIDEBAND
 	freqlock = TRUE
 	freerange = TRUE
+	wallframe = /obj/item/wallframe/intercom/wideband
+
+/obj/item/radio/intercom/wideband/Initialize(mapload, ndir, building)
+	. = ..()
+	set_frequency(FREQ_WIDEBAND)
+	freqlock = TRUE
 
 /obj/item/radio/intercom/wideband/unscrewed
 	unscrewed = TRUE
@@ -167,4 +170,8 @@
 /obj/item/wallframe/intercom/wideband
 	name = "wideband relay frame"
 	desc = "A detached wideband relay. Attach to a wall and screw it in to use."
+	icon_state = "intercom-wideband"
 	result_path = /obj/item/radio/intercom/wideband/unscrewed
+
+/obj/item/wallframe/intercom/wideband/table
+	icon_state = "intercom-wideband-table"

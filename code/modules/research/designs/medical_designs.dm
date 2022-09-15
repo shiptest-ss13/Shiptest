@@ -9,7 +9,6 @@
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 50)
 	build_path = /obj/item/healthanalyzer
 	category = list("Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/mmi
 	name = "Man-Machine Interface"
@@ -129,7 +128,7 @@
 	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1500, /datum/material/gold = 500)
 	build_path = /obj/item/pinpointer/crew
 	category = list("Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/crewpinpointerprox
 	name = "Proximity Crew Pinpointer"
@@ -220,7 +219,7 @@
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 6000, /datum/material/glass = 1500, /datum/material/silver = 2000, /datum/material/gold = 1500, /datum/material/diamond = 200, /datum/material/titanium = 4000)
 	category = list("Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/mechanicalpinches
 	name = "Mechanical Pinches"
@@ -230,7 +229,7 @@
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 12000, /datum/material/glass = 4000, /datum/material/silver = 4000, /datum/material/titanium = 5000)
 	category = list("Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/searingtool
 	name = "Searing Tool"
@@ -240,7 +239,7 @@
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 4000, /datum/material/glass = 2000, /datum/material/plasma = 2000, /datum/material/uranium = 3000, /datum/material/titanium = 3000)
 	category = list("Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/medical_spray_bottle
 	name = "Medical Spray Bottle"
@@ -295,7 +294,7 @@
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 400)
 	build_path = /obj/item/organ/eyes/robotic/shield
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/cyberimp_gloweyes
 	name = "Luminescent Eyes"
@@ -306,7 +305,6 @@
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 1000)
 	build_path = /obj/item/organ/eyes/robotic/glow
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/cyberimp_breather
 	name = "Breathing Tube Implant"
@@ -317,7 +315,6 @@
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 250)
 	build_path = /obj/item/organ/cyberimp/mouth/breathing_tube
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/cyberimp_surgical
 	name = "Surgical Arm Implant"
@@ -339,7 +336,7 @@
 	construction_time = 200
 	build_path = /obj/item/organ/cyberimp/arm/toolset
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/cyberimp_medical_hud
 	name = "Medical HUD Implant"
@@ -361,7 +358,7 @@
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 750, /datum/material/gold = 750)
 	build_path = /obj/item/organ/cyberimp/eyes/hud/security
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/cyberimp_diagnostic_hud
 	name = "Diagnostic HUD Implant"
@@ -372,7 +369,7 @@
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 600, /datum/material/gold = 600)
 	build_path = /obj/item/organ/cyberimp/eyes/hud/diagnostic
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/cyberimp_xray
 	name = "X-ray Eyes"
@@ -383,7 +380,7 @@
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 600, /datum/material/gold = 600, /datum/material/plasma = 1000, /datum/material/uranium = 1000, /datum/material/diamond = 1000, /datum/material/bluespace = 1000)
 	build_path = /obj/item/organ/eyes/robotic/xray
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/cyberimp_thermals
 	name = "Thermal Eyes"
@@ -394,7 +391,7 @@
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 600, /datum/material/gold = 600, /datum/material/plasma = 1000, /datum/material/diamond = 2000)
 	build_path = /obj/item/organ/eyes/robotic/thermals
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/cyberimp_antidrop
 	name = "Anti-Drop Implant"
@@ -416,7 +413,7 @@
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 500, /datum/material/gold = 1000)
 	build_path = /obj/item/organ/cyberimp/brain/anti_stun
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cyberimp_nutriment
 	name = "Nutriment Pump Implant"
@@ -427,7 +424,6 @@
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/gold = 500)
 	build_path = /obj/item/organ/cyberimp/chest/nutriment
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/cyberimp_nutriment_plus
 	name = "Nutriment Pump Implant PLUS"
@@ -460,7 +456,6 @@
 	materials = list(/datum/material/iron = 4000, /datum/material/glass = 2000, /datum/material/silver = 1000, /datum/material/diamond = 1000)
 	build_path = /obj/item/organ/cyberimp/chest/thrusters
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /////////////////////////////////////////
 ////////////Regular Implants/////////////
@@ -474,7 +469,6 @@
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 200)
 	build_path = /obj/item/implanter
 	category = list("Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/implantcase
 	name = "Implant Case"
@@ -527,7 +521,7 @@
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/liver/cybernetic
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cybernetic_liver/tier2
 	name = "Cybernetic Liver"
@@ -553,7 +547,7 @@
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/heart/cybernetic
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cybernetic_heart/tier2
 	name = "Cybernetic Heart"
@@ -579,7 +573,7 @@
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/lungs/cybernetic
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cybernetic_lungs/tier2
 	name = "Cybernetic Lungs"
@@ -605,7 +599,7 @@
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/stomach/cybernetic
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cybernetic_stomach/tier2
 	name = "Cybernetic Stomach"
@@ -631,7 +625,7 @@
 	materials = list(/datum/material/iron = 250, /datum/material/glass = 400)
 	build_path = /obj/item/organ/ears/cybernetic
 	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cybernetic_ears_u
 	name = "Upgraded Cybernetic Ears"
@@ -667,11 +661,13 @@
 	name = "Experimental Dissection"
 	id = "surgery_exp_dissection"
 	surgery = /datum/surgery/advanced/experimental_dissection/exp
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/experimental_dissection/ext
 	name = "Extraterrestrial Dissection"
 	id = "surgery_ext_dissection"
 	surgery = /datum/surgery/advanced/experimental_dissection/alien
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/lobotomy
 	name = "Lobotomy"
@@ -679,6 +675,7 @@
 	id = "surgery_lobotomy"
 	surgery = /datum/surgery/advanced/lobotomy
 	research_icon_state = "surgery_head"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/pacify
 	name = "Pacification"
@@ -686,6 +683,7 @@
 	id = "surgery_pacify"
 	surgery = /datum/surgery/advanced/pacify
 	research_icon_state = "surgery_head"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/viral_bonding
 	name = "Viral Bonding"
@@ -693,12 +691,14 @@
 	id = "surgery_viral_bond"
 	surgery = /datum/surgery/advanced/viral_bonding
 	research_icon_state = "surgery_chest"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/healing //PLEASE ACCOUNT FOR UNIQUE HEALING BRANCHES IN THE hptech HREF (currently 2 for Brute/Burn; Combo is bonus)
 	name = "Tend Wounds"
 	desc = "An upgraded version of the original surgery."
 	id = "surgery_healing_base" //holder because CI cries otherwise. Not used in techweb unlocks.
 	research_icon_state = "surgery_chest"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/healing/brute_upgrade
 	name = "Tend Wounds (Brute) Upgrade"
@@ -709,33 +709,39 @@
 	name = "Tend Wounds (Brute) Upgrade"
 	surgery = /datum/surgery/healing/brute/upgraded/femto
 	id = "surgery_heal_brute_upgrade_femto"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/healing/burn_upgrade
 	name = "Tend Wounds (Burn) Upgrade"
 	surgery = /datum/surgery/healing/burn/upgraded
 	id = "surgery_heal_burn_upgrade"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/healing/burn_upgrade_2
 	name = "Tend Wounds (Burn) Upgrade"
 	surgery = /datum/surgery/healing/burn/upgraded/femto
 	id = "surgery_heal_burn_upgrade_femto"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/healing/combo
 	name = "Tend Wounds (Physical)"
 	desc = "A surgical procedure that repairs both bruises and burns. Repair efficiency is not as high as the individual surgeries but it is faster."
 	surgery = /datum/surgery/healing/combo
 	id = "surgery_heal_combo"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/healing/combo_upgrade
 	name = "Tend Wounds (Physical) Upgrade"
 	surgery = /datum/surgery/healing/combo/upgraded
 	id = "surgery_heal_combo_upgrade"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/healing/combo_upgrade_2
 	name = "Tend Wounds (Physical) Upgrade"
 	desc = "A surgical procedure that repairs both bruises and burns faster than their individual counterparts. It is more effective than both the individual surgeries."
 	surgery = /datum/surgery/healing/combo/upgraded/femto
 	id = "surgery_heal_combo_upgrade_femto"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/brainwashing
 	name = "Brainwashing"
@@ -743,6 +749,7 @@
 	id = "surgery_brainwashing"
 	surgery = /datum/surgery/advanced/brainwashing
 	research_icon_state = "surgery_head"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/nerve_splicing
 	name = "Nerve Splicing"
@@ -750,6 +757,7 @@
 	id = "surgery_nerve_splice"
 	surgery = /datum/surgery/advanced/bioware/nerve_splicing
 	research_icon_state = "surgery_chest"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/nerve_grounding
 	name = "Nerve Grounding"
@@ -757,6 +765,7 @@
 	id = "surgery_nerve_ground"
 	surgery = /datum/surgery/advanced/bioware/nerve_grounding
 	research_icon_state = "surgery_chest"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/vein_threading
 	name = "Vein Threading"
@@ -764,6 +773,7 @@
 	id = "surgery_vein_thread"
 	surgery = /datum/surgery/advanced/bioware/vein_threading
 	research_icon_state = "surgery_chest"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/muscled_veins
 	name = "Vein Muscle Membrane"
@@ -771,6 +781,7 @@
 	id = "surgery_muscled_veins"
 	surgery = /datum/surgery/advanced/bioware/muscled_veins
 	research_icon_state = "surgery_chest"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/ligament_hook
 	name = "Ligament Hook"
@@ -779,6 +790,7 @@
 	id = "surgery_ligament_hook"
 	surgery = /datum/surgery/advanced/bioware/ligament_hook
 	research_icon_state = "surgery_chest"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/ligament_reinforcement
 	name = "Ligament Reinforcement"
@@ -787,6 +799,7 @@
 	id = "surgery_ligament_reinforcement"
 	surgery = /datum/surgery/advanced/bioware/ligament_reinforcement
 	research_icon_state = "surgery_chest"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/cortex_imprint
 	name = "Cortex Imprint"
@@ -801,6 +814,7 @@
 	id = "surgery_cortex_folding"
 	surgery = /datum/surgery/advanced/bioware/cortex_folding
 	research_icon_state = "surgery_head"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/surgery/necrotic_revival
 	name = "Necrotic Revival"
@@ -808,3 +822,4 @@
 	id = "surgery_zombie"
 	surgery = /datum/surgery/advanced/necrotic_revival
 	research_icon_state = "surgery_head"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL

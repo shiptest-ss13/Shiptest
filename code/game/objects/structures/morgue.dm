@@ -115,7 +115,7 @@ GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants an
 		"<span class='notice'>You lean on the back of [src] and start pushing the tray open... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
 		"<span class='hear'>You hear a metallic creaking from [src].</span>")
 	if(do_after(user,(breakout_time), target = src))
-		if(!user || user.stat != CONSCIOUS || user.loc != src )
+		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return
 		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
 			"<span class='notice'>You successfully break out of [src]!</span>")
@@ -126,7 +126,8 @@ GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants an
 	playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 	playsound(src, 'sound/effects/roll.ogg', 5, TRUE)
 	var/turf/T = get_step(src, dir)
-	connected.setDir(dir)
+	if(connected)
+		connected.setDir(dir)
 	for(var/atom/movable/AM as anything in src)
 		AM.forceMove(T)
 	update_icon()

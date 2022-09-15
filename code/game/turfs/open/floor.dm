@@ -60,7 +60,7 @@
 		if(1)
 			ScrapeAway(2, flags = CHANGETURF_INHERIT_AIR)
 		if(2)
-			switch(pick(1,2;75,3))
+			switch(rand(1, 3))
 				if(1)
 					if(!length(baseturfs) || !ispath(baseturfs[baseturfs.len-1], /turf/open/floor))
 						ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
@@ -290,7 +290,7 @@
 	name = "floor"
 	icon_state = "materialfloor"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	icon = 'whitesands/icons/turf/floors/tiles.dmi'
+	icon = 'icons/turf/floors/tiles.dmi'
 	icon_state = "tiled"
 
 /turf/open/floor/material/spawn_tile()

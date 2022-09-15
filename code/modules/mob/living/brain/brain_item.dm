@@ -234,13 +234,21 @@
 	desc = "We barely understand the brains of terrestial animals. Who knows what we may find in the brain of such an advanced species?"
 	icon_state = "brain-x"
 
-/obj/item/organ/brain/mmi_holder
-	name = "positronic brain"
+/obj/item/organ/brain/mmi_holder //MMI brain for IPC
 	zone = BODY_ZONE_CHEST
 	status = ORGAN_ROBOTIC
 	organ_flags = ORGAN_SYNTHETIC
 	remove_on_qdel = FALSE
+	var/mmi_type = /obj/item/mmi/ipc
 	var/obj/item/mmi/stored_mmi
+
+/obj/item/organ/brain/mmi_holder/Initialize(mapload, obj/item/mmi/M)
+	. = ..()
+	if(M && istype(M))
+		stored_mmi = M
+		M.forceMove(src)
+	else
+		stored_mmi = new mmi_type(src)
 
 /obj/item/organ/brain/mmi_holder/Destroy()
 	QDEL_NULL(stored_mmi)
@@ -272,22 +280,27 @@
 	brainmob.loc = null
 	brainmob.forceMove(stored_mmi) //moves the brainmob to the stored mmi
 	stored_mmi.set_brainmob(brainmob) //sets the mmi's brainmob to the current one
-	stored_mmi.name = "positronic brain ([L.real_name])"
-	stored_mmi.icon_state = "posibrain-occupied" //renames mmi and switches it to the "activated" icon
 	brainmob.container = stored_mmi
+	stored_mmi.brain = L // for the mmi icon
+	stored_mmi.name = "\improper Man-Machine Interface: [L.real_name]"
+	stored_mmi.icon_state = "mmi_brain" //renames mmi and switches it to the right icon
+	stored_mmi.update_overlays()
 	brainmob.set_stat(CONSCIOUS) //mmis are conscious
 	brainmob.remove_from_dead_mob_list()
 	brainmob.add_to_alive_mob_list() //mmis are technically alive I guess?
+	stored_mmi.update_icon() //update it because the brain is alive now
 	brainmob.reset_perspective() //resets perspective to the mmi
 	brainmob = null //clears the brainmob var so it doesn't get deleted when the holder is destroyed
 
-/obj/item/organ/brain/mmi_holder/posibrain/Initialize(mapload, obj/item/mmi/mmi)
-	. = ..()
-	if(mmi && istype(mmi))
-		stored_mmi = mmi
-		mmi.forceMove(src)
-	else
-		stored_mmi = new /obj/item/mmi/posibrain/ipc(src)
+/obj/item/organ/brain/mmi_holder/posibrain
+	name = "positronic brain"
+	mmi_type = /obj/item/mmi/posibrain/ipc
+
+/obj/item/organ/brain/mmi_holder/posibrain/transfer_identity(mob/living/L)
+	..()
+	stored_mmi.brain = null //can't remove this one
+	stored_mmi.name = "positronic brain ([L.real_name])"
+	stored_mmi.icon_state = "posibrain-occupied" //switches it to the "activated" icon
 
 ////////////////////////////////////TRAUMAS////////////////////////////////////////
 

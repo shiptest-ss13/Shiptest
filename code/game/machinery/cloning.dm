@@ -14,11 +14,12 @@
 	name = "cloning pod"
 	desc = "An electronically-lockable pod for growing organic tissue."
 	density = TRUE
-	icon = 'whitesands/icons/obj/machines/cloning.dmi'
+	icon = 'icons/obj/machines/cloning.dmi'
 	icon_state = "pod_0"
 	req_access = list(ACCESS_CLONING) //FOR PREMATURE UNLOCKING.
 	verb_say = "states"
 	circuit = /obj/item/circuitboard/machine/clonepod
+	processing_flags = NONE
 
 	var/heal_level //The clone is released once its health reaches this level.
 	var/obj/machinery/computer/cloning/connected //So we remember the connected clone machine.
@@ -35,16 +36,14 @@
 
 	var/internal_radio = TRUE
 	var/obj/item/radio/radio
-	var/radio_key = /obj/item/encryptionkey/headset_med
-	var/radio_channel = RADIO_CHANNEL_MEDICAL
+	var/radio_key = /obj/item/encryptionkey/headset_com
+	var/radio_channel = RADIO_CHANNEL_COMMAND
 
 	var/obj/effect/countdown/clonepod/countdown
 
 	var/list/unattached_flesh
 	var/flesh_number = 0
 	var/datum/bank_account/current_insurance
-	fair_market_price = 5 // He nodded, because he knew I was right. Then he swiped his credit card to pay me for arresting him.
-	payment_department = ACCOUNT_MED
 
 
 /obj/machinery/clonepod/Initialize()
@@ -58,6 +57,9 @@
 		radio.subspace_transmission = TRUE
 		radio.canhear_range = 0
 		radio.recalculateChannels()
+
+	if(is_operational)
+		begin_processing()
 
 /obj/machinery/clonepod/Destroy()
 	var/mob/living/mob_occupant = occupant
@@ -154,7 +156,7 @@
 	var/mob/living/mob_occupant = occupant
 	if(mess)
 		. += "It's filled with blood and viscera. You swear you can see it moving..."
-	if(is_operational() && istype(mob_occupant))
+	if(is_operational && istype(mob_occupant))
 		if(mob_occupant.stat != DEAD)
 			. += "Current clone cycle is [round(get_completion())]% complete."
 
@@ -213,7 +215,6 @@
 			icon_state = "pod_g"
 			update_icon()
 			return NONE
-		current_insurance = insurance
 	attempting = TRUE //One at a time!!
 	countdown.start()
 
@@ -284,37 +285,13 @@
 /obj/machinery/clonepod/process()
 	var/mob/living/mob_occupant = occupant
 
-	if(!is_operational()) //Autoeject if power is lost
-		if(mob_occupant)
-			go_out()
-			log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to power loss.")
-
-			connected_message("Clone Ejected: Loss of power.")
-
-	else if(mob_occupant && (mob_occupant.loc == src))
+	if(mob_occupant && (mob_occupant.loc == src))
 		if(!beaker.reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
 			go_out()
 			log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to insufficient material.")
 			connected_message("Clone Ejected: Not enough material.")
 			if(internal_radio)
 				SPEAK("The cloning of [mob_occupant.real_name] has been ended prematurely due to insufficient material.")
-		else if(SSeconomy.full_ancap)
-			if(!current_insurance)
-				go_out()
-				log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to invalid bank account.")
-				connected_message("Clone Ejected: No bank account.")
-				if(internal_radio)
-					SPEAK("The cloning of [mob_occupant.real_name] has been terminated due to no bank account to draw payment from.")
-			else if(!current_insurance.adjust_money(-fair_market_price))
-				go_out()
-				log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to insufficient funds.")
-				connected_message("Clone Ejected: Out of Money.")
-				if(internal_radio)
-					SPEAK("The cloning of [mob_occupant.real_name] has been ended prematurely due to being unable to pay.")
-			else
-				var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
-				if(D)
-					D.adjust_money(fair_market_price)
 		if(mob_occupant && (mob_occupant.stat == DEAD) || (mob_occupant.suiciding) || mob_occupant.hellbound)  //Autoeject corpses and suiciding dudes.
 			connected_message("Clone Rejected: Deceased.")
 			if(internal_radio)
@@ -375,6 +352,18 @@
 		if (!mess && !panel_open)
 			icon_state = "pod_0"
 		use_power(200)
+
+/obj/machinery/clonepod/on_set_is_operational(old_value)
+	. = ..()
+	if(old_value) //Turned off
+		if(occupant)
+			go_out()
+			log_cloning("[key_name(occupant)] ejected from [src] at [AREACOORD(src)] due to power loss.")
+
+			connected_message("Clone Ejected: Loss of power.")
+		end_processing()
+	else //Turned on
+		begin_processing()
 
 //Let's unlock this early I guess.  Might be too early, needs tweaking. Mark says: Jesus, even I'm not that indecisive.
 /obj/machinery/clonepod/attackby(obj/item/W, mob/user, params)
@@ -474,7 +463,6 @@
 
 	if(!mob_occupant)
 		return
-	current_insurance = null
 	REMOVE_TRAIT(mob_occupant, TRAIT_STABLEHEART, CLONING_POD_TRAIT)
 	REMOVE_TRAIT(mob_occupant, TRAIT_STABLELIVER, CLONING_POD_TRAIT)
 	REMOVE_TRAIT(mob_occupant, TRAIT_EMOTEMUTE, CLONING_POD_TRAIT)

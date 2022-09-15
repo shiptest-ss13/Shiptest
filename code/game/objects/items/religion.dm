@@ -250,7 +250,7 @@
 /obj/item/clothing/suit/armor/plate/crusader
 	name = "Crusader's Armour"
 	desc = "Armour that's comprised of metal and cloth."
-	icon_state = "crusader"
+	icon_state = "chaplain_crusader"
 	w_class = WEIGHT_CLASS_BULKY
 	slowdown = 2.0 //gotta pretend we're balanced.
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS

@@ -28,6 +28,8 @@
 	var/req_access_txt = "0"
 	var/list/req_one_access
 	var/req_one_access_txt = "0"
+	// If the object resides in a ship area, determines if the object also requires the ID to have access to the ship
+	var/req_ship_access = FALSE
 	/// Custom fire overlay icon
 	var/custom_fire_overlay
 
@@ -407,5 +409,5 @@
 * Just add ,\n between each thing
 * generate_tgm_metadata(thing) handles everything inside the {} for you
 **/
-/obj/proc/on_object_saved(var/depth = 0)
+/obj/proc/on_object_saved(depth = 0)
 	return ""

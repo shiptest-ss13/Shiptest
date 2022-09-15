@@ -73,6 +73,24 @@
 	..()
 	. = 1
 
+/datum/reagent/medicine/adminordrazine/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustWater(round(chems.get_reagent_amount(type) * 1))
+		mytray.adjustHealth(round(chems.get_reagent_amount(type) * 1))
+		mytray.adjustPests(-rand(1,5))
+		mytray.adjustWeeds(-rand(1,5))
+	if(chems.has_reagent(type, 3))
+		switch(rand(100))
+			if(66 to 100)
+				mytray.mutatespecie()
+			if(33 to 65)
+				mytray.mutateweed()
+			if(1 to 32)
+				mytray.mutatepest(user)
+			else if(prob(20))
+				mytray.visible_message("<span class='warning'>Nothing happens...</span>")
+
 /datum/reagent/medicine/adminordrazine/quantum_heal
 	name = "Quantum Medicine"
 	description = "Rare and experimental particles, that apparently swap the user's body with one from an alternate dimension where it's completely healthy."
@@ -914,6 +932,11 @@
 	..()
 	. = TRUE
 
+/datum/reagent/medicine/strange_reagent/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 5))
+		mytray.spawnplant()
+
 /datum/reagent/medicine/mannitol
 	name = "Mannitol"
 	description = "Efficiently restores brain damage."
@@ -1141,6 +1164,11 @@
 	..()
 	. = 1
 
+/datum/reagent/medicine/antitoxin/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustToxic(-round(chems.get_reagent_amount(type) * 2))
+
 /datum/reagent/medicine/antitoxin/overdose_process(mob/living/M)
 	M.adjustToxLoss(2*REM, 0) // End result is 1.5 toxin loss taken, because it heals 0.5 and then removes 2.
 	..()
@@ -1284,6 +1312,20 @@
 		hippie.gain_trauma(/datum/brain_trauma/severe/pacifism)
 	..()
 	. = 1
+
+//Earthsblood is still a wonderdrug. Just... don't expect to be able to mutate something that makes plants so healthy.
+/datum/reagent/medicine/earthsblood/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(round(chems.get_reagent_amount(type) * 1))
+		mytray.adjustPests(-rand(1,3))
+		mytray.adjustWeeds (-rand(1,3))
+		if(myseed)
+			myseed.adjust_instability(-round(chems.get_reagent_amount(type) * 1.3))
+			myseed.adjust_potency(round(chems.get_reagent_amount(type)))
+			myseed.adjust_yield(round(chems.get_reagent_amount(type)))
+			myseed.adjust_endurance(round(chems.get_reagent_amount(type) * 0.5))
+			myseed.adjust_production(-round(chems.get_reagent_amount(type) * 0.5))
 
 /datum/reagent/medicine/haloperidol
 	name = "Haloperidol"
@@ -1620,7 +1662,7 @@
 	metabolization_rate = REM * 1.5
 	overdose_threshold = 10
 
-/datum/reagent/medicine/hepanephrodaxon/on_mob_life(var/mob/living/carbon/M)
+/datum/reagent/medicine/hepanephrodaxon/on_mob_life(mob/living/carbon/M)
 	var/repair_strength = 1
 	var/obj/item/organ/liver/L = M.getorganslot(ORGAN_SLOT_LIVER)
 	if(L.damage > 0)

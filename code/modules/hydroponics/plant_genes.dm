@@ -35,7 +35,7 @@
 /datum/plant_gene/core/proc/apply_stat(obj/item/seeds/S)
 	return
 
-/datum/plant_gene/core/New(var/i = null)
+/datum/plant_gene/core/New(i = null)
 	..()
 	if(!isnull(i))
 		value = i
@@ -89,6 +89,12 @@
 /datum/plant_gene/core/potency/apply_stat(obj/item/seeds/S)
 	S.potency = value
 
+/datum/plant_gene/core/instability
+	name = "Stability"
+	value = 10
+
+/datum/plant_gene/core/instability/apply_stat(obj/item/seeds/seed)
+	seed.instability = value
 
 /datum/plant_gene/core/weed_rate
 	name = "Weed Growth Rate"

@@ -249,16 +249,16 @@
 	//check_update_ui_need()
 
 /**
-  * Displays notification text alongside a soundbeep when requested to by a program.
-  *
-  * After checking tha the requesting program is allowed to send an alert, creates
-  * a visible message of the requested text alongside a soundbeep. This proc adds
-  * text to indicate that the message is coming from this device and the program
-  * on it, so the supplied text should be the exact message and ending punctuation.
-  *
-  * Arguments:
-  * The program calling this proc.
-  * The message that the program wishes to display.
+ * Displays notification text alongside a soundbeep when requested to by a program.
+ *
+ * After checking tha the requesting program is allowed to send an alert, creates
+ * a visible message of the requested text alongside a soundbeep. This proc adds
+ * text to indicate that the message is coming from this device and the program
+ * on it, so the supplied text should be the exact message and ending punctuation.
+ *
+ * Arguments:
+ * The program calling this proc.
+ * The message that the program wishes to display.
  */
 
 /obj/item/modular_computer/proc/alert_call(datum/computer_file/program/caller, alerttext, sound = 'sound/machines/twobeep_high.ogg')
@@ -406,7 +406,7 @@
 		if(all_components.len)
 			to_chat(user, "<span class='warning'>Remove all components from \the [src] before disassembling it.</span>")
 			return
-		new /obj/item/stack/sheet/metal( get_turf(src.loc), steel_sheet_cost )
+		new /obj/item/stack/sheet/metal(get_turf(src.loc), steel_sheet_cost)
 		physical.visible_message("<span class='notice'>\The [src] is disassembled by [user].</span>")
 		relay_qdel()
 		qdel(src)

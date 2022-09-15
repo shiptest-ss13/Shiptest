@@ -3,7 +3,7 @@
 /obj/machinery/portable_atmospherics/canister
 	name = "canister"
 	desc = "A canister for the storage of gas."
-	icon = 'whitesands/icons/obj/atmos.dmi'
+	icon = 'icons/obj/nutanks.dmi'
 	icon_state = "yellow"
 	density = TRUE
 	base_icon_state = "yellow" //Used to make dealing with breaking the canister less hellish.
@@ -52,7 +52,6 @@
 		"stimulum" = /obj/machinery/portable_atmospherics/canister/stimulum,
 		"pluoxium" = /obj/machinery/portable_atmospherics/canister/pluoxium,
 		"caution" = /obj/machinery/portable_atmospherics/canister,
-		"miasma" = /obj/machinery/portable_atmospherics/canister/miasma,
 		"freon" = /obj/machinery/portable_atmospherics/canister/freon
 	)
 
@@ -139,13 +138,6 @@
 	desc = "Water Vapor. We get it, you vape."
 	icon_state = "water_vapor"
 	gas_type = GAS_H2O
-	filled = 1
-
-/obj/machinery/portable_atmospherics/canister/miasma
-	name = "miasma canister"
-	desc = "Miasma. Makes you wish your nose were blocked."
-	icon_state = "miasma"
-	gas_type = GAS_MIASMA
 	filled = 1
 
 /obj/machinery/portable_atmospherics/canister/freon

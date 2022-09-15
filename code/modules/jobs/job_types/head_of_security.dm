@@ -1,18 +1,12 @@
 /datum/job/hos
-	title = "Head of Security"
+	name = "Head of Security"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
-	department_head = list("Captain")
-	head_announce = list(RADIO_CHANNEL_SECURITY)
-	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
-	selection_color = "#ffdddd"
 	minimal_player_age = 14
 	exp_requirements = 300
 	officer = TRUE
 	wiki_page = "Head_of_Security" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Security Commander", "Chief of Security")
 
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SECURITY
@@ -30,18 +24,17 @@
 		ACCESS_FORENSICS_LOCKERS, ACCESS_MORGUE, ACCESS_MAINT_TUNNELS, ACCESS_ALL_PERSONAL_LOCKERS,
 		ACCESS_RESEARCH, ACCESS_ENGINE, ACCESS_MINING, ACCESS_MEDICAL, ACCESS_CONSTRUCTION, ACCESS_MAILSORTING,
 		ACCESS_HEADS, ACCESS_HOS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_GATEWAY, ACCESS_MAINT_TUNNELS, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_SEC
 
 	display_order = JOB_DISPLAY_ORDER_HEAD_OF_SECURITY
 
 /datum/outfit/job/hos
 	name = "Head of Security"
+	job_icon = "headofsecurity"
 	jobtype = /datum/job/hos
 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/pda/heads/hos
-	ears = /obj/item/radio/headset/heads/hos/alt
+	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/security/head_of_security
 	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/alt
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -74,18 +67,20 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/gun/energy/e_gun=1, /obj/item/ammo_box/magazine/co9mm=1) //WS edit - free lethals
 
-/datum/outfit/job/hos/sergeant
-	name = "Sergeant (Head of Security)"
+/datum/outfit/job/hos/syndicate
+	name = "Sergeant (Syndicate)"
 
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	head = /obj/item/clothing/head/HoS/beret/syndicate
+	ears = /obj/item/radio/headset/syndicate/alt
+	uniform = /obj/item/clothing/under/syndicate/combat
+	head = /obj/item/clothing/head/warden
 	suit = /obj/item/clothing/suit/armor/vest/syndie
-	r_pocket = /obj/item/melee/transforming/energy/sword
-	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+	id = /obj/item/card/id/syndicate_command/crew_id
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
 
 /datum/outfit/job/hos/inteq
-	name = "IRMG Vanguard"
+	name = "IRMG Vanguard (Inteq)"
 
+	ears = /obj/item/radio/headset/inteq/alt/captain
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	head = /obj/item/clothing/head/beret/sec/hos/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
@@ -97,11 +92,22 @@
 	gloves = /obj/item/clothing/gloves/combat
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/heads/hos)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/heads/hos)
+
+/datum/outfit/job/hos/inteq/naked
+	name = "IRMG Vanguard (Inteq) (Naked)"
+	head = null
+	mask = null
+	glasses = null
+	belt = null
+	suit = null
+	gloves = null
+	suit_store = null
 
 /datum/outfit/job/hos/nanotrasen
 	name = "Head of Security (Nanotrasen)"
 
+	ears = /obj/item/radio/headset/nanotrasen/alt
 	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt
 	alt_uniform = null
 	head = /obj/item/clothing/head/beret/sec/hos

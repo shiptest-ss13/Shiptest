@@ -167,12 +167,12 @@ block( \
 	return turfs
 
 /** recursive_organ_check
-  * inputs: O (object to start with)
-  * outputs:
-  * description: A pseudo-recursive loop based off of the recursive mob check, this check looks for any organs held
-  *				 within 'O', toggling their frozen flag. This check excludes items held within other safe organ
-  *				 storage units, so that only the lowest level of container dictates whether we do or don't decompose
-  */
+ * inputs: O (object to start with)
+ * outputs:
+ * description: A pseudo-recursive loop based off of the recursive mob check, this check looks for any organs held
+ *				 within 'O', toggling their frozen flag. This check excludes items held within other safe organ
+ *				 storage units, so that only the lowest level of container dictates whether we do or don't decompose
+ */
 /proc/recursive_organ_check(atom/O)
 
 	var/list/processing_list = list(O)
@@ -307,11 +307,11 @@ block( \
 	return FALSE
 
 /**
-  * Exiled check
-  *
-  * Checks if the current body of the mind has an exile implant and is currently in
-  * an away mission. Returns FALSE if any of those conditions aren't met.
-  */
+ * Exiled check
+ *
+ * Checks if the current body of the mind has an exile implant and is currently in
+ * an away mission. Returns FALSE if any of those conditions aren't met.
+ */
 /proc/considered_exiled(datum/mind/M)
 	if(!ishuman(M?.current))
 		return FALSE
@@ -330,6 +330,10 @@ block( \
 	O.maptext_width = maptext_width
 	O.screen_loc = screen_loc
 	return O
+
+/// Removes an image from a client's `.images`. Useful as a callback.
+/proc/remove_image_from_client(image/image, client/remove_from)
+	remove_from?.images -= image
 
 /proc/remove_images_from_clients(image/I, list/show_to)
 	for(var/client/C in show_to)
@@ -505,13 +509,8 @@ block( \
 	if((character.mind.assigned_role == "Cyborg") || (character.mind.assigned_role == character.mind.special_role))
 		return
 
-	//WS begin - Alternate job titles
-	var/displayed_rank = rank
-	if(character.client && character.client.prefs && character.client.prefs.alt_titles_preferences[rank])
-		displayed_rank = character.client.prefs.alt_titles_preferences[rank]
 	var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
-	announcer.announce("ARRIVAL", character.real_name, displayed_rank, list()) //make the list empty to make it announce it in common
-	//WS end
+	announcer.announce("ARRIVAL", character.real_name, rank, list()) //make the list empty to make it announce it in common
 
 /proc/lavaland_equipment_pressure_check(turf/T)
 	. = FALSE

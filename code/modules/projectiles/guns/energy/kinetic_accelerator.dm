@@ -29,6 +29,10 @@
 
 	var/recharge_timerid
 
+/obj/item/gun/energy/kinetic_accelerator/shoot_with_empty_chamber(mob/living/user)
+	playsound(src, dry_fire_sound, 30, TRUE) //click sound but no to_chat message to cut on spam
+	return
+
 /obj/item/gun/energy/kinetic_accelerator/examine(mob/user)
 	. = ..()
 	if(max_mod_capacity)
@@ -405,7 +409,7 @@
 				M.gets_drilled(K.firer, TRUE)
 	if(modifier)
 		for(var/mob/living/L in range(1, target_turf) - K.firer - target)
-			var/armor = L.run_armor_check(K.def_zone, K.flag, "", "", K.armour_penetration)
+			var/armor = L.run_armor_check(K.def_zone, K.flag, K.armour_penetration, silent = TRUE)
 			L.apply_damage(K.damage*modifier, K.damage_type, K.def_zone, armor)
 			to_chat(L, "<span class='userdanger'>You're struck by a [K.name]!</span>")
 
@@ -511,7 +515,7 @@
 			var/kill_modifier = 1
 			if(K.pressure_decrease_active)
 				kill_modifier *= K.pressure_decrease
-			var/armor = L.run_armor_check(K.def_zone, K.flag, "", "", K.armour_penetration)
+			var/armor = L.run_armor_check(K.def_zone, K.flag, K.armour_penetration, silent = TRUE)
 			L.apply_damage(bounties_reaped[L.type]*kill_modifier, K.damage_type, K.def_zone, armor)
 
 /obj/item/borg/upgrade/modkit/bounty/proc/get_kill(mob/living/L)
@@ -609,7 +613,7 @@
 
 /obj/item/gun/energy/kinetic_accelerator/old
 	name = "proto-kinetic accelerator"
-	desc = "A self-recharging concussive blast mining tool, heavily used by Nanotransen Mining Corps both for extracting minerals and dealing with unruly locals. NT's prototype line was produced with top-of-the-line cooling mechanisms. "
+	desc = "A self-recharging concussive blast mining tool, heavily used by Nanotrasen Mining Corps both for extracting minerals and dealing with unruly locals. NT's prototype line was produced with top-of-the-line cooling mechanisms. "
 	icon_state = "kineticgunold"
 	item_state = "kineticgunold"
 	overheat_time = 10

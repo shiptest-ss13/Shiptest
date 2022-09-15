@@ -11,7 +11,7 @@ SUBSYSTEM_DEF(icon_smooth)
 
 /datum/controller/subsystem/icon_smooth/fire()
 	var/list/cached = smooth_queue
-	while(length(cached))
+	while(cached.len)
 		var/atom/smoothing_atom = cached[length(cached)]
 		cached.len--
 		if(QDELETED(smoothing_atom) || !(smoothing_atom.smoothing_flags & SMOOTH_QUEUED))
@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(icon_smooth)
 	var/list/queue = smooth_queue
 	smooth_queue = list()
 
-	while(length(queue))
+	while(queue.len)
 		var/atom/smoothing_atom = queue[length(queue)]
 		queue.len--
 		if(QDELETED(smoothing_atom) || !(smoothing_atom.smoothing_flags & SMOOTH_QUEUED) || smoothing_atom.z <= 2)

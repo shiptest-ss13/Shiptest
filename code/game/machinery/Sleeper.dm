@@ -41,8 +41,6 @@
 	var/amount = 10
 	var/open_sound = 'sound/machines/podopen.ogg'
 	var/close_sound = 'sound/machines/podclose.ogg'
-	payment_department = ACCOUNT_MED
-	fair_market_price = 5
 
 /obj/machinery/sleeper/Initialize(mapload)
 	. = ..()
@@ -95,7 +93,7 @@
 		container_resist_act(user)
 
 /obj/machinery/sleeper/proc/stasis_running()
-	return can_stasis && stasis_enabled && is_operational()
+	return can_stasis && stasis_enabled && is_operational
 
 /obj/machinery/sleeper/proc/chill_out(mob/living/target)
 	if(target != occupant || !can_stasis)
@@ -111,7 +109,7 @@
 		playsound(src, 'sound/machines/synth_no.ogg', 50, TRUE, frequency = rand(5120, 8800))
 
 /obj/machinery/sleeper/process()
-	if( !( occupant && isliving(occupant) && check_nap_violations() ) )
+	if(!occupant || !isliving(occupant))
 		use_power = IDLE_POWER_USE
 		return
 	var/mob/living/L_occupant = occupant
@@ -150,7 +148,7 @@
 	. = ..()
 	if (. & EMP_PROTECT_SELF)
 		return
-	if(is_operational() && occupant)
+	if(is_operational && occupant)
 		open_machine()
 
 
@@ -246,13 +244,6 @@
 	. += "<span class='notice'>Alt-click [src] to [state_open ? "close" : "open"] it.</span>"
 	. += "<span class='notice'>[chembag ? "There is a chembag in the chemical storage slot. It can be removed by Ctrl-clicking." : "It looks like a chembag can be attached to the chemical storage slot."]</span>"
 
-/obj/machinery/sleeper/process()
-	..()
-	check_nap_violations()
-
-/obj/machinery/sleeper/nap_violation(mob/violator)
-	open_machine()
-
 /obj/machinery/sleeper/ui_data(mob/user)
 	if(src.contains(user) && !controls_inside)
 		return
@@ -277,7 +268,7 @@
 				total_volume += rs.total_volume
 			if(is_hallucinating && prob(5))
 				chemname = "[pick_list_replacements("hallucination.json", "chemicals")]"
-			chemicals.Add(list(list("title" = chemname, "id" = ckey(temp.name), "volume" = total_volume, "allowed" = chem_allowed(temp) )))
+			chemicals.Add(list(list("title" = chemname, "id" = ckey(temp.name), "volume" = total_volume, "allowed" = chem_allowed(temp))))
 	data["chemicals"] = chemicals
 	data["occupant"] = list()
 	var/mob/living/mob_occupant = occupant
@@ -316,7 +307,6 @@
 	if(.)
 		return
 	var/mob/living/mob_occupant = occupant
-	check_nap_violations()
 	switch(action)
 		if("amount")
 			var/target = text2num(params["target"])
@@ -328,7 +318,7 @@
 		if("inject")
 			var/reagent_name = params["reagent"]
 			var/datum/reagent/chem = GLOB.name2reagent[reagent_name]
-			if(!is_operational() || !mob_occupant || isnull(chem))
+			if(!is_operational || !mob_occupant || isnull(chem))
 				return
 			if(mob_occupant.health < min_health && chem != /datum/reagent/medicine/epinephrine)
 				return

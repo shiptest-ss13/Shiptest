@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Riggs-class Sloop",
+	"prefix": "SV",
+	"namelists": ["GENERAL", "SPACE", "NATURAL", "NATURAL_AGGRESSIVE"],
+	"map_short_name": "Riggs-class",
+	"map_path": "_maps/shuttles/shiptest/independent_rigger.dmm",
+	"roundstart": true,
+	"limit": 2,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/western",
+			"officer": true,
+			"slots": 1
+		},
+		"First Mate": {
+			"outfit": "/datum/outfit/job/head_of_personnel/western",
+			"officer": true,
+			"slots": 1
+		},
+		"Ship's Doctor": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 1
+		},
+		"Machinist's Mate": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 2
+		},
+		"Asteroid Miner": {
+			"outfit": "/datum/outfit/job/miner/hazard",
+			"slots": 2
+		},
+		"Mech Technician": {
+			"outfit": "/datum/outfit/job/roboticist/technician",
+			"slots": 1
+		},
+		"Security Detail": {
+			"outfit": "/datum/outfit/job/security/western",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 4
+		}
+	},
+	"enabled": true
+}

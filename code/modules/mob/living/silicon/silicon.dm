@@ -47,6 +47,8 @@
 	var/interaction_range = 7			//wireless control range
 	var/obj/item/pda/ai/aiPDA
 
+	var/list/ship_access = list() // Internal access to ships
+
 /mob/living/silicon/Initialize()
 	. = ..()
 	GLOB.silicon_mobs += src
@@ -445,3 +447,16 @@
 
 /mob/living/silicon/on_standing_up()
 	return // Silicons are always standing by default.
+
+// Silicon equivalent of ID card ship access procs
+/mob/living/silicon/proc/add_ship_access(datum/overmap/ship/controlled/ship)
+	if (ship)
+		ship_access += ship
+
+/mob/living/silicon/proc/remove_ship_access(datum/overmap/ship/controlled/ship)
+	if (ship)
+		ship_access -= ship
+
+/mob/living/silicon/proc/has_ship_access(datum/overmap/ship/controlled/ship)
+	if (ship)
+		return ship_access.Find(ship)

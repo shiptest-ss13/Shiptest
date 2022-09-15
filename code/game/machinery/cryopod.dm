@@ -1,4 +1,3 @@
-#define DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN 2 MINUTES
 
 /*
  * Cryogenic refrigeration unit. Basically a despawner.
@@ -28,8 +27,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	/// Whether or not to store items from people going into cryosleep.
 	var/allow_items = TRUE
-	/// The ship object representing the ship that this console is on.
-	var/datum/overmap/ship/controlled/linked_ship
 
 /obj/machinery/computer/cryopod/Initialize()
 	. = ..()
@@ -38,10 +35,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/computer/cryopod/Destroy()
 	GLOB.cryopod_computers -= src
 	return ..()
-
-/obj/machinery/computer/cryopod/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
-	. = ..()
-	linked_ship = port.current_ship
 
 /obj/machinery/computer/cryopod/ui_interact(mob/user, datum/tgui/ui)
 	. = ..()
@@ -102,49 +95,12 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			allow_items = !allow_items
 			return
 
-		if("toggleAwakening")
-			linked_ship.join_allowed = !linked_ship.join_allowed
-			return
-
-		if("setMemo")
-			if(!("newName" in params) || params["newName"] == linked_ship.memo)
-				return
-			linked_ship.memo = params["newName"]
-			return
-
-		if("adjustJobSlot")
-			if(!("toAdjust" in params) || !("delta" in params) || !COOLDOWN_FINISHED(linked_ship, job_slot_adjustment_cooldown))
-				return
-			var/datum/job/target_job = locate(params["toAdjust"])
-			if(!target_job)
-				return
-			if(linked_ship.job_slots[target_job] + params["delta"] < 0 || linked_ship.job_slots[target_job] + params["delta"] > 4)
-				return
-			linked_ship.job_slots[target_job] += params["delta"]
-			COOLDOWN_START(linked_ship, job_slot_adjustment_cooldown, DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN)
-			update_static_data(user)
-			return
-
 /obj/machinery/computer/cryopod/ui_data(mob/user)
 	. = list()
 	.["allowItems"] = allow_items
-	.["awakening"] = linked_ship.join_allowed
-	.["cooldown"] = COOLDOWN_TIMELEFT(linked_ship, job_slot_adjustment_cooldown)
-	.["memo"] = linked_ship.memo
 
 /obj/machinery/computer/cryopod/ui_static_data(mob/user)
 	. = list()
-	.["jobs"] = list()
-	for(var/datum/job/J as anything in linked_ship.job_slots)
-		if(J.officer)
-			continue
-		.["jobs"] += list(list(
-			name = J.title,
-			slots = linked_ship.job_slots[J],
-			ref = REF(J),
-			max = linked_ship.source_template.job_slots[J] * 2
-		))
-
 	.["hasItems"] = length(frozen_items) > 0
 	.["stored"] = frozen_crew
 
@@ -382,7 +338,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		visible_message("<span class='notice'>\The [src] hums and hisses as it moves [mob_occupant.real_name] into storage.</span>")
 
 	for(var/obj/item/W as anything in mob_occupant.GetAllContents())
-		if(W.loc.loc && (( W.loc.loc == loc ) || (W.loc.loc == control_computer_obj)))
+		if(W.loc.loc && ((W.loc.loc == loc) || (W.loc.loc == control_computer_obj)))
 			continue//means we already moved whatever this thing was in
 			//I'm a professional, okay
 			//what the fuck are you on rn and can I have some
@@ -471,5 +427,3 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	sleepyhead.set_disgust(60)
 	sleepyhead.set_nutrition(160)
 	to_chat(sleepyhead, "<span class='bolddanger'>A very bad headache wakes you up from cryosleep...</span>")
-
-#undef DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN

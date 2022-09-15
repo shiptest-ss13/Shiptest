@@ -407,65 +407,11 @@ Code:
 			menu += "<br>"
 
 		if (49) //janitorial locator
+			// hey there people, so there were two in world loops here that didnt have a timer assosciated with them.
+			// and instead of redoing this to not be actually god awful for perf and malcontent issues, I've removed it entirely.
+			// You have two, or more, legs and eyes; use them
 			menu = "<h4>[PDAIMG(bucket)] Persistent Custodial Object Locator</h4>"
-
-			var/turf/cl = get_turf(src)
-			if (cl)
-				menu += "Current Orbital Location: <b>\[[cl.x],[cl.y]\]</b>"
-
-				menu += "<h4>Located Mops:</h4>"
-
-				var/ldat
-				for (var/obj/item/mop/M in world)
-					var/turf/ml = get_turf(M)
-
-					if(ml)
-						if (ml.virtual_z() != cl.virtual_z())
-							continue
-						var/direction = get_dir(src, M)
-						ldat += "Mop - <b>\[[ml.x],[ml.y] ([uppertext(dir2text(direction))])\]</b> - [M.reagents.total_volume ? "Wet" : "Dry"]<br>"
-
-				if (!ldat)
-					menu += "None"
-				else
-					menu += "[ldat]"
-
-				menu += "<h4>Located Janitorial Cart:</h4>"
-
-				ldat = null
-				for (var/obj/structure/janitorialcart/B in world)
-					var/turf/bl = get_turf(B)
-
-					if(bl)
-						if (bl.virtual_z() != cl.virtual_z())
-							continue
-						var/direction = get_dir(src, B)
-						ldat += "Cart - <b>\[[bl.x],[bl.y] ([uppertext(dir2text(direction))])\]</b> - Water level: [B.reagents.total_volume]/100<br>"
-
-				if (!ldat)
-					menu += "None"
-				else
-					menu += "[ldat]"
-
-				menu += "<h4>Located Cleanbots:</h4>"
-
-				ldat = null
-				for (var/mob/living/simple_animal/bot/cleanbot/B in GLOB.alive_mob_list)
-					var/turf/bl = get_turf(B)
-
-					if(bl)
-						if (bl.virtual_z() != cl.virtual_z())
-							continue
-						var/direction = get_dir(src, B)
-						ldat += "Cleanbot - <b>\[[bl.x],[bl.y] ([uppertext(dir2text(direction))])\]</b> - [B.on ? "Online" : "Offline"]<br>"
-
-				if (!ldat)
-					menu += "None"
-				else
-					menu += "[ldat]"
-
-			else
-				menu += "ERROR: Unable to determine current location."
+			menu += "ERROR: Functionality disabled due to space-time warping issues. Please contact your nearest AI for assistance in locating your supplies."
 			menu += "<br><br><A href='byond://?src=[REF(src)];choice=49'>Refresh GPS Locator</a>"
 
 		if (53) // Newscaster

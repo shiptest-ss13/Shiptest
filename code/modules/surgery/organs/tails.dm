@@ -48,7 +48,7 @@
 	var/spines = "None"
 
 /obj/item/organ/tail/lizard/Initialize()
-	..()
+	. = ..()
 	color = "#"+ random_color()
 
 /obj/item/organ/tail/lizard/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
@@ -78,4 +78,33 @@
 		color = "#" + H.dna.features["mcolor"]
 		tail_type = H.dna.features["tail_lizard"]
 		spines = H.dna.features["spines"]
+		H.update_body()
+
+/obj/item/organ/tail/lizard/fake
+	name = "fabricated lizard tail"
+	desc = "A fabricated severed lizard tail. This one's made of synthflesh. Probably not usable for lizard wine."
+
+/obj/item/organ/tail/elzu
+	name = "\improper Elzuose tail"
+	desc = "A detached Elzuose's tail. You probably shouldn't plant this."
+	color = "#d3e8e9"
+	tail_type = "Long"
+
+/obj/item/organ/tail/elzu/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(H))
+		// Checks here are necessary so it wouldn't overwrite the tail of an elzu it spawned in
+		if(!("tail_elzu" in H.dna.species.mutant_bodyparts))
+			if(!H.dna.features["tail_elzu"])
+				H.dna.features["tail_elzu"] = tail_type
+				H.dna.species.mutant_bodyparts |= "tail_elzu"
+			else
+				H.dna.species.mutant_bodyparts["tail_elzu"] = H.dna.features["tail_elzu"]
+
+/obj/item/organ/tail/elzu/Remove(mob/living/carbon/human/H,  special = 0)
+	..()
+	if(istype(H))
+		H.dna.species.mutant_bodyparts -= "tail_elzu"
+		color = "#" + H.dna.features["mcolor"]
+		tail_type = H.dna.features["tail_elzu"]
 		H.update_body()

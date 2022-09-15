@@ -86,7 +86,7 @@
  */
 
 /***********************************************
- Medical HUD! Basic mode needs suit sensors on.
+Medical HUD! Basic mode needs suit sensors on.
 ************************************************/
 
 //HELPERS
@@ -219,7 +219,7 @@
 
 
 /***********************************************
- FAN HUDs! For identifying other fans on-sight.
+FAN HUDs! For identifying other fans on-sight.
 ************************************************/
 
 //HOOKS
@@ -237,7 +237,7 @@
 			holder.icon_state = "fan_clown_pin"
 
 /***********************************************
- Security HUDs! Basic mode shows only the job.
+Security HUDs! Basic mode shows only the job.
 ************************************************/
 
 //HOOKS
@@ -247,8 +247,9 @@
 	var/icon/I = icon(icon, icon_state, dir)
 	holder.pixel_y = I.Height() - world.icon_size
 	holder.icon_state = "hudno_id"
-	if(wear_id?.GetID())
-		holder.icon_state = "hud[ckey(wear_id.GetJobName())]"
+	var/obj/item/card/id/worn_id = wear_id?.GetID()
+	if(worn_id && worn_id.job_icon)
+		holder.icon_state = "hud[worn_id.job_icon]"
 	sec_hud_set_security_status()
 
 /mob/living/proc/sec_hud_set_implants()
@@ -297,7 +298,7 @@
 	holder.icon_state = null
 
 /***********************************************
- Diagnostic HUDs!
+Diagnostic HUDs!
 ************************************************/
 
 /mob/living/proc/hud_set_nanite_indicator()

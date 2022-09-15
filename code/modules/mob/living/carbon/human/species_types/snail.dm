@@ -1,7 +1,6 @@
 /datum/species/snail
 	name = "\improper Snailperson"
 	id = SPECIES_SNAIL
-	offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,4), OFFSET_EARS = list(0,0), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0), OFFSET_ACCESSORY = list(0, 0))
 	default_color = "336600" //vomit green
 	species_traits = list(MUTCOLORS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_ALWAYS_CLEAN, TRAIT_NOSLIPALL)
@@ -25,6 +24,12 @@
 	species_r_arm = /obj/item/bodypart/r_arm/snail
 	species_l_leg = /obj/item/bodypart/l_leg/snail
 	species_r_leg = /obj/item/bodypart/r_leg/snail
+
+/datum/species/snail/New()
+	. = ..()
+	offset_clothing = list(
+		"[GLASSES_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = 4), "[EAST]" = list("x" = 0, "y" = 4), "[SOUTH]" = list("x" = 0, "y" = 4), "[WEST]" = list("x" =  0, "y" = 4))
+	)
 
 /datum/species/snail/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(chem.type == /datum/reagent/consumable/sodiumchloride)

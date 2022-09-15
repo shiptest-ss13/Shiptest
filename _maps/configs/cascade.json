@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Cascade-Class Genetics Vessel",
+	"prefix": "SSV",
+	"namelists": ["GENERAL", "NATURAL_AGGRESSIVE"],
+	"map_short_name": "Cascade-class",
+	"map_path": "_maps/shuttles/shiptest/Syndicate_Cascade.dmm",
+	"job_slots": {
+		"Medical Professor": {
+			"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Student": {
+			"outfit": "/datum/outfit/job/doctor/syndicate/nsv",
+			"slots": 2
+		},
+		"Quartermaster": 1,
+		"Deck Assistant": {
+			"outfit": "/datum/outfit/syndicate_empty/sbc",
+			"slots": 3
+		},
+		"Union Engineer": {
+			"outfit": "/datum/outfit/job/engineer/gec",
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/paramedic/syndicate/gorlex",
+			"slots": 1
+		}
+	}
+}

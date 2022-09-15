@@ -53,6 +53,7 @@
 	normalspeed = 1
 	explosion_block = 1
 	hud_possible = list(DIAG_AIRLOCK_HUD)
+	req_ship_access = TRUE
 
 	FASTDMM_PROP(\
 		pinned_vars = list("req_access_txt", "req_one_access_txt", "name")\
@@ -99,7 +100,7 @@
 
 	var/prying_so_hard = FALSE
 
-	flags_1 = RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1
+	flags_1 = RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1 | HTML_USE_INITAL_ICON_1
 	rad_insulation = RAD_MEDIUM_INSULATION
 
 	var/static/list/airlock_overlays = list()
@@ -438,7 +439,7 @@
 	return FALSE
 
 /obj/machinery/door/airlock/proc/canAIControl(mob/user)
-	return ((aiControlDisabled != AI_WIRE_DISABLED) && !isAllPowerCut())
+	return ((aiControlDisabled != AI_WIRE_DISABLED) && !isAllPowerCut() && check_ship_ai_access(user))
 
 /obj/machinery/door/airlock/proc/canAIHack()
 	return ((aiControlDisabled==AI_WIRE_DISABLED) && (!hackProof) && (!isAllPowerCut()));
@@ -1143,7 +1144,7 @@
 								"<span class='hear'>You hear welding.</span>")
 				if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, .proc/weld_checks, W, user)))
 					obj_integrity = max_integrity
-					machine_stat &= ~BROKEN
+					set_machine_stat(machine_stat & ~BROKEN)
 					user.visible_message("<span class='notice'>[user] finishes welding [src].</span>", \
 										"<span class='notice'>You finish repairing the airlock.</span>")
 					update_icon()
@@ -1154,13 +1155,13 @@
 	return !operating && density
 
 /**
-  * Used when attempting to remove a seal from an airlock
-  *
-  * Called when attacking an airlock with an empty hand, returns TRUE (there was a seal and we removed it, or failed to remove it)
-  * or FALSE (there was no seal)
-  * Arguments:
-  * * user - Whoever is attempting to remove the seal
-  */
+ * Used when attempting to remove a seal from an airlock
+ *
+ * Called when attacking an airlock with an empty hand, returns TRUE (there was a seal and we removed it, or failed to remove it)
+ * or FALSE (there was no seal)
+ * Arguments:
+ * * user - Whoever is attempting to remove the seal
+ */
 /obj/machinery/door/airlock/try_remove_seal(mob/living/user)
 	if(!seal)
 		return FALSE
@@ -1235,7 +1236,7 @@
 
 
 /obj/machinery/door/airlock/open(forced=0)
-	if( operating || welded || locked || seal )
+	if(operating || welded || locked || seal)
 		return FALSE
 	if(!forced)
 		if(!hasPower() || wires.is_cut(WIRE_OPEN))
@@ -1580,6 +1581,7 @@
 		return
 
 	if(!user_allowed(usr))
+		to_chat(usr, "<span class='danger'>Access denied.</span>")
 		return
 	switch(action)
 		if("disrupt-main")

@@ -27,19 +27,12 @@
 	description = "An odd coffin shaped pirate hut that the inhabitant of died in."
 	suffix = "jungle_surface_coffinpirate.dmm"
 
-///how bad can i possibly be?
-/datum/map_template/ruin/jungle/onceler
-	name = "Thneed Factory"
-	id = "tumblr-sexyman"
-	description = "After a logging incident gone wrong, the Syndicate invade this factory to stop the beast."
-	suffix = "jungle_surface_tumblr_sexyman.dmm"
-
-//industrial society blah blah blah
-/datum/map_template/ruin/jungle/unabomber
+//far more tasteful than its predecessor...
+/datum/map_template/ruin/jungle/lessonintrickery
 	name = "Bombmaker's Cabin"
-	id = "unabomber-cabin"
-	description = "The Industrial Revolution and its consequences have been a disaster for the human race."
-	suffix = "jungle_surface_unabomber_cabin.dmm"
+	id = "bombmakers-cabin"
+	description = "Playing with bombs again, are we?"
+	suffix = "jungle_surface_bombmakers_cabin.dmm"
 
 /datum/map_template/ruin/jungle/weedshack
 	name = "Stoner's Cabin"
@@ -119,3 +112,16 @@
 	id = "ninjashrine"
 	description = "A ninja shrine."
 	suffix = "jungle_surface_ninjashrine.dmm"
+
+/datum/map_template/ruin/jungle/interceptor
+	name = "Old Crashed Interceptor"
+	id = "crashedcondor"
+	description = "An overgrown crashed Condor Class, a forgotten remnant of the Corporate Wars."
+	suffix = "jungle_interceptor.dmm"
+
+/datum/map_template/ruin/jungle/paradise
+	name = "Hidden paradise"
+	id = "paradise"
+	description = "a crashed shuttle, and a hidden beautiful lake."
+	suffix = "jungle_paradise.dmm"
+

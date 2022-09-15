@@ -185,8 +185,8 @@
 /// just check density
 #define ATMOS_PASS_DENSITY -2
 
-#define CANATMOSPASS(A, O) ( A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : ( A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass ) )
-#define CANVERTICALATMOSPASS(A, O) ( A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : ( A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical ) )
+#define CANATMOSPASS(A, O) (A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : (A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass))
+#define CANVERTICALATMOSPASS(A, O) (A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : (A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical))
 
 //OPEN TURF ATMOS
 /// the default air mix that open turfs spawn
@@ -202,7 +202,8 @@
 #define KITCHEN_COLDROOM_ATMOS "o2=33;n2=124;TEMP=193.15"
 /// used in the holodeck burn test program
 #define BURNMIX_ATMOS "o2=2500;plasma=5000;TEMP=370"
-
+/// used in rockplanet
+#define ROCKPLANET_DEFAULT_ATMOS "co2=95;n2=3;TEMP=210.15"
 //ATMOSPHERICS DEPARTMENT GAS TANK TURFS
 #define ATMOS_TANK_N2O "n2o=6000;TEMP=293.15"
 #define ATMOS_TANK_CO2 "co2=50000;TEMP=293.15"
@@ -324,7 +325,6 @@
 #define GAS_BZ "bz"
 #define GAS_STIMULUM "stim"
 #define GAS_PLUOXIUM "pluox"
-#define GAS_MIASMA "miasma"
 #define GAS_FREON "freon"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
@@ -350,13 +350,6 @@
 #define PIPING_LAYER_DOUBLE_SHIFT(T, PipingLayer) \
 	T.pixel_x = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_X; \
 	T.pixel_y = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_Y;
-
-#ifdef TESTING
-GLOBAL_LIST_INIT(atmos_adjacent_savings, list(0,0))
-#define CALCULATE_ADJACENT_TURFS(T) if (SSadjacent_air.queue[T]) { GLOB.atmos_adjacent_savings[1] += 1 } else { GLOB.atmos_adjacent_savings[2] += 1; SSadjacent_air.queue[T] = 1 }
-#else
-#define CALCULATE_ADJACENT_TURFS(T) SSadjacent_air.queue[T] = 1
-#endif
 
 GLOBAL_VAR(atmos_extools_initialized) // this must be an uninitialized (null) one or init_monstermos will be called twice because reasons
 #define ATMOS_EXTOOLS_CHECK if(!GLOB.atmos_extools_initialized){ \
@@ -384,5 +377,3 @@ GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
 	"yellow" = rgb(255,198,0)
 )))
 
-#define MIASMA_CORPSE_MOLES 0.02
-#define MIASMA_GIBS_MOLES 0.005

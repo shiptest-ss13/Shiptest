@@ -69,7 +69,7 @@
 	laser_act(target, user, params)
 
 /obj/item/laser_pointer/proc/laser_act(atom/target, mob/living/user, params)
-	if( !(user in (viewers(7,target))) )
+	if(!(user in (viewers(7,target))))
 		return
 	if (!diode)
 		to_chat(user, "<span class='notice'>You point [src] at [target], but nothing happens!</span>")
@@ -132,21 +132,6 @@
 		else
 			outmsg = "<span class='warning'>You miss the lens of [C] with [src]!</span>"
 
-	//catpeople
-	for(var/mob/living/carbon/human/H in view(1,targloc))
-		if(!isfelinid(H) || H.incapacitated() || H.is_blind())
-			continue
-		if(user.body_position == STANDING_UP)
-			H.setDir(get_dir(H,targloc)) // kitty always looks at the light
-			if(prob(effectchance * diode.rating))
-				H.visible_message("<span class='warning'>[H] makes a grab for the light!</span>","<span class='userdanger'>LIGHT!</span>")
-				H.Move(targloc)
-				log_combat(user, H, "moved with a laser pointer",src)
-			else
-				H.visible_message("<span class='notice'>[H] looks briefly distracted by the light.</span>", "<span class='warning'>You're briefly tempted by the shiny light...</span>")
-		else
-			H.visible_message("<span class='notice'>[H] stares at the light.</span>", "<span class='warning'>You stare at the light...</span>")
-
 	//cats!
 	for(var/mob/living/simple_animal/pet/cat/C in view(1,targloc))
 		if(prob(effectchance * diode.rating))
@@ -161,12 +146,12 @@
 	//laser pointer image
 	icon_state = "pointer_[pointer_icon_state]"
 	var/image/I = image('icons/obj/projectiles.dmi',targloc,pointer_icon_state,10)
-	var/list/click_params = params2list(params)
-	if(click_params)
-		if(click_params["icon-x"])
-			I.pixel_x = (text2num(click_params["icon-x"]) - 16)
-		if(click_params["icon-y"])
-			I.pixel_y = (text2num(click_params["icon-y"]) - 16)
+	var/list/modifiers = params2list(params)
+	if(modifiers)
+		if(LAZYACCESS(modifiers, ICON_X))
+			I.pixel_x = (text2num(LAZYACCESS(modifiers, ICON_X)) - 16)
+		if(LAZYACCESS(modifiers, ICON_Y))
+			I.pixel_y = (text2num(LAZYACCESS(modifiers, ICON_Y)) - 16)
 	else
 		I.pixel_x = target.pixel_x + rand(-5,5)
 		I.pixel_y = target.pixel_y + rand(-5,5)

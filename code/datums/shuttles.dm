@@ -11,12 +11,15 @@
 	var/port_x_offset
 	var/port_y_offset
 
-	var/limit
-	var/cost
+	var/limit = 2
+	var/enabled
 	var/short_name
 	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
 	var/prefix = "SV"
+	var/unique_ship_access = FALSE
+
+	var/static/list/outfits
 
 /datum/map_template/shuttle/proc/prerequisites_met()
 	return TRUE
@@ -61,7 +64,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/list/turfs = block(	locate(.[MAP_MINX], .[MAP_MINY], .[MAP_MINZ]),
+	var/list/turfs = block(locate(.[MAP_MINX], .[MAP_MINY], .[MAP_MINZ]),
 							locate(.[MAP_MAXX], .[MAP_MAXY], .[MAP_MAXZ]))
 	for(var/turf/place as anything in turfs)
 		if(istype(place, /turf/open/space)) // This assumes all shuttles are loaded in a single spot then moved to their real destination.
@@ -101,8 +104,106 @@
 
 			port.load(src)
 
+/datum/map_template/shuttle/ui_state(mob/user)
+	return GLOB.admin_debug_state
+
+/datum/map_template/shuttle/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ShipEditor")
+		ui.open()
+
+/datum/map_template/shuttle/ui_static_data(mob/user)
+	. = list()
+
+	if(!outfits)
+		outfits = list()
+		for(var/datum/outfit/outfit as anything in subtypesof(/datum/outfit))
+			outfits[initial(outfit.name)] = outfit
+		outfits = sortList(outfits)
+
+	.["outfits"] = outfits
+
+	.["templateName"] = name
+	.["templateShortName"] = short_name
+	.["templateDescription"] = description
+	.["templateCategory"] = category
+	.["templateLimit"] = limit
+	.["templateEnabled"] = enabled
+
+	.["templateJobs"] = list()
+	for(var/datum/job/job as anything in job_slots)
+		var/list/jobdetails = list()
+		jobdetails["ref"] = REF(job)
+		jobdetails["name"] = job.name
+		jobdetails["officer"] = job.officer
+		jobdetails["outfit"] = initial(job.outfit.name)
+		jobdetails["slots"] = job_slots[job]
+		.["templateJobs"] += list(jobdetails)
+
+/datum/map_template/shuttle/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+
+	switch(action)
+		if("setTemplateName")
+			name = params["new_template_name"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateShortName")
+			short_name = params["new_template_short_name"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateDescription")
+			description = params["new_template_description"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateCategory")
+			category = params["new_template_category"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateLimit")
+			limit = params["new_template_limit"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("toggleTemplateEnabled")
+			enabled = !enabled
+			if(enabled)
+				SSmapping.ship_purchase_list += src
+			else
+				SSmapping.ship_purchase_list -= src
+			update_static_data(usr, ui)
+			return TRUE
+
+		if("addJobSlot")
+			job_slots[new /datum/job] = 0
+			update_static_data(usr, ui)
+			return TRUE
+
+	if("job_ref" in params)
+		var/datum/job/job_slot = locate(params["job_ref"]) in job_slots
+		if(!job_slot)
+			return
+		switch(action)
+			if("toggleJobOfficer")
+				job_slot.officer = !job_slot.officer
+			if("setJobName")
+				job_slot.name = params["job_name"]
+			if("setJobOutfit")
+				var/new_outfit = params["job_outfit"]
+				if(!(new_outfit in outfits))
+					return
+				new_outfit = outfits[new_outfit]
+				job_slot.outfit = new new_outfit
+			if("setJobSlots")
+				job_slots[job_slot] = clamp(params["job_slots"], 0, 100)
+		update_static_data(usr, ui)
+		return TRUE
+
 //Whatever special stuff you want
-/datum/map_template/shuttle/proc/post_load(obj/docking_port/mobile/M)
+/datum/map_template/shuttle/post_load(obj/docking_port/mobile/M)
 	if(movement_force)
 		M.movement_force = movement_force.Copy()
 
@@ -114,45 +215,17 @@
 	job_slots = list(new /datum/job/assistant = 5) // There will already be a captain, probably!
 	file_name = "custom_shuttle" // Dummy
 
-/// Mining shuttles
-/datum/map_template/shuttle/mining
-	category = "mining"
-
-/datum/map_template/shuttle/mining/kilo
-	file_name = "mining_kilo"
-	name = "mining shuttle (Kilo)"
-
-/datum/map_template/shuttle/mining/large
-	file_name = "mining_large"
-	name = "mining shuttle (Large)"
-
 /// Syndicate Infiltrator variants
 /datum/map_template/shuttle/infiltrator
-	category = "infiltrator"
-
-/datum/map_template/shuttle/infiltrator/basic
-	file_name = "infiltrator_basic"
-	name = "basic syndicate infiltrator"
+	category = "misc"
 
 /datum/map_template/shuttle/infiltrator/advanced
 	file_name = "infiltrator_advanced"
 	name = "advanced syndicate infiltrator"
 
-/// Aux base templates
-/datum/map_template/shuttle/aux_base
-	category = "aux_base"
-
-/datum/map_template/shuttle/aux_base/default
-	file_name = "aux_base_default"
-	name = "auxilliary base (Default)"
-
-/datum/map_template/shuttle/aux_base/small
-	file_name = "aux_base_small"
-	name = "auxilliary base (Small)"
-
 /// Pirate ship templates
 /datum/map_template/shuttle/pirate
-	category = "pirate"
+	category = "misc"
 
 /datum/map_template/shuttle/pirate/default
 	file_name = "pirate_default"
@@ -160,7 +233,7 @@
 
 /// Fugitive hunter ship templates
 /datum/map_template/shuttle/hunter
-	category = "hunter"
+	category = "misc"
 
 /datum/map_template/shuttle/hunter/space_cop
 	file_name = "hunter_space_cop"
@@ -198,14 +271,3 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
-/// Escape pod map templates
-/datum/map_template/shuttle/escape_pod
-	category = "escape_pod"
-
-/datum/map_template/shuttle/escape_pod/default
-	file_name = "escape_pod_default"
-	name = "escape pod (Default)"
-
-/datum/map_template/shuttle/escape_pod/large
-	file_name = "escape_pod_large"
-	name = "escape pod (Large)"

@@ -66,7 +66,7 @@
 			continue
 		threatlevel = C.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
 		//speak(C.real_name + text(": threat: []", threatlevel))
-		if(threatlevel < 4 )
+		if(threatlevel < 4)
 			continue
 		var/dst = get_dist(src, C)
 		if(dst <= 1 || dst > 7)
