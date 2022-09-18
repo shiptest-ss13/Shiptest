@@ -15,8 +15,8 @@
 	clawfootstep = FOOTSTEP_LAVA
 	heavyfootstep = FOOTSTEP_LAVA
 
-/turf/open/acid/CanAllowThrough(atom/movable/AM, turf/target)
-	if(ishostile(AM))
+/turf/open/acid/CanAllowThrough(atom/movable/passing_atom, turf/target)
+	if(ishostile(passing_atom))
 		return FALSE
 	return ..()
 
@@ -103,26 +103,26 @@
 	return LAZYLEN(found_safeties)
 
 
-/turf/open/acid/proc/melt_stuff(AM)
+/turf/open/acid/proc/melt_stuff(thing_to_melt)
 	if(is_safe_to_cross())
 		return FALSE
 	. = FALSE
 	var/thing_to_check = src
-	if (AM)
-		thing_to_check = list(AM)
+	if (thing_to_melt)
+		thing_to_check = list(thing_to_melt)
 	for(var/thing in thing_to_check)
 		if(isobj(thing))
-			var/obj/O = thing
-			if((O.resistance_flags & (ACID_PROOF|INDESTRUCTIBLE)) || O.throwing)
+			var/obj/object_to_melt = thing
+			if((object_to_melt.resistance_flags & (ACID_PROOF|INDESTRUCTIBLE)) || object_to_melt.throwing)
 				continue
 			. = TRUE
-			if((O.acid_level))
+			if((object_to_melt.acid_level))
 				continue
-			if(O.resistance_flags & UNACIDABLE)
-				O.resistance_flags &= ~UNACIDABLE
-			if(O.armor.acid == 100) //acid proof armor will probably be acid proof
+			if(object_to_melt.resistance_flags & UNACIDABLE)
+				object_to_melt.resistance_flags &= ~UNACIDABLE
+			if(object_to_melt.armor.acid == 100) //acid proof armor will probably be acid proof
 				continue
-			O.acid_act(10, 20)
+			object_to_melt.acid_act(10, 20)
 
 		else if (isliving(thing))
 			. = TRUE
