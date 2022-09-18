@@ -114,6 +114,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"kepori_tail_feathers" = "Fan",
 							"vox_head_quills" = "Plain",
 							"vox_neck_quills" = "Plain",
+							"elzu_horns" = "None",
+							"elzu_tail" = "None",
 							"flavor_text" = "",
 							"body_size" = "Normal"
 						)
@@ -774,6 +776,32 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Mutant Ears</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=ears;task=input'>[features["ears"]]</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("elzu_horns" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Horns</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=elzu_horns;task=input'>[features["elzu_horns"]]</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("tail_elzu" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Tail</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=tail_elzu;task=input'>[features["tail_elzu"]]</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -1646,9 +1674,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 
 				if("color_ethereal")
-					var/new_etherealcolor = input(user, "Choose your ethereal color", "Character Preference") as null|anything in GLOB.color_list_ethereal
+					var/new_etherealcolor = input(user, "Choose your elzuosa color:", "Character Preference","#"+features["ethcolor"]) as color|null
 					if(new_etherealcolor)
-						features["ethcolor"] = GLOB.color_list_ethereal[new_etherealcolor]
+						var/temp_hsv = RGBtoHSV(new_etherealcolor)
+						if(ReadHSV(temp_hsv)[3] >= ReadHSV("#505050")[3]) // elzu colors should be bright
+							features["ethcolor"] = sanitize_hexcolor(new_etherealcolor, 6)
+						else
+							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 
 
 				if("tail_lizard")
@@ -1812,6 +1844,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_vox_neck_quills = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.vox_neck_quills_list
 					if (new_vox_neck_quills)
 						features["vox_neck_quills"] = new_vox_neck_quills
+
+				if("elzu_horns")
+					var/new_elzu_horns
+					new_elzu_horns = input(user, "Choose your character's horns:", "Character Preference") as null|anything in GLOB.elzu_horns_list
+					if(new_elzu_horns)
+						features["elzu_horns"] = new_elzu_horns
+
+				if("tail_elzu")
+					var/new_tail
+					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_elzu
+					if(new_tail)
+						features["tail_elzu"] = new_tail
 
 				if("s_tone")
 					var/new_s_tone = input(user, "Choose your character's skin-tone:", "Character Preference")  as null|anything in GLOB.skin_tones
