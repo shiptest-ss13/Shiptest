@@ -949,7 +949,7 @@
 	assignedrole = "Slime Research Staff"
 
 /obj/effect/mob_spawn/human/slime_rancher/special(mob/living/new_spawn)
-	var/slime_name = pick("Maroon", "Funky", "Squishy", "Bubblegum", "Gummy", "Pinkie Pie", "Rainbow Dash", "Beatrix LeBeau", "Chartreuse", "Chocolate")
+	var/slime_name = pick("Maroon", "Funky", "Squishy", "Bubblegum", "Gummy", "Pinkie Pie", "Rainbow Dash", "Beatrix LeBeau", "Chartreuse", "Chocolate", "Goobert", "Blorbo", "Creeper", "Leaper", "Pyro", "Monk", "Slim", "Malice", "Moldova", "Sloshy", "Slick", "Emil", "Poison", "Grey", "The Specimen", "Clotty")
 	new_spawn.fully_replace_character_name(null,slime_name)
 	if(ishuman(new_spawn))
 		var/mob/living/carbon/human/H = new_spawn
