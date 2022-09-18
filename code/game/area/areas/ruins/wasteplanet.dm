@@ -1,8 +1,4 @@
-//**Waste Planet Areas**//
-
-/area/ruin/wasteplanet
-	name = "Waste World"
-	icon_state = "dk_yellow"
+//area defs go here :)
 
 //Abandoned Mechbay Ruin
 
@@ -49,3 +45,4 @@
 /area/ruin/wasteplanet/abandoned_mechbay/atmospereslurper
 	name = "Abandoned Mechbay Air Processing"
 	icon_state = "atmos"
+  
