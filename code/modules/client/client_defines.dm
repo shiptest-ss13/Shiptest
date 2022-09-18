@@ -156,6 +156,8 @@
 	var/list/spell_tabs = list()
 	///A lazy list of atoms we've examined in the last EXAMINE_MORE_TIME (default 1.5) seconds, so that we will call [atom/proc/examine_more()] instead of [atom/proc/examine()] on them when examining
 	var/list/recent_examines
+	///Our object window datum. It stores info about and handles behavior for the object tab
+	var/datum/object_window_info/obj_window
 
 	var/list/parallax_layers
 	var/list/parallax_layers_cached
