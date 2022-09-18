@@ -308,6 +308,7 @@
 	icon_state = "yellow"
 
 //HELL'S FACTORY OPERATING FACILITY
+
 /area/ruin/space/has_grav/hellfactory
 	name = "Hell Factory"
 	icon_state = "yellow"
@@ -318,6 +319,7 @@
 	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | NOTELEPORT
 
 //Ruin of Transport 18
+
 /area/ruin/space/has_grav/transport18fore
 	name = "Booze Cruise Fore"
 	icon_state = "crew_quarters"
@@ -369,6 +371,7 @@
 	icon_state = "away"
 
 //MACSPACE
+
 /area/ruin/space/has_grav/powered/macspace
 	name = "Mac Space Restaurant"
 	icon_state = "yellow"
@@ -414,6 +417,7 @@
 	icon_state = "firingrange"
 
 //scav_mining
+
 /area/ruin/space/has_grav/scav_mining/entrance
 	name = "Asteroid mine entrance"
 	icon_state = "red"
@@ -458,6 +462,7 @@
 	always_unpowered = FALSE
 
 //Syndie battle sphere
+
 /area/ruin/space/has_grav/syndicircle/halls
 	name = "Syndicate Battle Sphere Primary Hallway"
 	icon_state = "dk_yellow"
@@ -489,6 +494,7 @@
 	color = "#26773a88"
 
 //Syndiecate chemlab
+
 /area/ruin/space/has_grav/crazylab/airlock
 	name = "Syndicate Laboratory 4071 Airlock"
 	icon_state = "dk_yellow"
