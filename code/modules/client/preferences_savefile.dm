@@ -542,6 +542,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
 	all_quirks = SANITIZE_LIST(all_quirks)
+//Make sure all quirks are compatible
+	check_quirk_compatibility()
 
 	return TRUE
 
