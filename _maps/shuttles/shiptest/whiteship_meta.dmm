@@ -24,6 +24,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "af" = (
@@ -38,6 +39,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ag" = (
@@ -102,6 +104,7 @@
 	preferred_direction = 4;
 	width = 33
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ar" = (
@@ -1763,10 +1766,6 @@
 /obj/item/hand_labeler,
 /obj/item/hand_labeler_refill,
 /obj/item/hand_labeler_refill,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 28
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "dg" = (
@@ -2272,12 +2271,18 @@
 	locked = 1
 	},
 /obj/structure/cable,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ei" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor{
 	id = "whiteship_starboard"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -2607,6 +2612,7 @@
 /obj/machinery/door/poddoor{
 	id = "whiteship_port"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "tN" = (
@@ -2645,6 +2651,9 @@
 "wm" = (
 /obj/machinery/door/poddoor{
 	id = "whiteship_starboard"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -2691,8 +2700,13 @@
 /area/ship/crew/canteen)
 "zX" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/paper{
-	info = "WARNING: DO NOT OPEN THE BLAST DOOR UNLESS THE HOLOFIELD IS ACTIVE"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2813,6 +2827,9 @@
 	locked = 1
 	},
 /obj/structure/cable,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "JR" = (
@@ -3198,7 +3215,7 @@ ei
 "}
 (11,1,1) = {"
 aq
-zX
+ap
 nK
 aU
 bn
@@ -3212,7 +3229,7 @@ cR
 dd
 dv
 ap
-zX
+ap
 ei
 "}
 (12,1,1) = {"
@@ -3236,7 +3253,7 @@ wm
 "}
 (13,1,1) = {"
 af
-ea
+zX
 dY
 ix
 eB
@@ -3250,7 +3267,7 @@ cS
 xP
 lq
 dM
-ea
+zX
 If
 "}
 (14,1,1) = {"
