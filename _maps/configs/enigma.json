@@ -1,12 +1,15 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"map_name": "Enigma-Class Plasma Locomotive",
+	"map_name": "Enigma-class Plasma Locomotive",
 	"prefix": "ISV",
-	"namelists": ["GENERAL"],
+	"namelists": ["GENERAL", "SPACE", "ENGINEERING", "MYTHOLOGICAL"],
 	"map_short_name": "Enigma-class",
 	"map_path": "_maps/shuttles/shiptest/enigma.dmm",
 	"job_slots": {
-		"Assistant": 3
-	),
+		"Quartermaster": 1,
+		"Shaft Miner": 3,
+		"Cargo Technician": 4
+		}
+	},
 	"enabled": true
 }

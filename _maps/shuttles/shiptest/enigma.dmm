@@ -64,10 +64,10 @@
 /turf/open/floor/engine,
 /area/ship/engineering/incinerator)
 "bS" = (
-/obj/machinery/atmospherics/components/binary/circulator{
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/atmospherics/components/binary/circulator/cold{
 	dir = 8
 	},
-/obj/structure/window/plasma/reinforced/spawner,
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
 "bW" = (
@@ -1101,6 +1101,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/glass,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
 /turf/open/floor/pod,
 /area/ship/cargo/office)
 "Ec" = (
@@ -1169,6 +1172,7 @@
 	dir = 4
 	},
 /obj/machinery/autolathe,
+/obj/structure/cable/yellow,
 /turf/open/floor/pod,
 /area/ship/cargo/office)
 "FB" = (
@@ -1244,7 +1248,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/pod,
 /area/ship/cargo/office)
 "Iu" = (
@@ -1471,9 +1477,6 @@
 "Nu" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
@@ -1911,7 +1914,9 @@
 	id = 12
 	},
 /obj/structure/fans/tiny,
-/obj/docking_port/mobile,
+/obj/docking_port/mobile{
+	dir = 2
+	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
 "XV" = (
@@ -2269,7 +2274,7 @@ dp
 ZX
 mH
 DT
-Pr
+Hz
 Fp
 MW
 wl
@@ -2282,7 +2287,7 @@ wl
 wl
 mH
 Nu
-Hz
+Pr
 wl
 wl
 ff
