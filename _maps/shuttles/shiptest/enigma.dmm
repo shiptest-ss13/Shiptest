@@ -469,6 +469,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"mL" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/pod,
+/area/ship/engineering/incinerator)
 "mQ" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2{
 	dir = 1
@@ -518,6 +524,13 @@
 /obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
+"nZ" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "furnacewindows"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/turf/open/floor/plating,
+/area/ship/engineering/incinerator)
 "ow" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -675,6 +688,12 @@
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
+"rt" = (
+/obj/machinery/computer/monitor{
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/ship/engineering/incinerator)
 "rM" = (
 /obj/machinery/door/poddoor{
 	id = 12
@@ -1095,12 +1114,6 @@
 	},
 /turf/open/floor/pod,
 /area/ship/engineering/atmospherics)
-"BH" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/turf/open/floor/pod,
-/area/ship/engineering/incinerator)
 "Cv" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1159,13 +1172,6 @@
 	},
 /turf/open/floor/pod,
 /area/ship/cargo/office)
-"Ea" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "furnacewindows"
-	},
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/turf/open/floor/plating,
-/area/ship/engineering/incinerator)
 "Ec" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1213,6 +1219,14 @@
 "EZ" = (
 /turf/open/floor/plating/rust,
 /area/ship/crew)
+"Fg" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "furnacewindows"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/simple/green,
+/turf/open/floor/plating,
+/area/ship/engineering/incinerator)
 "Fi" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1317,14 +1331,6 @@
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
-"HH" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "furnacewindows"
-	},
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/pipe/simple/green,
-/turf/open/floor/plating,
-/area/ship/engineering/incinerator)
 "Iu" = (
 /obj/structure/window/reinforced/fulltile/shuttle/survival_pod,
 /obj/structure/cable/yellow{
@@ -1827,7 +1833,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/turf/closed/wall/mineral/plasma,
+/turf/open/space/basic,
 /area/ship/cargo/office)
 "Uz" = (
 /obj/structure/chair/comfy/shuttle{
@@ -1988,12 +1994,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
-"XI" = (
-/obj/machinery/computer/monitor{
-	dir = 1
-	},
-/turf/open/floor/pod,
-/area/ship/engineering/incinerator)
 "XV" = (
 /obj/structure/table,
 /obj/item/gun/ballistic/shotgun/winchester/lethal,
@@ -2681,7 +2681,7 @@ ff
 "}
 (43,1,1) = {"
 ff
-Ea
+nZ
 Yg
 YQ
 ic
@@ -2695,7 +2695,7 @@ ff
 "}
 (44,1,1) = {"
 FH
-HH
+Fg
 bA
 OX
 pA
@@ -2709,21 +2709,21 @@ ff
 "}
 (45,1,1) = {"
 ff
-Ea
-BH
+nZ
+mL
 Yu
 oO
 bI
 Gy
 AP
 aJ
-XI
+rt
 Me
 ff
 "}
 (46,1,1) = {"
 ff
-Ea
+nZ
 oZ
 bS
 kI
@@ -2737,7 +2737,7 @@ ff
 "}
 (47,1,1) = {"
 ff
-Ea
+nZ
 dw
 eL
 Ys
