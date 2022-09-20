@@ -302,6 +302,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/suit_storage_unit/mining,
 /turf/open/floor/pod,
 /area/ship/cargo/office)
 "iX" = (
@@ -437,6 +438,10 @@
 "nF" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_x = 3
+	},
 /turf/open/floor/pod,
 /area/ship/bridge)
 "nO" = (
@@ -454,6 +459,11 @@
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
+/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
 "ow" = (
@@ -484,6 +494,10 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/rust,
+/area/ship/crew/dorm)
+"oR" = (
+/obj/structure/table,
+/turf/closed/wall/mineral/titanium/survival,
 /area/ship/crew/dorm)
 "oZ" = (
 /obj/machinery/atmospherics/pipe/simple/cyan{
@@ -562,6 +576,10 @@
 	id = "enigmahelm";
 	pixel_y = 27;
 	pixel_x = -6
+	},
+/obj/item/radio/intercom/wideband{
+	pixel_y = 3;
+	pixel_x = 4
 	},
 /turf/open/floor/plating/rust,
 /area/ship/bridge)
@@ -1724,6 +1742,13 @@
 /obj/machinery/computer/cryopod{
 	pixel_y = 27
 	},
+/obj/structure/table,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
 "UX" = (
@@ -1841,6 +1866,7 @@
 	},
 /obj/item/gun/ballistic/shotgun/winchester/lethal,
 /obj/item/ammo_box/c38_box/hunting,
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/pod,
 /area/ship/bridge)
 "Yg" = (
@@ -2042,7 +2068,7 @@ YY
 (9,1,1) = {"
 ff
 ff
-YY
+oR
 pb
 cs
 cE
