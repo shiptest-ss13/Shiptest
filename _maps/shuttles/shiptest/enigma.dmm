@@ -37,6 +37,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
+"aV" = (
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	color = "#ba7950";
+	dir = 8
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "bk" = (
 /obj/machinery/airalarm/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -103,6 +110,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
+"cG" = (
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	color = "#ba7950";
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "cL" = (
 /turf/closed/wall/mineral/titanium/survival,
 /area/ship/crew)
@@ -203,6 +217,16 @@
 	},
 /obj/effect/decal/cleanable/food/pie_smudge,
 /obj/item/trash/plate,
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	color = "#ba7950";
+	dir = 8
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
+"eQ" = (
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	color = "#ba7950"
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "ff" = (
@@ -320,6 +344,10 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/food/salt,
+/obj/effect/turf_decal/corner/opaque/brown/three_quarters{
+	color = "#ba7950";
+	dir = 1
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "ka" = (
@@ -344,6 +372,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
+"kW" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/brown/three_quarters{
+	color = "#ba7950"
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "la" = (
 /obj/effect/decal/cleanable/food/pie_smudge,
 /turf/open/floor/pod,
@@ -376,6 +416,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/brown/three_quarters{
+	color = "#ba7950";
+	dir = 1
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
@@ -455,10 +499,6 @@
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
 /obj/item/reagent_containers/food/drinks/beer,
 /obj/item/reagent_containers/food/drinks/beer,
 /obj/item/reagent_containers/food/drinks/beer,
@@ -494,10 +534,6 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/rust,
-/area/ship/crew/dorm)
-"oR" = (
-/obj/structure/table,
-/turf/closed/wall/mineral/titanium/survival,
 /area/ship/crew/dorm)
 "oZ" = (
 /obj/machinery/atmospherics/pipe/simple/cyan{
@@ -619,6 +655,10 @@
 /obj/item/stack/cable_coil/yellow,
 /obj/item/stack/tape/industrial/electrical,
 /obj/item/stack/tape/industrial/electrical,
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	color = "#ba7950";
+	dir = 1
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "rM" = (
@@ -678,6 +718,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
+"tp" = (
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	color = "#ba7950";
+	dir = 4
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "ty" = (
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
@@ -735,6 +782,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
+"uf" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	color = "#ba7950";
+	dir = 8
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "ui" = (
 /obj/structure/sink{
 	pixel_x = 1;
@@ -756,6 +813,9 @@
 /area/ship/cargo/office)
 "uR" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	color = "#ba7950"
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "uT" = (
@@ -814,6 +874,10 @@
 "vV" = (
 /obj/effect/decal/cleanable/oil,
 /obj/item/trash/sosjerky,
+/obj/effect/turf_decal/corner/opaque/brown/three_quarters{
+	color = "#ba7950";
+	dir = 4
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "vX" = (
@@ -835,6 +899,12 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
+"xh" = (
+/obj/effect/turf_decal/corner/opaque/brown/bordercorner{
+	color = "#ba7950"
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
@@ -929,6 +999,10 @@
 /area/ship/engineering/atmospherics)
 "zR" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/opaque/brown/bordercorner{
+	color = "#ba7950";
+	dir = 1
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "Ai" = (
@@ -969,6 +1043,10 @@
 	dir = 4
 	},
 /obj/item/trash/candy,
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	color = "#ba7950";
+	dir = 4
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "AX" = (
@@ -1128,6 +1206,10 @@
 /area/ship/cargo/office)
 "FB" = (
 /obj/effect/decal/cleanable/plastic,
+/obj/effect/turf_decal/corner/opaque/brown/bordercorner{
+	color = "#ba7950";
+	dir = 4
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "FH" = (
@@ -1204,6 +1286,16 @@
 	},
 /turf/open/floor/pod,
 /area/ship/cargo/office)
+"HA" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/brown/three_quarters{
+	color = "#ba7950";
+	dir = 8
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "Iu" = (
 /obj/structure/window/reinforced/fulltile/shuttle/survival_pod,
 /obj/structure/cable/yellow{
@@ -1268,6 +1360,10 @@
 /area/ship/bridge)
 "JU" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	color = "#ba7950";
 	dir = 1
 	},
 /turf/open/floor/pod,
@@ -1810,6 +1906,10 @@
 /area/ship/cargo/office)
 "Ws" = (
 /obj/item/trash/candy,
+/obj/effect/turf_decal/corner/opaque/brown/three_quarters{
+	color = "#ba7950";
+	dir = 4
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "WI" = (
@@ -1861,12 +1961,12 @@
 /area/ship/cargo/office)
 "XV" = (
 /obj/structure/table,
-/obj/item/storage/secure/safe{
-	pixel_y = 31
-	},
 /obj/item/gun/ballistic/shotgun/winchester/lethal,
 /obj/item/ammo_box/c38_box/hunting,
 /obj/item/areaeditor/shuttle,
+/obj/structure/closet/wall/orange{
+	pixel_y = 32
+	},
 /turf/open/floor/pod,
 /area/ship/bridge)
 "Yg" = (
@@ -1944,6 +2044,10 @@
 	name = "Safebee";
 	desc = "The ship's pet."
 	},
+/obj/effect/turf_decal/corner/opaque/brown/bordercorner{
+	color = "#ba7950";
+	dir = 8
+	},
 /turf/open/floor/pod,
 /area/ship/cargo)
 "ZR" = (
@@ -1953,6 +2057,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
+"ZT" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/brown/border{
+	color = "#ba7950";
+	dir = 4
+	},
+/turf/open/floor/pod,
+/area/ship/cargo)
 "ZX" = (
 /obj/machinery/mineral/ore_redemption,
 /obj/machinery/light{
@@ -2068,7 +2182,7 @@ YY
 (9,1,1) = {"
 ff
 ff
-oR
+YY
 pb
 cs
 cE
@@ -2277,9 +2391,9 @@ ff
 ff
 Vm
 pL
-uU
-uU
-cx
+xh
+tp
+ZT
 AR
 FB
 il
@@ -2290,7 +2404,7 @@ ff
 ff
 Vm
 Ny
-uU
+eQ
 Ws
 jl
 mb
@@ -2316,11 +2430,11 @@ ff
 ff
 Vm
 fC
-uU
+eQ
 vV
-cx
-VN
-uU
+HA
+kW
+cG
 uU
 Vm
 ff
@@ -2330,8 +2444,8 @@ ff
 Vm
 CG
 YZ
-uU
-cx
+aV
+uf
 eO
 zR
 qm
