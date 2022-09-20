@@ -59,7 +59,7 @@
 
 /obj/item/clothing/head/caphat/frontier
 	name = "\improper Frontiersmen commander's cap"
-	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen.""
+	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
 	icon_state = "frontier_cap"
 
 /obj/item/clothing/head/caphat/frontier/admiral

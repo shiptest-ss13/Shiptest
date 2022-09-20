@@ -440,7 +440,7 @@
 			mob_species = /datum/species/human
 			if(prob(90))
 				uniform = /obj/item/clothing/under/solgov
-				suit = /obj/item/clothing/suit/armor/vest/solgov
+				suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 				shoes = /obj/item/clothing/shoes/jackboots
 				gloves = /obj/item/clothing/gloves/color/grey
 				mask = /obj/item/clothing/mask/gas/sechailer

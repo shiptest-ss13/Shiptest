@@ -2,7 +2,7 @@
 	name = "SolGov Officer"
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov
-	suit = /obj/item/clothing/suit/armor/vest/solgov
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/radio/headset/solgov
 	gloves = /obj/item/clothing/gloves/combat

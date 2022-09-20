@@ -515,18 +515,18 @@
 	name = "Bulletproof Armor Crate"
 	desc = "Contains three sets of bulletproof armor. Guaranteed to reduce a bullet's stopping power by over half. Requires Armory access to open."
 	cost = 1500
-	contains = list(/obj/item/clothing/suit/armor/bulletproof,
-					/obj/item/clothing/suit/armor/bulletproof,
-					/obj/item/clothing/suit/armor/bulletproof)
+	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof,
+					/obj/item/clothing/suit/armor/vest/bulletproof,
+					/obj/item/clothing/suit/armor/vest/bulletproof)
 	crate_name = "bulletproof armor crate"
 
 /datum/supply_pack/security/armory/bullethelmets
 	name = "Bulletproof Helmets Crate"
 	desc = "Contains three bulletproof helmets. Requires Armory access to open."
 	cost = 1500
-	contains = list(/obj/item/clothing/head/helmet/alt,
-					/obj/item/clothing/head/helmet/alt,
-					/obj/item/clothing/head/helmet/alt)
+	contains = list(/obj/item/clothing/head/helmet/bulletproof,
+					/obj/item/clothing/head/helmet/bulletproof,
+					/obj/item/clothing/head/helmet/bulletproof)
 	crate_name = "bulletproof helmets crate"
 
 /datum/supply_pack/security/armory/chemimp
@@ -766,7 +766,7 @@
 					/obj/item/clothing/under/syndicate/rus_army,
 					/obj/item/clothing/under/costume/soviet,
 					/obj/item/clothing/mask/russian_balaclava,
-					/obj/item/clothing/head/helmet/rus_ushanka,
+					/obj/item/clothing/head/helmet/r_trapper,
 					/obj/item/clothing/suit/armor/vest/russian_coat,
 					/obj/item/gun/ballistic/rifle/boltaction,
 					/obj/item/gun/ballistic/rifle/boltaction)

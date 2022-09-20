@@ -91,7 +91,7 @@
 
 /datum/outfit/russiancorpse/hunter/pre_equip(mob/living/carbon/human/H)
 	if(prob(50))
-		head = /obj/item/clothing/head/ushanka
+		head = /obj/item/clothing/head/trapper
 
 /datum/outfit/bountyarmor
 	name = "Bounty Hunter - Armored"

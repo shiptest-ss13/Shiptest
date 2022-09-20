@@ -119,11 +119,11 @@
 
 /datum/outfit/russiancorpse/trooper
 	name = "Frontiersman Armored Corpse"
-	suit = /obj/item/clothing/suit/armor/bulletproof/frontier
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	ears = /obj/item/radio/headset
-	head = /obj/item/clothing/head/helmet/x11/frontier
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
 
 
 /obj/effect/mob_spawn/human/corpse/russian/ranged/officer
@@ -232,7 +232,7 @@
 /datum/outfit/solgov/infantrymancorpse
 	name = "SGV Infantry Corpse"
 	uniform = /obj/item/clothing/under/solgov
-	suit = /obj/item/clothing/suit/armor/vest/solgov
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/color/grey
 	ears = /obj/item/radio/headset
@@ -254,7 +254,7 @@
 /datum/outfit/solgov/officercorpse
 	name = "SGV Officer Corpse"
 	uniform = /obj/item/clothing/under/solgov
-	suit = /obj/item/clothing/suit/armor/vest/solgov
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/solgov/alt

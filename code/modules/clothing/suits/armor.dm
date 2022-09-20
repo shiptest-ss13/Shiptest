@@ -186,17 +186,15 @@
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
-/obj/item/clothing/suit/armor/bulletproof
+/obj/item/clothing/suit/armor/vest/bulletproof
 	name = "bulletproof armor"
 	desc = "A Type III heavy bulletproof vest that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
 	icon_state = "bulletproof"
-	item_state = "armor"
-	blood_overlay_type = "armor"
 	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 70
 	equip_delay_other = 50
 
-/obj/item/clothing/suit/armor/bulletproof/frontier
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	name = "\improper Frontiersmen bulletproof armor"
 	desc = "A scrap piece of armor made of disused protective plates. This one was used to protect the squishy bits of a Frontiersman, once."
 	icon_state = "frontier_armor"
@@ -393,18 +391,17 @@
 	icon_state = "armor_blueshield"
 	item_state = "blueshield"
 
-/obj/item/clothing/suit/armor/vest/solgov
+/obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	name = "\improper SolGov armor vest"
 	desc = "A standard armor vest fielded for SolGov's infantry."
 	icon_state = "armor_solgov"
 	item_state = "armor_solgov"
-	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
-/obj/item/clothing/suit/armor/vest/solgov/Initialize()
+/obj/item/clothing/suit/armor/vest/bulletproof/solgov/Initialize()
 	. = ..()
 	allowed |= list(/obj/item/gun/ballistic/automatic/assualt/swiss_cheese, /obj/item/tank)
 
-/obj/item/clothing/suit/armor/vest/solgov/rep
+/obj/item/clothing/suit/armor/vest/bulletproof/solgov/rep
 	name = "\improper SolGov Inspector armor vest"
 	desc = "A type I armor vest emblazoned with the SolGov logo."
 	icon_state = "armor_alt_solgov"

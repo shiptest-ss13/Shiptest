@@ -202,7 +202,7 @@
 			return
 	return ..()
 
-/obj/item/clothing/head/helmet/alt
+/obj/item/clothing/head/helmet/bulletproof
 	name = "bulletproof helmet"
 	desc = "A bulletproof combat helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
 	icon_state = "helmetalt"
@@ -473,11 +473,11 @@
 	armor = list("melee" = 25, "bullet" = 30, "laser" = 0, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 50)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
 
-/obj/item/clothing/head/helmet/rus_ushanka
+/obj/item/clothing/head/helmet/r_trapper
 	name = "reinforced trapper hat"
 	desc = "An occasional sight on the heads of soldiers stationed on cold worlds. 200% bear."
-	icon_state = "rus_ushanka"
-	item_state = "rus_ushanka"
+	icon_state = "r_trapper"
+	item_state = "r_trapper"
 	body_parts_covered = HEAD
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
@@ -509,7 +509,7 @@
 	icon_state = "inteq_helmet"
 	can_flashlight = TRUE
 
-/obj/item/clothing/head/helmet/minutemen
+/obj/item/clothing/head/helmet/bulletproof/minutemen
 	name = "\improper Minutemen ballistic helmet"
 	desc = "A bulletproof helmet that is worn by members of the Colonial Minutemen."
 	icon_state = "antichristhelm"
@@ -553,26 +553,24 @@
 	icon_state = "operator"
 	item_state = "operator"
 
-/obj/item/clothing/head/helmet/m10
+/obj/item/clothing/head/helmet/bulletproof/m10
 	name = "\improper M10 pattern Helmet"
 	desc = "A classic looking helmet, derived from numerous convergently-similar designs from all across inhabited space. A faded tag reads: 'The difference between an open-casket and closed-casket funeral. Wear on head for best results.'"
 	icon_state = "m10helm"
 	can_flashlight = TRUE
 	dog_fashion = null
-	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	unique_reskin = list("Urban" = "m10helm",
 		"Desert" = "m10helm_desert",
 		"Woodland" = "m10helm_woodland",
 		"Snow" = "m10helm_snow",
 		)
 
-/obj/item/clothing/head/helmet/x11
+/obj/item/clothing/head/helmet/bulletproof/x11
 	name = "\improper Type X11 Helmet"
 	desc = "This bulky helmet is a mainstay product of any Bezuts-based armor manufacturer worth their spice. It's a (relatively) comfortable fit for individuals with frills, horns, antlers, thorns, branches, spikes, webbing..."
 	icon_state = "x11helm"
 	can_flashlight = TRUE
 	dog_fashion = null
-	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	allow_post_reskins = TRUE
 	unique_reskin = list("Urban" = "x11helm",
 		"Desert" = "x11helm_desert",
@@ -580,7 +578,7 @@
 		"Snow" = "x11helm_snow",
 		)
 
-/obj/item/clothing/head/helmet/x11/frontier
+/obj/item/clothing/head/helmet/bulletproof/x11/frontier
 	name = "\improper Frontiersmen X11 Helmet"
 	desc = "A heavily modified X11 used by the Frontiersmen pirate fleet."
 	icon_state = "x11helm_frontier"
