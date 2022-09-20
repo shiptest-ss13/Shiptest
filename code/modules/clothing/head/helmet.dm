@@ -476,8 +476,8 @@
 /obj/item/clothing/head/helmet/r_trapper
 	name = "reinforced trapper hat"
 	desc = "An occasional sight on the heads of soldiers stationed on cold worlds. 200% bear."
-	icon_state = "r_trapper"
-	item_state = "r_trapper"
+	icon_state = "rus_ushanka"
+	item_state = "rus_ushanka"
 	body_parts_covered = HEAD
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
