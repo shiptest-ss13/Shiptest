@@ -98,7 +98,7 @@
 	head = /obj/item/clothing/head/pirate
 
 
-/obj/effect/mob_spawn/human/corpse/russian
+/obj/effect/mob_spawn/human/corpse/frontier
 	name = "Frontiersman"
 	outfit = /datum/outfit/russiancorpse
 	hairstyle = "Bald"
@@ -111,10 +111,10 @@
 	head = /obj/item/clothing/head/beret/sec/frontier
 	gloves = /obj/item/clothing/gloves/color/black
 
-/obj/effect/mob_spawn/human/corpse/russian/ranged
+/obj/effect/mob_spawn/human/corpse/frontier/ranged
 	outfit = /datum/outfit/russiancorpse
 
-/obj/effect/mob_spawn/human/corpse/russian/ranged/trooper
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
 	outfit = /datum/outfit/russiancorpse/trooper
 
 /datum/outfit/russiancorpse/trooper
@@ -126,7 +126,7 @@
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
 
 
-/obj/effect/mob_spawn/human/corpse/russian/ranged/officer
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer
 	name = "Frontiersman Officer"
 	outfit = /datum/outfit/russiancorpse/officer
 
@@ -138,7 +138,7 @@
 	ears = /obj/item/radio/headset
 	head = /obj/item/clothing/head/caphat/frontier
 
-/obj/effect/mob_spawn/human/corpse/russian/ranged/trooper/heavy
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
 	outfit = /datum/outfit/russiancorpse/trooper/heavy
 
 /datum/outfit/russiancorpse/trooper/heavy
