@@ -52,11 +52,7 @@
 /area/ship/crew/dorm)
 "bA" = (
 /obj/machinery/atmospherics/pipe/simple/green,
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/door/poddoor/shutters{
-	id = "furnacewindows"
-	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/rust,
 /area/ship/engineering/incinerator)
 "bF" = (
 /obj/effect/turf_decal/industrial/caution{
@@ -127,11 +123,11 @@
 /obj/machinery/atmospherics/pipe/simple/cyan{
 	dir = 10
 	},
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/door/poddoor/shutters{
-	id = "furnacewindows"
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/pod,
 /area/ship/engineering/incinerator)
 "dz" = (
 /obj/machinery/button/door{
@@ -205,6 +201,9 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
@@ -302,9 +301,6 @@
 /area/ship/engineering/atmospherics)
 "ic" = (
 /obj/structure/window/plasma/reinforced/spawner/east,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/machinery/light{
 	dir = 8
 	},
@@ -370,6 +366,9 @@
 "kS" = (
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
 "kW" = (
@@ -393,6 +392,19 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/storage/toolbox/electrical{
+	pixel_y = -1;
+	pixel_x = -5
+	},
+/obj/item/storage/toolbox/drone{
+	pixel_x = 6;
+	pixel_y = 11
+	},
+/obj/item/lighter/enigma{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/structure/table,
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
 "ln" = (
@@ -539,11 +551,13 @@
 /obj/machinery/atmospherics/pipe/simple/cyan{
 	dir = 6
 	},
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/door/poddoor/shutters{
-	id = "furnacewindows"
+/obj/machinery/power/terminal{
+	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/rust,
 /area/ship/engineering/incinerator)
 "pb" = (
 /obj/machinery/cryopod,
@@ -847,8 +861,6 @@
 /area/ship/engineering/atmospherics)
 "vl" = (
 /obj/structure/window/plasma/reinforced/spawner/east,
-/obj/machinery/power/terminal,
-/obj/structure/cable/yellow,
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
 "vo" = (
@@ -1083,6 +1095,12 @@
 	},
 /turf/open/floor/pod,
 /area/ship/engineering/atmospherics)
+"BH" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/pod,
+/area/ship/engineering/incinerator)
 "Cv" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1141,6 +1159,13 @@
 	},
 /turf/open/floor/pod,
 /area/ship/cargo/office)
+"Ea" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "furnacewindows"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/turf/open/floor/plating,
+/area/ship/engineering/incinerator)
 "Ec" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1217,12 +1242,8 @@
 /turf/open/floor/plating,
 /area/ship/external)
 "Gx" = (
-/obj/machinery/power/smes/engineering,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
 	},
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
@@ -1296,6 +1317,14 @@
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
+"HH" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "furnacewindows"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/simple/green,
+/turf/open/floor/plating,
+/area/ship/engineering/incinerator)
 "Iu" = (
 /obj/structure/window/reinforced/fulltile/shuttle/survival_pod,
 /obj/structure/cable/yellow{
@@ -1554,6 +1583,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating/rust,
 /area/ship/engineering/incinerator)
 "OX" = (
@@ -1561,9 +1593,6 @@
 	dir = 4
 	},
 /obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
 "Pa" = (
@@ -1959,6 +1988,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
+"XI" = (
+/obj/machinery/computer/monitor{
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/ship/engineering/incinerator)
 "XV" = (
 /obj/structure/table,
 /obj/item/gun/ballistic/shotgun/winchester/lethal,
@@ -1970,25 +2005,23 @@
 /turf/open/floor/pod,
 /area/ship/bridge)
 "Yg" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/door/poddoor/shutters{
-	id = "furnacewindows"
-	},
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/pod,
 /area/ship/engineering/incinerator)
 "Ys" = (
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
 "Yu" = (
 /obj/machinery/power/generator,
 /obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
+/obj/structure/cable/yellow,
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
 "YK" = (
@@ -2009,24 +2042,7 @@
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
 "YQ" = (
-/obj/item/storage/toolbox/electrical{
-	pixel_y = -1;
-	pixel_x = -5
-	},
-/obj/item/storage/toolbox/drone{
-	pixel_x = 6;
-	pixel_y = 11
-	},
-/obj/structure/table,
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/obj/item/lighter/enigma{
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/pod,
+/turf/open/floor/plating/rust,
 /area/ship/engineering/incinerator)
 "YY" = (
 /turf/closed/wall/mineral/titanium/survival,
@@ -2040,13 +2056,13 @@
 /obj/item/toy/cards/deck{
 	pixel_y = 4
 	},
-/obj/item/toy/plush/beeplushie{
-	name = "Safebee";
-	desc = "The ship's pet."
-	},
 /obj/effect/turf_decal/corner/opaque/brown/bordercorner{
 	color = "#ba7950";
 	dir = 8
+	},
+/mob/living/simple_animal/bot/hygienebot{
+	name = "\improper Jarlsberg";
+	desc = "Would make legendarily good dishes if he had hands."
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
@@ -2080,6 +2096,7 @@ ff
 ff
 ff
 ff
+ff
 mC
 mC
 mC
@@ -2089,6 +2106,7 @@ ff
 ff
 "}
 (2,1,1) = {"
+ff
 ff
 ff
 sr
@@ -2102,6 +2120,7 @@ ff
 ff
 "}
 (3,1,1) = {"
+ff
 ff
 JV
 hK
@@ -2117,6 +2136,7 @@ ff
 (4,1,1) = {"
 ff
 ff
+ff
 sr
 ys
 bW
@@ -2130,6 +2150,7 @@ ff
 (5,1,1) = {"
 ff
 ff
+ff
 sr
 Lg
 Lg
@@ -2141,6 +2162,7 @@ ff
 ff
 "}
 (6,1,1) = {"
+ff
 ff
 ff
 sr
@@ -2158,6 +2180,7 @@ ff
 ff
 ff
 ff
+ff
 Ep
 vo
 ra
@@ -2167,6 +2190,7 @@ ff
 ff
 "}
 (8,1,1) = {"
+ff
 ff
 ff
 YY
@@ -2182,6 +2206,7 @@ YY
 (9,1,1) = {"
 ff
 ff
+ff
 YY
 pb
 cs
@@ -2193,6 +2218,7 @@ cj
 YY
 "}
 (10,1,1) = {"
+ff
 ff
 ff
 YY
@@ -2208,6 +2234,7 @@ YY
 (11,1,1) = {"
 ff
 ff
+ff
 YY
 nO
 pD
@@ -2221,6 +2248,7 @@ YY
 (12,1,1) = {"
 ff
 ff
+ff
 YY
 Ex
 pD
@@ -2232,6 +2260,7 @@ ui
 YY
 "}
 (13,1,1) = {"
+ff
 ff
 ff
 YY
@@ -2249,6 +2278,7 @@ ff
 ff
 ff
 ff
+ff
 DD
 Ed
 Kx
@@ -2258,6 +2288,7 @@ ff
 ff
 "}
 (15,1,1) = {"
+ff
 ff
 ff
 wl
@@ -2272,6 +2303,7 @@ ff
 "}
 (16,1,1) = {"
 ff
+ff
 wl
 Lz
 ip
@@ -2284,6 +2316,7 @@ wl
 ff
 "}
 (17,1,1) = {"
+ff
 ff
 ai
 Bc
@@ -2298,6 +2331,7 @@ ff
 "}
 (18,1,1) = {"
 ff
+ff
 Xo
 lq
 tz
@@ -2310,6 +2344,7 @@ Lc
 ff
 "}
 (19,1,1) = {"
+ff
 ff
 Uw
 Bc
@@ -2324,6 +2359,7 @@ ff
 "}
 (20,1,1) = {"
 ff
+ff
 wl
 dp
 ZX
@@ -2336,6 +2372,7 @@ wl
 ff
 "}
 (21,1,1) = {"
+ff
 ff
 ff
 wl
@@ -2353,6 +2390,7 @@ ff
 ff
 ff
 ff
+ff
 JZ
 WN
 Sz
@@ -2362,6 +2400,7 @@ ff
 ff
 "}
 (23,1,1) = {"
+ff
 ff
 Vm
 Vm
@@ -2376,6 +2415,7 @@ ff
 "}
 (24,1,1) = {"
 ff
+ff
 Vm
 Pa
 Ni
@@ -2388,6 +2428,7 @@ Vm
 ff
 "}
 (25,1,1) = {"
+ff
 ff
 Vm
 pL
@@ -2402,6 +2443,7 @@ ff
 "}
 (26,1,1) = {"
 ff
+ff
 Vm
 Ny
 eQ
@@ -2414,6 +2456,7 @@ Vm
 ff
 "}
 (27,1,1) = {"
+ff
 ff
 Vm
 uU
@@ -2428,6 +2471,7 @@ ff
 "}
 (28,1,1) = {"
 ff
+ff
 Vm
 fC
 eQ
@@ -2440,6 +2484,7 @@ Vm
 ff
 "}
 (29,1,1) = {"
+ff
 ff
 Vm
 CG
@@ -2454,6 +2499,7 @@ ff
 "}
 (30,1,1) = {"
 ff
+ff
 Vm
 AX
 tO
@@ -2466,6 +2512,7 @@ Vm
 ff
 "}
 (31,1,1) = {"
+ff
 ff
 Vm
 Vm
@@ -2483,6 +2530,7 @@ ff
 ff
 ff
 ff
+ff
 Oa
 Iu
 mA
@@ -2492,6 +2540,7 @@ ff
 ff
 "}
 (33,1,1) = {"
+ff
 ff
 ff
 cL
@@ -2507,6 +2556,7 @@ ff
 (34,1,1) = {"
 ff
 ff
+ff
 az
 vM
 pP
@@ -2518,6 +2568,7 @@ ff
 ff
 "}
 (35,1,1) = {"
+ff
 ff
 ff
 az
@@ -2533,6 +2584,7 @@ ff
 (36,1,1) = {"
 ff
 ff
+ff
 az
 zp
 iX
@@ -2544,6 +2596,7 @@ ff
 ff
 "}
 (37,1,1) = {"
+ff
 ff
 ff
 SR
@@ -2559,6 +2612,7 @@ ff
 (38,1,1) = {"
 ff
 ff
+ff
 SR
 es
 EZ
@@ -2572,6 +2626,7 @@ ff
 (39,1,1) = {"
 ff
 ff
+ff
 SR
 LH
 iX
@@ -2583,6 +2638,7 @@ ff
 ff
 "}
 (40,1,1) = {"
+ff
 ff
 ff
 cL
@@ -2600,6 +2656,7 @@ ff
 ff
 ff
 ff
+ff
 Tj
 ZR
 ue
@@ -2613,6 +2670,7 @@ ff
 Me
 Me
 Me
+Me
 ty
 sQ
 rX
@@ -2623,6 +2681,7 @@ ff
 "}
 (43,1,1) = {"
 ff
+Ea
 Yg
 YQ
 ic
@@ -2636,6 +2695,7 @@ ff
 "}
 (44,1,1) = {"
 FH
+HH
 bA
 OX
 pA
@@ -2649,19 +2709,21 @@ ff
 "}
 (45,1,1) = {"
 ff
-Yg
+Ea
+BH
 Yu
 oO
 bI
 Gy
 AP
 aJ
-ty
+XI
 Me
 ff
 "}
 (46,1,1) = {"
 ff
+Ea
 oZ
 bS
 kI
@@ -2675,6 +2737,7 @@ ff
 "}
 (47,1,1) = {"
 ff
+Ea
 dw
 eL
 Ys
@@ -2691,6 +2754,7 @@ ff
 Me
 Me
 Me
+Me
 ty
 Dd
 LC
@@ -2700,6 +2764,7 @@ Me
 ff
 "}
 (49,1,1) = {"
+ff
 ff
 ff
 ff
@@ -2716,6 +2781,7 @@ ff
 ff
 ff
 ff
+ff
 GU
 Vi
 hr
@@ -2726,6 +2792,7 @@ ff
 ff
 "}
 (51,1,1) = {"
+ff
 ff
 ff
 ff
@@ -2742,6 +2809,7 @@ ff
 ff
 ff
 ff
+ff
 GU
 WY
 ln
@@ -2752,6 +2820,7 @@ ff
 ff
 "}
 (53,1,1) = {"
+ff
 ff
 ff
 ff
@@ -2768,6 +2837,7 @@ ff
 ff
 ff
 ff
+ff
 GU
 qL
 LP
@@ -2781,6 +2851,7 @@ ff
 ff
 ff
 ff
+ff
 GU
 JT
 vb
@@ -2791,6 +2862,7 @@ ff
 ff
 "}
 (56,1,1) = {"
+ff
 ff
 ff
 ff
