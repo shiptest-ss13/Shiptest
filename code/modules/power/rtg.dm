@@ -103,7 +103,7 @@
 
 // "Geothermal Tap" for relatively hands off power in ruins.
 // Mapped ones will delete their circuit to keep them from getting salvaged. Otherwise try to not hand them out willy nilly.
-//try and toss these near lava for more fun
+// try and toss these near lava for more fun
 
 /obj/machinery/power/rtg/geothermal
 	name = "Geothermal Power Tap"
