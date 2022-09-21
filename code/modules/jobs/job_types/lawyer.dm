@@ -44,7 +44,6 @@
 
 	uniform = /obj/item/clothing/under/suit/black
 	suit = /obj/item/clothing/suit/toggle/lawyer/black
-	ears = /obj/item/radio/headset/headset
+	ears = /obj/item/radio/headset/binary
 	neck = /obj/item/clothing/neck/tie/black
-	r_pocket = /obj/item/radio/headset/binary
-	l_pocket = /obj/item/pen/fourcolor
+	r_pocket = /obj/item/pen/fourcolor

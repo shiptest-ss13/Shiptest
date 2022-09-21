@@ -172,6 +172,7 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/combat
 	backpack_contents = list(
-		/obj/item/flashlight/seclite=1
-		/obj/item/stack/marker_beacon/ten=1
-		/obj/item/weldingtool=1)
+		/obj/item/flashlight/seclite=1,
+		/obj/item/stack/marker_beacon/ten=1,
+		/obj/item/weldingtool=1
+		)
