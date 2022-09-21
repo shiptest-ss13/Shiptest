@@ -72,6 +72,8 @@
 		/obj/item/gun/energy/kinetic_accelerator=1,\
 		/obj/item/stack/marker_beacon/ten=1)
 
+	loadout_replace_specifics = list(/datum/gear/eyewear/glasses = /obj/item/clothing/glasses/meson/prescription)
+
 /datum/outfit/job/miner/equipped/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -147,6 +149,8 @@
 		/obj/item/reagent_containers/hypospray/medipen/survival,\
 		/obj/item/gun/energy/kinetic_accelerator/old=1,\
 		/obj/item/stack/marker_beacon/ten=1)
+
+	loadout_replace_specifics = list(/datum/gear/eyewear/glasses = /obj/item/clothing/glasses/meson/prescription)
 
 /datum/outfit/job/miner/righand
 	name = "Righand"

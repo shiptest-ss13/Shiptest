@@ -104,6 +104,8 @@
 	gloves = null
 	suit_store = null
 
+	loadout_accept = FALSE
+
 /datum/outfit/job/hos/nanotrasen
 	name = "Head of Security (Nanotrasen)"
 

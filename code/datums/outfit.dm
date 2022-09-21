@@ -113,6 +113,15 @@
 	*/
 	var/list/chameleon_extras
 
+	/// Set to FALSE if your outfit shouldn't accept role replacements
+	var/loadout_replace = TRUE
+
+	/// Set to TRUE if your outfit should allow loadout items to be received
+	var/loadout_accept = FALSE
+
+	///Set any given gear datum to "forbid" if you don't want it to be replaced, otherwise set it to a different datum to have it be replaced by something else // Later add force replace
+	var/list/loadout_replace_specifics = list()
+
 /**
 	* Called at the start of the equip proc
 	*
@@ -208,6 +217,15 @@
 				backpack_contents = list()
 			backpack_contents.Insert(1, box)
 			backpack_contents[box] = 1
+
+		if(loadout_accept && H.client && (H.client.prefs.equipped_gear && length(H.client.prefs.equipped_gear)))
+			var/obj/item/storage/box/loadout_dumper = new()
+			for(var/gear in H.client.prefs.equipped_gear)
+				var/datum/gear/new_gear = GLOB.gear_datums[gear]
+				new_gear.spawn_item(loadout_dumper, H, src)
+			if(!H.equip_to_slot_or_del(loadout_dumper,ITEM_SLOT_BACKPACK, TRUE))
+				if(!H.put_in_hands(loadout_dumper, TRUE))
+					to_chat("Unable to place loadout box.")
 
 		if(backpack_contents)
 			for(var/path in backpack_contents)

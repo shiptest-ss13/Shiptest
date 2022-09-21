@@ -168,6 +168,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/equipped_gear = list()
 	///Gear tab currently being viewed
 	var/gear_tab = "General"
+	///Preferences for gear items such as wether or not they are a family heirloom, how many of them were taken and such
+	var/list/equipped_gear_preferences = list()
+
+	var/quirk_tab = FALSE
 
 	var/action_buttons_screen_locs = list()
 	///If we want to broadcast deadchat connect/disconnect messages
@@ -224,7 +228,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	dat += "<a href='?_src_=prefs;preference=tab;tab=0' [current_tab == 0 ? "class='linkOn'" : ""]>Character Setup</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=1' [current_tab == 1 ? "class='linkOn'" : ""]>Character Appearance</a>"
-	dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>Gear</a>"
+	dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>Gear and Quirks</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=3' [current_tab == 3 ? "class='linkOn'" : ""]>Game Preferences</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=4' [current_tab == 4 ? "class='linkOn'" : ""]>OOC Preferences</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=5' [current_tab == 5 ? "class='linkOn'" : ""]>Custom Keybindings</a>"
@@ -258,10 +262,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<center><h2>Outfit Preview Settings</h2>"
 			dat += "<a href='?_src_=prefs;preference=job'>Set Preview Job Gear</a><br></center>"
-			if(CONFIG_GET(flag/roundstart_traits))
-				dat += "<center><h2>Quirk Setup</h2>"
-				dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
-				dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
 			dat += "<h2>Identity</h2>"
 			dat += "<table width='100%'><tr><td width='24%' valign='top'>"
 			if(is_banned_from(user.ckey, "Appearance"))
@@ -855,7 +855,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<td><a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[prosthetic_limbs[index]]</a></td></tr>"
 			dat += "</table><br>"
 
-		if(2) //Loadout
+		if(2) //Loadout and Quirks
 			if(path)
 				var/savefile/S = new /savefile(path)
 				if(S)
@@ -874,55 +874,179 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;num=[i];' [i == default_slot ? "class='linkOn'" : ""]>[name]</a> "
 					dat += "</center>"
 					dat += "<HR>"
-			var/list/type_blacklist = list()
-			if(equipped_gear && length(equipped_gear))
-				for(var/i = 1, i <= length(equipped_gear), i++)
-					var/datum/gear/G = GLOB.gear_datums[equipped_gear[i]]
-					if(G)
-						if(G.subtype_path in type_blacklist)
-							continue
-						type_blacklist += G.subtype_path
-					else
-						equipped_gear.Cut(i,i+1)
 
 			dat += "<table align='center' width='100%'>"
-			dat += "<tr><td colspan=4><center><b>Current loadout usage: [length(equipped_gear)]/[CONFIG_GET(number/max_loadout_items)]</b> \[<a href='?_src_=prefs;preference=gear;clear_loadout=1'>Clear Loadout</a>\] | \[<a href='?_src_=prefs;preference=gear;toggle_loadout=1'>Toggle Loadout</a>\]</center></td></tr>"
-			dat += "<tr><td colspan=4><center><b>"
-
-			var/firstcat = 1
-			for(var/category in GLOB.loadout_categories)
-				if(firstcat)
-					firstcat = 0
-				else
-					dat += " |"
-				if(category == gear_tab)
-					dat += " <span class='linkOff'>[category]</span> "
-				else
-					dat += " <a href='?_src_=prefs;preference=gear;select_category=[category]'>[category]</a> "
+			dat += "<tr><td colspan=6><center><b>"
+			dat += !quirk_tab ? " <span class='linkOff'>Loadout</span> " : " <a href='?_src_=prefs;prefs;preference=quirk_tab_swap'>Loadout</a> "
+			dat += " |"
+			dat += quirk_tab ? " <span class='linkOff'>Quirks</span> " : " <a href='?_src_=prefs;preference=quirk_tab_swap'>Quirks</a> "
 			dat += "</b></center></td></tr>"
-
-			var/datum/loadout_category/LC = GLOB.loadout_categories[gear_tab]
-			dat += "<tr><td colspan=3><hr></td></tr>"
-			dat += "<tr><td colspan=3><b><center>[LC.category]</center></b></td></tr>"
-			dat += "<tr><td colspan=3><hr></td></tr>"
-
-			dat += "<tr><td colspan=3><hr></td></tr>"
-			dat += "<tr><td><b>Name</b></td>"
-			dat += "<td><b>Restricted Jobs</b></td>"
-			dat += "<td><b>Description</b></td>"
-			dat += "<tr><td colspan=3><hr></td></tr>"
-			for(var/gear_name in LC.gear)
-				var/datum/gear/G = LC.gear[gear_name]
-				dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;toggle_gear=[G.display_name]'>[G.display_name]</a></td><td>"
-				if(G.allowed_roles)
-					dat += "<font size=2>"
-					var/list/allowedroles = list()
-					for(var/role in G.allowed_roles)
-						allowedroles += role
-					dat += english_list(allowedroles, null, ", ")
-					dat += "</font>"
-				dat += "</td><td><font size=2><i>[G.description]</i></font></td></tr>"
 			dat += "</table>"
+
+			if(!quirk_tab)
+				var/list/type_blacklist = list()
+				if(equipped_gear && length(equipped_gear))
+					for(var/i = 1, i <= length(equipped_gear), i++)
+						var/datum/gear/G = GLOB.gear_datums[equipped_gear[i]]
+						if(G)
+							if(G.subtype_path in type_blacklist)
+								continue
+							type_blacklist += G.subtype_path
+						else
+							equipped_gear.Cut(i,i+1)
+
+				dat += "<table align='center' width='100%'>"
+				dat += "<tr><td colspan=6><center><b>Current loadout usage: [length(equipped_gear)]/[CONFIG_GET(number/max_loadout_items)]</b> \[<a href='?_src_=prefs;preference=gear;clear_loadout=1'>Clear Loadout</a>\] | \[<a href='?_src_=prefs;preference=gear;toggle_loadout=1'>Toggle Loadout</a>\]</center></td></tr>"
+				dat += "<tr><td colspan=6><center><b>"
+
+				var/firstcat = 1
+				for(var/category in GLOB.loadout_categories)
+					if(firstcat)
+						firstcat = 0
+					else
+						dat += " |"
+					if(category == gear_tab)
+						dat += " <span class='linkOff'>[category]</span> "
+					else
+						dat += " <a href='?_src_=prefs;preference=gear;select_category=[category]'>[category]</a> "
+				dat += "</b></center></td></tr>"
+
+				var/datum/loadout_category/LC = GLOB.loadout_categories[gear_tab]
+				dat += "<tr><td colspan=5><hr></td></tr>"
+				dat += "<tr><td colspan=5><b><center>[LC.category]</center></b></td></tr>"
+				dat += "<tr><td colspan=5><hr></td></tr>"
+
+				dat += "<tr><td colspan=5><hr></td></tr>"
+				dat += "<tr><td><b>Name</b></td>"
+				dat += "<td><b>Job Replaces</b></td>"
+				dat += "<td><b>Cost</b></td>"
+				dat += "<td><b>Limit</b></td>"
+				dat += "<tr><td colspan=5><hr></td></tr>"
+				for(var/gear_name in LC.gear)
+					var/datum/gear/G = LC.gear[gear_name]
+					dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;toggle_gear=[G.display_name]'>[G.display_name]</a></td><td>"
+					if(G.role_replacements)
+						dat += "<font size=2>"
+						var/list/rolereplacemnets = list()
+						for(var/datum/job/role in G.role_replacements)
+							rolereplacemnets += initial(role.name)
+						dat += english_list(rolereplacemnets, null, ", ")
+						dat += "</font>"
+					dat += "</td><td><font size=2><i>[G.cost]</i></font></td>"
+					dat += "</td><td><font size=2><i>[G.limit > 0 ? G.limit : "None"]</i></font></td>"
+					dat+= "</tr>"
+				dat += "</table>"
+
+			else
+				if(!SSquirks.quirks.len)
+					dat += "The quirk subsystem hasn't finished initializing, please hold..."
+				else
+
+					dat += "<table align='center' width='100%'>"
+					var/list/quirk_conflicts = check_quirk_compatibility(user)
+					dat += "<tr><center><b>Current positive quirk usage: [GetPositiveQuirkCount()] / [MAX_QUIRKS]</b> \[<a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a>\]</center></tr>"
+					dat += "<tr><center><b>Quirk balance remaining:</b> [GetQuirkBalance()]</center></tr>"
+					dat += "<tr><center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center></tr>"
+
+					var/section_handle = 0
+					for(var/quirk_index in SSquirks.quirks)
+						var/datum/quirk/quirk_datum = SSquirks.quirks[quirk_index]
+						var/has_quirk
+						var/quirk_handled
+						var/quirk_cost = initial(quirk_datum.value)
+						if((section_handle == 0 && quirk_cost > 0) || (section_handle == 1 && quirk_cost < 0) || (section_handle == 2 && quirk_cost == 0))
+							section_handle++
+							switch(section_handle)
+								if(1)
+									dat += "<tr><td colspan=6><hr></td></tr>"
+									dat += "<tr><td colspan=6><b><center><font color='#AAFFAA' size=4>Positive Quirks</font color size></center></b></td></tr>"
+									dat += "<tr><td colspan=6><hr></td></tr>"
+									dat += "<tr><td colspan=6><font color='#AAFFAA'>Positive quirks</font color> bring a mechanical benefit to your character in some form, and as such require you to take <font color='#FFAAAA'>negative quirks</font color> and are limited to only <b>6</b>.</td></tr>"
+									dat += "<tr><td colspan=6><hr></td></tr>"
+									dat += "<tr><td><b>Name</b></td>"
+									dat += "<td><b>Value</b></td>"
+									dat += "<td><b>Species Restrictions</b></td>"
+									dat += "<td><b>Mood Restrictions</b></td>"
+									dat += "<td><b>Mutual Exclusivities</b></td>"
+									dat += "<td><b>Description</b></td>"
+									dat += "<tr><td colspan=6><hr></td></tr>"
+								if(2)
+									dat += "<tr><td colspan=6><hr></td></tr>"
+									dat += "<tr><td colspan=6><b><center><font color='#FFAAAA' size=4>Negative Quirks</font color size></center></b></td></tr>"
+									dat += "<tr><td colspan=6><hr></td></tr>"
+									dat += "<tr><td colspan=6><font color='#FFAAAA'>Negative quirks</font color> hinder your character in some way, allowing you to spend the points you gain from them to gain <font color='#AAFFAA'>positive quirks</font color>, alongside just reflecting some nature of your character you might want to reflect, such as being <b>nearsighted</b> or <b>frail</b>.</td></tr>"
+									dat += "<tr><td colspan=6><hr></td></tr>"
+									dat += "<tr><td><b>Name</b></td>"
+									dat += "<td><b>Value</b></td>"
+									dat += "<td><b>Species Restrictions</b></td>"
+									dat += "<td><b>Mood Restrictions</b></td>"
+									dat += "<td><b>Mutual Exclusivities</b></td>"
+									dat += "<td><b>Description</b></td>"
+									dat += "<tr><td colspan=6><hr></td></tr>"
+								if(3)
+									dat += "<tr><td colspan=6><hr></td></tr>"
+									dat += "<tr><td colspan=6><b><center><font size=4>Neutral Quirks</font></center></b></td></tr>"
+									dat += "<tr><td colspan=6><hr></td></tr>"
+									dat += "<tr><td colspan=6>Neutral quirks are meant as flavorful customization options with little to no impact on your character, not warranting a gain of points nor loss of them.</td></tr>"
+									dat += "<tr><td colspan=6><hr></td></tr>"
+									dat += "<tr><td><b>Name</b></td>"
+									dat += "<td><b>Value</b></td>"
+									dat += "<td><b>Species Restrictions</b></td>"
+									dat += "<td><b>Mood Restrictions</b></td>"
+									dat += "<td><b>Mutual Exclusivities</b></td>"
+									dat += "<td><b>Description</b></td>"
+									dat += "<tr><td colspan=6><hr></td></tr>"
+						var/list/quirk_restrictions = check_quirk_restrictions(quirk_index)
+						for(var/quirk_owned in all_quirks)
+							if(quirk_owned == initial(quirk_datum.name))
+								has_quirk = TRUE
+						if(!has_quirk)
+							quirk_cost *= -1
+						var/font_color = "#AAAAFF"
+						if(quirk_cost != 0)
+							font_color = quirk_cost > 0 ? "#AAFFAA" : "#FFAAAA"
+						if(quirk_cost > 0)
+							quirk_cost = "+[quirk_cost]"
+						if(quirk_conflicts[initial(quirk_datum.name)])
+							if(!has_quirk)
+								dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' class=linkOff>[initial(quirk_datum.name)]</a></td><td>"
+								quirk_handled = TRUE
+							else
+								alert(user, "Something went wrong, you somehow had a conflicting quirk that didn't get cleared during conflict checks, please open an issue or otherwise notify coders of such. Your quirks have been cleared.")
+								all_quirks = list()
+								ShowChoices(user)
+								save_preferences()
+						if(initial(quirk_datum.value) > 0)
+							if(!has_quirk && GetPositiveQuirkCount() == MAX_QUIRKS)
+								dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' class=linkOff>[initial(quirk_datum.name)]</a></td><td>"
+								quirk_handled = TRUE
+							if(GetPositiveQuirkCount() > MAX_QUIRKS)
+								alert(user, "For some odd reason, you had more positive quirks than is allowed, as such your quirks have been cleared.")
+								all_quirks = list()
+								ShowChoices(user)
+								save_preferences()
+						if(!quirk_handled)
+							dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' [has_quirk ? "class='linkOn' " : ""]href='?_src_=prefs;preference=trait;task=update;trait=[initial(quirk_datum.name)]'>[initial(quirk_datum.name)]</a></td><td>"
+						dat += "<font size=2>"
+						dat += "<font color='[font_color]'>[quirk_cost]</font_color>"
+						dat += "</font>"
+						dat += "</td><td>"
+						if(quirk_restrictions["species"])
+							dat += "<font size=2>"
+							dat += quirk_restrictions["species"]
+							dat += "</font>"
+						dat += "</td><td>"
+						if(quirk_restrictions["mood"])
+							dat += "<font size=2>"
+							dat += quirk_restrictions["mood"]
+							dat += "</font>"
+						dat += "</td><td>"
+						if(quirk_restrictions["blacklist"])
+							dat += "<font size=2>"
+							dat += quirk_restrictions["blacklist"]
+							dat += "</font>"
+						dat += "</td><td><font size=2><i>[initial(quirk_datum.desc)]</i></font></td></tr>"
+					dat += "</table>"
 
 		if (3) // Game Preferences
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
@@ -1248,62 +1372,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.open(FALSE)
 	QDEL_NULL(S)
 
-/datum/preferences/proc/SetQuirks(mob/user)
-	if(!SSquirks)
-		to_chat(user, "<span class='danger'>The quirk subsystem is still initializing! Try again in a minute.</span>")
-		return
-
-	var/list/dat = list()
-	if(!SSquirks.quirks.len)
-		dat += "The quirk subsystem hasn't finished initializing, please hold..."
-		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center><br>"
-	else
-		var/list/quirk_conflicts = check_quirk_compatibility(user)
-		dat += "<center><b>Choose quirk setup</b></center><br>"
-		dat += "<div align='center'>Left-click to add or remove quirks. You need negative quirks to have positive ones.<br>\
-		Quirks are applied at roundstart and cannot normally be removed.</div>"
-		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center>"
-		dat += "<hr>"
-		dat += "<center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
-		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS] max positive quirks<br>\
-		<b>Quirk balance remaining:</b> [GetQuirkBalance()]</center><br>"
-		for(var/quirk_index in SSquirks.quirks)
-			var/datum/quirk/quirk_datum = SSquirks.quirks[quirk_index]
-			var/has_quirk
-			var/quirk_cost = initial(quirk_datum.value)
-			for(var/quirk_owned in all_quirks)
-				if(quirk_owned == initial(quirk_datum.name))
-					has_quirk = TRUE
-			if(has_quirk)
-				quirk_cost *= -1 //invert it.
-			if(quirk_cost > 0)
-				quirk_cost = "+[quirk_cost]"
-			var/font_color = "#AAAAFF"
-			if(initial(quirk_datum.value) != 0)
-				font_color = initial(quirk_datum.value) > 0 ? "#AAFFAA" : "#FFAAAA"
-			if(quirk_conflicts[initial(quirk_datum.name)])
-				if(!has_quirk)
-					dat += "<font color='[font_color]'>[initial(quirk_datum.name)]</font> - [initial(quirk_datum.desc)] \
-					<font color='red'><b>LOCKED: [quirk_conflicts[initial(quirk_datum.name)]]</b></font><br>"
-				else
-					alert(user, "Something went wrong, you had somehow had a conflicting quirk that didn't get cleared during conflict checks, please open an issue or otherwise notify coders of such.")
-					all_quirks = list()
-					user << browse(null, "window=mob_occupation")
-					ShowChoices(user)
-					save_preferences()
-			else
-				if(has_quirk)
-					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[initial(quirk_datum.name)]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
-					<b><font color='[font_color]'>[initial(quirk_datum.name)]</font></b> - [initial(quirk_datum.desc)]<br>"
-				else
-					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[initial(quirk_datum.name)]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
-					<font color='[font_color]'>[initial(quirk_datum.name)]</font> - [initial(quirk_datum.desc)]<br>"
-		dat += "<br><center><a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a></center>"
-
-	var/datum/browser/popup = new(user, "mob_trait", "<div align='center'>Quirk Preferences</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
-	popup.set_window_options("can_close=0")
-	popup.set_content(dat.Join())
-	popup.open(FALSE)
 
 /**
  * Proc called to track what quirks conflict with someone's preferences, returns a list with all quirks that conflict.
@@ -1316,19 +1384,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	for(var/quirk_index in SSquirks.quirk_instances)
 		var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_index]
 		if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
-			quirk_conflicts[quirk_instance.name] = "Mood and mood quirks are disabled."
+			quirk_conflicts[quirk_instance.name] = TRUE
 			if(!handled_conflicts["mood"])
 				handle_quirk_conflict("mood", null, user)
 				handled_conflicts["mood"] = TRUE
 		if(((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock)))
-			quirk_conflicts[quirk_instance.name] = "Quirk unavailable to species."
+			quirk_conflicts[quirk_instance.name] = TRUE
 			if(!handled_conflicts["species"])
 				handle_quirk_conflict("species", pref_species, user)
 				handled_conflicts["species"] = TRUE
 		for(var/blacklist in SSquirks.quirk_blacklist)
 			for(var/quirk_blacklisted in all_quirks)
 				if((quirk_blacklisted in blacklist) && !quirk_conflicts[quirk_instance.name] && (quirk_instance.name in blacklist) && !(quirk_instance.name == quirk_blacklisted))
-					quirk_conflicts[quirk_instance.name] = "Quirk is mutually exclusive with [quirk_blacklisted]."
+					quirk_conflicts[quirk_instance.name] = TRUE
 					if(!handled_conflicts["blacklist"])
 						handle_quirk_conflict("blacklist", null, user)
 						handled_conflicts["blacklist"] = TRUE
@@ -1397,6 +1465,34 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(all_quirks_new != all_quirks)
 		to_chat(user, "<span class='danger'>Your quirks have been altered.</span>")
 		return all_quirks_new
+
+/datum/preferences/proc/check_quirk_restrictions(quirk_type)
+	var/list/quirk_restrictions = list()
+	var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_type]
+	if(quirk_instance.mood_quirk)
+		var/font_color = CONFIG_GET(flag/disable_human_mood) ? "#FFAAAA" : "#AAFFAA"
+		quirk_restrictions["mood"] = "<font color='[font_color]'>YES</font color"
+	if(length(quirk_instance.species_lock)> 1)
+		var/list/species_list = list()
+		species_list += quirk_instance.species_lock
+		var/font_color = species_list["type"] == "allowed" ? "#AAFFAA" : "#FFAAAA"
+		species_list -= "type"
+		for(var/species_id in species_list)
+			var/species_path = GLOB.species_list[species_id]
+			if(!species_path)
+				continue
+			var/datum/species/species_datum = species_path
+			species_list += "<font color='[font_color]'>[initial(species_datum.name)]</font color>"
+			species_list -= species_id
+		quirk_restrictions["species"] = "[species_list.Join(", ")]"
+	for(var/list/base_blacklist in SSquirks.quirk_blacklist)
+		var/list/blacklist = list()
+		blacklist += base_blacklist
+		if(quirk_instance.name in blacklist)
+			blacklist -= quirk_instance.name
+			quirk_restrictions["blacklist"] = "[blacklist.Join(", ")]"
+
+	return quirk_restrictions
 
 /datum/preferences/proc/GetQuirkBalance()
 	var/bal = 0
@@ -1481,6 +1577,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						to_chat(user, "<span class='warning'>Refunding this would cause you to go below your balance!</span>")
 						return
 					all_quirks -= quirk
+					save_preferences()
 				else
 					var/is_positive_quirk = SSquirks.quirk_points[quirk] > 0
 					if(is_positive_quirk && GetPositiveQuirkCount() >= MAX_QUIRKS)
@@ -1490,12 +1587,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						to_chat(user, "<span class='warning'>You don't have enough balance to gain this quirk!</span>")
 						return
 					all_quirks += quirk
-				SetQuirks(user)
+					save_preferences()
 			if("reset")
 				all_quirks = list()
-				SetQuirks(user)
-			else
-				SetQuirks(user)
+		ShowChoices(user)
 		return TRUE
 
 	if(href_list["preference"] == "gear")
@@ -2300,6 +2395,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(current_tab == 2)
 							show_loadout = TRUE
 
+				if("quirk_tab_swap")
+					quirk_tab = !quirk_tab
+
 	ShowChoices(user)
 	return 1
 
@@ -2358,6 +2456,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/datum/gear/G = GLOB.gear_datums[gear]
 			if(G?.slot)
 				if(!character.equip_to_slot_or_del(G.spawn_item(character, character), G.slot))
+					continue
+			else
+				if(!character.put_in_hands(G.spawn_item(character, character), TRUE))
 					continue
 
 	var/datum/species/chosen_species

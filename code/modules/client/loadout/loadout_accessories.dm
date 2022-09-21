@@ -67,6 +67,10 @@
 	display_name = "maid neckpiece"
 	path = /obj/item/clothing/neck/maid
 
+/datum/gear/accessory/gloves
+	subtype_path = /datum/gear/accessory/gloves
+	slot = ITEM_SLOT_GLOVES
+
 /datum/gear/accessory/gloves/black
 	display_name = "black gloves"
 	description = "Standard hand coverings for everyday use."
@@ -81,12 +85,10 @@
 	display_name = "evening gloves"
 	description = "Excessively fancy elbow-length gloves."
 	path = /obj/item/clothing/gloves/color/evening
-	slot = ITEM_SLOT_GLOVES
 
 /datum/gear/accessory/gloves/maid
 	display_name = "maid arm covers"
 	path = /obj/item/clothing/gloves/maid
-	slot = ITEM_SLOT_GLOVES
 
 /datum/gear/accessory/tiki
 	display_name = "tiki mask"

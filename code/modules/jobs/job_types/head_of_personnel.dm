@@ -124,3 +124,5 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	glasses = /obj/item/clothing/glasses/hud/health
+
+	loadout_replace_specifics = list(/datum/gear/eyewear/glasses = /obj/item/clothing/glasses/hud/health/prescription)

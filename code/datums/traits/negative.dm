@@ -273,40 +273,7 @@
 
 /datum/quirk/nearsighted/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/glasses_type
-
-	switch(quirk_holder.mind.assigned_role)
-		//Security
-		if("Head of Security")
-			glasses_type = /obj/item/clothing/glasses/hud/security/prescription
-		if("Warden")
-			glasses_type = /obj/item/clothing/glasses/hud/security/prescription
-		if("Security Officer")
-			glasses_type = /obj/item/clothing/glasses/hud/security/prescription
-		//Science
-		if("Research Director")
-			glasses_type = /obj/item/clothing/glasses/science/prescription
-		if("Scientist")
-			glasses_type = /obj/item/clothing/glasses/science/prescription
-		if("Chemist")
-			glasses_type = /obj/item/clothing/glasses/science/prescription
-		//Health
-		if("Chief Medical Officer")
-			glasses_type = /obj/item/clothing/glasses/hud/health/prescription
-		if("Medical Doctor")
-			glasses_type = /obj/item/clothing/glasses/hud/health/prescription
-		//Meson
-		if("Chief Engineer")
-			glasses_type = /obj/item/clothing/glasses/meson/prescription
-		if("Station Engineer")
-			glasses_type = /obj/item/clothing/glasses/meson/prescription
-		if("Atmospheric Technician")
-			glasses_type = /obj/item/clothing/glasses/meson/prescription
-		if("Shaft Miner")
-			glasses_type = /obj/item/clothing/glasses/meson/prescription
-
-	if(!glasses_type)
-		glasses_type = /obj/item/clothing/glasses/regular
+	var/obj/item/glasses_type = /obj/item/clothing/glasses/regular
 	glasses = new glasses_type(get_turf(quirk_holder))
 	var/list/slots = list(
 		"on your face, silly!" = ITEM_SLOT_EYES,

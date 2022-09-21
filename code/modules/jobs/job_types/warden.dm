@@ -87,6 +87,8 @@
 	backpack = /obj/item/storage/backpack
 	backpack_contents = null
 
+	loadout_replace_specifics = list(/datum/gear/eyewear/glasses = "forbid")
+
 /datum/outfit/job/warden/minutemen/armed
 	name = "Field Commander (Colonial Minutemen) (Armed)"
 

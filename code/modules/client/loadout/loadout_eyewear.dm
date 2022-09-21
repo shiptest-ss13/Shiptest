@@ -7,6 +7,17 @@
 /datum/gear/eyewear/glasses
 	display_name = "glasses, prescription"
 	path = /obj/item/clothing/glasses/regular
+	role_replacements = list(
+
+		//SecHUD
+		/datum/job/hos = /obj/item/clothing/glasses/hud/security/prescription,
+		/datum/job/warden = /obj/item/clothing/glasses/hud/security/prescription,
+		//Science
+		/datum/job/chemist = /obj/item/clothing/glasses/science/prescription,
+		//MedHUD
+		/datum/job/brig_phys = /obj/item/clothing/glasses/hud/health/prescription,
+
+	)
 
 /datum/gear/eyewear/glasses/large
 	display_name = "glasses, large prescription"

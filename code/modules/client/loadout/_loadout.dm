@@ -60,6 +60,10 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	var/sort_category = "General"
 	///for skipping organizational subtypes (optional)
 	var/subtype_path = /datum/gear
+	///Balance cost of loadout item
+	var/cost = 3
+	///Maximum amount of an item that can be taken
+	var/limit = 1
 
 /datum/gear/New()
 	..()
@@ -79,13 +83,11 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	path = npath
 	location = nlocation
 
-/datum/gear/proc/spawn_item(location, mob/owner)
+/datum/gear/proc/spawn_item(location, mob/owner, datum/outfit/job/outfit_datum)
 	var/datum/gear_data/gd
-	if(role_replacements) //If the owner is a human (should be one) and the item in question has a role replacement
-		var/job = owner.job || owner.mind?.assigned_role
-		if(job in role_replacements) //If the job has an applicable replacement
-			gd = new(role_replacements[job], location)
-			return new gd.path(gd.location)
+	if(outfit_datum.loadout_replace && (outfit_datum.loadout_replace_specifics[src] != "forbid" || (!owner?.client?.prefs.equipped_gear_preferences[src.type]["no_replace"] && (outfit_datum.jobtype in role_replacements)))) //If the owner is a human (should be one) and the item in question has a role replacement
+		gd = new(outfit_datum.loadout_replace_specifics[src] ? outfit_datum.loadout_replace_specifics[src] : role_replacements[outfit_datum.jobtype], location)
+		return new gd.path(gd.location)
 
 	gd = new(path, location) //Else, just give them the item and be done with it
 

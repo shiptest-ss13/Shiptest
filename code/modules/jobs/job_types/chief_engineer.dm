@@ -63,6 +63,8 @@
 	head = null
 	internals_slot = ITEM_SLOT_SUITSTORE
 
+	loadout_replace_specifics = list(/datum/gear/eyewear/glasses = /obj/item/clothing/glasses/meson/prescription)
+
 /datum/outfit/job/ce/engineeringcoordinator
 	name = "Chief Engineer (Engineering Coordinator)"
 
@@ -93,6 +95,8 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	ears = /obj/item/radio/headset/syndicate/alt
 	glasses = /obj/item/clothing/glasses/sunglasses
+
+	loadout_replace_specifics = list()
 
 /datum/outfit/job/ce/syndicate/gorlex
 	name = "Foreman (Gorlex Marauders)"

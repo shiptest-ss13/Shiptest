@@ -157,6 +157,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	head = /obj/item/clothing/head/beret/sec/officer
 	suit = /obj/item/clothing/suit/armor/vest/security/officer
 
+	loadout_replace_specifics = list(/datum/gear/eyewear/glasses = /obj/item/clothing/glasses/hud/security/prescription)
+
 /datum/outfit/job/security/western
 	name = "Security Detail (Western)"
 
@@ -165,6 +167,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
+
+	loadout_replace_specifics = list(/datum/gear/eyewear/glasses = /obj/item/clothing/glasses/hud/security/prescription)
 
 /datum/outfit/job/security/minutemen
 	name = "Minuteman (Colonial Minutemen)"
@@ -224,6 +228,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1,/obj/item/pda/security)
 
+	loadout_replace_specifics = list(/datum/gear/eyewear/glasses = /obj/item/clothing/glasses/hud/security/prescription)
+
 /datum/outfit/job/security/inteq/naked
 	name = "IRMG Enforcer (Inteq) (Naked)"
 	head = null
@@ -231,6 +237,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	belt = null
 	mask = null
 	gloves = null
+
+	loadout_accept = FALSE
 
 /datum/outfit/job/security/nanotrasen
 	name = "Security Officer (Nanotrasen)"

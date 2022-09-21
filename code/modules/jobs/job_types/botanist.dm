@@ -39,5 +39,4 @@
 	glasses = /obj/item/clothing/glasses/science
 	suit =  /obj/item/clothing/suit/toggle/labcoat/chemist
 	suit_store = null
-
-
+	loadout_replace_specifics = list(/datum/gear/eyewear/glasses = /obj/item/clothing/glasses/science/prescription)
