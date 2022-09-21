@@ -166,3 +166,12 @@
 		/obj/item/stack/marker_beacon/ten=1,
 		/obj/item/borg/upgrade/modkit/aoe=1
 	)
+
+/datum/outfit/job/miner/hazard/pod //one day they will not be a miner subtype. That is not today.
+	name = "Pod Pilot"
+	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/combat
+	backpack_contents = list(
+		/obj/item/flashlight/seclite=1
+		/obj/item/stack/marker_beacon/ten=1
+		/obj/item/weldingtool=1)
