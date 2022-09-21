@@ -102,7 +102,7 @@
 		overload()
 
 // "Geothermal Tap" for relatively hands off power in ruins.
-// They can currently be salvaged (This is bad) and if I can figure out how to make them drop lava when deconstructed. Then I will.
+// Mapped ones will delete their circuit to keep them from getting salvaged. Otherwise try to not hand them out willy nilly.
 //try and toss these near lava for more fun
 
 /obj/machinery/power/rtg/geothermal
@@ -110,6 +110,8 @@
 	desc = "A complex machine that drills into the soil below it to gather thermal power."
 	power_gen = 2500
 	circuit = /obj/item/circuitboard/machine/rtg/geothermal
+	irradiate = FALSE //I don't think the lava is radioactive, if your lava is, well. Then it is.
+
 
 /obj/machinery/power/rtg/geothermal/Initialize(mapload)
 	. = ..()
