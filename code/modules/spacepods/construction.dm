@@ -1,4 +1,4 @@
-/obj/spacepod/examine(mob/user) //NONE of the to_chats here work as of 9/21/22 -bjarl
+/obj/spacepod/examine(mob/user) //these output above the spacepod's text block for some reason. Not good.
 	. = ..()
 	switch(construction_state) // more construction states than r-walls!
 		if(SPACEPOD_EMPTY)
