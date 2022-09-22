@@ -70,13 +70,6 @@
 	},
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
-"bV" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "furnacewindows"
-	},
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/turf/open/floor/plating,
-/area/ship/engineering/incinerator)
 "bW" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/turf_decal/industrial/outline/blue,
@@ -100,12 +93,6 @@
 /obj/effect/decal/cleanable/food/salt,
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
-"cw" = (
-/obj/machinery/computer/monitor{
-	dir = 1
-	},
-/turf/open/floor/pod,
-/area/ship/engineering/incinerator)
 "cx" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -634,18 +621,21 @@
 /turf/open/floor/pod,
 /area/ship/cargo)
 "qL" = (
-/obj/structure/table,
 /obj/machinery/button/door{
 	id = "enigmahelm";
 	pixel_y = 27;
 	pixel_x = -6
 	},
-/obj/item/radio/intercom/wideband{
-	pixel_y = 3;
-	pixel_x = 4
-	},
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/plating/rust,
 /area/ship/bridge)
+"qO" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "furnacewindows"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/turf/open/floor/plating,
+/area/ship/engineering/incinerator)
 "qS" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -773,6 +763,11 @@
 /area/ship/crew)
 "tL" = (
 /obj/structure/table,
+/obj/item/radio/intercom/wideband{
+	pixel_y = 3;
+	pixel_x = 3;
+	dir = 1
+	},
 /turf/open/floor/pod,
 /area/ship/bridge)
 "tO" = (
@@ -933,6 +928,10 @@
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
+"xm" = (
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/pod,
+/area/ship/engineering/incinerator)
 "xs" = (
 /obj/effect/decal/cleanable/glass/plasma,
 /obj/structure/cable/yellow{
@@ -1202,10 +1201,6 @@
 	},
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
-"ED" = (
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/pod,
-/area/ship/engineering/incinerator)
 "EN" = (
 /obj/structure/window/plasma/reinforced/spawner/north,
 /obj/machinery/computer/atmos_control/incinerator,
@@ -1299,14 +1294,6 @@
 	},
 /turf/open/floor/pod,
 /area/ship/cargo/office)
-"Hw" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "furnacewindows"
-	},
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/pipe/simple/green,
-/turf/open/floor/plating,
-/area/ship/engineering/incinerator)
 "Hz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1365,6 +1352,12 @@
 /obj/machinery/door/airlock/survival_pod,
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
+"Ja" = (
+/obj/machinery/computer/monitor{
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/ship/engineering/incinerator)
 "JD" = (
 /obj/item/reagent_containers/food/snacks/cookie{
 	pixel_y = -4;
@@ -1591,6 +1584,14 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/plating/rust,
+/area/ship/engineering/incinerator)
+"OT" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "furnacewindows"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/simple/green,
+/turf/open/floor/plating,
 /area/ship/engineering/incinerator)
 "OX" = (
 /obj/machinery/atmospherics/components/binary/circulator{
@@ -2681,8 +2682,8 @@ ff
 "}
 (43,1,1) = {"
 ff
-bV
-ED
+qO
+xm
 YQ
 ic
 vl
@@ -2695,7 +2696,7 @@ ff
 "}
 (44,1,1) = {"
 FH
-Hw
+OT
 bA
 OX
 pA
@@ -2709,7 +2710,7 @@ ff
 "}
 (45,1,1) = {"
 ff
-bV
+qO
 Yg
 Yu
 oO
@@ -2717,13 +2718,13 @@ bI
 Gy
 AP
 aJ
-cw
+Ja
 Me
 ff
 "}
 (46,1,1) = {"
 ff
-bV
+qO
 oZ
 bS
 kI
@@ -2737,7 +2738,7 @@ ff
 "}
 (47,1,1) = {"
 ff
-bV
+qO
 dw
 eL
 Ys
