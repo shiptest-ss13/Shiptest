@@ -20,6 +20,15 @@
 	/// Base percentage chance that an open turf will attempt a flora spawn.
 	var/mob_spawn_chance = 6
 
+/datum/biome/New()
+	open_turf_types = expand_weights(open_turf_types)
+	if(length(flora_spawn_list))
+		flora_spawn_list = expand_weights(flora_spawn_list)
+	if(length(feature_spawn_list))
+		feature_spawn_list = expand_weights(feature_spawn_list)
+	if(length(mob_spawn_list))
+		mob_spawn_list = expand_weights(mob_spawn_list)
+
 /// Changes the passed turf according to the biome's internal logic, optionally using string_gen,
 /// and adds it to the passed area.
 /// The call to ChangeTurf respects changeturf_flags.
@@ -41,7 +50,7 @@
 	return TRUE
 
 /datum/biome/proc/get_turf_type(turf/gen_turf, string_gen)
-	return pickweight(open_turf_types)
+	return pick(open_turf_types)
 
 /// Fills a turf with flora, features, and creatures based on the biome's variables.
 /// The features and creatures compare against and add to the lists passed to determine
@@ -64,13 +73,13 @@
 
 	//FLORA SPAWNING HERE
 	if(length(flora_spawn_list) && prob(flora_spawn_chance) && (a_flags & FLORA_ALLOWED))
-		spawned_flora = pickweight(flora_spawn_list)
+		spawned_flora = pick(flora_spawn_list)
 		spawned_flora = new spawned_flora(open_turf)
 		open_turf.flags_1 |= NO_LAVA_GEN_1
 
 	//FEATURE SPAWNING HERE
 	if(length(feature_spawn_list) && prob(feature_spawn_chance) && (a_flags & FLORA_ALLOWED)) //checks the same flag because lol dunno
-		var/atom/feature_type = pickweight(feature_spawn_list)
+		var/atom/feature_type = pick(feature_spawn_list)
 
 		var/can_spawn = TRUE
 		for(var/other_feature in feature_list)
@@ -86,7 +95,7 @@
 
 	//MOB SPAWNING HERE
 	if(length(mob_spawn_list) && !spawned_flora && !spawned_feature && prob(mob_spawn_chance) && (a_flags & MOB_SPAWN_ALLOWED))
-		var/atom/picked_mob = pickweight(mob_spawn_list)
+		var/atom/picked_mob = pick(mob_spawn_list)
 
 		var/can_spawn = TRUE
 		for(var/thing in mob_list)
@@ -111,7 +120,11 @@
 	/// WEIGHTED list of closed turfs that this biome can place
 	var/closed_turf_types =  list(/turf/closed/mineral/random/volcanic = 1)
 
+/datum/biome/cave/New()
+	closed_turf_types = expand_weights(closed_turf_types)
+	return ..()
+
 /datum/biome/cave/get_turf_type(turf/gen_turf, string_gen)
 	// gets the character in string_gen corresponding to gen_turf's coords. if it is nonzero,
 	// place a closed turf; otherwise place an open turf
-	return pickweight(text2num(string_gen[world.maxx * (gen_turf.y - 1) + gen_turf.x]) ? closed_turf_types : open_turf_types)
+	return pick(text2num(string_gen[world.maxx * (gen_turf.y - 1) + gen_turf.x]) ? closed_turf_types : open_turf_types)
