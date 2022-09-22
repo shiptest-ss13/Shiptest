@@ -119,6 +119,14 @@
 "dp" = (
 /turf/open/floor/pod,
 /area/ship/cargo/office)
+"dr" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "furnacewindows"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/simple/green,
+/turf/open/floor/plating,
+/area/ship/engineering/incinerator)
 "dw" = (
 /obj/machinery/atmospherics/pipe/simple/cyan{
 	dir = 10
@@ -254,6 +262,12 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/pod,
 /area/ship/engineering/atmospherics)
+"fZ" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/pod,
+/area/ship/engineering/incinerator)
 "gn" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -322,7 +336,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/mining,
+/obj/machinery/suit_storage_unit/mining/eva,
 /turf/open/floor/pod,
 /area/ship/cargo/office)
 "iX" = (
@@ -629,13 +643,6 @@
 /obj/machinery/computer/cargo/express,
 /turf/open/floor/plating/rust,
 /area/ship/bridge)
-"qO" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "furnacewindows"
-	},
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/turf/open/floor/plating,
-/area/ship/engineering/incinerator)
 "qS" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -645,6 +652,9 @@
 	},
 /obj/structure/closet/secure_closet/miner,
 /obj/item/gps/mining,
+/obj/item/clothing/suit/hooded/wintercoat/cargo,
+/obj/item/clothing/shoes/winterboots/ice_boots,
+/obj/item/storage/belt/mining/alt,
 /turf/open/floor/pod,
 /area/ship/cargo/office)
 "ra" = (
@@ -928,10 +938,6 @@
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
-"xm" = (
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/pod,
-/area/ship/engineering/incinerator)
 "xs" = (
 /obj/effect/decal/cleanable/glass/plasma,
 /obj/structure/cable/yellow{
@@ -1107,6 +1113,12 @@
 	},
 /turf/open/floor/pod,
 /area/ship/engineering/atmospherics)
+"Ch" = (
+/obj/machinery/computer/monitor{
+	dir = 1
+	},
+/turf/open/floor/pod,
+/area/ship/engineering/incinerator)
 "Cv" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1352,12 +1364,6 @@
 /obj/machinery/door/airlock/survival_pod,
 /turf/open/floor/pod,
 /area/ship/crew/dorm)
-"Ja" = (
-/obj/machinery/computer/monitor{
-	dir = 1
-	},
-/turf/open/floor/pod,
-/area/ship/engineering/incinerator)
 "JD" = (
 /obj/item/reagent_containers/food/snacks/cookie{
 	pixel_y = -4;
@@ -1408,6 +1414,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
+"Ku" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "furnacewindows"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/turf/open/floor/plating,
+/area/ship/engineering/incinerator)
 "Kx" = (
 /obj/structure/window/reinforced/survival_pod/spawner,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1521,6 +1534,9 @@
 	dir = 8;
 	pixel_x = 30
 	},
+/obj/item/clothing/suit/hooded/wintercoat/cargo,
+/obj/item/clothing/shoes/winterboots/ice_boots,
+/obj/item/storage/belt/mining/alt,
 /turf/open/floor/pod,
 /area/ship/cargo/office)
 "Nd" = (
@@ -1584,14 +1600,6 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/plating/rust,
-/area/ship/engineering/incinerator)
-"OT" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "furnacewindows"
-	},
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/pipe/simple/green,
-/turf/open/floor/plating,
 /area/ship/engineering/incinerator)
 "OX" = (
 /obj/machinery/atmospherics/components/binary/circulator{
@@ -1950,6 +1958,9 @@
 /obj/machinery/airalarm/directional/west,
 /obj/structure/closet/secure_closet/miner,
 /obj/item/gps/mining,
+/obj/item/clothing/suit/hooded/wintercoat/cargo,
+/obj/item/clothing/shoes/winterboots/ice_boots,
+/obj/item/storage/belt/mining/alt,
 /turf/open/floor/pod,
 /area/ship/cargo/office)
 "WN" = (
@@ -2001,12 +2012,11 @@
 /obj/structure/closet/wall/orange{
 	pixel_y = 32
 	},
+/obj/item/storage/lockbox/medal/cargo,
 /turf/open/floor/pod,
 /area/ship/bridge)
 "Yg" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/pod,
 /area/ship/engineering/incinerator)
 "Ys" = (
@@ -2682,8 +2692,8 @@ ff
 "}
 (43,1,1) = {"
 ff
-qO
-xm
+Ku
+Yg
 YQ
 ic
 vl
@@ -2696,7 +2706,7 @@ ff
 "}
 (44,1,1) = {"
 FH
-OT
+dr
 bA
 OX
 pA
@@ -2710,21 +2720,21 @@ ff
 "}
 (45,1,1) = {"
 ff
-qO
-Yg
+Ku
+fZ
 Yu
 oO
 bI
 Gy
 AP
 aJ
-Ja
+Ch
 Me
 ff
 "}
 (46,1,1) = {"
 ff
-qO
+Ku
 oZ
 bS
 kI
@@ -2738,7 +2748,7 @@ ff
 "}
 (47,1,1) = {"
 ff
-qO
+Ku
 dw
 eL
 Ys
