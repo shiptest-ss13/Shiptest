@@ -201,5 +201,3 @@
 					// finally this took too fucking long
 					// somehow this takes up 40 lines less code than the original, code-less version. And it actually works
 	update_icon()
-//if you came here trying to figure out how to build pods while the feedback for them is broken, it goes anchor, 10 rods, 10 cable, screwdriver
-// circuit, screwdriver, core, wrench, 5 metal, wrench, weld, apply armor, wrench, weld, crowbar open, add cell, aircan optional.
