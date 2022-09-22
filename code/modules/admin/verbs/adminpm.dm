@@ -316,7 +316,7 @@
 		else
 			adminhelp(reply)													//sender has left, adminhelp instead
 
-#define TGS_AHELP_USAGE "Usage: ticket <close|resolve|icissue|reject|reopen \[ticket #\]|list>"
+#define TGS_AHELP_USAGE "Usage: ticket <close|resolve|icissue|skill|reject|reopen \[ticket #\]|list>"
 /proc/TgsPm(target,msg,sender)
 	target = ckey(target)
 	var/client/C = GLOB.directory[target]
@@ -341,6 +341,10 @@
 				if(ticket)
 					ticket.ICIssue(tgs_tagged)
 					return "Ticket #[ticket.id] successfully marked as IC issue"
+			if("skill")
+				if(ticket)
+					ticket.SkillIssue(tgs_tagged)
+					return "Ticket #[ticket.id] successfully marked as skill issue"
 			if("reject")
 				if(ticket)
 					ticket.Reject(tgs_tagged)
