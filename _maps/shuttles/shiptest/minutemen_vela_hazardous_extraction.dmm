@@ -1042,6 +1042,10 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "gD" = (
@@ -1737,6 +1741,9 @@
 	output_dir = 8;
 	input_dir = 8
 	},
+/obj/item/paper/crumpled{
+	info = "The damn SO disconnected the ORMs from the Silo, tell em to reconnect em. -Judge"
+	},
 /turf/open/floor/plasteel,
 /area/ship/hangar/starboard)
 "kZ" = (
@@ -1952,6 +1959,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hangar/port)
+"mu" = (
+/obj/item/book/manual/wiki/tcomms,
+/obj/structure/table,
+/turf/open/floor/circuit,
+/area/ship/engineering/communications)
 "mv" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -2388,6 +2400,8 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced/tinted,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/open/floor/carpet,
 /area/ship/crew/law_office)
 "qd" = (
@@ -2622,6 +2636,9 @@
 /area/ship/hangar/starboard)
 "ri" = (
 /obj/structure/closet,
+/obj/structure/closet{
+	anchored = 1
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
 "rk" = (
@@ -5650,12 +5667,11 @@
 /turf/open/floor/engine,
 /area/ship/hangar/starboard)
 "Kg" = (
-/obj/structure/table/wood,
 /obj/structure/window/reinforced/tinted{
 	dir = 8
 	},
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/structure/table/wood,
+/obj/machinery/photocopier/faxmachine/longrange,
 /turf/open/floor/carpet,
 /area/ship/crew/law_office)
 "Ko" = (
@@ -6299,6 +6315,12 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "NK" = (
+/obj/structure/table,
+/obj/item/pen,
+/obj/item/paper_bin,
+/obj/item/paper/crumpled{
+	info = "If you can't figure these damn things out, connect the reciever, server, and processor to the bus, then connect the server to the broadcaster. You're welcome. -Johnson"
+	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
 "NM" = (
@@ -6541,7 +6563,9 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "Px" = (
-/obj/structure/closet,
+/obj/structure/closet{
+	anchored = 1
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -7829,6 +7853,9 @@
 	output_dir = 8;
 	input_dir = 8
 	},
+/obj/item/paper/crumpled{
+	info = "The damn SO disconnected the ORMs from the Silo, tell em to reconnect em. -Judge"
+	},
 /turf/open/floor/plasteel,
 /area/ship/hangar/port)
 "YD" = (
@@ -8902,7 +8929,7 @@ dZ
 eQ
 OP
 cr
-NK
+mu
 NK
 cr
 OP

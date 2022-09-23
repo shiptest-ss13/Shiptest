@@ -41,9 +41,16 @@
 /datum/outfit/job/lawyer/flightcoordinator //this is the best fit I could find. To-Do, make them their own job dm and outfits
 	name = "Flight Controller"
 
-
 	uniform = /obj/item/clothing/under/suit/black
 	suit = /obj/item/clothing/suit/toggle/lawyer/black
 	ears = /obj/item/radio/headset/binary
 	neck = /obj/item/clothing/neck/tie/black
 	r_pocket = /obj/item/pen/fourcolor
+
+/datum/outfit/job/lawyer/goldie
+	name = "GOLD Delegate"
+
+	uniform = /obj/item/clothing/under/suit/navy
+	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
+	neck = /obj/item/clothing/neck/tie/blue
+	ears = /obj/item/radio/headset/minutemen
