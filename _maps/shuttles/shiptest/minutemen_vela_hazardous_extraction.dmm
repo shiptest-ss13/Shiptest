@@ -1228,7 +1228,7 @@
 "ie" = (
 /obj/machinery/door/airlock/vault{
 	name = "Secure Storage";
-	req_one_access_txt = "1","41",
+	req_one_access_txt = list(1,41)
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
