@@ -2216,6 +2216,10 @@
 	icon_state = "blue"
 	color_src = 0
 
+/datum/sprite_accessory/ipc_screens/blush
+	name = "Blush"
+	icon_state = "blush"
+
 /datum/sprite_accessory/ipc_screens/bsod
 	name = "BSOD"
 	icon_state = "bsod"
@@ -2774,3 +2778,78 @@
 /datum/sprite_accessory/vox_neck_quills/ruffhawk
 	name = "Ruffhawk"
 	icon_state = "ruffhawk"
+
+//Elzuosa help
+
+/datum/sprite_accessory/elzu_horns
+	icon = 'icons/mob/ethereal_parts.dmi'
+
+/datum/sprite_accessory/elzu_horns/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/elzu_horns/short
+	name = "Short"
+	icon_state = "short"
+
+/datum/sprite_accessory/elzu_horns/helm
+	name = "Helm"
+	icon_state = "helm"
+
+/datum/sprite_accessory/elzu_horns/lunar
+	name = "Lunar"
+	icon_state = "lunar"
+
+/datum/sprite_accessory/elzu_horns/inward
+	name = "Inward"
+	icon_state = "inward"
+
+/datum/sprite_accessory/elzu_horns/majesty
+	name = "Majesty"
+	icon_state = "majesty"
+
+/datum/sprite_accessory/elzu_horns/clipped
+	name = "Clipped"
+	icon_state = "clipped"
+
+/datum/sprite_accessory/elzu_horns/sharp
+	name = "Sharp"
+	icon_state = "sharp"
+
+/datum/sprite_accessory/tails/elzu
+	icon = 'icons/mob/ethereal_parts.dmi'
+
+/datum/sprite_accessory/tails_animated/elzu
+	icon = 'icons/mob/ethereal_parts.dmi'
+
+/datum/sprite_accessory/tails/elzu/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/tails_animated/elzu/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/tails/elzu/long
+	name = "Long"
+	icon_state = "long"
+
+/datum/sprite_accessory/tails_animated/elzu/long
+	name = "Long"
+	icon_state = "long"
+
+/datum/sprite_accessory/tails/elzu/bifurcated
+	name = "Bifurcated"
+	icon_state = "bifurcated"
+
+/datum/sprite_accessory/tails_animated/elzu/bifurcated
+	name = "Bifurcated"
+	icon_state = "bifurcated"
+
+/datum/sprite_accessory/tails/elzu/stubby
+	name = "Stubby"
+	icon_state = "stubby"
+
+/datum/sprite_accessory/tails_animated/elzu/stubby
+	name = "Stubby"
+	icon_state = "stubby"

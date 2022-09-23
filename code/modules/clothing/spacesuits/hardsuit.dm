@@ -1008,6 +1008,11 @@
 	hardsuit_type = "independent-sec"
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
+/obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
+	name = "\improper Frontiersmen hardsuit helmet"
+	desc = "An old hardsuit helmet based on a even older hardsuit helmet. Used prolifically by the Frontiersmen pirate fleet."
+	icon_state = "hardsuit0-frontier"
+	hardsuit_type = "frontier"
 
 /obj/item/clothing/suit/space/hardsuit/security/independent
 	icon_state = "hardsuit-independent-sec"
@@ -1018,6 +1023,13 @@
 	hardsuit_type = "independent-sec"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	name = "\improper Frontiersmen hardsuit"
+	desc = "An old hardsuit based on a even older hardsuit. Used prolifically by the Frontiersmen pirate fleet."
+	icon_state = "hardsuit_frontier"
+	hardsuit_type = "hardsuit_frontier"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
 
 	//Mining
 /obj/item/clothing/head/helmet/space/hardsuit/mining/independent
@@ -1173,7 +1185,7 @@
 /obj/item/clothing/suit/space/hardsuit/solgov
 	icon_state = "hardsuit_solgov"
 	name = "\improper SolGov hardsuit"
-	desc = "An armored spaceproof suit. An exoskeleton helps the user not have slowdown, allowing full mobility with the suit."
+	desc = "An armored spaceproof suit. A powered exoskeleton keeps the suit light and mobile."
 	item_state = "hardsuit_solgov"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov
