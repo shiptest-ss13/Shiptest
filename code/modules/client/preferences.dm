@@ -928,8 +928,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(G.role_replacements)
 						dat += "<font size=2>"
 						var/list/rolereplacemnets = list()
-						for(var/datum/job/role in G.role_replacements)
-							rolereplacemnets += initial(role.name)
+						for(var/role in G.role_replacements)
+							var/datum/job/role_datum = role
+							rolereplacemnets = initial(role_datum.name)
 						dat += english_list(rolereplacemnets, null, ", ")
 						dat += "</font>"
 					dat += "</td><td><font size=2><i>[G.cost]</i></font></td>"
