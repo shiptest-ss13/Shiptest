@@ -3124,18 +3124,6 @@
 /obj/machinery/door/airlock/hatch{
 	name = "Pod 1"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/door/poddoor/preopen{
-	id = "obhangarent1"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar/starboard)
 "uo" = (
@@ -8028,31 +8016,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/law_office)
-"ZU" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/airlock/hatch{
-	name = "Pod 1"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/door/poddoor/preopen{
-	id = "obhangarent1"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/hallway/starboard)
 
 (1,1,1) = {"
 We
@@ -9106,7 +9069,7 @@ uu
 SY
 xg
 jX
-ZU
+KU
 KC
 KC
 uh
