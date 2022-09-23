@@ -61,7 +61,7 @@
 		/obj/item/clothing/head/bandana = 1,
 		/obj/item/clothing/head/bandana = 1,
 		/obj/item/clothing/under/costume/soviet = 1,
-		/obj/item/clothing/head/ushanka = 1,
+		/obj/item/clothing/head/trapper = 1,
 		/obj/item/clothing/suit/imperium_monk = 1,
 		/obj/item/clothing/mask/gas/cyborg = 1,
 		/obj/item/clothing/suit/chaplainsuit/holidaypriest = 1,

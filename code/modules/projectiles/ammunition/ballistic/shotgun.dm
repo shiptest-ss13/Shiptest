@@ -146,3 +146,12 @@
 	would have difficulty with."
 	icon_state = "pulse"
 	projectile_type = /obj/projectile/beam/pulse/shotgun
+
+/obj/item/ammo_casing/shotgun/buckshot/twobore
+	name = "two-bore shell"
+	desc = "A massive fucking two-bore shell."
+	caliber = "twobore"
+	projectile_type = /obj/projectile/bullet/pellet/shotgun_buckshot/twobore
+	pellets = 6
+	variance = 20
+	transform = matrix(2, 0, 0, 0, 2, 0)
