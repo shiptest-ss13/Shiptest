@@ -88,3 +88,34 @@
 2022-09-17:
   triplezeta:
   - bugfix: suit items show up again
+2022-09-19:
+  Bjarl:
+  - rscadd: new area def files + comments on the old one. You probably won't see this
+      in game.
+  PrefabQuasar:
+  - tweak: wood railings and corner railings are now craftable
+  - tweak: railings can now be rotated in all 8 directions
+  - bugfix: stairs have been re-added to the floor painter
+  nefarious6th:
+  - imageadd: resprited wooden tvs and glass display cases
+  tmtmtl30:
+  - tweak: The outpost cargo catalog has been recategorized entirely, and should hopefully
+      be more user-friendly.
+  - tweak: Access restrictions have been removed from purchased crates.
+  - tweak: Purchased crates may no longer have erroneous manifests; they will now
+      always contain the full contents of the purchased pack.
+  - tweak: Internals and plasmaman refill crates no longer come with air; instead,
+      purchase a canister of gas along with your tanks.
+  - balance: Many packs have had their prices changed to better fit our ideal price-scaling.
+  - balance: Material export prices have been reduced across the board, with plasma
+      sheets in particular receiving a heavy nerf to their export price.
+  - refactor: Cargo pack categories now exist in their own files.
+2022-09-22:
+  TetraZeta, tmtmtl30:
+  - imageadd: new ammo casing sprites, courtesy of TetraZeta
+  - tweak: ammo casing sprites moved to their own file
+  - tweak: shotgun shell sprites moved to their OWN own file
+  - tweak: ammo casings now automatically rotate using transforms instead of dirs
+2022-09-23:
+  Recoherent:
+  - admin: skull tissue
