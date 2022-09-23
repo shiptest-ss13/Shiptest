@@ -345,7 +345,7 @@
 	H.transform = H.transform.Scale(0.8, 1)//somehow dwarf squashing is borked when not roundstart. I hate WS code
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize()
-	var/type = pickweight(list("Miner" = 51, "Waldo" = 3, "Ashwalker" = 7, "Soldier" = 3, "Oldminer" = 7, "Kobold" = 5, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4)) //WS Edit - Kobold
+	var/type = pickweight(list("Miner" = 51, "Waldo" = 3, "Ashwalker" = 7, "Soldier" = 3, "Oldminer" = 7, "Kobold" = 5, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4))
 	switch(type)
 		if("Miner")
 			mob_species = pickweight(list(/datum/species/human = 70, /datum/species/lizard = 26, /datum/species/fly = 2, /datum/species/plasmaman = 2))
@@ -440,7 +440,7 @@
 			mob_species = /datum/species/human
 			if(prob(90))
 				uniform = /obj/item/clothing/under/solgov
-				suit = /obj/item/clothing/suit/armor/vest/solgov
+				suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 				shoes = /obj/item/clothing/shoes/jackboots
 				gloves = /obj/item/clothing/gloves/color/grey
 				mask = /obj/item/clothing/mask/gas/sechailer
@@ -463,7 +463,7 @@
 				if(prob(75))
 					backpack_contents += pick(list(/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1, /obj/item/storage/firstaid/tactical = 1, /obj/item/gun/ballistic/automatic/pistol/solgov = 1, /obj/item/gps = 1, /obj/item/stock_parts/cell/gun/upgraded = 2, /obj/item/ammo_box/magazine/pistol556mm = 3, /obj/item/desk_flag/solgov = 3, /obj/item/stack/marker_beacon/ten = 3, /obj/item/detective_scanner = 2, /obj/item/extinguisher/mini = 3, /obj/item/kitchen/knife/combat = 3, /obj/item/flashlight/seclite=3, /obj/item/ammo_casing/shotgun = 3, /obj/item/binoculars = 3, /obj/item/clipboard = 3))
 			else
-				back = pickweight(list(/obj/item/gun/ballistic/shotgun/automatic = 5, /obj/item/gun/energy/laser/terra = 10, /obj/item/gun/ballistic/rocketlauncher/unrestricted = 5))
+				back = pickweight(list(/obj/item/gun/ballistic/shotgun/automatic = 5, /obj/item/gun/ballistic/rocketlauncher/unrestricted = 5))
 			if(prob(25))
 				belt = /obj/item/storage/belt/military
 			if(prob(50))
@@ -472,7 +472,6 @@
 				l_pocket = pickweight(list(/obj/item/reagent_containers/hypospray/medipen/stimpack = 1, /obj/item/kitchen/knife/letter_opener = 3, /obj/item/radio/off = 3, /obj/item/grenade/syndieminibomb/concussion = 1, /obj/item/melee/transforming/energy/ctf/solgov = 1))
 			if(prob(70))
 				glasses = pickweight(list(/obj/item/clothing/glasses/sunglasses = 3, /obj/item/clothing/glasses/hud/health = 3, /obj/item/clothing/glasses/hud/health/night = 1, /obj/item/clothing/glasses/night = 2))
-		//WS Edit Start - Kobold
 		if("Kobold")
 			mob_species = /datum/species/lizard/ashwalker/kobold
 			uniform = /obj/item/clothing/under/costume/gladiator/ash_walker
@@ -490,7 +489,6 @@
 				r_pocket = /obj/item/kitchen/knife/combat/bone
 			if(prob(30))
 				l_pocket = /obj/item/kitchen/knife/combat/bone
-		//WS Edit End - Kobold
 		if("Clown")
 			name = pick(GLOB.clown_names)
 			outfit = /datum/outfit/job/clown
