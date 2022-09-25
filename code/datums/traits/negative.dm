@@ -23,6 +23,7 @@
 	gain_text = "<span class='danger'>You feel your vigor slowly fading away.</span>"
 	lose_text = "<span class='notice'>You feel vigorous again.</span>"
 	medical_record_text = "Patient requires regular treatment for blood loss due to low production of blood."
+	species_lock = TRAIT_SPECIES_BLACKLIST(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE) // These bad boys have NOBLOOD and are roundstart available.
 
 /datum/quirk/blooddeficiency/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -65,7 +66,7 @@
 	name = "Deaf"
 	desc = "You are incurably deaf."
 	value = -2
-	mob_trait = TRAIT_DEAF
+	mob_traits = list(TRAIT_DEAF)
 	gain_text = "<span class='danger'>You can't hear anything.</span>"
 	lose_text = "<span class='notice'>You're able to hear again!</span>"
 	medical_record_text = "Patient's cochlear nerve is incurably damaged."
@@ -73,7 +74,7 @@
 /datum/quirk/depression
 	name = "Depression"
 	desc = "You sometimes just hate life."
-	mob_trait = TRAIT_DEPRESSION
+	mob_traits = list(TRAIT_DEPRESSION)
 	value = -1
 	gain_text = "<span class='danger'>You start feeling depressed.</span>"
 	lose_text = "<span class='notice'>You no longer feel depressed.</span>" //if only it were that easy!
@@ -214,7 +215,7 @@
 	name = "Frail"
 	desc = "Your bones might as well be made of glass! Your limbs can take less damage before they become disabled."
 	value = -2
-	mob_trait = TRAIT_EASYLIMBDISABLE
+	mob_traits = list(TRAIT_EASYLIMBDISABLE)
 	gain_text = "<span class='danger'>You feel frail.</span>"
 	lose_text = "<span class='notice'>You feel sturdy again.</span>"
 	medical_record_text = "Patient has unusually frail bones, recommend calcium-rich diet."
@@ -223,7 +224,7 @@
 	name = "Heavy Sleeper"
 	desc = "You sleep like a rock! Whenever you're put to sleep or knocked unconscious, you take a little bit longer to wake up."
 	value = -1
-	mob_trait = TRAIT_HEAVY_SLEEPER
+	mob_traits = list(TRAIT_HEAVY_SLEEPER)
 	gain_text = "<span class='danger'>You feel sleepy.</span>"
 	lose_text = "<span class='notice'>You feel awake again.</span>"
 	medical_record_text = "Patient has abnormal sleep study results and is difficult to wake up."
@@ -232,6 +233,7 @@
 	name = "Hypersensitive"
 	desc = "For better or worse, everything seems to affect your mood more than it should."
 	value = -1
+	mood_quirk = TRUE
 	gain_text = "<span class='danger'>You seem to make a big deal out of everything.</span>"
 	lose_text = "<span class='notice'>You don't seem to make a big deal out of everything anymore.</span>"
 	medical_record_text = "Patient demonstrates a high level of emotional volatility."
@@ -251,7 +253,7 @@
 	name = "Light Drinker"
 	desc = "You just can't handle your drinks and get drunk very quickly."
 	value = -1
-	mob_trait = TRAIT_LIGHT_DRINKER
+	mob_traits = list(TRAIT_LIGHT_DRINKER)
 	gain_text = "<span class='notice'>Just the thought of drinking alcohol makes your head spin.</span>"
 	lose_text = "<span class='danger'>You're no longer severely affected by alcohol.</span>"
 	medical_record_text = "Patient demonstrates a low tolerance for alcohol. (Wimp)"
@@ -348,7 +350,7 @@
 	name = "Pacifist"
 	desc = "The thought of violence makes you sick. So much so, in fact, that you can't hurt anyone."
 	value = -2
-	mob_trait = TRAIT_PACIFISM
+	mob_traits = list(TRAIT_PACIFISM)
 	gain_text = "<span class='danger'>You feel repulsed by the thought of violence!</span>"
 	lose_text = "<span class='notice'>You think you can defend yourself again.</span>"
 	medical_record_text = "Patient is unusually pacifistic and cannot bring themselves to cause physical harm."
@@ -391,21 +393,21 @@
 	name = "Poor Aim"
 	desc = "You're terrible with guns and can't line up a straight shot to save your life. Dual-wielding is right out."
 	value = -1
-	mob_trait = TRAIT_POOR_AIM
+	mob_traits = list(TRAIT_POOR_AIM)
 	medical_record_text = "Patient possesses a strong tremor in both hands."
 
 /datum/quirk/prosopagnosia
 	name = "Prosopagnosia"
 	desc = "You have a mental disorder that prevents you from being able to recognize faces at all."
 	value = -1
-	mob_trait = TRAIT_PROSOPAGNOSIA
+	mob_traits = list(TRAIT_PROSOPAGNOSIA)
 	medical_record_text = "Patient suffers from prosopagnosia and cannot recognize faces."
 
 /datum/quirk/pushover
 	name = "Pushover"
 	desc = "Your first instinct is always to let people push you around. Resisting out of grabs will take conscious effort."
 	value = -2
-	mob_trait = TRAIT_GRABWEAKNESS
+	mob_traits = list(TRAIT_GRABWEAKNESS)
 	gain_text = "<span class='danger'>You feel like a pushover.</span>"
 	lose_text = "<span class='notice'>You feel like standing up for yourself.</span>"
 	medical_record_text = "Patient presents a notably unassertive personality and is easy to manipulate."
@@ -442,6 +444,7 @@
 	gain_text = "<span class='danger'>You start worrying about what you're saying.</span>"
 	lose_text = "<span class='notice'>You feel easier about talking again.</span>" //if only it were that easy!
 	medical_record_text = "Patient is usually anxious in social encounters and prefers to avoid them."
+	mob_traits = list(TRAIT_ANXIOUS)
 	var/dumb_thing = TRUE
 
 /datum/quirk/social_anxiety/add()
@@ -449,7 +452,8 @@
 	RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE, .proc/looks_at_floor)
 
 /datum/quirk/social_anxiety/remove()
-	UnregisterSignal(quirk_holder, list(COMSIG_MOB_EYECONTACT, COMSIG_MOB_EXAMINATE))
+	if(quirk_holder)
+		UnregisterSignal(quirk_holder, list(COMSIG_MOB_EYECONTACT, COMSIG_MOB_EXAMINATE))
 
 /datum/quirk/social_anxiety/on_process()
 	var/nearby_people = 0
@@ -614,7 +618,8 @@
 	name = "Unstable"
 	desc = "Due to past troubles, you are unable to recover your sanity if you lose it. Be very careful managing your mood!"
 	value = -2
-	mob_trait = TRAIT_UNSTABLE
+	mood_quirk = TRUE
+	mob_traits = list(TRAIT_UNSTABLE)
 	gain_text = "<span class='danger'>There's a lot on your mind right now.</span>"
 	lose_text = "<span class='notice'>Your mind finally feels calm.</span>"
 	medical_record_text = "Patient's mind is in a vulnerable state, and cannot recover from traumatic events."
@@ -622,7 +627,7 @@
 /datum/quirk/bad_touch
 	name = "Bad Touch"
 	desc = "You don't like hugs. You'd really prefer if people just left you alone."
-	mob_trait = TRAIT_BADTOUCH
+	mob_traits = list(TRAIT_BADTOUCH)
 	value = -1
 	gain_text = "<span class='danger'>You just want people to leave you alone.</span>"
 	lose_text = "<span class='notice'>You could use a big hug.</span>"
@@ -633,7 +638,8 @@
 	RegisterSignal(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT), .proc/uncomfortable_touch)
 
 /datum/quirk/bad_touch/remove()
-	UnregisterSignal(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT))
+	if(quirk_holder)
+		UnregisterSignal(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT))
 
 /datum/quirk/bad_touch/proc/uncomfortable_touch()
 	SIGNAL_HANDLER
