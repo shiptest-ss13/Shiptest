@@ -217,15 +217,15 @@
 /datum/overmap/event/wormhole/proc/adjust_colors()
 	switch(stability)
 		if(1)
-			return "#403214"
+			return "#753214"
 		if(2)
-			return "#513a19"
+			return "#642f19"
 		if(3)
 			return"#654650"
 		if(4)
-			return"#6a5d8b"
+			return"#5c5d8b"
 		if(5)
-			return"#8081c7"
+			return"#6d80c7"
 
 GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/wormhole = 10,
