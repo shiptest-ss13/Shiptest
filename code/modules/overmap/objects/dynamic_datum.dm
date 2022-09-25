@@ -188,7 +188,7 @@
 			Rename("waste disposal planet")
 			token.desc = "A very weak energy signal originating from a planet marked as waste disposal."
 			planet = DYNAMIC_WORLD_WASTEPLANET
-			token.icon_state = "globe"
+			token.icon_state = "globe_2"
 			token.color = "#a9883e"
 			planet_name = gen_planet_name()
 
