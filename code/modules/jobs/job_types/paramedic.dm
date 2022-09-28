@@ -54,7 +54,7 @@
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/combat
 	head = /obj/item/clothing/head/beret/solgov
-	suit =  /obj/item/clothing/suit/armor/vest/solgov/rep
+	suit =  /obj/item/clothing/suit/armor/vest/bulletproof/solgov/rep
 	ears = /obj/item/radio/headset/headset_medsec/alt
 
 	backpack = /obj/item/storage/backpack/security
