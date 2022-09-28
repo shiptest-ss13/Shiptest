@@ -193,10 +193,10 @@
 
 /obj/item/gun/ballistic/automatic/smg/thompson
 	name = "\improper Thompson"
-	desc = "A old submachinegun design. Despite this, it is quite bulky for a submachine gun, but is easier to aim. Chambered in .45."
+	desc = "A old submachinegun design. Chambered in .45."
 	icon_state = "tommygun"
-	item_state = "shotgun"
-	w_class = WEIGHT_CLASS_HUGE
+	item_state = "tommygun"
+	icon = 'icons/obj/guns/48x32guns.dmi'
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/smgm45
 	can_suppress = FALSE
