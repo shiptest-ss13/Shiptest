@@ -990,6 +990,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/recharger,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/item/gun/energy/laser/retro,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cf" = (
@@ -1499,18 +1500,6 @@
 /obj/structure/closet/crate{
 	name = "food crate"
 	},
-/obj/machinery/button/shieldwallgen{
-	id = "meta_cargor";
-	name = "Starboard Holofield Switch";
-	pixel_x = 39;
-	pixel_y = 5
-	},
-/obj/machinery/button/door{
-	id = "whiteship_starboard";
-	name = "Starboard Blast Door Control";
-	pixel_x = 28;
-	pixel_y = 7
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "cL" = (
@@ -1612,12 +1601,8 @@
 "cQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/gun/energy/laser/retro,
-/obj/item/gun/energy/laser/retro{
-	pixel_x = 4;
-	pixel_y = 3
-	},
 /obj/item/kitchen/knife/combat/survival,
+/obj/item/gun/energy/laser/retro,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "cR" = (
@@ -1730,6 +1715,10 @@
 /obj/item/clipboard,
 /obj/item/clipboard{
 	pixel_y = -2
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2719,9 +2708,17 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 28
+/obj/machinery/button/door{
+	id = "whiteship_port";
+	name = "Port Blast Door Control";
+	pixel_x = 28;
+	pixel_y = -4
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "meta_cargol";
+	name = "Port Holofield Switch";
+	pixel_x = 39;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2940,23 +2937,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/gun/ballistic/automatic/pistol/m1911,
 /obj/item/ammo_box/magazine/m45,
-/obj/item/gun/ballistic/derringer,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "QN" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/box/corners,
-/obj/machinery/button/shieldwallgen{
-	id = "meta_cargol";
-	name = "Port Holofield Switch";
-	pixel_x = 39;
-	pixel_y = -5
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /obj/machinery/button/door{
-	id = "whiteship_port";
-	name = "Port Blast Door Control";
+	id = "whiteship_starboard";
+	name = "Starboard Blast Door Control";
 	pixel_x = 28;
-	pixel_y = -4
+	pixel_y = 7
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "meta_cargor";
+	name = "Starboard Holofield Switch";
+	pixel_x = 39;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -3274,7 +3273,7 @@ dY
 ix
 eB
 bC
-QN
+aF
 bX
 cm
 gA
@@ -3283,7 +3282,7 @@ cS
 xP
 lq
 dM
-zX
+QN
 If
 "}
 (14,1,1) = {"
