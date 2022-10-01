@@ -360,6 +360,7 @@
 	attack_verb = list("bludgeoned", "smashed")
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/sex
 	burst_size = 6
+	fire_delay = 0.1
 	pb_knockback = 12
 	unique_reskin = null
 	recoil = 10
