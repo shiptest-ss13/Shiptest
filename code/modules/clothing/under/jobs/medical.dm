@@ -131,6 +131,7 @@
 	item_state = "w_suit"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/rank/medical/paramedic/skirt
 	name = "paramedic jumpskirt"
@@ -138,7 +139,7 @@
 	icon_state = "paramedic_skirt"
 	item_state = "w_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
+	can_adjust = TRUE
 	fitted = FEMALE_UNIFORM_TOP
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
