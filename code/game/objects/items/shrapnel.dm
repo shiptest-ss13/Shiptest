@@ -15,8 +15,9 @@
 
 /obj/item/shrapnel/bullet // bullets
 	name = "bullet"
-	icon = 'icons/obj/ammo.dmi'
-	icon_state = "s-casing"
+	icon = 'icons/obj/ammo_bullets.dmi'
+	icon_state = "pistol-brass"
+	item_flags = NONE
 	embedding = null // embedding vars are taken from the projectile itself
 
 

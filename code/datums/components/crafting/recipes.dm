@@ -318,9 +318,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/laserslug
+/datum/crafting_recipe/laserscatter
 	name = "Scatter Laser Shell"
-	result = /obj/item/ammo_casing/shotgun/laserslug
+	result = /obj/item/ammo_casing/shotgun/laserscatter
 	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
 				/obj/item/stock_parts/capacitor/adv = 1,
 				/obj/item/stock_parts/micro_laser/high = 1)
