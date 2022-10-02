@@ -10,6 +10,11 @@
 	name = "7.62x54mm bullet" // WS Edit - Whitesands
 	damage = 60
 
+/obj/projectile/bullet/a300
+	name = ".300 Magnum bullet"
+	damage = 60
+	stamina = 10
+
 /obj/projectile/bullet/a762_enchanted
 	name = "enchanted 7.62 bullet"
 	damage = 20

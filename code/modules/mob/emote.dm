@@ -100,9 +100,9 @@
 	if(.)
 		user.spin(20, 1)
 		if(isobserver(user) && prob(90)) //Speening in their grave
-			user.playsound_local(get_turf(user), 'whitesands/sound/voice/speen.ogg', 50, TRUE)
+			user.playsound_local(get_turf(user), 'sound/voice/speen.ogg', 50, TRUE)
 			return
-		playsound(user, 'whitesands/sound/voice/speen.ogg', 50, 1, -1)
+		playsound(user, 'sound/voice/speen.ogg', 50, 1, -1)
 		if((iscyborg(user) || isanimal(user)) && user.has_buckled_mobs())
 			var/mob/living/L = user
 			var/datum/component/riding/riding_datum = L.GetComponent(/datum/component/riding)

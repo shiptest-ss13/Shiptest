@@ -112,7 +112,7 @@
 	radio.recalculateChannels()
 
 /obj/item/implant/radio/mining
-	radio_key = /obj/item/encryptionkey/headset_cargo
+	radio_key = /obj/item/encryptionkey
 
 /obj/item/implant/radio/syndicate
 	desc = "Are you there God? It's me, Syndicate Comms Agent."
@@ -123,7 +123,7 @@
 	name = "slime radio"
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "adamantine_resonator"
-	radio_key = /obj/item/encryptionkey/headset_sci
+	radio_key = /obj/item/encryptionkey
 	subspace_transmission = TRUE
 
 /obj/item/implant/radio/get_data()

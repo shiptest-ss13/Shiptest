@@ -103,14 +103,41 @@
 	w_class = WEIGHT_CLASS_TINY
 	mine_experience = 0 //its sand
 
+/obj/item/stack/ore/glass/basalt
+	name = "volcanic ash"
+	icon_state = "volcanic_sand"
+	item_state = "volcanic_sand"
+	singular_name = "volcanic ash pile"
+	grind_results = list(/datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5, /datum/reagent/silicon = 8.5)
+
 /obj/item/stack/ore/glass/whitesands
 	name = "white sand pile"
-	icon = 'whitesands/icons/obj/mining.dmi'
+	icon = 'icons/obj/mining.dmi'
 	icon_state = "whitesands"
 	item_state = "whitesands"
 	singular_name = "white sand pile"
 	grind_results = list(/datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/silicon = 10)
-	mine_experience = 0 // it's very pretty sand, but still sand
+
+/obj/item/stack/ore/glass/rockplanet
+	name = "iron sand pile"
+	icon_state = "rockplanet_sand"
+	item_state = "rockplanet_sand"
+	singular_name = "iron sand pile"
+	grind_results = list(/datum/reagent/silicon = 10)
+
+/obj/item/stack/ore/glass/wasteplanet
+	name = "rocky dust"
+	icon_state = "wasteplanet_sand"
+	item_state = "wasteplanet_sand"
+	singular_name = "rocky dust"
+	grind_results = list(/datum/reagent/silicon = 10)
+
+/obj/item/stack/ore/glass/beach
+	name = "beige sand pile"
+	icon_state = "beach_sand"
+	item_state = "beach_sand"
+	singular_name = "beige sand pile"
+	grind_results = list(/datum/reagent/silicon = 10)
 
 GLOBAL_LIST_INIT(sand_recipes, list(\
 		new /datum/stack_recipe("sandstone", /obj/item/stack/sheet/mineral/sandstone, 1, 1, 50),\
@@ -138,14 +165,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	if (severity == EXPLODE_NONE)
 		return
 	qdel(src)
-
-/obj/item/stack/ore/glass/basalt
-	name = "volcanic ash"
-	icon_state = "volcanic_sand"
-	item_state = "volcanic_sand"
-	singular_name = "volcanic ash pile"
-	grind_results = list(/datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5, /datum/reagent/silicon = 8.5)
-	mine_experience = 0
 
 /obj/item/stack/ore/plasma
 	name = "plasma ore"
@@ -367,7 +386,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	pixel_x = base_pixel_x + rand(0,16) - 8
 	pixel_y = base_pixel_y + rand(0,8) - 8
 
-/obj/item/coin/set_custom_materials(var/list/materials, multiplier = 1)
+/obj/item/coin/set_custom_materials(list/materials, multiplier = 1)
 	. = ..()
 	value = 0
 	for(var/i in custom_materials)

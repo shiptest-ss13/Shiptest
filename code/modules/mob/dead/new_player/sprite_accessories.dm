@@ -16,7 +16,7 @@
 	from doing this unless you absolutely know what you are doing, and have defined a
 	conversion in savefile.dm
 */
-/proc/init_sprite_accessory_subtypes(prototype, list/L, list/male, list/female,var/roundstart = FALSE)//Roundstart argument builds a specific list for roundstart parts where some parts may be locked
+/proc/init_sprite_accessory_subtypes(prototype, list/L, list/male, list/female, roundstart = FALSE)//Roundstart argument builds a specific list for roundstart parts where some parts may be locked
 	if(!istype(L))
 		L = list()
 	if(!istype(male))
@@ -1743,10 +1743,6 @@
 	name = "Dark Tiger"
 	icon_state = "dtiger"
 
-/datum/sprite_accessory/tails/lizard/ltiger
-	name = "Light Tiger"
-	icon_state = "ltiger"
-
 /datum/sprite_accessory/tails_animated/lizard/ltiger
 	name = "Light Tiger"
 	icon_state = "ltiger"
@@ -2022,7 +2018,7 @@
 	icon_state = "round"
 
 /datum/sprite_accessory/moth_wings
-	icon = 'whitesands/icons/mob/moth_wings.dmi'
+	icon = 'icons/mob/moth_wings.dmi'
 	color_src = null
 
 /datum/sprite_accessory/moth_wings/plain
@@ -2170,7 +2166,7 @@
 
 //Moth fluff
 /datum/sprite_accessory/moth_fluff
-	icon = 'whitesands/icons/mob/moth_wings.dmi'
+	icon = 'icons/mob/moth_wings.dmi'
 	color_src = null
 
 /datum/sprite_accessory/moth_fluff/plain
@@ -2276,6 +2272,10 @@
 	icon_state = "blue"
 	color_src = 0
 
+/datum/sprite_accessory/ipc_screens/blush
+	name = "Blush"
+	icon_state = "blush"
+
 /datum/sprite_accessory/ipc_screens/bsod
 	name = "BSOD"
 	icon_state = "bsod"
@@ -2367,10 +2367,9 @@
 	name = "Red"
 	icon_state = "red"
 
-/datum/sprite_accessory/ipc_screens/redtext
-	name = "Red Text"
-	icon_state = "redtext"
-	color_src = 0
+/datum/sprite_accessory/ipc_screens/text
+	name = "Text Lines"
+	icon_state = "text"
 
 /datum/sprite_accessory/ipc_screens/rgb
 	name = "RGB"
@@ -2539,7 +2538,7 @@
 	limbs_id = "zhpipc"
 
 /datum/sprite_accessory/spider_legs
-	icon = 'whitesands/icons/mob/spider_legs.dmi'
+	icon = 'icons/mob/species/rachnid/spider_legs.dmi'
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/spider_legs/plain
@@ -2555,7 +2554,7 @@
 	icon_state = "spiky"
 
 /datum/sprite_accessory/spider_spinneret
-	icon = 'whitesands/icons/mob/spider_spinneret.dmi'
+	icon = 'icons/mob/species/rachnid/spider_spinneret.dmi'
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/spider_spinneret/plain
@@ -2571,7 +2570,7 @@
 	icon_state = "blackwidow"
 
 /datum/sprite_accessory/spider_mandibles
-	icon = 'whitesands/icons/mob/spider_mandibles.dmi'
+	icon = 'icons/mob/species/rachnid/spider_mandibles.dmi'
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/spider_mandibles/plain
@@ -2835,3 +2834,78 @@
 /datum/sprite_accessory/vox_neck_quills/ruffhawk
 	name = "Ruffhawk"
 	icon_state = "ruffhawk"
+
+//Elzuosa help
+
+/datum/sprite_accessory/elzu_horns
+	icon = 'icons/mob/ethereal_parts.dmi'
+
+/datum/sprite_accessory/elzu_horns/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/elzu_horns/short
+	name = "Short"
+	icon_state = "short"
+
+/datum/sprite_accessory/elzu_horns/helm
+	name = "Helm"
+	icon_state = "helm"
+
+/datum/sprite_accessory/elzu_horns/lunar
+	name = "Lunar"
+	icon_state = "lunar"
+
+/datum/sprite_accessory/elzu_horns/inward
+	name = "Inward"
+	icon_state = "inward"
+
+/datum/sprite_accessory/elzu_horns/majesty
+	name = "Majesty"
+	icon_state = "majesty"
+
+/datum/sprite_accessory/elzu_horns/clipped
+	name = "Clipped"
+	icon_state = "clipped"
+
+/datum/sprite_accessory/elzu_horns/sharp
+	name = "Sharp"
+	icon_state = "sharp"
+
+/datum/sprite_accessory/tails/elzu
+	icon = 'icons/mob/ethereal_parts.dmi'
+
+/datum/sprite_accessory/tails_animated/elzu
+	icon = 'icons/mob/ethereal_parts.dmi'
+
+/datum/sprite_accessory/tails/elzu/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/tails_animated/elzu/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/tails/elzu/long
+	name = "Long"
+	icon_state = "long"
+
+/datum/sprite_accessory/tails_animated/elzu/long
+	name = "Long"
+	icon_state = "long"
+
+/datum/sprite_accessory/tails/elzu/bifurcated
+	name = "Bifurcated"
+	icon_state = "bifurcated"
+
+/datum/sprite_accessory/tails_animated/elzu/bifurcated
+	name = "Bifurcated"
+	icon_state = "bifurcated"
+
+/datum/sprite_accessory/tails/elzu/stubby
+	name = "Stubby"
+	icon_state = "stubby"
+
+/datum/sprite_accessory/tails_animated/elzu/stubby
+	name = "Stubby"
+	icon_state = "stubby"

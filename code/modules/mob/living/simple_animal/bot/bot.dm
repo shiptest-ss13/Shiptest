@@ -114,8 +114,8 @@
 		return "<span class='average'>[mode_name[mode]]</span>"
 
 /**
-  * Returns a status string about the bot's current status, if it's moving, manually controlled, or idle.
-  */
+ * Returns a status string about the bot's current status, if it's moving, manually controlled, or idle.
+ */
 /mob/living/simple_animal/bot/proc/get_mode_ui()
 	if(client) //Player bots do not have modes, thus the override. Also an easy way for PDA users/AI to know when a bot is a player.
 		return paicard ? "pAI Controlled" : "Autonomous"
@@ -457,7 +457,7 @@ Pass the desired type path itself, declaring a temporary var beforehand is not r
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
-	var/list/adjacent = T.GetAtmosAdjacentTurfs(1)
+	var/list/adjacent = T.GetAtmosAdjacentTurfs()
 	if(shuffle)	//If we were on the same tile as another bot, let's randomize our choices so we dont both go the same way
 		adjacent = shuffle(adjacent)
 		shuffle = FALSE
@@ -482,7 +482,7 @@ Pass the desired type path itself, declaring a temporary var beforehand is not r
 /mob/living/simple_animal/bot/proc/checkscan(scan, scan_type, old_target)
 	if(!istype(scan, scan_type)) //Check that the thing we found is the type we want!
 		return FALSE //If not, keep searching!
-	if( (REF(scan) in ignore_list) || (scan == old_target) ) //Filter for blacklisted elements, usually unreachable or previously processed oness
+	if((REF(scan) in ignore_list) || (scan == old_target)) //Filter for blacklisted elements, usually unreachable or previously processed oness
 		return FALSE
 
 	var/scan_result = process_scan(scan) //Some bots may require additional processing when a result is selected.

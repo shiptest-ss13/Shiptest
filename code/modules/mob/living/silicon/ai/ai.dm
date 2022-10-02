@@ -126,7 +126,7 @@
 	to_chat(src, "To use something, simply click on it.")
 	to_chat(src, "Use say :b to speak to your cyborgs through binary.")
 	to_chat(src, "For department channels, use the following say commands:")
-	to_chat(src, ":o - AI Private, :c - Command, :s - Security, :e - Engineering, :u - Supply, :v - Service, :m - Medical, :n - Science.")
+	to_chat(src, ":o - AI Private, :c - Command.")
 	show_laws()
 	to_chat(src, "<b>These laws may be changed by other players, or by you being the traitor.</b>")
 
@@ -134,7 +134,7 @@
 
 	create_eye()
 	if(client)
-		apply_pref_name("ai",client)
+		INVOKE_ASYNC(src, .proc/apply_pref_name,"ai",client)
 
 	set_core_display_icon()
 
@@ -741,10 +741,6 @@
 	if (radio)
 		radio.interact(src)
 
-/mob/living/silicon/ai/proc/set_syndie_radio()
-	if(radio)
-		radio.make_syndie()
-
 /mob/living/silicon/ai/proc/set_automatic_say_channel()
 	set name = "Set Auto Announce Mode"
 	set desc = "Modify the default radio setting for your automatic announcements."
@@ -916,7 +912,7 @@
 		to_chat(src, "Hack complete. \The [apc] is now under your exclusive control.")
 		apc.update_icon()
 
-/mob/living/silicon/ai/verb/deploy_to_shell(var/mob/living/silicon/robot/target)
+/mob/living/silicon/ai/verb/deploy_to_shell(mob/living/silicon/robot/target)
 	set category = "AI Commands"
 	set name = "Deploy to Shell"
 

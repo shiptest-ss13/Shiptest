@@ -7,7 +7,7 @@
 	species_age_max = 280
 	species_traits = list(EYECOLOR, NO_UNDERWEAR)
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
-	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None")
+	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", "body_size" = "Normal")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = GRAIN
 	liked_food = MEAT
@@ -26,6 +26,8 @@
 	bodytemp_heat_divisor = VOX_BODYTEMP_HEAT_DIVISOR
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
+
+	unique_prosthesis = TRUE
 
 	species_chest = /obj/item/bodypart/chest/vox
 	species_head = /obj/item/bodypart/head/vox
@@ -108,7 +110,7 @@
 		return FALSE //Its a bit TOO mean to have the chems not work at all.
 	return ..()
 
-/datum/species/vox/get_item_offsets_for_dir(var/dir, var/hand)
+/datum/species/vox/get_item_offsets_for_dir(dir, hand)
 	////LEFT/RIGHT
 	switch(dir)
 		if(SOUTH)
@@ -179,7 +181,7 @@
 	if(held_item)
 		examine_list += "<span class='notice'>[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.</span>"
 
-/datum/action/innate/tail_hold/proc/handle_sprite_magic(var/mob/M, var/olddir, var/newdir, var/force = FALSE)
+/datum/action/innate/tail_hold/proc/handle_sprite_magic(mob/M, olddir, newdir, force = FALSE)
 	if(!held_item)
 		if(held_item_overlay)
 			owner.cut_overlay(held_item_overlay)

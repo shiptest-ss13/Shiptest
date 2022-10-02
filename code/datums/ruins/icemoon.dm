@@ -19,6 +19,12 @@
 	description = "Slime ranchin with the bud."
 	suffix = "icemoon_surface_slimerancher.dmm"
 
+/datum/map_template/ruin/icemoon/hydroponicslab //Shiptest edit
+	name = "Hydroponics Lab"
+	id = "hydroponicslab"
+	description = "An abandoned hydroponics research facility containing hostile plant fauna."
+	suffix = "icemoon_hydroponics_lab.dmm"
+
 // above and below ground together
 
 

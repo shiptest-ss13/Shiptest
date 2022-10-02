@@ -305,6 +305,11 @@
 	text += " vine."
 	. += text
 
+
+/obj/structure/spacevine/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	qdel(src)
+
 /obj/structure/spacevine/Destroy()
 	for(var/datum/spacevine_mutation/SM in mutations)
 		SM.on_death(src)
@@ -456,7 +461,7 @@
 
 	var/length = 0
 
-	length = min( spread_cap , max( 1 , vines.len / spread_multiplier ) )
+	length = min(spread_cap , max(1 , vines.len / spread_multiplier))
 	var/i = 0
 	var/list/obj/structure/spacevine/queue_end = list()
 

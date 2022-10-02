@@ -1,66 +1,103 @@
-///This datum handles the transitioning from a turf to a specific biome, and handles spawning decorative structures and mobs.
 /datum/biome
-	///Type of turf this biome creates
-	var/turf/turf_type
-	///Chance of having a structure from the flora types list spawn
-	var/flora_density = 0
-	///Chance of having a mob from the fauna types list spawn
-	var/fauna_density = 0
-	///list of type paths of objects that can be spawned when the turf spawns flora
-	var/list/flora_types = list(/obj/structure/flora/grass/jungle)
-	///list of type paths of mobs that can be spawned when the turf spawns fauna
-	var/list/fauna_types = list()
+	var/open_turf_types = list(/turf/open/floor/plating/asteroid = 1)
+	var/list/feature_spawn_list
+	var/list/mob_spawn_list
+	var/list/flora_spawn_list
+	var/mob_spawn_chance = 6
+	var/flora_spawn_chance = 2
+	var/feature_spawn_chance = 0.1
 
-///This proc handles the creation of a turf of a specific biome type
-/datum/biome/proc/generate_turf(var/turf/gen_turf)
-	gen_turf.ChangeTurf(turf_type, initial(turf_type.baseturfs), CHANGETURF_DEFER_CHANGE)
+/datum/biome/cave
+	var/closed_turf_types =  list(/turf/closed/mineral/random/volcanic = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid = 1)
+
+/datum/biome/proc/generate_overworld(turf/gen_turf)
+	//TURF SPAWNING
+	var/turf/picked_turf = pickweight(open_turf_types)
+	var/turf/open/new_turf = gen_turf.ChangeTurf(picked_turf, initial(picked_turf.baseturfs), CHANGETURF_DEFER_CHANGE)
+	generate_features(new_turf)
+	CHECK_TICK
+
+/datum/biome/cave/proc/generate_caves(turf/gen_turf, string_gen)
 	var/area/A = gen_turf.loc
-	if(length(fauna_types) && prob(fauna_density) && (A.area_flags & MOB_SPAWN_ALLOWED))
-		var/mob/fauna = pick(fauna_types)
-		new fauna(gen_turf)
+	if(!(A.area_flags & CAVES_ALLOWED))
+		return
 
-	if(length(flora_types) && prob(flora_density) && (A.area_flags & FLORA_ALLOWED))
-		var/obj/structure/flora = pick(flora_types)
-		new flora(gen_turf)
+	var/closed = text2num(string_gen[world.maxx * (gen_turf.y - 1) + gen_turf.x])
 
-//jungle planet biomes
-/datum/biome/mudlands
-	turf_type = /turf/open/floor/plating/dirt/jungle/dark
-	flora_types = list(/obj/structure/flora/grass/jungle,/obj/structure/flora/grass/jungle/b, /obj/structure/flora/rock/jungle, /obj/structure/flora/rock/pile/largejungle)
-	flora_density = 3
+	var/stored_flags
+	if(gen_turf.flags_1 & NO_RUINS_1)
+		stored_flags |= NO_RUINS_1
 
-/datum/biome/plains
-	turf_type = /turf/open/floor/plating/grass/jungle
-	flora_types = list(/obj/structure/flora/grass/jungle,/obj/structure/flora/grass/jungle/b, /obj/structure/flora/tree/jungle, /obj/structure/flora/rock/jungle, /obj/structure/flora/junglebush, /obj/structure/flora/junglebush/b, /obj/structure/flora/junglebush/c, /obj/structure/flora/junglebush/large, /obj/structure/flora/rock/pile/largejungle)
-	flora_density = 15
+	var/turf/new_turf = pickweight(closed ? closed_turf_types : open_turf_types)
+	new_turf = gen_turf.ChangeTurf(new_turf, initial(new_turf.baseturfs), CHANGETURF_DEFER_CHANGE)
+	new_turf.flags_1 |= stored_flags
 
-/datum/biome/jungle
-	turf_type = /turf/open/floor/plating/grass/jungle
-	flora_types = list(/obj/structure/flora/grass/jungle,/obj/structure/flora/grass/jungle/b, /obj/structure/flora/tree/jungle, /obj/structure/flora/rock/jungle, /obj/structure/flora/junglebush, /obj/structure/flora/junglebush/b, /obj/structure/flora/junglebush/c, /obj/structure/flora/junglebush/large, /obj/structure/flora/rock/pile/largejungle, /obj/structure/spacevine)
-	flora_density = 50
 
-/datum/biome/jungle/deep
-	flora_types = list(/obj/structure/flora/grass/jungle,/obj/structure/flora/grass/jungle/b, /obj/structure/flora/tree/jungle, /obj/structure/flora/rock/jungle, /obj/structure/flora/junglebush, /obj/structure/flora/junglebush/b,
-	/obj/structure/flora/junglebush/c,
-	/obj/structure/flora/junglebush/large,
-	/obj/structure/flora/rock/pile/largejungle,
-	/obj/structure/spacevine/dense,
-	/obj/structure/spacevine/dense,
-	/obj/structure/spacevine/dense,
-	/obj/structure/spacevine/dense,
-	/obj/structure/spacevine/dense,
-	/obj/structure/spacevine/dense,
-	/obj/structure/spacevine/dense,
-	/obj/structure/spacevine/dense,
-	/obj/structure/spacevine
-	)
-	flora_density = 90
+	CHECK_TICK
 
-/datum/biome/wasteland
-	turf_type = /turf/open/floor/plating/dirt/jungle/wasteland
+	//Overwrite turf areas with cave areas to combat weather
+	var/area/overmap_encounter/planetoid/cave/new_area = GLOB.areas_by_type[/area/overmap_encounter/planetoid/cave] || new
+	var/area/old_area = get_area(new_turf)
+	new_area.contents += new_turf
+	new_turf.change_area(old_area, new_area)
+	CHECK_TICK
 
-/datum/biome/water
-	turf_type = /turf/open/water/jungle
+	if(!closed)
+		generate_features(new_turf)
+	CHECK_TICK
 
-/datum/biome/mountain
-	turf_type = /turf/closed/mineral/random/jungle
+/datum/biome/proc/generate_features(turf/new_turf)
+	//FLORA SPAWNING
+	var/atom/spawned_flora
+	var/area/A = new_turf.loc
+	if(flora_spawn_list && prob(flora_spawn_chance))
+		var/can_spawn = TRUE
+		if(!(A.area_flags & FLORA_ALLOWED))
+			can_spawn = FALSE
+		if(can_spawn)
+			spawned_flora = pickweight(flora_spawn_list)
+			spawned_flora = new spawned_flora(new_turf)
+			new_turf.flags_1 |= NO_LAVA_GEN_1
+
+	//FEATURE SPAWNING HERE
+	var/atom/spawned_feature
+	if(feature_spawn_list && prob(feature_spawn_chance) && !spawned_flora)
+		var/can_spawn = TRUE
+
+		if(!(A.area_flags & FLORA_ALLOWED))
+			can_spawn = FALSE
+
+		var/atom/picked_feature = pickweight(feature_spawn_list)
+
+		for(var/obj/F in range(7, new_turf))
+			if(istype(F, picked_feature))
+				can_spawn = FALSE
+
+		if(can_spawn)
+			spawned_feature = new picked_feature(new_turf)
+			new_turf.flags_1 |= NO_LAVA_GEN_1
+
+	//MOB SPAWNING
+	if(mob_spawn_list && !spawned_flora && !spawned_feature && prob(mob_spawn_chance))
+		var/can_spawn = TRUE
+
+		if(!(A.area_flags & MOB_SPAWN_ALLOWED))
+			can_spawn = FALSE
+
+		var/atom/picked_mob = pickweight(mob_spawn_list)
+
+		for(var/thing in urange(12, new_turf)) //prevents mob clumps
+			if(!ishostile(thing) && !istype(thing, /obj/structure/spawner))
+				continue
+			if(ispath(picked_mob, /mob/living) || istype(thing, /mob/living/))
+				can_spawn = FALSE //if the random is a standard mob, avoid spawning if there's another one within 12 tiles
+				break
+			if((ispath(picked_mob, /obj/structure/spawner) || istype(thing, /obj/structure/spawner)) && get_dist(new_turf, thing) <= 2)
+				can_spawn = FALSE //prevents tendrils spawning in each other's collapse range
+				break
+
+		if(can_spawn)
+			new picked_mob(new_turf)
+			new_turf.flags_1 |= NO_LAVA_GEN_1
+	CHECK_TICK

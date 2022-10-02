@@ -2,7 +2,7 @@
 /obj/item/weldingtool
 	name = "welding tool"
 	desc = "A standard welder, used for cutting through metal."
-	icon = 'whitesands/icons/obj/tools.dmi' //WS Edit - Better Tool Sprites
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "welder"
 	item_state = "welder"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -396,5 +396,6 @@
 /obj/item/weldingtool/old
 	desc = "A standard edition welder provided by Nanotrasen. This one seems to leak a little bit."
 	icon = 'icons/obj/tools.dmi'
+	icon_state = "oldwelder"
 
 #undef WELDER_FUEL_BURN_INTERVAL

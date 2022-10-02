@@ -56,14 +56,14 @@
 /obj/item/wallframe/advanced_airlock_controller
 	name = "airlock controller frame"
 	desc = "Used for building advanced airlock controllers."
-	icon = 'whitesands/icons/obj/monitors.dmi'
+	icon = 'icons/obj/monitors.dmi'
 	icon_state = "aac_bitem"
 	result_path = /obj/machinery/advanced_airlock_controller
 
 /obj/machinery/advanced_airlock_controller
 	name = "advanced airlock controller"
 	desc = "A machine designed to control the operation of cycling airlocks"
-	icon = 'whitesands/icons/obj/monitors.dmi'
+	icon = 'icons/obj/monitors.dmi'
 	icon_state = "aac"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 4
@@ -481,7 +481,7 @@
 				if (W.use_tool(src, user, 20))
 					if (buildstage == BUILD_NO_WIRES)
 						to_chat(user, "<span class='notice'>You remove the airlock controller electronics.</span>")
-						new /obj/item/electronics/advanced_airlock_controller( src.loc )
+						new /obj/item/electronics/advanced_airlock_controller(src.loc)
 						playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
 						buildstage = BUILD_NO_CIRCUIT
 						update_icon()
@@ -529,7 +529,7 @@
 			if(W.tool_behaviour == TOOL_WRENCH)
 				to_chat(user, "<span class='notice'>You detach \the [src] from the wall.</span>")
 				W.play_tool_sound(src)
-				new /obj/item/wallframe/advanced_airlock_controller( user.loc )
+				new /obj/item/wallframe/advanced_airlock_controller(user.loc)
 				qdel(src)
 				return
 
@@ -630,7 +630,7 @@
 
 	var/data = list(
 		"locked" = locked,
-		"siliconUser" = user.has_unlimited_silicon_privilege && check_ship_ai_access( user ),
+		"siliconUser" = user.has_unlimited_silicon_privilege && check_ship_ai_access(user),
 		"emagged" = (obj_flags & EMAGGED ? 1 : 0),
 		"cyclestate" = cyclestate,
 		"pressure" = pressure,

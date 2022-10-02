@@ -17,11 +17,11 @@
 		blacklist += result
 
 /**
-  * Run custom pre-craft checks for this recipe
-  *
-  * user: The /mob that initiated the crafting
-  * collected_requirements: A list of lists of /obj/item instances that satisfy reqs. Top level list is keyed by requirement path.
-  */
+ * Run custom pre-craft checks for this recipe
+ *
+ * user: The /mob that initiated the crafting
+ * collected_requirements: A list of lists of /obj/item instances that satisfy reqs. Top level list is keyed by requirement path.
+ */
 /datum/crafting_recipe/proc/check_requirements(mob/user, list/collected_requirements)
 	return TRUE
 
@@ -318,9 +318,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/laserslug
+/datum/crafting_recipe/laserscatter
 	name = "Scatter Laser Shell"
-	result = /obj/item/ammo_casing/shotgun/laserslug
+	result = /obj/item/ammo_casing/shotgun/laserscatter
 	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
 				/obj/item/stock_parts/capacitor/adv = 1,
 				/obj/item/stock_parts/micro_laser/high = 1)

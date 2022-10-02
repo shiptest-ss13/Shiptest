@@ -242,7 +242,7 @@
 	name = "CentCom Commander"
 
 	uniform = /obj/item/clothing/under/rank/centcom/commander
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/headset_cent/commander
@@ -352,7 +352,7 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset
 	glasses = /obj/item/clothing/glasses/sunglasses
-	r_hand = /obj/item/gun/ballistic/automatic/tommygun
+	r_hand = /obj/item/gun/ballistic/automatic/smg/thompson/drum
 	id = /obj/item/card/id
 
 /datum/outfit/mobster/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -458,6 +458,7 @@
 
 /datum/outfit/job/lieutenant
 	name = "Lieutenant"
+	job_icon = "lieutenant"
 	//jobtype = /datum/job/lieutenant
 
 	id = /obj/item/card/id/silver
@@ -465,7 +466,7 @@
 	uniform = /obj/item/clothing/under/rank/command/lieutenant
 	alt_uniform = /obj/item/clothing/under/rank/command
 	suit = /obj/item/clothing/suit/toggle/lieutenant
-	alt_suit = /obj/item/clothing/suit/lieutenant_trenchcoat
+	alt_suit = /obj/item/clothing/suit/armor/lieutenant_trenchcoat
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/jackboots

@@ -1,5 +1,5 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$schema": "https://json-schema.org/draft-04/schema",
 	"title": "Ship Configuration Schema",
 	"description": "A ship configuration, used for defining new ship classes.",
 	"type": "object",
@@ -16,9 +16,14 @@
 			"description": "A shortened version of the ship class name, used in things such as the manifest.",
 			"maxLength": 20
 		},
+		"description": {
+			"title": "Class Description",
+			"type": "string",
+			"description": "A description of the ship class, currently only shown to admins on the shuttle manipulator, but will likely be shown to players before ship purchase in the future."
+		},
 		"prefix": {
 			"title": "Ship Default Prefix",
-			"type": "string",
+			"type": [ "null", "string" ],
 			"description": "The prefix of the ship class, appended to randomly generated names when they're first purchased.",
 			"maxLength": 5
 		},
@@ -29,19 +34,31 @@
 			"uniqueItems": true,
 			"items": {
 				"type": "string",
-				"enum": ["GENERAL", "PIRATES", "BRITISH_NAVY", "MERCANTILE", "REVOLUTIONARY", "SPACE", "NATURAL", "NATURAL_AGGRESSIVE", "BEASTS", "MYTHOLOGICAL", "HISTORICAL", "WEAPONS", "PILLS", "ENGINEERING"]
+				"enum": [
+					"GENERAL",
+					"PIRATES",
+					"BRITISH_NAVY",
+					"MERCANTILE",
+					"REVOLUTIONARY",
+					"SPACE",
+					"NATURAL",
+					"NATURAL_AGGRESSIVE",
+					"BEASTS",
+					"MYTHOLOGICAL",
+					"HISTORICAL",
+					"WEAPONS",
+					"PILLS",
+					"ENGINEERING",
+					"CRUISE",
+					"MAGICAL"
+				]
 			}
 		},
 		"map_path": {
 			"title": "Map File Path",
 			"type": "string",
 			"description": "The path to the ship class's map file. Use forward slashes (/) for directories, and include the .dmm extension. Map files must be somewhere under the _maps folder.",
-			"pattern": "^_maps\/([a-zA-Z0-9_/.]*)dmm$"
-		},
-		"map_id": {
-			"title": "Map ID (DEPRECATED)",
-			"type": "string",
-			"description": "The ID of the ship class. Deprecated, code uses map_path instead."
+			"pattern": "^_maps/([a-zA-Z0-9_/.-]*)dmm$"
 		},
 		"job_slots": {
 			"title": "Job Slots",
@@ -60,7 +77,7 @@
 							"outfit": {
 								"type": "string",
 								"description": "The name of the outfit that will be placed in this slot. Must be exact, will error if not found in the code.",
-								"pattern": "^\/datum\/outfit\/(.*)$"
+								"pattern": "^/datum/outfit/(.*)$"
 							},
 							"officer": {
 								"type": "boolean",
@@ -78,22 +95,27 @@
 				]
 			}
 		},
-		"cost": {
-			"title": "Class Cost",
-			"type": "integer",
-			"description": "The cost of the ship class, in credits.",
-			"maximum": 116115990
-		},
 		"roundstart": {
 			"title": "Random Roundstart Selection",
 			"type": "boolean",
 			"description": "Whether or not the ship has a chance to be randomly selected as the free roundstart ship.",
 			"default": false
+		},
+		"limit": {
+			"title": "Ship Spawning Limit",
+			"type": "integer",
+			"description": "The amount of ships that can be spawned in by players in a round at once.",
+			"minimum": 0,
+			"maximum": 100,
+			"default": 2
+		},
+		"enabled": {
+			"title": "Selectable",
+			"type": "boolean",
+			"description": "Whether or not this ship can be selected by players. Will still be admin-spawnable if not.",
+			"default": false
 		}
 	},
 
-	"required": [
-		"map_name",
-		"map_path"
-	]
+	"required": ["map_name", "map_path"]
 }

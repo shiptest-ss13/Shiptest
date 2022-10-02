@@ -36,6 +36,9 @@
 	codes_txt = "patrol;next_patrol=crew";
 	location = "cargo"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "bJ" = (
@@ -47,8 +50,6 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/item/storage/belt/military/assault,
-/obj/item/storage/belt/military/assault,
 /obj/item/clothing/suit/armor/vest/syndie,
 /obj/item/clothing/suit/armor/vest/syndie,
 /obj/item/clothing/head/helmet/operator,
@@ -74,7 +75,7 @@
 "bV" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerarmory";
-	name = "security shutters"
+	name = "Security Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -117,7 +118,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -136,7 +137,7 @@
 	dir = 10
 	},
 /obj/machinery/power/apc/auto_name/north,
-/obj/effect/turf_decal/trimline/red/filled/corner{
+/obj/effect/turf_decal/trimline/opaque/red/filled/corner{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
@@ -272,8 +273,6 @@
 	icon_state = "syndicate";
 	name = "ammunition locker"
 	},
-/obj/item/ammo_box/c10mm,
-/obj/item/ammo_box/c10mm,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -284,9 +283,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/industrial/outline,
+/obj/item/storage/box/lethalshot,
+/obj/item/ammo_box/c10mm,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "fA" = (
@@ -294,7 +295,7 @@
 	dir = 4
 	},
 /obj/machinery/advanced_airlock_controller{
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -331,16 +332,23 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
+"gg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/outline,
+/obj/structure/bed/roller,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "gh" = (
 /obj/structure/closet/secure_closet/freezer{
 	anchored = 1;
 	locked = 0;
 	name = "fridge"
 	},
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/transparent/bar,
 /obj/item/storage/cans/sixbeer,
 /obj/machinery/status_display/shuttle{
 	pixel_y = -32
@@ -383,11 +391,10 @@
 /obj/item/ammo_box/a357/match,
 /obj/item/codespeak_manual/unlimited,
 /obj/item/pen/edagger,
-/obj/item/radio/headset/syndicate/alt/leader,
+/obj/item/radio/headset/syndicate/captain,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "hy" = (
-/obj/structure/lattice,
 /obj/structure/sign/number/eight{
 	dir = 1
 	},
@@ -408,13 +415,6 @@
 /obj/item/paper_bin/carbon,
 /obj/item/folder/syndicate,
 /obj/item/pen/fourcolor,
-/obj/machinery/button/door{
-	dir = 1;
-	id = "wreckercargobay";
-	name = "cargo bay doors";
-	pixel_x = 10;
-	pixel_y = -24
-	},
 /obj/item/gps/mining{
 	pixel_x = 9;
 	pixel_y = -6
@@ -426,13 +426,20 @@
 /obj/item/stamp/qm{
 	name = "foreman's rubber stamp"
 	},
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_x = -5;
-	pixel_y = -22
-	},
-/obj/item/circuitboard/machine/protolathe/department/cargo,
 /obj/item/circuitboard/machine/rdserver,
+/obj/item/circuitboard/machine/techfab/department/cargo,
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	id = "hyena_cargo";
+	pixel_x = -10;
+	pixel_y = -24
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "wreckercargobay";
+	name = "cargo bay doors";
+	pixel_y = -25
+	},
 /turf/open/floor/carpet/red,
 /area/ship/cargo/office)
 "ir" = (
@@ -476,8 +483,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
@@ -518,7 +525,7 @@
 /area/ship/maintenance/starboard)
 "iI" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/trimline/red/filled/warning,
+/obj/effect/turf_decal/trimline/opaque/red/filled/warning,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "iQ" = (
@@ -549,7 +556,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -574,6 +581,9 @@
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "jI" = (
@@ -596,11 +606,21 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/structure/sign/poster/contraband/random{
-	pixel_y = -32
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_x = 5;
+	pixel_y = -22
 	},
 /turf/open/floor/carpet/red,
 /area/ship/cargo/office)
+"kg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/outline,
+/obj/structure/closet/crate/medical,
+/obj/item/bodybag,
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "kr" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
@@ -636,7 +656,7 @@
 /obj/machinery/button/door{
 	id = "wreckerarmory";
 	name = "armory shutters";
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/mineral/plastitanium,
@@ -658,13 +678,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/streak,
 /obj/effect/turf_decal/industrial/outline,
-/obj/structure/closet/crate/freezer{
-	opened = 1
-	},
+/obj/structure/closet/crate/freezer,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
+/obj/item/reagent_containers/blood/random,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "lt" = (
@@ -728,7 +747,7 @@
 /obj/machinery/button/door{
 	id = "wreckerarmory";
 	name = "armory shutters";
-	pixel_y = 24;
+	pixel_y = 25;
 	req_one_access_txt = "list(19)"
 	},
 /obj/structure/cable{
@@ -741,7 +760,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/red/filled/corner{
+/obj/effect/turf_decal/trimline/opaque/red/filled/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -798,7 +817,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -813,13 +832,12 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/red/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "oO" = (
-/obj/structure/lattice,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/fore)
 "oR" = (
@@ -844,7 +862,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -867,8 +885,8 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "px" = (
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -897,9 +915,6 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "pI" = (
-/obj/structure/frame/computer{
-	dir = 1
-	},
 /obj/item/radio/intercom/wideband{
 	dir = 8;
 	pixel_x = 22
@@ -908,6 +923,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/cargo/express{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "pP" = (
@@ -931,7 +949,7 @@
 	dir = 8;
 	id = "wrecker_engine_stbd";
 	name = "thruster doors";
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
@@ -979,7 +997,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1035,14 +1053,28 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"sx" = (
-/obj/structure/fans/tiny,
+"so" = (
 /obj/machinery/door/poddoor{
 	id = "wreckercargobay";
-	name = "cargo bay exterior blast door"
+	name = "Cargo Bay Exterior Blast Door"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "hyena_cargo";
+	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
+"sx" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/poddoor{
+	id = "wreckercargobay";
+	name = "Cargo Bay Exterior Blast Door"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "sA" = (
@@ -1059,7 +1091,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/hatch{
-	name = "external airlock"
+	name = "External Airlock"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
@@ -1127,7 +1159,7 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
@@ -1152,7 +1184,7 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -1170,7 +1202,7 @@
 	codes_txt = "patrol;next_patrol=storage";
 	location = "bridge"
 	},
-/obj/effect/turf_decal/trimline/red/filled/warning,
+/obj/effect/turf_decal/trimline/opaque/red/filled/warning,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "tS" = (
@@ -1180,6 +1212,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/arrows{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -1192,9 +1227,8 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/frame/computer{
-	anchored = 1;
-	dir = 8
+/obj/structure/frame/machine{
+	anchored = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/office)
@@ -1203,7 +1237,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -1242,16 +1276,9 @@
 /obj/machinery/button/door{
 	dir = 8;
 	id = "wreckerwindows";
-	name = "window shutters";
+	name = "Window Shutters";
 	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/machinery/button/door{
-	dir = 8;
-	id = "wreckercargobay";
-	name = "cargo bay doors";
-	pixel_x = -5;
-	pixel_y = -5
+	pixel_y = 3
 	},
 /obj/item/gps{
 	pixel_x = 7
@@ -1308,10 +1335,10 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "vN" = (
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/transparent/bar,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "vR" = (
@@ -1420,6 +1447,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "yD" = (
@@ -1462,6 +1492,9 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central4,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "zq" = (
@@ -1511,10 +1544,10 @@
 "zv" = (
 /obj/structure/table,
 /obj/machinery/microwave,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/transparent/bar,
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -28
@@ -1579,10 +1612,10 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/transparent/bar,
 /obj/item/reagent_containers/food/snacks/syndicake,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/poster/contraband/random{
@@ -1671,7 +1704,7 @@
 	dir = 1;
 	id = "wrecker_engine_port";
 	name = "thruster doors";
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
@@ -1715,7 +1748,7 @@
 	pixel_x = -12
 	},
 /obj/structure/mirror{
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/dorm)
@@ -1730,7 +1763,6 @@
 "Dq" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/circuitboard/computer/rdconsole,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "DE" = (
@@ -1763,7 +1795,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerarmory";
-	name = "security shutters"
+	name = "Security Shutters"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -1816,22 +1848,18 @@
 /area/ship/crew/dorm)
 "Ff" = (
 /obj/structure/table/reinforced,
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -25
+	},
 /obj/structure/closet/wall/white/med{
 	dir = 1;
 	name = "medicine locker";
 	pixel_y = -28
 	},
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/medical{
-	pixel_x = -5;
-	pixel_y = -4
-	},
-/obj/effect/turf_decal/borderfloor,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -24
-	},
+/obj/item/storage/pill_bottle/lsd,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/dorm)
 "Fr" = (
@@ -1883,7 +1911,7 @@
 "Gm" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/airlock/hatch{
-	name = "external airlock"
+	name = "External Airlock"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/docking_port/mobile{
@@ -1914,7 +1942,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
@@ -1926,9 +1954,18 @@
 	dir = 1;
 	id = "wreckercargobay";
 	name = "cargo bay doors";
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/light/floor,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	id = "hyena_cargo";
+	pixel_x = -10;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "GV" = (
@@ -1977,6 +2014,13 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/port)
+"Ii" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/outline,
+/obj/structure/closet/crate/secure/loot,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "Ik" = (
 /obj/structure/window/reinforced/spawner/east,
 /obj/effect/turf_decal/industrial/outline,
@@ -1992,7 +2036,7 @@
 	},
 /obj/machinery/computer/cryopod{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2019,10 +2063,10 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "IO" = (
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/transparent/bar,
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/food/egg_smudge,
@@ -2080,12 +2124,11 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "JS" = (
-/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
 	id = "wreckercargobay";
-	name = "cargo bay exterior blast door"
+	name = "Cargo Bay Exterior Blast Door"
 	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Kb" = (
@@ -2142,7 +2185,7 @@
 "KA" = (
 /obj/machinery/door/window/northleft{
 	dir = 2;
-	name = "captain's bunk"
+	name = "Captain's Bunk"
 	},
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
@@ -2197,7 +2240,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerarmory";
-	name = "security shutters"
+	name = "Security Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech/grid,
@@ -2236,7 +2279,7 @@
 "Lg" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/weightmachine/weightlifter,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -2275,9 +2318,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"LC" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/maintenance/fore)
 "LU" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/effect/decal/cleanable/dirt,
@@ -2285,11 +2325,11 @@
 	dir = 4
 	},
 /obj/structure/rack,
-/obj/item/syndie_crusher{
+/obj/item/kinetic_crusher/syndie_crusher{
 	pixel_x = 5;
 	pixel_y = -2
 	},
-/obj/item/syndie_crusher{
+/obj/item/kinetic_crusher/syndie_crusher{
 	pixel_x = 5;
 	pixel_y = 6
 	},
@@ -2365,6 +2405,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "MR" = (
@@ -2378,7 +2421,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -2393,12 +2436,19 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
 "NN" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 1;
+	id = "hyena_cargo";
+	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /obj/machinery/door/poddoor{
 	id = "wreckercargobay";
-	name = "cargo bay exterior blast door"
+	name = "Cargo Bay Exterior Blast Door"
 	},
-/obj/structure/fans/tiny,
-/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Ok" = (
@@ -2482,14 +2532,6 @@
 	icon_state = "syndicate";
 	name = "firearms locker"
 	},
-/obj/item/gun/ballistic/automatic/pistol{
-	pixel_y = 2
-	},
-/obj/item/gun/ballistic/automatic/pistol{
-	pixel_y = -2
-	},
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
 /obj/structure/sign/poster/contraband/syndicate_pistol{
 	pixel_x = 32
 	},
@@ -2497,9 +2539,10 @@
 	dir = 1;
 	id = "wreckerarmory";
 	name = "armory shutters";
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/turf_decal/industrial/outline,
+/obj/item/gun/ballistic/shotgun/lethal,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "Pn" = (
@@ -2516,7 +2559,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/turf_decal/trimline/red/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner_techfloor_grid{
@@ -2529,7 +2572,7 @@
 	dir = 1;
 	id = "wreckerarmory";
 	name = "armory shutters";
-	pixel_y = -24;
+	pixel_y = -25;
 	req_one_access_txt = "list(19)"
 	},
 /obj/structure/cable{
@@ -2541,13 +2584,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/trimline/red/filled/corner{
+/obj/effect/turf_decal/trimline/opaque/red/filled/corner{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
@@ -2568,7 +2611,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerarmory";
-	name = "security shutters"
+	name = "Security Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2597,13 +2640,16 @@
 /obj/effect/turf_decal/arrows{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "QW" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo/office)
@@ -2638,7 +2684,6 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "Rn" = (
-/obj/structure/lattice,
 /obj/machinery/porta_turret/centcom_shuttle/ballistic{
 	dir = 1;
 	name = "ship turret";
@@ -2665,7 +2710,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -2679,7 +2724,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/effect/turf_decal/trimline/red/filled/warning,
+/obj/effect/turf_decal/trimline/opaque/red/filled/warning,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "SE" = (
@@ -2700,6 +2745,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/analyzer,
 /obj/effect/turf_decal/steeldecal/steel_decals_central4,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "SP" = (
@@ -2752,6 +2800,12 @@
 	},
 /obj/machinery/light/floor,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Tu" = (
@@ -2784,13 +2838,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"TY" = (
-/obj/structure/lattice,
-/obj/structure/sign/number/four{
-	dir = 1
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
 "Ua" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -2803,7 +2850,7 @@
 "Uh" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/south,
-/obj/effect/turf_decal/trimline/red/filled/corner,
+/obj/effect/turf_decal/trimline/opaque/red/filled/corner,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "UI" = (
@@ -2972,7 +3019,7 @@
 /obj/item/card/mining_access_card,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/item/tank/jetpack/suit,
 /obj/item/radio/headset/syndicate/alt,
@@ -2999,7 +3046,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerarmory";
-	name = "security shutters"
+	name = "Security Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -3144,17 +3191,16 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/trimline/red/filled/warning{
+/obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "XZ" = (
 /obj/structure/sign/number/nine,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/maintenance/fore)
-"Yf" = (
-/obj/structure/lattice,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/fore)
 "Yv" = (
@@ -3193,7 +3239,7 @@
 "YI" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerwindows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
@@ -3212,7 +3258,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Zb" = (
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "Zg" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -3224,7 +3271,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerarmory";
-	name = "security shutters"
+	name = "Security Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech/grid,
@@ -3248,7 +3295,6 @@
 /area/ship/cargo)
 "ZM" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/secure/loot,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -3585,7 +3631,7 @@ XG
 Bg
 jY
 yn
-LC
+oO
 Zb
 "}
 (17,1,1) = {"
@@ -3605,7 +3651,7 @@ fL
 Ib
 ik
 yn
-Yf
+mL
 oO
 "}
 (18,1,1) = {"
@@ -3626,7 +3672,7 @@ Xj
 uf
 yn
 mL
-Yf
+mL
 "}
 (19,1,1) = {"
 cs
@@ -3649,7 +3695,7 @@ DF
 mL
 "}
 (20,1,1) = {"
-TY
+xZ
 Ap
 Ap
 TR
@@ -3677,7 +3723,7 @@ rd
 Ap
 lg
 ZM
-Mp
+Ii
 Zi
 bl
 si
@@ -3715,8 +3761,8 @@ mf
 aF
 le
 Ap
-ZM
-Mp
+kg
+gg
 Mp
 iC
 Tg
@@ -3739,8 +3785,8 @@ NF
 NF
 NF
 NF
-NN
-NN
+so
+JS
 JS
 sx
 NN
@@ -3764,7 +3810,7 @@ nn
 nn
 nn
 nn
-LC
+oO
 mL
 mL
 "}
@@ -3825,6 +3871,6 @@ nn
 nn
 nn
 nn
-LC
+oO
 uP
 "}

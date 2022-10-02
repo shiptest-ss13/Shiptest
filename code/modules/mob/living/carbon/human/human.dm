@@ -13,7 +13,7 @@
 	prepare_huds() //Prevents a nasty runtime on human init
 
 	if(dna.species)
-		set_species(dna.species.type) //This generates new limbs based on the species, beware.
+		INVOKE_ASYNC(src, .proc/set_species, dna.species.type) //This generates new limbs based on the species, beware.
 
 	//initialise organs
 	create_internal_organs() //most of it is done in set_species now, this is only for parent call
@@ -600,11 +600,11 @@
 
 	//Check for ID
 	var/obj/item/card/id/idcard = get_idcard(FALSE)
-	if( (judgement_criteria & JUDGE_IDCHECK) && !idcard && name=="Unknown")
+	if((judgement_criteria & JUDGE_IDCHECK) && !idcard && name=="Unknown")
 		threatcount += 4
 
 	//Check for weapons
-	if( (judgement_criteria & JUDGE_WEAPONCHECK) && weaponcheck)
+	if((judgement_criteria & JUDGE_WEAPONCHECK) && weaponcheck)
 		if(!idcard || !(ACCESS_WEAPONS in idcard.access))
 			for(var/obj/item/I in held_items) //if they're holding a gun
 				if(weaponcheck.Invoke(I))
@@ -715,10 +715,10 @@
 			dropItemToGround(I)
 
 /**
-  * Wash the hands, cleaning either the gloves if equipped and not obscured, otherwise the hands themselves if they're not obscured.
-  *
-  * Returns false if we couldn't wash our hands due to them being obscured, otherwise true
-  */
+ * Wash the hands, cleaning either the gloves if equipped and not obscured, otherwise the hands themselves if they're not obscured.
+ *
+ * Returns false if we couldn't wash our hands due to them being obscured, otherwise true
+ */
 /mob/living/carbon/human/proc/wash_hands(clean_types)
 	var/list/obscured = check_obscured_slots()
 	if(ITEM_SLOT_GLOVES in obscured)
@@ -734,20 +734,39 @@
 	return TRUE
 
 /**
-  * Cleans the lips of any lipstick. Returns TRUE if the lips had any lipstick and was thus cleaned
-  */
+ * Cleans the lips of any lipstick. Returns TRUE if the lips had any lipstick and was thus cleaned
+ */
+/mob/living/carbon/human/proc/update_lips(new_style, new_colour, apply_trait)
+	lip_style = new_style
+	lip_color = new_colour
+	update_body()
+
+	var/obj/item/bodypart/head/hopefully_a_head = get_bodypart(BODY_ZONE_HEAD)
+	REMOVE_TRAITS_IN(src, LIPSTICK_TRAIT)
+	hopefully_a_head?.stored_lipstick_trait = null
+
+	if(new_style && apply_trait)
+		ADD_TRAIT(src, apply_trait, LIPSTICK_TRAIT)
+		hopefully_a_head?.stored_lipstick_trait = apply_trait
+
+/**
+ * A wrapper for [mob/living/carbon/human/proc/update_lips] that tells us if there were lip styles to change
+ */
 /mob/living/carbon/human/proc/clean_lips()
 	if(isnull(lip_style) && lip_color == initial(lip_color))
 		return FALSE
-	lip_style = null
-	lip_color = initial(lip_color)
-	update_body()
+	update_lips(null)
 	return TRUE
 
+
 /**
-  * Called on the COMSIG_COMPONENT_CLEAN_FACE_ACT signal
-  */
+ * Called on the COMSIG_COMPONENT_CLEAN_FACE_ACT signal
+ */
 /mob/living/carbon/human/proc/clean_face(datum/source, clean_types)
+	grad_color = dna.features["gradientstyle"]
+	grad_style = dna.features["gradientcolor"]
+	update_hair()
+
 	if(!is_mouth_covered() && clean_lips())
 		. = TRUE
 
@@ -761,8 +780,8 @@
 		. = TRUE
 
 /**
-  * Called when this human should be washed
-  */
+ * Called when this human should be washed
+ */
 /mob/living/carbon/human/wash(clean_types)
 	. = ..()
 
@@ -1165,7 +1184,7 @@
 		visible_message("<span class='notice'>[src] starts [skills_space] lifting [target] onto their back..</span>",
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
 		"<span class='notice'>[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]</span>")
-		//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
+		//(Using your gloves' nanochips, you/You) (/quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
 		if(do_after(src, carrydelay, TRUE, target))
 			//Second check to make sure they're still valid to be carried
 			if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE) && !target.buckled)
@@ -1277,7 +1296,7 @@
 
 /mob/living/carbon/human/species/Initialize()
 	. = ..()
-	set_species(race)
+	INVOKE_ASYNC(src, .proc/set_species, race)
 
 /mob/living/carbon/human/species/abductor
 	race = /datum/species/abductor

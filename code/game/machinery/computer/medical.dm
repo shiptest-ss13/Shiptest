@@ -442,8 +442,8 @@
 				screen = 4
 
 			else if(href_list["new"])
-				if((istype(active1, /datum/data/record) && !( istype(active2, /datum/data/record) )))
-					var/datum/data/record/R = new /datum/data/record(  )
+				if((istype(active1, /datum/data/record) && !(istype(active2, /datum/data/record))))
+					var/datum/data/record/R = new /datum/data/record()
 					R.fields["name"] = active1.fields["name"]
 					R.fields["id"] = active1.fields["id"]
 					R.name = text("Medical Record #[]", R.fields["id"])
@@ -490,7 +490,7 @@
 						active2 = R
 					else
 						//Foreach continue //goto(3229)
-				if(!( active2 ))
+				if(!(active2))
 					temp = text("Could not locate record [].", sanitize(t1))
 				else
 					for(var/datum/data/record/E in GLOB.data_core.general)
@@ -501,12 +501,12 @@
 					screen = 4
 
 			else if(href_list["print_p"])
-				if(!( printing ))
+				if(!(printing))
 					printing = 1
 					GLOB.data_core.medicalPrintCount++
 					playsound(loc, 'sound/items/poster_being_created.ogg', 100, TRUE)
 					sleep(30)
-					var/obj/item/paper/P = new /obj/item/paper( loc )
+					var/obj/item/paper/P = new /obj/item/paper(loc)
 					P.info = "<CENTER><B>Medical Record - (MR-[GLOB.data_core.medicalPrintCount])</B></CENTER><BR>"
 					if(active1 in GLOB.data_core.general)
 						P.info += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])

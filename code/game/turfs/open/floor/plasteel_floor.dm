@@ -1,5 +1,5 @@
 /turf/open/floor/plasteel
-	icon = 'whitesands/icons/turf/floors/tiles.dmi'
+	icon = 'icons/turf/floors/tiles.dmi'
 	color = COLOR_FLOORTILE_GRAY
 	base_icon_state = "tiled"
 	icon_state = "tiled"
@@ -51,7 +51,7 @@
 	color = COLOR_WHITE
 
 /turf/open/floor/plasteel/tech
-	icon = 'whitesands/icons/turf/floors/techfloor.dmi'
+	icon = 'icons/turf/floors/techfloor.dmi'
 	icon_state = "techfloor_gray"
 	base_icon_state = "techfloor_gray"
 	floor_tile = /obj/item/stack/tile/plasteel/tech
@@ -86,7 +86,7 @@
 	base_icon_state = "ridged"
 
 /turf/open/floor/plasteel/showroomfloor
-	icon = 'whitesands/icons/turf/floors.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = "showroomfloor"
 	base_icon_state = "showroomfloor"
 
@@ -104,7 +104,7 @@
 
 /turf/open/floor/plasteel/freezer
 	color = null
-	icon = 'whitesands/icons/turf/floors.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = "freezer"
 	base_icon_state = "freezer"
 
@@ -114,7 +114,7 @@
 
 /turf/open/floor/plasteel/kitchen_coldroom
 	name = "cold room floor"
-	icon = 'whitesands/icons/turf/floors.dmi'
+	icon = 'icons/turf/floors.dmi'
 	initial_gas_mix = KITCHEN_COLDROOM_ATMOS
 
 /turf/open/floor/plasteel/kitchen_coldroom/freezerfloor //tempted to make this a subset of freezer
@@ -124,7 +124,7 @@
 
 /turf/open/floor/plasteel/grimy
 	color = null
-	icon = 'whitesands/icons/turf/floors.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = "lino"
 	base_icon_state = "lino"
 	tiled_dirt = FALSE
@@ -194,7 +194,7 @@
 
 
 /turf/open/floor/plasteel/elevatorshaft
-	icon = 'whitesands/icons/turf/floors.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = "elevatorshaft"
 	base_icon_state = "elevatorshaft"
 	color = null
@@ -219,7 +219,7 @@
 *
 */
 /turf/open/floor/plasteel/median
-	icon = 'whitesands/icons/turf/floors/medians.dmi'
+	icon = 'icons/turf/floors/medians.dmi'
 	icon_state = "floor_fuckywucky"
 	name = "Uh oh tile"
 

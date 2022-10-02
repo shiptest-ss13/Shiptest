@@ -102,14 +102,16 @@
 	icon = 'icons/obj/device.dmi'
 	icon_state = "locator"
 	var/borg_to_spawn
+	var/locked = TRUE
 
 /obj/item/antag_spawner/nuke_ops/proc/check_usability(mob/user)
 	if(used)
 		to_chat(user, "<span class='warning'>[src] is out of power!</span>")
 		return FALSE
-	if(!user.mind.has_antag_datum(/datum/antagonist/nukeop,TRUE))
-		to_chat(user, "<span class='danger'>AUTHENTICATION FAILURE. ACCESS DENIED.</span>")
-		return FALSE
+	if(locked)
+		if(!user.mind.has_antag_datum(/datum/antagonist/nukeop,TRUE))
+			to_chat(user, "<span class='danger'>AUTHENTICATION FAILURE. ACCESS DENIED.</span>")
+			return FALSE
 	return TRUE
 
 
@@ -186,6 +188,7 @@
 	name = "mysterious device"
 	desc = "A dusty brick of electronics, wired to some kind of bluespace launch apparatus. A small plastic sticker on the side of the housing reads MODPICK!BRIG@DORPROTOTYPE in hastily-scrawled sharpie."
 	borg_to_spawn = "Commando"
+	locked = FALSE
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/spawn_antag(client/C, turf/T, kind, datum/mind/user)
 	var/mob/living/silicon/robot/R
@@ -282,7 +285,7 @@
 /obj/item/antag_spawner/syndi_borer
 	name = "syndicate brain-slug container"
 	desc = "Releases a modified cortical borer to assist the user."
-	icon = 'whitesands/icons/obj/chemical.dmi' //Temporary? Doesn't look like a feckin syndicate item, and is overall shit. FIX
+	icon = 'icons/obj/chemical.dmi' //Temporary? //The most permanent type of solution lol
 	icon_state = "hypoviallarge-b"
 	var/polling = FALSE
 

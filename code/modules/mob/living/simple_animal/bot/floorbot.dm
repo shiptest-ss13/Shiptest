@@ -9,8 +9,7 @@
 	health = 25
 	maxHealth = 25
 
-	radio_key = /obj/item/encryptionkey/headset_eng
-	radio_channel = RADIO_CHANNEL_ENGINEERING
+	radio_key = /obj/item/encryptionkey
 	bot_type = FLOOR_BOT
 	model = "Floorbot"
 	bot_core = /obj/machinery/bot_core/floorbot
@@ -265,7 +264,7 @@
 				target = null
 				mode = BOT_IDLE
 				return
-		else if( !bot_move(target) )
+		else if(!bot_move(target))
 			target = null
 			mode = BOT_IDLE
 			return

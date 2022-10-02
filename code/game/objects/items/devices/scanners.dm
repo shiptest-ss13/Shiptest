@@ -21,7 +21,7 @@ GENE SCANNER
 	name = "\improper T-ray scanner"
 	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes."
 	custom_price = 150
-	icon = 'whitesands/icons/obj/tools.dmi'
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "t-ray0"
 	var/on = FALSE
 	slot_flags = ITEM_SLOT_BELT
@@ -66,7 +66,7 @@ GENE SCANNER
 	if(!ismob(viewer) || !viewer.client)
 		return
 	var/list/t_ray_images = list()
-	for(var/obj/O in orange(distance, viewer) )
+	for(var/obj/O in orange(distance, viewer))
 
 		if(HAS_TRAIT(O, TRAIT_T_RAY_VISIBLE))
 			var/image/I = new(loc = get_turf(O))
@@ -416,7 +416,7 @@ GENE SCANNER
 	desc = "A hand-held environmental scanner which reports current gas levels. Alt-Click to use the built in barometer function."
 	name = "analyzer"
 	custom_price = 100
-	icon = 'whitesands/icons/obj/tools.dmi' //WS edit - Better tools
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "analyzer"
 	item_state = "analyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -602,7 +602,7 @@ GENE SCANNER
 
 		if(cached_scan_results && cached_scan_results["fusion"]) //notify the user if a fusion reaction was detected
 			render_list += "<span class='boldnotice'>Large amounts of free neutrons detected in the air indicate that a fusion reaction took place.</span>\
-						 \n<span class='notice'>Instability of the last fusion reaction: [round(cached_scan_results["fusion"], 0.01)].</span>"
+						\n<span class='notice'>Instability of the last fusion reaction: [round(cached_scan_results["fusion"], 0.01)].</span>"
 
 	to_chat(user, jointext(render_list, "\n")) // we let the join apply newlines so we do need handholding
 	return TRUE

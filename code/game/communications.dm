@@ -12,20 +12,20 @@
 					one device may listen several frequencies, but not same frequency twice.
 				new_frequency - see possibly frequencies below;
 				filter - thing for optimization. Optional, but recommended.
-								 All filters should be consolidated in this file, see defines later.
-								 Device without listening filter will receive all signals (on specified frequency).
-								 Device with filter will receive any signals sent without filter.
-								 Device with filter will not receive any signals sent with different filter.
+								All filters should be consolidated in this file, see defines later.
+								Device without listening filter will receive all signals (on specified frequency).
+								Device with filter will receive any signals sent without filter.
+								Device with filter will not receive any signals sent with different filter.
 			returns:
-			 Reference to frequency object.
+			Reference to frequency object.
 
 		remove_object (obj/device, old_frequency)
 			Obliviously, after calling this proc, device will not receive any signals on old_frequency.
 			Other frequencies will left unaffected.
 
-	 return_frequency(var/frequency as num)
+	return_frequency(var/frequency as num)
 			returns:
-			 Reference to frequency object. Use it if you need to send and do not need to listen.
+			Reference to frequency object. Use it if you need to send and do not need to listen.
 
 	radio_frequency is a global object maintaining list of devices that listening specific frequency.
 	procs:
@@ -92,17 +92,15 @@ GLOBAL_LIST_EMPTY(all_radios)
 
 GLOBAL_LIST_INIT(radiochannels, list(
 	RADIO_CHANNEL_COMMON = FREQ_COMMON,
-	RADIO_CHANNEL_SCIENCE = FREQ_SCIENCE,
 	RADIO_CHANNEL_COMMAND = FREQ_COMMAND,
-	RADIO_CHANNEL_MEDICAL = FREQ_MEDICAL,
-	RADIO_CHANNEL_ENGINEERING = FREQ_ENGINEERING,
-	RADIO_CHANNEL_SECURITY = FREQ_SECURITY,
 	RADIO_CHANNEL_CENTCOM = FREQ_CENTCOM,
 	RADIO_CHANNEL_SOLGOV = FREQ_SOLGOV,		//WS Edit - SolGov Rep
 	RADIO_CHANNEL_WIDEBAND = FREQ_WIDEBAND,		//WS Edit - Overmap
 	RADIO_CHANNEL_SYNDICATE = FREQ_SYNDICATE,
-	RADIO_CHANNEL_SUPPLY = FREQ_SUPPLY,
-	RADIO_CHANNEL_SERVICE = FREQ_SERVICE,
+	RADIO_CHANNEL_NANOTRASEN = FREQ_NANOTRASEN,
+	RADIO_CHANNEL_MINUTEMEN = FREQ_MINUTEMEN,
+	RADIO_CHANNEL_INTEQ = FREQ_INTEQ,
+	RADIO_CHANNEL_PIRATE = FREQ_PIRATE,
 	RADIO_CHANNEL_AI_PRIVATE = FREQ_AI_PRIVATE,
 	RADIO_CHANNEL_CTF_RED = FREQ_CTF_RED,
 	RADIO_CHANNEL_CTF_BLUE = FREQ_CTF_BLUE
@@ -110,17 +108,15 @@ GLOBAL_LIST_INIT(radiochannels, list(
 
 GLOBAL_LIST_INIT(reverseradiochannels, list(
 	"[FREQ_COMMON]" = RADIO_CHANNEL_COMMON,
-	"[FREQ_SCIENCE]" = RADIO_CHANNEL_SCIENCE,
 	"[FREQ_COMMAND]" = RADIO_CHANNEL_COMMAND,
-	"[FREQ_MEDICAL]" = RADIO_CHANNEL_MEDICAL,
-	"[FREQ_ENGINEERING]" = RADIO_CHANNEL_ENGINEERING,
-	"[FREQ_SECURITY]" = RADIO_CHANNEL_SECURITY,
 	"[FREQ_CENTCOM]" = RADIO_CHANNEL_CENTCOM,
 	"[FREQ_SOLGOV]" = RADIO_CHANNEL_SOLGOV,		//WS Edit - SolGov Rep
 	"[FREQ_WIDEBAND]" = RADIO_CHANNEL_WIDEBAND,		//WS Edit - SolGov Rep
 	"[FREQ_SYNDICATE]" = RADIO_CHANNEL_SYNDICATE,
-	"[FREQ_SUPPLY]" = RADIO_CHANNEL_SUPPLY,
-	"[FREQ_SERVICE]" = RADIO_CHANNEL_SERVICE,
+	"[FREQ_NANOTRASEN]" = RADIO_CHANNEL_NANOTRASEN,
+	"[FREQ_MINUTEMEN]" = RADIO_CHANNEL_MINUTEMEN,
+	"[FREQ_INTEQ]" = RADIO_CHANNEL_INTEQ,
+	"[FREQ_PIRATE]" = RADIO_CHANNEL_PIRATE,
 	"[FREQ_AI_PRIVATE]" = RADIO_CHANNEL_AI_PRIVATE,
 	"[FREQ_CTF_RED]" = RADIO_CHANNEL_CTF_RED,
 	"[FREQ_CTF_BLUE]" = RADIO_CHANNEL_CTF_BLUE

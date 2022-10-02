@@ -185,8 +185,8 @@
 /// just check density
 #define ATMOS_PASS_DENSITY -2
 
-#define CANATMOSPASS(A, O) ( A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : ( A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass ) )
-#define CANVERTICALATMOSPASS(A, O) ( A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : ( A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical ) )
+#define CANATMOSPASS(A, O) (A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : (A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass))
+#define CANVERTICALATMOSPASS(A, O) (A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : (A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical))
 
 //OPEN TURF ATMOS
 /// the default air mix that open turfs spawn
@@ -202,7 +202,8 @@
 #define KITCHEN_COLDROOM_ATMOS "o2=33;n2=124;TEMP=193.15"
 /// used in the holodeck burn test program
 #define BURNMIX_ATMOS "o2=2500;plasma=5000;TEMP=370"
-
+/// used in rockplanet
+#define ROCKPLANET_DEFAULT_ATMOS "co2=95;n2=3;TEMP=210.15"
 //ATMOSPHERICS DEPARTMENT GAS TANK TURFS
 #define ATMOS_TANK_N2O "n2o=6000;TEMP=293.15"
 #define ATMOS_TANK_CO2 "co2=50000;TEMP=293.15"

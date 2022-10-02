@@ -366,7 +366,7 @@
 /area/ruin/space/has_grav/syndicircle/research)
 "kK" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/ballistic/automatic/c20r{
+/obj/item/gun/ballistic/automatic/smg/c20r{
 	pixel_x = 4;
 	pixel_y = -4
 	},
@@ -943,7 +943,7 @@
 /area/ruin/space/has_grav/syndicircle/research)
 "AP" = (
 /obj/structure/lattice,
-/turf/open/space/basic,
+/turf/open/space,
 /area/template_noop)
 "AQ" = (
 /obj/machinery/light/dim,
@@ -1211,7 +1211,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "GV" = (
-/turf/open/space/basic,
+/turf/open/space,
 /area/template_noop)
 "GW" = (
 /obj/structure/rack,
@@ -1249,8 +1249,7 @@
 /area/ruin/space/has_grav/syndicircle/halls)
 "HF" = (
 /obj/structure/lattice,
-/obj/structure/lattice,
-/turf/open/space/basic,
+/turf/open/space,
 /area/template_noop)
 "HV" = (
 /obj/machinery/light{
@@ -1469,7 +1468,7 @@
 /area/ruin/space/has_grav/syndicircle/training)
 "NV" = (
 /obj/machinery/light,
-/turf/open/space/basic,
+/turf/open/space,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
 "Oc" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1608,7 +1607,7 @@
 /area/ruin/space/has_grav/syndicircle/spacewalk)
 "Tl" = (
 /obj/structure/lattice,
-/turf/open/space/basic,
+/turf/open/space,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
 "To" = (
 /obj/structure/window/reinforced/spawner{
@@ -1689,7 +1688,7 @@
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/space/has_grav/syndicircle/training)
 "Vn" = (
-/turf/open/space/basic,
+/turf/open/space,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
 "Vp" = (
 /obj/structure/table/reinforced,
@@ -1750,7 +1749,7 @@
 	dir = 8;
 	network = list("zoneb")
 	},
-/turf/open/space/basic,
+/turf/open/space,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
 "WH" = (
 /obj/machinery/button{
@@ -1779,7 +1778,7 @@
 /obj/item/clothing/head/helmet/riot{
 	pixel_y = 9
 	},
-/obj/item/clothing/suit/armor/bulletproof{
+/obj/item/clothing/suit/armor/vest/bulletproof{
 	pixel_x = -4;
 	pixel_y = -2
 	},
@@ -1828,7 +1827,6 @@
 /area/ruin/space/has_grav/syndicircle/escape)
 "Xt" = (
 /obj/structure/barricade/sandbags,
-/obj/structure/barricade/sandbags,
 /turf/open/floor/plating/sandy_dirt,
 /area/ruin/space/has_grav/syndicircle/training)
 "XA" = (
@@ -1844,7 +1842,7 @@
 /mob/living/simple_animal/hostile/syndicate/melee/space{
 	name = "REDFOR commando"
 	},
-/turf/open/space/basic,
+/turf/open/space,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
 "XX" = (
 /obj/machinery/power/emitter/welded,

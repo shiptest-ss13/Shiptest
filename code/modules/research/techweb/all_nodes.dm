@@ -17,7 +17,7 @@
 		// Miscellaneous Stufff
 		"paystand", "space_heater", "bucket", "plastic_knife", "plastic_fork", "plastic_spoon",
 		// Security Stuff
-		"sec_rshot", "sec_beanbag_slug", "sec_bshot", "sec_slug", "sec_Islug", "sec_dart", 	"sec_38", "buckshot_shell", "beanbag_slug", "rubber_shot",
+		"sec_rshot", "sec_beanbag_slug", "sec_slug", "sec_Islug", "sec_dart", 	"sec_38", "buckshot_shell", "beanbag_slug", "rubber_shot",
 		//Handgun Ammo (Security)
 		"commanderammo", "stechkinammo", "m1911ammo", "m9cammo", "c9mm", "c10mm", "c45", "c556mmHITP", "rubbershot9mm", "rubbershot10mm", "rubbershot45", "rubbershot556mmHITP",
 		// Construction Materials
@@ -78,7 +78,7 @@
 	display_name = "Biological Technology"
 	description = "What makes us tick."	//the MC, silly!
 	prereq_ids = list("base")
-	design_ids = list("sleeper", "chem_heater", "chem_master", "chem_dispenser", "pandemic", "defibrillator", "defibmount", "operating", "soda_dispenser", "beer_dispenser", "healthanalyzer", "medigel","genescanner", "med_spray_bottle", "chem_pack", "blood_pack", "medical_kiosk", "crewpinpointerprox", "medipen_refiller")
+	design_ids = list("sleeper", "chem_heater", "chem_master", "chem_dispenser", "pandemic", "defibrillator", "defibmount", "operating", "soda_dispenser", "beer_dispenser", "healthanalyzer", "medigel","genescanner", "med_spray_bottle", "chem_pack", "blood_pack", "medical_kiosk", "crewpinpointerprox", "medipen_refiller", "prosthetic_l_arm", "prosthetic_r_arm", "prosthetic_l_leg", "prosthetic_r_leg", "kprosthetic_l_arm", "kprosthetic_r_arm", "kprosthetic_l_leg", "kprosthetic_r_leg", "vprosthetic_l_arm", "vprosthetic_r_arm", "vprosthetic_l_leg", "vprosthetic_r_leg")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -509,15 +509,6 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
 	export_price = 1500
 
-/datum/techweb_node/cloning
-	id = "cloning"
-	display_name = "Full-Body Reconstitution"
-	description = "We can rebuild him, we have the technology."
-	prereq_ids = list("genetics")
-	design_ids = list("clonepod", "cloning")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
-	export_price = 7500
-
 /datum/techweb_node/cryotech
 	id = "cryotech"
 	display_name = "Cryostasis Technology"
@@ -679,7 +670,7 @@
 	display_name = "Advanced Weapon Development Technology"
 	description = "Our weapons are breaking the rules of reality by now."
 	prereq_ids = list("adv_engi", "weaponry")
-	design_ids = list("pin_loyalty","gun_cell_upgraded", "gun_cell_large")
+	design_ids = list("pin_loyalty", "gun_cell_upgraded", "gun_cell_large")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
@@ -696,7 +687,7 @@
 	id = "electronic_weapons"
 	display_name = "Electric Weapons"
 	description = "Weapons using electric technology"
-	prereq_ids = list("weaponry", "adv_power"  , "emp_basic")
+	prereq_ids = list("weaponry", "adv_power", "emp_basic")
 	design_ids = list("stunrevolver", "ioncarbine")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
@@ -779,6 +770,33 @@
 	prereq_ids = list("adv_weaponry", "bluespace_travel")
 	design_ids = list("gravitygun", "mech_gravcatapult")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 5000
+
+/datum/techweb_node/srm_ballistics
+	id = "srm_ballistics"
+	display_name = "Saint-Roumain Ballistics"
+	description = "Ballistics normally manufactured by the Saint-Roumain Militia."
+	prereq_ids = list("adv_ballistics")
+	design_ids = list("doublebarrel", "winchmk2")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 5000
+
+/datum/techweb_node/srm_pistols
+	id = "srm_pistols"
+	display_name = "Saint-Roumain Pistols"
+	description = "Pistols normally manufactured by the Saint-Roumain Militia."
+	prereq_ids = list("adv_ballistics")
+	design_ids = list("pepperbox", "nagantrevolver", "derringer", "speedload357")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 5000
+
+/datum/techweb_node/srm_special
+	id = "srm_special"
+	display_name = "Saint-Roumain Specialty Ballistics"
+	description = "Specialty ballistics normally manufactured by the Saint-Roumain Militia."
+	prereq_ids = list("srm_ballistics", "srm_pistols")
+	design_ids = list("srmrevolver", "m1911", "stripper762", "nagantrifle")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12000)
 	export_price = 5000
 
 ////////////////////////mech technology////////////////////////

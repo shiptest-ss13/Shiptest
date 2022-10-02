@@ -94,7 +94,7 @@
 		newT.blocks_air = TRUE
 		newT.set_sleeping(TRUE)
 
-/obj/docking_port/mobile/proc/throw_exception(var/exception/e)
+/obj/docking_port/mobile/proc/throw_exception(exception/e)
 	throw e
 
 /obj/docking_port/mobile/proc/preflight_check(list/old_turfs, list/new_turfs, list/areas_to_move, rotation)

@@ -3,7 +3,7 @@
 
 /obj/item/floor_painter
 	name = "floor painter"
-	icon = 'whitesands/icons/obj/device.dmi'
+	icon = 'icons/obj/device.dmi'
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
 	icon_state = "floor_sprayer"
@@ -19,10 +19,16 @@
 
 	var/static/list/allowed_states = list(
 		"steel", "dark", "white", "freezer", "tile_full", "cargo_one_full",
-		"kafel_full", "steel_monofloor", "monotile", "grid", "ridged"
+		"kafel_full", "steel_monofloor", "monotile", "grid", "ridged", "stairs",
+		"stairs-l", "stairs-m", "stairs-r", "stairs-old", "stairs-t", "stairs-b"
 	)
 
-/obj/item/floor_painter/afterattack(var/atom/A, var/mob/user, proximity, params)
+	var/static/list/floor_four_dirs = list(
+		"steel_monofloor", "stairs","stairs-l", "stairs-m", "stairs-r",
+		"stairs-old", "stairs-t", "stairs-b"
+	)
+
+/obj/item/floor_painter/afterattack(atom/A, mob/user, proximity, params)
 	if(!proximity)
 		return
 
@@ -36,7 +42,7 @@
 	F.dir = floor_dir
 	playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
 
-/obj/item/floor_painter/attack_self(var/mob/user)
+/obj/item/floor_painter/attack_self(mob/user)
 	if(!user)
 		return FALSE
 	user.set_machine(src)
@@ -45,7 +51,7 @@
 
 /obj/item/floor_painter/interact(mob/user as mob) //TODO: Make TGUI for this because ouch
 	if(!floor_icon)
-		floor_icon = icon('whitesands/icons/turf/floors/tiles.dmi', floor_state, floor_dir)
+		floor_icon = icon('icons/turf/floors/tiles.dmi', floor_state, floor_dir)
 	user << browse_rsc(floor_icon, "floor.png")
 	var/dat = {"
 		<center>
@@ -109,20 +115,15 @@
 		floor_state = allowed_states[index]
 		check_directional_tile()
 
-	floor_icon = icon('whitesands/icons/turf/floors/tiles.dmi', floor_state, floor_dir)
+	floor_icon = icon('icons/turf/floors/tiles.dmi', floor_state, floor_dir)
 	if(usr)
 		attack_self(usr)
 
 /obj/item/floor_painter/proc/check_directional_tile()
-	var/icon/current = icon('whitesands/icons/turf/floors/tiles.dmi', floor_state, NORTHWEST)
-	if(current.GetPixel(1,1) != null)
-		allowed_directions = GLOB.alldirs
+	if(floor_four_dirs.Find(floor_state))
+		allowed_directions = list("north", "east", "south", "west")
 	else
-		current = icon('whitesands/icons/turf/floors/tiles.dmi', floor_state, WEST)
-		if(current.GetPixel(1,1) != null)
-			allowed_directions = GLOB.cardinals
-		else
-			allowed_directions = list("south")
+		allowed_directions = list("south")
 
 	if(!(dir2text(floor_dir) in allowed_directions))
 		floor_dir = SOUTH
@@ -163,7 +164,8 @@
 	"siding_thinplating_corner","siding_wideplating_line","siding_wideplating_end","siding_wideplating_corner","siding_wood_line",
 	"siding_wood_corner","siding_wood_end","trimline","trimline_corner","trimline_end","trimline_box","trimline_arrow_cw","trimline_arrow_ccw","trimline_fill",
 	"trimline_corner_fill","trimline_end_fill","trimline_box_fill","trimline_arrow_cw_fill","trimline_arrow_ccw_fill",
-	"trimline_shrink_cw","trimline_shrink_ccw","trimline_warn", "trimline_warn_fill"
+	"trimline_shrink_cw","trimline_shrink_ccw","trimline_warn", "trimline_warn_fill",
+	"road","road_edge", "road_stripes", "road_stop", "road_slow", "road_line", "road_line_edge"
 	)
 
 	var/list/color_disallowed = list(
@@ -190,7 +192,7 @@
 	"trimline_arrow_cw_fill","trimline_arrow_ccw_fill","trimline_warn","trimline_warn_fill"
 	)
 
-/obj/item/decal_painter/afterattack(var/atom/A, var/mob/user, proximity, params)
+/obj/item/decal_painter/afterattack(atom/A, mob/user, proximity, params)
 	if(!proximity)
 		return
 
@@ -199,12 +201,12 @@
 		to_chat(user, "<span class='warning'>\The [src] can only be used on flooring.</span>")
 		return
 	if(color_disallowed.Find(decal_state))
-		F.AddComponent(/datum/component/decal, 'whitesands/icons/turf/decals.dmi', decal_state, decal_dir, CLEAN_TYPE_PAINT, color, null, null, alpha)
+		F.AddComponent(/datum/component/decal, 'icons/turf/decals.dmi', decal_state, decal_dir, CLEAN_TYPE_PAINT, color, null, null, alpha)
 	else
-		F.AddComponent(/datum/component/decal, 'whitesands/icons/turf/decals.dmi', decal_state, decal_dir, CLEAN_TYPE_PAINT, decal_color, null, null, alpha)
+		F.AddComponent(/datum/component/decal, 'icons/turf/decals.dmi', decal_state, decal_dir, CLEAN_TYPE_PAINT, decal_color, null, null, alpha)
 	playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
 
-/obj/item/decal_painter/attack_self(var/mob/user)
+/obj/item/decal_painter/attack_self(mob/user)
 	if(!user)
 		return FALSE
 	user.set_machine(src)
@@ -213,7 +215,7 @@
 
 /obj/item/decal_painter/interact(mob/user as mob) //TODO: Make TGUI for this because ouch
 	if(!decal_icon)
-		decal_icon = icon('whitesands/icons/turf/decals.dmi', decal_state, decal_dir)
+		decal_icon = icon('icons/turf/decals.dmi', decal_state, decal_dir)
 	user << browse_rsc(decal_icon, "floor.png")
 	var/dat = {"
 		<center>
@@ -286,7 +288,7 @@
 				decal_color = chosen_colour
 
 
-	decal_icon = icon('whitesands/icons/turf/decals.dmi', decal_state, decal_dir)
+	decal_icon = icon('icons/turf/decals.dmi', decal_state, decal_dir)
 	if(usr)
 		attack_self(usr)
 
