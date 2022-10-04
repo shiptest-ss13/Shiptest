@@ -327,3 +327,23 @@
 	. = ..()
 	if(wielded && !user.is_holding(src) && !QDELETED(src))
 		qdel(src)
+
+/datum/component/two_handed/gun/wield(mob/living/carbon/user)
+	. = ..()
+	if(!.)
+		return
+
+	user.add_movespeed_modifier(MOVESPEED_ID_AIM_SLOWDOWN, TRUE, 0, NONE, TRUE, aim_slowdown)
+
+	var/wdelay = wield_delay
+	//slower or faster wield delay depending on skill.
+	if(!user.skills.getRating("firearms"))
+		wdelay += 0.3 SECONDS //no training in any firearms
+	else
+		var/skill_value = user.skills.getRating(gun_skill_category)
+		if(skill_value > 0)
+			wdelay -= skill_value * 2
+		else
+			wdelay += wield_penalty
+	wield_time = world.time + wdelay
+	do_wield(user, wdelay)

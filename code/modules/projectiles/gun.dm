@@ -77,13 +77,18 @@
 
 	var/pb_knockback = 0
 
+	var/wielded = FALSE // true if the gun is wielded, often affects accuracy
+
 /obj/item/gun/Initialize()
 	. = ..()
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
 	if(pin)
 		pin = new pin(src)
 	if(gun_light)
 		alight = new(src)
 	build_zooming()
+
 
 /obj/item/gun/Destroy()
 	if(isobj(pin)) //Can still be the initial path, then we skip
