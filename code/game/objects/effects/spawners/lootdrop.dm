@@ -689,3 +689,52 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 				/obj/item/stack/cable_coil/red,
 				/obj/item/stack/rods/fifty
 				)
+
+/obj/effect/spawner/lootdrop/donut
+	name = "random donut" //donut :)
+	lootcount = "1"
+	loot = list(
+	/obj/item/reagent_containers/food/snacks/donut/apple
+	/obj/item/reagent_containers/food/snacks/donut/berry
+	/obj/item/reagent_containers/food/snacks/donut/caramel
+	/obj/item/reagent_containers/food/snacks/donut/choco
+	/obj/item/reagent_containers/food/snacks/donut/laugh
+	/obj/item/reagent_containers/food/snacks/donut/matcha
+	/obj/item/reagent_containers/food/snacks/donut/meat
+	/obj/item/reagent_containers/food/snacks/donut/plain
+	/obj/item/reagent_containers/food/snacks/donut/trumpet
+	/obj/item/reagent_containers/food/snacks/donut/blumpkin
+	/obj/item/reagent_containers/food/snacks/donut/bungo
+	/obj/item/reagent_containers/food/snacks/donut/chaos
+	)
+
+/obj/effect/spawner/lootdrop/donut
+	name = "random jelly donut"
+	lootcount = "1"
+	loot = list(
+	/obj/item/reagent_containers/food/snacks/donut/jelly/berry
+	/obj/item/reagent_containers/food/snacks/donut/jelly/apple
+	/obj/item/reagent_containers/food/snacks/donut/jelly/blumpkin
+	/obj/item/reagent_containers/food/snacks/donut/jelly/bungo
+	/obj/item/reagent_containers/food/snacks/donut/jelly/caramel
+	/obj/item/reagent_containers/food/snacks/donut/jelly/choco
+	/obj/item/reagent_containers/food/snacks/donut/jelly/laugh
+	/obj/item/reagent_containers/food/snacks/donut/jelly/matcha
+	/obj/item/reagent_containers/food/snacks/donut/jelly/plain
+	/obj/item/reagent_containers/food/snacks/donut/jelly/trumpet
+	)
+
+/obj/effect/spawner/lootdrop/donut
+	name = "random slimejelly donut"
+	lootcount = "1"
+	loot = list(
+	/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/apple
+	/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/berry
+	/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/blumpkin
+	/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/bungo
+	/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/caramel
+	/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/choco
+	/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/laugh
+	/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/matcha
+	/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/plain
+	/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly/trumpet
