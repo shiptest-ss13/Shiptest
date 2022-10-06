@@ -89,6 +89,30 @@
 		alight = new(src)
 	build_zooming()
 
+/// triggered on wield of two handed item
+/obj/item/gun/proc/on_wield(obj/item/source, mob/user)
+
+	user.add_movespeed_modifier(/datum/movespeed_modifier/gun)
+
+	var/wdelay = wield_delay
+	//slower or faster wield delay depending on skill.
+	if(!user.skills.getRating("firearms"))
+		wdelay += 0.3 SECONDS //no training in any firearms
+	else
+		var/skill_value = user.skills.getRating(gun_skill_category)
+		if(skill_value > 0)
+			wdelay -= skill_value * 2
+		else
+			wdelay += wield_penalty
+	wield_time = world.time + wdelay
+	do_wield(user, wdelay)
+
+/obj/item/gun/proc/do_wield(obj/item/source, mob/user)
+	wielded = TRUE
+
+/// triggered on unwield of two handed item
+/obj/item/gun/proc/on_unwield(obj/item/source, mob/user)
+	wielded = FALSE
 
 /obj/item/gun/Destroy()
 	if(isobj(pin)) //Can still be the initial path, then we skip

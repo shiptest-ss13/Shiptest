@@ -10,3 +10,6 @@
 
 /datum/movespeed_modifier/die_of_fate
 	multiplicative_slowdown = 1
+
+/datum/movespeed_modifier/gun
+	multiplicative_slowdown = 1
