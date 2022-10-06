@@ -39,19 +39,16 @@
 /obj/structure/flora/rock/beach,
 /turf/open/water/beach/deep,
 /area/space)
+"aO" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/green,
+/area/space)
 "aP" = (
 /obj/structure/table,
 /obj/machinery/paystand,
-/turf/open/floor/plating,
-/area/space)
-"aT" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/wood,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "aX" = (
 /obj/effect/turf_decal/weather/sand{
@@ -93,6 +90,15 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/grass/beach,
+/area/space)
+"cb" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/turf_decal/weather/sand{
+	dir = 4
+	},
+/turf/open/floor/wood,
 /area/space)
 "cs" = (
 /obj/structure/railing/wood{
@@ -267,6 +273,13 @@
 	dir = 1
 	},
 /area/space)
+"fn" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/donut/slimejelly,
+/obj/effect/spawner/lootdrop/donut,
+/obj/effect/spawner/lootdrop/donut,
+/turf/open/floor/plasteel/patterned/grid,
+/area/space)
 "fp" = (
 /obj/structure/railing/wood,
 /turf/open/water/beach,
@@ -371,6 +384,15 @@
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/plating/beach/sand,
 /area/space)
+"gX" = (
+/turf/open/floor/carpet,
+/area/space)
+"gZ" = (
+/obj/machinery/door/window{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "hb" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -449,13 +471,10 @@
 	},
 /turf/open/floor/wood,
 /area/space)
-"if" = (
-/obj/structure/sign/barsign{
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/dark,
-/area/space)
 "ih" = (
+/obj/structure/mineral_door/wood{
+	name = "Hotel"
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "in" = (
@@ -472,7 +491,7 @@
 /area/space)
 "iu" = (
 /obj/structure/bed,
-/turf/open/floor/plating,
+/turf/open/floor/carpet,
 /area/space)
 "iv" = (
 /obj/structure/chair/sofa/left,
@@ -481,6 +500,12 @@
 "iw" = (
 /obj/structure/flora/rock/pile,
 /turf/open/floor/plating/dirt/dark,
+/area/space)
+"ix" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/donut/slimejelly,
+/obj/effect/spawner/lootdrop/donut,
+/turf/open/floor/plasteel/patterned/grid,
 /area/space)
 "iz" = (
 /obj/machinery/jukebox,
@@ -594,13 +619,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
-"kx" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/space)
 "kD" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -627,7 +645,7 @@
 /obj/machinery/vending/boozeomat{
 	set_obj_flags = "EMAGGED"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "kN" = (
 /obj/structure/railing/corner,
@@ -783,6 +801,12 @@
 /obj/effect/turf_decal/siding/blue,
 /obj/effect/turf_decal/siding/blue{
 	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"nc" = (
+/obj/structure/mineral_door/wood{
+	name = "Hotel"
 	},
 /turf/open/floor/plasteel,
 /area/space)
@@ -1004,6 +1028,10 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/white,
 /area/space)
+"rQ" = (
+/obj/structure/table,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "rR" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
@@ -1061,7 +1089,7 @@
 /turf/open/floor/plating/dirt/dark,
 /area/space)
 "sX" = (
-/obj/machinery/door/airlock/public/glass{
+/obj/structure/mineral_door/wood{
 	name = "Bedroom"
 	},
 /turf/open/floor/plasteel,
@@ -1089,6 +1117,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"tQ" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/plasteel,
+/area/space)
 "tY" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/turf_decal/weather/sand{
@@ -1110,6 +1142,15 @@
 	dir = 4
 	},
 /turf/open/floor/wood,
+/area/space)
+"un" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/donut,
+/obj/effect/spawner/lootdrop/donut,
+/obj/effect/spawner/lootdrop/donut,
+/obj/effect/spawner/lootdrop/donut,
+/obj/effect/spawner/lootdrop/donut/slimejelly,
+/turf/open/floor/plasteel/patterned/grid,
 /area/space)
 "uq" = (
 /obj/effect/turf_decal/weather/sand{
@@ -1142,12 +1183,6 @@
 /turf/open/floor/plating/beach/coastline_t{
 	dir = 4
 	},
-/area/space)
-"uH" = (
-/obj/machinery/door/airlock/public/glass{
-	name = "Bedroom"
-	},
-/turf/open/floor/plating,
 /area/space)
 "uK" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -1469,7 +1504,7 @@
 "Ac" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/bananalamp,
-/turf/open/floor/plating,
+/turf/open/floor/carpet,
 /area/space)
 "Ai" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -1489,7 +1524,7 @@
 	dir = 4
 	},
 /obj/machinery/vending/cigarette/beach,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Ay" = (
 /turf/open/floor/plating/beach/sand{
@@ -1507,7 +1542,7 @@
 /area/space)
 "AL" = (
 /obj/machinery/door/window,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "AM" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1558,6 +1593,10 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/grass,
 /area/space)
+"BV" = (
+/obj/machinery/power/apc/auto_name/west,
+/turf/open/floor/plasteel/grimy,
+/area/space)
 "BX" = (
 /obj/machinery/vending/boozeomat{
 	set_obj_flags = "EMAGGED"
@@ -1597,6 +1636,12 @@
 "Cv" = (
 /obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/wood,
+/area/space)
+"CC" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/green,
 /area/space)
 "CF" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
@@ -1849,6 +1894,13 @@
 	},
 /turf/open/floor/plating/dirt,
 /area/space)
+"GJ" = (
+/obj/structure/rack,
+/obj/item/storage/fancy/donut_box,
+/obj/item/storage/fancy/donut_box,
+/obj/item/storage/fancy/donut_box,
+/turf/open/floor/plasteel/patterned/grid,
+/area/space)
 "Hg" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
@@ -1873,7 +1925,7 @@
 	dir = 4
 	},
 /obj/structure/table,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Hv" = (
 /obj/structure/railing,
@@ -1949,7 +2001,7 @@
 /obj/structure/window{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "IF" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -2040,7 +2092,7 @@
 /area/space)
 "JY" = (
 /obj/structure/chair,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Kd" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2095,7 +2147,7 @@
 /area/space)
 "KO" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
-/turf/open/floor/plating,
+/turf/open/floor/carpet,
 /area/space)
 "KT" = (
 /obj/effect/turf_decal/weather/sand{
@@ -2122,6 +2174,12 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
+/area/space)
+"LB" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt,
 /area/space)
 "LE" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -2240,6 +2298,12 @@
 /obj/structure/flora/tree/palm,
 /turf/open/floor/plating/beach/sand,
 /area/space)
+"NX" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/donut/jelly,
+/obj/effect/spawner/lootdrop/donut/jelly,
+/turf/open/floor/plasteel/patterned/grid,
+/area/space)
 "Oe" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -2248,6 +2312,12 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
+/area/space)
+"Of" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "Oh" = (
 /obj/structure/railing,
@@ -2295,6 +2365,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"OU" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/carpet/green,
+/area/space)
 "Pe" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -2325,6 +2401,11 @@
 "PC" = (
 /obj/structure/flora/rock/pile,
 /turf/open/floor/plating/dirt,
+/area/space)
+"PF" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/donut/slimejelly,
+/turf/open/floor/plasteel/patterned/grid,
 /area/space)
 "PH" = (
 /obj/effect/turf_decal/weather/sand{
@@ -2395,6 +2476,15 @@
 /obj/structure/railing/corner/wood,
 /turf/open/floor/plating/dirt,
 /area/space)
+"Rm" = (
+/obj/structure/chair/stool/bar{
+	dir = 8
+	},
+/obj/structure/sign/barsign{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Ru" = (
 /turf/open/floor/concrete/pavement,
 /area/space)
@@ -2403,6 +2493,11 @@
 	dir = 8
 	},
 /turf/open/water/beach/deep,
+/area/space)
+"RS" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/weather/sand,
+/turf/open/floor/wood,
 /area/space)
 "Sc" = (
 /turf/open/floor/plasteel/grimy,
@@ -2463,6 +2558,14 @@
 	},
 /turf/open/floor/plating/dirt/dark,
 /area/space)
+"SS" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/donut,
+/obj/effect/spawner/lootdrop/donut,
+/obj/effect/spawner/lootdrop/donut/slimejelly,
+/obj/effect/spawner/lootdrop/donut/jelly,
+/turf/open/floor/plasteel/patterned/grid,
+/area/space)
 "SY" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
@@ -2522,11 +2625,15 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"TV" = (
+/obj/machinery/power/apc/auto_name/north,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Ud" = (
 /turf/closed/wall/mineral/sandstone,
 /area/space)
 "Up" = (
-/obj/machinery/door/airlock{
+/obj/structure/mineral_door/wood{
 	name = "Bathroom"
 	},
 /turf/open/floor/plasteel,
@@ -2554,6 +2661,12 @@
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/space)
+"UH" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "UO" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
@@ -2579,6 +2692,7 @@
 "Vf" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/turf_decal/box,
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/white,
 /area/space)
 "VF" = (
@@ -2599,6 +2713,13 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"VQ" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/donut/jelly,
+/obj/effect/spawner/lootdrop/donut/jelly,
+/obj/effect/spawner/lootdrop/donut/jelly,
+/turf/open/floor/plasteel/patterned/grid,
+/area/space)
 "VS" = (
 /obj/structure/table,
 /obj/machinery/processor,
@@ -2610,6 +2731,13 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
+/area/space)
+"Wd" = (
+/obj/structure/flora/ausbushes/reedbush,
+/obj/effect/turf_decal/weather/sand{
+	dir = 8
+	},
+/turf/open/water/beach,
 /area/space)
 "We" = (
 /turf/open/floor/plasteel,
@@ -2720,6 +2848,15 @@
 "XJ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass,
+/area/space)
+"XQ" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/donut/jelly,
+/obj/effect/spawner/lootdrop/donut/jelly,
+/obj/effect/spawner/lootdrop/donut/jelly,
+/obj/effect/spawner/lootdrop/donut/slimejelly,
+/obj/effect/spawner/lootdrop/donut/jelly,
+/turf/open/floor/plasteel/patterned/grid,
 /area/space)
 "XR" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -2874,8 +3011,8 @@ BY
 sa
 dY
 NB
-rl
-rl
+LB
+LB
 dv
 JT
 iM
@@ -3222,7 +3359,7 @@ JT
 uC
 xn
 kH
-Np
+xL
 AL
 XU
 kD
@@ -3254,7 +3391,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 FF
 FF
 JT
@@ -3306,9 +3443,9 @@ JT
 FF
 iC
 xn
-Np
-Np
-Bl
+TV
+xL
+rQ
 WW
 pt
 Yw
@@ -3339,7 +3476,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 FF
 wF
 FF
@@ -3391,7 +3528,7 @@ JT
 wF
 JT
 TT
-Np
+xL
 JY
 aP
 kD
@@ -3424,7 +3561,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 iC
 xn
 xn
@@ -3509,7 +3646,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 FF
 xn
 VS
@@ -3594,7 +3731,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 ni
 xn
 Vf
@@ -3679,7 +3816,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 Sy
 xn
 dA
@@ -3764,7 +3901,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 QY
 xn
 Gk
@@ -3849,7 +3986,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 xn
 We
@@ -3934,7 +4071,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 xn
 zZ
@@ -4019,10 +4156,10 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 Xv
 xn
-zg
+Rm
 zg
 zg
 zg
@@ -4104,7 +4241,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 xn
 xL
@@ -4189,10 +4326,10 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 xn
-if
+xL
 xL
 xL
 Zr
@@ -4241,9 +4378,9 @@ oP
 kj
 JT
 JT
-uW
-xo
-xo
+ev
+ev
+ev
 ev
 ev
 JT
@@ -4274,7 +4411,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 xn
 xL
@@ -4320,13 +4457,13 @@ uW
 zQ
 ar
 rl
-uW
+ev
 ev
 ev
 JT
-uW
 ev
 ev
+ev
 sp
 sp
 sp
@@ -4359,7 +4496,7 @@ Ge
 Ge
 Ge
 Ge
-ev
+fG
 QK
 xn
 Zr
@@ -4405,7 +4542,7 @@ fG
 ev
 vf
 xo
-zQ
+ev
 ev
 sp
 sp
@@ -4444,7 +4581,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 xn
 xL
@@ -4529,7 +4666,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 ev
 nj
 xL
@@ -4614,7 +4751,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 xn
 Zr
@@ -4660,7 +4797,7 @@ ev
 ar
 JT
 Cq
-kx
+ar
 Ru
 Ru
 Ru
@@ -4699,7 +4836,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 xn
 xn
@@ -4745,11 +4882,11 @@ ev
 ar
 JT
 JT
-Cq
-aT
-aT
-aT
-aT
+ev
+xo
+xo
+xo
+xo
 YL
 Kx
 Ru
@@ -4784,7 +4921,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 rl
 rl
 JT
@@ -4835,7 +4972,7 @@ JT
 JT
 JT
 JT
-Cq
+ev
 ev
 xo
 xo
@@ -4954,7 +5091,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 rl
 rl
 rl
@@ -5039,7 +5176,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 rl
 rl
@@ -5124,7 +5261,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 Xv
 Sk
 rl
@@ -5209,7 +5346,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 JT
 rl
@@ -5259,12 +5396,12 @@ rl
 rl
 xn
 KO
-Np
+gX
 xn
-Np
-Np
+ev
+ev
 xn
-Np
+gX
 KO
 xn
 JT
@@ -5294,7 +5431,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 JT
 rl
@@ -5343,14 +5480,14 @@ uC
 JT
 rl
 xn
-Np
-Np
+gX
+gX
 om
-Np
-Np
+ev
+ev
 om
-Np
-Np
+gX
+gX
 xn
 JT
 rl
@@ -5379,7 +5516,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 An
 JT
 qw
@@ -5431,8 +5568,8 @@ xn
 iu
 Ac
 xn
-Np
-Np
+ev
+ev
 xn
 Ac
 iu
@@ -5464,7 +5601,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 rl
 JT
@@ -5516,8 +5653,8 @@ xn
 xn
 xn
 xn
-Np
-Np
+ev
+ev
 xn
 xn
 xn
@@ -5549,7 +5686,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 OI
 Wm
@@ -5599,12 +5736,12 @@ iC
 FF
 JT
 xn
-Bl
-Np
-Np
-Np
-Np
-Bl
+km
+tQ
+ev
+ev
+Of
+km
 xn
 JT
 oP
@@ -5634,7 +5771,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 OI
 gz
 sa
@@ -5684,12 +5821,12 @@ QY
 QY
 JT
 xn
-Bl
-Np
-Np
-Np
-Np
-Bl
+km
+tQ
+ev
+ev
+Of
+km
 xn
 JT
 JT
@@ -5719,7 +5856,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 Br
 sa
 sa
@@ -5771,8 +5908,8 @@ xn
 xn
 xn
 xn
-Np
-Np
+ev
+ev
 xn
 xn
 xn
@@ -5804,7 +5941,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 Br
 sa
 sa
@@ -5854,12 +5991,12 @@ rl
 JT
 xn
 KO
-Np
+gX
 xn
-Np
-Np
+ev
+ev
 xn
-Np
+gX
 KO
 xn
 JT
@@ -5889,7 +6026,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 Br
 sa
 sa
@@ -5938,14 +6075,14 @@ rl
 qw
 JT
 xn
-Np
-Np
+gX
+gX
 om
-Np
-Np
+ev
+ev
 om
-Np
-Np
+gX
+gX
 xn
 JT
 Xv
@@ -5974,7 +6111,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 QR
 sa
 sa
@@ -6026,8 +6163,8 @@ xn
 iu
 Ac
 xn
-Np
-Np
+ev
+ev
 xn
 Ac
 iu
@@ -6059,7 +6196,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 Br
 sa
 sa
@@ -6111,8 +6248,8 @@ xn
 xn
 xn
 xn
-Np
-Np
+ev
+ev
 xn
 xn
 xn
@@ -6144,7 +6281,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 Br
 sa
 sa
@@ -6196,11 +6333,11 @@ JT
 JT
 JT
 xn
-Np
-Np
+ev
+ev
 as
 Sc
-Sc
+BV
 xn
 JT
 JT
@@ -6229,7 +6366,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 Br
 sa
 sa
@@ -6281,8 +6418,8 @@ xo
 xo
 xo
 Im
-Np
-Np
+ev
+ev
 as
 Sc
 Sc
@@ -6314,7 +6451,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 Br
 sa
 sa
@@ -6366,8 +6503,8 @@ sp
 sp
 sp
 Im
-Np
-Np
+ev
+ev
 as
 Sc
 Sc
@@ -6399,7 +6536,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 Br
 sa
 BY
@@ -6451,8 +6588,8 @@ JT
 FF
 JT
 xn
-Np
-Np
+ev
+ev
 xn
 Ww
 xn
@@ -6484,7 +6621,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 wc
 sa
@@ -6536,10 +6673,10 @@ FF
 FF
 xn
 xn
-gi
-gi
-gi
-gi
+ev
+ev
+ev
+aO
 gi
 xn
 JT
@@ -6569,7 +6706,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 gc
 sa
@@ -6620,11 +6757,11 @@ LT
 QY
 xn
 xn
-gi
-gi
-gi
-gi
-gi
+CC
+CC
+CC
+CC
+OU
 gi
 rc
 JT
@@ -6654,7 +6791,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 Sk
 JT
 wc
@@ -6694,7 +6831,7 @@ sa
 aA
 uW
 ev
-AM
+cb
 sQ
 Uz
 sa
@@ -6739,7 +6876,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 ni
 ni
@@ -6778,7 +6915,7 @@ sa
 sa
 Qm
 fG
-ar
+RS
 sa
 sa
 sa
@@ -6824,7 +6961,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 rl
 rl
 JT
@@ -6863,7 +7000,7 @@ sa
 EQ
 Qm
 fG
-ar
+RS
 sa
 BY
 sa
@@ -6909,7 +7046,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 rl
 qw
 JT
@@ -6948,7 +7085,7 @@ sa
 sa
 Qm
 fG
-ar
+RS
 sa
 sa
 sa
@@ -7079,7 +7216,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 rl
 JT
 iT
@@ -7164,7 +7301,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 JT
 rl
@@ -7249,7 +7386,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 rl
 rl
@@ -7334,7 +7471,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 rl
 qw
 JT
@@ -7419,7 +7556,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 rl
 JT
 gn
@@ -7589,7 +7726,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 rl
 rl
@@ -7674,7 +7811,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 qw
 rl
@@ -7759,7 +7896,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 rl
 rl
@@ -7813,9 +7950,9 @@ JT
 QY
 JT
 xn
-Np
-Np
-uH
+We
+We
+sX
 Np
 xn
 JT
@@ -7844,7 +7981,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 Xv
 JT
 JT
@@ -7898,8 +8035,8 @@ hQ
 QY
 JT
 xn
-iu
-Np
+WO
+We
 xn
 Np
 xn
@@ -7929,7 +8066,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 xn
 xn
@@ -8014,7 +8151,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 xn
 We
@@ -8068,9 +8205,9 @@ mX
 QY
 JT
 xn
-Np
-Np
-Zf
+We
+We
+nc
 Np
 xn
 JT
@@ -8099,11 +8236,11 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 xn
 We
-km
+We
 We
 We
 We
@@ -8184,7 +8321,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 ev
 ih
 We
@@ -8269,7 +8406,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 xn
 We
@@ -8354,7 +8491,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 xn
 We
@@ -8398,12 +8535,12 @@ fG
 vf
 xn
 xn
-Np
-Np
-Np
-Np
-Bl
-Np
+un
+VQ
+We
+We
+aP
+UH
 xn
 kn
 rl
@@ -8439,7 +8576,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 Sk
 xn
 We
@@ -8482,13 +8619,13 @@ sH
 fG
 ev
 xn
-Np
-Np
-Np
-Np
-Np
-Bl
-Np
+We
+We
+We
+We
+We
+rQ
+gZ
 xn
 kb
 rl
@@ -8524,7 +8661,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 xn
 We
@@ -8567,13 +8704,13 @@ sH
 fG
 ev
 Mk
-Np
-Np
-Np
-Np
-Np
-Np
-Np
+We
+XQ
+SS
+We
+We
+GJ
+We
 xn
 kb
 kb
@@ -8609,7 +8746,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 xn
 We
@@ -8652,13 +8789,13 @@ sH
 fG
 ev
 xn
-Np
-Np
-Np
-Np
-Np
-Np
-Np
+We
+We
+We
+We
+We
+We
+We
 xn
 kb
 hu
@@ -8694,7 +8831,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 JT
 xn
 We
@@ -8738,12 +8875,12 @@ fG
 mR
 xn
 xn
-Np
-Np
-Np
-Np
-Np
-Np
+PF
+fn
+We
+ix
+NX
+NX
 xn
 kb
 kb
@@ -8755,7 +8892,7 @@ sa
 sa
 sa
 Hz
-PN
+Wd
 pn
 fp
 ev
@@ -8779,7 +8916,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 xn
 We
@@ -8864,7 +9001,7 @@ Ru
 Ru
 Ru
 Ru
-ev
+fG
 gn
 xn
 We
@@ -8949,7 +9086,7 @@ Ru
 GE
 Ru
 Ru
-ev
+fG
 JT
 xn
 xn
@@ -9034,7 +9171,7 @@ Ru
 rl
 rl
 Ru
-ev
+fG
 JT
 FF
 JT
@@ -9119,7 +9256,7 @@ rl
 qw
 rl
 Ru
-ev
+fG
 OI
 OI
 uC
