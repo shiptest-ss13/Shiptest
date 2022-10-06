@@ -113,7 +113,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	accessory = /obj/item/clothing/accessory/armband
 	shoes = /obj/item/clothing/shoes/combat
 	head = /obj/item/clothing/head/helmet/solgov
-	suit = /obj/item/clothing/suit/armor/vest/solgov
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 
 /datum/outfit/job/security/solgov/rebel
 	name = "Boarding Specialist (Deserter)"
@@ -169,9 +169,9 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 /datum/outfit/job/security/minutemen
 	name = "Minuteman (Colonial Minutemen)"
 
-	head = /obj/item/clothing/head/helmet/alt/minutemen
+	head = /obj/item/clothing/head/helmet/bulletproof/minutemen
 	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
