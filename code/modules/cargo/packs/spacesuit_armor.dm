@@ -120,10 +120,10 @@
 	name = "Bulletproof Armor Crate"
 	desc = "Contains three full sets of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
 	cost = 3500
-	contains = list(/obj/item/clothing/suit/armor/bulletproof,
-					/obj/item/clothing/suit/armor/bulletproof,
-					/obj/item/clothing/head/helmet/alt,
-					/obj/item/clothing/head/helmet/alt)
+	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof,
+					/obj/item/clothing/suit/armor/vest/bulletproof,
+					/obj/item/clothing/head/helmet/bulletproof,
+					/obj/item/clothing/head/helmet/bulletproof)
 	crate_name = "bulletproof armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 

@@ -103,6 +103,22 @@
 		hasammo = 0
 	icon_state = "p16_mag-[hasammo]"
 
+/obj/item/ammo_box/magazine/swiss
+	name = "\improper Swiss Cheese Magazine (5.56mm)"
+	icon_state = "swissmag"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 30
+
+/obj/item/ammo_box/magazine/swiss/update_icon()
+	..()
+	var/hasammo
+	if(ammo_count())
+		hasammo = 1
+	else
+		hasammo = 0
+	icon_state = "swissmag-[hasammo]"
+
 /obj/item/ammo_box/aac_300blk_stripper
 	name = "stripper clip (.300BLK)"
 	desc = "A rifle-cartrige stripper clip."
