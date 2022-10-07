@@ -1299,11 +1299,11 @@
 
 /obj/item/storage/box/stockparts/t2/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/stock_parts/capacitor/adv = 3,
-		/obj/item/stock_parts/scanning_module/adv = 3,
-		/obj/item/stock_parts/manipulator/nano = 3,
-		/obj/item/stock_parts/micro_laser/high = 3,
-		/obj/item/stock_parts/matter_bin/adv = 3)
+		/obj/item/stock_parts/capacitor/adv = 2,
+		/obj/item/stock_parts/scanning_module/adv = 2,
+		/obj/item/stock_parts/manipulator/nano = 2,
+		/obj/item/stock_parts/micro_laser/high = 2,
+		/obj/item/stock_parts/matter_bin/adv = 2)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/stockparts/t3
@@ -1312,11 +1312,11 @@
 
 /obj/item/storage/box/stockparts/t3/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/stock_parts/capacitor/super = 3,
-		/obj/item/stock_parts/scanning_module/phasic = 3,
-		/obj/item/stock_parts/manipulator/pico = 3,
-		/obj/item/stock_parts/micro_laser/ultra = 3,
-		/obj/item/stock_parts/matter_bin/super = 3)
+		/obj/item/stock_parts/capacitor/super = 2,
+		/obj/item/stock_parts/scanning_module/phasic = 2,
+		/obj/item/stock_parts/manipulator/pico = 2,
+		/obj/item/stock_parts/micro_laser/ultra = 2,
+		/obj/item/stock_parts/matter_bin/super = 2)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/stockparts/deluxe
@@ -1326,11 +1326,11 @@
 
 /obj/item/storage/box/stockparts/deluxe/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/stock_parts/capacitor/quadratic = 3,
-		/obj/item/stock_parts/scanning_module/triphasic = 3,
-		/obj/item/stock_parts/manipulator/femto = 3,
-		/obj/item/stock_parts/micro_laser/quadultra = 3,
-		/obj/item/stock_parts/matter_bin/bluespace = 3)
+		/obj/item/stock_parts/capacitor/quadratic = 2,
+		/obj/item/stock_parts/scanning_module/triphasic = 2,
+		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stock_parts/micro_laser/quadultra = 2,
+		/obj/item/stock_parts/matter_bin/bluespace = 2)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/dishdrive
