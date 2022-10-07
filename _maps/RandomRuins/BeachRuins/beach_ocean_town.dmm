@@ -22,6 +22,9 @@
 /area/space)
 "as" = (
 /obj/structure/table,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/plasteel/grimy,
 /area/space)
 "aA" = (
@@ -99,6 +102,11 @@
 	dir = 4
 	},
 /turf/open/floor/wood,
+/area/space)
+"ce" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/grape,
+/turf/open/floor/plating/dirt,
 /area/space)
 "cs" = (
 /obj/structure/railing/wood{
@@ -214,6 +222,12 @@
 	dir = 4
 	},
 /turf/open/floor/wood,
+/area/space)
+"el" = (
+/obj/structure/table,
+/obj/item/paper_bin/bundlenatural,
+/obj/item/pen/fourcolor,
+/turf/open/floor/plating,
 /area/space)
 "ep" = (
 /obj/machinery/grill,
@@ -341,6 +355,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
+/area/space)
+"fZ" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/cabbage,
+/turf/open/floor/plating/dirt,
 /area/space)
 "gc" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -568,11 +587,21 @@
 /area/space)
 "jG" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
-/turf/open/floor/plasteel,
+/turf/open/floor/wood,
+/area/space)
+"jL" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/peas,
+/turf/open/floor/plating/dirt,
 /area/space)
 "jQ" = (
 /obj/structure/railing/corner/wood,
 /turf/open/water/beach,
+/area/space)
+"jY" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/tower,
+/turf/open/floor/plating/dirt,
 /area/space)
 "kb" = (
 /turf/open/floor/plating/grass,
@@ -680,8 +709,13 @@
 	},
 /turf/open/floor/plating/grass,
 /area/space)
+"lj" = (
+/obj/machinery/light/small,
+/turf/open/floor/carpet,
+/area/space)
 "ly" = (
 /obj/machinery/hydroponics/soil,
+/obj/item/seeds/tobacco,
 /turf/open/floor/plating/dirt,
 /area/space)
 "lE" = (
@@ -923,6 +957,12 @@
 	},
 /turf/open/floor/concrete,
 /area/space)
+"ps" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/carpet/green,
+/area/space)
 "pt" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -957,6 +997,11 @@
 	},
 /turf/open/floor/plating/grass/beach,
 /area/space)
+"pE" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/cotton,
+/turf/open/floor/plating/dirt,
+/area/space)
 "qd" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -981,6 +1026,12 @@
 	},
 /turf/open/floor/plating/beach/sand,
 /area/space)
+"qW" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
+/area/space)
 "qZ" = (
 /obj/structure/railing/wood{
 	dir = 10
@@ -997,7 +1048,17 @@
 	},
 /turf/open/floor/concrete,
 /area/space)
+"ri" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/carrot,
+/turf/open/floor/plating/dirt,
+/area/space)
 "rl" = (
+/turf/open/floor/plating/dirt,
+/area/space)
+"ru" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/chanter,
 /turf/open/floor/plating/dirt,
 /area/space)
 "ry" = (
@@ -1049,7 +1110,7 @@
 "se" = (
 /obj/structure/table,
 /obj/machinery/microwave,
-/turf/open/floor/plasteel,
+/turf/open/floor/wood,
 /area/space)
 "sh" = (
 /obj/item/toy/beach_ball,
@@ -1094,6 +1155,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"te" = (
+/obj/structure/chair/sofa/left,
+/turf/open/floor/wood,
+/area/space)
 "ti" = (
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/beach/sand,
@@ -1110,6 +1175,11 @@
 	},
 /turf/open/floor/plating/dirt,
 /area/space)
+"tD" = (
+/obj/structure/table,
+/obj/machinery/light/small,
+/turf/open/floor/plasteel,
+/area/space)
 "tJ" = (
 /obj/structure/toilet{
 	dir = 4;
@@ -1120,6 +1190,17 @@
 "tQ" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plasteel,
+/area/space)
+"tU" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/eggplant,
+/turf/open/floor/plating/dirt,
+/area/space)
+"tW" = (
+/obj/structure/table,
+/obj/item/seeds/grass,
+/obj/item/plant_analyzer,
+/turf/open/floor/wood,
 /area/space)
 "tY" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -1184,6 +1265,12 @@
 	dir = 4
 	},
 /area/space)
+"uI" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/watermelon,
+/obj/item/shovel/spade,
+/turf/open/floor/plating/dirt,
+/area/space)
 "uK" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -1205,6 +1292,10 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
+/area/space)
+"vn" = (
+/obj/structure/table/wood/bar,
+/turf/open/floor/carpet/green,
 /area/space)
 "vp" = (
 /obj/structure/railing/corner{
@@ -1229,6 +1320,11 @@
 "vE" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/plating/grass/beach,
+/area/space)
+"vF" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/wheat,
+/turf/open/floor/plating/dirt,
 /area/space)
 "vI" = (
 /obj/structure/table/wood,
@@ -1351,6 +1447,11 @@
 	},
 /turf/open/floor/plating/beach/sand,
 /area/space)
+"xz" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/aloe,
+/turf/open/floor/plating/dirt,
+/area/space)
 "xE" = (
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree1"
@@ -1461,6 +1562,21 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"zk" = (
+/obj/structure/chair/sofa,
+/turf/open/floor/wood,
+/area/space)
+"zv" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/green,
+/area/space)
+"zD" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/cherry,
+/turf/open/floor/plating/dirt,
+/area/space)
 "zI" = (
 /obj/structure/railing/wood{
 	dir = 4
@@ -1491,6 +1607,11 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
+/area/space)
+"zU" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/banana,
+/turf/open/floor/plating/dirt,
 /area/space)
 "zX" = (
 /obj/machinery/biogenerator,
@@ -1531,6 +1652,11 @@
 	icon_state = "sand_dug"
 	},
 /area/space)
+"AA" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/plump,
+/turf/open/floor/plating/dirt,
+/area/space)
 "AD" = (
 /obj/structure/table,
 /obj/structure/sink{
@@ -1538,7 +1664,7 @@
 	pixel_y = 6;
 	pixel_x = 13
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/wood,
 /area/space)
 "AL" = (
 /obj/machinery/door/window,
@@ -1569,6 +1695,12 @@
 /obj/structure/table,
 /turf/open/floor/plating,
 /area/space)
+"Bq" = (
+/obj/structure/mineral_door/wood{
+	name = "Checkpoint"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
 "Br" = (
 /obj/effect/turf_decal/weather/sand,
 /turf/open/floor/plating/grass/beach,
@@ -1594,6 +1726,7 @@
 /turf/open/floor/plating/grass,
 /area/space)
 "BV" = (
+/obj/structure/filingcabinet,
 /obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/plasteel/grimy,
 /area/space)
@@ -1720,6 +1853,11 @@
 	},
 /turf/open/floor/plating/dirt,
 /area/space)
+"DD" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/bamboo,
+/turf/open/floor/plating/dirt,
+/area/space)
 "DE" = (
 /obj/structure/railing/wood,
 /turf/open/floor/plating/dirt/dark,
@@ -1776,6 +1914,12 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/plating/grass/beach,
 /area/space)
+"EH" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/green,
+/area/space)
 "EJ" = (
 /turf/open/floor/plasteel/stairs{
 	dir = 1;
@@ -1808,6 +1952,10 @@
 	dir = 10
 	},
 /turf/open/floor/plating/dirt,
+/area/space)
+"EX" = (
+/obj/structure/table/wood/bar,
+/turf/open/floor/wood,
 /area/space)
 "FC" = (
 /obj/structure/flora/tree/jungle/small{
@@ -1861,6 +2009,12 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/space)
+"Gh" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/carpet,
+/area/space)
 "Gk" = (
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
@@ -1876,11 +2030,22 @@
 	dir = 6
 	},
 /area/space)
+"Gq" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/tea,
+/turf/open/floor/plating/dirt,
+/area/space)
 "Gt" = (
 /obj/structure/railing{
 	dir = 4
 	},
 /turf/open/floor/plating/beach/sand,
+/area/space)
+"GA" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/plating/grass/beach,
 /area/space)
 "GE" = (
 /obj/effect/turf_decal/road{
@@ -1987,6 +2152,10 @@
 /obj/machinery/door/airlock/public/glass{
 	name = "Beachside Inn"
 	},
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/space)
 "Io" = (
@@ -2002,6 +2171,14 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
+/area/space)
+"IA" = (
+/obj/machinery/light/small,
+/turf/open/floor/carpet/green,
+/area/space)
+"IC" = (
+/obj/structure/filingcabinet,
+/turf/open/floor/plating,
 /area/space)
 "IF" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -2019,6 +2196,13 @@
 	dir = 5
 	},
 /turf/open/floor/concrete,
+/area/space)
+"IZ" = (
+/obj/structure/table,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "Jc" = (
 /obj/effect/turf_decal/weather/sand,
@@ -2083,6 +2267,11 @@
 	},
 /turf/open/floor/plating/grass/beach,
 /area/space)
+"JS" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/apple,
+/turf/open/floor/plating/dirt,
+/area/space)
 "JT" = (
 /turf/open/floor/plating/grass/beach,
 /area/space)
@@ -2109,6 +2298,11 @@
 	},
 /turf/open/floor/plating/beach/sand,
 /area/space)
+"Kn" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/wheat/rice,
+/turf/open/floor/plating/dirt,
+/area/space)
 "Ko" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/railing/wood,
@@ -2120,6 +2314,10 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/pavement,
+/area/space)
+"KB" = (
+/obj/machinery/light,
+/turf/open/floor/plasteel/grimy,
 /area/space)
 "KC" = (
 /obj/effect/turf_decal/weather/sand{
@@ -2158,6 +2356,11 @@
 	},
 /turf/open/floor/plating/dirt,
 /area/space)
+"KU" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/potato,
+/turf/open/floor/plating/dirt,
+/area/space)
 "Lc" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/cornuto{
@@ -2165,6 +2368,12 @@
 	desc = "you can't be quite sure how long this cornuto has sat in the sun. Yet it remains perfectly intact. No melting, no signs of damage. It beckons to you."
 	},
 /turf/open/floor/plating/beach/sand,
+/area/space)
+"Ln" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet,
 /area/space)
 "Lo" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
@@ -2174,6 +2383,11 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
+/area/space)
+"Lr" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/orange,
+/turf/open/floor/plating/dirt,
 /area/space)
 "LB" = (
 /obj/structure/railing/wood{
@@ -2243,6 +2457,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"MV" = (
+/obj/item/cultivator/rake,
+/turf/open/floor/wood,
+/area/space)
 "MY" = (
 /obj/structure/table,
 /obj/item/book/manual/wiki/barman_recipes,
@@ -2264,6 +2482,11 @@
 /turf/open/floor/glass{
 	baseturfs = /turf/open/water/beach/deep
 	},
+/area/space)
+"Nw" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/sugarcane,
+/turf/open/floor/plating/dirt,
 /area/space)
 "Ny" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -2371,6 +2594,12 @@
 	},
 /turf/open/floor/carpet/green,
 /area/space)
+"OW" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/space)
 "Pe" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -2380,6 +2609,12 @@
 	},
 /obj/effect/turf_decal/siding/blue/corner,
 /turf/open/floor/plasteel,
+/area/space)
+"Pm" = (
+/obj/structure/mineral_door/wood{
+	name = "Bedroom"
+	},
+/turf/open/floor/wood,
 /area/space)
 "Ps" = (
 /obj/effect/turf_decal/weather/sand{
@@ -2401,6 +2636,10 @@
 "PC" = (
 /obj/structure/flora/rock/pile,
 /turf/open/floor/plating/dirt,
+/area/space)
+"PE" = (
+/obj/structure/chair/sofa/right,
+/turf/open/floor/wood,
 /area/space)
 "PF" = (
 /obj/structure/rack,
@@ -2450,6 +2689,16 @@
 	},
 /turf/open/floor/plating/dirt,
 /area/space)
+"QA" = (
+/obj/item/shovel/spade,
+/turf/open/floor/wood,
+/area/space)
+"QI" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/space)
 "QK" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/grass/beach,
@@ -2494,6 +2743,11 @@
 	},
 /turf/open/water/beach/deep,
 /area/space)
+"RQ" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/chili,
+/turf/open/floor/plating/dirt,
+/area/space)
 "RS" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/weather/sand,
@@ -2510,6 +2764,12 @@
 "Sk" = (
 /obj/structure/flora/ausbushes/genericbush,
 /turf/open/floor/plating/grass/beach,
+/area/space)
+"Sm" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/wood,
 /area/space)
 "Sp" = (
 /obj/effect/turf_decal/sand/plating,
@@ -2636,18 +2896,27 @@
 /obj/structure/mineral_door/wood{
 	name = "Bathroom"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/wood,
 /area/space)
 "Uq" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/palebush,
 /turf/open/floor/plating/grass/beach,
 /area/space)
+"Us" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/lemon,
+/turf/open/floor/plating/dirt,
+/area/space)
 "Uz" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
 /turf/open/floor/plating/dirt,
+/area/space)
+"UA" = (
+/obj/structure/chair/wood,
+/turf/open/floor/carpet/green,
 /area/space)
 "UB" = (
 /turf/open/floor/concrete,
@@ -2666,6 +2935,11 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
+/area/space)
+"UN" = (
+/obj/structure/table,
+/obj/item/binoculars,
+/turf/open/floor/plating,
 /area/space)
 "UO" = (
 /obj/effect/turf_decal/weather/sand{
@@ -2695,6 +2969,11 @@
 /obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/white,
 /area/space)
+"Vr" = (
+/obj/structure/bed,
+/obj/item/bedsheet/dorms,
+/turf/open/floor/carpet,
+/area/space)
 "VF" = (
 /turf/open/floor/plating/beach/coastline_b{
 	dir = 4
@@ -2705,6 +2984,11 @@
 	dir = 8
 	},
 /turf/open/floor/plating/beach/coastline_b,
+/area/space)
+"VJ" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/coffee,
+/turf/open/floor/plating/dirt,
 /area/space)
 "VK" = (
 /obj/structure/fence{
@@ -2845,6 +3129,11 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/beach,
 /area/space)
+"XC" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/cocoapod,
+/turf/open/floor/plating/dirt,
+/area/space)
 "XJ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass,
@@ -2893,6 +3182,10 @@
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/water/beach,
+/area/space)
+"Ya" = (
+/obj/item/hatchet/wooden,
+/turf/open/floor/wood,
 /area/space)
 "Yw" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
@@ -3375,12 +3668,12 @@ zX
 ev
 ev
 ev
-ly
-ly
+ce
+ce
 ev
-ly
+zD
 ev
-ly
+Gq
 ly
 ev
 QY
@@ -3456,17 +3749,17 @@ FF
 FF
 rl
 xn
-bu
+tW
 ev
 ev
 ev
-ly
-ly
+Kn
+tU
+QA
+zU
 ev
-ly
-ev
-ly
-ly
+RQ
+ru
 ev
 FF
 FF
@@ -3545,13 +3838,13 @@ HO
 ev
 ev
 ev
-ly
-ly
+xz
+vF
 ev
-ly
+JS
 ev
-ly
-ly
+fZ
+ri
 ev
 wF
 JT
@@ -3635,7 +3928,7 @@ ev
 Cv
 Ws
 ev
-ev
+MV
 ev
 ev
 ev
@@ -3886,13 +4179,13 @@ Mq
 mc
 ev
 ev
+Ya
 ev
 ev
 ev
 ev
 ev
-ev
-ev
+Ws
 ev
 ev
 ar
@@ -3970,13 +4263,13 @@ mX
 FF
 wF
 ev
-ly
-ly
+pE
+pE
 ev
-ly
+DD
 ev
-ly
-ly
+Us
+Lr
 ev
 JT
 JT
@@ -4055,13 +4348,13 @@ wF
 JT
 rl
 ev
-ly
-ly
+Nw
+Nw
+MV
+VJ
 ev
-ly
-ev
-ly
-ly
+uI
+jY
 ev
 OI
 JT
@@ -4140,13 +4433,13 @@ FF
 qw
 rl
 ev
-ly
-ly
+jL
+KU
 Ws
-ly
+XC
 ev
-ly
-ly
+AA
+jY
 ev
 JT
 vE
@@ -5411,17 +5704,17 @@ rl
 FF
 FF
 xn
-We
-We
-We
-We
-We
-We
-We
-We
-We
-We
-We
+ev
+ev
+ev
+ev
+ev
+ev
+ev
+ev
+mR
+sp
+sp
 xn
 JT
 rl
@@ -5480,14 +5773,14 @@ uC
 JT
 rl
 xn
-gX
+Gh
 gX
 om
 ev
 ev
 om
 gX
-gX
+lj
 xn
 JT
 rl
@@ -5496,18 +5789,18 @@ rl
 JT
 wF
 xn
-We
-We
-We
-We
-We
-We
-We
-We
-We
-We
-We
-xn
+ev
+ev
+ev
+ev
+ev
+ev
+ev
+ev
+ar
+gi
+qW
+rc
 JT
 rl
 ar
@@ -5581,18 +5874,18 @@ JT
 uC
 FF
 xn
-sX
+Pm
 xn
 xn
 xn
-We
-We
-We
-We
-We
-We
-We
-xn
+ev
+ev
+ev
+ev
+ar
+gi
+vI
+rc
 QY
 JT
 ar
@@ -5666,18 +5959,18 @@ FF
 JT
 Xv
 xn
-We
-We
-WO
+ev
+gX
+Vr
 xn
 Up
 xn
 xn
-We
-We
-We
-We
-xn
+ev
+ar
+gi
+zv
+rc
 kd
 JT
 ar
@@ -5736,12 +6029,12 @@ iC
 FF
 JT
 xn
-km
+IZ
 tQ
 ev
 ev
 Of
-km
+tD
 xn
 JT
 oP
@@ -5751,17 +6044,17 @@ rl
 JT
 JT
 xn
-We
-We
-We
+gX
+gX
+gX
 xn
 We
 We
 xn
-We
-We
-We
-We
+ev
+vf
+xo
+xo
 xn
 QY
 kj
@@ -5836,17 +6129,17 @@ rl
 PC
 qw
 xn
-We
-We
-We
+gX
+gX
+gX
 xn
 We
 We
 xn
-We
-We
-We
-We
+ev
+ev
+ev
+ev
 xn
 FF
 kj
@@ -5929,8 +6222,8 @@ xn
 xn
 xn
 xn
-xn
-xn
+rc
+rc
 xn
 xn
 FF
@@ -6075,14 +6368,14 @@ rl
 qw
 JT
 xn
-gX
+Gh
 gX
 om
 ev
 ev
 om
 gX
-gX
+lj
 xn
 JT
 Xv
@@ -6422,7 +6715,7 @@ ev
 ev
 as
 Sc
-Sc
+KB
 xn
 JT
 QY
@@ -6675,9 +6968,9 @@ xn
 xn
 ev
 ev
-ev
+Sm
 aO
-gi
+IA
 xn
 JT
 JT
@@ -6847,7 +7140,7 @@ gi
 gi
 gi
 gi
-gi
+vI
 rc
 JT
 JT
@@ -6867,8 +7160,8 @@ Yy
 Ne
 tj
 xn
-Bl
-Np
+el
+IC
 xn
 ar
 Ru
@@ -6925,7 +7218,7 @@ qp
 sa
 uq
 xn
-gi
+ps
 gi
 gi
 gi
@@ -6951,7 +7244,7 @@ UB
 Yy
 UB
 tj
-Ww
+Bq
 Np
 Np
 xn
@@ -7123,7 +7416,7 @@ UB
 tj
 xn
 Bl
-Bl
+UN
 xn
 ev
 yz
@@ -7984,7 +8277,7 @@ Ru
 fG
 Xv
 JT
-JT
+GA
 FF
 uC
 gn
@@ -8070,9 +8363,9 @@ fG
 JT
 xn
 xn
-xn
-xn
-xn
+rc
+rc
+rc
 xn
 xn
 xn
@@ -8154,12 +8447,12 @@ Ru
 fG
 JT
 xn
-We
-We
-We
-We
-We
-We
+ar
+UA
+vn
+EH
+fG
+ev
 xn
 iM
 iM
@@ -8239,13 +8532,13 @@ Ru
 fG
 JT
 xn
-We
-We
-We
-We
-We
-We
-xn
+ar
+gi
+gi
+gi
+fG
+bu
+rc
 iM
 iM
 iM
@@ -8324,13 +8617,13 @@ Ru
 fG
 ev
 ih
-We
-We
-We
-We
-We
+vf
+xo
+xo
+xo
+zQ
 jG
-xn
+rc
 iM
 iM
 iM
@@ -8409,10 +8702,10 @@ Ru
 fG
 JT
 xn
-We
-We
-We
-km
+EX
+ev
+ev
+bu
 AD
 se
 xn
@@ -8494,9 +8787,9 @@ Ru
 fG
 JT
 xn
-We
-We
-We
+PE
+ev
+ev
 xn
 xn
 xn
@@ -8579,9 +8872,9 @@ Ru
 fG
 Sk
 xn
-We
-We
-We
+zk
+ev
+ev
 xn
 eK
 tJ
@@ -8664,9 +8957,9 @@ Ru
 fG
 JT
 xn
-We
-We
-We
+te
+ev
+ev
 Up
 We
 kw
@@ -8749,8 +9042,8 @@ Ru
 fG
 JT
 xn
-We
-We
+ev
+ev
 xn
 xn
 xn
@@ -8834,12 +9127,12 @@ Ru
 fG
 JT
 xn
-We
-We
+ev
+ev
 xn
-WO
-We
-We
+Vr
+gX
+gX
 xn
 iM
 iM
@@ -8919,12 +9212,12 @@ Ru
 fG
 JT
 xn
-We
-We
+ev
+ev
 xn
-We
-We
-We
+QI
+OW
+gX
 xn
 iM
 iM
@@ -9004,12 +9297,12 @@ Ru
 fG
 gn
 xn
-We
-We
-sX
-We
-We
-We
+ev
+ev
+Pm
+ev
+Ln
+gX
 xn
 iM
 iM
