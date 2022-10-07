@@ -581,6 +581,9 @@ OVERMAP_SIZE 12
 ## Valid values are: "random", "solar_system"
 OVERMAP_GENERATOR_TYPE solar_system
 
+## Size of overmap encounters, vertical and width with a 3 tile border
+OVERMAP_ENCOUNTER_SIZE 127
+
 ## The time required before a ship is allowed to bluespace jump. -1 disables it entirely
 ## In deciseconds, valid values are -1 to INFINITY
 BLUESPACE_JUMP_WAIT 12000
