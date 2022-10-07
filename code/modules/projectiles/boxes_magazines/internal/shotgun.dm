@@ -72,3 +72,9 @@
 	name = "hundred-barrel shotgun internal magazine"
 	max_ammo = 100
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+
+/obj/item/ammo_box/magazine/internal/shot/twobore
+	name = "two-bore shotgun internal magazine"
+	max_ammo = 2
+	caliber = "twobore"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/twobore
