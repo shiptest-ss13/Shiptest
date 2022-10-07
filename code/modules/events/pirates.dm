@@ -324,15 +324,6 @@
 		else
 			return 1000
 
-/datum/export/pirate/parrot
-	cost = 2000
-	unit_name = "alive parrot"
-	export_types = list(/mob/living/simple_animal/parrot)
-
-/datum/export/pirate/parrot/find_loot()
-	for(var/mob/living/simple_animal/parrot/P in GLOB.alive_mob_list)
-		return P
-
 /datum/export/pirate/cash
 	cost = 1
 	unit_name = "bills"

@@ -1,7 +1,12 @@
+//Thneed Factory
+
 /area/ruin/jungle/onceler/main
 	requires_power = FALSE
 	name = "Thneed Factory"
 	icon_state = "engine"
+
+//Interceptor Crash Site
+
 /area/ruin/jungle/interceptor/crashsite
 	name = "Nanotrasen Interceptor Crashsite"
 	icon_state = "yellow"
@@ -53,6 +58,9 @@
 	always_unpowered = TRUE
 
 //holy shit, how does this work.
+
+//Jungle Paradise
+
 /area/ruin/jungle/paradise/comms
 	name = "Communications center"
 	icon_state = "green"
