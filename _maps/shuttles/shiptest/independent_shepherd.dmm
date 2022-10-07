@@ -1813,12 +1813,12 @@
 /turf/closed/wall/r_wall,
 /area/ship/crew/canteen)
 "qr" = (
-/obj/machinery/computer/atmos_alert{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
 	dir = 6
+	},
+/obj/machinery/modular_computer/console/preset/civilian{
+	dir = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
@@ -2622,6 +2622,16 @@
 	pixel_x = 30
 	},
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
+/obj/item/clothing/under/suit/black,
+/obj/item/clothing/under/suit/black,
+/obj/item/clothing/under/suit/black,
+/obj/item/clothing/under/suit/black/skirt,
+/obj/item/clothing/under/suit/black/skirt,
+/obj/item/clothing/under/suit/black/skirt,
+/obj/item/clothing/under/rank/civilian/chaplain,
+/obj/item/clothing/under/rank/civilian/chaplain,
+/obj/item/clothing/under/rank/civilian/chaplain/skirt,
+/obj/item/clothing/under/rank/civilian/chaplain/skirt,
 /turf/open/floor/pod/dark,
 /area/ship/crew/dorm)
 "xh" = (
@@ -3420,11 +3430,11 @@
 /turf/open/floor/wood,
 /area/ship/hallway/port)
 "DY" = (
-/obj/machinery/computer/monitor,
 /obj/effect/turf_decal/siding/wood{
 	color = "#332521";
 	dir = 5
 	},
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
 "Ei" = (
@@ -4982,6 +4992,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/computer/monitor{
+	dir = 8
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
 "Rs" = (
@@ -5830,12 +5843,15 @@
 /turf/open/floor/plating/grass/jungle/actuallydark,
 /area/ship/crew/hydroponics)
 "Zd" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/railing,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
+	},
+/obj/machinery/computer/atmos_alert{
+	dir = 8
+	},
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 4
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/bridge)
