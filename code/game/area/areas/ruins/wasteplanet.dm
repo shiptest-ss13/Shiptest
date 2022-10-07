@@ -45,5 +45,3 @@
 /area/ruin/wasteplanet/abandoned_mechbay/atmospereslurper
 	name = "Abandoned Mechbay Air Processing"
 	icon_state = "atmos"
-  
-  
