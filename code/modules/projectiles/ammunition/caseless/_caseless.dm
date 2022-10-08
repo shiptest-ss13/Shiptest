@@ -11,6 +11,6 @@
 	else
 		return FALSE
 
-/obj/item/ammo_casing/caseless/update_icon()
-	..()
-	icon_state = "[initial(icon_state)]"
+// Overridden; caseless ammo does not distinguish between "live" and "empty"/"spent" icon states (because it has no casing).
+/obj/item/ammo_casing/caseless/update_icon_state()
+	return

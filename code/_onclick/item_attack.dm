@@ -150,7 +150,7 @@
 	take_damage(I.force, I.damtype, "melee", 1)
 
 /mob/living/attacked_by(obj/item/I, mob/living/user)
-	var/armor_value = run_armor_check(armour_penetration = I.armour_penetration)		//WS Edit - Simplemobs can have armor
+	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = I.armour_penetration)		//WS Edit - Simplemobs can have armor
 	send_item_attack_message(I, user)
 	if(I.force)
 		apply_damage(I.force, I.damtype, break_modifier = I.force, blocked = armor_value) //Bone break modifier = item force
@@ -213,3 +213,4 @@
 	visible_message("<span class='danger'>[attack_message]</span>",\
 		"<span class='userdanger'>[attack_message_local]</span>", null, COMBAT_MESSAGE_RANGE)
 	return 1
+

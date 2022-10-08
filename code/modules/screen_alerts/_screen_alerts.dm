@@ -54,6 +54,8 @@
  * * user: mob to play to
  */
 /atom/movable/screen/text/screen_text/proc/play_to_mob(mob/user)
+	if(QDELETED(user))
+		return
 	user.client?.screen += src
 	if(fade_in_time)
 		animate(src, alpha = 255)

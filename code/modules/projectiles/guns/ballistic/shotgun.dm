@@ -149,6 +149,14 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
 	pin = /obj/item/firing_pin
+
+/obj/item/gun/ballistic/shotgun/bulldog/inteq
+	name = "\improper Mastiff Shotgun"
+	desc = "A semi-auto, mag-fed shotgun, seized from Syndicate armories by deserting troopers and modified to IRMG's standards. Compatible only with specialized 8-round drum magazines."
+	icon_state = "bulldog-inteq"
+	item_state = "bulldog-inteq"
+	pin = /obj/item/firing_pin
+
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
 /////////////////////////////
@@ -392,12 +400,13 @@
 	item_state = "winchester"
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/winchester_cocked.ogg'
 
 /obj/item/gun/ballistic/shotgun/winchester/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
@@ -410,6 +419,31 @@
 
 /obj/item/gun/ballistic/shotgun/winchester/mk1/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/twobore
+	name = "two-bore rifle"
+	desc = "Take this, elephant! If you want an intact trophy, don't aim for the head. Chambered in two-bore."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	inhand_x_dimension = 32
+	inhand_y_dimension = 32
+	icon_state = "twobore"
+	item_state = "twobore"
+	unique_reskin = null
+	attack_verb = list("bludgeoned", "smashed")
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/twobore
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20 //heavy ass elephant gun, why wouldnt it be
+	recoil = 4
+	pb_knockback = 12
+	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
+	load_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
+
+	can_be_sawn_off = FALSE
+	fire_sound_volume = 80
+	rack_sound_volume = 50
 
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/contender

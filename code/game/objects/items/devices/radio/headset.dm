@@ -314,7 +314,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/headset_cent
 	name = "\improper CentCom headset"
-	desc = "A headset used by the upper echelons of Nanotrasen."
+	desc = "A headset used by representatives and agents of Central Command."
 	icon_state = "cent_headset"
 	keyslot = new /obj/item/encryptionkey/headset_com
 	keyslot2 = new /obj/item/encryptionkey/headset_cent

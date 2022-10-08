@@ -242,7 +242,7 @@
 	name = "CentCom Commander"
 
 	uniform = /obj/item/clothing/under/rank/centcom/commander
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/headset_cent/commander
@@ -466,7 +466,7 @@
 	uniform = /obj/item/clothing/under/rank/command/lieutenant
 	alt_uniform = /obj/item/clothing/under/rank/command
 	suit = /obj/item/clothing/suit/toggle/lieutenant
-	alt_suit = /obj/item/clothing/suit/lieutenant_trenchcoat
+	alt_suit = /obj/item/clothing/suit/armor/lieutenant_trenchcoat
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/jackboots

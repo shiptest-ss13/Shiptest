@@ -2,7 +2,7 @@
 	name = "SolGov Officer"
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov
-	suit = /obj/item/clothing/suit/armor/vest/solgov
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/radio/headset/solgov
 	gloves = /obj/item/clothing/gloves/combat
@@ -10,7 +10,7 @@
 	r_pocket = /obj/item/gun/ballistic/automatic/pistol/solgov
 	l_pocket = /obj/item/ammo_box/magazine/pistol556mm
 	shoes = /obj/item/clothing/shoes/jackboots
-	suit_store = /obj/item/gun/energy/laser/terra
+	suit_store = /obj/item/gun/ballistic/automatic/assualt/swiss_cheese //while soldiers having a over 400 year old rifle doesnt make much sense, it makes more  sense then a gun doesnt even exist
 	back = /obj/item/storage/backpack
 	box = /obj/item/storage/box/survival
 	backpack_contents = list(/obj/item/crowbar/power,\
@@ -33,7 +33,6 @@
 	l_pocket = /obj/item/ammo_box/magazine/pistol556mm
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit_store = null
-	belt = /obj/item/gun/energy/pulse/terra
 	back = /obj/item/storage/backpack
 	box = /obj/item/storage/box/survival
 	backpack_contents = list(/obj/item/crowbar/power,\

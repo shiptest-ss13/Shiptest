@@ -105,6 +105,8 @@
 
 /obj/item/clothing/suit/syndicatefake
 	name = "black and red space suit replica"
+	icon = 'icons/obj/clothing/suits/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/spacesuits.dmi'
 	icon_state = "syndicate-black-red"
 	item_state = "syndicate-black-red"
 	desc = "A plastic replica of the Syndicate space suit. You'll look just like a real murderous Syndicate agent in this! This is a toy, it is not made for use in space!"
@@ -351,6 +353,8 @@
 /obj/item/clothing/suit/straight_jacket
 	name = "straight jacket"
 	desc = "A suit that completely restrains the wearer. Manufactured by Antyphun Corp." //Straight jacket is antifun
+	icon = 'icons/obj/clothing/suits/utility.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "straight_jacket"
 	item_state = "straight_jacket"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
@@ -369,7 +373,7 @@
 
 /obj/item/clothing/suit/nerdshirt
 	name = "gamer shirt"
-	desc = "A baggy shirt with vintage game character Phanic the Weasel. Why would anyone wear this?"
+	desc = "A baggy shirt with vintage game character Super Weasel Kid. Why would anyone wear this?"
 	icon_state = "nerdshirt"
 	item_state = "nerdshirt"
 
@@ -613,6 +617,15 @@
 /obj/item/clothing/head/hooded/winterhood/medical
 	icon_state = "winterhood_medical"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 0, "acid" = 45)
+
+/obj/item/clothing/suit/hooded/wintercoat/medical/paramedic
+	name = "paramedic winter coat"
+	icon_state = "coatparamedic"
+	item_state = "coatparamedic"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical/paramedic
+
+/obj/item/clothing/head/hooded/winterhood/medical/paramedic
+	icon_state = "winterhood_paramedic"
 
 /obj/item/clothing/suit/hooded/wintercoat/science
 	name = "science winter coat"

@@ -319,9 +319,9 @@
 /obj/structure/closet/secure_closet/tac/PopulateContents()
 	..()
 	new /obj/item/gun/ballistic/automatic/smg/wt550(src)
-	new /obj/item/clothing/head/helmet/alt(src)
+	new /obj/item/clothing/head/helmet/bulletproof(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
-	new /obj/item/clothing/suit/armor/bulletproof(src)
+	new /obj/item/clothing/suit/armor/vest/bulletproof(src)
 
 /obj/structure/closet/secure_closet/lethalshots
 	name = "lethal ammunition"
@@ -385,8 +385,8 @@
 	new /obj/item/storage/briefcase(src)
 	new	/obj/item/storage/firstaid/regular(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
-	new /obj/item/clothing/suit/armor/vest/solgov/rep(src)
-	new /obj/item/clothing/suit/solgov_trenchcoat(src)
+	new /obj/item/clothing/suit/armor/vest/bulletproof/solgov/rep(src)
+	new /obj/item/clothing/suit/armor/solgov_trenchcoat(src)
 	new /obj/item/clothing/accessory/waistcoat/solgov(src)
 	new /obj/item/clothing/shoes/laceup(src)
 
@@ -404,7 +404,7 @@
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/suit/armor/vest/lieutenant(src)
 	new /obj/item/clothing/suit/toggle/lieutenant(src)
-	new /obj/item/clothing/suit/lieutenant_trenchcoat(src)
+	new /obj/item/clothing/suit/armor/lieutenant_trenchcoat(src)
 	new /obj/item/clothing/accessory/holster/lieutenant(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/head/beret/lt(src)
