@@ -34,6 +34,9 @@
 /obj/structure/window/plasma/reinforced{
 	name = "clowning grade window"
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "f" = (
@@ -153,7 +156,8 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/wasteplanet,
+/obj/structure/cable,
+/turf/open/floor/plating,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "F" = (
 /obj/structure/fence{
