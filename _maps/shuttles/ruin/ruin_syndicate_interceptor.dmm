@@ -1,0 +1,272 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/template_noop,
+/area/template_noop)
+"b" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"c" = (
+/obj/structure/chair/comfy/shuttle{
+	name = "Grav Couch";
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"h" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "jbs04EM"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"i" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"n" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"s" = (
+/obj/machinery/atmospherics/pipe/manifold/orange{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"u" = (
+/obj/machinery/atmospherics/components/unary/tank/toxins{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"v" = (
+/obj/structure/sign/syndicate,
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"B" = (
+/obj/structure/sign/syndicate,
+/obj/docking_port/mobile{
+	dir = 4;
+	port_direction = 4;
+	preferred_direction = 2
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"D" = (
+/obj/machinery/atmospherics/pipe/manifold/orange{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"E" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/door/poddoor/preopen{
+	id = "jbs04EM"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"F" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/item/clothing/suit/space/pilot,
+/obj/item/clothing/head/helmet/space/pilot,
+/obj/item/tank/jetpack/oxygen,
+/obj/machinery/door/poddoor/preopen{
+	id = "jbs04EM"
+	},
+/obj/machinery/suit_storage_unit/inherit,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"I" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"L" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"M" = (
+/obj/structure{
+	desc = "A devastating strike weapon of times past. The mountings seem broken now.";
+	dir = 4;
+	icon = 'icons/mecha/mecha_equipment.dmi';
+	icon_state = "mecha_missilerack_six";
+	name = "ancient missile rack";
+	pixel_x = 7;
+	pixel_y = 11
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"N" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/bridge)
+"O" = (
+/obj/structure{
+	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.";
+	dir = 4;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct laser cannon";
+	pixel_x = 8
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"Q" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 9
+	},
+/obj/effect/turf_decal/number/zero{
+	pixel_x = -6
+	},
+/obj/effect/turf_decal/number/four{
+	pixel_x = 6
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"V" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"W" = (
+/obj/structure{
+	desc = "A devastating strike weapon of times past. The mountings seem broken now.";
+	dir = 4;
+	icon = 'icons/mecha/mecha_equipment.dmi';
+	icon_state = "mecha_missilerack_six";
+	name = "ancient missile rack";
+	pixel_x = 7;
+	pixel_y = -5
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"X" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 10
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"Y" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 33;
+	pixel_x = -8
+	},
+/obj/machinery/button/door{
+	pixel_y = 26;
+	pixel_x = 5;
+	id = "jbs04EM";
+	name = "Emergency Lockdown"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+
+(1,1,1) = {"
+a
+a
+a
+B
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+N
+b
+N
+a
+a
+"}
+(3,1,1) = {"
+O
+L
+I
+b
+I
+L
+O
+"}
+(4,1,1) = {"
+a
+n
+s
+D
+i
+b
+a
+"}
+(5,1,1) = {"
+a
+W
+L
+u
+L
+M
+a
+"}
+(6,1,1) = {"
+a
+a
+X
+F
+Q
+a
+a
+"}
+(7,1,1) = {"
+a
+a
+b
+Y
+E
+a
+a
+"}
+(8,1,1) = {"
+a
+a
+v
+c
+v
+a
+a
+"}
+(9,1,1) = {"
+a
+a
+h
+V
+h
+a
+a
+"}
+(10,1,1) = {"
+a
+a
+h
+h
+h
+a
+a
+"}
