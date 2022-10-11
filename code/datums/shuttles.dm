@@ -276,3 +276,4 @@
 	name = "Syndicate Interceptor"
 	prefix = "SSV"
 	name_categories = list("WEAPONS")
+	short_name = "Dartbird"
