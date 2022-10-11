@@ -66,3 +66,16 @@
 					/obj/item/clothing/glasses/cheapsuns,
 					/obj/item/clothing/glasses/cheapsuns)
 	crate_name = "Beach Kit"
+
+/*
+		Heavy Duty Exploration Gear
+*/
+
+/datum/supply_pack/capsules
+	name = "Bluespace Shelter Capsules"
+	desc = "A duo of Bluespace Shelter Capsules, for instant shelter in rough situations."
+	cost = 3000
+	contains = list(/obj/item/survivalcapsule,
+	/obj/item/survivalcapsule,
+	/obj/item/survivalcapsule,
+	)
