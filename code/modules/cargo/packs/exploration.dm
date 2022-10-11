@@ -1,3 +1,7 @@
+/datum/supply_pack/exploration
+	group = "Exploration"
+	crate_type = /obj/structure/closet/crate/wooden
+
 /datum/supply_pack/exploration/mining
 	name = "Lava Exploration Kit"
 	desc = "Contains two pickaxes, 60 lavaproof rods, and goggles to protect eyes from the heat"
