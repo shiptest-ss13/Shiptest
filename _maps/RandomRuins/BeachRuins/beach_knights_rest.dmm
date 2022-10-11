@@ -17,18 +17,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
-"cw" = (
-/obj/machinery/hydroponics/soil,
-/obj/item/shovel/spade,
-/obj/item/seeds/wheat,
-/turf/open/floor/plating/dirt,
-/area/ruin/beachplanet/knight)
-"dn" = (
-/obj/machinery/hydroponics/soil,
-/obj/item/cultivator/rake,
-/obj/item/seeds/poppy/geranium,
-/turf/open/floor/plating/dirt,
-/area/ruin/beachplanet/knight)
 "dr" = (
 /obj/structure/sink/puddle,
 /obj/item/reagent_containers/glass/bucket/wooden,
@@ -124,6 +112,15 @@
 /obj/item/seeds/tomato,
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
+"hg" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/ruin/beachplanet/knight)
 "hj" = (
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
@@ -145,6 +142,26 @@
 /obj/item/claymore,
 /obj/item/claymore/weak,
 /turf/open/floor/wood,
+/area/ruin/beachplanet/knight)
+"kq" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/ruin/beachplanet/knight)
+"kV" = (
+/obj/effect/turf_decal/stoneborder,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/stoneborder{
+	pixel_x = -15
+	},
+/turf/open/floor/grass/fairy/beach,
 /area/ruin/beachplanet/knight)
 "lD" = (
 /obj/machinery/hydroponics/soil,
@@ -193,6 +210,14 @@
 /obj/item/seeds/wheat/oat,
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
+"pn" = (
+/obj/item/shovel/spade,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/ruin/beachplanet/knight)
 "pN" = (
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
@@ -226,17 +251,23 @@
 /obj/item/seeds/poppy/lily/trumpet,
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
+"rQ" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/ruin/beachplanet/knight)
 "si" = (
 /obj/structure/chair/pew{
 	dir = 8
 	},
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
-"sq" = (
-/obj/effect/turf_decal/stoneborder{
-	dir = 8
-	},
-/turf/open/floor/concrete/slab_1,
+"sD" = (
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "sG" = (
 /turf/open/floor/plating/dirt/jungle/dark/lit,
@@ -245,6 +276,20 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
+"tk" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/stoneborder,
+/obj/effect/turf_decal/stoneborder{
+	pixel_x = 15
+	},
+/turf/open/floor/grass{
+	desc = "lovely short grass";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
 /area/ruin/beachplanet/knight)
 "ts" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -313,6 +358,14 @@
 	},
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
+"xI" = (
+/obj/item/cultivator/rake,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/ruin/beachplanet/knight)
 "xN" = (
 /obj/structure/chair/pew/right{
 	dir = 4
@@ -343,6 +396,9 @@
 "zg" = (
 /obj/structure/railing{
 	dir = 4
+	},
+/obj/effect/turf_decal/stoneborder{
+	dir = 8
 	},
 /turf/open/floor/grass{
 	desc = "lovely short grass";
@@ -390,6 +446,9 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/effect/turf_decal/stoneborder{
+	dir = 4
+	},
 /turf/open/floor/grass{
 	desc = "lovely short grass";
 	light_range = 2;
@@ -401,21 +460,40 @@
 /obj/item/reagent_containers/glass/bucket/wooden,
 /turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
+"Dj" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/ruin/beachplanet/knight)
 "EH" = (
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin,
 /turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
-"FD" = (
-/obj/machinery/hydroponics/soil,
-/obj/item/storage/bag/plants,
-/obj/item/seeds/wheat/oat,
-/turf/open/floor/plating/dirt,
+"ES" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/grass/fairy/beach,
 /area/ruin/beachplanet/knight)
 "Gj" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/potato/sweet,
 /turf/open/floor/plating/dirt,
+/area/ruin/beachplanet/knight)
+"Gx" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
 /area/ruin/beachplanet/knight)
 "Ha" = (
 /obj/machinery/hydroponics/soil,
@@ -431,7 +509,9 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood{
+	light_range = 2
+	},
 /area/ruin/beachplanet/knight)
 "Jf" = (
 /obj/machinery/hydroponics/soil,
@@ -444,6 +524,14 @@
 	},
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
+"KE" = (
+/obj/item/storage/bag/plants,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/ruin/beachplanet/knight)
 "KJ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/brflowers,
@@ -453,16 +541,10 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/open/floor/grass/fairy/beach,
-/area/ruin/beachplanet/knight)
-"MB" = (
 /obj/effect/turf_decal/stoneborder{
-	dir = 4
-	},
-/obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/concrete/slab_1,
+/turf/open/floor/grass/fairy/beach,
 /area/ruin/beachplanet/knight)
 "MR" = (
 /obj/structure/railing/wood,
@@ -482,11 +564,8 @@
 	},
 /area/ruin/beachplanet/knight)
 "Np" = (
-/obj/effect/turf_decal/stoneborder/corner{
-	dir = 4;
-	pixel_y = 16;
-	pixel_x = -17;
-	layer = 2.04
+/obj/structure/railing/corner{
+	dir = 1
 	},
 /turf/open/floor/grass{
 	desc = "lovely short grass";
@@ -507,6 +586,12 @@
 	light_range = 2;
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
+/area/ruin/beachplanet/knight)
+"PJ" = (
+/obj/structure/table/wood,
+/obj/structure/curtain/cloth,
+/obj/item/flashlight/flare/torch,
+/turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "PK" = (
 /turf/open/floor/concrete/slab_1,
@@ -587,17 +672,16 @@
 /obj/item/seeds/poppy/lily,
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
-"SI" = (
-/obj/machinery/hydroponics/soil,
-/obj/item/shovel/spade,
-/obj/item/seeds/poppy,
-/turf/open/floor/plating/dirt,
-/area/ruin/beachplanet/knight)
 "SR" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
+"Th" = (
+/turf/open/floor/wood{
+	light_range = 2
+	},
 /area/ruin/beachplanet/knight)
 "Tp" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -611,11 +695,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/beach/lit,
-/area/ruin/beachplanet/knight)
-"Un" = (
-/obj/structure/table/wood,
-/obj/item/flashlight/flare/torch,
-/turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "Uy" = (
 /obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
@@ -648,6 +727,10 @@
 /obj/item/claymore/weak,
 /turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
+"Vx" = (
+/mob/living/simple_animal/butterfly,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/ruin/beachplanet/knight)
 "VF" = (
 /turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
@@ -657,13 +740,14 @@
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
 "VL" = (
-/obj/effect/turf_decal/stoneborder/corner{
-	dir = 8;
-	pixel_y = 17;
-	pixel_x = 16;
-	layer = 2.04
+/obj/structure/railing/corner{
+	dir = 4
 	},
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/grass{
+	desc = "lovely short grass";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
 /area/ruin/beachplanet/knight)
 "WX" = (
 /obj/structure/bed,
@@ -683,8 +767,13 @@
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/ruin/beachplanet/knight)
+"Xz" = (
+/mob/living/simple_animal/butterfly,
+/turf/open/floor/grass/fairy/beach,
+/area/ruin/beachplanet/knight)
 "XF" = (
 /obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
 	light_range = 2;
@@ -712,17 +801,20 @@
 	},
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/beachplanet/knight)
+"ZO" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/ruin/beachplanet/knight)
 "ZS" = (
 /obj/structure/mineral_door/iron,
 /turf/open/floor/plasteel/stairs/medium{
 	dir = 8
 	},
-/area/ruin/beachplanet/knight)
-"ZW" = (
-/obj/machinery/hydroponics/soil,
-/obj/item/cultivator/rake,
-/obj/item/seeds/potato/sweet,
-/turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
 
 (1,1,1) = {"
@@ -800,7 +892,7 @@ zg
 zg
 zg
 Mc
-wm
+ES
 fy
 hD
 hD
@@ -817,34 +909,34 @@ hD
 fy
 Sh
 Ih
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-fR
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+kV
 fy
 fy
 hD
@@ -887,7 +979,7 @@ mx
 mx
 dF
 mx
-VF
+Th
 fR
 wm
 fy
@@ -920,7 +1012,7 @@ hj
 hj
 Ha
 Ha
-cw
+Ha
 hj
 hj
 gX
@@ -931,7 +1023,7 @@ Cb
 VF
 VF
 mx
-VF
+Th
 ve
 wm
 wm
@@ -959,23 +1051,23 @@ hj
 hj
 hj
 hj
+xI
 hj
 hj
+KE
 hj
 hj
-hj
-hj
-hj
+pn
 hj
 hj
 hj
 hj
 mx
-VF
+sD
 VF
 VF
 mx
-VF
+Th
 ve
 fy
 wm
@@ -994,24 +1086,24 @@ fy
 Sh
 Ih
 mx
-Un
+sD
 VF
 VF
-qV
+PJ
 wm
 wm
 hj
 zH
 lD
-dn
+zH
 hj
 hj
 oF
-FD
+oF
 oF
 hj
-hj
-ZW
+fw
+Gj
 Gj
 Gj
 mx
@@ -1019,7 +1111,7 @@ jm
 VF
 VF
 mx
-VF
+Th
 ve
 fy
 fy
@@ -1056,14 +1148,14 @@ hj
 wm
 hj
 hj
-hj
+xI
 hj
 mx
-VF
+sD
 VF
 VF
 mx
-VF
+Th
 ve
 fy
 fy
@@ -1088,9 +1180,9 @@ mx
 mx
 wm
 hj
-hj
+pn
 If
-SI
+If
 If
 wm
 hj
@@ -1107,7 +1199,7 @@ mx
 WZ
 mx
 mx
-VF
+Th
 ve
 fy
 fy
@@ -1132,7 +1224,7 @@ pN
 wm
 wm
 hj
-gf
+kq
 hj
 hj
 wm
@@ -1151,7 +1243,7 @@ hj
 qJ
 qJ
 mx
-VF
+Th
 ve
 gE
 gE
@@ -1175,8 +1267,8 @@ pN
 hj
 wm
 wm
-nJ
-gf
+ts
+kq
 hj
 wm
 wm
@@ -1186,7 +1278,7 @@ qJ
 qJ
 qJ
 qJ
-qJ
+sG
 qJ
 qJ
 qJ
@@ -1195,7 +1287,7 @@ hj
 qJ
 qJ
 mx
-VF
+Th
 ve
 fy
 gE
@@ -1227,10 +1319,10 @@ hj
 qJ
 qJ
 qJ
+sG
 qJ
 qJ
-qJ
-qJ
+Vx
 hj
 wm
 qJ
@@ -1239,7 +1331,7 @@ qJ
 qJ
 hj
 mx
-VF
+Th
 ve
 Zf
 fy
@@ -1267,7 +1359,7 @@ ts
 nJ
 XF
 XF
-qJ
+sG
 qJ
 xN
 AM
@@ -1279,11 +1371,11 @@ Tp
 hj
 wm
 qJ
-qJ
+sG
 qJ
 hj
 mx
-VF
+Th
 ve
 fy
 Tr
@@ -1327,7 +1419,7 @@ qJ
 qJ
 hj
 mx
-MB
+mx
 Np
 fy
 Tr
@@ -1350,7 +1442,7 @@ hj
 qJ
 wm
 qJ
-qJ
+sG
 qJ
 pN
 pN
@@ -1412,11 +1504,11 @@ hj
 QI
 wm
 nJ
-qJ
+Vx
 hj
 PK
 PK
-fy
+Sh
 fy
 Nt
 Nt
@@ -1437,7 +1529,7 @@ mx
 hj
 qJ
 qJ
-hj
+fw
 hj
 hj
 nJ
@@ -1592,7 +1684,7 @@ qJ
 qJ
 PK
 PK
-fy
+Sh
 fy
 fy
 fy
@@ -1629,14 +1721,14 @@ hj
 hj
 nJ
 hj
-hj
-hj
+rQ
+rQ
 hj
 qJ
-qJ
+sG
 mx
 QG
-fy
+Sh
 Nt
 fy
 fy
@@ -1672,14 +1764,14 @@ hj
 hj
 zz
 zz
-hj
-Tp
-Tp
+fw
+ZO
+ZO
 Tp
 qJ
 qJ
 mx
-sq
+mx
 VL
 fy
 fy
@@ -1706,8 +1798,8 @@ hj
 hj
 hj
 hj
-zz
-zz
+Dj
+Dj
 hj
 xq
 no
@@ -1723,7 +1815,7 @@ hj
 qJ
 hj
 mx
-VF
+Th
 eF
 wm
 wm
@@ -1750,7 +1842,7 @@ hj
 hj
 zz
 zz
-zz
+Dj
 hj
 hj
 hj
@@ -1767,7 +1859,7 @@ hj
 pN
 hj
 mx
-VF
+Th
 eF
 wm
 wm
@@ -1804,14 +1896,14 @@ wm
 QI
 QI
 hj
-wm
+Xz
 wm
 hj
 hj
 pN
 hj
 mx
-VF
+Th
 eZ
 wm
 fy
@@ -1836,26 +1928,26 @@ pN
 wm
 hj
 hj
-hj
+fw
 hj
 gf
-hj
-hj
+nJ
+nJ
 hj
 wm
 wm
 QI
-hj
-hj
+Gx
+Gx
 wm
 wm
 hj
-Tp
+hg
 pN
 pN
 qJ
 mx
-VF
+Th
 eZ
 wm
 fy
@@ -1882,9 +1974,9 @@ wm
 hj
 hj
 hj
-hj
-hj
-wm
+nJ
+nJ
+Xz
 wm
 wm
 hj
@@ -1893,13 +1985,13 @@ wm
 wm
 wm
 wm
-Tp
-Tp
+hg
+hg
 pN
 pN
 pN
 mx
-VF
+Th
 eZ
 wm
 fy
@@ -1936,14 +2028,14 @@ hj
 wm
 hj
 hj
-Tp
-Tp
+hg
+hg
 mx
 mx
 WZ
 mx
 mx
-VF
+Th
 eZ
 fy
 gE
@@ -1983,11 +2075,11 @@ hj
 hj
 wm
 mx
-VF
+sD
 VF
 VF
 mx
-VF
+Th
 eZ
 gE
 gE
@@ -2031,7 +2123,7 @@ UQ
 VF
 VF
 mx
-VF
+Th
 eZ
 gE
 gC
@@ -2064,18 +2156,18 @@ vm
 Tp
 Tp
 hj
-hj
+fw
 ue
 wm
-hj
-hj
+QI
+QI
 hj
 mx
-VF
+sD
 VF
 VF
 mx
-VF
+Th
 eZ
 fy
 Zf
@@ -2111,7 +2203,7 @@ Tp
 hj
 ue
 wm
-hj
+QI
 hj
 hj
 mx
@@ -2119,7 +2211,7 @@ Cb
 VF
 VF
 mx
-VF
+Th
 eZ
 fy
 Zf
@@ -2163,7 +2255,7 @@ mx
 mx
 ZS
 mx
-VF
+Th
 eZ
 fy
 fy
@@ -2181,34 +2273,34 @@ hD
 fy
 Sh
 Ih
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-VF
-eZ
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+tk
 fy
 fy
 hD
@@ -2252,7 +2344,7 @@ CA
 CA
 CA
 CA
-Sh
+Np
 fy
 fy
 hD
