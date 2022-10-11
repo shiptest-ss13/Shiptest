@@ -3,13 +3,15 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/dark,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "aj" = (
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "ao" = (
 /obj/structure/sink{
 	pixel_y = 15
@@ -18,73 +20,91 @@
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown)
 "aq" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "ar" = (
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/wood,
-/area/space)
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "as" = (
 /obj/structure/table,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /turf/open/floor/plasteel/grimy,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "aA" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/wood,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "aD" = (
 /obj/structure/railing/corner/wood{
 	dir = 8
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "aF" = (
 /obj/structure/flora/rock/beach,
 /turf/open/water/beach/deep,
-/area/space)
+/area/ruin/beach/oceantown)
+"aM" = (
+/obj/machinery/door/airlock{
+	name = "Employees Only"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/oceantown/shop)
 "aO" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "aP" = (
 /obj/structure/table,
 /obj/machinery/paystand,
 /turf/open/floor/plasteel/dark,
-/area/space)
-"aX" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 6
+/area/ruin/beach/oceantown/shop)
+"aR" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "bb" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "bf" = (
 /obj/structure/chair/wood{
 	dir = 4
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown)
 "bj" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "br" = (
 /obj/structure/railing/wood{
 	dir = 10
@@ -92,38 +112,42 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "bs" = (
 /obj/machinery/vending/cola/random,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "bu" = (
 /obj/structure/table,
-/turf/open/floor/wood,
-/area/space)
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "bD" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"bI" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "bV" = (
 /obj/structure/railing/corner/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ca" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "cb" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -131,25 +155,31 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ce" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/grape,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "cs" = (
 /obj/structure/railing/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ct" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "cx" = (
 /obj/structure/railing{
 	dir = 8
@@ -158,7 +188,7 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "cy" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -171,27 +201,30 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "cA" = (
 /obj/effect/spawner/structure/window,
-/obj/structure/curtain,
+/obj/structure/curtain/cloth,
 /turf/open/floor/plating,
-/area/space)
-"cF" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass,
-/area/space)
-"cM" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/effect/turf_decal/weather/sand{
-	dir = 4
+/area/ruin/beach/oceantown)
+"cE" = (
+/obj/structure/toilet{
+	pixel_y = 13
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
 "cN" = (
 /turf/open/floor/plasteel/white,
-/area/space)
+/area/ruin/beach/oceantown/bar)
+"df" = (
+/obj/structure/table,
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "dj" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
@@ -199,74 +232,91 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "dl" = (
 /obj/structure/railing/corner/wood{
 	dir = 1
 	},
 /turf/open/water/beach,
-/area/space)
-"du" = (
-/obj/effect/turf_decal/weather/sand,
-/obj/effect/turf_decal/weather/sand{
-	dir = 1
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "dv" = (
 /obj/structure/railing/corner/wood{
 	dir = 4
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "dy" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "dA" = (
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "dF" = (
 /obj/structure/chair/sofa{
 	dir = 4
 	},
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "dL" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/cyan{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
+"dU" = (
+/obj/structure/fence,
+/turf/open/floor/concrete/slab_1{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "dX" = (
 /obj/structure/table/wood,
 /obj/item/storage/fancy/candle_box,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "dY" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ec" = (
 /turf/open/floor/plating/beach/coastline_t{
-	dir = 5
+	dir = 5;
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "ed" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
+"ef" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/mirror,
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "eh" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -274,122 +324,131 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "el" = (
 /obj/structure/table,
 /obj/item/paper_bin/bundlenatural,
 /obj/item/pen/fourcolor,
-/turf/open/floor/plating,
-/area/space)
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
 "ep" = (
 /obj/machinery/grill,
 /obj/item/reagent_containers/food/snacks/meat/steak,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ev" = (
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ex" = (
 /obj/effect/turf_decal/sand,
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "eB" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
 "eG" = (
 /obj/structure/railing/corner{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "eI" = (
 /obj/structure/table/wood/bar,
 /obj/item/flashlight/lamp,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown)
 "eJ" = (
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "eK" = (
 /obj/machinery/shower{
 	pixel_y = 15
 	},
 /obj/structure/curtain,
 /turf/open/floor/plasteel/mono,
-/area/space)
+/area/ruin/beach/oceantown)
 "eM" = (
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "eN" = (
 /obj/structure/chair/sofa/corner{
 	dir = 1
 	},
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "eV" = (
 /obj/structure/railing/wood{
 	dir = 4
 	},
 /turf/open/floor/plating/beach/coastline_t{
-	dir = 1
+	dir = 1;
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "fh" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown)
 "fn" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/donut/slimejelly,
 /obj/effect/spawner/lootdrop/donut,
 /obj/effect/spawner/lootdrop/donut,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "fp" = (
 /obj/structure/railing/wood,
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "fu" = (
 /obj/effect/turf_decal/sand,
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "fv" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"fw" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/effect/turf_decal/weather/sand{
-	dir = 6
-	},
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "fy" = (
 /obj/structure/railing/corner/wood,
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/turf/open/floor/plating/dirt/dark,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "fz" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -397,53 +456,72 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"fA" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"fC" = (
+/obj/structure/table/wood,
+/turf/open/floor/carpet/green,
+/area/ruin/beach/oceantown/hotel)
 "fD" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/corner/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "fG" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "fJ" = (
 /obj/structure/chair/sofa/corner{
 	dir = 4
 	},
 /turf/open/floor/carpet/green,
-/area/space)
-"fT" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/effect/turf_decal/weather/sand,
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
+"fL" = (
+/obj/structure/table,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "fV" = (
 /obj/structure/railing{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "fZ" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/cabbage,
-/turf/open/floor/plating/dirt,
-/area/space)
-"gc" = (
-/obj/structure/flora/ausbushes/brflowers,
-/obj/effect/turf_decal/weather/sand,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "gd" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown)
 "ge" = (
 /obj/structure/table,
 /obj/structure/sink{
@@ -451,82 +529,85 @@
 	layer = 2.7
 	},
 /obj/item/pizzabox/meat,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "gi" = (
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown)
 "gn" = (
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "gu" = (
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/sand/plating{
+	light_range = 2
+	},
 /obj/machinery/shower{
 	pixel_y = 15
 	},
 /obj/effect/turf_decal/weather/sand,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/oceantown)
 "gv" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /turf/open/floor/concrete,
-/area/space)
-"gz" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/effect/turf_decal/weather/sand{
-	dir = 6
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "gN" = (
 /obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "gX" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown)
 "gZ" = (
 /obj/machinery/door/window{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "hb" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "hc" = (
 /obj/machinery/autolathe,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
-"hg" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "hl" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "hu" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "hw" = (
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_y = 32;
 	pixel_x = 32
 	},
 /obj/item/kirbyplants/random,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "hF" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
@@ -534,47 +615,40 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/orange{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "hL" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "hM" = (
 /obj/structure/flora/tree/palm{
 	icon_state = "palm2"
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"hQ" = (
-/obj/structure/flora/tree/jungle/small{
-	icon_state = "tree3"
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "hW" = (
 /obj/structure/railing/wood{
 	dir = 1
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "hY" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
 "id" = (
 /obj/structure/flora/ausbushes/genericbush,
-/obj/effect/turf_decal/weather/sand{
-	dir = 1
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "ie" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -582,53 +656,64 @@
 /obj/structure/railing/wood{
 	dir = 10
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ih" = (
 /obj/structure/mineral_door/wood{
 	name = "Hotel"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/beach/oceantown)
+"ij" = (
+/obj/item/chisel,
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "in" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "io" = (
 /turf/open/floor/glass{
-	baseturfs = /turf/open/water
+	baseturfs = /turf/open/water;
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "iu" = (
 /obj/structure/bed,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "iv" = (
 /obj/structure/chair/sofa/left,
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "iw" = (
 /obj/structure/flora/rock/pile,
-/turf/open/floor/plating/dirt/dark,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ix" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/donut/slimejelly,
 /obj/effect/spawner/lootdrop/donut,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "iz" = (
 /obj/machinery/jukebox,
-/turf/open/floor/light/colour_cycle/dancefloor_a,
-/area/space)
+/turf/open/floor/light,
+/area/ruin/beach/oceantown/bar)
 "iC" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "iM" = (
 /turf/template_noop,
 /area/space)
@@ -636,19 +721,16 @@
 /obj/structure/railing/corner/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "iT" = (
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree4"
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"iV" = (
-/turf/open/floor/plating/beach/coastline_b{
-	dir = 8
-	},
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "iW" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Grocery Store"
@@ -657,19 +739,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/space)
-"iZ" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/effect/turf_decal/weather/sand{
-	dir = 4
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"je" = (
-/turf/open/floor/plating/beach/coastline_b{
-	dir = 9
-	},
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "jj" = (
 /obj/structure/railing/wood{
 	dir = 1
@@ -678,58 +748,60 @@
 	dir = 10
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "jG" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "jL" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/peas,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "jQ" = (
 /obj/structure/railing/corner/wood,
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "jY" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/tower,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "kb" = (
 /turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown)
 "kd" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "kf" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/space)
-"kg" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 4
+/turf/open/floor/wood{
+	light_range = 2
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "kj" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "km" = (
-/obj/structure/table,
+/obj/structure/closet/athletic_mixed,
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "kn" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown)
 "kw" = (
 /obj/structure/sink{
 	dir = 8;
@@ -741,20 +813,22 @@
 	pixel_y = -3
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown)
 "kD" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/blue,
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "kE" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "kG" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -762,14 +836,16 @@
 /obj/structure/railing/wood{
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "kH" = (
 /obj/machinery/vending/boozeomat{
 	set_obj_flags = "EMAGGED"
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "kI" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -780,18 +856,22 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "kN" = (
 /obj/structure/railing/corner,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "kP" = (
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 6
 	},
 /turf/open/floor/plasteel/white,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "kW" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "General Store"
@@ -800,56 +880,48 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "lb" = (
 /obj/machinery/door/airlock/wood{
 	name = "Beach Bar"
 	},
-/turf/open/floor/wood,
-/area/space)
-"lc" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/effect/turf_decal/weather/sand{
-	dir = 4
+/turf/open/floor/wood{
+	light_range = 2
 	},
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "lj" = (
 /obj/machinery/light/small,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "ly" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/tobacco,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "lE" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/water/beach/deep,
-/area/space)
+/area/ruin/beach/oceantown)
 "lH" = (
 /obj/structure/railing/wood{
 	dir = 4
 	},
 /turf/open/water/beach/deep,
-/area/space)
+/area/ruin/beach/oceantown)
 "lL" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
 /turf/open/water/beach,
-/area/space)
-"lR" = (
-/obj/structure/railing/wood{
-	dir = 8
-	},
-/turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "lT" = (
 /obj/structure/fluff/beach_umbrella/cap,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "lZ" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
@@ -857,23 +929,25 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/blue{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "mc" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"mn" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 9
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
+"mi" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood{
+	light_range = 2
 	},
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown)
 "mr" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
@@ -881,63 +955,64 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/orange{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "mt" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 4
 	},
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
 "mu" = (
 /obj/structure/closet/crate/bin,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "my" = (
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree3"
 	},
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "mz" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/stalkybush{
 	name = "reeds"
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "mG" = (
 /obj/structure/railing/corner,
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "mJ" = (
 /obj/structure/chair/sofa/right{
 	dir = 1
 	},
 /turf/open/floor/carpet/green,
-/area/space)
-"mK" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/effect/turf_decal/weather/sand{
-	dir = 4
-	},
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "mR" = (
 /obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "mX" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "mY" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -947,74 +1022,75 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/space)
-"nc" = (
-/obj/structure/mineral_door/wood{
-	name = "Hotel"
-	},
-/turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "ni" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "nj" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Johann's Bar"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "nu" = (
 /turf/open/floor/plating/beach/coastline_t/sandwater_inner{
-	dir = 4
+	dir = 4;
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "nC" = (
 /obj/structure/fluff/beach_umbrella,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "nF" = (
 /obj/structure/flora/ausbushes/stalkybush{
 	name = "reeds"
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/water/beach/deep,
-/area/space)
+/area/ruin/beach/oceantown)
 "nL" = (
 /obj/structure/railing/wood,
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/dark,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "nM" = (
 /obj/machinery/washing_machine,
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "nT" = (
 /obj/effect/turf_decal/weather/sand,
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "nZ" = (
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "oc" = (
 /obj/effect/turf_decal/siding/thinplating/light,
 /turf/open/floor/plasteel/white,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "om" = (
 /obj/machinery/door/airlock{
 	name = "Guest Room"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "oo" = (
 /obj/structure/table,
 /obj/effect/turf_decal/siding/wood{
@@ -1023,72 +1099,77 @@
 /obj/item/paper_bin/bundlenatural,
 /obj/item/pen,
 /turf/open/floor/plasteel/grimy,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "ox" = (
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree4"
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "oz" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/cyan{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "oF" = (
 /turf/open/floor/plating/beach/coastline_t{
-	dir = 1
+	dir = 1;
+	light_range = 2
 	},
-/area/space)
-"oL" = (
-/turf/open/floor/plating/beach/coastline_b,
-/area/space)
+/area/ruin/beach/oceantown)
 "oM" = (
 /obj/structure/table,
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/space)
-"oP" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "oS" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"oT" = (
+/turf/open/floor/carpet,
+/area/ruin/beach/oceantown)
 "pe" = (
 /obj/item/stack/sheet/mineral/sandstone,
 /obj/item/stack/sheet/mineral/sandstone,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "pn" = (
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "pq" = (
 /obj/structure/mineral_door/sandstone,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "pr" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1
 	},
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
 "ps" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "pt" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -1100,13 +1181,15 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "pu" = (
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "pv" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
@@ -1115,103 +1198,127 @@
 	dir = 5
 	},
 /turf/open/water/beach,
-/area/space)
-"pA" = (
-/turf/open/floor/light/colour_cycle/dancefloor_a,
-/area/space)
+/area/ruin/beach/oceantown)
 "pB" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/obj/effect/turf_decal/weather/sand{
-	dir = 4
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "pE" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/cotton,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "qd" = (
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "qp" = (
 /obj/effect/turf_decal/weather/sand,
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "qs" = (
 /obj/structure/railing/corner/wood,
 /turf/open/water/beach/deep,
-/area/space)
+/area/ruin/beach/oceantown)
 "qu" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/cola{
 	name = "Ocean Cola"
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "qw" = (
-/turf/open/floor/plating/dirt/dark,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "qB" = (
 /obj/effect/turf_decal/sand,
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "qW" = (
 /obj/structure/chair/wood{
 	dir = 4
 	},
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown)
 "qZ" = (
 /obj/structure/railing/wood{
 	dir = 10
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "rc" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "rf" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/bottle/rum,
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "rg" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
+"rh" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/dresser,
+/turf/open/floor/carpet,
+/area/ruin/beach/oceantown)
 "ri" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/carrot,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "rl" = (
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ru" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/chanter,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ry" = (
 /obj/structure/chair/stool/bar{
 	dir = 4
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "rH" = (
 /obj/machinery/vending/boozeomat,
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "rL" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
@@ -1219,30 +1326,34 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/cyan{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "rN" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /obj/effect/turf_decal/siding/thinplating/light,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/white,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "rQ" = (
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "rR" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "sa" = (
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "sb" = (
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -1250,41 +1361,59 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "se" = (
 /obj/structure/table,
 /obj/machinery/microwave,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "sh" = (
 /obj/item/toy/beach_ball,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"sj" = (
+/obj/structure/chair/sofa/right{
+	dir = 4
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "sp" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/space)
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "sq" = (
 /obj/structure/curtain,
 /obj/machinery/shower{
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono,
-/area/space)
+/area/ruin/beach/oceantown)
 "sr" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
 	},
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "sy" = (
 /obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown)
 "sA" = (
 /obj/structure/table/wood/fancy/black,
 /obj/machinery/light/dim,
@@ -1293,48 +1422,60 @@
 	pixel_x = 8
 	},
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "sH" = (
 /obj/structure/railing/wood,
-/turf/open/floor/plating/dirt,
-/area/space)
-"sL" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/effect/turf_decal/weather/sand{
-	dir = 6
+/turf/open/floor/plating/dirt{
+	light_range = 2
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "sQ" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt/dark,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "sT" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
 /obj/structure/closet/crate/bin,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "sX" = (
 /obj/structure/mineral_door/wood{
 	name = "Bedroom"
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown)
 "te" = (
 /obj/structure/chair/sofa/left,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ti" = (
 /obj/structure/flora/junglebush,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "tj" = (
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/oceantown)
+"tr" = (
+/turf/open/floor/concrete{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"tw" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/turf/open/floor/carpet,
+/area/ruin/beach/oceantown/hotel)
 "tC" = (
 /obj/structure/railing{
 	dir = 8
@@ -1342,30 +1483,37 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "tD" = (
 /obj/structure/table,
 /obj/machinery/light/small,
 /obj/structure/bedsheetbin,
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
+"tI" = (
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown/shop)
 "tJ" = (
 /obj/structure/toilet{
 	dir = 4;
 	pixel_x = -2
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown)
 "tQ" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "tU" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/eggplant,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "tW" = (
 /obj/structure/table,
 /obj/item/seeds/grass,
@@ -1373,8 +1521,10 @@
 /obj/structure/sign/poster/official/fruit_bowl{
 	pixel_y = 32
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "tY" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/turf_decal/weather/sand{
@@ -1384,19 +1534,24 @@
 	dir = 9
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "ue" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "uh" = (
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/space)
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown/bar)
 "un" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/donut,
@@ -1405,23 +1560,19 @@
 /obj/effect/spawner/lootdrop/donut,
 /obj/effect/spawner/lootdrop/donut/slimejelly,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
-"uq" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 5
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "ur" = (
 /obj/structure/railing/wood{
 	dir = 8
 	},
 /turf/open/water/beach/deep,
-/area/space)
+/area/ruin/beach/oceantown)
 "uu" = (
 /obj/structure/table/wood,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "uy" = (
 /obj/structure/rack,
 /obj/machinery/light{
@@ -1432,61 +1583,63 @@
 /obj/item/shovel,
 /obj/item/shovel,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
-"uB" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "uC" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "uD" = (
 /turf/open/floor/plating/beach/coastline_t{
-	dir = 4
+	dir = 4;
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "uI" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/watermelon,
 /obj/item/shovel/spade,
-/turf/open/floor/plating/dirt,
-/area/space)
-"uK" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "uT" = (
 /turf/open/floor/plating/beach/sand{
 	baseturfs = s
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "uV" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown)
 "uW" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"vc" = (
+/obj/structure/mineral_door/wood{
+	name = "Hotel"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
 "vf" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "vn" = (
 /obj/structure/table/wood/bar,
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown)
 "vp" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -1494,57 +1647,50 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
-"vt" = (
-/obj/structure/railing/wood{
-	dir = 4
+/obj/item/melee/roastingstick,
+/obj/item/reagent_containers/food/snacks/sausage,
+/turf/open/floor/plating/dirt{
+	light_range = 2
 	},
-/turf/open/water/beach,
-/area/space)
-"vv" = (
-/turf/open/floor/plating/beach/coastline_b{
-	dir = 5
-	},
-/area/space)
+/area/ruin/beach/oceantown)
 "vy" = (
 /obj/machinery/pdapainter,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "vE" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "vF" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/wheat,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "vI" = (
 /obj/structure/table/wood,
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown)
 "vL" = (
 /obj/structure/table/wood,
-/turf/open/floor/plating/beach/sand,
-/area/space)
-"wc" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 10
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "wf" = (
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "wo" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "wt" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
@@ -1552,11 +1698,13 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/orange{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "wu" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -1568,21 +1716,23 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "ww" = (
 /obj/structure/statue/sandstone/assistant,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "wB" = (
 /turf/open/floor/plating/beach/coastline_t/sandwater_inner{
 	dir = 1
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "wF" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "wH" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1590,8 +1740,10 @@
 /obj/structure/railing/wood{
 	dir = 8
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "wN" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/turf_decal/weather/sand{
@@ -1601,63 +1753,78 @@
 	dir = 10
 	},
 /turf/open/water/beach,
-/area/space)
-"wP" = (
-/obj/structure/flora/tree/jungle/small{
-	icon_state = "tree1"
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "wS" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "wZ" = (
 /obj/item/stack/sheet/mineral/sandstone,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "xd" = (
 /turf/open/floor/plating/beach/coastline_t/sandwater_inner,
-/area/space)
+/area/ruin/beach/oceantown)
+"xh" = (
+/turf/closed/wall/mineral/wood/nonmetal,
+/area/ruin/beach/oceantown)
 "xn" = (
 /turf/closed/wall/mineral/wood/nonmetal,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "xo" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "xp" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
 	},
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "xx" = (
 /obj/structure/flora/tree/palm{
 	icon_state = "palm2"
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"xy" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown/shop)
 "xz" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/aloe,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "xE" = (
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree1"
 	},
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
+"xF" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/carpet/green,
+/area/ruin/beach/oceantown)
 "xH" = (
 /obj/structure/toilet{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown)
 "xK" = (
 /obj/structure/railing/corner/wood{
 	dir = 8
@@ -1665,32 +1832,37 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt/dark,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "xL" = (
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "xO" = (
 /obj/structure/fence/door{
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/oceantown)
 "yb" = (
 /obj/structure/railing/wood{
 	dir = 6
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "yc" = (
 /obj/structure/rack,
+/obj/item/storage/box/drinkingglasses,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "yl" = (
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "yu" = (
 /obj/structure/table/wood,
 /obj/structure/sign/poster/contraband{
@@ -1711,7 +1883,7 @@
 	pixel_x = -9
 	},
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "yz" = (
 /obj/effect/turf_decal/road/stripes{
 	dir = 4
@@ -1719,14 +1891,18 @@
 /obj/effect/turf_decal/road/stripes{
 	dir = 8
 	},
-/turf/open/floor/concrete/pavement,
-/area/space)
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "yA" = (
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "yD" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -1738,13 +1914,13 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "yE" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
 "yJ" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
@@ -1752,18 +1928,22 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/orange{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "yQ" = (
 /obj/structure/railing/corner/wood,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "yS" = (
 /turf/closed/wall/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
 "yX" = (
 /obj/structure/railing/wood{
 	dir = 6
@@ -1771,81 +1951,100 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "zd" = (
 /obj/structure/fence,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/oceantown)
 "zg" = (
 /obj/structure/chair/stool/bar{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "zk" = (
 /obj/structure/chair/sofa,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "zl" = (
 /obj/structure/sign/poster/retro/build{
 	pixel_y = -32;
 	pixel_x = 32
 	},
 /obj/item/kirbyplants/random,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"zr" = (
+/obj/structure/rack,
+/obj/item/reagent_containers/food/snacks/chocolatebar,
+/obj/item/reagent_containers/food/snacks/chocolatebar,
+/obj/item/reagent_containers/food/snacks/chocolatebar,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/beach/oceantown/shop)
 "zv" = (
 /obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown)
 "zD" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/cherry,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "zI" = (
 /obj/structure/railing/wood{
 	dir = 4
 	},
-/turf/open/floor/plating/beach/coastline_b,
-/area/space)
-"zK" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 9
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/water/beach,
+/area/ruin/beach/oceantown)
 "zM" = (
 /obj/structure/railing/wood{
 	dir = 4
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "zP" = (
 /obj/structure/railing/wood,
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "zQ" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "zU" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/banana,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "zX" = (
 /obj/machinery/biogenerator,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "zZ" = (
 /obj/structure/table/wood/fancy/black,
 /obj/machinery/light/dim{
@@ -1856,46 +2055,44 @@
 	pixel_x = 3
 	},
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Ac" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/bananalamp,
 /turf/open/floor/carpet,
-/area/space)
-"Ai" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/effect/turf_decal/weather/sand{
-	dir = 1
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "An" = (
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree2"
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "Ap" = (
 /obj/structure/window{
 	dir = 4
 	},
 /obj/machinery/vending/cigarette/beach,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Ax" = (
 /obj/item/kirbyplants/random,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown/hotel)
 "Ay" = (
 /turf/open/floor/plating/beach/sand{
-	icon_state = "sand_dug"
+	icon_state = "sand_dug";
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "AA" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/plump,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "AD" = (
 /obj/structure/table,
 /obj/structure/sink{
@@ -1903,27 +2100,33 @@
 	pixel_y = 6;
 	pixel_x = 13
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "AL" = (
 /obj/machinery/door/window,
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "AM" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "AS" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "AY" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -1932,104 +2135,105 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Bd" = (
 /obj/structure/bookcase/random,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Be" = (
 /obj/structure/table,
 /obj/item/pizzabox/meat,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Bl" = (
 /obj/structure/table,
-/turf/open/floor/plating,
-/area/space)
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
 "Bq" = (
 /obj/structure/mineral_door/wood{
 	name = "Checkpoint"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
-"Br" = (
-/obj/effect/turf_decal/weather/sand,
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"Bu" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/leafybush,
-/obj/effect/turf_decal/weather/sand{
-	dir = 4
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "BC" = (
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "BI" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "BP" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "BV" = (
 /obj/structure/filingcabinet,
-/obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/plasteel/grimy,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "BX" = (
 /obj/machinery/vending/boozeomat{
 	set_obj_flags = "EMAGGED"
 	},
 /turf/closed/wall/mineral/wood/nonmetal,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "BY" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Ca" = (
 /obj/structure/railing/wood,
 /turf/open/water/beach/deep,
-/area/space)
+/area/ruin/beach/oceantown)
 "Cd" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/fernybush,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "Ck" = (
 /obj/structure/railing/corner/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt/dark,
-/area/space)
-"Cn" = (
-/obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Cq" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Cv" = (
 /obj/structure/reagent_dispensers/watertank/high,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"Cz" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/beach/oceantown/hotel)
 "CC" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "CF" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -2044,18 +2248,32 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "CG" = (
 /obj/structure/flora/ausbushes/stalkybush{
 	name = "reeds"
 	},
 /turf/open/water/beach/deep,
-/area/space)
+/area/ruin/beach/oceantown)
+"CJ" = (
+/obj/machinery/light,
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown/shop)
 "CS" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/railing/corner/wood,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"CT" = (
+/obj/structure/rack,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/beach/oceantown/shop)
 "CW" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
@@ -2063,18 +2281,22 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/cyan{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "De" = (
 /obj/structure/railing/wood,
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Dj" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -2086,7 +2308,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Dk" = (
 /obj/structure/railing{
 	dir = 4
@@ -2094,13 +2316,11 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
-"Dq" = (
-/turf/open/floor/plating/beach/coastline_b{
-	dir = 6
+/obj/item/melee/roastingstick,
+/turf/open/floor/plating/dirt{
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "Dy" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
@@ -2108,47 +2328,75 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"DC" = (
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown/bar)
 "DD" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/bamboo,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "DE" = (
 /obj/structure/railing/wood,
-/turf/open/floor/plating/dirt/dark,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "DP" = (
 /obj/structure/flora/ausbushes/genericbush,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "DT" = (
 /obj/structure/chair/plastic,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"Eb" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/grass,
+/area/ruin/beach/oceantown)
+"Ed" = (
+/obj/machinery/shower{
+	pixel_y = 15
+	},
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
 "Em" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/structure/railing/corner/wood,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "En" = (
 /obj/structure/railing/wood{
 	dir = 8
 	},
 /turf/open/floor/plating/beach/coastline_t{
-	dir = 1
+	dir = 1;
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "Eo" = (
 /obj/structure/closet/crate/bin,
 /obj/structure/closet/crate/bin,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Er" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
@@ -2156,57 +2404,70 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/purple{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "Eu" = (
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Ex" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/shaker,
 /obj/item/reagent_containers/glass/rag,
-/turf/open/floor/wood,
-/area/space)
+/obj/machinery/light/small,
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown/bar)
 "Ez" = (
 /obj/structure/chair/stool/bar{
 	dir = 8
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "EC" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "EH" = (
 /obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown)
 "EJ" = (
 /turf/open/floor/plasteel/stairs{
 	dir = 1;
 	color = "#55391A"
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "EN" = (
-/turf/open/floor/light/colour_cycle/dancefloor_b,
-/area/space)
+/turf/open/floor/light,
+/area/ruin/beach/oceantown/bar)
 "EQ" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ER" = (
 /obj/structure/railing,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "ES" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
@@ -2215,44 +2476,57 @@
 	dir = 10
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "EU" = (
 /obj/structure/railing/wood,
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "EX" = (
 /obj/structure/table/wood/bar,
-/turf/open/floor/wood,
-/area/space)
+/obj/item/book/manual/ripley_build_and_repair,
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "FC" = (
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree6"
 	},
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "FF" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
+"FI" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp,
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
 "FJ" = (
 /obj/structure/chair{
 	dir = 1;
 	name = "gay chair"
 	},
 /turf/open/floor/glass{
-	baseturfs = /turf/open/water
+	baseturfs = /turf/open/water;
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "FL" = (
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "FM" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/drinkingglass{
@@ -2267,7 +2541,7 @@
 	pixel_x = 10
 	},
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "FO" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -2276,35 +2550,41 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "FT" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown)
 "FW" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Ga" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Gd" = (
 /obj/structure/table,
 /obj/structure/window{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Ge" = (
 /obj/effect/turf_decal/road/stripes{
 	dir = 8
@@ -2312,91 +2592,123 @@
 /obj/effect/turf_decal/road/stripes{
 	dir = 4
 	},
-/turf/open/floor/concrete/pavement,
-/area/space)
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Gh" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "Gk" = (
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Gn" = (
 /turf/open/water/beach/deep,
-/area/space)
+/area/ruin/beach/oceantown)
 "Go" = (
 /turf/open/floor/plating/beach/coastline_t{
 	dir = 6
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "Gq" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/tea,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Gt" = (
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"Gz" = (
+/obj/structure/table/wood/bar,
+/obj/item/book/manual/wiki/medical_cloning,
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "GA" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "GE" = (
 /obj/effect/turf_decal/road{
 	dir = 4
 	},
-/turf/open/floor/concrete/pavement,
-/area/space)
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "GI" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "GJ" = (
 /obj/structure/rack,
 /obj/item/storage/fancy/donut_box,
 /obj/item/storage/fancy/donut_box,
 /obj/item/storage/fancy/donut_box,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
-"GK" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
+/area/ruin/beach/oceantown/shop)
+"GZ" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
 	},
-/obj/structure/closet/crate/bin,
-/turf/open/floor/wood,
-/area/space)
-"Hg" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 5
-	},
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown)
 "Hi" = (
 /obj/structure/railing/wood{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Hp" = (
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown/bar)
 "Hu" = (
 /obj/structure/window{
 	dir = 4
@@ -2406,63 +2718,77 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Hv" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Hz" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "HA" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "HJ" = (
 /obj/structure/chair/plastic{
 	dir = 1
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "HO" = (
 /obj/machinery/seed_extractor,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "HQ" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/structure/railing/corner/wood,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "HW" = (
 /obj/structure/table,
 /obj/item/stack/sheet/mineral/coal/ten,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Ia" = (
 /obj/structure/bonfire/prelit,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Ib" = (
 /obj/structure/fence{
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/oceantown)
 "Ie" = (
 /obj/structure/railing/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Im" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Beachside Inn"
@@ -2472,7 +2798,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "In" = (
 /obj/structure/table/wood/fancy/black,
 /obj/item/reagent_containers/food/drinks/drinkingglass{
@@ -2480,12 +2806,12 @@
 	pixel_x = -1
 	},
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Io" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "Ip" = (
 /obj/structure/table,
 /obj/structure/table,
@@ -2494,44 +2820,51 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "IA" = (
 /obj/machinery/light/small,
 /obj/item/kirbyplants/random,
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "IC" = (
 /obj/structure/filingcabinet,
-/turf/open/floor/plating,
-/area/space)
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
 "IF" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown)
 "IR" = (
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks/beer{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/bar)
+"IU" = (
+/obj/structure/chair/sofa/left{
+	dir = 4
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "IX" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
 "IZ" = (
 /obj/structure/table,
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/space)
-"Jc" = (
-/obj/effect/turf_decal/weather/sand,
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "Jh" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -2539,8 +2872,10 @@
 /obj/structure/railing/wood{
 	dir = 6
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Jl" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -2549,65 +2884,58 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/space)
-"Jm" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/effect/turf_decal/weather/sand{
-	dir = 8
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Jw" = (
 /obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
 "Jx" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "JD" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "JL" = (
 /obj/structure/railing/wood{
 	dir = 5
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "JQ" = (
 /obj/structure/railing/wood,
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
-"JR" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 8
+/turf/open/floor/plating/dirt{
+	light_range = 2
 	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "JS" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/apple,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "JT" = (
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown/shop)
 "JU" = (
 /obj/structure/table/wood,
 /obj/machinery/light/dim,
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "JY" = (
 /obj/structure/chair,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Kc" = (
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 4
@@ -2617,13 +2945,13 @@
 	pixel_x = -8
 	},
 /turf/open/floor/plasteel/white,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Kd" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
 "Kk" = (
 /obj/structure/railing/wood{
 	dir = 6
@@ -2631,62 +2959,73 @@
 /obj/structure/railing/wood{
 	dir = 10
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Kn" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/wheat/rice,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Ko" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/railing/wood,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Kr" = (
 /obj/structure/table/wood/bar,
 /obj/item/flashlight/lamp/bananalamp,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown)
 "Kx" = (
 /obj/effect/turf_decal/road/stripes,
 /obj/effect/turf_decal/road/stripes{
 	dir = 1
 	},
-/turf/open/floor/concrete/pavement,
-/area/space)
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "KB" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/grimy,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "KC" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/cyan{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "KD" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/white,
-/area/space)
-"KK" = (
-/obj/structure/flora/ausbushes/genericbush,
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown/bar)
+"KE" = (
+/turf/open/floor/carpet,
+/area/ruin/beach/oceantown/hotel)
 "KN" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "KO" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown)
 "KR" = (
 /obj/structure/rack,
 /obj/structure/sign/poster/official/pda_ad{
@@ -2697,7 +3036,7 @@
 /obj/item/pda,
 /obj/item/pda,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "KT" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
@@ -2705,27 +3044,33 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "KU" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/potato,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Lc" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/cornuto{
 	name = "perfect cornuto";
 	desc = "you can't be quite sure how long this cornuto has sat in the sun. Yet it remains perfectly intact. No melting, no signs of damage. It beckons to you."
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Ln" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown)
 "Lo" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -2734,48 +3079,59 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Lr" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/orange,
-/turf/open/floor/plating/dirt,
-/area/space)
-"LB" = (
-/obj/structure/railing/wood{
-	dir = 4
+/turf/open/floor/plating/dirt{
+	light_range = 2
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/area/ruin/beach/oceantown)
+"Lx" = (
+/obj/structure/rack,
+/obj/item/reagent_containers/food/snacks/candiedapple,
+/obj/item/reagent_containers/food/snacks/candiedapple,
+/obj/item/reagent_containers/food/snacks/candiedapple,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/beach/oceantown/shop)
 "LE" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
+"LN" = (
+/obj/effect/turf_decal/weather/sand{
+	dir = 6
+	},
+/obj/effect/turf_decal/weather/sand{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
+/turf/open/floor/carpet/blue{
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/ruin/beach/oceantown)
 "LR" = (
 /obj/structure/sign/poster/official/here_for_your_safety{
 	pixel_y = -32
 	},
-/turf/open/floor/plating,
-/area/space)
-"LT" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/leafybush,
-/obj/effect/turf_decal/weather/sand{
-	dir = 1
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"Mb" = (
-/obj/machinery/shower{
-	pixel_y = 15
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
 "Mk" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "The 'Nutshack"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/beach/oceantown/shop)
+"Mm" = (
+/obj/structure/sink{
+	pixel_y = 17
+	},
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Mp" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -2783,46 +3139,40 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Mq" = (
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "Ms" = (
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Mu" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
-"MD" = (
-/obj/structure/flora/ausbushes/grassybush,
-/obj/effect/turf_decal/weather/sand{
-	dir = 8
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
 	},
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown)
 "MF" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "MG" = (
 /obj/structure/chair/office{
 	dir = 4
 	},
-/turf/open/floor/plating,
-/area/space)
-"MN" = (
-/turf/open/floor/plating/beach/coastline_b{
-	dir = 1
-	},
-/area/space)
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
 "MR" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -2834,23 +3184,27 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "MV" = (
 /obj/item/cultivator/rake,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "MY" = (
 /obj/structure/table,
 /obj/item/book/manual/wiki/barman_recipes,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown/bar)
 "Ne" = (
 /obj/machinery/light/floor,
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
 "Np" = (
-/turf/open/floor/plating,
-/area/space)
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
 "Nu" = (
 /obj/structure/chair{
 	dir = 1;
@@ -2858,21 +3212,17 @@
 	desc = "What a neutral chair"
 	},
 /turf/open/floor/glass{
-	baseturfs = /turf/open/water/beach/deep
+	baseturfs = /turf/open/water;
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "Nw" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/sugarcane,
-/turf/open/floor/plating/dirt,
-/area/space)
-"Ny" = (
-/obj/structure/flora/ausbushes/grassybush,
-/obj/effect/turf_decal/weather/sand{
-	dir = 1
+/turf/open/floor/plating/dirt{
+	light_range = 2
 	},
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown)
 "NA" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/bottle/rum{
@@ -2882,39 +3232,38 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "NB" = (
 /obj/structure/railing/corner/wood,
-/turf/open/floor/plating/dirt/dark,
-/area/space)
-"ND" = (
-/obj/structure/flora/ausbushes/grassybush,
-/obj/effect/turf_decal/weather/sand{
-	dir = 4
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
 	},
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown)
 "NS" = (
 /obj/item/shovel/spade,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "NT" = (
 /obj/structure/fence{
 	dir = 9;
 	icon_state = "corner"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/oceantown)
 "NV" = (
 /obj/structure/flora/tree/palm,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "NX" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/donut/jelly,
 /obj/effect/spawner/lootdrop/donut/jelly,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Oe" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -2922,18 +3271,32 @@
 /obj/structure/railing/corner/wood{
 	dir = 8
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Of" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "Oh" = (
 /obj/structure/railing,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/bar)
+"Ov" = (
+/obj/structure/rack,
+/obj/item/reagent_containers/food/snacks/muffin,
+/obj/item/reagent_containers/food/snacks/muffin,
+/obj/item/reagent_containers/food/snacks/muffin,
+/obj/item/reagent_containers/food/snacks/muffin,
+/obj/item/reagent_containers/food/snacks/muffin,
+/obj/item/reagent_containers/food/snacks/muffin,
+/obj/item/reagent_containers/food/snacks/muffin,
+/obj/item/reagent_containers/food/snacks/muffin,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/beach/oceantown/shop)
 "OH" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -2943,22 +3306,24 @@
 	},
 /obj/machinery/light,
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "OI" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "OK" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "ON" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/junglebush,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "OP" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
@@ -2966,16 +3331,22 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
+/obj/item/clothing/under/shorts/blue{
+	name = "blue swimming shorts";
+	desc = "100% pure cotton!"
+	},
 /turf/open/floor/carpet/blue{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "OR" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "OT" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -2985,19 +3356,19 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "OU" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "OW" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown)
 "Pe" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -3007,18 +3378,23 @@
 	},
 /obj/effect/turf_decal/siding/blue/corner,
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
+"Pf" = (
+/turf/open/floor/plasteel/dark,
+/area/ruin/beach/oceantown/shop)
 "Ph" = (
 /obj/effect/spawner/structure/window,
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
 "Pm" = (
 /obj/structure/mineral_door/wood{
 	name = "Bedroom"
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Ps" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 9
@@ -3026,67 +3402,83 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/purple{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
+"Pv" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown/hotel)
 "Py" = (
 /turf/open/floor/plating/beach/coastline_t{
-	dir = 9
+	dir = 9;
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
+"PA" = (
+/obj/structure/table/wood,
+/obj/structure/curtain/cloth,
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown/bar)
 "PC" = (
 /obj/structure/flora/rock/pile,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "PE" = (
 /obj/structure/chair/sofa/right,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "PF" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/donut/slimejelly,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "PH" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
 /turf/open/water/beach,
-/area/space)
-"PL" = (
-/obj/structure/flora/ausbushes/genericbush,
-/obj/effect/turf_decal/weather/sand{
-	dir = 5
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "PN" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "PQ" = (
 /turf/open/floor/plasteel/stairs{
 	dir = 4;
-	color = "#55391A"
+	color = "#55391A";
+	layer = 2.1
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "Qd" = (
 /obj/structure/railing/wood,
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "Qf" = (
 /obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Qm" = (
 /obj/structure/railing/wood,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Qy" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -3094,44 +3486,44 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "QA" = (
 /obj/item/shovel/spade,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "QI" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/structure/dresser,
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown)
 "QK" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"QR" = (
-/obj/structure/flora/ausbushes/grassybush,
-/obj/effect/turf_decal/weather/sand,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
+"QM" = (
+/obj/machinery/door/airlock{
+	name = "Employees Only"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/beach/oceantown/hotel)
 "QT" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"QY" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"Rb" = (
-/obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "Rd" = (
 /obj/structure/railing/corner/wood,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Rm" = (
 /obj/structure/chair/stool/bar{
 	dir = 8
@@ -3140,52 +3532,65 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Ru" = (
-/turf/open/floor/concrete/pavement,
-/area/space)
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Rz" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
 /turf/open/floor/carpet,
-/area/space)
+/area/ruin/beach/oceantown)
 "RM" = (
 /obj/structure/railing/corner/wood{
 	dir = 8
 	},
 /turf/open/water/beach/deep,
-/area/space)
+/area/ruin/beach/oceantown)
 "RQ" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/chili,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "RS" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/weather/sand,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Sc" = (
 /turf/open/floor/plasteel/grimy,
-/area/space)
+/area/ruin/beach/oceantown/hotel)
+"Sg" = (
+/obj/structure/rack,
+/obj/item/shovel/spade,
+/obj/item/shovel/spade,
+/obj/item/shovel/spade,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/beach/oceantown/shop)
 "Sh" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/genericbush,
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"Sk" = (
-/obj/structure/flora/ausbushes/genericbush,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "Sm" = (
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown/hotel)
 "Sp" = (
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/sand/plating{
+	light_range = 2
+	},
 /obj/machinery/shower{
 	dir = 1
 	},
@@ -3193,44 +3598,43 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/oceantown)
 "Sv" = (
 /obj/structure/chair/comfy/brown{
 	dir = 4
 	},
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Sy" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"SA" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/effect/turf_decal/weather/sand{
-	dir = 8
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "SB" = (
 /obj/effect/turf_decal/weather/sand,
-/turf/open/floor/plating/dirt/dark,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "SC" = (
 /obj/structure/fence/door,
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/oceantown)
 "SF" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown/bar)
 "SO" = (
 /obj/structure/railing/wood{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt/dark,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "SS" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/donut,
@@ -3238,13 +3642,13 @@
 /obj/effect/spawner/lootdrop/donut/slimejelly,
 /obj/effect/spawner/lootdrop/donut/jelly,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "SY" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
 	},
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Tj" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -3254,30 +3658,35 @@
 	},
 /obj/effect/turf_decal/siding/blue,
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
+"Tl" = (
+/turf/open/floor/carpet/green,
+/area/ruin/beach/oceantown/hotel)
 "Tm" = (
 /obj/structure/flora/ausbushes/stalkybush{
 	name = "reeds"
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
+"Tp" = (
+/obj/structure/dresser,
+/turf/open/floor/carpet,
+/area/ruin/beach/oceantown/hotel)
 "Tq" = (
 /obj/structure/railing{
 	dir = 1
 	},
 /obj/effect/turf_decal/weather/sand,
-/turf/open/floor/plating/dirt,
-/area/space)
+/obj/item/reagent_containers/food/snacks/sausage,
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Ts" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"Tx" = (
-/obj/structure/flora/ausbushes/grassybush,
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "TA" = (
 /obj/structure/railing/wood{
 	dir = 6
@@ -3285,198 +3694,221 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
-"TD" = (
-/turf/open/floor/plating/beach/coastline_b{
-	dir = 10
+/turf/open/floor/plating/dirt{
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "TT" = (
 /obj/machinery/door/airlock{
 	name = "Employees Only"
 	},
 /turf/open/floor/plating,
-/area/space)
-"TV" = (
-/obj/machinery/power/apc/auto_name/north,
-/turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Ud" = (
 /turf/closed/wall/mineral/sandstone,
-/area/space)
+/area/ruin/beach/oceantown)
 "Un" = (
 /obj/effect/spawner/structure/window,
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Up" = (
 /obj/structure/mineral_door/wood{
 	name = "Bathroom"
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Uq" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/palebush,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "Us" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/lemon,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Uu" = (
 /obj/structure/table/wood,
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Uz" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "UA" = (
 /obj/structure/chair/wood,
 /turf/open/floor/carpet/green,
-/area/space)
+/area/ruin/beach/oceantown)
 "UB" = (
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
 "UF" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	layer = 2.01
+	},
 /turf/open/floor/carpet/cyan{
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "UH" = (
 /obj/structure/chair/office{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "UN" = (
 /obj/structure/table,
 /obj/item/binoculars,
-/turf/open/floor/plating,
-/area/space)
-"UO" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 4
-	},
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
 "UP" = (
 /obj/structure/fluff/beach_umbrella/science,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "UT" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "UU" = (
 /obj/effect/turf_decal/road{
 	dir = 1
 	},
-/turf/open/floor/concrete/pavement,
-/area/space)
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"UX" = (
+/turf/closed/wall/mineral/wood/nonmetal,
+/area/ruin/beach/oceantown/shop)
 "Vf" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/turf_decal/box,
-/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/white,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Vr" = (
 /obj/structure/bed,
 /obj/item/bedsheet/dorms,
 /turf/open/floor/carpet,
-/area/space)
-"VF" = (
-/turf/open/floor/plating/beach/coastline_b{
-	dir = 4
-	},
-/area/space)
+/area/ruin/beach/oceantown)
 "VI" = (
 /obj/structure/railing/wood{
 	dir = 8
 	},
-/turf/open/floor/plating/beach/coastline_b,
-/area/space)
+/turf/open/water/beach,
+/area/ruin/beach/oceantown)
 "VJ" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/coffee,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "VK" = (
 /obj/structure/fence{
 	dir = 5;
 	icon_state = "corner"
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
+/area/ruin/beach/oceantown)
+"VP" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/stack/sheet/mineral/coal/ten,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/beach/oceantown/shop)
 "VQ" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/donut/jelly,
 /obj/effect/spawner/lootdrop/donut/jelly,
 /obj/effect/spawner/lootdrop/donut/jelly,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "VS" = (
 /obj/structure/table,
 /obj/machinery/processor,
 /turf/open/floor/plasteel/white,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "VT" = (
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/sand/plating{
+	light_range = 2
+	},
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
+/obj/structure/dresser{
+	icon = 'icons/obj/closet.dmi';
+	icon_state = "generic";
+	name = "beachside locker";
+	desc = "A beachside closet. It's got enough cabinets for an entire town's worth of t-shirts and jeans."
+	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/oceantown)
+"VV" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
+"VZ" = (
+/obj/structure/chair/sofa{
+	dir = 4
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Wd" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/turf_decal/weather/sand{
 	dir = 8
 	},
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "We" = (
 /turf/open/floor/plasteel,
-/area/space)
-"Wf" = (
-/turf/open/floor/glass{
-	baseturfs = /turf/open/water/beach/deep
-	},
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Wh" = (
 /obj/effect/turf_decal/sand,
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Wl" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 1
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"Wm" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/effect/turf_decal/weather/sand{
-	dir = 4
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "Ws" = (
 /obj/item/reagent_containers/glass/bucket/wooden,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Wu" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -3485,13 +3917,13 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Ww" = (
 /obj/machinery/door/airlock{
 	name = "Employees Only"
 	},
 /turf/open/floor/plasteel/tech,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "WC" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -3500,23 +3932,31 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "WO" = (
 /obj/structure/bed,
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown)
 "WR" = (
-/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/sand/plating{
+	light_range = 2
+	},
 /obj/effect/turf_decal/weather/sand,
+/obj/structure/dresser{
+	icon = 'icons/obj/closet.dmi';
+	icon_state = "generic";
+	name = "beachside locker";
+	desc = "A beachside closet. It's got enough cabinets for an entire town's worth of t-shirts and jeans."
+	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/oceantown)
 "WW" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/blue/corner,
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Xb" = (
 /obj/structure/railing/wood{
 	dir = 6
@@ -3524,38 +3964,41 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt/dark,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Xc" = (
 /obj/structure/railing/wood{
 	dir = 10
 	},
-/turf/open/floor/plating/beach/sand,
-/area/space)
-"Xh" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 6
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
 	},
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown)
 "Xq" = (
 /turf/open/floor/plating/beach/coastline_t{
-	dir = 8
+	dir = 8;
+	light_range = 2
 	},
-/area/space)
+/area/ruin/beach/oceantown)
 "Xs" = (
 /obj/structure/chair/stool/bar,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Xv" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "XC" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/cocoapod,
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "XI" = (
 /obj/structure/table/wood/fancy/black,
 /obj/item/reagent_containers/food/drinks/drinkingglass{
@@ -3563,11 +4006,11 @@
 	pixel_x = -6
 	},
 /turf/open/floor/carpet/black,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "XJ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown)
 "XQ" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/donut/jelly,
@@ -3576,14 +4019,7 @@
 /obj/effect/spawner/lootdrop/donut/slimejelly,
 /obj/effect/spawner/lootdrop/donut/jelly,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
-"XR" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/effect/turf_decal/weather/sand{
-	dir = 10
-	},
-/turf/open/floor/plating/grass/beach,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "XS" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -3595,38 +4031,42 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "XU" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "XY" = (
 /obj/structure/railing/corner/wood,
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt/dark,
-/area/space)
+/turf/open/floor/plating/dirt/dark{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "XZ" = (
 /obj/structure/flora/ausbushes/stalkybush{
 	name = "reeds"
 	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
 "Ya" = (
 /obj/item/hatchet/wooden,
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Yv" = (
 /obj/structure/sign/poster/contraband{
 	pixel_y = -32;
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Yw" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -3638,78 +4078,92 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "Yy" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
+"YA" = (
+/obj/structure/rack,
+/obj/item/reagent_containers/food/snacks/canned/peaches,
+/obj/item/reagent_containers/food/snacks/canned/peaches,
+/obj/item/reagent_containers/food/snacks/canned/peaches,
+/obj/item/reagent_containers/food/snacks/canned/peaches,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/beach/oceantown/shop)
+"YC" = (
+/turf/closed/wall/mineral/wood/nonmetal,
+/area/ruin/beach/oceantown/hotel)
 "YE" = (
 /obj/structure/fluff/beach_umbrella/engine,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "YL" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/turf/open/floor/wood,
-/area/space)
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"YU" = (
+/turf/template_noop,
+/area/template_noop)
 "YW" = (
 /obj/effect/turf_decal/sand,
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
 /obj/structure/closet/crate/bin,
-/turf/open/floor/plating/beach/sand,
-/area/space)
+/turf/open/floor/plating/beach/sand{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "Zf" = (
 /obj/machinery/door/airlock{
 	name = "Bathroom"
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ruin/beach/oceantown)
 "Zj" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/turf_decal/weather/sand,
 /turf/open/water/beach,
-/area/space)
+/area/ruin/beach/oceantown)
+"Zo" = (
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown/hotel)
 "Zr" = (
 /obj/structure/chair/comfy/brown,
 /turf/open/floor/carpet/black,
-/area/space)
-"Zv" = (
-/obj/effect/turf_decal/weather/sand{
-	dir = 1
-	},
-/turf/open/floor/plating/grass,
-/area/space)
+/area/ruin/beach/oceantown/bar)
 "Zy" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "ZB" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach,
-/area/space)
-"ZF" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass,
-/area/space)
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/oceantown)
 "ZJ" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/metal/twenty,
 /obj/item/stack/sheet/glass/twenty,
 /turf/open/floor/plasteel/patterned/grid,
-/area/space)
+/area/ruin/beach/oceantown/shop)
 "ZP" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
 	},
 /turf/open/floor/concrete,
-/area/space)
+/area/ruin/beach/oceantown)
 "ZW" = (
 /obj/structure/railing/corner/wood,
 /obj/effect/turf_decal/weather/sand{
@@ -3718,8 +4172,10 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt,
-/area/space)
+/turf/open/floor/plating/dirt{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 
 (1,1,1) = {"
 Gn
@@ -3728,7 +4184,7 @@ Gn
 Gn
 Gn
 pn
-TD
+pn
 ec
 wB
 sa
@@ -3751,60 +4207,60 @@ BY
 sa
 dY
 NB
-LB
-LB
+zM
+zM
 dv
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (2,1,1) = {"
 Gn
@@ -3813,8 +4269,8 @@ CG
 CG
 Gn
 pn
-vv
-TD
+pn
+pn
 oF
 nC
 sa
@@ -3824,8 +4280,8 @@ Ms
 xd
 uD
 Go
-je
-TD
+pn
+pn
 oF
 sa
 sa
@@ -3840,56 +4296,56 @@ sT
 YL
 JL
 zM
-JT
-iM
-iM
-iM
-JT
+Wl
+YU
+YU
+YU
+Wl
 ZB
-JT
-JT
-JT
+Wl
+Wl
+Wl
 Io
-JT
-iM
-iM
-iM
-iM
-JT
-Sk
-JT
+Wl
+YU
+YU
+YU
+YU
+Wl
+id
+Wl
 rl
 rl
 rl
 rl
 qw
-JT
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (3,1,1) = {"
 Gn
@@ -3899,7 +4355,7 @@ CG
 nF
 pn
 pn
-oL
+pn
 oF
 Ps
 Er
@@ -3907,10 +4363,10 @@ sa
 sa
 xd
 Go
-je
-VF
-vv
-Dq
+pn
+pn
+pn
+pn
 oF
 sa
 sa
@@ -3925,56 +4381,56 @@ ev
 ev
 xo
 YL
-Sk
-JT
-JT
-JT
+id
+Wl
+Wl
+Wl
 ZB
-QY
+pB
 rl
 rl
 rl
 Io
 Io
-JT
-iM
-iM
+Wl
+YU
+YU
 QK
 QK
-JT
+Wl
 vE
-JT
-JT
-JT
-JT
+Wl
+Wl
+Wl
+Wl
 rl
 rl
-JT
-JT
-JT
-JT
+Wl
+Wl
+Wl
+Wl
 QT
-JT
-JT
-JT
-JT
-JT
-JT
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (4,1,1) = {"
 Gn
@@ -3984,17 +4440,17 @@ Gn
 CG
 LE
 pn
-oL
+pn
 oF
 sa
 sa
 sa
 xd
 Go
-je
-Dq
 pn
-oL
+pn
+pn
+pn
 Py
 nu
 sa
@@ -4010,24 +4466,24 @@ ev
 ev
 mR
 AM
-JT
+Wl
 FF
-xn
-xn
-xn
-xn
-xn
-TT
-xn
-xn
-xn
+UX
+UX
+UX
+UX
+UX
+aM
+UX
+UX
+UX
 JT
-QY
-QY
+pB
+pB
 QK
-xn
-xn
-xn
+xh
+xh
+xh
 ev
 ev
 ev
@@ -4038,7 +4494,7 @@ ev
 ev
 ev
 ev
-QY
+pB
 ue
 QK
 rl
@@ -4046,20 +4502,20 @@ rl
 rl
 qw
 rl
-JT
-QY
-QY
-iM
-JT
-JT
-JT
+Wl
+pB
+pB
+YU
+Wl
+Wl
+Wl
 hL
-iM
-iM
-iM
-iM
-iM
-iM
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (5,1,1) = {"
 Gn
@@ -4069,17 +4525,17 @@ CG
 CG
 LE
 pn
-oL
+pn
 ec
 uD
 uD
 uD
 Go
-je
-Dq
 pn
 pn
-oL
+pn
+pn
+pn
 oF
 nC
 sa
@@ -4093,24 +4549,24 @@ fD
 Xc
 fG
 ev
-ar
-JT
-JT
+mi
+Wl
+Wl
 uC
-xn
+UX
 kH
-xL
+Pf
 AL
 XU
 kD
 vy
 KR
-xn
-xn
+UX
+UX
 uC
 QT
 rl
-xn
+xh
 zX
 ev
 ev
@@ -4123,9 +4579,9 @@ ev
 Gq
 ly
 ev
-QY
+pB
 uC
-ar
+mi
 Ru
 Ru
 Ru
@@ -4134,17 +4590,17 @@ Ru
 fG
 FF
 FF
-JT
+Wl
 An
 rl
 rl
-JT
-JT
-JT
-iM
-iM
-iM
-iM
+Wl
+Wl
+Wl
+YU
+YU
+YU
+YU
 "}
 (6,1,1) = {"
 Gn
@@ -4154,17 +4610,17 @@ Gn
 Gn
 Gn
 pn
-vv
-iV
-iV
-iV
-iV
-iV
-Dq
 pn
 pn
 pn
-oL
+pn
+pn
+pn
+pn
+pn
+pn
+pn
+pn
 oF
 hF
 yJ
@@ -4179,12 +4635,12 @@ yb
 fG
 mR
 AM
-JT
+Wl
 FF
 iC
-xn
-TV
-xL
+UX
+Pf
+Pf
 rQ
 WW
 pt
@@ -4195,7 +4651,7 @@ Un
 FF
 FF
 rl
-xn
+xh
 tW
 ev
 ev
@@ -4210,7 +4666,7 @@ ru
 ev
 FF
 FF
-ar
+mi
 Ru
 Ru
 GE
@@ -4220,16 +4676,16 @@ fG
 FF
 wF
 FF
-JT
-JT
+Wl
+Wl
 qw
 rl
 rl
-JT
-JT
-JT
-iM
-iM
+Wl
+Wl
+Wl
+YU
+YU
 "}
 (7,1,1) = {"
 Gn
@@ -4246,10 +4702,10 @@ pn
 pn
 pn
 pn
-je
-VF
-VF
-Dq
+pn
+pn
+pn
+pn
 oF
 sa
 sa
@@ -4262,25 +4718,25 @@ sa
 Qm
 uW
 ev
-ar
-JT
-JT
+mi
+Wl
+Wl
 wF
-JT
-TT
-xL
+Wl
+aM
+Pf
 JY
 aP
 kD
-yc
+Lx
 Tj
 yc
 AY
 Un
-JT
+Wl
 wF
 qw
-xn
+xh
 HO
 ev
 ev
@@ -4294,8 +4750,8 @@ fZ
 ri
 ev
 wF
-JT
-ar
+Wl
+mi
 Ru
 Ru
 Ru
@@ -4312,9 +4768,9 @@ xn
 xn
 xn
 rl
-JT
-JT
-iM
+Wl
+Wl
+YU
 "}
 (8,1,1) = {"
 Gn
@@ -4331,7 +4787,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 Py
 Xq
 Xq
@@ -4348,11 +4804,11 @@ Qm
 fG
 mR
 AM
-JT
+Wl
 Sh
 FF
-JT
-xn
+Wl
+UX
 Hu
 Ap
 Ip
@@ -4362,12 +4818,12 @@ Tj
 bs
 AY
 Un
-QY
+pB
 FF
 rl
-xn
-xn
-xn
+xh
+xh
+xh
 ev
 ev
 ev
@@ -4380,7 +4836,7 @@ ev
 ev
 ev
 ev
-ar
+mi
 Ru
 Ru
 GE
@@ -4399,7 +4855,7 @@ Ww
 rl
 rl
 vE
-iM
+YU
 "}
 (9,1,1) = {"
 Gn
@@ -4416,7 +4872,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 NV
@@ -4431,41 +4887,41 @@ ti
 sa
 zP
 fG
-ar
-JT
-JT
-JT
+mi
+Wl
+Wl
+Wl
 Xv
-JT
-xn
+Wl
+UX
 ZJ
 hc
-yc
+VP
 mY
-yc
+zr
 Tj
-yc
+CT
 AY
 Un
-JT
-QY
+Wl
+pB
 rl
 rl
-JT
-JT
-JT
+Wl
+Wl
+Wl
 ev
-JT
+Wl
 rl
 qw
-JT
-JT
+Wl
+Wl
 qw
 rl
 ev
-QY
+pB
 QT
-ar
+mi
 Ru
 Ru
 Ru
@@ -4483,8 +4939,8 @@ We
 xn
 rl
 rl
-JT
-iM
+Wl
+YU
 "}
 (10,1,1) = {"
 Gn
@@ -4497,11 +4953,11 @@ pn
 LE
 pn
 pn
-je
-VF
-VF
-VF
-Dq
+pn
+pn
+pn
+pn
+pn
 oF
 sa
 sa
@@ -4516,13 +4972,13 @@ sa
 ZW
 SO
 fG
-ar
-oP
-JT
-JT
-JT
+mi
+hu
+Wl
+Wl
+Wl
 gn
-xn
+UX
 Wu
 cy
 Wu
@@ -4532,25 +4988,25 @@ Dj
 yD
 XS
 Un
-JT
-JT
+Wl
+Wl
 qw
 rl
-QY
-QY
-QY
+pB
+pB
+pB
 ev
 Xv
 OI
-JT
+Wl
 rl
 rl
 rl
-QY
+pB
 ev
 rl
 qw
-ar
+mi
 Ru
 Ru
 GE
@@ -4569,7 +5025,7 @@ xn
 rl
 rl
 Xv
-iM
+YU
 "}
 (11,1,1) = {"
 Gn
@@ -4582,7 +5038,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 Py
 Xq
 Xq
@@ -4601,27 +5057,27 @@ BY
 Qm
 uW
 ev
-ar
-oP
-JT
+mi
+hu
+Wl
 Mq
-JT
-JT
-xn
-xn
+Wl
+Wl
+UX
+UX
 Jl
 Jl
 Lo
 kD
-yc
-yc
-xn
-xn
+YA
+Ov
+UX
+UX
 rl
 rl
 rl
-JT
-QY
+Wl
+pB
 Mq
 mc
 ev
@@ -4635,14 +5091,14 @@ ev
 Ws
 ev
 ev
-ar
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-QY
+pB
 xn
 Gk
 rH
@@ -4651,10 +5107,10 @@ We
 We
 We
 xn
-JT
-JT
-JT
-iM
+Wl
+Wl
+Wl
+YU
 "}
 (12,1,1) = {"
 Gn
@@ -4667,44 +5123,44 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
 sa
 eM
-xn
+xh
 hb
 sa
 sa
 sa
-eM
-xn
+GZ
+xh
 hb
 sa
 Ms
 Qm
 fG
 ev
-ar
-oP
-JT
-JT
-JT
-JT
-JT
-xn
+mi
+hu
+Wl
+Wl
+Wl
+Wl
+Wl
+UX
 uy
-yc
+Sg
 AY
 WC
 Wu
 OH
-xn
-JT
+UX
+Wl
 rl
-JT
-JT
+Wl
+Wl
 Sy
 mX
 FF
@@ -4718,16 +5174,16 @@ ev
 Us
 Lr
 ev
-JT
-JT
-ar
+Wl
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
+Wl
 xn
 We
 We
@@ -4737,9 +5193,9 @@ We
 We
 xn
 vE
-iM
-iM
-iM
+YU
+YU
+YU
 "}
 (13,1,1) = {"
 Gn
@@ -4749,10 +5205,10 @@ Gn
 pn
 pn
 pn
-je
-VF
-VF
-Dq
+pn
+pn
+pn
+pn
 oF
 sa
 sa
@@ -4772,27 +5228,27 @@ Qm
 fG
 mR
 AM
-JT
-JT
-JT
+Wl
+Wl
+Wl
 iC
 ue
 FF
-xn
+UX
 Un
 Un
 kW
 iW
 Un
 Un
-xn
-JT
-JT
-JT
+UX
+Wl
+Wl
+Wl
 qw
-QY
+pB
 wF
-JT
+Wl
 rl
 ev
 Nw
@@ -4804,15 +5260,15 @@ uI
 jY
 ev
 OI
-JT
-ar
+Wl
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-JT
+Wl
 xn
 zZ
 XI
@@ -4823,8 +5279,8 @@ TT
 xn
 xn
 xn
-iM
-iM
+YU
+YU
 "}
 (14,1,1) = {"
 Gn
@@ -4834,7 +5290,7 @@ Gn
 pn
 pn
 pn
-oL
+pn
 Py
 Xq
 Xq
@@ -4855,24 +5311,24 @@ sa
 sa
 Qm
 fG
-ar
-JT
-JT
+mi
+Wl
+Wl
 uC
-QY
-JT
-JT
+pB
+Wl
+Wl
 wF
 FF
-JT
+Wl
 hM
 PQ
 PQ
 hM
-JT
-Sk
-JT
-JT
+Wl
+id
+Wl
+Wl
 rl
 rl
 kj
@@ -4888,9 +5344,9 @@ ev
 AA
 jY
 ev
-JT
+Wl
 vE
-ar
+mi
 Ru
 Ru
 GE
@@ -4906,10 +5362,10 @@ zg
 xL
 Oh
 EN
-pA
+EN
 xn
 xn
-iM
+YU
 "}
 (15,1,1) = {"
 Gn
@@ -4919,7 +5375,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -4940,30 +5396,30 @@ sa
 sa
 Qm
 fG
-ar
-JT
-JT
+mi
+Wl
+Wl
 ue
 mX
-QY
-JT
+pB
+Wl
 Mq
 FF
 FF
-JT
+Wl
 ev
 ev
-JT
+Wl
 Mq
-JT
+Wl
 qw
 rl
 rl
-JT
+Wl
 kj
-JT
+Wl
 rl
-JT
+Wl
 ev
 ev
 ev
@@ -4975,14 +5431,14 @@ ev
 ev
 ev
 ev
-ar
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-JT
+Wl
 xn
 xL
 xL
@@ -4990,11 +5446,11 @@ xL
 xL
 xL
 Oh
-pA
+EN
 EN
 iz
 xn
-iM
+YU
 "}
 (16,1,1) = {"
 Gn
@@ -5004,7 +5460,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -5025,49 +5481,49 @@ BY
 sa
 Qm
 fG
-ar
+mi
 rl
 qw
-JT
+Wl
 kj
-JT
-JT
-JT
-JT
-JT
-JT
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 ev
 ev
-JT
-JT
-JT
-JT
-JT
-oP
-oP
+Wl
+Wl
+Wl
+Wl
+Wl
+hu
+hu
 rl
 rl
 rl
-JT
+Wl
 ev
-JT
+Wl
 FF
 wF
 rl
 rl
 qw
-JT
+Wl
 ev
 ev
 ev
-ar
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
+Wl
 xn
 xL
 xL
@@ -5076,10 +5532,10 @@ Zr
 Uu
 Oh
 EN
-pA
+EN
 EN
 xn
-iM
+YU
 "}
 (17,1,1) = {"
 Gn
@@ -5089,7 +5545,7 @@ LE
 LE
 LE
 pn
-oL
+pn
 oF
 sa
 sa
@@ -5110,49 +5566,49 @@ Dy
 CS
 yb
 fG
-ar
+mi
 rl
 qw
-QY
-oP
+pB
+hu
 kj
-JT
-JT
+Wl
+Wl
 ev
 ev
 ev
 ev
 ev
-JT
-JT
+Wl
+Wl
 rl
 rl
 rl
 qw
 rl
 rl
-JT
+Wl
 rl
-JT
+Wl
 ev
 rl
 qw
 FF
 ni
-JT
+Wl
 rl
 rl
 ev
 ev
 ev
-ar
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-JT
+Wl
 xn
 BC
 Sv
@@ -5160,11 +5616,11 @@ xL
 Zr
 Uu
 Oh
-pA
 EN
-pA
+EN
+EN
 xn
-iM
+YU
 "}
 (18,1,1) = {"
 Gn
@@ -5174,7 +5630,7 @@ pn
 pn
 mz
 pn
-oL
+pn
 oF
 sa
 nC
@@ -5183,53 +5639,53 @@ sa
 sa
 sa
 eM
-xn
+xh
 hb
 sa
 sa
 sa
-eM
-xn
+ef
+xh
 hb
 oS
 nL
 uW
 zQ
-ar
+mi
 rl
 ev
 ev
 ev
-JT
+Wl
 ev
 ev
 ev
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
-sp
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
+fA
 ev
 Ge
 Ge
@@ -5249,7 +5705,7 @@ fV
 xL
 cx
 xn
-iM
+YU
 "}
 (19,1,1) = {"
 Gn
@@ -5259,7 +5715,7 @@ pn
 pn
 LE
 pn
-oL
+pn
 oF
 sa
 lZ
@@ -5284,9 +5740,9 @@ vf
 xo
 ev
 ev
-sp
-sp
-sp
+fA
+fA
+fA
 AM
 Kx
 Ru
@@ -5322,7 +5778,7 @@ Ru
 Ru
 Ru
 fG
-JT
+Wl
 xn
 xL
 xL
@@ -5334,7 +5790,7 @@ xL
 Yv
 JU
 xn
-iM
+YU
 "}
 (20,1,1) = {"
 Gn
@@ -5344,7 +5800,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -5429,7 +5885,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -5450,9 +5906,9 @@ sa
 yb
 fG
 mR
-sp
-uB
-ar
+fA
+aR
+mi
 Ru
 Ru
 Ru
@@ -5492,7 +5948,7 @@ Ru
 Ru
 Ru
 fG
-JT
+Wl
 xn
 Zr
 NA
@@ -5503,8 +5959,8 @@ sr
 xn
 xn
 xn
-iM
-iM
+YU
+YU
 "}
 (22,1,1) = {"
 Gn
@@ -5514,7 +5970,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -5534,10 +5990,10 @@ sa
 sa
 EJ
 ev
-ar
-JT
+mi
+Wl
 Cq
-ar
+mi
 Ru
 Ru
 Ru
@@ -5577,7 +6033,7 @@ Ru
 Ru
 Ru
 fG
-JT
+Wl
 xn
 xn
 xn
@@ -5586,10 +6042,10 @@ xn
 nj
 xn
 xn
-iM
-iM
-iM
-iM
+YU
+YU
+YU
+YU
 "}
 (23,1,1) = {"
 Gn
@@ -5599,7 +6055,7 @@ Gn
 pn
 pn
 pn
-oL
+pn
 ec
 wB
 sa
@@ -5619,9 +6075,9 @@ sa
 sa
 EJ
 ev
-ar
-JT
-JT
+mi
+Wl
+Wl
 ev
 xo
 xo
@@ -5664,17 +6120,17 @@ Ru
 fG
 rl
 rl
-JT
+Wl
 Xv
-JT
+Wl
 rl
 rl
-JT
-JT
-iM
-iM
-iM
-iM
+Wl
+Wl
+YU
+YU
+YU
+YU
 "}
 (24,1,1) = {"
 aF
@@ -5684,8 +6140,8 @@ Gn
 pn
 pn
 pn
-vv
-TD
+pn
+pn
 ec
 wB
 sa
@@ -5704,14 +6160,14 @@ sa
 sa
 EJ
 ev
-ar
+mi
 Xv
-JT
-QY
-JT
-JT
-JT
-JT
+Wl
+pB
+Wl
+Wl
+Wl
+Wl
 ev
 ev
 xo
@@ -5750,16 +6206,16 @@ ev
 rl
 qw
 rl
-JT
-JT
+Wl
+Wl
 rl
 qw
 rl
-JT
-iM
-iM
-iM
-iM
+Wl
+YU
+YU
+YU
+YU
 "}
 (25,1,1) = {"
 Gn
@@ -5770,8 +6226,8 @@ Gn
 pn
 XZ
 pn
-vv
-TD
+pn
+pn
 ec
 wB
 sa
@@ -5789,31 +6245,31 @@ EQ
 sa
 Xc
 fG
-ar
-JT
-JT
-QY
-QY
+mi
+Wl
+Wl
+pB
+pB
 iC
 uC
 FF
-JT
-JT
-JT
-JT
-JT
-JT
-JT
-JT
-JT
-JT
-JT
-JT
-JT
-JT
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 rl
-JT
-JT
+Wl
+Wl
 rl
 rl
 rl
@@ -5821,11 +6277,11 @@ rl
 ev
 ev
 ev
-oP
-JT
+hu
+Wl
 rl
-JT
-ar
+Wl
+mi
 Ru
 Ru
 Ru
@@ -5838,13 +6294,13 @@ rl
 rl
 rl
 rl
-JT
+Wl
 rl
-JT
-JT
-iM
-iM
-iM
+Wl
+Wl
+YU
+YU
+YU
 "}
 (26,1,1) = {"
 Gn
@@ -5856,8 +6312,8 @@ Tm
 Tm
 pn
 pn
-vv
-TD
+pn
+pn
 oF
 sa
 sa
@@ -5874,62 +6330,62 @@ sa
 sa
 Qm
 fG
-ar
-JT
-JT
+mi
+Wl
+Wl
 ox
-JT
-QY
-JT
-JT
+Wl
+pB
+Wl
+Wl
 FF
 FF
 FF
-JT
+Wl
 rl
 qw
 rl
-JT
-JT
-JT
+Wl
+Wl
+Wl
 vE
 rl
 rl
-JT
+Wl
 rl
 rl
-JT
-JT
-wP
-JT
-JT
+Wl
+Wl
+xE
+Wl
+Wl
 ev
 ev
 ev
-oP
+hu
 rl
 rl
-JT
-ar
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
+Wl
 rl
 rl
 rl
 qw
-JT
-JT
+Wl
+Wl
 rl
-JT
+Wl
 Xv
-iM
-iM
-iM
+YU
+YU
+YU
 "}
 (27,1,1) = {"
 Gn
@@ -5942,7 +6398,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -5959,20 +6415,20 @@ xn
 sa
 yb
 fG
-ar
-JT
-JT
+mi
+Wl
+Wl
 rl
 qw
 rl
-JT
-JT
-JT
-JT
-JT
-JT
-JT
-JT
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 rl
 rl
 rl
@@ -5980,22 +6436,22 @@ vE
 rl
 iw
 rl
-JT
+Wl
 PC
 rl
 rl
-JT
-JT
+Wl
+Wl
 rl
 rl
 ev
 ev
 ev
-oP
+hu
 rl
 PC
 rl
-ar
+mi
 Ru
 Ru
 Ru
@@ -6003,18 +6459,18 @@ Ru
 Ru
 fG
 Xv
-Sk
+id
 rl
 rl
 rl
 Mq
-JT
-JT
+Wl
+Wl
 rl
 OI
-JT
-iM
-iM
+Wl
+YU
+YU
 "}
 (28,1,1) = {"
 Gn
@@ -6027,7 +6483,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -6044,62 +6500,62 @@ xn
 xn
 uW
 ev
-ar
-JT
-Sk
+mi
+Wl
+id
 rl
 rl
-xn
-xn
-xn
-xn
+YC
+YC
+YC
+YC
 rc
 rc
-xn
-xn
-xn
-xn
+YC
+YC
+YC
+YC
 rl
 rl
 rl
 rl
 rl
-JT
-xn
-xn
-xn
-xn
-xn
-xn
-xn
-xn
-xn
+Wl
+xh
+xh
+xh
+xh
+xh
+xh
+xh
+xh
+xh
 ih
-xn
-xn
-xn
-JT
+xh
+xh
+xh
+Wl
 rl
-ar
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
-JT
+Wl
+Wl
 rl
 rl
 rl
-JT
+Wl
 QK
 vE
 rl
 OI
 OI
-iM
-iM
+YU
+YU
 "}
 (29,1,1) = {"
 Gn
@@ -6109,9 +6565,9 @@ Gn
 Gn
 pn
 jQ
-vt
-vt
-vt
+zI
+zI
+zI
 zI
 eV
 hl
@@ -6122,69 +6578,69 @@ sa
 sa
 Wh
 lb
-ev
-ev
-ev
+DC
+DC
+DC
 SF
 xn
 fG
 ev
-ar
-JT
-Sk
+mi
+Wl
+id
 rl
 rl
-xn
-KO
-gX
-xn
-mu
+YC
+tw
+Tp
+YC
+Pv
 Ax
-xn
-gX
-KO
-xn
-JT
-JT
+YC
+Tp
+tw
+YC
+Wl
+Wl
 qw
 rl
 FF
 FF
-xn
-EX
+xh
+vn
+xF
+fG
 ev
-ev
-ev
-ev
-ev
-ev
-ev
+IU
+VZ
+sj
+Gz
 mR
+fA
 sp
-sp
-xn
-JT
+xh
+Wl
 rl
-ar
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-JT
-JT
+Wl
+Wl
 rl
-JT
+Wl
 FF
 uC
 ue
 QK
 qw
 rl
-JT
-iM
-iM
+Wl
+YU
+YU
 "}
 (30,1,1) = {"
 Gn
@@ -6206,51 +6662,51 @@ sa
 ry
 sa
 Wh
-uu
-ev
-ev
-ev
+PA
+DC
+DC
+DC
 Ex
 xn
 fG
 ev
-ar
-JT
+mi
+Wl
 uC
-JT
+Wl
 rl
-xn
+YC
 Gh
-gX
+KE
 om
-ev
-ev
+Zo
+Zo
 om
-gX
+KE
 lj
-xn
-JT
+YC
+Wl
 rl
 rl
 rl
-JT
+Wl
 wF
-xn
+xh
+xo
+xo
+zQ
 ev
 ev
 ev
 ev
 ev
-ev
-ev
-ev
-ar
+mi
 gi
 qW
 cA
-JT
+Wl
 rl
-ar
+mi
 Ru
 Ru
 GE
@@ -6258,18 +6714,18 @@ Ru
 Ru
 fG
 An
-JT
+Wl
 qw
 wF
-QY
 pB
-Bu
-iZ
-kg
-JT
-JT
-iM
-iM
+pB
+iC
+FF
+Wl
+Wl
+Wl
+YU
+YU
 "}
 (31,1,1) = {"
 Gn
@@ -6291,70 +6747,70 @@ sa
 Lc
 sa
 Wh
-uu
-ev
-ev
-ev
+PA
+DC
+DC
+DC
 MY
 xn
 fG
 mR
 AM
-JT
+Wl
 FF
-JT
+Wl
 qw
-xn
+YC
 iu
 Ac
-xn
-ev
-ev
-xn
+YC
+Zo
+Zo
+YC
 Ac
 iu
-xn
-JT
-oP
-oP
-JT
+YC
+Wl
+hu
+hu
+Wl
 uC
 FF
-xn
+xh
 Pm
-xn
-xn
-xn
+xh
+xh
+xh
 ev
 Bd
 uu
 hw
-ar
+mi
 gi
 vI
 cA
-QY
-JT
-ar
+pB
+Wl
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-JT
+Wl
 rl
-JT
-JT
-sL
+Wl
+Wl
+pB
 sa
 sa
 sa
 sa
-PL
-JT
-JT
-iM
+id
+Wl
+Wl
+YU
 "}
 (32,1,1) = {"
 Gn
@@ -6364,9 +6820,9 @@ Gn
 pn
 pn
 aD
-lR
-lR
-lR
+VI
+VI
+VI
 VI
 En
 AS
@@ -6376,68 +6832,68 @@ sa
 Ez
 sa
 Wh
-uu
-ev
-ev
-ev
+PA
+DC
+DC
+DC
 xn
 xn
 fG
-ar
-JT
-JT
+mi
+Wl
+Wl
 FF
 FF
 rl
-xn
-xn
-xn
-xn
-ev
-ev
-xn
-xn
-xn
-xn
-JT
-oP
+YC
+YC
+YC
+YC
+Zo
+Zo
+YC
+YC
+YC
+YC
+Wl
+hu
 wF
 FF
-JT
+Wl
 Xv
-xn
+xh
 ev
-Ln
+rh
 Vr
-xn
+xh
 Up
-xn
-xn
-bu
-ar
+xh
+xh
+fL
+mi
 gi
 zv
 cA
 kd
-JT
-ar
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
+Wl
 OI
-Wm
-aX
+OI
+Wl
 sa
 sa
 sa
 EQ
 sa
 sa
-uq
+Wl
 FF
 wF
 "}
@@ -6452,7 +6908,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -6461,51 +6917,51 @@ sa
 sa
 sa
 Wh
-uu
-ev
-ev
-ev
+PA
+DC
+DC
+DC
 xn
 xn
 fG
-ar
-JT
-QY
+mi
+Wl
+pB
 ca
 iC
 FF
-JT
-xn
+Wl
+YC
 IZ
 tQ
-ev
-ev
+Zo
+Zo
 Of
 tD
-xn
-JT
-oP
-JT
+YC
+Wl
+hu
+Wl
 rl
 rl
-JT
-JT
-xn
+Wl
+Wl
+xh
 FT
 Rz
-gX
-xn
+oT
+xh
 fh
 sq
-xn
+xh
 ge
 vf
 xo
-GK
-xn
-QY
+xo
+xh
+pB
 kj
-ar
+mi
 Ru
 Ru
 Ru
@@ -6513,7 +6969,7 @@ Ru
 Ru
 fG
 OI
-gz
+OI
 sa
 sa
 sa
@@ -6537,7 +6993,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -6547,57 +7003,57 @@ sa
 sa
 Wh
 xn
-uu
-uu
-uu
+PA
+PA
+PA
 xn
 xn
 fG
-ar
-QY
-QY
-QY
-QY
-QY
-JT
-xn
+mi
+pB
+pB
+pB
+pB
+pB
+Wl
+YC
 km
 tQ
-ev
-ev
+Zo
+Zo
 Of
 nM
-xn
-JT
-JT
-JT
-JT
+YC
+Wl
+Wl
+Wl
+Wl
 rl
 PC
 qw
-xn
+xh
 KO
 Kr
 sy
-xn
+xh
 ao
 xH
-xn
+xh
 se
 ev
-bu
+df
 Eo
-xn
+xh
 FF
 kj
-ar
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-Br
+Wl
 sa
 sa
 sa
@@ -6608,7 +7064,7 @@ pn
 pn
 OK
 sa
-uq
+Wl
 iC
 "}
 (35,1,1) = {"
@@ -6621,8 +7077,8 @@ pn
 pn
 pn
 pn
-je
-Dq
+pn
+pn
 oF
 NV
 sa
@@ -6638,51 +7094,51 @@ qB
 YW
 Qm
 fG
-ar
-JT
-JT
+mi
+Wl
+Wl
 qw
 rl
-JT
-xn
-xn
-xn
-xn
-ev
-ev
-xn
-xn
-xn
-xn
+Wl
+YC
+YC
+YC
+YC
+Zo
+Zo
+YC
+YC
+YC
+YC
 rl
 rl
 rl
-JT
-JT
+Wl
+Wl
 rl
-xn
-xn
-xn
-xn
-xn
-xn
-xn
-xn
-xn
+xh
+xh
+xh
+xh
+xh
+xh
+xh
+xh
+xh
 cA
 cA
-xn
-xn
+xh
+xh
 FF
-QY
-ar
+pB
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-Br
+Wl
 sa
 sa
 EQ
@@ -6705,8 +7161,8 @@ XZ
 XZ
 pn
 pn
-je
-Dq
+pn
+pn
 Py
 nu
 sa
@@ -6723,51 +7179,51 @@ sa
 yQ
 yb
 fG
-ar
-JT
+mi
+Wl
 rl
 rl
 rl
-JT
-xn
-KO
-gX
-xn
-ev
-ev
-xn
-gX
-KO
-xn
-JT
-JT
+Wl
+YC
+tw
+Tp
+YC
+Zo
+Zo
+YC
+Tp
+tw
+YC
+Wl
+Wl
 rl
 rl
-JT
-JT
-JT
-JT
+Wl
+Wl
+Wl
+Wl
 qw
 rl
 rl
-QY
-QY
+pB
+pB
 qw
 rl
-JT
-JT
-JT
-JT
-JT
-QY
-ar
+Wl
+Wl
+Wl
+Wl
+Wl
+pB
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-Br
+Wl
 sa
 sa
 sa
@@ -6789,8 +7245,8 @@ CG
 pn
 pn
 pn
-je
-Dq
+pn
+pn
 Py
 nu
 sa
@@ -6810,49 +7266,49 @@ sT
 zQ
 vf
 YL
-JT
+Wl
 rl
 qw
-JT
-xn
+Wl
+YC
 Gh
-gX
+KE
 om
-ev
-ev
+Zo
+Zo
 om
-gX
+KE
 lj
-xn
-JT
+YC
+Wl
 Xv
 rl
 qw
 rl
-JT
-Sk
-xn
-xn
-xn
-rl
+Wl
+id
+xh
+xh
+xh
+Mm
 FF
 FF
 rl
-JT
-JT
-JT
+Wl
+Wl
+Wl
 rl
-JT
+Wl
 An
-JT
-ar
+Wl
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-QR
+Xv
 sa
 sa
 sa
@@ -6874,7 +7330,7 @@ Gn
 pn
 pn
 pn
-oL
+pn
 Py
 nu
 sa
@@ -6893,51 +7349,51 @@ vL
 Qm
 fG
 mR
-sp
+fA
 eh
 YL
-JT
-JT
-JT
-xn
+Wl
+Wl
+Wl
+YC
 iu
 Ac
-xn
-ev
-ev
-xn
+YC
+Zo
+Zo
+YC
 Ac
 iu
-xn
-JT
-JT
-JT
+YC
+Wl
+Wl
+Wl
 PC
 rl
-oP
-oP
-xn
-Np
+hu
+hu
+xh
+cE
 Zf
 rl
-JT
+Wl
 rl
 rl
-JT
-JT
+Wl
+Wl
 rl
 rl
 rl
 rl
-JT
-ar
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-Br
+Wl
 sa
 sa
 lL
@@ -6959,7 +7415,7 @@ Gn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 Ay
@@ -6977,52 +7433,52 @@ sa
 Ez
 Qm
 fG
-ar
-JT
+mi
+Wl
 Cq
 eh
 YL
-JT
+Wl
 gn
-xn
-xn
-xn
-xn
-ev
-ev
-xn
-xn
-xn
-xn
-JT
-JT
-JT
-QY
+YC
+YC
+YC
+YC
+Zo
+Zo
+YC
+YC
+YC
+YC
+Wl
+Wl
+Wl
+pB
 FF
-JT
-oP
-xn
-xn
-xn
+Wl
+hu
+xh
+xh
+xh
 rl
-JT
-JT
+Wl
+Wl
 rl
 rl
-JT
-QY
-QY
+Wl
+pB
+pB
 qw
 rl
-JT
-ar
+Wl
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-Br
+Wl
 sa
 sa
 PH
@@ -7044,7 +7500,7 @@ Gn
 pn
 pn
 LE
-oL
+pn
 oF
 sa
 sa
@@ -7062,52 +7518,52 @@ sa
 yQ
 yb
 fG
-ar
-JT
-JT
+mi
+Wl
+Wl
 Cq
 eh
 YL
-JT
-JT
-JT
-JT
-xn
-ev
-ev
+Wl
+Wl
+Wl
+Wl
+YC
+Zo
+Zo
 oo
 Sc
 BV
-xn
-JT
-JT
+YC
+Wl
+Wl
 An
-QY
+pB
 FF
-JT
-oP
+Wl
+hu
 rl
 rl
 rl
 qw
 rl
-JT
-JT
+Wl
+Wl
 rl
 rl
-QY
-Tx
+pB
+JD
 PC
 rl
-JT
-ar
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-Br
+Wl
 sa
 sa
 aq
@@ -7118,8 +7574,8 @@ rR
 rR
 HA
 sa
-zK
-JT
+Wl
+Wl
 "}
 (41,1,1) = {"
 Gn
@@ -7129,7 +7585,7 @@ Gn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -7147,10 +7603,10 @@ sa
 yb
 uW
 ev
-ar
-JT
-QY
-JT
+mi
+Wl
+pB
+Wl
 Cq
 eh
 xo
@@ -7158,17 +7614,17 @@ xo
 xo
 xo
 Im
-ev
-ev
+Zo
+Zo
 as
-Sc
+Cz
 KB
-xn
-JT
-QY
+YC
+Wl
+pB
 FF
 FF
-QY
+pB
 yS
 zd
 zd
@@ -7176,23 +7632,23 @@ zd
 zd
 xO
 zd
-zd
+dU
 zd
 zd
 zd
 yS
-JT
-JT
+Wl
+Wl
 rl
-JT
-ar
+Wl
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-Br
+Wl
 sa
 sa
 sa
@@ -7204,7 +7660,7 @@ sa
 BY
 sa
 id
-JT
+Wl
 "}
 (42,1,1) = {"
 Gn
@@ -7214,7 +7670,7 @@ Gn
 pn
 pn
 pn
-oL
+pn
 oF
 BY
 sa
@@ -7233,27 +7689,27 @@ EJ
 ev
 mR
 AM
-JT
-QY
-QY
-JT
+Wl
+pB
+pB
+Wl
 Cq
-sp
-sp
-sp
-sp
+fA
+fA
+fA
+fA
 Im
-ev
-ev
+Zo
+Zo
 as
 Sc
 Sc
-xn
-JT
+YC
+Wl
 FF
 FF
-QY
-QY
+pB
+pB
 Ib
 Ne
 UB
@@ -7266,18 +7722,18 @@ ZP
 UB
 Ne
 Ib
-JT
-JT
+Wl
+Wl
 rl
-JT
-ar
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-Br
+Wl
 sa
 BY
 sa
@@ -7286,10 +7742,10 @@ qp
 sa
 sa
 sa
-zK
-JR
-JT
-JT
+Wl
+Wl
+Wl
+Wl
 "}
 (43,1,1) = {"
 Gn
@@ -7299,7 +7755,7 @@ Gn
 pn
 mz
 pn
-oL
+pn
 oF
 sa
 sa
@@ -7316,29 +7772,29 @@ sa
 sa
 EJ
 ev
-ar
-JT
-JT
-hQ
-QY
-QY
-JT
-JT
-JT
+mi
+Wl
+Wl
+my
+pB
+pB
+Wl
+Wl
+Wl
 FF
-JT
-xn
-ev
-ev
-xn
-Ww
-xn
-xn
-JT
+Wl
+YC
+Zo
+Zo
+YC
+QM
+YC
+YC
+Wl
 FF
-QY
+pB
 qw
-JT
+Wl
 Ib
 UB
 eB
@@ -7351,30 +7807,30 @@ Kd
 yE
 UB
 SC
-JT
+Wl
 rl
 qw
 Xv
-ar
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-JT
-wc
+Wl
+Wl
 sa
 sa
 EQ
 nT
 sa
 sa
-zK
+Wl
 QK
 QK
-JT
-iM
+Wl
+YU
 "}
 (44,1,1) = {"
 Gn
@@ -7384,14 +7840,14 @@ Gn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
 Ud
 sa
 NS
-sa
+ij
 Ud
 sa
 sa
@@ -7401,29 +7857,29 @@ sa
 sa
 EJ
 ev
-ar
-JT
-JT
-JT
-kg
-cM
-cM
+mi
+Wl
+Wl
+Wl
+Wl
+mX
+mX
 mX
 FF
 FF
-xn
-xn
-ev
-ev
+YC
+YC
+Zo
+Zo
 Sm
 aO
 IA
-xn
-JT
-JT
+YC
+Wl
+Wl
 rl
 rl
-JT
+Wl
 Ib
 pr
 gv
@@ -7436,30 +7892,30 @@ UB
 Yy
 Jw
 Ib
-JT
-JT
-JT
-JT
-ar
+Wl
+Wl
+Wl
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
-gc
+Wl
+vE
 sa
 sa
 sa
 pv
 sa
-zK
+Wl
 QK
 hL
-iM
-iM
-iM
+YU
+YU
+YU
 "}
 (45,1,1) = {"
 Gn
@@ -7469,7 +7925,7 @@ Gn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -7486,29 +7942,29 @@ sa
 yQ
 Kk
 fG
-ar
+mi
 rl
 rl
-aX
+Wl
 sa
 sa
 BY
-LT
-QY
-xn
-xn
+QT
+pB
+YC
+YC
 CC
 CC
 CC
 CC
 OU
-gi
+Tl
 Ph
-JT
-JT
+Wl
+Wl
 rl
 rl
-JT
+Wl
 Ib
 UB
 gv
@@ -7521,30 +7977,30 @@ UB
 Yy
 UB
 VK
-xn
-xn
-xn
-xn
-ar
+xh
+xh
+xh
+xh
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-Sk
-JT
-wc
+id
+Wl
+Wl
 sa
 sa
 sa
 sa
 Wl
-Sk
-JT
-iM
-iM
-iM
+id
+Wl
+YU
+YU
+YU
 "}
 (46,1,1) = {"
 Gn
@@ -7554,7 +8010,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -7578,22 +8034,22 @@ sa
 sa
 wN
 sa
-Ai
-xn
-xn
-gi
-gi
-gi
-gi
-gi
-gi
-vI
+pB
+YC
+YC
+Tl
+Tl
+Tl
+Tl
+Tl
+Tl
+fC
 Ph
-JT
-JT
+Wl
+Wl
 rl
 qw
-JT
+Wl
 Ib
 Ne
 gv
@@ -7606,30 +8062,30 @@ UB
 Yy
 Ne
 tj
-xn
+xh
 el
 IC
-xn
-ar
+xh
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
+Wl
 ni
 ni
-wc
+Wl
 sa
 sa
-zK
-JT
-JT
-iM
-iM
-iM
-iM
+Wl
+Wl
+Wl
+YU
+YU
+YU
+YU
 "}
 (47,1,1) = {"
 Gn
@@ -7639,7 +8095,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 xx
 wZ
@@ -7663,27 +8119,27 @@ BY
 lL
 qp
 sa
-uq
-xn
+Wl
+YC
 ps
-gi
-gi
-gi
-gi
-gi
-gi
-gi
+Tl
+Tl
+Tl
+Tl
+Tl
+Tl
+Tl
 Ph
-JT
+Wl
 rl
 qw
-JT
-JT
+Wl
+Wl
 Ib
 UB
 gv
 UB
-UB
+tr
 UB
 UB
 UB
@@ -7694,8 +8150,8 @@ tj
 Bq
 Np
 LR
-xn
-ar
+xh
+mi
 Ru
 Ru
 Ru
@@ -7704,17 +8160,17 @@ Ru
 fG
 rl
 rl
-JT
+Wl
 ni
-wc
+Wl
 sa
 Wl
-JT
-iM
-iM
-iM
-iM
-iM
+Wl
+YU
+YU
+YU
+YU
+YU
 "}
 (48,1,1) = {"
 Gn
@@ -7724,7 +8180,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -7749,7 +8205,7 @@ BI
 qp
 sa
 sa
-xn
+YC
 ed
 fJ
 dF
@@ -7757,13 +8213,13 @@ dF
 dF
 eN
 bb
-xn
-xn
-JT
-JT
-JT
-JT
-JT
+YC
+YC
+Wl
+Wl
+Wl
+Wl
+Wl
 Ib
 pr
 gv
@@ -7780,7 +8236,7 @@ cA
 MG
 Np
 cA
-ar
+mi
 Ru
 Ru
 Ru
@@ -7789,17 +8245,17 @@ Ru
 fG
 rl
 qw
-JT
-JT
+Wl
+Wl
 uC
-SA
+FF
 iC
-JT
-iM
-iM
-iM
-iM
-iM
+Wl
+YU
+YU
+YU
+YU
+YU
 "}
 (49,1,1) = {"
 Gn
@@ -7809,7 +8265,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 Ay
@@ -7834,21 +8290,21 @@ pn
 PN
 ES
 BY
-xn
-xn
+YC
+YC
 iv
-vI
-vI
-vI
+fC
+fC
+fC
 mJ
-xn
-xn
-JT
-JT
+YC
+YC
+Wl
+Wl
 FF
-QY
-QY
-QY
+pB
+pB
+pB
 Ib
 UB
 gv
@@ -7872,19 +8328,19 @@ yz
 yz
 yz
 ev
-JT
+Wl
 qw
-JT
-JT
+Wl
+Wl
 FF
 ue
-JT
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (50,1,1) = {"
 Gn
@@ -7894,7 +8350,7 @@ pn
 LE
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -7910,26 +8366,26 @@ BY
 sa
 Qm
 fG
-ar
-JR
-wc
+mi
+Wl
+Wl
 sa
 sa
 aq
 HA
 sa
 sa
-du
-xn
+Wl
+YC
 Ph
 Ph
 Ph
 Ph
 Ph
-xn
+YC
 sa
-uq
-Sk
+Wl
+id
 mX
 Jx
 Xv
@@ -7958,18 +8414,18 @@ Ru
 Ru
 fG
 rl
-JT
+Wl
 iT
-JT
-Sk
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+id
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (51,1,1) = {"
 Gn
@@ -7979,7 +8435,7 @@ pn
 pn
 pn
 LE
-oL
+pn
 oF
 sa
 lT
@@ -7995,16 +8451,16 @@ sa
 CS
 yb
 fG
-ar
+mi
 QK
 QK
-wc
+Wl
 sa
 sa
 BY
 sa
-zK
-Br
+Wl
+Wl
 sa
 aq
 pn
@@ -8015,7 +8471,7 @@ sa
 BY
 sa
 Wl
-oP
+hu
 kd
 MF
 mX
@@ -8042,19 +8498,19 @@ Ru
 Ru
 Ru
 fG
-JT
-JT
+Wl
+Wl
 rl
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (52,1,1) = {"
 Gn
@@ -8064,16 +8520,16 @@ Tm
 Tm
 pn
 pn
-oL
+pn
 ec
 wB
 KC
 dL
 sa
 sa
-xn
-xn
-xn
+xh
+xh
+xh
 sa
 BY
 dj
@@ -8081,7 +8537,7 @@ EU
 uW
 bj
 AM
-JT
+Wl
 rl
 qw
 UT
@@ -8089,7 +8545,7 @@ UT
 UT
 UT
 rl
-Br
+Wl
 sa
 sa
 aq
@@ -8102,8 +8558,8 @@ sa
 Wl
 rl
 rl
-JT
-oP
+Wl
+hu
 Ib
 pr
 gv
@@ -8127,19 +8583,19 @@ Ru
 Ru
 Ru
 fG
-JT
+Wl
 rl
 rl
 Xv
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (53,1,1) = {"
 Gn
@@ -8149,30 +8605,30 @@ pn
 Tm
 Tm
 pn
-vv
-TD
+pn
+pn
 oF
 UF
 oz
 sa
 sa
 Sp
-xn
+xh
 gu
 sa
 sa
 sa
 De
 fG
-ar
+mi
 rl
 rl
 qw
 rl
-JT
+Wl
 ni
 FF
-JT
+Wl
 rl
 SB
 sa
@@ -8187,8 +8643,8 @@ sa
 Wl
 rl
 rl
-JT
-JT
+Wl
+Wl
 Ib
 UB
 gv
@@ -8214,17 +8670,17 @@ Ru
 fG
 rl
 qw
-JT
-JT
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+Wl
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (54,1,1) = {"
 Gn
@@ -8235,32 +8691,32 @@ pn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
 sa
 sa
 VT
-xn
+xh
 WR
 sa
 sa
 yQ
 Xb
 fG
-ar
+mi
 rl
 rl
 rl
-JT
-hQ
+Wl
+my
 FF
 Ts
 FF
 rl
 rl
-wc
+Wl
 sa
 sa
 sa
@@ -8268,12 +8724,12 @@ aq
 HA
 BY
 sa
-zK
-QY
-JT
+Wl
+pB
+Wl
 rl
 qw
-JT
+Wl
 Ib
 Ne
 gv
@@ -8298,28 +8754,28 @@ Ru
 Ru
 fG
 rl
-JT
+Wl
 gn
 rl
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (55,1,1) = {"
 Gn
 qs
 lH
-vt
-vt
-vt
-vt
-vt
+zI
+zI
+zI
+zI
+zI
 zI
 eV
 hl
@@ -8327,38 +8783,38 @@ kE
 sa
 sa
 Sp
-xn
+xh
 gu
 sa
 BY
 Qm
 uW
 zQ
-ar
-JT
+mi
+Wl
 rl
-JT
-JT
+Wl
+Wl
 ca
-QY
-QY
-QY
-JT
+pB
+pB
+pB
+Wl
 rl
 rl
-XR
+hu
 BY
 sa
 sa
 sa
 sa
-zK
-QY
+Wl
+pB
 ct
 mX
 PC
 rl
-JT
+Wl
 Ib
 UB
 gv
@@ -8371,10 +8827,10 @@ UB
 Yy
 UB
 NT
-xn
-kb
-kb
-XJ
+xh
+Wl
+Wl
+FF
 ev
 Ge
 Ge
@@ -8382,25 +8838,25 @@ Ge
 Ge
 Ge
 ev
-JT
-JT
+Wl
+Wl
 rl
 qw
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (56,1,1) = {"
 Gn
 Ca
-Wf
-Wf
+io
+io
 io
 io
 ev
@@ -8411,39 +8867,39 @@ ev
 hb
 EQ
 sa
-xn
-xn
-xn
+xh
+xh
+xh
 sa
 sa
 Qm
 fG
 mR
 AM
-JT
-JT
+Wl
+Wl
 FF
 mX
 ca
 rl
 qw
 rl
-QY
+pB
 rl
 rl
-oP
-Jm
-JR
-SA
-SA
+hu
+hu
+Wl
+FF
+FF
 UT
 qw
-QY
+pB
 Sy
 mX
-JT
+Wl
 rl
-JT
+Wl
 Ib
 pr
 gv
@@ -8456,37 +8912,37 @@ UB
 Yy
 Jw
 Ib
-kb
-uK
-XJ
-Cn
-ar
+Wl
+ni
+FF
+Xv
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-JT
+Wl
 rl
 rl
-JT
+Wl
 FF
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (57,1,1) = {"
 Gn
 Ca
 Nu
-Wf
-Wf
+io
+io
 io
 ev
 ev
@@ -8503,32 +8959,32 @@ sa
 sa
 Qm
 fG
-ar
-JT
-JT
+mi
+Wl
+Wl
 FF
 FF
-JT
-JT
+Wl
+Wl
 PC
 rl
-JT
-QY
+Wl
+pB
 rl
 rl
 ni
 ni
 FF
-JT
+Wl
 FF
-JT
+Wl
 rl
 rl
-QY
+pB
 mX
-JT
+Wl
 rl
-JT
+Wl
 Ib
 UB
 gv
@@ -8541,36 +8997,36 @@ UB
 Yy
 UB
 Ib
-XJ
-uK
+FF
+ni
 rl
-kb
-ar
+Wl
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-JT
+Wl
 qw
 rl
-JT
+Wl
 ni
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (58,1,1) = {"
 Gn
 Ca
-Wf
-Wf
+io
+io
 io
 io
 ev
@@ -8588,32 +9044,32 @@ sa
 yQ
 yb
 fG
-ar
-JT
-JT
-JT
-JT
-JT
-JT
+mi
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 rl
-JT
+Wl
 Sy
-QY
+pB
 qw
-JT
-QY
+Wl
+pB
 in
-JT
-xn
-xn
-xn
-xn
-ih
-xn
-QY
+Wl
+xh
+xh
+xh
+xh
+vc
+xh
+pB
 Xv
-JT
-JT
+Wl
+Wl
 Ib
 Ne
 gv
@@ -8626,40 +9082,40 @@ UB
 Yy
 Ne
 Ib
-kb
-Cn
+Wl
+Xv
 rl
-kb
-ar
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
+Wl
 rl
 rl
 DP
 ni
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (59,1,1) = {"
 Gn
 RM
 ur
-lR
-lR
-lR
-lR
-lR
+VI
+VI
+VI
+VI
+VI
 VI
 En
 AS
@@ -8673,30 +9129,30 @@ yQ
 yb
 uW
 zQ
-ar
-JT
-oP
-oP
-JT
-hQ
-Sk
-JT
-oP
+mi
+Wl
+hu
+hu
+Wl
+my
+id
+Wl
+hu
 kd
 rl
 rl
-JT
-JT
-QY
-JT
-xn
-We
-We
+Wl
+Wl
+pB
+Wl
+xh
+VV
+Np
 sX
 Np
-xn
-JT
-JT
+xh
+Wl
+Wl
 FF
 FF
 Ib
@@ -8711,11 +9167,11 @@ UB
 Yy
 UB
 Ib
-kb
-kb
+Wl
+Wl
 qw
-kb
-ar
+Wl
+mi
 Ru
 Ru
 Ru
@@ -8723,18 +9179,18 @@ Ru
 Ru
 fG
 Xv
-JT
+Wl
 GA
 FF
 uC
 gn
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (60,1,1) = {"
 Gn
@@ -8744,8 +9200,8 @@ pn
 pn
 pn
 pn
-je
-Dq
+pn
+pn
 oF
 sa
 sa
@@ -8761,26 +9217,26 @@ ev
 vf
 xo
 YL
-oP
-oP
-oP
-JT
+hu
+hu
+hu
+Wl
 MF
 kd
-JT
+Wl
 rl
 rl
-JT
-hQ
-QY
-JT
-xn
+Wl
+my
+pB
+Wl
+xh
 WO
-We
-xn
+FI
+xh
 Np
-xn
-JT
+xh
+Wl
 FF
 iC
 FF
@@ -8796,30 +9252,30 @@ UB
 Yy
 Jw
 Ib
-kb
-cF
-cF
+Wl
+OI
+OI
 aj
-ar
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
-xn
-xn
+Wl
+xh
+xh
 cA
 cA
 cA
-xn
-xn
-xn
-iM
-iM
-iM
-iM
+xh
+xh
+xh
+YU
+YU
+YU
+YU
 "}
 (61,1,1) = {"
 Gn
@@ -8829,7 +9285,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 Py
 nu
 kN
@@ -8843,32 +9299,32 @@ uW
 zQ
 ev
 HQ
-sp
-uB
+fA
+aR
 vf
 YL
-oP
-oP
-oP
+hu
+hu
+hu
 kj
-JT
+Wl
 rl
 rl
-JT
-JT
-JT
-QY
-JT
-xn
-xn
-xn
-xn
+Wl
+Wl
+Wl
+pB
+Wl
+xh
+xh
+xh
+xh
 Np
-xn
-JT
+xh
+Wl
 FF
-QY
-JT
+pB
+Wl
 Ib
 UB
 IX
@@ -8881,30 +9337,30 @@ hY
 rg
 UB
 Ib
-kn
-kb
-cF
+gn
+Wl
+OI
 OR
-ar
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-Mb
-xn
+Wl
+xh
 ar
 UA
 vn
 EH
 fG
 mu
-xn
-iM
-iM
-iM
-iM
+xh
+YU
+YU
+YU
+YU
 "}
 (62,1,1) = {"
 Gn
@@ -8914,7 +9370,7 @@ Gn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 ER
@@ -8930,30 +9386,30 @@ kG
 Jh
 qZ
 Cq
-uB
-ar
-oP
-oP
+aR
+mi
+hu
+hu
 kj
 FF
-JT
+Wl
 rl
 rl
-JT
+Wl
 XJ
 mX
-QY
-JT
-xn
-We
-We
-nc
+pB
+Wl
+xh
+Ed
+VV
+vc
 Np
-xn
-JT
-JT
+xh
+Wl
+Wl
 Sy
-JT
+Wl
 Ib
 Ne
 UB
@@ -8966,30 +9422,30 @@ mt
 UB
 Ne
 Ib
-kb
-kb
-kb
-kb
-ar
+Wl
+Wl
+Wl
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
-xn
-ar
+Wl
+xh
+mi
 gi
 gi
 gi
 fG
 Be
 cA
-iM
-iM
-iM
-iM
+YU
+YU
+YU
+YU
 "}
 (63,1,1) = {"
 Gn
@@ -8999,7 +9455,7 @@ Gn
 pn
 mz
 pn
-oL
+pn
 oF
 sa
 yA
@@ -9016,27 +9472,27 @@ rl
 bV
 qZ
 fG
-ar
-oP
+mi
+hu
 kj
 FF
-JT
+Wl
 rl
 qw
 rl
 gn
-hu
+Eb
 gd
 gd
 kb
-xn
-xn
-xn
-xn
-ih
-xn
-JT
-JT
+xh
+xh
+xh
+xh
+vc
+xh
+Wl
+Wl
 Sy
 Sy
 yS
@@ -9051,11 +9507,11 @@ zd
 zd
 zd
 yS
-kb
-XJ
-kb
-kb
-ar
+Wl
+FF
+Wl
+Wl
+mi
 Ru
 Ru
 Ru
@@ -9071,10 +9527,10 @@ xo
 zQ
 jG
 cA
-iM
-iM
-iM
-iM
+YU
+YU
+YU
+YU
 "}
 (64,1,1) = {"
 Gn
@@ -9084,7 +9540,7 @@ Gn
 Gn
 pn
 pn
-oL
+pn
 oF
 sa
 YE
@@ -9097,69 +9553,69 @@ fG
 HQ
 Jh
 qw
-oP
+hu
 bD
 sH
 fG
-ar
-oP
-JT
-JT
+mi
+hu
+Wl
+Wl
 gn
 rl
 rl
-JT
-JT
-hu
+Wl
+Wl
+Eb
 kb
 kb
 rl
 kb
 XJ
-JT
-JT
+Wl
+Wl
 rl
-JT
-JT
-JT
-JT
+Wl
+Wl
+Wl
+Wl
 OI
-cF
-cF
+OI
+OI
+Wl
+Wl
+gn
+Wl
+Wl
 kb
 kb
-kn
-kb
-kb
-kb
-kb
-kb
-kb
-kb
-XJ
-XJ
+Wl
+Wl
+Wl
+FF
+FF
 rl
-kb
-ar
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
-xn
+Wl
+xh
 EX
 ev
 zl
 bu
 AD
 se
-xn
-iM
-iM
-iM
-iM
+xh
+YU
+YU
+YU
+YU
 "}
 (65,1,1) = {"
 Gn
@@ -9169,11 +9625,11 @@ Gn
 Gn
 pn
 pn
-oL
+pn
 oF
 sa
 lZ
-OP
+LN
 sa
 sa
 yb
@@ -9188,15 +9644,15 @@ sH
 Cq
 eh
 YL
-JT
-xn
-xn
-xn
+Wl
+UX
+UX
+UX
 Mk
-xn
-xn
-xn
-xn
+UX
+UX
+UX
+UX
 kb
 rl
 rl
@@ -9204,47 +9660,47 @@ kb
 rl
 rl
 rl
-JT
-JT
+Wl
+Wl
 xE
-kn
-kb
-lc
-mK
-UO
-ND
-kb
-kb
-kb
+gn
+Wl
+wS
+hu
+Wl
+Xv
+Wl
+Wl
+Wl
 rl
 rl
-kb
+Wl
+FF
+FF
 XJ
-XJ
-XJ
 rl
 rl
-kb
-ar
+Wl
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-JT
-xn
+Wl
+xh
 PE
 ev
 dX
-xn
-xn
-xn
-xn
-iM
-iM
-iM
-iM
+xh
+xh
+xh
+xh
+YU
+YU
+YU
+YU
 "}
 (66,1,1) = {"
 Gn
@@ -9254,7 +9710,7 @@ Gn
 aF
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -9266,22 +9722,22 @@ ev
 Ko
 rl
 rl
-bI
-oP
+wS
+hu
 FC
 Ck
 qZ
 fG
 vf
-xn
-xn
+UX
+UX
 un
 VQ
-We
-We
+tI
+tI
 aP
 UH
-xn
+UX
 kn
 rl
 PC
@@ -9289,47 +9745,47 @@ rl
 kb
 rl
 rl
-JT
+Wl
+Wl
+Wl
 kb
 kb
-UO
-Xh
 gN
 hl
 hl
 kE
-Hg
-kb
-kb
+Wl
+Wl
+Wl
 qw
 rl
-rl
+Wl
 xE
-kb
+Wl
 rl
 qw
 kb
-kb
-ar
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-Sk
-xn
+id
+xh
 zk
 ev
 Bd
-xn
+xh
 eK
 tJ
-xn
-iM
-iM
-iM
-iM
+xh
+YU
+YU
+YU
+YU
 "}
 (67,1,1) = {"
 pn
@@ -9339,7 +9795,7 @@ Gn
 lE
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -9352,31 +9808,31 @@ Ko
 rl
 rl
 rl
-bI
+wS
 fv
 EC
 sH
 fG
 ev
-xn
-We
-We
-We
-We
-We
+UX
+xy
+tI
+tI
+tI
+tI
 Gd
 gZ
-xn
+UX
 kb
 rl
 rl
 rl
-kb
-JT
+Wl
+Wl
 Xv
-kb
-UO
-Xh
+Wl
+Wl
+Wl
 sa
 sa
 eM
@@ -9384,37 +9840,37 @@ ev
 ev
 hb
 sa
-Hg
+Wl
 hu
 hu
-kb
-kb
-kb
-kb
+Wl
+Wl
+Wl
+Wl
 rl
 rl
 IF
-IF
-ar
+pB
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-JT
-xn
+Wl
+xh
 te
 ev
 ev
 Up
 uV
 kw
-xn
-iM
-iM
-iM
-iM
+xh
+YU
+YU
+YU
+YU
 "}
 (68,1,1) = {"
 pn
@@ -9424,7 +9880,7 @@ Gn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 BY
@@ -9438,28 +9894,28 @@ wH
 ie
 rl
 qw
-oP
-oP
+hu
+hu
 sH
 fG
 ev
 Mk
-We
+tI
 XQ
 SS
-We
-We
+tI
+tI
 GJ
-We
-xn
+CJ
+UX
 kb
 kb
 kb
 rl
-kb
-hg
-IF
-Xh
+Wl
+kd
+pB
+Wl
 sa
 BY
 sa
@@ -9470,36 +9926,36 @@ ev
 hb
 sa
 sa
-Ny
+Xv
 hu
 wS
-cF
-kb
+OI
+Wl
 rl
 rl
 PC
-kb
+Wl
 JD
-ar
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
-xn
+Wl
+xh
 ev
 ev
-xn
-xn
-xn
-xn
-xn
-iM
-iM
-iM
-iM
+xh
+xh
+xh
+xh
+xh
+YU
+YU
+YU
+YU
 "}
 (69,1,1) = {"
 pn
@@ -9509,7 +9965,7 @@ Gn
 pn
 pn
 pn
-oL
+pn
 oF
 sa
 sa
@@ -9518,32 +9974,32 @@ sa
 BY
 Xc
 Cq
-sp
-uB
+fA
+aR
 Oe
 ie
 rl
 rl
-bI
+wS
 sH
 fG
 ev
-xn
-We
-We
-We
-We
-We
-We
-We
-xn
-kb
+UX
+xy
+tI
+tI
+tI
+tI
+tI
+tI
+UX
+Wl
 hu
 hu
-kb
-hg
-hg
-Xh
+Wl
+kd
+kd
+Wl
 sa
 sa
 sa
@@ -9555,36 +10011,36 @@ ev
 hb
 BY
 sa
-Hg
-kb
+Wl
+Wl
 hu
-kb
+Wl
 rl
 rl
-kb
-kb
-kb
-kb
-ar
+Wl
+Wl
+Wl
+Wl
+mi
 Ru
 Ru
 Ru
 Ru
 Ru
 fG
-JT
-xn
-ev
-ev
-xn
+Wl
+xh
+fA
+aR
+xh
 Vr
 gX
 bf
-xn
-iM
-iM
-iM
-iM
+xh
+YU
+YU
+YU
+YU
 "}
 (70,1,1) = {"
 pn
@@ -9594,7 +10050,7 @@ pn
 pn
 pn
 pn
-oL
+pn
 ec
 wB
 sa
@@ -9605,7 +10061,7 @@ iO
 Ie
 Xc
 Cq
-sp
+fA
 kI
 ie
 rl
@@ -9613,21 +10069,21 @@ Rd
 SO
 fG
 mR
-xn
-xn
+UX
+UX
 PF
 fn
-We
+tI
 ix
 NX
 NX
-xn
-kb
-kb
+UX
+Wl
+Wl
 hu
 hu
 Zy
-fT
+pB
 sa
 sa
 sa
@@ -9641,35 +10097,35 @@ jj
 sa
 sa
 sa
-Hg
-kb
-kb
-kb
-kb
+Wl
+Wl
+Wl
+Wl
+Wl
 hu
-kb
+Wl
 rl
-kb
-ar
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
-xn
-ev
-ev
-xn
+Wl
+xh
+xF
+fG
+xh
 QI
 OW
 eI
-xn
-iM
-iM
-iM
-iM
+xh
+YU
+YU
+YU
+YU
 "}
 (71,1,1) = {"
 pn
@@ -9679,8 +10135,8 @@ pn
 XZ
 Tm
 pn
-vv
-TD
+pn
+pn
 ec
 wB
 sa
@@ -9698,21 +10154,21 @@ Hi
 sT
 Ga
 AM
-kn
-xn
-xn
-xn
+gn
+UX
+UX
+UX
 Mk
-xn
-xn
-xn
-xn
-kb
-kb
+UX
+UX
+UX
+UX
+Wl
+Wl
 my
 hu
-hg
-Xh
+kd
+Wl
 sa
 sa
 Hz
@@ -9727,15 +10183,15 @@ OK
 sa
 sa
 sa
-Zv
-XJ
-XJ
+Wl
+FF
+FF
 wf
 hu
 rl
 rl
-KK
-ar
+id
+mi
 Ru
 Ru
 Ru
@@ -9743,18 +10199,18 @@ Ru
 Ru
 fG
 gn
-xn
-EX
-ev
+xh
+vn
+fG
 Pm
 ev
 Ln
 KO
-xn
-iM
-iM
-iM
-iM
+xh
+YU
+YU
+YU
+YU
 "}
 (72,1,1) = {"
 pn
@@ -9765,8 +10221,8 @@ Tm
 pn
 pn
 pn
-MN
-MN
+pn
+pn
 oF
 sa
 sa
@@ -9781,22 +10237,22 @@ Cq
 kI
 xo
 zQ
-ar
-kb
-kb
-kb
+mi
+Wl
+Wl
+Wl
 rl
 rl
 rl
-kb
-kb
-kb
-kb
-Rb
-kb
-kb
-IF
-fw
+Wl
+Wl
+Wl
+Wl
+QK
+Wl
+Wl
+pB
+kd
 sa
 sa
 lL
@@ -9812,34 +10268,34 @@ pn
 OK
 BY
 sa
-Zv
-Rb
-ZF
-gd
-kb
+Wl
+QK
+ue
+kj
+Wl
 qw
-kb
-kb
-ar
+Wl
+Wl
+mi
 Ru
 Ru
 GE
 Ru
 Ru
 fG
-JT
-xn
-xn
-xn
-xn
-xn
-xn
-xn
-xn
-iM
-iM
-iM
-iM
+Wl
+xh
+xh
+xh
+xh
+xh
+xh
+xh
+xh
+YU
+YU
+YU
+YU
 "}
 (73,1,1) = {"
 pn
@@ -9849,8 +10305,8 @@ pn
 pn
 pn
 pn
-je
-Dq
+pn
+pn
 Py
 nu
 EQ
@@ -9864,23 +10320,23 @@ sa
 iO
 br
 Cq
-uB
+aR
 mR
 AM
 hu
 hu
 hu
-KK
-kb
+id
+Wl
 rl
-kn
-kb
+gn
+Wl
 BP
-kb
+Wl
 rl
 qw
-kb
-Jc
+Wl
+Wl
 sa
 sa
 sa
@@ -9897,44 +10353,44 @@ pn
 qp
 sa
 sa
-Hg
-kb
-Rb
-XJ
-XJ
-kb
-kb
-cF
-ar
+Wl
+Wl
+QK
+FF
+FF
+Wl
+Wl
+OI
+mi
 Ru
 Ru
 rl
 rl
 Ru
 fG
-JT
+Wl
 FF
-JT
-JT
+Wl
+Wl
 rl
 rl
 gn
-JT
-iM
-iM
-iM
-iM
-iM
+Wl
+YU
+YU
+YU
+YU
+YU
 "}
 (74,1,1) = {"
 pn
 pn
 pn
 pn
-je
-iV
-iV
-Dq
+pn
+pn
+pn
+pn
 Py
 nu
 sa
@@ -9950,22 +10406,22 @@ GI
 xK
 Xc
 fG
-ar
-kb
-kb
-ZF
-gd
-kb
+mi
+Wl
+Wl
+ue
+kj
+Wl
 rl
 qw
-kb
+Wl
 hu
 BP
 hu
 rl
-kb
-kb
-Jc
+Wl
+Wl
+Wl
 sa
 sa
 lL
@@ -9983,14 +10439,14 @@ pn
 OK
 sa
 sa
-Hg
-Cn
-kb
-XJ
+Wl
+Xv
+Wl
+FF
 rl
-kb
-cF
-ar
+Wl
+OI
+mi
 Ru
 rl
 qw
@@ -10002,21 +10458,21 @@ OI
 uC
 Sh
 FF
-JT
-JT
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (75,1,1) = {"
-iV
-iV
-iV
-iV
-Dq
+pn
+pn
+pn
+pn
+pn
 Py
 Xq
 Xq
@@ -10037,20 +10493,20 @@ Qm
 fG
 vf
 YL
-kb
-gd
+Wl
+kj
 hu
 rl
 qw
 rl
 rl
-kb
+Wl
 hu
 rl
 qw
-kb
-kn
-Jc
+Wl
+gn
+Wl
 sa
 BY
 aq
@@ -10069,9 +10525,9 @@ qp
 sa
 sa
 sa
-kb
-kb
-kb
+Wl
+Wl
+Wl
 rl
 wf
 aj
@@ -10082,19 +10538,19 @@ rl
 rl
 Ru
 ev
-JT
+Wl
 rl
 qw
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (76,1,1) = {"
 Xq
@@ -10108,10 +10564,10 @@ sa
 ON
 sa
 sa
-xn
+xh
 ep
 HW
-xn
+xh
 sa
 sa
 BY
@@ -10121,22 +10577,22 @@ sa
 Qm
 fG
 ev
-ar
-kb
-gd
-kb
-kb
+mi
+Wl
+kj
+Wl
+Wl
 PC
-kb
-kb
-kb
+Wl
+Wl
+Wl
 rl
 rl
-kb
-kb
-iM
-Cn
-xp
+Wl
+Wl
+YU
+Xv
+Wl
 sa
 sa
 aq
@@ -10155,7 +10611,7 @@ sa
 sa
 sa
 xE
-kb
+Wl
 rl
 qw
 hu
@@ -10166,20 +10622,20 @@ Ru
 rl
 Ru
 Ru
-JT
+Wl
 rl
 rl
 rl
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (77,1,1) = {"
 sa
@@ -10193,10 +10649,10 @@ NV
 sa
 sa
 sa
-xn
-xn
-xn
-xn
+xh
+xh
+xh
+xh
 sa
 sa
 sa
@@ -10207,21 +10663,21 @@ Qm
 Mp
 FW
 AM
-kb
+Wl
 wf
-kb
+Wl
 hu
-kb
-kb
-iM
-iM
-kb
-kb
-kb
-iM
-iM
-kb
-Jc
+Wl
+Wl
+YU
+YU
+Wl
+Wl
+Wl
+YU
+YU
+Wl
+Wl
 sa
 sa
 sa
@@ -10238,13 +10694,13 @@ HA
 BY
 sa
 sa
-mn
 kb
-kb
+Wl
+Wl
 rl
 hu
 hu
-kb
+Wl
 hu
 qw
 Ru
@@ -10254,17 +10710,17 @@ rl
 gn
 rl
 rl
-JT
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (78,1,1) = {"
 sa
@@ -10291,23 +10747,23 @@ sa
 iO
 br
 kf
-kb
-kb
-kb
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-kb
-xp
+Wl
+Wl
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+Wl
+Wl
 sa
 sa
 sa
@@ -10322,34 +10778,34 @@ HA
 sa
 sa
 sa
-mn
-kb
-kb
-cF
-kb
+Wl
+Wl
+Wl
+OI
+Wl
 hu
-kb
+Wl
 xE
-kb
+Wl
 rl
 Ru
 Ru
 Ru
 qw
 rl
-JT
-JT
-JT
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+Wl
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (79,1,1) = {"
 sa
@@ -10376,24 +10832,24 @@ GI
 UT
 Ck
 cs
-KK
-kb
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-kb
-xp
+id
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+Wl
+Wl
 sa
 sa
 sa
@@ -10406,35 +10862,35 @@ sa
 sa
 sa
 sa
-mn
-kb
-kn
-Cn
-kb
+Wl
+Wl
+gn
+Xv
+Wl
 wS
 hu
-iM
-iM
-iM
+YU
+YU
+YU
 Ru
 Ru
 Ru
 rl
 Ru
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
 (80,1,1) = {"
 sa
@@ -10460,25 +10916,25 @@ aa
 rl
 rl
 rl
-Rb
+QK
 yl
-kb
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-kb
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+Wl
 dy
 xp
 sa
@@ -10488,36 +10944,36 @@ sa
 BY
 sa
 sa
-mn
-MD
-dy
-kb
-kb
-kb
-kb
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
-iM
+Wl
+Xv
+Wl
+Wl
+Wl
+Wl
+Wl
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
+YU
 "}
