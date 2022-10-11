@@ -152,18 +152,6 @@
 /obj/item/gun/energy/laser/redtag/hitscan
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/redtag/hitscan)
 
-/obj/item/gun/energy/laser/terra
-	name = "\improper TerraGov laser rifle"
-	desc = "A old laser rifle that was used by SolGov. Has a self-recharging cell but only 6 shots before needing to recharge. This should be in a musuem instead."
-	icon_state = "terralaser"
-	item_state = "laser"
-	w_class = WEIGHT_CLASS_NORMAL
-	flags_1 =  CONDUCT_1
-	selfcharge = 1
-	cell_type = /obj/item/stock_parts/cell/gun/mini
-	internal_cell = TRUE
-	charge_delay = 1 //50 seconds to recharge the clip
-
 /obj/item/gun/energy/laser/iot
 	name = "\improper E-SG 255 Ultimate"
 	desc = "An energy shotgun with an integrated computer system for surveillance and statistics tracking."

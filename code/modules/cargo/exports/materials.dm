@@ -3,7 +3,7 @@
 	message = "cm3 of developer's tears. Please, report this on github"
 	var/material_id = null
 	export_types = list(
-		/obj/item/stack/sheet/mineral, /obj/item/stack/tile/mineral,
+		/obj/item/stack/sheet, /obj/item/stack/tile,
 		/obj/item/stack/ore, /obj/item/coin)
 // Yes, it's a base type containing export_types.
 // But it has no material_id, so any applies_to check will return false, and these types reduce amount of copypasta a lot
@@ -24,71 +24,71 @@
 
 	return round(amount/MINERAL_MATERIAL_AMOUNT)
 
-// Materials. Nothing but plasma is really worth selling. Better leave it all to RnD and sell some plasma instead.
+// Materials. Prices have been heavily nerfed from the original values; mining is boring, so it shouldn't be a good way to make money.
 
 /datum/export/material/bananium
-	cost = 1000
+	cost = 250
 	material_id = /datum/material/bananium
 	message = "cm3 of bananium"
 
 /datum/export/material/diamond
-	cost = 500
+	cost = 125
 	material_id = /datum/material/diamond
 	message = "cm3 of diamonds"
 
 /datum/export/material/plasma
-	cost = 200
+	cost = 25
 	k_elasticity = 0
 	material_id = /datum/material/plasma
 	message = "cm3 of plasma"
 
 /datum/export/material/uranium
-	cost = 100
+	cost = 25
 	material_id = /datum/material/uranium
 	message = "cm3 of uranium"
 
 /datum/export/material/gold
-	cost = 125
+	cost = 30
 	material_id = /datum/material/gold
 	message = "cm3 of gold"
 
 /datum/export/material/silver
-	cost = 50
+	cost = 10
 	material_id = /datum/material/silver
 	message = "cm3 of silver"
 
 /datum/export/material/titanium
-	cost = 125
+	cost = 30
 	material_id = /datum/material/titanium
 	message = "cm3 of titanium"
 
 /datum/export/material/adamantine
-	cost = 500
+	cost = 125
 	material_id = /datum/material/adamantine
 	message = "cm3 of adamantine"
 
 /datum/export/material/mythril
-	cost = 1500
+	cost = 375
 	material_id = /datum/material/mythril
 	message = "cm3 of mythril"
 
 /datum/export/material/bscrystal
-	cost = 300
+	cost = 75
 	message = "of bluespace crystals"
 	material_id = /datum/material/bluespace
 
 /datum/export/material/plastic
-	cost = 25
+	cost = 5
 	message = "cm3 of plastic"
 	material_id = /datum/material/plastic
 
 /datum/export/material/runite
-	cost = 600
+	cost = 150
 	message = "cm3 of runite"
 	material_id = /datum/material/runite
 
 /datum/export/material/metal
-	cost = 5
+	cost = 2
 	message = "cm3 of metal"
 	material_id = /datum/material/iron
 	export_types = list(
@@ -96,14 +96,14 @@
 		/obj/item/stack/rods, /obj/item/stack/ore, /obj/item/coin)
 
 /datum/export/material/glass
-	cost = 5
+	cost = 2
 	message = "cm3 of glass"
 	material_id = /datum/material/glass
 	export_types = list(/obj/item/stack/sheet/glass, /obj/item/stack/ore,
 		/obj/item/shard)
 
 /datum/export/material/hot_ice
-	cost = 400
+	cost = 100
 	message = "cm3 of Hot Ice"
 	material_id = /datum/material/hot_ice
 	export_types = /obj/item/stack/sheet/hot_ice

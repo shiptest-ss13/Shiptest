@@ -57,20 +57,22 @@
 	return BULLET_ACT_HIT
 
 /obj/projectile/bullet/pellet
-	var/tile_dropoff = 1		//WS Edit - Shotgun Nerf
-	var/tile_dropoff_s = 0.8		//WS Edit - Shotgun Nerf
+	///How much damage is subtracted per tile?
+	var/tile_dropoff = 1
+	///How much stamina damage is subtracted per tile?
+	var/tile_dropoff_stamina = 0.8
 
 /obj/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
-	damage = 10						//WS Edit - Shotgun Nerf
-	armour_penetration = -20		//WS Edit - Shotgun Nerf
+	damage = 10
+	armour_penetration = -20
 
 /obj/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
-	damage = 2						//WS Edit Begin - Shotgun Nerf
+	damage = 2
 	stamina = 8
 	armour_penetration = -20
-	tile_dropoff = 0.2			// Keep it at 10% per tile	//WS Edit End
+	tile_dropoff = 0.2
 
 /obj/projectile/bullet/pellet/shotgun_incapacitate
 	name = "incapacitating pellet"
@@ -82,7 +84,7 @@
 	if(damage > 0)
 		damage -= tile_dropoff
 	if(stamina > 0)
-		stamina -= tile_dropoff_s
+		stamina -= tile_dropoff_stamina
 	if(damage < 0 && stamina < 0)
 		qdel(src)
 
@@ -103,3 +105,9 @@
 
 /obj/projectile/bullet/scattershot
 	damage = 24
+
+/obj/projectile/bullet/pellet/shotgun_buckshot/twobore
+	name = "two-bore pellet"
+	damage = 30
+	armour_penetration = -25
+	tile_dropoff = 5

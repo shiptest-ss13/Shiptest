@@ -226,3 +226,13 @@
 	desc = "A comfortable looking brown beret with a golden insignia. Denotes the wearer as a vanguard of the IRMG. The padding inside feels thicker."
 	icon_state = "inteq_beret"
 	item_state = "inteq_beret"
+
+/obj/item/clothing/head/beret/sec/frontier
+	name = "\improper Frontiersmen beret"
+	desc = "A scratchy olive green beret, worn by Frontiersmen who want to look good while intimidating freighter crew."
+	icon_state = "frontier_beret"
+
+/obj/item/clothing/head/beret/sec/frontier/officer
+	name = "\improper Frontiersmen officer beret"
+	desc = "A scratchy olive green beret emblazoned with the Frontiersmen insignia, worn by Frontiersmen who want to look good while intimidating freighter captains."
+	icon_state = "frontier_officer_beret"
