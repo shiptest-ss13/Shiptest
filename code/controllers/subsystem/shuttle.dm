@@ -109,20 +109,15 @@ SUBSYSTEM_DEF(shuttle)
 	// Remember, the direction is the direction we appear to be
 	// coming from
 	var/dock_angle = dir2angle(M.preferred_direction) + dir2angle(M.port_direction) + 180
-	var/dock_dir = angle2dir(dock_angle)
 
 	var/transit_width = SHUTTLE_TRANSIT_BORDER * 2
 	var/transit_height = SHUTTLE_TRANSIT_BORDER * 2
 
 	// Shuttles travelling on their side have their dimensions swapped
 	// from our perspective
-	switch(dock_dir)
-		if(NORTH, SOUTH)
-			transit_width += M.width
-			transit_height += M.height
-		if(EAST, WEST)
-			transit_width += M.height
-			transit_height += M.width
+	var/list/union_coords = M.return_union_coords(M.get_all_towed_shuttles(), 0, 0, NORTH)
+	transit_width += union_coords[3] - union_coords[1] + 1
+	transit_height += union_coords[4] - union_coords[2] + 1
 
 	var/transit_path = /turf/open/space/transit
 	switch(travel_dir)
@@ -154,18 +149,23 @@ SUBSYSTEM_DEF(shuttle)
 		)
 
 	// Then create a transit docking port in the middle
-	var/coords = M.return_coords(0, 0, dock_dir)
-	/*  0------2
-	*   |      |
-	*   |      |
-	*   |  x   |
-	*   3------1
+	var/matrix/dir_rotation = matrix(union_coords[1], union_coords[2], 0, union_coords[3], union_coords[4], 0) * matrix(dock_angle, MATRIX_ROTATE)
+	/*    Shuttle Space         Dock Space
+	        *------s1         d1----------*
+            |      |           |          |
+            |      |     ->    |       x  |   x = (0,0)
+            |  x   |           |          |
+           s0------*           *----------d0
+		┌  ┐ ┌                     ┐   ┌  ┐
+		|s0| |  cos(dir)  sin(dir) |   |d0|
+		|s1| | -sin(dir)  cos(dir) | = |d1|
+		└  ┘ └                     ┘   └  ┘
 	*/
 
-	var/x0 = coords[1]
-	var/y0 = coords[2]
-	var/x1 = coords[3]
-	var/y1 = coords[4]
+	var/x0 = dir_rotation.a
+	var/y0 = dir_rotation.b
+	var/x1 = dir_rotation.d
+	var/y1 = dir_rotation.e
 	// Then we want the point closest to -infinity,-infinity
 	var/x2 = min(x0, x1)
 	var/y2 = min(y0, y1)
@@ -279,7 +279,7 @@ SUBSYSTEM_DEF(shuttle)
 	if(!to_replace || !replacement)
 		return
 	var/obj/docking_port/mobile/new_shuttle = load_template(replacement, parent, FALSE)
-	var/obj/docking_port/stationary/old_shuttle_location = to_replace.get_docked()
+	var/obj/docking_port/stationary/old_shuttle_location = to_replace.docked
 	var/result = new_shuttle.canDock(old_shuttle_location)
 
 	if((result != SHUTTLE_CAN_DOCK) && (result != SHUTTLE_SOMEONE_ELSE_DOCKED)) //Someone else /IS/ docked, the old shuttle!
@@ -351,6 +351,8 @@ SUBSYSTEM_DEF(shuttle)
 	if(!new_shuttle.can_move_docking_ports && length(stationary_ports))
 		log_world("Map warning: Shuttle Template [template.mappath] has [length(stationary_ports)] stationary docking port(s) and does not have var/can_move_docking_ports set to TRUE. Will not move these ports.")
 	new_shuttle.docking_points = stationary_ports
+	new_shuttle.current_ship = parent //for any ships that spawn on top of us
+	SSatoms.InitializeAtoms(stationary_ports) //We need to initialize our stationary ports here incase any of them spawn another shuttle on top of us.
 
 	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)
 
