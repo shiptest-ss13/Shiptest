@@ -1,25 +1,61 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/wheat/oat,
+/turf/open/floor/plating/dirt,
+/area/space)
+"am" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/space)
 "ao" = (
 /obj/structure/fermenting_barrel,
 /turf/open/floor/plating/dirt,
 /area/space)
 "bV" = (
-/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/space)
+"cZ" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/space)
 "dn" = (
-/obj/machinery/hydroponics/soil,
-/obj/item/cultivator/rake,
-/turf/open/floor/plating/dirt,
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/plating/grass/beach/lit,
 /area/space)
 "dr" = (
 /obj/structure/sink/puddle,
 /obj/item/reagent_containers/glass/bucket/wooden,
 /turf/open/floor/plating/dirt,
+/area/space)
+"dy" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
 /area/space)
 "dF" = (
 /obj/structure/mineral_door/iron,
@@ -35,11 +71,11 @@
 /turf/open/floor/grass/fairy/beach,
 /area/space)
 "eZ" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/space)
 "fy" = (
@@ -53,17 +89,19 @@
 /turf/open/floor/grass/fairy/beach,
 /area/space)
 "gf" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/space)
 "gC" = (
-/obj/item/reagent_containers/glass/bucket/wooden,
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/space)
 "gO" = (
@@ -77,27 +115,26 @@
 /turf/open/floor/plating/dirt,
 /area/space)
 "gX" = (
-/obj/structure/flora/tree/chapel{
-	desc = "A true earthen oak tree. It stands high, like a proud guard";
-	name = "oak tree"
-	},
-/turf/open/floor/grass{
-	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
-	},
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/beach/lit,
 /area/space)
 "hj" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/effect/turf_decal/stoneborder,
-/turf/open/floor/grass{
-	desc = "lovely short grass";
-	light_range = 2
-	},
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/plating/grass/beach/lit,
 /area/space)
 "hD" = (
 /turf/open/space/basic,
+/area/space)
+"hS" = (
+/obj/item/reagent_containers/glass/bucket/wooden,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
 /area/space)
 "ia" = (
 /obj/structure/chair/pew/left{
@@ -105,22 +142,76 @@
 	},
 /turf/open/floor/plating/dirt,
 /area/space)
+"if" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/space)
 "jm" = (
 /obj/structure/rack,
 /obj/item/claymore,
 /obj/item/claymore/weak,
 /turf/open/floor/wood,
 /area/space)
-"lD" = (
+"jo" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
+/area/space)
+"jz" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/space)
+"lD" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/space)
+"lQ" = (
+/obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
+/obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
+/obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
+/obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
+/obj/structure/closet/cabinet,
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/under/rank/civilian/chaplain,
+/obj/item/clothing/under/rank/civilian/chaplain,
+/obj/item/clothing/under/rank/civilian/chaplain/skirt,
+/obj/item/clothing/under/rank/civilian/chaplain/skirt,
+/turf/open/floor/wood,
+/area/space)
+"mw" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/plating/grass/beach/lit,
 /area/space)
 "mx" = (
 /turf/closed/wall/mineral/iron{
 	desc = "A wall with rough metal plating, it looks almost stonelike in composition."
 	},
+/area/space)
+"mR" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/wheat,
+/turf/open/floor/plating/dirt,
 /area/space)
 "no" = (
 /obj/structure/chair/pew{
@@ -130,23 +221,30 @@
 /turf/open/floor/plating/dirt,
 /area/space)
 "nJ" = (
-/mob/living/simple_animal/butterfly,
-/turf/open/floor/grass{
-	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
-	},
-/area/space)
-"oF" = (
+/obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"ot" = (
+/mob/living/simple_animal/butterfly,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/space)
+"oF" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
 "pN" = (
+/turf/open/floor/plating/dirt,
+/area/space)
+"qj" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/shovel/spade,
+/obj/item/seeds/poppy,
 /turf/open/floor/plating/dirt,
 /area/space)
 "qJ" = (
@@ -169,8 +267,13 @@
 /turf/open/floor/plating/dirt/dark,
 /area/space)
 "rv" = (
-/obj/structure/table/wood,
-/turf/open/floor/wood,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
 /area/space)
 "si" = (
 /obj/structure/chair/pew{
@@ -187,20 +290,64 @@
 "sG" = (
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
+"sP" = (
+/obj/structure/chair/pew/left{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/space)
+"ti" = (
+/obj/structure/railing/wood{
+	dir = 1
+	},
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/space)
+"tX" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/hatchet/wooden,
+/obj/item/seeds/poppy/lily,
+/turf/open/floor/plating/dirt,
+/area/space)
 "ue" = (
-/obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/space)
 "uz" = (
 /obj/structure/sink/puddle,
 /turf/open/floor/plating/dirt,
 /area/space)
+"uT" = (
+/obj/structure/flora/ausbushes/sunnybush{
+	name = "oak sapling"
+	},
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/space)
 "wm" = (
 /turf/open/floor/grass/fairy/beach,
+/area/space)
+"wJ" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/stoneborder,
+/turf/open/floor/grass{
+	desc = "lovely short grass";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
 /area/space)
 "xq" = (
 /obj/structure/chair/pew/left{
@@ -215,30 +362,42 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/dirt,
 /area/space)
+"ym" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/poppy/lily/trumpet,
+/turf/open/floor/plating/dirt,
+/area/space)
 "zg" = (
 /obj/structure/railing{
 	dir = 4
 	},
 /turf/open/floor/grass{
 	desc = "lovely short grass";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/space)
 "zz" = (
-/obj/structure/closet/cabinet{
-	name = "grower's cabinet"
-	},
-/obj/item/shovel/spade,
-/obj/item/shovel/spade,
-/turf/open/floor/wood,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/beach/lit,
 /area/space)
 "zH" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/tree/chapel{
+	desc = "A true earthen oak tree. It stands high, like a proud guard";
+	name = "oak tree"
+	},
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
+/area/space)
+"zW" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/cultivator/rake,
+/obj/item/seeds/poppy/geranium,
+/turf/open/floor/plating/dirt,
 /area/space)
 "AJ" = (
 /obj/structure/chair/pew/right{
@@ -264,40 +423,63 @@
 /turf/open/floor/wood,
 /area/space)
 "CA" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/open/floor/grass{
-	desc = "lovely short grass";
-	light_range = 2
-	},
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/plating/grass/beach/lit,
 /area/space)
 "EH" = (
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin,
 /turf/open/floor/wood,
 /area/space)
+"Fy" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/plant_analyzer,
+/obj/item/seeds/poppy/geranium,
+/turf/open/floor/plating/dirt,
+/area/space)
+"FS" = (
+/obj/structure/railing/wood{
+	dir = 1
+	},
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/space)
 "Gj" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"Ha" = (
+/obj/machinery/biogenerator,
+/obj/item/reagent_containers/glass/bucket/wooden,
+/turf/open/floor/wood,
+/area/space)
+"HH" = (
 /obj/effect/turf_decal/stoneborder,
 /obj/structure/railing{
 	dir = 1
 	},
 /turf/open/floor/grass{
 	desc = "lovely short grass";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/space)
-"Ha" = (
-/obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
-/obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
-/obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
-/obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
-/obj/structure/closet/cabinet,
-/obj/item/clothing/shoes/sandal,
-/obj/item/clothing/shoes/sandal,
-/obj/item/clothing/shoes/sandal,
-/obj/item/clothing/shoes/sandal,
-/turf/open/floor/wood,
+"HI" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
 /area/space)
 "Ih" = (
 /obj/structure/railing{
@@ -305,23 +487,28 @@
 	},
 /turf/open/floor/wood,
 /area/space)
+"Jb" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/cultivator/rake,
+/obj/item/seeds/potato/sweet,
+/turf/open/floor/plating/dirt,
+/area/space)
 "JH" = (
 /obj/structure/chair/pew/right{
 	dir = 8
 	},
 /turf/open/floor/plating/dirt,
 /area/space)
+"Kf" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/shovel/spade,
+/obj/item/seeds/wheat,
+/turf/open/floor/plating/dirt,
+/area/space)
 "KJ" = (
-/obj/effect/turf_decal/stoneborder/corner{
-	dir = 4;
-	pixel_y = 16;
-	pixel_x = -17;
-	layer = 2.04
-	},
-/turf/open/floor/grass{
-	desc = "lovely short grass";
-	light_range = 2
-	},
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/poppy,
+/turf/open/floor/plating/dirt,
 /area/space)
 "Mc" = (
 /obj/structure/railing{
@@ -339,39 +526,32 @@
 /turf/open/floor/concrete/slab_1,
 /area/space)
 "MT" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/grass{
-	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
-	},
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/potato/sweet,
+/turf/open/floor/plating/dirt,
 /area/space)
 "Np" = (
-/mob/living/simple_animal/butterfly,
 /obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/space)
 "NE" = (
-/obj/structure/railing/wood{
-	dir = 1
-	},
-/turf/open/floor/grass{
-	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
-	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/beach/lit,
 /area/space)
 "PK" = (
 /turf/open/floor/concrete/slab_1,
 /area/space)
 "Ql" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/mob/living/simple_animal/butterfly,
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/space)
 "QG" = (
@@ -381,59 +561,84 @@
 /turf/open/floor/concrete/slab_1,
 /area/space)
 "QI" = (
+/obj/structure/railing{
+	dir = 8
+	},
 /turf/open/floor/grass{
 	desc = "lovely short grass";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
+/area/space)
+"RR" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/poppy/geranium,
+/turf/open/floor/plating/dirt,
 /area/space)
 "Sh" = (
-/obj/structure/railing/wood,
-/turf/open/floor/grass{
-	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
-	},
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/grass/beach/lit,
 /area/space)
 "Sj" = (
-/obj/structure/railing/wood{
-	dir = 1
-	},
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/grass{
-	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
-	},
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/potato,
+/turf/open/floor/plating/dirt,
 /area/space)
 "Sp" = (
 /obj/machinery/hydroponics/soil,
+/obj/item/hatchet/wooden,
+/obj/item/seeds/poppy/lily/trumpet,
 /turf/open/floor/plating/dirt,
 /area/space)
 "Tp" = (
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass{
 	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
+/area/space)
+"TI" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/tomato,
+/turf/open/floor/plating/dirt,
 /area/space)
 "Un" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/flare/torch,
 /turf/open/floor/wood,
 /area/space)
+"Uo" = (
+/obj/structure/table/wood,
+/obj/item/seeds/grape,
+/obj/item/seeds/grape,
+/turf/open/floor/wood,
+/area/space)
 "Uy" = (
-/obj/machinery/hydroponics/soil,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
+"UD" = (
+/obj/structure/closet/cabinet{
+	name = "grower's cabinet"
+	},
 /obj/item/shovel/spade,
-/turf/open/floor/plating/dirt,
+/obj/item/shovel/spade,
+/obj/item/cultivator/rake,
+/obj/item/cultivator/rake,
+/obj/item/reagent_containers/glass/bucket/wooden,
+/obj/item/reagent_containers/glass/bucket/wooden,
+/obj/item/storage/bag/plants,
+/obj/item/storage/bag/plants,
+/turf/open/floor/wood,
 /area/space)
 "UL" = (
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/grass{
-	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
-	},
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/poppy/lily,
+/turf/open/floor/plating/dirt,
 /area/space)
 "UQ" = (
 /obj/structure/rack,
@@ -445,10 +650,10 @@
 /turf/open/floor/wood,
 /area/space)
 "VK" = (
-/obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass{
-	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2
+	desc = "lovely short grass";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/space)
 "VL" = (
@@ -460,6 +665,11 @@
 	},
 /turf/open/floor/plating/grass/beach/lit,
 /area/space)
+"WO" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/plating/grass/beach/lit,
+/area/space)
 "WX" = (
 /obj/structure/bed,
 /turf/open/floor/wood,
@@ -469,18 +679,44 @@
 /turf/open/floor/wood,
 /area/space)
 "XF" = (
-/obj/structure/chair/pew/left{
-	dir = 4
-	},
+/obj/machinery/hydroponics/soil,
+/obj/item/storage/bag/plants,
+/obj/item/seeds/wheat/oat,
 /turf/open/floor/plating/dirt,
+/area/space)
+"Yk" = (
+/obj/structure/railing/wood,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
 /area/space)
 "Zf" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/beach/lit,
 /area/space)
 "Zg" = (
-/obj/machinery/biogenerator,
-/turf/open/floor/wood,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/space)
+"Zy" = (
+/obj/effect/turf_decal/stoneborder/corner{
+	dir = 4;
+	pixel_y = 16;
+	pixel_x = -17;
+	layer = 2.04
+	},
+/turf/open/floor/grass{
+	desc = "lovely short grass";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
 /area/space)
 "ZS" = (
 /obj/structure/mineral_door/iron,
@@ -502,6 +738,7 @@ fy
 fy
 fy
 fy
+Zf
 fy
 fy
 fy
@@ -513,21 +750,14 @@ fy
 fy
 fy
 fy
+Zf
 fy
 fy
 fy
 fy
 fy
+Zf
 fy
-fy
-fy
-fy
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 hD
@@ -542,8 +772,8 @@ hD
 hD
 "}
 (2,1,1) = {"
-fy
-QI
+Zf
+VK
 zg
 zg
 zg
@@ -573,13 +803,7 @@ zg
 zg
 Mc
 wm
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
 hD
 hD
 hD
@@ -595,7 +819,7 @@ hD
 "}
 (3,1,1) = {"
 fy
-QI
+VK
 Ih
 VF
 VF
@@ -625,14 +849,8 @@ VF
 VF
 VF
 fR
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+fy
 hD
 hD
 hD
@@ -647,7 +865,7 @@ hD
 "}
 (4,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
 mx
@@ -678,14 +896,8 @@ mx
 VF
 fR
 wm
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+fy
 hD
 hD
 hD
@@ -699,50 +911,44 @@ hD
 "}
 (5,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-Zg
+Ha
 VF
 VF
 qV
-lD
-lD
-lD
-Sp
+gC
+gC
+gC
+tX
 dr
-Sp
-lD
-lD
-Sp
-Sp
-Uy
-lD
-lD
-Sp
+UL
+gC
+gC
+mR
+mR
+Kf
+gC
+gC
+TI
 dr
-Sp
+TI
 mx
 Cb
 VF
 VF
 mx
 VF
-Gj
+HH
 wm
-wm
-hD
-hD
 wm
 fy
 fy
 wm
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+fy
+wm
 hD
 hD
 hD
@@ -751,40 +957,40 @@ hD
 "}
 (6,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
 gO
 VF
 VF
 qV
-lD
-lD
-lD
-lD
-lD
-lD
-lD
-lD
-lD
-lD
-lD
-lD
-lD
-lD
-lD
-lD
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+gC
 mx
 VF
 VF
 VF
 mx
 VF
-Gj
-hD
+HH
+fy
 wm
-hD
-hD
+nJ
+Zf
 wm
 fy
 Zf
@@ -794,16 +1000,10 @@ wm
 hD
 hD
 hD
-hD
-hD
-hD
-hD
-hD
-hD
 "}
 (7,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
 Un
@@ -812,31 +1012,31 @@ VF
 qV
 wm
 wm
-lD
-Sp
-Sp
-dn
-lD
-lD
-Sp
-Sp
-Sp
-lD
-lD
-dn
-Sp
-Sp
+gC
+RR
+Fy
+zW
+gC
+gC
+ad
+XF
+ad
+gC
+gC
+Jb
+MT
+MT
 mx
 jm
 VF
 VF
 mx
 VF
-Gj
-hD
-hD
-hD
-hD
+HH
+fy
+fy
+nJ
+fy
 wm
 fy
 Zf
@@ -844,70 +1044,58 @@ fy
 fy
 wm
 wm
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 "}
 (8,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-rv
+Uo
 VF
-zz
+UD
 mx
 wm
 wm
-lD
-lD
-lD
-lD
-lD
-lD
-lD
 gC
-lD
+gC
+gC
+gC
+gC
+gC
+gC
+hS
+gC
 wm
-lD
-lD
-lD
-lD
+gC
+gC
+gC
+gC
 mx
 VF
 VF
 VF
 mx
 VF
-Gj
-hD
-hD
-hD
-hD
-wm
+HH
 fy
 fy
-Zf
-fy
+nJ
 fy
 wm
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+fy
+Sh
+fy
+fy
+wm
 hD
 hD
 "}
 (9,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
 mx
@@ -915,393 +1103,353 @@ WZ
 mx
 mx
 wm
-lD
-lD
-Sp
-Uy
-Sp
+gC
+gC
+KJ
+qj
+KJ
 wm
-lD
+gC
 Sp
 uz
-Sp
+ym
 wm
 wm
-Sp
-Sp
-Sp
+Sj
+Sj
+Sj
 mx
 mx
 WZ
 mx
 mx
 VF
-Gj
-hD
-hD
-hD
-hD
+HH
+fy
+fy
+Zf
+fy
 wm
 fy
 Zf
-Zf
+Sh
 Zf
 fy
 fy
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 "}
 (10,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
+gC
 pN
 pN
 wm
 wm
-lD
-zH
-lD
-lD
+gC
+Np
+gC
+gC
 wm
 wm
 wm
-lD
-lD
-lD
-Ql
-Ql
-lD
-lD
-lD
-lD
-lD
+gC
+gC
+gC
+jz
+jz
+gC
+gC
+gC
+gC
+gC
 qJ
 qJ
 mx
 VF
-Gj
-hD
-hD
-hD
-hD
+HH
+oF
+oF
+Zf
+fy
 wm
 fy
-Zf
-Zf
-Zf
+WO
+CA
+WO
 Zf
 fy
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 "}
 (11,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
+gC
 pN
-lD
-wm
-wm
-Ql
-zH
-lD
-wm
-wm
-wm
+gC
 wm
 wm
 lD
-lD
-Ql
+Np
+gC
 wm
 wm
-lD
-lD
-lD
-lD
+wm
+qJ
+qJ
+qJ
+qJ
+qJ
+qJ
+qJ
+qJ
+qJ
+qJ
+gC
 qJ
 qJ
 mx
 VF
-Gj
-hD
-hD
-hD
-hD
-wm
-wm
+HH
 fy
+oF
+Sh
 Zf
+wm
+wm
+NE
+WO
+NE
 fy
 fy
-fy
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 "}
 (12,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
-lD
-wm
-wm
-lD
-lD
-ue
-gX
-lD
-lD
-lD
-lD
-wm
-wm
-lD
-lD
-lD
-lD
-wm
-wm
-gf
-gf
+gC
 qJ
-lD
+qJ
+qJ
+gC
+gC
+bV
+zH
+if
+gC
+qJ
+qJ
+qJ
+qJ
+qJ
+qJ
+qJ
+gC
+wm
+qJ
+qJ
+qJ
+qJ
+gC
 mx
 VF
-Gj
-hD
-hD
-hD
-hD
-hD
-wm
-wm
-fy
+HH
 Zf
 fy
+oF
+dn
+NE
+wm
+wm
+NE
+WO
 fy
-hD
-hD
-hD
-hD
-hD
-hD
+fy
 hD
 hD
 "}
 (13,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
+gC
+qJ
+uT
+qJ
+Np
+bV
 lD
-lD
-gX
-gf
-zH
-ue
-Ql
-lD
-lD
-lD
-lD
+if
+if
+qJ
+qJ
 xN
 AM
 AM
 AM
-XF
-lD
-gf
-lD
+sP
+qJ
+eZ
+gC
 wm
-lD
-gf
-gf
-lD
+qJ
+qJ
+qJ
+gC
 mx
 VF
-Gj
-hD
-hD
-hD
-hD
-hD
-hD
+HH
+fy
+nJ
+fy
+hj
+hj
+NE
 wm
 wm
 wm
 Zf
 Zf
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 "}
 (14,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
-lD
-wm
-lD
-zH
-VK
+gC
+qJ
+qJ
+qJ
+Np
+ue
 pN
 pN
-lD
-lD
-ue
-ue
-lD
-lD
-lD
-lD
-lD
-lD
+qJ
+qJ
+bV
+bV
+gC
 gf
-lD
+gC
+gC
+gC
+gC
+eZ
+gC
 wm
-lD
-gf
-lD
+qJ
+qJ
+gC
 mx
 MB
-KJ
-hD
-hD
+Zy
+fy
+nJ
+fy
+gX
+zz
+mw
 fy
 fy
-hD
-fy
-hD
-hD
 wm
 wm
 fy
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 "}
 (15,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
-lD
+gC
+qJ
 wm
-lD
-lD
+qJ
+qJ
+qJ
 pN
 pN
-pN
-lD
-lD
-lD
-ue
-lD
-lD
-lD
-lD
-lD
-Ql
+qJ
+gC
+gC
+bV
+gC
 gf
 gf
+gf
+gC
+lD
+Zg
+Zg
 wm
-Ql
 lD
-lD
+qJ
+gC
 mx
 QG
-QI
-hD
+VK
 fy
 fy
+Gj
+Gj
 fy
-hD
+mw
+mw
 fy
 fy
-fy
-hD
 wm
 wm
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 "}
 (16,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
+gC
+qJ
+qJ
+qJ
+qJ
+qJ
+gC
 lD
-wm
-wm
-lD
-lD
-lD
-lD
-Ql
-Np
+ot
 pN
-lD
-lD
-lD
-lD
-lD
-nJ
+gC
+gC
+gC
+gC
+gC
 Ql
+lD
 ia
-lD
-gf
+gC
+Zg
 wm
-Ql
-Ql
 lD
+qJ
+gC
 PK
 PK
 fy
 fy
+Uy
+Uy
 fy
 fy
 fy
@@ -1309,47 +1457,39 @@ fy
 fy
 fy
 fy
-hD
-hD
 wm
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 "}
 (17,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
-wm
-wm
-lD
-lD
-lD
-Ql
-Ql
-pN
-bV
-lD
+gC
+qJ
+qJ
+gC
+gC
+gC
 lD
 lD
 pN
+rv
+gC
+gC
+gC
 pN
-Ql
+pN
 lD
+gC
 gU
-lD
-gf
+gC
+Zg
 wm
-lD
-Ql
-lD
+gC
+qJ
+qJ
 qJ
 qJ
 sG
@@ -1362,46 +1502,40 @@ qJ
 pN
 fy
 fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+fy
 hD
 hD
 "}
 (18,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
-lD
-VK
-VK
-gX
-lD
-lD
-lD
-gX
+gC
+qJ
+ue
+ue
+uT
+gC
+gC
+gC
+zH
 rp
 pN
-Ql
 lD
+gC
 Bk
 pN
-lD
-lD
+gC
+gC
 gU
-Ql
-gf
-wm
 lD
-Ql
-Ql
+eZ
+wm
+gC
+qJ
+qJ
 qJ
 qJ
 qJ
@@ -1414,46 +1548,40 @@ fy
 fy
 fy
 fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+fy
 hD
 hD
 "}
 (19,1,1) = {"
-fy
-QI
+Zf
+VK
 Ih
 mx
-lD
-lD
-gf
-gf
-VK
-lD
-lD
-UL
+gC
+qJ
 eZ
-MT
+eZ
+ue
+gC
+gC
 Tp
-nJ
+dy
+am
+cZ
+Ql
 pN
 pN
 pN
-lD
-lD
+gC
+gC
 gU
-lD
-gf
+gC
+eZ
 wm
 wm
-lD
-lD
+gC
+qJ
 qJ
 qJ
 sG
@@ -1464,48 +1592,42 @@ qJ
 fy
 fy
 fy
+Zf
+nJ
 fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
 hD
 hD
 "}
 (20,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
+gC
+qJ
+eZ
+eZ
+Np
 lD
-gf
-gf
-gf
-zH
-Ql
-lD
-lD
-oF
+gC
+gC
+HI
 pN
-lD
-lD
-lD
-lD
-lD
-lD
-lD
+gC
+gC
+gC
+gC
+gC
+gC
+gC
 AJ
-lD
-gf
-lD
+gC
+eZ
+gC
 wm
-wm
-lD
+qJ
+qJ
 PK
 PK
 fy
@@ -1515,101 +1637,89 @@ fy
 fy
 fy
 fy
+nJ
+nJ
+nJ
+Zf
 fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 "}
 (21,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
+gC
+qJ
+qJ
+gC
 lD
 lD
-lD
-lD
+zH
+gC
 Ql
-Ql
-gX
-lD
-nJ
-lD
-lD
+gC
+gC
+gC
+gC
 lD
 lD
-Ql
-Ql
+gC
+gC
 lD
-lD
-Ql
-lD
-lD
-lD
-lD
-wm
-wm
+gC
+gC
+gC
+gC
+qJ
+qJ
 mx
 QG
 fy
-fy
+Uy
 fy
 fy
 wm
 fy
-fy
-hD
+nJ
+Zf
 wm
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+fy
 hD
 hD
 hD
 "}
 (22,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
-lD
+gC
+qJ
+qJ
 wm
-wm
+gC
+gC
+lD
+gC
+gC
+ue
 lD
 lD
-Ql
+gC
 lD
-lD
-VK
-Ql
-Ql
-lD
-Ql
-lD
-lD
-lD
-lD
-lD
-gf
-gf
-gf
-lD
-lD
+gC
+gC
+ue
+ue
+gC
+eZ
+eZ
+eZ
+qJ
+qJ
 mx
 sq
 VL
@@ -1617,69 +1727,57 @@ fy
 fy
 wm
 wm
-hD
-hD
+fy
+nJ
 wm
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+fy
+fy
 hD
 hD
 hD
 "}
 (23,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
-lD
+gC
+qJ
 wm
-lD
-lD
-lD
-lD
-lD
-VK
-VK
-lD
+gC
+gC
+gC
+gC
+gC
+ue
+ue
+gC
 xq
 no
 no
 si
 JH
-lD
-lD
-lD
-gf
-lD
-lD
-lD
-lD
+gC
+ue
+ue
+eZ
+gC
+gC
+qJ
+gC
 mx
 VF
 eF
 wm
 wm
 wm
-hD
-hD
-hD
+fy
+fy
+fy
 wm
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+fy
 hD
 hD
 hD
@@ -1687,50 +1785,44 @@ hD
 "}
 (24,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
-lD
+qJ
+qJ
 wm
-lD
-lD
-lD
-VK
-VK
-VK
-lD
-lD
-lD
-lD
-lD
-lD
-lD
-lD
-lD
-lD
+gC
+gC
+gC
+ue
+ue
+ue
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+gC
+gC
 wm
-lD
-lD
+gC
+gC
 pN
-lD
+gC
 mx
 VF
 eF
 wm
 wm
-hD
-hD
-hD
+fy
+fy
+fy
 wm
 wm
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
 hD
 hD
 hD
@@ -1739,50 +1831,44 @@ hD
 "}
 (25,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
+gC
 pN
 wm
-lD
-gX
-lD
-lD
-lD
+gC
 zH
-zH
-zH
+gC
+gC
+gC
+Np
+Np
+Np
+bV
 ue
-VK
 wm
 wm
-gf
-gf
-lD
+Zg
+Zg
+gC
 wm
 wm
-lD
-lD
+gC
+gC
 pN
-lD
+gC
 mx
 VF
-hj
+wJ
 wm
-hD
+fy
 wm
-hD
+fy
 wm
 wm
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+fy
 hD
 hD
 hD
@@ -1791,49 +1877,43 @@ hD
 "}
 (26,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
+gC
 pN
 pN
 wm
-lD
-lD
-lD
-lD
-zH
-lD
-lD
-lD
+gC
+gC
+gC
+gC
+Np
+gC
+gC
+gC
 wm
 wm
-gf
-lD
-lD
+Zg
+gC
+gC
 wm
 wm
-lD
-gf
+gC
+eZ
 pN
 pN
-lD
+qJ
 mx
 VF
-hj
+wJ
 wm
-hD
 fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+fy
+fy
+fy
+fy
 hD
 hD
 hD
@@ -1843,48 +1923,42 @@ hD
 "}
 (27,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-lD
+gC
 pN
 pN
 wm
 wm
-lD
-lD
-lD
-lD
-lD
+gC
+gC
+gC
+gC
+gC
 wm
 wm
 wm
-lD
-gf
+gC
+Zg
 wm
 wm
 wm
 wm
-gf
-gf
+eZ
+eZ
 pN
 pN
 pN
 mx
 VF
-hj
+wJ
 wm
-hD
 fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+Zf
+fy
+fy
 hD
 hD
 hD
@@ -1895,7 +1969,7 @@ hD
 "}
 (28,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
 mx
@@ -1903,40 +1977,34 @@ WZ
 mx
 mx
 wm
-lD
-lD
-lD
-lD
+gC
+gC
+gC
+gC
 wm
 wm
-lD
-lD
-lD
-lD
+gC
+gC
+gC
+gC
 wm
-lD
-lD
-gf
-gf
+gC
+gC
+eZ
+eZ
 mx
 mx
 WZ
 mx
 mx
 VF
-hj
+wJ
+fy
+oF
+oF
+Zf
 fy
 fy
-fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 hD
@@ -1947,28 +2015,28 @@ hD
 "}
 (29,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-Ha
+lQ
 VF
 WX
 mx
 wm
-lD
-lD
-lD
-lD
-lD
-lD
-lD
+gC
+gC
+gC
+gC
+gC
+gC
+gC
 wm
 wm
-lD
-lD
-lD
-lD
-lD
+gC
+gC
+gC
+gC
+gC
 wm
 mx
 VF
@@ -1976,19 +2044,13 @@ VF
 VF
 mx
 VF
-hj
+wJ
+oF
+oF
+Sh
 fy
 fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
 hD
 hD
 hD
@@ -1999,7 +2061,7 @@ hD
 "}
 (30,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
 WX
@@ -2007,17 +2069,17 @@ VF
 WX
 mx
 wm
-Sh
+Yk
 pN
 pN
 pN
 pN
-Sj
-gf
-lD
+ti
+eZ
+gC
 wm
 wm
-lD
+jo
 wm
 wm
 wm
@@ -2028,18 +2090,12 @@ VF
 VF
 mx
 VF
-hj
+wJ
+oF
+Sh
+Sh
+oF
 fy
-fy
-fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 hD
@@ -2051,47 +2107,41 @@ hD
 "}
 (31,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
-Ha
+lQ
 VF
 WX
 mx
-lD
-Sh
+gC
+Yk
 ao
 ao
 ao
 ao
-NE
-gf
-gf
-lD
-lD
-lD
+FS
+eZ
+eZ
+gC
+gC
+jo
 wm
-lD
-lD
-lD
+gC
+gC
+gC
 mx
 VF
 VF
 VF
 mx
 VF
-hj
+wJ
+fy
+Zf
+oF
 fy
 fy
-fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 hD
@@ -2103,46 +2153,40 @@ hD
 "}
 (32,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
 EH
 VF
 WX
 mx
-lD
-Sh
+gC
+Yk
 ao
 ao
 ao
 ao
-NE
-lD
-gf
-gf
-lD
-lD
+FS
+gC
+eZ
+eZ
+gC
+jo
 wm
-lD
-lD
-lD
+gC
+gC
+gC
 mx
 Cb
 VF
 VF
 mx
 VF
-hj
+wJ
+fy
+Zf
 fy
 fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 hD
@@ -2155,7 +2199,7 @@ hD
 "}
 (33,1,1) = {"
 fy
-QI
+VK
 Ih
 mx
 mx
@@ -2184,16 +2228,10 @@ mx
 ZS
 mx
 VF
-hj
+wJ
 fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
+fy
 hD
 hD
 hD
@@ -2207,7 +2245,7 @@ hD
 "}
 (34,1,1) = {"
 fy
-QI
+VK
 Ih
 VF
 VF
@@ -2236,15 +2274,9 @@ VF
 VF
 VF
 VF
-hj
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+wJ
+fy
+fy
 hD
 hD
 hD
@@ -2258,45 +2290,39 @@ hD
 hD
 "}
 (35,1,1) = {"
+Zf
+VK
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+QI
+VK
 fy
-QI
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-QI
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
+fy
 hD
 hD
 hD
@@ -2325,6 +2351,10 @@ fy
 fy
 fy
 fy
+Zf
+Zf
+Zf
+Zf
 fy
 fy
 fy
@@ -2338,16 +2368,6 @@ fy
 fy
 fy
 fy
-fy
-fy
-fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
 hD
 hD
 hD
