@@ -19,9 +19,6 @@
 				/obj/item/clothing/glasses/heat,
 				/obj/item/clothing/glasses/heat,
 				/obj/item/stack/rods/lava/thirty,
-<<<<<<< Updated upstream
-				/obj/item/stack/rods/lava/thirty
-=======
 				/obj/item/stack/rods/lava/thirty,
 >>>>>>> Stashed changes
 				/obj/item/extinguisher/mini,
@@ -40,17 +37,10 @@
 				/obj/item/clothing/glasses/cold,
 				/obj/item/clothing/glasses/cold,
 				/obj/item/clothing/glasses/cold,
-<<<<<<< Updated upstream
-				/obj/item/clothing/shoes/winterboot
-				/obj/item/clothing/shoes/winterboot
-				/obj/item/clothing/shoes/winterboot
-				/obj/item/clothing/shoes/winterboot
-=======
 				/obj/item/clothing/shoes/winterboot,
 				/obj/item/clothing/shoes/winterboot,
 				/obj/item/clothing/shoes/winterboot,
 				/obj/item/clothing/shoes/winterboot,
->>>>>>> Stashed changes
 	)
 	crate_name = "Ice Exploration Kit"
 
