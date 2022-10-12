@@ -59,13 +59,8 @@
 		)
 	for(var/L in turfs)
 		var/turf/B = L
-		if(ignore_typecache[B.type])
-			turfs -= L
-		if(!ignore_typecache[B.loc.type])
-			areas |= B.loc
-		for(var/atom/A as() in B)
-			if(ignore_typecache[A.type])
-				continue
+		areas |= B.loc
+		for(var/A in B)
 			atoms += A
 			if(istype(A, /obj/structure/cable))
 				cables += A
@@ -171,12 +166,10 @@
 	if(!SSmapping.loading_ruins) //Will be done manually during mapping ss init
 		repopulate_sorted_areas()
 
-	//If this is a superfunction call, we don't want to initialize atoms here, let the subfunction handle that
-	if(finalize)
-		//initialize things that are normally initialized after map load
-		initTemplateBounds(bounds, init_atmos)
+	//initialize things that are normally initialized after map load
+	initTemplateBounds(bounds, init_atmos)
 
-		log_game("[name] loaded at [T.x],[T.y],[T.z]")
+	log_game("[name] loaded at [T.x],[T.y],[T.z]")
 	return bounds
 
 /datum/map_template/proc/post_load()

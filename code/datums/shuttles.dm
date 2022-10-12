@@ -60,7 +60,7 @@
 				++xcrd
 			--ycrd
 
-/datum/map_template/shuttle/load(turf/T, centered, init_atmos = TRUE, finalize = TRUE, register=TRUE)
+/datum/map_template/shuttle/load(turf/T, centered, init_atmos = TRUE, register=TRUE)
 	if(centered)
 		T = locate(T.x - round(width/2) , T.y - round(height/2) , T.z)
 		centered = FALSE
@@ -70,7 +70,7 @@
 	for(var/turf/turf in turfs)
 		turfs[turf] = turf.loc
 	keep_cached_map = TRUE //We need to access some stuff here below for shuttle skipovers
-	. = ..(T, centered, init_atmos = TRUE, finalize = FALSE)
+	. = ..(T, centered, init_atmos = TRUE)
 	keep_cached_map = initial(keep_cached_map)
 	if(!.)
 		cached_map = keep_cached_map ? cached_map : null
@@ -152,16 +152,75 @@
 		sanity.Insert(shuttle_turf.baseturfs.len + 1 - baseturf_length, /turf/baseturf_skipover/shuttle) //The first two are the "real" baseturfs, place above these but below plating.
 		shuttle_turf.baseturfs = baseturfs_string_list(sanity, shuttle_turf)
 
-	//If this is a superfunction call, we don't want to initialize atoms here, let the subfunction handle that
-	if(finalize)
-		//initialize things that are normally initialized after map load
-		var/static/list/stationary_port_typecast_ignore = typecacheof(/obj/docking_port/stationary)
-		initTemplateBounds(cached_map.bounds, init_atmos, stationary_port_typecast_ignore)
-
-		log_game("[name] loaded at [T.x],[T.y],[T.z]")
-
 	my_port.load(src)
 	cached_map = keep_cached_map ? cached_map : null
+
+//This is the best way I could think of to prevent stationary ports from loading here
+/datum/map_template/shuttle/initTemplateBounds(list/bounds, init_atmos = TRUE)
+	if (!bounds) //something went wrong
+		stack_trace("[name] template failed to initialize correctly!")
+		return
+
+	var/list/obj/machinery/atmospherics/atmos_machines = list()
+	var/list/obj/structure/cable/cables = list()
+	var/list/atom/atoms = list()
+	var/list/area/areas = list()
+
+	var/list/turfs = block(
+		locate(
+			bounds[MAP_MINX],
+			bounds[MAP_MINY],
+			bounds[MAP_MINZ]
+			),
+		locate(
+			bounds[MAP_MAXX],
+			bounds[MAP_MAXY],
+			bounds[MAP_MAXZ]
+			)
+		)
+	for(var/L in turfs)
+		var/turf/B = L
+		areas |= B.loc
+		for(var/A in B)
+			if(istype(A, /obj/docking_port/stationary))
+				continue
+			atoms += A
+			if(istype(A, /obj/structure/cable))
+				cables += A
+				continue
+			if(istype(A, /obj/machinery/atmospherics))
+				atmos_machines += A
+
+	SSmapping.reg_in_areas_in_z(areas)
+	if(!SSatoms.initialized)
+		return
+
+	SSatoms.InitializeAtoms(areas + turfs + atoms, returns_created_atoms ? created_atoms : null)
+	// NOTE, now that Initialize and LateInitialize run correctly, do we really
+	// need these two below?
+	SSmachines.setup_template_powernets(cables)
+	SSair.setup_template_machinery(atmos_machines)
+
+	if(!init_atmos)
+		return
+
+	//calculate all turfs inside the border
+	var/list/template_and_bordering_turfs = block(
+		locate(
+			max(bounds[MAP_MINX]-2, 1),
+			max(bounds[MAP_MINY]-2, 1),
+			bounds[MAP_MINZ]
+			),
+		locate(
+			min(bounds[MAP_MAXX]+2, world.maxx),
+			min(bounds[MAP_MAXY]+2, world.maxy),
+			bounds[MAP_MAXZ]
+			)
+		)
+	for(var/turf/affected_turf as anything in template_and_bordering_turfs)
+		affected_turf.blocks_air = initial(affected_turf.blocks_air)
+		affected_turf.air_update_turf(TRUE)
+		affected_turf.levelupdate()
 
 /datum/map_template/shuttle/ui_state(mob/user)
 	return GLOB.admin_debug_state
