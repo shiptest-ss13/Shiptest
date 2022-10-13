@@ -573,7 +573,7 @@
 		if(!all_shuttle_areas[oldT?.loc])
 			continue
 		var/area/old_area = oldT.loc
-		for(var/obj/docking_port/mobile/bottom_shuttle in all_shuttle_areas)
+		for(var/obj/docking_port/mobile/bottom_shuttle in all_towed_shuttles)
 			if(bottom_shuttle.underlying_turf_area[oldT])
 				var/area/underlying_area = bottom_shuttle.underlying_turf_area[oldT]
 				underlying_area.contents += oldT
