@@ -187,9 +187,6 @@
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/ship/external)
 "gr" = (
@@ -1240,7 +1237,7 @@
 	pixel_x = -28
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/computer/cargo/express{
+/obj/machinery/modular_computer/console/preset/command{
 	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave/blue,
@@ -1278,7 +1275,7 @@
 /turf/template_noop,
 /area/template_noop)
 "Rx" = (
-/obj/machinery/computer/security,
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Rz" = (
