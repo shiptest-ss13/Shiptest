@@ -138,6 +138,24 @@
 /obj/machinery/power/solar/proc/occlusion_setup()
 	obscured = TRUE
 
+	var/sun_type = virtual_level_trait(ZTRAIT_SUN_TYPE)
+	if(sun_type == STATIC_OBSTRUCTED)
+		return
+		// go straight to jail
+	if(sun_type == STATIC_EXPOSED)
+		var/turf/T = loc
+		T = T && T.above()
+		if (!T)
+			var/count = 0
+			for(var/turf/Tt in orange(1, src))
+				count += !isgroundlessturf(Tt)
+			if (count >= 9) return
+		else if(!isopenturf(T))
+			return
+		obscured = FALSE
+		return
+		// do not continue
+
 	var/distance = OCCLUSION_DISTANCE
 	var/target_x = round(sin(SSsun.azimuth), 0.01)
 	var/target_y = round(cos(SSsun.azimuth), 0.01)
@@ -161,6 +179,11 @@
 	sunfrac = 0
 	if(obscured)
 		return 0
+
+	var/sun_type = virtual_level_trait(ZTRAIT_SUN_TYPE)
+	if (sun_type == STATIC_EXPOSED)
+		sunfrac = 1
+		return 1
 
 	var/sun_azimuth = SSsun.azimuth
 	if(azimuth_current == sun_azimuth) //just a quick optimization for the most frequent case
