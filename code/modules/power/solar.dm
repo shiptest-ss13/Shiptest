@@ -139,7 +139,7 @@
 	obscured = TRUE
 
 	var/sun_type = virtual_level_trait(ZTRAIT_SUN_TYPE)
-	if(sun_type == STATIC_OBSTRUCTED)
+	if(sun_type == STATIC_OBSCURED)
 		return
 		// go straight to jail
 	if(sun_type == STATIC_EXPOSED)

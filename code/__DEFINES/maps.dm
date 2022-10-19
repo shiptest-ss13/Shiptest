@@ -57,7 +57,7 @@ require only minor tweaks.
 	// static - exposed everywhere by default
 	#define STATIC_EXPOSED "Static Exposed"
 	// static - obstructed everywhere
-	#define STATIC_OBSTRUCTED "Static Obstructed"
+	#define STATIC_OBSCURED "Static Obscured"
 
 // number - bombcap is multiplied by this before being applied to bombs
 #define ZTRAIT_BOMBCAP_MULTIPLIER "Bombcap Multiplier"
