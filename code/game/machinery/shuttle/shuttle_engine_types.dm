@@ -117,6 +117,12 @@
 	///Amount, in kilojoules, needed for a full burn.
 	var/power_per_burn = 50000
 
+/obj/machinery/power/shuttle/engine/electric/bad
+	name = "Outdated Ion Thruster"
+	circuit = /obj/item/circuitboard/machine/shuttle/engine/electric/bad
+	thrust = 2
+	power_per_burn = 70000
+
 /obj/machinery/power/shuttle/engine/electric/premium
 	name = "high performance ion thruster"
 	desc = "An expensive variant of a standard ion thruster, using highest quality components in order to achieve much better performance."
