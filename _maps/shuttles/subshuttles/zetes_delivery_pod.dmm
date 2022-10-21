@@ -11,7 +11,7 @@
 /obj/item/stack/cable_coil/yellow,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/tank/internals/oxygen,
-/obj/item/implant/radio,
+/obj/item/radio,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "f" = (
@@ -78,6 +78,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "L" = (
@@ -104,6 +107,9 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "S" = (

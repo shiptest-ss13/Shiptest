@@ -79,6 +79,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -26
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "al" = (
@@ -1175,6 +1179,9 @@
 "cn" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
+/obj/structure/sign/poster/retro/random{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/canteen/kitchen)
 "co" = (
@@ -1378,6 +1385,10 @@
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -26
+	},
+/obj/item/radio/intercom{
+	pixel_y = 25;
+	pixel_x = -27
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
@@ -3330,6 +3341,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/stairs/medium{
 	dir = 8
 	},
@@ -3664,12 +3679,19 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2,
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/item/radio/intercom{
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
 "gR" = (
 /obj/structure/closet/crate/hydroponics,
 /obj/machinery/camera/autoname{
 	dir = 5
+	},
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -23
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/hydroponics)
@@ -5192,6 +5214,10 @@
 /obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/item/wrench,
 /obj/machinery/cell_charger,
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/engine)
 "jK" = (
@@ -5905,6 +5931,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 25
+	},
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
 "sk" = (
@@ -6059,6 +6089,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
+"tC" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber{
+	dir = 4
+	},
+/obj/structure/sign/poster/contraband/atmosia_independence{
+	pixel_y = 32
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "tH" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -6987,6 +7026,9 @@
 "Ez" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/chem_master/condimaster,
+/obj/structure/sign/poster/retro/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/canteen/kitchen)
 "EE" = (
@@ -7231,7 +7273,6 @@
 /obj/effect/spawner/lootdrop/random_machine_circuit_common,
 /obj/effect/spawner/lootdrop/random_machine_circuit_common,
 /obj/effect/spawner/lootdrop/random_machine_circuit_rare,
-/obj/effect/spawner/lootdrop/random_machine_circuit_rare,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage)
 "Hq" = (
@@ -7429,6 +7470,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
+"JL" = (
+/obj/structure/bed,
+/obj/structure/curtain,
+/obj/item/bedsheet/nanotrasen,
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/open/floor/wood,
+/area/ship/crew/dorm)
 "JS" = (
 /obj/structure/table/wood,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
@@ -7510,6 +7561,14 @@
 /obj/effect/spawner/lootdrop/random_computer_circuit_rare,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage)
+"KN" = (
+/obj/machinery/cryopod,
+/obj/structure/curtain,
+/obj/structure/sign/poster/random{
+	pixel_y = 32
+	},
+/turf/open/floor/wood,
+/area/ship/crew/dorm)
 "KU" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -7834,6 +7893,10 @@
 	pixel_x = -21;
 	pixel_y = -10;
 	name = "Engine Shutters"
+	},
+/obj/item/radio/intercom{
+	pixel_x = -3;
+	pixel_y = 24
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -8456,6 +8519,12 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/port)
+"Vc" = (
+/obj/item/radio/intercom{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/crew/canteen/kitchen)
 "Vf" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -8764,6 +8833,13 @@
 /obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/item/wrench,
 /obj/machinery/cell_charger,
+/obj/item/radio/intercom{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/engineering)
+"XZ" = (
+/obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "Yc" = (
@@ -9122,7 +9198,7 @@ eJ
 eJ
 eJ
 eJ
-xi
+tC
 xi
 gU
 eO
@@ -9358,7 +9434,7 @@ jk
 ac
 ac
 Bj
-aI
+XZ
 fx
 ac
 ac
@@ -9509,7 +9585,7 @@ EY
 EY
 EY
 bJ
-bC
+Vc
 bC
 bC
 bC
@@ -9518,10 +9594,10 @@ ei
 fm
 vu
 gc
-gD
+KN
 el
 hS
-hS
+JL
 hS
 ij
 EY
