@@ -280,4 +280,4 @@
 	file_name = "independant_pill"
 	name = "Pill-Class Torture Device"
 	prefix = "SV"
-	name_categories = ["PILLS"]
+	name_categories = "PILLS"
