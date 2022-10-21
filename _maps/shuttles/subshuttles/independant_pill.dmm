@@ -1,23 +1,21 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/obj/machinery/power/shuttle/engine/electric{
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	launch_status = 0;
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/obj/machinery/power/shuttle/engine/electric/bad{
 	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 4
-	},
 /turf/open/floor/engine/hull,
-/area/ship/storage)
+/area/ship/bridge)
 "b" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/apc/auto_name/west{
-	pixel_x = -25
-	},
 /obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
@@ -25,13 +23,20 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner,
-/obj/structure/closet,
-/turf/open/floor/pod,
-/area/ship/storage)
-"c" = (
-/obj/structure/cable{
-	icon_state = "0-2"
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4;
+	density = 0;
+	desc = "A medium-capacity, high transfer superconducting magnetic energy storage unit specially made for use with shuttle engines. This one seems to be woven into the floor by a mix of desperate and clever engineering"
 	},
+/obj/machinery/power/apc/auto_name/west{
+	pixel_x = -25
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/pod,
+/area/ship/bridge)
+"c" = (
 /obj/machinery/computer/helm{
 	dir = 8;
 	pixel_x = 5;
@@ -41,23 +46,23 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/structure/chair/comfy/shuttle{
-	dir = 4;
-	pixel_y = 1;
-	name = "Grav Couch";
-	pixel_x = -12;
-	layer = 2.8
-	},
 /obj/machinery/door/window,
 /obj/machinery/door/window{
 	dir = 1
 	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	launch_status = 0
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	pixel_y = 1;
+	name = "Grav Couch";
+	pixel_x = -4;
+	layer = 2.8
 	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable,
 /turf/open/floor/pod,
-/area/ship/storage)
+/area/ship/bridge)
 
 (1,1,1) = {"
 a
