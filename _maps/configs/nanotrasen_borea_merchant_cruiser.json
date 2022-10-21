@@ -1,0 +1,53 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "NTSV",
+	"namelists": ["GENERAL", "SPACE", "MYTHOLOGICAL", "HISTORICAL"],
+	"map_name": "Borea-Class Merchant Cruiser",
+	"map_short_name": "Borea-Class",
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_borea_merchant_cruiser.dmm",
+	"map_id": "nanotrasen_borea_merchant_cruiser",
+	"roundstart": true,
+	"limit": 2,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/nt",
+			"officer": true,
+			"slots": 1
+		},
+		"Bridge Officer": {
+			"outfit": "/datum/outfit/job/head_of_personnel/nt",
+			"officer": true,
+			"slots": 1
+		},
+		"Quartermaster": {
+			"outfit": "/datum/outfit/job/quartermaster/supplychief",
+			"officer": true,
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/engineer/nt",
+			"slots": 2
+		},
+		"Security Officer": {
+			"outfit": "/datum/outfit/job/security/nanotrasen",
+			"slots": 3
+		},
+		"Cargo Tech": {
+			"outfit": "/datum/outfit/job/cargo_tech/stockboy",
+			"slots": 3
+		},
+		"Delivery Pilot": {
+			"outfit": "/datum/outfit/job/cargo_tech/deliveriesofficer",
+			"slots":1
+		},
+		"Chef": {
+			"outfit": "/datum/outfit/job/cook/grillmaster",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 5
+		}
+	},
+	"enabled": true
+}

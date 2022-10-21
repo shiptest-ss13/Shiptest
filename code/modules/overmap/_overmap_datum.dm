@@ -278,7 +278,7 @@
  */
 /datum/overmap/proc/complete_undock()
 	SHOULD_CALL_PARENT(TRUE)
-	SSovermap.overmap_container[docked_to.x][docked_to.y] += src
+ 	SSovermap.overmap_container[docked_to.x][docked_to.y] += src
 	x = docked_to.x
 	y = docked_to.y
 	docked_to.contents -= src
