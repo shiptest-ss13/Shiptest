@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ao" = (
 /obj/structure/fermenting_barrel,
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/beachplanet/knight)
 "aA" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -16,6 +16,12 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
+"cv" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "dr" = (
 /obj/structure/sink/puddle,
@@ -39,21 +45,14 @@
 /area/ruin/beachplanet/knight)
 "eF" = (
 /obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
-/obj/effect/turf_decal/stoneborder,
-/turf/open/floor/grass/fairy/beach,
 /area/ruin/beachplanet/knight)
 "eZ" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/effect/turf_decal/stoneborder,
-/turf/open/floor/grass{
-	desc = "lovely short grass";
-	light_range = 2;
-	baseturfs = /turf/open/floor/plating/beach/sand
-	},
+/turf/open/floor/wood/ebony,
 /area/ruin/beachplanet/knight)
 "fw" = (
 /mob/living/simple_animal/butterfly,
@@ -66,6 +65,20 @@
 "fy" = (
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
+"fB" = (
+/obj/structure/flora/ausbushes/sparsegrass{
+	pixel_x = -1
+	},
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
+"fC" = (
+/obj/effect/turf_decal/stoneborder,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/beachplanet/knight)
 "fN" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/brflowers,
@@ -74,9 +87,6 @@
 /area/ruin/beachplanet/knight)
 "fR" = (
 /obj/effect/turf_decal/stoneborder,
-/obj/structure/railing{
-	dir = 1
-	},
 /turf/open/floor/grass/fairy/beach,
 /area/ruin/beachplanet/knight)
 "gf" = (
@@ -128,6 +138,18 @@
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/ruin/beachplanet/knight)
+"hk" = (
+/obj/structure/railing,
+/turf/open/floor/plasteel/stairs{
+	dir = 4
+	},
+/area/ruin/beachplanet/knight)
+"hl" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood,
+/area/ruin/beachplanet/knight)
 "hD" = (
 /turf/template_noop,
 /area/template_noop)
@@ -138,9 +160,21 @@
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
 "jm" = (
-/obj/structure/rack,
-/obj/item/claymore,
-/obj/item/claymore/weak,
+/obj/effect/turf_decal/stoneborder,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/beachplanet/knight)
+"jG" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
+"kb" = (
+/obj/structure/chair/wood/wings{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "kq" = (
@@ -153,15 +187,25 @@
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/ruin/beachplanet/knight)
+"kD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/beachplanet/knight)
 "kV" = (
-/obj/effect/turf_decal/stoneborder,
 /obj/structure/railing{
-	dir = 1
+	dir = 4
 	},
-/obj/effect/turf_decal/stoneborder{
-	pixel_x = -15
+/obj/effect/turf_decal/stoneborder,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
-/turf/open/floor/grass/fairy/beach,
+/turf/open/floor/grass{
+	desc = "lovely short grass";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
 /area/ruin/beachplanet/knight)
 "lD" = (
 /obj/machinery/hydroponics/soil,
@@ -210,6 +254,13 @@
 /obj/item/seeds/wheat/oat,
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
+"oP" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/sparsegrass{
+	pixel_x = -1
+	},
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
 "pn" = (
 /obj/item/shovel/spade,
 /turf/open/floor/grass{
@@ -218,13 +269,37 @@
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/ruin/beachplanet/knight)
+"pL" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/item/flashlight/flare/torch,
+/obj/item/flashlight/flare/torch,
+/obj/item/flashlight/flare/torch,
+/obj/item/flashlight/flare/torch,
+/obj/item/flashlight/flare/torch,
+/turf/open/floor/wood,
+/area/ruin/beachplanet/knight)
 "pN" = (
 /turf/open/floor/plating/dirt,
+/area/ruin/beachplanet/knight)
+"pT" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/wood/ebony,
 /area/ruin/beachplanet/knight)
 "qe" = (
 /obj/structure/table/wood,
 /obj/item/seeds/grape,
 /obj/item/seeds/grape,
+/turf/open/floor/wood,
+/area/ruin/beachplanet/knight)
+"qi" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "qJ" = (
@@ -236,15 +311,11 @@
 /turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "rp" = (
-/obj/structure/closet/crate/grave{
-	icon_state = "grave_lead";
-	desc = "An marked patch of soil, showing signs of a burial. The headstone cannot be read, its' message torn away by age."
+/obj/structure/railing,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood{
+	light_range = 2
 	},
-/obj/item/nullrod/claymore{
-	name = "ancient claymore";
-	desc = "The gold on the sword is tarnished, yet retains an human letter carved into it. R."
-	},
-/turf/open/floor/plating/dirt/dark,
 /area/ruin/beachplanet/knight)
 "rv" = (
 /obj/machinery/hydroponics/soil,
@@ -278,18 +349,8 @@
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
 "tk" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/effect/turf_decal/stoneborder,
-/obj/effect/turf_decal/stoneborder{
-	pixel_x = 15
-	},
-/turf/open/floor/grass{
-	desc = "lovely short grass";
-	light_range = 2;
-	baseturfs = /turf/open/floor/plating/beach/sand
-	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/fairy/beach,
 /area/ruin/beachplanet/knight)
 "ts" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -300,6 +361,12 @@
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/ruin/beachplanet/knight)
+"tD" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/flare/torch,
+/obj/item/flashlight/flare/torch,
+/turf/open/floor/wood,
+/area/ruin/beachplanet/knight)
 "ue" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -309,20 +376,27 @@
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/ruin/beachplanet/knight)
+"uf" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/stairs,
+/area/ruin/beachplanet/knight)
 "uz" = (
 /obj/structure/sink/puddle,
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
 "ve" = (
 /obj/effect/turf_decal/stoneborder,
-/obj/structure/railing{
-	dir = 1
-	},
 /turf/open/floor/grass{
 	desc = "lovely short grass";
 	light_range = 2;
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
+/area/ruin/beachplanet/knight)
+"vf" = (
+/obj/structure/bookcase/manuals,
+/turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "vm" = (
 /obj/structure/railing/wood{
@@ -341,11 +415,31 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
+"ww" = (
+/obj/structure/flora/ausbushes/sparsegrass{
+	pixel_x = -1
+	},
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
 "wI" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/hatchet/wooden,
 /obj/item/seeds/poppy/lily/trumpet,
 /turf/open/floor/plating/dirt,
+/area/ruin/beachplanet/knight)
+"xg" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/stoneborder,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/grass{
+	desc = "lovely short grass";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
 /area/ruin/beachplanet/knight)
 "xp" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -373,14 +467,23 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
-"ye" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/grass{
-	desc = "Well kept grass. The blades stand a stately short.";
-	light_range = 2;
-	baseturfs = /turf/open/floor/plating/beach/sand
+"yc" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
+/obj/structure/rack,
+/obj/item/flashlight/flare/torch,
+/obj/item/flashlight/flare/torch,
+/obj/item/flashlight/flare/torch,
+/obj/item/flashlight/flare/torch,
+/obj/item/flashlight/flare/torch,
+/turf/open/floor/wood,
+/area/ruin/beachplanet/knight)
+"ye" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "yG" = (
 /obj/structure/railing/wood{
@@ -397,8 +500,8 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/effect/turf_decal/stoneborder{
-	dir = 8
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
 /turf/open/floor/grass{
 	desc = "lovely short grass";
@@ -419,6 +522,19 @@
 /obj/item/seeds/poppy/geranium,
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
+"Al" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/sparsegrass{
+	pixel_x = -1
+	},
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
+"AA" = (
+/obj/structure/railing,
+/turf/open/floor/wood/ebony,
+/area/ruin/beachplanet/knight)
 "AJ" = (
 /obj/structure/chair/pew/right{
 	dir = 1
@@ -432,28 +548,45 @@
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
 "Bk" = (
-/obj/structure/altar_of_gods,
-/obj/item/reagent_containers/food/snacks/grown/poppy/lily,
-/turf/open/floor/plating/dirt,
+/obj/structure/closet/crate/grave{
+	icon_state = "grave_lead";
+	desc = "An marked patch of soil, showing signs of a burial. The headstone cannot be read, its' message torn away by age."
+	},
+/obj/item/nullrod/claymore{
+	name = "ancient claymore";
+	desc = "The gold on the sword is tarnished, yet retains an human letter carved into it. R."
+	},
+/turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/beachplanet/knight)
 "Cb" = (
-/obj/structure/rack,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
+/area/ruin/beachplanet/knight)
+"Cs" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
 "CA" = (
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/effect/turf_decal/stoneborder{
-	dir = 4
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
 /turf/open/floor/grass{
 	desc = "lovely short grass";
 	light_range = 2;
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
+/area/ruin/beachplanet/knight)
+"Dg" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/leafybush,
+/turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
 "Dh" = (
 /obj/machinery/biogenerator,
@@ -470,16 +603,32 @@
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/ruin/beachplanet/knight)
+"Eh" = (
+/obj/structure/altar_of_gods,
+/obj/item/reagent_containers/food/snacks/grown/poppy/lily,
+/turf/open/floor/plating/dirt/jungle/lit,
+/area/ruin/beachplanet/knight)
+"Ej" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/ruin/beachplanet/knight)
 "EH" = (
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin,
 /turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "ES" = (
-/obj/structure/railing/corner{
-	dir = 4
+/obj/structure/flora/ausbushes/sparsegrass{
+	pixel_x = -1
 	},
-/turf/open/floor/grass/fairy/beach,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
 "Gj" = (
 /obj/machinery/hydroponics/soil,
@@ -500,6 +649,13 @@
 /obj/item/seeds/wheat,
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
+"HQ" = (
+/obj/structure/flora/ausbushes/sparsegrass{
+	pixel_x = -1
+	},
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
 "If" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/poppy,
@@ -507,6 +663,9 @@
 /area/ruin/beachplanet/knight)
 "Ih" = (
 /obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /turf/open/floor/wood{
@@ -524,6 +683,12 @@
 	},
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
+"JI" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
 "KE" = (
 /obj/item/storage/bag/plants,
 /turf/open/floor/grass{
@@ -538,13 +703,18 @@
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
 "Mc" = (
-/obj/structure/railing{
-	dir = 4
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/wood{
+	light_range = 2
 	},
-/obj/effect/turf_decal/stoneborder{
-	dir = 8
+/area/ruin/beachplanet/knight)
+"Me" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/sparsegrass{
+	pixel_x = -1
 	},
-/turf/open/floor/grass/fairy/beach,
+/turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
 "MR" = (
 /obj/structure/railing/wood,
@@ -564,14 +734,8 @@
 	},
 /area/ruin/beachplanet/knight)
 "Np" = (
-/obj/structure/railing/corner{
-	dir = 1
-	},
-/turf/open/floor/grass{
-	desc = "lovely short grass";
-	light_range = 2;
-	baseturfs = /turf/open/floor/plating/beach/sand
-	},
+/obj/structure/table/wood,
+/turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "Nt" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -595,6 +759,16 @@
 /area/ruin/beachplanet/knight)
 "PK" = (
 /turf/open/floor/concrete/slab_1,
+/area/ruin/beachplanet/knight)
+"Qj" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/destructible/tribal_torch/lit{
+	pixel_y = 10
+	},
+/turf/open/floor/wood/ebony,
 /area/ruin/beachplanet/knight)
 "Ql" = (
 /obj/structure/flora/tree/chapel{
@@ -650,6 +824,12 @@
 /obj/item/seeds/poppy/lily,
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
+"Ro" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/beachplanet/knight)
 "Sh" = (
 /turf/open/floor/grass{
 	desc = "lovely short grass";
@@ -672,11 +852,22 @@
 /obj/item/seeds/poppy/lily,
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
+"Sz" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
 "SR" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
+"SV" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "Th" = (
 /turf/open/floor/wood{
@@ -722,10 +913,12 @@
 	},
 /area/ruin/beachplanet/knight)
 "UQ" = (
-/obj/structure/rack,
-/obj/item/claymore/weak,
-/obj/item/claymore/weak,
-/turf/open/floor/wood,
+/obj/effect/turf_decal/stoneborder,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/wood/ebony,
 /area/ruin/beachplanet/knight)
 "Vx" = (
 /mob/living/simple_animal/butterfly,
@@ -740,13 +933,15 @@
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
 "VL" = (
-/obj/structure/railing/corner{
-	dir = 4
-	},
-/turf/open/floor/grass{
-	desc = "lovely short grass";
-	light_range = 2;
-	baseturfs = /turf/open/floor/plating/beach/sand
+/obj/structure/table/wood,
+/obj/structure/curtain/cloth,
+/obj/structure/table/wood,
+/turf/open/floor/wood,
+/area/ruin/beachplanet/knight)
+"WE" = (
+/obj/structure/railing,
+/turf/open/floor/plasteel/stairs{
+	dir = 8
 	},
 /area/ruin/beachplanet/knight)
 "WX" = (
@@ -780,6 +975,23 @@
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
 /area/ruin/beachplanet/knight)
+"Yq" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beachplanet/knight)
+"YC" = (
+/turf/open/floor/plasteel/stairs,
+/area/ruin/beachplanet/knight)
+"YJ" = (
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/grass{
+	desc = "Well kept grass. The blades stand a stately short.";
+	light_range = 2;
+	baseturfs = /turf/open/floor/plating/beach/sand
+	},
+/area/ruin/beachplanet/knight)
 "Zf" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/beach/lit,
@@ -794,6 +1006,12 @@
 	light_range = 2;
 	baseturfs = /turf/open/floor/plating/beach/sand
 	},
+/area/ruin/beachplanet/knight)
+"ZE" = (
+/obj/structure/table/wood,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
 "ZF" = (
 /obj/structure/chair/pew/left{
@@ -818,38 +1036,44 @@
 /area/ruin/beachplanet/knight)
 
 (1,1,1) = {"
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
 fy
-fy
-fy
-fy
-fy
-fy
-fy
-fy
-fy
-fy
-fy
-fy
-Zf
-fy
-fy
-fy
-fy
-fy
-fy
-fy
-fy
-fy
-fy
-fy
-Zf
-fy
-fy
-fy
-fy
-fy
-Zf
-fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
 hD
 hD
 hD
@@ -862,38 +1086,44 @@ hD
 hD
 "}
 (2,1,1) = {"
-Zf
-Sh
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-zg
-Mc
-ES
 fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+fy
+fy
+hD
+fy
+fy
+fy
+fy
+fy
+hD
+hD
+fy
+fy
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
 hD
 hD
 hD
@@ -907,38 +1137,44 @@ hD
 "}
 (3,1,1) = {"
 fy
-Sh
-Ih
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-kV
+fy
+hD
+hD
 fy
 fy
+hD
+hD
+hD
+hD
+hD
+fy
+Zf
+fy
+fy
+hD
+hD
+fy
+fy
+hD
+fy
+wm
+wm
+wm
+fy
+hD
+hD
+Zf
+Zf
+Zf
+fy
+hD
+hD
+hD
+hD
+Zf
+fy
+hD
+hD
 hD
 hD
 hD
@@ -950,40 +1186,46 @@ hD
 hD
 "}
 (4,1,1) = {"
+hD
 fy
-Sh
-Ih
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-dF
-mx
-Th
-fR
+Zf
+Zf
+ww
+fy
+fy
+fy
+fy
+fy
+hD
+fy
+fy
+Zf
+Zf
+fy
+fy
+fy
+fy
+fy
+fy
 wm
+Zf
+Zf
 fy
 fy
+fy
+fy
+Zf
+Zf
+fy
+fy
+fy
+fy
+fy
+wm
+wm
+hD
+hD
+hD
 hD
 hD
 hD
@@ -994,11 +1236,215 @@ hD
 hD
 "}
 (5,1,1) = {"
+hD
+hD
+fy
+bV
+bV
+Sh
+zg
+zg
+zg
+zg
+zg
+zg
+zg
+zg
+zg
+zg
+zg
+Sh
+fy
+fy
+Zf
+Zf
+Zf
+fy
+fy
+Sh
+zg
+zg
+zg
+zg
+zg
+zg
+zg
+zg
+zg
+Sh
+wm
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(6,1,1) = {"
+hD
+hD
+hD
+ww
+Zf
+Sh
+Ih
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+rp
+kV
+zg
+zg
+zg
+zg
+zg
+zg
+zg
+zg
+Ih
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+rp
+ve
+wm
+fy
+fy
+fy
+fy
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(7,1,1) = {"
+hD
+hD
+hD
+fy
+fy
+Sh
+Ih
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+Mc
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Mc
+mx
+mx
+mx
+mx
+dF
+mx
+rp
+ve
+wm
+wm
+fy
+fy
+wm
+fy
+fy
+wm
+hD
+hD
+hD
+hD
+"}
+(8,1,1) = {"
+hD
+hD
+hD
+fy
 fy
 Sh
 Ih
 mx
 Dh
+VF
+Qw
+mx
+hj
+hj
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+Cb
+Cb
+Cb
+SV
+mx
+rp
+ve
+fy
+wm
+Tr
+Zf
+wm
+fy
+Zf
+wm
+wm
+wm
+hD
+hD
+"}
+(9,1,1) = {"
+hD
+hD
+hD
+fy
+fy
+Sh
+Ih
+mx
+gO
 VF
 VF
 qV
@@ -1019,33 +1465,39 @@ gX
 dr
 gX
 mx
-Cb
-VF
-VF
+hk
+fC
+Qj
+Ro
 mx
-Th
+rp
 ve
+fy
+fy
+Tr
+fy
 wm
-wm
+fy
+Zf
 fy
 fy
 wm
-fy
-fy
 wm
-hD
-hD
 hD
 "}
-(6,1,1) = {"
-fy
+(10,1,1) = {"
+hD
+hD
+hD
+hD
+hD
 Sh
 Ih
 mx
-gO
+sD
 VF
 VF
-qV
+VL
 hj
 hj
 hj
@@ -1063,30 +1515,36 @@ hj
 hj
 hj
 mx
-sD
-VF
-VF
+hk
+jm
+AA
+Ro
 mx
-Th
+rp
 ve
 fy
-wm
+fy
 Tr
-Zf
+fy
 wm
 fy
-Zf
-wm
-wm
+fy
+gC
+fy
+fy
 wm
 hD
 "}
-(7,1,1) = {"
+(11,1,1) = {"
+hD
+hD
+fy
+fy
 fy
 Sh
 Ih
 mx
-sD
+qe
 VF
 VF
 PJ
@@ -1107,32 +1565,38 @@ Gj
 Gj
 Gj
 mx
-jm
-VF
-VF
+ye
+YC
+AA
+pL
 mx
-Th
+rp
 ve
 fy
 fy
-Tr
+Zf
 fy
 wm
 fy
 Zf
+gC
+Zf
 fy
 fy
-wm
-wm
+hD
 "}
-(8,1,1) = {"
+(12,1,1) = {"
+hD
+fy
+fy
+fy
 fy
 Sh
 Ih
 mx
-qe
-VF
-Qw
+mx
+WZ
+mx
 mx
 wm
 wm
@@ -1146,38 +1610,44 @@ hj
 Qm
 hj
 wm
-hj
+fw
 hj
 xI
 hj
 mx
-sD
-VF
-VF
-mx
-Th
-ve
-fy
-fy
-Tr
-fy
-wm
-fy
-fy
-gC
-fy
-fy
-wm
-"}
-(9,1,1) = {"
-fy
-Sh
-Ih
 mx
 mx
 WZ
 mx
 mx
+rp
+ve
+gE
+gE
+Zf
+fy
+wm
+fy
+bV
+SR
+bV
+Zf
+fy
+hD
+"}
+(13,1,1) = {"
+hD
+fy
+fy
+wm
+fy
+Sh
+Ih
+Mc
+mx
+pN
+pN
+wm
 wm
 hj
 pn
@@ -1194,75 +1664,37 @@ wm
 Jf
 Jf
 Jf
+hj
+hj
+hj
+qJ
+qJ
 mx
-mx
-WZ
-mx
-mx
-Th
+rp
 ve
 fy
-fy
-Zf
-fy
-wm
-fy
-Zf
+gE
 gC
 Zf
+wm
+wm
+wr
+bV
+wr
 fy
 fy
+hD
 "}
-(10,1,1) = {"
+(14,1,1) = {"
 fy
+fy
+wm
+wm
+Zf
 Sh
 Ih
-mx
-hj
-pN
-pN
-wm
-wm
-hj
-kq
-hj
-hj
-wm
-wm
-wm
-hj
-hj
-hj
-ye
-ye
-hj
-hj
-hj
-hj
-hj
-qJ
-qJ
-mx
 Th
-ve
-gE
-gE
-Zf
-fy
-wm
-fy
-bV
-SR
-bV
-Zf
-fy
-"}
-(11,1,1) = {"
-fy
-Sh
-Ih
 mx
-hj
 pN
 hj
 wm
@@ -1283,34 +1715,40 @@ qJ
 qJ
 qJ
 qJ
+qJ
 hj
 qJ
-qJ
+Vx
 mx
-Th
+rp
 ve
+Zf
 fy
 gE
-gC
-Zf
+nc
+wr
 wm
 wm
 wr
 bV
-wr
 fy
 fy
+hD
 "}
-(12,1,1) = {"
+(15,1,1) = {"
 fy
+fy
+wm
+JI
+bV
 Sh
 Ih
+Th
 mx
-hj
 qJ
 qJ
 qJ
-hj
+fw
 hj
 ts
 Ql
@@ -1329,28 +1767,34 @@ qJ
 qJ
 qJ
 qJ
+qJ
 hj
 mx
-Th
+rp
 ve
+fy
+Tr
+fy
+KJ
+KJ
+wr
+wm
+wm
+wm
 Zf
-fy
-gE
-nc
-wr
-wm
-wm
-wr
-bV
-fy
-fy
+Zf
+hD
 "}
-(13,1,1) = {"
+(16,1,1) = {"
+hD
 fy
+Tr
+JI
+ww
 Sh
 Ih
+Th
 mx
-hj
 qJ
 oo
 qJ
@@ -1370,57 +1814,14 @@ qJ
 Tp
 hj
 wm
+wm
 qJ
 sG
 qJ
 hj
 mx
-Th
+rp
 ve
-fy
-Tr
-fy
-KJ
-KJ
-wr
-wm
-wm
-wm
-Zf
-Zf
-"}
-(14,1,1) = {"
-fy
-Sh
-Ih
-mx
-hj
-qJ
-qJ
-qJ
-gf
-zz
-pN
-pN
-qJ
-qJ
-ts
-ts
-hj
-UL
-hj
-hj
-hj
-hj
-Tp
-hj
-wm
-qJ
-qJ
-hj
-mx
-mx
-Np
 fy
 Tr
 fy
@@ -1432,13 +1833,68 @@ fy
 wm
 wm
 fy
+fy
 "}
-(15,1,1) = {"
+(17,1,1) = {"
+hD
+fy
+ww
+ww
+ww
+Sh
+Ih
+Th
+mx
+qJ
+qJ
+qJ
+gf
+zz
+pN
+pN
+qJ
+qJ
+ts
+ts
+hj
+UL
+hj
+hj
+hj
+hj
+Tp
+hj
+wm
+wm
+qJ
+qJ
+hj
+mx
+mx
+ve
+fy
+fy
+xp
+xp
+fy
+VK
+VK
+fy
+fy
+wm
+wm
+fy
+"}
+(18,1,1) = {"
+hD
+fy
+ww
+fy
 fy
 Sh
 Ih
+Th
 mx
-hj
 qJ
 wm
 qJ
@@ -1458,6 +1914,7 @@ hj
 nJ
 QI
 QI
+hj
 wm
 nJ
 qJ
@@ -1466,23 +1923,28 @@ mx
 QG
 Sh
 fy
+Nt
+Nt
 fy
-xp
-xp
 fy
-VK
-VK
+fy
+fy
+fy
 fy
 fy
 wm
-wm
+fy
 "}
-(16,1,1) = {"
+(19,1,1) = {"
+hD
+hD
+ww
+bV
 fy
 Sh
 Ih
+Th
 mx
-hj
 qJ
 qJ
 qJ
@@ -1491,7 +1953,7 @@ qJ
 hj
 nJ
 MT
-pN
+qJ
 hj
 hj
 hj
@@ -1502,31 +1964,37 @@ nJ
 ia
 hj
 QI
+hj
 wm
 nJ
 Vx
 hj
 PK
 PK
-Sh
+sG
+qJ
+qJ
+qJ
+qJ
+sG
+qJ
+pN
+qJ
+qJ
 fy
-Nt
-Nt
 fy
 fy
-fy
-fy
-fy
-fy
-fy
-wm
 "}
-(17,1,1) = {"
-fy
+(20,1,1) = {"
+hD
+hD
+ww
+Al
+Zf
 Sh
 Ih
+Th
 mx
-hj
 qJ
 qJ
 fw
@@ -1534,43 +2002,49 @@ hj
 hj
 nJ
 nJ
-pN
+qJ
 dK
 hj
 hj
 hj
-pN
-pN
+qJ
+qJ
 nJ
 hj
 gU
 hj
 QI
+hj
 wm
 hj
 qJ
 qJ
 qJ
 qJ
-sG
-qJ
-qJ
 qJ
 qJ
 sG
 qJ
-pN
+qJ
+qJ
+sG
+qJ
+qJ
 fy
 fy
 fy
-fy
+hD
 "}
-(18,1,1) = {"
-fy
+(21,1,1) = {"
+hD
+hD
+ww
+JI
+Zf
 Sh
 Ih
+Th
 mx
-hj
 qJ
 zz
 zz
@@ -1579,21 +2053,20 @@ hj
 hj
 hj
 Ql
-rp
-pN
+Bk
+qJ
 nJ
 hj
-Bk
-pN
-hj
+Eh
+qJ
+YJ
 hj
 gU
 nJ
 Tp
+hj
 wm
 hj
-qJ
-qJ
 qJ
 qJ
 qJ
@@ -1602,19 +2075,26 @@ sG
 qJ
 qJ
 qJ
+qJ
+Cs
+sG
+qJ
+Dg
+Tr
 fy
 fy
-fy
-fy
-fy
-fy
+hD
 "}
-(19,1,1) = {"
+(22,1,1) = {"
+hD
+hD
+ww
+ww
 Zf
 Sh
 Ih
+Th
 mx
-hj
 qJ
 Tp
 Tp
@@ -1626,39 +2106,45 @@ aA
 Sj
 NE
 fw
-pN
-pN
-pN
+qJ
+qJ
+qJ
 hj
 hj
 gU
 hj
 Tp
+hj
 wm
 wm
 hj
 qJ
+qJ
+qJ
+Sh
 qJ
 qJ
 sG
+bV
+bV
 qJ
 qJ
-qJ
-qJ
-fy
-fy
-fy
-Zf
 Tr
+Tr
+Zf
 fy
-fy
+hD
 "}
-(20,1,1) = {"
+(23,1,1) = {"
+hD
+hD
+hD
+fy
 fy
 Sh
 Ih
+Th
 mx
-hj
 qJ
 Tp
 Tp
@@ -1667,7 +2153,7 @@ nJ
 hj
 hj
 Zg
-pN
+qJ
 hj
 hj
 hj
@@ -1679,30 +2165,36 @@ AJ
 hj
 Tp
 hj
+hj
 wm
 qJ
 qJ
 PK
 PK
 Sh
-fy
-fy
-fy
-fy
-fy
-fy
-Tr
-Tr
-Tr
+Nt
+qJ
+qJ
 Zf
-fy
+Yq
+qJ
+qJ
+Yq
+Sz
+Sz
+hD
+hD
 "}
-(21,1,1) = {"
+(24,1,1) = {"
+hD
+hD
+fy
+fy
 fy
 Sh
 Ih
+Th
 mx
-hj
 qJ
 qJ
 hj
@@ -1722,31 +2214,37 @@ hj
 nJ
 hj
 rQ
+hj
 rQ
 hj
 qJ
 sG
 mx
 QG
-Sh
-Nt
+ve
 fy
+sG
+qJ
+mx
+mx
+qV
+qV
+mx
+mx
 fy
-wm
-fy
-Tr
-Zf
-wm
+hD
+hD
+"}
+(25,1,1) = {"
+hD
 fy
 fy
 hD
-"}
-(22,1,1) = {"
 fy
 Sh
 Ih
+Th
 mx
-hj
 qJ
 qJ
 wm
@@ -1766,31 +2264,37 @@ zz
 zz
 fw
 ZO
+hj
 ZO
 Tp
 qJ
 qJ
 mx
 mx
-VL
+fR
 fy
 fy
-wm
-wm
-fy
-Tr
-wm
-fy
-fy
+qJ
+mx
+VF
+VF
+kb
+ZE
+mx
 fy
 hD
+hD
 "}
-(23,1,1) = {"
+(26,1,1) = {"
+hD
+hD
+hD
+hD
 fy
 Sh
 Ih
+Th
 mx
-hj
 qJ
 wm
 hj
@@ -1810,31 +2314,37 @@ hj
 zz
 zz
 Tp
+wm
 hj
 hj
 qJ
 hj
 mx
-Th
-eF
-wm
-wm
+rp
+fR
 wm
 fy
-fy
-fy
-wm
-fy
+qJ
+WZ
+VF
+VF
+VF
+Np
+mx
 fy
 hD
 hD
 "}
-(24,1,1) = {"
+(27,1,1) = {"
+hD
+hD
+hD
+fy
 fy
 Sh
 Ih
+Th
 mx
-qJ
 qJ
 wm
 hj
@@ -1854,31 +2364,37 @@ hj
 hj
 hj
 wm
+wm
 hj
-hj
+fw
 pN
 hj
 mx
-Th
-eF
-wm
-wm
-fy
-fy
-fy
-wm
+rp
+ve
 wm
 fy
-hD
+qJ
+mx
+vf
+tD
+sD
+Np
+mx
+fy
 hD
 hD
 "}
-(25,1,1) = {"
+(28,1,1) = {"
+hD
+fy
+fy
+fy
 fy
 Sh
 Ih
+Th
 mx
-hj
 pN
 wm
 hj
@@ -1898,31 +2414,37 @@ QI
 hj
 Xz
 wm
+wm
 hj
 hj
 pN
 hj
 mx
-Th
-eZ
+rp
+ve
 wm
 fy
-wm
+qJ
+mx
+mx
+mx
+mx
+mx
+mx
 fy
-wm
-wm
-fy
-fy
-hD
 hD
 hD
 "}
-(26,1,1) = {"
+(29,1,1) = {"
+hD
+fy
+wm
+wm
 fy
 Sh
 Ih
+Th
 mx
-hj
 pN
 pN
 wm
@@ -1941,32 +2463,38 @@ Gx
 Gx
 wm
 wm
+Ej
 hj
 hg
 pN
 pN
 qJ
 mx
-Th
-eZ
+rp
+ve
 wm
 fy
 fy
+Zf
 fy
 fy
 fy
 fy
-hD
-hD
+fy
+fy
 hD
 hD
 "}
-(27,1,1) = {"
+(30,1,1) = {"
+hD
+fy
+fy
+wm
 fy
 Sh
 Ih
+Mc
 mx
-hj
 pN
 pN
 wm
@@ -1974,28 +2502,29 @@ wm
 hj
 hj
 hj
-nJ
-nJ
-Xz
+hj
 wm
 wm
 hj
-QI
+hj
+hj
+hj
 wm
-wm
-wm
-wm
+hj
+hj
 hg
 hg
+hj
+hg
 pN
 pN
 pN
 mx
-Th
-eZ
-wm
+rp
+ve
 fy
-fy
+gE
+gE
 Zf
 fy
 fy
@@ -2004,8 +2533,13 @@ hD
 hD
 hD
 hD
+hD
 "}
-(28,1,1) = {"
+(31,1,1) = {"
+hD
+hD
+fy
+wm
 fy
 Sh
 Ih
@@ -2019,68 +2553,25 @@ hj
 hj
 hj
 hj
+hj
+hj
+hj
 wm
 wm
 hj
 hj
 hj
 hj
+hj
 wm
-hj
-hj
-hg
-hg
+mx
 mx
 mx
 WZ
 mx
 mx
-Th
-eZ
-fy
-gE
-gE
-Zf
-fy
-fy
-hD
-hD
-hD
-hD
-hD
-"}
-(29,1,1) = {"
-fy
-Sh
-Ih
-mx
-Uy
-VF
-WX
-mx
-wm
-hj
-hj
-hj
-hj
-hj
-hj
-hj
-wm
-wm
-hj
-hj
-hj
-hj
-hj
-wm
-mx
-sD
-VF
-VF
-mx
-Th
-eZ
+rp
+ve
 gE
 gE
 gC
@@ -2092,22 +2583,27 @@ hD
 hD
 hD
 hD
+hD
 "}
-(30,1,1) = {"
+(32,1,1) = {"
+hD
+hD
+fy
+wm
 fy
 Sh
 Ih
 mx
-WX
+Uy
 VF
 WX
 mx
 wm
 MR
-pN
-pN
-pN
-pN
+qJ
+qJ
+qJ
+qJ
 yG
 Tp
 hj
@@ -2119,17 +2615,19 @@ wm
 wm
 wm
 mx
-UQ
-VF
-VF
-mx
-Th
+hl
+uf
 eZ
+eZ
+mx
+rp
+ve
 gE
 gC
 gC
 gE
 fy
+hD
 hD
 hD
 hD
@@ -2137,12 +2635,16 @@ hD
 hD
 hD
 "}
-(31,1,1) = {"
+(33,1,1) = {"
+hD
+hD
+bV
+wm
 fy
 Sh
 Ih
 mx
-Uy
+WX
 VF
 WX
 mx
@@ -2163,12 +2665,13 @@ QI
 QI
 hj
 mx
-sD
-VF
-VF
+WE
+UQ
+pT
+pT
 mx
-Th
-eZ
+rp
+ve
 fy
 Zf
 gE
@@ -2180,13 +2683,18 @@ hD
 hD
 hD
 hD
+hD
 "}
-(32,1,1) = {"
-fy
+(34,1,1) = {"
+hD
+hD
+JI
+Zf
+ww
 Sh
 Ih
 mx
-EH
+Uy
 VF
 WX
 mx
@@ -2207,103 +2715,17 @@ QI
 hj
 hj
 mx
-Cb
-VF
-VF
+ye
+eF
+cv
+kD
 mx
-Th
-eZ
+rp
+ve
 fy
 Zf
 fy
 fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-"}
-(33,1,1) = {"
-fy
-Sh
-Ih
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-mx
-ZS
-mx
-Th
-eZ
-fy
-fy
-fy
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-hD
-"}
-(34,1,1) = {"
-fy
-Sh
-Ih
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-Th
-tk
-fy
-fy
-hD
 hD
 hD
 hD
@@ -2314,37 +2736,43 @@ hD
 hD
 "}
 (35,1,1) = {"
-Zf
+hD
+hD
+JI
+JI
+ww
 Sh
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-Np
+Ih
+mx
+EH
+sD
+WX
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+mx
+yc
+qi
+VF
+mx
+rp
+ve
+fy
 fy
 fy
 hD
@@ -2358,21 +2786,125 @@ hD
 hD
 "}
 (36,1,1) = {"
+hD
+hD
+ww
+ww
+ww
+Sh
+Ih
+mx
+mx
+mx
+mx
+mx
+Mc
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Th
+Mc
+mx
+mx
+mx
+ZS
+mx
+rp
+ve
 fy
 fy
 fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(37,1,1) = {"
+hD
+hD
 fy
 fy
 fy
+Sh
+Ih
+Th
+Th
+Th
+Th
+Th
+Th
+rp
+xg
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+Ih
+Th
+Th
+Th
+Th
+Th
+Th
+rp
+ve
 fy
 fy
 fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(38,1,1) = {"
+hD
+hD
+fy
+ww
+Zf
+Sh
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+Sh
 fy
 fy
 fy
-fy
-fy
-fy
+wr
 Zf
 Zf
 Zf
@@ -2381,6 +2913,52 @@ fy
 fy
 fy
 fy
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+Sh
+fy
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(39,1,1) = {"
+hD
+fy
+ww
+Me
+Tr
+fy
+fy
+fy
+Tr
+Tr
+Zf
+Zf
+fy
+fy
+fy
+fy
+fy
+fy
+wr
+wr
+wr
+wr
+wr
 fy
 fy
 fy
@@ -2390,6 +2968,462 @@ fy
 fy
 fy
 fy
+fy
+fy
+wm
+fy
+fy
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(40,1,1) = {"
+hD
+fy
+ww
+Tr
+fy
+fy
+fy
+fy
+fy
+Tr
+Tr
+Zf
+fy
+fy
+fy
+wm
+wm
+fy
+fy
+fy
+fy
+wm
+wm
+fy
+fy
+fy
+fy
+fy
+fy
+fy
+fy
+fy
+fy
+wm
+wm
+fy
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(41,1,1) = {"
+fy
+fy
+hD
+oP
+wm
+wm
+fy
+wm
+wm
+fy
+Tr
+Tr
+fy
+fy
+fy
+wm
+wm
+wm
+fy
+fy
+fy
+fy
+wm
+wm
+wm
+fy
+fy
+Zf
+Tr
+Tr
+wr
+wm
+wm
+wm
+fy
+fy
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(42,1,1) = {"
+hD
+hD
+hD
+fy
+fy
+wm
+wm
+fy
+wm
+fy
+fy
+fy
+fy
+fy
+fy
+fy
+fy
+fy
+fy
+Tr
+wr
+fy
+Tr
+fy
+fy
+fy
+Zf
+Tr
+Tr
+wr
+wr
+fy
+fy
+fy
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(43,1,1) = {"
+hD
+hD
+hD
+hD
+fy
+Zf
+HQ
+ES
+wm
+wm
+fy
+fy
+wm
+fy
+fy
+fy
+fy
+fy
+Tr
+Tr
+wr
+fy
+Tr
+Tr
+wr
+fy
+Tr
+Tr
+wr
+wr
+fy
+fy
+fy
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(44,1,1) = {"
+hD
+hD
+hD
+hD
+hD
+Zf
+ww
+fB
+Zf
+wm
+wm
+fy
+wm
+fy
+fy
+fy
+fy
+fy
+Tr
+tk
+wr
+fy
+wr
+tk
+tk
+fy
+wr
+wr
+wr
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(45,1,1) = {"
+hD
+hD
+hD
+hD
+hD
+fy
+fy
+fy
+fy
+wm
+wm
+wm
+wm
+wr
+Tr
+Tr
+fy
+Tr
+Tr
+wr
+wm
+fy
+wm
+wm
+fy
+fy
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(46,1,1) = {"
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+fy
+fy
+fy
+fy
+fy
+wr
+Tr
+Tr
+Tr
+wr
+wr
+wr
+fy
+wm
+wm
+fy
+fy
+fy
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(47,1,1) = {"
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+fy
+fy
+fy
+fy
+wr
+wr
+Tr
+JI
+Tr
+fy
+fy
+fy
+fy
+fy
+fy
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+"}
+(48,1,1) = {"
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+fy
+ww
+jG
+JI
+Tr
+fy
+fy
+fy
+fy
+fy
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
+hD
 hD
 hD
 hD
