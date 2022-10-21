@@ -583,7 +583,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "kl" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	name = "Dorms"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -719,7 +721,9 @@
 	},
 /area/ship/hallway/fore)
 "nz" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	name = "Commons"
+	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1103,7 +1107,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "tB" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	name = "Observation Blister"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1158,7 +1164,9 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "tR" = (
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	name = "Cargo Bay"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -1498,7 +1506,9 @@
 /turf/open/floor/plating/airless,
 /area/ship/storage)
 "zM" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	name = "Engineering"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -2106,7 +2116,7 @@
 /area/ship/cargo)
 "LU" = (
 /obj/machinery/door/airlock/maintenance{
-	name = "restroom"
+	name = "Restroom"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/toilet)
@@ -2132,7 +2142,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Mh" = (
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	name = "Hangar"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -2262,7 +2274,6 @@
 /turf/closed/wall,
 /area/ship/hallway/fore)
 "Op" = (
-/obj/machinery/door/airlock/maintenance,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2275,6 +2286,9 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
+	},
+/obj/machinery/door/airlock/maintenance{
+	name = "Commons"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
@@ -2833,7 +2847,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Yv" = (
-/obj/machinery/door/airlock/command,
+/obj/machinery/door/airlock/command{
+	name = "Bridge"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -2875,7 +2891,9 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "Zm" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	name = "Hangar"
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
