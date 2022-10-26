@@ -62,18 +62,19 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
-/obj/item/rcl,
 /obj/structure/closet/crate/engineering,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom{
+	pixel_y = 22
+	},
+/obj/item/toy/plush/beeplushie,
+/obj/item/rcl,
 /obj/item/reagent_containers/food/snacks/chips{
 	pixel_x = 6;
 	pixel_y = -1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/sosjerky{
 	pixel_y = 4
-	},
-/obj/item/radio/intercom{
-	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -651,7 +652,7 @@
 "lv" = (
 /obj/effect/turf_decal/steeldecal/steel_decals1,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1783,7 +1784,7 @@
 	},
 /obj/machinery/button/door{
 	id = "minutecop_bridge";
-	name = "Cargo Bay Doors";
+	name = "Bridge shutters";
 	pixel_y = 2;
 	pixel_x = -22;
 	dir = 4
@@ -2214,7 +2215,6 @@
 	},
 /obj/item/tank/jetpack/carbondioxide,
 /obj/item/clothing/suit/space/hardsuit/security/independent,
-/obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
