@@ -103,6 +103,10 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_head_quills, GLOB.vox_head_quills_list)
 	if(!GLOB.vox_neck_quills_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_neck_quills, GLOB.vox_neck_quills_list)
+	if(!GLOB.elzu_horns_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/elzu_horns, GLOB.elzu_horns_list)
+	if(!GLOB.tails_list_elzu.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/elzu, GLOB.tails_list_elzu)
 	//For now we will always return none for tail_human and ears.
 	//if you don't keep this alphabetised I'm going to personally steal your shins and sell them online
 	return list(
@@ -110,6 +114,7 @@
 		"body_size" = pick(GLOB.body_sizes),
 		"caps" = pick(GLOB.caps_list),
 		"ears" = "None",
+		"elzu_horns" = pick(GLOB.elzu_horns_list),
 		"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],
 		"flavor_text" = "",
 		"frills" = pick(GLOB.frills_list),
@@ -134,6 +139,7 @@
 		"squid_face" = pick(GLOB.squid_face_list),
 		"tail_human" = "None",
 		"tail_lizard" = pick(GLOB.tails_list_lizard),
+		"tail_elzu" = pick(GLOB.tails_list_elzu),
 		"vox_head_quills" = pick(GLOB.vox_head_quills_list),
 		"vox_neck_quills" = pick(GLOB.vox_neck_quills_list),
 		"wings" = "None",

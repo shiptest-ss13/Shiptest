@@ -177,7 +177,7 @@ SUBSYSTEM_DEF(overmap)
  */
 /datum/controller/subsystem/overmap/proc/spawn_outpost()
 	var/list/S = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
-	new /datum/overmap/outpost(S)
+	new /datum/overmap/dynamic/outpost(S)
 	return
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
@@ -210,71 +210,37 @@ SUBSYSTEM_DEF(overmap)
  * * target - The ruin to spawn, if any
  * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
  */
-/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
+/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(datum/overmap/dynamic/dynamic_datum, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
 	log_shuttle("SSOVERMAP: SPAWNING DYNAMIC ENCOUNTER STARTED")
-	var/list/ruin_list
+	var/list/ruin_list = dynamic_datum.ruin_list
 	var/datum/map_generator/mapgen
-	var/area/target_area
-	var/turf/surface = /turf/open/space
-	var/datum/weather_controller/weather_controller_type
-	if(planet_type)
-		switch(planet_type)
-			if(DYNAMIC_WORLD_LAVA)
-				ruin_list = SSmapping.lava_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/lavaland
-				target_area = /area/overmap_encounter/planetoid/lava
-				surface = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-				weather_controller_type = /datum/weather_controller/lavaland
-			if(DYNAMIC_WORLD_ICE)
-				ruin_list = SSmapping.ice_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/icemoon
-				target_area = /area/overmap_encounter/planetoid/ice
-				surface = /turf/open/floor/plating/asteroid/snow/icemoon
-				weather_controller_type = /datum/weather_controller/snow_planet
-			if(DYNAMIC_WORLD_SAND)
-				ruin_list = SSmapping.sand_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/whitesands
-				target_area = /area/overmap_encounter/planetoid/sand
-				surface = /turf/open/floor/plating/asteroid/whitesands
-				weather_controller_type = /datum/weather_controller/desert
-			if(DYNAMIC_WORLD_JUNGLE)
-				ruin_list = SSmapping.jungle_ruins_templates
-				mapgen = new /datum/map_generator/jungle_generator
-				target_area = /area/overmap_encounter/planetoid/jungle
-				surface = /turf/open/floor/plating/dirt/jungle
-				weather_controller_type = /datum/weather_controller/lush
-			if(DYNAMIC_WORLD_ASTEROID)
-				ruin_list = null
-				mapgen = new /datum/map_generator/cave_generator/asteroid
-			if(DYNAMIC_WORLD_ROCKPLANET)
-				ruin_list = SSmapping.rock_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/rockplanet
-				target_area = /area/overmap_encounter/planetoid/rockplanet
-				surface = /turf/open/floor/plating/asteroid
-				weather_controller_type = /datum/weather_controller/chlorine //let's go??
-			if(DYNAMIC_WORLD_REEBE)
-				ruin_list = SSmapping.yellow_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/reebe
-				target_area = /area/overmap_encounter/planetoid/reebe
-				surface = /turf/open/chasm/reebe_void
-			if(DYNAMIC_WORLD_SPACERUIN)
-				ruin_list = SSmapping.space_ruins_templates
+	var/area/target_area = dynamic_datum.target_area
+	var/turf/surface = dynamic_datum.surface
+	var/datum/weather_controller/weather_controller_type = dynamic_datum.weather_controller_type
+	///A planet template that contains a list of biomes to use
+	var/datum/planet/planet_template = dynamic_datum.planet_template
+
+	if(!dynamic_datum)
+		CRASH("spawn_dynamic_encounter called without any datum to spawn!")
 
 	if(ruin && ruin_list && !ruin_type)
 		ruin_type = ruin_list[pick(ruin_list)]
 		if(ispath(ruin_type))
 			ruin_type = new ruin_type
 
-	var/height = QUADRANT_MAP_SIZE
-	var/width = QUADRANT_MAP_SIZE
+	var/height = dynamic_datum.vlevel_height
+	var/width = dynamic_datum.vlevel_width
 
 	var/encounter_name = "Dynamic Overmap Encounter"
+	if(dynamic_datum.planet_name)
+		encounter_name = dynamic_datum.planet_name
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, width, height, ALLOCATION_QUADRANT, QUADRANT_MAP_SIZE)
 
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
-	if(mapgen) /// If we have a map generator, don't ChangeTurf's in fill_in. Just to ChangeTurf them once again.
+	if(dynamic_datum.mapgen) /// If we have a map generator, don't ChangeTurf's in fill_in. Just to ChangeTurf them once again.
+		mapgen = new dynamic_datum.mapgen
 		surface = null
 	vlevel.fill_in(surface, target_area)
 
@@ -291,7 +257,11 @@ SUBSYSTEM_DEF(overmap)
 
 	if(mapgen) //If what is going on is what I think it is, this is going to need to return some sort of promise to await.
 		log_shuttle("SSOVERMAP: START_DYN_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
-		mapgen.generate_terrain(vlevel.get_unreserved_block())
+		if (istype(mapgen, /datum/map_generator/planet_generator) && !isnull(planet_template))
+			planet_template = new planet_template
+			mapgen.generate_terrain(vlevel.get_unreserved_block(), planet_template)
+		else
+			mapgen.generate_terrain(vlevel.get_unreserved_block())
 		log_shuttle("SSOVERMAP: START_DYN_E: MAPGEN REF [REF(mapgen)] RETURNED FOR VLEV [vlevel.id] OF TYPE [mapgen.type]. IT MAY NOT BE FINISHED YET.")
 
 	if(weather_controller_type)
