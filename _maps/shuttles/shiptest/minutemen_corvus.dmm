@@ -233,6 +233,9 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "dq" = (
@@ -536,6 +539,23 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
+"jt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	id = "corvus_cargo";
+	locked = 1;
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "minutecop_cargohatch";
+	name = "Cargo Bay Blast Door"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/cargo)
 "jA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -684,10 +704,13 @@
 	pixel_y = 10;
 	dir = 8
 	},
-/obj/machinery/light_switch{
-	pixel_x = 22;
-	dir = 8;
-	pixel_y = -7
+/obj/machinery/button/shieldwallgen{
+	id = "corvus_cargo";
+	pixel_x = 21;
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -876,6 +899,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "ot" = (
@@ -951,12 +977,20 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "qF" = (
-/obj/structure/fans/tiny,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	id = "corvus_cargo";
+	locked = 1;
+	dir = 8
+	},
 /obj/machinery/door/poddoor{
 	id = "minutecop_cargohatch";
 	name = "Cargo Bay Blast Door"
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "qN" = (
@@ -1483,7 +1517,6 @@
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
-/obj/item/clothing/head/caphat/minutemen,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
@@ -1587,11 +1620,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Bg" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/poddoor{
-	id = "minutecop_cargohatch";
-	name = "Cargo Bay Blast Door"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
@@ -1599,6 +1627,10 @@
 	launch_status = 0;
 	port_direction = 8;
 	preferred_direction = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "minutecop_cargohatch";
+	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
@@ -1667,12 +1699,6 @@
 	name = "equipment locker";
 	req_access_txt = "1"
 	},
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/head/helmet/alt/minutemen,
-/obj/item/clothing/head/helmet/alt/minutemen,
-/obj/item/clothing/head/helmet/alt/minutemen,
 /obj/item/storage/belt/military,
 /obj/item/storage/belt/military,
 /obj/item/storage/belt/military,
@@ -1690,6 +1716,10 @@
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/item/clothing/glasses/hud/security/sunglasses,
+/obj/item/clothing/suit/armor/riot/minutemen,
+/obj/item/clothing/head/helmet/riot/minutemen,
+/obj/item/clothing/head/helmet/bulletproof/minutemen,
+/obj/item/clothing/head/helmet/bulletproof/minutemen,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Ds" = (
@@ -1948,6 +1978,11 @@
 	gpstag = null;
 	pixel_x = -9;
 	pixel_y = 7
+	},
+/obj/machinery/light_switch{
+	pixel_x = -12;
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -2399,6 +2434,12 @@
 /area/ship/engineering)
 "Ua" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Uh" = (
@@ -2427,6 +2468,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -2853,7 +2897,7 @@ bA
 "}
 (8,1,1) = {"
 bA
-qF
+jt
 cY
 Gd
 PA
