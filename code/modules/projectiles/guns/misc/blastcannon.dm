@@ -35,7 +35,7 @@
 	QDEL_NULL(bomb)
 	return ..()
 
-/obj/item/gun/blastcannon/attack_self(mob/user)
+/obj/item/gun/blastcannon/unique_action(mob/living/user)
 	if(bomb)
 		bomb.forceMove(user.loc)
 		user.put_in_hands(bomb)

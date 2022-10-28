@@ -31,7 +31,6 @@
 	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 	var/suppressed_volume = 60
 	var/can_unsuppress = TRUE
-	var/recoil = 0						//boom boom shake the room
 	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
 	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
@@ -77,7 +76,30 @@
 
 	var/pb_knockback = 0
 
-	var/wielded = FALSE // true if the gun is wielded, often affects accuracy
+	var/wielded = FALSE // true if the gun is wielded via twohanded component, shouldnt affect anything else
+
+	var/wielded_fully = FALSE // true if the gun is wielded after delay, should affects accuracy
+
+	///How much the bullet scatters when fired while wielded.
+	var/spread	= 4
+	///How much the bullet scatters when fired while unwielded.
+	var/spread_unwielded = 12
+
+	///Screen shake when the weapon is fired while wielded.
+	var/recoil = 0
+	///Screen shake when the weapon is fired while unwielded.
+	var/recoil_unwielded = 0
+	///a multiplier of the duration the recoil takes to go back to normal view, this is (recoil*recoil_backtime_multiplier)+1
+	var/recoil_backtime_multiplier = 2
+	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
+	var/recoil_deviation = 22.5
+
+	///Slowdown for wielding
+	var/wield_slowdown = 0
+	///How long between wielding and firing in tenths of seconds
+	var/wield_delay	= 0.4 SECONDS
+	///Storing value for above
+	var/wield_time = 0
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -91,28 +113,25 @@
 
 /// triggered on wield of two handed item
 /obj/item/gun/proc/on_wield(obj/item/source, mob/user)
-
-	user.add_movespeed_modifier(/datum/movespeed_modifier/gun)
-
-	var/wdelay = wield_delay
-	//slower or faster wield delay depending on skill.
-	if(!user.skills.getRating("firearms"))
-		wdelay += 0.3 SECONDS //no training in any firearms
-	else
-		var/skill_value = user.skills.getRating(gun_skill_category)
-		if(skill_value > 0)
-			wdelay -= skill_value * 2
-		else
-			wdelay += wield_penalty
-	wield_time = world.time + wdelay
-	do_wield(user, wdelay)
-
-/obj/item/gun/proc/do_wield(obj/item/source, mob/user)
 	wielded = TRUE
+	do_wield(user)
+
+/obj/item/gun/proc/do_wield(mob/user)
+	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
+	wield_time = world.time + wield_delay
+	if(wield_time > 0)
+		if(do_mob(user, user, wield_delay, FALSE, TRUE, CALLBACK(src, .proc/is_wielded)))
+			wielded_fully =
+	else
+		wielded_fully = TRUE
+
+/obj/item/gun/proc/is_wielded()
+	return wielded
 
 /// triggered on unwield of two handed item
 /obj/item/gun/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
+	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
 
 /obj/item/gun/Destroy()
 	if(isobj(pin)) //Can still be the initial path, then we skip
@@ -181,8 +200,9 @@
 
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
-	if(recoil)
-		shake_camera(user, recoil + 1, recoil)
+	if(spread)
+		var/actual_angle = firing_angle + rand(-recoil_deviation, recoil_deviation) + 180
+		recoil_camera(user, total_recoil + 1, (total_recoil * recoil_backtime_multiplier)+1, total_recoil, actual_angle)
 
 	if(suppressed)
 		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE, falloff_distance = 0)
@@ -663,6 +683,16 @@
 //Happens before the actual projectile creation
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
 	return
+
+/obj/item/gun/proc/simulate_recoil(recoil_bonus = 0, firing_angle)
+	var/total_recoil = recoil_bonus
+
+	var/actual_angle = firing_angle + rand(-recoil_deviation, recoil_deviation) + 180
+	if(actual_angle > 360)
+		actual_angle -= 360
+	if(total_recoil > 0)
+		recoil_camera(gun_user, total_recoil + 1, (total_recoil * recoil_backtime_multiplier)+1, total_recoil, actual_angle)
+		return TRUE
 
 /////////////
 // ZOOMING //

@@ -341,7 +341,7 @@
 		return
 	return ..()
 
-/obj/item/gun/ballistic/attack_self(mob/living/user)
+/obj/item/gun/ballistic/unique_action(mob/living/user)
 	if(HAS_TRAIT(user, TRAIT_GUNFLIP))
 		if(flip_cooldown <= world.time)
 			if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))

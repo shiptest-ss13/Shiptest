@@ -94,7 +94,7 @@
 			recharge_newshot(TRUE)
 		update_icon()
 
-/obj/item/gun/energy/attack_self(mob/living/user as mob)
+/obj/item/gun/energy/unique_action(mob/living/user))
 	if(ammo_type.len > 1)
 		select_fire(user)
 		update_icon()
