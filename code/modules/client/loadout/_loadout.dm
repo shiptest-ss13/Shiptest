@@ -16,6 +16,8 @@ GLOBAL_LIST_EMPTY(gear_datums)
 
 		var/use_name = initial(G.display_name)
 		var/use_category = initial(G.sort_category)
+		var/list/use_subcategories = splittext(initial(G.sort_subcategories), ", ")
+		use_subcategories += "All"
 
 		if(G == initial(G.subtype_path))
 			continue
@@ -28,15 +30,20 @@ GLOBAL_LIST_EMPTY(gear_datums)
 			continue
 
 		if(!GLOB.loadout_categories[use_category])
-			GLOB.loadout_categories[use_category] = new /datum/loadout_category(use_category)
-		var/datum/loadout_category/LC = GLOB.loadout_categories[use_category]
-		GLOB.gear_datums[use_name] = new geartype
-		LC.gear[use_name] = GLOB.gear_datums[use_name]
+			GLOB.loadout_categories[use_category] = list()
+		for(var/loadout_subcategory in use_subcategories)
+			if(!GLOB.loadout_categories[use_category][loadout_subcategory])
+				GLOB.loadout_categories[use_category][loadout_subcategory] = new /datum/loadout_category(loadout_subcategory)
+			var/datum/loadout_category/LC = GLOB.loadout_categories[use_category][loadout_subcategory]
+			GLOB.gear_datums[use_name] = new geartype
+			LC.gear[use_name] = GLOB.gear_datums[use_name]
 
 	GLOB.loadout_categories = sortAssoc(GLOB.loadout_categories)
 	for(var/loadout_category in GLOB.loadout_categories)
-		var/datum/loadout_category/LC = GLOB.loadout_categories[loadout_category]
-		LC.gear = sortAssoc(LC.gear)
+		GLOB.loadout_categories[loadout_category] = sortAssoc(GLOB.loadout_categories[loadout_category])
+		for(var/loadout_subcategory in GLOB.loadout_categories[loadout_category])
+			var/datum/loadout_category/LC = GLOB.loadout_categories[loadout_category][loadout_subcategory]
+			LC.gear = sortAssoc(LC.gear)
 	return 1
 
 /datum/gear
@@ -56,12 +63,16 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	var/list/species_whitelist
 	///A list of jobs with typepaths to the loadout item the job should recieve
 	var/list/role_replacements
-	///The sub tab under gear that the loadout item is listed under
+	///The tab under gear that the loadout item is listed under
 	var/sort_category = "General"
+	///The subtabs under gear that the loadout item is listed under, eg. "Glasses, Prescription Glasses"
+	var/sort_subcategories = "Misc"
 	///for skipping organizational subtypes (optional)
 	var/subtype_path = /datum/gear
+	///Hg add comment later
+	var/list/united_subtypes
 	///Balance cost of loadout item
-	var/cost = 3
+	var/cost = 5
 	///Maximum amount of an item that can be taken
 	var/limit = 1
 
@@ -85,9 +96,13 @@ GLOBAL_LIST_EMPTY(gear_datums)
 
 /datum/gear/proc/spawn_item(location, mob/owner, datum/outfit/job/outfit_datum)
 	var/datum/gear_data/gd
-	if(outfit_datum.loadout_replace && (outfit_datum.loadout_replace_specifics[src] != "forbid" || (!owner?.client?.prefs.equipped_gear_preferences[src.type]["no_replace"] && (outfit_datum.jobtype in role_replacements)))) //If the owner is a human (should be one) and the item in question has a role replacement
-		gd = new(outfit_datum.loadout_replace_specifics[src] ? outfit_datum.loadout_replace_specifics[src] : role_replacements[outfit_datum.jobtype], location)
-		return new gd.path(gd.location)
+	if(outfit_datum)
+		if(outfit_datum.loadout_replace && (outfit_datum.loadout_replace_specifics[src] != "forbid" || (!owner?.client?.prefs.equipped_gear_preferences[src.type]["no_replace"] && (outfit_datum.jobtype in role_replacements)))) //If the owner is a human (should be one) and the item in question has a role replacement
+			var/temp_gd
+			if((src in outfit_datum.loadout_replace_specifics) || (outfit_datum.jobtype in role_replacements))
+				temp_gd = outfit_datum.loadout_replace_specifics[src] ? outfit_datum.loadout_replace_specifics[src] : role_replacements[outfit_datum.jobtype]
+			gd = new(temp_gd != null ? temp_gd : path, location)
+			return new gd.path(gd.location)
 
 	gd = new(path, location) //Else, just give them the item and be done with it
 

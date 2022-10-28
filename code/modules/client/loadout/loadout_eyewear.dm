@@ -3,55 +3,14 @@
 	slot = ITEM_SLOT_EYES
 	sort_category = "Eyewear"
 
-//Prescription glasses
+//Glasses
 /datum/gear/eyewear/glasses
-	display_name = "glasses, prescription"
-	path = /obj/item/clothing/glasses/regular
-	role_replacements = list(
+	subtype_path = /datum/gear/eyewear/glasses
+	sort_subcategories = "Glasses"
 
-		//SecHUD
-		/datum/job/hos = /obj/item/clothing/glasses/hud/security/prescription,
-		/datum/job/warden = /obj/item/clothing/glasses/hud/security/prescription,
-		//Science
-		/datum/job/chemist = /obj/item/clothing/glasses/science/prescription,
-		//MedHUD
-		/datum/job/brig_phys = /obj/item/clothing/glasses/hud/health/prescription,
-
-	)
-
-/datum/gear/eyewear/glasses/large
-	display_name = "glasses, large prescription"
-	path = /obj/item/clothing/glasses/regular/circle
-
-/datum/gear/eyewear/glasses/jamjar
-	display_name = "glasses, jamjar prescription"
-	path = /obj/item/clothing/glasses/regular/jamjar
-
-//Misc
-/datum/gear/eyewear/eyepatch
-	display_name = "eyepatch"
-	path = /obj/item/clothing/glasses/eyepatch
-
-/datum/gear/eyewear/monocle
-	display_name = "monocle"
-	path = /obj/item/clothing/glasses/monocle
-
-/datum/gear/eyewear/cheapsuns
+/datum/gear/eyewear/glasses/cheapsuns
 	display_name = "cheap sunglasses"
 	path = /obj/item/clothing/glasses/cheapsuns
-
-/datum/gear/eyewear/blindfold
-	display_name = "blindfold"
-	path = /obj/item/clothing/glasses/blindfold
-
-/datum/gear/eyewear/trickblindfold
-	display_name = "trick blindfold"
-	description = "A blindfold you can still see through."
-	path = /obj/item/clothing/glasses/trickblindfold
-
-/datum/gear/eyewear/hipster_glasses
-	display_name = "Hipster Glasses"
-	path = /obj/item/clothing/glasses/regular/hipster
 
 /datum/gear/eyewear/glasses/cold
 	display_name = "cold goggles"
@@ -68,3 +27,54 @@
 /datum/gear/eyewear/glasses/red
 	display_name = "red glasses"
 	path = /obj/item/clothing/glasses/red
+
+//Prescription glasses
+/datum/gear/eyewear/glasses/prescription
+	subtype_path = /datum/gear/eyewear/glasses/prescription
+	sort_subcategories = "Glasses, Prescription Glasses"
+
+/datum/gear/eyewear/glasses/prescription/regular
+	display_name = "prescription glasses"
+	path = /obj/item/clothing/glasses/regular
+	role_replacements = list(
+
+		//SecHUD
+		/datum/job/hos = /obj/item/clothing/glasses/hud/security/prescription,
+		/datum/job/warden = /obj/item/clothing/glasses/hud/security/prescription,
+		//Science
+		/datum/job/chemist = /obj/item/clothing/glasses/science/prescription,
+		//MedHUD
+		/datum/job/brig_phys = /obj/item/clothing/glasses/hud/health/prescription,
+
+	)
+
+/datum/gear/eyewear/glasses/prescription/large
+	display_name = "prescription glasses, large"
+	path = /obj/item/clothing/glasses/regular/circle
+
+/datum/gear/eyewear/glasses/prescription/jamjar
+	display_name = "prescription glasses, jamjar"
+	path = /obj/item/clothing/glasses/regular/jamjar
+
+/datum/gear/eyewear/glasses/prescription/hipster_glasses
+	display_name = "prescription glasses, hipster"
+	path = /obj/item/clothing/glasses/regular/hipster
+
+
+//Misc
+/datum/gear/eyewear/eyepatch
+	display_name = "eyepatch"
+	path = /obj/item/clothing/glasses/eyepatch
+
+/datum/gear/eyewear/monocle
+	display_name = "monocle"
+	path = /obj/item/clothing/glasses/monocle
+
+/datum/gear/eyewear/blindfold
+	display_name = "blindfold"
+	path = /obj/item/clothing/glasses/blindfold
+
+/datum/gear/eyewear/trickblindfold
+	display_name = "trick blindfold"
+	description = "A blindfold you can still see through."
+	path = /obj/item/clothing/glasses/trickblindfold

@@ -224,8 +224,7 @@
 				var/datum/gear/new_gear = GLOB.gear_datums[gear]
 				new_gear.spawn_item(loadout_dumper, H, src)
 			if(!H.equip_to_slot_or_del(loadout_dumper,ITEM_SLOT_BACKPACK, TRUE))
-				if(!H.put_in_hands(loadout_dumper, TRUE))
-					to_chat("Unable to place loadout box.")
+				to_chat("Unable to place loadout box.")
 
 		if(backpack_contents)
 			for(var/path in backpack_contents)

@@ -168,8 +168,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/equipped_gear = list()
 	///Gear tab currently being viewed
 	var/gear_tab = "General"
+	///Gear subtab currently being viewed
+	var/gear_subtab = "All"
+	///Gear slots to display
+	var/list/gear_slots = list("No Slot", "Neck", "Hands", "Face", "Eyes", "Feet", "Head", "Clothes", "Outer Clothes")
+	///Gear that will have an expanded menu
+	var/list/expanded_gear = list()
+
 	///Preferences for gear items such as wether or not they are a family heirloom, how many of them were taken and such
 	var/list/equipped_gear_preferences = list()
+
 
 	var/quirk_tab = FALSE
 
@@ -900,6 +908,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<tr><td colspan=6><center><b>"
 
 				var/firstcat = 1
+				var/list/slot_list = list("No Slot", "Neck", "Hands", "Face", "Eyes", "Feet", "Head", "Clothes", "Outer Clothes")
+				dat+= "<a href='?_src_=prefs;preference=gear;change_slot=["Invert"]'>Invert Slots</a>"
+				dat+= " | <a href='?_src_=prefs;preference=gear;change_slot=["Disable"]'>Disable All Slots</a>"
+				for(var/slot in slot_list)
+					if(firstcat)
+						dat += " |"
+					dat += " <a style='white-space:normal;' [(slot in gear_slots) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;change_slot=[slot]'>[slot]</a>"
+				dat+= " | <a href='?_src_=prefs;preference=gear;change_slot=["All"]'>Enable All Slots</a></td></tr>"
+				dat += "<tr><td colspan=6><center>"
+				firstcat = 1
 				for(var/category in GLOB.loadout_categories)
 					if(firstcat)
 						firstcat = 0
@@ -909,9 +927,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += " <span class='linkOff'>[category]</span> "
 					else
 						dat += " <a href='?_src_=prefs;preference=gear;select_category=[category]'>[category]</a> "
+				dat += "</center></td></tr>"
+				dat += "<tr><td colspan=6><center>"
+				firstcat = 1
+				for(var/category in GLOB.loadout_categories[gear_tab])
+					if(firstcat)
+						firstcat = 0
+					else
+						dat += " |"
+					if(category == gear_subtab)
+						dat += " <span class='linkOff'>[category]</span> "
+					else
+						dat += " <a href='?_src_=prefs;preference=gear;select_subcategory=[category]'>[category]</a> "
 				dat += "</b></center></td></tr>"
 
-				var/datum/loadout_category/LC = GLOB.loadout_categories[gear_tab]
+				var/datum/loadout_category/LC = GLOB.loadout_categories[gear_tab][gear_subtab]
 				dat += "<tr><td colspan=5><hr></td></tr>"
 				dat += "<tr><td colspan=5><b><center>[LC.category]</center></b></td></tr>"
 				dat += "<tr><td colspan=5><hr></td></tr>"
@@ -922,20 +952,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<td><b>Cost</b></td>"
 				dat += "<td><b>Limit</b></td>"
 				dat += "<tr><td colspan=5><hr></td></tr>"
-				for(var/gear_name in LC.gear)
-					var/datum/gear/G = LC.gear[gear_name]
-					dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;toggle_gear=[G.display_name]'>[G.display_name]</a></td><td>"
-					if(G.role_replacements)
-						dat += "<font size=2>"
-						var/list/rolereplacemnets = list()
-						for(var/role in G.role_replacements)
-							var/datum/job/role_datum = role
-							rolereplacemnets = initial(role_datum.name)
-						dat += english_list(rolereplacemnets, null, ", ")
-						dat += "</font>"
-					dat += "</td><td><font size=2><i>[G.cost]</i></font></td>"
-					dat += "</td><td><font size=2><i>[G.limit > 0 ? G.limit : "None"]</i></font></td>"
-					dat+= "</tr>"
+				dat += handle_loadout_display(LC.gear)
 				dat += "</table>"
 
 			else
@@ -945,7 +962,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					dat += "<table align='center' width='100%'>"
 					var/list/quirk_conflicts = check_quirk_compatibility(user)
-					dat += "<tr><center><b>Current positive quirk usage: [GetPositiveQuirkCount()] / [MAX_QUIRKS]</b> \[<a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a>\]</center></tr>"
+					dat += "<tr><center><b>Current positive quirk usage: [GetPositiveQuirkCount()] / [MAX_QUIRKS]</b> \[<a href='?_src_=prefs;preference=quirk;task=reset'>Reset Quirks</a>\]</center></tr>"
 					dat += "<tr><center><b>Quirk balance remaining:</b> [GetQuirkBalance()]</center></tr>"
 					dat += "<tr><center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center></tr>"
 
@@ -1027,7 +1044,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								ShowChoices(user)
 								save_preferences()
 						if(!quirk_handled)
-							dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' [has_quirk ? "class='linkOn' " : ""]href='?_src_=prefs;preference=trait;task=update;trait=[initial(quirk_datum.name)]'>[initial(quirk_datum.name)]</a></td><td>"
+							dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' [has_quirk ? "class='linkOn' " : ""]href='?_src_=prefs;preference=quirk;task=update;quirk=[initial(quirk_datum.name)]'>[initial(quirk_datum.name)]</a></td><td>"
 						dat += "<font size=2>"
 						dat += "<font color='[font_color]'>[quirk_cost]</font_color>"
 						dat += "</font>"
@@ -1373,6 +1390,72 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.open(FALSE)
 	QDEL_NULL(S)
 
+/datum/preferences/proc/set_loadout_advanced(mob/user, datum/gear/gear_datum)
+	var/list/dat = list()
+
+	var/datum/browser/popup = new(user, "mob_loadout", "<div align='center'>[initial(gear_datum.display_name)]</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	popup.set_window_options("can_close=0")
+	popup.set_content(dat.Join())
+	popup.open(FALSE)
+
+/datum/preferences/proc/handle_loadout_display(var/list/LC, var/spacer = "")
+	var/list/dat = list()
+	for(var/gear_name in LC)
+		var/datum/gear/G = LC[gear_name]
+		var/slot = G.slot
+		switch(slot)
+			if(ITEM_SLOT_NECK)
+				slot = "Neck"
+			if(ITEM_SLOT_EYES)
+				slot = "Eyes"
+			if(ITEM_SLOT_GLOVES)
+				slot = "Hands"
+			if(ITEM_SLOT_FEET)
+				slot = "Feet"
+			if(ITEM_SLOT_HEAD)
+				slot = "Head"
+			if(ITEM_SLOT_ICLOTHING)
+				slot = "Clothes"
+			if(ITEM_SLOT_OCLOTHING)
+				slot = "Outer Clothes"
+			if(ITEM_SLOT_MASK)
+				slot = "Face"
+		if((!slot && ("No Slot" in gear_slots)) || (slot in gear_slots))
+			dat += "<tr style='vertical-align:top;'><td width=20%>[spacer]<a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;toggle_gear=[G.display_name]'>[G.display_name] </a>"
+			if(G.united_subtypes)
+				dat += "<a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;expand_gear=[G.display_name]'> V </a>"
+			else if(G.limit > 1)
+				dat += "<a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;add_gear=[G.display_name]'> + </a>"
+				dat += "<a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;remove_gear=[G.display_name]'> - </a>"
+			dat += "</td><td>"
+			if(G.united_subtypes && (G.type in expanded_gear))
+				dat+= handle_loadout_display(G.united_subtypes, "[spacer]     ")
+			if(G.role_replacements)
+				dat += "<font size=2>[spacer]"
+				var/list/rolereplacements = list()
+				for(var/role in G.role_replacements)
+					var/datum/job/role_datum = role
+					rolereplacements += initial(role_datum.name)
+				rolereplacements = sortList(rolereplacements, /proc/cmp_text_asc)
+				dat += english_list(rolereplacements, null, ", ")
+				dat += "</font>"
+			dat += "</td><td><font size=2><i>[spacer][G.cost]</font></td>"
+			dat += "</td><td><font size=2><i>[spacer][G.limit > 0 ? G.limit : "None"]</font></td>"
+			dat+= "</tr>"
+	return dat
+
+/datum/preferences/proc/set_quirk_advanced(mob/user, datum/quirk/quirk_datum)
+	var/list/dat = list()
+	var/datum/quirk/quirk_instance = SSquirks.quirk_instances[initial(quirk_datum.name)]
+	dat += "[quirk_instance.desc] <br>"
+	if(quirk_instance.additional_values != null)
+		for(var/additional_value in quirk_instance.additional_values)
+			dat += "[additional_value] | [quirk_instance.additional_values[additional_value]] <br>"
+
+	var/datum/browser/popup = new(user, "mob_quirks", "<div align='center'>[quirk_instance.name]</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	popup.set_window_options("can_close=0")
+	popup.set_content(dat.Join())
+	popup.open(FALSE)
 
 /**
  * Proc called to track what quirks conflict with someone's preferences, returns a list with all quirks that conflict.
@@ -1562,13 +1645,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		ShowSpeciesChoices(user)
 		return 1
 
-	if(href_list["preference"] == "trait")
+	if(href_list["preference"] == "quirk")
 		switch(href_list["task"])
 			if("close")
-				user << browse(null, "window=mob_trait")
+				user << browse(null, "window=mob_quirk")
 				ShowChoices(user)
 			if("update")
-				var/quirk = href_list["trait"]
+				var/quirk = href_list["quirk"]
 				if(!SSquirks.quirks[quirk])
 					return
 				var/value = SSquirks.quirk_points[quirk]
@@ -1619,11 +1702,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 		else if(href_list["select_category"])
 			gear_tab = href_list["select_category"]
+			gear_subtab = (gear_subtab in GLOB.loadout_categories[gear_tab]) ? gear_subtab : "All"
+		else if(href_list["select_subcategory"])
+			gear_subtab = href_list["select_subcategory"]
 		else if(href_list["clear_loadout"])
 			equipped_gear.Cut()
 		else if(href_list["toggle_loadout"])
 			show_loadout = !show_loadout
-
+		else if (href_list["change_slot"])
+			switch(href_list["change_slot"])
+				if("All")
+					gear_slots = list("No Slot", "Neck", "Hands", "Face", "Eyes", "Feet", "Head", "Clothes", "Outer Clothes")
+				if("Disable")
+					gear_slots = list()
+				if("Invert")
+					gear_slots ^= list("No Slot", "Neck", "Hands", "Face", "Eyes", "Feet", "Head", "Clothes", "Outer Clothes")
+				else
+					gear_slots ^= href_list["change_slot"]
 		ShowChoices(user)
 		return
 
@@ -2456,10 +2551,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		for(var/gear in equipped_gear)
 			var/datum/gear/G = GLOB.gear_datums[gear]
 			if(G?.slot)
-				if(!character.equip_to_slot_or_del(G.spawn_item(character, character), G.slot))
-					continue
-			else
-				if(!character.put_in_hands(G.spawn_item(character, character), TRUE))
+				if(!character.equip_to_slot_or_del(G.spawn_item(character, character, selected_outfit), G.slot))
 					continue
 
 	var/datum/species/chosen_species

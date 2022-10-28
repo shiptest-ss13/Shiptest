@@ -25,6 +25,12 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 							list("Alcohol Tolerance","Light Drinker"), \
 							list("Clown Fan","Mime Fan"), \
 							list("Bad Touch", "Friendly"))
+	for(var/quirk_index in quirks)
+		var/datum/quirk/quirk_instance = quirk_instances[quirk_index]
+		while(!(quirk_index in quirk_instances) || quirk_instance.mood_quirk == null)
+			quirk_instances[quirk_index] = new quirks[quirk_index]
+			quirk_instance = quirk_instances[quirk_index]
+
 	for(var/client/client in GLOB.clients)
 		client?.prefs.check_quirk_compatibility()
 	return ..()
@@ -37,7 +43,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		var/datum/quirk/T = V
 		quirks[initial(T.name)] = T
 		quirk_points[initial(T.name)] = initial(T.value)
-		quirk_instances[initial(T.name)] = new T
+		quirk_instances[initial(T.name)] = new V
 
 /datum/controller/subsystem/processing/quirks/proc/AssignQuirks(mob/living/user, client/cli, spawn_effects)
 	var/badquirk = FALSE

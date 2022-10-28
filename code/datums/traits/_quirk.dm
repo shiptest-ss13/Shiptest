@@ -14,6 +14,7 @@
 	var/list/mob_traits //if applicable, apply and remove these mob traits
 	var/list/species_lock = list() //List of id-based locks for species, use either TRAIT_SPECIES_WHITELIST or TRAIT_SPECIES_BLACKLIST inputting the species ids to said macros. Example: species_lock = TRAIT_SPECIES_WHITELIST(SPECIES_IPC, SPECIES_MOTH)
 	var/mob/living/quirk_holder
+	var/list/additional_values //list of preference data to manage externally, will probably be changed to a less unreasonable system eventually
 
 /datum/quirk/New(mob/living/quirk_mob, spawn_effects)
 	..()
