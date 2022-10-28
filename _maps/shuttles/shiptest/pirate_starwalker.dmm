@@ -545,7 +545,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "pcarrier_cargoshut";
-	name = "Blast shutters"
+	name = "Cargo Blast Shutters"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
@@ -639,12 +639,10 @@
 	pixel_x = 22;
 	pixel_y = -6
 	},
-/obj/machinery/power/apc/auto_name/south{
-	pixel_y = -24
-	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "hC" = (
@@ -2072,7 +2070,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "pcarrier_cargoshut";
-	name = "Blast shutters"
+	name = "Cargo Blast Shutters"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
@@ -3308,17 +3306,6 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security)
-"YV" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "pcarrier_windows";
-	name = "blast shutters"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "pcarrier_windows"
-	},
-/turf/open/floor/plating,
-/area/ship/hallway/port)
 "YZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -3679,7 +3666,7 @@ za
 fM
 hW
 hW
-YV
+FU
 hW
 FU
 hW
