@@ -545,7 +545,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "pcarrier_cargoshut";
-	name = "blast shutters"
+	name = "Blast shutters"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
@@ -2072,7 +2072,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "pcarrier_cargoshut";
-	name = "blast shutters"
+	name = "Blast shutters"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
@@ -2730,11 +2730,10 @@
 /area/ship/hallway/central)
 "QJ" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "pcarrier_windows";
-	name = "blast shutters"
-	},
 /obj/structure/curtain/bounty,
+/obj/machinery/door/poddoor/shutters{
+	id = "pcarrier_windows"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "QX" = (
