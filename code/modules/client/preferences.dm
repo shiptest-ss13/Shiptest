@@ -1467,6 +1467,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/handled_conflicts = list()
 	for(var/quirk_index in SSquirks.quirk_instances)
 		var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_index]
+		if(!quirk_instance)
+			continue
 		if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
 			quirk_conflicts[quirk_instance.name] = TRUE
 			if(!handled_conflicts["mood"])
