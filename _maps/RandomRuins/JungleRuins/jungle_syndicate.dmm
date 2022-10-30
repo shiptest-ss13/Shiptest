@@ -1270,11 +1270,11 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle)
 "OC" = (
-/obj/machinery/power/smes{
-	charge = 1.5e+006
-	},
 /obj/structure/cable,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/power/smes/magical{
+	name = "power storage unit"
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
 "OL" = (
