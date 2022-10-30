@@ -38,8 +38,8 @@
 	l_hand = /obj/item/clipboard
 	r_pocket = /obj/item/pen/fountain
 
-/datum/outfit/job/lawyer/flightcoordinator //this is the best fit I could find. To-Do, make them their own job dm and outfits
-	name = "Flight Controller"
+/datum/outfit/job/lawyer/opscoord //this is the best fit I could find. To-Do, make them their own job dm and outfits
+	name = "Operations Coordinator"
 
 	uniform = /obj/item/clothing/under/suit/black
 	suit = /obj/item/clothing/suit/toggle/lawyer/black
