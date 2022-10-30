@@ -15,8 +15,8 @@
 
 /obj/item/shrapnel/bullet // bullets
 	name = "bullet"
-	icon = 'icons/obj/ammo.dmi'
-	icon_state = "s-casing"
+	icon = 'icons/obj/ammo_bullets.dmi'
+	icon_state = "pistol-brass"
 	item_flags = NONE
 
 /obj/item/shrapnel/bullet/c38 // .38 round

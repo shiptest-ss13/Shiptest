@@ -289,3 +289,30 @@
 	desc = "A jumpsuit worn by low ranking members of the Colonial Minutemen."
 	icon_state = "minuteman"
 	item_state = "b_suit"
+
+/obj/item/clothing/under/rank/security/officer/camo
+	name = "fatigues"
+	desc = "A combat uniform most often worn by mercenaries and TPLRC soldiers. Features polychromatic design to adjust to different environments."
+	icon_state = "camo"
+	item_state = "fatigues"
+	can_adjust = FALSE
+	allow_post_reskins = TRUE
+	unique_reskin = list("Urban" = "camo",
+		"Desert" = "camo_desert",
+		"Woodland" = "camo_woodland",
+		"Snow" = "camo_snow",
+		)
+
+/obj/item/clothing/under/rank/security/officer/frontier
+	name = "\improper Frontiersmen uniform"
+	desc = "Worn by members of the Frontiersmen pirate fleet. It's less comfortable than it looks."
+	icon_state = "frontier"
+	item_state = "gy_suit"
+
+/obj/item/clothing/under/rank/security/officer/frontier/officer
+	name = "\improper Frontiersmen officer's uniform"
+	icon_state = "frontier_officer"
+
+/obj/item/clothing/under/rank/security/officer/frontier/admiral
+	name = "\improper Frontiersmen admiral's uniform"
+	icon_state = "frontier_admiral"
