@@ -59,43 +59,10 @@
 	export_types = list(/obj/item/stack/license_plates/filled)
 
 
-// Common materials.
-// For base materials, see materials.dm
-
-/datum/export/stack/plasteel
-	cost = 155 // 2000u of plasma + 2000u of metal.
-	message = "of plasteel"
-	export_types = list(/obj/item/stack/sheet/plasteel)
-
-// 1 glass + 0.5 metal, cost is rounded up.
-/datum/export/stack/rglass
-	cost = 8
-	message = "of reinforced glass"
-	export_types = list(/obj/item/stack/sheet/rglass)
-
-/datum/export/stack/plastitanium
-	cost = 325 // plasma + titanium costs
-	message = "of plastitanium"
-	export_types = list(/obj/item/stack/sheet/mineral/plastitanium)
-
-/datum/export/stack/wood
-	cost = 30
-	unit_name = "wood plank"
-	export_types = list(/obj/item/stack/sheet/mineral/wood)
-
-/datum/export/stack/cardboard
-	cost = 2
-	message = "of cardboard"
-	export_types = list(/obj/item/stack/sheet/cardboard)
-
-/datum/export/stack/sandstone
-	cost = 1
-	unit_name = "block"
-	message = "of sandstone"
-	export_types = list(/obj/item/stack/sheet/mineral/sandstone)
+// Miscellaneous common stuff.
 
 /datum/export/stack/cable
-	cost = 0.2
+	cost = 0.1
 	unit_name = "cable piece"
 	export_types = list(/obj/item/stack/cable_coil)
 
