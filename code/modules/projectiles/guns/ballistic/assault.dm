@@ -122,3 +122,49 @@
 /obj/item/gun/ballistic/automatic/assualt/ar/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+
+/obj/item/gun/ballistic/automatic/assualt/swiss_cheese
+	name = "\improper Swiss Cheese"
+	desc = "An ancient longarm famous for its boxy, modular design. The DMA on this unit is, sadly, broken. Uses 5.56mm ammunition for Matter mode."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/swiss.ogg'
+	icon_state = "swiss"
+	item_state = "swiss"
+	mag_display = TRUE
+	empty_indicator = TRUE
+	burst_size = 3
+	fire_delay = 1.5
+	spread = 8
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	mag_type = /obj/item/ammo_box/magazine/swiss
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+
+/obj/item/gun/ballistic/automatic/assualt/swiss_cheese/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.65 SECONDS)
+
+/obj/item/gun/ballistic/automatic/assualt/swiss_cheese/afterattack(atom/target, mob/living/user, flag, params)
+	if(select == 2)
+		to_chat(user, "<span class='danger'>You hear a strange sound from the DMA unit. It doesn't appear to be operational.</span>")
+		return
+	else
+		return ..()
+
+/obj/item/gun/ballistic/automatic/assualt/swiss_cheese/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(1)
+			select = 2
+			to_chat(user, "<span class='notice'>You switch to Hybrid.</span>")
+		if(2)
+			select = 1
+			burst_size = initial(burst_size)
+			fire_delay = initial(fire_delay)
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd Matter.</span>")
+
+	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
+	update_icon()
+	for(var/datum/action/action as anything in actions)
+		action.UpdateButtonIcon()

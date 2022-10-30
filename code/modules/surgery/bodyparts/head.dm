@@ -13,7 +13,6 @@
 	px_y = -8
 	stam_damage_coeff = 1
 	max_stamina_damage = 100
-	is_dimorphic = TRUE
 	bone_break_threshold = 35 // Beefier bones
 
 	var/mob/living/brain/brainmob = null //The current occupant.
@@ -35,6 +34,8 @@
 
 	var/lip_style = null
 	var/lip_color = "white"
+
+	var/stored_lipstick_trait
 
 	var/mouth = TRUE
 
@@ -139,6 +140,7 @@
 		hairstyle = "Bald"
 		facial_hairstyle = "Shaved"
 		lip_style = null
+		stored_lipstick_trait = null
 
 	else if(!animal_origin && ishuman(C))
 		var/mob/living/carbon/human/H = C
@@ -241,13 +243,20 @@
 				. += lips_overlay
 
 			// eyes
+			var/mutable_appearance/sclera_overlay = mutable_appearance('icons/mob/human_face.dmi', "", -BODY_LAYER, SOUTH)
 			var/image/eyes_overlay = image('icons/mob/human_face.dmi', "eyes_missing", -BODY_LAYER, SOUTH)
+
 			. += eyes_overlay
 			if(eyes)
+				. += sclera_overlay
+			if(eyes)
 				eyes_overlay.icon_state = eyes.eye_icon_state
-
 				if(eyes.eye_color)
 					eyes_overlay.color = "#" + eyes.eye_color
+				if(eyes.sclera_icon_state)
+					sclera_overlay.icon_state = eyes.sclera_icon_state
+					if(eyes.sclera_color)
+						sclera_overlay.color = "#" + eyes.sclera_color
 
 /obj/item/bodypart/head/monkey
 	icon = 'icons/mob/animal_parts.dmi'

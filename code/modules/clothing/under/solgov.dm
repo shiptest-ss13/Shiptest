@@ -1,4 +1,4 @@
-/obj/item/clothing/under/solgov
+/obj/item/clothing/under/solgov // this jumpsuit in particular is being deprecated due to changes to the solgov faction betweent the time of whitesands and shiptest. If you want to use camoflauge for the future, use /rank/security/officer/camo instead.
 	name = "\improper SolGov fatigues"
 	desc = "Standard combat uniform for SolGov's officers."
 	icon = 'icons/obj/clothing/under/solgov.dmi'

@@ -162,8 +162,8 @@
 		)
 	voucher_items = list(
 		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/stun,
-		"SGV \"Solar\" Assault Rifle" = /obj/item/gun/ballistic/automatic/hmg/solar,
-		"TGV \"Edison\" Energy Rifle" = /obj/item/gun/energy/laser/terra)
+		"SGV \"Solar\" HMG" = /obj/item/gun/ballistic/automatic/hmg/solar,
+		"TGV \"Swiss Cheese\" Assault Rifle" = /obj/item/gun/ballistic/automatic/assualt/swiss_cheese)
 
 /obj/machinery/vending/security/marine/nanotrasen
 	icon_state = "nt-marine"
