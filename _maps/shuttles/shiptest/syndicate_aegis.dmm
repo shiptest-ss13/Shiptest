@@ -585,12 +585,14 @@
 /obj/item/clothing/head/beret/black,
 /obj/item/clothing/under/syndicate/sniper,
 /obj/item/reagent_containers/food/drinks/bottle/holywater,
-/obj/item/clothing/suit/armor/vest/marine/medic,
 /obj/item/clothing/suit/armor/vest/security/brig_phys{
 	name = "lead doctor's jacket"
 	},
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/item/clothing/glasses/hud/health/night,
+/obj/item/clothing/suit/armor/vest/marine/medium{
+	name = "medium medical armor vest"
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/medical)
 "dZ" = (
@@ -3137,20 +3139,6 @@
 /obj/effect/turf_decal/trimline/opaque/brown/filled/line,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen/kitchen)
-"Dv" = (
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/under/syndicate/sniper,
-/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
-/obj/structure/closet/syndicate{
-	desc = "It's a basic storage unit.";
-	name = "uniform closet"
-	},
-/obj/item/clothing/gloves/tackler/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/laceup,
-/obj/effect/turf_decal/industrial/warning/full,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/hallway/central)
 "Dw" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -3272,20 +3260,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
-"EH" = (
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/under/syndicate/sniper,
-/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
-/obj/structure/closet/syndicate{
-	desc = "It's a basic storage unit.";
-	name = "uniform closet"
-	},
-/obj/item/clothing/gloves/tackler/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/laceup,
-/obj/effect/turf_decal/industrial/warning/full,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/hallway/central)
 "EJ" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
@@ -4915,20 +4889,6 @@
 /obj/structure/sign/syndicate,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
-"VR" = (
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/under/syndicate/sniper,
-/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
-/obj/structure/closet/syndicate{
-	desc = "It's a basic storage unit.";
-	name = "uniform closet"
-	},
-/obj/item/clothing/gloves/tackler/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/laceup,
-/obj/effect/turf_decal/industrial/warning/full,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/hallway/central)
 "VT" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/canteen/kitchen)
@@ -5919,8 +5879,8 @@ FY
 nK
 tg
 uM
-VR
-VR
+te
+te
 Gx
 Ly
 PV
@@ -5987,8 +5947,8 @@ Lc
 aJ
 tr
 uM
-VR
-VR
+te
+te
 GZ
 MH
 Qj
