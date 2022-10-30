@@ -203,3 +203,14 @@ Assistant
 	shoes = /obj/item/clothing/shoes/jackboots
 	r_pocket = /obj/item/radio
 	head = /obj/item/clothing/head/soft/black
+/datum/outfit/job/assistant/pharma
+	name = "Pharmacology Student"
+
+	uniform = /obj/item/clothing/under/rank/medical/chemist/junior_chemist
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	accessory = /obj/item/clothing/neck/scarf/orange
+	l_pocket = /obj/item/pda/medical
+	r_pocket = /obj/item/reagent_containers/pill/floorpill
+	belt = /obj/item/reagent_scanner
+	backpack_contents = list(/obj/item/book/manual/wiki/chemistry=1)
+
