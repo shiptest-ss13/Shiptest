@@ -122,9 +122,9 @@
 	allow_duplicates = FALSE
 
 /datum/map_template/ruin/whitesands/survivors/saloon
-	name = "Abandoned Saloon"
+	name = "Hermit Saloon"
 	id = "ws-saloon"
-	description = "A western style saloon that has not been touched in years"
+	description = "A western style saloon, most popular spot for the hermits to gather planetside"
 	cost = 1
 	placement_weight = 0.5
 	suffix = "whitesands_surface_camp_saloon.dmm"
