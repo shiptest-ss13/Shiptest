@@ -179,7 +179,9 @@
 /area/ruin/whitesands/saloon)
 "fy" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/stool/bar,
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "fN" = (
@@ -863,11 +865,13 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "zS" = (
-/obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
+	},
+/obj/structure/chair/stool/bar{
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
@@ -1469,7 +1473,9 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "Td" = (
-/obj/structure/chair/stool/bar,
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "Tv" = (
