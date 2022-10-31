@@ -13,7 +13,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "aq" = (
@@ -271,6 +270,10 @@
 /obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
+"hq" = (
+/obj/item/shovel,
+/turf/closed/wall/mineral/wood,
+/area/ruin/whitesands/saloon)
 "hr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -489,11 +492,11 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "nZ" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2,
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = -27
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "oA" = (
@@ -978,6 +981,11 @@
 /area/ruin/whitesands/saloon)
 "DT" = (
 /obj/structure/chair/wood,
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	name = "Robert";
+	desc = "This fellow seems relatively sane and normal";
+	faction = list("neutral")
+	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "Ed" = (
@@ -1228,6 +1236,11 @@
 	icon_state = "wood-broken5"
 	},
 /area/ruin/whitesands/saloon)
+"KO" = (
+/obj/machinery/door/airlock/wood,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/wood,
+/area/ruin/whitesands/saloon)
 "Ld" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/corner/wood{
@@ -1320,6 +1333,7 @@
 	pixel_x = -5;
 	pixel_y = 5
 	},
+/obj/item/shovel,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "Ov" = (
@@ -1463,8 +1477,8 @@
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "Tv" = (
-/obj/structure/mineral_door/wood,
 /obj/effect/decal/cleanable/blood/old,
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "Tz" = (
@@ -2024,7 +2038,7 @@ Eq
 CB
 mx
 CB
-aO
+KO
 eV
 RM
 Xa
@@ -2248,7 +2262,7 @@ Eq
 mx
 tQ
 mx
-Eq
+hq
 lg
 Wd
 tO
@@ -2278,7 +2292,7 @@ mx
 Yo
 Eq
 Eq
-aO
+KO
 Eq
 Eq
 Dd
