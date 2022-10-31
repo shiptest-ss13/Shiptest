@@ -32,7 +32,7 @@
 
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters
 	name = "Abandoned Mechbay Crew Quarters"
-	icon_state = "crew"
+	icon_state = "green"
 
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab
 	name = "Abandoned Mech Lab"
@@ -41,7 +41,3 @@
 /area/ruin/wasteplanet/abandoned_mechbay/engineering
 	name = "Abandoned Mechbay Engineering"
 	icon_state = "engine"
-
-/area/ruin/wasteplanet/abandoned_mechbay/atmospereslurper
-	name = "Abandoned Mechbay Air Processing"
-	icon_state = "atmos"
