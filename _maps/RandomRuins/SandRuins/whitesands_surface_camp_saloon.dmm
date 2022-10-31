@@ -59,6 +59,9 @@
 "bJ" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
+/obj/item/shovel,
+/obj/item/shovel,
+/obj/structure/rack,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "ca" = (
@@ -745,7 +748,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger{
+/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
 	dir = 8
 	},
 /turf/open/floor/wood{
@@ -755,6 +758,7 @@
 "vP" = (
 /obj/structure/table/wood/poker,
 /obj/effect/spawner/lootdrop/gambling,
+/obj/item/stack/spacecash/c500,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
 "xr" = (
@@ -1027,6 +1031,12 @@
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/energy/plasmacutter{
+	icon_state = "pulse";
+	name = "pulse rifle";
+	desc = "A supposedly heavy-duty, multifaceted energy rifle. The barrel looks off and the casing seems to be made of plastic";
+	item_state = "pulse"
+	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "EY" = (
@@ -1101,6 +1111,7 @@
 "HA" = (
 /obj/structure/table/wood/poker,
 /obj/item/reagent_containers/food/drinks/bottle/rum,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
 "HI" = (
@@ -1333,7 +1344,6 @@
 	pixel_x = -5;
 	pixel_y = 5
 	},
-/obj/item/shovel,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "Ov" = (
@@ -1392,6 +1402,12 @@
 "Qs" = (
 /turf/template_noop,
 /area/template_noop)
+"Qy" = (
+/obj/structure/table/wood/poker,
+/obj/item/toy/cards/deck,
+/obj/item/stack/spacecash/c500,
+/turf/open/floor/carpet,
+/area/ruin/whitesands/saloon)
 "QB" = (
 /obj/structure/chair/sofa/left{
 	dir = 1
@@ -1670,6 +1686,7 @@
 	pixel_y = 6;
 	pixel_x = 3
 	},
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
 "ZG" = (
@@ -1823,7 +1840,7 @@ Eq
 yZ
 gy
 vP
-Ov
+Qy
 HA
 xr
 GG
