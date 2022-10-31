@@ -143,14 +143,15 @@
 		return
 		// go straight to jail
 	if(sun_type == STATIC_EXPOSED)
-		var/turf/T = loc
-		T = T && T.above()
-		if (!T)
+		var/turf/loc_turf = loc
+		loc_turf = loc_turf && loc_turf.above()
+		if (!loc_turf)
 			var/count = 0
-			for(var/turf/Tt in orange(1, src))
-				count += !isgroundlessturf(Tt)
-			if (count >= 9) return
-		else if(!isopenturf(T))
+			for(var/turf/other_turf in orange(1, src))
+				count += !isgroundlessturf(other_turf)
+			if (count >= 9)
+				return
+		else if(!isopenturf(loc_turf))
 			return
 		obscured = FALSE
 		return
