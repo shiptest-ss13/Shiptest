@@ -143,9 +143,8 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
-	name = "Window Blast Door"
+/obj/machinery/door/poddoor{
+	id = "traumaenginel"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -160,9 +159,6 @@
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "el" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
@@ -171,6 +167,9 @@
 	},
 /obj/machinery/light/small{
 	dir = 4
+	},
+/obj/machinery/cryopod{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -351,13 +350,21 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -26;
+	pixel_y = 6
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_y = -6;
+	pixel_x = -25;
+	id = "traumaenginer";
+	name = "Engine Shutter Control"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "iA" = (
@@ -581,10 +588,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -947,7 +950,8 @@
 "uE" = (
 /obj/machinery/light,
 /obj/machinery/firealarm{
-	pixel_y = -28
+	pixel_y = -38;
+	pixel_x = 7
 	},
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
@@ -1031,6 +1035,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/light/small{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1338,13 +1345,21 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 26
+	dir = 8;
+	pixel_x = 26;
+	pixel_y = 6
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = -6;
+	pixel_x = 25;
+	id = "traumaenginel";
+	name = "Engine Shutter Control"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Go" = (
@@ -1405,6 +1420,9 @@
 /obj/machinery/door/window/northleft,
 /obj/machinery/power/terminal,
 /obj/structure/cable,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Hr" = (
@@ -1433,10 +1451,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1526,6 +1540,9 @@
 /obj/machinery/door/window/northright,
 /obj/machinery/power/terminal,
 /obj/structure/cable,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "KR" = (
@@ -1561,8 +1578,11 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/aft)
 "Lh" = (
-/obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/machinery/atmospherics/components/binary/pump/on/layer2,
+/obj/structure/closet/firecloset/wall{
+	dir = 8;
+	pixel_x = 28
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Ll" = (
@@ -1626,6 +1646,10 @@
 	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "MP" = (
@@ -1634,6 +1658,10 @@
 	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "MW" = (
@@ -1691,9 +1719,8 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
-	name = "Window Blast Door"
+/obj/machinery/door/poddoor{
+	id = "traumaenginel"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1706,9 +1733,23 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
-	name = "Window Blast Door"
+/obj/machinery/door/poddoor{
+	id = "traumaenginer"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"OB" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1740,8 +1781,11 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
 "Ps" = (
-/obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/machinery/atmospherics/components/binary/pump/on/layer2,
+/obj/structure/closet/emcloset/wall{
+	dir = 4;
+	pixel_x = -28
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "PG" = (
@@ -2161,9 +2205,8 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
-	name = "Window Blast Door"
+/obj/machinery/door/poddoor{
+	id = "traumaenginer"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -2310,7 +2353,9 @@
 /area/ship/crew)
 "Yn" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/structure/curtain,
+/obj/structure/curtain/cloth{
+	color = "#ACD1E9"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Yv" = (
@@ -2800,7 +2845,7 @@ UG
 UG
 Ti
 UO
-Lt
+OB
 UO
 UG
 UG
