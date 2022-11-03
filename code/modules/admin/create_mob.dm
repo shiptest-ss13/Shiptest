@@ -43,6 +43,8 @@
 	H.dna.features["kepori_body_feathers"] = pick(GLOB.kepori_body_feathers_list)
 	H.dna.features["vox_head_quills"] = pick(GLOB.vox_head_quills_list)
 	H.dna.features["vox_neck_quills"] = pick(GLOB.vox_neck_quills_list)
+	H.dna.features["elzu_horns"] = pick(GLOB.elzu_horns_list)
+	H.dna.features["tail_elzu"] = pick(GLOB.tails_list_elzu)
 
 	H.update_body()
 	H.update_hair()
