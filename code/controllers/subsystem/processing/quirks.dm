@@ -25,7 +25,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 							list("Alcohol Tolerance","Light Drinker"), \
 							list("Clown Fan","Mime Fan"), \
 							list("Bad Touch", "Friendly"))
-
 	for(var/client/client in GLOB.clients)
 		client?.prefs.check_quirk_compatibility()
 	return ..()
