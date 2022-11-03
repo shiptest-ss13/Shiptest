@@ -286,6 +286,7 @@
 /obj/docking_port/stationary{
 	dir = 4;
 	roundstart_template = /datum/map_template/shuttle/subshuttles/pill;
+	load_template_on_initialize = false;
 	height = 3;
 	width = 1
 	},
