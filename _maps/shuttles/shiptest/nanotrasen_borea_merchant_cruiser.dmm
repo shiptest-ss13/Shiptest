@@ -3466,7 +3466,7 @@
 /obj/docking_port/stationary{
 	dir = 4;
 	roundstart_template = /datum/map_template/shuttle/subshuttles/zetes_delivery_pod;
-	width = 3;
+	load_template_on_initialize = falsewidth = 3;
 	height = 8;
 	dwidth = 1
 	},
