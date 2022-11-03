@@ -209,6 +209,8 @@
 
 	var/datum/map_template/shuttle/roundstart_template
 	var/json_key
+	//Setting this to false will prevent the roundstart_template from being loaded on Initiallize(). You should set this to false if this loads a subship on a ship map template
+	var/load_template_on_initialize = TRUE
 
 /obj/docking_port/stationary/Initialize(mapload)
 	. = ..()
@@ -219,7 +221,7 @@
 	if(mapload)
 		for(var/turf/T in return_turfs())
 			T.flags_1 |= NO_RUINS_1
-		if(SSshuttle.initialized) // If the docking port is loaded via map but SSshuttle has already init (therefore this would never be called)
+		if(SSshuttle.initialized && load_template_on_initialize) // If the docking port is loaded via map but SSshuttle has already init (therefore this would never be called)
 			INVOKE_ASYNC(src, .proc/load_roundstart)
 
 	#ifdef DOCKING_PORT_HIGHLIGHT
@@ -408,6 +410,8 @@
 		return ..()
 	. = list()
 	for(var/obj/docking_port/mobile/M in get_all_towed_shuttles())
+		//Find the offset of the towed shuttle relative to our shuttle in the orientation specified by the _dir parameter,
+		//Then use that to find the towed shuttle's position and orientation in world space specified by the proc's parameters.
 		var/matrix/translate_vec = matrix(M.x - src.x, M.y - src.y, MATRIX_TRANSLATE) * matrix(dir2angle(_dir)-dir2angle(dir), MATRIX_ROTATE)
 		. |= M.return_ordered_turfs(_x + translate_vec.c, _y + translate_vec.f, _z + (M.z - src.z), angle2dir_cardinal(dir2angle(_dir) + (dir2angle(M.dir) - dir2angle(src.dir))), include_towed = FALSE)
 
