@@ -131,9 +131,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals9{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "bo" = (
 /obj/machinery/computer/arcade/orion_trail,
@@ -244,16 +242,9 @@
 	color = "#c1b6a5"
 	},
 /obj/machinery/button/door{
-	id = "Syndie_warship_lockdown";
-	name = "Lockdown Control";
-	pixel_x = -6;
-	pixel_y = 6;
-	dir = 8
-	},
-/obj/machinery/button/door{
-	id = "syndie_warship_cargo";
+	id = "cargopirate_podbay";
 	name = "cargohold shutters";
-	pixel_x = 3;
+	pixel_x = 7;
 	pixel_y = 6;
 	dir = 8
 	},
@@ -296,6 +287,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals7{
 	dir = 9
 	},
+/mob/living/simple_animal/chicken,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "cG" = (
@@ -373,7 +365,7 @@
 	pixel_x = 28
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "df" = (
 /obj/structure/catwalk/over,
@@ -463,9 +455,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/techfloor,
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "dU" = (
 /obj/machinery/vending/cigarette/syndicate,
@@ -543,9 +533,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "fB" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -554,9 +542,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "fC" = (
 /obj/structure/table/reinforced{
@@ -577,10 +563,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/cardboard,
-/obj/item/storage/cans/sixbeer{
-	pixel_y = -3;
-	pixel_x = 3
-	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -588,11 +570,16 @@
 	pixel_y = 32
 	},
 /obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/hatchet/wooden,
+/obj/item/toy/plush/beeplushie,
 /obj/item/rack_parts{
 	pixel_x = -5;
 	pixel_y = -6
 	},
-/obj/item/hatchet/wooden,
+/obj/item/storage/cans/sixbeer{
+	pixel_y = -3;
+	pixel_x = 3
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "fU" = (
@@ -722,9 +709,7 @@
 	name = "Pod Door Control";
 	pixel_y = 22
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "gP" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -792,9 +777,7 @@
 	},
 /obj/effect/turf_decal/techfloor/corner,
 /obj/effect/turf_decal/steeldecal/steel_decals9,
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "hr" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -846,7 +829,9 @@
 	pixel_y = 31
 	},
 /obj/mecha/combat/gygax/dark{
-	name = "Vulcan"
+	name = "Vulcan";
+	operation_req_access = 0;
+	internals_req_access = 0
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
@@ -1026,9 +1011,7 @@
 /obj/effect/turf_decal/techfloor/hole{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "jk" = (
 /obj/effect/turf_decal/techfloor{
@@ -1277,9 +1260,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "nh" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -1292,9 +1273,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "nj" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -1364,9 +1343,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals2{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "oc" = (
 /obj/machinery/door/airlock/hatch,
@@ -1424,18 +1401,14 @@
 /obj/effect/turf_decal/techfloor/hole{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "oJ" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "oK" = (
 /obj/machinery/autolathe/hacked,
@@ -1675,9 +1648,7 @@
 	},
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/techfloor/hole,
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "rk" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
@@ -1865,7 +1836,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "sV" = (
 /obj/machinery/holopad/emergency/command,
@@ -1929,15 +1900,6 @@
 "tC" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
-"tK" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/machinery/light/dim,
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
-/area/ship/cargo/office)
 "tW" = (
 /obj/machinery/door/window/northleft{
 	dir = 2
@@ -2186,9 +2148,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "wN" = (
 /obj/structure/railing{
@@ -2507,9 +2467,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "zO" = (
 /obj/machinery/power/smes/engineering,
@@ -2745,9 +2703,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals4,
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "DT" = (
 /obj/effect/turf_decal/corner/opaque/yellow/bordercorner{
@@ -2894,9 +2850,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/stand_clear,
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "Fp" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -3525,11 +3479,13 @@
 /turf/open/floor/engine/air,
 /area/ship/engineering)
 "Nx" = (
+/obj/docking_port/mobile{
+	dir = 2
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "cargopirate_cargo";
 	name = "Cargo Shutters"
 	},
-/obj/docking_port/mobile,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "NE" = (
@@ -3747,9 +3703,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "PP" = (
 /obj/structure/table/wood/reinforced,
@@ -3980,9 +3934,7 @@
 	},
 /obj/machinery/light/dim,
 /obj/effect/turf_decal/techfloor,
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "RN" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -4360,9 +4312,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "WQ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output{
@@ -4562,9 +4512,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/turf/open/floor/plasteel/tech{
-	initial_gas_mix = "TEMP=2.7"
-	},
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "YZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5116,7 +5064,7 @@ KW
 KW
 KW
 KW
-tK
+RI
 Ve
 "}
 (26,1,1) = {"
