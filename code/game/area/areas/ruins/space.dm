@@ -552,21 +552,9 @@
 
 //Corporate Mining Ruin
 
-/area/ruin/space/has_grav/corporatemine/cargo
-	name = "Corporate Mine Cargo"
-	icon_state = "cargo_bay"
-
 /area/ruin/space/has_grav/corporatemine/crewquarters
 	name = "Corporate Mine Crew Quarters"
 	icon_state = "purple"
-
-/area/ruin/space/has_grav/corporatemine/corpquarters
-	name = "Corporate Mine Liason's Quarters"
-	icon_state = "law"
-
-/area/ruin/space/has_grav/corporatemine/air
-	name = "Corporate Mine Air Supply"
-	icon_state = "atmos"
 
 /area/ruin/space/has_grav/corporatemine/bridge
 	name = "Corporate Mine Bridge"

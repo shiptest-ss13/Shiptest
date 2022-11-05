@@ -20,7 +20,7 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "au" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -30,7 +30,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "aw" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -49,7 +49,7 @@
 /obj/structure/cable,
 /obj/machinery/light,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "aP" = (
 /obj/structure/sink/puddle,
 /turf/closed/mineral,
@@ -88,11 +88,11 @@
 /obj/effect/turf_decal/industrial/outline,
 /obj/effect/spawner/lootdrop/materials,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "bV" = (
 /obj/structure/sign/poster/retro/smile,
 /turf/closed/wall/rust,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "cf" = (
 /obj/machinery/door/airlock{
 	name = "Room 3"
@@ -137,7 +137,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "do" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -159,7 +159,7 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "dA" = (
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/corporatemine)
@@ -268,7 +268,7 @@
 /obj/item/stack/ore/bluespace_crystal,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "gC" = (
 /obj/effect/mob_spawn/human/miner/rig,
 /obj/effect/decal/cleanable/blood,
@@ -282,9 +282,6 @@
 /obj/structure/mecha_wreckage/ripley/mkii,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
-"gU" = (
-/turf/closed/wall/r_wall/rust,
-/area/ruin/space/has_grav/corporatemine/cargo)
 "hw" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -297,7 +294,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "hH" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -327,7 +324,7 @@
 "ib" = (
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "ic" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -361,7 +358,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "ir" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -410,7 +407,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "jE" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/corporatemine/bridge)
@@ -434,7 +431,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "ke" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/door/airlock/alarmlock{
@@ -456,7 +453,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "ku" = (
 /obj/item/flashlight/flare,
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
@@ -484,7 +481,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "le" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -513,23 +510,20 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/has_grav/corporatemine/hall)
-"lZ" = (
-/turf/closed/wall/r_wall/rust,
-/area/ruin/space/has_grav/corporatemine/air)
 "mb" = (
 /obj/structure/bed,
 /obj/item/bedsheet/syndie,
 /obj/structure/curtain,
 /obj/effect/gibspawner/human,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "mh" = (
 /obj/structure/closet/crate,
 /obj/item/stack/ore/titanium,
 /obj/item/stack/ore/titanium,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "mo" = (
 /obj/structure/railing,
 /obj/structure/catwalk/over/plated_catwalk,
@@ -558,7 +552,7 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "ne" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -597,7 +591,7 @@
 /obj/item/stack/ore/diamond,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "ot" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Bathroom"
@@ -634,7 +628,7 @@
 /obj/structure/table/wood,
 /obj/machinery/computer/pod/old/syndicate,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "pN" = (
 /obj/machinery/door/airlock{
 	name = "Room 2"
@@ -663,7 +657,7 @@
 	},
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "qd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -684,7 +678,7 @@
 /obj/item/stack/ore/iron,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "qw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -705,7 +699,7 @@
 /obj/item/gun/ballistic/automatic/pistol/suppressed,
 /obj/item/ammo_box/magazine/m10mm,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "ra" = (
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
@@ -735,7 +729,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "rQ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -791,7 +785,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "ta" = (
 /obj/structure/chair/office/light{
 	dir = 4
@@ -825,7 +819,7 @@
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "tq" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/corporatemine)
@@ -861,7 +855,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "uu" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable,
@@ -920,7 +914,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "vM" = (
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /obj/structure/chair/office/light,
@@ -969,7 +963,7 @@
 /obj/item/stock_parts/matter_bin,
 /obj/item/stock_parts/manipulator,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "wx" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/layer_manifold,
@@ -1031,7 +1025,7 @@
 	dir = 4
 	},
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "yz" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -1094,7 +1088,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "Ac" = (
 /obj/machinery/door/airlock/wood{
 	locked = 1;
@@ -1104,7 +1098,7 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "Ae" = (
 /obj/structure/spawner/mining/goliath,
 /turf/open/floor/plating/asteroid/airless,
@@ -1176,7 +1170,7 @@
 	},
 /obj/machinery/light,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "CK" = (
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/corporatemine/bridge)
@@ -1207,7 +1201,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "Da" = (
 /obj/machinery/power/floodlight{
 	anchored = 1
@@ -1222,7 +1216,7 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "Dp" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1244,7 +1238,7 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "DX" = (
 /obj/machinery/power/tracker,
 /obj/structure/cable{
@@ -1325,7 +1319,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "Fj" = (
 /obj/structure/sink{
 	dir = 1;
@@ -1347,7 +1341,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "FO" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -1366,25 +1360,19 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "Gq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers{
 	dir = 4
 	},
 /turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/corporatemine/air)
-"Gt" = (
-/turf/closed/wall,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "Gx" = (
 /obj/machinery/light/broken{
 	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/corporatemine)
-"Gy" = (
-/turf/closed/wall/rust,
-/area/ruin/space/has_grav/corporatemine/air)
 "GH" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1436,7 +1424,7 @@
 /obj/machinery/atmospherics/components/binary/valve/digital/on/layer4,
 /obj/machinery/atmospherics/components/binary/valve/digital/on/layer2,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "Ia" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Solar Control"
@@ -1458,7 +1446,7 @@
 	},
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "Ix" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2{
@@ -1488,7 +1476,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "Jr" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1562,7 +1550,7 @@
 /obj/structure/table/wood,
 /obj/machinery/photocopier/faxmachine,
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "KC" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/item/trash/can/food/peaches/maint,
@@ -1661,7 +1649,7 @@
 	},
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "MH" = (
 /obj/machinery/vending/mining_equipment,
 /turf/open/floor/plasteel,
@@ -1770,7 +1758,7 @@
 /obj/item/storage/bag/ore,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "NQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -1789,9 +1777,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/corporatemine)
-"NV" = (
-/turf/closed/wall,
-/area/ruin/space/has_grav/corporatemine/cargo)
 "NX" = (
 /obj/structure/sign/poster/contraband/kss13{
 	pixel_y = -32
@@ -1854,7 +1839,11 @@
 /obj/machinery/atmospherics/components/trinary/filter/atmos/co2,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
+"Pz" = (
+/obj/machinery/vending/mining_equipment,
+/turf/closed/wall,
+/area/ruin/space/has_grav/corporatemine)
 "PG" = (
 /turf/closed/mineral,
 /area/ruin/space)
@@ -1871,10 +1860,10 @@
 	dir = 10
 	},
 /turf/open/floor/wood,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "Qf" = (
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "Qi" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -1916,7 +1905,7 @@
 "Qu" = (
 /obj/structure/sign/poster/contraband/power,
 /turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "Qy" = (
 /obj/item/shard,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1940,9 +1929,6 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/corporatemine/hall)
-"QE" = (
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/corporatemine/air)
 "QF" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 4
@@ -1978,7 +1964,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "Rz" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 1
@@ -2009,9 +1995,6 @@
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
-"RZ" = (
-/turf/closed/wall/r_wall/rust,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
 "Sw" = (
 /obj/item/trash/waffles,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -2028,14 +2011,11 @@
 /area/ruin/space/has_grav/corporatemine)
 "Sx" = (
 /turf/closed/wall/rust,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "SD" = (
 /obj/structure/closet/secure_closet/miner,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/corporatemine)
-"SO" = (
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
 "Te" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -2099,7 +2079,7 @@
 /obj/effect/turf_decal/industrial/outline,
 /obj/effect/spawner/lootdrop/materials,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "Uu" = (
 /obj/machinery/modular_computer/console{
 	dir = 8
@@ -2138,7 +2118,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech,
-/area/ruin/space/has_grav/corporatemine/corpquarters)
+/area/ruin/space/has_grav/corporatemine/crewquarters)
 "VT" = (
 /obj/structure/closet/crate,
 /obj/item/stack/ore/gold,
@@ -2149,7 +2129,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "VX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/item/stack/cable_coil/cut/red,
@@ -2171,9 +2151,6 @@
 /obj/item/circuitboard/machine/ore_redemption,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/corporatemine)
-"Wu" = (
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/corporatemine/cargo)
 "Wx" = (
 /obj/machinery/door/airlock/command{
 	name = "Bridge"
@@ -2209,7 +2186,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "Xs" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
@@ -2246,7 +2223,7 @@
 /obj/item/flashlight,
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/corporatemine/cargo)
+/area/ruin/space/has_grav/corporatemine/hall)
 "XL" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 6
@@ -2293,7 +2270,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/corporatemine/air)
+/area/ruin/space/has_grav/corporatemine/hall)
 "YG" = (
 /obj/item/trash/sosjerky,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -3464,15 +3441,15 @@ PG
 PG
 PG
 oB
-SO
-SO
-SO
-RZ
-RZ
-SO
-SO
-SO
-RZ
+pk
+pk
+pk
+ai
+ai
+pk
+pk
+pk
+ai
 PG
 PG
 oB
@@ -3516,7 +3493,7 @@ PG
 PG
 yc
 oB
-SO
+pk
 pv
 yx
 an
@@ -3524,7 +3501,7 @@ Ac
 DI
 CX
 FI
-RZ
+ai
 PG
 PG
 oB
@@ -3564,19 +3541,19 @@ eU
 AG
 PG
 PG
-QE
-QE
+Km
+Km
 Gq
-lZ
-SO
+cC
+pk
 Ks
 PV
 Cq
-SO
+pk
 sW
 hw
 mV
-SO
+pk
 PG
 PG
 PG
@@ -3616,19 +3593,19 @@ oB
 AG
 PG
 PG
-lZ
+cC
 Yi
 Pp
 Ru
-RZ
+ai
 qS
 dx
 mb
-SO
+pk
 Dd
 uo
 vK
-SO
+pk
 PG
 PG
 PG
@@ -3672,15 +3649,15 @@ Qu
 kZ
 Qf
 rF
-RZ
-RZ
-SO
-SO
-RZ
-SO
+ai
+ai
+pk
+pk
+ai
+pk
 Vn
-RZ
-SO
+ai
+pk
 cC
 Km
 PG
@@ -3720,7 +3697,7 @@ oB
 oB
 PG
 PG
-lZ
+cC
 Ex
 ij
 HF
@@ -3772,7 +3749,7 @@ oB
 aX
 PG
 PG
-QE
+Km
 Jk
 LY
 wt
@@ -3824,21 +3801,21 @@ To
 oB
 PG
 PG
-QE
-Gt
-Gt
-Gy
+Km
+rT
+rT
+Sx
 Zw
 fB
 Zj
-NV
+rT
 Sx
 jC
 ke
 Sx
 Sx
-NV
-Wu
+rT
+Km
 PG
 yz
 dQ
@@ -3890,7 +3867,7 @@ Aa
 Ub
 qe
 XH
-gU
+cC
 PG
 PG
 PG
@@ -3942,7 +3919,7 @@ pX
 au
 Iv
 aD
-Wu
+Km
 PG
 AG
 PG
@@ -3987,14 +3964,14 @@ jz
 LA
 zC
 Ec
-NV
+rT
 mh
 bR
 gA
 VT
 NJ
 tp
-gU
+cC
 PG
 PG
 PG
@@ -4039,14 +4016,14 @@ ra
 hN
 Ak
 uz
-NV
-NV
+rT
+rT
 Sx
 Sx
 Sx
-NV
-Wu
-Wu
+rT
+Km
+Km
 AG
 PG
 PG
@@ -4144,7 +4121,7 @@ pN
 RH
 iN
 Kk
-tq
+Pz
 lD
 CQ
 eA
