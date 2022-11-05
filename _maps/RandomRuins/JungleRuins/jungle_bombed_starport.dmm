@@ -171,6 +171,10 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
+"bj" = (
+/obj/structure/closet/secure_closet/freezer/kitchen,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/starport)
 "bk" = (
 /turf/open/floor/plating/dirt/jungle/wasteland{
 	icon_state = "wasteland0"
@@ -336,6 +340,12 @@
 /obj/effect/decal/cleanable/shreds,
 /obj/item/stack/sheet/metal,
 /turf/open/floor/plating/grass/jungle{
+	light_range = 2
+	},
+/area/ruin/jungle/starport)
+"cj" = (
+/obj/structure/reagent_dispensers/foamtank,
+/turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
 /area/ruin/jungle/starport)
@@ -846,6 +856,15 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
+"go" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 1
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/slab_1{
+	light_range = 2
+	},
+/area/ruin/jungle/starport)
 "gs" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush,
@@ -943,6 +962,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/wrench/combat,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/jungle/starport/plasma)
 "he" = (
@@ -1278,6 +1298,7 @@
 "jc" = (
 /obj/structure/railing/corner,
 /obj/effect/decal/cleanable/oil,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
@@ -1776,6 +1797,12 @@
 	light_range = 2
 	},
 /area/ruin/jungle/starport)
+"mP" = (
+/obj/item/watertank/atmos,
+/turf/open/floor/plating/dirt/jungle{
+	light_range = 2
+	},
+/area/ruin/jungle/starport)
 "mQ" = (
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/jungle/b,
@@ -1783,10 +1810,6 @@
 	light_range = 2
 	},
 /area/ruin/jungle/starport)
-"mT" = (
-/obj/structure/spacevine,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/jungle/starport/shed)
 "mX" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 8
@@ -2089,6 +2112,14 @@
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
+/area/ruin/jungle/starport)
+"pa" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 1
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "pf" = (
 /obj/structure/spacevine,
@@ -2431,6 +2462,14 @@
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/cocoon,
 /turf/open/floor/plasteel/grimy,
+/area/ruin/jungle/starport)
+"rm" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 1
+	},
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "rn" = (
 /obj/structure/table_frame,
@@ -3594,36 +3633,6 @@
 /area/ruin/jungle/starport)
 "yQ" = (
 /obj/structure/table/rolling,
-/obj/item/ammo_casing/caseless/rocket{
-	desc = "An 84mm high explosive rocket. Looks like they'd fit into a launcher";
-	pixel_x = 10;
-	pixel_y = 5
-	},
-/obj/item/ammo_casing/caseless/rocket{
-	desc = "An 84mm high explosive rocket. Looks like they'd fit into a launcher";
-	pixel_x = 6;
-	pixel_y = 5
-	},
-/obj/item/ammo_casing/caseless/rocket{
-	desc = "An 84mm high explosive rocket. Looks like they'd fit into a launcher";
-	pixel_x = -10;
-	pixel_y = 5
-	},
-/obj/item/ammo_casing/caseless/rocket{
-	desc = "An 84mm high explosive rocket. Looks like they'd fit into a launcher";
-	pixel_x = -2;
-	pixel_y = 5
-	},
-/obj/item/ammo_casing/caseless/rocket{
-	desc = "An 84mm high explosive rocket. Looks like they'd fit into a launcher";
-	pixel_x = 2;
-	pixel_y = 5
-	},
-/obj/item/ammo_casing/caseless/rocket{
-	desc = "An 84mm high explosive rocket. Looks like they'd fit into a launcher";
-	pixel_x = -6;
-	pixel_y = 5
-	},
 /turf/open/floor/vault,
 /area/ruin/jungle/starport/shed)
 "yY" = (
@@ -3687,6 +3696,15 @@
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned,
+/area/ruin/jungle/starport)
+"zu" = (
+/obj/machinery/door/airlock,
+/obj/structure/barricade/wooden/crude,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/starport)
 "zw" = (
 /obj/structure/spacevine,
@@ -3834,6 +3852,10 @@
 /turf/open/floor/plating/grass/jungle{
 	light_range = 2
 	},
+/area/ruin/jungle/starport)
+"AG" = (
+/obj/machinery/autolathe,
+/turf/open/floor/vault,
 /area/ruin/jungle/starport)
 "AH" = (
 /obj/structure/rack,
@@ -4001,6 +4023,10 @@
 /area/ruin/jungle/starport)
 "Co" = (
 /obj/structure/closet,
+/obj/item/clothing/under/syndicate/aclfgrunt,
+/obj/item/clothing/under/syndicate/aclfgrunt,
+/obj/item/clothing/under/syndicate/aclfgrunt,
+/obj/item/clothing/under/syndicate/aclfgrunt,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
@@ -4135,6 +4161,16 @@
 	desc = "Upon closer examination, it's dirt, compacted down by much walking";
 	light_range = 1
 	},
+/area/ruin/jungle/starport)
+"Dm" = (
+/obj/machinery/atmospherics/pipe/manifold/orange{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/spider/cocoon,
+/turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "Dn" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4388,10 +4424,11 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit,
 /obj/item/clothing/suit/space/pilot,
 /obj/item/clothing/head/helmet/space/pilot,
 /obj/item/tank/jetpack/oxygen,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/under/syndicate/combat,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "EN" = (
@@ -4438,11 +4475,10 @@
 	},
 /area/ruin/jungle/starport)
 "Fb" = (
-/obj/machinery/suit_storage_unit/industrial/atmos_firesuit,
-/obj/item/watertank/atmos,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/suit_storage_unit/inherit/industrial,
 /turf/open/floor/vault,
 /area/ruin/jungle/starport/shed)
 "Fc" = (
@@ -4496,6 +4532,12 @@
 /obj/item/stack/cable_coil/cut/red,
 /turf/open/floor/mineral/plastitanium{
 	icon_state = "plastitanium_dam4"
+	},
+/area/ruin/jungle/starport)
+"FK" = (
+/obj/item/shard,
+/turf/open/floor/concrete/slab_1{
+	light_range = 2
 	},
 /area/ruin/jungle/starport)
 "FM" = (
@@ -4570,6 +4612,9 @@
 /area/ruin/jungle/starport)
 "Gs" = (
 /obj/effect/decal/remains/human,
+/obj/item/clothing/suit/fire/atmos,
+/obj/item/clothing/mask/gas/atmos,
+/obj/item/clothing/head/hardhat/atmos,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -4614,6 +4659,13 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/plasma)
+"GH" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/item/shard,
+/turf/open/floor/plasteel/stairs/left,
+/area/ruin/jungle/starport)
 "GI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -4810,6 +4862,15 @@
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
+"HT" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/slab_1{
+	light_range = 2
+	},
+/area/ruin/jungle/starport)
 "HW" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/rust,
@@ -4924,6 +4985,13 @@
 	light_range = 2
 	},
 /area/ruin/jungle/starport)
+"IL" = (
+/obj/machinery/atmospherics/pipe/manifold/orange{
+	dir = 4
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating,
+/area/ruin/jungle/starport)
 "IN" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/plastitanium,
@@ -4950,6 +5018,10 @@
 	light_range = 1
 	},
 /area/ruin/jungle/starport)
+"IY" = (
+/obj/structure/table/rolling,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/jungle/starport/shed)
 "IZ" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
@@ -5302,6 +5374,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/tower)
+"Lz" = (
+/obj/item/weldingtool,
+/turf/open/floor/concrete/slab_1{
+	light_range = 2
+	},
+/area/ruin/jungle/starport)
 "LA" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/grass/jungle{
@@ -5333,6 +5411,11 @@
 /area/ruin/jungle/starport)
 "LM" = (
 /obj/structure/closet,
+/obj/item/clothing/suit/aclf,
+/obj/item/clothing/under/syndicate/aclf,
+/obj/item/gun/ballistic/automatic/pistol,
+/obj/item/ammo_box/magazine/m10mm,
+/obj/item/ammo_box/magazine/m10mm,
 /turf/open/floor/wood{
 	icon_state = "wood-broken2"
 	},
@@ -5430,6 +5513,13 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
+"MC" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 1
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel/stairs/medium,
+/area/ruin/jungle/starport)
 "MD" = (
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/plating/dirt/jungle{
@@ -5517,6 +5607,13 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
+"Nh" = (
+/obj/structure/filingcabinet,
+/obj/item/gun/ballistic/automatic/pistol,
+/obj/item/ammo_box/magazine/m10mm,
+/obj/item/ammo_box/magazine/m10mm,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/jungle/starport/tower)
 "Nl" = (
 /obj/structure/railing{
 	dir = 1
@@ -5633,6 +5730,8 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
 	},
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
+/obj/structure/spider/cocoon,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "Ou" = (
@@ -5845,6 +5944,12 @@
 /area/ruin/jungle/starport)
 "PV" = (
 /obj/structure/closet,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -6003,6 +6108,9 @@
 "Rc" = (
 /obj/structure/closet,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/under/syndicate/combat,
+/obj/item/clothing/under/syndicate/combat,
+/obj/item/clothing/under/syndicate/combat,
 /turf/open/floor/plating,
 /area/ruin/jungle/starport)
 "Rj" = (
@@ -6123,6 +6231,14 @@
 /obj/machinery/light/broken{
 	dir = 4
 	},
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/gloves/color/black,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -6301,6 +6417,13 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/starport)
+"SU" = (
+/obj/structure/railing,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/slab_1{
+	light_range = 2
+	},
+/area/ruin/jungle/starport)
 "SZ" = (
 /obj/structure/railing{
 	dir = 6
@@ -6354,6 +6477,7 @@
 	name = "defunct laser cannon";
 	pixel_x = -26
 	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
@@ -6482,8 +6606,8 @@
 	},
 /area/ruin/jungle/starport)
 "Uc" = (
-/obj/machinery/autolathe,
 /obj/structure/spacevine,
+/obj/structure/frame/machine,
 /turf/open/floor/vault,
 /area/ruin/jungle/starport/shed)
 "Ue" = (
@@ -6715,6 +6839,12 @@
 	icon_state = "wasteland8"
 	},
 /area/ruin/jungle/starport)
+"VD" = (
+/obj/item/clothing/under/syndicate/aclfgrunt,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/jungle/starport)
 "VI" = (
 /obj/structure/spacevine,
 /obj/structure/cable{
@@ -6893,10 +7023,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/starport)
-"WT" = (
-/obj/structure/reagent_dispensers/foamtank,
-/turf/open/floor/vault,
-/area/ruin/jungle/starport/shed)
 "WU" = (
 /obj/machinery/door/airlock/glass{
 	name = "Flight Control"
@@ -6939,6 +7065,7 @@
 /area/ruin/jungle/starport)
 "Xg" = (
 /obj/effect/decal/cleanable/glass,
+/obj/effect/decal/remains/human,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
@@ -7045,6 +7172,9 @@
 "XC" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/vomit/old,
+/obj/item/clothing/under/syndicate/aclf,
+/obj/item/clothing/suit/aclf,
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/tower)
 "XF" = (
@@ -7099,6 +7229,8 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/glass,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
@@ -7223,6 +7355,12 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/concrete/reinforced{
+	light_range = 2
+	},
+/area/ruin/jungle/starport)
+"YO" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
 /area/ruin/jungle/starport)
@@ -7840,7 +7978,7 @@ oq
 dh
 zh
 dh
-oq
+Sv
 yQ
 qP
 zh
@@ -7920,7 +8058,7 @@ ev
 ZX
 ZX
 SD
-WT
+Sv
 zh
 wg
 wg
@@ -8071,7 +8209,7 @@ kN
 Px
 Yx
 ZX
-ZX
+IY
 aj
 ZX
 wP
@@ -8147,7 +8285,7 @@ Uc
 EH
 Px
 CF
-mT
+kN
 hW
 rd
 UG
@@ -8446,7 +8584,7 @@ cC
 cC
 cg
 cC
-cC
+Su
 gK
 PS
 XW
@@ -8523,8 +8661,8 @@ cC
 cC
 QE
 cC
-cC
-iW
+Su
+HT
 iJ
 rb
 XM
@@ -8601,8 +8739,8 @@ ih
 QE
 OM
 EG
-cC
-iJ
+Su
+SU
 BF
 Wq
 NZ
@@ -8680,7 +8818,7 @@ pG
 dP
 QE
 XY
-hB
+GH
 fO
 Wq
 Rt
@@ -8752,13 +8890,13 @@ cC
 zi
 QE
 Op
-Xr
-Ph
-VB
+Dm
+IL
+rm
 Tj
-XT
-Qw
-HX
+go
+MC
+pa
 HX
 HX
 Sy
@@ -8832,7 +8970,7 @@ dP
 Qq
 dP
 QE
-cC
+FK
 jc
 St
 Tf
@@ -8846,7 +8984,7 @@ Tf
 Tf
 jo
 cC
-cC
+YO
 QE
 dP
 Qq
@@ -8923,7 +9061,7 @@ Tf
 Tf
 LW
 cC
-cC
+Lz
 JH
 vI
 EM
@@ -10617,10 +10755,10 @@ qs
 Tf
 XM
 cC
-cC
+cj
 Zz
 vK
-wg
+mP
 Rj
 bk
 Eq
@@ -10643,7 +10781,7 @@ Yr
 Rn
 fv
 tb
-nF
+Nh
 cW
 XA
 ya
@@ -10696,7 +10834,7 @@ XM
 cC
 Sg
 WM
-Yf
+wg
 Gs
 wg
 wg
@@ -10773,7 +10911,7 @@ XM
 cC
 As
 bQ
-Cu
+VD
 SA
 JC
 wg
@@ -12070,7 +12208,7 @@ Tz
 dP
 QE
 LC
-Vu
+AG
 Xl
 Mu
 FA
@@ -12109,7 +12247,7 @@ TM
 Wo
 Wo
 Wo
-fi
+zu
 Wo
 wg
 yH
@@ -13180,7 +13318,7 @@ Pg
 Nm
 Se
 Se
-kf
+bj
 Wo
 wg
 aW
@@ -13305,7 +13443,7 @@ aW
 yA
 QZ
 AQ
-wB
+CP
 Ux
 Pg
 rh
@@ -13496,7 +13634,7 @@ aC
 Bx
 fV
 QB
-kf
+bj
 fV
 JT
 Wo
