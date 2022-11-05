@@ -2923,7 +2923,11 @@
 	rad_range = 2
 	},
 /obj/effect/decal/cleanable/molten_object/large,
-/turf/open/space/basic,
+/turf/open/floor/plating/dirt/jungle/wasteland{
+	icon_state = "wasteland_dug";
+	light_color = "#a0ad20";
+	light_range = 1
+	},
 /area/ruin/jungle/starport)
 "tW" = (
 /obj/structure/spacevine,
