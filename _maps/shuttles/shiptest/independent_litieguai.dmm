@@ -414,9 +414,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
 	icon_state = "sec_wall";
@@ -743,6 +740,13 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"rh" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/warning,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ship/hallway/aft)
 "ru" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 8
@@ -1191,6 +1195,9 @@
 /area/ship/hallway/aft)
 "Bl" = (
 /obj/effect/turf_decal/corner/opaque/red/full,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "BH" = (
@@ -1607,6 +1614,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = 28
+	},
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -2136,9 +2146,6 @@
 	name = "Commander magazine (AP 9mm)"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/sign/poster/contraband/c20r{
-	pixel_y = 32
-	},
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
 	icon_state = "sec_wall";
@@ -2148,6 +2155,9 @@
 	},
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
 /obj/item/ammo_box/magazine/co9mm,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Vq" = (
@@ -2703,7 +2713,7 @@ ur
 go
 Bl
 Bl
-cn
+rh
 BN
 "}
 (11,1,1) = {"
