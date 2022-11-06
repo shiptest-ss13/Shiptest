@@ -81,11 +81,36 @@
 	icon_state = "ak47_mag-[hasammo]"
 
 /obj/item/ammo_box/magazine/ebr
-	name = "\improper M514 EBR Magazine (.308 Winchester FMJ)"
+	name = "\improper M514 EBR Magazine (.308)"
 	icon_state = "ebr_mag"
-	ammo_type = /obj/item/ammo_casing/win308
-	caliber = ".308 Winchester FMJ"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
 	max_ammo = 10
+
+/obj/item/ammo_box/magazine/ebr/update_icon()
+	..()
+	var/hasammo
+	if(ammo_count())
+		hasammo = 1
+	else
+		hasammo = 0
+	icon_state = "ebr_mag-[hasammo]"
+
+/obj/item/ammo_box/magazine/gal
+	name = "\improper CM-GAL Magazine (.308)"
+	icon_state = "ebr_mag"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
+	max_ammo = 10
+
+/obj/item/ammo_box/magazine/gal/update_icon()
+	..()
+	var/hasammo
+	if(ammo_count())
+		hasammo = 1
+	else
+		hasammo = 0
+	icon_state = "galmag-[hasammo]"
 
 /obj/item/ammo_box/magazine/p16
 	name = "\improper P-16 Magazine (5.56mm)"
