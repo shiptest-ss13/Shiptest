@@ -501,6 +501,14 @@
 	icon_state = "assaultbelt"
 	item_state = "security"
 
+/obj/item/storage/belt/military/assault/minutemen/PopulateContents()
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/ammo_box/magazine/p16(src)
+
 /obj/item/storage/belt/military/assault/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)

@@ -130,10 +130,8 @@
 
 /obj/item/gun/ballistic/automatic/gal
 	name = "\improper CM-GAL-S"
-	desc = "The standard issue DMR of the CMM. Dates back to the Xenofauna War, this particular model is in a carbine configuration and is shorter than the standard model. Chambered in .308."
+	desc = "The standard issue DMR of the CMM. Dates back to the Xenofauna War, this particular model is in a carbine configuration and as such shorter than the standard model. Chambered in .308."
 	icon = 'icons/obj/guns/48x32guns.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "gal"
 	item_state = "gal"
