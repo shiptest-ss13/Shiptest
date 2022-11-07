@@ -1496,6 +1496,17 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/item/storage/backpack,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack,
+/obj/structure/closet/secure_closet/wall{
+	dir = 1;
+	icon_door = "red_wall";
+	icon_state = "generic_wall";
+	name = "equipment locker";
+	pixel_y = -28;
+	req_access_txt = "1"
+	},
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/radio/headset/headset_sec/alt,
@@ -1514,9 +1525,6 @@
 /obj/item/clothing/under/rank/security/officer/minutemen,
 /obj/item/clothing/under/rank/security/officer/minutemen,
 /obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/storage/backpack/security/cmm,
-/obj/item/storage/backpack/security/cmm,
-/obj/item/storage/backpack/security/cmm,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/prison)
 "rF" = (
@@ -2782,6 +2790,7 @@
 	pixel_x = -25;
 	pixel_y = 15
 	},
+/obj/item/storage/backpack,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/under/rank/command/minutemen,
 /obj/item/clothing/suit/toggle/lawyer/minutemen,
@@ -2803,7 +2812,6 @@
 	pixel_x = -28;
 	req_access_txt = "20"
 	},
-/obj/item/storage/backpack/security/cmm,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "FE" = (
