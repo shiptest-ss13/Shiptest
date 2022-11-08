@@ -437,6 +437,12 @@
 /obj/machinery/particle_accelerator/control_box,
 /turf/open/floor/engine,
 /area/space)
+"IZ" = (
+/turf/closed/wall{
+	name = "structural support";
+	desc = "A huge chunk of metal holding the roof of the asteroid at bay"
+	},
+/area/space)
 "Jo" = (
 /obj/structure/sign/warning/radiation{
 	pixel_x = 32
@@ -2567,9 +2573,9 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
+QB
+QB
+QB
 tq
 tq
 tq
@@ -2670,9 +2676,9 @@ QB
 QB
 QB
 QB
-tq
-tq
-tq
+QB
+QB
+QB
 tq
 tq
 tq
@@ -2773,9 +2779,9 @@ QB
 QB
 QB
 QB
-tq
-tq
-tq
+QB
+QB
+QB
 tq
 tq
 tq
@@ -2875,10 +2881,10 @@ QB
 QB
 QB
 QB
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -2978,10 +2984,10 @@ QB
 Qo
 Qo
 Qo
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -3080,10 +3086,10 @@ IB
 Qo
 Qo
 Qo
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -3184,8 +3190,8 @@ Qo
 Qo
 Qo
 Qo
-tq
-tq
+QB
+QB
 tq
 tq
 tq
@@ -4061,13 +4067,13 @@ QB
 QB
 QB
 QB
+IZ
 QB
 QB
 QB
 QB
-QB
-kP
-QB
+IZ
+IZ
 QB
 QB
 kP
@@ -4263,7 +4269,7 @@ tq
 tq
 QB
 QB
-QB
+IZ
 kP
 IB
 IB
@@ -4977,7 +4983,7 @@ tq
 tq
 QB
 QB
-QB
+IZ
 kP
 kP
 IB
@@ -5385,7 +5391,7 @@ tq
 tq
 QB
 QB
-QB
+IZ
 kP
 kP
 kP
@@ -9155,11 +9161,11 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
+kP
+kP
+kP
+kP
+kP
 kP
 kP
 kP
