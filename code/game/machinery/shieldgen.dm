@@ -600,6 +600,15 @@
 
 		drain_power(50)
 
+//Atmos shields suck more power
+/obj/machinery/shieldwall/atmos/process()
+	if(needs_power)
+		if(!gen_primary || !gen_primary.active || !gen_secondary || !gen_secondary.active)
+			qdel(src)
+			return
+
+		drain_power(250)
+
 /obj/machinery/shieldwall/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BURN)
@@ -643,11 +652,3 @@
 /obj/machinery/shieldwall/atmos/Initialize()
 	. = ..()
 	air_update_turf(TRUE)
-
-/obj/machinery/shieldwall/atmos/process()
-	if(needs_power)
-		if(!gen_primary || !gen_primary.active || !gen_secondary || !gen_secondary.active)
-			qdel(src)
-			return
-
-		drain_power(250)
