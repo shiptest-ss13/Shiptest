@@ -607,7 +607,7 @@
 			qdel(src)
 			return
 
-		drain_power(250)
+		drain_power(500)
 
 /obj/machinery/shieldwall/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
