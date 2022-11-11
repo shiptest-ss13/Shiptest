@@ -203,42 +203,42 @@
 
 /obj/structure/sign/poster/contraband/free_tonto
 	name = "Free Tonto"
-	desc = "A salvaged shred of a much larger flag, colors bled together and faded from age."
+	desc = "You're... not exactly sure what this is. In fact, nobody knows what it is, but its one of the few pieces of non-digital media that was found intact after the Night of Fire, making it a popular aesthetic, even if nobody knows what it is."
 	icon_state = "poster1"
 
 /obj/structure/sign/poster/contraband/atmosia_independence
 	name = "Atmosia Declaration of Independence"
-	desc = "A relic of a failed rebellion."
+	desc = "A relic of a failed rebellion on a Nanotrasen station, highly ridiculed due to the absurdity."
 	icon_state = "poster2"
 
 /obj/structure/sign/poster/contraband/fun_police
 	name = "Fun Police"
-	desc = "A poster condemning Nanotrasen's infamous corporate security forces."
+	desc = "A poster condemning Nanotrasen's corporate security forces about being the 'fun police.' The creator of this poster is currently in jail for 2 counts of manslaughter and 1 murder."
 	icon_state = "poster3"
 
 /obj/structure/sign/poster/contraband/lusty_xenomorph
 	name = "Lusty Xenomorph"
-	desc = "A heretical poster depicting the titular star of an equally heretical book."
-	icon_state = "poster4"
+	desc = "A heretical poster depicting the titular star of an equally heretical book. Wow, this would be extremely offensive to anyone in the CMM."
+	icon_state = "poster4" //i dont even know how to redo this one
 
 /obj/structure/sign/poster/contraband/syndicate_recruitment
 	name = "Syndicate Recruitment"
-	desc = "See the galaxy! Shatter corrupt megacorporations! Join today!"
+	desc = "A old poster urging people to join the ACLF for not only the right cause, but to explore the galaxy. This is probably outdated."
 	icon_state = "poster5"
 
 /obj/structure/sign/poster/contraband/clown
 	name = "Clown"
-	desc = "Honk."
+	desc = "A poster making fun of the 'clown planet incident' You almost cut yourself on the edge of this poster."
 	icon_state = "poster6"
 
 /obj/structure/sign/poster/contraband/smoke
 	name = "Smoke"
-	desc = "A poster advertising a rival corporate brand of cigarettes."
+	desc = "A poster advertising some brand of cigarettes."
 	icon_state = "poster7"
 
 /obj/structure/sign/poster/contraband/grey_tide
 	name = "Grey Tide"
-	desc = "A rebellious poster symbolizing assistant solidarity."
+	desc = "A rebellious poster symbolizing the grey horde."
 	icon_state = "poster8"
 
 /obj/structure/sign/poster/contraband/missing_gloves
@@ -248,12 +248,12 @@
 
 /obj/structure/sign/poster/contraband/hacking_guide
 	name = "Hacking Guide"
-	desc = "This poster details the internal workings of the common Nanotrasen airlock. Sadly, it appears out of date."
+	desc = "This poster details the internal workings of the common airlock. Sadly, it appears out of date."
 	icon_state = "poster10"
 
 /obj/structure/sign/poster/contraband/rip_badger
-	name = "RIP Badger"
-	desc = "This seditious poster references Nanotrasen's genocide of a space station full of badgers."
+	name = "RIP Badgers"
+	desc = "A advertisement for a documentary about how some animal called 'badgers' went extinct after the Night of Fire. What a dumb name for an animal."
 	icon_state = "poster11"
 
 /obj/structure/sign/poster/contraband/ambrosia_vulgaris
@@ -278,7 +278,7 @@
 
 /obj/structure/sign/poster/contraband/power
 	name = "Power"
-	desc = "A poster that positions the seat of power outside Nanotrasen."
+	desc = "A poster that details the dangerously unsafe power generation of the supermatter."
 	icon_state = "poster16"
 
 /obj/structure/sign/poster/contraband/space_cube
@@ -287,13 +287,13 @@
 	icon_state = "poster17"
 
 /obj/structure/sign/poster/contraband/communist_state
-	name = "Communist State"
-	desc = "All hail the Communist party!"
+	name = "GEC poster"
+	desc = "The logo of the good old Galactic Engineer's Concordat. The poster itself is pretty robust."
 	icon_state = "poster18"
 
 /obj/structure/sign/poster/contraband/lamarr
 	name = "Lamarr"
-	desc = "This poster depicts Lamarr. Probably made by a traitorous Research Director."
+	desc = "This poster details all the dangerous of xenofauna reproduction and how to safely avoid a infestation whenever possible."
 	icon_state = "poster19"
 
 /obj/structure/sign/poster/contraband/borg_fancy_1
@@ -307,19 +307,19 @@
 	icon_state = "poster21"
 
 /obj/structure/sign/poster/contraband/kss13
-	name = "Kosmicheskaya Stantsiya 13 Does Not Exist"
-	desc = "A poster mocking CentCom's denial of the existence of the derelict station near Space Station 13."
+	name = "Space Station 13 Does Not Exist"
+	desc = "A poster mocking CentCom's extreme cover and secrecy up of NTRSS-13, that was so extensive that not even CentCom knows what happened to it."
 	icon_state = "poster22"
 
 /obj/structure/sign/poster/contraband/rebels_unite
-	name = "Rebels Unite"
-	desc = "A poster urging the viewer to rebel against Nanotrasen."
+	name = "Engineers Unite!"
+	desc = "A poster sponsered by the Galactic Engineer's Concordat urging to vote YES to the formation of a  engineers union on NT Shipyard 22-A. That did not go well, leaving 233 dead."
 	icon_state = "poster23"
 
 /obj/structure/sign/poster/contraband/c20r
 	// have fun seeing this poster in "spawn 'c20r'", admins...
-	name = "C-20r"
-	desc = "A poster advertising the Scarborough Arms C-20r."
+	name = "Cobra 20"
+	desc = "A poster advertising the Scarborough Arms C-20r. It seems the company is trying to distance itself from the sydnicate by using the civillian name rather than the Gorelex name."
 	icon_state = "poster24"
 
 /obj/structure/sign/poster/contraband/have_a_puff
@@ -328,23 +328,23 @@
 	icon_state = "poster25"
 
 /obj/structure/sign/poster/contraband/revolver
-	name = "Revolver"
-	desc = "Because seven shots are all you need."
+	name = "Peacemaker"
+	desc = "A poster advertising the Hunter's Pride Peacemaker and .38 Caliber bullets."
 	icon_state = "poster26"
 
 /obj/structure/sign/poster/contraband/d_day_promo
 	name = "D-Day Promo"
-	desc = "A promotional poster for some rapper."
+	desc = "A promotional poster for a rapper. Famous for complaining about getting 'canceled' over supporting the syndicate, but in reality she was banned from almost every internet and organizion for prasing the nuclear attack on Ares IV, which killed over 96% of the population."
 	icon_state = "poster27"
 
 /obj/structure/sign/poster/contraband/syndicate_pistol
-	name = "Syndicate Pistol"
-	desc = "A poster advertising syndicate pistols as being 'classy as fuck'. It is covered in faded gang tags."
+	name = "Stechkin Pistol"
+	desc = "A poster advertising the Scarborough Arms Stechkin conealable pistol. It has a silencer attached, showing off the silencing capablities."
 	icon_state = "poster28"
 
 /obj/structure/sign/poster/contraband/energy_swords
 	name = "Energy Swords"
-	desc = "All the colors of the bloody murder rainbow."
+	desc = "All the colors of the favorite hardlight murder rainbows."
 	icon_state = "poster29"
 
 /obj/structure/sign/poster/contraband/red_rum
@@ -353,12 +353,12 @@
 	icon_state = "poster30"
 
 /obj/structure/sign/poster/contraband/cc64k_ad
-	name = "CC 64K Ad"
-	desc = "The latest portable computer from Comrade Computing, with a whole 64kB of ram!"
+	name = "Ntos V"
+	desc = "A advertisement for Ntos V. Unlike earlier iterations of the system, Nanotrasen has opted to update this version continously, instead of release a new version every so often, much to the dismay of older system users."
 	icon_state = "poster31"
 
 /obj/structure/sign/poster/contraband/punch_shit
-	name = "Punch Shit"
+	name = "Punch Shit!"
 	desc = "Fight things for no reason, like a man!"
 	icon_state = "poster32"
 
@@ -374,17 +374,17 @@
 
 /obj/structure/sign/poster/contraband/free_drone
 	name = "Free Drone"
-	desc = "This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CentCom."
+	desc = "This poster is advertising a seller selling a 'free syndidrone.' It is so obviously a scam."
 	icon_state = "poster35"
 
 /obj/structure/sign/poster/contraband/busty_backdoor_xeno_babes_6
 	name = "Busty Backdoor Xeno Babes 6"
-	desc = "Get a load, or give, of these all natural Xenos!"
+	desc = "Get a load, or give, of these all natural Xenos! Wow, this would be extremely offensive to anyone in the CMM."
 	icon_state = "poster36"
 
 /obj/structure/sign/poster/contraband/robust_softdrinks
-	name = "Robust Softdrinks"
-	desc = "Robust Softdrinks: More robust than a toolbox to the head!"
+	name = "Robustmore Drinkfoods"
+	desc = "The unholy merger between Robust Softdrinks and Getmore Chocoalate Corp: Twice the robust for half a toolbox!"
 	icon_state = "poster37"
 
 /obj/structure/sign/poster/contraband/shamblers_juice
@@ -418,30 +418,30 @@
 	icon_state = "poster43"
 
 /obj/structure/sign/poster/contraband/masked_men
-	name = "Masked Men"
-	desc = "A poster advertising a movie about some masked men."
+	name = "Bumba"
+	desc = "A poster advertising the movie 'bumba,' staring a mysterous group of masked men attempting to avenge their mentor, only to realize that the person who ordered their death lies at the top."
 	icon_state = "poster44"
 
 //annoyingly, poster45 is in another file.
 
 /obj/structure/sign/poster/contraband/free_key
-	name = "Free Syndicate Encryption Key"
-	desc = "A poster about traitors begging for more."
+	name = "Mini energy gun"
+	desc = "A poster advertising the new and technically impressive SL X-26. 'Power in a pocket!'"
 	icon_state = "poster46"
 
 /obj/structure/sign/poster/contraband/bountyhunters
-	name = "Bounty Hunters"
-	desc = "A poster advertising bounty hunting services. \"I hear you got a problem.\""
+	name = "Inteq Risk Management"
+	desc = "A poster advertising the IRMG's services. \"I hear you got a problem. You won't have one with us. No bullshit, guranteed.\""
 	icon_state = "poster47"
 
 /obj/structure/sign/poster/contraband/steppyflag
 	name = "Steppy Flag"
-	desc = "A poster making a simple statement: \"Fuck around, Find out.\" There's a tiny Cargonia logo in the bottom right."
+	desc = "A poster making a simple statement: \"Fuck around, Find out.\" These posters are suspiciously popular in the Northwind Shipping offices."
 	icon_state = "poster48"
 
 /obj/structure/sign/poster/contraband/syndicate
 	name = "Syndicate Logo"
-	desc = "A poster depicting the Syndicate logo. This probably shouldn't be anywhere near Nanotrasen stations."
+	desc = "A poster depicting the Syndicate logo. How times have changed."
 	icon_state = "poster-syndicate"
 
 //beginning of Nanotrasen approved posters. Expect propaganda and corprate motavation
@@ -506,10 +506,12 @@
 	desc = "A poster instructing the viewer to walk instead of running."
 	icon_state = "poster10_legit"
 
+/* said not to redo this
 /obj/structure/sign/poster/official/state_laws
 	name = "State Laws"
 	desc = "A poster instructing cyborgs to state their laws."
 	icon_state = "poster11_legit"
+*/
 
 /obj/structure/sign/poster/official/love_ian
 	name = "Love Ian"
@@ -518,7 +520,7 @@
 
 /obj/structure/sign/poster/official/space_cops
 	name = "Space Cops."
-	desc = "A poster advertising the television show Space Cops."
+	desc = "A poster advertising the television show that showcases all the hip and cool ways how the colonial police on Nagaski City abuse their power. Suprisingly effective in keeping the Nagaski City colonial police popular.."
 	icon_state = "poster13_legit"
 
 /obj/structure/sign/poster/official/ue_no
@@ -567,8 +569,8 @@
 	icon_state = "poster22_legit"
 
 /obj/structure/sign/poster/official/ion_rifle
-	name = "Ion Rifle"
-	desc = "A poster displaying an Ion Rifle."
+	name = "Ion Carbine"
+	desc = "A poster advertising the SL L-791 Carbine."
 	icon_state = "poster23_legit"
 
 /obj/structure/sign/poster/official/foam_force_ad
@@ -578,13 +580,15 @@
 
 /obj/structure/sign/poster/official/cohiba_robusto_ad
 	name = "Cohiba Robusto Ad"
-	desc = "Cohiba Robusto, the classy cigar."
+	desc = "Cohiba Robusto, the classy cigar straight from Centcom."
 	icon_state = "poster25_legit"
 
+/* unsure if to keep
 /obj/structure/sign/poster/official/anniversary_vintage_reprint
 	name = "50th Anniversary Vintage Reprint"
-	desc = "A reprint of a poster from 2505, commemorating the 50th Anniversary of Nanoposters Manufacturing, a subsidiary of Nanotrasen."
+	desc = "A reprint of a poster from 402, commemorating the 100th Anniversary of the DeForest Medical buyout."
 	icon_state = "poster26_legit"
+*/
 
 /obj/structure/sign/poster/official/fruit_bowl
 	name = "Fruit Bowl"
@@ -596,24 +600,25 @@
 	desc = "A poster advertising the latest PDA from Nanotrasen suppliers."
 	icon_state = "poster28_legit"
 
-/* /obj/structure/sign/poster/official/enlist
+/obj/structure/sign/poster/official/enlist
 	name = "Enlist" // but I thought deathsquad was never acknowledged
-	desc = "Enlist in the Nanotrasen Deathsquadron reserves today!"
-	icon_state = "poster29_legit" */ // I refuse to acknowledge this bullshit - Zeta
+	// desc = "Enlist in the Nanotrasen Deathsquadron reserves today!" // I refuse to acknowledge this bullshit - Zeta
+	desc = "A poster urging all across the NT umbrella to join the Nanotrasen Private Security forces, made specifically during the ICW. Someone probably forgot to take this down, or is a collectors item."
+	icon_state = "poster29_legit"
 
 /obj/structure/sign/poster/official/solgov_enlist //much better.
 	name = "Enlist"
-	desc = "Enlist to be a part of the SolGov Peacekeeping Operations today!"
+	desc = "Enlist to be a part of the SolGov Expeditionary Forces!... 400 years ago."
 	icon_state = "poster_solgov_enlist_legit"
 
 /obj/structure/sign/poster/official/nanomichi_ad
 	name = "Nanomichi Ad"
-	desc = " A poster advertising Nanomichi brand audio cassettes."
+	desc = " A poster advertising a early post-NOF solarian computer. Severly outdated, the poster is now a neat aesthetic for collectors nowdays."
 	icon_state = "poster30_legit"
 
 /obj/structure/sign/poster/official/twelve_gauge
 	name = "12 Gauge"
-	desc = "A poster boasting about the superiority of 12 gauge shotgun shells."
+	desc = "A poster advertising Hunter's Pride manufactored 12 gauge shells and shotguns."
 	icon_state = "poster31_legit"
 
 /obj/structure/sign/poster/official/high_class_martini
@@ -626,10 +631,12 @@
 	desc = "The Owl would do his best to protect the colonies. Will you?"
 	icon_state = "poster33_legit"
 
+/* TODO: BLACKLIST WHILE STILL  ALLOWING IT TO BE SPAWNED BY ADMINS
 /obj/structure/sign/poster/official/no_erp
 	name = "No ERP"
-	desc = "This poster reminds viewers that the 2102 Eroticism, Rape and Pornography act banned laviscious behavior throughout civilized space."
+	desc = "This poster reminds viewers to immediately stop what they are doing right now. Yes you. You know what you're doing."
 	icon_state = "poster34_legit"
+*/
 
 /obj/structure/sign/poster/official/wtf_is_co2
 	name = "Carbon Dioxide"
@@ -670,7 +677,7 @@
 
 /obj/structure/sign/poster/retro/we_watch
 	name = "We Watch"
-	desc = "Big Brother is always watching. It has a nice aesthetic."
+	desc = "Big Brother is always watching. But instead of controlling you, he's trying to get you to stop loitering. It has a nice aesthetic."
 	icon_state = "poster-watch_retro"
 
 /obj/structure/sign/poster/retro/build
@@ -689,7 +696,7 @@
 	icon_state = "poster-pda70_retro"
 /obj/structure/sign/poster/retro/lasergun
 	name = "Retro Laser Gun"
-	desc = "A poster advertising the retro laser gun, back when it was new and called the L-102. This thing is ancient."
+	desc = "A poster advertising the retro laser gun, back when it was new and called the L-104. This thing is ancient."
 	icon_state = "poster-l102_retro"
 
 /obj/structure/sign/poster/retro/lasergun_new
@@ -697,6 +704,7 @@
 	desc = "A poster advertising a older version of the L-704, the L-204 model. It has a nice aesthetic."
 	icon_state = "poster-newl204_retro"
 
+/* told to shelve these 2
 /obj/structure/sign/poster/retro/emag
 	name = "Cryptographic Sequencer"
 	desc = "A poster advertising a Nanotrasen beginner hacker tool. It was shelved due to not taking any skill to use. You wonder how it worked out for them. It has a nice aesthetic."
@@ -707,9 +715,11 @@
 	desc = "A poster advertising a teleportation alternative to bluespace. It was notable for not requiring massive machinery to use, and can even work in a handheld PDA. It was shelved due to high costs. It has a nice aesthetic."
 	icon_state = "poster-tc-retro"
 
+*/
+
 /obj/structure/sign/poster/retro/radio
 	name = "Radio"
-	desc = "A poster advertising one of Nanotrasen's earliest products, a radio. One of its main selling points was a integrated OS, and dual langauge support for Galactic Common, and Draconic, which made it a smash hit. This thing is ancient."
+	desc = "A poster advertising one of Nanotrasen's earliest products, a radio. One of its main selling points was a integrated OS and two automatic transloation for Galactic Common, and Draconic, which made it a smash hit. This thing is ancient."
 	icon_state = "poster-radio70_retro"
 
 //Safety moth posters, credit to AspEv for the art which the below posters are based on and to Ayy-Robotics for the sprites.
