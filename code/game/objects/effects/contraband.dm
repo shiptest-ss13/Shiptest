@@ -111,7 +111,11 @@
 		return
 	if(ruined)
 		return
-	visible_message("<span class='notice'>[user] rips [src] in a single, decisive motion!</span>" )
+	if(user.a_intent != INTENT_HARM)
+		to_chat(user, "<span class='danger'>You arent HARMFUL enough to rip the poster off the wall.</span>") //preventing accidental ripping posters off wall if not on harm intent
+		return
+
+	visible_message("<span class='danger'>[user] rips [src] in a single, decisive motion!</span>" )
 	playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
 
 	var/obj/structure/sign/poster/ripped/R = new(loc)
@@ -209,7 +213,7 @@
 
 /obj/structure/sign/poster/contraband/atmosia_independence
 	name = "Atmosia Declaration of Independence"
-	desc = "A relic of a failed rebellion on a Nanotrasen station, highly ridiculed due to the absurdity."
+	desc = "A relic of a failed rebellion on a Nanotrasen station, highly ridiculed due to the absurdity of it."
 	icon_state = "poster_independence"
 
 /obj/structure/sign/poster/contraband/fun_police
@@ -230,7 +234,7 @@
 /obj/structure/sign/poster/contraband/clown
 	name = "Clown"
 	desc = "A poster making fun of the 'clown planet incident' You almost cut yourself on the edge of this poster."
-	icon_state = "poster_clown"
+	icon_state = "poster_honk"
 
 /obj/structure/sign/poster/contraband/smoke
 	name = "Smoke"
@@ -250,7 +254,7 @@
 /obj/structure/sign/poster/contraband/hacking_guide
 	name = "Hacking Guide"
 	desc = "This poster details the internal workings of the common airlock. Sadly, it appears out of date."
-	icon_state = "poster10"
+	icon_state = "poster_airlock_hack"
 
 /obj/structure/sign/poster/contraband/rip_badger
 	name = "RIP Badgers"
@@ -287,12 +291,12 @@
 	desc = "Ignorant of Nature's Harmonic 6 Side Space Cube Creation, the Spacemen are Dumb, Educated Singularity Stupid and Evil."
 	icon_state = "poster_cube"
 
-/obj/structure/sign/poster/contraband/communist_state
+/obj/structure/sign/poster/contraband/gec
 	name = "GEC poster"
 	desc = "The logo of the good old Galactic Engineer's Concordat. The poster itself is pretty robust."
 	icon_state = "poster_gec"
 
-/obj/structure/sign/poster/contraband/lamarr
+/obj/structure/sign/poster/contraband/xenofauna_parasite
 	name = "Xenofauna parasite"
 	desc = "This poster details all the dangers of xenofauna infestation and how to avoid a infestation whenever possible."
 	icon_state = "poster_facehugger"
@@ -307,12 +311,12 @@
 	desc = "Borg Fancy, Now only taking the most fancy."
 	icon_state = "poster_fancy_borg"
 
-/obj/structure/sign/poster/contraband/kss13
+/obj/structure/sign/poster/contraband/ss13
 	name = "Space Station 13 Does Not Exist"
 	desc = "A poster mocking CentCom's extreme cover and secrecy up of NTRSS-13, that was so extensive that not even CentCom themselves knows what happened to it."
 	icon_state = "poster_ss13"
 
-/obj/structure/sign/poster/contraband/rebels_unite
+/obj/structure/sign/poster/contraband/engis_unite
 	name = "Engineers Unite!"
 	desc = "A poster sponsered by the Galactic Engineer's Concordat urging to vote YES to the formation of a engineers union on NT Shipyard 22-A."
 	icon_state = "poster_unite"
@@ -328,17 +332,17 @@
 	desc = "Who cares about lung cancer when you're high as a kite?"
 	icon_state = "poster_puff"
 
-/obj/structure/sign/poster/contraband/revolver
+/obj/structure/sign/poster/contraband/peacemaker
 	name = "Peacemaker"
 	desc = "A poster advertising the Hunter's Pride Peacemaker and .38 Caliber bullets."
 	icon_state = "poster_peacemaker"
 
 /obj/structure/sign/poster/contraband/d_day_promo
 	name = "D-Day Promo"
-	desc = "A promotional poster for some rapper. Famous for complaining about getting 'canceled' over supporting the syndicate, but in reality she was banned from almost every internet and organizion for praising the nuclear attack on Ares IV, which killed over 96% of the population."
-	icon_state = "poster_dday"
+	desc = "A promotional poster for some rapper. Famous for complaining about getting 'canceled' over supporting the syndicate, but in reality she was banned from almost every internet and organizion for praising the nuclear attack on Ares IV, which killed over 96% of the population of said world."
+	icon_state = "poster_dday" // human sprite by quin
 
-/obj/structure/sign/poster/contraband/syndicate_pistol
+/obj/structure/sign/poster/contraband/stechkin
 	name = "Stechkin Pistol"
 	desc = "A poster advertising the Scarborough Arms Stechkin conealable pistol. It has a silencer attached, showing off the stealth capablities, while also looking badass as all hell."
 	icon_state = "poster_stechkin"
@@ -353,7 +357,7 @@
 	desc = "Looking at this poster makes you want to kill."
 	icon_state = "poster_red_rum"
 
-/obj/structure/sign/poster/contraband/cc64k_ad
+/obj/structure/sign/poster/contraband/ntos
 	name = "Ntos V"
 	desc = "A advertisement for Ntos V. Unlike earlier iterations of the system, Nanotrasen has opted to update this version continously, instead of release a new version every so often, much to the dismay of older system users."
 	icon_state = "poster_ntos"
@@ -368,7 +372,7 @@
 	desc = "The Griffin commands you to be the worst you can be. Will you?"
 	icon_state = "poster_griffin"
 
-/obj/structure/sign/poster/contraband/lizard
+/obj/structure/sign/poster/contraband/pgf
 	name = "PGF Marine"
 	desc = "This poster depicts a PGF marine with a E-40. \"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\""
 	icon_state = "poster_pgf"
@@ -378,12 +382,12 @@
 	desc = "This poster is advertising a seller selling a free syndidrone. It is so obviously a scam."
 	icon_state = "poster_free_drone"
 
-/obj/structure/sign/poster/contraband/busty_backdoor_xeno_babes_6
+/obj/structure/sign/poster/contraband/backdoor_xeno_babes_6
 	name = "Backdoor Xeno Babes 6"
 	desc = "... You don't even know where to start with this. Wow, this would be extremely offensive to anyone in the CMM."
 	icon_state = "poster_xeno_maid"
 
-/obj/structure/sign/poster/contraband/robust_softdrinks
+/obj/structure/sign/poster/contraband/robustmore_drinkfoods
 	name = "Robustmore Drinkfoods"
 	desc = "The unholy merger between Robust Softdrinks and Getmore Chocoalate Corp: Twice the robust for half a toolbox!"
 	icon_state = "poster_robustmore"
@@ -423,15 +427,15 @@
 	desc = "A poster advertising the movie 'Bumba,' staring a mysterous group of masked men attempting to avenge their mentor, only to uncover a conspiracy all the way to the top."
 	icon_state = "poster_bumba"
 
-/obj/structure/sign/poster/contraband/free_key
-	name = "Mini energy gun"
-	desc = "A poster advertising the new and technically impressive SL X-26. 'Power in a pocket!'"
-	icon_state = "poster_x26"
-
-/obj/structure/sign/poster/contraband/bountyhunters
+/obj/structure/sign/poster/contraband/inteq
 	name = "Inteq Risk Management"
 	desc = "A poster advertising the IRMG's services. \"I hear you got a problem. You won't have one with us. No bullshit, guranteed.\""
 	icon_state = "poster_inteq"
+
+/obj/structure/sign/poster/contraband/space_cops
+	name = "Space Cops."
+	desc = "A poster advertising the television show that showcases all the hip and cool ways how the colonial police on Nagaski City abuse their power. Suprisingly effective in keeping the Nagaski City colonial police popular."
+	icon_state = "poster_spacecops"
 
 /obj/structure/sign/poster/contraband/steppyflag
 	name = "Steppy Flag"
@@ -510,11 +514,6 @@
 	desc = "Ian is love, Ian is life."
 	icon_state = "poster_love_ian"
 
-/obj/structure/sign/poster/official/space_cops
-	name = "Space Cops."
-	desc = "A poster advertising the television show that showcases all the hip and cool ways how the colonial police on Nagaski City abuse their power. Suprisingly effective in keeping the Nagaski City colonial police popular."
-	icon_state = "poster_spacecops"
-
 /obj/structure/sign/poster/official/ue_no
 	name = "Ue No."
 	desc = "This thing is all in a foreign language."
@@ -560,7 +559,7 @@
 	desc = "A poster encouraging the swift reporting of crime or seditious behavior to security personnel."
 	icon_state = "poster_report_crimes"
 
-/obj/structure/sign/poster/official/ion_rifle
+/obj/structure/sign/poster/official/ion_carbine
 	name = "Ion Carbine"
 	desc = "A poster advertising the SL L-791 Carbine."
 	icon_state = "poster_l791"
@@ -584,6 +583,11 @@
 	name = "PDA Ad"
 	desc = "A poster advertising the latest PDA from Nanotrasen suppliers."
 	icon_state = "poster_pda"
+
+/obj/structure/sign/poster/official/mini_energy_gun
+	name = "Mini energy gun"
+	desc = "A poster advertising the new and technically impressive SL X-26. 'Power in a pocket!'"
+	icon_state = "poster_x26"
 
 /obj/structure/sign/poster/official/enlist
 	name = "Enlist" // but I thought deathsquad was never acknowledged
@@ -620,7 +624,7 @@
 	name = "No ERP"
 	desc = "This poster reminds viewers to immediately stop what they are doing right now. Yes, you. You know what you're doing."
 	icon_state = "poster_noerp"
-	never_random = TRUE //removes from the random  poster pool, effectively disabling it
+	never_random = TRUE //removes from the random  poster pool, effectively admin onlying it
 
 /obj/structure/sign/poster/official/wtf_is_co2
 	name = "Carbon Dioxide"
@@ -676,8 +680,9 @@
 
 /obj/structure/sign/poster/retro/pdaancient
 	name = "PDA Ad"
-	desc = "A poster advertising the original Thinkitronic PDA after it was aquired by Nanotrasen. This thing shipped with severe problems such as PDA message 'bombing' and memory errors. Despite this, it's fondly remembered. This thing is ancient."
+	desc = "A poster advertising the original Thinkitronic PDA after the company was aquired by Nanotrasen. This thing shipped with severe problems such as PDA message 'bombing' and memory errors. Despite this, it's fondly remembered. This thing is ancient."
 	icon_state = "poster-pda70_retro"
+
 /obj/structure/sign/poster/retro/lasergun
 	name = "Retro Laser Gun"
 	desc = "A poster advertising the retro laser gun, back when it was new and called the L-104. This thing is ancient."
@@ -687,19 +692,6 @@
 	name = "Old Laser Gun"
 	desc = "A poster advertising a older version of the L-704, the L-204 model. It has a nice aesthetic."
 	icon_state = "poster-newl204_retro"
-
-/* told to shelve these 2
-/obj/structure/sign/poster/retro/emag
-	name = "Cryptographic Sequencer"
-	desc = "A poster advertising a Nanotrasen beginner hacker tool. It was shelved due to not taking any skill to use. You wonder how it worked out for them. It has a nice aesthetic."
-	icon_state = "poster-emag_retro"
-
-/obj/structure/sign/poster/retro/telecrystal
-	name = "Telecrystals"
-	desc = "A poster advertising a teleportation alternative to bluespace. It was notable for not requiring massive machinery to use, and can even work in a handheld PDA. It was shelved due to high costs. It has a nice aesthetic."
-	icon_state = "poster-tc-retro"
-
-*/
 
 /obj/structure/sign/poster/retro/radio
 	name = "Radio"
