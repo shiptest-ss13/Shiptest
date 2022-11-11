@@ -368,8 +368,8 @@
 	icon_state = "poster33"
 
 /obj/structure/sign/poster/contraband/lizard
-	name = "lizard"
-	desc = "This lewd poster depicts a lizard preparing to mate."
+	name = "PGF Marine"
+	desc = "This poster depicts a PGF marine with a E-40.\"The Pan-Gezena Federation fights for not only YOUR freedom, but the freedom of the whole galaxy!\" Not exactly the most original propaganda."
 	icon_state = "poster34"
 
 /obj/structure/sign/poster/contraband/free_drone
