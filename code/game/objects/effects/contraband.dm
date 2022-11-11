@@ -57,7 +57,8 @@
 	anchored = TRUE
 	var/ruined = FALSE
 	var/random_basetype
-	var/never_random = FALSE // used for the 'random' subclasses.
+	/// Do we want to never appear in the random poster pool? Used in the random subtype to prevent infinite loops of random posters, and the NO ERP poster to make it effectively admin only.
+	var/never_random = FALSE
 
 	var/poster_item_name = "hypothetical poster"
 	var/poster_item_desc = "This hypothetical poster item should not exist, let's be honest here."
@@ -583,13 +584,6 @@
 	desc = "Cohiba Robusto, the classy cigar straight from Centcom."
 	icon_state = "poster25_legit"
 
-/* unsure if to keep
-/obj/structure/sign/poster/official/anniversary_vintage_reprint
-	name = "50th Anniversary Vintage Reprint"
-	desc = "A reprint of a poster from 402, commemorating the 100th Anniversary of the DeForest Medical buyout."
-	icon_state = "poster26_legit"
-*/
-
 /obj/structure/sign/poster/official/fruit_bowl
 	name = "Fruit Bowl"
 	desc = " Simple, yet awe-inspiring."
@@ -613,7 +607,7 @@
 
 /obj/structure/sign/poster/official/nanomichi_ad
 	name = "Nanomichi Ad"
-	desc = " A poster advertising a early post-NOF solarian computer. Severly outdated, the poster is now a neat aesthetic for collectors nowdays."
+	desc = " A poster advertising a early post-NOF solarian computer. Severly outdated, but the advert is now a pretty nifty decoration."
 	icon_state = "poster30_legit"
 
 /obj/structure/sign/poster/official/twelve_gauge
@@ -631,12 +625,11 @@
 	desc = "The Owl would do his best to protect the colonies. Will you?"
 	icon_state = "poster33_legit"
 
-/* TODO: BLACKLIST WHILE STILL  ALLOWING IT TO BE SPAWNED BY ADMINS
 /obj/structure/sign/poster/official/no_erp
 	name = "No ERP"
-	desc = "This poster reminds viewers to immediately stop what they are doing right now. Yes you. You know what you're doing."
+	desc = "This poster reminds viewers to immediately stop what they are doing right now. Yes, you. You know what you're doing."
 	icon_state = "poster34_legit"
-*/
+	never_random = TRUE
 
 /obj/structure/sign/poster/official/wtf_is_co2
 	name = "Carbon Dioxide"
