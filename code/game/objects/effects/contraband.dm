@@ -258,7 +258,7 @@
 
 /obj/structure/sign/poster/contraband/rip_badger
 	name = "RIP Badgers"
-	desc = "A advertisement for a documentary about how some animal called 'badgers' went extinct after the Night of Fire. What a dumb name for an animal."
+	desc = "A advertisement for a documentary about how some animal called 'badgers' went extinct after the Night of Fire."
 	icon_state = "poster_rip_badgers"
 
 /obj/structure/sign/poster/contraband/ambrosia_vulgaris
