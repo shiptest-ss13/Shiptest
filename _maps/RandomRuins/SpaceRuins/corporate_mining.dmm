@@ -301,6 +301,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/item/reagent_containers/food/snacks/donkpocket,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "hH" = (
@@ -705,6 +706,9 @@
 /obj/structure/closet/cabinet,
 /obj/item/gun/ballistic/automatic/pistol/suppressed,
 /obj/item/ammo_box/magazine/m10mm,
+/obj/item/clothing/under/syndicate/donk,
+/obj/item/clothing/suit/hazardvest/donk/qm,
+/obj/item/reagent_containers/food/snacks/donkpocket,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "ra" = (
@@ -831,6 +835,8 @@
 "tp" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/hall)
 "tq" = (
@@ -1237,6 +1243,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/donk{
+	pixel_y = 32
+	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "Dp" = (
