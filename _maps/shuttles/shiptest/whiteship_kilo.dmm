@@ -1722,15 +1722,15 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/rack,
 /obj/item/storage/toolbox/emergency,
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
 	pixel_x = 25
 	},
 /obj/item/circuitboard/machine/ore_redemption,
 /obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/open/floor/plating,
