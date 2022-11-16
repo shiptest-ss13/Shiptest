@@ -549,3 +549,33 @@
 	name = "Syndicate Laboratory 4071 Surrounding Area"
 	icon_state = "dk_yellow"
 	color = "#26773a88"
+
+//Singularity Lab
+
+/area/ruin/space/has_grav/singularitylab
+	name = "Asteroid Halls"
+	icon_state = "hallc"
+
+/area/ruin/space/has_grav/singularitylab/reactor
+	name = "Singularity Reactor"
+	icon_state = "engine"
+
+/area/ruin/space/has_grav/singularitylab/engineering
+	name = "Asteroid Engineering"
+	icon_state = "blue"
+
+/area/ruin/space/has_grav/singularitylab/lab
+	name = "High Energy Applications Research Facility"
+	icon_state = "green"
+
+area/ruin/space/has_grav/singularitylab/cargo
+	name = "Asteroid Cargo"
+	icon_state = "brown"
+
+/area/ruin/space/has_grav/singularitylab/hangar
+	name = "Asteroid Hangar"
+	icon_state = "yellow"
+
+/area/ruin/space/has_grav/singularitylab/civvie
+	name = "Asteroid Housing"
+	icon_state = "sleep"
