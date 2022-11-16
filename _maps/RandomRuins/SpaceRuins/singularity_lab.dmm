@@ -1,4 +1,126 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ai" = (
+/obj/machinery/seed_extractor,
+/turf/open/floor/plating,
+/area/space)
+"aq" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"aw" = (
+/obj/structure/spacevine/dense,
+/obj/machinery/power/floodlight,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"aC" = (
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 1
+	},
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid,
+/area/space)
+"aD" = (
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/obj/effect/turf_decal/siding/thinplating,
+/turf/open/floor/plasteel,
+/area/space)
+"aK" = (
+/obj/machinery/power/smes,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"aL" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"aO" = (
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"aQ" = (
+/obj/structure/transit_tube/diagonal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"be" = (
+/obj/structure/cable{
+	icon_state = "5-6"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"bi" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"bk" = (
+/obj/structure/closet/secure_closet/freezer/kitchen,
+/turf/open/floor/plasteel/freezer,
+/area/space)
+"bo" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"bu" = (
+/obj/machinery/porta_turret,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
+"bv" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
+/turf/open/floor/plating/asteroid,
+/area/space)
+"by" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "bA" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -6,13 +128,30 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "bM" = (
-/obj/structure/sign/warning/radiation{
-	pixel_x = 32
+/obj/structure/transit_tube/diagonal,
+/obj/structure/cable{
+	icon_state = "5-10"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/asteroid,
+/area/space)
+"cb" = (
+/obj/structure/transit_tube,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/space)
+"cg" = (
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/turf/open/floor/plating/asteroid/airless,
 /area/space)
 "cl" = (
 /obj/structure/lattice/catwalk,
@@ -21,12 +160,55 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/space)
+"cw" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plating,
+/area/space)
+"cz" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Engine Control"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"cB" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"cD" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
 "cE" = (
 /obj/structure/table,
 /turf/open/floor/plasteel,
 /area/space)
 "cG" = (
 /obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/space)
 "cH" = (
@@ -47,7 +229,33 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-6"
 	},
+/turf/open/floor/plating/airless,
+/area/space)
+"dg" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"dk" = (
+/obj/machinery/door/airlock/vault{
+	name = "Vault"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plating,
+/area/space)
+"dn" = (
+/obj/effect/turf_decal/siding/thinplating,
+/turf/open/floor/plasteel,
+/area/space)
+"du" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "dG" = (
 /obj/structure/cable/yellow{
@@ -55,17 +263,89 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/space)
+"dL" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"dQ" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/turf/open/floor/plasteel,
+/area/space)
 "dT" = (
 /obj/machinery/door/poddoor{
 	id = "singlabhanger"
 	},
 /turf/open/space/basic,
 /area/space)
+"dX" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/stairs,
+/area/space)
+"dY" = (
+/turf/open/floor/holofloor/wood,
+/area/space)
+"ed" = (
+/obj/machinery/door/airlock{
+	name = "Barracks"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"em" = (
+/obj/machinery/mineral/processing_unit_console{
+	pixel_x = -32;
+	pixel_y = -4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"er" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/structure/table/wood/fancy/green,
+/obj/structure/fluff/beach_umbrella{
+	pixel_y = 16;
+	pixel_x = -5
+	},
+/turf/open/floor/wood,
+/area/space)
+"es" = (
+/obj/structure/transit_tube/curved/flipped{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/space)
+"ez" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood,
+/area/space)
 "eA" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/space)
 "eF" = (
 /obj/structure/cable/yellow{
@@ -77,10 +357,107 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"eH" = (
+/obj/structure/transit_tube/crossing,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/space)
+"eO" = (
+/obj/structure/table/wood,
+/turf/open/floor/plasteel,
+/area/space)
+"eP" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Laundromat"
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "eU" = (
 /turf/open/floor/plasteel/stairs,
+/area/space)
+"fa" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"fb" = (
+/obj/item/flashlight/seclite,
+/turf/open/floor/plating/asteroid,
+/area/space)
+"fd" = (
+/obj/effect/turf_decal/corner/transparent/orange/border,
+/obj/effect/turf_decal/corner/transparent/orange/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"fe" = (
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"fo" = (
+/obj/structure/transit_tube/curved/flipped{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/space)
+"ft" = (
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 8
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"fv" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
+"fw" = (
+/obj/effect/turf_decal/industrial/warning/corner,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"fF" = (
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"fU" = (
+/obj/structure/table,
+/turf/closed/mineral/random/asteroid,
+/area/space)
+"fX" = (
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "gi" = (
 /obj/structure/cable/yellow{
@@ -88,14 +465,108 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
-"gO" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Engine Control"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+"gs" = (
+/obj/machinery/conveyor{
+	id = "singlabfurn"
 	},
 /turf/open/floor/plating,
+/area/space)
+"gx" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"gA" = (
+/obj/machinery/porta_turret,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space)
+"gI" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"gM" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/space)
+"gO" = (
+/obj/structure/bed,
+/obj/item/bedsheet/black,
+/turf/open/floor/wood,
+/area/space)
+"gQ" = (
+/obj/machinery/hydroponics/constructable,
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
+"gZ" = (
+/obj/item/gun/energy/lasercannon/unrestricted,
+/obj/effect/decal/remains/human,
+/obj/item/clothing/under/rank/rnd/scientist,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/effect/gibspawner,
+/turf/open/floor/plating/asteroid,
+/area/space)
+"ha" = (
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"hi" = (
+/obj/item/gun/energy/ionrifle/carbine{
+	pixel_y = 5;
+	pixel_x = 2;
+	name = "ion projector";
+	desc = "The Ion Projector is contained within a sleek metal case. Engraved on the handle are the letters S.H. The stock is warm to the touch";
+	selfcharge = 1
+	},
+/obj/item/screwdriver{
+	pixel_y = -6
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/plating,
+/area/space)
+"hl" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/space)
+"ho" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Testing Lab"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"hy" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plating/asteroid/airless,
 /area/space)
 "hK" = (
 /obj/structure/cable/yellow{
@@ -107,13 +578,28 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "hO" = (
 /obj/structure/particle_accelerator/particle_emitter/left{
 	dir = 4
 	},
 /turf/open/floor/engine,
+/area/space)
+"hP" = (
+/obj/structure/filingcabinet,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"hT" = (
+/obj/machinery/plantgenes/seedvault{
+	pixel_y = 8
+	},
+/obj/structure/table/wood,
+/turf/open/floor/plating,
 /area/space)
 "hX" = (
 /obj/structure/cable{
@@ -124,11 +610,79 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"hY" = (
+/obj/machinery/door/poddoor{
+	id = "singlabcargo2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"ia" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space)
+"ib" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"ie" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/turf/open/floor/plasteel,
+/area/space)
 "ig" = (
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable/yellow{
 	icon_state = "0-5"
 	},
+/turf/open/floor/plating/airless,
+/area/space)
+"ij" = (
+/obj/structure/railing{
+	dir = 1;
+	pixel_x = -3
+	},
+/obj/structure/railing{
+	pixel_x = -3
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/stairs{
+	dir = 4
+	},
+/area/space)
+"ip" = (
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/space)
+"iB" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"iF" = (
+/obj/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
 /area/space)
 "iL" = (
@@ -138,13 +692,176 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"iQ" = (
+/obj/structure/transit_tube/curved,
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/turf/open/floor/engine,
+/area/space)
+"jj" = (
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"jt" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"jy" = (
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"jC" = (
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 4
+	},
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
 /area/space)
 "jE" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-9"
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"jI" = (
+/obj/structure/transit_tube/station/dispenser{
+	dir = 4
+	},
+/obj/structure/railing/corner{
+	pixel_y = 2;
+	pixel_x = -3
+	},
+/obj/structure/railing/corner{
+	pixel_y = 23;
+	pixel_x = -3
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/space)
+"jK" = (
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /turf/open/floor/plating,
+/area/space)
+"jL" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"jM" = (
+/obj/structure/cable{
+	icon_state = "9-10"
+	},
+/turf/open/floor/plating,
+/area/space)
+"kb" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/stand_clear,
+/turf/open/floor/plating/airless,
+/area/space)
+"ke" = (
+/obj/machinery/door/airlock/freezer{
+	name = "Freezer"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"km" = (
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/plating,
+/area/space)
+"kn" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"ko" = (
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 1
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"kx" = (
+/obj/machinery/conveyor{
+	id = "singlabfurn";
+	dir = 8
+	},
+/obj/structure/railing,
+/obj/structure/railing{
+	pixel_y = 32
+	},
+/turf/open/space/basic,
+/turf/open/floor/plating,
+/area/space)
+"ky" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/structure/window/reinforced/tinted/frosted,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"kA" = (
+/obj/structure/cable{
+	icon_state = "5-6"
+	},
+/obj/machinery/door/airlock/atmos{
+	name = "Atmospherics"
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "kD" = (
 /obj/structure/window/plasma/reinforced{
@@ -152,8 +869,44 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"kG" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/retaliate/clown/longface{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/space)
+"kI" = (
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
+/area/space)
+"kK" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/holofloor/wood,
+/area/space)
 "kP" = (
 /turf/open/floor/plating/asteroid/airless,
+/area/space)
+"kX" = (
+/obj/effect/decal/remains/human,
+/obj/item/clothing/under/rank/rnd/scientist,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/effect/gibspawner,
+/turf/open/floor/plating/asteroid,
+/area/space)
+"lj" = (
+/obj/machinery/conveyor{
+	id = "singlabfurn";
+	dir = 8
+	},
+/obj/structure/railing,
+/turf/open/space/basic,
+/turf/open/floor/plating,
 /area/space)
 "lm" = (
 /obj/structure/cable/yellow{
@@ -162,16 +915,104 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"ls" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"lu" = (
+/obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
+/area/space)
+"lv" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/door/airlock/science{
+	name = "High Energy Applications Research Facility"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"lz" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"lI" = (
+/obj/structure/transit_tube/curved/flipped,
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plating/asteroid,
+/area/space)
+"lJ" = (
+/obj/structure/transit_tube/crossing/horizontal,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/engine,
 /area/space)
 "lK" = (
 /turf/closed/wall/r_wall,
+/area/space)
+"lM" = (
+/obj/structure/transit_tube/station/dispenser{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/space)
+"mn" = (
+/obj/machinery/door/airlock{
+	name = "Bedroom"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "ms" = (
 /obj/structure/sign/warning/radiation{
 	pixel_x = 32
 	},
 /obj/structure/tank_dispenser/oxygen,
+/obj/effect/turf_decal/corner/transparent/orange/border,
+/obj/effect/turf_decal/corner/transparent/orange/border{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/space)
 "mt" = (
@@ -181,34 +1022,352 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/space)
-"nm" = (
-/obj/machinery/the_singularitygen,
+"mB" = (
+/obj/effect/turf_decal/corner/transparent/orange/border{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/orange/border,
+/turf/open/floor/plasteel,
+/area/space)
+"mC" = (
+/obj/structure/transit_tube,
+/obj/structure/plasticflaps/opaque{
+	layer = 3
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/space)
-"no" = (
+"mI" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/vending/tool,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"mJ" = (
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 8
+	},
+/obj/structure/flippedtable,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"mU" = (
 /obj/structure/table,
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = 7;
+	pixel_x = -4;
+	id = "singblast2";
+	name = "Testing Chamber Control"
+	},
+/turf/open/floor/plating,
+/area/space)
+"mY" = (
+/obj/structure/railing{
+	dir = 4;
+	pixel_y = 6
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"nk" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"nm" = (
+/obj/machinery/the_singularitygen,
+/turf/open/floor/plating/airless,
+/area/space)
+"no" = (
+/obj/machinery/mineral/processing_unit_console{
+	pixel_x = -32;
+	pixel_y = -4
+	},
+/obj/structure/railing,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"nq" = (
+/obj/item/clothing/suit/space/hardsuit/engine,
+/obj/item/flamethrower/full,
+/obj/effect/decal/remains/human,
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
+"nu" = (
+/obj/machinery/field/generator/anchored,
+/obj/effect/turf_decal/industrial/warning/cee{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"nB" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 8
+	},
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
+"nC" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"nE" = (
+/obj/machinery/mineral/unloading_machine,
 /turf/open/floor/plating,
 /area/space)
 "nJ" = (
 /obj/machinery/rnd/server,
 /turf/open/floor/plating,
 /area/space)
+"og" = (
+/obj/structure/transit_tube/curved{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plating/asteroid,
+/area/space)
+"ou" = (
+/obj/effect/decal/remains/human,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/item/clothing/under/rank/rnd/scientist,
+/obj/item/gun/energy/e_gun/iot,
+/obj/item/flashlight/seclite,
+/obj/effect/gibspawner,
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
+"oC" = (
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"oE" = (
+/obj/machinery/ore_silo,
+/turf/open/floor/plating,
+/area/space)
+"oJ" = (
+/obj/structure/bed,
+/obj/item/bedsheet/cosmos,
+/turf/open/floor/wood,
+/area/space)
+"oN" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
 "oR" = (
 /obj/machinery/field/generator/anchored,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning/cee{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"oV" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/structure/table/wood/fancy/blue,
+/obj/structure/fluff/beach_umbrella{
+	pixel_y = 16;
+	pixel_x = -5
+	},
+/turf/open/floor/wood,
 /area/space)
 "pf" = (
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/space)
 "ph" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
 /turf/open/floor/engine/hull/reinforced,
+/area/space)
+"pi" = (
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/holofloor/wood,
+/area/space)
+"pk" = (
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/space)
+"pq" = (
+/turf/open/floor/wood,
+/area/space)
+"pv" = (
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
+"px" = (
+/obj/item/tank/internals/oxygen,
+/turf/open/floor/plasteel,
+/area/space)
+"pC" = (
+/obj/structure/rack,
+/turf/open/floor/plating,
+/area/space)
+"pY" = (
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/turf/open/floor/plasteel,
+/area/space)
+"qg" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/structure/table/wood/fancy/cyan,
+/obj/structure/fluff/beach_umbrella{
+	pixel_y = 16;
+	pixel_x = -5
+	},
+/turf/open/floor/wood,
+/area/space)
+"qk" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/engine,
+/area/space)
+"qm" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/space)
+"qq" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-6"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"qF" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/space)
+"qL" = (
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 10
+	},
+/obj/structure/railing/corner,
+/turf/open/floor/plasteel,
+/area/space)
+"qT" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"ra" = (
+/obj/structure/transit_tube/station/dispenser{
+	dir = 4
+	},
+/obj/structure/railing/corner{
+	pixel_y = 2;
+	pixel_x = -3
+	},
+/obj/structure/railing/corner{
+	pixel_y = 23;
+	pixel_x = -3
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/space)
+"rg" = (
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"rh" = (
+/obj/item/seeds/kudzu,
+/obj/structure/sign/poster/contraband/kudzu{
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
+"rj" = (
+/obj/structure/chair,
+/turf/open/floor/plasteel,
 /area/space)
 "rl" = (
 /obj/structure/cable/yellow{
@@ -223,8 +1382,9 @@
 /turf/open/floor/engine,
 /area/space)
 "ru" = (
-/obj/machinery/suit_storage_unit/inherit,
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/box,
+/obj/machinery/suit_storage_unit/open,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "rw" = (
 /obj/structure/lattice/catwalk,
@@ -233,27 +1393,155 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/space)
+"rD" = (
+/obj/structure/curtain/cloth/grey,
+/turf/open/floor/plating,
+/area/space)
+"rN" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"sa" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/space)
+"sf" = (
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine,
+/obj/machinery/vending/wardrobe/chef_wardrobe,
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
+"sk" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"sA" = (
+/obj/machinery/conveyor{
+	id = "singlabfurn"
+	},
+/turf/open/space/basic,
+/turf/open/floor/plating,
+/area/space)
 "sB" = (
 /obj/machinery/computer/monitor{
 	name = "input power monitoring console"
 	},
 /obj/structure/cable/yellow,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"sM" = (
+/obj/structure/closet/secure_closet/hydroponics,
 /turf/open/floor/plating,
+/area/space)
+"sV" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"sX" = (
+/obj/machinery/conveyor{
+	id = "singlabcarg"
+	},
+/obj/machinery/door/poddoor{
+	id = "singlabcargo1"
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
+"th" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "tq" = (
 /turf/open/space/basic,
+/area/space)
+"tz" = (
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating,
+/turf/open/floor/plasteel,
 /area/space)
 "tO" = (
 /obj/machinery/power/emitter{
 	dir = 1
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/space)
 "uh" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
 /turf/open/floor/engine/hull/reinforced,
+/area/space)
+"un" = (
+/turf/open/floor/plasteel/freezer,
+/area/space)
+"us" = (
+/obj/structure/transit_tube,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid,
+/area/space)
+"ut" = (
+/obj/structure/transit_tube/curved/flipped{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/engine,
+/area/space)
+"uB" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"uF" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "uP" = (
 /obj/structure/cable/yellow{
@@ -268,10 +1556,87 @@
 "uW" = (
 /turf/open/floor/plasteel,
 /area/space)
+"uY" = (
+/obj/item/flamethrower/full,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
 "vc" = (
 /obj/machinery/computer/monitor,
 /obj/structure/cable,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"ve" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
+"vu" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/turf/open/floor/holofloor/wood,
+/area/space)
+"vw" = (
+/obj/effect/turf_decal/siding/thinplating/corner,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"vy" = (
+/obj/machinery/door/airlock/security{
+	name = "Front Office"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"vE" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"vI" = (
+/obj/machinery/processor,
+/turf/open/floor/wood,
+/area/space)
+"vK" = (
+/obj/machinery/biogenerator,
 /turf/open/floor/plating,
+/area/space)
+"vT" = (
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"vZ" = (
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine,
+/obj/machinery/vending/dinnerware,
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
 /area/space)
 "wk" = (
 /obj/structure/cable/yellow{
@@ -279,11 +1644,139 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/space)
+"wp" = (
+/obj/structure/transit_tube/horizontal,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/engine,
+/area/space)
+"wr" = (
+/obj/item/pickaxe/rusted,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"wO" = (
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"wR" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"wW" = (
+/obj/structure/railing{
+	dir = 4;
+	pixel_y = -6
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"xa" = (
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 4
+	},
+/obj/structure/chair/stool/bar{
+	name = "picnic stool";
+	dir = 8;
+	pixel_y = 4;
+	pixel_x = -10
+	},
+/turf/open/floor/wood,
+/area/space)
+"xo" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating,
+/area/space)
+"xG" = (
+/obj/effect/turf_decal/siding/thinplating/end,
+/turf/open/floor/plasteel,
+/area/space)
+"xH" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"xL" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating,
+/turf/open/floor/plasteel,
+/area/space)
+"xU" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"xV" = (
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"xZ" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"yd" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
 "yg" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /turf/open/floor/engine/hull/reinforced,
+/area/space)
+"yr" = (
+/obj/structure/railing{
+	dir = 4;
+	pixel_y = 12
+	},
+/obj/structure/railing{
+	dir = 8;
+	pixel_y = 12
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/stairs,
 /area/space)
 "yt" = (
 /turf/open/floor/engine/hull/reinforced,
@@ -293,6 +1786,114 @@
 	dir = 4
 	},
 /turf/open/floor/engine,
+/area/space)
+"yL" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"yN" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"za" = (
+/obj/item/pickaxe/rusted,
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
+"zc" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/space)
+"ze" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/space)
+"zo" = (
+/obj/structure/chair/comfy/brown{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/space)
+"zx" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-10"
+	},
+/turf/open/floor/plating,
+/area/space)
+"zE" = (
+/obj/structure/transit_tube/crossing/horizontal,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/space)
+"zF" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"zM" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"zN" = (
+/obj/structure/sign/warning/radiation{
+	pixel_x = 32
+	},
+/obj/structure/table,
+/obj/effect/turf_decal/corner/transparent/orange/border{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/orange/border,
+/turf/open/floor/plasteel,
+/area/space)
+"zS" = (
+/obj/machinery/door/airlock/maintenance{
+	name = "Kitchen Exit"
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plasteel/tech,
 /area/space)
 "zT" = (
 /obj/structure/cable/yellow{
@@ -304,20 +1905,126 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"zV" = (
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"zX" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/airless,
+/area/space)
+"zY" = (
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"Aa" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"Ah" = (
+/obj/structure/table,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Au" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "Aw" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+/obj/effect/spawner/structure/window,
+/obj/structure/curtain/cloth,
+/turf/open/floor/plating,
+/area/space)
+"AA" = (
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-9"
+/obj/machinery/power/floodlight{
+	anchored = 1
 	},
+/turf/open/floor/plating,
+/area/space)
+"AE" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/holofloor/wood,
+/area/space)
+"AI" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/turf/open/floor/wood,
+/area/space)
+"AP" = (
+/obj/structure/curtain/cloth/grey,
+/obj/structure/curtain/cloth/grey,
 /turf/open/floor/plating,
 /area/space)
 "Bg" = (
-/obj/machinery/computer/rdconsole,
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Bk" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Secure Weapon Storage"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plating,
+/area/space)
+"Bo" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"BG" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/space)
+"BH" = (
+/obj/structure/chair/office{
+	dir = 8;
+	name = "tinkering chair"
+	},
+/turf/open/floor/plating,
+/area/space)
+"BI" = (
+/obj/machinery/door/poddoor{
+	id = "singlabhanger";
+	name = "asteroid";
+	desc = "Looks less like a rock and more like painted over metal.";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "rock"
+	},
+/turf/open/floor/plating/asteroid,
 /area/space)
 "BK" = (
 /obj/structure/cable/yellow{
@@ -329,7 +2036,58 @@
 /obj/structure/cable/yellow{
 	icon_state = "6-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
+/area/space)
+"BM" = (
+/obj/item/pickaxe/rusted,
+/turf/open/floor/plating/asteroid/airless,
+/area/space)
+"BS" = (
+/obj/structure/transit_tube/station/dispenser,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/siding/thinplating,
+/turf/open/floor/engine,
+/area/space)
+"BT" = (
+/obj/machinery/door/poddoor{
+	id = "singlabcargo1"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"BU" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/recharger,
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"Cg" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Cl" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Cs" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/turf/open/floor/plasteel,
 /area/space)
 "Cv" = (
 /obj/structure/lattice/catwalk,
@@ -344,11 +2102,92 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/space)
+"CK" = (
+/obj/machinery/field/generator/anchored,
+/obj/effect/turf_decal/industrial/warning/cee{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"CL" = (
+/obj/structure/transit_tube/station/dispenser{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/railing/corner{
+	pixel_y = 23;
+	pixel_x = -3
+	},
+/obj/structure/railing/corner{
+	pixel_y = 2;
+	pixel_x = -3
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/engine,
+/area/space)
+"CR" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/turf/open/floor/plasteel,
+/area/space)
+"CU" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/space)
+"CV" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Db" = (
+/obj/structure/railing{
+	dir = 1;
+	pixel_x = -3
+	},
+/obj/structure/railing{
+	pixel_x = -3
+	},
+/turf/open/floor/plasteel/stairs{
+	dir = 4
+	},
+/area/space)
 "Dl" = (
 /obj/structure/cable{
 	icon_state = "4-9"
 	},
 /turf/open/floor/plating,
+/area/space)
+"Dn" = (
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 1
+	},
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 8
+	},
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
 /area/space)
 "Dp" = (
 /obj/structure/cable/yellow{
@@ -363,7 +2202,217 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
+/turf/open/floor/plating/airless,
+/area/space)
+"Dx" = (
+/obj/structure/safe{
+	name = "Prototype Storage"
+	},
+/obj/item/gun/energy/laser/captain,
+/obj/item/clothing/shoes/wheelys,
 /turf/open/floor/plating,
+/area/space)
+"DB" = (
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/turf/open/floor/plasteel,
+/area/space)
+"DD" = (
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plating/asteroid/airless,
+/area/space)
+"DE" = (
+/obj/machinery/power/smes,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"DK" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/space)
+"DL" = (
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/door/airlock/science{
+	name = "High Energy Applications Research Facility"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"DW" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Eg" = (
+/obj/structure/spacevine,
+/turf/open/floor/plating,
+/area/space)
+"Ei" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"Et" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"EA" = (
+/turf/open/floor/plasteel/dark,
+/area/space)
+"EC" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"EK" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/space)
+"EM" = (
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"EO" = (
+/obj/structure/table,
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = 7;
+	pixel_x = -4;
+	id = "singblast1";
+	name = "Testing Chamber Control"
+	},
+/turf/open/floor/plating,
+/area/space)
+"EP" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"ET" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"EW" = (
+/obj/machinery/mineral/stacking_machine{
+	input_dir = 1;
+	output_dir = 2
+	},
+/turf/open/space/basic,
+/turf/open/floor/plating,
+/turf/open/floor/plating,
+/area/space)
+"EX" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/corner/transparent/orange,
+/turf/open/floor/plasteel,
+/area/space)
+"Fc" = (
+/obj/structure/transit_tube/curved/flipped{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating/asteroid,
+/area/space)
+"Ff" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"Fg" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/turf/open/floor/plasteel/freezer,
+/area/space)
+"Fn" = (
+/obj/structure/transit_tube/curved/flipped,
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"Fs" = (
+/obj/machinery/conveyor{
+	id = "singlabcarg"
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
+"Ft" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/wood,
 /area/space)
 "Fv" = (
 /obj/structure/cable/yellow{
@@ -375,13 +2424,34 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "Fx" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
 /turf/open/floor/plating,
+/area/space)
+"Fy" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"FB" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Testing Lab"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "FE" = (
 /obj/structure/window/plasma/reinforced{
@@ -392,15 +2462,83 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"FF" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
 "FH" = (
 /obj/machinery/suit_storage_unit/open,
-/turf/open/floor/plasteel,
+/obj/item/clothing/suit/space/hardsuit/engine,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "FW" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-9"
 	},
+/turf/open/floor/plasteel,
+/area/space)
+"FZ" = (
+/obj/structure/railing,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Ge" = (
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Gf" = (
+/obj/structure/table,
+/turf/open/floor/wood,
+/area/space)
+"Gg" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
+/area/space)
+"Gr" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Gs" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Gw" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Kitchen"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"Gy" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/obj/effect/decal/remains/human,
+/turf/open/floor/plating,
+/area/space)
+"GA" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external{
+	name = "Interior Mine"
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "GC" = (
 /obj/structure/cable/yellow{
@@ -412,16 +2550,83 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/space)
+"GM" = (
+/obj/structure/transit_tube/station/dispenser{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/structure/railing/corner{
+	pixel_y = 23;
+	pixel_x = -3
+	},
+/obj/structure/railing/corner{
+	pixel_y = 2;
+	pixel_x = -3
+	},
+/turf/open/floor/engine,
+/area/space)
 "GN" = (
 /obj/structure/particle_accelerator/end_cap{
 	dir = 4
 	},
 /turf/open/floor/engine,
 /area/space)
+"GO" = (
+/obj/machinery/power/emitter/energycannon{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
+"GR" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plating,
+/area/space)
+"GU" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"GX" = (
+/obj/structure/transit_tube/curved/flipped,
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
 "Hc" = (
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable/yellow{
 	icon_state = "0-9"
+	},
+/turf/open/floor/plating/airless,
+/area/space)
+"Hg" = (
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Hj" = (
+/obj/machinery/conveyor{
+	id = "singlabcarg"
+	},
+/obj/machinery/door/poddoor{
+	id = "singlabcargo2"
 	},
 /turf/open/floor/plating,
 /area/space)
@@ -435,7 +2640,16 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-10"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
+/area/space)
+"HA" = (
+/obj/structure/cable{
+	icon_state = "2-10"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "HE" = (
 /obj/machinery/power/emitter{
@@ -444,7 +2658,17 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/turf/open/floor/plating/airless,
+/area/space)
+"HF" = (
+/obj/structure/chair/office,
 /turf/open/floor/plating,
+/area/space)
+"HG" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "HR" = (
 /obj/structure/lattice/catwalk,
@@ -452,6 +2676,12 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/engine/hull/reinforced,
+/area/space)
+"HU" = (
+/obj/structure/fireaxecabinet{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "HV" = (
 /obj/structure/cable{
@@ -461,6 +2691,13 @@
 /area/space)
 "Ih" = (
 /turf/open/floor/engine/hull,
+/area/space)
+"Ik" = (
+/obj/machinery/hydroponics/constructable,
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
 /area/space)
 "Io" = (
 /obj/structure/cable{
@@ -481,7 +2718,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "IH" = (
 /obj/structure/cable/yellow{
@@ -490,6 +2733,35 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/turf/open/floor/plating/airless,
+/area/space)
+"IO" = (
+/obj/structure/railing{
+	dir = 8;
+	pixel_y = 6
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"IQ" = (
+/obj/machinery/smartfridge,
+/turf/closed/wall,
+/area/space)
+"IT" = (
+/obj/structure/transit_tube/curved/flipped{
+	dir = 4
+	},
+/obj/structure/plasticflaps/opaque{
+	layer = 3
+	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
 /turf/open/floor/plating,
 /area/space)
 "IU" = (
@@ -497,11 +2769,37 @@
 /obj/machinery/particle_accelerator/control_box,
 /turf/open/floor/engine,
 /area/space)
+"IX" = (
+/obj/structure/closet/secure_closet/freezer/kitchen,
+/obj/item/book/manual/chef_recipes,
+/turf/open/floor/plasteel/freezer,
+/area/space)
 "IZ" = (
 /turf/closed/wall{
 	name = "structural support";
 	desc = "A huge chunk of metal holding the roof of the asteroid at bay"
 	},
+/area/space)
+"Ja" = (
+/obj/structure/table,
+/obj/item/storage/backpack/duffelbag/engineering,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Jk" = (
+/obj/structure/closet/wall{
+	dir = 4;
+	pixel_x = -32
+	},
+/turf/open/floor/wood,
+/area/space)
+"Jn" = (
+/obj/machinery/door/airlock{
+	name = "Private Quarters"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "Jo" = (
 /obj/structure/sign/warning/radiation{
@@ -509,12 +2807,80 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"Jq" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Engineering"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"Ju" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"Jy" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/space)
+"JC" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"JM" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"JZ" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Kc" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/space)
+"Ks" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Kt" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/space)
+"KC" = (
+/obj/machinery/hydroponics/constructable,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
 "KM" = (
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/space)
 "KO" = (
 /obj/structure/cable/yellow{
@@ -526,7 +2892,56 @@
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"KR" = (
+/obj/machinery/door/poddoor{
+	id = "singlablas2"
+	},
+/turf/open/floor/engine,
+/area/space)
+"KT" = (
+/obj/structure/transit_tube/diagonal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plating/asteroid,
+/area/space)
+"KZ" = (
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
+/area/space)
+"Le" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/obj/structure/railing{
+	dir = 8;
+	pixel_y = -6
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel,
+/area/space)
+"Lt" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/space)
+"Ly" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "LD" = (
 /obj/structure/cable{
@@ -535,7 +2950,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "LF" = (
 /obj/structure/particle_accelerator/power_box{
@@ -543,9 +2962,76 @@
 	},
 /turf/open/floor/engine,
 /area/space)
-"MH" = (
-/obj/machinery/rnd/production/circuit_imprinter/department/engi,
+"LM" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
+/area/space)
+"Ma" = (
+/obj/structure/closet/secure_closet/armory3{
+	name = "armory weapons locker";
+	anchored = 1
+	},
+/obj/item/gun/energy/e_gun/smg,
+/turf/open/floor/plating,
+/area/space)
+"Mc" = (
+/obj/machinery/door/poddoor{
+	id = "singlabcargo2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"Md" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/hardsuit/engine,
+/obj/effect/turf_decal/box,
+/obj/item/clothing/suit/space/hardsuit/engine,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"Mg" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"Mi" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/turf/open/floor/plasteel,
+/area/space)
+"Mj" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Mo" = (
+/obj/structure/chair/comfy/brown{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/space)
+"MC" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"MH" = (
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 10
+	},
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "ML" = (
 /obj/structure/cable{
@@ -554,7 +3040,64 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"MT" = (
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/obj/item/gun/energy/e_gun/smg,
+/obj/effect/turf_decal/siding/thinplating,
+/turf/open/floor/plasteel,
+/area/space)
+"MV" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"MW" = (
+/obj/machinery/door/airlock{
+	name = "Private Quarters"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"MX" = (
+/obj/structure/transit_tube/curved{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/turf/open/floor/plating/asteroid,
+/area/space)
+"Nj" = (
+/obj/structure/transit_tube/diagonal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
 /turf/open/floor/plating,
+/area/space)
+"Nu" = (
+/turf/open/floor/plating/airless,
+/area/space)
+"NH" = (
+/obj/machinery/door/poddoor{
+	id = "singlablas1"
+	},
+/turf/open/floor/engine,
 /area/space)
 "NM" = (
 /obj/structure/cable/yellow{
@@ -566,7 +3109,51 @@
 /obj/structure/cable/yellow{
 	icon_state = "5-8"
 	},
+/turf/open/floor/plating/airless,
+/area/space)
+"NN" = (
+/obj/structure/chair/stool/bar{
+	name = "picnic stool";
+	dir = 4;
+	pixel_y = 7;
+	pixel_x = 9
+	},
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/space)
+"NV" = (
+/obj/structure/transit_tube,
+/obj/structure/plasticflaps/opaque,
+/obj/structure/plasticflaps/opaque{
+	layer = 3
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
+/area/space)
+"NW" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/space)
+"Oa" = (
+/obj/machinery/mineral/processing_unit{
+	input_dir = 4;
+	output_dir = 8
+	},
+/turf/open/space/basic,
+/turf/open/floor/plating,
+/area/space)
+"Ob" = (
+/obj/machinery/mineral/stacking_unit_console{
+	machinedir = 8;
+	pixel_y = 26
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "Od" = (
 /obj/structure/sign/warning/radiation/rad_area{
@@ -575,11 +3162,37 @@
 /obj/structure/tank_dispenser/plasma,
 /turf/open/floor/plasteel,
 /area/space)
+"Oe" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_y = 4;
+	pixel_x = -14
+	},
+/obj/structure/mirror{
+	pixel_x = -29
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Oh" = (
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plating,
+/area/space)
 "Oi" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
+/area/space)
+"Ok" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "Om" = (
 /obj/structure/cable{
@@ -599,6 +3212,59 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"Ot" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel,
+/area/space)
+"OA" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"OH" = (
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"OM" = (
+/obj/structure/transit_tube/horizontal,
+/obj/structure/plasticflaps/opaque{
+	layer = 3
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/space)
+"OQ" = (
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/turf/open/floor/plasteel,
+/area/space)
+"OT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"OV" = (
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating,
+/area/space)
+"OZ" = (
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 8
+	},
+/obj/item/flashlight/seclite,
+/turf/open/floor/plating/asteroid,
+/area/space)
 "Pb" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
@@ -612,9 +3278,26 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/space)
+"Pd" = (
+/obj/structure/bed,
+/obj/item/bedsheet/nanotrasen,
+/turf/open/floor/wood,
+/area/space)
 "Pg" = (
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/space)
+"Pj" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/holofloor/wood,
+/area/space)
+"Pl" = (
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/space)
@@ -628,19 +3311,114 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-5"
 	},
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"Pp" = (
+/obj/structure/cable{
+	icon_state = "2-6"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Pq" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/effect/turf_decal/siding/thinplating,
+/turf/open/floor/plasteel,
+/area/space)
+"Ps" = (
+/obj/structure/transit_tube,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"Pu" = (
+/obj/structure/railing{
+	dir = 1;
+	pixel_x = -3
+	},
+/obj/structure/railing{
+	pixel_x = -3
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/space)
+"Pv" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/structure/table/wood/fancy/purple,
+/obj/structure/fluff/beach_umbrella{
+	pixel_y = 16;
+	pixel_x = -5
+	},
+/turf/open/floor/wood,
+/area/space)
+"PB" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Laundromat"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"PE" = (
+/obj/structure/safe,
+/obj/item/reagent_containers/food/drinks/bottle/goldschlager,
+/obj/item/storage/fancy/cigarettes/cigpack_robustgold,
+/obj/item/storage/fancy/cigarettes/cigpack_robustgold,
+/obj/item/stack/sheet/mineral/gold/twenty,
 /turf/open/floor/plating,
 /area/space)
 "PG" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/structure/railing,
+/turf/open/floor/plasteel,
+/area/space)
+"PI" = (
+/obj/machinery/computer/rdconsole{
+	dir = 4
+	},
 /turf/open/floor/plating,
+/area/space)
+"PN" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "PR" = (
 /obj/structure/window/plasma/reinforced{
 	dir = 1
 	},
 /turf/open/floor/plating,
+/area/space)
+"PV" = (
+/obj/structure/railing/corner,
+/turf/open/floor/plasteel,
 /area/space)
 "Qj" = (
 /obj/item/banner/engineering{
@@ -652,20 +3430,141 @@
 /turf/open/floor/plating/asteroid,
 /area/space)
 "Qw" = (
-/obj/machinery/rnd/production/protolathe/department/engineering,
-/turf/open/floor/plating,
+/obj/structure/table,
+/obj/item/clipboard{
+	pixel_y = 7;
+	pixel_x = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"QA" = (
+/obj/structure/transit_tube/curved{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plating/asteroid,
 /area/space)
 "QB" = (
 /turf/closed/mineral/random/asteroid,
+/area/space)
+"QC" = (
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"QE" = (
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"QH" = (
+/obj/item/clothing/suit/space/hardsuit/engine,
+/obj/item/tank/internals/oxygen,
+/obj/effect/decal/remains/human,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
+"QQ" = (
+/obj/effect/decal/remains/human,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/item/clothing/under/rank/rnd/scientist,
+/turf/open/floor/plating,
+/area/space)
+"QV" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "QX" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-6"
 	},
+/turf/open/floor/plasteel,
+/area/space)
+"QZ" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/stairs,
+/area/space)
+"Rh" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Rl" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"Rp" = (
+/obj/structure/transit_tube/horizontal,
+/obj/structure/plasticflaps/opaque{
+	layer = 3
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/space)
+"Rr" = (
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plating,
+/area/space)
+"Rz" = (
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"RE" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/space)
 "RN" = (
 /turf/open/floor/plating,
+/area/space)
+"RR" = (
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "RW" = (
 /obj/structure/lattice/catwalk,
@@ -683,7 +3582,121 @@
 "Sb" = (
 /obj/machinery/power/smes,
 /obj/structure/cable,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"Se" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
+/area/space)
+"Sm" = (
+/obj/structure/toilet{
+	dir = 8;
+	pixel_y = 5;
+	pixel_x = 6
+	},
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"So" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Su" = (
+/obj/structure/table,
+/turf/open/floor/plating,
+/area/space)
+"SF" = (
+/obj/machinery/door/poddoor{
+	id = "singlabhanger"
+	},
+/turf/open/floor/engine,
+/area/space)
+"SH" = (
+/obj/structure/chair/stool/bar{
+	name = "picnic stool";
+	dir = 1;
+	pixel_y = 16
+	},
+/obj/effect/turf_decal/siding/wood/end,
+/turf/open/floor/wood,
+/area/space)
+"SQ" = (
+/obj/machinery/rnd/production/protolathe/department/engineering,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"SW" = (
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"SY" = (
+/obj/machinery/door/poddoor{
+	id = "singlablas1"
+	},
+/turf/closed/mineral/random/asteroid,
+/area/space)
+"SZ" = (
+/obj/effect/spawner/structure/window,
+/obj/structure/curtain/cloth/fancy,
+/turf/open/floor/plating,
+/area/space)
+"Ti" = (
+/obj/structure/transit_tube/curved,
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/turf/open/floor/plating/asteroid,
+/area/space)
+"Tp" = (
+/obj/machinery/door/poddoor{
+	id = "singlabhanger";
+	name = "asteroid";
+	desc = "Looks less like a rock and more like painted over metal.";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "rock"
+	},
+/turf/open/space/basic,
+/area/space)
+"Tu" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"Tz" = (
+/obj/machinery/power/floodlight{
+	anchored = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"TD" = (
+/turf/open/floor/plasteel/tech,
 /area/space)
 "TI" = (
 /obj/structure/cable/yellow{
@@ -695,22 +3708,134 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
+/area/space)
+"TL" = (
+/obj/machinery/rnd/production/circuit_imprinter/department/engi,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"TM" = (
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"TN" = (
+/obj/structure/transit_tube/curved/flipped{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
 /area/space)
 "TP" = (
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable/yellow{
 	icon_state = "0-10"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
+/area/space)
+"TT" = (
+/obj/structure/closet/secure_closet/freezer/meat,
+/turf/open/floor/plasteel/freezer,
+/area/space)
+"TW" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "TX" = (
-/obj/machinery/autolathe,
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
 /turf/open/floor/plating,
+/area/space)
+"TZ" = (
+/obj/effect/turf_decal/corner/transparent/orange,
+/turf/open/floor/plasteel,
+/area/space)
+"Ud" = (
+/obj/structure/transit_tube/horizontal,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/space)
+"Uf" = (
+/obj/structure/chair/stool/bar{
+	name = "picnic stool";
+	dir = 8;
+	pixel_y = 4;
+	pixel_x = -10
+	},
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/space)
+"Uk" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Uy" = (
+/obj/machinery/door/airlock{
+	name = "Bedroom"
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"UA" = (
+/obj/structure/cable{
+	icon_state = "8-9"
+	},
+/obj/structure/cable{
+	icon_state = "6-9"
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "UI" = (
 /obj/structure/cable,
 /turf/open/floor/plating,
+/area/space)
+"UR" = (
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
+/area/space)
+"UV" = (
+/obj/structure/transit_tube/curved/flipped{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plating/asteroid,
+/area/space)
+"UW" = (
+/obj/machinery/field/generator/anchored,
+/obj/effect/turf_decal/industrial/warning/cee,
+/turf/open/floor/plasteel/tech/grid,
 /area/space)
 "Vg" = (
 /obj/structure/sign/warning/radiation/rad_area{
@@ -718,11 +3843,57 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"Vl" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"Vm" = (
+/obj/structure/table/wood,
+/turf/open/floor/plating,
+/area/space)
+"Vo" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Vr" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/space)
+"Vs" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Vt" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/space)
 "Vz" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"VF" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Hydroponics"
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "VG" = (
 /obj/structure/cable/yellow{
@@ -734,13 +3905,128 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"VI" = (
+/obj/structure/curtain/cloth,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"VQ" = (
+/obj/structure/closet/secure_closet/armory3{
+	name = "armory weapons locker";
+	anchored = 1
+	},
+/obj/item/gun/energy/lasercannon/unrestricted,
 /turf/open/floor/plating,
+/area/space)
+"VV" = (
+/obj/structure/transit_tube/curved/flipped{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plating/asteroid,
 /area/space)
 "Wh" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
+/area/space)
+"Wi" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
+"Ws" = (
+/obj/machinery/vending/engivend,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"Wv" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"Wz" = (
+/obj/machinery/door/airlock/vault{
+	name = "Vault Access"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plating,
+/area/space)
+"WB" = (
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"WC" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"WG" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/plasteel,
+/area/space)
+"WH" = (
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/airless,
+/area/space)
+"WK" = (
+/obj/structure/rack,
+/obj/item/gun/energy/e_gun/rdgun{
+	name = "Energy PDW"
+	},
+/turf/open/floor/plating,
+/area/space)
+"WM" = (
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"WN" = (
+/obj/structure/cable{
+	icon_state = "9-10"
+	},
+/turf/open/floor/plasteel/stairs,
+/area/space)
+"WO" = (
+/obj/machinery/hydroponics/constructable,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"WR" = (
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"WW" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
 /area/space)
 "Xa" = (
 /obj/machinery/door/airlock/engineering{
@@ -749,14 +4035,46 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
+/area/space)
+"Xg" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"Xk" = (
+/obj/structure/transit_tube,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
+/area/space)
+"Xo" = (
+/obj/machinery/hydroponics/constructable,
+/obj/structure/spacevine,
+/turf/open/floor/plating/grass{
+	icon_state = "junglegrass";
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel
+	},
 /area/space)
 "Xu" = (
 /obj/machinery/power/emitter,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
+/area/space)
+"Xw" = (
+/obj/structure/flippedtable{
+	icon_state = "";
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid,
 /area/space)
 "XF" = (
 /obj/structure/cable/yellow{
@@ -767,11 +4085,61 @@
 "Yo" = (
 /turf/open/floor/engine,
 /area/space)
+"Yv" = (
+/obj/structure/table{
+	name = "picnic table"
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"YA" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"YB" = (
+/obj/structure/filingcabinet,
+/turf/open/floor/plasteel/grimy,
+/area/space)
+"YN" = (
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/plasteel/dark,
+/area/space)
+"YV" = (
+/obj/item/gun/energy/e_gun/smg{
+	pixel_y = 6;
+	pixel_x = 5
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/plating,
+/area/space)
 "Za" = (
 /obj/structure/particle_accelerator/particle_emitter/center{
 	dir = 4
 	},
 /turf/open/floor/engine,
+/area/space)
+"Zc" = (
+/obj/machinery/door/airlock/atmos{
+	name = "Atmospherics"
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"Zk" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/turf/open/floor/plating,
 /area/space)
 "Zt" = (
 /obj/machinery/power/terminal{
@@ -783,7 +4151,31 @@
 /obj/structure/cable/yellow{
 	icon_state = "6-10"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"Zu" = (
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/space)
+"Zw" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
+"ZE" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "ZG" = (
 /obj/machinery/power/terminal{
@@ -792,7 +4184,14 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-6"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"ZV" = (
+/obj/structure/transit_tube/horizontal,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid,
 /area/space)
 
 (1,1,1) = {"
@@ -859,37 +4258,12 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -914,6 +4288,7 @@ tq
 tq
 tq
 tq
+QB
 tq
 tq
 tq
@@ -959,43 +4334,17 @@ tq
 tq
 tq
 tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
 tq
 tq
 "}
@@ -1011,9 +4360,13 @@ tq
 tq
 tq
 tq
+QB
 tq
 tq
 tq
+QB
+QB
+QB
 tq
 tq
 tq
@@ -1056,48 +4409,19 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 "}
@@ -1107,10 +4431,19 @@ tq
 tq
 tq
 tq
+QB
+QB
 tq
 tq
 tq
+QB
+QB
 tq
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -1121,6 +4454,8 @@ tq
 tq
 tq
 tq
+QB
+QB
 tq
 tq
 tq
@@ -1129,6 +4464,7 @@ tq
 tq
 tq
 tq
+QB
 tq
 tq
 tq
@@ -1149,57 +4485,20 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 "}
@@ -1208,6 +4507,55 @@ tq
 tq
 tq
 tq
+QB
+QB
+QB
+QB
+tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+QB
+tq
+tq
+tq
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+tq
+tq
+tq
 tq
 tq
 tq
@@ -1221,80 +4569,6 @@ QB
 QB
 QB
 QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 tq
@@ -1314,6 +4588,7 @@ tq
 QB
 QB
 QB
+tq
 QB
 QB
 QB
@@ -1324,6 +4599,15 @@ QB
 QB
 QB
 QB
+tq
+tq
+QB
+QB
+QB
+QB
+tq
+QB
+QB
 QB
 tq
 tq
@@ -1332,70 +4616,35 @@ tq
 tq
 tq
 tq
+QB
+QB
+QB
+QB
 tq
 tq
 tq
 tq
+QB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -1431,8 +4680,11 @@ QB
 QB
 QB
 QB
+QB
+QB
 tq
 tq
+QB
 tq
 tq
 tq
@@ -1441,12 +4693,18 @@ tq
 tq
 tq
 tq
+QB
+QB
+QB
+QB
 tq
 tq
 tq
 tq
 tq
 tq
+QB
+QB
 tq
 tq
 tq
@@ -1454,49 +4712,15 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -1512,7 +4736,6 @@ tq
 (8,1,1) = {"
 tq
 tq
-tq
 QB
 QB
 QB
@@ -1533,6 +4756,8 @@ QB
 QB
 QB
 QB
+QB
+QB
 tq
 tq
 tq
@@ -1544,6 +4769,10 @@ tq
 tq
 tq
 tq
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -1551,54 +4780,24 @@ tq
 tq
 tq
 tq
+QB
+QB
+QB
 tq
 tq
 tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+kP
 tq
 tq
 tq
@@ -1613,8 +4812,6 @@ tq
 "}
 (9,1,1) = {"
 tq
-tq
-tq
 QB
 QB
 QB
@@ -1635,6 +4832,9 @@ QB
 QB
 QB
 QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -1646,6 +4846,8 @@ tq
 tq
 tq
 tq
+QB
+QB
 tq
 tq
 tq
@@ -1655,52 +4857,24 @@ tq
 tq
 tq
 tq
+QB
+QB
 tq
 tq
 tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+kP
 tq
 tq
 tq
@@ -1714,9 +4888,6 @@ tq
 tq
 "}
 (10,1,1) = {"
-tq
-tq
-tq
 QB
 QB
 QB
@@ -1737,6 +4908,11 @@ QB
 QB
 QB
 QB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -1747,6 +4923,8 @@ tq
 tq
 tq
 tq
+QB
+QB
 tq
 tq
 tq
@@ -1763,46 +4941,17 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+kP
+kP
+kP
 tq
 tq
 tq
@@ -1817,8 +4966,6 @@ tq
 "}
 (11,1,1) = {"
 tq
-tq
-tq
 QB
 QB
 QB
@@ -1842,6 +4989,8 @@ QB
 QB
 QB
 QB
+QB
+QB
 tq
 tq
 tq
@@ -1858,6 +5007,9 @@ tq
 tq
 tq
 tq
+QB
+QB
+QB
 tq
 tq
 tq
@@ -1865,46 +5017,18 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 kP
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
-tq
 tq
 tq
 tq
@@ -1959,6 +5083,9 @@ tq
 tq
 tq
 tq
+QB
+QB
+QB
 tq
 tq
 tq
@@ -1967,45 +5094,17 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
 tq
 tq
 tq
@@ -2022,7 +5121,6 @@ tq
 (13,1,1) = {"
 tq
 tq
-tq
 QB
 QB
 QB
@@ -2046,6 +5144,15 @@ QB
 QB
 QB
 QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+tq
+QB
 tq
 tq
 tq
@@ -2053,61 +5160,28 @@ tq
 tq
 tq
 tq
+QB
+QB
+QB
+QB
 tq
 tq
 tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-dT
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+kP
+kP
+QB
+QB
 kP
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
 tq
 tq
 tq
@@ -2123,8 +5197,6 @@ tq
 "}
 (14,1,1) = {"
 tq
-tq
-tq
 QB
 QB
 QB
@@ -2138,78 +5210,55 @@ QB
 QB
 QB
 QB
+QB
+QB
+sa
+Pl
+Pl
+Oh
 RN
-RN
-RN
-RN
-RN
 QB
 QB
 QB
 QB
 QB
+QB
+QB
+QB
+tq
+tq
+tq
+QB
+QB
+QB
 tq
 tq
 tq
 tq
 tq
 tq
+QB
+tq
+QB
 tq
 tq
 tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+kP
+kP
+kP
+QB
+QB
 kP
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
 tq
 tq
 tq
@@ -2224,9 +5273,9 @@ tq
 tq
 "}
 (15,1,1) = {"
-tq
-tq
-tq
+QB
+QB
+QB
 QB
 QB
 QB
@@ -2240,19 +5289,27 @@ QB
 QB
 QB
 Qo
+Om
+Qo
+Qo
+Qo
+xo
 RN
 Qo
-Qo
-Qo
-RN
-RN
-Qo
 QB
 QB
 QB
 QB
 QB
 QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -2266,52 +5323,19 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+kP
+kP
+kP
+QB
 kP
 kP
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
 tq
 tq
 tq
@@ -2326,9 +5350,9 @@ tq
 tq
 "}
 (16,1,1) = {"
-tq
-tq
-tq
+QB
+QB
+QB
 QB
 QB
 QB
@@ -2342,12 +5366,12 @@ QB
 QB
 QB
 Qo
-cH
+Om
 Qo
 QB
 QB
 Qo
-RN
+Dl
 Qo
 QB
 QB
@@ -2355,6 +5379,15 @@ QB
 QB
 QB
 QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -2366,54 +5399,20 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+kP
+kP
+kP
+kP
+QB
 kP
 kP
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
 tq
 tq
 tq
@@ -2429,8 +5428,8 @@ tq
 "}
 (17,1,1) = {"
 tq
-tq
-tq
+QB
+QB
 QB
 QB
 QB
@@ -2449,7 +5448,7 @@ UI
 IB
 QB
 QB
-RN
+Om
 QB
 QB
 QB
@@ -2457,65 +5456,40 @@ QB
 QB
 QB
 QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 tq
 tq
 tq
+QB
+QB
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
 kP
 kP
 kP
 kP
 kP
+QB
 kP
 kP
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
 tq
 tq
 tq
@@ -2532,7 +5506,7 @@ tq
 (18,1,1) = {"
 tq
 tq
-tq
+QB
 QB
 QB
 QB
@@ -2551,7 +5525,7 @@ RN
 IB
 IB
 IB
-RN
+Om
 IB
 IB
 QB
@@ -2559,39 +5533,29 @@ QB
 QB
 QB
 QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 tq
+QB
+QB
+QB
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
 kP
 kP
 kP
@@ -2599,25 +5563,10 @@ kP
 kP
 kP
 kP
+QB
+QB
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
 tq
 tq
 tq
@@ -2634,7 +5583,7 @@ tq
 (19,1,1) = {"
 tq
 tq
-tq
+QB
 QB
 QB
 QB
@@ -2651,49 +5600,38 @@ RN
 Fx
 RN
 PR
+LM
 RN
-RN
-RN
-RN
+Fx
+pv
 IB
 QB
 QB
 QB
+Qo
+Qo
 QB
 QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 QB
 QB
 QB
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
 kP
 kP
 kP
@@ -2702,24 +5640,10 @@ kP
 kP
 kP
 kP
+QB
+QB
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
 tq
 tq
 tq
@@ -2753,13 +5677,16 @@ hX
 RN
 RN
 PR
-RN
-RN
-RN
-RN
+Wh
+zx
+Oh
+pv
 IB
 QB
 QB
+Qo
+Qo
+Qo
 QB
 QB
 QB
@@ -2783,19 +5710,6 @@ QB
 QB
 QB
 QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 kP
 kP
 kP
@@ -2804,24 +5718,9 @@ kP
 kP
 kP
 kP
+QB
+QB
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
 tq
 tq
 tq
@@ -2838,13 +5737,13 @@ tq
 (21,1,1) = {"
 tq
 QB
+Qo
+Qo
+Qo
 QB
-QB
-QB
-QB
-QB
-QB
-QB
+Qo
+Qo
+Qo
 QB
 QB
 IB
@@ -2856,14 +5755,15 @@ Dl
 RN
 PR
 RN
+pv
 RN
-RN
-RN
+TX
 IB
 IB
-Qo
-Qo
-Qo
+rg
+Vs
+fw
+IZ
 QB
 QB
 QB
@@ -2888,42 +5788,16 @@ QB
 QB
 QB
 QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
 kP
 kP
 kP
 kP
 kP
 kP
+QB
+QB
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
 tq
 tq
 tq
@@ -2940,13 +5814,13 @@ tq
 (22,1,1) = {"
 tq
 QB
+tq
 QB
+Qo
+Qo
+Qo
 QB
-QB
-QB
-QB
-QB
-QB
+Qo
 QB
 QB
 IB
@@ -2957,19 +5831,22 @@ RN
 HV
 IB
 RN
+pv
+pv
+Gy
 RN
-RN
-RN
-RN
-RN
+kA
 eU
-RN
-RN
-Qo
-Qo
-Qo
-Qo
-Qo
+be
+QV
+Ot
+Kt
+iQ
+ra
+ut
+zY
+QB
+IZ
 QB
 QB
 QB
@@ -2983,10 +5860,7 @@ QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
+IZ
 QB
 QB
 QB
@@ -3002,31 +5876,6 @@ QB
 QB
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
-tq
 tq
 tq
 tq
@@ -3041,14 +5890,14 @@ tq
 "}
 (23,1,1) = {"
 tq
+tq
+tq
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
+Qo
 QB
 QB
 IB
@@ -3059,20 +5908,42 @@ RN
 RN
 RN
 FE
+pv
+pv
 RN
-RN
-RN
-RN
-RN
-eU
-RN
-RN
-RN
-RN
+jM
+Zc
+WN
+rg
+Rz
+Ot
+es
+zc
+Db
+zc
+Fn
+Ps
+mC
+us
+us
+us
+us
+us
+us
+us
+us
+us
+us
+us
+us
+us
+mC
+us
+us
+us
+us
+UV
 Qo
-Qo
-Qo
-Qo
 QB
 QB
 QB
@@ -3081,54 +5952,7 @@ QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-Qo
-Qo
-Qo
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-Qo
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
-tq
 tq
 tq
 tq
@@ -3143,15 +5967,15 @@ tq
 "}
 (24,1,1) = {"
 tq
+tq
+tq
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
+Qo
+Qo
 QB
 IB
 RN
@@ -3161,77 +5985,52 @@ RN
 RN
 RN
 PR
-RN
+pv
 RN
 kD
 kD
 IB
 IB
-Qo
-RN
-RN
-RN
-Qo
-Qo
-Qo
-Qo
+rg
+QV
+Le
+lJ
+IO
+iB
+Zw
+Zw
+Zw
+IZ
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
 QB
-QB
-IB
-IB
-IB
-IB
-IB
-IB
-IB
-IB
-IB
-IB
-IB
-IB
-Qo
-Qo
-Qo
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
+IZ
 QB
 QB
 QB
 QB
 Qo
+KT
+QB
+IZ
+QB
+QB
+QB
+QB
+QB
+QB
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
-tq
-tq
 tq
 tq
 tq
@@ -3250,10 +6049,10 @@ QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
+Qo
+Qo
+Qo
+Qo
 QB
 IB
 IB
@@ -3262,78 +6061,53 @@ IB
 IB
 RX
 RX
-RN
-RN
-RN
-RN
-RN
-IB
-QB
-Qo
-Qo
-RN
-RN
-RN
-RN
-Qo
-Qo
-QB
-IB
-IB
-no
-RN
-RN
-RN
-RN
-RN
-RN
-RN
+pv
+pv
+iF
 RN
 RN
 IB
+QB
+QB
+Rh
+Ot
+zE
+QC
+uW
+uW
+uW
+uW
+IB
+IB
+HU
+EA
+uW
+EX
+rg
+uW
+Ah
+OH
+Ah
+uW
+IB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 Qo
+lI
+mC
+UV
 Qo
-Qo
-Qo
-Qo
-QB
-QB
-QB
-QB
-QB
-QB
 QB
 QB
 QB
 QB
 QB
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
-tq
-tq
 tq
 tq
 tq
@@ -3347,59 +6121,54 @@ tq
 "}
 (26,1,1) = {"
 tq
+tq
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-IB
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-IB
 QB
 QB
 Qo
+QB
+QB
+QB
+QB
+QB
 Qo
-Qo
-RN
-RN
 Qo
 Qo
 IB
-IB
+pv
+pv
+pv
 RN
-no
+iF
+RN
+RN
+IB
+QB
+Qo
+Qo
+wW
+lJ
+mY
+JZ
+uW
+uW
+IB
+IB
+hP
+by
 Qw
-TX
+uW
 MH
-nJ
-RN
-RN
-RN
-RN
-RN
+QZ
+RR
+uW
+pv
+pv
+TZ
 IB
-RN
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
+rg
+jL
 Qo
 QB
 QB
@@ -3407,36 +6176,16 @@ QB
 QB
 QB
 QB
+IZ
+Qo
+KT
+Qo
 QB
 QB
 QB
+QB
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 tq
@@ -3454,54 +6203,49 @@ tq
 QB
 QB
 QB
+Qo
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-IB
-IB
-IB
-IB
-IB
-IB
-IB
-IB
-IB
 QB
 QB
 QB
 QB
 Qo
+QB
+QB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+QB
 Qo
-RN
-RN
+QB
+IZ
+OM
+IZ
+Ge
+FF
 IB
 IB
-RN
-RN
-no
-no
-no
-no
-Bg
-RN
-RN
-RN
-RN
-RN
+IB
+YN
+Ah
+Ah
+uW
+qL
+dX
+RR
+Ah
+Ah
+nq
+QE
 KQ
-RN
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
+rg
+jL
 Qo
 Qo
 Qo
@@ -3511,35 +6255,15 @@ QB
 QB
 QB
 QB
+Qo
+KT
+Qo
+QB
+QB
+QB
 QB
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 tq
@@ -3556,16 +6280,13 @@ tq
 QB
 QB
 QB
+Qo
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
+Qo
+Qo
+Qo
+Qo
+Qo
 QB
 QB
 QB
@@ -3579,33 +6300,30 @@ QB
 QB
 QB
 Qo
-Qo
-RN
-RN
-KQ
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
+QB
+QB
+ZV
+QB
+pv
+Xg
+Jq
+cB
+th
+th
+gx
+uW
+uW
+MC
+Ws
+uW
+SQ
+uW
+px
+aq
 IB
-RN
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
+rg
+JM
+Fy
 Qo
 Qo
 Qo
@@ -3614,34 +6332,15 @@ QB
 QB
 QB
 QB
+QB
+Qo
+KT
+Qo
+IZ
+QB
+QB
+QB
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 tq
@@ -3654,58 +6353,55 @@ tq
 (29,1,1) = {"
 tq
 tq
-tq
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
 QB
 QB
 QB
 QB
 Qo
 Qo
-RN
-RN
+Qo
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+ZV
+QB
+pv
+QH
 IB
-RN
-RN
-RN
-RN
-RN
-RN
+bo
+uW
+uW
+OT
+uW
+uW
 PG
-eA
+mI
 QX
-RN
-RN
-RN
-RN
+uW
+uW
+TL
+Ah
 IB
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
+zY
+Rh
+ha
+Fy
 Qo
 Qo
 Qo
@@ -3715,38 +6411,16 @@ Qo
 QB
 QB
 QB
+Qo
+Nj
+Qo
+QB
+QB
+QB
 QB
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 tq
@@ -3756,7 +6430,6 @@ tq
 (30,1,1) = {"
 tq
 tq
-tq
 QB
 QB
 QB
@@ -3782,32 +6455,31 @@ QB
 QB
 QB
 QB
-QB
-RN
-RN
-RN
+IZ
+Rp
+IZ
+pv
+uY
 IB
+EK
 cG
 cG
-cG
-cG
+EK
 cG
 IB
 Xa
 lK
-bM
+Jo
 FW
-bM
-RN
+Jo
+Ja
 IB
 IB
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
+zY
+zY
+Rh
+ha
+Fy
 Qo
 Qo
 Qo
@@ -3816,40 +6488,17 @@ Qo
 Qo
 QB
 QB
+IZ
+Qo
+KT
+zY
+zY
 QB
 QB
 QB
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 tq
@@ -3857,8 +6506,6 @@ tq
 "}
 (31,1,1) = {"
 tq
-tq
-tq
 QB
 QB
 QB
@@ -3868,6 +6515,15 @@ QB
 QB
 QB
 QB
+IZ
+QB
+QB
+QB
+IZ
+QB
+QB
+QB
+IZ
 QB
 QB
 QB
@@ -3875,83 +6531,51 @@ QB
 QB
 QB
 QB
+IZ
+Qo
+Fc
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-RN
-RN
-RN
+jC
+vT
 IB
-Om
-RN
-RN
-Om
-RN
-RN
-Dp
+Ei
+xZ
+xZ
+dL
+xZ
+xZ
+vE
 lK
 lK
-gO
+cz
 lK
 lK
 IB
+zY
+zY
+zY
+zY
+QV
+oC
+ET
+Fy
 Qo
 Qo
 Qo
 Qo
 Qo
+QB
+QB
+QB
 Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-IB
-IB
-IB
-lK
-lK
+aQ
+zY
+zY
+QB
+QB
+QB
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 tq
@@ -3959,8 +6583,6 @@ tq
 "}
 (32,1,1) = {"
 tq
-tq
-tq
 QB
 QB
 QB
@@ -3968,30 +6590,32 @@ QB
 QB
 QB
 QB
+Qo
+Ti
+mC
+us
+us
+us
+mC
+cb
+CL
+cb
+NV
+us
+us
+us
+us
+us
+us
+us
+mC
+MX
+Qo
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-RN
-RN
-RN
+QV
+gI
 IB
-LD
+zF
 Sb
 ZG
 LD
@@ -4003,66 +6627,57 @@ ru
 gi
 ru
 lK
+zY
+zY
+pv
+pv
+pv
+pv
+pv
+Ly
+ha
+Fy
 Qo
 Qo
 Qo
+Mi
+xG
+QB
+QB
+QB
+zY
+GX
+TN
 Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-RN
-RN
-RN
-RN
-lK
+QB
+QB
 kP
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
 (33,1,1) = {"
 tq
 tq
-tq
+QB
+QB
+QB
+QB
+QB
+Qo
+bM
+Qo
+IZ
+QB
+QB
+QB
+IZ
+Jy
+Pu
+Jy
+IZ
 QB
 QB
 QB
@@ -4070,121 +6685,66 @@ QB
 QB
 QB
 QB
+IZ
+Qo
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-RN
-RN
-RN
+QV
+gI
 IB
 ML
 vc
-RN
+rg
 Po
 sB
-RN
-Dp
+rg
+lz
 lK
-uW
+fd
 gi
-uW
+mB
 lK
+zY
+pv
+pv
+pv
+pv
+pv
+pv
+zY
+Rh
+ha
+Fy
+Qo
+Mi
+Vo
 Qo
 Qo
+QB
+QB
+QB
+QB
 Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-IB
-RN
-RN
-RN
-lK
-RN
-RN
+og
 QB
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
 (34,1,1) = {"
 tq
 tq
-tq
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-kP
-QB
-QB
+VV
+Qo
 QB
 QB
 QB
@@ -4192,74 +6752,63 @@ QB
 QB
 QB
 RN
+Om
 RN
-RN
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+Vs
+xH
+Wv
 IB
-Wh
+OA
 Sb
 Zt
-Wh
+Ff
 Sb
 bA
 lm
 lK
 FH
 gi
-ru
+Md
 lK
+zY
+pv
+pv
+pv
+zY
+zY
+pv
+pv
+zY
+Rh
+ha
+ET
+uF
 Qo
 Qo
 Qo
+zY
+QB
+QB
+QB
+QB
+QA
 Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-IB
-RN
-RN
-RN
-no
-RN
-RN
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -4271,97 +6820,72 @@ QB
 QB
 QB
 QB
-QB
-QB
-QB
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+ZV
 QB
 QB
 QB
 QB
+BM
+kP
+kP
+kP
+kP
+kP
+kP
+kP
+kP
+kP
 QB
 QB
 QB
-RN
-RN
+QB
+QB
+QB
+QB
+QV
+gI
 QB
 IB
-RN
-RN
-RN
+fe
+Aa
+Aa
 jE
-eA
-eA
+cD
+cD
 Vz
 lK
 ms
 gi
-Jo
+zN
 lK
+zY
+zY
+zY
+zY
+zY
+pv
+pv
+pv
+pv
+zY
+Rh
+EM
+dn
 Qo
 Qo
 Qo
+zY
 Qo
+QB
+QB
+QB
 Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-IB
-RN
-RN
-RN
-no
-RN
-RN
+og
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -4372,11 +6896,11 @@ QB
 QB
 QB
 QB
+IZ
+Rp
+IZ
 QB
 QB
-QB
-QB
-kP
 IB
 IB
 IB
@@ -4395,8 +6919,8 @@ QB
 QB
 QB
 QB
-RN
-RN
+QV
+gI
 QB
 IB
 IB
@@ -4408,62 +6932,37 @@ lK
 lK
 lK
 lK
-gO
+cz
 lK
 lK
 lK
 lK
 lK
+zY
+zY
+pv
+pv
+pv
+pv
+zY
+zY
+kn
+dn
 Qo
 Qo
+zY
+zY
+zY
+zY
 Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-IB
-RN
-RN
-RN
-no
-RN
-RN
+Vs
+IZ
+Rp
+IZ
 QB
 QB
 QB
 QB
-QB
-QB
-Qo
-Qo
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -4475,30 +6974,30 @@ QB
 QB
 QB
 QB
+ZV
 QB
 QB
-QB
 kP
 IB
-RN
-RN
-RN
-IB
-kP
-kP
-IB
-RN
-RN
-RN
+pq
+Pd
+ez
 IB
 kP
 kP
+IB
+pq
+Pd
+ez
+IB
 kP
 kP
 kP
-RN
-RN
-RN
+kP
+kP
+kP
+QV
+JC
 QB
 QB
 QB
@@ -4513,59 +7012,34 @@ uW
 uP
 GC
 KO
-cE
+Yv
 cE
 lK
 QB
 QB
+pv
+QB
+zY
 QB
 QB
 Qo
-QB
-QB
+Cl
+dn
+zY
+zY
 Qo
-Qo
-Qo
-Qo
-Qo
-IB
-RN
-RN
-RN
-lK
-RN
-RN
-QB
+zY
+zY
+zY
+Vs
+zV
+qk
+Ud
 QB
 QB
 QB
 QB
 Qo
-Qo
-Qo
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -4577,32 +7051,32 @@ QB
 QB
 QB
 QB
-QB
+ZV
 QB
 QB
 kP
 IB
-RN
-RN
-RN
+pq
+pq
+Mo
 IB
 kP
 kP
 IB
-RN
-RN
-RN
+pq
+pq
+Mo
 IB
 kP
 kP
+ip
 kP
 kP
-RN
-RN
-RN
-RN
-Qo
-QB
+Vs
+jj
+HG
+zY
+zY
 QB
 QB
 QB
@@ -4626,48 +7100,23 @@ QB
 QB
 QB
 Qo
+Rh
+EC
+Fy
+zY
+zY
+zY
+zY
 Qo
-Qo
-Qo
-Qo
-IB
-IB
-IB
-IB
-lK
-RN
-RN
+QV
+uW
+qk
+Ud
 QB
 QB
 QB
-QB
-QB
-Qo
 QB
 Qo
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -4679,33 +7128,33 @@ QB
 QB
 QB
 QB
-QB
+ZV
 QB
 QB
 kP
 IB
-RN
+MW
 IB
-RN
+SZ
+IB
+kP
+kP
+IB
+MW
+IB
+SZ
 IB
 kP
 kP
-IB
-RN
-IB
-RN
-IB
 kP
-QB
-QB
-RN
-RN
-RN
-RN
+Vs
+Et
+GU
+HG
 QB
 Qo
-Qo
-Qo
+zY
+zY
 QB
 QB
 QB
@@ -4729,47 +7178,22 @@ QB
 QB
 Qo
 Qo
+Rh
+ve
+pv
+zY
+zY
+zY
 Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-kP
-kP
-kP
+QV
+uW
+KZ
+lM
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -4781,9 +7205,9 @@ QB
 QB
 QB
 QB
+ZV
 QB
 QB
-QB
 kP
 kP
 kP
@@ -4798,11 +7222,11 @@ kP
 kP
 kP
 kP
-IZ
-RN
-RN
-RN
-RN
+Vs
+ET
+jj
+Ly
+HG
 QB
 QB
 QB
@@ -4831,47 +7255,22 @@ QB
 QB
 QB
 Qo
+zY
+pv
+ve
+pv
+zY
+zY
 Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-kP
-kP
-kP
+QV
+nk
+qk
+Ud
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -4883,9 +7282,9 @@ QB
 QB
 QB
 QB
+ZV
 QB
 QB
-QB
 kP
 kP
 kP
@@ -4900,9 +7299,9 @@ kP
 kP
 kP
 kP
-RN
-RN
-RN
+QV
+dQ
+HG
 QB
 QB
 QB
@@ -4927,53 +7326,28 @@ lK
 QB
 QB
 QB
+fU
 QB
 QB
 QB
 QB
 QB
-QB
+zY
+zY
+Dn
+nB
+pv
+zY
 Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-kP
-kP
-kP
+QV
+bi
+qk
+Ud
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -4985,9 +7359,9 @@ QB
 QB
 QB
 QB
+ZV
 QB
 QB
-QB
 kP
 kP
 IB
@@ -5002,8 +7376,8 @@ IB
 IB
 IB
 kP
-RN
-RN
+QV
+gI
 QB
 QB
 QB
@@ -5036,46 +7410,21 @@ QB
 QB
 QB
 QB
+zY
+ko
+ou
+ve
+ET
+ET
+pY
+HG
+IZ
+Rp
+IZ
+QB
+QB
 Qo
 Qo
-Qo
-Qo
-Qo
-Qo
-kP
-kP
-kP
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -5087,25 +7436,25 @@ QB
 QB
 QB
 QB
-QB
+ZV
 QB
 QB
 kP
 kP
 IB
-RN
-RN
-RN
+pq
+pq
+Jn
 kP
 kP
 IB
-RN
-RN
-RN
+pq
+Pd
+ez
 IB
 kP
-RN
-RN
+QV
+gI
 QB
 lK
 lK
@@ -5139,45 +7488,20 @@ QB
 QB
 QB
 QB
+zY
+zY
+pv
+JZ
+OQ
+mJ
 Qo
+QB
+ZV
+QB
+QB
+QB
 Qo
-Qo
-Qo
-Qo
-Qo
-Qo
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -5188,26 +7512,26 @@ QB
 QB
 QB
 QB
-QB
-QB
-QB
+IZ
+Rp
+IZ
 QB
 QB
 kP
 IB
-RN
-RN
+Pd
+pq
 IB
 kP
 kP
 IB
-RN
-RN
-RN
+pq
+pq
+Mo
 IB
 kP
-RN
-RN
+QV
+gI
 QB
 lK
 tq
@@ -5241,45 +7565,20 @@ QB
 QB
 QB
 QB
+zY
+ft
+ft
+qT
+aD
 Qo
+QB
+QB
+ZV
+QB
+QB
+QB
 Qo
-Qo
-Qo
-Qo
-Qo
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -5290,26 +7589,26 @@ QB
 QB
 QB
 QB
-QB
-QB
+Qo
+Fc
 QB
 QB
 QB
 kP
 IB
-RN
-RN
-RN
+ez
+zo
+SZ
 kP
 kP
 IB
-RN
+MW
 IB
-RN
+SZ
 IB
 kP
-RN
-RN
+QV
+gI
 QB
 lK
 tq
@@ -5332,7 +7631,7 @@ tq
 tq
 tq
 tq
-Dp
+BG
 tq
 tq
 tq
@@ -5344,44 +7643,19 @@ QB
 QB
 QB
 Qo
+zY
+zY
+qT
+aD
 Qo
-Qo
-Qo
-Qo
-Qo
+QB
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -5391,9 +7665,9 @@ tq
 QB
 QB
 QB
-QB
-QB
-QB
+Qo
+bM
+Qo
 QB
 QB
 kP
@@ -5410,8 +7684,8 @@ kP
 kP
 kP
 kP
-RN
-RN
+QV
+JC
 QB
 lK
 GH
@@ -5434,7 +7708,7 @@ tq
 tq
 Dw
 tq
-Dp
+BG
 tq
 tq
 tq
@@ -5446,44 +7720,19 @@ QB
 QB
 QB
 Qo
-Qo
-Qo
-Qo
-Qo
-Qo
+aC
+Xw
+sk
+tz
+OZ
+QB
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -5493,27 +7742,27 @@ tq
 QB
 QB
 QB
+VV
+Qo
 QB
 QB
 QB
-QB
-QB
 kP
 kP
 kP
 kP
 kP
 kP
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
+Vs
+ET
+Et
+Ok
+Ok
+Ok
+Ok
+Ok
+WC
+HG
 QB
 lK
 tq
@@ -5522,13 +7771,13 @@ tq
 tq
 tq
 tq
-Aw
+BG
 tq
 tq
 tq
 tq
 tq
-Dp
+BG
 tq
 tq
 tq
@@ -5536,7 +7785,7 @@ tq
 tq
 IH
 eA
-Vz
+Kc
 tq
 tq
 tq
@@ -5548,44 +7797,19 @@ QB
 QB
 QB
 QB
+gZ
+Qo
+qT
+MT
+Qo
+QB
+Qo
+ZV
+Qo
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -5594,27 +7818,27 @@ tq
 QB
 QB
 QB
+IZ
+Rp
+IZ
 QB
 QB
-QB
-kP
-QB
 kP
 kP
 kP
 kP
 kP
 kP
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
+ib
+ie
+So
+Ly
+Ly
+Ly
+Hg
+uW
+vw
+HG
 QB
 QB
 lK
@@ -5624,21 +7848,21 @@ tq
 tq
 tq
 tq
-Dp
+BG
 GH
 da
 KM
 ig
 GH
-Dp
+BG
 GH
 da
 KM
 ig
 GH
-Dp
+BG
 tq
-tq
+GH
 tq
 tq
 tq
@@ -5650,45 +7874,20 @@ QB
 QB
 QB
 QB
+fb
+Qo
+qT
+aD
+kX
+QB
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 "}
 (49,1,1) = {"
@@ -5697,25 +7896,25 @@ QB
 QB
 QB
 QB
+ZV
 QB
 QB
 kP
 kP
-kP
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-kP
+Vs
+ET
+ET
+ET
+ET
+uB
+dn
 kP
 kP
 kP
-RN
-RN
-RN
+kP
+Rh
+Hg
+JC
 kP
 kP
 QB
@@ -5726,21 +7925,21 @@ tq
 tq
 tq
 tq
-Dp
+Lt
 tq
 tq
 TI
 tq
 tq
-Dp
+Lt
 tq
 tq
 Hx
 tq
 tq
-Dp
+Lt
 tq
-tq
+GH
 tq
 tq
 tq
@@ -5751,46 +7950,21 @@ QB
 QB
 QB
 QB
+lK
+lK
+lK
+lv
+DL
+lK
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 "}
 (50,1,1) = {"
@@ -5799,25 +7973,25 @@ QB
 QB
 QB
 QB
+ZV
 QB
-QB
 kP
 kP
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-kP
-kP
-kP
+Vs
+DB
+xU
+xU
+xU
+ls
+Ly
+PN
 kP
 kP
 kP
-RN
-RN
+kP
+kP
+EP
+dn
 QB
 QB
 QB
@@ -5831,18 +8005,18 @@ wk
 VG
 mt
 tq
-Dp
+BG
 tq
 RW
 zT
 mt
 tq
-Dp
+BG
 tq
 RW
-VG
+Rl
 ph
-tq
+GH
 tq
 tq
 tq
@@ -5853,45 +8027,20 @@ QB
 QB
 QB
 QB
+lK
+Pj
+pi
+vu
+dY
+AE
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -5901,25 +8050,25 @@ QB
 QB
 QB
 QB
+ZV
 QB
-QB
 kP
-RN
-RN
-RN
-kP
+Pp
+CR
+HG
 kP
 kP
 kP
 kP
 kP
+jL
 kP
 kP
 kP
 kP
 kP
-RN
-RN
+QV
+yL
 QB
 QB
 QB
@@ -5930,19 +8079,19 @@ Ih
 Qj
 Ih
 dG
-oR
+CK
 rw
 cl
 Pb
 cl
 HR
-oR
+CK
 rw
 cl
 Pb
 cl
 HR
-oR
+CK
 dG
 Ih
 Qj
@@ -5955,45 +8104,20 @@ QB
 QB
 QB
 QB
+lK
+kK
+dY
+dY
+dY
+AE
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-kP
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -6003,25 +8127,25 @@ QB
 QB
 QB
 QB
+ZV
 QB
-QB
 kP
-RN
-RN
-kP
+QV
+aD
 kP
 kP
+kP
 IB
 IB
 IB
-RN
+ed
 IB
 IB
 IB
 IB
 kP
-RN
-RN
+EP
+dn
 QB
 QB
 QB
@@ -6038,7 +8162,7 @@ tq
 tq
 tq
 tq
-RN
+Nu
 tq
 tq
 tq
@@ -6056,46 +8180,21 @@ QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-kP
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+lK
+ho
+lK
+Vl
+BU
+lK
+lK
+IZ
+Rp
+IZ
+QB
+QB
+QB
+QB
 tq
 tq
 "}
@@ -6105,25 +8204,25 @@ tq
 QB
 QB
 QB
+ZV
 QB
-QB
 kP
-RN
-RN
-kP
+qT
+dn
 kP
 kP
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
 kP
-RN
-RN
+Aw
+Jk
+mn
+uW
+uW
+Uy
+Jk
+Aw
+kP
+QV
+yL
 QB
 QB
 QB
@@ -6140,7 +8239,7 @@ tq
 tq
 tq
 tq
-RN
+Nu
 tq
 tq
 tq
@@ -6158,46 +8257,21 @@ QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-kP
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+lK
+OT
+lK
+fF
+Ju
+YB
+lK
+QB
+ZV
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 "}
@@ -6207,25 +8281,25 @@ tq
 QB
 QB
 QB
+ZV
 QB
-QB
 kP
-RN
-RN
+QV
+aD
 kP
 kP
 kP
 IB
-RN
+gO
 IB
-RN
-RN
+uW
+eO
 IB
-RN
+gO
 IB
 kP
-RN
-RN
+EP
+dn
 QB
 QB
 QB
@@ -6235,21 +8309,21 @@ GH
 GH
 GH
 GH
-RN
+Nu
 cO
 tq
 tq
 tq
 tq
 tq
-RN
+Nu
 tq
 tq
 tq
 tq
 tq
 cO
-RN
+Nu
 GH
 GH
 GH
@@ -6261,73 +8335,48 @@ QB
 QB
 QB
 QB
+lK
+OT
+lK
+fF
+fF
+fF
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-kP
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
 (55,1,1) = {"
 tq
 tq
-tq
-tq
 QB
 QB
-QB
+IZ
+Rp
+IZ
 kP
-RN
-RN
+Au
+dn
 kP
 kP
 kP
 IB
 IB
 IB
-RN
-RN
+uW
+Uk
 IB
 IB
 IB
 kP
-RN
-RN
+QV
+yL
 QB
 QB
 QB
@@ -6344,7 +8393,7 @@ tq
 tq
 tq
 tq
-RN
+Nu
 tq
 tq
 tq
@@ -6359,77 +8408,52 @@ tq
 tq
 lK
 QB
+lK
+lK
+lK
+lK
+lK
+FB
+lK
+vy
+lK
+lK
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-kP
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
 (56,1,1) = {"
 tq
-tq
-tq
 QB
 QB
 QB
 QB
+wp
+Kt
+ET
+uB
+dn
 kP
-RN
-RN
 kP
 kP
+Aw
+Jk
+mn
+uW
+uW
+Uy
+Jk
+Aw
 kP
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-kP
-RN
-RN
+EP
+dn
 QB
 QB
 QB
@@ -6446,7 +8470,7 @@ tq
 tq
 tq
 tq
-RN
+Nu
 tq
 tq
 tq
@@ -6461,77 +8485,52 @@ tq
 tq
 lK
 QB
+lK
+nJ
+RN
+nJ
+lK
+Om
+RN
+RN
+RN
+RN
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-kP
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
 (57,1,1) = {"
 tq
-tq
-tq
 QB
 QB
 QB
 QB
-kP
-RN
-RN
+BS
+yr
+TM
+uW
+dn
 kP
 kP
 kP
 IB
-RN
+gO
 IB
-RN
-RN
+uW
+uW
 IB
-RN
+gO
 IB
 kP
-RN
-RN
+QV
+yL
 QB
 QB
 QB
@@ -6540,100 +8539,75 @@ tq
 Xu
 eA
 eA
-eA
+DK
 IG
-oR
-RN
-RN
-RN
-RN
-RN
+UW
+Nu
+Nu
+Nu
+Nu
+Nu
 nm
-RN
-RN
-RN
-RN
-RN
-oR
+Nu
+Nu
+Nu
+Nu
+Nu
+nu
 Fv
-eA
+kb
 eA
 eA
 tO
 tq
 lK
 QB
+lK
+RN
+RN
+RN
+lK
+Om
+RN
+RN
+RN
+RN
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-kP
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
 (58,1,1) = {"
+QB
+QB
 tq
-tq
-tq
 QB
 QB
-QB
-QB
+wp
+Kt
+Ly
+nC
+dn
 kP
-RN
-RN
-kP
 kP
 kP
 IB
 IB
 IB
-RN
-RN
+uW
+uW
 IB
 IB
 IB
 kP
-RN
-RN
+EP
+dn
 QB
 QB
 QB
@@ -6650,7 +8624,7 @@ tq
 tq
 tq
 tq
-RN
+Nu
 tq
 tq
 tq
@@ -6665,49 +8639,24 @@ tq
 tq
 lK
 QB
+lK
+Zk
+ze
+km
+lK
+Om
+RN
+RN
+RN
+RN
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-kP
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -6716,26 +8665,26 @@ tq
 tq
 tq
 QB
-QB
-QB
-QB
+IZ
+Rp
+IZ
 kP
-RN
-RN
+Cl
+dn
 kP
 kP
 kP
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
+Aw
+Jk
+mn
+uW
+uW
+Uy
+Jk
+Aw
 kP
-RN
-RN
+QV
+yL
 QB
 QB
 QB
@@ -6752,7 +8701,7 @@ tq
 tq
 tq
 tq
-RN
+Nu
 tq
 tq
 tq
@@ -6767,49 +8716,24 @@ tq
 tq
 lK
 QB
+lK
+PI
+RE
+RN
+lK
+Om
+RN
+RN
+RN
+RN
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -6819,25 +8743,25 @@ tq
 tq
 QB
 QB
+ZV
 QB
-QB
 kP
-RN
-RN
+QV
+aD
 kP
 kP
 kP
 IB
-RN
+gO
 IB
-RN
-RN
+uW
+eO
 IB
-RN
+gO
 IB
 kP
-RN
-RN
+EP
+dn
 QB
 QB
 QB
@@ -6847,21 +8771,21 @@ GH
 GH
 GH
 GH
-RN
+Nu
 cO
 tq
 tq
 tq
 tq
 tq
-RN
+Nu
 tq
 tq
 tq
 tq
 tq
 cO
-RN
+Nu
 GH
 GH
 GH
@@ -6869,49 +8793,24 @@ GH
 GH
 lK
 QB
+lK
+RN
+Rr
+LM
+lK
+Om
+RN
+RN
+RN
+RN
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -6921,25 +8820,25 @@ tq
 tq
 QB
 QB
+ZV
 QB
-QB
 kP
-RN
-RN
-kP
+qT
+dn
 kP
 kP
 IB
 IB
 IB
-RN
-RN
+IB
+uW
+eO
 IB
 IB
 IB
 kP
-RN
-RN
+QV
+yL
 QB
 QB
 QB
@@ -6956,7 +8855,7 @@ tq
 tq
 tq
 tq
-RN
+Nu
 tq
 tq
 tq
@@ -6971,49 +8870,24 @@ tq
 tq
 lK
 QB
+lK
+RN
+RN
+cw
+Pl
+gM
+RN
+RN
+RN
+RN
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -7023,25 +8897,25 @@ tq
 tq
 QB
 QB
+ZV
 QB
-QB
 kP
-RN
-RN
-kP
+QV
+aD
 kP
 kP
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
+IB
+VI
+Oe
+mn
+uW
+uW
+Uy
+Jk
+Aw
 kP
-RN
-RN
+EP
+dn
 QB
 QB
 QB
@@ -7058,7 +8932,7 @@ tq
 tq
 tq
 tq
-RN
+Nu
 tq
 tq
 tq
@@ -7073,49 +8947,24 @@ tq
 yt
 lK
 QB
+lK
+RN
+RN
+RN
+RN
+RN
+RN
+RN
+RN
+RN
+lK
+IZ
+Rp
+IZ
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -7125,25 +8974,25 @@ tq
 tq
 QB
 QB
+ZV
 QB
-QB
 kP
-RN
-RN
-RN
-kP
+HA
+xV
+Fy
 kP
 IB
-RN
+ky
+Sm
 IB
-RN
-RN
+uW
+WG
 IB
-RN
+oJ
 IB
 kP
-RN
-RN
+QV
+yL
 QB
 QB
 QB
@@ -7175,49 +9024,24 @@ Ih
 yt
 lK
 QB
+lK
+RN
+RN
+RN
+RN
+RN
+RN
+RN
+RN
+RN
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -7227,25 +9051,25 @@ QB
 QB
 QB
 QB
+ZV
 QB
-QB
 kP
 kP
-RN
-RN
-RN
+Rh
+EC
+Fy
+IB
+IB
+IB
+IB
+ed
+IB
+IB
+IB
+IB
 kP
-IB
-IB
-IB
-RN
-IB
-IB
-IB
-IB
-kP
-RN
-RN
+CV
+HG
 QB
 QB
 QB
@@ -7256,16 +9080,16 @@ tq
 tq
 tq
 uh
-eF
+Tu
 HR
 tq
-Dp
+BG
 tq
 rw
 eF
 HR
 tq
-Dp
+BG
 tq
 rw
 hK
@@ -7277,49 +9101,24 @@ tq
 yt
 lK
 QB
+lK
+RN
+RN
+RN
+RN
+RN
+RN
+lK
+Bk
+lK
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -7329,24 +9128,24 @@ tq
 QB
 QB
 QB
+ZV
 QB
 QB
 kP
 kP
-kP
-RN
-RN
-kP
+QV
+Pq
 kP
 kP
 kP
 kP
+xL
 kP
 kP
 kP
 kP
 kP
-RN
+jt
 QB
 QB
 QB
@@ -7358,19 +9157,19 @@ tq
 tq
 tq
 tq
-Dp
+qm
 tq
 tq
 NM
 tq
 tq
-Dp
+qm
 tq
 tq
 BK
 tq
 tq
-Dp
+qm
 tq
 tq
 tq
@@ -7379,49 +9178,24 @@ tq
 tq
 lK
 QB
+lK
+RN
+RN
+RN
+RN
+RN
+lK
+lK
+RN
+RN
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -7431,24 +9205,24 @@ tq
 QB
 QB
 QB
+ZV
 QB
 QB
+QB
+Vs
+zV
+qq
+ET
+Fy
 kP
 kP
-RN
-RN
-RN
-RN
-RN
+xL
+cg
+DD
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-RN
-RN
+Vs
+aL
 QB
 QB
 QB
@@ -7460,19 +9234,19 @@ tq
 tq
 tq
 tq
-Dp
+BG
 GH
 TP
 pf
 Hc
 GH
-Dp
+BG
 GH
 TP
 pf
 Hc
 GH
-Dp
+BG
 tq
 tq
 tq
@@ -7481,49 +9255,24 @@ tq
 tq
 lK
 QB
+lK
+RN
+RN
+RN
+RN
+RN
+lK
+Ma
+RN
+WK
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -7533,24 +9282,24 @@ tq
 QB
 QB
 QB
+ZV
 QB
 QB
 kP
-kP
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
+QV
+uW
+Cs
+aO
+YA
+MV
+MV
+DW
+Ok
+Ok
+Ok
+Ok
+fX
+HG
 QB
 QB
 QB
@@ -7562,19 +9311,19 @@ tq
 tq
 tq
 tq
-Dp
+BG
 tq
 tq
 tq
 tq
 tq
-Dp
+BG
 tq
 tq
 tq
 tq
 tq
-Dp
+BG
 tq
 tq
 tq
@@ -7583,49 +9332,24 @@ tq
 tq
 lK
 QB
+lK
+RN
+RN
+RN
+RN
+RN
+lK
+Dx
+RN
+Su
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 tq
 tq
 "}
@@ -7634,24 +9358,24 @@ tq
 tq
 QB
 QB
+IZ
+Rp
+IZ
 QB
-QB
 kP
-kP
-kP
-RN
-RN
-RN
-kP
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
-RN
+QV
+nk
+dn
+zY
+Rh
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+Ly
+HG
 QB
 QB
 QB
@@ -7685,49 +9409,24 @@ GH
 GH
 lK
 QB
+lK
+RN
+RN
+RN
+RN
+RN
+lK
+VQ
+QQ
+pC
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
@@ -7736,24 +9435,24 @@ tq
 QB
 QB
 QB
+Qo
+fo
+QB
 QB
 kP
-kP
-kP
-kP
-RN
-RN
-RN
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+Rh
+Vt
+dn
+zY
+zY
+zY
+zY
+pv
+pv
+pv
+pv
+zY
+zY
 QB
 QB
 QB
@@ -7787,49 +9486,24 @@ tq
 tq
 lK
 QB
+lK
+lK
+lK
+lK
+lK
+TD
+lK
+lK
+lK
+lK
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
@@ -7837,26 +9511,26 @@ tq
 QB
 QB
 QB
+Qo
+bM
+Qo
 QB
 QB
 kP
 kP
-kP
-kP
-kP
-RN
-RN
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+kn
+dn
+zY
+pv
+pv
+pv
+zY
+pv
+pv
+pv
+zY
+zY
+zY
 QB
 QB
 QB
@@ -7889,77 +9563,52 @@ tq
 tq
 lK
 QB
+lK
+RN
+RN
+RN
+RN
+RN
+RN
+GR
+hi
+GR
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
 (71,1,1) = {"
 QB
 QB
+IZ
+IT
+RN
+IZ
 QB
-QB
-IB
-IB
-IB
-IB
-IB
-kP
-RN
-RN
 kP
 kP
-RN
-RN
-RN
 kP
-kP
-RN
-RN
-RN
-kP
-kP
+kn
+dn
+pv
+zY
+zY
+NN
+zY
+zY
+zY
+zY
+NN
+zY
+zY
+pv
 QB
 QB
 QB
@@ -7991,49 +9640,24 @@ lK
 lK
 lK
 QB
+lK
+RN
+HF
+GR
+RN
+RN
+RN
+RN
+BH
+YV
+lK
+QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
@@ -8041,101 +9665,76 @@ tq
 QB
 QB
 QB
-QB
+ZV
+IZ
+IB
+IB
+IB
 IB
 kP
-kP
-kP
-kP
-kP
+TW
+dn
+pv
+zY
+zY
+qg
+SH
+zY
+zY
+zY
+Pv
+SH
+zY
+pv
+pv
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+lK
+GR
+GR
+GR
 RN
 RN
-kP
-kP
 RN
 RN
 RN
-kP
-kP
-RN
-RN
-RN
-kP
-kP
-kP
+GR
+lK
+IZ
+Rp
+IZ
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
@@ -8143,101 +9742,76 @@ tq
 QB
 QB
 QB
-QB
+ZV
 IB
-kP
-kP
-kP
 RN
-kP
+Pg
+Pl
+PB
+ZE
+Bo
+dn
+pv
+pv
+zY
+xa
+zY
+zY
+zY
+zY
+Uf
+zY
+zY
+pv
+pv
+pv
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+lK
 RN
 RN
-kP
-kP
 RN
 RN
 RN
-kP
-kP
 RN
 RN
 RN
-kP
-kP
-kP
-kP
+GR
+lK
 QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
@@ -8245,33 +9819,33 @@ tq
 QB
 QB
 QB
-QB
+ZV
 IB
-kP
-kP
-kP
 RN
+RN
+RN
+lu
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+Cl
+dn
+pv
+pv
+zY
+zY
+zY
+pv
+pv
+zY
+zY
+zY
+zY
+zY
 IB
 IB
 IB
 IB
-kP
-kP
+zY
+wr
 QB
 QB
 QB
@@ -8297,49 +9871,24 @@ QB
 QB
 QB
 QB
+lK
+RN
+RN
+yd
+RN
+RN
+RN
+yd
+RN
+RN
+lK
 QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
@@ -8347,33 +9896,34 @@ tq
 QB
 QB
 QB
-QB
+ZV
 IB
+RN
+RN
+RN
+lu
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+QV
+aD
+pv
+zY
+zY
+pv
+pv
+pv
+pv
+zY
+zY
+zY
+zY
+zY
+Ft
+pq
+Gf
 IB
 IB
-kP
+jK
+pv
 QB
 QB
 QB
@@ -8398,50 +9948,24 @@ QB
 QB
 QB
 QB
+lK
+RN
+GO
+EO
+RN
+RN
+GO
+mU
+RN
+RN
+lK
 QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
@@ -8449,39 +9973,43 @@ tq
 QB
 QB
 QB
-QB
+ZV
 IB
-IB
-IB
-IB
-IB
-tq
-kP
-kP
-kP
 RN
 RN
 RN
-kP
-kP
-RN
-RN
-RN
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+eP
+du
+zM
+zY
+pv
+zY
+NN
+zY
+zY
+zY
+pv
+NN
+zY
+zY
+pv
+pv
+Ft
+pq
+Gf
+AI
 IB
-kP
+vZ
+pv
 QB
 QB
 QB
 QB
 QB
 QB
+Qo
+Qo
+Qo
 QB
 QB
 QB
@@ -8492,58 +10020,29 @@ QB
 QB
 QB
 QB
+Qo
+Qo
+Qo
 QB
 QB
+lK
+RN
+RN
+RN
+RN
+RN
+RN
+RN
+RN
+RN
+lK
 QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
@@ -8551,39 +10050,43 @@ tq
 tq
 QB
 QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-kP
-kP
-kP
-RN
-RN
-RN
-kP
-kP
-RN
-RN
-RN
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+ZV
+IB
+IB
+IB
+IB
 IB
 kP
+zY
+jy
+pv
+zY
+er
+SH
+zY
+zY
+pv
+oV
+SH
+zY
+pv
+pv
+Ft
+pq
+pq
+vI
+IB
+sf
+pv
 QB
 QB
 QB
 QB
 QB
+Qo
 QB
+Qo
+Qo
 QB
 QB
 QB
@@ -8593,93 +10096,65 @@ QB
 QB
 QB
 QB
+Qo
+Qo
+Qo
 QB
 QB
 QB
+lK
+NH
+NH
+NH
+lK
+KR
+KR
+KR
+lK
+lK
+lK
 QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
 (78,1,1) = {"
 tq
 QB
+IZ
+Rp
+IZ
 QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
 kP
 kP
 kP
-RN
-RN
-RN
 kP
+wO
+pv
+pv
+zY
+Uf
+zY
+zY
+pv
+pv
+Uf
 kP
-RN
-RN
-RN
-kP
-kP
-kP
+zY
+pv
+zY
 IB
-kP
-kP
-kP
-kP
-kP
+pq
+pq
+pq
+zS
+Eg
+RN
 QB
 QB
 QB
@@ -8687,6 +10162,9 @@ QB
 QB
 QB
 QB
+Qo
+Qo
+Qo
 QB
 QB
 QB
@@ -8697,57 +10175,28 @@ QB
 QB
 QB
 QB
+Qo
+Qo
 QB
 QB
+lK
+Yo
+Yo
+Yo
+lK
+Yo
+Yo
+Yo
+lK
 QB
 QB
 QB
+ZV
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
@@ -8755,33 +10204,44 @@ tq
 tq
 QB
 QB
+QA
+Qo
 QB
-QB
-tq
-tq
-tq
-tq
-tq
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+hy
+zY
+pv
+pv
+zY
+pv
+pv
+pv
+zY
+pv
+pv
+zY
+pv
+pv
+zY
+Gw
+pq
+Gf
 IB
 IB
-kP
+Mg
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+Qo
+Qo
+Qo
 QB
 QB
 QB
@@ -8796,55 +10256,19 @@ QB
 QB
 QB
 QB
+lK
+Yo
+kG
+Yo
+lK
+Yo
+NW
+Yo
+lK
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
+ZV
 QB
 QB
 QB
@@ -8857,33 +10281,38 @@ tq
 tq
 QB
 QB
+Qo
+og
 QB
-QB
-tq
-tq
-tq
-tq
-tq
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+Tz
+zY
+pv
+pv
+pv
+zY
+zY
+pv
+pv
+pv
+zY
+fa
+zY
+zY
+zY
 IB
-kP
+ke
+IQ
 IB
-IB
-kP
-kP
+rh
+fv
+QB
+QB
+QB
+QB
+Qo
 QB
 QB
 QB
@@ -8894,6 +10323,8 @@ QB
 QB
 QB
 QB
+Qo
+Qo
 QB
 QB
 QB
@@ -8902,51 +10333,19 @@ QB
 QB
 QB
 QB
+lK
+Yo
+Yo
+Yo
+lK
+Yo
+Yo
+Yo
+lK
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
+ZV
 QB
 QB
 QB
@@ -8960,34 +10359,37 @@ tq
 tq
 QB
 QB
+ZV
 QB
-QB
-tq
-tq
-tq
-tq
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+zY
+zY
+pv
+pv
+pv
+pv
+zY
+zY
+pv
+fv
+fa
+fa
+fv
+fv
+zY
 IB
-kP
-kP
+un
+TT
 IB
-kP
-kP
+oN
+UR
 QB
 QB
+Qo
+Qo
+Qo
 QB
 QB
 QB
@@ -8997,6 +10399,8 @@ QB
 QB
 QB
 QB
+Qo
+Qo
 QB
 QB
 QB
@@ -9006,50 +10410,20 @@ QB
 QB
 QB
 QB
+lK
+lK
+lK
+lK
+lK
+lK
+lK
+lK
+lK
+lK
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
+IZ
+Rp
+IZ
 QB
 QB
 QB
@@ -9062,32 +10436,47 @@ tq
 tq
 QB
 QB
+ZV
 QB
-QB
-tq
-tq
-tq
-tq
 kP
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+zY
+zY
+zY
+pv
+zY
+pv
+pv
+pv
+zY
+fa
+fv
+fa
+fa
+fv
+pv
 IB
-kP
-kP
+un
+bk
 IB
-kP
-kP
+oN
+UR
+QB
+QB
+Qo
+Qo
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+Qo
 QB
 QB
 QB
@@ -9101,6 +10490,7 @@ QB
 QB
 QB
 QB
+Qo
 QB
 QB
 QB
@@ -9109,48 +10499,7 @@ QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
+ZV
 QB
 QB
 QB
@@ -9164,235 +10513,185 @@ tq
 tq
 tq
 QB
+ZV
+QB
+QB
+kP
+kP
+kP
+zY
+IB
+IB
+IB
+VF
+IB
+pv
+KC
+KC
+Ik
+Ik
+Ik
+fv
+pv
+IB
+un
+IX
+IB
+Mg
+WH
+QB
+QB
+Qo
+Qo
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+Qo
+Qo
+Qo
+Qo
+QB
+QB
+QB
+QB
+QB
+Qo
+Fc
+QB
+QB
+QB
 QB
 QB
 QB
 tq
-tq
-tq
-kP
-IB
-kP
-kP
-kP
-IB
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-IB
-kP
-kP
-IB
-kP
-kP
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
 "}
 (84,1,1) = {"
 tq
 tq
+QB
+QB
+ZV
+QB
+QB
+kP
+kP
+kP
+zY
+IB
+ai
+Vm
+RN
+rD
+pv
+zY
+Zu
+Zu
+fa
+fa
+fa
+fa
+IB
+un
+Fg
+IB
+CU
+WH
+QB
+QB
+Qo
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+Qo
+Qo
+bv
+Qo
+Qo
+QB
+QB
+QB
+QB
+QB
+VV
+Qo
+QB
+QB
+QB
+QB
+QB
+QB
 tq
-QB
-QB
-QB
-QB
-kP
-kP
-kP
-kP
-IB
-kP
-kP
-kP
-IB
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-IB
-kP
-kP
-IB
-kP
-kP
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
 "}
 (85,1,1) = {"
 tq
 tq
-tq
-tq
 QB
 QB
+ZV
 QB
-tq
-tq
-tq
-kP
-IB
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+QB
 kP
 kP
 kP
 kP
 IB
+vK
+RN
+RN
+AP
+zY
+zY
+zY
+Zu
+Zu
+zY
+fa
+aw
 IB
 IB
 IB
-kP
+IB
+CU
 QB
 QB
 QB
@@ -9400,6 +10699,9 @@ QB
 QB
 QB
 QB
+Qo
+Qo
+Qo
 QB
 QB
 QB
@@ -9417,10 +10719,17 @@ QB
 QB
 QB
 QB
+Qo
+Qo
+cH
+Qo
+Qo
+Qo
 QB
 QB
 QB
 QB
+ZV
 QB
 QB
 QB
@@ -9428,73 +10737,38 @@ QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
+tq
 "}
 (86,1,1) = {"
 tq
 tq
-tq
-tq
+QB
+QB
+ZV
 QB
 QB
 QB
-QB
-tq
-tq
-kP
-IB
 kP
 kP
 kP
 IB
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+hT
+RN
+RN
+rD
+zY
+WO
+Xo
+gQ
+gQ
+Xo
+Zu
+fa
+fa
+zX
+zX
+zX
+zX
 QB
 QB
 QB
@@ -9502,6 +10776,9 @@ QB
 QB
 QB
 QB
+Qo
+Qo
+Qo
 QB
 QB
 QB
@@ -9517,183 +10794,130 @@ QB
 QB
 QB
 QB
+SY
 QB
 QB
+IB
+GA
+IB
+IB
+Qo
+Qo
+Qo
+Qo
 QB
+ZV
 QB
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
+tq
+tq
 "}
 (87,1,1) = {"
 tq
-tq
-tq
-tq
-tq
 QB
 QB
 QB
-tq
-tq
+ZV
+QB
+QB
+QB
+kP
+kP
 kP
 IB
+sM
+RN
+RN
+rD
+zY
+Zu
+UR
+UR
+UR
+Zu
+Zu
+fa
+fa
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+Qo
+Qo
+Qo
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+Cg
+sV
+dg
 IB
-IB
-IB
-IB
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+Qo
 QB
 QB
 QB
 QB
+ZV
 QB
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
+tq
+tq
 "}
 (88,1,1) = {"
 tq
-tq
-tq
-tq
-tq
-tq
 QB
 QB
 QB
-tq
+ZV
+QB
+QB
+QB
+QB
 kP
 kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
-kP
+IB
+IB
+IB
+IB
+IB
+zY
+Zu
+UR
+UR
+Zu
+Zu
+UR
+Zu
 QB
 QB
 QB
@@ -9705,6 +10929,7 @@ QB
 QB
 QB
 QB
+Qo
 QB
 QB
 QB
@@ -9714,6 +10939,7 @@ QB
 QB
 QB
 QB
+Qo
 QB
 QB
 QB
@@ -9725,165 +10951,109 @@ QB
 QB
 QB
 QB
+EA
+yN
+EA
 QB
 QB
 QB
 QB
 QB
+IZ
+Rp
+IZ
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
 (89,1,1) = {"
 tq
 tq
-tq
-tq
-tq
-tq
-tq
 QB
+IZ
+Rp
+IZ
 QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 QB
 QB
+kP
+kP
+kP
+kP
+kP
+zY
+zY
+zY
+KC
+KC
+KC
+WO
+Xo
+za
 QB
 QB
 QB
 QB
 QB
 QB
+Qo
+Qo
 QB
 QB
 QB
 QB
+Qo
 QB
 QB
 QB
 QB
 QB
-tq
-tq
-tq
 QB
 QB
 QB
+Qo
 QB
 QB
 QB
+Qo
 QB
 QB
+IZ
+Qo
+Qo
 QB
 QB
-tq
-tq
-tq
-tq
+IZ
+zc
+hl
+zc
+IZ
 QB
 QB
 QB
+IZ
+Qo
+Fc
 QB
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
 tq
 tq
 "}
 (90,1,1) = {"
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
 QB
 QB
+QA
+Qo
 QB
 QB
 QB
@@ -9894,15 +11064,21 @@ QB
 QB
 QB
 QB
-tq
+zY
+zY
+Zu
+Zu
+UR
+UR
 QB
 QB
 QB
 QB
 QB
 QB
+Qo
+Qo
 QB
-tq
 QB
 QB
 QB
@@ -9913,90 +11089,32 @@ QB
 QB
 QB
 QB
-tq
-tq
-tq
 QB
 QB
 QB
+Qo
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-"}
-(91,1,1) = {"
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
+Qo
+Qo
+Ti
+mC
+us
+us
+us
+us
+mC
+eH
+jI
+eH
+mC
+us
+us
+us
+mC
+MX
+Qo
 QB
 QB
 QB
@@ -10005,33 +11123,15 @@ QB
 QB
 tq
 tq
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
+"}
+(91,1,1) = {"
 tq
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
+Qo
+KT
+Qo
 QB
 QB
 QB
@@ -10068,30 +11168,48 @@ QB
 QB
 QB
 QB
+Qo
+Qo
 QB
 QB
 QB
-tq
-tq
-tq
-tq
+Qo
+bM
+Qo
+IZ
+QB
+QB
+QB
+QB
+IZ
+Jy
+ij
+Jy
+IZ
+QB
+QB
+QB
+IZ
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 tq
 "}
 (92,1,1) = {"
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 QB
 QB
 QB
 QB
+Qo
+KT
+Qo
 QB
 QB
 QB
@@ -10103,10 +11221,6 @@ QB
 QB
 QB
 QB
-tq
-tq
-tq
-tq
 QB
 QB
 QB
@@ -10117,23 +11231,6 @@ QB
 QB
 QB
 QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 QB
 QB
 QB
@@ -10147,14 +11244,24 @@ QB
 QB
 QB
 QB
+Qo
+Qo
 QB
 QB
 QB
 QB
+VV
+Qo
+Qo
 QB
 QB
 QB
 QB
+IZ
+rj
+uW
+OT
+uW
 QB
 QB
 QB
@@ -10169,73 +11276,18 @@ QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
 tq
 "}
 (93,1,1) = {"
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+Qo
+KT
+Qo
 QB
 QB
 QB
@@ -10275,74 +11327,62 @@ QB
 QB
 QB
 QB
+ZV
+Qo
+Qo
 QB
 QB
 QB
-tq
+QB
+QB
+rj
+uW
+Ks
+uW
+IB
+IB
+IB
+IB
+IB
+IB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
 tq
 "}
 (94,1,1) = {"
 tq
+QB
+QB
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+Qo
+KT
+Qo
+IZ
+QB
+QB
+QB
+QB
+IZ
+QB
+QB
+QB
+IZ
 QB
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+IZ
 QB
 QB
 QB
@@ -10364,15 +11404,24 @@ QB
 QB
 QB
 QB
+ZV
+Qo
+Qo
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
+IZ
+rj
+uW
+Uk
+Mj
+IB
+uW
+SW
+uW
+uW
+IB
 QB
 QB
 QB
@@ -10385,96 +11434,71 @@ tq
 "}
 (95,1,1) = {"
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
 tq
 tq
 tq
 QB
 QB
 QB
+Qo
+lI
+mC
+us
+us
+us
+us
+mC
+Xk
+GM
+Xk
+mC
+us
+us
+us
+us
+us
+us
+mC
+UV
+Qo
+QB
+QB
+QB
+QB
+IZ
 QB
 QB
 QB
 QB
 QB
 QB
+IZ
 QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+IZ
+Qo
+Fc
+Qo
 QB
 QB
 QB
 QB
 QB
 QB
+IZ
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
+IB
+WW
+IB
+uW
+uW
+WR
+uW
+IB
 QB
 QB
 QB
@@ -10487,66 +11511,54 @@ tq
 "}
 (96,1,1) = {"
 tq
+QB
 tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+IZ
+QB
+QB
+QB
+QB
+IZ
+Yo
+ij
+Yo
+IZ
+QB
+QB
+QB
+QB
+QB
+QB
+IZ
+Qo
+lI
+us
+us
+us
+us
+mC
+us
+us
+us
+us
+us
+us
+mC
+us
+us
+us
+us
+us
+mC
+MX
+Qo
 QB
 QB
 QB
@@ -10556,99 +11568,45 @@ QB
 QB
 QB
 QB
+IB
+OT
+uW
+uW
+Bg
+uW
+uW
+IB
 QB
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
 tq
 tq
 tq
 "}
 (97,1,1) = {"
 tq
+QB
 tq
 tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+QB
+QB
+IZ
+QB
+IB
+uW
+Ks
+uW
+IB
 QB
 QB
 QB
@@ -10662,115 +11620,52 @@ QB
 QB
 QB
 QB
+IZ
+QB
+QB
+QB
+QB
+QB
+Qo
+IZ
+QB
+QB
+QB
+QB
+QB
+IZ
+Qo
+QB
+QB
+lK
+lK
+lK
+lK
+lK
+IB
+IB
+IB
+IB
+OT
+uW
+Bg
+uW
+uW
+uW
+IB
 QB
 QB
 QB
 QB
 QB
 QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-QB
-tq
-tq
 tq
 tq
 tq
 "}
 (98,1,1) = {"
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
 tq
 tq
 tq
@@ -10779,13 +11674,67 @@ tq
 QB
 QB
 QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+IZ
+uW
+uW
+uW
+uW
+uW
+WB
+Vr
+DE
+th
+th
+Vr
+aK
+uW
+uW
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+lK
+RN
+RN
+RN
+lK
+bu
+Wi
+bu
+IB
+Ks
+nk
+uW
+uW
+uW
+uW
+IB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -10798,96 +11747,71 @@ tq
 tq
 tq
 tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
-tq
 QB
 QB
 QB
-tq
-tq
-tq
-tq
-tq
-tq
-tq
+QB
+QB
+QB
+QB
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+gi
+uW
+uW
+IZ
+QB
+QB
+QB
+uW
+QB
+IZ
+uW
+uW
+uW
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+lK
+PE
+oE
+RN
+dk
+RN
+RN
+RN
+Wz
+uW
+UA
+uW
+uW
+uW
+uW
+IB
+QB
+QB
+QB
+QB
+QB
 tq
 tq
 tq
@@ -10900,6 +11824,1463 @@ tq
 tq
 tq
 tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+IZ
+QB
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+QB
+QB
+QB
+lK
+RN
+RN
+RN
+lK
+gA
+ia
+gA
+IB
+uW
+uW
+JZ
+uW
+uW
+uW
+IB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+"}
+(101,1,1) = {"
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+tq
+tq
+QB
+QB
+QB
+uW
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+uW
+QB
+QB
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+QB
+QB
+QB
+lK
+lK
+lK
+lK
+lK
+IB
+IB
+IB
+IB
+IB
+Ob
+uW
+Mj
+uW
+uW
+IB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+"}
+(102,1,1) = {"
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+QB
+tq
+QB
+QB
+QB
+QB
+uW
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+uW
+QB
+QB
+Qo
+Qo
+Qo
+Qo
+Qo
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+IB
+gs
+sA
+sA
+sA
+EW
+uW
+uW
+OT
+uW
+uW
+IB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+"}
+(103,1,1) = {"
+tq
+tq
+tq
+tq
+QB
+QB
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+uW
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+uW
+QB
+QB
+QB
+Qo
+Qo
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+IB
+Oa
+IB
+Oa
+IB
+IB
+uW
+uW
+OT
+uW
+uW
+IB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+"}
+(104,1,1) = {"
+tq
+tq
+tq
+QB
+QB
+QB
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+uW
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+uW
+QB
+QB
+QB
+Qo
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+IB
+kx
+no
+lj
+em
+IB
+IB
+IB
+OT
+IB
+IB
+IB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+"}
+(105,1,1) = {"
+tq
+tq
+QB
+QB
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+IZ
+uW
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+uW
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+IB
+kx
+FZ
+lj
+EA
+IB
+uW
+WM
+rN
+uW
+uW
+IB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+"}
+(106,1,1) = {"
+tq
+tq
+QB
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+uW
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+uW
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+IB
+nE
+EA
+nE
+EA
+IB
+nk
+pk
+pk
+pk
+uW
+IB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+"}
+(107,1,1) = {"
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+uW
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+RN
+IZ
+Qo
+Qo
+Qo
+Qo
+Qo
+IZ
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+IZ
+QB
+IB
+EA
+EA
+EA
+EA
+IB
+OT
+pk
+pk
+pk
+uW
+IB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+"}
+(108,1,1) = {"
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+uW
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+PV
+Fs
+sX
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Fs
+Hj
+uW
+uW
+uW
+uW
+uW
+bi
+pk
+pk
+pk
+uW
+IB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+"}
+(109,1,1) = {"
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+uW
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+kI
+BT
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+Gg
+qF
+qF
+qF
+qF
+qF
+hY
+th
+th
+th
+th
+Gr
+uW
+pk
+pk
+pk
+uW
+IB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+"}
+(110,1,1) = {"
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+QB
+QB
+uW
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+kI
+BT
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+OV
+Se
+OV
+OV
+OV
+OV
+OV
+Mc
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+uW
+IB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+"}
+(111,1,1) = {"
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+tq
+QB
+IZ
+uW
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+Gs
+wR
+IZ
+QB
+QB
+QB
+QB
+QB
+IZ
+Qo
+Qo
+AA
+Qo
+Qo
+Qo
+IZ
+QB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+IB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+"}
+(112,1,1) = {"
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+uW
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+"}
+(113,1,1) = {"
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+uW
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+uW
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+"}
+(114,1,1) = {"
+tq
+tq
+tq
+QB
+QB
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+IZ
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+uW
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+"}
+(115,1,1) = {"
+tq
+tq
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+QB
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+Yo
+uW
+uW
+IZ
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+"}
+(116,1,1) = {"
+tq
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+SF
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+"}
+(117,1,1) = {"
+tq
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+Qo
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+"}
+(118,1,1) = {"
+tq
+tq
+tq
+QB
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+BI
+QB
+QB
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+tq
+QB
+QB
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+QB
+QB
+tq
+tq
+dT
+tq
+Tp
+"}
+(119,1,1) = {"
 tq
 tq
 tq
@@ -10919,6 +13300,141 @@ tq
 tq
 tq
 tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+tq
+tq
+QB
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+QB
+QB
+tq
+tq
+tq
+tq
+tq
+"}
+(120,1,1) = {"
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+QB
+tq
+tq
+QB
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+tq
+"}
+(121,1,1) = {"
 tq
 tq
 tq
