@@ -179,4 +179,4 @@
 	id = "singularitylab"
 	suffix = "singularity_lab.dmm"
 	name = "Singularity Lab"
-	description =  = "An overgrown facility, home to an unstarted singularity and many plants"
+	description = "An overgrown facility, home to an unstarted singularity and many plants"
