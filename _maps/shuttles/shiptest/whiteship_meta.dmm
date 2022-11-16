@@ -920,7 +920,7 @@
 /area/ship/cargo)
 "bX" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/selling_pad_control{
+/obj/structure/frame/computer{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1136,7 +1136,7 @@
 "cm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/selling_pad,
+/obj/structure/frame/machine,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "cn" = (
@@ -1599,6 +1599,8 @@
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/kitchen/knife/combat/survival,
 /obj/item/gun/energy/laser/retro,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/item/ammo_box/magazine/m45,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "cR" = (
@@ -2931,8 +2933,6 @@
 /obj/item/clothing/under/utility/skirt,
 /obj/item/clothing/under/utility/skirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/gun/ballistic/automatic/pistol/m1911,
-/obj/item/ammo_box/magazine/m45,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "QN" = (
