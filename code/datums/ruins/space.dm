@@ -176,7 +176,7 @@
 	description = "A Syndicate laboratory run by syndicate scientists."
 
 /datum/map_template/ruin/space/singularitylab
-	id = "singlab"
+	id = "singularitylab"
 	suffix = "singularity_lab.dmm"
 	name = "Singularity Lab"
 	description =  = "An overgrown facility, home to an unstarted singularity and many plants"
