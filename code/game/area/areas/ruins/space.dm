@@ -554,7 +554,7 @@
 
 /area/ruin/space/has_grav/singularitylab
 	name = "Asteroid Halls"
-	icon_state = "hallc"
+	icon_state = "hallC"
 
 /area/ruin/space/has_grav/singularitylab/reactor
 	name = "Singularity Reactor"
@@ -570,7 +570,7 @@
 
 area/ruin/space/has_grav/singularitylab/cargo
 	name = "Asteroid Cargo"
-	icon_state = "brown"
+	icon_state = "storage"
 
 /area/ruin/space/has_grav/singularitylab/hangar
 	name = "Asteroid Hangar"
@@ -578,4 +578,4 @@ area/ruin/space/has_grav/singularitylab/cargo
 
 /area/ruin/space/has_grav/singularitylab/civvie
 	name = "Asteroid Housing"
-	icon_state = "sleep"
+	icon_state = "Sleep"

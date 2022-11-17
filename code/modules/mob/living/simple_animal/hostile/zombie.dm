@@ -73,7 +73,7 @@
 	name = "shambling bramble"
 	desc = "A shambling mass of vibrant vines and rotting flesh. "
 	melee_damage_lower = 15
-	melee_damage_higher = 25
+	melee_damage_upper = 25
 	attack_verb_continuous = "lashes"
 	attack_verb_simple = "lash"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
