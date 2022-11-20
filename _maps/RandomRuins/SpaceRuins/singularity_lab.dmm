@@ -545,14 +545,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
-"dC" = (
-/obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/singularitylab/lab)
 "dG" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine/dense{
@@ -672,6 +664,9 @@
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 5
 	},
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 6
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "eq" = (
@@ -781,9 +776,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 1
-	},
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -903,9 +895,6 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "fJ" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 4
-	},
 /obj/structure/chair{
 	dir = 4
 	},
@@ -1129,9 +1118,6 @@
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/structure/table,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 8
-	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "gN" = (
@@ -1600,9 +1586,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 1
-	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "jB" = (
@@ -2234,9 +2217,6 @@
 /mob/living/simple_animal/hostile/zombie/kudzu{
 	zombiejob = "Scientist"
 	},
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 4
-	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "nc" = (
@@ -2249,9 +2229,6 @@
 /obj/effect/turf_decal/corner/opaque/white/full,
 /mob/living/simple_animal/hostile/zombie/kudzu{
 	zombiejob = "Scientist"
-	},
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -2539,9 +2516,6 @@
 "oK" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/structure/table,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 1
-	},
 /obj/item/clipboard{
 	pixel_x = -3
 	},
@@ -2639,9 +2613,6 @@
 "pj" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 1
-	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "pk" = (
@@ -2845,13 +2816,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/ruin/space/has_grav/singularitylab/reactor)
-"qE" = (
-/obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/singularitylab/lab)
 "qF" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable{
@@ -3871,6 +3835,16 @@
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
+"xw" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/white/full,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/lab)
 "xz" = (
 /obj/structure/spacevine{
 	pixel_x = 32
@@ -4230,9 +4204,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 8
-	},
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "zk" = (
@@ -4326,9 +4298,6 @@
 /obj/effect/turf_decal/corner/opaque/white/full,
 /mob/living/simple_animal/hostile/zombie/kudzu{
 	zombiejob = "Scientist"
-	},
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -4455,10 +4424,10 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 4
-	},
 /obj/machinery/light,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 10
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "Ao" = (
@@ -4766,9 +4735,6 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "Cr" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 1
-	},
 /obj/structure/chair{
 	dir = 8
 	},
@@ -5030,16 +4996,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
-"DH" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/singularitylab/lab)
 "DK" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 6
@@ -6666,8 +6622,8 @@
 /area/ruin/space/has_grav/singularitylab)
 "NS" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 1
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 6
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -6772,9 +6728,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 1
-	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "Oq" = (
@@ -6803,16 +6756,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
-"Ox" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/singularitylab/lab)
 "Oy" = (
 /turf/closed/wall{
 	name = "structural support";
@@ -6905,14 +6848,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab)
-"OX" = (
-/obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 1
-	},
-/obj/structure/chair,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/singularitylab/lab)
 "OZ" = (
 /obj/structure/flippedtable{
 	icon_state = "";
@@ -6979,9 +6914,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 1
-	},
 /obj/machinery/vending/cigarette,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -7802,6 +7734,9 @@
 /obj/effect/turf_decal/corner/opaque/purple{
 	dir = 6
 	},
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "TS" = (
@@ -8417,6 +8352,9 @@
 	},
 /obj/effect/turf_decal/box/corners,
 /obj/structure/cable,
+/obj/structure/sign/warning/testchamber{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "XF" = (
@@ -8477,9 +8415,6 @@
 /area/ruin/space/has_grav/singularitylab/engineering)
 "Ym" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
-/obj/effect/turf_decal/corner/opaque/purple/diagonal{
-	dir = 4
-	},
 /obj/structure/chair,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -13151,9 +13086,9 @@ uC
 uC
 uC
 lK
-DH
-NS
-qE
+Om
+YX
+YX
 lK
 xr
 lK
@@ -13306,9 +13241,9 @@ RE
 xP
 lK
 fR
-NS
-dC
-NS
+YX
+pj
+YX
 fJ
 lK
 QB
@@ -13383,7 +13318,7 @@ Rr
 LM
 lK
 Ku
-xP
+YX
 pj
 Ym
 oK
@@ -13460,9 +13395,9 @@ qc
 cw
 Pl
 gM
-NS
+YX
 zC
-OX
+Ym
 zk
 lK
 QB
@@ -13532,14 +13467,14 @@ Nu
 pE
 QB
 lK
-xP
-xP
-NS
-xP
+YX
+YX
+YX
+YX
 jA
-xP
+YX
 pj
-xP
+YX
 Cr
 lK
 FI
@@ -13690,7 +13625,7 @@ Lw
 Lw
 Lw
 BK
-Om
+xw
 rG
 lK
 Bk
@@ -13844,7 +13779,7 @@ Lw
 uc
 Lw
 kE
-Om
+xw
 lK
 Ma
 Lw
@@ -13921,7 +13856,7 @@ Lw
 Lw
 Lw
 Wy
-Ox
+xw
 lK
 Dx
 Lw
