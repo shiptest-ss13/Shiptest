@@ -248,6 +248,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/lava)
+"dh" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "dn" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/open/floor/plasteel/patterned/grid,
@@ -1855,10 +1861,10 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered/slimelab)
 "uY" = (
+/obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/effect/turf_decal/siding/purple{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
@@ -1918,11 +1924,11 @@
 /area/ruin/powered/slimelab/lab)
 "vn" = (
 /obj/structure/closet/firecloset,
-/obj/effect/turf_decal/siding/purple{
-	dir = 6
-	},
 /obj/effect/turf_decal/corner/opaque/purple/diagonal{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/purple{
+	dir = 6
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -2289,6 +2295,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab)
+"yq" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "yu" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -2947,6 +2959,16 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
+"Fa" = (
+/obj/structure/flora/ausbushes/reedbush,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "Fd" = (
 /obj/machinery/processor,
 /turf/open/floor/plasteel/patterned/grid,
@@ -2973,6 +2995,12 @@
 /obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/lab)
+"FA" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "FD" = (
 /obj/structure/table/glass,
 /obj/machinery/airalarm/directional/north,
@@ -3406,6 +3434,12 @@
 /obj/structure/disposalpipe/segment,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/powered/slimelab/cafe)
+"KL" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "KM" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/wood,
@@ -3855,6 +3889,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
+"PF" = (
+/obj/structure/flora/ausbushes/reedbush,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "PG" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/spacevine,
@@ -3951,6 +3992,11 @@
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab/cafe)
+"QK" = (
+/obj/structure/flora/ausbushes/reedbush,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "QS" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
@@ -4260,6 +4306,9 @@
 /area/ruin/powered/slimelab/lab)
 "TF" = (
 /obj/structure/flora/ausbushes/reedbush,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
 /turf/open/water,
 /area/ruin/powered/slimelab/slimedome)
 "TG" = (
@@ -4402,6 +4451,12 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/powered/slimelab/lava)
+"Ve" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "Vj" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/patterned/grid,
@@ -4572,6 +4627,12 @@
 	icon_state = "reinforced_hull"
 	},
 /area/ruin/powered/slimelab/lava)
+"XI" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/water,
+/area/ruin/powered/slimelab/slimedome)
 "XT" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
 /obj/effect/turf_decal/siding/purple{
@@ -6308,7 +6369,7 @@ OV
 Nb
 Nb
 Hd
-TF
+Fa
 Hd
 rg
 Nb
@@ -6359,7 +6420,7 @@ OV
 Nb
 Nb
 Pe
-Aw
+Ve
 Aw
 TF
 Hd
@@ -6410,7 +6471,7 @@ nl
 rg
 rg
 Hd
-Aw
+Ve
 Aw
 Aw
 Aw
@@ -6460,13 +6521,13 @@ rg
 rg
 GC
 Gu
+Ve
+XI
 Aw
 Aw
 Aw
 Aw
-Aw
-Aw
-TF
+QK
 Hd
 Ul
 Hd
@@ -6512,13 +6573,13 @@ JW
 rg
 rg
 Hd
+FA
 Aw
 Aw
 Aw
 Aw
 Aw
-Aw
-TF
+PF
 Hd
 rg
 Hd
@@ -6564,12 +6625,12 @@ Hd
 rg
 rg
 Hd
+yq
 Aw
 Aw
 Aw
 Aw
-Aw
-Aw
+dh
 OV
 rg
 rg
@@ -6617,10 +6678,10 @@ SF
 rg
 rg
 Hd
-Aw
-Aw
-Aw
-Aw
+yq
+KL
+KL
+dh
 ld
 Hd
 cR
