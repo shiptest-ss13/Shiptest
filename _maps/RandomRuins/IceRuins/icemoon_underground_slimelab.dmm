@@ -102,6 +102,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
 "bS" = (
@@ -167,6 +170,9 @@
 	dir = 8
 	},
 /obj/structure/closet/crate/bin,
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
 "cq" = (
@@ -710,6 +716,11 @@
 "iU" = (
 /obj/structure/closet/firecloset/full,
 /obj/item/storage/firstaid/fire,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24;
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/slimelab/lava)
 "ja" = (
@@ -764,6 +775,23 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab/cafe)
+"jv" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_y = 8;
+	pixel_x = 24
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/slimelab)
 "jx" = (
 /obj/structure/chair{
 	dir = 1
@@ -984,6 +1012,9 @@
 	},
 /obj/machinery/light/small/broken{
 	dir = 8
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/lab)
@@ -1227,12 +1258,20 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/lava)
 "nq" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab/cafe)
+"ns" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/tomato/blood,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/powered/slimelab/slimedome)
 "nw" = (
 /obj/effect/mob_spawn/slime,
 /obj/structure/spacevine,
@@ -1247,6 +1286,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/checkpoint)
@@ -1417,10 +1460,11 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/departments/engineering{
+	pixel_y = 1;
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
 "pw" = (
@@ -1623,6 +1667,17 @@
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/slimedome)
+"rU" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24;
+	pixel_x = -6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "st" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -1673,7 +1728,9 @@
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab)
 "sJ" = (
-/obj/machinery/atmospherics/components/binary/pump/layer2,
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	name = "airtanks to distro"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/lava)
 "sW" = (
@@ -1824,6 +1881,10 @@
 /obj/effect/turf_decal/siding/purple{
 	dir = 9
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/lab)
 "vg" = (
@@ -1961,6 +2022,9 @@
 	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/slimedome)
@@ -2204,10 +2268,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/east,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -2280,6 +2340,11 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/slimedome)
+"za" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating,
+/area/ruin/powered/slimelab/lava)
 "zb" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
@@ -2357,6 +2422,11 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab/lab)
+"zK" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/tomato/blood,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/powered/slimelab/slimedome)
 "zO" = (
 /obj/structure/window/reinforced,
 /obj/structure/table/glass,
@@ -2374,6 +2444,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
+	},
+/obj/machinery/firealarm{
+	pixel_y = 26
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab/lab)
@@ -2495,6 +2568,11 @@
 /area/ruin/powered/slimelab/slimedome)
 "AZ" = (
 /obj/structure/tank_dispenser/oxygen,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -27;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
 "Ba" = (
@@ -2729,6 +2807,10 @@
 /obj/structure/spacevine{
 	pixel_y = -32
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -26
+	},
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/powered/slimelab/lab)
 "Dv" = (
@@ -2795,6 +2877,10 @@
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	pixel_y = 26;
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
@@ -2889,7 +2975,6 @@
 /area/ruin/powered/slimelab/lab)
 "FD" = (
 /obj/structure/table/glass,
-/obj/item/modular_computer/laptop,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -2961,6 +3046,11 @@
 "Hf" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25;
+	pixel_x = -7
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab/cafe)
@@ -3416,6 +3506,16 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/powered/slimelab/lava)
+"Mb" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -26
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
 "Mc" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
@@ -3479,7 +3579,7 @@
 /obj/structure/sign/poster/random{
 	pixel_y = 32
 	},
-/obj/machinery/modular_computer/console,
+/obj/machinery/modular_computer/console/preset/command,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
 "Nl" = (
@@ -3953,12 +4053,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 26
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
@@ -4027,6 +4127,25 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/checkpoint)
+"Sk" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25;
+	pixel_x = -7
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered/slimelab)
+"Sl" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/machinery/firealarm{
+	pixel_y = 26;
+	pixel_x = -6
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/powered/slimelab)
 "Sr" = (
 /obj/structure/flora/ausbushes/genericbush,
 /obj/machinery/light{
@@ -4227,6 +4346,16 @@
 	dir = 8
 	},
 /obj/item/kirbyplants/random,
+/obj/machinery/firealarm{
+	pixel_y = 24;
+	pixel_x = 7
+	},
+/obj/machinery/power/apc/auto_name/north{
+	pixel_x = -7
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
 "UJ" = (
@@ -4564,6 +4693,11 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab)
 "Zg" = (
@@ -4597,6 +4731,9 @@
 /obj/item/stack/sheet/glass/twenty,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/cell_charger,
+/obj/item/paper{
+	info = "I don't know how long we're gonna be asleep for, so I've gone ahead and turned off the atmospherics systems. When you get back up. Turn them on! The base won't work long without it."
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered/slimelab/lava)
 "Zx" = (
@@ -5495,7 +5632,7 @@ kz
 Np
 og
 LI
-kU
+za
 hE
 Np
 pw
@@ -5655,7 +5792,7 @@ bW
 aj
 Np
 NM
-DC
+Sk
 Em
 UH
 Th
@@ -5814,7 +5951,7 @@ HK
 WM
 NB
 fR
-fR
+Mb
 wi
 aP
 vF
@@ -5860,7 +5997,7 @@ FO
 QU
 QU
 CG
-PH
+jv
 tz
 PH
 JZ
@@ -5974,9 +6111,9 @@ Jo
 nx
 SK
 JF
-ST
+rU
 zs
-Db
+Sl
 tE
 Db
 zs
@@ -6951,8 +7088,8 @@ Zx
 Gu
 rg
 Df
-Zx
-Df
+ns
+zK
 rg
 Un
 rg
