@@ -244,6 +244,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/stool/bar,
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
 /obj/structure/chair/stool/bar,
 /turf/open/floor/wood,
@@ -414,6 +415,13 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
+"kX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
+/area/ruin/whitesands/saloon)
 "lg" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -431,6 +439,11 @@
 	pixel_x = 11
 	},
 /turf/open/floor/wood,
+/area/ruin/whitesands/saloon)
+"lI" = (
+/obj/structure/table/wood/poker,
+/obj/effect/spawner/lootdrop/gambling,
+/turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
 "lV" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1198,6 +1211,15 @@
 /obj/structure/table/wood/poker,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/saloon)
+"IY" = (
+/obj/structure/chair/sofa{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/whitesands/saloon)
 "Jb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1210,15 +1232,6 @@
 /obj/structure/chair/sofa/right,
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/ruin/whitesands/saloon)
-"Jq" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
-	dir = 1
-	},
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "Jr" = (
@@ -1432,6 +1445,7 @@
 "QS" = (
 /obj/structure/closet/cabinet,
 /obj/item/storage/bag/money,
+/obj/item/rsf,
 /turf/open/floor/wood,
 /area/ruin/whitesands/saloon)
 "QV" = (
@@ -1809,8 +1823,8 @@ Ao
 gy
 YM
 QV
-vP
-Jq
+lI
+Nn
 Ed
 DO
 Eq
@@ -1838,7 +1852,7 @@ Eq
 Eq
 Eq
 yZ
-gy
+kX
 vP
 Qy
 HA
@@ -2102,8 +2116,8 @@ Eq
 hf
 qj
 Eq
-ki
-ki
+eQ
+eQ
 kl
 eQ
 eQ
@@ -2420,7 +2434,7 @@ Hd
 tq
 vl
 EC
-nU
+IY
 fN
 gF
 gF
