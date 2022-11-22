@@ -3332,6 +3332,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/firealarm{
+	pixel_y = 26;
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
 "JN" = (
@@ -4395,16 +4399,10 @@
 	dir = 8
 	},
 /obj/item/kirbyplants/random,
-/obj/machinery/firealarm{
-	pixel_y = 24;
-	pixel_x = 7
-	},
-/obj/machinery/power/apc/auto_name/north{
-	pixel_x = -7
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/slimelab/checkpoint)
 "UJ" = (
