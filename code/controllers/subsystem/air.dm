@@ -626,6 +626,39 @@ SUBSYSTEM_DEF(air)
 	var/datum/atmosphere/mix = atmos_gen[gas_string]
 	return mix.gas_string
 
+// DEBUG: once we've got __auxmos_parse_gas_string , redo this
+// /datum/controller/subsystem/air/proc/get_gas_string_mix(gas_string)
+// 	if(!rand_atmos_init)
+// 		generate_atmos()
+
+// 	var/datum/gas_mixture/ret_mix = string_mixes[gas_string]
+// 	if(ret_mix)
+// 		return ret_mix
+
+// 	ret_mix = new(CELL_VOLUME)
+// 	var/list/gas_list = params2list(gas_string)
+
+// 	if(gas_list["TEMP"])
+// 		var/temp = text2num(gas_list["TEMP"])
+// 		gas_list -= "TEMP"
+// 		if(!isnum(temp) || temp < TCMB)
+// 			temp = TCMB
+// 		ret_mix.set_temperature(temp)
+// 	ret_mix.clear()
+// 	for(var/id in gas_list)
+// 		ret_mix.set_moles(id, text2num(gas_list[id]))
+// 	ret_mix.mark_immutable()
+
+// 	string_mixes[gas_string] = ret_mix
+// 	return ret_mix
+
+// /datum/controller/subsystem/air/proc/generate_atmos()
+// 	rand_atmos_init = TRUE
+// 	for(var/T in subtypesof(/datum/atmosphere))
+// 		var/datum/atmosphere/atmostype = new T
+// 		string_mixes[initial(atmostype.id)] = atmostype.gasmix
+// 		qdel(atmostype)
+
 #undef SSAIR_EXCITEDGROUPS
 #undef SSAIR_HIGHPRESSURE
 #undef SSAIR_HOTSPOTS

@@ -91,9 +91,12 @@
 
 
 /atom/movable/Destroy(force)
-	QDEL_NULL(proximity_monitor)
-	QDEL_NULL(language_holder)
-	QDEL_NULL(em_block)
+	if(proximity_monitor)
+		QDEL_NULL(proximity_monitor)
+	if(language_holder)
+		QDEL_NULL(language_holder)
+	if(em_block)
+		QDEL_NULL(em_block)
 
 	unbuckle_all_mobs(force = TRUE)
 

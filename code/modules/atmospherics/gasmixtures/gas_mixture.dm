@@ -300,6 +300,7 @@ we use a hook instead
 	parse_gas_string(model.initial_gas_mix)
 	return 1
 
+// DEBUG: use __auxtools_parse_gas_string instead of caching; will need updated auxmos for this
 /datum/gas_mixture/parse_gas_string(gas_string)
 	gas_string = SSair.preprocess_gas_string(gas_string)
 	var/list/gas = params2list(gas_string)
@@ -313,6 +314,13 @@ we use a hook instead
 	for(var/id in gas)
 		set_moles(id, text2num(gas[id]))
 	return 1
+
+// DEBUG: remove old "redone" version
+// /datum/gas_mixture/parse_gas_string(gas_string)
+// 	// params2list() is surprisingly expensive, so we have SSair cache it.
+// 	var/datum/gas_mixture/string_mixture = SSair.get_gas_string_mix(gas_string)
+// 	copy_from(string_mixture)
+// 	return 1
 
 /datum/gas_mixture/proc/set_analyzer_results(instability)
 	if(!analyzer_results)

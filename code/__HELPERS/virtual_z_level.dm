@@ -39,9 +39,7 @@
 	return my_turf.get_virtual_level()
 
 /turf/get_virtual_level()
-	if(!virtual_z_translation) //Sad reality of loaded atoms initializing before the turf which can access virtual levels
-		virtual_z_translation = SSmapping.virtual_z_translation
-	return virtual_z_translation["[virtual_z]"]
+	return SSmapping.virtual_z_translation["[virtual_z]"]
 
 /atom/proc/get_map_zone()
 	var/datum/virtual_level/vlevel = get_virtual_level()

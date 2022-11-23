@@ -269,8 +269,10 @@ SUBSYSTEM_DEF(overmap)
 	var/width = QUADRANT_MAP_SIZE
 
 	var/encounter_name = "Dynamic Overmap Encounter"
+	// DEBUG: get a better way of handling this. audit planetary turfs to change their baseturf to /turf/baseturf_bottom unless NEEDED.
+	var/vlevel_traits = list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = surface)
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
-	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, width, height, ALLOCATION_QUADRANT, QUADRANT_MAP_SIZE)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(encounter_name, vlevel_traits, mapzone, width, height, ALLOCATION_QUADRANT, QUADRANT_MAP_SIZE)
 
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
@@ -289,7 +291,7 @@ SUBSYSTEM_DEF(overmap)
 
 	if(mapgen) //If what is going on is what I think it is, this is going to need to return some sort of promise to await.
 		log_shuttle("SSOVERMAP: START_DYN_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
-		mapgen.generate_terrain(vlevel.get_unreserved_block())
+		// mapgen.generate_terrain(vlevel.get_unreserved_block())
 		log_shuttle("SSOVERMAP: START_DYN_E: MAPGEN REF [REF(mapgen)] RETURNED FOR VLEV [vlevel.id] OF TYPE [mapgen.type]. IT MAY NOT BE FINISHED YET.")
 
 	if(weather_controller_type)
@@ -361,6 +363,44 @@ SUBSYSTEM_DEF(overmap)
 		docking_ports += quaternary_dock
 
 	return list(mapzone, docking_ports)
+
+// DEBUG: remove
+/datum/controller/subsystem/overmap/proc/test_gen_zone()
+	var/height = QUADRANT_MAP_SIZE
+	var/width = QUADRANT_MAP_SIZE
+
+	var/datum/map_zone/mapzone = SSmapping.create_map_zone("TEST")
+	var/vlevel_traits = list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = /turf/open/lava/smooth/lava_land_surface)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level("TEST", vlevel_traits, mapzone, width, height, ALLOCATION_QUADRANT, QUADRANT_MAP_SIZE)
+
+	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
+	var/list/turf/unreserved_turfs = vlevel.get_unreserved_block()
+
+	// var/datum/map_generator/cave_generator/mapgen = new /datum/map_generator/cave_generator/asteroid
+	var/datum/map_generator/cave_generator/mapgen = new /datum/map_generator/cave_generator/lavaland
+	mapgen.base_area = new /area/overmap_encounter/planetoid/lava()
+
+	mapgen.generate_turfs(unreserved_turfs)
+
+	var/datum/map_template/ruin/ruin_type = SSmapping.lava_ruins_templates[pick(SSmapping.lava_ruins_templates)]
+	if(ispath(ruin_type))
+		ruin_type = new
+	var/turf/ruin_turf = locate(rand(
+		vlevel.low_x+6 + vlevel.reserved_margin,
+		vlevel.high_x-ruin_type.width-6 - vlevel.reserved_margin),
+		vlevel.high_y-ruin_type.height-6 - vlevel.reserved_margin,
+		vlevel.z_value
+		)
+	ruin_type.load(ruin_turf)
+
+	mapgen.populate_turfs(unreserved_turfs)
+
+	// DEBUG: remove admin msg
+	var/start_time = REALTIMEOFDAY
+	mapzone.clear_reservation()
+	QDEL_NULL(mapzone)
+	message_admins("[(REALTIMEOFDAY - start_time)/10]s")
+
 
 /**
   * Returns a random, usually empty turf in the overmap

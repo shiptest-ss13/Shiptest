@@ -12,8 +12,10 @@
 	var/list/fauna_types = list()
 
 ///This proc handles the creation of a turf of a specific biome type
-/datum/biome/proc/generate_turf(var/turf/gen_turf)
-	gen_turf.ChangeTurf(turf_type, initial(turf_type.baseturfs), CHANGETURF_DEFER_CHANGE)
+/datum/biome/proc/generate_turf(turf/gen_turf, changeturf_flags)
+	gen_turf.ChangeTurf(turf_type, initial(turf_type.baseturfs), changeturf_flags)
+
+/datum/biome/proc/populate_turf(turf/gen_turf)
 	var/area/A = gen_turf.loc
 	if(length(fauna_types) && prob(fauna_density) && (A.area_flags & MOB_SPAWN_ALLOWED))
 		var/mob/fauna = pick(fauna_types)
