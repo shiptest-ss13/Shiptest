@@ -2249,13 +2249,15 @@
 	dir = 4;
 	id = "whiteship_port";
 	name = "Port Blast Door Control";
-	pixel_x = -28
+	pixel_x = -28;
+	pixel_y = -5
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 4;
 	id = "meta_cargol";
 	name = "Port Holofield Switch";
-	pixel_x = -39
+	pixel_x = -27;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2696,11 +2698,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
-"yo" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/food/flour,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/canteen)
 "zd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2722,13 +2719,15 @@
 	dir = 4;
 	id = "whiteship_starboard";
 	name = "Starboard Blast Door Control";
-	pixel_x = -28
+	pixel_x = -28;
+	pixel_y = 5
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 4;
 	id = "meta_cargor";
 	name = "Starboard Holofield Switch";
-	pixel_x = -39
+	pixel_x = -27;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -3007,8 +3006,8 @@
 "WF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/cryopod{
-	dir = 1;
-	pixel_y = -28
+	dir = 8;
+	pixel_x = 28
 	},
 /obj/machinery/cryopod{
 	dir = 1
@@ -3453,7 +3452,7 @@ bQ
 bD
 zd
 qn
-yo
+bD
 bD
 cW
 "}
