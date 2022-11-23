@@ -53,6 +53,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"ap" = (
+/obj/machinery/conveyor{
+	id = "singlabcarg"
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/grass/jungle{
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel;
+	name = "grass"
+	},
+/area/ruin/space/has_grav/singularitylab)
 "aq" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -90,6 +105,9 @@
 "ax" = (
 /obj/structure/chair/office{
 	dir = 4
+	},
+/mob/living/simple_animal/hostile/zombie/kudzu{
+	zombiejob = "Quartermaster"
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -149,6 +167,14 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"aN" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/singularitylab)
 "aO" = (
 /obj/structure/cable{
 	icon_state = "2-9"
@@ -180,6 +206,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "aU" = (
@@ -234,6 +261,7 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "bj" = (
@@ -405,6 +433,13 @@
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/engineering)
+"cb" = (
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "ce" = (
 /obj/structure/spacevine,
 /obj/machinery/airalarm/directional/south,
@@ -432,6 +467,11 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"ch" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/cardboard/metal,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "ci" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine/dense{
@@ -473,6 +513,9 @@
 "co" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/machinery/firealarm{
+	pixel_y = 26
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "cr" = (
@@ -508,6 +551,9 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/light/corner{
 	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 10
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -566,6 +612,16 @@
 /obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/reactor)
+"cF" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab)
 "cG" = (
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/reactor)
@@ -603,6 +659,13 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
+"cQ" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -26
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/singularitylab/hangar)
 "cR" = (
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -678,6 +741,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"dd" = (
+/obj/structure/bed,
+/obj/item/bedsheet/nanotrasen,
+/obj/structure/sign/poster/retro/random{
+	pixel_x = -32
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "dg" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -717,6 +788,10 @@
 "dw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -829,6 +904,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "eh" = (
@@ -856,6 +937,9 @@
 	pixel_x = -32;
 	pixel_y = -4;
 	machinedir = 1
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -929,6 +1013,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 10
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "ez" = (
@@ -938,6 +1025,13 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"eA" = (
+/obj/machinery/door/airlock/security{
+	name = "Hangar Control"
+	},
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/hangar)
 "eB" = (
 /obj/structure/transit_tube/curved{
 	dir = 8
@@ -1028,8 +1122,24 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/structure/closet/crate/bin,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 6
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"eX" = (
+/obj/machinery/light,
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab)
 "fa" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt{
@@ -1099,8 +1209,8 @@
 	},
 /area/ruin/space/has_grav/singularitylab)
 "fr" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/reactor)
@@ -1165,6 +1275,16 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
 "fF" = (
+/obj/machinery/firealarm{
+	pixel_y = 26;
+	pixel_x = -8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/singularitylab/lab)
 "fG" = (
@@ -1189,6 +1309,16 @@
 "fK" = (
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"fQ" = (
+/obj/structure/table/wood,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/sign/poster/random{
+	pixel_y = -31
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "fR" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1201,6 +1331,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/outline/blue,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "fS" = (
@@ -1277,6 +1408,15 @@
 "gi" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/reactor)
@@ -1436,6 +1576,9 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab)
 "gM" = (
@@ -1448,6 +1591,19 @@
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/structure/table,
+/obj/item/lighter{
+	pixel_y = 3;
+	pixel_x = -6
+	},
+/obj/item/clothing/mask/cigarette,
+/obj/item/clothing/mask/cigarette{
+	pixel_y = 11;
+	pixel_x = 3
+	},
+/obj/item/clothing/mask/cigarette{
+	pixel_y = 4;
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "gN" = (
@@ -1469,6 +1625,9 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "gP" = (
 /obj/structure/table/reinforced,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -32
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "gQ" = (
@@ -1561,6 +1720,12 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/lab)
 "hy" = (
@@ -1570,6 +1735,15 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"hz" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/turf/open/floor/vault,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "hB" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine/dense{
@@ -1614,6 +1788,10 @@
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
+"hJ" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "hP" = (
 /obj/structure/filingcabinet,
 /obj/machinery/power/apc/auto_name/north,
@@ -1682,6 +1860,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "hZ" = (
@@ -1722,6 +1904,9 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "if" = (
 /obj/machinery/airalarm/directional/south,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "ih" = (
@@ -1838,9 +2023,34 @@
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
+"iD" = (
+/obj/effect/turf_decal/siding/white,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/turf/open/floor/vault,
+/area/ruin/space/has_grav/singularitylab/cargo)
+"iE" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "iF" = (
 /obj/structure/window/plasma/reinforced,
 /obj/structure/spacevine,
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 5
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "iK" = (
@@ -1857,6 +2067,12 @@
 	icon_state = "4-8"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -1898,6 +2114,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "ja" = (
@@ -1909,6 +2126,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/reactor)
+"jd" = (
+/obj/effect/turf_decal/siding/yellow,
+/obj/machinery/button/door{
+	id = "singlabcargo2";
+	name = "Blast Door Control";
+	dir = 8;
+	pixel_x = 24
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "jg" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine{
@@ -1931,6 +2158,15 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"jl" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "jp" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine{
@@ -1992,6 +2228,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 9
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -2103,6 +2342,9 @@
 /obj/machinery/atmospherics/components/binary/pump/layer4{
 	name = "To Distro"
 	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 10
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "jN" = (
@@ -2155,6 +2397,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "kb" = (
@@ -2192,6 +2437,12 @@
 	name = "Server Room"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -2306,6 +2557,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "kE" = (
@@ -2346,6 +2600,25 @@
 "kP" = (
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
+"kR" = (
+/mob/living/simple_animal/hostile/zombie/kudzu{
+	zombiejob = "Cargo Technician"
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
+"kS" = (
+/obj/effect/turf_decal/box,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "kT" = (
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -2399,6 +2672,15 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"lh" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "lj" = (
 /obj/machinery/conveyor{
 	id = "singlabfurn";
@@ -2444,7 +2726,8 @@
 "lp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/plasteel,
+/obj/structure/table,
+/turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "lr" = (
 /turf/closed/wall/r_wall,
@@ -2482,6 +2765,12 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -2562,6 +2851,18 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"lQ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/table,
+/obj/item/paper,
+/obj/item/pen{
+	pixel_y = -3;
+	pixel_x = 2
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "lS" = (
 /obj/machinery/conveyor{
 	id = "singlabcarg"
@@ -2600,6 +2901,15 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"me" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 1
+	},
+/turf/open/floor/vault,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "mh" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/structure/spacevine,
@@ -2691,6 +3001,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab)
+"mz" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "mB" = (
 /obj/effect/turf_decal/corner/transparent/orange/border{
 	dir = 1
@@ -2720,6 +3038,7 @@
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 8
 	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "mG" = (
@@ -2840,6 +3159,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "ne" = (
@@ -2859,6 +3181,12 @@
 "nh" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/effect/turf_decal/corner/opaque/red{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
 	},
 /turf/open/floor/plasteel,
@@ -2888,6 +3216,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "nl" = (
@@ -2917,6 +3246,13 @@
 /obj/structure/railing,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/cargo)
+"np" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav/singularitylab)
 "nq" = (
 /obj/item/clothing/suit/space/hardsuit/engine,
 /obj/item/flamethrower/full,
@@ -2945,8 +3281,29 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
+"nw" = (
+/obj/machinery/door/airlock{
+	name = "Private Quarters"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "nx" = (
 /obj/effect/turf_decal/corner/opaque/beige{
 	dir = 4
@@ -3014,6 +3371,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "nN" = (
@@ -3054,7 +3417,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
-/turf/open/floor/plasteel,
+/obj/machinery/computer/cargo/express,
+/turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "nW" = (
 /obj/structure/spacevine,
@@ -3071,6 +3435,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer4{
 	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1;
+	name = "To Environment"
 	},
 /turf/open/floor/plating/grass/jungle{
 	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
@@ -3213,6 +3581,12 @@
 	},
 /area/ruin/space/has_grav/singularitylab)
 "ov" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 4
+	},
 /turf/open/floor/vault,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "ow" = (
@@ -3250,7 +3624,7 @@
 /area/ruin/space/has_grav/singularitylab)
 "oE" = (
 /obj/machinery/ore_silo,
-/turf/open/floor/vault,
+/turf/open/floor/pod,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "oJ" = (
 /obj/structure/bed,
@@ -3419,6 +3793,9 @@
 /obj/structure/table{
 	name = "picnic table"
 	},
+/obj/item/clipboard,
+/obj/item/paper,
+/obj/item/pen,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/reactor)
 "pv" = (
@@ -3581,6 +3958,9 @@
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab)
@@ -3847,6 +4227,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "ru" = (
@@ -3927,6 +4310,10 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/siding/yellow/corner,
+/obj/effect/turf_decal/siding/yellow/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "rO" = (
@@ -4073,6 +4460,15 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"sG" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "sH" = (
 /obj/effect/turf_decal/atmos/carbon_dioxide,
 /turf/open/floor/engine,
@@ -4144,6 +4540,10 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab/hangar)
 "tb" = (
@@ -4169,6 +4569,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/siding/yellow/corner,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "tq" = (
@@ -4278,6 +4679,24 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"tM" = (
+/obj/effect/turf_decal/siding/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
+"tQ" = (
+/obj/structure/table,
+/obj/item/paper,
+/obj/item/pen{
+	pixel_y = 2;
+	pixel_x = -4
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "tR" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/structure/cable{
@@ -4369,6 +4788,12 @@
 	},
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"uw" = (
+/obj/machinery/camera/xray{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav/singularitylab/hangar)
 "uA" = (
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -4424,6 +4849,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "uN" = (
@@ -4437,7 +4863,8 @@
 /area/ruin/space/has_grav/singularitylab)
 "uO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/turf/open/floor/plasteel,
+/obj/structure/table,
+/turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "uP" = (
 /obj/structure/cable/yellow{
@@ -4476,6 +4903,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "uY" = (
@@ -4535,6 +4963,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/hangar)
 "vm" = (
@@ -4587,6 +5019,18 @@
 /obj/machinery/door/airlock/security{
 	name = "Front Office"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/lab)
 "vE" = (
@@ -4609,6 +5053,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"vO" = (
+/obj/effect/turf_decal/siding/yellow/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/orange/three_quarters,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "vT" = (
 /obj/structure/flippedtable{
 	icon_state = "";
@@ -4622,8 +5073,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "vU" = (
-/mob/living/simple_animal/hostile/zombie/kudzu{
-	zombiejob = "Cargo Technician"
+/obj/effect/turf_decal/siding/yellow/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/orange/three_quarters{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -4749,6 +5203,12 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/reactor)
 "wv" = (
@@ -4781,6 +5241,28 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
+"wB" = (
+/obj/structure/chair,
+/obj/machinery/firealarm{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
+"wF" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = -23
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/singularitylab/reactor)
 "wG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4841,6 +5323,12 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/techfloor/corner,
+/obj/machinery/button/door{
+	id = "singlabcargo1";
+	name = "Blast Door Control";
+	dir = 1;
+	pixel_y = -25
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/hangar)
 "wU" = (
@@ -5041,6 +5529,9 @@
 	pixel_x = -24;
 	pixel_y = -1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/singularitylab/lab)
 "xB" = (
@@ -5196,6 +5687,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/sign/poster/random{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "yd" = (
@@ -5247,6 +5741,10 @@
 "ym" = (
 /obj/machinery/turretid,
 /obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_y = -14;
+	pixel_x = 8
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "yn" = (
@@ -5263,6 +5761,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"yp" = (
+/obj/effect/turf_decal/siding/thinplating/corner,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "yr" = (
 /obj/structure/railing{
 	dir = 4;
@@ -5290,6 +5792,30 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
+"yt" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/sign/poster/random{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/civvie)
+"yy" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/civvie)
+"yA" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 1
+	},
+/turf/closed/wall,
+/area/ruin/space/has_grav/singularitylab/engineering)
 "yB" = (
 /obj/structure/closet/emcloset{
 	anchored = 1
@@ -5479,6 +6005,16 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"zn" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "zo" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
@@ -5489,6 +6025,18 @@
 /obj/machinery/vending/cigarette,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"zt" = (
+/obj/machinery/conveyor{
+	id = "singlabcarg"
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/spacevine,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/singularitylab)
 "zu" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -5639,10 +6187,17 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"zU" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 10
+	},
+/turf/closed/wall,
+/area/ruin/space/has_grav/singularitylab/engineering)
 "zV" = (
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "zX" = (
@@ -5663,6 +6218,10 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"Ad" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav)
 "Ae" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/effect/turf_decal/corner/opaque/purple{
@@ -5720,6 +6279,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/reactor)
+"Aq" = (
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "At" = (
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/engineering)
@@ -5751,8 +6319,23 @@
 /obj/machinery/power/floodlight{
 	anchored = 1
 	},
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab)
+"AC" = (
+/obj/effect/turf_decal/corner/opaque/white/full,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/lab)
 "AD" = (
 /turf/open/floor/plating/grass/jungle{
 	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
@@ -5772,6 +6355,18 @@
 	},
 /turf/open/floor/holofloor/wood,
 /area/ruin/space/has_grav/singularitylab/lab)
+"AG" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "AI" = (
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -5821,6 +6416,18 @@
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
+"AR" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 9
+	},
+/turf/closed/wall,
+/area/ruin/space/has_grav/singularitylab/engineering)
+"AT" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 5
+	},
+/turf/closed/wall,
+/area/ruin/space/has_grav/singularitylab/engineering)
 "AW" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -5861,6 +6468,19 @@
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Bf" = (
+/obj/machinery/conveyor{
+	id = "singlabcarg"
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab)
 "Bg" = (
 /obj/structure/cable{
 	icon_state = "5-10"
@@ -5884,6 +6504,12 @@
 	name = "Secure Weapon Storage"
 	},
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/lab)
 "Bo" = (
@@ -5999,6 +6625,10 @@
 /obj/machinery/door/poddoor{
 	id = "singlabcargo1"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/hangar)
 "BU" = (
@@ -6010,6 +6640,14 @@
 /obj/item/gun/energy/disabler,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/singularitylab/lab)
+"BV" = (
+/obj/machinery/button/door{
+	id = "singlabcargo1";
+	name = "Blast Door Control";
+	pixel_y = 25
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav)
 "BW" = (
 /obj/structure/cable{
 	icon_state = "5-9"
@@ -6051,6 +6689,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"Cd" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "Cg" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
@@ -6105,6 +6747,15 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
+"Cm" = (
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "Cp" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/effect/turf_decal/corner/opaque/purple{
@@ -6315,6 +6966,14 @@
 	dir = 4
 	},
 /area/ruin/space/has_grav/singularitylab)
+"Dd" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "De" = (
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/components/binary/valve/digital/layer4{
@@ -6386,8 +7045,18 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/hangar)
+"Dt" = (
+/obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/siding/yellow/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "Dw" = (
 /obj/structure/particle_accelerator/particle_emitter/center{
 	dir = 4
@@ -6491,8 +7160,25 @@
 /obj/machinery/door/airlock/science{
 	name = "High Energy Applications Research Facility"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/lab)
+"DM" = (
+/obj/machinery/conveyor{
+	id = "singlabcarg"
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/structure/spacevine,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/singularitylab)
 "DO" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -6547,7 +7233,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
-/turf/open/floor/plasteel,
+/obj/structure/filingcabinet,
+/turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Eg" = (
 /obj/structure/spacevine,
@@ -6599,6 +7286,22 @@
 /obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"Er" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/singularitylab/reactor)
+"Es" = (
+/obj/structure/spacevine,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/engineering)
 "Et" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -6616,6 +7319,9 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "Ez" = (
 /obj/structure/closet/secure_closet/quartermaster,
+/obj/structure/sign/poster/official/random{
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "EA" = (
@@ -6829,6 +7535,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
+/obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Fq" = (
@@ -6916,6 +7626,12 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/lab)
 "FE" = (
@@ -6947,6 +7663,10 @@
 /obj/item/clothing/shoes/magboots,
 /obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/suit_storage_unit/inherit,
+/obj/machinery/firealarm{
+	pixel_y = 27;
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "FI" = (
@@ -6989,6 +7709,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"FU" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/sign/poster/retro/random{
+	pixel_y = 32
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "FW" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-9"
@@ -7032,7 +7761,10 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plating,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
 /area/ruin/space/has_grav/singularitylab)
 "Gm" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -7063,6 +7795,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -7153,6 +7888,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 5
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -7297,7 +8035,23 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/singularitylab/cargo)
+"Hn" = (
+/obj/effect/turf_decal/siding/yellow/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/yellow/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Hx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
@@ -7402,6 +8156,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/singularitylab/lab)
 "HT" = (
@@ -7528,6 +8283,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 5
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "In" = (
@@ -7583,11 +8342,17 @@
 "IB" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/singularitylab/cargo)
+"IE" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "IH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "II" = (
 /obj/structure/cable/yellow{
@@ -7677,6 +8442,11 @@
 /obj/structure/sign/poster/contraband/hacking_guide{
 	pixel_x = 32
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25;
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "Jb" = (
@@ -7726,6 +8496,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "Jo" = (
@@ -7757,6 +8531,7 @@
 /mob/living/simple_animal/hostile/zombie/kudzu{
 	zombiejob = "Security Officer"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/singularitylab/lab)
 "Jv" = (
@@ -7954,6 +8729,25 @@
 	},
 /turf/open/floor/holofloor/wood,
 /area/ruin/space/has_grav/singularitylab/lab)
+"Ko" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav/singularitylab)
+"Kr" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/singularitylab/engineering)
 "Ks" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -8093,6 +8887,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "KZ" = (
@@ -8145,6 +8942,9 @@
 /obj/structure/closet/secure_closet/atmospherics{
 	anchored = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 10
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "Lw" = (
@@ -8180,6 +8980,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "LB" = (
@@ -8216,7 +9019,14 @@
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/lab)
+"LN" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
 "LO" = (
 /obj/structure/spacevine,
@@ -8249,6 +9059,10 @@
 "LZ" = (
 /obj/effect/turf_decal/box,
 /obj/structure/closet/crate,
+/obj/item/vending_refill/boozeomat,
+/obj/item/vending_refill/clothing,
+/obj/item/vending_refill/cigarette,
+/obj/item/vending_refill/cigarette,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Ma" = (
@@ -8270,6 +9084,10 @@
 /obj/machinery/door/poddoor{
 	id = "singlabcargo2"
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Md" = (
@@ -8281,6 +9099,15 @@
 /obj/item/tank/jetpack/carbondioxide,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"Me" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/zombie/kudzu{
+	zombiejob = "Cargo Technician"
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "Mg" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine{
@@ -8365,6 +9192,9 @@
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -8488,6 +9318,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "MX" = (
@@ -8559,14 +9395,37 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 9
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
+"Ns" = (
+/obj/structure/sign/poster/retro/random{
+	pixel_x = 32
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "Nu" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
+/area/ruin/space/has_grav/singularitylab/reactor)
+"Nw" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_y = 6;
+	pixel_x = -25
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/reactor)
 "NG" = (
 /obj/effect/turf_decal/solarpanel,
@@ -8594,6 +9453,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "NJ" = (
@@ -8603,6 +9465,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"NK" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	pixel_y = 27
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/hangar)
 "NL" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -8722,7 +9593,13 @@
 	machinedir = 8;
 	pixel_y = 26
 	},
-/turf/open/floor/plasteel,
+/obj/structure/chair{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/zombie/kudzu{
+	zombiejob = "Cargo Technician"
+	},
+/turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Od" = (
 /obj/structure/sign/warning/radiation/rad_area{
@@ -8774,11 +9651,11 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/corner/opaque/white/full,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -8857,6 +9734,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "OE" = (
@@ -8864,6 +9745,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 9
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -8958,9 +9842,8 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/turf_decal/siding/thinplating,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "OU" = (
@@ -9002,6 +9885,9 @@
 /obj/structure/spacevine/dense{
 	pixel_x = 32
 	},
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 4
+	},
 /turf/open/floor/plating/grass/jungle{
 	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
@@ -9035,6 +9921,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/hangar)
 "Pj" = (
@@ -9067,6 +9956,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/industrial/outline/blue,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "Po" = (
@@ -9155,12 +10045,19 @@
 /obj/machinery/light/floor,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Pz" = (
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "PA" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 10
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/hangar)
@@ -9187,7 +10084,7 @@
 /obj/item/storage/fancy/cigarettes/cigpack_robustgold,
 /obj/item/storage/fancy/cigarettes/cigpack_robustgold,
 /obj/item/stack/sheet/mineral/gold/twenty,
-/turf/open/floor/vault,
+/turf/open/floor/pod,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "PF" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -9337,6 +10234,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"Qx" = (
+/obj/structure/table/wood,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/sign/poster/retro/random{
+	pixel_y = -32
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "Qz" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/structure/cable{
@@ -9597,8 +10504,8 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -9729,6 +10636,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Sb" = (
@@ -9751,6 +10661,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/spacevine,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab)
 "Sm" = (
@@ -9848,6 +10759,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
+/obj/structure/sign/poster/official/random{
+	pixel_y = 32
+	},
+/obj/machinery/firealarm{
+	pixel_x = 24;
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "SQ" = (
@@ -9913,6 +10831,16 @@
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Tq" = (
+/obj/effect/turf_decal/siding/yellow/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/orange,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "Ts" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
 /turf/open/floor/plating/asteroid/airless,
@@ -9931,12 +10859,25 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/thinplating,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Tw" = (
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Tx" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "Ty" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -9984,6 +10925,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/lab)
 "TE" = (
@@ -10000,6 +10947,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"TI" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "TL" = (
 /obj/machinery/rnd/production/circuit_imprinter/department/engi,
 /turf/open/floor/plasteel/dark,
@@ -10017,6 +10976,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -10068,6 +11030,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -26;
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "TS" = (
@@ -10104,6 +11071,7 @@
 	icon_state = "5-9"
 	},
 /obj/structure/spacevine,
+/obj/effect/turf_decal/corner/transparent/orange,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "TZ" = (
@@ -10167,7 +11135,13 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/structure/sign/poster/official/random{
+	pixel_y = -32
+	},
+/turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Um" = (
 /obj/machinery/conveyor{
@@ -10178,9 +11152,31 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab/hangar)
+"Un" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/corner,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "Uo" = (
 /obj/structure/table,
 /obj/structure/spacevine,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "Uy" = (
@@ -10196,6 +11192,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "6-9"
+	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -10275,6 +11274,7 @@
 /obj/structure/sign/warning/radiation/rad_area{
 	pixel_x = 32
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/reactor)
 "Vh" = (
@@ -10421,6 +11421,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"VP" = (
+/obj/structure/spacevine,
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/engineering)
 "VQ" = (
 /obj/structure/closet/secure_closet/armory3{
 	name = "armory weapons locker";
@@ -10679,6 +11686,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 9
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "WN" = (
@@ -10726,6 +11739,27 @@
 	},
 /turf/open/floor/holofloor/wood,
 /area/ruin/space/has_grav/singularitylab/lab)
+"WU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/mining{
+	name = "Cargo Bay"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "WW" = (
 /obj/structure/transit_tube/curved/flipped{
 	dir = 1
@@ -10737,6 +11771,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
+"WX" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav/singularitylab)
 "Xa" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Power Control"
@@ -10744,10 +11785,22 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "Xc" = (
 /obj/structure/chair/office,
+/obj/structure/sign/poster/official/wtf_is_co2{
+	pixel_y = 32
+	},
+/obj/structure/sign/poster/retro/build{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/reactor)
 "Xf" = (
@@ -10792,6 +11845,12 @@
 /obj/machinery/door/airlock{
 	name = "Barracks"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "Xo" = (
@@ -10811,6 +11870,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Xw" = (
@@ -10827,6 +11889,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
+	},
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
@@ -10871,6 +11936,11 @@
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
+"XJ" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/spacevine,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/singularitylab)
 "XN" = (
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
@@ -10906,6 +11976,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
+/obj/effect/turf_decal/siding/yellow/corner,
+/obj/effect/turf_decal/corner/transparent/orange/three_quarters{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Yk" = (
@@ -10917,7 +11991,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/turf/open/floor/plating,
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
 /area/ruin/space/has_grav/singularitylab)
 "Yl" = (
 /obj/structure/cable/yellow{
@@ -11007,6 +12084,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab)
 "Yz" = (
@@ -11054,6 +12134,17 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/reactor)
+"YG" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/button/door{
+	id = "singlabcargo2";
+	name = "Blast Door Control";
+	dir = 8;
+	pixel_x = 24
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/singularitylab)
 "YH" = (
 /obj/structure/transit_tube,
 /obj/structure/cable{
@@ -11090,6 +12181,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -11141,7 +12235,13 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/plasteel,
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/item/pen{
+	pixel_y = 2;
+	pixel_x = -4
+	},
+/turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Zk" = (
 /obj/structure/grille,
@@ -11151,6 +12251,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab/lab)
+"Zl" = (
+/obj/machinery/camera/xray,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav/singularitylab/hangar)
 "Zp" = (
 /obj/structure/transit_tube,
 /obj/structure/plasticflaps/opaque{
@@ -11188,6 +12292,21 @@
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Zv" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/orange/three_quarters{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/cargo)
 "Zw" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -11216,14 +12335,15 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/zombie/kudzu{
-	zombiejob = "Cargo Technician"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/corner/transparent/orange{
+	dir = 5
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
@@ -11259,6 +12379,9 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "ZF" = (
 /obj/effect/turf_decal/industrial/loading,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "ZG" = (
@@ -11319,6 +12442,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "ZZ" = (
@@ -12742,7 +13868,7 @@ vb
 xK
 zJ
 KH
-Di
+Es
 Fx
 ac
 BX
@@ -12975,7 +14101,7 @@ aj
 oP
 bZ
 Gy
-Di
+VP
 kA
 eU
 be
@@ -13202,7 +14328,7 @@ BX
 BX
 RX
 RX
-bZ
+aI
 nZ
 iF
 sH
@@ -13275,14 +14401,14 @@ QB
 QB
 Qo
 Qo
-Qo
-BX
+Ad
+AT
 hB
 om
 Pf
 OU
 Lt
-At
+Kr
 At
 BX
 QB
@@ -13353,10 +14479,10 @@ QB
 Qo
 QB
 QB
-BX
-BX
-BX
-BX
+zU
+yA
+yA
+AR
 BX
 BX
 BX
@@ -14122,14 +15248,14 @@ Bc
 ty
 MS
 Pd
-ez
+fQ
 ty
 wa
 WH
 ty
 MS
-Pd
-ez
+dd
+Qx
 ty
 EU
 qm
@@ -14151,7 +15277,7 @@ pt
 II
 GC
 uP
-GC
+Nw
 KO
 Yv
 cE
@@ -14204,8 +15330,8 @@ ty
 wa
 WH
 ty
-qo
-pq
+FU
+Ns
 Mo
 ty
 fn
@@ -14537,7 +15663,7 @@ Rt
 Rt
 bH
 pE
-Dp
+wF
 pE
 QB
 QB
@@ -14691,7 +15817,7 @@ Oz
 GL
 Wp
 pE
-Dp
+Er
 Nu
 Nu
 Nu
@@ -14743,7 +15869,7 @@ SZ
 tx
 Bc
 ty
-MW
+nw
 ty
 SZ
 ty
@@ -15433,7 +16559,7 @@ io
 ty
 gO
 ty
-xE
+yt
 Da
 ty
 gO
@@ -15972,7 +17098,7 @@ ty
 ty
 ty
 ty
-Pa
+yy
 eO
 ty
 ty
@@ -16091,7 +17217,7 @@ QB
 lK
 co
 Sn
-OE
+AC
 OE
 jA
 Xx
@@ -16244,7 +17370,7 @@ pE
 QB
 lK
 FX
-Lw
+LN
 xy
 BK
 xw
@@ -17371,7 +18497,7 @@ pq
 Gf
 ty
 ty
-Mg
+AG
 QB
 QB
 QB
@@ -18092,9 +19218,9 @@ QB
 QB
 QB
 QB
-EA
-yN
-EA
+lh
+TI
+lh
 QB
 QB
 QB
@@ -18402,7 +19528,7 @@ Zx
 Te
 ev
 YU
-nS
+Tx
 QB
 QB
 QB
@@ -18553,7 +19679,7 @@ QB
 QB
 QB
 Zx
-rj
+wB
 qK
 Uk
 Mj
@@ -18633,7 +19759,7 @@ QB
 Zx
 QB
 IB
-nM
+WU
 IB
 OO
 ax
@@ -18710,7 +19836,7 @@ QB
 QB
 QB
 IB
-iZ
+Zv
 nv
 oq
 Xl
@@ -18787,10 +19913,10 @@ IB
 IB
 IB
 IB
-OT
+iE
 VY
 Bg
-mi
+jl
 wt
 mi
 IB
@@ -18856,8 +19982,8 @@ QB
 QB
 QB
 lr
-ov
-ov
+hz
+hz
 ov
 lr
 bu
@@ -18867,7 +19993,7 @@ IB
 Ks
 IA
 qK
-qK
+yp
 Xv
 if
 IB
@@ -18935,7 +20061,7 @@ QB
 lr
 PE
 oE
-ov
+iD
 dk
 xY
 xY
@@ -18943,10 +20069,10 @@ xY
 Wz
 jV
 UA
-qK
-qK
-Xv
-qK
+IE
+cb
+lQ
+Me
 IB
 QB
 QB
@@ -18996,23 +20122,23 @@ Vh
 Vh
 Vh
 Fm
-ws
+cQ
 Oy
+GG
+GG
+GG
+GG
+GG
+GG
 QB
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
+QB
 QB
 QB
 QB
 lr
-ov
-ov
-ov
+hz
+hz
+me
 lr
 gA
 ia
@@ -19023,7 +20149,7 @@ lp
 Zh
 Tv
 nS
-qK
+pp
 IB
 QB
 QB
@@ -19075,14 +20201,14 @@ iy
 yk
 ws
 ws
+GG
+cS
+cS
+cS
+cS
+GG
 QB
 QB
-Qo
-Qo
-Qo
-Qo
-Qo
-Qo
 QB
 QB
 QB
@@ -19097,10 +20223,10 @@ IB
 IB
 IB
 Ob
-qK
-Mj
-qK
-qK
+pp
+Un
+sG
+sG
 IB
 QB
 QB
@@ -19151,14 +20277,14 @@ Ss
 BB
 yk
 cS
-ws
+cS
+eA
+cS
+cS
+cS
+cS
+GG
 QB
-QB
-Qo
-Qo
-Qo
-Qo
-Qo
 QB
 QB
 QB
@@ -19174,7 +20300,7 @@ sA
 sA
 EW
 ZF
-qK
+Cd
 OT
 uO
 IH
@@ -19229,12 +20355,12 @@ BB
 yk
 cS
 ws
-QB
-QB
-QB
-Qo
-Qo
-QB
+GG
+cS
+cS
+cS
+cS
+GG
 QB
 QB
 QB
@@ -19251,9 +20377,9 @@ Oa
 IB
 IB
 SK
-qK
+hJ
 iZ
-qK
+tQ
 Ul
 IB
 QB
@@ -19306,12 +20432,12 @@ BB
 Qi
 cS
 ws
-QB
-QB
-QB
-Qo
-QB
-QB
+GG
+GG
+GG
+GG
+GG
+GG
 QB
 QB
 QB
@@ -19357,7 +20483,7 @@ QB
 QB
 QB
 Oy
-TE
+NK
 kY
 mk
 Ss
@@ -19407,7 +20533,7 @@ IB
 Yg
 WM
 rN
-qK
+Cm
 vU
 IB
 QB
@@ -19485,7 +20611,7 @@ Im
 WA
 OB
 pk
-qK
+tM
 IB
 QB
 QB
@@ -19544,12 +20670,12 @@ kU
 kU
 MB
 FI
-aH
-kU
-kU
-kU
-kU
-MB
+Ko
+uN
+NR
+NR
+uN
+eX
 FI
 QB
 IB
@@ -19562,7 +20688,7 @@ Zz
 JN
 dw
 cu
-qK
+tM
 IB
 QB
 QB
@@ -19621,25 +20747,25 @@ lS
 JV
 JV
 JV
-JV
-JV
-JV
-JV
-JV
+DM
+Bf
+ap
+ap
+Bf
 Yk
-yV
+zt
 yV
 Hj
-lp
-lp
-lp
+Dd
+Dd
+Dd
 LA
 Nr
 Fo
 LZ
 dw
 Ki
-qK
+tM
 IB
 QB
 QB
@@ -19698,13 +20824,13 @@ OV
 OV
 OV
 OV
-OV
-OV
+XJ
+XJ
 Gg
-qF
-qF
-qF
-qF
+cF
+aN
+aN
+aN
 qF
 hY
 th
@@ -19712,11 +20838,11 @@ ZY
 rp
 Sa
 Gr
-qK
+Dt
 kL
-Ul
+zn
 Dz
-qK
+tM
 IB
 QB
 QB
@@ -19775,25 +20901,25 @@ OV
 OV
 OV
 CF
-OV
-OV
+XJ
+XJ
 Se
-OV
-OV
-OV
-OV
+XJ
+XJ
+XJ
+YG
 OV
 Mc
-qK
-qK
-qK
-qK
-qK
-qK
-qK
-qK
-vU
-qK
+jd
+kS
+ch
+mz
+Pz
+Tq
+Aq
+Hn
+kR
+vO
 IB
 QB
 QB
@@ -19846,17 +20972,17 @@ kY
 Gs
 wR
 Oy
-QB
+BV
 QB
 QB
 QB
 QB
 FI
-aH
-kU
+WX
+np
 AA
-kU
-kU
+np
+nr
 MB
 FI
 QB
@@ -20283,6 +21409,7 @@ tq
 tq
 QB
 QB
+Zl
 hn
 hn
 hn
@@ -20302,8 +21429,7 @@ hn
 hn
 hn
 hn
-hn
-hn
+uw
 QB
 QB
 QB
