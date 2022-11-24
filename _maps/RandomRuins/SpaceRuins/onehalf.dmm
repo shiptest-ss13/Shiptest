@@ -3,40 +3,39 @@
 /turf/template_noop,
 /area/template_noop)
 "ab" = (
-/obj/structure/cable{
-	icon_state = "2-4"
+/obj/structure/lattice,
+/obj/structure/railing{
+	dir = 8
 	},
-/obj/structure/catwalk,
-/turf/template_noop,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/space/basic,
 /area/space/nearstation)
 "ac" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/turf/template_noop,
-/area/space/nearstation)
-"ad" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/catwalk,
-/turf/template_noop,
-/area/space/nearstation)
-"ae" = (
 /obj/item/stack/cable_coil/cut/red{
 	amount = 2
 	},
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
+/area/space/nearstation)
+"ad" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf/hallway)
+"ae" = (
+/obj/structure/girder/displaced,
+/turf/open/space/basic,
 /area/space/nearstation)
 "af" = (
-/obj/structure/cable{
-	icon_state = "1-8"
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/obj/structure/catwalk,
-/turf/template_noop,
-/area/space/nearstation)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
 "ag" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/onehalf/dorms_med)
@@ -45,12 +44,11 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf/dorms_med)
 "ai" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/turf/template_noop,
-/area/space/nearstation)
+/obj/item/stack/sheet/mineral/wood,
+/obj/item/chair/wood,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf/hallway)
 "aj" = (
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf/hallway)
@@ -58,31 +56,39 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/onehalf/hallway)
 "al" = (
-/obj/machinery/sleeper/syndie{
-	dir = 4
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-1"
 	},
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/onehalf/dorms_med)
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "am" = (
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/onehalf/dorms_med)
 "an" = (
-/obj/structure/table,
-/obj/item/storage/firstaid/toxin{
-	pixel_x = 3;
-	pixel_y = 3
+/obj/machinery/modular_computer/console/preset/engineering{
+	dir = 4
 	},
-/obj/item/storage/firstaid/fire,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/onehalf/dorms_med)
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf/hallway)
 "ao" = (
-/obj/structure/bed,
-/obj/item/bedsheet/black,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf/dorms_med)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood,
+/obj/item/chair/wood,
+/turf/open/floor/wood/airless{
+	icon_state = "wood-broken3"
+	},
+/area/ruin/space/has_grav/onehalf/hallway)
 "ap" = (
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf/dorms_med)
+/turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
 "aq" = (
 /obj/machinery/door/airlock/external,
 /obj/structure/cable{
@@ -135,48 +141,49 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "aw" = (
-/obj/structure/lattice,
-/turf/template_noop,
-/area/template_noop)
-"ax" = (
-/obj/structure/lattice,
-/obj/item/shard{
-	icon_state = "medium"
+/obj/item/stack/sheet/plasteel{
+	amount = 10
 	},
-/turf/template_noop,
+/obj/structure/lattice,
+/turf/open/space/basic,
 /area/space/nearstation)
-"ay" = (
-/obj/structure/table_frame,
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged3"
-	},
+"ax" = (
+/obj/machinery/vending/snack,
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/space/has_grav/onehalf/hallway)
+"ay" = (
+/obj/structure/lattice,
+/obj/item/stack/sheet/runed_metal,
+/turf/open/space/basic,
+/area/space/nearstation)
 "az" = (
 /obj/machinery/washing_machine,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf/hallway)
 "aA" = (
-/obj/item/roller,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/onehalf/dorms_med)
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "aB" = (
-/obj/machinery/light{
-	dir = 4
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
 	},
-/obj/structure/table,
-/obj/item/storage/firstaid/brute{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/firstaid/regular,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/onehalf/dorms_med)
-"aC" = (
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf/dorms_med)
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf/hallway)
+"aC" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/airless{
+	icon_state = "wood-broken6"
+	},
+/area/ruin/space/has_grav/onehalf/hallway)
 "aD" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -191,22 +198,21 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "aF" = (
-/obj/structure/disposalpipe/trunk,
-/obj/item/stack/ore/diamond,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/onehalf/drone_bay)
-"aG" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
+/turf/open/floor/wood/airless{
+	icon_state = "wood-broken7"
+	},
+/area/ruin/space/has_grav/onehalf/hallway)
+"aG" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "aH" = (
 /obj/structure/lattice,
-/obj/item/stack/cable_coil/cut/red{
-	amount = 2
-	},
-/turf/template_noop,
+/turf/open/space/basic,
 /area/space/nearstation)
 "aI" = (
 /turf/open/floor/plating/airless{
@@ -214,10 +220,11 @@
 	},
 /area/ruin/space/has_grav/onehalf/hallway)
 "aJ" = (
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged5"
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/area/ruin/space/has_grav/onehalf/hallway)
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
 "aK" = (
 /obj/machinery/iv_drip,
 /turf/open/floor/plasteel/white,
@@ -229,21 +236,10 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/onehalf/dorms_med)
 "aM" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/structure/closet/crate/medical,
-/obj/item/clothing/neck/stethoscope,
-/obj/item/healthanalyzer,
-/obj/item/reagent_containers/blood/OMinus,
-/obj/item/reagent_containers/blood/OMinus,
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "Crew Quarters APC";
-	pixel_x = 25
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/onehalf/dorms_med)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
 "aN" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/poddoor{
@@ -284,23 +280,28 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "aS" = (
-/obj/structure/lattice,
-/obj/item/storage/toolbox/syndicate,
-/turf/template_noop,
-/area/space/nearstation)
-"aT" = (
+/obj/machinery/door/airlock,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged3"
-	},
-/area/ruin/space/has_grav/onehalf/hallway)
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/dorms_med)
+"aT" = (
+/obj/structure/lattice,
+/obj/item/stack/sheet/runed_metal,
+/turf/open/space,
+/area/space/nearstation)
 "aU" = (
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged1"
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/area/ruin/space/has_grav/onehalf/hallway)
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "aV" = (
 /obj/machinery/door/airlock/medical/glass,
 /obj/structure/cable{
@@ -309,9 +310,12 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/onehalf/dorms_med)
 "aW" = (
-/obj/machinery/door/airlock,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf/dorms_med)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/open/space,
+/area/space/nearstation)
 "aX" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -440,28 +444,16 @@
 	},
 /area/ruin/space/has_grav/onehalf/hallway)
 "bh" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged3"
-	},
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/space/has_grav/onehalf/hallway)
 "bi" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/disposalpipe/broken{
+	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged5"
+/obj/item/chair/wood,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
 	},
 /area/ruin/space/has_grav/onehalf/hallway)
 "bj" = (
@@ -474,38 +466,17 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf/hallway)
 "bk" = (
-/obj/structure/disposalpipe/junction{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged1"
-	},
+/turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/onehalf/hallway)
 "bl" = (
+/obj/machinery/telecomms/relay,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"bm" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/onehalf/hallway)
-"bm" = (
-/obj/structure/disposalpipe/junction{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf/hallway)
 "bn" = (
@@ -522,23 +493,20 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf/drone_bay)
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
 "bp" = (
+/obj/structure/disposalpipe/segment,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf/drone_bay)
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
 "bq" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "br" = (
 /obj/structure/disposalpipe/segment{
@@ -565,11 +533,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "bu" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 8
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/obj/machinery/disposal/bin,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "bv" = (
 /obj/structure/disposalpipe/broken{
@@ -580,13 +548,9 @@
 	},
 /area/ruin/space/has_grav/onehalf/hallway)
 "bw" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged3"
-	},
-/area/ruin/space/has_grav/onehalf/hallway)
+/obj/item/stack/rods,
+/turf/template_noop,
+/area/space/nearstation)
 "bx" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -594,13 +558,8 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf/hallway)
 "by" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged1"
-	},
+/obj/structure/closet/emcloset,
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf/hallway)
 "bz" = (
 /obj/structure/disposalpipe/segment{
@@ -615,12 +574,9 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf/hallway)
 "bA" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged4"
-	},
+/obj/item/reagent_containers/food/drinks/sillycup,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf/hallway)
 "bB" = (
 /obj/structure/disposalpipe/segment,
@@ -651,7 +607,10 @@
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "bF" = (
 /obj/structure/disposalpipe/segment{
-	dir = 9
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf/drone_bay)
@@ -679,21 +638,22 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf/hallway)
 "bL" = (
-/obj/structure/closet/emcloset,
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged4"
+/obj/structure/railing{
+	dir = 4
 	},
-/area/ruin/space/has_grav/onehalf/hallway)
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "bM" = (
-/obj/machinery/vending/coffee,
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged4"
-	},
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/onehalf/hallway)
 "bN" = (
-/obj/machinery/vending/snack,
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged2"
+/turf/open/floor/wood/airless{
+	icon_state = "wood-broken7"
 	},
 /area/ruin/space/has_grav/onehalf/hallway)
 "bO" = (
@@ -716,8 +676,9 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/onehalf/hallway)
 "bS" = (
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged2"
+/obj/structure/girder/reinforced,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
 	},
 /area/ruin/space/has_grav/onehalf/hallway)
 "bT" = (
@@ -737,12 +698,15 @@
 	},
 /area/ruin/space/has_grav/onehalf/hallway)
 "bX" = (
-/obj/structure/disposalpipe/segment,
-/obj/item/stack/rods,
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged5"
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/area/ruin/space/has_grav/onehalf/hallway)
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
 "bY" = (
 /obj/structure/grille,
 /turf/open/floor/plating/airless,
@@ -813,26 +777,13 @@
 	},
 /area/ruin/space/has_grav/onehalf/hallway)
 "ci" = (
-/obj/structure/lattice,
-/obj/structure/disposalpipe/broken{
-	dir = 4
-	},
-/obj/structure/disposalpipe/broken{
-	dir = 8
-	},
 /obj/item/stack/rods,
-/turf/template_noop,
-/area/ruin/space/has_grav/onehalf/hallway)
-"cj" = (
-/obj/structure/lattice,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/item/shard{
-	icon_state = "small"
-	},
-/turf/template_noop,
+/turf/open/space/basic,
 /area/space/nearstation)
+"cj" = (
+/mob/living/simple_animal/hostile/construct/proteon/hostile,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
 "ck" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment{
@@ -898,16 +849,16 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf/bridge)
 "cr" = (
-/obj/item/stack/rods,
-/turf/template_noop,
+/obj/structure/girder/displaced,
+/obj/item/stack/sheet/runed_metal,
+/turf/open/floor/plasteel/cult/airless,
 /area/template_noop)
 "cs" = (
-/obj/item/stack/sheet/plasteel{
-	amount = 10
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
-/obj/structure/lattice,
-/turf/template_noop,
-/area/space/nearstation)
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf/hallway)
 "ct" = (
 /obj/machinery/door/airlock/external,
 /obj/structure/cable{
@@ -919,11 +870,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "cu" = (
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged5"
-	},
-/area/ruin/space/has_grav/onehalf/hallway)
+/obj/structure/table/optable,
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/onehalf/dorms_med)
 "cv" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating/airless,
@@ -940,12 +889,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf/bridge)
 "cy" = (
-/obj/structure/cable,
-/obj/machinery/power/solar_control{
-	icon_state = "computer";
-	dir = 8
-	},
-/turf/open/floor/plasteel,
+/obj/machinery/light/small,
+/obj/effect/rune/blood_boil,
+/turf/open/floor/plasteel/cult/airless,
 /area/ruin/space/has_grav/onehalf/bridge)
 "cz" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -960,18 +906,20 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf/bridge)
 "cA" = (
-/obj/item/stack/tile/wood,
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/engineering,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
 "cB" = (
-/obj/machinery/door/airlock/command/glass{
-	name = "Bridge"
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf/bridge)
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "cC" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "bridge_onehalf";
@@ -986,39 +934,21 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf/bridge)
 "cD" = (
-/obj/structure/lattice,
-/obj/structure/disposalpipe/broken{
-	dir = 8
-	},
-/obj/structure/disposalpipe/broken{
-	dir = 1
-	},
-/turf/template_noop,
-/area/ruin/space/has_grav/onehalf/hallway)
+/obj/item/stack/tile/wood,
+/turf/open/space/basic,
+/area/space/nearstation)
 "cE" = (
-/obj/structure/frame/computer{
-	icon_state = "0";
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf/bridge)
+/obj/structure/lattice,
+/turf/open/space,
+/area/space/nearstation)
 "cF" = (
-/obj/machinery/light/small,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf/bridge)
-"cG" = (
-/obj/structure/frame/computer{
-	icon_state = "0";
-	dir = 1
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/onehalf/bridge)
-"cH" = (
-/obj/item/crowbar/red,
-/obj/item/multitool,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/onehalf/bridge)
-"cI" = (
+/turf/open/space/basic,
+/area/space/nearstation)
+"cG" = (
 /obj/structure/safe/floor,
 /obj/item/tank/internals/oxygen/red,
 /obj/item/clothing/mask/gas/syndicate,
@@ -1026,8 +956,21 @@
 /obj/item/reagent_containers/food/drinks/bottle/rum,
 /obj/item/reagent_containers/food/drinks/bottle/rum,
 /obj/item/folder/syndicate/mining,
+/obj/item/paper/fluff/gateway,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf/bridge)
+"cH" = (
+/obj/item/crowbar/red,
+/obj/item/multitool,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/onehalf/bridge)
+"cI" = (
+/obj/structure/lattice,
+/obj/item/stack/cable_coil/cut/red{
+	amount = 2
+	},
+/turf/open/space,
+/area/space/nearstation)
 "cJ" = (
 /obj/structure/chair/comfy/black{
 	dir = 4
@@ -1047,14 +990,12 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf/bridge)
 "cN" = (
-/obj/item/stack/sheet/plasteel,
-/turf/template_noop,
-/area/template_noop)
+/obj/item/reagent_containers/food/drinks/sillycup,
+/turf/open/space/basic,
+/area/space/nearstation)
 "cP" = (
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged3"
-	},
-/area/ruin/space/has_grav/onehalf/hallway)
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/bridge)
 "cQ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1094,23 +1035,22 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf/bridge)
 "cW" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "0-2"
 	},
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "0-1"
 	},
-/obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/space/nearstation)
 "cX" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/structure/girder/reinforced,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
 	},
-/turf/open/floor/plasteel/airless{
-	icon_state = "damaged5"
-	},
-/area/ruin/space/has_grav/onehalf/hallway)
+/area/space/nearstation)
 "cY" = (
 /obj/structure/table/reinforced,
 /obj/item/flashlight,
@@ -1191,11 +1131,251 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf/bridge)
 "dh" = (
-/obj/item/stack/sheet/plasteel,
-/obj/structure/catwalk,
-/turf/template_noop,
-/area/space/nearstation)
+/turf/open/space/basic,
+/area/template_noop)
 "di" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/chair,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"dj" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/gibspawner,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"dk" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"dl" = (
+/turf/closed/wall/mineral/cult/artificer,
+/area/ruin/space/has_grav/onehalf/dorms_med)
+"dz" = (
+/turf/closed/wall/mineral/cult/artificer,
+/area/ruin/space/has_grav/onehalf/hallway)
+"ej" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/drinks/sillycup,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf/hallway)
+"ek" = (
+/obj/structure/table,
+/obj/item/storage/firstaid/toxin{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/firstaid/fire,
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/onehalf/dorms_med)
+"ep" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/space,
+/area/space/nearstation)
+"eq" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/item/weldingtool/largetank,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"er" = (
+/obj/item/stack/sheet/metal,
+/turf/open/space/basic,
+/area/space/nearstation)
+"ew" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"eK" = (
+/obj/structure/catwalk,
+/turf/open/space/basic,
+/area/space/nearstation)
+"eN" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"fC" = (
+/obj/structure/girder/displaced,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/space/has_grav/onehalf/hallway)
+"fK" = (
+/obj/structure/lattice,
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/turf/open/space,
+/area/space/nearstation)
+"fR" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"fX" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/closet/crate/medical,
+/obj/item/clothing/neck/stethoscope,
+/obj/item/healthanalyzer,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "Crew Quarters APC";
+	pixel_x = 25
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/onehalf/dorms_med)
+"ha" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"hx" = (
+/obj/structure/disposalpipe/segment,
+/obj/item/stack/rods,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"hY" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"im" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf/hallway)
+"iN" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"jl" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"jR" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"jX" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"lA" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"lB" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"md" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/open/space/basic,
+/area/space/nearstation)
+"mr" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"nw" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/machinery/door/airlock/cult/weak,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/bridge)
+"nx" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"nD" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"nW" = (
+/obj/structure/lattice,
+/obj/item/stack/rods,
+/turf/open/space/basic,
+/area/space/nearstation)
+"nY" = (
+/obj/structure/disposalpipe/trunk,
+/mob/living/simple_animal/hostile/abandoned_minebot,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"oc" = (
+/obj/structure/girder/displaced,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"oh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1203,9 +1383,683 @@
 	icon_state = "medium"
 	},
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
-"dj" = (
+"ox" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"pm" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"pC" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/reagent_containers/food/drinks/sillycup,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"pE" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"pT" = (
+/obj/machinery/power/smes,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/onehalf/hallway)
+"qg" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"qu" = (
+/obj/structure/disposalpipe/junction{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"rB" = (
+/obj/structure/frame/computer{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/bridge)
+"rV" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"sr" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"sC" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk,
+/turf/open/space,
+/area/space/nearstation)
+"sO" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"sQ" = (
+/obj/structure/bed,
+/obj/item/bedsheet/black,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf/dorms_med)
+"ti" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"tB" = (
+/obj/structure/lattice,
+/obj/structure/disposalpipe/broken{
+	dir = 8
+	},
+/obj/structure/disposalpipe/broken{
+	dir = 1
+	},
+/turf/open/space,
+/area/space/nearstation)
+"tU" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/gibspawner,
+/obj/item/storage/toolbox/syndicate,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"tY" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"uZ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"vk" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/space,
+/area/space/nearstation)
+"vD" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"vT" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"wr" = (
+/obj/structure/lattice,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/item/shard{
+	icon_state = "small"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"ws" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"wK" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"wY" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"xF" = (
+/obj/structure/lattice,
+/obj/item/reagent_containers/food/drinks/sillycup,
+/turf/open/space/basic,
+/area/space/nearstation)
+"xG" = (
+/turf/open/floor/wood/airless{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/space/has_grav/onehalf/hallway)
+"xR" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"xY" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/open/space,
+/area/space/nearstation)
+"yd" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"yJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"zd" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"zh" = (
+/obj/structure/disposalpipe/trunk,
+/obj/item/stack/ore/diamond,
+/mob/living/simple_animal/hostile/abandoned_minebot,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"zP" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"zQ" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"Af" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/space/has_grav/onehalf/hallway)
+"An" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/external,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"AH" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"BD" = (
+/obj/item/stack/sheet/runed_metal,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"Cl" = (
+/obj/structure/lattice,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"Cm" = (
+/obj/machinery/sleeper/syndie{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/onehalf/dorms_med)
+"Cw" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"Cy" = (
+/obj/structure/disposalpipe/segment,
+/turf/closed/wall,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"CJ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/research_notes/loot/small,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"Dp" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"Du" = (
+/obj/item/reagent_containers/food/drinks/sillycup,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"Dw" = (
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"Ep" = (
+/obj/item/stack/sheet/plasteel,
+/obj/structure/catwalk,
+/turf/open/space,
+/area/space/nearstation)
+"EJ" = (
+/obj/structure/lattice,
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"EL" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"FC" = (
+/obj/structure/girder/reinforced,
+/obj/item/stack/sheet/runed_metal,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"Ga" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"Gf" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"Gv" = (
+/obj/machinery/computer/communications{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/bridge)
+"GC" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"HA" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"HJ" = (
+/obj/structure/lattice,
+/obj/structure/railing/corner,
+/turf/open/space/basic,
+/area/space/nearstation)
+"HN" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/tracker,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"HP" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"Ix" = (
+/obj/item/stack/cable_coil/cut/red{
+	amount = 2
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"IV" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"Je" = (
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf/dorms_med)
+"Jl" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"JB" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/space,
+/area/space/nearstation)
+"Kk" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk,
+/turf/open/space,
+/area/space/nearstation)
+"Km" = (
+/obj/item/stack/sheet/plasteel,
+/turf/open/space/basic,
+/area/space/nearstation)
+"Ks" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/space,
+/area/space/nearstation)
+"KJ" = (
+/obj/structure/lattice,
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/structure/railing/corner,
+/turf/open/space/basic,
+/area/space/nearstation)
+"LL" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"LU" = (
+/obj/structure/lattice,
+/obj/structure/table_frame,
+/turf/open/space,
+/area/space/nearstation)
+"Mc" = (
+/turf/closed/wall/mineral/cult/artificer,
+/area/ruin/space/has_grav/onehalf/bridge)
+"Me" = (
+/obj/item/stack/sheet/plasteel{
+	amount = 10
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"Mr" = (
+/obj/item/stack/sheet/runed_metal,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
+	},
+/area/ruin/space/has_grav/onehalf/hallway)
+"MD" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/bridge)
+"MG" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"Nm" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"NH" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"Od" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/machinery/disposal/bin,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"OE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood,
+/mob/living/simple_animal/hostile/construct/proteon/hostile,
+/turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"OJ" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf/dorms_med)
+"OW" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"Pl" = (
+/obj/structure/lattice,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"PD" = (
+/turf/open/floor/wood/airless{
+	icon_state = "wood-broken5"
+	},
+/area/ruin/space/has_grav/onehalf/hallway)
+"PK" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"PL" = (
+/obj/machinery/power/solar_control{
+	icon_state = "computer";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/onehalf/hallway)
+"PY" = (
+/obj/structure/disposalpipe/junction{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"Qa" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/open/space,
+/area/space/nearstation)
+"Qx" = (
+/turf/closed/wall/r_wall,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"QF" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/space,
+/area/space/nearstation)
+"Ra" = (
+/obj/structure/frame/computer{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/bridge)
+"Rv" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/airless{
+	icon_state = "wood-broken4"
+	},
+/area/ruin/space/has_grav/onehalf/hallway)
+"RC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table_frame/wood,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf/hallway)
+"RL" = (
+/obj/structure/table/wood,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/space/has_grav/onehalf/hallway)
+"SE" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"TM" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1214,38 +2068,185 @@
 	},
 /obj/item/stack/rods,
 /obj/structure/catwalk,
-/turf/template_noop,
+/turf/open/space,
 /area/space/nearstation)
-"dk" = (
-/obj/structure/cable{
-	icon_state = "1-8"
+"TV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/sheet/mineral/wood,
+/turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"UC" = (
+/obj/structure/girder/reinforced,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/space/has_grav/onehalf/hallway)
+"Vb" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk,
-/turf/template_noop,
-/area/space/nearstation)
-"dl" = (
-/obj/item/stack/cable_coil/cut/red{
-	amount = 2
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
-/turf/template_noop,
-/area/template_noop)
-"Me" = (
-/obj/structure/lattice,
-/turf/template_noop,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"Vl" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/space/basic,
 /area/space/nearstation)
+"Vs" = (
+/obj/structure/lattice,
+/obj/structure/disposalpipe/broken{
+	dir = 4
+	},
+/obj/structure/disposalpipe/broken{
+	dir = 8
+	},
+/obj/item/stack/rods,
+/turf/open/space/basic,
+/area/space/nearstation)
+"VW" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"Wc" = (
+/obj/effect/gibspawner,
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/bridge)
+"WP" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"WV" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"Xk" = (
+/obj/structure/girder/displaced,
+/turf/open/floor/plasteel/cult/airless,
+/area/template_noop)
+"Xw" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5"
+	},
+/area/ruin/space/has_grav/onehalf/hallway)
+"Xy" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk,
+/turf/open/space,
+/area/space/nearstation)
+"XU" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/table,
+/obj/item/storage/firstaid/brute{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/onehalf/dorms_med)
+"YQ" = (
+/obj/structure/disposalpipe/junction{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"YV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair,
+/turf/open/floor/wood/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"Zn" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"ZA" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"ZW" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/wrench,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/drone_bay)
+"ZX" = (
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/bridge)
 
 (1,1,1) = {"
 aa
 aa
 aa
 aa
-Me
 aa
-aS
-Me
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -1263,13 +2264,27 @@ aa
 aa
 aa
 aa
-aj
-Me
-cr
-aj
-bf
-bv
-bK
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+zQ
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+aa
+aa
+ae
+aa
 aa
 aa
 aa
@@ -1284,15 +2299,29 @@ aa
 (3,1,1) = {"
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aH
+aH
+aH
+aU
+aH
+aa
+aa
 ae
-ak
-Me
-aI
-Me
-bg
-bw
-aj
-bV
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -1306,15 +2335,29 @@ aa
 (4,1,1) = {"
 aa
 aa
-ac
-ak
-ay
-Me
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aU
+aa
+aa
+aH
+aa
+cE
+aa
+cE
 aT
-bh
-bw
-ak
-bW
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -1327,16 +2370,30 @@ aa
 "}
 (5,1,1) = {"
 aa
-ab
-af
-ak
-az
-aJ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aH
+aa
+aa
 aU
-bi
-bx
-bL
+aa
+aa
+aH
+aj
+cE
+bw
+aj
+bf
+bv
 bK
+aa
+aa
 aa
 aa
 aa
@@ -1349,16 +2406,30 @@ aa
 "}
 (6,1,1) = {"
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aH
+aa
+aa
+aU
+aa
+aa
 ac
-ag
-ag
-ag
-ag
-ag
-bj
-bx
-bM
 ak
+LU
+aI
+cE
+bg
+bx
+cj
+bV
+aa
 aa
 cr
 aa
@@ -1371,18 +2442,32 @@ aa
 "}
 (7,1,1) = {"
 aa
-ac
-ag
-al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+cB
+cW
+cW
+cW
+nx
 aA
-aK
-ag
-bj
-bw
-bN
-bQ
-bQ
-aj
+aA
+vk
+ak
+az
+cE
+uZ
+dk
+tU
+ak
+bW
+aa
+aa
+aa
 aa
 aa
 aa
@@ -1393,190 +2478,603 @@ aa
 "}
 (8,1,1) = {"
 aa
-ac
-ag
-am
-am
-aL
-aV
-bk
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aH
+aa
+aa
+aa
+aa
+Kk
+sC
+ak
+ak
+ak
+dz
+bj
+bo
 by
-bO
-bR
-aa
-cs
-Me
+bK
 aa
 aa
-cr
-bP
+aa
+aa
+aa
+Xk
+aa
+aa
 aa
 aa
 "}
 (9,1,1) = {"
 aa
-ac
-ag
+aa
+aa
+aa
+aH
+aa
+aa
+aa
+aa
+aH
+aa
+aa
+Vl
+aA
+Cw
+eK
+ak
 an
 aB
 aM
-ag
-bi
 bx
-bP
-aj
+bx
+Dw
+bW
+fC
+xF
+cD
 aa
-aa
-cA
-cr
+ci
 cN
 aa
-Me
 aa
-dl
+cD
+cN
 "}
 (10,1,1) = {"
 aa
-ac
-ag
-ag
-ag
-ag
-ag
+aa
+aa
+aa
+aH
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+cF
+ak
+mr
+mr
+dz
+xG
+wY
+aM
+bo
 bi
-bx
-bQ
-Me
-bV
-aa
-aa
-Me
-cA
-aa
 cL
-dh
+Dw
+aa
+nW
+aH
+aa
+Me
+aa
+aH
+aa
+aa
 aa
 "}
 (11,1,1) = {"
 aa
-ac
-ag
-ao
+aa
+zQ
+aa
+aH
+aa
+zQ
+aa
+aa
+Vl
+aA
+aA
+Cw
+ak
+PL
+pT
+dz
+zd
 aC
 ao
-ag
-bl
-bz
-bR
-bR
-Me
-aj
+bx
+bv
+oc
+aH
+aw
+aH
+aH
+aH
 aa
-aj
+aa
+aH
 Me
-bR
-bQ
-di
+aa
 aa
 "}
 (12,1,1) = {"
 aa
-ac
-ah
+aa
+Ga
+aa
+aH
+aa
+Ga
+aa
+aa
+cF
+aa
+ak
+ak
+ak
+MG
+ti
+dz
 ap
-ap
-ap
-aW
-bj
+bN
+hY
+bo
+bm
 bA
 bS
-bW
-Me
-ax
-aH
+aa
+ci
+aa
+aa
 aH
 aH
 cX
-dc
-dj
+ay
+aa
 aa
 "}
 (13,1,1) = {"
-aa
-ac
-ag
-ao
-ao
-ao
-ag
+HN
+aA
+ox
+aA
+aA
+aA
+ox
+aA
+aA
+Dp
+md
+An
+uZ
+An
+zP
+vD
+cA
+ap
+rV
+aM
+bx
 bm
-bB
-bT
-bX
-ch
-cu
+rV
+UC
+aH
+aa
+aa
 cD
-cL
-cP
-aJ
-dd
-ac
+aH
+cD
+aH
+aa
+aa
 aa
 "}
 (14,1,1) = {"
 aa
-ac
-ag
-ag
-ag
-ag
-ag
-bn
-bC
-bU
-bY
+aa
+Ga
+aa
+aH
+aa
+Ga
+aa
+aa
+cF
+aa
+ak
+ak
+ak
+ak
+ak
+dz
+wY
+TV
+Xw
+pC
+dj
+bh
+dz
+aa
 ci
-cv
-cB
-bU
-cQ
-cQ
-bU
-ac
+aa
+aa
+aa
+aa
+aa
+aH
+aa
 aa
 "}
 (15,1,1) = {"
 aa
+aa
+SE
+aa
+aH
+aa
+SE
+aa
+aa
+ew
+aA
+PK
+eK
+ak
+RC
 ad
 ai
-aq
-aD
-ct
-aX
+xG
+Du
+OE
+WP
 bo
-bp
-bU
-aa
+ax
+FC
+FC
 cj
-bU
-cF
-bU
-Me
 aa
-bU
-ac
+aa
+aa
+aa
+aa
+aH
+aa
 aa
 "}
 (16,1,1) = {"
 aa
 aa
 aa
-ar
-ar
-ar
-aY
+aa
+aH
+aa
+aa
+aa
+aa
+aa
+aa
+cF
+eK
+ak
+bM
+ej
+im
+wY
+Af
+aM
+qu
 bp
-bp
+bO
+dz
+aa
+aw
+aH
+aa
+aa
+ci
+bP
+aa
+aa
+aa
+"}
+(17,1,1) = {"
+aa
+aa
+aa
+aa
+aH
+aa
+aa
+aa
+aa
+aa
+aa
+aW
+ag
+ag
+ag
+dl
+dl
+di
+wY
+aM
+WP
+bo
+bP
+Dw
+aa
+aa
+cD
+ci
+Km
+aa
+cE
+aa
+Ix
+aa
+"}
+(18,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aW
+ag
+Cm
+cu
+aK
+dl
+YV
+rV
+Rv
+bj
+bx
+bQ
+cE
+er
+aa
+aa
+aH
+cD
+aa
+Mr
+Ep
+aa
+aa
+"}
+(19,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aW
+ag
+am
+am
+aL
+aV
+nD
+aF
+yJ
+Vb
+bz
+bR
+dz
+cE
+Dw
+aa
+aj
+cE
+dz
+bQ
+oh
+aa
+aa
+"}
+(20,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aW
+ag
+ek
+XU
+fX
+ag
+ap
+cj
+jR
+bj
+bo
+Dw
+bW
+cE
+fK
+cI
+cI
+cI
+pm
+dc
+TM
+aa
+aa
+"}
+(21,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aW
+ag
+ag
+ag
+ag
+dl
+zd
+PD
+hY
+YQ
+bB
+bT
+hx
+ch
+ws
+tB
+cL
+BD
+Dw
+dd
+aW
+aa
+aa
+"}
+(22,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aW
+ag
+sQ
+OJ
+sQ
+ag
+cs
+cs
+dz
+bn
+bC
+Mc
+bY
+Vs
+cv
+nw
+Mc
+cQ
+cQ
+Mc
+aW
+aa
+aa
+"}
+(23,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aW
+ah
+Je
+Je
+Je
+aS
+bk
+RL
+dz
+af
+bq
+bU
+aa
+wr
+bU
+cy
+bU
+cE
+aa
+bU
+aW
+aa
+aa
+"}
+(24,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aW
+ag
+sQ
+sQ
+sQ
+ag
+ak
+ak
+dz
+Gf
+bq
 bU
 bZ
 ck
@@ -1586,18 +3084,32 @@ bU
 bZ
 bZ
 bU
-ac
+aW
+aa
 aa
 "}
-(17,1,1) = {"
+(25,1,1) = {"
 aa
 aa
 aa
-as
-aE
-aN
-aZ
-bq
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aW
+ag
+ag
+ag
+ag
+ag
+bb
+bG
+LL
+pE
 bD
 bU
 ca
@@ -1608,183 +3120,8 @@ cM
 cR
 cY
 bU
-ac
+aW
 aa
-"}
-(18,1,1) = {"
-aa
-aa
-aa
-ar
-ar
-ar
-ba
-bp
-bE
-bU
-cb
-cm
-cn
-cx
-cn
-cm
-cZ
-de
-dk
-aa
-"}
-(19,1,1) = {"
-aa
-aa
-aa
-at
-aF
-aO
-aZ
-bq
-bD
-bU
-cc
-cn
-cx
-cH
-cn
-cn
-da
-df
-ac
-aa
-"}
-(20,1,1) = {"
-aa
-aa
-aa
-ar
-ar
-ar
-bb
-bp
-bp
-bU
-cd
-co
-cn
-cI
-cn
-cS
-cG
-df
-ac
-aa
-"}
-(21,1,1) = {"
-aa
-aa
-aa
-au
-aE
-aP
-aZ
-bq
-bD
-bU
-ce
-cn
-cn
-cn
-cn
-cn
-cG
-df
-ac
-aa
-"}
-(22,1,1) = {"
-aa
-aa
-aa
-ar
-ar
-ar
-bc
-bp
-bE
-bU
-cf
-cn
-cn
-cJ
-cn
-cT
-cn
-dg
-dk
-aa
-"}
-(23,1,1) = {"
-aa
-aa
-aa
-av
-aE
-aQ
-bd
-bq
-bF
-bU
-cg
-cp
-cy
-cE
-cE
-cU
-db
-bU
-ac
-aa
-"}
-(24,1,1) = {"
-aa
-aa
-aa
-ar
-ar
-ar
-ar
-bp
-bG
-bU
-bU
-cq
-cz
-cz
-cz
-cV
-bU
-bU
-ac
-aa
-"}
-(25,1,1) = {"
-aa
-aa
-aa
-aa
-aw
-aa
-ar
-br
-ar
-ar
-Me
-ad
-ai
-ai
-ai
-cW
-ai
-ai
-af
 aa
 "}
 (26,1,1) = {"
@@ -1792,12 +3129,6 @@ aa
 aa
 aa
 aa
-ar
-ar
-ar
-bs
-bH
-ar
 aa
 aa
 aa
@@ -1805,7 +3136,27 @@ aa
 aa
 aa
 aa
-aa
+JB
+Qa
+aq
+aD
+ct
+aX
+lA
+ha
+fR
+AH
+bE
+bU
+cb
+cm
+cP
+cx
+cn
+MD
+cZ
+de
+xY
 aa
 aa
 "}
@@ -1814,20 +3165,34 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aH
+HJ
+Cl
+bL
+Cl
+ar
+ar
+ar
+aY
+LL
 aG
-aR
-be
-bt
-bI
-be
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ZA
+jX
+PY
+bU
+cc
+cn
+cx
+cH
+Wc
+cP
+da
+df
+aW
 aa
 aa
 "}
@@ -1836,20 +3201,34 @@ aa
 aa
 aa
 aa
-ar
-ar
-ar
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+cF
+aa
+as
+nY
+aN
+aZ
+ZA
+aG
+wK
+bF
 bu
-bJ
-ar
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+bU
+cd
+co
+cn
+cG
+cP
+cS
+rB
+df
+aW
 aa
 aa
 "}
@@ -1860,10 +3239,600 @@ aa
 aa
 aa
 aa
+aH
+aH
+aH
+KJ
+ab
+eN
+ab
+ar
+ar
+ar
+ba
+aJ
+ZW
+EL
+jX
+PY
+bU
+ce
+cP
+cn
+cn
+cP
+cn
+rB
+df
+aW
+aa
+aa
+"}
+(30,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+cF
+aa
+at
+zh
+aO
+aZ
+wK
+NH
+bG
+bF
+xR
+bU
+cf
+cP
+cP
+cJ
+cn
+cT
+cn
+dg
+xY
+aa
+aa
+"}
+(31,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aH
+aH
+aH
+KJ
+ab
+eN
+ab
+ar
+ar
+ar
+bb
+bG
+CJ
+Zn
+jX
+vT
+bU
+cg
+cp
+ZX
+Gv
+Ra
+cU
+db
+bU
+aW
+aa
+aa
+"}
+(32,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+cF
+aa
+au
+aE
+aP
+aZ
+EL
+wK
+NH
+bF
+bG
+bU
+bU
+cq
+cz
+cz
+cz
+cV
+bU
+bU
+aW
+aa
+aa
+"}
+(33,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aH
+aH
+aH
+KJ
+ab
+eN
+ab
+ar
+ar
+ar
+bc
+bG
+bG
+eq
+bF
+bG
+Qx
+ep
+Ks
+Qa
+Qa
+Qa
+Xy
+QF
+Qa
+sC
+aa
+aa
+"}
+(34,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+cF
+aa
+av
+nY
+aQ
+bd
+HP
+EL
+sr
+bX
+bG
+Qx
+cF
+aa
+aa
+aa
+aa
+aa
+cF
+aa
+aa
+aa
+aa
+"}
+(35,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aH
+EJ
+Pl
+yd
+Pl
+ar
+ar
+ar
+ar
+WV
+OW
+OW
+qg
+bG
+Qx
+cF
+aa
+aa
+aa
+aa
+aa
+cF
+aa
+aa
+aa
+aa
+"}
+(36,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ew
+aA
+PK
+cE
+aa
+ar
+bG
+bI
+ar
+br
+ar
+ar
+cF
+aa
+aa
+aa
+aa
+aa
+cF
+aa
+aa
+aa
+aa
+"}
+(37,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+IV
+ar
+ar
+ar
+bG
+bG
+ar
+bs
+bH
+ar
+cF
+aa
+aa
+aa
+aa
+aa
+cF
+aa
+aa
+aa
+aa
+"}
+(38,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+dh
+iN
+aR
+GC
+lB
+lB
+Cy
+bt
+bI
+be
+cF
+aa
+aa
+aa
+aH
+aa
+cF
+aa
+aa
+aH
+aa
+"}
+(39,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+sO
+ar
+ar
+ar
+ar
+ar
+ar
+Od
+bJ
+ar
+cF
+aa
+aa
+cB
+al
+al
+HA
+cW
+cW
+cW
+Jl
+"}
+(40,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+cF
+dh
+dh
+ar
+ar
+ar
 ar
 be
 be
 ar
+cF
+aa
+aa
+aa
+aH
+aa
+VW
+aa
+aa
+aH
+aa
+"}
+(41,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Vl
+aA
+jl
+aA
+aA
+aA
+aA
+aA
+aA
+aA
+aA
+aA
+Cw
+aa
+aa
+aa
+aa
+aH
+VW
+aH
+aa
+aH
+aa
+"}
+(42,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+cF
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tY
+aa
+aa
+aH
+aa
+"}
+(43,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+cB
+cW
+cW
+cW
+Nm
+al
+al
+al
+Jl
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+bl
+aa
+"}
+(44,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aU
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(45,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+SE
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
