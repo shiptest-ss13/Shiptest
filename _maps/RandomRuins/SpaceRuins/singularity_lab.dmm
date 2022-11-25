@@ -5058,6 +5058,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "uB" = (
@@ -5186,6 +5189,9 @@
 	pixel_y = -32
 	},
 /mob/living/simple_animal/hostile/venus_human_trap,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating/grass/jungle{
 	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
 	baseturfs = /turf/open/floor/plasteel;
@@ -5239,6 +5245,9 @@
 	},
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/ash,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "vk" = (
@@ -5764,18 +5773,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
-"xt" = (
-/obj/structure/spacevine/dense,
-/obj/structure/spacevine/dense{
-	pixel_x = -32
-	},
-/mob/living/simple_animal/hostile/venus_human_trap,
-/turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
-	baseturfs = /turf/open/floor/plasteel;
-	name = "grass"
-	},
-/area/ruin/space/has_grav/singularitylab/civvie)
 "xu" = (
 /obj/effect/turf_decal/corner/transparent/orange{
 	dir = 5
@@ -5897,6 +5894,9 @@
 	},
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/ash,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "xJ" = (
@@ -7091,6 +7091,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -9771,6 +9774,20 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab/reactor)
+"MQ" = (
+/obj/structure/spacevine/dense,
+/obj/machinery/power/apc/auto_name/north{
+	start_charge = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating/grass/jungle{
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel;
+	name = "grass"
+	},
+/area/ruin/space/has_grav/singularitylab)
 "MS" = (
 /obj/structure/dresser,
 /obj/item/radio/intercom{
@@ -10304,6 +10321,9 @@
 	},
 /obj/effect/decal/cleanable/ash,
 /obj/effect/decal/cleanable/ash,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "OK" = (
@@ -10866,6 +10886,7 @@
 	dir = 1
 	},
 /obj/structure/spacevine,
+/obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "QD" = (
@@ -11100,18 +11121,6 @@
 /obj/structure/table,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/space/has_grav/singularitylab/lab)
-"RF" = (
-/obj/structure/spacevine/dense,
-/obj/structure/spacevine{
-	pixel_y = -32
-	},
-/mob/living/simple_animal/hostile/venus_human_trap,
-/turf/open/floor/plating/grass/jungle{
-	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
-	baseturfs = /turf/open/floor/plasteel;
-	name = "grass"
-	},
-/area/ruin/space/has_grav/singularitylab/civvie)
 "RG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -11747,6 +11756,9 @@
 /obj/structure/spacevine,
 /obj/structure/spacevine{
 	pixel_y = -32
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
@@ -12460,6 +12472,20 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/cargo)
+"WV" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/mob/living/simple_animal/hostile/zombie/kudzu{
+	zombiejob = "Assistant"
+	},
+/turf/open/floor/plating/grass/jungle{
+	desc = "A patch of overgrown grass. Hints of plasteel plating lay under it.";
+	baseturfs = /turf/open/floor/plasteel;
+	name = "grass"
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "WW" = (
 /obj/structure/transit_tube/curved/flipped{
 	dir = 1
@@ -14707,7 +14733,7 @@ BX
 QB
 QB
 Hz
-pv
+jT
 gB
 QB
 QB
@@ -15480,7 +15506,7 @@ QB
 FI
 bl
 FI
-jT
+MQ
 uY
 BX
 EK
@@ -15584,7 +15610,7 @@ JD
 ua
 ua
 jT
-pv
+jT
 jT
 QB
 QB
@@ -16013,8 +16039,8 @@ dd
 Qx
 ty
 EU
+WV
 qm
-xt
 fa
 Zu
 Zu
@@ -17156,7 +17182,7 @@ Nn
 tL
 Zu
 fv
-RF
+io
 ty
 ty
 ty
@@ -18543,7 +18569,7 @@ Bc
 ZR
 ps
 Zu
-Be
+fv
 fv
 Ol
 yh
