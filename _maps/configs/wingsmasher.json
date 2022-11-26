@@ -1,0 +1,30 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Wingsmasher-Class Cybersun Battle Crusier",
+	"map_short_name": "Wingsmasher-class",
+	"prefix": "SBC",
+	"namelists": ["GENERAL", "SPACE", "MYTHOLOGICAL", "WEAPONS"],
+	"map_path": "_maps/shuttles/shiptest/csbc_wingsmasher.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/syndicate",
+			"officer": true,
+			"slots": 1
+		},
+		"Robotics Technician": {
+			"outfit": "/datum/outfit/job/roboticist/engineer",
+			"slots": 2
+		},
+		"Operative": {
+			"outfit": "/datum/outfit/job/assistant/syndicate",
+			"slots": 2
+		},
+		"Medical Officer": {
+			"outfit": "/datum/outfit/job/doctor/cybersun",
+			"officer": true
+			"slots": 1
+		},
+	},
+	"enabled": true
+}
