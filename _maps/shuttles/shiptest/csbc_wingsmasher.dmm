@@ -18,7 +18,7 @@
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
 	dir = 1
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ao" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -28,7 +28,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "au" = (
 /obj/effect/turf_decal/siding/wood{
@@ -196,6 +196,7 @@
 	input_dir = 2;
 	output_dir = 1
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ship/cargo/starboard)
 "cf" = (
@@ -220,13 +221,13 @@
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cy" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 8
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cz" = (
 /obj/structure/window/reinforced/survival_pod/spawner/west,
@@ -240,7 +241,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "wingsmasherengineshutters"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cC" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
@@ -255,7 +256,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cQ" = (
 /obj/effect/turf_decal/siding/wood{
@@ -273,7 +274,7 @@
 "di" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/visible,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "dj" = (
 /obj/structure/cable{
@@ -286,7 +287,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "dl" = (
 /obj/machinery/power/smes/shuttle/precharged{
@@ -300,7 +301,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "wingsmasherengineshutters"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "dt" = (
 /obj/effect/turf_decal/corner/transparent/yellow{
@@ -346,6 +347,7 @@
 /obj/machinery/door/poddoor/preopen{
 	id = "medbay_wingsmasher"
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating/airless,
 /area/ship/medical)
 "ef" = (
@@ -406,7 +408,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/visible,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "fH" = (
 /obj/machinery/door/airlock/hatch{
@@ -422,7 +424,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "fK" = (
 /obj/machinery/atmospherics/components/unary/tank/toxins,
@@ -482,7 +484,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "hg" = (
 /obj/machinery/power/smes/engineering,
@@ -491,7 +493,7 @@
 	},
 /obj/structure/cable,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "hp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -539,7 +541,7 @@
 	dir = 10
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "iF" = (
 /obj/structure/window/reinforced/survival_pod/spawner/east,
@@ -661,7 +663,7 @@
 	dir = 6
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "kX" = (
 /turf/open/floor/wood/walnut,
@@ -742,6 +744,7 @@
 /obj/effect/turf_decal/road/stripes{
 	dir = 1
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ship/cargo/starboard)
 "nN" = (
@@ -773,7 +776,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ob" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -788,7 +791,7 @@
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
 	dir = 1
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ot" = (
 /obj/machinery/holopad/emergency/command,
@@ -813,7 +816,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "oH" = (
 /obj/effect/turf_decal/corner/opaque/black/half{
@@ -869,7 +872,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "pC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -905,7 +908,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "qq" = (
 /obj/machinery/power/terminal{
@@ -916,7 +919,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "qu" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -994,7 +997,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "wingsmasherengineshutters"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "sv" = (
 /obj/structure/cable{
@@ -1059,7 +1062,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "tp" = (
 /obj/effect/turf_decal/atmos/nitrogen{
@@ -1139,7 +1142,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "uk" = (
 /obj/item/toy/plush/bubbleplush,
@@ -1197,7 +1200,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "uN" = (
 /obj/effect/turf_decal/corner/opaque/black/border{
@@ -1223,7 +1226,7 @@
 "uT" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "vw" = (
 /obj/machinery/door/firedoor/border_only,
@@ -1257,7 +1260,7 @@
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
 	dir = 1
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "wg" = (
 /obj/effect/turf_decal/corner/opaque/black/bordercorner{
@@ -1291,7 +1294,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 9
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "wC" = (
 /obj/machinery/door/firedoor,
@@ -1331,7 +1334,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo/starboard)
 "xt" = (
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "xK" = (
 /obj/structure/bed,
@@ -1361,7 +1364,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "xR" = (
 /obj/machinery/stasis,
@@ -1390,7 +1393,7 @@
 	dir = 9
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yD" = (
 /obj/machinery/vending/tool,
@@ -1404,7 +1407,7 @@
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yW" = (
 /obj/effect/turf_decal/corner/transparent/syndiered{
@@ -1436,18 +1439,15 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "zk" = (
 /obj/effect/turf_decal/road/stripes,
 /obj/machinery/chem_dispenser,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 4;
-	id = "wingsmasher_medbay"
-	},
 /obj/machinery/door/poddoor/preopen{
 	id = "medbay_wingsmasher"
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating/airless,
 /area/ship/medical)
 "zt" = (
@@ -1456,6 +1456,7 @@
 /obj/machinery/door/poddoor/preopen{
 	id = "medbay_wingsmasher"
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating/airless,
 /area/ship/medical)
 "zu" = (
@@ -1602,7 +1603,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/green/visible,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Bj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1647,14 +1648,14 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "wingsmasherengineshutters"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Bx" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "BJ" = (
 /obj/structure/window/plasma/reinforced/spawner/west,
@@ -1695,15 +1696,8 @@
 /obj/machinery/button/door{
 	id = "cargo_wingsmasher";
 	name = "cargobay doors";
-	pixel_x = 6;
 	pixel_y = -27;
 	dir = 1
-	},
-/obj/machinery/button/shieldwallgen{
-	dir = 1;
-	id = "wingsmasher_cargo";
-	pixel_y = -25;
-	pixel_x = -8
 	},
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
 /obj/machinery/ore_silo,
@@ -1800,7 +1794,7 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Fu" = (
 /obj/machinery/atmospherics/components/binary/pump{
@@ -1814,7 +1808,7 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 5
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Fz" = (
 /turf/open/floor/plasteel,
@@ -1877,7 +1871,7 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Gr" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -1896,7 +1890,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "GB" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen{
@@ -1941,7 +1935,7 @@
 "GS" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Hh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2133,7 +2127,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "wingsmasherengineshutters"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Ko" = (
 /obj/effect/turf_decal/corner/transparent/bottlegreen{
@@ -2202,7 +2196,7 @@
 	dir = 4;
 	pixel_x = -27
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Lo" = (
 /obj/structure/reagent_dispensers/fueltank,
@@ -2211,7 +2205,7 @@
 	pixel_x = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/green/visible,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Ly" = (
 /obj/effect/turf_decal/corner/transparent/solgovgold/bordercee{
@@ -2257,7 +2251,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Mp" = (
 /obj/structure/bed,
@@ -2276,7 +2270,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "wingsmasherengineshutters"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Mz" = (
 /obj/machinery/light,
@@ -2369,7 +2363,7 @@
 /obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/item/stack/sheet/mineral/plasma/fifty,
 /obj/item/stack/sheet/mineral/diamond,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "PM" = (
 /obj/machinery/door/airlock/external/glass,
@@ -2469,15 +2463,16 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 6
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "RH" = (
-/obj/machinery/button/shieldwallgen{
-	id = "wingsmasher_medbay";
-	pixel_y = 25
-	},
 /obj/effect/turf_decal/corner/transparent/bottlegreen,
 /obj/machinery/smartfridge/organ,
+/obj/machinery/button/door{
+	id = "medbay_wingsmasher";
+	name = "cargobay doors";
+	pixel_y = 27
+	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "RL" = (
@@ -2535,7 +2530,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Sl" = (
 /obj/structure/lattice,
@@ -2575,7 +2570,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 1
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "SL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -2596,7 +2591,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "wingsmasherengineshutters"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ST" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -2604,7 +2599,7 @@
 /area/ship/engineering/engine)
 "SW" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Ti" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -2673,7 +2668,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "TQ" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -2710,12 +2705,12 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "UA" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "UD" = (
 /obj/structure/table/optable,
@@ -2763,12 +2758,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "Va" = (
-/obj/machinery/power/shieldwallgen/atmos{
-	anchored = 1;
-	dir = 4;
-	id = "wingsmasher_cargo";
-	locked = 1
-	},
 /obj/machinery/door/poddoor{
 	id = "cargo_wingsmasher";
 	name = "Cargo Bay"
@@ -2779,6 +2768,7 @@
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	name = "Scrubber Waste"
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ship/cargo/starboard)
 "Vp" = (
@@ -2798,7 +2788,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "VI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -2832,7 +2822,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "WJ" = (
 /obj/structure/chair/office{
@@ -2846,7 +2836,7 @@
 "WT" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "WU" = (
 /obj/effect/turf_decal/syndicateemblem/top/right{
@@ -2869,7 +2859,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 5
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Xi" = (
 /obj/structure/table/wood,
@@ -2925,6 +2915,7 @@
 	id = "medbay_wingsmasher"
 	},
 /obj/structure/table/reinforced,
+/obj/structure/fans/tiny,
 /turf/open/floor/plating/airless,
 /area/ship/medical)
 "Zm" = (
@@ -2964,7 +2955,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 
 (1,1,1) = {"
