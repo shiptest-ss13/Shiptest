@@ -1540,7 +1540,8 @@
 	id = "shipbridge";
 	name = "Bridge lockdown";
 	pixel_y = -26;
-	dir = 1
+	dir = 1;
+	pixel_x = 7
 	},
 /obj/item/areaeditor/shuttle{
 	pixel_x = -4;
@@ -1549,6 +1550,13 @@
 /obj/item/toy/plush/nukeplushie{
 	pixel_y = 9;
 	pixel_x = 6
+	},
+/obj/machinery/button/door{
+	id = "exterior";
+	name = "Window lockdown";
+	pixel_y = -26;
+	dir = 1;
+	pixel_x = -7
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
