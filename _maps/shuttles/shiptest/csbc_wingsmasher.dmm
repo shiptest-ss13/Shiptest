@@ -2371,6 +2371,14 @@
 /obj/item/stack/sheet/mineral/diamond,
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engine)
+"PM" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 4
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/fore)
 "PN" = (
 /obj/machinery/sleeper/syndie{
 	dir = 4
@@ -3337,7 +3345,7 @@ uC
 Kz
 sF
 gB
-sF
+PM
 "}
 (21,1,1) = {"
 VQ
