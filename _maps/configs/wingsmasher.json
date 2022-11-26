@@ -5,6 +5,7 @@
 	"prefix": "SBC",
 	"namelists": ["GENERAL", "SPACE", "MYTHOLOGICAL", "WEAPONS"],
 	"map_path": "_maps/shuttles/shiptest/csbc_wingsmasher.dmm",
+	"map_id": "csbc_wingsmasher",
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
@@ -22,9 +23,9 @@
 		},
 		"Medical Officer": {
 			"outfit": "/datum/outfit/job/doctor/cybersun",
-			"officer": true
+			"officer": true,
 			"slots": 1
-		},
+		}
 	},
 	"enabled": true
 }
