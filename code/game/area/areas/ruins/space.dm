@@ -22,8 +22,6 @@
 /area/ruin/space/has_grav/onehalf
 	name = "Station Fragment"
 	icon_state = "away"
-	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
-
 
 //Dinner For Two
 
