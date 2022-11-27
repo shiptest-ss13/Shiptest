@@ -84,9 +84,6 @@
 /area/ruin/space/has_grav/onehalf)
 "aq" = (
 /obj/machinery/door/airlock/external,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
@@ -175,9 +172,6 @@
 	},
 /area/ruin/space/has_grav/onehalf)
 "aD" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -315,14 +309,11 @@
 /turf/open/space,
 /area/space/nearstation)
 "aX" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
@@ -868,9 +859,6 @@
 /area/ruin/space/has_grav/onehalf)
 "ct" = (
 /obj/machinery/door/airlock/external,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -1470,17 +1458,13 @@
 /mob/living/simple_animal/hostile/construct/proteon/hostile,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
-"qu" = (
-/obj/structure/disposalpipe/junction{
-	dir = 4
-	},
+"rd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood,
 /obj/structure/cable{
-	icon_state = "1-4"
+	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/wood/airless,
 /area/ruin/space/has_grav/onehalf)
 "rB" = (
 /obj/structure/frame/computer{
@@ -1701,6 +1685,13 @@
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf)
+"Av" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/cult/airless,
+/area/ruin/space/has_grav/onehalf)
 "AH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -1891,9 +1882,6 @@
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
 "JB" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /obj/structure/catwalk,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1987,6 +1975,18 @@
 	},
 /obj/machinery/disposal/bin,
 /turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf)
+"Om" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/onehalf)
 "OE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2169,6 +2169,10 @@
 /mob/living/simple_animal/hostile/construct/proteon/hostile,
 /turf/open/floor/plasteel/cult/airless,
 /area/ruin/space/has_grav/onehalf)
+"Wk" = (
+/obj/structure/catwalk,
+/turf/open/space,
+/area/space/nearstation)
 "WP" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2567,7 +2571,7 @@ ak
 an
 aB
 aM
-bx
+bj
 bx
 Dw
 bW
@@ -2603,7 +2607,7 @@ Mc
 xG
 wY
 aM
-bo
+WP
 bi
 cL
 Dw
@@ -2639,7 +2643,7 @@ Mc
 zd
 aC
 ao
-bx
+bj
 bv
 oc
 aH
@@ -2675,7 +2679,7 @@ Mc
 ap
 bN
 hY
-bo
+WP
 bm
 bA
 bS
@@ -2708,10 +2712,10 @@ An
 zP
 vD
 cA
-ap
-rV
-aM
-bx
+nD
+Av
+rd
+Om
 bm
 rV
 UC
@@ -2819,7 +2823,7 @@ im
 wY
 Af
 aM
-qu
+YQ
 bp
 bO
 Mc
@@ -3171,7 +3175,7 @@ aa
 aa
 aa
 JB
-Qa
+Wk
 aq
 aD
 ct
