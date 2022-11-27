@@ -67,9 +67,7 @@
 /obj/machinery/light/small{
 	brightness = 3
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 5
-	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "bb" = (
@@ -512,6 +510,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ship/science)
+"nT" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/electrical)
 "oA" = (
 /obj/effect/turf_decal/corner/transparent/brown/border{
 	dir = 1
@@ -735,8 +739,11 @@
 /area/ship/crew)
 "tG" = (
 /obj/effect/turf_decal/industrial/traffic,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 4
+	},
 /turf/open/floor/plating,
-/area/ship/external)
+/area/ship/engineering/electrical)
 "uu" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -1991,7 +1998,7 @@ uL
 gS
 RC
 aj
-aj
+nT
 aj
 "}
 (12,1,1) = {"
