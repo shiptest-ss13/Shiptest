@@ -415,6 +415,9 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
 	},
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/aft)
 "kW" = (
@@ -1392,6 +1395,9 @@
 /obj/structure/window/reinforced/survival_pod/spawner/west,
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
