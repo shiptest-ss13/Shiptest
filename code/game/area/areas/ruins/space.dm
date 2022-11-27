@@ -17,28 +17,20 @@
 	icon_state = "away"
 	always_unpowered = FALSE
 
-// Ruins of "onehalf" ship
+// Onehalf Ruin
 
-/area/ruin/space/has_grav/onehalf/hallway
-	name = "Hallway"
-	icon_state = "hallC"
-
-/area/ruin/space/has_grav/onehalf/drone_bay
-	name = "Mining Drone Bay"
-	icon_state = "engine"
-
-/area/ruin/space/has_grav/onehalf/dorms_med
-	name = "Crew Quarters"
-	icon_state = "Sleep"
-
-/area/ruin/space/has_grav/onehalf/bridge
-	name = "Bridge"
-	icon_state = "bridge"
+/area/ruin/space/has_grav/onehalf
+	name = "Station Fragment"
+	icon_state = "away"
+	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
 
 
+//Dinner For Two
 
 /area/ruin/space/has_grav/powered/dinner_for_two
 	name = "Dinner for Two"
+
+//Aesthetic
 
 /area/ruin/space/has_grav/powered/aesthetic
 	name = "Aesthetic"
