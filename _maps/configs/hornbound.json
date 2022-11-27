@@ -1,0 +1,31 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Hornbound-class Colonial Ship",
+	"prefix": "SSV",
+	"map_short_name": "Hornbound-class",
+	"map_path": "_maps/shuttles/shiptest/syndicate_hornbound.dmm",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/syndicate",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Researcher": {
+			"outfit": "/datum/outfit/job/doctor/syndicate/nsv",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/engineer/syndicate",
+			"slots": 1
+		},
+		"Wrecker": {
+			"outfit": "/datum/outfit/job/miner/syndicate",
+			"slots": 1
+		},
+		"Junior Agent": {
+			"outfit": "/datum/outfit/job/assistant/syndicate/gorlex",
+			"slots": 2
+		}
+	}
+	"enabled": true
+}
