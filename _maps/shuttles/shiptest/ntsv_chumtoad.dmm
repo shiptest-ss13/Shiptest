@@ -1,11 +1,12 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "bh" = (
-/obj/machinery/computer/aifixer{
-	dir = 8
+/obj/effect/turf_decal/industrial/defective{
+	dir = 1
 	},
-/obj/effect/turf_decal/corner/transparent/ntblue/full,
-/turf/open/floor/mineral/titanium,
-/area/ship/bridge)
+/obj/machinery/airalarm/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/ai_chamber)
 "bs" = (
 /obj/effect/turf_decal/chapel{
 	dir = 8
@@ -18,6 +19,12 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
+"ca" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "cj" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/borderfloor{
@@ -32,17 +39,46 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating/airless,
 /area/ship/external)
-"fa" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
+"eU" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	launch_status = 0
 	},
-/turf/open/floor/mineral/titanium/tiled/blue,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"fa" = (
+/obj/machinery/door/airlock/shuttle/glass{
+	name = "Engines"
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"fG" = (
+/obj/effect/turf_decal/corner/transparent/grey/full,
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/blue{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "fO" = (
-/obj/effect/turf_decal/corner/transparent/purple{
-	dir = 9
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/rechargefloor,
+/obj/structure/cable/yellow{
+	icon_state = "2-5"
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/science)
 "gc" = (
@@ -59,34 +95,63 @@
 /obj/effect/turf_decal/corner/transparent/purple{
 	dir = 9
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/science)
 "hd" = (
-/obj/effect/turf_decal/corner/transparent/purple/mono,
-/obj/effect/turf_decal/borderfloorwhite,
-/turf/open/floor/mineral/titanium/tiled/white,
-/area/ship/science)
+/obj/effect/turf_decal/industrial/defective,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/ai_chamber)
 "he" = (
-/obj/effect/turf_decal/corner/transparent/purple,
-/obj/structure/table,
-/obj/item/stack/sheet/glass/twenty{
-	pixel_y = 2;
-	pixel_x = 4
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
 	},
-/obj/item/stack/sheet/metal/ten{
-	pixel_y = -2;
-	pixel_x = -2
+/obj/structure/cable/yellow{
+	icon_state = "0-9"
 	},
-/turf/open/floor/mineral/titanium/white,
-/area/ship/science)
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"hx" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "hC" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/science)
+"hF" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "hU" = (
-/obj/machinery/mecha_part_fabricator,
-/obj/effect/turf_decal/corner/transparent/purple/mono,
-/turf/open/floor/mineral/titanium/tiled/white,
-/area/ship/science)
+/obj/machinery/button/door{
+	id = "cargo_chumtoad";
+	name = "cargobay doors";
+	dir = 8;
+	pixel_x = 27
+	},
+/obj/structure/rack,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
 "jk" = (
 /obj/effect/turf_decal/industrial/defective{
 	dir = 1
@@ -102,54 +167,155 @@
 /turf/open/floor/engine,
 /area/ship/science/ai_chamber)
 "jQ" = (
-/obj/effect/turf_decal/corner/transparent/grey/full,
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/blue{
-	dir = 8
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/northright,
+/obj/structure/cable/orange{
+	icon_state = "0-2"
 	},
-/turf/open/floor/mineral/titanium,
-/area/ship/bridge)
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "ke" = (
-/obj/structure/chair/office{
+/obj/effect/turf_decal/corner/transparent/purple{
+	dir = 6
+	},
+/obj/structure/table,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 7
+	},
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/belt/utility/full/engi{
+	pixel_y = -3
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/science)
+"kZ" = (
+/obj/effect/turf_decal/industrial/defective{
 	dir = 8
 	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/turf/open/floor/mineral/titanium/tiled/blue,
-/area/ship/bridge)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/ai_chamber)
 "lq" = (
 /obj/machinery/computer/helm,
 /obj/effect/turf_decal/corner/transparent/ntblue/full,
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
+"lw" = (
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
 "me" = (
 /obj/effect/turf_decal/industrial/defective/corner{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/science/ai_chamber)
-"mv" = (
-/obj/structure/AIcore/deactivated,
+"mt" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/industrial/hatch/blue,
-/turf/open/floor/engine,
-/area/ship/science/ai_chamber)
+/turf/open/floor/mineral/titanium/white,
+/area/ship/science)
+"mv" = (
+/obj/effect/turf_decal/corner/transparent/grey/full,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/blue{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium,
+/area/ship/bridge)
 "mH" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/science)
-"oI" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
+"mX" = (
+/obj/machinery/power/port_gen/pacman/mrs,
+/obj/structure/catwalk/over,
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"no" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"nX" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/blue,
 /area/ship/bridge)
-"qh" = (
+"oq" = (
 /obj/structure/chair/office{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/transparent/ntblue/full,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
+"oI" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
+"pg" = (
+/obj/effect/turf_decal/corner/transparent/purple{
+	dir = 8
+	},
+/obj/machinery/autolathe,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/white,
+/area/ship/science)
+"pp" = (
+/obj/machinery/mecha_part_fabricator,
+/obj/effect/turf_decal/corner/transparent/purple/mono,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/science)
+"pQ" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/door/airlock/shuttle/glass{
+	name = "Bridge"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/bridge)
+"qh" = (
+/obj/effect/turf_decal/borderfloorwhite{
+	dir = 1
+	},
+/obj/machinery/door/airlock/shuttle/glass{
+	name = "Engines"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "qN" = (
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 1
@@ -169,20 +335,54 @@
 /obj/machinery/door/window,
 /turf/open/floor/engine,
 /area/ship/cargo)
-"rA" = (
-/obj/effect/turf_decal/borderfloorwhite{
-	dir = 8
-	},
-/obj/machinery/recharge_station,
-/turf/open/floor/plating,
-/area/ship/science)
-"sM" = (
-/obj/effect/turf_decal/industrial/warning{
+"rm" = (
+/obj/machinery/computer/med_data{
 	dir = 4
 	},
-/obj/machinery/suit_storage_unit/mining/eva,
-/turf/open/floor/engine,
-/area/ship/cargo)
+/obj/effect/turf_decal/corner/transparent/ntblue/full,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium,
+/area/ship/bridge)
+"rA" = (
+/obj/effect/turf_decal/corner/transparent/grey/full,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/blue{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium,
+/area/ship/bridge)
+"sM" = (
+/obj/effect/turf_decal/industrial/defective/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/ai_chamber)
+"sT" = (
+/obj/effect/turf_decal/industrial/defective,
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/ai_chamber)
+"ta" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/south,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/ship/bridge)
 "tv" = (
 /obj/machinery/computer/mech_bay_power_console{
 	dir = 4
@@ -192,6 +392,26 @@
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/science)
+"tM" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/item/wrench/crescent,
+/obj/machinery/airalarm/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"uC" = (
+/obj/effect/turf_decal/industrial/defective,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/ai_chamber)
 "uJ" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/borderfloor{
@@ -202,22 +422,40 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ship/bridge)
+"vq" = (
+/obj/effect/turf_decal/borderfloorwhite{
+	dir = 8
+	},
+/obj/machinery/recharge_station,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/plating,
+/area/ship/science)
 "vD" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
-	},
-/turf/open/floor/engine,
-/area/ship/science/ai_chamber)
-"wd" = (
-/obj/effect/turf_decal/corner/transparent/grey/full,
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/blue{
-	dir = 1
+/obj/effect/turf_decal/corner/transparent/ntblue/full,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/computer/rdconsole/core{
+	dir = 8
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
+"vW" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/ship/bridge)
+"wd" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/northleft,
+/obj/structure/cable/orange{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "wU" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/borderfloor{
@@ -226,60 +464,79 @@
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ship/bridge)
 "xu" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/shuttle/glass{
-	name = "Bridge"
-	},
-/turf/open/floor/mineral/titanium/tiled,
-/area/ship/bridge)
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "xA" = (
 /obj/effect/turf_decal/corner/transparent/bar/mono,
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/bridge)
 "yF" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 5
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/mmi/posibrain,
-/turf/open/floor/engine,
-/area/ship/science/ai_chamber)
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "yT" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
-"zW" = (
-/obj/machinery/piratepad,
+"zk" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 5
+	dir = 4
 	},
+/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/engine,
 /area/ship/cargo)
-"Ai" = (
-/obj/effect/turf_decal/corner/transparent/grey/full,
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/blue{
-	dir = 4
-	},
-/turf/open/floor/mineral/titanium,
-/area/ship/bridge)
-"AF" = (
+"zW" = (
 /obj/effect/turf_decal/corner/transparent/purple{
-	dir = 8
+	dir = 9
 	},
+/obj/effect/turf_decal/rechargefloor,
+/obj/effect/spawner/lootdrop/whiteship_cere_ripley,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/science)
-"AN" = (
-/obj/structure/reagent_dispensers/water_cooler,
+"Ai" = (
 /obj/effect/turf_decal/borderfloor{
-	dir = 8
+	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ship/bridge)
+"An" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/ship/bridge)
+"Ay" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"AF" = (
+/obj/effect/turf_decal/corner/transparent/purple/mono,
+/obj/effect/turf_decal/borderfloorwhite,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/science)
+"AN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/aft)
+"Bd" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "Bf" = (
 /obj/machinery/door/airlock/shuttle/glass,
 /obj/effect/turf_decal/borderfloor{
@@ -315,37 +572,50 @@
 /turf/open/floor/engine,
 /area/ship/science/ai_chamber)
 "Cf" = (
-/obj/machinery/door/airlock/shuttle/glass{
-	name = "Engines"
-	},
-/turf/open/floor/mineral/titanium/tiled,
-/area/ship/science/ai_chamber)
-"Dg" = (
-/obj/effect/turf_decal/industrial/defective/corner{
+/obj/structure/chair/office{
 	dir = 8
 	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/ship/bridge)
+"CG" = (
+/obj/machinery/door/airlock/shuttle/glass{
+	name = "Research"
+	},
+/obj/effect/turf_decal/borderfloorwhite{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-10"
+	},
 /turf/open/floor/mineral/titanium/tiled,
-/area/ship/science/ai_chamber)
-"EE" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/corner/transparent/purple/mono,
-/obj/effect/turf_decal/borderfloorwhite,
-/obj/item/storage/toolbox/electrical{
-	pixel_y = 7
-	},
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/belt/utility/full/engi{
-	pixel_y = -2
-	},
-/turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
+"Dg" = (
+/obj/effect/turf_decal/chapel,
+/obj/effect/turf_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/blue{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium,
+/area/ship/bridge)
+"EE" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/maintenance/aft)
 "EH" = (
-/obj/effect/turf_decal/corner_steel_grid/full{
+/obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/oil/streak,
-/turf/open/floor/engine,
-/area/ship/science/ai_chamber)
+/obj/item/toy/plush/lizardplushie,
+/obj/item/kirbyplants/random,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/ship/bridge)
 "EU" = (
 /turf/open/floor/mineral/titanium/white,
 /area/ship/science)
@@ -363,6 +633,31 @@
 /obj/structure/railing,
 /turf/open/floor/plating,
 /area/ship/science)
+"GI" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-10"
+	},
+/obj/effect/turf_decal/industrial/traffic/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/soap/homemade,
+/obj/structure/closet/wall{
+	dir = 1;
+	pixel_y = -30
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"GT" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 9
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ship/science/ai_chamber)
 "Hv" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
@@ -375,48 +670,119 @@
 	},
 /turf/open/floor/engine,
 /area/ship/cargo)
+"JA" = (
+/obj/effect/turf_decal/industrial/defective{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/ai_chamber)
+"JK" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "Kc" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ship/bridge)
-"LG" = (
-/obj/effect/turf_decal/chapel,
-/obj/effect/turf_decal/borderfloor{
+"Kt" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/window/reinforced/survival_pod/spawner/west,
+/obj/structure/window/reinforced/survival_pod/spawner/east,
+/obj/structure/window/reinforced/survival_pod{
 	dir = 6
 	},
-/obj/effect/turf_decal/siding/blue{
-	dir = 6
+/obj/structure/window/reinforced/survival_pod{
+	dir = 10
 	},
-/turf/open/floor/mineral/titanium,
-/area/ship/bridge)
-"LW" = (
-/obj/machinery/computer/crew{
-	dir = 4
+/obj/machinery/door/window/survival_pod{
+	dir = 1
 	},
-/obj/effect/turf_decal/corner/transparent/ntblue/full,
-/turf/open/floor/mineral/titanium,
-/area/ship/bridge)
-"NW" = (
-/obj/machinery/door/airlock/shuttle/glass{
-	name = "Research"
+/obj/structure/cable/orange{
+	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/borderfloorwhite{
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"Ku" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/mineral/titanium/tiled,
-/area/ship/science)
-"Oq" = (
-/obj/effect/turf_decal/industrial/defective/corner,
-/turf/open/floor/mineral/titanium/tiled,
-/area/ship/science/ai_chamber)
-"Ou" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 9
+/obj/structure/cable/orange,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"LG" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"LW" = (
+/obj/structure/AIcore/deactivated,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/hatch/blue,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
 	},
 /turf/open/floor/engine,
 /area/ship/science/ai_chamber)
+"MK" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/ship/bridge)
+"NW" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"Oq" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"Ot" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
+"Ou" = (
+/obj/structure/cable/yellow{
+	icon_state = "6-8"
+	},
+/obj/effect/turf_decal/industrial/traffic/corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"OB" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "5-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-5"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "OL" = (
 /obj/machinery/computer/cargo/express{
 	dir = 8
@@ -425,12 +791,35 @@
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "Pi" = (
-/obj/machinery/computer/med_data{
-	dir = 4
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
 	},
-/obj/effect/turf_decal/corner/transparent/ntblue/full,
-/turf/open/floor/mineral/titanium,
-/area/ship/bridge)
+/obj/structure/cable/orange,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"Po" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/closet/crate,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/stack/cable_coil/yellow,
+/obj/item/stack/cable_coil/yellow,
+/obj/item/stack/cable_coil/yellow,
+/obj/item/mecha_parts/mecha_tracking/ai_control,
+/obj/item/borg/upgrade/ai,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "PF" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -446,17 +835,40 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "PR" = (
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
+"PW" = (
 /obj/machinery/door/airlock/shuttle/glass{
 	name = "Engines"
 	},
-/turf/open/floor/mineral/titanium,
-/area/ship/cargo)
-"PW" = (
-/obj/effect/turf_decal/industrial/defective,
+/obj/effect/turf_decal/borderfloor,
 /turf/open/floor/mineral/titanium/tiled,
-/area/ship/science/ai_chamber)
+/area/ship/maintenance/aft)
+"Qq" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "Qw" = (
 /turf/closed/wall/mineral/titanium,
+/area/ship/cargo)
+"QZ" = (
+/obj/machinery/computer/crew{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/ntblue/full,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium,
+/area/ship/bridge)
+"RE" = (
+/obj/machinery/piratepad,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
 /area/ship/cargo)
 "RL" = (
 /obj/machinery/modular_computer/console/preset/id{
@@ -466,62 +878,109 @@
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "Sp" = (
-/obj/machinery/button/door{
-	id = "cargo_chumtoad";
-	name = "cargobay doors";
-	dir = 8;
-	pixel_x = 27
-	},
-/turf/open/floor/mineral/titanium,
-/area/ship/cargo)
-"Sv" = (
-/turf/open/floor/mineral/titanium,
-/area/ship/cargo)
-"Tp" = (
-/obj/effect/turf_decal/corner/transparent/purple{
-	dir = 6
-	},
+/obj/effect/turf_decal/corner/transparent/purple,
 /obj/structure/table,
+/obj/item/stack/sheet/glass/twenty{
+	pixel_y = 2;
+	pixel_x = 4
+	},
+/obj/item/stack/sheet/metal/ten{
+	pixel_y = -2;
+	pixel_x = -2
+	},
+/obj/structure/cable/yellow{
+	icon_state = "5-10"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/multitool,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/science)
+"Sv" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ship/science/ai_chamber)
+"Tp" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
 "Tt" = (
 /turf/template_noop,
 /area/template_noop)
 "Tw" = (
-/obj/structure/chair/office{
+/obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 4
 	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
-/turf/open/floor/mineral/titanium/tiled/blue,
-/area/ship/bridge)
-"TB" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
-/turf/open/floor/mineral/titanium/tiled/blue,
-/area/ship/bridge)
-"VN" = (
-/turf/open/floor/mineral/titanium/tiled/blue,
-/area/ship/bridge)
-"Wx" = (
-/obj/structure/tank_dispenser/oxygen,
-/turf/open/floor/mineral/titanium,
-/area/ship/cargo)
-"WJ" = (
-/obj/effect/turf_decal/corner_steel_grid/full,
+/obj/effect/decal/cleanable/oil/streak,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ship/science/ai_chamber)
-"WS" = (
-/obj/effect/turf_decal/borderfloor{
+"TB" = (
+/obj/effect/turf_decal/industrial/defective{
 	dir = 4
 	},
-/obj/item/toy/plush/lizardplushie,
-/obj/item/kirbyplants/random,
-/turf/open/floor/mineral/titanium/tiled/blue,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/ai_chamber)
+"Uo" = (
+/obj/effect/turf_decal/industrial/defective/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/ai_chamber)
+"VN" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/cable/orange,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"Wc" = (
+/obj/effect/turf_decal/industrial/defective/corner,
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/science/ai_chamber)
+"Wx" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"WJ" = (
+/obj/effect/turf_decal/chapel{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/blue{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium,
 /area/ship/bridge)
+"WS" = (
+/obj/effect/turf_decal/corner/transparent/purple/mono,
+/obj/effect/turf_decal/borderfloorwhite,
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/machinery/computer/cryopod{
+	pixel_y = 27
+	},
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/science)
 "Xp" = (
 /obj/effect/turf_decal/chapel{
 	dir = 1
@@ -535,27 +994,39 @@
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "Xr" = (
-/obj/effect/turf_decal/industrial/defective/corner{
-	dir = 1
+/obj/machinery/power/port_gen/pacman/super,
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/turf/open/floor/mineral/titanium/tiled,
-/area/ship/science/ai_chamber)
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "Xw" = (
-/turf/closed/wall/mineral/titanium,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/mmi/posibrain,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
 /area/ship/science/ai_chamber)
 "XJ" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/science)
 "Yn" = (
-/obj/effect/turf_decal/borderfloorwhite{
-	dir = 1
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
-/obj/machinery/door/airlock/shuttle/glass{
-	name = "Engines"
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
 	},
-/turf/open/floor/mineral/titanium/tiled,
-/area/ship/science)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "YG" = (
 /obj/effect/turf_decal/corner/transparent/grey/full,
 /obj/effect/turf_decal/borderfloor{
@@ -564,6 +1035,12 @@
 /obj/effect/turf_decal/siding/blue,
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
+"YN" = (
+/obj/effect/turf_decal/corner_steel_grid/full,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ship/science/ai_chamber)
 "YZ" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
@@ -575,18 +1052,30 @@
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/bridge)
-"ZN" = (
-/obj/effect/turf_decal/chapel{
+"ZM" = (
+/obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 5
-	},
-/obj/effect/turf_decal/siding/blue{
-	dir = 5
-	},
-/turf/open/floor/mineral/titanium,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/blue,
 /area/ship/bridge)
+"ZN" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/ship/bridge)
+"ZW" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 
 (1,1,1) = {"
 Tt
@@ -598,44 +1087,9 @@ Tt
 Tt
 Tt
 Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+cH
+cH
+cH
 Tt
 Tt
 Tt
@@ -654,48 +1108,13 @@ Tt
 Tt
 Tt
 Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+mH
+mH
+XJ
+XJ
+XJ
+mH
+mH
 Tt
 Tt
 Tt
@@ -711,52 +1130,17 @@ Tt
 Tt
 Tt
 Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+mH
+hC
+WS
+pg
+gf
+zW
+tv
+hC
+EE
+EE
+EE
 Tt
 Tt
 Tt
@@ -769,53 +1153,18 @@ Tt
 Tt
 Tt
 Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+mH
+pp
+AF
+mt
+EU
+EU
+EU
+fO
+qh
+hF
+wd
+Ku
 Tt
 Tt
 Tt
@@ -826,462 +1175,182 @@ Tt
 Tt
 Tt
 Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+yT
+yT
+yT
+oI
+vq
+FZ
+mt
+Sp
+ke
+EE
+ca
+EE
+EE
+EE
 Tt
 Tt
 "}
 (6,1,1) = {"
 Tt
 Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+yT
+ZK
+ZK
+oI
+gc
+rm
+yT
+mH
+mH
+CG
+mH
+mH
+EE
+NW
+xu
+Po
+wd
+Ku
 Tt
 "}
 (7,1,1) = {"
 Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+ZK
+oI
+Br
+uJ
+nX
+Cf
+MK
+yT
+Wc
+JA
+TB
+FM
+me
+EE
+tM
+LG
+Ou
+EE
+EE
+EE
 "}
 (8,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+ZK
+ZK
+QZ
+Ai
+Xp
+rA
+bs
+An
+yT
+sT
+BR
+GT
+YN
+jk
+EE
+AN
+Oq
+Wx
+he
+wd
+Pi
 "}
 (9,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+eU
+lq
+oq
+Ai
+mv
+xA
+YG
+ZN
+pQ
+uC
+Xw
+LW
+Sv
+jk
+PW
+AN
+mX
+Bd
+no
+Kt
+Pi
 "}
 (10,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+ZK
+ZK
+RL
+Kc
+WJ
+fG
+Dg
+vW
+yT
+hd
+qN
+jF
+Tw
+bh
+EE
+AN
+Xr
+Wx
+OB
+jQ
+Pi
 "}
 (11,1,1) = {"
 Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+ZK
+oI
+cj
+wU
+EH
+ZM
+ta
+yT
+sM
+kZ
+kZ
+rh
+Uo
+EE
+hx
+JK
+GI
+EE
+EE
+EE
 "}
 (12,1,1) = {"
 Tt
 Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+yT
+ZK
+ZK
+oI
+vD
+OL
+yT
+Qw
+Qw
+Bf
+Qw
+Qw
+EE
+ZW
+Qq
+Yn
+jQ
+VN
 Tt
 "}
 (13,1,1) = {"
@@ -1290,55 +1359,20 @@ Tt
 Tt
 Tt
 Tt
-Tt
-Tt
-Tt
-Tt
-cH
-cH
-cH
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+yT
+yT
+yT
+oI
+zk
+YZ
+yF
+RE
+IG
+EE
+Ay
+EE
+EE
+EE
 Tt
 Tt
 "}
@@ -1349,53 +1383,18 @@ Tt
 Tt
 Tt
 Tt
-Tt
-mH
-mH
-XJ
-XJ
-XJ
-mH
-mH
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+Qw
+ri
+yF
+Tp
+yF
+Tp
+yF
+lw
+fa
+Yn
+jQ
+VN
 Tt
 Tt
 Tt
@@ -1407,52 +1406,17 @@ Tt
 Tt
 Tt
 Tt
-mH
-hC
+Qw
+Hv
+hU
+yF
+Tp
+PR
+Ot
+Qw
 EE
-AF
-gf
-fO
-tv
-hC
-mH
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+EE
+EE
 Tt
 Tt
 Tt
@@ -1465,49 +1429,14 @@ Tt
 Tt
 Tt
 Tt
-mH
-hU
-hd
-EU
-EU
-EU
-EU
-EU
-Yn
 Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
+Qw
+Qw
+PF
+PF
+PF
+Qw
+Qw
 Tt
 Tt
 Tt
@@ -1522,702 +1451,6 @@ Tt
 Tt
 Tt
 Tt
-yT
-yT
-yT
-oI
-rA
-FZ
-EU
-he
-Tp
-mH
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(18,1,1) = {"
-Tt
-Tt
-yT
-ZK
-ZK
-oI
-gc
-Pi
-yT
-mH
-mH
-NW
-mH
-mH
-mH
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(19,1,1) = {"
-Tt
-ZK
-oI
-Br
-uJ
-AN
-ke
-fa
-yT
-Oq
-FM
-FM
-FM
-me
-Xw
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(20,1,1) = {"
-ZK
-ZK
-LW
-Kc
-Xp
-jQ
-bs
-VN
-yT
-PW
-BR
-Ou
-WJ
-jk
-Xw
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(21,1,1) = {"
-ZK
-lq
-qh
-Kc
-wd
-xA
-YG
-VN
-xu
-PW
-yF
-mv
-vD
-jk
-Cf
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(22,1,1) = {"
-ZK
-ZK
-RL
-Kc
-ZN
-Ai
-LG
-VN
-yT
-PW
-qN
-jF
-EH
-jk
-Xw
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(23,1,1) = {"
-Tt
-ZK
-oI
-cj
-wU
-WS
-TB
-Tw
-yT
-Dg
-rh
-rh
-rh
-Xr
-Xw
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(24,1,1) = {"
-Tt
-Tt
-yT
-ZK
-ZK
-oI
-bh
-OL
-yT
-Qw
-Qw
-Bf
-Qw
-Qw
-Qw
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(25,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-yT
-yT
-yT
-oI
-sM
-YZ
-Sv
-zW
-IG
-Qw
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(26,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Qw
-ri
-Sv
-Sv
-Sv
-Sv
-Sv
-Sv
-PR
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(27,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Qw
-Hv
-Sp
-Sv
-Sv
-Sv
-Wx
-Qw
-Qw
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(28,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Qw
-Qw
-PF
-PF
-PF
-Qw
-Qw
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(29,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
 Tt
 Tt
 Tt
@@ -2225,679 +1458,6 @@ Tt
 cH
 cH
 cH
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(30,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(31,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(32,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(33,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(34,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(35,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(36,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(37,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(38,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(39,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-"}
-(40,1,1) = {"
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
-Tt
 Tt
 Tt
 Tt
