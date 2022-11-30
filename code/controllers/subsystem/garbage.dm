@@ -69,7 +69,6 @@ SUBSYSTEM_DEF(garbage)
 
 	.["custom"] = cust
 
-
 /datum/controller/subsystem/garbage/PreInit()
 	InitQueues()
 
