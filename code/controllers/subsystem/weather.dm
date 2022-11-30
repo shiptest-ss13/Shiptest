@@ -25,3 +25,9 @@ SUBSYSTEM_DEF(weather)
 			for(var/b in iterated_controller.current_weathers)
 				returned_weathers += iterated_controller.current_weathers[b]
 	return returned_weathers
+
+/datum/controller/subsystem/weather/get_metrics()
+	. = ..()
+	var/list/cust = list()
+	cust["processing"] = length(processing)
+	.["custom"] = cust
