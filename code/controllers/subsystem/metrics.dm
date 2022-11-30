@@ -17,7 +17,6 @@ SUBSYSTEM_DEF(metrics)
 	/// The real time of day the server started. Used to calculate time drift
 	var/world_init_time = 0 // Not set in here. Set in world/New()
 
-GENERAL_DATUM_PROTECT(/datum/controller/subsystem/metrics)
 
 /datum/controller/subsystem/metrics/Initialize(start_timeofday)
 	if(!CONFIG_GET(flag/elasticsearch_metrics_enabled))
