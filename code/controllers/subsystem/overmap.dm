@@ -33,7 +33,7 @@ SUBSYSTEM_DEF(overmap)
 	var/list/cust = list()
 	cust["overmap_objects"] = length(overmap_objects)
 	cust["controlled_ships"] = length(controlled_ships)
-	.["cust"] = cust
+	.["custom"] = cust
 
 /**
  * Creates an overmap object for shuttles, triggers initialization procs for ships
