@@ -89,6 +89,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/coldmod = 1
 	///multiplier for damage from hot temperature
 	var/heatmod = 1
+	///multiplier for stamina damage
+	var/staminamod = 1
 	///multiplier for stun durations
 	var/stunmod = 1
 	///Type of damage attack does. Ethereals attack with burn damage for example.
@@ -916,6 +918,20 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["vox_neck_quills"] || H.dna.features["vox_neck_quills"] == "None")
 			bodyparts_to_add -= "vox_neck_quills"
 
+	if("elzu_horns" in mutant_bodyparts)
+		if(!H.dna.features["elzu_horns"] || H.dna.features["elzu_horns"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
+			bodyparts_to_add -= "elzu_horns"
+
+	if("tail_elzu" in mutant_bodyparts)
+		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+			bodyparts_to_add -= "tail_elzu"
+
+	if("waggingtail_elzu" in mutant_bodyparts)
+		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+			bodyparts_to_add -= "waggingtail_elzu"
+		else if ("tail_elzu" in mutant_bodyparts)
+			bodyparts_to_add -= "waggingtail_elzu"
+
 ////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE
 	///Digi handling
 	if(H.dna.species.bodytype & BODYTYPE_DIGITIGRADE)
@@ -1016,16 +1032,22 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.vox_head_quills_list[H.dna.features["vox_head_quills"]]
 				if("vox_neck_quills")
 					S = GLOB.vox_neck_quills_list[H.dna.features["vox_neck_quills"]]
+				if("elzu_horns")
+					S = GLOB.elzu_horns_list[H.dna.features["elzu_horns"]]
+				if("tail_elzu")
+					S = GLOB.tails_list_elzu[H.dna.features["tail_elzu"]]
+				if("waggingtail_elzu")
+					S = GLOB.animated_tails_list_elzu[H.dna.features["tail_elzu"]]
 			if(!S || S.icon_state == "none")
 				continue
 
 			var/mutable_appearance/accessory_overlay = mutable_appearance(S.icon, layer = -layer)
 
-			//A little rename so we don't have to use tail_lizard or tail_human when naming the sprites.
+			//A little rename so we don't have to use tail_lizard, tail_human, or tail_elzu when naming the sprites.
 			accessory_overlay.alpha = S.image_alpha
-			if(bodypart == "tail_lizard" || bodypart == "tail_human")
+			if(bodypart == "tail_lizard" || bodypart == "tail_human" || bodypart == "tail_elzu")
 				bodypart = "tail"
-			else if(bodypart == "waggingtail_lizard" || bodypart == "waggingtail_human")
+			else if(bodypart == "waggingtail_lizard" || bodypart == "waggingtail_human" || bodypart == "waggingtail_elzu")
 				bodypart = "waggingtail"
 
 			if(S.gender_specific)
@@ -1806,7 +1828,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.clone_mod
 			H.adjustCloneLoss(damage_amount)
 		if(STAMINA)
-			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.stamina_mod
+			var/damage_amount = forced ? damage : damage * hit_percent * staminamod * H.physiology.stamina_mod
 			if(BP)
 				if(BP.receive_damage(0, 0, damage_amount))
 					H.update_stamina()
@@ -2134,7 +2156,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	return (locate(/obj/item/organ/tail) in H.internal_organs)
 
 /datum/species/proc/is_wagging_tail(mob/living/carbon/human/H)
-	return ("waggingtail_human" in mutant_bodyparts) || ("waggingtail_lizard" in mutant_bodyparts)
+	return ("waggingtail_human" in mutant_bodyparts) || ("waggingtail_lizard" in mutant_bodyparts) || ("waggingtail_elzu" in mutant_bodyparts)
 
 /datum/species/proc/start_wagging_tail(mob/living/carbon/human/H)
 	if("tail_human" in mutant_bodyparts)
@@ -2146,6 +2168,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		mutant_bodyparts -= "spines"
 		mutant_bodyparts |= "waggingtail_lizard"
 		mutant_bodyparts |= "waggingspines"
+
+	else if("tail_elzu" in mutant_bodyparts)
+		mutant_bodyparts -= "tail_elzu"
+		mutant_bodyparts |= "waggingtail_elzu"
 
 	H.update_body()
 
@@ -2159,6 +2185,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		mutant_bodyparts -= "waggingspines"
 		mutant_bodyparts |= "tail_lizard"
 		mutant_bodyparts |= "spines"
+
+	else if("waggingtail_elzu" in mutant_bodyparts)
+		mutant_bodyparts -= "waggingtail_elzu"
+		mutant_bodyparts |= "tail_elzu"
 
 	H.update_body()
 
