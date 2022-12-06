@@ -590,8 +590,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 //EXTRA FUNCTIONS===================================
 
-	if(mode == 2 || mode == 21)//To clear message overlays.
-		update_icon()
+	cut_overlay(icon_alert) //To clear message overlays.
 
 	if((honkamt > 0) && (prob(60)))//For clown virus.
 		honkamt--

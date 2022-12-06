@@ -129,10 +129,12 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "scav_door";
 	name = "Dusty Blast Door"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "scavbay"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -185,9 +187,6 @@
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/ship/external)
 "gr" = (
@@ -488,7 +487,6 @@
 "oV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "scav_door";
 	name = "Dusty Blast Door"
@@ -583,12 +581,12 @@
 "rb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/suit/space/syndicate/orange{
-	armor = list("melee" = 5, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 85);
+	armor = list("melee"=5,"bullet"=10,"laser"=10,"energy"=10,"bomb"=30,"bio"=30,"rad"=30,"fire"=30,"acid"=85);
 	name = "degrading orange space suit";
 	w_class = 4
 	},
 /obj/item/clothing/head/helmet/space/syndicate/black/orange{
-	armor = list("melee" = 5, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 85);
+	armor = list("melee"=5,"bullet"=10,"laser"=10,"energy"=10,"bomb"=30,"bio"=30,"rad"=30,"fire"=30,"acid"=85);
 	name = "degrading black space helmet";
 	w_class = 4
 	},
@@ -710,7 +708,7 @@
 	},
 /mob/living/simple_animal/pet/cat/original{
 	butcher_difficulty = 100;
-	damage_coeff = list("brute" = 1, "fire" = 1.5, "toxin" = 1, "clone" = 1, "stamina" = 0, "oxygen" = 0);
+	damage_coeff = list("brute"=1,"fire"=1.5,"toxin"=1,"clone"=1,"stamina"=0,"oxygen"=0);
 	desc = "The product of alien DNA and bored geneticists. This one looks awefully sturdy.";
 	health = 200;
 	name = "Scav";
@@ -901,6 +899,10 @@
 "BE" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/industrial/outline/blue,
+/obj/machinery/newscaster{
+	pixel_x = -32;
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "BG" = (
@@ -1011,6 +1013,12 @@
 	name = "Blast Control";
 	pixel_x = 7;
 	pixel_y = 26
+	},
+/obj/machinery/button/shieldwallgen{
+	name = "Bay Air Shield";
+	pixel_y = 36;
+	pixel_x = -8;
+	id = "scavbay"
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
@@ -1224,14 +1232,14 @@
 /area/ship/cargo)
 "Pu" = (
 /obj/structure/window/reinforced,
-/obj/machinery/modular_computer/console/preset/command{
-	dir = 4
-	},
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -28
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 4
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Qd" = (
@@ -1267,7 +1275,7 @@
 /turf/template_noop,
 /area/template_noop)
 "Rx" = (
-/obj/machinery/computer/security,
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Rz" = (
@@ -1277,7 +1285,7 @@
 "Sd" = (
 /obj/item/clothing/suit/space/hardsuit/combatmedic{
 	allowed = list(/obj/item/gun,/obj/item/circular_saw,/obj/item/tank/internals,/obj/item/storage/box/pillbottles,/obj/item/storage/firstaid,/obj/item/stack/medical/gauze,/obj/item/stack/medical/suture,/obj/item/stack/medical/mesh,/obj/item/storage/bag/chemistry);
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 20, "energy" = 15, "bomb" = 5, "bio" = 80, "rad" = 50, "fire" = 65, "acid" = 75);
+	armor = list("melee"=25,"bullet"=10,"laser"=20,"energy"=15,"bomb"=5,"bio"=80,"rad"=50,"fire"=65,"acid"=75);
 	desc = "What was once the standard issue hardsuit of infectious disease officers, before the NT ERT squads. this one looks like it has been degrading for quite a long time.";
 	name = "degrading biological hardsuit"
 	},
@@ -1330,7 +1338,6 @@
 /area/ship/bridge)
 "Un" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "scav_door";
 	name = "Dusty Blast Door"
@@ -1358,10 +1365,13 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "scav_door";
 	name = "Dusty Blast Door"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "scavbay";
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1469,12 +1479,12 @@
 /area/ship/cargo)
 "Zv" = (
 /obj/item/clothing/suit/space/syndicate/black{
-	armor = list("melee" = 5, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 85);
+	armor = list("melee"=5,"bullet"=10,"laser"=10,"energy"=10,"bomb"=30,"bio"=30,"rad"=30,"fire"=30,"acid"=85);
 	name = "degrading black space suit";
 	w_class = 4
 	},
 /obj/item/clothing/head/helmet/space/syndicate/black{
-	armor = list("melee" = 5, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 85);
+	armor = list("melee"=5,"bullet"=10,"laser"=10,"energy"=10,"bomb"=30,"bio"=30,"rad"=30,"fire"=30,"acid"=85);
 	name = "degrading black space helmet";
 	w_class = 4
 	},
@@ -1488,12 +1498,12 @@
 /area/ship/cargo)
 "Zy" = (
 /obj/item/clothing/suit/space/syndicate/blue{
-	armor = list("melee" = 5, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 85);
+	armor = list("melee"=5,"bullet"=10,"laser"=10,"energy"=10,"bomb"=30,"bio"=30,"rad"=30,"fire"=30,"acid"=85);
 	name = "degrading blue space suit";
 	w_class = 4
 	},
 /obj/item/clothing/head/helmet/space/syndicate/black/blue{
-	armor = list("melee" = 5, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 85);
+	armor = list("melee"=5,"bullet"=10,"laser"=10,"energy"=10,"bomb"=30,"bio"=30,"rad"=30,"fire"=30,"acid"=85);
 	name = " degrading black space helmet";
 	w_class = 4
 	},

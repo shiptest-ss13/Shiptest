@@ -312,3 +312,21 @@
 	DELAY 20
 	SAY You have air recycling. Note that if you have an O2 or N2 leak, you may need to install a mixer or filter in response.
 	"}
+
+/obj/item/disk/holodisk/lp/stations
+	name = "Telecomms Stations"
+	desc = "A holodisk containing instructions for telecomms stations."
+	preset_image_type =  /datum/preset_holoimage/engineer
+	preset_record_text = {"
+	NAME Jim
+	SAY The company has graciously granted this vehicle a full telecommunications setup.
+	DELAY 20
+	SAY The available channels this ship is cleared for using are as follows:
+	DELAY 20
+	SAY Command Frequency: 135.1 using :c
+	DELAY 20
+	SAY Nanotrasen Sector Frequency: 135.3 using :n
+	DELAY 20
+	SAY Common Frequency: 149.1 using ;
+	DELAY 20
+	"}

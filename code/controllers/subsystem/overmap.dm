@@ -28,6 +28,13 @@ SUBSYSTEM_DEF(overmap)
 	///The two-dimensional list that contains every single tile in the overmap as a sublist.
 	var/list/list/overmap_container
 
+/datum/controller/subsystem/overmap/get_metrics()
+	. = ..()
+	var/list/cust = list()
+	cust["overmap_objects"] = length(overmap_objects)
+	cust["controlled_ships"] = length(controlled_ships)
+	.["custom"] = cust
+
 /**
  * Creates an overmap object for shuttles, triggers initialization procs for ships
  */

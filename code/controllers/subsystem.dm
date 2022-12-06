@@ -13,6 +13,9 @@
 	/// Name of the subsystem - you must change this
 	name = "fire coderbus"
 
+	/// The unique ID of the subsystem - you must change this
+	var/ss_id = "fire_coderbus_again"
+
 	/// Order of initialization. Higher numbers are initialized first, lower numbers later. Use or create defines such as [INIT_ORDER_DEFAULT] so we can see the order in one file.
 	var/init_order = INIT_ORDER_DEFAULT
 
@@ -263,3 +266,18 @@
 		if (NAMEOF(src, queued_priority)) //editing this breaks things.
 			return FALSE
 	. = ..()
+
+/**
+	* Returns the metrics for the subsystem.
+	*
+	* This can be overriden on subtypes for variables that could affect tick usage
+	* Example: ATs on SSair
+**/
+/datum/controller/subsystem/proc/get_metrics()
+	SHOULD_CALL_PARENT(TRUE)
+	// Please dont ever modify this. Youll break existing metrics and that will upset me.
+	var/list/out = list()
+	out["cost"] = cost
+	out["tick_usage"] = tick_usage
+	out["custom"] = list() // Override as needed on child
+	return out

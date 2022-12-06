@@ -127,7 +127,7 @@
 
 /obj/item/gun/ballistic/automatic/zip_pistol
 	name = "makeshift pistol"
-	desc = "A makeshift janky pistol, its a miracle it even works."
+	desc = "A makeshift pistol. It's a miracle it even works."
 	icon_state = "ZipPistol"
 	item_state = "ZipPistol"
 	mag_type = /obj/item/ammo_box/magazine/zip_ammo_9mm
