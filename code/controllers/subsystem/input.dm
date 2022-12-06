@@ -110,7 +110,7 @@ VERB_MANAGER_SUBSYSTEM_DEF(input)
 	if(control != "mapwindow.map")
 		return FALSE
 
-	if(average_click_delay >= MAXIMUM_CLICK_LATENCY || !..())
+	if(average_click_delay > MAXIMUM_CLICK_LATENCY || !..())
 		current_clicks++
 		average_click_delay = MC_AVG_FAST_UP_SLOW_DOWN(average_click_delay, 0)
 		return FALSE
@@ -132,7 +132,7 @@ VERB_MANAGER_SUBSYSTEM_DEF(input)
 			stack_trace("non /datum/callback/verb_callback instance inside SSinput's verb_queue!")
 			continue
 
-		average_click_delay = MC_AVG_FAST_UP_SLOW_DOWN(average_click_delay, (REALTIMEOFDAY - queued_click.creation_time) SECONDS)
+		average_click_delay = MC_AVG_FAST_UP_SLOW_DOWN(average_click_delay, (REALTIMEOFDAY - queued_click.creation_time))
 		queued_click.InvokeAsync()
 
 		current_clicks++
@@ -151,5 +151,5 @@ VERB_MANAGER_SUBSYSTEM_DEF(input)
 
 /datum/controller/subsystem/verb_manager/input/stat_entry(msg)
 	. = ..()
-	. += "M/S:[round(movements_per_second,0.01)] | C/S:[round(clicks_per_second,0.01)]([round(delayed_clicks_per_second,0.01)] | CD: [round(average_click_delay,0.01)])"
+	. += "M/S:[round(movements_per_second,0.01)] | C/S:[round(clicks_per_second,0.01)]([round(delayed_clicks_per_second,0.01)] | CD: [round(average_click_delay / (1 SECONDS),0.01)])"
 
