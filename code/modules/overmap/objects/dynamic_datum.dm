@@ -71,7 +71,7 @@
 	else
 		var/dock_to_use = null
 		for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
-			if(!dock.get_docked())
+			if(!dock.docked)
 				dock_to_use = dock
 				break
 

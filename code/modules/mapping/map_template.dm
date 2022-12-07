@@ -35,7 +35,7 @@
 			cached_map = parsed
 	return bounds
 
-/datum/map_template/proc/initTemplateBounds(list/bounds, init_atmos = TRUE)
+/datum/map_template/proc/initTemplateBounds(list/bounds, init_atmos = TRUE, list/ignore_typecache = list())
 	if (!bounds) //something went wrong
 		stack_trace("[name] template failed to initialize correctly!")
 		return
@@ -59,8 +59,13 @@
 		)
 	for(var/L in turfs)
 		var/turf/B = L
-		areas |= B.loc
-		for(var/A in B)
+		if(ignore_typecache[B.type])
+			turfs -= L
+		if(!ignore_typecache[B.loc.type])
+			areas |= B.loc
+		for(var/atom/A as() in B)
+			if(ignore_typecache[A.type])
+				continue
 			atoms += A
 			if(istype(A, /obj/structure/cable))
 				cables += A
@@ -131,7 +136,7 @@
 
 	return mapzone
 
-/datum/map_template/proc/load(turf/T, centered = FALSE, init_atmos = TRUE)
+/datum/map_template/proc/load(turf/T, centered = FALSE, init_atmos = TRUE, finalize = TRUE)
 	if(centered)
 		T = locate(T.x - round(width/2) , T.y - round(height/2) , T.z)
 	if(!T)
@@ -166,10 +171,12 @@
 	if(!SSmapping.loading_ruins) //Will be done manually during mapping ss init
 		repopulate_sorted_areas()
 
-	//initialize things that are normally initialized after map load
-	initTemplateBounds(bounds, init_atmos)
+	//If this is a superfunction call, we don't want to initialize atoms here, let the subfunction handle that
+	if(finalize)
+		//initialize things that are normally initialized after map load
+		initTemplateBounds(bounds, init_atmos)
 
-	log_game("[name] loaded at [T.x],[T.y],[T.z]")
+		log_game("[name] loaded at [T.x],[T.y],[T.z]")
 	return bounds
 
 /datum/map_template/proc/post_load()
