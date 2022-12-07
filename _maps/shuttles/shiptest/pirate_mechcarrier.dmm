@@ -550,7 +550,10 @@
 	},
 /obj/machinery/cell_charger,
 /obj/item/stock_parts/cell/high,
-/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/cell/high{
+	pixel_x = 3;
+	pixel_y = 5
+	},
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
@@ -703,7 +706,6 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/stand_clear,
 /obj/machinery/button/door{
 	id = "cargopirate_podbay";
 	name = "Pod Door Control";
@@ -1384,7 +1386,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/ship/external)
+/area/ship/engineering)
 "oy" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm)
@@ -1655,7 +1657,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/ship/external)
+/area/ship/engineering)
 "rm" = (
 /obj/effect/turf_decal/corner/opaque/yellow/bordercorner{
 	dir = 1
@@ -1826,7 +1828,9 @@
 	icon_state = "0-9"
 	},
 /obj/machinery/power/apc/auto_name/south,
-/turf/open/floor/plating/foam,
+/turf/open/floor/plating{
+	icon_state = "foam_plating"
+	},
 /area/ship/cargo)
 "sU" = (
 /obj/machinery/vending/tool,
@@ -2177,7 +2181,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
-/obj/machinery/computer/card/minor/cmo,
+/obj/machinery/computer/card/minor,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "wY" = (
@@ -2534,7 +2538,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/ship/external)
+/area/ship/engineering)
 "Bh" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -2849,7 +2853,6 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo/office)
 "Fp" = (
@@ -2880,7 +2883,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating/airless,
-/area/ship/external)
+/area/ship/engineering)
 "Go" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
@@ -2994,7 +2997,9 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/industrial/stand_clear,
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3802,9 +3807,9 @@
 	pixel_y = 23;
 	pixel_x = 9
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/foam,
+/turf/open/floor/plating{
+	icon_state = "foam_plating"
+	},
 /area/ship/security)
 "QP" = (
 /obj/effect/decal/cleanable/cobweb,
@@ -4070,7 +4075,9 @@
 	icon_state = "5-9"
 	},
 /obj/machinery/airalarm/directional/south,
-/turf/open/floor/plating/foam,
+/turf/open/floor/plating{
+	icon_state = "foam_plating"
+	},
 /area/ship/cargo)
 "TF" = (
 /obj/structure/chair,
@@ -4125,6 +4132,17 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"Uu" = (
+/obj/docking_port/stationary{
+	roundstart_template = "/datum/map_template/shuttle/subshuttles/minimalta";
+	dheight = 4;
+	dwidth = 7;
+	height = 5;
+	width = 11
+	load_template_on_initialize = "false"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/cargo/office)
 "UE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -5002,7 +5020,7 @@ NR
 or
 Ve
 nh
-KW
+Uu
 KW
 KW
 KW

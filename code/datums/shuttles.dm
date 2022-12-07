@@ -271,3 +271,12 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
+/datum/map_template/shuttle/subshuttles
+	category = "subshuttles"
+
+/datum/map_template/shuttle/subshuttles/minimalta
+	file_name = "pirate_mechcarrier_subship"
+	name = "Malta Dropship"
+	prefix = "ISV"
+	name_categories = list("PIRATES","BEASTS",)
+

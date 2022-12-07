@@ -5,16 +5,18 @@
 "c" = (
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/firedoor,
-/obj/docking_port/mobile,
+/obj/docking_port/mobile{
+	dir = 2
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "d" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden{
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
 	},
 /turf/open/floor/pod/light,
 /area/ship/storage)
@@ -33,9 +35,6 @@
 /area/ship/storage)
 "f" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /turf/open/floor/pod,
 /area/ship/storage)
 "g" = (
@@ -48,11 +47,11 @@
 	layer = 4.1
 	},
 /obj/machinery/light/dim,
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -29
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
@@ -76,7 +75,7 @@
 	dir = 9
 	},
 /obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable/yellow{
+/obj/structure/cable{
 	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/tech,
@@ -92,32 +91,13 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
-"t" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
+/obj/structure/cable{
+	icon_state = "6-9"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "v" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
 /turf/open/floor/pod/dark,
 /area/ship/storage)
 "w" = (
@@ -125,18 +105,18 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/poddoor/shutters{
-	id = "cargopirate_sub_hatch";
-	name = "Blast Shutters"
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 8;
 	id = "cargopirate_sub";
 	locked = 1
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cargopirate_sub_hatch";
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage)
@@ -144,9 +124,10 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
+/obj/machinery/power/terminal{
+	dir = 8
 	},
+/obj/structure/cable/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "y" = (
@@ -163,13 +144,11 @@
 /area/ship/storage)
 "A" = (
 /obj/structure/window/reinforced/survival_pod/spawner/west,
-/obj/machinery/power/port_gen/pacman{
-	anchored = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "B" = (
@@ -215,33 +194,29 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 10
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /turf/open/floor/pod,
 /area/ship/storage)
 "I" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
+/obj/structure/cable{
+	icon_state = "6-8"
 	},
 /turf/open/floor/pod/dark,
 /area/ship/storage)
 "J" = (
 /obj/structure/window/reinforced/survival_pod/spawner/west,
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid{
-	pixel_y = -3;
-	pixel_x = -3
+/obj/item/storage/firstaid/regular{
+	pixel_x = 6
 	},
+/obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/glass/bottle/charcoal{
 	pixel_x = -4;
 	pixel_y = 12
 	},
 /obj/item/reagent_containers/glass/bottle/epinephrine{
-	pixel_y = 8;
-	pixel_x = 2
+	pixel_y = 5;
+	pixel_x = -3
 	},
-/obj/item/reagent_containers/syringe,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "L" = (
@@ -260,14 +235,20 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage)
 "O" = (
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
 /turf/open/floor/pod/dark,
 /area/ship/storage)
 "Q" = (
 /obj/machinery/door/window/survival_pod{
 	dir = 8
 	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+/obj/structure/cable{
+	icon_state = "5-9"
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4
@@ -291,7 +272,9 @@
 /area/ship/storage)
 "T" = (
 /obj/effect/turf_decal/industrial/warning/corner,
-/obj/machinery/atmospherics/components/unary/tank/toxins,
+/obj/machinery/atmospherics/components/unary/tank/toxins{
+	dir = 4
+	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -301,18 +284,18 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "cargopirate_sub_hatch";
-	name = "Blast Shutters"
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 4;
 	id = "cargopirate_sub";
 	locked = 1
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cargopirate_sub_hatch";
+	name = "Blast Shutters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage)
@@ -411,7 +394,7 @@ a
 (9,1,1) = {"
 a
 E
-t
+L
 g
 a
 "}
