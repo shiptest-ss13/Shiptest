@@ -271,6 +271,7 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
+
 //shuttles to be subshuttled shuttle tiny small shuttle
 
 /datum/map_template/shuttle/subshuttles
@@ -296,3 +297,10 @@
 	file_name = "pill_super"
 	name = "Superpill-Class Experimental Engineering Platform"
 	prefix = "Pill"
+
+/datum/map_template/shuttle/subshuttles/minimalta
+	file_name = "pirate_mechcarrier_subship"
+	name = "Malta Dropship"
+	prefix = "ISV"
+	name_categories = list("PIRATES","BEASTS",)
+
