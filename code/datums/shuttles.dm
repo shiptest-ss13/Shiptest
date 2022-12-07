@@ -276,7 +276,23 @@
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
 
+
 /datum/map_template/shuttle/subshuttles/zetes_delivery_pod
 	file_name = "zetes_delivery_pod"
 	name = "Zetes Delivery Pod"
 	prefix = "NTSV"
+
+/datum/map_template/shuttle/subshuttles/pill
+	file_name = "independant_pill"
+	name = "Pill-Class Torture Device"
+	prefix = "Pill"
+
+/datum/map_template/shuttle/subshuttles/pillb
+	file_name = "pill_black"
+	name = "Blackpill-Class Manned Torpedo"
+	prefix = "Pill"
+
+/datum/map_template/shuttle/subshuttles/pills
+	file_name = "pill_super"
+	name = "Superpill-Class Experimental Engineering Platform"
+	prefix = "Pill"
