@@ -60,7 +60,7 @@
 				++xcrd
 			--ycrd
 
-/datum/map_template/shuttle/load(turf/T, centered, init_atmos = TRUE, finalize = TRUE, register=TRUE)
+/datum/map_template/shuttle/load(turf/T, centered, init_atmos = TRUE, register=TRUE)
 	if(centered)
 		T = locate(T.x - round(width/2) , T.y - round(height/2) , T.z)
 		centered = FALSE
@@ -70,7 +70,7 @@
 	for(var/turf/turf in turfs)
 		turfs[turf] = turf.loc
 	keep_cached_map = TRUE //We need to access some stuff here below for shuttle skipovers
-	. = ..(T, centered, init_atmos = TRUE, finalize = FALSE)
+	. = ..(T, centered, init_atmos = TRUE)
 	keep_cached_map = initial(keep_cached_map)
 	if(!.)
 		cached_map = keep_cached_map ? cached_map : null
@@ -151,14 +151,6 @@
 		var/list/sanity = islist(shuttle_turf.baseturfs) ? shuttle_turf.baseturfs.Copy() : list(shuttle_turf.baseturfs)
 		sanity.Insert(shuttle_turf.baseturfs.len + 1 - baseturf_length, /turf/baseturf_skipover/shuttle) //The first two are the "real" baseturfs, place above these but below plating.
 		shuttle_turf.baseturfs = baseturfs_string_list(sanity, shuttle_turf)
-
-	//If this is a superfunction call, we don't want to initialize atoms here, let the subfunction handle that
-	if(finalize)
-		//initialize things that are normally initialized after map load
-		var/static/list/stationary_port_typecast_ignore = typecacheof(/obj/docking_port/stationary)
-		initTemplateBounds(cached_map.bounds, init_atmos, stationary_port_typecast_ignore)
-
-		log_game("[name] loaded at [T.x],[T.y],[T.z]")
 
 	my_port.load(src)
 	cached_map = keep_cached_map ? cached_map : null
