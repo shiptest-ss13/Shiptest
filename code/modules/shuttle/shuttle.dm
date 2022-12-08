@@ -54,7 +54,7 @@
 	return 0
 
 //returns the dwidth, dheight, width, and height in the order of the union bounds of all shuttles relative to our shuttle.
-/obj/docking_port/proc/return_union_bounds(var/list/obj/docking_port/others)
+/obj/docking_port/proc/return_union_bounds(list/obj/docking_port/others)
 	var/list/coords =  return_union_coords(others, 0, 0, NORTH)
 	var/X0 = min(coords[1],coords[3]) //This will be the negative dwidth of the combined bounds
 	var/Y0 = min(coords[2],coords[4]) //This will be the negative dheight of the combined bounds
@@ -87,7 +87,7 @@
 		)
 
 //Returns the the bounding box fully containing all provided docking ports
-/obj/docking_port/proc/return_union_coords(var/list/obj/docking_port/others, _x, _y, _dir)
+/obj/docking_port/proc/return_union_coords(list/obj/docking_port/others, _x, _y, _dir)
 	if(_dir == null)
 		_dir = dir
 	if(_x == null)
@@ -112,7 +112,7 @@
 		)
 
 //Returns the bounding box containing only the intersection of all provided docking ports
-/obj/docking_port/proc/return_intersect_coords(var/list/obj/docking_port/others, _x, _y, _dir)
+/obj/docking_port/proc/return_intersect_coords(list/obj/docking_port/others, _x, _y, _dir)
 	if(_dir == null)
 		_dir = dir
 	if(_x == null)
@@ -209,6 +209,8 @@
 
 	var/datum/map_template/shuttle/roundstart_template
 	var/json_key
+	//Setting this to false will prevent the roundstart_template from being loaded on Initiallize(). You should set this to false if this loads a subship on a ship map template
+	var/load_template_on_initialize = TRUE
 
 /obj/docking_port/stationary/Initialize(mapload)
 	. = ..()
@@ -219,7 +221,7 @@
 	if(mapload)
 		for(var/turf/T in return_turfs())
 			T.flags_1 |= NO_RUINS_1
-		if(SSshuttle.initialized) // If the docking port is loaded via map but SSshuttle has already init (therefore this would never be called)
+		if(SSshuttle.initialized && load_template_on_initialize) // If the docking port is loaded via map but SSshuttle has already init (therefore this would never be called)
 			INVOKE_ASYNC(src, .proc/load_roundstart)
 
 	#ifdef DOCKING_PORT_HIGHLIGHT
@@ -408,6 +410,8 @@
 		return ..()
 	. = list()
 	for(var/obj/docking_port/mobile/M in get_all_towed_shuttles())
+		//Find the offset of the towed shuttle relative to our shuttle in the orientation specified by the _dir parameter,
+		//Then use that to find the towed shuttle's position and orientation in world space specified by the proc's parameters.
 		var/matrix/translate_vec = matrix(M.x - src.x, M.y - src.y, MATRIX_TRANSLATE) * matrix(dir2angle(_dir)-dir2angle(dir), MATRIX_ROTATE)
 		. |= M.return_ordered_turfs(_x + translate_vec.c, _y + translate_vec.f, _z + (M.z - src.z), angle2dir_cardinal(dir2angle(_dir) + (dir2angle(M.dir) - dir2angle(src.dir))), include_towed = FALSE)
 
@@ -573,7 +577,7 @@
 		if(!all_shuttle_areas[oldT?.loc])
 			continue
 		var/area/old_area = oldT.loc
-		for(var/obj/docking_port/mobile/bottom_shuttle in all_shuttle_areas)
+		for(var/obj/docking_port/mobile/bottom_shuttle in all_towed_shuttles)
 			if(bottom_shuttle.underlying_turf_area[oldT])
 				var/area/underlying_area = bottom_shuttle.underlying_turf_area[oldT]
 				underlying_area.contents += oldT
