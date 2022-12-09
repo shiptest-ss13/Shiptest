@@ -13,15 +13,21 @@ SUBSYSTEM_DEF(weather)
 
 /datum/controller/subsystem/weather/fire()
 	// process active weather controllers
-	for(var/i in weather_controllers)
-		var/datum/weather_controller/iterated_controller = i
+	for(var/datum/weather_controller/iterated_controller as anything in weather_controllers)
 		iterated_controller.process()
 
 /datum/controller/subsystem/weather/proc/get_all_current_weather()
 	var/list/returned_weathers = list()
-	for(var/i in weather_controllers)
-		var/datum/weather_controller/iterated_controller = i
+	for(var/datum/weather_controller/iterated_controller as anything in weather_controllers)
 		if(iterated_controller.current_weathers)
 			for(var/b in iterated_controller.current_weathers)
 				returned_weathers += iterated_controller.current_weathers[b]
 	return returned_weathers
+
+/datum/controller/subsystem/weather/get_metrics()
+	. = ..()
+	var/list/cust = list()
+	cust["processing"] = 0
+	for(var/datum/weather_controller/iterated_controller as anything in weather_controllers)
+		cust["processing"] += length(iterated_controller.current_weathers)
+	.["custom"] = cust
