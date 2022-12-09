@@ -95,3 +95,18 @@
 	belt = /obj/item/storage/belt/utility/full/engi
 	id = /obj/item/card/id/syndicate_command/crew_id
 	l_pocket =/obj/item/pda/chemist
+
+/datum/outfit/job/chemist/pharma
+	name = "Pharmacist"
+
+	belt = /obj/item/storage/bag/chemistry
+	l_pocket =/obj/item/pda/chemist
+	r_pocket = /obj/item/storage/pill_bottle
+	uniform = /obj/item/clothing/under/suit/senior_chemist
+	alt_uniform = /obj/item/clothing/under/rank/medical/chemist/pharmacologist
+	suit = /obj/item/clothing/suit/longcoat/chemist
+	alt_suit = /obj/item/clothing/suit/toggle/labcoat/chemist/side
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
+	box = /obj/item/storage/box/survival/medical
+	gloves = /obj/item/clothing/gloves/color/latex
+	glasses = /obj/item/clothing/glasses/sunglasses

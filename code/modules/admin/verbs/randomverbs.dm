@@ -817,54 +817,46 @@
 
 	var/planet_type = tgui_input_list(usr, "What type of planet?", "Spawn Ruin", DYNAMIC_WORLD_LIST_ALL, 60 SECONDS)
 	if(!planet_type)
-		planet_type = DYNAMIC_WORLD_SPACERUIN
+		return
 
-	var/category = tgui_input_list(usr, "What type of ruin?", "Spawn Ruin", RUINTYPE_LIST_ALL + "Everything", 60 SECONDS)
-	var/datum/map_template/spawning
-	if(category)
-		var/list/select_from
-		switch(category)
-			if(RUINTYPE_ICE)
-				select_from = SSmapping.ice_ruins_templates
-			if(RUINTYPE_JUNGLE)
-				select_from = SSmapping.jungle_ruins_templates
-			if(RUINTYPE_LAVA)
-				select_from = SSmapping.lava_ruins_templates
-			if(RUINTYPE_ROCK)
-				select_from = SSmapping.rock_ruins_templates
-			if(RUINTYPE_SAND)
-				select_from = SSmapping.sand_ruins_templates
-			if(RUINTYPE_SPACE)
-				select_from = SSmapping.space_ruins_templates
-			if(RUINTYPE_YELLOW)
-				select_from = SSmapping.yellow_ruins_templates
-			if("Everything")
-				select_from = SSmapping.ruins_templates
+	var/ruintype = tgui_input_list(usr, "What type of ruin?", "Spawn Ruin", RUINTYPE_LIST_ALL, 60 SECONDS)
+	if(!ruintype)
+		if(tgui_alert(usr, "Did you mean to not have a ruin?", "Spawn Planet/Ruin", list("Yes", "No"), 10 SECONDS) != "Yes")
+			return
+
+	var/datum/map_template/ruin/ruin_target
+	if(ruintype)
+		var/list/select_from = ruintype_to_list(ruintype)
+		var/ruin_force = tgui_alert(usr, "Random Ruin or Forced?", "Spawn Planet/Ruin", list("Random", "Forced"))
+		if(!ruin_force)
+			return
+
+		switch(ruin_force)
+			if("Random")
+				ruin_target = select_from[pick(select_from)]
 			else
-				select_from = null
+				var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)
+				if(!selected_ruin)
+					if(tgui_alert(usr, "Did you mean to not have a ruin?", "Spawn Planet/Ruin", list("Yes", "No"), 10) != "Yes")
+						return
+				else
+					ruin_target = select_from[selected_ruin]
 
-		if(select_from)
-			var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)
-			if(selected_ruin)
-				spawning = select_from[selected_ruin]
-				if(!istype(spawning))
-					to_chat(usr, span_boldwarning("Failed to index the given ruin, contact a coder!"))
-					spawning = null
-
+	message_admins("Generating a new Planet, this may take some time!")
 	var/datum/overmap/dynamic/encounter = new(null, FALSE)
 	encounter.force_encounter = planet_type
-	encounter.template = spawning
-
-	to_chat(usr, span_big("Now generating the planet type and ruin!"))
-	encounter.load_level()
-	SSblackbox.record_feedback("tally", "adv_spawn_ruin", spawning?.name)
-
+	encounter.template = ruin_target
+	encounter.choose_level_type(FALSE)
+	if(!ruin_target)
+		encounter.ruin_list = null
 	encounter.preserve_level = TRUE
-	to_chat(usr, span_big("Click here to jump to the overmap token: " + ADMIN_JMP(encounter.token)))
-	to_chat(usr, span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(encounter.reserve_docks[1])))
+	encounter.load_level()
+
+	message_admins(span_big("Click here to jump to the overmap token: " + ADMIN_JMP(encounter.token)))
+	message_admins(span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(encounter.reserve_docks[1])))
 	for(var/ruin in encounter.ruin_turfs)
 		var/turf/ruin_turf = encounter.ruin_turfs[ruin]
-		to_chat(usr, span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
+		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
 
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"

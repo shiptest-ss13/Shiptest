@@ -64,6 +64,10 @@
 /obj/structure/fence/cut/large,
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/misc)
+"au" = (
+/obj/structure/fluff/fokoff_sign,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/misc)
 "av" = (
 /obj/machinery/biogenerator,
 /turf/open/floor/pod,
@@ -519,6 +523,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/jungle/paradise/construction)
+"dl" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/structure/girder{
+	icon = 'icons/effects/32x64.dmi';
+	icon_state = "crystal"
+	},
+/turf/open/water/jungle,
+/area/ruin/jungle/paradise/darkmisc)
 "do" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -552,6 +566,8 @@
 	icon_state = "1-5"
 	},
 /obj/effect/turf_decal/techfloor/corner,
+/obj/item/reagent_containers/pill/patch/synthflesh,
+/obj/item/reagent_containers/pill/patch/synthflesh,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
 "dx" = (
@@ -1709,6 +1725,14 @@
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
+"ks" = (
+/obj/effect/mob_spawn/human/corpse,
+/obj/effect/decal/cleanable/blood{
+	pixel_x = 2;
+	pixel_y = -11
+	},
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/jungle/paradise/misc)
 "kw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
@@ -1864,6 +1888,7 @@
 "lr" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine/dense,
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
 "lw" = (
@@ -2118,6 +2143,10 @@
 /area/ruin/jungle/paradise/shuttle)
 "mQ" = (
 /obj/structure/flora/grass/jungle/b,
+/obj/structure/girder{
+	icon = 'icons/effects/32x64.dmi';
+	icon_state = "crystal"
+	},
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
 "mW" = (
@@ -2753,6 +2782,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine,
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
 "qt" = (
@@ -3701,6 +3731,7 @@
 /area/ruin/jungle/paradise/dorms)
 "wK" = (
 /obj/structure/spacevine/dense,
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
 "wN" = (
@@ -3799,6 +3830,12 @@
 	},
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
+"xw" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "drip1"
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/paradise/misc)
 "xy" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/turf_decal/sand,
@@ -4333,6 +4370,11 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/three_course_meal,
+/obj/effect/spawner/lootdrop/three_course_meal,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
 "AT" = (
@@ -4425,6 +4467,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
 /obj/structure/spacevine,
+/obj/structure/girder{
+	icon = 'icons/effects/32x64.dmi';
+	icon_state = "crystal"
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "BG" = (
@@ -4520,6 +4566,8 @@
 /obj/structure/lattice/clockwork{
 	icon_state = "lattice-3"
 	},
+/obj/structure/barricade/wooden/crude,
+/obj/structure/sign/warning/xeno_mining,
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "Cr" = (
@@ -5265,6 +5313,12 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
+"Hy" = (
+/obj/structure/spacevine,
+/obj/structure/barricade/wooden/crude,
+/obj/structure/sign/warning,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/ruin/jungle/paradise/mine)
 "HC" = (
 /turf/open/floor/plating/ashplanet/wateryrock,
 /area/ruin/jungle/paradise/darkmisc)
@@ -5457,7 +5511,6 @@
 /area/ruin/jungle/paradise/shuttle)
 "Jo" = (
 /obj/effect/decal/cleanable/greenglow,
-/obj/structure/barricade/wooden,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "Jq" = (
@@ -5718,6 +5771,14 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-6"
 	},
+/obj/effect/spawner/lootdrop/three_course_meal,
+/obj/effect/spawner/lootdrop/three_course_meal,
+/obj/effect/spawner/lootdrop/three_course_meal,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
 "Lc" = (
@@ -6219,6 +6280,7 @@
 "Oh" = (
 /obj/structure/barricade/wooden,
 /obj/structure/spacevine,
+/obj/structure/sign/warning/xeno_mining,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/paradise/darkmisc)
 "Oi" = (
@@ -6261,6 +6323,8 @@
 	pixel_x = 1;
 	pixel_y = -20
 	},
+/obj/structure/barricade/wooden,
+/obj/structure/sign/warning,
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "Op" = (
@@ -6868,6 +6932,8 @@
 /obj/structure/lattice/clockwork{
 	icon_state = "lattice-3"
 	},
+/obj/structure/barricade/wooden,
+/obj/structure/sign/warning,
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "SM" = (
@@ -7294,6 +7360,7 @@
 	pixel_x = -11;
 	pixel_y = 16
 	},
+/obj/structure/barricade/wooden/crude,
 /turf/open/water/jungle,
 /area/ruin/jungle/paradise/darkmisc)
 "VQ" = (
@@ -7339,6 +7406,10 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/jungle/paradise/shuttle)
+"Wg" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/jungle/paradise/misc)
 "Wi" = (
 /obj/structure/flora/grass/jungle/b{
 	pixel_x = -15;
@@ -10270,7 +10341,7 @@ st
 Rv
 Os
 WD
-Rv
+ks
 Rv
 zW
 sc
@@ -10339,8 +10410,8 @@ Rv
 Rv
 QK
 Rv
-Pa
-Pa
+xw
+Wg
 sc
 "}
 (36,1,1) = {"
@@ -10407,7 +10478,7 @@ Rv
 Rv
 Rv
 zW
-zW
+au
 Pa
 sc
 "}
@@ -10777,7 +10848,7 @@ Iw
 Iw
 Iw
 Iw
-WY
+dl
 Xy
 Oo
 Iw
@@ -11930,8 +12001,8 @@ Iw
 Iw
 Iw
 Iw
-re
-re
+Hy
+Hy
 re
 Bv
 Rz

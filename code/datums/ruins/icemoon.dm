@@ -13,11 +13,6 @@
 	description = "Blown up by an unfortunate accident."
 	suffix = "icemoon_surface_engioutpost.dmm"
 
-/datum/map_template/ruin/icemoon/slimerancher //Shiptest edit
-	name = "Slime Ranch"
-	id = "slimerancher"
-	description = "Slime ranchin with the bud."
-	suffix = "icemoon_surface_slimerancher.dmm"
 
 /datum/map_template/ruin/icemoon/hydroponicslab //Shiptest edit
 	name = "Hydroponics Lab"
@@ -81,3 +76,9 @@
 	id = "brazillian-lab"
 	description = "A conspicuous compound in the middle of the cold wasteland. What goodies are inside?"
 	suffix = "icemoon_underground_brazillianlab.dmm"
+
+/datum/map_template/ruin/icemoon/slimelab
+	name = "Slime Lab"
+	id = "slimelab"
+	description = "An underground research facility devoted to researching the uncommon slime lifeform"
+	suffix = "icemoon_underground_slimelab.dmm"

@@ -48,7 +48,8 @@
 
 	vlevel_height = CONFIG_GET(number/overmap_encounter_size)
 	vlevel_width = CONFIG_GET(number/overmap_encounter_size)
-	choose_level_type(load_now)
+	if(load_now)
+		choose_level_type(load_now)
 
 /datum/overmap/dynamic/Destroy()
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
