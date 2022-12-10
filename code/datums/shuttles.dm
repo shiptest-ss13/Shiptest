@@ -271,12 +271,17 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
-//shuttles to be subshuttled shuttle tiny small shuttle
+
+//Subshuttles
 
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
+
 
 /datum/map_template/shuttle/subshuttles/zetes_delivery_pod
 	file_name = "zetes_delivery_pod"
 	name = "Zetes Delivery Pod"
 	prefix = "NTSV"
+
+//your subshuttle here
+

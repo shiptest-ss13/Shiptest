@@ -170,8 +170,8 @@
  * Turns a specific reagent or reagents into thrust.
  */
 /obj/machinery/power/shuttle/engine/liquid
-	name = "liquid thruster"
-	desc = "A thruster that burns reagents stored in the engine for fuel."
+	name = "If you see me, ping a coder."
+	desc = "Wow! You really shouldn't be seeing this!" //if you want the engines to work and be movable, you need to make a subtype of them.
 	///How much fuel can be loaded into the engine.
 	var/max_reagents = 0
 	///What reagent is consumed to burn the engine, and how much is needed.
@@ -218,6 +218,14 @@
 	thrust = 20
 	fuel_reagents = list(/datum/reagent/fuel/oil = 50)
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/oil
+
+/obj/machinery/power/shuttle/engine/liquid/beer
+	name = "beer thruster"
+	desc = "Beer is quite possibly the worst thing to use as interstellar propulsion, how these even work is a mystery."
+	max_reagents = 1000
+	thrust = 10
+	fuel_reagents= list(/datum/reagent/consumable/ethanol/beer = 50)
+	circuit = /obj/item/circuitboard/machine/shuttle/engine/beer
 
 /**
  * ### Void Engines
