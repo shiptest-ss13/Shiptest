@@ -651,10 +651,6 @@
 /obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
-"uC" = (
-/obj/structure/sign/poster/contraband/revolver,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/syndifort)
 "ve" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/dirt/jungle,
@@ -742,6 +738,9 @@
 "xa" = (
 /obj/structure/chair/plastic{
 	dir = 8
+	},
+/obj/structure/sign/poster/contraband/peacemaker{
+	pixel_x = 32
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
@@ -1275,6 +1274,9 @@
 /obj/machinery/power/smes/magical{
 	name = "power storage unit"
 	},
+/obj/structure/sign/poster/contraband/power{
+	pixel_x = -32
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
 "OL" = (
@@ -1660,10 +1662,6 @@
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle)
-"ZT" = (
-/obj/structure/sign/poster/contraband/free_key,
-/turf/closed/wall,
-/area/ruin/jungle/syndifort)
 "ZU" = (
 /obj/item/ammo_casing/spent{
 	dir = 9;
@@ -2233,7 +2231,7 @@ Rw
 nH
 nO
 Nz
-ZT
+fe
 Qs
 fi
 Nz
@@ -2269,7 +2267,7 @@ fe
 IA
 Jv
 Ln
-uC
+vt
 XE
 XE
 eX
