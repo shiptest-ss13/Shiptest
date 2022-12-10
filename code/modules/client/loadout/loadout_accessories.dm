@@ -20,6 +20,10 @@
 	display_name = "scarf, blue"
 	path = /obj/item/clothing/neck/scarf/darkblue
 
+/datum/gear/accessory/shemagh
+	display_name = "shemagh"
+	path = /obj/item/clothing/neck/shemagh
+
 //(The actually good scarves)
 
 /datum/gear/accessory/scarf/striped
