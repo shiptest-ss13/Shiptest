@@ -197,6 +197,9 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/contraband/space_cops{
+	pixel_x = -32
+	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
 "fw" = (
@@ -256,14 +259,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space)
-"gN" = (
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/structure/sign/poster/contraband/space_cops,
-/turf/closed/wall/r_wall/rust,
-/area/ruin/space/has_grav/corporatemine/crewquarters)
 "gY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1211,10 +1206,6 @@
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/corporatemine/hall)
-"AR" = (
-/obj/structure/sign/poster/official/space_cops,
-/turf/closed/wall,
-/area/ruin/space/has_grav/corporatemine/crewquarters)
 "Bb" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2287,13 +2278,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/corporatemine/hall)
-"Xh" = (
-/obj/structure/sign/poster/contraband/kss13{
-	pixel_y = -32
-	},
-/obj/structure/table,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/corporatemine/bridge)
 "XH" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/space/has_grav/corporatemine/crewquarters)
@@ -3526,7 +3510,7 @@ BA
 BA
 BA
 XH
-gN
+XH
 BA
 BA
 BA
@@ -4094,7 +4078,7 @@ BA
 tF
 UA
 UA
-AR
+tF
 WZ
 jN
 zz
@@ -4669,7 +4653,7 @@ zn
 HV
 Rx
 kK
-Xh
+oj
 PM
 rr
 Tz
