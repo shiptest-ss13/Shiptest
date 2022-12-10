@@ -271,10 +271,13 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
-//shuttles to be subshuttled shuttle tiny small shuttle
+
+
+//Subshuttles
 
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
+
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independant_pill"
@@ -290,3 +293,6 @@
 	file_name = "pill_super"
 	name = "Superpill-Class Experimental Engineering Platform"
 	prefix = "Pill"
+
+//your subshuttle here
+
