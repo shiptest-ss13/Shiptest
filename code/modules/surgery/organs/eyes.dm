@@ -24,6 +24,8 @@
 	var/tint = 0
 	var/eye_color = "" //set to a hex code to override a mob's eye color
 	var/eye_icon_state = "eyes"
+	var/sclera_color = "e8e8e8" //a hex color, in case some species, like sarathi have different sclera color
+	var/sclera_icon_state = "eyes_sclera" //sclera is the white part of the eye
 	var/old_eye_color = "fff"
 	var/flash_protect = FLASH_PROTECTION_NONE
 	var/see_invisible = SEE_INVISIBLE_LIVING
@@ -34,14 +36,20 @@
 /obj/item/organ/eyes/Insert(mob/living/carbon/M, special = FALSE, drop_if_replaced = FALSE, initialising)
 	. = ..()
 	if(ishuman(owner))
-		var/mob/living/carbon/human/HMN = owner
-		old_eye_color = HMN.eye_color
+		var/mob/living/carbon/human/human_owner = owner
+		old_eye_color = human_owner.eye_color
 		if(eye_color)
-			HMN.eye_color = eye_color
-			HMN.regenerate_icons()
+			human_owner.eye_color = eye_color
+			human_owner.regenerate_icons()
 		else
-			eye_color = HMN.eye_color
-		if(HAS_TRAIT(HMN, TRAIT_NIGHT_VISION) && !lighting_alpha)
+			eye_color = human_owner.eye_color
+		if(sclera_color)
+			human_owner.sclera_color = sclera_color
+			human_owner.regenerate_icons()
+		else
+			sclera_color = human_owner.sclera_color
+
+		if(HAS_TRAIT(human_owner, TRAIT_NIGHT_VISION) && !lighting_alpha)
 			lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	M.update_tint()
 	owner.update_sight()
@@ -51,9 +59,9 @@
 /obj/item/organ/eyes/Remove(mob/living/carbon/M, special = 0)
 	..()
 	if(ishuman(M) && eye_color)
-		var/mob/living/carbon/human/HMN = M
-		HMN.eye_color = old_eye_color
-		HMN.regenerate_icons()
+		var/mob/living/carbon/human/human_owner = M
+		human_owner.eye_color = old_eye_color
+		human_owner.regenerate_icons()
 	M.cure_blind(EYE_DAMAGE)
 	M.cure_nearsighted(EYE_DAMAGE)
 	M.set_blindness(0)
@@ -82,6 +90,11 @@
 		damaged = FALSE
 		C.clear_fullscreen("eye_damage")
 	return
+
+/obj/item/organ/eyes/lizard
+	name = "lizard eyes"
+	desc = "Very similar to human eyes in functionality, only visible difference being the different shade of white."
+	sclera_color = "fffec4"
 
 /obj/item/organ/eyes/night_vision
 	name = "shadow eyes"
@@ -398,7 +411,7 @@
 /obj/item/organ/eyes/compound
 	name = "compound eyes"
 	desc = "These eyes seem to have increased sensitivity to bright light, with some improvement to low light vision. It's like these eyes are looking everywhere at once!"
-	icon = 'whitesands/icons/obj/surgery.dmi'
+	icon = 'icons/obj/surgery.dmi'
 	icon_state = "compound_eyes"
 	see_in_dark = 6
 	flash_protect = FLASH_PROTECTION_SENSITIVE	//Obligatory flash sensitivity for balance

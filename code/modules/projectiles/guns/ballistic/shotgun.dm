@@ -23,8 +23,9 @@
 	bolt_wording = "pump"
 	cartridge_wording = "shell"
 	tac_reloads = FALSE
-	fire_rate = 1 //reee
 	pickup_sound =  'sound/items/handling/shotgun_pickup.ogg'
+	fire_delay = 7
+	pb_knockback = 2
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	. = 0
@@ -42,7 +43,6 @@
 	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for non-lethal riot control."
 	icon_state = "riotshotgun"
 	item_state = "shotgun"
-	fire_delay = 7
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
 	can_be_sawn_off  = TRUE
@@ -144,13 +144,19 @@
 	semi_auto = TRUE
 	internal_magazine = FALSE
 	tac_reloads = TRUE
-	fire_rate = 2
-	automatic = 1
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
 
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
 	pin = /obj/item/firing_pin
+
+/obj/item/gun/ballistic/shotgun/bulldog/inteq
+	name = "\improper Mastiff Shotgun"
+	desc = "A semi-auto, mag-fed shotgun, seized from Syndicate armories by deserting troopers and modified to IRMG's standards. Compatible only with specialized 8-round drum magazines."
+	icon_state = "bulldog-inteq"
+	item_state = "bulldog-inteq"
+	pin = /obj/item/firing_pin
+
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
 /////////////////////////////
@@ -180,7 +186,6 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	can_be_sawn_off  = TRUE
 	pb_knockback = 3 // it's a super shotgun!
-	fire_rate = 2 //being double barrelled, you don't rely on internal mechanisms.
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/AltClick(mob/user)
 	. = ..()
@@ -359,9 +364,9 @@
 	unique_reskin = null
 	recoil = 10
 	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'whitesands/sound/weapons/gun/shotgun/quadfire.ogg'
-	rack_sound = 'whitesands/sound/weapons/gun/shotgun/quadrack.ogg'
-	load_sound = 'whitesands/sound/weapons/gun/shotgun/quadinsert.ogg'
+	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
+	load_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
 	fire_sound_volume = 50
 	rack_sound_volume = 50
 	can_be_sawn_off = FALSE
@@ -395,12 +400,13 @@
 	item_state = "winchester"
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/winchester_cocked.ogg'
 
 /obj/item/gun/ballistic/shotgun/winchester/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
@@ -409,6 +415,66 @@
 	name = "Winchester MK.1"
 	desc = "A sturdy lever action rifle. This older pattern appears to be an antique, in excellent condition despite its age."
 	icon_state = "winchestermk1"
+	item_state = "winchestermk1"
 
 /obj/item/gun/ballistic/shotgun/winchester/mk1/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/twobore
+	name = "two-bore rifle"
+	desc = "Take this, elephant! If you want an intact trophy, don't aim for the head. Chambered in two-bore."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	inhand_x_dimension = 32
+	inhand_y_dimension = 32
+	icon_state = "twobore"
+	item_state = "twobore"
+	unique_reskin = null
+	attack_verb = list("bludgeoned", "smashed")
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/twobore
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20 //heavy ass elephant gun, why wouldnt it be
+	recoil = 4
+	pb_knockback = 12
+	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
+	load_sound = 'sound/weapons/gun/shotgun/quadinsert.ogg'
+
+	can_be_sawn_off = FALSE
+	fire_sound_volume = 80
+	rack_sound_volume = 50
+
+//Break-Action Rifle
+/obj/item/gun/ballistic/shotgun/contender
+	name = "Contender"
+	desc = "A single-shot break-action rifle made by Hunter's Pride. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
+	icon_state = "contender"
+	item_state = "contender"
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	inhand_x_dimension = 32
+	inhand_y_dimension = 32
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/contender
+	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	can_be_sawn_off=TRUE
+	sawn_desc= "A single-shot pistol. It's hard to aim without a front sight."
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_MEDIUM
+	force = 10
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BACK
+	obj_flags = UNIQUE_RENAME
+	rack_sound_volume = 0
+	semi_auto = TRUE
+	bolt_type = BOLT_TYPE_NO_BOLT
+	can_be_sawn_off  = TRUE
+	pb_knockback = 3
+
+
+/obj/item/gun/ballistic/shotgun/contender/sawoff(mob/user)
+	. = ..()
+	if(.)
+		item_state = "contender_sawn"

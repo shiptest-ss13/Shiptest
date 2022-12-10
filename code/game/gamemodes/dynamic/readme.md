@@ -43,7 +43,7 @@ process() -> [For each midround rule...]
 ## FORCED
 
 For latejoin, it simply sets forced_latejoin_rule
-make_antag_chance(newPlayer) -> trim_candidates() -> ready(forced=TRUE) **NOTE no acceptable() call
+make_antag_chance(newPlayer) -> trim_candidates() -> ready(forced=TRUE) \*\*NOTE no acceptable() call
 
 For midround, calls the below proc with forced = TRUE
 picking_specific_rule(ruletype,forced) -> forced OR acceptable(living_players, threat_level) -> trim_candidates() -> ready(forced) -> spend threat -> execute()
@@ -53,15 +53,15 @@ picking_specific_rule(ruletype,forced) -> forced OR acceptable(living_players, t
 ## RULESET
 
 acceptable(population,threat) just checks if enough threat_level for population indice.
-**NOTE that we currently only send threat_level as the second arg, not threat.
+\*\*NOTE that we currently only send threat_level as the second arg, not threat.
 ready(forced) checks if enough candidates and calls the map's map_ruleset(dynamic_ruleset) at the parent level
 
 trim_candidates() varies significantly according to the ruleset type
 Roundstart: All candidates are new_player mobs. Check them for standard stuff: connected, desire role, not banned, etc.
-**NOTE Roundstart deals with both candidates (trimmed list of valid players) and mode.candidates (everyone readied up). Don't confuse them!
+\*\*NOTE Roundstart deals with both candidates (trimmed list of valid players) and mode.candidates (everyone readied up). Don't confuse them!
 Latejoin: Only one candidate, the latejoiner. Standard checks.
 Midround: Instead of building a single list candidates, candidates contains four lists: living, dead, observing, and living antags. Standard checks in trim_list(list).
 
 Midround - Rulesets have additional types
 /from_ghosts: execute() -> send_applications() -> review_applications() -> finish_setup(mob/newcharacter, index) -> setup_role(role)
-**NOTE: execute() here adds dead players and observers to candidates list
+\*\*NOTE: execute() here adds dead players and observers to candidates list

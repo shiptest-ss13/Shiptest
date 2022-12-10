@@ -1,0 +1,40 @@
+{
+	"prefix": "SSV",
+	"map_name": "Aegis-class Long Term Care Ship",
+	"map_short_name": "Aegis-class",
+	"map_path": "_maps/shuttles/shiptest/syndicate_aegis.dmm",
+	"map_id": "syndicate_aegis",
+	"job_slots": {
+	"Captain": {
+			"outfit": "/datum/outfit/job/captain/syndicate",
+			"officer": true,
+			"slots": 1
+	},
+	"Lead Doctor": {
+		"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
+		"slots": 1
+	},
+	"Ship Doctor":{
+		"outfit": "/datum/outfit/job/doctor/syndicate/nsv",
+		"slots": 2
+	},
+	"Mechanic": {
+		"outfit": "/datum/outfit/job/engineer/syndicate",
+		"slots": 1
+	},
+	"Deck Service Assistant": {
+		"outfit": "/datum/outfit/job/botanist/syndicate/nsv",
+		"slots": 2
+
+	},
+	"Ship Psychologist": {
+		"outfit": "/datum/outfit/job/psychologist/syndicate/nsv",
+		"slots": 1
+	},
+	"Long Term Patient": {
+		"outfit": "/datum/outfit/job/prisoner/longtermpatient",
+		"slots": 2
+	}
+},
+"enabled": true
+}

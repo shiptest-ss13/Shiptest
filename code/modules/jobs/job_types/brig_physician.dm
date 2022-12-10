@@ -1,30 +1,23 @@
 /datum/job/brig_phys
-	title = "Brig Physician"
-	department_head = list("Head of Security", "Chief Medical Officer")
-	faction = "Station"
+	name = "Brig Physician"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of security and chief medical officer"
-	selection_color = "#ffeeee"
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Guide_to_Medicine" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Security Medic")
-	senior_title = "Correctional Surgeon"
 
 	outfit = /datum/outfit/job/brig_phys
 
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS, ACCESS_MEDICAL, ACCESS_EVA)
 	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS, ACCESS_MEDICAL)
-	paycheck = PAYCHECK_HARD
-	paycheck_department = ACCOUNT_SEC
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
 	display_order = JOB_DISPLAY_ORDER_BRIG_PHYS
 
 /datum/outfit/job/brig_phys
 	name = "Brig Physician"
+	job_icon = "brigphysician"
 	jobtype = /datum/job/brig_phys
 
 	belt = /obj/item/pda/brig_phys

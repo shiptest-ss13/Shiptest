@@ -46,7 +46,7 @@
 		var/turf/T = get_step_multiz(src, direction)
 		if(isnull(T))
 			continue
-		if(isopenturf(T) && !(blocks_air || T.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(T, src)) : (canpass && CANATMOSPASS(T, src))) )
+		if(isopenturf(T) && !(blocks_air || T.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(T, src)) : (canpass && CANATMOSPASS(T, src))))
 			LAZYINITLIST(atmos_adjacent_turfs)
 			LAZYINITLIST(T.atmos_adjacent_turfs)
 			atmos_adjacent_turfs[T] = direction

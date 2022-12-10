@@ -26,10 +26,10 @@
 /turf/closed/wall/mineral/titanium,
 /area/awaymission/undergroundoutpost45/central)
 "ah" = (
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -89,14 +89,14 @@
 	id = "UO45_Elevator";
 	name = "Elevator Doors";
 	pixel_x = 6;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch to call the elevator to your level.";
 	id = "UO45_useless";
 	name = "B1";
 	pixel_x = -6;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch to call the elevator to your level.";
@@ -134,10 +134,10 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -147,8 +147,8 @@
 "aw" = (
 /obj/machinery/vending/snack,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -188,14 +188,14 @@
 	id = "UO45_useless";
 	name = "Call Elevator";
 	pixel_x = -6;
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch for the elevator doors.";
 	id = "UO45_Elevator";
 	name = "Elevator Doors";
 	pixel_x = 6;
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -428,7 +428,7 @@
 /obj/machinery/light/small,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/freezer{
 	heat_capacity = 1e+006
@@ -450,7 +450,7 @@
 "bx" = (
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -801,7 +801,7 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -815,7 +815,7 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -1153,7 +1153,7 @@
 /area/awaymission/undergroundoutpost45/central)
 "dm" = (
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -1181,7 +1181,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel{
 	dir = 8;
@@ -1789,7 +1789,7 @@
 /obj/machinery/light/small,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
@@ -1819,7 +1819,7 @@
 "fU" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/camera{
 	c_tag = "Central Hallway";
@@ -1954,8 +1954,8 @@
 "gk" = (
 /obj/structure/table,
 /obj/item/trash/plate,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -2149,7 +2149,7 @@
 /area/awaymission/undergroundoutpost45/research)
 "gY" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -2164,7 +2164,7 @@
 /area/awaymission/undergroundoutpost45/research)
 "gZ" = (
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
@@ -2206,7 +2206,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -2215,7 +2215,7 @@
 "hg" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -2332,7 +2332,7 @@
 "ic" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/chair{
@@ -2614,7 +2614,7 @@
 "jg" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/camera{
 	c_tag = "Gateway Chamber";
@@ -2787,8 +2787,8 @@
 "jH" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -2813,7 +2813,7 @@
 "jK" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
@@ -3010,7 +3010,7 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "ko" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -3145,7 +3145,7 @@
 "lf" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -3187,7 +3187,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -3400,7 +3400,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "UO45_rdprivacy";
-	name = "privacy shutters"
+	name = "Privacy Shutters"
 	},
 /turf/open/floor/plating{
 	heat_capacity = 1e+006
@@ -3410,7 +3410,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "UO45_rdprivacy";
-	name = "privacy shutters"
+	name = "Privacy Shutters"
 	},
 /turf/open/floor/plating{
 	heat_capacity = 1e+006
@@ -3450,7 +3450,7 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /turf/open/floor/carpet{
 	heat_capacity = 1e+006
@@ -3477,7 +3477,7 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/chair/wood{
 	dir = 8
@@ -3644,7 +3644,7 @@
 "nh" = (
 /obj/machinery/door/poddoor{
 	id = "UO45_Secure Storage";
-	name = "secure storage"
+	name = "Secure Storage"
 	},
 /turf/open/floor/plating{
 	heat_capacity = 1e+006
@@ -4023,7 +4023,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -4182,7 +4182,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel{
@@ -4538,7 +4538,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/carpet{
 	heat_capacity = 1e+006
@@ -4556,7 +4556,7 @@
 "qv" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /turf/open/floor/carpet{
 	heat_capacity = 1e+006
@@ -4568,7 +4568,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/freezer{
 	heat_capacity = 1e+006
@@ -4675,7 +4675,7 @@
 	},
 /obj/machinery/airalarm/server{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/rnd/server{
 	req_access = null
@@ -4837,7 +4837,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel{
 	dir = 8;
@@ -4871,7 +4871,7 @@
 /obj/machinery/power/apc/highcap/fifteen_k{
 	dir = 8;
 	name = "UO45 Engineering APC";
-	pixel_x = -24;
+	pixel_x = -25;
 	req_access = null;
 	req_access_txt = "201";
 	start_charge = 100
@@ -5207,7 +5207,7 @@
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "UO45_Engineering";
-	name = "engineering security door"
+	name = "Engineering Security Door"
 	},
 /turf/open/floor/plating{
 	heat_capacity = 1e+006
@@ -5431,7 +5431,7 @@
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "UO45_Engineering";
-	name = "engineering security door"
+	name = "Engineering Security Door"
 	},
 /turf/open/floor/plating{
 	heat_capacity = 1e+006
@@ -6001,7 +6001,7 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel{
@@ -6229,7 +6229,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel{
@@ -6796,7 +6796,7 @@
 "wC" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel{
@@ -6924,8 +6924,8 @@
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_x = 32
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -6938,7 +6938,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/closet/secure_closet/miner{
 	req_access = null;
@@ -6963,10 +6963,10 @@
 /obj/item/paicard{
 	pixel_x = 4
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -7009,7 +7009,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -7273,7 +7273,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/mineral/plasma{
@@ -7307,7 +7307,7 @@
 "xZ" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/structure/closet/emcloset,
 /obj/effect/decal/cleanable/dirt,
@@ -7482,10 +7482,10 @@
 /area/awaymission/undergroundoutpost45/caves)
 "yv" = (
 /obj/machinery/vending/dinnerware,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -7510,8 +7510,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/corner/brown,
-/obj/effect/turf_decal/corner/brown{
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -7522,8 +7522,8 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -7586,10 +7586,10 @@
 	name = "Research Director's Office";
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -7599,18 +7599,15 @@
 "yF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4;
-	
+
 	},
 /obj/structure/table,
 /obj/item/book/manual/chef_recipes,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -7656,14 +7653,14 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -7675,8 +7672,8 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -7687,10 +7684,10 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -7701,7 +7698,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -7716,10 +7713,10 @@
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 30
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -7727,8 +7724,8 @@
 	},
 /area/awaymission/undergroundoutpost45/central)
 "yX" = (
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -7743,7 +7740,7 @@
 	dir = 2;
 	locked = 0;
 	name = "UO45 Research Division APC";
-	pixel_y = -24;
+	pixel_y = -25;
 	req_access = null;
 	start_charge = 100
 	},
@@ -7753,11 +7750,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -7765,7 +7759,7 @@
 /obj/machinery/power/apc/highcap/fifteen_k{
 	locked = 0;
 	name = "UO45 Research Division APC";
-	pixel_y = -24;
+	pixel_y = -25;
 	req_access = null;
 	start_charge = 100
 	},
@@ -7775,7 +7769,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -7784,8 +7778,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -7800,11 +7794,11 @@
 /obj/machinery/recharger{
 	pixel_y = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -7817,10 +7811,10 @@
 	pixel_y = 3
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -7850,33 +7844,22 @@
 	name = "security officer's locker";
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/item/storage/belt/security,
-/obj/item/assembly/flash/handheld,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/secure_closet{
-	icon_state = "sec";
-	name = "security officer's locker";
-	req_access_txt = "201"
-	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -7887,10 +7870,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -7899,7 +7882,7 @@
 /area/awaymission/undergroundoutpost45/research)
 "zv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white{
@@ -7909,11 +7892,11 @@
 "zw" = (
 /obj/structure/filingcabinet,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -7928,11 +7911,8 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7941,7 +7921,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -7958,7 +7938,7 @@
 "zB" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/camera{
 	c_tag = "Kitchen";
@@ -7970,10 +7950,10 @@
 	pixel_x = -3;
 	pixel_y = 6
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -7987,7 +7967,7 @@
 /obj/structure/sign/departments/science{
 	pixel_x = -32
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8008,7 +7988,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -8022,8 +8002,8 @@
 	dir = 8;
 	network = list("uo45")
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -8032,10 +8012,10 @@
 /area/awaymission/undergroundoutpost45/central)
 "zN" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -8051,9 +8031,9 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8070,8 +8050,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -8089,7 +8069,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -8098,11 +8078,11 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "Ak" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/brown{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/brown,
-/obj/effect/turf_decal/corner/brown{
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8113,11 +8093,11 @@
 /obj/structure/table,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/item/book/manual/wiki/security_space_law,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8130,7 +8110,7 @@
 	dir = 2;
 	locked = 0;
 	name = "UO45 Mining APC";
-	pixel_y = -24;
+	pixel_y = -25;
 	req_access = null;
 	start_charge = 100
 	},
@@ -8147,42 +8127,20 @@
 	},
 /obj/item/storage/backpack/satchel/eng,
 /obj/item/clothing/gloves/fingerless,
-/obj/effect/turf_decal/corner/brown{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/cable,
-/obj/machinery/power/apc/highcap/fifteen_k{
-	locked = 0;
-	name = "UO45 Mining APC";
-	pixel_y = -24;
-	req_access = null;
-	start_charge = 100
-	},
-/obj/machinery/light/small,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/closet/secure_closet/engineering_personal{
-	icon_state = "mining";
-	locked = 0;
-	name = "miner's equipment";
-	req_access = null;
-	req_access_txt = "201"
-	},
 /obj/item/storage/backpack/satchel/eng,
 /obj/item/clothing/gloves/fingerless,
-/obj/effect/turf_decal/corner/brown,
+/obj/effect/turf_decal/corner/opaque/brown,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/mining)
 "Ay" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -8199,9 +8157,6 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/conveyor{
 	id = "UO45_mining"
@@ -8227,14 +8182,14 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8245,9 +8200,6 @@
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -8260,17 +8212,14 @@
 	layer = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/item/kirbyplants{
 	layer = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/green,
+/obj/effect/turf_decal/corner/opaque/green,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -8278,7 +8227,7 @@
 "AL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/brown{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -8291,10 +8240,10 @@
 	pixel_x = -3;
 	pixel_y = 6
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -8317,14 +8266,14 @@
 "AU" = (
 /obj/structure/table/reinforced,
 /obj/item/folder/yellow,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8340,7 +8289,7 @@
 	name = "Research Division Access";
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -8364,10 +8313,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -8383,10 +8332,10 @@
 /area/awaymission/undergroundoutpost45/mining)
 "Bz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8409,8 +8358,8 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "BG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -8428,14 +8377,14 @@
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8446,14 +8395,14 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8466,10 +8415,10 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -8479,8 +8428,8 @@
 "Ci" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /obj/effect/landmark/awaystart,
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -8492,8 +8441,8 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -8511,10 +8460,10 @@
 /area/awaymission/undergroundoutpost45/research)
 "Cm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8525,14 +8474,14 @@
 /obj/machinery/gateway{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -8543,10 +8492,10 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8558,10 +8507,10 @@
 /obj/item/kirbyplants{
 	layer = 5
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -8575,13 +8524,13 @@
 	name = "Tank Monitor";
 	sensors = list("UO45_n2_sensor" = "Nitrogen", "UO45_o2_sensor" = "Oxygen", "UO45_mix_sensor" = "Gas Mix Tank")
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/black{
+/obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -8597,8 +8546,8 @@
 	network = list("uo45r")
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -8607,7 +8556,7 @@
 /area/awaymission/undergroundoutpost45/research)
 "CD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/brown{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -8627,10 +8576,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -8640,18 +8589,15 @@
 "CF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5;
-	
+
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -8662,10 +8608,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -8674,7 +8620,7 @@
 /area/awaymission/undergroundoutpost45/central)
 "CQ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -8706,8 +8652,8 @@
 /area/awaymission/undergroundoutpost45/research)
 "CW" = (
 /obj/machinery/vending/cola,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -8718,14 +8664,14 @@
 /obj/machinery/computer/station_alert{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8735,13 +8681,13 @@
 "Dc" = (
 /obj/machinery/vending/cola,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8753,10 +8699,10 @@
 	dir = 4;
 	network = list("uo45")
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8768,10 +8714,10 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -8791,11 +8737,11 @@
 /obj/item/kirbyplants{
 	layer = 5
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/yellow,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -8803,7 +8749,7 @@
 	},
 /area/awaymission/undergroundoutpost45/engineering)
 "Dv" = (
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8831,10 +8777,10 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -8845,16 +8791,13 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -8863,10 +8806,10 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8875,7 +8818,7 @@
 /area/awaymission/undergroundoutpost45/central)
 "DM" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -8883,7 +8826,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -8895,7 +8838,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -8904,14 +8847,14 @@
 /area/awaymission/undergroundoutpost45/research)
 "Ea" = (
 /obj/structure/bookcase/manuals/engineering,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8929,30 +8872,18 @@
 	name = "security officer's locker";
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/item/restraints/handcuffs,
-/obj/item/assembly/flash/handheld,
-/obj/item/reagent_containers/spray/pepper,
-/obj/structure/closet/secure_closet{
-	icon_state = "sec";
-	name = "security officer's locker";
-	req_access_txt = "201"
-	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -8973,8 +8904,8 @@
 "Er" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/drinks/beer,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -8985,11 +8916,11 @@
 /obj/machinery/atmospherics/components/trinary/filter/atmos/n2{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -9007,7 +8938,7 @@
 /area/awaymission/undergroundoutpost45/gateway)
 "Ev" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -9015,7 +8946,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -9048,14 +8979,14 @@
 /obj/machinery/vending/hydroseeds{
 	slogan_delay = 700
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -9069,7 +9000,7 @@
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "UO45_Engineering";
-	name = "engineering security door"
+	name = "Engineering Security Door"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -9085,10 +9016,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/closet/firecloset,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -9099,8 +9026,8 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "EU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -9111,7 +9038,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/preopen{
 	id = "UO45_biohazard";
-	name = "biohazard containment door"
+	name = "Biohazard Containment Door"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel{
@@ -9119,8 +9046,8 @@
 	},
 /area/awaymission/undergroundoutpost45/research)
 "Fa" = (
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -9166,10 +9093,10 @@
 	pixel_x = 3;
 	pixel_y = -2
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -9180,8 +9107,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -9190,10 +9117,10 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "FE" = (
 /obj/structure/table,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -9214,10 +9141,10 @@
 	dir = 4
 	},
 /obj/machinery/processor,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -9254,14 +9181,11 @@
 	},
 /obj/machinery/firealarm{
 	dir = 2;
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/item/multitool,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/light{
 	dir = 1
@@ -9279,10 +9203,10 @@
 	pixel_y = 5
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/item/multitool,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -9300,10 +9224,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -9329,10 +9253,10 @@
 	pixel_y = -2;
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -9343,7 +9267,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -9355,10 +9279,10 @@
 /obj/machinery/computer/atmos_alert{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/black{
+/obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -9367,8 +9291,8 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "Gb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -9385,11 +9309,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/yellow,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -9414,12 +9338,12 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -9429,13 +9353,13 @@
 "Gn" = (
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -9446,8 +9370,8 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -9459,8 +9383,8 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -9477,7 +9401,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -9489,18 +9413,15 @@
 	dir = 2
 	},
 /obj/machinery/portable_atmospherics/pump,
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /obj/machinery/portable_atmospherics/pump,
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -9515,11 +9436,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -9528,7 +9446,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -9537,8 +9455,8 @@
 /obj/structure/table,
 /obj/item/stack/packageWrap,
 /obj/item/reagent_containers/glass/rag,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -9556,8 +9474,8 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -9574,10 +9492,10 @@
 	name = "\improper DISPOSAL: LEADS TO EXTERIOR";
 	pixel_y = -32
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -9600,17 +9518,14 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -9627,11 +9542,11 @@
 	output_tag = "UO45_o2_out";
 	sensors = list("UO45_o2_sensor" = "Tank")
 	},
-/obj/effect/turf_decal/corner/blue,
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -9641,7 +9556,7 @@
 "GU" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/light/small{
 	dir = 8
@@ -9649,10 +9564,10 @@
 /obj/structure/table,
 /obj/item/radio/off,
 /obj/item/laser_pointer,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -9675,10 +9590,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/closet/emcloset,
 /obj/item/clothing/mask/breath,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -9689,7 +9600,7 @@
 	},
 /area/awaymission/undergroundoutpost45/engineering)
 "He" = (
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white{
@@ -9706,10 +9617,10 @@
 	},
 /area/awaymission/undergroundoutpost45/gateway)
 "Hi" = (
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -9733,8 +9644,8 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "Hr" = (
 /obj/machinery/vending/cigarette,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -9742,11 +9653,11 @@
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "Hu" = (
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -9761,7 +9672,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -9775,9 +9686,6 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/conveyor{
 	id = "UO45_mining"
@@ -9793,7 +9701,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -9805,7 +9713,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/corner/brown{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -9825,9 +9733,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -9844,10 +9749,10 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "HH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -9859,7 +9764,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -9880,10 +9785,10 @@
 	pixel_y = 2
 	},
 /obj/item/reagent_containers/dropper,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -9894,10 +9799,10 @@
 /obj/structure/disposalpipe/junction/flip{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -9912,11 +9817,11 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/yellow,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -9934,7 +9839,7 @@
 /area/awaymission/undergroundoutpost45/research)
 "Ic" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -9952,10 +9857,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -9973,10 +9878,10 @@
 	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -9988,8 +9893,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10001,14 +9906,14 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -10029,7 +9934,7 @@
 	},
 /area/awaymission/undergroundoutpost45/mining)
 "Im" = (
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -10038,14 +9943,14 @@
 /area/awaymission/undergroundoutpost45/central)
 "Io" = (
 /obj/machinery/biogenerator,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -10057,8 +9962,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -10066,14 +9971,14 @@
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "IA" = (
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10084,7 +9989,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -10092,13 +9997,10 @@
 	},
 /area/awaymission/undergroundoutpost45/research)
 "IE" = (
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/effect/turf_decal/corner/green,
+/obj/effect/turf_decal/corner/opaque/green,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -10111,10 +10013,10 @@
 	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -10123,8 +10025,8 @@
 /area/awaymission/undergroundoutpost45/research)
 "IK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -10138,10 +10040,10 @@
 /obj/item/stack/sheet/glass,
 /obj/item/stock_parts/matter_bin,
 /obj/item/stock_parts/matter_bin,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10156,7 +10058,7 @@
 	desc = "A remote control-switch for the engineering security doors.";
 	id = "UO45_Engineering";
 	name = "Engineering Lockdown";
-	pixel_x = 24;
+	pixel_x = 25;
 	pixel_y = 6;
 	req_access_txt = "201"
 	},
@@ -10168,39 +10070,18 @@
 	name = "security officer's locker";
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 1
-	},
-/obj/machinery/button/door{
-	desc = "A remote control-switch for the engineering security doors.";
-	id = "UO45_Engineering";
-	name = "Engineering Lockdown";
-	pixel_x = 24;
-	pixel_y = 6;
-	req_access_txt = "201"
-	},
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/head/helmet,
-/obj/structure/closet/secure_closet{
-	icon_state = "sec";
-	name = "security officer's locker";
-	req_access_txt = "201"
-	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10211,7 +10092,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10225,11 +10106,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10237,13 +10115,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/gateway)
 "Jd" = (
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -10256,7 +10134,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -10266,18 +10144,15 @@
 	dir = 1;
 	network = list("uo45","uo45r")
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -10287,7 +10162,7 @@
 	dir = 1;
 	network = list("uo45","uo45r")
 	},
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -10295,8 +10170,8 @@
 "Ji" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -10316,8 +10191,8 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -10328,10 +10203,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -10339,10 +10214,10 @@
 	},
 /area/awaymission/undergroundoutpost45/research)
 "Jr" = (
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10350,8 +10225,8 @@
 	},
 /area/awaymission/undergroundoutpost45/central)
 "Js" = (
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -10369,14 +10244,14 @@
 /obj/item/storage/bag/plants/portaseeder,
 /obj/item/clothing/mask/bandana,
 /obj/item/cultivator,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -10392,17 +10267,17 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10416,7 +10291,7 @@
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "UO45_Engineering";
-	name = "engineering security door"
+	name = "Engineering Security Door"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
@@ -10433,8 +10308,8 @@
 	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -10444,8 +10319,8 @@
 "JD" = (
 /obj/structure/chair/stool,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -10456,8 +10331,8 @@
 /obj/structure/table,
 /obj/item/book/manual/wiki/barman_recipes,
 /obj/item/reagent_containers/food/drinks/shaker,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -10467,36 +10342,33 @@
 "JI" = (
 /obj/machinery/firealarm{
 	dir = 2;
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/tank_dispenser{
 	pixel_x = -1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/tank_dispenser{
 	pixel_x = -1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10525,8 +10397,8 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -28
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10536,14 +10408,14 @@
 "JN" = (
 /obj/machinery/seed_extractor,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -10560,11 +10432,11 @@
 	charge = 100;
 	maxcharge = 15000
 	},
-/obj/effect/turf_decal/corner/yellow,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10587,8 +10459,8 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -10596,7 +10468,7 @@
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "JX" = (
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -10611,7 +10483,7 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -10620,10 +10492,10 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "Kg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -10634,16 +10506,13 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -10658,10 +10527,10 @@
 	pixel_x = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -10677,14 +10546,14 @@
 	desc = "A remote control-switch for the security privacy shutters.";
 	id = "UO45_EngineeringOffice";
 	name = "Privacy Shutters";
-	pixel_x = -24;
+	pixel_x = -25;
 	pixel_y = 6;
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10702,7 +10571,7 @@
 /area/awaymission/undergroundoutpost45/gateway)
 "Km" = (
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/light{
 	dir = 1
@@ -10710,10 +10579,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -10731,7 +10600,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -10744,10 +10613,10 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 24
+	pixel_x = 25
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -10765,14 +10634,11 @@
 	name = "research monitor";
 	network = list("uo45r")
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -10817,19 +10683,16 @@
 	dir = 2;
 	locked = 0;
 	name = "Hydroponics APC";
-	pixel_y = -24;
+	pixel_y = -25;
 	req_access = null;
 	start_charge = 100
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/camera{
 	c_tag = "Hydroponics";
@@ -10839,15 +10702,15 @@
 /obj/machinery/power/apc/highcap/fifteen_k{
 	locked = 0;
 	name = "Hydroponics APC";
-	pixel_y = -24;
+	pixel_y = -25;
 	req_access = null;
 	start_charge = 100
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10858,8 +10721,8 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/yellow,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -10870,7 +10733,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -10880,14 +10743,14 @@
 "KL" = (
 /obj/structure/chair/office,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10907,14 +10770,14 @@
 	req_access_txt = "201"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10923,11 +10786,11 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "KR" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -10942,9 +10805,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 1
 	},
@@ -10958,11 +10818,11 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -10973,8 +10833,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -10994,10 +10854,10 @@
 	req_access_txt = "201"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -11012,14 +10872,14 @@
 /obj/item/lighter{
 	pixel_x = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -11037,23 +10897,11 @@
 	name = "research director's locker";
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/item/storage/backpack/satchel/tox,
-/obj/item/clothing/gloves/color/latex,
-/obj/item/clothing/suit/toggle/labcoat/science,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/secure_closet{
-	icon_state = "rd";
-	name = "research director's locker";
-	req_access_txt = "201"
 	},
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -11064,14 +10912,14 @@
 /obj/item/book/manual/hydroponics_pod_people,
 /obj/item/paper/guides/jobs/hydroponics,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -11082,10 +10930,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -11096,10 +10944,10 @@
 /obj/structure/chair/comfy/black{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -11109,10 +10957,10 @@
 "Lu" = (
 /obj/structure/closet/l3closet,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -11121,11 +10969,11 @@
 /area/awaymission/undergroundoutpost45/research)
 "Lv" = (
 /obj/structure/chair/comfy/black,
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -11140,10 +10988,10 @@
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = 3
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -11167,10 +11015,10 @@
 "Lz" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -11182,10 +11030,10 @@
 	pixel_x = 5;
 	pixel_y = -27
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -11200,10 +11048,10 @@
 /obj/structure/sink{
 	pixel_y = 25
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -11213,10 +11061,10 @@
 "LJ" = (
 /obj/structure/closet/l3closet,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -11232,10 +11080,10 @@
 /obj/item/stock_parts/micro_laser,
 /obj/item/stock_parts/micro_laser,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -11250,10 +11098,10 @@
 /obj/structure/sink{
 	pixel_y = 25
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -11265,10 +11113,10 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -11289,8 +11137,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -11300,7 +11148,7 @@
 "Ma" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/filingcabinet,
@@ -11308,10 +11156,10 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -11323,8 +11171,8 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -11337,7 +11185,7 @@
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/clothing/glasses/hud/health,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -11347,8 +11195,8 @@
 "Ml" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
-/obj/effect/turf_decal/corner/white,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white,
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -11359,14 +11207,14 @@
 /obj/machinery/gateway{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -11378,11 +11226,11 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -11397,14 +11245,14 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -11412,8 +11260,8 @@
 	},
 /area/awaymission/undergroundoutpost45/engineering)
 "MD" = (
-/obj/effect/turf_decal/corner/purple,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple,
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -11436,13 +11284,10 @@
 	},
 /area/space/nearstation)
 "MJ" = (
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -11454,8 +11299,8 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -11467,11 +11312,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -11480,8 +11325,8 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "MT" = (
 /obj/structure/chair,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -11498,11 +11343,11 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 24
+	pixel_x = 25
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -11514,10 +11359,10 @@
 	pixel_x = -30
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -11526,7 +11371,7 @@
 /area/awaymission/undergroundoutpost45/research)
 "Nb" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -11537,14 +11382,14 @@
 /obj/machinery/gateway{
 	dir = 6
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -11555,14 +11400,14 @@
 /obj/machinery/gateway{
 	dir = 9
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -11576,10 +11421,10 @@
 	name = "Distribution and Waste Monitor";
 	sensors = list("UO45_air_sensor" = "Mixed Air Supply Tank", "UO45_distro_meter" = "Distribution Loop", "UO45_waste_meter" = "Waste Loop")
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/black{
+/obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -11609,10 +11454,10 @@
 "Nx" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/mint,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -11623,10 +11468,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -11635,14 +11480,10 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "ND" = (
 /obj/machinery/door/firedoor,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -11652,7 +11493,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -11664,10 +11505,10 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -11684,8 +11525,8 @@
 	name = "Kitchen";
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -11725,8 +11566,8 @@
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = 3
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -11744,9 +11585,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/conveyor{
 	id = "UO45_mining"
 	},
@@ -11762,10 +11600,10 @@
 /area/awaymission/undergroundoutpost45/mining)
 "Oe" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -11782,8 +11620,8 @@
 	name = "\improper DISPOSAL: LEADS TO EXTERIOR";
 	pixel_y = -32
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -11803,14 +11641,14 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -11832,10 +11670,10 @@
 	locked = 0;
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -11861,10 +11699,10 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "OI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -11892,9 +11730,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/atmospherics/components/binary/valve,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -11916,11 +11751,8 @@
 	dir = 2;
 	network = list("uo45")
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -11933,7 +11765,7 @@
 	c_tag = "Dormitories";
 	network = list("uo45")
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -11952,11 +11784,11 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -11965,7 +11797,7 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "Pb" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -11976,10 +11808,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12000,10 +11832,10 @@
 "Pe" = (
 /obj/structure/table,
 /obj/item/storage/box/gloves,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12016,10 +11848,10 @@
 	},
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -12028,10 +11860,10 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "Pk" = (
 /obj/structure/filingcabinet/chestdrawer,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -12044,12 +11876,12 @@
 	desc = "A remote control-switch whichs locks the research division down in the event of a biohazard leak or contamination.";
 	id = "UO45_biohazard";
 	name = "Biohazard Door Control";
-	pixel_y = -24;
+	pixel_y = -25;
 	req_access_txt = "201"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12060,8 +11892,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12075,13 +11907,13 @@
 /obj/machinery/computer/station_alert{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/black{
+/obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
+/obj/effect/turf_decal/corner/opaque/black{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -12091,10 +11923,10 @@
 "Px" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/disposalpipe/junction,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -12111,7 +11943,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -12124,10 +11956,10 @@
 	},
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12144,10 +11976,10 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = -32
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12156,10 +11988,10 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "PH" = (
 /obj/structure/table/wood,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12167,10 +11999,10 @@
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "PI" = (
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -12181,10 +12013,10 @@
 /obj/machinery/computer/aifixer{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -12205,10 +12037,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12221,10 +12053,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/glass/bucket,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12233,7 +12065,7 @@
 /area/awaymission/undergroundoutpost45/central)
 "Qc" = (
 /obj/machinery/door/firedoor,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12245,10 +12077,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -12265,10 +12097,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/closet/firecloset,
 /obj/machinery/light/small,
 /obj/structure/sign/warning/securearea{
 	pixel_y = -32
@@ -12281,14 +12109,14 @@
 /area/awaymission/undergroundoutpost45/research)
 "Qo" = (
 /obj/structure/filingcabinet/chestdrawer,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12296,8 +12124,8 @@
 	},
 /area/awaymission/undergroundoutpost45/engineering)
 "Qr" = (
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12308,10 +12136,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12322,14 +12150,14 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12344,7 +12172,7 @@
 /obj/structure/sign/poster/contraband/eat{
 	pixel_x = 32
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12355,14 +12183,14 @@
 /obj/machinery/gateway{
 	dir = 5
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -12376,14 +12204,14 @@
 	pixel_y = 4
 	},
 /obj/item/stamp/ce,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12395,7 +12223,7 @@
 /obj/structure/sign/warning/securearea{
 	pixel_x = -32
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -12404,8 +12232,8 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "QG" = (
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -12428,12 +12256,12 @@
 	dir = 1;
 	locked = 0;
 	name = "UO45 Bar APC";
-	pixel_y = 24;
+	pixel_y = 25;
 	req_access = null;
 	start_charge = 100
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -12451,10 +12279,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12466,11 +12294,11 @@
 	dir = 1;
 	network = list("uo45")
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12482,17 +12310,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -12509,10 +12334,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12537,9 +12362,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/mineral/processing_unit{
 	dir = 1
 	},
@@ -12553,8 +12375,8 @@
 "Ro" = (
 /obj/structure/chair/comfy/black,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12563,8 +12385,8 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "Rr" = (
 /obj/structure/chair/stool,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -12581,10 +12403,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12599,9 +12421,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 10
 	},
@@ -12615,8 +12434,8 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -12629,10 +12448,10 @@
 /obj/item/reagent_containers/food/condiment/enzyme{
 	layer = 5
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -12643,7 +12462,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -12655,7 +12474,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12678,9 +12497,9 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12690,8 +12509,8 @@
 "Sn" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -12708,13 +12527,13 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12724,8 +12543,8 @@
 "Ss" = (
 /obj/structure/table,
 /obj/item/kitchen/fork,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -12741,11 +12560,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12755,13 +12574,13 @@
 "Su" = (
 /obj/structure/table,
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/item/hand_labeler,
 /obj/item/clothing/neck/stethoscope,
-/obj/effect/turf_decal/corner/white,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white,
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12772,13 +12591,13 @@
 /obj/machinery/atmospherics/components/trinary/mixer/airmix{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -12787,14 +12606,11 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "Sy" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -12803,7 +12619,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/preopen{
 	id = "UO45_Engineering";
-	name = "engineering security door"
+	name = "Engineering Security Door"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -12816,11 +12632,11 @@
 "SC" = (
 /obj/structure/chair/comfy/black,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12829,8 +12645,8 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "SD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12851,14 +12667,14 @@
 	pixel_y = 3
 	},
 /obj/item/watertank,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -12882,8 +12698,8 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/yellow,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -12893,29 +12709,26 @@
 "SW" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/camera{
 	c_tag = "Research Division East";
 	dir = 1;
 	network = list("uo45","uo45r")
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/camera{
 	c_tag = "Research Division East";
 	dir = 1;
 	network = list("uo45","uo45r")
 	},
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -12932,11 +12745,11 @@
 	sensors = list("UO45_n2_sensor" = "Tank")
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -12951,10 +12764,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/closet/firecloset,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
 	},
@@ -12965,10 +12774,10 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "Tj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13002,10 +12811,10 @@
 /area/awaymission/undergroundoutpost45/research)
 "Tp" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -13014,14 +12823,14 @@
 /area/awaymission/undergroundoutpost45/research)
 "Tv" = (
 /obj/machinery/vending/hydronutrients,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -13034,8 +12843,8 @@
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -13049,8 +12858,8 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -28
 	},
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13063,7 +12872,7 @@
 	dir = 2;
 	locked = 0;
 	name = "UO45 Gateway APC";
-	pixel_y = -24;
+	pixel_y = -25;
 	req_access = null;
 	start_charge = 100
 	},
@@ -13073,14 +12882,11 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/cable,
 /obj/machinery/power/apc/highcap/fifteen_k{
 	locked = 0;
 	name = "UO45 Gateway APC";
-	pixel_y = -24;
+	pixel_y = -25;
 	req_access = null;
 	start_charge = 100
 	},
@@ -13105,10 +12911,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13118,7 +12924,7 @@
 "TR" = (
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/structure/rack,
 /obj/item/clothing/shoes/magboots,
@@ -13137,13 +12943,13 @@
 	output_tag = "UO45_air_out";
 	sensors = list("UO45_air_sensor" = "Tank")
 	},
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -13152,11 +12958,11 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "Uc" = (
 /obj/structure/filingcabinet,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13171,20 +12977,16 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -13192,10 +12994,10 @@
 "Ue" = (
 /obj/structure/table,
 /obj/item/book/manual/wiki/security_space_law,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13216,7 +13018,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13227,7 +13029,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13239,14 +13041,14 @@
 	dir = 1;
 	pixel_y = 3
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13284,10 +13086,10 @@
 "UE" = (
 /obj/structure/table,
 /obj/item/kitchen/rollingpin,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -13299,11 +13101,11 @@
 	layer = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13317,11 +13119,11 @@
 /obj/structure/sign/warning/securearea{
 	pixel_y = -32
 	},
-/obj/effect/turf_decal/corner/yellow,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13333,14 +13135,14 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13357,8 +13159,8 @@
 /obj/item/stack/sheet/metal{
 	amount = 23
 	},
-/obj/effect/turf_decal/corner/white,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white,
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13371,7 +13173,7 @@
 	pixel_x = 2;
 	pixel_y = 6
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -13379,8 +13181,8 @@
 	},
 /area/awaymission/undergroundoutpost45/research)
 "UU" = (
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13388,10 +13190,10 @@
 	},
 /area/awaymission/undergroundoutpost45/research)
 "UY" = (
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13408,11 +13210,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -13423,7 +13222,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -13437,16 +13236,13 @@
 	},
 /obj/machinery/firealarm{
 	dir = 2;
-	pixel_y = 24
+	pixel_y = 25
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/light{
 	dir = 1
@@ -13455,12 +13251,12 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13470,10 +13266,10 @@
 "Vk" = (
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -24
+	pixel_x = -25
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -13484,16 +13280,13 @@
 /obj/machinery/vending/boozeomat{
 	req_access_txt = "0"
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/vending/boozeomat,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -13503,7 +13296,7 @@
 "Vq" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -25
 	},
 /obj/machinery/light{
 	dir = 8
@@ -13512,10 +13305,10 @@
 /obj/item/screwdriver{
 	pixel_y = 10
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13533,14 +13326,14 @@
 /obj/item/plant_analyzer,
 /obj/item/clothing/mask/bandana,
 /obj/item/hatchet,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -13554,7 +13347,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13567,9 +13360,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -13581,10 +13371,10 @@
 /obj/structure/sink/kitchen{
 	pixel_y = 28
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -13595,8 +13385,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/corner/yellow,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13611,14 +13401,14 @@
 	},
 /obj/item/pen,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13630,8 +13420,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -13643,11 +13433,11 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/yellow,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13661,8 +13451,8 @@
 /obj/machinery/newscaster{
 	pixel_y = -28
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -13672,10 +13462,10 @@
 "VL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/chair,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -13686,8 +13476,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -13700,8 +13490,8 @@
 	},
 /obj/structure/disposalpipe/junction,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -13714,8 +13504,8 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/corner/yellow,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13733,19 +13523,11 @@
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/sugar,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/closet/secure_closet{
-	locked = 0;
-	name = "kitchen Cabinet";
-	req_access_txt = "201"
 	},
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/flour,
@@ -13757,7 +13539,7 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "Wc" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13772,8 +13554,8 @@
 	name = "tracking beacon"
 	},
 /obj/effect/landmark/awaystart,
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13781,7 +13563,7 @@
 	},
 /area/awaymission/undergroundoutpost45/central)
 "Wn" = (
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13790,8 +13572,8 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "Wo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13800,8 +13582,8 @@
 /area/awaymission/undergroundoutpost45/central)
 "Wq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13812,11 +13594,11 @@
 /obj/machinery/vending/medical{
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/white,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white,
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -13827,7 +13609,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -13838,8 +13620,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -13854,14 +13636,14 @@
 	name = "\improper DISPOSAL: LEADS TO EXTERIOR";
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -13869,10 +13651,10 @@
 	},
 /area/awaymission/undergroundoutpost45/central)
 "WE" = (
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -13882,24 +13664,21 @@
 "WH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10;
-	
+
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13916,7 +13695,7 @@
 	name = "\improper DISPOSAL: LEADS TO EXTERIOR";
 	pixel_y = -32
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13933,7 +13712,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -13942,8 +13721,8 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "WM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13958,8 +13737,8 @@
 	pixel_y = 10
 	},
 /obj/item/radio/off,
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -13973,8 +13752,8 @@
 	network = list("uo45")
 	},
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -14014,14 +13793,11 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -14032,10 +13808,10 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -25
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -14044,8 +13820,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -14057,8 +13833,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/brown,
-/obj/effect/turf_decal/corner/brown{
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14079,8 +13855,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -14093,14 +13869,14 @@
 	name = "primary power monitoring console"
 	},
 /obj/structure/cable,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14112,11 +13888,11 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/corner/brown,
-/obj/effect/turf_decal/corner/brown{
+/obj/effect/turf_decal/corner/opaque/brown,
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/brown{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14126,8 +13902,8 @@
 "Xn" = (
 /obj/machinery/door/firedoor,
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -14144,13 +13920,13 @@
 /obj/machinery/newscaster{
 	pixel_x = -30
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14158,8 +13934,8 @@
 	},
 /area/awaymission/undergroundoutpost45/research)
 "Xx" = (
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14171,8 +13947,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14183,14 +13959,14 @@
 /obj/machinery/gateway{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -14201,10 +13977,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14225,11 +14001,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -14244,7 +14017,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -14261,13 +14034,9 @@
 	name = "Research Division Access";
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/door/firedoor,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -14278,7 +14047,7 @@
 	name = "Research Division Access";
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/purple,
+/obj/effect/turf_decal/corner/opaque/purple,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -14286,8 +14055,8 @@
 "XV" = (
 /obj/structure/table/reinforced,
 /obj/item/lighter,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -14304,10 +14073,10 @@
 	pixel_x = -30
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14319,10 +14088,10 @@
 	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -14330,8 +14099,8 @@
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "Ya" = (
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -14342,10 +14111,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -14357,7 +14126,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/purple{
+/obj/effect/turf_decal/corner/opaque/purple{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
@@ -14368,8 +14137,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -14383,8 +14152,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
 	},
-/obj/effect/turf_decal/corner/white,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white,
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -14396,7 +14165,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -14404,7 +14173,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -14415,14 +14184,14 @@
 /obj/machinery/gateway{
 	dir = 10
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -14435,8 +14204,8 @@
 	req_access_txt = "201"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -14453,25 +14222,25 @@
 	id = "UO45_Engineering";
 	name = "Engineering Lockdown";
 	pixel_x = -6;
-	pixel_y = -24;
+	pixel_y = -25;
 	req_access_txt = "201"
 	},
 /obj/machinery/button/door{
-	desc = "A remote control-switch for secure storage.";
+	desc = "A remote control-switch for Secure Storage.";
 	id = "UO45_Secure Storage";
 	name = "Engineering Secure Storage";
 	pixel_x = 6;
-	pixel_y = -24;
+	pixel_y = -25;
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14488,14 +14257,11 @@
 	layer = 2.9
 	},
 /obj/machinery/portable_atmospherics/scrubber,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
@@ -14504,7 +14270,7 @@
 	layer = 2.9
 	},
 /obj/machinery/portable_atmospherics/scrubber,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -14514,10 +14280,10 @@
 "YF" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -14528,11 +14294,11 @@
 /obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/blue,
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14549,11 +14315,11 @@
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 30
 	},
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -14564,11 +14330,11 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/effect/turf_decal/corner/green,
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/green{
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14580,11 +14346,11 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -14601,10 +14367,10 @@
 	name = "\improper DISPOSAL: LEADS TO EXTERIOR";
 	pixel_y = -32
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -14613,14 +14379,14 @@
 /area/awaymission/undergroundoutpost45/research)
 "YY" = (
 /obj/machinery/suit_storage_unit/standard_unit,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -14632,7 +14398,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/airalarm/all_access{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -14641,10 +14407,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -14655,16 +14421,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -14672,15 +14435,12 @@
 "Zk" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 2
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -14695,8 +14455,8 @@
 /obj/structure/sign/poster/official/safety_report{
 	pixel_y = -32
 	},
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14712,8 +14472,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -14728,10 +14488,10 @@
 	pixel_y = 9
 	},
 /obj/item/pen,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -14746,10 +14506,10 @@
 	icon_state = "2-4"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -14762,8 +14522,8 @@
 	},
 /obj/structure/table,
 /obj/item/book/manual/wiki/security_space_law,
-/obj/effect/turf_decal/corner/red,
-/obj/effect/turf_decal/corner/red{
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -14772,8 +14532,8 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "ZG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/bar,
-/obj/effect/turf_decal/corner/bar{
+/obj/effect/turf_decal/corner/transparent/bar,
+/obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel{
@@ -14785,10 +14545,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -14806,10 +14566,10 @@
 	name = "refrigerator";
 	req_access_txt = "201"
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 2
 	},
 /turf/open/floor/plasteel{
@@ -14819,14 +14579,14 @@
 "ZK" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/neutral{
+/obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -14841,8 +14601,8 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/white,
-/obj/effect/turf_decal/corner/white{
+/obj/effect/turf_decal/corner/opaque/white,
+/obj/effect/turf_decal/corner/opaque/white{
 	dir = 4
 	},
 /turf/open/floor/plasteel{
@@ -14860,7 +14620,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel{

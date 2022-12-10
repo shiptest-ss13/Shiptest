@@ -1,8 +1,8 @@
 /**
-  * Used to get the virtual z-level.
-  * Will give unique values to each shuttle while it is in a transit level.
-  * Note: If the user teleports to another virtual z on the same z-level they will need to have reset_virtual_z called. (Teleportations etc.)
-  */
+ * Used to get the virtual z-level.
+ * Will give unique values to each shuttle while it is in a transit level.
+ * Note: If the user teleports to another virtual z on the same z-level they will need to have reset_virtual_z called. (Teleportations etc.)
+ */
 
 /// Virtual Z is optimized lookup of the virtual level for comparisons, but it doesn't pass the reference
 /atom/proc/virtual_z()

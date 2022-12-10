@@ -1,10 +1,10 @@
-{	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"prefix": "SSV",
 	"namelists": ["GENERAL", "NATURAL_AGGRESSIVE", "BEASTS", "WEAPONS"],
 	"map_name": "Hyena-class Wrecking Tug",
 	"map_short_name": "Hyena-class",
 	"map_path": "_maps/shuttles/shiptest/gorlex_hyena.dmm",
-	"map_id": "gorlex_hyena",
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/syndicate/gorlex",
@@ -29,5 +29,5 @@
 			"slots": 2
 		}
 	},
-	"cost": 750
+	"enabled": true
 }

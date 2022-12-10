@@ -84,7 +84,7 @@
 
 /obj/item/storage/box/hero/PopulateContents()
 	new /obj/item/clothing/head/fedora/curator(src)
-	new /obj/item/clothing/suit/curator(src)
+	new /obj/item/clothing/suit/armor/curator(src)
 	new /obj/item/clothing/under/rank/civilian/curator/treasure_hunter(src)
 	new /obj/item/clothing/shoes/workboots/mining(src)
 	new /obj/item/melee/curator_whip(src)
@@ -203,7 +203,7 @@
 
 	to_chat(joe, "<span class='notice'>As you burn the picture, a nickname comes to mind...</span>")
 	var/nickname = stripped_input(joe, "Pick a nickname", "Mafioso Nicknames", null, NICKNAME_CAP, TRUE)
-	nickname = reject_bad_name(nickname, allow_numbers = FALSE, max_length = NICKNAME_CAP, ascii_only = TRUE)
+	nickname = reject_bad_name(nickname, max_length = NICKNAME_CAP, ascii_only = TRUE)
 	if(!nickname)
 		return
 	var/new_name

@@ -1,0 +1,25 @@
+{
+	"map_name": "Hound-Class Corvette",
+	"prefix": "IRMV",
+	"namelists": ["MYTHOLOGICAL", "BEASTS", "NATURAL_AGGRESSIVE"],
+	"map_short_name": "Hound-class",
+	"map_path": "_maps/shuttles/shiptest/inteq_hound.dmm",
+	"map_id": "inteq_hound",
+	"limit": 2,
+	"job_slots": {
+		"Vanguard": {
+			"outfit": "/datum/outfit/job/hos/inteq/naked",
+			"officer": true,
+			"slots": 1
+		},
+		"Enforcer": {
+			"outfit": "/datum/outfit/job/security/inteq",
+			"slots": 3
+		},
+		"Recruit": {
+			"outfit": "/datum/outfit/job/assistant/inteq",
+			"slots": 3
+		}
+	},
+	"cost": 450
+}

@@ -242,7 +242,7 @@
 
 /obj/item/storage/box/beakers/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/glass/beaker( src )
+		new /obj/item/reagent_containers/glass/beaker(src)
 
 /obj/item/storage/box/beakers/bluespace
 	name = "box of bluespace beakers"
@@ -265,7 +265,7 @@
 
 /obj/item/storage/box/hypospray
 	name = "hypospray mk. II kit"
-	icon = 'whitesands/icons/obj/storage.dmi'		//WS Edit - Suitcases
+	icon = 'icons/obj/storage.dmi'		//WS Edit - Suitcases
 	icon_state = "medbriefcase"
 	illustration = null
 
@@ -293,7 +293,7 @@
 
 /obj/item/storage/box/medigels/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/medigel( src )
+		new /obj/item/reagent_containers/medigel(src)
 
 /obj/item/storage/box/injectors
 	name = "box of DNA injectors"
@@ -470,7 +470,7 @@
 
 /obj/item/storage/box/cups/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/food/drinks/sillycup( src )
+		new /obj/item/reagent_containers/food/drinks/sillycup(src)
 
 /obj/item/storage/box/donkpockets
 	name = "box of donk-pockets"
@@ -891,7 +891,7 @@
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"
 	desc = "A box full of beanbag shells."
-	icon_state = "rubbershot_box"
+	icon_state = "beanbag_box"
 	illustration = null
 
 /obj/item/storage/box/beanbag/PopulateContents()
@@ -901,7 +901,7 @@
 /obj/item/storage/box/slugshot
 	name = "box of 12-gauge slug shotgun shells"
 	desc = "a box full of slug shots, designed for riot shotguns"
-	icon = 'whitesands/icons/obj/storage.dmi'
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "slugshot_box"
 	illustration = null
 
@@ -985,12 +985,12 @@
 	return ..()
 
 /**
-  * check_menu: Checks if we are allowed to interact with a radial menu
-  *
-  * Arguments:
-  * * user The mob interacting with a menu
-  * * P The pen used to interact with a menu
-  */
+ * check_menu: Checks if we are allowed to interact with a radial menu
+ *
+ * Arguments:
+ * * user The mob interacting with a menu
+ * * P The pen used to interact with a menu
+ */
 /obj/item/storage/box/papersack/proc/check_menu(mob/user, obj/item/pen/P)
 	if(!istype(user))
 		return FALSE
@@ -1299,11 +1299,11 @@
 
 /obj/item/storage/box/stockparts/t2/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/stock_parts/capacitor/adv = 3,
-		/obj/item/stock_parts/scanning_module/adv = 3,
-		/obj/item/stock_parts/manipulator/nano = 3,
-		/obj/item/stock_parts/micro_laser/high = 3,
-		/obj/item/stock_parts/matter_bin/adv = 3)
+		/obj/item/stock_parts/capacitor/adv = 2,
+		/obj/item/stock_parts/scanning_module/adv = 2,
+		/obj/item/stock_parts/manipulator/nano = 2,
+		/obj/item/stock_parts/micro_laser/high = 2,
+		/obj/item/stock_parts/matter_bin/adv = 2)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/stockparts/t3
@@ -1312,11 +1312,11 @@
 
 /obj/item/storage/box/stockparts/t3/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/stock_parts/capacitor/super = 3,
-		/obj/item/stock_parts/scanning_module/phasic = 3,
-		/obj/item/stock_parts/manipulator/pico = 3,
-		/obj/item/stock_parts/micro_laser/ultra = 3,
-		/obj/item/stock_parts/matter_bin/super = 3)
+		/obj/item/stock_parts/capacitor/super = 2,
+		/obj/item/stock_parts/scanning_module/phasic = 2,
+		/obj/item/stock_parts/manipulator/pico = 2,
+		/obj/item/stock_parts/micro_laser/ultra = 2,
+		/obj/item/stock_parts/matter_bin/super = 2)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/stockparts/deluxe
@@ -1326,11 +1326,11 @@
 
 /obj/item/storage/box/stockparts/deluxe/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/stock_parts/capacitor/quadratic = 3,
-		/obj/item/stock_parts/scanning_module/triphasic = 3,
-		/obj/item/stock_parts/manipulator/femto = 3,
-		/obj/item/stock_parts/micro_laser/quadultra = 3,
-		/obj/item/stock_parts/matter_bin/bluespace = 3)
+		/obj/item/stock_parts/capacitor/quadratic = 2,
+		/obj/item/stock_parts/scanning_module/triphasic = 2,
+		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stock_parts/micro_laser/quadultra = 2,
+		/obj/item/stock_parts/matter_bin/bluespace = 2)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/dishdrive

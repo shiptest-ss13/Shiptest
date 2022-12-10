@@ -13,7 +13,7 @@
 	var/dur_mod_range = 0.1
 
 	/// The outpost that issued this mission. Passed in New().
-	var/datum/overmap/outpost/source_outpost
+	var/datum/overmap/dynamic/outpost/source_outpost
 	/// The ship that accepted this mission. Passed in accept().
 	var/datum/overmap/ship/controlled/servant
 
@@ -95,19 +95,19 @@
 	return "null"
 
 /**
-  * Spawns a "bound" atom of the given type at the given location. When the "bound" atom
-  * is qdeleted, the passed-in callback is invoked, and, by default, the mission fails.
-  *
-  * Intended to be used to spawn mission-linked atoms that can have
-  * references saved without causing harddels.
-  *
-  * Arguments:
-  * * a_type - The type of the atom to be spawned. Must be of type /atom/movable.
-  * * a_loc - The location to spawn the bound atom at.
-  * * destroy_cb - The callback to invoke when the bound atom is qdeleted. Default is null.
-  * * fail_on_delete - Bool; whether the mission should fail when the bound atom is qdeleted. Default TRUE.
-  * * sparks - Whether to spawn sparks after spawning the bound atom. Default TRUE.
-  */
+ * Spawns a "bound" atom of the given type at the given location. When the "bound" atom
+ * is qdeleted, the passed-in callback is invoked, and, by default, the mission fails.
+ *
+ * Intended to be used to spawn mission-linked atoms that can have
+ * references saved without causing harddels.
+ *
+ * Arguments:
+ * * a_type - The type of the atom to be spawned. Must be of type /atom/movable.
+ * * a_loc - The location to spawn the bound atom at.
+ * * destroy_cb - The callback to invoke when the bound atom is qdeleted. Default is null.
+ * * fail_on_delete - Bool; whether the mission should fail when the bound atom is qdeleted. Default TRUE.
+ * * sparks - Whether to spawn sparks after spawning the bound atom. Default TRUE.
+ */
 /datum/mission/proc/spawn_bound(atom/movable/a_type, a_loc, destroy_cb = null, fail_on_delete = TRUE, sparks = TRUE)
 	if(!ispath(a_type, /atom/movable))
 		CRASH("[src] attempted to spawn bound atom of invalid type [a_type]!")
@@ -119,13 +119,13 @@
 	return bound
 
 /**
-  * Removes the given atom from the mission's bound items, then qdeletes it.
-  * Does not invoke the callback or fail the mission; optionally creates sparks.
-  *
-  * Arguments:
-  * * bound - The bound atom to recall.
-  * * sparks - Whether to spawn sparks on the turf the bound atom is located on. Default TRUE.
-  */
+ * Removes the given atom from the mission's bound items, then qdeletes it.
+ * Does not invoke the callback or fail the mission; optionally creates sparks.
+ *
+ * Arguments:
+ * * bound - The bound atom to recall.
+ * * sparks - Whether to spawn sparks on the turf the bound atom is located on. Default TRUE.
+ */
 /datum/mission/proc/recall_bound(atom/movable/bound, sparks = TRUE)
 	if(sparks)
 		do_sparks(3, FALSE, get_turf(bound))
@@ -145,12 +145,12 @@
 	remove_bound(bound)
 
 /**
-  * Removes the given bound atom from the list of bound atoms.
-  * Does not invoke the associated callback or fail the mission.
-  *
-  * Arguments:
-  * * bound - The bound atom to remove.
-  */
+ * Removes the given bound atom from the list of bound atoms.
+ * Does not invoke the associated callback or fail the mission.
+ *
+ * Arguments:
+ * * bound - The bound atom to remove.
+ */
 /datum/mission/proc/remove_bound(atom/movable/bound)
 	UnregisterSignal(bound, COMSIG_PARENT_QDELETING)
 	// delete the callback

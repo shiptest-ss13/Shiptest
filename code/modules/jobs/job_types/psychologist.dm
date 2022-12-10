@@ -1,19 +1,13 @@
 /*WS Edit - Fuck Psychologists.
 /datum/job/psychologist
-	title = "Psychologist"
-	department_head = list("Head of Personnel","Chief Medical Officer")
-	faction = "Station"
+	name = "Psychologist"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel and the chief medical officer"
-	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/psychologist
 
 	access = list(ACCESS_MEDICAL, ACCESS_PSYCHOLOGY)
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_PSYCHOLOGY)
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_PSYCHOLOGIST
 
@@ -36,3 +30,13 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 
 */
+//Shiptest Outfits
+
+/datum/outfit/job/psychologist/syndicate/nsv
+	name = "Ship Psychologist"
+	id = /obj/item/card/id/syndicate_command/crew_id
+	uniform = /obj/item/clothing/under/rank/medical/psychiatrist
+	suit = /obj/item/clothing/suit/toggle/labcoat
+	shoes = /obj/item/clothing/shoes/laceup
+	alt_uniform = null
+	l_hand = /obj/item/clipboard

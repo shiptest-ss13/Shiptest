@@ -806,7 +806,7 @@
 	special_names = list("Bell")
 	fixed_mut_color = "cd7f32"
 	info_text = "As a <span class='danger'>Bronze Golem</span>, you are very resistant to loud noises, and make loud noises if something hard hits you, however this ability does hurt your hearing."
-	special_step_sounds = list('sound/machines/clockcult/integration_cog_install.ogg', 'sound/magic/clockwork/fellowship_armory.ogg' )
+	special_step_sounds = list('sound/machines/clockcult/integration_cog_install.ogg', 'sound/magic/clockwork/fellowship_armory.ogg')
 	mutantears = /obj/item/organ/ears/bronze
 	var/last_gong_time = 0
 	var/gong_cooldown = 150
@@ -918,7 +918,7 @@
 			to_chat(H, "<span class='notice'>You create a new cardboard golem shell.</span>")
 			create_brother(H.loc)
 
-/datum/species/golem/cardboard/proc/create_brother(var/location)
+/datum/species/golem/cardboard/proc/create_brother(location)
 	new /obj/effect/mob_spawn/human/golem/servant(location, /datum/species/golem/cardboard, owner)
 	last_creation = world.time
 
@@ -1176,7 +1176,7 @@
 
 /datum/species/golem/soviet/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
-	C.equip_to_slot_or_del(new /obj/item/clothing/head/ushanka (), ITEM_SLOT_HEAD)
+	C.equip_to_slot_or_del(new /obj/item/clothing/head/trapper (), ITEM_SLOT_HEAD)
 	C.revive(full_heal = TRUE, admin_revive = FALSE)
 
 	SEND_SOUND(C, sound('sound/misc/Russian_Anthem_chorus.ogg'))

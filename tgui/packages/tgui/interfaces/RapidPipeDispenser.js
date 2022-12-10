@@ -1,13 +1,17 @@
 import { classes } from 'common/react';
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, ColorBox, Flex, LabeledList, Section, Tabs } from '../components';
+import {
+  Box,
+  Button,
+  ColorBox,
+  Flex,
+  LabeledList,
+  Section,
+  Tabs,
+} from '../components';
 import { Window } from '../layouts';
 
-const ROOT_CATEGORIES = [
-  'Atmospherics',
-  'Disposals',
-  'Transit Tubes',
-];
+const ROOT_CATEGORIES = ['Atmospherics', 'Disposals', 'Transit Tubes'];
 
 const ICON_BY_CATEGORY_NAME = {
   'Atmospherics': 'wrench',
@@ -63,24 +67,20 @@ export const RapidPipeDispenser = (props, context) => {
     piping_layer,
     mode,
   } = data;
-  const previews = data.preview_rows.flatMap(row => row.previews);
-  const [
-    categoryName,
-    setCategoryName,
-  ] = useLocalState(context, 'categoryName');
-  const shownCategory = categories
-    .find(category => category.cat_name === categoryName)
-    || categories[0];
+  const previews = data.preview_rows.flatMap((row) => row.previews);
+  const [categoryName, setCategoryName] = useLocalState(
+    context,
+    'categoryName'
+  );
+  const shownCategory =
+    categories.find((category) => category.cat_name === categoryName) ||
+    categories[0];
   return (
-    <Window
-      width={425}
-      height={515}
-      resizable>
+    <Window width={425} height={515} resizable>
       <Window.Content scrollable>
         <Section>
           <LabeledList>
-            <LabeledList.Item
-              label="Category">
+            <LabeledList.Item label="Category">
               {ROOT_CATEGORIES.map((categoryName, i) => (
                 <Button
                   key={categoryName}
@@ -88,38 +88,40 @@ export const RapidPipeDispenser = (props, context) => {
                   icon={ICON_BY_CATEGORY_NAME[categoryName]}
                   color="transparent"
                   content={categoryName}
-                  onClick={() => act('category', { category: i })} />
+                  onClick={() => act('category', { category: i })}
+                />
               ))}
             </LabeledList.Item>
             <LabeledList.Item label="Modes">
-              {TOOLS.map(tool => (
+              {TOOLS.map((tool) => (
                 <Button.Checkbox
                   key={tool.bitmask}
                   checked={mode & tool.bitmask}
                   content={tool.name}
-                  onClick={() => act('mode', {
-                    mode: tool.bitmask,
-                  })} />
+                  onClick={() =>
+                    act('mode', {
+                      mode: tool.bitmask,
+                    })
+                  }
+                />
               ))}
             </LabeledList.Item>
-            <LabeledList.Item
-              label="Color">
-              <Box
-                inline
-                width="64px"
-                color={PAINT_COLORS[selected_color]}>
+            <LabeledList.Item label="Color">
+              <Box inline width="64px" color={PAINT_COLORS[selected_color]}>
                 {selected_color}
               </Box>
-              {Object.keys(PAINT_COLORS)
-                .map(colorName => (
-                  <ColorBox
-                    key={colorName}
-                    ml={1}
-                    color={PAINT_COLORS[colorName]}
-                    onClick={() => act('color', {
+              {Object.keys(PAINT_COLORS).map((colorName) => (
+                <ColorBox
+                  key={colorName}
+                  ml={1}
+                  color={PAINT_COLORS[colorName]}
+                  onClick={() =>
+                    act('color', {
                       paint_color: colorName,
-                    })} />
-                ))}
+                    })
+                  }
+                />
+              ))}
             </LabeledList.Item>
           </LabeledList>
         </Section>
@@ -128,20 +130,23 @@ export const RapidPipeDispenser = (props, context) => {
             <Section>
               {rootCategoryIndex === 0 && (
                 <Box mb={1}>
-                  {[1, 2, 3, 4, 5].map(layer => (
+                  {[1, 2, 3, 4, 5].map((layer) => (
                     <Button.Checkbox
                       key={layer}
                       fluid
                       checked={layer === piping_layer}
                       content={'Layer ' + layer}
-                      onClick={() => act('piping_layer', {
-                        piping_layer: layer,
-                      })} />
+                      onClick={() =>
+                        act('piping_layer', {
+                          piping_layer: layer,
+                        })
+                      }
+                    />
                   ))}
                 </Box>
               )}
               <Box width="108px">
-                {previews.map(preview => (
+                {previews.map((preview) => (
                   <Button
                     key={preview.dir}
                     title={preview.dir_name}
@@ -151,10 +156,13 @@ export const RapidPipeDispenser = (props, context) => {
                       height: '48px',
                       padding: 0,
                     }}
-                    onClick={() => act('setdir', {
-                      dir: preview.dir,
-                      flipped: preview.flipped,
-                    })}>
+                    onClick={() =>
+                      act('setdir', {
+                        dir: preview.dir,
+                        flipped: preview.flipped,
+                      })
+                    }
+                  >
                     <Box
                       className={classes([
                         'pipes32x32',
@@ -162,7 +170,8 @@ export const RapidPipeDispenser = (props, context) => {
                       ])}
                       style={{
                         transform: 'scale(1.5) translate(17%, 17%)',
-                      }} />
+                      }}
+                    />
                   </Button>
                 ))}
               </Box>
@@ -177,12 +186,13 @@ export const RapidPipeDispenser = (props, context) => {
                     key={category.cat_name}
                     icon={ICON_BY_CATEGORY_NAME[category.cat_name]}
                     selected={category.cat_name === shownCategory.cat_name}
-                    onClick={() => setCategoryName(category.cat_name)}>
+                    onClick={() => setCategoryName(category.cat_name)}
+                  >
                     {category.cat_name}
                   </Tabs.Tab>
                 ))}
               </Tabs>
-              {shownCategory?.recipes.map(recipe => (
+              {shownCategory?.recipes.map((recipe) => (
                 <Button.Checkbox
                   key={recipe.pipe_index}
                   fluid
@@ -190,10 +200,13 @@ export const RapidPipeDispenser = (props, context) => {
                   checked={recipe.selected}
                   content={recipe.pipe_name}
                   title={recipe.pipe_name}
-                  onClick={() => act('pipe_type', {
-                    pipe_type: recipe.pipe_index,
-                    category: shownCategory.cat_name,
-                  })} />
+                  onClick={() =>
+                    act('pipe_type', {
+                      pipe_type: recipe.pipe_index,
+                      category: shownCategory.cat_name,
+                    })
+                  }
+                />
               ))}
             </Section>
           </Flex.Item>

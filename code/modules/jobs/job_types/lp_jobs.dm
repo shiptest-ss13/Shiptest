@@ -1,7 +1,4 @@
 /datum/job/lp
-	faction = "Station"
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_SEC
 
 /datum/outfit/job/lp
 	implants = list(/obj/item/implant/mindshield)
@@ -18,7 +15,7 @@
 	name = "LP Lieutenant"
 	jobtype = /datum/job/lp/lieutenant
 
-	ears = /obj/item/radio/headset/headset_com
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
 	id = /obj/item/card/id/lplieu
 	belt = /obj/item/pda/captain
 	gloves = /obj/item/clothing/gloves/color/black
@@ -47,7 +44,7 @@
 	name = "LP Security Specialist"
 	jobtype = /datum/job/lp/security
 
-	ears = /obj/item/radio/headset/headset_com
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
 	id = /obj/item/card/id/lpsec
 	belt = /obj/item/pda/security
 	gloves = /obj/item/clothing/gloves/color/black
@@ -76,7 +73,7 @@
 	name = "LP Engineering Specialist"
 	jobtype = /datum/job/lp/engineer
 
-	ears = /obj/item/radio/headset/headset_com
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
 	id = /obj/item/card/id/lpengie
 	belt = /obj/item/pda/engineering
 	gloves = /obj/item/clothing/gloves/color/yellow
@@ -105,7 +102,7 @@
 	name = "LP Medical specialist"
 	jobtype = /datum/job/lp/medic
 
-	ears = /obj/item/radio/headset/headset_com
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
 	id = /obj/item/card/id/lpmed
 	belt = /obj/item/pda/medical
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
@@ -136,7 +133,7 @@
 	name = "LP Commissioner"
 	jobtype = /datum/job/lp/commissioner
 
-	ears = /obj/item/radio/headset/headset_com
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
 	id = /obj/item/card/id/lpcomm
 	belt = /obj/item/pda/heads/lp/commissioner
 	gloves = /obj/item/clothing/gloves/color/black
@@ -159,7 +156,7 @@
 	outfit = /datum/outfit/job/scientist/lp
 
 /datum/outfit/job/scientist/lp
-	ears = /obj/item/radio/headset/binary
+	ears = /obj/item/radio/headset/nanotrasen
 	jobtype = /datum/job/scientist/lp
 
 /datum/job/mining/lp
@@ -168,7 +165,7 @@
 	outfit = /datum/outfit/job/miner/lp
 
 /datum/outfit/job/miner/lp
-	ears = /obj/item/radio/headset/binary
+	ears = /obj/item/radio/headset/nanotrasen
 	jobtype = /datum/job/mining/lp
 
 /datum/job/doctor/lp
@@ -177,7 +174,7 @@
 	outfit = /datum/outfit/job/doctor/lp
 
 /datum/outfit/job/doctor/lp
-	ears = /obj/item/radio/headset/binary
+	ears = /obj/item/radio/headset/nanotrasen
 	jobtype = /datum/job/doctor/lp
 
 /datum/job/bartender/lp
@@ -186,5 +183,5 @@
 	outfit = /datum/outfit/job/bartender/lp
 
 /datum/outfit/job/bartender/lp
-	ears = /obj/item/radio/headset/binary
+	ears = /obj/item/radio/headset/nanotrasen
 	jobtype = /datum/job/bartender/lp

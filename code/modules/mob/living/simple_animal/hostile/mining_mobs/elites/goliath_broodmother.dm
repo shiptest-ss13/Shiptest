@@ -4,17 +4,17 @@
 #define CALL_CHILDREN 4
 
 /**
-  * # Goliath Broodmother
-  *
-  * A stronger, faster variation of the goliath.  Has the ability to spawn baby goliaths, which it can later detonate at will.
-  * When it's health is below half, tendrils will spawn randomly around it.  When it is below a quarter of health, this effect is doubled.
-  * It's attacks are as follows:
-  * - Spawns a 3x3/plus shape of tentacles on the target location
-  * - Spawns 2 baby goliaths on its tile, up to a max of 8.  Children blow up when they die.
-  * - The broodmother lets out a noise, and is able to move faster for 6.5 seconds.
-  * - Summons your children around you.
-  * The broodmother is a fight revolving around stage control, as the activator has to manage the baby goliaths and the broodmother herself, along with all the tendrils.
-  */
+ * # Goliath Broodmother
+ *
+ * A stronger, faster variation of the goliath.  Has the ability to spawn baby goliaths, which it can later detonate at will.
+ * When it's health is below half, tendrils will spawn randomly around it.  When it is below a quarter of health, this effect is doubled.
+ * It's attacks are as follows:
+ * - Spawns a 3x3/plus shape of tentacles on the target location
+ * - Spawns 2 baby goliaths on its tile, up to a max of 8.  Children blow up when they die.
+ * - The broodmother lets out a noise, and is able to move faster for 6.5 seconds.
+ * - Summons your children around you.
+ * The broodmother is a fight revolving around stage control, as the activator has to manage the baby goliaths and the broodmother herself, along with all the tendrils.
+ */
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother
 	name = "goliath broodmother"
@@ -111,7 +111,7 @@
 			var/turf/t = pick_n_take(tentacle_loc)
 			new /obj/effect/temp_visual/goliath_tentacle/broodmother(t, src)
 
-/mob/living/simple_animal/hostile/asteroid/elite/broodmother/proc/tentacle_patch(var/target)
+/mob/living/simple_animal/hostile/asteroid/elite/broodmother/proc/tentacle_patch(target)
 	ranged_cooldown = world.time + 15
 	var/tturf = get_turf(target)
 	if(!isturf(tturf))
@@ -119,7 +119,7 @@
 	visible_message("<span class='warning'>[src] digs its tentacles under [target]!</span>")
 	new /obj/effect/temp_visual/goliath_tentacle/broodmother/patch(tturf, src)
 
-/mob/living/simple_animal/hostile/asteroid/elite/broodmother/proc/spawn_children(var/target)
+/mob/living/simple_animal/hostile/asteroid/elite/broodmother/proc/spawn_children(target)
 	ranged_cooldown = world.time + 40
 	visible_message("<span class='boldwarning'>The ground churns behind [src]!</span>")
 	for(var/i in 1 to 2)
@@ -220,6 +220,9 @@
 
 /obj/effect/temp_visual/goliath_tentacle/broodmother/patch/Initialize(mapload, new_spawner)
 	. = ..()
+	INVOKE_ASYNC(src, .proc/createpatch)
+
+/obj/effect/temp_visual/goliath_tentacle/broodmother/patch/proc/createpatch()
 	var/tentacle_locs = spiral_range_turfs(1, get_turf(src))
 	for(var/T in tentacle_locs)
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T, spawner)
@@ -244,3 +247,12 @@
 /obj/item/crusher_trophy/broodmother_tongue/on_mark_detonation(mob/living/target, mob/living/user)
 	if(rand(1, 100) <= bonus_value && target.stat != DEAD)
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother/patch(get_turf(target), user)
+
+/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet
+	name = "baby gruboid"
+	desc = "A young gruboid recently born. As a defense mechanism, they violently explode if killed."
+	icon_state = "gruboid_baby"
+	icon_living = "gruboid_baby"
+	icon_aggro = "gruboid_baby"
+	icon_dead = "gruboid_baby_dead"
+	icon_gib = "syndicate_gib"

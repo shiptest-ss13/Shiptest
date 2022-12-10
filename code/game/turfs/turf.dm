@@ -77,10 +77,10 @@
 	. = ..()
 
 /**
-  * Turf Initialize
-  *
-  * Doesn't call parent, see [/atom/proc/Initialize]
-  */
+ * Turf Initialize
+ *
+ * Doesn't call parent, see [/atom/proc/Initialize]
+ */
 /turf/Initialize(mapload, inherited_virtual_z)
 	SHOULD_CALL_PARENT(FALSE)
 	if(flags_1 & INITIALIZED_1)
@@ -465,7 +465,7 @@
 //////////////////////////////
 
 //Distance associates with all directions movement
-/turf/proc/Distance(var/turf/T)
+/turf/proc/Distance(turf/T)
 	return get_dist(src,T)
 
 //  This Distance proc assumes that only cardinal movement is
@@ -537,7 +537,7 @@
 	underlay_appearance.dir = adjacency_dir
 	return TRUE
 
-/turf/proc/add_blueprints(var/atom/movable/AM)
+/turf/proc/add_blueprints(atom/movable/AM)
 	var/image/I = new
 	I.appearance = AM.appearance
 	I.appearance_flags = RESET_COLOR|RESET_ALPHA|RESET_TRANSFORM
@@ -636,8 +636,8 @@
 		. |= R.expose_turf(src, reagents[R])
 
 /**
-  * Called when this turf is being washed. Washing a turf will also wash any mopable floor decals
-  */
+ * Called when this turf is being washed. Washing a turf will also wash any mopable floor decals
+ */
 /turf/wash(clean_types)
 	. = ..()
 

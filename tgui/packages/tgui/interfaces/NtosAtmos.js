@@ -8,26 +8,18 @@ import { NtosWindow } from '../layouts';
 
 export const NtosAtmos = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    AirTemp,
-    AirPressure,
-  } = data;
+  const { AirTemp, AirPressure } = data;
   const gases = flow([
-    filter(gas => gas.percentage >= 0.01),
-    sortBy(gas => -gas.percentage),
+    filter((gas) => gas.percentage >= 0.01),
+    sortBy((gas) => -gas.percentage),
   ])(data.AirData || []);
-  const gasMaxPercentage = Math.max(1, ...gases.map(gas => gas.percentage));
+  const gasMaxPercentage = Math.max(1, ...gases.map((gas) => gas.percentage));
   return (
-    <NtosWindow
-      width={300}
-      height={350}
-      resizable>
+    <NtosWindow width={300} height={350} resizable>
       <NtosWindow.Content scrollable>
         <Section>
           <LabeledList>
-            <LabeledList.Item label="Temperature">
-              {AirTemp}°C
-            </LabeledList.Item>
+            <LabeledList.Item label="Temperature">{AirTemp}°C</LabeledList.Item>
             <LabeledList.Item label="Pressure">
               {AirPressure} kPa
             </LabeledList.Item>
@@ -35,15 +27,14 @@ export const NtosAtmos = (props, context) => {
         </Section>
         <Section>
           <LabeledList>
-            {gases.map(gas => (
-              <LabeledList.Item
-                key={gas.name}
-                label={getGasLabel(gas.name)}>
+            {gases.map((gas) => (
+              <LabeledList.Item key={gas.name} label={getGasLabel(gas.name)}>
                 <ProgressBar
                   color={getGasColor(gas.name)}
                   value={gas.percentage}
                   minValue={0}
-                  maxValue={gasMaxPercentage}>
+                  maxValue={gasMaxPercentage}
+                >
                   {toFixed(gas.percentage, 2) + '%'}
                 </ProgressBar>
               </LabeledList.Item>

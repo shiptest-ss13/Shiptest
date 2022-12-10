@@ -144,6 +144,7 @@
 		var/turf/ending = locate(x_pos_ending[side], y_pos_ending[side], z_value)
 		for(var/turf/Turf as anything in block(beginning, ending))
 			Turf.ChangeTurf(/turf/closed/indestructible/edge, flags = CHANGETURF_IGNORE_AIR|CHANGETURF_DEFER_BATCH)
+			// DEBUG: add CHECK_TICK
 
 	for(var/side in 1 to 4)
 		var/turf/beginning = locate(x_pos_beginning[side], y_pos_beginning[side], z_value)
@@ -153,6 +154,7 @@
 			QUEUE_SMOOTH_NEIGHBORS(Turf)
 			for(var/turf/open/space/adj in RANGE_TURFS(1, Turf))
 				adj.check_starlight(Turf)
+			// DEBUG: add CHECK_TICK ???
 
 /datum/virtual_level/proc/selfloop()
 	link_with(NORTH, src)

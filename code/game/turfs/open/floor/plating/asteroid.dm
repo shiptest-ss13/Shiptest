@@ -13,15 +13,17 @@
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	/// Environment type for the turf
-	var/environment_type = "asteroid"
+	attachment_holes = FALSE
+	/// the icon name to be used: for example, asteroid1 - asteroid12 in the icon file
+	base_icon_state  = "asteroid"
 	/// Base turf type to be created by the tunnel
-	var/turf_type = /turf/open/floor/plating/asteroid
+	var/turf_type = /turf/open/floor/plating/asteroid // is this unused?
 	/// Probability floor has a different icon state
 	var/floor_variance = 20
-	attachment_holes = FALSE
+	/// The max amount of unique icons, plus one
+	var/max_icon_states = 12
 	/// Itemstack to drop when dug by a shovel
-	var/obj/item/stack/digResult = /obj/item/stack/ore/glass/basalt
+	var/obj/item/stack/digResult = /obj/item/stack/ore/glass
 	/// Whether the turf has been dug or not
 	var/dug
 
@@ -29,16 +31,17 @@
 	var/proper_name = name
 	. = ..()
 	name = proper_name
+
 	if(prob(floor_variance))
-		icon_state = "[environment_type][rand(0,12)]"
+		icon_state = "[base_icon_state][rand(0,max_icon_states)]"
 
 /// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/proc/getDug()
 	new digResult(src, 5)
 	if(postdig_icon_change)
 		if(!postdig_icon)
-			icon_plating = "[environment_type]_dug"
-			icon_state = "[environment_type]_dug"
+			icon_plating = "[base_icon_state]_dug"
+			icon_state = "[base_icon_state]_dug"
 	dug = TRUE
 
 /// If the user can dig the turf
@@ -46,7 +49,7 @@
 	if(!dug)
 		return TRUE
 	if(user)
-		to_chat(user, "<span class='warning'>Looks like someone has dug here already!</span>")
+		to_chat(user, "<span class='warning'>You can't dig here!</span>")
 
 /turf/open/floor/plating/asteroid/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return
@@ -73,12 +76,11 @@
 			if(!isturf(user.loc))
 				return
 
-			to_chat(user, "<span class='notice'>You start digging...</span>")
+			balloon_alert(user, "you start digging...")
 
 			if(W.use_tool(src, user, 40, volume=50))
 				if(!can_dig(user))
 					return TRUE
-				to_chat(user, "<span class='notice'>You dig a hole.</span>")
 				getDug()
 				SSblackbox.record_feedback("tally", "pick_used_mining", 1, W.type)
 				return TRUE
@@ -90,55 +92,9 @@
 	. = SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)
 	contents_explosion(severity, target)
 
-/turf/open/floor/plating/lavaland_baseturf
-	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-
-/turf/open/floor/plating/asteroid/basalt
-	name = "volcanic floor"
-	baseturfs = /turf/open/floor/plating/asteroid/basalt
-	icon = 'icons/turf/floors.dmi'
-	icon_state = "basalt"
-	icon_plating = "basalt"
-	environment_type = "basalt"
-	floor_variance = 15
-	digResult = /obj/item/stack/ore/glass/basalt
-
-/turf/open/floor/plating/asteroid/basalt/lava //lava underneath
-	baseturfs = /turf/open/lava/smooth
-
-/turf/open/floor/plating/asteroid/basalt/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
-/turf/open/floor/plating/asteroid/basalt/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	set_basalt_light(src)
-
 /turf/open/floor/plating/asteroid/getDug()
 	set_light(0)
 	return ..()
-
-/proc/set_basalt_light(turf/open/floor/B)
-	switch(B.icon_state)
-		if("basalt1", "basalt2", "basalt3")
-			B.set_light(2, 0.6, LIGHT_COLOR_LAVA) //more light
-		if("basalt5", "basalt9")
-			B.set_light(1.4, 0.6, LIGHT_COLOR_LAVA) //barely anything!
-
-///////Surface. The surface is warm, but survivable without a suit. Internals are required. The floors break to chasms, which drop you into the underground.
-
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
-
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	baseturfs = /turf/open/indestructible/necropolis/icecropolis
-
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	planetary_atmos = FALSE
-	baseturfs = /turf/open/indestructible/necropolis/air
 
 /turf/open/floor/plating/asteroid/lowpressure
 	initial_gas_mix = OPENTURF_LOW_PRESSURE
@@ -150,73 +106,3 @@
 	baseturfs = /turf/open/floor/plating/asteroid/airless
 	turf_type = /turf/open/floor/plating/asteroid/airless
 
-/turf/open/floor/plating/asteroid/snow
-	gender = PLURAL
-	name = "snow"
-	desc = "Looks cold."
-	icon = 'icons/turf/snow.dmi'
-	baseturfs = /turf/open/floor/plating/asteroid/snow
-	icon_state = "snow"
-	icon_plating = "snow"
-	initial_gas_mix = FROZEN_ATMOS
-	slowdown = 2
-	environment_type = "snow"
-	flags_1 = NONE
-	planetary_atmos = TRUE
-	broken_states = list("snow_dug")
-	burnt_states = list("snow_dug")
-	bullet_sizzle = TRUE
-	bullet_bounce_sound = null
-	digResult = /obj/item/stack/sheet/mineral/snow
-
-/turf/open/floor/plating/asteroid/snow/burn_tile()
-	if(!burnt)
-		visible_message("<span class='danger'>[src] melts away!.</span>")
-		slowdown = 0
-		burnt = TRUE
-		icon_state = "snow_dug"
-		return TRUE
-	return FALSE
-
-/turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/openspace/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	slowdown = 0
-
-/turf/open/lava/plasma/ice_moon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	baseturfs = /turf/open/lava/plasma/ice_moon
-	planetary_atmos = TRUE
-
-/turf/open/floor/plating/asteroid/snow/ice
-	name = "icy snow"
-	desc = "Looks colder."
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120"
-	floor_variance = 0
-	icon_state = "snow-ice"
-	icon_plating = "snow-ice"
-	environment_type = "snow_cavern"
-	footstep = FOOTSTEP_FLOOR
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-
-/turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	slowdown = 0
-
-/turf/open/floor/plating/asteroid/snow/ice/burn_tile()
-	return FALSE
-
-/turf/open/floor/plating/asteroid/snow/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
-/turf/open/floor/plating/asteroid/snow/temperatre
-	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
-
-/turf/open/floor/plating/asteroid/snow/atmosphere
-	initial_gas_mix = FROZEN_ATMOS
-	planetary_atmos = FALSE

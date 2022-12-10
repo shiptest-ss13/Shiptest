@@ -76,13 +76,13 @@
 					return
 
 /**
-  * Adds crime to security record.
-  *
-  * Is used to add single crime to someone's security record.
-  * Arguments:
-  * * id - record id.
-  * * datum/data/crime/crime - premade array containing every variable, usually created by createCrimeEntry.
-  */
+ * Adds crime to security record.
+ *
+ * Is used to add single crime to someone's security record.
+ * Arguments:
+ * * id - record id.
+ * * datum/data/crime/crime - premade array containing every variable, usually created by createCrimeEntry.
+ */
 /datum/datacore/proc/addCrime(id = "", datum/data/crime/crime)
 	for(var/datum/data/record/R in security)
 		if(R.fields["id"] == id)
@@ -91,13 +91,13 @@
 			return
 
 /**
-  * Deletes crime from security record.
-  *
-  * Is used to delete single crime to someone's security record.
-  * Arguments:
-  * * id - record id.
-  * * cDataId - id of already existing crime.
-  */
+ * Deletes crime from security record.
+ *
+ * Is used to delete single crime to someone's security record.
+ * Arguments:
+ * * id - record id.
+ * * cDataId - id of already existing crime.
+ */
 /datum/datacore/proc/removeCrime(id, cDataId)
 	for(var/datum/data/record/R in security)
 		if(R.fields["id"] == id)
@@ -108,14 +108,14 @@
 					return
 
 /**
-  * Adds details to a crime.
-  *
-  * Is used to add or replace details to already existing crime.
-  * Arguments:
-  * * id - record id.
-  * * cDataId - id of already existing crime.
-  * * details - data you want to add.
-  */
+ * Adds details to a crime.
+ *
+ * Is used to add or replace details to already existing crime.
+ * Arguments:
+ * * id - record id.
+ * * cDataId - id of already existing crime.
+ * * details - data you want to add.
+ */
 /datum/datacore/proc/addCrimeDetails(id, cDataId, details)
 	for(var/datum/data/record/R in security)
 		if(R.fields["id"] == id)
@@ -154,11 +154,10 @@
 	for(var/datum/data/record/t in GLOB.data_core.general)
 		var/name = t.fields["name"]
 		var/rank = t.fields["rank"]
-		var/truerank = t.fields["truerank"]
 		var/has_department = FALSE
 		for(var/department in departments)
 			var/list/jobs = departments[department]
-			if((rank in jobs) || (truerank in jobs)) //WS edit - alt titles
+			if((rank in jobs))
 				if(!manifest_out[department])
 					manifest_out[department] = list()
 				// Append to beginning of list if captain or department head
@@ -223,13 +222,6 @@
 		else
 			assignment = "Unassigned"
 
-		//WS begin - Alt job titles
-		var/trueassignment = assignment
-		if(C && C.prefs && C.prefs.alt_titles_preferences[assignment])
-			trueassignment = assignment
-			assignment = C.prefs.alt_titles_preferences[assignment]
-		//WS end
-
 		var/static/record_id_num = 1001
 		var/id = num2hex(record_id_num++,6)
 		if(!C)
@@ -252,7 +244,6 @@
 		G.fields["id"]			= id
 		G.fields["name"]		= H.real_name
 		G.fields["rank"]		= assignment
-		G.fields["truerank"]	= trueassignment //WS edit - This PR Keeps Me Up At Night (Alternate Job Titles) - Artist: Mark Suckerberg
 		G.fields["age"]			= H.age
 		G.fields["species"]	= H.dna.species.name
 		G.fields["fingerprint"]	= md5(H.dna.uni_identity)
