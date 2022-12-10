@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"an" = (
+/obj/machinery/telecomms/processor/preset_four,
+/turf/open/floor/plating,
+/area/ship/engineering/communications)
 "ao" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/communications)
@@ -27,6 +31,10 @@
 "cL" = (
 /turf/open/floor/plating,
 /area/ship/cargo/port)
+"cT" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/turf/open/floor/plating,
+/area/ship/engineering/communications)
 "cV" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/storage)
@@ -80,9 +88,6 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/engine/airless,
 /area/ship/engineering/atmospherics)
-"fC" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/space)
 "fK" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo/starboard)
@@ -158,6 +163,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"ls" = (
+/obj/machinery/telecomms/broadcaster,
+/turf/open/floor/plating,
+/area/ship/engineering/communications)
 "lw" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -267,6 +276,10 @@
 "sy" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo/starboard)
+"sG" = (
+/obj/machinery/telecomms/bus/preset_four,
+/turf/open/floor/plating,
+/area/ship/engineering/communications)
 "sV" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/storage)
@@ -279,6 +292,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"tz" = (
+/obj/machinery/telecomms/server/presets/inteq,
+/turf/open/floor/plating,
+/area/ship/engineering/communications)
 "tA" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering)
@@ -323,6 +340,10 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"xz" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/engineering/communications)
 "xI" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/canteen)
@@ -544,6 +565,10 @@
 /obj/machinery/photocopier/faxmachine/longrange,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"OX" = (
+/obj/machinery/telecomms/receiver,
+/turf/open/floor/plating,
+/area/ship/engineering/communications)
 "Pp" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo/port)
@@ -830,8 +855,8 @@ ao
 Oi
 Oi
 Oi
-Oi
-Oi
+xz
+ls
 ao
 vp
 "}
@@ -864,9 +889,9 @@ ao
 Oi
 Oi
 Oi
+xz
 Oi
-Oi
-Oi
+an
 ao
 "}
 (8,1,1) = {"
@@ -898,9 +923,9 @@ pX
 Oi
 Oi
 Oi
+cT
 Oi
-Oi
-Oi
+tz
 ao
 "}
 (9,1,1) = {"
@@ -932,9 +957,9 @@ QD
 Oi
 Oi
 Oi
+xz
 Oi
-Oi
-Oi
+sG
 ao
 "}
 (10,1,1) = {"
@@ -966,8 +991,8 @@ ao
 Oi
 Oi
 Oi
-Oi
-Oi
+xz
+OX
 ao
 hp
 "}
@@ -1723,7 +1748,7 @@ sw
 sw
 sw
 sw
-fC
+UD
 yp
 jj
 tL
