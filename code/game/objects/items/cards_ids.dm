@@ -825,13 +825,13 @@ update_label()
 	desc = "A SolGov ID with no proper access to speak of. This one indicates an Elite."
 	assignment = "Elite"
 
-/obj/item/card/id/away/slime //We're ranchin, baby! //It's slimin time
-	name = "\improper Slime Lab access card"
-	desc = "An ID card with access to the Slime Lab"
-	assignment = "Slime Research Staff"
+/obj/item/card/id/away/slime //We're ranchin, baby!
+	name = "\improper Slime Ranch access card"
+	desc = "An ID card with access to the farm."
+	assignment = "Slime Rancher"
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_XENOBIOLOGY)
-	registered_name = "Slime Researcher"
-	icon_state = "id"
+	registered_name = "Slime Rancher"
+	icon_state = "syndie"
 
 /obj/item/card/id/departmental_budget
 	name = "departmental card (FUCK)"

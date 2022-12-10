@@ -63,7 +63,7 @@
 	src.interface = interface
 	if(title)
 		src.title = title
-	src.state = src_object.ui_state(user)
+	src.state = src_object.ui_state()
 	// Deprecated
 	if(ui_x && ui_y)
 		src.window_size = list(ui_x, ui_y)

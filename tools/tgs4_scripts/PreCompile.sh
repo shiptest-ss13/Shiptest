@@ -63,14 +63,13 @@ fi
 # update auxmos
 if [ ! -d "auxmos" ]; then
 	echo "Cloning auxmos..."
-	git clone "$AUXMOS_REPO"
+	git clone https://github.com/Putnam3145/auxmos
 	cd auxmos
 	~/.cargo/bin/rustup target add i686-unknown-linux-gnu
 	cd ..
 else
 	echo "Fetching auxmos..."
 	cd auxmos
-	git remote set-url origin "$AUXMOS_REPO"
 	git fetch
 	~/.cargo/bin/rustup target add i686-unknown-linux-gnu
 	cd ..

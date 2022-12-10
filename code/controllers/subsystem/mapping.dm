@@ -8,10 +8,6 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/map_templates = list()
 
-/* HEY LISTEN //
- * IF YOU ADD A NEW TYPE OF RUIN, ADD IT TO code\__DEFINES\ruins.dm
- */
-
 	var/list/ruins_templates = list()
 	var/list/space_ruins_templates = list()
 	var/list/lava_ruins_templates = list()

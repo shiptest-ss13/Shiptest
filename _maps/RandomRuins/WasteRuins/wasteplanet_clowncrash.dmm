@@ -28,16 +28,9 @@
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "e" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/window/plasma/reinforced{
-	name = "clowning grade window"
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plating,
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp/bananalamp,
+/turf/open/floor/noslip,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "f" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -58,11 +51,8 @@
 /turf/open/floor/noslip,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "i" = (
-/obj/structure/table/reinforced,
-/obj/item/flashlight/lamp/bananalamp,
-/obj/machinery/power/terminal,
-/obj/structure/cable,
-/turf/open/floor/noslip,
+/obj/structure/shuttle/engine/propulsion,
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "j" = (
 /mob/living/simple_animal/bot/honkbot,
@@ -86,13 +76,6 @@
 /obj/item/bikehorn/airhorn,
 /obj/item/nullrod/clown,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"q" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/effect/turf_decal/box/white,
-/turf/open/floor/noslip,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "r" = (
 /obj/structure/table/reinforced,
@@ -136,15 +119,6 @@
 "B" = (
 /turf/closed/wall/mineral/titanium,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"C" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/noslip,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "D" = (
 /obj/item/wrench,
 /obj/structure/rack,
@@ -153,11 +127,8 @@
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "E" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
+/obj/structure/shuttle/engine/heater,
+/turf/closed/wall/mineral/titanium,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "F" = (
 /obj/structure/fence{
@@ -174,14 +145,6 @@
 "H" = (
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"I" = (
-/obj/item/clothing/suit/space/hardsuit/clown,
-/obj/item/clothing/head/helmet/space/hardsuit/clown,
-/obj/structure/rack,
-/obj/machinery/power/terminal,
-/obj/structure/cable,
-/turf/open/floor/noslip,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "J" = (
 /obj/machinery/power/floodlight,
 /obj/structure/cable{
@@ -197,7 +160,7 @@
 "L" = (
 /obj/structure/fence/corner,
 /turf/open/floor/plating/asteroid/wasteplanet,
-/area/template_noop)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "M" = (
 /obj/structure/fence,
 /turf/open/floor/plating/asteroid/wasteplanet,
@@ -243,9 +206,9 @@
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "V" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/item/clothing/suit/space/hardsuit/clown,
+/obj/item/clothing/head/helmet/space/hardsuit/clown,
+/obj/structure/rack,
 /turf/open/floor/noslip,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "W" = (
@@ -285,7 +248,6 @@ k
 k
 k
 k
-k
 M
 M
 a
@@ -298,7 +260,6 @@ k
 k
 k
 u
-H
 D
 H
 c
@@ -311,7 +272,6 @@ k
 k
 Z
 r
-H
 H
 l
 H
@@ -328,7 +288,6 @@ N
 H
 H
 H
-H
 S
 g
 "}
@@ -341,7 +300,6 @@ y
 h
 B
 B
-B
 R
 d
 U
@@ -352,11 +310,10 @@ B
 b
 x
 P
-V
-i
+P
 e
 E
-H
+i
 S
 F
 "}
@@ -365,12 +322,11 @@ k
 w
 Y
 t
-q
-C
-I
-e
+P
+P
+V
 E
-H
+i
 S
 F
 "}
@@ -383,7 +339,6 @@ s
 h
 B
 B
-B
 K
 S
 F
@@ -394,7 +349,6 @@ k
 k
 o
 l
-H
 H
 H
 H
@@ -411,7 +365,6 @@ O
 j
 H
 H
-H
 J
 T
 m
@@ -423,7 +376,6 @@ Q
 k
 k
 k
-M
 M
 M
 M

@@ -56,18 +56,6 @@ SUBSYSTEM_DEF(garbage)
 	#endif
 	#endif
 
-/datum/controller/subsystem/garbage/get_metrics()
-	. = ..()
-	var/list/cust = list()
-	// You can calculate TGCR in kibana
-	cust["total_harddels"] = totaldels
-	cust["total_softdels"] = totalgcs
-	var/i = 0
-	for(var/list/L in queues)
-		i++
-		cust["queue_[i]"] = length(L)
-
-	.["custom"] = cust
 
 /datum/controller/subsystem/garbage/PreInit()
 	InitQueues()
@@ -181,7 +169,6 @@ SUBSYSTEM_DEF(garbage)
 		if(GCd_at_time > cut_off_time)
 			break // Everything else is newer, skip them
 		count++
-
 		var/refID = L[2]
 		var/datum/D
 		D = locate(refID)
