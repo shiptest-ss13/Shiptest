@@ -384,6 +384,7 @@
 	dir = 4;
 	pixel_x = -7
 	},
+/mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
 "bM" = (
@@ -859,6 +860,10 @@
 /obj/item/clothing/under/drip,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
+"dG" = (
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "dJ" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/structure/cable{
@@ -1447,6 +1452,13 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
+"gn" = (
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/obj/effect/turf_decal/siding,
+/obj/structure/railing,
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/spacemall)
 "go" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -1882,7 +1894,7 @@
 /area/ruin/space/has_grav/spacemall)
 "if" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/contraband/robust_softdrinks{
+/obj/structure/sign/poster/contraband/mothpill{
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel,
@@ -2789,7 +2801,6 @@
 "mh" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/blue/full,
-/obj/item/circuitboard/machine/chem_dispenser,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
 "ml" = (
@@ -3199,6 +3210,15 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
+"oj" = (
+/obj/effect/turf_decal/corner/opaque/grey/diagonal,
+/obj/structure/chair/sofa{
+	dir = 4;
+	pixel_x = -7
+	},
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/spacemall)
 "ok" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3264,7 +3284,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
+/mob/living/simple_animal/hostile/poison/giant_spider{
+	name = "Giant Enemy Spider";
+	health = 600
+	},
 /turf/open/floor/carpet/green,
 /area/ruin/space/has_grav/spacemall/maint)
 "ox" = (
@@ -4025,6 +4048,17 @@
 /obj/structure/table/glass,
 /turf/open/floor/light,
 /area/ruin/space/has_grav/spacemall/shop2)
+"rv" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wideplating/dark,
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall)
 "ry" = (
 /obj/machinery/door/window{
 	dir = 4
@@ -5043,6 +5077,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
+"vQ" = (
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall)
 "vR" = (
 /obj/structure/railing/corner{
 	dir = 8;
@@ -6965,6 +7003,9 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/box/white,
 /obj/item/binoculars,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "Dy" = (
@@ -7714,7 +7755,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall)
 "GS" = (
-/obj/structure/sign/poster/contraband/revolver{
+/obj/structure/sign/poster/contraband/borg_fancy_1{
 	pixel_x = 32
 	},
 /turf/open/floor/wood/walnut,
@@ -7889,9 +7930,6 @@
 /obj/structure/sign/poster/contraband/smoke{
 	pixel_x = -32
 	},
-/obj/machinery/light{
-	dir = 8
-	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "HB" = (
@@ -7915,6 +7953,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "HG" = (
 /obj/structure/spider/stickyweb,
+/obj/structure/spider/eggcluster,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/maint)
 "HI" = (
@@ -8242,7 +8281,6 @@
 /area/ruin/space/has_grav/spacemall)
 "Jk" = (
 /obj/structure/rack,
-/obj/item/vending_refill/mining_equipment,
 /obj/item/pickaxe/drill,
 /obj/effect/turf_decal/siding/wideplating/dark/end,
 /turf/open/floor/light,
@@ -10315,6 +10353,7 @@
 /obj/machinery/computer/security/telescreen{
 	pixel_y = 30
 	},
+/obj/structure/spider/eggcluster,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/maint)
 "Sg" = (
@@ -11359,6 +11398,19 @@
 "Xb" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/spacemall/shop)
+"Xf" = (
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall)
 "Xj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spider/stickyweb,
@@ -12264,7 +12316,7 @@ qK
 qK
 qK
 cs
-cs
+dG
 Yo
 dQ
 PE
@@ -12866,7 +12918,7 @@ gi
 BQ
 gi
 gi
-cj
+gn
 zf
 ql
 gi
@@ -13368,7 +13420,7 @@ SA
 Au
 eY
 DP
-rf
+vQ
 rf
 rf
 rf
@@ -13379,7 +13431,7 @@ ol
 rf
 ll
 tZ
-bJ
+oj
 bJ
 tZ
 zp
@@ -13585,7 +13637,7 @@ NS
 NC
 qh
 Ni
-Ni
+Xf
 Ni
 Ni
 Ni
@@ -14481,7 +14533,7 @@ dv
 dv
 dv
 ds
-SX
+rv
 UW
 Jx
 Od
