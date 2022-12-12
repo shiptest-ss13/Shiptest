@@ -167,11 +167,11 @@
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -196,6 +196,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
 	dir = 4
+	},
+/obj/structure/sign/poster/contraband/robustmore_drinkfoods{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -334,9 +337,6 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/turf_decal/spline/fancy/transparent/grey{
 	dir = 6
-	},
-/obj/structure/sign/poster/contraband/robust_softdrinks{
-	pixel_y = -32
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -831,6 +831,9 @@
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = 30
+	},
+/obj/structure/sign/poster/contraband/stechkin{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office)
@@ -1333,10 +1336,6 @@
 /obj/item/circuitboard/machine/vendor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
-"Ia" = (
-/obj/structure/sign/poster/contraband/revolver,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/office)
 "Ig" = (
 /obj/machinery/power/smes,
 /obj/structure/cable{
@@ -1578,17 +1577,13 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
-"OB" = (
-/obj/structure/sign/poster/contraband/syndicate_pistol,
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering)
 "OD" = (
 /obj/machinery/light/small,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2050,7 +2045,7 @@ ru
 ru
 "}
 (3,1,1) = {"
-OB
+ru
 XJ
 YG
 ru
@@ -2316,7 +2311,7 @@ yG
 mD
 qo
 sR
-Ia
+lZ
 pM
 YQ
 YQ
