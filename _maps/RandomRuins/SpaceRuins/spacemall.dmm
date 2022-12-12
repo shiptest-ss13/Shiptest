@@ -98,15 +98,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
-"au" = (
-/obj/effect/turf_decal/siding/wideplating/dark/corner{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall)
 "aw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -1933,9 +1924,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "hx" = (
@@ -2568,9 +2556,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "jW" = (
@@ -3128,15 +3113,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
-"mc" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall)
 "mg" = (
 /obj/structure/sign/departments/security{
 	pixel_x = -31
@@ -4542,9 +4518,8 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
@@ -6546,9 +6521,6 @@
 	dir = 10
 	},
 /obj/structure/spider/stickyweb,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "yT" = (
@@ -7085,18 +7057,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/space/has_grav/spacemall/shop)
-"AT" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer4{
-	dir = 8
-	},
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = -25
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall)
 "AZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -8832,15 +8792,6 @@
 /obj/item/laser_pointer,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
-"HA" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall)
 "HB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -9216,8 +9167,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
@@ -12580,12 +12531,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/external/glass,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall)
 "VR" = (
@@ -12676,12 +12622,6 @@
 /area/ruin/space/has_grav/spacemall/shop)
 "Wf" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -13542,9 +13482,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
-	dir = 4
-	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall)
 "ZK" = (
@@ -14730,7 +14668,7 @@ FH
 bw
 eJ
 pH
-mc
+UW
 Iw
 Kh
 Kh
@@ -14780,7 +14718,7 @@ SU
 bw
 BE
 pH
-AT
+UW
 bP
 Kh
 Kh
@@ -14830,7 +14768,7 @@ Pi
 bw
 zf
 pH
-HA
+UW
 Iw
 Kh
 Kh
@@ -15080,7 +15018,7 @@ hp
 UW
 tZ
 uc
-au
+TG
 Eu
 rf
 pH
