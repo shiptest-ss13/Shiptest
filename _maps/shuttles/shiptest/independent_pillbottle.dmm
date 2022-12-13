@@ -288,7 +288,7 @@
 	roundstart_template = /datum/map_template/shuttle/subshuttles/pill;
 	height = 3;
 	width = 1;
-	load_template_on_initialize = false
+	load_template_on_initialize = 0
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
@@ -2806,7 +2806,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
-	dir = 4;
+	dir = 8;
 	launch_status = 0;
 	port_direction = 4;
 	preferred_direction = 4

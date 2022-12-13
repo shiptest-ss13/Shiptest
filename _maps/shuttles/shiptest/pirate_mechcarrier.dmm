@@ -4143,10 +4143,11 @@
 "Uu" = (
 /obj/docking_port/stationary{
 	roundstart_template = /datum/map_template/shuttle/subshuttles/minimalta;
-	dheight = 5;
 	height = 5;
 	width = 11;
-	load_template_on_initialize = false
+	load_template_on_initialize = 0;
+	dwidth = 3;
+	dir = 2
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo/office)
