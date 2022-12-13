@@ -114,7 +114,7 @@
 			var/list/area/all_shuttle_areas = list()
 			for(var/obj/docking_port/mobile/M in get_all_towed_shuttles())
 				all_shuttle_areas |= M.shuttle_areas
-			move_mode = old_area.beforeShuttleMove(all_shuttle_areas)											//areas
+			move_mode = old_area.beforeShuttleMove(all_shuttle_areas)											//areas											//areas
 
 			var/list/old_contents = oldT.contents
 			for(var/k in 1 to old_contents.len)
@@ -282,7 +282,6 @@
 			A2.lateShuttleMove()
 		catch(var/exception/e4)
 			exceptions_list += e4
-
 
 	for(var/i in 1 to areas_to_move.len)
 		try

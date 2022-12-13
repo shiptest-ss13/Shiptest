@@ -131,8 +131,6 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 
 /obj/item/shuttle_creator/proc/shuttle_create_docking_port(atom/target, mob/user)
 
-	if(!create_shuttle_area(user))
-		return FALSE
 	if(loggedTurfs.len == 0 || !recorded_shuttle_area)
 		to_chat(user, "<span class='warning'>Invalid shuttle, restarting bluespace systems...</span>")
 		return FALSE
@@ -164,6 +162,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 		return FALSE
 
 	port.shuttle_areas = list()
+	//var/list/all_turfs = port.return_ordered_turfs(port.x, port.y, port.z, port.dir)
 	for(var/i in 1 to loggedTurfs.len)
 		var/turf/curT = loggedTurfs[i]
 		var/area/old_area = curT.loc
@@ -180,13 +179,6 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 		sanity.Insert(3, /turf/baseturf_skipover/shuttle)
 		curT.baseturfs = baseturfs_string_list(sanity, curT)
 		port.shuttle_areas[recorded_shuttle_area] = TRUE
-
-	recorded_shuttle_area.reg_in_areas_in_z()
-
-	var/list/firedoors = loggedOldArea.firedoors
-	for(var/door in firedoors)
-		var/obj/machinery/door/firedoor/FD = door
-		FD.CalculateAffectingAreas()
 
 	var/datum/overmap/ship/controlled/new_custom_ship = new(SSovermap.get_overmap_object_by_location(port), SSmapping.shuttle_templates["custom_shuttle"], FALSE)
 	port.linkup(stationary_port, new_custom_ship)
@@ -223,6 +215,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	newS.requires_power = TRUE
 	//Record the area for use when creating the docking port
 	recorded_shuttle_area = newS
+
 	return TRUE
 
 /obj/item/shuttle_creator/proc/check_current_area(mob/user)

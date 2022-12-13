@@ -337,7 +337,6 @@ SUBSYSTEM_DEF(shuttle)
 	for(var/obj/docking_port/stationary/S in stationary_ports)
 		S.load_roundstart()
 
-
 	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)
 
 	if(!transit_dock)
