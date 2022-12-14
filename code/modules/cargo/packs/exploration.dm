@@ -37,7 +37,7 @@
 		/obj/item/clothing/shoes/winterboots,
 		/obj/item/clothing/shoes/winterboots,
 		/obj/item/clothing/shoes/winterboots,
-)
+	)
 	crate_name = "Ice Exploration Kit"
 
 /datum/supply_pack/exploration/jungle
