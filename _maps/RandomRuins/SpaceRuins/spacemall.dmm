@@ -45,6 +45,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/item/trash/plate,
 /obj/item/reagent_containers/food/snacks/hotdog,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "am" = (
@@ -287,7 +288,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "aX" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall/dorms)
 "aY" = (
 /obj/effect/turf_decal/corner/transparent/red/diagonal,
@@ -335,6 +336,10 @@
 /obj/item/stack/sheet/metal/five,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/dorms)
+"bm" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/grass,
+/area/ruin/space/has_grav/spacemall)
 "bn" = (
 /obj/structure/table/glass,
 /obj/item/toy/talking/AI{
@@ -919,6 +924,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "dC" = (
@@ -1204,6 +1210,7 @@
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/machinery/paystand,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "ex" = (
@@ -1774,6 +1781,10 @@
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop2)
+"gK" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/grass,
+/area/ruin/space/has_grav/spacemall)
 "gL" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -1977,6 +1988,7 @@
 "hr" = (
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "hs" = (
@@ -2336,7 +2348,7 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "iL" = (
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "iM" = (
 /obj/effect/decal/remains/human,
@@ -2438,7 +2450,8 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "ja" = (
 /obj/machinery/door/airlock/public/glass{
-	name = "Hardware Store"
+	name = "Hardware Store";
+	locked = 1
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "engishop_shutters"
@@ -2555,6 +2568,7 @@
 	},
 /obj/item/trash/plate,
 /obj/item/reagent_containers/food/snacks/burger,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "jw" = (
@@ -2582,7 +2596,7 @@
 /area/ruin/space/has_grav/spacemall)
 "jC" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "jD" = (
 /obj/effect/turf_decal/box,
@@ -2865,6 +2879,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "kx" = (
@@ -3118,6 +3133,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 10
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "lv" = (
@@ -3218,6 +3234,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "lM" = (
@@ -3240,7 +3257,7 @@
 /area/ruin/space/has_grav/spacemall)
 "lP" = (
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall/dorms)
 "lQ" = (
 /obj/effect/decal/cleanable/glass,
@@ -3455,7 +3472,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "mQ" = (
-/obj/machinery/computer/arcade{
+/obj/machinery/computer/arcade/battle{
 	dir = 4
 	},
 /turf/open/floor/eighties,
@@ -3881,9 +3898,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	name = "Giant Enemy Spider";
-	health = 600
+/mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
+	name = "Giant Enemy Spider"
 	},
 /turf/open/floor/carpet/green,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -4191,12 +4207,13 @@
 /area/ruin/space/has_grav/spacemall)
 "pC" = (
 /obj/structure/flora/ausbushes/palebush,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "pE" = (
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/item/trash/plate,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "pF" = (
@@ -4252,6 +4269,17 @@
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
+"pO" = (
+/obj/effect/turf_decal/corner/opaque/black/diagonal,
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/table,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall)
 "pP" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2
@@ -4299,6 +4327,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "pW" = (
@@ -6396,7 +6425,7 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "xd" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "xe" = (
 /obj/effect/turf_decal/siding/wood,
@@ -6826,7 +6855,8 @@
 /area/ruin/space/has_grav/spacemall)
 "yP" = (
 /obj/machinery/door/airlock/public/glass{
-	name = "Clothing Store"
+	name = "Clothing Store";
+	locked = 1
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = clothing_shutter
@@ -6937,7 +6967,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "ze" = (
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "zf" = (
 /obj/structure/flora/junglebush/b,
@@ -8598,7 +8628,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "EW" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall/dorms)
 "EX" = (
 /obj/effect/decal/cleanable/ash,
@@ -8896,7 +8926,7 @@
 /area/ruin/space/has_grav/spacemall)
 "FZ" = (
 /obj/structure/flora/junglebush,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "Gb" = (
 /obj/structure/disposalpipe/segment{
@@ -8980,7 +9010,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "Gw" = (
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "Gx" = (
 /obj/effect/turf_decal/corner/transparent/lime{
@@ -9037,6 +9067,7 @@
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/item/reagent_containers/food/snacks/spidereggsham,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "GN" = (
@@ -9367,6 +9398,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
+"Ia" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/table,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/dorms)
 "Ie" = (
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
 /obj/machinery/light/small,
@@ -9662,6 +9699,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "Jd" = (
@@ -9672,7 +9710,7 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "Jh" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "Jk" = (
 /obj/structure/rack,
@@ -9743,13 +9781,18 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "JC" = (
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "JE" = (
 /obj/structure/bed,
 /obj/item/bedsheet/dorms,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/dorms)
+"JF" = (
+/obj/effect/turf_decal/corner/transparent/red/diagonal,
+/obj/structure/table,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/spacemall)
 "JM" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
@@ -10648,6 +10691,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "MS" = (
@@ -11546,11 +11590,11 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "Qc" = (
-/obj/machinery/computer/arcade{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/computer/arcade/orion_trail{
+	dir = 4
 	},
 /turf/open/floor/eighties,
 /area/ruin/space/has_grav/spacemall/shop2)
@@ -11716,7 +11760,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "QN" = (
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "QO" = (
 /obj/item/dualsaber/toy,
@@ -11831,7 +11875,6 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "Rd" = (
 /obj/structure/table/reinforced,
-/obj/structure/table/reinforced,
 /obj/machinery/paystand,
 /turf/open/floor/carpet/blue,
 /area/ruin/space/has_grav/spacemall/shop)
@@ -11944,7 +11987,7 @@
 /area/ruin/space/has_grav/spacemall/shop)
 "RJ" = (
 /obj/structure/flora/ausbushes,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "RL" = (
 /obj/effect/turf_decal/corner/transparent/solgovgold/three_quarters,
@@ -12246,7 +12289,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "SU" = (
-/obj/structure/table/reinforced,
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 10
@@ -12662,7 +12704,7 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "Uq" = (
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Us" = (
 /obj/effect/turf_decal/trimline/opaque/solgovblue/arrow_cw,
@@ -12806,7 +12848,7 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "UP" = (
 /obj/structure/flora/junglebush/b,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall/dorms)
 "UQ" = (
 /obj/machinery/door/window,
@@ -12958,6 +13000,12 @@
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
+"Vs" = (
+/obj/machinery/computer/arcade/orion_trail{
+	dir = 4
+	},
+/turf/open/floor/eighties,
+/area/ruin/space/has_grav/spacemall/shop2)
 "Vt" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/structure/cable{
@@ -13425,7 +13473,7 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "Xk" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "Xl" = (
 /obj/machinery/light/small{
@@ -13536,6 +13584,7 @@
 	dir = 8
 	},
 /obj/machinery/paystand,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "XG" = (
@@ -13649,6 +13698,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "Ye" = (
@@ -14154,6 +14204,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "ZV" = (
@@ -15042,17 +15093,17 @@ Yo
 cs
 Vo
 Yo
-hZ
+JF
 BQ
-hZ
-hZ
+JF
+JF
 gn
-zf
+gK
 ql
+JF
+JF
 hZ
-hZ
-hZ
-hZ
+JF
 tZ
 qP
 aZ
@@ -15094,13 +15145,13 @@ la
 Yo
 gx
 BQ
-hZ
-hZ
+JF
+JF
 cj
 FZ
 ql
-hZ
-hZ
+JF
+JF
 hZ
 gx
 tZ
@@ -15197,7 +15248,7 @@ BQ
 hZ
 hZ
 cj
-zf
+gK
 ql
 hZ
 hZ
@@ -15214,7 +15265,7 @@ yt
 uz
 qr
 fR
-UR
+Ia
 wR
 eq
 Iz
@@ -15242,17 +15293,17 @@ Yo
 hK
 Vo
 Yo
-hZ
+JF
 BQ
 VZ
-hZ
+JF
 cj
-eJ
+bm
 ql
-hZ
+JF
 oQ
 hZ
-hZ
+JF
 tZ
 oe
 hj
@@ -15566,7 +15617,7 @@ zp
 fA
 ze
 ze
-zf
+gK
 ze
 ze
 Jh
@@ -15639,7 +15690,7 @@ ze
 ze
 ze
 ze
-zf
+gK
 nf
 rf
 tZ
@@ -15669,7 +15720,7 @@ ze
 jC
 ze
 ze
-eJ
+bm
 hp
 UW
 tZ
@@ -15914,8 +15965,8 @@ bM
 iB
 UW
 Cy
-mQ
-mQ
+Vs
+Vs
 Qc
 Aa
 DV
@@ -16059,7 +16110,7 @@ TV
 NR
 jC
 QN
-zf
+gK
 bM
 zy
 UW
@@ -16159,7 +16210,7 @@ TV
 NR
 Jh
 ze
-eJ
+bm
 Bu
 SX
 UW
@@ -16609,7 +16660,7 @@ TV
 Dn
 QN
 ze
-eJ
+bm
 bM
 SX
 UW
@@ -16809,7 +16860,7 @@ TV
 Dn
 ze
 ze
-eJ
+bm
 bM
 PK
 pw
@@ -16959,7 +17010,7 @@ TV
 Dn
 ze
 ze
-zf
+gK
 bM
 SX
 UW
@@ -17406,7 +17457,7 @@ zi
 RG
 dO
 AG
-KQ
+pO
 gg
 CQ
 DC
@@ -17456,7 +17507,7 @@ kr
 RG
 dO
 YG
-KQ
+pO
 gg
 uF
 gg
@@ -17808,7 +17859,7 @@ dO
 YG
 MD
 ze
-zf
+gK
 Jh
 bM
 SX
@@ -17959,7 +18010,7 @@ pi
 ZA
 jC
 ze
-eJ
+bm
 bM
 iB
 mu
