@@ -19,7 +19,7 @@
 		/obj/item/clothing/glasses/heat,
 		/obj/item/stack/rods/lava/thirty,
 		/obj/item/stack/rods/lava/thirty
-)
+	)
 	crate_name = "Lava Exploration Kit"
 
 /datum/supply_pack/exploration/ice
