@@ -1,18 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aa" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/obj/structure/lattice/catwalk,
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "ab" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2
@@ -478,7 +464,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "bU" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -633,7 +618,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "cu" = (
-/obj/structure/lattice/catwalk,
 /obj/machinery/camera/autoname{
 	dir = 9;
 	network = list("mall")
@@ -1168,7 +1152,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
 	normaldoorcontrol = 1;
-	id = staffdoors;
+	id = "staffdoors";
 	name = "Staff Lockdown";
 	specialfunctions = 4;
 	dir = 1
@@ -1576,20 +1560,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/maint)
-"fL" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/lattice/catwalk,
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "fN" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1802,7 +1772,6 @@
 /turf/open/floor/carpet/green,
 /area/ruin/space/has_grav/spacemall/maint)
 "gN" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1828,7 +1797,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -1952,7 +1920,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 1
 	},
@@ -2664,17 +2631,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop2)
-"jL" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/lattice/catwalk,
-/obj/structure/lattice/catwalk,
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "jN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -3034,21 +2990,6 @@
 /obj/item/toy/foamblade,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop2)
-"lh" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/lattice/catwalk,
-/obj/structure/spider/stickyweb,
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "lk" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
@@ -3178,7 +3119,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/railing/corner,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shuttle)
@@ -3637,7 +3577,6 @@
 	dir = 6
 	},
 /obj/structure/spider/stickyweb,
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -3728,7 +3667,6 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/space/has_grav/spacemall/shop)
 "nO" = (
-/obj/structure/lattice/catwalk,
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
@@ -3744,7 +3682,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
 "nX" = (
-/obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
@@ -3803,7 +3740,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 1
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -3842,7 +3778,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -4144,7 +4079,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -4320,6 +4254,7 @@
 	pixel_x = 15;
 	pixel_y = 5
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "pU" = (
@@ -4333,7 +4268,7 @@
 "pW" = (
 /obj/machinery/door/airlock/security/glass{
 	locked = 1;
-	id_tag = staffdoors;
+	id_tag = "staffdoors";
 	name = "Security Office"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -4624,8 +4559,8 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "qI" = (
 /obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
 /obj/structure/cable,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/dorms)
 "qK" = (
@@ -4775,7 +4710,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall)
 "rn" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -4794,7 +4728,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "rp" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -4906,7 +4839,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -5223,7 +5155,6 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -5376,20 +5307,6 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
-"tk" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 6
-	},
-/obj/structure/lattice/catwalk,
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "tl" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced/spawner,
@@ -5437,7 +5354,6 @@
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/dorms)
 "ts" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -5563,7 +5479,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -5830,7 +5745,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "uH" = (
-/obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
@@ -5890,7 +5804,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -5924,7 +5837,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "uV" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -5981,7 +5893,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter{
 	environment_smash = 0
@@ -6039,7 +5950,7 @@
 "vt" = (
 /obj/machinery/door/airlock{
 	locked = 1;
-	id_tag = staffdoors;
+	id_tag = "staffdoors";
 	name = "Staff Area"
 	},
 /obj/structure/cable{
@@ -6093,7 +6004,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/firealarm{
 	pixel_y = -30
@@ -6319,6 +6229,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/dorms)
+"wD" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/maint)
 "wE" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating,
@@ -6354,6 +6270,9 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -6564,7 +6483,6 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/lattice/catwalk,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shuttle)
@@ -6602,6 +6520,7 @@
 /obj/structure/window/spawner{
 	dir = 1
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "xV" = (
@@ -6640,7 +6559,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
 "xZ" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
@@ -7107,11 +7025,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shop2)
-"zC" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "zD" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -7194,7 +7107,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating,
@@ -7498,7 +7410,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
 "Bg" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -8063,6 +7974,9 @@
 	dir = 4
 	},
 /obj/structure/spider/stickyweb,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Dm" = (
@@ -8294,6 +8208,7 @@
 	pixel_y = 5
 	},
 /obj/item/stack/arcadeticket/thirty,
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "DW" = (
@@ -8350,7 +8265,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -8654,7 +8568,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -8669,7 +8582,6 @@
 	dir = 4
 	},
 /obj/structure/spider/stickyweb,
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -8680,7 +8592,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/spider/stickyweb,
-/obj/structure/lattice/catwalk,
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
@@ -9125,7 +9036,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -9357,7 +9267,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/lattice/catwalk,
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
@@ -9398,12 +9307,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
-"Ia" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/structure/table,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/dorms)
 "Ie" = (
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
 /obj/machinery/light/small,
@@ -9455,7 +9358,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -9471,7 +9373,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -9496,11 +9397,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/maint)
-"Iw" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall)
 "Ix" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -9572,10 +9468,10 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "IH" = (
 /obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/dorms)
 "II" = (
@@ -9603,7 +9499,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -10136,7 +10031,6 @@
 	dir = 6
 	},
 /obj/structure/spider/stickyweb,
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -10158,7 +10052,7 @@
 /obj/structure/barricade/security,
 /obj/machinery/door/airlock/security/glass{
 	locked = 1;
-	id_tag = staffdoors;
+	id_tag = "staffdoors";
 	name = "Security Office"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -10243,7 +10137,6 @@
 	dir = 4
 	},
 /obj/structure/spider_player/cocoon,
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -10285,7 +10178,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
 /obj/structure/disposalpipe/broken,
 /obj/structure/spider/stickyweb,
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -10634,7 +10526,6 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/ruin/space/has_grav/spacemall/maint)
 "MH" = (
@@ -10789,7 +10680,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "Nj" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/railing{
 	dir = 4
 	},
@@ -10980,7 +10870,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
@@ -10999,7 +10888,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
 "NL" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -11076,7 +10964,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -11323,7 +11210,6 @@
 /obj/structure/disposalpipe/junction/flip{
 	dir = 1
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -11386,7 +11272,6 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -11627,7 +11512,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -11720,7 +11604,7 @@
 /area/ruin/space/has_grav/spacemall)
 "QH" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	id_tag = staffdoors;
+	id_tag = "staffdoors";
 	locked = 1;
 	name = "Kitchen"
 	},
@@ -11739,7 +11623,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "QL" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -11801,7 +11684,7 @@
 /obj/structure/barricade/wooden,
 /obj/machinery/door/airlock{
 	locked = 1;
-	id_tag = staffdoors;
+	id_tag = "staffdoors";
 	name = "Kitchen"
 	},
 /obj/structure/disposalpipe/segment{
@@ -12137,7 +12020,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -12418,7 +12300,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -12507,7 +12388,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "TE" = (
-/obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/ruin/space/has_grav/spacemall/maint)
 "TG" = (
@@ -12854,11 +12734,6 @@
 /obj/machinery/door/window,
 /turf/open/floor/wood/walnut,
 /area/ruin/space/has_grav/spacemall/shop)
-"UR" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/dorms)
 "UW" = (
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /turf/open/floor/plasteel/dark,
@@ -12995,7 +12870,6 @@
 	dir = 1
 	},
 /obj/structure/closet/crate,
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plating,
@@ -13041,7 +12915,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "Vy" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable,
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/spider/stickyweb,
@@ -13058,7 +12931,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/shop2)
 "VD" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -13106,7 +12978,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/railing{
 	dir = 4
 	},
@@ -13287,7 +13158,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -13360,6 +13230,7 @@
 /obj/machinery/paystand{
 	pixel_y = 5
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "WO" = (
@@ -13367,6 +13238,7 @@
 	dir = 1
 	},
 /obj/item/toy/figure/assistant,
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "WR" = (
@@ -13416,7 +13288,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -13483,20 +13354,6 @@
 	dir = 2
 	},
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
-"Xm" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 9
-	},
-/obj/structure/lattice/catwalk,
-/obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "Xo" = (
@@ -13570,7 +13427,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -13613,7 +13469,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -13767,7 +13622,6 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/structure/lattice/catwalk,
 /obj/structure/railing{
 	dir = 4
 	},
@@ -13803,6 +13657,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "Yy" = (
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "Yz" = (
@@ -13837,6 +13692,7 @@
 /obj/machinery/paystand{
 	pixel_y = 5
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "YC" = (
@@ -13937,7 +13793,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -14130,7 +13985,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -14151,7 +14005,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
-/obj/structure/lattice/catwalk,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -15165,7 +15018,7 @@ yt
 BL
 HC
 fR
-UR
+bH
 gt
 cm
 Qu
@@ -15265,7 +15118,7 @@ yt
 uz
 qr
 fR
-Ia
+bH
 wR
 eq
 Iz
@@ -15276,7 +15129,7 @@ bw
 eJ
 pH
 UW
-Iw
+pH
 Kh
 Kh
 "}
@@ -15376,7 +15229,7 @@ bw
 zf
 pH
 UW
-Iw
+pH
 Kh
 Kh
 "}
@@ -15941,7 +15794,7 @@ UQ
 PW
 Yo
 cs
-aa
+Vo
 pe
 CU
 XM
@@ -16041,7 +15894,7 @@ UQ
 CH
 Yo
 yA
-fL
+ZS
 pe
 pe
 pe
@@ -16223,7 +16076,7 @@ qN
 jw
 ru
 Yo
-fL
+ZS
 kS
 Hv
 Kh
@@ -16273,7 +16126,7 @@ Cy
 Cy
 Yo
 Yo
-fL
+ZS
 BW
 Hv
 Kh
@@ -16388,7 +16241,7 @@ qK
 qK
 Yo
 bA
-fL
+ZS
 Yo
 Yo
 LX
@@ -16422,7 +16275,7 @@ yG
 xQ
 mI
 Yo
-fL
+ZS
 QD
 qK
 qK
@@ -16472,7 +16325,7 @@ iJ
 WO
 Lq
 Yo
-fL
+ZS
 Ge
 qK
 Kh
@@ -16671,8 +16524,8 @@ tl
 Dt
 Rl
 Yo
-tk
-Xm
+vn
+SH
 cr
 Hv
 Kh
@@ -16737,7 +16590,7 @@ Kh
 Kh
 Hv
 Ge
-fL
+ZS
 Yo
 Yo
 NL
@@ -16771,7 +16624,7 @@ xp
 TZ
 Dd
 Yo
-fL
+ZS
 Wb
 qK
 qK
@@ -16897,7 +16750,7 @@ zY
 rD
 zY
 Qb
-fL
+ZS
 pe
 js
 kk
@@ -16971,7 +16824,7 @@ Cy
 Cy
 Yo
 Yo
-fL
+ZS
 Ge
 Hv
 Kh
@@ -17021,9 +16874,9 @@ GX
 tm
 ye
 WT
-Xm
+SH
 Ge
-Hv
+wD
 Kh
 Kh
 Kh
@@ -17047,7 +16900,7 @@ Kh
 ff
 Hv
 Ge
-fL
+ZS
 pe
 jH
 BM
@@ -17170,7 +17023,7 @@ mY
 FJ
 fa
 Yo
-fL
+ZS
 qb
 qK
 Kh
@@ -17220,7 +17073,7 @@ Cy
 Cy
 Cy
 Yo
-fL
+ZS
 qb
 qK
 Kh
@@ -17247,7 +17100,7 @@ TE
 LJ
 Vc
 fX
-fL
+ZS
 pe
 pl
 hX
@@ -17320,7 +17173,7 @@ ah
 Di
 Ap
 Yo
-fL
+ZS
 oO
 qK
 Kh
@@ -17370,7 +17223,7 @@ jW
 yk
 oF
 Yo
-fL
+ZS
 Xx
 qK
 Kh
@@ -17397,7 +17250,7 @@ Nj
 AM
 Ev
 uX
-fL
+ZS
 pe
 Ca
 eb
@@ -17470,7 +17323,7 @@ cH
 yp
 ln
 Yo
-fL
+ZS
 Kn
 qK
 Kh
@@ -17497,7 +17350,7 @@ Kh
 ff
 Hv
 JT
-fL
+ZS
 pe
 cA
 eW
@@ -17520,7 +17373,7 @@ RV
 cL
 aN
 Yo
-fL
+ZS
 Mp
 qK
 Kh
@@ -17570,9 +17423,9 @@ GC
 lo
 NT
 Yo
-fL
+ZS
 qb
-zC
+Hv
 Kh
 Kh
 Kh
@@ -17597,7 +17450,7 @@ FM
 ff
 qK
 IX
-lh
+Fc
 pe
 ox
 TH
@@ -17622,7 +17475,7 @@ KB
 Vt
 Yx
 bA
-zC
+Hv
 Kh
 Kh
 Kh
@@ -17670,9 +17523,9 @@ Cy
 Cy
 Cy
 Yo
-fL
+ZS
 bA
-zC
+Hv
 Kh
 Kh
 Kh
@@ -17722,7 +17575,7 @@ zB
 Yo
 Ll
 qb
-zC
+Hv
 Kh
 Kh
 Kh
@@ -17770,7 +17623,7 @@ to
 Al
 qC
 Yo
-fL
+ZS
 qb
 qK
 Kh
@@ -17844,7 +17697,7 @@ eH
 as
 BV
 fX
-fL
+ZS
 Yo
 Hq
 vG
@@ -17894,7 +17747,7 @@ cg
 Tc
 Yo
 SK
-fL
+ZS
 Yo
 yQ
 CJ
@@ -17920,9 +17773,9 @@ GE
 Al
 zl
 Yo
-fL
+ZS
 bA
-zC
+Hv
 Kh
 Kh
 Kh
@@ -17970,9 +17823,9 @@ qc
 Jt
 Al
 Yo
-fL
+ZS
 bA
-zC
+Hv
 Kh
 Kh
 Kh
@@ -17990,7 +17843,7 @@ mG
 sy
 gT
 Po
-jL
+Ww
 Ww
 Ww
 pL
@@ -18022,7 +17875,7 @@ ny
 hh
 Lt
 bQ
-zC
+Hv
 Kh
 Kh
 Kh
@@ -18070,9 +17923,9 @@ wX
 ad
 Zq
 Yo
-fL
+ZS
 qb
-zC
+Hv
 Kh
 Kh
 Kh
@@ -18094,7 +17947,7 @@ qK
 qK
 qK
 Ge
-fL
+ZS
 Yo
 Yo
 Yo
@@ -18120,7 +17973,7 @@ Cy
 Cy
 Cy
 Yo
-fL
+ZS
 bA
 qK
 Kh
