@@ -6762,9 +6762,6 @@
 	name = "Clothing Store";
 	locked = 1
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = clothing_shutter
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -6773,6 +6770,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "clothing_shutter"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
@@ -7134,10 +7134,10 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "Ad" = (
 /obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = clothing_shutter
-	},
 /obj/structure/window/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "clothing_shutter"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shop)
 "Ag" = (
@@ -11024,6 +11024,14 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/ruin/space/has_grav/spacemall/maint)
+"Oq" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "clothing_shutter"
+	},
+/obj/structure/window/fulltile,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/shop)
 "Or" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -12731,7 +12739,7 @@
 "Va" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = clothing_shutter;
+	id = "clothing_shutter";
 	name = "Shop Shutters";
 	dir = 4
 	},
@@ -15935,7 +15943,7 @@ NW
 zR
 Qy
 PH
-Ad
+Oq
 UW
 TV
 NR
