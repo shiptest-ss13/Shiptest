@@ -87,4 +87,5 @@
 		/obj/item/survivalcapsule,
 		/obj/item/survivalcapsule,
 		/obj/item/survivalcapsule,
-)
+	)
+
