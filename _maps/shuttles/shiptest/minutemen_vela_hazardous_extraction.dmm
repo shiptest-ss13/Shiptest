@@ -3845,15 +3845,14 @@
 	id = "obcargo"
 	},
 /obj/structure/cable,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 4;
-	id = "obcargos";
-	CanAtmosPass = s
-	},
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "obcargos"
+	},
 /turf/open/floor/engine,
 /area/ship/cargo)
 "uY" = (
