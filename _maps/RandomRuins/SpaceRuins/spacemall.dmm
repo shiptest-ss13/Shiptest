@@ -1137,6 +1137,13 @@
 	},
 /turf/open/floor/light,
 /area/ruin/space/has_grav/spacemall/shop2)
+"en" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/structure/window/fulltile,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall)
 "ep" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1592,11 +1599,6 @@
 	pixel_x = 30
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
-"fU" = (
-/obj/structure/grille,
-/obj/structure/window/fulltile,
-/turf/closed/wall,
 /area/ruin/space/has_grav/spacemall/shop)
 "fW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -5119,7 +5121,7 @@
 /obj/item/kirbyplants/random,
 /obj/machinery/button/door{
 	pixel_y = -25;
-	id = shutters_kitchen;
+	id = "shutters_kitchen";
 	name = "Kitchen Shutters";
 	dir = 1
 	},
@@ -15605,7 +15607,7 @@ UW
 Yc
 tG
 IV
-bu
+en
 rf
 pH
 "}
@@ -16733,7 +16735,7 @@ kk
 dx
 IO
 or
-fU
+RH
 UW
 TV
 Dn
