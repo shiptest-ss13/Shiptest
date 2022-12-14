@@ -1754,6 +1754,10 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "kb" = (
@@ -2709,8 +2713,8 @@
 /turf/open/floor/engine,
 /area/ship/hangar/starboard)
 "pR" = (
-/obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/kirbyplants/random,
 /turf/open/floor/carpet/green,
 /area/ship/crew)
 "pW" = (
@@ -4202,6 +4206,11 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = 7
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "xz" = (
@@ -4737,6 +4746,7 @@
 /area/ship/hangar/starboard)
 "Ap" = (
 /obj/machinery/ore_silo,
+/obj/machinery/light/floor,
 /turf/open/floor/pod/dark,
 /area/ship/security/armory)
 "Aq" = (
