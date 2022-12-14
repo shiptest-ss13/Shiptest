@@ -2282,7 +2282,7 @@
 	pixel_x = -4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = shutters_kitchen
+	id = "shutters_kitchen"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -2821,12 +2821,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
-"ku" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 9
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/spacemall/maint)
 "kv" = (
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -3855,14 +3849,14 @@
 "oy" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /obj/structure/table/reinforced,
-/obj/machinery/door/poddoor/shutters{
-	id = shutters_kitchen
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "shutters_kitchen"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
@@ -5574,10 +5568,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
-"ue" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/spacemall/maint)
 "uf" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
 /obj/effect/decal/cleanable/insectguts,
@@ -6229,12 +6219,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/dorms)
-"wD" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/window/reinforced/fulltile,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/maint)
 "wE" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating,
@@ -7201,14 +7185,6 @@
 /obj/structure/spider/cocoon,
 /turf/open/floor/carpet/green,
 /area/ruin/space/has_grav/spacemall/maint)
-"As" = (
-/obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = clothing_shutter
-	},
-/obj/structure/window/fulltile,
-/turf/closed/wall,
-/area/ruin/space/has_grav/spacemall/shop)
 "Au" = (
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
@@ -16057,7 +16033,7 @@ Pu
 Hp
 Qy
 Dc
-As
+Ad
 UW
 TV
 NR
@@ -16107,7 +16083,7 @@ Pu
 Ot
 Qy
 Cs
-As
+Ad
 UW
 TV
 lE
@@ -16876,7 +16852,7 @@ ye
 WT
 SH
 Ge
-wD
+Hv
 Kh
 Kh
 Kh
@@ -18022,7 +17998,7 @@ Hk
 Yo
 FN
 RU
-ue
+Yo
 XH
 Ud
 qK
@@ -18123,7 +18099,7 @@ qK
 qK
 qK
 qK
-ku
+qK
 qK
 Kh
 Kh
