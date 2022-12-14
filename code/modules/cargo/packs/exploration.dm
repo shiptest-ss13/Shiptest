@@ -50,7 +50,7 @@
 		/obj/item/storage/pill_bottle/charcoal,
 		/obj/item/storage/pill_bottle/charcoal,
 		/obj/item/hatchet,
-)
+	)
 	crate_name = "Jungle Exploration Kit"
 
 /datum/supply_pack/exploration/beach
