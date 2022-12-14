@@ -72,7 +72,7 @@
 		/obj/item/clothing/glasses/cheapsuns,
 		/obj/item/clothing/glasses/cheapsuns,
 		/obj/item/clothing/glasses/cheapsuns,
-)
+	)
 	crate_name = "Beach Kit"
 
 /*
