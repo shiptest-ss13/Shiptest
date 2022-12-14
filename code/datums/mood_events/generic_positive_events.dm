@@ -225,3 +225,16 @@
 	description = "<span class='nicegreen'>HA! What a rube, they never stood a chance...</span>\n"
 	mood_change = 4
 	timeout = 1.5 MINUTES
+
+/datum/mood_event/kiss
+	description = "Someone blew a kiss at me, I must be a real catch!"
+	mood_change = 1.5
+	timeout = 2 MINUTES
+
+/datum/mood_event/kiss/add_effects(mob/beau, direct)
+	if(!beau)
+		return
+	if(direct)
+		description = "[beau.name] gave me a kiss, ahh!!"
+	else
+		description = "[beau.name] blew a kiss at me, I must be a real catch!"

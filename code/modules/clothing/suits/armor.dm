@@ -34,11 +34,11 @@
 	item_state = "armoralt"
 
 /obj/item/clothing/suit/armor/vest/marine
-	name = "tactical armor vest"
-	desc = "A set of the finest mass produced, stamped plasteel armor plates, containing an environmental protection unit for all-condition door kicking."
-	icon_state = "armor_marine"
+	name = "light tactical armor vest"
+	desc = "A set of the finest mass-produced stamped plasteel armor plates money can buy."
+	icon_state = "marine_light"
 	item_state = "armor"
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
+	clothing_flags = THICKMATERIAL
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 25, "bomb" = 50, "bio" = 100, "fire" = 40, "acid" = 50)
 	cold_protection = CHEST | GROIN | LEGS | FEET | ARMS | HANDS
@@ -46,17 +46,13 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
-/obj/item/clothing/suit/armor/vest/marine/security
+/obj/item/clothing/suit/armor/vest/marine/medium
+	name = "medium tactical armor vest"
+	icon_state = "marine_medium"
+
+/obj/item/clothing/suit/armor/vest/marine/heavy
 	name = "large tactical armor vest"
-	icon_state = "marine_security"
-
-/obj/item/clothing/suit/armor/vest/marine/engineer
-	name = "tactical utility armor vest"
-	icon_state = "marine_engineer"
-
-/obj/item/clothing/suit/armor/vest/marine/medic
-	name = "tactical medic's armor vest"
-	icon_state = "marine_medic"
+	icon_state = "marine_heavy"
 
 /obj/item/clothing/suit/armor/vest/old
 	name = "degrading armor vest"
@@ -175,6 +171,12 @@
 	strip_delay = 80
 	equip_delay_other = 60
 
+/obj/item/clothing/suit/armor/riot/minutemen
+	name = "black riot suit"
+	desc = "Designed to protect against close range attacks. This one is painted black. Mainly used by the CM-BARD against hostile xenofauna, it also sees prolific use on some Minutemen member worlds."
+	icon_state = "riot_minutemen"
+
+
 /obj/item/clothing/suit/armor/bone
 	name = "bone armor"
 	desc = "A tribal armor plate, crafted from animal bone."
@@ -184,15 +186,18 @@
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
-/obj/item/clothing/suit/armor/bulletproof
+/obj/item/clothing/suit/armor/vest/bulletproof
 	name = "bulletproof armor"
 	desc = "A Type III heavy bulletproof vest that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
 	icon_state = "bulletproof"
-	item_state = "armor"
-	blood_overlay_type = "armor"
 	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 70
 	equip_delay_other = 50
+
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	name = "\improper Frontiersmen bulletproof armor"
+	desc = "A scrap piece of armor made of disused protective plates. This one was used to protect the squishy bits of a Frontiersman, once."
+	icon_state = "frontier_armor"
 
 /obj/item/clothing/suit/armor/laserproof
 	name = "reflector vest"
@@ -330,7 +335,7 @@
 	desc = "A luxurious brown coat with an crossweave of Kevlar and fur from genuine wolves, as protective as it is stylish."
 	icon_state = "armor_inteq_battlecoat"
 	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"
@@ -386,21 +391,22 @@
 	icon_state = "armor_blueshield"
 	item_state = "blueshield"
 
-/obj/item/clothing/suit/armor/vest/solgov
+/obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	name = "\improper SolGov armor vest"
 	desc = "A standard armor vest fielded for SolGov's infantry."
 	icon_state = "armor_solgov"
 	item_state = "armor_solgov"
 
-/obj/item/clothing/suit/armor/vest/solgov/Initialize()
+/obj/item/clothing/suit/armor/vest/bulletproof/solgov/Initialize()
 	. = ..()
-	allowed |= list(/obj/item/gun/energy/laser/terra, /obj/item/gun/energy/pulse/terra, /obj/item/tank)
+	allowed |= list(/obj/item/gun/ballistic/automatic/assualt/swiss_cheese, /obj/item/tank)
 
-/obj/item/clothing/suit/armor/vest/solgov/rep
+/obj/item/clothing/suit/armor/vest/bulletproof/solgov/rep
 	name = "\improper SolGov Inspector armor vest"
 	desc = "A type I armor vest emblazoned with the SolGov logo."
 	icon_state = "armor_alt_solgov"
 	item_state = "armor_alt_solgov"
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/suit/armor/vest/hop
 	name = "head of personnel's parade jacket"
@@ -476,3 +482,11 @@
 	desc = "A black jacket with dark blue and silver accents, for the brig physician to prove they're a real member of security in style."
 	icon_state = "brigphysjacket"
 	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/armor/frontier
+	name = "reinforced fur coat"
+	desc = "A stiff coat, meant for frigid conditions."
+	icon_state = "frontier_coat"
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	heat_protection = CHEST|GROIN|ARMS

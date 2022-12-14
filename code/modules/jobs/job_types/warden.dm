@@ -60,7 +60,7 @@
 	uniform = /obj/item/clothing/under/solgov
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/beret/solgov
-	suit = /obj/item/clothing/suit/armor/vest/solgov/rep
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov/rep
 
 /datum/outfit/job/warden/chiefmastersergeant
 	name = "Chief Master Sergeant"
@@ -76,7 +76,7 @@
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/cowboy/sec/minutemen
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	belt = /obj/item/storage/belt/military
 	shoes = /obj/item/clothing/shoes/combat
 
