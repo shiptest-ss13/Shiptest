@@ -41,7 +41,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/spacemall/shop2)
 "ai" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/item/trash/plate,
@@ -224,10 +223,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "aL" = (
-/obj/structure/table,
 /obj/item/reagent_containers/glass/rag{
 	pixel_y = 5
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "aN" = (
@@ -824,6 +823,7 @@
 "dn" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/turf_decal/corner/transparent/lime,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "dr" = (
@@ -912,7 +912,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "dA" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 5
@@ -1121,11 +1120,10 @@
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
 /obj/machinery/button/door{
 	pixel_x = -25;
-	id = icecream_kiosk;
+	id = "icecream_kiosk";
 	name = "Kiosk Shutters";
 	dir = 4
 	},
-/obj/structure/table,
 /obj/item/reagent_containers/food/condiment/sugar{
 	pixel_y = 5
 	},
@@ -1203,7 +1201,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "ew" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/machinery/paystand,
@@ -1660,11 +1657,6 @@
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
-"gi" = (
-/obj/effect/turf_decal/corner/transparent/red/diagonal,
-/obj/structure/table,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/spacemall)
 "gm" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1983,7 +1975,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/dorms)
 "hr" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /turf/open/floor/plasteel,
@@ -2469,6 +2460,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
+"jd" = (
+/obj/machinery/door/airlock{
+	name = "Dorm 4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/spacemall/dorms)
 "ji" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -2550,7 +2549,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shop)
 "ju" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
@@ -2785,8 +2783,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/obj/structure/table,
 /obj/item/storage/pill_bottle/charcoal,
+/obj/structure/table,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "kn" = (
@@ -2860,7 +2858,6 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/spacemall/maint)
 "kv" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 9
@@ -3102,10 +3099,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "lq" = (
-/obj/structure/table,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "lr" = (
@@ -3117,7 +3114,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
 "lt" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 10
@@ -3147,10 +3143,10 @@
 /obj/effect/turf_decal/corner/transparent/lime{
 	dir = 4
 	},
-/obj/structure/table,
 /obj/structure/sign/poster/official/sgt{
 	pixel_y = 30
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "lB" = (
@@ -3218,7 +3214,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
 "lK" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
@@ -3396,16 +3391,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
-"mB" = (
-/obj/structure/grille,
-/obj/structure/window/fulltile,
-/obj/structure/window/fulltile,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/shop)
 "mG" = (
-/obj/structure/table,
 /obj/item/flashlight/lamp,
 /obj/effect/decal/cleanable/cobweb,
+/obj/structure/table,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "mI" = (
@@ -3733,8 +3722,8 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "nS" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/structure/table,
 /obj/item/reagent_containers/food/snacks/store/bread/spidermeat,
+/obj/structure/table,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
 "nX" = (
@@ -4205,7 +4194,6 @@
 /turf/open/floor/grass,
 /area/ruin/space/has_grav/spacemall)
 "pE" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/item/trash/plate,
@@ -4304,11 +4292,9 @@
 	pixel_x = 15;
 	pixel_y = 5
 	},
-/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "pU" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
@@ -4600,11 +4586,11 @@
 /area/ruin/space/has_grav/spacemall)
 "qH" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/structure/table,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider{
 	pixel_y = 6
 	},
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider,
+/obj/structure/table,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
 "qI" = (
@@ -5411,7 +5397,7 @@
 /area/ruin/space/has_grav/spacemall)
 "tr" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 4"
+	name = "Dorm 8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -5448,12 +5434,12 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "tw" = (
-/obj/structure/table,
 /obj/machinery/microwave,
 /obj/effect/turf_decal/corner/transparent/lime,
 /obj/structure/sign/poster/official/soft_cap_pop_art{
 	pixel_x = 30
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "ty" = (
@@ -5597,8 +5583,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/table,
 /obj/item/stack/cable_coil/random/five,
+/obj/structure/table,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "tS" = (
@@ -5746,13 +5732,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/maint)
 "uu" = (
-/obj/structure/table,
 /obj/item/trash/plate,
 /obj/structure/railing,
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/dorms)
 "uz" = (
@@ -6059,18 +6045,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
-"vx" = (
-/obj/machinery/door/airlock{
-	name = "Dorm 2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/spacemall/dorms)
 "vA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6216,17 +6190,6 @@
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
-"vZ" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner/opaque/black/diagonal,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 1
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall)
 "wa" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/corner/transparent/lime{
@@ -6291,12 +6254,6 @@
 /obj/item/trash/can/food,
 /obj/item/clothing/neck/stethoscope,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall/shop)
-"wl" = (
-/obj/structure/curtain{
-	open = 0
-	},
-/turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/shop)
 "wt" = (
 /obj/structure/cable{
@@ -6616,7 +6573,6 @@
 /obj/structure/window/spawner{
 	dir = 1
 	},
-/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "xV" = (
@@ -6674,7 +6630,7 @@
 /area/ruin/space/has_grav/spacemall/shop)
 "yb" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 3"
+	name = "Dorm 7"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -6843,7 +6799,7 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "yL" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 5"
+	name = "Dorm 9"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -6924,6 +6880,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
+"yU" = (
+/obj/machinery/door/airlock{
+	name = "Dorm 2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/spacemall/dorms)
 "yV" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -7028,7 +6993,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
 "zo" = (
-/obj/structure/table,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -7040,6 +7004,7 @@
 	pixel_y = 5;
 	pixel_x = 6
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "zp" = (
@@ -7303,12 +7268,12 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/spacemall/shop)
 "Au" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/machinery/door/poddoor/shutters{
-	id = icecream_kiosk
+	id = "icecream_kiosk"
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
 "Ax" = (
@@ -7441,6 +7406,18 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ruin/space/has_grav/spacemall/shop)
+"AY" = (
+/obj/machinery/door/airlock{
+	name = "Dorm 10"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/spacemall/dorms)
 "AZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -7593,9 +7570,9 @@
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/dorms)
 "BH" = (
-/obj/structure/table,
 /obj/machinery/reagentgrinder,
 /obj/effect/turf_decal/corner/transparent/lime,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "BK" = (
@@ -7694,7 +7671,6 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/spacemall/maint)
 "Cd" = (
-/obj/structure/table,
 /obj/structure/bedsheetbin,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -8126,8 +8102,8 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/shop2)
 "Dv" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/transparent/lime,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Dw" = (
@@ -8288,7 +8264,6 @@
 	pixel_y = 5
 	},
 /obj/item/stack/arcadeticket/thirty,
-/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "DW" = (
@@ -8872,8 +8847,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "FM" = (
-/obj/structure/lattice,
 /obj/structure/marker_beacon,
+/obj/structure/lattice,
 /turf/open/space/basic,
 /area/ruin/space/has_grav/spacemall/maint)
 "FN" = (
@@ -8890,9 +8865,9 @@
 /obj/effect/turf_decal/corner/transparent/mauve/half{
 	dir = 1
 	},
-/obj/structure/table,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "FT" = (
@@ -9059,7 +9034,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shop2)
 "GJ" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/item/reagent_containers/food/snacks/spidereggsham,
@@ -9091,13 +9065,13 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "GP" = (
-/obj/structure/table,
 /obj/machinery/paystand,
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/machinery/door/poddoor/shutters{
-	id = icecream_kiosk
+	id = "icecream_kiosk"
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
 "GQ" = (
@@ -9377,8 +9351,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/table,
 /obj/item/storage/toolbox/electrical,
+/obj/structure/table,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "HZ" = (
@@ -9410,10 +9384,10 @@
 /area/ruin/space/has_grav/spacemall)
 "Ih" = (
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/structure/table,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Ij" = (
@@ -9684,7 +9658,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Ja" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
@@ -9873,9 +9846,9 @@
 /obj/effect/turf_decal/corner/transparent/lime{
 	dir = 4
 	},
-/obj/structure/table,
 /obj/item/folder,
 /obj/item/pen,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Kd" = (
@@ -10037,10 +10010,10 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "KD" = (
 /obj/machinery/light,
-/obj/structure/table,
 /obj/item/trash/raisins{
 	pixel_y = 5
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "KH" = (
@@ -10182,17 +10155,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
-"Lf" = (
-/obj/effect/turf_decal/corner/opaque/black/diagonal,
-/obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 1
-	},
-/obj/structure/table,
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall)
 "Lh" = (
 /obj/structure/table/reinforced,
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag{
@@ -10407,12 +10369,12 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "LQ" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
 /obj/structure/sign/poster/contraband/space_up{
 	pixel_x = 30
 	},
 /obj/machinery/cell_charger,
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/dorms)
 "LT" = (
@@ -10552,9 +10514,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall)
 "Mu" = (
-/obj/structure/table,
 /obj/item/storage/box/donkpockets,
 /obj/effect/turf_decal/corner/transparent/lime,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Mv" = (
@@ -10677,7 +10639,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/spacemall/shop2)
 "MP" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
@@ -11230,7 +11191,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "OR" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 2"
+	name = "Dorm 3"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
@@ -11334,11 +11295,11 @@
 /obj/effect/turf_decal/corner/transparent/mauve/half{
 	dir = 1
 	},
-/obj/structure/table,
 /obj/item/lightreplacer{
 	pixel_y = 7;
 	pixel_x = 7
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Pi" = (
@@ -12359,7 +12320,7 @@
 /area/ruin/space/has_grav/spacemall/shop)
 "Tg" = (
 /obj/machinery/door/airlock{
-	name = "Dorm 1"
+	name = "Dorm 5"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -12765,11 +12726,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "UB" = (
-/obj/structure/table,
 /obj/item/paper/crumpled,
 /obj/item/pen{
 	pixel_x = -5
 	},
+/obj/structure/table,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "UD" = (
@@ -13145,10 +13106,10 @@
 /obj/effect/turf_decal/corner/transparent/mauve/half{
 	dir = 1
 	},
-/obj/structure/table,
 /obj/item/restraints/legcuffs/beartrap{
 	pixel_y = 5
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "VZ" = (
@@ -13177,8 +13138,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "Wd" = (
-/obj/structure/table,
 /obj/item/storage/firstaid/regular,
+/obj/structure/table,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "We" = (
@@ -13286,13 +13247,13 @@
 /obj/effect/turf_decal/corner/transparent/mauve/half{
 	dir = 1
 	},
-/obj/structure/table,
 /obj/item/storage/box/mousetraps{
 	pixel_y = 10
 	},
 /obj/item/storage/box/lights/mixed{
 	pixel_y = 5
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "WB" = (
@@ -13351,7 +13312,6 @@
 /obj/machinery/paystand{
 	pixel_y = 5
 	},
-/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "WO" = (
@@ -13359,7 +13319,6 @@
 	dir = 1
 	},
 /obj/item/toy/figure/assistant,
-/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "WR" = (
@@ -13417,8 +13376,8 @@
 /obj/effect/turf_decal/corner/transparent/mauve/three_quarters{
 	dir = 4
 	},
-/obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "WX" = (
@@ -13572,7 +13531,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "XD" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
@@ -13681,7 +13639,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
 "Yd" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
@@ -13796,7 +13753,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "Yy" = (
-/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "Yz" = (
@@ -13819,9 +13775,9 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "YA" = (
 /obj/item/storage/toolbox/electrical,
-/obj/structure/table,
 /obj/item/stack/sheet/mineral/uranium/five,
 /obj/item/wrench,
+/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/maint)
 "YB" = (
@@ -13831,7 +13787,6 @@
 /obj/machinery/paystand{
 	pixel_y = 5
 	},
-/obj/structure/table,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall/shop2)
 "YC" = (
@@ -13909,7 +13864,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "YU" = (
-/obj/structure/table,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -14190,7 +14144,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "ZU" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
@@ -14397,7 +14350,7 @@ Nw
 ar
 iD
 yt
-eF
+AY
 yt
 yt
 yL
@@ -14409,7 +14362,7 @@ yt
 yb
 yt
 yt
-vx
+eF
 yt
 yt
 Tg
@@ -14762,7 +14715,7 @@ Xy
 Xr
 fb
 yt
-Ld
+yU
 yt
 yt
 Ld
@@ -14907,7 +14860,7 @@ YV
 yt
 Fi
 PL
-OR
+jd
 Xy
 Xr
 UD
@@ -15089,17 +15042,17 @@ Yo
 cs
 Vo
 Yo
-gi
+hZ
 BQ
-gi
-gi
+hZ
+hZ
 gn
 zf
 ql
-gi
-gi
 hZ
-gi
+hZ
+hZ
+hZ
 tZ
 qP
 aZ
@@ -15141,13 +15094,13 @@ la
 Yo
 gx
 BQ
-gi
-gi
+hZ
+hZ
 cj
 FZ
 ql
-gi
-gi
+hZ
+hZ
 hZ
 gx
 tZ
@@ -15289,17 +15242,17 @@ Yo
 hK
 Vo
 Yo
-gi
+hZ
 BQ
 VZ
-gi
+hZ
 cj
 eJ
 ql
-gi
+hZ
 oQ
 hZ
-gi
+hZ
 tZ
 oe
 hj
@@ -16090,7 +16043,7 @@ cs
 No
 pe
 Wt
-wl
+XM
 ZW
 pe
 nI
@@ -17050,7 +17003,7 @@ BM
 Yg
 LM
 Qy
-mB
+RH
 UW
 TV
 Dn
@@ -17453,7 +17406,7 @@ zi
 RG
 dO
 AG
-vZ
+KQ
 gg
 CQ
 DC
@@ -17503,7 +17456,7 @@ kr
 RG
 dO
 YG
-Lf
+KQ
 gg
 uF
 gg
