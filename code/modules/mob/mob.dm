@@ -843,7 +843,8 @@
 
 /// Adds this list to the output to the stat browser
 /mob/proc/get_status_tab_items()
-	. = list()
+	. = list("") //we want to offset unique stuff from standard stuff
+	SEND_SIGNAL(src, COMSIG_MOB_GET_STATUS_TAB_ITEMS, .)
 
 /// Gets all relevant proc holders for the browser statpenl
 /mob/proc/get_proc_holders()
