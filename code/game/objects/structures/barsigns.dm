@@ -265,7 +265,7 @@
 	icon = "thealenath"
 	desc = "All right, buddy. I think you've had EI NATH. Time to get a cab."
 
-/datum/barsign/thealohasnackbar
+/datum/barsign/hulabrews
 	name = "Hula Brews"
 	icon = "hulabrews"
 	desc = "A tropical-themed sign perfect for a tiki bar."
