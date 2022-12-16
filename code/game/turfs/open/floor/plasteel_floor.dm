@@ -84,6 +84,11 @@
 /turf/open/floor/plasteel/patterned/ridged
 	icon_state = "ridged"
 	base_icon_state = "ridged"
+/turf/open/floor/plasteel/patterned/dirty
+	icon_state = "steel_dirty"
+	base_icon_state = "steel_dirty"
+	color = "#8D8B8B"
+
 
 /turf/open/floor/plasteel/showroomfloor
 	icon = 'icons/turf/floors.dmi'
