@@ -600,6 +600,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"gs" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/minutemen/middle,
+/turf/open/floor/plasteel/patterned/dirty,
+/area/ship/cargo)
 "gx" = (
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
 	dir = 1
@@ -1251,8 +1256,8 @@
 /area/ship/hallway/central)
 "mK" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
+/obj/effect/turf_decal/minutemen{
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
@@ -1455,9 +1460,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1482,6 +1484,9 @@
 /obj/item/kirbyplants{
 	icon_state = "plant-03"
 	},
+/obj/effect/turf_decal/minutemen/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
 "oZ" = (
@@ -1501,6 +1506,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/minutemen,
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
 "pz" = (
@@ -2708,6 +2714,9 @@
 	pixel_x = -17;
 	pixel_y = 8
 	},
+/obj/effect/turf_decal/minutemen/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
 "za" = (
@@ -3897,6 +3906,9 @@
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
 "JN" = (
+/obj/effect/turf_decal/minutemen{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
 "JV" = (
@@ -4240,6 +4252,9 @@
 	dir = 1
 	},
 /mob/living/simple_animal/bot/medbot,
+/obj/effect/turf_decal/minutemen/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
 "Nh" = (
@@ -4619,6 +4634,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/effect/turf_decal/minutemen/corner,
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
 "Rw" = (
@@ -5158,6 +5174,9 @@
 	layer = 2.5;
 	pixel_y = 2;
 	pixel_x = 7
+	},
+/obj/effect/turf_decal/minutemen{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
@@ -6312,7 +6331,7 @@ sR
 pz
 tU
 pd
-JI
+gs
 WZ
 HH
 Wd
@@ -6356,7 +6375,7 @@ st
 FZ
 FZ
 gx
-mK
+JI
 SE
 Ak
 vQ
