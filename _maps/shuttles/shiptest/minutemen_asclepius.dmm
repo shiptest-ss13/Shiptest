@@ -833,7 +833,9 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "iH" = (
@@ -912,28 +914,6 @@
 /obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical/surgery)
-"jt" = (
-/obj/effect/turf_decal/trimline/opaque/bottlegreen/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/mob/living/simple_animal/bot/medbot,
-/turf/open/floor/plasteel/patterned/dirty,
-/area/ship/cargo)
-"jx" = (
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/machinery/light_switch{
-	pixel_x = -9;
-	pixel_y = 22
-	},
-/obj/item/storage/belt/medical/webbing,
-/obj/structure/closet/secure_closet/medical3{
-	req_access = list(0)
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/crew/office)
 "jG" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical/surgery)
@@ -2762,6 +2742,14 @@
 /obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
+"zw" = (
+/obj/structure/closet/secure_closet/medical3{
+	req_access = list(0)
+	},
+/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/item/storage/belt/medical/webbing,
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/crew/office)
 "zD" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 6
@@ -3576,8 +3564,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "GU" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "GV" = (
@@ -4542,11 +4532,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
 "Qn" = (
+/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/machinery/light_switch{
+	pixel_x = -9;
+	pixel_y = 22
+	},
+/obj/item/storage/belt/medical/webbing,
 /obj/structure/closet/secure_closet/medical3{
 	req_access = list(0)
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/item/storage/belt/medical/webbing,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "Qr" = (
@@ -5297,6 +5291,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Yb" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/mob/living/simple_animal/bot/medbot,
+/turf/open/floor/plasteel/patterned/dirty,
+/area/ship/cargo)
 "Yf" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 5
@@ -5677,7 +5681,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
@@ -5687,6 +5690,9 @@
 /obj/item/weldingtool{
 	pixel_x = -5;
 	pixel_y = -6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -6291,7 +6297,7 @@ Wd
 Wd
 Wd
 Kd
-Qn
+zw
 FI
 JD
 Ly
@@ -6321,7 +6327,7 @@ ei
 SF
 Yg
 LK
-jt
+Yb
 mK
 oJ
 FZ
@@ -6335,7 +6341,7 @@ Wd
 Wd
 lu
 Ly
-jx
+Qn
 AH
 HM
 Ly
