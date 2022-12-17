@@ -202,7 +202,7 @@
 /turf/closed/mineral/random/high_chance/volcanic/icecropolis
 	environment_type = "basalt"
 	turf_type = /turf/open/indestructible/necropolis/air
-	base = /turf/open/indestructible/necropolis/air
+	baseturfs = /turf/open/indestructible/necropolis/air
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 
 /turf/closed/mineral/random/low_chance
