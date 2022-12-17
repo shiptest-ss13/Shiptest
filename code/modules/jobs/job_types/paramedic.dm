@@ -93,7 +93,7 @@
 	ears = /obj/item/radio/headset/headset_medsec/alt
 
 /datum/outfit/job/paramedic/minutemen
-	name = "BARD Corpsman (Minutemen)"
+	name = "BARD Combat Medic (Minutemen)"
 
 	uniform = /obj/item/clothing/under/rank/medical/paramedic/emt
 	head = /obj/item/clothing/head/soft/paramedic
