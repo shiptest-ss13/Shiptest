@@ -800,9 +800,7 @@
 	pixel_y = 22
 	},
 /obj/item/storage/belt/medical/webbing,
-/obj/structure/closet/secure_closet/medical3{
-	req_access = list(0)
-	},
+/obj/structure/closet/secure_closet/medical3,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "im" = (
@@ -1718,9 +1716,7 @@
 	pixel_y = 32
 	},
 /obj/item/storage/belt/medical/webbing,
-/obj/structure/closet/secure_closet/medical3{
-	req_access = list(0)
-	},
+/obj/structure/closet/secure_closet/medical3,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "qZ" = (
@@ -1832,9 +1828,6 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "rW" = (
-/obj/structure/closet/secure_closet/medical1{
-	req_access = list(0)
-	},
 /obj/effect/turf_decal/siding/white{
 	dir = 6
 	},
@@ -1855,6 +1848,7 @@
 	pixel_x = 23;
 	pixel_y = -10
 	},
+/obj/structure/closet/secure_closet/medical1,
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "rZ" = (
@@ -2512,7 +2506,11 @@
 /area/ship/bridge)
 "xP" = (
 /obj/effect/turf_decal/atmos/plasma{
-	dir = 8
+	dir = 8;
+	layer = 2.01
+	},
+/obj/effect/decal/cleanable/oil{
+	layer = 2.09
 	},
 /turf/open/floor/engine/plasma,
 /area/ship/engineering)
@@ -3173,7 +3171,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
 "Ed" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "Ef" = (
@@ -4504,9 +4502,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/item/honey_frame{
-	pixel_y = 8
-	},
 /obj/item/toy/plush/beeplushie,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -4543,11 +4538,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
 "Qn" = (
-/obj/structure/closet/secure_closet/medical3{
-	req_access = list(0)
-	},
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
 /obj/item/storage/belt/medical/webbing,
+/obj/structure/closet/secure_closet/medical3,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "Qr" = (
