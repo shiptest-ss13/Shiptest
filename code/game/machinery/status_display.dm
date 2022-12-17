@@ -52,7 +52,7 @@
 /// Prepare the display to marquee the given line.
 ///
 /// Call with no arguments to disable.
-/obj/machinery/status_display/proc/set_message(m1, m2)
+/obj/machinery/status_display/proc/set_message(m1)
 	if(m1)
 		index1 = (length_char(m1) > CHARS_PER_LINE)
 		message1 = m1
