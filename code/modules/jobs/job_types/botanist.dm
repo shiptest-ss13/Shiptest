@@ -40,3 +40,13 @@
 	suit =  /obj/item/clothing/suit/toggle/labcoat/chemist
 	suit_store = null
 	loadout_replace_specifics = list(/datum/gear/eyewear/glasses = /obj/item/clothing/glasses/science/prescription)
+
+/datum/outfit/job/botanist/pharma
+
+	name = "Herbalist"
+
+	ears = /obj/item/radio/headset/headset_med
+	belt = /obj/item/storage/bag/plants
+	l_pocket = /obj/item/pda/botanist
+	suit = /obj/item/clothing/suit/apron/overalls
+	uniform = /obj/item/clothing/under/utility
