@@ -600,11 +600,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"gs" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/minutemen/middle,
-/turf/open/floor/plasteel/patterned/dirty,
-/area/ship/cargo)
 "gx" = (
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
 	dir = 1
@@ -771,6 +766,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"hM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/minutemen/middle,
+/turf/open/floor/plasteel/patterned/dirty,
+/area/ship/cargo)
 "hN" = (
 /obj/structure/table/wood,
 /obj/item/cigbutt/cigarbutt{
@@ -1404,6 +1404,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
 "nU" = (
@@ -1463,6 +1466,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
 "op" = (
@@ -6331,7 +6335,7 @@ sR
 pz
 tU
 pd
-gs
+hM
 WZ
 HH
 Wd
