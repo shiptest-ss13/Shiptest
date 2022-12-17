@@ -793,6 +793,18 @@
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"ib" = (
+/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/machinery/light_switch{
+	pixel_x = -9;
+	pixel_y = 22
+	},
+/obj/item/storage/belt/medical/webbing,
+/obj/structure/closet/secure_closet/medical3{
+	req_access = list(0)
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/crew/office)
 "im" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -1114,10 +1126,6 @@
 	},
 /area/ship/medical)
 "lW" = (
-/obj/structure/lattice{
-	layer = 3;
-	color = "#808080"
-	},
 /obj/effect/decal/cleanable/robot_debris{
 	color = "#808080"
 	},
@@ -1150,6 +1158,9 @@
 /obj/item/kirbyplants{
 	pixel_y = -14;
 	pixel_x = -3
+	},
+/obj/effect/decal/fakelattice{
+	color = "#808080"
 	},
 /turf/open/floor/plasteel/elevatorshaft{
 	color = "#808080"
@@ -1367,10 +1378,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "nH" = (
-/obj/structure/lattice{
-	layer = 3;
-	color = "#808080"
-	},
 /obj/effect/decal/cleanable/glass{
 	dir = 8;
 	pixel_y = 1;
@@ -1382,6 +1389,9 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 6
+	},
+/obj/effect/decal/fakelattice{
+	color = "#808080"
 	},
 /turf/open/floor/plasteel/elevatorshaft{
 	color = "#808080"
@@ -2742,14 +2752,6 @@
 /obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
-"zw" = (
-/obj/structure/closet/secure_closet/medical3{
-	req_access = list(0)
-	},
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/item/storage/belt/medical/webbing,
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/crew/office)
 "zD" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 6
@@ -2912,10 +2914,6 @@
 /obj/effect/decal/cleanable/leaper_sludge{
 	color = "#808080"
 	},
-/obj/structure/lattice{
-	layer = 3;
-	color = "#808080"
-	},
 /obj/item/trash/sosjerky{
 	anchored = 1;
 	color = "#808080";
@@ -2927,6 +2925,9 @@
 	layer = 4.1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/effect/decal/fakelattice{
+	color = "#808080"
+	},
 /turf/open/floor/plasteel/elevatorshaft{
 	color = "#808080"
 	},
@@ -4219,6 +4220,16 @@
 	},
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/engineering)
+"Nd" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/mob/living/simple_animal/bot/medbot,
+/turf/open/floor/plasteel/patterned/dirty,
+/area/ship/cargo)
 "Nh" = (
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -4532,15 +4543,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
 "Qn" = (
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/machinery/light_switch{
-	pixel_x = -9;
-	pixel_y = 22
-	},
-/obj/item/storage/belt/medical/webbing,
 /obj/structure/closet/secure_closet/medical3{
 	req_access = list(0)
 	},
+/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/item/storage/belt/medical/webbing,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "Qr" = (
@@ -5291,16 +5298,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Yb" = (
-/obj/effect/turf_decal/trimline/opaque/bottlegreen/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/mob/living/simple_animal/bot/medbot,
-/turf/open/floor/plasteel/patterned/dirty,
-/area/ship/cargo)
 "Yf" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 5
@@ -6297,7 +6294,7 @@ Wd
 Wd
 Wd
 Kd
-zw
+Qn
 FI
 JD
 Ly
@@ -6327,7 +6324,7 @@ ei
 SF
 Yg
 LK
-Yb
+Nd
 mK
 oJ
 FZ
@@ -6341,7 +6338,7 @@ Wd
 Wd
 lu
 Ly
-Qn
+ib
 AH
 HM
 Ly
