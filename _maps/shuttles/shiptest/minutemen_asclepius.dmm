@@ -1,6 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ae" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ak" = (
@@ -287,6 +288,12 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/item/circuitboard/machine/rdserver{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/circuitboard/computer/rdconsole,
+/obj/structure/closet/crate/science,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "ck" = (
@@ -429,7 +436,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical/morgue)
 "dh" = (
-/obj/effect/turf_decal/steeldecal/steel_decals_central6,
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dk" = (
@@ -452,11 +459,6 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/item/circuitboard/machine/rdserver{
-	pixel_x = -6;
-	pixel_y = 6
-	},
-/obj/item/circuitboard/computer/rdconsole,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "du" = (
@@ -485,10 +487,11 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
 "dJ" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dT" = (
@@ -1037,7 +1040,6 @@
 /area/ship/cargo)
 "kx" = (
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "kJ" = (
@@ -1511,6 +1513,12 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/minutemen,
+/turf/open/floor/plasteel/patterned/dirty,
+/area/ship/cargo)
+"ps" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
 "pz" = (
@@ -2596,6 +2604,15 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
+"yl" = (
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/dirty,
+/area/ship/cargo)
 "yq" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -2807,14 +2824,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "Ak" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
-	dir = 10
-	},
 /obj/machinery/vending/wallmed{
 	pixel_x = -32
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/cargo)
@@ -3590,6 +3607,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/door/poddoor{
+	id = "asclepius_engineering_shutters";
+	name = "Engineering Blast Doors"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "GV" = (
@@ -3980,6 +4001,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
 	pixel_y = 2
 	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central6,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "KL" = (
@@ -4477,6 +4499,15 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
+"OP" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/bottlegreen/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/patterned/dirty,
+/area/ship/cargo)
 "Pr" = (
 /obj/effect/turf_decal/techfloor/orange,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4696,6 +4727,9 @@
 	},
 /obj/structure/sign/poster/official/moth/meth{
 	pixel_x = 32
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical/surgery)
@@ -6360,8 +6394,8 @@ Nd
 mK
 oJ
 FZ
+FZ
 vY
-Wd
 Wd
 "}
 (30,1,1) = {"
@@ -6382,8 +6416,8 @@ gx
 JI
 SE
 Ak
+OP
 vQ
-Wd
 Wd
 "}
 (31,1,1) = {"
@@ -6403,9 +6437,9 @@ hJ
 vw
 om
 nI
+ps
 nU
 pW
-Wd
 Wd
 "}
 (32,1,1) = {"
@@ -6425,9 +6459,9 @@ Xy
 YK
 cw
 rv
+yl
 fL
 Gg
-Wd
 Wd
 "}
 (33,1,1) = {"
