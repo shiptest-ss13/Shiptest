@@ -37,6 +37,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		var/datum/quirk/T = V
 		quirks[initial(T.name)] = T
 		quirk_points[initial(T.name)] = initial(T.value)
+		quirk_instances[initial(T.name)] = new T
 
 /datum/controller/subsystem/processing/quirks/proc/AssignQuirks(mob/living/user, client/cli, spawn_effects)
 	var/badquirk = FALSE
