@@ -557,3 +557,10 @@
 			// even a high pressure zone will be less than 1.5x one atmos
 			return key_value > 0 && key_value < 1.5
 	return FALSE
+
+// Elasticsearch stuffs
+/datum/config_entry/flag/elasticsearch_metrics_enabled
+
+/datum/config_entry/string/elasticsearch_metrics_endpoint
+
+/datum/config_entry/string/elasticsearch_metrics_apikey
