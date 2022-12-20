@@ -557,3 +557,7 @@
 	name = "dense space vines"
 	opacity = TRUE
 	icon_state = "Hvy1"
+
+/obj/structure/spacevine/weak
+    name = "weak space vines"
+    max_integrity = 25
