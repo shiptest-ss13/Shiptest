@@ -89,12 +89,7 @@
 
 /obj/item/ammo_box/magazine/ebr/update_icon()
 	..()
-	var/hasammo
-	if(ammo_count())
-		hasammo = 1
-	else
-		hasammo = 0
-	icon_state = "ebr_mag-[hasammo]"
+	icon_state = "ebr_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/gal
 	name = "\improper CM-GAL Magazine (.308)"
