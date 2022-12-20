@@ -928,6 +928,8 @@
 	assignedrole = "Lost SolGov Commander"
 	outfit = /datum/outfit/solgov/commander
 
+//Slime Lab
+
 /obj/effect/mob_spawn/human/slime_rancher
 	name = "slime receptical"
 	desc = "A fairly rare machine that seems to be used for storing and molding jelly. You can see the vague shape of a humanoid in it."
@@ -937,18 +939,17 @@
 	roundstart = FALSE
 	death = FALSE
 	mob_species = /datum/species/jelly
-	short_desc = "You are a humble slime rancher, taking care of your slimes and keeping them safe from the cold."
-	flavour_text = "You bought this farm when it was a simple Syndicate bioweapons testing area, \
-	and renovated it with your partner to become a real ranch. \
-	Take care of the slimes, and make sure to keep them safe from the dangerous ice outside. "
-	important_info = "Don't let the cold seep in and destroy your perfect life."
+	short_desc = "You are a slime researcher, driving innovation in the field of xenobiology. ."
+	flavour_text = "You and your fellows have been stationed here for more time than you've cared to track, especially since the computers have done it for you. . \
+	Keep the lab in good operating condition, breed slimes, and trade to get what you aren't able to produce yourselves. "
+	important_info = "Do not abandon the base. The place is too damn expensive to just run off from."
 	uniform = /obj/item/clothing/under/rank/rnd/scientist/xenobiologist/skirt
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	id = /obj/item/card/id/away/slime
-	assignedrole = "Slime Rancher"
+	assignedrole = "Slime Research Staff"
 
 /obj/effect/mob_spawn/human/slime_rancher/special(mob/living/new_spawn)
-	var/slime_name = pick("Maroon", "Funky", "Squishy", "Bubblegum", "Gummy", "Pinkie Pie", "Rainbow Dash", "Beatrix LeBeau", "Chartreuse", "Chocolate")
+	var/slime_name = pick("Maroon", "Funky", "Squishy", "Bubblegum", "Gummy", "Pinkie Pie", "Rainbow Dash", "Beatrix LeBeau", "Chartreuse", "Chocolate", "Goobert", "Blorbo", "Creeper", "Leaper", "Pyro", "Monk", "Slim", "Malice", "Moldova", "Sloshy", "Slick", "Emil", "Poison", "Grey", "The Specimen", "Clotty")
 	new_spawn.fully_replace_character_name(null,slime_name)
 	if(ishuman(new_spawn))
 		var/mob/living/carbon/human/H = new_spawn
