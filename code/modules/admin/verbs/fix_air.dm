@@ -11,7 +11,5 @@
 		var/range=input("Enter range:","Num",2) as num
 		message_admins("[key_name_admin(usr)] fixed air with range [range] in area [T.loc.name]")
 		log_game("[key_name_admin(usr)] fixed air with range [range] in area [T.loc.name]")
-		var/datum/gas_mixture/GM = new
 		for(var/turf/open/F in range(range,T))
-			GM.parse_gas_string(F.initial_gas_mix)
-			F.copy_air(GM)
+			F.air.copy_from_turf(F)

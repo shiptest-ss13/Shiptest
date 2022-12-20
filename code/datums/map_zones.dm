@@ -144,7 +144,7 @@
 		var/turf/ending = locate(x_pos_ending[side], y_pos_ending[side], z_value)
 		for(var/turf/Turf as anything in block(beginning, ending))
 			Turf.ChangeTurf(/turf/closed/indestructible/edge, flags = CHANGETURF_IGNORE_AIR|CHANGETURF_DEFER_BATCH)
-			// DEBUG: add CHECK_TICK
+			CHECK_TICK
 
 	for(var/side in 1 to 4)
 		var/turf/beginning = locate(x_pos_beginning[side], y_pos_beginning[side], z_value)
@@ -154,7 +154,7 @@
 			QUEUE_SMOOTH_NEIGHBORS(Turf)
 			for(var/turf/open/space/adj in RANGE_TURFS(1, Turf))
 				adj.check_starlight(Turf)
-			// DEBUG: add CHECK_TICK ???
+			CHECK_TICK
 
 /datum/virtual_level/proc/selfloop()
 	link_with(NORTH, src)
@@ -431,7 +431,7 @@
 		for(var/datum/thing in (turf.contents - turf.lighting_object))
 			qdel(thing)
 			// DO NOT CHECK_TICK HERE. IT CAN CAUSE ITEMS TO GET LEFT BEHIND
-			// THIS IS REALLY IMPORTANT FOR CONSISTENCY. SORRY
+			// THIS IS REALLY IMPORTANT FOR CONSISTENCY. SORRY ABOUT THE LAG SPIKE
 
 	for(var/turf/turf as anything in get_block())
 		// Reset turf
@@ -440,8 +440,7 @@
 		var/area/old_area = get_area(turf)
 		space_area.contents += turf
 		turf.change_area(old_area, space_area)
-		// DEBUG: put this back
-		// CHECK_TICK
+		CHECK_TICK
 
 	for(var/turf/turf as anything in get_block())
 		turf.AfterChange(CHANGETURF_IGNORE_AIR)
@@ -455,7 +454,7 @@
 		QUEUE_SMOOTH_NEIGHBORS(turf)
 		for(var/turf/open/space/adj in RANGE_TURFS(1, turf))
 			adj.check_starlight(turf)
-		// DEBUG: add a check tick here
+		CHECK_TICK
 
 	qdel(safeguard)
 

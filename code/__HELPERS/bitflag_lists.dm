@@ -1,9 +1,10 @@
 GLOBAL_LIST_EMPTY(bitflag_lists)
 
 
-
-// DEBUG: go back to old version of bitflag lists; port the /tg/ unit test for them instead
-
+// This version of SET_BITFLAG_LIST has been modified to further cache bitflag lists
+// to minimize sorting, as sorting is very expensive when done for all smoothable atoms.
+// A unit test, as /tg/ has, would be a better solution, but as of writing this I do not have the time
+// or energy to do this. Somebody help, please. I'm begging.
 
 /**
  * System for storing bitflags past the 24 limit, making use of an associative list.
