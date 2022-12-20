@@ -19,6 +19,9 @@
 	dir = 4
 	},
 /obj/structure/filingcabinet/medical,
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen{
+	dir = 5
+	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "ax" = (
@@ -65,6 +68,12 @@
 /area/ship/crew)
 "bS" = (
 /obj/item/trash/cheesie,
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen{
+	dir = 5
+	},
+/obj/effect/turf_decal/spline/fancy/corner/opaque/bottlegreen{
+	dir = 8
+	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "bV" = (
@@ -384,6 +393,9 @@
 	pixel_x = -25
 	},
 /obj/item/kirbyplants/random,
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen{
+	dir = 9
+	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "iI" = (
@@ -401,6 +413,8 @@
 /obj/machinery/computer/med_data/laptop{
 	dir = 4
 	},
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/mono,
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "iZ" = (
@@ -635,6 +649,10 @@
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen,
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "lW" = (
@@ -860,6 +878,7 @@
 "pY" = (
 /obj/structure/table/glass,
 /obj/machinery/photocopier/faxmachine/longrange,
+/obj/effect/turf_decal/corner/transparent/bottlegreen/mono,
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "qr" = (
@@ -876,6 +895,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/mineral/ore_redemption{
 	dir = 4
+	},
+/obj/structure/sign/poster/contraband/engis_unite{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -994,6 +1016,12 @@
 "tb" = (
 /obj/structure/chair/comfy/teal{
 	dir = 1
+	},
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen{
+	dir = 9
+	},
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen{
+	dir = 5
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
@@ -1158,6 +1186,9 @@
 /obj/structure/bed/pod,
 /obj/item/bedsheet/cmo,
 /obj/item/book/manual/wiki/medical_cloning,
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen{
+	dir = 6
+	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "wh" = (
@@ -1577,6 +1608,12 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
+/obj/effect/turf_decal/road/line/edge/transparent/bottlegreen{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
+	dir = 8
+	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "Eq" = (
@@ -1594,6 +1631,10 @@
 	dir = 1
 	},
 /obj/structure/chair/office{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen,
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
 	dir = 4
 	},
 /turf/open/floor/wood/yew,
@@ -1904,6 +1945,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen{
+	dir = 8
+	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "Kj" = (
@@ -2040,6 +2084,9 @@
 	dir = 8
 	},
 /obj/structure/closet/crate/medical,
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen{
+	dir = 10
+	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "MR" = (
@@ -2142,6 +2189,13 @@
 /area/ship/crew)
 "NA" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/effect/turf_decal/road/line/edge/transparent/bottlegreen{
+	dir = 8
+	},
+/obj/effect/turf_decal/road/line/edge/transparent/bottlegreen{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/corner/opaque/bottlegreen,
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "NR" = (
@@ -2225,7 +2279,7 @@
 /obj/effect/turf_decal/corner/opaque/brown/three_quarters{
 	dir = 8
 	},
-/obj/structure/sign/poster/contraband/syndicate_pistol{
+/obj/structure/sign/poster/contraband/stechkin{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/dark,
@@ -2248,6 +2302,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"OO" = (
+/obj/effect/turf_decal/road/line/edge/transparent/bottlegreen{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
+	dir = 8
+	},
+/turf/open/floor/wood/yew,
+/area/ship/crew/office)
 "Pn" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -2265,6 +2328,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/bottlegreen{
+	dir = 4
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
@@ -2449,6 +2515,9 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
 "SY" = (
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen{
+	dir = 4
+	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "Ty" = (
@@ -2537,6 +2606,9 @@
 /obj/item/storage/box/hypospray/CMO,
 /obj/item/clothing/glasses/science,
 /obj/item/roller,
+/obj/effect/turf_decal/spline/plain/opaque/bottlegreen{
+	dir = 10
+	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "Vu" = (
@@ -3236,7 +3308,7 @@ Wc
 Wc
 Gb
 bS
-SY
+OO
 En
 Va
 Fo
