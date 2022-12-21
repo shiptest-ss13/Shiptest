@@ -27,6 +27,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 							list("Bad Touch", "Friendly"))
 	for(var/client/client in GLOB.clients)
 		client?.prefs.check_quirk_compatibility()
+		client?.prefs.update_quirk_preferences()
 	return ..()
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()

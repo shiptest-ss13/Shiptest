@@ -178,7 +178,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	///Preferences for gear items such as wether or not they are a family heirloom, how many of them were taken and such
 	var/list/equipped_gear_preferences = list()
 
+	///Preferences specialized for each quirk that needs them, such as selected addictions or phobias.
+	var/list/quirk_preferences = list()
 
+	///Holder var for the Loadout and Quirks tab address
 	var/quirk_tab = FALSE
 
 	var/action_buttons_screen_locs = list()
@@ -1027,7 +1030,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							quirk_cost = "+[quirk_cost]"
 						if(quirk_conflicts[initial(quirk_datum.name)])
 							if(!has_quirk)
-								dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' class=linkOff>[initial(quirk_datum.name)]</a></td><td>"
+								dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' class=linkOff>+</a>"
 								quirk_handled = TRUE
 							else
 								alert(user, "Something went wrong, you somehow had a conflicting quirk that didn't get cleared during conflict checks, please open an issue or otherwise notify coders of such. Your quirks have been cleared.")
@@ -1036,7 +1039,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								save_preferences()
 						if(initial(quirk_datum.value) > 0)
 							if(!has_quirk && GetPositiveQuirkCount() == MAX_QUIRKS)
-								dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' class=linkOff>[initial(quirk_datum.name)]</a></td><td>"
+								dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' class=linkOff>+</a>"
 								quirk_handled = TRUE
 							if(GetPositiveQuirkCount() > MAX_QUIRKS)
 								alert(user, "For some odd reason, you had more positive quirks than is allowed, as such your quirks have been cleared.")
@@ -1044,7 +1047,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								ShowChoices(user)
 								save_preferences()
 						if(!quirk_handled)
-							dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' [has_quirk ? "class='linkOn' " : ""]href='?_src_=prefs;preference=quirk;task=update;quirk=[initial(quirk_datum.name)]'>[initial(quirk_datum.name)]</a></td><td>"
+							dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' [has_quirk ? "class='linkOn' " : ""]href='?_src_=prefs;preference=quirk;task=update;quirk=[initial(quirk_datum.name)]'>[has_quirk ? "-" : "+"]</a>"
+						dat += "<a style='white-space:normal;' href='?_src_=prefs;preference=quirk;task=expand;quirk=[initial(quirk_datum.name)]'>[initial(quirk_datum.name)]</a></td><td>"
 						dat += "<font size=2>"
 						dat += "<font color='[font_color]'>[quirk_cost]</font_color>"
 						dat += "</font>"
@@ -1444,23 +1448,48 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat+= "</tr>"
 	return dat
 
-/datum/preferences/proc/set_quirk_advanced(mob/user, datum/quirk/quirk_datum)
+/datum/preferences/proc/set_quirk_advanced(mob/user, var/quirk_name)
+	var/list/quirk_restrictions = check_quirk_restrictions(quirk_name)
 	var/list/dat = list()
-	var/datum/quirk/quirk_instance = SSquirks.quirk_instances[initial(quirk_datum.name)]
-	dat += "[quirk_instance.desc] <br>"
+	var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_name]
+	dat += "Base value: [quirk_instance.value] <br>"
+	if(quirk_restrictions["species"])
+		dat += "Species restricions: [quirk_restrictions["species"]]"
+	if(quirk_restrictions["mood"])
+		dat += "Mood Restricted: [quirk_restrictions["mood"]]"
+	if(quirk_restrictions["blacklist"])
+		dat += "Mutual exclusivities: [quirk_restrictions["blacklist"]]"
 	if(quirk_instance.additional_values != null)
+		dat += "<table>"
 		for(var/additional_value in quirk_instance.additional_values)
-			dat += "[additional_value] | [quirk_instance.additional_values[additional_value]] <br>"
+			if(!islist(additional_value))
+				dat += "<tr><td><b>[additional_value]: [quirk_preferences[quirk_name][additional_value] ? quirk_preferences[quirk_name][additional_value] : quirk_instance.additional_values[additional_value]]</b></td>"
+				dat += "<td><a href='?_src_=prefs;preference=quirk;task=customize_quirk;quirk=[quirk_name];value=[additional_value];type=edit;options=[jointext(quirk_instance.additional_value_options[additional_value], ", ")]'>Edit</a></td></tr>"
+			dat += "</table><br>"
+	dat += "<center><a href='?_src_=prefs;preference=quirk;task=close'>Done</a></center><br>"
 
-	var/datum/browser/popup = new(user, "mob_quirks", "<div align='center'>[quirk_instance.name]</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	var/datum/browser/popup = new(user, "mob_quirks", "<div align='center'>[quirk_instance.name]</div>", 800, 600) //no reason not to reuse the occupation window, as it's cleaner that way
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 
 /**
+ * Proc called to handle empty quirk_preference data
+**/
+/datum/preferences/proc/update_quirk_preferences()
+	for(var/quirk_index in SSquirks.quirk_instances)
+		var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_index]
+		if(quirk_instance.additional_values && (quirk_index in quirk_preferences))
+			continue
+		if(quirk_instance.additional_values && !(quirk_index in quirk_preferences))
+			quirk_preferences[quirk_index] = quirk_instance.additional_values
+		if(!quirk_instance.additional_values && (quirk_index in quirk_preferences))
+			quirk_preferences -= quirk_index
+
+/**
  * Proc called to track what quirks conflict with someone's preferences, returns a list with all quirks that conflict.
  *
- * Not to be used to actually handle conflicts, see handle_conflicts() for that, which is called once for each possible type of conflict if needed.
+ * Not to be used to actually directly handle conflicts, see handle_quirk_conflicts() for that, which is called once for each possible type of conflict if needed.
 **/
 /datum/preferences/proc/check_quirk_compatibility(mob/user)
 	var/list/quirk_conflicts = list()
@@ -1557,25 +1586,30 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_type]
 	if(quirk_instance.mood_quirk)
 		var/font_color = CONFIG_GET(flag/disable_human_mood) ? "#FFAAAA" : "#AAFFAA"
-		quirk_restrictions["mood"] = "<font color='[font_color]'>YES</font color"
+		quirk_restrictions["mood"] = "<font color='[font_color]'>YES [CONFIG_GET(flag/disable_human_mood) ? "(Mood disabled)" : ""]</font color"
 	if(length(quirk_instance.species_lock)> 1)
 		var/list/species_list = list()
 		species_list += quirk_instance.species_lock
-		var/font_color = species_list["type"] == "allowed" ? "#AAFFAA" : "#FFAAAA"
-		species_list -= "type"
 		for(var/species_id in species_list)
+			if(species_id == "type")
+				continue
 			var/species_path = GLOB.species_list[species_id]
 			if(!species_path)
 				continue
 			var/datum/species/species_datum = species_path
-			species_list += "<font color='[font_color]'>[initial(species_datum.name)]</font color>"
+			species_list += "<font color='[pref_species.id == species_id ? species_list["type"] == "allowed" ? "#AAFFAA" : "#FFAAAA" : species_list["type"] == "blocked" ? "#AAFFAA" : "#FFAAAA"]'>[initial(species_datum.name)]</font color>"
 			species_list -= species_id
+		species_list -= "type"
 		quirk_restrictions["species"] = "[species_list.Join(", ")]"
 	for(var/list/base_blacklist in SSquirks.quirk_blacklist)
 		var/list/blacklist = list()
 		blacklist += base_blacklist
 		if(quirk_instance.name in blacklist)
 			blacklist -= quirk_instance.name
+			for(var/quirk_blacklisted in blacklist)
+				if(quirk_blacklisted in all_quirks)
+					blacklist += "<font color='#FFAAAA'>[quirk_blacklisted]</font color>"
+					blacklist -= quirk_blacklisted
 			quirk_restrictions["blacklist"] = "[blacklist.Join(", ")]"
 
 	return quirk_restrictions
@@ -1650,8 +1684,28 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(href_list["preference"] == "quirk")
 		switch(href_list["task"])
 			if("close")
-				user << browse(null, "window=mob_quirk")
-				ShowChoices(user)
+				user << browse(null, "window=mob_quirks")
+			if("expand")
+				var/quirk = href_list["quirk"]
+				if(!SSquirks.quirks[quirk])
+					return
+				set_quirk_advanced(user, quirk)
+				return
+			if("customize_quirk")
+				var/quirk = href_list["quirk"]
+				var/value = href_list["value"]
+				var/list/options = splittext(href_list["options"], ", ")
+				var/value_address
+				if(href_list[value_address])
+					value_address = href_list["value_address"]
+				var/type = href_list["type"]
+				if(!SSquirks.quirks[quirk] || !value || (type != "edit" && !value_address))
+					return
+				if(type == "edit")
+					if(!value_address)
+						var/status = input(user, "You are modifying your [value] selection, what should it be changed to?", "Character Preference", quirk_preferences[quirk][value]) as null|anything in options
+						if(status)
+							quirk_preferences[quirk][value] = status
 			if("update")
 				var/quirk = href_list["quirk"]
 				if(!SSquirks.quirks[quirk])
