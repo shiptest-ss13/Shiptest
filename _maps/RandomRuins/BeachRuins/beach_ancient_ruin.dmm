@@ -24,6 +24,9 @@
 	dir = 1
 	},
 /obj/structure/spacevine/weak,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "aI" = (
@@ -60,6 +63,9 @@
 "aV" = (
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
@@ -104,6 +110,9 @@
 	},
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "cr" = (
@@ -128,6 +137,22 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
+"cD" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
+"cG" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "cP" = (
 /obj/effect/overlay/palmtree_l,
 /turf/open/floor/plating/grass{
@@ -219,6 +244,12 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex/shuttle)
 "et" = (
@@ -232,6 +263,7 @@
 /obj/structure/sign/poster/contraband/robustmore_drinkfoods{
 	pixel_x = 30
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
 "eH" = (
@@ -284,6 +316,12 @@
 /obj/machinery/light/small,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/complex)
+"fP" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "fU" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -320,10 +358,16 @@
 "gj" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
-/turf/open/floor/concrete/slab_1{
-	light_range = 2
-	},
+/obj/structure/cable,
+/turf/open/floor/plating,
 /area/ruin/beach/complex/wall)
+"gl" = (
+/obj/machinery/door/airlock/grunge{
+	id_tag = "armory"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/complex)
 "gF" = (
 /obj/structure/closet/crate{
 	name = "hermetic crate"
@@ -368,14 +412,28 @@
 	dir = 4
 	},
 /obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
+"hg" = (
+/obj/structure/spacevine/weak,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "hx" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beach/complex)
 "hO" = (
 /obj/machinery/light/small,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "hT" = (
@@ -437,6 +495,9 @@
 /obj/machinery/light/small,
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "iB" = (
@@ -463,6 +524,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
+"jc" = (
+/mob/living/simple_animal/beachcarp/salmon,
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "jd" = (
 /obj/structure/chair{
 	dir = 4
@@ -499,6 +564,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
+"jM" = (
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "kh" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 1
@@ -510,6 +586,16 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"kr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "ks" = (
 /mob/living/simple_animal/hostile/hivebot/strong{
 	name = "mechanoid";
@@ -520,6 +606,7 @@
 "kK" = (
 /obj/structure/closet/crate/bin,
 /obj/item/reagent_containers/food/snacks/breadslice/moldy,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
 "kM" = (
@@ -556,9 +643,11 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "doorshuttle"
 	},
-/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
@@ -581,9 +670,26 @@
 	},
 /turf/open/water/beach,
 /area/ruin/unpowered)
+"lQ" = (
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "lR" = (
 /obj/machinery/light/small,
 /obj/structure/spacevine/weak,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "lS" = (
@@ -597,6 +703,19 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
+"lW" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "mx" = (
 /obj/effect/turf_decal/arrows/white{
 	dir = 8
@@ -635,6 +754,14 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"mO" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/complex/wall)
 "np" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -643,6 +770,14 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/complex)
+"nt" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/complex/wall)
 "nx" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -650,12 +785,23 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
+"ny" = (
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "nD" = (
 /mob/living/simple_animal/hostile/hivebot/strong{
 	name = "mechanoid";
 	environment_smash = 0
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "nJ" = (
@@ -714,6 +860,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
 "on" = (
@@ -738,6 +887,7 @@
 /obj/structure/sign/poster/contraband/syndicate{
 	pixel_y = -30
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "ou" = (
@@ -761,6 +911,9 @@
 	},
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "oP" = (
@@ -787,12 +940,6 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
-"pj" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/structure/curtain/cloth/grey,
-/turf/open/floor/concrete,
-/area/ruin/beach/complex)
 "px" = (
 /mob/living/simple_animal/hostile/hivebot/strong{
 	name = "mechanoid";
@@ -810,6 +957,21 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"pM" = (
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
+"pZ" = (
+/obj/structure/spacevine/weak,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "ql" = (
 /obj/structure/railing{
 	dir = 4
@@ -826,6 +988,13 @@
 /turf/open/floor/concrete{
 	light_range = 2
 	},
+/area/ruin/beach/complex)
+"qx" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "qB" = (
 /obj/effect/turf_decal/box/white,
@@ -860,6 +1029,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
 "qY" = (
@@ -889,6 +1061,13 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"rA" = (
+/obj/machinery/light/small,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "rC" = (
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -898,6 +1077,9 @@
 /mob/living/simple_animal/hostile/hivebot/strong{
 	name = "mechanoid";
 	environment_smash = 0
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
@@ -941,6 +1123,29 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"rZ" = (
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
+"so" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "sq" = (
 /obj/structure/chair/comfy/beige{
 	dir = 4
@@ -957,6 +1162,13 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"sz" = (
+/obj/structure/spacevine/dense,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "sJ" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -973,6 +1185,13 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
+"th" = (
+/obj/structure/spacevine/dense,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "tA" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -1001,6 +1220,12 @@
 	},
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "uo" = (
@@ -1028,6 +1253,10 @@
 "uG" = (
 /obj/structure/closet/secure,
 /obj/effect/turf_decal/box/white,
+/obj/item/clothing/under/shorts/red{
+	name = "Cybersun Brand Jorts";
+	desc = "'The days of spring will surely bring the birds and bees cavorting. But since I am a Syndicate, I'd much rather be jorting' -CEO of Cybersun"
+	},
 /obj/item/clothing/under/syndicate/cybersun,
 /obj/item/clothing/under/syndicate/cybersun,
 /obj/item/clothing/under/syndicate/gorlex,
@@ -1075,16 +1304,17 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
+"vh" = (
+/obj/structure/spacevine/weak,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "vi" = (
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
-"vu" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/structure/curtain/cloth/grey,
-/turf/open/floor/concrete/slab_4,
-/area/ruin/beach/complex)
 "vy" = (
 /obj/machinery/computer/helm{
 	dir = 8
@@ -1110,6 +1340,9 @@
 	icon_state = "4-8"
 	},
 /obj/structure/spacevine/dense,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "vN" = (
@@ -1192,6 +1425,12 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "wM" = (
@@ -1217,6 +1456,19 @@
 	desc = "Space vines HATE this one simple trick!"
 	},
 /obj/structure/spacevine/weak,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
+"wZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "xa" = (
@@ -1225,6 +1477,14 @@
 	},
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 30
+	},
+/obj/machinery/button/door{
+	pixel_y = 27;
+	pixel_x = -27;
+	name = "Armory Bolts";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	id = "armory"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
@@ -1237,6 +1497,10 @@
 	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/item/toy/plush/nukeplushie,
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex/shuttle)
@@ -1306,6 +1570,9 @@
 	dir = 8
 	},
 /obj/machinery/light/small,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex/shuttle)
 "ym" = (
@@ -1338,9 +1605,23 @@
 "yF" = (
 /turf/open/water/beach,
 /area/ruin/unpowered)
+"zi" = (
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "zn" = (
 /obj/machinery/light/small{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
@@ -1362,6 +1643,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "Ae" = (
@@ -1415,6 +1697,17 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"AF" = (
+/obj/machinery/light/small,
+/obj/structure/spacevine/weak,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "AJ" = (
 /obj/structure/marker_beacon,
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
@@ -1444,6 +1737,14 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"Bh" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/complex/wall)
 "Br" = (
 /obj/structure/chair/comfy/beige{
 	dir = 4
@@ -1530,6 +1831,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "CO" = (
@@ -1588,14 +1892,16 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "DT" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
-/turf/open/floor/concrete/slab_1{
-	light_range = 2
-	},
+/obj/structure/cable,
+/turf/open/floor/plating,
 /area/ruin/beach/complex/wall)
 "DX" = (
 /obj/effect/turf_decal/siding/white{
@@ -1639,6 +1945,14 @@
 	},
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/complex)
+"Ex" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/complex)
 "Ez" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 8
@@ -1678,11 +1992,17 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
+"Fg" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "Fi" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/curtain/cloth/grey,
 /obj/structure/grille,
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/plating,
 /area/ruin/beach/complex)
 "Fv" = (
 /obj/structure/cable{
@@ -1694,6 +2014,14 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
+"FF" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/complex/wall)
 "FL" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -1716,6 +2044,7 @@
 /area/ruin/beach/complex/wall)
 "FQ" = (
 /obj/machinery/vending/sustenance,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "Gb" = (
@@ -1732,6 +2061,10 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
+"Gn" = (
+/mob/living/simple_animal/beachcarp/perch,
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "Gs" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -1787,6 +2120,22 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"Hg" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/complex/shuttle)
+"Ht" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/complex/wall)
 "HR" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
@@ -1807,6 +2156,14 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"HY" = (
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "Ie" = (
 /obj/structure/marker_beacon,
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
@@ -1841,6 +2198,7 @@
 /area/ruin/beach/complex)
 "Iz" = (
 /obj/machinery/vending/cigarette/syndicate,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "IB" = (
@@ -1861,13 +2219,16 @@
 "II" = (
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "IO" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/curtain/cloth/grey,
-/turf/open/floor/concrete/slab_4,
+/turf/open/floor/plating,
 /area/ruin/beach/complex)
 "IR" = (
 /obj/structure/railing/corner{
@@ -1936,9 +2297,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
 "JS" = (
@@ -1946,6 +2305,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "JV" = (
@@ -1982,11 +2344,9 @@
 	id = "doorshuttle"
 	},
 /obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
 "KH" = (
@@ -2020,6 +2380,12 @@
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beach/complex)
 "Li" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "Ll" = (
@@ -2102,6 +2468,10 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/unpowered)
+"ME" = (
+/mob/living/simple_animal/beachcarp/trout,
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "MH" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/plating/grass/beach/lit,
@@ -2141,7 +2511,7 @@
 	icon_state = "2-8"
 	},
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
@@ -2172,6 +2542,16 @@
 	},
 /turf/open/water/beach,
 /area/ruin/unpowered)
+"Ns" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "Nw" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 1
@@ -2239,6 +2619,16 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
+"Pn" = (
+/obj/structure/spacevine/weak,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "Pt" = (
 /obj/structure/sign/warning/electricshock{
 	pixel_x = -30
@@ -2250,7 +2640,10 @@
 "Pv" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
-/turf/open/floor/plasteel/mono,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
 "Pw" = (
 /obj/effect/turf_decal/siding/white{
@@ -2264,9 +2657,32 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"Py" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/complex/wall)
+"PD" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "PF" = (
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "PO" = (
@@ -2304,8 +2720,17 @@
 /area/ruin/beach/complex)
 "PS" = (
 /obj/structure/table,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
+"PY" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/complex/shuttle)
 "Qa" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood,
@@ -2314,6 +2739,9 @@
 	},
 /obj/structure/spacevine/weak,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "Qb" = (
@@ -2382,6 +2810,16 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"RQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "Sq" = (
 /obj/machinery/cryopod{
 	icon_state = "cryopod";
@@ -2391,8 +2829,11 @@
 /area/ruin/beach/complex)
 "Sv" = (
 /obj/machinery/door/airlock/grunge{
-	locked = 1;
 	id_tag = "walldoor"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
@@ -2429,6 +2870,9 @@
 "SH" = (
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "SN" = (
@@ -2436,6 +2880,7 @@
 /obj/machinery/light/dim{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
 "SS" = (
@@ -2456,6 +2901,16 @@
 	light_range = 2
 	},
 /area/ruin/unpowered)
+"Tt" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/complex/shuttle)
 "Tu" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 5
@@ -2467,6 +2922,16 @@
 	dir = 8
 	},
 /obj/structure/spacevine/weak,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
+"TG" = (
+/obj/structure/spacevine/dense,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "Uf" = (
@@ -2490,6 +2955,7 @@
 /obj/structure/chair{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
 "Uy" = (
@@ -2507,8 +2973,23 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/structure/curtain/cloth/grey,
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plating,
 /area/ruin/beach/complex)
+"UU" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/complex)
+"UY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "Vf" = (
 /obj/structure/spacevine/weak,
 /turf/open/floor/concrete/slab_3,
@@ -2526,6 +3007,10 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"Vp" = (
+/mob/living/simple_animal/beachcarp/bass,
+/turf/open/water/beach,
+/area/ruin/unpowered)
 "Vw" = (
 /obj/structure/spacevine/weak,
 /turf/open/floor/concrete/slab_4,
@@ -2540,6 +3025,9 @@
 	specialfunctions = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "VD" = (
@@ -2552,6 +3040,19 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
+"VL" = (
+/obj/structure/spacevine/weak,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "Wm" = (
 /obj/machinery/door/airlock/grunge,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -2584,6 +3085,9 @@
 /area/ruin/beach/complex)
 "Xo" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "XT" = (
@@ -2595,6 +3099,12 @@
 /area/ruin/beach/complex)
 "XW" = (
 /turf/open/floor/concrete/slab_3,
+/area/ruin/beach/complex)
+"Yd" = (
+/obj/structure/chair,
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
 "Yn" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning,
@@ -2635,13 +3145,13 @@
 /area/ruin/beach/complex)
 "YA" = (
 /obj/machinery/door/airlock/grunge{
-	locked = 1;
 	id_tag = "walldoor"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/structure/spacevine/weak,
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "YD" = (
@@ -2744,6 +3254,14 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
+"ZY" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/complex/shuttle)
 
 (1,1,1) = {"
 uy
@@ -3166,7 +3684,7 @@ yF
 yF
 yF
 yF
-yF
+jc
 yF
 yF
 yF
@@ -3458,7 +3976,7 @@ yF
 yF
 yF
 yF
-yF
+Gn
 yF
 yF
 yF
@@ -3661,7 +4179,7 @@ yF
 yF
 yF
 yF
-yF
+Vp
 yF
 yF
 yF
@@ -4124,7 +4642,7 @@ Mt
 LW
 uo
 lS
-gj
+FF
 lS
 fC
 uo
@@ -4144,7 +4662,7 @@ yF
 yF
 yF
 yF
-yF
+Gn
 yF
 yF
 uy
@@ -4191,7 +4709,7 @@ Mb
 lS
 lS
 lS
-gj
+FF
 lS
 lS
 lS
@@ -4199,10 +4717,10 @@ lS
 lS
 lS
 lS
-gj
+FF
 lS
 lS
-II
+pM
 lS
 lS
 uo
@@ -4269,18 +4787,18 @@ wV
 PF
 Sv
 VA
+lW
+cG
+cG
+wZ
 JS
-Li
-Li
-Xo
-JS
-Xo
+wZ
 rH
-Li
+cG
 zn
-ZT
+hg
 II
-II
+lQ
 II
 gj
 mH
@@ -4333,8 +4851,8 @@ mC
 mC
 uo
 Mt
-DT
-Xo
+Ht
+kr
 II
 vJ
 lS
@@ -4343,7 +4861,7 @@ lS
 lS
 lS
 Lt
-DT
+Py
 lS
 lS
 lS
@@ -4358,7 +4876,7 @@ lS
 lS
 lS
 lS
-II
+pM
 lS
 lS
 uo
@@ -4398,7 +4916,7 @@ yF
 yF
 yF
 yF
-yF
+Gn
 yF
 yF
 yF
@@ -4412,7 +4930,7 @@ uo
 uo
 lS
 lS
-II
+pM
 qK
 Dd
 lS
@@ -4489,8 +5007,8 @@ uo
 uo
 LW
 lS
-DF
-II
+cD
+zi
 qK
 OR
 lS
@@ -4514,7 +5032,7 @@ fC
 wo
 Mt
 lS
-ZT
+pZ
 lS
 fC
 uo
@@ -4566,7 +5084,7 @@ mC
 uo
 Mt
 uo
-DT
+Ht
 nD
 ZT
 qK
@@ -4577,7 +5095,7 @@ Mt
 AA
 AA
 LN
-vu
+UB
 AA
 AA
 AA
@@ -4645,7 +5163,7 @@ uo
 uo
 uo
 lS
-ZT
+pZ
 ZT
 Uy
 Ww
@@ -4722,8 +5240,8 @@ uo
 xP
 uo
 fC
-DT
-II
+Ht
+jM
 ZT
 lS
 lS
@@ -4748,7 +5266,7 @@ AA
 wo
 xP
 lS
-ZT
+pZ
 lS
 uo
 mC
@@ -4826,7 +5344,7 @@ AA
 LW
 wo
 lS
-ZT
+pZ
 lS
 mH
 mC
@@ -4877,9 +5395,9 @@ fC
 uo
 uo
 Mt
-DT
-Li
-Li
+Ht
+so
+fP
 lS
 fC
 Ao
@@ -4956,7 +5474,7 @@ lS
 lS
 lS
 lS
-II
+pM
 lS
 lS
 xP
@@ -4982,7 +5500,7 @@ AA
 Ao
 mH
 lS
-II
+pM
 lS
 fC
 uo
@@ -5031,10 +5549,10 @@ mC
 uo
 Mt
 lS
-II
-ZT
-ZT
-Li
+ny
+hg
+hg
+fP
 lS
 wo
 wo
@@ -5060,7 +5578,7 @@ AA
 Mt
 wo
 lS
-ZT
+pZ
 lS
 uo
 mC
@@ -5093,7 +5611,7 @@ yF
 yF
 yF
 yF
-yF
+ME
 yF
 yF
 yF
@@ -5138,7 +5656,7 @@ AA
 Ao
 wo
 lS
-ZT
+pZ
 lS
 uo
 mC
@@ -5186,8 +5704,8 @@ mC
 uo
 fC
 lS
-ZT
-qK
+vh
+sz
 lS
 LW
 mH
@@ -5264,7 +5782,7 @@ mC
 uo
 Mt
 lS
-ZT
+pZ
 lS
 lS
 wo
@@ -5294,7 +5812,7 @@ AA
 wo
 wo
 lS
-Li
+Fg
 lS
 uo
 uo
@@ -5419,8 +5937,8 @@ mC
 mC
 uo
 Mt
-gj
-Xo
+Bh
+UY
 lS
 wo
 mH
@@ -5435,7 +5953,7 @@ AA
 AA
 AA
 tG
-vu
+UB
 AA
 AA
 Eb
@@ -5450,7 +5968,7 @@ AA
 hY
 Tq
 lS
-ZT
+pZ
 lS
 Mt
 uo
@@ -5498,7 +6016,7 @@ mC
 uo
 uo
 lS
-Li
+Fg
 lS
 fC
 wo
@@ -5528,7 +6046,7 @@ dm
 rQ
 rQ
 LI
-ZT
+pZ
 lS
 uo
 uo
@@ -5605,8 +6123,8 @@ CO
 UB
 rQ
 rQ
-DT
-Li
+Ht
+PD
 lS
 fC
 uo
@@ -5654,7 +6172,7 @@ mC
 mH
 uo
 lS
-ZT
+pZ
 lS
 hY
 hY
@@ -5665,14 +6183,14 @@ rO
 xG
 He
 kW
-vu
+UB
 Jk
 dk
 wr
 AY
 Os
 Qb
-vu
+UB
 yt
 ks
 Vf
@@ -5736,7 +6254,7 @@ SH
 gj
 RE
 rQ
-pj
+UB
 Yt
 He
 xG
@@ -5762,7 +6280,7 @@ AA
 uo
 mH
 lS
-Li
+Fg
 lS
 mH
 mC
@@ -5801,7 +6319,7 @@ yF
 yF
 yF
 yF
-yF
+Vp
 yF
 yF
 Zf
@@ -5810,7 +6328,7 @@ mC
 fC
 uo
 lS
-II
+pM
 aw
 rQ
 nS
@@ -5888,7 +6406,7 @@ mC
 mC
 fC
 lS
-II
+pM
 lS
 Tq
 Tq
@@ -5908,10 +6426,10 @@ aj
 AA
 AA
 kK
-Vw
+jE
 Vw
 Ks
-jd
+Ex
 zU
 Iz
 AA
@@ -5966,7 +6484,7 @@ mC
 mC
 uo
 lS
-II
+pM
 lS
 wo
 fC
@@ -5981,11 +6499,11 @@ mL
 AA
 AA
 dm
-vu
+UB
 AA
 AA
-Vw
-Vw
+jE
+jE
 Vw
 Vw
 nZ
@@ -6043,7 +6561,7 @@ Zf
 mC
 mC
 uo
-gj
+Bh
 hO
 lS
 LW
@@ -6061,7 +6579,7 @@ AA
 Vw
 SS
 AA
-Vw
+jE
 jd
 Ks
 Vw
@@ -6074,7 +6592,7 @@ AA
 mH
 fC
 lS
-Li
+Fg
 lS
 uQ
 mC
@@ -6087,7 +6605,7 @@ yF
 yF
 yF
 yF
-yF
+ME
 yF
 yF
 yF
@@ -6122,7 +6640,7 @@ mC
 uo
 Mt
 lS
-Li
+Fg
 lS
 Ao
 wo
@@ -6139,14 +6657,14 @@ AA
 Vf
 Ks
 AA
-nZ
+Yd
 SN
 eG
 nZ
-zF
+UU
 Up
 gZ
-NQ
+qx
 PS
 AA
 LW
@@ -6230,7 +6748,7 @@ AA
 uo
 Mt
 lS
-ZT
+pZ
 lS
 Mt
 uo
@@ -6308,7 +6826,7 @@ AA
 uo
 uo
 lS
-ZT
+pZ
 lS
 uo
 uo
@@ -6356,7 +6874,7 @@ mC
 uo
 xP
 lS
-hO
+rA
 lS
 uo
 xP
@@ -6364,7 +6882,7 @@ AA
 fB
 vH
 la
-qR
+Tt
 dz
 qR
 KF
@@ -6386,7 +6904,7 @@ AA
 LW
 mH
 lS
-qK
+TG
 lS
 uo
 mC
@@ -6434,7 +6952,7 @@ mC
 uo
 uo
 lS
-ZT
+pZ
 lS
 fC
 mH
@@ -6512,7 +7030,7 @@ mC
 uo
 LW
 lS
-qK
+TG
 lS
 LW
 wo
@@ -6529,7 +7047,7 @@ AA
 gF
 ZD
 ZN
-vu
+UB
 px
 Vf
 nV
@@ -6542,7 +7060,7 @@ AA
 wo
 Ao
 lS
-II
+pM
 lS
 uo
 mC
@@ -6590,7 +7108,7 @@ mC
 uo
 uo
 lS
-II
+pM
 lS
 Ao
 wo
@@ -6607,7 +7125,7 @@ AA
 xa
 ST
 Cc
-xw
+gl
 NB
 jE
 kM
@@ -6667,8 +7185,8 @@ mC
 mC
 LW
 Mt
-gj
-lR
+Bh
+AF
 lS
 wo
 fC
@@ -6676,9 +7194,9 @@ AA
 Ei
 SG
 BA
-Pv
-Pv
-Pv
+Hg
+ZY
+PY
 BA
 jk
 AA
@@ -6698,7 +7216,7 @@ AA
 mH
 uo
 lS
-Xo
+RQ
 gj
 uo
 uo
@@ -6746,7 +7264,7 @@ mC
 uo
 mH
 lS
-Li
+Fg
 lS
 uo
 uo
@@ -6765,7 +7283,7 @@ AA
 AA
 AA
 xw
-vu
+UB
 AA
 wo
 fC
@@ -6824,7 +7342,7 @@ mC
 fC
 uo
 lS
-Li
+Fg
 lS
 uo
 uo
@@ -6854,7 +7372,7 @@ fC
 uo
 LW
 lS
-ZT
+pZ
 lS
 Mt
 mH
@@ -6902,7 +7420,7 @@ mC
 Mt
 uo
 lS
-ZT
+pZ
 lS
 Mt
 mH
@@ -6932,7 +7450,7 @@ lS
 lS
 lS
 lS
-ZT
+pZ
 lS
 lS
 uo
@@ -6999,19 +7517,19 @@ uo
 fC
 lS
 vi
-gj
+FF
 lS
 lS
 lS
 lS
-Li
-Li
+uA
+cG
 II
 tK
-SH
-ZT
-ZT
-ZT
+HY
+hg
+VL
+hg
 DT
 uo
 uo
@@ -7047,7 +7565,7 @@ yF
 yF
 yF
 yF
-yF
+Gn
 yF
 yF
 yF
@@ -7058,7 +7576,7 @@ mC
 uo
 lS
 lS
-II
+pM
 lS
 lS
 lS
@@ -7076,19 +7594,19 @@ lS
 lS
 lS
 lS
-II
-Xo
-Xo
+ny
+Ns
+wZ
 wG
-Li
-Li
-Li
+cG
+cG
+fP
 lS
 lS
-gj
+mO
 lS
 lS
-ZT
+pZ
 lS
 lS
 LW
@@ -7134,30 +7652,30 @@ yF
 lw
 mC
 Mt
-gj
-Xo
-SH
+Bh
+wZ
+rZ
 II
 Cz
-Xo
-Li
-ZT
+wZ
+cG
+Pn
 Ty
-qK
-ZT
+th
+hg
 Ty
 II
-Xo
+wZ
 Cz
-ZT
-ZT
-qK
+hg
+Pn
+th
 Ty
 II
-II
+zi
 lS
 lS
-gj
+mO
 lS
 lS
 lS
@@ -7166,7 +7684,7 @@ mH
 uo
 Mt
 lS
-DT
+nt
 lS
 Mt
 uo
@@ -7219,7 +7737,7 @@ lS
 lS
 lS
 lS
-gj
+mO
 lS
 lS
 lS
@@ -7228,7 +7746,7 @@ lS
 lS
 lS
 lS
-gj
+mO
 lS
 lS
 lS
@@ -7292,7 +7810,7 @@ mC
 uo
 Mt
 lS
-gj
+mO
 lS
 uo
 fC
@@ -7340,7 +7858,7 @@ yF
 yF
 yF
 yF
-yF
+Vp
 yF
 yF
 yF
@@ -7595,7 +8113,7 @@ yF
 yF
 yF
 yF
-yF
+ME
 yF
 yF
 yF
@@ -7792,7 +8310,7 @@ yF
 yF
 yF
 yF
-yF
+Gn
 yF
 yF
 yF
@@ -7857,7 +8375,7 @@ yF
 yF
 yF
 yF
-yF
+Vp
 yF
 yF
 yF
@@ -8233,7 +8751,7 @@ yF
 yF
 yF
 yF
-yF
+Vp
 yF
 yF
 yF

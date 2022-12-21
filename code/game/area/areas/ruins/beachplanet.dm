@@ -8,9 +8,7 @@
 /area/ruin/beach/complex/wall
 	name = "Cybersun Complex Exterior Wall"
 	icon_state = "red"
-	ambientsounds = MAINTENANCE
 
 /area/ruin/beach/complex/shuttle
 	name = "Syndicate Shuttle"
 	icon_state = "green"
-	ambientsounds = MAINTENANCE
