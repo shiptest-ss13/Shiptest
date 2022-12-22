@@ -418,13 +418,8 @@
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/belt/military/minutemen/PopulateContents()
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_box/magazine/p16(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
@@ -502,25 +497,13 @@
 	item_state = "security"
 
 /obj/item/storage/belt/military/assault/minutemen/PopulateContents()
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
-	new /obj/item/ammo_box/magazine/p16(src)
+	for(var/i in 1 to 6)
+		new /obj/item/ammo_box/magazine/p16(src)
 
 /obj/item/storage/belt/military/assault/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-
-/obj/item/storage/belt/military/assault/full/PopulateContents()
-	new /obj/item/ammo_box/magazine/wt550m9/wtap(src)
-	new /obj/item/ammo_box/magazine/wt550m9/wtap(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
 
 /obj/item/storage/belt/grenade
 	name = "grenadier belt"
