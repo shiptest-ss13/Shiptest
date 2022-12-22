@@ -217,7 +217,7 @@
 
 /// Syndicate Infiltrator variants
 /datum/map_template/shuttle/infiltrator
-	category = "infiltrator"
+	category = "misc"
 
 /datum/map_template/shuttle/infiltrator/advanced
 	file_name = "infiltrator_advanced"
@@ -225,7 +225,7 @@
 
 /// Pirate ship templates
 /datum/map_template/shuttle/pirate
-	category = "pirate"
+	category = "misc"
 
 /datum/map_template/shuttle/pirate/default
 	file_name = "pirate_default"
@@ -233,7 +233,7 @@
 
 /// Fugitive hunter ship templates
 /datum/map_template/shuttle/hunter
-	category = "hunter"
+	category = "misc"
 
 /datum/map_template/shuttle/hunter/space_cop
 	file_name = "hunter_space_cop"
@@ -271,3 +271,9 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
+//Subshuttles
+
+/datum/map_template/shuttle/subshuttles
+	category = "subshuttles"
+
+//your subshuttle here

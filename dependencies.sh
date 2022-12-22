@@ -5,7 +5,7 @@
 
 # byond version
 export BYOND_MAJOR=514
-export BYOND_MINOR=1571
+export BYOND_MINOR=1588
 
 #rust version
 export RUST_VERSION=1.61.0
@@ -23,5 +23,8 @@ export SPACEMAN_DMM_VERSION=suite-1.7.1
 # Python version for mapmerge and other tools
 export PYTHON_VERSION=3.7.9
 
+#auxmos repository
+export AUXMOS_REPO=https://github.com/shiptest-ss13/auxmos
+
 #auxmos version
-export AUXMOS_VERSION=v1.1.2
+export AUXMOS_VERSION=v1.0.1
