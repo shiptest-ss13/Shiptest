@@ -294,7 +294,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/item/clothing/neck/stethoscope,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "gP" = (
@@ -628,9 +627,6 @@
 /obj/structure/table/glass,
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 4
-	},
-/obj/item/paper/crumpled{
-	info = "The safe and gear are under the yellow box. Steth's stashed in the rear airlock."
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -1765,6 +1761,18 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/item/stack/tile/plasteel/dark{
+	pixel_y = -16;
+	pixel_x = -11
+	},
+/obj/item/clothing/neck/stethoscope{
+	pixel_y = -15;
+	pixel_x = 9
+	},
+/obj/item/crowbar{
+	pixel_y = -11;
+	pixel_x = -8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "Sx" = (
@@ -1870,7 +1878,6 @@
 	},
 /obj/item/implanter/stealth,
 /obj/item/implanter/stealth,
-/obj/effect/turf_decal/box,
 /obj/item/modular_computer/laptop/preset/civilian,
 /obj/item/clothing/mask/chameleon,
 /obj/item/kitchen/knife/combat,
@@ -1886,7 +1893,8 @@
 /obj/item/clothing/mask/chameleon,
 /obj/item/card/id/syndicate/anyone,
 /obj/item/card/id/syndicate/anyone,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plating,
 /area/ship/crew/office)
 "Vw" = (
 /obj/structure/chair/comfy/black,
