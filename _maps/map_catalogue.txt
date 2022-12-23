@@ -18,9 +18,9 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 		Size = (x = 40)(y = 20)(z = 1)
 		Tags = "No Combat", "Minor Loot", "Shelter"
 
-		File Name = _maps\RandomRuins\IceRuins\icemoon_surface_slimerancher.dmm
-		Size = (x = 34)(y = 38)(z = 1)
-		Tags = "Minor Combat Challenge", "Shelter", "Minor Loot"
+		File Name = _maps\RandomRuins\IceRuins\icemoon_underground_slimelab.dmm
+		Size = (x = 50)(y = 50)(z = 1)
+		Tags = "No Combat", "Minor Loot", "Shelter", "Ghost Role", "Lava"
 
 		File Name = _maps\RandomRuins\IceRuins\icemoon_underground_abandoned_newcops.dmm
 		Size = (x = 37)(y = 32)(z = 1)
@@ -129,6 +129,9 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 		Size = (x = 15)(y = 15)(z = 1)
 		Tags = "No Combat", "Minor Loot", Liveable"
 
+		File Name "_maps\RandomRuins\JungleRuins\jungle_bombed_starport
+		Size = (x = 100)(y = 75)(z = 1_)
+		Tags = "Medium Combat Challenge", "Major Loot", "Hazardous", "Liveable"
 
 	LavaRuins:
 		File Name = "_maps\RandomRuins\LavaRuins\lavaland_biodome_beach.dmm"
@@ -202,6 +205,10 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 		File Name = "_maps\RandomRuins\LavaRuins\lavaland_surface_xeno_nest.dmm"
 		Size = (x = 43)(y = 30)(z = 1)
 		Tags = "Boss Combat Challenge", "Medium Loot", "Inhospitable"
+
+		File Name = "_maps\RandomRuin\LavaRuins\lavaland_surface_crashed_pinnance"
+		Size = (x = 30)(y = 30)(z = 1)
+		Tags = "No combat" "Minor loot" "Inhospitable"
 
 
 	ReebeRuins:
@@ -533,7 +540,6 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 
 
 		Waste Ruins:
-
 		File name ="_maps\RandomRuins\wasteruins\wasteplanet_clowncrash.dmm"
 		Size = (x = 11)(y = 12)(z = 1)
 		Tags = "No Combat", "Minor Loot", "Shelter" "hospitable"
@@ -573,3 +579,7 @@ Find the key for using this catalogue in "map_catalogue_key.txt"
 		File name ="_maps\RandomRuins\wasteruins\wasteplanet_unhonorable.dmm"
 		Size = (x = 11)(y = 17)(z = 1)
 		Tags = "No Combat", "Medium Loot", "Shelter", "Hazardous"
+
+		File name = "_maps\RandomRuins\wasteruins\wasteplanet_abandoned_mechbay
+		Size = (x = 45)(y = 47)(z = 1)
+		Tags = "Boss Combat Challenge" "Medium Loot" "Shelter" "Hazardous"

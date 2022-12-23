@@ -22,6 +22,7 @@
 	layer = LARGE_MOB_LAYER
 	speed = 10
 	stat_attack = HARD_CRIT
+	environment_smash = ENVIRONMENT_SMASH_WALLS
 	robust_searching = 1
 	var/hopping = FALSE
 	var/hop_cooldown = 0 //Strictly for player controlled leapers

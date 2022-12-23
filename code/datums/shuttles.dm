@@ -271,3 +271,9 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
+//Subshuttles
+
+/datum/map_template/shuttle/subshuttles
+	category = "subshuttles"
+
+//your subshuttle here
