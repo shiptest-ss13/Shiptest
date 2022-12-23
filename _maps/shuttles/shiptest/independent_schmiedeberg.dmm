@@ -484,6 +484,10 @@
 	dir = 4
 	},
 /obj/structure/curtain/bounty,
+/obj/structure/closet/emcloset/wall{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "fP" = (
@@ -1347,6 +1351,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/box/white,
+/obj/structure/closet/emcloset/wall{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "tK" = (
@@ -1602,6 +1610,10 @@
 	icon_state = "1-8"
 	},
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters,
+/obj/structure/closet/emcloset/wall{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "yB" = (
@@ -1829,6 +1841,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 8;
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/canteen)
