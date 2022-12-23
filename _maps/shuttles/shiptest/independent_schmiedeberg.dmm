@@ -1307,6 +1307,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/hydroponics)
 "tm" = (
@@ -1884,7 +1887,6 @@
 /turf/open/floor/plating,
 /area/ship/medical)
 "Ej" = (
-/obj/machinery/door/airlock/medical/glass,
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
@@ -1904,6 +1906,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning,
+/obj/machinery/door/airlock/medical,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/medical)
 "EV" = (
