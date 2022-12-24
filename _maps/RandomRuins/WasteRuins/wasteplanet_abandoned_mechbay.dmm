@@ -845,6 +845,12 @@
 	},
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/abandoned_mechbay)
+"ib" = (
+/obj/structure/railing/corner{
+	max_integrity = 70
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/abandoned_mechbay)
 "ir" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 4
@@ -1476,7 +1482,11 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/turf/closed/mineral/random/asteroid/wasteplanet,
+/obj/structure/railing/corner{
+	max_integrity = 70;
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/abandoned_mechbay)
 "qf" = (
 /obj/effect/decal/cleanable/oil,
@@ -2605,6 +2615,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"DJ" = (
+/obj/structure/railing/corner{
+	max_integrity = 70;
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/abandoned_mechbay)
 "DM" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -3921,6 +3938,12 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"Tb" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/abandoned_mechbay)
 "Tc" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -4740,7 +4763,7 @@ eb
 tM
 eb
 eb
-eb
+ib
 yy
 yy
 yy
@@ -4793,7 +4816,7 @@ Ww
 pG
 aw
 pG
-eb
+Tb
 ms
 ms
 ms
@@ -4882,7 +4905,7 @@ ms
 ms
 tM
 eb
-eb
+ib
 yy
 yy
 yy
@@ -5176,7 +5199,7 @@ eb
 eb
 eb
 eb
-eb
+DJ
 KG
 KG
 KG
