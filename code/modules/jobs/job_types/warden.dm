@@ -98,12 +98,12 @@
 /datum/outfit/job/warden/inteq
 	name = "Master At Arms (Inteq)"
 
-	ears = /obj/item/radio/headset/inteq/alt
+	ears = /obj/item/radio/headset/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	head = /obj/item/clothing/head/beret/sec/hos/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	mask = /obj/item/clothing/mask/gas/sechailer/inteq
-	belt = /obj/item/storage/belt/security/webbing/inteq
+	belt = /obj/item/storage/belt/military/assault
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
