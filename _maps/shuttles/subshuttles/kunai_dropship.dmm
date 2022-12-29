@@ -384,6 +384,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"DP" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = "polwindow";
+	name = "Blast Shield"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "DW" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -609,7 +618,7 @@ Pq
 (12,1,1) = {"
 Pq
 Wx
-An
+DP
 An
 An
 Wx
