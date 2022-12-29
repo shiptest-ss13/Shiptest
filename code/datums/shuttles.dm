@@ -277,3 +277,13 @@
 	category = "subshuttles"
 
 //your subshuttle here
+
+/datum/map_template/shuttle/subshuttles/kunai
+	file_name = "kunai_dropship"
+	name = "Kunai Dropship"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/sugarcube
+	file_name = "sugarcube"
+	name = "Sugarcube Transport"
+	prefix = "ISV"
