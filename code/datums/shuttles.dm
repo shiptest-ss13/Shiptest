@@ -235,10 +235,6 @@
 /datum/map_template/shuttle/hunter
 	category = "misc"
 
-/datum/map_template/shuttle/hunter/space_cop
-	file_name = "hunter_space_cop"
-	name = "Police Spacevan"
-
 /datum/map_template/shuttle/hunter/russian
 	file_name = "hunter_russian"
 	name = "Russian Cargo Ship"
