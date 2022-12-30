@@ -1,0 +1,29 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Scav-class Drifter",
+	"map_short_name": "Scav-class",
+	"prefix": "ISV",
+	"namelists": ["BEASTS", "SPACE"],
+	"map_path": "_maps/shuttles/shiptest/independent_scav.dmm",
+	"roundstart": true,
+	"job_slots": {
+		"Salvage Leader": {
+			"outfit": "/datum/outfit/job/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Salvage Technician": {
+			"outfit": "/datum/outfit/job/engineer/maintenancetechnician",
+			"slots": 1
+		},
+		"Salvage Doctor": {
+			"outfit": "/datum/outfit/job/doctor/juniordoctor",
+			"slots": 1
+		},
+		"Salvagee": {
+			"outfit": "/datum/outfit/job/assistant/engineeringspecialist",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
