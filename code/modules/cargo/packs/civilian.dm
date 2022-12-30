@@ -48,7 +48,7 @@
 	contains = list(/obj/vehicle/ridden/lawnmower)
 	crate_name = "Donk! Co. TM Deluxe Lawnmower 3003"
 	crate_type = /obj/structure/closet/crate/large
-    
+
 /*
 		Religious
 */
