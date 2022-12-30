@@ -168,7 +168,7 @@
 		mowed = TRUE
 
 	var/obj/structure/flora/flora = locate(/obj/structure/flora) in loc
-	if(ayy_weeds)
+	if(flora)
 		if(!istype(flora, /obj/structure/flora/rock))
 			qdel(flora)
 			mowed = TRUE
