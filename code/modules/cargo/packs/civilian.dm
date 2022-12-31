@@ -42,7 +42,7 @@
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/civilian/lawnmower
-	name = "Donk! Co. TM Deluxe Lawnmower 3003"
+	name = "Lawnmower"
 	desc = "Removing plant from your backyard now made easy with the brand new Donk! Co. TM Deluxe Lawnmower 3003."
 	cost = 800
 	contains = list(/obj/vehicle/ridden/lawnmower)
