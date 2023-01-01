@@ -1708,6 +1708,9 @@
 /obj/item/clothing/under/rank/security/officer/nt,
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
+"JE" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/template_noop)
 "JH" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2531,7 +2534,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/turf/open/floor/plasteel,
+/,
 /area/ship/cargo)
 
 (1,1,1) = {"
@@ -2543,7 +2546,7 @@ sl
 lT
 bN
 lT
-lT
+JE
 TQ
 vW
 sl
