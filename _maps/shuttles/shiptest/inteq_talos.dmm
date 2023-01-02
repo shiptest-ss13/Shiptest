@@ -1113,6 +1113,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -32
 	},
+/obj/item/analyzer,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "ie" = (
@@ -1726,7 +1727,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/mix_output{
 	dir = 8
 	},
-/turf/open/floor/engine/fuel,
+/turf/open/floor/engine/airless,
 /area/ship/engineering/engine)
 "mh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2321,7 +2322,7 @@
 	dir = 8
 	},
 /obj/machinery/air_sensor/atmos/mix_tank,
-/turf/open/floor/engine/fuel,
+/turf/open/floor/engine/airless,
 /area/ship/engineering/engine)
 "pZ" = (
 /obj/structure/cable{
@@ -3237,7 +3238,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input{
 	dir = 8
 	},
-/turf/open/floor/engine/air,
+/turf/open/floor/engine/airless,
 /area/ship/engineering/engine)
 "vJ" = (
 /obj/structure/toilet{
@@ -4740,6 +4741,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/item/analyzer,
 /obj/item/weldingtool/mini,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -5055,6 +5057,8 @@
 	},
 /obj/machinery/autolathe,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/stack/sheet/metal/five,
+/obj/item/stack/sheet/glass/five,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "HN" = (
@@ -6163,7 +6167,7 @@
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 8
 	},
-/turf/open/floor/engine/air,
+/turf/open/floor/engine/airless,
 /area/ship/engineering/engine)
 "Qq" = (
 /obj/effect/landmark/start/station_engineer,
