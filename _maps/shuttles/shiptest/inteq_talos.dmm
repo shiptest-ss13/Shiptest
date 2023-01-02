@@ -303,7 +303,7 @@
 /obj/item/clothing/under/syndicate/inteq,
 /obj/item/clothing/suit/armor/hos/inteq,
 /obj/item/clothing/head/beret/sec/hos/inteq,
-/obj/item/radio/headset/inteq/alt/captain,
+/obj/item/radio/headset/inteq/captain,
 /obj/item/areaeditor/shuttle,
 /obj/item/shield/riot/tele,
 /obj/structure/closet/secure_closet{
@@ -1046,7 +1046,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "hO" = (
 /obj/structure/cable/yellow{
@@ -1064,7 +1064,7 @@
 /area/ship/engineering)
 "hP" = (
 /obj/item/toy/plush/slimeplushie,
-/turf/open/floor/engine/fuel,
+/turf/open/floor/engine/airless,
 /area/ship/engineering/engine)
 "hT" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1097,7 +1097,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "id" = (
 /obj/machinery/light,
@@ -1583,11 +1583,11 @@
 /area/ship/crew/toilet)
 "lg" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
+/obj/item/clothing/suit/space/hardsuit/engine,
+/obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
-/obj/item/tank/jetpack/carbondioxide,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "ll" = (
@@ -1763,9 +1763,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/megaphone/sec,
 /obj/item/radio/headset/inteq/alt,
-/obj/item/clothing/suit/armor/vest/security/warden/alt/nt{
-	name = "master at arms' red armored jacket"
-	},
+/obj/item/clothing/suit/armor/vest/bulletproof,
 /obj/item/clothing/head/warden/drill{
 	desc = "A special armored campaign hat with the IRMG insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection.";
 	name = "master at arms' campaign hat"
@@ -2009,8 +2007,10 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo/port)
 "og" = (
-/obj/structure/marker_beacon,
 /obj/structure/catwalk,
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "oi" = (
@@ -2559,11 +2559,6 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/warning,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"rI" = (
-/obj/structure/catwalk,
-/obj/structure/marker_beacon,
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
 "rJ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3049,7 +3044,6 @@
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
 	name = "folder"
 	},
-/obj/item/paper/monitorkey,
 /obj/item/pen,
 /obj/item/multitool{
 	pixel_x = 12;
@@ -3978,7 +3972,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "As" = (
 /obj/structure/reagent_dispensers/watertank,
@@ -4072,7 +4066,7 @@
 /area/ship/maintenance/port)
 "AO" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
+/obj/item/clothing/suit/space/hardsuit/engine,
 /obj/item/tank/jetpack/carbondioxide,
 /obj/structure/sign/poster/official/build{
 	pixel_y = 32
@@ -4581,7 +4575,7 @@
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = 32
 	},
-/turf/open/floor/engine/fuel,
+/turf/open/floor/engine/airless,
 /area/ship/engineering/engine)
 "Et" = (
 /obj/machinery/airalarm/all_access{
@@ -4677,8 +4671,10 @@
 /area/ship/hallway/central)
 "Fi" = (
 /obj/structure/catwalk,
-/obj/structure/marker_beacon,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/marker_beacon{
+	picked_color = "Lime"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "Fk" = (
@@ -4689,7 +4685,9 @@
 	port_direction = 8;
 	preferred_direction = 4
 	},
-/obj/structure/marker_beacon,
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "Fl" = (
@@ -5027,13 +5025,21 @@
 /area/ship/cargo)
 "HH" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
+/obj/item/clothing/suit/space/hardsuit/engine,
 /obj/item/tank/jetpack/carbondioxide,
 /obj/machinery/camera/autoname{
 	dir = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"HI" = (
+/obj/structure/catwalk,
+/obj/structure/marker_beacon{
+	picked_color = "Lime"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "HM" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
@@ -5836,7 +5842,7 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engine)
 "NK" = (
-/turf/open/floor/engine/fuel,
+/turf/open/floor/engine/airless,
 /area/ship/engineering/engine)
 "NY" = (
 /obj/structure/chair{
@@ -5960,7 +5966,7 @@
 	},
 /obj/machinery/power/apc/auto_name/east,
 /obj/machinery/telecomms/relay/preset/mining{
-	freq_listening = list(1347,1359);
+	freq_listening = list(1347);
 	id = "IRMG Relay";
 	name = "IRMG Relay"
 	},
@@ -5978,7 +5984,7 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 9
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Pp" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -6113,7 +6119,9 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engine)
 "PX" = (
-/obj/structure/marker_beacon,
+/obj/structure/marker_beacon{
+	picked_color = "Yellow"
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "PY" = (
@@ -6197,7 +6205,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/mix_input{
 	dir = 8
 	},
-/turf/open/floor/engine/fuel,
+/turf/open/floor/engine/airless,
 /area/ship/engineering/engine)
 "QF" = (
 /obj/machinery/light{
@@ -6394,13 +6402,13 @@
 	icon_state = "2-8"
 	},
 /obj/structure/table,
-/obj/item/instrument/harmonica,
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
+/obj/item/instrument/harmonica,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "SB" = (
@@ -6965,8 +6973,10 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "VX" = (
-/obj/structure/marker_beacon,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/marker_beacon{
+	picked_color = "Yellow"
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Wb" = (
@@ -8001,7 +8011,7 @@ zo
 UX
 hT
 sw
-rI
+og
 sw
 sw
 "}
@@ -8723,7 +8733,7 @@ sw
 sw
 sw
 sw
-Fi
+HI
 sw
 yp
 MR
