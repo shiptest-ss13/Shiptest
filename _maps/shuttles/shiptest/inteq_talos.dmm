@@ -407,7 +407,7 @@
 /area/ship/storage)
 "dg" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = talos_tank_fuel
+	id = "talos_tank_fuel"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/layer_manifold{
@@ -979,6 +979,12 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"he" = (
+/obj/structure/marker_beacon{
+	picked_color = "Yellow"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/canteen)
 "hg" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1886,6 +1892,9 @@
 "ne" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
+	},
+/obj/structure/marker_beacon{
+	picked_color = "Yellow"
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
@@ -4117,9 +4126,6 @@
 /area/ship/bridge)
 "AX" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = talos_tank_air
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
@@ -4128,6 +4134,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "talos_tank_air"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engine)
@@ -4373,10 +4382,6 @@
 /area/ship/crew)
 "De" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 1;
-	id = talos_tank_fuel
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
@@ -4385,6 +4390,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 1;
+	id = "talos_tank_fuel"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engine)
@@ -5501,7 +5510,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/table/reinforced,
-/obj/structure/table/reinforced,
 /obj/item/folder/syndicate{
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
 	name = "folder"
@@ -6105,7 +6113,7 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 1;
-	id = talos_tank_air
+	id = "talos_tank_air"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
@@ -7935,7 +7943,7 @@ wy
 NY
 yz
 vT
-xI
+he
 YY
 cD
 hT
