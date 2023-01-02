@@ -79,9 +79,9 @@
 		Heavy Duty Exploration Gear
 */
 
-/datum/supply_pack/capsules
+/datum/supply_pack/exploration/capsules
 	name = "Bluespace Shelter Capsules"
-	desc = "A duo of Bluespace Shelter Capsules, for instant shelter in rough situations."
+	desc = "A trio of Bluespace Shelter Capsules, for instant shelter in rough situations."
 	cost = 3000
 	contains = list(
 		/obj/item/survivalcapsule,
