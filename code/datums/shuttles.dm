@@ -286,10 +286,6 @@
 /datum/map_template/shuttle/hunter
 	category = "misc"
 
-/datum/map_template/shuttle/hunter/space_cop
-	file_name = "hunter_space_cop"
-	name = "Police Spacevan"
-
 /datum/map_template/shuttle/hunter/russian
 	file_name = "hunter_russian"
 	name = "Russian Cargo Ship"
@@ -354,3 +350,13 @@
 	name = "Malta Dropship"
 	prefix = "ISV"
 
+
+/datum/map_template/shuttle/subshuttles/kunai
+	file_name = "kunai_dropship"
+	name = "Kunai Dropship"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/sugarcube
+	file_name = "sugarcube"
+	name = "Sugarcube Transport"
+	prefix = "ISV"

@@ -32,32 +32,27 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/engineering)
 "f" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/chair{
+	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/apc/auto_name/north{
-	charging = 20000
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/safe/floor,
+/obj/item/clothing/suit/space/hardsuit/carp/old,
+/obj/item/clothing/suit/space/hardsuit/carp/old,
+/obj/item/toy/plush/among,
 /turf/open/floor/plating,
 /area/ship/storage)
 "g" = (
-/obj/structure/cable{
-	icon_state = "0-8"
+/obj/machinery/power/terminal{
+	dir = 8
 	},
-/obj/machinery/power/smes/shuttle{
-	charge = 1e+006
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/engineering)
 "h" = (
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
@@ -70,11 +65,13 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "i" = (
-/obj/machinery/cryopod{
+/obj/structure/chair{
 	dir = 4
 	},
-/obj/machinery/computer/cryopod{
-	pixel_y = 32
+/obj/structure/window/reinforced/spawner/west,
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -108,9 +105,6 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/effect/mob_spawn/human/corpse{
-	outfit = /datum/outfit/job/security
-	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "n" = (
@@ -120,25 +114,28 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "o" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/engineering)
 "p" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/port_gen/pacman,
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/item/stack/sheet/mineral/plasma/five,
-/obj/machinery/power/terminal{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/engineering)
 "q" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/chips,
@@ -155,18 +152,13 @@
 "s" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/holopad/emergency/command,
-/obj/effect/mob_spawn/human/corpse/assistant,
 /turf/open/floor/plating,
 /area/ship/storage)
 "t" = (
-/obj/item/areaeditor/shuttle,
 /obj/structure/table/reinforced,
 /turf/open/floor/plating,
 /area/ship/storage)
 "u" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/pill/floorpill{
 	pixel_x = -1;
@@ -180,21 +172,40 @@
 	pixel_x = -7;
 	pixel_y = 5
 	},
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/engineering)
 "v" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/cockroach/glockroach,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/engineering)
 "w" = (
 /obj/machinery/door/airlock/maintenance_hatch,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/engineering)
 "x" = (
 /mob/living/simple_animal/deer{
 	desc = "A strange looking pony? It likes sugarcubes that is for sure!";
 	name = "Applejack"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -202,7 +213,14 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "z" = (
-/obj/effect/mob_spawn/human/corpse/damaged,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "A" = (
@@ -210,7 +228,6 @@
 /obj/item/shard,
 /obj/item/shard,
 /obj/item/kitchen/knife/shiv,
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plating,
 /area/ship/storage)
 "B" = (
@@ -219,16 +236,12 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "C" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/safe/floor,
-/obj/item/toy/plush/among,
-/obj/item/clothing/suit/space/hardsuit/carp/old,
-/obj/item/clothing/suit/space/hardsuit/carp/old,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/engineering)
 "D" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical/old,
@@ -237,11 +250,16 @@
 /obj/item/pickaxe/improvised,
 /obj/effect/spawner/lootdrop/glowstick,
 /obj/effect/spawner/lootdrop/glowstick,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable,
 /turf/open/floor/plating,
-/area/ship/storage)
+/area/ship/engineering)
 "E" = (
-/obj/structure/chair{
-	dir = 4
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -264,12 +282,13 @@
 /area/ship/storage)
 "H" = (
 /obj/structure/window/reinforced/spawner/west,
-/obj/structure/fluff/oldturret,
 /turf/open/floor/plating,
 /area/ship/storage)
 "I" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/deepcore/hub,
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "J" = (
@@ -280,54 +299,60 @@
 "K" = (
 /obj/structure/sign/poster/official/moth/meth,
 /turf/closed/wall/rust,
-/area/ship/storage)
+/area/ship/engineering)
+"L" = (
+/turf/closed/wall,
+/area/ship/engineering)
+"Z" = (
+/turf/closed/wall/rust,
+/area/ship/engineering)
 
 (1,1,1) = {"
-a
+Z
 e
-b
-a
+L
+Z
 e
-b
+L
 "}
 (2,1,1) = {"
-a
-f
+Z
+C
 o
 u
 C
-b
+L
 "}
 (3,1,1) = {"
-a
+Z
 g
 p
 v
 D
-b
+L
 "}
 (4,1,1) = {"
-b
-b
+L
+L
 K
 w
-b
-a
+L
+Z
 "}
 (5,1,1) = {"
 c
 h
 q
-l
 E
+y
 c
 "}
 (6,1,1) = {"
 a
 i
-l
+z
 x
-j
+f
 b
 "}
 (7,1,1) = {"
@@ -350,7 +375,7 @@ b
 d
 l
 l
-z
+y
 l
 J
 "}
