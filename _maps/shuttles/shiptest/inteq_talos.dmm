@@ -132,6 +132,11 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "aI" = (
@@ -1498,13 +1503,13 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 28
-	},
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 9
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -2291,13 +2296,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/thermomachine/heater{
-	dir = 1;
-	name = "thermo-electric preheater"
-	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
 	pixel_y = -25
+	},
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer{
+	dir = 1;
+	heat_capacity = 500;
+	name = "thermo-electric cooler"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -2370,7 +2376,7 @@
 	dir = 8
 	},
 /obj/machinery/air_sensor/atmos/mix_tank,
-/turf/open/floor/engine/airless,
+/turf/open/floor/engine/fuel,
 /area/ship/engineering/engine)
 "pZ" = (
 /obj/structure/cable{
@@ -3164,6 +3170,7 @@
 /obj/machinery/door/window/eastright{
 	name = "Engine Access"
 	},
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uD" = (
@@ -3727,6 +3734,7 @@
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
 	},
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yx" = (
@@ -7430,6 +7438,10 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "YI" = (
