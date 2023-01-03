@@ -1,0 +1,35 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "High-class Corporate Luxury Ship",
+	"map_short_name": "High-class",
+	"map_path": "_maps/shuttles/shiptest/independent_high.dmm",
+	"limit": 2,
+	"job_slots": {
+		"Chief Executive Officer": {
+			"outfit": "/datum/outfit/job/captain/corporate",
+			"officer": true,
+			"slots": 1
+		},
+		"Chief Supply Officer": {
+			"outfit": "/datum/outfit/job/quartermaster/supplychief",
+			"officer": true,
+			"slots": 1
+		},
+		"Corporate Security": {
+			"outfit": "/datum/outfit/job/security/corporate",
+			"officer": false,
+			"slots": 2
+		},
+		"Contracted Engineer": {
+			"outfit": "/datum/outfit/job/engineer/corporate",
+			"officer": false,
+			"slots": 2
+		},
+		"Business Associate": {
+			"outfit": "/datum/outfit/job/assistant/corporate",
+			"officer": false,
+			"slots": 4
+		}
+	},
+	"enabled": true
+}
