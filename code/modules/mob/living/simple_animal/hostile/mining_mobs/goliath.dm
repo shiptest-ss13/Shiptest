@@ -23,7 +23,6 @@
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 	harm_intent_damage = 0
 	obj_damage = 100
-	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 12
 	melee_damage_upper = 20
 	attack_verb_continuous = "pulverizes"
@@ -432,3 +431,19 @@
 	if(istype(target,/mob/living/simple_animal/hostile/asteroid))
 		return FALSE
 	return ..()
+
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet
+	name = "gruboid"
+	desc = "A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions."
+	icon_state = "gruboid2"
+	icon_living = "gruboid2"
+	icon_aggro = "gruboid"
+	pre_attack_icon = "gruboid"
+	icon_dead = "gruboid_dead"
+	icon_gib = "syndicate_gib"
+	tentacle_type = /obj/effect/temp_visual/goliath_tentacle/rockplanet
+
+/obj/effect/temp_visual/goliath_tentacle/rockplanet
+	icon_state = "Gruboid_tentacle_wiggle"
+	wiggle = "Gruboid_tentacle_spawn"
+	retract = "Gruboid_tentacle_retract"

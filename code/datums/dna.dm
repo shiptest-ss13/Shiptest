@@ -333,6 +333,18 @@
 		dna.species.on_species_loss(src, new_race, pref_load)
 		var/datum/species/old_species = dna.species
 		dna.species = new_race
+//Solves quirk conflicts on species change if there's any
+		var/list/quirks_to_remove = list()
+		var/list/quirks_resolved = client?.prefs.handle_quirk_conflict("species", new_race, src)
+		for(var/datum/quirk/quirk_instance as anything in roundstart_quirks)
+			quirks_to_remove += quirk_instance.type
+		for(var/quirk_name in quirks_resolved)
+			var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_name]
+			quirks_resolved += quirk_instance.type
+			quirks_resolved -= quirk_name
+		quirks_to_remove -= quirks_resolved
+		for(var/quirk_type in quirks_to_remove)
+			remove_quirk(quirk_type)
 		dna.species.on_species_gain(src, old_species, pref_load)
 		if(ishuman(src))
 			qdel(language_holder)

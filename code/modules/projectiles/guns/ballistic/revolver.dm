@@ -81,15 +81,15 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "detective",
-						"Fitz Special" = "detective_fitz",
-						"Police Positive Special" = "detective_police",
-						"Blued Steel" = "detective_blued",
-						"Stainless Steel" = "detective_stainless",
-						"Gold Trim" = "detective_gold",
-						"Leopard Spots" = "detective_leopard",
-						"The Peacemaker" = "detective_peacemaker",
-						"Black Panther" = "detective_panther"
-						)
+		"Fitz Special" = "detective_fitz",
+		"Police Positive Special" = "detective_police",
+		"Blued Steel" = "detective_blued",
+		"Stainless Steel" = "detective_stainless",
+		"Gold Trim" = "detective_gold",
+		"Leopard Spots" = "detective_leopard",
+		"The Peacemaker" = "detective_peacemaker",
+		"Black Panther" = "detective_panther"
+		)
 
 /obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(magazine.caliber != initial(magazine.caliber))
@@ -266,6 +266,10 @@
 		user.emote("scream")
 		user.drop_all_held_items()
 		user.Paralyze(80)
+
+/obj/item/gun/ballistic/revolver/srm
+	name = "SRM Standard Issue .357 Revolver"
+	desc = "A sturdy, powerful, and reliable revolver. Try not to find yourself on the other end."
 
 /obj/item/gun/ballistic/revolver/pepperbox
 	name = "\improper pepperbox pistol"
