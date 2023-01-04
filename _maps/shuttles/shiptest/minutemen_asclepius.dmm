@@ -22,14 +22,16 @@
 /obj/item/scalpel{
 	pixel_y = 19
 	},
-/obj/item/organ/body_egg/alien_embryo{
-	pixel_x = 2
-	},
 /obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/sign/poster/official/safety_eye_protection{
 	pixel_x = -32
+	},
+/obj/item/organ/alien/plasmavessel/small,
+/obj/item/bodypart/head/alien{
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical/surgery)
@@ -845,8 +847,10 @@
 "ib" = (
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
 /obj/item/storage/belt/medical/webbing,
-/obj/structure/closet/secure_closet/medical3,
 /obj/machinery/airalarm/directional/north,
+/obj/structure/closet/secure_closet/medical3{
+	anchored = 1
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "im" = (
@@ -878,6 +882,10 @@
 	pixel_x = 10
 	},
 /obj/effect/decal/cleanable/cobweb,
+/obj/item/organ/liver/alien{
+	pixel_y = -11;
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical/surgery)
 "iy" = (
@@ -1823,7 +1831,9 @@
 	pixel_y = 32
 	},
 /obj/item/storage/belt/medical/webbing,
-/obj/structure/closet/secure_closet/medical3,
+/obj/structure/closet/secure_closet/medical3{
+	anchored = 1
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "qZ" = (
@@ -4844,7 +4854,9 @@
 "Qn" = (
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
 /obj/item/storage/belt/medical/webbing,
-/obj/structure/closet/secure_closet/medical3,
+/obj/structure/closet/secure_closet/medical3{
+	anchored = 1
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "Qr" = (
