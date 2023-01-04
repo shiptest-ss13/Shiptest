@@ -12,7 +12,7 @@ on:
 jobs:
   run_linters:
     name: Run Linters
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
         with:
@@ -41,6 +41,7 @@ jobs:
           tools/bootstrap/python -c ''
       - name: Run Linters
         run: |
+          tools/bootstrap/python -m tools.maplint.source
           tools/build/build --ci lint tgui-test
           bash tools/ci/check_filedirs.sh shiptest.dme
           bash tools/ci/check_changelogs.sh

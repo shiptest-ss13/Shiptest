@@ -15,33 +15,14 @@ if grep -P '//' _maps/**/*.dmm | grep -v '//MAP CONVERTED BY dmm2tgm.py THIS HEA
 	echo "ERROR: Unexpected commented out line detected in this map file. Please remove it."
 	st=1
 fi;
-if grep -P 'Merge Conflict Marker' _maps/**/*.dmm; then
-    echo "ERROR: Merge conflict markers detected in map, please resolve all merge failures!"
-    st=1
-fi;
-# We check for this as well to ensure people aren't actually using this mapping effect in their maps.
-if grep -P '/obj/merge_conflict_marker' _maps/**/*.dmm; then
-    echo "ERROR: Merge conflict markers detected in map, please resolve all merge failures!"
-    st=1
-fi;
-if grep -P '^\ttag = \"icon' _maps/**/*.dmm;	then
-    echo "ERROR: tag vars from icon state generation detected in maps, please remove them."
-    st=1
-fi;
-if grep -P 'step_[xy]' _maps/**/*.dmm;	then
-    echo "ERROR: step_x/step_y variables detected in maps, please remove them."
-    st=1
-fi;
-if grep -P 'pixel_[^xy]' _maps/**/*.dmm;	then
-    echo "ERROR: incorrect pixel offset variables detected in maps, please remove them."
-    st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/lattice[/\w]*?,\n[^)]*?/obj/structure/lattice[/\w]*?,\n[^)]*?/area/.+?\)' _maps/**/*.dmm;	then
+part "iconstate tags"
+if $grep '^\ttag = "icon' $map_files;	then
 	echo
-    echo "ERROR: found multiple lattices on the same tile, please remove them."
+    echo -e "${RED}ERROR: Tag vars from icon state generation detected in maps, please remove them.${NC}"
     st=1
 fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/barricade/(?<type>[/\w]*),\n[^)]*?/obj/structure/barricade/\g{type},\n[^)]*?/area/.+\)' _maps/**/*.dmm;	then
+part "invalid map procs"
+if $grep '(new|newlist|icon|matrix|sound)\(.+\)' $map_files;	then
 	echo
     echo "ERROR: found multiple identical barricades on the same tile, please remove them."
     st=1
@@ -86,94 +67,39 @@ if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/stairs/(?<type>[/\w]*),\n[^)]*?/o
     echo "ERROR: found multiple identical stairs on the same tile, please remove them."
 	st=1
 fi;
-if grep -rzoP 'machinery/door.*{([^}]|\n)*name = .*("|\s)(?!for|of|and|to)[a-z].*\n' _maps/**/*.dmm;	then
-    echo
-    echo "ERROR: found door names without proper upper-casing. Please upper-case your door names."
-    st=1
-fi;
-if grep -Pzo '/obj/machinery/power/apc[/\w]*?\{\n[^}]*?pixel_[xy] = -?[013-9]\d*?[^\d]*?\s*?\},?\n' _maps/**/*.dmm ||
-	grep -Pzo '/obj/machinery/power/apc[/\w]*?\{\n[^}]*?pixel_[xy] = -?\d+?[0-46-9][^\d]*?\s*?\},?\n' _maps/**/*.dmm ||
-	grep -Pzo '/obj/machinery/power/apc[/\w]*?\{\n[^}]*?pixel_[xy] = -?\d{3,1000}[^\d]*?\s*?\},?\n' _maps/**/*.dmm ;	then
+part "common spelling mistakes"
+if $grep -i 'nanotransen' $map_files; then
 	echo
-    echo "ERROR: found an APC with a manually set pixel_x or pixel_y that is not +-25."
+    echo -e "${RED}ERROR: Misspelling of Nanotrasen detected in maps, please remove the extra N(s).${NC}"
     st=1
 fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/lattice[/\w]*?,\n[^)]*?/turf/closed/wall[/\w]*?,\n[^)]*?/area/.+?\)' _maps/**/*.dmm;	then
+if $grep -i'centcomm' $map_files; then
 	echo
-    echo "ERROR: found lattice stacked with a wall, please remove them."
+    echo -e "${RED}ERROR: Misspelling(s) of CentCom detected in maps, please remove the extra M(s).${NC}"
     st=1
 fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/lattice[/\w]*?,\n[^)]*?/turf/closed[/\w]*?,\n[^)]*?/area/.+?\)' _maps/**/*.dmm;	then
+
+section "whitespace issues"
+part "space indentation"
+if $grep '(^ {2})|(^ [^ * ])|(^    +)' $code_files; then
 	echo
-    echo "ERROR: found lattice stacked within a wall, please remove them."
+    echo -e "${RED}ERROR: Space indentation detected, please use tab indentation.${NC}"
     st=1
 fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/window[/\w]*?,\n[^)]*?/turf/closed[/\w]*?,\n[^)]*?/area/.+?\)' _maps/**/*.dmm;	then
+part "mixed indentation"
+if $grep '^\t+ [^ *]' $code_files; then
 	echo
-    echo "ERROR: found a window stacked within a wall, please remove it."
+    echo -e "${RED}ERROR: Mixed <tab><space> indentation detected, please stick to tab indentation.${NC}"
     st=1
 fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/machinery/door/airlock[/\w]*?,\n[^)]*?/turf/closed[/\w]*?,\n[^)]*?/area/.+?\)' _maps/**/*.dmm;	then
+
+section "unit tests"
+part "mob/living/carbon/human usage"
+if $grep 'allocate\(/mob/living/carbon/human[,\)]' code/modules/unit_tests/**/**.dm ||
+	$grep 'new /mob/living/carbon/human\s?\(' ||
+	$grep 'var/mob/living/carbon/human/\w+\s?=\s?new' ; then
 	echo
-    echo "ERROR: found an airlock stacked within a wall, please remove it."
-    st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/stairs[/\w]*?,\n[^)]*?/turf/open/genturf[/\w]*?,\n[^)]*?/area/.+?\)' _maps/**/*.dmm;	then
-	echo
-    echo "ERROR: found a staircase on top of a genturf. Please replace the genturf with a proper tile."
-    st=1
-fi;
-if grep -Pzo '/obj/machinery/conveyor/inverted[/\w]*?\{\n[^}]*?dir = [1248];[^}]*?\},?\n' _maps/**/*.dmm;	then
-	echo
-    echo "ERROR: found an inverted conveyor belt with a cardinal dir. Please replace it with a normal conveyor belt."
-    st=1
-fi;
-if grep -P '^/area/.+[\{]' _maps/**/*.dmm;	then
-    echo "ERROR: Vareditted /area path use detected in maps, please replace with proper paths."
-    st=1
-fi;
-if grep -P '\W\/turf\s*[,\){]' _maps/**/*.dmm; then
-    echo "ERROR: base /turf path use detected in maps, please replace with proper paths."
-    st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/turf/[/\w]*?,\n[^)]*?/turf/[/\w]*?,\n[^)]*?/area/.+?\)' _maps/**/*.dmm; then
-    echo "ERROR: Multiple turfs detected on the same tile! Please choose only one turf!"
-    st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/area/.+?,\n[^)]*?/area/.+?\)' _maps/**/*.dmm; then
-    echo "ERROR: Multiple areas detected on the same tile! Please choose only one area!"
-    st=1
-fi;
-if grep -P '^/*var/' code/**/*.dm; then
-    echo "ERROR: Unmanaged global var use detected in code, please use the helpers."
-    st=1
-fi;
-echo "Checking for whitespace issues"
-if grep -P '(^ {2})|(^ [^ * ])|(^    +)' code/**/*.dm; then
-    echo "ERROR: space indentation detected"
-    st=1
-fi;
-if grep -P '^\t+ [^ *]' code/**/*.dm; then
-    echo "ERROR: mixed <tab><space> indentation detected"
-    st=1
-fi;
-nl='
-'
-nl=$'\n'
-while read f; do
-    t=$(tail -c2 "$f"; printf x); r1="${nl}$"; r2="${nl}${r1}"
-    if [[ ! ${t%x} =~ $r1 ]]; then
-        echo "file $f is missing a trailing newline"
-        st=1
-    fi;
-done < <(find . -type f -name '*.dm')
-echo "Checking for common mistakes"
-if grep -P '^/[\w/]\S+\(.*(var/|, ?var/.*).*\)' code/**/*.dm; then
-    echo "changed files contains proc argument starting with 'var'"
-    st=1
-fi;
-if grep 'balloon_alert\(".+"\)' code/**/*.dm; then
-	echo "ERROR: Balloon alert with improper arguments."
+	echo -e "${RED}ERROR: Usage of mob/living/carbon/human detected in a unit test, please use mob/living/carbon/human/consistent.${NC}"
 	st=1
 fi;
 if grep -i 'centcomm' code/**/*.dm; then
@@ -196,10 +122,7 @@ if ls _maps/*.json | grep -P "[A-Z]"; then
     echo "Uppercase in a map json detected, these must be all lowercase."
     st=1
 fi;
-if grep -i '/obj/effect/mapping_helpers/custom_icon' _maps/**/*.dmm; then
-    echo "Custom icon helper found. Please include dmis as standard assets instead for built-in maps."
-    st=1
-fi;
+part "map json sanity"
 for json in _maps/*.json
 do
     if [[ "$json" == "_maps/example_ship_config.json" || "$json" == "_maps/ship_config_schema.json" ]];then
@@ -215,5 +138,48 @@ do
         fi
     done < <(jq -r '[.map_file] | flatten | .[]' $json)
 done
+
+section "515 Proc Syntax"
+part "proc ref syntax"
+if $grep '\.proc/' $code_x_515 ; then
+    echo
+    echo -e "${RED}ERROR: Outdated proc reference use detected in code, please use proc reference helpers.${NC}"
+    st=1
+fi;
+
+if [ "$pcre2_support" -eq 1 ]; then
+	section "regexes requiring PCRE2"
+	part "to_chat sanity"
+	if $grep -P 'to_chat\((?!.*,).*\)' $code_files; then
+		echo
+		echo -e "${RED}ERROR: to_chat() missing arguments.${NC}"
+		st=1
+	fi;
+	part "timer flag sanity"
+	if $grep -P 'addtimer\((?=.*TIMER_OVERRIDE)(?!.*TIMER_UNIQUE).*\)' $code_files; then
+		echo
+		echo -e "${RED}ERROR: TIMER_OVERRIDE used without TIMER_UNIQUE.${NC}"
+		st=1
+	fi
+	part "trailing newlines"
+	if $grep -PU '[^\n]$(?!\n)' $code_files; then
+		echo
+		echo -e "${RED}ERROR: File(s) with no trailing newline detected, please add one.${NC}"
+		st=1
+	fi
+else
+	echo -e "${RED}pcre2 not supported, skipping checks requiring pcre2"
+	echo -e "if you want to run these checks install ripgrep with pcre2 support.${NC}"
+fi
+
+if [ $st = 0 ]; then
+    echo
+    echo -e "${GREEN}No errors found using $grep!${NC}"
+fi;
+
+if [ $st = 1 ]; then
+    echo
+    echo -e "${RED}Errors found, please fix them and try again.${NC}"
+fi;
 
 exit $st
