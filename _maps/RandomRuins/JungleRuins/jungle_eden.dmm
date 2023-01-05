@@ -735,6 +735,9 @@
 	anchored = 1
 	},
 /obj/structure/cable,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "ie" = (
@@ -789,6 +792,9 @@
 /area/ruin/jungle/eden/hallway)
 "iq" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 8
+	},
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -1251,6 +1257,9 @@
 /obj/item/clothing/mask/gas,
 /obj/item/tank/internals/oxygen,
 /obj/item/clothing/glasses/science,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/robotics)
 "oo" = (
@@ -1449,6 +1458,9 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
@@ -2318,6 +2330,9 @@
 /area/ruin/jungle/eden/cantina)
 "BA" = (
 /obj/structure/closet/secure_closet/engineering_welding,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "BE" = (
@@ -2804,6 +2819,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/cobweb,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "ID" = (
@@ -3158,6 +3176,9 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine,
 /obj/item/storage/toolbox/mechanical/old/clean,
 /obj/item/mecha_parts/mecha_equipment/rcd,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/robotics)
 "MN" = (
@@ -3302,6 +3323,9 @@
 	},
 /obj/item/storage/belt/security/webbing{
 	desc = "Unique and versatile chest rig, can hold security gear."d
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/armory)
@@ -3812,6 +3836,9 @@
 /area/ruin/jungle/eden/cantina)
 "SZ" = (
 /obj/machinery/processor,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/jungle/eden/cantina)
 "Ta" = (
@@ -4092,6 +4119,9 @@
 /obj/item/storage/box/firingpins,
 /obj/item/storage/box/firingpins,
 /obj/item/storage/box/firingpins,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/armory)
 "Ye" = (
@@ -4168,6 +4198,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/interrogation)
