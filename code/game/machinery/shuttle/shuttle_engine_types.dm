@@ -141,6 +141,21 @@
 /obj/machinery/power/smes/shuttle/precharged
 	charge = 1e6
 
+/obj/machinery/power/smes/shuttle/micro
+	name = "micro electric engine precharger"
+	desc = "A low-capacity, high transfer superconducting magnetic energy storage unit specially made for use with compact shuttle engines."
+	icon = 'icons/obj/shuttle.dmi'
+	input_level = 0
+	input_level_max = 50000
+	output_level = 50000
+	circuit = /obj/item/circuitboard/machine/shuttle/smes/micro
+	density = 0
+	capacity = 1e6
+
+obj/machinery/power/smes/shuttle/micro/precharged
+	charge = 1e6
+
+
 /obj/machinery/power/shuttle/engine/electric/update_engine()
 	. = ..()
 	if(!.)
