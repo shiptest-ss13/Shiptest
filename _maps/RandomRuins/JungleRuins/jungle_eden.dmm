@@ -2346,6 +2346,16 @@
 /obj/effect/decal/cleanable/robot_debris/old,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/robotics)
+"AD" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/purple,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO DIVINITY RESEARCH AND GENETICS. ENSURE YOUR PPE IS SECURELY ON AT ALL TIMES."
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
 "AN" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/dirt/jungle,
@@ -2413,17 +2423,6 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin)
-"BI" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/utility,
-/obj/item/radio/headset,
-/obj/item/clothing/gloves/color/black,
-/obj/item/pda,
-/obj/item/kitchen/knife/combat/survival,
-/obj/item/storage/backpack,
-/turf/open/floor/wood,
-/area/ruin/jungle/eden/observation)
 "BR" = (
 /obj/machinery/button/door{
 	dir = 4;
@@ -2513,16 +2512,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
-"CS" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/purple,
-/obj/item/paper/crumpled{
-	info = "WELCOME TO DIVINITY RESEARCH AND GENETICS. ENSURE YOUR PPE IS SECURELY ON AT ALL TIMES."
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/jungle/eden/robotics)
 "CX" = (
 /obj/effect/turf_decal/trimline/opaque/white/line{
 	dir = 8
@@ -2534,6 +2523,12 @@
 /obj/machinery/vending/mining_equipment,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
+"Da" = (
+/obj/item/paper/crumpled{
+	info = "WELCOME TO THE UNITED STAND. ENSURE ALL NON-ALLIES ARE KEPT OUTSIDE OF THE BASE. LETHAL FORCE GRANTED FOR ACTIVE THREATS TO THE BASE AND ALLIES."
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
 "Db" = (
 /obj/effect/turf_decal/siding/purple{
 	dir = 8
@@ -2854,12 +2849,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
-"GS" = (
-/obj/item/paper/crumpled{
-	info = "WELCOME TO THE UNITED STAND. ENSURE ALL NON-ALLIES ARE KEPT OUTSIDE OF THE BASE. LETHAL FORCE GRANTED FOR ACTIVE THREATS TO THE BASE AND ALLIES."
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/eden/armory)
 "GY" = (
 /obj/structure/sign/poster/contraband/stechkin,
 /turf/closed/wall/r_wall,
@@ -3107,10 +3096,16 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/jungle/eden/ai)
 "KN" = (
-/obj/structure/barricade/sandbags,
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin)
+/obj/structure/closet/secure_closet/personal,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/utility,
+/obj/item/radio/headset,
+/obj/item/clothing/gloves/color/black,
+/obj/item/pda,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/storage/backpack,
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
 "KP" = (
 /obj/machinery/camera,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4722,7 +4717,7 @@ Lp
 Lp
 oU
 Ls
-KN
+oU
 oU
 oU
 Jn
@@ -5276,7 +5271,7 @@ mg
 ge
 Ar
 by
-GS
+Da
 YT
 cd
 Ar
@@ -5795,7 +5790,7 @@ Lp
 Lp
 lq
 lq
-BI
+KN
 yy
 Be
 EE
@@ -6006,7 +6001,7 @@ hN
 zS
 zS
 yv
-CS
+AD
 Qa
 QN
 ir
@@ -6138,7 +6133,7 @@ Lp
 Lp
 lq
 lq
-BI
+KN
 Dn
 dx
 dT
