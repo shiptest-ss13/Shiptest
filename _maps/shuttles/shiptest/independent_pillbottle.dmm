@@ -439,10 +439,16 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/carpet,
 /area/ship/hallway/central)
+"hp" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/under/shorts/blue,
+/turf/open/floor/plating/airless,
+/area/ship/storage)
 "hw" = (
-/obj/machinery/power/smes,
 /obj/structure/cable,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/power/smes/engineering,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "hH" = (
@@ -1801,6 +1807,10 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/blood/old,
+/obj/machinery/newscaster{
+	pixel_y = 32;
+	name = "Pill Newsfeed"
+	},
 /turf/open/floor/carpet,
 /area/ship/crew)
 "En" = (
@@ -2894,6 +2904,12 @@
 	port_direction = 4;
 	preferred_direction = 4
 	},
+/obj/structure/toilet{
+	dir = 4;
+	pixel_y = 6;
+	pixel_x = -4;
+	desc = "The great head of the Pillbottle."
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "XU" = (
@@ -3385,7 +3401,7 @@ Sk
 Iv
 KE
 bX
-Uu
+hp
 wj
 Oz
 "}
