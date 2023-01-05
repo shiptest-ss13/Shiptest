@@ -1519,7 +1519,7 @@
 /obj/docking_port/stationary{
 	dir = 4;
 	roundstart_template = /datum/map_template/shuttle/subshuttles/pill;
-	load_template_on_initialize = false;
+	load_template_on_initialize = 0;
 	height = 3;
 	width = 1
 	},
@@ -2471,7 +2471,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
-	dir = 8;
+	dir = 2;
 	launch_status = 0;
 	port_direction = 4;
 	preferred_direction = 4
