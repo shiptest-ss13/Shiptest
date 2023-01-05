@@ -80,6 +80,9 @@
 /obj/structure/table,
 /obj/machinery/jukebox/boombox,
 /obj/item/storage/cans/sixsoda,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO STARFARE SHIPPING ENTERPRISE. ACQUIRE GEAR FROM FALLEN UNITS, BOTH FRIENDLY AND HOSTILE, AFTER COMBAT. HAND INTO THE EDEN-5 SECURITY TEAM. ASSIST THE CREW WHERE POSSIBLE."
+	},
 /turf/open/floor/wood,
 /area/ruin/jungle/eden/observation)
 "bg" = (
@@ -1129,16 +1132,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/armory)
 "lT" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/utility,
-/obj/item/radio/headset,
-/obj/item/clothing/gloves/color/black,
-/obj/item/pda,
-/obj/item/kitchen/knife/combat/survival,
-/obj/item/storage/backpack,
-/turf/open/floor/wood,
-/area/ruin/jungle/eden/observation)
+/obj/structure/table/wood/fancy/red_gold,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO BLACK SKY NECESSITIES. KEEP CREW MORALE HIGH."
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
 "lX" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/cable{
@@ -1188,6 +1187,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO VALAX INDUSTRIES. MAINTAIN AND SUPPLY YOUR INSTALLATION."
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "nb" = (
@@ -1631,6 +1633,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/hallway)
 "sb" = (
+/obj/item/paper/crumpled{
+	info = "WELCOME TO DIVINITY RESEARCH AND GENETICS. MAINTAIN CREW HEALTH. STUDY CYBERNETIC AUGMENTATION. FACE OBSCURING OPTIONAL."
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
 "sc" = (
@@ -1840,6 +1845,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/holopad/emergency/engineering,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO BLACK SKY NECESSITIES. KEEP CREW MORALE HIGH."
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "ve" = (
@@ -1971,6 +1979,9 @@
 /obj/item/lighter,
 /obj/effect/turf_decal/spline/plain/opaque/solgovgold,
 /obj/item/modular_computer/laptop,
+/obj/item/paper/crumpled{
+	info = "The rest of High Command congratulates you on your assignment to the EDEN-5 Installation. Operate in the Conglomerate's interests. Remember: you operate on behalf of the rest of High Command."
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/jungle/eden/odoffice)
 "wa" = (
@@ -2287,7 +2298,7 @@
 	},
 /obj/structure/closet/secure_closet{
 	icon_state = "hos";
-	name = s
+	name = "squad leader's locker"
 	},
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
@@ -2402,6 +2413,17 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin)
+"BI" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/utility,
+/obj/item/radio/headset,
+/obj/item/clothing/gloves/color/black,
+/obj/item/pda,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/storage/backpack,
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
 "BR" = (
 /obj/machinery/button/door{
 	dir = 4;
@@ -2491,6 +2513,16 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
+"CS" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/purple,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO DIVINITY RESEARCH AND GENETICS. ENSURE YOUR PPE IS SECURELY ON AT ALL TIMES."
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
 "CX" = (
 /obj/effect/turf_decal/trimline/opaque/white/line{
 	dir = 8
@@ -2822,6 +2854,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
+"GS" = (
+/obj/item/paper/crumpled{
+	info = "WELCOME TO THE UNITED STAND. ENSURE ALL NON-ALLIES ARE KEPT OUTSIDE OF THE BASE. LETHAL FORCE GRANTED FOR ACTIVE THREATS TO THE BASE AND ALLIES."
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
 "GY" = (
 /obj/structure/sign/poster/contraband/stechkin,
 /turf/closed/wall/r_wall,
@@ -4232,6 +4270,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/item/paper/crumpled{
+	info = "WELCOME TO DIVINITY RESEARCH AND GENETICS. ENSURE YOUR EMPLOYEES ARE FOLLOWING PROTOCOL. LEAD YOUR DEPARTMENT."
+	},
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/eden/rooffice)
 "YA" = (
@@ -4369,7 +4410,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
 "ZB" = (
-/obj/structure/table/glass,
 /obj/structure/table/glass,
 /obj/item/camera,
 /obj/item/binoculars,
@@ -5236,7 +5276,7 @@ mg
 ge
 Ar
 by
-YT
+GS
 YT
 cd
 Ar
@@ -5325,7 +5365,7 @@ Ks
 fh
 co
 Bx
-Dr
+lT
 vT
 DX
 WU
@@ -5755,7 +5795,7 @@ Lp
 Lp
 lq
 lq
-lT
+BI
 yy
 Be
 EE
@@ -5966,7 +6006,7 @@ hN
 zS
 zS
 yv
-De
+CS
 Qa
 QN
 ir
@@ -6098,7 +6138,7 @@ Lp
 Lp
 lq
 lq
-lT
+BI
 Dn
 dx
 dT
