@@ -1501,11 +1501,11 @@
 	req_components = list(/obj/item/stock_parts/micro_laser = 2,
 		/obj/item/stock_parts/matter_bin = 1)
 
-/obj/item/circuitboard/machine/shuttle/smes
-	name = "Electric Engine Precharger (Machine Board)"
+/obj/item/circuitboard/machine/shuttle/smes/micro
+	name = "Micro Electric Engine Precharger (Machine Board)"
 	build_path = /obj/machinery/power/smes/shuttle
 	req_components = list(
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/cell = 3,
-		/obj/item/stock_parts/capacitor = 1
+		/obj/item/stock_parts/capacitor = 2
 	)
