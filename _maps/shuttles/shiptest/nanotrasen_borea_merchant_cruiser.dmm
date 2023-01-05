@@ -3329,7 +3329,7 @@
 /obj/docking_port/stationary{
 	dir = 4;
 	roundstart_template = /datum/map_template/shuttle/subshuttles/zetes_delivery_pod;
-	load_template_on_initialize = false;
+	load_template_on_initialize = 0;
 	width = 3;
 	height = 8;
 	dwidth = 1
@@ -5903,7 +5903,8 @@
 	launch_status = 0;
 	name = "NT Freighter";
 	port_direction = 4;
-	preferred_direction = 4
+	preferred_direction = 4;
+	can_move_docking_ports = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
