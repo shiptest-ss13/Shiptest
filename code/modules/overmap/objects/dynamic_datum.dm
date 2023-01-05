@@ -237,6 +237,8 @@
 			mapgen = /datum/map_generator/single_biome/reebe
 			default_baseturf = /turf/open/chasm/reebe_void
 
+			weather_controller_type = null
+
 		if(DYNAMIC_WORLD_ASTEROID)
 			Rename("large asteroid")
 			token.desc = "A large asteroid with significant traces of minerals."
@@ -260,6 +262,7 @@
 			token.color = null
 
 			ruin_list = SSmapping.space_ruins_templates
+			mapgen = /datum/map_generator/single_turf/space
 			default_baseturf = /turf/open/space
 
 			weather_controller_type = null
