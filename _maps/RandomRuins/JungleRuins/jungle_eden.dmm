@@ -76,12 +76,6 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/jungle/eden/ai)
-"aN" = (
-/obj/item/paper/crumpled{
-	info = "WELCOME TO THE UNITED STAND. ENSURE ALL NON-ALLIES ARE KEPT OUTSIDE OF THE BASE. LETHAL FORCE GRANTED FOR ACTIVE THREATS TO THE BASE AND ALLIES."
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/eden/armory)
 "aR" = (
 /obj/structure/table,
 /obj/machinery/jukebox/boombox,
@@ -1138,16 +1132,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/armory)
 "lT" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/utility,
-/obj/item/radio/headset,
-/obj/item/clothing/gloves/color/black,
-/obj/item/pda,
-/obj/item/kitchen/knife/combat/survival,
-/obj/item/storage/backpack,
-/turf/open/floor/wood,
-/area/ruin/jungle/eden/observation)
+/obj/structure/table/wood/fancy/red_gold,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO BLACK SKY NECESSITIES. KEEP CREW MORALE HIGH."
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
 "lX" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/cable{
@@ -1861,6 +1851,17 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
+"uY" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/utility,
+/obj/item/radio/headset,
+/obj/item/clothing/gloves/color/black,
+/obj/item/pda,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/storage/backpack,
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
 "ve" = (
 /turf/closed/mineral/random/jungle,
 /area/ruin)
@@ -2664,13 +2665,6 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/eden/rooffice)
-"Eq" = (
-/obj/structure/table/wood/fancy/red_gold,
-/obj/item/paper/crumpled{
-	info = "WELCOME TO BLACK SKY NECESSITIES. KEEP CREW MORALE HIGH."
-	},
-/turf/open/floor/wood/ebony,
-/area/ruin/jungle/eden/cantina)
 "Ev" = (
 /obj/structure/sign/departments/science{
 	dir = 8
@@ -2911,6 +2905,16 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
+"IC" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/purple,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO DIVINITY RESEARCH AND GENETICS. ENSURE YOUR PPE IS SECURELY ON AT ALL TIMES."
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
 "ID" = (
 /obj/effect/turf_decal/trimline/opaque/white/line{
 	dir = 4
@@ -3098,15 +3102,11 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/jungle/eden/ai)
 "KN" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/purple,
 /obj/item/paper/crumpled{
-	info = "WELCOME TO DIVINITY RESEARCH AND GENETICS. ENSURE YOUR PPE IS SECURELY ON AT ALL TIMES."
+	info = "WELCOME TO THE UNITED STAND. ENSURE ALL NON-ALLIES ARE KEPT OUTSIDE OF THE BASE. LETHAL FORCE GRANTED FOR ACTIVE THREATS TO THE BASE AND ALLIES."
 	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/jungle/eden/robotics)
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
 "KP" = (
 /obj/machinery/camera,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4238,7 +4238,7 @@
 	},
 /mob/living/simple_animal/pet/cat{
 	name = "Goober";
-	desc = "A small cat with a collar emblazed with The Conglomerate Insignia. Sergeant Goober reporting!"s;
+	desc = "A small cat with a collar emblazed with The Conglomerate Insignia. Sergeant Goober reporting!";
 	dir = 4
 	},
 /turf/open/floor/wood/mahogany,
@@ -5271,7 +5271,7 @@ mg
 ge
 Ar
 by
-aN
+KN
 YT
 cd
 Ar
@@ -5360,7 +5360,7 @@ Ks
 fh
 co
 Bx
-Eq
+lT
 vT
 DX
 WU
@@ -5790,7 +5790,7 @@ Lp
 Lp
 lq
 lq
-lT
+uY
 yy
 Be
 EE
@@ -6001,7 +6001,7 @@ hN
 zS
 zS
 yv
-KN
+IC
 Qa
 QN
 ir
@@ -6133,7 +6133,7 @@ Lp
 Lp
 lq
 lq
-lT
+uY
 Dn
 dx
 dT
