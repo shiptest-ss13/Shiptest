@@ -129,4 +129,6 @@
 	name = "EDEN-5 Outpost"
 	id = "eden"
 	description = "A habitable bunker owned by a mysterious and hostile group."
+	placement_weight = 0
 	suffix = "jungle_eden.dmm"
+	allow_duplicates = FALSE
