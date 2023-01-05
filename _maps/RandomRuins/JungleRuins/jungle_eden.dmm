@@ -1,0 +1,6531 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ac" = (
+/obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/robotics)
+"ah" = (
+/obj/machinery/chem_heater{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/orange/three_quarters{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"aj" = (
+/obj/machinery/door/poddoor{
+	id = "InnerDoors"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "InnerFans";
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"am" = (
+/obj/effect/turf_decal/corner/opaque/blue/half{
+	dir = 1
+	},
+/obj/machinery/camera,
+/obj/structure/closet/firecloset/wall{
+	dir = 1;
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"au" = (
+/obj/machinery/mecha_part_fabricator,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"av" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"aw" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"aD" = (
+/obj/machinery/jukebox,
+/obj/effect/turf_decal/spline/plain/opaque/solgovgold,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ruin/jungle/eden/odoffice)
+"aK" = (
+/obj/machinery/door/window{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/ai)
+"aR" = (
+/obj/structure/table,
+/obj/machinery/jukebox/boombox,
+/obj/item/storage/cans/sixsoda,
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"bg" = (
+/obj/machinery/holopad/emergency/bar,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"bj" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"bk" = (
+/obj/structure/table/wood/fancy/red_gold,
+/obj/machinery/chem_dispenser/drinks/fullupgrade{
+	dir = 1
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"by" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"bC" = (
+/obj/machinery/disposal/deliveryChute{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk,
+/turf/open/floor/engine,
+/area/ruin/jungle/eden/containment)
+"bN" = (
+/obj/structure/curtain,
+/obj/machinery/iv_drip,
+/obj/structure/bed{
+	icon_state = "stasisold_maintenance";
+	icon = 'icons/obj/machines/stasis.dmi';
+	desc = "A not so comfortable looking bed with some nozzles at the top and bottom. It used to insert people into biostasis for medical treatment, though with its parts removed it only serves as a surface to rest on.";
+	name = "stripped stasis bed"
+	},
+/obj/structure/window/spawner/east,
+/obj/structure/window/spawner,
+/obj/effect/turf_decal/corner/opaque/blue/three_quarters,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"bR" = (
+/obj/machinery/airalarm/directional/west,
+/obj/structure/window/spawner/north,
+/obj/structure/rack,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
+/obj/effect/turf_decal/corner/opaque/blue/half{
+	dir = 8
+	},
+/obj/structure/window/spawner/west,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"bY" = (
+/obj/machinery/atmospherics/components/unary/cryo_cell{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/hatch/blue,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"cb" = (
+/obj/machinery/button/shieldwallgen{
+	id = "InnerFans";
+	name = "internal holofield switch"
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/hallway)
+"cd" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line,
+/obj/structure/rack,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/kitchen/knife/combat,
+/obj/item/storage/box/flashbangs,
+/obj/item/storage/box/flashbangs,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
+/obj/item/storage/box/handcuffs,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"cf" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"cj" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/robotics)
+"cl" = (
+/obj/machinery/vending/dinnerware,
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"co" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"cs" = (
+/obj/machinery/button{
+	pixel_x = -8;
+	pixel_y = 5;
+	dir = 1;
+	name = "Exterior Blast Doors";
+	id = "OuterDoors"
+	},
+/obj/machinery/button{
+	dir = 1;
+	pixel_x = 8;
+	pixel_y = 5;
+	name = "Interior Blast Doors";
+	id = "InnerDoors"
+	},
+/obj/machinery/button{
+	pixel_y = 5;
+	dir = 1;
+	name = "Interception Shutters";
+	id = "Interception"
+	},
+/obj/machinery/button/flasher{
+	dir = 1;
+	id = "AIFlashers"
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/engineering)
+"cx" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/road/line/opaque/solgovgold{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"cB" = (
+/obj/structure/rack,
+/obj/structure/rack,
+/obj/item/circuitboard/mecha/ripley/main,
+/obj/item/circuitboard/mecha/ripley/main,
+/obj/item/mecha_ammo/lmg,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"cE" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"cI" = (
+/obj/machinery/smartfridge/bloodbank/preloaded,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/observation)
+"cN" = (
+/obj/machinery/button/flasher{
+	pixel_y = -8;
+	id = "InterrogationFlasher";
+	name = "interrogation flasher button"
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/interrogation)
+"cQ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"cR" = (
+/obj/structure/sign/poster/contraband/c20r,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/armory)
+"cX" = (
+/obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder{
+	pixel_x = 7
+	},
+/obj/structure/closet/secure_closet/freezer/wall{
+	dir = 8;
+	pixel_x = 32
+	},
+/obj/item/storage/box/donkpockets/donkpocketpizza,
+/obj/item/storage/box/donkpockets/donkpocketpizza,
+/obj/item/storage/box/donkpockets/donkpocketpizza,
+/obj/item/storage/box/donkpockets/donkpocketpizza,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpocketberry,
+/obj/item/storage/box/donkpockets/donkpocketberry,
+/obj/item/storage/box/donkpockets/donkpocketberry,
+/obj/item/storage/box/donkpockets/donkpocketberry,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"dk" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"dn" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"du" = (
+/obj/structure/flora/ash/tall_shroom,
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"dx" = (
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"dz" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"dE" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"dI" = (
+/obj/effect/turf_decal/corner/opaque/bottlegreen,
+/obj/effect/turf_decal/corner/opaque/bottlegreen{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 8
+	},
+/obj/machinery/door/airlock/medical/glass,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/jungle/eden/surgery)
+"dQ" = (
+/obj/effect/decal/cleanable/greenglow/filled,
+/obj/item/storage/wallet/random,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"dT" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/observation)
+"eu" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"ew" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"ex" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"eB" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"eE" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "SCPWindows"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/containment)
+"eL" = (
+/obj/structure/sign/directions/medical{
+	dir = 1
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/rooffice)
+"eS" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"eV" = (
+/obj/structure/sign/warning/radiation,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/engineering)
+"ff" = (
+/obj/effect/turf_decal/corner/opaque/orange/half{
+	dir = 4
+	},
+/obj/machinery/camera/emp_proof{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"fh" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/cantina)
+"fi" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin)
+"fj" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/jungle/eden/hallway)
+"fs" = (
+/obj/effect/decal/cleanable/oil/streak,
+/obj/machinery/vending/sovietsoda,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"fy" = (
+/obj/machinery/vending/security,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"fz" = (
+/obj/effect/turf_decal/trimline/opaque/white/line,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"fG" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"fL" = (
+/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/terminal,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/structure/rack,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/stock_parts/cell/gun,
+/obj/item/kitchen/knife/combat,
+/obj/item/storage/box/flashbangs,
+/obj/item/storage/box/flashbangs,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/flashes,
+/obj/item/storage/box/flashes,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
+/obj/item/storage/box/handcuffs,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"fO" = (
+/obj/machinery/airalarm/directional/west,
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"fS" = (
+/obj/structure/chair/sofa/corner,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ruin/jungle/eden/odoffice)
+"fU" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"gc" = (
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"ge" = (
+/obj/machinery/light,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"gf" = (
+/obj/structure/sign/warning/testchamber,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/containment)
+"gk" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/interrogation)
+"gp" = (
+/obj/machinery/door/airlock/highsecurity,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/rooffice)
+"gr" = (
+/obj/structure/closet/secure_closet/engineering_electrical,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"gv" = (
+/obj/machinery/camera{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/jungle/surface)
+"gy" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"gL" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/engineering)
+"gT" = (
+/turf/open/floor/wood/mahogany,
+/area/ruin/jungle/eden/odoffice)
+"gV" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/robotics)
+"gX" = (
+/obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/cantina)
+"hj" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/rooffice)
+"hw" = (
+/obj/structure/bed{
+	icon_state = "stasisold_maintenance";
+	icon = 'icons/obj/machines/stasis.dmi';
+	desc = "A not so comfortable looking bed with some nozzles at the top and bottom. It used to insert people into biostasis for medical treatment, though with its parts removed it only serves as a surface to rest on.";
+	name = "stripped stasis bed"
+	},
+/obj/structure/curtain,
+/obj/machinery/iv_drip,
+/obj/structure/window/spawner/north,
+/obj/structure/window/spawner/east,
+/obj/effect/turf_decal/corner/opaque/blue/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"hx" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"hB" = (
+/obj/effect/decal/cleanable/oil,
+/obj/structure/closet/crate/rcd,
+/obj/item/rcd_upgrade/simple_circuits,
+/obj/item/rcd_upgrade/frames,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"hG" = (
+/obj/machinery/button/flasher{
+	dir = 1;
+	id = "AIFlashers"
+	},
+/obj/item/radio/intercom/wideband{
+	dir = 1;
+	pixel_y = 8
+	},
+/obj/item/radio/intercom{
+	pixel_y = -8;
+	dir = 1
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/ai)
+"hH" = (
+/turf/open/floor/circuit/red/anim,
+/area/ruin/jungle/eden/ai)
+"hL" = (
+/obj/effect/turf_decal/corner/opaque/blue/half,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"hN" = (
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/robotics)
+"hQ" = (
+/obj/structure/sign/departments/science{
+	dir = 8
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/rooffice)
+"hR" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/item/reagent_containers/food/drinks/bottle/whiskey{
+	pixel_y = 8;
+	pixel_x = -8
+	},
+/obj/effect/turf_decal/spline/plain/opaque/solgovgold,
+/obj/item/reagent_containers/food/drinks/flask,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ruin/jungle/eden/odoffice)
+"ic" = (
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"ie" = (
+/obj/item/stack/sheet/mineral/uranium/fifty,
+/obj/item/stack/sheet/mineral/uranium/fifty,
+/obj/item/stack/sheet/mineral/uranium/fifty,
+/obj/item/stack/sheet/mineral/uranium/fifty,
+/obj/item/stack/sheet/mineral/uranium/fifty,
+/obj/item/stack/sheet/mineral/uranium/fifty,
+/obj/item/stack/sheet/mineral/uranium/fifty,
+/obj/item/stack/sheet/mineral/diamond/twenty,
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/obj/item/stack/sheet/mineral/gold/fifty,
+/obj/item/stack/sheet/mineral/gold/fifty,
+/obj/item/stack/sheet/mineral/gold/fifty,
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"in" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"ip" = (
+/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"iq" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"ir" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/rooffice)
+"iv" = (
+/obj/structure/closet/crate/engineering/electrical,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"iw" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/jungle/eden/hallway)
+"iD" = (
+/obj/structure/closet/secure_closet/engineering_personal,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/head/beret/eng/hazard,
+/obj/item/clothing/under/rank/engineering/engineer/hazard,
+/obj/item/pickaxe/drill/jackhammer/old,
+/obj/item/storage/backpack/ert/engineer{
+	name = "maintenance runner's backpack";
+	desc = "A spacious backpack with lots of pockets, often worn by Maintenance Runners of the United Conglomerate."
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/mask/gas/atmos,
+/obj/item/clothing/under/rank/engineering/engineer,
+/obj/item/clothing/glasses/meson,
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/backpack/satchel/eng,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"iE" = (
+/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"iX" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"jd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"jh" = (
+/obj/structure/closet/crate,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/clothing/under/color/random,
+/turf/open/floor/engine,
+/area/ruin/jungle/eden/containment)
+"js" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood/mahogany,
+/area/ruin/jungle/eden/odoffice)
+"jI" = (
+/obj/machinery/atmospherics/pipe/manifold/general/visible{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"jO" = (
+/obj/effect/turf_decal/corner/opaque/mauve/half,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/rooffice)
+"jP" = (
+/obj/structure/sign/directions/security{
+	dir = 4
+	},
+/obj/structure/sign/directions/science{
+	pixel_y = 6;
+	dir = 4
+	},
+/obj/structure/sign/directions/medical{
+	dir = 4;
+	pixel_y = -6
+	},
+/obj/structure/sign/directions/evac{
+	pixel_y = 12;
+	dir = 8
+	},
+/obj/structure/sign/directions/engineering{
+	pixel_y = -12;
+	dir = 4
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/hallway)
+"jS" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"jT" = (
+/obj/effect/turf_decal/steeldecal/steel_decals10{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/machinery/vending/wardrobe/science_wardrobe,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"jU" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"jX" = (
+/obj/machinery/door/poddoor{
+	id = "InnerDoors"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "InnerFans"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"kb" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"kw" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"kC" = (
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = 8;
+	name = "RO Office Lockdown";
+	id = "RDShutters"
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/odoffice)
+"kE" = (
+/obj/machinery/flasher{
+	id = "AIFlashers"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/ai)
+"kG" = (
+/obj/machinery/light/small,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"kH" = (
+/obj/effect/turf_decal/corner/opaque/blue/three_quarters{
+	dir = 4
+	},
+/obj/item/circuitboard/machine/stasis,
+/obj/item/stack/cable_coil/random/five,
+/obj/item/shard,
+/obj/item/stack/sheet/metal,
+/obj/structure/closet/cardboard,
+/obj/item/circuitboard/machine/medipen_refiller,
+/obj/item/circuitboard/machine/limbgrower,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"kK" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"kN" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/surgery)
+"kT" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "RDShutters";
+	state_open = 1
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"kU" = (
+/obj/structure/sign/poster/official/moth/epi,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/observation)
+"lb" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/white/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/white/corner,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"ln" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/robotics)
+"lq" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/observation)
+"lC" = (
+/obj/structure/sign/directions/medical{
+	dir = 4
+	},
+/obj/structure/sign/directions/science{
+	pixel_y = 6;
+	dir = 4
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/armory)
+"lQ" = (
+/obj/machinery/light,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 6
+	},
+/obj/structure/closet/secure_closet/lethalshots,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/stock_parts/cell/gun/large,
+/obj/item/stock_parts/cell/gun/large,
+/obj/item/stock_parts/cell/gun/large,
+/obj/item/stock_parts/cell/gun/large,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"lT" = (
+/obj/structure/falsewall/reinforced{
+	desc = "A huge chunk of reinforced metal used to separate rooms. This one seems to be a false wall!"
+	},
+/turf/open/space/basic,
+/area/ruin/jungle/eden/engineering)
+"lX" = (
+/obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/robotics)
+"lZ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"mg" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"ml" = (
+/obj/machinery/vending/wardrobe/bar_wardrobe,
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"mz" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"mC" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/purple/corner{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/item/stack/ore/salvage/scraptitanium/five,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"mS" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"nb" = (
+/obj/machinery/mech_bay_recharge_port,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"nf" = (
+/obj/structure/sign/poster/official/moth,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/cantina)
+"nn" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"nz" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/table/reinforced,
+/obj/item/taperecorder,
+/obj/item/restraints/handcuffs,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/interrogation)
+"nH" = (
+/obj/structure/closet/secure_closet/miner,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/kinetic_crusher/old,
+/obj/item/clothing/mask/gas/explorer/old,
+/obj/item/clothing/suit/space/hardsuit/mining/heavy,
+/obj/item/clothing/suit/hooded/explorer/old,
+/obj/item/clothing/gloves/explorer/old,
+/obj/item/pickaxe/drill/jackhammer,
+/obj/item/clothing/glasses/meson,
+/obj/item/t_scanner/adv_mining_scanner,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/eden/engineering)
+"nU" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "science";
+	icon_door = "science_door"
+	},
+/obj/item/construction/plumbing,
+/obj/item/construction/plumbing,
+/obj/item/construction/plumbing,
+/obj/item/book/manual/wiki/plumbing,
+/obj/item/storage/box/beakers/variety,
+/obj/item/storage/box/masks,
+/obj/item/storage/box/gloves,
+/obj/item/clothing/suit/longcoat/chemist,
+/obj/item/reagent_scanner,
+/obj/item/reagent_scanner,
+/obj/item/reagent_scanner,
+/obj/item/storage/box/syringes/variety,
+/obj/item/storage/box/syringes,
+/obj/item/reagent_containers/dropper,
+/obj/item/reagent_containers/dropper,
+/obj/item/reagent_containers/dropper,
+/obj/item/storage/box/monkeycubes,
+/obj/item/storage/box/monkeycubes,
+/obj/item/storage/box/monkeycubes,
+/obj/effect/turf_decal/corner/opaque/orange/half{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"nZ" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/holopad/emergency/medical,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"ol" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "science"
+	},
+/obj/item/clothing/under/rank/rnd/scientist,
+/obj/item/clothing/shoes/galoshes,
+/obj/item/clothing/suit/bio_suit,
+/obj/item/clothing/head/bio_hood,
+/obj/item/clothing/mask/gas,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/glasses/science,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"oo" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/purple,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"op" = (
+/obj/effect/turf_decal/corner/opaque/blue/half,
+/obj/machinery/light,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"ou" = (
+/obj/machinery/computer/mech_bay_power_console{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/robotics)
+"oB" = (
+/obj/structure/chair/wood,
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"oD" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/road/line/opaque/solgovgold{
+	dir = 4
+	},
+/obj/structure/chair/stool/bar{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"oE" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"oU" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"pe" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/bed,
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/ruin/jungle/eden/containment)
+"pi" = (
+/obj/machinery/button/flasher{
+	dir = 1;
+	id = "AIFlashers";
+	pixel_x = 8
+	},
+/obj/machinery/button/door{
+	id = "Interception";
+	pixel_y = 7;
+	name = "Entry Interception Doors"
+	},
+/obj/machinery/button/door{
+	id = "AIShutters"
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/odoffice)
+"pm" = (
+/obj/structure/window/spawner/north,
+/obj/machinery/iv_drip/saline,
+/obj/machinery/door/window{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/blue/three_quarters{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"pn" = (
+/obj/effect/turf_decal/corner/opaque/orange/half{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"pr" = (
+/obj/machinery/mineral/ore_redemption{
+	output_dir = 1;
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"px" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"pB" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"pC" = (
+/obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/chemistry)
+"pL" = (
+/obj/effect/turf_decal/corner/opaque/orange/half{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"pX" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/poddoor/shutters{
+	id = "SCPWindows"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/containment)
+"qb" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"qd" = (
+/obj/effect/turf_decal/siding/purple{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"qq" = (
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"qr" = (
+/obj/machinery/rnd/production/protolathe,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/robotics)
+"qv" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 4;
+	pixel_x = -32
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"qz" = (
+/obj/effect/turf_decal/trimline/opaque/white/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"qA" = (
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/clothing/suit/space/hardsuit/mining/independent,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"qK" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/beaker/cryoxadone,
+/obj/item/reagent_containers/glass/beaker/cryoxadone,
+/obj/item/reagent_containers/glass/beaker/cryoxadone,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"qQ" = (
+/obj/machinery/door/window/brigdoor{
+	dir = 1
+	},
+/obj/machinery/flasher{
+	id = "InterrogationFlasher"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/jungle/eden/interrogation)
+"qS" = (
+/obj/structure/table/glass,
+/obj/item/paper_bin,
+/obj/item/pen/fountain,
+/obj/item/folder/blue,
+/obj/item/clothing/glasses/sunglasses/chemical,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"qW" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/curtain,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/jungle/eden/surgery)
+"qZ" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/ai)
+"rc" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/closet/secure_closet/bar,
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"rk" = (
+/obj/effect/turf_decal/box,
+/obj/mecha/combat/gygax,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mech_bay_recharge_floor,
+/area/ruin/jungle/eden/robotics)
+"rl" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"ro" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/interrogation)
+"rJ" = (
+/obj/structure/sign/departments/medbay/alt,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/robotics)
+"rO" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"sb" = (
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"sc" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"sr" = (
+/obj/structure/chair/comfy/brown,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/robotics)
+"sv" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"sC" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"sG" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/robotics)
+"sH" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 8
+	},
+/obj/structure/closet/firecloset/wall{
+	dir = 4;
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"sT" = (
+/obj/structure/table/wood,
+/obj/item/toy/cards/deck/cas,
+/obj/item/toy/cards/deck/cas/black{
+	pixel_y = 3
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"ta" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"tx" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 4
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 8;
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"tz" = (
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"tK" = (
+/obj/structure/AIcore,
+/obj/item/stack/rods/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/cable_coil,
+/obj/item/mmi/posibrain,
+/obj/machinery/light,
+/turf/open/floor/circuit/red/anim,
+/area/ruin/jungle/eden/ai)
+"tM" = (
+/obj/machinery/sleeper,
+/obj/effect/turf_decal/corner/opaque/blue/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"tN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"tO" = (
+/obj/machinery/vending/engivend,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"tQ" = (
+/obj/effect/turf_decal/steeldecal/steel_decals10,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"tW" = (
+/obj/structure/closet/wall/white/med{
+	dir = 8
+	},
+/obj/item/clothing/mask/breath/medical,
+/obj/item/clothing/mask/breath/medical,
+/obj/item/clothing/mask/breath/medical,
+/obj/item/tank/internals/anesthetic,
+/obj/item/tank/internals/anesthetic,
+/obj/item/tank/internals/anesthetic,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/item/reagent_containers/glass/bottle/chloralhydrate,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/surgery)
+"tX" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"uh" = (
+/turf/open/floor/concrete/pavement,
+/area/ruin)
+"uq" = (
+/obj/machinery/modular_computer/console/preset/research,
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"us" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"uu" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"uB" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/purple/corner,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"uF" = (
+/obj/structure/sign/poster/official/no_erp{
+	dir = 8
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/interrogation)
+"uG" = (
+/obj/machinery/button/door{
+	id = "OuterDoors";
+	name = "Exterior Blast Doors";
+	pixel_x = -8
+	},
+/obj/machinery/button/door{
+	id = "InnerDoors";
+	name = "Interior Blast Dooors";
+	pixel_x = 8
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "InnerFans";
+	name = "internal holofield switch";
+	pixel_y = 8
+	},
+/obj/machinery/button/shieldwallgen{
+	name = "external holofield switch";
+	id = "OuterFans";
+	pixel_y = -8
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/odoffice)
+"uP" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/hallway)
+"uU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad/emergency/engineering,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"ve" = (
+/turf/closed/mineral/random/jungle,
+/area/ruin)
+"vg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/obj/structure/closet/secure_closet/engineering_personal,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/head/beret/eng/hazard,
+/obj/item/clothing/under/rank/engineering/engineer/hazard,
+/obj/item/pickaxe/drill/jackhammer/old,
+/obj/item/storage/backpack/ert/engineer{
+	name = "maintenance runner's backpack";
+	desc = "A spacious backpack with lots of pockets, often worn by Maintenance Runners of the United Conglomerate."
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/mask/gas/atmos,
+/obj/item/clothing/under/rank/engineering/engineer,
+/obj/item/clothing/glasses/meson,
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/backpack/satchel/eng,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"vk" = (
+/obj/structure/closet/secure_closet/RD{
+	name = "\proper research overseer's locker"
+	},
+/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/item/modular_computer/laptop/preset/civilian,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/assembly/signaler/anomaly/vortex,
+/obj/item/clothing/suit/longcoat/science,
+/obj/item/clothing/suit/longcoat/chemist,
+/obj/item/clothing/suit/longcoat/genetics,
+/obj/item/clothing/suit/longcoat/robowhite,
+/obj/item/clothing/under/utility,
+/obj/item/storage/box/syndie_kit/romerol,
+/obj/item/gun/energy/e_gun/rdgun{
+	name = "research overseer's PDW"
+	},
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/backpack/satchel/tox,
+/obj/item/storage/backpack/science,
+/obj/item/aiModule/core/freeformcore,
+/obj/item/stack/spacecash/c1000,
+/obj/item/toy/plush/moth{
+	suicide_count = 32
+	},
+/obj/item/aiModule/reset/purge,
+/obj/item/aicard,
+/obj/item/storage/box/stockparts/deluxe,
+/obj/item/storage/box/stockparts/deluxe,
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"vr" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/item/stack/ore/salvage/scrapbluespace,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"vv" = (
+/obj/machinery/camera{
+	dir = 1
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/jungle/surface)
+"vy" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"vA" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/white/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/white/corner,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"vF" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"vG" = (
+/obj/effect/turf_decal/corner/opaque/blue/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"vK" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "science"
+	},
+/obj/item/clothing/under/rank/rnd/scientist,
+/obj/item/clothing/shoes/galoshes,
+/obj/item/clothing/suit/bio_suit,
+/obj/item/clothing/head/bio_hood,
+/obj/item/clothing/mask/gas,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/glasses/science,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"vT" = (
+/obj/structure/table/wood/fancy/red_gold,
+/obj/item/candle/infinite,
+/obj/item/candle/infinite,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"vZ" = (
+/obj/structure/table/wood,
+/obj/item/storage/fancy/cigarettes/cigars/havana{
+	pixel_y = 12
+	},
+/obj/item/lighter,
+/obj/effect/turf_decal/spline/plain/opaque/solgovgold,
+/obj/item/modular_computer/laptop,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ruin/jungle/eden/odoffice)
+"wa" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 8
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "squad medic's locker"
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/suit/armor/vest/marine/medium,
+/obj/item/storage/belt/medical/webbing/paramedic,
+/obj/item/storage/firstaid/tactical,
+/obj/item/clothing/glasses/hud/health/night,
+/obj/item/storage/box/hypospray/CMO,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/head/beret/med{
+	armor = list("melee"=50,"bullet"=50,"laser"=30,"energy"=25,"bomb"=50,"bio"=100,"fire"=40,"acid"=50);
+	desc = "A white beret with a blue cross finely threaded into it. It has extremely thick padding."
+	},
+/obj/item/clothing/glasses/hud/health/sunglasses,
+/obj/item/gun/ballistic/automatic/smg/c20r/unrestricted,
+/obj/item/ammo_box/magazine/smgm45/drum,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/storage/backpack/medic,
+/obj/item/storage/backpack/duffelbag/syndie,
+/obj/item/radio/headset/headset_medsec/alt,
+/obj/item/clothing/under/syndicate/combat{
+	desc = "A combat-ready underarmor bearing the Conglomerate Insignia.";
+	name = "Conglomerate Combat Uniform"
+	},
+/obj/item/storage/belt/medical/webbing,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"wj" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/vending/wardrobe/medi_wardrobe,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"wr" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/cantina)
+"wA" = (
+/obj/machinery/light/dim,
+/obj/structure/window/reinforced/spawner/east{
+	dir = 1
+	},
+/obj/machinery/flasher{
+	id = "InterrogationFlasher"
+	},
+/obj/structure/closet/secure_closet/personal,
+/obj/item/card/id/prisoner/one,
+/obj/item/card/id/prisoner/two,
+/obj/item/card/id/prisoner/three,
+/obj/item/clothing/under/rank/prisoner,
+/obj/item/clothing/under/rank/prisoner,
+/obj/item/clothing/under/rank/prisoner,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/gloves/fingerless,
+/obj/item/clothing/gloves/fingerless,
+/obj/item/clothing/gloves/fingerless,
+/obj/item/clothing/head/beanie/orange,
+/obj/item/clothing/head/beanie/orange,
+/obj/item/clothing/head/beanie/orange,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/jungle/eden/interrogation)
+"wC" = (
+/obj/structure/chair/plastic{
+	dir = 1;
+	desc = "A rather imposing chair sat out in the middle of nowhere. Seems to repel rain.";
+	name = "rain-proof chair"
+	},
+/turf/template_noop,
+/area/ruin)
+"wG" = (
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"wH" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"wT" = (
+/obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/rooffice)
+"wV" = (
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"xu" = (
+/turf/open/floor/plating/dirt/jungle,
+/area/jungle/surface)
+"xB" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/road/line/opaque/solgovgold{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"xN" = (
+/obj/machinery/defibrillator_mount/loaded,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/surgery)
+"xX" = (
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"yk" = (
+/obj/structure/table/wood/fancy/red_gold,
+/obj/item/stack/spacecash/c10000,
+/obj/item/soap/syndie,
+/obj/item/stack/spacecash/c10000,
+/obj/item/storage/firstaid/tactical,
+/obj/structure/closet/secure_closet/freezer/wall{
+	dir = 1;
+	pixel_y = -32
+	},
+/turf/open/floor/wood/mahogany,
+/area/ruin/jungle/eden/odoffice)
+"ym" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"yv" = (
+/obj/effect/decal/cleanable/robot_debris/limb,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/robotics)
+"yw" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 6
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"yy" = (
+/obj/machinery/camera{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"yG" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"yV" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/jungle/eden/hallway)
+"yY" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"za" = (
+/obj/effect/decal/cleanable/oil/streak,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/mineral/titanium/fifty,
+/obj/item/stack/sheet/mineral/titanium/fifty,
+/obj/item/stack/sheet/mineral/titanium/fifty,
+/obj/item/stack/sheet/mineral/titanium/fifty,
+/obj/item/stack/sheet/mineral/titanium/fifty,
+/obj/item/stack/sheet/mineral/titanium/fifty,
+/obj/item/stack/sheet/mineral/silver/fifty,
+/obj/item/stack/sheet/mineral/silver/fifty,
+/obj/item/stack/sheet/mineral/silver/fifty,
+/obj/item/stack/sheet/mineral/silver/fifty,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"zo" = (
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/surgery)
+"zx" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/purple,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"zB" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"zH" = (
+/obj/machinery/camera{
+	dir = 8
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/jungle/surface)
+"zN" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/wood/mahogany,
+/area/ruin/jungle/eden/odoffice)
+"zR" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/odoffice)
+"zS" = (
+/obj/effect/turf_decal/steeldecal/steel_decals_central6,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/robotics)
+"zZ" = (
+/obj/structure/chair/sofa/left{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/plain/opaque/solgovgold,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ruin/jungle/eden/odoffice)
+"Ab" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"Ap" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 4
+	},
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"Ar" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/armory)
+"As" = (
+/obj/machinery/light,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 10
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "hos";
+	name = s
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/combat{
+	desc = "A combat-ready underarmor bearing the Conglomerate Insignia.";
+	name = "Conglomerate Combat Uniform"
+	},
+/obj/item/clothing/suit/armor/vest/marine/heavy{
+	desc = "A huge tactical armor vest bearing the Conglomerate Insignia. Often reserved for high-ranking soldiers and Conglomerate Marines."
+	},
+/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/head/helmet/marine/security{
+	name = "squad leader helmet"
+	},
+/obj/item/clothing/glasses/hud/security/night,
+/obj/item/clothing/glasses/hud/security/sunglasses,
+/obj/item/gun/ballistic/automatic/smg/m90/unrestricted{
+	name = "VX-30 Carbine";
+	desc = "A three-round burst carbine based off of the M-90gl Carbine, chambered in toploading 5.56. Has an underbarreled grenade launcher which can be toggled on and off."
+	},
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/clothing/glasses/hud/security/sunglasses,
+/obj/item/storage/backpack/duffelbag/syndie,
+/obj/item/radio/headset/heads/hos/alt,
+/obj/item/storage/belt/military,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"At" = (
+/obj/effect/turf_decal/trimline/opaque/white/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"Au" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/purple,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/robot_debris/old,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"AN" = (
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"AP" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 8
+	},
+/obj/machinery/vending/cola/random,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"Be" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"Bv" = (
+/obj/effect/turf_decal/box,
+/obj/mecha/working/ripley/firefighter,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mech_bay_recharge_floor,
+/area/ruin/jungle/eden/robotics)
+"Bx" = (
+/obj/machinery/jukebox,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"BA" = (
+/obj/structure/closet/secure_closet/engineering_welding,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"BE" = (
+/obj/structure/closet/secure_closet/chemical,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
+/obj/effect/turf_decal/corner/opaque/orange/half{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"BF" = (
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"BR" = (
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = 8;
+	name = "Office Lockdown";
+	id = "RDShutters"
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/rooffice)
+"BS" = (
+/obj/effect/decal/cleanable/blood/gibs/up,
+/obj/effect/decal/cleanable/blood/innards{
+	pixel_y = -18
+	},
+/obj/effect/decal/cleanable/blood/gibs/core{
+	pixel_y = -20
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/engine,
+/area/ruin/jungle/eden/containment)
+"Cg" = (
+/obj/machinery/camera,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"Co" = (
+/obj/structure/sign/directions/security,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/armory)
+"Cp" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"Cy" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/blue/half,
+/obj/effect/turf_decal/corner/opaque/blue/half{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"Cz" = (
+/obj/structure/sign/poster/contraband/tools,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/rooffice)
+"CH" = (
+/obj/machinery/holopad/emergency/command,
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"CO" = (
+/obj/structure/table/wood,
+/obj/item/toy/cards/deck/kotahi,
+/obj/item/toy/cards/deck/syndicate{
+	pixel_x = 5;
+	pixel_y = 12
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"CP" = (
+/obj/machinery/light,
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"CR" = (
+/obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"CX" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 8
+	},
+/obj/machinery/vending/snack/random,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"CZ" = (
+/obj/machinery/vending/mining_equipment,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"Db" = (
+/obj/effect/turf_decal/siding/purple{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"De" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/purple,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"Dg" = (
+/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/oil,
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"Dn" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"Dr" = (
+/obj/structure/table/wood/fancy/red_gold,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"Dx" = (
+/obj/machinery/airalarm/directional/north,
+/obj/structure/chair/sofa,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ruin/jungle/eden/odoffice)
+"Dy" = (
+/obj/structure/chair/comfy/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/mauve/three_quarters{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/rooffice)
+"Dz" = (
+/obj/structure/sink{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/surgery)
+"DA" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/eden/engineering)
+"DC" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/jungle/eden/hallway)
+"DH" = (
+/obj/machinery/computer/apc_control{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"DQ" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"DX" = (
+/obj/structure/table/wood/fancy/red_gold,
+/obj/item/candle/infinite,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"DZ" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/obj/machinery/camera,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/jungle/eden/hallway)
+"Ed" = (
+/obj/machinery/camera,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/interrogation)
+"Ee" = (
+/obj/structure/sign/poster/contraband/inteq,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/odoffice)
+"Eh" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/blue/half,
+/obj/machinery/light,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"Ej" = (
+/obj/machinery/light,
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"Ev" = (
+/obj/structure/sign/departments/science{
+	dir = 8
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/robotics)
+"Ex" = (
+/obj/effect/turf_decal/corner/opaque/blue/half,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"EE" = (
+/obj/structure/sign/poster/contraband/xenofauna_parasite,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/observation)
+"EJ" = (
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 8
+	},
+/turf/open/floor/wood/mahogany,
+/area/ruin/jungle/eden/odoffice)
+"Fc" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"Fd" = (
+/obj/effect/decal/cleanable/ash/large,
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/eden/engineering)
+"Fl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	dir = 4;
+	name = "Air to Distro"
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"Fs" = (
+/mob/living/simple_animal/pet/dog/corgi/capybara{
+	real_name = "Gobbert";
+	name = "Gobbert";
+	dir = 4;
+	desc = "The Research Overseer's beloved Capybara. Truly a beloved member of the United Conglomerate!"
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"Fz" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"FI" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"FO" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/road/line/edge/opaque/solgovgold{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"FQ" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/ai)
+"FR" = (
+/obj/structure/sign/poster/official/nanomichi_ad,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/hallway)
+"FT" = (
+/obj/structure/sign/poster/official/safety_eye_protection,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/chemistry)
+"Ga" = (
+/obj/structure/sign/poster/official/science,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/chemistry)
+"Gk" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "science"
+	},
+/obj/item/clothing/under/rank/rnd/scientist,
+/obj/item/clothing/shoes/galoshes,
+/obj/item/clothing/suit/bio_suit,
+/obj/item/clothing/head/bio_hood,
+/obj/item/clothing/mask/gas,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/glasses/science,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"Gp" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 10
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"Gr" = (
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"Gu" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"Gy" = (
+/obj/item/paper{
+	info = "i suck at architecture"
+	},
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"GA" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin)
+"GO" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"GY" = (
+/obj/structure/sign/poster/contraband/stechkin,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/odoffice)
+"Hg" = (
+/obj/effect/turf_decal/corner/opaque/mauve/three_quarters{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/rooffice)
+"HH" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
+/obj/item/circuitboard/mecha/gygax/peripherals,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/camera,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"HL" = (
+/obj/machinery/iv_drip,
+/obj/structure/table/optable,
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/machinery/camera{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/surgery)
+"HU" = (
+/obj/machinery/holopad/emergency/command,
+/turf/open/floor/wood/mahogany,
+/area/ruin/jungle/eden/odoffice)
+"Ia" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/item/stack/ore/salvage/scrapgold,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"It" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"ID" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 4
+	},
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"IH" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/chemistry)
+"IR" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "SCPShutters"
+	},
+/obj/machinery/door/window/brigdoor/security/cell,
+/obj/machinery/door/window/brigdoor/security/cell{
+	dir = 1
+	},
+/obj/machinery/power/shieldwallgen/atmos/strong{
+	id = "ContainmentHololock"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/containment)
+"IY" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"Jf" = (
+/obj/structure/table/reinforced,
+/obj/item/aiModule/core/full/reporter,
+/obj/item/aiModule/core/full/peacekeeper,
+/obj/item/aiModule/core/full/asimov,
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/window/reinforced/survival_pod/spawner/east,
+/obj/structure/window/reinforced/survival_pod/spawner/north,
+/obj/item/aiModule/reset,
+/obj/item/aiModule/core/full/maintain,
+/obj/item/aiModule/supplied/safeguard,
+/obj/item/aiModule/supplied/quarantine,
+/obj/item/aiModule/supplied/protectStation,
+/obj/item/aiModule/core/full/corp,
+/obj/item/circuitboard/aicore,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/ai)
+"Jn" = (
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"Jp" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/road/line/opaque/solgovgold{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"Jz" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"JE" = (
+/obj/machinery/airalarm/directional/south,
+/obj/effect/turf_decal/trimline/opaque/red/filled/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"JG" = (
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = 8;
+	id = "SCPShutters";
+	name = "Containment Door Lockdown"
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = 8;
+	id = "SCPWindows";
+	pixel_y = 10;
+	name = "Containment Windows Lockdown"
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/odoffice)
+"JI" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/chemical,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
+/obj/effect/turf_decal/corner/opaque/orange/half{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"JR" = (
+/obj/machinery/airalarm/directional/east,
+/obj/effect/turf_decal/corner/opaque/orange/half{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/machinery/disposal/bin,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"JY" = (
+/obj/effect/decal/cleanable/blood/gibs/down,
+/obj/effect/decal/cleanable/blood/gibs/limb,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/engine,
+/area/ruin/jungle/eden/containment)
+"Ka" = (
+/obj/structure/sign/poster/official/ion_carbine{
+	dir = 1
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/rooffice)
+"Kc" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/interrogation)
+"Kr" = (
+/obj/structure/sign/poster/official/fruit_bowl,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/hallway)
+"Ks" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/hallway)
+"Kw" = (
+/obj/machinery/vending/tool,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"KA" = (
+/obj/machinery/light,
+/obj/structure/chair/comfy/brown,
+/turf/open/floor/wood/mahogany,
+/area/ruin/jungle/eden/odoffice)
+"KB" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"KD" = (
+/obj/effect/decal/cleanable/glass,
+/obj/structure/closet/wardrobe/miner,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"KF" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/highsecurity,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/ai)
+"KN" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"KP" = (
+/obj/machinery/camera,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/item/robot_suit/prebuilt,
+/obj/item/borg/upgrade/ai,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/ai)
+"KT" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/gloves,
+/obj/item/storage/box/masks,
+/obj/item/clothing/suit/apron/surgical,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/surgery)
+"KW" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/circuit/red/anim,
+/area/ruin/jungle/eden/ai)
+"KX" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/interrogation)
+"KZ" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "RDShutters";
+	state_open = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/science/glass,
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"Lp" = (
+/turf/template_noop,
+/area/template_noop)
+"Lq" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/white/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/white/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"Ls" = (
+/obj/structure/barricade/sandbags,
+/obj/machinery/deployable_turret/hmg,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"LB" = (
+/obj/machinery/door/airlock/hatch,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/interrogation)
+"LT" = (
+/obj/effect/turf_decal/siding/purple{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"LU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/greenglow/filled,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"LZ" = (
+/obj/structure/chair/comfy/brown{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"Ma" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/meter/atmos/layer2,
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/eden/engineering)
+"Mb" = (
+/obj/machinery/telecomms/allinone,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"Mn" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/holopad/emergency/science,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"Mu" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"MB" = (
+/obj/effect/turf_decal/corner/opaque/mauve/three_quarters,
+/obj/machinery/rnd/server,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/rooffice)
+"MI" = (
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"MK" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"MM" = (
+/obj/structure/rack,
+/obj/item/circuitboard/mecha/durand/main,
+/obj/item/mecha_ammo/missiles_he,
+/obj/item/mecha_ammo/scattershot,
+/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine,
+/obj/item/storage/toolbox/mechanical/old/clean,
+/obj/item/mecha_parts/mecha_equipment/rcd,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"MN" = (
+/obj/effect/turf_decal/steeldecal/steel_decals_central7,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"MQ" = (
+/obj/machinery/light/dim,
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/vending/wardrobe/engi_wardrobe,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"MT" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/eden/engineering)
+"MU" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"Nc" = (
+/obj/structure/table/wood/fancy/red_gold,
+/obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
+	dir = 1
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"Ng" = (
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/hallway)
+"Nj" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/mauve/half{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/rooffice)
+"Np" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"Nv" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"NA" = (
+/obj/machinery/camera,
+/obj/structure/rack,
+/obj/item/circuitboard/mecha/gygax/peripherals,
+/obj/item/mecha_ammo/flashbang,
+/obj/item/mecha_parts/mecha_equipment/drill/diamonddrill,
+/obj/item/mecha_parts/mecha_equipment/extinguisher,
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma,
+/obj/item/mecha_parts/mecha_equipment/mining_scanner,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"ND" = (
+/obj/effect/turf_decal/corner/opaque/blue/three_quarters{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"NE" = (
+/obj/machinery/computer/operating{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/surgery)
+"NF" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 9
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "squad sniper's locker"
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/glasses/thermal,
+/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/neck/shemagh,
+/obj/item/clothing/suit/armor/vest/marine,
+/obj/item/gun/energy/beam_rifle{
+	name = "VX-EXP Charge Rifle";
+	desc = "A gargantuan experimental rifle made for use by conglomerate special forces. Capable of expelling an extreme amount of energy all at once to decimate any unfortunate soul that's been targeted."
+	},
+/obj/item/stock_parts/cell/gun/large,
+/obj/item/stock_parts/cell/gun/large,
+/obj/item/screwdriver/power,
+/obj/item/clothing/head/beret{
+	armor = list("melee"=50,"bullet"=50,"laser"=30,"energy"=25,"bomb"=50,"bio"=100,"fire"=40,"acid"=50)
+	},
+/obj/item/grenade/clusterbuster/smoke,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/grenade/smokebomb,
+/obj/item/clothing/glasses/sunglasses/big,
+/obj/item/storage/backpack/security,
+/obj/item/radio/headset/headset_sec/alt,
+/obj/item/clothing/under/syndicate/combat{
+	desc = "A combat-ready underarmor bearing the Conglomerate Insignia.";
+	name = "Conglomerate Combat Uniform"
+	},
+/obj/item/storage/belt/security/webbing{
+	desc = "Unique and versatile chest rig, can hold security gear."d
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"NJ" = (
+/obj/machinery/vending/medical,
+/obj/effect/turf_decal/corner/opaque/blue/half,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"NL" = (
+/obj/machinery/flasher{
+	id = SCPFlasher
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/containment)
+"NP" = (
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/surgery)
+"NR" = (
+/obj/effect/turf_decal/trimline/opaque/white/line,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 1;
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"NS" = (
+/obj/structure/closet/secure_closet/captains,
+/obj/item/gun/ballistic/revolver/mateba{
+	name = "SR-6 Auto-Revolver";
+	desc = "A huge handgun typally used by high-ranking Conglomerate Officials. Chambered in .357"
+	},
+/obj/item/ammo_box/a357/match,
+/obj/item/ammo_box/a357/match,
+/obj/item/ammo_box/a357/match,
+/obj/item/ammo_box/a357/match,
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/shoes/combat,
+/obj/item/areaeditor/blueprints,
+/obj/item/clothing/head/beret/sec/hos{
+	desc = "A black beret with the United Conglomerate's insignia emblazoned on it.";
+	name = "operational director's black beret"
+	},
+/obj/item/clothing/suit/armor/hos{
+	name = "Director's Greatcoat";
+	desc = "A black and silver greatcoat bearing the Conglomerate Insignia. Typically worn by high-ranking conglomerate personnel."
+	},
+/obj/item/storage/box/ids,
+/obj/item/storage/box/PDAs,
+/turf/open/floor/wood/mahogany,
+/area/ruin/jungle/eden/odoffice)
+"NV" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"NX" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/interrogation)
+"Od" = (
+/obj/machinery/door/poddoor{
+	id = "OuterDoors"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "OuterFans"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"Om" = (
+/obj/effect/turf_decal/corner/opaque/mauve/half{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/rooffice)
+"Or" = (
+/obj/machinery/camera,
+/obj/effect/decal/cleanable/blood/old,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/ruin/jungle/eden/containment)
+"Ox" = (
+/obj/structure/sign/poster/official/moth/delam,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/engineering)
+"OD" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"OF" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"OI" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 8
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "squad mech pilot's locker"
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/head/helmet/space/pilot,
+/obj/item/clothing/suit/space/pilot,
+/obj/item/kitchen/knife/combat,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/belt/utility,
+/obj/item/clothing/glasses/hud/diagnostic/sunglasses,
+/obj/item/storage/backpack/science,
+/obj/item/radio/headset/headset_sec/alt,
+/obj/item/clothing/under/syndicate/combat{
+	desc = "A combat-ready underarmor bearing the Conglomerate Insignia.";
+	name = "Conglomerate Combat Uniform"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"OR" = (
+/obj/structure/chair/sofa/right,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ruin/jungle/eden/odoffice)
+"OW" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/armory2,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"OY" = (
+/obj/machinery/door/poddoor{
+	id = "OuterDoors"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "OuterFans";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"Pd" = (
+/obj/structure/chair/comfy/brown,
+/obj/effect/turf_decal/corner/opaque/mauve/three_quarters{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/camera,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/rooffice)
+"Pk" = (
+/obj/structure/sign/warning/securearea,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/armory)
+"Pu" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/wood/mahogany,
+/area/ruin/jungle/eden/odoffice)
+"Pv" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/structure/curtain,
+/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/surgery)
+"PC" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/armory1,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"PH" = (
+/obj/structure/sign/directions/engineering,
+/obj/structure/sign/directions/supply{
+	pixel_y = 6
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/engineering)
+"PJ" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/effect/turf_decal/road/line/opaque/solgovgold{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"PR" = (
+/obj/machinery/computer/rdconsole{
+	dir = 1
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/robotics)
+"PV" = (
+/obj/effect/turf_decal/corner/opaque/blue/half{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"Qa" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/robotics)
+"Qi" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"Qk" = (
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"Qt" = (
+/obj/structure/closet/emcloset/wall{
+	dir = 1
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/observation)
+"Qx" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/robotics)
+"QA" = (
+/obj/effect/decal/cleanable/ash/large,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"QC" = (
+/obj/machinery/light,
+/turf/open/floor/wood/mahogany,
+/area/ruin/jungle/eden/odoffice)
+"QG" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "InnerDoors"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"QK" = (
+/obj/machinery/light/dim,
+/obj/structure/closet/secure_closet/miner,
+/obj/item/kinetic_crusher/old,
+/obj/item/clothing/mask/gas/explorer/old,
+/obj/item/clothing/suit/space/hardsuit/mining/heavy,
+/obj/item/clothing/suit/hooded/explorer/old,
+/obj/item/clothing/gloves/explorer/old,
+/obj/item/pickaxe/drill/jackhammer,
+/obj/item/clothing/glasses/meson,
+/obj/item/t_scanner/adv_mining_scanner,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"QN" = (
+/obj/structure/table/reinforced,
+/obj/item/circuitboard/machine/bepis,
+/obj/item/circuitboard/machine/experimentor,
+/obj/item/circuitboard/machine/tesla_coil/research,
+/obj/item/research_notes/loot/genius{
+	name = "research schematics"
+	},
+/obj/item/research_notes/loot/genius{
+	name = "research schematics"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/robotics)
+"QP" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"Re" = (
+/obj/structure/sign/poster/official/do_not_question,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/armory)
+"Rg" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"Ri" = (
+/obj/effect/turf_decal/siding/purple{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"Ro" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"Rt" = (
+/obj/structure/sign/poster/contraband/syndiemoth,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/odoffice)
+"Rx" = (
+/obj/effect/decal/cleanable/robot_debris/gib,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/robotics)
+"Rz" = (
+/obj/effect/turf_decal/trimline/opaque/white/line,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/structure/closet/firecloset/wall{
+	dir = 1;
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"RA" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/east{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/jungle/eden/interrogation)
+"RE" = (
+/obj/effect/turf_decal/corner/opaque/orange/three_quarters{
+	dir = 4
+	},
+/obj/machinery/vending,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"RF" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"RJ" = (
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/rnd/production/circuit_imprinter,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/robotics)
+"RN" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/robotics)
+"RT" = (
+/obj/machinery/smartfridge/chemistry/preloaded,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/robotics)
+"Sd" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"Sk" = (
+/obj/machinery/door/airlock/highsecurity,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/ai)
+"Sl" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood/mahogany,
+/area/ruin/jungle/eden/odoffice)
+"SI" = (
+/obj/machinery/gibber,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"SR" = (
+/obj/machinery/door/airlock/highsecurity,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"ST" = (
+/obj/machinery/vending/boozeomat/all_access,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"SZ" = (
+/obj/machinery/processor,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"Ta" = (
+/obj/structure/chair/sofa,
+/obj/machinery/camera,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ruin/jungle/eden/odoffice)
+"TA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/jungle/eden/engineering)
+"TS" = (
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"TZ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"Ua" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"Ui" = (
+/obj/machinery/camera,
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"Un" = (
+/obj/machinery/light/small,
+/obj/machinery/chem_master{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/orange/three_quarters,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"Uw" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/hallway)
+"UD" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"UH" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/interrogation)
+"UO" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/robotics)
+"US" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/chemistry)
+"Vf" = (
+/obj/structure/flora/rock/jungle,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"Vj" = (
+/obj/structure/chair/comfy/black{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"Vk" = (
+/obj/machinery/door/airlock/hatch,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/robotics)
+"VO" = (
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/tape/random,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"VP" = (
+/obj/effect/turf_decal/corner/opaque/blue/half{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/item/storage/box/hypospray,
+/obj/structure/closet/secure_closet/medical3,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"VY" = (
+/obj/structure/window/reinforced/spawner/east{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/jungle/eden/interrogation)
+"VZ" = (
+/obj/structure/table/reinforced,
+/obj/machinery/microwave,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"Wc" = (
+/obj/machinery/button/shieldwallgen{
+	name = "external holofield switch";
+	id = "OuterFans"
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/hallway)
+"Wx" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/smes/engineering,
+/turf/open/floor/plating,
+/area/ruin/jungle/eden/engineering)
+"WC" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"WG" = (
+/obj/machinery/flasher{
+	id = "AIFlashers"
+	},
+/turf/open/floor/circuit/red/anim,
+/area/ruin/jungle/eden/ai)
+"WI" = (
+/obj/structure/sign/poster/retro/random,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/engineering)
+"WL" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"WN" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/robotics)
+"WS" = (
+/obj/machinery/computer/upload/borg{
+	dir = 1
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"WU" = (
+/obj/structure/table/wood/fancy/red_gold,
+/obj/item/storage/fancy/candle_box,
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
+"WY" = (
+/obj/machinery/door/window{
+	dir = 4
+	},
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 1
+	},
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/structure/curtain,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ruin/jungle/eden/cantina)
+"Xf" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/ai)
+"Xq" = (
+/obj/item/stack/ore/salvage/scraptitanium/five,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/robotics)
+"Xr" = (
+/obj/structure/sign/poster/contraband/syndicate,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/odoffice)
+"Xw" = (
+/obj/structure/sign/poster/official/twelve_gauge,
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/robotics)
+"XF" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"XG" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/table,
+/obj/machinery/recharger{
+	pixel_x = 8
+	},
+/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_x = -8
+	},
+/obj/machinery/recharger{
+	pixel_y = 8
+	},
+/obj/machinery/recharger{
+	pixel_y = 8;
+	pixel_x = -8
+	},
+/obj/machinery/recharger{
+	pixel_y = 8
+	},
+/obj/machinery/recharger{
+	pixel_y = 8;
+	pixel_x = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"XJ" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line,
+/obj/structure/rack,
+/obj/item/stock_parts/cell/gun/large,
+/obj/item/storage/box/teargas,
+/obj/item/storage/box/teargas,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/handcuffs,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"XU" = (
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin)
+"XV" = (
+/obj/effect/turf_decal/trimline/opaque/red/filled/line{
+	dir = 5
+	},
+/obj/structure/closet/secure_closet/armory3,
+/obj/item/gun/energy/ionrifle,
+/obj/item/storage/box/firingpins,
+/obj/item/storage/box/firingpins,
+/obj/item/storage/box/firingpins,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"Ye" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/mob/living/simple_animal/pet/cat{
+	name = "Goober";
+	desc = "A small cat with a collar emblazed with The Conglomerate Insignia. Sergeant Goober reporting!"s;
+	dir = 4
+	},
+/turf/open/floor/wood/mahogany,
+/area/ruin/jungle/eden/odoffice)
+"Yl" = (
+/obj/machinery/chem_dispenser{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/orange/half,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"Ys" = (
+/obj/machinery/rnd/destructive_analyzer,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/robotics)
+"Yx" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/glass/maunamug,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/recharger,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"YA" = (
+/obj/machinery/computer/upload/ai{
+	dir = 1
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/jungle/eden/rooffice)
+"YE" = (
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/closet/l3closet,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/shoes/galoshes,
+/obj/item/clothing/shoes/galoshes,
+/obj/item/clothing/shoes/galoshes,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/effect/turf_decal/corner/opaque/orange/three_quarters{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/chemistry)
+"YG" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/interrogation)
+"YQ" = (
+/obj/machinery/button/flasher{
+	dir = 8;
+	name = "Containment Flasher";
+	pixel_x = -8;
+	pixel_y = 9
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 8;
+	id = "ContainmentHololock";
+	name = "Containment Holofield Switch"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = -8;
+	id = "SCPShutters";
+	name = "Containment Door Lockdown"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = -8;
+	id = "SCPWindows";
+	pixel_y = -10;
+	name = "Containment Windows Lockdown"
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/chemistry)
+"YR" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/jungle/eden/robotics)
+"YS" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
+"YT" = (
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
+"YW" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"Zc" = (
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/containment)
+"Zj" = (
+/obj/effect/turf_decal/corner/opaque/blue/half,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"Zv" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/window/spawner,
+/obj/structure/rack,
+/obj/item/stack/medical/mesh/advanced,
+/obj/item/stack/medical/mesh/advanced,
+/obj/item/stack/medical/suture/medicated,
+/obj/item/stack/medical/suture/medicated,
+/obj/item/stack/medical/splint,
+/obj/item/stack/medical/gauze/twelve,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/obj/effect/turf_decal/corner/opaque/blue/half{
+	dir = 8
+	},
+/obj/structure/window/spawner/west,
+/obj/item/storage/box/bodybags,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"ZB" = (
+/obj/structure/table/glass,
+/obj/structure/table/glass,
+/obj/item/camera,
+/obj/item/binoculars,
+/obj/item/paper_bin,
+/obj/item/pen/fourcolor,
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
+"ZC" = (
+/obj/structure/sign/warning/chemdiamond{
+	dir = 8
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/chemistry)
+"ZD" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "OuterDoors"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
+"ZK" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/freezer/meat,
+/turf/open/floor/carpet/red,
+/area/ruin/jungle/eden/cantina)
+"ZN" = (
+/obj/structure/rack,
+/obj/item/storage/firstaid/advanced,
+/obj/effect/turf_decal/corner/opaque/blue/half{
+	dir = 8
+	},
+/obj/structure/window/spawner/west,
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/medical)
+"ZR" = (
+/obj/effect/turf_decal/corner/opaque/mauve/half{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/jungle/eden/rooffice)
+
+(1,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+ve
+ve
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+"}
+(2,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+ve
+ve
+ve
+ve
+ve
+ve
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+"}
+(3,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+xu
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+"}
+(4,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+xu
+xu
+xu
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+"}
+(5,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Lp
+Lp
+Lp
+ve
+ve
+ve
+xu
+xu
+Lp
+Lp
+Lp
+Lp
+Lp
+"}
+(6,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+oU
+Ls
+KN
+oU
+oU
+Jn
+xu
+Lp
+Lp
+xu
+xu
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Jn
+Jn
+Jn
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+xu
+Lp
+Lp
+Lp
+Lp
+"}
+(7,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+oU
+oU
+Jn
+Jn
+Jn
+Jn
+xu
+xu
+xu
+xu
+zH
+xu
+xu
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+BF
+BF
+Jn
+Jn
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Lp
+Lp
+Lp
+Lp
+"}
+(8,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Jn
+oU
+Jn
+Jn
+Jn
+Jn
+KX
+KX
+KX
+KX
+KX
+KX
+zR
+zR
+zR
+zR
+zR
+zR
+zR
+zR
+XU
+AN
+AN
+BF
+du
+Jn
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Lp
+Lp
+Lp
+"}
+(9,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Jn
+Jn
+uh
+uh
+uh
+KX
+KX
+KX
+KX
+KX
+KX
+zR
+zR
+zR
+zR
+JG
+kC
+zR
+zR
+Ui
+AN
+Cp
+XU
+XU
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Lp
+Lp
+"}
+(10,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+uh
+uh
+uh
+KX
+KX
+Ed
+Kc
+qQ
+KX
+Rt
+OR
+aD
+Pu
+HU
+KA
+pi
+zR
+XU
+XU
+XU
+du
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Lp
+"}
+(11,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+xu
+GA
+uh
+GA
+KX
+KX
+NX
+nz
+RA
+KX
+zR
+Dx
+vZ
+Ye
+EJ
+yk
+zR
+zR
+zR
+zR
+Cg
+XU
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+"}
+(12,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+xu
+zH
+fi
+uh
+fi
+KX
+cN
+ro
+UH
+VY
+uF
+Xr
+Ta
+hR
+Sl
+zN
+gT
+uG
+zR
+zR
+zR
+Jn
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+"}
+(13,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+xu
+Ks
+Ks
+Od
+ZD
+OY
+Ks
+KX
+YG
+gk
+wA
+KX
+GY
+fS
+zZ
+js
+NS
+QC
+Ee
+zR
+zR
+Ar
+Ar
+gL
+gL
+gL
+gL
+gL
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+Lp
+"}
+(14,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+ve
+Ks
+Wc
+DZ
+fj
+yV
+Ks
+KX
+KX
+LB
+KX
+fh
+fh
+fh
+fh
+gX
+fh
+Ar
+Ar
+Ar
+Ar
+Ar
+Ar
+gL
+gL
+gL
+gL
+gL
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+Lp
+"}
+(15,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+ve
+ve
+Ks
+Kr
+Ng
+uP
+Uw
+Ks
+fh
+cl
+px
+rc
+qv
+oB
+CO
+mz
+Fz
+WY
+Ar
+NF
+OI
+wa
+As
+Ar
+It
+iE
+iq
+gL
+gL
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+Lp
+"}
+(16,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+ve
+ve
+ve
+Ks
+cb
+DC
+iw
+DC
+Ks
+fh
+ml
+hx
+tz
+UD
+oB
+sT
+KB
+ex
+tz
+cR
+DQ
+YT
+YT
+ta
+Ar
+iv
+VO
+Mb
+gL
+gL
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Lp
+"}
+(17,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+ve
+ve
+ve
+Ks
+Ks
+jX
+QG
+aj
+Ks
+fh
+ZK
+hx
+tz
+WC
+tN
+tN
+lZ
+mg
+ge
+Ar
+by
+YT
+YT
+cd
+Ar
+BA
+xX
+gr
+gL
+gL
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+"}
+(18,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+ve
+ve
+ve
+ve
+ve
+Ks
+Ks
+Ro
+jS
+fz
+Ks
+fh
+PJ
+Jp
+oD
+oD
+oD
+oD
+cx
+FO
+uu
+SR
+nn
+XG
+qb
+fL
+Ar
+hB
+Fd
+ie
+gL
+gL
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+"}
+(19,1,1) = {"
+Lp
+Lp
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Ks
+Ks
+bj
+eS
+Rz
+Ks
+fh
+co
+Bx
+Dr
+vT
+DX
+WU
+bk
+xB
+CP
+Pk
+dk
+fy
+YT
+XJ
+Ar
+iD
+MU
+za
+gL
+gL
+Jn
+Jn
+Jn
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+"}
+(20,1,1) = {"
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Ks
+Ks
+QP
+eu
+NR
+Ks
+fh
+MI
+wV
+wV
+wV
+bg
+wV
+Nc
+xB
+tz
+Co
+zB
+YT
+YT
+JE
+Ar
+vg
+Fl
+qA
+gL
+gL
+Jn
+Jn
+dz
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+"}
+(21,1,1) = {"
+Lp
+Lp
+Lp
+ve
+ve
+ve
+ve
+ve
+ve
+Ks
+jP
+kw
+dn
+qz
+Ks
+fh
+aw
+ST
+VZ
+cX
+SZ
+SI
+Dr
+xB
+tz
+Ar
+XV
+PC
+OW
+lQ
+Ar
+Kw
+Ma
+MQ
+gL
+gL
+Jn
+Jn
+Jn
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+Lp
+"}
+(22,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+ve
+ve
+ve
+ve
+ve
+Ks
+Ks
+kw
+dn
+qz
+Ks
+fh
+nf
+fh
+fh
+fh
+fh
+fh
+wr
+gX
+wr
+lC
+Ar
+Re
+Ar
+Ar
+Ar
+KD
+TA
+tO
+gL
+gL
+Jn
+Jn
+Jn
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Lp
+"}
+(23,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+xu
+xu
+xu
+ve
+ve
+Ks
+Ks
+kw
+dn
+At
+Sd
+Sd
+Sd
+vF
+sH
+Sd
+fO
+vF
+Sd
+Lq
+fG
+vF
+Sd
+AP
+CX
+Gp
+eV
+jd
+uU
+pr
+Ox
+gL
+Jn
+Jn
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+Lp
+"}
+(24,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+xu
+xu
+xu
+Ks
+FR
+FI
+IY
+av
+av
+av
+av
+av
+av
+av
+pB
+av
+av
+RF
+dE
+av
+av
+av
+av
+vA
+CR
+MT
+sc
+DH
+gL
+gL
+Cg
+ve
+ve
+Jn
+ve
+ve
+ve
+ve
+xu
+Lp
+Lp
+"}
+(25,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+xu
+vv
+Ks
+Ks
+rO
+us
+us
+us
+us
+us
+NV
+tx
+us
+ip
+NV
+us
+lb
+YW
+NV
+us
+Ap
+ID
+yw
+PH
+kb
+MK
+Dg
+gL
+gL
+Jn
+ve
+Vf
+Jn
+Jn
+Jn
+ve
+xu
+xu
+Lp
+Lp
+"}
+(26,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+xu
+xu
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+Ks
+WN
+Xw
+WN
+WN
+WN
+Ev
+sG
+ac
+sG
+hQ
+Cz
+ir
+BR
+ir
+gL
+fs
+LU
+gc
+gL
+gL
+Gy
+ve
+Jn
+Jn
+yY
+Jn
+Jn
+xu
+xu
+Lp
+Lp
+"}
+(27,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+lq
+lq
+dT
+dT
+dT
+kH
+bR
+ZN
+Zv
+pm
+WN
+jT
+sv
+ol
+Gk
+vK
+uB
+Ri
+LT
+Ka
+vk
+OF
+CH
+Fs
+WI
+ym
+mS
+QK
+gL
+gL
+Jn
+ve
+Jn
+Jn
+Jn
+Jn
+Jn
+xu
+Lp
+Lp
+Lp
+"}
+(28,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+lq
+lq
+wG
+yy
+Be
+EE
+VP
+sb
+wH
+eB
+op
+rJ
+MN
+Xq
+Rx
+hN
+hN
+De
+sr
+PR
+ir
+uq
+Vj
+TS
+YA
+cs
+Wx
+QA
+CZ
+gL
+gL
+Gr
+Jn
+Jn
+Jn
+Qk
+Jn
+xu
+Lp
+Lp
+Lp
+Lp
+"}
+(29,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+lq
+wG
+wG
+cf
+yG
+dT
+am
+sC
+wj
+Nv
+hL
+RT
+Rg
+hN
+nb
+nb
+gV
+zx
+cj
+qr
+ir
+qS
+Yx
+iX
+WS
+gL
+rl
+DA
+nH
+lT
+lT
+Jn
+Jn
+Jn
+Jn
+Jn
+Jn
+xu
+Lp
+Lp
+Lp
+Lp
+"}
+(30,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+lq
+wG
+aR
+OD
+kG
+dT
+tM
+Ab
+qK
+nZ
+Ex
+lX
+tX
+UO
+Bv
+rk
+Qx
+Au
+RN
+RJ
+ir
+Fc
+TZ
+Jz
+Ej
+gL
+qq
+dQ
+ic
+gL
+gL
+ve
+ve
+ve
+ve
+ve
+xu
+Lp
+Lp
+Lp
+Lp
+Lp
+"}
+(31,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+lq
+wG
+LZ
+OD
+yG
+Qt
+tM
+Ab
+bY
+Qi
+Zj
+Vk
+gy
+hN
+ou
+ou
+gV
+oo
+YR
+Ys
+eL
+kT
+KZ
+kT
+ir
+gL
+gL
+gL
+gL
+gL
+gL
+gL
+Xf
+ve
+ve
+ve
+ve
+xu
+xu
+xu
+Lp
+Lp
+"}
+(32,1,1) = {"
+Lp
+Lp
+Lp
+wC
+Lp
+lq
+wG
+ZB
+jU
+Np
+in
+PV
+kK
+ew
+XF
+NJ
+rJ
+fU
+hN
+zS
+zS
+yv
+De
+Qa
+QN
+ir
+Pd
+ZR
+Dy
+ir
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+Lp
+Lp
+"}
+(33,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+lq
+wG
+wG
+cE
+wG
+kU
+Cy
+WL
+jI
+Ua
+Eh
+ln
+HH
+vr
+YS
+Mn
+Ia
+mC
+Db
+qd
+wT
+Om
+hj
+jO
+gp
+KF
+qZ
+FQ
+FQ
+FQ
+KW
+Xf
+Xf
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+Lp
+"}
+(34,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+lq
+wG
+wG
+wG
+wG
+cI
+ND
+vG
+GO
+hw
+bN
+WN
+NA
+cB
+MM
+Mu
+au
+au
+cQ
+tQ
+ir
+Hg
+Nj
+MB
+ir
+Xf
+KP
+FQ
+hH
+hH
+KW
+Xf
+Xf
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Lp
+"}
+(35,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+lq
+lq
+wG
+Dn
+dx
+dT
+qW
+qW
+dI
+kN
+kN
+Zc
+Zc
+Zc
+Zc
+ZC
+FT
+IH
+pC
+IH
+ir
+ir
+ir
+ir
+ir
+Xf
+kE
+Sk
+WG
+hH
+tK
+hG
+Xf
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+"}
+(36,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+lq
+lq
+dT
+dT
+dT
+KT
+zo
+NP
+Dz
+kN
+gf
+Or
+jh
+eE
+RE
+BE
+nU
+pL
+ah
+US
+ir
+ir
+ir
+ir
+Xf
+aK
+FQ
+hH
+hH
+KW
+Xf
+Xf
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+"}
+(37,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+ve
+ve
+dT
+xN
+HL
+NE
+Pv
+kN
+NL
+BS
+JY
+IR
+pn
+oE
+vy
+Gu
+Yl
+US
+ir
+ir
+ir
+ir
+Xf
+Jf
+FQ
+FQ
+FQ
+KW
+Xf
+Xf
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+"}
+(38,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+ve
+dT
+kN
+tW
+kN
+kN
+kN
+Zc
+pe
+bC
+pX
+YE
+JI
+JR
+ff
+Un
+US
+US
+ve
+ve
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+"}
+(39,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+ve
+ve
+kN
+kN
+kN
+kN
+kN
+Zc
+Zc
+Zc
+Zc
+US
+Ga
+US
+YQ
+US
+US
+US
+ve
+ve
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+"}
+(40,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+gv
+xu
+ve
+kN
+Zc
+Zc
+Zc
+Zc
+US
+US
+US
+US
+US
+US
+US
+ve
+ve
+ve
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+Xf
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+"}
+(41,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+xu
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+gv
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+xu
+xu
+gv
+xu
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+Lp
+"}
+(42,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+Lp
+xu
+xu
+ve
+ve
+ve
+ve
+xu
+xu
+xu
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+xu
+ve
+ve
+ve
+xu
+Lp
+"}
+(43,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+ve
+xu
+Lp
+Lp
+Lp
+xu
+ve
+ve
+ve
+xu
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+xu
+xu
+Lp
+Lp
+"}
+(44,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+ve
+ve
+ve
+ve
+xu
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+ve
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+"}
+(45,1,1) = {"
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+xu
+ve
+ve
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+Lp
+"}
