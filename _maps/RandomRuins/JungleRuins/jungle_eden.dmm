@@ -43,6 +43,7 @@
 	dir = 1;
 	pixel_y = 32
 	},
+/obj/machinery/suit_storage_unit/cmo,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
 "au" = (
@@ -253,6 +254,15 @@
 /obj/item/mecha_ammo/lmg,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/robotics)
+"cD" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/item/paper/crumpled{
+	info = "WELCOME TO STARFARE SHIPPING ENTERPRISE. FOLLOW THE ORDERS OF YOUR SUPERIORS."
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
 "cE" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -263,6 +273,13 @@
 /obj/machinery/smartfridge/bloodbank/preloaded,
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/observation)
+"cJ" = (
+/obj/structure/table/wood/fancy/red_gold,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO BLACK SKY NECESSITIES. KEEP EMPLOYEE MORALE HIGH."
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
 "cN" = (
 /obj/machinery/button/flasher{
 	pixel_y = -8;
@@ -1187,6 +1204,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO VALAX INDUSTRIES. MAINTAIN AND SUPPLY YOUR ASSIGNED INSTALLATION."
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "nb" = (
@@ -1197,6 +1217,13 @@
 /obj/structure/sign/poster/official/moth,
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/cantina)
+"nk" = (
+/obj/effect/turf_decal/steeldecal/steel_decals_central6,
+/obj/item/paper/crumpled{
+	info = "WELCsOME TO DIVINITY RESEARCH AND GENETICS. ENSURE YOUR PERSONAL PROTECTIVE EQUIPMENT IS ON AT ALL TIMES."
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/eden/robotics)
 "nn" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1459,6 +1486,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/eden/chemistry)
+"pT" = (
+/obj/item/paper/crumpled{
+	info = "WELCOME TO THE UNITED STAND PRIVATE MILITARY COMPANY. TREAT ALL NON-CONGLOMERATE OR MINUTEMEN PERSONNEL AS INTRUDERS. PROTECT THE BASE FROM INTRUSION."
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
 "pX" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/disposalpipe/segment,
@@ -1630,6 +1663,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/hallway)
 "sb" = (
+/obj/item/paper/crumpled{
+	info = "WELCOME TO DIVINITY RESEARCH AND GENETICS. YOU ARE NOT REQUIRED TO OBSCURE YOUR FACE, UNLIKE THE RESEARCH TEAM."
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
 "sc" = (
@@ -1839,6 +1875,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/holopad/emergency/engineering,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO BLACK SKY NECESSITIES. KEEP EMPLOYEE MORALE HIGH."
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "ve" = (
@@ -1970,6 +2009,9 @@
 /obj/item/lighter,
 /obj/effect/turf_decal/spline/plain/opaque/solgovgold,
 /obj/item/modular_computer/laptop,
+/obj/item/paper/crumpled{
+	info = "The rest of High Command congratulates you becoming the overseer of the EDEN-5 Outpost. Reminder: Your neural patterns and body DNA are in the Archives. Do not go against the Conglomerate's interests."
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/jungle/eden/odoffice)
 "wa" = (
@@ -4024,6 +4066,8 @@
 /obj/item/storage/box/hypospray,
 /obj/structure/closet/secure_closet/medical3,
 /obj/item/pda/medical,
+/obj/item/clothing/suit/bio_suit/cmo,
+/obj/item/clothing/head/bio_hood/cmo,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
 "VY" = (
@@ -4228,6 +4272,9 @@
 /obj/machinery/recharger,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
+	},
+/obj/item/paper/crumpled{
+	info = "WELCOME TO DIVINITY RESEARCH AND GENETICS. ENSURE YOUR PERSONAL PROTECTIVE EQUIPMENT ARE ON AT ALL TIMES. MEDICAL PERSONNEL ARE NOT REQUIRED TO OBSCURE THEIR FACE WITH PPE."
 	},
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/eden/rooffice)
@@ -5233,7 +5280,7 @@ mg
 ge
 Ar
 by
-YT
+pT
 YT
 cd
 Ar
@@ -5322,7 +5369,7 @@ Ks
 fh
 co
 Bx
-Dr
+cJ
 vT
 DX
 WU
@@ -5900,7 +5947,7 @@ Lp
 lq
 wG
 LZ
-OD
+cD
 yG
 Qt
 tM
@@ -5960,7 +6007,7 @@ NJ
 rJ
 fU
 hN
-zS
+nk
 zS
 yv
 De
