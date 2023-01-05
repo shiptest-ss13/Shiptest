@@ -1132,12 +1132,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/armory)
 "lT" = (
-/obj/structure/table/wood/fancy/red_gold,
-/obj/item/paper/crumpled{
-	info = "WELCOME TO BLACK SKY NECESSITIES. KEEP CREW MORALE HIGH."
-	},
-/turf/open/floor/wood/ebony,
-/area/ruin/jungle/eden/cantina)
+/obj/structure/closet/secure_closet/personal,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/under/utility,
+/obj/item/radio/headset,
+/obj/item/clothing/gloves/color/black,
+/obj/item/pda,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/storage/backpack,
+/turf/open/floor/wood,
+/area/ruin/jungle/eden/observation)
 "lX" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/cable{
@@ -1367,7 +1371,8 @@
 /obj/machinery/button/flasher{
 	dir = 1;
 	id = "AIFlashers";
-	pixel_x = 8
+	pixel_x = 8;
+	name = "AI Core Flasher"
 	},
 /obj/machinery/button/door{
 	id = "Interception";
@@ -2346,16 +2351,6 @@
 /obj/effect/decal/cleanable/robot_debris/old,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/robotics)
-"AD" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/purple,
-/obj/item/paper/crumpled{
-	info = "WELCOME TO DIVINITY RESEARCH AND GENETICS. ENSURE YOUR PPE IS SECURELY ON AT ALL TIMES."
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/jungle/eden/robotics)
 "AN" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plating/dirt/jungle,
@@ -2523,12 +2518,6 @@
 /obj/machinery/vending/mining_equipment,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
-"Da" = (
-/obj/item/paper/crumpled{
-	info = "WELCOME TO THE UNITED STAND. ENSURE ALL NON-ALLIES ARE KEPT OUTSIDE OF THE BASE. LETHAL FORCE GRANTED FOR ACTIVE THREATS TO THE BASE AND ALLIES."
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/jungle/eden/armory)
 "Db" = (
 /obj/effect/turf_decal/siding/purple{
 	dir = 8
@@ -3096,16 +3085,12 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/jungle/eden/ai)
 "KN" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/utility,
-/obj/item/radio/headset,
-/obj/item/clothing/gloves/color/black,
-/obj/item/pda,
-/obj/item/kitchen/knife/combat/survival,
-/obj/item/storage/backpack,
-/turf/open/floor/wood,
-/area/ruin/jungle/eden/observation)
+/obj/structure/table/wood/fancy/red_gold,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO BLACK SKY NECESSITIES. KEEP CREW MORALE HIGH."
+	},
+/turf/open/floor/wood/ebony,
+/area/ruin/jungle/eden/cantina)
 "KP" = (
 /obj/machinery/camera,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3261,6 +3246,12 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
+"ML" = (
+/obj/item/paper/crumpled{
+	info = "WELCOME TO THE UNITED STAND. ENSURE ALL NON-ALLIES ARE KEPT OUTSIDE OF THE BASE. LETHAL FORCE GRANTED FOR ACTIVE THREATS TO THE BASE AND ALLIES."
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/armory)
 "MM" = (
 /obj/structure/rack,
 /obj/item/circuitboard/mecha/durand/main,
@@ -3416,7 +3407,7 @@
 	name = "Conglomerate Combat Uniform"
 	},
 /obj/item/storage/belt/security/webbing{
-	desc = "Unique and versatile chest rig, can hold security gear."
+	desc = "Unique and versatile chest rig, can hold security gear."d
 	},
 /obj/machinery/light{
 	dir = 1
@@ -3431,7 +3422,7 @@
 /area/ruin/jungle/eden/medical)
 "NL" = (
 /obj/machinery/flasher{
-	id = SCPFlasher
+	id = "SCPFlasher"
 	},
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/containment)
@@ -3945,6 +3936,16 @@
 /obj/machinery/camera,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/jungle/eden/odoffice)
+"Tn" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/purple,
+/obj/item/paper/crumpled{
+	info = "WELCOME TO DIVINITY RESEARCH AND GENETICS. ENSURE YOUR PPE IS SECURELY ON AT ALL TIMES."
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/jungle/eden/robotics)
 "TA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -4318,7 +4319,8 @@
 	dir = 8;
 	name = "Containment Flasher";
 	pixel_x = -8;
-	pixel_y = 9
+	pixel_y = 9;
+	id = "SCPFlasher"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
@@ -5271,7 +5273,7 @@ mg
 ge
 Ar
 by
-Da
+ML
 YT
 cd
 Ar
@@ -5360,7 +5362,7 @@ Ks
 fh
 co
 Bx
-lT
+KN
 vT
 DX
 WU
@@ -5790,7 +5792,7 @@ Lp
 Lp
 lq
 lq
-KN
+lT
 yy
 Be
 EE
@@ -6001,7 +6003,7 @@ hN
 zS
 zS
 yv
-AD
+Tn
 Qa
 QN
 ir
@@ -6133,7 +6135,7 @@ Lp
 Lp
 lq
 lq
-KN
+lT
 Dn
 dx
 dT
