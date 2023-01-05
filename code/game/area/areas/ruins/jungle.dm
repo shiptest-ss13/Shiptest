@@ -104,3 +104,62 @@
 	name = "cargo dump"
 	icon_state = "dk_yellow"
 
+//Never thought I'd have to touch DM again
+
+//Eden-5 Bunker
+
+/area/ruin/jungle/eden/hallway
+	name = "Main Hallway"
+	icon_state = "hallA"
+
+/area/ruin/jungle/eden/cantina
+	name = "Cantina"
+	icon_state = "green"
+
+/area/ruin/jungle/eden/interrogation
+	name = "Interrogation"
+	icon_state = "security"
+
+/area/ruin/jungle/eden/odoffice
+	name = "Operational Director's Office"
+	icon_state = "bridge"
+
+/area/ruin/jungle/eden/armory
+	name = "Secure Armory"
+	icon_state = "security"
+
+/area/ruin/jungle/eden/engineering
+	name = "Engineering"
+	icon_state = "engine"
+
+/area/ruin/jungle/eden/robotics
+	name = "RND Lab"
+	icon_state = "blue"
+
+/area/ruin/jungle/eden/medical
+	name = "Medical Bay"
+	icon_state = "medbay"
+
+/area/ruin/jungle/eden/observation
+	name = "Observation"
+	icon_state = "blue"
+
+/area/ruin/jungle/eden/chemistry
+	name = "Chemistry Lab"
+	icon_state = "blue"
+
+/area/ruin/jungle/eden/containment
+	name = "Containment Chamber"
+	icon_state = "brig"
+
+/area/ruin/jungle/eden/rooffice
+	name = "Research Overseer's Office"
+	icon_state = "bridge"
+
+/area/ruin/jungle/eden/ai
+	name = "AI Chamber"
+	icon_state = "bridge"
+
+/area/ruin/jungle/eden/surgery
+	name = "Surgical Theatre"
+	icon_state = "medbay"
