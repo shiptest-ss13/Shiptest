@@ -125,3 +125,8 @@
 	description = "a crashed shuttle, and a hidden beautiful lake."
 	suffix = "jungle_paradise.dmm"
 
+/datum/map_template/ruin/jungle/eden
+	name = "EDEN-5 Outpost"
+	id = "eden"
+	description = "A habitable bunker owned by a mysterious and hostile group."
+	suffix = "jungle_eden.dmm"
