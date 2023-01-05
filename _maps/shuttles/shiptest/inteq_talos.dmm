@@ -3675,7 +3675,7 @@
 /obj/item/bedsheet/brown,
 /obj/structure/curtain/bounty,
 /obj/structure/sign/poster/contraband/masked_men{
-	pixel_x = -32
+	pixel_y = -32
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
@@ -5012,6 +5012,10 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
