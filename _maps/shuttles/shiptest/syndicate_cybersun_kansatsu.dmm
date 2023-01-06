@@ -305,6 +305,10 @@
 	id = "scholo";
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "hr" = (
@@ -652,6 +656,10 @@
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "scholo";
 	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1170,6 +1178,10 @@
 "Cr" = (
 /obj/machinery/door/poddoor{
 	id = "scbay"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1721,7 +1733,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "Rv" = (
-/obj/machinery/power/port_gen/pacman/super,
 /obj/machinery/power/terminal,
 /obj/effect/turf_decal/box,
 /obj/structure/sign/poster/contraband/energy_swords{
@@ -1730,6 +1741,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Rz" = (
