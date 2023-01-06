@@ -304,7 +304,9 @@
 	dir = 1;
 	layer = 4.1
 	},
-/obj/machinery/telecomms/server/presets/nanotrasen,
+/obj/machinery/telecomms/server/presets/nanotrasen{
+	network = "ntcomms"
+	},
 /obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -857,12 +859,6 @@
 "tN" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
-"tW" = (
-/obj/structure/sign/warning/docking{
-	pixel_x = -30
-	},
-/turf/template_noop,
-/area)
 "tZ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -952,12 +948,6 @@
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/plating,
 /area/ship/bridge)
-"wb" = (
-/obj/structure/sign/warning/docking{
-	pixel_x = 30
-	},
-/turf/template_noop,
-/area)
 "wy" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
@@ -1095,6 +1085,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/cargo)
+"yy" = (
+/obj/structure/sign/warning/docking,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hallway/central)
 "zg" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin,
@@ -1265,6 +1259,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"DY" = (
+/obj/structure/sign/warning/docking,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering)
 "EF" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1497,7 +1495,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/dim,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "JZ" = (
@@ -2175,7 +2173,7 @@ FO
 cG
 "}
 (6,1,1) = {"
-cG
+DY
 cG
 cG
 cG
@@ -2191,7 +2189,7 @@ Ro
 Ro
 "}
 (7,1,1) = {"
-tW
+By
 vg
 Xd
 Ka
@@ -2367,7 +2365,7 @@ KR
 uS
 "}
 (18,1,1) = {"
-wb
+By
 QK
 Yh
 dk
@@ -2383,7 +2381,7 @@ zg
 uS
 "}
 (19,1,1) = {"
-Cu
+yy
 Cu
 Cu
 Cu
