@@ -69,7 +69,9 @@
 	name = "pilot"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/military
-	suit = /obj/item/clothing/suit/jacket/leather/duster/command
+	suit = /obj/item/clothing/suit/jacket/leather/duster
+	glasses = /obj/item/clothing/glasses/hud/spacecop
+	accessory = /obj/item/clothing/accessory/holster
 
 /datum/outfit/job/cargo_tech/donk
 	name = "Customer Associate (Donk! Co.)"
