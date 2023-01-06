@@ -163,3 +163,7 @@
 /area/ruin/jungle/eden/surgery
 	name = "Surgical Theatre"
 	icon_state = "medbay"
+
+/area/ruin/jungle/eden/bathroom
+	name = "Restroom"
+	icon_state = "toilet"
