@@ -1077,11 +1077,13 @@
 /turf/open/lava/smooth,
 /area/ruin/powered/slimelab/lava)
 "lV" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2,
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = -28
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/checkpoint)
 "lW" = (
@@ -4477,13 +4479,15 @@
 /area/ruin/powered/slimelab)
 "VA" = (
 /obj/structure/closet/emcloset/anchored,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/item/clothing/suit/hooded/wintercoat,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/checkpoint)
 "VM" = (
