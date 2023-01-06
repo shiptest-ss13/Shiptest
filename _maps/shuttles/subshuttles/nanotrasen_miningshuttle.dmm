@@ -1,0 +1,489 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"b" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "miningshuttleport";
+	name = "Mining Shuttle Shutters"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "minerportshieldwallgen"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	pixel_y = -7;
+	name = "Mining Shuttle Shutters";
+	id = "miningshuttleport";
+	dir = 4;
+	pixel_x = -27
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 5;
+	id = "minerportshieldwallgen";
+	name = "Mining Shuttle Holofields";
+	dir = 4;
+	pixel_x = -27
+	},
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"d" = (
+/turf/template_noop,
+/area)
+"h" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"j" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"m" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"n" = (
+/obj/machinery/power/smes/engineering,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/corner,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-5"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"o" = (
+/obj/machinery/mineral/ore_redemption,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"p" = (
+/turf/closed/wall,
+/area/ship/bridge)
+"q" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "8-10"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"s" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/rack,
+/obj/item/gps/mining/internal,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"u" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	name = "Mining Shuttle Shutters";
+	id = "miningshuttlestarboard"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"w" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "miningshuttleaft"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"y" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/poddoor/shutters{
+	name = "Mining Shuttle Shutters";
+	id = "miningshuttlestarboard"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "minerstarboardshieldwallgen"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"A" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"B" = (
+/obj/machinery/door/poddoor/shutters{
+	name = "Mining Shuttle Shutters";
+	id = "miningshuttlestarboard"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "minerstarboardshieldwallgen"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "miningshuttlestarboard";
+	name = "Mining Shuttle Shutters";
+	pixel_x = -27;
+	pixel_y = 7
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	pixel_y = -5;
+	name = "Mining Shuttle Holofields";
+	id = "minerstarboardshieldwallgen";
+	pixel_x = -27
+	},
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"C" = (
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"D" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"E" = (
+/obj/machinery/telecomms/relay/preset/mining{
+	network = "ntcomms"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"G" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -27;
+	pixel_x = -7;
+	id = "miningshuttleaft";
+	name = "Mining Shuttle Engine Shutters"
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -27;
+	pixel_x = 7;
+	id = "miningshuttlefore";
+	name = "Mining Shuttle Window Shutters"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"I" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/poddoor/shutters{
+	id = "miningshuttleport";
+	name = "Mining Shuttle Shutters"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	name = "Mining Shuttle";
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"J" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"L" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-6"
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"O" = (
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"P" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/poddoor/shutters{
+	id = "miningshuttleport";
+	name = "Mining Shuttle Shutters"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "minerportshieldwallgen"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"R" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/south,
+/obj/structure/cable/yellow,
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"S" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"T" = (
+/obj/structure/tank_dispenser,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/firealarm{
+	pixel_y = 27
+	},
+/turf/open/floor/plasteel,
+/area/ship/bridge)
+"U" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "miningshuttlefore"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"Z" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "1-10"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+
+(1,1,1) = {"
+d
+D
+d
+D
+d
+"}
+(2,1,1) = {"
+p
+w
+p
+w
+p
+"}
+(3,1,1) = {"
+p
+h
+n
+L
+p
+"}
+(4,1,1) = {"
+b
+q
+s
+C
+B
+"}
+(5,1,1) = {"
+I
+j
+o
+m
+u
+"}
+(6,1,1) = {"
+P
+A
+a
+Z
+y
+"}
+(7,1,1) = {"
+p
+T
+J
+R
+p
+"}
+(8,1,1) = {"
+p
+E
+O
+G
+p
+"}
+(9,1,1) = {"
+U
+U
+S
+U
+U
+"}
+(10,1,1) = {"
+d
+U
+U
+U
+d
+"}
