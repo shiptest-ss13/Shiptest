@@ -276,4 +276,10 @@
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
 
+
+/datum/map_template/shuttle/subshuttles/nanotrasen_miningshuttle
+	file_name = "nanotrasen_miningshuttle"
+	name = "Mining Shuttle"
+	prefix = "NTSV"
+
 //your subshuttle here

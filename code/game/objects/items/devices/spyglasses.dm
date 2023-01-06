@@ -1,9 +1,10 @@
 //antag spyglasses. meant to be an example for map_popups.dm
-/obj/item/clothing/glasses/regular/spy
+/obj/item/clothing/glasses/sunglasses/spy
 	desc = "Made by Nerd. Co's infiltration and surveillance department. Upon closer inspection, there's a small screen in each lens."
+	actions_types = list(/datum/action/item_action/activate_remote_view)
 	var/obj/item/spy_bug/linked_bug
 
-/obj/item/clothing/glasses/regular/spy/proc/show_to_user(mob/user)//this is the meat of it. most of the map_popup usage is in this.
+/obj/item/clothing/glasses/sunglasses/spy/proc/show_to_user(mob/user)//this is the meat of it. most of the map_popup usage is in this.
 	if(!user)
 		return
 	if(!user.client)
@@ -17,23 +18,23 @@
 	user.client.register_map_obj(linked_bug.cam_plane_master)
 	linked_bug.update_view()
 
-/obj/item/clothing/glasses/regular/spy/equipped(mob/user, slot)
+/obj/item/clothing/glasses/sunglasses/spy/equipped(mob/user, slot)
 	. = ..()
 	if(slot != ITEM_SLOT_EYES)
 		user.client.close_popup("spypopup")
 
-/obj/item/clothing/glasses/regular/spy/dropped(mob/user)
+/obj/item/clothing/glasses/sunglasses/spy/dropped(mob/user)
 	. = ..()
 	user.client.close_popup("spypopup")
 
-/obj/item/clothing/glasses/regular/spy/verb/activate_remote_view()
-	//yada yada check to see if the glasses are in their eye slot
-	if(ishuman(usr))
-		var/mob/living/carbon/human/user = usr
-		if(user.glasses == src)
-			show_to_user(user)
+/obj/item/clothing/glasses/sunglasses/spy/ui_action_click(mob/user)
+	show_to_user(user)
 
-/obj/item/clothing/glasses/regular/spy/Destroy()
+/obj/item/clothing/glasses/sunglasses/spy/item_action_slot_check(slot)
+	if(slot == ITEM_SLOT_EYES)
+		return TRUE
+
+/obj/item/clothing/glasses/sunglasses/spy/Destroy()
 	if(linked_bug)
 		linked_bug.linked_glasses = null
 	. = ..()
@@ -43,9 +44,9 @@
 	name = "pocket protector"
 	icon = 'icons/obj/clothing/accessories.dmi'
 	icon_state = "pocketprotector"
-	desc = "an advanced peice of espionage equipment in the shape of a pocket protector. it has a built in 360 degree camera for all your nefarious needs. Microphone not included."
+	desc = "An advanced piece of espionage equipment in the shape of a pocket protector. it has a built in 360 degree camera for all your nefarious needs. Microphone not included."
 
-	var/obj/item/clothing/glasses/regular/spy/linked_glasses
+	var/obj/item/clothing/glasses/sunglasses/spy/linked_glasses
 	var/atom/movable/screen/map_view/cam_screen
 	var/atom/movable/screen/plane_master/lighting/cam_plane_master
 	// Ranges higher than one can be used to see through walls.
@@ -90,7 +91,7 @@
 //it needs to be linked, hence a kit.
 /obj/item/storage/box/rxglasses/spyglasskit
 	name = "spyglass kit"
-	desc = "this box contains <i>cool</i> nerd glasses; with built-in displays to view a linked camera."
+	desc = "this box contains <i>cool</i> sunglasses; with built-in displays to view a linked camera."
 
 /obj/item/paper/fluff/nerddocs
 	name = "Espionage For Dummies"
@@ -109,7 +110,32 @@ A shrill beep coming from your SpySpeks means that they can't connect to the inc
 
 /obj/item/storage/box/rxglasses/spyglasskit/PopulateContents()
 	var/obj/item/spy_bug/newbug = new(src)
-	var/obj/item/clothing/glasses/regular/spy/newglasses = new(src)
+	var/obj/item/clothing/glasses/sunglasses/spy/newglasses = new(src)
 	newbug.linked_glasses = newglasses
 	newglasses.linked_bug = newbug
 	new /obj/item/paper/fluff/nerddocs(src)
+
+//miner monitoring kit
+/obj/item/storage/box/rxglasses/minerspykit
+	name = "miner monitoring kit"
+	desc = "this box contains an EXOCOM monitoring kit; with built-in displays to view an advanced mining camera."
+
+/obj/item/spy_bug/miner
+	icon = 'icons/obj/telescience.dmi'
+	icon_state = "gps-m"
+	name = "mining camera"
+	desc = "An advanced piece of monitoring equipment. it has a built in 360 degree camera for all your /official/ needs. Microphone not included."
+
+/obj/item/clothing/glasses/sunglasses/spy/miner
+	icon = 'icons/obj/clothing/glasses.dmi'
+	icon_state = "prescriptionmeson"
+	name = "EXOCOM Monitor Glasses"
+	desc = "A pair of EXOCOM monitor glasses. Contains a small screen in each lens, for monitoring a linked mining camera."
+	flash_protect = FLASH_PROTECTION_FLASH
+	invis_view = SEE_INVISIBLE_LIVING
+
+/obj/item/storage/box/rxglasses/minerspykit/PopulateContents()
+	var/obj/item/spy_bug/miner/newminerbug = new(src)
+	var/obj/item/clothing/glasses/sunglasses/spy/miner/newminerglasses = new(src)
+	newminerbug.linked_glasses = newminerglasses
+	newminerglasses.linked_bug = newminerbug
