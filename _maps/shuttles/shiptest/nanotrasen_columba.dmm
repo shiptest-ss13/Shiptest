@@ -976,6 +976,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uS" = (
@@ -989,6 +992,12 @@
 /obj/structure/railing/corner{
 	pixel_x = -1;
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1451,6 +1460,8 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Eg" = (
@@ -1469,6 +1480,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"Ek" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "EF" = (
 /obj/effect/turf_decal/box,
 /obj/structure/railing{
@@ -1504,6 +1519,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"EM" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "EX" = (
 /obj/structure/mirror{
 	pixel_x = 30
@@ -1914,6 +1936,9 @@
 	dir = 4;
 	pixel_x = -25
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Nb" = (
@@ -2004,6 +2029,9 @@
 "OT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2267,6 +2295,9 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Wm" = (
@@ -2359,6 +2390,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Ya" = (
@@ -2446,6 +2478,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "ZS" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ZY" = (
@@ -2530,7 +2572,7 @@ OT
 MY
 Vv
 uV
-ZS
+EM
 XX
 cG
 By
@@ -2550,7 +2592,7 @@ nb
 bU
 FO
 LO
-ZS
+Ek
 Eb
 cG
 By
