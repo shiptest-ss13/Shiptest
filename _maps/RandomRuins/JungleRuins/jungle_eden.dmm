@@ -4300,7 +4300,11 @@
 /area/ruin/jungle/eden/medical)
 "VR" = (
 /obj/machinery/light/dim,
-/obj/machinery/airalarm/directional/south,
+/obj/machinery/airalarm/directional/south{
+	pixel_y = 0;
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/bathroom)
 "VY" = (
