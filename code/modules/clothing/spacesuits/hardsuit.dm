@@ -1016,7 +1016,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/security/independent/minutemen
 	name = "\improper CMM Patroller hardsuit helmet"
-	desc = "A hardsuit used by the Minutemen. To reduce costs, its a modified versioin of a more popular model from a independent manufacturer, and given to patrol vessels."
+	desc = "A hardsuit used by the Minutemen. To reduce costs, its a modified version of a more popular model from a independent manufacturer, and given to patrol vessels."
 	icon_state = "hardsuit0-cmm-patrol"
 	hardsuit_type = "cmm-patrol"
 
@@ -1039,7 +1039,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/security/independent/minutemen
 	name = "\improper CMM Patroller hardsuit"
-	desc = "A hardsuit used by the Minutemen. To reduce costs, its a modified versioin of a more popular model from a independent manufacturer, and given to patrol vessels."
+	desc = "A hardsuit used by the Minutemen. To reduce costs, its a modified version of a more popular model from a independent manufacturer, and given to patrol vessels."
 	icon_state = "hardsuit-cmm-patrol"
 	hardsuit_type = "hardsuit-cmm-patrol"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/minutemen
