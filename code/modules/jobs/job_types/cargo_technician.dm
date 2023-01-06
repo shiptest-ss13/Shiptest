@@ -65,6 +65,12 @@
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 
+/datum/outfit/job/cargo_tech/pilot/heron
+	name = "pilot"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/military
+	suit = /obj/item/clothing/suit/jacket/leather/duster/command
+
 /datum/outfit/job/cargo_tech/donk
 	name = "Customer Associate (Donk! Co.)"
 	id = /obj/item/card/id/syndicate_command/crew_id

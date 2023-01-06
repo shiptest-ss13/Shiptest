@@ -238,6 +238,22 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	uniform = /obj/item/clothing/under/rank/security/officer/nt
 	alt_uniform = null
 
+/datum/outfit/job/security/nanotrasen/ert
+	name = "ERT Officer (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
+	backpack = /obj/item/storage/backpack/ert/security
+	belt = /obj/item/storage/belt/military
+	id = /obj/item/card/id/ert/security
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+
+/datum/outfit/job/security/nanotrasen/mech_pilot
+	name = "Mech Pilot (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/military/eng
+	head = /obj/item/clothing/head/beret/sec/officer
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
+
 /datum/outfit/job/security/roumain
 	name = "Hunter (Saint-Roumain Militia)"
 
