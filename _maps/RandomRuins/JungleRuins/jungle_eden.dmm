@@ -222,33 +222,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/jungle/eden/cantina)
-"cs" = (
-/obj/machinery/button{
-	pixel_x = -8;
-	pixel_y = 5;
-	dir = 1;
-	name = "Exterior Blast Doors";
-	id = "OuterDoors"
-	},
-/obj/machinery/button{
-	dir = 1;
-	pixel_x = 8;
-	pixel_y = 5;
-	name = "Interior Blast Doors";
-	id = "InnerDoors"
-	},
-/obj/machinery/button{
-	pixel_y = 5;
-	dir = 1;
-	name = "Interception Shutters";
-	id = "Interception"
-	},
-/obj/machinery/button/flasher{
-	dir = 1;
-	id = "AIFlashers"
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/engineering)
 "cx" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -300,9 +273,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/robotics)
 "cR" = (
-/obj/structure/sign/poster/contraband/c20r,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/armory)
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 8
+	},
+/obj/structure/sign/poster/official/moth{
+	pixel_x = -32;
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
 "cX" = (
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder{
@@ -500,7 +479,6 @@
 /area/ruin/jungle/eden/hallway)
 "eV" = (
 /obj/structure/sign/warning/radiation,
-/obj/item/mop,
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/engineering)
 "ff" = (
@@ -537,6 +515,9 @@
 /obj/effect/decal/cleanable/oil/streak,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/hardsuit/mining/independent,
+/obj/item/clothing/mask/gas/atmos,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/shoes/magboots,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "fy" = (
@@ -595,6 +576,9 @@
 /area/ruin/jungle/eden/hallway)
 "fS" = (
 /obj/structure/chair/sofa/corner,
+/obj/structure/sign/poster/contraband/stechkin{
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/jungle/eden/odoffice)
 "fU" = (
@@ -675,6 +659,32 @@
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/engineering)
 "gT" = (
+/obj/machinery/button/door{
+	id = "OuterDoors";
+	name = "Exterior Blast Doors";
+	pixel_x = -8;
+	dir = 1;
+	pixel_y = -32
+	},
+/obj/machinery/button/door{
+	id = "InnerDoors";
+	name = "Interior Blast Dooors";
+	pixel_x = 8;
+	dir = 1;
+	pixel_y = -32
+	},
+/obj/machinery/button/shieldwallgen{
+	id = "InnerFans";
+	name = "internal holofield switch";
+	pixel_y = -40;
+	dir = 1
+	},
+/obj/machinery/button/shieldwallgen{
+	name = "external holofield switch";
+	id = "OuterFans";
+	pixel_y = -24;
+	dir = 1
+	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/jungle/eden/odoffice)
 "gV" = (
@@ -739,10 +749,6 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "hG" = (
-/obj/machinery/button/flasher{
-	dir = 1;
-	id = "AIFlashers"
-	},
 /obj/item/radio/intercom/wideband{
 	dir = 1;
 	pixel_y = 8
@@ -1044,6 +1050,9 @@
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/hardsuit/mining/independent,
+/obj/item/clothing/mask/gas/atmos,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/shoes/magboots,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "kw" = (
@@ -1052,18 +1061,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/hallway)
-"kC" = (
-/obj/machinery/button/door{
-	dir = 4;
-	pixel_x = 8;
-	name = "RO Office Lockdown";
-	id = "RDShutters"
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/odoffice)
 "kE" = (
 /obj/machinery/flasher{
-	id = "AIFlashers"
+	id = "AIFlashers";
+	pixel_y = 24
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1255,10 +1256,6 @@
 /obj/machinery/mech_bay_recharge_port,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/robotics)
-"nf" = (
-/obj/structure/sign/poster/official/moth,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/cantina)
 "nn" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1452,23 +1449,6 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/jungle/eden/containment)
-"pi" = (
-/obj/machinery/button/flasher{
-	dir = 1;
-	id = "AIFlashers";
-	pixel_x = 8;
-	name = "AI Core Flasher"
-	},
-/obj/machinery/button/door{
-	id = "Interception";
-	pixel_y = 7;
-	name = "Entry Interception Doors"
-	},
-/obj/machinery/button/door{
-	id = "AIShutters"
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/odoffice)
 "pm" = (
 /obj/machinery/iv_drip/saline,
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
@@ -1494,6 +1474,9 @@
 /obj/machinery/mineral/ore_redemption{
 	output_dir = 1;
 	dir = 1
+	},
+/obj/structure/sign/poster/official/moth/delam{
+	pixel_y = -32
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
@@ -1806,6 +1789,12 @@
 /obj/item/stack/cable_coil,
 /obj/item/mmi/posibrain,
 /obj/machinery/light,
+/obj/machinery/button/flasher{
+	dir = 1;
+	id = "AIFlashers";
+	pixel_y = -32;
+	pixel_x = 12
+	},
 /turf/open/floor/circuit/red/anim,
 /area/ruin/jungle/eden/ai)
 "tM" = (
@@ -1832,22 +1821,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/robotics)
-"tW" = (
-/obj/structure/closet/wall/white/med{
-	dir = 8
-	},
-/obj/item/clothing/mask/breath/medical,
-/obj/item/clothing/mask/breath/medical,
-/obj/item/clothing/mask/breath/medical,
-/obj/item/tank/internals/anesthetic,
-/obj/item/tank/internals/anesthetic,
-/obj/item/tank/internals/anesthetic,
-/obj/item/reagent_containers/glass/bottle/morphine,
-/obj/item/reagent_containers/glass/bottle/morphine,
-/obj/item/reagent_containers/glass/bottle/morphine,
-/obj/item/reagent_containers/glass/bottle/chloralhydrate,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/surgery)
 "tX" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/structure/cable{
@@ -1892,35 +1865,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/robotics)
-"uF" = (
-/obj/structure/sign/poster/official/no_erp{
-	dir = 8
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/interrogation)
-"uG" = (
-/obj/machinery/button/door{
-	id = "OuterDoors";
-	name = "Exterior Blast Doors";
-	pixel_x = -8
-	},
-/obj/machinery/button/door{
-	id = "InnerDoors";
-	name = "Interior Blast Dooors";
-	pixel_x = 8
-	},
-/obj/machinery/button/shieldwallgen{
-	id = "InnerFans";
-	name = "internal holofield switch";
-	pixel_y = 8
-	},
-/obj/machinery/button/shieldwallgen{
-	name = "external holofield switch";
-	id = "OuterFans";
-	pixel_y = -8
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/odoffice)
 "uP" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2254,6 +2198,9 @@
 "ym" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/portable_atmospherics/scrubber,
+/obj/structure/sign/poster/retro/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "yv" = (
@@ -2489,6 +2436,9 @@
 	dir = 8
 	},
 /obj/machinery/vending/cola/random,
+/obj/structure/sign/poster/official/do_not_question{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/hallway)
 "Be" = (
@@ -2541,21 +2491,16 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/sign/poster/official/safety_eye_protection{
+	dir = 4;
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/eden/chemistry)
 "BF" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin)
-"BR" = (
-/obj/machinery/button/door{
-	dir = 4;
-	pixel_x = 8;
-	name = "Office Lockdown";
-	id = "RDShutters"
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/rooffice)
 "BS" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
 /obj/effect/decal/cleanable/blood/innards{
@@ -2571,6 +2516,10 @@
 	dir = 6
 	},
 /obj/item/pda,
+/obj/machinery/flasher{
+	id = "SCPFlasher";
+	pixel_y = 32
+	},
 /turf/open/floor/engine,
 /area/ruin/jungle/eden/containment)
 "Cf" = (
@@ -2587,11 +2536,6 @@
 /obj/structure/sign/directions/security,
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/armory)
-"Cp" = (
-/obj/structure/flora/grass/jungle,
-/obj/structure/flora/grass/jungle/b,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin)
 "Cy" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
@@ -2606,12 +2550,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
-"Cz" = (
-/obj/structure/sign/poster/contraband/tools,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/rooffice)
 "CH" = (
 /obj/machinery/holopad/emergency/command,
+/obj/machinery/button/door{
+	dir = 4;
+	name = "Office Lockdown";
+	id = "RDShutters";
+	pixel_x = -24
+	},
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/eden/rooffice)
 "CO" = (
@@ -2718,9 +2664,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/rooffice)
 "Dz" = (
-/obj/structure/sink{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -2753,6 +2696,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/structure/sign/poster/contraband/c20r{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/armory)
 "DX" = (
@@ -2780,10 +2726,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/interrogation)
-"Ee" = (
-/obj/structure/sign/poster/contraband/inteq,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/odoffice)
 "Eh" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -2815,10 +2757,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
-"EE" = (
-/obj/structure/sign/poster/contraband/xenofauna_parasite,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/observation)
 "EJ" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 8
@@ -2875,6 +2813,9 @@
 /obj/effect/turf_decal/trimline/opaque/white/line{
 	dir = 1
 	},
+/obj/structure/sign/poster/official/nanomichi_ad{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/hallway)
 "FO" = (
@@ -2902,14 +2843,6 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/jungle/eden/ai)
-"FR" = (
-/obj/structure/sign/poster/official/nanomichi_ad,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/hallway)
-"FT" = (
-/obj/structure/sign/poster/official/safety_eye_protection,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/chemistry)
 "Ga" = (
 /obj/structure/sign/poster/official/science,
 /turf/closed/wall/r_wall,
@@ -2990,10 +2923,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
-"GY" = (
-/obj/structure/sign/poster/contraband/stechkin,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/odoffice)
 "Hg" = (
 /obj/effect/turf_decal/corner/opaque/mauve/three_quarters{
 	dir = 8
@@ -3029,6 +2958,19 @@
 /area/ruin/jungle/eden/surgery)
 "HU" = (
 /obj/machinery/holopad/emergency/command,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -24;
+	id = "SCPWindows";
+	pixel_y = 10;
+	name = "Containment Windows Lockdown"
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -24;
+	id = "SCPShutters";
+	name = "Containment Door Lockdown"
+	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/jungle/eden/odoffice)
 "Ia" = (
@@ -3075,9 +3017,12 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "SCPShutters"
 	},
-/obj/machinery/door/window/brigdoor/security/cell,
 /obj/machinery/door/window/brigdoor/security/cell{
-	dir = 1
+	req_access_txt = "7, 2"
+	},
+/obj/machinery/door/window/brigdoor/security/cell{
+	dir = 1;
+	req_access_txt = "7, 2"
 	},
 /obj/machinery/power/shieldwallgen/atmos/strong{
 	id = "ContainmentHololock"
@@ -3141,22 +3086,6 @@
 /obj/effect/turf_decal/trimline/opaque/red/filled/line,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/armory)
-"JG" = (
-/obj/machinery/button/door{
-	dir = 4;
-	pixel_x = 8;
-	id = "SCPShutters";
-	name = "Containment Door Lockdown"
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	pixel_x = 8;
-	id = "SCPWindows";
-	pixel_y = 10;
-	name = "Containment Windows Lockdown"
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/odoffice)
 "JI" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -3192,9 +3121,7 @@
 /turf/open/floor/engine,
 /area/ruin/jungle/eden/containment)
 "Ka" = (
-/obj/structure/sign/poster/official/ion_carbine{
-	dir = 1
-	},
+/obj/structure/sign/poster/official/ion_carbine,
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/rooffice)
 "Kc" = (
@@ -3207,10 +3134,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/interrogation)
-"Kr" = (
-/obj/structure/sign/poster/official/fruit_bowl,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/hallway)
 "Ks" = (
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/hallway)
@@ -3221,6 +3144,25 @@
 "KA" = (
 /obj/machinery/light,
 /obj/structure/chair/comfy/brown,
+/obj/machinery/button/door{
+	id = "Interception";
+	pixel_y = -24;
+	name = "Entry Interception Doors";
+	dir = 1
+	},
+/obj/machinery/button/flasher{
+	dir = 1;
+	id = "AIFlashers";
+	pixel_x = 8;
+	name = "AI Core Flasher";
+	pixel_y = -24
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -24;
+	name = "RO Office Lockdown";
+	id = "RDShutters"
+	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/jungle/eden/odoffice)
 "KB" = (
@@ -3267,14 +3209,11 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/jungle/eden/ai)
 "KT" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/gloves,
-/obj/item/storage/box/masks,
-/obj/item/clothing/suit/apron/surgical,
-/obj/item/reagent_containers/spray/cleaner,
-/obj/item/reagent_containers/spray/cleaner,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
-/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/structure/curtain,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/surgery)
 "KW" = (
@@ -3285,10 +3224,6 @@
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/interrogation)
 "KZ" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "ObShutters";
-	state_open = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3300,6 +3235,10 @@
 	},
 /obj/machinery/door/airlock/science/glass,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters{
+	id = "RDShutters";
+	state_open = 1
+	},
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/eden/rooffice)
 "Lp" = (
@@ -3338,7 +3277,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/bathroom)
 "LB" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	req_access_txt = "63"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -3497,6 +3438,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/sign/poster/official/fruit_bowl{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/hallway)
 "Nj" = (
@@ -3550,13 +3494,17 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
 "NE" = (
-/obj/machinery/computer/operating{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/clothing/suit/apron/surgical,
+/obj/item/storage/box/masks,
+/obj/item/storage/box/gloves,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/surgery)
 "NF" = (
@@ -3609,12 +3557,6 @@
 /obj/effect/turf_decal/corner/opaque/blue/half,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
-"NL" = (
-/obj/machinery/flasher{
-	id = "SCPFlasher"
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/containment)
 "NP" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3717,12 +3659,8 @@
 /obj/machinery/light/dim{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/jungle/eden/bathroom)
-"Ox" = (
-/obj/structure/sign/poster/official/moth/delam,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/engineering)
 "OD" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -3768,6 +3706,9 @@
 /obj/structure/chair/sofa/right,
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/sign/poster/contraband/syndiemoth{
+	pixel_y = 32
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/jungle/eden/odoffice)
@@ -3820,15 +3761,25 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/jungle/eden/odoffice)
 "Pv" = (
-/obj/machinery/shower{
-	dir = 8
-	},
-/obj/structure/curtain,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
 /obj/machinery/firealarm{
 	pixel_y = -30;
 	dir = 1
 	},
+/obj/structure/closet/wall/white/med{
+	dir = 8;
+	pixel_x = 32
+	},
+/obj/item/clothing/mask/breath/medical,
+/obj/item/clothing/mask/breath/medical,
+/obj/item/clothing/mask/breath/medical,
+/obj/item/tank/internals/anesthetic,
+/obj/item/tank/internals/anesthetic,
+/obj/item/tank/internals/anesthetic,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/item/reagent_containers/glass/bottle/chloralhydrate,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/surgery)
 "PC" = (
@@ -3928,6 +3879,9 @@
 	dir = 8;
 	pixel_x = 30
 	},
+/obj/structure/sign/poster/contraband/inteq{
+	pixel_y = -32
+	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/jungle/eden/odoffice)
 "QG" = (
@@ -3980,9 +3934,18 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/hallway)
 "Re" = (
-/obj/structure/sign/poster/official/do_not_question,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/armory)
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 4
+	},
+/obj/structure/sign/poster/official/twelve_gauge{
+	pixel_x = 32;
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
 "Rg" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech/grid,
@@ -4015,10 +3978,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/hallway)
-"Rt" = (
-/obj/structure/sign/poster/contraband/syndiemoth,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/odoffice)
 "Rx" = (
 /obj/effect/decal/cleanable/robot_debris/gib,
 /turf/open/floor/plasteel/tech,
@@ -4144,6 +4103,9 @@
 "Ta" = (
 /obj/structure/chair/sofa,
 /obj/machinery/camera,
+/obj/structure/sign/poster/contraband/syndicate{
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/jungle/eden/odoffice)
 "TA" = (
@@ -4153,8 +4115,8 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/eden/engineering)
 "TR" = (
-/obj/structure/mineral_door/wood,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/door/airlock/grunge,
+/turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/jungle/eden/bathroom)
 "TS" = (
 /turf/open/floor/carpet/purple,
@@ -4293,6 +4255,9 @@
 /obj/item/pda/medical,
 /obj/item/clothing/suit/bio_suit/cmo,
 /obj/item/clothing/head/bio_hood/cmo,
+/obj/structure/sign/poster/contraband/xenofauna_parasite{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
 "VR" = (
@@ -4303,6 +4268,10 @@
 "VY" = (
 /obj/structure/window/reinforced/spawner/east{
 	dir = 1
+	},
+/obj/structure/sign/poster/official/no_erp{
+	dir = 8;
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/eden/interrogation)
@@ -4342,16 +4311,6 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/jungle/eden/cantina)
-"WG" = (
-/obj/machinery/flasher{
-	id = "AIFlashers"
-	},
-/turf/open/floor/circuit/red/anim,
-/area/ruin/jungle/eden/ai)
-"WI" = (
-/obj/structure/sign/poster/retro/random,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/engineering)
 "WL" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4379,14 +4338,6 @@
 "Xq" = (
 /obj/item/stack/ore/salvage/scraptitanium/five,
 /turf/open/floor/plasteel/tech,
-/area/ruin/jungle/eden/robotics)
-"Xr" = (
-/obj/structure/sign/poster/contraband/syndicate,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/odoffice)
-"Xw" = (
-/obj/structure/sign/poster/official/twelve_gauge,
-/turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/robotics)
 "XF" = (
 /obj/structure/cable{
@@ -4505,6 +4456,31 @@
 "YA" = (
 /obj/machinery/computer/upload/ai{
 	dir = 1
+	},
+/obj/machinery/button{
+	pixel_x = -8;
+	pixel_y = -24;
+	dir = 1;
+	name = "Exterior Blast Doors";
+	id = "OuterDoors"
+	},
+/obj/machinery/button{
+	pixel_y = -24;
+	dir = 1;
+	name = "Interception Shutters";
+	id = "Interception"
+	},
+/obj/machinery/button{
+	dir = 1;
+	pixel_x = 8;
+	pixel_y = -24;
+	name = "Interior Blast Doors";
+	id = "InnerDoors"
+	},
+/obj/machinery/button/flasher{
+	dir = 1;
+	id = "AIFlashers";
+	pixel_y = -32
 	},
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/eden/rooffice)
@@ -5111,13 +5087,13 @@ zR
 zR
 zR
 zR
-JG
-kC
+zR
+zR
 zR
 zR
 Ui
 AN
-Cp
+BF
 XU
 XU
 ve
@@ -5156,13 +5132,13 @@ Ed
 Kc
 qQ
 KX
-Rt
+zR
 OR
 aD
 Pu
 HU
 KA
-pi
+zR
 zR
 XU
 XU
@@ -5253,14 +5229,14 @@ cN
 ro
 UH
 VY
-uF
-Xr
+KX
+zR
 Ta
 hR
 Sl
 zN
 gT
-uG
+zR
 zR
 zR
 zR
@@ -5303,13 +5279,13 @@ YG
 gk
 wA
 KX
-GY
+zR
 fS
 zZ
 js
 NS
 QC
-Ee
+zR
 zR
 zR
 Ar
@@ -5391,7 +5367,7 @@ xu
 ve
 ve
 Ks
-Kr
+Ks
 Ng
 uP
 Uw
@@ -5455,7 +5431,7 @@ sT
 KB
 ex
 tz
-cR
+Ar
 DQ
 YT
 YT
@@ -5740,7 +5716,7 @@ dn
 qz
 Ks
 fh
-nf
+fh
 fh
 fh
 fh
@@ -5751,7 +5727,7 @@ gX
 wr
 lC
 Ar
-Re
+Ar
 Ar
 Ar
 Ar
@@ -5789,7 +5765,7 @@ dn
 At
 Sd
 Sd
-Sd
+cR
 vF
 sH
 oL
@@ -5807,7 +5783,7 @@ eV
 jd
 uU
 pr
-Ox
+gL
 gL
 ur
 Cf
@@ -5832,7 +5808,7 @@ xu
 xu
 xu
 Ks
-FR
+Ks
 FI
 IY
 av
@@ -5888,7 +5864,7 @@ us
 us
 us
 us
-NV
+Re
 tx
 LV
 ip
@@ -5937,7 +5913,7 @@ Ks
 Ks
 Ks
 WN
-Xw
+WN
 WN
 WN
 WN
@@ -5946,9 +5922,9 @@ sG
 ac
 sG
 hQ
-Cz
 ir
-BR
+ir
+ir
 ir
 gL
 fs
@@ -5999,7 +5975,7 @@ vk
 OF
 CH
 Fs
-WI
+gL
 ym
 mS
 QK
@@ -6028,7 +6004,7 @@ lq
 uY
 yy
 Be
-EE
+dT
 VP
 sb
 wH
@@ -6048,7 +6024,7 @@ uq
 Vj
 TS
 YA
-cs
+gL
 Wx
 QA
 CZ
@@ -6382,7 +6358,7 @@ Zc
 Zc
 Zc
 ZC
-FT
+US
 IH
 pC
 IH
@@ -6394,7 +6370,7 @@ ir
 Xf
 kE
 Sk
-WG
+hH
 hH
 tK
 hG
@@ -6475,7 +6451,7 @@ HL
 NE
 Pv
 kN
-NL
+Zc
 BS
 JY
 IR
@@ -6520,7 +6496,7 @@ Lp
 ve
 dT
 kN
-tW
+kN
 kN
 kN
 kN
