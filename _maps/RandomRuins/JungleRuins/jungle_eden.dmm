@@ -10,6 +10,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/robotics)
 "ah" = (
@@ -17,6 +18,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/orange/three_quarters{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	pixel_y = -30;
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
@@ -74,6 +79,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/firealarm{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/jungle/eden/ai)
 "aR" = (
@@ -115,6 +123,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/armory)
 "bC" = (
@@ -140,7 +151,6 @@
 /area/ruin/jungle/eden/medical)
 "bR" = (
 /obj/machinery/airalarm/directional/west,
-/obj/structure/window/spawner/north,
 /obj/structure/rack,
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/brute,
@@ -153,7 +163,9 @@
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 8
 	},
-/obj/structure/window/spawner/west,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
 "bY" = (
@@ -343,10 +355,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/hallway)
 "du" = (
-/obj/structure/flora/ash/tall_shroom,
-/obj/structure/flora/ash/tall_shroom,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin)
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "dx" = (
 /obj/machinery/airalarm/directional/east,
 /obj/structure/closet/secure_closet/personal,
@@ -360,9 +373,14 @@
 /turf/open/floor/wood,
 /area/ruin/jungle/eden/observation)
 "dz" = (
-/obj/structure/flora/tree/jungle/small,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "dE" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -393,6 +411,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/jungle/eden/surgery)
 "dQ" = (
@@ -401,10 +420,21 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 30
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "dT" = (
 /turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/observation)
+"ed" = (
+/obj/machinery/firealarm{
+	pixel_y = -30;
+	dir = 1
+	},
+/turf/open/floor/wood,
 /area/ruin/jungle/eden/observation)
 "eu" = (
 /obj/structure/cable{
@@ -505,7 +535,8 @@
 /area/ruin/jungle/eden/hallway)
 "fs" = (
 /obj/effect/decal/cleanable/oil/streak,
-/obj/machinery/vending/sovietsoda,
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/hardsuit/mining/independent,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "fy" = (
@@ -580,7 +611,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/robotics)
 "gc" = (
-/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "ge" = (
@@ -613,6 +648,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/rooffice)
 "gr" = (
@@ -645,6 +681,9 @@
 /obj/machinery/recharge_station,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/eden/robotics)
+"gW" = (
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/eden/bathroom)
 "gX" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/cable{
@@ -656,6 +695,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/cantina)
 "hj" = (
@@ -788,6 +828,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/hatch,
+/obj/machinery/door/firedoor,
 /turf/open/floor/wood,
 /area/ruin/jungle/eden/observation)
 "ip" = (
@@ -805,7 +846,8 @@
 /area/ruin/jungle/eden/hallway)
 "iq" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
-	dir = 8
+	dir = 1;
+	piping_layer = 2
 	},
 /obj/machinery/light{
 	dir = 8
@@ -1000,7 +1042,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/machinery/vending/wardrobe/jani_wardrobe,
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/hardsuit/mining/independent,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "kw" = (
@@ -1034,6 +1077,12 @@
 /obj/machinery/light/small,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	name = "Observation Room Shutters";
+	id = "ObShutters";
+	pixel_y = -25
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle/eden/observation)
@@ -1074,9 +1123,14 @@
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/eden/rooffice)
 "kU" = (
-/obj/structure/sign/poster/official/moth/epi,
-/turf/closed/wall/r_wall,
-/area/ruin/jungle/eden/observation)
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
 "lb" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1099,6 +1153,10 @@
 /area/ruin/jungle/eden/robotics)
 "lq" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "ObShutters";
+	state_open = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/observation)
 "lC" = (
@@ -1143,6 +1201,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/robotics)
 "lZ" = (
@@ -1215,6 +1274,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/armory)
+"nv" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 8
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -30
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
 "nz" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1348,10 +1420,27 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/eden/chemistry)
+"oL" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 8
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
 "oU" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin)
+"pa" = (
+/obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/engineering)
 "pe" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -1381,11 +1470,7 @@
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/odoffice)
 "pm" = (
-/obj/structure/window/spawner/north,
 /obj/machinery/iv_drip/saline,
-/obj/machinery/door/window{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 1
 	},
@@ -1446,6 +1531,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/chemistry)
 "pL" = (
@@ -1590,12 +1676,9 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/jungle/eden/ai)
 "rc" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/closet/secure_closet/bar,
-/obj/item/pda/bar,
-/turf/open/floor/carpet/royalblack,
-/area/ruin/jungle/eden/cantina)
+/obj/machinery/light/dim,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/eden/bathroom)
 "rk" = (
 /obj/effect/turf_decal/box,
 /obj/mecha/combat/gygax,
@@ -1646,8 +1729,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
@@ -1742,6 +1826,10 @@
 /area/ruin/jungle/eden/engineering)
 "tQ" = (
 /obj/effect/turf_decal/steeldecal/steel_decals10,
+/obj/machinery/firealarm{
+	pixel_y = -30;
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/eden/robotics)
 "tW" = (
@@ -1774,6 +1862,12 @@
 /obj/machinery/modular_computer/console/preset/research,
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/eden/rooffice)
+"ur" = (
+/obj/structure/urinal{
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "us" = (
 /obj/effect/turf_decal/trimline/opaque/white/line{
 	dir = 4
@@ -1862,6 +1956,13 @@
 /obj/item/storage/backpack,
 /turf/open/floor/wood,
 /area/ruin/jungle/eden/observation)
+"vd" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -30
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ruin/jungle/eden/cantina)
 "ve" = (
 /turf/closed/mineral/random/jungle,
 /area/ruin)
@@ -2035,6 +2136,13 @@
 /obj/item/storage/belt/medical/webbing,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/armory)
+"wh" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/structure/curtain,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/eden/bathroom)
 "wj" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -2096,6 +2204,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/rooffice)
 "wV" = (
@@ -2158,6 +2267,12 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/hallway)
+"yx" = (
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 8
+	},
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/eden/bathroom)
 "yy" = (
 /obj/machinery/camera{
 	dir = 4
@@ -2194,9 +2309,17 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/eden/hallway)
 "yY" = (
-/obj/structure/flora/junglebush/b,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin)
+/obj/structure/urinal{
+	pixel_y = 30
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "za" = (
 /obj/effect/decal/cleanable/oil/streak,
 /obj/item/stack/sheet/metal/fifty,
@@ -2239,7 +2362,6 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "zo" = (
-/obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/white,
@@ -2451,6 +2573,12 @@
 /obj/item/pda,
 /turf/open/floor/engine,
 /area/ruin/jungle/eden/containment)
+"Cf" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "Cg" = (
 /obj/machinery/camera,
 /turf/open/floor/plating/dirt/jungle,
@@ -2512,6 +2640,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "CX" = (
@@ -2549,11 +2678,11 @@
 "Dg" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/decal/cleanable/oil,
-/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/machinery/vending/wardrobe/jani_wardrobe,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "Dn" = (
@@ -2614,6 +2743,7 @@
 	dir = 1
 	},
 /obj/structure/cable,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "DQ" = (
@@ -2645,6 +2775,9 @@
 /area/ruin/jungle/eden/hallway)
 "Ed" = (
 /obj/machinery/camera,
+/obj/machinery/firealarm{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/interrogation)
 "Ee" = (
@@ -2663,6 +2796,10 @@
 /area/ruin/jungle/eden/medical)
 "Ej" = (
 /obj/machinery/light,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 30
+	},
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/eden/rooffice)
 "Ev" = (
@@ -2809,9 +2946,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/hallway)
 "Gr" = (
-/obj/structure/flora/junglebush,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin)
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/turf/open/floor/plasteel/freezer,
+/area/ruin/jungle/eden/bathroom)
 "Gu" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2825,11 +2964,17 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/eden/chemistry)
 "Gy" = (
-/obj/item/paper{
-	info = "i suck at architecture"
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "GA" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/layer4{
 	dir = 4
@@ -2897,7 +3042,7 @@
 /area/ruin/jungle/eden/robotics)
 "It" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
-	dir = 8
+	piping_layer = 2
 	},
 /obj/effect/decal/cleanable/cobweb,
 /obj/machinery/light{
@@ -3096,7 +3241,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/highsecurity,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -3142,7 +3286,7 @@
 /area/ruin/jungle/eden/interrogation)
 "KZ" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "RDShutters";
+	id = "ObShutters";
 	state_open = 1
 	},
 /obj/structure/cable{
@@ -3155,6 +3299,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/science/glass,
+/obj/machinery/door/firedoor,
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/eden/rooffice)
 "Lp" = (
@@ -3180,9 +3325,18 @@
 /area/ruin/jungle/eden/hallway)
 "Ls" = (
 /obj/structure/barricade/sandbags,
-/obj/machinery/deployable_turret/hmg,
+/obj/machinery/deployable_turret/hmg{
+	dir = 8
+	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin)
+"Lz" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -30
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "LB" = (
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3194,6 +3348,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/interrogation)
 "LT" = (
@@ -3207,8 +3362,24 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/greenglow/filled,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
+"LV" = (
+/obj/effect/turf_decal/trimline/opaque/white/line{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/hallway)
 "LZ" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
@@ -3260,6 +3431,12 @@
 	icon_state = "4-8"
 	},
 /obj/item/stack/ore/salvage/scrapmetal,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "MM" = (
@@ -3295,8 +3472,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/eden/engineering)
@@ -3331,6 +3508,10 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 30
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/rooffice)
@@ -3531,6 +3712,13 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/jungle/eden/containment)
+"Os" = (
+/obj/structure/toilet,
+/obj/machinery/light/dim{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "Ox" = (
 /obj/structure/sign/poster/official/moth/delam,
 /turf/closed/wall/r_wall,
@@ -3637,6 +3825,10 @@
 	},
 /obj/structure/curtain,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/diagonal,
+/obj/machinery/firealarm{
+	pixel_y = -30;
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/surgery)
 "PC" = (
@@ -3708,9 +3900,8 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
 "Qk" = (
-/obj/structure/flora/rock/pile/largejungle,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin)
+/turf/closed/wall/r_wall,
+/area/ruin/jungle/eden/bathroom)
 "Qt" = (
 /obj/structure/closet/emcloset/wall{
 	dir = 1
@@ -3733,6 +3924,10 @@
 /area/ruin/jungle/eden/engineering)
 "QC" = (
 /obj/machinery/light,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 30
+	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/jungle/eden/odoffice)
 "QG" = (
@@ -3901,6 +4096,7 @@
 /area/ruin/jungle/eden/hallway)
 "Sk" = (
 /obj/machinery/door/airlock/highsecurity,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/jungle/eden/ai)
 "Sl" = (
@@ -3926,10 +4122,16 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/eden/armory)
 "ST" = (
-/obj/machinery/vending/boozeomat/all_access,
+/obj/machinery/vending/boozeomat/all_access{
+	pixel_x = 32;
+	density = 0
+	},
+/obj/structure/closet/secure_closet/bar,
+/obj/item/pda/bar,
 /turf/open/floor/wood/ebony,
 /area/ruin/jungle/eden/cantina)
 "SZ" = (
@@ -3950,6 +4152,10 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/eden/engineering)
+"TR" = (
+/obj/structure/mineral_door/wood,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "TS" = (
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/eden/rooffice)
@@ -3966,12 +4172,14 @@
 /turf/open/floor/carpet/purple,
 /area/ruin/jungle/eden/rooffice)
 "Ua" = (
-/obj/machinery/atmospherics/pipe/simple/general/visible,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
@@ -3988,6 +4196,14 @@
 /obj/effect/turf_decal/corner/opaque/orange/three_quarters,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/eden/chemistry)
+"Uq" = (
+/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "Uw" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -4022,9 +4238,14 @@
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/chemistry)
 "Vf" = (
-/obj/structure/flora/rock/jungle,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin)
+/obj/structure/sink{
+	dir = 1
+	},
+/obj/structure/mirror{
+	pixel_y = -30
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "Vj" = (
 /obj/structure/chair/comfy/black{
 	dir = 4
@@ -4037,8 +4258,21 @@
 "Vk" = (
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/robotics)
+"Vr" = (
+/obj/structure/urinal{
+	pixel_y = 30
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "VO" = (
 /obj/effect/decal/cleanable/robot_debris,
 /obj/item/tape/random,
@@ -4061,6 +4295,11 @@
 /obj/item/clothing/head/bio_hood/cmo,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
+"VR" = (
+/obj/machinery/light/dim,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "VY" = (
 /obj/structure/window/reinforced/spawner/east{
 	dir = 1
@@ -4079,6 +4318,14 @@
 	},
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/hallway)
+"Wo" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/engineering)
 "Wx" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -4125,26 +4372,6 @@
 /obj/structure/table/wood/fancy/red_gold,
 /obj/item/storage/fancy/candle_box,
 /turf/open/floor/wood/ebony,
-/area/ruin/jungle/eden/cantina)
-"WY" = (
-/obj/machinery/door/window{
-	dir = 4
-	},
-/obj/structure/window/reinforced/tinted/frosted{
-	dir = 1
-	},
-/obj/structure/toilet{
-	dir = 4
-	},
-/obj/machinery/shower{
-	dir = 4
-	},
-/obj/structure/curtain,
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = -8
-	},
-/turf/open/floor/carpet/nanoweave/blue,
 /area/ruin/jungle/eden/cantina)
 "Xf" = (
 /turf/closed/wall/r_wall,
@@ -4243,6 +4470,12 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/jungle/eden/odoffice)
+"Yj" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/jungle/eden/bathroom)
 "Yl" = (
 /obj/machinery/chem_dispenser{
 	dir = 1
@@ -4381,7 +4614,6 @@
 /area/ruin/jungle/eden/medical)
 "Zv" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/structure/window/spawner,
 /obj/structure/rack,
 /obj/item/stack/medical/mesh/advanced,
 /obj/item/stack/medical/mesh/advanced,
@@ -4394,7 +4626,6 @@
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 8
 	},
-/obj/structure/window/spawner/west,
 /obj/item/storage/box/bodybags,
 /obj/machinery/power/terminal{
 	dir = 8
@@ -4402,6 +4633,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/structure/window/reinforced,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
 "ZB" = (
@@ -4440,7 +4672,10 @@
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 8
 	},
-/obj/structure/window/spawner/west,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -30
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/eden/medical)
 "ZR" = (
@@ -4835,7 +5070,7 @@ XU
 AN
 AN
 BF
-du
+XU
 Jn
 ve
 ve
@@ -4932,7 +5167,7 @@ zR
 XU
 XU
 XU
-du
+XU
 ve
 ve
 ve
@@ -5164,13 +5399,13 @@ Ks
 fh
 cl
 px
-rc
+tN
 qv
 oB
 CO
 mz
 Fz
-WY
+tz
 Ar
 NF
 OI
@@ -5378,11 +5613,11 @@ MU
 za
 gL
 gL
-Jn
-Jn
-Jn
-ve
-ve
+Qk
+Qk
+Qk
+Qk
+Qk
 ve
 ve
 ve
@@ -5427,11 +5662,11 @@ Fl
 qA
 gL
 gL
-Jn
-Jn
-dz
-ve
-ve
+Qk
+Qk
+Qk
+Qk
+Qk
 ve
 ve
 ve
@@ -5464,7 +5699,7 @@ SZ
 SI
 Dr
 xB
-tz
+vd
 Ar
 XV
 PC
@@ -5476,11 +5711,11 @@ Ma
 MQ
 gL
 gL
-Jn
-Jn
-Jn
-ve
-ve
+Os
+TR
+VR
+Qk
+Qk
 ve
 ve
 ve
@@ -5525,11 +5760,11 @@ TA
 tO
 gL
 gL
-Jn
-Jn
-Jn
-ve
-ve
+Qk
+Qk
+Lz
+Qk
+Qk
 ve
 ve
 ve
@@ -5557,14 +5792,14 @@ Sd
 Sd
 vF
 sH
-Sd
+oL
 fO
-vF
+nv
 Sd
 Lq
 fG
 vF
-Sd
+oL
 AP
 CX
 Gp
@@ -5574,11 +5809,11 @@ uU
 pr
 Ox
 gL
-Jn
-Jn
-ve
-ve
-ve
+ur
+Cf
+Vf
+Qk
+Qk
 ve
 ve
 ve
@@ -5606,14 +5841,14 @@ av
 av
 av
 av
-av
+kU
 pB
 av
 av
 RF
 dE
 av
-av
+kU
 av
 av
 vA
@@ -5623,11 +5858,11 @@ sc
 DH
 gL
 gL
-Cg
-ve
-ve
-Jn
-ve
+yY
+dz
+Vf
+Qk
+Qk
 ve
 ve
 ve
@@ -5655,14 +5890,14 @@ us
 us
 NV
 tx
-us
+LV
 ip
 NV
 us
 lb
 YW
 NV
-us
+LV
 Ap
 ID
 yw
@@ -5672,11 +5907,11 @@ MK
 Dg
 gL
 gL
-Jn
-ve
+Vr
+Yj
 Vf
-Jn
-Jn
+Qk
+Qk
 Jn
 ve
 xu
@@ -5719,13 +5954,13 @@ gL
 fs
 LU
 gc
-gL
-gL
+pa
+Wo
 Gy
-ve
-Jn
-Jn
-yY
+du
+Uq
+Qk
+Qk
 Jn
 Jn
 xu
@@ -5770,11 +6005,11 @@ mS
 QK
 gL
 gL
-Jn
-ve
-Jn
-Jn
-Jn
+yx
+gW
+yx
+Qk
+Qk
 Jn
 Jn
 xu
@@ -5820,9 +6055,9 @@ CZ
 gL
 gL
 Gr
-Jn
-Jn
-Jn
+gW
+rc
+Qk
 Qk
 Jn
 xu
@@ -5868,11 +6103,11 @@ DA
 nH
 gL
 gL
-Jn
-Jn
-Jn
-Jn
-Jn
+wh
+wh
+wh
+Qk
+Qk
 Jn
 xu
 Lp
@@ -5917,11 +6152,11 @@ dQ
 ic
 gL
 gL
-ve
-ve
-ve
-ve
-ve
+Qk
+Qk
+Qk
+Qk
+Qk
 xu
 Lp
 Lp
@@ -5966,11 +6201,11 @@ gL
 gL
 gL
 gL
-gL
-Xf
-ve
-ve
-ve
+Qk
+Qk
+Qk
+Qk
+Qk
 ve
 xu
 xu
@@ -6037,8 +6272,8 @@ lq
 wG
 wG
 cE
-wG
-kU
+ed
+dT
 Cy
 WL
 jI
