@@ -218,14 +218,5 @@
 	gradient = list(0,LIGHT_COLOR_FLARE , 0.75, COLOR_ALMOST_BLACK)
 	color_change = 0.125
 
-
-/obj/effect/particle_emitter
-	name = ""
-	anchored = TRUE
-	mouse_opacity = 0
-
-/obj/effect/particle_emitter/Initialize(mapload, time)
-	. = ..()
-
 /obj/effect/particle_emitter/lava
 	particles = new/particles/lava
