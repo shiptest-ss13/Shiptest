@@ -319,7 +319,7 @@
 	var/list/engine_list = list()
 
 	///if this shuttle can move docking ports other than the one it is docked at
-	var/can_move_docking_ports = FALSE
+	var/can_move_docking_ports = TRUE
 
 	//A list of all the ships directly docked ontop of us. Does not include ships docks on ships docked on us but not directly on us.
 	var/list/towed_shuttles = list()
