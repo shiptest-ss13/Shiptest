@@ -1549,11 +1549,8 @@
 	},
 /obj/machinery/door/firedoor/heavy,
 /obj/docking_port/stationary{
-	roundstart_template = /datum/map_template/shuttle/subshuttles/minimalta;
-	height = 5;
-	width = 11;
-	load_template_on_initialize = 0;
-	dwidth = 3;
+	height = 15;
+	width = 7;
 	dir = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
