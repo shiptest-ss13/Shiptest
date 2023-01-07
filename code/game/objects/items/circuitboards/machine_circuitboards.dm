@@ -1503,7 +1503,7 @@
 
 /obj/item/circuitboard/machine/shuttle/smes/micro
 	name = "Micro Electric Engine Precharger (Machine Board)"
-	build_path = /obj/machinery/power/smes/shuttle
+	build_path = /obj/machinery/power/smes/shuttle/micro
 	req_components = list(
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/cell = 3,
