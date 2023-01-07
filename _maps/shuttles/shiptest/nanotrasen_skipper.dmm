@@ -2980,6 +2980,11 @@
 	port_direction = 8;
 	preferred_direction = 4
 	},
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "AM" = (
@@ -4312,6 +4317,19 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"MN" = (
+/obj/machinery/door/poddoor{
+	id = "amogusdoors";
+	name = "Cargo Bay Blast Door"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "MP" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8
@@ -6325,7 +6343,7 @@ Rv
 PI
 Pq
 JE
-Ym
+MN
 "}
 (13,1,1) = {"
 kz

@@ -3314,6 +3314,18 @@
 /obj/effect/turf_decal/corner/opaque/white,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"vM" = (
+/obj/machinery/door/poddoor{
+	id = "whiteship_port"
+	},
+/obj/structure/fans/tiny,
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "wM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood,
@@ -3399,6 +3411,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"BU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/poddoor{
+	id = "whiteship_starboard"
+	},
+/obj/structure/fans/tiny,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Fb" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3650,7 +3674,7 @@ bA
 ei
 "}
 (11,1,1) = {"
-af
+vM
 aq
 ap
 aU
@@ -3666,7 +3690,7 @@ dd
 dv
 tZ
 ap
-ei
+BU
 "}
 (12,1,1) = {"
 ae

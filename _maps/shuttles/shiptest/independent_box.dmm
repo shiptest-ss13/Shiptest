@@ -606,13 +606,13 @@
 /obj/item/storage/box/syringes,
 /obj/item/storage/box/bodybags,
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/rezadone = 30);
+	list_reagents = list(/datum/reagent/medicine/rezadone=30);
 	name = "rezadone bottle";
 	pixel_x = -3;
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializid=30);
 	name = "thializid bottle"
 	},
 /turf/open/floor/plasteel/dark,
@@ -2056,6 +2056,21 @@
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
+"OY" = (
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "emergencybay_blastdoors"
+	},
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/engine,
+/area/ship/cargo)
 "Ps" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
@@ -2571,7 +2586,7 @@ dq
 Rx
 "}
 (21,1,1) = {"
-cC
+OY
 aj
 aB
 az

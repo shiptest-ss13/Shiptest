@@ -1346,6 +1346,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"oP" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/poddoor{
+	id = "colossus_port"
+	},
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/engine/hull,
+/area/ship/cargo)
 "oQ" = (
 /obj/effect/turf_decal/floordetail/edgedrain{
 	dir = 1
@@ -1499,6 +1511,10 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "colossus_starboard"
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7
 	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
@@ -4949,7 +4965,7 @@ XJ
 XJ
 XJ
 XJ
-vZ
+oP
 Cu
 qR
 Tk

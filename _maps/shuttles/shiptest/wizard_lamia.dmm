@@ -741,6 +741,11 @@
 	name = "External Airlock"
 	},
 /obj/structure/fans/tiny,
+/obj/docking_port/stationary{
+	dir = 4;
+	width = 7;
+	height = 15
+	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
 "ce" = (

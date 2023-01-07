@@ -1928,6 +1928,19 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"Go" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/poddoor{
+	id = "wreckercargobay";
+	name = "Cargo Bay Exterior Blast Door"
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Gw" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 1;
@@ -2104,7 +2117,7 @@
 /obj/item/clothing/mask/breath,
 /obj/machinery/suit_storage_unit/inherit/industrial{
 	req_access = null;
-	req_one_access = list(48, 56)
+	req_one_access = list(48,56)
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -2986,7 +2999,7 @@
 /obj/item/clothing/mask/breath,
 /obj/machinery/suit_storage_unit/inherit/industrial{
 	req_access = null;
-	req_one_access = list(48, 56)
+	req_one_access = list(48,56)
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -3787,7 +3800,7 @@ NF
 NF
 so
 JS
-JS
+Go
 sx
 NN
 mL

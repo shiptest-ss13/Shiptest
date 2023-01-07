@@ -1091,6 +1091,10 @@
 	id = "entrance_lockdown";
 	name = "Entrance Lockdown Shutters"
 	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "il" = (
@@ -2529,6 +2533,14 @@
 /obj/structure/chair/pew,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"xM" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 8
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "xS" = (
 /obj/effect/turf_decal/corner/opaque/blue/mono,
 /obj/effect/turf_decal/trimline/opaque/black/line{
@@ -7434,7 +7446,7 @@ zW
 zW
 gJ
 wq
-wq
+xM
 wq
 gJ
 zW

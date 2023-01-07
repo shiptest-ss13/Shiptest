@@ -1202,6 +1202,14 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
+"rU" = (
+/obj/docking_port/stationary{
+	dir = 4;
+	width = 7;
+	height = 15
+	},
+/turf/open/floor/mineral/plastitanium/red/airless,
+/area/ship/external)
 "se" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 1
@@ -1631,6 +1639,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"xM" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red/airless,
+/area/ship/external)
 "xV" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
@@ -2961,7 +2977,7 @@ Zf
 Zf
 Zt
 qg
-qk
+rU
 xe
 Zf
 Zf
@@ -3637,7 +3653,7 @@ Zf
 Zf
 Rt
 qk
-qk
+xM
 Bd
 Zf
 Zf

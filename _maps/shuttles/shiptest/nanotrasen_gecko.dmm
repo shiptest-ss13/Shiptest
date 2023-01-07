@@ -5,6 +5,11 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "ag" = (
@@ -660,7 +665,7 @@
 /obj/machinery/computer/atmos_control/tank/oxygen_tank{
 	dir = 4;
 	name = "Port Salvage Bay Control";
-	sensors = list("o2_sensor" = "Port Salvage Bay")
+	sensors = list("o2_sensor"="Port Salvage Bay")
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
@@ -1811,7 +1816,7 @@
 /obj/structure/railing,
 /obj/machinery/computer/atmos_control/incinerator{
 	dir = 4;
-	sensors = list("gecko_burn_sensor" = "Combustion Chamber")
+	sensors = list("gecko_burn_sensor"="Combustion Chamber")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
@@ -2015,6 +2020,10 @@
 	},
 /obj/effect/turf_decal/number/two,
 /obj/effect/decal/cleanable/dirt,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "vX" = (
@@ -3037,7 +3046,7 @@
 	},
 /obj/machinery/computer/atmos_control/tank/nitrogen_tank{
 	name = "Starboard Salvage Bay Control";
-	sensors = list("n2_sensor" = "Starboard Salvage Bay")
+	sensors = list("n2_sensor"="Starboard Salvage Bay")
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -3249,7 +3258,7 @@
 	},
 /obj/machinery/computer/atmos_control/tank/oxygen_tank{
 	name = "Port Salvage Bay Control";
-	sensors = list("o2_sensor" = "Port Salvage Bay")
+	sensors = list("o2_sensor"="Port Salvage Bay")
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -4594,7 +4603,7 @@
 /obj/machinery/computer/atmos_control/tank/nitrogen_tank{
 	dir = 4;
 	name = "Starboard Salvage Bay Control";
-	sensors = list("n2_sensor" = "Starboard Salvage Bay")
+	sensors = list("n2_sensor"="Starboard Salvage Bay")
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8

@@ -1415,6 +1415,17 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Ag" = (
+/obj/machinery/door/poddoor{
+	id = "whiteship_cargo"
+	},
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/cargo)
 "Al" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -2215,7 +2226,7 @@
 /obj/item/storage/belt/medical,
 /obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializid=30);
 	name = "thializid bottle"
 	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
@@ -3733,7 +3744,7 @@ Zn
 "}
 (24,1,1) = {"
 Zn
-pm
+Ag
 xW
 jq
 jf

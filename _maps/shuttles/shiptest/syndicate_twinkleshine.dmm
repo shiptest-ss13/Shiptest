@@ -1788,6 +1788,11 @@
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/docking_port/stationary{
+	dir = 4;
+	width = 7;
+	height = 15
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "qD" = (
@@ -4918,6 +4923,19 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/engine,
 /area/ship/engineering)
+"RV" = (
+/obj/machinery/door/poddoor{
+	id = "sbccargo";
+	name = "Cargo Bay Blast Door"
+	},
+/obj/structure/fans/tiny,
+/obj/docking_port/stationary{
+	dir = 4;
+	width = 7;
+	height = 15
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "RW" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -6042,7 +6060,7 @@ rT
 uY
 uY
 uY
-uY
+RV
 uY
 Hf
 Hf

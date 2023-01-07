@@ -217,6 +217,18 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/security)
+"lz" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "piratecargo";
+	name = "Cargo Bay"
+	},
+/obj/structure/fans/tiny,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/cargo)
 "mg" = (
 /obj/machinery/mass_driver{
 	dir = 1;
@@ -2203,7 +2215,7 @@ Sw
 WK
 KV
 rc
-TP
+lz
 "}
 (11,1,1) = {"
 XB

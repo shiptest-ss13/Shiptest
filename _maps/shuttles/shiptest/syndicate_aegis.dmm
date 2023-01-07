@@ -534,6 +534,22 @@
 	},
 /turf/open/floor/plating,
 /area/ship/science)
+"dR" = (
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	id = "cargo_ageis";
+	name = "Cargo Bay"
+	},
+/obj/docking_port/stationary{
+	dir = 4;
+	width = 7;
+	height = 15
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
 "dS" = (
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable/yellow{
@@ -5404,7 +5420,7 @@ iq
 VG
 ze
 Dy
-ze
+dR
 ze
 aP
 aP

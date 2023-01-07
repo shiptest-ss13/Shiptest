@@ -137,6 +137,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
+"bQ" = (
+/obj/machinery/door/airlock/external/glass{
+	name = "Ye Old Docking Airlock"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/fore)
 "bX" = (
 /obj/effect/decal/remains/human,
 /obj/item/reagent_containers/food/drinks/bottle/absinthe,
@@ -982,6 +994,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/camera,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "sl" = (
@@ -1706,7 +1719,6 @@
 /area/ship/hallway/fore)
 "Ce" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/camera,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3733,7 +3745,7 @@ tG
 (28,1,1) = {"
 Oz
 Oz
-tG
+bQ
 Ce
 La
 cl

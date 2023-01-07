@@ -325,6 +325,11 @@
 /area/ship/cargo)
 "gi" = (
 /obj/machinery/door/airlock/external,
+/obj/docking_port/stationary{
+	dir = 4;
+	width = 7;
+	height = 15
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "gv" = (
@@ -1118,7 +1123,7 @@
 	dir = 1
 	},
 /mob/living/simple_animal/chicken{
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0);
+	atmos_requirements = list("min_oxy"=0,"max_oxy"=0,"min_tox"=0,"max_tox"=0,"min_co2"=0,"max_co2"=0,"min_n2"=0,"max_n2"=0);
 	desc = "A regular chicken, nothing weird about this one .";
 	name = "Cluckens"
 	},

@@ -2216,6 +2216,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"kJ" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "ravenbay";
+	name = "Bay Door"
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/crew)
 "kP" = (
 /obj/machinery/suit_storage_unit/standard_unit,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -4691,7 +4704,7 @@ aa
 hz
 wn
 yp
-yp
+kJ
 jq
 LU
 gC

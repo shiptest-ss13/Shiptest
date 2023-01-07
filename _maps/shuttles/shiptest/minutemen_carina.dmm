@@ -2783,6 +2783,10 @@
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external/glass,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/starboard)
 "FB" = (
@@ -3281,6 +3285,11 @@
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external/glass,
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
 "Ma" = (

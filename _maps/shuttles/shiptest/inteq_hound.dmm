@@ -893,6 +893,13 @@
 	port_direction = 2;
 	preferred_direction = 4
 	},
+/obj/docking_port/stationary{
+	dir = 4;
+	roundstart_template = /datum/map_template/shuttle/subshuttles/pill;
+	load_template_on_initialize = 0;
+	height = 3;
+	width = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
 "tg" = (

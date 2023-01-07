@@ -1441,7 +1441,7 @@
 /obj/item/clothing/under/rank/civilian/bartender,
 /obj/structure/closet/secure_closet/bar{
 	req_access = null;
-	req_one_access_txt = list(25, 41)
+	req_one_access_txt = list(25,41)
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
@@ -2025,6 +2025,17 @@
 "Nr" = (
 /turf/template_noop,
 /area/template_noop)
+"Nt" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "syndiefuck"
+	},
+/obj/docking_port/stationary{
+	dir = 4;
+	width = 7;
+	height = 15
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "NH" = (
 /obj/effect/turf_decal/siding/blue/corner,
 /obj/effect/turf_decal/corner/opaque/blue/half{
@@ -2701,7 +2712,7 @@ Nr
 hs
 eH
 Rt
-Rt
+Nt
 Rt
 Ev
 Ka

@@ -5510,6 +5510,11 @@
 	preferred_direction = 4;
 	can_move_docking_ports = 1
 	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "sX" = (
@@ -5666,6 +5671,18 @@
 /obj/machinery/door/window/southleft,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
+"va" = (
+/obj/machinery/door/poddoor{
+	name = "Bay Doors";
+	id = "ntboent2"
+	},
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/port)
 "vi" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10057,7 +10074,7 @@ EY
 EY
 EY
 EY
-aQ
+va
 ba
 bo
 bz

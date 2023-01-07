@@ -3014,6 +3014,11 @@
 /obj/machinery/door/window/survival_pod{
 	dir = 1
 	},
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/construction)
 "Kq" = (
@@ -4044,6 +4049,10 @@
 /obj/docking_port/mobile{
 	port_direction = 8;
 	preferred_direction = 8
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)

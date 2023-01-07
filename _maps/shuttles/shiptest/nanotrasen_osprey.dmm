@@ -462,7 +462,7 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializid=30);
 	name = "thializid bottle";
 	pixel_x = 5
 	},
@@ -2678,6 +2678,24 @@
 "sf" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
+"si" = (
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/orange,
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/poddoor{
+	id = "ospreydoors";
+	name = "Cargo Bay Blast Door"
+	},
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/fore)
 "sl" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -8038,7 +8056,7 @@ XU
 XU
 XU
 XU
-jh
+si
 vo
 fI
 hz

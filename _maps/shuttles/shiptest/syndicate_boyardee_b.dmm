@@ -295,6 +295,11 @@
 /area/ship/crew/canteen)
 "gi" = (
 /obj/machinery/door/airlock/external,
+/obj/docking_port/stationary{
+	dir = 4;
+	width = 7;
+	height = 15
+	},
 /turf/open/floor/carpet,
 /area/ship/crew/canteen)
 "gA" = (
@@ -1176,10 +1181,6 @@
 	dir = 4
 	},
 /turf/open/floor/wood,
-/area/ship/crew/canteen)
-"zD" = (
-/obj/structure/chair/stool,
-/turf/open/floor/carpet/black,
 /area/ship/crew/canteen)
 "zE" = (
 /obj/machinery/newscaster{
@@ -2876,7 +2877,7 @@ aa
 Tr
 IW
 eV
-zD
+hQ
 DO
 lg
 lg

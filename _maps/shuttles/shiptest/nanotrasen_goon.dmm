@@ -585,6 +585,22 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
+"Co" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/mineral/titanium,
+/area/ship/crew)
 "CW" = (
 /obj/structure/chair/comfy/brown{
 	dir = 4
@@ -1126,7 +1142,7 @@ Rw
 at
 "}
 (10,1,1) = {"
-at
+Co
 Ea
 Ea
 sd

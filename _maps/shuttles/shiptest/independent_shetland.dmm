@@ -1546,6 +1546,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/security)
+"pq" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/hallway/starboard)
 "pr" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -4009,6 +4021,11 @@
 	width = 48
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hallway/port)
 "NA" = (
@@ -4044,7 +4061,7 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializid=30);
 	name = "thializid bottle"
 	},
 /obj/item/reagent_containers/syringe,
@@ -5805,7 +5822,7 @@ qJ
 qe
 XA
 hk
-GV
+pq
 "}
 (19,1,1) = {"
 Ny

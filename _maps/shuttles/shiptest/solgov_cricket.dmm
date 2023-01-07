@@ -1548,6 +1548,14 @@
 	port_direction = 8
 	},
 /obj/machinery/door/firedoor/heavy,
+/obj/docking_port/stationary{
+	roundstart_template = /datum/map_template/shuttle/subshuttles/minimalta;
+	height = 5;
+	width = 11;
+	load_template_on_initialize = 0;
+	dwidth = 3;
+	dir = 2
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
 "sv" = (
@@ -2338,6 +2346,14 @@
 /obj/structure/chair/comfy/black,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
+"Bk" = (
+/obj/structure/catwalk,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7
+	},
+/turf/template_noop,
+/area/ship/external)
 "Bl" = (
 /obj/machinery/mineral/ore_redemption{
 	dir = 8
@@ -5123,7 +5139,7 @@ fu
 bQ
 us
 AU
-oe
+Bk
 "}
 (25,1,1) = {"
 YU

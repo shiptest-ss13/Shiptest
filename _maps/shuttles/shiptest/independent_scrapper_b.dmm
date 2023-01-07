@@ -242,6 +242,15 @@
 /obj/machinery/atmospherics/components/unary/tank/toxins,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"cF" = (
+/obj/effect/turf_decal/siding/yellow,
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "cI" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
@@ -312,6 +321,11 @@
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/science)
@@ -4853,7 +4867,7 @@ OP
 "}
 (12,1,1) = {"
 PF
-GK
+cF
 NC
 zs
 Gh

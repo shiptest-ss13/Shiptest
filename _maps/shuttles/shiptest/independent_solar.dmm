@@ -2375,6 +2375,17 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
+"TT" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "mining_galaxy_port"
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/plasteel/patterned/monofloor,
+/area/ship/cargo)
 "Up" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/purple,
@@ -2765,7 +2776,7 @@ Gf
 OY
 OY
 vN
-Dm
+TT
 eY
 "}
 (7,1,1) = {"

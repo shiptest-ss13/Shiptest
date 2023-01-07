@@ -1472,6 +1472,16 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
+"YJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "YY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1818,7 +1828,7 @@ Rc
 Rc
 Ar
 Qk
-Qk
+YJ
 AV
 Qk
 gi

@@ -339,6 +339,14 @@
 "cJ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security/armory)
+"cK" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	height = 15;
+	width = 7
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "cW" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 5
@@ -2545,6 +2553,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/medical/surgery)
+"tW" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 8
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "tY" = (
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/port)
@@ -3623,7 +3639,7 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializid=30);
 	name = "thializid bottle"
 	},
 /obj/item/reagent_containers/syringe,
@@ -5221,7 +5237,7 @@
 "Of" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/mug{
-	list_reagents = list(/datum/reagent/consumable/coffee = 30);
+	list_reagents = list(/datum/reagent/consumable/coffee=30);
 	pixel_x = -5;
 	pixel_y = 8
 	},
@@ -5230,7 +5246,7 @@
 	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/drinks/mug{
-	list_reagents = list(/datum/reagent/consumable/coffee = 30);
+	list_reagents = list(/datum/reagent/consumable/coffee=30);
 	pixel_x = -2;
 	pixel_y = 1
 	},
@@ -7205,7 +7221,7 @@ Gs
 (12,1,1) = {"
 fS
 fg
-fg
+tW
 WL
 qa
 qa
@@ -7629,7 +7645,7 @@ qa
 qa
 qa
 qa
-fg
+cK
 zK
 fz
 ng
