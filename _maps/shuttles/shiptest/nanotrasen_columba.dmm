@@ -326,6 +326,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "hI" = (
@@ -2048,6 +2051,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "JS" = (
@@ -2112,7 +2118,7 @@
 	},
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/cut/red,
-/obj/item/circuitboard/machine/shuttle/heater,
+/obj/item/circuitboard/machine/shuttle/smes/micro,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "KP" = (
