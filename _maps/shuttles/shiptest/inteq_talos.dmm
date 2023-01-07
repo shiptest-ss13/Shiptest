@@ -747,9 +747,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/machinery/firealarm{
+/obj/structure/fireaxecabinet{
 	dir = 1;
-	pixel_y = -25
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -1017,10 +1017,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
-	},
-/obj/structure/fireaxecabinet{
-	dir = 1;
-	pixel_y = -32
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -5252,6 +5248,9 @@
 /obj/structure/sink{
 	dir = 4;
 	pixel_x = -12
+	},
+/obj/machinery/firealarm{
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
