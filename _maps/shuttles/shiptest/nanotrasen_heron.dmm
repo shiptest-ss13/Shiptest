@@ -2230,7 +2230,7 @@
 /area/ship/security/dock)
 "ia" = (
 /obj/machinery/door/airlock/highsecurity{
-	name = "Mech bay"
+	name = "Mech Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3652,12 +3652,12 @@
 /turf/open/floor/plasteel,
 /area/ship/maintenance/central)
 "mQ" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Mech bay"
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "Mech Bay"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/science/robotics)
@@ -5182,6 +5182,9 @@
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/maintenance/central)
