@@ -1429,6 +1429,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "jy" = (
@@ -6145,9 +6148,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/machinery/camera/autoname{
-	dir = 8
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "Oy" = (
@@ -6277,9 +6277,6 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "PE" = (
@@ -7547,6 +7544,9 @@
 /obj/item/radio/intercom{
 	dir = 1;
 	pixel_y = -22
+	},
+/obj/machinery/camera/autoname{
+	dir = 10
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
