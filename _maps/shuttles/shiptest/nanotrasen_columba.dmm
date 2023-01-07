@@ -63,9 +63,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
-"cw" = (
-/turf/closed/wall/r_wall,
-/area)
 "cG" = (
 /turf/closed/wall/r_wall,
 /area/ship/engineering)
@@ -511,9 +508,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
-"ki" = (
-/turf/template_noop,
-/area/space)
 "kt" = (
 /obj/structure/sign/nanotrasen,
 /turf/closed/wall/r_wall,
@@ -1534,7 +1528,7 @@
 /area/ship/bridge)
 "By" = (
 /turf/template_noop,
-/area)
+/area/template_noop)
 "BA" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -2913,7 +2907,7 @@ cG
 Ik
 tI
 cG
-cw
+cG
 By
 "}
 (3,1,1) = {"
@@ -2997,7 +2991,7 @@ XX
 XX
 "}
 (7,1,1) = {"
-ki
+By
 XX
 BL
 HS
@@ -3014,7 +3008,7 @@ uB
 Vu
 tZ
 XX
-ki
+By
 "}
 (8,1,1) = {"
 XX
