@@ -104,3 +104,16 @@
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/combat
+
+/datum/outfit/job/ce/inteq
+	name = "IRMG Artificer Class II (Inteq)"
+
+	ears = /obj/item/radio/headset/inteq/alt
+	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
+	head = /obj/item/clothing/head/hardhat/white
+	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+
+	courierbag = /obj/item/storage/backpack/messenger/inteq
