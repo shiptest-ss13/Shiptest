@@ -152,7 +152,7 @@
 	density = 0
 	capacity = 1e6
 
-obj/machinery/power/smes/shuttle/micro/precharged
+/obj/machinery/power/smes/shuttle/micro/precharged
 	charge = 1e6
 
 
