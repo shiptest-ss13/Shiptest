@@ -616,9 +616,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/structure/closet/secure_closet/wall{
 	name = "captain's locker";
 	req_access_txt = "20";
@@ -2099,11 +2096,11 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "KM" = (
