@@ -713,13 +713,13 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "oK" = (
-/obj/machinery/door/airlock/glass{
-	name = "Canteen"
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/glass{
+	name = "Canteen"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/canteen)
 "oM" = (
@@ -815,7 +815,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/door/airlock/mining/glass,
+/obj/machinery/door/airlock/mining/glass{
+	name = "Shuttle Bay"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hallway/central)
 "qy" = (
@@ -1085,7 +1087,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "ua" = (
-/obj/machinery/door/airlock,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1100,6 +1101,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock{
+	name = "Crew Quarters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew)
@@ -1518,7 +1522,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock{
-	name = "Dorms"
+	name = "Crew Quarters"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/canteen)
@@ -1894,7 +1898,9 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Ho" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	name = "Restroom"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
@@ -2116,7 +2122,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "KP" = (
-/obj/machinery/door/airlock/mining/glass,
+/obj/machinery/door/airlock/mining/glass{
+	name = "Mining"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/door/firedoor/border_only{
@@ -2201,7 +2209,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/door/airlock/command,
+/obj/machinery/door/airlock/command{
+	name = "Bridge"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "Mf" = (
@@ -2484,7 +2494,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/door/airlock/mining/glass,
+/obj/machinery/door/airlock/mining/glass{
+	name = "Shuttle Bay"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hallway/central)
 "Rj" = (
