@@ -783,6 +783,11 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "in" = (
@@ -854,6 +859,9 @@
 /obj/item/storage/belt/utility/full,
 /obj/item/storage/backpack/satchel/eng,
 /obj/item/pda/engineering,
+/obj/item/clothing/head/welding,
+/obj/item/weldingtool/largetank,
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "iE" = (
@@ -1546,11 +1554,6 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "qK" = (
@@ -1620,7 +1623,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "ro" = (
@@ -1898,6 +1901,9 @@
 /obj/item/storage/belt/utility/full,
 /obj/item/storage/backpack/satchel/eng,
 /obj/item/pda/engineering,
+/obj/item/clothing/head/welding,
+/obj/item/weldingtool/largetank,
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "vk" = (
@@ -2276,10 +2282,6 @@
 /obj/item/stack/sheet/plastic/fifty,
 /obj/item/stack/sheet/plastic/fifty,
 /obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "zo" = (
@@ -2449,10 +2451,10 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/jungle/eden/cantina)
 "BA" = (
-/obj/structure/closet/secure_closet/engineering_welding,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/ruin/jungle/eden/engineering)
 "BE" = (
@@ -3896,10 +3898,14 @@
 /turf/closed/wall/r_wall,
 /area/ruin/jungle/eden/bathroom)
 "Qt" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/turf/closed/wall/r_wall,
+/obj/structure/closet/emcloset/wall{
+	dir = 1;
+	pixel_y = -32
+	},
+/turf/open/floor/wood,
 /area/ruin/jungle/eden/observation)
 "Qx" = (
 /obj/structure/cable{
@@ -6206,8 +6212,8 @@ lq
 wG
 LZ
 OD
-yG
 Qt
+dT
 tM
 Ab
 bY
