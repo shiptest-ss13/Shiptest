@@ -1,0 +1,17 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "BYO-class Do-It-Yourself Enthusiast Special",
+	"map_short_name": "BYO-class",
+	"map_path": "_maps/shuttles/shiptest/independent_byo.dmm",
+	"job_slots": {
+		"Architect": {
+			"outfit": "/datum/outfit/job/engineer/hazard",
+			"slots": 1
+		},
+		"Maso-Mechanic": {
+			"outfit": "/datum/outfit/job/engineer/hazard",
+			"slots": 4
+		}
+	},
+	"enabled": true
+}
