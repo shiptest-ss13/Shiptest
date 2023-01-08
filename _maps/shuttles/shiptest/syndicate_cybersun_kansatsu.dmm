@@ -798,20 +798,15 @@
 /area/ship/engineering)
 "rR" = (
 /obj/structure/table,
-/obj/item/stack/sheet/mineral/uranium/five{
-	pixel_y = 8
-	},
-/obj/item/stack/sheet/mineral/uranium/five{
-	pixel_y = 8
-	},
-/obj/item/stack/sheet/mineral/uranium/five{
-	pixel_x = -3
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/item/stack/sheet/mineral/plasma/twenty{
+	pixel_y = 6;
+	pixel_x = 5
 	},
 /obj/item/wrench,
 /turf/open/floor/plating,
