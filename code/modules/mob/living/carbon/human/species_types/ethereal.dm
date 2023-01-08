@@ -77,9 +77,12 @@
 
 /datum/species/ethereal/random_name(gender,unique,lastname)
 	if(unique)
-		return random_unique_ethereal_name()
+		return random_unique_lizard_name(gender)
 
-	var/randname = ethereal_name()
+	var/randname = lizard_name(gender)
+
+	if(lastname)
+		randname += " [lastname]"
 
 	return randname
 
