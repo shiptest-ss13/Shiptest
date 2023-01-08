@@ -15,7 +15,6 @@
 	maxHealth = 200
 	health = 200
 	obj_damage = 40
-	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	attack_verb_continuous = "claws"

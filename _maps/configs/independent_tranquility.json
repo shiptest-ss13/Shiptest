@@ -1,0 +1,36 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Tranquility-class Flying Apartment Complex",
+	"prefix": "ISV",
+	"namelists": ["GENERAL", "SPACE", "NATURAL"],
+	"map_short_name": "Tranquility-class",
+	"map_path": "_maps/shuttles/shiptest/independent_tranquility.dmm",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/western",
+			"officer": true,
+			"slots": 1
+		},
+		"Scholar": {
+			"outfit": "/datum/outfit/job/curator/librarian",
+			"slots": 1
+		},
+		"Medical Tenant": {
+			"outfit": "/datum/outfit/job/chemist/pharmacologist",
+			"slots": 1
+		},
+		"Engineering Tenant": {
+			"outfit": "/datum/outfit/job/engineer/electrician",
+			"slots": 1
+		},
+		"Tenant": {
+			"outfit": "/datum/outfit/job/curator/dungeonmaster",
+			"slots": 1
+		},
+		"Resident Artist": {
+			"outfit": "/datum/outfit/job/assistant/artist",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
