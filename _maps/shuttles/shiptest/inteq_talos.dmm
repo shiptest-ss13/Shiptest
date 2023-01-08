@@ -1039,12 +1039,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"he" = (
-/obj/structure/marker_beacon{
-	picked_color = "Yellow"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/canteen)
 "hg" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1809,7 +1803,7 @@
 	dir = 4
 	},
 /obj/machinery/advanced_airlock_controller{
-	pixel_y = -32
+	pixel_y = -24
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -1859,6 +1853,9 @@
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 25
+	},
+/obj/machinery/airalarm/all_access{
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2460,8 +2457,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/sign/poster/official/cleanliness{
-	pixel_x = -32
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -3051,10 +3049,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -5597,9 +5591,6 @@
 /obj/item/storage/box/cups{
 	pixel_y = 10
 	},
-/obj/structure/sign/poster/contraband/eat{
-	pixel_x = -32
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "IT" = (
@@ -6086,9 +6077,8 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
+/obj/structure/sign/poster/contraband/donut_corp{
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -7267,7 +7257,7 @@
 	dir = 4
 	},
 /obj/machinery/advanced_airlock_controller{
-	pixel_y = -32
+	pixel_y = -24
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -7718,6 +7708,9 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
+/obj/structure/sign/poster/contraband/eat{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Yx" = (
@@ -8450,7 +8443,7 @@ wy
 NY
 yz
 vT
-he
+xI
 YY
 cD
 hT
