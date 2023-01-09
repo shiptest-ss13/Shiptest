@@ -881,13 +881,8 @@
 
 /obj/structure/sign/poster/solgov/skiing
 	name = "Lo-Fly Skiing Advert"
-	desc = "An advertisement for low-gravity skiing ventures on Ares. \"Popular with SUNS groups!\""
+	desc = "An advertisement for some low-gravity skiing resort on Ares. \"Popular with SUNS groups!\""
 	icon_state = "poster-solgov-loskiing"
-
-/obj/structure/sign/poster/solgov/nof
-	name = "Remembering the Night of Fire"
-	desc = "A poster created by the Department of Memorialization made in honor of the billions killed during the Night of Fire several centuries ago."
-	icon_state = "poster-solgov-nof"
 
 /obj/structure/sign/poster/solgov/recyle
 	name = "Recycle"
@@ -955,7 +950,7 @@
 /obj/structure/sign/poster/minutemen/bard
 	name = "CMM BARD"
 	desc = "A poster that was made by soldiers that attemps to recruit people in the BARD depecting a \"Sargent Clues\" mowing down waves and waves of xenofauna, and them exploding into blood. Somethinng tells you that service is a lot less intresting than this."
-	icon_state = "poster-cmm_enlist"
+	icon_state = "poster-poster-cmm_bard"
 
 /obj/structure/sign/poster/minutemen/gold
 	name = "CMM GOLD"
@@ -970,7 +965,7 @@
 /obj/structure/sign/poster/minutemen/maxin
 	name = "Maxin"
 	desc = "Maxin, the fourth planet of the Kanler-332 system. It's many moons including Lanchester City make it a popular sightseeing attraction for those enroute to Lanchester City."
-	icon_state = "poster-cmm_lanchester"
+	icon_state = "poster-cmm_maxin"
 
 /obj/structure/sign/poster/minutemen/lanchester
 	name = "Lanchester City"
