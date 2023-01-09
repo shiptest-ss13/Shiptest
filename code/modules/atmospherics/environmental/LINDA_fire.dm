@@ -86,6 +86,8 @@
 	bypassing = volume > CELL_VOLUME*0.95 || location.air.return_temperature() > FUSION_TEMPERATURE_THRESHOLD
 
 	if(bypassing)
+		if(temperature > location.air.return_temperature())
+			location.air.set_temperature(temperature) //now actually starts fires like intended
 		volume = location.air.reaction_results["fire"]*FIRE_GROWTH_RATE
 		temperature = location.air.return_temperature()
 	else
