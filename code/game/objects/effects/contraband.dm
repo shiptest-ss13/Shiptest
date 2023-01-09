@@ -530,6 +530,12 @@
 	desc = "A poster advertising the Hunter's Pride Winchester lever action rifle and .38 Caliber bullets."
 	icon_state = "poster_winchester"
 
+/obj/structure/sign/poster/contraband/eoehoma
+	name = "Eoehoma Firearms"
+	desc = "Eoehoma Firearms, the galaxy's favorite laser firearm manufacturer*. \n\
+	*DEFUNCT SINCE F.S. 450"
+	icon_state = "poster-eoehoma"
+
 //beginning of Nanotrasen approved posters. Expect corprate propaganda and motavation. You will usually only see this on Nanotrasen ships and stations
 /obj/structure/sign/poster/official
 	poster_item_name = "motivational poster"
