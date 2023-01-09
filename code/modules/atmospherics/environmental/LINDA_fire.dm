@@ -83,7 +83,7 @@
 
 	location.active_hotspot = src
 
-	bypassing = volume > CELL_VOLUME*0.95 || location.air.return_temperature() > FUSION_TEMPERATURE_THRESHOLD
+	bypassing = volume > CELL_VOLUME*0.95 || location.air.return_temperature() >= FUSION_TEMPERATURE_THRESHOLD
 
 	if(bypassing)
 		if(temperature > location.air.return_temperature())
@@ -93,7 +93,8 @@
 	else
 		var/datum/gas_mixture/affected = location.air.remove_ratio(volume/location.air.return_volume())
 		if(affected) //in case volume is 0
-			affected.set_temperature(temperature)
+			if(temperature > affected.return_temperature())
+				affected.set_temperature(temperature) //don't set the temperature lower than what it was
 			affected.react(src)
 			temperature = affected.return_temperature()
 			volume = affected.reaction_results["fire"]*FIRE_GROWTH_RATE
