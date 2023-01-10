@@ -1010,9 +1010,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "dK" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -1618,14 +1615,14 @@
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/plasma{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -4526,20 +4523,17 @@
 	dir = 4;
 	piping_layer = 4
 	},
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/airalarm/engine{
 	pixel_y = 24
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/visible/layer4{
-	dir = 4
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -13341,13 +13335,13 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "Ww" = (
