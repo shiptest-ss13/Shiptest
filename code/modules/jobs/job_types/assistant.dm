@@ -128,6 +128,13 @@ Assistant
 	uniform = /obj/item/clothing/under/costume/sailor
 	shoes = /obj/item/clothing/shoes/jackboots
 
+/datum/outfit/job/assistant/corporate
+	name = "Business Associate"
+
+	uniform = /obj/item/clothing/under/suit/black
+	shoes = /obj/item/clothing/shoes/laceup
+	suit = /obj/item/clothing/suit/toggle/lawyer/black
+
 /datum/outfit/job/assistant/syndicate
 	name = "Junior Agent (Assistant)"
 
