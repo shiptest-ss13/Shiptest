@@ -475,7 +475,6 @@
 /obj/structure/rack,
 /obj/item/mecha_parts/mecha_equipment/generator,
 /obj/item/mecha_parts/mecha_equipment/drill,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar/starboard)
@@ -1849,7 +1848,7 @@
 	dir = 4;
 	pixel_y = 24;
 	pixel_x = -24;
-	id = "obhan1e";
+	id = "obhan1w";
 	name = "Window Shutters"
 	},
 /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
@@ -2390,6 +2389,14 @@
 "nC" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/storage)
+"nD" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	name = "Window Shutters";
+	id = "obhan1w"
+	},
+/turf/open/floor/plating,
+/area/ship/hangar/starboard)
 "nF" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -10523,8 +10530,8 @@ We
 We
 We
 Lr
-wm
-wm
+nD
+nD
 Lr
 We
 We
