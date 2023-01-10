@@ -82,13 +82,6 @@
 	head = /obj/item/clothing/head/pirate/captain
 	suit = /obj/item/clothing/suit/pirate/captain
 
-/datum/outfit/job/captain/corporate
-	name = "Captain (Corporate)"
-	uniform = /obj/item/clothing/under/suit/navy
-	shoes = /obj/item/clothing/shoes/laceup
-	glasses = /obj/item/clothing/glasses/sunglasses
-	gloves = null
-
 /datum/outfit/job/captain/western
 	name = "Captain (Western)"
 	alt_uniform = null
