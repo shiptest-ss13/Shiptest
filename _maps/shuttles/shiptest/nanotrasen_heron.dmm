@@ -1702,7 +1702,8 @@
 /area/ship/engineering/engine)
 "gw" = (
 /obj/machinery/atmospherics/components/unary/thermomachine{
-	dir = 1
+	dir = 1;
+	piping_layer = 2
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
@@ -3382,14 +3383,11 @@
 	dir = 10
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
-/obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 10
-	},
 /obj/item/tank/internals/plasma/full,
+/obj/machinery/power/rad_collector/anchored,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "mc" = (
