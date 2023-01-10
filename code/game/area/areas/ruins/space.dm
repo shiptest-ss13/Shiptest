@@ -568,7 +568,7 @@
 	name = "High Energy Applications Research Facility"
 	icon_state = "green"
 
-area/ruin/space/has_grav/singularitylab/cargo
+/area/ruin/space/has_grav/singularitylab/cargo
 	name = "Asteroid Cargo"
 	icon_state = "storage"
 
