@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/structure/sign/number/four,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/starboard)
 "ad" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 1;
@@ -3125,6 +3129,10 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
+"ts" = (
+/obj/structure/sign/number/one,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/starboard)
 "tz" = (
 /obj/machinery/light,
 /obj/machinery/telecomms/bus/preset_four{
@@ -3156,9 +3164,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/official/safety_internals{
-	pixel_y = 32
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "tF" = (
@@ -3410,6 +3415,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"vi" = (
+/obj/structure/sign/number/eight{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/port)
 "vo" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3638,6 +3649,12 @@
 /obj/item/tank/jetpack/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
+"wv" = (
+/obj/structure/sign/number/nine{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/port)
 "wx" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
@@ -4499,6 +4516,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/official/safety_internals{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "BJ" = (
@@ -4777,6 +4797,12 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"Dw" = (
+/obj/structure/sign/number/four{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/port)
 "DC" = (
 /obj/effect/turf_decal/box/corners,
 /obj/structure/closet/crate{
@@ -4996,6 +5022,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"Ff" = (
+/obj/structure/sign/number/nine,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/starboard)
 "Fi" = (
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -5244,6 +5274,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/official/safety_internals{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
 "Gv" = (
@@ -5458,9 +5491,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/official/safety_internals{
-	pixel_y = 32
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
 "HQ" = (
@@ -6473,6 +6503,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"PF" = (
+/obj/structure/sign/number/one{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/port)
 "PG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6686,6 +6722,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"QS" = (
+/obj/structure/sign/number/eight,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/starboard)
 "QV" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -9073,7 +9113,7 @@ sw
 sw
 sw
 sw
-yp
+vi
 tB
 FA
 yp
@@ -9096,7 +9136,7 @@ aB
 uI
 Ng
 CJ
-uI
+Ff
 sw
 sw
 sw
@@ -9107,7 +9147,7 @@ sw
 sw
 sw
 sw
-yp
+Dw
 yp
 Kx
 yp
@@ -9130,7 +9170,7 @@ TO
 BZ
 uc
 rw
-uI
+ts
 sw
 sw
 sw
@@ -9141,7 +9181,7 @@ sw
 sw
 sw
 sw
-yp
+PF
 fU
 nD
 nH
@@ -9164,7 +9204,7 @@ oS
 uI
 wo
 pb
-uI
+ab
 sw
 sw
 sw
@@ -9175,7 +9215,7 @@ sw
 sw
 sw
 Pf
-yp
+wv
 uo
 Uy
 yp
@@ -9198,7 +9238,7 @@ Rp
 uI
 Zk
 hz
-uI
+QS
 sw
 sw
 sw
