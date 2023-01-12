@@ -492,7 +492,7 @@
 
 /obj/structure/sign/poster/contraband/cybersun_borg
 	name = "Cybersun ARBITRATOR"
-	desc = "An advertisement for the Cybersun \"ARBITRATOR\" line of combat medic cyborgs, targeted at private military contractors and military groups. Includes a side view of the cyborgs with impressive yet undetailed blowout diagrams of their internals."
+	desc = "An advertisement for the Cybersun \"ARBITRATOR\" line of combat medic cyborgs, targeted at private military contractors and military groups. Includes a side diagram of the internals."
 	icon_state = "poster-cybersun-borg"
 
 /obj/structure/sign/poster/contraband/cybersun_med
@@ -856,12 +856,12 @@
 
 /obj/structure/sign/poster/solgov/solgov_logo
 	name = "Solgov"
-	desc = "The seal of The Most Serene Solar and Intersolar Confederation, or more boringly known of SolGov. \"The State is a sapling: Waters of change may drown it, and rays of fear may wither it, but well-tended it will one day bear fruit.\""
+	desc = "The seal of The Most Serene Solar and Intersolar Confederation, or more boringly known as SolGov. \"The State is a sapling: Waters of change may drown it, and rays of fear may wither it, but well-tended it will one day bear fruit.\""
 	icon_state = "poster-solgov"
 
 /obj/structure/sign/poster/solgov/terra
 	name = "Terra"
-	desc = "Terra, or Earth as it's called by inhabitants, the third planet in the Sol system. Home to the only life as humans knew it, until contact with the outside universe. This poster in particular is trying to attract tourists to Terra, listing attractions like the archives and Neue Waldstätte."
+	desc = "Terra, or Earth as it's called by inhabitants, the third planet in the Sol system. Home to the only life as humans knew it, until contact with the outside universe. This poster in particular is trying to attract tourists to Terra, listing attractions like the Grand Orrery and Neue Waldstätte."
 	icon_state = "poster-solgov-terra"
 
 /obj/structure/sign/poster/solgov/ares
@@ -871,7 +871,7 @@
 
 /obj/structure/sign/poster/solgov/luna
 	name = "Luna"
-	desc = "Luna, the only moon of Terra. Culturally significant to the Solarians as a symbol of the next frontier. This poster in particular is trying to attract tourists to Luna, listing attractions like the massive spaceport and white flags scattered across the surface, a relic from ages past."
+	desc = "Luna, the only moon of Terra. Culturally significant to the Solarians historically as a symbol of time, harvest, and new frontiers. This poster in particular is trying to attract tourists to Luna, listing attractions like the massive spaceport and white flags scattered across the surface, a relic from ages past."
 	icon_state = "poster-solgov-luna"
 
 /obj/structure/sign/poster/solgov/kepler
@@ -925,7 +925,7 @@
 
 /obj/structure/sign/poster/solgov/suns
 	name = "Student Union of Natural Sciences"
-	desc = "SUNS, best known for it's diverse variety of top students, internal fighting via dueling, and being sued by Nanotrasen for trademark infrigement on their old name \"NSV.\""
+	desc = "SUNS, best known for it's diverse variety of top students from various solarian universities, dealing with internal fighting via dueling with swords, and being sued by Nanotrasen for trademark infrigement on their old name \"NSV.\""
 	icon_state = "poster-solgov_suns"
 
 //CMM poster pool. This is quite limited, so don't use more than 3 random ones at once. Expect to see these on CMM ships.
@@ -959,7 +959,7 @@
 
 /obj/structure/sign/poster/minutemen/lunatown
 	name = "Luna-Town"
-	desc = "Luna-town, the second planet of the Kanler-332 system. The capital of the Colonial Minutemen and the Milita. The Department of Cultural Affairs is attempting to encounrage tourism with this poster by listing several tourist attractions, including the capital city itself and the remains of the UNSV Lichtenstein, famous for bringing the CMM from the brink into what it is today."
+	desc = "Luna-town, the second planet of the Kanler-332 system. The capital of the Colonial Minutemen and the Milita. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, including the capital city itself and the remains of the UNSV Lichtenstein, famous for bringing the CMM from the brink into what it is today."
 	icon_state = "poster-cmm_luna"
 
 /obj/structure/sign/poster/minutemen/maxin
@@ -969,12 +969,12 @@
 
 /obj/structure/sign/poster/minutemen/lanchester
 	name = "Lanchester City"
-	desc = "Luna-town, one of the many moons of the gas giant Maxin. A moon well known for it's night life and numerous factories. The Department of Cultural Affairs is attempting to encounrage tourism with this poster by listing several tourist attractions, such as crashed Frontiersmen ships and the massive entertainment industry."
+	desc = "Luna-town, one of the many moons of the gas giant Maxin. A moon well known for it's numerous, massive factories. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as crashed Frontiersmen ships and the massive entertainment industry."
 	icon_state = "poster-cmm_lanchester"
 
 /obj/structure/sign/poster/minutemen/serene
 	name = "Serene"
-	desc = "Serene, the fifth planet of the Druja system. Covered with a thick sheet of snow, the atmosphere has been described as \"Breathable, if it weren't so damn cold.\" The Department of Cultural Affairs is attempting to encounrage tourism with this poster by listing several tourist attractions, such as old Frontiersmen War sites and Xenofauna war sites."
+	desc = "Serene, the fifth planet of the Druja system. Covered with a thick sheet of snow, the atmosphere has been described as \"Breathable, if it weren't so darn cold.\" This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as old Frontiersmen War sites and Xenofauna war sites."
 	icon_state = "poster-cmm_serene"
 
 // Syndicate posters. Since syndicate are dived lorewise, this would only make sense on pre-split ships.
