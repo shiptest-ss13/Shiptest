@@ -652,7 +652,6 @@
 /area/ship/hallway/central)
 "gL" = (
 /obj/structure/railing{
-	dir = 2;
 	layer = 4.1
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -934,7 +933,6 @@
 /area/ship/medical)
 "jl" = (
 /obj/structure/railing{
-	dir = 2;
 	layer = 4.1
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -1253,7 +1251,6 @@
 	pixel_y = 1
 	},
 /obj/structure/railing{
-	dir = 2;
 	layer = 4.1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
@@ -1301,9 +1298,7 @@
 /area/ship/engineering)
 "mf" = (
 /obj/machinery/chem_master,
-/obj/machinery/camera/autoname{
-	dir = 2
-	},
+/obj/machinery/camera/autoname,
 /obj/item/toy/figure/chemist{
 	pixel_y = 16;
 	pixel_x = -5
@@ -1716,7 +1711,6 @@
 /area/ship/cargo)
 "ql" = (
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
 	color = "#808080"
 	},
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -2829,9 +2823,7 @@
 /area/ship/engineering)
 "yv" = (
 /obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/techfloor/hole/right{
-	dir = 2
-	},
+/obj/effect/turf_decal/techfloor/hole/right,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "yy" = (
@@ -3147,7 +3139,6 @@
 	pixel_y = 8
 	},
 /obj/structure/railing{
-	dir = 2;
 	layer = 4.1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
@@ -3708,9 +3699,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/machinery/camera/autoname{
-	dir = 2
-	},
+/obj/machinery/camera/autoname,
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
@@ -4605,7 +4594,6 @@
 /obj/item/clothing/suit/toggle/lawyer/minutemen,
 /obj/item/clothing/suit/toggle/labcoat/cmo,
 /obj/item/clothing/under/rank/medical/chief_medical_officer/surgeon_general,
-/obj/item/storage/belt/sabre,
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
 /obj/item/autosurgeon/cmo,
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
@@ -4614,15 +4602,13 @@
 	},
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/item/healthanalyzer/advanced,
-/obj/item/surgicaldrill/advanced,
-/obj/item/retractor/advanced,
-/obj/item/scalpel/advanced,
 /obj/item/clothing/neck/cloak/cmo,
 /obj/item/gun/ballistic/revolver/nagant,
 /obj/item/ammo_box/n762_clip,
 /obj/item/ammo_box/n762_clip,
 /obj/item/clothing/suit/armor/vest/capcarapace/minutemen,
 /obj/item/reagent_containers/hypospray/CMO,
+/obj/item/disk/design_disk/ammo_n762,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "NY" = (
@@ -5108,9 +5094,7 @@
 /obj/item/clothing/mask/breath/medical,
 /obj/item/clothing/mask/breath/medical,
 /obj/item/clothing/mask/breath/medical,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/sign/poster/official/moth/hardhats{
 	pixel_x = 32
 	},
@@ -5228,7 +5212,6 @@
 	dir = 1
 	},
 /obj/structure/railing{
-	dir = 2;
 	layer = 4.1
 	},
 /turf/open/floor/plasteel/dark{
