@@ -13,6 +13,11 @@
 /obj/machinery/door/window,
 /turf/open/floor/plating,
 /area/space)
+"aS" = (
+/obj/machinery/door/window,
+/obj/item/bikehorn/rubberducky/plasticducky,
+/turf/open/floor/plasteel/white,
+/area/space)
 "aV" = (
 /obj/structure/closet/emcloset/wall{
 	dir = 8;
@@ -74,6 +79,16 @@
 "dw" = (
 /obj/structure/closet/lasertag/blue,
 /turf/open/floor/plasteel,
+/area/space)
+"dG" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/obj/machinery/mineral/processing_unit_console{
+	machinedir = 6;
+	pixel_y = 26
+	},
+/turf/open/floor/plating,
 /area/space)
 "dJ" = (
 /obj/structure/bed,
@@ -174,6 +189,10 @@
 "gA" = (
 /obj/machinery/vending/sustenance,
 /turf/open/floor/plasteel,
+/area/space)
+"gI" = (
+/obj/structure/mineral_door/wood,
+/turf/open/floor/plasteel/white,
 /area/space)
 "gR" = (
 /obj/structure/weightmachine/weightlifter,
@@ -432,6 +451,12 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"mV" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "nb" = (
 /obj/structure/table/wood,
 /obj/structure/window/reinforced/tinted/frosted{
@@ -497,9 +522,26 @@
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/space)
+"pl" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "pI" = (
 /obj/machinery/door/window/brigdoor,
 /turf/open/space/basic,
+/area/space)
+"pS" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -16;
+	pixel_y = 4
+	},
+/obj/structure/mirror{
+	pixel_y = 26
+	},
+/turf/open/floor/plasteel/white,
 /area/space)
 "pT" = (
 /obj/machinery/power/smes,
@@ -637,7 +679,11 @@
 /turf/open/floor/grass,
 /area/space)
 "tn" = (
-/obj/item/bikehorn/rubberducky/plasticducky,
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/shower{
+	pixel_y = 12
+	},
+/obj/structure/curtain,
 /turf/open/floor/plasteel/white,
 /area/space)
 "tq" = (
@@ -827,6 +873,23 @@
 /obj/structure/statue/sandstone/venus,
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/space)
+"zM" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/light_switch{
+	pixel_y = 24;
+	pixel_x = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
+"zN" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "zS" = (
 /turf/open/floor/plasteel,
 /area/space)
@@ -909,6 +972,16 @@
 "Cx" = (
 /obj/structure/closet/wardrobe/pjs,
 /turf/open/floor/plasteel,
+/area/space)
+"CJ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/mineral/stacking_unit_console{
+	machinedir = 8;
+	pixel_y = 26
+	},
+/turf/open/floor/plating,
 /area/space)
 "CN" = (
 /obj/structure/disposalpipe/trunk{
@@ -1053,6 +1126,15 @@
 /obj/machinery/door/window/brigdoor,
 /turf/open/floor/plasteel,
 /area/space)
+"GG" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "GJ" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 1
@@ -1156,6 +1238,14 @@
 "Lk" = (
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/space)
+"Lq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "Lr" = (
 /obj/structure/table/wood/poker,
 /obj/item/stack/spacecash/c10,
@@ -1179,6 +1269,9 @@
 	dir = 4
 	},
 /turf/open/floor/noslip,
+/area/space)
+"LH" = (
+/turf/template_noop,
 /area/space)
 "LQ" = (
 /obj/structure/closet,
@@ -1248,6 +1341,16 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
+/area/space)
+"Nf" = (
+/obj/structure/mirror{
+	pixel_x = -25
+	},
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_x = -13
+	},
+/turf/open/floor/plasteel/white,
 /area/space)
 "Ni" = (
 /obj/machinery/portable_atmospherics/scrubber,
@@ -1391,6 +1494,24 @@
 	},
 /turf/open/floor/plasteel/sepia,
 /area/space)
+"RO" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/structure/curtain,
+/turf/open/floor/plasteel/white,
+/area/space)
+"RV" = (
+/obj/machinery/door/window,
+/obj/item/soap/homemade,
+/turf/open/floor/plasteel/white,
+/area/space)
 "RY" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -1493,6 +1614,16 @@
 /obj/structure/closet/secure_closet,
 /turf/open/floor/plasteel,
 /area/space)
+"UT" = (
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_x = -13
+	},
+/obj/structure/mirror{
+	pixel_x = -25
+	},
+/turf/open/floor/plasteel/white,
+/area/space)
 "Vw" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 4
@@ -1506,6 +1637,12 @@
 "Wi" = (
 /obj/structure/statue/sandstone/assistant,
 /turf/open/floor/light/colour_cycle/dancefloor_b,
+/area/space)
+"Wk" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
 /area/space)
 "Wr" = (
 /obj/structure/window/reinforced/spawner{
@@ -3103,7 +3240,7 @@ jY
 jY
 jY
 jB
-QW
+dG
 pc
 pc
 pc
@@ -3226,7 +3363,7 @@ jY
 jY
 jY
 jB
-hx
+CJ
 Mz
 eg
 qN
@@ -4826,11 +4963,11 @@ Mz
 Mz
 hx
 jB
-AT
-AT
-AT
-AT
-AT
+Nf
+UT
+UT
+UT
+UT
 jB
 gA
 Gd
@@ -5053,9 +5190,9 @@ jY
 jY
 jY
 jY
-jY
-jY
-jY
+Uo
+Uo
+LH
 jY
 jY
 jY
@@ -5176,9 +5313,9 @@ jY
 jY
 jY
 jY
-jY
-jY
-jY
+GG
+Uo
+Uo
 jY
 jY
 jY
@@ -5195,10 +5332,10 @@ Mz
 Mz
 hx
 jB
-AT
+aS
 AT
 jB
-AT
+RV
 AT
 jB
 BC
@@ -5299,9 +5436,9 @@ jY
 jY
 jY
 jY
-jY
-jY
-jY
+gI
+Uo
+pS
 jY
 jY
 jY
@@ -5319,10 +5456,10 @@ Mz
 hx
 jB
 tn
-AT
+mV
 jB
-AT
-AT
+tn
+mV
 jB
 jB
 jB
@@ -5422,9 +5559,9 @@ jY
 jY
 jY
 jY
-jY
-jY
-jY
+zM
+zN
+Wk
 jY
 jY
 jY
@@ -5545,9 +5682,9 @@ jY
 jY
 jY
 jY
-jY
-jY
-jY
+Lq
+RO
+pl
 jY
 jY
 jY
