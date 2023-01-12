@@ -1,0 +1,19 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Boyardee-class Entertainment Vessel",
+	"prefix": "ISV",
+	"namelists": ["GENERAL", "MERCANTILE"],
+	"map_short_name": "Boyardee-class",
+	"map_path": "_maps/shuttles/shiptest/independent_boyardee.dmm",
+	"job_slots": {
+		"Bartender": 1,
+		"Cook": 5,
+		"Botanist": 2,
+		"Janitor": 1,
+		"Waiter": {
+			"outfit": "/datum/outfit/job/assistant/waiter",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
