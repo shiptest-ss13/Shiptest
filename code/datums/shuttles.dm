@@ -75,11 +75,8 @@
 		sanity.Insert(3, /turf/baseturf_skipover/shuttle) //The first two are the "real" baseturfs, place above these but below plating.
 		place.baseturfs = baseturfs_string_list(sanity, place)
 
-		for(var/obj/docking_port/mobile/port in place)
-			if(register)
-				port.register()
-			if(isnull(port_x_offset))
-				continue
+	for(var/obj/docking_port/mobile/port in place)
+		if(!isnull(port_x_offset))
 			switch(port.dir) // Yeah this looks a little ugly but mappers had to do this in their head before
 				if(NORTH)
 					port.width = width
@@ -101,7 +98,12 @@
 					port.height = width
 					port.dwidth = port_y_offset - 1
 					port.dheight = width - port_x_offset
-
+			// initTemplateBounds explicitly ignores the shuttle's docking port, to ensure that it calculates the bounds of the shuttle correctly
+			// so we need to manually initialize it here
+			SSatoms.InitializeAtoms(list(port))
+			if(register)
+				port.register()
+			port.calculate_docking_port_information(src)
 			port.load(src)
 
 /datum/map_template/shuttle/ui_state(mob/user)
