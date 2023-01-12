@@ -116,7 +116,3 @@
 /area/ruin/jungle/starport/plasma
 	name = "Air Base Fuel Stores"
 	icon_state = "red"
-
-/area/ruin/jungle/starport/shed
-	name = "Air Base Ammo Shed"
-	icon_state = "engine"
