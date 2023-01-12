@@ -185,6 +185,15 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	box = /obj/item/storage/box/survival/engineer/radio
 	backpack_contents = null
 
+/datum/outfit/job/security/minutemen/mechpilot
+	name = "Mech Pilot  (Colonial Minutemen)"
+
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	glasses = /obj/item/clothing/glasses/hud/diagnostic
+
+
+
 /datum/outfit/job/security/minutemen/naked
 	name = "Minuteman (Colonial Minutemen) (Naked)"
 
