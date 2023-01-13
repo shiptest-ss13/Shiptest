@@ -751,7 +751,6 @@
 /obj/effect/turf_decal/corner/transparent/black/half{
 	dir = 8
 	},
-/obj/structure/chair/greyscale,
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 1
@@ -759,6 +758,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/chair,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "hA" = (
@@ -3317,7 +3317,7 @@
 "IB" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/beige/diagonal,
-/obj/structure/chair/greyscale,
+/obj/structure/chair,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "IM" = (
@@ -3884,11 +3884,11 @@
 /obj/effect/turf_decal/corner/transparent/black/half{
 	dir = 4
 	},
-/obj/structure/chair/greyscale,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#e8eaff"
 	},
+/obj/structure/chair,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "PD" = (
@@ -4711,9 +4711,6 @@
 /obj/effect/turf_decal/corner/transparent/black/half{
 	dir = 8
 	},
-/obj/structure/chair/greyscale{
-	dir = 1
-	},
 /obj/item/radio/intercom{
 	dir = 4;
 	pixel_x = -21;
@@ -4723,6 +4720,9 @@
 	dir = 4;
 	pixel_x = -23;
 	pixel_y = 9
+	},
+/obj/structure/chair{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
