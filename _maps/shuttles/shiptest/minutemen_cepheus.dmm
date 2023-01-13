@@ -536,15 +536,10 @@
 	name = "Mining equipment";
 	pixel_y = 28
 	},
-/obj/item/storage/bag/ore,
 /obj/item/clothing/glasses/meson,
 /obj/item/gps/mining,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
-/obj/item/circuitboard/machine/ore_redemption{
-	pixel_y = -4;
-	pixel_x = 1
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "fN" = (
@@ -1519,6 +1514,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -3004,6 +3002,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Fm" = (
@@ -3841,6 +3842,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Pa" = (
@@ -4099,6 +4103,7 @@
 /obj/structure/sign/poster/contraband/ambrosia_vulgaris{
 	pixel_x = 32
 	},
+/obj/item/toy/plush/beeplushie,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Ru" = (
