@@ -36,7 +36,7 @@
 			playsound(src, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
 	add_fingerprint(user)
 
-	if(istype(W, /obj/item/gun/energy/plasmacutter) || W.tool_behaviour = TOOL_DECONSTRUCT)
+	if(istype(W, /obj/item/gun/energy/plasmacutter) || W.tool_behaviour == TOOL_DECONSTRUCT)
 		to_chat(user, "<span class='notice'>You start slicing apart the girder...</span>")
 		if(W.use_tool(src, user, 40, volume=100))
 			to_chat(user, "<span class='notice'>You slice apart the girder.</span>")
