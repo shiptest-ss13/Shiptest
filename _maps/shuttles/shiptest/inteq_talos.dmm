@@ -392,7 +392,8 @@
 "cF" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer4{
 	dir = 1;
-	name = "waste input pump"
+	name = "waste input pump";
+	on = 0
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -618,6 +619,7 @@
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 4;
 	name = "distribution input pump";
+	on = 0;
 	piping_layer = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1902,7 +1904,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/megaphone/sec,
 /obj/item/radio/headset/inteq/alt,
 /obj/item/clothing/suit/armor/vest/bulletproof,
 /obj/item/clothing/head/warden/drill{
@@ -3029,10 +3030,6 @@
 /obj/item/ammo_box/magazine/co9mm{
 	pixel_x = -5
 	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
-	pixel_y = 5
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -3246,18 +3243,6 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -5
-	},
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq{
 	pixel_y = 5
 	},
@@ -3483,7 +3468,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/mix_input{
 	dir = 8
 	},
-/turf/open/floor/engine/airless,
+/turf/open/floor/engine/fuel,
 /area/ship/engineering/engine)
 "vJ" = (
 /obj/structure/toilet{
@@ -7146,7 +7131,7 @@
 /obj/item/storage/toolbox/ammo/c9mm{
 	pixel_y = 12
 	},
-/obj/item/storage/toolbox/ammo/c9mm{
+/obj/item/storage/toolbox/ammo/shotgun{
 	pixel_x = -3;
 	pixel_y = 8
 	},
@@ -7667,7 +7652,7 @@
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_x = 32
 	},
-/turf/open/floor/engine/airless,
+/turf/open/floor/engine/fuel,
 /area/ship/engineering/engine)
 "XB" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
