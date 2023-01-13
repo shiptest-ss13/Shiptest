@@ -109,11 +109,12 @@
 //saw bone
 /datum/surgery_step/saw
 	name = "saw bone"
-	implements = list(TOOL_SAW = 100,/obj/item/melee/arm_blade = 75,
+	implements = list(TOOL_SAW = 100, /obj/item/anglegrinder = 80, /obj/item/melee/arm_blade = 75,
 	/obj/item/fireaxe = 50, /obj/item/hatchet = 35, /obj/item/kitchen/knife/butcher = 25, /obj/item = 20) //20% success (sort of) with any sharp item with a force>=10
 	time = 5.4 SECONDS
 	preop_sound = list(
 		/obj/item/circular_saw = 'sound/surgery/saw.ogg',
+		/obj/item/angle_grinder = 'sound/surgery/saw.ogg',
 		/obj/item/melee/arm_blade = 'sound/surgery/scalpel1.ogg',
 		/obj/item/fireaxe = 'sound/surgery/scalpel1.ogg',
 		/obj/item/hatchet = 'sound/surgery/scalpel1.ogg',
