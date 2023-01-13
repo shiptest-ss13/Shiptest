@@ -228,6 +228,9 @@
 /obj/effect/turf_decal/techfloor/hole{
 	dir = 8
 	},
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "cB" = (
@@ -1438,6 +1441,9 @@
 	pixel_x = -8;
 	pixel_y = 22
 	},
+/obj/machinery/camera/autoname{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/science/robotics)
 "pV" = (
@@ -2341,6 +2347,9 @@
 /obj/item/clothing/mask/bandana/skull,
 /obj/item/clothing/accessory/holster,
 /obj/item/clothing/suit/armor/vest/alt,
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/robotics)
 "wK" = (
@@ -2467,6 +2476,7 @@
 	pixel_y = 23;
 	pixel_x = 9
 	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "yh" = (
@@ -2656,6 +2666,9 @@
 	pixel_y = -32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Ao" = (
@@ -2856,6 +2869,9 @@
 /obj/item/taperecorder{
 	pixel_x = 12;
 	pixel_y = 1
+	},
+/obj/machinery/camera/autoname{
+	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
@@ -3313,6 +3329,9 @@
 	pixel_y = -22;
 	dir = 1
 	},
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "IB" = (
@@ -3340,6 +3359,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
 "IR" = (
@@ -3423,6 +3443,9 @@
 /obj/machinery/newscaster{
 	dir = 4;
 	pixel_x = -31
+	},
+/obj/machinery/camera/autoname{
+	dir = 5
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -3544,6 +3567,9 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -3802,9 +3828,6 @@
 /area/ship/bridge)
 "Ou" = (
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/computer/security/hos{
-	dir = 8
-	},
 /obj/item/radio/intercom/wideband{
 	dir = 1;
 	pixel_y = -24
@@ -3813,6 +3836,9 @@
 	pixel_x = -13;
 	pixel_y = -22;
 	dir = 1
+	},
+/obj/machinery/computer/security{
+	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -4104,6 +4130,7 @@
 	pixel_x = 32
 	},
 /obj/item/toy/plush/beeplushie,
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Ru" = (
@@ -4465,6 +4492,9 @@
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 6
+	},
+/obj/machinery/camera/autoname{
+	dir = 10
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/dorm)
