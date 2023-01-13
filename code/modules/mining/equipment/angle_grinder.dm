@@ -1,6 +1,16 @@
 /*
  * YES it's tweaked chainsaw code, do something about it.
 */
+
+/*
+ * ############## Places where TOOL_DECONSTRUCT is used ############
+ *
+ * code/game/turfs/closed/walls.dm
+ * code/game/objects/structures/girders.dm
+ * code/game/objects/structures/grille.dm
+ * code/game/objects/structures/catwalk.dm
+ * code/game/objects/structures/lattice.dm
+*/
 /obj/item/anglegrinder
 	name = "angle grinder"
 	desc = "A powerfull tool to salvage about anything. You better wear some protection tough"
@@ -24,8 +34,14 @@
 	actions_types = list(/datum/action/item_action/startchainsaw)
 	tool_behaviour = TOOL_DECONSTRUCT
 	toolspeed = 0.5 
+	light_range = 2
 	var/on = FALSE
 	var/wielded = FALSE // track wielded status on item
+
+// Trick to make the welder act always pass
+/obj/item/anglegrinder/tool_use_check(mob/living/user, amount)
+	to_chat(user, "he did the funny")
+	return TRUE
 
 /obj/item/anglegrinder/Initialize()
 	. = ..()
@@ -36,6 +52,7 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/circsawhit.ogg', TRUE)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
+	AddElement(/datum/element/tool_flash, light_range)
 
 /// triggered on wield of two handed item
 /obj/item/anglegrinder/proc/on_wield(obj/item/source, mob/user)
