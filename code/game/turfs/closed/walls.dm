@@ -233,7 +233,7 @@
 	return FALSE
 
 /turf/closed/wall/proc/try_decon(obj/item/I, mob/user, turf/T)
-	if(I.tool_behaviour == TOOL_WELDER)
+	if(I.tool_behaviour == TOOL_WELDER || I.tool_behaviour == TOOL_DECONSTRUCT)
 		if(!I.tool_start_check(user, amount=0))
 			return FALSE
 
