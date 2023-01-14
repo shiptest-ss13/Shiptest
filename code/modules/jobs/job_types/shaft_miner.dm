@@ -167,6 +167,7 @@
 		/obj/item/borg/upgrade/modkit/aoe=1
 	)
 
+
 /datum/outfit/job/miner/hazard/mech
 	name = "Industrial Miner"
 	gloves = /obj/item/clothing/gloves/color/black
@@ -176,3 +177,13 @@
 		/obj/item/stack/marker_beacon/ten=1,
 		/obj/item/weldingtool=1
 		)
+
+/datum/outfit/job/miner/syndicate/cybersun
+	name = "Field Agent"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	ears = /obj/item/radio/headset
+	uniform = /obj/item/clothing/under/syndicate
+	accessory = /obj/item/clothing/accessory/armband/cargo
+	head = /obj/item/clothing/head/soft/black
+	r_pocket = /obj/item/radio
