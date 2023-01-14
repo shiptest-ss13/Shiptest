@@ -579,3 +579,17 @@
 /area/ruin/space/has_grav/singularitylab/civvie
 	name = "Asteroid Housing"
 	icon_state = "Sleep"
+
+//Corporate Mining Ruin
+
+/area/ruin/space/has_grav/corporatemine/crewquarters
+	name = "Corporate Mine Crew Quarters"
+	icon_state = "purple"
+
+/area/ruin/space/has_grav/corporatemine/bridge
+	name = "Corporate Mine Bridge"
+	icon_state = "bridge"
+
+/area/ruin/space/has_grav/corporatemine/hall
+	name = "Corporate Mine Hall"
+	icon_state = "hallC"

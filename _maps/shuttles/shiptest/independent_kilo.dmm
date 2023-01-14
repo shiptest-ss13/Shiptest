@@ -23,7 +23,9 @@
 	id = "NTMSLoad2";
 	name = "on ramp"
 	},
-/obj/machinery/door/firedoor/border_only,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /obj/structure/plasticflaps,
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -201,7 +203,7 @@
 "bG" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/shuttle{
-	name = "Captain's Quarters"
+	name = "Gear Room"
 	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt,
@@ -242,10 +244,12 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/greenglow,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -477,7 +481,8 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/light_switch{
-	pixel_y = -23
+	pixel_y = -23;
+	dir = 1
 	},
 /obj/machinery/light/small/built,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -524,7 +529,6 @@
 /area/ship/cargo)
 "cC" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/meter,
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -575,6 +579,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/meter/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cP" = (
@@ -674,13 +679,13 @@
 /area/ship/crew/canteen/kitchen)
 "de" = (
 /obj/effect/decal/cleanable/greenglow,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/external/glass{
-	name = "Mining Airlock"
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
@@ -724,6 +729,12 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/industrial/stand_clear,
+/obj/machinery/button/shieldwallgen{
+	dir = 8;
+	pixel_y = -6;
+	pixel_x = 24;
+	id = "kiloshield"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "fs" = (
@@ -896,7 +907,7 @@
 "ig" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/shuttle{
-	name = "Bunk B"
+	name = "Bathroom"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -957,13 +968,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/advanced_airlock_controller{
-	pixel_x = 59;
-	name = "long range advanced airlock controller";
-	desc = "A machine designed to control the operation of cycling airlocks, this one is projecting its UI into the nearby windows."
-	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "jl" = (
@@ -1014,10 +1019,10 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/greenglow,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1089,7 +1094,9 @@
 	id = "NTMSLoad";
 	name = "off ramp"
 	},
-/obj/machinery/door/firedoor/border_only,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /obj/structure/plasticflaps,
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1144,6 +1151,10 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "kiloshield";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "qw" = (
@@ -1151,9 +1162,6 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
 	},
 /obj/machinery/door/airlock/external{
 	name = "Mining Airlock"
@@ -1183,10 +1191,10 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/door/airlock/external{
-	name = "Mining Airlock"
+/obj/machinery/door/poddoor{
+	id = "kilocargo";
+	name = "NTMS-037 Bay Blast Door"
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/docking_port/mobile{
 	callTime = 250;
 	dir = 2;
@@ -1320,9 +1328,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "xk" = (
@@ -1370,6 +1375,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/machinery/meter/atmos/layer2,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yn" = (
@@ -1448,9 +1454,6 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external{
 	name = "Mining Airlock"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -1741,10 +1744,10 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1878,6 +1881,10 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "kiloshield"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "NB" = (
@@ -2000,9 +2007,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
 	},
 /obj/machinery/door/airlock/external{
 	name = "Mining Airlock"
