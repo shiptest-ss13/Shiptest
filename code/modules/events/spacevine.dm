@@ -557,3 +557,8 @@
 	name = "dense space vines"
 	opacity = TRUE
 	icon_state = "Hvy1"
+
+/obj/structure/spacevine/weak
+	name = "weak space vines"
+	desc = "An extremely expansionistic species of vine. This one appears to be more fragile than most."
+	max_integrity = 25
