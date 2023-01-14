@@ -120,6 +120,15 @@
 	head = /obj/item/clothing/head/aclfcap
 	suit = /obj/item/clothing/suit/aclf
 
+/datum/outfit/job/captain/syndicate/cybersun
+	name = "Cybersun Commander"
+
+	uniform = /obj/item/clothing/under/suit/black_really
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/HoS/syndicate
+	gloves = /obj/item/clothing/gloves/combat
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
+
 /datum/outfit/job/captain/minutemen
 	name = "Captain (Colonial Minutemen)"
 
