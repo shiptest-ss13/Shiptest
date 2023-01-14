@@ -204,4 +204,3 @@
 	suit = null
 	gloves = null
 	suit_store = null
-
