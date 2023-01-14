@@ -104,6 +104,7 @@
 	name = "cargo dump"
 	icon_state = "dk_yellow"
 
+
 // Bombed Syndicate Starport
 /area/ruin/jungle/starport
 	name = "Bombed Air Base"
@@ -116,3 +117,13 @@
 /area/ruin/jungle/starport/plasma
 	name = "Air Base Fuel Stores"
 	icon_state = "red"
+
+// Syndicate fort
+
+/area/ruin/jungle/syndifort
+	name = "Syndicate Fort"
+	icon_state = "green"
+
+/area/ruin/jungle/syndifort/jerry
+	name = "Syndicate Fort Tower"
+	icon_state = "bridge"
