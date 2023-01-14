@@ -8,7 +8,7 @@
 	"map_id": "nanotrasen_heron",
 	"limit": 1,
 	"job_slots": {
-		"Captain": {
+		"Fleet Captain": {
 			"outfit": "/datum/outfit/job/captain/nt/heron",
 			"officer": true,
 			"slots": 1
@@ -34,7 +34,15 @@
 		},
 		"ERT Officer":{
 			"outfit": "/datum/outfit/job/security/nanotrasen/ert",
-			"slots": 6
+			"slots": 4
+		},
+		"ERT Medical Officer":{
+			"outfit": "/datum/outfit/job/security/nanotrasen/ert/med",
+			"slots": 1
+		},
+		"ERT Engineering Officer":{
+			"outfit": "/datum/outfit/job/security/nanotrasen/ert/engi",
+			"slots": 1
 		},
 		"Mech Pilot":{
 			"outfit": "/datum/outfit/job/security/nanotrasen/mech_pilot",
@@ -64,5 +72,5 @@
 		"Janitor": 1
 
 	},
-	"enabled": true
+	"enabled": false
 }

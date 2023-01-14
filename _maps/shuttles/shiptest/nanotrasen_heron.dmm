@@ -472,6 +472,14 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/cola{
+	pixel_x = -9;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "bK" = (
@@ -560,7 +568,7 @@
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
-/obj/item/clothing/suit/space/hardsuit/ert/lp,
+/obj/item/clothing/suit/space/hardsuit/swat/captain,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm/dormtwo)
 "cd" = (
@@ -670,7 +678,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/white{
-	dir = 5
+	dir = 5;
+	layer = 2.030
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
@@ -1287,6 +1296,10 @@
 /obj/machinery/door/airlock/vault{
 	name = "AI Core"
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "heron_ai_shutter";
+	name = "AI Core Lockdown"
+	},
 /turf/open/floor/plasteel,
 /area/ship/science/ai_chamber)
 "eP" = (
@@ -1789,7 +1802,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/white{
-	dir = 6
+	dir = 6;
+	layer = 2.030
 	},
 /obj/machinery/power/apc/auto_name/north,
 /obj/effect/turf_decal/trimline/opaque/blue/line{
@@ -1901,7 +1915,7 @@
 "hb" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/hardsuit/ert/lp/med,
+/obj/item/clothing/suit/space/hardsuit/medical,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "hj" = (
@@ -2102,9 +2116,6 @@
 	},
 /obj/structure/mirror{
 	pixel_x = 27
-	},
-/obj/structure/spider/stickyweb{
-	icon_state = "stickyweb2"
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/dorm/dormtwo)
@@ -3117,7 +3128,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "lm" = (
-/obj/effect/turf_decal/industrial/stand_clear/white,
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 4
 	},
@@ -3129,6 +3139,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/red/arrow_ccw{
 	dir = 4
+	},
+/obj/effect/turf_decal/industrial/stand_clear/white{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -3647,6 +3660,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/item/storage/backpack/ert/janitor{
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel,
 /area/ship/maintenance/central)
 "mQ" = (
@@ -3887,6 +3903,13 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "heron_ai_shutter";
+	name = "AI Core Lockdown";
+	pixel_y = -10;
+	pixel_x = 24
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/ai_chamber)
 "nS" = (
@@ -4008,7 +4031,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/structure/reflector/single/anchored,
+/obj/structure/reflector/box,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "on" = (
@@ -4028,7 +4051,7 @@
 	dir = 8;
 	layer = 3.1
 	},
-/obj/item/clothing/suit/space/hardsuit/ert/lp/sec,
+/obj/item/clothing/suit/space/hardsuit/ert/lp/engi,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "oq" = (
@@ -4244,7 +4267,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -28
 	},
-/obj/item/clothing/suit/space/hardsuit/ert/lp/sec,
+/obj/item/clothing/suit/space/hardsuit/ert/lp/med,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "pb" = (
@@ -4624,6 +4647,23 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/closet/wall{
+	dir = 1;
+	pixel_y = -28
+	},
+/obj/item/clothing/under/rank/rnd/roboticist/biomech_engineer,
+/obj/item/clothing/under/rank/rnd/roboticist/biomech_engineer/skirt,
+/obj/item/clothing/under/rank/rnd/roboticist/mech_engineer,
+/obj/item/clothing/under/rank/rnd/roboticist/mech_engineer/skirt,
+/obj/item/clothing/under/rank/rnd/roboticist,
+/obj/item/clothing/under/rank/rnd/research_director/turtleneck,
+/obj/item/clothing/under/rank/rnd/roboticist/skirt,
+/obj/item/clothing/suit/toggle/labcoat/science,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/toy/plush/knight{
+	pixel_x = -8
+	},
+/obj/item/toy/prize/seraph,
 /turf/open/floor/holofloor/wood,
 /area/ship/science/robotics)
 "qJ" = (
@@ -4644,10 +4684,8 @@
 /area/ship/security/dock)
 "qL" = (
 /obj/effect/turf_decal/corner/opaque/white{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 6
+	dir = 1;
+	layer = 2.030
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -4657,6 +4695,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 6;
+	layer = 2.030
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
@@ -4731,13 +4773,14 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/white{
-	dir = 5
-	},
-/obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 5;
+	layer = 2.030
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
@@ -4883,6 +4926,10 @@
 	dir = 4;
 	name = "Shuttle Fuel Valve"
 	},
+/obj/effect/turf_decal/industrial/shutoff,
+/obj/effect/turf_decal/industrial/caution/red{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/security/dock)
 "ru" = (
@@ -5007,6 +5054,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
+	},
+/obj/structure/chair{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
@@ -5536,7 +5586,8 @@
 "tu" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/corner/opaque/white{
-	dir = 6
+	dir = 6;
+	layer = 2.030
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/line,
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
@@ -5768,12 +5819,23 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "uj" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "heron_sm_lockdown";
-	rad_insulation = 0.1
+/obj/effect/turf_decal/trimline/opaque/red/filled/warning{
+	dir = 4
 	},
-/turf/closed/wall/r_wall,
-/area/ship/engineering/engine)
+/obj/effect/turf_decal/trimline/opaque/red/filled/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/arrow_ccw{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/red/arrow_ccw{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/stand_clear/white{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "un" = (
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 1
@@ -6027,6 +6089,17 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/wallmed{
+	pixel_y = -28
+	},
+/obj/machinery/button/door{
+	id = "armoury_heron";
+	name = "Armoury Shutters";
+	pixel_y = -24;
+	req_access_txt = "3";
+	dir = 1;
+	pixel_x = -11
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "vl" = (
@@ -6230,14 +6303,15 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 6
-	},
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
 	},
 /obj/structure/sign/poster/official/report_crimes{
 	pixel_y = 32
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 6;
+	layer = 2.030
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
@@ -7058,6 +7132,9 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
+/obj/structure/chair{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "zw" = (
@@ -7639,8 +7716,6 @@
 /obj/structure/toilet{
 	pixel_y = 13
 	},
-/obj/structure/spider/stickyweb,
-/obj/effect/decal/cleanable/garbage,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/dorm/dormtwo)
@@ -9780,9 +9855,6 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -9791,6 +9863,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 6;
+	layer = 2.030
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
@@ -9818,10 +9894,11 @@
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 6
-	},
 /obj/effect/turf_decal/trimline/opaque/blue/line,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 6;
+	layer = 2.030
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "JY" = (
@@ -10974,7 +11051,8 @@
 "Ob" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/corner/opaque/white{
-	dir = 9
+	dir = 9;
+	layer = 2.030
 	},
 /obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/trimline/opaque/blue/line,
@@ -10999,6 +11077,13 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
+	},
+/obj/machinery/button/door{
+	id = "heron_innercargo";
+	name = "Cargohold Shutters";
+	pixel_y = -23;
+	pixel_x = -10;
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
@@ -11512,9 +11597,6 @@
 /area/ship/security/dock)
 "Qj" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 6
-	},
 /obj/effect/turf_decal/trimline/opaque/blue/warning{
 	dir = 8
 	},
@@ -11529,6 +11611,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 6;
+	layer = 2.030
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
@@ -12621,13 +12707,21 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/accessory/medal/silver/valor{
-	pixel_y = 32;
-	pixel_x = -4
+/obj/structure/sign/plaques/kiddie/perfect_man{
+	pixel_y = 30;
+	icon = 'icons/obj/clothing/accessories.dmi';
+	icon_state = "gold";
+	pixel_x = 8;
+	name = "medal of exceptional heroism";
+	desc = "An extremely rare golden medal awarded only by CentCom. To receive such a medal is the highest honor and as such, very few exist. This medal is almost never awarded to anybody but commanders."
 	},
-/obj/item/clothing/accessory/medal/gold/heroism{
-	pixel_y = 29;
-	pixel_x = 8
+/obj/structure/sign/plaques/kiddie/perfect_man{
+	pixel_y = 32;
+	icon = 'icons/obj/clothing/accessories.dmi';
+	icon_state = "silver";
+	pixel_x = -4;
+	name = "\improper Excellence in Bureaucracy Medal";
+	desc = "Awarded for exemplary managerial services rendered while under contract with Nanotrasen."
 	},
 /turf/open/floor/wood,
 /area/ship/crew/law_office)
@@ -12823,7 +12917,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/white{
-	dir = 8
+	dir = 8;
+	layer = 2.030
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
@@ -13159,7 +13254,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/white{
-	dir = 1
+	dir = 1;
+	layer = 2.030
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/line{
 	dir = 1
@@ -13710,6 +13806,12 @@
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/black/half{
 	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 1
 	},
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
@@ -14386,6 +14488,12 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/trimline/opaque/blue/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/corner{
+	dir = 4
+	},
 /turf/open/floor/plastic,
 /area/ship/crew/canteen)
 "ZX" = (
@@ -14783,7 +14891,7 @@ Ak
 Tc
 NV
 dB
-uj
+Bu
 Bu
 Bu
 jb
@@ -14822,7 +14930,7 @@ Ak
 ij
 ij
 ij
-uj
+Bu
 TD
 Bu
 dK
@@ -14900,7 +15008,7 @@ Ak
 oJ
 oJ
 oJ
-uj
+Bu
 TD
 Bu
 qb
@@ -14939,7 +15047,7 @@ Ak
 lZ
 oe
 Ki
-uj
+Bu
 Bu
 Bu
 gk
@@ -15996,7 +16104,7 @@ et
 fI
 qJ
 is
-lm
+uj
 lm
 is
 eP
