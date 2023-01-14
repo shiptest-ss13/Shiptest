@@ -104,3 +104,12 @@
 	name = "cargo dump"
 	icon_state = "dk_yellow"
 
+// Syndicate fort
+
+/area/ruin/jungle/syndifort
+	name = "Syndicate Fort"
+	icon_state = "green"
+
+/area/ruin/jungle/syndifort/jerry
+	name = "Syndicate Fort Tower"
+	icon_state = "bridge"
