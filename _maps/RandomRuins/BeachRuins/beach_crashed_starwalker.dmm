@@ -90,7 +90,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
 	id = "pcarrier_cargo";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ruin/beach/starwalker)
@@ -384,6 +384,15 @@
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
 	},
+/turf/open/floor/plating,
+/area/ruin/beach/starwalker)
+"fD" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "pcarrier_windows";
+	name = "Blast Shutters"
+	},
+/obj/structure/curtain/bounty,
 /turf/open/floor/plating,
 /area/ruin/beach/starwalker)
 "fM" = (
@@ -2131,11 +2140,11 @@
 /area/ruin/beach/starwalker)
 "FA" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/curtain/bounty,
 /obj/machinery/door/poddoor/shutters{
 	id = "pcarrier_windows";
-	name = "blast shutters"
+	name = "Blast Shutters"
 	},
-/obj/structure/curtain/bounty,
 /turf/open/floor/plating,
 /area/ruin/beach/starwalker)
 "FC" = (
@@ -4383,7 +4392,7 @@ zq
 FZ
 FZ
 FA
-FA
+fD
 FZ
 XZ
 NC
