@@ -12,3 +12,9 @@
 /area/ruin/beach/complex/shuttle
 	name = "Syndicate Shuttle"
 	icon_state = "green"
+
+//beach_crashed_starwalker
+
+/area/ruin/beach/starwalker
+	name = "Crashed Pirate Ship"
+	icon_state = "green"
