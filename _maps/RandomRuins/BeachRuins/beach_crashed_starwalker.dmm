@@ -39,9 +39,6 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /turf/open/floor/plating,
 /area/ruin/beach/starwalker)
 "bd" = (
@@ -196,6 +193,10 @@
 	name = "engine fuel pump"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass{
+	pixel_y = -12;
+	pixel_x = -9
+	},
 /turf/open/floor/pod,
 /area/ruin/beach/starwalker)
 "cI" = (
@@ -357,9 +358,6 @@
 /area/ruin/unpowered)
 "fj" = (
 /obj/structure/window/reinforced,
-/obj/machinery/door/window/northleft{
-	name = "Engine Access"
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -368,6 +366,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
+	},
+/obj/effect/decal/cleanable/glass{
+	pixel_x = -13;
+	pixel_y = 7
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/starwalker)
@@ -473,6 +475,10 @@
 	pixel_y = -7
 	},
 /obj/machinery/light/broken,
+/obj/item/reagent_containers/pill/lsd{
+	pixel_y = -2;
+	pixel_x = -1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/starwalker)
 "gU" = (
@@ -706,6 +712,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-9"
 	},
+/obj/effect/decal/cleanable/glass{
+	pixel_x = -13;
+	pixel_y = 7
+	},
 /turf/open/floor/pod,
 /area/ruin/beach/starwalker)
 "ky" = (
@@ -792,6 +802,10 @@
 	icon_state = "4-5"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass{
+	pixel_y = 3;
+	pixel_x = 16
+	},
 /turf/open/floor/pod,
 /area/ruin/beach/starwalker)
 "lM" = (
@@ -1220,9 +1234,6 @@
 /area/ruin/unpowered)
 "sH" = (
 /obj/structure/window/reinforced,
-/obj/machinery/door/window/northleft{
-	name = "Engine Access"
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1262,10 +1273,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
-	},
-/obj/item/melee/transforming/energy/sword/saber/pirate/red{
-	pixel_y = 3;
-	pixel_x = -2
 	},
 /obj/item/camera_bug{
 	pixel_x = -2;
@@ -1447,7 +1454,7 @@
 /area/ruin/unpowered)
 "wc" = (
 /obj/structure/closet/crate/coffin,
-/obj/effect/mob_spawn/human/corpse/pirate/ranged,
+/obj/effect/mob_spawn/human/corpse/pirate,
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
 "wh" = (
@@ -2066,6 +2073,10 @@
 	pixel_x = -8;
 	pixel_y = -2
 	},
+/obj/effect/decal/cleanable/glass{
+	pixel_y = -10;
+	pixel_x = 9
+	},
 /turf/open/floor/pod,
 /area/ruin/beach/starwalker)
 "EV" = (
@@ -2502,6 +2513,10 @@
 	icon_state = "2-6"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass{
+	pixel_y = -12;
+	pixel_x = -9
+	},
 /turf/open/floor/pod,
 /area/ruin/beach/starwalker)
 "KO" = (
@@ -2782,12 +2797,12 @@
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
 "Qa" = (
-/obj/structure/chair/comfy/black,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib2-old"
 	},
-/obj/effect/mob_spawn/human/corpse/pirate,
+/obj/structure/chair/comfy/black,
+/obj/effect/mob_spawn/human/corpse/pirate/ranged,
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
 "Qb" = (
