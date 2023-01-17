@@ -261,8 +261,8 @@
 /obj/structure/closet/proc/tool_interact(obj/item/W, mob/user)//returns TRUE if attackBy call shouldnt be continued (because tool was used/closet was of wrong type), FALSE if otherwise
 	. = TRUE
 	if(opened)
-		if(istype(W, cutting_tool))
-			if(W.tool_behaviour == TOOL_WELDER)
+		if(istype(W, cutting_tool) || W.tool_behaviour == TOOL_DECONSTRUCT)
+			if(W.tool_behaviour == TOOL_WELDER || W.tool_behaviour == TOOL_DECONSTRUCT)
 				if(!W.tool_start_check(user, amount=0))
 					return
 

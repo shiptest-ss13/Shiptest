@@ -405,7 +405,7 @@
 
 	switch(state)
 		if(RWINDOW_SECURE)
-			if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HARM)
+			if((I.tool_behaviour == TOOL_WELDER || I.tool_behaviour == TOOL_DECONSTRUCT) && user.a_intent == INTENT_HARM)
 				user.visible_message("<span class='notice'>[user] holds \the [I] to the security screws on \the [src]...</span>",
 										"<span class='notice'>You begin heating the security screws on \the [src]...</span>")
 				if(I.use_tool(src, user, 150, volume = 100))
@@ -414,7 +414,7 @@
 					addtimer(CALLBACK(src, PROC_REF(cool_bolts)), 300)
 				return
 		if(RWINDOW_BOLTS_HEATED)
-			if(I.tool_behaviour == TOOL_SCREWDRIVER)
+			if(I.tool_behaviour == TOOL_SCREWDRIVER || I.tool_behaviour == TOOL_DECONSTRUCT)
 				user.visible_message("<span class='notice'>[user] digs into the heated security screws and starts removing them...</span>",
 										"<span class='notice'>You dig into the heated screws hard and they start turning...</span>")
 				if(I.use_tool(src, user, 50, volume = 50))
