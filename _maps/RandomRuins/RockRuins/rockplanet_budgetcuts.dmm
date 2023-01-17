@@ -304,6 +304,7 @@
 	icon_state = "coatblood";
 	pixel_y = 9
 	},
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel,
 /area/mine/rockplanet)
 "eX" = (
@@ -923,8 +924,12 @@
 /turf/open/floor/carpet/purple,
 /area/mine/rockplanet)
 "oO" = (
-/turf/open/floor/plating,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/mine/rockplanet)
 "pb" = (
 /obj/structure/flora/grass/jungle{
 	pixel_x = 1;
@@ -1173,6 +1178,22 @@
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 6
 	},
+/obj/item/storage/fancy/cigarettes/cigpack_uplift{
+	pixel_x = 9;
+	pixel_y = 7
+	},
+/obj/item/lighter/greyscale{
+	pixel_x = 8;
+	pixel_y = 1
+	},
+/obj/item/toy/figure/roboticist{
+	pixel_x = -8;
+	pixel_y = 5
+	},
+/obj/item/trash/sosjerky{
+	pixel_y = 8;
+	pixel_x = -2
+	},
 /turf/open/floor/plasteel/dark,
 /area/mine/rockplanet)
 "tc" = (
@@ -1253,7 +1274,7 @@
 /area/mine/rockplanet)
 "uA" = (
 /obj/structure/girder/reinforced,
-/turf/open/floor/plating,
+/turf/open/floor/plating/rust,
 /area/mine/rockplanet)
 "uF" = (
 /obj/structure/closet/secure_closet/brig{
@@ -1319,8 +1340,13 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "vr" = (
 /mob/living/simple_animal/hostile/pirate/ranged,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/oil,
+/obj/machinery/light/small/broken{
+	dir = 1
+	},
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/mine/rockplanet)
 "vz" = (
 /obj/machinery/light/dim{
 	dir = 8
@@ -1441,14 +1467,32 @@
 	icon_state = "wood-broken7"
 	},
 /area/mine/rockplanet)
+"yi" = (
+/obj/effect/decal/cleanable/garbage{
+	pixel_x = -7;
+	pixel_y = -6
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/mine/rockplanet)
 "yq" = (
 /obj/effect/turf_decal/corner/opaque/red/full,
 /turf/open/floor/plasteel/dark,
 /area/mine/rockplanet)
 "yu" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/trashcart,
+/obj/item/trash/syndi_cakes{
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/obj/item/trash/energybar,
+/obj/item/trash/candy,
+/obj/item/trash/sosjerky,
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/mine/rockplanet)
 "yG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1632,8 +1676,8 @@
 /area/mine/rockplanet)
 "BN" = (
 /obj/mecha/working/ripley/deathripley,
-/turf/open/floor/plating,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/turf/open/floor/plating/rust,
+/area/mine/rockplanet)
 "BU" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -1655,8 +1699,11 @@
 /area/mine/rockplanet)
 "Cf" = (
 /obj/item/pickaxe/drill/jackhammer/old,
-/turf/open/floor/plating,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/mine/rockplanet)
 "Ci" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/lit,
@@ -1699,8 +1746,10 @@
 /area/mine/rockplanet)
 "CJ" = (
 /mob/living/simple_animal/hostile/pirate/melee,
-/turf/open/floor/plating,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/mine/rockplanet)
 "CM" = (
 /obj/structure/closet/l3closet/scientist{
 	pixel_x = -2
@@ -1990,6 +2039,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/mine/rockplanet)
+"GK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/wallframe/light_fixture{
+	pixel_y = -14;
+	pixel_x = 10
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/mine/rockplanet)
 "GM" = (
 /obj/machinery/door/airlock/security,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -2084,8 +2143,8 @@
 "Jm" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/structure/grille/broken,
-/turf/open/floor/plating,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/turf/open/floor/plating/rust,
+/area/mine/rockplanet)
 "JG" = (
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -2095,6 +2154,12 @@
 	},
 /obj/effect/turf_decal/siding/white/corner,
 /turf/open/floor/plasteel,
+/area/mine/rockplanet)
+"JP" = (
+/mob/living/simple_animal/hostile/pirate/melee,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
 /area/mine/rockplanet)
 "Kc" = (
 /obj/structure/flora/rock/pile,
@@ -4406,7 +4471,7 @@ VI
 wj
 XR
 uA
-CJ
+JP
 zo
 zo
 zo
@@ -4498,7 +4563,7 @@ XR
 XR
 XR
 vr
-oO
+GK
 zo
 zo
 zo
@@ -4636,7 +4701,7 @@ zo
 zo
 zo
 zo
-oO
+yi
 zo
 zo
 zo
