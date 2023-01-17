@@ -210,7 +210,9 @@
 	},
 /area/ruin/unpowered)
 "ie" = (
-/obj/structure/closet/crate/grave,
+/obj/structure/closet/crate/grave{
+	desc = "Here lies our great brother and infamous pirate"
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/unpowered)
@@ -529,9 +531,15 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/treasure_cove)
 "rp" = (
-/obj/structure/closet/crate/grave,
-/turf/open/floor/plating/dirt/jungle,
-/area/ruin/unpowered)
+/obj/item/restraints/handcuffs/cable/zipties/used,
+/obj/item/ammo_casing/spent{
+	icon_state = "rifle-brass";
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/obj/effect/spawner/lootdrop/glowstick,
+/turf/open/floor/wood,
+/area/ruin/beach/treasure_cove)
 "rA" = (
 /mob/living/simple_animal/beachcarp/trout{
 	dir = 4
@@ -606,7 +614,7 @@
 "tm" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/unpowered)
+/area/ruin/beach/treasure_cove)
 "tx" = (
 /obj/structure/flora/ausbushes/stalkybush{
 	pixel_x = -12;
@@ -861,10 +869,6 @@
 "Au" = (
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/treasure_cove)
-"AP" = (
-/obj/effect/spawner/lootdrop/glowstick,
-/turf/open/floor/wood,
-/area/ruin/beach/treasure_cove)
 "BI" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/chair/wood/wings,
@@ -1113,10 +1117,6 @@
 "Nk" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood,
-/area/ruin/beach/treasure_cove)
-"Ns" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/beach/treasure_cove)
 "Nu" = (
 /obj/structure/flora/ausbushes/fullgrass{
@@ -1448,6 +1448,10 @@
 /mob/living/simple_animal/hostile/rat,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/unpowered)
+"YI" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/ruin/unpowered)
 "YL" = (
 /obj/structure/flora/rock/jungle{
 	pixel_x = -5;
@@ -1459,6 +1463,10 @@
 /obj/effect/decal/cleanable/blood/old{
 	pixel_x = -12;
 	pixel_y = 15
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor4-old";
+	pixel_x = 9
 	},
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
@@ -2177,7 +2185,7 @@ pz
 pz
 pz
 pz
-Ns
+tm
 RG
 cR
 Hf
@@ -2366,7 +2374,7 @@ wS
 Te
 le
 ZO
-AP
+rp
 Uf
 tD
 Rn
@@ -2583,7 +2591,7 @@ pz
 pz
 pz
 pz
-tm
+YI
 lt
 lt
 lt
@@ -2811,7 +2819,7 @@ lt
 lt
 lt
 BN
-rp
+jf
 ii
 TN
 TN
