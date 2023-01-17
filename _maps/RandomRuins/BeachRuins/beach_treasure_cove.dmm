@@ -365,6 +365,16 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
+"nm" = (
+/obj/item/restraints/handcuffs/cable/zipties/used,
+/obj/item/ammo_casing/spent{
+	icon_state = "rifle-brass";
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/obj/effect/spawner/lootdrop/glowstick,
+/turf/open/floor/wood,
+/area/ruin/beach/treasure_cove)
 "nD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -382,10 +392,6 @@
 	dir = 1
 	},
 /obj/structure/table/wood/reinforced,
-/obj/item/clothing/suit/armor/riot/minutemen{
-	pixel_x = -10;
-	pixel_y = 8
-	},
 /obj/machinery/jukebox/boombox{
 	pixel_y = 5
 	},
@@ -531,15 +537,9 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/treasure_cove)
 "rp" = (
-/obj/item/restraints/handcuffs/cable/zipties/used,
-/obj/item/ammo_casing/spent{
-	icon_state = "rifle-brass";
-	pixel_x = -10;
-	pixel_y = 4
-	},
-/obj/effect/spawner/lootdrop/glowstick,
-/turf/open/floor/wood,
-/area/ruin/beach/treasure_cove)
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/ruin/unpowered)
 "rA" = (
 /mob/living/simple_animal/beachcarp/trout{
 	dir = 4
@@ -1447,10 +1447,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /mob/living/simple_animal/hostile/rat,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/unpowered)
-"YI" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/unpowered)
 "YL" = (
 /obj/structure/flora/rock/jungle{
@@ -2374,7 +2370,7 @@ wS
 Te
 le
 ZO
-rp
+nm
 Uf
 tD
 Rn
@@ -2591,7 +2587,7 @@ pz
 pz
 pz
 pz
-YI
+rp
 lt
 lt
 lt

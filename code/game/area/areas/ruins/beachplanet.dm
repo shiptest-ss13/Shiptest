@@ -18,5 +18,5 @@
 //beach_treasure_cove, the beeginning
 
 /area/ruin/beach/treasure_cove
-	name = "Quirky Cavern" //pretend like you didn't see this
+	name = "Quirky Cavern"
 	icon_state = "purple"
