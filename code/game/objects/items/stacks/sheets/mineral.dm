@@ -551,7 +551,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 /obj/item/stack/sheet/mineral/coal
 	name = "coal"
 	desc = "Someone's gotten on the naughty list."
-	icon = 'icons/obj/mining.dmi'
+	icon = 'icons/obj/ores.dmi'
 	icon_state = "slag"
 	singular_name = "coal lump"
 	merge_type = /obj/item/stack/sheet/mineral/coal
