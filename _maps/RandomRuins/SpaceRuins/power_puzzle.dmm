@@ -2370,8 +2370,6 @@
 	},
 /obj/machinery/button/door{
 	name = "Vault Shutters";
-	specialfunctions = 4;
-	normaldoorcontrol = 1;
 	id = "vaultshutters1";
 	dir = 8;
 	pixel_y = 8;
@@ -2379,8 +2377,6 @@
 	},
 /obj/machinery/button/door{
 	name = "Vault Shutters";
-	specialfunctions = 4;
-	normaldoorcontrol = 1;
 	id = "vaultshutters2";
 	dir = 8;
 	pixel_y = -2;
@@ -2512,8 +2508,8 @@
 	},
 /area/ruin/space/has_grav/powerpuzzle/engineering)
 "Bp" = (
-/obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/indestructable,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "Bq" = (
