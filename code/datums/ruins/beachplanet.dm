@@ -28,3 +28,9 @@
 	id = "beach_colony"
 	description = "A abandoned colony. It seems that this colony was abandoned, for a reason or another"
 	suffix = "beach_colony.dmm"
+
+/datum/map_template/ruin/beachplanet/fallenstar
+	name = "Crashed Starwalker"
+	id = "crashed_star"
+	description = "A Crashed Starwalker Class Pirate Ship. It's Crew is Long-Dead."
+	suffix = "beach_crashed_starwalker"
