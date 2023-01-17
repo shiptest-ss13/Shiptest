@@ -368,7 +368,7 @@
 	pixel_y = 7
 	},
 /obj/item/gps{
-	gpstag = SOS;
+	gpstag = "SOS";
 	pixel_x = 6;
 	pixel_y = 4
 	},
@@ -433,13 +433,6 @@
 	name = "Cell 2"
 	},
 /turf/open/floor/plasteel,
-/area/mine/rockplanet)
-"gO" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/greenglow,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
 /area/mine/rockplanet)
 "gP" = (
 /obj/effect/decal/cleanable/dirt,
@@ -928,13 +921,13 @@
 /turf/open/floor/carpet/purple,
 /area/mine/rockplanet)
 "oO" = (
-/obj/effect/decal/cleanable/garbage{
-	pixel_x = -7;
-	pixel_y = -6
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/wallframe/light_fixture{
+	pixel_y = -14;
+	pixel_x = 10
 	},
-/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating{
-	icon_state = "platingdmg3"
+	icon_state = "panelscorched"
 	},
 /area/mine/rockplanet)
 "pb" = (
@@ -1744,7 +1737,7 @@
 "CJ" = (
 /mob/living/simple_animal/hostile/pirate/melee,
 /turf/open/floor/plating{
-	icon_state = "platingdmg1"
+	icon_state = "panelscorched"
 	},
 /area/mine/rockplanet)
 "CM" = (
@@ -2069,6 +2062,22 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/mineral/random/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Ia" = (
+/obj/effect/decal/cleanable/garbage{
+	pixel_x = -7;
+	pixel_y = -6
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/mine/rockplanet)
+"Ie" = (
+/mob/living/simple_animal/hostile/pirate/melee,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/mine/rockplanet)
 "Ij" = (
 /turf/open/floor/plating/rust,
 /area/mine/rockplanet)
@@ -2544,16 +2553,6 @@
 /obj/effect/mine/explosive,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"St" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/wallframe/light_fixture{
-	pixel_y = -14;
-	pixel_x = 10
-	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
-/area/mine/rockplanet)
 "SG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/white{
@@ -2626,6 +2625,13 @@
 	},
 /obj/effect/turf_decal/siding/white/corner,
 /turf/open/floor/plasteel,
+/area/mine/rockplanet)
+"Uf" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
 /area/mine/rockplanet)
 "Un" = (
 /turf/open/floor/plasteel/white,
@@ -2743,12 +2749,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/mine/rockplanet)
-"Xo" = (
-/mob/living/simple_animal/hostile/pirate/melee,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
 /area/mine/rockplanet)
 "Xv" = (
 /obj/effect/turf_decal/sand/plating,
@@ -4465,7 +4465,7 @@ VI
 wj
 XR
 uA
-CJ
+Ie
 zo
 zo
 zo
@@ -4511,7 +4511,7 @@ Nv
 fH
 XR
 BN
-gO
+Uf
 zo
 zo
 zo
@@ -4557,7 +4557,7 @@ XR
 XR
 XR
 vr
-St
+oO
 zo
 zo
 zo
@@ -4649,7 +4649,7 @@ zo
 zo
 zo
 zo
-Xo
+CJ
 zo
 zo
 zo
@@ -4695,7 +4695,7 @@ zo
 zo
 zo
 zo
-oO
+Ia
 zo
 zo
 zo
