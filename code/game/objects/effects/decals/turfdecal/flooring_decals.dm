@@ -753,3 +753,17 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/road/line/edge
 	icon_state = "road_line_edge"
+
+
+/obj/effect/turf_decal/minutemen
+	name = "minutemen logo"
+	icon_state = "mm_edge"
+
+/obj/effect/turf_decal/minutemen/corner
+	icon_state = "mm_corner"
+
+/obj/effect/turf_decal/minutemen/edge
+	icon_state = "mm_edge"
+
+/obj/effect/turf_decal/minutemen/middle
+	icon_state = "mm_middle"

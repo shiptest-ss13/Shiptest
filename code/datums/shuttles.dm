@@ -271,6 +271,14 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
+/datum/map_template/shuttle/ruin/syndicate_interceptor
+	file_name = "ruin_syndicate_interceptor"
+	name = "Syndicate Interceptor"
+	prefix = "SSV"
+	name_categories = list("WEAPONS")
+	short_name = "Dartbird"
+
+
 //Subshuttles
 
 /datum/map_template/shuttle/subshuttles
@@ -283,3 +291,4 @@
 	prefix = "NTSV"
 
 //your subshuttle here
+
