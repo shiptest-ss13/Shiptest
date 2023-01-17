@@ -215,11 +215,8 @@
 	pixel_x = -3;
 	pixel_y = 12
 	},
-/obj/item/implantcase/mindshield{
-	pixel_x = -3;
-	pixel_y = 3
-	},
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
+/obj/item/storage/fancy/donut_box,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/mine/rockplanet)
 "dh" = (
@@ -437,6 +434,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/rockplanet)
+"gO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/mine/rockplanet)
 "gP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
@@ -574,13 +578,13 @@
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/pen{
-	pixel_x = 4;
-	pixel_y = 4
-	},
 /obj/item/folder/blue{
 	pixel_x = -6;
 	pixel_y = -5
+	},
+/obj/item/pen{
+	pixel_x = 4;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/mine/rockplanet)
@@ -924,10 +928,13 @@
 /turf/open/floor/carpet/purple,
 /area/mine/rockplanet)
 "oO" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/cleanable/garbage{
+	pixel_x = -7;
+	pixel_y = -6
+	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating{
-	icon_state = "panelscorched"
+	icon_state = "platingdmg3"
 	},
 /area/mine/rockplanet)
 "pb" = (
@@ -1467,16 +1474,6 @@
 	icon_state = "wood-broken7"
 	},
 /area/mine/rockplanet)
-"yi" = (
-/obj/effect/decal/cleanable/garbage{
-	pixel_x = -7;
-	pixel_y = -6
-	},
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
-/area/mine/rockplanet)
 "yq" = (
 /obj/effect/turf_decal/corner/opaque/red/full,
 /turf/open/floor/plasteel/dark,
@@ -1747,7 +1744,7 @@
 "CJ" = (
 /mob/living/simple_animal/hostile/pirate/melee,
 /turf/open/floor/plating{
-	icon_state = "panelscorched"
+	icon_state = "platingdmg1"
 	},
 /area/mine/rockplanet)
 "CM" = (
@@ -1919,9 +1916,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/garbage,
-/obj/machinery/power/apc/highcap/fifteen_k{
-	pixel_y = 24
-	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/rockvault,
 /area/mine/rockplanet)
 "Fq" = (
@@ -2039,16 +2034,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/mine/rockplanet)
-"GK" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/wallframe/light_fixture{
-	pixel_y = -14;
-	pixel_x = 10
-	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
-/area/mine/rockplanet)
 "GM" = (
 /obj/machinery/door/airlock/security,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -2154,12 +2139,6 @@
 	},
 /obj/effect/turf_decal/siding/white/corner,
 /turf/open/floor/plasteel,
-/area/mine/rockplanet)
-"JP" = (
-/mob/living/simple_animal/hostile/pirate/melee,
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
-	},
 /area/mine/rockplanet)
 "Kc" = (
 /obj/structure/flora/rock/pile,
@@ -2565,6 +2544,16 @@
 /obj/effect/mine/explosive,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"St" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/wallframe/light_fixture{
+	pixel_y = -14;
+	pixel_x = 10
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/mine/rockplanet)
 "SG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/white{
@@ -2593,8 +2582,8 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/item/implanter{
-	pixel_x = -10
+/obj/item/firing_pin{
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel,
 /area/mine/rockplanet)
@@ -2602,7 +2591,6 @@
 /obj/effect/decal/cleanable/xenoblood,
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/gun/energy/kinetic_accelerator/crossbow/large,
-/obj/item/gun/energy/decloner,
 /turf/open/floor/plating/rust,
 /area/mine/rockplanet)
 "Ty" = (
@@ -2755,6 +2743,12 @@
 	},
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/tech/techmaint,
+/area/mine/rockplanet)
+"Xo" = (
+/mob/living/simple_animal/hostile/pirate/melee,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
 /area/mine/rockplanet)
 "Xv" = (
 /obj/effect/turf_decal/sand/plating,
@@ -4471,7 +4465,7 @@ VI
 wj
 XR
 uA
-JP
+CJ
 zo
 zo
 zo
@@ -4517,7 +4511,7 @@ Nv
 fH
 XR
 BN
-oO
+gO
 zo
 zo
 zo
@@ -4563,7 +4557,7 @@ XR
 XR
 XR
 vr
-GK
+St
 zo
 zo
 zo
@@ -4655,7 +4649,7 @@ zo
 zo
 zo
 zo
-CJ
+Xo
 zo
 zo
 zo
@@ -4701,7 +4695,7 @@ zo
 zo
 zo
 zo
-yi
+oO
 zo
 zo
 zo
