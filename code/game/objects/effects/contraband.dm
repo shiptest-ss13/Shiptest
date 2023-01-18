@@ -1,6 +1,9 @@
 // This is synced up to the poster placing animation.
-#define PLACE_SPEED 37
-
+#define PLACE_SPEED 3.7 SECONDS
+#define POSTER_NORANDOM 0 //no random poster
+#define POSTER_SUBTYPES 1 //chooses from subtypes of the poster_type var
+#define POSTER_LIST 2 // chooses from a list
+#define POSTER_ADD_FROM_LIST 3 //adds to the subtypes pool from list
 // The poster item
 
 /obj/item/poster
@@ -47,6 +50,16 @@
 	poster_type = /obj/structure/sign/poster/retro/random
 	icon_state = "rolled_legit"
 
+/obj/item/poster/random_solgov
+	name = "random solarian poster"
+	poster_type = /obj/structure/sign/poster/solgov/random
+	icon_state = "rolled_solgov"
+
+/obj/item/poster/random_minutemen
+	name = "random cmm poster"
+	poster_type = /obj/structure/sign/poster/minutemen/random
+	icon_state = "rolled_legit"
+
 // The poster sign/structure
 
 /obj/structure/sign/poster
@@ -56,7 +69,12 @@
 	icon = 'icons/obj/contraband.dmi'
 	anchored = TRUE
 	var/ruined = FALSE
+	/// how do we want to handle the random poster pool? POSTER_SUBTYPES chooses randomly from subtypes, AKA how it was handled before
+	var/random_type = POSTER_NORANDOM
+	///if above is POSTER_SUBTYPES then what which subtypes we want to pull from?
 	var/random_basetype
+	///if random_type is either POSTER_LIST or POSTER_ADD_FROM_LIST then what is the pool of posters we want to pull from/ add from?
+	var/list/random_pool
 	/// Do we want to never appear in the random poster pool? Used in the random subtype to prevent infinite loops of random posters, and the NO ERP poster to make it effectively admin only.
 	var/never_random = FALSE
 
@@ -67,8 +85,8 @@
 
 /obj/structure/sign/poster/Initialize()
 	. = ..()
-	if(random_basetype)
-		randomise(random_basetype)
+	if(random_type)
+		randomise()
 	if(!ruined)
 		original_name = name // can't use initial because of random posters
 		name = "poster - [name]"
@@ -76,15 +94,24 @@
 
 	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, 300)), 0)
 
-/obj/structure/sign/poster/proc/randomise(base_type)
-	var/list/poster_types = subtypesof(base_type)
-	var/list/approved_types = list()
-	for(var/t in poster_types)
-		var/obj/structure/sign/poster/T = t
-		if(initial(T.icon_state) && !initial(T.never_random))
-			approved_types |= T
+/obj/structure/sign/poster/proc/randomise()
+	var/obj/structure/sign/poster/selected
 
-	var/obj/structure/sign/poster/selected = pick(approved_types)
+	if(random_type == POSTER_LIST)// i feel like im making the problem worse instead of fixing it
+		if(!random_pool)
+			CRASH("A poster is set to select from a list, but has none!")
+		selected = pick(random_pool)
+	if(random_type == POSTER_SUBTYPES || random_type == POSTER_ADD_FROM_LIST)
+		var/list/poster_types = subtypesof(random_basetype)
+		var/list/approved_types = list()
+		if(random_type == POSTER_ADD_FROM_LIST)
+			if(!random_pool)
+				CRASH("A poster is set to select from a list, but has none!")
+			LAZYADD(poster_types, random_pool)
+		for(var/obj/structure/sign/poster/current_poster as anything in poster_types)
+			if(initial(current_poster.icon_state) && !initial(current_poster.never_random))
+				approved_types |= current_poster
+		selected = pick(approved_types)
 
 	name = initial(selected.name)
 	desc = initial(selected.desc)
@@ -124,10 +151,8 @@
 	R.add_fingerprint(user)
 	qdel(src)
 
-//WS Start - Changing Posters Fix
 /obj/structure/sign/poster/wrench_act(mob/living/user, obj/item/wrench/I)
 	return
-//WS End
 
 /obj/structure/sign/poster/proc/roll_and_drop(loc)
 	pixel_x = 0
@@ -188,12 +213,13 @@
 	name = "ripped poster"
 	desc = "You can't make out anything from the poster's original print. It's ruined."
 
-//begin contraband. Expect anything, really, from advertisements to syndicate propaganda to dead memes.
+//begin contraband pool, Expect anything, really. Mostly used by indies.
 /obj/structure/sign/poster/random
 	name = "random poster" // could even be ripped
 	icon_state = "random_anything"
 	never_random = TRUE
 	random_basetype = /obj/structure/sign/poster
+	random_type = POSTER_SUBTYPES
 
 /obj/structure/sign/poster/contraband
 	poster_item_name = "contraband poster"
@@ -205,6 +231,13 @@
 	icon_state = "random_contraband"
 	never_random = TRUE
 	random_basetype = /obj/structure/sign/poster/contraband
+	random_type = POSTER_ADD_FROM_LIST // what this does is add the SUNS poster, which would usually only be in the solgov poster pool to the contraband pool.
+	random_pool = list(
+		/obj/structure/sign/poster/solgov/suns,
+		/obj/structure/sign/poster/official/ion_carbine,
+		/obj/structure/sign/poster/official/mini_energy_gun,
+		)
+
 
 /obj/structure/sign/poster/contraband/free_tonto
 	name = "Free Tonto"
@@ -324,7 +357,7 @@
 /obj/structure/sign/poster/contraband/c20r
 	// have fun seeing this poster in "spawn 'c20r'", admins...
 	name = "Cobra 20"
-	desc = "A poster advertising the Scarborough Arms C-20r. It seems the company is trying to distance itself from the sydnicate by using the civillian name rather than the Syndicate name."
+	desc = "A poster advertising the Scarborough Arms C-20r. It seems the company is trying to distance itself from the syndicate by using the civillian name rather than the Syndicate name."
 	icon_state = "poster_cobra"
 
 /obj/structure/sign/poster/contraband/have_a_puff
@@ -336,6 +369,11 @@
 	name = "Peacemaker"
 	desc = "A poster advertising the Hunter's Pride Peacemaker and .38 Caliber bullets."
 	icon_state = "poster_peacemaker"
+
+/obj/structure/sign/poster/contraband/twelve_gauge
+	name = "12 Gauge"
+	desc = "A poster advertising Hunter's Pride manufactored 12 gauge shells and shotguns."
+	icon_state = "poster_12g"
 
 /obj/structure/sign/poster/contraband/d_day_promo
 	name = "D-Day Promo"
@@ -447,7 +485,58 @@
 	desc = "A poster depicting the Syndicate logo. How times have changed."
 	icon_state = "poster-syndicate"
 
-//beginning of Nanotrasen approved posters. Expect propaganda and corprate motavation
+/obj/structure/sign/poster/contraband/cybersun
+	name = "Cybersun Virtual Solutions"
+	desc = "Cybersun, the pioneer in cybernetics and cybersecurity tech."
+	icon_state = "poster-cybersun"
+
+/obj/structure/sign/poster/contraband/cybersun_borg
+	name = "Cybersun ARBITRATOR"
+	desc = "An advertisement for the Cybersun \"ARBITRATOR\" line of combat medic cyborgs, targeted at private military contractors and military groups. Includes a side diagram of the internals."
+	icon_state = "poster-cybersun-borg"
+
+/obj/structure/sign/poster/contraband/cybersun_med
+	name = "Cybersun Medical Solutions"
+	desc = "An advertisement for various cybersun medical products, targeted at medical groups and companies. Includes a picture of the famous Medical Beamgun."
+	icon_state = "poster-cybersun-med"
+
+/obj/structure/sign/poster/contraband/aclf
+	name = "Syndicate Support Poster"
+	desc = "An poster made by ACLF protestors in support of the Syndicate, listing Nanotrasen's abuses of their workers. While this poster was made during for the ICW, it seems like some keep it up as it still resonates with them."
+	icon_state = "poster-aclf_antint"
+
+/obj/structure/sign/poster/contraband/bulldog
+	name = "Bulldog Shotgun"
+	desc = "A poster advertising the Scarborough Arms Bulldog Automatic Shotgun. \"No need to pump it, simply load the drum, and pull away.\""
+	icon_state = "poster-bulldog"
+
+/obj/structure/sign/poster/contraband/m90
+	name = "M90 SMG"
+	desc = "A poster advertising the Scarborough M90. Burst action with a grenade launcher, for some reason."
+	icon_state = "poster-bulldog"
+
+/obj/structure/sign/poster/contraband/inteq_nt
+	name = "Inteq Recruitment"
+	desc = "Tired of your underpaying and abusive job at Nanotrasen? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and higher pay."
+	icon_state = "poster-inteq_poaching_nt"
+
+/obj/structure/sign/poster/contraband/inteq_gec
+	name = "Inteq Recruitment"
+	desc = "Tired of your boring union job at the GEC? Join the IRMG Artificers! You won't get bullshit from us. Retrofit spacecraft and weaponry, field test weaponry, and higher pay."
+	icon_state = "poster-inteq_poaching_gec"
+
+/obj/structure/sign/poster/contraband/inteq_gec
+	name = "Winchester"
+	desc = "A poster advertising the Hunter's Pride Winchester lever action rifle and .38 Caliber bullets."
+	icon_state = "poster_winchester"
+
+/obj/structure/sign/poster/contraband/eoehoma
+	name = "Eoehoma Firearms"
+	desc = "Eoehoma Firearms, the galaxy's favorite laser firearm manufacturer*. \n\
+	*DEFUNCT SINCE F.S. 450"
+	icon_state = "poster-eoehoma"
+
+//beginning of Nanotrasen approved posters. Expect corprate propaganda and motavation. You will usually only see this on Nanotrasen ships and stations
 /obj/structure/sign/poster/official
 	poster_item_name = "motivational poster"
 	poster_item_desc = "An official Nanotrasen-issued poster to foster a compliant and obedient workforce. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."
@@ -458,6 +547,7 @@
 	random_basetype = /obj/structure/sign/poster/official
 	icon_state = "random_official"
 	never_random = TRUE
+	random_type = POSTER_SUBTYPES
 
 /obj/structure/sign/poster/official/here_for_your_safety
 	name = "Here For Your Safety"
@@ -593,22 +683,7 @@
 	name = "Enlist" // but I thought deathsquad was never acknowledged
 	// desc = "Enlist in the Nanotrasen Deathsquadron reserves today!" // I refuse to acknowledge this bullshit - Zeta
 	desc = "A poster urging all across the NT umbrella to join the Nanotrasen Private Security forces. This was made specifically for the ICW, so someone probably forgot to take this down."
-	icon_state = "poster29_legit"
-
-/obj/structure/sign/poster/official/solgov_enlist //much better.
-	name = "Enlist"
-	desc = "Enlist to be a part of the SolGov Exploration Forces!"
-	icon_state = "poster_solgov_enlist_legit"
-
-/obj/structure/sign/poster/official/nanomichi_ad
-	name = "Nanomichi Ad"
-	desc = " A poster advertising a early post-NOF solarian computer. Severly outdated, but the advert is now a pretty nifty decoration."
-	icon_state = "poster_nanomichi"
-
-/obj/structure/sign/poster/official/twelve_gauge
-	name = "12 Gauge"
-	desc = "A poster advertising Hunter's Pride manufactored 12 gauge shells and shotguns."
-	icon_state = "poster_12g"
+	icon_state = "poster_enlist"
 
 /obj/structure/sign/poster/official/high_class_martini
 	name = "High-Class Martini"
@@ -636,7 +711,17 @@
 	desc = "A poster calling for an end to sapient trafficking. Over sixty percent of victims are jellywomen."
 	icon_state = "poster_sgt" // Maybe this will be what finally fixes it.
 
-//shiptest stuff, retro posters. very inspired by the early apple logos and 70s-90s tech logos.
+/obj/structure/sign/poster/official/focus
+	name = "Focus! Motivational Poster"
+	desc = "\"Focus! Let your energy be pinpointed!\""
+	icon_state = "poster-focus"
+
+/obj/structure/sign/poster/official/miners
+	name = "Nanotrasen Mining-Exploratory Corps Recruitment"
+	desc = "A poster recruiting more miners and explorers for new Nanotrasen holdings. It tells about how advanced Nanotrasen mining equipment is and the storied history of Nanotrasen."
+	icon_state = "poster-focus"
+
+//Retro naontrasen posters. very inspired by the early apple logos and 70s-90s tech logos. Expect to see these on ancient Nanotrasen ships and stations, collectables, or callbacks to retro NT
 /obj/structure/sign/poster/retro
 	poster_item_name = "retro poster"
 	poster_item_desc = "A really old Nanotrasen poster that probably sells for a lot now days. It comes with adhesive backing, for easy pinning to any vertical surface."
@@ -647,6 +732,7 @@
 	icon_state = "random_retro"
 	never_random = TRUE
 	random_basetype = /obj/structure/sign/poster/retro
+	random_type = POSTER_SUBTYPES
 
 /obj/structure/sign/poster/retro/nanotrasen_logo_70s
 	name = "\improper Ancient Nanotrasen logo"
@@ -755,4 +841,171 @@
 	desc = "A decommisioned poster that uses Safety Pill(TM?) to promote less-than-legal chemicals. This is one of the reasons we stopped outsourcing these posters. It's partially signed by 'AspEv'."
 	icon_state = "poster_moth_pill"
 
+//Solgov poster pool. expect a focus on solarian based products and places. Expect these on solgov ships
+/obj/structure/sign/poster/solgov
+	poster_item_name = "solarian poster"
+	poster_item_desc = "A solarian based poster, made with natural paper! It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_icon_state = "rolled_legit"
+
+/obj/structure/sign/poster/solgov/random
+	name = "random solarian poster"
+	icon_state = "random_solgov"
+	never_random = TRUE
+	random_basetype = /obj/structure/sign/poster/solgov
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/solgov/solgov_logo
+	name = "Solgov"
+	desc = "The seal of The Most Serene Solar and Intersolar Confederation, or more boringly known as SolGov. \"The State is a sapling: Waters of change may drown it, and rays of fear may wither it, but well-tended it will one day bear fruit.\""
+	icon_state = "poster-solgov"
+
+/obj/structure/sign/poster/solgov/terra
+	name = "Terra"
+	desc = "Terra, or Earth as it's called by inhabitants, the third planet in the Sol system. Home to the only life as humans knew it, until contact with the outside universe. This poster in particular is trying to attract tourists to Terra, listing attractions like the Grand Orrery and Neue Waldstätte."
+	icon_state = "poster-solgov-terra"
+
+/obj/structure/sign/poster/solgov/ares
+	name = "Ares"
+	desc = "Ares, fourth planet in the Sol system. While evidence suggests that Aphrodite and Ares may have once had life, Terra was the only one that kept it. This poster in particular is trying to attract tourists to Ares, listing attractions like skiing resorts and ancient robot exhibits."
+	icon_state = "poster-solgov-ares"
+
+/obj/structure/sign/poster/solgov/luna
+	name = "Luna"
+	desc = "Luna, the only moon of Terra. Culturally significant to the Solarians historically as a symbol of time, harvest, and new frontiers. This poster in particular is trying to attract tourists to Luna, listing attractions like the massive spaceport and white flags scattered across the surface, a relic from ages past."
+	icon_state = "poster-solgov-luna"
+
+/obj/structure/sign/poster/solgov/kepler
+	name = "Kepler 453b"
+	desc = "Kepler 453b, the only colonized planet in the Kepler 453 system. This poster in particular is trying to attract tourists to the planet, listing attractions like the salty desert and dual suns. \"Where your shadow always has company!\""
+	icon_state = "poster-solgov-kepler"
+
+/obj/structure/sign/poster/solgov/skiing
+	name = "Lo-Fly Skiing Advert"
+	desc = "An advertisement for some low-gravity skiing resort on Ares. \"Popular with SUNS groups!\""
+	icon_state = "poster-solgov-loskiing"
+
+/obj/structure/sign/poster/solgov/recyle
+	name = "Recycle"
+	desc = "A popular poster reminding the reader to recycle to keep the planet and ships clean!"
+	icon_state = "poster-solgov-recycle"
+
+/obj/structure/sign/poster/solgov/terragov
+	name = "TerraGov"
+	desc = "The coat of arms of TerraGov and the Terran Regency, which the latter still exists to this day."
+	icon_state = "poster-terragov"
+
+/obj/structure/sign/poster/solgov/paperwork
+	name = "Paperwork"
+	desc = "A poster reminding civil servants that it is their duty to keep detailed records."
+	icon_state = "poster-solgov-paperwork"
+
+/obj/structure/sign/poster/solgov/sonnensoldner
+	name = "The Sonnensöldners"
+	desc = "The symbol of the many Solar Companies."
+	icon_state = "poster-solgov-sonnensoldner"
+
+/obj/structure/sign/poster/solgov/alexandria
+	name = "Archive of Alexandria"
+	desc = "In the great desert \n\
+	Lies a great library \n\
+	Destroyed twice \n\
+	Rebuilt twice \n\
+	With the greatest works of all humankind."
+	icon_state = "poster-solgov-alexandria"
+
+/obj/structure/sign/poster/solgov/solgov_enlist //much better.
+	name = "Enlist"
+	desc = "Enlist to be a part of the SolGov Exploration Forces!"
+	icon_state = "poster_solgov_enlist_legit"
+
+/obj/structure/sign/poster/solgov/nanomichi_ad
+	name = "Nanomichi Ad"
+	desc = " A poster advertising a early post-NOF solarian computer. Severly outdated, but the advert is now a pretty nifty decoration."
+	icon_state = "poster_nanomichi"
+
+/obj/structure/sign/poster/solgov/suns
+	name = "Student Union of Natural Sciences"
+	desc = "SUNS, best known for it's diverse variety of top students from various solarian universities, dealing with internal fighting via dueling with swords, and being sued by Nanotrasen for trademark infrigement on their old name \"NSV.\""
+	icon_state = "poster-solgov_suns"
+
+//CMM poster pool. This is quite limited, so don't use more than 3 random ones at once. Expect to see these on CMM ships.
+
+/obj/structure/sign/poster/minutemen
+	poster_item_name = "cmm poster"
+	poster_item_desc = "A poster that is produced within the CMM. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_icon_state = "rolled_legit"
+
+/obj/structure/sign/poster/minutemen/random
+	name = "random cmm poster"
+	icon_state = "random_cmm"
+	never_random = TRUE
+	random_basetype = /obj/structure/sign/poster/minutemen
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/minutemen/enlist
+	name = "Enlist"
+	desc = "\"Do your part for not just the CMM, but Luna Town, Lanchester City, Serene, Star City, Ryunosuke, Lanshuka, Radinska, New Kalixcis, and all of your families! Plus, finance your future; It's a win/win to enlist in the CMM!\""
+	icon_state = "poster-cmm_enlist"
+
+/obj/structure/sign/poster/minutemen/bard
+	name = "CMM BARD"
+	desc = "A poster that was made by soldiers that attemps to recruit people in the BARD depecting a \"Sargent Clues\" mowing down waves and waves of xenofauna, and them exploding into blood. Somethinng tells you that service is a lot less intresting than this."
+	icon_state = "poster-poster-cmm_bard"
+
+/obj/structure/sign/poster/minutemen/gold
+	name = "CMM GOLD"
+	desc = "A poster listing job positions open in CMM GOLD and asking for applications, listing important but unintresting benifits like health insurance and such."
+	icon_state = "poster-cmm_gold"
+
+/obj/structure/sign/poster/minutemen/lunatown
+	name = "Luna-Town"
+	desc = "Luna-town, the second planet of the Kanler-332 system. The capital of the Colonial Minutemen and the Milita. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, including the capital city itself and the remains of the UNSV Lichtenstein, famous for bringing the CMM from the brink into what it is today."
+	icon_state = "poster-cmm_luna"
+
+/obj/structure/sign/poster/minutemen/maxin
+	name = "Maxin"
+	desc = "Maxin, the fourth planet of the Kanler-332 system. It's many moons including Lanchester City make it a popular sightseeing attraction for those enroute to Lanchester City."
+	icon_state = "poster-cmm_maxin"
+
+/obj/structure/sign/poster/minutemen/lanchester
+	name = "Lanchester City"
+	desc = "Luna-town, one of the many moons of the gas giant Maxin. A moon well known for it's numerous, massive factories. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as crashed Frontiersmen ships and the massive entertainment industry."
+	icon_state = "poster-cmm_lanchester"
+
+/obj/structure/sign/poster/minutemen/serene
+	name = "Serene"
+	desc = "Serene, the fifth planet of the Druja system. Covered with a thick sheet of snow, the atmosphere has been described as \"Breathable, if it weren't so darn cold.\" This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as old Frontiersmen War sites and Xenofauna war sites."
+	icon_state = "poster-cmm_serene"
+
+// Syndicate posters. Since syndicate are dived lorewise, this would only make sense on pre-split ships.
+/obj/structure/sign/poster/syndicate
+	poster_item_name = "suspicious looking poster"
+	poster_item_desc = "A poster with an ultra adhesive backing that's carefully designed to boost pinning ability. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_icon_state = "rolled_syndicate"
+
+/obj/structure/sign/poster/syndicate/random
+	name = "random syndicate poster"
+	icon_state = "random_syndicate"
+	never_random = TRUE
+	random_type = POSTER_LIST // what this does is only spawn the posters from the list
+	random_pool = list(
+	/obj/structure/sign/poster/contraband/syndicate,
+	/obj/structure/sign/poster/contraband/stechkin,
+	/obj/structure/sign/poster/contraband/c20r,
+	/obj/structure/sign/poster/contraband/syndiemoth,
+	/obj/structure/sign/poster/solgov/suns,
+	/obj/structure/sign/poster/contraband/bulldog,
+	/obj/structure/sign/poster/contraband/m90,
+	/obj/structure/sign/poster/contraband/cybersun,
+	/obj/structure/sign/poster/contraband/cybersun_borg,
+	/obj/structure/sign/poster/contraband/cybersun_med,
+	/obj/structure/sign/poster/contraband/aclf,
+	/obj/structure/sign/poster/contraband/engis_unite,
+	/obj/structure/sign/poster/contraband/gec,
+	/obj/structure/sign/poster/contraband/d_day_promo,
+		)
+
 #undef PLACE_SPEED
+#undef POSTER_SUBTYPES
+#undef POSTER_LIST
+#undef POSTER_ADD_FROM_LIST
