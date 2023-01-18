@@ -565,7 +565,7 @@
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/cmm
 	name = "CMM Ripley MK-IV Conversion Kit"
 	desc = "A CMM-custom lightweight canopy kit for an Autonomous Power Loader Unit \"Ripley\" MK-I mecha, to convert it to the mobile and spaceworthy Mk-IV design. This kit cannot be removed, once applied."
-	icon_state = "ripleyupgrade"
+	icon_state = "cmmupgrade"
 	result_mech = /obj/mecha/working/ripley/cmm
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
