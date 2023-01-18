@@ -89,6 +89,6 @@
 
 /datum/map_template/ruin/rockplanet/budgetcuts
 	name = "Budgetcuts"
-	description = "Nanotrasen's gotta lay off some personell, and this facility hasn't been worth the effort so far"
+	description = "Nanotrasen's gotta lay off some personnel, and this facility hasn't been worth the effort so far"
 	id = "rockplanet_budgetcuts"
 	suffix = "rockplanet_budgetcuts.dmm"
