@@ -20,7 +20,8 @@
 /obj/item/anglegrinder
 	name = "angle grinder"
 	desc = "A powerfull tool to salvage about anything. You better wear some protection tough"
-	icon_state = "chainsaw_off"
+	icon = 'icons/obj/mining.dmi'
+	icon_state = "anglegrinder_off"
 	lefthand_file = 'icons/mob/inhands/weapons/chainsaw_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/chainsaw_righthand.dmi'
 	flags_1 = CONDUCT_1
