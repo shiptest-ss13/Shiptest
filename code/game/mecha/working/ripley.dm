@@ -163,6 +163,13 @@
 	var/obj/item/mecha_parts/mecha_equipment/mining_scanner/scanner = new
 	scanner.attach(src)
 
+/obj/mecha/working/ripley/cmm
+	desc = "A common APLU utility mech, painted in CMM blue and white."
+	name = "\improper CMM APLU Mk-I \"Ripley\""
+	icon_state = "cmmripley"
+	base_icon_state = "cmmripley"
+	wreckage = /obj/structure/mecha_wreckage/ripley/cmm
+
 /obj/mecha/working/ripley/cargo
 	desc = "An ailing, old, repurposed cargo hauler. Most of its equipment wires are frayed or missing and its frame is rusted."
 	name = "\improper APLU \"Big Bess\""
