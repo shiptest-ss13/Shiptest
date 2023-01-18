@@ -37,7 +37,6 @@
 	hitsound = 'sound/weapons/circsawhit.ogg'
 	usesound = 'sound/weapons/circsawhit.ogg'
 	sharpness = IS_SHARP
-	actions_types = list(/datum/action/item_action/startchainsaw)
 	tool_behaviour = null // is set to TOOL_DECONSTRUCT once weildedk
 	toolspeed = 0.25
 	light_range = 2
