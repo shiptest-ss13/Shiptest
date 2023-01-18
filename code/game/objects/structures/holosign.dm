@@ -8,6 +8,11 @@
 	max_integrity = 1
 	armor = list("melee" = 0, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 20)
 	var/obj/item/holosign_creator/projector
+	var/lifespan = 5 MINUTES //holosign lifespan in seconds
+	var/death_time
+
+	var/countdown_colour
+	var/obj/effect/countdown/holosign/countdown
 
 /obj/structure/holosign/New(loc, source_projector)
 	if(source_projector)
@@ -15,15 +20,30 @@
 		projector.signs += src
 	..()
 
-/obj/structure/holosign/Initialize()
+/obj/structure/holosign/Initialize(mapload, new_lifespan)
 	. = ..()
 	alpha = 0
 	SSvis_overlays.add_vis_overlay(src, icon, icon_state, ABOVE_MOB_LAYER, plane, dir, add_appearance_flags = RESET_ALPHA) //you see mobs under it, but you hit them like they are above it
+
+	START_PROCESSING(SSobj, src)
+
+	if(new_lifespan)
+		lifespan = new_lifespan
+	death_time = world.time + lifespan
+	countdown = new(src)
+	if(countdown_colour)
+		countdown.color = countdown_colour
+	countdown.start()
+
+/obj/structure/holosign/process()
+	if(death_time < world.time)
+		Destroy()
 
 /obj/structure/holosign/Destroy()
 	if(projector)
 		projector.signs -= src
 		projector = null
+	qdel(countdown)
 	return ..()
 
 /obj/structure/holosign/attack_hand(mob/living/user)
