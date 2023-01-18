@@ -144,3 +144,15 @@ other types of metals and chemistry for reagents).
 	var/datum/design/pizza_disposable_gun/P = new
 	blueprints[1] = G
 	blueprints[2] = P
+
+/obj/item/disk/design_disk/adv/cmm_mechs
+	name = "design disk - CMM mecha modifications"
+	desc = "A design disk containing specifications for CMM-custom mecha conversions."
+	color = "#57b8f0"
+
+/obj/item/disk/design_disk/cmm_mechs/Initialize()
+	. = ..()
+	var/datum/design/cmm_ripley_upgrade/R = new
+	var/datum/design/cmm_durand_upgrade/D = new
+	blueprints[1] = R
+	blueprints[2] = D
