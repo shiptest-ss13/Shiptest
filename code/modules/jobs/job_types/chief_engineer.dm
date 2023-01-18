@@ -115,5 +115,6 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
+	belt = /obj/item/storage/belt/utility/full
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
