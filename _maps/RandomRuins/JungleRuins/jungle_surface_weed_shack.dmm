@@ -52,6 +52,12 @@
 	},
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/unpowered)
+"eT" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "eZ" = (
 /obj/machinery/hydroponics/constructable,
 /obj/item/seeds/cannabis/ultimate,
@@ -59,6 +65,12 @@
 	currentcolor = "#FFFFFF"
 	},
 /area/ruin/unpowered)
+"fx" = (
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 1
+	},
+/turf/template_noop,
+/area/template_noop)
 "fP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -155,7 +167,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/template_noop)
+/area/ruin/unpowered)
 "nI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -213,7 +225,7 @@
 	dir = 6
 	},
 /turf/open/floor/plating/grass/jungle,
-/area/template_noop)
+/area/ruin/unpowered)
 "sW" = (
 /obj/item/cigbutt/roach,
 /turf/open/floor/wood{
@@ -232,7 +244,7 @@
 /area/ruin/unpowered)
 "wn" = (
 /turf/open/floor/plating/dirt/jungle,
-/area/template_noop)
+/area/ruin/unpowered)
 "xh" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -242,7 +254,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/template_noop)
+/area/ruin/unpowered)
 "zz" = (
 /obj/item/trash/boritos,
 /obj/item/seeds/cannabis/death,
@@ -267,7 +279,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/template_noop)
+/area/ruin/unpowered)
 "Cw" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -300,7 +312,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/template_noop)
+/area/ruin/unpowered)
 "EM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -338,7 +350,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
-/area/template_noop)
+/area/ruin/unpowered)
 "Hl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -374,11 +386,11 @@
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/template_noop)
+/area/ruin/unpowered)
 "JY" = (
 /mob/living/simple_animal/hostile/cockroach/glockroach,
 /turf/open/floor/plating/dirt/jungle,
-/area/template_noop)
+/area/ruin/unpowered)
 "Kg" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -447,10 +459,6 @@
 	icon_state = "wood-broken2"
 	},
 /area/ruin/unpowered)
-"Qr" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
-/area/template_noop)
 "Qs" = (
 /mob/living/simple_animal/hostile/cockroach,
 /obj/effect/decal/cleanable/dirt,
@@ -539,7 +547,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/template_noop)
+/area/ruin/unpowered)
 "VY" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/grown/cannabis,
@@ -587,7 +595,7 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
-/area/template_noop)
+/area/ruin/unpowered)
 "Yj" = (
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/unpowered)
@@ -606,7 +614,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/template_noop)
+/area/ruin/unpowered)
 "ZK" = (
 /turf/template_noop,
 /area/template_noop)
@@ -724,7 +732,7 @@ Yj
 Yj
 Yj
 dG
-ZK
+eT
 ZK
 ZK
 ZK
@@ -744,8 +752,8 @@ VY
 Yj
 wn
 NE
-ZK
-ZK
+dG
+eT
 ZK
 "}
 (8,1,1) = {"
@@ -765,7 +773,7 @@ sF
 wn
 wn
 NE
-ZK
+eT
 "}
 (9,1,1) = {"
 Yj
@@ -784,7 +792,7 @@ wn
 xh
 JY
 wn
-NE
+gS
 "}
 (10,1,1) = {"
 Yj
@@ -803,7 +811,7 @@ wn
 ns
 Gk
 Ey
-wn
+gS
 "}
 (11,1,1) = {"
 Yj
@@ -819,10 +827,10 @@ HG
 Mj
 qI
 Cs
-Qr
+ZS
 Jb
 wn
-wn
+gS
 "}
 (12,1,1) = {"
 Yj
@@ -838,10 +846,10 @@ ZS
 nJ
 qI
 XW
-Qr
+ZS
 ZJ
 wn
-XT
+gS
 "}
 (13,1,1) = {"
 ZK
@@ -879,7 +887,7 @@ wn
 wn
 wn
 XT
-ZK
+fx
 "}
 (15,1,1) = {"
 ZK
