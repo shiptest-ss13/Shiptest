@@ -132,22 +132,21 @@
 	pixel_x = 6
 	},
 /obj/machinery/light,
+/obj/structure/sign/poster/official/the_owl{
+	pixel_x = 32
+	},
+/obj/structure/sign/poster/contraband/peacemaker{
+	pixel_y = -32
+	},
 /obj/item/phone{
-	desc = "Supposedly a direct line to Nanotrasen Central Command. It's not even plugged in.";
-	pixel_x = -5;
-	pixel_y = 6
+	pixel_x = -6;
+	pixel_y = 5
 	},
 /obj/item/clothing/gloves/krav_maga/sec{
 	pixel_x = -9
 	},
 /obj/item/clothing/head/beret/sec/warden{
 	pixel_x = -4
-	},
-/obj/structure/sign/poster/official/the_owl{
-	pixel_x = 32
-	},
-/obj/structure/sign/poster/contraband/peacemaker{
-	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -1146,11 +1145,6 @@
 /obj/item/clothing/under/rank/security/officer/minutemen,
 /obj/item/clothing/under/rank/security/officer/minutemen,
 /obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
 /obj/item/radio/headset/minutemen,
 /obj/item/radio/headset/minutemen,
 /obj/item/radio/headset/minutemen,
@@ -1163,6 +1157,11 @@
 	pixel_y = 28;
 	name = "uniform closet"
 	},
+/obj/item/storage/backpack/security/cmm,
+/obj/item/storage/backpack/security/cmm,
+/obj/item/storage/backpack/security/cmm,
+/obj/item/storage/backpack/security/cmm,
+/obj/item/storage/backpack/security/cmm,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
 "mn" = (
@@ -1248,8 +1247,8 @@
 /area/ship/engineering/atmospherics)
 "og" = (
 /obj/effect/turf_decal/rechargefloor,
-/obj/structure/mecha_wreckage/gygax,
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/mecha_wreckage/durand/cmm,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
 "ol" = (
@@ -2048,10 +2047,10 @@
 /area/ship/security)
 "tQ" = (
 /obj/effect/turf_decal/rechargefloor,
-/obj/mecha/working/ripley/mining{
+/obj/machinery/door/firedoor/border_only,
+/obj/mecha/working/ripley/cmm{
 	dir = 1
 	},
-/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
 "tW" = (
@@ -2104,7 +2103,6 @@
 /area/ship/science/robotics)
 "uK" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/hardsuit/security/independent,
 /obj/structure/railing{
 	dir = 8;
 	layer = 3.1
@@ -2112,6 +2110,7 @@
 /obj/item/radio/intercom{
 	pixel_y = 23
 	},
+/obj/item/clothing/suit/space/hardsuit/security/independent/minutemen,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "uS" = (
@@ -3999,16 +3998,14 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/twelve_gauge{
-	pixel_y = 32
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube{
-	pixel_y = -4
-	},
 /obj/item/gun/ballistic/automatic/pistol/m1911{
 	pixel_y = 3
 	},
+/obj/structure/sign/poster/contraband/twelve_gauge{
+	pixel_y = 32
+	},
+/obj/item/gun/ballistic/shotgun/bulldog/minutemen,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Qe" = (
@@ -4105,6 +4102,7 @@
 	pixel_y = -7;
 	pixel_x = 4
 	},
+/obj/item/ammo_box/magazine/cm15_mag,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "Rl" = (
@@ -4547,10 +4545,10 @@
 /area/ship/engineering/atmospherics)
 "VV" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/hardsuit/security/independent,
 /obj/structure/sign/poster/official/ion_carbine{
 	pixel_y = 32
 	},
+/obj/item/clothing/suit/space/hardsuit/security/independent/minutemen,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Wn" = (

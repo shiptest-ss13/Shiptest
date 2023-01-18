@@ -181,7 +181,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
-	backpack = /obj/item/storage/backpack
+	backpack = /obj/item/storage/backpack/security/cmm
 	box = /obj/item/storage/box/survival/engineer/radio
 	backpack_contents = null
 
