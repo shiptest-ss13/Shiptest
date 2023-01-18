@@ -212,12 +212,11 @@
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/unpowered)
 "cP" = (
-/obj/machinery/atmospherics/components/binary/pump/layer4{
-	dir = 8;
-	name = "waste to environment"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
+	},
+/obj/machinery/atmospherics/components/binary/pump/on/layer4{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/lava)
@@ -484,6 +483,11 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/slimelab/lab)
+"fJ" = (
+/turf/open/water{
+	light_range = 1
+	},
+/area/ruin/powered/slimelab/slimedome)
 "fR" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -710,13 +714,13 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/public,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "iusoffice"
 	},
+/obj/machinery/door/airlock/public/glass,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/checkpoint)
 "iU" = (
@@ -1077,11 +1081,13 @@
 /turf/open/lava/smooth,
 /area/ruin/powered/slimelab/lava)
 "lV" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2,
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = -28
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/checkpoint)
 "lW" = (
@@ -1734,9 +1740,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered/slimelab)
 "sJ" = (
-/obj/machinery/atmospherics/components/binary/pump/layer2{
-	name = "airtanks to distro"
-	},
+/obj/machinery/atmospherics/components/binary/pump/on/layer2,
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/lava)
 "sW" = (
@@ -3241,13 +3245,13 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/public,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "iusoffice"
 	},
+/obj/machinery/door/airlock/public/glass,
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered/slimelab/checkpoint)
 "Jo" = (
@@ -4477,13 +4481,15 @@
 /area/ruin/powered/slimelab)
 "VA" = (
 /obj/structure/closet/emcloset/anchored,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/item/clothing/suit/hooded/wintercoat,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/checkpoint)
 "VM" = (
@@ -6575,7 +6581,7 @@ FA
 Aw
 Aw
 Aw
-Aw
+fJ
 Aw
 PF
 Hd
