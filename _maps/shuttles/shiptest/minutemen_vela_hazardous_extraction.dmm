@@ -3179,7 +3179,7 @@
 /obj/structure/filingcabinet,
 /obj/item/clipboard,
 /obj/item/kitchen/knife/letter_opener,
-/obj/structure/sign/poster/contraband/peacemaker{
+/obj/structure/sign/poster/minutemen/serene{
 	pixel_y = 32
 	},
 /turf/open/floor/carpet,
@@ -5950,7 +5950,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
-/obj/structure/sign/poster/contraband/stechkin{
+/obj/structure/sign/poster/contraband/eoehoma{
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech,
@@ -7079,11 +7079,11 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/twelve_gauge{
-	pixel_y = -32
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
+	},
+/obj/structure/sign/poster/contraband/twelve_gauge{
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -9630,7 +9630,7 @@
 /area/ship/storage)
 "XY" = (
 /obj/effect/turf_decal/rechargefloor,
-/obj/mecha/working/ripley,
+/obj/mecha/working/ripley/cmm,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar/starboard)
 "XZ" = (
