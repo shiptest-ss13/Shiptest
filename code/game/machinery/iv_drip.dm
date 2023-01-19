@@ -98,6 +98,11 @@
 
 /obj/machinery/iv_drip/attackby(obj/item/W, mob/user, params)
 	if(is_type_in_typecache(W, drip_containers))
+		if(istype(W, /obj/item/reagent_containers/blood))
+			var/obj/item/reagent_containers/blood/bag = W
+			if (bag.sliced)
+				to_chat(user, "<span class='warning'>The bag is sliced, it's gonna spill everywere !</span>")
+				return
 		if(beaker)
 			to_chat(user, "<span class='warning'>There is already a reagent container loaded!</span>")
 			return
