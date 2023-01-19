@@ -107,7 +107,7 @@
 		to_chat(user, "<span class='warning'>The safety mechanisms on \the [src] are already disabled!</span>")
 		return
 	to_chat(user, "<span class='warning'>You disable the safety mechanisms on \the [src].</span>")
-	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is off"
+	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is <b>off</b>."
 	emagged = TRUE
 
 /obj/vehicle/ridden/lawnmower/Bump(atom/A)
