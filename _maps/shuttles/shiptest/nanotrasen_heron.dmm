@@ -1637,12 +1637,23 @@
 "gm" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer5,
 /obj/machinery/atmospherics/components/binary/volume_pump/layer2,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1,
 /obj/effect/turf_decal/techfloor/orange/corner{
 	dir = 4
 	},
 /obj/effect/turf_decal/techfloor/orange/corner{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
+	dir = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -2978,9 +2989,6 @@
 "kD" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/fulltile,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
-	dir = 9
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "kE" = (
@@ -3682,9 +3690,6 @@
 /obj/structure/chair/sofa{
 	dir = 4
 	},
-/obj/structure/sign/poster/official/nanomichi_ad{
-	pixel_x = -32
-	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "mN" = (
@@ -4230,19 +4235,15 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "oO" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/visible/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer5,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer2,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1,
 /obj/effect/turf_decal/techfloor/orange/corner,
+/obj/machinery/atmospherics/pipe/manifold/yellow/visible/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "oP" = (
@@ -5216,15 +5217,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"sp" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/structure/sign/poster/official/twelve_gauge{
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security/armory)
 "sr" = (
 /obj/structure/bed,
 /obj/item/bedsheet/dorms,
@@ -7854,6 +7846,9 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "BU" = (
@@ -7866,9 +7861,6 @@
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
-	dir = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -8236,14 +8228,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
-"Dv" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/fulltile,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
-	dir = 6
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "Dz" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -8763,6 +8747,11 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/binary/volume_pump{
+	dir = 8;
+	piping_layer = 1;
+	icon_state = "volpump_map-1"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "Fs" = (
@@ -9249,15 +9238,17 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "GQ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2,
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
-/obj/machinery/atmospherics/pipe/manifold/orange/visible/layer4{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/orange/visible/layer4,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "GT" = (
@@ -9362,19 +9353,13 @@
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/security)
 "Hn" = (
-/obj/machinery/atmospherics/pipe/manifold/orange/visible/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/orange/visible{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/visible/layer2,
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/machinery/atmospherics/pipe/simple/orange/visible/layer4,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "Hu" = (
@@ -10020,12 +10005,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer5{
 	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/yellow/visible/layer2{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
@@ -10033,6 +10012,10 @@
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer2,
+/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	dir = 9
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -10346,6 +10329,9 @@
 	},
 /obj/structure/plaque/static_plaque/atmos{
 	pixel_y = 32
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -11512,9 +11498,6 @@
 /turf/open/floor/holofloor/wood,
 /area/ship/crew/dorm/dormtwo)
 "PB" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output{
-	dir = 8
-	},
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "PC" = (
@@ -11946,15 +11929,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"QV" = (
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/effect/turf_decal/trimline/opaque/blue/line,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/official/nanomichi_ad{
-	pixel_y = -32
-	},
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/security/dock)
 "QW" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/plasma,
@@ -14038,9 +14012,6 @@
 /area/ship/hallway/central)
 "XK" = (
 /obj/effect/turf_decal/atmos/plasma,
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "XL" = (
@@ -15424,7 +15395,7 @@ Mm
 "}
 (21,1,1) = {"
 ju
-Dv
+kD
 kD
 ju
 Lp
@@ -16236,7 +16207,7 @@ AI
 sc
 pc
 dj
-QV
+er
 vp
 Mm
 Mm
@@ -16481,7 +16452,7 @@ oz
 oz
 oz
 oz
-sp
+ys
 ub
 MP
 QG
