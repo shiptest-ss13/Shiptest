@@ -165,6 +165,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "cq" = (
@@ -428,7 +429,7 @@
 	id = "brig2";
 	name = "Cell 2"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating/catwalk_floor,
 /area/ruin/powered)
 "gP" = (
 /obj/effect/decal/cleanable/dirt,
@@ -493,7 +494,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered)
 "ix" = (
-/obj/effect/mine/stun,
+/obj/effect/mine/shrapnel/human_only,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "iE" = (
@@ -534,9 +535,14 @@
 	},
 /turf/open/floor/grass,
 /area/ruin/powered)
-"iU" = (
-/obj/machinery/computer,
+"iJ" = (
+/obj/item/kirbyplants/random,
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"iU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/helm,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "ja" = (
@@ -546,6 +552,12 @@
 /area/ruin/powered)
 "jb" = (
 /obj/structure/bed,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 2;
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/vomit,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "jj" = (
@@ -724,6 +736,7 @@
 /area/ruin/powered)
 "mg" = (
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/powered)
 "mp" = (
@@ -774,6 +787,7 @@
 	pixel_x = -8;
 	pixel_y = -1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "mS" = (
@@ -801,6 +815,13 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken2"
 	},
+/area/ruin/powered)
+"nh" = (
+/obj/effect/turf_decal/corner/opaque/red/border{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "nk" = (
 /obj/effect/decal/cleanable/dirt,
@@ -935,10 +956,6 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "pj" = (
 /obj/structure/table/reinforced,
-/obj/item/slimecross/industrial/yellow{
-	pixel_x = 7;
-	pixel_y = 8
-	},
 /obj/item/slime_extract/grey{
 	pixel_x = -4;
 	pixel_y = -1
@@ -953,10 +970,6 @@
 	pixel_y = -6
 	},
 /obj/structure/window/reinforced,
-/obj/item/slimecross/consuming/pyrite{
-	pixel_x = -3;
-	pixel_y = 4
-	},
 /obj/item/slime_scanner,
 /turf/open/floor/engine,
 /area/ruin/powered)
@@ -1013,6 +1026,7 @@
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "pP" = (
@@ -1260,6 +1274,7 @@
 	pixel_y = 10
 	},
 /obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "uq" = (
@@ -1356,6 +1371,11 @@
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1;
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "vI" = (
@@ -1627,6 +1647,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
+"Bl" = (
+/obj/structure/bed,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1;
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "Bo" = (
 /obj/structure/chair/office{
 	dir = 4;
@@ -1877,6 +1906,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "Fm" = (
@@ -2039,6 +2069,13 @@
 /mob/living/simple_animal/hostile/nanotrasen/ranged,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
+"Hs" = (
+/obj/effect/turf_decal/corner/opaque/red/border{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
 "Hw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/holosign/barrier/wetsign,
@@ -2136,6 +2173,19 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/white/corner,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"JV" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/catwalk_floor,
+/area/ruin/powered)
+"JY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 2;
+	color = "#808080"
+	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "Kc" = (
@@ -2446,6 +2496,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/powered)
+"QJ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
 "QN" = (
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -2539,9 +2593,11 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "So" = (
-/obj/effect/mine/explosive,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/firedoor,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/wood,
+/area/ruin/powered)
 "SG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/white{
@@ -2654,6 +2710,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/powered)
 "UV" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "UX" = (
@@ -2748,7 +2805,8 @@
 /obj/machinery/light/dim{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/catwalk_floor,
 /area/ruin/powered)
 "XP" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3257,7 +3315,7 @@ Vp
 kU
 Ys
 cP
-bD
+JY
 XB
 vA
 XR
@@ -3304,8 +3362,8 @@ Vp
 fY
 cP
 jb
-bD
-jb
+JV
+Bl
 XR
 zo
 zo
@@ -3441,9 +3499,9 @@ pK
 ZH
 ZH
 Hk
-ZH
-ZH
-ZH
+Hs
+Hs
+Hs
 BZ
 XR
 zo
@@ -3485,9 +3543,9 @@ TU
 GM
 tC
 pN
-gu
-gu
-gu
+nh
+nh
+nh
 Yg
 gu
 sJ
@@ -3581,7 +3639,7 @@ mg
 WY
 cP
 NP
-bD
+QJ
 mR
 XR
 zo
@@ -3704,7 +3762,7 @@ XR
 XR
 cP
 cP
-Ne
+So
 cP
 cP
 cP
@@ -3716,7 +3774,7 @@ cP
 Dk
 bD
 bD
-Wj
+iJ
 XR
 ZY
 uq
@@ -3760,8 +3818,8 @@ am
 Pf
 cP
 Vn
-bD
-bD
+QJ
+QJ
 eW
 ja
 UV
@@ -4508,7 +4566,7 @@ zo
 hY
 HK
 HK
-HK
+ix
 zo
 zo
 zo
@@ -4645,7 +4703,7 @@ zo
 zo
 zo
 HK
-HK
+ix
 hY
 hY
 HK
@@ -4696,10 +4754,10 @@ HK
 HK
 hY
 hY
-So
+ix
 HK
 HK
-HK
+ix
 zo
 HK
 HK
@@ -4928,7 +4986,7 @@ zo
 zo
 zo
 HK
-HK
+ix
 HK
 zo
 Eo
@@ -5157,7 +5215,7 @@ HK
 HK
 zo
 zo
-HK
+ix
 zo
 zo
 Eo
