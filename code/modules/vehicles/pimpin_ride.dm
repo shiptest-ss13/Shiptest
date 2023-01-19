@@ -84,7 +84,7 @@
 
 /obj/vehicle/ridden/lawnmower
 	name = "Donk! Co. TM Deluxe Lawnmower 3003"
-	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is on"
+	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is <b>on</b>."
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "lawnmower"
 	var/emagged = FALSE
