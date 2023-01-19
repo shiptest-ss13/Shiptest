@@ -1,4 +1,4 @@
-// the folowing sh command was run used under linux at the root of the project 
+// the folowing sh command was run used under linux at the root of the project
 // to change the definition of the bloodbag
 // git grep -l 'reagent_containers/blood' | xargs sed -i 's|reagent_containers/blood|reagent_containers/glass/blood|g'
 // to translate it basicly mean
@@ -6,7 +6,7 @@
 //	'git grep -l 'reagent_containers/blood'
 //		Get the path of all the files that contain the string 'reagent_containers/blood'.
 //
-//	'|' 
+//	'|'
 //		take the output of the last command to the next
 //
 //	xargs sed -i 's|reagent_containers/blood|reagent_containers/glass/blood|g'
