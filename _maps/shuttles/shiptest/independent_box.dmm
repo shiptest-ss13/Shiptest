@@ -260,13 +260,13 @@
 /area/ship/cargo)
 "aR" = (
 /obj/machinery/vending/medical,
-/obj/machinery/light/built{
-	dir = 4
-	},
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
 /obj/effect/turf_decal/box/corners,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "aS" = (
@@ -435,9 +435,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bh" = (
-/obj/machinery/light/small/built{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
@@ -447,6 +444,9 @@
 	},
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 28
+	},
+/obj/machinery/light/small/broken{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -497,8 +497,6 @@
 /obj/structure/sign/poster/official/bless_this_spess{
 	pixel_y = -32
 	},
-/obj/machinery/light/small/built,
-/obj/effect/turf_decal/arrows,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bl" = (
@@ -997,6 +995,7 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = -28
 	},
+/obj/effect/turf_decal/arrows,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cq" = (
@@ -1796,13 +1795,13 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/light/built{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom{
 	dir = 4;
 	pixel_x = -22
+	},
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -1915,12 +1914,6 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over,
-/obj/machinery/light/small/built{
-	dir = 1
-	},
-/obj/effect/turf_decal/arrows{
-	dir = 1
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ph" = (
@@ -2073,6 +2066,19 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
+/area/ship/engineering)
+"vl" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ship/engineering)
 "vq" = (
 /obj/machinery/door/poddoor{
@@ -2414,6 +2420,9 @@
 /obj/structure/sign/warning/chemdiamond{
 	pixel_y = 32
 	},
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Ht" = (
@@ -2459,6 +2468,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "KX" = (
@@ -2537,19 +2549,6 @@
 /obj/machinery/door/window/northleft,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"Mg" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 4
-	},
-/obj/structure/catwalk/over,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Mi" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/medical/morgue)
@@ -2798,12 +2797,12 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "Yt" = (
-/obj/machinery/light/built{
-	dir = 8
-	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
 	dir = 4
+	},
+/obj/machinery/light/broken{
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
@@ -2993,7 +2992,7 @@ aa
 aa
 at
 tX
-Mg
+vl
 at
 BE
 at
