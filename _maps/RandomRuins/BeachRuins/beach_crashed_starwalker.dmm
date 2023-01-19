@@ -150,6 +150,16 @@
 /obj/structure/grille/broken,
 /turf/open/floor/plating,
 /area/ruin/beach/starwalker)
+"cn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/cable_coil/cut/pink{
+	pixel_x = 9;
+	pixel_y = 14
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/ruin/unpowered)
 "co" = (
 /obj/structure/catwalk/over,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -641,6 +651,10 @@
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-3"
 	},
+/obj/item/stack/cable_coil/cut/orange{
+	pixel_x = 7;
+	pixel_y = 11
+	},
 /turf/open/floor/plating/beach/sand{
 	light_range = 2
 	},
@@ -697,7 +711,9 @@
 	pixel_x = 22;
 	pixel_y = -6
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/south{
+	start_charge = 0
+	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -794,7 +810,6 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/terminal,
-/obj/machinery/power/apc/auto_name/west,
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -807,6 +822,9 @@
 /obj/effect/decal/cleanable/glass{
 	pixel_y = 3;
 	pixel_x = 16
+	},
+/obj/machinery/power/apc/auto_name/west{
+	start_charge = 0
 	},
 /turf/open/floor/pod,
 /area/ruin/beach/starwalker)
@@ -834,6 +852,7 @@
 	pixel_x = -12;
 	pixel_y = -6
 	},
+/obj/item/stack/cable_coil/cut/blue,
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/unpowered)
 "mi" = (
@@ -980,6 +999,10 @@
 /area/ruin/unpowered)
 "oQ" = (
 /obj/item/clothing/suit/pirate,
+/obj/item/stack/cable_coil/cut/white{
+	pixel_x = -9;
+	pixel_y = -9
+	},
 /turf/open/floor/plating/beach/sand{
 	light_range = 2
 	},
@@ -1353,7 +1376,9 @@
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
 "uK" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/west{
+	start_charge = 0
+	},
 /obj/structure/cable/cyan{
 	icon_state = "0-4"
 	},
@@ -1872,10 +1897,12 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable/cyan,
 /obj/structure/cable/cyan{
 	icon_state = "1-9"
+	},
+/obj/machinery/power/apc/auto_name/south{
+	start_charge = 0
 	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
@@ -1903,6 +1930,13 @@
 /turf/open/floor/plating/beach/sand{
 	light_range = 2
 	},
+/area/ruin/unpowered)
+"BY" = (
+/obj/item/stack/cable_coil/cut/red{
+	pixel_y = -9;
+	pixel_x = 9
+	},
+/turf/open/floor/plating/rust,
 /area/ruin/unpowered)
 "Ch" = (
 /obj/structure/flora/rock/beach,
@@ -2167,6 +2201,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/beach/starwalker)
+"GY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/cable_coil/cut/green,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/ruin/unpowered)
 "Hi" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 1
@@ -2271,9 +2312,11 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable/blue{
 	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/west{
+	start_charge = 0
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/beach/starwalker)
@@ -2779,7 +2822,10 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib2-old"
 	},
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/black{
+	desc = "It looks incredibly comfy, and expensive. Theres a little note on the side, explaining how its made of %100 real cow skin.";
+	name = "Cowskin chair"
+	},
 /obj/effect/mob_spawn/human/corpse/pirate/ranged,
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
@@ -2824,7 +2870,9 @@
 /area/ruin/beach/starwalker)
 "Qt" = (
 /obj/machinery/power/terminal,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/east{
+	start_charge = 0
+	},
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
 	dir = 1
 	},
@@ -5068,10 +5116,10 @@ yJ
 id
 IJ
 Vb
-In
-In
+GY
+cn
 ar
-rN
+BY
 xu
 CI
 FZ
