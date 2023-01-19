@@ -1503,3 +1503,9 @@
 		/obj/item/stock_parts/cell = 3,
 		/obj/item/stock_parts/capacitor = 1
 	)
+
+/obj/item/circuitboard/machine/shuttle/engine/electric/bad
+	name = "Bad Ion Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/electric/bad
+	req_components = list(/obj/item/stock_parts/capacitor = 3,
+		/obj/item/stock_parts/micro_laser = 3)
