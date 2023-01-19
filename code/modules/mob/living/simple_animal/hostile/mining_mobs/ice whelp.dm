@@ -17,7 +17,6 @@
 	maxHealth = 300
 	health = 300
 	obj_damage = 15
-	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 20
 	melee_damage_upper = 20
 	attack_verb_continuous = "chomps"
