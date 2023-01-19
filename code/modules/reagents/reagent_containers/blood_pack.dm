@@ -1,3 +1,19 @@
+// the folowing sh command was run used under linux at the root of the project 
+// to change the definition of the bloodbag
+// git grep -l 'reagent_containers/blood' | xargs sed -i 's|reagent_containers/blood|reagent_containers/glass/blood|g'
+// to translate it basicly mean
+//
+//	'git grep -l 'reagent_containers/blood'
+//		Get the path of all the files that contain the string 'reagent_containers/blood'.
+//
+//	'|' 
+//		take the output of the last command to the next
+//
+//	xargs sed -i 's|reagent_containers/blood|reagent_containers/glass/blood|g'
+//		In all the files which path are inputed
+//		replace "reagent_containers/blood"
+//		by "reagent_containers/glass/blood"
+
 /obj/item/reagent_containers/glass/blood
 	name = "blood pack"
 	desc = "Contains blood used for transfusion. Must be attached to an IV drip."
