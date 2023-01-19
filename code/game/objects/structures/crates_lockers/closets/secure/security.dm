@@ -111,6 +111,11 @@
 	new /obj/item/storage/photo_album/HoS(src)
 	new /obj/item/gun_voucher //WS edit - gun gun gun gun gun gun gun
 
+/obj/structure/closet/secure_closet/empty/warden
+	name = "\proper warden's locker"
+	req_access = list(ACCESS_ARMORY)
+	icon_state = "warden"
+
 /obj/structure/closet/secure_closet/warden
 	name = "\proper warden's locker"
 	req_access = list(ACCESS_ARMORY)
