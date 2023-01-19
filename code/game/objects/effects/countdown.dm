@@ -136,7 +136,6 @@
 
 /obj/effect/countdown/holosign
 	name = "holosign countdown"
-	invisibility = 0
 
 /obj/effect/countdown/holosign/get_value()
 	var/obj/structure/holosign/HS = attached_to
