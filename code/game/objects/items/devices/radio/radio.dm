@@ -435,6 +435,6 @@
 
 
 /obj/item/radio/old
-	name = "Old Radio"
+	name = "old radio"
 	icon_state = "radio"
 	desc = "An old handheld radio. You could use it, if you really wanted to."

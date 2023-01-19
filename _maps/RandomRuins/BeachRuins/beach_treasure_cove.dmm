@@ -185,7 +185,9 @@
 	dir = 4
 	},
 /obj/vehicle/ridden/lavaboat{
-	dir = 8
+	dir = 8;
+	name = "boat";
+	desc = "A boat used for traversing water. Thats right."
 	},
 /turf/open/water/beach/deep,
 /area/ruin/unpowered)
@@ -323,10 +325,8 @@
 /turf/open/floor/plating,
 /area/ruin/beach/treasure_cove)
 "kK" = (
-/obj/structure/flora/ausbushes/fernybush,
 /obj/structure/fluff/fokoff_sign{
-	pixel_x = 16;
-	pixel_y = 23
+	pixel_x = -13
 	},
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/unpowered)
@@ -1485,7 +1485,9 @@
 	dir = 4
 	},
 /obj/vehicle/ridden/lavaboat{
-	dir = 8
+	dir = 8;
+	name = "boat";
+	desc = "A boat used for traversing water. Thats right."
 	},
 /turf/open/water/beach,
 /area/ruin/unpowered)
@@ -2242,7 +2244,7 @@ zW
 SD
 TN
 Ad
-kK
+el
 Le
 Cg
 TN
@@ -2561,7 +2563,7 @@ lt
 lt
 dO
 Jh
-jf
+kK
 wS
 TN
 TN
