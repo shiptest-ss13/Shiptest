@@ -98,6 +98,9 @@
 	dir = 4;
 	name = "Engine Access"
 	},
+/obj/machinery/door/poddoor{
+	id = "box_engine1"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "at" = (
@@ -423,6 +426,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/machinery/button/door{
+	id = "box_engine3";
+	name = "Egnine shutter";
+	pixel_y = -28;
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bh" = (
@@ -488,6 +497,8 @@
 /obj/structure/sign/poster/official/bless_this_spess{
 	pixel_y = -32
 	},
+/obj/machinery/light/small/built,
+/obj/effect/turf_decal/arrows,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bl" = (
@@ -511,14 +522,16 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 10
 	},
-/obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bn" = (
@@ -537,9 +550,6 @@
 "bp" = (
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
-	},
-/obj/machinery/light/small/built{
-	dir = 1
 	},
 /obj/machinery/iv_drip/saline,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -875,7 +885,7 @@
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line,
 /obj/effect/turf_decal/trimline/transparent/lightgrey/warning,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ck" = (
@@ -937,7 +947,7 @@
 	},
 /obj/machinery/button/door{
 	id = "emergencybay_blastdoors";
-	name = "box_cargo";
+	name = "Emergency Bay Blastdoors";
 	pixel_x = 5;
 	pixel_y = -40;
 	dir = 1
@@ -1187,6 +1197,11 @@
 /obj/effect/spawner/lootdrop/maintenance/three,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
+	},
+/obj/machinery/button/door{
+	id = "box_engine1";
+	name = "Egnine shutter";
+	pixel_y = 28
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1631,7 +1646,8 @@
 	},
 /obj/structure/table/glass,
 /obj/item/clothing/neck/stethoscope{
-	pixel_y = 5
+	pixel_y = 5;
+	pixel_x = -3
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -1678,14 +1694,12 @@
 /area/ship/medical)
 "fG" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "fJ" = (
@@ -1901,6 +1915,12 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over,
+/obj/machinery/light/small/built{
+	dir = 1
+	},
+/obj/effect/turf_decal/arrows{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ph" = (
@@ -1922,11 +1942,11 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 8
+	},
+/obj/effect/turf_decal/arrows{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2042,6 +2062,9 @@
 /obj/machinery/door/window/northright{
 	dir = 4;
 	name = "Engine Access"
+	},
+/obj/machinery/door/poddoor{
+	id = "box_engine3"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2239,6 +2262,7 @@
 /obj/item/pickaxe/emergency,
 /obj/item/storage/box/lights/mixed,
 /obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/machinery/light/small,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "BE" = (
@@ -2247,6 +2271,9 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/door/window/eastleft,
+/obj/machinery/door/poddoor{
+	id = "box_engine2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "CH" = (
@@ -2384,9 +2411,6 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/weldingtool/largetank,
-/obj/machinery/light/small/built{
-	dir = 8
-	},
 /obj/structure/sign/warning/chemdiamond{
 	pixel_y = 32
 	},
@@ -2409,7 +2433,7 @@
 	},
 /obj/machinery/button/door{
 	id = "emergencybay_blastdoors";
-	name = "box_cargo";
+	name = "Emergency Bay Blastdoors";
 	pixel_x = -25;
 	pixel_y = 37;
 	dir = 4
@@ -2431,9 +2455,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ju" = (
-/obj/machinery/light/small/built{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 4
 	},
@@ -2516,6 +2537,19 @@
 /obj/machinery/door/window/northleft,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"Mg" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Mi" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/medical/morgue)
@@ -2664,13 +2698,20 @@
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden{
 	dir = 8
 	},
-/obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/structure/cable,
+/obj/structure/catwalk/over,
+/obj/machinery/button/door{
+	id = "box_engine2";
+	name = "Egnine shutter";
+	pixel_x = -25;
+	pixel_y = 37;
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "UN" = (
@@ -2952,7 +2993,7 @@ aa
 aa
 at
 tX
-DP
+Mg
 at
 BE
 at
