@@ -33,6 +33,9 @@
 /obj/machinery/door/poddoor{
 	id = "emergencybay_blastdoors"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/engine,
 /area/ship/cargo)
 "ag" = (
@@ -251,6 +254,9 @@
 /obj/machinery/door/poddoor{
 	id = "emergencybay_blastdoors"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/engine,
 /area/ship/cargo)
 "aQ" = (
@@ -296,6 +302,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/morgue)
 "aV" = (
@@ -535,9 +542,6 @@
 "bn" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	name = "engine fuel pump"
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
-	dir = 9
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1025,9 +1029,6 @@
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
-	dir = 10
-	},
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1149,6 +1150,9 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "emergencybay_blastdoors"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/engine,
 /area/ship/cargo)
@@ -1780,13 +1784,13 @@
 /obj/machinery/door/poddoor{
 	id = "emergencybay_blastdoors"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/engine,
 /area/ship/cargo)
 "iI" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 8
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -1878,7 +1882,6 @@
 /obj/item/storage/backpack/duffelbag/med/surgery{
 	pixel_y = 7
 	},
-/obj/structure/table/rolling,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1888,6 +1891,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
 "nC" = (
@@ -1934,9 +1938,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/light/small{
 	dir = 4
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
-	dir = 8
 	},
 /obj/effect/turf_decal/arrows{
 	dir = 4
@@ -1990,6 +1991,9 @@
 "tw" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
@@ -2279,6 +2283,9 @@
 /obj/machinery/door/window/eastleft,
 /obj/machinery/door/poddoor{
 	id = "box_engine2"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2570,9 +2577,6 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/garbage,
-/obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
-	dir = 8
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Nq" = (
@@ -2702,7 +2706,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/structure/cable,
 /obj/structure/catwalk/over,
 /obj/machinery/button/door{
 	id = "box_engine2";
@@ -2710,6 +2713,9 @@
 	pixel_x = -25;
 	pixel_y = 37;
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
