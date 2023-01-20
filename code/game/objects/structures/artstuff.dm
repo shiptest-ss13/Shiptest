@@ -231,7 +231,7 @@
 	icon_state = "frame-empty"
 	buildable_sign = FALSE
 	var/obj/item/canvas/C
-	var/persistence_id
+	var/persistence_id = "general"
 
 /obj/structure/sign/painting/Initialize(mapload, dir, building)
 	. = ..()

@@ -61,6 +61,9 @@
 
 /obj/structure/sign/wrench_act(mob/living/user, obj/item/wrench/I)
 	. = ..()
+	//If it's not buildable, just make them hit it with the wrench.
+	if(!buildable_sign)
+		return FALSE
 	user.visible_message(
 		"<span class='notice'>[user] starts removing [src]...</span>", \
 		"<span class='notice'>You start unfastening [src].</span>")
