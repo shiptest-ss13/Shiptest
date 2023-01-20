@@ -229,7 +229,6 @@
 	desc = "Art or \"Art\"? You decide."
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "frame-empty"
-	buildable_sign = FALSE
 	var/obj/item/canvas/C
 	var/persistence_id = "general"
 
@@ -262,6 +261,12 @@
 	. = ..()
 	if(C)
 		C.ui_interact(user)
+
+/obj/structure/sign/painting/wrench_act(mob/living/user, obj/item/wrench/I)
+	if(!C)
+		return ..()
+	to_chat(user, "<span class='warning'>Remove the painting first!</span>")
+	return TRUE
 
 /obj/structure/sign/painting/wirecutter_act(mob/living/user, obj/item/I)
 	. = ..()
