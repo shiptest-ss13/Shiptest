@@ -608,6 +608,7 @@
 /obj/item/clothing/head/papersack/smiley,
 /obj/item/clothing/head/papersack/smiley,
 /obj/item/clothing/head/papersack/smiley,
+/obj/item/circuitboard/machine/circuit_imprinter/department/basic,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "dt" = (
@@ -1181,6 +1182,12 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
+/area/ship/hangar/port)
+"gn" = (
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/effect/turf_decal/rechargefloor,
+/obj/structure/mecha_wreckage/ripley/cmm,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar/port)
 "gs" = (
 /obj/structure/cable{
@@ -2710,6 +2717,8 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/book/manual/wiki/security_space_law,
 /obj/item/storage/belt/security/full,
+/obj/item/storage/backpack/satchel/sec/cmm,
+/obj/item/storage/backpack/security/cmm,
 /turf/open/floor/pod/dark,
 /area/ship/security/armory)
 "pC" = (
@@ -6016,6 +6025,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/item/circuitboard/machine/circuit_imprinter/department/engi,
 /turf/open/floor/plating,
 /area/ship/crew/canteen/kitchen)
 "FC" = (
@@ -6607,7 +6617,7 @@
 "HU" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/effect/turf_decal/rechargefloor,
-/obj/mecha/working/ripley/mkii,
+/obj/mecha/working/ripley/cmm,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar/port)
 "HV" = (
@@ -7353,6 +7363,8 @@
 /obj/item/flashlight/seclite,
 /obj/item/clothing/gloves/combat,
 /obj/item/storage/belt/security/full,
+/obj/item/storage/backpack/satchel/sec/cmm,
+/obj/item/storage/backpack/security/cmm,
 /turf/open/floor/pod/dark,
 /area/ship/security/armory)
 "Mi" = (
@@ -9630,7 +9642,7 @@
 /area/ship/storage)
 "XY" = (
 /obj/effect/turf_decal/rechargefloor,
-/obj/mecha/working/ripley/cmm,
+/obj/structure/mecha_wreckage/ripley/cmm,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar/starboard)
 "XZ" = (
@@ -11322,7 +11334,7 @@ Na
 Na
 dZ
 Wz
-HU
+gn
 EN
 jy
 On
