@@ -275,10 +275,6 @@
 /turf/closed/wall/r_wall,
 /area/ship/security)
 "aA" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	req_access = list();
-	name = "Port Engines"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -293,6 +289,15 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_access_txt = "1"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -505,12 +510,13 @@
 	icon_state = "manifoldlayer_center";
 	dir = 1
 	},
-/obj/machinery/door/poddoor/preopen{
-	name = "Window Blast Door";
-	icon_state = "closed"
-	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed";
+	id = "voxdow"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "aT" = (
@@ -722,12 +728,13 @@
 /turf/closed/wall/r_wall,
 /area/ship/hallway/aft)
 "bk" = (
-/obj/machinery/door/poddoor/preopen{
-	name = "Window Blast Door";
-	icon_state = "closed"
-	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed";
+	id = "voxdow"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
 "bl" = (
@@ -747,7 +754,13 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance_hatch{
-	req_access = list()
+	req_access_txt = "1"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
@@ -1136,9 +1149,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/door/window/eastleft{
-	req_access = list()
-	},
+/obj/machinery/door/window/eastleft,
 /obj/item/ammo_casing/c9mm{
 	icon_state = "pistol-brass-empty";
 	pixel_x = 3;
@@ -1796,6 +1807,9 @@
 	icon_state = "scrub_on";
 	dir = 8
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "cF" = (
@@ -1805,6 +1819,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "cG" = (
@@ -1817,6 +1834,9 @@
 	pixel_x = 25
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "cH" = (
@@ -1995,15 +2015,16 @@
 /turf/open/floor/engine,
 /area/ship/hallway/aft)
 "cV" = (
-/obj/docking_port/mobile{
-	name = "ISV Kree-aaw"
-	},
 /obj/structure/fans/tiny,
 /obj/structure/catwalk/over,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
 	name = "Lobby";
 	id = "voxlobby"
+	},
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
@@ -3164,10 +3185,6 @@
 /turf/closed/wall/r_wall,
 /area/ship/crew)
 "dW" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	req_access = list();
-	name = "Starboard Engines"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -3182,6 +3199,15 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_access_txt = "1"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3519,6 +3545,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/starboard)
+"sf" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 5
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
 "sl" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	name = "ISV Kree-aaw Security Office air scrubber #1";
@@ -3948,7 +3980,7 @@ aw
 cB
 cX
 aI
-cD
+sf
 cE
 cF
 cG
