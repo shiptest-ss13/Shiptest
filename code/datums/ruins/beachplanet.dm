@@ -33,4 +33,4 @@
 	name = "Crashed Starwalker"
 	id = "crashed_star"
 	description = "A Crashed Starwalker Class Pirate Ship. It's Crew is Long-Dead."
-	suffix = "beach_crashed_starwalker"
+	suffix = "beach_crashed_starwalker.dmm"
