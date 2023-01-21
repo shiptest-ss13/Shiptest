@@ -36,8 +36,8 @@
 #define RADIO_TOKEN_MINUTEMEN ":m"
 
 #define RADIO_CHANNEL_INTEQ "Inteq"
-#define RADIO_KEY_INTEQ "i"
-#define RADIO_TOKEN_INTEQ ":i"
+#define RADIO_KEY_INTEQ "q"
+#define RADIO_TOKEN_INTEQ ":q"
 
 #define RADIO_CHANNEL_PIRATE "Pirate"
 #define RADIO_KEY_PIRATE "y"
