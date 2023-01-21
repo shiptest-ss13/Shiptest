@@ -98,7 +98,9 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	for(var/I in active_tickets)
 		var/datum/admin_help/AH = I
 		if(AH.initiator)
-			L[++L.len] = list("#[AH.id]. [AH.initiator_key_name]:", "[AH.statclick.update()]", REF(AH))
+			if(!AH.statclick)
+				stack_trace("Ticket [AH.id] has no statclick for some reason")
+			L[++L.len] = list("#[AH.id]. [AH.initiator_key_name]:", "[AH.statclick?.update()]", REF(AH))
 		else
 			++num_disconnected
 	if(num_disconnected)
