@@ -1,0 +1,18 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Slaver-Class Merchant Vessel",
+	"prefix": "ISV",
+	"namelists": ["MERCANTILE", "WEAPONS"],
+	"map_short_name": "Slaver-Class",
+	"map_path": "_maps/shuttles/shiptest/independent_halftrack.dmm",
+	"job_slots": {
+		"Captain": 1,
+		"Slaver": {
+			"outfit": "/datum/outfit/job/captain/pirate",
+			"officer": true,
+			"slots": 1
+		}
+	},
+	"enabled": false
+}
+
