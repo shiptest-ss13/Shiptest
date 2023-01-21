@@ -542,6 +542,7 @@
 /obj/item/gps/mining,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
+/obj/item/circuitboard/machine/ore_redemption,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "fN" = (
@@ -3570,6 +3571,7 @@
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
+/obj/structure/ore_box,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Lc" = (
@@ -3694,7 +3696,8 @@
 /obj/docking_port/mobile{
 	dir = 4;
 	launch_status = 0;
-	port_direction = 8
+	port_direction = 8;
+	preferred_direction = 4
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "cepheus_cargo";
