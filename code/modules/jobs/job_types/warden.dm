@@ -98,7 +98,7 @@
 /datum/outfit/job/warden/inteq
 	name = "Master At Arms (Inteq)"
 
-	ears = /obj/item/radio/headset/inteq
+	ears = /obj/item/radio/headset/inteq/alt
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	head = /obj/item/clothing/head/beret/sec/hos/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq

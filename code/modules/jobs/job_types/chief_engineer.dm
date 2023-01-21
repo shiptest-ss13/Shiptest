@@ -108,7 +108,7 @@
 /datum/outfit/job/ce/inteq
 	name = "IRMG Artificer Class II (Inteq)"
 
-	ears = /obj/item/radio/headset/inteq/alt
+	ears = /obj/item/radio/headset/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
 	head = /obj/item/clothing/head/hardhat/white
 	mask = /obj/item/clothing/mask/gas/sechailer/inteq
