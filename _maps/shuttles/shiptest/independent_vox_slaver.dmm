@@ -2060,7 +2060,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "meat storage";
+	name = "Meat Storage";
 	req_access_txt = "2"
 	},
 /turf/open/floor/plasteel/dark,
@@ -2325,10 +2325,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/airlock/maintenance_hatch{
-	id = "voxxy"
-	},
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/maintenance_hatch{
+	id_tag = "voxxy"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "dk" = (
@@ -2460,14 +2460,6 @@
 	name = "poster - Cobra 20";
 	pixel_y = 32
 	},
-/obj/structure/closet/secure_closet/wall{
-	req_access = list(;
-	req_access_txt = "5";
-	name = "firearms locker";
-	icon_state = "sec_wall";
-	dir = 4;
-	pixel_x = -28
-	},
 /obj/item/stack/sheet/mineral/silver{
 	pixel_x = 3;
 	pixel_y = 3
@@ -2490,6 +2482,13 @@
 	pixel_x = 4;
 	pixel_y = -2
 	},
+/obj/structure/closet/secure_closet/wall{
+	req_access_txt = "5";
+	icon_state = "sec_wall";
+	dir = 4;
+	pixel_x = -28;
+	req_access = list(
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "dq" = (
@@ -2505,18 +2504,17 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
-	req_access = list(;
-	req_access_txt = "5";
-	name = "firearms locker";
-	icon_state = "sec_wall";
-	dir = 4;
-	pixel_x = -28
-	},
 /obj/item/stack/spacecash/c1000{
 	amount = 10;
 	dir = 8;
 	pixel_y = 3
+	},
+/obj/structure/closet/secure_closet/wall{
+	req_access_txt = "5";
+	icon_state = "sec_wall";
+	dir = 4;
+	pixel_x = -28;
+	req_access = list(
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -2704,35 +2702,18 @@
 	name = "ISV Kree-aaw Crew Quarters Air Alarm";
 	pixel_y = 25
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet/wall{
-	req_access = list(;
 	req_access_txt = "5";
-	name = "armor locker";
 	icon_state = "sec_wall";
 	dir = 8;
-	pixel_x = 28
+	pixel_x = 28;
+	req_access = list(
 	},
-/obj/item/stack/sheet/mineral/diamond/fifty{
-	icon_state = "sheet-diamond_3";
-	pixel_x = -3;
-	pixel_y = 4
-	},
-/obj/item/stack/sheet/mineral/diamond/fifty{
-	icon_state = "sheet-diamond_3";
-	pixel_x = -1;
-	pixel_y = -4
-	},
-/obj/item/stack/sheet/mineral/diamond/fifty{
-	icon_state = "sheet-diamond_3";
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/stack/sheet/mineral/diamond/fifty{
-	icon_state = "sheet-diamond_3";
-	pixel_x = 4;
-	pixel_y = -1
-	},
-/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/sheet/mineral/diamond/fifty,
+/obj/item/stack/sheet/mineral/diamond/fifty,
+/obj/item/stack/sheet/mineral/diamond/fifty,
+/obj/item/stack/sheet/mineral/diamond/fifty,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "dD" = (
@@ -2741,14 +2722,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
-	},
-/obj/structure/closet/secure_closet/wall{
-	req_access = list(;
-	req_access_txt = "5";
-	name = "clothing locker";
-	icon_state = "sec_wall";
-	dir = 8;
-	pixel_x = 28
 	},
 /obj/item/stack/sheet/mineral/gold/fifty{
 	icon_state = "sheet-gold_3";
@@ -2764,6 +2737,13 @@
 	icon_state = "sheet-gold_3";
 	pixel_x = 2;
 	pixel_y = -2
+	},
+/obj/structure/closet/secure_closet/wall{
+	req_access_txt = "5";
+	icon_state = "sec_wall";
+	dir = 8;
+	pixel_x = 28;
+	req_access = list(
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -3288,10 +3268,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/airlock/maintenance_hatch{
-	id = "voxxy"
-	},
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/maintenance_hatch{
+	id_tag = "voxxy"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "eh" = (
