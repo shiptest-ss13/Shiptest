@@ -10,6 +10,7 @@
 	var/obj/item/holosign_creator/projector
 	var/lifespan = 5 MINUTES
 	var/death_time
+	var/infinite = FALSE //for infinite holosigns
 
 	var/countdown_color
 	var/obj/effect/countdown/holosign/countdown
@@ -20,27 +21,30 @@
 		projector.signs += src
 	..()
 
-/obj/structure/holosign/Initialize(mapload, new_lifespan)
+/obj/structure/holosign/Initialize(mapload, source, new_lifespan)
 	. = ..()
 	alpha = 0
 	SSvis_overlays.add_vis_overlay(src, icon, icon_state, ABOVE_MOB_LAYER, plane, dir, add_appearance_flags = RESET_ALPHA) //you see mobs under it, but you hit them like they are above it
 
-	START_PROCESSING(SSobj, src)
+	if(!infinite)
+		START_PROCESSING(SSobj, src)
 
-	if(new_lifespan)
-		lifespan = new_lifespan
-	death_time = world.time + lifespan
-	countdown = new(src)
-	if(countdown_color)
-		countdown.color = countdown_color
-	countdown.start()
+		if(new_lifespan)
+			lifespan = new_lifespan
+		death_time = world.time + lifespan
+		countdown = new(src)
+		if(countdown_color)
+			countdown.color = countdown_color
+		countdown.start()
 
 /obj/structure/holosign/process()
-	if(death_time < (world.time + 60 SECONDS))
+	if(death_time < (world.time + 60 SECONDS) && death_time > (world.time + 58 SECONDS)) //there has to be a better way to get this to just trigger once
 		countdown.invisibility = 0
+		playsound(src, 'sound/machines/triple_beep.ogg', 50, TRUE)
 
 	if(death_time < world.time)
-		Destroy()
+		playsound(src, 'sound/effects/empulse.ogg', 50, TRUE)
+		qdel(src)
 
 /obj/structure/holosign/Destroy()
 	if(projector)
@@ -98,6 +102,7 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "holosign"
 	countdown_color = "#FCFF00"
+	lifespan = 2 MINUTES
 
 /obj/structure/holosign/barrier/wetsign/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
@@ -151,6 +156,7 @@
 	icon_state = "holo_medical"
 	countdown_color = "#82B9FF"
 	alpha = 125 //lazy :)
+	lifespan = 10 MINUTES
 	var/force_allaccess = FALSE
 	var/buzzcd = 0
 
@@ -228,3 +234,29 @@
 	M.electrocute_act(15,"Energy Barrier", flags = SHOCK_NOGLOVES)
 	shockcd = TRUE
 	addtimer(CALLBACK(src, .proc/cooldown), 5)
+
+/* Infinite Holosigns for admin/etc use */
+
+/obj/structure/holosign/wetsign/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/wetsign/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/engineering/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/atmos/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/cyborg/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/medical/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/cyborg/hacked/infinite
+	infinite = TRUE
