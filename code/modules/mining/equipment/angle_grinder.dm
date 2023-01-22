@@ -7,6 +7,8 @@
  *
  * code/game/atoms.dm (for the definition of deconstruct_act(mob/living/user, /obj/item/I)
  *
+ * code/game/objects/structures/salvaging.dm (waste panet salvagable machines)
+ *
  * code/game/turfs/closed/walls.dm
  * code/game/objects/structures/girders.dm
  * code/game/objects/structures/grille.dm
