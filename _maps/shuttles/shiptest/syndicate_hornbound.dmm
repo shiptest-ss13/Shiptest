@@ -152,20 +152,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/science)
-"dz" = (
-/obj/effect/turf_decal/corner/transparent/brown/border{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/brown/border{
-	dir = 8
-	},
-/obj/structure/closet/crate,
-/obj/item/circuitboard/computer/selling_pad_control,
-/obj/item/circuitboard/machine/selling_pad,
-/obj/item/stack/sheet/glass/five,
-/obj/item/stack/sheet/metal/five,
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
 "dK" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -1461,6 +1447,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Ou" = (
+/obj/effect/turf_decal/corner/transparent/brown/border{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/brown/border{
+	dir = 8
+	},
+/obj/structure/closet/crate,
+/obj/item/circuitboard/computer/selling_pad_control,
+/obj/item/circuitboard/machine/selling_pad,
+/obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/metal/five,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "ON" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/mono,
 /obj/machinery/door/airlock/security{
@@ -2022,7 +2022,7 @@ Wg
 KH
 Sc
 jU
-dz
+Ou
 Jr
 Gx
 CJ

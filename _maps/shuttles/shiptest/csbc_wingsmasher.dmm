@@ -136,6 +136,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/closet/crate,
+/obj/item/circuitboard/machine/selling_pad,
+/obj/item/circuitboard/computer/selling_pad_control,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo/starboard)
 "bB" = (
@@ -1609,10 +1612,10 @@
 /area/ship/engineering/engine)
 "Bj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/piratepad,
 /obj/effect/turf_decal/siding/brown/end{
 	dir = 8
 	},
+/obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo/starboard)
 "Bm" = (
@@ -1735,10 +1738,10 @@
 /area/ship/science)
 "DI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/piratepad_control{
+/obj/effect/turf_decal/siding/brown/end{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/brown/end{
+/obj/structure/frame/computer{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
