@@ -120,6 +120,15 @@
 	head = /obj/item/clothing/head/aclfcap
 	suit = /obj/item/clothing/suit/aclf
 
+/datum/outfit/job/captain/syndicate/cybersun
+	name = "Cybersun Commander"
+
+	uniform = /obj/item/clothing/under/suit/black_really
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/HoS/syndicate
+	gloves = /obj/item/clothing/gloves/combat
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
+
 /datum/outfit/job/captain/minutemen
 	name = "Captain (Colonial Minutemen)"
 
@@ -165,3 +174,33 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/clothing/accessory/medal/gold/captain=1, /obj/item/stack/spacecash/c10000=1)
+
+/datum/outfit/job/captain/inteq
+	name = "IRMG Vanguard (Inteq)"
+
+	ears = /obj/item/radio/headset/inteq/alt/captain
+	uniform = /obj/item/clothing/under/syndicate/inteq
+	head = /obj/item/clothing/head/beret/sec/hos/inteq
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	belt = /obj/item/storage/belt/security/webbing/inteq
+	suit = /obj/item/clothing/suit/armor/hos/inteq
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	r_pocket = /obj/item/assembly/flash/handheld
+	l_pocket = /obj/item/restraints/handcuffs
+	accessory = null
+
+	courierbag = /obj/item/storage/backpack/messenger/inteq
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/captain)
+
+/datum/outfit/job/captain/inteq/naked
+	name = "IRMG Vanguard (Inteq) (Naked)"
+	head = null
+	mask = null
+	glasses = null
+	belt = null
+	suit = null
+	gloves = null
+	suit_store = null
