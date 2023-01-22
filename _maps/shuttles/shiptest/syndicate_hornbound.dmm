@@ -81,6 +81,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/item/stack/cable_coil/yellow,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "bl" = (
@@ -205,9 +206,7 @@
 /area/ship/bridge)
 "eD" = (
 /obj/effect/turf_decal/corner/transparent/brown/full,
-/obj/machinery/piratepad,
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "eV" = (
@@ -1243,7 +1242,7 @@
 /area/ship/bridge)
 "IQ" = (
 /obj/effect/turf_decal/corner/transparent/brown/full,
-/obj/machinery/computer/piratepad_control,
+/obj/structure/frame/computer,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Jj" = (
@@ -1279,6 +1278,7 @@
 /obj/effect/turf_decal/corner/transparent/brown/border{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "JA" = (
@@ -1414,6 +1414,21 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"No" = (
+/obj/effect/turf_decal/corner/transparent/brown/border{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/brown/border{
+	dir = 8
+	},
+/obj/structure/closet/crate,
+/obj/item/circuitboard/computer/selling_pad_control,
+/obj/item/circuitboard/machine/selling_pad,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/metal/five,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "Nt" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
@@ -1553,6 +1568,7 @@
 	dir = 4
 	},
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "Sc" = (
@@ -2006,7 +2022,7 @@ Wg
 KH
 Sc
 jU
-jU
+No
 Jr
 Gx
 CJ
