@@ -1137,13 +1137,6 @@
 	},
 /turf/open/floor/light,
 /area/ruin/space/has_grav/spacemall/shop2)
-"en" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1
-	},
-/obj/structure/window/fulltile,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/spacemall)
 "ep" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1531,6 +1524,10 @@
 /obj/effect/turf_decal/corner/transparent/lime,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
+"fE" = (
+/obj/effect/mob_spawn/human/corpse/frontier,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall)
 "fF" = (
 /obj/structure/table/wood,
 /obj/machinery/paystand,
@@ -3413,15 +3410,6 @@
 	},
 /turf/open/floor/eighties,
 /area/ruin/space/has_grav/spacemall/shop2)
-"mS" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/spacemall/shuttle)
 "mT" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Executive Office"
@@ -4897,9 +4885,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall)
 "rU" = (
-/obj/structure/sign/poster/official/nanomichi_ad{
-	pixel_y = -30
-	},
 /obj/structure/chair/sofa{
 	dir = 1
 	},
@@ -7591,6 +7576,7 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "Cd" = (
 /obj/structure/bedsheetbin,
+/obj/structure/table,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "Cn" = (
@@ -7782,7 +7768,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "CM" = (
 /obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
+/obj/structure/window/reinforced/fulltile/indestructable,
 /turf/open/floor/plating{
 	light_range = 3
 	},
@@ -8076,6 +8062,11 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/maint)
+"DA" = (
+/obj/structure/bed/roller,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall)
 "DC" = (
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/structure/chair/plastic,
@@ -9159,7 +9150,7 @@
 /area/ruin/space/has_grav/spacemall)
 "Hv" = (
 /obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
+/obj/structure/window/reinforced/fulltile/indestructable,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "Hy" = (
@@ -10401,6 +10392,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
+"Mn" = (
+/obj/item/storage/firstaid/toxin,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/spacemall)
 "Mp" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -10737,9 +10732,7 @@
 	dir = 9;
 	network = list("mall")
 	},
-/obj/machinery/power/apc/auto_name/east{
-	start_charge = 0
-	},
+/obj/machinery/power/apc/auto_name/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -11019,6 +11012,11 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
+"Oo" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/indestructable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall/dorms)
 "Op" = (
 /obj/machinery/light{
 	dir = 8
@@ -11040,6 +11038,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/maint)
+"Os" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/indestructable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/spacemall)
 "Ot" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
@@ -13763,6 +13766,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/structure/table,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "YV" = (
@@ -14978,7 +14982,7 @@ Kh
 Kh
 Kh
 Kh
-bH
+Oo
 FO
 wH
 zc
@@ -15028,7 +15032,7 @@ Kh
 Kh
 Kh
 Kh
-bH
+Oo
 VX
 AC
 CI
@@ -15078,7 +15082,7 @@ Kh
 Kh
 Kh
 Kh
-bH
+Oo
 Pg
 wH
 aV
@@ -15226,7 +15230,7 @@ Kh
 (24,1,1) = {"
 Kh
 Kh
-pH
+Os
 bP
 bw
 yt
@@ -15275,8 +15279,8 @@ Kh
 "}
 (25,1,1) = {"
 Kh
-pH
-pH
+Os
+Os
 eP
 UW
 dO
@@ -15320,12 +15324,12 @@ tZ
 jS
 Wf
 bP
-pH
+Os
 Kh
 "}
 (26,1,1) = {"
-pH
-pH
+Os
+Os
 UW
 UW
 qO
@@ -15370,11 +15374,11 @@ Uo
 EQ
 rq
 rf
-pH
-pH
+Os
+Os
 "}
 (27,1,1) = {"
-pH
+Os
 UW
 dO
 CX
@@ -15421,10 +15425,10 @@ av
 yS
 HB
 rf
-pH
+Os
 "}
 (28,1,1) = {"
-pH
+Os
 UW
 qO
 XO
@@ -15469,12 +15473,12 @@ UW
 tZ
 uc
 TG
-Eu
 rf
-pH
+rf
+Os
 "}
 (29,1,1) = {"
-pH
+Os
 UW
 XT
 ZA
@@ -15520,11 +15524,11 @@ tZ
 aE
 hu
 rf
-rf
-pH
+Mn
+Os
 "}
 (30,1,1) = {"
-pH
+Os
 UW
 LK
 VV
@@ -15570,11 +15574,11 @@ tZ
 qF
 jU
 fy
-rf
-pH
+DA
+Os
 "}
 (31,1,1) = {"
-pH
+Os
 UW
 UW
 nn
@@ -15619,13 +15623,13 @@ UW
 Yc
 tG
 IV
-en
+bu
 rf
-pH
+Os
 "}
 (32,1,1) = {"
-pH
-pH
+Os
+Os
 UW
 UW
 LK
@@ -15669,14 +15673,14 @@ sX
 RX
 MH
 jz
-rf
-pH
-pH
+fE
+Os
+Os
 "}
 (33,1,1) = {"
 Kh
-pH
-pH
+Os
+Os
 kh
 UW
 UW
@@ -15719,14 +15723,14 @@ Ye
 tZ
 BO
 TG
-pH
-pH
+Os
+Os
 Kh
 "}
 (34,1,1) = {"
 Kh
 Kh
-pH
+Os
 Xb
 pe
 gp
@@ -15769,7 +15773,7 @@ Cy
 Cy
 Cy
 vF
-pH
+Os
 Kh
 Kh
 "}
@@ -16933,7 +16937,7 @@ Kh
 xN
 Wi
 Wi
-mS
+Wi
 Wi
 xN
 Kh
