@@ -54,6 +54,14 @@
 /obj/machinery/door/window/westright{
 	dir = 1
 	},
+/obj/docking_port/mobile{
+	callTime = 250;
+	launch_status = 0;
+	name = "Tablet-class";
+	port_direction = 8;
+	dir = 2;
+	preferred_direction = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/construction)
 "r" = (
