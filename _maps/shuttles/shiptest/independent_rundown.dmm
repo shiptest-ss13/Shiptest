@@ -234,6 +234,13 @@
 	},
 /turf/open/floor/holofloor/wood,
 /area/ship/bridge)
+"gl" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "gv" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -270,10 +277,6 @@
 /obj/structure/window/reinforced/spawner/east,
 /turf/open/floor/plating/rust,
 /area/ship/engineering/atmospherics)
-"hn" = (
-/obj/machinery/rnd/production/circuit_imprinter,
-/turf/open/floor/plasteel/dark,
-/area/ship/science)
 "hs" = (
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
@@ -522,12 +525,6 @@
 /turf/open/floor/plasteel,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
-"nl" = (
-/obj/machinery/shower{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew)
 "nE" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
@@ -559,13 +556,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
-"op" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering)
 "os" = (
 /obj/machinery/mineral/ore_redemption,
 /obj/machinery/light{
@@ -592,6 +582,11 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"oZ" = (
+/obj/structure/table,
+/obj/item/areaeditor/shuttle,
+/turf/open/floor/carpet/royalblack,
+/area/ship/bridge)
 "pi" = (
 /obj/effect/decal/cleanable/greenglow,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -715,10 +710,10 @@
 	},
 /turf/open/floor/holofloor/wood,
 /area/ship/bridge)
-"rp" = (
-/obj/structure/table,
-/turf/open/floor/carpet/royalblack,
-/area/ship/bridge)
+"rn" = (
+/obj/machinery/rnd/destructive_analyzer,
+/turf/open/floor/plasteel/dark,
+/area/ship/science)
 "rC" = (
 /obj/structure/table,
 /obj/item/storage/bag/ore,
@@ -979,7 +974,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "wS" = (
-/obj/machinery/rnd/destructive_analyzer,
+/obj/machinery/rnd/production/protolathe,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "wV" = (
@@ -1019,6 +1014,10 @@
 "xC" = (
 /turf/closed/wall/r_wall,
 /area/ship/medical)
+"xF" = (
+/obj/machinery/rnd/production/circuit_imprinter,
+/turf/open/floor/plasteel/dark,
+/area/ship/science)
 "xQ" = (
 /obj/item/circuitboard/computer/selling_pad_control,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -1053,6 +1052,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ship/science)
+"yD" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
 "yI" = (
 /obj/structure/frame/computer{
 	dir = 1
@@ -1297,6 +1302,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"Dv" = (
+/obj/structure/table,
+/turf/open/floor/carpet/royalblack,
+/area/ship/bridge)
 "Dx" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/plasteel,
@@ -1544,6 +1553,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
+"HU" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "HX" = (
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1570,10 +1586,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "IK" = (
-/obj/structure/table,
-/obj/item/areaeditor/shuttle,
-/turf/open/floor/carpet/royalblack,
-/area/ship/bridge)
+/obj/structure/tank_dispenser,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/atmospherics)
 "IL" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1996,10 +2011,6 @@
 /obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/crew/canteen)
-"PE" = (
-/obj/structure/tank_dispenser,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/atmospherics)
 "PJ" = (
 /obj/structure/table_frame,
 /turf/open/floor/plasteel/patterned/brushed,
@@ -2030,10 +2041,6 @@
 /obj/item/pipe_dispenser,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
-"Qs" = (
-/obj/machinery/rnd/production/protolathe,
-/turf/open/floor/plasteel/dark,
-/area/ship/science)
 "Qv" = (
 /obj/machinery/door/airlock/atmos/glass,
 /turf/open/floor/plasteel/dark,
@@ -2367,13 +2374,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"Xm" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/engineering)
 "Xr" = (
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
@@ -2755,8 +2755,8 @@ XX
 dV
 Si
 Ai
-op
-Xm
+gl
+HU
 SV
 Vc
 fL
@@ -2965,7 +2965,7 @@ cW
 NA
 Fo
 LP
-PE
+IK
 yq
 XB
 XB
@@ -3031,7 +3031,7 @@ NL
 "}
 (19,1,1) = {"
 yP
-wS
+rn
 Ze
 KT
 Fz
@@ -3118,7 +3118,7 @@ NL
 "}
 (22,1,1) = {"
 yP
-Qs
+wS
 Ze
 KT
 Jo
@@ -3147,7 +3147,7 @@ NL
 "}
 (23,1,1) = {"
 yP
-hn
+xF
 Ze
 KT
 Ze
@@ -3342,7 +3342,7 @@ Cv
 uv
 Du
 Jx
-nl
+yD
 LI
 NL
 NL
@@ -3476,11 +3476,11 @@ sm
 hs
 Ec
 XL
-IK
+oZ
 Ph
 mJ
 Zn
-rp
+Dv
 qY
 py
 ga
