@@ -1,0 +1,17 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Tablet-class Debt Shuttle",
+	"prefix": "SV",
+	"namelists": ["GENERAL", "SPACE", "NATURAL", "MERCANTILE"],
+	"map_short_name": "Tablet-class",
+	"map_path": "_maps/shuttles/shiptest/independent_tablet.dmm",
+	"roundstart": true,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/western",
+			"officer": true,
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
