@@ -1371,6 +1371,7 @@
 		/obj/item/clothing/head/maidheadband/syndicate = 1,
 		/obj/item/clothing/under/syndicate/skirt/maid = 1,
 		/obj/item/clothing/gloves/combat/maid = 1,)
+	generate_items_inside(items_inside,src)
 
 // because i have no idea where the fuck to put this
 /obj/item/storage/box/maid
