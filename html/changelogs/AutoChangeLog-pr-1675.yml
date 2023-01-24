@@ -1,9 +1,0 @@
-author: SapphicOverload
-delete-after: true
-changes:
-  - tweak: increased hotspot exposed volume of igniters to 2500
-  - bugfix: fixes hotspots not starting fires when the exposed volume is over 2375
-      liters
-  - bugfix: fixes hotspots making the air colder when the exposed volume is 2375 liters
-      or less
-  - bugfix: prevents hotspots from causing fusion to happen twice in a single tick
