@@ -496,11 +496,11 @@
 	name = "Mecha Conversion Kit"
 	desc = "A perfectly generic conversion kit for a perfectly generic mecha. How did you even get this?"
 	icon_state = "ripleyupgrade"
-	var/source_mech = null
+	var/source_mech = list(null) //must be a list due to the mining ripley existing
 	var/result_mech = null
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/can_attach(obj/mecha/M)
-	if(M.type != source_mech)
+	if (!(M.type in source_mech))
 		to_chat(loc, "<span class='warning'>This conversion kit can not be applied to this model.</span>")
 		return FALSE
 	if(M.type == /obj/mecha/working/ripley)
@@ -511,7 +511,7 @@
 	if(!M.maint_access) //non-removable upgrade, so lets make sure the pilot or owner has their say.
 		to_chat(loc, "<span class='warning'>[M] must have maintenance protocols active in order to allow this conversion kit.</span>")
 		return FALSE
-	if(M.occupant) //We're actualy making a new mech and swapping things over, it might get weird if players are involved
+	if(M.occupant) //We're actually making a new mech and swapping things over, it might get weird if players are involved
 		to_chat(loc, "<span class='warning'>[M] must be unoccupied before this conversion kit can be applied.</span>")
 		return FALSE
 	if(!M.cell) //Turns out things break if the cell is missing
@@ -559,18 +559,19 @@
 	name = "Ripley MK-II Conversion Kit"
 	desc = "A pressurized canopy attachment kit for an Autonomous Power Loader Unit \"Ripley\" MK-I mecha, to convert it to the slower, but space-worthy MK-II design. This kit cannot be removed, once applied."
 	icon_state = "ripleyupgrade"
-	source_mech = /obj/mecha/working/ripley
+	source_mech = list(/obj/mecha/working/ripley, /obj/mecha/working/ripley/mining)
 	result_mech = /obj/mecha/working/ripley/mkii
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/cmm
 	name = "CMM Ripley MK-IV Conversion Kit"
 	desc = "A CMM-custom lightweight canopy kit for an Autonomous Power Loader Unit \"Ripley\" MK-I mecha, to convert it to the mobile and spaceworthy Mk-IV design. This kit cannot be removed, once applied."
 	icon_state = "cmmupgrade"
+	source_mech = list(/obj/mecha/working/ripley, /obj/mecha/working/ripley/mining)
 	result_mech = /obj/mecha/working/ripley/cmm
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
 	name = "CMM Paladin Conversion Kit"
 	desc = "A CMM-custom conversion kit for a Durand combat exosuit, to convert it to the specialized Paladin anti-xenofauna exosuit."
 	icon_state = "cmmupgrade"
-	source_mech = /obj/mecha/combat/durand
+	source_mech = list(/obj/mecha/combat/durand)
 	result_mech = /obj/mecha/combat/durand/cmm
