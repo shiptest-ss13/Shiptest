@@ -7,7 +7,7 @@
  *
  * code/game/atoms.dm (for the definition of deconstruct_act(mob/living/user, /obj/item/I)
  *
- * code/game/objects/structures/salvaging.dm (waste panet salvagable machines)
+ * code/game/objects/structures/salvaging.dm (waste planet salvagable machines)
  *
  * code/game/turfs/closed/walls.dm
  * code/game/objects/structures/girders.dm
@@ -21,6 +21,12 @@
  * code/game/objects/structures/bed_chairs/bed.dm
  * code/game/objects/structures/bed_chairs/chair.dm
 */
+
+// Config, comments shits out to disable features
+#define ANGLEGRINDER_MACHINE_SALVAGE
+#define ANGLEGRINDER_OPEN_CLOSET
+
+
 /obj/item/anglegrinder
 	name = "angle grinder"
 	desc = "A powerfull tool to salvage about anything. You better wear some protection tough"
