@@ -105,12 +105,14 @@
 	crate_name = "tank transfer valve crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 
+#ifdef ANGLEGRINDER_OUTPOST
 /datum/supply_pack/tools/anglegrinder
 	name = "Angle Grinder"
 	desc = "Contain one angle grinder, a tool used for quick structure deconstruction and salvaging"
 	cost = 300 // really cheap, will probably change for the final version
 	contains = list(/obj/item/anglegrinder)
 	crate_name = "Angle Grinder"
+#endif
 
 /*
 		Liquid tanks

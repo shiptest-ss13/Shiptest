@@ -25,6 +25,7 @@
 // Config, comments shits out to disable features
 #define ANGLEGRINDER_MACHINE_SALVAGE
 #define ANGLEGRINDER_OPEN_CLOSET
+#define ANGLEGRINDER_OUTPOST
 
 
 /obj/item/anglegrinder
