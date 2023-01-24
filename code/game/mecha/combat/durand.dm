@@ -14,6 +14,12 @@
 	var/obj/durand_shield/shield
 
 
+/obj/mecha/combat/durand/cmm
+	desc = "An aging combat exosuit appropriated from abandoned Nanotrasen facilities, now supplied to the CMM-BARD anti-xenofauna division."
+	name = "\improper Paladin"
+	icon_state = "cmmdurand"
+	wreckage = /obj/structure/mecha_wreckage/durand/cmm
+
 /obj/mecha/combat/durand/Initialize()
 	. = ..()
 	shield = new /obj/durand_shield(loc, src, layer, dir)

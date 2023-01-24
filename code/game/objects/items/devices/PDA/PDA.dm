@@ -238,7 +238,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 					dat += text("ID: <A href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]   <a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update PDA Info" : ""]</a><br><br>")
 
 				dat += "[worldtime2text()]<br>" //:[world.time / 100 % 6][world.time / 100 % 10]"
-				dat += "[time2text(world.realtime, "MMM DD")] [GLOB.year_integer+540]"
+				dat += "[time2text(world.realtime, "MMM DD")] 504 FS"
 				dat += "<br><br>"
 				dat += "<h4>General Functions</h4>"
 				dat += "<ul>"
@@ -590,8 +590,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 //EXTRA FUNCTIONS===================================
 
-	if(mode == 2 || mode == 21)//To clear message overlays.
-		update_icon()
+	cut_overlay(icon_alert) //To clear message overlays.
 
 	if((honkamt > 0) && (prob(60)))//For clown virus.
 		honkamt--

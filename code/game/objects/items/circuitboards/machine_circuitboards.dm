@@ -293,6 +293,16 @@
 		/obj/item/stack/sheet/mineral/uranium = 10,
 		/obj/item/stack/sheet/mineral/plasma = 5)
 
+/obj/item/circuitboard/machine/rtg/geothermal
+	name = "Geothermal Power Tap"
+	build_path = /obj/machinery/power/rtg/geothermal
+	req_components = list(
+	/obj/item/pickaxe/drill = 1,
+	/obj/item/stack/cable_coil = 10,
+	/obj/item/stock_parts/capacitor = 2,
+	/obj/item/stock_parts/micro_laser = 1,
+	/obj/item/stock_parts/manipulator = 4)
+
 /obj/item/circuitboard/machine/scanner_gate
 	name = "Scanner Gate (Machine Board)"
 	icon_state = "engineering"
@@ -390,8 +400,20 @@
 	needs_anchored = FALSE
 
 /obj/item/circuitboard/machine/shieldwallgen/atmos
-	name = "Atmospheric Holowall Generator (Machine Board)"
+	name = "Atmospheric Holofield Generator (Machine Board)"
 	build_path = /obj/machinery/power/shieldwallgen/atmos
+
+/obj/item/circuitboard/machine/shieldwallgen/atmos/strong
+	name = "High Power Atmospheric Holofield Generator (Machine Board)"
+	build_path = /obj/machinery/power/shieldwallgen/atmos/strong
+	req_components = list(
+		/obj/item/stock_parts/manipulator/nano = 2,
+		/obj/item/stock_parts/micro_laser/high = 2,
+		/obj/item/stock_parts/capacitor/adv = 2,
+		/obj/item/stack/sheet/plasmaglass = 1,
+		/obj/item/stack/cable_coil = 5,
+	)
+
 
 /obj/item/circuitboard/machine/pipedispenser
 	name = "Pipe dispenser (Machine Board)"
@@ -1104,6 +1126,11 @@
 	icon_state = "security"
 	build_path = /obj/machinery/rnd/production/protolathe/department/security
 
+/obj/item/circuitboard/machine/protolathe/department/ballistics
+	name = "Protolathe (Machine Board) - Ballistics"
+	icon_state = "security"
+	build_path = /obj/machinery/rnd/production/protolathe/department/ballistics
+
 /obj/item/circuitboard/machine/recharger
 	name = "Weapon Recharger (Machine Board)"
 	icon_state = "security"
@@ -1448,6 +1475,12 @@
 	build_path = /obj/machinery/power/shuttle/engine/liquid/oil
 	req_components = list(/obj/item/reagent_containers/glass/beaker = 4,
 		/obj/item/stock_parts/micro_laser = 2)
+
+/obj/item/circuitboard/machine/shuttle/engine/beer
+	name = "Beer Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/liquid/beer
+	req_components = list(/obj/item/reagent_containers/food/drinks/beer = 4,
+		/obj/item/stock_parts/micro_laser =  2)
 
 /obj/item/circuitboard/machine/shuttle/engine/void
 	name = "Void Thruster (Machine Board)"

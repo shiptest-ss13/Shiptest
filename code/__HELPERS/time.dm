@@ -93,3 +93,7 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
 
 /proc/daysSince(realtimev)
 	return round((world.realtime - realtimev) / (24 HOURS))
+
+/// Returns the time in an ISO-8601 friendly format. Used when dumping data into external services such as ElasticSearch
+/proc/iso_timestamp(timevar)
+	return time2text(timevar || world.timeofday, "YYYY-MM-DDThh:mm:ss")

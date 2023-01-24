@@ -373,7 +373,7 @@
 
 /obj/item/clothing/suit/nerdshirt
 	name = "gamer shirt"
-	desc = "A baggy shirt with vintage game character Phanic the Weasel. Why would anyone wear this?"
+	desc = "A baggy shirt with vintage game character Super Weasel Kid. Why would anyone wear this?"
 	icon_state = "nerdshirt"
 	item_state = "nerdshirt"
 
@@ -617,6 +617,15 @@
 /obj/item/clothing/head/hooded/winterhood/medical
 	icon_state = "winterhood_medical"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 0, "acid" = 45)
+
+/obj/item/clothing/suit/hooded/wintercoat/medical/paramedic
+	name = "paramedic winter coat"
+	icon_state = "coatparamedic"
+	item_state = "coatparamedic"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical/paramedic
+
+/obj/item/clothing/head/hooded/winterhood/medical/paramedic
+	icon_state = "winterhood_paramedic"
 
 /obj/item/clothing/suit/hooded/wintercoat/science
 	name = "science winter coat"

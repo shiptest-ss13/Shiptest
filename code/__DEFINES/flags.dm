@@ -41,6 +41,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define RAD_PROTECT_CONTENTS_1 (1 << 17)
 /// should this object be allowed to be contaminated
 #define RAD_NO_CONTAMINATE_1 (1 << 18)
+///Use when this shouldn't be obscured by large icons, like trees.
+#define SHOW_BEHIND_LARGE_ICONS_1 (1<<12)
 /// Should we use the initial icon for display? Mostly used by overlay only objects
 #define HTML_USE_INITAL_ICON_1 (1<<20)
 
@@ -127,10 +129,13 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define ZAP_OBJ_DAMAGE (1<<2)
 #define ZAP_MOB_DAMAGE (1<<3)
 #define ZAP_MOB_STUN (1<<4)
+#define ZAP_GIVES_RESEARCH (1<<5)
 
-#define ZAP_DEFAULT_FLAGS ALL
+#define ZAP_DEFAULT_FLAGS ZAP_MACHINE_EXPLOSIVE | ZAP_ALLOW_DUPLICATES | ZAP_OBJ_DAMAGE | ZAP_MOB_DAMAGE | ZAP_MOB_STUN
 #define ZAP_FUSION_FLAGS ZAP_OBJ_DAMAGE | ZAP_MOB_DAMAGE | ZAP_MOB_STUN
-#define ZAP_SUPERMATTER_FLAGS NONE
+
+#define ZAP_SUPERMATTER_FLAGS ZAP_GIVES_RESEARCH
+#define ZAP_TESLA_FLAGS ZAP_DEFAULT_FLAGS | ZAP_GIVES_RESEARCH
 
 //EMP protection
 #define EMP_PROTECT_SELF (1<<0)

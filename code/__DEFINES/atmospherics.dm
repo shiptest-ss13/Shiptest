@@ -202,7 +202,8 @@
 #define KITCHEN_COLDROOM_ATMOS "o2=33;n2=124;TEMP=193.15"
 /// used in the holodeck burn test program
 #define BURNMIX_ATMOS "o2=2500;plasma=5000;TEMP=370"
-
+/// used in rockplanet
+#define ROCKPLANET_DEFAULT_ATMOS "co2=95;n2=3;TEMP=210.15"
 //ATMOSPHERICS DEPARTMENT GAS TANK TURFS
 #define ATMOS_TANK_N2O "n2o=6000;TEMP=293.15"
 #define ATMOS_TANK_CO2 "co2=50000;TEMP=293.15"
@@ -210,6 +211,7 @@
 #define ATMOS_TANK_O2 "o2=100000;TEMP=293.15"
 #define ATMOS_TANK_N2 "n2=100000;TEMP=293.15"
 #define ATMOS_TANK_AIRMIX "o2=2644;n2=10580;TEMP=293.15"
+#define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
 
 //LAVALAND
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland

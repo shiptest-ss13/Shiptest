@@ -60,7 +60,7 @@
 	uniform = /obj/item/clothing/under/solgov
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/beret/solgov
-	suit = /obj/item/clothing/suit/armor/vest/solgov/rep
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov/rep
 
 /datum/outfit/job/warden/chiefmastersergeant
 	name = "Chief Master Sergeant"
@@ -76,7 +76,7 @@
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/cowboy/sec/minutemen
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	belt = /obj/item/storage/belt/military
 	shoes = /obj/item/clothing/shoes/combat
 
@@ -94,6 +94,24 @@
 	belt = /obj/item/storage/belt/military/minutemen
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/gun/energy/e_gun/advtaser=1)
+
+/datum/outfit/job/warden/inteq
+	name = "Master At Arms (Inteq)"
+
+	ears = /obj/item/radio/headset/inteq/alt
+	uniform = /obj/item/clothing/under/syndicate/inteq
+	head = /obj/item/clothing/head/beret/sec/hos/inteq
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	belt = /obj/item/storage/belt/military/assault
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	suit_store = /obj/item/gun/energy/disabler
+
+	courierbag = /obj/item/storage/backpack/messenger/inteq
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/warden)
 
 /datum/outfit/job/warden/nanotrasen
 	name = "Warden (Nanotrasen)"

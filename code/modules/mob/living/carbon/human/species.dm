@@ -46,6 +46,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/grad_style
 	///The gradient color used to color the gradient.
 	var/grad_color
+	///The color used for the "white" of the eye, if the eye has one.
+	var/sclera_color = "e8e8e8"
 
 	///Does the species use skintones or not? As of now only used by humans.
 	var/use_skintones = FALSE
@@ -87,6 +89,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/coldmod = 1
 	///multiplier for damage from hot temperature
 	var/heatmod = 1
+	///multiplier for stamina damage
+	var/staminamod = 1
 	///multiplier for stun durations
 	var/stunmod = 1
 	///Type of damage attack does. Ethereals attack with burn damage for example.
@@ -462,6 +466,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		for(var/obj/item/bodypart/head/head in C.bodyparts)
 			head.mouth = FALSE
 
+	if(SCLERA in species_traits)
+		var/obj/item/organ/eyes/eyes = C.getorganslot(ORGAN_SLOT_EYES)
+		eyes.sclera_color = sclera_color
+
 	for(var/X in inherent_traits)
 		ADD_TRAIT(C, X, SPECIES_TRAIT)
 
@@ -730,15 +738,30 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		// eyes
 		if(!(NOEYESPRITES in species_traits))
-			var/obj/item/organ/eyes/E = H.getorganslot(ORGAN_SLOT_EYES)
+			var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 			var/mutable_appearance/eye_overlay
-			if(!E)
-				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', "eyes_missing", -BODY_LAYER)
-			else
-				eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', E.eye_icon_state, -BODY_LAYER)
-			if((EYECOLOR in species_traits) && E)
-				eye_overlay.color = "#" + H.eye_color
-			standing += eye_overlay
+			var/mutable_appearance/sclera_overlay
+			if(eyes)
+				if(!HAS_TRAIT(H, TRAIT_EYESCLOSED) && !(H.stat == DEAD))
+					eye_overlay = mutable_appearance(species_eye_path || 'icons/mob/human_face.dmi', eyes.eye_icon_state, -BODY_LAYER)
+					sclera_overlay = mutable_appearance('icons/mob/human_face.dmi', eyes.sclera_icon_state, -BODY_LAYER)
+					if((EYECOLOR in species_traits) && eyes)
+						eye_overlay.color = "#" + H.eye_color
+					if((SCLERA in species_traits) && eyes)
+						sclera_overlay.color = "#" + H.sclera_color
+						standing += sclera_overlay
+					standing += eye_overlay
+		if(EMOTE_OVERLAY in species_traits)
+			// blush
+			if (HAS_TRAIT(H, TRAIT_BLUSHING)) // Caused by either the *blush emote or the "drunk" mood event
+				var/mutable_appearance/blush_overlay = mutable_appearance('icons/mob/human_face.dmi', "blush", -BODY_ADJ_LAYER) //should appear behind the eyes
+				blush_overlay.color = COLOR_BLUSH_PINK
+				standing += blush_overlay
+
+			// snore
+			if (HAS_TRAIT(H, TRAIT_SNORE)) // Caused by the snore emote
+				var/mutable_appearance/snore_overlay = mutable_appearance('icons/mob/human_face.dmi', "snore", BODY_ADJ_LAYER) //should appear behind the eyes
+				standing += snore_overlay
 
 	//Underwear, Undershirts & Socks
 	if(!(NO_UNDERWEAR in species_traits))
@@ -895,6 +918,20 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["vox_neck_quills"] || H.dna.features["vox_neck_quills"] == "None")
 			bodyparts_to_add -= "vox_neck_quills"
 
+	if("elzu_horns" in mutant_bodyparts)
+		if(!H.dna.features["elzu_horns"] || H.dna.features["elzu_horns"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
+			bodyparts_to_add -= "elzu_horns"
+
+	if("tail_elzu" in mutant_bodyparts)
+		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+			bodyparts_to_add -= "tail_elzu"
+
+	if("waggingtail_elzu" in mutant_bodyparts)
+		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+			bodyparts_to_add -= "waggingtail_elzu"
+		else if ("tail_elzu" in mutant_bodyparts)
+			bodyparts_to_add -= "waggingtail_elzu"
+
 ////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE
 	///Digi handling
 	if(H.dna.species.bodytype & BODYTYPE_DIGITIGRADE)
@@ -995,16 +1032,22 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.vox_head_quills_list[H.dna.features["vox_head_quills"]]
 				if("vox_neck_quills")
 					S = GLOB.vox_neck_quills_list[H.dna.features["vox_neck_quills"]]
+				if("elzu_horns")
+					S = GLOB.elzu_horns_list[H.dna.features["elzu_horns"]]
+				if("tail_elzu")
+					S = GLOB.tails_list_elzu[H.dna.features["tail_elzu"]]
+				if("waggingtail_elzu")
+					S = GLOB.animated_tails_list_elzu[H.dna.features["tail_elzu"]]
 			if(!S || S.icon_state == "none")
 				continue
 
 			var/mutable_appearance/accessory_overlay = mutable_appearance(S.icon, layer = -layer)
 
-			//A little rename so we don't have to use tail_lizard or tail_human when naming the sprites.
+			//A little rename so we don't have to use tail_lizard, tail_human, or tail_elzu when naming the sprites.
 			accessory_overlay.alpha = S.image_alpha
-			if(bodypart == "tail_lizard" || bodypart == "tail_human")
+			if(bodypart == "tail_lizard" || bodypart == "tail_human" || bodypart == "tail_elzu")
 				bodypart = "tail"
-			else if(bodypart == "waggingtail_lizard" || bodypart == "waggingtail_human")
+			else if(bodypart == "waggingtail_lizard" || bodypart == "waggingtail_human" || bodypart == "waggingtail_elzu")
 				bodypart = "waggingtail"
 
 			if(S.gender_specific)
@@ -1785,7 +1828,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.clone_mod
 			H.adjustCloneLoss(damage_amount)
 		if(STAMINA)
-			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.stamina_mod
+			var/damage_amount = forced ? damage : damage * hit_percent * staminamod * H.physiology.stamina_mod
 			if(BP)
 				if(BP.receive_damage(0, 0, damage_amount))
 					H.update_stamina()
@@ -2113,7 +2156,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	return (locate(/obj/item/organ/tail) in H.internal_organs)
 
 /datum/species/proc/is_wagging_tail(mob/living/carbon/human/H)
-	return ("waggingtail_human" in mutant_bodyparts) || ("waggingtail_lizard" in mutant_bodyparts)
+	return ("waggingtail_human" in mutant_bodyparts) || ("waggingtail_lizard" in mutant_bodyparts) || ("waggingtail_elzu" in mutant_bodyparts)
 
 /datum/species/proc/start_wagging_tail(mob/living/carbon/human/H)
 	if("tail_human" in mutant_bodyparts)
@@ -2125,6 +2168,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		mutant_bodyparts -= "spines"
 		mutant_bodyparts |= "waggingtail_lizard"
 		mutant_bodyparts |= "waggingspines"
+
+	else if("tail_elzu" in mutant_bodyparts)
+		mutant_bodyparts -= "tail_elzu"
+		mutant_bodyparts |= "waggingtail_elzu"
 
 	H.update_body()
 
@@ -2138,6 +2185,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		mutant_bodyparts -= "waggingspines"
 		mutant_bodyparts |= "tail_lizard"
 		mutant_bodyparts |= "spines"
+
+	else if("waggingtail_elzu" in mutant_bodyparts)
+		mutant_bodyparts -= "waggingtail_elzu"
+		mutant_bodyparts |= "tail_elzu"
 
 	H.update_body()
 
