@@ -20,7 +20,7 @@
 //toilet =)
 
 /obj/structure/toilet/secret/mimir
-	secret_type = "/obj/item/storage/backpack/satchel/flat/mimir_transfer"
+	secret_type = /obj/item/storage/backpack/satchel/flat/mimir_transfer
 
 
 //doors

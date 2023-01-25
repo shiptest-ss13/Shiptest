@@ -4038,6 +4038,7 @@
 /area/ship/crew/dorm)
 "Cx" = (
 /obj/structure/closet/wardrobe/pjs,
+/obj/item/clothing/mask/spamton,
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
 "Cy" = (
@@ -4411,7 +4412,6 @@
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "ET" = (
-/obj/structure/closet/secure_closet/medical2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -4422,6 +4422,13 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/structure/closet/secure_closet{
+	name = "Aneasthetics Closet"
+	},
+/obj/item/tank/internals/anesthetic,
+/obj/item/tank/internals/anesthetic,
+/obj/item/clothing/mask/breath/medical,
+/obj/item/clothing/mask/breath/medical,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "EU" = (
