@@ -39,11 +39,11 @@
 
 /obj/item/paper/fluff/mimir/treasure
 	name = "Bluejack's Note"
-	info = "To whomever finds this note. I hope your transfer goes better than mine.\
-	I've left behind some things that may find you in better spirits. The first of them\
-	a bag found where low quality spirits are made by the condemned. The second, a bag\
-	found under my seat of chance and uncanny luck. Finally the final bag can be found\
-	in the north east quarter of the square of nine lives. I wish you luck, and hope your\
+	info = "To whomever finds this note, \
+	I've left behind some things behind that may help your endeavors. The first of them, \
+	a bag found where the condemned swirl spirits in a whirlpool. The second, a bag \
+	found under my seat of chance and uncanny luck. The third and final bag can be found \
+	in the north east quarter of the square of eight lives. I wish you luck, and hope your \
 	internment goes better than mine."
 
 /obj/item/paper/fluff/mimir/jacket
