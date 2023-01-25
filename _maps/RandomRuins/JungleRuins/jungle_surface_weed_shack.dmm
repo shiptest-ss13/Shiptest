@@ -91,6 +91,16 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"hg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt/corner,
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 8
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/unpowered)
 "il" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -161,13 +171,22 @@
 /obj/item/trash/boritos,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
-"ns" = (
+"mQ" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt/corner{
 	dir = 4
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/unpowered)
+"nA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt/corner{
+	dir = 1
 	},
 /turf/open/floor/wood{
 	light_range = 2
@@ -215,16 +234,6 @@
 /obj/item/seeds/cannabis/rainbow,
 /obj/item/clothing/head/beanie/rasta,
 /turf/open/floor/wood,
-/area/ruin/unpowered)
-"rx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt/corner,
-/obj/effect/turf_decal/weather/dirt/corner{
-	dir = 8
-	},
-/turf/open/floor/wood{
-	light_range = 2
-	},
 /area/ruin/unpowered)
 "sW" = (
 /obj/item/cigbutt/roach,
@@ -343,30 +352,10 @@
 	icon_state = "wood-broken3"
 	},
 /area/ruin/unpowered)
-"Gh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt/corner{
-	dir = 1
-	},
-/turf/open/floor/wood{
-	light_range = 2
-	},
-/area/ruin/unpowered)
 "Gi" = (
 /obj/structure/table/wood,
 /obj/item/rollingpaper,
 /turf/open/floor/wood,
-/area/ruin/unpowered)
-"Gk" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt/corner,
-/turf/open/floor/wood{
-	icon_state = "wood-broken5";
-	light_range = 2
-	},
 /area/ruin/unpowered)
 "Hl" = (
 /obj/structure/cable{
@@ -398,6 +387,17 @@
 	pixel_y = 32
 	},
 /turf/open/floor/wood,
+/area/ruin/unpowered)
+"IF" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt/corner,
+/turf/open/floor/wood{
+	icon_state = "wood-broken5";
+	light_range = 2
+	},
 /area/ruin/unpowered)
 "Jb" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -826,8 +826,8 @@ Up
 ZS
 Yj
 wn
-ns
-Gk
+mQ
+IF
 Ey
 gS
 "}
@@ -845,7 +845,7 @@ HG
 Mj
 qI
 Cs
-Gh
+nA
 Jb
 wn
 gS
@@ -864,7 +864,7 @@ ZS
 nJ
 qI
 XW
-rx
+hg
 ZJ
 wn
 gS

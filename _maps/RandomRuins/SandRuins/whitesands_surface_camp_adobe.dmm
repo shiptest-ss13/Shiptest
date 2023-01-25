@@ -22,6 +22,9 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/whitesands/surface/outdoors)
+"g" = (
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/whitesands/surface/outdoors)
 "h" = (
 /obj/structure/table,
 /obj/item/gun/ballistic/rifle/boltaction/polymer,
@@ -34,7 +37,7 @@
 /area/whitesands/surface/outdoors)
 "j" = (
 /obj/structure/bonfire/prelit,
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/whitesands/surface/outdoors)
 "k" = (
 /obj/machinery/hydroponics/soil,
@@ -55,7 +58,7 @@
 /obj/item/trash/can{
 	pixel_y = -6
 	},
-/turf/open/floor/plating/asteroid/whitesands/dried,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/whitesands/surface/outdoors)
 "s" = (
 /turf/open/floor/plating/asteroid/whitesands/dried,
@@ -86,7 +89,7 @@
 	dir = 4;
 	faction = list("adobe")
 	},
-/turf/open/floor/plating/asteroid/whitesands/dried,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/whitesands/surface/outdoors)
 "y" = (
 /obj/structure/table,
@@ -102,14 +105,18 @@
 	pixel_x = -9;
 	pixel_y = -8
 	},
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/whitesands/surface/outdoors)
+"B" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/whitesands/surface/outdoors)
 "C" = (
 /obj/structure/chair/plastic,
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
 	faction = list("adobe")
 	},
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/whitesands/surface/outdoors)
 "D" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger{
@@ -146,7 +153,7 @@
 /turf/closed/wall/mineral/sandstone,
 /area/whitesands/surface/outdoors)
 "M" = (
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/whitesands/surface/outdoors)
 "N" = (
 /obj/item/stack/sheet/mineral/uranium/five,
@@ -161,11 +168,11 @@
 	dir = 4;
 	faction = list("adobe")
 	},
-/turf/open/floor/plating/asteroid/whitesands/dried,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/whitesands/surface/outdoors)
 "P" = (
 /obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/whitesands,
+/turf/open/floor/plating/asteroid/whitesands/lit,
 /area/whitesands/surface/outdoors)
 "Q" = (
 /obj/structure/reagent_dispensers/watertank,
@@ -176,7 +183,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor2-old"
 	},
-/turf/open/floor/plating/asteroid/whitesands/dried,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/whitesands/surface/outdoors)
 "S" = (
 /obj/structure/mineral_door/sandstone,
@@ -214,9 +221,9 @@ a
 a
 a
 a
-s
-s
-s
+g
+g
+g
 a
 a
 "}
@@ -230,10 +237,10 @@ a
 a
 a
 a
-s
+g
 R
-s
-s
+g
+g
 a
 "}
 (3,1,1) = {"
@@ -249,7 +256,7 @@ U
 U
 U
 U
-s
+g
 a
 "}
 (4,1,1) = {"
@@ -265,7 +272,7 @@ U
 s
 s
 U
-s
+g
 a
 "}
 (5,1,1) = {"
@@ -281,7 +288,7 @@ S
 s
 D
 U
-s
+g
 a
 "}
 (6,1,1) = {"
@@ -297,7 +304,7 @@ J
 s
 d
 U
-s
+g
 a
 "}
 (7,1,1) = {"
@@ -313,7 +320,7 @@ U
 w
 s
 U
-s
+g
 a
 "}
 (8,1,1) = {"
@@ -329,7 +336,7 @@ U
 d
 s
 U
-s
+g
 a
 "}
 (9,1,1) = {"
@@ -345,7 +352,7 @@ U
 s
 b
 U
-s
+g
 a
 "}
 (10,1,1) = {"
@@ -361,23 +368,23 @@ U
 F
 H
 U
-s
+g
 a
 "}
 (11,1,1) = {"
 a
 a
 a
-s
-s
-s
+g
+g
+g
 O
 q
 U
 U
 S
 U
-s
+g
 a
 "}
 (12,1,1) = {"
@@ -388,12 +395,12 @@ M
 M
 C
 j
-s
-s
-s
-s
+g
+g
+g
+g
 x
-s
+g
 a
 "}
 (13,1,1) = {"
@@ -404,12 +411,12 @@ P
 M
 A
 M
-s
-d
-s
-s
-s
-s
+g
+B
+g
+g
+g
+g
 a
 "}
 (14,1,1) = {"
@@ -420,11 +427,11 @@ P
 M
 M
 M
-d
-d
-s
-s
-s
-s
+B
+B
+g
+g
+g
+g
 a
 "}
