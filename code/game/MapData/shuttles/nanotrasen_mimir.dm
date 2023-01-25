@@ -37,3 +37,15 @@
 
 //notes
 
+/obj/item/paper/fluff/mimir/treasure
+	name = "Bluejack's Note"
+	info = "To whomever finds this note. I hope your transfer goes better than mine.\
+	I've left behind some things that may find you in better spirits. The first of them\
+	a bag found where low quality spirits are made by the condemned. The second, a bag\
+	found under my seat of chance and uncanny luck. Finally the final bag can be found\
+	in the north east quarter of the square of nine lives. I wish you luck, and hope your\
+	internment goes better than mine."
+
+/obj/item/paper/fluff/mimir/jacket
+	name = "Warden's Secret"
+	info = "A warden's seat is their place of rest. Look under where your ass rests best."
