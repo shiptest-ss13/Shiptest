@@ -125,3 +125,8 @@
 	description = "a crashed shuttle, and a hidden beautiful lake."
 	suffix = "jungle_paradise.dmm"
 
+/datum/map_template/ruin/jungle/airbase
+	name = "Bombed Airbase"
+	id = "airbase"
+	description = "A bombed out airbase from the ICW, taken back over by nature"
+	suffix = "jungle_bombed_starport.dmm"
