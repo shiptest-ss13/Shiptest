@@ -244,7 +244,6 @@
 	pixel_x = -7;
 	pixel_y = -1
 	},
-/obj/item/reagent_containers/glass/beaker,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "aN" = (
@@ -311,7 +310,8 @@
 	pixel_y = -25
 	},
 /obj/structure/bodycontainer/morgue{
-	dir = 1
+	dir = 1;
+	contents = 1
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/light/small/built,
@@ -521,6 +521,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/mob_spawn/human/corpse/assistant,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical/morgue)
 "bm" = (
@@ -616,19 +617,29 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
-/obj/item/storage/box/zipties,
-/obj/item/assembly/flash/handheld,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/megaphone{
-	pixel_x = 3;
-	pixel_y = -3
+/obj/item/assembly/flash/handheld{
+	pixel_x = -9
+	},
+/obj/item/melee/classic_baton/telescopic{
+	pixel_x = 8
 	},
 /obj/structure/table/reinforced,
-/obj/item/stock_parts/cell/gun/mini,
-/obj/item/stock_parts/cell/gun/mini,
-/obj/item/stock_parts/cell/gun/mini,
+/obj/item/stock_parts/cell/gun/mini{
+	pixel_x = 10;
+	pixel_y = 6
+	},
+/obj/item/stock_parts/cell/gun/mini{
+	pixel_x = 10;
+	pixel_y = 3
+	},
+/obj/item/stock_parts/cell/gun/mini{
+	pixel_x = 10
+	},
 /obj/machinery/recharger,
-/obj/item/gun/energy/e_gun/mini,
+/obj/item/gun/energy/e_gun/mini{
+	pixel_x = -6;
+	pixel_y = 6
+	},
 /obj/machinery/requests_console{
 	announcementConsole = 1;
 	department = "Cockpit";
@@ -709,7 +720,7 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell{
 	dir = 4
 	},
-/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "bN" = (
@@ -717,6 +728,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/loading/white{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "bO" = (
@@ -885,7 +899,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line,
-/obj/effect/turf_decal/trimline/transparent/lightgrey/warning,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/white,
@@ -903,7 +916,6 @@
 	dir = 4
 	},
 /obj/structure/rack,
-/obj/item/roller,
 /obj/item/roller{
 	pixel_y = 4
 	},
@@ -1091,11 +1103,11 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
-/obj/structure/frame/computer{
-	dir = 1
-	},
 /obj/structure/sign/poster/official/mini_energy_gun{
 	pixel_y = -32
+	},
+/obj/machinery/computer/cargo/express{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1162,7 +1174,6 @@
 	},
 /obj/effect/turf_decal/corner/opaque/lightgrey/diagonal,
 /obj/structure/flora/bigplant,
-/obj/structure/window/reinforced/spawner/west,
 /obj/effect/turf_decal/trimline/opaque/white/filled/corner{
 	dir = 8
 	},
@@ -1246,6 +1257,7 @@
 /obj/structure/sign/warning/explosives{
 	pixel_y = 32
 	},
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cK" = (
@@ -1575,9 +1587,6 @@
 /obj/effect/turf_decal/trimline/opaque/blue/filled/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/transparent/lightgrey/corner{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1736,9 +1745,6 @@
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/transparent/lightgrey/warning{
-	dir = 4
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "gD" = (
@@ -1747,6 +1753,7 @@
 	pixel_x = -32
 	},
 /obj/effect/spawner/lootdrop/tool_surgery_adv,
+/obj/item/megaphone/command,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "gE" = (
@@ -1827,9 +1834,6 @@
 "lI" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/transparent/lightgrey/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
@@ -1939,9 +1943,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/turf_decal/arrows{
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "qX" = (
@@ -2005,7 +2006,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/corner,
-/obj/effect/turf_decal/trimline/transparent/lightgrey/corner,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
@@ -2019,7 +2019,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line,
-/obj/effect/turf_decal/trimline/transparent/lightgrey/warning,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "tX" = (
@@ -2198,7 +2197,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line,
-/obj/effect/turf_decal/trimline/transparent/lightgrey/warning,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "yU" = (
@@ -2467,7 +2465,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line,
-/obj/effect/turf_decal/trimline/transparent/lightgrey/warning,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ju" = (
@@ -2525,7 +2522,6 @@
 	},
 /obj/structure/rack,
 /obj/item/storage/toolbox/emergency,
-/obj/item/wrench,
 /obj/item/gps{
 	gpstag = "NTREC1";
 	pixel_x = -9;
@@ -2533,7 +2529,7 @@
 	},
 /obj/item/radio/off{
 	pixel_x = 6;
-	pixel_y = 14
+	pixel_y = 6
 	},
 /obj/item/gps{
 	gpstag = "NTREC1";
@@ -2551,9 +2547,13 @@
 "LG" = (
 /obj/structure/table/glass,
 /obj/machinery/computer/med_data/laptop{
-	density = 0
+	density = 0;
+	pixel_x = 3
 	},
 /obj/machinery/door/window/northleft,
+/obj/item/phone{
+	pixel_x = -14
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Mi" = (
@@ -2576,7 +2576,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 9
 	},
-/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Nq" = (
@@ -2626,7 +2625,7 @@
 	pixel_y = -32
 	},
 /obj/structure/rack,
-/obj/item/defibrillator,
+/obj/item/defibrillator/loaded,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "QT" = (
@@ -2785,9 +2784,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/transparent/lightgrey/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
