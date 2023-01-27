@@ -130,14 +130,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beach/oceantown)
-"bV" = (
-/obj/structure/railing/corner/wood{
-	dir = 8
-	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
-/area/ruin/beach/oceantown)
 "ca" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -224,6 +216,18 @@
 "cR" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
+/area/ruin/beach/oceantown)
+"cW" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/structure/railing/corner/wood{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
 /area/ruin/beach/oceantown)
 "df" = (
 /obj/structure/table,
@@ -550,6 +554,17 @@
 	dir = 1
 	},
 /turf/open/floor/concrete{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"gA" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/structure/railing/corner/wood{
+	dir = 4
+	},
+/turf/open/floor/wood{
 	light_range = 2
 	},
 /area/ruin/beach/oceantown)
@@ -956,6 +971,18 @@
 	light_range = 2
 	},
 /area/ruin/beach/oceantown)
+"mm" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/structure/closet/crate/bin,
+/obj/structure/railing/wood{
+	dir = 9
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "mr" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
@@ -1274,14 +1301,6 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/green,
-/area/ruin/beach/oceantown)
-"qZ" = (
-/obj/structure/railing/wood{
-	dir = 10
-	},
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
 /area/ruin/beach/oceantown)
 "rc" = (
 /obj/effect/spawner/structure/window,
@@ -2711,6 +2730,31 @@
 /obj/item/storage/fancy/donut_box,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/beach/oceantown/shop)
+"GM" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/structure/railing/corner/wood{
+	dir = 4
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
+"GU" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/structure/railing/wood{
+	dir = 5
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "GZ" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/closet/crate/freezer,
@@ -3065,6 +3109,17 @@
 	light_range = 2
 	},
 /area/ruin/beach/oceantown)
+"Kz" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/structure/railing/corner/wood{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
+/area/ruin/beach/oceantown)
 "KB" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/grimy,
@@ -3269,6 +3324,17 @@
 	},
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel,
+/area/ruin/beach/oceantown)
+"MP" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/railing/wood{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	light_range = 2
+	},
 /area/ruin/beach/oceantown)
 "MR" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
@@ -3635,12 +3701,6 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/grass/beach/lit,
-/area/ruin/beach/oceantown)
-"Rd" = (
-/obj/structure/railing/corner/wood,
-/turf/open/floor/plating/dirt{
-	light_range = 2
-	},
 /area/ruin/beach/oceantown)
 "Rm" = (
 /obj/structure/chair/stool/bar{
@@ -5825,7 +5885,7 @@ Ge
 Ge
 Ge
 Ge
-fG
+ev
 QK
 xn
 Zr
@@ -9432,8 +9492,8 @@ uW
 zQ
 ev
 HQ
-fA
-aR
+kG
+gA
 vf
 YL
 hu
@@ -9517,9 +9577,9 @@ fG
 HQ
 kG
 Jh
-qZ
-Cq
-aR
+rl
+GU
+gA
 mi
 hu
 hu
@@ -9602,9 +9662,9 @@ zQ
 Ko
 rl
 rl
-bV
-qZ
-fG
+rl
+rl
+MP
 mi
 hu
 kj
@@ -9688,8 +9748,8 @@ Jh
 qw
 hu
 bD
-sH
-fG
+rl
+MP
 mi
 hu
 Wl
@@ -9773,9 +9833,9 @@ rl
 rl
 Cd
 Uq
-sH
-Cq
-eh
+rl
+GU
+GM
 YL
 Wl
 UX
@@ -9858,9 +9918,9 @@ rl
 wS
 hu
 FC
-Ck
-qZ
-fG
+qw
+rl
+MP
 vf
 UX
 UX
@@ -9944,8 +10004,8 @@ rl
 wS
 fv
 EC
-sH
-fG
+rl
+MP
 ev
 UX
 xy
@@ -10029,8 +10089,8 @@ rl
 qw
 hu
 hu
-sH
-fG
+rl
+MP
 ev
 xe
 tI
@@ -10114,8 +10174,8 @@ ie
 rl
 rl
 wS
-sH
-fG
+rl
+MP
 ev
 UX
 xy
@@ -10198,9 +10258,9 @@ fA
 kI
 ie
 rl
-Rd
-SO
-fG
+rl
+qw
+MP
 mR
 UX
 UX
@@ -10283,9 +10343,9 @@ Xc
 Cq
 kI
 ie
-Hi
-sT
-Ga
+rl
+mm
+cW
 AM
 gn
 UX
@@ -10368,8 +10428,8 @@ iO
 Xc
 Cq
 kI
-xo
-zQ
+wH
+Kz
 mi
 Wl
 Wl
