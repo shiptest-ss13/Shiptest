@@ -207,6 +207,9 @@
 /obj/effect/turf_decal/siding/red{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "bz" = (
@@ -573,6 +576,12 @@
 /obj/effect/turf_decal/siding/red{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/hallway/central)
 "dV" = (
@@ -915,7 +924,7 @@
 	},
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "fZ" = (
 /obj/structure/cable{
@@ -1113,30 +1122,6 @@
 	pixel_y = -2;
 	pixel_x = -3
 	},
-/obj/item/stack/medical/splint/ghetto{
-	pixel_y = -2;
-	pixel_x = -3
-	},
-/obj/item/stack/medical/splint/ghetto{
-	pixel_y = -2;
-	pixel_x = -3
-	},
-/obj/item/stack/medical/splint/ghetto{
-	pixel_y = -2;
-	pixel_x = -3
-	},
-/obj/item/stack/medical/gauze/improvised{
-	pixel_y = -2;
-	pixel_x = 4
-	},
-/obj/item/stack/medical/gauze/improvised{
-	pixel_y = -2;
-	pixel_x = 4
-	},
-/obj/item/stack/medical/gauze/improvised{
-	pixel_y = -2;
-	pixel_x = 4
-	},
 /obj/item/stack/medical/gauze/improvised{
 	pixel_y = -2;
 	pixel_x = 4
@@ -1298,7 +1283,7 @@
 /obj/item/trash/cheesie,
 /obj/item/trash/can/food/peaches/maint,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "hH" = (
 /obj/structure/railing/corner{
@@ -1341,6 +1326,9 @@
 /obj/effect/turf_decal/siding/red{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "hW" = (
@@ -1367,7 +1355,7 @@
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "id" = (
 /obj/structure/chair/sofa/corner,
@@ -1948,7 +1936,7 @@
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "lC" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -1967,7 +1955,7 @@
 "lW" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "lX" = (
 /obj/structure/table/wood,
@@ -2070,11 +2058,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/industrial/caution,
-/obj/effect/turf_decal/industrial/warning{
+/obj/effect/turf_decal/siding/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/red{
+/obj/effect/turf_decal/industrial/caution,
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red/brig,
@@ -2165,7 +2153,7 @@
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "nq" = (
 /obj/machinery/portable_atmospherics/scrubber,
@@ -2430,7 +2418,7 @@
 /obj/item/trash/can,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/robot_debris/limb,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "pc" = (
 /obj/structure/disposalpipe/segment,
@@ -2559,7 +2547,7 @@
 /obj/structure/railing,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "pY" = (
 /obj/machinery/vending/snack/random,
@@ -3556,6 +3544,9 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "midpoint_shut"
 	},
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "wY" = (
@@ -3710,7 +3701,7 @@
 	},
 /obj/item/bikehorn/rubberducky,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "yc" = (
 /obj/machinery/power/apc/auto_name/west,
@@ -3913,13 +3904,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "zd" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "quickpoint_shut"
 	},
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "0-4"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "zf" = (
@@ -4149,17 +4140,17 @@
 	pixel_y = -24;
 	id = "quickpoint_flashers"
 	},
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/effect/turf_decal/siding/yellow{
 	dir = 6
 	},
 /obj/effect/turf_decal/road/stop{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
 	},
 /turf/open/floor/plasteel,
 /area/ship/security/prison)
@@ -4831,7 +4822,7 @@
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/sprayweb,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Fg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -5018,7 +5009,6 @@
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
-/obj/structure/falsewall,
 /obj/structure/falsewall,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
@@ -5375,6 +5365,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Ik" = (
@@ -5402,7 +5395,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/shreds,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "It" = (
 /obj/machinery/button/door{
@@ -5767,7 +5760,7 @@
 /obj/item/trash/popcorn,
 /obj/item/trash/waffles,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "KA" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -6009,10 +6002,6 @@
 /obj/item/reagent_containers/hypospray/medipen/survival{
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/hypospray/medipen/survival{
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/hypospray/medipen/survival,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -6373,6 +6362,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/hallway/central)
@@ -6904,7 +6896,7 @@
 	},
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "RO" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -6988,6 +6980,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -7093,7 +7088,7 @@
 	},
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Tn" = (
 /turf/closed/wall/r_wall,
@@ -7524,6 +7519,9 @@
 /obj/effect/turf_decal/siding/red{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/hallway/central)
 "Wf" = (
@@ -7838,23 +7836,11 @@
 "Yn" = (
 /obj/structure/table,
 /obj/item/reagent_containers/pill/salbutamol{
-	pixel_y = 2;
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/pill/salbutamol{
 	pixel_y = 12;
 	pixel_x = 10
 	},
 /obj/item/reagent_containers/pill/salbutamol{
 	pixel_y = 9;
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/pill/salbutamol{
-	pixel_y = 5;
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/pill/salbutamol{
-	pixel_y = 2;
 	pixel_x = 10
 	},
 /obj/item/storage/pill_bottle/charcoal/less,
@@ -8054,62 +8040,16 @@
 /area/ship/crew/canteen)
 "Zk" = (
 /obj/structure/table,
-/obj/item/stack/medical/ointment{
-	pixel_x = 11;
-	pixel_y = 5
-	},
-/obj/item/stack/medical/ointment{
-	pixel_x = 11;
-	pixel_y = 5
-	},
-/obj/item/stack/medical/ointment{
-	pixel_x = 11;
-	pixel_y = 5
-	},
-/obj/item/stack/medical/ointment{
-	pixel_x = 11;
-	pixel_y = 5
-	},
-/obj/item/stack/medical/ointment{
-	pixel_x = 11;
-	pixel_y = 5
-	},
-/obj/item/stack/medical/bruise_pack{
-	pixel_x = -5
-	},
-/obj/item/stack/medical/bruise_pack{
-	pixel_x = -5
-	},
-/obj/item/stack/medical/bruise_pack{
-	pixel_x = -5
-	},
-/obj/item/stack/medical/bruise_pack{
-	pixel_x = -5
-	},
-/obj/item/stack/medical/suture{
-	pixel_x = 7
-	},
-/obj/item/stack/medical/suture{
-	pixel_x = 7
-	},
-/obj/item/stack/medical/suture{
-	pixel_x = 7
-	},
-/obj/item/stack/medical/suture{
-	pixel_x = 7
-	},
-/obj/item/stack/medical/suture{
-	pixel_x = 7
-	},
-/obj/item/stack/medical/bruise_pack{
-	pixel_x = -5
-	},
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
 /obj/effect/turf_decal/siding/brown{
 	dir = 5
 	},
+/obj/item/stack/medical/bruise_pack/herb,
+/obj/item/stack/medical/bruise_pack/herb,
+/obj/item/stack/medical/ointment/herb,
+/obj/item/stack/medical/ointment/herb,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage/eva)
 "Zm" = (
