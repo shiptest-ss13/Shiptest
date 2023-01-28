@@ -901,7 +901,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "security"
+	name = "Security"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1193,7 +1193,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/grunge{
-	name = "engineering"
+	name = "Engineering"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1583,7 +1583,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "cargo bay"
+	name = "Cargo bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1740,7 +1740,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/grunge{
-	name = "engineering"
+	name = "Engineering"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -3519,7 +3519,7 @@
 /area/ship/bridge)
 "Kc" = (
 /obj/machinery/door/airlock/hatch{
-	name = "mech bay"
+	name = "Mech Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3566,7 +3566,7 @@
 "KL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/airlock/grunge{
-	name = "bathroom"
+	name = "Bathroom"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
@@ -3706,7 +3706,8 @@
 /obj/docking_port/mobile{
 	dir = 4;
 	launch_status = 0;
-	port_direction = 8
+	port_direction = 8;
+	preferred_direction = 4
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "cepheus_cargo";
@@ -4378,7 +4379,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "dormitories"
+	name = "Dormitories"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
