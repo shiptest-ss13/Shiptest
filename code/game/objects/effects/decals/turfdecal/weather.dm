@@ -53,3 +53,13 @@
 	name = "corner"
 	icon = 'icons/turf/decals.dmi'
 	icon_state = "ws_side_corner"
+
+/obj/effect/turf_decal/weather/rock
+	name = "rock siding"
+	icon = 'icons/turf/decals.dmi'
+	icon_state = "rock_side"
+
+/obj/effect/turf_decal/weather/rock/corner
+	name = "corner"
+	icon = 'icons/turf/decals.dmi'
+	icon_state = "rock_side_corner"
