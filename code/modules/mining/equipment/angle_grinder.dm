@@ -44,8 +44,8 @@
 	throw_range = 4
 	custom_materials = list(/datum/material/iron=13000)
 	attack_verb = list("sliced", "torn", "cut", "chopped", "diced")
-	hitsound = 'sound/weapons/circsawhit.ogg'
-	usesound = 'sound/weapons/circsawhit.ogg'
+	hitsound = 'sound/weapons/anglegrinder.ogg'
+	usesound = 'sound/weapons/anglegrinder.ogg'
 	sharpness = IS_SHARP
 	tool_behaviour = null // is set to TOOL_DECONSTRUCT once weildedk
 	toolspeed = 0.25
@@ -62,7 +62,7 @@
 
 /obj/item/anglegrinder/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/circsawhit.ogg', TRUE)
+	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/anglegrinder.ogg', TRUE)
 	AddComponent(/datum/component/two_handed)
 	AddElement(/datum/element/tool_flash, light_range)
 
