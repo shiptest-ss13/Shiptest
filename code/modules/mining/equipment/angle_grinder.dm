@@ -49,7 +49,6 @@
 	sharpness = IS_SHARP
 	tool_behaviour = null // is set to TOOL_DECONSTRUCT once weildedk
 	toolspeed = 0.25
-	light_range = 2
 	var/wielded = FALSE // track wielded status on item
 
 // Trick to make the deconstruction that need a lit welder work. (bypassing fuel test)
