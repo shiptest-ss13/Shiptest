@@ -65,6 +65,16 @@
 		deconstruct()
 		return TRUE
 
+#ifdef ANGLEGRINDER_RAILING_TIME
+/obj/structure/railing/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if (I.use_tool(src, user, ANGLEGRINDER_RAILING_TIME/I.toolspeed, volume=0))
+		to_chat(user, "<span class='warning'>You cut apart the railing.</span>")
+		deconstruct()
+		return TRUE
+#endif
+	
+
 /obj/structure/railing/deconstruct(disassembled)
 	. = ..()
 	if(!loc) //quick check if it's qdeleted already.
