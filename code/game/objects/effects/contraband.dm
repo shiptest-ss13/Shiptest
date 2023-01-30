@@ -950,7 +950,7 @@
 /obj/structure/sign/poster/minutemen/bard
 	name = "CMM BARD"
 	desc = "A poster that was made by soldiers that attemps to recruit people in the BARD depecting a \"Sargent Clues\" mowing down waves and waves of xenofauna, and them exploding into blood. Somethinng tells you that service is a lot less intresting than this."
-	icon_state = "poster-poster-cmm_bard"
+	icon_state = "poster-cmm_bard"
 
 /obj/structure/sign/poster/minutemen/gold
 	name = "CMM GOLD"
