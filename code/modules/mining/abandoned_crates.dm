@@ -1,4 +1,4 @@
-//Originally coded by ISaidNo, later modified by Kelenius. Ported from Baystation12.
+//riginally coded by ISaidNo, later modified by Kelenius. Ported from Baystation12.
 
 /obj/structure/closet/crate/secure/loot
 	name = "abandoned crate"
@@ -125,7 +125,7 @@
 		..()
 
 // No busting open (used to disallow angle grinder cheesing
-/obj/structure/closet/crate/secure/loot/bust_open
+/obj/structure/closet/crate/secure/loot/bust_open()
 	boom()
 
 /obj/structure/closet/crate/secure/loot/proc/spawn_loot()

@@ -26,8 +26,6 @@
 #define ANGLEGRINDER_MACHINE_SALVAGE
 #define ANGLEGRINDER_OPEN_CLOSET
 #define ANGLEGRINDER_OUTPOST
-#define ANGLEGRINDER_OPEN_SAFE_TIME 90
-
 
 /obj/item/anglegrinder
 	name = "angle grinder"
