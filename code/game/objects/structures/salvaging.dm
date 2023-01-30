@@ -34,12 +34,12 @@
 		qdel(src)
 	return TRUE
 
-#ifdef ANGLEGRINDER_MACHINE_SALVAGE
+#ifdef ANGLEGRINDER_BROKEN_MACHINE_SALVAGE_TIME
 /obj/structure/salvageable/deconstruct_act(mob/living/user, obj/item/tool)
 	. = ..()
 	user.visible_message("<span class='notice'>[user] starts slicing [src].</span>", \
 					"<span class='notice'>You start salvaging anything useful from [src]...</span>")
-	if(tool.use_tool(src, user, 8 SECONDS))
+	if(tool.use_tool(src, user, ANGLEGRINDER_BROKEN_MACHINE_SALVAGE_TIME/tool.toolspeed))
 		user.visible_message("<span class='notice'>[user] dismantles [src].</span>", \
 						"<span class='notice'>You salvage [src].</span>")
 		dismantle(user)

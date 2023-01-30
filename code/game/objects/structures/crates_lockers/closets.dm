@@ -304,19 +304,19 @@
 		user.visible_message("<span class='notice'>[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
 						"<span class='notice'>You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
 						"<span class='hear'>You hear a ratchet.</span>")
+#ifdef ANGLEGRINDER_OPEN_CLOSET_TIME
+	else if(W.tool_behaviour == TOOL_DECONSTRUCT && locked)
+		user.visible_message("<span class='warning'>[user] is cutting \the [src] open !</span>", "<span class='notice'>You begin to cut \the [src] open.</span>")
+		if (W.use_tool(src, user, ANGLEGRINDER_OPEN_CLOSET_TIME/W.toolspeed, volume=0))
+			bust_open()
+			user.visible_message("<span class='warning'>[user] busted \the [src] open !</span>",  "<span class='notice'>You finish cutting \the [src] open.</span>")
+#endif
 	else if(user.a_intent != INTENT_HARM)
 		var/item_is_id = W.GetID()
 		if(!item_is_id)
 			return FALSE
 		if(item_is_id || !toggle(user))
 			togglelock(user)
-#ifdef ANGLEGRINDER_OPEN_CLOSET
-	else if(W.tool_behaviour == TOOL_DECONSTRUCT && locked)
-		user.visible_message("<span class='warning'>[user] is cutting \the [src] open !</span>", "<span class='notice'>You begin to cut \the [src] open.</span>")
-		if (W.use_tool(src, user, 20 SECONDS, volume=0))
-			bust_open()
-			user.visible_message("<span class='warning'>[user] busted \the [src] open !</span>",  "<span class='notice'>You finish cutting \the [src] open.</span>")
-#endif
 	else
 		return FALSE
 

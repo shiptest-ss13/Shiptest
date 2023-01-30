@@ -76,7 +76,6 @@ FLOOR SAFES
 			attack_hand(user)
 			return
 
-#define ANGLEGRINDER_OPEN_SAFE_TIME 90 SECONDS
 #ifdef ANGLEGRINDER_OPEN_SAFE_TIME
 		else if(I.tool_behaviour == TOOL_DECONSTRUCT)
 			user.visible_message("<span class='warning'>[user] begin to saw trough the lock of \the [src].</span>","<span class='notice'>You start sawing trough the lock of [src].</span>")

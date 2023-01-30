@@ -22,10 +22,9 @@
  * code/game/objects/structures/bed_chairs/chair.dm
 */
 
-// Config, comments shits out to disable features
-#define ANGLEGRINDER_MACHINE_SALVAGE
-#define ANGLEGRINDER_OPEN_CLOSET
-#define ANGLEGRINDER_OUTPOST
+/*
+ * Configure features by editing __DEFINES/anglegrinder.dm
+*/
 
 /obj/item/anglegrinder
 	name = "angle grinder"
