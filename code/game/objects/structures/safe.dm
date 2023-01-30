@@ -75,6 +75,16 @@ FLOOR SAFES
 		if(istype(I, /obj/item/clothing/neck/stethoscope))
 			attack_hand(user)
 			return
+
+#define ANGLEGRINDER_OPEN_SAFE_TIME 90 SECONDS
+#ifdef ANGLEGRINDER_OPEN_SAFE_TIME
+		else if(I.tool_behaviour == TOOL_DECONSTRUCT)
+			user.visible_message("<span class='warning'>[user] begin to saw trough the lock of \the [src].</span>","<span class='notice'>You start sawing trough the lock of [src].</span>")
+			// make the angle grinder speed multiplier not affect this.
+			if(I.use_tool(src, user, ANGLEGRINDER_OPEN_SAFE_TIME/I.toolspeed))
+				broken = TRUE
+				user.visible_message("<span class='warning'>[user] successfully saw trough the lock of \the [src].</span>","<span class='notice'>You successfully saw trough the lock of [src].</span>")
+#endif
 		else
 			to_chat(user, "<span class='warning'>You can't put [I] into the safe while it is closed!</span>")
 			return
