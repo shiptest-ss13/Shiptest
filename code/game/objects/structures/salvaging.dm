@@ -44,7 +44,6 @@
 		qdel(src)
 	return TRUE
 #endif
-		
 
 //Types themself, use them, but not the parent object
 
