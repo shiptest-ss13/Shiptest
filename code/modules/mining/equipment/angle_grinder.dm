@@ -63,7 +63,8 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/anglegrinder.ogg', TRUE)
 	AddComponent(/datum/component/two_handed)
-	AddElement(/datum/element/tool_flash, light_range)
+	AddElement(/datum/element/tool_flash, 2)
+	AddElement(/datum/element/tool_bang, 2)
 
 /// triggered on wield of two handed item
 /obj/item/anglegrinder/proc/on_wield(obj/item/source, mob/user)
