@@ -309,15 +309,14 @@
 	dir = 1;
 	pixel_y = -25
 	},
-/obj/structure/bodycontainer/morgue{
-	dir = 1;
-	contents = 1
-	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/light/small/built,
 /obj/structure/sign/warning/biohazard{
 	pixel_x = -32;
 	pixel_y = 4
+	},
+/obj/structure/bodycontainer/morgue{
+	dir = 1
 	},
 /turf/open/floor/pod/dark,
 /area/ship/medical/morgue)
@@ -608,10 +607,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
-"bw" = (
-/obj/structure/closet/firecloset/wall,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/medical)
 "bx" = (
 /obj/effect/turf_decal/corner/opaque/blue,
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -688,9 +683,6 @@
 /obj/item/storage/firstaid/o2,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/brute,
-/obj/structure/sign/poster/official/soft_cap_pop_art{
-	pixel_y = 32
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "bJ" = (
@@ -1042,6 +1034,7 @@
 	icon_state = "6-9"
 	},
 /obj/effect/decal/cleanable/wrapping,
+/obj/item/wallframe/firealarm,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cs" = (
@@ -1091,10 +1084,6 @@
 	pixel_x = -22
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/medical)
-"cw" = (
-/obj/structure/closet/emcloset/wall,
-/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
 "cx" = (
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -1179,6 +1168,9 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1518,10 +1510,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
-"dl" = (
-/obj/machinery/smartfridge/organ,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew)
 "dm" = (
 /obj/structure/table/glass,
 /obj/item/paper_bin,
@@ -1663,6 +1651,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -1807,13 +1799,15 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = -22
-	},
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/closet/firecloset/wall{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/item/storage/firstaid/fire,
+/obj/item/extinguisher/mini,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "jr" = (
@@ -2300,6 +2294,9 @@
 /obj/item/clothing/accessory/armband/med,
 /obj/item/clothing/accessory/armband/med,
 /obj/item/clothing/under/rank/medical/psychiatrist/blue,
+/obj/item/clothing/accessory/pocketprotector,
+/obj/item/clothing/accessory/pocketprotector,
+/obj/item/clothing/accessory/pocketprotector,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Dm" = (
@@ -2345,6 +2342,10 @@
 /area/ship/engineering)
 "ED" = (
 /obj/machinery/iv_drip,
+/obj/machinery/smartfridge/organ{
+	density = 0;
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "ER" = (
@@ -2441,10 +2442,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -26
-	},
 /obj/machinery/button/door{
 	id = "emergencybay_blastdoors";
 	name = "Emergency Bay Blastdoors";
@@ -2457,6 +2454,10 @@
 	pixel_x = -25;
 	pixel_y = 24;
 	dir = 4
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 4;
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -2587,6 +2588,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "OA" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25;
+	pixel_x = -5
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "OD" = (
@@ -3208,7 +3214,7 @@ lI
 bT
 xP
 ED
-dl
+tD
 cR
 Yd
 dm
@@ -3317,11 +3323,11 @@ aq
 bc
 jI
 zl
-bw
+al
 cl
 fJ
 Lt
-cw
+al
 vE
 cV
 di
