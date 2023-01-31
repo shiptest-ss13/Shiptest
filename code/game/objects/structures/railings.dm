@@ -68,7 +68,6 @@
 		deconstruct()
 		return TRUE
 #endif
-	
 
 /obj/structure/railing/deconstruct(disassembled)
 	. = ..()

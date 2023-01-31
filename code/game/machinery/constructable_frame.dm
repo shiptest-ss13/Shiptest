@@ -26,7 +26,6 @@
 	if(I.use_tool(src, user, ANGLEGRINDER_MACHINE_FRAME_TIME/I.toolspeed, volume=0))
 		to_chat(user, "<span class='warning'>You cut apart \the [src].</span>", "<span class='notice'>You cut apart \the [src].</span>")
 		deconstruct()
-		
 #endif
 
 
