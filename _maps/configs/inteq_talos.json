@@ -1,20 +1,30 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"map_name": "Colossus-Class Armored Frigate",
+	"map_name": "Talos-Class Command Clipper",
 	"prefix": "IRMV",
 	"namelists": ["MYTHOLOGICAL", "BEASTS", "NATURAL_AGGRESSIVE"],
-	"map_short_name": "Colossus-class",
-	"map_path": "_maps/shuttles/shiptest/inteq_colossus.dmm",
+	"map_short_name": "Talos-class",
+	"map_path": "_maps/shuttles/shiptest/inteq_talos.dmm",
 	"limit": 1,
 	"job_slots": {
 		"Vanguard": {
-			"outfit": "/datum/outfit/job/captain/inteq/naked",
+			"outfit": "/datum/outfit/job/captain/inteq",
+			"officer": true,
+			"slots": 1
+		},
+		"Master At Arms": {
+			"outfit": "/datum/outfit/job/warden/inteq",
+			"officer": true,
+			"slots": 1
+		},
+		"Artificer Class II": {
+			"outfit": "/datum/outfit/job/ce/inteq",
 			"officer": true,
 			"slots": 1
 		},
 		"Artificer": {
 			"outfit": "/datum/outfit/job/engineer/inteq",
-			"slots": 1
+			"slots": 3
 		},
 		"Corpsman": {
 			"outfit": "/datum/outfit/job/paramedic/inteq",
@@ -22,11 +32,11 @@
 		},
 		"Enforcer": {
 			"outfit": "/datum/outfit/job/security/inteq",
-			"slots": 3
+			"slots": 1
 		},
 		"Recruit": {
 			"outfit": "/datum/outfit/job/assistant/inteq",
-			"slots": 5
+			"slots": 7
 		}
 	},
 	"enabled": true
