@@ -154,7 +154,7 @@
 				/obj/item/mecha_parts/part/ripley_right_leg)
 
 /obj/structure/mecha_wreckage/ripley/cmm
-	name = "\improper CMM Ripley wreckage"
+	name = "\improper Rogue wreckage"
 	icon_state = "cmmripley-broken"
 
 /obj/structure/mecha_wreckage/ripley/mkii
