@@ -34,4 +34,7 @@
 	SIGNAL_HANDLER
 
 	if(user && get_dist(get_turf(source), get_turf(user)) <= 1)
-		user.soundbang_act(min(bang_strength,1), stun_pwr = 0, damage_pwr = 1, deafen_pwr = 15)
+		if(istype(user, mob/living/carbon)
+			mob/living/carbon/carbon = user
+			carbon.soundbang_act(min(bang_strength,1), stun_pwr = 0, damage_pwr = 1, deafen_pwr = 15)
+
