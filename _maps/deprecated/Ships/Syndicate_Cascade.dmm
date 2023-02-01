@@ -278,7 +278,7 @@
 "gD" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "nemoblast"
+	base_id = "nemoblast"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -393,7 +393,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "Falkwindows"
+	base_id = "Falkwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -419,7 +419,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
+	base_id = "Cascade_engine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -978,7 +978,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
+	base_id = "Cascade_engine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1209,7 +1209,7 @@
 "vI" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "cascadewindows"
+	base_id = "cascadewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -1454,7 +1454,7 @@
 "xX" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "cascadebridge"
+	base_id = "cascadebridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1621,7 +1621,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
+	base_id = "Cascade_engine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1835,7 +1835,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "Cascade_engine";
+	base_id = "Cascade_engine";
 	name = "engine lockdown";
 	pixel_y = -25
 	},
@@ -1963,7 +1963,7 @@
 "GE" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "Cascadelab"
+	base_id = "Cascadelab"
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -1984,7 +1984,7 @@
 "GH" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "nemoblast"
+	base_id = "nemoblast"
 	},
 /obj/docking_port/mobile{
 	dir = 2
@@ -2079,7 +2079,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "Cascade_engine"
+	base_id = "Cascade_engine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2300,7 +2300,7 @@
 	pixel_y = 1
 	},
 /obj/machinery/button/door{
-	id = "nemoblast";
+	base_id = "nemoblast";
 	pixel_y = 25
 	},
 /obj/machinery/light/dim{
@@ -2333,7 +2333,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "Cascade_engine";
+	base_id = "Cascade_engine";
 	name = "engine lockdown";
 	pixel_y = -25
 	},
@@ -2357,7 +2357,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "Cascadelab";
+	base_id = "Cascadelab";
 	name = "Window Shutters";
 	pixel_x = 22;
 	pixel_y = 7
@@ -2550,7 +2550,7 @@
 "RJ" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "cascadewindows"
+	base_id = "cascadewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2817,7 +2817,7 @@
 "Vx" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "cascadewindows"
+	base_id = "cascadewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -2853,7 +2853,7 @@
 "VA" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "cascadewindows"
+	base_id = "cascadewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -3021,14 +3021,14 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
 	dir = 8;
-	id = "cascadewindows";
+	base_id = "cascadewindows";
 	name = "Window Shutters";
 	pixel_x = -6;
 	pixel_y = 6
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "cascadebridge";
+	base_id = "cascadebridge";
 	name = "Bridge Lockdown";
 	pixel_x = -6;
 	pixel_y = -5

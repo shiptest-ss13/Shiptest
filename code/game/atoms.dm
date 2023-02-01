@@ -229,7 +229,7 @@
 
 	var/area/ship/current_ship_area = get_area(src)
 	if(!mapload && istype(current_ship_area) && current_ship_area.mobile_port)
-		connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.get_docked())
+		connect_to_shuttle(mapload, current_ship_area.mobile_port, current_ship_area.mobile_port.get_docked())
 
 	var/temp_list = list()
 	for(var/i in custom_materials)
@@ -1255,7 +1255,8 @@
 	return
 
 ///Connect this atom to a shuttle
-/atom/proc/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+/atom/proc/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	SHOULD_CALL_PARENT(TRUE)
 	return
 
 /// Generic logging helper

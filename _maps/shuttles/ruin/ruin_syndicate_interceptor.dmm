@@ -15,7 +15,7 @@
 "h" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/preopen{
-	id = "jbs04EM"
+	base_id = "jbs04EM"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -69,7 +69,7 @@
 "E" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/door/poddoor/preopen{
-	id = "jbs04EM"
+	base_id = "jbs04EM"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -84,7 +84,7 @@
 /obj/item/clothing/head/helmet/space/pilot,
 /obj/item/tank/jetpack/oxygen,
 /obj/machinery/door/poddoor/preopen{
-	id = "jbs04EM"
+	base_id = "jbs04EM"
 	},
 /obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/plating,
@@ -174,7 +174,7 @@
 /obj/machinery/button/door{
 	pixel_y = 26;
 	pixel_x = 5;
-	id = "jbs04EM";
+	base_id = "jbs04EM";
 	name = "Emergency Lockdown"
 	},
 /turf/open/floor/mineral/plastitanium,

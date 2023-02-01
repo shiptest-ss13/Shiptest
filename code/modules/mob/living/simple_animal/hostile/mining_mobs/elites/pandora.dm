@@ -177,7 +177,7 @@
 	//open all pandora gates
 	if(dungeon)
 		for(var/obj/machinery/door/poddoor/D in GLOB.machines)
-			if(D.id == "pandora_dead")
+			if(D.base_id == "pandora_dead")
 				D.open()
 
 	..()

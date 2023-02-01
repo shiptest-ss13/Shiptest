@@ -25,7 +25,7 @@
 /area/ship/cargo)
 "aQ" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "scav_shutters"
+	base_id = "scav_shutters"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/mineral/plastitanium,
@@ -97,7 +97,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "scav_shutters"
+	base_id = "scav_shutters"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
@@ -130,11 +130,11 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "scav_door";
+	base_id = "scav_door";
 	name = "Dusty Blast Door"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "scavbay"
+	base_id = "scavbay"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -179,7 +179,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "scav_shutters"
+	base_id = "scav_shutters"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
@@ -474,7 +474,7 @@
 "on" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "scav_shutters"
+	base_id = "scav_shutters"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -488,7 +488,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor{
-	id = "scav_door";
+	base_id = "scav_door";
 	name = "Dusty Blast Door"
 	},
 /turf/open/floor/plating,
@@ -664,7 +664,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "scav_shutters"
+	base_id = "scav_shutters"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
@@ -970,7 +970,7 @@
 /obj/machinery/door/window,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "scav_shutters"
+	base_id = "scav_shutters"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
@@ -1003,13 +1003,13 @@
 /obj/item/storage/box/gum/nicotine,
 /obj/item/gun/energy/laser/hitscanpistol,
 /obj/machinery/button/door{
-	id = "scav_shutters";
+	base_id = "scav_shutters";
 	name = "Shutter Control";
 	pixel_x = -7;
 	pixel_y = 26
 	},
 /obj/machinery/button/door{
-	id = "scav_door";
+	base_id = "scav_door";
 	name = "Blast Control";
 	pixel_x = 7;
 	pixel_y = 26
@@ -1018,7 +1018,7 @@
 	name = "Bay Air Shield";
 	pixel_y = 36;
 	pixel_x = -8;
-	id = "scavbay"
+	base_id = "scavbay"
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
@@ -1211,7 +1211,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "scav_shutters"
+	base_id = "scav_shutters"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
@@ -1339,7 +1339,7 @@
 "Un" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor{
-	id = "scav_door";
+	base_id = "scav_door";
 	name = "Dusty Blast Door"
 	},
 /turf/open/floor/plating,
@@ -1366,11 +1366,11 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "scav_door";
+	base_id = "scav_door";
 	name = "Dusty Blast Door"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "scavbay";
+	base_id = "scavbay";
 	dir = 1
 	},
 /turf/open/floor/plating,

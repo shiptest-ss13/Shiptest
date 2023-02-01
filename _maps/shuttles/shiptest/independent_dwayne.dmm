@@ -186,7 +186,7 @@
 /area/ship/external)
 "fV" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast"
+	base_id = "mining_ship_blast"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -276,7 +276,7 @@
 /area/ship/engineering)
 "hp" = (
 /obj/machinery/button/door{
-	id = "mining_ship_port";
+	base_id = "mining_ship_port";
 	name = "Port Hangar Shutters";
 	pixel_y = 28
 	},
@@ -518,7 +518,7 @@
 "kD" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "mining_ship_port"
+	base_id = "mining_ship_port"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -551,7 +551,7 @@
 /area/ship/external)
 "lh" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_starboard"
+	base_id = "mining_ship_starboard"
 	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating/airless,
@@ -605,7 +605,7 @@
 /area/ship/crew)
 "ms" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast"
+	base_id = "mining_ship_blast"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating/airless,
@@ -1305,7 +1305,7 @@
 /area/ship/cargo)
 "Cw" = (
 /obj/machinery/door/poddoor{
-	id = "mining_ship_port"
+	base_id = "mining_ship_port"
 	},
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning{
@@ -1497,7 +1497,7 @@
 	},
 /obj/machinery/light,
 /obj/machinery/button/door{
-	id = "mining_ship_starboard";
+	base_id = "mining_ship_starboard";
 	name = "Starboard Hangar Shutters";
 	pixel_y = -28
 	},
@@ -1532,7 +1532,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast"
+	base_id = "mining_ship_blast"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1627,7 +1627,7 @@
 /area/ship/bridge)
 "LH" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast"
+	base_id = "mining_ship_blast"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1649,7 +1649,7 @@
 /area/ship/crew)
 "Mb" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast"
+	base_id = "mining_ship_blast"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1977,7 +1977,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast"
+	base_id = "mining_ship_blast"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -2081,7 +2081,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "mining_ship_blast";
+	base_id = "mining_ship_blast";
 	name = "Blast Door Control";
 	pixel_y = 28
 	},

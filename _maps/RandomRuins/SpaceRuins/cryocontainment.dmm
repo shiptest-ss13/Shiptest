@@ -26,7 +26,7 @@
 "bm" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "cryocontainshutter";
+	base_id = "cryocontainshutter";
 	name = "Window Shutter Control";
 	pixel_x = 8;
 	pixel_y = -4
@@ -50,7 +50,7 @@
 	pixel_y = -4
 	},
 /obj/machinery/button/door{
-	id = "cryocontainmentlockdown";
+	base_id = "cryocontainmentlockdown";
 	name = "Containment Lockdown Control";
 	pixel_x = -8;
 	pixel_y = -4
@@ -63,7 +63,7 @@
 "dt" = (
 /obj/machinery/door/airlock/security,
 /obj/machinery/door/poddoor{
-	id = "cryocontainmentlockdown"
+	base_id = "cryocontainmentlockdown"
 	},
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
@@ -270,7 +270,7 @@
 "qf" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/poddoor{
-	id = "cryocontainmentlockdown"
+	base_id = "cryocontainmentlockdown"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -318,7 +318,7 @@
 "tm" = (
 /obj/structure/door_assembly/door_assembly_research,
 /obj/machinery/door/poddoor{
-	id = "cryocontainmentlockdown"
+	base_id = "cryocontainmentlockdown"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -354,7 +354,7 @@
 /area/ruin/unpowered)
 "un" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cryocontainshutter"
+	base_id = "cryocontainshutter"
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -460,7 +460,7 @@
 /obj/machinery/atmospherics/pipe/simple/general,
 /obj/structure/door_assembly/door_assembly_vault,
 /obj/machinery/door/poddoor/preopen{
-	id = "cryocontainmentblastdoors"
+	base_id = "cryocontainmentblastdoors"
 	},
 /turf/open/floor/engine/airless,
 /area/ruin/unpowered)
@@ -738,7 +738,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "cryocontainmentblastdoors"
+	base_id = "cryocontainmentblastdoors"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
@@ -771,7 +771,7 @@
 "Xs" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "cryocontainmentblastdoors";
+	base_id = "cryocontainmentblastdoors";
 	name = "Blast Door Control"
 	},
 /obj/structure/cable{

@@ -60,7 +60,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "entrance_shutt"
+	base_id = "entrance_shutt"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -110,7 +110,7 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Commissioner's Shutters";
-	id = "commshut"
+	base_id = "commshut"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -216,7 +216,7 @@
 	dir = 1;
 	pixel_y = 7;
 	pixel_x = 7;
-	id = "entrance_shutt";
+	base_id = "entrance_shutt";
 	name = "Entrance Shutters"
 	},
 /obj/item/radio/intercom{
@@ -585,7 +585,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "entrance_shutt"
+	base_id = "entrance_shutt"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -778,7 +778,7 @@
 	pixel_x = 8;
 	pixel_y = 8;
 	name = "Entrance Lockdown Shutters";
-	id = "entrance_lockdown"
+	base_id = "entrance_lockdown"
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
@@ -1088,7 +1088,7 @@
 	preferred_direction = 2
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "entrance_lockdown";
+	base_id = "entrance_lockdown";
 	name = "Entrance Lockdown Shutters"
 	},
 /turf/open/floor/plasteel/dark,
@@ -1096,11 +1096,11 @@
 "il" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	locked = 1;
-	id = "ranger_shields";
+	base_id = "ranger_shields";
 	dir = 1
 	},
 /obj/machinery/door/poddoor{
-	id = "miningblastlp"
+	base_id = "miningblastlp"
 	},
 /obj/structure/cable/cyan{
 	icon_state = "0-9"
@@ -1294,7 +1294,7 @@
 "jL" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/machinery/door/poddoor{
-	id = "thrusterblasts"
+	base_id = "thrusterblasts"
 	},
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
@@ -1452,10 +1452,10 @@
 "mf" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	locked = 1;
-	id = "ranger_shields"
+	base_id = "ranger_shields"
 	},
 /obj/machinery/door/poddoor{
-	id = "miningblastlp"
+	base_id = "miningblastlp"
 	},
 /obj/structure/cable/cyan{
 	icon_state = "0-10"
@@ -1522,7 +1522,7 @@
 /area/ship/security)
 "mz" = (
 /obj/machinery/door/poddoor{
-	id = "thrusterblasts"
+	base_id = "thrusterblasts"
 	},
 /obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/cyan{
@@ -1549,7 +1549,7 @@
 /area/ship/medical)
 "nf" = (
 /obj/machinery/door/poddoor{
-	id = "miningblastlp"
+	base_id = "miningblastlp"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
@@ -1903,7 +1903,7 @@
 "rz" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/machinery/door/poddoor{
-	id = "thrusterblasts"
+	base_id = "thrusterblasts"
 	},
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
@@ -2115,7 +2115,7 @@
 /obj/machinery/door/airlock/command/glass/lp/commissioner,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Commissioner's Shutters";
-	id = "commshut"
+	base_id = "commshut"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2220,7 +2220,7 @@
 "uH" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "outerouter";
+	base_id = "outerouter";
 	name = "Outer Aft Shutters"
 	},
 /turf/open/floor/plasteel/dark,
@@ -2353,7 +2353,7 @@
 "wh" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "entrance_lockdown";
+	base_id = "entrance_lockdown";
 	name = "Entrance Lockdown Shutters"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2617,7 +2617,7 @@
 	},
 /obj/machinery/button/door{
 	pixel_y = 24;
-	id = "thrusterblasts";
+	base_id = "thrusterblasts";
 	name = "Thruster Blast Doors"
 	},
 /turf/open/floor/plating,
@@ -2636,7 +2636,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Inner Aft Shutters";
-	id = "outerinner"
+	base_id = "outerinner"
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
@@ -2677,12 +2677,12 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	locked = 1;
-	id = "ranger_telecomms";
+	base_id = "ranger_telecomms";
 	dir = 4
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	locked = 1;
-	id = "ranger_telecomms";
+	base_id = "ranger_telecomms";
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2704,7 +2704,7 @@
 /obj/machinery/door/airlock/command/glass/lp/bridge,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Inner Fore Shutters";
-	id = "innerinner"
+	base_id = "innerinner"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -2895,7 +2895,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "entrance_lockdown";
+	base_id = "entrance_lockdown";
 	name = "Entrance Lockdown Shutters"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -3157,7 +3157,7 @@
 /obj/machinery/door/airlock/external,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Inner Aft Shutters";
-	id = "outerinner"
+	base_id = "outerinner"
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
@@ -3227,7 +3227,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Inner Aft Shutters";
-	id = "outerinner"
+	base_id = "outerinner"
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
@@ -3494,13 +3494,13 @@
 	dir = 8;
 	pixel_y = -9;
 	pixel_x = 22;
-	id = "miningblastlp";
+	base_id = "miningblastlp";
 	name = "Mining Bay Blast Doors"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
 	pixel_x = 22;
-	id = "ranger_shields"
+	base_id = "ranger_shields"
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/plasteel/dark,
@@ -3536,7 +3536,7 @@
 /area/ship/storage)
 "GL" = (
 /obj/machinery/door/poddoor{
-	id = "thrusterblasts"
+	base_id = "thrusterblasts"
 	},
 /obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating,
@@ -3570,7 +3570,7 @@
 /area/ship/bridge)
 "GQ" = (
 /obj/machinery/door/poddoor{
-	id = "thrusterblasts"
+	base_id = "thrusterblasts"
 	},
 /obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/cyan{
@@ -3606,7 +3606,7 @@
 	},
 /obj/machinery/door/airlock/command/glass/lp/bridge,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "innerouter";
+	base_id = "innerouter";
 	name = "Outer Port Shutters"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -3621,7 +3621,7 @@
 	},
 /obj/machinery/button/door{
 	pixel_y = 24;
-	id = "thrusterblasts";
+	base_id = "thrusterblasts";
 	name = "Thruster Blast Doors"
 	},
 /turf/open/floor/plating,
@@ -3664,7 +3664,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Commissioner's Shutters";
-	id = "commshut"
+	base_id = "commshut"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3845,7 +3845,7 @@
 /area/ship/medical)
 "IV" = (
 /obj/machinery/door/poddoor{
-	id = "thrusterblasts"
+	base_id = "thrusterblasts"
 	},
 /obj/machinery/power/shuttle/engine/fueled/plasma,
 /turf/open/floor/plating,
@@ -4596,7 +4596,7 @@
 "PJ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "entrance_lockdown";
+	base_id = "entrance_lockdown";
 	name = "Entrance Lockdown Shutters"
 	},
 /turf/open/floor/plating,
@@ -4797,25 +4797,25 @@
 	pixel_y = -4;
 	pixel_x = -7;
 	name = "Inner Aft Shutters";
-	id = "outerinner"
+	base_id = "outerinner"
 	},
 /obj/machinery/button/door{
 	pixel_y = 6;
 	pixel_x = -7;
 	name = "Inner Fore Shutters";
-	id = "innerinner"
+	base_id = "innerinner"
 	},
 /obj/machinery/button/door{
 	pixel_y = 6;
 	pixel_x = 5;
 	name = "Outer Fore Shutters";
-	id = "innerouter"
+	base_id = "innerouter"
 	},
 /obj/machinery/button/door{
 	pixel_y = -4;
 	pixel_x = 5;
 	name = "Outer Aft Shutters";
-	id = "outerouter"
+	base_id = "outerouter"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -5056,7 +5056,7 @@
 	},
 /obj/machinery/door/airlock/external,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "outerouter";
+	base_id = "outerouter";
 	name = "Outer Aft Shutters"
 	},
 /turf/open/floor/plasteel/dark,
@@ -5114,7 +5114,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "entrance_lockdown";
+	base_id = "entrance_lockdown";
 	name = "Entrance Lockdown Shutters"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -5304,7 +5304,7 @@
 "Xp" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "innerouter";
+	base_id = "innerouter";
 	name = "Outer Port Shutters"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -5615,7 +5615,7 @@
 /obj/machinery/button/door{
 	pixel_y = -2;
 	pixel_x = -7;
-	id = "commshut";
+	base_id = "commshut";
 	name = "Commissioner's Office Shutters"
 	},
 /turf/open/floor/plasteel/dark,
@@ -5686,7 +5686,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Inner Fore Shutters";
-	id = "innerinner"
+	base_id = "innerinner"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1

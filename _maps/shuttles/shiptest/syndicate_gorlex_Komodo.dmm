@@ -166,7 +166,7 @@
 /area/ship/maintenance/port)
 "bv" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "Syndie_warship_lockdown";
+	base_id = "Syndie_warship_lockdown";
 	name = "Lockdown Shutters"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -182,12 +182,12 @@
 /area/ship/hallway/central)
 "bA" = (
 /obj/machinery/door/poddoor{
-	id = "syndie_warship_cargo";
+	base_id = "syndie_warship_cargo";
 	name = "Cargo Hatch"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
-	id = "komodo_cargo";
+	base_id = "komodo_cargo";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -205,7 +205,7 @@
 "bF" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "syndiewarship_windows";
+	base_id = "syndiewarship_windows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -273,7 +273,7 @@
 "bZ" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "syndiewarship_windows";
+	base_id = "syndiewarship_windows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -454,7 +454,7 @@
 /area/ship/hallway/central)
 "dO" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "syndiewarship_armorybay";
+	base_id = "syndiewarship_armorybay";
 	name = "Weapon Hold"
 	},
 /obj/machinery/door/firedoor,
@@ -474,14 +474,14 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "Artillery2shutter";
+	base_id = "Artillery2shutter";
 	name = "Artillery Hatch";
 	pixel_x = 29;
 	pixel_y = -4
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
-	id = "komodo_starboard";
+	base_id = "komodo_starboard";
 	pixel_x = 28;
 	pixel_y = 6
 	},
@@ -622,7 +622,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "Syndie_warship_lockdown";
+	base_id = "Syndie_warship_lockdown";
 	name = "Lockdown Shutters"
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -678,7 +678,7 @@
 "gp" = (
 /obj/machinery/button/door{
 	dir = 8;
-	id = "syndiewarship_armorybay";
+	base_id = "syndiewarship_armorybay";
 	name = "Weapon Hold";
 	pixel_x = 28;
 	req_access_txt = "3"
@@ -783,7 +783,7 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/button/door{
 	dir = 8;
-	id = "syndiewarship_armorybay";
+	base_id = "syndiewarship_armorybay";
 	name = "Weapon Hold";
 	pixel_x = 28
 	},
@@ -809,7 +809,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "Syndie_warship_lockdown";
+	base_id = "Syndie_warship_lockdown";
 	name = "Lockdown Shutters"
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -829,7 +829,7 @@
 	pixel_y = 2
 	},
 /obj/machinery/button/door{
-	id = "warshipbridge";
+	base_id = "warshipbridge";
 	name = "Bridge lockdown";
 	pixel_x = 7;
 	pixel_y = -2
@@ -1329,12 +1329,12 @@
 /area/ship/engineering)
 "lL" = (
 /obj/machinery/door/poddoor{
-	id = "Artillery1shutter"
+	base_id = "Artillery1shutter"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 4;
-	id = "komodo_port";
+	base_id = "komodo_port";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -1367,7 +1367,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "warship_engines";
+	base_id = "warship_engines";
 	name = "Engine shutters";
 	pixel_y = -24
 	},
@@ -1410,7 +1410,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "warship_engines";
+	base_id = "warship_engines";
 	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
@@ -1421,7 +1421,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner,
 /obj/machinery/door/poddoor{
-	id = "warship_engines";
+	base_id = "warship_engines";
 	name = "Thruster Blast Door"
 	},
 /obj/machinery/door/window/eastleft{
@@ -1687,19 +1687,19 @@
 "pS" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "Syndie_warship_lockdown";
+	base_id = "Syndie_warship_lockdown";
 	name = "Lockdown Control";
 	pixel_x = -6;
 	pixel_y = 6
 	},
 /obj/machinery/button/door{
-	id = "syndie_warship_cargo";
+	base_id = "syndie_warship_cargo";
 	name = "cargohold shutters";
 	pixel_x = 6;
 	pixel_y = 6
 	},
 /obj/machinery/button/door{
-	id = "syndiewarship_windows";
+	base_id = "syndiewarship_windows";
 	name = "Window Control";
 	pixel_y = -4
 	},
@@ -1844,7 +1844,7 @@
 "rE" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "syndiewarship_windows";
+	base_id = "syndiewarship_windows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -1852,7 +1852,7 @@
 "rK" = (
 /obj/machinery/button/door{
 	dir = 1;
-	id = "syndie_mechbay";
+	base_id = "syndie_mechbay";
 	name = "mechbay door";
 	pixel_y = -24
 	},
@@ -2249,7 +2249,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "warship_engines";
+	base_id = "warship_engines";
 	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
@@ -2440,12 +2440,12 @@
 /area/ship/engineering)
 "xD" = (
 /obj/machinery/door/poddoor{
-	id = "Artillery2shutter"
+	base_id = "Artillery2shutter"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 4;
-	id = "komodo_starboard";
+	base_id = "komodo_starboard";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -2619,7 +2619,7 @@
 /area/ship/engineering)
 "zu" = (
 /obj/machinery/button/door{
-	id = "Syndie_warship_lockdown";
+	base_id = "Syndie_warship_lockdown";
 	name = "Lockdown Control";
 	pixel_y = 26
 	},
@@ -2642,13 +2642,13 @@
 /area/ship/hallway/central)
 "zA" = (
 /obj/machinery/door/poddoor{
-	id = "syndie_warship_cargo";
+	base_id = "syndie_warship_cargo";
 	name = "Cargo Hatch"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 1;
-	id = "komodo_cargo";
+	base_id = "komodo_cargo";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -2759,7 +2759,7 @@
 "Aw" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "syndiewarship_windows";
+	base_id = "syndiewarship_windows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -3232,7 +3232,7 @@
 /area/ship/crew/canteen)
 "Fx" = (
 /obj/machinery/button/door{
-	id = "syndie_mechbay";
+	base_id = "syndie_mechbay";
 	name = "mechbay door";
 	pixel_y = 25
 	},
@@ -3356,7 +3356,7 @@
 /area/ship/hallway/central)
 "Gs" = (
 /obj/machinery/door/poddoor{
-	id = "syndie_warship_cargo";
+	base_id = "syndie_warship_cargo";
 	name = "Cargo Hatch"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -4065,19 +4065,19 @@
 "ME" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "warshipbridge";
+	base_id = "warshipbridge";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "MG" = (
 /obj/machinery/door/poddoor{
-	id = "Artillery2shutter"
+	base_id = "Artillery2shutter"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 8;
-	id = "komodo_starboard";
+	base_id = "komodo_starboard";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -4092,14 +4092,14 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "Artillery1shutter";
+	base_id = "Artillery1shutter";
 	name = "Artillery Hatch";
 	pixel_x = -29;
 	pixel_y = -4
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 4;
-	id = "komodo_port";
+	base_id = "komodo_port";
 	pixel_x = -28;
 	pixel_y = 6
 	},
@@ -4388,7 +4388,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner,
 /obj/machinery/door/poddoor{
-	id = "warship_engines";
+	base_id = "warship_engines";
 	name = "Thruster Blast Door"
 	},
 /obj/machinery/door/window/eastright{
@@ -4644,7 +4644,7 @@
 /area/ship/hallway/central)
 "Sn" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "syndiewarship_armorybay";
+	base_id = "syndiewarship_armorybay";
 	name = "Weapon Hold"
 	},
 /obj/machinery/door/firedoor,
@@ -4687,12 +4687,12 @@
 /area/ship/crew/canteen)
 "SZ" = (
 /obj/machinery/door/poddoor{
-	id = "Artillery1shutter"
+	base_id = "Artillery1shutter"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 8;
-	id = "komodo_port";
+	base_id = "komodo_port";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -4842,7 +4842,7 @@
 /area/ship/engineering)
 "Ux" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "syndie_mechbay";
+	base_id = "syndie_mechbay";
 	name = "Mechbay"
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -5001,7 +5001,7 @@
 "Wq" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "syndie_warship_cargo";
+	base_id = "syndie_warship_cargo";
 	name = "cargohold shutters";
 	pixel_x = -25
 	},
@@ -5022,7 +5022,7 @@
 /obj/item/trash/boritos,
 /obj/machinery/button/shieldwallgen{
 	dir = 4;
-	id = "komodo_cargo";
+	base_id = "komodo_cargo";
 	pixel_x = -24;
 	pixel_y = -10
 	},
@@ -5143,7 +5143,7 @@
 "WV" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "syndiewarship_windows";
+	base_id = "syndiewarship_windows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,

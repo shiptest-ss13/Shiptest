@@ -9,7 +9,7 @@
 	COOLDOWN_DECLARE(printer_ready)
 	var/datum/bank_account/cargocash
 
-/obj/machinery/computer/bounty/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+/obj/machinery/computer/bounty/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
 	cargocash = port.current_ship.ship_account
 

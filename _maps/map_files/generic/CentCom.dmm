@@ -39,14 +39,14 @@
 /area/tdome/arena_source)
 "afC" = (
 /obj/machinery/door/poddoor{
-	id = "thunderdomegen";
+	base_id = "thunderdomegen";
 	name = "General Supply"
 	},
 /turf/open/floor/plasteel/dark,
 /area/tdome/arena_source)
 "afD" = (
 /obj/machinery/door/poddoor{
-	id = "thunderdome";
+	base_id = "thunderdome";
 	name = "Thunderdome Blast Door"
 	},
 /turf/open/floor/plasteel,
@@ -56,7 +56,7 @@
 /area/tdome/arena_source)
 "afP" = (
 /obj/machinery/flasher{
-	id = "tdomeflash";
+	base_id = "tdomeflash";
 	name = "Thunderdome Flash"
 	},
 /turf/open/floor/circuit/green,
@@ -70,7 +70,7 @@
 /area/space)
 "afU" = (
 /obj/machinery/door/poddoor{
-	id = "thunderdomehea";
+	base_id = "thunderdomehea";
 	name = "Heavy Supply"
 	},
 /turf/open/floor/plasteel/dark,
@@ -1750,7 +1750,7 @@
 /area/syndicate_mothership/control)
 "aud" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "nukeop_ready";
+	base_id = "nukeop_ready";
 	name = "Shuttle Dock"
 	},
 /turf/open/floor/plating,
@@ -2063,7 +2063,7 @@
 /area/centcom/holding)
 "awg" = (
 /obj/machinery/door/poddoor{
-	id = "thunderdomegen";
+	base_id = "thunderdomegen";
 	name = "General Supply"
 	},
 /obj/effect/turf_decal/industrial/loading{
@@ -2697,7 +2697,7 @@
 /area/centcom/evac)
 "aAG" = (
 /obj/machinery/door/poddoor{
-	id = "thunderdome";
+	base_id = "thunderdome";
 	name = "Thunderdome Blast Door"
 	},
 /obj/effect/turf_decal/industrial/loading{
@@ -2918,7 +2918,7 @@
 /area/centcom/evac)
 "aDo" = (
 /obj/machinery/door/poddoor{
-	id = "thunderdomehea";
+	base_id = "thunderdomehea";
 	name = "Heavy Supply"
 	},
 /obj/effect/turf_decal/industrial/loading,
@@ -3380,7 +3380,7 @@
 /area/tdome/tdomeobserve)
 "aHj" = (
 /obj/machinery/door/poddoor{
-	id = "thunderdomegen";
+	base_id = "thunderdomegen";
 	name = "General Supply"
 	},
 /obj/effect/turf_decal/industrial/loading{
@@ -3550,7 +3550,7 @@
 /area/tdome/arena)
 "aJj" = (
 /obj/machinery/flasher{
-	id = "tdomeflash";
+	base_id = "tdomeflash";
 	name = "Thunderdome Flash"
 	},
 /turf/open/floor/circuit/green,
@@ -3683,7 +3683,7 @@
 /area/syndicate_mothership/control)
 "aKz" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "XCCsec3";
+	base_id = "XCCsec3";
 	name = "CC Main Access Shutters"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -4219,7 +4219,7 @@
 /area/centcom/holding)
 "aMH" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "XCCsec1";
+	base_id = "XCCsec1";
 	name = "XCC Checkpoint 1 Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -4478,7 +4478,7 @@
 	pixel_y = 2
 	},
 /obj/machinery/button/door/indestructible{
-	id = "lmrestroom";
+	base_id = "lmrestroom";
 	name = "Lock Control";
 	pixel_y = -28
 	},
@@ -4721,7 +4721,7 @@
 /area/tdome/arena)
 "aPJ" = (
 /obj/machinery/door/poddoor{
-	id = "thunderdome";
+	base_id = "thunderdome";
 	name = "Thunderdome Blast Door"
 	},
 /obj/effect/turf_decal/industrial/loading{
@@ -4951,7 +4951,7 @@
 /area/centcom/holding)
 "aRf" = (
 /obj/machinery/button/door/indestructible{
-	id = "XCCsec1";
+	base_id = "XCCsec1";
 	name = "CC Shutter 1 Control";
 	pixel_y = -25
 	},
@@ -5091,7 +5091,7 @@
 /area/centcom/control)
 "aRF" = (
 /obj/machinery/button/door/indestructible{
-	id = "XCCFerry";
+	base_id = "XCCFerry";
 	name = "Hanger Bay Shutters";
 	pixel_y = 25;
 	req_access_txt = "101"
@@ -5140,7 +5140,7 @@
 /area/centcom/holding)
 "aRY" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "XCCcustoms1";
+	base_id = "XCCcustoms1";
 	name = "XCC Customs 1 Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -5729,7 +5729,7 @@
 /area/centcom/ferry)
 "aVU" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "XCCcustoms2";
+	base_id = "XCCcustoms2";
 	name = "XCC Customs 2 Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -6027,7 +6027,7 @@
 /area/centcom/ferry)
 "aXX" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "XCCFerry";
+	base_id = "XCCFerry";
 	name = "XCC Ferry Hangar"
 	},
 /obj/effect/turf_decal/industrial/loading{
@@ -7327,7 +7327,7 @@
 	},
 /obj/machinery/conveyor/inverted{
 	dir = 6;
-	id = "XCCQMLoad2"
+	base_id = "XCCQMLoad2"
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
@@ -8031,7 +8031,7 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "XCCQMLoad2"
+	base_id = "XCCQMLoad2"
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
@@ -8147,14 +8147,14 @@
 /area/syndicate_mothership/control)
 "eVp" = (
 /obj/machinery/button/door/indestructible{
-	id = "XCCQMLoaddoor";
+	base_id = "XCCQMLoaddoor";
 	layer = 4;
 	name = "Loading Doors";
 	pixel_x = -27;
 	pixel_y = -5
 	},
 /obj/machinery/button/door/indestructible{
-	id = "XCCQMLoaddoor2";
+	base_id = "XCCQMLoaddoor2";
 	layer = 4;
 	name = "Loading Doors";
 	pixel_x = -27;
@@ -8184,14 +8184,14 @@
 	dir = 1
 	},
 /obj/machinery/button/door/indestructible{
-	id = "XCCcustoms1";
+	base_id = "XCCcustoms1";
 	layer = 3.5;
 	name = "CC Customs 1 Control";
 	pixel_x = 8;
 	pixel_y = -25
 	},
 /obj/machinery/button/door/indestructible{
-	id = "XCCcustoms2";
+	base_id = "XCCcustoms2";
 	layer = 3.5;
 	name = "CC Customs 2 Control";
 	pixel_x = -8;
@@ -8235,12 +8235,12 @@
 /area/ctf)
 "fac" = (
 /obj/machinery/door/poddoor{
-	id = "XCCQMLoaddoor";
+	base_id = "XCCQMLoaddoor";
 	name = "Supply Dock Loading Door"
 	},
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "XCCQMLoad"
+	base_id = "XCCQMLoad"
 	},
 /obj/effect/turf_decal/industrial/warning/cee{
 	dir = 8
@@ -8283,7 +8283,7 @@
 /area/centcom/control)
 "fhE" = (
 /obj/machinery/door/poddoor{
-	id = "XCCQMLoaddoor2";
+	base_id = "XCCQMLoaddoor2";
 	name = "Supply Dock Loading Door"
 	},
 /obj/effect/turf_decal/industrial/warning/cee{
@@ -8291,7 +8291,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "XCCQMLoad2"
+	base_id = "XCCQMLoad2"
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
@@ -8321,7 +8321,7 @@
 /area/tdome/tdomeobserve)
 "foY" = (
 /obj/machinery/button/door/indestructible{
-	id = "XCCsec3";
+	base_id = "XCCsec3";
 	name = "XCC Shutter 3 Control";
 	pixel_x = 25;
 	pixel_y = -25
@@ -8969,7 +8969,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door/indestructible{
-	id = "XCCcustoms1";
+	base_id = "XCCcustoms1";
 	layer = 3;
 	name = "CC Emergency Docks Control";
 	pixel_x = 25;
@@ -9157,7 +9157,7 @@
 /obj/structure/plasticflaps,
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "XCCQMLoad"
+	base_id = "XCCQMLoad"
 	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel,
@@ -9322,7 +9322,7 @@
 /area/centcom/control)
 "hEF" = (
 /obj/machinery/button/flasher/indestructible{
-	id = "tdomeflash"
+	base_id = "tdomeflash"
 	},
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -9769,26 +9769,26 @@
 	dir = 1
 	},
 /obj/machinery/button/door/indestructible{
-	id = "XCCFerry";
+	base_id = "XCCFerry";
 	name = "Hanger Bay Shutters";
 	pixel_x = -8;
 	pixel_y = 25;
 	req_access_txt = "101"
 	},
 /obj/machinery/button/door/indestructible{
-	id = "XCCsec3";
+	base_id = "XCCsec3";
 	name = "CC Main Access Control";
 	pixel_x = 8;
 	pixel_y = 25
 	},
 /obj/machinery/button/door/indestructible{
-	id = "XCCsec1";
+	base_id = "XCCsec1";
 	name = "CC Shutter 1 Control";
 	pixel_x = 8;
 	pixel_y = 38
 	},
 /obj/machinery/button/door/indestructible{
-	id = "XCCsec3";
+	base_id = "XCCsec3";
 	name = "XCC Shutter 3 Control";
 	pixel_x = -8;
 	pixel_y = 38
@@ -10484,7 +10484,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
 /obj/machinery/button/door/indestructible{
-	id = "XCCsecdepartment";
+	base_id = "XCCsecdepartment";
 	layer = 3;
 	name = "CC Security Checkpoint Control";
 	pixel_x = 25;
@@ -10639,7 +10639,7 @@
 /obj/item/folder/red,
 /obj/item/pen/red,
 /obj/machinery/button/door/indestructible{
-	id = "XCCsec3";
+	base_id = "XCCsec3";
 	name = "XCC Shutter 3 Control";
 	pixel_x = -25;
 	pixel_y = 25
@@ -11604,7 +11604,7 @@
 /area/ctf)
 "mKb" = (
 /obj/machinery/button/door/indestructible{
-	id = "thunderdomegen";
+	base_id = "thunderdomegen";
 	name = "General Supply Control";
 	req_access_txt = "102"
 	},
@@ -11768,13 +11768,13 @@
 /area/centcom/ferry)
 "ncR" = (
 /obj/machinery/door/poddoor{
-	id = "XCCQMLoaddoor2";
+	base_id = "XCCQMLoaddoor2";
 	name = "Supply Dock Loading Door"
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "XCCQMLoad2"
+	base_id = "XCCQMLoad2"
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
@@ -12050,7 +12050,7 @@
 "nJm" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door/indestructible{
-	id = "XCCsec3";
+	base_id = "XCCsec3";
 	name = "CC Main Access Control"
 	},
 /obj/machinery/airalarm{
@@ -12229,12 +12229,12 @@
 /area/ctf)
 "ojp" = (
 /obj/machinery/door/poddoor{
-	id = "XCCQMLoaddoor";
+	base_id = "XCCQMLoaddoor";
 	name = "Supply Dock Loading Door"
 	},
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "XCCQMLoad"
+	base_id = "XCCQMLoad"
 	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel,
@@ -12613,7 +12613,7 @@
 /area/centcom/ferry)
 "oSc" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "XCCsecdepartment";
+	base_id = "XCCsecdepartment";
 	name = "XCC Security Checkpoint Shutters"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -13424,7 +13424,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
 /obj/machinery/button/door/indestructible{
-	id = "XCCFerry";
+	base_id = "XCCFerry";
 	name = "Hanger Bay Shutters";
 	pixel_y = -38
 	},
@@ -13604,7 +13604,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "XCCQMLoad2"
+	base_id = "XCCQMLoad2"
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
@@ -13929,7 +13929,7 @@
 /area/tdome/arena_source)
 "rLV" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "XCCQMLoad2";
+	base_id = "XCCQMLoad2";
 	pixel_x = 6
 	},
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -14004,7 +14004,7 @@
 /area/tdome/arena_source)
 "rQy" = (
 /obj/machinery/button/door/indestructible{
-	id = "thunderdomehea";
+	base_id = "thunderdomehea";
 	name = "Heavy Supply Control";
 	req_access_txt = "102"
 	},
@@ -15074,7 +15074,7 @@
 /area/centcom/control)
 "uGi" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "XCCsec3";
+	base_id = "XCCsec3";
 	name = "XCC Checkpoint 3 Shutters"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -15254,7 +15254,7 @@
 /area/centcom/holding)
 "uXT" = (
 /obj/machinery/button/door/indestructible{
-	id = "nukeop_ready";
+	base_id = "nukeop_ready";
 	name = "mission launch control";
 	pixel_x = -26;
 	req_access_txt = "151"
@@ -15816,7 +15816,7 @@
 "wvj" = (
 /obj/machinery/conveyor_switch/oneway{
 	dir = 8;
-	id = "XCCQMLoad";
+	base_id = "XCCQMLoad";
 	pixel_x = 6
 	},
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -16235,7 +16235,7 @@
 /obj/effect/turf_decal/industrial/warning/cee,
 /obj/machinery/conveyor/inverted{
 	dir = 10;
-	id = "XCCQMLoad2"
+	base_id = "XCCQMLoad2"
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
@@ -16262,7 +16262,7 @@
 /area/centcom/control)
 "xWH" = (
 /obj/machinery/button/door/indestructible{
-	id = "thunderdome";
+	base_id = "thunderdome";
 	name = "Main Blast Doors Control";
 	req_access_txt = "102"
 	},

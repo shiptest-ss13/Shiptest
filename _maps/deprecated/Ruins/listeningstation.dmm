@@ -257,7 +257,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "syndie_listeningpost_external";
+	base_id = "syndie_listeningpost_external";
 	name = "External Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = 25;
@@ -372,7 +372,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 8;
 	icon_state = "inje_map-3";
-	id = null
+	base_id = null
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/listeningstation)

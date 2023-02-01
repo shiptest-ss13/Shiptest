@@ -23,7 +23,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor{
-	id = "emergencybay_blastdoors"
+	base_id = "emergencybay_blastdoors"
 	},
 /turf/open/floor/engine,
 /area/ship/cargo)
@@ -33,7 +33,7 @@
 "ah" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
@@ -47,7 +47,7 @@
 "ak" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
@@ -380,7 +380,7 @@
 "bf" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
+	base_id = "whiteship_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -612,7 +612,7 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializbase_id = 30);
 	name = "thializid bottle"
 	},
 /turf/open/floor/plasteel/dark,
@@ -875,19 +875,19 @@
 	pixel_x = -26
 	},
 /obj/machinery/button/door{
-	id = "whiteship_windows";
+	base_id = "whiteship_windows";
 	name = "Windows Blast Door Control";
 	pixel_x = -5;
 	pixel_y = -25
 	},
 /obj/machinery/button/door{
-	id = "whiteship_bridge";
+	base_id = "whiteship_bridge";
 	name = "Bridge Blast Door Control";
 	pixel_x = 5;
 	pixel_y = -25
 	},
 /obj/machinery/button/door{
-	id = "emergencybay_blastdoors";
+	base_id = "emergencybay_blastdoors";
 	name = "Emergency Bay Blast Door Control";
 	pixel_y = -32
 	},
@@ -1053,7 +1053,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor{
-	id = "emergencybay_blastdoors"
+	base_id = "emergencybay_blastdoors"
 	},
 /turf/open/floor/engine,
 /area/ship/cargo)
@@ -1531,7 +1531,7 @@
 "gh" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1694,7 +1694,7 @@
 "rn" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
+	base_id = "whiteship_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1831,7 +1831,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "emergencybay_blastdoors";
+	base_id = "emergencybay_blastdoors";
 	name = "Emergency Bay Blast Door Control";
 	pixel_x = 25;
 	pixel_y = 25
@@ -2008,7 +2008,7 @@
 "MG" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
+	base_id = "whiteship_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2049,7 +2049,7 @@
 "OD" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2080,7 +2080,7 @@
 "Rx" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -2096,7 +2096,7 @@
 "TB" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
+	base_id = "whiteship_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -2145,7 +2145,7 @@
 "WP" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
+	base_id = "whiteship_bridge"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{

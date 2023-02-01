@@ -86,21 +86,21 @@
 "aq" = (
 /obj/machinery/button/door{
 	desc = "A remote control-switch for the elevator doors.";
-	id = "UO45_Elevator";
+	base_id = "UO45_Elevator";
 	name = "Elevator Doors";
 	pixel_x = 6;
 	pixel_y = -25
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch to call the elevator to your level.";
-	id = "UO45_useless";
+	base_id = "UO45_useless";
 	name = "B1";
 	pixel_x = -6;
 	pixel_y = -25
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch to call the elevator to your level.";
-	id = "UO45_useless";
+	base_id = "UO45_useless";
 	name = "B2";
 	pixel_x = -6;
 	pixel_y = -34
@@ -185,14 +185,14 @@
 "aG" = (
 /obj/machinery/button/door{
 	desc = "A remote control-switch to call the elevator to your level.";
-	id = "UO45_useless";
+	base_id = "UO45_useless";
 	name = "Call Elevator";
 	pixel_x = -6;
 	pixel_y = 25
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch for the elevator doors.";
-	id = "UO45_Elevator";
+	base_id = "UO45_Elevator";
 	name = "Elevator Doors";
 	pixel_x = 6;
 	pixel_y = 25
@@ -880,7 +880,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "awaydorm2";
+	base_id = "awaydorm2";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -921,7 +921,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "awaydorm1";
+	base_id = "awaydorm1";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -1675,7 +1675,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "awaydorm3";
+	base_id = "awaydorm3";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = 25;
@@ -3399,7 +3399,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "UO45_rdprivacy";
+	base_id = "UO45_rdprivacy";
 	name = "Privacy Shutters"
 	},
 /turf/open/floor/plating{
@@ -3409,7 +3409,7 @@
 "mj" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "UO45_rdprivacy";
+	base_id = "UO45_rdprivacy";
 	name = "Privacy Shutters"
 	},
 /turf/open/floor/plating{
@@ -3585,7 +3585,7 @@
 "mX" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /obj/machinery/button/door{
-	id = "awaydorm5";
+	base_id = "awaydorm5";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -3624,7 +3624,7 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "nb" = (
 /obj/machinery/button/door{
-	id = "awaydorm7";
+	base_id = "awaydorm7";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -3643,7 +3643,7 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "nh" = (
 /obj/machinery/door/poddoor{
-	id = "UO45_Secure Storage";
+	base_id = "UO45_Secure Storage";
 	name = "Secure Storage"
 	},
 /turf/open/floor/plating{
@@ -4248,7 +4248,7 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "pF" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
-	id = "UO45_air_in"
+	base_id = "UO45_air_in"
 	},
 /turf/open/floor/engine/air,
 /area/awaymission/undergroundoutpost45/engineering)
@@ -4306,7 +4306,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "awaydorm4";
+	base_id = "awaydorm4";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -25;
@@ -4343,7 +4343,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "awaydorm6";
+	base_id = "awaydorm6";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = 25;
@@ -5175,7 +5175,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "UO45_EngineeringOffice";
+	base_id = "UO45_EngineeringOffice";
 	name = "Privacy Shutters"
 	},
 /obj/machinery/door/window/southleft{
@@ -5206,7 +5206,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "UO45_Engineering";
+	base_id = "UO45_Engineering";
 	name = "Engineering Security Door"
 	},
 /turf/open/floor/plating{
@@ -5400,7 +5400,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "UO45_EngineeringOffice";
+	base_id = "UO45_EngineeringOffice";
 	name = "Privacy Shutters"
 	},
 /obj/machinery/door/window/southleft{
@@ -5430,7 +5430,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "UO45_Engineering";
+	base_id = "UO45_Engineering";
 	name = "Engineering Security Door"
 	},
 /turf/open/floor/plating{
@@ -5520,7 +5520,7 @@
 "te" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
 	dir = 8;
-	id = "UO45_mix_in"
+	base_id = "UO45_mix_in"
 	},
 /turf/open/floor/engine/vacuum,
 /area/awaymission/undergroundoutpost45/engineering)
@@ -6245,7 +6245,7 @@
 "vd" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
 	dir = 1;
-	id = "UO45_n2_in"
+	base_id = "UO45_n2_in"
 	},
 /turf/open/floor/engine/n2,
 /area/awaymission/undergroundoutpost45/engineering)
@@ -6260,7 +6260,7 @@
 "vf" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
 	dir = 1;
-	id = "UO45_o2_in"
+	base_id = "UO45_o2_in"
 	},
 /turf/open/floor/engine/o2,
 /area/awaymission/undergroundoutpost45/engineering)
@@ -6722,7 +6722,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "awaydorm8";
+	base_id = "awaydorm8";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -6866,7 +6866,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "awaydorm9";
+	base_id = "awaydorm9";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = 25;
@@ -7027,7 +7027,7 @@
 /area/awaymission/undergroundoutpost45/mining)
 "xs" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "UO45_mining";
+	base_id = "UO45_mining";
 	name = "mining conveyor"
 	},
 /turf/open/floor/plasteel{
@@ -8150,7 +8150,7 @@
 "Az" = (
 /obj/machinery/conveyor{
 	dir = 2;
-	id = "UO45_mining"
+	base_id = "UO45_mining"
 	},
 /obj/machinery/light/small{
 	dir = 8
@@ -8159,7 +8159,7 @@
 	dir = 4
 	},
 /obj/machinery/conveyor{
-	id = "UO45_mining"
+	base_id = "UO45_mining"
 	},
 /obj/machinery/light/small{
 	dir = 8
@@ -8999,7 +8999,7 @@
 	pixel_y = 32
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "UO45_Engineering";
+	base_id = "UO45_Engineering";
 	name = "Engineering Security Door"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -9037,7 +9037,7 @@
 "EW" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/preopen{
-	id = "UO45_biohazard";
+	base_id = "UO45_biohazard";
 	name = "Biohazard Containment Door"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -9129,7 +9129,7 @@
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "FG" = (
 /obj/machinery/door/poddoor{
-	id = "UO45_Elevator"
+	base_id = "UO45_Elevator"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel{
@@ -9241,14 +9241,14 @@
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch which locks the research division down in the event of a biohazard leak or contamination.";
-	id = "UO45_biohazard";
+	base_id = "UO45_biohazard";
 	name = "Biohazard Door Control";
 	pixel_y = 8;
 	req_access_txt = "201"
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch that controls the privacy shutters.";
-	id = "UO45_rdprivacy";
+	base_id = "UO45_rdprivacy";
 	name = "Privacy Shutter Control";
 	pixel_y = -2;
 	req_access_txt = "201"
@@ -9682,13 +9682,13 @@
 "Hy" = (
 /obj/machinery/conveyor{
 	dir = 2;
-	id = "UO45_mining"
+	base_id = "UO45_mining"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/machinery/conveyor{
-	id = "UO45_mining"
+	base_id = "UO45_mining"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -10056,7 +10056,7 @@
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch for the engineering security doors.";
-	id = "UO45_Engineering";
+	base_id = "UO45_Engineering";
 	name = "Engineering Lockdown";
 	pixel_x = 25;
 	pixel_y = 6;
@@ -10290,7 +10290,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "UO45_Engineering";
+	base_id = "UO45_Engineering";
 	name = "Engineering Security Door"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -10544,7 +10544,7 @@
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch for the security privacy shutters.";
-	id = "UO45_EngineeringOffice";
+	base_id = "UO45_EngineeringOffice";
 	name = "Privacy Shutters";
 	pixel_x = -25;
 	pixel_y = 6;
@@ -11577,7 +11577,7 @@
 "NX" = (
 /obj/machinery/conveyor{
 	dir = 2;
-	id = "UO45_mining"
+	base_id = "UO45_mining"
 	},
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = -32
@@ -11586,7 +11586,7 @@
 	dir = 4
 	},
 /obj/machinery/conveyor{
-	id = "UO45_mining"
+	base_id = "UO45_mining"
 	},
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = -32
@@ -11874,7 +11874,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/button/door{
 	desc = "A remote control-switch whichs locks the research division down in the event of a biohazard leak or contamination.";
-	id = "UO45_biohazard";
+	base_id = "UO45_biohazard";
 	name = "Biohazard Door Control";
 	pixel_y = -25;
 	req_access_txt = "201"
@@ -12618,7 +12618,7 @@
 "SA" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/preopen{
-	id = "UO45_Engineering";
+	base_id = "UO45_Engineering";
 	name = "Engineering Security Door"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -14219,7 +14219,7 @@
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch for the engineering security doors.";
-	id = "UO45_Engineering";
+	base_id = "UO45_Engineering";
 	name = "Engineering Lockdown";
 	pixel_x = -6;
 	pixel_y = -25;
@@ -14227,7 +14227,7 @@
 	},
 /obj/machinery/button/door{
 	desc = "A remote control-switch for Secure Storage.";
-	id = "UO45_Secure Storage";
+	base_id = "UO45_Secure Storage";
 	name = "Engineering Secure Storage";
 	pixel_x = 6;
 	pixel_y = -25;

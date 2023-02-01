@@ -3,7 +3,7 @@
 	desc = "A heavy duty blast door that opens mechanically."
 	icon = 'icons/obj/doors/blastdoor.dmi'
 	icon_state = "closed"
-	var/id = 1
+	var/base_id
 	layer = BLASTDOOR_LAYER
 	closingLayer = CLOSED_BLASTDOOR_LAYER
 	sub_door = TRUE
@@ -35,10 +35,10 @@
 
 	if(panel_open && !density)
 		if(W.tool_behaviour == TOOL_MULTITOOL)
-			var/change_id = input("Set [src]'s ID. It must be a number between 1 and 100.", "ID", id) as num|null
+			var/change_id = input("Set [src]'s ID. It must be a number between 1 and 100.", "ID", base_id) as num|null
 			if(change_id)
-				id = clamp(round(change_id, 1), 1, 100)
-				to_chat(user, "<span class='notice'>You change the ID to [id].</span>")
+				base_id = clamp(round(change_id, 1), 1, 100)
+				to_chat(user, "<span class='notice'>You change the ID to [base_id].</span>")
 
 		if(W.tool_behaviour == TOOL_CROWBAR)
 			to_chat(user, "<span class='notice'>You start to remove the airlock electronics.</span>")
@@ -67,9 +67,6 @@
 		new /obj/item/electronics/airlock(loc)
 	qdel(src)
 
-/obj/machinery/door/poddoor/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	id = "[REF(port)][id]"
-
 /obj/machinery/door/poddoor/preopen
 	icon_state = "open"
 	density = FALSE
@@ -94,23 +91,23 @@
 
 /obj/machinery/door/poddoor/incinerator_toxmix
 	name = "Combustion Chamber Vent"
-	id = INCINERATOR_TOXMIX_VENT
+	base_id = INCINERATOR_TOXMIX_VENT
 
 /obj/machinery/door/poddoor/incinerator_atmos_main
 	name = "turbine vent"
-	id = INCINERATOR_ATMOS_MAINVENT
+	base_id = INCINERATOR_ATMOS_MAINVENT
 
 /obj/machinery/door/poddoor/incinerator_atmos_aux
 	name = "Combustion Chamber Vent"
-	id = INCINERATOR_ATMOS_AUXVENT
+	base_id = INCINERATOR_ATMOS_AUXVENT
 
 /obj/machinery/door/poddoor/incinerator_syndicatelava_main
 	name = "turbine vent"
-	id = INCINERATOR_SYNDICATELAVA_MAINVENT
+	base_id = INCINERATOR_SYNDICATELAVA_MAINVENT
 
 /obj/machinery/door/poddoor/incinerator_syndicatelava_aux
 	name = "Combustion Chamber Vent"
-	id = INCINERATOR_SYNDICATELAVA_AUXVENT
+	base_id = INCINERATOR_SYNDICATELAVA_AUXVENT
 
 /obj/machinery/door/poddoor/Bumped(atom/movable/AM)
 	if(density)

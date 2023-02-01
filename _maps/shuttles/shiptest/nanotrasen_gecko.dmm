@@ -146,7 +146,7 @@
 /area/ship/cargo/starboard)
 "bq" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "gecko_port"
+	base_id = "gecko_port"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -361,7 +361,7 @@
 /area/ship/cargo/port)
 "dB" = (
 /obj/machinery/button/door{
-	id = "gecko_bridge";
+	base_id = "gecko_bridge";
 	name = "Window Shutters";
 	pixel_x = 6;
 	pixel_y = 24;
@@ -430,7 +430,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "gecko_thrusters"
+	base_id = "gecko_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -593,7 +593,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "gecko_thrusters"
+	base_id = "gecko_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -854,7 +854,7 @@
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/door/poddoor{
-	id = "gecko_thrusters"
+	base_id = "gecko_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -904,7 +904,7 @@
 /area/ship/maintenance/fore)
 "ja" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "gecko_port"
+	base_id = "gecko_port"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
@@ -1017,7 +1017,7 @@
 	},
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor/preopen{
-	id = "gecko_port_int"
+	base_id = "gecko_port_int"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech/grid,
@@ -1048,7 +1048,7 @@
 /obj/structure/railing,
 /obj/machinery/button/door{
 	dir = 8;
-	id = "gecko_engine_vent";
+	base_id = "gecko_engine_vent";
 	name = "Combustion Chamber Blast Door Control";
 	pixel_x = 24;
 	pixel_y = 6;
@@ -1182,7 +1182,7 @@
 "ly" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "gecko_bridge"
+	base_id = "gecko_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1669,7 +1669,7 @@
 /area/ship/maintenance/fore)
 "rE" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "gecko_starboard"
+	base_id = "gecko_starboard"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2042,7 +2042,7 @@
 	},
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor/preopen{
-	id = "gecko_port_int"
+	base_id = "gecko_port_int"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2765,7 +2765,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "gecko_thrusters"
+	base_id = "gecko_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -3017,14 +3017,14 @@
 /area/ship/hallway/fore)
 "Gi" = (
 /obj/machinery/button/door{
-	id = "gecko_starboard_int";
+	base_id = "gecko_starboard_int";
 	name = "Internal Blast Door Control";
 	pixel_x = 6;
 	pixel_y = 24;
 	sync_doors = 0
 	},
 /obj/machinery/button/door{
-	id = "gecko_starboard";
+	base_id = "gecko_starboard";
 	name = "External Shutter Control";
 	pixel_x = -6;
 	pixel_y = 24;
@@ -3063,7 +3063,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
 	dir = 4;
-	id = "gecko_port";
+	base_id = "gecko_port";
 	name = "External Shutter Control";
 	pixel_x = -6;
 	pixel_y = 8;
@@ -3071,7 +3071,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "gecko_port_int";
+	base_id = "gecko_port_int";
 	name = "Internal Blast Door Control";
 	pixel_x = -6;
 	pixel_y = -4;
@@ -3152,7 +3152,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
 	dir = 1;
-	id = "gecko_thrusters";
+	base_id = "gecko_thrusters";
 	name = "Thruster Blast Door Control";
 	pixel_x = -6;
 	pixel_y = -24;
@@ -3181,7 +3181,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "gecko_thrusters"
+	base_id = "gecko_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3234,14 +3234,14 @@
 /area/ship/engineering/incinerator)
 "Ii" = (
 /obj/machinery/button/door{
-	id = "gecko_port";
+	base_id = "gecko_port";
 	name = "External Shutter Control";
 	pixel_x = -6;
 	pixel_y = 24;
 	sync_doors = 0
 	},
 /obj/machinery/button/door{
-	id = "gecko_port_int";
+	base_id = "gecko_port_int";
 	name = "Internal Blast Door Control";
 	pixel_x = 6;
 	pixel_y = 24;
@@ -3310,7 +3310,7 @@
 /obj/item/clothing/glasses/meson/engine/tray,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/machinery/button/door{
-	id = "gecko_thrusters";
+	base_id = "gecko_thrusters";
 	name = "Thruster Blast Door Control";
 	pixel_x = -6;
 	pixel_y = 24;
@@ -3363,7 +3363,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "gecko_thrusters"
+	base_id = "gecko_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -3852,7 +3852,7 @@
 /area/ship/engineering/atmospherics)
 "Ot" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "gecko_starboard"
+	base_id = "gecko_starboard"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
@@ -3924,7 +3924,7 @@
 	},
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor/preopen{
-	id = "gecko_starboard_int"
+	base_id = "gecko_starboard_int"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech/grid,
@@ -4001,7 +4001,7 @@
 	},
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor/preopen{
-	id = "gecko_starboard_int"
+	base_id = "gecko_starboard_int"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -4336,7 +4336,7 @@
 /area/ship/hallway/aft)
 "Tn" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "gecko_port"
+	base_id = "gecko_port"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/port)
@@ -4549,7 +4549,7 @@
 /area/ship/cargo/starboard)
 "Vu" = (
 /obj/machinery/door/poddoor{
-	id = "gecko_engine_vent";
+	base_id = "gecko_engine_vent";
 	name = "Combustion Chamber Vent"
 	},
 /turf/open/floor/engine,
@@ -4696,7 +4696,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
 	dir = 4;
-	id = "gecko_starboard";
+	base_id = "gecko_starboard";
 	name = "External Shutter Control";
 	pixel_x = -6;
 	pixel_y = 8;
@@ -4704,7 +4704,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "gecko_starboard_int";
+	base_id = "gecko_starboard_int";
 	name = "Internal Blast Door Control";
 	pixel_x = -6;
 	pixel_y = -4;

@@ -193,7 +193,7 @@
 "dK" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -620,7 +620,7 @@
 "kA" = (
 /obj/machinery/button/door{
 	dir = 1;
-	id = "whiteship_port";
+	base_id = "whiteship_port";
 	name = "Spacepod Blast Door Control";
 	pixel_y = -26
 	},
@@ -642,7 +642,7 @@
 "kH" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
+	base_id = "whiteship_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -702,7 +702,7 @@
 /area/ship/engineering/atmospherics)
 "ly" = (
 /obj/machinery/door/poddoor{
-	id = "whiteship_atmos"
+	base_id = "whiteship_atmos"
 	},
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 9
@@ -797,7 +797,7 @@
 	dir = 5
 	},
 /obj/machinery/door/poddoor{
-	id = "whiteship_atmos"
+	base_id = "whiteship_atmos"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering/atmospherics)
@@ -877,7 +877,7 @@
 /area/ship/engineering/atmospherics)
 "pm" = (
 /obj/machinery/door/poddoor{
-	id = "whiteship_cargo"
+	base_id = "whiteship_cargo"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
@@ -964,7 +964,7 @@
 /area/ship/crew)
 "qz" = (
 /obj/machinery/door/poddoor{
-	id = "whiteship_port"
+	base_id = "whiteship_port"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)
@@ -1065,14 +1065,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
 	dir = 4;
-	id = "whiteship_windows";
+	base_id = "whiteship_windows";
 	name = "Windows Blast Door Control";
 	pixel_x = -22;
 	pixel_y = -8
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "whiteship_bridge";
+	base_id = "whiteship_bridge";
 	name = "Bridge Blast Door Control";
 	pixel_x = -22;
 	pixel_y = 4
@@ -1115,7 +1115,7 @@
 "sF" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1199,7 +1199,7 @@
 /area/ship/engineering)
 "uJ" = (
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
+	base_id = "whiteship_bridge"
 	},
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
@@ -1248,7 +1248,7 @@
 "wA" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -1402,7 +1402,7 @@
 "zv" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
@@ -1742,7 +1742,7 @@
 "Fx" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
@@ -1974,7 +1974,7 @@
 /area/ship/engineering/atmospherics)
 "KS" = (
 /obj/machinery/button/door{
-	id = "whiteship_atmos";
+	base_id = "whiteship_atmos";
 	pixel_x = 26;
 	pixel_y = 26
 	},
@@ -2215,7 +2215,7 @@
 /obj/item/storage/belt/medical,
 /obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializbase_id = 30);
 	name = "thializid bottle"
 	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
@@ -2536,7 +2536,7 @@
 "Ry" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -2584,7 +2584,7 @@
 /area/ship/cargo)
 "RR" = (
 /obj/machinery/button/door{
-	id = "whiteship_cargo";
+	base_id = "whiteship_cargo";
 	pixel_x = -25;
 	pixel_y = 25
 	},
@@ -2748,7 +2748,7 @@
 "Um" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -2775,7 +2775,7 @@
 "UE" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6

@@ -2,7 +2,7 @@
 "ac" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "a_1_shutter"
+	base_id = "a_1_shutter"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -31,7 +31,7 @@
 "aB" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ext_windows"
+	base_id = "ext_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
@@ -136,7 +136,7 @@
 "ba" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "a_1_shutter2"
+	base_id = "a_1_shutter2"
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
@@ -803,7 +803,7 @@
 /area/ship/crew/crewthree)
 "gJ" = (
 /obj/machinery/button/door{
-	id = "a_3_shutter2";
+	base_id = "a_3_shutter2";
 	name = "Shutters";
 	pixel_x = -6;
 	pixel_y = 26
@@ -1142,7 +1142,7 @@
 "iN" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "a_5_shutter"
+	base_id = "a_5_shutter"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/crewfour)
@@ -1399,7 +1399,7 @@
 "kR" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridge_windows"
+	base_id = "bridge_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1621,7 +1621,7 @@
 "mP" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "a_4_shutter"
+	base_id = "a_4_shutter"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/crewfive)
@@ -1784,7 +1784,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "a_1_shutter";
+	base_id = "a_1_shutter";
 	name = "shutters";
 	pixel_x = 6;
 	pixel_y = -27
@@ -1797,7 +1797,7 @@
 "oC" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "apartment_4";
+	base_id = "apartment_4";
 	normaldoorcontrol = 1;
 	pixel_x = -26;
 	pixel_y = -6;
@@ -1880,7 +1880,7 @@
 /area/ship/crew/canteen)
 "pb" = (
 /obj/machinery/button/door{
-	id = "a_4_shutter";
+	base_id = "a_4_shutter";
 	name = "Shutters";
 	pixel_x = 6;
 	pixel_y = 26
@@ -1996,7 +1996,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "a_1_shutter2";
+	base_id = "a_1_shutter2";
 	name = "Shutters";
 	pixel_x = -6;
 	pixel_y = -27
@@ -2088,7 +2088,7 @@
 /obj/item/kirbyplants/random,
 /obj/machinery/button/door{
 	dir = 4;
-	id = "apartment_5";
+	base_id = "apartment_5";
 	normaldoorcontrol = 1;
 	pixel_x = -26;
 	pixel_y = 6;
@@ -2114,7 +2114,7 @@
 "qS" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "a_4_shutter2"
+	base_id = "a_4_shutter2"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/dormfive)
@@ -2370,7 +2370,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "apartment_3";
+	base_id = "apartment_3";
 	normaldoorcontrol = 1;
 	pixel_x = 26;
 	pixel_y = -6;
@@ -2441,7 +2441,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "a_3_shutter";
+	base_id = "a_3_shutter";
 	name = "Shutters";
 	pixel_x = -26;
 	pixel_y = 6
@@ -2541,7 +2541,7 @@
 "tQ" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ext_windows"
+	base_id = "ext_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/medical/surgery)
@@ -2963,7 +2963,7 @@
 "xi" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ext_windows"
+	base_id = "ext_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/hydroponics)
@@ -3078,7 +3078,7 @@
 "xD" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ext_windows"
+	base_id = "ext_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
@@ -3471,7 +3471,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/button/door{
-	id = "enginedoor";
+	base_id = "enginedoor";
 	pixel_y = 26
 	},
 /turf/open/floor/plating,
@@ -3484,7 +3484,7 @@
 "AL" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "a_4_shutter2";
+	base_id = "a_4_shutter2";
 	name = "Shutters";
 	pixel_x = -26;
 	pixel_y = -6
@@ -3623,7 +3623,7 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializbase_id = 30);
 	name = "thializid bottle"
 	},
 /obj/item/reagent_containers/syringe,
@@ -4047,7 +4047,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "apartment_2";
+	base_id = "apartment_2";
 	normaldoorcontrol = 1;
 	pixel_x = 26;
 	pixel_y = 6;
@@ -4182,7 +4182,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/door/poddoor/preopen{
-	id = "enginedoor"
+	base_id = "enginedoor"
 	},
 /turf/open/floor/plating,
 /area/ship/external)
@@ -4320,7 +4320,7 @@
 "Ho" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "a_2_shutter"
+	base_id = "a_2_shutter"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/crewtwo)
@@ -4372,7 +4372,7 @@
 /obj/item/kirbyplants/random,
 /obj/machinery/button/door{
 	dir = 8;
-	id = "apartment_1";
+	base_id = "apartment_1";
 	normaldoorcontrol = 1;
 	pixel_x = 26;
 	pixel_y = -6;
@@ -4563,7 +4563,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "a_2_shutter";
+	base_id = "a_2_shutter";
 	name = "Shutters";
 	pixel_x = -26;
 	pixel_y = 26
@@ -5124,12 +5124,12 @@
 "Ni" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "bridge_windows";
+	base_id = "bridge_windows";
 	name = "Bridge Shutters";
 	pixel_x = 6
 	},
 /obj/machinery/button/door{
-	id = "ext_windows";
+	base_id = "ext_windows";
 	name = "External Shutters";
 	pixel_x = -6
 	},
@@ -5317,7 +5317,7 @@
 "Pf" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ext_windows"
+	base_id = "ext_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/cryo)
@@ -5931,7 +5931,7 @@
 /area/ship/crew/crewfive)
 "SW" = (
 /obj/machinery/button/door{
-	id = "a_5_shutter";
+	base_id = "a_5_shutter";
 	name = "Shutters";
 	pixel_x = -6;
 	pixel_y = 26
@@ -6527,7 +6527,7 @@
 "Ym" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "a_3_shutter"
+	base_id = "a_3_shutter"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm/dormthree)
@@ -6610,7 +6610,7 @@
 "Zh" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "a_3_shutter2"
+	base_id = "a_3_shutter2"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/crewthree)

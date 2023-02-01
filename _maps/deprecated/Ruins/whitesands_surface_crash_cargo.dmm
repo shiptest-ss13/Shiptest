@@ -3,7 +3,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/outline,
 /obj/machinery/door/poddoor{
-	id = "whiteship_starboard"
+	base_id = "whiteship_starboard"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
@@ -251,7 +251,7 @@
 "qi" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -284,13 +284,13 @@
 "sn" = (
 /obj/structure/lattice,
 /obj/machinery/door/poddoor{
-	id = "whiteship_starboard"
+	base_id = "whiteship_starboard"
 	},
 /turf/template_noop,
 /area/whitesands/surface/outdoors)
 "sw" = (
 /obj/machinery/door/poddoor{
-	id = "whiteship_starboard"
+	base_id = "whiteship_starboard"
 	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
@@ -395,7 +395,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
-	id = "whiteship_starboard";
+	base_id = "whiteship_starboard";
 	name = "Starboard Blast Door Control";
 	pixel_x = -25;
 	pixel_y = -5
@@ -536,7 +536,7 @@
 "Mc" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/machinery/door/poddoor{
-	id = "whiteship_starboard"
+	base_id = "whiteship_starboard"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
@@ -568,7 +568,7 @@
 /area/whitesands/surface/outdoors)
 "No" = (
 /obj/machinery/door/poddoor{
-	id = "whiteship_starboard"
+	base_id = "whiteship_starboard"
 	},
 /turf/open/floor/plating{
 	initial_gas_mix = "LAVALAND_ATMOS"

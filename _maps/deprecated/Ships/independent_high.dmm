@@ -48,7 +48,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "corpseclockdown"
+	base_id = "corpseclockdown"
 	},
 /obj/machinery/recharger,
 /turf/open/floor/carpet/nanoweave/red,
@@ -421,7 +421,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "chwindow";
+	base_id = "chwindow";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -696,7 +696,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "corpcp1"
+	base_id = "corpcp1"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -765,7 +765,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "corpcp2"
+	base_id = "corpcp2"
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
@@ -955,7 +955,7 @@
 "mf" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "corpseclockdown"
+	base_id = "corpseclockdown"
 	},
 /turf/open/floor/plating,
 /area/ship/security)
@@ -1161,7 +1161,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "corpcp1"
+	base_id = "corpcp1"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1195,7 +1195,7 @@
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "chwindow";
+	base_id = "chwindow";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -1451,7 +1451,7 @@
 /area/ship/crew/office)
 "tO" = (
 /obj/machinery/button/door{
-	id = "corpcargobay1";
+	base_id = "corpcargobay1";
 	pixel_x = -23;
 	pixel_y = 21
 	},
@@ -1463,7 +1463,7 @@
 "tV" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "corpcargobay1";
+	base_id = "corpcargobay1";
 	name = "Cargo Bay Exterior Blast Door"
 	},
 /turf/open/floor/engine/hull/interior,
@@ -1903,7 +1903,7 @@
 /area/ship/hallway/central)
 "Bl" = (
 /obj/machinery/button/door{
-	id = "corpcargobay2";
+	base_id = "corpcargobay2";
 	pixel_x = 23;
 	pixel_y = 21
 	},
@@ -1915,7 +1915,7 @@
 /area/ship/cargo)
 "Bu" = (
 /obj/machinery/button/door{
-	id = "chmaint";
+	base_id = "chmaint";
 	pixel_x = -25;
 	pixel_y = -25
 	},
@@ -1974,7 +1974,7 @@
 	pixel_y = 2
 	},
 /obj/machinery/button/door{
-	id = "chwindow";
+	base_id = "chwindow";
 	name = "external lockdown";
 	pixel_x = 6;
 	pixel_y = -6
@@ -2020,7 +2020,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "corpseclockdown"
+	base_id = "corpseclockdown"
 	},
 /obj/item/reagent_containers/food/drinks/mug{
 	pixel_x = 8
@@ -2030,7 +2030,7 @@
 "CT" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "chwindow";
+	base_id = "chwindow";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -2108,7 +2108,7 @@
 "DH" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "chwindow";
+	base_id = "chwindow";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -2343,7 +2343,7 @@
 /area/ship/crew/dorm)
 "GN" = (
 /obj/machinery/button/door{
-	id = "corpcargobay2";
+	base_id = "corpcargobay2";
 	pixel_x = -23;
 	pixel_y = 21
 	},
@@ -2413,7 +2413,7 @@
 "IS" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "chwindow";
+	base_id = "chwindow";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -2469,7 +2469,7 @@
 "JI" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "chwindow";
+	base_id = "chwindow";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -2608,19 +2608,19 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "corpseclockdown";
+	base_id = "corpseclockdown";
 	name = "security lockdown button";
 	pixel_x = -26;
 	pixel_y = 28
 	},
 /obj/machinery/button/door{
-	id = "corpcp2";
+	base_id = "corpcp2";
 	name = "exterior checkpoint button";
 	pixel_x = -26;
 	pixel_y = 38
 	},
 /obj/machinery/button/door{
-	id = "corpcp1";
+	base_id = "corpcp1";
 	name = "interior checkpoint button";
 	pixel_x = -37;
 	pixel_y = 32
@@ -2653,7 +2653,7 @@
 "LQ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "chmeet";
+	base_id = "chmeet";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -2733,7 +2733,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "chmaint";
+	base_id = "chmaint";
 	pixel_x = -25;
 	pixel_y = 25
 	},
@@ -3051,7 +3051,7 @@
 "Ry" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "chwindow";
+	base_id = "chwindow";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -3098,7 +3098,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "corpcp2"
+	base_id = "corpcp2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3153,7 +3153,7 @@
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "chwindow";
+	base_id = "chwindow";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -3297,7 +3297,7 @@
 /area/ship/crew/office)
 "VC" = (
 /obj/machinery/door/poddoor{
-	id = "corpcargobay2";
+	base_id = "corpcargobay2";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -3520,7 +3520,7 @@
 "YH" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "chwindow";
+	base_id = "chwindow";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -3554,7 +3554,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "corpcargobay2";
+	base_id = "corpcargobay2";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plasteel/patterned/ridged{

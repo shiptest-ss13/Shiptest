@@ -6,7 +6,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/preopen{
-	id = "escape_cockpit_windows";
+	base_id = "escape_cockpit_windows";
 	name = "Cockpit Blast Door"
 	},
 /turf/open/floor/plating,
@@ -110,7 +110,7 @@
 /area/ship/bridge)
 "ao" = (
 /obj/machinery/button/door{
-	id = "escape_cockpit_blast";
+	base_id = "escape_cockpit_blast";
 	name = "Cockpit Airlock Blast Doors";
 	pixel_y = -26;
 	req_access_txt = "19"
@@ -2005,7 +2005,7 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = "escape_cockpit_windows";
+	base_id = "escape_cockpit_windows";
 	name = "Cockpit Window Blast Doors";
 	pixel_x = -7;
 	req_access_txt = "19"
@@ -2155,7 +2155,7 @@
 /obj/structure/fans/tiny,
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "ravenbay";
+	base_id = "ravenbay";
 	name = "Bay Door"
 	},
 /turf/open/floor/plating,
@@ -2260,7 +2260,7 @@
 "mn" = (
 /obj/effect/turf_decal/industrial/hatch,
 /obj/machinery/door/poddoor/preopen{
-	id = "escape_cockpit_blast";
+	base_id = "escape_cockpit_blast";
 	name = "Cockpit Blast Door"
 	},
 /obj/machinery/power/apc/auto_name/north,
@@ -2649,11 +2649,11 @@
 "wn" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "ravenbay";
+	base_id = "ravenbay";
 	name = "Bay Door"
 	},
 /obj/machinery/button/door{
-	id = "ravenbay";
+	base_id = "ravenbay";
 	name = "Raven Bay Doors";
 	pixel_y = 26
 	},
@@ -2735,7 +2735,7 @@
 "yo" = (
 /obj/effect/turf_decal/industrial/hatch,
 /obj/machinery/door/poddoor/preopen{
-	id = "escape_cockpit_blast";
+	base_id = "escape_cockpit_blast";
 	name = "Cockpit Blast Door"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2744,7 +2744,7 @@
 "yp" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "ravenbay";
+	base_id = "ravenbay";
 	name = "Bay Door"
 	},
 /turf/open/floor/plating,
@@ -2796,7 +2796,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/preopen{
-	id = "escape_cockpit_windows";
+	base_id = "escape_cockpit_windows";
 	name = "Cockpit Blast Door"
 	},
 /obj/docking_port/mobile{
@@ -2865,7 +2865,7 @@
 "AH" = (
 /obj/effect/turf_decal/industrial/hatch,
 /obj/machinery/door/poddoor/preopen{
-	id = "escape_cockpit_blast";
+	base_id = "escape_cockpit_blast";
 	name = "Cockpit Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -3011,11 +3011,11 @@
 "Ff" = (
 /obj/effect/turf_decal/industrial/hatch,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "escape_cargo_shutters";
+	base_id = "escape_cargo_shutters";
 	name = "Cargo Bay Shutters"
 	},
 /obj/machinery/button/door{
-	id = "escape_cargo_shutters";
+	base_id = "escape_cargo_shutters";
 	name = "Cargo Bay Shutters";
 	pixel_x = -26
 	},
@@ -3386,11 +3386,11 @@
 "LU" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "ravenbay";
+	base_id = "ravenbay";
 	name = "Bay Door"
 	},
 /obj/machinery/button/door{
-	id = "ravenbay";
+	base_id = "ravenbay";
 	name = "Raven Bay Doors";
 	pixel_y = -26
 	},
@@ -3490,12 +3490,12 @@
 "OM" = (
 /obj/effect/turf_decal/industrial/hatch,
 /obj/machinery/button/door{
-	id = "escape_cargo_shutters";
+	base_id = "escape_cargo_shutters";
 	name = "Cargo Bay Shutters";
 	pixel_x = 26
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "escape_cargo_shutters";
+	base_id = "escape_cargo_shutters";
 	name = "Cargo Bay Shutters"
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -3810,7 +3810,7 @@
 "Wy" = (
 /obj/effect/turf_decal/industrial/hatch,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "escape_cargo_shutters";
+	base_id = "escape_cargo_shutters";
 	name = "Cargo Bay Shutters"
 	},
 /obj/machinery/door/firedoor/border_only,

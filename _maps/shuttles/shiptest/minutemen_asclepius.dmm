@@ -150,7 +150,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "asclepius_reception_lockdown";
+	base_id = "asclepius_reception_lockdown";
 	name = "Reception Lockdown";
 	pixel_x = -22
 	},
@@ -327,7 +327,7 @@
 	pixel_y = 7
 	},
 /obj/machinery/button/door{
-	id = "asclepius_intcargo";
+	base_id = "asclepius_intcargo";
 	name = "Cargo Storage";
 	pixel_x = -10;
 	pixel_y = 23
@@ -448,7 +448,7 @@
 	pixel_x = -6
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_reception_lockdown";
+	base_id = "asclepius_reception_lockdown";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plasteel/dark,
@@ -594,14 +594,14 @@
 	dir = 6
 	},
 /obj/machinery/button/door{
-	id = "asclepius_extcargo";
+	base_id = "asclepius_extcargo";
 	name = "Cargo hatch";
 	pixel_x = 23;
 	pixel_y = 10;
 	dir = 8
 	},
 /obj/machinery/button/shieldwallgen{
-	id = "asclepius_cargoholo";
+	base_id = "asclepius_cargoholo";
 	pixel_x = 21;
 	dir = 8
 	},
@@ -622,7 +622,7 @@
 "ga" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_bridge_shutters";
+	base_id = "asclepius_bridge_shutters";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -794,7 +794,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_reception_lockdown";
+	base_id = "asclepius_reception_lockdown";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plasteel/patterned/dirty,
@@ -1057,7 +1057,7 @@
 "jR" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_window_shutters";
+	base_id = "asclepius_window_shutters";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -1118,7 +1118,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "asclepius_intcargo";
+	base_id = "asclepius_intcargo";
 	name = "Cargo Hatch"
 	},
 /turf/open/floor/plasteel/patterned/dirty,
@@ -1136,7 +1136,7 @@
 "kJ" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_window_shutters";
+	base_id = "asclepius_window_shutters";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -1291,7 +1291,7 @@
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
-	id = "asclepius_engineering_shutters";
+	base_id = "asclepius_engineering_shutters";
 	name = "Engineering Blast Doors"
 	},
 /turf/open/floor/plating,
@@ -1702,7 +1702,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor{
-	id = "asclepius_extcargo";
+	base_id = "asclepius_extcargo";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plasteel{
@@ -1738,7 +1738,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "asclepius_medbay_lockdown";
+	base_id = "asclepius_medbay_lockdown";
 	name = "Medical Lockdown";
 	pixel_x = -21;
 	pixel_y = -10
@@ -1813,7 +1813,7 @@
 /obj/item/toy/xmas_cracker,
 /obj/machinery/button/door{
 	dir = 8;
-	id = "asclepius_windowsec_shutters";
+	base_id = "asclepius_windowsec_shutters";
 	name = "Security Shutters";
 	pixel_x = 23
 	},
@@ -1961,7 +1961,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "asclepius_medbay_lockdown";
+	base_id = "asclepius_medbay_lockdown";
 	name = "Medical Lockdown";
 	pixel_x = 23;
 	pixel_y = -10
@@ -2212,7 +2212,7 @@
 	pixel_x = -15
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_reception_lockdown";
+	base_id = "asclepius_reception_lockdown";
 	name = "Lockdown Shutters"
 	},
 /obj/item/reagent_containers/food/snacks/donut/jelly/blumpkin{
@@ -2245,7 +2245,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "asclepius_reception_lockdown";
+	base_id = "asclepius_reception_lockdown";
 	name = "Reception Lockdown";
 	pixel_y = -22
 	},
@@ -2465,10 +2465,10 @@
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
 	locked = 1;
-	id = "asclepius_cargoholo"
+	base_id = "asclepius_cargoholo"
 	},
 /obj/machinery/door/poddoor{
-	id = "asclepius_extcargo";
+	base_id = "asclepius_extcargo";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plasteel{
@@ -2545,7 +2545,7 @@
 "wm" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_windowsec_shutters";
+	base_id = "asclepius_windowsec_shutters";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -3218,7 +3218,7 @@
 	pixel_y = -3
 	},
 /obj/machinery/button/door{
-	id = "asclepius_internalbridge_shutters";
+	base_id = "asclepius_internalbridge_shutters";
 	name = "Internal Shutters";
 	pixel_x = -10;
 	pixel_y = -23;
@@ -3521,7 +3521,7 @@
 "EA" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_window_shutters";
+	base_id = "asclepius_window_shutters";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -3684,11 +3684,11 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
-	id = "asclepius_cargoholo";
+	base_id = "asclepius_cargoholo";
 	locked = 1
 	},
 /obj/machinery/door/poddoor{
-	id = "asclepius_extcargo";
+	base_id = "asclepius_extcargo";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plasteel{
@@ -3802,7 +3802,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor{
-	id = "asclepius_engineering_shutters";
+	base_id = "asclepius_engineering_shutters";
 	name = "Engineering Blast Doors"
 	},
 /turf/open/floor/plating,
@@ -3849,7 +3849,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "asclepius_engineering_shutters";
+	base_id = "asclepius_engineering_shutters";
 	name = "Engineering Blast Doors"
 	},
 /turf/open/floor/plating,
@@ -3901,7 +3901,7 @@
 "HH" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_window_shutters";
+	base_id = "asclepius_window_shutters";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -4150,7 +4150,7 @@
 "Kd" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_window_shutters";
+	base_id = "asclepius_window_shutters";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -4355,7 +4355,7 @@
 	pixel_y = 6
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_reception_lockdown";
+	base_id = "asclepius_reception_lockdown";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plasteel/dark,
@@ -4543,7 +4543,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "asclepius_engineering_shutters";
+	base_id = "asclepius_engineering_shutters";
 	name = "Engineering Blast Doors"
 	},
 /turf/open/floor/plating,
@@ -5000,7 +5000,7 @@
 "RR" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "asclepius_engineering_shutters";
+	base_id = "asclepius_engineering_shutters";
 	name = "Engineering Blast Doors"
 	},
 /turf/open/floor/plating,
@@ -5011,26 +5011,26 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "asclepius_window_shutters";
+	base_id = "asclepius_window_shutters";
 	name = "Window Shutters";
 	pixel_x = -6;
 	pixel_y = 1
 	},
 /obj/machinery/button/door{
-	id = "asclepius_bridge_shutters";
+	base_id = "asclepius_bridge_shutters";
 	name = "Bridge Shutters";
 	pixel_x = -6;
 	pixel_y = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
-	id = "asclepius_reception_lockdown";
+	base_id = "asclepius_reception_lockdown";
 	name = "Reception Lockdown";
 	pixel_x = 4;
 	pixel_y = 1
 	},
 /obj/machinery/button/door{
-	id = "asclepius_medbay_lockdown";
+	base_id = "asclepius_medbay_lockdown";
 	name = "Medical Lockdown";
 	pixel_x = 4;
 	pixel_y = 9
@@ -5200,7 +5200,7 @@
 "Um" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_internalbridge_shutters";
+	base_id = "asclepius_internalbridge_shutters";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -5273,7 +5273,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_medbay_lockdown";
+	base_id = "asclepius_medbay_lockdown";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plasteel,
@@ -5520,7 +5520,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_reception_lockdown";
+	base_id = "asclepius_reception_lockdown";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plasteel/patterned/dirty,
@@ -5690,7 +5690,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
 	dir = 8;
-	id = "asclepius_intcargo";
+	base_id = "asclepius_intcargo";
 	name = "Cargo Storage";
 	pixel_x = 23;
 	pixel_y = -10
@@ -5726,7 +5726,7 @@
 	dir = 10
 	},
 /obj/machinery/button/door{
-	id = "asclepius_engineering_shutters";
+	base_id = "asclepius_engineering_shutters";
 	name = "Engineering Lockdown";
 	pixel_x = 10;
 	pixel_y = 23
@@ -5853,7 +5853,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_medbay_lockdown";
+	base_id = "asclepius_medbay_lockdown";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plasteel/patterned/monofloor,
@@ -5872,7 +5872,7 @@
 "ZA" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_window_shutters";
+	base_id = "asclepius_window_shutters";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -5985,7 +5985,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "asclepius_medbay_lockdown";
+	base_id = "asclepius_medbay_lockdown";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plasteel/patterned/monofloor{

@@ -24,7 +24,7 @@
 "aX" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "hound_windows"
+	base_id = "hound_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -41,11 +41,11 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 4;
-	id = "hound_cargo_port";
+	base_id = "hound_cargo_port";
 	locked = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "hound_cargo_port"
+	base_id = "hound_cargo_port"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -453,11 +453,11 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 4;
-	id = "hound_cargo_starboard";
+	base_id = "hound_cargo_starboard";
 	locked = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "hound_cargo_starboard"
+	base_id = "hound_cargo_starboard"
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -674,7 +674,7 @@
 "oL" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "hound_windows"
+	base_id = "hound_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -761,7 +761,7 @@
 "qg" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/poddoor/shutters{
-	id = "hound_cargo_port"
+	base_id = "hound_cargo_port"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -786,7 +786,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "hound_cargo_starboard"
+	base_id = "hound_cargo_starboard"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -898,7 +898,7 @@
 "tg" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "hound_windows"
+	base_id = "hound_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -992,11 +992,11 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 8;
-	id = "hound_cargo_starboard";
+	base_id = "hound_cargo_starboard";
 	locked = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "hound_cargo_starboard"
+	base_id = "hound_cargo_starboard"
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -1197,7 +1197,7 @@
 "Aj" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "hound_windows"
+	base_id = "hound_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/toilet)
@@ -1460,7 +1460,7 @@
 /area/ship/maintenance/port)
 "HV" = (
 /obj/machinery/button/door{
-	id = "hound_windows";
+	base_id = "hound_windows";
 	name = "Window Lockdown";
 	pixel_x = -6;
 	pixel_y = 25
@@ -1509,7 +1509,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "hound_windows"
+	base_id = "hound_windows"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1550,7 +1550,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "hound_windows"
+	base_id = "hound_windows"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1568,7 +1568,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "hound_windows"
+	base_id = "hound_windows"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1772,11 +1772,11 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 8;
-	id = "hound_cargo_port";
+	base_id = "hound_cargo_port";
 	locked = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "hound_cargo_port"
+	base_id = "hound_cargo_port"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -1819,7 +1819,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "hound_windows"
+	base_id = "hound_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1916,7 +1916,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "hound_cargo_port";
+	base_id = "hound_cargo_port";
 	name = "Cargo Bay Door Control";
 	pixel_x = -5;
 	pixel_y = 25
@@ -1928,7 +1928,7 @@
 	dir = 1
 	},
 /obj/machinery/button/shieldwallgen{
-	id = "hound_cargo_port";
+	base_id = "hound_cargo_port";
 	pixel_x = 5;
 	pixel_y = 25
 	},
@@ -1983,7 +1983,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "hound_windows"
+	base_id = "hound_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -2010,7 +2010,7 @@
 "PU" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "hound_windows"
+	base_id = "hound_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
@@ -2050,7 +2050,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "hound_windows"
+	base_id = "hound_windows"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -2107,7 +2107,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "hound_cargo_starboard";
+	base_id = "hound_cargo_starboard";
 	name = "Cargo Bay Door Control";
 	pixel_x = -5;
 	pixel_y = -25
@@ -2118,7 +2118,7 @@
 /obj/machinery/light,
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
-	id = "hound_cargo_starboard";
+	base_id = "hound_cargo_starboard";
 	pixel_x = 5;
 	pixel_y = -25
 	},
@@ -2201,7 +2201,7 @@
 /area/ship/cargo)
 "Vg" = (
 /obj/machinery/door/poddoor{
-	id = "hound_windows"
+	base_id = "hound_windows"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,

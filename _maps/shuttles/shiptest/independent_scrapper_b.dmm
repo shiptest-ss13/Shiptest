@@ -13,7 +13,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "externalbridgeshutter";
+	base_id = "externalbridgeshutter";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -695,7 +695,7 @@
 	dir = 8
 	},
 /obj/machinery/conveyor_switch/oneway{
-	id = "urmum"
+	base_id = "urmum"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/science)
@@ -1698,7 +1698,7 @@
 /area/ship/science/robotics)
 "wa" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "internalbridgeshutter";
+	base_id = "internalbridgeshutter";
 	name = "Blast Shutters"
 	},
 /obj/structure/grille,
@@ -3385,7 +3385,7 @@
 	pixel_x = 32
 	},
 /obj/machinery/button/door{
-	id = "bath";
+	base_id = "bath";
 	name = "Bathroom lock";
 	normaldoorcontrol = 1;
 	pixel_x = -8;
@@ -3524,7 +3524,7 @@
 "Qm" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "urmum"
+	base_id = "urmum"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/science)
@@ -4307,13 +4307,13 @@
 /area/ship/cargo)
 "Zf" = (
 /obj/machinery/button/door{
-	id = "externalbridgeshutter";
+	base_id = "externalbridgeshutter";
 	name = "Windshield Lockdown";
 	pixel_x = -6;
 	pixel_y = 36
 	},
 /obj/machinery/button/door{
-	id = "internalbridgeshutter";
+	base_id = "internalbridgeshutter";
 	name = "EVA Oversight Lockdown";
 	pixel_x = -6;
 	pixel_y = 25

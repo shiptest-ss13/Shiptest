@@ -55,7 +55,7 @@
 "aB" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /obj/structure/spacevine,
@@ -88,7 +88,7 @@
 "aX" = (
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /obj/structure/frame/machine,
@@ -131,7 +131,7 @@
 /obj/machinery/door/window/northleft,
 /obj/machinery/button/door{
 	dir = 4;
-	id = "starlauncheroneshutters";
+	base_id = "starlauncheroneshutters";
 	name = "Shutter Control";
 	pixel_x = -25;
 	pixel_y = -1
@@ -198,7 +198,7 @@
 "bD" = (
 /obj/machinery/mass_driver{
 	dir = 1;
-	id = "starlauncherone"
+	base_id = "starlauncherone"
 	},
 /obj/machinery/light/small/broken{
 	dir = 8
@@ -243,7 +243,7 @@
 	dir = 1
 	},
 /obj/machinery/flasher{
-	id = "Cell 1";
+	base_id = "Cell 1";
 	pixel_x = 25
 	},
 /obj/structure/cable/orange{
@@ -285,7 +285,7 @@
 "ca" = (
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating/rust,
@@ -659,7 +659,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	base_id = "bridgeshutters"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -918,11 +918,11 @@
 "gQ" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -981,7 +981,7 @@
 "hC" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /obj/structure/spacevine,
@@ -1148,7 +1148,7 @@
 "io" = (
 /obj/machinery/mass_driver{
 	dir = 1;
-	id = "starlaunchertwo"
+	base_id = "starlaunchertwo"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlaunchertwo)
@@ -1208,7 +1208,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating/airless,
@@ -1476,7 +1476,7 @@
 	dir = 8;
 	pixel_x = 23;
 	pixel_y = -19;
-	id = "Cell 1"
+	base_id = "Cell 1"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/transparent/bar/three_quarters{
@@ -1641,7 +1641,7 @@
 /area/ruin/jungle/interceptor/crashsite)
 "nA" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	base_id = "bridgeshutters"
 	},
 /obj/structure/lattice{
 	icon_state = "lattice-127"
@@ -1658,7 +1658,7 @@
 "nE" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "portlaunchertwoshutters";
+	base_id = "portlaunchertwoshutters";
 	name = "Shutter Control";
 	pixel_x = -25;
 	pixel_y = -1
@@ -1668,7 +1668,7 @@
 "nF" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -1748,7 +1748,7 @@
 	pixel_x = -6
 	},
 /obj/machinery/button/massdriver{
-	id = "starlaunchertwo";
+	base_id = "starlaunchertwo";
 	name = "starboard launcher two button";
 	pixel_x = 9;
 	dir = 1;
@@ -1896,7 +1896,7 @@
 "pC" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -2210,7 +2210,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating/airless,
@@ -2596,7 +2596,7 @@
 "vB" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	id = "portlauncheroneshutters"
+	base_id = "portlauncheroneshutters"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
@@ -2606,7 +2606,7 @@
 "vI" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /obj/structure/spacevine,
@@ -2632,7 +2632,7 @@
 "vZ" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -2662,7 +2662,7 @@
 "wp" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating/rust,
@@ -2699,7 +2699,7 @@
 "wG" = (
 /obj/machinery/button/door{
 	dir = 8;
-	id = "portlauncheroneshutters";
+	base_id = "portlauncheroneshutters";
 	name = "Shutter Control";
 	pixel_x = 25;
 	pixel_y = -1
@@ -2971,7 +2971,7 @@
 /area/ruin/jungle/interceptor/starhall)
 "yw" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /obj/item/shard,
@@ -3041,7 +3041,7 @@
 "zj" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "portpodbay";
+	base_id = "portpodbay";
 	name = "Port Podbay Blast Door"
 	},
 /turf/open/floor/plating,
@@ -3053,7 +3053,7 @@
 "zq" = (
 /obj/machinery/mass_driver{
 	dir = 1;
-	id = "starlauncherone"
+	base_id = "starlauncherone"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
@@ -3075,7 +3075,7 @@
 /area/ruin/jungle/interceptor/starhall)
 "zt" = (
 /obj/machinery/button/door{
-	id = "portpodbay";
+	base_id = "portpodbay";
 	dir = 8;
 	pixel_x = 25
 	},
@@ -3383,14 +3383,14 @@
 "Cj" = (
 /obj/machinery/mass_driver{
 	dir = 1;
-	id = "portlauncherone"
+	base_id = "portlauncherone"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crashsite)
 "Cn" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	id = "starlaunchertwoshutters"
+	base_id = "starlaunchertwoshutters"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlaunchertwo)
@@ -3524,7 +3524,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -3964,7 +3964,7 @@
 "HE" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -4031,7 +4031,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	base_id = "bridgeshutters"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/interceptor/bridge)
@@ -4163,7 +4163,7 @@
 "Jm" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	id = "starlauncheroneshutters"
+	base_id = "starlauncheroneshutters"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
@@ -4390,7 +4390,7 @@
 "Lf" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /obj/structure/spacevine,
@@ -4555,7 +4555,7 @@
 /obj/item/clothing/shoes/sneakers/orange,
 /obj/item/clothing/shoes/sneakers/orange,
 /obj/machinery/button/massdriver{
-	id = "starlauncherone";
+	base_id = "starlauncherone";
 	name = "starboard launcher one button";
 	pixel_x = 4;
 	dir = 1;
@@ -4658,14 +4658,14 @@
 "NM" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	pixel_x = -7;
 	dir = 1;
 	pixel_y = -27;
 	name = "Ship Window Shutters"
 	},
 /obj/machinery/button/door{
-	id = "bridgeshutters";
+	base_id = "bridgeshutters";
 	pixel_x = 8;
 	dir = 1;
 	pixel_y = -27;
@@ -4675,26 +4675,26 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/button/massdriver{
-	id = "portlauncherone";
+	base_id = "portlauncherone";
 	name = "port launcher one button";
 	dir = 1;
 	pixel_x = -4;
 	pixel_y = 10
 	},
 /obj/machinery/button/massdriver{
-	id = "starlaunchertwo";
+	base_id = "starlaunchertwo";
 	name = "starboard launcher two button";
 	pixel_x = 9;
 	dir = 1
 	},
 /obj/machinery/button/massdriver{
-	id = "portlaunchertwo";
+	base_id = "portlaunchertwo";
 	name = "port launcher two button";
 	pixel_x = -9;
 	dir = 1
 	},
 /obj/machinery/button/massdriver{
-	id = "starlauncherone";
+	base_id = "starlauncherone";
 	name = "starboard launcher one button";
 	pixel_x = 4;
 	dir = 1;
@@ -4826,7 +4826,7 @@
 	dir = 8
 	},
 /obj/machinery/button/massdriver{
-	id = "starlauncherone";
+	base_id = "starlauncherone";
 	name = "starboard launcher one button";
 	pixel_x = -8;
 	dir = 1;
@@ -5117,7 +5117,7 @@
 "Rd" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	base_id = "bridgeshutters"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/bridge)
@@ -5155,7 +5155,7 @@
 "Rv" = (
 /obj/machinery/mass_driver{
 	dir = 1;
-	id = "starlaunchertwo"
+	base_id = "starlaunchertwo"
 	},
 /obj/machinery/light/small/broken{
 	dir = 8
@@ -5572,7 +5572,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "starlaunchertwoshutters";
+	base_id = "starlaunchertwoshutters";
 	name = "Shutter Control";
 	pixel_x = 25;
 	pixel_y = -1
@@ -5675,7 +5675,7 @@
 "UZ" = (
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /obj/structure/frame/machine,
@@ -5738,7 +5738,7 @@
 "Vr" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -5863,7 +5863,7 @@
 "Wh" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/button/door{
-	id = "sternshudders";
+	base_id = "sternshudders";
 	dir = 8;
 	pixel_x = 25
 	},
@@ -6227,7 +6227,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/machinery/button/massdriver{
-	id = "portlaunchertwo";
+	base_id = "portlaunchertwo";
 	name = "port launcher two button";
 	pixel_x = -8;
 	dir = 1;
@@ -6322,7 +6322,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
+	base_id = "condorwindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,

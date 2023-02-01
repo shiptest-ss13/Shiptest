@@ -5,7 +5,7 @@
 	color = "#008000"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "wizardship_bridge"
+	base_id = "wizardship_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -25,7 +25,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "wizardship_bridge";
+	base_id = "wizardship_bridge";
 	name = "bridge shutters";
 	pixel_y = 31
 	},
@@ -697,7 +697,7 @@
 	},
 /obj/structure/curtain/cloth/fancy,
 /obj/machinery/door/poddoor/shutters{
-	id = "wizardship_bridge"
+	base_id = "wizardship_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -827,7 +827,7 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/door/poddoor{
-	id = "wizardship_thrusters"
+	base_id = "wizardship_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -1185,7 +1185,7 @@
 	},
 /obj/structure/curtain/cloth/fancy,
 /obj/machinery/door/poddoor/shutters{
-	id = "wizardship_bridge"
+	base_id = "wizardship_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -1317,7 +1317,7 @@
 	port_direction = 8
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "wizardship_bridge"
+	base_id = "wizardship_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -1394,7 +1394,7 @@
 	},
 /obj/structure/curtain/cloth/fancy,
 /obj/machinery/door/poddoor/shutters{
-	id = "wizardship_bridge"
+	base_id = "wizardship_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -1449,7 +1449,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/door{
-	id = "wizardship_thrusters";
+	base_id = "wizardship_thrusters";
 	name = "thruster shutters";
 	pixel_y = 31
 	},
@@ -1813,7 +1813,7 @@
 	},
 /obj/structure/curtain/cloth/fancy,
 /obj/machinery/door/poddoor/shutters{
-	id = "wizardship_bridge"
+	base_id = "wizardship_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/aft)

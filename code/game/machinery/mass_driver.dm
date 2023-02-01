@@ -17,7 +17,8 @@
 			control.connected = null
 	return ..()
 
-/obj/machinery/mass_driver/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+/obj/machinery/mass_driver/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
 	id = "[REF(port)][id]"
 
 /obj/machinery/mass_driver/proc/drive(amount)

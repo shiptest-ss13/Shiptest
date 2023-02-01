@@ -5,7 +5,7 @@
 	dir = 10
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "kugelsm"
+	base_id = "kugelsm"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -119,7 +119,7 @@
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "kugelsm"
+	base_id = "kugelsm"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -336,7 +336,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "kugelsm";
+	base_id = "kugelsm";
 	name = "SM Window Shutters";
 	pixel_x = -25
 	},
@@ -415,7 +415,7 @@
 "gu" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/preopen{
-	id = "kugelwindow"
+	base_id = "kugelwindow"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -452,7 +452,7 @@
 "hl" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "moth_east_door";
+	base_id = "moth_east_door";
 	name = "Eastern Blast Door"
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -845,7 +845,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "kugelwindow";
+	base_id = "kugelwindow";
 	name = "Window Shutters";
 	pixel_y = -25
 	},
@@ -1118,7 +1118,7 @@
 "qB" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "moth_doors_west";
+	base_id = "moth_doors_west";
 	name = "Western Blast Door"
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -1208,7 +1208,7 @@
 	},
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/machinery/button/massdriver{
-	id = "smejection";
+	base_id = "smejection";
 	pixel_y = -25
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -1413,11 +1413,11 @@
 "vM" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "moth_doors_west";
+	base_id = "moth_doors_west";
 	name = "Western Blast Door"
 	},
 /obj/machinery/button/door{
-	id = "moth_doors_west";
+	base_id = "moth_doors_west";
 	name = "Port Blast Doors";
 	pixel_y = -25
 	},
@@ -1796,11 +1796,11 @@
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/poddoor{
-	id = "moth_east_door";
+	base_id = "moth_east_door";
 	name = "Eastern Blast Door"
 	},
 /obj/machinery/button/door{
-	id = "moth_east_door";
+	base_id = "moth_east_door";
 	name = "Starboard Blast Doors";
 	pixel_y = -25
 	},
@@ -2120,7 +2120,7 @@
 "HQ" = (
 /obj/machinery/mass_driver{
 	dir = 1;
-	id = "smejection";
+	base_id = "smejection";
 	resistance_flags = 2
 	},
 /obj/machinery/power/supermatter_crystal/shard,
@@ -2322,7 +2322,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor{
-	id = "moth_east_door";
+	base_id = "moth_east_door";
 	name = "Eastern Blast Door"
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -2372,7 +2372,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/atmospherics/pipe/simple/orange,
 /obj/machinery/door/poddoor/preopen{
-	id = "kugelsm"
+	base_id = "kugelsm"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2429,7 +2429,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/barricade/wooden/crude,
 /obj/machinery/door/poddoor/preopen{
-	id = "kugelwindow"
+	base_id = "kugelwindow"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2517,7 +2517,7 @@
 "Ol" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "kugelsm"
+	base_id = "kugelsm"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2723,7 +2723,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "kugelwindow"
+	base_id = "kugelwindow"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -2795,7 +2795,7 @@
 "UN" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "smejection"
+	base_id = "smejection"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2873,7 +2873,7 @@
 "Xn" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/preopen{
-	id = "kugelwindow"
+	base_id = "kugelwindow"
 	},
 /turf/open/floor/plating,
 /area/ship/crew)

@@ -10,7 +10,7 @@
 "aL" = (
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/door/poddoor/crusher/automatic,
 /turf/open/floor/plating/rust,
@@ -25,7 +25,7 @@
 "bO" = (
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/structure/railing/corner{
 	dir = 1
@@ -36,7 +36,7 @@
 /obj/machinery/door/poddoor/crusher/automatic,
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -45,14 +45,14 @@
 	dir = 1
 	},
 /obj/machinery/conveyor/auto{
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "cA" = (
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/structure/plasticflaps,
 /turf/open/floor/plating/rust,
@@ -75,7 +75,7 @@
 "ed" = (
 /obj/machinery/door/poddoor/crusher/automatic,
 /obj/machinery/conveyor/auto{
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -93,7 +93,7 @@
 /obj/structure/catwalk,
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/door/poddoor/crusher/automatic/preopen,
 /turf/open/floor/plating/rust,
@@ -118,7 +118,7 @@
 "iG" = (
 /obj/machinery/conveyor/auto{
 	dir = 1;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/light/small,
 /turf/open/floor/plating/rust,
@@ -135,7 +135,7 @@
 "ka" = (
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/structure/railing{
 	dir = 1
@@ -184,7 +184,7 @@
 "mE" = (
 /obj/machinery/conveyor/auto{
 	dir = 8;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/structure/railing{
 	dir = 8
@@ -198,14 +198,14 @@
 "nU" = (
 /obj/structure/plasticflaps,
 /obj/machinery/conveyor/auto{
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "oq" = (
 /obj/machinery/conveyor/auto{
 	dir = 8;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -215,7 +215,7 @@
 /area/ruin/powered)
 "pk" = (
 /obj/machinery/conveyor_switch{
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /mob/living/simple_animal/bot/medbot,
 /turf/open/floor/plating,
@@ -223,7 +223,7 @@
 "pm" = (
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/structure/railing{
 	dir = 8
@@ -238,7 +238,7 @@
 /obj/structure/catwalk,
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -246,7 +246,7 @@
 /obj/structure/catwalk,
 /obj/machinery/conveyor/auto{
 	dir = 8;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -268,7 +268,7 @@
 "qk" = (
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -278,7 +278,7 @@
 "rz" = (
 /obj/structure/catwalk,
 /obj/machinery/conveyor/auto{
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/door/poddoor/crusher/automatic,
 /turf/open/floor/plating/rust,
@@ -309,7 +309,7 @@
 /obj/structure/catwalk,
 /obj/machinery/conveyor/auto{
 	dir = 1;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/structure/railing/corner{
 	dir = 8
@@ -327,7 +327,7 @@
 "vV" = (
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/light/small,
 /turf/open/floor/plating/rust,
@@ -336,7 +336,7 @@
 /obj/structure/catwalk,
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/structure/railing{
 	dir = 1
@@ -347,7 +347,7 @@
 "wy" = (
 /obj/structure/catwalk,
 /obj/machinery/conveyor/auto{
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -362,14 +362,14 @@
 "wW" = (
 /obj/machinery/conveyor/auto{
 	dir = 1;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "wZ" = (
 /obj/machinery/conveyor/auto{
 	dir = 1;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/structure/railing{
 	dir = 1
@@ -400,7 +400,7 @@
 "xO" = (
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/recycler/deathtrap{
 	color = "red"
@@ -432,7 +432,7 @@
 	dir = 10
 	},
 /obj/machinery/conveyor/auto{
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -453,7 +453,7 @@
 "DL" = (
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/rust,
@@ -473,7 +473,7 @@
 /obj/structure/catwalk,
 /obj/machinery/conveyor/auto{
 	dir = 1;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/light/small{
 	dir = 8
@@ -500,7 +500,7 @@
 /area/ruin/powered)
 "Hr" = (
 /obj/machinery/conveyor/auto{
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -558,7 +558,7 @@
 /obj/structure/catwalk,
 /obj/machinery/conveyor/auto{
 	dir = 1;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/door/poddoor/crusher/automatic,
 /turf/open/floor/plating/rust,
@@ -585,7 +585,7 @@
 /obj/structure/catwalk,
 /obj/machinery/conveyor/auto{
 	dir = 8;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/door/poddoor/crusher/automatic,
 /turf/open/floor/plating/rust,
@@ -610,7 +610,7 @@
 "LN" = (
 /obj/machinery/conveyor/auto{
 	dir = 8;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/door/poddoor/crusher/automatic/preopen,
 /turf/open/floor/plating/rust,
@@ -624,21 +624,21 @@
 /obj/structure/plasticflaps,
 /obj/machinery/conveyor/auto{
 	dir = 8;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "Nf" = (
 /obj/structure/catwalk,
 /obj/machinery/conveyor/auto{
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/door/poddoor/crusher/automatic/preopen,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "NV" = (
 /obj/machinery/conveyor/auto{
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/door/poddoor/crusher/automatic,
 /turf/open/floor/plating/rust,
@@ -651,7 +651,7 @@
 "OA" = (
 /obj/machinery/conveyor/auto{
 	dir = 8;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -665,7 +665,7 @@
 "PX" = (
 /obj/machinery/conveyor/auto{
 	dir = 1;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/rust,
@@ -673,7 +673,7 @@
 "Ql" = (
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/structure/railing,
 /turf/open/floor/plating/rust,
@@ -694,7 +694,7 @@
 /obj/structure/plasticflaps,
 /obj/machinery/conveyor/auto{
 	dir = 4;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -708,7 +708,7 @@
 "VL" = (
 /obj/machinery/conveyor/auto{
 	dir = 8;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/door/poddoor/crusher/automatic,
 /turf/open/floor/plating/rust,
@@ -716,7 +716,7 @@
 "VR" = (
 /obj/machinery/conveyor/auto{
 	dir = 8;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -726,7 +726,7 @@
 "WV" = (
 /obj/machinery/conveyor/auto{
 	dir = 1;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /obj/machinery/door/poddoor/crusher/automatic,
 /turf/open/floor/plating/rust,
@@ -750,7 +750,7 @@
 /obj/structure/catwalk,
 /obj/machinery/conveyor/auto{
 	dir = 1;
-	id = "rockplanet_ore_process"
+	base_id = "rockplanet_ore_process"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/powered)

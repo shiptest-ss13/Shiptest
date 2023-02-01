@@ -500,14 +500,14 @@
 /obj/machinery/button/door{
 	dir = 1;
 	name = "Entrance Lockdown";
-	id = "iusent";
+	base_id = "iusent";
 	pixel_x = -5;
 	pixel_y = -4
 	},
 /obj/machinery/button/door{
 	dir = 1;
 	name = "Shutter Control";
-	id = "iusoffice";
+	base_id = "iusoffice";
 	pixel_x = -5;
 	pixel_y = 6
 	},
@@ -718,7 +718,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "iusoffice"
+	base_id = "iusoffice"
 	},
 /obj/machinery/door/airlock/public/glass,
 /turf/open/floor/plasteel/tech,
@@ -1118,7 +1118,7 @@
 	pixel_y = 24;
 	pixel_x = -5;
 	desc = "In the event of lava doing things it should not be doing. Press this button and run.";
-	id = "iuslava"
+	base_id = "iuslava"
 	},
 /obj/machinery/power/terminal{
 	dir = 4
@@ -1167,11 +1167,11 @@
 /area/ruin/powered/slimelab/checkpoint)
 "mv" = (
 /obj/machinery/door/poddoor{
-	id = "iusmine"
+	base_id = "iusmine"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
-	id = "iusmine"
+	base_id = "iusmine"
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -1607,7 +1607,7 @@
 /obj/machinery/button/door{
 	dir = 1;
 	name = "Shutter Control";
-	id = "iuskill";
+	base_id = "iuskill";
 	pixel_x = 8;
 	pixel_y = -24
 	},
@@ -1967,7 +1967,7 @@
 /area/ruin/powered/slimelab/lab)
 "vA" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "slimelab"
+	base_id = "slimelab"
 	},
 /obj/structure/spacevine/dense{
 	pixel_y = -32
@@ -2154,7 +2154,7 @@
 "xo" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "slimelab"
+	base_id = "slimelab"
 	},
 /obj/machinery/disposal/deliveryChute{
 	dir = 8;
@@ -2193,10 +2193,10 @@
 	name = "Mining Exit";
 	pixel_y = 6;
 	pixel_x = 24;
-	id = "iusmine"
+	base_id = "iusmine"
 	},
 /obj/machinery/button/shieldwallgen{
-	id = "iusmine";
+	base_id = "iusmine";
 	dir = 8;
 	pixel_y = -5;
 	pixel_x = 25
@@ -2259,7 +2259,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "slimelab"
+	base_id = "slimelab"
 	},
 /obj/structure/disposalpipe/trunk{
 	dir = 1
@@ -2800,7 +2800,7 @@
 "Dg" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/machinery/door/poddoor/preopen{
-	id = "iusent"
+	base_id = "iusent"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2881,7 +2881,7 @@
 "Ei" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "slimelab"
+	base_id = "slimelab"
 	},
 /obj/effect/mob_spawn/slime,
 /turf/open/floor/plating/snowed,
@@ -2918,7 +2918,7 @@
 /area/ruin/powered/slimelab/cafe)
 "EB" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "iuslava"
+	base_id = "iuslava"
 	},
 /obj/structure/window/plasma/reinforced/fulltile,
 /obj/structure/grille,
@@ -3249,7 +3249,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "iusoffice"
+	base_id = "iusoffice"
 	},
 /obj/machinery/door/airlock/public/glass,
 /turf/open/floor/plasteel/tech,
@@ -3352,11 +3352,11 @@
 /area/ruin/powered/slimelab/lab)
 "JV" = (
 /obj/machinery/door/poddoor{
-	id = "iusmine"
+	base_id = "iusmine"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
-	id = "iusmine"
+	base_id = "iusmine"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -3575,7 +3575,7 @@
 "Ml" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "slimelab"
+	base_id = "slimelab"
 	},
 /turf/open/floor/plating/snowed,
 /area/ruin/unpowered)
@@ -3756,7 +3756,7 @@
 "OB" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "iuskill"
+	base_id = "iuskill"
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/lab)
@@ -4177,7 +4177,7 @@
 "Sj" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/machinery/door/poddoor/preopen{
-	id = "iusent"
+	base_id = "iusent"
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimelab/checkpoint)
@@ -4534,7 +4534,7 @@
 /area/ruin/powered/slimelab/lab)
 "Wz" = (
 /obj/machinery/door/poddoor{
-	id = "iusmine"
+	base_id = "iusmine"
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -4828,7 +4828,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "iuslava"
+	base_id = "iuslava"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8

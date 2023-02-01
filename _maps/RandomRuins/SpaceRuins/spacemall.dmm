@@ -116,12 +116,12 @@
 /obj/machinery/button/door{
 	pixel_y = 27;
 	pixel_x = 7;
-	id = "cargoshutter";
+	base_id = "cargoshutter";
 	name = "Cargo Shutters"
 	},
 /obj/machinery/button/shieldwallgen{
 	pixel_y = 27;
-	id = "cargoshield";
+	base_id = "cargoshield";
 	pixel_x = -7;
 	name = "Cargo Holoshields"
 	},
@@ -1086,7 +1086,7 @@
 "dZ" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "trashbelt"
+	base_id = "trashbelt"
 	},
 /obj/machinery/recycler,
 /turf/open/floor/plating,
@@ -1110,7 +1110,7 @@
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
 /obj/machinery/button/door{
 	pixel_x = -25;
-	id = "icecream_kiosk";
+	base_id = "icecream_kiosk";
 	name = "Kiosk Shutters";
 	dir = 4
 	},
@@ -1152,7 +1152,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
 	normaldoorcontrol = 1;
-	id = "staffdoors";
+	base_id = "staffdoors";
 	name = "Staff Lockdown";
 	specialfunctions = 4;
 	dir = 1
@@ -2140,7 +2140,7 @@
 "hX" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "engishop_shutters";
+	base_id = "engishop_shutters";
 	name = "Shop Shutters";
 	dir = 1
 	},
@@ -2282,7 +2282,7 @@
 	pixel_x = -4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "shutters_kitchen"
+	base_id = "shutters_kitchen"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -2421,7 +2421,7 @@
 	locked = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "engishop_shutters"
+	base_id = "engishop_shutters"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3847,7 +3847,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "shutters_kitchen"
+	base_id = "shutters_kitchen"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/spacemall/dorms)
@@ -4654,7 +4654,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "cargoshutter"
+	base_id = "cargoshutter"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -5108,7 +5108,7 @@
 /obj/item/kirbyplants/random,
 /obj/machinery/button/door{
 	pixel_y = -25;
-	id = "shutters_kitchen";
+	base_id = "shutters_kitchen";
 	name = "Kitchen Shutters";
 	dir = 1
 	},
@@ -5122,7 +5122,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "warehouseshutter"
+	base_id = "warehouseshutter"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/industrial/warning,
@@ -5198,7 +5198,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "cargoshutter"
+	base_id = "cargoshutter"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -5588,7 +5588,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "cargoshutter"
+	base_id = "cargoshutter"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -5801,14 +5801,14 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
-	id = "cargoshield"
+	base_id = "cargoshield"
 	},
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "cargoshutter"
+	base_id = "cargoshutter"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -6760,14 +6760,14 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "clothing_shutter"
+	base_id = "clothing_shutter"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "yQ" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "trashbelt"
+	base_id = "trashbelt"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -7124,7 +7124,7 @@
 /obj/structure/grille,
 /obj/structure/window/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	id = "clothing_shutter"
+	base_id = "clothing_shutter"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shop)
@@ -7179,7 +7179,7 @@
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/machinery/door/poddoor/shutters{
-	id = "icecream_kiosk"
+	base_id = "icecream_kiosk"
 	},
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
@@ -7537,7 +7537,7 @@
 /area/ruin/space/has_grav/spacemall/shop2)
 "BV" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "warehouseshutter"
+	base_id = "warehouseshutter"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/turf_decal/industrial/warning,
@@ -8344,11 +8344,11 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "cargoshutter"
+	base_id = "cargoshutter"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
-	id = "cargoshield"
+	base_id = "cargoshield"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -8873,7 +8873,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "trashbelt"
+	base_id = "trashbelt"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
@@ -8965,7 +8965,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/door/poddoor/shutters{
-	id = "cargoshutter"
+	base_id = "cargoshutter"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -8984,7 +8984,7 @@
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/machinery/door/poddoor/shutters{
-	id = "icecream_kiosk"
+	base_id = "icecream_kiosk"
 	},
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
@@ -10391,7 +10391,7 @@
 	dir = 1
 	},
 /obj/machinery/conveyor_switch{
-	id = "trashbelt"
+	base_id = "trashbelt"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -11033,7 +11033,7 @@
 "Oq" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "clothing_shutter"
+	base_id = "clothing_shutter"
 	},
 /obj/structure/window/fulltile,
 /turf/open/floor/plating,
@@ -11856,7 +11856,7 @@
 "RG" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "engishop_shutters"
+	base_id = "engishop_shutters"
 	},
 /obj/structure/window/fulltile,
 /turf/open/floor/plating,
@@ -12205,7 +12205,7 @@
 /obj/structure/table/wood/reinforced,
 /obj/machinery/button/door{
 	normaldoorcontrol = 1;
-	id = "staffdoors";
+	base_id = "staffdoors";
 	name = "Staff Lockdown";
 	pixel_y = -7;
 	specialfunctions = 4;
@@ -12753,7 +12753,7 @@
 "Va" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "clothing_shutter";
+	base_id = "clothing_shutter";
 	name = "Shop Shutters";
 	dir = 4
 	},
@@ -12779,11 +12779,11 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "cargoshutter"
+	base_id = "cargoshutter"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
-	id = "cargoshield"
+	base_id = "cargoshield"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -12946,13 +12946,13 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
-	id = "cargoshield"
+	base_id = "cargoshield"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "cargoshutter"
+	base_id = "cargoshutter"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -13631,14 +13631,14 @@
 	pixel_y = -25;
 	pixel_x = -7;
 	name = "Cargo Holoshields";
-	id = "cargoshield"
+	base_id = "cargoshield"
 	},
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -25;
 	pixel_x = 7;
 	name = "Cargo Shutters";
-	id = "cargoshutter"
+	base_id = "cargoshutter"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shuttle)

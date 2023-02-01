@@ -3,21 +3,22 @@
 	desc = "A small electronic device able to control a blast door remotely."
 	icon_state = "control"
 	attachable = TRUE
-	var/id = null
+	var/base_id
+	var/port_id
 	var/can_change_id = 0
 	var/cooldown = FALSE //Door cooldowns
 	var/sync_doors = TRUE
 
 /obj/item/assembly/control/examine(mob/user)
 	. = ..()
-	if(id)
-		. += "<span class='notice'>Its channel ID is '[id]'.</span>"
+	if(base_id)
+		. += "<span class='notice'>Its channel ID is '[base_id]'.</span>"
 
 /obj/item/assembly/control/multitool_act(mob/living/user)
-	var/change_id = input("Set [src] ID. It must be a number between 1 and 100.", "ID", id) as num|null
+	var/change_id = input("Set [src] ID. It must be a number between 1 and 100.", "ID", base_id) as num|null
 	if(change_id)
-		id = clamp(round(change_id, 1), 1, 100)
-		to_chat(user, "<span class='notice'>You change the ID to [id].</span>")
+		base_id = clamp(round(change_id, 1), 1, 100)
+		to_chat(user, "<span class='notice'>You change the ID to [base_id].</span>")
 
 /obj/item/assembly/control/activate()
 	var/openclose
@@ -25,16 +26,19 @@
 		return
 	cooldown = TRUE
 	for(var/obj/machinery/door/poddoor/M in GLOB.machines)
-		if(M.id == src.id)
-			if(openclose == null || !sync_doors)
-				openclose = M.density
-			INVOKE_ASYNC(M, openclose ? /obj/machinery/door/poddoor.proc/open : /obj/machinery/door/poddoor.proc/close)
+		if(M.port_id != port_id)
+			continue
+		if(M.base_id != base_id)
+			continue
+		if(openclose == null || !sync_doors)
+			openclose = M.density
+		INVOKE_ASYNC(M, openclose ? /obj/machinery/door/poddoor.proc/open : /obj/machinery/door/poddoor.proc/close)
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 10)
 
 /obj/item/assembly/control/airlock
 	name = "airlock controller"
 	desc = "A small electronic device able to control an airlock remotely."
-	id = "badmin" // Set it to null for MEGAFUN.
+	base_id = "badmin" // Set it to null for MEGAFUN.
 	var/specialfunctions = OPEN
 	/*
 	Bitflag, 	1= open (OPEN)
@@ -51,7 +55,7 @@
 	var/doors_need_closing = FALSE
 	var/list/obj/machinery/door/airlock/open_or_close = list()
 	for(var/obj/machinery/door/airlock/D in GLOB.airlocks)
-		if(D.id_tag == src.id)
+		if(D.id_tag == base_id)
 			if(specialfunctions & OPEN)
 				open_or_close += D
 				if(!D.density)
@@ -85,19 +89,19 @@
 		return
 	cooldown = TRUE
 	for(var/obj/machinery/door/poddoor/M in GLOB.machines)
-		if (M.id == src.id)
+		if (M.base_id == base_id)
 			INVOKE_ASYNC(M, /obj/machinery/door/poddoor.proc/open)
 
 	sleep(10)
 
 	for(var/obj/machinery/mass_driver/M in GLOB.machines)
-		if(M.id == src.id)
+		if(M.id == base_id)
 			M.drive()
 
 	sleep(60)
 
 	for(var/obj/machinery/door/poddoor/M in GLOB.machines)
-		if (M.id == src.id)
+		if (M.base_id == base_id)
 			INVOKE_ASYNC(M, /obj/machinery/door/poddoor.proc/close)
 
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 10)
@@ -112,11 +116,11 @@
 		return
 	cooldown = TRUE
 	for(var/obj/machinery/sparker/M in GLOB.machines)
-		if (M.id == src.id)
+		if (M.id == base_id)
 			INVOKE_ASYNC(M, /obj/machinery/sparker.proc/ignite)
 
 	for(var/obj/machinery/igniter/M in GLOB.machines)
-		if(M.id == src.id)
+		if(M.id == base_id)
 			M.use_power(50)
 			M.on = !M.on
 			M.icon_state = "igniter[M.on]"
@@ -132,7 +136,7 @@
 		return
 	cooldown = TRUE
 	for(var/obj/machinery/flasher/M in GLOB.machines)
-		if(M.id == src.id)
+		if(M.id == base_id)
 			INVOKE_ASYNC(M, /obj/machinery/flasher.proc/flash)
 
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 50)
@@ -147,7 +151,7 @@
 		return
 	cooldown = TRUE
 	for (var/obj/structure/bodycontainer/crematorium/C in GLOB.crematoriums)
-		if (C.id == id)
+		if (C.id == base_id)
 			C.cremate(usr)
 
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 50)
@@ -165,7 +169,7 @@
 	var/obj/structure/industrial_lift/lift
 	for(var/l in GLOB.lifts)
 		var/obj/structure/industrial_lift/possible_lift = l
-		if(possible_lift.id != id || possible_lift.z == z || possible_lift.controls_locked)
+		if(possible_lift.id != base_id || possible_lift.z == z || possible_lift.controls_locked)
 			continue
 		lift = possible_lift
 		break
@@ -197,7 +201,10 @@
 		return
 	cooldown = TRUE
 	for(var/obj/machinery/power/shieldwallgen/machine in GLOB.machines)
-		if(machine.id == src.id)
-			INVOKE_ASYNC(machine, /obj/machinery/power/shieldwallgen.proc/toggle)
+		if(machine.port_id != port_id)
+			continue
+		if(machine.base_id != base_id)
+			continue
+		INVOKE_ASYNC(machine, /obj/machinery/power/shieldwallgen.proc/toggle)
 
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 20)

@@ -72,7 +72,7 @@
 		update_openspace()
 
 /obj/structure/pitgrate/proc/OnButtonPressed(datum/source,obj/machinery/button/button)
-	if(button.id == id) //No range checks because this is admin abuse mostly.
+	if(button.base_id == id) //No range checks because this is admin abuse mostly.
 		toggle()
 
 /obj/structure/pitgrate/proc/update_openspace()

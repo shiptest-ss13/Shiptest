@@ -4,14 +4,14 @@
 /area/template_noop)
 "c" = (
 /obj/machinery/button/massdriver/indestructible{
-	id = "trektorpedo1";
+	base_id = "trektorpedo1";
 	layer = 3.9;
 	name = "photon torpedo button";
 	pixel_x = -16;
 	pixel_y = -5
 	},
 /obj/machinery/button/massdriver/indestructible{
-	id = "trektorpedo2";
+	base_id = "trektorpedo2";
 	layer = 3.9;
 	name = "photon torpedo button";
 	pixel_x = 16;
@@ -227,7 +227,7 @@
 /obj/structure/window/reinforced,
 /obj/machinery/mass_driver{
 	dir = 1;
-	id = "trektorpedo2";
+	base_id = "trektorpedo2";
 	name = "photon torpedo tube"
 	},
 /obj/item/toy/minimeteor{

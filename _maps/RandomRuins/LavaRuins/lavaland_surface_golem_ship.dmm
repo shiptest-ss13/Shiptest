@@ -297,7 +297,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = "golemloading";
+	base_id = "golemloading";
 	name = "Cargo Blast Door Control";
 	pixel_x = -5;
 	pixel_y = -25
@@ -559,7 +559,7 @@
 /area/ruin/powered/golem_ship)
 "ki" = (
 /obj/machinery/door/poddoor{
-	id = "golemloading"
+	base_id = "golemloading"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
@@ -1076,14 +1076,14 @@
 /obj/structure/table/reinforced,
 /obj/machinery/light/small,
 /obj/machinery/button/door{
-	id = "golemloading";
+	base_id = "golemloading";
 	name = "Cargo Blast Door Control";
 	pixel_x = -5;
 	pixel_y = -25
 	},
 /obj/item/storage/firstaid/regular,
 /obj/machinery/button/door{
-	id = "golemwindows";
+	base_id = "golemwindows";
 	name = "Window Blast Door Control";
 	pixel_x = 5;
 	pixel_y = -25
@@ -1744,13 +1744,13 @@
 "Ma" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "golemwindows"
+	base_id = "golemwindows"
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/golem_ship)
 "Ml" = (
 /obj/machinery/door/poddoor{
-	id = "golemloading"
+	base_id = "golemloading"
 	},
 /obj/structure/fans/tiny,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -2265,7 +2265,7 @@
 "Xc" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "golemwindows"
+	base_id = "golemwindows"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8

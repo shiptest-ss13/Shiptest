@@ -638,10 +638,10 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
-	id = "dropshuttle"
+	base_id = "dropshuttle"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "doorshuttle"
+	base_id = "doorshuttle"
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1043,7 +1043,7 @@
 	},
 /obj/machinery/button/door{
 	pixel_y = -27;
-	id = "doorshuttle";
+	base_id = "doorshuttle";
 	name = "Shutters";
 	dir = 1
 	},
@@ -1484,7 +1484,7 @@
 	name = "Armory Bolts";
 	specialfunctions = 4;
 	normaldoorcontrol = 1;
-	id = "armory"
+	base_id = "armory"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
@@ -1535,7 +1535,7 @@
 	name = "Door Bolts";
 	dir = 4;
 	pixel_x = -27;
-	id = "walldoor";
+	base_id = "walldoor";
 	specialfunctions = 4
 	},
 /obj/structure/spacevine/weak,
@@ -2106,7 +2106,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning,
 /obj/machinery/button/door{
 	pixel_y = 27;
-	id = "doorshuttle";
+	base_id = "doorshuttle";
 	name = "Shutters"
 	},
 /turf/open/floor/concrete/pavement{
@@ -2288,11 +2288,11 @@
 "JL" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "dropshuttle";
+	base_id = "dropshuttle";
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "doorshuttle"
+	base_id = "doorshuttle"
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2338,10 +2338,10 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
-	id = "dropshuttle"
+	base_id = "dropshuttle"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "doorshuttle"
+	base_id = "doorshuttle"
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -2500,11 +2500,11 @@
 /area/ruin/beach/complex)
 "MX" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "doorshuttle"
+	base_id = "doorshuttle"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "dropshuttle";
+	base_id = "dropshuttle";
 	dir = 8
 	},
 /obj/structure/cable{
@@ -2694,14 +2694,14 @@
 	},
 /obj/machinery/button/door{
 	pixel_y = 5;
-	id = "doorshuttle";
+	base_id = "doorshuttle";
 	name = "Shutters";
 	pixel_x = -27;
 	dir = 4
 	},
 /obj/machinery/button/shieldwallgen{
 	pixel_y = -7;
-	id = "dropshuttle";
+	base_id = "dropshuttle";
 	name = "Holofields";
 	pixel_x = -27;
 	dir = 4
@@ -3021,7 +3021,7 @@
 	name = "Door Bolts";
 	dir = 4;
 	pixel_x = -27;
-	id = "walldoor";
+	base_id = "walldoor";
 	specialfunctions = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,

@@ -20,7 +20,7 @@
 "ae" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "cruise_entrance1"
+	base_id = "cruise_entrance1"
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/port)
@@ -89,7 +89,7 @@
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "cruise_entrance1"
+	base_id = "cruise_entrance1"
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/port)
@@ -99,7 +99,7 @@
 /area/ship/hallway/port)
 "az" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "cruisebridge"
+	base_id = "cruisebridge"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -183,7 +183,7 @@
 /area/ship/cargo)
 "aZ" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "cruise_entrance2"
+	base_id = "cruise_entrance2"
 	},
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/effect/turf_decal/corner/opaque/white/bordercorner,
@@ -231,7 +231,7 @@
 "bi" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
@@ -284,7 +284,7 @@
 "bv" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruise_checkpoint"
+	base_id = "cruise_checkpoint"
 	},
 /obj/item/folder/yellow,
 /turf/open/floor/plasteel/dark,
@@ -380,7 +380,7 @@
 "bV" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisebridgewindows";
+	base_id = "cruisebridgewindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -456,28 +456,28 @@
 "cM" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "cruisewindows";
+	base_id = "cruisewindows";
 	name = "Window Lockdown";
 	pixel_x = -25;
 	pixel_y = -8
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "cruisebridge";
+	base_id = "cruisebridge";
 	name = "Bridge Lockdown";
 	pixel_x = -25;
 	pixel_y = 8
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "cruisebridgewindows";
+	base_id = "cruisebridgewindows";
 	name = "Bridge Shutters";
 	pixel_x = -36;
 	pixel_y = 8
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "cruiseeva";
+	base_id = "cruiseeva";
 	name = "EVA Lockdown";
 	pixel_x = -36;
 	pixel_y = -8
@@ -496,7 +496,7 @@
 /area/ship/bridge)
 "cO" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "cruise_entrance2"
+	base_id = "cruise_entrance2"
 	},
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/effect/turf_decal/corner/opaque/white/bordercorner{
@@ -522,7 +522,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisetegwindows"
+	base_id = "cruisetegwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -617,7 +617,7 @@
 /area/ship/crew)
 "dL" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "cruise_entrance2"
+	base_id = "cruise_entrance2"
 	},
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -827,7 +827,7 @@
 	pixel_y = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruise_checkpoint"
+	base_id = "cruise_checkpoint"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
@@ -859,7 +859,7 @@
 "fv" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisebridgewindows";
+	base_id = "cruisebridgewindows";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -1363,7 +1363,7 @@
 	},
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1457,7 +1457,7 @@
 /area/ship/engineering)
 "iV" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
@@ -1730,7 +1730,7 @@
 "lf" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
@@ -1778,14 +1778,14 @@
 	},
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "cruiseengwindow"
+	base_id = "cruiseengwindow"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "lA" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisebridgewindows";
+	base_id = "cruisebridgewindows";
 	name = "External Shutters"
 	},
 /obj/structure/cable{
@@ -1900,7 +1900,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/preopen{
-	id = "cruiseeng"
+	base_id = "cruiseeng"
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
@@ -2260,7 +2260,7 @@
 /area/ship/hallway/aft)
 "oU" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "cruisebridge"
+	base_id = "cruisebridge"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2299,7 +2299,7 @@
 "pl" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen/kitchen)
@@ -2856,7 +2856,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "cruiseeng"
+	base_id = "cruiseeng"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -2877,7 +2877,7 @@
 "sH" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -3116,7 +3116,7 @@
 "uq" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/library)
@@ -3860,7 +3860,7 @@
 "zc" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -4125,7 +4125,7 @@
 /area/ship/engineering)
 "Bg" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "cruiseeva"
+	base_id = "cruiseeva"
 	},
 /turf/open/floor/pod/dark,
 /area/ship/hallway/fore)
@@ -4177,7 +4177,7 @@
 "Bt" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/chapel)
@@ -4307,7 +4307,7 @@
 "Co" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisebridgewindows";
+	base_id = "cruisebridgewindows";
 	name = "External Shutters"
 	},
 /obj/structure/cable{
@@ -4386,7 +4386,7 @@
 "CS" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "cruiseeng";
+	base_id = "cruiseeng";
 	name = "Engineering Lockdown";
 	pixel_x = -25
 	},
@@ -4395,7 +4395,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "cruiseengwindow";
+	base_id = "cruiseengwindow";
 	name = "Engineering Windows";
 	pixel_x = -36
 	},
@@ -4444,7 +4444,7 @@
 	dir = 8
 	},
 /obj/machinery/conveyor{
-	id = "cruise_conveyor"
+	base_id = "cruise_conveyor"
 	},
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -5205,7 +5205,7 @@
 "Ij" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/hydroponics)
@@ -5323,7 +5323,7 @@
 "Jr" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
@@ -5486,7 +5486,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/structure/curtain/bounty,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
@@ -5717,7 +5717,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "cruisetegwindows";
+	base_id = "cruisetegwindows";
 	name = "Chamber Window";
 	pixel_x = -28;
 	pixel_y = -8
@@ -5856,19 +5856,19 @@
 /area/ship/external)
 "Ny" = (
 /obj/machinery/button/door{
-	id = "cruise_entrance1";
+	base_id = "cruise_entrance1";
 	name = "blastdoor one";
 	pixel_x = 28;
 	pixel_y = 36
 	},
 /obj/machinery/button/door{
-	id = "cruise_entrance2";
+	base_id = "cruise_entrance2";
 	name = "blastdoor two";
 	pixel_x = 28;
 	pixel_y = 25
 	},
 /obj/machinery/button/door{
-	id = "cruise_checkpoint";
+	base_id = "cruise_checkpoint";
 	name = "checkpoint lockdown";
 	pixel_x = -28;
 	pixel_y = 25
@@ -5945,7 +5945,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/structure/curtain/cloth/fancy,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
@@ -6526,7 +6526,7 @@
 "Ro" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cruisebridgewindows";
+	base_id = "cruisebridgewindows";
 	name = "External Shutters"
 	},
 /obj/structure/cable{
@@ -7094,7 +7094,7 @@
 "Va" = (
 /obj/machinery/door/window/westright,
 /obj/machinery/conveyor{
-	id = "cruise_conveyor"
+	base_id = "cruise_conveyor"
 	},
 /obj/structure/plasticflaps,
 /turf/open/floor/plating,
@@ -7213,7 +7213,7 @@
 	},
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "cruisewindows"
+	base_id = "cruisewindows"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -7303,10 +7303,10 @@
 /area/ship/crew/canteen)
 "Wm" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "cruise_conveyor"
+	base_id = "cruise_conveyor"
 	},
 /obj/machinery/button/door{
-	id = "cruise_disposals";
+	base_id = "cruise_disposals";
 	name = "disposals blastdoor";
 	pixel_y = -28
 	},
@@ -7658,11 +7658,11 @@
 /area/ship/hallway/aft)
 "Zb" = (
 /obj/machinery/door/poddoor{
-	id = "cruise_disposals";
+	base_id = "cruise_disposals";
 	name = "Disposals Blast Door"
 	},
 /obj/machinery/conveyor{
-	id = "cruise_conveyor"
+	base_id = "cruise_conveyor"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)

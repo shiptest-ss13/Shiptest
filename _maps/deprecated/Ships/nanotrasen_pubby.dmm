@@ -27,7 +27,7 @@
 "ar" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
+	base_id = "whiteship_bridge"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -198,7 +198,7 @@
 	},
 /obj/structure/catwalk,
 /obj/machinery/button/door{
-	id = "whiteshipubbyEngines";
+	base_id = "whiteshipubbyEngines";
 	name = "Engine Lockdown Control";
 	pixel_x = -25
 	},
@@ -218,13 +218,13 @@
 /area/ship/cargo)
 "eN" = (
 /obj/machinery/button/door{
-	id = "whiteship_windows";
+	base_id = "whiteship_windows";
 	name = "Windows Blast Door Control";
 	pixel_x = -5;
 	pixel_y = 26
 	},
 /obj/machinery/button/door{
-	id = "whiteship_bridge";
+	base_id = "whiteship_bridge";
 	name = "Bridge Blast Door Control";
 	pixel_x = 5;
 	pixel_y = 26
@@ -271,7 +271,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/multi_tile/four_tile_hor{
-	id = "pubbywspodsw"
+	base_id = "pubbywspodsw"
 	},
 /turf/open/floor/engine,
 /area/ship/cargo)
@@ -387,7 +387,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "whiteshipubbyEngines"
+	base_id = "whiteshipubbyEngines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -571,7 +571,7 @@
 "lQ" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
+	base_id = "whiteship_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -1039,7 +1039,7 @@
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/button/door{
-	id = "pubbywspodsw";
+	base_id = "pubbywspodsw";
 	name = "Pod Door Control";
 	pixel_x = -25
 	},
@@ -1277,7 +1277,7 @@
 "Bx" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
+	base_id = "whiteship_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1352,7 +1352,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "pubbywspodnw";
+	base_id = "pubbywspodnw";
 	name = "Pod Door Control";
 	pixel_x = -25
 	},
@@ -1427,7 +1427,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/multi_tile/four_tile_hor{
-	id = "pubbywspodnw"
+	base_id = "pubbywspodnw"
 	},
 /turf/open/floor/engine,
 /area/ship/cargo)
@@ -1462,7 +1462,7 @@
 "EK" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1935,7 +1935,7 @@
 /area/ship/cargo)
 "Pj" = (
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
+	base_id = "whiteship_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1986,7 +1986,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "whiteshipubbyEngines"
+	base_id = "whiteshipubbyEngines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2018,7 +2018,7 @@
 	},
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
@@ -2244,7 +2244,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "whiteshipubbyEngines"
+	base_id = "whiteshipubbyEngines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2507,7 +2507,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "whiteshipubbyEngines"
+	base_id = "whiteshipubbyEngines"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)

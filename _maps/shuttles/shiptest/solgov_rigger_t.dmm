@@ -2,7 +2,7 @@
 "ai" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -64,7 +64,7 @@
 "bl" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
@@ -355,7 +355,7 @@
 	dir = 8
 	},
 /obj/machinery/door/window/brigdoor/security/cell/eastright{
-	id = "Cell 1";
+	base_id = "Cell 1";
 	req_one_access_txt = "2"
 	},
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
@@ -363,7 +363,7 @@
 	dir = 4
 	},
 /obj/machinery/flasher{
-	id = "Cell1B";
+	base_id = "Cell1B";
 	pixel_x = -25
 	},
 /turf/open/floor/plasteel/dark,
@@ -407,7 +407,7 @@
 	dir = 8
 	},
 /obj/machinery/door/window/brigdoor/security/cell/eastright{
-	id = "Cell 2";
+	base_id = "Cell 2";
 	req_one_access_txt = "2"
 	},
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
@@ -415,7 +415,7 @@
 	dir = 4
 	},
 /obj/machinery/flasher{
-	id = "Cell2B";
+	base_id = "Cell2B";
 	pixel_x = -25
 	},
 /turf/open/floor/plasteel/dark,
@@ -479,7 +479,7 @@
 "ij" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -891,7 +891,7 @@
 "mK" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -974,7 +974,7 @@
 "nF" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
@@ -1024,12 +1024,12 @@
 /area/ship/engineering)
 "or" = (
 /obj/machinery/button/flasher{
-	id = "Cell2B";
+	base_id = "Cell2B";
 	pixel_x = -23;
 	pixel_y = 6
 	},
 /obj/machinery/button/flasher{
-	id = "Cell1B";
+	base_id = "Cell1B";
 	pixel_x = -23;
 	pixel_y = -6
 	},
@@ -1038,14 +1038,14 @@
 "ou" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "riggerdoors";
+	base_id = "riggerdoors";
 	name = "Blast Door Control";
 	pixel_x = -25;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Window Lockdown";
 	pixel_x = -25;
 	pixel_y = -5
@@ -1454,7 +1454,7 @@
 /area/ship/maintenance/starboard)
 "sT" = (
 /obj/machinery/door/poddoor{
-	id = "riggerdoors";
+	base_id = "riggerdoors";
 	name = "Mechbay Blast Door"
 	},
 /obj/structure/fans/tiny,
@@ -2039,7 +2039,7 @@
 "zr" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -2454,7 +2454,7 @@
 "DL" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle{
@@ -2767,7 +2767,7 @@
 "Hm" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/curtain,
@@ -3023,7 +3023,7 @@
 "KI" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -3250,7 +3250,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "riggerdoors";
+	base_id = "riggerdoors";
 	name = "Blast Door Control";
 	pixel_x = -25
 	},
@@ -3368,7 +3368,7 @@
 "Pi" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -3456,7 +3456,7 @@
 	},
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/machinery/atmospherics/components/binary/pump/on/layer4{
@@ -3624,7 +3624,7 @@
 "Rz" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -3738,7 +3738,7 @@
 /area/ship/engineering)
 "SU" = (
 /obj/machinery/door_timer{
-	id = "Cell 2";
+	base_id = "Cell 2";
 	pixel_y = 32
 	},
 /turf/open/floor/carpet/nanoweave/red,
@@ -3848,7 +3848,7 @@
 /area/ship/construction)
 "Ul" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/grille,
@@ -3868,7 +3868,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door_timer{
-	id = "Cell 1";
+	base_id = "Cell 1";
 	pixel_y = -32
 	},
 /turf/open/floor/carpet/nanoweave/red,
@@ -3901,7 +3901,7 @@
 "Va" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -3992,7 +3992,7 @@
 /area/ship/crew/canteen)
 "VW" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
+	base_id = "riggerwindows";
 	name = "Blast Shutters"
 	},
 /obj/structure/grille,

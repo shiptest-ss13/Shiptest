@@ -349,7 +349,7 @@
 	new /obj/item/wallframe/button(src)
 	new /obj/item/electronics/airlock(src)
 	var/obj/item/assembly/control/flasher/remote = new(src)
-	remote.id = id
+	remote.base_id = id
 	var/obj/item/wallframe/flasher/frame = new(src)
 	frame.id = id
 	new /obj/item/assembly/flash/handheld(src)

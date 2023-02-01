@@ -91,7 +91,7 @@
 /area/ship/crew)
 "cp" = (
 /obj/machinery/door/poddoor{
-	id = "cargoblastdoors"
+	base_id = "cargoblastdoors"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/fans/tiny,
@@ -269,7 +269,7 @@
 /area/ship/bridge)
 "eS" = (
 /obj/machinery/door/poddoor{
-	id = "windowlockdown"
+	base_id = "windowlockdown"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -518,19 +518,19 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "windowlockdown";
+	base_id = "windowlockdown";
 	name = "Window Lockdown";
 	pixel_x = -5;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
-	id = "cargoblastdoors";
+	base_id = "cargoblastdoors";
 	name = "Blast Door Control";
 	pixel_x = 5;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
-	id = "bridgelockdown";
+	base_id = "bridgelockdown";
 	name = "Bridge Lockdown";
 	pixel_y = -5
 	},
@@ -844,7 +844,7 @@
 /area/ship/crew/canteen)
 "sD" = (
 /obj/machinery/door/poddoor{
-	id = "windowlockdown"
+	base_id = "windowlockdown"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1057,7 +1057,7 @@
 /area/ship/crew/canteen)
 "xr" = (
 /obj/machinery/door/poddoor{
-	id = "windowlockdown"
+	base_id = "windowlockdown"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1105,7 +1105,7 @@
 /area/ship/external)
 "yk" = (
 /obj/machinery/door/poddoor{
-	id = "cargoblastdoors"
+	base_id = "cargoblastdoors"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
@@ -1329,7 +1329,7 @@
 /area/ship/cargo)
 "Cu" = (
 /obj/machinery/door/poddoor{
-	id = "bridgelockdown"
+	base_id = "bridgelockdown"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1484,7 +1484,7 @@
 /area/ship/crew/canteen)
 "DZ" = (
 /obj/machinery/door/poddoor{
-	id = "windowlockdown"
+	base_id = "windowlockdown"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -2443,7 +2443,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "cargoblastdoors";
+	base_id = "cargoblastdoors";
 	name = "Blast Door Control";
 	pixel_x = 25;
 	pixel_y = 25

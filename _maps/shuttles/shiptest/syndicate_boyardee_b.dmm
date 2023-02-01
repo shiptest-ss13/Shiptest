@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
 /obj/machinery/door/poddoor{
-	id = "windowlockdown"
+	base_id = "windowlockdown"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -84,7 +84,7 @@
 /area/ship/crew)
 "cp" = (
 /obj/machinery/door/poddoor{
-	id = "cargoblastdoors"
+	base_id = "cargoblastdoors"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/fans/tiny,
@@ -1133,7 +1133,7 @@
 /area/ship/external)
 "yk" = (
 /obj/machinery/door/poddoor{
-	id = "cargoblastdoors"
+	base_id = "cargoblastdoors"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
@@ -1269,7 +1269,7 @@
 /area/ship/crew/canteen)
 "BN" = (
 /obj/machinery/door/poddoor{
-	id = "windowlockdown"
+	base_id = "windowlockdown"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1572,7 +1572,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "cargoblastdoors";
+	base_id = "cargoblastdoors";
 	name = "Blast Door Control";
 	pixel_x = 25;
 	pixel_y = 25
@@ -1748,7 +1748,7 @@
 /area/ship/maintenance)
 "Mp" = (
 /obj/machinery/door/poddoor{
-	id = "bridgelockdown"
+	base_id = "bridgelockdown"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1857,7 +1857,7 @@
 /area/ship/crew/canteen)
 "OD" = (
 /obj/machinery/door/poddoor{
-	id = "windowlockdown"
+	base_id = "windowlockdown"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -2202,19 +2202,19 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "windowlockdown";
+	base_id = "windowlockdown";
 	name = "Window Lockdown";
 	pixel_x = -5;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
-	id = "cargoblastdoors";
+	base_id = "cargoblastdoors";
 	name = "Blast Door Control";
 	pixel_x = 5;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
-	id = "bridgelockdown";
+	base_id = "bridgelockdown";
 	name = "Bridge Lockdown";
 	pixel_y = -5
 	},

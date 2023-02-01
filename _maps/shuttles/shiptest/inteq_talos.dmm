@@ -6,10 +6,10 @@
 "ad" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 1;
-	id = "talos_tank_burn"
+	base_id = "talos_tank_burn"
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_tank_burn"
+	base_id = "talos_tank_burn"
 	},
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /obj/structure/cable{
@@ -101,7 +101,7 @@
 "at" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "talos_engine_shutter"
+	base_id = "talos_engine_shutter"
 	},
 /obj/machinery/atmospherics/pipe/manifold/purple/visible,
 /turf/open/floor/plasteel/tech,
@@ -149,7 +149,7 @@
 "aH" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "talos_thrusters_starboard";
+	base_id = "talos_thrusters_starboard";
 	name = "Blast Door Control";
 	pixel_x = -25;
 	pixel_y = -6
@@ -244,7 +244,7 @@
 "bM" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "talos_thrusters_port"
+	base_id = "talos_thrusters_port"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
@@ -453,10 +453,10 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "talos_tank_air"
+	base_id = "talos_tank_air"
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_tank_air"
+	base_id = "talos_tank_air"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engine)
@@ -858,7 +858,7 @@
 "ge" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "talos_engine_shutter"
+	base_id = "talos_engine_shutter"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -959,7 +959,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_thrusters_port"
+	base_id = "talos_thrusters_port"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1025,7 +1025,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_thrusters_starboard"
+	base_id = "talos_thrusters_starboard"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1484,7 +1484,7 @@
 /area/ship/crew/cryo)
 "jy" = (
 /obj/machinery/door/poddoor{
-	id = "talos_thrusters_starboard"
+	base_id = "talos_thrusters_starboard"
 	},
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
@@ -1506,7 +1506,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "talos_armory";
+	base_id = "talos_armory";
 	name = "Door Control";
 	normaldoorcontrol = 1;
 	pixel_x = -25;
@@ -1515,7 +1515,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "talos_armory";
+	base_id = "talos_armory";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -25;
@@ -1679,7 +1679,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_thrusters_port"
+	base_id = "talos_thrusters_port"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1741,7 +1741,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_thrusters_port"
+	base_id = "talos_thrusters_port"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1841,7 +1841,7 @@
 "lS" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "talos_engine_shutter"
+	base_id = "talos_engine_shutter"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible{
 	dir = 9
@@ -2026,7 +2026,7 @@
 	},
 /obj/structure/curtain/bounty,
 /obj/machinery/door/poddoor{
-	id = "talos_windows";
+	base_id = "talos_windows";
 	name = "Window Shield"
 	},
 /turf/open/floor/plating,
@@ -2577,7 +2577,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "talos_tank_air";
+	base_id = "talos_tank_air";
 	name = "Access Door Control";
 	pixel_x = 25;
 	pixel_y = -6;
@@ -2585,7 +2585,7 @@
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
-	id = "talos_tank_air";
+	base_id = "talos_tank_air";
 	pixel_x = 25;
 	pixel_y = 4;
 	req_access_txt = "24"
@@ -2738,12 +2738,12 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 1;
-	id = "talos_cargo";
+	base_id = "talos_cargo";
 	locked = 1
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "talos_cargo"
+	base_id = "talos_cargo"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced,
@@ -2819,14 +2819,14 @@
 "rV" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "talos_engine_shutter";
+	base_id = "talos_engine_shutter";
 	name = "Shutter Control";
 	pixel_x = -25;
 	pixel_y = -6
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "talos_engine_vent";
+	base_id = "talos_engine_vent";
 	name = "External Vent Control";
 	pixel_x = -25;
 	pixel_y = 6
@@ -3370,7 +3370,7 @@
 /area/ship/crew/cryo)
 "uY" = (
 /obj/machinery/door/poddoor{
-	id = "talos_thrusters_starboard"
+	base_id = "talos_thrusters_starboard"
 	},
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -4073,7 +4073,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_thrusters_starboard"
+	base_id = "talos_thrusters_starboard"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -4121,7 +4121,7 @@
 "zy" = (
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /obj/machinery/door/poddoor{
-	id = "talos_tank_burn"
+	base_id = "talos_tank_burn"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engine)
@@ -4150,7 +4150,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_windows";
+	base_id = "talos_windows";
 	name = "Window Shield"
 	},
 /turf/open/floor/plating,
@@ -4416,10 +4416,10 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_tank_fuel"
+	base_id = "talos_tank_fuel"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "talos_tank_fuel"
+	base_id = "talos_tank_fuel"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engine)
@@ -4701,10 +4701,10 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 1;
-	id = "talos_tank_air"
+	base_id = "talos_tank_air"
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_tank_air"
+	base_id = "talos_tank_air"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engine)
@@ -4735,10 +4735,10 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_tank_burn"
+	base_id = "talos_tank_burn"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "talos_tank_burn"
+	base_id = "talos_tank_burn"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engine)
@@ -4760,14 +4760,14 @@
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
-	id = "talos_tank_fuel";
+	base_id = "talos_tank_fuel";
 	pixel_x = 25;
 	pixel_y = 4;
 	req_access_txt = "24"
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "talos_tank_fuel";
+	base_id = "talos_tank_fuel";
 	name = "Access Door Control";
 	pixel_x = 25;
 	pixel_y = -6;
@@ -4847,7 +4847,7 @@
 "DU" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "talos_cargo"
+	base_id = "talos_cargo"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
@@ -5137,13 +5137,13 @@
 /obj/effect/turf_decal/box/corners,
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
-	id = "talos_cargo";
+	base_id = "talos_cargo";
 	pixel_x = 25;
 	pixel_y = 4
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "talos_cargo";
+	base_id = "talos_cargo";
 	name = "Cargo Door Control";
 	pixel_x = 25;
 	pixel_y = -6
@@ -5378,14 +5378,14 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "talos_cargo";
+	base_id = "talos_cargo";
 	name = "Cargo Door Control";
 	pixel_x = 25;
 	pixel_y = 4
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
-	id = "talos_cargo";
+	base_id = "talos_cargo";
 	pixel_x = 25;
 	pixel_y = -6
 	},
@@ -5889,7 +5889,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters{
-	id = "talos_bridge"
+	base_id = "talos_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -5965,7 +5965,7 @@
 "LD" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "talos_cargo"
+	base_id = "talos_cargo"
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
@@ -6162,12 +6162,12 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
-	id = "talos_cargo";
+	base_id = "talos_cargo";
 	locked = 1
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "talos_cargo"
+	base_id = "talos_cargo"
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
@@ -6294,7 +6294,7 @@
 /area/ship/maintenance/port)
 "NI" = (
 /obj/machinery/door/poddoor{
-	id = "talos_engine_vent";
+	base_id = "talos_engine_vent";
 	name = "Combustion Chamber Vent"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
@@ -6398,13 +6398,13 @@
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine/longrange,
 /obj/machinery/button/door{
-	id = "talos_bridge";
+	base_id = "talos_bridge";
 	name = "Bridge Shutters";
 	pixel_x = 6;
 	pixel_y = 25
 	},
 /obj/machinery/button/door{
-	id = "talos_windows";
+	base_id = "talos_windows";
 	name = "Window Lockdown";
 	pixel_x = -6;
 	pixel_y = 25
@@ -6430,7 +6430,7 @@
 /obj/machinery/power/apc/auto_name/east,
 /obj/machinery/telecomms/relay/preset/mining{
 	freq_listening = list(1347);
-	id = "IRMG Relay";
+	base_id = "IRMG Relay";
 	name = "IRMG Relay";
 	network = "irmg_commnet"
 	},
@@ -6591,11 +6591,11 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_tank_fuel"
+	base_id = "talos_tank_fuel"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 1;
-	id = "talos_tank_fuel"
+	base_id = "talos_tank_fuel"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/engineering/engine)
@@ -6967,7 +6967,7 @@
 /area/ship/hallway/central)
 "ST" = (
 /obj/machinery/door/poddoor{
-	id = "talos_engine_vent";
+	base_id = "talos_engine_vent";
 	name = "Combustion Chamber Vent"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
@@ -7089,7 +7089,7 @@
 /area/ship/crew)
 "TB" = (
 /obj/machinery/door/poddoor{
-	id = "talos_thrusters_port"
+	base_id = "talos_thrusters_port"
 	},
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -7387,7 +7387,7 @@
 "UG" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "talos_thrusters_port";
+	base_id = "talos_thrusters_port";
 	name = "Blast Door Control";
 	pixel_x = -25;
 	pixel_y = 3
@@ -7473,7 +7473,7 @@
 "VF" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "talos_tank_burn";
+	base_id = "talos_tank_burn";
 	name = "Access Door Control";
 	pixel_x = -25;
 	pixel_y = -6;
@@ -7482,7 +7482,7 @@
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 4;
-	id = "talos_tank_burn";
+	base_id = "talos_tank_burn";
 	pixel_x = -25;
 	pixel_y = 4;
 	req_access_txt = "56"
@@ -7544,7 +7544,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/cable,
 /obj/machinery/door/poddoor{
-	id = "talos_windows";
+	base_id = "talos_windows";
 	name = "Window Shield"
 	},
 /turf/open/floor/plating,
@@ -7581,7 +7581,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor{
-	id = "talos_thrusters_starboard"
+	base_id = "talos_thrusters_starboard"
 	},
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -7917,7 +7917,7 @@
 "ZE" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "talos_engine_shutter"
+	base_id = "talos_engine_shutter"
 	},
 /obj/machinery/atmospherics/pipe/manifold/purple/visible{
 	dir = 8

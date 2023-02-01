@@ -439,12 +439,12 @@
 	pixel_y = 25
 	},
 /obj/machinery/button/door{
-	id = "transp19";
+	base_id = "transp19";
 	name = "Container Blast Door Control";
 	pixel_x = 5
 	},
 /obj/machinery/button/door{
-	id = "transp19_windows";
+	base_id = "transp19_windows";
 	name = "Window Shutter Control";
 	pixel_x = -5
 	},
@@ -481,7 +481,7 @@
 /area/template_noop)
 "mt" = (
 /obj/machinery/door/poddoor/multi_tile/three_tile_hor{
-	id = "transp19"
+	base_id = "transp19"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -777,7 +777,7 @@
 "tY" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "transp19_windows"
+	base_id = "transp19_windows"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -890,7 +890,7 @@
 /area/ruin/space/has_grav/transport18mid)
 "wD" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "transp19_windows"
+	base_id = "transp19_windows"
 	},
 /obj/structure/grille/broken,
 /obj/item/shard,
@@ -964,7 +964,7 @@
 /area/ruin/space/has_grav/transport18mid)
 "yG" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "transp19_windows"
+	base_id = "transp19_windows"
 	},
 /obj/structure/grille,
 /obj/item/shard,
@@ -1227,7 +1227,7 @@
 /area/template_noop)
 "Gq" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "transp19_windows"
+	base_id = "transp19_windows"
 	},
 /obj/structure/grille,
 /turf/open/floor/plating/airless,
@@ -1272,7 +1272,7 @@
 /area/ruin/space/has_grav/transport18mid)
 "Iy" = (
 /obj/machinery/door/poddoor/multi_tile/three_tile_hor{
-	id = "transp19";
+	base_id = "transp19";
 	state_open = 1
 	},
 /obj/structure/reagent_dispensers/beerkeg,
@@ -1436,7 +1436,7 @@
 /area/ruin/space/has_grav/transport18mid)
 "Oi" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "transp19_windows"
+	base_id = "transp19_windows"
 	},
 /obj/structure/grille/broken,
 /turf/open/floor/plating/airless,

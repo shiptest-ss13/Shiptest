@@ -20,7 +20,7 @@
 "am" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/conveyor{
-	id = "NTMSLoad2";
+	base_id = "NTMSLoad2";
 	name = "on ramp"
 	},
 /obj/structure/window/reinforced{
@@ -40,7 +40,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "kiloengine";
+	base_id = "kiloengine";
 	name = "Engine Shutters"
 	},
 /turf/open/floor/plating,
@@ -140,7 +140,7 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/emcloset/anchored,
 /obj/machinery/button/door{
-	id = "ntms_exterior";
+	base_id = "ntms_exterior";
 	name = "NTMS-037 External Lock";
 	normaldoorcontrol = 1;
 	pixel_x = -25;
@@ -273,7 +273,7 @@
 "bP" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge";
+	base_id = "whiteship_bridge";
 	name = "Garage DoorCockpit Emergency Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -585,7 +585,7 @@
 "cP" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows";
+	base_id = "whiteship_windows";
 	name = "Exterior Window Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -627,7 +627,7 @@
 	dir = 4;
 	pixel_y = -7;
 	pixel_x = -23;
-	id = "kiloengine"
+	base_id = "kiloengine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -715,7 +715,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "kilocargo";
+	base_id = "kilocargo";
 	name = "Cargo Bay Control";
 	pixel_x = 25;
 	pixel_y = 7;
@@ -733,7 +733,7 @@
 	dir = 8;
 	pixel_y = -6;
 	pixel_x = 24;
-	id = "kiloshield"
+	base_id = "kiloshield"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -766,7 +766,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "kiloengine";
+	base_id = "kiloengine";
 	name = "Engine Shutters"
 	},
 /turf/open/floor/plating,
@@ -952,13 +952,13 @@
 	pixel_y = 32
 	},
 /obj/machinery/conveyor_switch/oneway{
-	id = "NTMSLoad";
+	base_id = "NTMSLoad";
 	name = "Off Ramp";
 	pixel_y = 9;
 	pixel_x = -8
 	},
 /obj/machinery/conveyor_switch/oneway{
-	id = "NTMSLoad2";
+	base_id = "NTMSLoad2";
 	name = "On Ramp";
 	pixel_x = 4
 	},
@@ -1091,7 +1091,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "NTMSLoad";
+	base_id = "NTMSLoad";
 	name = "off ramp"
 	},
 /obj/structure/window/reinforced{
@@ -1137,12 +1137,12 @@
 /area/ship/cargo)
 "qv" = (
 /obj/machinery/door/poddoor{
-	id = "kilocargo";
+	base_id = "kilocargo";
 	name = "NTMS-037 Bay Blast Door"
 	},
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "NTMSLoad";
+	base_id = "NTMSLoad";
 	name = "off ramp"
 	},
 /obj/structure/cable{
@@ -1152,7 +1152,7 @@
 	dir = 1
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "kiloshield";
+	base_id = "kiloshield";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1192,7 +1192,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/door/poddoor{
-	id = "kilocargo";
+	base_id = "kilocargo";
 	name = "NTMS-037 Bay Blast Door"
 	},
 /obj/docking_port/mobile{
@@ -1270,7 +1270,7 @@
 "vv" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge";
+	base_id = "whiteship_bridge";
 	name = "Garage DoorCockpit Emergency Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -1405,7 +1405,7 @@
 "yF" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows";
+	base_id = "whiteship_windows";
 	name = "Exterior Window Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -1535,7 +1535,7 @@
 "Bu" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge";
+	base_id = "whiteship_bridge";
 	name = "Garage DoorCockpit Emergency Blast Door"
 	},
 /turf/open/floor/plating,
@@ -1552,7 +1552,7 @@
 "BS" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge";
+	base_id = "whiteship_bridge";
 	name = "Garage DoorCockpit Emergency Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -1787,7 +1787,7 @@
 "La" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows";
+	base_id = "whiteship_windows";
 	name = "Exterior Window Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -1868,14 +1868,14 @@
 /area/ship/engineering/engine)
 "Nq" = (
 /obj/machinery/conveyor{
-	id = "NTMSLoad2";
+	base_id = "NTMSLoad2";
 	name = "on ramp"
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "kilocargo";
+	base_id = "kilocargo";
 	name = "NTMS-037 Bay Blast Door"
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -1883,7 +1883,7 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
-	id = "kiloshield"
+	base_id = "kiloshield"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1940,7 +1940,7 @@
 /area/ship/bridge)
 "NU" = (
 /obj/machinery/conveyor{
-	id = "NTMSLoad2";
+	base_id = "NTMSLoad2";
 	name = "on ramp"
 	},
 /obj/structure/window/reinforced{
@@ -2059,7 +2059,7 @@
 "Ti" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows";
+	base_id = "whiteship_windows";
 	name = "Exterior Window Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2082,7 +2082,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "kiloengine";
+	base_id = "kiloengine";
 	name = "Engine Shutters"
 	},
 /turf/open/floor/plating,
@@ -2110,14 +2110,14 @@
 "TD" = (
 /obj/structure/table,
 /obj/machinery/button/door{
-	id = "whiteship_bridge";
+	base_id = "whiteship_bridge";
 	name = "Bridge Blast Door Control";
 	pixel_x = -6;
 	pixel_y = -2;
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "whiteship_windows";
+	base_id = "whiteship_windows";
 	name = "Windows Blast Door Control";
 	pixel_x = -6;
 	pixel_y = 8;
@@ -2146,7 +2146,7 @@
 "Ua" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows";
+	base_id = "whiteship_windows";
 	name = "Exterior Window Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -2174,7 +2174,7 @@
 "Un" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows";
+	base_id = "whiteship_windows";
 	name = "Exterior Window Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2275,7 +2275,7 @@
 "VQ" = (
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "NTMSLoad";
+	base_id = "NTMSLoad";
 	name = "off ramp"
 	},
 /obj/structure/window/reinforced{

@@ -86,7 +86,7 @@
 /area/ship/external)
 "eP" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "Tcargotide2"
+	base_id = "Tcargotide2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -103,7 +103,7 @@
 	port_direction = 2
 	},
 /obj/machinery/door/poddoor{
-	id = "baydoors";
+	base_id = "baydoors";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
@@ -141,7 +141,7 @@
 "hK" = (
 /obj/machinery/light,
 /obj/machinery/button/door{
-	id = "Mcargotide";
+	base_id = "Mcargotide";
 	pixel_y = 23
 	},
 /obj/effect/turf_decal/siding/thinplating/light{
@@ -153,7 +153,7 @@
 "hP" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "baydoors";
+	base_id = "baydoors";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
@@ -198,7 +198,7 @@
 /area/ship/cargo)
 "kj" = (
 /obj/machinery/button/door{
-	id = "Rcargotide";
+	base_id = "Rcargotide";
 	pixel_x = -23;
 	pixel_y = 32
 	},
@@ -243,7 +243,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "Tcargotide2"
+	base_id = "Tcargotide2"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -371,7 +371,7 @@
 	dir = 9
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "Lcargotide"
+	base_id = "Lcargotide"
 	},
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 8
@@ -456,7 +456,7 @@
 /area/ship/cargo)
 "rO" = (
 /obj/machinery/button/door{
-	id = "Tcargotide2";
+	base_id = "Tcargotide2";
 	pixel_x = -23
 	},
 /obj/machinery/door/firedoor,
@@ -496,7 +496,7 @@
 /area/ship/engineering)
 "sF" = (
 /obj/machinery/button/door{
-	id = "Tcargotide1";
+	base_id = "Tcargotide1";
 	pixel_y = -25
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -667,12 +667,12 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/button/door{
-	id = "RMcargotide";
+	base_id = "RMcargotide";
 	pixel_x = 23;
 	pixel_y = 32
 	},
 /obj/machinery/button/door{
-	id = "LMcargotide";
+	base_id = "LMcargotide";
 	pixel_x = -23;
 	pixel_y = 32
 	},
@@ -805,7 +805,7 @@
 	dir = 6
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "Rcargotide"
+	base_id = "Rcargotide"
 	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 4;
@@ -879,7 +879,7 @@
 	dir = 9
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "RMcargotide"
+	base_id = "RMcargotide"
 	},
 /turf/open/floor/pod/light,
 /area/ship/maintenance/central)
@@ -946,7 +946,7 @@
 	dir = 6
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "LMcargotide"
+	base_id = "LMcargotide"
 	},
 /turf/open/floor/pod/light,
 /area/ship/maintenance/central)
@@ -1399,7 +1399,7 @@
 /area/ship/crew)
 "OW" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "Tcargotide1"
+	base_id = "Tcargotide1"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -1460,7 +1460,7 @@
 	dir = 5
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "LMcargotide"
+	base_id = "LMcargotide"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/light,
@@ -1559,7 +1559,7 @@
 	dir = 6
 	},
 /obj/machinery/button/door{
-	id = "Lcargotide";
+	base_id = "Lcargotide";
 	pixel_x = 23;
 	pixel_y = 32
 	},
@@ -1722,7 +1722,7 @@
 	dir = 5
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "Rcargotide"
+	base_id = "Rcargotide"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/binary/pump{
@@ -1779,7 +1779,7 @@
 	dir = 10
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "RMcargotide"
+	base_id = "RMcargotide"
 	},
 /turf/open/floor/pod/light,
 /area/ship/maintenance/central)
@@ -1791,7 +1791,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "Lcargotide"
+	base_id = "Lcargotide"
 	},
 /turf/open/floor/pod/light,
 /area/ship/maintenance/central)

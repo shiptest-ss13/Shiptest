@@ -226,7 +226,7 @@
 	circuit = /obj/item/circuitboard/machine/shieldwallgen
 	max_integrity = 300
 	var/active = FALSE
-	var/id = null
+	var/base_id
 	var/locked = TRUE
 	var/shield_range = 8
 	var/shocked = FALSE
@@ -262,8 +262,9 @@
 		return FALSE
 	. = ..()
 
-/obj/machinery/power/shieldwallgen/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	id = "[REF(port)][id]"
+/obj/machinery/power/shieldwallgen/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	port_id = REF(port)
 
 /obj/machinery/power/shieldwallgen/process()
 	if(active)

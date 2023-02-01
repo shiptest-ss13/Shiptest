@@ -502,7 +502,7 @@
 /area/awaymission/moonoutpost19/syndicate)
 "cZ" = (
 /obj/machinery/button/door{
-	id = "awaydorm4";
+	base_id = "awaydorm4";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = 25;
@@ -529,7 +529,7 @@
 /area/awaymission/moonoutpost19/syndicate)
 "dc" = (
 /obj/machinery/button/door{
-	id = "awaydorm5";
+	base_id = "awaydorm5";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = 25;
@@ -902,12 +902,12 @@
 "eb" = (
 /obj/machinery/door/poddoor/preopen{
 	desc = "A heavy duty blast door that opens mechanically. This one has been applied with an acid-proof coating.";
-	id = "Awaybiohazard";
+	base_id = "Awaybiohazard";
 	name = "Acid-Proof Biohazard Containment Door"
 	},
 /obj/machinery/door/poddoor{
 	desc = "A heavy duty blast door that opens mechanically. This one has been applied with an acid-proof coating.";
-	id = "Awaybiohazard";
+	base_id = "Awaybiohazard";
 	layer = 2.9;
 	name = "Acid-Proof Biohazard Containment Door"
 	},
@@ -978,7 +978,7 @@
 "ep" = (
 /obj/machinery/sparker{
 	desc = "A wall-mounted ignition device. This one has been applied with an acid-proof coating.";
-	id = "awayxenobio";
+	base_id = "awayxenobio";
 	name = "Acid-Proof mounted igniter";
 	pixel_y = 25
 	},
@@ -1243,7 +1243,7 @@
 /obj/structure/grille,
 /obj/machinery/door/poddoor/preopen{
 	desc = "A heavy duty blast door that opens mechanically. This one has been applied with an acid-proof coating.";
-	id = "Awaylab";
+	base_id = "Awaylab";
 	name = "Acid-Proof Containment Chamber Blast Door"
 	},
 /obj/item/stack/cable_coil/cut,
@@ -1475,7 +1475,7 @@
 "hc" = (
 /obj/machinery/sparker{
 	desc = "A wall-mounted ignition device. This one has been applied with an acid-proof coating.";
-	id = "awayxenobio";
+	base_id = "awayxenobio";
 	name = "Acid-Proof mounted igniter";
 	pixel_y = -25
 	},
@@ -1516,13 +1516,13 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "Awaybiohazard";
+	base_id = "Awaybiohazard";
 	name = "Biohazard Shutter Control";
 	pixel_y = 8;
 	req_access_txt = "201"
 	},
 /obj/machinery/button/door{
-	id = "AwayRD";
+	base_id = "AwayRD";
 	name = "Privacy Shutter Control";
 	pixel_y = -2;
 	req_access_txt = "201"
@@ -1537,7 +1537,7 @@
 /area/awaymission/moonoutpost19/research)
 "hu" = (
 /obj/machinery/door/poddoor{
-	id = "AwayRD";
+	base_id = "AwayRD";
 	layer = 2.9;
 	name = "Privacy Shutter"
 	},
@@ -1959,7 +1959,7 @@
 	pixel_x = -3
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "awaykitchen";
+	base_id = "awaykitchen";
 	name = "Serving Hatch"
 	},
 /turf/open/floor/carpet{
@@ -2116,7 +2116,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
-	id = "awaykitchen";
+	base_id = "awaykitchen";
 	name = "Serving Hatch"
 	},
 /turf/open/floor/carpet{
@@ -2187,7 +2187,7 @@
 	pixel_y = 5
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "awaykitchen";
+	base_id = "awaykitchen";
 	name = "Serving Hatch"
 	},
 /turf/open/floor/carpet{
@@ -2323,7 +2323,7 @@
 /area/awaymission/moonoutpost19/arrivals)
 "kT" = (
 /obj/machinery/button/door{
-	id = "awaydorm1";
+	base_id = "awaydorm1";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -25;
@@ -2744,7 +2744,7 @@
 "my" = (
 /obj/structure/table/wood,
 /obj/machinery/button/door{
-	id = "awaydorm2";
+	base_id = "awaydorm2";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -25;
@@ -3202,7 +3202,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet,
 /obj/machinery/button/door{
-	id = "awaydorm3";
+	base_id = "awaydorm3";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -25;
@@ -3966,14 +3966,14 @@
 "tV" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "Awaylab";
+	base_id = "Awaylab";
 	name = "Containment Chamber Blast Doors";
 	pixel_x = 4;
 	pixel_y = -2;
 	req_access_txt = "201"
 	},
 /obj/machinery/button/ignition{
-	id = "awayxenobio";
+	base_id = "awayxenobio";
 	pixel_x = 4;
 	pixel_y = 8
 	},
@@ -4238,7 +4238,7 @@
 /area/awaymission/moonoutpost19/syndicate)
 "xc" = (
 /obj/machinery/button/door{
-	id = "Awaybiohazard";
+	base_id = "Awaybiohazard";
 	name = "Biohazard Shutter Control";
 	pixel_x = -25;
 	req_access_txt = "201"
@@ -4275,7 +4275,7 @@
 /area/awaymission/moonoutpost19/syndicate)
 "xm" = (
 /obj/machinery/button/door{
-	id = "awaykitchen";
+	base_id = "awaykitchen";
 	name = "Kitchen Shutters Control";
 	pixel_x = -25
 	},
@@ -4682,7 +4682,7 @@
 /area/awaymission/moonoutpost19/syndicate)
 "CQ" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "awaysyndie";
+	base_id = "awaysyndie";
 	layer = 3.1;
 	name = "mining conveyor"
 	},
@@ -4976,7 +4976,7 @@
 "FS" = (
 /obj/machinery/door/poddoor/preopen{
 	desc = "A heavy duty blast door that opens mechanically. This one has been applied with an acid-proof coating.";
-	id = "Awaylab";
+	base_id = "Awaylab";
 	name = "Acid-Proof Containment Chamber Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
@@ -5604,7 +5604,7 @@
 /area/awaymission/moonoutpost19/arrivals)
 "LF" = (
 /obj/machinery/conveyor{
-	id = "awaysyndie"
+	base_id = "awaysyndie"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -5787,7 +5787,7 @@
 "MY" = (
 /obj/machinery/door/poddoor/preopen{
 	desc = "A heavy duty blast door that opens mechanically. This one has been applied with an acid-proof coating.";
-	id = "Awaylab";
+	base_id = "Awaylab";
 	name = "Acid-Proof Containment Chamber Blast Door"
 	},
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -6815,7 +6815,7 @@
 	},
 /obj/machinery/door/poddoor/preopen{
 	desc = "A heavy duty blast door that opens mechanically. This one has been applied with an acid-proof coating.";
-	id = "Awaylab";
+	base_id = "Awaylab";
 	name = "Acid-Proof Containment Chamber Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
@@ -7197,7 +7197,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor{
 	desc = "A heavy duty blast door that opens mechanically. This one has been applied with an acid-proof coating.";
-	id = "Awaybiohazard";
+	base_id = "Awaybiohazard";
 	layer = 2.9;
 	name = "Acid-Proof Biohazard Containment Door"
 	},

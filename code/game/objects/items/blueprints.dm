@@ -363,61 +363,11 @@
 
 	target_shuttle.shuttle_areas[newA] = TRUE
 
-	newA.connect_to_shuttle(target_shuttle, target_shuttle.get_docked())
+	newA.connect_to_shuttle(FALSE, target_shuttle, target_shuttle.get_docked())
 	newA.mobile_port = target_shuttle
 	for(var/atom/thing in newA)
-		thing.connect_to_shuttle(target_shuttle, target_shuttle.get_docked())
+		thing.connect_to_shuttle(FALSE, target_shuttle, target_shuttle.get_docked())
 
-	target_shuttle.recalculate_bounds()
-
+	target_shuttle.calculate_docking_port_information()
 	to_chat(creator, "<span class='notice'>You have created a new area, named [newA.name]. It is now weather proof, and constructing an APC will allow it to be powered.</span>")
 	return TRUE
-
-// VERY EXPENSIVE (I think)
-/obj/docking_port/mobile/proc/recalculate_bounds()
-	if(!istype(src, /obj/docking_port/mobile))
-		return FALSE
-	//Heights is the distance away from the port
-	//width is the distance perpendicular to the port
-	var/minX = INFINITY
-	var/maxX = 0
-	var/minY = INFINITY
-	var/maxY = 0
-	for(var/area/A in shuttle_areas)
-		for(var/turf/T in A)
-			minX = min(T.x, minX)
-			maxX = max(T.x, maxX)
-			minY = min(T.y, minY)
-			maxY = max(T.y, maxY)
-	//Make sure shuttle was actually found.
-	if(maxX == INFINITY || maxY == INFINITY)
-		return FALSE
-	minX--
-	minY--
-	var/new_width = maxX - minX
-	var/new_height = maxY - minY
-	var/offset_x = x - minX
-	var/offset_y = y - minY
-	switch(dir) //Source: code/datums/shuttles.dm line 77 (14/03/2020) :)
-		if(NORTH)
-			width = new_width
-			height = new_height
-			dwidth = offset_x - 1
-			dheight = offset_y - 1
-		if(EAST)
-			width = new_height
-			height = new_width
-			dwidth = new_height - offset_y
-			dheight = offset_x - 1
-		if(SOUTH)
-			width = new_width
-			height = new_height
-			dwidth = new_width - offset_x
-			dheight = new_height - offset_y
-		if(WEST)
-			width = new_height
-			height = new_width
-			dwidth = offset_y - 1
-			dheight = new_width - offset_x
-	qdel(assigned_transit, TRUE)
-	assigned_transit = null

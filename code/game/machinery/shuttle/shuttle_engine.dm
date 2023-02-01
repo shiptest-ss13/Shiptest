@@ -64,7 +64,7 @@
 	. = ..()
 	update_icon_state()
 
-/obj/machinery/power/shuttle/engine/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+/obj/machinery/power/shuttle/engine/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
 	port.engine_list |= src
 	parent_shuttle = port

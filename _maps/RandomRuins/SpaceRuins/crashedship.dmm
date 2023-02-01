@@ -12,7 +12,7 @@
 /area/awaymission/BMPship/Aft)
 "ad" = (
 /obj/machinery/button/door{
-	id = "packerMed";
+	base_id = "packerMed";
 	pixel_x = 0;
 	pixel_y = -25
 	},
@@ -27,7 +27,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "packerMed";
+	base_id = "packerMed";
 	pixel_x = 0;
 	pixel_y = 25
 	},
@@ -198,7 +198,7 @@
 	},
 /obj/machinery/light/small,
 /obj/machinery/button/door{
-	id = "packerMine";
+	base_id = "packerMine";
 	pixel_x = 0;
 	pixel_y = -25
 	},
@@ -212,7 +212,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "packerMine";
+	base_id = "packerMine";
 	pixel_x = 0;
 	pixel_y = 25
 	},
@@ -456,7 +456,7 @@
 /area/awaymission/BMPship/Aft)
 "bK" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "packerMed"
+	base_id = "packerMed"
 	},
 /turf/open/floor/plating/airless,
 /area/awaymission/BMPship/Midship)
@@ -1321,14 +1321,14 @@
 "dP" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "meatConvey1"
+	base_id = "meatConvey1"
 	},
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Midship)
 "dQ" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "meatConvey1"
+	base_id = "meatConvey1"
 	},
 /obj/structure/plasticflaps,
 /turf/open/floor/plating,
@@ -1483,7 +1483,7 @@
 /area/awaymission/BMPship/Midship)
 "el" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "meatConvey1"
+	base_id = "meatConvey1"
 	},
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/effect/turf_decal/corner/transparent/bar{
@@ -1845,7 +1845,7 @@
 "fi" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "meatConvey2"
+	base_id = "meatConvey2"
 	},
 /obj/item/kitchen/knife,
 /turf/open/floor/plating,
@@ -1853,7 +1853,7 @@
 "fj" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "meatConvey2"
+	base_id = "meatConvey2"
 	},
 /obj/structure/plasticflaps,
 /turf/open/floor/plating,
@@ -1861,7 +1861,7 @@
 "fk" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "meatConvey2"
+	base_id = "meatConvey2"
 	},
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Midship)
@@ -1973,7 +1973,7 @@
 /area/awaymission/BMPship/Midship)
 "fB" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "meatConvey2"
+	base_id = "meatConvey2"
 	},
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/effect/turf_decal/corner/transparent/bar{
@@ -2534,7 +2534,7 @@
 /area/awaymission/BMPship/Midship)
 "Hy" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "packerMine"
+	base_id = "packerMine"
 	},
 /turf/open/floor/plating/airless,
 /area/awaymission/BMPship/Midship)

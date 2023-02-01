@@ -5,7 +5,7 @@
 "ab" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "syndieshutters";
+	base_id = "syndieshutters";
 	name = "Blast Shutters"
 	},
 /obj/structure/grille,
@@ -138,7 +138,7 @@
 "aq" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "syndieshutters";
+	base_id = "syndieshutters";
 	name = "Bridge View Toggle";
 	pixel_y = 7;
 	req_access_txt = "150"
@@ -147,7 +147,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "infiltrator_bridge";
+	base_id = "infiltrator_bridge";
 	name = "Bridge Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -2;
@@ -406,11 +406,11 @@
 /area/shuttle/syndicate/medical)
 "bp" = (
 /obj/machinery/door/poddoor{
-	id = "infiltrator_portblast";
+	base_id = "infiltrator_portblast";
 	name = "Infiltrator Port Hatch"
 	},
 /obj/machinery/button/door{
-	id = "infiltrator_portblast";
+	base_id = "infiltrator_portblast";
 	name = "Infiltrator Port Hatch Control";
 	pixel_y = 26;
 	req_access_txt = "150"
@@ -933,7 +933,7 @@
 /area/shuttle/syndicate/medical)
 "cW" = (
 /obj/machinery/door/poddoor{
-	id = "infiltrator_starboardblast";
+	base_id = "infiltrator_starboardblast";
 	name = "Infiltrator Starboard Hatch"
 	},
 /obj/docking_port/mobile{
@@ -949,7 +949,7 @@
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/box,
 /obj/machinery/button/door{
-	id = "infiltrator_starboardblast";
+	base_id = "infiltrator_starboardblast";
 	name = "Infiltrator Starboard Hatch Control";
 	pixel_y = 26;
 	req_access_txt = "150"
@@ -1475,7 +1475,7 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/door/poddoor/shutters{
-	id = "infiltrator_armorybay";
+	base_id = "infiltrator_armorybay";
 	name = "Infiltrator Armoy Bay"
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -2121,11 +2121,11 @@
 "NI" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/poddoor/shutters{
-	id = "infiltrator_medbay";
+	base_id = "infiltrator_medbay";
 	name = "Infiltrator Medical Bay"
 	},
 /obj/machinery/button/door{
-	id = "infiltrator_medbay";
+	base_id = "infiltrator_medbay";
 	name = "Infiltrator Medical Bay Toggle";
 	pixel_x = 25;
 	req_access_txt = "150"
@@ -2291,7 +2291,7 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/door/poddoor/shutters{
-	id = "infiltrator_medbay";
+	base_id = "infiltrator_medbay";
 	name = "Infiltrator Medical Bay"
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -2400,11 +2400,11 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
-	id = "infiltrator_armorybay";
+	base_id = "infiltrator_armorybay";
 	name = "Infiltrator Armoy Bay"
 	},
 /obj/machinery/button/door{
-	id = "infiltrator_armorybay";
+	base_id = "infiltrator_armorybay";
 	name = "Infiltrator Armory Bay Toggle";
 	pixel_x = -25;
 	req_access_txt = "150"

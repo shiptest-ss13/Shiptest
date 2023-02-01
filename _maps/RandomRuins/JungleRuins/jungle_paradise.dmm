@@ -3812,7 +3812,7 @@
 /area/ruin/jungle/paradise/shuttle)
 "xq" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "mining_internal";
+	base_id = "mining_internal";
 	name = "mining conveyor"
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -5262,7 +5262,7 @@
 "Hb" = (
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "mining_internal"
+	base_id = "mining_internal"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -5356,7 +5356,7 @@
 /area/ruin/jungle/paradise/darkmisc)
 "HQ" = (
 /obj/machinery/conveyor{
-	id = "mining_internal"
+	base_id = "mining_internal"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/paradise/construction)
@@ -6881,7 +6881,7 @@
 "SB" = (
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "mining_internal"
+	base_id = "mining_internal"
 	},
 /obj/structure/plasticflaps,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7926,7 +7926,7 @@
 "Zm" = (
 /obj/machinery/conveyor{
 	dir = 10;
-	id = "mining_internal"
+	base_id = "mining_internal"
 	},
 /obj/machinery/light/small{
 	dir = 4

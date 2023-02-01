@@ -215,7 +215,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
-	id = "osprey_thruster_starboard";
+	base_id = "osprey_thruster_starboard";
 	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
@@ -241,7 +241,7 @@
 "bL" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "ospreydoors";
+	base_id = "ospreydoors";
 	name = "Blast Door Control";
 	pixel_x = -25;
 	pixel_y = 10
@@ -383,7 +383,7 @@
 "cq" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreywindows";
+	base_id = "ospreywindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -462,7 +462,7 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializbase_id = 30);
 	name = "thializid bottle";
 	pixel_x = 5
 	},
@@ -541,7 +541,7 @@
 "dj" = (
 /obj/machinery/button/door{
 	dir = 8;
-	id = "ospreydoors";
+	base_id = "ospreydoors";
 	name = "Blast Door Control";
 	pixel_x = 25;
 	pixel_y = 10
@@ -671,7 +671,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "osprey_conveyor"
+	base_id = "osprey_conveyor"
 	},
 /obj/structure/sign/warning/deathsposal{
 	pixel_y = -32
@@ -689,7 +689,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
-	id = "osprey_thruster_port";
+	base_id = "osprey_thruster_port";
 	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
@@ -924,7 +924,7 @@
 "gb" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreywindows";
+	base_id = "ospreywindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -1067,7 +1067,7 @@
 "hq" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ospreysci"
+	base_id = "ospreysci"
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -1128,7 +1128,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "ospreydoors";
+	base_id = "ospreydoors";
 	name = "Blast Door Control";
 	pixel_x = -25;
 	pixel_y = 10
@@ -1249,7 +1249,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "ospreydoors";
+	base_id = "ospreydoors";
 	name = "Blast Door Control";
 	pixel_x = 25;
 	pixel_y = 10
@@ -1318,7 +1318,7 @@
 /obj/effect/turf_decal/techfloor/orange,
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor{
-	id = "ospreydoors";
+	base_id = "ospreydoors";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1460,7 +1460,7 @@
 "ki" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreywindows";
+	base_id = "ospreywindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -1588,7 +1588,7 @@
 "lc" = (
 /obj/machinery/mass_driver{
 	dir = 8;
-	id = "osprey_disposals"
+	base_id = "osprey_disposals"
 	},
 /obj/machinery/door/window/eastleft,
 /obj/item/trash/can/food/beans,
@@ -1766,7 +1766,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ospreybridge"
+	base_id = "ospreybridge"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1999,7 +1999,7 @@
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
-	id = "osprey_thruster_port";
+	base_id = "osprey_thruster_port";
 	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
@@ -2008,7 +2008,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreywindows";
+	base_id = "ospreywindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -2554,7 +2554,7 @@
 /area/ship/crew/canteen)
 "rm" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "osprey_conveyor"
+	base_id = "osprey_conveyor"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
@@ -2696,7 +2696,7 @@
 "sn" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreywindows";
+	base_id = "ospreywindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -2769,7 +2769,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ospreybridge"
+	base_id = "ospreybridge"
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
@@ -2813,14 +2813,14 @@
 "td" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ospreybridge"
+	base_id = "ospreybridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "te" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreywindows";
+	base_id = "ospreywindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -3588,7 +3588,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "ospreysci";
+	base_id = "ospreysci";
 	name = "Shutter Control";
 	pixel_x = 25;
 	pixel_y = 5
@@ -3779,7 +3779,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "ospreycargo";
+	base_id = "ospreycargo";
 	name = "Shutter Control";
 	pixel_x = -25;
 	pixel_y = 5
@@ -3924,7 +3924,7 @@
 "BR" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreywindows";
+	base_id = "ospreywindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -4026,7 +4026,7 @@
 	name = "Cargo Desk"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ospreycargo"
+	base_id = "ospreycargo"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -4046,7 +4046,7 @@
 "CA" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreywindows";
+	base_id = "ospreywindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -4213,7 +4213,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/button/door{
 	dir = 8;
-	id = "osprey_thruster_port";
+	base_id = "osprey_thruster_port";
 	name = "Blast Door Control";
 	pixel_x = 25;
 	pixel_y = 5
@@ -4266,7 +4266,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ospreybridge"
+	base_id = "ospreybridge"
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
@@ -4275,7 +4275,7 @@
 	dir = 9
 	},
 /obj/machinery/button/massdriver{
-	id = "osprey_disposals";
+	base_id = "osprey_disposals";
 	name = "disposals button";
 	pixel_x = 7;
 	pixel_y = -25
@@ -4512,7 +4512,7 @@
 /area/ship/hallway/aft)
 "FE" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ospreybridge"
+	base_id = "ospreybridge"
 	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -5012,7 +5012,7 @@
 "Jt" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreywindows";
+	base_id = "ospreywindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -5048,7 +5048,7 @@
 	name = "Science Desk"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ospreysci"
+	base_id = "ospreysci"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
@@ -5276,7 +5276,7 @@
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
-	id = "osprey_thruster_starboard";
+	base_id = "osprey_thruster_starboard";
 	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
@@ -5301,7 +5301,7 @@
 "LP" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreywindows";
+	base_id = "ospreywindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -5535,7 +5535,7 @@
 "NP" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ospreycargo"
+	base_id = "ospreycargo"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -5575,7 +5575,7 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/machinery/button/door{
 	dir = 4;
-	id = "osprey_thruster_starboard";
+	base_id = "osprey_thruster_starboard";
 	name = "Blast Door Control";
 	pixel_x = -25;
 	pixel_y = 5
@@ -5634,13 +5634,13 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "ospreybridge";
+	base_id = "ospreybridge";
 	name = "Bridge Lockdown";
 	pixel_x = 6;
 	pixel_y = -3
 	},
 /obj/machinery/button/door{
-	id = "ospreywindows";
+	base_id = "ospreywindows";
 	name = "Window Shutters";
 	pixel_x = -6;
 	pixel_y = -3
@@ -5761,7 +5761,7 @@
 /area/ship/maintenance/starboard)
 "Po" = (
 /obj/machinery/door/poddoor{
-	id = "osprey_disposals";
+	base_id = "osprey_disposals";
 	name = "Disposals Blast Door"
 	},
 /obj/structure/fans/tiny,
@@ -6234,7 +6234,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
-	id = "osprey_thruster_port";
+	base_id = "osprey_thruster_port";
 	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
@@ -6390,7 +6390,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
-	id = "osprey_thruster_starboard";
+	base_id = "osprey_thruster_starboard";
 	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
@@ -6452,7 +6452,7 @@
 "TV" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "ospreywindows";
+	base_id = "ospreywindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,

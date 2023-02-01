@@ -23,7 +23,7 @@
 "bd" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "caravanpirate_bridge";
+	base_id = "caravanpirate_bridge";
 	name = "Bridge Blast Door Control";
 	pixel_x = -16
 	},
@@ -335,7 +335,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "caravanpirate_bridge"
+	base_id = "caravanpirate_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/security)
@@ -680,7 +680,7 @@
 /area/ship/engineering)
 "wL" = (
 /obj/machinery/button/door{
-	id = "caravanpirate_bolt_port";
+	base_id = "caravanpirate_bolt_port";
 	name = "External Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -4;
@@ -797,7 +797,7 @@
 /area/ship/engineering)
 "zB" = (
 /obj/machinery/button/door{
-	id = "caravanpirate_bolt_starboard";
+	base_id = "caravanpirate_bolt_starboard";
 	name = "External Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -4;
@@ -850,7 +850,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "caravanpirate_bridge"
+	base_id = "caravanpirate_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -1307,7 +1307,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "caravanpirate_bridge"
+	base_id = "caravanpirate_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)

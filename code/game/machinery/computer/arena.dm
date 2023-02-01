@@ -258,7 +258,9 @@
 
 /obj/machinery/computer/arena/proc/set_doors(closed = FALSE)
 	for(var/obj/machinery/door/poddoor/D in GLOB.machines) //I really dislike pathing of these
-		if(D.id != arena_id)
+		if(D.port_id != "GLOBAL")
+			continue
+		if(D.base_id != arena_id)
 			continue
 		if(closed)
 			INVOKE_ASYNC(D, /obj/machinery/door/poddoor.proc/close)

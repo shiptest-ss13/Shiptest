@@ -6,14 +6,14 @@
 /obj/effect/turf_decal/techfloor/orange,
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor{
-	id = "cargoblastdoors";
+	base_id = "cargoblastdoors";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "caravanbay";
+	base_id = "caravanbay";
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -123,7 +123,7 @@
 "bJ" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "modwindows"
+	base_id = "modwindows"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
@@ -174,7 +174,7 @@
 /obj/machinery/button/shieldwallgen{
 	pixel_y = 23;
 	pixel_x = 6;
-	id = "caravanbay"
+	base_id = "caravanbay"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -299,7 +299,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/button/door{
-	id = "ModShip_thruster_port";
+	base_id = "ModShip_thruster_port";
 	name = "thruster doors";
 	pixel_y = 25
 	},
@@ -418,7 +418,7 @@
 "hh" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "modbridge"
+	base_id = "modbridge"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
@@ -435,7 +435,7 @@
 "hP" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "modwindows"
+	base_id = "modwindows"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
@@ -510,7 +510,7 @@
 "iH" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "modbridge"
+	base_id = "modbridge"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -536,13 +536,13 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband,
 /obj/machinery/button/door{
-	id = "modwindows";
+	base_id = "modwindows";
 	name = "Full Lockdown";
 	pixel_x = 2;
 	pixel_y = 25
 	},
 /obj/machinery/button/door{
-	id = "modbridge";
+	base_id = "modbridge";
 	name = "Bridge Lockdown";
 	pixel_x = 2;
 	pixel_y = 34
@@ -636,7 +636,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "ModShip_thruster_starboard";
+	base_id = "ModShip_thruster_starboard";
 	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
@@ -810,7 +810,7 @@
 "nR" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "modwindows"
+	base_id = "modwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1173,7 +1173,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "ModShip_thruster_port";
+	base_id = "ModShip_thruster_port";
 	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
@@ -1320,14 +1320,14 @@
 /obj/effect/turf_decal/techfloor/orange,
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor{
-	id = "cargoblastdoors";
+	base_id = "cargoblastdoors";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "caravanbay";
+	base_id = "caravanbay";
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1763,7 +1763,7 @@
 /area/ship/bridge)
 "Fl" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "modwindows"
+	base_id = "modwindows"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
@@ -1896,7 +1896,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "ModShip_thruster_port";
+	base_id = "ModShip_thruster_port";
 	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
@@ -1981,7 +1981,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "ModShip_thruster_starboard";
+	base_id = "ModShip_thruster_starboard";
 	name = "thruster doors";
 	pixel_y = -25
 	},
@@ -2025,7 +2025,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "ModShip_thruster_starboard";
+	base_id = "ModShip_thruster_starboard";
 	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
@@ -2141,7 +2141,7 @@
 "Mi" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "modwindows"
+	base_id = "modwindows"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
@@ -2856,7 +2856,7 @@
 "XX" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "modwindows"
+	base_id = "modwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
@@ -2950,7 +2950,7 @@
 /obj/effect/turf_decal/techfloor/orange,
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor{
-	id = "cargoblastdoors";
+	base_id = "cargoblastdoors";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2986,7 +2986,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "cargoblastdoors";
+	base_id = "cargoblastdoors";
 	name = "Blast Door Control";
 	pixel_x = 25;
 	pixel_y = 25

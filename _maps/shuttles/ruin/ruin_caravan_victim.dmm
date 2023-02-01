@@ -78,7 +78,7 @@
 /obj/machinery/light/small,
 /obj/effect/turf_decal/box/white/corners,
 /obj/machinery/button/door{
-	id = "caravantrade1_cargo";
+	base_id = "caravantrade1_cargo";
 	name = "Cargo Blast Door Control";
 	pixel_y = -25
 	},
@@ -161,7 +161,7 @@
 /area/ship/engineering/engine)
 "eP" = (
 /obj/machinery/door/poddoor{
-	id = "caravantrade1_cargo";
+	base_id = "caravantrade1_cargo";
 	name = "Cargo Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -252,7 +252,7 @@
 "ig" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "caravantrade1_bridge"
+	base_id = "caravantrade1_bridge"
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
@@ -552,7 +552,7 @@
 "tj" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "caravantrade1_bridge"
+	base_id = "caravantrade1_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -578,7 +578,7 @@
 	pixel_x = 25
 	},
 /obj/machinery/button/door{
-	id = "caravantrade1_cabin1";
+	base_id = "caravantrade1_cabin1";
 	name = "Cabin Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -25;
@@ -628,7 +628,7 @@
 /area/ship/engineering/engine)
 "vO" = (
 /obj/machinery/door/poddoor{
-	id = "caravantrade1_cargo";
+	base_id = "caravantrade1_cargo";
 	name = "Cargo Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -676,7 +676,7 @@
 /area/ship/cargo)
 "yC" = (
 /obj/machinery/button/door{
-	id = "caravantrade1_bolt";
+	base_id = "caravantrade1_bolt";
 	name = "External Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -25;
@@ -894,7 +894,7 @@
 "EW" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "caravantrade1_bridge";
+	base_id = "caravantrade1_bridge";
 	name = "Ship Blast Door Control"
 	},
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -991,7 +991,7 @@
 "Kc" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "caravantrade1_bridge"
+	base_id = "caravantrade1_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1025,7 +1025,7 @@
 "Lr" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "caravantrade1_bridge"
+	base_id = "caravantrade1_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -1043,7 +1043,7 @@
 "LM" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "caravantrade1_bridge"
+	base_id = "caravantrade1_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1093,7 +1093,7 @@
 /area/ship/crew)
 "NY" = (
 /obj/machinery/door/poddoor{
-	id = "caravantrade1_cargo";
+	base_id = "caravantrade1_cargo";
 	name = "Cargo Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1185,7 +1185,7 @@
 	pixel_x = 25
 	},
 /obj/machinery/button/door{
-	id = "caravantrade1_cabin2";
+	base_id = "caravantrade1_cabin2";
 	name = "Cabin Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -25;
@@ -1239,7 +1239,7 @@
 "QU" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "caravantrade1_bridge"
+	base_id = "caravantrade1_bridge"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -1411,7 +1411,7 @@
 "Wr" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "caravantrade1_bridge"
+	base_id = "caravantrade1_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -1470,7 +1470,7 @@
 /area/ship/engineering/engine)
 "Xh" = (
 /obj/machinery/door/poddoor{
-	id = "caravantrade1_cargo";
+	base_id = "caravantrade1_cargo";
 	name = "Cargo Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -1510,7 +1510,7 @@
 "YR" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "caravantrade1_bridge"
+	base_id = "caravantrade1_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4

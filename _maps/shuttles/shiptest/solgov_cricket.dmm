@@ -109,7 +109,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/autolathe,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgcargodesk"
+	base_id = "sgcargodesk"
 	},
 /obj/effect/turf_decal/corner/opaque/brown/full,
 /turf/open/floor/plasteel,
@@ -135,7 +135,7 @@
 /obj/structure/curtain/cloth/fancy,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	base_id = "sgwindowshut";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -202,7 +202,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgkitchen"
+	base_id = "sgkitchen"
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
@@ -616,7 +616,7 @@
 /obj/machinery/door/firedoor/window,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	base_id = "sgwindowshut";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -635,7 +635,7 @@
 /area/ship/crew/canteen)
 "hb" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgcargostore"
+	base_id = "sgcargostore"
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -713,7 +713,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "sgbridgelock"
+	base_id = "sgbridgelock"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/fore)
@@ -1041,7 +1041,7 @@
 /obj/machinery/door/firedoor/window,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	base_id = "sgwindowshut";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -1077,7 +1077,7 @@
 "mH" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/flasher{
-	id = "Holding Cell";
+	base_id = "Holding Cell";
 	pixel_y = 22
 	},
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
@@ -1139,7 +1139,7 @@
 /area/ship/engineering/atmospherics)
 "nc" = (
 /obj/machinery/button/door{
-	id = "sgcargodesk";
+	base_id = "sgcargodesk";
 	name = "Cargo Desk Shutter";
 	pixel_x = 10;
 	pixel_y = 22
@@ -1204,7 +1204,7 @@
 /obj/machinery/door/firedoor/window,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	base_id = "sgwindowshut";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -1274,7 +1274,7 @@
 /obj/item/storage/fancy/donut_box,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgkitchen"
+	base_id = "sgkitchen"
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
@@ -1287,7 +1287,7 @@
 /area/ship/crew/canteen)
 "oI" = (
 /obj/machinery/button/door{
-	id = "sgcargostore";
+	base_id = "sgcargostore";
 	name = "Storeroom Shutter";
 	pixel_y = 22
 	},
@@ -1349,7 +1349,7 @@
 /area/ship/engineering/engine)
 "pt" = (
 /obj/machinery/door/window/brigdoor/security/cell/westleft{
-	id = "Holding Cell"
+	base_id = "Holding Cell"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1642,7 +1642,7 @@
 /area/ship/engineering)
 "tR" = (
 /obj/machinery/button/door{
-	id = "sgcargodoor";
+	base_id = "sgcargodoor";
 	name = "Blast Door Control";
 	pixel_x = 25
 	},
@@ -1935,7 +1935,7 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/machinery/button/door{
-	id = "sgkitchen";
+	base_id = "sgkitchen";
 	name = "Kitchen Shutters";
 	pixel_y = -22
 	},
@@ -2065,7 +2065,7 @@
 /area/ship/bridge)
 "zh" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "sgengistore"
+	base_id = "sgengistore"
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable{
@@ -2294,7 +2294,7 @@
 "AU" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "sgcargodoor";
+	base_id = "sgcargodoor";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/door/firedoor/heavy,
@@ -2404,7 +2404,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/northleft,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgcargodesk"
+	base_id = "sgcargodesk"
 	},
 /obj/machinery/door/firedoor,
 /obj/item/paper_bin,
@@ -2417,7 +2417,7 @@
 /area/ship/engineering/atmospherics)
 "BT" = (
 /obj/machinery/button/door{
-	id = "sgbridgelock";
+	base_id = "sgbridgelock";
 	name = "Bridge Lockdown";
 	pixel_x = 6;
 	pixel_y = 22
@@ -2427,7 +2427,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "sgwindowshut";
+	base_id = "sgwindowshut";
 	name = "External Window Shutters";
 	pixel_x = 6;
 	pixel_y = 30
@@ -2490,7 +2490,7 @@
 /area/ship/medical)
 "Cx" = (
 /obj/structure/closet/secure_closet/brig{
-	id = "sgbrig"
+	base_id = "sgbrig"
 	},
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/dark,
@@ -3255,7 +3255,7 @@
 /obj/item/clipboard,
 /obj/item/multitool,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgcargodesk"
+	base_id = "sgcargodesk"
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/corner/opaque/brown/full,
@@ -3443,7 +3443,7 @@
 /obj/machinery/door/firedoor/window,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	base_id = "sgwindowshut";
 	name = "External Shutters"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3708,7 +3708,7 @@
 /obj/machinery/door/firedoor/window,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	base_id = "sgwindowshut";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -4195,7 +4195,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "sgbridgelock"
+	base_id = "sgbridgelock"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -4432,7 +4432,7 @@
 /area/ship/medical)
 "ZF" = (
 /obj/machinery/button/door{
-	id = "sgengistore";
+	base_id = "sgengistore";
 	name = "Storeroom Shutter";
 	pixel_y = 22
 	},
@@ -4495,7 +4495,7 @@
 	network = list("cricket")
 	},
 /obj/machinery/door_timer{
-	id = "Holding Cell";
+	base_id = "Holding Cell";
 	pixel_y = 32
 	},
 /turf/open/floor/carpet/nanoweave/red,

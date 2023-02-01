@@ -250,7 +250,7 @@
 "De" = (
 /obj/effect/turf_decal/dept/mining,
 /obj/machinery/button/door{
-	id = "onceler";
+	base_id = "onceler";
 	name = "Deliveries Shuttle Shutters";
 	pixel_y = -25
 	},
@@ -408,7 +408,7 @@
 /area/ruin/jungle/onceler/main)
 "Ta" = (
 /obj/machinery/door/poddoor/multi_tile/three_tile_hor{
-	id = "onceler"
+	base_id = "onceler"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/onceler/main)

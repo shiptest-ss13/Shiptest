@@ -212,7 +212,7 @@
 "fh" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "radroom1int"
+	base_id = "radroom1int"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/dark,
@@ -237,13 +237,13 @@
 	dir = 8
 	},
 /obj/machinery/button{
-	id = "radroom2ext";
+	base_id = "radroom2ext";
 	name = "External Blast Doors";
 	pixel_x = 6;
 	pixel_y = -25
 	},
 /obj/machinery/button{
-	id = "radroom2int";
+	base_id = "radroom2int";
 	name = "Internal Blast Doors";
 	pixel_x = -6;
 	pixel_y = -25
@@ -324,7 +324,7 @@
 "id" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "radroom4int"
+	base_id = "radroom4int"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
@@ -649,13 +649,13 @@
 "px" = (
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/machinery/button{
-	id = "radroom1int";
+	base_id = "radroom1int";
 	name = "Internal Blast Doors";
 	pixel_x = -6;
 	pixel_y = -25
 	},
 /obj/machinery/button{
-	id = "radroom1ext";
+	base_id = "radroom1ext";
 	name = "External Blast Doors";
 	pixel_x = 6;
 	pixel_y = -25
@@ -787,7 +787,7 @@
 "tH" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "radroom3int"
+	base_id = "radroom3int"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/dark,
@@ -912,7 +912,7 @@
 "xw" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "radroom3ext"
+	base_id = "radroom3ext"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plasteel/tech,
@@ -942,7 +942,7 @@
 "xZ" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "radroom4ext"
+	base_id = "radroom4ext"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plasteel/tech,
@@ -1016,13 +1016,13 @@
 	dir = 1
 	},
 /obj/machinery/button{
-	id = "radroom4ext";
+	base_id = "radroom4ext";
 	name = "External Blast Doors";
 	pixel_x = 6;
 	pixel_y = 25
 	},
 /obj/machinery/button{
-	id = "radroom4int";
+	base_id = "radroom4int";
 	name = "Internal Blast Doors";
 	pixel_x = -6;
 	pixel_y = 25
@@ -1172,7 +1172,7 @@
 "Gc" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "radroom2int"
+	base_id = "radroom2int"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
@@ -1332,13 +1332,13 @@
 	dir = 4
 	},
 /obj/machinery/button{
-	id = "radroom3ext";
+	base_id = "radroom3ext";
 	name = "External Blast Doors";
 	pixel_x = 6;
 	pixel_y = 25
 	},
 /obj/machinery/button{
-	id = "radroom3int";
+	base_id = "radroom3int";
 	name = "Internal Blast Doors";
 	pixel_x = -6;
 	pixel_y = 25
@@ -1410,7 +1410,7 @@
 "KK" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "radroom1int"
+	base_id = "radroom1int"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
@@ -1421,7 +1421,7 @@
 "KW" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "radroom2int"
+	base_id = "radroom2int"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/dark,
@@ -1481,7 +1481,7 @@
 "Ns" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "radroom3int"
+	base_id = "radroom3int"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
@@ -1618,7 +1618,7 @@
 "Qr" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "radroom2ext"
+	base_id = "radroom2ext"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plasteel/tech,
@@ -1987,7 +1987,7 @@
 "ZN" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "radroom4int"
+	base_id = "radroom4int"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/dark,

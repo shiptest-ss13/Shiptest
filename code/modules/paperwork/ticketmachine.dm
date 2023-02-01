@@ -66,13 +66,13 @@
 	desc = "Use this button after you've served someone to tell the next person to come forward."
 	device_type = /obj/item/assembly/control/ticket_machine
 	req_access = list()
-	id = "ticket_machine_default"
+	base_id = "ticket_machine_default"
 
 /obj/machinery/button/ticket_machine/Initialize()
 	. = ..()
 	if(device)
 		var/obj/item/assembly/control/ticket_machine/ours = device
-		ours.id = id
+		ours.base_id = base_id
 
 /obj/machinery/button/ticket_machine/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -82,8 +82,8 @@
 			return
 		var/obj/item/assembly/control/ticket_machine/controller = device
 		controller.linked = M.buffer
-		id = null
-		controller.id = null
+		base_id = null
+		controller.base_id = null
 		to_chat(user, "<span class='warning'>You've linked [src] to [controller.linked].</span>")
 
 /obj/item/assembly/control/ticket_machine
@@ -100,7 +100,7 @@
 
 /obj/item/assembly/control/ticket_machine/proc/find_machine() //Locate the one to which we're linked
 	for(var/obj/machinery/ticket_machine/ticketsplease in GLOB.machines)
-		if(ticketsplease.id == id)
+		if(ticketsplease.id == base_id)
 			linked = ticketsplease
 	if(linked)
 		return TRUE

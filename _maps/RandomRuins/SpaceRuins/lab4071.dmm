@@ -103,7 +103,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = 64
+	base_id = 64
 	},
 /turf/open/space,
 /area/ruin/space/has_grav/crazylab/crew)
@@ -203,7 +203,7 @@
 	short_desc = "You are a chemist in an illegal laboratory."
 	},
 /obj/machinery/button/door{
-	id = 64;
+	base_id = 64;
 	name = "Dorm Shutters";
 	pixel_x = 5;
 	pixel_y = 23
@@ -314,7 +314,7 @@
 /obj/structure/grille,
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = 32
+	base_id = 32
 	},
 /turf/open/space,
 /area/ruin/space/has_grav/crazylab/gamble)
@@ -323,7 +323,7 @@
 /obj/structure/grille,
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = 32
+	base_id = 32
 	},
 /turf/open/space,
 /area/ruin/space/has_grav/crazylab/gamble)
@@ -413,7 +413,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = 98
+	base_id = 98
 	},
 /turf/open/space,
 /area/ruin/space/has_grav/crazylab/chem)
@@ -421,7 +421,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = 98
+	base_id = 98
 	},
 /turf/open/space,
 /area/ruin/space/has_grav/crazylab/chem)
@@ -708,7 +708,7 @@
 /obj/structure/grille,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = 98
+	base_id = 98
 	},
 /turf/open/space,
 /area/ruin/space/has_grav/crazylab/chem)
@@ -962,7 +962,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = 98;
+	base_id = 98;
 	name = "Lab Shutters";
 	pixel_y = 25
 	},
@@ -1500,7 +1500,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = 32;
+	base_id = 32;
 	name = "Rec Room Shutters";
 	pixel_x = 30
 	},
@@ -1588,7 +1588,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = 18
+	base_id = 18
 	},
 /turf/open/space,
 /area/ruin/space/has_grav/crazylab/bar)
@@ -2512,7 +2512,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = 18;
+	base_id = 18;
 	name = "Botany Window Lockdown";
 	pixel_y = -25
 	},
@@ -3151,7 +3151,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = 128
+	base_id = 128
 	},
 /turf/open/space,
 /area/ruin/space/has_grav/crazylab/airlock)
@@ -3252,7 +3252,7 @@
 "Ry" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = 128;
+	base_id = 128;
 	name = "EVA Shutters";
 	pixel_y = 5
 	},
@@ -3335,7 +3335,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = 132;
+	base_id = 132;
 	name = "Airlock Lockdown";
 	pixel_x = -23
 	},
@@ -3478,14 +3478,14 @@
 "Wb" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor{
-	id = 132
+	base_id = 132
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/crazylab/airlock)
 "We" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor{
-	id = 132
+	base_id = 132
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/crazylab/airlock)

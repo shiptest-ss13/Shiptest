@@ -1098,7 +1098,7 @@
 /area/ship/maintenance/aft)
 "xw" = (
 /obj/machinery/button/door{
-	id = "cockpitshutter";
+	base_id = "cockpitshutter";
 	name = "Cockpit Shutters";
 	pixel_y = 28
 	},
@@ -2058,7 +2058,7 @@
 /area/ship/crew/dorm)
 "Vd" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "cockpitshutter"
+	base_id = "cockpitshutter"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,

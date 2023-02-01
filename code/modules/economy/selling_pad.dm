@@ -29,7 +29,7 @@
 	..()
 	return INITIALIZE_HINT_LATELOAD
 
-/obj/machinery/computer/selling_pad_control/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+/obj/machinery/computer/selling_pad_control/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
 	sell_account = port.current_ship?.ship_account
 

@@ -54,7 +54,7 @@
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/siding/thinplating,
 /obj/machinery/door/poddoor{
-	id = "bubbledoors";
+	base_id = "bubbledoors";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
@@ -469,7 +469,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "bubbledoors";
+	base_id = "bubbledoors";
 	name = "Blast Door Control";
 	pixel_x = 25
 	},
@@ -490,7 +490,7 @@
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/siding/thinplating,
 /obj/machinery/door/poddoor{
-	id = "bubbledoors";
+	base_id = "bubbledoors";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -782,7 +782,7 @@
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/siding/thinplating,
 /obj/machinery/door/poddoor{
-	id = "bubbledoors";
+	base_id = "bubbledoors";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/effect/turf_decal/industrial/warning/corner{

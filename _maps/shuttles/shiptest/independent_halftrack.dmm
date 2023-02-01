@@ -47,7 +47,7 @@
 /area/ship/security/range)
 "bX" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
@@ -72,7 +72,7 @@
 "cX" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
@@ -101,7 +101,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,
@@ -248,7 +248,7 @@
 "gO" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor/shutters{
-	id = "traumalobby";
+	base_id = "traumalobby";
 	name = "Lobby"
 	},
 /turf/open/floor/carpet/nanoweave/beige,
@@ -512,7 +512,7 @@
 /area/ship/bridge)
 "mP" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
@@ -589,14 +589,14 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/southleft,
 /obj/machinery/button/door{
-	id = "lobbydoors";
+	base_id = "lobbydoors";
 	name = "Lobby Door Control";
 	normaldoorcontrol = 1;
 	pixel_x = -13;
 	pixel_y = 7
 	},
 /obj/machinery/button/door{
-	id = "traumalobby";
+	base_id = "traumalobby";
 	name = "Lobby Shutter Control";
 	pixel_x = -13;
 	pixel_y = -1
@@ -638,13 +638,13 @@
 	pixel_y = -1
 	},
 /obj/machinery/button/door{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Shutters";
 	pixel_x = 5;
 	pixel_y = 7
 	},
 /obj/machinery/button/door{
-	id = "traumalobby";
+	base_id = "traumalobby";
 	name = "Lobby Shutter Control";
 	pixel_x = -5;
 	pixel_y = 7
@@ -1090,7 +1090,7 @@
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor/shutters{
-	id = "traumalobby";
+	base_id = "traumalobby";
 	name = "Lobby"
 	},
 /turf/open/floor/carpet/nanoweave/beige,
@@ -1342,7 +1342,7 @@
 /area/ship/maintenance/port)
 "JA" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
@@ -1573,7 +1573,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,
@@ -1588,7 +1588,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,
@@ -1609,7 +1609,7 @@
 /area/ship/security/range)
 "Po" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
@@ -1663,7 +1663,7 @@
 /area/ship/security/range)
 "PH" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /obj/effect/spawner/structure/window/reinforced,
@@ -2004,7 +2004,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,

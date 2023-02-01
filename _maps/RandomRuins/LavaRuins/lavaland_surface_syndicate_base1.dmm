@@ -85,7 +85,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "lavalandsyndi_chemistry"
+	base_id = "lavalandsyndi_chemistry"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/chemistry)
@@ -142,7 +142,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "lavalandsyndi_arrivals";
+	base_id = "lavalandsyndi_arrivals";
 	name = "Arrivals Blast Door Control";
 	pixel_y = -26;
 	req_access_txt = "150"
@@ -283,7 +283,7 @@
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "cK" = (
 /obj/machinery/power/compressor{
-	comp_id = "syndie_lavaland_incineratorturbine";
+	comp_base_id = "syndie_lavaland_incineratorturbine";
 	dir = 1;
 	luminosity = 2
 	},
@@ -390,7 +390,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "lavalandsyndi_chemistry";
+	base_id = "lavalandsyndi_chemistry";
 	name = "Chemistry Blast Door Control";
 	pixel_y = 26;
 	req_access_txt = "150"
@@ -605,7 +605,7 @@
 	req_access_txt = "150"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "lavalandsyndi";
+	base_id = "lavalandsyndi";
 	name = "Syndicate Research Experimentation Shutters"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -626,7 +626,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/preopen{
-	id = "lavalandsyndi";
+	base_id = "lavalandsyndi";
 	name = "Syndicate Research Experimentation Shutters"
 	},
 /turf/open/floor/plating,
@@ -837,7 +837,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "lavalandsyndi";
+	base_id = "lavalandsyndi";
 	name = "Syndicate Experimentation Lockdown Control";
 	pixel_y = 26;
 	req_access_txt = "150"
@@ -981,7 +981,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor{
-	id = "lavalandsyndi_cargo"
+	base_id = "lavalandsyndi_cargo"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/cargo)
@@ -1747,7 +1747,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "lavalandsyndi_cargo";
+	base_id = "lavalandsyndi_cargo";
 	name = "Cargo Bay Blast Door Control";
 	pixel_x = 26;
 	req_access_txt = "150"
@@ -1960,7 +1960,7 @@
 /obj/machinery/computer/pandemic,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = "lavalandsyndi_virology";
+	base_id = "lavalandsyndi_virology";
 	name = "Virology Blast Door Control";
 	pixel_x = -26;
 	req_access_txt = "150"
@@ -2129,7 +2129,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/preopen{
-	id = "lavalandsyndi_virology"
+	base_id = "lavalandsyndi_virology"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/virology)
@@ -2676,7 +2676,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "syndie_lavaland_vault";
+	base_id = "syndie_lavaland_vault";
 	name = "Vault Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = 25;
@@ -2858,7 +2858,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/preopen{
-	id = "lavalandsyndi_bar"
+	base_id = "lavalandsyndi_bar"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/bar)
@@ -2940,7 +2940,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "lavalandsyndi_bar";
+	base_id = "lavalandsyndi_bar";
 	name = "Bar Blast Door Control";
 	pixel_y = 26;
 	req_access_txt = "150"
@@ -3868,7 +3868,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/preopen{
-	id = "lavalandsyndi_telecomms"
+	base_id = "lavalandsyndi_telecomms"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/telecomms)
@@ -4044,7 +4044,7 @@
 /obj/item/storage/toolbox/syndicate,
 /obj/item/multitool,
 /obj/machinery/button/door{
-	id = "lavalandsyndi_telecomms";
+	base_id = "lavalandsyndi_telecomms";
 	name = "Telecomms Blast Door Control";
 	pixel_x = 26;
 	req_access_txt = "150"
@@ -4115,7 +4115,7 @@
 /obj/machinery/atmospherics/pipe/simple/yellow,
 /obj/machinery/computer/turbine_computer{
 	dir = 1;
-	id = "syndie_lavaland_incineratorturbine"
+	base_id = "syndie_lavaland_incineratorturbine"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
@@ -4634,7 +4634,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor{
-	id = "lavalandsyndi_arrivals"
+	base_id = "lavalandsyndi_arrivals"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
@@ -4647,7 +4647,7 @@
 "oB" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
 	dir = 1;
-	id = "syndie_lavaland_inc_in"
+	base_id = "syndie_lavaland_inc_in"
 	},
 /obj/structure/sign/warning/vacuum/external{
 	pixel_y = -32
@@ -5417,7 +5417,7 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/preopen{
-	id = "lavalandsyndi";
+	base_id = "lavalandsyndi";
 	name = "Syndicate Research Experimentation Shutters"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,

@@ -750,7 +750,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "engine";
+	base_id = "engine";
 	name = "Engine Shutters"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -940,7 +940,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "engine";
+	base_id = "engine";
 	name = "Engine Shutters"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -948,7 +948,7 @@
 "gW" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "shipbridge";
+	base_id = "shipbridge";
 	name = "Ship Bridge"
 	},
 /turf/open/floor/plating,
@@ -1085,7 +1085,7 @@
 "iq" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "exterior";
+	base_id = "exterior";
 	name = "Exterior Shutters"
 	},
 /turf/open/floor/plating,
@@ -1384,7 +1384,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "enginestorage";
+	base_id = "enginestorage";
 	name = "Engineering storage";
 	pixel_x = 23
 	},
@@ -1816,7 +1816,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "enginestorage";
+	base_id = "enginestorage";
 	name = "Engineering Storage"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2224,13 +2224,13 @@
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
-	id = "exterior";
+	base_id = "exterior";
 	name = "Exterior lockdown";
 	pixel_x = -7;
 	pixel_y = -2
 	},
 /obj/machinery/button/door{
-	id = "shipbridge";
+	base_id = "shipbridge";
 	name = "Bridge lockdown";
 	pixel_x = 7;
 	pixel_y = -2
@@ -2739,7 +2739,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "cargo_ageis";
+	base_id = "cargo_ageis";
 	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -3168,7 +3168,7 @@
 	port_direction = 2
 	},
 /obj/machinery/door/poddoor{
-	id = "cargo_ageis";
+	base_id = "cargo_ageis";
 	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -3627,7 +3627,7 @@
 "IC" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "enginestorage";
+	base_id = "enginestorage";
 	name = "Engineering Storage"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -4721,7 +4721,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "engine";
+	base_id = "engine";
 	name = "Engine shutter control";
 	pixel_y = 26
 	},
@@ -4875,7 +4875,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "engine";
+	base_id = "engine";
 	name = "Engine Shutters"
 	},
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
@@ -5222,7 +5222,7 @@
 "YK" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "exterior";
+	base_id = "exterior";
 	name = "Exterior Shutters"
 	},
 /turf/open/floor/plating,
@@ -5270,7 +5270,7 @@
 /area/ship/engineering)
 "Zj" = (
 /obj/machinery/button/door{
-	id = "cargo_ageis";
+	base_id = "cargo_ageis";
 	name = "cargobay doors";
 	pixel_x = 6;
 	pixel_y = 27

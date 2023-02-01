@@ -197,12 +197,12 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
-	id = "port_blasts";
+	base_id = "port_blasts";
 	name = "Port Blast Door"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
-	id = "glaive_shields";
+	base_id = "glaive_shields";
 	locked = 1
 	},
 /turf/open/floor/plasteel/tech,
@@ -426,7 +426,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	name = "Body Shutters";
-	id = "body_shutters"
+	base_id = "body_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -443,7 +443,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	name = "Body Shutters";
-	id = "body_shutters"
+	base_id = "body_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -451,7 +451,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
 	name = "Body Shutters";
-	id = "body_shutters"
+	base_id = "body_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -462,7 +462,7 @@
 /area/ship/storage)
 "hu" = (
 /obj/machinery/button/door{
-	id = "port_blasts";
+	base_id = "port_blasts";
 	name = "port blasts control";
 	pixel_y = 27
 	},
@@ -617,7 +617,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	name = "Body Shutters";
-	id = "body_shutters"
+	base_id = "body_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -785,7 +785,7 @@
 	icon_state = "8-10"
 	},
 /obj/machinery/button/door{
-	id = "port_blasts";
+	base_id = "port_blasts";
 	name = "port blasts control";
 	pixel_x = -6;
 	pixel_y = 2
@@ -793,7 +793,7 @@
 /obj/structure/table/wood,
 /obj/machinery/button/shieldwallgen{
 	pixel_x = 4;
-	id = "glaive_shields"
+	base_id = "glaive_shields"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -874,7 +874,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
 	name = "Body Shutters";
-	id = "body_shutters"
+	base_id = "body_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -887,7 +887,7 @@
 	},
 /obj/structure/cable/pink,
 /obj/machinery/door/poddoor/shutters{
-	id = "starboard_shutters";
+	base_id = "starboard_shutters";
 	name = "Starboard Engine Shutters"
 	},
 /turf/open/floor/engine/hull,
@@ -990,7 +990,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "starboard_shutters";
+	base_id = "starboard_shutters";
 	name = "starboard shutters control";
 	pixel_y = 23
 	},
@@ -1053,7 +1053,7 @@
 /area/ship/medical)
 "qz" = (
 /obj/machinery/door/poddoor{
-	id = "port_blasts";
+	base_id = "port_blasts";
 	name = "Port Blast Door"
 	},
 /turf/open/floor/plasteel/tech,
@@ -1155,7 +1155,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters{
 	name = "Body Shutters";
-	id = "body_shutters"
+	base_id = "body_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -1175,7 +1175,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	name = "Body Shutters";
-	id = "body_shutters"
+	base_id = "body_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -1264,7 +1264,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "starboard_shutters";
+	base_id = "starboard_shutters";
 	name = "Starboard Engine Shutters"
 	},
 /turf/open/floor/engine/hull,
@@ -1486,7 +1486,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters{
 	name = "Body Shutters";
-	id = "body_shutters"
+	base_id = "body_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -1522,7 +1522,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	name = "Body Shutters";
-	id = "body_shutters"
+	base_id = "body_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -1606,7 +1606,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
 	name = "Body Shutters";
-	id = "body_shutters"
+	base_id = "body_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -1615,7 +1615,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "port_blasts";
+	base_id = "port_blasts";
 	name = "Port Blast Door"
 	},
 /turf/open/floor/plasteel/tech,
@@ -1647,7 +1647,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters{
 	name = "Body Shutters";
-	id = "body_shutters"
+	base_id = "body_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -2233,7 +2233,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "port_shutters";
+	base_id = "port_shutters";
 	name = "Engine Shutters"
 	},
 /turf/open/floor/engine/hull,
@@ -2391,7 +2391,7 @@
 "MV" = (
 /obj/structure/table/wood,
 /obj/machinery/button/door{
-	id = "body_shutters";
+	base_id = "body_shutters";
 	name = "body shutters control";
 	pixel_y = 3
 	},
@@ -2519,13 +2519,13 @@
 	icon_state = "0-9"
 	},
 /obj/machinery/door/poddoor{
-	id = "port_blasts";
+	base_id = "port_blasts";
 	name = "Port Blast Door"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
 	locked = 1;
-	id = "glaive_shields"
+	base_id = "glaive_shields"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
@@ -2703,7 +2703,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/door{
-	id = "port_shutters";
+	base_id = "port_shutters";
 	name = "port shutter control";
 	pixel_y = 25
 	},
@@ -2743,7 +2743,7 @@
 	},
 /obj/structure/cable/pink,
 /obj/machinery/door/poddoor/shutters{
-	id = "port_shutters";
+	base_id = "port_shutters";
 	name = "Engine Shutters"
 	},
 /turf/open/floor/engine/hull,
@@ -2888,7 +2888,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	name = "Body Shutters";
-	id = "body_shutters"
+	base_id = "body_shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)

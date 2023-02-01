@@ -228,7 +228,7 @@
 /area/ship/medical)
 "mB" = (
 /obj/machinery/door/poddoor{
-	id = "goon"
+	base_id = "goon"
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -334,11 +334,11 @@
 "ra" = (
 /obj/structure/fans/tiny,
 /obj/machinery/button/door{
-	id = "goon";
+	base_id = "goon";
 	pixel_x = 26
 	},
 /obj/machinery/door/poddoor{
-	id = "goon"
+	base_id = "goon"
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew)

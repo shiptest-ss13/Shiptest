@@ -77,7 +77,7 @@
 /obj/machinery/button/door{
 	color = "#ddcc00";
 	dir = 8;
-	id = "masi_engi";
+	base_id = "masi_engi";
 	name = "engine emergency shielding";
 	pixel_x = 25
 	},
@@ -95,7 +95,7 @@
 /obj/machinery/button/door{
 	color = "#ddcc00";
 	dir = 8;
-	id = "masi_engi";
+	base_id = "masi_engi";
 	name = "engine emergency shielding";
 	pixel_x = 25
 	},
@@ -188,11 +188,11 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "masinyane_blastdoors";
+	base_id = "masinyane_blastdoors";
 	pixel_x = 23
 	},
 /obj/machinery/door/poddoor{
-	id = "masinyane_blastdoors";
+	base_id = "masinyane_blastdoors";
 	name = "Masinyane Entrance Doors"
 	},
 /turf/open/floor/plasteel/tech,
@@ -270,7 +270,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "masi_engi";
+	base_id = "masi_engi";
 	name = "Emergency Engine Shielding"
 	},
 /obj/structure/cable{
@@ -381,7 +381,7 @@
 	},
 /obj/machinery/button/door{
 	color = "#ddcc00";
-	id = "masi_engi";
+	base_id = "masi_engi";
 	name = "engine emergency shielding";
 	pixel_x = 5;
 	pixel_y = 32
@@ -426,7 +426,7 @@
 	pixel_y = 21
 	},
 /obj/machinery/button/door{
-	id = "masinyane_windowshield";
+	base_id = "masinyane_windowshield";
 	name = "shutters";
 	pixel_x = 25;
 	pixel_y = 30
@@ -466,11 +466,11 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "masinyane_blastdoors";
+	base_id = "masinyane_blastdoors";
 	pixel_x = -23
 	},
 /obj/machinery/door/poddoor{
-	id = "masinyane_blastdoors";
+	base_id = "masinyane_blastdoors";
 	name = "Masinyane Entrance Doors"
 	},
 /turf/open/floor/plasteel/tech,
@@ -528,7 +528,7 @@
 "Md" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "masinyane_windowshield";
+	base_id = "masinyane_windowshield";
 	name = "Cockpit Emergency Blast Door"
 	},
 /turf/open/floor/plating,
@@ -582,7 +582,7 @@
 /obj/machinery/button/door{
 	color = "#ddcc00";
 	dir = 4;
-	id = "masi_engi";
+	base_id = "masi_engi";
 	name = "engine emergency shielding";
 	pixel_x = -23
 	},

@@ -142,7 +142,7 @@
 "ih" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "tidedoors";
+	base_id = "tidedoors";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
@@ -194,7 +194,7 @@
 /area/ship/maintenance/starboard)
 "mT" = (
 /obj/machinery/button/door{
-	id = "tidedoors";
+	base_id = "tidedoors";
 	name = "Blast Door Control";
 	pixel_y = -25
 	},
@@ -628,7 +628,7 @@
 "MM" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "tidedoors";
+	base_id = "tidedoors";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/effect/decal/cleanable/glass,
@@ -797,7 +797,7 @@
 /obj/structure/reagent_dispensers/cooking_oil{
 	desc = "A huge metal vat with a tap on the front. Contains your backup fuel.";
 	name = "vat of engine oil";
-	reagent_id = /datum/reagent/fuel/oil;
+	reagent_base_id = /datum/reagent/fuel/oil;
 	tank_volume = 3000
 	},
 /turf/open/floor/plating,

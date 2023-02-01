@@ -382,7 +382,7 @@
 /area/awaymission/academy/classrooms)
 "bt" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "AcademyAuto"
+	base_id = "AcademyAuto"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -391,7 +391,7 @@
 /area/awaymission/academy/classrooms)
 "bu" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "AcademyAuto"
+	base_id = "AcademyAuto"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -400,13 +400,13 @@
 /area/awaymission/academy/classrooms)
 "bv" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "AcademyAuto"
+	base_id = "AcademyAuto"
 	},
 /turf/open/floor/plating,
 /area/awaymission/academy/classrooms)
 "bw" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "AcademyAuto"
+	base_id = "AcademyAuto"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -445,7 +445,7 @@
 /area/awaymission/academy/classrooms)
 "bD" = (
 /obj/machinery/button/door{
-	id = "AcademyAuto";
+	base_id = "AcademyAuto";
 	pixel_y = 25
 	},
 /turf/open/floor/plasteel,
@@ -3818,7 +3818,7 @@
 /area/awaymission/academy/academygate)
 "ky" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "AcademyGate"
+	base_id = "AcademyGate"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 2
@@ -3968,7 +3968,7 @@
 /area/awaymission/academy/academycellar)
 "kW" = (
 /obj/structure/ladder/unbreakable/rune{
-	id = "academy_cellar"
+	base_id = "academy_cellar"
 	},
 /turf/open/floor/engine/cult,
 /area/awaymission/academy/academycellar)
@@ -4151,7 +4151,7 @@
 /area/awaymission/academy/academyengine)
 "lI" = (
 /obj/structure/ladder/unbreakable/rune{
-	id = "academy_engine"
+	base_id = "academy_engine"
 	},
 /turf/open/floor/plating,
 /area/awaymission/academy/academyengine)
@@ -4230,14 +4230,14 @@
 "lW" = (
 /obj/structure/ladder/unbreakable/rune{
 	height = 1;
-	id = "academy_storage"
+	base_id = "academy_storage"
 	},
 /turf/open/floor/plating,
 /area/awaymission/academy/classrooms)
 "lX" = (
 /obj/structure/ladder/unbreakable/rune{
 	height = 1;
-	id = "academy_coldroom"
+	base_id = "academy_coldroom"
 	},
 /turf/open/floor/plasteel/white,
 /area/awaymission/academy/classrooms)
@@ -4253,14 +4253,14 @@
 "ma" = (
 /obj/structure/ladder/unbreakable/rune{
 	height = 1;
-	id = "academy_cellar"
+	base_id = "academy_cellar"
 	},
 /turf/open/floor/wood,
 /area/awaymission/academy/classrooms)
 "mb" = (
 /obj/structure/ladder/unbreakable/rune{
 	height = 1;
-	id = "academy_engine"
+	base_id = "academy_engine"
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/academy/academyaft)
@@ -4447,7 +4447,7 @@
 /area/awaymission/academy/academygate)
 "mQ" = (
 /obj/structure/ladder/unbreakable/rune{
-	id = "academy_storage"
+	base_id = "academy_storage"
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/academy/academyengine)
@@ -4457,7 +4457,7 @@
 /area/awaymission/academy/academyengine)
 "mS" = (
 /obj/structure/ladder/unbreakable/rune{
-	id = "academy_coldroom"
+	base_id = "academy_coldroom"
 	},
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/academy/academycellar)
@@ -4504,7 +4504,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "AcademyGate";
+	base_id = "AcademyGate";
 	name = "Skeleton Storage Control";
 	pixel_y = -25
 	},

@@ -198,7 +198,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
-	id = "cargodoors"
+	base_id = "cargodoors"
 	},
 /obj/item/radio/intercom{
 	pixel_y = 22
@@ -250,11 +250,11 @@
 /area/ship/crew/dorm)
 "eH" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "syndiefuck"
+	base_id = "syndiefuck"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
-	id = "luxembourg_cargo";
+	base_id = "luxembourg_cargo";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -360,7 +360,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "cargodoors";
+	base_id = "cargodoors";
 	pixel_x = 8;
 	pixel_y = -24
 	},
@@ -369,7 +369,7 @@
 	name = "Cargo Bay"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "cargodoors"
+	base_id = "cargodoors"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -445,7 +445,7 @@
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
+	base_id = "externalshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -591,7 +591,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "warehouse"
+	base_id = "warehouse"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
@@ -723,7 +723,7 @@
 "ow" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
+	base_id = "externalshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
@@ -950,7 +950,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
+	base_id = "externalshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1064,7 +1064,7 @@
 "tU" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
+	base_id = "externalshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -1133,7 +1133,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "warehouse"
+	base_id = "warehouse"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1218,7 +1218,7 @@
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
-	id = "luxembourg_cargo";
+	base_id = "luxembourg_cargo";
 	pixel_x = -10;
 	pixel_y = -25
 	},
@@ -1227,7 +1227,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "syndiefuck";
+	base_id = "syndiefuck";
 	pixel_x = -20;
 	pixel_y = -26
 	},
@@ -1407,7 +1407,7 @@
 /obj/machinery/door/window/eastright,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
-	id = "cargodoors"
+	base_id = "cargodoors"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1475,7 +1475,7 @@
 /obj/machinery/door/window/eastright,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
-	id = "cargodoors"
+	base_id = "cargodoors"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1587,13 +1587,13 @@
 /area/ship/engineering)
 "Ev" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "syndiefuck"
+	base_id = "syndiefuck"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 1;
-	id = "luxembourg_cargo";
+	base_id = "luxembourg_cargo";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -1760,7 +1760,7 @@
 	launch_status = 0
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
+	base_id = "externalshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -1948,7 +1948,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "cargodoors";
+	base_id = "cargodoors";
 	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
@@ -2088,7 +2088,7 @@
 "OF" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
+	base_id = "externalshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -2112,7 +2112,7 @@
 	dir = 9
 	},
 /obj/machinery/button/shieldwallgen{
-	id = "luxembourg_cargo";
+	base_id = "luxembourg_cargo";
 	pixel_x = -10;
 	pixel_y = 25
 	},
@@ -2120,7 +2120,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/door{
-	id = "syndiefuck";
+	base_id = "syndiefuck";
 	pixel_x = -20;
 	pixel_y = 26
 	},
@@ -2199,7 +2199,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/button/door{
-	id = "warehouse";
+	base_id = "warehouse";
 	pixel_x = 24;
 	pixel_y = 21
 	},
@@ -2226,14 +2226,14 @@
 /area/ship/crew/dorm)
 "Rt" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "syndiefuck"
+	base_id = "syndiefuck"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "RH" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
+	base_id = "externalshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -2335,7 +2335,7 @@
 "Uv" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
+	base_id = "externalshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -2530,25 +2530,25 @@
 /area/ship/engineering)
 "Yd" = (
 /obj/machinery/button/door{
-	id = "syndiefuck";
+	base_id = "syndiefuck";
 	name = "Loading Shutters Control";
 	pixel_x = -25;
 	pixel_y = -5
 	},
 /obj/machinery/button/door{
-	id = "warehouse";
+	base_id = "warehouse";
 	name = "Warehouse Control";
 	pixel_x = -25;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
-	id = "cargodoors";
+	base_id = "cargodoors";
 	name = "Cargo Bay Shutter Control";
 	pixel_x = -38;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
-	id = "externalshutters";
+	base_id = "externalshutters";
 	name = "External Shutters Control";
 	pixel_x = -38;
 	pixel_y = -5
@@ -2654,7 +2654,7 @@
 /mob/living/simple_animal/bot/mulebot{
 	bot_name = "\proper Christine";
 	desc = "A Multiple Utility Load Effector bot. This one seems oddly menacing...";
-	id = "Christine";
+	base_id = "Christine";
 	name = "\proper Christine"
 	},
 /obj/machinery/navbeacon/wayfinding{

@@ -170,7 +170,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_thrusters"
+	base_id = "colossus_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -276,7 +276,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_windows";
+	base_id = "colossus_windows";
 	name = "Window Shield"
 	},
 /turf/open/floor/plating,
@@ -778,7 +778,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_thrusters"
+	base_id = "colossus_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -847,7 +847,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/reagent_dispensers/watertank,
 /obj/machinery/button/door{
-	id = "colossus_thrusters";
+	base_id = "colossus_thrusters";
 	name = "Thruster Shield Control";
 	pixel_x = -6;
 	pixel_y = 25
@@ -1059,7 +1059,7 @@
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "colossus_windows";
+	base_id = "colossus_windows";
 	name = "Window Shield"
 	},
 /turf/open/floor/plating,
@@ -1309,14 +1309,14 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 4;
-	id = "colossus_cargo_port";
+	base_id = "colossus_cargo_port";
 	locked = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_port"
+	base_id = "colossus_port"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
@@ -1373,7 +1373,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_thrusters"
+	base_id = "colossus_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1498,7 +1498,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_starboard"
+	base_id = "colossus_starboard"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
@@ -1508,7 +1508,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_windows";
+	base_id = "colossus_windows";
 	name = "Window Shield"
 	},
 /turf/open/floor/plating,
@@ -1609,14 +1609,14 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 8;
-	id = "colossus_cargo_port";
+	base_id = "colossus_cargo_port";
 	locked = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_port"
+	base_id = "colossus_port"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
@@ -1681,7 +1681,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/button/door{
 	dir = 1;
-	id = "colossus_thrusters";
+	base_id = "colossus_thrusters";
 	name = "Thruster Shield Control";
 	pixel_x = -6;
 	pixel_y = -25
@@ -1754,12 +1754,12 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 8;
-	id = "colossus_cargo_starboard";
+	base_id = "colossus_cargo_starboard";
 	locked = 1
 	},
 /obj/structure/cable,
 /obj/machinery/door/poddoor{
-	id = "colossus_starboard"
+	base_id = "colossus_starboard"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
@@ -2012,7 +2012,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/cable,
 /obj/machinery/door/poddoor{
-	id = "colossus_windows";
+	base_id = "colossus_windows";
 	name = "Window Shield"
 	},
 /turf/open/floor/plating,
@@ -2131,7 +2131,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_windows";
+	base_id = "colossus_windows";
 	name = "Window Shield"
 	},
 /turf/open/floor/plating,
@@ -2168,7 +2168,7 @@
 "vZ" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/poddoor{
-	id = "colossus_port"
+	base_id = "colossus_port"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
@@ -2501,7 +2501,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "colossus_windows";
+	base_id = "colossus_windows";
 	name = "Window Lockdown";
 	pixel_x = -6;
 	pixel_y = -25
@@ -2599,7 +2599,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "colossus_port";
+	base_id = "colossus_port";
 	name = "Port Cargo Door Control";
 	pixel_x = 6;
 	pixel_y = 25
@@ -2607,7 +2607,7 @@
 /obj/effect/turf_decal/industrial/caution,
 /obj/structure/ore_box,
 /obj/machinery/button/shieldwallgen{
-	id = "colossus_cargo_port";
+	base_id = "colossus_cargo_port";
 	pixel_x = -5;
 	pixel_y = 25
 	},
@@ -2743,14 +2743,14 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "colossus_port";
+	base_id = "colossus_port";
 	name = "Port Cargo Door Control";
 	pixel_x = -6;
 	pixel_y = 25
 	},
 /obj/effect/turf_decal/industrial/caution,
 /obj/machinery/button/shieldwallgen{
-	id = "colossus_cargo_port";
+	base_id = "colossus_cargo_port";
 	pixel_x = 5;
 	pixel_y = 25
 	},
@@ -2854,7 +2854,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_thrusters"
+	base_id = "colossus_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3142,7 +3142,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_windows";
+	base_id = "colossus_windows";
 	name = "Window Shield"
 	},
 /turf/open/floor/plating,
@@ -3477,7 +3477,7 @@
 /obj/structure/closet/crate/medical,
 /obj/machinery/button/door{
 	dir = 1;
-	id = "colossus_starboard";
+	base_id = "colossus_starboard";
 	name = "Starboard Cargo Door Control";
 	pixel_x = -6;
 	pixel_y = -25
@@ -3495,7 +3495,7 @@
 /obj/item/clothing/under/syndicate/inteq/corpsman,
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
-	id = "colossus_cargo_starboard";
+	base_id = "colossus_cargo_starboard";
 	pixel_x = 5;
 	pixel_y = -25
 	},
@@ -3836,7 +3836,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor{
-	id = "colossus_starboard"
+	base_id = "colossus_starboard"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
@@ -3863,7 +3863,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/cable,
 /obj/machinery/door/poddoor{
-	id = "colossus_windows";
+	base_id = "colossus_windows";
 	name = "Window Shield"
 	},
 /turf/open/floor/plating,
@@ -4026,7 +4026,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_thrusters"
+	base_id = "colossus_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -4089,7 +4089,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_windows";
+	base_id = "colossus_windows";
 	name = "Window Shield"
 	},
 /turf/open/floor/plating,
@@ -4154,7 +4154,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_thrusters"
+	base_id = "colossus_thrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -4173,7 +4173,7 @@
 /obj/machinery/light,
 /obj/machinery/button/door{
 	dir = 1;
-	id = "colossus_starboard";
+	base_id = "colossus_starboard";
 	name = "Starboard Cargo Door Control";
 	pixel_x = 6;
 	pixel_y = -25
@@ -4183,7 +4183,7 @@
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
-	id = "colossus_cargo_starboard";
+	base_id = "colossus_cargo_starboard";
 	pixel_x = -5;
 	pixel_y = -25
 	},
@@ -4394,7 +4394,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "colossus_windows";
+	base_id = "colossus_windows";
 	name = "Window Shield"
 	},
 /turf/open/floor/plating,
@@ -4490,12 +4490,12 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 4;
-	id = "colossus_cargo_starboard";
+	base_id = "colossus_cargo_starboard";
 	locked = 1
 	},
 /obj/structure/cable,
 /obj/machinery/door/poddoor{
-	id = "colossus_starboard"
+	base_id = "colossus_starboard"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)

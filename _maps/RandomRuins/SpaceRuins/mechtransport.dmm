@@ -24,7 +24,7 @@
 "h" = (
 /obj/structure/table,
 /obj/machinery/button/door{
-	id = "mechaship1";
+	base_id = "mechaship1";
 	name = "Mecha Cargo Ship Doors"
 	},
 /turf/open/floor/mineral/titanium/blue,
@@ -116,7 +116,7 @@
 /area/ruin/space/has_grav/powered/mechtransport)
 "D" = (
 /obj/machinery/door/poddoor{
-	id = "mechaship1";
+	base_id = "mechaship1";
 	name = "Cargo Bay Door"
 	},
 /turf/open/floor/mineral/titanium/yellow/airless,

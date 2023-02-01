@@ -70,7 +70,7 @@
 "bX" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,
@@ -113,7 +113,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,
@@ -142,7 +142,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "traumaenginel"
+	base_id = "traumaenginel"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -299,12 +299,12 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "traumalobby";
+	base_id = "traumalobby";
 	name = "Lobby"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
-	id = "traumashield"
+	base_id = "traumashield"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
@@ -376,7 +376,7 @@
 	dir = 4;
 	pixel_y = -6;
 	pixel_x = -25;
-	id = "traumaenginer";
+	base_id = "traumaenginer";
 	name = "Engine Shutter Control"
 	},
 /turf/open/floor/plating,
@@ -456,7 +456,7 @@
 /area/ship/maintenance/starboard)
 "kO" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "traumashield2"
+	base_id = "traumashield2"
 	},
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 4
@@ -468,7 +468,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
-	id = "traumaramp"
+	base_id = "traumaramp"
 	},
 /turf/open/floor/engine,
 /area/ship/storage)
@@ -699,14 +699,14 @@
 /obj/item/folder/white,
 /obj/item/pen,
 /obj/machinery/button/door{
-	id = "lobbydoors";
+	base_id = "lobbydoors";
 	name = "Lobby Door Control";
 	pixel_y = 7;
 	dir = 1;
 	normaldoorcontrol = 1
 	},
 /obj/machinery/button/door{
-	id = "traumalobby";
+	base_id = "traumalobby";
 	name = "Lobby Shutter Control";
 	pixel_x = -13;
 	pixel_y = -4;
@@ -719,10 +719,10 @@
 	pixel_x = 13;
 	pixel_y = 7;
 	name = "Lobby Holoshield";
-	id = "traumashield"
+	base_id = "traumashield"
 	},
 /obj/machinery/button/door{
-	id = "lobbydoors";
+	base_id = "lobbydoors";
 	name = "Lobby Door Bolts Control";
 	pixel_x = -13;
 	pixel_y = 7;
@@ -761,13 +761,13 @@
 	pixel_y = -1
 	},
 /obj/machinery/button/door{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Shutters";
 	pixel_x = 5;
 	pixel_y = 7
 	},
 /obj/machinery/button/door{
-	id = "traumalobby";
+	base_id = "traumalobby";
 	name = "Lobby Shutter Control";
 	pixel_x = -5;
 	pixel_y = 7
@@ -1267,7 +1267,7 @@
 /area/ship/hallway/aft)
 "BH" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "traumashield2";
+	base_id = "traumashield2";
 	dir = 1
 	},
 /obj/structure/cable{
@@ -1280,7 +1280,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "traumaramp"
+	base_id = "traumaramp"
 	},
 /turf/open/floor/engine,
 /area/ship/storage)
@@ -1313,7 +1313,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "traumalobby";
+	base_id = "traumalobby";
 	name = "Lobby"
 	},
 /turf/open/floor/plating,
@@ -1452,7 +1452,7 @@
 	dir = 8;
 	pixel_y = -6;
 	pixel_x = 25;
-	id = "traumaenginel";
+	base_id = "traumaenginel";
 	name = "Engine Shutter Control"
 	},
 /turf/open/floor/plating,
@@ -1587,7 +1587,7 @@
 "JA" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,
@@ -1826,7 +1826,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "traumaenginel"
+	base_id = "traumaenginel"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1840,7 +1840,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "traumaenginer"
+	base_id = "traumaenginer"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1912,7 +1912,7 @@
 "PH" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/preopen{
-	id = "traumawindows";
+	base_id = "traumawindows";
 	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,
@@ -1973,7 +1973,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "traumaramp"
+	base_id = "traumaramp"
 	},
 /turf/open/floor/engine,
 /area/ship/storage)
@@ -2071,14 +2071,14 @@
 	pixel_y = -26;
 	pixel_x = -4;
 	name = "Emergency Ramp";
-	id = "traumaramp"
+	base_id = "traumaramp"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
 	pixel_y = -23;
 	pixel_x = 6;
 	name = "Emergency Ramp Shield";
-	id = "traumashield2"
+	base_id = "traumashield2"
 	},
 /obj/effect/turf_decal/arrows/red{
 	dir = 8
@@ -2178,12 +2178,12 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "traumalobby";
+	base_id = "traumalobby";
 	name = "Lobby"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
-	id = "traumashield"
+	base_id = "traumashield"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
@@ -2358,7 +2358,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "traumaenginer"
+	base_id = "traumaenginer"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)

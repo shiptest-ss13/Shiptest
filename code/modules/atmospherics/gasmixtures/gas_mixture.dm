@@ -128,6 +128,7 @@ we use a hook instead
 
 /datum/gas_mixture/proc/__gasmixture_unregister()
 /datum/gas_mixture/proc/__gasmixture_register()
+/datum/gas_mixture/proc/__auxtools_parse_gas_string()
 
 /proc/gas_types()
 	var/list/L = subtypesof(/datum/gas)

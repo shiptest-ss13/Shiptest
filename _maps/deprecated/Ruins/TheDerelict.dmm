@@ -16,7 +16,7 @@
 /area/ruin/space/derelict/singularity_engine)
 "ap" = (
 /obj/machinery/power/solar{
-	id = "derelictsolar";
+	base_id = "derelictsolar";
 	name = "Derelict Solar Array"
 	},
 /obj/structure/cable,
@@ -1697,7 +1697,7 @@
 "hF" = (
 /obj/structure/table,
 /obj/machinery/computer/pod/old{
-	id = "derelict_gun";
+	base_id = "derelict_gun";
 	name = "ProComp IIe";
 	pixel_y = 7
 	},
@@ -1999,7 +1999,7 @@
 /area/ruin/space/derelict/arrival)
 "iH" = (
 /obj/machinery/door/poddoor{
-	id = "derelict_gun";
+	base_id = "derelict_gun";
 	name = "Derelict Mass Driver"
 	},
 /turf/open/floor/plating,
@@ -2013,7 +2013,7 @@
 "iK" = (
 /obj/machinery/mass_driver{
 	dir = 8;
-	id = "derelict_gun"
+	base_id = "derelict_gun"
 	},
 /obj/machinery/door/window{
 	dir = 4;
@@ -2602,7 +2602,7 @@
 "lq" = (
 /obj/structure/table,
 /obj/item/reagent_containers/glass/beaker{
-	list_reagents = list(/datum/reagent/toxin/acid = 50)
+	list_reagents = list(/datum/reagent/toxin/acbase_id = 50)
 	},
 /obj/item/paper/crumpled/bloody/ruins/thederelict/unfinished,
 /obj/item/pen,
@@ -3221,7 +3221,7 @@
 /area/solar/derelict_aft)
 "on" = (
 /obj/machinery/power/solar{
-	id = "derelictsolar";
+	base_id = "derelictsolar";
 	name = "Derelict Solar Array"
 	},
 /obj/structure/cable,
@@ -3405,7 +3405,7 @@
 /area/ruin/space/derelict/hallway/primary)
 "tR" = (
 /obj/machinery/power/solar{
-	id = "derelictsolar";
+	base_id = "derelictsolar";
 	name = "Derelict Solar Array"
 	},
 /obj/structure/cable{
@@ -3486,7 +3486,7 @@
 /area/solar/derelict_starboard)
 "wb" = (
 /obj/machinery/power/solar{
-	id = "derelictsolar";
+	base_id = "derelictsolar";
 	name = "Derelict Solar Array"
 	},
 /obj/structure/cable{
@@ -3697,7 +3697,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/solar_control{
-	id = "derelictsolar";
+	base_id = "derelictsolar";
 	name = "Primary Solar Control"
 	},
 /turf/open/floor/plasteel,
@@ -4113,7 +4113,7 @@
 /area/ruin/space/derelict/solar_control)
 "On" = (
 /obj/machinery/power/solar{
-	id = "derelictsolar";
+	base_id = "derelictsolar";
 	name = "Derelict Solar Array"
 	},
 /obj/structure/cable{
@@ -4296,7 +4296,7 @@
 "RX" = (
 /obj/machinery/power/solar_control{
 	dir = 1;
-	id = "derelictsolar";
+	base_id = "derelictsolar";
 	name = "Primary Solar Control"
 	},
 /obj/structure/cable{

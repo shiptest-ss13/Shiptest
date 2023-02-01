@@ -20,7 +20,7 @@
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "ag" = (
 /obj/machinery/door/poddoor{
-	id = "bigderelictshipdock"
+	base_id = "bigderelictshipdock"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
@@ -36,7 +36,7 @@
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "aj" = (
 /obj/machinery/button/door{
-	id = "bigderelictshipdock";
+	base_id = "bigderelictshipdock";
 	name = "tradepost entry doors";
 	pixel_y = 25
 	},
@@ -155,7 +155,7 @@
 /area/ruin/unpowered/no_grav)
 "aD" = (
 /obj/machinery/door/poddoor{
-	id = "bigderelictship"
+	base_id = "bigderelictship"
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ruin/space/has_grav/derelictoutpost/dockedship)
@@ -317,7 +317,7 @@
 /area/ruin/space/has_grav/derelictoutpost/dockedship)
 "bh" = (
 /obj/machinery/button/door{
-	id = "bigderelictship";
+	base_id = "bigderelictship";
 	name = "shuttle cargo doors";
 	pixel_x = 25
 	},
@@ -837,7 +837,7 @@
 "cy" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/poddoor{
-	id = "bigderelictcheckpoint";
+	base_id = "bigderelictcheckpoint";
 	name = "Checkpoint Security Doors"
 	},
 /obj/structure/cable{
@@ -1828,7 +1828,7 @@
 "fB" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/button/door{
-	id = "bigderelictcheckpoint";
+	base_id = "bigderelictcheckpoint";
 	name = "security checkpoint control";
 	pixel_y = -25
 	},
@@ -2070,7 +2070,7 @@
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "HN" = (
 /obj/machinery/door/poddoor{
-	id = "bigderelictshipdock"
+	base_id = "bigderelictshipdock"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating/airless,

@@ -395,7 +395,7 @@
 /obj/machinery/door/firedoor/window,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	base_id = "sgwindowshut";
 	name = "External Shutters"
 	},
 /turf/open/floor/plating,
@@ -501,7 +501,7 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/machinery/button/door{
-	id = "sgkitchen";
+	base_id = "sgkitchen";
 	name = "Kitchen Shutters";
 	pixel_y = -22
 	},

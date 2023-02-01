@@ -13,7 +13,7 @@
 /area/ship/cargo)
 "ac" = (
 /obj/machinery/button/door{
-	id = "EVAEXTERNAL";
+	base_id = "EVAEXTERNAL";
 	name = "Blast Door Control";
 	pixel_x = -8;
 	pixel_y = -25
@@ -35,7 +35,7 @@
 /area/ship/maintenance/starboard)
 "al" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "internalbridgeshutter";
+	base_id = "internalbridgeshutter";
 	name = "Blast Shutters"
 	},
 /obj/structure/grille,
@@ -424,7 +424,7 @@
 /area/ship/engineering/atmospherics)
 "ex" = (
 /obj/machinery/door/poddoor{
-	id = "Eject";
+	base_id = "Eject";
 	name = "Door for Ejection of Impostors"
 	},
 /turf/open/floor/plating,
@@ -432,7 +432,7 @@
 "eF" = (
 /obj/machinery/mass_driver{
 	dir = 1;
-	id = "corpse"
+	base_id = "corpse"
 	},
 /obj/structure/chair/office{
 	dir = 1
@@ -668,7 +668,7 @@
 "hj" = (
 /obj/effect/turf_decal/siding/yellow/corner,
 /obj/machinery/button/door{
-	id = "EVAEXTERNAL";
+	base_id = "EVAEXTERNAL";
 	name = "Blast Door Control";
 	pixel_x = 8;
 	pixel_y = -25
@@ -893,7 +893,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "cell";
+	base_id = "cell";
 	name = "Brig Door Control";
 	normaldoorcontrol = 1;
 	pixel_x = -8;
@@ -901,13 +901,13 @@
 	specialfunctions = 4
 	},
 /obj/machinery/button/door{
-	id = "Eject";
+	base_id = "Eject";
 	name = "Cell Blast Door Control";
 	pixel_x = 6;
 	pixel_y = 40
 	},
 /obj/machinery/button/massdriver{
-	id = "corpse";
+	base_id = "corpse";
 	name = "Prisoner Ejector";
 	pixel_x = -8;
 	pixel_y = 40
@@ -1171,7 +1171,7 @@
 /area/ship/engineering/engine)
 "nB" = (
 /obj/machinery/button/door{
-	id = "EVAINTERNAL";
+	base_id = "EVAINTERNAL";
 	name = "Blast Door Control";
 	pixel_x = -8;
 	pixel_y = -25
@@ -1665,7 +1665,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "EVAEXTERNAL";
+	base_id = "EVAEXTERNAL";
 	name = "Blast Door Control";
 	pixel_x = -25;
 	pixel_y = 25
@@ -1753,7 +1753,7 @@
 /area/ship/maintenance/starboard)
 "vm" = (
 /obj/machinery/button/door{
-	id = "EVAINTERNAL";
+	base_id = "EVAINTERNAL";
 	name = "Blast Door Control";
 	pixel_x = -8;
 	pixel_y = 25
@@ -2177,7 +2177,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor{
-	id = "EVAINTERNAL";
+	base_id = "EVAINTERNAL";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -2344,7 +2344,7 @@
 /area/ship/cargo)
 "Ba" = (
 /obj/machinery/door/poddoor{
-	id = "scrapdoorint";
+	base_id = "scrapdoorint";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2367,7 +2367,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor{
-	id = "EVAEXTERNAL";
+	base_id = "EVAEXTERNAL";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/pod/light,
@@ -2419,7 +2419,7 @@
 /area/ship/crew/dorm)
 "BQ" = (
 /obj/machinery/door/poddoor{
-	id = "scrapdoorint";
+	base_id = "scrapdoorint";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2588,7 +2588,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "scrapdoorint";
+	base_id = "scrapdoorint";
 	name = "Blast Door Control";
 	pixel_x = 25;
 	pixel_y = -25
@@ -2597,7 +2597,7 @@
 /area/ship/cargo)
 "DA" = (
 /obj/machinery/button/door{
-	id = "scrapdoorint";
+	base_id = "scrapdoorint";
 	name = "Blast Door Control";
 	pixel_x = -25;
 	pixel_y = -25
@@ -2717,13 +2717,13 @@
 /area/ship/maintenance/starboard)
 "Fs" = (
 /obj/machinery/button/door{
-	id = "externalbridgeshutter";
+	base_id = "externalbridgeshutter";
 	name = "Windshield Lockdown";
 	pixel_x = -6;
 	pixel_y = 36
 	},
 /obj/machinery/button/door{
-	id = "internalbridgeshutter";
+	base_id = "internalbridgeshutter";
 	name = "EVA Oversight Lockdown";
 	pixel_x = -6;
 	pixel_y = 25
@@ -2830,7 +2830,7 @@
 /area/ship/engineering/engine)
 "Hx" = (
 /obj/machinery/button/door{
-	id = "scrapdoorext";
+	base_id = "scrapdoorext";
 	name = "Blast Door Control";
 	pixel_x = 25;
 	pixel_y = -25
@@ -2931,7 +2931,7 @@
 /area/ship/medical)
 "Iw" = (
 /obj/machinery/button/door{
-	id = "scrapdoorext";
+	base_id = "scrapdoorext";
 	name = "Blast Door Control";
 	pixel_x = -25;
 	pixel_y = -25
@@ -2955,7 +2955,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "EVAEXTERNAL";
+	base_id = "EVAEXTERNAL";
 	name = "Blast Door Control";
 	pixel_x = 25;
 	pixel_y = 25
@@ -2964,7 +2964,7 @@
 /area/ship/hallway/central)
 "IE" = (
 /obj/machinery/door/poddoor{
-	id = "scrapdoorext";
+	base_id = "scrapdoorext";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -3158,7 +3158,7 @@
 	},
 /obj/effect/landmark/start/assistant,
 /obj/machinery/button/door{
-	id = "bath";
+	base_id = "bath";
 	name = "Bathroom lock";
 	normaldoorcontrol = 1;
 	pixel_x = -8;
@@ -3290,7 +3290,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "externalbridgeshutter";
+	base_id = "externalbridgeshutter";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -3507,7 +3507,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor{
-	id = "EVAINTERNAL";
+	base_id = "EVAINTERNAL";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/door/firedoor/border_only,

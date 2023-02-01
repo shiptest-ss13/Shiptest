@@ -238,7 +238,7 @@
 	exit.set_light(15, 1, COLOR_RED)
 	//open all cult templar gates
 	for(var/obj/machinery/door/poddoor/D in GLOB.machines)
-		if(D.id == "templar_dead")
+		if(D.base_id == "templar_dead")
 			D.open()
 	return ..()
 

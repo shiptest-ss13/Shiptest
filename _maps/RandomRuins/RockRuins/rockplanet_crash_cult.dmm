@@ -2,7 +2,7 @@
 "as" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
+	base_id = "whiteship_bridge"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
@@ -750,7 +750,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
@@ -856,13 +856,13 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
-	id = "whiteship_windows";
+	base_id = "whiteship_windows";
 	name = "Windows Blast Door Control";
 	pixel_x = -22;
 	pixel_y = -6
 	},
 /obj/machinery/button/door{
-	id = "whiteship_bridge";
+	base_id = "whiteship_bridge";
 	name = "Bridge Blast Door Control";
 	pixel_x = -22;
 	pixel_y = 2
@@ -923,7 +923,7 @@
 "EQ" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
@@ -1018,7 +1018,7 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/door/poddoor{
-	id = "whiteship_windows"
+	base_id = "whiteship_windows"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)

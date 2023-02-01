@@ -207,7 +207,7 @@
 	name = "Bridge"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "intelfucky"
+	base_id = "intelfucky"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -235,7 +235,7 @@
 "dZ" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "intelwindow"
+	base_id = "intelwindow"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
@@ -281,7 +281,7 @@
 	dir = 1;
 	pixel_y = -23;
 	pixel_x = -7;
-	id = "intelfucky";
+	base_id = "intelfucky";
 	name = "Privacy Lock"
 	},
 /obj/effect/turf_decal/industrial/outline/red,
@@ -298,11 +298,11 @@
 /area/ship/engineering)
 "gP" = (
 /obj/machinery/door/poddoor{
-	id = "scbay"
+	base_id = "scbay"
 	},
 /obj/structure/cable,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "scholo";
+	base_id = "scholo";
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -536,7 +536,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "thefunny"
+	base_id = "thefunny"
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
 	dir = 1
@@ -650,11 +650,11 @@
 /area/ship/engineering)
 "qf" = (
 /obj/machinery/door/poddoor{
-	id = "scbay"
+	base_id = "scbay"
 	},
 /obj/structure/cable,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "scholo";
+	base_id = "scholo";
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only,
@@ -708,7 +708,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "scengine"
+	base_id = "scengine"
 	},
 /obj/item/clothing/mask/fakemoustache,
 /turf/open/floor/plating,
@@ -789,7 +789,7 @@
 /area/ship/engineering)
 "rF" = (
 /obj/machinery/button/door{
-	id = "scengine";
+	base_id = "scengine";
 	name = "Engine Blast Shutters";
 	dir = 8;
 	pixel_x = -8
@@ -953,7 +953,7 @@
 	},
 /obj/machinery/button/door{
 	desc = "A remote control switch.";
-	id = "scbay";
+	base_id = "scbay";
 	name = "Cargo Bay Doors";
 	pixel_x = -7;
 	pixel_y = 9
@@ -962,13 +962,13 @@
 	pixel_y = 9;
 	pixel_x = 5;
 	name = "Bridge Blast Shutters";
-	id = "scbridge"
+	base_id = "scbridge"
 	},
 /obj/machinery/button/shieldwallgen{
 	name = "Holofield Controls";
 	pixel_y = -3;
 	pixel_x = -9;
-	id = "scholo"
+	base_id = "scholo"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -982,11 +982,11 @@
 	dir = 1;
 	pixel_y = -33;
 	pixel_x = -6;
-	id = "scholo"
+	base_id = "scholo"
 	},
 /obj/machinery/button/door{
 	desc = "A remote control switch.";
-	id = "scbay";
+	base_id = "scbay";
 	name = "Cargo Bay Doors";
 	pixel_x = 3;
 	pixel_y = -35;
@@ -1172,7 +1172,7 @@
 /area/ship/crew)
 "Cr" = (
 /obj/machinery/door/poddoor{
-	id = "scbay"
+	base_id = "scbay"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -1214,7 +1214,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "scengine"
+	base_id = "scengine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1520,7 +1520,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "scengine"
+	base_id = "scengine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1742,7 +1742,7 @@
 "Rz" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "scbridge"
+	base_id = "scbridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1871,13 +1871,13 @@
 	dir = 4;
 	pixel_y = 9;
 	pixel_x = -23;
-	id = "thefunny"
+	base_id = "thefunny"
 	},
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_y = -6;
 	pixel_x = -23;
-	id = "intelwindow";
+	base_id = "intelwindow";
 	name = "Window Shutters"
 	},
 /obj/structure/safe/floor{
@@ -1941,7 +1941,7 @@
 /area/ship/engineering)
 "Xc" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "intelfucky"
+	base_id = "intelfucky"
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4

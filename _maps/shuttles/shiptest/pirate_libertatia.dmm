@@ -16,14 +16,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
 	dir = 4;
-	id = "pirateshutters";
+	base_id = "pirateshutters";
 	name = "Window Lockdown";
 	pixel_x = -25;
 	pixel_y = -5
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "piratecargo";
+	base_id = "piratecargo";
 	name = "Blast Door Control";
 	pixel_x = -25;
 	pixel_y = 5
@@ -83,13 +83,13 @@
 	pixel_y = 10
 	},
 /obj/machinery/button/massdriver{
-	id = "pirate_porttube";
+	base_id = "pirate_porttube";
 	name = "port launch tube button";
 	pixel_x = -5;
 	pixel_y = -5
 	},
 /obj/machinery/button/massdriver{
-	id = "pirate_stbdtube";
+	base_id = "pirate_stbdtube";
 	name = "starboard launch tube button";
 	pixel_x = 5;
 	pixel_y = -5
@@ -122,7 +122,7 @@
 	port_direction = 2
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "piratecargo";
+	base_id = "piratecargo";
 	name = "Cargo Bay"
 	},
 /turf/open/floor/engine/hull/interior,
@@ -171,7 +171,7 @@
 /area/ship/security)
 "fR" = (
 /obj/machinery/door/poddoor{
-	id = "pirate_porttube";
+	base_id = "pirate_porttube";
 	name = "Port Launch Tube"
 	},
 /obj/structure/fans/tiny,
@@ -202,7 +202,7 @@
 /area/ship/bridge)
 "kF" = (
 /obj/machinery/door/poddoor{
-	id = "pirate_stbdtube";
+	base_id = "pirate_stbdtube";
 	name = "Starboard Launch Tube"
 	},
 /obj/structure/fans/tiny,
@@ -211,7 +211,7 @@
 "kK" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "pirateshutters";
+	base_id = "pirateshutters";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -220,7 +220,7 @@
 "mg" = (
 /obj/machinery/mass_driver{
 	dir = 1;
-	id = "pirate_porttube"
+	base_id = "pirate_porttube"
 	},
 /obj/effect/turf_decal/box,
 /obj/structure/sign/warning/deathsposal{
@@ -236,7 +236,7 @@
 	},
 /obj/machinery/door/window/westleft,
 /obj/machinery/button/massdriver{
-	id = "pirate_porttube";
+	base_id = "pirate_porttube";
 	name = "port launch tube button";
 	pixel_x = 15;
 	pixel_y = 26
@@ -329,7 +329,7 @@
 	},
 /obj/machinery/door/window/eastright,
 /obj/machinery/button/massdriver{
-	id = "pirate_stbdtube";
+	base_id = "pirate_stbdtube";
 	name = "starboard launch tube button";
 	pixel_x = -15;
 	pixel_y = 26
@@ -348,7 +348,7 @@
 "nQ" = (
 /obj/machinery/mass_driver{
 	dir = 1;
-	id = "pirate_stbdtube"
+	base_id = "pirate_stbdtube"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -364,7 +364,7 @@
 "nW" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "pirateshutters";
+	base_id = "pirateshutters";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -782,7 +782,7 @@
 "za" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "pirateshutters";
+	base_id = "pirateshutters";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1226,7 +1226,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "piratecargo";
+	base_id = "piratecargo";
 	name = "Blast Door Control";
 	pixel_x = -25;
 	pixel_y = -10
@@ -1257,7 +1257,7 @@
 "KS" = (
 /obj/machinery/button/door{
 	dir = 8;
-	id = "piratecargo";
+	base_id = "piratecargo";
 	name = "Blast Door Control";
 	pixel_x = 25;
 	pixel_y = -10
@@ -1666,7 +1666,7 @@
 /area/ship/cargo)
 "TP" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "piratecargo";
+	base_id = "piratecargo";
 	name = "Cargo Bay"
 	},
 /obj/structure/fans/tiny,
@@ -1857,7 +1857,7 @@
 "XB" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "pirateshutters";
+	base_id = "pirateshutters";
 	name = "Blast Shutters"
 	},
 /obj/structure/window/plasma/reinforced/plastitanium,

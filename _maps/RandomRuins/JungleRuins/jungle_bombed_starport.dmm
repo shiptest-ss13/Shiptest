@@ -788,7 +788,7 @@
 	pixel_y = 32
 	},
 /obj/machinery/button/door{
-	id = "jbs3";
+	base_id = "jbs3";
 	name = "Fuel Stores";
 	pixel_x = -24;
 	pixel_y = 22
@@ -2352,7 +2352,7 @@
 "qJ" = (
 /obj/structure/spacevine,
 /obj/machinery/door/poddoor{
-	id = "jbs1"
+	base_id = "jbs1"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport)
@@ -3137,7 +3137,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "jbs3"
+	base_id = "jbs3"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/plasma)
@@ -3531,7 +3531,7 @@
 "ya" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "jbs2"
+	base_id = "jbs2"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/starport/tower)
@@ -4503,7 +4503,7 @@
 /area/ruin/jungle/starport)
 "Ft" = (
 /obj/machinery/door/poddoor{
-	id = "jbs3"
+	base_id = "jbs3"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/plasma)
@@ -7017,7 +7017,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor{
-	id = "jbs2"
+	base_id = "jbs2"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/jungle/starport/tower)
@@ -7138,7 +7138,7 @@
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_x = -6;
-	id = "jbs2";
+	base_id = "jbs2";
 	name = "Emergency Blast Shutters"
 	},
 /turf/open/floor/mineral/plastitanium/red,

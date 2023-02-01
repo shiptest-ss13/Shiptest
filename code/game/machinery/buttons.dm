@@ -5,10 +5,10 @@
 	icon_state = "doorctrl"
 	var/skin = "doorctrl"
 	power_channel = AREA_USAGE_ENVIRON
-	var/obj/item/assembly/device
+	var/obj/item/assembly/control/device
 	var/obj/item/electronics/airlock/board
 	var/device_type = null
-	var/id = null
+	var/base_id = null
 	var/initialized_button = 0
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 70)
 	use_power = IDLE_POWER_USE
@@ -122,15 +122,10 @@
 	return attack_ai(user)
 
 /obj/machinery/button/proc/setup_device()
-	if(id && istype(device, /obj/item/assembly/control))
+	if(base_id && istype(device, /obj/item/assembly/control))
 		var/obj/item/assembly/control/A = device
-		A.id = id
+		A.base_id = base_id
 	initialized_button = 1
-
-/obj/machinery/button/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	if(id && istype(device, /obj/item/assembly/control))
-		var/obj/item/assembly/control/A = device
-		A.id = "[REF(port)][id]"
 
 /obj/machinery/button/attack_hand(mob/user)
 	. = ..()
@@ -201,31 +196,32 @@
 			var/obj/item/assembly/control/C = new(src)
 			C.sync_doors = sync_doors
 			device = C
+		device.port_id = port_id
 	..()
 
 /obj/machinery/button/door/incinerator_vent_toxmix
 	name = "Combustion Chamber Vent control"
-	id = INCINERATOR_TOXMIX_VENT
+	base_id = INCINERATOR_TOXMIX_VENT
 	req_access = list(ACCESS_TOX)
 
 /obj/machinery/button/door/incinerator_vent_atmos_main
 	name = "turbine vent control"
-	id = INCINERATOR_ATMOS_MAINVENT
+	base_id = INCINERATOR_ATMOS_MAINVENT
 	req_one_access = list(ACCESS_ATMOSPHERICS, ACCESS_MAINT_TUNNELS)
 
 /obj/machinery/button/door/incinerator_vent_atmos_aux
 	name = "Combustion Chamber Vent control"
-	id = INCINERATOR_ATMOS_AUXVENT
+	base_id = INCINERATOR_ATMOS_AUXVENT
 	req_one_access = list(ACCESS_ATMOSPHERICS, ACCESS_MAINT_TUNNELS)
 
 /obj/machinery/button/door/incinerator_vent_syndicatelava_main
 	name = "turbine vent control"
-	id = INCINERATOR_SYNDICATELAVA_MAINVENT
+	base_id = INCINERATOR_SYNDICATELAVA_MAINVENT
 	req_access = list(ACCESS_SYNDICATE)
 
 /obj/machinery/button/door/incinerator_vent_syndicatelava_aux
 	name = "Combustion Chamber Vent control"
-	id = INCINERATOR_SYNDICATELAVA_AUXVENT
+	base_id = INCINERATOR_SYNDICATELAVA_AUXVENT
 	req_access = list(ACCESS_SYNDICATE)
 
 /obj/machinery/button/massdriver
@@ -253,13 +249,13 @@
 	desc = "A remote control switch for the combustion chamber's igniter."
 
 /obj/machinery/button/ignition/incinerator/toxmix
-	id = INCINERATOR_TOXMIX_IGNITER
+	base_id = INCINERATOR_TOXMIX_IGNITER
 
 /obj/machinery/button/ignition/incinerator/atmos
-	id = INCINERATOR_ATMOS_IGNITER
+	base_id = INCINERATOR_ATMOS_IGNITER
 
 /obj/machinery/button/ignition/incinerator/syndicatelava
-	id = INCINERATOR_SYNDICATELAVA_IGNITER
+	base_id = INCINERATOR_SYNDICATELAVA_IGNITER
 
 /obj/machinery/button/flasher
 	name = "flasher button"
@@ -278,7 +274,7 @@
 	skin = "launcher"
 	device_type = /obj/item/assembly/control/crematorium
 	req_access = list()
-	id = 1
+	base_id = 1
 
 /obj/machinery/button/crematorium/indestructible
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
@@ -297,7 +293,7 @@
 	skin = "launcher"
 	device_type = /obj/item/assembly/control/elevator
 	req_access = list()
-	id = 1
+	base_id = 1
 
 /obj/machinery/button/elevator/examine(mob/user)
 	. = ..()
@@ -311,4 +307,4 @@
 	skin = "launcher"
 	device_type = /obj/item/assembly/control/shieldwallgen
 	req_access = list()
-	id = 1
+	base_id = 1

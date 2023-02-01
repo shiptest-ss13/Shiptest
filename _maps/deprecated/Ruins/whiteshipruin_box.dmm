@@ -30,7 +30,7 @@
 "g" = (
 /obj/machinery/computer/pod{
 	dir = 8;
-	id = "oldship_ruin_gun"
+	base_id = "oldship_ruin_gun"
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
@@ -84,13 +84,13 @@
 "p" = (
 /obj/machinery/mass_driver{
 	dir = 4;
-	id = "oldship_ruin_gun"
+	base_id = "oldship_ruin_gun"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/whiteship/box)
 "q" = (
 /obj/machinery/door/poddoor{
-	id = "oldship_ruin_gun";
+	base_id = "oldship_ruin_gun";
 	name = "Pod Bay Door"
 	},
 /turf/open/floor/plating,

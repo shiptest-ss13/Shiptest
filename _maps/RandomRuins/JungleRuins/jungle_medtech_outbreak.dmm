@@ -230,13 +230,13 @@
 /obj/machinery/light/broken,
 /obj/machinery/button/door{
 	desc = "A door remote bast door switch.";
-	id = "lablock2";
+	base_id = "lablock2";
 	name = "Lab #2 lockdown";
 	pixel_x = 7;
 	pixel_y = -23
 	},
 /obj/machinery/button/door{
-	id = "office_bolts";
+	base_id = "office_bolts";
 	name = "Office door bolts";
 	normaldoorcontrol = 1;
 	pixel_y = -33;
@@ -247,7 +247,7 @@
 	},
 /obj/machinery/button/door{
 	desc = "A door remote bast door switch.";
-	id = "lablock1";
+	base_id = "lablock1";
 	name = "Lab #1 lockdown";
 	pixel_x = -7;
 	pixel_y = -23
@@ -452,7 +452,7 @@
 	name = "High Security Chem-lab #1"
 	},
 /obj/machinery/door/poddoor{
-	id = "lablock1"
+	base_id = "lablock1"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -712,7 +712,7 @@
 	name = "High Security Chem-lab #2"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "lablock2"
+	base_id = "lablock2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1299,7 +1299,7 @@
 /area/ship/hallway)
 "uS" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "chemdoors";
+	base_id = "chemdoors";
 	name = "MedTech Chemical Manufacturing Facility Shutters"
 	},
 /turf/open/floor/plating,
@@ -2531,7 +2531,7 @@
 	},
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/machinery/door/poddoor{
-	id = "lablock1"
+	base_id = "lablock1"
 	},
 /obj/machinery/door/airlock/virology/glass{
 	name = "High Security Chem-lab #1"
@@ -2675,7 +2675,7 @@
 	name = "High Security Chem-lab #2"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "lablock2"
+	base_id = "lablock2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2696,7 +2696,7 @@
 	name = "High Security Chem-lab #1"
 	},
 /obj/machinery/door/poddoor{
-	id = "lablock1"
+	base_id = "lablock1"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -3141,7 +3141,7 @@
 	name = "High Security Chem-lab #2"
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "lablock2"
+	base_id = "lablock2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3163,7 +3163,7 @@
 	dir = 9
 	},
 /obj/machinery/door/poddoor{
-	id = "lablock1"
+	base_id = "lablock1"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -3172,7 +3172,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "chemdoors";
+	base_id = "chemdoors";
 	name = "door bolts";
 	normaldoorcontrol = 1;
 	pixel_x = -26;
@@ -3264,7 +3264,7 @@
 	},
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/machinery/door/poddoor/preopen{
-	id = "lablock2"
+	base_id = "lablock2"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)

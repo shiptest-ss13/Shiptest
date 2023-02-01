@@ -801,7 +801,7 @@
 /area/awaymission/cabin/snowforest)
 "cS" = (
 /obj/machinery/button/door{
-	id = "garage_cabin";
+	base_id = "garage_cabin";
 	pixel_y = 25
 	},
 /turf/open/floor/plating,
@@ -1222,7 +1222,7 @@
 /area/awaymission/cabin)
 "eq" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "garage_cabin";
+	base_id = "garage_cabin";
 	name = "Garage Door"
 	},
 /obj/structure/fans/tiny,
@@ -1366,7 +1366,7 @@
 /area/awaymission/cabin/snowforest)
 "eK" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "lumbermill"
+	base_id = "lumbermill"
 	},
 /obj/effect/turf_decal/industrial/fire,
 /turf/open/floor/plating/snowed/temperatre,
@@ -1411,7 +1411,7 @@
 "eR" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "lumbermill"
+	base_id = "lumbermill"
 	},
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /turf/open/floor/plating/snowed/temperatre,
@@ -1422,7 +1422,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "lumbermill"
+	base_id = "lumbermill"
 	},
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /obj/effect/decal/cleanable/blood/old,
@@ -1679,7 +1679,7 @@
 	color = "#000000";
 	desc = "Examining things is a good idea after all.";
 	height = 1;
-	id = "TheRealSecretPlace";
+	base_id = "TheRealSecretPlace";
 	name = "\improper Tear In The Fabric of Reality"
 	},
 /obj/structure/plaque/static_plaque/golden{
@@ -2095,7 +2095,7 @@
 	color = "#000000";
 	desc = "It is time to bust out of this joint";
 	height = 1;
-	id = "whatkindofnerdusesmapmakertocheattheirwaytoateleportrune";
+	base_id = "whatkindofnerdusesmapmakertocheattheirwaytoateleportrune";
 	mouse_opacity = 0;
 	name = "\improper secret escape route"
 	},
@@ -2497,7 +2497,7 @@
 	desc = "EXAMINING THAT WAS A MISTAKE!";
 	height = 0;
 	icon_state = "7";
-	id = "TheRealSecretPlace";
+	base_id = "TheRealSecretPlace";
 	light_range = 10;
 	mouse_opacity = 0;
 	name = "\improper void"
@@ -3101,7 +3101,7 @@
 	name = "frozen window"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "fightingcommunity10"
+	base_id = "fightingcommunity10"
 	},
 /turf/open/floor/plating,
 /area/awaymission/cabin)
@@ -3110,7 +3110,7 @@
 	name = "frozen window"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "fightingcommunity20"
+	base_id = "fightingcommunity20"
 	},
 /turf/open/floor/plating,
 /area/awaymission/cabin)
@@ -3119,7 +3119,7 @@
 	name = "frozen window"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "fightingcommunity30"
+	base_id = "fightingcommunity30"
 	},
 /turf/open/floor/plating,
 /area/awaymission/cabin)
@@ -3128,7 +3128,7 @@
 	name = "frozen window"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "fightingcommunity40"
+	base_id = "fightingcommunity40"
 	},
 /turf/open/floor/plating,
 /area/awaymission/cabin)
@@ -3137,7 +3137,7 @@
 	name = "frozen window"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "fightingcommunity50"
+	base_id = "fightingcommunity50"
 	},
 /turf/open/floor/plating,
 /area/awaymission/cabin)
@@ -3146,19 +3146,19 @@
 	name = "frozen window"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "fightingcommunity60"
+	base_id = "fightingcommunity60"
 	},
 /turf/open/floor/plating,
 /area/awaymission/cabin)
 "jf" = (
 /obj/machinery/button/door{
-	id = "fightingcommunity60";
+	base_id = "fightingcommunity60";
 	name = "shutter button";
 	pixel_x = -8;
 	pixel_y = 30
 	},
 /obj/machinery/button/door{
-	id = "WheresTheSyndiBalloon";
+	base_id = "WheresTheSyndiBalloon";
 	name = "airlock button";
 	pixel_x = 8;
 	pixel_y = 30
@@ -3167,7 +3167,7 @@
 /area/awaymission/cabin)
 "jg" = (
 /obj/machinery/button/door{
-	id = "snowdinbutworse2";
+	base_id = "snowdinbutworse2";
 	name = "airlock button";
 	pixel_y = -27
 	},
@@ -3175,7 +3175,7 @@
 /area/awaymission/cabin)
 "jh" = (
 /obj/machinery/button/door{
-	id = "snowdinbutworse1";
+	base_id = "snowdinbutworse1";
 	name = "airlock button";
 	pixel_y = -27
 	},
@@ -3183,7 +3183,7 @@
 /area/awaymission/cabin)
 "ji" = (
 /obj/machinery/button/door{
-	id = "snowdinbutworse3";
+	base_id = "snowdinbutworse3";
 	name = "airlock button";
 	pixel_y = -27
 	},
@@ -3191,7 +3191,7 @@
 /area/awaymission/cabin)
 "jj" = (
 /obj/machinery/button/door{
-	id = "snowdinbutworse4";
+	base_id = "snowdinbutworse4";
 	name = "airlock button";
 	pixel_y = -27
 	},
@@ -3199,7 +3199,7 @@
 /area/awaymission/cabin)
 "jk" = (
 /obj/machinery/button/door{
-	id = "snowdinbutworse5";
+	base_id = "snowdinbutworse5";
 	name = "airlock button";
 	pixel_y = -27
 	},
@@ -3207,7 +3207,7 @@
 /area/awaymission/cabin)
 "jl" = (
 /obj/machinery/button/door{
-	id = "fightingcommunity10";
+	base_id = "fightingcommunity10";
 	name = "shutter button";
 	pixel_x = -28;
 	pixel_y = 30
@@ -3216,7 +3216,7 @@
 /area/awaymission/cabin)
 "jm" = (
 /obj/machinery/button/door{
-	id = "fightingcommunity20";
+	base_id = "fightingcommunity20";
 	name = "shutter button";
 	pixel_x = 28;
 	pixel_y = 30
@@ -3225,7 +3225,7 @@
 /area/awaymission/cabin)
 "jn" = (
 /obj/machinery/button/door{
-	id = "fightingcommunity30";
+	base_id = "fightingcommunity30";
 	name = "shutter button";
 	pixel_x = -28;
 	pixel_y = 30
@@ -3234,7 +3234,7 @@
 /area/awaymission/cabin)
 "jo" = (
 /obj/machinery/button/door{
-	id = "fightingcommunity40";
+	base_id = "fightingcommunity40";
 	name = "shutter button";
 	pixel_x = 28;
 	pixel_y = 30
@@ -3243,7 +3243,7 @@
 /area/awaymission/cabin)
 "jp" = (
 /obj/machinery/button/door{
-	id = "fightingcommunity50";
+	base_id = "fightingcommunity50";
 	name = "shutter button";
 	pixel_x = -28;
 	pixel_y = 30
@@ -3985,7 +3985,7 @@
 	desc = "Get me out of this boring room.";
 	height = 1;
 	icon_state = "hierophant";
-	id = "GETMEOUTOFHEREYOUFUCKS";
+	base_id = "GETMEOUTOFHEREYOUFUCKS";
 	name = "\improper Return Rune"
 	},
 /turf/open/floor/plating/asteroid/snow,
@@ -4236,7 +4236,7 @@
 "lC" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "lumbermill"
+	base_id = "lumbermill"
 	},
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /obj/structure/barricade/wooden/snowed,
@@ -4246,7 +4246,7 @@
 /obj/structure/ladder/unbreakable/rune{
 	desc = "I want out of this spookfest.";
 	icon_state = "hierophant";
-	id = "GETMEOUTOFHEREYOUFUCKS";
+	base_id = "GETMEOUTOFHEREYOUFUCKS";
 	name = "\improper Emergency Escape Rune"
 	},
 /turf/open/floor/plating/asteroid/snow,
@@ -4757,7 +4757,7 @@
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
 	desc = "ONE HUNDRED AND TEN PERCENT REAL.";
-	id = "whatkindofnerdusesmapmakertocheattheirwaytoateleportrune";
+	base_id = "whatkindofnerdusesmapmakertocheattheirwaytoateleportrune";
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/mineral/plastitanium/red{
@@ -4957,7 +4957,7 @@
 	desc = "Finally.";
 	height = 0;
 	icon_state = "ladder10";
-	id = "whyisitcalledladder10andnotladder1";
+	base_id = "whyisitcalledladder10andnotladder1";
 	name = "Freedom"
 	},
 /obj/effect/light_emitter{
@@ -5000,7 +5000,7 @@
 	height = 1;
 	icon = 'icons/obj/structures.dmi';
 	icon_state = "ladder01";
-	id = "dealwentoffwithoutahitchBRO";
+	base_id = "dealwentoffwithoutahitchBRO";
 	name = "Grate";
 	pixel_y = -10
 	},
@@ -5061,7 +5061,7 @@
 	desc = "Finally.";
 	height = 1;
 	icon_state = "";
-	id = "whyisitcalledladder10andnotladder1";
+	base_id = "whyisitcalledladder10andnotladder1";
 	mouse_opacity = 0;
 	name = ""
 	},
@@ -5073,7 +5073,7 @@
 	desc = "Yeah, I'll just go back to jail instead of this. It's not like there is an escape out of here, right?";
 	height = 0;
 	icon_state = "ladder10";
-	id = "dealwentoffwithoutahitchBRO";
+	base_id = "dealwentoffwithoutahitchBRO";
 	name = "Sewer Ladder"
 	},
 /turf/open/indestructible/hoteltile,

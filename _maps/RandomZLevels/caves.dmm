@@ -238,7 +238,7 @@
 "aM" = (
 /obj/structure/ladder/unbreakable{
 	height = 1;
-	id = "minedeep"
+	base_id = "minedeep"
 	},
 /turf/open/floor/plating{
 	initial_gas_mix = "n2=23;o2=14"
@@ -264,7 +264,7 @@
 "aP" = (
 /obj/structure/ladder/unbreakable{
 	height = 1;
-	id = "dungeon";
+	base_id = "dungeon";
 	name = "rusty ladder"
 	},
 /turf/open/floor/engine/cult{
@@ -324,7 +324,7 @@
 /area/awaymission/caves/BMP_asteroid/level_three)
 "aX" = (
 /obj/effect/bump_teleporter{
-	id = "minedeepdown";
+	base_id = "minedeepdown";
 	id_target = "minedeepup"
 	},
 /turf/open/floor/plating{
@@ -497,7 +497,7 @@
 "bF" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
-	id = "dungeon";
+	base_id = "dungeon";
 	name = "rusty ladder"
 	},
 /turf/open/floor/engine/cult{
@@ -583,7 +583,7 @@
 /area/awaymission/caves/BMP_asteroid/level_two)
 "bU" = (
 /obj/effect/bump_teleporter{
-	id = "minedeepdown";
+	base_id = "minedeepdown";
 	id_target = "minedeepup"
 	},
 /turf/open/floor/plating{
@@ -660,7 +660,7 @@
 "ce" = (
 /obj/structure/ladder/unbreakable{
 	height = 1;
-	id = "mineintro"
+	base_id = "mineintro"
 	},
 /turf/open/floor/plating{
 	initial_gas_mix = "n2=23;o2=14"
@@ -1021,7 +1021,7 @@
 /area/awaymission/caves/research)
 "dg" = (
 /obj/effect/bump_teleporter{
-	id = "mineintrodown";
+	base_id = "mineintrodown";
 	id_target = "mineintroup"
 	},
 /turf/open/floor/plating{
@@ -1042,7 +1042,7 @@
 "dj" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
-	id = "minedeep"
+	base_id = "minedeep"
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/caves/BMP_asteroid/level_two)
@@ -1699,7 +1699,7 @@
 /area/awaymission/caves/BMP_asteroid/level_two)
 "fx" = (
 /obj/effect/bump_teleporter{
-	id = "mineintroup";
+	base_id = "mineintroup";
 	id_target = "mineintrodown"
 	},
 /turf/open/floor/plating{
@@ -1865,7 +1865,7 @@
 "ga" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
-	id = "mineintro"
+	base_id = "mineintro"
 	},
 /turf/open/floor/plating{
 	initial_gas_mix = "n2=23;o2=14"

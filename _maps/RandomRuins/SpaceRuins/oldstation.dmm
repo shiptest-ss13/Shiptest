@@ -57,14 +57,14 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	base_id = "ancient"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/comm)
 "am" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/middle,
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	base_id = "ancient"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/comm)
@@ -73,7 +73,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	base_id = "ancient"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/comm)
@@ -233,7 +233,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/machinery/button/door{
-	id = "ancient";
+	base_id = "ancient";
 	name = "Charlie Station Lockdown Button"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1019,7 +1019,7 @@
 /area/ruin/space/has_grav/ancientstation/deltaai)
 "cC" = (
 /obj/machinery/conveyor{
-	id = "beta"
+	base_id = "beta"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/mining)
@@ -1064,7 +1064,7 @@
 /area/ruin/space/has_grav/ancientstation/mining)
 "cI" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "beta";
+	base_id = "beta";
 	pixel_x = 9
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1443,7 +1443,7 @@
 	name = "Beta Station Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	base_id = "ancient"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -2035,7 +2035,7 @@
 	name = "Beta Station Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	base_id = "ancient"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -2172,7 +2172,7 @@
 	name = "Delta Station Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	base_id = "ancient"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -2528,7 +2528,7 @@
 "gb" = (
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "beta"
+	base_id = "beta"
 	},
 /obj/structure/plasticflaps,
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -2587,7 +2587,7 @@
 "gg" = (
 /obj/machinery/conveyor{
 	dir = 10;
-	id = "beta"
+	base_id = "beta"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/mining)
@@ -4349,7 +4349,7 @@
 	name = "Engineering"
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	base_id = "ancient"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -4381,7 +4381,7 @@
 "jr" = (
 /obj/machinery/door/airlock/security,
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	base_id = "ancient"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
@@ -4576,7 +4576,7 @@
 /area/ruin/space/has_grav/ancientstation)
 "jN" = (
 /obj/machinery/door/poddoor{
-	id = "proto"
+	base_id = "proto"
 	},
 /obj/machinery/door/window/eastleft,
 /turf/open/floor/plasteel/white,
@@ -4714,7 +4714,7 @@
 /area/ruin/space/has_grav/ancientstation/proto)
 "ke" = (
 /obj/machinery/door/poddoor{
-	id = "proto"
+	base_id = "proto"
 	},
 /obj/machinery/door/window/westright,
 /turf/open/floor/plasteel/white,
@@ -4875,7 +4875,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "proto"
+	base_id = "proto"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
@@ -4902,7 +4902,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "proto"
+	base_id = "proto"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
@@ -5009,7 +5009,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	base_id = "ancient"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -5282,7 +5282,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	base_id = "ancient"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -5522,14 +5522,14 @@
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "lO" = (
 /obj/machinery/door/poddoor{
-	id = "proto"
+	base_id = "proto"
 	},
 /obj/machinery/door/window/eastright,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
 "lP" = (
 /obj/machinery/door/poddoor{
-	id = "proto"
+	base_id = "proto"
 	},
 /obj/machinery/door/window/westleft,
 /turf/open/floor/plasteel/white,
@@ -6547,7 +6547,7 @@
 	},
 /obj/machinery/power/solar_control{
 	dir = 1;
-	id = "aftport";
+	base_id = "aftport";
 	name = "Station Solar Control"
 	},
 /obj/structure/cable/yellow,
@@ -7206,7 +7206,7 @@
 	name = "Delta Station Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient"
+	base_id = "ancient"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -8207,7 +8207,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "proto";
+	base_id = "proto";
 	name = "Prototype Lab Lockdown";
 	pixel_x = 28
 	},

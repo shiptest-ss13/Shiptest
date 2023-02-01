@@ -5,28 +5,30 @@
 //The helper is called "doordeath" in the mapper.
 
 /datum/component/poddoor_on_death
-	var/door_id = ""
+	var/base_id = ""
 
-/datum/component/poddoor_on_death/Initialize(door_id)
-	src.door_id = door_id
+/datum/component/poddoor_on_death/Initialize(base_id)
+	src.base_id = base_id
 
 /datum/component/poddoor_on_death/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_MOB_DEATH, .proc/open_doors)
 
 /datum/component/poddoor_on_death/proc/open_doors()
-	for(var/obj/machinery/door/poddoor/D in GLOB.machines)
-		if(D.id == door_id)
-			D.open()
+	for(var/obj/machinery/door/poddoor/blastdoor in GLOB.machines)
+		if(blastdoor.port_id != "GLOBAL")
+			continue
+		if(blastdoor.base_id == base_id)
+			blastdoor.open()
 
 /obj/effect/mapping_helpers/component_injector/doordeath
 	name = "Monster Closet Helper"
 	icon = 'icons/obj/balloons.dmi'
 	icon_state = "syndballoon"
 	component_type = /datum/component/poddoor_on_death
-	var/door_id
+	var/base_id
 	target_type = /mob/living/simple_animal
 
 /obj/effect/mapping_helpers/component_injector/doordeath/build_args()
-	if(!istext(door_id))
+	if(!istext(base_id))
 		CRASH("Invalid doorid passed")
-	return list(component_type,door_id)
+	return list(component_type,base_id)

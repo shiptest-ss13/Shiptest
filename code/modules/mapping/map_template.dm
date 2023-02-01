@@ -6,6 +6,10 @@
 	var/loaded = 0 // Times loaded this round
 	var/datum/parsed_map/cached_map
 	var/keep_cached_map = FALSE
+	var/station_id = null // used to override the root id when generating
+
+	///Default area associated with the map template
+	var/default_area
 
 	///if true, turfs loaded from this template are placed on top of the turfs already there, defaults to TRUE
 	var/should_place_on_top = TRUE
@@ -17,13 +21,21 @@
 	var/list/created_atoms = list()
 	//make sure this list is accounted for/cleared if you request it from ssatoms!
 
+	///If true, any openspace turfs above the template will be replaced with ceiling_turf when loading. Should probably be FALSE for lower levels of multi-z ruins.
+	var/has_ceiling = FALSE
+	///What turf to replace openspace with when has_ceiling is true
+	var/turf/ceiling_turf = /turf/open/floor/plating
+	///What baseturfs to set when replacing openspace when has_ceiling is true
+	var/list/ceiling_baseturfs = list()
+
 /datum/map_template/New(path = null, rename = null, cache = FALSE)
 	if(path)
 		mappath = path
 	if(mappath)
-		INVOKE_ASYNC(src, .proc/preload_size, mappath, cache)
+		preload_size(mappath, cache)
 	if(rename)
 		name = rename
+	ceiling_baseturfs.Insert(1, /turf/baseturf_bottom)
 
 /datum/map_template/proc/preload_size(path, cache = FALSE)
 	var/datum/parsed_map/parsed = new(file(path))
@@ -35,14 +47,15 @@
 			cached_map = parsed
 	return bounds
 
-/datum/map_template/proc/initTemplateBounds(list/bounds, init_atmos = TRUE)
+/datum/map_template/proc/initTemplateBounds(list/bounds)
 	if (!bounds) //something went wrong
 		stack_trace("[name] template failed to initialize correctly!")
 		return
 
 	var/list/obj/machinery/atmospherics/atmos_machines = list()
 	var/list/obj/structure/cable/cables = list()
-	var/list/atom/atoms = list()
+	var/list/atom/movable/movables = list()
+	var/list/obj/docking_port/stationary/ports = list()
 	var/list/area/areas = list()
 
 	var/list/turfs = block(
@@ -57,49 +70,58 @@
 			bounds[MAP_MAXZ]
 			)
 		)
-	for(var/L in turfs)
-		var/turf/B = L
-		areas |= B.loc
-		for(var/A in B)
-			atoms += A
-			if(istype(A, /obj/structure/cable))
-				cables += A
-				continue
-			if(istype(A, /obj/machinery/atmospherics))
-				atmos_machines += A
+	for(var/turf/current_turf as anything in turfs)
+		var/area/current_turfs_area = current_turf.loc
+		areas |= current_turfs_area
+		if(!SSatoms.initialized)
+			continue
 
+		for(var/movable_in_turf in current_turf)
+			if(istype(movable_in_turf, /obj/docking_port/mobile))
+				continue // mobile docking ports need to be initialized after their template has finished loading, to ensure that their bounds are setup
+			movables += movable_in_turf
+			if(istype(movable_in_turf, /obj/structure/cable))
+				cables += movable_in_turf
+				continue
+			if(istype(movable_in_turf, /obj/machinery/atmospherics))
+				atmos_machines += movable_in_turf
+			if(istype(movable_in_turf, /obj/docking_port/stationary))
+				ports += movable_in_turf
+
+	// Not sure if there is some importance here to make sure the area is in z
+	// first or not.  Its defined In Initialize yet its run first in templates
+	// BEFORE so... hummm
 	SSmapping.reg_in_areas_in_z(areas)
 	if(!SSatoms.initialized)
 		return
 
-	SSatoms.InitializeAtoms(areas + turfs + atoms, returns_created_atoms ? created_atoms : null)
+	SSatoms.InitializeAtoms(areas + turfs + movables, returns_created_atoms ? created_atoms : null)
+	for(var/turf/unlit as anything in turfs)
+		unlit.lighting_build_overlay()
+
 	// NOTE, now that Initialize and LateInitialize run correctly, do we really
 	// need these two below?
 	SSmachines.setup_template_powernets(cables)
 	SSair.setup_template_machinery(atmos_machines)
 
-	if(!init_atmos)
-		return
-
 	//calculate all turfs inside the border
 	var/list/template_and_bordering_turfs = block(
 		locate(
-			max(bounds[MAP_MINX]-2, 1),
-			max(bounds[MAP_MINY]-2, 1),
+			max(bounds[MAP_MINX]-1, 1),
+			max(bounds[MAP_MINY]-1, 1),
 			bounds[MAP_MINZ]
 			),
 		locate(
-			min(bounds[MAP_MAXX]+2, world.maxx),
-			min(bounds[MAP_MAXY]+2, world.maxy),
+			min(bounds[MAP_MAXX]+1, world.maxx),
+			min(bounds[MAP_MAXY]+1, world.maxy),
 			bounds[MAP_MAXZ]
 			)
 		)
 	for(var/turf/affected_turf as anything in template_and_bordering_turfs)
-		affected_turf.blocks_air = initial(affected_turf.blocks_air)
-		affected_turf.air_update_turf(TRUE)
+		affected_turf.air_update_turf(TRUE, TRUE)
 		affected_turf.levelupdate()
 
-/datum/map_template/proc/load_new_z()
+/datum/map_template/proc/load_new_z(secret = FALSE)
 	var/x = round((world.maxx - width) * 0.5) + 1
 	var/y = round((world.maxy - height) * 0.5) + 1
 
@@ -122,8 +144,6 @@
 	if(!bounds)
 		return FALSE
 
-	repopulate_sorted_areas()
-
 	//initialize things that are normally initialized after map load
 	initTemplateBounds(bounds)
 	smooth_zlevel(world.maxz)
@@ -131,7 +151,7 @@
 
 	return mapzone
 
-/datum/map_template/proc/load(turf/T, centered = FALSE, init_atmos = TRUE)
+/datum/map_template/proc/load(turf/T, centered = FALSE)
 	if(centered)
 		T = locate(T.x - round(width/2) , T.y - round(height/2) , T.z)
 	if(!T)
@@ -141,11 +161,9 @@
 	if(T.y+height > world.maxy)
 		return
 
-	var/list/border = block(locate(max(T.x-1, 1),			max(T.y-1, 1),			 T.z),
-							locate(min(T.x+width+1, world.maxx),	min(T.y+height+1, world.maxy), T.z))
-
+	var/list/border = block(locate(max(T.x-1, 1), max(T.y-1, 1),  T.z),
+							locate(min(T.x+width+1, world.maxx), min(T.y+height+1, world.maxy), T.z))
 	for(var/turf/turf_to_disable as anything in border)
-		turf_to_disable.blocks_air = TRUE
 		turf_to_disable.set_sleeping(TRUE)
 
 	// Accept cached maps, but don't save them automatically - we don't want
@@ -156,6 +174,7 @@
 	var/list/turf_blacklist = list()
 	update_blacklist(T, turf_blacklist)
 
+	UNSETEMPTY(turf_blacklist)
 	parsed.turf_blacklist = turf_blacklist
 	if(!parsed.load(T.x, T.y, T.z, cropMap=TRUE, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop=should_place_on_top))
 		return
@@ -163,11 +182,8 @@
 	if(!bounds)
 		return
 
-	if(!SSmapping.loading_ruins) //Will be done manually during mapping ss init
-		repopulate_sorted_areas()
-
 	//initialize things that are normally initialized after map load
-	initTemplateBounds(bounds, init_atmos)
+	initTemplateBounds(bounds)
 
 	log_game("[name] loaded at [T.x],[T.y],[T.z]")
 	return bounds
@@ -186,9 +202,29 @@
 			placement = corner
 	return block(placement, locate(placement.x+width-1, placement.y+height-1, placement.z))
 
+/// Takes in a type path, locates an instance of that type in the cached map, and calculates its offset from the origin of the map, returns this offset in the form list(x, y).
+/datum/map_template/proc/discover_offset(obj/marker)
+	var/key
+	var/list/models = cached_map.grid_models
+	for(key in models)
+		if(findtext(models[key], "[marker]")) // Yay compile time checks
+			break // This works by assuming there will ever only be one mobile dock in a template at most
+
+	for(var/datum/grid_set/gset as anything in cached_map.gridSets)
+		var/ycrd = gset.ycrd
+		for(var/line in gset.gridLines)
+			var/xcrd = gset.xcrd
+			for(var/j in 1 to length(line) step cached_map.key_len)
+				if(key == copytext(line, j, j + cached_map.key_len))
+					return list(xcrd, ycrd)
+				++xcrd
+			--ycrd
 
 //for your ever biggening badminnery kevinz000
 //❤ - Cyberboss
-/proc/load_new_z_level(file, name)
-	var/datum/map_template/template = new(file, name)
-	template.load_new_z()
+/proc/load_new_z_level(file, name, secret)
+	var/datum/map_template/template = new(file, name, TRUE)
+	if(!template.cached_map || template.cached_map.check_for_errors())
+		return FALSE
+	template.load_new_z(secret)
+	return TRUE

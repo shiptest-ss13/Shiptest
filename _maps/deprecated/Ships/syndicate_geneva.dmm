@@ -86,7 +86,7 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/fifty,
 /obj/machinery/button/door{
-	id = "spitfireshutters";
+	base_id = "spitfireshutters";
 	pixel_x = 25
 	},
 /turf/open/floor/carpet/nanoweave/red,
@@ -126,7 +126,7 @@
 "bK" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+	base_id = "spitfireshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/hydroponics)
@@ -276,7 +276,7 @@
 "eh" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+	base_id = "spitfireshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -814,7 +814,7 @@
 	launch_status = 0
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+	base_id = "spitfireshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -826,7 +826,7 @@
 "nd" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+	base_id = "spitfireshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
@@ -1021,7 +1021,7 @@
 "rz" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+	base_id = "spitfireshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1232,7 +1232,7 @@
 "Ao" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+	base_id = "spitfireshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1296,7 +1296,7 @@
 /obj/machinery/power/shuttle/engine/liquid/oil,
 /obj/structure/window/reinforced/survival_pod,
 /obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+	base_id = "spitfireshutters"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1305,7 +1305,7 @@
 /obj/structure/window/reinforced/survival_pod,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+	base_id = "spitfireshutters"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1421,7 +1421,7 @@
 /obj/machinery/power/shuttle/engine/liquid/oil,
 /obj/structure/window/reinforced/survival_pod,
 /obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+	base_id = "spitfireshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1437,17 +1437,17 @@
 "Gv" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "syndie3doors"
+	base_id = "syndie3doors"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/library)
 "GF" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "syndie3doors"
+	base_id = "syndie3doors"
 	},
 /obj/machinery/button/door{
-	id = "syndie3doors";
+	base_id = "syndie3doors";
 	pixel_x = 25
 	},
 /turf/open/floor/plasteel/dark,
@@ -1455,17 +1455,17 @@
 "He" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "syndie4doors"
+	base_id = "syndie4doors"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Hg" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "syndie4doors"
+	base_id = "syndie4doors"
 	},
 /obj/machinery/button/door{
-	id = "syndie4doors";
+	base_id = "syndie4doors";
 	pixel_x = 25
 	},
 /turf/open/floor/plating,
@@ -1473,7 +1473,7 @@
 "Hi" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+	base_id = "spitfireshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/medical/surgery)
@@ -1888,7 +1888,7 @@
 "SR" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+	base_id = "spitfireshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -1948,7 +1948,7 @@
 "Ux" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "spitfireshutters"
+	base_id = "spitfireshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)

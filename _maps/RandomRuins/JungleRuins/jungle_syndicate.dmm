@@ -263,7 +263,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Base Gates";
-	id = "jsyngate"
+	base_id = "jsyngate"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -423,7 +423,7 @@
 "mt" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Base Gates";
-	id = "jsyngate"
+	base_id = "jsyngate"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -478,14 +478,14 @@
 /obj/machinery/button/door{
 	dir = 8;
 	name = "Base Gate Shutters";
-	id = "jsyngate";
+	base_id = "jsyngate";
 	pixel_x = 23;
 	pixel_y = 7
 	},
 /obj/machinery/button/door{
 	dir = 8;
 	name = "Gear Room Shutters";
-	id = "jsyngear";
+	base_id = "jsyngear";
 	pixel_x = 26;
 	pixel_y = -4
 	},
@@ -496,7 +496,7 @@
 /obj/machinery/button/door{
 	dir = 8;
 	name = "Window Shutters";
-	id = "jsynwin";
+	base_id = "jsynwin";
 	pixel_x = 35;
 	pixel_y = -4
 	},
@@ -531,7 +531,7 @@
 "rk" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Gear Room Shutters";
-	id = "jsyngear"
+	base_id = "jsyngear"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -582,7 +582,7 @@
 "tt" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Base Gates";
-	id = "jsyngate"
+	base_id = "jsyngate"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/syndifort/jerry)
@@ -604,7 +604,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Base Gates";
-	id = "jsyngate"
+	base_id = "jsyngate"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -705,14 +705,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Base Gates";
-	id = "jsyngate"
+	base_id = "jsyngate"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort/jerry)
 "wu" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Command Room Shutters";
-	id = "jsynbridge"
+	base_id = "jsynbridge"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -767,7 +767,7 @@
 "xC" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Command Room Shutters";
-	id = "jsynbridge"
+	base_id = "jsynbridge"
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 4
@@ -974,7 +974,7 @@
 "ER" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Window Shutters";
-	id = "jsynwin"
+	base_id = "jsynwin"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -982,7 +982,7 @@
 "ET" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Gear Room Shutters";
-	id = "jsyngear"
+	base_id = "jsyngear"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1232,7 +1232,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Window Shutters";
-	id = "jsynwin"
+	base_id = "jsynwin"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort)
@@ -1467,7 +1467,7 @@
 "Uc" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	name = "Base Gates";
-	id = "jsyngate"
+	base_id = "jsyngate"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/syndifort/jerry)

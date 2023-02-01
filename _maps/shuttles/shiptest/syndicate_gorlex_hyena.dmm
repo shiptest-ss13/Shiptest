@@ -74,7 +74,7 @@
 /area/ship/cargo)
 "bV" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "wreckerarmory";
+	base_id = "wreckerarmory";
 	name = "Security Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning,
@@ -117,7 +117,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "wreckerwindows";
+	base_id = "wreckerwindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -164,7 +164,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "wrecker_engine_stbd"
+	base_id = "wrecker_engine_stbd"
 	},
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
@@ -430,13 +430,13 @@
 /obj/item/circuitboard/machine/techfab/department/cargo,
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
-	id = "hyena_cargo";
+	base_id = "hyena_cargo";
 	pixel_x = -10;
 	pixel_y = -24
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "wreckercargobay";
+	base_id = "wreckercargobay";
 	name = "cargo bay doors";
 	pixel_y = -25
 	},
@@ -451,7 +451,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "wrecker_engine_port"
+	base_id = "wrecker_engine_port"
 	},
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
@@ -537,7 +537,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "wrecker_engine_stbd"
+	base_id = "wrecker_engine_stbd"
 	},
 /obj/machinery/door/window/eastright{
 	name = "Engine Access"
@@ -555,7 +555,7 @@
 "jt" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "wreckerwindows";
+	base_id = "wreckerwindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -627,7 +627,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "wrecker_engine_stbd"
+	base_id = "wrecker_engine_stbd"
 	},
 /obj/structure/window/reinforced/spawner/east,
 /turf/open/floor/plating,
@@ -654,7 +654,7 @@
 /obj/item/storage/belt/grenade,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = "wreckerarmory";
+	base_id = "wreckerarmory";
 	name = "armory shutters";
 	pixel_y = 25
 	},
@@ -745,7 +745,7 @@
 /area/ship/crew/dorm)
 "nx" = (
 /obj/machinery/button/door{
-	id = "wreckerarmory";
+	base_id = "wreckerarmory";
 	name = "armory shutters";
 	pixel_y = 25;
 	req_one_access_txt = "list(19)"
@@ -816,7 +816,7 @@
 "oz" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "wreckerwindows";
+	base_id = "wreckerwindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -947,7 +947,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "wrecker_engine_stbd";
+	base_id = "wrecker_engine_stbd";
 	name = "thruster doors";
 	pixel_x = 25
 	},
@@ -1055,12 +1055,12 @@
 /area/ship/cargo)
 "so" = (
 /obj/machinery/door/poddoor{
-	id = "wreckercargobay";
+	base_id = "wreckercargobay";
 	name = "Cargo Bay Exterior Blast Door"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "hyena_cargo";
+	base_id = "hyena_cargo";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -1072,7 +1072,7 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor{
-	id = "wreckercargobay";
+	base_id = "wreckercargobay";
 	name = "Cargo Bay Exterior Blast Door"
 	},
 /turf/open/floor/plating,
@@ -1275,7 +1275,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
 	dir = 8;
-	id = "wreckerwindows";
+	base_id = "wreckerwindows";
 	name = "Window Shutters";
 	pixel_x = -5;
 	pixel_y = 3
@@ -1702,7 +1702,7 @@
 /obj/effect/turf_decal/industrial/outline,
 /obj/machinery/button/door{
 	dir = 1;
-	id = "wrecker_engine_port";
+	base_id = "wrecker_engine_port";
 	name = "thruster doors";
 	pixel_y = -25
 	},
@@ -1794,7 +1794,7 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/poddoor/shutters{
-	id = "wreckerarmory";
+	base_id = "wreckerarmory";
 	name = "Security Shutters"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1952,7 +1952,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "wreckercargobay";
+	base_id = "wreckercargobay";
 	name = "cargo bay doors";
 	pixel_y = -25
 	},
@@ -1962,7 +1962,7 @@
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 1;
-	id = "hyena_cargo";
+	base_id = "hyena_cargo";
 	pixel_x = -10;
 	pixel_y = -24
 	},
@@ -2126,7 +2126,7 @@
 "JS" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
-	id = "wreckercargobay";
+	base_id = "wreckercargobay";
 	name = "Cargo Bay Exterior Blast Door"
 	},
 /turf/open/floor/plating,
@@ -2239,7 +2239,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
-	id = "wreckerarmory";
+	base_id = "wreckerarmory";
 	name = "Security Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning,
@@ -2439,14 +2439,14 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 1;
-	id = "hyena_cargo";
+	base_id = "hyena_cargo";
 	locked = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "wreckercargobay";
+	base_id = "wreckercargobay";
 	name = "Cargo Bay Exterior Blast Door"
 	},
 /turf/open/floor/plating,
@@ -2537,7 +2537,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	id = "wreckerarmory";
+	base_id = "wreckerarmory";
 	name = "armory shutters";
 	pixel_y = -25
 	},
@@ -2570,7 +2570,7 @@
 "Pw" = (
 /obj/machinery/button/door{
 	dir = 1;
-	id = "wreckerarmory";
+	base_id = "wreckerarmory";
 	name = "armory shutters";
 	pixel_y = -25;
 	req_one_access_txt = "list(19)"
@@ -2610,7 +2610,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
-	id = "wreckerarmory";
+	base_id = "wreckerarmory";
 	name = "Security Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -2624,7 +2624,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "wrecker_engine_port"
+	base_id = "wrecker_engine_port"
 	},
 /obj/structure/window/reinforced/spawner/east,
 /turf/open/floor/plating,
@@ -2648,7 +2648,7 @@
 "QW" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "wreckerwindows";
+	base_id = "wreckerwindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -2709,7 +2709,7 @@
 "Sg" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "wreckerwindows";
+	base_id = "wreckerwindows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -2759,7 +2759,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "wrecker_engine_port"
+	base_id = "wrecker_engine_port"
 	},
 /obj/machinery/door/window/eastright{
 	name = "Engine Access"
@@ -3045,7 +3045,7 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/poddoor/shutters{
-	id = "wreckerarmory";
+	base_id = "wreckerarmory";
 	name = "Security Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -3238,7 +3238,7 @@
 /area/ship/crew)
 "YI" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "wreckerwindows";
+	base_id = "wreckerwindows";
 	name = "Blast Shutters"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -3270,7 +3270,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
-	id = "wreckerarmory";
+	base_id = "wreckerarmory";
 	name = "Security Shutters"
 	},
 /obj/effect/turf_decal/industrial/warning,

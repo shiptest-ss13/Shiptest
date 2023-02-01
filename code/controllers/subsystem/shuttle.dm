@@ -319,6 +319,10 @@ SUBSYSTEM_DEF(shuttle)
  **/
 /datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/template, datum/overmap/ship/controlled/parent, spawn_transit = TRUE)
 	. = FALSE
+	var/static/loading = FALSE
+	UNTIL(!loading && initialized)
+	loading = TRUE
+
 	var/loading_mapzone = SSmapping.create_map_zone("Shuttle Loading Zone")
 	var/datum/virtual_level/loading_zone = SSmapping.create_virtual_level("[template.name] Loading Level", list(ZTRAIT_RESERVED = TRUE), loading_mapzone, template.width, template.height, ALLOCATION_FREE)
 
@@ -328,6 +332,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	var/turf/BL = locate(loading_zone.low_x, loading_zone.low_y, loading_zone.z_value)
 	if(!template.load(BL, centered = FALSE, register = FALSE))
+		loading = FALSE
 		return
 
 	var/affected = template.get_affected_turfs(BL, centered=FALSE)
@@ -356,6 +361,7 @@ SUBSYSTEM_DEF(shuttle)
 
 		message_admins(msg)
 		WARNING(msg)
+		loading = FALSE
 		return
 
 	if(!new_shuttle.can_move_docking_ports && length(stationary_ports))
@@ -363,18 +369,15 @@ SUBSYSTEM_DEF(shuttle)
 	new_shuttle.docking_points = stationary_ports
 
 	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)
-
-	if(!transit_dock)
-		CRASH("No dock found/could be created for shuttle ([template.name]), aborting.")
-
-	var/result = new_shuttle.canDock(transit_dock)
-	if((result != SHUTTLE_CAN_DOCK))
-		WARNING("Template shuttle [new_shuttle] cannot dock at [transit_dock] ([result]).")
+	if(!transit_dock || (new_shuttle.canDock(transit_dock) != SHUTTLE_CAN_DOCK))
+		WARNING("Template shuttle [new_shuttle] cannot dock at [transit_dock || "NULL DOCK"].")
 		new_shuttle.jumpToNullSpace()
+		loading = FALSE
 		return
 
 	new_shuttle.initiate_docking(transit_dock)
-	new_shuttle.linkup(transit_dock, parent)
+	new_shuttle.current_ship = parent
+	new_shuttle.linkup(transit_dock)
 	QDEL_NULL(loading_zone)
 
 	//Everything fine
@@ -382,6 +385,7 @@ SUBSYSTEM_DEF(shuttle)
 	new_shuttle.register()
 	new_shuttle.reset_air()
 
+	loading = FALSE
 	return new_shuttle
 
 /datum/controller/subsystem/shuttle/ui_state(mob/user)

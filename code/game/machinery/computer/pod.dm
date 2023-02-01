@@ -22,7 +22,8 @@
 			connected = M
 			break
 
-/obj/machinery/computer/pod/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+/obj/machinery/computer/pod/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
 	id = "[REF(port)][id]"
 
 /obj/machinery/computer/pod/process(delta_time)
@@ -44,7 +45,7 @@
 		return
 
 	for(var/obj/machinery/door/poddoor/M in range(range, src))
-		if(M.id == id)
+		if(M.base_id == id)
 			M.open()
 
 	sleep(20)
@@ -55,7 +56,7 @@
 
 	sleep(50)
 	for(var/obj/machinery/door/poddoor/M in range(range, src))
-		if(M.id == id)
+		if(M.base_id == id)
 			M.close()
 
 /obj/machinery/computer/pod/ui_interact(mob/user, datum/tgui/ui)
@@ -75,7 +76,7 @@
 	data["power"] = connected ? connected.power : 0.25
 	data["poddoor"] = FALSE
 	for(var/obj/machinery/door/poddoor/door in range(range, src))
-		if(door.id == id)
+		if(door.base_id == id)
 			data["poddoor"] = TRUE
 			break
 	return data
@@ -120,7 +121,7 @@
 			return TRUE
 		if("door")
 			for(var/obj/machinery/door/poddoor/M in range(range, src))
-				if(M.id == id)
+				if(M.base_id == id)
 					if(M.density)
 						M.open()
 					else

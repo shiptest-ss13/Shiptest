@@ -514,7 +514,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "racepodbay";
+	base_id = "racepodbay";
 	name = "Pod Door Control";
 	pixel_x = 6;
 	pixel_y = -25
@@ -523,7 +523,7 @@
 /area/awaymission/speedway/garage)
 "rX" = (
 /obj/machinery/button/door{
-	id = "racepodbay";
+	base_id = "racepodbay";
 	name = "Pod Door Control";
 	pixel_x = 6;
 	pixel_y = 25
@@ -856,7 +856,7 @@
 /area/awaymission/speedway/lounge)
 "Gz" = (
 /obj/machinery/door/poddoor/multi_tile/four_tile_hor{
-	id = "racepodbay"
+	base_id = "racepodbay"
 	},
 /turf/open/floor/engine,
 /area/awaymission/speedway/track)
@@ -927,7 +927,7 @@
 "Ja" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor/multi_tile/four_tile_ver{
-	id = "speedwaytrack"
+	base_id = "speedwaytrack"
 	},
 /turf/open/floor/engine,
 /area/awaymission/speedway/track)
@@ -1254,7 +1254,7 @@
 "XN" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "speedwaytrack";
+	base_id = "speedwaytrack";
 	name = "Track Door Control";
 	pixel_y = 2
 	},

@@ -337,7 +337,7 @@
 	dir = 1
 	},
 /obj/machinery/igniter/incinerator_atmos{
-	id = "TEG_igniter"
+	base_id = "TEG_igniter"
 	},
 /turf/open/floor/engine/airless,
 /area/ship/engineering/engine)
@@ -891,7 +891,7 @@
 	name = "TEG Burn-Chamber Scrubber"
 	},
 /obj/machinery/igniter/incinerator_atmos{
-	id = "TEG_igniter"
+	base_id = "TEG_igniter"
 	},
 /obj/machinery/air_sensor/atmos/incinerator_tank,
 /obj/structure/disposalpipe/segment{
@@ -1484,7 +1484,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "Storage Bay Blast";
+	base_id = "Storage Bay Blast";
 	name = "Storage Bay Doors Control";
 	pixel_x = -25
 	},
@@ -1615,7 +1615,7 @@
 /area/ship/engineering/atmospherics)
 "qf" = (
 /obj/machinery/door/poddoor{
-	id = "02 Chamber Blast";
+	base_id = "02 Chamber Blast";
 	name = "02 Chamber Vent"
 	},
 /turf/open/floor/engine/airless,
@@ -1626,7 +1626,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "C02 Chamber Blast";
+	base_id = "C02 Chamber Blast";
 	name = "C02 Chamber Vent Control";
 	pixel_x = -25
 	},
@@ -1785,7 +1785,7 @@
 /area/ship/engineering/atmospherics)
 "rm" = (
 /obj/machinery/door/poddoor/incinerator_atmos_aux{
-	id = "Burn Chamber Blast";
+	base_id = "Burn Chamber Blast";
 	name = "Burn Chamber Vent"
 	},
 /turf/open/floor/engine/airless,
@@ -2071,7 +2071,7 @@
 /area/ship/crew/canteen)
 "tU" = (
 /obj/machinery/door/poddoor{
-	id = "C02 Chamber Blast";
+	base_id = "C02 Chamber Blast";
 	name = "C02 Chamber Vent"
 	},
 /turf/open/floor/engine/airless,
@@ -2123,7 +2123,7 @@
 /area/ship/hallway)
 "uz" = (
 /obj/machinery/button/ignition/incinerator/toxmix{
-	id = "TEG_igniter";
+	base_id = "TEG_igniter";
 	pixel_y = -29
 	},
 /obj/structure/disposalpipe/segment{
@@ -2729,7 +2729,7 @@
 "zy" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "Storage Bay Blast";
+	base_id = "Storage Bay Blast";
 	name = "Storage Bay Doors"
 	},
 /turf/open/floor/plating,
@@ -3313,7 +3313,7 @@
 "FQ" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "N2 Chamber Blast";
+	base_id = "N2 Chamber Blast";
 	name = "N2 Chamber Vent Control";
 	pixel_x = -25
 	},
@@ -3975,7 +3975,7 @@
 /obj/machinery/airalarm/directional/south,
 /obj/machinery/button/door{
 	dir = 4;
-	id = "Storage Bay Blast";
+	base_id = "Storage Bay Blast";
 	name = "Storage Bay Doors Control";
 	pixel_x = -25
 	},
@@ -4153,7 +4153,7 @@
 "NG" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "Plasma Chamber Blast";
+	base_id = "Plasma Chamber Blast";
 	name = "Plasma Chamber Vent Control";
 	pixel_x = -25
 	},
@@ -4336,7 +4336,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "Burn Chamber Blast";
+	base_id = "Burn Chamber Blast";
 	name = "Burn Chamber Vent Control";
 	pixel_x = 26
 	},
@@ -4896,7 +4896,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	id = "Mix Chamber Blast";
+	base_id = "Mix Chamber Blast";
 	name = "Mix Chamber Vent Control";
 	pixel_x = 26
 	},
@@ -5012,7 +5012,7 @@
 /area/ship/engineering/engine)
 "Wh" = (
 /obj/machinery/door/poddoor{
-	id = "Mix Chamber Blast";
+	base_id = "Mix Chamber Blast";
 	name = "Mix Chamber Vent"
 	},
 /turf/open/floor/engine/airless,
@@ -5083,7 +5083,7 @@
 /area/ship/bridge)
 "WR" = (
 /obj/machinery/door/poddoor{
-	id = "N2 Chamber Blast";
+	base_id = "N2 Chamber Blast";
 	name = "N2 Chamber Vent"
 	},
 /turf/open/floor/engine/airless,
@@ -5291,7 +5291,7 @@
 /area/ship/hallway)
 "Ze" = (
 /obj/machinery/door/poddoor{
-	id = "Plasma Chamber Blast";
+	base_id = "Plasma Chamber Blast";
 	name = "Plasma Chamber Vent"
 	},
 /turf/open/floor/engine/airless,

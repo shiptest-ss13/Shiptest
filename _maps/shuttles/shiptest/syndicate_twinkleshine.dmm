@@ -14,7 +14,7 @@
 "ai" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "starfurybc_massright"
+	base_id = "starfurybc_massright"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -102,7 +102,7 @@
 "bt" = (
 /obj/machinery/mass_driver{
 	dir = 1;
-	id = "starfurybc_massleft"
+	base_id = "starfurybc_massleft"
 	},
 /obj/machinery/door/window{
 	name = "Cannon Access";
@@ -223,7 +223,7 @@
 	},
 /obj/machinery/mass_driver{
 	dir = 1;
-	id = "starfurybc_massright"
+	base_id = "starfurybc_massright"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -553,7 +553,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /turf/open/floor/engine,
@@ -968,7 +968,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /turf/open/floor/engine,
@@ -1153,7 +1153,7 @@
 /area/ship/engineering/engine)
 "jV" = (
 /obj/machinery/button/massdriver{
-	id = "starfurybc_massleft";
+	base_id = "starfurybc_massleft";
 	name = "left cannon button";
 	pixel_x = 26;
 	pixel_y = 26
@@ -1214,7 +1214,7 @@
 /area/ship/engineering)
 "kI" = (
 /obj/machinery/button/massdriver{
-	id = "starfurybc_massright";
+	base_id = "starfurybc_massright";
 	name = "left cannon button";
 	pixel_x = -26;
 	pixel_y = 26
@@ -1446,7 +1446,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /turf/open/floor/circuit/green,
@@ -2309,7 +2309,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /turf/open/floor/circuit/green,
@@ -2317,7 +2317,7 @@
 "uL" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor{
-	id = "armory"
+	base_id = "armory"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
@@ -2361,7 +2361,7 @@
 /area/ship/engineering)
 "uY" = (
 /obj/machinery/door/poddoor{
-	id = "sbccargo";
+	base_id = "sbccargo";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/structure/fans/tiny,
@@ -2957,7 +2957,7 @@
 	dir = 2
 	},
 /obj/machinery/button/door{
-	id = "syndikitchen";
+	base_id = "syndikitchen";
 	pixel_x = -23;
 	pixel_y = 23
 	},
@@ -2990,7 +2990,7 @@
 "AH" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "windows";
+	base_id = "windows";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
@@ -3002,7 +3002,7 @@
 /area/ship/security)
 "AN" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal{
@@ -3018,7 +3018,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /turf/open/floor/circuit/green,
@@ -3174,7 +3174,7 @@
 "CL" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "bridgedoors";
+	base_id = "bridgedoors";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
@@ -3215,7 +3215,7 @@
 /area/ship/engineering/electrical)
 "Dd" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /turf/open/floor/plating,
@@ -3268,14 +3268,14 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	name = "Radiation Shutters";
 	pixel_x = 6;
 	pixel_y = 25;
 	req_access_txt = "150"
 	},
 /obj/machinery/button/door{
-	id = "starfurybcsupermatter_bolt";
+	base_id = "starfurybcsupermatter_bolt";
 	name = "Supermatter Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -6;
@@ -3580,7 +3580,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /turf/open/floor/circuit/green,
@@ -3611,7 +3611,7 @@
 "Hf" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "sbccargo";
+	base_id = "sbccargo";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
@@ -3634,7 +3634,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /turf/open/floor/circuit/green,
@@ -3673,7 +3673,7 @@
 	dir = 10
 	},
 /obj/machinery/button/door{
-	id = "armory";
+	base_id = "armory";
 	name = "Armory Shutters";
 	pixel_x = 28;
 	req_access_txt = "3;150"
@@ -3708,7 +3708,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /turf/open/floor/circuit/green,
@@ -3831,7 +3831,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /turf/open/floor/engine,
@@ -3864,7 +3864,7 @@
 "IT" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "syndikitchen"
+	base_id = "syndikitchen"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -4021,7 +4021,7 @@
 /area/ship/security)
 "KV" = (
 /obj/machinery/button/door{
-	id = "sbccargo";
+	base_id = "sbccargo";
 	name = "Blast Door Control";
 	pixel_x = 5;
 	pixel_y = 23
@@ -4354,14 +4354,14 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "bridgedoors";
+	base_id = "bridgedoors";
 	name = "bridge shutters";
 	pixel_x = -22;
 	pixel_y = 9
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "windows";
+	base_id = "windows";
 	name = "Window Shutters";
 	pixel_x = -22;
 	pixel_y = -1
@@ -4542,7 +4542,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /turf/open/floor/engine,
@@ -4662,7 +4662,7 @@
 /area/ship/crew/dorm)
 "PR" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "starfurybcsupermatter";
+	base_id = "starfurybcsupermatter";
 	rad_insulation = 0.1
 	},
 /obj/structure/cable/yellow{
@@ -4688,7 +4688,7 @@
 /area/ship/engineering)
 "PV" = (
 /obj/machinery/door/poddoor{
-	id = "armory"
+	base_id = "armory"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
@@ -5018,7 +5018,7 @@
 "Sz" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "windows";
+	base_id = "windows";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
@@ -5301,7 +5301,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor{
-	id = "armory"
+	base_id = "armory"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
@@ -5345,7 +5345,7 @@
 "VZ" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "starfurybc_massleft"
+	base_id = "starfurybc_massleft"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)

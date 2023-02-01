@@ -617,7 +617,7 @@
 /area/ship/science)
 "nG" = (
 /obj/machinery/door/poddoor{
-	id = "mining_window_shutter"
+	base_id = "mining_window_shutter"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -987,7 +987,7 @@
 /area/ship/hallway)
 "uU" = (
 /obj/machinery/door/poddoor{
-	id = "mining_window_shutter"
+	base_id = "mining_window_shutter"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating/airless,
@@ -1332,7 +1332,7 @@
 /area/ship/bridge)
 "zQ" = (
 /obj/machinery/door/poddoor{
-	id = "mining_window_shutter"
+	base_id = "mining_window_shutter"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1546,7 +1546,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "mining_window_shutter";
+	base_id = "mining_window_shutter";
 	name = "Window Shutters";
 	pixel_y = 28
 	},
@@ -1569,7 +1569,7 @@
 "Dm" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "mining_galaxy_port"
+	base_id = "mining_galaxy_port"
 	},
 /turf/open/floor/plasteel/patterned/monofloor,
 /area/ship/cargo)
@@ -1652,7 +1652,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "mining_window_shutter"
+	base_id = "mining_window_shutter"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -2006,7 +2006,7 @@
 /obj/structure/closet/crate/internals,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/machinery/button/door{
-	id = "mining_galaxy_port";
+	base_id = "mining_galaxy_port";
 	name = "Port Hangar Shutters";
 	pixel_y = 28
 	},
@@ -2150,7 +2150,7 @@
 /area/ship/cargo)
 "Pa" = (
 /obj/machinery/door/poddoor{
-	id = "mining_window_shutter"
+	base_id = "mining_window_shutter"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plasteel/dark,
@@ -2257,7 +2257,7 @@
 "QX" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/machinery/door/poddoor{
-	id = "mining_window_shutter"
+	base_id = "mining_window_shutter"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,

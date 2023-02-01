@@ -70,7 +70,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "amogusthrusters"
+	base_id = "amogusthrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
@@ -419,7 +419,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "amogusthrusters"
+	base_id = "amogusthrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
@@ -452,7 +452,7 @@
 /area/ship/crew/canteen)
 "et" = (
 /obj/machinery/door/poddoor{
-	id = "amoguswindows"
+	base_id = "amoguswindows"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -483,7 +483,7 @@
 /area/ship/engineering/engine)
 "eV" = (
 /obj/machinery/mass_driver{
-	id = "ejected"
+	base_id = "ejected"
 	},
 /obj/structure/window/reinforced/spawner{
 	dir = 8
@@ -516,7 +516,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "amogusthrusters"
+	base_id = "amogusthrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
@@ -789,7 +789,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "amogusthrusters";
+	base_id = "amogusthrusters";
 	name = "Thruster Lockdown";
 	pixel_x = -24
 	},
@@ -1121,7 +1121,7 @@
 /area/ship/hallway/fore)
 "kt" = (
 /obj/machinery/door/poddoor{
-	id = "amogusdoors";
+	base_id = "amogusdoors";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plasteel/patterned/monofloor,
@@ -1324,7 +1324,7 @@
 /area/ship/hallway/fore)
 "mr" = (
 /obj/machinery/door/poddoor{
-	id = "amoguswindows"
+	base_id = "amoguswindows"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1491,20 +1491,20 @@
 /area/ship/cargo)
 "oR" = (
 /obj/machinery/door/poddoor{
-	id = "amoguswindows"
+	base_id = "amoguswindows"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "oS" = (
 /obj/machinery/door/poddoor{
-	id = "amogusdoors";
+	base_id = "amogusdoors";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 4;
-	id = "shetland_cargo";
+	base_id = "shetland_cargo";
 	locked = 1
 	},
 /obj/structure/cable,
@@ -1611,13 +1611,13 @@
 "qb" = (
 /obj/machinery/button/door{
 	dir = 4;
-	id = "amogusdoors";
+	base_id = "amogusdoors";
 	name = "Blast Door Control";
 	pixel_x = -24
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 4;
-	id = "shetland_cargo";
+	base_id = "shetland_cargo";
 	pixel_x = -23;
 	pixel_y = 10
 	},
@@ -1951,7 +1951,7 @@
 	},
 /obj/machinery/button/door{
 	dir = 4;
-	id = "amogusthrusters";
+	base_id = "amogusthrusters";
 	name = "Thruster Lockdown";
 	pixel_x = -24
 	},
@@ -2261,7 +2261,7 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/button/massdriver{
 	dir = 8;
-	id = "ejected";
+	base_id = "ejected";
 	pixel_x = 24
 	},
 /turf/open/floor/plasteel,
@@ -2334,7 +2334,7 @@
 /area/ship/bridge)
 "vY" = (
 /obj/machinery/door/poddoor{
-	id = "amoguswindows"
+	base_id = "amoguswindows"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -2812,7 +2812,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "amogusthrusters"
+	base_id = "amogusthrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
@@ -2825,7 +2825,7 @@
 /area/ship/crew/toilet)
 "Bx" = (
 /obj/machinery/door/poddoor{
-	id = "ejected";
+	base_id = "ejected";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/structure/fans/tiny,
@@ -2854,7 +2854,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "amogusthrusters"
+	base_id = "amogusthrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
@@ -3142,13 +3142,13 @@
 /area/ship/engineering/atmospherics)
 "Fd" = (
 /obj/machinery/door/poddoor{
-	id = "amogusdoors";
+	base_id = "amogusdoors";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 8;
-	id = "shetland_cargo";
+	base_id = "shetland_cargo";
 	locked = 1
 	},
 /obj/structure/cable,
@@ -3224,7 +3224,7 @@
 "Ge" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/door/poddoor{
-	id = "amoguswindows"
+	base_id = "amoguswindows"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -3408,7 +3408,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "amogusthrusters"
+	base_id = "amogusthrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
@@ -3520,7 +3520,7 @@
 /area/ship/medical)
 "Jc" = (
 /obj/machinery/door/poddoor{
-	id = "amoguswindows"
+	base_id = "amoguswindows"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -3804,7 +3804,7 @@
 /area/ship/hallway/starboard)
 "Md" = (
 /obj/machinery/door/poddoor{
-	id = "amoguswindows"
+	base_id = "amoguswindows"
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -3895,7 +3895,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "amogusthrusters"
+	base_id = "amogusthrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
@@ -4044,7 +4044,7 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	list_reagents = list(/datum/reagent/medicine/thializbase_id = 30);
 	name = "thializid bottle"
 	},
 /obj/item/reagent_containers/syringe,
@@ -4535,14 +4535,14 @@
 /area/ship/engineering/atmospherics)
 "SY" = (
 /obj/machinery/button/door{
-	id = "amogusdoors";
+	base_id = "amogusdoors";
 	name = "Blast Door Control";
 	pixel_x = 5;
 	pixel_y = 5
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "amoguswindows";
+	base_id = "amoguswindows";
 	name = "Window Lockdown";
 	pixel_x = -5;
 	pixel_y = -5
@@ -5223,7 +5223,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "amogusthrusters"
+	base_id = "amogusthrusters"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)

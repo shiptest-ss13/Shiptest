@@ -39,7 +39,7 @@
 "ad" = (
 /obj/structure/table,
 /obj/machinery/button/door{
-	id = "piratebridge";
+	base_id = "piratebridge";
 	name = "Bridge Shutters Control";
 	pixel_y = -5
 	},
@@ -157,7 +157,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "piratebridgebolt";
+	base_id = "piratebridgebolt";
 	name = "Bridge Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -439,7 +439,7 @@
 "aN" = (
 /obj/machinery/light/small,
 /obj/machinery/button/door{
-	id = "pirateportexternal";
+	base_id = "pirateportexternal";
 	name = "External Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -4;
@@ -455,7 +455,7 @@
 "aO" = (
 /obj/machinery/light/small,
 /obj/machinery/button/door{
-	id = "piratestarboardexternal";
+	base_id = "piratestarboardexternal";
 	name = "External Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = 4;
@@ -935,7 +935,7 @@
 /area/shuttle/pirate)
 "ey" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "piratebridge"
+	base_id = "piratebridge"
 	},
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -983,7 +983,7 @@
 /area/shuttle/pirate)
 "jv" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "piratebridge"
+	base_id = "piratebridge"
 	},
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1083,7 +1083,7 @@
 /area/shuttle/pirate)
 "yv" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "piratebridge"
+	base_id = "piratebridge"
 	},
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1107,7 +1107,7 @@
 /area/shuttle/pirate)
 "DZ" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "piratebridge"
+	base_id = "piratebridge"
 	},
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1125,7 +1125,7 @@
 /area/shuttle/pirate)
 "IC" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "piratebridge"
+	base_id = "piratebridge"
 	},
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1261,7 +1261,7 @@
 /area/shuttle/pirate)
 "Xk" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "piratebridge"
+	base_id = "piratebridge"
 	},
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,

@@ -76,7 +76,8 @@
 	var/unlocked = FALSE
 	var/datum/overmap/ship/controlled/linked_ship
 
-/obj/item/storage/overmap_ship/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+/obj/item/storage/overmap_ship/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
 	linked_ship = port?.current_ship
 
 /obj/item/storage/overmap_ship/PopulateContents()

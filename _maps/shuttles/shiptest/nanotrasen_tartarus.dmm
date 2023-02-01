@@ -77,7 +77,7 @@
 /area/ship/construction)
 "aK" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "carrier_hangar"
+	base_id = "carrier_hangar"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech/grid,
@@ -533,7 +533,7 @@
 /area/ship/engineering/electrical)
 "gN" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "carrier_hangar"
+	base_id = "carrier_hangar"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2891,7 +2891,7 @@
 /area/ship/crew)
 "Jc" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "carrier_hangar"
+	base_id = "carrier_hangar"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/door/firedoor,
@@ -3690,7 +3690,7 @@
 /area/ship/hallway/central)
 "TR" = (
 /obj/machinery/button/door{
-	id = "carrier_hangar";
+	base_id = "carrier_hangar";
 	name = "Hangar Shutters";
 	pixel_y = -28
 	},

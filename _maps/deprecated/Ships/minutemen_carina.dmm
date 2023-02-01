@@ -87,7 +87,7 @@
 "bd" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "space_cops_bay";
+	base_id = "space_cops_bay";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -95,7 +95,7 @@
 /area/ship/cargo)
 "bn" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "space_cops_bridge"
+	base_id = "space_cops_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -213,7 +213,7 @@
 /area/ship/medical)
 "da" = (
 /obj/machinery/door/poddoor{
-	id = "space_cops_port_launcher";
+	base_id = "space_cops_port_launcher";
 	name = "Port Mass Driver Blast Door"
 	},
 /obj/structure/fans/tiny,
@@ -232,7 +232,7 @@
 "dl" = (
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "space_cops_windows";
+	base_id = "space_cops_windows";
 	name = "Blast Shutters"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -261,7 +261,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "space_cops_bridge"
+	base_id = "space_cops_bridge"
 	},
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -538,7 +538,7 @@
 "gT" = (
 /obj/machinery/mass_driver{
 	dir = 4;
-	id = "space_cops_port_launcher"
+	base_id = "space_cops_port_launcher"
 	},
 /obj/structure/sign/warning/vacuum/external{
 	pixel_y = -32
@@ -647,7 +647,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "space_cops_windows";
+	base_id = "space_cops_windows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -806,7 +806,7 @@
 "kr" = (
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
 /obj/machinery/door/airlock/security/brig/glass{
-	id = "Cell 1";
+	base_id = "Cell 1";
 	name = "Cell 1";
 	req_access_txt = "1"
 	},
@@ -848,7 +848,7 @@
 /area/ship/medical)
 "kM" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "space_cops_bridge"
+	base_id = "space_cops_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -872,7 +872,7 @@
 	},
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "space_cops_windows";
+	base_id = "space_cops_windows";
 	name = "Blast Shutters"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -1256,7 +1256,7 @@
 "oZ" = (
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "space_cops_windows";
+	base_id = "space_cops_windows";
 	name = "Blast Shutters"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -1265,7 +1265,7 @@
 "pj" = (
 /obj/machinery/mass_driver{
 	dir = 4;
-	id = "space_cops_starboard_launcher"
+	base_id = "space_cops_starboard_launcher"
 	},
 /obj/structure/sign/warning/vacuum/external{
 	pixel_y = 32
@@ -1293,7 +1293,7 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "space_cops_windows";
+	base_id = "space_cops_windows";
 	name = "Blast Shutters"
 	},
 /turf/open/floor/plating,
@@ -1406,7 +1406,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "space_cops_bridge"
+	base_id = "space_cops_bridge"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1450,7 +1450,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "space_cops_bridge"
+	base_id = "space_cops_bridge"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1588,19 +1588,19 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "space_cops_windows";
+	base_id = "space_cops_windows";
 	name = "Exterior Windows";
 	pixel_x = -6;
 	pixel_y = 22
 	},
 /obj/machinery/button/door{
-	id = "space_cops_bridge";
+	base_id = "space_cops_bridge";
 	name = "Bridge Lockdown";
 	pixel_x = 6;
 	pixel_y = 22
 	},
 /obj/machinery/button/door{
-	id = "space_cops_bay";
+	base_id = "space_cops_bay";
 	name = "Cargo Bay Doors";
 	pixel_y = 32
 	},
@@ -1752,7 +1752,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
-	id = "space_cops_windows"
+	base_id = "space_cops_windows"
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
 /turf/open/floor/plating,
@@ -1855,7 +1855,7 @@
 "vn" = (
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "space_cops_bridge"
+	base_id = "space_cops_bridge"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
@@ -1864,7 +1864,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer4,
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "space_cops_windows";
+	base_id = "space_cops_windows";
 	name = "Blast Shutters"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -2030,7 +2030,7 @@
 /obj/machinery/door/window/eastleft,
 /obj/machinery/button/massdriver{
 	dir = 1;
-	id = "space_cops_port_launcher";
+	base_id = "space_cops_port_launcher";
 	name = "port mass driver button";
 	pixel_x = 7;
 	pixel_y = -25
@@ -2300,7 +2300,7 @@
 "Ae" = (
 /obj/machinery/door/window/eastright,
 /obj/machinery/button/massdriver{
-	id = "space_cops_starboard_launcher";
+	base_id = "space_cops_starboard_launcher";
 	name = "starboard mass driver button";
 	pixel_x = 7;
 	pixel_y = 25
@@ -2379,7 +2379,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "space_cops_bridge"
+	base_id = "space_cops_bridge"
 	},
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -2452,7 +2452,7 @@
 	},
 /obj/machinery/door/window/eastleft,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "space_cops_warden"
+	base_id = "space_cops_warden"
 	},
 /obj/item/pen/fountain,
 /turf/open/floor/plating,
@@ -2713,7 +2713,7 @@
 "EH" = (
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "space_cops_windows";
+	base_id = "space_cops_windows";
 	name = "Blast Shutters"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -3123,7 +3123,7 @@
 	dir = 1
 	},
 /obj/machinery/door_timer{
-	id = "Cell 1";
+	base_id = "Cell 1";
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel/tech,
@@ -3231,7 +3231,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
-	id = "space_cops_windows"
+	base_id = "space_cops_windows"
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -3253,7 +3253,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "space_cops_warden";
+	base_id = "space_cops_warden";
 	name = "Desk Shutter";
 	pixel_x = 25;
 	pixel_y = -25
@@ -3736,7 +3736,7 @@
 /area/ship/cargo)
 "St" = (
 /obj/machinery/door/poddoor{
-	id = "space_cops_starboard_launcher";
+	base_id = "space_cops_starboard_launcher";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/structure/fans/tiny,
@@ -3807,7 +3807,7 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/brig{
-	id = "Cell 1"
+	base_id = "Cell 1"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/prison)
@@ -3909,7 +3909,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
-	id = "space_cops_windows"
+	base_id = "space_cops_windows"
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -4121,7 +4121,7 @@
 "Wt" = (
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "space_cops_windows";
+	base_id = "space_cops_windows";
 	name = "Blast Shutters"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -4153,7 +4153,7 @@
 "WE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = "space_cops_bay";
+	base_id = "space_cops_bay";
 	name = "Cargo Bay Doors";
 	pixel_y = 25
 	},
@@ -4170,7 +4170,7 @@
 /area/ship/cargo)
 "Xm" = (
 /obj/machinery/door/poddoor{
-	id = "space_cops_bay";
+	base_id = "space_cops_bay";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/structure/fans/tiny,
@@ -4300,7 +4300,7 @@
 "Zf" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "space_cops_bridge"
+	base_id = "space_cops_bridge"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -4353,7 +4353,7 @@
 /area/ship/crew)
 "ZK" = (
 /obj/machinery/flasher{
-	id = "Cell 1";
+	base_id = "Cell 1";
 	pixel_x = -25
 	},
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,

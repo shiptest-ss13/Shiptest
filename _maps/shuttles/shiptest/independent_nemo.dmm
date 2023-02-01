@@ -16,17 +16,17 @@
 "ak" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "nemowindows"
+	base_id = "nemowindows"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "ap" = (
 /obj/machinery/door/poddoor{
-	id = "nemoblast"
+	base_id = "nemoblast"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
-	id = "nemo_cargo";
+	base_id = "nemo_cargo";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -411,7 +411,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "nemowindows"
+	base_id = "nemowindows"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -506,12 +506,12 @@
 /area/ship/hallway/central)
 "fA" = (
 /obj/machinery/door/poddoor{
-	id = "nemoblast"
+	base_id = "nemoblast"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 1;
-	id = "nemo_cargo";
+	base_id = "nemo_cargo";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -701,14 +701,14 @@
 /area/ship/engineering/atmospherics)
 "ij" = (
 /obj/machinery/button/door{
-	id = "nemoblast";
+	base_id = "nemoblast";
 	pixel_y = 25
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/machinery/button/shieldwallgen{
-	id = "nemo_cargo";
+	base_id = "nemo_cargo";
 	pixel_x = -10;
 	pixel_y = 24
 	},
@@ -1283,7 +1283,7 @@
 "pq" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "nemowindows"
+	base_id = "nemowindows"
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -1619,7 +1619,7 @@
 "uR" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "nemobridge"
+	base_id = "nemobridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1863,7 +1863,7 @@
 "zE" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "nemowindows"
+	base_id = "nemowindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
@@ -2069,7 +2069,7 @@
 "Cv" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "nemowindows"
+	base_id = "nemowindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/library)
@@ -2099,7 +2099,7 @@
 "CV" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "nemowindows"
+	base_id = "nemowindows"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
@@ -2210,13 +2210,13 @@
 	dir = 5
 	},
 /obj/machinery/button/door{
-	id = "nemobridge";
+	base_id = "nemobridge";
 	name = "Bridge Lockdown";
 	pixel_x = 7;
 	pixel_y = 25
 	},
 /obj/machinery/button/door{
-	id = "nemowindows";
+	base_id = "nemowindows";
 	name = "Full Lockdown";
 	pixel_x = -7;
 	pixel_y = 25
@@ -2287,7 +2287,7 @@
 "GT" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "nemowindows"
+	base_id = "nemowindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -2808,7 +2808,7 @@
 "Oa" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "nemowindows"
+	base_id = "nemowindows"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -3320,7 +3320,7 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "nemowindows"
+	base_id = "nemowindows"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)

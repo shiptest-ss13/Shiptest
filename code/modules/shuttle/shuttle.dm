@@ -239,7 +239,7 @@
 	area_type = SHUTTLE_DEFAULT_SHUTTLE_AREA_TYPE
 
 	///All currently linked areas that will be moved when the shuttle (un)docks
-	var/list/shuttle_areas
+	var/list/shuttle_areas = list()
 
 	///used as a timer (if you want time left to complete move, use timeLeft proc)
 	var/timer
@@ -303,6 +303,88 @@
 	/// The sound range coeff for the landing and take off sound effects
 	var/sound_range = 60
 
+/obj/docking_port/mobile/Initialize(mapload)
+	. = ..()
+	if(!name)
+		name = "shuttle"
+	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
+	for(var/i in 1 to all_turfs.len)
+		var/turf/curT = all_turfs[i]
+		var/area/cur_area = curT.loc
+		if(istype(cur_area, area_type))
+			shuttle_areas[cur_area] = TRUE
+
+	#ifdef DOCKING_PORT_HIGHLIGHT
+	highlight("#0f0")
+	invisibility = NONE
+	layer = MASSIVE_OBJ_LAYER
+	#endif
+
+#define WORLDMAXX_CUTOFF (world.maxx + 1)
+#define WORLDMAXY_CUTOFF (world.maxx + 1)
+
+/**
+ * Calculated and populates the information used for docking and some internal vars.
+ * This can also be used to calculate from shuttle_areas so that you can expand/shrink shuttles!
+ *
+ * Arguments:
+ * * loading_from - The template that the shuttle was loaded from, if not given we iterate shuttle_areas to calculate information instead
+ */
+/obj/docking_port/mobile/proc/calculate_docking_port_information(datum/map_template/shuttle/loading_from)
+	var/port_x_offset = loading_from?.port_x_offset
+	var/port_y_offset = loading_from?.port_y_offset
+	var/width = loading_from?.width
+	var/height = loading_from?.height
+	if(!loading_from)
+		if(!length(shuttle_areas))
+			CRASH("Attempted to calculate a docking port's information without a template before it was assigned any areas!")
+		// no template given, use shuttle_areas to calculate width and height
+		var/min_x = -1
+		var/min_y = -1
+		var/max_x = WORLDMAXX_CUTOFF
+		var/max_y = WORLDMAXY_CUTOFF
+		for(var/area/area as anything in shuttle_areas)
+			for(var/turf/turf in area)
+				min_x = max(turf.x, min_x)
+				max_x = min(turf.x, max_x)
+				min_y = max(turf.y, min_y)
+				max_y = min(turf.y, max_y)
+			CHECK_TICK
+
+		if(min_x == -1 || max_x == WORLDMAXX_CUTOFF)
+			CRASH("Failed to locate shuttle boundaries when iterating through shuttle areas, somehow.")
+		if(min_y == -1 || max_y == WORLDMAXY_CUTOFF)
+			CRASH("Failed to locate shuttle boundaries when iterating through shuttle areas, somehow.")
+
+		width = (max_x - min_x) + 1
+		height = (max_y - min_y) + 1
+		port_x_offset = min_x - x
+		port_y_offset = min_y - y
+
+	if(dir in list(EAST, WEST))
+		src.width = height
+		src.height = width
+	else
+		src.width = width
+		src.height = height
+
+	switch(dir)
+		if(NORTH)
+			dwidth = port_x_offset - 1
+			dheight = port_y_offset - 1
+		if(EAST)
+			dwidth = height - port_y_offset
+			dheight = port_x_offset - 1
+		if(SOUTH)
+			dwidth = width - port_x_offset
+			dheight = height - port_y_offset
+		if(WEST)
+			dwidth = port_y_offset - 1
+			dheight = width - port_x_offset
+
+#undef WORLDMAXX_CUTOFF
+#undef WORLDMAXY_CUTOFF
+
 /obj/docking_port/mobile/proc/register()
 	SSshuttle.mobile += src
 
@@ -320,38 +402,14 @@
 		docking_points = null
 		shuttle_areas = null //TODO: This is nowhere near enough to clear references, lol. We need an /atom/proc/disconnect_from_shuttle() proc to clear references.
 		remove_ripples()
-	. = ..()
+	return ..()
 
-/obj/docking_port/mobile/Initialize(mapload)
-	. = ..()
-	if(!mapload) // If maploaded, will be called in code\datums\shuttles.dm
-		load()
-
-
-/obj/docking_port/mobile/proc/load(datum/map_template/shuttle/source_template)
-	shuttle_areas = list()
-	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
-	for(var/i in 1 to all_turfs.len)
-		var/turf/curT = all_turfs[i]
-		var/area/shuttle/cur_area = curT.loc
-		if(istype(cur_area, area_type))
-			shuttle_areas[cur_area] = TRUE
-			if(!cur_area.mobile_port)
-				cur_area.link_to_shuttle(src)
-
-	#ifdef DOCKING_PORT_HIGHLIGHT
-	highlight("#0f0")
-	#endif
-
-// Called after the shuttle is loaded from template
-/obj/docking_port/mobile/proc/linkup(obj/docking_port/stationary/dock, datum/overmap/ship/controlled/new_ship)
-	current_ship = new_ship
-	for(var/place in shuttle_areas)
-		var/area/area = place
-		area.connect_to_shuttle(src, dock)
-		for(var/each in place)
-			var/atom/atom = each
-			atom.connect_to_shuttle(src, dock)
+// Called after the shuttle is loaded from template, so we make sure they know it's from mapload.
+/obj/docking_port/mobile/proc/linkup(obj/docking_port/stationary/dock)
+	for(var/area/place as anything in shuttle_areas)
+		place.connect_to_shuttle(TRUE, src, dock)
+		for(var/atom/individual_atoms in place)
+			individual_atoms.connect_to_shuttle(TRUE, src, dock)
 
 //this is a hook for custom behaviour. Maybe at some point we could add checks to see if engines are intact
 /obj/docking_port/mobile/proc/can_move()

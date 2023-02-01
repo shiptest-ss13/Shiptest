@@ -5,7 +5,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmlobby"
+	base_id = "pharmlobby"
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/cargo)
@@ -61,7 +61,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmabridge"
+	base_id = "pharmabridge"
 	},
 /obj/structure/window/plasma/reinforced/spawner,
 /turf/open/floor/plating,
@@ -97,7 +97,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmwindows"
+	base_id = "pharmwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -153,7 +153,7 @@
 /obj/item/storage/toolbox/electrical,
 /obj/machinery/button/door{
 	dir = 1;
-	id = "pharmairlock";
+	base_id = "pharmairlock";
 	name = "airlock access";
 	pixel_y = -28
 	},
@@ -227,7 +227,7 @@
 /obj/structure/window/reinforced/spawner/east,
 /obj/machinery/recharger,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmboothlock"
+	base_id = "pharmboothlock"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -296,7 +296,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmlobby"
+	base_id = "pharmlobby"
 	},
 /obj/effect/turf_decal/trimline/opaque/green/warning{
 	dir = 4
@@ -446,7 +446,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmlobby"
+	base_id = "pharmlobby"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -540,7 +540,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "pharmbridge";
+	base_id = "pharmbridge";
 	name = "Bridge Lockdown";
 	pixel_x = -25;
 	pixel_y = -7;
@@ -609,7 +609,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmstore"
+	base_id = "pharmstore"
 	},
 /turf/open/floor/light,
 /area/ship/crew/canteen)
@@ -624,7 +624,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmboothlock"
+	base_id = "pharmboothlock"
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -32
@@ -635,7 +635,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmboothlock"
+	base_id = "pharmboothlock"
 	},
 /turf/open/floor/plating,
 /area/ship/security)
@@ -643,7 +643,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmwindows"
+	base_id = "pharmwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
@@ -712,7 +712,7 @@
 /area/ship/crew/hydroponics)
 "iL" = (
 /obj/machinery/button/door{
-	id = "pharmboothlock";
+	base_id = "pharmboothlock";
 	name = "Lockdown: Booth";
 	pixel_x = -24;
 	pixel_y = 11;
@@ -722,7 +722,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "pharmdoorlock";
+	base_id = "pharmdoorlock";
 	name = "Anti-Tresspassing Bolts";
 	normaldoorcontrol = 1;
 	pixel_x = -24;
@@ -730,7 +730,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "pharmlobby";
+	base_id = "pharmlobby";
 	name = "Lockdown: Lobby";
 	pixel_x = -24;
 	pixel_y = -11;
@@ -840,7 +840,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmbridge"
+	base_id = "pharmbridge"
 	},
 /obj/machinery/door/airlock/command/glass{
 	name = "Bridge"
@@ -1082,7 +1082,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmwindows"
+	base_id = "pharmwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
@@ -1103,7 +1103,7 @@
 "pY" = (
 /obj/structure/table/wood/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmstore"
+	base_id = "pharmstore"
 	},
 /obj/structure/sign/poster/contraband/shamblers_juice{
 	pixel_x = -32
@@ -1119,7 +1119,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmlobby"
+	base_id = "pharmlobby"
 	},
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/spawner/lootdrop/maintenance/four,
@@ -1178,7 +1178,7 @@
 /obj/machinery/button/door{
 	pixel_y = 26;
 	pixel_x = -10;
-	id = "schmeidengine";
+	base_id = "schmeidengine";
 	name = "Engine Shutters"
 	},
 /turf/open/floor/plating,
@@ -1365,7 +1365,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmwindows"
+	base_id = "pharmwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1381,7 +1381,7 @@
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable,
 /obj/machinery/button/door{
-	id = "pharmwindows";
+	base_id = "pharmwindows";
 	name = "window shutters";
 	pixel_y = -23
 	},
@@ -1428,7 +1428,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
-	id = "schmeidengine"
+	base_id = "schmeidengine"
 	},
 /turf/open/floor/plating,
 /area/ship/security)
@@ -1551,7 +1551,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmabridge"
+	base_id = "pharmabridge"
 	},
 /obj/structure/window/plasma/reinforced/spawner/north,
 /turf/open/floor/plating,
@@ -1887,7 +1887,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmlobby"
+	base_id = "pharmlobby"
 	},
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 8
@@ -1898,7 +1898,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmwindows"
+	base_id = "pharmwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -1961,7 +1961,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmabridge"
+	base_id = "pharmabridge"
 	},
 /turf/open/floor/plating,
 /area/ship/security)
@@ -2218,7 +2218,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmlobby"
+	base_id = "pharmlobby"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
@@ -2278,7 +2278,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmairlock"
+	base_id = "pharmairlock"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -2442,7 +2442,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "pharmentrance";
+	base_id = "pharmentrance";
 	name = "Main Entrance";
 	pixel_x = -5;
 	pixel_y = 38
@@ -2451,13 +2451,13 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmboothlock"
+	base_id = "pharmboothlock"
 	},
 /obj/item/radio/intercom{
 	pixel_y = 23
 	},
 /obj/machinery/button/shieldwallgen{
-	id = "holopharm";
+	base_id = "holopharm";
 	pixel_x = 6;
 	pixel_y = 36
 	},
@@ -2691,7 +2691,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmlobby"
+	base_id = "pharmlobby"
 	},
 /obj/effect/spawner/lootdrop/maintenance/four,
 /turf/open/floor/wood/walnut,
@@ -2737,7 +2737,7 @@
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 8;
-	id = "holopharm";
+	base_id = "holopharm";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -2792,7 +2792,7 @@
 /obj/structure/table/wood/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmstore"
+	base_id = "pharmstore"
 	},
 /turf/open/floor/light,
 /area/ship/crew/canteen)
@@ -2826,7 +2826,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmlobby"
+	base_id = "pharmlobby"
 	},
 /turf/open/floor/plating,
 /area/ship/security)
@@ -2858,7 +2858,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmwindows"
+	base_id = "pharmwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/toilet)
@@ -2873,7 +2873,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmairlock"
+	base_id = "pharmairlock"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2907,7 +2907,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
 	dir = 4;
-	id = "pharmstore";
+	base_id = "pharmstore";
 	name = "Storefront Shutters";
 	pixel_x = -25
 	},
@@ -3141,7 +3141,7 @@
 /obj/item/storage/pill_bottle/zoom,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmlobby"
+	base_id = "pharmlobby"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/cargo)
@@ -3197,7 +3197,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmwindows"
+	base_id = "pharmwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -3321,13 +3321,13 @@
 /area/ship/cargo)
 "Yc" = (
 /obj/machinery/door/poddoor/multi_tile/three_tile_hor{
-	id = "pharmentrance"
+	base_id = "pharmentrance"
 	},
 /obj/effect/turf_decal/arrows/white,
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 4;
-	id = "holopharm";
+	base_id = "holopharm";
 	locked = 1
 	},
 /obj/structure/cable{
@@ -3350,7 +3350,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
-	id = "schmeidengine"
+	base_id = "schmeidengine"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -3368,7 +3368,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmairlock"
+	base_id = "pharmairlock"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -3386,7 +3386,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmwindows"
+	base_id = "pharmwindows"
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/crew/hydroponics)
@@ -3394,7 +3394,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmwindows"
+	base_id = "pharmwindows"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/hydroponics)
@@ -3402,7 +3402,7 @@
 /obj/structure/table/wood/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmstore"
+	base_id = "pharmstore"
 	},
 /obj/item/table_bell,
 /turf/open/floor/light,

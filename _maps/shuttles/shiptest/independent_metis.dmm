@@ -14,7 +14,7 @@
 "ag" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "foreshutter";
+	base_id = "foreshutter";
 	name = "Window Shutters"
 	},
 /turf/open/floor/mineral/titanium/tiled/blue,
@@ -28,7 +28,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 5;
-	id = "slimer"
+	base_id = "slimer"
 	},
 /turf/open/floor/circuit/telecomms{
 	name = "coldroom"
@@ -91,7 +91,7 @@
 	},
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "slimelock";
+	base_id = "slimelock";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plating,
@@ -102,7 +102,7 @@
 	},
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "slimelock";
+	base_id = "slimelock";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plating,
@@ -756,16 +756,16 @@
 	dir = 8
 	},
 /obj/machinery/conveyor_switch/oneway{
-	id = "slimer"
+	base_id = "slimer"
 	},
 /obj/machinery/button/door{
-	id = "slimelock";
+	base_id = "slimelock";
 	name = "Lockdown Shutters";
 	pixel_x = 7;
 	pixel_y = -25
 	},
 /obj/machinery/button/door{
-	id = "slimekill";
+	base_id = "slimekill";
 	name = "Coldroom Release Shutter Control";
 	pixel_x = -7;
 	pixel_y = -25
@@ -1063,7 +1063,7 @@
 /obj/machinery/door/firedoor/window,
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "foreshutter"
+	base_id = "foreshutter"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
@@ -1082,7 +1082,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "slimelock";
+	base_id = "slimelock";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plating,
@@ -1299,7 +1299,7 @@
 /area/ship/science/robotics)
 "sr" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "foreshutter"
+	base_id = "foreshutter"
 	},
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
@@ -1392,7 +1392,7 @@
 "um" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "foreshutter"
+	base_id = "foreshutter"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -1676,7 +1676,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters{
-	id = "rdshutter"
+	base_id = "rdshutter"
 	},
 /turf/open/floor/carpet/purple,
 /area/ship/crew/office)
@@ -1842,7 +1842,7 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/door/poddoor/shutters{
-	id = "slimekill"
+	base_id = "slimekill"
 	},
 /turf/open/floor/circuit/telecomms{
 	name = "coldroom"
@@ -1965,7 +1965,7 @@
 /obj/machinery/door/firedoor/window,
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "rdshutter"
+	base_id = "rdshutter"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
@@ -2167,7 +2167,7 @@
 /area/ship/hallway/fore)
 "DS" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "rdshutter"
+	base_id = "rdshutter"
 	},
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/firedoor/window,
@@ -2270,7 +2270,7 @@
 "EP" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "foreshutter"
+	base_id = "foreshutter"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
@@ -2504,7 +2504,7 @@
 /mob/living/simple_animal/slime,
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "slimer"
+	base_id = "slimer"
 	},
 /turf/open/floor/circuit/telecomms{
 	name = "coldroom"
@@ -2731,7 +2731,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "slimelock";
+	base_id = "slimelock";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plating,
@@ -2939,7 +2939,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "slimelock";
+	base_id = "slimelock";
 	name = "Lockdown Shutters"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -2969,7 +2969,7 @@
 	},
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "slimelock";
+	base_id = "slimelock";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plating,
@@ -3094,7 +3094,7 @@
 /area/ship/science)
 "Ob" = (
 /obj/machinery/button/door{
-	id = "rdshutter";
+	base_id = "rdshutter";
 	name = "lockdown shutters";
 	pixel_x = -5;
 	pixel_y = 39
@@ -3241,7 +3241,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "slimelock";
+	base_id = "slimelock";
 	name = "Lockdown Shutters"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -3284,7 +3284,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "slimelock";
+	base_id = "slimelock";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
@@ -3356,7 +3356,7 @@
 "Rn" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
-	id = "rdshutter"
+	base_id = "rdshutter"
 	},
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
@@ -3394,7 +3394,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "slimelock";
+	base_id = "slimelock";
 	name = "Lockdown Shutters"
 	},
 /obj/structure/disposalpipe/segment{
@@ -3499,7 +3499,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "slimer"
+	base_id = "slimer"
 	},
 /turf/open/floor/circuit/telecomms{
 	name = "coldroom"
@@ -3610,7 +3610,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "slimelock";
+	base_id = "slimelock";
 	name = "Lockdown Shutters"
 	},
 /obj/structure/disposalpipe/segment{
@@ -3634,7 +3634,7 @@
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "foreshutter"
+	base_id = "foreshutter"
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
@@ -3793,7 +3793,7 @@
 "Ww" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "slimelock";
+	base_id = "slimelock";
 	name = "Lockdown Shutters"
 	},
 /turf/open/floor/plating,
@@ -3829,7 +3829,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "slimer"
+	base_id = "slimer"
 	},
 /obj/machinery/camera/autoname{
 	dir = 5

@@ -248,7 +248,7 @@
 "bj" = (
 /obj/machinery/computer/pod{
 	dir = 1;
-	id = "spacebattlepod3";
+	base_id = "spacebattlepod3";
 	name = "Hull Door Control"
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -256,7 +256,7 @@
 "bk" = (
 /obj/machinery/door/poddoor{
 	icon_state = "pdoor1";
-	id = "spacebattlepod3";
+	base_id = "spacebattlepod3";
 	name = "Front Hull Door"
 	},
 /turf/open/floor/plating,
@@ -432,7 +432,7 @@
 "cb" = (
 /obj/machinery/computer/pod{
 	dir = 1;
-	id = "spacebattlepod";
+	base_id = "spacebattlepod";
 	name = "Hull Door Control"
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -456,7 +456,7 @@
 /area/awaymission/spacebattle/cruiser)
 "ci" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "spacebattlepod";
+	base_id = "spacebattlepod";
 	name = "Front Hull Door"
 	},
 /turf/open/floor/plating,
@@ -720,7 +720,7 @@
 "dc" = (
 /obj/machinery/computer/pod{
 	dir = 1;
-	id = "spacebattlepod2";
+	base_id = "spacebattlepod2";
 	name = "Hull Door Control"
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -790,7 +790,7 @@
 /area/awaymission/spacebattle/cruiser)
 "dr" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "spacebattlepod2";
+	base_id = "spacebattlepod2";
 	name = "Front Hull Door"
 	},
 /turf/open/floor/plating,
@@ -1302,7 +1302,7 @@
 /area/awaymission/spacebattle/cruiser)
 "ff" = (
 /obj/machinery/button/door{
-	id = "spacebattlestorage";
+	base_id = "spacebattlestorage";
 	name = "Secure Storage";
 	pixel_x = 32
 	},
@@ -1314,7 +1314,7 @@
 /area/awaymission/spacebattle/cruiser)
 "fh" = (
 /obj/machinery/door/poddoor{
-	id = "spacebattlestorage";
+	base_id = "spacebattlestorage";
 	name = "Secure Storage"
 	},
 /turf/open/floor/plasteel,
@@ -1738,7 +1738,7 @@
 /area/awaymission/spacebattle/cruiser)
 "gr" = (
 /obj/machinery/button/door{
-	id = "spacebattlestorage";
+	base_id = "spacebattlestorage";
 	name = "Secure Storage";
 	pixel_x = 25
 	},
@@ -2512,7 +2512,7 @@
 "jw" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "spacebattlearmory";
+	base_id = "spacebattlearmory";
 	name = "Weapon Cache"
 	},
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -2526,7 +2526,7 @@
 "jx" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "spacebattlearmory2";
+	base_id = "spacebattlearmory2";
 	name = "Weapon Cache"
 	},
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -2540,7 +2540,7 @@
 "jy" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = "spacebattlearmory1";
+	base_id = "spacebattlearmory1";
 	name = "Weapon Cache"
 	},
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -2596,7 +2596,7 @@
 /area/awaymission/spacebattle/cruiser)
 "jG" = (
 /obj/machinery/door/poddoor{
-	id = "spacebattlearmory1";
+	base_id = "spacebattlearmory1";
 	name = "Secure Cache 1"
 	},
 /turf/open/floor/engine,
@@ -2627,7 +2627,7 @@
 /area/awaymission/spacebattle/cruiser)
 "jL" = (
 /obj/machinery/door/poddoor{
-	id = "spacebattlearmory";
+	base_id = "spacebattlearmory";
 	name = "Secure Armory"
 	},
 /turf/open/floor/engine,
@@ -2668,7 +2668,7 @@
 /area/awaymission/spacebattle/cruiser)
 "jQ" = (
 /obj/machinery/door/poddoor{
-	id = "spacebattlearmory2";
+	base_id = "spacebattlearmory2";
 	name = "Secure Cache 2"
 	},
 /turf/open/floor/engine,

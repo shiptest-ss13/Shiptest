@@ -427,7 +427,7 @@
 /obj/item/clothing/suit/hooded/wintercoat/science,
 /obj/item/clothing/shoes/winterboots,
 /obj/machinery/button/door{
-	id = "snowdindormresearch3";
+	base_id = "snowdindormresearch3";
 	name = "Dorm Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -441,7 +441,7 @@
 /obj/item/clothing/suit/hooded/wintercoat/science,
 /obj/item/clothing/shoes/winterboots,
 /obj/machinery/button/door{
-	id = "snowdindormresearch2";
+	base_id = "snowdindormresearch2";
 	name = "Dorm Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -464,7 +464,7 @@
 /obj/structure/closet/cabinet,
 /obj/item/clothing/shoes/winterboots,
 /obj/machinery/button/door{
-	id = "snowdindormresearch1";
+	base_id = "snowdindormresearch1";
 	name = "Dorm Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -475,7 +475,7 @@
 "bC" = (
 /obj/structure/closet/cabinet,
 /obj/machinery/button/door{
-	id = "snowdindormhydro2";
+	base_id = "snowdindormhydro2";
 	name = "Dorm Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -488,7 +488,7 @@
 /obj/item/clothing/suit/hooded/wintercoat/hydro,
 /obj/item/clothing/shoes/winterboots,
 /obj/machinery/button/door{
-	id = "snowdindormhydro1";
+	base_id = "snowdindormhydro1";
 	name = "Dorm Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -1284,7 +1284,7 @@
 "dY" = (
 /obj/structure/ladder/unbreakable{
 	height = 1;
-	id = "snowdin"
+	base_id = "snowdin"
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
@@ -1325,7 +1325,7 @@
 /obj/item/clothing/suit/hooded/wintercoat/security,
 /obj/item/clothing/shoes/winterboots,
 /obj/machinery/button/door{
-	id = "snowdindormsec";
+	base_id = "snowdindormsec";
 	name = "Dorm Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -25;
@@ -2116,7 +2116,7 @@
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
-	id = "snowdindormcap";
+	base_id = "snowdindormcap";
 	name = "Dorm Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = 25;
@@ -2876,7 +2876,7 @@
 "jt" = (
 /obj/structure/table,
 /obj/machinery/button/door{
-	id = "snowdin_gate";
+	base_id = "snowdin_gate";
 	pixel_x = 7;
 	pixel_y = -25
 	},
@@ -4178,7 +4178,7 @@
 /area/awaymission/snowdin/post/garage)
 "mY" = (
 /obj/machinery/button/door{
-	id = "snowdingarage1";
+	base_id = "snowdingarage1";
 	name = "Garage Door toggle";
 	pixel_x = -25;
 	pixel_y = -7
@@ -4353,7 +4353,7 @@
 /area/awaymission/snowdin/post/hydro)
 "nB" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "snowdingarage1";
+	base_id = "snowdingarage1";
 	name = "Garage Door"
 	},
 /turf/open/floor/plating,
@@ -5140,12 +5140,12 @@
 /area/awaymission/snowdin/post)
 "qS" = (
 /obj/machinery/button/door{
-	id = "snowdinturbineoutlet";
+	base_id = "snowdinturbineoutlet";
 	name = "Turbine Outlet Release";
 	pixel_y = -32
 	},
 /obj/machinery/button/door{
-	id = "snowdinturbinegas";
+	base_id = "snowdinturbinegas";
 	name = "Turbine Gas Release";
 	pixel_y = -25
 	},
@@ -5633,7 +5633,7 @@
 /area/awaymission/snowdin/post/cavern2)
 "sz" = (
 /obj/machinery/door/poddoor{
-	id = "snowdinturbinegas";
+	base_id = "snowdinturbinegas";
 	name = "Turbine Gas Release"
 	},
 /turf/open/floor/engine/vacuum,
@@ -5646,14 +5646,14 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/igniter{
-	id = "snowdin_turbine_ignitor"
+	base_id = "snowdin_turbine_ignitor"
 	},
 /turf/open/floor/engine/vacuum,
 /area/awaymission/snowdin/post/engineering)
 "sC" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
 	dir = 1;
-	id = "snowdin_incin_in"
+	base_id = "snowdin_incin_in"
 	},
 /turf/open/floor/engine/vacuum,
 /area/awaymission/snowdin/post/engineering)
@@ -5668,7 +5668,7 @@
 /area/awaymission/snowdin/outside)
 "sM" = (
 /obj/machinery/power/compressor{
-	comp_id = "snowdin_turbine";
+	comp_base_id = "snowdin_turbine";
 	dir = 1;
 	luminosity = 2
 	},
@@ -5765,7 +5765,7 @@
 /area/awaymission/snowdin/outside)
 "tg" = (
 /obj/machinery/door/poddoor{
-	id = "snowdinturbineoutlet";
+	base_id = "snowdinturbineoutlet";
 	name = "Turbine Outlet"
 	},
 /turf/open/floor/engine/vacuum,
@@ -6399,7 +6399,7 @@
 "vG" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos{
 	dir = 1;
-	id = "snowdin_incin_in"
+	base_id = "snowdin_incin_in"
 	},
 /turf/open/floor/plating/snowed/cavern,
 /area/awaymission/snowdin/post/cavern1)
@@ -7296,7 +7296,7 @@
 /area/awaymission/snowdin/post/mining_dock)
 "zo" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "snowdingarage2";
+	base_id = "snowdingarage2";
 	name = "Garage Door"
 	},
 /turf/open/floor/plating,
@@ -7356,7 +7356,7 @@
 "zx" = (
 /obj/machinery/light/small,
 /obj/machinery/button/door{
-	id = "snowdingarage2";
+	base_id = "snowdingarage2";
 	name = "Garage Door toggle";
 	pixel_x = -7;
 	pixel_y = -25
@@ -7746,7 +7746,7 @@
 /area/awaymission/snowdin/post/minipost)
 "Bb" = (
 /obj/machinery/button/door{
-	id = "snowdindormabandoned1";
+	base_id = "snowdindormabandoned1";
 	name = "Dorm Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -25;
@@ -8774,7 +8774,7 @@
 "FY" = (
 /obj/machinery/conveyor{
 	dir = 2;
-	id = "snowdin_belt_mine"
+	base_id = "snowdin_belt_mine"
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -8858,7 +8858,7 @@
 /obj/structure/plasticflaps,
 /obj/machinery/conveyor{
 	dir = 2;
-	id = "snowdin_belt_mine"
+	base_id = "snowdin_belt_mine"
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
@@ -8986,7 +8986,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 2;
-	id = "snowdin_belt_mine"
+	base_id = "snowdin_belt_mine"
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
@@ -9080,7 +9080,7 @@
 "Hk" = (
 /obj/machinery/conveyor{
 	dir = 2;
-	id = "snowdin_belt_mine"
+	base_id = "snowdin_belt_mine"
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
@@ -9187,7 +9187,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 2;
-	id = "snowdin_belt_mine"
+	base_id = "snowdin_belt_mine"
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
@@ -9230,7 +9230,7 @@
 /area/awaymission/snowdin/post/mining_main)
 "Ia" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "snowdingarage3";
+	base_id = "snowdingarage3";
 	name = "Garage Door"
 	},
 /turf/open/floor/plating,
@@ -9304,7 +9304,7 @@
 /area/awaymission/snowdin/post/mining_main)
 "Iw" = (
 /obj/machinery/button/door{
-	id = "snowdingarage3";
+	base_id = "snowdingarage3";
 	name = "Garage Door toggle";
 	pixel_x = 7;
 	pixel_y = 25
@@ -9465,21 +9465,21 @@
 /obj/structure/plasticflaps,
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "snowdin_belt_mine"
+	base_id = "snowdin_belt_mine"
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
 "Jg" = (
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "snowdin_belt_mine"
+	base_id = "snowdin_belt_mine"
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
 "Jh" = (
 /obj/machinery/conveyor{
 	dir = 10;
-	id = "snowdin_belt_mine"
+	base_id = "snowdin_belt_mine"
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
@@ -10201,7 +10201,7 @@
 /area/awaymission/snowdin/post/mining_dock)
 "Mb" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "snowdin_gate"
+	base_id = "snowdin_gate"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
@@ -12131,7 +12131,7 @@
 /area/awaymission/snowdin/post/engineering)
 "QA" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "snowdingarageunder2";
+	base_id = "snowdingarageunder2";
 	name = "Garage Door"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -12250,7 +12250,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "snowdin_gate"
+	base_id = "snowdin_gate"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
@@ -12415,13 +12415,13 @@
 /area/awaymission/snowdin/cave)
 "Rh" = (
 /obj/machinery/button/door{
-	id = "snowdingarageunder2";
+	base_id = "snowdingarageunder2";
 	name = "right Garage Door toggle";
 	pixel_x = 7;
 	pixel_y = 25
 	},
 /obj/machinery/button/door{
-	id = "snowdingarageunder";
+	base_id = "snowdingarageunder";
 	name = "left Garage Door toggle";
 	pixel_x = -7;
 	pixel_y = 25
@@ -12887,7 +12887,7 @@
 "Sp" = (
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/machinery/conveyor_switch/oneway{
-	id = "snowdin_belt_mine";
+	base_id = "snowdin_belt_mine";
 	name = "mining conveyor"
 	},
 /turf/open/floor/plating/asteroid/snow/ice,
@@ -13509,7 +13509,7 @@
 /area/awaymission/snowdin/post)
 "TN" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "snowdingarageunder";
+	base_id = "snowdingarageunder";
 	name = "Garage Door"
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -13551,7 +13551,7 @@
 	req_access_txt = "32"
 	},
 /obj/machinery/button/ignition{
-	id = "snowdin_turbine_ignitor";
+	base_id = "snowdin_turbine_ignitor";
 	pixel_x = 6;
 	pixel_y = -25
 	},
@@ -15832,7 +15832,7 @@
 "ZE" = (
 /obj/machinery/computer/turbine_computer{
 	dir = 1;
-	id = "snowdin_turbine"
+	base_id = "snowdin_turbine"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"

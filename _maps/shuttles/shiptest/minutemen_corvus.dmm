@@ -508,7 +508,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "minutemen_corvus_engines";
+	base_id = "minutemen_corvus_engines";
 	name = "Thruster Blast Door"
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
@@ -543,12 +543,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
-	id = "corvus_cargo";
+	base_id = "corvus_cargo";
 	locked = 1;
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "minutecop_cargohatch";
+	base_id = "minutecop_cargohatch";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/structure/cable{
@@ -698,14 +698,14 @@
 	},
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/machinery/button/door{
-	id = "minutecop_cargohatch";
+	base_id = "minutecop_cargohatch";
 	name = "Cargo hatch";
 	pixel_x = 23;
 	pixel_y = 10;
 	dir = 8
 	},
 /obj/machinery/button/shieldwallgen{
-	id = "corvus_cargo";
+	base_id = "corvus_cargo";
 	pixel_x = 21;
 	dir = 8
 	},
@@ -869,7 +869,7 @@
 /area/ship/hallway/central)
 "of" = (
 /obj/machinery/door/poddoor{
-	id = "minutecop_windows"
+	base_id = "minutecop_windows"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
@@ -921,7 +921,7 @@
 	},
 /obj/item/kirbyplants/random,
 /obj/machinery/button/door{
-	id = "minutemen_corvus_engines";
+	base_id = "minutemen_corvus_engines";
 	name = "Engine Blast Doors";
 	pixel_x = -10;
 	pixel_y = 24
@@ -983,12 +983,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
-	id = "corvus_cargo";
+	base_id = "corvus_cargo";
 	locked = 1;
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
-	id = "minutecop_cargohatch";
+	base_id = "minutecop_cargohatch";
 	name = "Cargo Bay Blast Door"
 	},
 /obj/structure/cable{
@@ -1029,7 +1029,7 @@
 /area/ship/hallway/central)
 "rk" = (
 /obj/machinery/door/poddoor{
-	id = "minutecop_windows"
+	base_id = "minutecop_windows"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
@@ -1509,7 +1509,7 @@
 /area/ship/hallway/central)
 "zu" = (
 /obj/machinery/door/poddoor{
-	id = "minutecop_bridge"
+	base_id = "minutecop_bridge"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
@@ -1633,7 +1633,7 @@
 	preferred_direction = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "minutecop_cargohatch";
+	base_id = "minutecop_cargohatch";
 	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
@@ -1663,7 +1663,7 @@
 /area/ship/hallway/central)
 "BA" = (
 /obj/machinery/door/poddoor{
-	id = "minutecop_windows"
+	base_id = "minutecop_windows"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
@@ -1810,14 +1810,14 @@
 	dir = 9
 	},
 /obj/machinery/button/door{
-	id = "minutecop_windows";
+	base_id = "minutecop_windows";
 	name = "Window blastdoors";
 	pixel_y = -10;
 	pixel_x = -22;
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "minutecop_bridge";
+	base_id = "minutecop_bridge";
 	name = "Bridge shutters";
 	pixel_y = 2;
 	pixel_x = -22;
@@ -2000,7 +2000,7 @@
 /area/ship/engineering)
 "Jh" = (
 /obj/machinery/door/poddoor{
-	id = "minutecop_windows"
+	base_id = "minutecop_windows"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2062,7 +2062,7 @@
 /obj/item/bedsheet/grey,
 /obj/effect/turf_decal/corner/opaque/grey/diagonal,
 /obj/machinery/flasher{
-	id = "minuteman_cell1";
+	base_id = "minuteman_cell1";
 	pixel_x = -25
 	},
 /turf/open/floor/plasteel/dark,
@@ -2098,7 +2098,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "minutemen_corvus_engines";
+	base_id = "minutemen_corvus_engines";
 	name = "Thruster Blast Door"
 	},
 /obj/structure/window/reinforced{
@@ -2166,7 +2166,7 @@
 /area/ship/engineering)
 "Mu" = (
 /obj/machinery/door/poddoor{
-	id = "minutecop_windows"
+	base_id = "minutecop_windows"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
@@ -2318,7 +2318,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "minutemen_corvus_engines";
+	base_id = "minutemen_corvus_engines";
 	name = "Thruster Blast Door"
 	},
 /obj/structure/window/reinforced{
@@ -2641,7 +2641,7 @@
 	dir = 1;
 	pixel_y = -20;
 	pixel_x = -8;
-	id = "minuteman_cell1"
+	base_id = "minuteman_cell1"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
