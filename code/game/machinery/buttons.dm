@@ -18,6 +18,10 @@
 /obj/machinery/button/indestructible
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
+/obj/machinery/button/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	setup_device()
+
 /obj/machinery/button/Initialize(mapload, ndir = 0, built = 0)
 	. = ..()
 	if(built)
@@ -197,7 +201,6 @@
 			var/obj/item/assembly/control/C = new(src)
 			C.sync_doors = sync_doors
 			device = C
-		device.port_id = port_id
 	..()
 
 /obj/machinery/button/door/incinerator_vent_toxmix
