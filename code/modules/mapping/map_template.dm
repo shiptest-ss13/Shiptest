@@ -164,6 +164,7 @@
 	var/list/border = block(locate(max(T.x-1, 1), max(T.y-1, 1),  T.z),
 							locate(min(T.x+width+1, world.maxx), min(T.y+height+1, world.maxy), T.z))
 	for(var/turf/turf_to_disable as anything in border)
+		turf_to_disable.blocks_air = TRUE
 		turf_to_disable.set_sleeping(TRUE)
 
 	// Accept cached maps, but don't save them automatically - we don't want
