@@ -1,0 +1,38 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Schmiedeberg-class Pharmacology Ship",
+	"prefix": "IMV",
+	"map_short_name": "Schmiedeberg-class",
+	"map_path": "_maps/shuttles/shiptest/independent_schmiedeberg.dmm",
+	"namelists": ["MERCANTILE", "GENERAL"],
+	"limit": 2,
+	"job_slots": {
+		"Chief Pharmacist": {
+			"outfit": "/datum/outfit/job/cmo/pharma",
+			"officer": true,
+			"slots": 1
+		},
+		"Pharmacist": {
+			"outfit": "/datum/outfit/job/chemist/pharma",
+			"officer": false,
+			"slots": 1
+		},
+		"Mixologist": {
+			"outfit": "/datum/outfit/job/bartender/pharma",
+			"officer": false,
+			"slots": 1
+		},
+		"Herbalist": {
+			"outfit": "/datum/outfit/job/botanist/pharma",
+			"officer": false,
+			"slots": 2
+		},
+		"Pharmacology Student": {
+			"outfit": "/datum/outfit/job/assistant/pharma",
+			"officer": false,
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
+
