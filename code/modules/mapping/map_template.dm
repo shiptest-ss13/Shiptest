@@ -118,6 +118,7 @@
 			)
 		)
 	for(var/turf/affected_turf as anything in template_and_bordering_turfs)
+		affected_turf.blocks_air = initial(affected_turf.blocks_air)
 		affected_turf.air_update_turf(TRUE, TRUE)
 		affected_turf.levelupdate()
 
@@ -143,6 +144,8 @@
 	var/list/bounds = parsed.bounds
 	if(!bounds)
 		return FALSE
+
+	repopulate_sorted_areas()
 
 	//initialize things that are normally initialized after map load
 	initTemplateBounds(bounds)
