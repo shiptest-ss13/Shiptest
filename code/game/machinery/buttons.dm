@@ -125,6 +125,7 @@
 	if(base_id && istype(device, /obj/item/assembly/control))
 		var/obj/item/assembly/control/A = device
 		A.base_id = base_id
+		A.port_id = port_id
 	initialized_button = 1
 
 /obj/machinery/button/attack_hand(mob/user)
