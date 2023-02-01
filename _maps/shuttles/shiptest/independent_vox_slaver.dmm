@@ -1,0 +1,4216 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/template_noop,
+/area/template_noop)
+"ab" = (
+/turf/closed/wall/r_wall,
+/area/ship/security/range)
+"ac" = (
+/turf/closed/wall/r_wall,
+/area/ship/maintenance/port)
+"ad" = (
+/obj/machinery/power/port_gen/pacman{
+	icon_state = "portgen0_1"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"ae" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Armory air scrubber #1";
+	icon_state = "scrub_on";
+	dir = 1
+	},
+/obj/structure/rack,
+/obj/item/ammo_box/c9mm/surplus{
+	dir = 4
+	},
+/obj/item/ammo_box/c9mm/surplus{
+	dir = 4
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security/armory)
+"af" = (
+/obj/machinery/button/door{
+	req_access = list();
+	name = "Lobby Door Control";
+	pixel_y = 7;
+	dir = 1
+	},
+/turf/closed/wall/r_wall,
+/area/ship/security)
+"ag" = (
+/obj/machinery/power/apc/auto_name/east{
+	name = "ISV Kree-aaw Aft Hallway APC";
+	dir = 2
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ship/hallway/aft)
+"ah" = (
+/obj/machinery/computer/crew,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"ai" = (
+/obj/machinery/light/small,
+/obj/machinery/power/apc/auto_name/south{
+	name = "ISV Kree-aaw Bridge APC"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/terminal,
+/obj/structure/catwalk/over,
+/obj/item/melee/classic_baton/telescopic/contractor_baton,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/restraints/handcuffs/cable/zipties,
+/obj/item/restraints/handcuffs/cable/zipties,
+/obj/item/clothing/suit/jacket,
+/obj/item/clothing/mask/gas,
+/obj/structure/closet/secure_closet/wall{
+	req_access_txt = "5";
+	icon_state = "sec_wall";
+	dir = 4;
+	pixel_x = -28
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"aj" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"ak" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/security/range)
+"al" = (
+/obj/structure/chair,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/drip{
+	icon_state = "drip3"
+	},
+/obj/effect/decal/cleanable/blood/gibs/torso{
+	name = "rotting gibs"
+	},
+/obj/item/restraints/handcuffs/cable/zipties/used,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
+"am" = (
+/obj/effect/decal/cleanable/blood/gibs/core{
+	name = "rotting gibs"
+	},
+/obj/effect/decal/cleanable/blood/gibs{
+	name = "rotting gibs"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/footprints,
+/obj/machinery/light/small{
+	icon_state = "bulb-broken"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
+"an" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/maintenance/port)
+"ao" = (
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	icon_state = "pump_off-2";
+	pixel_x = -5
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"ap" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow,
+/obj/item/wrench/crescent,
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/port)
+"aq" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/port)
+"ar" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/port)
+"as" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Port Maintenance vent pump #1";
+	icon_state = "vent_out";
+	dir = 1;
+	pixel_x = -5
+	},
+/obj/machinery/airalarm/all_access{
+	name = "ISV Kree-aaw Port Maintenance Air Alarm";
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"at" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/northright,
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"au" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/east{
+	name = "ISV Kree-aaw Port Maintenance APC";
+	dir = 2
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/item/storage/toolbox/electrical,
+/obj/item/screwdriver{
+	icon_state = "screwdriver";
+	pixel_y = 5;
+	color = "#ffe366"
+	},
+/obj/item/wirecutters{
+	icon_state = "cutters";
+	color = "#96ffef"
+	},
+/obj/item/t_scanner,
+/obj/item/crowbar,
+/obj/item/stack/cable_coil{
+	pixel_x = 1;
+	pixel_y = 2;
+	color = "#ff8000"
+	},
+/obj/item/stack/cable_coil{
+	pixel_x = 1;
+	pixel_y = 2;
+	color = "#ff8000"
+	},
+/obj/item/stack/cable_coil{
+	color = "#ff8000"
+	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/port)
+"av" = (
+/obj/effect/decal/cleanable/blood/gibs/core{
+	name = "rotting gibs";
+	icon_state = "gibmid2";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/footprints,
+/turf/open/floor/plating,
+/area/ship/security/range)
+"aw" = (
+/obj/structure/curtain/bounty{
+	req_access = list()
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"ax" = (
+/obj/effect/decal/cleanable/blood/footprints,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
+"ay" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bed,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security/range)
+"az" = (
+/turf/closed/wall/r_wall,
+/area/ship/security)
+"aA" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_access_txt = "1"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"aB" = (
+/turf/closed/wall/r_wall,
+/area/ship/bridge)
+"aC" = (
+/turf/closed/wall/r_wall,
+/area/ship/storage)
+"aD" = (
+/obj/effect/decal/cleanable/blood/gibs{
+	name = "rotting gibs";
+	icon_state = "gib2";
+	dir = 4
+	},
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/breadslice/plain{
+	list_reagents = list(/datum/reagent/consumable/nutriment=2);
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/breadslice/plain{
+	list_reagents = list(/datum/reagent/consumable/nutriment=2);
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/breadslice/plain{
+	list_reagents = list(/datum/reagent/consumable/nutriment=2);
+	pixel_x = 5;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/snacks/breadslice/plain{
+	list_reagents = list(/datum/reagent/consumable/nutriment=2);
+	pixel_x = 2;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/food/snacks/breadslice/plain{
+	list_reagents = list(/datum/reagent/consumable/nutriment=2);
+	dir = 4;
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/clothing/shoes/workboots/mining{
+	dir = 4;
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/obj/item/flashlight/lamp{
+	dir = 4;
+	pixel_x = 4;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
+"aE" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Firing Range vent pump #1";
+	icon_state = "vent_out";
+	pixel_x = -5
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/security/range)
+"aF" = (
+/obj/item/radio/intercom{
+	pixel_y = 25
+	},
+/obj/structure/rack,
+/obj/item/ammo_box/magazine/m50{
+	icon_state = "50ae-7";
+	dir = 8;
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/ammo_box/magazine/m50{
+	icon_state = "50ae-7";
+	dir = 8;
+	pixel_x = 6;
+	pixel_y = -2
+	},
+/obj/machinery/door/window/brigdoor{
+	icon_state = "leftsecureopen";
+	dir = 4;
+	req_access_txt = "3"
+	},
+/obj/item/ammo_box/magazine/m50{
+	icon_state = "50ae-7";
+	dir = 8;
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/automatic/pistol/deagle{
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security)
+"aG" = (
+/obj/machinery/power/apc/auto_name/south{
+	name = "ISV Kree-aaw Firing Range APC"
+	},
+/obj/structure/cable,
+/obj/machinery/power/terminal,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/security/range)
+"aH" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/northright{
+	req_access = list()
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed"
+	},
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed";
+	id = "voxdow"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"aI" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/bridge)
+"aJ" = (
+/obj/effect/decal/cleanable/garbage,
+/turf/open/floor/plating/rust,
+/area/ship/crew)
+"aK" = (
+/obj/machinery/airalarm/all_access{
+	name = "ISV Kree-aaw Storage Bay Air Alarm";
+	dir = 4;
+	pixel_x = -25
+	},
+/turf/closed/wall/r_wall,
+/area/ship/storage)
+"aL" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Firing Range air scrubber #1";
+	icon_state = "scrub_on"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
+"aM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/rust,
+/area/ship/security/range)
+"aN" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security/range)
+"aO" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/security)
+"aP" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/insectguts,
+/turf/open/floor/plating,
+/area/ship/hallway/fore)
+"aQ" = (
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed"
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/plating,
+/area/ship/security)
+"aR" = (
+/obj/machinery/light{
+	icon_state = "tube-empty";
+	dir = 4
+	},
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/aft)
+"aS" = (
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	icon_state = "manifoldlayer_center";
+	dir = 1
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed";
+	id = "voxdow"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"aT" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"aU" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"aV" = (
+/obj/item/reagent_containers/pill/floorpill{
+	list_reagents = list(/datum/reagent/medicine/thializid=42);
+	name = "maintenance pill";
+	dir = 8;
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/pill/floorpill{
+	list_reagents = list(/datum/reagent/consumable/grey_bull=36);
+	name = "strange pill";
+	dir = 8;
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/turf/open/floor/plating/rust,
+/area/ship/crew)
+"aW" = (
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"aX" = (
+/obj/structure/sign/poster/contraband/clown{
+	name = "poster - Clown"
+	},
+/turf/closed/wall/r_wall,
+/area/ship/bridge)
+"aY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Storage Bay air scrubber #1";
+	icon_state = "scrub_on";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/cigbutt/cigarbutt,
+/obj/item/clothing/under/pants/khaki,
+/obj/item/clothing/suit/armor/vest/alt,
+/obj/item/storage/backpack/industrial,
+/obj/item/stack/sheet/metal/fifty{
+	icon_state = "sheet-metal_3"
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/head/welding{
+	icon_state = "weldingup"
+	},
+/obj/item/clothing/neck/tie/enby,
+/obj/item/radio/headset/alt,
+/obj/item/lighter,
+/obj/item/card/id/syndicate/anyone{
+	name = "Lukas Judge #225's ID Card (Slave)"
+	},
+/obj/item/clothing/glasses/meson/engine{
+	icon_state = "trayson-radiation"
+	},
+/obj/item/stack/sheet/metal/fifty{
+	icon_state = "sheet-metal_3"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"aZ" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/rust,
+/area/ship/crew)
+"ba" = (
+/obj/structure/sign/poster/official/no_erp{
+	name = "poster - No ERP"
+	},
+/turf/closed/wall/r_wall,
+/area/ship/security/range)
+"bb" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/northleft,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed"
+	},
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed";
+	id = "voxdow"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"bc" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/vomit/old{
+	icon_state = "vomit_4-old"
+	},
+/turf/open/floor/plating/rust,
+/area/ship/security/range)
+"bd" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Bridge vent pump #1";
+	icon_state = "vent_out";
+	pixel_x = -5
+	},
+/obj/structure/catwalk/over,
+/obj/structure/table/reinforced,
+/obj/machinery/button/door{
+	req_access = list();
+	name = "Lobby Shutter Control";
+	pixel_x = -5;
+	pixel_y = 7;
+	id = "voxlobby"
+	},
+/obj/machinery/button/door{
+	req_access = list();
+	name = "Window Shutters";
+	pixel_x = 5;
+	pixel_y = 7;
+	id = "voxdow"
+	},
+/obj/item/clothing/shoes/sneakers/black{
+	dir = 4;
+	pixel_x = -1;
+	pixel_y = -2
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"be" = (
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"bf" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"bg" = (
+/obj/machinery/power/port_gen/pacman{
+	icon_state = "portgen0_1"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/effect/decal/cleanable/greenglow,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"bh" = (
+/obj/machinery/airalarm/all_access{
+	name = "ISV Kree-aaw Aft Hallway Air Alarm";
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/rust,
+/area/ship/hallway/aft)
+"bi" = (
+/obj/effect/decal/cleanable/blood/gibs{
+	name = "rotting gibs";
+	icon_state = "gib6";
+	dir = 1
+	},
+/obj/item/clothing/under/rank/cargo/miner/lavaland/old,
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/radio/headset/headset_cargo/mining,
+/obj/item/clothing/mask/gas/explorer/old,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
+"bj" = (
+/turf/closed/wall/r_wall,
+/area/ship/hallway/aft)
+"bk" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed";
+	id = "voxdow"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"bl" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_access_txt = "1"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ship/hallway/aft)
+"bm" = (
+/obj/structure/sign/poster/contraband/c20r{
+	name = "poster - Cobra 20"
+	},
+/turf/closed/wall/r_wall,
+/area/ship/hallway/aft)
+"bn" = (
+/obj/structure/sign/poster/contraband/peacemaker{
+	name = "poster - Peacemaker"
+	},
+/turf/closed/wall/r_wall,
+/area/ship/hallway/aft)
+"bo" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed";
+	id = "voxdow"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"bp" = (
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 4
+	},
+/obj/machinery/airalarm/all_access{
+	name = "ISV Kree-aaw Bridge Air Alarm";
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"bq" = (
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"br" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/firealarm{
+	pixel_y = 25
+	},
+/obj/effect/decal/cleanable/vomit/old{
+	icon_state = "vomit_3-old"
+	},
+/obj/item/cigbutt/cigarbutt{
+	dir = 4;
+	pixel_x = -6;
+	pixel_y = -4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"bs" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp{
+	icon_state = "lamp-on"
+	},
+/obj/item/reagent_containers/food/snacks/breadslice/plain{
+	list_reagents = list(/datum/reagent/consumable/nutriment=2);
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/food/snacks/breadslice/plain{
+	list_reagents = list(/datum/reagent/consumable/nutriment=2);
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/snacks/breadslice/plain{
+	list_reagents = list(/datum/reagent/consumable/nutriment=2);
+	pixel_x = 3;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/food/snacks/breadslice/plain{
+	list_reagents = list(/datum/reagent/consumable/nutriment=2);
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/snacks/salad/boiledrice{
+	list_reagents = list(/datum/reagent/consumable/nutriment=5,/datum/reagent/consumable/nutriment/vitamin=1);
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/snacks/salad/boiledrice{
+	list_reagents = list(/datum/reagent/consumable/nutriment=5,/datum/reagent/consumable/nutriment/vitamin=1);
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/snacks/salad/boiledrice{
+	list_reagents = list(/datum/reagent/consumable/nutriment=5,/datum/reagent/consumable/nutriment/vitamin=1);
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/storage/cans/sixbeer{
+	icon_state = "canholder4";
+	pixel_x = -8;
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = list(/datum/reagent/consumable/ethanol/beer=30);
+	pixel_x = -3;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = list(/datum/reagent/consumable/ethanol/beer=30);
+	pixel_x = -3;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = list(/datum/reagent/consumable/ethanol/beer=30);
+	pixel_x = -1;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = list(/datum/reagent/consumable/ethanol/beer=30);
+	pixel_x = -3;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = list();
+	pixel_x = 12;
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"bt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_box/magazine/ak47{
+	icon_state = "ak47_mag-0";
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/chair/plastic,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
+"bu" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	pixel_x = -8;
+	pixel_y = 7
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	pixel_x = -5;
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	pixel_x = -9;
+	pixel_y = 1
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
+"bv" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/item/ammo_casing/c9mm{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -9;
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
+"bw" = (
+/obj/machinery/light{
+	icon_state = "tube-broken";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"bx" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/west{
+	name = "ISV Kree-aaw Crew Quarters APC";
+	dir = 2
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plating/rust,
+/area/ship/crew)
+"by" = (
+/obj/structure/chair/stool{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"bz" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Security Office vent pump #1";
+	icon_state = "vent_out";
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"bA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"bB" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25
+	},
+/turf/open/floor/plating/rust,
+/area/ship/crew)
+"bC" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"bD" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/curtain/bounty,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/aft)
+"bE" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/hallway/aft)
+"bF" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"bG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/footprints,
+/turf/open/floor/plating/rust,
+/area/ship/security/range)
+"bH" = (
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/rust,
+/area/ship/crew)
+"bI" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp/green{
+	icon_state = "lampgreen-on";
+	pixel_y = 10
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"bJ" = (
+/obj/machinery/computer/helm,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"bK" = (
+/obj/structure/chair/comfy/shuttle{
+	name = "Helm";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"bL" = (
+/obj/machinery/light/small,
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"bM" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/fore)
+"bN" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/plating,
+/area/ship/storage)
+"bO" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/vomit/old{
+	icon_state = "vomit_2-old"
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	pixel_y = -10
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
+"bP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/window/eastleft,
+/obj/item/ammo_casing/c9mm{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 3;
+	pixel_y = 1
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = 1;
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = -2;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = -8;
+	pixel_y = -1
+	},
+/obj/item/ammo_casing/c9mm{
+	icon_state = "pistol-brass-empty";
+	dir = 4;
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/c9mm{
+	icon_state = "pistol-brass-empty";
+	dir = 4;
+	pixel_x = -6;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/c9mm{
+	icon_state = "pistol-brass-empty";
+	dir = 4;
+	pixel_x = 2;
+	pixel_y = -1
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = 5;
+	pixel_y = -6
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = 7;
+	pixel_y = 2
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = -2;
+	pixel_y = -9
+	},
+/obj/item/ammo_casing/a762_39{
+	icon_state = "rifle-steel-empty";
+	dir = 4;
+	pixel_x = 9;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/syringe{
+	list_reagents = list()
+	},
+/obj/item/stack/sheet/plasteel{
+	amount = 44;
+	icon_state = "sheet-plasteel_3";
+	dir = 4;
+	pixel_x = -2
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
+"bQ" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/airalarm/all_access{
+	name = "ISV Kree-aaw Firing Range Air Alarm";
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/item/ammo_casing/c9mm{
+	icon_state = "pistol-brass-empty";
+	pixel_x = 10;
+	pixel_y = -10
+	},
+/obj/item/ammo_casing/c9mm{
+	icon_state = "pistol-brass-empty";
+	pixel_x = -5;
+	pixel_y = -7
+	},
+/obj/item/ammo_casing/c9mm{
+	icon_state = "pistol-brass-empty";
+	dir = 4;
+	pixel_x = 4;
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/c9mm{
+	icon_state = "pistol-brass-empty";
+	dir = 4;
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/range)
+"bR" = (
+/obj/machinery/light{
+	icon_state = "tube-broken";
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/effect/particle_effect/sparks{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/aft)
+"bS" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/sign/poster/contraband/pgf{
+	name = "poster - PGF Marine"
+	},
+/turf/closed/wall/r_wall,
+/area/ship/security)
+"bT" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/syringe/contraband/fentanyl{
+	list_reagents = list(/datum/reagent/toxin/fentanyl=15);
+	icon_state = "syringe_15";
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/syringe/contraband/crank{
+	list_reagents = list(/datum/reagent/drug/crank=15);
+	icon_state = "syringe_15";
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/syringe/contraband/crank{
+	list_reagents = list(/datum/reagent/drug/crank=15);
+	icon_state = "syringe_15";
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/machinery/door/window/brigdoor{
+	dir = 8;
+	req_access_txt = "3"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security/range)
+"bU" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/sign/poster/contraband/c20r{
+	name = "poster - Cobra 20"
+	},
+/turf/closed/wall/r_wall,
+/area/ship/security)
+"bV" = (
+/obj/machinery/light{
+	icon_state = "tube-broken";
+	dir = 1
+	},
+/obj/machinery/airalarm/all_access{
+	name = "ISV Kree-aaw Aft Hallway Air Alarm";
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/machinery/button/door{
+	req_access = list();
+	name = "Lobby Shutter Control";
+	pixel_y = 25
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/aft)
+"bW" = (
+/obj/structure/chair/office/light,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/aft)
+"bX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/garbage,
+/turf/open/floor/plating/rust,
+/area/ship/hallway/aft)
+"bY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/aft)
+"bZ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/port)
+"ca" = (
+/obj/machinery/light{
+	icon_state = "tube-broken";
+	dir = 8
+	},
+/obj/structure/chair/sofa/left{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/aft)
+"cb" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ship/hallway/aft)
+"cc" = (
+/turf/open/floor/engine,
+/area/ship/hallway/aft)
+"cd" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Starboard Maintenance air scrubber #1";
+	icon_state = "scrub_on";
+	dir = 1;
+	pixel_x = 5
+	},
+/obj/machinery/airalarm/all_access{
+	name = "ISV Kree-aaw Starboard Maintenance Air Alarm";
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"ce" = (
+/obj/item/radio/intercom/wideband{
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"cf" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Storage Bay vent pump #1";
+	icon_state = "vent_out";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/west{
+	req_access = list();
+	name = "ISV Kree-aaw Storage Bay APC";
+	dir = 2
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/bed{
+	pixel_y = 15
+	},
+/obj/structure/bed,
+/turf/open/floor/plating/rust,
+/area/ship/storage)
+"cg" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"ch" = (
+/obj/structure/window/plasma/reinforced/unanchored{
+	dir = 1
+	},
+/obj/structure/rack,
+/obj/item/gun/ballistic/shotgun/bulldog/unrestricted{
+	dir = 8;
+	pixel_x = 1;
+	pixel_y = 2
+	},
+/obj/item/ammo_box/magazine/m12g/slug{
+	icon_state = "m12gb-8";
+	dir = 8;
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/obj/item/ammo_box/magazine/m12g/slug{
+	icon_state = "m12gb-8";
+	dir = 8;
+	pixel_x = 6
+	},
+/obj/machinery/door/window/brigdoor{
+	dir = 4;
+	req_access_txt = "3"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security)
+"ci" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/airalarm/all_access{
+	name = "ISV Kree-aaw Fore Hallway Air Alarm";
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/item/stock_parts/cell/computer{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"cj" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"ck" = (
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"cl" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"cm" = (
+/obj/machinery/airalarm/all_access{
+	name = "ISV Kree-aaw Armory Air Alarm";
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/south{
+	name = "ISV Kree-aaw Armory APC"
+	},
+/obj/machinery/power/terminal,
+/obj/effect/decal/cleanable/wrapping,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
+"cn" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/airlock/hatch{
+	req_access_txt = "3"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"co" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/hallway/fore)
+"cp" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor{
+	dir = 4;
+	req_access_txt = "0s"
+	},
+/obj/machinery/door/window/brigdoor{
+	dir = 8;
+	req_access_txt = "3"
+	},
+/turf/open/floor/plating,
+/area/ship/security)
+"cq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/hallway/fore)
+"cr" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed";
+	id = "voxdow"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"cs" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/port)
+"ct" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Aft Hallway vent pump #2";
+	icon_state = "vent_out"
+	},
+/obj/item/toner,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/aft)
+"cu" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/autolathe/hacked,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security/armory)
+"cv" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/item/paper_bin,
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/curtain/bounty,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/aft)
+"cw" = (
+/obj/machinery/suit_storage_unit/independent,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"cx" = (
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/aft)
+"cy" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine,
+/area/ship/hallway/aft)
+"cz" = (
+/obj/structure/fans/tiny,
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor/shutters{
+	name = "Lobby";
+	id = "voxlobby"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"cA" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/structure/rack,
+/obj/item/gun/energy/e_gun,
+/obj/item/gun/energy/e_gun,
+/obj/item/gun/energy/ionrifle/carbine,
+/obj/item/gun/energy/laser/scatter{
+	dir = 4;
+	pixel_y = 2
+	},
+/obj/item/gun/energy/laser{
+	dir = 4;
+	pixel_x = 1;
+	pixel_y = 2
+	},
+/obj/item/gun/energy/laser{
+	dir = 4;
+	pixel_x = 3;
+	pixel_y = -4
+	},
+/obj/item/gun/energy/laser/scatter{
+	dir = 4;
+	pixel_x = 6;
+	pixel_y = 1
+	},
+/obj/item/flashlight/seclite{
+	dir = 1;
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security/armory)
+"cB" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Bridge air scrubber #1";
+	icon_state = "scrub_on";
+	pixel_x = 5
+	},
+/obj/structure/curtain/bounty{
+	req_access = list()
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"cC" = (
+/obj/machinery/holopad/emergency/command{
+	
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/box/red,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"cD" = (
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"cE" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Fore Hallway air scrubber #1";
+	icon_state = "scrub_on";
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"cF" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Fore Hallway vent pump #1";
+	icon_state = "vent_out";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"cG" = (
+/obj/machinery/light{
+	icon_state = "tube-broken";
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"cH" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"cI" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/fore)
+"cJ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/fore)
+"cK" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	piping_layer = 2
+	},
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/starboard)
+"cL" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/fore)
+"cM" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/rust,
+/area/ship/hallway/fore)
+"cN" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -32
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	req_access_txt = "1"
+	},
+/turf/open/floor/plasteel/stairs/left,
+/area/ship/hallway/fore)
+"cO" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Aft Hallway air scrubber #2";
+	icon_state = "scrub_on";
+	pixel_x = 5
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over,
+/obj/effect/particle_effect/sparks{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"cP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/aft)
+"cQ" = (
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/starboard)
+"cR" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"cS" = (
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"cT" = (
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel/tech,
+/area/ship/hallway/aft)
+"cU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/vomit/old{
+	icon_state = "vomit_2-old"
+	},
+/turf/open/floor/engine,
+/area/ship/hallway/aft)
+"cV" = (
+/obj/structure/fans/tiny,
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor/shutters{
+	name = "Lobby";
+	id = "voxlobby"
+	},
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"cW" = (
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"cX" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/r_wall/rust,
+/area/ship/bridge)
+"cY" = (
+/turf/closed/wall/r_wall,
+/area/ship/crew)
+"cZ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "Meat Storage";
+	req_access_txt = "2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"da" = (
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	name = "poster - Lusty Xenomorph"
+	},
+/turf/closed/wall/r_wall,
+/area/ship/crew)
+"db" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/fore)
+"dc" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ship/hallway/fore)
+"dd" = (
+/obj/structure/fans/tiny,
+/obj/structure/catwalk/over,
+/obj/machinery/door/poddoor/shutters{
+	name = "Lobby";
+	id = "voxlobby"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"de" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Armory vent pump #1";
+	icon_state = "vent_out";
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/structure/window/plasma/reinforced/unanchored{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
+"df" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/structure/window/plasma/reinforced/unanchored{
+	dir = 8
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 10;
+	pixel_y = -6
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 10;
+	pixel_y = -8
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -9;
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 2;
+	pixel_y = 4
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 10;
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 9;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_y = 6
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -9;
+	pixel_y = 1
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 2;
+	pixel_y = -8
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -8
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 4;
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 3;
+	pixel_y = -6
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_y = 5
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 4;
+	pixel_y = 7
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 2;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 2;
+	pixel_y = -6
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -3;
+	pixel_y = -7
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -5;
+	pixel_y = -10
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 10;
+	pixel_y = -2
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 10;
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -8;
+	pixel_y = 7
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 9;
+	pixel_y = -4
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -10;
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -5;
+	pixel_y = -3
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 6;
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -7;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -6;
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 2;
+	pixel_y = -10
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 5;
+	pixel_y = -6
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = -6;
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 3;
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/shotgun/buckshot{
+	pixel_x = 5;
+	pixel_y = -3
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
+"dg" = (
+/turf/closed/wall/r_wall,
+/area/ship/security/armory)
+"dh" = (
+/obj/structure/window/plasma/reinforced/unanchored{
+	dir = 1
+	},
+/obj/structure/rack,
+/obj/machinery/door/window/brigdoor{
+	dir = 4;
+	req_access_txt = "3"
+	},
+/obj/item/gun/ballistic/automatic/hmg/l6_saw,
+/obj/item/ammo_box/magazine/mm712x82{
+	dir = 4
+	},
+/obj/item/ammo_box/magazine/mm712x82{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security)
+"di" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"dj" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/maintenance_hatch{
+	id_tag = "voxxy"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/aft)
+"dk" = (
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	dir = 4;
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	icon_state = "co9mm-0";
+	dir = 4;
+	pixel_x = 9;
+	pixel_y = 2
+	},
+/obj/machinery/door/window/brigdoor{
+	dir = 8;
+	req_access_txt = "3"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security/range)
+"dl" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Aft Hallway air scrubber #1";
+	icon_state = "scrub_on";
+	dir = 1;
+	pixel_x = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating/rust,
+/area/ship/hallway/aft)
+"dm" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
+	},
+/obj/item/kirbyplants/random{
+	icon = 'icons/obj/flora/plants.dmi';
+	icon_state = "plant-04";
+	dir = 4
+	},
+/obj/item/trash/energybar,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/aft)
+"dn" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/machinery/vending/sustenance,
+/turf/open/floor/engine,
+/area/ship/hallway/aft)
+"do" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/structure/table,
+/obj/item/flashlight/lamp{
+	pixel_x = -5;
+	pixel_y = 1
+	},
+/obj/item/gun/energy/laser/captain{
+	dir = 4;
+	pixel_x = 4;
+	pixel_y = 1
+	},
+/obj/item/storage/box/medipens/utility{
+	dir = 4;
+	pixel_x = -5;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/hypospray/medipen{
+	list_reagents = list(/datum/reagent/medicine/epinephrine=10,/datum/reagent/toxin/formaldehyde=3)
+	},
+/obj/item/reagent_containers/hypospray/medipen{
+	list_reagents = list(/datum/reagent/medicine/epinephrine=10,/datum/reagent/toxin/formaldehyde=3)
+	},
+/obj/item/reagent_containers/hypospray/medipen{
+	list_reagents = list(/datum/reagent/medicine/epinephrine=10,/datum/reagent/toxin/formaldehyde=3)
+	},
+/obj/item/reagent_containers/hypospray/medipen{
+	list_reagents = list(/datum/reagent/medicine/epinephrine=10,/datum/reagent/toxin/formaldehyde=3)
+	},
+/obj/item/reagent_containers/hypospray/medipen{
+	list_reagents = list(/datum/reagent/medicine/epinephrine=10,/datum/reagent/toxin/formaldehyde=3)
+	},
+/obj/item/reagent_containers/hypospray/medipen{
+	list_reagents = list(/datum/reagent/medicine/epinephrine=10,/datum/reagent/toxin/formaldehyde=3)
+	},
+/obj/item/reagent_containers/hypospray/medipen{
+	list_reagents = list(/datum/reagent/medicine/epinephrine=10,/datum/reagent/toxin/formaldehyde=3)
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimpack{
+	list_reagents = list(/datum/reagent/medicine/ephedrine=10,/datum/reagent/consumable/coffee=10)
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimpack{
+	list_reagents = list(/datum/reagent/medicine/ephedrine=10,/datum/reagent/consumable/coffee=10)
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimpack{
+	list_reagents = list(/datum/reagent/medicine/ephedrine=10,/datum/reagent/consumable/coffee=10)
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimpack{
+	list_reagents = list(/datum/reagent/medicine/ephedrine=10,/datum/reagent/consumable/coffee=10)
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimpack{
+	list_reagents = list(/datum/reagent/medicine/ephedrine=10,/datum/reagent/consumable/coffee=10)
+	},
+/obj/item/toy/plush/moth{
+	pixel_x = 13;
+	pixel_y = -7
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"dp" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Crew Quarters vent pump #2";
+	icon_state = "vent_out"
+	},
+/obj/structure/sign/poster/contraband/c20r{
+	name = "poster - Cobra 20";
+	pixel_y = 32
+	},
+/obj/item/stack/sheet/mineral/silver{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/stack/sheet/mineral/silver/fifty{
+	icon_state = "sheet-silver_3";
+	pixel_y = 1
+	},
+/obj/item/stack/sheet/mineral/silver/fifty{
+	icon_state = "sheet-silver_3";
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/stack/sheet/mineral/silver/fifty{
+	icon_state = "sheet-silver_3";
+	pixel_y = -3
+	},
+/obj/item/stack/sheet/mineral/silver/fifty{
+	icon_state = "sheet-silver_3";
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/structure/closet/secure_closet/wall{
+	req_access_txt = "5";
+	icon_state = "sec_wall";
+	dir = 4;
+	pixel_x = -28;
+	
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew)
+"dq" = (
+/obj/machinery/door/window/brigdoor/southleft{
+	req_access = list()
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/stack/spacecash/c1000{
+	amount = 10;
+	dir = 8;
+	pixel_y = 3
+	},
+/obj/structure/closet/secure_closet/wall{
+	req_access_txt = "5";
+	icon_state = "sec_wall";
+	dir = 4;
+	pixel_x = -28;
+	
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew)
+"dr" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed";
+	id = "voxdow"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"ds" = (
+/obj/effect/particle_effect/sparks,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/aft)
+"dt" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	req_access_txt = "1"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/crew)
+"du" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/crew)
+"dv" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/structure/rack,
+/obj/structure/window/plasma/reinforced/unanchored{
+	dir = 8
+	},
+/obj/item/melee/transforming/energy/sword/saber/pirate/blue{
+	dir = 1;
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/melee/transforming/energy/sword/saber/pirate/green{
+	dir = 1;
+	pixel_x = 2;
+	pixel_y = -6
+	},
+/obj/item/melee/transforming/energy/sword/saber/pirate/red{
+	dir = 1;
+	pixel_x = -2;
+	pixel_y = -5
+	},
+/obj/item/kinetic_crusher/old,
+/obj/item/gun/energy/kinetic_accelerator/old,
+/obj/item/storage/backpack/explorer,
+/obj/item/storage/box/survival/mining,
+/obj/item/clothing/mask/gas/explorer,
+/obj/item/reagent_containers/hypospray/medipen{
+	list_reagents = list(/datum/reagent/medicine/epinephrine=10,/datum/reagent/toxin/formaldehyde=3)
+	},
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/crowbar/red,
+/obj/item/pda/shaftminer{
+	name = "PDA-Dirt (Shaft Miner)"
+	},
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/gloves/explorer/old,
+/obj/item/mining_scanner,
+/obj/item/clothing/suit/hooded/explorer/old,
+/obj/item/stack/marker_beacon/ten{
+	icon_state = "markerrandom"
+	},
+/obj/item/storage/bag/ore{
+	dir = 8
+	},
+/obj/item/kitchen/knife/combat/survival{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security/armory)
+"dw" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Armory air scrubber #2";
+	icon_state = "scrub_on"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
+"dx" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/structure/window/plasma/reinforced/unanchored{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/wrapping,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
+"dy" = (
+/obj/machinery/power/apc/auto_name/east{
+	name = "ISV Kree-aaw Fore Hallway APC";
+	dir = 2
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	req_access_txt = "1"
+	},
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/plasteel/stairs/right,
+/area/ship/hallway/fore)
+"dz" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/insectguts,
+/turf/open/floor/plating/rust,
+/area/ship/hallway/fore)
+"dA" = (
+/obj/structure/sign/poster/contraband/stechkin{
+	name = "poster - Stechkin Pistol"
+	},
+/turf/closed/wall/r_wall,
+/area/ship/hallway/aft)
+"dB" = (
+/obj/structure/bed,
+/obj/structure/curtain/bounty{
+	req_access = list()
+	},
+/obj/item/bedsheet/hos,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"dC" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Crew Quarters air scrubber #2";
+	icon_state = "scrub_on"
+	},
+/obj/machinery/airalarm/all_access{
+	name = "ISV Kree-aaw Crew Quarters Air Alarm";
+	pixel_y = 25
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/secure_closet/wall{
+	req_access_txt = "5";
+	icon_state = "sec_wall";
+	dir = 8;
+	pixel_x = 28;
+	
+	},
+/obj/item/stack/sheet/mineral/diamond/fifty,
+/obj/item/stack/sheet/mineral/diamond/fifty,
+/obj/item/stack/sheet/mineral/diamond/fifty,
+/obj/item/stack/sheet/mineral/diamond/fifty,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew)
+"dD" = (
+/obj/machinery/door/window/brigdoor/southright{
+	req_access = list()
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/item/stack/sheet/mineral/gold/fifty{
+	icon_state = "sheet-gold_3";
+	pixel_x = -2;
+	pixel_y = -4
+	},
+/obj/item/stack/sheet/mineral/gold/fifty{
+	icon_state = "sheet-gold_3";
+	pixel_x = -1;
+	pixel_y = -3
+	},
+/obj/item/stack/sheet/mineral/gold/fifty{
+	icon_state = "sheet-gold_3";
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/structure/closet/secure_closet/wall{
+	req_access_txt = "5";
+	icon_state = "sec_wall";
+	dir = 8;
+	pixel_x = 28;
+	
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew)
+"dE" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew)
+"dF" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Crew Quarters vent pump #1";
+	icon_state = "vent_out";
+	pixel_x = -5
+	},
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/vomit/old{
+	icon_state = "vomit_4-old"
+	},
+/turf/open/floor/plating,
+/area/ship/crew)
+"dG" = (
+/obj/structure/chair,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/crew)
+"dH" = (
+/obj/machinery/airalarm/all_access{
+	name = "ISV Kree-aaw Crew Quarters Air Alarm";
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -32
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/mecha_wreckage/ripley/cmm,
+/obj/effect/decal/cleanable/garbage,
+/obj/effect/decal/cleanable/wrapping,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew)
+"dI" = (
+/obj/structure/rack,
+/obj/item/disk/nuclear/fake{
+	icon_state = "disk_bs";
+	color = "#4ed57c"
+	},
+/obj/item/disk/design_disk/ammo_c10mm{
+	icon_state = "disk_bs"
+	},
+/obj/item/disk/design_disk/ammo_1911{
+	icon_state = "disk_bs";
+	dir = 1
+	},
+/obj/item/disk/design_disk/ammo_38_hunting{
+	icon_state = "disk_bs"
+	},
+/obj/item/reagent_containers/hypospray/medipen/survival{
+	list_reagents = list(/datum/reagent/medicine/epinephrine=5.5,/datum/reagent/medicine/lavaland_extract=3,/datum/reagent/drug/methamphetamine=2,/datum/reagent/medicine/morphine=0.5,/datum/reagent/medicine/leporazine=6,/datum/reagent/medicine/salglu_solution=8,/datum/reagent/medicine/oxandrolone=5,/datum/reagent/medicine/sal_acid=5)
+	},
+/obj/item/reagent_containers/hypospray/medipen/survival{
+	list_reagents = list(/datum/reagent/medicine/epinephrine=5.5,/datum/reagent/medicine/lavaland_extract=3,/datum/reagent/drug/methamphetamine=2,/datum/reagent/medicine/morphine=0.5,/datum/reagent/medicine/leporazine=6,/datum/reagent/medicine/salglu_solution=8,/datum/reagent/medicine/oxandrolone=5,/datum/reagent/medicine/sal_acid=5)
+	},
+/obj/item/reagent_containers/hypospray/medipen/survival{
+	list_reagents = list(/datum/reagent/medicine/epinephrine=5.5,/datum/reagent/medicine/lavaland_extract=3,/datum/reagent/drug/methamphetamine=2,/datum/reagent/medicine/morphine=0.5,/datum/reagent/medicine/leporazine=6,/datum/reagent/medicine/salglu_solution=8,/datum/reagent/medicine/oxandrolone=5,/datum/reagent/medicine/sal_acid=5)
+	},
+/obj/item/binoculars,
+/obj/item/binoculars,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security/armory)
+"dJ" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	piping_layer = 2
+	},
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"dK" = (
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed"
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/plating,
+/area/ship/security/armory)
+"dL" = (
+/turf/closed/wall/r_wall,
+/area/ship/maintenance/starboard)
+"dM" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/starboard)
+"dN" = (
+/obj/structure/chair/sofa/right{
+	dir = 4
+	},
+/obj/item/trash/candy,
+/obj/item/trash/raisins,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/aft)
+"dO" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/security/armory)
+"dP" = (
+/obj/structure/chair,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/vomit/old{
+	icon_state = "vomit_3-old"
+	},
+/turf/open/floor/plating,
+/area/ship/crew)
+"dQ" = (
+/obj/machinery/light/small,
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/structure/closet/secure_closet/freezer/fridge{
+	
+	},
+/obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 1;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 3;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 2
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 5;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = -1;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 3;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 1;
+	pixel_y = -4
+	},
+/obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 1;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 5;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = -4;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/snacks/egg{
+	list_reagents = list(/datum/reagent/consumable/eggyolk=5);
+	pixel_x = 4;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3,/datum/reagent/consumable/cooking_oil=2);
+	pixel_x = 2;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3,/datum/reagent/consumable/cooking_oil=2);
+	pixel_x = 2;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3,/datum/reagent/consumable/cooking_oil=2);
+	pixel_x = -5;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3,/datum/reagent/consumable/cooking_oil=2);
+	pixel_x = 4;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3,/datum/reagent/consumable/cooking_oil=2);
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3,/datum/reagent/consumable/cooking_oil=2);
+	pixel_x = -2;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3,/datum/reagent/consumable/cooking_oil=2);
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3,/datum/reagent/consumable/cooking_oil=2);
+	pixel_x = -2;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3,/datum/reagent/consumable/cooking_oil=2);
+	pixel_x = -4;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3);
+	pixel_x = 1;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3);
+	pixel_x = 3;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3,/datum/reagent/consumable/cooking_oil=2);
+	pixel_x = 4;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/human{
+	list_reagents = list(/datum/reagent/consumable/nutriment=3,/datum/reagent/consumable/cooking_oil=2);
+	pixel_x = 1;
+	pixel_y = -5
+	},
+/turf/open/floor/plating/rust,
+/area/ship/crew)
+"dR" = (
+/obj/effect/decal/cleanable/vomit/old{
+	icon_state = "vomit_2-old"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew)
+"dS" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Crew Quarters air scrubber #1";
+	icon_state = "scrub_on";
+	pixel_x = 5
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/crew)
+"dT" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/structure/catwalk/over,
+/obj/item/reagent_containers/pill/floorpill{
+	list_reagents = list(/datum/reagent/medicine/bicaridine=35);
+	name = "strange pill";
+	pixel_x = 3;
+	pixel_y = -4
+	},
+/turf/open/floor/plating,
+/area/ship/crew)
+"dU" = (
+/obj/structure/table,
+/obj/machinery/newscaster{
+	pixel_y = -30
+	},
+/obj/item/reagent_containers/syringe{
+	list_reagents = list();
+	pixel_x = 12;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/syringe/lethal/execution{
+	list_reagents = list(/datum/reagent/toxin/plasma=15,/datum/reagent/toxin/formaldehyde=15,/datum/reagent/toxin/cyanide=10,/datum/reagent/toxin/acid/fluacid=10);
+	icon_state = "syringe_15";
+	pixel_x = 14;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/syringe{
+	list_reagents = list();
+	pixel_x = -11;
+	pixel_y = 11
+	},
+/obj/item/storage/pill_bottle{
+	pixel_x = -8;
+	pixel_y = 1
+	},
+/obj/item/storage/pill_bottle{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/pill/floorpill{
+	list_reagents = list(/datum/reagent/consumable/ethanol/gargle_blaster=15);
+	name = "strange pill";
+	pixel_x = 3;
+	pixel_y = 10
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_x = 13;
+	pixel_y = -5
+	},
+/obj/item/healthanalyzer,
+/obj/item/stack/medical/gauze{
+	icon_state = "gauze_2"
+	},
+/obj/item/stack/medical/suture{
+	icon_state = "suture_3"
+	},
+/obj/item/stack/medical/suture{
+	icon_state = "suture_3"
+	},
+/obj/item/stack/medical/mesh{
+	icon_state = "regen_mesh_closed"
+	},
+/obj/item/stack/medical/mesh{
+	icon_state = "regen_mesh_closed"
+	},
+/obj/item/reagent_containers/hypospray/medipen{
+	list_reagents = list(/datum/reagent/medicine/epinephrine=10,/datum/reagent/toxin/formaldehyde=3)
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rust,
+/area/ship/crew)
+"dV" = (
+/obj/structure/sign/poster/contraband/peacemaker{
+	name = "poster - Peacemaker"
+	},
+/turf/closed/wall/r_wall,
+/area/ship/crew)
+"dW" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_access_txt = "1"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"dX" = (
+/obj/machinery/door/poddoor/preopen{
+	name = "Window Blast Door";
+	icon_state = "closed"
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/curtain/bounty,
+/turf/open/floor/plating,
+/area/ship/crew)
+"dY" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor{
+	dir = 8;
+	req_access_txt = "3"
+	},
+/obj/effect/decal/cleanable/wrapping,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security/range)
+"dZ" = (
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew)
+"ea" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/body_bag,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew)
+"eb" = (
+/obj/structure/table,
+/obj/machinery/microwave{
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rust,
+/area/ship/crew)
+"ec" = (
+/obj/structure/sign/poster/contraband/steppyflag{
+	name = "poster - Steppy Flag"
+	},
+/turf/closed/wall/r_wall/rust,
+/area/ship/crew)
+"ed" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"ee" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/fore)
+"ef" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/maintenance/starboard)
+"eg" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/maintenance_hatch{
+	id_tag = "voxxy"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/aft)
+"eh" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Port Maintenance air scrubber #1";
+	icon_state = "scrub_on";
+	dir = 1;
+	pixel_x = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/effect/decal/cleanable/insectguts,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
+"ei" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/door/window/northleft{
+	req_access = list()
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"ej" = (
+/obj/item/restraints/handcuffs/cable/zipties/used,
+/obj/item/chair/stool,
+/obj/item/radio/intercom/unscrewed{
+	dir = 4;
+	pixel_x = -29
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	list_reagents = list(/datum/reagent/consumable/ethanol/beer=30)
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
+"ek" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"el" = (
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	icon_state = "pump_off-2";
+	pixel_x = -5
+	},
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/starboard)
+"em" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/west{
+	name = "ISV Kree-aaw Starboard Maintenance APC";
+	dir = 2
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/starboard)
+"en" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 4;
+	pixel_x = -28
+	},
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/mask/breath,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"eo" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/starboard)
+"ep" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Starboard Maintenance vent pump #1";
+	icon_state = "vent_out";
+	dir = 1;
+	pixel_x = -5
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/starboard)
+"eq" = (
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	name = "poster - Lusty Xenomorph"
+	},
+/turf/closed/wall/r_wall/rust,
+/area/ship/crew)
+"fw" = (
+/obj/structure/window/plasma/reinforced/unanchored{
+	dir = 1
+	},
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/assualt/ak47{
+	dir = 4
+	},
+/obj/item/gun/ballistic/automatic/assualt/ak47{
+	dir = 4
+	},
+/obj/item/ammo_box/magazine/ak47{
+	icon_state = "ak47_mag-1";
+	dir = 8;
+	pixel_x = -3;
+	pixel_y = -4
+	},
+/obj/item/ammo_box/magazine/ak47{
+	icon_state = "ak47_mag-1";
+	dir = 8;
+	pixel_x = 5;
+	pixel_y = -1
+	},
+/obj/item/ammo_box/magazine/ak47{
+	icon_state = "ak47_mag-1";
+	dir = 8;
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/item/ammo_box/magazine/ak47{
+	icon_state = "ak47_mag-1";
+	dir = 8;
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/machinery/door/window/brigdoor{
+	dir = 4;
+	req_access_txt = "3"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security)
+"hX" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/hatch{
+	req_access_txt = "2"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"iy" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"kp" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"mz" = (
+/obj/structure/rack,
+/obj/item/gun/ballistic/shotgun/automatic/combat,
+/obj/item/gun/ballistic/shotgun/automatic/combat,
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	dir = 4;
+	pixel_x = -2;
+	pixel_y = -3
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	dir = 4;
+	pixel_y = -6
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	dir = 4;
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security/armory)
+"pg" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/starboard)
+"sf" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 5
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/fore)
+"sl" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	name = "ISV Kree-aaw Security Office air scrubber #1";
+	icon_state = "scrub_on";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/wrapping,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
+"sT" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp/green{
+	icon_state = "lampgreen-on";
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/machinery/button/door{
+	id = "voxxy";
+	name = "Lobby Door Bolts Control";
+	pixel_y = 7;
+	dir = 4;
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	pixel_x = 9
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/aft)
+"ya" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/southleft,
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/curtain/bounty,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/aft)
+"DT" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
+"IJ" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	icon_state = "inje_on"
+	},
+/turf/open/floor/plating/rust,
+/area/ship/external)
+"Mj" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Aft Hallway vent pump #1";
+	icon_state = "vent_out";
+	dir = 1;
+	pixel_x = -5
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
+"Qp" = (
+/obj/machinery/airalarm/all_access{
+	name = "ISV Kree-aaw Security Office Air Alarm";
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/structure/window/plasma/reinforced/unanchored{
+	dir = 1
+	},
+/obj/structure/rack,
+/obj/item/melee/transforming/energy/sword/saber{
+	dir = 8;
+	pixel_x = -6
+	},
+/obj/item/kitchen/knife/combat{
+	dir = 8
+	},
+/obj/item/kitchen/knife/combat{
+	dir = 8
+	},
+/obj/machinery/door/window/brigdoor{
+	dir = 4;
+	req_access_txt = "3"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/security)
+"RI" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/firecloset/wall{
+	dir = 8;
+	pixel_x = 28
+	},
+/obj/item/clothing/suit/fire/firefighter,
+/obj/item/clothing/mask/gas,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/extinguisher,
+/obj/item/clothing/head/hardhat/red,
+/turf/open/floor/plating/rust,
+/area/ship/maintenance/port)
+"Xj" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	name = "ISV Kree-aaw Armory vent pump #2";
+	icon_state = "vent_out"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/window/brigdoor{
+	dir = 8;
+	req_access_txt = "3"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+an
+an
+ac
+ac
+ac
+ac
+ac
+aa
+aa
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+ak
+ak
+ak
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+an
+an
+ad
+ap
+aq
+ar
+as
+bb
+aj
+aa
+"}
+(3,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+ak
+bi
+al
+am
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+ac
+dJ
+ao
+au
+RI
+bZ
+eh
+at
+cr
+aj
+"}
+(4,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+av
+bG
+ax
+ay
+ak
+aO
+aa
+aa
+aa
+aa
+ac
+ac
+ac
+ac
+ac
+aA
+an
+an
+ac
+ac
+"}
+(5,1,1) = {"
+aa
+aa
+aI
+aI
+aI
+aC
+aC
+aD
+aE
+aM
+aG
+ak
+aO
+az
+az
+aa
+aa
+aa
+aa
+aa
+ac
+ac
+aT
+an
+aa
+aa
+aa
+"}
+(6,1,1) = {"
+aa
+aB
+aB
+cw
+aI
+cf
+aK
+ab
+aL
+bc
+aN
+ab
+aF
+ch
+az
+aQ
+az
+az
+aa
+aa
+IJ
+aS
+cs
+ac
+ac
+aa
+aa
+"}
+(7,1,1) = {"
+bo
+bo
+bp
+bq
+aX
+aY
+ej
+ba
+bT
+dY
+dk
+ab
+be
+bf
+dh
+fw
+Qp
+az
+bj
+bk
+bE
+bE
+bl
+bm
+bn
+bj
+bj
+"}
+(8,1,1) = {"
+bo
+bJ
+bK
+bL
+aB
+br
+bs
+ab
+bt
+bu
+bv
+ab
+bw
+sl
+by
+bz
+bA
+af
+bV
+sT
+bD
+bh
+bF
+ca
+dN
+bI
+bj
+"}
+(9,1,1) = {"
+bo
+ah
+bd
+ce
+aB
+cZ
+bN
+ak
+bO
+bP
+bQ
+ak
+cn
+bS
+cp
+bU
+az
+az
+ct
+bW
+ya
+bY
+iy
+Mj
+cb
+cc
+cz
+"}
+(10,1,1) = {"
+bo
+aW
+aW
+cC
+hX
+cg
+aP
+ci
+cj
+ck
+cl
+cI
+cJ
+co
+dz
+cq
+cM
+cN
+bC
+cP
+cv
+ed
+bF
+cT
+bX
+cy
+cV
+"}
+(11,1,1) = {"
+bo
+aw
+cB
+cX
+aI
+sf
+cE
+cF
+cG
+cH
+cD
+ee
+db
+dc
+cL
+bM
+bM
+dy
+cO
+di
+dj
+cR
+cS
+dl
+cx
+cU
+dd
+"}
+(12,1,1) = {"
+bo
+aU
+aW
+ai
+aI
+du
+du
+cY
+cY
+dt
+du
+eq
+dv
+Xj
+dx
+de
+df
+dO
+bR
+ds
+eg
+ag
+bF
+aR
+dm
+dn
+bE
+"}
+(13,1,1) = {"
+bo
+bo
+do
+cW
+aB
+dp
+dq
+bB
+bx
+aZ
+dH
+cY
+dI
+dw
+cu
+ae
+mz
+dO
+bE
+bk
+bj
+bj
+bl
+dA
+bE
+bE
+bE
+"}
+(14,1,1) = {"
+aa
+aB
+aB
+dB
+aB
+dC
+dD
+dE
+dF
+dG
+dQ
+cY
+cA
+cm
+dO
+dK
+dg
+dg
+aa
+aa
+aa
+dL
+dM
+dL
+dL
+aa
+aa
+"}
+(15,1,1) = {"
+aa
+aa
+aI
+aI
+aI
+cY
+cY
+bH
+aV
+dP
+dU
+cY
+dO
+dO
+dO
+aa
+aa
+aa
+aa
+aa
+dL
+ef
+DT
+dL
+aa
+aa
+aa
+"}
+(16,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+cY
+da
+dR
+dS
+dT
+eb
+dV
+dg
+aa
+aa
+aa
+aa
+dL
+ef
+ef
+ef
+ef
+dW
+dL
+dL
+ef
+ef
+"}
+(17,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+dX
+aJ
+dZ
+ea
+ec
+du
+aa
+aa
+aa
+aa
+aa
+dL
+cK
+el
+em
+en
+eo
+ep
+ei
+dr
+ek
+"}
+(18,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+cY
+cY
+dX
+du
+du
+aa
+aa
+aa
+aa
+aa
+aa
+dL
+dL
+bg
+cQ
+kp
+pg
+cd
+aH
+ek
+aa
+"}
+(19,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ef
+ef
+dL
+dL
+ef
+ef
+ef
+aa
+aa
+"}
