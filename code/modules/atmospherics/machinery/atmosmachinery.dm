@@ -44,6 +44,9 @@
 	///Is the thing being rebuilt by SSair or not. Prevents list blaot
 	var/rebuilding = FALSE
 
+	///If we should init and immediately start processing
+	var/init_processing = FALSE
+
 /obj/machinery/atmospherics/examine(mob/user)
 	. = ..()
 	if(is_type_in_list(src, GLOB.ventcrawl_machinery) && isliving(user))
@@ -59,10 +62,14 @@
 	nodes = new(device_type)
 	if (!armor)
 		armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70)
+	init_processing = process
 	..()
-	if(process)
-		SSair.start_processing_machine(src)
 	SetInitDirections()
+
+/obj/machinery/atmospherics/Initialize(mapload)
+	if(init_processing)
+		SSair.start_processing_machine(src)
+	return ..()
 
 /obj/machinery/atmospherics/Destroy()
 	for(var/i in 1 to device_type)
