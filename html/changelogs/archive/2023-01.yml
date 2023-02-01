@@ -42,3 +42,84 @@
   Bjarl:
   - rscadd: The Bombed Airbase ruin, filled with scrap, spiders, and starfighters.
   - bugfix: Slimelab's airlock will work
+2023-01-19:
+  Apogee-dev:
+  - imageadd: CMM skins for Durand and Ripley mechs
+  BarteG44:
+  - rscadd: Added big potted plants
+  Bjarl:
+  - balance: inducers will no longer spawn in electrical lockers
+  retlaw34:
+  - rscadd: Lava particles
+  - rscadd: More posters to gaze at.
+  - rscadd: Adds a SolGov and Minutemen poster pool, for mappers.
+  - rscadd: CMM weapons CM-GAL-S and CM-5
+  - rscadd: Minutemen now have their own backpack and satchel along with hardsuit
+  - rscadd: Most minutemen sprites have been touched up in general
+  - rscadd: The Contender sprite is updated
+  - tweak: Winchester 308 FMJ is now simply .308
+  - balance: EBR no longer has burst fire
+  - bugfix: Fixes the EBR
+  spockye:
+  - bugfix: fixed lab5071's walls
+  tmtmtl30:
+  - bugfix: fixed broken computers glowing in the dark
+2023-01-21:
+  MarkSuckerberg:
+  - rscdel: Unused TGUI interface
+2023-01-22:
+  ? ''
+  : - tweak: Most machines now correctly believe it is 504 FS.
+  Apogee-dev:
+  - rscadd: Added the Talos-class Command Clipper, an Inteq construction and telecomms
+      ship
+  - bugfix: Fixed preset telecomms machines not functioning as expected
+  Hardly3D:
+  - bugfix: Fixes syndicate maid box not spawning with items
+  MarkSuckerberg:
+  - bugfix: AI APC emergency overriding should work again.
+  - bugfix: Paintings are no longer deleted when their frames are unwrenched.
+  - tweak: Paintings should save even if they're outside of libraries.
+  SapphicOverload:
+  - tweak: increased hotspot exposed volume of igniters to 2500
+  - bugfix: fixes hotspots not starting fires when the exposed volume is over 2375
+      liters
+  - bugfix: fixes hotspots making the air colder when the exposed volume is 2375 liters
+      or less
+  - bugfix: prevents hotspots from causing fusion to happen twice in a single tick
+  ritorizo:
+  - rscadd: The lawn mower is now buyable at the outpust for 800 credits.
+  - bugfix: Fixed the lawnmower not destroying some flora because of  a typo.
+  spockye:
+  - tweak: changed how fake lattices interact with the world around them
+  tmtmtl30:
+  - tweak: Tesla coil max research generation halved and restricted to teslas, supermatters,
+      and electrical storms only.
+2023-01-25:
+  goober3:
+  - bugfix: The first SMES on the Aegis-class now has a cable knot. Rejoice.
+2023-01-26:
+  spockye:
+  - bugfix: fixed jungle_botany lighting
+  - bugfix: fixed jungle_surface_weedshack lighting
+  - bugfix: fixed jungle_pirate lighting
+  - bugfix: fixed jungle_witch lighting
+  - bugfix: fixed jungle_syndicate lighting and changes some of the dirt
+  - bugfix: fixed jungle_surface_bombmakers lighting
+  - bugfix: fixed jungle_demon lighting
+  - bugfix: fixed lighting on whitesands_surface_assaultpodcrash
+  - bugfix: fixed lighting on whitesands_surface_camp_adobe
+  - bugfix: fixed lighting on whitesands_surface_camp_farm
+  - bugfix: fixed lighting on whitesands_surface_chokepoint
+  - bugfix: fixed lighting on jungle_surface_coffinpirate
+  - bugfix: fixed lighting on jungle_seedling
+  - bugfix: fixed lighting on jungle_surface_shrine
+  - bugfix: fixed lighting on jungle_spider
+2023-01-27:
+  Apogee-dev:
+  - imageadd: added double variants for filing cabinets
+  goober3:
+  - rscadd: 'New space ruin: A derelict space mall infested with spiders.'
+  spockye:
+  - tweak: tweaked a few things on the corvus
+  - bugfix: fixed cmm_bard poster

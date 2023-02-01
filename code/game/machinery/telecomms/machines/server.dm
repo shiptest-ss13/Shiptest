@@ -75,38 +75,38 @@
 
 /obj/machinery/telecomms/server/presets/nanotrasen
 	id = "Nanotrasen Server"
-	freq_listening = list(FREQ_NANOTRASEN)
-	autolinkers = list("nanotrasen")
+	freq_listening = list(FREQ_NANOTRASEN, FREQ_COMMON)
+	autolinkers = list("nanotrasen", "broadcasterA")
 
 /obj/machinery/telecomms/server/presets/solgov
 	id = "SolGov Server"
-	freq_listening = list(FREQ_SOLGOV)
-	autolinkers = list("solgov")
+	freq_listening = list(FREQ_SOLGOV, FREQ_COMMON)
+	autolinkers = list("solgov", "broadcasterA")
 
 /obj/machinery/telecomms/server/presets/syndicate
 	id = "Syndicate Server"
-	freq_listening = list(FREQ_SYNDICATE)
-	autolinkers = list("syndicate")
+	freq_listening = list(FREQ_SYNDICATE, FREQ_COMMON)
+	autolinkers = list("syndicate", "broadcasterB")
 
 /obj/machinery/telecomms/server/presets/minutemen
-	id = "Minutemen Server"
-	freq_listening = list(FREQ_MINUTEMEN)
-	autolinkers = list("minutemen")
+	id = "CMM Server"
+	freq_listening = list(FREQ_MINUTEMEN, FREQ_COMMON)
+	autolinkers = list("minutemen", "broadcasterA")
 
 /obj/machinery/telecomms/server/presets/inteq
-	id = "Inteq Server"
-	freq_listening = list(FREQ_INTEQ)
-	autolinkers = list("inteq")
+	id = "IRMG Server"
+	freq_listening = list(FREQ_INTEQ, FREQ_COMMON)
+	autolinkers = list("inteq", "broadcasterB")
 
 /obj/machinery/telecomms/server/presets/pirate
 	id = "Pirate Server"
-	freq_listening = list(FREQ_PIRATE)
-	autolinkers = list("pirate")
+	freq_listening = list(FREQ_PIRATE, FREQ_COMMON)
+	autolinkers = list("pirate", "broadcasterB")
 
 /obj/machinery/telecomms/server/presets/common
 	id = "Common Server"
 	freq_listening = list()
-	autolinkers = list("common")
+	autolinkers = list("common", "broadcasterA")
 
 //Common and other radio frequencies for people to freely use
 /obj/machinery/telecomms/server/presets/common/Initialize()
@@ -116,7 +116,7 @@
 
 /obj/machinery/telecomms/server/presets/command
 	id = "Command Server"
-	freq_listening = list(FREQ_COMMAND)
+	freq_listening = list(FREQ_COMMAND, FREQ_COMMON)
 	autolinkers = list("command")
 
 /obj/machinery/telecomms/server/presets/common/birdstation/Initialize()
