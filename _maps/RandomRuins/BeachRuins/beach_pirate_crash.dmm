@@ -10,6 +10,10 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/storage)
 "af" = (
@@ -20,6 +24,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/beach/piratecrash)
 "ay" = (
@@ -122,6 +127,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/beach/piratecrash)
 "cr" = (
@@ -142,6 +148,7 @@
 /obj/structure/cable{
 	icon_state = "6-10"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash)
 "dA" = (
@@ -202,6 +209,7 @@
 	icon_state = "5-9"
 	},
 /obj/machinery/recharger,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "fZ" = (
@@ -227,6 +235,7 @@
 /obj/structure/chair/wood{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "gs" = (
@@ -293,6 +302,7 @@
 	},
 /area/ruin/unpowered)
 "hB" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/shuttle)
 "hT" = (
@@ -320,6 +330,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/piratecrash/shuttle)
 "ih" = (
@@ -333,6 +344,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/storage)
 "iG" = (
@@ -407,6 +419,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -464,11 +477,18 @@
 /turf/open/water/beach,
 /area/ruin/unpowered)
 "mb" = (
+/obj/machinery/power/smes/engineering{
+	charge = 5e+006
+	},
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "0-5"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/piratecrash/storage)
+"md" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/beach/piratecrash)
 "mq" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/beach/lit,
@@ -498,15 +518,12 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /mob/living/simple_animal/hostile/pirate/melee{
 	faction = list("pirate","mining");
 	environment_smash = 0
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/storage)
@@ -576,6 +593,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/beach/piratecrash)
 "qr" = (
@@ -592,6 +610,7 @@
 /obj/structure/cable{
 	icon_state = "5-9"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash)
 "qH" = (
@@ -647,6 +666,15 @@
 	},
 /area/ruin/unpowered)
 "tp" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/beach/piratecrash/storage)
 "ts" = (
@@ -677,6 +705,7 @@
 	pixel_y = 3
 	},
 /obj/item/reagent_containers/pill/patch/styptic,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "uO" = (
@@ -684,6 +713,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/beach/piratecrash)
 "uV" = (
@@ -766,6 +797,11 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
 "xw" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/storage)
 "xy" = (
@@ -859,7 +895,7 @@
 /area/ruin/unpowered)
 "zk" = (
 /obj/structure/cable{
-	icon_state = "4-10"
+	icon_state = "1-10"
 	},
 /turf/open/floor/plating/asteroid/sand,
 /area/ruin/unpowered)
@@ -983,6 +1019,7 @@
 	dir = 4
 	},
 /obj/structure/table,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "Fc" = (
@@ -993,6 +1030,8 @@
 	pixel_x = -10;
 	pixel_y = 10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "Ff" = (
@@ -1037,9 +1076,12 @@
 /area/ruin/unpowered)
 "GA" = (
 /obj/machinery/power/port_gen/pacman,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
-	icon_state = "0-1"
+	icon_state = "0-8"
 	},
+/obj/machinery/light/small,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/piratecrash/storage)
 "GF" = (
@@ -1063,6 +1105,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/shuttle)
 "GS" = (
@@ -1074,6 +1117,7 @@
 /obj/effect/turf_decal/box,
 /obj/item/stack/cable_coil/red,
 /obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/shuttle)
 "Hl" = (
@@ -1115,12 +1159,18 @@
 /turf/closed/wall/rust,
 /area/ruin/beach/piratecrash/storage)
 "Ip" = (
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/obj/machinery/light/small,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/wrench,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/storage)
 "Iy" = (
@@ -1148,6 +1198,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/beach/piratecrash)
 "Kv" = (
@@ -1162,6 +1213,8 @@
 /obj/item/cautery{
 	pixel_y = 15
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "KH" = (
@@ -1187,6 +1240,12 @@
 /area/ruin/unpowered)
 "Mg" = (
 /obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/sand,
+/area/ruin/unpowered)
+"Ms" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating/asteroid/sand,
 /area/ruin/unpowered)
 "MH" = (
@@ -1221,6 +1280,7 @@
 /obj/item/clothing/head/pirate{
 	pixel_y = -5
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "MO" = (
@@ -1232,11 +1292,14 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
 /area/ruin/beach/piratecrash/shuttle)
 "Nm" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash)
 "Nu" = (
@@ -1244,6 +1307,8 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/piratecrash/storage)
 "ND" = (
@@ -1279,6 +1344,8 @@
 	},
 /obj/item/clothing/gloves/color/fyellow,
 /obj/item/clothing/head/hardhat,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/piratecrash/storage)
 "OW" = (
@@ -1294,6 +1361,8 @@
 /obj/item/stack/sheet/mineral/silver/five,
 /obj/item/stack/sheet/mineral/plasma,
 /obj/item/stack/sheet/mineral/plasma,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/storage)
 "Pj" = (
@@ -1311,6 +1380,8 @@
 	lethal_projectile = /obj/projectile/beam/weak/penetrator;
 	lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg'
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash)
 "PQ" = (
@@ -1359,6 +1430,8 @@
 /obj/effect/spawner/lootdrop/random_machine_circuit_rare,
 /obj/effect/spawner/lootdrop/maintenance/four,
 /obj/effect/spawner/lootdrop/random_machine_circuit_common,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/piratecrash/storage)
 "RR" = (
@@ -1388,6 +1461,13 @@
 	},
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/ruin/unpowered)
+"Tx" = (
+/obj/effect/spawner/structure/window,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/turf/open/floor/plating,
+/area/ruin/beach/piratecrash/storage)
 "TA" = (
 /obj/structure/cable{
 	icon_state = "1-9"
@@ -1399,6 +1479,11 @@
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/shuttle)
+"Ue" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood,
+/area/ruin/beach/piratecrash)
 "UK" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/beach/piratecrash)
@@ -1425,6 +1510,7 @@
 /area/ruin/beach/piratecrash)
 "Vi" = (
 /obj/machinery/light/small/broken,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "Vj" = (
@@ -1435,6 +1521,7 @@
 /obj/item/storage/crayons{
 	pixel_y = -7
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "VD" = (
@@ -1491,6 +1578,7 @@
 "Zm" = (
 /obj/item/paper/fluff,
 /obj/structure/fluff/paper/stack,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/beach/piratecrash)
 "Zp" = (
@@ -1888,7 +1976,7 @@ NX
 NX
 NX
 NX
-NX
+Ms
 zk
 LI
 gU
@@ -1916,8 +2004,8 @@ NX
 NX
 Cv
 HH
-HH
 ih
+Cv
 Cv
 lP
 Jz
@@ -1974,7 +2062,7 @@ Cv
 QG
 tp
 Ip
-HH
+Tx
 lP
 lP
 lP
@@ -2205,7 +2293,7 @@ NP
 by
 UK
 oV
-uZ
+md
 oV
 UK
 dt
@@ -2265,7 +2353,7 @@ mC
 Nm
 Hq
 iP
-uZ
+Ue
 pz
 rR
 GS
@@ -2288,7 +2376,7 @@ ys
 GF
 UK
 Es
-uZ
+md
 uf
 Kv
 UK
