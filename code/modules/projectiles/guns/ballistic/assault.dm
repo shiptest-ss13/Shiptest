@@ -103,7 +103,7 @@
 
 /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
 	name = "\improper CM-16"
-	desc = "A heavily modified version of the P-16. Standard rifle of the Colonial Minutemen."
+	desc = "Standard issue rifle of the Colonial Minutemen. A heavily modified version of the P-16 designed to fit the standards of operative warfare."
 	icon_state = "cm16"
 	item_state = "cm16"
 

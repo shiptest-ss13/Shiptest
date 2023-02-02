@@ -12,7 +12,7 @@
 	icon_screen = "navigation"
 	icon_keyboard = "tech_key"
 	circuit = /obj/item/circuitboard/computer/shuttle/helm
-	light_color = LIGHT_COLOR_FLARE
+	light_color = LIGHT_COLOR_CYAN
 	clicksound = null
 
 	/// The ship we reside on for ease of access
