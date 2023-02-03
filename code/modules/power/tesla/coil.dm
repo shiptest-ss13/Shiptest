@@ -97,8 +97,8 @@
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_ENG)
 		if(D)
 			D.adjust_money(min(power_produced, 1))
-		if(istype(linked_techweb))
-			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 10)) // x4 coils = 40 points a shock for RND, if they even bothered to link the server.
+		if(istype(linked_techweb) && (zap_flags & ZAP_GIVES_RESEARCH))
+			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 3)) // x4 coils = 12 points a shock for RND, if they even bothered to link the server.
 		addtimer(CALLBACK(src, .proc/reset_shocked), 10)
 		zap_buckle_check(power)
 		playsound(src.loc, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
@@ -121,7 +121,7 @@
 // Tesla R&D researcher
 /obj/machinery/power/tesla_coil/research
 	name = "Tesla Corona Analyzer"
-	desc = "A modified Tesla Coil used to study the effects of Edison's Bane for research."
+	desc = "A modified Tesla Coil used to study the effects of Edison's Bane for research. Gives research from the discharges produced by supermatter crystals, tesla engines, and electrical storms."
 	icon_state = "rpcoil0"
 	circuit = /obj/item/circuitboard/machine/tesla_coil/research
 	power_loss = 20 // something something, high voltage + resistance
@@ -135,8 +135,8 @@
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_ENG)
 		if(D)
 			D.adjust_money(min(power_produced, 12))
-		if(istype(linked_techweb))
-			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 50)) // x4 coils = 200 points per shock, which is a good reward for building a research tesla or electrical storm harvest ship
+		if(istype(linked_techweb) && (zap_flags & ZAP_GIVES_RESEARCH))
+			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 25)) // x4 coils = 100 points per shock, which is a good reward for building a research tesla or electrical storm harvest ship
 		addtimer(CALLBACK(src, .proc/reset_shocked), 10)
 		zap_buckle_check(power)
 		playsound(src.loc, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)

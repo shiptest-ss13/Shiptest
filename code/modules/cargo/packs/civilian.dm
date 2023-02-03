@@ -41,6 +41,14 @@
 	crate_name = "janitorial cart crate"
 	crate_type = /obj/structure/closet/crate/large
 
+/datum/supply_pack/civilian/lawnmower
+	name = "Lawnmower"
+	desc = "Removing plant from your backyard now made easy with the brand new Donk! Co. TM Deluxe Lawnmower 3003."
+	cost = 800
+	contains = list(/obj/vehicle/ridden/lawnmower)
+	crate_name = "Donk! Co. TM Deluxe Lawnmower 3003"
+	crate_type = /obj/structure/closet/crate/large
+
 /*
 		Religious
 */
