@@ -100,7 +100,6 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	singular_name = "diamond"
 	sheettype = "diamond"
 	custom_materials = list(/datum/material/diamond=MINERAL_MATERIAL_AMOUNT)
-	novariants = TRUE
 	grind_results = list(/datum/reagent/carbon = 20)
 	point_value = 25
 	merge_type = /obj/item/stack/sheet/mineral/diamond
@@ -340,7 +339,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	singular_name = "bananium sheet"
 	sheettype = "bananium"
 	custom_materials = list(/datum/material/bananium=MINERAL_MATERIAL_AMOUNT)
-	novariants = TRUE
+
 	grind_results = list(/datum/reagent/consumable/banana = 20)
 	point_value = 50
 	merge_type = /obj/item/stack/sheet/mineral/bananium
@@ -552,7 +551,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 /obj/item/stack/sheet/mineral/coal
 	name = "coal"
 	desc = "Someone's gotten on the naughty list."
-	icon = 'icons/obj/mining.dmi'
+	icon = 'icons/obj/ores.dmi'
 	icon_state = "slag"
 	singular_name = "coal lump"
 	merge_type = /obj/item/stack/sheet/mineral/coal
