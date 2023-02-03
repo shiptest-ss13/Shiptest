@@ -645,8 +645,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "bD" = (
-/obj/structure/lattice,
 /obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "bE" = (
@@ -933,7 +933,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/railing,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powerpuzzle)
 "cA" = (
@@ -1185,8 +1184,8 @@
 	},
 /area/ruin/space/has_grav/powerpuzzle)
 "da" = (
-/obj/structure/lattice,
 /obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "dm" = (
@@ -1405,11 +1404,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle)
 "hB" = (
-/obj/structure/lattice,
 /obj/structure/railing{
 	climbable = 0
 	},
 /obj/effect/turf_decal/siding/wideplating/dark,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "hH" = (
@@ -1501,17 +1500,17 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "ke" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/structure/lattice,
 /obj/structure/railing{
 	climbable = 0
 	},
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "ks" = (
@@ -1884,7 +1883,7 @@
 	},
 /obj/effect/turf_decal/corner/transparent/grey/diagonal,
 /obj/effect/mob_spawn/human/corpse/cargo_tech{
-	outfit = /datum/outfit/job/engineer
+	outfit = /datum/outfit/job/engineer/nt
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle/engineering)
@@ -1923,11 +1922,11 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/structure/lattice,
 /obj/structure/railing{
 	climbable = 0
 	},
 /obj/effect/turf_decal/siding/wideplating/dark,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "rV" = (
@@ -2007,12 +2006,12 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powerpuzzle)
 "sZ" = (
-/obj/structure/lattice,
 /obj/structure/railing{
 	climbable = 0
 	},
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "tc" = (
@@ -2738,12 +2737,6 @@
 	dir = 1
 	},
 /area/ruin/space/has_grav/powerpuzzle)
-"FL" = (
-/obj/structure/railing,
-/turf/open/floor/plasteel/stairs{
-	dir = 1
-	},
-/area/ruin/space/has_grav/powerpuzzle)
 "FM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3047,7 +3040,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powerpuzzle)
 "KY" = (
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "Lp" = (
@@ -3313,7 +3306,7 @@
 	dir = 9
 	},
 /obj/effect/mob_spawn/human/corpse/cargo_tech{
-	outfit = /datum/outfit/job/engineer
+	outfit = /datum/outfit/job/engineer/nt
 	},
 /obj/item/wirecutters{
 	pixel_y = 15
@@ -3442,14 +3435,6 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/powerpuzzle/secure)
-"Rd" = (
-/obj/structure/railing{
-	climbable = 0
-	},
-/obj/structure/lattice,
-/obj/effect/turf_decal/siding/wideplating/dark,
-/turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "Ri" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3615,7 +3600,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/structure/lattice,
+/obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ruin/space/has_grav/powerpuzzle/secure)
 "TO" = (
@@ -4335,7 +4320,7 @@ xk
 aq
 kv
 PB
-FL
+FJ
 cy
 EK
 Mh
@@ -4781,7 +4766,7 @@ IB
 IB
 IB
 In
-Rd
+hB
 gH
 KY
 In
