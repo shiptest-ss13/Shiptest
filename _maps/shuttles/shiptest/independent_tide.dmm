@@ -539,6 +539,12 @@
 	launch_status = 0;
 	port_direction = 8
 	},
+/obj/docking_port/stationary{
+	dir = 8;
+	width = 7;
+	height = 15;
+	dheight = -1
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "JG" = (
@@ -661,7 +667,7 @@
 /obj/item/reagent_containers/food/snacks/burger/rat,
 /obj/item/cigbutt,
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton{
-	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
+	list_reagents = list(/datum/reagent/consumable/ethanol/vodka=100)
 	},
 /obj/machinery/computer/cryopod{
 	pixel_y = 25

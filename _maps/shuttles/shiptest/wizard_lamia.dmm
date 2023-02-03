@@ -742,9 +742,10 @@
 	},
 /obj/structure/fans/tiny,
 /obj/docking_port/stationary{
-	dir = 4;
+	dir = 8;
 	width = 7;
-	height = 15
+	height = 15;
+	dheight = -1
 	},
 /turf/open/floor/bronze,
 /area/ship/cargo)

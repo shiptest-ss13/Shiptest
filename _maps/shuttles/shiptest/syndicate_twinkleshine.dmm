@@ -1789,9 +1789,10 @@
 	dir = 1
 	},
 /obj/docking_port/stationary{
-	dir = 4;
+	dir = 8;
 	width = 7;
-	height = 15
+	height = 15;
+	dheight = -1
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
@@ -4930,9 +4931,10 @@
 	},
 /obj/structure/fans/tiny,
 /obj/docking_port/stationary{
-	dir = 4;
+	dir = 8;
 	width = 7;
-	height = 15
+	height = 15;
+	dheight = -1
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)

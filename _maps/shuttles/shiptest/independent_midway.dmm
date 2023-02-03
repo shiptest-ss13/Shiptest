@@ -1420,9 +1420,9 @@
 	id = "whiteship_cargo"
 	},
 /obj/docking_port/stationary{
-	dir = 2;
 	height = 15;
-	width = 7
+	width = 7;
+	dheight = -1
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
@@ -2075,6 +2075,18 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"MT" = (
+/obj/machinery/door/poddoor{
+	id = "whiteship_port"
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 8;
+	dheight = -1
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/engineering)
 "MX" = (
 /obj/machinery/computer/helm{
 	dir = 8
@@ -3247,7 +3259,7 @@ Zn
 PR
 qz
 qz
-qz
+MT
 qz
 qz
 PR

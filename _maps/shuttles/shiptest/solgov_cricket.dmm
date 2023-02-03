@@ -1551,7 +1551,7 @@
 /obj/docking_port/stationary{
 	height = 15;
 	width = 7;
-	dir = 2
+	dheight = -1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
@@ -2347,7 +2347,9 @@
 /obj/structure/catwalk,
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7
+	width = 7;
+	dir = 2;
+	dheight = -1
 	},
 /turf/template_noop,
 /area/ship/external)

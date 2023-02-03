@@ -225,7 +225,9 @@
 /obj/structure/fans/tiny,
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7
+	width = 7;
+	dir = 2;
+	dheight = -1
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
