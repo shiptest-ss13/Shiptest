@@ -40,7 +40,7 @@
 /area/ship/bridge)
 "u" = (
 /obj/machinery/atmospherics/components/unary/tank/toxins{
-	dir = 4
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -48,12 +48,25 @@
 /obj/structure/sign/syndicate,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
+"z" = (
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 4;
+	pixel_x = 10
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "B" = (
 /obj/structure/sign/syndicate,
 /obj/docking_port/mobile{
+	callTime = 50;
 	dir = 4;
-	port_direction = 4;
-	preferred_direction = 2
+	dwidth = 4;
+	height = 5;
+	ignitionTime = 25;
+	name = "Syndicate Fighter";
+	port_direction = 2;
+	preferred_direction = 4;
+	width = 9
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -102,14 +115,18 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "M" = (
-/obj/structure{
-	desc = "A devastating strike weapon of times past. The mountings seem broken now.";
+/obj/machinery/power/emitter/welded{
 	dir = 4;
+	projectile_sound = 'sound/weapons/gun/general/rocket_launch.ogg';
+	projectile_type = /obj/projectile/bullet/a84mm_he;
 	icon = 'icons/mecha/mecha_equipment.dmi';
 	icon_state = "mecha_missilerack_six";
-	name = "ancient missile rack";
-	pixel_x = 7;
-	pixel_y = 11
+	icon_state_on = "mecha_missilerack_six";
+	icon_state_underpowered = "mecha_missilerack_six";
+	name = "missile launcher";
+	pixel_y = 12;
+	pixel_x = 12;
+	id = "dbfire"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -120,12 +137,8 @@
 /turf/open/floor/engine/hull,
 /area/ship/bridge)
 "O" = (
-/obj/structure{
-	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.";
+/obj/machinery/porta_turret/centcom_shuttle{
 	dir = 4;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct laser cannon";
 	pixel_x = 8
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -149,14 +162,18 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "W" = (
-/obj/structure{
-	desc = "A devastating strike weapon of times past. The mountings seem broken now.";
+/obj/machinery/power/emitter/welded{
 	dir = 4;
+	projectile_sound = 'sound/weapons/gun/general/rocket_launch.ogg';
+	projectile_type = /obj/projectile/bullet/a84mm_he;
 	icon = 'icons/mecha/mecha_equipment.dmi';
 	icon_state = "mecha_missilerack_six";
-	name = "ancient missile rack";
-	pixel_x = 7;
-	pixel_y = -5
+	icon_state_on = "mecha_missilerack_six";
+	icon_state_underpowered = "mecha_missilerack_six";
+	name = "missile launcher";
+	pixel_y = -4;
+	pixel_x = 12;
+	id = "dbfire"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -176,6 +193,12 @@
 	pixel_x = 5;
 	id = "jbs04EM";
 	name = "Emergency Lockdown"
+	},
+/obj/machinery/button{
+	pixel_y = 38;
+	pixel_x = 5;
+	name = "rocket launch";
+	id = "dbfire"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -205,7 +228,7 @@ I
 b
 I
 L
-O
+z
 "}
 (4,1,1) = {"
 a
