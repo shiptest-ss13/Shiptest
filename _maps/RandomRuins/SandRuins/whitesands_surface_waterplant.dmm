@@ -405,7 +405,7 @@
 /area/whitesands/surface/outdoors)
 "ly" = (
 /obj/machinery/power/compressor{
-	comp_base_id = "incineratorturbine";
+	comp_id = "incineratorturbine";
 	dir = 1;
 	luminosity = 2
 	},
@@ -1019,7 +1019,7 @@
 /area/whitesands/surface/outdoors)
 "yH" = (
 /obj/structure/geyser{
-	reagent_base_id = /datum/reagent/water
+	reagent_id = /datum/reagent/water
 	},
 /obj/machinery/plumbing/liquid_pump,
 /turf/open/floor/plating/asteroid/whitesands,
@@ -1093,7 +1093,7 @@
 "Bs" = (
 /obj/item/toy/beach_ball,
 /obj/structure/geyser{
-	reagent_base_id = /datum/reagent/water
+	reagent_id = /datum/reagent/water
 	},
 /obj/machinery/plumbing/liquid_pump,
 /turf/open/floor/plating/asteroid/whitesands,

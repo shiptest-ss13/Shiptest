@@ -25,7 +25,7 @@
 	desc = "A remote control for a door."
 	req_access = list(ACCESS_SECURITY)
 	density = FALSE
-	var/id = null // id of linked machinery/lockers
+	var/base_id = null // id of linked machinery/lockers
 
 	var/activation_time = 0
 	var/timer_duration = 0
@@ -46,22 +46,34 @@
 
 /obj/machinery/door_timer/Initialize()
 	. = ..()
-	if(id != null)
+	if(base_id != null)
 		for(var/obj/machinery/door/window/brigdoor/M in urange(20, src))
-			if (M.id == id)
-				targets += M
+			if(M.port_id != port_id)
+				continue
+			if(M.base_id != base_id)
+				continue
+			targets += list(M)
 
 		for(var/obj/machinery/door/airlock/security/brig/D in urange(20, src))
-			if (D.id == id)
-				targets += D
+			if(D.port_id != port_id)
+				continue
+			if(D.base_id != base_id)
+				continue
+			targets += list(D)
 
 		for(var/obj/machinery/flasher/F in urange(20, src))
-			if(F.id == id)
-				targets += F
+			if(F.port_id != port_id)
+				continue
+			if(F.base_id != base_id)
+				continue
+			targets += list(F)
 
 		for(var/obj/structure/closet/secure_closet/brig/C in urange(20, src))
-			if(C.id == id)
-				targets += C
+			if(C.port_id != port_id)
+				continue
+			if(C.base_id != base_id)
+				continue
+			targets += list(C)
 
 	if(!targets.len)
 		obj_break()
@@ -174,7 +186,7 @@
 		return
 
 	if(timing)
-		var/disp1 = id
+		var/disp1 = base_id
 		var/time_left = time_left(seconds = TRUE)
 		var/disp2 = "[add_leading(num2text((time_left / 60) % 60), 2, "0")]:[add_leading(num2text(time_left % 60), 2, "0")]"
 		if(length(disp2) > CHARS_PER_LINE)

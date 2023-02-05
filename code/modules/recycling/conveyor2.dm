@@ -18,12 +18,12 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	var/movedir			// the actual direction to move stuff in
 
 	var/list/affecting	// the list of all items that will be moved this ptick
-	var/id = ""			// the control ID	- must match controller ID
+	var/base_id = ""			// the control ID	- must match controller ID
 	var/verted = 1		// Inverts the direction the conveyor belt moves.
 	var/conveying = FALSE
 
 /obj/machinery/conveyor/centcom_auto
-	id = "round_end_belt"
+	base_id = "round_end_belt"
 
 /obj/machinery/conveyor/inverted //Directions inverted so you can use different corner peices.
 	icon_state = "conveyor_map_inverted"
@@ -54,20 +54,20 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	if(newdir)
 		setDir(newdir)
 	if(newid)
-		id = newid
+		base_id = newid
 	update_move_direction()
-	LAZYADD(GLOB.conveyors_by_id[id], src)
+	LAZYADD(GLOB.conveyors_by_id[base_id], src)
 
 /obj/machinery/conveyor/Destroy()
-	LAZYREMOVE(GLOB.conveyors_by_id[id], src)
+	LAZYREMOVE(GLOB.conveyors_by_id[base_id], src)
 	. = ..()
 
 /obj/machinery/conveyor/vv_edit_var(var_name, var_value)
-	if (var_name == NAMEOF(src, id))
+	if (var_name == NAMEOF(src, base_id))
 		// if "id" is varedited, update our list membership
-		LAZYREMOVE(GLOB.conveyors_by_id[id], src)
+		LAZYREMOVE(GLOB.conveyors_by_id[base_id], src)
 		. = ..()
-		LAZYADD(GLOB.conveyors_by_id[id], src)
+		LAZYADD(GLOB.conveyors_by_id[base_id], src)
 	else
 		return ..()
 
@@ -164,7 +164,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 		"<span class='notice'>You struggle to pry up \the [src] with \the [I].</span>")
 		if(I.use_tool(src, user, 40, volume=40))
 			if(!(machine_stat & BROKEN))
-				var/obj/item/stack/conveyor/C = new /obj/item/stack/conveyor(loc, 1, TRUE, id)
+				var/obj/item/stack/conveyor/C = new /obj/item/stack/conveyor(loc, 1, TRUE, base_id)
 				transfer_fingerprints_to(C)
 			to_chat(user, "<span class='notice'>You remove the conveyor belt.</span>")
 			qdel(src)
@@ -202,25 +202,25 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 
 	var/obj/machinery/conveyor/C = locate() in get_step(src, dir)
 	if(C)
-		C.set_operable(dir, id, 0)
+		C.set_operable(dir, base_id, 0)
 
 	C = locate() in get_step(src, turn(dir,180))
 	if(C)
-		C.set_operable(turn(dir,180), id, 0)
+		C.set_operable(turn(dir,180), base_id, 0)
 
 
 //set the operable var if ID matches, propagating in the given direction
 
 /obj/machinery/conveyor/proc/set_operable(stepdir, match_id, op)
 
-	if(id != match_id)
+	if(base_id != match_id)
 		return
 	operable = op
 
 	update()
 	var/obj/machinery/conveyor/C = locate() in get_step(src, stepdir)
 	if(C)
-		C.set_operable(stepdir, id, op)
+		C.set_operable(stepdir, base_id, op)
 
 /obj/machinery/conveyor/power_change()
 	. = ..()
@@ -242,27 +242,27 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	var/oneway = FALSE			// if the switch only operates the conveyor belts in a single direction.
 	var/invert_icon = FALSE		// If the level points the opposite direction when it's turned on.
 
-	var/id = "" 				// must match conveyor IDs to control them
+	var/base_id = "" 				// must match conveyor IDs to control them
 
 /obj/machinery/conveyor_switch/Initialize(mapload, newid)
 	. = ..()
 	if (newid)
-		id = newid
+		base_id = newid
 	update_icon()
-	LAZYADD(GLOB.conveyors_by_id[id], src)
+	LAZYADD(GLOB.conveyors_by_id[base_id], src)
 	wires = new /datum/wires/conveyor(src)
 
 /obj/machinery/conveyor_switch/Destroy()
-	LAZYREMOVE(GLOB.conveyors_by_id[id], src)
+	LAZYREMOVE(GLOB.conveyors_by_id[base_id], src)
 	QDEL_NULL(wires)
 	. = ..()
 
 /obj/machinery/conveyor_switch/vv_edit_var(var_name, var_value)
-	if (var_name == NAMEOF(src, id))
+	if (var_name == NAMEOF(src, base_id))
 		// if "id" is varedited, update our list membership
-		LAZYREMOVE(GLOB.conveyors_by_id[id], src)
+		LAZYREMOVE(GLOB.conveyors_by_id[base_id], src)
 		. = ..()
-		LAZYADD(GLOB.conveyors_by_id[id], src)
+		LAZYADD(GLOB.conveyors_by_id[base_id], src)
 	else
 		return ..()
 
@@ -284,7 +284,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 
 /// Updates all conveyor belts that are linked to this switch, and tells them to start processing.
 /obj/machinery/conveyor_switch/proc/update_linked_conveyors()
-	for(var/obj/machinery/conveyor/C in GLOB.conveyors_by_id[id])
+	for(var/obj/machinery/conveyor/C in GLOB.conveyors_by_id[base_id])
 		C.operating = position
 		C.update_move_direction()
 		C.update_icon()
@@ -296,7 +296,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 
 /// Finds any switches with same `id` as this one, and set their position and icon to match us.
 /obj/machinery/conveyor_switch/proc/update_linked_switches()
-	for(var/obj/machinery/conveyor_switch/S in GLOB.conveyors_by_id[id])
+	for(var/obj/machinery/conveyor_switch/S in GLOB.conveyors_by_id[base_id])
 		S.invert_icon = invert_icon
 		S.position = position
 		S.update_icon()
@@ -331,7 +331,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 /obj/machinery/conveyor_switch/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_CROWBAR)
 		var/obj/item/conveyor_switch_construct/C = new/obj/item/conveyor_switch_construct(src.loc)
-		C.id = id
+		C.id = base_id
 		transfer_fingerprints_to(C)
 		to_chat(user, "<span class='notice'>You detach the conveyor switch.</span>")
 		qdel(src)
@@ -373,7 +373,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 		return
 	var/found = 0
 	for(var/obj/machinery/conveyor/C in view())
-		if(C.id == src.id)
+		if(C.base_id == src.id)
 			found = 1
 			break
 	if(!found)

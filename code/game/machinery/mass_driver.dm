@@ -8,18 +8,17 @@
 	active_power_usage = 50
 	var/power = 1
 	var/code = 1
-	var/id = 1
+	var/base_id = 1
 	var/drive_range = 50	//this is mostly irrelevant since current mass drivers throw into space, but you could make a lower-range mass driver for interstation transport or something I guess.
 
 /obj/machinery/mass_driver/Destroy()
 	for(var/obj/machinery/computer/pod/control in GLOB.machines)
-		if(control.id == id)
-			control.connected = null
+		if(control.port_id != port_id)
+			continue
+		if(control.base_id != base_id)
+			continue
+		control.connected = null
 	return ..()
-
-/obj/machinery/mass_driver/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	. = ..()
-	id = "[REF(port)][id]"
 
 /obj/machinery/mass_driver/proc/drive(amount)
 	if(machine_stat & (BROKEN|NOPOWER))

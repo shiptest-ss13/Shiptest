@@ -295,7 +295,7 @@
 	icon_keyboard = "tech_key"
 	circuit = /obj/item/circuitboard/computer/turbine_computer
 	var/obj/machinery/power/compressor/compressor
-	var/id = 0
+	var/base_id = 0
 
 /obj/machinery/computer/turbine_computer/Initialize()
 	. = ..()
@@ -305,9 +305,11 @@
 	locate_machinery()
 
 /obj/machinery/computer/turbine_computer/locate_machinery()
-	if(id)
+	if(base_id)
 		for(var/obj/machinery/power/compressor/C in GLOB.machines)
-			if(C.comp_id == id)
+			if(C.port_id != port_id)
+				continue
+			if(C.comp_id == base_id)
 				compressor = C
 				return
 	else

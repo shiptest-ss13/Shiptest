@@ -5,7 +5,7 @@
 	/// Connected mass driver
 	var/obj/machinery/mass_driver/connected = null
 	/// ID of the launch control
-	var/id = 1
+	var/base_id = 1
 	/// If the launch timer counts down
 	var/timing = FALSE
 	/// Time before auto launch
@@ -15,16 +15,19 @@
 	/// Countdown timer for the mass driver's delayed launch functionality.
 	COOLDOWN_DECLARE(massdriver_countdown)
 
-/obj/machinery/computer/pod/Initialize()
-	. = ..()
-	for(var/obj/machinery/mass_driver/M in range(range, src))
-		if(M.id == id)
-			connected = M
-			break
-
 /obj/machinery/computer/pod/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
-	id = "[REF(port)][id]"
+	link_driver()
+
+/obj/machinery/computer/pod/proc/link_driver()
+	connected = null
+	for(var/obj/machinery/mass_driver/M in range(range, src))
+		if(M.port_id != port_id)
+			continue
+		if(M.base_id != base_id)
+			continue
+		connected = M
+		break
 
 /obj/machinery/computer/pod/process(delta_time)
 	if(COOLDOWN_FINISHED(src, massdriver_countdown))
@@ -45,19 +48,28 @@
 		return
 
 	for(var/obj/machinery/door/poddoor/M in range(range, src))
-		if(M.base_id == id)
-			M.open()
+		if(M.port_id != port_id)
+			continue
+		if(M.base_id != base_id)
+			continue
+		M.open()
 
 	sleep(20)
 	for(var/obj/machinery/mass_driver/M in range(range, src))
-		if(M.id == id)
-			M.power = connected.power
-			M.drive()
+		if(M.port_id != port_id)
+			continue
+		if(M.base_id != base_id)
+			continue
+		M.power = connected.power
+		M.drive()
 
 	sleep(50)
 	for(var/obj/machinery/door/poddoor/M in range(range, src))
-		if(M.base_id == id)
-			M.close()
+		if(M.port_id != port_id)
+			continue
+		if(M.base_id != base_id)
+			continue
+		M.close()
 
 /obj/machinery/computer/pod/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -76,7 +88,7 @@
 	data["power"] = connected ? connected.power : 0.25
 	data["poddoor"] = FALSE
 	for(var/obj/machinery/door/poddoor/door in range(range, src))
-		if(door.base_id == id)
+		if(door.base_id == base_id)
 			data["poddoor"] = TRUE
 			break
 	return data
@@ -121,7 +133,7 @@
 			return TRUE
 		if("door")
 			for(var/obj/machinery/door/poddoor/M in range(range, src))
-				if(M.base_id == id)
+				if(M.base_id == base_id)
 					if(M.density)
 						M.open()
 					else
@@ -129,7 +141,7 @@
 			return TRUE
 		if("driver_test")
 			for(var/obj/machinery/mass_driver/M in range(range, src))
-				if(M.id == id)
+				if(M.base_id == base_id)
 					M.power = connected?.power
 					M.drive()
 			return TRUE

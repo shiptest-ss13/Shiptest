@@ -11,7 +11,7 @@
 	var/climbable = FALSE
 	var/mob/living/structureclimber
 	var/broken = 0 //similar to machinery's stat BROKEN
-
+	var/port_id
 
 /obj/structure/Initialize()
 	if (!armor)
@@ -23,6 +23,10 @@
 		if(smoothing_flags & SMOOTH_CORNERS)
 			icon_state = ""
 	GLOB.cameranet.updateVisibility(src)
+
+/obj/structure/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	port_id = REF(port)
 
 /obj/structure/Destroy()
 	GLOB.cameranet.updateVisibility(src)

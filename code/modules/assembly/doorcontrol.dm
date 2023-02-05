@@ -95,7 +95,7 @@
 	sleep(10)
 
 	for(var/obj/machinery/mass_driver/M in GLOB.machines)
-		if(M.id == base_id)
+		if(M.base_id == base_id)
 			M.drive()
 
 	sleep(60)
@@ -116,14 +116,20 @@
 		return
 	cooldown = TRUE
 	for(var/obj/machinery/sparker/M in GLOB.machines)
-		if (M.id == base_id)
-			INVOKE_ASYNC(M, /obj/machinery/sparker.proc/ignite)
+		if(port_id != M.port_id)
+			continue
+		if(base_id != M.base_id)
+			continue
+		INVOKE_ASYNC(M, /obj/machinery/sparker.proc/ignite)
 
 	for(var/obj/machinery/igniter/M in GLOB.machines)
-		if(M.id == base_id)
-			M.use_power(50)
-			M.on = !M.on
-			M.icon_state = "igniter[M.on]"
+		if(port_id != M.port_id)
+			continue
+		if(base_id != M.base_id)
+			continue
+		M.use_power(50)
+		M.on = !M.on
+		M.icon_state = "igniter[M.on]"
 
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 30)
 
@@ -136,11 +142,12 @@
 		return
 	cooldown = TRUE
 	for(var/obj/machinery/flasher/M in GLOB.machines)
-		if(M.id == base_id)
-			INVOKE_ASYNC(M, /obj/machinery/flasher.proc/flash)
-
+		if(M.port_id != port_id)
+			continue
+		if(M.base_id != base_id)
+			continue
+		INVOKE_ASYNC(M, /obj/machinery/flasher.proc/flash)
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 50)
-
 
 /obj/item/assembly/control/crematorium
 	name = "crematorium controller"

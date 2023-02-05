@@ -325,7 +325,7 @@
 	integrity_failure = 0.5
 	var/icon_screen = "solar"
 	var/icon_keyboard = "power_key"
-	var/id = 0
+	var/base_id = 0
 	var/gen = 0
 	var/lastgen = 0
 	var/azimuth_target = 0

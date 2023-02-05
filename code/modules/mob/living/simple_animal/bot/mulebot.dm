@@ -30,7 +30,7 @@
 	bot_core_type = /obj/machinery/bot_core/mulebot
 
 	/// unique identifier in case there are multiple mulebots.
-	var/id
+	var/base_id
 
 	path_image_color = "#7F5200"
 
@@ -64,7 +64,7 @@
 
 	var/static/mulebot_count = 0
 	mulebot_count += 1
-	set_id(suffix || id || "#[mulebot_count]")
+	set_id(suffix || base_id || "#[mulebot_count]")
 	suffix = null
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
 	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 12), TEXT_SOUTH = list(0, 12), TEXT_EAST = list(0, 12), TEXT_WEST = list(0, 12)))
@@ -118,7 +118,7 @@
 
 
 /mob/living/simple_animal/bot/mulebot/proc/set_id(new_id)
-	id = new_id
+	base_id = new_id
 	if(paicard)
 		bot_name = "[initial(name)] ([new_id])"
 	else
@@ -250,7 +250,7 @@
 	data["autoPickup"] = auto_pickup
 	data["reportDelivery"] = report_delivery
 	data["haspai"] = paicard ? TRUE : FALSE
-	data["id"] = id
+	data["id"] = base_id
 	return data
 
 /mob/living/simple_animal/bot/mulebot/ui_act(action, params)
@@ -304,7 +304,7 @@
 		if("setid")
 			var/new_id
 			if(pda)
-				new_id = stripped_input(user, "Enter ID:", name, id, MAX_NAME_LEN)
+				new_id = stripped_input(user, "Enter ID:", name, base_id, MAX_NAME_LEN)
 			else
 				new_id = params["value"]
 			if(new_id)
@@ -337,7 +337,7 @@
 	var/ai = issilicon(user)
 	var/dat
 	dat += "<h3>Multiple Utility Load Effector Mk. V</h3>"
-	dat += "<b>ID:</b> [id]<BR>"
+	dat += "<b>ID:</b> [base_id]<BR>"
 	dat += "<b>Power:</b> [on ? "On" : "Off"]<BR>"
 	dat += "<h3>Status</h3>"
 	dat += "<div class='statusDisplay'>"

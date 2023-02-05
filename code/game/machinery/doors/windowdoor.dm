@@ -352,7 +352,7 @@
 	name = "secure door"
 	icon_state = "leftsecure"
 	base_state = "leftsecure"
-	var/id = null
+	var/base_id = null
 	max_integrity = 300 //Stronger doors for prison (regular window door health is 200)
 	reinf = 1
 	explosion_block = 1

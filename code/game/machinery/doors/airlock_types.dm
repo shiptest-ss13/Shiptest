@@ -21,7 +21,7 @@
 	hatch_colour = "#c82b2b"
 
 /obj/machinery/door/airlock/security/brig //fulltile cell doors because of shuttle shenanigans
-	var/id = null
+	var/base_id = null
 
 /obj/machinery/door/airlock/engineering
 	icon = 'icons/obj/doors/airlocks/station/engineering.dmi'

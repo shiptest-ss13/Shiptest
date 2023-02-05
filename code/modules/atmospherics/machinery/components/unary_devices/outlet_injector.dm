@@ -16,7 +16,7 @@
 	var/volume_rate = 50
 
 	var/frequency = 0
-	var/id = null
+	var/base_id = null
 	var/datum/radio_frequency/radio_connection
 
 	interacts_with_air = TRUE
@@ -98,7 +98,7 @@
 		return
 
 	var/datum/signal/signal = new(list(
-		"tag" = id,
+		"tag" = base_id,
 		"device" = "AO",
 		"power" = on,
 		"volume_rate" = volume_rate,
@@ -114,7 +114,7 @@
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/receive_signal(datum/signal/signal)
 
-	if(!signal.data["tag"] || (signal.data["tag"] != id) || (signal.data["sigtype"]!="command"))
+	if(!signal.data["tag"] || (signal.data["tag"] != base_id) || (signal.data["sigtype"]!="command"))
 		return
 
 	if("power" in signal.data)
@@ -209,34 +209,34 @@
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/atmos_waste
 	name = "atmos waste outlet injector"
-	id =  ATMOS_GAS_MONITOR_WASTE_ATMOS
+	base_id =  ATMOS_GAS_MONITOR_WASTE_ATMOS
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/engine_waste
 	name = "engine outlet injector"
-	id = ATMOS_GAS_MONITOR_WASTE_ENGINE
+	base_id = ATMOS_GAS_MONITOR_WASTE_ENGINE
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/toxin_input
 	name = "plasma tank input injector"
-	id = ATMOS_GAS_MONITOR_INPUT_TOX
+	base_id = ATMOS_GAS_MONITOR_INPUT_TOX
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input
 	name = "oxygen tank input injector"
-	id = ATMOS_GAS_MONITOR_INPUT_O2
+	base_id = ATMOS_GAS_MONITOR_INPUT_O2
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input
 	name = "nitrogen tank input injector"
-	id = ATMOS_GAS_MONITOR_INPUT_N2
+	base_id = ATMOS_GAS_MONITOR_INPUT_N2
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/mix_input
 	name = "mix tank input injector"
-	id = ATMOS_GAS_MONITOR_INPUT_MIX
+	base_id = ATMOS_GAS_MONITOR_INPUT_MIX
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrous_input
 	name = "nitrous oxide tank input injector"
-	id = ATMOS_GAS_MONITOR_INPUT_N2O
+	base_id = ATMOS_GAS_MONITOR_INPUT_N2O
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input
 	name = "air mix tank input injector"
-	id = ATMOS_GAS_MONITOR_INPUT_AIR
+	base_id = ATMOS_GAS_MONITOR_INPUT_AIR
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/carbon_input
 	name = "carbon dioxide tank input injector"
-	id = ATMOS_GAS_MONITOR_INPUT_CO2
+	base_id = ATMOS_GAS_MONITOR_INPUT_CO2
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/incinerator_input
 	name = "incinerator chamber input injector"
-	id = ATMOS_GAS_MONITOR_INPUT_INCINERATOR
+	base_id = ATMOS_GAS_MONITOR_INPUT_INCINERATOR
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/toxins_mixing_input
 	name = "toxins mixing input injector"
-	id = ATMOS_GAS_MONITOR_INPUT_TOXINS_LAB
+	base_id = ATMOS_GAS_MONITOR_INPUT_TOXINS_LAB

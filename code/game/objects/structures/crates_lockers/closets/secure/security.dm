@@ -228,7 +228,7 @@
 	name = "brig locker"
 	req_access = list(ACCESS_BRIG)
 	anchored = TRUE
-	var/id = null
+	var/base_id = null
 
 /obj/structure/closet/secure_closet/evidence
 	anchored = TRUE

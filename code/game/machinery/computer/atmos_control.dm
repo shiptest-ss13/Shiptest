@@ -244,7 +244,7 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 		var/list/text = splittext(U.id_tag, "_")
 		IO |= text[1]
 	for(var/obj/machinery/atmospherics/components/unary/outlet_injector/U in devices)
-		var/list/text = splittext(U.id, "_")
+		var/list/text = splittext(U.base_id, "_")
 		IO |= text[1]
 	if(!IO.len)
 		to_chat(user, "<span class='alert'>No machinery detected.</span>")

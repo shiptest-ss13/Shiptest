@@ -10,17 +10,17 @@
 	max_integrity = 300
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 70, "energy" = 50, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
-	var/id = null
+	var/base_id = null
 	var/on = FALSE
 
 /obj/machinery/igniter/incinerator_toxmix
-	id = INCINERATOR_TOXMIX_IGNITER
+	base_id = INCINERATOR_TOXMIX_IGNITER
 
 /obj/machinery/igniter/incinerator_atmos
-	id = INCINERATOR_ATMOS_IGNITER
+	base_id = INCINERATOR_ATMOS_IGNITER
 
 /obj/machinery/igniter/incinerator_syndicatelava
-	id = INCINERATOR_SYNDICATELAVA_IGNITER
+	base_id = INCINERATOR_SYNDICATELAVA_IGNITER
 
 /obj/machinery/igniter/on
 	on = TRUE
@@ -53,10 +53,6 @@
 	else
 		icon_state = "igniter[on]"
 
-/obj/machinery/igniter/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	. = ..()
-	id = "[REF(port)][id]"
-
 // Wall mounted remote-control igniter.
 
 /obj/machinery/sparker
@@ -65,13 +61,13 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "migniter"
 	resistance_flags = FIRE_PROOF
-	var/id = null
+	var/base_id = null
 	var/disable = 0
 	var/last_spark = 0
 	var/datum/effect_system/spark_spread/spark_system
 
 /obj/machinery/sparker/toxmix
-	id = INCINERATOR_TOXMIX_IGNITER
+	base_id = INCINERATOR_TOXMIX_IGNITER
 
 /obj/machinery/sparker/Initialize()
 	. = ..()

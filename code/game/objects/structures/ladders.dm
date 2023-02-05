@@ -156,7 +156,7 @@
 	name = "sturdy ladder"
 	desc = "An extremely sturdy metal ladder."
 	resistance_flags = INDESTRUCTIBLE
-	var/id
+	var/base_id
 	var/height = 0  // higher numbers are considered physically higher
 
 /obj/structure/ladder/unbreakable/Initialize()
@@ -170,13 +170,13 @@
 
 /obj/structure/ladder/unbreakable/LateInitialize()
 	// Override the parent to find ladders based on being height-linked
-	if (!id || (up && down))
+	if (!base_id || (up && down))
 		update_icon()
 		return
 
 	for (var/O in GLOB.ladders)
 		var/obj/structure/ladder/unbreakable/L = O
-		if (L.id != id)
+		if (L.base_id != base_id)
 			continue  // not one of our pals
 		if (!down && L.height == height - 1)
 			down = L

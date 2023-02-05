@@ -11,7 +11,7 @@
 	light_power = FLASH_LIGHT_POWER
 	damage_deflection = 10
 	var/obj/item/assembly/flash/handheld/bulb
-	var/id = null
+	var/base_id = null
 	var/range = 2 //this is roughly the size of brig cell
 	var/last_flash = 0 //Don't want it getting spammed like regular flashes
 	var/strength = 100 //How knocked down targets are when flashed.
@@ -37,11 +37,6 @@
 		pixel_y = (dir & 3)? (dir ==1 ? -28 : 28) : 0
 	else
 		bulb = new(src)
-
-
-/obj/machinery/flasher/connect_to_shuttle(mapload, obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	. = ..()
-	id = "[REF(port)][id]"
 
 /obj/machinery/flasher/Destroy()
 	QDEL_NULL(bulb)
@@ -159,7 +154,7 @@
 		if(disassembled)
 			var/obj/item/wallframe/flasher/F = new(get_turf(src))
 			transfer_fingerprints_to(F)
-			F.id = id
+			F.id = base_id
 			playsound(loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 		else
 			new /obj/item/stack/sheet/metal (loc, 2)
@@ -213,4 +208,4 @@
 /obj/item/wallframe/flasher/after_attach(obj/O)
 	..()
 	var/obj/machinery/flasher/F = O
-	F.id = id
+	F.base_id = id

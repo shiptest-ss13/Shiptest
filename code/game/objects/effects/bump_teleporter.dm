@@ -2,7 +2,7 @@
 	name = "bump-teleporter"
 	icon = 'icons/hud/screen_gen.dmi'
 	icon_state = "x2"
-	var/id = null			//id of this bump_teleporter.
+	var/base_id = null			//id of this bump_teleporter.
 	var/id_target = null	//id of bump_teleporter which this moves you to.
 	invisibility = INVISIBILITY_ABSTRACT 		//nope, can't see this
 	anchored = TRUE
@@ -33,5 +33,5 @@
 		return
 
 	for(var/obj/effect/bump_teleporter/BT in AllTeleporters)
-		if(BT.id == src.id_target)
+		if(BT.base_id == src.id_target)
 			AM.forceMove(BT.loc) //Teleport to location with correct id.
