@@ -426,6 +426,10 @@
 
 /proc/fusion_ball(datum/holder, reaction_energy, standard_energy)
 	var/turf/open/location
+
+	// fusion will never ever be balanced. god bless it
+	standard_energy = min(standard_energy, INFINITY)
+
 	if (istype(holder,/datum/pipeline)) //Find the tile the reaction is occuring on, or a random part of the network if it's a pipenet.
 		var/datum/pipeline/fusion_pipenet = holder
 		location = get_turf(pick(fusion_pipenet.members))
