@@ -89,6 +89,7 @@ Assistant
 	name = "Volunteer (Minutemen)"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	backpack = /obj/item/storage/backpack/security/cmm
 
 /datum/outfit/job/assistant/inteq
 	name = "IRMG Recruit (Inteq)"
@@ -196,6 +197,13 @@ Assistant
 
 	head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
 
+/datum/outfit/job/assistant/syndicate/cyberagent
+	name = "Junior Agent (Cybersun)"
+
+	uniform = /obj/item/clothing/under/syndicate
+	shoes = /obj/item/clothing/shoes/jackboots
+	r_pocket = /obj/item/radio
+	head = /obj/item/clothing/head/soft/black
 /datum/outfit/job/assistant/pharma
 	name = "Pharmacology Student"
 
