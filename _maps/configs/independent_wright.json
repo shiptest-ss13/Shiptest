@@ -1,0 +1,25 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Wright-class Anything Vessel",
+	"map_short_name": "Wright-class",
+	"map_path": "_maps/shuttles/shiptest/independent_wright.dmm",
+	"limit": 2,
+	"job_slots": {
+		"Detective": {
+			"outfit": "/datum/outfit/job/detective",
+			"officer": true,
+			"slots": 1
+		},
+		"Lawyer": 2,
+		"Clown": 1,
+		"Mime": 1,
+		"Secretary": {
+			"outfit": "/datum/outfit/job/assistant/receptionist",
+			"slots": 1
+		},
+		"Intern": {
+			"outfit": "/datum/outfit/job/assistant/intern",
+			"slots": 4
+		}
+	}
+}
