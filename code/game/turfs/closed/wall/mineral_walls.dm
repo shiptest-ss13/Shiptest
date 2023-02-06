@@ -15,8 +15,12 @@
 	base_icon_state = "gold_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/gold
 	explosion_block = 0 //gold is a soft metal you dingus.
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_GOLD_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_GOLD_WALLS, SMOOTH_GROUP_WALLS)
+	connector_icon = 'icons/turf/connectors/gold_wall_connector.dmi'
+	connector_icon_state = "gold_wall_connector"
+	no_connector_typecache = list(/turf/closed/wall/mineral/gold, /obj/structure/falsewall/gold)
 
 /turf/closed/wall/mineral/gold/yesdiag
 	icon_state = "gold_wall-255"
@@ -29,9 +33,12 @@
 	icon_state = "silver_wall-0"
 	base_icon_state = "silver_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/silver
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SILVER_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_SILVER_WALLS, SMOOTH_GROUP_WALLS)
+	connector_icon = 'icons/turf/connectors/silver_wall_connector.dmi'
+	connector_icon_state = "silver_wall_connector"
+	no_connector_typecache = list(/turf/closed/wall/mineral/silver, /obj/structure/falsewall/silver)
 
 /turf/closed/wall/mineral/silver/yesdiag
 	icon_state = "silver_wall-255"
@@ -46,9 +53,12 @@
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
 	slicing_duration = 200   //diamond wall takes twice as much time to slice
 	explosion_block = 3
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_DIAMOND_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_DIAMOND_WALLS, SMOOTH_GROUP_WALLS)
+	connector_icon = 'icons/turf/connectors/diamond_wall_connector.dmi'
+	connector_icon_state = "diamond_wall_connector"
+	no_connector_typecache = list(/turf/closed/wall/mineral/diamond, /obj/structure/falsewall/diamond)
 
 /turf/closed/wall/mineral/diamond/yesdiag
 	icon_state = "diamond_wall-255"
@@ -61,9 +71,12 @@
 	icon_state = "bananium_wall-0"
 	base_icon_state = "bananium_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/bananium
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_BANANIUM_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_BANANIUM_WALLS, SMOOTH_GROUP_WALLS)
+	connector_icon = 'icons/turf/connectors/bananium_wall_connector.dmi'
+	connector_icon_state = "bananium_wall_connector"
+	no_connector_typecache = list(/turf/closed/wall/mineral/bananium, /obj/structure/falsewall/bananium)
 
 /turf/closed/wall/mineral_bananium/yesdiag
 	icon_state = "bananium_wall-255"
@@ -77,9 +90,12 @@
 	base_icon_state = "sandstone_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/sandstone
 	explosion_block = 0
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SANDSTONE_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_SANDSTONE_WALLS, SMOOTH_GROUP_WALLS)
+	connector_icon = 'icons/turf/connectors/sandstone_wall_connector.dmi'
+	connector_icon_state = "sandstone_wall_connector"
+	no_connector_typecache = list(/turf/closed/wall/mineral/sandstone, /obj/structure/falsewall/sandstone)
 
 /turf/closed/wall/mineral/sandstone/yesdiag
 	icon_state = "sandstone_wall-255"
@@ -93,9 +109,12 @@
 	icon_state = "uranium_wall-0"
 	base_icon_state = "uranium_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/uranium
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_URANIUM_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_URANIUM_WALLS, SMOOTH_GROUP_WALLS)
+	connector_icon = 'icons/turf/connectors/uranium_wall_connector.dmi'
+	connector_icon_state = "uranium_wall_connector"
+	no_connector_typecache = list(/turf/closed/wall/mineral/uranium, /obj/structure/falsewall/uranium)
 
 /turf/closed/wall/mineral/uranium/yesdiag
 	icon_state = "uranium_wall-255"
@@ -133,9 +152,12 @@
 	icon_state = "uranium_wall-0"
 	base_icon_state = "uranium_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/uranium
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_URANIUM_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_URANIUM_WALLS, SMOOTH_GROUP_WALLS)
+	connector_icon = 'icons/turf/connectors/uranium_wall_connector.dmi'
+	connector_icon_state = "uranium_wall_connector"
+	no_connector_typecache = list(/turf/closed/wall/mineral/uranium, /obj/structure/falsewall/uranium)
 
 /turf/closed/wall/mineral/uranium/safe/radiate()
 	return
@@ -152,9 +174,12 @@
 	base_icon_state = "plasma_wall"
 	sheet_type = /obj/item/stack/sheet/mineral/plasma
 	thermal_conductivity = 0.04
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_PLASMA_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_PLASMA_WALLS, SMOOTH_GROUP_WALLS)
+	connector_icon = 'icons/turf/connectors/plasma_wall_connector.dmi'
+	connector_icon_state = "plasma_wall_connector"
+	no_connector_typecache = list(/turf/closed/wall/mineral/plasma, /obj/structure/falsewall/plasma)
 
 /turf/closed/wall/mineral/plasma/yesdiag
 	icon_state = "plasma_wall-255"
@@ -238,9 +263,12 @@
 	icon_state = "iron_wall-0"
 	base_icon_state = "iron_wall"
 	sheet_type = /obj/item/stack/rods
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_IRON_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_IRON_WALLS, SMOOTH_GROUP_WALLS)
+	connector_icon = 'icons/turf/connectors/iron_wall_connector.dmi'
+	connector_icon_state = "iron_wall_connector"
+	no_connector_typecache = list(/turf/closed/wall/mineral/iron, /obj/structure/falsewall/iron)
 
 /turf/closed/wall/mineral/iron/yesdiag
 	icon_state = "iron_wall-255"
@@ -255,9 +283,12 @@
 	icon = 'icons/turf/walls/snow_wall.dmi'
 	icon_state = "snow_wall-0"
 	base_icon_state = "snow_wall"
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_CONNECTORS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SNOW_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_SNOW_WALLS)
+	connector_icon = 'icons/turf/connectors/snow_wall_connector.dmi'
+	connector_icon_state = "snow_wall_connector"
+	no_connector_typecache = list(/turf/closed/wall/mineral/snow)
 	hardness = 80
 	explosion_block = 0
 	slicing_duration = 30
