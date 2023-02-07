@@ -170,9 +170,23 @@
 	id = "1984"
 	},
 /obj/machinery/mineral/stacking_machine,
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"av" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/hallway/central)
 "aw" = (
 /obj/effect/turf_decal/floordetail/edgedrain{
 	dir = 4
@@ -289,7 +303,10 @@
 	name = "Synthetic Upload Chamber";
 	req_access_txt = "16"
 	},
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "aH" = (
@@ -391,7 +408,10 @@
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 8
 	},
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "aQ" = (
@@ -516,9 +536,14 @@
 /obj/effect/turf_decal/corner/opaque/neutral{
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/mining/glass{
 	name = "Port Hallway"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
@@ -559,9 +584,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/mining{
 	name = "Cargo Bay"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -686,10 +716,13 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/public/glass{
 	name = "Port Hallway"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "bx" = (
@@ -762,10 +795,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/highsecurity{
 	name = "AI Core Access";
 	req_access_txt = "19"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1260,9 +1296,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/public/glass{
 	name = "Crew Quarters"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -1277,9 +1316,12 @@
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 8
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/public/glass{
 	name = "Crew Quarters"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -1402,7 +1444,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "dg" = (
@@ -1458,9 +1505,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock{
 	name = "Crew Quarters"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -1531,9 +1583,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/medical/glass{
 	name = "Medbay"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
@@ -1623,6 +1680,12 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/research{
 	name = "Robotics"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/science/robotics)
@@ -1748,8 +1811,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "dG" = (
@@ -2000,6 +2066,16 @@
 "ev" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
+"fa" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_bridge"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "gc" = (
 /obj/machinery/door/poddoor{
 	id = "cargobaydoors";
@@ -2212,10 +2288,13 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "op" = (
-/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/floordetail/edgedrain,
 /obj/machinery/door/airlock{
 	name = "Restroom"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
@@ -2496,7 +2575,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "Fg" = (
-/obj/machinery/door/firedoor,
 /obj/machinery/door/window/westright{
 	name = "Processor Access Door"
 	},
@@ -2504,6 +2582,12 @@
 	name = "Processor Access Door"
 	},
 /obj/effect/turf_decal/weather,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Go" = (
@@ -2611,7 +2695,10 @@
 	name = "AI Core Access";
 	req_access_txt = "19"
 	},
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Mc" = (
@@ -2662,11 +2749,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "Nm" = (
-/obj/machinery/door/firedoor,
 /obj/effect/turf_decal/floordetail/edgedrain,
 /obj/machinery/door/airlock{
 	name = "Janitorial Closet"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/port)
 "Np" = (
@@ -2771,6 +2861,9 @@
 /area/ship/bridge)
 "VW" = (
 /obj/machinery/vending/coffee,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "XC" = (
@@ -3050,7 +3143,7 @@ eb
 eb
 eb
 eb
-eb
+fa
 VW
 SN
 dk
@@ -3069,7 +3162,7 @@ cv
 ls
 cj
 hd
-cv
+av
 cv
 cT
 dl
