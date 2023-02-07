@@ -50,44 +50,44 @@
 /obj/machinery/telecomms/bus/preset_one
 	id = "General Communications Bus"
 	network = "tcommsat"
-	freq_listening = list(FREQ_COMMAND)
-	autolinkers = list("processor1", "command", "common", "messaging")
+	freq_listening = list(FREQ_COMMAND, FREQ_COMMON)
+	autolinkers = list("processor1", "command", "common", "messaging", "receiverA")
 
 /obj/machinery/telecomms/bus/preset_two
 	id = "Nanotrasen Communications Bus"
 	network = "tcommsat"
-	freq_listening = list(FREQ_NANOTRASEN)
-	autolinkers = list("processor2", "nanotrasen")
+	freq_listening = list(FREQ_NANOTRASEN, FREQ_COMMON)
+	autolinkers = list("processor2", "nanotrasen", "receiverA", "messaging")
 
 /obj/machinery/telecomms/bus/preset_three
 	id = "Syndicate Communications Bus"
 	network = "tcommsat"
-	freq_listening = list(FREQ_SYNDICATE)
-	autolinkers = list("processor3", "syndicate")
+	freq_listening = list(FREQ_SYNDICATE, FREQ_COMMON)
+	autolinkers = list("processor3", "syndicate", "receiverB", "messaging")
 
 /obj/machinery/telecomms/bus/preset_four
 	id = "IRMG Communications Bus"
 	network = "tcommsat"
-	freq_listening = list(FREQ_INTEQ)
-	autolinkers = list("processor4", "inteq")
+	freq_listening = list(FREQ_INTEQ, FREQ_COMMON)
+	autolinkers = list("processor4", "inteq", "receiverB", "messaging")
 
 /obj/machinery/telecomms/bus/preset_five
 	id = "CMM Communications Bus"
 	network = "tcommsat"
-	freq_listening = list(FREQ_MINUTEMEN)
-	autolinkers = list("processor5", "minutemen")
+	freq_listening = list(FREQ_MINUTEMEN, FREQ_COMMON)
+	autolinkers = list("processor5", "minutemen", "messaging")
 
 /obj/machinery/telecomms/bus/preset_six
 	id = "Hacked Communications Bus"
 	network = "tcommsat"
-	freq_listening = list(FREQ_PIRATE)
-	autolinkers = list("processor6", "pirate")
+	freq_listening = list(FREQ_PIRATE, FREQ_COMMON)
+	autolinkers = list("processor6", "pirate", "receiverB", "messaging")
 
 /obj/machinery/telecomms/bus/preset_seven
 	id = "Solgov Communications Bus"
 	network = "tcommsat"
-	freq_listening = list(FREQ_SOLGOV)
-	autolinkers = list("processor7", "solgov")
+	freq_listening = list(FREQ_SOLGOV, FREQ_COMMON)
+	autolinkers = list("processor7", "solgov", "receiverA", "messaging")
 
 /obj/machinery/telecomms/bus/preset_seven/Initialize()
 	. = ..()
