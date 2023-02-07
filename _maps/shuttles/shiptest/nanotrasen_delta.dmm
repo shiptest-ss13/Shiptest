@@ -754,11 +754,11 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
-/obj/structure/catwalk,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bB" = (
@@ -1111,10 +1111,10 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 4
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cB" = (
@@ -1151,8 +1151,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cE" = (
@@ -1253,7 +1253,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cP" = (
@@ -1413,7 +1413,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/structure/catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "de" = (
@@ -1902,8 +1902,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/power/apc/auto_name/east,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dO" = (
@@ -2000,11 +2000,11 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 9
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dV" = (
@@ -2177,10 +2177,10 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ls" = (
@@ -2321,7 +2321,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "sv" = (
@@ -2329,16 +2329,6 @@
 /obj/machinery/autolathe,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"ud" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "uC" = (
 /obj/machinery/door/poddoor{
 	id = "cargobaydoors";
@@ -2403,6 +2393,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"wH" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_bridge"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "xe" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2435,13 +2435,13 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
-/obj/structure/catwalk,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "xW" = (
@@ -2606,7 +2606,7 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/structure/catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "IM" = (
@@ -3130,7 +3130,7 @@ eb
 eb
 eb
 eb
-ud
+wH
 VW
 SN
 dk
