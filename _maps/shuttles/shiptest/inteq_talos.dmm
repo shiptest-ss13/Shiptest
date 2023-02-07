@@ -582,6 +582,9 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ek" = (
@@ -4060,6 +4063,9 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "talos_thrusters_starboard"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
