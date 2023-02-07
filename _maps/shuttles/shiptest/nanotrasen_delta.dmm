@@ -178,15 +178,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
-"av" = (
-/obj/effect/turf_decal/corner/opaque/blue/border{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ship/hallway/central)
 "aw" = (
 /obj/effect/turf_decal/floordetail/edgedrain{
 	dir = 4
@@ -2066,16 +2057,6 @@
 "ev" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
-"fa" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor{
-	id = "whiteship_bridge"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "gc" = (
 /obj/machinery/door/poddoor{
 	id = "cargobaydoors";
@@ -2861,9 +2842,6 @@
 /area/ship/bridge)
 "VW" = (
 /obj/machinery/vending/coffee,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "XC" = (
@@ -2909,6 +2887,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"YV" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_bridge"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Zi" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3143,7 +3131,7 @@ eb
 eb
 eb
 eb
-fa
+YV
 VW
 SN
 dk
@@ -3162,7 +3150,7 @@ cv
 ls
 cj
 hd
-av
+cv
 cv
 cT
 dl
