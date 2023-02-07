@@ -1136,3 +1136,11 @@
 	time = 4 SECONDS
 	reqs = list(/obj/item/strange_crystal = 2)
 	category = CAT_MISC
+
+/datum/crafting_recipe/freezer
+	name = "Freezer"
+	result = /obj/structure/closet/crate/freezer
+	time = 2 SECONDS
+	reqs = list(/datum/reagent/consumable/ice = 25,
+	/obj/item/stack/sheet/metal = 2)
+	category = CAT_MISC
