@@ -2133,11 +2133,6 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 8
-	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "up" = (
@@ -3358,6 +3353,11 @@
 /obj/machinery/door/poddoor{
 	id = "syndie_warship_cargo";
 	name = "Cargo Hatch"
+	},
+/obj/docking_port/mobile{
+	dir = 4;
+	launch_status = 0;
+	port_direction = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
