@@ -1,7 +1,7 @@
 /obj/machinery/atmospherics/components/binary/relief_valve
 	name = "binary pressure relief valve"
 	desc = "Like a manual valve, but opens at a certain pressure rather than being toggleable."
-	icon = 'whitesands/icons/obj/atmospherics/components/relief_valve.dmi'
+	icon = 'icons/obj/atmospherics/components/relief_valve.dmi'
 	icon_state = "relief_valve-t-map"
 	can_unwrench = TRUE
 	construction_type = /obj/item/pipe/binary
@@ -25,7 +25,7 @@
 		setDir(EAST)
 	cut_overlays()
 
-	if(!nodes[1] || !opened || !is_operational())
+	if(!nodes[1] || !opened || !is_operational)
 		icon_state = "relief_valve-t-[set_overlay_offset(piping_layer)]"
 		return
 
@@ -45,7 +45,7 @@
 /obj/machinery/atmospherics/components/binary/relief_valve/process_atmos()
 	..()
 
-	if(!is_operational())
+	if(!is_operational)
 		return
 
 	var/datum/gas_mixture/air_one = airs[1]

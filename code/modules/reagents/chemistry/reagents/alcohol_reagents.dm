@@ -662,7 +662,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "Whoah, this thing is on FIRE!"
 	shot_glass_icon_state = "toxinsspecialglass"
 
-/datum/reagent/consumable/ethanol/toxins_special/on_mob_life(var/mob/living/M)
+/datum/reagent/consumable/ethanol/toxins_special/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(15 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal() + 20) //310.15 is the normal bodytemp.
 	return ..()
 
@@ -731,24 +731,22 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "A manly concoction made from Ale and Beer. Intended for true men only."
 	var/dorf_mode
 
-/datum/reagent/consumable/ethanol/manly_dorf/on_mob_metabolize(mob/living/M)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(HAS_TRAIT(H, TRAIT_DWARF) || HAS_TRAIT(H, TRAIT_ALCOHOL_TOLERANCE))
-			// WS Edit Start - Dorfisms
-			to_chat(H, "<span class='notice'>Now THAT is MANLY!</span>")
-			dorf_mode = TRUE
-			if(H.dna && H.dna.check_mutation(DORFISM))
-				boozepwr = 120 //lifeblood of dwarves (boozepower = nutrition)
-				quality = DRINK_FANTASTIC //dorf drink for dorfs to drink
-			else
-				boozepwr = 5 //We've had worse in the mines
-			// WS Edit End - Dorfisms
+/datum/reagent/consumable/ethanol/manly_dorf/on_mob_metabolize(mob/living/carbon/human/badlands_chugs)
+	if(!istype(badlands_chugs))
+		return
+	if(!HAS_TRAIT(badlands_chugs, TRAIT_DWARF))
+		return
+	to_chat(badlands_chugs, "<span class='notice'>Now THAT is MANLY!</span>")
+	dorf_mode = TRUE
+	if(badlands_chugs.dna?.check_mutation(DORFISM))
+		boozepwr = 120 //lifeblood of dwarves (boozepower = nutrition)
+	else
+		boozepwr = 5 //We've had worse in the mines
 
-/datum/reagent/consumable/ethanol/manly_dorf/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/manly_dorf/on_mob_life(mob/living/carbon/consumer)
 	if(dorf_mode)
-		M.adjustBruteLoss(-2)
-		M.adjustFireLoss(-2)
+		consumer.adjustBruteLoss(-0.5*REM)
+		consumer.adjustFireLoss(-0.5*REM)
 	return ..()
 
 /datum/reagent/consumable/ethanol/longislandicedtea

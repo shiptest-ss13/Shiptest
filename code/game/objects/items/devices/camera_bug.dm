@@ -60,7 +60,7 @@
 	interact(user)
 
 /obj/item/camera_bug/check_eye(mob/user)
-	if ( loc != user || user.incapacitated() || user.is_blind() || !current )
+	if (loc != user || user.incapacitated() || user.is_blind() || !current)
 		user.unset_machine()
 		return 0
 	var/turf/T_user = get_turf(user.loc)
@@ -75,7 +75,7 @@
 	user.reset_perspective(null)
 
 /obj/item/camera_bug/proc/get_cameras()
-	if( world.time > (last_net_update + 100))
+	if(world.time > (last_net_update + 100))
 		bugged_cameras = list()
 		for(var/obj/machinery/camera/camera in GLOB.cameranet.cameras)
 			if(camera.machine_stat || !camera.can_use())
@@ -131,7 +131,7 @@
 						if(!s)
 							s = "00"
 						html += "Last seen near [outstring] ([m]:[s] minute\s ago)<br>"
-					if( C && (C.bug == src)) //Checks to see if the camera has a bug
+					if(C && (C.bug == src)) //Checks to see if the camera has a bug
 						html += "<a href='?src=[REF(src)];emp=[REF(C)]'>\[Disable\]</a>"
 
 				else
@@ -265,7 +265,7 @@
 	if(track_mode == BUGMODE_LIST || (world.time < (last_tracked + refresh_interval)))
 		return
 	last_tracked = world.time
-	if(track_mode == BUGMODE_TRACK ) // search for user
+	if(track_mode == BUGMODE_TRACK) // search for user
 		// Note that it will be tricked if your name appears to change.
 		// This is not optimal but it is better than tracking you relentlessly despite everything.
 		if(!tracking)
@@ -298,7 +298,7 @@
 				break
 	src.updateSelfDialog()
 
-/obj/item/camera_bug/proc/same_z_level(var/obj/machinery/camera/C)
+/obj/item/camera_bug/proc/same_z_level(obj/machinery/camera/C)
 	var/turf/T_cam = get_turf(C)
 	var/turf/T_bug = get_turf(loc)
 	if(!T_bug || T_cam.virtual_z() != T_bug.virtual_z())

@@ -386,6 +386,46 @@
 	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
 	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
 
+/obj/item/bodypart/l_arm/robot/surplus/kepori
+	name = "surplus prosthetic kepori left arm"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/surplus/kepori
+	name = "surplus prosthetic kepori right arm"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_leg/robot/surplus/kepori
+	name = "surplus prosthetic kepori left leg"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_leg/robot/surplus/kepori
+	name = "surplus prosthetic kepori right leg"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_arm/robot/surplus/vox
+	name = "surplus prosthetic vox left arm"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/surplus/vox
+	name = "surplus prosthetic vox right arm"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_leg/robot/surplus/vox
+	name = "surplus prosthetic vox left leg"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_leg/robot/surplus/vox
+	name = "surplus prosthetic vox right leg"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
 #undef ROBOTIC_LIGHT_BRUTE_MSG
 #undef ROBOTIC_MEDIUM_BRUTE_MSG
 #undef ROBOTIC_HEAVY_BRUTE_MSG

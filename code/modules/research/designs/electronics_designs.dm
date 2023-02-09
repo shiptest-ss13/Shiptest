@@ -78,7 +78,6 @@
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
 	build_path = /obj/item/disk/design_disk
 	category = list("Electronics")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/design_disk_adv
 	name = "Advanced Design Storage Disk"
@@ -95,7 +94,7 @@
 	desc = "Produce additional disks for storing device designs."
 	id = "design_disk_super"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/iron = 300, /datum/material/glass = 100, /datum/material/silver=50, /datum/material/gold=50 )
+	materials = list(/datum/material/iron = 300, /datum/material/glass = 100, /datum/material/silver=50, /datum/material/gold=50)
 	build_path = /obj/item/disk/design_disk/super
 	category = list("Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
@@ -118,7 +117,6 @@
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
 	build_path = /obj/item/disk/tech_disk
 	category = list("Electronics")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/nanite_disk
 	name = "Nanite Program Disk"

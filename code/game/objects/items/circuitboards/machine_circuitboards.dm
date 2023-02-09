@@ -258,7 +258,7 @@
 		/obj/item/stock_parts/capacitor = 6)
 
 /obj/item/circuitboard/machine/protolathe/department/engineering
-	name = "Departmental Protolathe (Machine Board) - Engineering"
+	name = "Protolathe (Machine Board) - Engineering"
 	icon_state = "engineering"
 	build_path = /obj/machinery/rnd/production/protolathe/department/engineering
 
@@ -292,6 +292,16 @@
 		/obj/item/stock_parts/micro_laser = 1,
 		/obj/item/stack/sheet/mineral/uranium = 10,
 		/obj/item/stack/sheet/mineral/plasma = 5)
+
+/obj/item/circuitboard/machine/rtg/geothermal
+	name = "Geothermal Power Tap"
+	build_path = /obj/machinery/power/rtg/geothermal
+	req_components = list(
+	/obj/item/pickaxe/drill = 1,
+	/obj/item/stack/cable_coil = 10,
+	/obj/item/stock_parts/capacitor = 2,
+	/obj/item/stock_parts/micro_laser = 1,
+	/obj/item/stock_parts/manipulator = 4)
 
 /obj/item/circuitboard/machine/scanner_gate
 	name = "Scanner Gate (Machine Board)"
@@ -390,8 +400,20 @@
 	needs_anchored = FALSE
 
 /obj/item/circuitboard/machine/shieldwallgen/atmos
-	name = "Atmospheric Holowall Generator (Machine Board)"
+	name = "Atmospheric Holofield Generator (Machine Board)"
 	build_path = /obj/machinery/power/shieldwallgen/atmos
+
+/obj/item/circuitboard/machine/shieldwallgen/atmos/strong
+	name = "High Power Atmospheric Holofield Generator (Machine Board)"
+	build_path = /obj/machinery/power/shieldwallgen/atmos/strong
+	req_components = list(
+		/obj/item/stock_parts/manipulator/nano = 2,
+		/obj/item/stock_parts/micro_laser/high = 2,
+		/obj/item/stock_parts/capacitor/adv = 2,
+		/obj/item/stack/sheet/plasmaglass = 1,
+		/obj/item/stack/cable_coil = 5,
+	)
+
 
 /obj/item/circuitboard/machine/pipedispenser
 	name = "Pipe dispenser (Machine Board)"
@@ -416,6 +438,36 @@
 	name = "Departmental Circuit Imprinter (Machine Board)"
 	icon_state = "generic"
 	build_path = /obj/machinery/rnd/production/circuit_imprinter/department
+
+/obj/item/circuitboard/machine/circuit_imprinter/department/cargo
+	name = "Circuit Imprinter (M.I.D.A.S)"
+	icon_state = "supply"
+	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/cargo
+
+/obj/item/circuitboard/machine/circuit_imprinter/department/engi
+	name = "Circuit Imprinter (A.T.L.A.S)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/engi
+
+/obj/item/circuitboard/machine/circuit_imprinter/department/med
+	name = "Circuit Imprinter (C.A.R.E)"
+	icon_state = "medical"
+	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/med
+
+/obj/item/circuitboard/machine/circuit_imprinter/department/sec
+	name = "Circuit Imprinter (P.E.A.C.E)"
+	icon_state = "security"
+	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/sec
+
+/obj/item/circuitboard/machine/circuit_imprinter/department/civ
+	name = "Circuit Imprinter (H.O.M.E)"
+	icon_state = "service"
+	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/civ
+
+/obj/item/circuitboard/machine/circuit_imprinter/department/basic
+	name = "Circuit Imprinter (B.A.S.I.C)"
+	icon_state = "generic"
+	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/basic
 
 /obj/item/circuitboard/machine/holopad
 	name = "AI Holopad (Machine Board)"
@@ -470,6 +522,11 @@
 	name = "Departmental Protolathe (Machine Board)"
 	icon_state = "generic"
 	build_path = /obj/machinery/rnd/production/protolathe/department
+
+/obj/item/circuitboard/machine/protolathe/department/basic
+	name = "Protolathe (Basic)"
+	icon_state = "generic"
+	build_path = /obj/machinery/rnd/production/protolathe/department/basic
 
 /obj/item/circuitboard/machine/reagentgrinder
 	name = "Machine Design (All-In-One Grinder)"
@@ -776,7 +833,7 @@
 		/obj/item/stack/sheet/glass = 1)
 
 /obj/item/circuitboard/machine/protolathe/department/medical
-	name = "Departmental Protolathe (Machine Board) - Medical"
+	name = "Protolathe (Machine Board) - Medical"
 	icon_state = "medical"
 	build_path = /obj/machinery/rnd/production/protolathe/department/medical
 
@@ -952,7 +1009,7 @@
 	build_path = /obj/machinery/processor/slime
 
 /obj/item/circuitboard/machine/protolathe/department/science
-	name = "Departmental Protolathe (Machine Board) - Science"
+	name = "Protolathe (Machine Board) - Science"
 	icon_state = "science"
 	build_path = /obj/machinery/rnd/production/protolathe/department/science
 
@@ -1065,9 +1122,14 @@
 //Security
 
 /obj/item/circuitboard/machine/protolathe/department/security
-	name = "Departmental Protolathe (Machine Board) - Security"
+	name = "Protolathe (Machine Board) - Security"
 	icon_state = "security"
 	build_path = /obj/machinery/rnd/production/protolathe/department/security
+
+/obj/item/circuitboard/machine/protolathe/department/ballistics
+	name = "Protolathe (Machine Board) - Ballistics"
+	icon_state = "security"
+	build_path = /obj/machinery/rnd/production/protolathe/department/ballistics
 
 /obj/item/circuitboard/machine/recharger
 	name = "Weapon Recharger (Machine Board)"
@@ -1226,7 +1288,7 @@
 		return ..()
 
 /obj/item/circuitboard/machine/protolathe/department/service
-	name = "Departmental Protolathe - Service (Machine Board)"
+	name = "Protolathe - Service (Machine Board)"
 	icon_state = "service"
 	build_path = /obj/machinery/rnd/production/protolathe/department/service
 
@@ -1280,7 +1342,7 @@
 	req_components = list()
 
 /obj/item/circuitboard/machine/protolathe/department/cargo
-	name = "Departmental Protolathe (Machine Board) - Cargo"
+	name = "Protolathe (Machine Board) - Cargo"
 	icon_state = "supply"
 	build_path = /obj/machinery/rnd/production/protolathe/department/cargo
 
@@ -1413,6 +1475,12 @@
 	build_path = /obj/machinery/power/shuttle/engine/liquid/oil
 	req_components = list(/obj/item/reagent_containers/glass/beaker = 4,
 		/obj/item/stock_parts/micro_laser = 2)
+
+/obj/item/circuitboard/machine/shuttle/engine/beer
+	name = "Beer Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/liquid/beer
+	req_components = list(/obj/item/reagent_containers/food/drinks/beer = 4,
+		/obj/item/stock_parts/micro_laser =  2)
 
 /obj/item/circuitboard/machine/shuttle/engine/void
 	name = "Void Thruster (Machine Board)"

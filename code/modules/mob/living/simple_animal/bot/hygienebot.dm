@@ -8,8 +8,7 @@
 	anchored = FALSE
 	health = 100
 	maxHealth = 100
-	radio_key = /obj/item/encryptionkey/headset_service
-	radio_channel = RADIO_CHANNEL_SERVICE //Service
+	radio_key = /obj/item/encryptionkey
 	bot_type = HYGIENE_BOT
 	model = "Cleanbot"
 	bot_core_type = /obj/machinery/bot_core/hygienebot

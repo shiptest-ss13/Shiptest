@@ -38,7 +38,7 @@
 /datum/antagonist/gang/get_team()
 	return my_gang
 
-/datum/antagonist/gang/proc/add_gang_points(var/points_to_add)
+/datum/antagonist/gang/proc/add_gang_points(points_to_add)
 	if(my_gang)
 		my_gang.adjust_points(points_to_add)
 
@@ -139,8 +139,8 @@
 							/obj/item/clothing/neck/scarf/red,
 							/obj/item/clothing/under/suit/white,
 							/obj/item/clothing/head/beanie/red,
-							/obj/item/clothing/head/ushanka)
-	free_clothes = list(/obj/item/clothing/head/ushanka,
+							/obj/item/clothing/head/trapper)
+	free_clothes = list(/obj/item/clothing/head/trapper,
 						/obj/item/clothing/under/suit/white,
 						/obj/item/toy/crayon/spraycan)
 	gang_objective = "We are starting to run low on supplies at the home base, my friend. Make sure every comrade has a bottle of some kind of booze on them, friend."
@@ -347,7 +347,7 @@
 	var/list/free_clothes = list()
 	var/datum/antagonist/gang/my_gang_datum
 
-/datum/team/gang/proc/adjust_points(var/points_to_adjust)
+/datum/team/gang/proc/adjust_points(points_to_adjust)
 	points += points_to_adjust
 
 /datum/team/gang/roundend_report()

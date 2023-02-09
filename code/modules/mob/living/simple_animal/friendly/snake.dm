@@ -38,7 +38,7 @@
 	gold_core_spawnable = FRIENDLY_SPAWN
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
-	var/glasses_overlay_file = 'whitesands/icons/mob/pets.dmi'
+	var/glasses_overlay_file = 'icons/mob/pets.dmi'
 	var/obj/item/clothing/glasses/glasses = null //snek glasses
 
 
@@ -144,7 +144,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/bookworm
 	name = "Bookworm"
-	icon = 'whitesands/icons/mob/pets.dmi'
+	icon = 'icons/mob/pets.dmi'
 	icon_state = "bookworm"
 	icon_living = "bookworm"
 	icon_dead = "bookworm_dead"
@@ -156,8 +156,11 @@
 	glasses = new /obj/item/clothing/glasses/regular(src)
 	grant_all_languages()
 	update_overlays()
-	speak = get_phrases()
+	INVOKE_ASYNC(src, .proc/update_phrases)
 	. = ..()
+
+/mob/living/simple_animal/hostile/retaliate/poison/snake/bookworm/proc/update_phrases()
+	speak = get_phrases()
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/bookworm/proc/get_phrases() //if someone sees this, be sure to actually literally really kill me
 	var/list/phrase_buffer = list()

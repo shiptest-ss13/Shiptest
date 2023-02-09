@@ -96,7 +96,9 @@
 
 /datum/config_entry/flag/log_shuttle // log shuttle related actions, ie shuttle computers, shuttle manipulator, emergency console
 
-/datum/config_entry/flag/allow_admin_ooccolor	// Allows admins with relevant permissions to have their own ooc colour
+/datum/config_entry/flag/log_timers_on_bucket_reset // logs all timers in buckets on automatic bucket reset (Useful for timer debugging)
+
+/datum/config_entry/flag/allow_admin_ooccolor // Allows admins with relevant permissions to have their own ooc colour
 
 /datum/config_entry/flag/allow_admin_asaycolor //Allows admins with relevant permissions to have a personalized asay color
 
@@ -555,3 +557,10 @@
 			// even a high pressure zone will be less than 1.5x one atmos
 			return key_value > 0 && key_value < 1.5
 	return FALSE
+
+// Elasticsearch stuffs
+/datum/config_entry/flag/elasticsearch_metrics_enabled
+
+/datum/config_entry/string/elasticsearch_metrics_endpoint
+
+/datum/config_entry/string/elasticsearch_metrics_apikey

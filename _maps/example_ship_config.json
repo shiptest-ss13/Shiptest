@@ -3,8 +3,9 @@
 	"map_name": "Example-class Experimental Ship",
 	"map_short_name": "Test-class",
 	"prefix": "STSV",
-	"namelists": ["GENERAL", "SPACE", "FANTASY", "WEAPONS"],
+	"namelists": ["GENERAL", "SPACE", "MYTHOLOGICAL", "WEAPONS"],
 	"map_path": "_maps/shuttles/shiptest/null.dmm",
+	"limit": 2,
 	"job_slots": {
 		"The First Slot will always be the 'captain' that the purchaser becomes.": {
 			"outfit": "/datum/outfit/job/captain",
@@ -17,5 +18,5 @@
 		},
 		"Assistant": 3
 	},
-	"cost": 99999999
+	"enabled": true
 }

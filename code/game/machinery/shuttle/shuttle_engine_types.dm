@@ -2,9 +2,9 @@
 #define ENGINE_HEATING_POWER 5000000
 
 /**
-  * ### Fueled engines
-  * Shuttle engines that require a gas or gases to burn.
-  */
+ * ### Fueled engines
+ * Shuttle engines that require a gas or gases to burn.
+ */
 /obj/machinery/power/shuttle/engine/fueled
 	name = "fueled thruster"
 	desc = "A thruster that burns a specific gas that is stored in an adjacent heater."
@@ -102,9 +102,9 @@
 	//All fuel code already handled
 
 /**
-  * ### Ion Engines
-  * Engines that convert electricity to thrust. Yes, I know that's not how it works, it needs a propellant, but this is a video game.
-  */
+ * ### Ion Engines
+ * Engines that convert electricity to thrust. Yes, I know that's not how it works, it needs a propellant, but this is a video game.
+ */
 /obj/machinery/power/shuttle/engine/electric
 	name = "ion thruster"
 	desc = "A thruster that expels charged particles to generate thrust."
@@ -126,7 +126,7 @@
 /obj/machinery/power/smes/shuttle
 	name = "electric engine precharger"
 	desc = "A medium-capacity, high transfer superconducting magnetic energy storage unit specially made for use with shuttle engines."
-	icon = 'whitesands/icons/obj/shuttle.dmi'
+	icon = 'icons/obj/shuttle.dmi'
 	input_level = 0
 	input_level_max = 50000
 	output_level = 50000
@@ -166,12 +166,12 @@
 	return power_per_burn
 
 /**
-  * ### Liquid Fuel Engines
-  * Turns a specific reagent or reagents into thrust.
-  */
+ * ### Liquid Fuel Engines
+ * Turns a specific reagent or reagents into thrust.
+ */
 /obj/machinery/power/shuttle/engine/liquid
-	name = "liquid thruster"
-	desc = "A thruster that burns reagents stored in the engine for fuel."
+	name = "If you see me, ping a coder."
+	desc = "Wow! You really shouldn't be seeing this!" //if you want the engines to work and be movable, you need to make a subtype of them.
 	///How much fuel can be loaded into the engine.
 	var/max_reagents = 0
 	///What reagent is consumed to burn the engine, and how much is needed.
@@ -219,10 +219,18 @@
 	fuel_reagents = list(/datum/reagent/fuel/oil = 50)
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/oil
 
+/obj/machinery/power/shuttle/engine/liquid/beer
+	name = "beer thruster"
+	desc = "Beer is quite possibly the worst thing to use as interstellar propulsion, how these even work is a mystery."
+	max_reagents = 1000
+	thrust = 10
+	fuel_reagents= list(/datum/reagent/consumable/ethanol/beer = 50)
+	circuit = /obj/item/circuitboard/machine/shuttle/engine/beer
+
 /**
-  * ### Void Engines
-  * These engines are literally magic. Adminspawn only.
-  */
+ * ### Void Engines
+ * These engines are literally magic. Adminspawn only.
+ */
 /obj/machinery/power/shuttle/engine/void
 	name = "void thruster"
 	desc = "A thruster using technology to breach voidspace for propulsion."

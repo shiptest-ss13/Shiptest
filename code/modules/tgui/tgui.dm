@@ -63,7 +63,7 @@
 	src.interface = interface
 	if(title)
 		src.title = title
-	src.state = src_object.ui_state()
+	src.state = src_object.ui_state(user)
 	// Deprecated
 	if(ui_x && ui_y)
 		src.window_size = list(ui_x, ui_y)
@@ -302,7 +302,7 @@
 	switch(type)
 		if("ready")
 			initialized = TRUE
-		if("pingReply")
+		if("ping/reply")
 			initialized = TRUE
 		if("suspend")
 			close(can_be_suspended = TRUE)

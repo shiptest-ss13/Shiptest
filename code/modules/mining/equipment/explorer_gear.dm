@@ -13,6 +13,7 @@
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 10, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/pinpointer/deepcore)
 	resistance_flags = FIRE_PROOF
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/head/hooded/explorer
 	name = "explorer hood"
@@ -129,7 +130,7 @@
 
 /obj/item/clothing/mask/gas/explorer/old
 	name = "prototype exploration mask"
-	desc = "An outdated nanotransen enviromask, designed for extended deployment in regions without a safe air supply. Armor-plated to a discomfort-inducing fault."
+	desc = "An outdated Nanotrasen enviromask, designed for extended deployment in regions without a safe air supply. Armor-plated to a discomfort-inducing fault."
 	icon_state = "old_mining"
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 15, "energy" = 15, "bomb" = 65, "bio" = 100, "rad" = 75, "fire" = 75, "acid" = 75)
 
@@ -155,9 +156,9 @@
 /obj/item/clothing/suit/hooded/survivor
 	name = "survivor suit"
 	desc = "A ragged makeshift suit resembling the explorer suit, covered with the emblems of a failed revolution. It's been repaired so many times it's hard to tell if it's more suit or patch. The joints have been redesigned for quicker movement."
-	lefthand_file = 'whitesands/icons/mob/inhands/clothing/lefthand.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/clothing/righthand.dmi'
-	icon_state = "survivor_suit"
+	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+	icon_state = "survivor"
 	item_state = "survivor_suit"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	min_cold_protection_temperature = (FIRE_SUIT_MIN_TEMP_PROTECT * 2)
@@ -169,6 +170,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/pinpointer/deepcore)
 	resistance_flags = FIRE_PROOF
 	slowdown = -0.3//finally, a reason for shiptesters to steal this
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/head/hooded/survivor_hood
 	name = "survivor hood"

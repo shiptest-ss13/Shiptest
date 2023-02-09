@@ -3,13 +3,13 @@
 			'sound/effects/thunder/thunder10.ogg')
 
 /**
-  * Causes weather to occur on a z level in certain area types
-  *
-  * The effects of weather occur across an entire z-level. For instance, lavaland has periodic ash storms that scorch most unprotected creatures.
-  * Weather always occurs on different z levels at different times, regardless of weather type.
-  * Can have custom durations, targets, and can automatically protect indoor areas.
-  *
-  */
+ * Causes weather to occur on a z level in certain area types
+ *
+ * The effects of weather occur across an entire z-level. For instance, lavaland has periodic ash storms that scorch most unprotected creatures.
+ * Weather always occurs on different z levels at different times, regardless of weather type.
+ * Can have custom durations, targets, and can automatically protect indoor areas.
+ *
+ */
 
 /datum/weather
 	/// name of weather
@@ -126,12 +126,12 @@
 			weather_act(L)
 
 /**
-  * Telegraphs the beginning of the weather on the impacted z levels
-  *
-  * Sends sounds and details to mobs in the area
-  * Calculates duration and hit areas, and makes a callback for the actual weather to start
-  *
-  */
+ * Telegraphs the beginning of the weather on the impacted z levels
+ *
+ * Sends sounds and details to mobs in the area
+ * Calculates duration and hit areas, and makes a callback for the actual weather to start
+ *
+ */
 /datum/weather/proc/telegraph()
 	if(stage == STARTUP_STAGE)
 		return
@@ -145,7 +145,7 @@
 		var/area/A = V
 		if(!(my_controller.mapzone.is_in_bounds(A)))
 			continue
-		if(protect_indoors && !A.outdoors)
+		if(protect_indoors && !A.allow_weather)
 			outside_areas |= A
 			continue
 		if(A.underground && !affects_underground)
@@ -178,12 +178,12 @@
 		sound_weak_inside.start()
 
 /**
-  * Starts the actual weather and effects from it
-  *
-  * Updates area overlays and sends sounds and messages to mobs to notify them
-  * Begins dealing effects from weather to mobs in the area
-  *
-  */
+ * Starts the actual weather and effects from it
+ *
+ * Updates area overlays and sends sounds and messages to mobs to notify them
+ * Begins dealing effects from weather to mobs in the area
+ *
+ */
 /datum/weather/proc/start()
 	if(stage >= MAIN_STAGE)
 		return
@@ -208,12 +208,12 @@
 		sound_active_inside.start()
 
 /**
-  * Weather enters the winding down phase, stops effects
-  *
-  * Updates areas to be in the winding down phase
-  * Sends sounds and messages to mobs to notify them
-  *
-  */
+ * Weather enters the winding down phase, stops effects
+ *
+ * Updates areas to be in the winding down phase
+ * Sends sounds and messages to mobs to notify them
+ *
+ */
 /datum/weather/proc/wind_down()
 	if(stage >= WIND_DOWN_STAGE)
 		return
@@ -238,12 +238,12 @@
 		sound_weak_inside.start()
 
 /**
-  * Fully ends the weather
-  *
-  * Effects no longer occur and area overlays are removed
-  * Removes weather from processing completely
-  *
-  */
+ * Fully ends the weather
+ *
+ * Effects no longer occur and area overlays are removed
+ * Removes weather from processing completely
+ *
+ */
 /datum/weather/proc/end()
 	if(stage == END_STAGE)
 		return 1
@@ -266,9 +266,9 @@
 	qdel(src)
 
 /**
-  * Returns TRUE if the living mob can be affected by the weather
-  *
-  */
+ * Returns TRUE if the living mob can be affected by the weather
+ *
+ */
 /datum/weather/proc/can_weather_act(mob/living/L)
 	var/turf/mob_turf = get_turf(L)
 	if(mob_turf && !my_controller.mapzone.is_in_bounds(mob_turf))
@@ -280,16 +280,16 @@
 	return TRUE
 
 /**
-  * Affects the mob with whatever the weather does
-  *
-  */
+ * Affects the mob with whatever the weather does
+ *
+ */
 /datum/weather/proc/weather_act(mob/living/L)
 	return
 
 /**
-  * Updates the overlays on impacted areas
-  *
-  */
+ * Updates the overlays on impacted areas
+ *
+ */
 /datum/weather/proc/update_areas()
 	for(var/area/N as anything in impacted_areas)
 		if(stage == MAIN_STAGE && multiply_blend_on_main_stage)

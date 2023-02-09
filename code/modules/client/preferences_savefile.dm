@@ -1,11 +1,11 @@
 //This is the lowest supported version, anything below this is completely obsolete and the entire savefile will be wiped.
-#define SAVEFILE_VERSION_MIN 32
+#define SAVEFILE_VERSION_MIN 33
 
 //This is the current version, anything below this will attempt to update (if it's not obsolete)
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 40
+#define SAVEFILE_VERSION_MAX 41
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -83,10 +83,17 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(current_version < 39)
 		var/species_id
 		READ_FILE(S["species"], species_id)
-		if(species_id == SPECIES_KEPORI)
+		if(species_id == "teshari")
 			pref_species = new /datum/species/kepori
 			READ_FILE(S["feature_teshari_feathers"], features["kepori_feathers"])
 			READ_FILE(S["feature_teshari_body_feathers"], features["kepori_body_feathers"])
+	if(current_version < 41)
+		var/species_id
+		READ_FILE(S["species"], species_id)
+		if(species_id == "felinid")
+			pref_species = new /datum/species/human
+			features["tail_human"] = "Cat"
+			features["ears"] = "Cat"
 
 /// checks through keybindings for outdated unbound keys and updates them
 /datum/preferences/proc/check_keybindings()
@@ -196,6 +203,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["tip_delay"], tip_delay)
 	READ_FILE(S["pda_style"], pda_style)
 	READ_FILE(S["pda_color"], pda_color)
+	READ_FILE(S["whois_visible"], whois_visible)
 
 	// Custom hotkeys
 	READ_FILE(S["key_bindings"], key_bindings)
@@ -258,7 +266,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
 	key_bindings 	= sanitize_keybindings(key_bindings)
 	favorite_outfits = SANITIZE_LIST(favorite_outfits)
-	equipped_gear	= SANITIZE_LIST(equipped_gear)
+	equipped_gear	= sanitize_each_inlist(equipped_gear, GLOB.gear_datums)
 
 	if(needs_update >= 0) //save the updated version
 		var/old_default_slot = default_slot
@@ -334,6 +342,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["show_credits"], show_credits)
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["favorite_outfits"], favorite_outfits)
+	WRITE_FILE(S["whois_visible"], whois_visible)
 	return TRUE
 
 /datum/preferences/proc/load_character(slot)
@@ -375,6 +384,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["skin_tone"], skin_tone)
 	READ_FILE(S["hairstyle_name"], hairstyle)
 	READ_FILE(S["facial_style_name"], facial_hairstyle)
+	READ_FILE(S["feature_grad_style"], features["grad_style"])
+	READ_FILE(S["feature_grad_color"], features["grad_color"])
 	READ_FILE(S["underwear"], underwear)
 	READ_FILE(S["underwear_color"], underwear_color)
 	READ_FILE(S["undershirt"], undershirt)
@@ -385,6 +396,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["phobia"], phobia)
 	READ_FILE(S["randomise"],  randomise)
 	READ_FILE(S["body_size"], features["body_size"])
+	READ_FILE(S["prosthetic_limbs"], prosthetic_limbs)
+	prosthetic_limbs ||= list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
 	READ_FILE(S["feature_mcolor"], features["mcolor"])
 	READ_FILE(S["feature_ethcolor"], features["ethcolor"])
 	READ_FILE(S["feature_lizard_tail"], features["tail_lizard"])
@@ -413,7 +426,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_kepori_tail_feathers"], features["kepori_tail_feathers"])
 	READ_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
 	READ_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
-	READ_FILE(S["alt_titles_preferences"], alt_titles_preferences)
+	READ_FILE(S["feature_elzu_horns"], features["elzu_horns"])
+	READ_FILE(S["feature_tail_elzu"], features["tail_elzu"])
 
 	READ_FILE(S["equipped_gear"], equipped_gear)
 	if(config) //This should *probably* always be there, but just in case.
@@ -422,21 +436,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			equipped_gear = list()
 			WRITE_FILE(S["equipped_gear"]				, equipped_gear)
 
-	alt_titles_preferences = SANITIZE_LIST(alt_titles_preferences)
-	if(SSjob)
-		for(var/datum/job/job in sortList(SSjob.occupations, /proc/cmp_job_display_asc))
-			if(alt_titles_preferences[job.title])
-				if(!((alt_titles_preferences[job.title] in job.alt_titles) || (alt_titles_preferences[job.title] == job.senior_title)))
-					alt_titles_preferences.Remove(job.title)
-
-	//WS End
-
-	if(!CONFIG_GET(flag/join_with_mutant_humans))
-		features["tail_human"] = "none"
-		features["ears"] = "none"
-	else
-		READ_FILE(S["feature_human_tail"], features["tail_human"])
-		READ_FILE(S["feature_human_ears"], features["ears"])
+	READ_FILE(S["feature_human_tail"], features["tail_human"])
+	READ_FILE(S["feature_human_ears"], features["ears"])
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
@@ -446,10 +447,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["preferred_ai_core_display"], preferred_ai_core_display)
 	READ_FILE(S["prefered_security_department"], prefered_security_department)
 
-	//Jobs
-	READ_FILE(S["joblessrole"], joblessrole)
-	//Load prefs
-	READ_FILE(S["job_preferences"], job_preferences)
+	//Preview outfit selection
+	READ_FILE(S["selected_outfit"], selected_outfit)
 
 	//Quirks
 	READ_FILE(S["all_quirks"], all_quirks)
@@ -463,14 +462,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
 
 	//Sanitize
-	real_name = reject_bad_name(real_name, pref_species.allow_numbers_in_name)      // WS Edit - numbers in IPC names load from save
+	real_name = reject_bad_name(real_name)
 	gender = sanitize_gender(gender)
 	if(!real_name)
 		real_name = random_unique_name(gender)
 
 	for(var/custom_name_id in GLOB.preferences_custom_names)
-		var/namedata = GLOB.preferences_custom_names[custom_name_id]
-		custom_names[custom_name_id] = reject_bad_name(custom_names[custom_name_id],namedata["allow_numbers"])
+		custom_names[custom_name_id] = reject_bad_name(custom_names[custom_name_id])
 		if(!custom_names[custom_name_id])
 			custom_names[custom_name_id] = get_default_name(custom_name_id)
 
@@ -509,6 +507,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	jumpsuit_style	= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	exowear		= sanitize_inlist(exowear, GLOB.exowearlist, initial(exowear))
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
+	features["grad_style"]			= sanitize_inlist(features["grad_style"], GLOB.hair_gradients_list)
+	features["grad_color"]		= sanitize_hexcolor(features["grad_color"], 3, 0)
 	features["body_size"] = sanitize_inlist(features["body_size"], GLOB.body_sizes, "Normal")
 	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 3, 0)
 	features["ethcolor"]	= copytext_char(features["ethcolor"], 1, 7)
@@ -537,15 +537,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["kepori_tail_feathers"] = sanitize_inlist(features["kepori_tail_feathers"], GLOB.kepori_tail_feathers_list, "Fan")
 	features["vox_head_quills"] = sanitize_inlist(features["vox_head_quills"], GLOB.vox_head_quills_list, "None")
 	features["vox_neck_quills"] = sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
+	features["elzu_horns"] 	= sanitize_inlist(features["elzu_horns"], GLOB.elzu_horns_list)
+	features["tail_elzu"]	= sanitize_inlist(features["tail_elzu"], GLOB.tails_list_elzu)
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
-	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
-	//Validate job prefs
-	for(var/j in job_preferences)
-		if(job_preferences[j] != JP_LOW && job_preferences[j] != JP_MEDIUM && job_preferences[j] != JP_HIGH)
-			job_preferences -= j
-
 	all_quirks = SANITIZE_LIST(all_quirks)
+//Make sure all quirks are compatible
+	check_quirk_compatibility()
 
 	return TRUE
 
@@ -565,10 +563,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["age"]			, age)
 	WRITE_FILE(S["hair_color"]			, hair_color)
 	WRITE_FILE(S["facial_hair_color"]			, facial_hair_color)
+	WRITE_FILE(S["feature_grad_color"]	, 	features["grad_color"])
 	WRITE_FILE(S["eye_color"]			, eye_color)
 	WRITE_FILE(S["skin_tone"]			, skin_tone)
 	WRITE_FILE(S["hairstyle_name"]			, hairstyle)
 	WRITE_FILE(S["facial_style_name"]			, facial_hairstyle)
+	WRITE_FILE(S["feature_grad_style"]	, features["grad_style"])
 	WRITE_FILE(S["underwear"]			, underwear)
 	WRITE_FILE(S["underwear_color"]			, underwear_color)
 	WRITE_FILE(S["undershirt"]			, undershirt)
@@ -579,6 +579,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["species"]			, pref_species.id)
 	WRITE_FILE(S["phobia"], phobia)
 	WRITE_FILE(S["body_size"]		, features["body_size"])
+	WRITE_FILE(S["prosthetic_limbs"], prosthetic_limbs)
 	WRITE_FILE(S["feature_mcolor"]					, features["mcolor"])
 	WRITE_FILE(S["feature_ethcolor"]					, features["ethcolor"])
 	WRITE_FILE(S["feature_lizard_tail"]			, features["tail_lizard"])
@@ -612,9 +613,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_kepori_tail_feathers"], features["kepori_tail_feathers"])
 	WRITE_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
 	WRITE_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
-
-	//Alternate job titles
-	WRITE_FILE(S["alt_titles_preferences"]		,alt_titles_preferences)
+	WRITE_FILE(S["feature_elzu_horns"]			, features["elzu_horns"])
+	WRITE_FILE(S["feature_tail_elzu"]			, features["tail_elzu"])
 
 	//Flavor text
 	WRITE_FILE(S["feature_flavor_text"], features["flavor_text"])
@@ -629,10 +629,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["preferred_ai_core_display"] ,  preferred_ai_core_display)
 	WRITE_FILE(S["prefered_security_department"] , prefered_security_department)
 
-	//Jobs
-	WRITE_FILE(S["joblessrole"]		, joblessrole)
-	//Write prefs
-	WRITE_FILE(S["job_preferences"] , job_preferences)
+	//Preview outfit selection
+	WRITE_FILE(S["selected_outfit"], selected_outfit)
 
 	//Quirks
 	WRITE_FILE(S["all_quirks"]			, all_quirks)

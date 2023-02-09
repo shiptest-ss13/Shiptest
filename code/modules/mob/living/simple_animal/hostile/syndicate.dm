@@ -316,7 +316,9 @@
 	AddComponent(/datum/component/swarming)
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword/space/oldcode
-	icon = 'whitesands/icons/mob/simple_human.dmi'
+	melee_damage_lower = 20
+	melee_damage_upper = 20
+	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "oldcode_syndicate_csaber"
 	icon_living = "oldcode_syndicate_csaber"
 	name = "Syndicate Spaceman"
@@ -329,7 +331,7 @@
 	projectile_deflect_chance = 10
 
 /mob/living/simple_animal/hostile/syndicate/ranged/space/oldcode
-	icon = 'whitesands/icons/mob/simple_human.dmi'
+	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "oldcode_syndicate_gun"
 	icon_living = "oldcode_syndicate_gun"
 	name = "Syndicate Spaceman"

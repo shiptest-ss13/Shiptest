@@ -99,11 +99,11 @@
 	return quality
 
 /**
-  * Used in attack logs for reagents in pills and such
-  *
-  * Arguments:
-  * * external_list - list of reagent types = amounts
-  */
+ * Used in attack logs for reagents in pills and such
+ *
+ * Arguments:
+ * * external_list - list of reagent types = amounts
+ */
 /datum/reagents/proc/log_list(external_list)
 	if((external_list && !length(external_list)) || !length(reagent_list))
 		return "no reagents"
@@ -202,20 +202,20 @@
 	return master
 
 /**
-  * Transfer some stuff from this holder to a target object
-  *
-  * Arguments:
-  * * obj/target - Target to attempt transfer to
-  * * amount - amount of reagent volume to transfer
-  * * multiplier - multiplies amount of each reagent by this number
-  * * preserve_data - if preserve_data=0, the reagents data will be lost. Usefull if you use data for some strange stuff and don't want it to be transferred.
-  * * no_react - passed through to [/datum/reagents/proc/add_reagent]
-  * * mob/transfered_by - used for logging
-  * * remove_blacklisted - skips transferring of reagents with can_synth = FALSE
-  * * method - passed through to [/datum/reagents/proc/react_single] and [/datum/reagent/proc/on_transfer]
-  * * show_message - passed through to [/datum/reagents/proc/react_single]
-  * * round_robin - if round_robin=TRUE, so transfer 5 from 15 water, 15 sugar and 15 plasma becomes 10, 15, 15 instead of 13.3333, 13.3333 13.3333. Good if you hate floating point errors
-  */
+ * Transfer some stuff from this holder to a target object
+ *
+ * Arguments:
+ * * obj/target - Target to attempt transfer to
+ * * amount - amount of reagent volume to transfer
+ * * multiplier - multiplies amount of each reagent by this number
+ * * preserve_data - if preserve_data=0, the reagents data will be lost. Usefull if you use data for some strange stuff and don't want it to be transferred.
+ * * no_react - passed through to [/datum/reagents/proc/add_reagent]
+ * * mob/transfered_by - used for logging
+ * * remove_blacklisted - skips transferring of reagents with can_synth = FALSE
+ * * method - passed through to [/datum/reagents/proc/react_single] and [/datum/reagent/proc/on_transfer]
+ * * show_message - passed through to [/datum/reagents/proc/react_single]
+ * * round_robin - if round_robin=TRUE, so transfer 5 from 15 water, 15 sugar and 15 plasma becomes 10, 15, 15 instead of 13.3333, 13.3333 13.3333. Good if you hate floating point errors
+ */
 /datum/reagents/proc/trans_to(obj/target, amount = 1, multiplier = 1, preserve_data = TRUE, no_react = FALSE, mob/transfered_by, remove_blacklisted = FALSE, method = null, show_message = TRUE, round_robin = FALSE)
 	var/list/cached_reagents = reagent_list
 	if(!target || !total_volume)
@@ -346,13 +346,13 @@
 	return amount
 
 /**
-  * Triggers metabolizing the reagents in this holder
-  *
-  * Arguments:
-  * * mob/living/carbon/C - The mob to metabolize in, if null it uses [/datum/reagents/var/my_atom]
-  * * can_overdose - Allows overdosing
-  * * liverless - Stops reagents that aren't set as [/datum/reagent/var/self_consuming] from metabolizing
-  */
+ * Triggers metabolizing the reagents in this holder
+ *
+ * Arguments:
+ * * mob/living/carbon/C - The mob to metabolize in, if null it uses [/datum/reagents/var/my_atom]
+ * * can_overdose - Allows overdosing
+ * * liverless - Stops reagents that aren't set as [/datum/reagent/var/self_consuming] from metabolizing
+ */
 /datum/reagents/proc/metabolize(mob/living/carbon/C, can_overdose = FALSE, liverless = FALSE)
 	var/list/cached_reagents = reagent_list
 	var/list/cached_addictions = addiction_list
@@ -419,6 +419,7 @@
 
 /// Removes addiction to a specific reagent on [/datum/reagents/var/my_atom]
 /datum/reagents/proc/remove_addiction(datum/reagent/R)
+	R.on_addiction_removal(my_atom)
 	to_chat(my_atom, "<span class='notice'>You feel like you've gotten over your need for [R.name].</span>")
 	SEND_SIGNAL(my_atom, COMSIG_CLEAR_MOOD_EVENT, "[R.type]_overdose")
 	addiction_list.Remove(R)
@@ -440,12 +441,12 @@
 			R.on_mob_end_metabolize(C)
 
 /**
-  * Calls [/datum/reagent/proc/on_move] on every reagent in this holder
-  *
-  * Arguments:
-  * * atom/A - passed to on_move
-  * * Running - passed to on_move
-  */
+ * Calls [/datum/reagent/proc/on_move] on every reagent in this holder
+ *
+ * Arguments:
+ * * atom/A - passed to on_move
+ * * Running - passed to on_move
+ */
 /datum/reagents/proc/conditional_update_move(atom/A, Running = 0)
 	var/list/cached_reagents = reagent_list
 	for(var/reagent in cached_reagents)
@@ -454,11 +455,11 @@
 	update_total()
 
 /**
-  * Calls [/datum/reagent/proc/on_update] on every reagent in this holder
-  *
-  * Arguments:
-  * * atom/A - passed to on_update
-  */
+ * Calls [/datum/reagent/proc/on_update] on every reagent in this holder
+ *
+ * Arguments:
+ * * atom/A - passed to on_update
+ */
 /datum/reagents/proc/conditional_update(atom/A)
 	var/list/cached_reagents = reagent_list
 	for(var/reagent in cached_reagents)
@@ -640,11 +641,11 @@
 	return 0
 
 /**
-  * Applies the relevant expose_ proc for every reagent in this holder
-  * * [/datum/reagent/proc/expose_mob]
-  * * [/datum/reagent/proc/expose_turf]
-  * * [/datum/reagent/proc/expose_obj]
-  */
+ * Applies the relevant expose_ proc for every reagent in this holder
+ * * [/datum/reagent/proc/expose_mob]
+ * * [/datum/reagent/proc/expose_turf]
+ * * [/datum/reagent/proc/expose_obj]
+ */
 /datum/reagents/proc/expose(atom/A, method = TOUCH, volume_modifier = 1, show_message = 1)
 	if(isnull(A))
 		return null
@@ -694,15 +695,15 @@
 	chem_temp = clamp(chem_temp + (J / (S * total_volume)), 2.7, 1000)
 
 /**
-  * Adds a reagent to this holder
-  *
-  * Arguments:
-  * * reagent - The reagent id to add
-  * * amount - Amount to add
-  * * list/data - Any reagent data for this reagent, used for transferring data with reagents
-  * * reagtemp - Temperature of this reagent, will be equalized
-  * * no_react - prevents reactions being triggered by this addition
-  */
+ * Adds a reagent to this holder
+ *
+ * Arguments:
+ * * reagent - The reagent id to add
+ * * amount - Amount to add
+ * * list/data - Any reagent data for this reagent, used for transferring data with reagents
+ * * reagtemp - Temperature of this reagent, will be equalized
+ * * no_react - prevents reactions being triggered by this addition
+ */
 /datum/reagents/proc/add_reagent(reagent, amount, list/data=null, reagtemp = 300, no_react = 0)
 	if(!isnum(amount) || !amount)
 		return FALSE
@@ -919,11 +920,11 @@ Needs matabolizing takes into consideration if the chemical is matabolizing when
 	. = locate(type) in cached_reagents
 
 /**
-  * Returns what this holder's reagents taste like
-  *
-  * Arguments:
-  * * minimum_percent - the lower the minimum percent, the more sensitive the message is.
-  */
+ * Returns what this holder's reagents taste like
+ *
+ * Arguments:
+ * * minimum_percent - the lower the minimum percent, the more sensitive the message is.
+ */
 /datum/reagents/proc/generate_taste_message(minimum_percent=15)
 	var/list/out = list()
 	var/list/tastes = list() //descriptor = strength
@@ -989,17 +990,23 @@ Needs matabolizing takes into consideration if the chemical is matabolizing when
 
 
 /**
-  * Convenience proc to create a reagents holder for an atom
-  *
-  * Arguments:
-  * * max_vol - maximum volume of holder
-  * * flags - flags to pass to the holder
-  */
+ * Convenience proc to create a reagents holder for an atom
+ *
+ * Arguments:
+ * * max_vol - maximum volume of holder
+ * * flags - flags to pass to the holder
+ */
 /atom/proc/create_reagents(max_vol, flags)
 	if(reagents)
 		qdel(reagents)
 	reagents = new /datum/reagents(max_vol, flags)
 	reagents.my_atom = src
+
+/proc/find_reagent_object_from_type(input)
+	if(GLOB.chemical_reagents_list[input]) //prefer IDs!
+		return GLOB.chemical_reagents_list[input]
+	else
+		return null
 
 /proc/get_random_reagent_id()	// Returns a random reagent ID minus blacklisted reagents
 	var/static/list/random_reagents = list()

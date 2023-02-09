@@ -1,0 +1,23 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Li Tieguai-class Rescue Ship",
+	"map_short_name": "Li Tieguai-class",
+	"map_path": "_maps/shuttles/shiptest/independent_litieguai.dmm",
+	"job_slots": {
+		"Captain": 1,
+		"Chief Medical Officer": {
+			"outfit": "/datum/outfit/job/cmo/medicaldirector",
+			"officer": true,
+			"slots": 1
+		},
+		"Trauma Team Technician": {
+			"outfit": "/datum/outfit/job/paramedic/traumateam",
+			"slots": 3
+		},
+		"Medical Intern": {
+			"outfit": "/datum/outfit/job/doctor/juniordoctor",
+			"slots": 3
+		}
+	},
+	"enabled": true
+}

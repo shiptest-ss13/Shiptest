@@ -20,6 +20,10 @@
 	display_name = "scarf, blue"
 	path = /obj/item/clothing/neck/scarf/darkblue
 
+/datum/gear/accessory/shemagh
+	display_name = "shemagh"
+	path = /obj/item/clothing/neck/shemagh
+
 //(The actually good scarves)
 
 /datum/gear/accessory/scarf/striped
@@ -66,6 +70,16 @@
 /datum/gear/accessory/maidneckpiece
 	display_name = "maid neckpiece"
 	path = /obj/item/clothing/neck/maid
+
+/datum/gear/accessory/gloves/black
+	display_name = "black gloves"
+	description = "Standard hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/color/black
+
+/datum/gear/accessory/gloves/white
+	display_name = "white gloves"
+	description = "Standard hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/color/white
 
 /datum/gear/accessory/gloves/evening
 	display_name = "evening gloves"

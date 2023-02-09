@@ -64,7 +64,7 @@
 	return ..()
 
 /obj/machinery/autolathe/ui_interact(mob/user, datum/tgui/ui)
-	if(!is_operational())
+	if(!is_operational)
 		return
 
 	if(shocked && !(machine_stat & NOPOWER))
@@ -197,7 +197,6 @@
 		for(var/mat in materials.materials)
 			var/datum/material/M = mat
 			if("[M]" == material_name)
-				stack_trace("Found [M] for [material_name], attempting to eject [amount]")
 				materials.retrieve_sheets(amount, M, get_turf(src))
 				. = TRUE
 				break
@@ -401,7 +400,7 @@
 			dat += "[D.materials[i] * coeff] [i]"
 		else
 			var/datum/material/M = i
-			dat += "[D.materials[i] * coeff] [M.name] "
+			dat += "[D.materials[i] * coeff] [initial(M.name)] "
 	return dat
 
 /obj/machinery/autolathe/proc/reset(wire)

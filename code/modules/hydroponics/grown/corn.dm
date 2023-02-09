@@ -58,6 +58,7 @@
 	product = /obj/item/grown/snapcorn
 	mutatelist = list()
 	rarity = 10
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/grown/snapcorn
 	seed = /obj/item/seeds/corn/snapcorn

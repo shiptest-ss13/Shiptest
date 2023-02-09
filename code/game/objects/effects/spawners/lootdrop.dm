@@ -118,7 +118,7 @@
 	name = "gambling valuables spawner"
 	loot = list(
 				/obj/item/gun/ballistic/revolver/russian = 5,
-				/obj/item/clothing/head/ushanka = 3,
+				/obj/item/clothing/head/trapper = 3,
 				/obj/item/storage/box/syndie_kit/throwing_weapons,
 				/obj/item/coin/gold,
 				/obj/item/reagent_containers/food/drinks/bottle/vodka/badminka,
@@ -251,6 +251,16 @@
 		/obj/item/organ/tail/cat,
 		/obj/item/organ/tail/lizard)
 	lootcount = 5
+
+/obj/effect/spawner/lootdrop/rnd
+	name = "random RND spawner"
+	loot = list(
+		/obj/item/storage/box/rndmining,
+		/obj/item/storage/box/rndengi,
+		/obj/item/storage/box/rndsec,
+		/obj/item/storage/box/rndciv,
+		/obj/item/storage/box/rndmed)
+	lootcount = 1
 
 /obj/effect/spawner/lootdrop/two_percent_xeno_egg_spawner
 	name = "2% chance xeno egg spawner"
@@ -448,6 +458,28 @@
 				/obj/effect/spawner/bundle/costume/mafia/beige = 5
 				)
 
+/obj/effect/spawner/lootdrop/salvage_machine
+	name = "salvageable machine spawner"
+	loot = list(
+				/obj/structure/salvageable/protolathe,
+				/obj/structure/salvageable/circuit_imprinter,
+				/obj/structure/salvageable/server,
+				/obj/structure/salvageable/machine,
+				/obj/structure/salvageable/autolathe,
+				/obj/structure/salvageable/computer,
+				/obj/structure/salvageable/destructive_analyzer
+				)
+
+/obj/effect/spawner/lootdrop/salvage_50
+	name = "50% salvage spawner"
+	loot = list(
+				/obj/effect/spawner/lootdrop/maintenance = 13,
+				/obj/effect/spawner/lootdrop/salvage_machine = 12,
+				/obj/effect/spawner/lootdrop/whiteship_cere_ripley = 12,
+				/obj/structure/closet/crate/secure/loot = 13,
+				"" = 50
+				)
+
 //finds the probabilities of items spawning from a loot spawner's loot pool
 /obj/item/loot_table_maker
 	icon = 'icons/effects/landmarks_static.dmi'
@@ -490,6 +522,55 @@
 		lootspawn = pickweight_float(lootspawn) // WS edit - Fix various startup runtimes
 	return lootspawn
 
+/obj/effect/spawner/lootdrop/stockparts
+	name = "random good stock parts"
+	lootcount = 6
+	loot = list(
+				/obj/item/stock_parts/capacitor/adv,
+				/obj/item/stock_parts/capacitor/quadratic,
+				/obj/item/stock_parts/capacitor/super,
+				/obj/item/stock_parts/cell/hyper,
+				/obj/item/stock_parts/cell/super,
+				/obj/item/stock_parts/cell/bluespace,
+				/obj/item/stock_parts/matter_bin/bluespace,
+				/obj/item/stock_parts/matter_bin/super,
+				/obj/item/stock_parts/matter_bin/adv,
+				/obj/item/stock_parts/micro_laser/ultra,
+				/obj/item/stock_parts/micro_laser/quadultra,
+				/obj/item/stock_parts/micro_laser/high,
+				/obj/item/stock_parts/scanning_module/triphasic,
+				/obj/item/stock_parts/scanning_module/phasic,
+				/obj/item/stock_parts/scanning_module/adv,
+				/obj/item/reagent_containers/glass/beaker/bluespace,
+				/obj/item/reagent_containers/glass/beaker/plastic,
+				/obj/item/reagent_containers/glass/beaker/large,
+				/obj/item/stock_parts/manipulator/nano,
+				/obj/item/stock_parts/manipulator/pico,
+				/obj/item/stock_parts/manipulator/femto
+				)
+
+/obj/effect/spawner/lootdrop/materials
+	name = "random bulk materials"
+	lootcount = 2
+	loot = list(
+				/obj/item/stack/sheet/plastic/fifty,
+				/obj/item/stack/sheet/bluespace_crystal/twenty,
+				/obj/item/stack/sheet/cardboard/fifty,
+				/obj/item/stack/sheet/glass/fifty,
+				/obj/item/stack/sheet/metal/fifty,
+				/obj/item/stack/sheet/plasteel/twenty,
+				/obj/item/stack/sheet/mineral/plasma/fifty,
+				/obj/item/stack/sheet/mineral/silver/fifty,
+				/obj/item/stack/sheet/mineral/titanium/fifty,
+				/obj/item/stack/sheet/mineral/uranium/fifty,
+				/obj/item/stack/sheet/mineral/wood/fifty,
+				/obj/item/stack/sheet/mineral/diamond/twenty,
+				/obj/item/stack/sheet/mineral/gold/fifty,
+				/obj/item/stack/sheet/mineral/adamantine/ten,
+				/obj/item/stack/cable_coil/red,
+				/obj/item/stack/rods/fifty
+				)
+
 /obj/effect/spawner/lootdrop/spacegym
 	name = "spacegym loot spawner"
 	lootdoubles = FALSE
@@ -516,6 +597,7 @@
 		/obj/machinery/the_singularitygen/tesla = 1,
 		/obj/machinery/the_singularitygen = 1,
 	)
+
 
 GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 	/obj/item/stack/sheet/animalhide/goliath_hide = 0.7,
@@ -551,6 +633,59 @@ GLOBAL_LIST_INIT(ws_survivor_default_loot, list(
 /obj/effect/spawner/lootdrop/whitesands/survivor/gunslinger
 	name = "Whitesands Gunslinger loot spawner"
 	loot = list(
-		/obj/item/gun/ballistic/automatic/aks74u = 0.1,
+		/obj/item/gun/ballistic/automatic/smg/aks74u = 0.1,
 		/obj/item/ammo_box/magazine/aks74u = 0.4
 	)
+
+/obj/effect/spawner/lootdrop/stockparts
+	name = "random good stock parts"
+	lootcount = 5
+	loot = list(
+				/obj/item/stock_parts/capacitor/adv,
+				/obj/item/stock_parts/capacitor/quadratic,
+				/obj/item/stock_parts/capacitor/super,
+				/obj/item/stock_parts/cell/hyper,
+				/obj/item/stock_parts/cell/super,
+				/obj/item/stock_parts/cell/bluespace,
+				/obj/item/stock_parts/matter_bin/bluespace,
+				/obj/item/stock_parts/matter_bin/super,
+				/obj/item/stock_parts/matter_bin/adv,
+				/obj/item/stock_parts/micro_laser/ultra,
+				/obj/item/stock_parts/micro_laser/quadultra,
+				/obj/item/stock_parts/micro_laser/high,
+				/obj/item/stock_parts/scanning_module/triphasic,
+				/obj/item/stock_parts/scanning_module/phasic,
+				/obj/item/stock_parts/scanning_module/adv,
+				/obj/item/reagent_containers/glass/beaker/bluespace,
+				/obj/item/reagent_containers/glass/beaker/plastic,
+				/obj/item/reagent_containers/glass/beaker/large,
+				/obj/item/stock_parts/manipulator/nano,
+				/obj/item/stock_parts/manipulator/pico,
+				/obj/item/stock_parts/manipulator/femto
+				)
+
+/obj/effect/spawner/lootdrop/materials
+	name = "random materials"
+	lootcount = 3
+	loot = list(
+				/obj/item/stack/sheet/plastic/fifty,
+				/obj/item/stack/sheet/plastic/five,
+				/obj/item/stack/sheet/bluespace_crystal/twenty,
+				/obj/item/stack/sheet/bluespace_crystal/five,
+				/obj/item/stack/sheet/cardboard/fifty,
+				/obj/item/stack/sheet/glass/fifty,
+				/obj/item/stack/sheet/metal/fifty,
+				/obj/item/stack/sheet/metal/twenty,
+				/obj/item/stack/sheet/plasteel/twenty,
+				/obj/item/stack/sheet/mineral/plasma/fifty,
+				/obj/item/stack/sheet/mineral/plasma/twenty,
+				/obj/item/stack/sheet/mineral/silver/fifty,
+				/obj/item/stack/sheet/mineral/titanium/twenty,
+				/obj/item/stack/sheet/mineral/uranium/twenty,
+				/obj/item/stack/sheet/mineral/wood/fifty,
+				/obj/item/stack/sheet/mineral/diamond/twenty,
+				/obj/item/stack/sheet/mineral/gold/fifty,
+				/obj/item/stack/sheet/mineral/adamantine/ten,
+				/obj/item/stack/cable_coil/red,
+				/obj/item/stack/rods/fifty
+				)

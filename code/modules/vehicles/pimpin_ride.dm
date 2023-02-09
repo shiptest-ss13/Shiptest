@@ -11,7 +11,7 @@
 	. = ..()
 	update_icon()
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
-	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 4), TEXT_SOUTH = list(0, 7), TEXT_EAST = list(-12, 7), TEXT_WEST = list( 12, 7)))
+	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 4), TEXT_SOUTH = list(0, 7), TEXT_EAST = list(-12, 7), TEXT_WEST = list(12, 7)))
 
 	if(floorbuffer)
 		AddElement(/datum/element/cleaning)
@@ -79,16 +79,17 @@
 /obj/vehicle/ridden/janicart/upgraded
 	floorbuffer = TRUE
 
-//Boomer-mobile Lawnmower
+//Lawnmower
+//For those who want to play farm simulator 503
 
 /obj/vehicle/ridden/lawnmower
-	name = "lawn mower"
-	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace."
-	icon = 'whitesands/icons/obj/vehicles.dmi'
+	name = "Donk! Co. TM Deluxe Lawnmower 3003"
+	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is <b>on</b>."
+	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "lawnmower"
 	var/emagged = FALSE
-	var/list/drive_sounds = list('whitesands/sound/effects/mowermove1.ogg', 'whitesands/sound/effects/mowermove2.ogg')
-	var/list/gib_sounds = list('whitesands/sound/effects/mowermovesquish.ogg')
+	var/list/drive_sounds = list('sound/effects/mowermove1.ogg', 'sound/effects/mowermove2.ogg')
+	var/list/gib_sounds = list('sound/effects/mowermovesquish.ogg')
 	var/driver
 
 /obj/vehicle/ridden/lawnmower/Initialize()
@@ -99,12 +100,14 @@
 
 /obj/vehicle/ridden/lawnmower/emagged
 	emagged = TRUE
+	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is off"
 
 /obj/vehicle/ridden/lawnmower/emag_act(mob/user)
 	if(emagged)
 		to_chat(user, "<span class='warning'>The safety mechanisms on \the [src] are already disabled!</span>")
 		return
 	to_chat(user, "<span class='warning'>You disable the safety mechanisms on \the [src].</span>")
+	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is <b>off</b>."
 	emagged = TRUE
 
 /obj/vehicle/ridden/lawnmower/Bump(atom/A)
@@ -151,20 +154,29 @@
 /obj/vehicle/ridden/lawnmower/proc/mow_lawn()
 	//Nearly copypasted from goats
 	var/mowed = FALSE
-	var/obj/structure/spacevine/SV = locate(/obj/structure/spacevine) in loc
-	if(SV)
-		SV.eat(src)
+	var/obj/structure/spacevine/spacevine = locate(/obj/structure/spacevine) in loc
+	if(spacevine)
+		qdel(spacevine)
 		mowed = TRUE
 
-	var/obj/structure/glowshroom/GS = locate(/obj/structure/glowshroom) in loc
-	if(GS)
-		qdel(GS)
+	var/obj/structure/glowshroom/glowshroom = locate(/obj/structure/glowshroom) in loc
+	if(glowshroom)
+		qdel(glowshroom)
 		mowed = TRUE
 
-	var/obj/structure/alien/weeds/AW = locate(/obj/structure/alien/weeds) in loc
-	if(AW)
-		qdel(AW)
+	var/obj/structure/alien/weeds/ayy_weeds = locate(/obj/structure/alien/weeds) in loc
+	if(ayy_weeds)
+		qdel(ayy_weeds)
 		mowed = TRUE
+
+	var/obj/structure/flora/flora = locate(/obj/structure/flora) in loc
+	if(flora)
+		if(!istype(flora, /obj/structure/flora/rock))
+			qdel(flora)
+			mowed = TRUE
+		else
+			take_damage(25)
+			visible_message("<span class='danger'>\the [src] makes a awful grinding sound as it drives over [flora]!</span>")
 
 	if(mowed)
 		playsound(loc, pick(drive_sounds), 50, 1)

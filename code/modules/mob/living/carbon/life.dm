@@ -40,7 +40,6 @@
 
 	if(stat == DEAD)
 		stop_sound_channel(CHANNEL_HEARTBEAT)
-		LoadComponent(/datum/component/rot/corpse)
 
 	check_cremation()
 
@@ -264,47 +263,6 @@
 	if(breath.get_moles(GAS_FREON))
 		var/freon_partialpressure = (breath.get_moles(GAS_FREON)/breath.total_moles())*breath_pressure
 		adjustFireLoss(freon_partialpressure * 0.25)
-
-	//MIASMA
-	if(breath.get_moles(GAS_MIASMA))
-		var/miasma_partialpressure = (breath.get_moles(GAS_MIASMA)/breath.total_moles())*breath_pressure
-
-		if(prob(1 * miasma_partialpressure))
-			var/datum/disease/advance/miasma_disease = new /datum/disease/advance/random(2,3)
-			miasma_disease.name = "Unknown"
-			ForceContractDisease(miasma_disease, TRUE, TRUE)
-
-		//Miasma side effects
-		switch(miasma_partialpressure)
-			if(0.25 to 5)
-				// At lower pp, give out a little warning
-				SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "smell")
-				if(prob(5))
-					to_chat(src, "<span class='notice'>There is an unpleasant smell in the air.</span>")
-			if(5 to 20)
-				//At somewhat higher pp, warning becomes more obvious
-				if(prob(15))
-					to_chat(src, "<span class='warning'>You smell something horribly decayed inside this room.</span>")
-					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/bad_smell)
-			if(15 to 30)
-				//Small chance to vomit. By now, people have internals on anyway
-				if(prob(5))
-					to_chat(src, "<span class='warning'>The stench of rotting carcasses is unbearable!</span>")
-					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/nauseating_stench)
-					vomit()
-			if(30 to INFINITY)
-				//Higher chance to vomit. Let the horror start
-				if(prob(25))
-					to_chat(src, "<span class='warning'>The stench of rotting carcasses is unbearable!</span>")
-					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/nauseating_stench)
-					vomit()
-			else
-				SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "smell")
-
-	//Clear all moods if no miasma at all
-	else
-		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "smell")
-
 
 	//BREATH TEMPERATURE
 	handle_breath_temperature(breath)
@@ -577,6 +535,9 @@ All effects don't start immediately, but rather get worse over time; the rate is
  * * environment The environment gas mix
  */
 /mob/living/carbon/proc/natural_bodytemperature_stabilization(datum/gas_mixture/environment)
+	if(!dna)
+		return
+
 	var/areatemp = get_temperature(environment)
 	var/body_temperature_difference = get_body_temp_normal() - bodytemperature
 	var/natural_change = 0
@@ -685,7 +646,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		amount += hardsuit_fix
 
 	// Use the bodytemp divisors to get the change step, with max step size
-	if(use_steps)
+	if(use_steps && dna)
 		amount = (amount > 0) ? min(amount / dna.species.bodytemp_heat_divisor, dna.species.bodytemp_heating_rate_max) : max(amount / dna.species.bodytemp_cold_divisor, dna.species.bodytemp_cooling_rate_max)
 
 	if(bodytemperature >= min_temp && bodytemperature <= max_temp)

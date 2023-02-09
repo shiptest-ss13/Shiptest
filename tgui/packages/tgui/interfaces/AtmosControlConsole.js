@@ -8,20 +8,17 @@ export const AtmosControlConsole = (props, context) => {
   const { act, data } = useBackend(context);
   const sensors = data.sensors || [];
   return (
-    <Window
-      width={500}
-      height={315}
-      resizable>
+    <Window width={500} height={315} resizable>
       <Window.Content scrollable>
-        <Section
-          title={!!data.tank && sensors[0]?.long_name}>
-          {sensors.map(sensor => {
+        <Section title={!!data.tank && sensors[0]?.long_name}>
+          {sensors.map((sensor) => {
             const gases = sensor.gases || {};
             return (
               <Section
                 key={sensor.id_tag}
                 title={!data.tank && sensor.long_name}
-                level={2}>
+                level={2}
+              >
                 <LabeledList>
                   <LabeledList.Item label="Pressure">
                     {toFixed(sensor.pressure, 2) + ' kPa'}
@@ -44,19 +41,22 @@ export const AtmosControlConsole = (props, context) => {
         {data.tank && (
           <Section
             title="Controls"
-            buttons={(
+            buttons={
               <Button
                 icon="undo"
                 content="Reconnect"
-                onClick={() => act('reconnect')} />
-            )}>
+                onClick={() => act('reconnect')}
+              />
+            }
+          >
             <LabeledList>
               <LabeledList.Item label="Input Injector">
                 <Button
                   icon={data.inputting ? 'power-off' : 'times'}
                   content={data.inputting ? 'Injecting' : 'Off'}
                   selected={data.inputting}
-                  onClick={() => act('input')} />
+                  onClick={() => act('input')}
+                />
               </LabeledList.Item>
               <LabeledList.Item label="Input Rate">
                 <NumberInput
@@ -68,16 +68,20 @@ export const AtmosControlConsole = (props, context) => {
                   // This takes an exceptionally long time to update
                   // due to being an async signal
                   suppressFlicker={2000}
-                  onChange={(e, value) => act('rate', {
-                    rate: value,
-                  })} />
+                  onChange={(e, value) =>
+                    act('rate', {
+                      rate: value,
+                    })
+                  }
+                />
               </LabeledList.Item>
               <LabeledList.Item label="Output Regulator">
                 <Button
                   icon={data.outputting ? 'power-off' : 'times'}
                   content={data.outputting ? 'Open' : 'Closed'}
                   selected={data.outputting}
-                  onClick={() => act('output')} />
+                  onClick={() => act('output')}
+                />
               </LabeledList.Item>
               <LabeledList.Item label="Output Pressure">
                 <NumberInput
@@ -90,9 +94,12 @@ export const AtmosControlConsole = (props, context) => {
                   // This takes an exceptionally long time to update
                   // due to being an async signal
                   suppressFlicker={2000}
-                  onChange={(e, value) => act('pressure', {
-                    pressure: value,
-                  })} />
+                  onChange={(e, value) =>
+                    act('pressure', {
+                      pressure: value,
+                    })
+                  }
+                />
               </LabeledList.Item>
             </LabeledList>
           </Section>

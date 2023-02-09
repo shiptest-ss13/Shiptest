@@ -81,52 +81,6 @@
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/cmd_admin_mod_antag_rep(client/C in GLOB.clients, operation)
-	set category = "null"
-	set name = "Modify Antagonist Reputation"
-
-	if(!check_rights(R_ADMIN))
-		return
-
-	var/msg = ""
-	var/log_text = ""
-
-	if(operation == "zero")
-		log_text = "Set to 0"
-		SSpersistence.antag_rep -= C.ckey
-	else
-		var/prompt = "Please enter the amount of reputation to [operation]:"
-
-		if(operation == "set")
-			prompt = "Please enter the new reputation value:"
-
-		msg = input("Message:", prompt) as num|null
-
-		if (!msg)
-			return
-
-		var/ANTAG_REP_MAXIMUM = CONFIG_GET(number/antag_rep_maximum)
-
-		if(operation == "set")
-			log_text = "Set to [num2text(msg)]"
-			SSpersistence.antag_rep[C.ckey] = max(0, min(msg, ANTAG_REP_MAXIMUM))
-		else if(operation == "add")
-			log_text = "Added [num2text(msg)]"
-			SSpersistence.antag_rep[C.ckey] = min(SSpersistence.antag_rep[C.ckey]+msg, ANTAG_REP_MAXIMUM)
-		else if(operation == "subtract")
-			log_text = "Subtracted [num2text(msg)]"
-			SSpersistence.antag_rep[C.ckey] = max(SSpersistence.antag_rep[C.ckey]-msg, 0)
-		else
-			to_chat(src, "Invalid operation for antag rep modification: [operation] by user [key_name(usr)]", confidential = TRUE)
-			return
-
-		if(SSpersistence.antag_rep[C.ckey] <= 0)
-			SSpersistence.antag_rep -= C.ckey
-
-	log_admin("[key_name(usr)]: Modified [key_name(C)]'s antagonist reputation [log_text]")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)]: Modified [key_name(C)]'s antagonist reputation ([log_text])</span>")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Modify Antagonist Reputation") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
 /client/proc/cmd_admin_world_narrate()
 	set category = "Admin.Events"
 	set name = "Global Narrate"
@@ -158,7 +112,7 @@
 
 	var/msg = input("Message:", text("Enter the text you wish to appear to your target:")) as text|null
 
-	if( !msg )
+	if(!msg)
 		return
 
 	to_chat(M, msg, confidential = TRUE)
@@ -355,26 +309,6 @@
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Add Custom AI Law") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/cmd_admin_rejuvenate(mob/living/M in GLOB.mob_list)
-	set category = "Debug"
-	set name = "Rejuvenate"
-
-	if(!check_rights(R_ADMIN))
-		return
-
-	if(!mob)
-		return
-	if(!istype(M))
-		alert("Cannot revive a ghost")
-		return
-	M.revive(full_heal = TRUE, admin_revive = TRUE)
-
-	log_admin("[key_name(usr)] healed / revived [key_name(M)]")
-	var/msg = "<span class='danger'>Admin [key_name_admin(usr)] healed / revived [ADMIN_LOOKUPFLW(M)]!</span>"
-	message_admins(msg)
-	admin_ticket_log(M, msg)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Rejuvinate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
 /client/proc/cmd_admin_create_centcom_report()
 	set category = "Admin.Events"
 	set name = "Create Command Report"
@@ -530,7 +464,7 @@
 	set name = "Check Contents"
 
 	var/list/L = M.get_contents()
-	for(var/t in L)
+	for(var/atom/t in L)
 		to_chat(usr, "[t]", confidential = TRUE)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Check Contents") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -875,6 +809,55 @@
 
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggled Hub Visibility", "[GLOB.hub_visibility ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/client/proc/spawn_ruin()
+	set name = "Spawn Planet/Ruin"
+	set category = "Fun"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	var/planet_type = tgui_input_list(usr, "What type of planet?", "Spawn Ruin", DYNAMIC_WORLD_LIST_ALL, 60 SECONDS)
+	if(!planet_type)
+		return
+
+	var/ruintype = tgui_input_list(usr, "What type of ruin?", "Spawn Ruin", RUINTYPE_LIST_ALL, 60 SECONDS)
+	if(!ruintype)
+		if(tgui_alert(usr, "Did you mean to not have a ruin?", "Spawn Planet/Ruin", list("Yes", "No"), 10 SECONDS) != "Yes")
+			return
+
+	var/datum/map_template/ruin/ruin_target
+	if(ruintype)
+		var/list/select_from = ruintype_to_list(ruintype)
+		var/ruin_force = tgui_alert(usr, "Random Ruin or Forced?", "Spawn Planet/Ruin", list("Random", "Forced"))
+		if(!ruin_force)
+			return
+
+		switch(ruin_force)
+			if("Random")
+				ruin_target = select_from[pick(select_from)]
+			else
+				var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)
+				if(!selected_ruin)
+					if(tgui_alert(usr, "Did you mean to not have a ruin?", "Spawn Planet/Ruin", list("Yes", "No"), 10) != "Yes")
+						return
+				else
+					ruin_target = select_from[selected_ruin]
+
+	message_admins("Generating a new Planet, this may take some time!")
+	var/datum/overmap/dynamic/encounter = new(null, FALSE)
+	encounter.force_encounter = planet_type
+	encounter.template = ruin_target
+	encounter.choose_level_type(FALSE)
+	if(!ruin_target)
+		encounter.ruin_list = null
+	encounter.preserve_level = TRUE
+	encounter.load_level()
+
+	message_admins(span_big("Click here to jump to the overmap token: " + ADMIN_JMP(encounter.token)))
+	message_admins(span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(encounter.reserve_docks[1])))
+	for(var/ruin in encounter.ruin_turfs)
+		var/turf/ruin_turf = encounter.ruin_turfs[ruin]
+		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
+
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"
 	set category = "Fun"
@@ -958,18 +941,9 @@
 				return
 			to_chat(target, "<span class='userdanger'>You do nyat feew vewy good!</span>", confidential = TRUE)
 			var/mob/living/carbon/dude = target
-			var/obj/item/organ/tongue/felinid/tonje = new
+			var/obj/item/organ/tongue/uwuspeak/tonje = new
 			tonje.Insert(dude, TRUE, FALSE)
-		if(ADMIN_PUNISHMENT_PIE)
-			var/pie_count = input("How many pies do you want to deploy?:","Armageddon") as num|null
-			var/delay_counter = 1
-			if(!pie_count)
-				return
-			for(var/x in 1 to pie_count)
-				if(QDELETED(target))
-					return
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/pie_smite, target), delay_counter)
-				delay_counter += 1
+
 	punish_log(target, punishment)
 
 /client/proc/punish_log(whom, punishment)

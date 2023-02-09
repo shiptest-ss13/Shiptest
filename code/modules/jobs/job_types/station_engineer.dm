@@ -1,16 +1,10 @@
 /datum/job/engineer
-	title = "Station Engineer"
-	department_head = list("Chief Engineer")
-	faction = "Station"
+	name = "Station Engineer"
 	total_positions = 5
 	spawn_positions = 5
-	supervisors = "the chief engineer"
-	selection_color = "#fff5cc"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Station_Engineer" //WS Edit - Wikilinks/Warning
-	alt_titles = list("Maintenance Technician", "Engine Technician", "Electrician", "Telecommunications Specialist", "Junior Engineer")
-	senior_title = "Senior Engineer"
 
 	outfit = /datum/outfit/job/engineer
 
@@ -18,13 +12,12 @@
 									ACCESS_EXTERNAL_AIRLOCKS, ACCESS_CONSTRUCTION, ACCESS_ATMOSPHERICS, ACCESS_TCOMSAT, ACCESS_MINERAL_STOREROOM, ACCESS_EVA)
 	minimal_access = list(ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_TECH_STORAGE, ACCESS_MAINT_TUNNELS, ACCESS_MECH_ENGINE,
 									ACCESS_EXTERNAL_AIRLOCKS, ACCESS_CONSTRUCTION, ACCESS_TCOMSAT, ACCESS_MINERAL_STOREROOM)
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_ENG
 
 	display_order = JOB_DISPLAY_ORDER_STATION_ENGINEER
 
 /datum/outfit/job/engineer
 	name = "Mechanic"
+	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
@@ -213,3 +206,12 @@
 	l_pocket = /obj/item/radio
 	r_pocket = /obj/item/analyzer
 	glasses = /obj/item/clothing/glasses/welding
+
+/datum/outfit/job/engineer/syndicate/cybersun
+	name = "Engineer (Cybersun)"
+
+	uniform = /obj/item/clothing/under/syndicate/cybersun
+	shoes = /obj/item/clothing/shoes/workboots
+	r_pocket = /obj/item/radio
+	head = /obj/item/clothing/head/beanie/black
+	accessory = /obj/item/clothing/accessory/armband/engine

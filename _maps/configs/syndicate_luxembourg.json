@@ -1,0 +1,28 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "SSV",
+	"namelists": ["GENERAL", "MERCANTILE", "SPACE"],
+	"map_name": "Luxembourg-class Delivery Vessel",
+	"map_short_name": "Luxembourg-class",
+	"map_path": "_maps/shuttles/shiptest/syndicate_luxembourg.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Manager": {
+			"outfit": "/datum/outfit/job/quartermaster/donk",
+			"slots": 1
+		},
+		"Customer Service Representative": {
+			"outfit": "/datum/outfit/job/cargo_tech/donk",
+			"slots": 5
+		},
+		"Food and Beverage Specialist": {
+			"outfit": "/datum/outfit/job/bartender/syndicate",
+			"slots": 1
+		},
+		"GEC Contracted Engineer": {
+			"outfit": "/datum/outfit/job/engineer/gec",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

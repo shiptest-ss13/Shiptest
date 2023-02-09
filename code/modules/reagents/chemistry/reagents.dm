@@ -195,10 +195,10 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	return
 
 /**
-  * New, standardized method for chemicals to affect hydroponics trays.
-  * Defined on a per-chem level as opposed to by the tray.
-  * Can affect plant's health, stats, or cause the plant to react in certain ways.
-  */
+ * New, standardized method for chemicals to affect hydroponics trays.
+ * Defined on a per-chem level as opposed to by the tray.
+ * Can affect plant's health, stats, or cause the plant to react in certain ways.
+ */
 /datum/reagent/proc/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	if(!mytray)
 		return
@@ -208,6 +208,10 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/withdrawal_critical, name)
 	if(prob(30))
 		to_chat(M, "<span class='boldannounce'>You're not feeling good at all! You really need some [name].</span>")
+	return
+
+///Called when the addiction is removed, see [/datum/reagents/proc/remove_addiction]
+/datum/reagent/proc/on_addiction_removal(mob/living/M)
 	return
 
 /proc/pretty_string_from_reagent_list(list/reagent_list)

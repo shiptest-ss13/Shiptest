@@ -1,6 +1,10 @@
 /proc/random_blood_type()
 	return pick(4;"O-", 36;"O+", 3;"A-", 28;"A+", 1;"B-", 20;"B+", 1;"AB-", 5;"AB+")
 
+/proc/random_prosthetic()
+	. = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
+	.[pick(.)] = PROSTHETIC_ROBOTIC
+
 /proc/random_eye_color()
 	switch(pick(20;"brown",20;"hazel",20;"grey",15;"blue",15;"green",1;"amber",1;"albino"))
 		if("brown")
@@ -99,6 +103,10 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_head_quills, GLOB.vox_head_quills_list)
 	if(!GLOB.vox_neck_quills_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_neck_quills, GLOB.vox_neck_quills_list)
+	if(!GLOB.elzu_horns_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/elzu_horns, GLOB.elzu_horns_list)
+	if(!GLOB.tails_list_elzu.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/elzu, GLOB.tails_list_elzu)
 	//For now we will always return none for tail_human and ears.
 	//if you don't keep this alphabetised I'm going to personally steal your shins and sell them online
 	return list(
@@ -106,6 +114,7 @@
 		"body_size" = pick(GLOB.body_sizes),
 		"caps" = pick(GLOB.caps_list),
 		"ears" = "None",
+		"elzu_horns" = pick(GLOB.elzu_horns_list),
 		"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],
 		"flavor_text" = "",
 		"frills" = pick(GLOB.frills_list),
@@ -130,6 +139,7 @@
 		"squid_face" = pick(GLOB.squid_face_list),
 		"tail_human" = "None",
 		"tail_lizard" = pick(GLOB.tails_list_lizard),
+		"tail_elzu" = pick(GLOB.tails_list_elzu),
 		"vox_head_quills" = pick(GLOB.vox_head_quills_list),
 		"vox_neck_quills" = pick(GLOB.vox_neck_quills_list),
 		"wings" = "None",
@@ -173,13 +183,6 @@
 /proc/random_unique_plasmaman_name(attempts_to_find_unique_name=10)
 	for(var/i in 1 to attempts_to_find_unique_name)
 		. = capitalize(plasmaman_name())
-
-		if(!findname(.))
-			break
-
-/proc/random_unique_ethereal_name(attempts_to_find_unique_name=10)
-	for(var/i in 1 to attempts_to_find_unique_name)
-		. = capitalize(ethereal_name())
 
 		if(!findname(.))
 			break
@@ -304,7 +307,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	return ..()
 
 ///Timed action involving one mob user. Target is optional.
-/proc/do_after(mob/user, var/delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
+/proc/do_after(mob/user, delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
 	if(!user)
 		return FALSE
 	var/atom/Tloc = null
@@ -633,7 +636,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	return .
 
 //Find an active ai with the least borgs. VERBOSE PROCNAME HUH!
-/proc/select_active_ai_with_fewest_borgs(var/z)
+/proc/select_active_ai_with_fewest_borgs(z)
 	var/mob/living/silicon/ai/selected
 	var/list/active = active_ais(FALSE, z)
 	for(var/mob/living/silicon/ai/A in active)
@@ -651,7 +654,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			. = pick(borgs)
 	return .
 
-/proc/select_active_ai(mob/user, var/z = null)
+/proc/select_active_ai(mob/user, z = null)
 	var/list/ais = active_ais(FALSE, z)
 	if(ais.len)
 		if(user)

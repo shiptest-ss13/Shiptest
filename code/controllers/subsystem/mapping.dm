@@ -8,6 +8,10 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/map_templates = list()
 
+/* HEY LISTEN //
+ * IF YOU ADD A NEW TYPE OF RUIN, ADD IT TO code\__DEFINES\ruins.dm
+ */
+
 	var/list/ruins_templates = list()
 	var/list/space_ruins_templates = list()
 	var/list/lava_ruins_templates = list()
@@ -15,6 +19,8 @@ SUBSYSTEM_DEF(mapping)
 	var/list/sand_ruins_templates = list()
 	var/list/jungle_ruins_templates = list()
 	var/list/rock_ruins_templates = list()
+	var/list/beach_ruins_templates = list()
+	var/list/waste_ruins_templates = list()
 	var/list/yellow_ruins_templates = list()
 
 	var/list/maplist
@@ -22,6 +28,8 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
+	var/list/holodeck_templates = list()
+
 	var/list/areas_in_z = list()
 
 	var/loading_ruins = FALSE
@@ -84,11 +92,14 @@ SUBSYSTEM_DEF(mapping)
 	space_ruins_templates = SSmapping.space_ruins_templates
 	lava_ruins_templates = SSmapping.lava_ruins_templates
 	rock_ruins_templates = SSmapping.rock_ruins_templates
+	beach_ruins_templates = SSmapping.beach_ruins_templates
+	waste_ruins_templates = SSmapping.waste_ruins_templates
 	sand_ruins_templates = SSmapping.sand_ruins_templates
 	jungle_ruins_templates = SSmapping.jungle_ruins_templates
 	ice_ruins_templates = SSmapping.ice_ruins_templates
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
+	holodeck_templates = SSmapping.holodeck_templates
 
 	z_list = SSmapping.z_list
 
@@ -109,6 +120,7 @@ SUBSYSTEM_DEF(mapping)
 	preloadShuttleTemplates()
 	load_ship_templates()
 	preloadShelterTemplates()
+	preloadHolodeckTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
 	// Still supporting bans by filename
@@ -118,6 +130,7 @@ SUBSYSTEM_DEF(mapping)
 	banned += generateMapList("[global.config.directory]/sandruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/jungleruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/rockruinblacklist.txt")
+	banned += generateMapList("[global.config.directory]/wasteruinblacklist.txt")
 
 	for(var/item in sortList(subtypesof(/datum/map_template/ruin), /proc/cmp_ruincost_priority))
 		var/datum/map_template/ruin/ruin_type = item
@@ -144,6 +157,10 @@ SUBSYSTEM_DEF(mapping)
 			space_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/rockplanet))
 			rock_ruins_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/beachplanet))
+			beach_ruins_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/wasteplanet))
+			waste_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/reebe))
 			yellow_ruins_templates[R.name] = R
 
@@ -196,6 +213,8 @@ SUBSYSTEM_DEF(mapping)
 			S.name_categories = data["namelists"]
 		if ( isnum( data[ "unique_ship_access" ] && data["unique_ship_access"] ) )
 			S.unique_ship_access = data[ "unique_ship_access" ]
+		if(istext(data["description"]))
+			S.description = data["description"]
 
 		S.job_slots = list()
 		var/list/job_slot_list = data["job_slots"]
@@ -222,8 +241,8 @@ SUBSYSTEM_DEF(mapping)
 				continue
 
 			S.job_slots[job_slot] = slots
-		if(isnum(data["cost"]))
-			S.cost = data["cost"]
+		if(isnum(data["enabled"]) && data["enabled"])
+			S.enabled = TRUE
 			ship_purchase_list[S.name] = S
 		if(isnum(data["limit"]))
 			S.limit = data["limit"]
@@ -254,10 +273,25 @@ SUBSYSTEM_DEF(mapping)
 		var/area/A = B
 		A.reg_in_areas_in_z()
 
+
 /// Creates basic physical levels so we dont have to do that during runtime every time, nothing bad will happen if this wont run, as allocation will handle adding new levels
 /datum/controller/subsystem/mapping/proc/init_reserved_levels()
 	add_new_zlevel("Free Allocation Level", allocation_type = ALLOCATION_FREE)
 	add_new_zlevel("Quadrant Allocation Level", allocation_type = ALLOCATION_QUADRANT)
+
+/datum/controller/subsystem/mapping/proc/preloadHolodeckTemplates()
+	for(var/item in subtypesof(/datum/map_template/holodeck))
+		var/datum/map_template/holodeck/holodeck_type = item
+		if(!(initial(holodeck_type.mappath)))
+			continue
+		var/datum/map_template/holodeck/holo_template = new holodeck_type()
+
+		holodeck_templates[holo_template.template_id] = holo_template
+		map_templates[holo_template.template_id] = holo_template
+
+//////////////////
+// RESERVATIONS //
+//////////////////
 
 
 /datum/controller/subsystem/mapping/proc/safety_clear_transit_dock(obj/docking_port/stationary/transit/T, obj/docking_port/mobile/M, list/returning)

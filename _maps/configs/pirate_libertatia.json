@@ -1,8 +1,8 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Libertatia-class Hauler",
 	"map_short_name": "Libertatia-class",
 	"map_path": "_maps/shuttles/shiptest/pirate_libertatia.dmm",
-	"map_id": "libertatia",
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/pirate",
@@ -31,5 +31,5 @@
 			"slots": 4
 		}
 	},
-	"cost": 500
+	"enabled": false
 }

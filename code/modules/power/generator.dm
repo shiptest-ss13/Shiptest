@@ -5,7 +5,7 @@
 	icon_state = "teg-unassembled"
 	density = TRUE
 	use_power = NO_POWER_USE
-	integrity_failure = 75
+	integrity_failure = 0.375
 
 	var/obj/machinery/atmospherics/components/binary/circulator/cold_circ
 	var/obj/machinery/atmospherics/components/binary/circulator/hot_circ
@@ -24,7 +24,7 @@
 
 /obj/machinery/power/generator/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS )
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS)
 
 /obj/machinery/power/generator/Destroy()
 	kill_circs()

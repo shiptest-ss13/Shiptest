@@ -7,7 +7,7 @@
 	equip_delay_other = 40
 	cuttable = TRUE
 	clothamnt = 1
-	greyscale_colors = list(list(15, 19))
+	greyscale_colors = list(list(15, 20), list(16, 21), list(14, 19))
 	greyscale_icon_state = "scarf"
 
 /obj/item/clothing/neck/worn_overlays(isinhands = FALSE)
@@ -53,7 +53,7 @@
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
 	custom_price = 60
-	greyscale_colors = list(list(16, 20))
+	greyscale_colors = list(list(16, 20), list(16, 16), list(16, 18))
 	greyscale_icon_state = "tie"
 
 /obj/item/clothing/neck/tie/blue
@@ -266,6 +266,13 @@
 	name = "christmas scarf"
 	icon_state = "christmasscarf"
 
+//Shemaghs to operate tactically in a operational tactical situation
+
+/obj/item/clothing/neck/shemagh
+	name = "shemagh"
+	desc = "An oversized shemagh, for those with a keen sense of fashion, or those operating tactically."
+	icon_state = "shemagh"
+
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
 //However, these 3 don't have corgi versions of their sprites
@@ -288,7 +295,7 @@
 	name = "pet collar"
 	desc = "It's for pets. But some people wear it anyways for reasons unknown."
 	icon_state = "petcollar"
-	greyscale_colors = list(list(16,21), list(16,19))
+	greyscale_colors = list(list(16,21), list(16,19), list(16,19))
 	greyscale_icon_state = "collar"
 	var/tagname = null
 

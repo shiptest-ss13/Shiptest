@@ -90,9 +90,6 @@
 			return FALSE
 	if(!listening)
 		return FALSE
-	if(freq == FREQ_SYNDICATE)
-		if(!(syndie))
-			return FALSE//Prevents broadcast of messages over devices lacking the encryption
 
 	return TRUE
 
@@ -156,6 +153,7 @@
 	frequency = FREQ_WIDEBAND
 	freqlock = TRUE
 	freerange = TRUE
+	wallframe = /obj/item/wallframe/intercom/wideband
 
 /obj/item/radio/intercom/wideband/Initialize(mapload, ndir, building)
 	. = ..()

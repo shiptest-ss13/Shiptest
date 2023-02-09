@@ -45,7 +45,7 @@
 		var/cap = CONFIG_GET(number/monkeycap)
 		if (LAZYLEN(SSmobs.cubemonkeys) > cap)
 			if (spawner)
-				to_chat(spawner, "<span class='warning'>Bluespace harmonics prevent the spawning of more than [cap] monkeys on the station at one time!</span>")
+				to_chat(spawner, "<span class='warning'>Bluespace harmonics prevent the spawning of more than [cap] monkeys in this sector at one time!</span>")
 			return INITIALIZE_HINT_QDEL
 		SSmobs.cubemonkeys += src
 
@@ -141,7 +141,7 @@
 	var/threatcount = 0
 
 	//Securitrons can't identify monkeys
-	if( !(judgment_criteria & JUDGE_IGNOREMONKEYS) && (judgment_criteria & JUDGE_IDCHECK) )
+	if(!(judgment_criteria & JUDGE_IGNOREMONKEYS) && (judgment_criteria & JUDGE_IDCHECK))
 		threatcount += 4
 
 	//Lasertag bullshit
@@ -157,7 +157,7 @@
 		return threatcount
 
 	//Check for weapons
-	if( (judgment_criteria & JUDGE_WEAPONCHECK) && weaponcheck )
+	if((judgment_criteria & JUDGE_WEAPONCHECK) && weaponcheck)
 		for(var/obj/item/I in held_items) //if they're holding a gun
 			if(weaponcheck.Invoke(I))
 				threatcount += 4

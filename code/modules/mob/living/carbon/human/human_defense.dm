@@ -119,6 +119,10 @@
 		var/final_block_chance = wear_neck.block_chance - (clamp((armour_penetration-wear_neck.armour_penetration)/2,0,100)) + block_chance_modifier
 		if(wear_neck.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
 			return TRUE
+	if(head)
+		var/final_block_chance = head.block_chance - (clamp((armour_penetration-head.armour_penetration)/2,0,100)) + block_chance_modifier
+		if(head.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
+			return TRUE
 	return FALSE
 
 /mob/living/carbon/human/proc/check_block()
@@ -268,7 +272,7 @@
 		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
 		if(!affecting)
 			affecting = get_bodypart(BODY_ZONE_CHEST)
-		var/armor_block = run_armor_check(affecting, "melee","","",10)
+		var/armor_block = run_armor_check(affecting, "melee", 10, silent = TRUE)
 
 		playsound(loc, 'sound/weapons/slice.ogg', 25, TRUE, -1)
 		visible_message("<span class='danger'>[M] slashes at [src]!</span>", \
@@ -355,7 +359,7 @@
 		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
 		if(!affecting)
 			affecting = get_bodypart(BODY_ZONE_CHEST)
-		var/armor_block = run_armor_check(affecting, "melee")
+		var/armor_block = run_armor_check(affecting, "melee", M.armour_penetration)
 		apply_damage(damage, BRUTE, affecting, armor_block)
 
 /mob/living/carbon/human/mech_melee_attack(obj/mecha/M)

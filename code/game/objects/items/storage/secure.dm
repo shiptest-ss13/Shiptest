@@ -117,7 +117,7 @@
 // -----------------------------
 /obj/item/storage/secure/briefcase
 	name = "secure briefcase"
-	icon = 'whitesands/icons/obj/storage.dmi' //WS edit - better briefcases
+	icon = 'icons/obj/storage.dmi' //WS edit - better briefcases
 	icon_state = "secure"
 	item_state = "sec-case"
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi'
@@ -187,3 +187,19 @@
 
 /obj/item/storage/secure/safe/HoS
 	name = "head of security's safe"
+
+/obj/item/storage/secure/safe/intel
+	name = "Sensitive Data Safe"
+
+/obj/item/storage/secure/safe/intel/PopulateContents()
+		. = ..()
+		new /obj/item/documents/syndicate(src)
+
+/obj/item/storage/secure/safe/intel/stechkin
+	name = "Sensitive Data Safe"
+
+/obj/item/storage/secure/safe/intel/stechkin/PopulateContents()
+		. = ..()
+		new /obj/item/gun/ballistic/automatic/pistol/suppressed(src)
+		new /obj/item/ammo_box/magazine/m10mm(src)
+		new /obj/item/ammo_box/magazine/m10mm(src)

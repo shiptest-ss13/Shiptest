@@ -1,0 +1,30 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Raven-class Heavy Transporter",
+	"map_short_name": "Raven-class",
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_raven.dmm",
+	"job_slots": {
+		"Captain": 1,
+		"Head of Security": {
+			"outfit": "/datum/outfit/job/hos/nanotrasen",
+			"officer": true,
+			"slots": 1
+		},
+		"Chief Medical Officer": 1,
+		"Head of Personnel": 1,
+		"Chief Engineer": 1,
+		"Engineer": {
+			"outfit": "/datum/outfit/job/engineer/nt",
+			"slots": 1
+		},
+		"Security Officer": {
+			"outfit": "/datum/outfit/job/security/nanotrasen",
+			"slots": 1
+		},
+		"Shaft Miner": 1,
+		"Medical Doctor": 1,
+		"Cargo Technician": 1,
+		"Assistant": 3
+	},
+	"enabled": true
+}

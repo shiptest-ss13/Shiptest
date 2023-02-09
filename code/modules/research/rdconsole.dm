@@ -46,6 +46,8 @@ Nothing else in the console has ID requirements.
 	var/ui_mode = RDCONSOLE_UI_MODE_NORMAL
 
 	var/research_control = TRUE
+	var/list/slime_already_researched = list()
+	var/list/plant_already_researched = list()
 
 /obj/machinery/computer/rdconsole/production
 	circuit = /obj/item/circuitboard/computer/rdconsole/production
@@ -121,6 +123,48 @@ Nothing else in the console has ID requirements.
 	return ..()
 
 /obj/machinery/computer/rdconsole/attackby(obj/item/D, mob/user, params)
+	if(istype(D, /obj/item/slime_extract))
+		var/obj/item/slime_extract/E = D
+		if(!slime_already_researched[E.type])
+			if(!E.research)
+				playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
+				visible_message("<span class='notice'>[src] buzzes and displays a message: Invalid extract! (You shouldn't be seeing this. If you are, tell someone.)</span>")
+				return
+			if(E.Uses <= 0)
+				playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
+				visible_message("<span class='notice'>[src] buzzes and displays a message: Extract consumed - no research available.</span>")
+				return
+			else
+				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
+				visible_message("<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the extract's chemical makeup!</span>")
+				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
+				slime_already_researched[E.type] = TRUE
+				qdel(D)
+				return
+		else
+			visible_message("<span class='notice'>[src] buzzes and displays a message: Slime extract already researched!</span>")
+			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
+			return
+
+	if(istype(D, /obj/item/seeds))
+		var/obj/item/seeds/E = D
+		if(!plant_already_researched[E.type])
+			if(!E.research)
+				playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
+				visible_message("<span class='warning'>[src] buzzes and displays a message: Sample quality error! Sample is either too common to be of value or too full of bugs to be of use!</span>")
+				return
+			else
+				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
+				visible_message("<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!</span>")
+				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
+				plant_already_researched[E.type] = TRUE
+				qdel(D)
+				return
+		else
+			visible_message("<span class='notice'>[src] buzzes and displays a message: Genetic data already researched!</span>")
+			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
+			return
+
 	if(istype(D, /obj/item/research_notes))
 		if(!stored_research)
 			visible_message("Warning: No Linked Server!")
@@ -1081,7 +1125,7 @@ Nothing else in the console has ID requirements.
 				autolathe_friendly = FALSE
 			else
 				for(var/material in list_keys(design.materials)) // Only if it can be built using glass, iron, plastic, gold, silver, uranium or titanium. No bluespace or diamond!
-					if( !("[material]" in list("iron", "glass", "plastic", "plasma", "gold", "silver", "uranium", "titanium"))) // God I was having a hell with assoc lists and material datums, so made it all strings. I SWEAR TO GOD
+					if(!("[material]" in list("iron", "glass", "plastic", "plasma", "gold", "silver", "uranium", "titanium"))) // God I was having a hell with assoc lists and material datums, so made it all strings. I SWEAR TO GOD
 						autolathe_friendly = FALSE
 			if(design.build_type & (AUTOLATHE|PROTOLATHE)) // Specifically excludes circuit imprinter and mechfab
 				design.build_type = autolathe_friendly ? (design.build_type | AUTOLATHE) : design.build_type

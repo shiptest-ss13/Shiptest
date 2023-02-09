@@ -27,13 +27,6 @@
 	description = "An odd coffin shaped pirate hut that the inhabitant of died in."
 	suffix = "jungle_surface_coffinpirate.dmm"
 
-///how bad can i possibly be?
-/datum/map_template/ruin/jungle/onceler
-	name = "Thneed Factory"
-	id = "tumblr-sexyman"
-	description = "After a logging incident gone wrong, the Syndicate invade this factory to stop the beast."
-	suffix = "jungle_surface_tumblr_sexyman.dmm"
-
 //far more tasteful than its predecessor...
 /datum/map_template/ruin/jungle/lessonintrickery
 	name = "Bombmaker's Cabin"
@@ -111,7 +104,7 @@
 /datum/map_template/ruin/jungle/roommates
 	name = "Roommates"
 	id = "roommates"
-	description = "And they were roommates."
+	description = "A shack once inhabited by a clown and a mime... and they were roommates."
 	suffix = "jungle_surface_roommates.dmm"
 
 /datum/map_template/ruin/jungle/ninjashrine
@@ -119,3 +112,21 @@
 	id = "ninjashrine"
 	description = "A ninja shrine."
 	suffix = "jungle_surface_ninjashrine.dmm"
+
+/datum/map_template/ruin/jungle/interceptor
+	name = "Old Crashed Interceptor"
+	id = "crashedcondor"
+	description = "An overgrown crashed Condor Class, a forgotten remnant of the Corporate Wars."
+	suffix = "jungle_interceptor.dmm"
+
+/datum/map_template/ruin/jungle/paradise
+	name = "Hidden paradise"
+	id = "paradise"
+	description = "a crashed shuttle, and a hidden beautiful lake."
+	suffix = "jungle_paradise.dmm"
+
+/datum/map_template/ruin/jungle/airbase
+	name = "Bombed Airbase"
+	id = "airbase"
+	description = "A bombed out airbase from the ICW, taken back over by nature"
+	suffix = "jungle_bombed_starport.dmm"

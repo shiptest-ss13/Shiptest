@@ -40,9 +40,6 @@
 	return FALSE
 
 /turf/proc/ImmediateCalculateAdjacentTurfs()
-	if(SSair.thread_running())
-		CALCULATE_ADJACENT_TURFS(src)
-		return
 	var/canpass = CANATMOSPASS(src, src)
 	var/canvpass = CANVERTICALATMOSPASS(src, src)
 	for(var/direction in GLOB.cardinals_multiz)
@@ -50,7 +47,7 @@
 		if(!istype(T))
 			continue
 		var/opp_dir = REVERSE_DIR(direction)
-		if(isopenturf(T) && !(blocks_air || T.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(T, src)) : (canpass && CANATMOSPASS(T, src))) )
+		if(isopenturf(T) && !(blocks_air || T.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(T, src)) : (canpass && CANATMOSPASS(T, src))))
 			LAZYINITLIST(atmos_adjacent_turfs)
 			LAZYINITLIST(T.atmos_adjacent_turfs)
 			atmos_adjacent_turfs[T] = direction
@@ -60,11 +57,9 @@
 				atmos_adjacent_turfs -= T
 			if (T.atmos_adjacent_turfs)
 				LAZYREMOVE(T.atmos_adjacent_turfs, src)
-			T.set_sleeping(T.blocks_air)
-		T.__update_auxtools_turf_adjacency_info(isspaceturf(T.get_z_base_turf()), -1)
+		T.__update_auxtools_turf_adjacency_info(isspaceturf(T.get_z_base_turf()))
 	UNSETEMPTY(atmos_adjacent_turfs)
 	src.atmos_adjacent_turfs = atmos_adjacent_turfs
-	set_sleeping(blocks_air)
 	__update_auxtools_turf_adjacency_info(isspaceturf(get_z_base_turf()))
 
 /turf/proc/set_sleeping(should_sleep)

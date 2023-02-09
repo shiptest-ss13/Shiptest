@@ -135,6 +135,7 @@
 		/obj/item/stack/tile/wood/ebony,
 		/obj/item/stack/tile/wood/walnut,
 		/obj/item/stack/tile/wood/bamboo,
+		/obj/item/stack/tile/wood/birch,
 		/obj/item/stack/tile/wood/yew
 		)
 
@@ -166,6 +167,12 @@
 /obj/item/stack/tile/wood/bamboo
 	name = "bamboo wood floor tile"
 	color = WOOD_COLOR_PALE2
+	turf_type = /turf/open/floor/wood/bamboo
+	merge_type = /obj/item/stack/tile/wood/bamboo
+
+/obj/item/stack/tile/wood/birch
+	name = "birch wood floor tile"
+	color = WOOD_COLOR_PALE3
 	turf_type = /turf/open/floor/wood/bamboo
 	merge_type = /obj/item/stack/tile/wood/bamboo
 
@@ -285,7 +292,7 @@
 
 /obj/item/stack/tile/carpet/nanoweave
 	name = "nanoweave carpet"
-	icon = 'whitesands/icons/obj/tiles.dmi'
+	icon = 'icons/obj/tiles.dmi'
 	desc = "A piece of nanoweave carpet."
 	icon_state = "dark_carpet_tile"
 	custom_materials = list(/datum/material/iron=500, /datum/material/plasma=500) //basically tiles made of plasteel
