@@ -34,7 +34,7 @@
 /obj/machinery/door/poddoor{
 	id = "whiteship_windows"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating,
 /area/ship/hallway/port)
 "ah" = (
 /turf/closed/wall/mineral/titanium,
@@ -2009,8 +2009,6 @@
 /area/ship/engineering)
 "dV" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/science/robotics)
 "dZ" = (
@@ -2409,6 +2407,9 @@
 	dir = 1
 	},
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "xk" = (
@@ -2535,7 +2536,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/ship/medical)
+/area/ship/crew)
 "CF" = (
 /obj/machinery/door/poddoor{
 	id = "whiteship_windows"
