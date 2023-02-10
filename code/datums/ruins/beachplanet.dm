@@ -34,3 +34,9 @@
 	id = "crashed_star"
 	description = "A Crashed Starwalker Class Pirate Ship. It's Crew is Long-Dead."
 	suffix = "beach_crashed_starwalker.dmm"
+
+/datum/map_template/ruin/beachplanet/crashedengie
+	name = "Crashed Engineer Ship"
+	id = "beach_crashed_engineer"
+	description = "An abandoned camp built by a crashed engineer"
+	suffix = "beach_crashed_engineer.dmm"
