@@ -20,7 +20,8 @@
 	intact = TRUE
 	tiled_dirt = TRUE
 
-	var/icon_plating = "plating"
+	// initiailized as null to stop turfs that update_icon() before Initialize() (in late ruin loading) from getting "stuck" as plating
+	var/icon_plating = null
 	var/broken = FALSE
 	var/burnt = FALSE
 	var/floor_tile = null //tile that this floor drops
