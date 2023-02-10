@@ -34,3 +34,10 @@
 	id = "beach_pirate"
 	description = "A small pirate outpost formed from the remains of a wrecked shuttle."
 	suffix = "beach_pirate_crash.dmm"
+
+/datum/map_template/ruin/beachplanet/crashedengie
+	name = "Crashed Engineer Ship"
+	id = "beach_crashed_engineer"
+	description = "An abandoned camp built by a crashed engineer"
+	suffix = "beach_crashed_engineer.dmm"
+
