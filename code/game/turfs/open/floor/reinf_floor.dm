@@ -124,6 +124,9 @@
 	name = "air floor"
 	initial_gas_mix = ATMOS_TANK_AIRMIX
 
+/turf/open/floor/engine/fuel
+	name = "fuel mix floor"
+	initial_gas_mix = ATMOS_TANK_FUEL
 
 
 /turf/open/floor/engine/cult

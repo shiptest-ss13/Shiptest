@@ -181,7 +181,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
-	backpack = /obj/item/storage/backpack
+	backpack = /obj/item/storage/backpack/security/cmm
 	box = /obj/item/storage/box/survival/engineer/radio
 	backpack_contents = null
 
@@ -205,6 +205,13 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
 	belt = /obj/item/storage/belt/military/minutemen
+
+/datum/outfit/job/security/minutemen/mechpilot
+	name = "Mech Pilot  (Colonial Minutemen)"
+
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1)
 
