@@ -706,11 +706,12 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf)
 "bZ" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "bridge_onehalf";
 	name = "Bridge Blast Door"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "ca" = (
@@ -780,7 +781,6 @@
 /turf/open/floor/plasteel/cult/airless,
 /area/ruin/space/has_grav/onehalf)
 "ck" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -788,6 +788,8 @@
 	id = "bridge_onehalf";
 	name = "Bridge Blast Door"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "cl" = (
@@ -827,7 +829,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "cq" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -841,6 +842,8 @@
 	id = "bridge_onehalf";
 	name = "Bridge Blast Door"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "cr" = (
@@ -882,7 +885,6 @@
 /turf/open/floor/plasteel/cult/airless,
 /area/ruin/space/has_grav/onehalf)
 "cz" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -891,6 +893,8 @@
 	id = "bridge_onehalf";
 	name = "Bridge Blast Door"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "cA" = (
@@ -1019,7 +1023,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "cV" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1028,6 +1031,8 @@
 	id = "bridge_onehalf";
 	name = "Bridge Blast Door"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "cW" = (
@@ -1083,7 +1088,6 @@
 	},
 /area/ruin/space/has_grav/onehalf)
 "de" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1094,10 +1098,11 @@
 	id = "bridge_onehalf";
 	name = "Bridge Blast Door"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "df" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1108,10 +1113,11 @@
 	id = "bridge_onehalf";
 	name = "Bridge Blast Door"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "dg" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1122,6 +1128,8 @@
 	id = "bridge_onehalf";
 	name = "Bridge Blast Door"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "dh" = (
@@ -1338,7 +1346,8 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "mr" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/onehalf)
 "nw" = (
@@ -1815,8 +1824,14 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf)
 "GC" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment,
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/onehalf)
+"GY" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/onehalf)
 "Hv" = (
@@ -3044,8 +3059,8 @@ Vs
 bQ
 nw
 Mc
-cQ
-cQ
+GY
+GY
 Mc
 aW
 aa
@@ -3614,7 +3629,7 @@ lB
 Cy
 bt
 bH
-cQ
+GY
 cF
 aa
 aa
@@ -3684,8 +3699,8 @@ ak
 ak
 ak
 ak
-cQ
-cQ
+GY
+GY
 ak
 cF
 aa
