@@ -455,7 +455,10 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/onehalf)
 "bl" = (
-/obj/machinery/telecomms/relay,
+/obj/machinery/telecomms/relay{
+	id = "THEBLOODTHEBLOODTHEBLOOD";
+	network = "SHECOMESFORUSSHECOMES"
+	},
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
 "bm" = (
@@ -1444,7 +1447,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/onehalf)
 "pT" = (
 /obj/machinery/power/smes,
@@ -1516,7 +1519,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/onehalf)
 "tB" = (
 /obj/structure/lattice,
@@ -1567,7 +1570,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/onehalf)
 "vT" = (
 /obj/structure/disposalpipe/segment{
@@ -1900,6 +1903,12 @@
 	},
 /turf/open/space,
 /area/space/nearstation)
+"JF" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/onehalf)
 "Kk" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1949,11 +1958,16 @@
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
+"MC" = (
+/turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/onehalf)
 "MD" = (
 /obj/structure/chair/office{
 	dir = 8
 	},
 /turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/onehalf)
 "MG" = (
 /obj/structure/cable{
@@ -2178,8 +2192,9 @@
 /area/space/nearstation)
 "Wc" = (
 /obj/effect/gibspawner,
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
+/mob/living/simple_animal/hostile/construct/wraith/hostile,
 /turf/open/floor/plasteel/cult/airless,
+/turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/onehalf)
 "Wk" = (
 /obj/structure/catwalk,
@@ -3088,7 +3103,7 @@ bk
 RL
 Mc
 af
-bo
+JF
 bU
 aa
 wr
@@ -3124,7 +3139,7 @@ ak
 ak
 Mc
 Gf
-bo
+JF
 bU
 bZ
 ck
@@ -3200,7 +3215,7 @@ bE
 bU
 cb
 cm
-Dw
+MC
 cx
 cn
 MD
@@ -3239,7 +3254,7 @@ cn
 cx
 cH
 Wc
-Dw
+MC
 da
 df
 aW
@@ -3274,7 +3289,7 @@ cd
 co
 cn
 cG
-Dw
+MC
 cS
 rB
 df
@@ -3307,10 +3322,10 @@ jX
 PY
 bU
 ce
-Dw
+MC
 cn
 cn
-Dw
+MC
 cn
 rB
 df
@@ -3343,8 +3358,8 @@ bF
 xR
 bU
 cf
-Dw
-Dw
+MC
+MC
 cJ
 cn
 cT
