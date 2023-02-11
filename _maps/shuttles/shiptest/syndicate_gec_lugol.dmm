@@ -1668,7 +1668,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "pN" = (
-/obj/machinery/rnd/production/circuit_imprinter,
+/obj/machinery/rnd/production/circuit_imprinter/department/engi,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "pT" = (
@@ -2474,6 +2474,18 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"wY" = (
+/obj/structure/table/wood/bar,
+/obj/effect/turf_decal/steeldecal/steel_decals_central2{
+	pixel_y = 2;
+	dir = 4
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = 5;
+	pixel_x = -3
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "xc" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
@@ -5379,6 +5391,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
+"Ye" = (
+/obj/structure/table/wood/bar,
+/obj/effect/turf_decal/steeldecal/steel_decals_central2{
+	pixel_y = 2;
+	dir = 4
+	},
+/obj/item/reagent_containers/food/drinks/shaker,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "Yj" = (
 /obj/machinery/atmospherics/pipe/manifold/yellow/visible{
 	dir = 1
@@ -6256,9 +6277,9 @@ wI
 Qs
 eW
 Sm
+Ye
 Sm
-Sm
-Sm
+wY
 lL
 UA
 aH
