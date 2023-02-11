@@ -557,11 +557,29 @@
 	category = list("Phazon")
 
 //Exosuit Equipment
+/datum/design/cmm_ripley_upgrade
+	name = "Ripley MK-I to MK-IV conversion kit"
+	id = "cmm_ripley_upgrade"
+	build_type = AUTOLATHE
+	build_path = /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/cmm
+	materials = list(/datum/material/iron=10000,/datum/material/plasma=10000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
+/datum/design/cmm_durand_upgrade
+	name = "Durand to Paladin conversion kit"
+	id = "cmm_durand_upgrade"
+	build_type = AUTOLATHE
+	build_path = /obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
+	materials = list(/datum/material/iron=10000,/datum/material/plasma=10000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
 /datum/design/ripleyupgrade
 	name = "Ripley MK-1 to MK-II conversion kit"
 	id = "ripleyupgrade"
 	build_type = MECHFAB
-	build_path = /obj/item/mecha_parts/mecha_equipment/ripleyupgrade
+	build_path = /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley
 	materials = list(/datum/material/iron=10000,/datum/material/plasma=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
