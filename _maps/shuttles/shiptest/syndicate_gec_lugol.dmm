@@ -693,6 +693,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
 	dir = 1
@@ -1092,7 +1095,9 @@
 /turf/open/floor/plasteel/tech/airless,
 /area/ship/construction)
 "jR" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
 	dir = 1
@@ -1222,7 +1227,9 @@
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "lJ" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
 	dir = 2
@@ -1495,7 +1502,6 @@
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1628,6 +1634,9 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1889,7 +1898,6 @@
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2177,7 +2185,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "tU" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
@@ -2439,6 +2446,9 @@
 	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2891,6 +2901,9 @@
 /obj/structure/cable,
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -3380,6 +3393,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
 	dir = 2
@@ -3806,7 +3822,6 @@
 /turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
 "JK" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -4243,7 +4258,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "MK" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer4,
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
 	},
@@ -5346,9 +5360,6 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/heavy,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
 	dir = 4
 	},
