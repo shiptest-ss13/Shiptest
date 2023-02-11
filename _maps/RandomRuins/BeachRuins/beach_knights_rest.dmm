@@ -6,7 +6,9 @@
 "aA" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "bV" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -19,6 +21,13 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/beachplanet/knight)
+"cC" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
+/area/ruin/beachplanet/knight)
 "dr" = (
 /obj/structure/sink/puddle,
 /obj/item/reagent_containers/glass/bucket/wooden,
@@ -30,10 +39,19 @@
 	dir = 4
 	},
 /area/ruin/beachplanet/knight)
+"dG" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
+/area/ruin/beachplanet/knight)
 "dK" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "eF" = (
 /obj/structure/railing{
@@ -82,6 +100,15 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
+"gw" = (
+/obj/structure/flora/tree/chapel{
+	desc = "A true earthen oak tree. It stands high, like a proud guard";
+	name = "oak tree"
+	},
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
+/area/ruin/beachplanet/knight)
 "gC" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -127,12 +154,27 @@
 	},
 /turf/open/floor/plating/dirt,
 /area/ruin/beachplanet/knight)
+"iG" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
+/area/ruin/beachplanet/knight)
 "jm" = (
 /obj/effect/turf_decal/stoneborder,
 /obj/structure/railing{
 	dir = 4
 	},
 /turf/open/floor/wood/ebony,
+/area/ruin/beachplanet/knight)
+"jA" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "jG" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -149,7 +191,9 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "kD" = (
 /obj/effect/turf_decal/siding/wood{
@@ -165,6 +209,12 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
+/area/ruin/beachplanet/knight)
+"kX" = (
+/mob/living/simple_animal/butterfly,
 /turf/open/floor/plating/grass/beach/lit{
 	smoothing_flags = 0
 	},
@@ -213,7 +263,9 @@
 /area/ruin/beachplanet/knight)
 "pn" = (
 /obj/item/shovel/spade,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "pL" = (
 /obj/structure/rack,
@@ -325,7 +377,9 @@
 /obj/structure/railing/wood{
 	dir = 1
 	},
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "wm" = (
 /turf/open/floor/grass/fairy/beach,
@@ -371,7 +425,9 @@
 /area/ruin/beachplanet/knight)
 "xI" = (
 /obj/item/cultivator/rake,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "xN" = (
 /obj/structure/chair/pew/right{
@@ -403,7 +459,9 @@
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "zg" = (
 /obj/structure/railing{
@@ -523,6 +581,12 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
+"Ft" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
+/area/ruin/beachplanet/knight)
 "Gj" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/potato/sweet,
@@ -575,7 +639,9 @@
 /area/ruin/beachplanet/knight)
 "KE" = (
 /obj/item/storage/bag/plants,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "KJ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -598,12 +664,16 @@
 /area/ruin/beachplanet/knight)
 "MR" = (
 /obj/structure/railing/wood,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "MT" = (
 /mob/living/simple_animal/butterfly,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "Np" = (
 /obj/structure/table/wood,
@@ -621,6 +691,12 @@
 /area/ruin/beachplanet/knight)
 "PK" = (
 /turf/open/floor/concrete/slab_1,
+/area/ruin/beachplanet/knight)
+"PT" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "Qj" = (
 /obj/structure/railing,
@@ -641,7 +717,9 @@
 /area/ruin/beachplanet/knight)
 "Qm" = (
 /obj/item/reagent_containers/glass/bucket/wooden,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "Qw" = (
 /obj/structure/closet/cabinet{
@@ -684,7 +762,9 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "Sp" = (
 /obj/machinery/hydroponics/soil,
@@ -718,6 +798,13 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
+"Uo" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
+/area/ruin/beachplanet/knight)
 "Uy" = (
 /obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
 /obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
@@ -733,6 +820,12 @@
 /obj/item/clothing/under/rank/civilian/chaplain/skirt,
 /obj/item/clothing/under/rank/civilian/chaplain/skirt,
 /turf/open/floor/wood,
+/area/ruin/beachplanet/knight)
+"UG" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "UL" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -779,6 +872,13 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beachplanet/knight)
+"Xw" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
+/area/ruin/beachplanet/knight)
 "Xz" = (
 /mob/living/simple_animal/butterfly,
 /turf/open/floor/grass/fairy/beach,
@@ -786,7 +886,9 @@
 "XF" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "XL" = (
 /turf/open/floor/plating/grass/beach/lit{
@@ -804,7 +906,9 @@
 /area/ruin/beachplanet/knight)
 "YJ" = (
 /obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "Zf" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -815,7 +919,9 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/beach/lit,
+/turf/open/floor/plating/grass/beach/lit{
+	smoothing_flags = 0
+	},
 /area/ruin/beachplanet/knight)
 "ZE" = (
 /obj/structure/table/wood,
@@ -1251,17 +1357,17 @@ VF
 qV
 fy
 fy
-fy
+XL
 QS
 dr
 Sp
-fy
-fy
+XL
+XL
 Ha
 Ha
 Ha
-fy
-fy
+XL
+XL
 gX
 dr
 gX
@@ -1301,20 +1407,20 @@ VF
 qV
 fy
 fy
-fy
-fy
-fy
+XL
+XL
+XL
 xI
-fy
-fy
+XL
+XL
 KE
-fy
-fy
+XL
+XL
 pn
-fy
-fy
-fy
-fy
+XL
+XL
+XL
+XL
 mx
 hk
 jm
@@ -1351,17 +1457,17 @@ VF
 PJ
 wm
 wm
-fy
+XL
 zH
 lD
 zH
-fy
-fy
+XL
+XL
 oF
 oF
 oF
-fy
-fw
+XL
+kX
 Gj
 Gj
 Gj
@@ -1401,20 +1507,20 @@ mx
 mx
 wm
 wm
-fy
-fy
-fy
-fy
-fy
-fy
-fy
+XL
+XL
+XL
+XL
+XL
+XL
+XL
 Qm
-fy
+XL
 wm
-fw
-fy
+kX
+XL
 xI
-fy
+XL
 mx
 mx
 mx
@@ -1456,7 +1562,7 @@ If
 If
 If
 wm
-fy
+XL
 wI
 uz
 rv
@@ -1465,9 +1571,9 @@ wm
 Jf
 Jf
 Jf
-fy
-fy
-fy
+XL
+XL
+XL
 qJ
 qJ
 mx
@@ -1497,12 +1603,12 @@ Ih
 Th
 mx
 pN
-fy
+XL
 wm
 wm
 jG
 kq
-fy
+XL
 wm
 wm
 wm
@@ -1517,7 +1623,7 @@ qJ
 qJ
 qJ
 qJ
-fy
+XL
 qJ
 Vx
 mx
@@ -1549,12 +1655,12 @@ mx
 qJ
 qJ
 qJ
-fw
+kX
 fy
 jG
 Ql
 XF
-fy
+XL
 qJ
 qJ
 qJ
@@ -1562,14 +1668,14 @@ sG
 qJ
 qJ
 Vx
-fy
+XL
 wm
 qJ
 qJ
 qJ
 qJ
 qJ
-fy
+XL
 mx
 rp
 ve
@@ -1599,9 +1705,9 @@ mx
 qJ
 oo
 qJ
-gf
-jG
-wr
+Uo
+jA
+PT
 XF
 XF
 sG
@@ -1612,14 +1718,14 @@ AM
 AM
 ZF
 qJ
-gE
-fy
+Ft
+XL
 wm
 wm
 qJ
 sG
 qJ
-fy
+XL
 mx
 rp
 ve
@@ -1649,19 +1755,19 @@ mx
 qJ
 qJ
 qJ
-gf
-zz
+Uo
+UG
 pN
 pN
 qJ
 qJ
-jG
-jG
-fy
-UL
-fy
-fy
-fy
+jA
+jA
+XL
+cC
+XL
+XL
+XL
 fy
 gE
 fy
@@ -1669,7 +1775,7 @@ wm
 wm
 qJ
 qJ
-fy
+XL
 mx
 mx
 ve
@@ -1704,22 +1810,22 @@ qJ
 pN
 pN
 qJ
-fy
-fy
+XL
+XL
 jG
 fy
 UL
 UL
 UL
-fy
-wr
-QI
+XL
+PT
+dG
 QI
 fy
 wm
-wr
+PT
 qJ
-fy
+XL
 mx
 QG
 XL
@@ -1751,25 +1857,25 @@ qJ
 qJ
 qJ
 qJ
-fy
-wr
+XL
+PT
 MT
 qJ
+XL
 fy
-fy
-fy
-fy
-fy
-fw
-wr
+XL
+XL
+XL
+kX
+PT
 ia
-fy
+XL
 QI
 fy
 wm
-wr
+PT
 Vx
-fy
+XL
 PK
 PK
 sG
@@ -1798,26 +1904,26 @@ Th
 mx
 qJ
 qJ
-fw
-fy
-fy
-wr
+kX
+XL
+XL
+PT
 wr
 qJ
 dK
+XL
 fy
-fy
-fy
+XL
 qJ
 qJ
-wr
-fy
+PT
+XL
 gU
-fy
+XL
 QI
 fy
 wm
-fy
+XL
 qJ
 qJ
 qJ
@@ -1847,27 +1953,27 @@ Ih
 Th
 mx
 qJ
-zz
-zz
+UG
+UG
 oo
 fy
 fy
 fy
-Ql
+gw
 Bk
 qJ
-wr
-fy
+PT
+XL
 Eh
 qJ
 YJ
-fy
+XL
 gU
-wr
+PT
 gE
 fy
 wm
-fy
+XL
 qJ
 qJ
 qJ
@@ -1897,7 +2003,7 @@ Ih
 Th
 mx
 qJ
-gE
+Ft
 gE
 zz
 fy
@@ -1905,20 +2011,20 @@ fy
 Xn
 aA
 Sj
-fN
-fw
+iG
+kX
 qJ
 qJ
 qJ
-fy
-fy
+XL
+XL
 gU
-fy
+XL
 gE
 fy
 wm
 wm
-fy
+XL
 qJ
 qJ
 qJ
@@ -1947,7 +2053,7 @@ Ih
 Th
 mx
 qJ
-gE
+Ft
 gE
 gf
 wr
@@ -1955,15 +2061,15 @@ fy
 fy
 Zg
 qJ
-fy
-fy
-fy
-fy
-fy
-fy
-fy
+XL
+XL
+XL
+XL
+XL
+XL
+XL
 AJ
-fy
+XL
 gE
 fy
 fy
@@ -1998,26 +2104,26 @@ Th
 mx
 qJ
 qJ
-fy
+XL
 wr
 wr
 Ql
 fy
-fw
-fy
-fy
-fy
-fy
-wr
-wr
+kX
+XL
+XL
 fy
 fy
 wr
+wr
 fy
+XL
+PT
+XL
 Zf
 fy
 Zf
-fy
+XL
 qJ
 sG
 mx
@@ -2055,19 +2161,19 @@ wr
 fy
 fy
 zz
-wr
-wr
-fy
-wr
-fy
-fy
-zz
+PT
+PT
+XL
+PT
+XL
+XL
+UG
 zz
 fw
 Sz
 fy
 Sz
-gE
+Ft
 qJ
 qJ
 mx
@@ -2105,21 +2211,21 @@ fy
 fy
 Dj
 Dj
-fy
+XL
 xq
 no
 no
 si
 JH
-fy
+XL
 zz
 zz
 gE
 wm
 fy
-fy
+XL
 qJ
-fy
+XL
 mx
 rp
 fR
@@ -2155,21 +2261,21 @@ zz
 zz
 Dj
 fy
-fy
-fy
-fy
-fy
-fy
-fy
-fy
+XL
+XL
+XL
+XL
+XL
+XL
+XL
 fy
 fy
 wm
 wm
 fy
-fw
+kX
 pN
-fy
+XL
 mx
 rp
 ve
@@ -2216,10 +2322,10 @@ fy
 Xz
 wm
 wm
-fy
-fy
+XL
+XL
 pN
-fy
+XL
 mx
 rp
 ve
@@ -2266,7 +2372,7 @@ wm
 wm
 Ej
 fy
-KJ
+Xw
 pN
 pN
 qJ
@@ -2316,7 +2422,7 @@ fy
 KJ
 KJ
 fy
-KJ
+Xw
 pN
 pN
 pN
@@ -2350,12 +2456,12 @@ WZ
 mx
 mx
 wm
-fy
-fy
-fy
-fy
-fy
-fy
+XL
+XL
+XL
+XL
+XL
+XL
 fy
 wm
 wm
