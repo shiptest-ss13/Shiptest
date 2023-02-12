@@ -130,17 +130,6 @@
 /turf/open/floor/proc/crush()
 	break_tile()
 
-/turf/open/floor/ChangeTurf(path, new_baseturf, flags)
-	if(!isfloorturf(src))
-		return ..() //fucking turfs switch the fucking src of the fucking running procs
-	if(!ispath(path, /turf/open/floor))
-		return ..()
-	var/old_dir = dir
-	var/turf/open/floor/W = ..()
-	W.setDir(old_dir)
-	W.update_icon()
-	return W
-
 /turf/open/floor/attackby(obj/item/C, mob/user, params)
 	if(!C || !user)
 		return 1
