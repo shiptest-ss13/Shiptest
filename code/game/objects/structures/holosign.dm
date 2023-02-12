@@ -38,7 +38,7 @@
 		countdown.start()
 
 /obj/structure/holosign/process()
-	if(death_time < (world.time + 60 SECONDS) && death_time > (world.time + 58 SECONDS)) //there has to be a better way to get this to just trigger once
+	if(countdown.invisibility && death_time < (world.time + 60 SECONDS))
 		countdown.invisibility = 0
 		playsound(src, 'sound/machines/triple_beep.ogg', 50, TRUE)
 
