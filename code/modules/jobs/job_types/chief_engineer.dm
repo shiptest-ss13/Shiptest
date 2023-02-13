@@ -86,6 +86,7 @@
 	shoes =/obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
+	gloves = /obj/item/clothing/gloves/combat
 
 /datum/outfit/job/ce/syndicate
 	name = "Chief Engineer (Syndicate Generic)"
