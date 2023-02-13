@@ -233,7 +233,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		dat += "<div class='notice'>Please create an account to save your preferences</div>"
 
 	dat += "</center>"
-
 	dat += "<HR>"
 
 	switch(current_tab)
@@ -2362,8 +2361,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!character.equip_to_slot_or_del(G.spawn_item(character, character), G.slot))
 					continue
 
-	character.dna.features = features.Copy()
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)//turns out having something checking for a species that was not set brakes things
 
 	var/datum/species/chosen_species
 	chosen_species = pref_species.type
@@ -2371,6 +2368,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		chosen_species = /datum/species/human
 		pref_species = new /datum/species/human
 		save_character()
+
+	character.dna.features = features.Copy()
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)//turns out having something checking for a species that was not set brakes things
 
 	for(var/pros_limbs in prosthetic_limbs)
 		var/obj/item/bodypart/old_part = character.get_bodypart(pros_limbs)
