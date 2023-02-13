@@ -60,8 +60,7 @@
 "aH" = (
 /obj/structure/railing{
 	dir = 1;
-	pixel_y = 7;
-	color = "#808080"
+	pixel_y = 7
 	},
 /obj/effect/turf_decal/trimline/transparent/bar/filled/warning,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -360,8 +359,8 @@
 /obj/machinery/atmospherics/components/trinary/mixer/flipped/layer2{
 	dir = 8;
 	name = "air mixer";
-	node1_concentration = 0.79;
-	node2_concentration = 0.21;
+	node1_concentration = 0.21;
+	node2_concentration = 0.79;
 	on = 1;
 	desc = "Very useful for mixing gasses. This one mixes Nitrogen and Oxygen at the proper proportions for breathing air";
 	target_pressure = 2500
@@ -567,13 +566,11 @@
 "eM" = (
 /obj/structure/railing{
 	dir = 4;
-	pixel_x = 7;
-	color = "#808080"
+	pixel_x = 7
 	},
 /obj/structure/railing{
 	dir = 8;
-	pixel_x = -7;
-	color = "#808080"
+	pixel_x = -7
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -1351,11 +1348,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "mq" = (
-/obj/structure/railing{
-	dir = 1;
-	pixel_y = 7;
-	color = "#808080"
-	},
 /obj/effect/turf_decal/trimline/transparent/bar/filled/line{
 	dir = 6
 	},
@@ -1365,6 +1357,10 @@
 	},
 /obj/structure/curtain/cloth/grey,
 /obj/effect/decal/cleanable/vomit/old,
+/obj/structure/railing{
+	dir = 1;
+	pixel_y = 7
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "mr" = (
@@ -2108,8 +2104,7 @@
 "sm" = (
 /obj/structure/railing{
 	dir = 1;
-	pixel_y = 7;
-	color = "#808080"
+	pixel_y = 7
 	},
 /obj/effect/turf_decal/trimline/transparent/bar/filled/warning,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3542,8 +3537,7 @@
 "FM" = (
 /obj/structure/railing{
 	dir = 4;
-	pixel_x = 7;
-	color = "#808080"
+	pixel_x = 7
 	},
 /obj/structure/chair{
 	dir = 8;
