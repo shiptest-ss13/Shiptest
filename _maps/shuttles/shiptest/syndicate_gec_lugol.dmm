@@ -1693,6 +1693,24 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
+"pC" = (
+/obj/structure/catwalk/over/plated_catwalk/white{
+	color = "#4c535b"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "pF" = (
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
@@ -2592,8 +2610,8 @@
 /area/ship/engineering/atmospherics)
 "xs" = (
 /obj/structure/closet/crate/secure/engineering{
-	name = "WARNING - Supermatter Crystal - DANGER";
-	desc = "A crate with a lock on it. The GEC insignia has been painted over a faded Nanotrasen logo"
+	name = "Supermatter Crystal Crate";
+	desc = "A dangerous supermatter crate with a lock on it. The GEC insignia has been painted over a faded Nanotrasen logo"
 	},
 /obj/machinery/power/supermatter_crystal/shard,
 /obj/effect/turf_decal/industrial/warning{
@@ -2752,12 +2770,12 @@
 /area/ship/hallway/central)
 "zx" = (
 /obj/structure/closet/crate/bin{
-	layer = 2.8
+	layer = 2
 	},
-/obj/structure/railing,
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
 	},
+/obj/structure/railing,
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
 "zA" = (
@@ -2910,9 +2928,11 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/atmos,
-/obj/structure/railing,
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/suit_storage_unit/atmos{
+	layer = 2.8
+	},
+/obj/structure/railing,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "Bf" = (
@@ -5020,9 +5040,11 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
 	},
-/obj/machinery/suit_storage_unit/atmos,
-/obj/structure/railing,
+/obj/machinery/suit_storage_unit/atmos{
+	layer = 2.8
+	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/railing,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "Ts" = (
@@ -5098,11 +5120,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "Ud" = (
-/obj/structure/filingcabinet,
-/obj/structure/railing,
+/obj/structure/filingcabinet{
+	layer = 2
+	},
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 10
 	},
+/obj/structure/railing,
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
 "Ug" = (
@@ -5215,9 +5239,11 @@
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
 	},
-/obj/machinery/suit_storage_unit/atmos,
-/obj/structure/railing,
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/suit_storage_unit/atmos{
+	layer = 2.8
+	},
+/obj/structure/railing,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "UQ" = (
@@ -6106,7 +6132,7 @@ Kq
 oe
 oe
 me
-cA
+pC
 bS
 gx
 qp
