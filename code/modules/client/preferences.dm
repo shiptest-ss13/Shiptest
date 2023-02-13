@@ -2362,6 +2362,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!character.equip_to_slot_or_del(G.spawn_item(character, character), G.slot))
 					continue
 
+	character.dna.features = features.Copy()
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)//turns out having something checking for a species that was not set brakes things
+
 	var/datum/species/chosen_species
 	chosen_species = pref_species.type
 	if(roundstart_checks && !(pref_species.id in GLOB.roundstart_races) && !(pref_species.id in (CONFIG_GET(keyed_list/roundstart_no_hard_check))))
@@ -2398,8 +2401,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(old_part)
 					qdel(old_part)
 
-	character.dna.features = features.Copy()
-	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+
 	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
 	character.dna.real_name = character.real_name
 	character.hair_color = hair_color
