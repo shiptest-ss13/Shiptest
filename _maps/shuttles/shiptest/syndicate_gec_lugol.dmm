@@ -2371,15 +2371,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "uW" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
 	},
@@ -3115,6 +3106,13 @@
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ship/construction)
+"CI" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-14";
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "CN" = (
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/vending/snack,
@@ -3425,19 +3423,19 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "FR" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
 /obj/structure/railing,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "FS" = (
@@ -6078,7 +6076,7 @@ Ab
 hE
 gN
 Wv
-VL
+CI
 uW
 mr
 zI
