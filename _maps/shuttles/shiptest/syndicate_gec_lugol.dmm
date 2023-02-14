@@ -2747,15 +2747,15 @@
 /turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
 "xQ" = (
-/obj/machinery/meter/atmos/layer4{
-	desc = "It measures Plasma to Engines.";
-	name = "Plasma to Engines"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible{
 	dir = 9
+	},
+/obj/machinery/meter/atmos{
+	name = "Plasma to Engines";
+	desc = "It measures Plasma to Engines."
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
