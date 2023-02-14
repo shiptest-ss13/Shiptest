@@ -764,9 +764,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/chair{
-	dir = 8
-	},
+/obj/structure/chair,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/wood{
@@ -1488,7 +1486,8 @@
 /area/ship/crew/office)
 "ic" = (
 /obj/effect/turf_decal/corner_techfloor_gray/diagonal{
-	dir = 4
+	dir = 4;
+	layer = 2.36
 	},
 /obj/item/weldingtool{
 	pixel_x = -5;
@@ -1995,7 +1994,8 @@
 	name = "Armoury Lockdown";
 	pixel_x = -23;
 	pixel_y = 6;
-	dir = 4
+	dir = 4;
+	req_access_txt = "3"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
@@ -2264,7 +2264,6 @@
 /obj/item/clothing/under/syndicate/camo,
 /obj/item/clothing/under/syndicate/soviet,
 /obj/item/clothing/neck/scarf/black,
-/obj/item/clothing/suit/hooded/cloak/goliath/polar,
 /obj/item/clothing/neck/cloak/hos,
 /obj/item/clothing/mask/bandana/black{
 	pixel_x = 1;
@@ -2283,7 +2282,8 @@
 /obj/structure/closet/secure_closet{
 	anchored = 1;
 	icon_state = "hos";
-	name = "master at arm's locker"
+	name = "master at arm's locker";
+	req_access_txt = "3"
 	},
 /obj/item/gun/ballistic/automatic/smg/aks74u,
 /obj/item/ammo_box/magazine/aks74u,
@@ -3781,7 +3781,8 @@
 	name = "Armoury Lockdown";
 	pixel_x = -23;
 	pixel_y = 6;
-	dir = 4
+	dir = 4;
+	req_access_txt = "3"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
@@ -5193,13 +5194,16 @@
 /area/ship/maintenance/port)
 "zJ" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 4
+	dir = 4;
+	layer = 2.36
 	},
 /obj/effect/turf_decal/techfloor/corner{
-	dir = 4
+	dir = 4;
+	layer = 2.37
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
-	dir = 10
+	dir = 10;
+	layer = 2.36
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -6789,7 +6793,8 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/highsecurity{
-	name = "Master At Arm's Office"
+	name = "Master At Arm's Office";
+	req_access_txt = "3"
 	},
 /turf/open/floor/plasteel,
 /area/ship/security)
@@ -7141,7 +7146,8 @@
 /area/ship/storage)
 "Ij" = (
 /obj/machinery/door/airlock/highsecurity{
-	name = "Bridge"
+	name = "Bridge";
+	req_access_txt = "19"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -9136,13 +9142,14 @@
 /area/ship/engineering/engine)
 "Pw" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/suit/space/hardsuit/engine/elite,
 /obj/machinery/button/door{
 	id = "cutter_ce_lockdown";
 	name = "Window Shutters";
 	pixel_y = 23;
 	pixel_x = -10
 	},
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/suit/space/hardsuit/engine/elite,
 /turf/open/floor/plating,
 /area/ship/engineering/communications)
 "PC" = (
@@ -9406,7 +9413,6 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
-/obj/structure/chair,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "Re" = (
