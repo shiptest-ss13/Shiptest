@@ -18,7 +18,6 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
 /obj/item/clothing/suit/armor/frontier,
 /obj/item/clothing/shoes/cowboy,
-/obj/item/autosurgeon/syndicate/laser_arm,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
@@ -2531,6 +2530,12 @@
 	id = "cutter_cargo";
 	locked = 1
 	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	launch_status = 0;
+	port_direction = 4;
+	preferred_direction = 4
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "mI" = (
@@ -3533,7 +3538,47 @@
 /area/ship/hallway/central)
 "rJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/closet/wall{
+	dir = 1;
+	pixel_y = -28
+	},
+/obj/item/reagent_containers/syringe/contraband/fentanyl{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/syringe/contraband/morphine,
+/obj/item/reagent_containers/syringe/contraband/space_drugs,
+/obj/item/reagent_containers/syringe/contraband/space_drugs,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/happy{
+	pixel_x = 7;
+	pixel_y = -11
+	},
+/obj/item/reagent_containers/pill/happy{
+	pixel_x = 3;
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/pill/happy{
+	pixel_x = 7;
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/pill/happy{
+	pixel_x = 5;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/pill/happy{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/pill/happy{
+	pixel_x = 12;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
 "rN" = (
@@ -9930,7 +9975,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/item/vibro_weapon,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "Uk" = (

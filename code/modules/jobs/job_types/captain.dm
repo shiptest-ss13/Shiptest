@@ -204,3 +204,18 @@
 	suit = null
 	gloves = null
 	suit_store = null
+
+/datum/outfit/job/captain/frontiersmen
+	name = "Captain (Frontiersmen)"
+
+	ears = /obj/item/radio/headset/pirate/alt/captain
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier/admiral
+	head = /obj/item/clothing/head/beret/sec/frontier/officer
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	mask = /obj/item/clothing/mask/gas/sechailer
+	suit = /obj/item/clothing/suit/armor/frontier
+	shoes = /obj/item/clothing/shoes/cowboy
+	gloves = /obj/item/clothing/gloves/combat
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
+
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/pda/captain)

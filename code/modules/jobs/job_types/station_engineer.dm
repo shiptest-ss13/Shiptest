@@ -173,6 +173,7 @@
 	accessory = /obj/item/clothing/accessory/armband/engine
 	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/jackboots
+
 /datum/outfit/job/engineer/gec
 	name = "Station Engineer (GEC)"
 
@@ -215,3 +216,17 @@
 	r_pocket = /obj/item/radio
 	head = /obj/item/clothing/head/beanie/black
 	accessory = /obj/item/clothing/accessory/armband/engine
+
+/datum/outfit/job/engineer/independent/frontiersmen
+	name = "Carpenter (frontiersmen)"
+
+	belt = /obj/item/storage/belt/utility/full/engi
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	suit = /obj/item/clothing/suit/toggle/industrial
+	shoes = /obj/item/clothing/shoes/workboots
+	glasses = /obj/item/clothing/glasses/welding
+	head = /obj/item/clothing/head/helmet/space/pirate/bandana
+
+	l_pocket = /obj/item/radio
+	r_pocket = /obj/item/analyzer
+

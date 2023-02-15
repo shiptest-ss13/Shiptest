@@ -1,0 +1,56 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Cutter-Class Pirate Warship",
+	"prefix": "ISV",
+	"namelists": ["PIRATES", "MYTHOLOGICAL"],
+	"map_short_name": "Cutter-class",
+	"map_path": "_maps/shuttles/shiptest/pirate_cutter.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/frontiersmen",
+			"officer": true,
+			"slots": 1
+		},
+		"Bridge Officer": {
+			"outfit": "/datum/outfit/job/head_of_personnel/frontiersmen",
+			"officer": true,
+			"slots": 2
+		},
+		"Head Of Security": {
+			"outfit": "/datum/outfit/job/hos/frontiersmen",
+			"officer": true,
+			"slots": 1
+		},
+		"Cargo Tech": {
+			"outfit": "/datum/outfit/job/cargo_tech/stockboy",
+			"slots": 2
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/doctor/frontiersmen",
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/engineer/independent/frontiersmen",
+			"slots": 2
+		},
+		"Atmospheric Technician": {
+			"outfit": "/datum/outfit/job/atmos/frontiersmen",
+			"slots": 1
+		},
+		"Chief Engineer" :{
+			"outfit": "/datum/outfit/job/ce/frontiersmen",
+			"officer": true,
+			"slots": 1
+		},
+		"Cook": {
+			"outfit": "/datum/outfit/job/cook/frontiersmen",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant/frontiersmen",
+			"slots": 6
+		}
+	},
+	"enabled": true
+}

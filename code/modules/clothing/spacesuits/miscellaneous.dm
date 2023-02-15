@@ -569,7 +569,7 @@ Contains:
 	w_class = WEIGHT_CLASS_NORMAL
 
 
-/obj/item/clothing/suit/space/Scar
+/obj/item/clothing/suit/space/scar
 	name = "Scar Suit"
 	desc = "A heavily modified eva suit, custom made for the captain of the cutter."
 	icon_state = "hostile_env"

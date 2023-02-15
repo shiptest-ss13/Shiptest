@@ -215,3 +215,10 @@ Assistant
 	belt = /obj/item/reagent_scanner
 	backpack_contents = list(/obj/item/book/manual/wiki/chemistry=1)
 
+/datum/outfit/job/assistant/frontiersmen
+	name = "Cabin Boy (frontiersmen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	shoes = /obj/item/clothing/shoes/jackboots
+	r_pocket = /obj/item/radio
+	head = /obj/item/clothing/head/beret/sec/frontier
