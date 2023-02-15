@@ -21,6 +21,12 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/button/door{
+	id = "pirate_cutter_escape";
+	name = "Escape Shutters";
+	pixel_x = 7;
+	pixel_y = 25
+	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/office)
 "ah" = (
@@ -673,9 +679,11 @@
 /area/ship/crew)
 "eb" = (
 /obj/machinery/door/poddoor{
-	id = "wwaw"
+	id = "pirate_cutter_escape"
 	},
-/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/wooden/crude{
+	layer = 3.1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
 "ed" = (
@@ -4196,6 +4204,7 @@
 /obj/effect/turf_decal/industrial/warning/cee,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/machinery/airalarm/directional/north,
+/obj/item/clothing/suit/space/scar,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
 "uB" = (
@@ -6801,6 +6810,15 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
+"Gi" = (
+/obj/structure/barricade/wooden/crude{
+	layer = 3.1
+	},
+/obj/machinery/door/poddoor{
+	id = "pirate_cutter_escape"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew/office)
 "Gl" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -10012,6 +10030,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/item/vibro_weapon,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "Uk" = (
@@ -13218,7 +13237,7 @@ ws
 ws
 yL
 eb
-eb
+Gi
 yL
 ws
 ws
