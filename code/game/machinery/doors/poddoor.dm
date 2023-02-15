@@ -16,6 +16,7 @@
 	damage_deflection = 70
 	poddoor = TRUE
 	assemblytype = /obj/structure/poddoor_assembly
+	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
 	var/open_sound = 'sound/machines/blastdoor.ogg'
 	var/close_sound = 'sound/machines/blastdoor.ogg'
 

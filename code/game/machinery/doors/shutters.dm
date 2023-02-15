@@ -8,6 +8,7 @@
 	damage_deflection = 20
 	open_sound = 'sound/machines/shutters_open.ogg'
 	close_sound = 'sound/machines/shutters_close.ogg'
+	smoothing_groups = null
 
 /obj/machinery/door/poddoor/shutters/preopen
 	icon_state = "open"
