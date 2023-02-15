@@ -222,3 +222,4 @@ Assistant
 	shoes = /obj/item/clothing/shoes/jackboots
 	r_pocket = /obj/item/radio
 	head = /obj/item/clothing/head/beret/sec/frontier
+	ears = /obj/item/radio/headset/pirate

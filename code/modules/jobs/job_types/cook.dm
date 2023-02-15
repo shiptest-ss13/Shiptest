@@ -56,3 +56,4 @@
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	ears = /obj/item/radio/headset/pirate
 	head  = /obj/item/clothing/head/flatcap
+	suit = /obj/item/clothing/suit/apron/chef

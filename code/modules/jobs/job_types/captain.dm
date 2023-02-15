@@ -210,7 +210,7 @@
 
 	ears = /obj/item/radio/headset/pirate/alt/captain
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/admiral
-	head = /obj/item/clothing/head/beret/sec/frontier/officer
+	head = /obj/item/clothing/head/caphat/frontier/admiral
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/armor/frontier

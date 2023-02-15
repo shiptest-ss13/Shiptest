@@ -95,3 +95,4 @@
 	shoes = /obj/item/clothing/shoes/cowboy/black
 	gloves = /obj/item/clothing/gloves/combat
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+	suit_store = null
