@@ -14,36 +14,28 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	for(var/geartype in subtypesof(/datum/gear))
 		var/datum/gear/G = geartype
 
-		var/use_name = initial(G.display_name)
-		var/use_category = initial(G.sort_category)
-		var/list/use_subcategories = splittext(initial(G.sort_subcategories), ", ")
-		use_subcategories += "All"
+		var/display_name = initial(G.display_name)
+		var/list/categories = splittext(initial(G.sort_categories), ", ")
+		categories += "All"
 
 		if(G == initial(G.subtype_path))
 			continue
 
-		if(!use_name)
+		if(!display_name)
 			WARNING("Loadout - Missing display name: [G]")
 			continue
-		if(!initial(G.path) && use_category != "OOC") //OOC category does not contain actual items
+		if(!initial(G.path))
 			WARNING("Loadout - Missing path definition: [G]")
 			continue
 
-		if(!GLOB.loadout_categories[use_category])
-			GLOB.loadout_categories[use_category] = list()
-		for(var/loadout_subcategory in use_subcategories)
-			if(!GLOB.loadout_categories[use_category][loadout_subcategory])
-				GLOB.loadout_categories[use_category][loadout_subcategory] = new /datum/loadout_category(loadout_subcategory)
-			var/datum/loadout_category/LC = GLOB.loadout_categories[use_category][loadout_subcategory]
-			GLOB.gear_datums[use_name] = new geartype
-			LC.gear[use_name] = GLOB.gear_datums[use_name]
+		for(var/loadout_category in categories)
+			if(!GLOB.loadout_categories[loadout_category])
+				GLOB.loadout_categories[loadout_category] = new /datum/loadout_category(loadout_category)
+			var/datum/loadout_category/LC = GLOB.loadout_categories[loadout_category]
+			GLOB.gear_datums[display_name] = new geartype
+			LC.gear[display_name] = GLOB.gear_datums[display_name]
 
 	GLOB.loadout_categories = sortAssoc(GLOB.loadout_categories)
-	for(var/loadout_category in GLOB.loadout_categories)
-		GLOB.loadout_categories[loadout_category] = sortAssoc(GLOB.loadout_categories[loadout_category])
-		for(var/loadout_subcategory in GLOB.loadout_categories[loadout_category])
-			var/datum/loadout_category/LC = GLOB.loadout_categories[loadout_category][loadout_subcategory]
-			LC.gear = sortAssoc(LC.gear)
 	return 1
 
 /datum/gear
@@ -57,20 +49,12 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	var/slot
 	///Roles that can spawn with this item.
 	var/list/allowed_roles
-	///Stop certain species from receiving this gear
-	var/list/species_blacklist
-	///Only allow certain species to receive this gear
-	var/list/species_whitelist
 	///A list of jobs with typepaths to the loadout item the job should recieve
 	var/list/role_replacements
-	///The tab under gear that the loadout item is listed under
-	var/sort_category = "General"
-	///The subtabs under gear that the loadout item is listed under, eg. "Glasses, Prescription Glasses"
-	var/sort_subcategories = "Misc"
+	///The tabs under gear that the loadout item is listed under, eg. "Glasses, Prescription Glasses"
+	var/sort_categories = "Misc"
 	///for skipping organizational subtypes (optional)
 	var/subtype_path = /datum/gear
-	///Hg add comment later
-	var/list/united_subtypes
 	///Balance cost of loadout item
 	var/cost = 5
 	///Maximum amount of an item that can be taken
@@ -81,10 +65,6 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	if(!description)
 		var/obj/O = path
 		description = initial(O.desc)
-
-///Called when the gear is first purchased
-/datum/gear/proc/purchase(client/C)
-	return
 
 /datum/gear_data
 	var/path

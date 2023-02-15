@@ -1,12 +1,12 @@
 /datum/gear/eyewear
 	subtype_path = /datum/gear/eyewear
 	slot = ITEM_SLOT_EYES
-	sort_category = "Eyewear"
 
 //Glasses
+
 /datum/gear/eyewear/glasses
 	subtype_path = /datum/gear/eyewear/glasses
-	sort_subcategories = "Glasses"
+	sort_categories = "Glasses"
 
 /datum/gear/eyewear/glasses/cheapsuns
 	display_name = "cheap sunglasses"
@@ -28,10 +28,10 @@
 	display_name = "red glasses"
 	path = /obj/item/clothing/glasses/red
 
-//Prescription glasses
+	//Prescription
 /datum/gear/eyewear/glasses/prescription
 	subtype_path = /datum/gear/eyewear/glasses/prescription
-	sort_subcategories = "Glasses, Prescription Glasses"
+	sort_categories = "Glasses, Prescription Glasses"
 
 /datum/gear/eyewear/glasses/prescription/regular
 	display_name = "prescription glasses"
@@ -60,15 +60,21 @@
 	display_name = "prescription glasses, hipster"
 	path = /obj/item/clothing/glasses/regular/hipster
 
+//Single Eye
 
-//Misc
-/datum/gear/eyewear/eyepatch
+/datum/gear/eyewear/single_eye
+	subtype_path = /datum/gear/eyewear/single_eye
+	sort_categories = "Single Eye"
+
+/datum/gear/eyewear/single_eye/eyepatch
 	display_name = "eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch
 
-/datum/gear/eyewear/monocle
+/datum/gear/eyewear/single_eye/monocle
 	display_name = "monocle"
 	path = /obj/item/clothing/glasses/monocle
+
+//Blindfolds
 
 /datum/gear/eyewear/blindfold
 	display_name = "blindfold"

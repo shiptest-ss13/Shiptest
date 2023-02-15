@@ -1,25 +1,24 @@
 /datum/gear/hat
 	subtype_path = /datum/gear/hat
 	slot = ITEM_SLOT_HEAD
-	sort_category = "Headwear"
-	species_blacklist = list("plasmaman") //Their helmet takes up the head slot
 
 //Hardhats
 
 /datum/gear/hat/hhat_yellow
 	display_name = "hardhat, yellow"
 	path = /obj/item/clothing/head/hardhat
-	allowed_roles = list("Chief Engineer", "Engineer", "Atmospheric Technician")
+	allowed_roles = list(
+		/datum/job/chief_engineer,
+		/datum/job/engineer,
+		/datum/job/atmos)
 
 /datum/gear/hat/hhat_orange
 	display_name = "hardhat, orange"
 	path = /obj/item/clothing/head/hardhat/orange
-	allowed_roles = list("Chief Engineer", "Engineer", "Atmospheric Technician")
 
 /datum/gear/hat/hhat_blue
 	display_name = "hardhat, blue"
 	path = /obj/item/clothing/head/hardhat/dblue
-	allowed_roles = list("Chief Engineer", "Engineer", "Atmospheric Technician")
 
 //Berets, AKA how I lost my will to live again
 
@@ -81,13 +80,21 @@
 /datum/gear/hat/beret/engineering/hazard
 	display_name = "beret, hazard"
 	path = /obj/item/clothing/head/beret/eng/hazard
-	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
+	allowed_roles = list(
+		/datum/job/chief_engineer,
+		/datum/job/engineer,
+		/datum/job/atmos)
 
 //Misc
 
 /datum/gear/hat/that
 	display_name = "top hat"
 	path = /obj/item/clothing/head/that
+
+/datum/gear/bandana
+	display_name = "head bandana, red"
+	path = /obj/item/clothing/mask/bandana/red
+
 
 /datum/gear/hat/maidheadband
 	display_name = "maid headband"
@@ -120,11 +127,6 @@
 /datum/gear/hat/catears
 	display_name = "cat ears"
 	path = /obj/item/clothing/head/kitty
-
-/datum/gear/hat/horse
-	display_name = "horse mask"
-	path = /obj/item/clothing/mask/horsehead
-	slot = ITEM_SLOT_MASK
 
 /datum/gear/hat/piratehat
 	display_name = "pirate hat"

@@ -166,8 +166,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	///Gear the character has equipped
 	var/list/equipped_gear = list()
-	///Gear tab currently being viewed
-	var/gear_tab = "General"
 	///Gear subtab currently being viewed
 	var/gear_subtab = "All"
 	///Gear slots to display
@@ -921,19 +919,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat+= " | <a href='?_src_=prefs;preference=gear;change_slot=["All"]'>Enable All Slots</a></td></tr>"
 				dat += "<tr><td colspan=6><center>"
 				firstcat = 1
-				for(var/category in GLOB.loadout_categories)
-					if(firstcat)
-						firstcat = 0
-					else
-						dat += " |"
-					if(category == gear_tab)
-						dat += " <span class='linkOff'>[category]</span> "
-					else
-						dat += " <a href='?_src_=prefs;preference=gear;select_category=[category]'>[category]</a> "
-				dat += "</center></td></tr>"
-				dat += "<tr><td colspan=6><center>"
 				firstcat = 1
-				for(var/category in GLOB.loadout_categories[gear_tab])
+				for(var/category in GLOB.loadout_categories)
 					if(firstcat)
 						firstcat = 0
 					else
@@ -944,7 +931,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += " <a href='?_src_=prefs;preference=gear;select_subcategory=[category]'>[category]</a> "
 				dat += "</b></center></td></tr>"
 
-				var/datum/loadout_category/LC = GLOB.loadout_categories[gear_tab][gear_subtab]
+				var/datum/loadout_category/LC = GLOB.loadout_categories[gear_subtab]
 				dat += "<tr><td colspan=5><hr></td></tr>"
 				dat += "<tr><td colspan=5><b><center>[LC.category]</center></b></td></tr>"
 				dat += "<tr><td colspan=5><hr></td></tr>"
@@ -1397,13 +1384,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /datum/preferences/proc/set_loadout_advanced(mob/user, datum/gear/gear_datum)
 	var/list/dat = list()
 
-	var/datum/browser/popup = new(user, "mob_loadout", "<div align='center'>[initial(gear_datum.display_name)]</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	var/datum/browser/popup = new(user, "mob_loadout", "<div align='center'>[initial(gear_datum.display_name)]</div>", 900, 600)
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 
-/datum/preferences/proc/handle_loadout_display(var/list/LC, var/spacer = "")
+/datum/preferences/proc/handle_loadout_display(list/LC)
 	var/list/dat = list()
+	LC = sortList(LC, /proc/cmp_text_asc)
 	for(var/gear_name in LC)
 		var/datum/gear/G = LC[gear_name]
 		var/slot = G.slot
@@ -1425,17 +1413,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(ITEM_SLOT_MASK)
 				slot = "Face"
 		if((!slot && ("No Slot" in gear_slots)) || (slot in gear_slots))
-			dat += "<tr style='vertical-align:top;'><td width=20%>[spacer]<a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;toggle_gear=[G.display_name]'>[G.display_name] </a>"
-			if(G.united_subtypes)
-				dat += "<a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;expand_gear=[G.display_name]'> V </a>"
-			else if(G.limit > 1)
+			dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;toggle_gear=[G.display_name]'>[G.display_name] </a>"
+			if(G.limit > 1)
 				dat += "<a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;add_gear=[G.display_name]'> + </a>"
 				dat += "<a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;remove_gear=[G.display_name]'> - </a>"
 			dat += "</td><td>"
-			if(G.united_subtypes && (G.type in expanded_gear))
-				dat+= handle_loadout_display(G.united_subtypes, "[spacer]     ")
 			if(G.role_replacements)
-				dat += "<font size=2>[spacer]"
+				dat += "<font size=2>"
 				var/list/rolereplacements = list()
 				for(var/role in G.role_replacements)
 					var/datum/job/role_datum = role
@@ -1443,8 +1427,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				rolereplacements = sortList(rolereplacements, /proc/cmp_text_asc)
 				dat += english_list(rolereplacements, null, ", ")
 				dat += "</font>"
-			dat += "</td><td><font size=2><i>[spacer][G.cost]</font></td>"
-			dat += "</td><td><font size=2><i>[spacer][G.limit > 0 ? G.limit : "None"]</font></td>"
+			dat += "</td><td><font size=2><i>[G.cost]</font></td>"
+			dat += "</td><td><font size=2><i>[G.limit > 0 ? G.limit : "None"]</font></td>"
 			dat+= "</tr>"
 	return dat
 
@@ -1452,6 +1436,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/quirk_restrictions = check_quirk_restrictions(quirk_name)
 	var/list/dat = list()
 	var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_name]
+	dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center>"
 	dat += "Base value: [quirk_instance.value] <br>"
 	if(quirk_restrictions["species"])
 		dat += "Species restricions: [quirk_restrictions["species"]]"
@@ -1468,7 +1453,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</table><br>"
 	dat += "<center><a href='?_src_=prefs;preference=quirk;task=close'>Done</a></center><br>"
 
-	var/datum/browser/popup = new(user, "mob_quirks", "<div align='center'>[quirk_instance.name]</div>", 800, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	var/datum/browser/popup = new(user, "mob_quirks", "<div align='center'>[quirk_instance.name]</div>", 800, 600)
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
@@ -1706,6 +1691,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/status = input(user, "You are modifying your [value] selection, what should it be changed to?", "Character Preference", quirk_preferences[quirk][value]) as null|anything in options
 						if(status)
 							quirk_preferences[quirk][value] = status
+				set_quirk_advanced(user, quirk)
 			if("update")
 				var/quirk = href_list["quirk"]
 				if(!SSquirks.quirks[quirk])
@@ -1756,9 +1742,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					alert(user, "Can't equip [TG.display_name]. It conflicts with an already-equipped item.")
 			save_preferences()
 
-		else if(href_list["select_category"])
-			gear_tab = href_list["select_category"]
-			gear_subtab = (gear_subtab in GLOB.loadout_categories[gear_tab]) ? gear_subtab : "All"
 		else if(href_list["select_subcategory"])
 			gear_subtab = href_list["select_subcategory"]
 		else if(href_list["clear_loadout"])

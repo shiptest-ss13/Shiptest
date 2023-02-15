@@ -2,7 +2,7 @@
 /datum/gear/uniform
 	subtype_path = /datum/gear/uniform
 	slot = ITEM_SLOT_ICLOTHING
-	sort_category = "Uniforms"
+	sort_categories = "Uniforms"
 
 // Utility jumpsuits
 

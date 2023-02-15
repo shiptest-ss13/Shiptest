@@ -1,7 +1,6 @@
 /datum/gear/suit
 	subtype_path = /datum/gear/suit
 	slot = ITEM_SLOT_OCLOTHING
-	sort_category = "External Wear"
 
 //WINTER COATS
 /datum/gear/suit/coat
