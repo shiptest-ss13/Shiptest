@@ -162,7 +162,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	name = "Construction Zone"
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -426,7 +428,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "dg" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Atmospherics"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -671,7 +675,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "fG" = (
-/obj/machinery/door/airlock/hatch,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
@@ -682,6 +685,9 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "Atmospherics"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
@@ -1106,7 +1112,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "jh" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Bridge"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
@@ -1822,7 +1830,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "pT" = (
-/obj/machinery/door/airlock/external/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
@@ -1837,6 +1844,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/external/glass{
+	name = "Construction Zone"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
@@ -2175,7 +2185,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/door/airlock/external/glass,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2187,6 +2196,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/door/airlock/external/glass{
+	name = "Construction Zone"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
@@ -3201,7 +3213,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Cb" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Canteen Backroom"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
@@ -3438,7 +3452,6 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Ez" = (
-/obj/machinery/door/airlock/external/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -3453,6 +3466,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/external/glass{
+	name = "Construction Zone"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -3529,7 +3545,9 @@
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "FA" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Bathroom"
+	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -3805,7 +3823,8 @@
 /area/ship/engineering/atmospherics)
 "Il" = (
 /obj/machinery/door/airlock/hatch{
-	id_tag = "ce_bolts"
+	id_tag = "ce_bolts";
+	name = "Project Overseer's Office"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -4012,7 +4031,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "JC" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Engine Room"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -4898,7 +4919,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "PR" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Canteen"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -4917,7 +4940,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "PU" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Crew Quarters"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
