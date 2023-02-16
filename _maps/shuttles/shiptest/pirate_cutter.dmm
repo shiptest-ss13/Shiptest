@@ -406,6 +406,7 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/melee/baseball_bat/ablative,
+/obj/item/trash/energybar,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/security)
 "cm" = (
@@ -678,11 +679,11 @@
 /turf/open/floor/concrete/tiles,
 /area/ship/crew)
 "eb" = (
-/obj/machinery/door/poddoor{
-	id = "pirate_cutter_escape"
-	},
 /obj/structure/barricade/wooden/crude{
 	layer = 3.1
+	},
+/obj/machinery/door/poddoor{
+	id = "pirate_cutter_escape"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
@@ -1089,6 +1090,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "fP" = (
@@ -3750,7 +3752,8 @@
 /area/ship/security)
 "sq" = (
 /obj/machinery/mass_driver{
-	dir = 4
+	dir = 4;
+	id = "cutter_gun_driver"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1;
@@ -4904,7 +4907,8 @@
 /area/ship/storage)
 "xo" = (
 /obj/machinery/mass_driver{
-	dir = 4
+	dir = 4;
+	id = "cutter_gun_driver"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 2;
@@ -6810,15 +6814,6 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
-"Gi" = (
-/obj/structure/barricade/wooden/crude{
-	layer = 3.1
-	},
-/obj/machinery/door/poddoor{
-	id = "pirate_cutter_escape"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/office)
 "Gl" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -8309,15 +8304,22 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ly" = (
-/obj/structure/chair{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/red/line{
 	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/effect/decal/cleanable/glass,
+/obj/structure/chair{
+	dir = 4;
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/soda_cans/sodawater{
+	pixel_x = 7;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -9049,6 +9051,15 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew)
+"OA" = (
+/obj/machinery/door/poddoor{
+	id = "pirate_cutter_escape"
+	},
+/obj/structure/barricade/wooden/crude{
+	layer = 3.1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew/office)
 "OC" = (
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
@@ -13236,8 +13247,8 @@ ws
 ws
 ws
 yL
+OA
 eb
-Gi
 yL
 ws
 ws
