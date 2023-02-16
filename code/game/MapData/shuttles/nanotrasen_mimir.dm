@@ -33,6 +33,8 @@
 /obj/machinery/door/airlock/maintenance_hatch/seclock
 	req_one_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS)
 
+/obj/machinery/door/airlock/command/glass/seclock
+	req_one_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS)
 
 
 //notes
@@ -49,3 +51,8 @@
 /obj/item/paper/fluff/mimir/jacket
 	name = "Warden's Secret"
 	info = "A warden's seat is their place of rest. Look under where your ass rests best."
+
+/obj/item/paper/fluff/mimir/recycler
+	name = "TURN ON THE RECYCLER!!!"
+	info = "IMPORTANT!!!! TURN ON THE AIR RECYCLER IN THIS ROOM!!! JUST TURN ON AND MAX\
+	ALL THE ATMOS IN THIS ROOM!!!!!!!!"
