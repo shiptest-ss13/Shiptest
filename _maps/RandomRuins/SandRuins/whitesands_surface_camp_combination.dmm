@@ -97,7 +97,7 @@
 "eJ" = (
 /obj/structure/mineral_door/wood,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/space/basic,
+/turf/open/floor/wood,
 /area/whitesands/surface/outdoors)
 "eP" = (
 /turf/open/floor/concrete,
@@ -218,7 +218,7 @@
 	},
 /obj/item/reagent_containers/food/drinks/colocup{
 	pixel_x = -9;
-	list_reagents = list(/datum/reagent/toxin/leadacetate = 5, /datum/reagent/toxin/acid/fluacid = 5, /datum/reagent/toxin/acid/nitracid = 5, /datum/reagent/drug/methamphetamine = 5)
+	list_reagents = list(/datum/reagent/toxin/leadacetate=5,/datum/reagent/toxin/acid/fluacid=5,/datum/reagent/toxin/acid/nitracid=5,/datum/reagent/drug/methamphetamine=5)
 	},
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
@@ -1154,10 +1154,6 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
-/area/whitesands/surface/outdoors)
-"RB" = (
-/obj/structure/sign/poster/official/twelve_gauge,
-/turf/closed/wall/mineral/wood,
 /area/whitesands/surface/outdoors)
 "RC" = (
 /obj/structure/table/wood,
@@ -4022,7 +4018,7 @@ Yj
 Ld
 iQ
 iQ
-RB
+VF
 Ir
 Px
 KJ
