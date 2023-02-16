@@ -1883,7 +1883,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/freezer{
-	name = "kitchen"
+	name = "Kitchen"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
@@ -9051,15 +9051,6 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew)
-"OA" = (
-/obj/machinery/door/poddoor{
-	id = "pirate_cutter_escape"
-	},
-/obj/structure/barricade/wooden/crude{
-	layer = 3.1
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/office)
 "OC" = (
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
@@ -9635,6 +9626,15 @@
 	icon_state = "foam_plating"
 	},
 /area/ship/maintenance/port)
+"RS" = (
+/obj/machinery/door/poddoor{
+	id = "pirate_cutter_escape"
+	},
+/obj/structure/barricade/wooden/crude{
+	layer = 3.1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew/office)
 "RW" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ship/engineering/incinerator)
@@ -13247,7 +13247,7 @@ ws
 ws
 ws
 yL
-OA
+RS
 eb
 yL
 ws
