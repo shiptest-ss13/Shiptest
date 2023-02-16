@@ -2368,9 +2368,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		pref_species = new /datum/species/human
 		save_character()
 
-	if(pref_species.id != "ipc") /// if triggered ipc arm, and legs sprites brake,prosthetics work for vox and kepori and update just fine for everyone
-		character.dna.features = features.Copy()
-		character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+	//prosthetics work for vox and kepori and update just fine for everyone
+	character.dna.features = features.Copy()
+	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 
 	for(var/pros_limbs in prosthetic_limbs)
 		var/obj/item/bodypart/old_part = character.get_bodypart(pros_limbs)
@@ -2389,8 +2389,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(PROSTHETIC_ROBOTIC)
 				var/obj/item/bodypart/prosthetic
 				var/typepath
-				if(pref_species.unique_prosthesis) // Checks for if the species has a unique limb type, otherwise defaults to human
-					typepath = text2path("/obj/item/bodypart/[pros_limbs]/robot/surplus/[pref_species.id]")
+				if(character.dna.species.unique_prosthesis) // Checks for if the species has a unique limb type, otherwise defaults to human
+					typepath = text2path("/obj/item/bodypart/[pros_limbs]/robot/surplus/[character.dna.species.id]")
 				else
 					typepath = text2path("/obj/item/bodypart/[pros_limbs]/robot/surplus")
 				if(!ispath(typepath))
@@ -2401,8 +2401,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(old_part)
 					qdel(old_part)
 
-	if(pref_species.id == "ipc")
-		character.dna.features = features.Copy()// if triggered vox and kepori arm do not spawn in. but ipcs sprites wont brake,though they still dont immiditly update prosthetic for the ipc still
+	if(pref_species.id == "ipc")// if triggered vox and kepori arm do not spawn in. but ipcs sprites brake without it
 		character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
 	character.dna.real_name = character.real_name
