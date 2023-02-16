@@ -216,7 +216,7 @@ Assistant
 	backpack_contents = list(/obj/item/book/manual/wiki/chemistry=1)
 
 /datum/outfit/job/assistant/frontiersmen
-	name = "Cabin Boy (frontiersmen)"
+	name = "Deckhand (frontiersmen)"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	shoes = /obj/item/clothing/shoes/jackboots

@@ -169,6 +169,7 @@
 
 /datum/outfit/job/doctor/frontiersmen
 	name = "Surgeon (frontiersmen)"
+
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	glasses = /obj/item/clothing/glasses/hud/health/prescription
 	ears = /obj/item/radio/headset/pirate
