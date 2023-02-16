@@ -345,9 +345,15 @@
 			user.physiology.burn_mod *= 0.5
 
 		if(20)
-			//Free wizard!
-			T.visible_message("<span class='userdanger'>Magic flows out of [src] and into [user]!</span>")
-			user.mind.make_Wizard()
+			//Free wizard! //NOT ANY MORE FUCKING CHRIST
+			T.visible_message("<span class='userdanger'>Magic arches out of [src] and into ground under [user]!</span>")
+			new /obj/item/clothing/suit/wizrobe(drop_location())
+			new /obj/item/clothing/head/wizard(drop_location())
+			new /obj/item/clothing/gloves/combat/wizard(drop_location())
+			new /obj/item/clothing/suit/wizrobe/magusblue(drop_location())
+			new /obj/item/clothing/head/wizard/magus(drop_location())
+			new /obj/item/staff(drop_location())
+			new /obj/structure/mirror/magic(drop_location())
 
 /datum/outfit/butler
 	name = "Butler"
