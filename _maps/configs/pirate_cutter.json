@@ -17,8 +17,13 @@
 			"officer": true,
 			"slots": 2
 		},
-		"Head Of Security": {
+		"Master At Arms": {
 			"outfit": "/datum/outfit/job/hos/frontiersmen",
+			"officer": true,
+			"slots": 1
+		},
+		"Head Carpenter" :{
+			"outfit": "/datum/outfit/job/ce/frontiersmen",
 			"officer": true,
 			"slots": 1
 		},
@@ -26,11 +31,11 @@
 			"outfit": "/datum/outfit/job/cargo_tech/frontiersmen",
 			"slots": 2
 		},
-		"Medical Doctor": {
+		"Surgeon": {
 			"outfit": "/datum/outfit/job/doctor/frontiersmen",
 			"slots": 1
 		},
-		"Engineer": {
+		"Carpenter": {
 			"outfit": "/datum/outfit/job/engineer/independent/frontiersmen",
 			"slots": 2
 		},
@@ -38,18 +43,17 @@
 			"outfit": "/datum/outfit/job/atmos/frontiersmen",
 			"slots": 1
 		},
-		"Chief Engineer" :{
-			"outfit": "/datum/outfit/job/ce/frontiersmen",
-			"officer": true,
-			"slots": 1
-		},
-		"Cook": {
+		"Steward": {
 			"outfit": "/datum/outfit/job/cook/frontiersmen",
 			"slots": 1
 		},
-		"Assistant": {
+		"Deckhand": {
 			"outfit": "/datum/outfit/job/assistant/frontiersmen",
-			"slots": 6
+			"slots": 3
+		},
+		"Buccaneer": {
+			"outfit": "/datum/outfit/job/security/Frontiersmen",
+			"slots": 3
 		}
 	},
 	"enabled": false

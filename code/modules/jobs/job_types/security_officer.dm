@@ -271,4 +271,20 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
 
+/datum/outfit/job/security/Frontiersmen
+	name = "Buccaneer (Frontiersmen)"
+
+	head = /obj/item/clothing/head/beret/sec/frontier
+	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
+	suit = null
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/pirate/alt
+
+	belt = /obj/item/storage/belt/security/webbing
+
+	l_pocket = /obj/item/flashlight/seclite
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+
 //Shiptest outfits end
