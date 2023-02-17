@@ -34,8 +34,7 @@
 	id = "onehalf"
 	suffix = "onehalf.dmm"
 	name = "DK Excavator 453"
-	description = "Based on the trace elements we've detected on the gutted asteroids, we suspect that a mining ship using a restricted engine is somewhere in the area. \
-	We'd like to request a patrol vessel to investigate."
+	description = "Formerly a thriving planetary mining outpost, now a bit of an exploded mess. One has to wonder how it got here"
 
 /* shiptest: Replaced with dark_glade ruin
 /datum/map_template/ruin/space/way_home
@@ -174,3 +173,10 @@
 	suffix = "lab4071.dmm"
 	name = "Syndicate Laboratory 4071"
 	description = "A Syndicate laboratory run by syndicate scientists."
+
+/datum/map_template/ruin/space/spacemall
+	id = "spacemall"
+	suffix = "spacemall.dmm"
+	name = "Space Mall"
+	description = "An old shopping centre, owned by a former member of Nanotrasen's board of directors.."
+

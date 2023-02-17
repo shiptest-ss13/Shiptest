@@ -12,7 +12,8 @@
 	var/can_contaminate
 
 /datum/component/radioactive/Initialize(_strength=0, _source, _half_life=RAD_HALF_LIFE, _can_contaminate=TRUE)
-	strength = _strength
+	// shouldn't ever happen, but it pays to be a little careful
+	strength = min(_strength, INFINITY)
 	source = _source
 	hl3_release_date = _half_life
 	can_contaminate = _can_contaminate
@@ -76,11 +77,11 @@
 		out += "The air around [master] feels warm"
 	switch(strength)
 		if(RAD_AMOUNT_LOW to RAD_AMOUNT_MEDIUM)
-			out += "[length(out) ? " and it " : "[master] "]feels weird to look at."
+			out += "[length(out) ? " and it " : "[master] "]feels weird to look at"
 		if(RAD_AMOUNT_MEDIUM to RAD_AMOUNT_HIGH)
-			out += "[length(out) ? " and it " : "[master] "]seems to be glowing a bit."
+			out += "[length(out) ? " and it " : "[master] "]seems to be glowing a bit"
 		if(RAD_AMOUNT_HIGH to INFINITY) //At this level the object can contaminate other objects
-			out += "[length(out) ? " and it " : "[master] "]hurts to look at."
+			out += "[length(out) ? " and it " : "[master] "]hurts to look at"
 	if(!LAZYLEN(out))
 		return
 	out += "."
