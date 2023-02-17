@@ -700,6 +700,9 @@
 /area/ship/crew)
 "eh" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "cutter_windows_general"
+	},
 /turf/open/floor/plating,
 /area/ship/security)
 "em" = (
@@ -2789,6 +2792,9 @@
 /area/ship/storage)
 "nD" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "cutter_windows_general"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/incinerator)
 "nI" = (
@@ -5200,6 +5206,13 @@
 	icon_state = "foam_plating"
 	},
 /area/ship/hallway/central)
+"zc" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "cutter_windows_general"
+	},
+/turf/open/floor/plating,
+/area/ship/security/armory)
 "zf" = (
 /obj/structure/girder/reinforced,
 /obj/effect/decal/cleanable/blood/old,
@@ -7276,6 +7289,9 @@
 /area/ship/hallway/fore)
 "Ik" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "cutter_windows_general"
+	},
 /turf/open/floor/plating,
 /area/ship/crew)
 "Im" = (
@@ -7446,6 +7462,9 @@
 /area/ship/maintenance/fore)
 "IM" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "cutter_windows_general"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "IP" = (
@@ -11178,6 +11197,9 @@
 /area/ship/crew)
 "Zy" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "cutter_windows_general"
+	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen/kitchen)
 "ZB" = (
@@ -12648,7 +12670,7 @@ zE
 LQ
 AM
 Hm
-sy
+zc
 ws
 ws
 ws
