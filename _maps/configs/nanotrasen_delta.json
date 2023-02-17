@@ -1,0 +1,27 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Delta-class Frigate",
+	"prefix": "NTSV",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"BRITISH_NAVY",
+		"MERCANTILE"
+	],
+	"map_short_name": "Delta-class",
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_delta.dmm",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/nt",
+			"officer": true,
+			"slots": 1
+		},
+		"Roboticist": 2,
+		"Engineer": {
+			"outfit": "/datum/outfit/job/engineer/nt",
+			"slots": 1
+		},
+		"Assistant": 3
+	},
+	"enabled": true
+}

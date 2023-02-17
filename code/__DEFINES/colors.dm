@@ -43,6 +43,7 @@
 #define COLOR_LIGHT_GRAYISH_RED "#E4C7C5"
 /// Warm but extremely diluted red. rgb(250, 130, 130)
 #define COLOR_SOFT_RED "#FA8282"
+#define COLOR_BUBBLEGUM_RED "#950A0A"
 
 #define COLOR_YELLOW "#FFFF00"
 #define COLOR_VIVID_YELLOW "#FBFF23"

@@ -83,8 +83,8 @@
 //For those who want to play farm simulator 503
 
 /obj/vehicle/ridden/lawnmower
-	name = "lawn mower"
-	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace."
+	name = "Donk! Co. TM Deluxe Lawnmower 3003"
+	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is <b>on</b>."
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "lawnmower"
 	var/emagged = FALSE
@@ -100,12 +100,14 @@
 
 /obj/vehicle/ridden/lawnmower/emagged
 	emagged = TRUE
+	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is off"
 
 /obj/vehicle/ridden/lawnmower/emag_act(mob/user)
 	if(emagged)
 		to_chat(user, "<span class='warning'>The safety mechanisms on \the [src] are already disabled!</span>")
 		return
 	to_chat(user, "<span class='warning'>You disable the safety mechanisms on \the [src].</span>")
+	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is <b>off</b>."
 	emagged = TRUE
 
 /obj/vehicle/ridden/lawnmower/Bump(atom/A)
@@ -168,7 +170,7 @@
 		mowed = TRUE
 
 	var/obj/structure/flora/flora = locate(/obj/structure/flora) in loc
-	if(ayy_weeds)
+	if(flora)
 		if(!istype(flora, /obj/structure/flora/rock))
 			qdel(flora)
 			mowed = TRUE
