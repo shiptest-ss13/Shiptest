@@ -48,6 +48,9 @@
 		computer = comp
 
 /datum/computer_file/program/Destroy()
+	// holder.holder is the computer that has drive installed. If we are Destroy()ing program that's currently running kill it.
+	if(holder.holder && holder.holder.active_program == src)
+		holder.holder.kill_program(forced = TRUE)
 	computer = null
 	. = ..()
 

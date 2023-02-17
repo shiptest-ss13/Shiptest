@@ -210,7 +210,7 @@
 	filename = "lifeline"
 	filedesc = "Lifeline"
 	extended_desc = "This program allows for tracking of crew members via their suit sensors."
-	requires_ntnet = TRUE
+	requires_ntnet = FALSE //the crew pinpointer doesn't need ntnet.
 	transfer_access = ACCESS_MEDICAL
 	available_on_ntnet = TRUE
 	program_icon = "heartbeat"
