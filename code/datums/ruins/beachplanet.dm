@@ -34,6 +34,12 @@
 	id = "beach_pirate"
 	description = "A small pirate outpost formed from the remains of a wrecked shuttle."
 	suffix = "beach_pirate_crash.dmm"
+  
+/datum/map_template/ruin/beachplanet/knight
+	name = "Knight's Rest"
+	id = "knights_rest"
+	description = "An small castle holding the grave of a renowned warrior"
+	suffix = "beach_knights_rest.dmm"
 
 /datum/map_template/ruin/beachplanet/treasurecove
 	name = "Treasure Cove"
