@@ -29,6 +29,11 @@
 	description = "A abandoned colony. It seems that this colony was abandoned, for a reason or another"
 	suffix = "beach_colony.dmm"
 
+/datum/map_template/ruin/beachplanet/knight
+	name = "Knight's Rest"
+	id = "knights_rest"
+	description = "An small castle holding the grave of a renowned warrior"
+	suffix = "beach_knights_rest.dmm"
 
 /datum/map_template/ruin/beachplanet/treasurecove
 	name = "Treasure Cove"
