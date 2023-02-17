@@ -1,4 +1,4 @@
-/obj/item/regeant_containers/glass/blood
+/obj/item/reagent_containers/glass/blood
 	name = "blood pack"
 	desc = "Contains blood used for transfusion. Must be attached to an IV drip."
 	icon = 'icons/obj/bloodpack.dmi'
@@ -14,13 +14,13 @@
 	reagent_flags = null // do not inherit the flags of glass.
 	spillable = FALSE
 
-/obj/item/regeant_containers/glass/blood/Initialize()
+/obj/item/reagent_containers/glass/blood/Initialize()
 	. = ..()
 	if(blood_type != null)
 		reagents.add_reagent(unique_blood ? unique_blood : /datum/reagent/blood, 200, list("donor"=null,"viruses"=null,"blood_DNA"=null,"blood_type"=blood_type,"resistances"=null,"trace_chem"=null))
 		update_icon()
 
-/obj/item/regeant_containers/glass/blood/on_reagent_change(changetype)
+/obj/item/reagent_containers/glass/blood/on_reagent_change(changetype)
 	if(reagents)
 		var/datum/reagent/blood/B = reagents.has_reagent(/datum/reagent/blood)
 		if(B && B.data && B.data["blood_type"])
@@ -30,49 +30,49 @@
 	update_pack_name()
 	update_icon()
 
-/obj/item/regeant_containers/glass/blood/proc/update_pack_name()
+/obj/item/reagent_containers/glass/blood/proc/update_pack_name()
 	if(!labelled)
 		if(blood_type)
 			name = "blood pack - [blood_type]"
 		else
 			name = "blood pack"
 
-/obj/item/regeant_containers/glass/blood/random
+/obj/item/reagent_containers/glass/blood/random
 	icon_state = "random_bloodpack"
 
-/obj/item/regeant_containers/glass/blood/random/Initialize()
+/obj/item/reagent_containers/glass/blood/random/Initialize()
 	icon_state = "bloodpack"
 	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L", "S")
 	return ..()
 
-/obj/item/regeant_containers/glass/blood/APlus
+/obj/item/reagent_containers/glass/blood/APlus
 	blood_type = "A+"
 
-/obj/item/regeant_containers/glass/blood/AMinus
+/obj/item/reagent_containers/glass/blood/AMinus
 	blood_type = "A-"
 
-/obj/item/regeant_containers/glass/blood/BPlus
+/obj/item/reagent_containers/glass/blood/BPlus
 	blood_type = "B+"
 
-/obj/item/regeant_containers/glass/blood/BMinus
+/obj/item/reagent_containers/glass/blood/BMinus
 	blood_type = "B-"
 
-/obj/item/regeant_containers/glass/blood/OPlus
+/obj/item/reagent_containers/glass/blood/OPlus
 	blood_type = "O+"
 
-/obj/item/regeant_containers/glass/blood/OMinus
+/obj/item/reagent_containers/glass/blood/OMinus
 	blood_type = "O-"
 
-/obj/item/regeant_containers/glass/blood/lizard
+/obj/item/reagent_containers/glass/blood/lizard
 	blood_type = "L"
 
-/obj/item/regeant_containers/glass/blood/squid
+/obj/item/reagent_containers/glass/blood/squid
 	blood_type = "S"
 
-/obj/item/regeant_containers/glass/blood/universal
+/obj/item/reagent_containers/glass/blood/universal
 	blood_type = "U"
 
-/obj/item/regeant_containers/glass/blood/attackby(obj/item/I, mob/user, params)
+/obj/item/reagent_containers/glass/blood/attackby(obj/item/I, mob/user, params)
 	if (istype(I, /obj/item/pen) || istype(I, /obj/item/toy/crayon))
 		if(!user.is_literate())
 			to_chat(user, "<span class='notice'>You scribble illegibly on the label of [src]!</span>")
@@ -97,7 +97,5 @@
 		return ..()
 
 // No easy 200u beaker.
-/obj/item/regeant_containers/glass/blood/is_refillable()
+/obj/item/reagent_containers/glass/blood/is_refillable()
 	return !sliced
-
-
