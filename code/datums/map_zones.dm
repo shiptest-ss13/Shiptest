@@ -564,6 +564,9 @@
 	icon_state = "black"
 	layer = SPACE_LAYER
 	plane = FLOOR_PLANE
+	rad_insulation = RAD_FULL_INSULATION
+	rad_fullblocker = TRUE
+
 	var/destination_z
 	var/destination_x
 	var/destination_y

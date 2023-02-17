@@ -480,7 +480,7 @@
 /obj/item/clothing/suit/armor/vest/security/brig_phys
 	name = "brig physician's jacket"
 	desc = "A black jacket with dark blue and silver accents, for the brig physician to prove they're a real member of security in style."
-	icon_state = "brigphysjacket"
+	icon_state = "armor_brigphysjacket"
 	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/frontier
