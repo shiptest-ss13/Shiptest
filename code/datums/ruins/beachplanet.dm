@@ -29,12 +29,17 @@
 	description = "A abandoned colony. It seems that this colony was abandoned, for a reason or another"
 	suffix = "beach_colony.dmm"
 
-
 /datum/map_template/ruin/beachplanet/town
 	name = "Beachside Town"
 	id = "beach_town"
 	description = "A fresh town on a lovely coast, where its inhabitants are is unknown."
 	suffix = "beach_ocean_town.dmm"
+
+/datum/map_template/ruin/beachplanet/treasurecove
+	name = "Treasure Cove"
+	id = "beach_treasure_cove"
+	description = "A abandoned colony. It seems that this colony was abandoned, for a reason or another"
+	suffix = "beach_treasure_cove.dmm"
 
 /datum/map_template/ruin/beachplanet/crashedengie
 	name = "Crashed Engineer Ship"
