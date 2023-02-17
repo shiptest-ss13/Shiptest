@@ -407,6 +407,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/melee/baseball_bat/ablative,
 /obj/item/trash/energybar,
+/obj/machinery/button/door{
+	id = "cutter_general_lockdown";
+	name = "Ship Lockdown";
+	pixel_x = -7;
+	pixel_y = 7;
+	dir = 1;
+	req_access_txt = "20"
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/security)
 "cm" = (
@@ -1695,6 +1703,14 @@
 	},
 /area/ship/hallway/central)
 "jf" = (
+/obj/machinery/button/door{
+	id = "cutter_bridge_lockdown";
+	name = "Bridge Lockdown";
+	pixel_x = -8;
+	pixel_y = -22;
+	dir = 1;
+	req_access_txt = "20"
+	},
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
 	dir = 4
@@ -5705,10 +5721,6 @@
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/incinerator)
 "By" = (
-/obj/item/gun/ballistic/rifle/boltaction/roumain{
-	pixel_y = 5
-	},
-/obj/item/gun/ballistic/rifle/boltaction/roumain,
 /obj/structure/guncase,
 /obj/item/gun/ballistic/automatic/smg/thompson{
 	pixel_y = -8
@@ -5718,6 +5730,10 @@
 	},
 /obj/structure/railing{
 	dir = 1
+	},
+/obj/item/gun/ballistic/rifle/boltaction,
+/obj/item/gun/ballistic/rifle/boltaction{
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/security/armory)
@@ -9214,11 +9230,12 @@
 	pixel_y = -5;
 	pixel_x = -1
 	},
-/obj/item/ammo_box/aac_300blk_stripper,
-/obj/item/ammo_box/aac_300blk_stripper,
-/obj/item/ammo_box/aac_300blk_stripper,
-/obj/item/ammo_box/aac_300blk_stripper,
-/obj/item/ammo_box/aac_300blk_stripper,
+/obj/item/ammo_box/a762,
+/obj/item/ammo_box/a762,
+/obj/item/storage/toolbox/ammo/a762{
+	pixel_y = -6;
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/patterned/dirty,
 /area/ship/security/armory)
 "Ps" = (
