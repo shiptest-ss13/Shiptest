@@ -376,39 +376,29 @@
 	name = "Mac Space Restaurant"
 	icon_state = "yellow"
 
-//POWER PUZLE
+//NUCLEAR DUMP -- this ruin uses an area from power puzzle, for whatever reason. added new areas, for now.
 
-/area/ruin/space/has_grav/storage/central
-	name = "storage central"
+/area/ruin/space/has_grav/nucleardump
+	name = "Hallway"
 	icon_state = "hallC"
 
-/area/ruin/space/has_grav/storage/central2
-	name = "storage Vault"
+/area/ruin/space/has_grav/nucleardump/supermatter
+	name = "Supermatter Chamber"
 	icon_state = "red"
 
-/area/ruin/space/has_grav/storage/materials1
-	name = "storage materials fore room"
-	icon_state = "storage_wing"
+//POWER PUZZLE
 
-/area/ruin/space/has_grav/storage/materials2
-	name = "storage Materials secure room"
-	icon_state = "storage"
+/area/ruin/space/has_grav/powerpuzzle
+	name = "Central Storage"
+	icon_state = "hallC"
 
-/area/ruin/space/has_grav/storage/materials3
-	name = "storage materials miscellaneous"
+/area/ruin/space/has_grav/powerpuzzle/secure
+	name = "Security Wing"
+	icon_state = "red"
+
+/area/ruin/space/has_grav/powerpuzzle/engineering
+	name = "Engineering Wing"
 	icon_state = "yellow"
-
-/area/ruin/space/has_grav/storage/power1
-	name = "storage Enginering central"
-	icon_state = "yellow"
-
-/area/ruin/space/has_grav/storage/power2
-	name = "storage Enginering "
-	icon_state = "engi_storage"
-
-/area/ruin/space/has_grav/storage/power3
-	name = "storage Crates"
-	icon_state = "green"
 
 //Space Gym
 
@@ -563,3 +553,29 @@
 /area/ruin/space/has_grav/corporatemine/hall
 	name = "Corporate Mine Hall"
 	icon_state = "hallC"
+
+//Space Mall
+
+/area/ruin/space/has_grav/spacemall
+	name = "Hallway"
+	icon_state = "hallC"
+
+/area/ruin/space/has_grav/spacemall/shop
+	name = "Space Mall Shop"
+	icon_state = "red"
+
+/area/ruin/space/has_grav/spacemall/shop2
+	name = "Space Mall Shop"
+	icon_state = "bluenew"
+
+/area/ruin/space/has_grav/spacemall/maint
+	name = "Space Mall Maintenance"
+	icon_state = "yellow"
+
+/area/ruin/space/has_grav/spacemall/dorms
+	name = "Space Mall Dorms"
+	icon_state = "green"
+
+/area/ruin/space/has_grav/spacemall/shuttle
+	name = "Space Mall Supply Shuttle"
+	icon_state = "blue"

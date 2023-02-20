@@ -67,6 +67,10 @@
 	// ID of the virtual level we're in
 	var/virtual_z = 0
 
+	/// If TRUE, radiation waves will qdelete if they step forwards into this turf, and stop propagating sideways if they encounter it.
+	/// Used to stop radiation from travelling across virtual z-levels such as transit zones and planetary encounters.
+	var/rad_fullblocker = FALSE
+
 	///the holodeck can load onto this turf if TRUE
 	var/holodeck_compatible = FALSE
 
