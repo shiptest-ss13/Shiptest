@@ -55,7 +55,7 @@
 	update_engine() //Calls this so it sets the accurate icon
 	if(panel_open)
 		icon_state = icon_state_open
-	else if(thruster_active)
+	else if(thruster_active && enabled && return_fuel())
 		icon_state = icon_state_closed
 	else
 		icon_state = icon_state_off

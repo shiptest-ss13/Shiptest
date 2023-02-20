@@ -266,6 +266,7 @@
 			if("toggle_engine")
 				var/obj/machinery/power/shuttle/engine/E = locate(params["engine"]) in current_ship.shuttle_port.engine_list
 				E.enabled = !E.enabled
+				E.update_icon_state()
 				current_ship.refresh_engines()
 				return
 			if("change_heading")
