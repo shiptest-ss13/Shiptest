@@ -35,7 +35,9 @@
 /obj/item/clothing/neck/tie/red,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/suit/armor/vest/security/hos{
-	name = "Syndicate jacket"
+	name = "Syndicate jacket";
+	icon = "icons/obj/clothing/suits/armor.dmi";
+	icon_state = "armor_hostrench"
 	},
 /obj/structure/closet/wall/red{
 	dir = 8;
@@ -593,6 +595,7 @@
 /obj/item/clothing/suit/armor/vest/marine/medium{
 	name = "medium medical armor vest"
 	},
+/obj/item/hypospray/mkii/CMO,
 /turf/open/floor/carpet/blue,
 /area/ship/medical)
 "dZ" = (
@@ -787,11 +790,11 @@
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/effect/decal/cleanable/generic,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -997,9 +1000,11 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/glass,
-/obj/structure/cable,
 /obj/structure/railing{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -1105,11 +1110,11 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "iv" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/decal/cleanable/oil{
 	icon_state = "streak3"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -1279,15 +1284,15 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/janitor)
 "kW" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1374,6 +1379,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "mp" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1741,17 +1749,6 @@
 "pu" = (
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
-"pR" = (
-/obj/structure/catwalk/over,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "pS" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1763,13 +1760,13 @@
 /area/ship/cargo)
 "pT" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/oil,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "qa" = (
@@ -2187,12 +2184,6 @@
 /turf/open/floor/wood/walnut,
 /area/ship/medical)
 "uE" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
@@ -2200,6 +2191,12 @@
 /obj/machinery/atmospherics/components/binary/pump{
 	layer = 2.35;
 	name = "engine fuel pump"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -2308,18 +2305,15 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
 "vw" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 6
 	},
 /obj/structure/catwalk/over,
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/effect/decal/cleanable/glass,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "vG" = (
@@ -2334,10 +2328,11 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "vW" = (
+/obj/machinery/power/port_gen/pacman,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "0-4"
 	},
-/obj/structure/frame/machine,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "we" = (
@@ -2400,9 +2395,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/hydroponics)
 "wu" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/structure/closet/wall/orange{
 	name = "Engineering locker";
 	pixel_y = 30
@@ -2445,6 +2437,9 @@
 	dir = 8
 	},
 /obj/item/storage/box/stockparts/t2,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "wM" = (
@@ -2607,6 +2602,12 @@
 	},
 /obj/structure/railing{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -3180,11 +3181,13 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/structure/frame/computer{
+	dir = 4
+	},
+/obj/item/circuitboard/computer/powermonitor,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "DI" = (
@@ -3223,7 +3226,6 @@
 	pixel_y = 29
 	},
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/item/storage/firstaid,
 /obj/item/storage/belt/medical/surgery,
 /obj/item/clothing/suit/longcoat/brig_phys{
 	name = "syndicate medic's longcoat"
@@ -3251,7 +3253,8 @@
 /obj/item/hypospray/mkii,
 /obj/item/clothing/mask/surgical,
 /obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/item/borg/sight/hud/med,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Ee" = (
@@ -3728,8 +3731,8 @@
 	pixel_y = 31
 	},
 /obj/structure/catwalk/over,
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -3797,7 +3800,6 @@
 	pixel_y = 29
 	},
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/item/storage/firstaid,
 /obj/item/storage/belt/medical/surgery,
 /obj/item/clothing/suit/longcoat/brig_phys{
 	name = "syndicate medic's longcoat"
@@ -3825,7 +3827,8 @@
 	},
 /obj/item/clothing/mask/surgical,
 /obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/item/borg/sight/hud/med,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "JY" = (
@@ -3926,13 +3929,11 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
 "Lb" = (
+/obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "0-4"
 	},
-/obj/structure/frame/computer{
-	dir = 4
-	},
-/obj/item/circuitboard/computer/powermonitor,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Lc" = (
@@ -3957,9 +3958,6 @@
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
 "Ld" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/structure/closet/wall/orange{
 	name = "Engineering locker";
 	pixel_y = 30
@@ -4001,6 +3999,9 @@
 /obj/item/clothing/gloves/color/yellow,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -4170,14 +4171,13 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/power/port_gen/pacman,
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
+/obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Nd" = (
@@ -4373,9 +4373,6 @@
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "PO" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
 	},
@@ -4383,11 +4380,11 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
 	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -4725,6 +4722,9 @@
 	name = "Engine shutter control";
 	pixel_y = 26
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "TL" = (
@@ -4860,13 +4860,13 @@
 /area/ship/cargo)
 "Vz" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/glass,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "VA" = (
@@ -5261,7 +5261,6 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/reagent_dispensers/fueltank,
 /obj/structure/catwalk/over,
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -5690,7 +5689,7 @@ Ju
 sg
 Xk
 vw
-pR
+dq
 uE
 VA
 EJ
