@@ -5,6 +5,8 @@
 	icon_living = "mothroach"
 	icon_dead = "mothroach_dead"
 	held_state = "mothroach"
+	head_icon = "mothroach"
+	worn_slot_flags = ITEM_SLOT_HEAD
 	emote_hear = list("chitters.", "flutters.")
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mothroach = 3, /obj/item/stack/sheet/animalhide/mothroach = 1)
 	mob_biotypes = MOB_ORGANIC|MOB_BUG
@@ -27,7 +29,7 @@
 
 /mob/living/simple_animal/pet/mothroach/Initialize()
 	. = ..()
-	add_verb(src, /mob/living/proc/toggle_resting)
+	add_verb(src, /mob/living/proc/update_resting)
 	ADD_TRAIT(src, TRAIT_HOLDABLE, INNATE_TRAIT)
 
 /mob/living/simple_animal/pet/mothroach/update_resting()
