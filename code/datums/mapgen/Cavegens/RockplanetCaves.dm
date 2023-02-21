@@ -22,6 +22,7 @@
 		/obj/structure/flora/rock = 3,
 		/obj/structure/flora/tree/cactus = 4,
 		/obj/structure/flora/ash/cacti = 1,
+		/obj/structure/flora/ash/garden/arid = 1,
 	)
 
 	feature_spawn_chance = 0

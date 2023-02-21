@@ -19,6 +19,7 @@
 		/obj/structure/flora/grass/both = 6,
 		/obj/structure/flora/ash/chilly = 2,
 		/obj/structure/flora/ash/puce = 2,
+		/obj/structure/flora/ash/garden/frigid = 1,
 	)
 
 /datum/map_generator/cave_generator/icemoon/surface
