@@ -12,7 +12,7 @@
 	token_type = /obj/overmap/rendered
 	dock_time = 10 SECONDS
 
-	///Vessel estimated thrust
+	///Vessel estimated thrust per full burn
 	var/est_thrust
 	///Average fuel fullness percentage
 	var/avg_fuel_amnt = 100
@@ -139,7 +139,6 @@
 /datum/overmap/ship/controlled/start_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	log_shuttle("[src] [REF(src)] DOCKING: STARTED REQUEST FOR [to_dock] AT [ticket.target_port]")
 	refresh_engines()
-	shuttle_port.movement_force = list("KNOCKDOWN" = FLOOR(est_thrust / 50, 1), "THROW" = FLOOR(est_thrust / 500, 1))
 	priority_announce("Beginning docking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
 	shuttle_port.create_ripples(ticket.target_port, dock_time)
 	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.landing_sound)
@@ -208,8 +207,8 @@
 			continue
 		thrust_used += E.burn_engine(percentage, deltatime)
 
-	est_thrust = thrust_used //cheeky way of rechecking the thrust, check it every time it's used
 	thrust_used = thrust_used / (shuttle_port.turf_count * 100)
+	est_thrust = thrust_used //cheeky way of rechecking the thrust, check it every time it's used
 
 	return thrust_used
 
@@ -222,7 +221,7 @@
 		E.update_engine()
 		if(E.enabled)
 			calculated_thrust += E.thrust
-	est_thrust = calculated_thrust * burn_percentage
+	est_thrust = calculated_thrust / (shuttle_port.turf_count * 100)
 
 /**
  * Calculates the average fuel fullness of all engines.
@@ -240,12 +239,12 @@
 		return
 	avg_fuel_amnt = round(fuel_avg / engine_amnt * 100)
 
-/*
 /datum/overmap/ship/controlled/tick_move()
 	if(avg_fuel_amnt < 1)
-		decelerate(max_speed / 100)
+		//Slow down a little when there's no fuel
+		adjust_speed(clamp(-speed_x, max_speed * -0.001, max_speed * 0.001), clamp(-speed_y, max_speed * -0.001, max_speed * 0.001))
+
 	return ..()
-*/
 
 /**
  * Connects a new shuttle port to the ship datum. Should be used very shortly after the ship is created, if at all.

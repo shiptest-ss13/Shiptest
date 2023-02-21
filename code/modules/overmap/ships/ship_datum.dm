@@ -10,7 +10,7 @@
 	token_icon_state = "ship"
 	///Timer ID of the looping movement timer
 	var/movement_callback_id
-	///Max possible speed (1 tile per tick)
+	///Max possible speed (1 tile per tick / 600 tiles per minute)
 	var/static/max_speed = 1
 	///Minimum speed. Any lower is rounded down. (0.01 tiles per minute)
 	var/static/min_speed = 1/(100 MINUTES)

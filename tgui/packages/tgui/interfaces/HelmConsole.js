@@ -126,7 +126,17 @@ const SharedContent = (_props, context) => {
 // Content included on helms when they're controlling ships
 const ShipContent = (_props, context) => {
   const { act, data } = useBackend(context);
-  const { isViewer, engineInfo, shipInfo, speed, heading, eta, x, y } = data;
+  const {
+    isViewer,
+    engineInfo,
+    estThrust,
+    burnPercentage,
+    speed,
+    heading,
+    eta,
+    x,
+    y,
+  } = data;
   return (
     <>
       <Section title="Velocity">
@@ -225,13 +235,13 @@ const ShipContent = (_props, context) => {
               </Table.Row>
             ))}
           <Table.Row>
-            <Table.Cell>Est burn:</Table.Cell>
+            <Table.Cell>Est thrust:</Table.Cell>
             <Table.Cell>
               <AnimatedNumber
-                value={600 / (1 / (shipInfo.estThrust / (shipInfo.mass * 100)))}
+                value={estThrust * burnPercentage * 5}
                 format={(value) => Math.round(value * 10) / 10}
               />
-              spM/burn
+              spm/s
             </Table.Cell>
           </Table.Row>
         </Table>
@@ -372,9 +382,7 @@ const ShipControlContent = (_props, context) => {
                   }
                   mb={1}
                   color={burnDirection === DIRECTIONS.stop && 'good'}
-                  disabled={
-                    !flyable || (burnDirection === 0 && !speed)
-                  }
+                  disabled={!flyable || (burnDirection === 0 && !speed)}
                   onClick={() => act('stop')}
                 />
               </Table.Cell>
