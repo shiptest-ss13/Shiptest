@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# REPO MAINTAINERS: KEEP CHANGES TO THIS IN SYNC WITH /tools/LinuxOneShot/SetupProgram/PreCompile.sh
+./InstallDeps.sh
 
 set -e
 set -x
