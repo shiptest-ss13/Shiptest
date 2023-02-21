@@ -83,11 +83,11 @@
 
 /mob/living/simple_animal/hostile/asteroid/brimdemon/OpenFire()
 	if(firing)
-		//balloon_alert(src, "already firing!")
+		balloon_alert(src, "already firing!")
 		to_chat(src, "<span class='warning'>You're already firing!.</span>")
 		return
 	if(!COOLDOWN_FINISHED(src, ranged_cooldown))
-		//balloon_alert(src, "on cooldown!")
+		balloon_alert(src, "on cooldown!")
 		to_chat(src, "<span class='warning'>You're on cooldown!.</span>")
 		return
 	firing = TRUE
@@ -96,7 +96,7 @@
 	move_resist = MOVE_FORCE_VERY_STRONG
 	add_overlay("brimdemon_telegraph_dir")
 	visible_message(span_danger("[src] starts charging!"))
-	//balloon_alert(src, "charging...")
+	balloon_alert(src, "charging...")
 	to_chat(src, "<span class='warning'>You begin to charge up...</span>")
 	addtimer(CALLBACK(src, .proc/fire_laser), 1 SECONDS)
 	COOLDOWN_START(src, ranged_cooldown, ranged_cooldown_time)
@@ -116,7 +116,7 @@
 	if(stat == DEAD)
 		return
 	visible_message(span_danger("[src] fires a brimbeam!"))
-	//balloon_alert(src, "brimbeam fired")
+	balloon_alert(src, "brimbeam fired")
 	playsound(src, 'sound/creatures/brimdemon.ogg', 150, FALSE, 0, 3)
 	cut_overlay("brimdemon_telegraph_dir")
 	var/turf/target_turf = get_ranged_target_turf(src, dir, BRIMBEAM_RANGE)
