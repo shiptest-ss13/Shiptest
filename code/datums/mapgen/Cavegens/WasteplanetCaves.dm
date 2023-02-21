@@ -7,7 +7,7 @@
 							/turf/closed/wall/rust = 10,)
 
 	mob_spawn_chance = 2
-	flora_spawn_chance = 5
+	flora_spawn_chance = 10
 
 	mob_spawn_list = list(
 		//hivebots, not too difficult
@@ -29,7 +29,7 @@
 		/obj/structure/mecha_wreckage/ripley = 15,
 		/obj/structure/mecha_wreckage/ripley/firefighter = 9,
 		/obj/structure/mecha_wreckage/ripley/mkii = 9,
-		/obj/structure/girder = 90,
+		/obj/structure/girder = 60,
 		/obj/structure/reagent_dispensers/fueltank = 30,
 		/obj/item/stack/cable_coil/cut = 30,
 		/obj/effect/decal/cleanable/greenglow = 60,
@@ -48,6 +48,8 @@
 		/obj/structure/salvageable/circuit_imprinter = 8,
 		/obj/structure/salvageable/destructive_analyzer = 8,
 		/obj/structure/salvageable/server = 8,
+		/obj/structure/flora/ash/garden/waste = 15,
+		/obj/structure/flora/ash/glowshroom = 90,
 		)
 
 	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/effect/mine/shrapnel/human_only = 1)

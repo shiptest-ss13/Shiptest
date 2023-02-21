@@ -7,6 +7,7 @@
 		/obj/structure/flora/rock/pile/icy = 2,
 		/obj/structure/flora/grass/both = 6,
 		/obj/structure/flora/ash/chilly = 2,
+		/obj/structure/flora/ash/garden/frigid = 1,
 	)
 	flora_spawn_chance = 10
 	mob_spawn_chance = 1
@@ -43,7 +44,8 @@
 		/obj/structure/flora/ausbushes/sparsegrass = 1,
 		/obj/structure/flora/ausbushes = 1,
 		/obj/structure/flora/ausbushes/ppflowers = 1,
-		/obj/structure/flora/ausbushes/lavendergrass = 1
+		/obj/structure/flora/ausbushes/lavendergrass = 1,
+		/obj/structure/flora/ash/garden/frigid = 1,
 	)
 
 /datum/biome/snow/forest
@@ -65,7 +67,7 @@
 /datum/biome/arctic
 	open_turf_types = list(/turf/open/floor/plating/asteroid/snow/lit = 1)
 	feature_spawn_chance = 0.1
-	feature_spawn_list = list(/obj/structure/statue/snow/snowman = 3, /obj/structure/statue/snow/snowlegion = 1)
+	feature_spawn_list = list(/obj/structure/spawner/ice_moon = 3, /obj/structure/spawner/ice_moon/polarbear = 3, /obj/structure/statue/snow/snowman = 3, /obj/structure/statue/snow/snowlegion = 1)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
 		/obj/structure/spawner/ice_moon = 3,
@@ -98,12 +100,14 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 5,
 	)
-	feature_spawn_chance = 0.2
+	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
 		/obj/structure/spawner/ice_moon/demonic_portal = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp = 1,
-		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1
+		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1,
+		/obj/structure/spawner/ice_moon/demonic_portal/brimdemon = 1
 	)
+
 
 /datum/biome/iceberg/lake
 	open_turf_types = list(/turf/open/floor/plating/ice/lit = 1)
@@ -122,7 +126,8 @@
 		/obj/structure/flora/ash/leaf_shroom = 1,
 		/obj/structure/flora/ash/cap_shroom = 1,
 		/obj/structure/flora/ash/stem_shroom = 1,
-		/obj/structure/flora/ash/puce = 1
+		/obj/structure/flora/ash/puce = 1,
+		/obj/structure/flora/ash/garden/frigid = 1,
 	)
 	closed_turf_types = list(/turf/closed/mineral/random/snow = 1)
 	mob_spawn_chance = 2
@@ -137,11 +142,13 @@
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/structure/spawner/ice_moon/demonic_portal = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp = 1,
-		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1
+		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1,
+		/obj/structure/spawner/ice_moon = 1,
+		/obj/structure/spawner/ice_moon/polarbear = 1
 	)
 
 /datum/biome/cave/snow/thawed
@@ -158,8 +165,6 @@
 	mob_spawn_chance = 2
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
-		/obj/structure/spawner/ice_moon = 3,
-		/obj/structure/spawner/ice_moon/polarbear = 3,
 		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
@@ -173,11 +178,13 @@
 		/obj/structure/flora/ash/cap_shroom = 1,
 		/obj/structure/flora/ash/stem_shroom = 1,
 	)
-	feature_spawn_chance = 0.1
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/structure/spawner/ice_moon/demonic_portal = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp = 1,
 		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1,
+		/obj/structure/spawner/ice_moon = 3,
+		/obj/structure/spawner/ice_moon/polarbear = 3,
 	)
 
 /datum/biome/cave/volcanic/lava
