@@ -18,8 +18,6 @@
 	var/avg_fuel_amnt = 100
 	///Cooldown until the ship can be renamed again
 	COOLDOWN_DECLARE(rename_cooldown)
-	///Vessel approximate mass
-	var/mass
 
 	///The docking port of the linked shuttle. To add a port after creating a controlled ship datum, use [/datum/overmap/ship/controlled/proc/connect_new_shuttle_port].
 	VAR_FINAL/obj/docking_port/mobile/shuttle_port
@@ -105,7 +103,6 @@
 			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
 				qdel(src) // Can't return INITIALIZE_HINT_QDEL here since this isn't ACTUAL initialisation. Considering changing the name of the proc.
 				return
-			calculate_mass()
 			refresh_engines()
 
 	ship_account = new(name, 2000)
@@ -199,25 +196,22 @@
 	if(E) //Don't make this an else
 		Dock(E)
 
-/datum/overmap/ship/controlled/burn_engines(n_dir = null, percentage = 100)
+/datum/overmap/ship/controlled/burn_engines(percentage = 100, deltatime)
 	if(docked_to || docking)
 		CRASH("[src] burned engines while docking or docked!")
 
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()
-	if(!mass)
-		calculate_mass()
 	calculate_avg_fuel()
 	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
 		if(!E.enabled)
 			continue
-		thrust_used += E.burn_engine(percentage)
+		thrust_used += E.burn_engine(percentage, deltatime)
+
 	est_thrust = thrust_used //cheeky way of rechecking the thrust, check it every time it's used
-	thrust_used = thrust_used / max(mass * 100, 1) //do not know why this minimum check is here, but I clearly ran into an issue here before
-	if(n_dir)
-		accelerate(n_dir, thrust_used)
-	else
-		decelerate(thrust_used)
+	thrust_used = thrust_used / (shuttle_port.turf_count * 100)
+
+	return thrust_used
 
 /**
  * Just double checks all the engines on the shuttle
@@ -228,17 +222,7 @@
 		E.update_engine()
 		if(E.enabled)
 			calculated_thrust += E.thrust
-	est_thrust = calculated_thrust
-
-/**
- * Calculates the mass based on the amount of turfs in the shuttle's areas
- */
-/datum/overmap/ship/controlled/proc/calculate_mass()
-	. = 0
-	var/list/areas = shuttle_port.shuttle_areas
-	for(var/shuttle_area in areas)
-		. += length(get_area_turfs(shuttle_area))
-	mass = .
+	est_thrust = calculated_thrust * burn_percentage
 
 /**
  * Calculates the average fuel fullness of all engines.
@@ -256,10 +240,12 @@
 		return
 	avg_fuel_amnt = round(fuel_avg / engine_amnt * 100)
 
+/*
 /datum/overmap/ship/controlled/tick_move()
 	if(avg_fuel_amnt < 1)
 		decelerate(max_speed / 100)
 	return ..()
+*/
 
 /**
  * Connects a new shuttle port to the ship datum. Should be used very shortly after the ship is created, if at all.
@@ -271,7 +257,6 @@
 	if(shuttle_port)
 		CRASH("Attempted to connect a new port to a ship that already has a port!")
 	shuttle_port = new_port
-	calculate_mass()
 	refresh_engines()
 	shuttle_port.name = name
 	for(var/area/shuttle_area as anything in shuttle_port.shuttle_areas)
