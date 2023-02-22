@@ -298,6 +298,7 @@
 		/obj/effect/spawner/lootdrop/seeded = 80,
 		/obj/effect/spawner/lootdrop/seeded = 80,
 		/obj/effect/spawner/lootdrop/seeded = 80,
+		/obj/effect/spawner/lootdrop/seeded = 80,
 		/obj/item/seeds/random = 80,
 		/obj/item/seeds/random = 40,
 		/obj/item/seeds/random = 40,
@@ -305,6 +306,23 @@
 		/obj/item/stack/cable_coil/cut = 80,
 		/obj/item/disk/plantgene = 20,
 	)
+
+/obj/structure/salvageable/seed/dismantle(mob/living/user)
+	. = ..()
+	var/danger_level = rand(1,100)
+	switch(danger_level)
+		if(1 to 50)
+			audible_message("<span class='notice'>The [src] buzzes softly as it falls apart.</span>")
+
+		if(51 to 80)
+			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
+			audible_message("<span class='danger'>As the [src] collapses, an oversized tomato lunges out from inside!</span>")
+			new /mob/living/simple_animal/hostile/killertomato(get_turf(src))
+
+		if(81 to 100)
+			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
+			audible_message("<span class='danger'>A bundle of vines unfurls from inside the [src]!</span>")
+			new /mob/living/simple_animal/hostile/venus_human_trap(get_turf(src))
 
 //scrap item, mostly for fluff
 /obj/item/stack/ore/salvage
