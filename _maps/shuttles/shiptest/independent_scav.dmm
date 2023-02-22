@@ -32,7 +32,6 @@
 /area/ship/bridge)
 "aX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -41,6 +40,7 @@
 	dir = 1;
 	pixel_y = -32
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "bK" = (
@@ -217,6 +217,7 @@
 "gQ" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "hv" = (
@@ -224,12 +225,9 @@
 	dir = 4
 	},
 /obj/machinery/light_switch{
-	pixel_x = 25;
-	pixel_y = -25
-	},
-/obj/item/radio/intercom/wideband{
 	dir = 1;
-	pixel_y = -28
+	pixel_x = 16;
+	pixel_y = -19
 	},
 /obj/effect/turf_decal/corner/opaque/pink/border{
 	dir = 1
@@ -238,6 +236,7 @@
 	dir = 1;
 	pixel_y = 2
 	},
+/obj/item/radio/intercom/wideband/directional/south,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "hG" = (
@@ -367,6 +366,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/hardline_small/right{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ls" = (
@@ -421,7 +423,6 @@
 /obj/machinery/computer/rdconsole{
 	dir = 8
 	},
-/obj/machinery/light/small,
 /obj/effect/turf_decal/corner/opaque/pink/border{
 	dir = 1
 	},
@@ -430,6 +431,7 @@
 	pixel_y = 2
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "nw" = (
@@ -537,12 +539,12 @@
 /area/ship/cargo)
 "qq" = (
 /obj/structure/table/optable,
-/obj/machinery/light/small,
 /obj/machinery/airalarm/directional/south,
 /obj/item/storage/backpack/duffelbag/med/surgery{
 	pixel_x = -5;
 	pixel_y = -5
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "qv" = (
@@ -622,6 +624,7 @@
 /obj/item/storage/belt,
 /obj/item/storage/belt,
 /obj/item/pipe_dispenser,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "rU" = (
@@ -630,7 +633,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/item/radio/intercom/wideband,
+/obj/item/radio/intercom/wideband/table{
+	dir = 1
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "tg" = (
@@ -688,9 +693,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -736,9 +738,6 @@
 	},
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/electrical,
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
@@ -763,9 +762,6 @@
 	},
 /obj/effect/turf_decal/industrial/outline/orange,
 /obj/item/lightreplacer,
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/item/storage/box/lights/bulbs,
 /obj/machinery/light_switch{
 	dir = 4;
@@ -775,7 +771,7 @@
 /obj/structure/closet/crate{
 	anchored = 1
 	},
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "vL" = (
@@ -843,9 +839,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "zA" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -853,6 +846,7 @@
 /obj/machinery/door/window/survival_pod{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/cargo)
 "An" = (
@@ -996,9 +990,6 @@
 "Fc" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/gum/nicotine,
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/item/storage/box/gum/nicotine,
 /obj/item/storage/box/gum/nicotine,
 /obj/item/gun/energy/laser/hitscanpistol,
@@ -1006,20 +997,21 @@
 	id = "scav_shutters";
 	name = "Shutter Control";
 	pixel_x = -7;
-	pixel_y = 26
+	pixel_y = 21
 	},
 /obj/machinery/button/door{
 	id = "scav_door";
 	name = "Blast Control";
 	pixel_x = 7;
-	pixel_y = 26
+	pixel_y = 20
 	},
 /obj/machinery/button/shieldwallgen{
 	id = "scavbay";
 	name = "Bay Air Shield";
-	pixel_x = -8;
-	pixel_y = 36
+	pixel_x = -17;
+	pixel_y = 19
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Fq" = (
@@ -1100,6 +1092,7 @@
 "Hq" = (
 /obj/machinery/autolathe/hacked,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Iz" = (
@@ -1112,7 +1105,6 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/blood/old,
-/obj/machinery/light/small,
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
@@ -1179,7 +1171,7 @@
 "MG" = (
 /obj/machinery/light_switch{
 	pixel_x = 13;
-	pixel_y = 33
+	pixel_y = 21
 	},
 /obj/item/borg/sight/hud/sec,
 /obj/item/storage/backpack/duffelbag,
@@ -1217,6 +1209,14 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
+"MP" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "scav_shutters"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
 "NI" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
@@ -1227,6 +1227,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm/directional/north,
+/obj/effect/turf_decal/hardline_small/left{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Pu" = (
@@ -1238,6 +1241,14 @@
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
+"PX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/hardline_small{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Qd" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/tech,
@@ -1312,6 +1323,14 @@
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
+"TT" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "scav_shutters"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
 "Uj" = (
 /obj/machinery/door/window/southright,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1444,6 +1463,7 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/gun/energy/e_gun/old,
 /obj/item/gun/energy/e_gun/old,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Yn" = (
@@ -1715,8 +1735,8 @@ Jt
 oY
 "}
 (13,1,1) = {"
-aQ
-on
+TT
+MP
 Mv
 QG
 xG
@@ -1779,7 +1799,7 @@ Rc
 Rc
 fp
 OM
-YY
+PX
 kE
 YY
 YY
