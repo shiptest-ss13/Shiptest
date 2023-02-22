@@ -35,6 +35,12 @@
 	description = "A Crashed Starwalker Class Pirate Ship. It's Crew is Long-Dead."
 	suffix = "beach_crashed_starwalker.dmm"
 
+/datum/map_template/ruin/beachplanet/knight
+	name = "Knight's Rest"
+	id = "knights_rest"
+	description = "An small castle holding the grave of a renowned warrior"
+	suffix = "beach_knights_rest.dmm"
+
 /datum/map_template/ruin/beachplanet/treasurecove
 	name = "Treasure Cove"
 	id = "beach_treasure_cove"
