@@ -571,7 +571,7 @@ Contains:
 
 /obj/item/clothing/suit/space/scar
 	name = "Scar Suit"
-	desc = "A heavily modified eva suit, custom made for the captain of the cutter."
+	desc = "A heavily modified eva suit, custom made for the captain of the ember."
 	icon_state = "hostile_env"
 	item_state = "hostile_env"
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
