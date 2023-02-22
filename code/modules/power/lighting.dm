@@ -212,7 +212,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	name = "light fixture"
 	icon = 'icons/obj/lighting.dmi'
 	var/base_state = "tube"		// base description and icon_state
-	icon_state = "tube"
+	icon_state = "tube-on"
 	desc = "A lighting fixture."
 	layer = WALL_OBJ_LAYER
 	max_integrity = 100
@@ -272,7 +272,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/dim, 32)
 // the smaller bulb light fixture
 
 /obj/machinery/light/small
-	icon_state = "bulb"
+	icon_state = "bulb-on"
 	base_state = "bulb"
 	fitting = "bulb"
 	brightness = 4
