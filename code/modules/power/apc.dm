@@ -179,8 +179,8 @@
 	if (building)
 		setDir(ndir)
 	tdir = dir		// to fix Vars bug
-	setDir(SOUTH)
-
+//!!!!!!!!!!!!!! FUCK YOU SINGLE LINE OF CODE!! FUCK YOU YOU PIECE OF SHIT!!!!! setDir(SOUTH)
+/* FUCK YOU TOO!!!!!
 	switch(tdir)
 		if(NORTH)
 			if((pixel_y != initial(pixel_y)) && (pixel_y != 23))
@@ -206,7 +206,7 @@
 		set_machine_stat(machine_stat | MAINT)
 		update_icon()
 		addtimer(CALLBACK(src, .proc/update), 5)
-
+*/
 /obj/machinery/power/apc/Destroy()
 	GLOB.apcs_list -= src
 

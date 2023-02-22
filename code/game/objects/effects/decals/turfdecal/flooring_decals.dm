@@ -767,3 +767,42 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/minutemen/middle
 	icon_state = "mm_middle"
+
+/obj/effect/turf_decal/miskilamo_small
+	name = "small miskilamo logo"
+	icon_state = "miskilamo-center"
+
+/obj/effect/turf_decal/miskilamo_small/left
+	icon_state = "miskilamo-left"
+
+/obj/effect/turf_decal/miskilamo_small/right
+	icon_state = "miskilamo-right"
+
+/obj/effect/turf_decal/miskilamo_big
+	name = "big miskilamo logo"
+/obj/effect/turf_decal/miskilamo_big/one
+	icon_state = "miskilamo_big-1"
+
+/obj/effect/turf_decal/miskilamo_big/two
+	icon_state = "miskilamo_big-2"
+
+/obj/effect/turf_decal/miskilamo_big/two
+	icon_state = "miskilamo_big-2"
+
+/obj/effect/turf_decal/miskilamo_big/three
+	icon_state = "miskilamo_big-3"
+
+/obj/effect/turf_decal/miskilamo_big/four
+	icon_state = "miskilamo_big-4"
+
+/obj/effect/turf_decal/miskilamo_big/five
+	icon_state = "miskilamo_big-5"
+
+/obj/effect/turf_decal/miskilamo_big/six
+	icon_state = "miskilamo_big-6"
+
+/obj/effect/turf_decal/miskilamo_big/seven
+	icon_state = "miskilamo_big-7"
+
+/obj/effect/turf_decal/miskilamo_big/eight
+	icon_state = "miskilamo_big-8"
