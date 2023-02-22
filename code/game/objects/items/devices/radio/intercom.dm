@@ -167,6 +167,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/wideband, 26)
 
+/obj/item/radio/intercom/wideband/table
+	icon_state = "intercom-wideband-table"
+	wallframe = /obj/item/wallframe/intercom/wideband/table
+
 /obj/item/radio/intercom/wideband/recalculateChannels()
 	. = ..()
 	independent = TRUE
@@ -180,3 +184,5 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/wideband, 26)
 
 /obj/item/wallframe/intercom/wideband/table
 	icon_state = "intercom-wideband-table"
+	result_path = /obj/item/radio/intercom/wideband/table
+	pixel_shift = 0
