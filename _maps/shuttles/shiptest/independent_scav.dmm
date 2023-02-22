@@ -97,6 +97,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "scav_shutters"
 	},
 /turf/open/floor/plating/airless,
@@ -121,7 +122,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "dW" = (
@@ -130,6 +133,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "scav_door";
 	name = "Dusty Blast Door"
 	},
@@ -179,6 +183,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "scav_shutters"
 	},
 /turf/open/floor/plating/airless,
@@ -417,10 +422,6 @@
 	dir = 8
 	},
 /obj/machinery/light/small,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -30
-	},
 /obj/effect/turf_decal/corner/opaque/pink/border{
 	dir = 1
 	},
@@ -428,6 +429,7 @@
 	dir = 1;
 	pixel_y = 2
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/medical)
 "nw" = (
@@ -488,6 +490,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "scav_door";
 	name = "Dusty Blast Door"
 	},
@@ -604,6 +607,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "rA" = (
@@ -664,6 +668,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "scav_shutters"
 	},
 /turf/open/floor/plating/airless,
@@ -757,10 +762,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/outline/orange,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
-	},
 /obj/item/lightreplacer,
 /obj/machinery/light/small{
 	dir = 8
@@ -774,14 +775,12 @@
 /obj/structure/closet/crate{
 	anchored = 1
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "vL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
-	},
-/obj/machinery/firealarm{
-	dir = 1
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
@@ -900,8 +899,8 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/industrial/outline/blue,
 /obj/machinery/newscaster{
-	pixel_x = -32;
-	dir = 4
+	dir = 4;
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -970,6 +969,7 @@
 /obj/machinery/door/window,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "scav_shutters"
 	},
 /turf/open/floor/plating/airless,
@@ -1015,10 +1015,10 @@
 	pixel_y = 26
 	},
 /obj/machinery/button/shieldwallgen{
+	id = "scavbay";
 	name = "Bay Air Shield";
-	pixel_y = 36;
 	pixel_x = -8;
-	id = "scavbay"
+	pixel_y = 36
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
@@ -1113,6 +1113,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/light/small,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
 "IE" = (
@@ -1211,6 +1212,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "scav_shutters"
 	},
 /turf/open/floor/plating/airless,
@@ -1220,26 +1222,20 @@
 /area/ship/engineering)
 "OM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = 26
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Pu" = (
 /obj/structure/window/reinforced,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 4
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Qd" = (
@@ -1310,12 +1306,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"Tk" = (
-/obj/machinery/firealarm{
-	dir = 1
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/cargo)
 "TD" = (
 /obj/machinery/computer/operating{
 	dir = 1
@@ -1339,6 +1329,7 @@
 "Un" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "scav_door";
 	name = "Dusty Blast Door"
 	},
@@ -1365,13 +1356,14 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 1;
+	id = "scavbay"
+	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "scav_door";
 	name = "Dusty Blast Door"
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "scavbay";
-	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1777,7 +1769,7 @@ cs
 FO
 iw
 rh
-Tk
+fS
 oY
 Rc
 Rc
