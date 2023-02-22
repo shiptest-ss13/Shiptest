@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/glass/blood
 	name = "blood pack"
-	desc = "Contains blood used for transfusion. Must be attached to an IV drip."
+	desc = "Contains blood used for transfusion. Must be attached to an IV drip. It looks like it could be <b>sliced</b> open with something sharp."
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "bloodpack"
 	volume = 200
