@@ -3,7 +3,7 @@
 
 	S.change_heading(NORTHEAST)
 	S.process(1)
-	TEST_ASSERT_EQUAL(MAGNITUDE(S.speed_x, S.speed_y), S.acceleration_speed / SQRT_2, "Ship did not increase to proper speed after burning engines")
+	TEST_ASSERT_EQUAL(MAGNITUDE(S.speed_x, S.speed_y), S.acceleration_speed / SQRT_2 * (S.burn_percentage / 100), "Ship did not increase to proper speed after burning engines")
 	TEST_ASSERT_EQUAL(S.get_heading(), NORTHEAST, "Ship went [dir2text(S.get_heading())] instead of northeast after burning engines")
 
 	S.tick_move()
