@@ -286,6 +286,26 @@
 
 			new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(get_turf(src))
 
+/obj/structure/salvageable/seed
+	name = "ruined seed vendor"
+	desc = "This is where the seeds lived. Maybe you can still get some?"//megaseed voiceline reference
+	icon_state = "seeds-broken"
+	icon = 'icons/obj/vending.dmi'
+	color = "#808080"
+
+	salvageable_parts = list(
+		/obj/effect/spawner/lootdrop/seeded = 80,
+		/obj/effect/spawner/lootdrop/seeded = 80,
+		/obj/effect/spawner/lootdrop/seeded = 80,
+		/obj/effect/spawner/lootdrop/seeded = 80,
+		/obj/item/seeds/random = 80,
+		/obj/item/seeds/random = 40,
+		/obj/item/seeds/random = 40,
+		/obj/item/stack/ore/salvage/scrapmetal/five = 80,
+		/obj/item/stack/cable_coil/cut = 80,
+		/obj/item/disk/plantgene = 20,
+	)
+
 //scrap item, mostly for fluff
 /obj/item/stack/ore/salvage
 	name = "salvage"
