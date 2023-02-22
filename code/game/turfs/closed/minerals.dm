@@ -704,7 +704,7 @@
 
 /turf/closed/mineral/random/whitesands
 	name = "limestone"
-	desc = "the powdered remains of what once lived here, under the endless sea."
+	desc = "The powdered remains of what once lived here, under the endless sea."
 	icon = 'icons/turf/walls/ws_walls.dmi'
 	smooth_icon = 'icons/turf/walls/ws_walls.dmi'
 	environment_type = WHITESANDS_WALL_ENV
