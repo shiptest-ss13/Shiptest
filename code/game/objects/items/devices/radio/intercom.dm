@@ -165,7 +165,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 /obj/item/radio/intercom/wideband/unscrewed
 	unscrewed = TRUE
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 26)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/wideband, 26)
 
 /obj/item/radio/intercom/wideband/recalculateChannels()
 	. = ..()
@@ -176,7 +176,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 26)
 	desc = "A detached wideband relay. Attach to a wall and screw it in to use."
 	icon_state = "intercom-wideband"
 	result_path = /obj/item/radio/intercom/wideband/unscrewed
-	pixelshift = 26
+	pixel_shift = 26
 
 /obj/item/wallframe/intercom/wideband/table
 	icon_state = "intercom-wideband-table"
