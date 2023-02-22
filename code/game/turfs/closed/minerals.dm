@@ -749,7 +749,7 @@
 
 /turf/closed/mineral/random/jungle
 	name = "bauxite"
-	desc = "Silt and mud were mummified, taking a rigid shape in the morning sun."
+	desc = "Silt and mud are mummified, taking a rigid shape in the morning sun."
 	icon = 'icons/turf/walls/jungle_wall.dmi'
 	smooth_icon = 'icons/turf/walls/jungle_wall.dmi'
 	icon_state = "jungle_wall-0"
