@@ -45,7 +45,6 @@
 		/obj/item/stack/tape/industrial/electrical = 1, // Better tape
 		//WS End
 		/obj/item/clothing/gloves/color/yellow = 2,
-		/obj/item/inducer = 2,
 		/obj/item/storage/toolbox/electrical = 3,
 		/obj/item/electronics/apc = 3,
 		/obj/item/multitool = 3,

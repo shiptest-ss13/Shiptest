@@ -207,3 +207,11 @@
 	r_pocket = /obj/item/analyzer
 	glasses = /obj/item/clothing/glasses/welding
 
+/datum/outfit/job/engineer/syndicate/cybersun
+	name = "Engineer (Cybersun)"
+
+	uniform = /obj/item/clothing/under/syndicate/cybersun
+	shoes = /obj/item/clothing/shoes/workboots
+	r_pocket = /obj/item/radio
+	head = /obj/item/clothing/head/beanie/black
+	accessory = /obj/item/clothing/accessory/armband/engine
