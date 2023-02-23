@@ -402,7 +402,7 @@
 	mod.lefthand_file = initial(current_disguise.lefthand_file)
 	mod.righthand_file = initial(current_disguise.righthand_file)
 	//mod.mob_overlay_state = initial(current_disguise.mob_overlay_state)
-	mod.inhand_icon_state = initial(current_disguise.inhand_icon_state)
+	mod.item_state = initial(current_disguise.item_state)
 	mod.wearer.update_inv_back(mod.slot_flags)
 	RegisterSignal(mod, COMSIG_MOD_ACTIVATE, PROC_REF(return_look))
 
@@ -417,7 +417,7 @@
 	mod.lefthand_file = initial(mod.lefthand_file)
 	mod.righthand_file = initial(mod.righthand_file)
 	//___callbacknewmod.worn_icon_state = null
-	mod.inhand_icon_state = null
+	mod.item_state = null
 	mod.wearer.update_inv_back(mod.slot_flags)
 	current_disguise = null
 	UnregisterSignal(mod, COMSIG_MOD_ACTIVATE)

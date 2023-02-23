@@ -47,6 +47,7 @@
 		return(BRUTELOSS)
 
 /obj/item/clothing/shoes/worn_overlays(isinhands = FALSE)
+	. = ..()
 	. = list()
 	if(!isinhands)
 		var/bloody = FALSE

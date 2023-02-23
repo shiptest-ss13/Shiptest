@@ -65,6 +65,7 @@
 
 
 /obj/item/clothing/head/worn_overlays(isinhands = FALSE)
+	. = ..()
 	. = list()
 	if(!isinhands)
 		if(damaged_clothes)

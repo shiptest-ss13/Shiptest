@@ -26,6 +26,7 @@
 	return OXYLOSS
 
 /obj/item/clothing/gloves/worn_overlays(isinhands = FALSE)
+	. = ..()
 	. = list()
 	if(!isinhands)
 		if(damaged_clothes)

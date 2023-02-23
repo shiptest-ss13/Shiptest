@@ -27,6 +27,7 @@
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/worn_overlays(isinhands = FALSE)
+	. = ..()
 	. = list()
 	if(!isinhands)
 		if(damaged_clothes)

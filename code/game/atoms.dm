@@ -44,6 +44,14 @@
 	*/
 	var/list/atom_colours
 
+	/// Lazylist of all images (hopefully attached to us) to update when we change z levels
+	/// You will need to manage adding/removing from this yourself, but I'll do the updating for you
+	var/list/image/update_on_z
+
+	/// Lazylist of all overlays attached to us to update when we change z levels
+	/// You will need to manage adding/removing from this yourself, but I'll do the updating for you
+	/// Oh and note, if order of addition is important this WILL break that. so mind yourself
+	var/list/image/update_overlays_on_z
 
 	/// a very temporary list of overlays to remove
 	var/list/remove_overlays
@@ -141,6 +149,9 @@
 	var/base_pixel_x
 	///Default Y pixel offset
 	var/base_pixel_y
+
+	/// the datum handler for our contents - see create_storage() for creation method
+	var/datum/storage/atom_storage
 
 /**
  * Called when an atom is created in byond (built in engine proc)
@@ -295,6 +306,30 @@
 		SSicon_smooth.remove_from_queues(src)
 
 	return ..()
+
+/atom/proc/create_storage(
+	max_slots,
+	max_specific_storage,
+	max_total_storage,
+	numerical_stacking = FALSE,
+	allow_quick_gather = FALSE,
+	allow_quick_empty = FALSE,
+	collection_mode = COLLECT_ONE,
+	attack_hand_interact = TRUE,
+	list/canhold,
+	list/canthold,
+	type = /datum/storage,
+)
+
+	if(atom_storage)
+		QDEL_NULL(atom_storage)
+
+	atom_storage = new type(src, max_slots, max_specific_storage, max_total_storage, numerical_stacking, allow_quick_gather, collection_mode, attack_hand_interact)
+
+	if(canhold || canthold)
+		atom_storage.set_holdable(canhold, canthold)
+
+	return atom_storage
 
 /atom/proc/handle_ricochet(obj/projectile/P)
 	var/turf/p_turf = get_turf(P)
@@ -1511,6 +1546,37 @@
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE_MORE, user, .)
 	if(!LAZYLEN(.)) // lol ..length
 		return list("<span class='notice'><i>You examine [src] closer, but find nothing of interest...</i></span>")
+
+/**
+ * Updates the appearence of the icon
+ *
+ * Mostly delegates to update_name, update_desc, and update_icon
+ *
+ * Arguments:
+ * - updates: A set of bitflags dictating what should be updated. Defaults to [ALL]
+ */
+/atom/proc/update_appearance(updates=ALL)
+	SHOULD_NOT_SLEEP(TRUE)
+	SHOULD_CALL_PARENT(TRUE)
+
+	. = NONE
+	updates &= ~SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_APPEARANCE, updates)
+	if(updates & UPDATE_NAME)
+		. |= update_name(updates)
+	if(updates & UPDATE_DESC)
+		. |= update_desc(updates)
+	if(updates & UPDATE_ICON)
+		. |= update_icon(updates)
+
+/// Updates the name of the atom
+/atom/proc/update_name(updates=ALL)
+	SHOULD_CALL_PARENT(TRUE)
+	return SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_NAME, updates)
+
+/// Updates the description of the atom
+/atom/proc/update_desc(updates=ALL)
+	SHOULD_CALL_PARENT(TRUE)
+	return SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_DESC, updates)
 
 ///Passes Stat Browser Panel clicks to the game and calls client click on an atom
 /atom/Topic(href, list/href_list)

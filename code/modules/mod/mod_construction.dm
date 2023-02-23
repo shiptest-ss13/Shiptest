@@ -1,7 +1,7 @@
 /obj/item/mod/construction
 	desc = "Часть, используемая в конструкции МОД-Скафандра."
 	icon = 'icons/obj/clothing/modsuit/mod_construction.dmi'
-	inhand_icon_state = "rack_parts"
+	item_state = "rack_parts"
 
 /obj/item/mod/construction/helmet
 	name = "шлем МОД-Скафандра"

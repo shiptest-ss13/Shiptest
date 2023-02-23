@@ -3,7 +3,7 @@
 	desc = "Нерабочее ядро MOD-Скафа. Сообщи кодерам если видишь это!."
 	icon = 'icons/obj/clothing/modsuit/mod_construction.dmi'
 	icon_state = "mod-core"
-	inhand_icon_state = "electronic"
+	item_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	/// MOD unit we are powering.
