@@ -171,6 +171,8 @@
 		return TRUE
 	if(isclothing(wear_mask) && (wear_mask.clothing_flags & SCAN_REAGENTS))
 		return TRUE
+	if(HAS_TRAIT(src, TRAIT_REAGENT_SCANNER))
+		return TRUE
 
 ///copies over clothing preferences like underwear to another human
 /mob/living/carbon/human/proc/copy_clothing_prefs(mob/living/carbon/human/destination)
