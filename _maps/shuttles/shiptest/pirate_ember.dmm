@@ -829,14 +829,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ship/engineering)
-"eS" = (
-/obj/machinery/door/airlock/external,
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/ship/hallway/central)
 "eV" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/concrete/reinforced,
@@ -2537,20 +2529,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "mE" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "cutter_cargo_shutters";
-	name = "Cargo Shutters"
-	},
 /obj/structure/cable{
 	icon_state = "0-9"
-	},
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	launch_status = 0;
-	port_direction = 4;
-	preferred_direction = 4;
-	name = "remember to remove this later";
-	desc = "if I didn't remove this, hi spockye!"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
@@ -2563,6 +2543,10 @@
 	launch_status = 0;
 	port_direction = 4;
 	preferred_direction = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "cutter_cargo_shutters";
+	name = "Cargo Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -4525,9 +4509,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = 26
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "vE" = (
@@ -6140,7 +6121,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/port)
 "DC" = (
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 1
 	},
@@ -12040,7 +12020,7 @@ De
 zH
 PG
 VA
-eS
+um
 DC
 UH
 bb
