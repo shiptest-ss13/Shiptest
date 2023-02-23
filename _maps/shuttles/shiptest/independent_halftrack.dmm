@@ -17,12 +17,12 @@
 /obj/item/ammo_box/magazine/toy/pistol,
 /obj/item/ammo_box/magazine/toy/pistol,
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 4
+	dir = 4;
+	name = "warningr"
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 8
+	dir = 8;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
@@ -115,8 +115,8 @@
 	dir = 9
 	},
 /obj/machinery/computer/cryopod{
-	pixel_y = -25;
-	dir = 1
+	dir = 1;
+	pixel_y = -25
 	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
@@ -200,9 +200,6 @@
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/port)
 "fT" = (
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 25
-	},
 /obj/structure/closet/secure_closet/security,
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted,
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted,
@@ -217,6 +214,7 @@
 /obj/item/ammo_box/magazine/mm712x82,
 /obj/item/ammo_box/magazine/mm712x82,
 /obj/effect/turf_decal/box/red,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "go" = (
@@ -455,6 +453,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/security{
+	dir = 4;
 	name = "Crew Quarters"
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -520,6 +519,9 @@
 /obj/structure/closet/emcloset/wall{
 	dir = 4;
 	pixel_x = -28
+	},
+/obj/effect/turf_decal/number/five{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -646,8 +648,8 @@
 /area/ship/storage)
 "qQ" = (
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 4
+	dir = 4;
+	name = "warningr"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -665,13 +667,15 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 8
+	dir = 8;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "rM" = (
-/obj/machinery/light/small/directional/south,
+/obj/machinery/light/small/directional/south{
+	pixel_x = 16
+	},
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -747,8 +751,8 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 8
+	dir = 8;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
@@ -811,6 +815,9 @@
 "uo" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -951,6 +958,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/number/zero{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "zg" = (
@@ -1006,8 +1016,8 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 8
+	dir = 8;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
@@ -1020,8 +1030,8 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 8
+	dir = 8;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
@@ -1114,6 +1124,7 @@
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 4
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "FE" = (
@@ -1145,6 +1156,9 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Gs" = (
@@ -1182,12 +1196,12 @@
 /obj/item/ammo_box/magazine/toy/smg,
 /obj/item/ammo_box/magazine/toy/smg,
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 4
+	dir = 4;
+	name = "warningr"
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 8
+	dir = 8;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
@@ -1348,12 +1362,12 @@
 /obj/item/ammo_box/magazine/toy/m762,
 /obj/item/ammo_box/magazine/toy/m762,
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 4
+	dir = 4;
+	name = "warningr"
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 8
+	dir = 8;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
@@ -1376,8 +1390,8 @@
 	icon_state = "1-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 8
+	dir = 8;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
@@ -1424,6 +1438,10 @@
 /obj/item/ammo_box/magazine/m50,
 /obj/item/ammo_box/magazine/m50,
 /obj/effect/turf_decal/box/red,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Mm" = (
@@ -1544,6 +1562,10 @@
 "Ps" = (
 /obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/machinery/atmospherics/components/binary/pump/on/layer2,
+/obj/effect/turf_decal/number/two{
+	dir = 4
+	},
+/obj/effect/turf_decal/no,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "PG" = (
@@ -1561,12 +1583,12 @@
 /obj/item/ammo_box/foambox,
 /obj/item/ammo_box/foambox,
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 4
+	dir = 4;
+	name = "warningr"
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 8
+	dir = 8;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
@@ -1610,8 +1632,8 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 4
+	dir = 4;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
@@ -1661,14 +1683,17 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 8
+	dir = 8;
+	name = "warningr"
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /obj/structure/cable{
-	icon_state = "1-4"
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
@@ -1680,6 +1705,12 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
+"Sa" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "Sc" = (
 /obj/structure/chair,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1772,14 +1803,13 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 4
+	dir = 4;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "UC" = (
 /obj/machinery/light/directional/east,
-/obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 4
 	},
@@ -1918,8 +1948,8 @@
 /area/ship/bridge)
 "Wd" = (
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 4
+	dir = 4;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
@@ -1932,8 +1962,8 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
-	name = "warningr";
-	dir = 8
+	dir = 8;
+	name = "warningr"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
@@ -1981,7 +2011,9 @@
 /area/ship/hallway/aft)
 "Xs" = (
 /obj/machinery/light/small/directional/south,
-/obj/item/radio/intercom/directional/south,
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 12
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "XW" = (
@@ -2246,7 +2278,7 @@ PG
 aT
 Uc
 Vu
-Vu
+Sa
 DU
 lj
 fn

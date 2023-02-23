@@ -483,6 +483,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/hardline_small,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dy" = (
@@ -700,7 +701,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
@@ -1065,6 +1068,7 @@
 "iq" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "exterior";
 	name = "Exterior Shutters"
 	},
@@ -1229,6 +1233,15 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"ki" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "shipbridge";
+	name = "Ship Bridge"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "kj" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/janitor)
@@ -1267,6 +1280,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/turf_decal/number/five,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "kY" = (
@@ -1786,6 +1800,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "enginestorage";
 	name = "Engineering Storage"
 	},
@@ -1821,7 +1836,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "qA" = (
@@ -2261,6 +2278,11 @@
 /obj/item/circuitboard/machine/deep_fryer,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
+"vs" = (
+/obj/structure/catwalk/over,
+/obj/effect/turf_decal/hardline_small/left,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "vw" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -2680,6 +2702,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "cargo_ageis";
 	name = "Cargo Bay"
 	},
@@ -3097,6 +3120,7 @@
 	port_direction = 2
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "cargo_ageis";
 	name = "Cargo Bay"
 	},
@@ -3544,6 +3568,7 @@
 "IC" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "enginestorage";
 	name = "Engineering Storage"
 	},
@@ -3646,6 +3671,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/effect/turf_decal/number/three,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Jr" = (
@@ -4281,6 +4307,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/turf_decal/number/zero,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "PU" = (
@@ -4346,6 +4373,7 @@
 "Qr" = (
 /obj/structure/catwalk/over,
 /obj/item/trash/popcorn,
+/obj/effect/turf_decal/hardline_small/right,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Qt" = (
@@ -5105,6 +5133,7 @@
 "YK" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "exterior";
 	name = "Exterior Shutters"
 	},
@@ -5652,9 +5681,9 @@ wk
 wk
 wk
 gq
-gW
-gW
-gW
+ki
+ki
+ki
 gq
 wk
 wk
@@ -5924,9 +5953,9 @@ wk
 wk
 wk
 gq
-gW
-gW
-gW
+ki
+ki
+ki
 gq
 wk
 wk
@@ -6009,7 +6038,7 @@ KX
 QI
 pm
 gK
-Vh
+vs
 vG
 gV
 sb

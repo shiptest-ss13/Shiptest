@@ -41,6 +41,9 @@
 	pixel_y = -32
 	},
 /obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/number/three{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "bK" = (
@@ -374,6 +377,14 @@
 "ls" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/carpet/nanoweave,
+/area/ship/cargo)
+"lQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/number/zero{
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/ship/cargo)
 "ml" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1487,6 +1498,9 @@
 "YY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/number/five{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Zv" = (
@@ -1802,7 +1816,7 @@ OM
 PX
 kE
 YY
-YY
+lQ
 aX
 fp
 Rc

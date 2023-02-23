@@ -355,6 +355,7 @@
 	dir = 8;
 	name = "Air to Distro"
 	},
+/obj/effect/turf_decal/number/three,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "jb" = (
@@ -386,7 +387,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "jI" = (
@@ -460,6 +461,7 @@
 /area/ship/bridge)
 "kN" = (
 /obj/machinery/door/airlock/grunge{
+	dir = 4;
 	name = "EVA Storage"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -504,6 +506,14 @@
 /obj/item/tank/jetpack/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
+"lD" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "hound_windows"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "mx" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -697,6 +707,7 @@
 /area/ship/crew)
 "pT" = (
 /obj/machinery/door/airlock/grunge{
+	dir = 4;
 	name = "Cargo Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -852,7 +863,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
 "sN" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
@@ -1440,6 +1453,7 @@
 	icon_state = "2-8"
 	},
 /obj/effect/turf_decal/corner_techfloor_gray,
+/obj/effect/turf_decal/number/zero,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "HZ" = (
@@ -1948,6 +1962,7 @@
 "PU" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "hound_windows"
 	},
 /turf/open/floor/plating,
@@ -2054,7 +2069,9 @@
 	},
 /area/ship/cargo)
 "Tp" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2126,6 +2143,7 @@
 /area/ship/cargo)
 "Vg" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "hound_windows"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -2349,6 +2367,8 @@
 	pixel_x = -12;
 	pixel_y = -3
 	},
+/obj/effect/turf_decal/kfp_small/left,
+/obj/effect/turf_decal/no,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Zy" = (
@@ -2865,9 +2885,9 @@ ib
 ib
 ib
 ib
-aX
-aX
-aX
+lD
+lD
+lD
 ib
 ib
 ib

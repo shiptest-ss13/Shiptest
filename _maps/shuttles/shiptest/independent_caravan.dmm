@@ -13,8 +13,8 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "caravanbay";
-	dir = 8
+	dir = 8;
+	id = "caravanbay"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -167,9 +167,9 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_y = 23;
+	id = "caravanbay";
 	pixel_x = 6;
-	id = "caravanbay"
+	pixel_y = 23
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -408,6 +408,7 @@
 "hh" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "modbridge"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -422,6 +423,7 @@
 "hP" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "modwindows"
 	},
 /turf/open/floor/plasteel/tech,
@@ -442,7 +444,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "ih" = (
-/obj/machinery/door/poddoor/incinerator_atmos_aux,
+/obj/machinery/door/poddoor/incinerator_atmos_aux{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "iw" = (
@@ -495,6 +499,7 @@
 "iH" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "modbridge"
 	},
 /turf/open/floor/plasteel/tech,
@@ -570,7 +575,7 @@
 	pixel_x = -8
 	},
 /obj/machinery/light_switch{
-	pixel_x = 25;
+	pixel_x = 22;
 	pixel_y = 25
 	},
 /obj/structure/sign/poster/contraband/random{
@@ -615,6 +620,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "ModShip_thruster_starboard";
 	name = "Thruster Blast Door"
 	},
@@ -1140,6 +1146,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "ModShip_thruster_port";
 	name = "Thruster Blast Door"
 	},
@@ -1289,8 +1296,8 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "caravanbay";
-	dir = 4
+	dir = 4;
+	id = "caravanbay"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -1693,7 +1700,7 @@
 /area/ship/engineering/atmospherics)
 "Fh" = (
 /obj/effect/turf_decal/corner/opaque/purple/border,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "Fk" = (
@@ -1833,6 +1840,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "ModShip_thruster_port";
 	name = "Thruster Blast Door"
 	},
@@ -1962,6 +1970,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "ModShip_thruster_starboard";
 	name = "Thruster Blast Door"
 	},
@@ -2200,7 +2209,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
@@ -2235,8 +2246,8 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "Pt" = (
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/holopad/emergency/command,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
 "Pw" = (
@@ -2491,7 +2502,9 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
@@ -2645,7 +2658,7 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/item/kirbyplants/random,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Vq" = (

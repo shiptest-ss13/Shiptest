@@ -687,6 +687,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"ew" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/ihejirika_small/left{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "eA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -909,7 +918,9 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "fX" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1543,7 +1554,9 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "ke" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 8
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1633,7 +1646,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/wood/glass,
+/obj/machinery/door/airlock/wood/glass{
+	dir = 4
+	},
 /obj/effect/turf_decal/corner/opaque/white/border{
 	dir = 1
 	},
@@ -1840,6 +1855,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
+"ml" = (
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/ship/hallway/fore)
 "mm" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -1880,9 +1904,11 @@
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
 "mz" = (
-/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
 	},
 /turf/open/floor/pod/dark,
 /area/ship/hallway/fore)
@@ -1893,6 +1919,15 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
+"mD" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/ihejirika_small/right{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "mF" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/structure/cable{
@@ -2084,7 +2119,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/gold/glass,
+/obj/machinery/door/airlock/gold/glass{
+	dir = 4
+	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
@@ -2214,7 +2251,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/airlock/gold/glass,
+/obj/machinery/door/airlock/gold/glass{
+	dir = 4
+	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
@@ -2362,7 +2401,9 @@
 /turf/open/floor/light/colour_cycle/dancefloor_b,
 /area/ship/storage)
 "pQ" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 8
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -3192,7 +3233,9 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "vF" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -3300,7 +3343,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/wood/glass,
+/obj/machinery/door/airlock/wood/glass{
+	dir = 8
+	},
 /obj/effect/turf_decal/corner/opaque/white/border{
 	dir = 1
 	},
@@ -3983,10 +4028,14 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/effect/turf_decal/number/three{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Bg" = (
 /obj/machinery/door/poddoor/preopen{
+	dir = 4;
 	id = "cruiseeva"
 	},
 /turf/open/floor/pod/dark,
@@ -4231,7 +4280,9 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "CN" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4735,7 +4786,9 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "FX" = (
-/obj/machinery/door/airlock/wood/glass,
+/obj/machinery/door/airlock/wood/glass{
+	dir = 4
+	},
 /obj/effect/turf_decal/corner/opaque/white/border,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -4867,6 +4920,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/ihejirika_small{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -5819,9 +5875,7 @@
 /obj/effect/turf_decal/corner/opaque/lightgrey/border{
 	dir = 9
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/pod/dark,
 /area/ship/hallway/fore)
 "Pa" = (
@@ -6132,11 +6186,13 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "QJ" = (
-/obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external{
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
@@ -6778,6 +6834,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/number/five{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "UE" = (
@@ -6931,7 +6990,9 @@
 /turf/open/floor/grass,
 /area/ship/hallway/central)
 "VF" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
@@ -6945,9 +7006,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood,
 /area/ship/crew/chapel)
 "VR" = (
@@ -6965,6 +7024,7 @@
 	},
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "cruisewindows"
 	},
 /turf/open/floor/plating,
@@ -7043,7 +7103,9 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "Wl" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
@@ -7082,7 +7144,9 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "WC" = (
-/obj/machinery/door/airlock/wood/glass,
+/obj/machinery/door/airlock/wood/glass{
+	dir = 8
+	},
 /obj/effect/turf_decal/corner/opaque/white/border,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -7328,6 +7392,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/number/zero{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -7687,9 +7754,9 @@ lU
 US
 xC
 CS
-Be
+mD
 GT
-Uy
+ew
 Pn
 Wi
 Wi
@@ -9680,7 +9747,7 @@ Jt
 xT
 mt
 mz
-mz
+ml
 mt
 ef
 TD

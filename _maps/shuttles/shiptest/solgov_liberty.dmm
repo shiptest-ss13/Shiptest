@@ -13,7 +13,9 @@
 /area/ship/bridge)
 "aW" = (
 /obj/machinery/holopad/emergency/command,
-/obj/machinery/light/small/directional/west,
+/obj/machinery/light/small/directional/west{
+	pixel_y = -21
+	},
 /obj/item/clothing/under/rank/command/captain,
 /obj/item/radio/headset/heads/captain/alt,
 /obj/item/storage/backpack/captain,
@@ -51,19 +53,23 @@
 	dir = 1
 	},
 /obj/structure/railing,
-/obj/item/radio/intercom/wideband/directional/north,
 /obj/effect/landmark/start/captain,
 /obj/machinery/button/door{
+	dir = 8;
 	id = "piratecargo";
 	name = "Blast Door Control";
 	pixel_x = 37;
 	pixel_y = -5
 	},
 /obj/machinery/button/door{
+	dir = 8;
 	id = "pirateshutters";
 	name = "Window Lockdown";
 	pixel_x = 27;
 	pixel_y = -5
+	},
+/obj/item/radio/intercom/wideband/directional/east{
+	pixel_y = 11
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
@@ -201,6 +207,7 @@
 "kK" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "pirateshutters";
 	name = "Blast Shutters"
 	},
@@ -262,9 +269,6 @@
 /area/ship/security)
 "nt" = (
 /obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/machinery/door/window/northleft{
 	name = "Engine Access"
 	},
@@ -344,12 +348,13 @@
 /area/ship/security)
 "nW" = (
 /obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = "pirateshutters";
-	name = "Blast Shutters"
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "pirateshutters";
+	name = "Blast Shutters"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
@@ -503,6 +508,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "piratecargo";
 	name = "Blast Door Control";
 	pixel_x = -25;
@@ -736,6 +742,7 @@
 "za" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "pirateshutters";
 	name = "Blast Shutters"
 	},
@@ -1070,6 +1077,7 @@
 /obj/machinery/cell_charger,
 /obj/item/stock_parts/cell/high,
 /obj/item/stock_parts/cell/high,
+/obj/machinery/light/directional/west,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/cargo)
 "Hh" = (
@@ -1118,12 +1126,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "Id" = (
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 28
-	},
 /obj/structure/bed,
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
 /obj/item/bedsheet/grey,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Ie" = (
@@ -1133,11 +1139,22 @@
 /obj/structure/sign/poster/official/obey{
 	pixel_y = 32
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "IF" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/starboard)
+"IO" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "pirateshutters";
+	name = "Blast Shutters"
+	},
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "IS" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/hallway/port)
@@ -1164,7 +1181,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/light/directional/west,
 /obj/item/storage/belt/security,
 /obj/item/storage/backpack/security,
 /obj/item/radio/headset/headset_sec/alt,
@@ -1211,7 +1227,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "KS" = (
-/obj/machinery/light/directional/east,
 /obj/machinery/flasher{
 	id = "Cell 1";
 	pixel_x = 25
@@ -1259,9 +1274,6 @@
 /area/ship/hallway/starboard)
 "Ll" = (
 /obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /obj/machinery/door/window/northright{
 	name = "Engine Access"
 	},
@@ -1462,9 +1474,6 @@
 /area/ship/cargo)
 "Rn" = (
 /obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/machinery/door/window/northleft{
 	name = "Engine Access"
 	},
@@ -1546,6 +1555,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/extinguisher_cabinet/directional/east{
+	pixel_y = -24
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1723,9 +1735,6 @@
 /area/ship/cargo)
 "WM" = (
 /obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /obj/machinery/door/window/northright{
 	name = "Engine Access"
 	},
@@ -1748,7 +1757,6 @@
 /area/ship/cargo)
 "Xx" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1815,6 +1823,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
+	dir = 8;
 	id = "piratecargo";
 	name = "Blast Door Control";
 	pixel_x = 25;
@@ -2014,9 +2023,9 @@ Fx
 "}
 (8,1,1) = {"
 XB
-XB
+IO
 Bb
-XB
+IO
 Bb
 Bb
 mJ
@@ -2095,9 +2104,9 @@ TP
 "}
 (11,1,1) = {"
 XB
-XB
+IO
 Bb
-XB
+IO
 Bb
 Bb
 nB

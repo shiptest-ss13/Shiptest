@@ -85,6 +85,7 @@
 "bd" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "space_cops_bay";
 	name = "Cargo Bay Blast Door"
 	},
@@ -204,6 +205,7 @@
 /area/ship/medical)
 "da" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "space_cops_port_launcher";
 	name = "Port Mass Driver Blast Door"
 	},
@@ -902,7 +904,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "mL" = (
@@ -973,6 +977,7 @@
 /area/ship/hallway/starboard)
 "nu" = (
 /obj/machinery/door/airlock/glass{
+	dir = 4;
 	name = "Crew Quarters"
 	},
 /obj/structure/cable{
@@ -1157,6 +1162,7 @@
 /area/ship/hallway/starboard)
 "oJ" = (
 /obj/machinery/door/airlock/security{
+	dir = 4;
 	name = "Brig";
 	req_one_access_txt = "1"
 	},
@@ -1391,6 +1397,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/command{
+	dir = 4;
 	name = "Bridge";
 	req_access_txt = "19"
 	},
@@ -1612,10 +1619,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"tv" = (
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security/prison)
 "tO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1668,6 +1671,7 @@
 /area/ship/hallway/central)
 "us" = (
 /obj/machinery/door/airlock/mining/glass{
+	dir = 4;
 	name = "Pod Bay"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -1696,6 +1700,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "space_cops_windows"
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
@@ -1796,6 +1801,7 @@
 "vn" = (
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "space_cops_bridge"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -1819,7 +1825,9 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "vw" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer4{
 	dir = 8
 	},
@@ -1878,6 +1886,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/mining/glass{
+	dir = 4;
 	name = "Cargo Bay"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2471,6 +2480,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/mining/glass{
+	dir = 4;
 	name = "Pod Bay"
 	},
 /obj/effect/turf_decal/borderfloor{
@@ -2480,6 +2490,7 @@
 /area/ship/hallway/port)
 "DH" = (
 /obj/machinery/door/airlock/maintenance/external/glass{
+	dir = 4;
 	name = "Storage Bay"
 	},
 /obj/structure/cable{
@@ -2505,6 +2516,7 @@
 /area/ship/storage)
 "DL" = (
 /obj/machinery/door/airlock/mining/glass{
+	dir = 4;
 	name = "Cargo Bay"
 	},
 /obj/structure/cable{
@@ -3093,6 +3105,7 @@
 /area/ship/security)
 "Ls" = (
 /obj/machinery/door/airlock/maintenance/external/glass{
+	dir = 4;
 	name = "EVA Suit Storage"
 	},
 /obj/structure/cable{
@@ -3132,6 +3145,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "space_cops_windows"
 	},
 /obj/structure/cable{
@@ -3291,7 +3305,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/item/radio/intercom/directional/west,
 /obj/item/megaphone/command,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -3569,6 +3582,7 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Sd" = (
@@ -3588,6 +3602,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/medical/glass{
+	dir = 4;
 	name = "Infirmary"
 	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
@@ -3620,6 +3635,7 @@
 /area/ship/cargo)
 "St" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "space_cops_starboard_launcher";
 	name = "Cargo Bay Blast Door"
 	},
@@ -3636,6 +3652,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/white,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "Sz" = (
@@ -3788,6 +3805,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "space_cops_windows"
 	},
 /obj/structure/cable{
@@ -4038,6 +4056,7 @@
 /area/ship/cargo)
 "Xm" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "space_cops_bay";
 	name = "Cargo Bay Blast Door"
 	},
@@ -4272,11 +4291,11 @@ PX
 PX
 PX
 PX
-PX
+jy
 tr
 tr
 tr
-PX
+jy
 PX
 PX
 PX
@@ -4288,7 +4307,7 @@ PX
 PX
 PX
 PX
-PX
+jy
 Iy
 Iy
 jy
@@ -4298,7 +4317,7 @@ uy
 jy
 Iy
 Iy
-PX
+jy
 PX
 PX
 PX
@@ -4556,7 +4575,7 @@ dB
 SU
 xD
 Sv
-tv
+bP
 bP
 Ci
 bP

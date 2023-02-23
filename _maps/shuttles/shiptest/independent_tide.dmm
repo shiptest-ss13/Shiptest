@@ -140,6 +140,7 @@
 "ih" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "tidedoors";
 	name = "Cargo Bay Blast Door"
 	},
@@ -303,7 +304,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "uy" = (
-/obj/machinery/light/directional/north,
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -385,6 +385,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/smes,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "zc" = (
@@ -466,6 +467,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/engineering{
+	dir = 4;
 	req_access = list(11)
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -614,11 +616,12 @@
 /area/ship/maintenance/aft)
 "MM" = (
 /obj/structure/fans/tiny,
+/obj/effect/decal/cleanable/glass,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "tidedoors";
 	name = "Cargo Bay Blast Door"
 	},
-/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Nr" = (

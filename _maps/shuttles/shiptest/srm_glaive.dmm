@@ -3,6 +3,9 @@
 /obj/structure/cable/orange{
 	icon_state = "1-10"
 	},
+/obj/effect/turf_decal/kfp_small{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "af" = (
@@ -324,8 +327,8 @@
 /obj/item/storage/backpack/cultpack,
 /obj/item/flashlight/lantern,
 /obj/item/storage/fancy/candle_box{
-	pixel_y = 3;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 3
 	},
 /obj/item/lighter{
 	pixel_x = -2;
@@ -425,8 +428,8 @@
 	dir = 6
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -442,16 +445,16 @@
 	dir = 10
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
 "hh" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -514,8 +517,8 @@
 "iq" = (
 /obj/structure/table/wood,
 /obj/item/spear/bonespear{
-	pixel_y = 8;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /obj/item/spear/bonespear{
 	pixel_y = 7
@@ -546,6 +549,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/glass{
+	dir = 4;
 	name = "Dormitories"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -616,8 +620,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -745,6 +749,7 @@
 /area/ship/storage)
 "li" = (
 /obj/machinery/door/airlock/engineering{
+	dir = 4;
 	name = "Starboard Wing"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -792,20 +797,20 @@
 	},
 /obj/structure/table/wood,
 /obj/machinery/button/shieldwallgen{
-	pixel_x = 4;
-	id = "glaive_shields"
+	id = "glaive_shields";
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "lA" = (
 /obj/structure/sink/puddle,
 /obj/item/reagent_containers/glass/bucket/wooden{
-	pixel_y = -3;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = -3
 	},
 /obj/item/reagent_containers/glass/bucket/wooden{
-	pixel_y = 9;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 9
 	},
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/roumain)
@@ -873,8 +878,8 @@
 "mD" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -955,8 +960,8 @@
 	pixel_y = 4
 	},
 /obj/item/storage/toolbox/mechanical{
-	pixel_y = -3;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = -3
 	},
 /obj/item/weldingtool/largetank,
 /obj/item/clothing/head/welding,
@@ -1032,8 +1037,8 @@
 	pixel_y = 4
 	},
 /obj/item/wirecutters{
-	pixel_y = 4;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 4
 	},
 /obj/item/kitchen/knife{
 	pixel_x = 8;
@@ -1154,8 +1159,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -1174,13 +1179,15 @@
 	dir = 5
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	dir = 4;
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
 "ts" = (
 /obj/machinery/door/airlock/glass{
+	dir = 4;
 	name = "Port Wing"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -1289,6 +1296,9 @@
 /obj/structure/cable/orange{
 	icon_state = "0-8"
 	},
+/obj/effect/turf_decal/kfp_small/right{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "vW" = (
@@ -1310,6 +1320,15 @@
 	dir = 4
 	},
 /turf/open/floor/wood/yew,
+/area/ship/roumain)
+"we" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "body_shutters";
+	name = "Body Shutters"
+	},
+/turf/open/floor/plating,
 /area/ship/roumain)
 "wm" = (
 /turf/closed/wall/r_wall,
@@ -1334,6 +1353,7 @@
 /area/ship/roumain)
 "wE" = (
 /obj/machinery/door/airlock/glass{
+	dir = 4;
 	name = "Port Wing"
 	},
 /obj/structure/cable/orange{
@@ -1356,16 +1376,16 @@
 "xe" = (
 /obj/structure/table/wood,
 /obj/item/storage/toolbox/mechanical{
-	pixel_y = -3;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = -3
 	},
 /obj/item/storage/toolbox/electrical{
 	pixel_x = -1;
 	pixel_y = 4
 	},
 /obj/item/multitool{
-	pixel_y = 6;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 6
 	},
 /obj/item/weldingtool/largetank,
 /obj/item/clothing/head/welding,
@@ -1485,8 +1505,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -1521,8 +1541,9 @@
 	dir = 9
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	dir = 4;
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -1605,8 +1626,8 @@
 "AN" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -1646,8 +1667,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -1820,13 +1841,16 @@
 /obj/structure/cable/orange{
 	icon_state = "2-8"
 	},
+/obj/effect/turf_decal/kfp_small/left{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "Ex" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf{
-	pixel_y = -2;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = -2
 	},
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -1844,20 +1868,20 @@
 	pixel_y = -6
 	},
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap{
-	pixel_y = -1;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -1
 	},
 /obj/item/reagent_containers/food/snacks/meat/slab/bear{
-	pixel_y = 1;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 1
 	},
 /obj/item/reagent_containers/food/snacks/meat/slab/bear{
-	pixel_y = 1;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 1
 	},
 /obj/item/reagent_containers/food/snacks/meat/slab/bear{
-	pixel_y = 1;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 1
 	},
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit{
 	pixel_x = -9;
@@ -1868,8 +1892,8 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/glass/mortar{
-	pixel_y = 9;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 9
 	},
 /obj/item/pestle{
 	pixel_y = 6
@@ -1929,8 +1953,8 @@
 	pixel_y = -5
 	},
 /obj/item/reagent_containers/syringe/antiviral{
-	pixel_y = -6;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = -6
 	},
 /obj/item/reagent_containers/hypospray/medipen/stimpack{
 	pixel_x = -4
@@ -1940,8 +1964,8 @@
 	pixel_y = -5
 	},
 /obj/item/reagent_containers/glass/bottle/potass_iodide{
-	pixel_y = 10;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 10
 	},
 /obj/item/reagent_containers/glass/bottle/atropine{
 	pixel_y = 9
@@ -2218,6 +2242,7 @@
 /area/ship/storage)
 "LS" = (
 /obj/machinery/door/airlock{
+	dir = 8;
 	name = "Restroom"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2241,32 +2266,32 @@
 "Mh" = (
 /obj/structure/table/wood,
 /obj/item/radio{
-	pixel_y = 6;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/item/radio{
-	pixel_y = 6;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/item/radio{
-	pixel_y = 6;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/item/radio{
-	pixel_y = 6;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/item/radio{
-	pixel_y = 6;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/item/radio{
-	pixel_y = 6;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/item/radio{
-	pixel_y = 6;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem{
 	pixel_x = -7;
@@ -2360,6 +2385,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/medical/glass{
+	dir = 4;
 	name = "Medical Bay"
 	},
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
@@ -2426,6 +2452,7 @@
 /area/ship/roumain)
 "Nd" = (
 /obj/machinery/door/airlock/glass{
+	dir = 4;
 	name = "Dormitories"
 	},
 /obj/structure/cable/orange{
@@ -2524,8 +2551,8 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
-	locked = 1;
-	id = "glaive_shields"
+	id = "glaive_shields";
+	locked = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
@@ -2584,6 +2611,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/medical/glass{
+	dir = 4;
 	name = "Medical Bay"
 	},
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
@@ -2768,6 +2796,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
+	dir = 4;
 	name = "Starboard Wing"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2789,6 +2818,15 @@
 /obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/wood/maple,
 /area/ship/construction)
+"TE" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "body_shutters";
+	name = "Body Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "TO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/railing{
@@ -2831,6 +2869,15 @@
 	},
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/roumain)
+"UQ" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "body_shutters";
+	name = "Body Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/medical)
 "US" = (
 /obj/structure/cable/orange{
 	icon_state = "1-4"
@@ -2887,8 +2934,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Body Shutters";
-	id = "body_shutters"
+	id = "body_shutters";
+	name = "Body Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/roumain)
@@ -2986,7 +3033,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "XY" = (
-/obj/item/radio/intercom/wideband/directional/north,
 /obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 1
@@ -2998,6 +3044,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/item/radio/intercom/wideband/table{
+	dir = 1
+	},
 /turf/open/floor/wood/mahogany,
 /area/ship/roumain)
 "XZ" = (
@@ -3651,10 +3700,10 @@ sH
 sH
 sH
 fm
-hh
-hh
-hh
-hh
+TE
+TE
+TE
+TE
 fm
 sH
 sH
@@ -3716,10 +3765,10 @@ lM
 aM
 Nq
 wp
-AN
-AN
-AN
-AN
+we
+we
+we
+we
 wp
 FA
 FA
@@ -3785,7 +3834,7 @@ sH
 FA
 Cx
 AN
-AN
+we
 AN
 cg
 XB
@@ -3800,7 +3849,7 @@ ZV
 Xt
 wp
 wp
-AN
+we
 fm
 IF
 iu
@@ -4013,7 +4062,7 @@ sH
 FA
 Cx
 AN
-AN
+we
 AN
 Xt
 XB
@@ -4028,7 +4077,7 @@ Xt
 ZV
 wp
 wp
-AN
+we
 fi
 XZ
 MR
@@ -4096,10 +4145,10 @@ bW
 Lk
 hz
 wp
-AN
-AN
-AN
-AN
+we
+we
+we
+we
 wp
 cR
 xf
@@ -4183,10 +4232,10 @@ sH
 sH
 sH
 fi
-mD
-mD
-mD
-mD
+UQ
+UQ
+UQ
+UQ
 fi
 sH
 sH

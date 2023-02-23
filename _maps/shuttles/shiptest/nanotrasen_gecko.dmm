@@ -424,6 +424,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "gecko_thrusters"
 	},
 /turf/open/floor/plating,
@@ -590,6 +591,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "gecko_thrusters"
 	},
 /turf/open/floor/plating,
@@ -684,9 +686,7 @@
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/glasses/meson/engine/tray,
 /obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 24
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "hs" = (
@@ -697,6 +697,7 @@
 /area/ship/maintenance/fore)
 "ht" = (
 /obj/machinery/door/airlock/command{
+	dir = 4;
 	name = "Bridge"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -852,6 +853,7 @@
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "gecko_thrusters"
 	},
 /turf/open/floor/plating,
@@ -1162,6 +1164,9 @@
 	name = "Engine Fuel Input 1";
 	piping_layer = 1
 	},
+/obj/effect/turf_decal/ntspaceworks_big/seven{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "lu" = (
@@ -1175,6 +1180,7 @@
 "ly" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "gecko_bridge"
 	},
 /turf/open/floor/plating,
@@ -2099,13 +2105,11 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
 "wT" = (
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 24
-	},
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen/fountain/captain,
 /obj/item/stamp/captain,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "wY" = (
@@ -2117,6 +2121,9 @@
 /area/ship/engineering/engine)
 "wZ" = (
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/turf_decal/ntspaceworks_big/one{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "xd" = (
@@ -2188,6 +2195,9 @@
 "xR" = (
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer1{
 	dir = 10
+	},
+/obj/effect/turf_decal/ntspaceworks_big/four{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2304,6 +2314,10 @@
 /obj/structure/closet/firecloset/full,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
+"zd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/maintenance/port)
 "ze" = (
 /obj/structure/sign/number/six{
 	color = "#00000F";
@@ -2379,6 +2393,12 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew)
+"zG" = (
+/obj/effect/turf_decal/number/five{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "zI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -2572,6 +2592,9 @@
 /area/ship/external)
 "Cj" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/ntspaceworks_big/eight{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Ct" = (
@@ -2674,6 +2697,9 @@
 "Ds" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/ntspaceworks_big/six{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Dv" = (
@@ -2732,6 +2758,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "gecko_thrusters"
 	},
 /turf/open/floor/plating,
@@ -2868,7 +2895,7 @@
 /area/ship/cargo/starboard)
 "FE" = (
 /obj/effect/turf_decal/borderfloor,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "FM" = (
@@ -2884,6 +2911,7 @@
 /area/ship/cargo/port)
 "FN" = (
 /obj/machinery/door/airlock/engineering{
+	dir = 4;
 	name = "Engine Room"
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5{
@@ -2951,6 +2979,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5{
 	dir = 8
+	},
+/obj/effect/turf_decal/number/three{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -3140,6 +3171,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "gecko_thrusters"
 	},
 /turf/open/floor/plating,
@@ -3313,6 +3345,7 @@
 	name = "Engine Access"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "gecko_thrusters"
 	},
 /turf/open/floor/plating,
@@ -3615,7 +3648,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ml" = (
@@ -3652,6 +3684,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/grey/filled/warning,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ms" = (
@@ -3716,15 +3749,19 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"Of" = (
+/obj/effect/turf_decal/ntspaceworks_big/five{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "Og" = (
 /obj/effect/spawner/lootdrop/salvage_50,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 24
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/cargo/port)
 "Oi" = (
@@ -3738,6 +3775,7 @@
 /area/ship/cargo/starboard)
 "Oj" = (
 /obj/machinery/door/airlock/public/glass{
+	dir = 4;
 	name = "Aft Hallway"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4056,6 +4094,10 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo/port)
+"Rr" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/maintenance/starboard)
 "Rx" = (
 /obj/machinery/door/airlock{
 	name = "Crew Quarters"
@@ -4080,6 +4122,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
+"RY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/external)
 "Se" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/landmark/start/assistant,
@@ -4207,6 +4254,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external)
+"Td" = (
+/obj/effect/turf_decal/number/zero{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "Tf" = (
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer5{
 	dir = 8
@@ -4378,6 +4431,9 @@
 /obj/machinery/atmospherics/pipe/manifold/purple/hidden/layer1{
 	dir = 8
 	},
+/obj/effect/turf_decal/ntspaceworks_big/three{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Ux" = (
@@ -4479,6 +4535,7 @@
 /area/ship/cargo/starboard)
 "Vu" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "gecko_engine_vent";
 	name = "Combustion Chamber Vent"
 	},
@@ -4847,6 +4904,7 @@
 /area/ship/maintenance/fore)
 "XQ" = (
 /obj/machinery/door/airlock/public/glass{
+	dir = 4;
 	name = "Fore Hallway"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4902,6 +4960,9 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/ntspaceworks_big/two{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "YA" = (
@@ -5243,10 +5304,10 @@ hu
 hu
 "}
 (7,1,1) = {"
-Tc
+zd
 wy
 xh
-Tc
+zd
 hu
 hu
 Ug
@@ -5254,7 +5315,7 @@ Iz
 Cj
 lj
 Ds
-on
+Of
 cy
 UP
 hX
@@ -5266,10 +5327,10 @@ Hg
 Ug
 hu
 hu
-Tq
+RY
 xh
 OQ
-Tc
+Rr
 "}
 (8,1,1) = {"
 tB
@@ -5282,8 +5343,8 @@ Ug
 hq
 on
 Ga
-on
-on
+Td
+zG
 wY
 xN
 FZ

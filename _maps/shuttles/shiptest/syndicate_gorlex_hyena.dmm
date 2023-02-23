@@ -109,6 +109,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "wreckerwindows";
 	name = "Blast Shutters"
 	},
@@ -153,13 +154,12 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/poddoor{
-	id = "wrecker_engine_stbd"
-	},
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
 	},
-/obj/structure/window/reinforced/spawner/north,
+/obj/machinery/door/poddoor{
+	id = "wrecker_engine_stbd"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "dA" = (
@@ -301,7 +301,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/oil/streak,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "fY" = (
@@ -426,13 +426,13 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/poddoor{
-	id = "wrecker_engine_port"
-	},
 /obj/machinery/door/window/eastleft{
 	name = "Engine Access"
 	},
-/obj/structure/window/reinforced/spawner/north,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "wrecker_engine_port"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "iu" = (
@@ -512,13 +512,12 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/poddoor{
-	id = "wrecker_engine_stbd"
-	},
 /obj/machinery/door/window/eastright{
 	name = "Engine Access"
 	},
-/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/poddoor{
+	id = "wrecker_engine_stbd"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "iT" = (
@@ -531,6 +530,7 @@
 "jt" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "wreckerwindows";
 	name = "Blast Shutters"
 	},
@@ -595,10 +595,10 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
 	},
+/obj/structure/window/reinforced/spawner/east,
 /obj/machinery/door/poddoor{
 	id = "wrecker_engine_stbd"
 	},
-/obj/structure/window/reinforced/spawner/east,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "kM" = (
@@ -1008,6 +1008,7 @@
 /area/ship/cargo)
 "so" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "wreckercargobay";
 	name = "Cargo Bay Exterior Blast Door"
 	},
@@ -1025,6 +1026,7 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "wreckercargobay";
 	name = "Cargo Bay Exterior Blast Door"
 	},
@@ -1068,6 +1070,7 @@
 /area/ship/bridge)
 "sR" = (
 /obj/machinery/door/airlock/grunge{
+	dir = 8;
 	name = "Bridge";
 	req_access_txt = "19"
 	},
@@ -1133,7 +1136,6 @@
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/clothing/head/soft/grey,
-/obj/machinery/light/small/directional/north,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -1525,6 +1527,7 @@
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/clothing/head/soft/grey,
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "zZ" = (
@@ -1704,8 +1707,9 @@
 "DF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/spider/stickyweb,
-/obj/structure/closet/crate/secure/loot,
+/obj/effect/turf_decal/number/zero{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "DH" = (
@@ -1986,6 +1990,15 @@
 /obj/effect/decal/cleanable/food/egg_smudge,
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"Jf" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "wreckerwindows";
+	name = "Blast Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Jv" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 8
@@ -2038,6 +2051,7 @@
 "JS" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "wreckercargobay";
 	name = "Cargo Bay Exterior Blast Door"
 	},
@@ -2046,6 +2060,9 @@
 "Kb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/number/five{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "Kf" = (
@@ -2092,6 +2109,9 @@
 /area/ship/crew)
 "Ky" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/hardline_small/right{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "KA" = (
@@ -2353,6 +2373,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "wreckercargobay";
 	name = "Cargo Bay Exterior Blast Door"
 	},
@@ -2399,6 +2420,7 @@
 /area/ship/storage)
 "OJ" = (
 /obj/machinery/door/airlock/grunge{
+	dir = 4;
 	name = "Locker Room"
 	},
 /obj/structure/cable{
@@ -2450,6 +2472,16 @@
 /obj/item/gun/ballistic/shotgun/lethal,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
+"Pd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spider/stickyweb,
+/obj/structure/closet/crate/secure/loot,
+/obj/effect/turf_decal/number/three{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "Pn" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2528,10 +2560,13 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
 	},
+/obj/machinery/door/window/eastleft{
+	name = "Engine Access"
+	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "wrecker_engine_port"
 	},
-/obj/structure/window/reinforced/spawner/east,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "PT" = (
@@ -2600,6 +2635,13 @@
 /obj/structure/sign/warning/vacuum/external,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
+"RE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/hardline_small{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "Sd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2663,13 +2705,13 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/poddoor{
-	id = "wrecker_engine_port"
-	},
 /obj/machinery/door/window/eastright{
 	name = "Engine Access"
 	},
-/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "wrecker_engine_port"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "SV" = (
@@ -2840,6 +2882,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/remains/human,
+/obj/effect/turf_decal/hardline_small/left{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "VG" = (
@@ -3107,6 +3152,7 @@
 /area/ship/crew)
 "YH" = (
 /obj/machinery/door/airlock/grunge{
+	dir = 4;
 	name = "Cargo Bay"
 	},
 /obj/structure/cable{
@@ -3560,7 +3606,7 @@ fL
 Xj
 uf
 yn
-mL
+Pd
 mL
 "}
 (19,1,1) = {"
@@ -3640,7 +3686,7 @@ sA
 wP
 vv
 mL
-Ky
+RE
 qs
 "}
 (23,1,1) = {"
@@ -3746,9 +3792,9 @@ mL
 (28,1,1) = {"
 nn
 fV
-oz
-oz
-oz
+Jf
+Jf
+Jf
 fV
 nn
 nn

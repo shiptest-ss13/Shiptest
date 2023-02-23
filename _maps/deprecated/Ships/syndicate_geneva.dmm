@@ -251,6 +251,7 @@
 "dW" = (
 /obj/machinery/vending/hydroseeds,
 /obj/machinery/light/directional/north,
+/obj/machinery/light/directional/west,
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "dZ" = (
@@ -330,6 +331,7 @@
 /area/ship/engineering)
 "eL" = (
 /obj/machinery/door/airlock/wood/glass{
+	dir = 4;
 	name = "Natural Sciences Lab"
 	},
 /obj/structure/cable{
@@ -451,6 +453,13 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
+"gH" = (
+/turf/open/floor/plating,
+/area/ship/crew/library)
+"gN" = (
+/obj/effect/turf_decal/number/zero,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "gR" = (
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
@@ -826,6 +835,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/port)
+"oc" = (
+/obj/effect/turf_decal/miskilamo_small,
+/turf/open/floor/plating,
+/area/ship/crew/library)
 "og" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "med";
@@ -930,6 +943,7 @@
 /area/ship/medical)
 "pL" = (
 /obj/machinery/door/airlock/command/glass{
+	dir = 4;
 	name = "Professor's Office"
 	},
 /obj/structure/cable{
@@ -1006,6 +1020,10 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"sy" = (
+/obj/effect/turf_decal/number/five,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "sB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
@@ -1026,6 +1044,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"tP" = (
+/turf/open/floor/plating,
+/area/ship/cargo)
 "tZ" = (
 /obj/structure/frame/computer,
 /turf/open/floor/carpet/nanoweave/red,
@@ -1144,6 +1165,10 @@
 "yf" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/library)
+"yj" = (
+/obj/effect/turf_decal/miskilamo_small/right,
+/turf/open/floor/plating,
+/area/ship/crew/library)
 "zd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -1174,6 +1199,7 @@
 /area/ship/engineering)
 "zH" = (
 /obj/machinery/door/airlock/medical/glass{
+	dir = 4;
 	name = "Paramedic's Quarters"
 	},
 /obj/effect/mapping_helpers/airlock/abandoned,
@@ -1433,6 +1459,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/medical/surgery)
+"Hj" = (
+/obj/effect/turf_decal/miskilamo_small/left,
+/turf/open/floor/plating,
+/area/ship/crew/library)
 "Ho" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -1990,6 +2020,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Xe" = (
+/obj/effect/turf_decal/number/two,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Xo" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 10
@@ -2010,6 +2044,7 @@
 /area/ship/medical)
 "Yo" = (
 /obj/machinery/door/airlock/engineering/glass{
+	dir = 4;
 	name = "Engineering Bay"
 	},
 /obj/structure/cable{
@@ -2178,7 +2213,7 @@ jY
 Iv
 hs
 SE
-ZB
+gH
 "}
 (7,1,1) = {"
 ZB
@@ -2198,7 +2233,7 @@ yf
 Wv
 yf
 Gv
-ZB
+Hj
 "}
 (8,1,1) = {"
 ZB
@@ -2218,7 +2253,7 @@ HY
 rN
 yf
 GF
-ZB
+oc
 "}
 (9,1,1) = {"
 ZB
@@ -2238,7 +2273,7 @@ OJ
 bG
 FU
 SE
-ZB
+yj
 "}
 (10,1,1) = {"
 Ux
@@ -2358,7 +2393,7 @@ oB
 Ho
 jX
 QH
-ZB
+sy
 "}
 (16,1,1) = {"
 ZB
@@ -2378,7 +2413,7 @@ zd
 BF
 TG
 He
-ZB
+gN
 "}
 (17,1,1) = {"
 ZB
@@ -2398,7 +2433,7 @@ zA
 BP
 vp
 Hg
-ZB
+Xe
 "}
 (18,1,1) = {"
 ZB
@@ -2418,7 +2453,7 @@ um
 YK
 Li
 QH
-ZB
+tP
 "}
 (19,1,1) = {"
 ZB

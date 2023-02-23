@@ -109,8 +109,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "Commissioner's Shutters";
-	id = "commshut"
+	id = "commshut";
+	name = "Commissioner's Shutters"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -210,16 +210,16 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_y = 7;
-	pixel_x = 7;
 	id = "entrance_shutt";
-	name = "Entrance Shutters"
+	name = "Entrance Shutters";
+	pixel_x = 7;
+	pixel_y = 7
 	},
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = 7;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 7
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -431,7 +431,9 @@
 /obj/structure/cable/cyan{
 	icon_state = "5-9"
 	},
-/obj/machinery/door/airlock/medical/glass/lp/medical,
+/obj/machinery/door/airlock/medical/glass/lp/medical{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -689,16 +691,16 @@
 "fA" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/light_switch{
-	pixel_y = 24;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
 "fG" = (
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -23;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -23
 	},
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
@@ -749,18 +751,18 @@
 "fZ" = (
 /obj/structure/table/reinforced,
 /obj/item/table_bell{
-	pixel_y = -7;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = -7
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/window/lp,
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_x = 8;
-	pixel_y = 8;
+	id = "entrance_lockdown";
 	name = "Entrance Lockdown Shutters";
-	id = "entrance_lockdown"
+	pixel_x = 8;
+	pixel_y = 8
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
@@ -871,8 +873,8 @@
 	dir = 8
 	},
 /obj/item/storage/toolbox/mechanical{
-	pixel_y = -2;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = -2
 	},
 /obj/machinery/light_switch{
 	dir = 8;
@@ -880,8 +882,8 @@
 	pixel_y = -9
 	},
 /obj/item/storage/toolbox/electrical{
-	pixel_y = 7;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 7
 	},
 /obj/item/screwdriver{
 	pixel_y = 3
@@ -1068,15 +1070,16 @@
 /area/ship/hallway/fore)
 "il" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	locked = 1;
+	dir = 1;
 	id = "ranger_shields";
-	dir = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "miningblastlp"
+	locked = 1
 	},
 /obj/structure/cable/cyan{
 	icon_state = "0-9"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "miningblastlp"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
@@ -1246,7 +1249,9 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/command/glass/lp/port_hallway,
+/obj/machinery/door/airlock/command/glass/lp/port_hallway{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -1420,10 +1425,11 @@
 /area/ship/science)
 "mf" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	locked = 1;
-	id = "ranger_shields"
+	id = "ranger_shields";
+	locked = 1
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "miningblastlp"
 	},
 /obj/structure/cable/cyan{
@@ -1434,8 +1440,8 @@
 "mj" = (
 /obj/structure/table/rolling,
 /obj/item/reagent_containers/spray/cleaner{
-	pixel_y = 8;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 8
 	},
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
@@ -1516,6 +1522,7 @@
 /area/ship/medical)
 "nf" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "miningblastlp"
 	},
 /turf/open/floor/plasteel/dark,
@@ -1595,8 +1602,8 @@
 	pixel_x = 6
 	},
 /obj/item/coin/runite{
-	pixel_y = -4;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1766,8 +1773,8 @@
 "ql" = (
 /obj/machinery/light/directional/east,
 /obj/machinery/atmospherics/components/unary/tank/air{
-	piping_layer = 2;
-	dir = 8
+	dir = 8;
+	piping_layer = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
@@ -2017,6 +2024,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"th" = (
+/turf/closed/wall,
+/area/ship/maintenance/port)
 "ti" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -2066,10 +2076,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/airlock/command/glass/lp/commissioner,
+/obj/machinery/door/airlock/command/glass/lp/commissioner{
+	dir = 4
+	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "Commissioner's Shutters";
-	id = "commshut"
+	dir = 4;
+	id = "commshut";
+	name = "Commissioner's Shutters"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -2107,8 +2120,8 @@
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/bbqribs,
 /obj/structure/closet/secure_closet/freezer{
-	name = "Refrigerator";
-	desc = "A refrigerated cabinet for food."
+	desc = "A refrigerated cabinet for food.";
+	name = "Refrigerator"
 	},
 /obj/item/reagent_containers/food/snacks/store/bread/meat,
 /turf/open/floor/plasteel/grimy,
@@ -2339,6 +2352,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"wy" = (
+/turf/closed/wall,
+/area/ship/maintenance/starboard)
 "wD" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 5
@@ -2528,7 +2544,9 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/command/glass/lp/dorms,
+/obj/machinery/door/airlock/command/glass/lp/dorms{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -2558,9 +2576,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/door{
-	pixel_y = 24;
 	id = "thrusterblasts";
-	name = "Thruster Blast Doors"
+	name = "Thruster Blast Doors";
+	pixel_y = 24
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -2577,8 +2595,8 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "Inner Aft Shutters";
-	id = "outerinner"
+	id = "outerinner";
+	name = "Inner Aft Shutters"
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
@@ -2616,14 +2634,14 @@
 	dir = 8
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	locked = 1;
+	dir = 4;
 	id = "ranger_telecomms";
-	dir = 4
+	locked = 1
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	locked = 1;
+	dir = 8;
 	id = "ranger_telecomms";
-	dir = 8
+	locked = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/circuit/green,
@@ -2643,8 +2661,8 @@
 	},
 /obj/machinery/door/airlock/command/glass/lp/bridge,
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "Inner Fore Shutters";
-	id = "innerinner"
+	id = "innerinner";
+	name = "Inner Fore Shutters"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -2862,7 +2880,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/directional/east,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/circuit/red/airless,
 /area/ship/science/ai_chamber)
 "Bv" = (
@@ -3081,8 +3099,8 @@
 	},
 /obj/machinery/door/airlock/external,
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "Inner Aft Shutters";
-	id = "outerinner"
+	id = "outerinner";
+	name = "Inner Aft Shutters"
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
@@ -3149,8 +3167,8 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "Inner Aft Shutters";
-	id = "outerinner"
+	id = "outerinner";
+	name = "Inner Aft Shutters"
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
@@ -3407,15 +3425,15 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_y = -9;
-	pixel_x = 22;
 	id = "miningblastlp";
-	name = "Mining Bay Blast Doors"
+	name = "Mining Bay Blast Doors";
+	pixel_x = 22;
+	pixel_y = -9
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
-	pixel_x = 22;
-	id = "ranger_shields"
+	id = "ranger_shields";
+	pixel_x = 22
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/plasteel/dark,
@@ -3533,9 +3551,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/button/door{
-	pixel_y = 24;
 	id = "thrusterblasts";
-	name = "Thruster Blast Doors"
+	name = "Thruster Blast Doors";
+	pixel_y = 24
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3576,8 +3594,9 @@
 "HS" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "Commissioner's Shutters";
-	id = "commshut"
+	dir = 4;
+	id = "commshut";
+	name = "Commissioner's Shutters"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3710,8 +3729,8 @@
 	dir = 1
 	},
 /obj/machinery/light_switch{
-	pixel_y = 24;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 24
 	},
 /obj/item/banner/security,
 /turf/open/floor/plasteel/dark,
@@ -4003,8 +4022,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -23;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -23
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
@@ -4101,16 +4120,16 @@
 "LP" = (
 /obj/structure/table/wood,
 /obj/item/camera{
-	pixel_y = 9;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 9
 	},
 /obj/item/storage/crayons{
 	pixel_x = -5;
 	pixel_y = 7
 	},
 /obj/item/toy/crayon/spraycan{
-	pixel_y = 4;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 4
 	},
 /obj/item/camera_film{
 	pixel_x = 8;
@@ -4222,8 +4241,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -23;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -23
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
@@ -4683,28 +4702,28 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	pixel_y = -4;
-	pixel_x = -7;
+	id = "outerinner";
 	name = "Inner Aft Shutters";
-	id = "outerinner"
-	},
-/obj/machinery/button/door{
-	pixel_y = 6;
 	pixel_x = -7;
+	pixel_y = -4
+	},
+/obj/machinery/button/door{
+	id = "innerinner";
 	name = "Inner Fore Shutters";
-	id = "innerinner"
+	pixel_x = -7;
+	pixel_y = 6
 	},
 /obj/machinery/button/door{
-	pixel_y = 6;
-	pixel_x = 5;
+	id = "innerouter";
 	name = "Outer Fore Shutters";
-	id = "innerouter"
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /obj/machinery/button/door{
-	pixel_y = -4;
-	pixel_x = 5;
+	id = "outerouter";
 	name = "Outer Aft Shutters";
-	id = "outerouter"
+	pixel_x = 5;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -4921,7 +4940,9 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/command/glass/lp/security,
+/obj/machinery/door/airlock/command/glass/lp/security{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -5016,12 +5037,12 @@
 "Vz" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical{
-	pixel_y = -6;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = -6
 	},
 /obj/item/storage/toolbox/electrical{
-	pixel_y = 7;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 7
 	},
 /obj/item/clothing/head/welding,
 /turf/open/floor/plasteel/dark,
@@ -5103,7 +5124,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/airlock/command/glass/lp/cargo,
+/obj/machinery/door/airlock/command/glass/lp/cargo{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -5365,7 +5388,7 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/directional/west,
+/obj/item/radio/intercom/wideband/directional/south,
 /turf/open/floor/circuit/red/airless,
 /area/ship/science/ai_chamber)
 "YU" = (
@@ -5484,14 +5507,14 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/areaeditor/shuttle{
-	pixel_y = 9;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 9
 	},
 /obj/machinery/button/door{
-	pixel_y = -2;
-	pixel_x = -7;
 	id = "commshut";
-	name = "Commissioner's Office Shutters"
+	name = "Commissioner's Office Shutters";
+	pixel_x = -7;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -5560,8 +5583,8 @@
 "ZD" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	name = "Inner Fore Shutters";
-	id = "innerinner"
+	id = "innerinner";
+	name = "Inner Fore Shutters"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -5746,7 +5769,7 @@ zW
 zW
 zW
 zW
-zW
+wy
 QT
 QT
 QT
@@ -5828,7 +5851,7 @@ zW
 zW
 zW
 zW
-zW
+wy
 QT
 QT
 QT
@@ -5996,7 +6019,7 @@ zW
 zW
 zW
 zW
-zW
+wy
 QT
 QT
 QT
@@ -7004,7 +7027,7 @@ zW
 zW
 zW
 zW
-zW
+th
 LV
 LV
 LV
@@ -7172,7 +7195,7 @@ zW
 zW
 zW
 zW
-zW
+th
 LV
 LV
 LV
@@ -7258,7 +7281,7 @@ zW
 zW
 zW
 zW
-zW
+th
 LV
 LV
 LV

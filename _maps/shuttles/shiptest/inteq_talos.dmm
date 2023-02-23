@@ -9,6 +9,7 @@
 	id = "talos_tank_burn"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_tank_burn"
 	},
 /obj/effect/turf_decal/industrial/fire/fulltile,
@@ -431,6 +432,7 @@
 	id = "talos_tank_air"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_tank_air"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
@@ -506,7 +508,7 @@
 "dR" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
 /obj/effect/turf_decal/siding/thinplating,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
 "dZ" = (
@@ -636,13 +638,13 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/line,
 /obj/effect/turf_decal/siding/thinplating,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "eI" = (
@@ -923,6 +925,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_thrusters_port"
 	},
 /turf/open/floor/plating,
@@ -934,10 +937,10 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "gP" = (
@@ -979,18 +982,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"gV" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/door/poddoor{
-	id = "talos_thrusters_starboard"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "gZ" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -1030,6 +1021,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
+	dir = 4;
 	name = "Engineering";
 	normalspeed = 0;
 	req_access_txt = "10"
@@ -1426,11 +1418,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "jy" = (
-/obj/machinery/door/poddoor{
-	id = "talos_thrusters_starboard"
-	},
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "talos_thrusters_starboard"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1595,27 +1588,13 @@
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/plating/airless,
 /area/ship/cargo/starboard)
-"ku" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/door/poddoor{
-	id = "talos_thrusters_port"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "kv" = (
 /obj/structure/chair/office,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
 /obj/effect/landmark/start/chief_engineer,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "kD" = (
@@ -1663,6 +1642,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_thrusters_port"
 	},
 /turf/open/floor/plating,
@@ -2222,6 +2202,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/start/station_engineer,
+/obj/effect/turf_decal/hardline_small/right,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "oR" = (
@@ -2559,6 +2540,7 @@
 /area/ship/cargo)
 "qV" = (
 /obj/machinery/door/airlock{
+	dir = 4;
 	name = "Dormitory"
 	},
 /obj/structure/cable{
@@ -2635,10 +2617,11 @@
 	locked = 1
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_cargo"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
 "rv" = (
@@ -3126,8 +3109,7 @@
 	freerange = 1;
 	freqlock = 1;
 	frequency = 1347;
-	name = "IRMG shortwave intercom";
-	pixel_y = 22
+	name = "IRMG shortwave intercom"
 	},
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -3234,14 +3216,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "uY" = (
-/obj/machinery/door/poddoor{
-	id = "talos_thrusters_starboard"
-	},
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "talos_thrusters_starboard"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -3649,6 +3632,7 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
+/obj/effect/turf_decal/number/zero,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "xz" = (
@@ -3925,6 +3909,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_thrusters_starboard"
 	},
 /obj/structure/cable{
@@ -3976,6 +3961,7 @@
 "zy" = (
 /obj/effect/turf_decal/industrial/fire/fulltile,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_tank_burn"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
@@ -4213,6 +4199,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock{
+	dir = 4;
 	name = "Restroom"
 	},
 /obj/structure/cable{
@@ -4262,6 +4249,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_tank_fuel"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
@@ -4451,6 +4439,7 @@
 "CH" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/grunge{
+	dir = 4;
 	name = "Cargo Bay"
 	},
 /obj/structure/cable{
@@ -4540,6 +4529,7 @@
 	id = "talos_tank_air"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_tank_air"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
@@ -4569,6 +4559,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_tank_burn"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
@@ -4600,9 +4591,10 @@
 	req_access_txt = "24"
 	},
 /obj/machinery/button/door{
+	color = "red";
 	dir = 8;
 	id = "talos_tank_fuel";
-	name = "Access Door Control";
+	name = "Access Door Control (DANGER) (EXTREMELY DANGEROUS) (DO NOT PRESS)";
 	pixel_x = 25;
 	pixel_y = -6;
 	req_access_txt = "24"
@@ -4678,11 +4670,12 @@
 /area/ship/security)
 "DU" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/poddoor{
-	id = "talos_cargo"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "talos_cargo"
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
 "DY" = (
@@ -5099,6 +5092,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/effect/turf_decal/hardline_small,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "GL" = (
@@ -5377,7 +5371,7 @@
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = 32
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "IH" = (
@@ -5417,6 +5411,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/start/station_engineer,
+/obj/effect/turf_decal/number/five,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Ja" = (
@@ -5610,6 +5605,7 @@
 /area/ship/engineering)
 "KK" = (
 /obj/machinery/door/airlock/public/glass{
+	dir = 4;
 	name = "Canteen"
 	},
 /obj/effect/turf_decal/borderfloor{
@@ -5739,6 +5735,7 @@
 "LD" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_cargo"
 	},
 /turf/open/floor/engine/hull/reinforced,
@@ -5779,9 +5776,6 @@
 /area/ship/hallway/central)
 "LN" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/airlock/grunge{
-	name = "Cargo Bay"
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -5790,6 +5784,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	name = "Cargo Bay"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -5939,6 +5937,7 @@
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_cargo"
 	},
 /turf/open/floor/engine/hull/reinforced,
@@ -5980,6 +5979,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
+	dir = 4;
 	name = "Engineering";
 	normalspeed = 0;
 	req_access_txt = "10"
@@ -5998,6 +5998,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/public/glass{
+	dir = 4;
 	name = "Crew Quarters"
 	},
 /obj/structure/cable{
@@ -6064,6 +6065,7 @@
 /area/ship/maintenance/port)
 "NI" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_engine_vent";
 	name = "Combustion Chamber Vent"
 	},
@@ -6352,11 +6354,12 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/poddoor{
-	id = "talos_tank_fuel"
-	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 1;
+	id = "talos_tank_fuel"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_tank_fuel"
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
@@ -6554,7 +6557,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
 "RC" = (
@@ -6721,6 +6724,7 @@
 /area/ship/hallway/central)
 "ST" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "talos_engine_vent";
 	name = "Combustion Chamber Vent"
 	},
@@ -6834,14 +6838,15 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "TB" = (
-/obj/machinery/door/poddoor{
-	id = "talos_thrusters_port"
-	},
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "talos_thrusters_port"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -7090,6 +7095,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/security{
+	dir = 4;
 	id_tag = "talos_armory";
 	name = "Armory";
 	req_access_txt = "1"
@@ -7121,6 +7127,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/effect/turf_decal/number/four,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "UG" = (
@@ -7443,6 +7450,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/hardline_small/left,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "XW" = (
@@ -7698,7 +7706,7 @@ tA
 OF
 gE
 TB
-ku
+TB
 ll
 OF
 tA
@@ -7709,7 +7717,7 @@ sw
 ie
 pU
 jy
-gV
+uY
 uY
 ze
 pU

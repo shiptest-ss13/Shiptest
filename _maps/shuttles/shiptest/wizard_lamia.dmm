@@ -21,7 +21,6 @@
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "ag" = (
-/obj/machinery/light/directional/east,
 /obj/machinery/button/door{
 	id = "wizardship_bridge";
 	name = "bridge shutters";
@@ -38,6 +37,7 @@
 	name = "wizard of yendor showcase"
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/light/directional/east,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "aj" = (
@@ -103,6 +103,7 @@
 /area/ship/hallway/starboard)
 "at" = (
 /obj/machinery/door/airlock{
+	dir = 4;
 	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
 	name = "Archives"
 	},
@@ -122,6 +123,7 @@
 /area/ship/hallway/central)
 "au" = (
 /obj/machinery/door/airlock{
+	dir = 4;
 	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
 	name = "Game Room"
 	},
@@ -242,6 +244,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
 /obj/item/soulstone/anybody,
+/obj/structure/sign/poster/contraband/power{
+	pixel_x = 32
+	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
 "aO" = (
@@ -701,6 +706,7 @@
 /area/ship/maintenance/aft)
 "cd" = (
 /obj/machinery/door/airlock{
+	dir = 4;
 	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
 	name = "External Airlock"
 	},
@@ -709,6 +715,7 @@
 /area/ship/cargo)
 "ce" = (
 /obj/machinery/door/airlock{
+	dir = 4;
 	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
 	name = "Engine"
 	},
@@ -1343,12 +1350,11 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "sJ" = (
-/obj/structure/sign/poster/contraband/power,
-/turf/closed/wall/mineral/uranium/safe{
-	desc = "A wall plated with emerald.";
-	name = "emerald wall"
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = 32
 	},
-/area/ship/science)
+/turf/open/floor/wood,
+/area/ship/hallway/aft)
 "sX" = (
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/carpet/royalblack,
@@ -1958,6 +1964,7 @@
 	pixel_y = 11
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/machinery/light/directional/west,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "Mq" = (
@@ -2052,7 +2059,6 @@
 /turf/open/floor/engine/cult,
 /area/ship/science)
 "OC" = (
-/obj/machinery/light/directional/west,
 /obj/structure/table/wood/fancy/royalblue,
 /obj/item/book/granter/spell/charge{
 	pixel_y = 4
@@ -2138,6 +2144,7 @@
 /area/ship/crew/library)
 "Sc" = (
 /obj/machinery/door/airlock{
+	dir = 4;
 	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
 	name = "Kitchen"
 	},
@@ -2330,13 +2337,6 @@
 /obj/structure/cable,
 /turf/open/floor/bronze,
 /area/ship/cargo)
-"We" = (
-/obj/structure/sign/poster/contraband/random,
-/turf/closed/wall/mineral/uranium/safe{
-	desc = "A wall plated with emerald.";
-	name = "emerald wall"
-	},
-/area/ship/hallway/aft)
 "Wp" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/cigbutt/cigarbutt,
@@ -2624,14 +2624,14 @@ El
 Ez
 An
 rh
-sJ
+So
 aM
 aU
 Ot
 hq
 bn
 IN
-Vy
+sJ
 Ge
 Vy
 IN
@@ -2663,7 +2663,7 @@ So
 So
 So
 So
-We
+IN
 kN
 fx
 cD
@@ -2927,7 +2927,7 @@ RD
 Sc
 RD
 Gh
-We
+IN
 GL
 Mf
 cD
@@ -2961,7 +2961,7 @@ jA
 oz
 zn
 IN
-Vy
+sJ
 Vy
 KS
 IN

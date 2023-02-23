@@ -88,6 +88,9 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/turf_decal/number/five{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bN" = (
@@ -195,6 +198,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "cargodoors"
 	},
 /obj/item/radio/intercom/directional/north{
@@ -246,9 +250,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
 "eH" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "syndiefuck"
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	id = "luxembourg_cargo";
@@ -256,6 +257,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "syndiefuck"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -363,6 +368,7 @@
 	name = "Cargo Bay"
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "cargodoors"
 	},
 /turf/open/floor/plasteel/dark,
@@ -479,6 +485,15 @@
 "jK" = (
 /obj/machinery/air_sensor/atmos/air_tank,
 /turf/open/floor/engine/air,
+/area/ship/engineering)
+"jW" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/turf_decal/kfp_small/left{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ship/engineering)
 "ke" = (
 /obj/machinery/mech_bay_recharge_port{
@@ -793,6 +808,14 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
+"qI" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "externalshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "qO" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -917,6 +940,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/turf_decal/number/two{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "sh" = (
@@ -933,10 +959,12 @@
 /turf/open/floor/engine/plasma,
 /area/ship/engineering)
 "ss" = (
-/obj/machinery/light/directional/west,
-/obj/structure/rack,
-/obj/effect/turf_decal/corner/opaque/neutral/mono,
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "externalshutters"
+	},
+/turf/open/floor/plating,
 /area/ship/hallway/central)
 "sF" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -1259,7 +1287,6 @@
 "yv" = (
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable,
-/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/siding/blue,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -1368,6 +1395,7 @@
 /obj/machinery/door/window/eastright,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "cargodoors"
 	},
 /turf/open/floor/plasteel/dark,
@@ -1434,6 +1462,7 @@
 /obj/machinery/door/window/eastright,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "cargodoors"
 	},
 /turf/open/floor/plasteel/dark,
@@ -1539,9 +1568,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Ev" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "syndiefuck"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
@@ -1551,6 +1577,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "syndiefuck"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -1733,6 +1763,12 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
+"Iq" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/central)
 "Iv" = (
 /obj/effect/turf_decal/siding/blue{
 	dir = 4
@@ -1835,9 +1871,7 @@
 	dir = 4
 	},
 /obj/machinery/space_heater,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Kz" = (
@@ -2030,6 +2064,7 @@
 "OF" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "externalshutters"
 	},
 /turf/open/floor/plating,
@@ -2123,6 +2158,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/effect/turf_decal/number/zero{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "QQ" = (
@@ -2145,6 +2183,14 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/storage)
+"Rn" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "externalshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "Ro" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2166,6 +2212,7 @@
 /area/ship/crew/dorm)
 "Rt" = (
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "syndiefuck"
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -2272,6 +2319,7 @@
 "Uv" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "externalshutters"
 	},
 /turf/open/floor/plating,
@@ -2362,6 +2410,12 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Vw" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/corner/opaque/neutral/mono,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/central)
 "VR" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/engineering)
@@ -2659,7 +2713,7 @@ Nr
 Nr
 Nr
 Bw
-RH
+qI
 hs
 OY
 hX
@@ -2808,8 +2862,8 @@ La
 aB
 NJ
 Ud
-ss
 TP
+Vw
 PW
 cI
 Ka
@@ -2830,7 +2884,7 @@ hd
 (8,1,1) = {"
 Nr
 tU
-tU
+ss
 WE
 ME
 NH
@@ -2904,7 +2958,7 @@ dL
 sf
 Qz
 bG
-Qz
+jW
 yQ
 Xf
 CM
@@ -2946,7 +3000,7 @@ Er
 (12,1,1) = {"
 Nr
 tU
-tU
+ss
 WE
 qZ
 bp
@@ -2984,7 +3038,7 @@ qO
 xc
 tH
 yv
-TP
+Iq
 zc
 EO
 EO
@@ -3123,7 +3177,7 @@ Nr
 Nr
 Nr
 Bt
-ow
+Rn
 YI
 Qe
 LV
@@ -3155,7 +3209,7 @@ Nr
 Nr
 YI
 YI
-ow
+Rn
 YI
 YI
 EO

@@ -1576,6 +1576,7 @@
 /area/ship/engineering/atmospherics)
 "qf" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "02 Chamber Blast";
 	name = "02 Chamber Vent"
 	},
@@ -1709,16 +1710,18 @@
 /area/ship/crew/dorm)
 "rh" = (
 /obj/structure/table/wood,
-/obj/item/radio/intercom/wideband/directional/north,
-/obj/item/disk/holodisk/rube/disk6,
-/obj/item/disk/holodisk/rube/disk5,
-/obj/item/disk/holodisk/rube/disk4,
-/obj/item/disk/holodisk/rube/disk3,
-/obj/item/disk/holodisk/rube/disk2,
-/obj/item/disk/holodisk/rube/disk1,
 /obj/effect/turf_decal/corner/opaque/yellow/border{
 	dir = 10
 	},
+/obj/item/radio/intercom/wideband/table{
+	pixel_y = -9
+	},
+/obj/item/disk/holodisk/rube/disk1,
+/obj/item/disk/holodisk/rube/disk2,
+/obj/item/disk/holodisk/rube/disk3,
+/obj/item/disk/holodisk/rube/disk4,
+/obj/item/disk/holodisk/rube/disk5,
+/obj/item/disk/holodisk/rube/disk6,
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "rj" = (
@@ -2018,6 +2021,7 @@
 /area/ship/crew/canteen)
 "tU" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "C02 Chamber Blast";
 	name = "C02 Chamber Vent"
 	},
@@ -2814,6 +2818,7 @@
 /obj/effect/turf_decal/corner/opaque/yellow/border{
 	dir = 1
 	},
+/obj/item/disk/holodisk/rube/disk4,
 /turf/open/floor/mineral/titanium,
 /area/ship/bridge)
 "Be" = (
@@ -4031,10 +4036,6 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "NB" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -4496,6 +4497,18 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
+"Tg" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/firecloset/wall{
+	dir = 4;
+	pixel_x = -28
+	},
+/turf/open/floor/plating/airless,
+/area/ship/hallway)
 "Th" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 8
@@ -4888,6 +4901,7 @@
 /area/ship/engineering/engine)
 "Wh" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "Mix Chamber Blast";
 	name = "Mix Chamber Vent"
 	},
@@ -4957,6 +4971,7 @@
 /area/ship/bridge)
 "WR" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "N2 Chamber Blast";
 	name = "N2 Chamber Vent"
 	},
@@ -5163,6 +5178,7 @@
 /area/ship/hallway)
 "Ze" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "Plasma Chamber Blast";
 	name = "Plasma Chamber Vent"
 	},
@@ -6228,7 +6244,7 @@ Hp
 Hp
 Hp
 Hp
-Hp
+Tg
 UL
 XJ
 GY

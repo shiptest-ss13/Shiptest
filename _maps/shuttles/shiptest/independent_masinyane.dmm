@@ -15,6 +15,9 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/isf_small/right{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cu" = (
@@ -156,6 +159,9 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/number/three{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ks" = (
@@ -165,8 +171,10 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/light/small/directional/east,
 /obj/machinery/firealarm/directional/east,
+/obj/effect/turf_decal/isf_small/left{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "kO" = (
@@ -201,6 +209,9 @@
 /obj/machinery/atmospherics/pipe/simple/green{
 	dir = 6
 	},
+/obj/effect/turf_decal/number/zero{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "mw" = (
@@ -214,6 +225,9 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/number/five{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "mG" = (
@@ -222,6 +236,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/number/zero{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -258,12 +275,13 @@
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "masi_engi";
-	name = "Emergency Engine Shielding"
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "masi_engi";
+	name = "Emergency Engine Shielding"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -324,6 +342,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "zI" = (
@@ -334,6 +353,15 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"Bq" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "masinyane_windowshield";
+	name = "Cockpit Emergency Blast Door"
+	},
+/turf/open/floor/plating,
 /area/ship/bridge)
 "Ce" = (
 /obj/machinery/power/smes/engineering,
@@ -401,6 +429,9 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/isf_small{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -559,6 +590,9 @@
 	dir = 4
 	},
 /obj/machinery/portable_atmospherics/canister/air,
+/obj/effect/turf_decal/number/three{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "PB" = (
@@ -607,6 +641,9 @@
 	},
 /obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/item/stack/sheet/mineral/uranium/twenty,
+/obj/effect/turf_decal/number/five{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "St" = (
@@ -890,7 +927,7 @@ LT
 vC
 Wn
 jo
-Md
+Bq
 Md
 "}
 (11,1,1) = {"
@@ -904,7 +941,7 @@ Ce
 Oy
 XT
 Wn
-Md
+Bq
 Md
 sx
 "}

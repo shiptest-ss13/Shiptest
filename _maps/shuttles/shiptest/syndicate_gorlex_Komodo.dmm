@@ -177,6 +177,7 @@
 /area/ship/hallway/central)
 "bA" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "syndie_warship_cargo";
 	name = "Cargo Hatch"
 	},
@@ -200,6 +201,7 @@
 "bF" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "syndiewarship_windows";
 	name = "Blast Shutters"
 	},
@@ -264,6 +266,7 @@
 "bZ" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "syndiewarship_windows";
 	name = "Blast Shutters"
 	},
@@ -1195,7 +1198,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -1786,6 +1791,7 @@
 "rE" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "syndiewarship_windows";
 	name = "Blast Shutters"
 	},
@@ -2059,7 +2065,9 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "ui" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
@@ -2237,17 +2245,14 @@
 	dir = 2;
 	name = "tactical chair"
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_x = 4;
-	pixel_y = 24
-	},
 /obj/machinery/light_switch{
-	pixel_x = -10;
+	pixel_x = -17;
 	pixel_y = 26
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "vT" = (
@@ -2552,10 +2557,6 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "zA" = (
-/obj/machinery/door/poddoor{
-	id = "syndie_warship_cargo";
-	name = "Cargo Hatch"
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	anchored = 1;
 	dir = 1;
@@ -2564,6 +2565,11 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "syndie_warship_cargo";
+	name = "Cargo Hatch"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -2670,6 +2676,7 @@
 "Aw" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "syndiewarship_windows";
 	name = "Blast Shutters"
 	},
@@ -2839,6 +2846,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"CJ" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 1;
+	id = "warshipbridge";
+	name = "Blast Shutters"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "CK" = (
 /obj/structure/railing{
 	dir = 1
@@ -3243,6 +3259,7 @@
 /area/ship/hallway/central)
 "Gs" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "syndie_warship_cargo";
 	name = "Cargo Hatch"
 	},
@@ -3299,6 +3316,15 @@
 	on = 0
 	},
 /turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"GY" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "warshipbridge";
+	name = "Blast Shutters"
+	},
+/turf/open/floor/plating,
 /area/ship/bridge)
 "Hb" = (
 /obj/structure/table/reinforced,
@@ -3984,7 +4010,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ng" = (
@@ -4964,6 +4990,7 @@
 "WV" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "syndiewarship_windows";
 	name = "Blast Shutters"
 	},
@@ -5511,7 +5538,7 @@ CM
 "}
 (6,1,1) = {"
 CM
-ME
+GY
 ME
 Yq
 VM
@@ -5555,7 +5582,7 @@ CM
 "}
 (7,1,1) = {"
 ME
-ME
+CJ
 nQ
 pS
 ZI
@@ -5775,7 +5802,7 @@ GS
 "}
 (12,1,1) = {"
 CM
-ME
+GY
 ME
 OZ
 rc

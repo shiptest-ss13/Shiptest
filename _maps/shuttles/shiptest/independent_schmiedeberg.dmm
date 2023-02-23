@@ -60,10 +60,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/structure/window/plasma/reinforced/spawner,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "pharmabridge"
 	},
-/obj/structure/window/plasma/reinforced/spawner,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "aQ" = (
@@ -183,6 +184,7 @@
 "bP" = (
 /obj/effect/turf_decal/steeldecal/steel_decals6,
 /obj/effect/turf_decal/steeldecal/steel_decals_central1,
+/obj/effect/turf_decal/number/five,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external)
 "bX" = (
@@ -225,6 +227,7 @@
 /obj/structure/window/reinforced/spawner/east,
 /obj/machinery/recharger,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "pharmboothlock"
 	},
 /turf/open/floor/plasteel/dark,
@@ -294,6 +297,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "pharmlobby"
 	},
 /obj/effect/turf_decal/trimline/opaque/green/warning{
@@ -425,7 +429,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "fa" = (
-/obj/effect/turf_decal/dept/medical,
+/obj/effect/turf_decal/number/zero,
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "fb" = (
@@ -536,11 +540,11 @@
 /obj/machinery/photocopier/faxmachine/longrange,
 /obj/machinery/light/directional/west,
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmbridge";
 	name = "Bridge Lockdown";
-	pixel_x = -25;
-	pixel_y = -7;
-	dir = 4
+	pixel_x = -17;
+	pixel_y = -7
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
@@ -622,7 +626,6 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "pharmboothlock"
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "gT" = (
@@ -703,29 +706,29 @@
 /area/ship/crew/hydroponics)
 "iL" = (
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmboothlock";
 	name = "Lockdown: Booth";
 	pixel_x = -24;
-	pixel_y = 11;
-	dir = 4
+	pixel_y = 11
 	},
 /obj/structure/chair/comfy/beige{
 	dir = 4
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmdoorlock";
 	name = "Anti-Tresspassing Bolts";
 	normaldoorcontrol = 1;
 	pixel_x = -24;
-	specialfunctions = 4;
-	dir = 4
+	specialfunctions = 4
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pharmlobby";
 	name = "Lockdown: Lobby";
 	pixel_x = -24;
-	pixel_y = -11;
-	dir = 4
+	pixel_y = -11
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/black,
@@ -829,9 +832,11 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "pharmbridge"
 	},
 /obj/machinery/door/airlock/command/glass{
+	dir = 4;
 	name = "Bridge"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -967,7 +972,9 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/cargo)
 "mT" = (
-/obj/machinery/door/airlock/medical,
+/obj/machinery/door/airlock/medical{
+	dir = 4
+	},
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
@@ -1023,6 +1030,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 9
 	},
+/obj/effect/turf_decal/kfp_small/left,
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "nK" = (
@@ -1151,10 +1159,10 @@
 /obj/structure/catwalk/over,
 /obj/machinery/firealarm/directional/north,
 /obj/machinery/button/door{
-	pixel_y = 26;
-	pixel_x = -10;
 	id = "schmeidengine";
-	name = "Engine Shutters"
+	name = "Engine Shutters";
+	pixel_x = -10;
+	pixel_y = 26
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1196,6 +1204,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"rx" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "pharmwindows"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "rB" = (
 /obj/effect/turf_decal/siding/blue{
 	dir = 8
@@ -1395,6 +1412,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "schmeidengine"
 	},
 /turf/open/floor/plating,
@@ -1502,6 +1520,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/stairs{
 	dir = 8
 	},
@@ -1515,10 +1534,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/structure/window/plasma/reinforced/spawner/north,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "pharmabridge"
 	},
-/obj/structure/window/plasma/reinforced/spawner/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "xJ" = (
@@ -1539,7 +1559,9 @@
 /turf/open/floor/concrete/slab_1,
 /area/ship/crew/canteen)
 "yn" = (
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
@@ -1918,6 +1940,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "pharmabridge"
 	},
 /turf/open/floor/plating,
@@ -2088,7 +2111,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/door/airlock/medical,
+/obj/machinery/door/airlock/medical{
+	dir = 4
+	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	dir = 4
 	},
@@ -2394,6 +2419,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "pharmboothlock"
 	},
 /obj/item/radio/intercom/directional/north{
@@ -2571,7 +2597,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/white,
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -2601,7 +2629,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "Ov" = (
@@ -2666,6 +2693,7 @@
 "Pi" = (
 /obj/effect/turf_decal/steeldecal/steel_decals6,
 /obj/effect/turf_decal/steeldecal/steel_decals_central2,
+/obj/effect/turf_decal/number/three,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/external)
 "Pj" = (
@@ -2740,6 +2768,7 @@
 /area/ship/crew/canteen)
 "Qb" = (
 /obj/machinery/door/airlock/grunge{
+	dir = 4;
 	id_tag = "pharmdoorlock"
 	},
 /obj/structure/cable{
@@ -2759,6 +2788,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "pharmlobby"
 	},
 /turf/open/floor/plating,
@@ -2886,6 +2916,7 @@
 /obj/machinery/hydroponics/constructable,
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/hydroponics)
 "SF" = (
@@ -2999,7 +3030,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/hydroponics)
 "VO" = (
@@ -3019,6 +3050,7 @@
 /obj/item/radio,
 /obj/item/radio,
 /obj/machinery/firealarm/directional/north,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/wood/walnut,
 /area/ship/security)
 "VW" = (
@@ -3085,7 +3117,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/east,
-/obj/machinery/airalarm/directional/east,
 /turf/open/floor/concrete/slab_3,
 /area/ship/crew/hydroponics)
 "Wy" = (
@@ -3245,6 +3276,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "schmeidengine"
 	},
 /turf/open/floor/plating,
@@ -4084,9 +4116,9 @@ xJ
 xJ
 xJ
 xJ
-bq
-bq
-bq
+rx
+rx
+rx
 xJ
 xJ
 xJ
