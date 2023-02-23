@@ -1,4 +1,14 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "pirateshutters";
+	name = "Blast Shutters"
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "au" = (
 /obj/structure/frame/computer,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -36,10 +46,14 @@
 	dir = 1
 	},
 /obj/structure/railing,
-/obj/item/radio/intercom/wideband/directional/east,
-/obj/item/radio/intercom/directional/east,
+/obj/item/radio/intercom/directional/east{
+	pixel_y = 7
+	},
 /obj/effect/landmark/start/captain,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/wideband/directional/east{
+	pixel_y = -13
+	},
 /turf/open/floor/pod/light,
 /area/ship/bridge)
 "br" = (
@@ -197,6 +211,7 @@
 "kK" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "pirateshutters";
 	name = "Blast Shutters"
 	},
@@ -227,15 +242,13 @@
 	pixel_x = 15;
 	pixel_y = 26
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "mJ" = (
@@ -318,15 +331,14 @@
 	pixel_x = -15;
 	pixel_y = 26
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/north,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "nQ" = (
@@ -348,6 +360,7 @@
 "nW" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "pirateshutters";
 	name = "Blast Shutters"
 	},
@@ -400,7 +413,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "pS" = (
-/obj/machinery/light/small/directional/east,
 /obj/item/storage/box{
 	icon_state = "lethalshot_box";
 	name = "dusty shotshell box"
@@ -449,6 +461,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/number/two{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/security)
 "rc" = (
@@ -528,6 +543,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/number/zero{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/security)
 "sx" = (
@@ -673,6 +691,9 @@
 	location = "forward"
 	},
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/number/five{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/crew)
 "vW" = (
@@ -693,6 +714,7 @@
 /obj/machinery/door/window/southright,
 /obj/structure/curtain/bounty,
 /obj/effect/decal/cleanable/vomit/old,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/pod/light,
 /area/ship/crew)
 "wP" = (
@@ -750,6 +772,7 @@
 "za" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "pirateshutters";
 	name = "Blast Shutters"
 	},
@@ -802,6 +825,9 @@
 	},
 /obj/effect/landmark/observer_start,
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/miskilamo_small/right{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/crew)
 "AL" = (
@@ -842,7 +868,6 @@
 "Bw" = (
 /obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
 /obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
-/obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/shoes/jackboots,
@@ -896,6 +921,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/miskilamo_small{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/crew)
 "Cj" = (
@@ -1020,6 +1048,9 @@
 	icon_state = "2-9"
 	},
 /obj/structure/catwalk/over,
+/obj/effect/turf_decal/miskilamo_small/left{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/crew)
 "Ey" = (
@@ -1131,15 +1162,13 @@
 /area/ship/cargo)
 "Id" = (
 /obj/structure/railing,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "Ie" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/airalarm/directional/north,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "IF" = (
@@ -1359,7 +1388,6 @@
 	charge = 1e+006
 	},
 /obj/machinery/light/small/directional/west,
-/obj/item/radio/intercom/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1673,7 +1701,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/light/small/directional/east,
-/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
 "Vp" = (
@@ -1692,6 +1719,7 @@
 /obj/item/storage/toolbox/electrical,
 /obj/item/multitool,
 /obj/item/clothing/glasses/welding,
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "VC" = (
@@ -1826,6 +1854,7 @@
 /obj/structure/cable{
 	icon_state = "8-10"
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -2053,9 +2082,9 @@ Fx
 "}
 (8,1,1) = {"
 XB
-XB
+ad
 Bb
-XB
+ad
 Bb
 iA
 mJ
@@ -2134,9 +2163,9 @@ TP
 "}
 (11,1,1) = {"
 XB
-XB
+ad
 Bb
-XB
+ad
 Bb
 iA
 nB

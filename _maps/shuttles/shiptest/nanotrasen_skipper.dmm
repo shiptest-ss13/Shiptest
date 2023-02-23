@@ -1543,7 +1543,9 @@
 /area/ship/engineering/atmospherics)
 "nN" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/directional/north,
+/obj/item/radio/intercom/wideband/table{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "nO" = (
@@ -3302,6 +3304,13 @@
 "Eb" = (
 /turf/closed/wall,
 /area/ship/engineering)
+"Eh" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/effect/turf_decal/number/zero,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Ek" = (
 /obj/effect/turf_decal/atmos/nitrogen,
 /turf/open/floor/engine/n2,
@@ -3319,6 +3328,13 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
+"Es" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/effect/turf_decal/number/five,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Eu" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /obj/effect/spawner/structure/window/plasma/reinforced/shutters,
@@ -3991,6 +4007,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 9
 	},
+/obj/effect/turf_decal/number/two,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "KY" = (
@@ -6208,7 +6225,7 @@ ed
 UD
 dB
 Gf
-Ts
+Es
 QU
 vO
 QY
@@ -6239,7 +6256,7 @@ GA
 VQ
 ES
 rN
-Ts
+Eh
 gi
 MG
 TO

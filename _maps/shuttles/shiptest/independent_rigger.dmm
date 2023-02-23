@@ -73,15 +73,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
-"aN" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
-	name = "Blast Shutters"
-	},
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ship/crew)
 "aT" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/construction)
@@ -94,6 +85,7 @@
 "bl" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "riggerwindows";
 	name = "Blast Shutters"
 	},
@@ -242,6 +234,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/virology/glass{
+	dir = 4;
 	name = "Infirmary"
 	},
 /turf/open/floor/plasteel/dark,
@@ -420,7 +413,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "fy" = (
-/obj/machinery/firealarm/directional/south,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -453,6 +445,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/public/glass{
+	dir = 4;
 	name = "Communications"
 	},
 /turf/open/floor/plasteel/dark,
@@ -571,6 +564,7 @@
 "ij" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "riggerwindows";
 	name = "Blast Shutters"
 	},
@@ -793,6 +787,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/security/glass{
+	dir = 4;
 	name = "Security";
 	req_access_txt = "1"
 	},
@@ -941,6 +936,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/public/glass{
+	dir = 4;
 	name = "Communications"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -980,6 +976,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"mg" = (
+/obj/effect/turf_decal/kfp_small{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/construction)
 "mw" = (
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
@@ -1074,6 +1076,9 @@
 "oM" = (
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
+	},
+/obj/effect/turf_decal/kfp_small/right{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
@@ -1279,6 +1284,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/grunge{
+	dir = 4;
 	name = "Atmospherics"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1360,12 +1366,14 @@
 /turf/open/floor/plating,
 /area/ship/construction)
 "rN" = (
-/obj/effect/spawner/lootdrop/maintenance,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
+	},
+/obj/effect/turf_decal/number/five{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
@@ -1434,6 +1442,9 @@
 /obj/item/mop,
 /obj/item/storage/bag/trash{
 	pixel_x = 6
+	},
+/obj/effect/turf_decal/kfp_small/left{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
@@ -1750,6 +1761,7 @@
 	pixel_x = -2
 	},
 /obj/item/clothing/head/welding,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "wg" = (
@@ -1819,6 +1831,16 @@
 /obj/item/multitool,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"wT" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "riggerwindows";
+	name = "Blast Shutters"
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "wZ" = (
 /obj/item/mecha_parts/part/ripley_torso,
 /obj/effect/turf_decal/box/corners{
@@ -1846,6 +1868,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/ship/construction)
 "xH" = (
@@ -2317,6 +2340,7 @@
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "CQ" = (
@@ -2384,6 +2408,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/effect/turf_decal/number/zero{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
@@ -2726,6 +2753,7 @@
 /area/ship/engineering/atmospherics)
 "GN" = (
 /obj/machinery/door/airlock/public/glass{
+	dir = 4;
 	name = "Communications"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2788,15 +2816,6 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"Hm" = (
-/obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
-	name = "Blast Shutters"
-	},
-/obj/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ship/crew)
 "Hn" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -3004,19 +3023,11 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/glass{
+	dir = 4;
 	name = "Canteen"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"KI" = (
-/obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
-	name = "Blast Shutters"
-	},
-/obj/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ship/construction)
 "KY" = (
 /obj/structure/chair/office/light,
 /obj/effect/landmark/start/medical_doctor,
@@ -3082,6 +3093,7 @@
 /area/ship/bridge)
 "LV" = (
 /obj/machinery/door/airlock/glass{
+	dir = 4;
 	name = "Canteen"
 	},
 /obj/structure/cable{
@@ -3418,6 +3430,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/turf_decal/number/two{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/construction)
 "Qd" = (
@@ -3457,6 +3472,7 @@
 	},
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "riggerwindows";
 	name = "Blast Shutters"
 	},
@@ -3595,7 +3611,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /turf/open/floor/plasteel/white,
@@ -3697,13 +3712,11 @@
 /turf/open/floor/carpet/blue,
 /area/ship/engineering/communications)
 "TC" = (
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 22
-	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
 /obj/structure/filingcabinet/chestdrawer,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/carpet/blue,
 /area/ship/engineering/communications)
 "TD" = (
@@ -3739,6 +3752,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"TQ" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "riggerwindows";
+	name = "Blast Shutters"
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "TR" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3792,12 +3815,13 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Ul" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "riggerwindows";
 	name = "Blast Shutters"
 	},
-/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/crew)
 "Us" = (
@@ -3909,12 +3933,13 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "VW" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "riggerwindows";
 	name = "Blast Shutters"
 	},
-/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/construction)
 "Wh" = (
@@ -4128,6 +4153,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/virology/glass{
+	dir = 4;
 	name = "Infirmary"
 	},
 /turf/open/floor/plasteel/dark,
@@ -4137,6 +4163,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/grunge{
+	dir = 4;
 	name = "Armory";
 	req_access_txt = "1"
 	},
@@ -4359,10 +4386,10 @@ Ce
 Ce
 bC
 Ce
-aN
-Hm
+Ul
+Ul
 Ce
-Hm
+Ul
 Ce
 bC
 Pw
@@ -4495,7 +4522,7 @@ av
 Ce
 bC
 Ce
-Hm
+Ul
 Ul
 Ce
 Ce
@@ -4631,7 +4658,7 @@ Ly
 Ly
 Ly
 Rz
-Rz
+wT
 qd
 qd
 qd
@@ -4767,7 +4794,7 @@ Ly
 Ly
 Ly
 Rz
-Rz
+TQ
 qd
 qd
 qd
@@ -5273,11 +5300,11 @@ aT
 OR
 OR
 aT
-KI
+VW
 aT
 OR
 aT
-KI
+VW
 VW
 aT
 aT
@@ -5380,7 +5407,7 @@ bc
 aT
 rJ
 sM
-Ug
+mg
 oM
 iU
 VF
@@ -5414,9 +5441,9 @@ aT
 OR
 aT
 VW
-KI
+VW
 aT
-KI
+VW
 aT
 OR
 ZE

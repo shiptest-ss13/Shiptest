@@ -621,7 +621,9 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "fm" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -905,6 +907,15 @@
 /obj/structure/catwalk/over,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
+"hZ" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "windows";
+	name = "Cargo Bay Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -1231,7 +1242,9 @@
 /turf/open/floor/engine,
 /area/ship/engineering)
 "kY" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	dir = 4
+	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -1294,7 +1307,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "lV" = (
@@ -1511,6 +1524,7 @@
 /area/ship/bridge)
 "ou" = (
 /obj/machinery/door/airlock/external{
+	dir = 4;
 	name = "Engineering External Access";
 	req_access_txt = "150"
 	},
@@ -2311,6 +2325,7 @@
 /area/ship/engineering)
 "uY" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "sbccargo";
 	name = "Cargo Bay Blast Door"
 	},
@@ -2520,7 +2535,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "wT" = (
@@ -2627,6 +2644,7 @@
 /area/ship/crew/canteen)
 "xv" = (
 /obj/machinery/door/airlock/medical{
+	dir = 4;
 	name = "Surgery";
 	req_one_access_txt = "150"
 	},
@@ -2930,11 +2948,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "AH" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "windows";
 	name = "Cargo Bay Blast Door"
 	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "AL" = (
@@ -2970,9 +2989,6 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/north,
-/obj/machinery/computer/cryopod{
-	pixel_y = 26
-	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/dorm)
 "Bb" = (
@@ -3063,6 +3079,7 @@
 	},
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/machinery/vending/cigarette/syndicate,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "BX" = (
@@ -3398,6 +3415,7 @@
 /area/ship/engineering)
 "Fw" = (
 /obj/machinery/door/airlock/external{
+	dir = 4;
 	name = "Engineering External Access";
 	req_access_txt = "150"
 	},
@@ -3420,7 +3438,7 @@
 	},
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "FW" = (
@@ -3535,6 +3553,7 @@
 "Hf" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "sbccargo";
 	name = "Cargo Bay Blast Door"
 	},
@@ -3693,7 +3712,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
 "Ii" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
@@ -4179,6 +4200,9 @@
 	dir = 4
 	},
 /obj/structure/curtain/bounty,
+/obj/machinery/computer/cryopod{
+	pixel_y = 17
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "Nc" = (
@@ -4709,7 +4733,6 @@
 /obj/structure/sign/departments/restroom{
 	pixel_y = 32
 	},
-/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Rp" = (
@@ -4901,11 +4924,12 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Sz" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "windows";
 	name = "Cargo Bay Blast Door"
 	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "SA" = (
@@ -5327,7 +5351,9 @@
 	},
 /area/ship/engineering/engine)
 "WR" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
@@ -5903,10 +5929,10 @@ Xu
 Xu
 rT
 uY
+Hf
+Hf
 uY
-uY
-uY
-uY
+Hf
 Hf
 Hf
 Ey
@@ -7203,7 +7229,7 @@ jP
 UY
 Sz
 Sz
-Sz
+hZ
 UY
 qG
 qG

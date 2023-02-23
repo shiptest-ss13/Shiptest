@@ -72,7 +72,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "bd" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -314,7 +316,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "eD" = (
-/obj/machinery/light/small/directional/east,
 /obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/corner/opaque/yellow/border{
 	dir = 6
@@ -337,7 +338,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/light/small/directional/south,
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -417,6 +417,7 @@
 /obj/machinery/computer/monitor{
 	dir = 1
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "fp" = (
@@ -557,7 +558,7 @@
 /obj/item/clothing/head/welding,
 /obj/item/clothing/glasses/welding,
 /obj/machinery/light_switch{
-	pixel_y = 26
+	pixel_y = 20
 	},
 /obj/item/pipe_dispenser,
 /obj/structure/cable{
@@ -597,6 +598,7 @@
 /obj/machinery/door/firedoor/window,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "sgwindowshut";
 	name = "External Shutters"
 	},
@@ -616,6 +618,7 @@
 /area/ship/crew/canteen)
 "hb" = (
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "sgcargostore"
 	},
 /obj/machinery/door/firedoor,
@@ -905,6 +908,7 @@
 "kY" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/hallway/port)
 "lg" = (
@@ -1071,9 +1075,9 @@
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/hallway/port)
 "mQ" = (
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/communications)
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/hallway/starboard)
 "mU" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/communications)
@@ -1512,10 +1516,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/hallway/fore)
 "sT" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1946,10 +1953,10 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "yP" = (
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/closed/wall/mineral/titanium,
-/area/ship/engineering/communications)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/external)
 "yR" = (
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/hallway/fore)
 "yT" = (
@@ -2006,6 +2013,7 @@
 /area/ship/bridge)
 "zh" = (
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "sgengistore"
 	},
 /obj/machinery/door/firedoor,
@@ -2105,6 +2113,7 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "zZ" = (
@@ -2162,6 +2171,7 @@
 /obj/structure/sign/poster/retro/we_watch{
 	pixel_y = -32
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "Aw" = (
@@ -2178,9 +2188,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 32
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/hallway/port)
 "AE" = (
@@ -2214,9 +2222,6 @@
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/ship/engineering/communications)
 "AR" = (
-/obj/item/radio/intercom/directional/north{
-	pixel_x = -27
-	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/hallway/fore)
 "AT" = (
@@ -2254,7 +2259,6 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/west,
-/obj/machinery/firealarm/directional/west,
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
@@ -2440,6 +2444,7 @@
 	pixel_y = -26
 	},
 /obj/machinery/light_switch{
+	dir = 1;
 	pixel_x = 25;
 	pixel_y = -25
 	},
@@ -2531,6 +2536,7 @@
 /obj/machinery/computer/crew{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "Dp" = (
@@ -2882,18 +2888,8 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
 "HA" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/extinguisher_cabinet/directional/south,
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ship/hallway/starboard)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/template_noop)
 "HB" = (
 /obj/machinery/vending/boozeomat/all_access,
 /obj/effect/turf_decal/corner/opaque/white{
@@ -3327,6 +3323,7 @@
 /obj/machinery/door/firedoor/window,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "sgwindowshut";
 	name = "External Shutters"
 	},
@@ -3456,7 +3453,9 @@
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/hallway/port)
 "ON" = (
-/obj/machinery/door/airlock/atmos,
+/obj/machinery/door/airlock/atmos{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3524,10 +3523,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/hallway/port)
-"PI" = (
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/cargo)
 "PN" = (
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -3654,6 +3649,7 @@
 	dir = 1;
 	network = list("cricket")
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
 "RD" = (
@@ -3919,9 +3915,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "Vo" = (
-/obj/item/radio/intercom/directional/north{
-	pixel_y = -32
-	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/crew/solgov)
 "Vp" = (
@@ -4007,7 +4001,6 @@
 /area/ship/engineering)
 "VX" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/directional/north,
 /obj/item/newspaper,
 /obj/item/megaphone/command,
 /obj/item/radio/headset/solgov/alt,
@@ -4015,6 +4008,10 @@
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
+/obj/item/radio/intercom/wideband/table{
+	dir = 4;
+	pixel_x = 6
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Wj" = (
@@ -4094,9 +4091,6 @@
 /obj/structure/table,
 /obj/item/book/manual/wiki/security_space_law,
 /obj/item/stamp/law,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = -32
-	},
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/desk_flag/solgov{
 	pixel_x = 12;
@@ -4335,6 +4329,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/command{
+	dir = 4;
 	name = "Bridge"
 	},
 /turf/open/floor/carpet/nanoweave/blue,
@@ -4363,12 +4358,12 @@
 /area/ship/security)
 
 (1,1,1) = {"
-zR
+yC
 aw
 aw
 dn
 dn
-oe
+yC
 oe
 oe
 zR
@@ -4380,12 +4375,12 @@ zR
 zR
 LL
 oe
-oe
+yP
 dn
 dn
 aw
 aw
-zR
+HA
 zR
 "}
 (2,1,1) = {"
@@ -4768,8 +4763,8 @@ oy
 oD
 oy
 oy
-HA
-LC
+HE
+mQ
 Od
 Hs
 cB
@@ -4786,7 +4781,7 @@ xT
 RH
 JD
 eX
-mQ
+mU
 mU
 nl
 mU
@@ -4920,7 +4915,7 @@ nl
 XN
 nl
 nl
-yP
+nl
 nl
 mU
 mU
@@ -5030,7 +5025,7 @@ Dj
 qd
 FQ
 RC
-PI
+Px
 Px
 OI
 OI

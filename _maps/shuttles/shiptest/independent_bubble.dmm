@@ -13,11 +13,17 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/number/two{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "ct" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/machinery/light/broken/directional/east,
+/obj/effect/turf_decal/ntspaceworks_big/two{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "cG" = (
@@ -63,6 +69,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/ntspaceworks_big/seven{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -284,6 +293,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/ntspaceworks_big/five{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "mV" = (
@@ -301,6 +313,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/ntspaceworks_big/eight{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -346,10 +361,16 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light/directional/east,
+/obj/effect/turf_decal/number/zero{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "qk" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/effect/turf_decal/ntspaceworks_big/three{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "qq" = (
@@ -489,7 +510,7 @@
 	dir = 4
 	},
 /obj/machinery/computer/cryopod{
-	pixel_y = 32
+	pixel_y = 18
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -513,6 +534,9 @@
 "xu" = (
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/ntspaceworks_big/six{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -644,6 +668,9 @@
 "FK" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	name = "engine fuel pump"
+	},
+/obj/effect/turf_decal/ntspaceworks_big/one{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -800,6 +827,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/ntspaceworks_big/four{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -1058,7 +1088,9 @@
 /turf/open/floor/plating,
 /area/ship/external)
 "Xi" = (
-/obj/machinery/door/airlock/command/glass,
+/obj/machinery/door/airlock/command/glass{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
@@ -1092,6 +1124,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/number/five{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -1162,11 +1197,11 @@ VB
 VB
 VB
 VB
-VB
+Ob
 wH
 Gf
 wH
-VB
+Ob
 VB
 VB
 VB
@@ -1179,7 +1214,7 @@ VB
 VB
 VB
 VB
-VB
+Ob
 wH
 Ob
 ZB
@@ -1187,7 +1222,7 @@ hs
 GD
 Ob
 wH
-VB
+Ob
 VB
 VB
 VB

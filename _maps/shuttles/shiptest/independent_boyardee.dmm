@@ -88,7 +88,7 @@
 	pixel_x = -25;
 	pixel_y = 25
 	},
-/turf/open/floor/carpet/red_gold,
+/turf/open/floor/wood/walnut,
 /area/ship/crew)
 "cp" = (
 /obj/machinery/door/poddoor{
@@ -159,11 +159,17 @@
 /area/ship/bridge)
 "dl" = (
 /obj/machinery/light/directional/north,
-/turf/open/floor/carpet/red_gold,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "dq" = (
 /obj/structure/table/wood/poker,
 /obj/item/toy/cards/deck/syndicate,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "dt" = (
@@ -191,7 +197,7 @@
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "dH" = (
 /turf/closed/wall/r_wall,
@@ -212,7 +218,10 @@
 /area/ship/crew/canteen)
 "dQ" = (
 /obj/machinery/light/directional/west,
-/turf/open/floor/carpet/red_gold,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "dV" = (
 /turf/closed/wall,
@@ -233,7 +242,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/red_gold,
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "ep" = (
 /obj/effect/turf_decal/corner/opaque/blue{
@@ -324,6 +333,9 @@
 /obj/structure/table/wood/poker,
 /obj/item/toy/cards/deck/kotahi,
 /obj/item/storage/pill_bottle/dice,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "gN" = (
@@ -337,14 +349,17 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "gX" = (
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "hk" = (
 /obj/machinery/vending/cigarette,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "hp" = (
 /obj/structure/cable{
@@ -376,7 +391,10 @@
 /area/ship/crew/canteen)
 "ir" = (
 /obj/machinery/airalarm/directional/south,
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "iB" = (
 /obj/machinery/status_display/shuttle,
@@ -442,6 +460,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"kN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew/canteen)
 "kS" = (
 /obj/structure/chair/stool/bar,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -466,7 +499,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/holopad,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "ly" = (
 /obj/machinery/advanced_airlock_controller{
@@ -538,7 +571,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "lJ" = (
-/turf/open/floor/carpet/red_gold,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "lU" = (
 /obj/effect/turf_decal/number/two,
@@ -659,10 +695,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "nN" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 1
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "nP" = (
@@ -705,7 +740,7 @@
 /area/ship/storage)
 "oO" = (
 /obj/structure/chair/wood,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "ph" = (
 /obj/structure/chair/comfy/shuttle{
@@ -779,7 +814,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/red_gold,
+/turf/open/floor/wood/walnut,
 /area/ship/crew)
 "qU" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -894,7 +929,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/carpet/red_gold,
+/turf/open/floor/wood/walnut,
 /area/ship/crew)
 "tP" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -920,7 +955,7 @@
 /obj/structure/chair/stool/bar{
 	dir = 1
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "uR" = (
 /turf/closed/wall,
@@ -972,6 +1007,7 @@
 	pixel_x = 5;
 	pixel_y = 5
 	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "vZ" = (
@@ -1018,7 +1054,8 @@
 /obj/machinery/newscaster{
 	pixel_y = -30
 	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "wO" = (
 /obj/machinery/seed_extractor,
@@ -1046,6 +1083,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
@@ -1080,6 +1120,9 @@
 "xW" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
@@ -1150,8 +1193,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "zM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "4-8"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
@@ -1255,7 +1304,7 @@
 /obj/structure/chair/wood{
 	dir = 8
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "BE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1270,6 +1319,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "BQ" = (
@@ -1329,7 +1379,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/carpet/red_gold,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "CJ" = (
 /obj/machinery/door/firedoor/border_only{
@@ -1402,7 +1455,9 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew)
 "Dy" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -1465,7 +1520,10 @@
 /obj/structure/chair/sofa/left{
 	dir = 4
 	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "DZ" = (
 /obj/machinery/door/poddoor{
@@ -1550,6 +1608,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
+"EZ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew/canteen)
+"Fa" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/walnut,
+/area/ship/crew/canteen)
 "Fm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -1645,6 +1716,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/hydroponics)
+"GI" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "bridgelockdown"
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "GO" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -1668,7 +1747,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/red_gold,
+/turf/open/floor/wood/walnut,
 /area/ship/crew)
 "GZ" = (
 /obj/machinery/power/terminal{
@@ -1727,7 +1806,10 @@
 /obj/structure/chair/sofa/corner{
 	dir = 1
 	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "IA" = (
 /obj/effect/turf_decal/ihejirika_small{
@@ -1774,7 +1856,7 @@
 	pixel_y = 8
 	},
 /obj/item/toy/cards/deck/cas/black,
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "IW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1787,7 +1869,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/red_gold,
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "IX" = (
 /obj/machinery/status_display/shuttle,
@@ -1911,7 +1993,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "Lj" = (
 /turf/open/floor/plasteel/mono/white,
@@ -2041,7 +2123,25 @@
 /obj/machinery/computer/helm/viewscreen{
 	pixel_x = -30
 	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew/canteen)
+"OF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "OI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2077,7 +2177,7 @@
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "Pa" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2089,11 +2189,13 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/red_gold,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "Pj" = (
 /obj/machinery/light/directional/south,
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "PE" = (
 /obj/structure/toilet{
@@ -2133,6 +2235,9 @@
 /area/ship/crew)
 "Qa" = (
 /obj/structure/chair/stool/bar,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "Qc" = (
@@ -2611,7 +2716,7 @@
 /obj/structure/chair/stool/bar{
 	dir = 4
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 
 (1,1,1) = {"
@@ -2806,10 +2911,10 @@ vZ
 (10,1,1) = {"
 vZ
 cC
-GO
+nN
 dQ
-MI
-lJ
+kN
+EZ
 dQ
 CB
 OB
@@ -2831,7 +2936,7 @@ lJ
 Yx
 gN
 lp
-nN
+xS
 jx
 xS
 OV
@@ -2851,8 +2956,8 @@ xr
 lJ
 oi
 dD
-zM
-zM
+hp
+hp
 ZR
 hp
 Yz
@@ -2933,8 +3038,8 @@ vZ
 vZ
 xr
 lJ
-MI
-Bg
+zM
+Fa
 sp
 Ow
 ng
@@ -2954,7 +3059,7 @@ vZ
 vZ
 cC
 dl
-MI
+OF
 hk
 sp
 HN
@@ -3210,11 +3315,11 @@ vZ
 vZ
 vZ
 vZ
-Cu
-Cu
-Cu
-Cu
-Cu
+GI
+GI
+GI
+GI
+GI
 vZ
 vZ
 vZ
