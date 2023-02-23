@@ -16,7 +16,7 @@
 
 /obj/item/mod/control/pre_equipped/standard
 	initial_modules = list(
-		/obj/item/mod/module/storage/normal_capacity,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/welding,
 		/obj/item/mod/module/flashlight,
 	)
@@ -24,7 +24,7 @@
 /obj/item/mod/control/pre_equipped/engineering
 	theme = /datum/mod_theme/engineering
 	initial_modules = list(
-		/obj/item/mod/module/storage/normal_capacity,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/welding,
 		/obj/item/mod/module/rad_protection,
 		/obj/item/mod/module/flashlight,
@@ -34,7 +34,7 @@
 /obj/item/mod/control/pre_equipped/atmospheric
 	theme = /datum/mod_theme/atmospheric
 	initial_modules = list(
-		/obj/item/mod/module/storage/normal_capacity,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/welding,
 		/obj/item/mod/module/rad_protection,
 		/obj/item/mod/module/flashlight,
@@ -65,7 +65,7 @@
 	theme = /datum/mod_theme/mining
 	applied_core = /obj/item/mod/core/plasma
 	initial_modules = list(
-		/obj/item/mod/module/storage/normal_capacity,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/gps,
 		/obj/item/mod/module/orebag,
 		/obj/item/mod/module/clamp,
@@ -75,7 +75,7 @@
 /obj/item/mod/control/pre_equipped/medical
 	theme = /datum/mod_theme/medical
 	initial_modules = list(
-		/obj/item/mod/module/storage/normal_capacity,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/health_analyzer,
 		/obj/item/mod/module/quick_carry,
@@ -105,7 +105,7 @@
 /obj/item/mod/control/pre_equipped/security
 	theme = /datum/mod_theme/security
 	initial_modules = list(
-		/obj/item/mod/module/storage/normal_capacity,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/pepper_shoulders,
@@ -140,7 +140,7 @@
 /obj/item/mod/control/pre_equipped/cosmohonk
 	theme = /datum/mod_theme/cosmohonk
 	initial_modules = list(
-		/obj/item/mod/module/storage/normal_capacity,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/waddle,
 		/obj/item/mod/module/bikehorn,
 	)
@@ -218,7 +218,7 @@
 	theme = /datum/mod_theme/ninja
 	applied_cell = /obj/item/stock_parts/cell/super
 	initial_modules = list(
-		/obj/item/mod/module/storage/normal_capacity,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/noslip,
 		/obj/item/mod/module/status_readout,
 		/obj/item/mod/module/stealth/ninja,
@@ -231,7 +231,7 @@
 	theme = /datum/mod_theme/prototype
 	req_access = list(ACCESS_AWAY_GENERAL)
 	initial_modules = list(
-		/obj/item/mod/module/storage/normal_capacity,
+		/obj/item/mod/module/storage,
 		/obj/item/mod/module/welding,
 		/obj/item/mod/module/rad_protection,
 		/obj/item/mod/module/flashlight,

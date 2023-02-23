@@ -2,7 +2,7 @@
 	ADD_TRAIT(mod.wearer, TRAIT_ANTIMAGIC, MOD_TRAIT)
 	ADD_TRAIT(mod.wearer, TRAIT_HOLY, MOD_TRAIT)
 
-/obj/item/mod/module/anti_magic/on_suit_deactivation()
+/obj/item/mod/module/anti_magic/on_suit_deactivation(deleting)
 	REMOVE_TRAIT(mod.wearer, TRAIT_ANTIMAGIC, MOD_TRAIT)
 	REMOVE_TRAIT(mod.wearer, TRAIT_HOLY, MOD_TRAIT)
 
@@ -17,7 +17,7 @@
 /obj/item/mod/module/anti_magic/wizard/on_suit_activation()
 	ADD_TRAIT(mod.wearer, TRAIT_ANTIMAGIC_NO_SELFBLOCK, MOD_TRAIT)
 
-/obj/item/mod/module/anti_magic/wizard/on_suit_deactivation()
+/obj/item/mod/module/anti_magic/wizard/on_suit_deactivation(deleting)
 	REMOVE_TRAIT(mod.wearer, TRAIT_ANTIMAGIC_NO_SELFBLOCK, MOD_TRAIT)
 
 /obj/item/mod/module/kinesis //TODO POST-MERGE MAKE NOT SUCK ASS, MAKE BALLER AS FUCK
@@ -48,7 +48,7 @@
 	else
 		mod.wearer.dna.add_mutation(TK)
 
-/obj/item/mod/module/kinesis/on_deactivation()
+/obj/item/mod/module/kinesis/on_deactivation(display_message, deleting)
 	. = ..()
 	if(!.)
 		return

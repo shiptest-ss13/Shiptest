@@ -18,7 +18,7 @@
 	var/list/status = list()
 	status += "The orange light is [mod.seconds_electrified ? "on" : "off"]."
 	status += "The red light is [mod.malfunctioning ? "off" : "blinking"]."
-	status += "The green light is [mod.IDlocked ? "on" : "off"]."
+	status += "The green light is [mod.locked ? "on" : "off"]."
 	status += "The yellow light is [mod.interface_break ? "off" : "on"]."
 	return status
 
@@ -26,7 +26,7 @@
 	var/obj/item/mod/control/mod = holder
 	switch(wire)
 		if(WIRE_HACK)
-			mod.IDlocked = !mod.IDlocked
+			mod.locked = !mod.locked
 		if(WIRE_DISABLE)
 			mod.malfunctioning = TRUE
 		if(WIRE_SHOCK)

@@ -121,7 +121,7 @@
 	mod_parts += boots
 	var/list/all_parts = mod_parts + src
 	for(var/obj/item/part as anything in all_parts)
-		part.name = "[theme.ru_name] [part.name]"
+		part.name = "[theme.name] [part.name]"
 		part.desc = "[part.desc] [theme.desc]"
 		part.armor = getArmor(arglist(theme.armor))
 		part.resistance_flags = theme.resistance_flags
@@ -307,7 +307,7 @@
 /obj/item/mod/control/screwdriver_act(mob/living/user, obj/item/screwdriver)
 	if(..())
 		return TRUE
-	if(active || activating || ai_controller)
+	if(active || activating)// || ai_controller)
 		balloon_alert(user, "deactivate suit first!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return FALSE
