@@ -3,10 +3,9 @@
 ///Welding Protection - Makes the helmet protect from flashes and welding.
 /obj/item/mod/module/welding
 	name = "MOD welding protection module"
-	ru_name = "модуль защиты от вспышек"
-	desc = "Модуль, устанавливаемый в смотровой визор шлема и проецирующий \
-		поляризованное, голографическое изображение перед глазами пользователя. Оно достаточно \
-		устойчиво таким вещам, как точечная и дуговая сварка, солнечные затмения и карманные фонарики."
+	desc = "A module installed into the visor of the suit, this projects a \
+		polarized, holographic overlay in front of the user's eyes. It's rated high enough for \
+		immunity against extremities such as spot and arc welding, solar eclipses, and handheld flashlights."
 	icon_state = "welding"
 	complexity = 1
 	incompatible_modules = list(/obj/item/mod/module/welding, /obj/item/mod/module/armor_booster)
@@ -22,10 +21,10 @@
 
 ///T-Ray Scan - Scans the terrain for undertile objects.
 /obj/item/mod/module/t_ray
-	name = "модуль терагерцового сканера"
-	desc = "Модуль, установленный в смотровой визор скафандра, позволяющий пользователю использовать импульсы терагерцового излучения \
-		для эхолокации объектов под полом, в основном кабелей и труб. \
-		Основное направление работы это создание атмосферы и борьба с контрабандой."
+	name = "MOD t-ray scan module"
+	desc = "A module installed into the visor of the suit, allowing the user to use a pulse of terahertz radiation \
+		to essentially echolocate things beneath the floor, mostly cables and pipes. \
+		A staple of atmospherics work, and counter-smuggling work."
 	icon_state = "tray"
 	module_type = MODULE_TOGGLE
 	complexity = 1
@@ -40,11 +39,11 @@
 
 ///Magnetic Stability - Gives the user a slowdown but makes them negate gravity and be immune to slips.
 /obj/item/mod/module/magboot
-	name = "модуль магнитных ботинок"
-	desc = "Это мощные электромагниты, установленные в ботинках костюма, предоставляя пользователям \
-		отличное сцепление с поверхностью вне зависимости от гравитации или скользкости пола. \
-		Однако базовая модель не имеет контролера для своевременного отключения при передвижении, \
-		что вызывает излишнее сцепление с полом и сложности при передвижении."
+	name = "MOD magnetic stability module"
+	desc = "These are powerful electromagnets fitted into the suit's boots, allowing users both \
+		excellent traction no matter the condition indoors, and to essentially hitch a ride on the exterior of a hull. \
+		However, these basic models do not feature computerized systems to automatically toggle them on and off, \
+		so numerous users report a certain stickiness to their steps."
 	icon_state = "magnet"
 	module_type = MODULE_TOGGLE
 	complexity = 2
@@ -73,17 +72,17 @@
 	mod.wearer.update_equipment_speed_mods()
 
 /obj/item/mod/module/magboot/advanced
-	name = "продвинутый модуль магнитных ботинок"
+	name = "MOD advanced magnetic stability module"
 	removable = FALSE
 	complexity = 0
 	slowdown_active = 0
 
 ///Emergency Tether - Shoots a grappling hook projectile in 0g that throws the user towards it.
 /obj/item/mod/module/tether
-	name = "модуль аварийного троса"
-	desc = "Изготовленный на заказ крюк для захвата, приводимый в действие лебёдкой, способной поднимать пользователя. \
-		Хотя некоторые старые модели грузоориентированных тросов имеют вместимость в несколько тонн, \
-		они способны работать только в условиях нулевой гравитации. Благословение для некоторых инженеров."
+	name = "MOD emergency tether module"
+	desc = "A custom-built grappling-hook powered by a winch capable of hauling the user. \
+		While some older models of cargo-oriented grapples have capacities of a few tons, \
+		these are only capable of working in zero-gravity environments, a blessing to some Engineers."
 	icon_state = "tether"
 	module_type = MODULE_ACTIVE
 	complexity = 3
@@ -139,11 +138,11 @@
 
 ///Radiation Protection - Protects the user from radiation, gives them a geiger counter and rad info in the panel.
 /obj/item/mod/module/rad_protection
-	name = "модуль радиационной защиты"
-	desc = "Модуль использующий отражающие полимеры для защиты пользователя от ионизирующего излучения, \
-		весьма распространенной угрозы в космическом вакууме." 
-	// Поставляется с программным обеспечением, чтобы уведомить пользователя, что они находятся в радиоактивной области,
-	//давая голос безмолвному убийце.
+	name = "MOD radiation protection module"
+	desc = "A module utilizing polymers and reflective shielding to protect the user against ionizing radiation; \
+		a common danger in space."
+		//This comes with software to notify the wearer that they're even in a radioactive area,
+		//giving a voice to an otherwise silent killer.
 	icon_state = "radshield"
 	complexity = 2
 	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
@@ -190,11 +189,11 @@
 
 ///Constructor - Lets you build quicker and create RCD holograms.
 /obj/item/mod/module/constructor
-	name = "модуль строительного сканера"
-	desc = "Этот модуль полностью занимает предплечье владельца, особенно вызывая проблемы \
-		при переноской членов экипажа. Однако, он функционирует как \
-		ультрасовременный строительный голографический сканер, содержащий \
-		последние технические схемы в сочетании со встроенной памятью, чтобы ускорить постройку разрушенного окружения ."
+	name = "MOD constructor module"
+	desc = "This module entirely occupies the wearer's forearm, notably causing conflict with \
+		advanced arm servos meant to carry crewmembers. However, it functions as an \
+		extremely advanced construction hologram scanner, as well as containing the \
+		latest engineering schematics combined with inbuilt memory to help the user build walls."
 	icon_state = "constructor"
 	module_type = MODULE_USABLE
 	complexity = 2
@@ -218,8 +217,8 @@
 
 ///Mister - Sprays water over an area.
 /obj/item/mod/module/mister
-	name = "модуль пульверизатора"
-	desc = "Модуль, содержащий пульверизатор, способный распылять воду в области вокруг."
+	name = "MOD water mister module"
+	desc = "A module containing a mister, able to spray it over areas."
 	icon_state = "mister"
 	module_type = MODULE_ACTIVE
 	complexity = 2
@@ -236,8 +235,8 @@
 
 ///Resin Mister - Sprays resin over an area.
 /obj/item/mod/module/mister/atmos
-	name = "модуль огнеборца"
-	desc = "Распылитель, содержащий специальную противопожарную пену, образующую после застывания твердый биполимер, что стабилизирует температуру в помещении и быстро залатывает пробоины."
+	name = "MOD resin mister module"
+	desc = "An atmospheric resin mister, able to fix up areas quickly."
 	device = /obj/item/extinguisher/mini/nozzle/mod
 	volume = 250
 
@@ -246,5 +245,5 @@
 	reagents.add_reagent(/datum/reagent/water, volume)
 
 /obj/item/extinguisher/mini/nozzle/mod
-	name = "пожарный ствол"
-	desc = "Пожарный ствол соединенный рукавом с рюкзаком огнеборца. Имеет 3 режима работы, меняющиеся при нажатии."
+	name = "MOD atmospheric mister"
+	desc = "An atmospheric resin mister with three modes, mounted as a module."

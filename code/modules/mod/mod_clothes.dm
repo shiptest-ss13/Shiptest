@@ -1,6 +1,6 @@
 /obj/item/clothing/head/mod
-	name = "MOD шлем"
-	desc = "Шлем для MOD-Скафандра."
+	name = "MOD helmet"
+	desc = "A helmet for a MODsuit."
 	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
 	icon_state = "helmet"
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
@@ -12,8 +12,8 @@
 	visor_flags = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/suit/mod
-	name = "MOD нагрудник"
-	desc = "Нагрудник для MOD-Скафандра."
+	name = "MOD chestplate"
+	desc = "A chestplate for a MODsuit."
 	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
 	icon_state = "chestplate"
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
@@ -25,8 +25,8 @@
 	obj_flags = IMMUTABLE_SLOW
 
 /obj/item/clothing/gloves/mod
-	name = "MOD перчатки"
-	desc = "Пара перчаток для MOD-Скафандра."
+	name = "MOD gauntlets"
+	desc = "A pair of gauntlets for a MODsuit."
 	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
 	icon_state = "gauntlets"
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
@@ -37,8 +37,8 @@
 	obj_flags = IMMUTABLE_SLOW
 
 /obj/item/clothing/shoes/mod
-	name = "MOD Ботинки"
-	desc = "Пара ботинок для MOD-Скафандра"
+	name = "MOD boots"
+	desc = "A pair of boots for a MODsuit."
 	icon = 'icons/obj/clothing/modsuit/mod_clothing.dmi'
 	icon_state = "boots"
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'

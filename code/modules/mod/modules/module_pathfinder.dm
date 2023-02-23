@@ -1,15 +1,15 @@
 ///Pathfinder - Can fly the suit from a long distance to an implant installed in someone.
 /*
 /obj/item/mod/module/pathfinder
-	name = "модуль удаленного вызова"
-	desc = "Этот экспериментальный модуль от Накамура Инженеринг состоит из двух компонентов. \
-		Первый из них это комплекс из ионных двигателей синхронизированный с навигационной системой, \
-		подключенной к блоку управления скафандра, позволяющий скафандру быстро передвигаться по станции в беспилотном режиме, \
-		стремясь ко второй части комплекса, которая имплантируется \
-		непосредственно в основание позвоночника пользователя. \
-		При мысленной команде имплант пересылает костюму свои текущие координаты и позволяет вызвать костюм в любой момент. \
-		Модуль идет в комплекте с автохирургом импланта, который необходимо установить перед подключением к скафандру. \
-		Производитель уверяет в стопроцентной надежности конструкции и наличии системы экстренного торможения."
+	name = "MOD pathfinder module"
+	desc = "This module, brought to you by Nakamura Engineering, has two components. \
+		The first component is a series of thrusters and a computerized location subroutine installed into the \
+		very control unit of the suit, allowing it flight at highway speeds, \
+		and to be able to locate the second part of the system; \
+		a pathfinding implant installed into the base of the user's spine, \
+		broadcasting their location to the suit and allowing them to recall it to their back at any time. \
+		The implant is stored in the module and needs to be injected in a human to function. \
+		Nakamura Engineering swears up and down there's airbrakes."
 	icon_state = "pathfinder"
 	complexity = 2
 	use_power_cost = DEFAULT_CHARGE_DRAIN * 10
@@ -28,23 +28,23 @@
 /obj/item/mod/module/pathfinder/examine(mob/user)
 	. = ..()
 	if(implant)
-		. += span_notice("Используйте на человеке для имплантации.")
+		. += span_notice("Use it on a human to implant them.")
 	else
-		. += span_warning("Имплант отсутсвует.")
+		. += span_warning("The implant is missing.")
 
 /obj/item/mod/module/pathfinder/attack(mob/living/target, mob/living/user, params)
 	if(!ishuman(target) || !implant)
 		return
 	if(!do_after(user, 1.5 SECONDS, target = target))
-		balloon_alert(user, "Прервано!")
+		balloon_alert(user, "interrupted!")
 		return
 	if(!implant.implant(target, user))
-		balloon_alert(user, "Невозможно имплантировать!")
+		balloon_alert(user, "can't implant!")
 		return
 	if(target == user)
-		to_chat(user, span_notice("Имплантирую себе [implant]."))
+		to_chat(user, span_notice("You implant yourself with [implant]."))
 	else
-		target.visible_message(span_notice("[user] имплантирует [target]."), span_notice("[user] имплантирует меня [implant]."))
+		target.visible_message(span_notice("[user] implants [target]."), span_notice("[user] implants you with [implant]."))
 	playsound(src, 'sound/effects/spray.ogg', 30, TRUE, -6)
 	icon_state = "pathfinder_empty"
 	implant = null
@@ -59,13 +59,13 @@
 		return
 	mod.quick_deploy(user)
 	human_user.update_action_buttons(TRUE)
-	balloon_alert(human_user, "[mod] синхронизирован")
+	balloon_alert(human_user, "[mod] attached")
 	playsound(mod, 'sound/machines/ping.ogg', 50, TRUE)
 	drain_power(use_power_cost)
 
 /obj/item/implant/mod
-	name = "имплант удаленного вызова"
-	desc = "Позволяет вызвать к себе MOD-Скафандр."
+	name = "MOD pathfinder implant"
+	desc = "Lets you recall a MODsuit to you at any time."
 	actions_types = list(/datum/action/item_action/mod_recall)
 	/// The pathfinder module we are linked to.
 	var/obj/item/mod/module/pathfinder/module
@@ -87,26 +87,26 @@
 	return ..()
 
 /obj/item/implant/mod/get_data()
-	var/dat = {"<b>Спецификация импланта:</b><BR>
-				<b>Название:</b> Имплант удаленного вызова от Накамура Инженеринг<BR>
-				<b>Описание :</b> Позволяет вызвать Модульное Устройство Внешней защиты к носителю имлпанта.<BR>"}
+	var/dat = {"<b>Implant Specifications:</b><BR>
+				<b>Name:</b> Nakamura Engineering Pathfinder Implant<BR>
+				<b>Implant Details:</b> Allows for the recall of a Modular Outerwear Device by the implant owner at any time.<BR>"}
 	return dat
 
 /obj/item/implant/mod/proc/recall()
 	if(!module?.mod)
-		balloon_alert(imp_in, "Нет синхронизированных скафандров!")
+		balloon_alert(imp_in, "no connected suit!")
 		return FALSE
 	if(module.mod.open)
-		balloon_alert(imp_in, "Костюм открыт!")
+		balloon_alert(imp_in, "suit is open!")
 		return FALSE
 	if(module.mod.ai_controller)
-		balloon_alert(imp_in, "Уже в пути!")
+		balloon_alert(imp_in, "already in transit!")
 		return FALSE
 	if(ismob(get_atom_on_turf(module.mod)))
-		balloon_alert(imp_in, "Уже на экипирован кем-то!")
+		balloon_alert(imp_in, "already on someone!")
 		return FALSE
 	if(module.z != z || get_dist(imp_in, module.mod) > MOD_AI_RANGE)
-		balloon_alert(imp_in, "Слишком далеко!")
+		balloon_alert(imp_in, "too far away!")
 		return FALSE
 	var/datum/ai_controller/mod_ai = new /datum/ai_controller/mod(module.mod)
 	module.mod.ai_controller = mod_ai
@@ -119,7 +119,7 @@
 	animate(module.mod, 0.2 SECONDS, pixel_x = base_pixel_y, pixel_y = base_pixel_y)
 	module.mod.add_overlay(jet_icon)
 	RegisterSignal(module.mod, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
-	balloon_alert(imp_in, "Скафандр вызван")
+	balloon_alert(imp_in, "suit recalled")
 	return TRUE
 
 /obj/item/implant/mod/proc/end_recall(successful = TRUE)
@@ -133,7 +133,7 @@
 	module.mod.transform = matrix()
 	UnregisterSignal(module.mod, COMSIG_MOVABLE_MOVED)
 	if(!successful)
-		balloon_alert(imp_in, "Скафандр потерял связь!")
+		balloon_alert(imp_in, "suit lost connection!")
 
 /obj/item/implant/mod/proc/on_move(atom/movable/source, atom/old_loc, dir, forced)
 	SIGNAL_HANDLER
@@ -143,8 +143,8 @@
 	source.transform = mod_matrix
 
 /datum/action/item_action/mod_recall
-	name = "Вызвать MOD"
-	desc = "Вызывает MOD-Скафандр, куда угодно, в любое время."
+	name = "Recall MOD"
+	desc = "Recall a MODsuit anyplace, anytime."
 	check_flags = AB_CHECK_CONSCIOUS
 	background_icon_state = "bg_tech_blue"
 	icon_icon = 'icons/mob/actions/actions_mod.dmi'

@@ -1,7 +1,8 @@
 ///Storage - Adds a storage component to the suit.
 /obj/item/mod/module/storage
-	name = "модуль хранилища"
-	desc = "Модуль состоит из серии интегрированных отсеков и специализированных карманов по бокам костюма, для хранения ваших вещей."
+	name = "MOD storage module"
+	desc = "What amounts to a series of integrated storage compartments and specialized pockets installed across \
+		the surface of the suit, useful for storing various bits, and or bobs."
 	icon_state = "storage"
 	complexity = 3
 	incompatible_modules = list(/obj/item/mod/module/storage, /obj/item/mod/module/plate_compression)
@@ -35,32 +36,32 @@
 /obj/item/mod/module/storage/proc/on_chestplate_unequip(obj/item/source, force, atom/newloc, no_move, invdrop, silent)
 	if(QDELETED(source) || !mod.wearer || newloc == mod.wearer || !mod.wearer.s_store)
 		return
-	to_chat(mod.wearer, span_notice("[src] пытается положить [mod.wearer.s_store] внутрь себя."))
+	to_chat(mod.wearer, span_notice("[src] tries to store [mod.wearer.s_store] inside itself."))
 	if(atom_storage?.attempt_insert(mod.wearer.s_store, mod.wearer, override = TRUE))
 		mod.wearer.temporarilyRemoveItemFromInventory(mod.wearer.s_store)
 
-/obj/item/mod/module/storage/normal_capacity
-	name = "модуль хранилища"
-	desc = "Модуль состоит из серии интегрированных отсеков и специализированных карманов по бокам костюма, для хранения ваших вещей."
-	icon_state = "storage"
-
 /obj/item/mod/module/storage/large_capacity
-	name = "продвинутый модуль хранилища"
-	desc = "Передовая разработка от Накамура Инженеринг - усовершенствованный контейнер для складирования предметов."
+	name = "MOD expanded storage module"
+	desc = "Reverse engineered by Nakamura Engineering from Donk Corporation designs, this system of hidden compartments \
+		is entirely within the suit, distributing items and weight evenly to ensure a comfortable experience for the user; \
+		whether smuggling, or simply hauling."
 	icon_state = "storage_large"
 	max_combined_w_class = 21
 	max_items = 14
 
 /obj/item/mod/module/storage/syndicate
-	name = "модуль хранилища Синдиката"
-	desc = "Система хранения с использованием нанотехнологий используемых контрабандистами. Разработка Киберсан Индастри."
+	name = "MOD syndicate storage module"
+	desc = "A storage system using nanotechnology developed by Cybersun Industries, these compartments use \
+		esoteric technology to compress the physical matter of items put inside of them, \
+		essentially shrinking items for much easier and more portable storage."
 	icon_state = "storage_syndi"
 	max_combined_w_class = 30
 	max_items = 21
 
 /obj/item/mod/module/storage/bluespace
-	name = "модуль блюспейс хранилища"
-	desc = "Экспериментальная система хранения использующая технологию блюспейс. Разработка НаноТрейзен."
+	name = "MOD bluespace storage module"
+	desc = "A storage system developed by Nanotrasen, these compartments employ \
+		miniaturized bluespace pockets for the ultimate in storage technology; regardless of the weight of objects put inside."
 	icon_state = "storage_large"
 	max_w_class = WEIGHT_CLASS_GIGANTIC
 	max_combined_w_class = 60

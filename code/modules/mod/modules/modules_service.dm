@@ -2,9 +2,9 @@
 
 ///Bike Horn - Plays a bike horn sound.
 /obj/item/mod/module/bikehorn
-	name = "модуль клаксона"
-	desc = "Модуль размещает на плече тяжелую звуковую артиллерию, которая использует лучшую технологию фемто-манипулятора для \
-		почти смертельного сжатия... клаксона велосипеда, создавая всем знакомый звук."
+	name = "MOD bike horn module"
+	desc = "A shoulder-mounted piece of heavy sonic artillery, this module uses the finest femto-manipulator technology to \
+		precisely deliver an almost lethal squeeze to... a bike horn, producing a significantly memorable sound."
 	icon_state = "bikehorn"
 	module_type = MODULE_USABLE
 	complexity = 1
@@ -21,9 +21,10 @@
 
 ///Microwave Beam - Microwaves items instantly.
 /obj/item/mod/module/microwave_beam
-	name = "модуль микроволнового луча"
-	desc = "Специальный микроволновый эмиттер, установленный в ладонях пользователя, \
-	позволяет разогревать пищу на расстоянии. Не рекомендуется для использования против винограда."
+	name = "MOD microwave beam module"
+	desc = "An oddly domestic device, this module is installed into the user's palm, \
+		hooking up with culinary scanners located in the helmet to blast food with precise microwave radiation, \
+		allowing them to cook food from a distance, with the greatest of ease. Not recommended for use against grapes."
 	icon_state = "microwave_beam"
 	module_type = MODULE_ACTIVE
 	complexity = 2
@@ -38,7 +39,7 @@
 	if(!istype(target, /obj/item))
 		return
 	if(!isturf(target.loc))
-		balloon_alert(mod.wearer, "Должен быть на полу!")
+		balloon_alert(mod.wearer, "must be on the floor!")
 		return
 	var/obj/item/microwave_target = target
 	var/datum/effect_system/spark_spread/spark_effect = new()
@@ -48,7 +49,7 @@
 	if(microwave_target.microwave_act())
 		playsound(src, 'sound/machines/microwave/microwave-end.ogg', 50, FALSE)
 	else
-		balloon_alert(mod.wearer, "Не может быть нагрет!")
+		balloon_alert(mod.wearer, "can't be microwaved!")
 	var/datum/effect_system/spark_spread/spark_effect_two = new()
 	spark_effect_two.set_up(2, 1, microwave_target)
 	spark_effect_two.start()
@@ -56,11 +57,12 @@
 
 //Waddle - Makes you waddle and squeak.
 /obj/item/mod/module/waddle
-	name = "модуль неуклюжей ходьбы"
-	desc = "Некоторая из самых примитивных технологий, используемых Хонк Ко. \
-		Фотонный вычислительный блок управления с точностью до милиметра предсказывает следующий шаг. \
-		Эти данные использует двойной гравитационный диск для возникновения миниатюрных эфирных ударных волн времени-пространства \
-		что позволяет пользователю... шататься в стороны, подпрыгивая с каждым шагом."
+	name = "MOD waddle module"
+	desc = "Some of the most primitive technology in use by Honk Co. This module works off an automatic intention system, \
+		utilizing its' sensitivity to the pilot's often-limited brainwaves to directly read their next step, \
+		affecting the boots they're installed in. Employing a twin-linked gravitonic drive to create \
+		miniaturized etheric blasts of space-time beneath the user's feet, this enables them to... \
+		to waddle around, bouncing to and fro with a pep in their step."
 	icon_state = "waddle"
 	complexity = 1
 	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0.2

@@ -1,6 +1,6 @@
 /obj/item/mod/core
-	name = "ядро МОД-Скафа"
-	desc = "Нерабочее ядро MOD-Скафа. Сообщи кодерам если видишь это!."
+	name = "MOD core"
+	desc = "A non-functional MOD core. Inform the admins if you see this."
 	icon = 'icons/obj/clothing/modsuit/mod_construction.dmi'
 	icon_state = "mod-core"
 	item_state = "electronic"
@@ -45,10 +45,10 @@
 	mod.wearer.clear_alert("mod_charge")
 
 /obj/item/mod/core/infinite
-	name = "бесконечное ядро MOD-Скафа"
-	icon_state = "mod-core-infinite" // валериум и правда смешно
-	desc = "Ядро синтеза, использующее редкий Валериум для поддержания достаточной энергии на протяжении всей жизни пользователя МОД-Скафа. \
-		Это может быть из-за медленно убивающего яда внутри, но это просто слухи."
+	name = "MOD infinite core"
+	icon_state = "mod-core-infinite"
+	desc = "A fusion core using the rare Fixium to sustain enough energy for the lifetime of the MOD's user. \
+		This might be because of the slowly killing poison inside, but those are just rumors."
 
 /obj/item/mod/core/infinite/charge_source()
 	return src
@@ -69,13 +69,13 @@
 	return TRUE
 
 /obj/item/mod/core/standard
-	name = "стандартное ядро МОД-Скафа"
+	name = "MOD standard core"
 	icon_state = "mod-core-standard"
-	desc = "На планете Росток есть кристалл, известный как Хартблум. Найти его можно только в самых пышных, плодородных областях. \
-		Эти редкие, органические пьезоэлектрические кристаллы Особый сакральный смысл они имеют для художников, \
-		из-за очень большого сходства с сердцами Этериалов\n. \
-		Пока не очень понятно как этот образец оказался здесь и сейчас у вас, но в любом случае, \
-		он был переделан, чтобы стать внутренним источником питания для Модульного Устройства Внешней защиты."
+	desc = "Growing in the most lush, fertile areas of the planet Sprout, there is a crystal known as the Heartbloom. \
+		These rare, organic piezoelectric crystals are of incredible cultural significance to the artist castes of the \
+		Ethereals, owing to their appearance; which is exactly similar to that of an Ethereal's heart.\n\
+		Which one you have in your suit is unclear, but either way, \
+		it's been repurposed to be an internal power source for a Modular Outerwear Device."
 	/// Installed cell.
 	var/obj/item/stock_parts/cell/cell
 
@@ -170,7 +170,7 @@
 
 	if(!mod.open)
 		return
-	examine_text += cell ? "Вы можете вытащить батарейку пустой рукой." : "Вы можете использовать батарейку на этом для установки."
+	examine_text += cell ? "You could remove the cell with an empty hand." : "You could use a cell on it to install one."
 
 /obj/item/mod/core/standard/proc/on_attack_hand(datum/source, mob/living/user)
 	SIGNAL_HANDLER
@@ -184,13 +184,13 @@
 
 /obj/item/mod/core/standard/proc/mod_uninstall_cell(mob/living/user)
 	if(!cell)
-		mod.balloon_alert(user, "Нет батареи!")
+		mod.balloon_alert(user, "no cell!")
 		return
-	mod.balloon_alert(user, "Удаляю батарейку...")
+	mod.balloon_alert(user, "removing cell...")
 	if(!do_after(user, 1.5 SECONDS, target = mod))
-		mod.balloon_alert(user, "Прервано!")
+		mod.balloon_alert(user, "interrupted!")
 		return
-	mod.balloon_alert(user, "Батарея удалена")
+	mod.balloon_alert(user, "cell removed")
 	playsound(mod, 'sound/machines/click.ogg', 50, TRUE, SILENCED_SOUND_EXTRARANGE)
 	var/obj/item/cell_to_move = cell
 	cell_to_move.forceMove(drop_location())
@@ -202,15 +202,15 @@
 
 	if(istype(attacking_item, /obj/item/stock_parts/cell))
 		if(!mod.open)
-			mod.balloon_alert(user, "Сначала откройте техническую панель!")
+			mod.balloon_alert(user, "open the cover first!")
 			playsound(mod, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 			return NONE
 		if(cell)
-			mod.balloon_alert(user, "Батарея уже установлена!")
+			mod.balloon_alert(user, "cell already installed!")
 			playsound(mod, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 			return COMPONENT_NO_AFTERATTACK
 		install_cell(attacking_item)
-		mod.balloon_alert(user, "Батарея установлена")
+		mod.balloon_alert(user, "cell installed")
 		playsound(mod, 'sound/machines/click.ogg', 50, TRUE, SILENCED_SOUND_EXTRARANGE)
 		mod.update_charge_alert()
 		return COMPONENT_NO_AFTERATTACK
@@ -235,11 +235,10 @@
 	mod.update_charge_alert()
 
 /obj/item/mod/core/ethereal
-	name = "ядро МОД-Скафа Этериала"
+	name = "MOD ethereal core"
 	icon_state = "mod-core-ethereal"
-	desc = "Ядро МОД-Скафа адаптированное под этериалов. \
-	    Использует естественное жидкое электричество Этериалов, \
-		и устраняет необходимость в внешних источниках для преобразования электрического заряда."
+	desc = "A reverse engineered core of a Modular Outerwear Device. Using natural liquid electricity from Ethereals, \
+		preventing the need to use external sources to convert electric charge."
 	/// A modifier to all charge we use, ethereals don't need to spend as much energy as normal suits.
 	var/charge_modifier = 0.1
 
@@ -281,10 +280,10 @@
 	mod.wearer.throw_alert("mod_charge", /atom/movable/screen/alert/nocell)
 
 /obj/item/mod/core/plasma
-	name = "МОД плазма ядро"
+	name = "MOD plasma core"
 	icon_state = "mod-core-plasma"
-	desc = "Продукт исследования Нанотрейзен в области плазмы. Эти плазменные ядра заправляются \
-		плазменным топливом, что позволяет использовать их для шахтёрских отрядов."
+	desc = "Nanotrasen's attempt at capitalizing on their plasma research. These plasma cores are refueled \
+		through plasma ore, allowing for easy continued use by their mining squads."
 	/// How much charge we can store.
 	var/maxcharge = 10000
 	/// How much charge we are currently storing.
@@ -354,5 +353,5 @@
 	if(!plasma.use(uses_needed))
 		return FALSE
 	add_charge(uses_needed * charge_given)
-	balloon_alert(user, "Ядро заправлено")
+	balloon_alert(user, "core refueled")
 	return TRUE

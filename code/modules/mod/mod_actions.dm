@@ -34,13 +34,13 @@
 		return FALSE
 	var/obj/item/mod/control/mod = target
 	if(mod.malfunctioning && prob(75))
-		mod.balloon_alert(usr, "Кнопки неисправны!")
+		mod.balloon_alert(usr, "button malfunctions!")
 		return FALSE
 	return TRUE
 
 /datum/action/item_action/mod/deploy
-	name = "Развернуть MOD-Скафандр"
-	desc = "ЛКМ: Развернуть/Свернуть части. ПКМ: Развернуть/Свернуть полностью."
+	name = "Deploy MODsuit"
+	desc = "LMB: Deploy/Undeploy part. RMB: Deploy/Undeploy full suit."
 	button_icon_state = "deploy"
 
 /datum/action/item_action/mod/deploy/Trigger(trigger_flags)
@@ -57,8 +57,8 @@
 	ai_action = TRUE
 
 /datum/action/item_action/mod/activate
-	name = "Активировать MOD-Скаф"
-	desc = "ЛКМ: Активировать/Деактивировать костюм с предупреждением. ПКМ: Активировать/Деактивировать костюм игнорируя предупреждение."
+	name = "Activate MODsuit"
+	desc = "LMB: Activate/Deactivate suit with prompt. RMB: Activate/Deactivate suit skipping prompt."
 	button_icon_state = "activate"
 	/// First time clicking this will set it to TRUE, second time will activate it.
 	var/ready = FALSE
@@ -91,8 +91,8 @@
 	ai_action = TRUE
 
 /datum/action/item_action/mod/module
-	name = "Переключить модули"
-	desc = "Переключить модули MOD-Скафандра."
+	name = "Toggle Module"
+	desc = "Toggle a MODsuit module."
 	button_icon_state = "module"
 
 /datum/action/item_action/mod/module/Trigger(trigger_flags)
@@ -106,8 +106,8 @@
 	ai_action = TRUE
 
 /datum/action/item_action/mod/panel
-	name = "Панель MOD-Скафандра"
-	desc = "Открыть панель управления MOD-Скафа."
+	name = "MODsuit Panel"
+	desc = "Open the MODsuit's panel."
 	button_icon_state = "panel"
 
 /datum/action/item_action/mod/panel/Trigger(trigger_flags)
@@ -121,7 +121,7 @@
 	ai_action = TRUE
 
 /datum/action/item_action/mod/pinned_module
-	desc = "Активировать модуль."
+	desc = "Activate the module."
 	/// Overrides the icon applications.
 	var/override = FALSE
 	/// Module we are linked to.
@@ -134,8 +134,8 @@
 		ai_action = TRUE
 	..()
 	module = linked_module
-	name = "Активировать [capitalize(linked_module.name)]"
-	desc = "Быстро активировать [linked_module]."
+	name = "Activate [capitalize(linked_module.name)]"
+	desc = "Quickly activate [linked_module]."
 	icon_icon = linked_module.icon
 	button_icon_state = linked_module.icon_state
 	RegisterSignal(linked_module, COMSIG_MODULE_ACTIVATED, PROC_REF(on_module_activate))

@@ -2,9 +2,10 @@
 
 ///Internal GPS - Extends a GPS you can use.
 /obj/item/mod/module/gps
-	name = "модуль GPS-трекера"
-	desc = "Стандартный GPS-модуль не изменивший свой функционал с 21 века. \
-	В большинстве случаев используется для отслеживания местоположения, как своего, так и окружающих сигналов."
+	name = "MOD internal GPS module"
+	desc = "This module uses common Nanotrasen technology to calculate the user's position anywhere in space, \
+		down to the exact coordinates. This information is fed to a central database viewable from the device itself, \
+		though using it to help people is up to you."
 	icon_state = "gps"
 	module_type = MODULE_USABLE
 	complexity = 1
@@ -25,10 +26,10 @@
 
 ///Hydraulic Clamp - Lets you pick up and drop crates.
 /obj/item/mod/module/clamp
-	name = "модуль гидравлического манипулятора"
-	desc = "Серия приводов, установленных в обе руки скафандра, с грузоподъемностью почти в тонну. \
-		Однако модель захватов поддерживает исключительно крепеж стандартных грузовых ящиков. \
-		Многие скажут, что транспортировка груза - скучная работа, но вы с ними не согласитесь."
+	name = "MOD hydraulic clamp module"
+	desc = "A series of actuators installed into both arms of the suit, boasting a lifting capacity of almost a ton. \
+		However, this design has been locked by Nanotrasen to be primarily utilized for lifting various crates. \
+		A lot of people would say that loading cargo is a dull job, but you could not disagree more."
 	icon_state = "clamp"
 	module_type = MODULE_ACTIVE
 	complexity = 3
@@ -50,36 +51,38 @@
 		return
 	if(!mod.wearer.Adjacent(target))
 		return
-	if(istype(target, /obj/structure/closet/crate))// || istype(target, /obj/item/delivery/big))
+	if(istype(target, /obj/structure/closet/crate) || istype(target, /obj/item/delivery/big))
 		var/atom/movable/picked_crate = target
 		if(!check_crate_pickup(picked_crate))
 			return
 		playsound(src, 'sound/mecha/hydraulic.ogg', 25, TRUE)
 		if(!do_after(mod.wearer, load_time, target = target))
-			balloon_alert(mod.wearer, "Прервано!")
+			balloon_alert(mod.wearer, "interrupted!")
 			return
 		if(!check_crate_pickup(picked_crate))
 			return
 		stored_crates += picked_crate
 		picked_crate.forceMove(src)
-		balloon_alert(mod.wearer, "Поднимаю [picked_crate]")
+		balloon_alert(mod.wearer, "picked up [picked_crate]")
 		drain_power(use_power_cost)
+		mod.wearer.update_inv_back()
 	else if(length(stored_crates))
 		var/turf/target_turf = get_turf(target)
 		if(target_turf.is_blocked_turf())
 			return
 		playsound(src, 'sound/mecha/hydraulic.ogg', 25, TRUE)
 		if(!do_after(mod.wearer, load_time, target = target))
-			balloon_alert(mod.wearer, "Прервано!")
+			balloon_alert(mod.wearer, "interrupted!")
 			return
 		if(target_turf.is_blocked_turf())
 			return
 		var/atom/movable/dropped_crate = pop(stored_crates)
 		dropped_crate.forceMove(target_turf)
-		balloon_alert(mod.wearer, "Опускаю [dropped_crate]")
+		balloon_alert(mod.wearer, "dropped [dropped_crate]")
 		drain_power(use_power_cost)
+		mod.wearer.update_inv_back()
 	else
-		balloon_alert(mod.wearer, "Неправильная цель!")
+		balloon_alert(mod.wearer, "invalid target!")
 
 /obj/item/mod/module/clamp/on_suit_deactivation(deleting = FALSE)
 	if(deleting)
@@ -90,17 +93,17 @@
 
 /obj/item/mod/module/clamp/proc/check_crate_pickup(atom/movable/target)
 	if(length(stored_crates) >= max_crates)
-		balloon_alert(mod.wearer, "Слишком много ящиков!")
+		balloon_alert(mod.wearer, "too many crates!")
 		return FALSE
 	for(var/mob/living/mob in target.get_all_contents())
 		if(mob.mob_size < MOB_SIZE_HUMAN)
 			continue
-		balloon_alert(mod.wearer, "Ящик слишком тяжелый!")
+		balloon_alert(mod.wearer, "crate too heavy!")
 		return FALSE
 	return TRUE
 
 /obj/item/mod/module/clamp/loader
-	name = "модуль гидравлического манипулятора"
+	name = "MOD loader hydraulic clamp module"
 	icon_state = "clamp_loader"
 	complexity = 0
 	removable = FALSE
@@ -112,9 +115,9 @@
 
 ///Drill - Lets you dig through rock and basalt.
 /obj/item/mod/module/drill
-	name = "модуль бура"
-	desc = "Встроенный бур, обычно простирающаяся над рукой пользователя. Хоть и бур полезен для бурения через породу, \
-		твой бур, несомненно, способен пронзать небеса!"
+	name = "MOD drill module"
+	desc = "An integrated drill, typically extending over the user's hand. While useful for drilling through rock, \
+		your drill is surely the one that both pierces and creates the heavens."
 	icon_state = "drill"
 	module_type = MODULE_ACTIVE
 	complexity = 2
@@ -162,10 +165,10 @@
 
 ///Ore Bag - Lets you pick up ores and drop them from the suit.
 /obj/item/mod/module/orebag
-	name = "Модуль сумки для руды"
-	desc = "Встроенная в костюм система хранения руды, \
-		При этом используются точные электромагниты и отсеки для автоматического сбора и сортировки руды. \
-		Данная конструкция является заслуженной гордостью компании Накамура Инжиниринг."
+	name = "MOD ore bag module"
+	desc = "An integrated ore storage system installed into the suit, \
+		this utilizes precise electromagnets and storage compartments to automatically collect and deposit ore. \
+		It's recommended by Nakamura Engineering to actually deposit that ore at local refineries."
 	icon_state = "ore"
 	module_type = MODULE_USABLE
 	complexity = 1
@@ -210,8 +213,8 @@
 	drain_power(use_power_cost)
 
 /obj/item/mod/module/hydraulic
-	name = "модуль погрузочных гидравлических рук"
-	desc = "Пара мощных гидравлических рук, установленных в скафандр"
+	name = "MOD loader hydraulic arms module"
+	desc = "A pair of powerful hydraulic arms installed in a MODsuit."
 	icon_state = "launch_loader"
 	module_type = MODULE_ACTIVE
 	removable = FALSE
@@ -235,12 +238,12 @@
 	render_matrix.Scale(1.25, 1.25)
 	animate(game_renderer, launch_time, transform = render_matrix)
 	var/current_time = world.time
-	mod.wearer.visible_message(span_warning("[mod.wearer] заряжает гидравлические руки!"), \
-		blind_message = span_hear("Где-то раздаётся звук зарядки."))
+	mod.wearer.visible_message(span_warning("[mod.wearer] starts whirring!"), \
+		blind_message = span_hear("You hear a whirring sound."))
 	playsound(src, 'sound/items/modsuit/loader_charge.ogg', 75, TRUE)
 	lightning = mutable_appearance('icons/effects/effects.dmi', "electricity3", offset_spokesman = src, plane = GAME_PLANE_FOV_HIDDEN)
 	mod.wearer.add_overlay(lightning)
-	balloon_alert(mod.wearer, "Начинаю зарядку...")
+	balloon_alert(mod.wearer, "you start charging...")
 	var/power = launch_time
 	if(!do_after(mod.wearer, launch_time, target = mod))
 		power = world.time - current_time
@@ -262,9 +265,9 @@
 	user.transform = user.transform.Turn(angle)
 
 /obj/item/mod/module/disposal_connector
-	name = "модуль этикеровщика назначения"
-	desc = "Модуль позволяет наносить специальные метки на ящики для работы пневматической почты. \
-		Работает только когда скафандр включен."
+	name = "MOD disposal selector module"
+	desc = "A module that connects to the disposal pipeline, causing the user to go into their config selected disposal. \
+		Only seems to work when the suit is on."
 	icon_state = "disposal"
 	complexity = 2
 	idle_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
@@ -283,7 +286,7 @@
 
 /obj/item/mod/module/disposal_connector/get_configuration()
 	. = ..()
-	.["disposal_tag"] = add_ui_configuration("Пометка назначения", "Список", GLOB.TAGGERLOCATIONS[disposal_tag], GLOB.TAGGERLOCATIONS)
+	.["disposal_tag"] = add_ui_configuration("Disposal Tag", "list", GLOB.TAGGERLOCATIONS[disposal_tag], GLOB.TAGGERLOCATIONS)
 
 /obj/item/mod/module/disposal_connector/configure_edit(key, value)
 	switch(key)
@@ -299,8 +302,8 @@
 	disposal_holder.destinationTag = disposal_tag
 
 /obj/item/mod/module/magnet
-	name = "модуль погрузочных магнитов"
-	desc = "Мощный гидравлический электромагнит, способный притягивать ящики и шкафчики к пользователю, и держать их притянутыми."
+	name = "MOD loader hydraulic magnet module"
+	desc = "A powerful hydraulic electromagnet able to launch crates and lockers towards the user, and keep 'em attached."
 	icon_state = "magnet_loader"
 	module_type = MODULE_ACTIVE
 	removable = FALSE
@@ -321,11 +324,11 @@
 		locker.throw_at(target, range = 7, speed = 4, thrower = mod.wearer)
 		return
 	if(!istype(target, /obj/structure/closet) || !(target in view(mod.wearer)))
-		balloon_alert(mod.wearer, "Неправильная цель!")
+		balloon_alert(mod.wearer, "invalid target!")
 		return
 	var/obj/structure/closet/locker = target
 	if(locker.anchored || locker.move_resist >= MOVE_FORCE_OVERPOWERING)
-		balloon_alert(mod.wearer, "Цель зафиксирована!")
+		balloon_alert(mod.wearer, "target anchored!")
 		return
 	new /obj/effect/temp_visual/mook_dust(get_turf(locker))
 	playsound(locker, 'sound/effects/gravhit.ogg', 75, TRUE)
@@ -355,8 +358,9 @@
 	UnregisterSignal(locker, COMSIG_ATOM_NO_LONGER_PULLED)
 
 /obj/item/mod/module/ash_accretion
-	name = "модуль пепельной защиты"
-	desc = "Модуль, собирающий пепельную взвесь с окружающей местности и покрывающий скафандр дополнительным защитным слоем. Пепельная защита со временем спадает."
+	name = "MOD ash accretion module"
+	desc = "A module that collects ash from the terrain, covering the suit in a protective layer, this layer is \
+		lost when moving across standard terrain."
 	icon_state = "ash_accretion"
 	removable = FALSE
 	incompatible_modules = list(/obj/item/mod/module/ash_accretion)
@@ -441,7 +445,7 @@
 		for(var/obj/item/part as anything in parts)
 			part.armor = part.armor.modifyRating(arglist(armor_values))
 		if(traveled_tiles >= max_traveled_tiles)
-			balloon_alert(mod.wearer, "Полностью покрыт пеплом")
+			balloon_alert(mod.wearer, "fully ash covered")
 			mod.wearer.color = list(1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,3) //make them super light
 			animate(mod.wearer, 1 SECONDS, color = null, flags = ANIMATION_PARALLEL)
 			playsound(src, 'sound/effects/sparks1.ogg', 100, TRUE)
@@ -464,12 +468,12 @@
 		for(var/obj/item/part as anything in parts)
 			part.armor = part.armor.modifyRating(arglist(removed_armor))
 		if(traveled_tiles <= 0)
-			balloon_alert(mod.wearer, "Пепел закончился!")
+			balloon_alert(mod.wearer, "ran out of ash!")
 
 /obj/item/mod/module/sphere_transform
-	name = "модуль трансформации в сферу"
-	desc = "Модуль, способный перемещать части скафандра, превращая его и пользователя в сферу. \
-		Сфера может двигаться быстро, даже через лаву, и запускать шахтёрские бомбы, чтобы уничтожать местность."
+	name = "MOD sphere transform module"
+	desc = "A module able to move the suit's parts around, turning it and the user into a sphere. \
+		The sphere can move quickly, even through lava, and launch mining bombs to decimate terrain."
 	icon_state = "sphere"
 	module_type = MODULE_ACTIVE
 	removable = FALSE
@@ -482,7 +486,7 @@
 
 /obj/item/mod/module/sphere_transform/on_activation()
 	if(!mod.wearer.has_gravity())
-		balloon_alert(mod.wearer, "Нет гравитации!")
+		balloon_alert(mod.wearer, "no gravity!")
 		return FALSE
 	. = ..()
 	if(!.)
@@ -524,7 +528,7 @@
 
 /obj/item/mod/module/sphere_transform/on_use()
 	if(!lavaland_equipment_pressure_check(get_turf(src)))
-		balloon_alert(mod.wearer, "Слишком высокое давление!")
+		balloon_alert(mod.wearer, "too much pressure!")
 		playsound(src, 'sound/weapons/gun/general/dry_fire.ogg', 25, TRUE)
 		return FALSE
 	return ..()
@@ -554,8 +558,8 @@
 	on_deactivation()
 
 /obj/projectile/bullet/reusable/mining_bomb
-	name = "Шахтёрская бомба"
-	desc = "Бомба. Почему вы осматриваете это?"
+	name = "mining bomb"
+	desc = "A bomb. Why are you examining this?"
 	icon_state = "mine_bomb"
 	icon = 'icons/obj/clothing/modsuit/mod_modules.dmi'
 	damage = 0
@@ -575,8 +579,8 @@
 	new ammo_type(get_turf(src), firer)
 
 /obj/structure/mining_bomb
-	name = "Шахтёрская бомба"
-	desc = "Бомба. Почему вы осматриваете это?"
+	name = "mining bomb"
+	desc = "A bomb. Why are you examining this?"
 	icon_state = "mine_bomb"
 	icon = 'icons/obj/clothing/modsuit/mod_modules.dmi'
 	anchored = TRUE
@@ -619,7 +623,7 @@
 	addtimer(CALLBACK(src, PROC_REF(boom), firer), explosion_time)
 
 /obj/structure/mining_bomb/proc/boom(atom/movable/firer)
-	visible_message(span_danger("[src] взрывается!"))
+	visible_message(span_danger("[src] explodes!"))
 	playsound(src, 'sound/magic/magic_missile.ogg', 200, vary = TRUE)
 	for(var/turf/closed/mineral/rock in circle_range_turfs(src, 2))
 		rock.gets_drilled()

@@ -20,7 +20,7 @@
 	if(!istype(part) || user.incapacitated())
 		return
 	if((active && part != helmet) || activating)
-		balloon_alert(user, "Сначала деактивируйте скафандр!")
+		balloon_alert(user, "deactivate the suit first!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return
 	var/parts_to_check = mod_parts - part
@@ -42,7 +42,7 @@
 /// Quickly deploys all parts (or retracts if all are on the wearer)
 /obj/item/mod/control/proc/quick_deploy(mob/user)
 	if(active || activating)
-		balloon_alert(user, "Сначала деактивируйте скафандр!")
+		balloon_alert(user, "deactivate the suit first!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return FALSE
 	var/deploy = FALSE
@@ -55,9 +55,9 @@
 			deploy(null, part)
 		else if(!deploy && part.loc != src)
 			retract(null, part)
-	wearer.visible_message(span_notice("[wearer] [deploy ? "развёртывает" : "свёртывает"] [src] с механическим шипением."),
-		span_notice("[src] [deploy ? "развертывает" : "свёртывает"] свои части с механическим шипением."),
-		span_hear("Где-то раздаётся механическое шипение."))
+	wearer.visible_message(span_notice("[wearer]'s [src] [deploy ? "deploys" : "retracts"] its' parts with a mechanical hiss."),
+		span_notice("[src] [deploy ? "deploys" : "retracts"] its' parts with a mechanical hiss."),
+		span_hear("You hear a mechanical hiss."))
 	playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	return TRUE
 
@@ -66,7 +66,7 @@
 	if(part.loc != src)
 		if(!user)
 			return FALSE
-		balloon_alert(user, "[part.name] уже развёрнуто!")
+		balloon_alert(user, "[part.name] already deployed!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 	if(part in overslotting_parts)
 		var/obj/item/overslot = wearer.get_item_by_slot(part.slot_flags)
@@ -78,15 +78,15 @@
 		ADD_TRAIT(part, TRAIT_NODROP, MOD_TRAIT)
 		if(!user)
 			return TRUE
-		wearer.visible_message(span_notice("[wearer] развёртывает [part.name] с механическим шипением."),
-			span_notice("[part] развёртывается с механическим шипением."),
-			span_hear("Где-то раздаётся механическое шипение."))
+		wearer.visible_message(span_notice("[wearer]'s [part.name] deploy[part.p_s()] with a mechanical hiss."),
+			span_notice("[part] deploy[part.p_s()] with a mechanical hiss."),
+			span_hear("You hear a mechanical hiss."))
 		playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		return TRUE
 	else
 		if(!user)
 			return FALSE
-		balloon_alert(user, "Часть тела закрыта одеждой!")
+		balloon_alert(user, "bodypart clothed!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 	return FALSE
 
@@ -95,7 +95,7 @@
 	if(part.loc == src)
 		if(!user)
 			return FALSE
-		balloon_alert(user, "[part.name] уже свёрнуто!")
+		balloon_alert(user, "[part.name] already retracted!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 	REMOVE_TRAIT(part, TRAIT_NODROP, MOD_TRAIT)
 	wearer.transferItemToLoc(part, src, force = TRUE)
@@ -107,16 +107,16 @@
 		overslotting_parts[part] = null
 	if(!user)
 		return
-	wearer.visible_message(span_notice("[wearer] сворачивает [part.name] обратно в [src] с механическим шипением."),
-		span_notice("[part] сворачивается обратно в [src] с механическим шипением."),
-		span_hear("Где-то раздаётся механическое шипение."))
+	wearer.visible_message(span_notice("[wearer]'s [part.name] retract[part.p_s()] back into [src] with a mechanical hiss."),
+		span_notice("[part] retract[part.p_s()] back into [src] with a mechanical hiss."),
+		span_hear("You hear a mechanical hiss."))
 	playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 
 /// Starts the activation sequence, where parts of the suit activate one by one until the whole suit is on
 /obj/item/mod/control/proc/toggle_activate(mob/user, force_deactivate = FALSE)
 	if(!wearer)
 		if(!force_deactivate)
-			balloon_alert(user, "Сначала экипируйте скафандр!")
+			balloon_alert(user, "put suit on back!")
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return FALSE
 	if(!force_deactivate && (SEND_SIGNAL(src, COMSIG_MOD_ACTIVATE, user) & MOD_CANCEL_ACTIVATE))
@@ -124,24 +124,24 @@
 		return FALSE
 	for(var/obj/item/part as anything in mod_parts)
 		if(!force_deactivate && part.loc == src)
-			balloon_alert(user, "Сначала разверните части!")
+			balloon_alert(user, "deploy all parts first!")
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 			return FALSE
-	if(IDlocked && !active && !allowed(user) && !force_deactivate)
-		balloon_alert(user, "Доступ запрещён!")
+	if(locked && !active && !allowed(user) && !force_deactivate)
+		balloon_alert(user, "access insufficient!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return FALSE
 	if(!get_charge() && !force_deactivate)
-		balloon_alert(user, "Скафандр обесточен!")
+		balloon_alert(user, "suit not powered!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return FALSE
 	if(open && !force_deactivate)
-		balloon_alert(user, "Закройте техническую панель скафандра!")
+		balloon_alert(user, "close the suit panel!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return FALSE
 	if(activating)
 		if(!force_deactivate)
-			balloon_alert(user, "Скафандр [active ? "выключается" : "включается"]!")
+			balloon_alert(user, "suit already [active ? "shutting down" : "starting up"]!")
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return FALSE
 	for(var/obj/item/mod/module/module as anything in modules)
@@ -149,27 +149,27 @@
 			continue
 		module.on_deactivation(display_message = FALSE)
 	activating = TRUE
-	to_chat(wearer, span_notice("MOD-Скафандр [active ? "выключается" : "включается"]."))
+	to_chat(wearer, span_notice("MODsuit [active ? "shutting down" : "starting up"]."))
 	if(do_after(wearer, activation_step_time, wearer, MOD_ACTIVATION_STEP_FLAGS, extra_checks = CALLBACK(src, PROC_REF(has_wearer))))
-		to_chat(wearer, span_notice("[boots] [active ? "расслабляют крепление с ногами" : "закрепляются вокруг ваших ног"]."))
+		to_chat(wearer, span_notice("[boots] [active ? "relax their grip on your legs" : "seal around your feet"]."))
 		playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		seal_part(boots, seal = !active)
 	if(do_after(wearer, activation_step_time, wearer, MOD_ACTIVATION_STEP_FLAGS, extra_checks = CALLBACK(src, PROC_REF(has_wearer))))
-		to_chat(wearer, span_notice("[gauntlets] [active ? "становятся свободнее вокруг ваших запястий" : "затягиваются вокруг ваших запястий"]."))
+		to_chat(wearer, span_notice("[gauntlets] [active ? "become loose around your fingers" : "tighten around your fingers and wrists"]."))
 		playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		seal_part(gauntlets, seal = !active)
 	if(do_after(wearer, activation_step_time, wearer, MOD_ACTIVATION_STEP_FLAGS, extra_checks = CALLBACK(src, PROC_REF(has_wearer))))
-		to_chat(wearer, span_notice("[chestplate] [active ? "освобождает вашу грудь" : "плотно приживается к вашей груди"]."))
+		to_chat(wearer, span_notice("[chestplate] [active ? "releases your chest" : "cinches tightly against your chest"]."))
 		playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		seal_part(chestplate, seal = !active)
 	if(do_after(wearer, activation_step_time, wearer, MOD_ACTIVATION_STEP_FLAGS, extra_checks = CALLBACK(src, PROC_REF(has_wearer))))
-		to_chat(wearer, span_notice("[helmet] шипит, [active ? "открываясь" : "закрываясь"]."))
+		to_chat(wearer, span_notice("[helmet] hisses [active ? "open" : "closed"]."))
 		playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		seal_part(helmet, seal = !active)
 	if(do_after(wearer, activation_step_time, wearer, MOD_ACTIVATION_STEP_FLAGS, extra_checks = CALLBACK(src, PROC_REF(has_wearer))))
-		to_chat(wearer, span_notice("Системы [active ? "отключены. Части откреплены. Удачного вам дня" : "запущены. Части зафиксированны. Добро пожаловать"], [wearer]."))
+		to_chat(wearer, span_notice("Systems [active ? "shut down. Parts unsealed. Goodbye" : "started up. Parts sealed. Welcome"], [wearer]."))
 		if(ai)
-			to_chat(ai, span_notice("<b>СИСТЕМЫ [active ? "ДЕАКТИВИРОВАНЫ. ЗАВЕРШЕНИЕ" : "СИНХРОНИЗАЦИЯ ПРОТОКОЛА УДАЛЕННОГО ДОСТУПА С \"[ai]\""]"))
+			to_chat(ai, span_notice("<b>SYSTEMS [active ? "DEACTIVATED. GOODBYE" : "ACTIVATED. WELCOME"]: \"[ai]\"</b>"))
 		finish_activation(on = !active)
 		if(active)
 			playsound(src, 'sound/machines/synth_yes.ogg', 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE, frequency = 6000)

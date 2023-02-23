@@ -51,7 +51,7 @@
 	var/emp_shielded
 
 	/// you put things *in* a bag, but *on* a plate
-	var/insert_preposition = "в"
+	var/insert_preposition = "in"
 
 	/// don't show any chat messages regarding inserting items
 	var/silent = FALSE
