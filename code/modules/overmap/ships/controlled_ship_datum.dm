@@ -148,6 +148,7 @@
 	shuttle_port.play_engine_sound(shuttle_port, shuttle_port.landing_sound)
 	shuttle_port.play_engine_sound(ticket.target_port, shuttle_port.landing_sound)
 
+// DEBUG: inability to defer / cancel at last second means guaranteed SGTs if two people try to dock at the same time
 /datum/overmap/ship/controlled/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	shuttle_port.initiate_docking(ticket.target_port)
 	. = ..()

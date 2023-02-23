@@ -30,7 +30,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/shelter_templates = list()
 	var/list/holodeck_templates = list()
 	// DEBUG: add this to everything it needs to be added to
-	var/list/hangar_templates = list()
+	var/list/outpost_templates = list()
 
 
 	var/list/areas_in_z = list()
@@ -103,7 +103,7 @@ SUBSYSTEM_DEF(mapping)
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
 	holodeck_templates = SSmapping.holodeck_templates
-	hangar_templates = SSmapping.hangar_templates
+	outpost_templates = SSmapping.outpost_templates
 
 	z_list = SSmapping.z_list
 
@@ -125,7 +125,7 @@ SUBSYSTEM_DEF(mapping)
 	load_ship_templates()
 	preloadShelterTemplates()
 	preloadHolodeckTemplates()
-	preloadHangarTemplates()
+	preloadOutpostTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
 	// Still supporting bans by filename
@@ -294,8 +294,16 @@ SUBSYSTEM_DEF(mapping)
 		holodeck_templates[holo_template.template_id] = holo_template
 		map_templates[holo_template.template_id] = holo_template
 
-// DEBUG: ugh. i hate the whole SSmapping modus operandi. maybe it can be better?
-/datum/controller/subsystem/mapping/proc/preloadHangarTemplates()
+// DEBUG: this sucks so fucking bad dude lmao
+/datum/controller/subsystem/mapping/proc/preloadOutpostTemplates()
+	for(var/datum/map_template/outpost/outpost_type as anything in subtypesof(/datum/map_template/outpost))
+		if(!initial(outpost_type.skin))
+			CRASH("Tried to preload outpost [outpost_type] with invalid skin!")
+
+		var/datum/map_template/outpost/outpost_template = new outpost_type()
+		outpost_templates[outpost_template.name] = outpost_template
+		map_templates[outpost_template.name] = outpost_template
+
 	for(var/datum/map_template/hangar/hangar_type as anything in subtypesof(/datum/map_template/hangar))
 		// the other preloaders let you just omit the equivalents
 		// i am not so merciful
@@ -307,8 +315,16 @@ SUBSYSTEM_DEF(mapping)
 			CRASH("Tried to preload hangar [hangar_type] with invalid port_height!")
 
 		var/datum/map_template/hangar/hangar_template = new hangar_type()
-		hangar_templates[hangar_template.name] = hangar_template
+		outpost_templates[hangar_template.name] = hangar_template
 		map_templates[hangar_template.name] = hangar_template
+
+	for(var/datum/map_template/outpost_elevator/elevator_type as anything in subtypesof(/datum/map_template/outpost_elevator))
+		if(!initial(elevator_type.skin))
+			CRASH("Tried to preload elevator [elevator_type] with invalid skin!")
+
+		var/datum/map_template/outpost_elevator/elevator_template = new elevator_type()
+		outpost_templates[elevator_template.name] = elevator_template
+		map_templates[elevator_template.name] = elevator_template
 
 //////////////////
 // RESERVATIONS //

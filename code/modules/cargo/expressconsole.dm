@@ -109,7 +109,7 @@
 	// not a big fan of get_containing_shuttle
 	var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
 	var/datum/overmap/ship/controlled/ship = D.current_ship
-	var/outpost_docked = istype(ship.docked_to, /datum/overmap/dynamic/outpost)
+	var/outpost_docked = istype(ship.docked_to, /datum/overmap/outpost)
 
 	data["onShip"] = !isnull(ship)
 	data["numMissions"] = ship ? LAZYLEN(ship.missions) : 0
@@ -148,7 +148,7 @@
 		for(var/datum/mission/M as anything in ship.missions)
 			data["shipMissions"] += list(M.get_tgui_info())
 	if(outpost_docked)
-		var/datum/overmap/dynamic/outpost/out = ship.docked_to
+		var/datum/overmap/outpost/out = ship.docked_to
 		for(var/datum/mission/M as anything in out.missions)
 			data["outpostMissions"] += list(M.get_tgui_info())
 
@@ -195,7 +195,7 @@
 			var/datum/supply_pack/pack = SSshuttle.supply_packs[text2path(params["id"])]
 			if( \
 				!pack || !charge_account?.has_money(pack.cost) || !istype(current_area) || \
-				!istype(current_area.mobile_port.current_ship.docked_to, /datum/overmap/dynamic/outpost) \
+				!istype(current_area.mobile_port.current_ship.docked_to, /datum/overmap/outpost) \
 			)
 				return
 
@@ -239,7 +239,7 @@
 			var/datum/mission/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
 			var/datum/overmap/ship/controlled/ship = D.current_ship
-			var/datum/overmap/dynamic/outpost/outpost = ship.docked_to
+			var/datum/overmap/outpost/outpost = ship.docked_to
 			if(!istype(outpost) || mission.source_outpost != outpost) // important to check these to prevent href fuckery
 				return
 			if(!mission.accepted)

@@ -34,17 +34,20 @@
 #define DYNAMIC_WORLD_SPACERUIN "space"
 
 /// Make sure you are adding new planet types to this, in order as seen above preferrably
-#define DYNAMIC_WORLD_LIST_ALL list(\
-	DYNAMIC_WORLD_LAVA,\
-	DYNAMIC_WORLD_ICE,\
-	DYNAMIC_WORLD_SAND,\
-	DYNAMIC_WORLD_JUNGLE,\
-	DYNAMIC_WORLD_ROCKPLANET,\
-	DYNAMIC_WORLD_BEACHPLANET,\
-	DYNAMIC_WORLD_WASTEPLANET,\
-	DYNAMIC_WORLD_REEBE,\
-	DYNAMIC_WORLD_ASTEROID,\
-	DYNAMIC_WORLD_SPACERUIN)
+GLOBAL_LIST_INIT(all_overmap_world_types, list(
+	DYNAMIC_WORLD_LAVA,
+	DYNAMIC_WORLD_ICE,
+	DYNAMIC_WORLD_SAND,
+	DYNAMIC_WORLD_JUNGLE,
+
+	DYNAMIC_WORLD_ROCKPLANET,
+	DYNAMIC_WORLD_BEACHPLANET,
+	DYNAMIC_WORLD_WASTEPLANET,
+
+	DYNAMIC_WORLD_REEBE,
+	DYNAMIC_WORLD_ASTEROID,
+	DYNAMIC_WORLD_SPACERUIN,
+))
 
 //Possible ship states
 #define OVERMAP_SHIP_IDLE "idle"
@@ -67,3 +70,17 @@
 
 ///Used to get the turf on the "physical" overmap representation.
 #define OVERMAP_TOKEN_TURF(x_pos, y_pos) locate(SSovermap.overmap_vlevel.low_x + SSovermap.overmap_vlevel.reserved_margin + x_pos - 1, SSovermap.overmap_vlevel.low_y + SSovermap.overmap_vlevel.reserved_margin + y_pos - 1, SSovermap.overmap_vlevel.z_value)
+
+// DEBUG: should probably use datums instead of defines
+// Outpost skins. Uniquely identifies an outpost map, elevator map, and set of hangar maps.
+#define OUTPOST_SKIN_TEST "test"
+
+// An above define must be included in this list for the outpost datum to pick it as a possible skin.
+GLOBAL_LIST_INIT(outpost_skins, list(
+	OUTPOST_SKIN_TEST,
+))
+
+// Elevator shaft types for "physical" outpost maps. Controls the use of the elevator shaft to spawn hangars.
+#define ELEVATOR_SHAFT_NORMAL "elevator_shaft_normal"
+#define ELEVATOR_SHAFT_ADMIN "elevator_shaft_admin" // DEBUG: unused
+
