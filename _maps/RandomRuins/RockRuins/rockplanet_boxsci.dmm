@@ -117,9 +117,7 @@
 "jk" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/aug_manipulator,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
@@ -249,12 +247,12 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "sO" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/unpowered)
 "sR" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/crowbar,
@@ -461,9 +459,8 @@
 /turf/open/floor/circuit/red/telecomms,
 /area/ruin/unpowered)
 "LN" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
+/obj/machinery/light/small/directional/west{
+	brightness = 3
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -606,9 +603,7 @@
 /obj/effect/turf_decal/trimline/opaque/red/filled/line{
 	dir = 8
 	},
-/obj/machinery/light/built{
-	dir = 8
-	},
+/obj/machinery/light/built/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered)
 "VO" = (
@@ -623,9 +618,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
 "WJ" = (
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "WO" = (

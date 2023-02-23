@@ -3,7 +3,7 @@
 /obj/machinery/autolathe/hacked{
 	shocked = 1
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "aM" = (
@@ -60,9 +60,7 @@
 	},
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/robot_debris,
-/obj/structure/light_construct{
-	dir = 1
-	},
+/obj/structure/light_construct/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/cigbutt,
 /turf/open/floor/plating,
@@ -260,11 +258,8 @@
 	name = "Helm"
 	},
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/machinery/light/broken,
-/obj/item/radio/intercom/wideband{
-	dir = 4;
-	pixel_x = -23
-	},
+/obj/machinery/light/broken/directional/south,
+/obj/item/radio/intercom/wideband/directional/west,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "rA" = (
@@ -308,9 +303,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "uy" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -354,7 +347,7 @@
 /obj/item/storage/bag/ore,
 /obj/item/mining_scanner,
 /obj/item/shovel/spoon,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/item/shovel/spoon,
 /obj/item/mining_scanner,
 /obj/item/storage/bag/ore,
@@ -368,7 +361,7 @@
 	},
 /obj/effect/decal/cleanable/oil/streak,
 /obj/item/trash/can/food,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
 /mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/plating,
@@ -485,9 +478,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/blood/footprints,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
@@ -523,9 +514,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/light_construct{
-	dir = 1
-	},
+/obj/structure/light_construct/directional/north,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
@@ -551,9 +540,7 @@
 	},
 /obj/item/storage/firstaid/fire,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/light_construct{
-	dir = 1
-	},
+/obj/structure/light_construct/directional/north,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
@@ -561,7 +548,7 @@
 /area/ship/maintenance/starboard)
 "KK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/item/bedsheet/random,
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
@@ -612,7 +599,7 @@
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/structure/closet/secure_closet/medical2,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/item/defibrillator/loaded,
 /obj/effect/spawner/lootdrop/maintenance/eight,
 /turf/open/floor/plating,
@@ -720,7 +707,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/gibs/limb,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
@@ -834,9 +821,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)

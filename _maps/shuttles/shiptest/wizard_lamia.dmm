@@ -21,9 +21,7 @@
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "ag" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/machinery/button/door{
 	id = "wizardship_bridge";
 	name = "bridge shutters";
@@ -39,10 +37,7 @@
 	icon_state = "nim";
 	name = "wizard of yendor showcase"
 	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "aj" = (
@@ -103,9 +98,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
 "at" = (
@@ -162,9 +155,8 @@
 	},
 /area/ship/hallway/central)
 "az" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
+/obj/machinery/light/small/directional/west{
+	brightness = 3
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
@@ -189,10 +181,7 @@
 /area/ship/hallway/starboard)
 "aF" = (
 /obj/machinery/vending/snack/random,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "aG" = (
@@ -201,7 +190,7 @@
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "aI" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
 "aJ" = (
@@ -256,9 +245,7 @@
 /turf/open/floor/engine/cult,
 /area/ship/science)
 "aO" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -297,10 +284,7 @@
 /obj/item/storage/box/matches{
 	pixel_x = -5
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/engine/cult,
 /area/ship/science)
 "aV" = (
@@ -380,9 +364,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "bl" = (
@@ -414,11 +396,8 @@
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "bp" = (
-/obj/machinery/light,
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = -26
-	},
+/obj/machinery/light/directional/south,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "bq" = (
@@ -490,9 +469,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/firealarm{
-	pixel_y = 28
-	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "bF" = (
@@ -551,9 +528,7 @@
 /area/ship/crew/toilet)
 "bJ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/structure/closet/crate/miningcar{
 	name = "mining car"
 	},
@@ -597,9 +572,8 @@
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "bL" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
+/obj/machinery/light/small/directional/west{
+	brightness = 3
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -607,18 +581,15 @@
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
 "bM" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
 "bN" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
+/obj/machinery/light/small/directional/west{
+	brightness = 3
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -626,9 +597,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "bO" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
@@ -671,10 +640,7 @@
 	pixel_y = 11
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "bW" = (
@@ -730,9 +696,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/firealarm{
-	pixel_y = 28
-	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "cd" = (
@@ -789,10 +753,7 @@
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/clothing/suit/space/hardsuit/wizard,
 /obj/machinery/airalarm/directional/south,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/bronze,
 /area/ship/cargo)
 "ch" = (
@@ -812,9 +773,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 1
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "ck" = (
@@ -913,7 +872,7 @@
 /obj/structure/chair/wood/wings{
 	dir = 8
 	},
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_y = 26
 	},
 /turf/open/floor/carpet/royalblack,
@@ -1041,10 +1000,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/item/radio/intercom/wideband{
-	pixel_x = -29;
-	pixel_y = 25
-	},
+/obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "iu" = (
@@ -1117,19 +1073,12 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = 26
-	},
+/obj/machinery/light/directional/east,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/bronze,
 /area/ship/cargo)
 "kN" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
 "kO" = (
@@ -1300,9 +1249,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "qN" = (
@@ -1351,7 +1298,7 @@
 /area/ship/crew/canteen/kitchen)
 "rh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/paper_bin/bundlenatural{
 	pixel_y = 5
@@ -1370,10 +1317,7 @@
 	pixel_y = 1
 	},
 /obj/structure/table/wood/fancy/royalblack,
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = -26
-	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet/orange,
 /area/ship/crew/library)
 "rH" = (
@@ -1432,9 +1376,7 @@
 /turf/open/floor/engine/cult,
 /area/ship/science)
 "ui" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/jukebox{
 	name = "altar of rhythm"
 	},
@@ -1508,9 +1450,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "xC" = (
-/obj/machinery/firealarm{
-	pixel_y = 28
-	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
 "yQ" = (
@@ -1534,7 +1474,7 @@
 	},
 /area/ship/hallway/central)
 "zN" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/machinery/computer/arcade,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
@@ -1563,10 +1503,7 @@
 /turf/open/floor/bronze,
 /area/ship/cargo)
 "BB" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
 "Cc" = (
@@ -1672,9 +1609,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/item/kirbyplants/random,
 /obj/item/book/granter/spell/smoke/lesser,
 /turf/open/floor/wood,
@@ -1694,10 +1629,7 @@
 /area/ship/hallway/aft)
 "Eu" = (
 /obj/structure/table/wood/fancy/purple,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "Ez" = (
@@ -1752,9 +1684,7 @@
 /area/ship/hallway/aft)
 "Gf" = (
 /obj/effect/decal/cleanable/food/egg_smudge,
-/obj/machinery/firealarm{
-	pixel_y = 28
-	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "Gh" = (
@@ -1784,9 +1714,7 @@
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
 "GL" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/candy,
 /turf/open/floor/wood,
@@ -1846,9 +1774,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/power/terminal,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "Ix" = (
@@ -1919,10 +1845,7 @@
 /obj/item/storage/bag/tray,
 /obj/item/reagent_containers/food/snacks/burger/spell,
 /obj/structure/table/wood/fancy/cyan,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
 "JS" = (
@@ -2034,10 +1957,7 @@
 /obj/item/clothing/head/wizard/magus{
 	pixel_y = 11
 	},
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = -26
-	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "Mq" = (
@@ -2132,9 +2052,7 @@
 /turf/open/floor/engine/cult,
 /area/ship/science)
 "OC" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/structure/table/wood/fancy/royalblue,
 /obj/item/book/granter/spell/charge{
 	pixel_y = 4
@@ -2160,10 +2078,7 @@
 "OQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/libraryscanner,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "OW" = (

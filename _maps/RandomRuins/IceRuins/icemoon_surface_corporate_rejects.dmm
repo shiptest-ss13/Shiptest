@@ -199,7 +199,7 @@
 /obj/structure/cable/blue{
 	icon_state = "0-5"
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/unpowered/corprejectrooms)
 "fN" = (
@@ -278,9 +278,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/corprejectengineering)
 "hn" = (
@@ -372,7 +370,7 @@
 /area/ruin/unpowered/corprejectvault)
 "jF" = (
 /obj/machinery/vending/security,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/unpowered/corprejectrooms)
 "kn" = (
@@ -383,9 +381,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
 "kq" = (
@@ -402,9 +398,7 @@
 	faction = list("DeserterNT");
 	name = "Sam the Sharp"
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
 "kF" = (
@@ -715,9 +709,7 @@
 "rs" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /obj/structure/table/optable,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ruin/unpowered/corprejectrooms)
 "rH" = (
@@ -735,9 +727,6 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/tiled/blue,
-/area/ruin/unpowered/corprejectrooms)
-"rL" = (
-/turf/closed/wall/r_wall,
 /area/ruin/unpowered/corprejectrooms)
 "rW" = (
 /obj/structure/cable/blue{
@@ -770,7 +759,7 @@
 /obj/structure/cable/blue{
 	icon_state = "4-9"
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered/corprejectrooms)
 "tD" = (
@@ -836,9 +825,7 @@
 	faction = list("DeserterNT");
 	name = "Lu Bu"
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
 "uN" = (
@@ -872,7 +859,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
 "vb" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/ruin/unpowered/corprejectrooms)
 "vl" = (
@@ -1032,9 +1019,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ruin/unpowered/corprejectrooms)
 "yy" = (
@@ -1166,7 +1151,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/unpowered/corprejectrooms)
 "AW" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/cable/blue{
 	icon_state = "5-8"
 	},
@@ -1314,7 +1299,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
 "DS" = (
@@ -1428,9 +1413,7 @@
 "Hc" = (
 /obj/item/phone,
 /obj/structure/table/glass,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Hw" = (
@@ -1580,18 +1563,14 @@
 "Ke" = (
 /obj/item/bedsheet/nanotrasen,
 /obj/structure/bed,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/carpet/lone,
 /area/ruin/unpowered/corprejectrooms)
 "Kj" = (
 /obj/structure/rack,
 /obj/item/ammo_box/magazine/smgm9mm/ap,
 /obj/item/ammo_box/magazine/smgm9mm/fire,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Kk" = (
@@ -1625,9 +1604,7 @@
 "Lp" = (
 /obj/structure/bed,
 /obj/effect/mob_spawn/human/corpse/syndicatesoldier,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/unpowered/corprejectrooms)
 "LA" = (
@@ -1710,9 +1687,6 @@
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
-"Ng" = (
-/turf/closed/wall/r_wall,
-/area/ruin/unpowered/corprejectrooms)
 "Nk" = (
 /obj/structure/chair/stool/bar,
 /obj/structure/cable/blue{
@@ -1746,9 +1720,7 @@
 /area/ruin/unpowered/corprejectrooms)
 "NU" = (
 /obj/structure/closet/emcloset,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/sepia,
 /area/ruin/unpowered/corprejectrooms)
 "Oc" = (
@@ -1771,9 +1743,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/corprejectengineering)
 "ON" = (
@@ -1844,9 +1814,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
 "PS" = (
@@ -2217,7 +2185,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
 "XL" = (
@@ -2266,23 +2234,17 @@
 /area/ruin/unpowered/corprejectrooms)
 "YV" = (
 /obj/structure/mecha_wreckage/honker/dark,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/unpowered/corprejectengineering)
 "YW" = (
 /obj/structure/chair,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood,
 /area/ruin/unpowered/corprejectrooms)
 "YY" = (
 /obj/structure/mecha_wreckage/ripley/mkii,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/unpowered/corprejectengineering)
 "Zu" = (
@@ -2302,9 +2264,6 @@
 /obj/machinery/door/poddoor/shutters,
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
-"ZH" = (
-/turf/closed/wall/r_wall,
-/area/ruin/unpowered/corprejectrooms)
 "ZM" = (
 /turf/open/floor/plating/snowed/temperatre,
 /area/ruin/unpowered/corprejectrooms)
@@ -2466,15 +2425,15 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
 ZM
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2506,15 +2465,15 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
 uE
 hn
-ZH
-ZH
-ZH
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2546,15 +2505,15 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 YW
 yp
 yp
 yp
 vb
-Ng
-ZH
+hn
+hn
 Al
 Al
 Al
@@ -2586,15 +2545,15 @@ Al
 Al
 Al
 Al
-ZH
-rL
+hn
+hn
 xq
 IU
 yo
 dq
 Gb
-ZH
-ZH
+hn
+hn
 Al
 Al
 Al
@@ -2626,23 +2585,23 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 ed
 Di
 Tu
 zc
 XQ
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2665,24 +2624,24 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
+hn
+hn
+hn
 xq
 yp
 Hz
 yp
 AW
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2704,10 +2663,10 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
 YW
 yp
 VM
@@ -2721,13 +2680,13 @@ kn
 PF
 wy
 za
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2743,31 +2702,31 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
+hn
+hn
+hn
 Xt
-ZH
+hn
 tN
 tN
 tN
 tN
 tN
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Er
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2783,11 +2742,11 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 Te
 VB
-ZH
+hn
 tN
 Pj
 Pj
@@ -2798,7 +2757,7 @@ Pj
 Pj
 tN
 tN
-ZH
+hn
 NU
 Sr
 Fa
@@ -2806,8 +2765,8 @@ oF
 GX
 QE
 Qt
-ZH
-ZH
+hn
+hn
 Al
 Al
 Al
@@ -2823,11 +2782,11 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 II
-ZH
-ZH
+hn
+hn
 Pj
 Pj
 pd
@@ -2847,7 +2806,7 @@ GX
 ZV
 tk
 FI
-ZH
+hn
 Al
 Al
 Al
@@ -2863,10 +2822,10 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 MR
-ZH
+hn
 Pj
 Pj
 EJ
@@ -2886,11 +2845,11 @@ Bl
 pD
 Rb
 Hw
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2901,12 +2860,12 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
 NL
-ZH
+hn
 Pj
 Zu
 Ev
@@ -2926,11 +2885,11 @@ Nk
 zh
 em
 zz
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2941,11 +2900,11 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 tN
 Pj
 aR
@@ -2969,8 +2928,8 @@ px
 ja
 WV
 za
-ZH
-ZH
+hn
+hn
 Al
 Al
 Al
@@ -2981,8 +2940,8 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 hV
 io
 NO
@@ -3005,12 +2964,12 @@ oB
 oB
 oB
 oB
-ZH
-ZH
-ZH
+hn
+hn
+hn
 DK
-ZH
-ZH
+hn
+hn
 Al
 Al
 Al
@@ -3021,8 +2980,8 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 kD
 jd
 Rh
@@ -3045,12 +3004,12 @@ Ke
 Bb
 NJ
 LK
-ZH
+hn
 cN
-ZH
+hn
 gd
-ZH
-ZH
+hn
+hn
 Al
 Al
 Al
@@ -3061,8 +3020,8 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 le
 nb
 Ri
@@ -3078,18 +3037,18 @@ Ev
 Ev
 yf
 Pj
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 ff
-ZH
+hn
 gd
-ZH
+hn
 Al
 Al
 Al
@@ -3100,9 +3059,9 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
+hn
+hn
+hn
 nZ
 pi
 RE
@@ -3127,12 +3086,12 @@ lk
 lk
 lk
 lk
-ZH
+hn
 gd
 aQ
 zM
-ZH
-ZH
+hn
+hn
 Al
 Al
 "}
@@ -3140,14 +3099,14 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
+hn
+hn
+hn
 PA
 tD
 SF
-ZH
-ZH
+hn
+hn
 Pj
 Pj
 ph
@@ -3172,7 +3131,7 @@ la
 nX
 UF
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3180,14 +3139,14 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 At
 hz
 xf
 Tb
 jF
-ZH
+hn
 tN
 Pj
 Pj
@@ -3212,7 +3171,7 @@ kF
 hi
 lc
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3220,14 +3179,14 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 AT
 dO
 Rm
 oP
 ue
-ZH
+hn
 tN
 tN
 tN
@@ -3235,7 +3194,7 @@ tN
 tN
 tN
 tN
-ZH
+hn
 tN
 Mk
 Mk
@@ -3252,7 +3211,7 @@ Oc
 cl
 lM
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3260,8 +3219,8 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 Kk
 eK
 Ik
@@ -3275,7 +3234,7 @@ WV
 uH
 WV
 za
-ZH
+hn
 Mk
 HY
 Mk
@@ -3292,7 +3251,7 @@ ou
 QZ
 CA
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3300,29 +3259,29 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 Lp
 hz
 yS
 Uq
 wB
-ZH
+hn
 EL
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 HX
 qO
-ZH
-ZH
-ZH
+hn
+hn
+hn
 qO
-ZH
-ZH
-ZH
+hn
+hn
+hn
 UF
 UN
 nl
@@ -3332,7 +3291,7 @@ nN
 fN
 PS
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3340,20 +3299,20 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 PU
 hz
 Rs
 UT
 fq
-ZH
+hn
 EL
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 mU
 LB
 LH
@@ -3372,7 +3331,7 @@ nW
 Us
 od
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3380,29 +3339,29 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 BM
-ZH
-ZH
+hn
+hn
 XK
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 OP
 lL
 XB
 Ie
 Iy
 qO
-ZH
-ZH
-ZH
+hn
+hn
+hn
 UF
 YY
 cF
@@ -3412,7 +3371,7 @@ YV
 ZP
 Ok
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3420,29 +3379,29 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 Vy
 WV
 WV
 gB
-ZH
-ZH
+hn
+hn
 Al
-ZH
-ZH
+hn
+hn
 rs
 tb
 LA
 Rp
 SZ
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
 UF
 UF
 UF
@@ -3452,7 +3411,7 @@ UF
 UF
 UF
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3463,36 +3422,36 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
-ZH
-ZH
+hn
+hn
 dG
 tM
 SV
 SV
 tI
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 "}
@@ -3503,24 +3462,24 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -3552,15 +3511,15 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al

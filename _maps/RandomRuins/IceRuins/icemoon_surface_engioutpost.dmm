@@ -193,18 +193,14 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/line{
 	dir = 8
 	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
 "aL" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/line{
 	dir = 4
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
 "aM" = (
@@ -326,9 +322,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/machinery/meter/atmos,
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
@@ -903,7 +897,7 @@
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
 "ci" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/line,
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
@@ -929,9 +923,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/line{
 	dir = 4
 	},
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /obj/machinery/newscaster{
 	pixel_x = 32
 	},
@@ -986,9 +978,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 1
 	},
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
 "ct" = (
@@ -1185,7 +1175,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/icemoon,
 /area/icemoon/surface/outdoors)
 "cR" = (
@@ -1316,7 +1306,7 @@
 /area/icemoon/surface/outdoors)
 "df" = (
 /obj/machinery/rnd/production/protolathe/department/engineering,
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/turf_decal/corner/transparent/neutral/half{
 	dir = 1
 	},
@@ -1385,7 +1375,7 @@
 /turf/open/floor/plating/icemoon,
 /area/icemoon/surface/outdoors)
 "dp" = (
-/obj/machinery/light/built,
+/obj/machinery/light/built/directional/south,
 /turf/open/floor/plating/icemoon,
 /area/icemoon/surface/outdoors)
 "dq" = (

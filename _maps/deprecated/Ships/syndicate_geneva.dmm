@@ -14,10 +14,8 @@
 /area/ship/bridge)
 "an" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/item/radio/intercom/wideband,
+/obj/machinery/light/directional/west,
+/obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "ap" = (
@@ -40,9 +38,7 @@
 /obj/effect/turf_decal/corner/opaque/brown/three_quarters,
 /obj/structure/bed,
 /obj/item/bedsheet/syndie,
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/port)
@@ -63,9 +59,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/three_quarters{
 	dir = 1
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
@@ -76,9 +70,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "bd" = (
@@ -143,10 +135,7 @@
 /area/ship/engineering)
 "co" = (
 /obj/structure/table/reinforced,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/item/areaeditor/shuttle,
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
@@ -209,10 +198,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "dB" = (
@@ -264,9 +250,7 @@
 /area/ship/crew/dorm)
 "dW" = (
 /obj/machinery/vending/hydroseeds,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "dZ" = (
@@ -312,9 +296,7 @@
 /obj/item/clothing/mask/surgical,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/suit/hooded/wintercoat/medical,
-/obj/machinery/firealarm{
-	pixel_y = -26
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/item/storage/firstaid/tactical,
 /obj/item/card/emag,
 /obj/item/storage/box/hypospray/CMO,
@@ -439,9 +421,7 @@
 	},
 /obj/machinery/vending/medical,
 /obj/machinery/duct,
-/obj/machinery/firealarm{
-	pixel_y = 25
-	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "gy" = (
@@ -482,10 +462,7 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "gV" = (
@@ -601,9 +578,7 @@
 /area/ship/crew/dorm)
 "iQ" = (
 /obj/machinery/vending/hydronutrients,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "iU" = (
@@ -676,12 +651,8 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning,
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/firealarm{
-	pixel_y = -26
-	},
+/obj/machinery/light/directional/west,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "jY" = (
@@ -720,7 +691,7 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "kx" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "kG" = (
@@ -732,9 +703,7 @@
 "kM" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/item/stack/sheet/mineral/plasma/twenty,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -835,12 +804,8 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 5
 	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/firealarm{
-	pixel_y = 25
-	},
+/obj/machinery/light/directional/north,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ny" = (
@@ -893,9 +858,7 @@
 /area/ship/maintenance/port)
 "oo" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/three_quarters,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1080,7 +1043,7 @@
 	dir = 10
 	},
 /obj/machinery/ore_silo,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/syndicateemblem/bottom/left,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
@@ -1348,10 +1311,7 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/item/vending_refill/autodrobe,
 /obj/effect/turf_decal/syndicateemblem/top/left,
 /turf/open/floor/mineral/plastitanium/red,
@@ -1366,9 +1326,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "EV" = (
@@ -1400,9 +1358,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 6
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/library)
 "Ga" = (
@@ -1842,10 +1798,7 @@
 /obj/item/clothing/suit/hooded/wintercoat/medical,
 /obj/item/storage/box/syringes,
 /obj/item/lighter,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/seeds/replicapod,
 /obj/item/circuitboard/machine/reagentgrinder,
@@ -1900,9 +1853,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "Tp" = (
@@ -2094,9 +2045,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 5
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Zq" = (

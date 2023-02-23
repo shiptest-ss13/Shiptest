@@ -392,10 +392,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "ob" = (
-/obj/item/radio/intercom/wideband{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/item/radio/intercom/wideband/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "of" = (
@@ -1104,7 +1101,7 @@
 /obj/item/storage/bag/ore,
 /obj/item/mining_scanner,
 /obj/item/shovel/spoon,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/item/shovel/spoon,
 /obj/item/mining_scanner,
 /obj/item/storage/bag/ore,

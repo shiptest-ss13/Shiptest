@@ -33,7 +33,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered)
 "dA" = (
-/obj/structure/extinguisher_cabinet,
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/girder,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
@@ -62,10 +62,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -24
-	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/unpowered)
 "im" = (
@@ -164,10 +161,7 @@
 	pixel_x = 6;
 	pixel_y = 6
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
@@ -204,7 +198,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -385,9 +379,7 @@
 /area/ruin/unpowered)
 "QS" = (
 /obj/structure/chair/comfy/teal,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Rt" = (
@@ -408,9 +400,7 @@
 	},
 /area/ruin/unpowered)
 "Sh" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/machinery/door/window/westright,
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/atmospherics/components/binary/pump/layer2,

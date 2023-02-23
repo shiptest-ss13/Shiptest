@@ -83,9 +83,7 @@
 "bF" = (
 /obj/structure/radioactive/waste,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/radship/Cargo2)
 "bK" = (
@@ -124,9 +122,7 @@
 "cM" = (
 /obj/structure/radioactive/stack,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/radship/Cargo4)
 "cN" = (
@@ -362,9 +358,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/radship/Engineering)
 "jo" = (
@@ -472,9 +466,7 @@
 /obj/structure/closet/crate,
 /obj/item/coin/uranium,
 /obj/item/coin/uranium,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/radship/Cargo1)
 "lX" = (
@@ -500,9 +492,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/remains/human,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/radship/CrewQuarters)
 "me" = (
@@ -512,7 +502,7 @@
 "mo" = (
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/radship/Hallway)
 "mp" = (
@@ -525,9 +515,7 @@
 /obj/structure/closet/crate/large,
 /obj/structure/statue/uranium/nuke,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/radship/Cargo2)
 "mZ" = (
@@ -591,9 +579,7 @@
 /obj/item/stack/sheet/mineral/uranium,
 /obj/item/stack/sheet/mineral/uranium,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/radship/Cargo3)
 "ol" = (
@@ -626,9 +612,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/radship/EngineRoom)
 "oP" = (
@@ -639,7 +623,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/radship/EngineRoom)
 "pm" = (
@@ -795,9 +779,7 @@
 "tJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/generic,
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/wood/maple,
 /area/ruin/space/has_grav/radship/CrewQuarters)
 "tX" = (
@@ -848,15 +830,13 @@
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/radship/Hallway)
 "uP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/oil/slippery,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/radship/Cargo1)
 "uY" = (
@@ -1155,9 +1135,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/syringe/contraband/krokodil,
 /obj/effect/decal/cleanable/glass,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/template_noop)
 "FS" = (
@@ -1246,9 +1224,7 @@
 /obj/item/stack/ore/gold,
 /obj/item/stack/ore/iron,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/radship/Cargo4)
 "Hb" = (
@@ -1316,9 +1292,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/radship/Hallway)
 "It" = (
@@ -1395,7 +1369,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/radship/Hallway)
 "Kw" = (
@@ -1473,9 +1447,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/radship/Hallway)
 "Ns" = (
@@ -1934,9 +1906,7 @@
 /area/ruin/space/has_grav/radship/Hallway)
 "YF" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/radship/Cargo3)
 "YH" = (
@@ -1967,9 +1937,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/radship/Hallway)
 "Zd" = (

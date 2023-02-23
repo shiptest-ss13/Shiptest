@@ -107,7 +107,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "dz" = (
@@ -137,9 +137,7 @@
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 5
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 29
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/item/stack/tile/plasteel/dark{
 	pixel_x = 8;
 	pixel_y = -10
@@ -227,7 +225,7 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "eS" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/machinery/button/door{
 	desc = "A door remote bast door switch.";
 	id = "lablock2";
@@ -298,9 +296,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "fC" = (
@@ -311,9 +307,7 @@
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/effect/decal/cleanable/blood/bubblegum,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "fG" = (
@@ -585,9 +579,7 @@
 /obj/structure/sign/poster/contraband/mothpill{
 	pixel_y = 32
 	},
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "ke" = (
@@ -598,9 +590,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /obj/effect/mob_spawn/human/corpse/assistant{
 	mob_name = "Dr. Hibert Lacroix";
 	outfit = /datum/outfit/job/scientist;
@@ -670,9 +660,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
 "kG" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 4
 	},
@@ -982,13 +970,11 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "py" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 10
 	},
@@ -1155,9 +1141,7 @@
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/jungle)
 "rY" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /obj/structure/frame,
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/science/storage)
@@ -1187,7 +1171,7 @@
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 10
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /mob/living/simple_animal/hostile/zombie,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1369,9 +1353,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "wn" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 30
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "wy" = (
@@ -1431,7 +1413,7 @@
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 10
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway)
@@ -1523,9 +1505,7 @@
 "yS" = (
 /obj/machinery/photocopier,
 /obj/effect/turf_decal/box,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 5
 	},
@@ -1815,9 +1795,7 @@
 	dir = 4
 	},
 /obj/structure/chair/office,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "CP" = (
@@ -2215,10 +2193,8 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 27
-	},
-/obj/machinery/light,
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "JU" = (
@@ -2433,9 +2409,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
 "Mv" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /obj/effect/gibspawner/generic,
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -2519,7 +2493,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "NK" = (
@@ -2742,9 +2716,7 @@
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle)
 "QF" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 26
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 4
 	},
@@ -2824,7 +2796,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "RC" = (
@@ -2858,7 +2830,7 @@
 	pixel_x = -25;
 	pixel_y = 5
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Se" = (
@@ -3075,9 +3047,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway)
 "Un" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/storage)
 "Uo" = (
@@ -3098,9 +3068,7 @@
 /turf/open/floor/plating,
 /area/ship/science/storage)
 "Uz" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plating,
 /area/ship/science)
 "Vj" = (
@@ -3209,9 +3177,7 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "Wo" = (
@@ -3293,7 +3259,7 @@
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 6
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
 "Xz" = (

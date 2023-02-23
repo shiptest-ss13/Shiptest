@@ -631,10 +631,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
-"wr" = (
-/obj/structure/lattice,
-/turf/open/space,
-/area/awaymission/speedway/track)
 "wE" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -756,9 +752,8 @@
 /area/awaymission/speedway/announcer)
 "Bn" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/east{
 	broadcasting = 1;
-	dir = 8;
 	freerange = 1;
 	listening = 0;
 	name = "Speedway Broadcast Channel"
@@ -1062,9 +1057,8 @@
 /area/awaymission/speedway/garage)
 "Qj" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/east{
 	broadcasting = 1;
-	dir = 8;
 	freerange = 1;
 	listening = 0;
 	name = "Speedway Broadcast Channel"
@@ -47705,7 +47699,7 @@ if
 if
 uO
 uO
-wr
+uO
 if
 if
 if

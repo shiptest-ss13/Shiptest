@@ -196,7 +196,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "cl" = (
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_y = 24
 	},
 /obj/machinery/vending/security/wall{
@@ -275,10 +275,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -1954,7 +1951,7 @@
 /obj/structure/table/wood,
 /obj/item/paper_bin,
 /obj/item/pen/fourcolor,
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_y = 24
 	},
 /turf/open/floor/wood,
@@ -2280,9 +2277,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "vX" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/neutral/three_quarters{
 	dir = 1
@@ -3220,9 +3215,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
 "GT" = (
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
@@ -3370,10 +3363,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = -24
-	},
+/obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering/atmospherics)
@@ -3411,10 +3401,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "IG" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/structure/railing,
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
@@ -4612,7 +4599,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "TP" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/neutral/half{
 	dir = 1
@@ -5080,9 +5067,7 @@
 /area/ship/bridge)
 "Yt" = (
 /obj/machinery/computer/security,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},

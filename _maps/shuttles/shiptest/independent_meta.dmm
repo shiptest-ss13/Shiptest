@@ -54,9 +54,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/components/unary/tank/toxins,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "am" = (
@@ -144,9 +142,7 @@
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/built{
-	dir = 8
-	},
+/obj/machinery/light/small/built/directional/west,
 /obj/machinery/advanced_airlock_controller{
 	dir = 8;
 	pixel_x = 25
@@ -156,9 +152,7 @@
 /area/ship/crew)
 "au" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -181,9 +175,7 @@
 "av" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bed,
-/obj/machinery/light/small/built{
-	dir = 4
-	},
+/obj/machinery/light/small/built/directional/east,
 /obj/item/bedsheet/brown,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -202,9 +194,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "aw" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
@@ -628,13 +618,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "aX" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -713,11 +699,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "ba" = (
-/obj/machinery/light/small/built,
+/obj/machinery/light/small/built/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm{
-	pixel_y = 25
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -749,9 +733,7 @@
 /area/ship/crew)
 "bc" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -793,9 +775,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
@@ -828,10 +808,7 @@
 /area/ship/engineering)
 "bh" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/firealarm/directional/south,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical{
@@ -845,11 +822,8 @@
 /area/ship/engineering)
 "bi" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -25
-	},
-/obj/machinery/light/small/built,
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/light/small/built/directional/south,
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -1021,14 +995,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bz" = (
-/obj/machinery/light/built{
-	dir = 8
-	},
+/obj/machinery/light/built/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -26
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/structure/closet/crate/internals,
 /obj/item/tank/internals/oxygen{
 	pixel_x = -3;
@@ -1066,14 +1035,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "bC" = (
-/obj/machinery/light/built{
-	dir = 4
-	},
+/obj/machinery/light/built/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "bD" = (
@@ -1107,7 +1071,7 @@
 /area/ship/crew/canteen)
 "bF" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/built,
+/obj/machinery/light/small/built/directional/south,
 /obj/structure/curtain,
 /obj/machinery/shower{
 	pixel_y = 15
@@ -1166,9 +1130,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "bJ" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
 /obj/item/storage/belt/utility,
@@ -1196,9 +1158,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "bM" = (
-/obj/machinery/light/small/built{
-	dir = 8
-	},
+/obj/machinery/light/small/built/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -1276,9 +1236,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "bP" = (
-/obj/machinery/light/small/built{
-	dir = 4
-	},
+/obj/machinery/light/small/built/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/vending/coffee,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1306,10 +1264,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -26
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -1352,9 +1307,7 @@
 /area/ship/cargo)
 "bV" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -1431,10 +1384,7 @@
 /area/ship/crew/canteen)
 "cc" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
@@ -1443,9 +1393,7 @@
 /area/ship/crew/canteen)
 "cd" = (
 /obj/structure/table,
-/obj/machinery/light/small/built{
-	dir = 8
-	},
+/obj/machinery/light/small/built/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper_bin{
 	pixel_x = -4
@@ -1477,9 +1425,7 @@
 /area/ship/bridge)
 "ce" = (
 /obj/structure/table,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/folder/blue{
 	pixel_x = 6;
@@ -1546,9 +1492,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small/built{
-	dir = 1
-	},
+/obj/machinery/light/small/built/directional/north,
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = -25
 	},
@@ -1825,10 +1769,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -1910,10 +1851,7 @@
 /area/ship/crew/canteen)
 "cC" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 25
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -1922,9 +1860,7 @@
 /area/ship/crew/canteen)
 "cD" = (
 /obj/structure/table,
-/obj/machinery/light/small/built{
-	dir = 8
-	},
+/obj/machinery/light/small/built/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/gps{
 	gpstag = "NTREC1";
@@ -1939,17 +1875,12 @@
 	pixel_x = -2;
 	pixel_y = -4
 	},
-/obj/item/radio/intercom/wideband{
-	pixel_y = -29
-	},
+/obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cE" = (
 /obj/structure/table,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/firealarm/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/cell_charger,
 /obj/item/stock_parts/cell/high/plus,
@@ -2020,9 +1951,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "cI" = (
-/obj/machinery/light/small/built{
-	dir = 4
-	},
+/obj/machinery/light/small/built/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
@@ -2060,9 +1989,7 @@
 /area/ship/cargo)
 "cL" = (
 /obj/structure/table,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/item/reagent_containers/food/drinks/bottle/vodka{
 	pixel_y = 12
 	},
@@ -2123,9 +2050,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "cO" = (
-/obj/machinery/light/small/built{
-	dir = 4
-	},
+/obj/machinery/light/small/built/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/vending/cigarette,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2146,15 +2071,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "cP" = (
-/obj/machinery/light/built{
-	dir = 8
-	},
+/obj/machinery/light/built/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/airalarm/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2185,15 +2105,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "cS" = (
-/obj/machinery/light/built{
-	dir = 4
-	},
+/obj/machinery/light/built/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 25
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "cT" = (
@@ -2225,10 +2140,7 @@
 /area/ship/crew/canteen)
 "cU" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/processor,
 /obj/effect/decal/cleanable/dirt,
@@ -2261,9 +2173,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/firealarm{
-	pixel_y = 25
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/table,
 /obj/machinery/cell_charger,
@@ -2274,12 +2184,8 @@
 /area/ship/engineering)
 "cZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
-/obj/machinery/light/small/built{
-	dir = 1
-	},
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/light/small/built/directional/north,
 /obj/machinery/autolathe,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2419,9 +2325,7 @@
 "dm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/opaque/green,
 /obj/effect/turf_decal/corner/opaque/green{
@@ -2432,10 +2336,7 @@
 "dn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/effect/turf_decal/corner/opaque/green,
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
@@ -2597,12 +2498,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "dy" = (
-/obj/machinery/light/small/built,
+/obj/machinery/light/small/built/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2894,7 +2792,7 @@
 /obj/machinery/computer/monitor{
 	dir = 1
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dY" = (
@@ -2938,9 +2836,7 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_x = -32
 	},
-/obj/machinery/light/small/built{
-	dir = 8
-	},
+/obj/machinery/light/small/built/directional/west,
 /obj/machinery/advanced_airlock_controller{
 	dir = 8;
 	pixel_x = 25
@@ -2952,10 +2848,7 @@
 /area/ship/crew/canteen)
 "ed" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -26
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/machinery/reagentgrinder{
@@ -2987,16 +2880,12 @@
 	pixel_x = -3;
 	pixel_y = 6
 	},
-/obj/machinery/light/small/built{
-	dir = 4
-	},
+/obj/machinery/light/small/built/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "ef" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/built{
-	dir = 8
-	},
+/obj/machinery/light/small/built/directional/west,
 /obj/machinery/hydroponics/constructable,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/opaque/green{
@@ -3010,10 +2899,7 @@
 "eg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 26
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
@@ -3375,9 +3261,7 @@
 "zd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/built{
-	dir = 4
-	},
+/obj/machinery/light/small/built/directional/east,
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},

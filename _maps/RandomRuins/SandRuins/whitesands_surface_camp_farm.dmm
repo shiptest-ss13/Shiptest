@@ -14,7 +14,7 @@
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/whitesands/surface/outdoors)
 "d" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
@@ -145,7 +145,7 @@
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/whitesands/surface/outdoors)
 "w" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
 /area/whitesands/surface/outdoors)
 "z" = (
@@ -274,9 +274,7 @@
 /area/whitesands/surface/outdoors)
 "T" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},

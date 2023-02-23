@@ -38,9 +38,7 @@
 "bM" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/closet/secure_closet/freezer/meat/open,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/box,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
@@ -1177,7 +1175,7 @@
 /area/ship/crew/canteen)
 "zW" = (
 /obj/machinery/vending/wardrobe/chef_wardrobe,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/corner/opaque/white/half{
 	dir = 1
 	},
@@ -1295,7 +1293,7 @@
 /obj/item/areaeditor/shuttle{
 	pixel_x = -11
 	},
-/obj/item/radio/intercom/wideband,
+/obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
 "Co" = (
@@ -1901,7 +1899,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1925,9 +1923,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -30
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/jukebox,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2367,9 +2363,7 @@
 /area/ship/crew/canteen)
 "Tz" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/corner/opaque/white/half,
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1

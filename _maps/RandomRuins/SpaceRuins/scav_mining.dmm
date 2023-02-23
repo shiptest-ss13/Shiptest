@@ -177,9 +177,7 @@
 /area/ruin/space/has_grav/scav_mining/entrance)
 "nw" = (
 /obj/structure/table,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/scav_mining/dorm)
 "nA" = (
@@ -210,9 +208,7 @@
 /turf/open/space,
 /area/space)
 "pw" = (
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/scav_mining/entrance)
 "pA" = (
@@ -391,9 +387,7 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
 "Cs" = (
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
 "CG" = (
@@ -585,7 +579,7 @@
 /area/ruin/space/has_grav)
 "OI" = (
 /obj/structure/closet/crate,
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/scav_mining/entrance)
 "Pj" = (
@@ -659,9 +653,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/scav_mining/core)
 "Uk" = (
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/scav_mining/dorm)
 "Uz" = (
@@ -734,9 +726,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 4
 	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/scav_mining/core)
 "Zi" = (
@@ -750,7 +740,7 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 25
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/scav_mining/entrance)
 "ZH" = (

@@ -6,7 +6,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "at" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "au" = (
@@ -62,9 +62,7 @@
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "bM" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "bP" = (
@@ -122,9 +120,7 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "dN" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "dP" = (
@@ -310,16 +306,12 @@
 /obj/effect/mine/shrapnel,
 /obj/effect/turf_decal/weather/snow/corner,
 /obj/item/stack/tile/mineral/snow,
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "iZ" = (
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "jo" = (
@@ -370,9 +362,7 @@
 	pixel_x = 4;
 	pixel_y = -4
 	},
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/syndicircle/winter)
 "lb" = (
@@ -538,7 +528,7 @@
 /area/ruin/space/has_grav/syndicircle/winter)
 "qP" = (
 /obj/item/target,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/space/has_grav/syndicircle/training)
@@ -726,9 +716,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "vc" = (
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "vg" = (
@@ -762,9 +750,7 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/syndicircle/research)
 "vQ" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "wa" = (
@@ -823,9 +809,7 @@
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "wU" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "xd" = (
@@ -946,7 +930,7 @@
 /turf/open/space,
 /area/template_noop)
 "AQ" = (
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "AV" = (
@@ -1122,9 +1106,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "EQ" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/vending/sovietsoda,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1232,9 +1214,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Hi" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/vending/cola/shamblers,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -1247,27 +1227,17 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
-"HF" = (
-/obj/structure/lattice,
-/turf/open/space,
-/area/template_noop)
 "HV" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
 "Ik" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Im" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/item/paper_bin,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -1293,16 +1263,12 @@
 /area/ruin/space/has_grav/syndicircle/halls)
 "Je" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/item/paper_bin,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Ji" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Jq" = (
@@ -1332,9 +1298,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "JT" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating/sandy_dirt,
 /area/ruin/space/has_grav/syndicircle/training)
 "Kb" = (
@@ -1391,7 +1355,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Lt" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
@@ -1467,7 +1431,7 @@
 /turf/open/floor/plating/sandy_dirt,
 /area/ruin/space/has_grav/syndicircle/training)
 "NV" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/space,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
 "Oc" = (
@@ -1512,9 +1476,7 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/space/has_grav/syndicircle/escape)
 "Qc" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/syndicircle/escape)
 "Qd" = (
@@ -1529,7 +1491,7 @@
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/syndicircle/escape)
 "QT" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/space/has_grav/syndicircle/training)
 "Rw" = (
@@ -1588,7 +1550,7 @@
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/syndicircle/escape)
 "SC" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/sandy_dirt,
 /area/ruin/space/has_grav/syndicircle/training)
@@ -1664,7 +1626,7 @@
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/space/has_grav/syndicircle/training)
 "Ua" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "UI" = (
@@ -1730,9 +1692,7 @@
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/space/has_grav/syndicircle/training)
 "Wt" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/sandy_dirt,
 /area/ruin/space/has_grav/syndicircle/training)
@@ -1901,9 +1861,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/syndicircle/training)
 "Zf" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2028,7 +1986,7 @@ ZW
 ZW
 AP
 GV
-HF
+AP
 GV
 AP
 ZW
@@ -3203,7 +3161,7 @@ am
 uE
 BJ
 am
-HF
+AP
 AP
 "}
 (26,1,1) = {"
@@ -3403,7 +3361,7 @@ am
 Lb
 am
 am
-HF
+AP
 AP
 "}
 (30,1,1) = {"

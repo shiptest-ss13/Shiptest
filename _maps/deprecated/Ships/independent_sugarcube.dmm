@@ -91,9 +91,7 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ship/storage)
 "l" = (
@@ -102,9 +100,7 @@
 /area/ship/storage)
 "m" = (
 /obj/structure/window/reinforced/spawner/west,
-/obj/item/radio/intercom/wideband{
-	pixel_y = 26
-	},
+/obj/item/radio/intercom/wideband/directional/north,
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
@@ -130,9 +126,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/port_gen/pacman,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/machinery/power/terminal{
 	dir = 1
@@ -259,7 +253,7 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/east,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/ship/storage)
 "H" = (

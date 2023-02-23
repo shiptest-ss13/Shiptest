@@ -465,7 +465,7 @@
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
 "rB" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/turf_decal/corner/opaque/blue,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
@@ -474,9 +474,7 @@
 /area/ruin/unpowered)
 "rH" = (
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
@@ -508,9 +506,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "sX" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
@@ -625,9 +621,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "wn" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/effect/turf_decal/corner/opaque/green,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
@@ -648,10 +642,7 @@
 /area/ruin/unpowered)
 "wB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/item/radio/intercom/wideband{
-	pixel_x = -25;
-	pixel_y = 28
-	},
+/obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "wG" = (
@@ -1297,9 +1288,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered)
 "UE" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
 	},
@@ -1398,7 +1387,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/turf_decal/corner/opaque/blue,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8

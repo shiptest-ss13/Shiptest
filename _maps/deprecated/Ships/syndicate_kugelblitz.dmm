@@ -327,7 +327,7 @@
 /area/ship/engineering/engine)
 "fb" = (
 /obj/structure/tank_dispenser,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
@@ -379,9 +379,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/decal/remains/human,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -390,9 +388,7 @@
 	dir = 2
 	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
 "gl" = (
@@ -718,7 +714,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/atmospherics)
 "kk" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
@@ -765,7 +761,7 @@
 	layer = 2;
 	piping_layer = 2
 	},
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/directional/north{
 	pixel_y = -32
 	},
 /obj/machinery/airalarm/directional/west,
@@ -2032,9 +2028,7 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/structure/table/reinforced,
 /obj/item/stack/rods/fifty,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/item/mecha_parts/mecha_equipment/rcd,
 /obj/item/stack/sheet/plasteel/twenty,
 /obj/item/storage/part_replacer,
@@ -2125,9 +2119,7 @@
 	default_price = 0;
 	extra_price = 0
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Ik" = (
@@ -2153,7 +2145,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/purple/three_quarters,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "Je" = (
@@ -2209,9 +2201,7 @@
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
 /obj/item/card/emag,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/item/circuitboard/machine/techfab/department/engineering,
 /obj/item/clothing/under/syndicate/tacticool,
 /obj/item/clothing/under/syndicate/tacticool/skirt,
@@ -2515,9 +2505,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
@@ -2798,9 +2786,7 @@
 	dir = 1
 	},
 /obj/item/circuitboard/mecha/pod,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/science/robotics)

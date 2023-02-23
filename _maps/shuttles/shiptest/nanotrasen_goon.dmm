@@ -50,21 +50,15 @@
 /obj/structure/chair/comfy/brown{
 	dir = 4
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/item/radio/intercom/wideband{
-	pixel_y = 28
-	},
+/obj/machinery/light/small/directional/north,
+/obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "cF" = (
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "cR" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -72,9 +66,7 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "ds" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -150,9 +142,7 @@
 /turf/open/floor/mineral/titanium/purple,
 /area/ship/crew)
 "iy" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/machinery/suit_storage_unit/standard_unit,
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/mineral/titanium/white,
@@ -164,7 +154,7 @@
 /turf/open/floor/plating,
 /area/ship/medical)
 "jL" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/machinery/shower{
 	dir = 8
 	},
@@ -187,9 +177,7 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "ka" = (
-/obj/machinery/firealarm{
-	pixel_y = -26
-	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
 "kd" = (
@@ -266,10 +254,7 @@
 /area/ship/crew)
 "pD" = (
 /obj/machinery/suit_storage_unit/standard_unit,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 26
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew)
 "pG" = (
@@ -589,10 +574,8 @@
 /obj/structure/chair/comfy/brown{
 	dir = 4
 	},
-/obj/machinery/light/small,
-/obj/machinery/firealarm{
-	pixel_y = -26
-	},
+/obj/machinery/light/small/directional/south,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "Du" = (
@@ -606,9 +589,7 @@
 /turf/open/floor/mineral/titanium,
 /area/ship/crew)
 "Eg" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 1
 	},
@@ -718,9 +699,7 @@
 /turf/open/floor/plating,
 /area/ship/medical)
 "JZ" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/structure/closet/secure_closet/engineering_personal,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -806,10 +785,7 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "Rw" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/mineral/titanium,
 /area/ship/crew)
 "RI" = (
@@ -956,16 +932,14 @@
 	pixel_y = -10
 	},
 /obj/item/storage/toolbox/mechanical,
-/obj/machinery/firealarm{
-	pixel_y = -26
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/machinery/atmospherics/pipe/simple/purple/visible{
 	dir = 9
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "Zs" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},

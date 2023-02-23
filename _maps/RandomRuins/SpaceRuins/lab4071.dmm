@@ -87,9 +87,7 @@
 "ch" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/crazylab/watchpost)
 "ck" = (
@@ -135,7 +133,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/space/has_grav/crazylab/outside)
 "cR" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/crazylab/watchpost)
@@ -350,18 +348,14 @@
 /turf/open/floor/material,
 /area/ruin/space/has_grav/crazylab/crew)
 "gt" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/material,
 /area/ruin/space/has_grav/crazylab/crew)
 "gv" = (
 /obj/structure/toilet,
 /obj/item/soap/syndie,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/material,
 /area/ruin/space/has_grav/crazylab/crew)
 "gK" = (
@@ -463,9 +457,7 @@
 	dir = 1
 	},
 /obj/machinery/vending/coffee,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/crazylab/gamble)
 "il" = (
@@ -523,7 +515,7 @@
 /turf/open/floor/material,
 /area/ruin/space/has_grav/crazylab/crew)
 "jq" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault{
 	assignedrole = "Unlicensed Chemist";
 	dir = 4;
@@ -567,7 +559,7 @@
 /obj/structure/chair/comfy/beige{
 	dir = 1
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/crazylab/crew)
 "kg" = (
@@ -592,9 +584,7 @@
 "ks" = (
 /obj/structure/table/glass,
 /obj/item/storage/bag/chemistry,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/crazylab/chem)
@@ -661,14 +651,12 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/crazylab/crew)
 "mb" = (
-/obj/structure/extinguisher_cabinet,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/crazylab/chem)
 "mc" = (
 /obj/structure/closet/secure_closet/chemical/heisenberg,
-/obj/machinery/firealarm{
-	pixel_y = 25
-	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/crazylab/chem)
 "me" = (
@@ -807,9 +795,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -1160,7 +1146,7 @@
 /area/ruin/space/has_grav/crazylab/crew)
 "rt" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/line,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/crazylab/crew)
 "rS" = (
@@ -1283,9 +1269,7 @@
 	dir = 8
 	},
 /obj/machinery/vending/snack/green,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/crazylab/gamble)
 "tn" = (
@@ -1393,7 +1377,7 @@
 	},
 /obj/item/stack/sheet/mineral/plasma/fifty,
 /obj/item/stack/sheet/mineral/silver/fifty,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/item/stack/sheet/mineral/uranium/twenty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/crazylab/chem)
@@ -1495,9 +1479,7 @@
 "wY" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/machinery/button/door{
 	dir = 8;
 	id = 32;
@@ -1688,9 +1670,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
@@ -1710,9 +1690,7 @@
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	dir = 9
 	},
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/crazylab/engi)
 "zJ" = (
@@ -1804,7 +1782,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/crazylab/gamble)
 "AL" = (
-/obj/structure/extinguisher_cabinet,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/crazylab/bar)
 "AR" = (
@@ -1818,9 +1796,7 @@
 /obj/item/storage/box/ingredients/wildcard{
 	pixel_x = 8
 	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/camera/all{
 	dir = 1
 	},
@@ -1939,9 +1915,7 @@
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/item/stack/sheet/mineral/uranium/fifty,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/crazylab/engi)
@@ -2175,10 +2149,8 @@
 /obj/item/paper_bin/carbon{
 	pixel_y = 3
 	},
-/obj/machinery/light,
-/obj/machinery/firealarm{
-	pixel_x = 25
-	},
+/obj/machinery/light/directional/south,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/crazylab/chem)
 "Fo" = (
@@ -2239,7 +2211,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/crazylab/bar)
 "FV" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/asteroid/snow/temperatre,
 /area/ruin/space/has_grav/crazylab/bar)
 "Ga" = (
@@ -2404,7 +2376,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/crazylab/armory)
 "Ic" = (
-/obj/structure/extinguisher_cabinet,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/crazylab/armory)
 "Ie" = (
@@ -2485,7 +2457,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/crazylab/bar)
@@ -2583,9 +2555,7 @@
 /obj/effect/turf_decal/trimline/transparent/neutral/line{
 	dir = 1
 	},
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /obj/effect/decal/cleanable/blood/footprints,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/crazylab/airlock)
@@ -2850,7 +2820,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2922,9 +2892,7 @@
 /area/ruin/space/has_grav/crazylab/bar)
 "ML" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/crazylab/bar)
 "MV" = (
@@ -3096,9 +3064,7 @@
 /obj/item/kitchen/knife/combat{
 	pixel_y = 9
 	},
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/crazylab/armory)
 "Px" = (
@@ -3114,9 +3080,7 @@
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 9
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/crazylab/airlock)
 "PT" = (
@@ -3178,9 +3142,7 @@
 /obj/item/kitchen/knife/combat{
 	pixel_y = 6
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/crazylab/armory)
 "QJ" = (
@@ -3259,7 +3221,7 @@
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 6
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/crazylab/airlock)
 "RQ" = (
@@ -3375,9 +3337,7 @@
 "Ua" = (
 /obj/structure/spider/cocoon,
 /obj/structure/spider/stickyweb,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/crazylab/hydro)
 "Uy" = (
@@ -3541,9 +3501,7 @@
 "WG" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/blood/gibs/old,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/crazylab/hydro)
 "WH" = (

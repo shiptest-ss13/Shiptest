@@ -146,7 +146,7 @@
 "bp" = (
 /obj/effect/mob_spawn/human/corpse/assistant,
 /obj/effect/decal/cleanable/blood,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "bs" = (
@@ -428,9 +428,7 @@
 "ei" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "ep" = (
@@ -564,9 +562,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "fo" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "fr" = (
@@ -1084,7 +1080,7 @@
 /mob/living/simple_animal/hostile/rat{
 	dir = 8
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "kK" = (
@@ -1816,9 +1812,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "qS" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "qT" = (
@@ -1928,9 +1922,7 @@
 "rY" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "sg" = (
@@ -1942,9 +1934,7 @@
 "sk" = (
 /obj/effect/mob_spawn/human/corpse/assistant,
 /obj/effect/decal/cleanable/blood,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "sl" = (
@@ -2002,9 +1992,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "sG" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/mineral/bananium,
 /area/ruin/powered)
 "sH" = (
@@ -2501,9 +2489,7 @@
 /obj/structure/closet/cardboard,
 /mob/living/simple_animal/hostile/retaliate/poison/snake,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "yl" = (
@@ -2573,9 +2559,7 @@
 /obj/structure/rack,
 /obj/item/pneumatic_cannon/pie,
 /obj/item/reagent_containers/spray/waterflower/lube,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/mineral/bananium,
 /area/ruin/powered)
 "yZ" = (
@@ -3218,9 +3202,7 @@
 "Es" = (
 /obj/effect/mob_spawn/human/corpse/whitesands/survivor,
 /obj/effect/decal/cleanable/blood,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Et" = (
@@ -3686,7 +3668,7 @@
 "IP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/glass,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "IU" = (
@@ -3981,9 +3963,7 @@
 	pixel_x = 8;
 	pixel_y = -8
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "Lv" = (
@@ -4288,13 +4268,11 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "OA" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "OB" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "OE" = (
@@ -4457,7 +4435,7 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/item/coin,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Qf" = (
@@ -4573,9 +4551,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/oil/streak,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "Rc" = (
@@ -4645,9 +4621,7 @@
 /area/ruin/powered)
 "RV" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "RX" = (
@@ -4927,9 +4901,7 @@
 "TV" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "TX" = (
@@ -4970,7 +4942,7 @@
 /area/ruin/powered)
 "Uo" = (
 /obj/item/spear,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "Uq" = (
@@ -5352,7 +5324,7 @@
 "Yc" = (
 /obj/effect/decal/cleanable/blood,
 /obj/item/storage/toolbox/mechanical,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "Yd" = (

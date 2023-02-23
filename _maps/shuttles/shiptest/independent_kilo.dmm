@@ -115,7 +115,7 @@
 	desc = "Used to grind things up into raw materials and liquids.";
 	pixel_y = 5
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/corner/opaque/red,
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
@@ -150,13 +150,8 @@
 /obj/structure/sign/warning/xeno_mining{
 	pixel_y = 32
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 26
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/firealarm/directional/east,
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/advanced_airlock_controller{
@@ -432,10 +427,7 @@
 "ci" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/airalarm/directional/south,
 /obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
@@ -443,10 +435,7 @@
 /obj/structure/tank_dispenser/oxygen,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -26
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "ck" = (
@@ -464,10 +453,7 @@
 	pixel_y = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 26
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
@@ -484,7 +470,7 @@
 	pixel_y = -23;
 	dir = 1
 	},
-/obj/machinery/light/small/built,
+/obj/machinery/light/small/built/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
@@ -493,7 +479,7 @@
 "cr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
 	},
@@ -551,7 +537,7 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_x = -32
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
@@ -573,9 +559,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -651,13 +635,8 @@
 	color = "#c45c57";
 	dir = 1
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 26
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/firealarm/directional/east,
+/obj/machinery/light/small/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/status_display{
 	pixel_y = 32;
@@ -816,9 +795,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -924,10 +901,7 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
 	},
-/obj/machinery/firealarm{
-	pixel_y = -26;
-	dir = 1
-	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "io" = (
@@ -1007,9 +981,7 @@
 /obj/item/stack/cable_coil,
 /obj/item/stock_parts/cell/high,
 /obj/effect/decal/cleanable/blood/old,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
@@ -1039,9 +1011,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
 "mz" = (
@@ -1255,16 +1225,11 @@
 /area/ship/crew)
 "sW" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/machinery/computer/cargo/express{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "vv" = (
@@ -1391,15 +1356,11 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -30
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "yF" = (
@@ -1432,10 +1393,7 @@
 	pixel_x = 12;
 	pixel_y = 6
 	},
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen/kitchen)
 "zH" = (
@@ -1609,9 +1567,7 @@
 	pixel_x = -9;
 	pixel_y = 4
 	},
-/obj/machinery/firealarm{
-	pixel_y = 26
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/item/areaeditor/shuttle,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -1620,9 +1576,7 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/chair/sofa/corner,
 /turf/open/floor/wood{
@@ -1631,13 +1585,8 @@
 /area/ship/crew/canteen/kitchen)
 "EG" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/light/small/directional/north,
 /obj/machinery/cryopod,
 /obj/machinery/computer/cryopod{
 	pixel_y = 32
@@ -1682,12 +1631,8 @@
 "GM" = (
 /obj/structure/table,
 /obj/machinery/recharger,
-/obj/item/radio/intercom/wideband{
-	pixel_y = 28
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/item/radio/intercom/wideband/directional/north,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "HP" = (
@@ -1713,9 +1658,7 @@
 /obj/item/wrench,
 /obj/item/tank/internals/emergency_oxygen,
 /obj/effect/decal/cleanable/cobweb,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "Jf" = (
@@ -1725,17 +1668,12 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/rack,
 /obj/item/storage/toolbox/emergency,
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/item/circuitboard/machine/ore_redemption,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "KB" = (
@@ -1779,9 +1717,7 @@
 	pixel_x = -8;
 	pixel_y = 8
 	},
-/obj/machinery/airalarm/all_access{
-	pixel_y = 25
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/carpet,
 /area/ship/crew)
 "La" = (
@@ -1824,10 +1760,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
 	dir = 1
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/item/gun/energy/e_gun/mini,
 /obj/item/stock_parts/cell/gun/mini,
 /obj/item/clothing/shoes/workboots,
@@ -1842,9 +1775,7 @@
 /obj/item/clothing/head/cowboy,
 /obj/item/clothing/head/cowboy,
 /obj/item/clothing/head/cowboy,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -2207,10 +2138,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/greenglow,
-/obj/structure/extinguisher_cabinet{
-	dir = 4;
-	pixel_x = -27
-	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
 "Vd" = (
@@ -2227,7 +2155,7 @@
 	anchored = 1;
 	dir = 1
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/machinery/computer/security/telescreen{
 	dir = 1;
 	name = "NTMS-037 Monitor";
@@ -2247,9 +2175,7 @@
 /area/ship/crew/canteen/kitchen)
 "Vx" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/greenglow,
 /obj/structure/toilet{
 	dir = 4;
@@ -2263,10 +2189,7 @@
 	pixel_x = -11;
 	pixel_y = 18
 	},
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -23
-	},
+/obj/machinery/airalarm/directional/west,
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
@@ -2322,10 +2245,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
 	dir = 1
 	},
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -25
-	},
+/obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/greenglow,
 /obj/item/stock_parts/cell/gun/mini,
 /obj/item/clothing/under/utility,
@@ -2361,9 +2281,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
 	dir = 1
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
@@ -2390,10 +2308,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/syndi_cakes,
 /obj/item/organ/stomach,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -26
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_y = 23

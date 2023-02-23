@@ -19,7 +19,7 @@
 /obj/structure/mirror{
 	pixel_y = -30
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/freezer,
 /area/ship/bridge)
 "aW" = (
@@ -34,9 +34,7 @@
 "bF" = (
 /obj/structure/table/bronze,
 /obj/item/storage/firstaid/advanced,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "cS" = (
@@ -149,7 +147,7 @@
 /obj/structure/window/bronze{
 	dir = 8
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "wV" = (
@@ -160,16 +158,12 @@
 /obj/structure/window/bronze{
 	dir = 1
 	},
-/obj/item/radio/intercom/wideband{
-	pixel_y = -32
-	},
+/obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
 "xx" = (
 /obj/structure/table/bronze,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "yX" = (
@@ -177,9 +171,7 @@
 	dir = 1
 	},
 /obj/structure/curtain,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/freezer,
 /area/ship/bridge)
 "Au" = (
@@ -204,9 +196,7 @@
 /area/ship/bridge)
 "EY" = (
 /obj/structure/table/bronze,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "GQ" = (
@@ -262,15 +252,13 @@
 /obj/structure/window/bronze{
 	dir = 4
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "Mo" = (
 /obj/structure/table/bronze,
 /obj/machinery/microwave,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/bridge)
 "MW" = (
@@ -293,7 +281,7 @@
 "Ph" = (
 /obj/structure/table/bronze,
 /obj/machinery/light/floor,
-/obj/item/radio/intercom,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "Qw" = (
@@ -327,9 +315,7 @@
 /area/ship/bridge)
 "Vx" = (
 /obj/structure/table/bronze,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/bridge)
 "VS" = (

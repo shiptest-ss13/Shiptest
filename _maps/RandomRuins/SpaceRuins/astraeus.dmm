@@ -70,9 +70,7 @@
 "dd" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/closet/crate/internals,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
 "dk" = (
@@ -114,7 +112,7 @@
 /area/ruin/space/has_grav/astraeus/hallway)
 "dQ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/item/stack/rods,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
@@ -626,7 +624,7 @@
 	},
 /area/ruin/space/has_grav/astraeus/disposals)
 "rW" = (
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
 "si" = (
@@ -706,9 +704,7 @@
 /obj/machinery/conveyor{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "ur" = (
@@ -1050,9 +1046,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "DJ" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
@@ -1096,9 +1090,7 @@
 "Fm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_box/magazine/wt550m9,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "Fp" = (
@@ -1207,9 +1199,7 @@
 /obj/structure/bed/roller,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/mob_spawn/human/corpse/damaged,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 32
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
 "HE" = (
@@ -1240,9 +1230,7 @@
 /area/ruin/space/has_grav/astraeus/dorms_med)
 "Iv" = (
 /obj/machinery/vending/cola/blue,
-/obj/machinery/light/built{
-	dir = 8
-	},
+/obj/machinery/light/built/directional/west,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/dorms_med)
 "Iz" = (
@@ -1550,13 +1538,13 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
 "PJ" = (
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/astraeus/munitions)
 "PS" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/blue/full,
-/obj/item/radio/intercom/wideband,
+/obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
 "Qw" = (
@@ -1712,9 +1700,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/light/small/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1722,7 +1708,7 @@
 /area/ruin/space/has_grav/astraeus/hallway)
 "Vh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1832,9 +1818,7 @@
 /area/template_noop)
 "WJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
 "WL" = (

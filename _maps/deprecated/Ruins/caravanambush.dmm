@@ -85,9 +85,7 @@
 	name = "Cargo Blast Door Control";
 	pixel_y = 25
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark/airless,
 /area/shuttle/caravan/freighter2)
 "an" = (
@@ -112,9 +110,7 @@
 /area/template_noop)
 "aq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/structure/sign/warning/vacuum{
 	pixel_x = -32;
 	pixel_y = 32
@@ -171,9 +167,7 @@
 	name = "Cargo Blast Door Control";
 	pixel_y = 25
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark/airless,
@@ -215,27 +209,21 @@
 	name = "Cargo Blast Door Control";
 	pixel_y = -25
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark/airless,
 /area/shuttle/caravan/freighter2)
 "az" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 26
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel{
 	initial_gas_mix = "TEMP=2.7"
 	},
 /area/shuttle/caravan/freighter2)
 "aA" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -26
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter2)
 "aD" = (
@@ -287,10 +275,7 @@
 /turf/open/floor/plasteel/airless,
 /area/shuttle/caravan/freighter3)
 "aO" = (
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -357,10 +342,7 @@
 /area/shuttle/caravan/freighter3)
 "bg" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -25
-	},
+/obj/machinery/airalarm/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
@@ -518,9 +500,7 @@
 /area/shuttle/caravan/freighter3)
 "gw" = (
 /obj/effect/turf_decal/industrial/outline,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/machinery/button/door{
 	id = "caravantrade3_cargo_port";
 	name = "Cargo Blast Door Control";
@@ -529,9 +509,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/shuttle/caravan/freighter3)
 "gy" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/structure/sign/warning/vacuum{
 	pixel_x = -32;
 	pixel_y = 32
@@ -717,10 +695,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/shuttle/caravan/freighter3)
 "hz" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 25
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
@@ -778,9 +753,7 @@
 	name = "Cargo Blast Door Control";
 	pixel_y = 25
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/item/ammo_box/magazine/m10mm{
 	pixel_x = -3;
 	pixel_y = 3
@@ -841,19 +814,13 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/shuttle/caravan/freighter3)
 "ie" = (
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless,
 /area/shuttle/caravan/freighter3)
 "if" = (
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -26
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark/airless,
 /area/shuttle/caravan/freighter3)
@@ -1053,7 +1020,7 @@
 /area/shuttle/caravan/freighter3)
 "jd" = (
 /obj/effect/turf_decal/industrial/outline,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/machinery/button/door{
 	id = "caravantrade3_cargo_starboard";
 	name = "Cargo Blast Door Control";
@@ -1062,9 +1029,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/shuttle/caravan/freighter3)
 "je" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/structure/sign/warning/vacuum{
 	pixel_x = -32;
 	pixel_y = -32
@@ -1111,10 +1076,7 @@
 /area/shuttle/caravan/freighter2)
 "ju" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/all_access{
-	dir = 8;
-	pixel_x = 25
-	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/airless,
 /area/shuttle/caravan/freighter2)
 "jy" = (
@@ -1198,9 +1160,7 @@
 /area/shuttle/caravan/freighter2)
 "kb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small/directional/west,
 /obj/structure/sign/warning/vacuum{
 	pixel_x = -32;
 	pixel_y = -32

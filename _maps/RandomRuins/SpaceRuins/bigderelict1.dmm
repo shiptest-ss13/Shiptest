@@ -72,9 +72,7 @@
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "ap" = (
 /obj/structure/table,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
@@ -104,9 +102,7 @@
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "av" = (
 /obj/structure/table,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "aw" = (
@@ -478,9 +474,7 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/derelictoutpost)
 "bD" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
 "bE" = (
@@ -520,9 +514,7 @@
 	icon_state = "s-casing";
 	name = "spent bullet casing"
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/powerstorage)
 "bI" = (
@@ -536,9 +528,7 @@
 /area/ruin/space/has_grav/derelictoutpost/powerstorage)
 "bK" = (
 /obj/structure/table,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "bL" = (
@@ -621,9 +611,7 @@
 	icon_state = "trails_1";
 	name = "dried blood trail"
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
 "bY" = (
@@ -687,9 +675,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "ch" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -25
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
 "ci" = (
@@ -931,10 +917,7 @@
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/derelictoutpost)
 "cG" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -26
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "cH" = (
@@ -1024,7 +1007,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "cO" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
 "cP" = (
@@ -1032,10 +1015,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
 "cQ" = (
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 26
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
 "cR" = (
@@ -1142,7 +1122,7 @@
 	desc = "A thick gelatinous surface covers the floor.  Someone get the golashes.";
 	name = "gelatinous floor"
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "dd" = (
@@ -1172,7 +1152,7 @@
 	desc = "A thick gelatinous surface covers the floor.  Someone get the golashes.";
 	name = "gelatinous floor"
 	},
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -1299,9 +1279,7 @@
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/derelictoutpost)
 "dp" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "dq" = (
@@ -1366,10 +1344,7 @@
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/derelictoutpost)
 "dw" = (
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -26
-	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "dx" = (
@@ -1641,18 +1616,14 @@
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "dU" = (
 /obj/machinery/suit_storage_unit/standard_unit,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "dW" = (
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "dZ" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 32
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "ee" = (
@@ -1780,7 +1751,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "eG" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "eI" = (
@@ -1877,9 +1848,7 @@
 /area/ruin/space/has_grav/derelictoutpost)
 "kC" = (
 /obj/structure/filingcabinet,
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
 	},
@@ -2062,9 +2031,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "EZ" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -25
-	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
@@ -2186,7 +2153,7 @@
 	icon_state = "crateopen"
 	},
 /obj/item/paicard,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
@@ -2197,9 +2164,7 @@
 /obj/item/target/clown,
 /obj/item/target/alien,
 /obj/item/target,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
