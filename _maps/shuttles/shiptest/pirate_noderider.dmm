@@ -216,6 +216,10 @@
 /obj/item/stack/circuit_stack/full,
 /obj/item/stack/circuit_stack/full,
 /obj/item/stack/circuit_stack/full,
+/obj/item/circuitboard/machine/grounding_rod,
+/obj/item/circuitboard/machine/grounding_rod,
+/obj/item/circuitboard/machine/grounding_rod,
+/obj/item/circuitboard/machine/grounding_rod,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "db" = (
@@ -292,7 +296,7 @@
 	},
 /obj/structure/girder,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/airless,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/bridge)
 "dU" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -329,21 +333,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
-"ev" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/tesla_coil{
-	icon = 'icons/obj/singularity.dmi';
-	icon_state = "beaconsynd0";
-	name = "tesla ground";
-	desc = "A tesla grounding arrangement woven into the hull plating.";
-	anchored = 1;
-	can_be_unanchored = 1;
-	density = 0
-	},
-/turf/open/floor/plating/airless,
-/area/template_noop)
 "eS" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -747,16 +736,8 @@
 /area/ship/crew)
 "kd" = (
 /obj/structure/cable,
-/obj/machinery/power/tesla_coil{
-	icon = 'icons/obj/singularity.dmi';
-	icon_state = "beaconsynd0";
-	name = "tesla ground";
-	desc = "A tesla grounding arrangement woven into the hull plating.";
-	anchored = 1;
-	can_be_unanchored = 1;
-	density = 0
-	},
-/turf/open/floor/plating/airless,
+/obj/machinery/power/tesla_ground,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external)
 "kn" = (
 /turf/open/floor/engine/hull,
@@ -1137,8 +1118,7 @@
 	dir = 5
 	},
 /obj/structure/girder,
-/obj/machinery/light/floor,
-/turf/open/floor/plating/airless,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/bridge)
 "rK" = (
 /obj/machinery/computer/helm{
@@ -1463,21 +1443,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/central)
-"yr" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/tesla_coil{
-	icon = 'icons/obj/singularity.dmi';
-	icon_state = "beaconsynd0";
-	name = "tesla ground";
-	desc = "A tesla grounding arrangement woven into the hull plating.";
-	anchored = 1;
-	can_be_unanchored = 1;
-	density = 0
-	},
-/turf/open/floor/plating/airless,
-/area/template_noop)
 "yI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1646,16 +1611,8 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/tesla_coil{
-	icon = 'icons/obj/singularity.dmi';
-	icon_state = "beaconsynd0";
-	name = "tesla ground";
-	desc = "A tesla grounding arrangement woven into the hull plating.";
-	anchored = 1;
-	can_be_unanchored = 1;
-	density = 0
-	},
-/turf/open/floor/plating/airless,
+/obj/machinery/power/tesla_ground,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external)
 "Cy" = (
 /obj/structure/cable{
@@ -1843,7 +1800,7 @@
 	},
 /obj/structure/girder,
 /obj/machinery/light/floor,
-/turf/open/floor/plating/airless,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/bridge)
 "Ga" = (
 /obj/structure/cable{
@@ -1975,8 +1932,7 @@
 	dir = 5
 	},
 /obj/structure/girder,
-/obj/machinery/light/floor,
-/turf/open/floor/plating/airless,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/bridge)
 "Jp" = (
 /obj/structure/table,
@@ -1993,16 +1949,8 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/tesla_coil{
-	icon = 'icons/obj/singularity.dmi';
-	icon_state = "beaconsynd0";
-	name = "tesla ground";
-	desc = "A tesla grounding arrangement woven into the hull plating.";
-	anchored = 1;
-	can_be_unanchored = 1;
-	density = 0
-	},
-/turf/open/floor/plating/airless,
+/obj/machinery/power/tesla_ground,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external)
 "JZ" = (
 /obj/structure/cable{
@@ -2044,6 +1992,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"Kp" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external)
 "Kz" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -2286,16 +2241,8 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/tesla_coil{
-	icon = 'icons/obj/singularity.dmi';
-	icon_state = "beaconsynd0";
-	name = "tesla ground";
-	desc = "A tesla grounding arrangement woven into the hull plating.";
-	anchored = 1;
-	can_be_unanchored = 1;
-	density = 0
-	},
-/turf/open/floor/plating/airless,
+/obj/machinery/power/tesla_ground,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external)
 "Nl" = (
 /obj/structure/railing{
@@ -3324,7 +3271,7 @@ by
 by
 by
 by
-yr
+Ck
 by
 by
 by
@@ -3352,7 +3299,7 @@ by
 by
 by
 Jx
-EQ
+Kp
 nO
 EQ
 xy
@@ -3382,7 +3329,7 @@ by
 by
 by
 by
-ev
+MZ
 by
 by
 dS
