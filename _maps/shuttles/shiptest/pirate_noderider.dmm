@@ -761,7 +761,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/xray,
+/obj/machinery/camera/emp_proof,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "mJ" = (
@@ -861,6 +861,13 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"pg" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Emergency Access"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/maintenance/central)
 "pi" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1331,7 +1338,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/xray{
+/obj/machinery/camera/emp_proof{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -2024,6 +2031,7 @@
 	desc = "Every AI has a failsafe."
 	},
 /obj/effect/turf_decal/box/red,
+/obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/maintenance/central)
 "Ok" = (
@@ -2451,7 +2459,6 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -2876,7 +2883,7 @@ wq
 DR
 MU
 MU
-MU
+pg
 MU
 MU
 ii
