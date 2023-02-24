@@ -150,7 +150,7 @@
 		if(!istext(ele_mark.shaft)) // DEBUG: unnecessary check unless we use this name somewhere
 			stack_trace("Invalid shaft var [ele_mark.shaft] on [ele_mark] found when loading [template]!")
 		else
-			shaft_lists[ele_mark.shaft] = get_turf(ele_mark)
+			shaft_lists[ele_mark.shaft] = list(get_turf(ele_mark))
 			qdel(ele_mark) // don't need it anymore.
 
 	if(!shaft_lists.len)
@@ -339,9 +339,10 @@
 
 		// DEBUG: subtype to /datum/elevator_shaft ? could actually make sense, if it is passed the vlevel and handles initialization
 		shaft.shaft_elevator.add_floor(anchor_turf, call_button, floor_doors)
-	shaft.hangars += new /datum/hangar(hangar_dock)
+	var/datum/hangar/new_hangar = new /datum/hangar(hangar_dock)
+	shaft.hangars += new_hangar
 
-	return hangar_dock
+	return new_hangar
 
 // DEBUG: reanalyze this code
 /// Returns a list containing the size of the hangar dock corresponding to the passed mobile docking port, or null if the port is too large for a hangar.
@@ -366,6 +367,6 @@
 	// for each rounded dimension, if it is larger than the multiple of 20 that is closest to the corresponding max size,
 	// it is capped to that max size.
 	return list(
-		size_descending[1] > round(RESERVE_DOCK_MAX_SIZE_LONG, 20) ? RESERVE_DOCK_MAX_SIZE_LONG : size_descending[1],
-		size_descending[2] > round(RESERVE_DOCK_MAX_SIZE_SHORT, 20) ? RESERVE_DOCK_MAX_SIZE_SHORT : size_descending[2]
+		size_descending[1] >= round(RESERVE_DOCK_MAX_SIZE_LONG, 20) ? RESERVE_DOCK_MAX_SIZE_LONG : size_descending[1],
+		size_descending[2] >= round(RESERVE_DOCK_MAX_SIZE_SHORT, 20) ? RESERVE_DOCK_MAX_SIZE_SHORT : size_descending[2]
 	)

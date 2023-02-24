@@ -4,8 +4,9 @@ SUBSYSTEM_DEF(minor_mapping)
 	flags = SS_NO_FIRE
 
 /datum/controller/subsystem/minor_mapping/Initialize(timeofday)
-	trigger_migration(CONFIG_GET(number/mice_roundstart))
-	place_satchels(CONFIG_GET(number/smuggler_satchels))
+	// DEBUG: figure out what to do with this subsystem
+	// trigger_migration(CONFIG_GET(number/mice_roundstart))
+	// place_satchels(CONFIG_GET(number/smuggler_satchels))
 	return ..()
 
 /datum/controller/subsystem/minor_mapping/proc/trigger_migration(num_mice=10)

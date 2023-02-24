@@ -7,7 +7,7 @@ import { Window } from '../layouts';
 
 export const ElevatorButtons = (props, context) => {
   return (
-    <Window width={620} height={620} resizable>
+    <Window width={200} height={400} resizable>
       <Window.Content scrollable>
         <ElevatorButtonsContent />
       </Window.Content>
@@ -27,9 +27,9 @@ const ElevatorButtonsContent = (props, context) => {
   // collecting groups of 3
   for(let i = 0; i < (floors.length - 1); i++) {
     if(!(i % 3)) {
-      rows[Math.floor(i)] = [];
+      rows[Math.floor(i / 3)] = [];
     }
-    rows[Math.floor(i)][i % 3] = floors[i+1];
+    rows[Math.floor(i / 3)][i % 3] = floors[i+1];
   }
 
   return (
@@ -64,14 +64,16 @@ const ElevatorButtonsContent = (props, context) => {
         </Table.Cell>
         )}
         <Table.Cell>
-          {/* // DEBUG: add color logic, disabled status to open and close door buttons */}
+          {/* // DEBUG: re-enable these, add color logic, disabled status to open and close door buttons */}
           <Button
+            disabled
             content={"◀|▶"}
             onClick={() => act('open_doors')}
           />
         </Table.Cell>
         <Table.Cell>
           <Button
+            disabled
             content={"▶|◀"}
             onClick={() => act('close_doors')}
           />

@@ -35,19 +35,10 @@ GLOBAL_LIST_EMPTY(outpost_landmarks)
 	/// Should be a string.
 	var/shaft
 
-/*
-	Areas
-*/
+// DEBUG: the worst solution i've come up with yet
+/obj/machinery/light/floor/hangar
+	brightness = 20
 
-// DEBUG: make this better. add a dedicated area sprite for mappers?
-/area/hangar
-	area_flags = UNIQUE_AREA | NOTELEPORT
-	// DEBUG: does this still cause audio popping?
-	sound_environment = SOUND_AREA_LARGE_ENCLOSED
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	has_gravity = STANDARD_GRAVITY
-
-	requires_power = FALSE
-	power_equip = FALSE // nice try, but you can't power your machines just by placing them outside the ship // DEBUG: does this break doors?
-	power_light = TRUE
-	power_environ = TRUE
+/obj/machinery/light/floor/hangar/LateInitialize()
+	. = ..()
+	brightness = 20

@@ -116,6 +116,10 @@
 #endif
 	SSovermap.controlled_ships += src
 
+	// DEBUG: this is a very bad way of doing this. do something better
+	var/datum/overmap/outpost/spawn_outpost = locate() in SSovermap.overmap_objects
+	Dock(spawn_outpost, TRUE)
+
 /datum/overmap/ship/controlled/Destroy()
 	SSovermap.controlled_ships -= src
 	if(!QDELETED(shuttle_port))

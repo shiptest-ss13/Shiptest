@@ -53,10 +53,10 @@
 	var/floor_num = my_floor.master.floor_list.Find(my_floor)
 	var/list/opts = list()
 
-	if(floor_num < length(my_floor.master.floor_list))
+	if(floor_num > 1)
 		var/up_arrow = my_floor.calls & UP ? "green_arrow" : "red_arrow"
 		opts["Up"] = image(icon = 'icons/misc/arrows.dmi', icon_state = up_arrow, dir = NORTH)
-	if(floor_num > 1)
+	if(floor_num < length(my_floor.master.floor_list))
 		var/down_arrow = my_floor.calls & DOWN ? "green_arrow" : "red_arrow"
 		opts["Down"] = image(icon = 'icons/misc/arrows.dmi', icon_state = down_arrow, dir = SOUTH)
 
@@ -129,7 +129,7 @@
 
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "", name)
+		ui = new(user, src, "ElevatorButtons", name)
 		ui.open()
 
 // DEBUG: if nonphysical outposts have elevators, disable first floor somehow
@@ -142,7 +142,7 @@
 	data["floors"] = floors
 
 	for(var/i = 1, i <= length(master.floor_list), i++)
-		floors.Add(list(
+		floors += list(list(
 			num = i,
 			is_dest = master.floor_list[i].is_dest,
 			ref = REF(master.floor_list[i]),

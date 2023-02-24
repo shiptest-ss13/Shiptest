@@ -776,7 +776,7 @@
 
 /obj/structure/sign/poster/retro/lasergun_new
 	name = "Old Laser Gun"
-	desc = "A poster advertising a older version of the L-704, the L-204 model. It has a nice aesthetic."
+	desc = "A poster advertising an older version of the L-704, the L-204 model. It has a nice aesthetic."
 	icon_state = "poster-newl204_retro"
 
 /obj/structure/sign/poster/retro/radio
@@ -920,7 +920,7 @@
 
 /obj/structure/sign/poster/solgov/nanomichi_ad
 	name = "Nanomichi Ad"
-	desc = " A poster advertising a early post-NOF solarian computer. Severly outdated, but the advert is now a pretty nifty decoration."
+	desc = " A poster advertising a early post-NOF solarian computer. Severely outdated, but the advert is now a pretty nifty decoration."
 	icon_state = "poster_nanomichi"
 
 /obj/structure/sign/poster/solgov/suns

@@ -23,9 +23,9 @@
 	/// amount of time spent between floors while moving
 	var/floor_move_time = 3 SECONDS
 	/// amount of time spent on a floor after arriving but before opening doors
-	var/door_open_time = 3 SECONDS
+	var/door_open_time = 2 SECONDS
 	/// amount of time spent between opening doors and closing them
-	var/floor_idle_time = 15 SECONDS
+	var/floor_idle_time = 7 SECONDS
 
 	// DEBUG: variable for has_doors?
 
@@ -34,7 +34,7 @@
 	// DEBUG: remove? is cur_index default value of 1 problematic?
 	var/cur_index = 1
 	// DEBUG: name is shitty, misleading
-	var/last_move = NONE
+	var/last_move = DOWN
 	var/cur_state = ELEVATOR_IDLE
 
 	// button for the elevator car
@@ -157,7 +157,6 @@
 /datum/elevator_master/proc/arrive_on_floor()
 	// DEBUG: also, include ambient movement noise as well as chime?
 	var/datum/floor/cur_floor = floor_list[cur_index]
-	playsound(cur_floor.anchor, 'sound/misc/compiler-stage1.ogg', 100, FALSE)
 
 	// open if there is a destination on this floor
 	// OR a call on this floor in the direction we're already headed
@@ -181,15 +180,13 @@
 			)
 		else
 			// quieter
-			playsound(display, 'sound/items/ding.ogg', 75, FALSE)
+			playsound(display, 'sound/misc/compiler-stage1.ogg', 75, FALSE)
 
 	// both of these change the current state
 	if(open_on_floor)
 		cycle_doors()
 	else
 		check_move()
-		if(display)
-			playsound(display, 'sound/items/ding.ogg', 100, FALSE)
 
 
 /datum/elevator_master/proc/cycle_doors()
@@ -229,10 +226,12 @@
 		if(floor_list[cur_index] == floor)
 			cycle_doors()
 			// no need to change the color of the button
-			return
 		else
+			floor.calls |= call_dir
+			floor.button?.update_icon()
 			check_move()
-	floor.calls &= call_dir
+		return
+	floor.calls |= call_dir
 	floor.button?.update_icon()
 
 // DEBUG: it was late when i wrote this code so it probably sucks
@@ -244,10 +243,10 @@
 		// ensures a state change
 		if(floor_list[cur_index] == floor)
 			cycle_doors()
-			return
 		else
+			floor.is_dest = TRUE
 			check_move()
-
+		return
 	floor.is_dest = TRUE
 
 /datum/elevator_master/proc/open_doors(datum/floor/d_floor)
@@ -296,6 +295,8 @@
 	anchor = _anchor
 	button = _button
 	doors = _doors
+	if(button)
+		button.my_floor = src
 	for(var/obj/machinery/door/fl_door as anything in doors)
 		// you can always lower the bolts; doors are locked on floor creation to ensure no entry into shaft
 		fl_door.lock()

@@ -17,15 +17,15 @@
 	port_width = 40
 	port_height = 20
 
-/datum/map_template/hangar/test_56x20
-	skin = OUTPOST_SKIN_TEST
-	port_width = 56
-	port_height = 20
-
 /datum/map_template/hangar/test_40x40
 	skin = OUTPOST_SKIN_TEST
 	port_width = 40
 	port_height = 40
+
+/datum/map_template/hangar/test_56x20
+	skin = OUTPOST_SKIN_TEST
+	port_width = 56
+	port_height = 20
 
 /datum/map_template/hangar/test_56x40
 	skin = OUTPOST_SKIN_TEST

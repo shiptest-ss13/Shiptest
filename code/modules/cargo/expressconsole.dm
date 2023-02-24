@@ -108,8 +108,11 @@
 
 	// not a big fan of get_containing_shuttle
 	var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
-	var/datum/overmap/ship/controlled/ship = D.current_ship
-	var/outpost_docked = istype(ship.docked_to, /datum/overmap/outpost)
+	var/datum/overmap/ship/controlled/ship
+	var/outpost_docked = FALSE
+	if(D)
+		ship = D.current_ship
+		outpost_docked = istype(ship.docked_to, /datum/overmap/outpost)
 
 	data["onShip"] = !isnull(ship)
 	data["numMissions"] = ship ? LAZYLEN(ship.missions) : 0
@@ -147,10 +150,10 @@
 	if(ship)
 		for(var/datum/mission/M as anything in ship.missions)
 			data["shipMissions"] += list(M.get_tgui_info())
-	if(outpost_docked)
-		var/datum/overmap/outpost/out = ship.docked_to
-		for(var/datum/mission/M as anything in out.missions)
-			data["outpostMissions"] += list(M.get_tgui_info())
+		if(outpost_docked)
+			var/datum/overmap/outpost/out = ship.docked_to
+			for(var/datum/mission/M as anything in out.missions)
+				data["outpostMissions"] += list(M.get_tgui_info())
 
 	return data
 
