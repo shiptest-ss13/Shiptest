@@ -426,14 +426,16 @@
 
 	var/area/space_area = GLOB.areas_by_type[/area/space]
 
-	for(var/turf/turf as anything in get_block())
+	var/list/turf/block_turfs = get_block()
+
+	for(var/turf/turf as anything in block_turfs)
 		// don't waste time trying to qdelete the lighting object
 		for(var/datum/thing in (turf.contents - turf.lighting_object))
 			qdel(thing)
 			// DO NOT CHECK_TICK HERE. IT CAN CAUSE ITEMS TO GET LEFT BEHIND
 			// THIS IS REALLY IMPORTANT FOR CONSISTENCY. SORRY ABOUT THE LAG SPIKE
 
-	for(var/turf/turf as anything in get_block())
+	for(var/turf/turf as anything in block_turfs)
 		// Reset turf
 		turf.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, CHANGETURF_IGNORE_AIR|CHANGETURF_DEFER_CHANGE|CHANGETURF_DEFER_BATCH)
 		// Reset area
@@ -442,7 +444,7 @@
 		turf.change_area(old_area, space_area)
 		CHECK_TICK
 
-	for(var/turf/turf as anything in get_block())
+	for(var/turf/turf as anything in block_turfs)
 		turf.AfterChange(CHANGETURF_IGNORE_AIR)
 
 		// we don't need to smooth anything in the reserve, because it's empty, nor do we need to check its starlight.
