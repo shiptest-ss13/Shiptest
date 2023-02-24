@@ -2456,11 +2456,11 @@
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "Yc" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/window/brigdoor{
+	dir = 4
 	},
 /turf/open/floor/circuit/green,
 /area/ship/maintenance/central)
