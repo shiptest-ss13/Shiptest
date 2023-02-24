@@ -65,6 +65,8 @@
 	uniform = /obj/item/clothing/under/rank/security/brig_phys
 	shoes = /obj/item/clothing/shoes/combat
 	backpack = /obj/item/storage/backpack/ert/medical
+	belt = /obj/item/storage/belt/medical/webbing/paramedic
+
 /datum/outfit/job/paramedic/syndicate/gorlex
 	name = "Paramedic (Gorlex)"
 
