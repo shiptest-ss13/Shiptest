@@ -260,7 +260,7 @@
 			disconnect_from_network()
 
 /obj/machinery/power/tesla_ground/attackby(obj/item/W, mob/user, params)
-	if(default_deconstruction_screwdriver(user, "beaconsynd0[anchored]", "beaconsynd0[anchored]", W))
+	if(default_deconstruction_screwdriver(user, "beaconsynd0", "beaconsynd0", W))
 		return
 
 	if(default_unfasten_wrench(user, W))
