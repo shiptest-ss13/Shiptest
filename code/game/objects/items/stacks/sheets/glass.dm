@@ -104,6 +104,12 @@ GLOBAL_LIST_INIT(pglass_recipes, list ( \
 	grind_results = list(/datum/reagent/silicon = 20, /datum/reagent/toxin/plasma = 10)
 	material_flags = MATERIAL_NO_EFFECTS
 
+/obj/item/stack/sheet/plasmaglass/five
+	amount = 5
+
+/obj/item/stack/sheet/plasmaglass/twenty
+	amount = 20
+
 /obj/item/stack/sheet/plasmaglass/fifty
 	amount = 50
 
@@ -205,6 +211,15 @@ GLOBAL_LIST_INIT(prglass_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/plasmarglass
 	grind_results = list(/datum/reagent/silicon = 20, /datum/reagent/toxin/plasma = 10, /datum/reagent/iron = 10)
 	point_value = 23
+
+/obj/item/stack/sheet/plasmarglass/five
+	amount = 5
+
+/obj/item/stack/sheet/plasmarglass/twenty
+	amount = 20
+
+/obj/item/stack/sheet/plasmarglass/fifty
+	amount = 50
 
 /obj/item/stack/sheet/plasmarglass/get_main_recipes()
 	. = ..()

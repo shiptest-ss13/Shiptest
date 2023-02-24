@@ -289,6 +289,7 @@
 	desc = "A jumpsuit worn by low ranking members of the Colonial Minutemen."
 	icon_state = "minuteman"
 	item_state = "b_suit"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/security/officer/camo
 	name = "fatigues"
