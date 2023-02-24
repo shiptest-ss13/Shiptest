@@ -1325,6 +1325,9 @@
 	id = "noderiderengine";
 	name = "Engine shutters"
 	},
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "vY" = (
@@ -2371,6 +2374,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Pg" = (
@@ -2534,6 +2540,9 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "RI" = (
@@ -2567,6 +2576,9 @@
 /obj/machinery/power/apc/auto_name/east,
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2656,6 +2668,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
+	},
+/obj/effect/turf_decal/corner_techfloor_gray{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
