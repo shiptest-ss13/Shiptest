@@ -203,7 +203,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "eH" = (
-/obj/machinery/light/directional/west,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
@@ -225,7 +224,7 @@
 	pixel_x = 5;
 	pixel_y = 26
 	},
-/obj/machinery/computer/station_alert,
+/obj/machinery/computer/station_alert/retro,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "eO" = (
@@ -237,6 +236,9 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
+/obj/effect/turf_decal/number/four{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "eU" = (
@@ -308,6 +310,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/effect/turf_decal/number/seven{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "gK" = (
@@ -373,6 +378,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "whiteshipubbyEngines"
 	},
 /turf/open/floor/plating,
@@ -458,6 +464,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/effect/turf_decal/number/nine{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "km" = (
@@ -466,6 +475,9 @@
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
+	},
+/obj/effect/turf_decal/ntspaceworks_small{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -507,7 +519,6 @@
 /turf/open/floor/wood,
 /area/ship/bridge)
 "lo" = (
-/obj/machinery/airalarm/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -587,6 +598,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "mL" = (
@@ -631,6 +643,7 @@
 	pixel_x = 7;
 	pixel_y = 12
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "na" = (
@@ -812,6 +825,20 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/office)
+"rz" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "whiteship_bridge"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "rA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -910,6 +937,17 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/office)
+"ue" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "whiteship_bridge"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "ug" = (
 /obj/structure/railing{
 	dir = 8
@@ -1002,10 +1040,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "vY" = (
-/obj/machinery/computer/monitor,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
+/obj/machinery/computer/monitor/retro,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "wE" = (
@@ -1039,7 +1077,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -1057,6 +1097,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"xF" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "whiteship_windows"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "xH" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/fancy/donut_box{
@@ -1071,7 +1119,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "xL" = (
@@ -1139,8 +1187,8 @@
 /area/ship/hallway/central)
 "yT" = (
 /obj/structure/bed/dogbed{
-	name = "citrus's bed";
-	anchored = 1
+	anchored = 1;
+	name = "citrus's bed"
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 9
@@ -1193,10 +1241,10 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
 "zw" = (
-/obj/machinery/computer/helm{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/helm/retro{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "zx" = (
@@ -1214,10 +1262,10 @@
 /turf/open/floor/engine,
 /area/ship/cargo)
 "Ai" = (
-/obj/machinery/computer/crew{
+/obj/structure/railing,
+/obj/machinery/computer/crew/retro{
 	dir = 8
 	},
-/obj/structure/railing,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "AZ" = (
@@ -1301,7 +1349,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "CL" = (
@@ -1595,6 +1645,9 @@
 /area/ship/crew/office)
 "IC" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/ntspaceworks_small/left{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "IJ" = (
@@ -1764,7 +1817,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/grunge,
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1815,6 +1870,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "MO" = (
@@ -1835,7 +1891,6 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/west,
 /obj/item/stack/spacecash/c1000{
 	pixel_x = 2;
 	pixel_y = -14
@@ -1884,6 +1939,7 @@
 /area/ship/cargo)
 "Pj" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "whiteship_bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -1935,6 +1991,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "whiteshipubbyEngines"
 	},
 /turf/open/floor/plating,
@@ -2169,11 +2226,11 @@
 /area/ship/crew/office)
 "Uw" = (
 /obj/machinery/cryopod,
-/obj/machinery/computer/cryopod{
-	pixel_y = 26
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/computer/cryopod/retro{
+	pixel_y = 17
+	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/crew/dorm)
 "UK" = (
@@ -2188,6 +2245,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "whiteshipubbyEngines"
 	},
 /turf/open/floor/plating,
@@ -2408,6 +2466,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/effect/turf_decal/ntspaceworks_small/right{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "YT" = (
@@ -2447,6 +2508,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "whiteshipubbyEngines"
 	},
 /turf/open/floor/plating,
@@ -2479,7 +2541,7 @@
 
 (1,1,1) = {"
 sl
-sl
+lT
 vW
 TQ
 sl
@@ -2489,12 +2551,12 @@ lT
 JE
 TQ
 vW
-sl
+lT
 sl
 "}
 (2,1,1) = {"
 sl
-qO
+lT
 Zq
 UK
 lT
@@ -2504,7 +2566,7 @@ Nz
 lT
 Qv
 hJ
-qO
+lT
 sl
 "}
 (3,1,1) = {"
@@ -2600,15 +2662,15 @@ qO
 (9,1,1) = {"
 DH
 lT
-EK
-EK
+xF
+xF
 lT
 lT
 wX
 lT
 lT
-EK
-EK
+xF
+xF
 lT
 DH
 "}
@@ -2870,7 +2932,7 @@ sl
 (27,1,1) = {"
 sl
 zr
-lQ
+rz
 ar
 zw
 Ai
@@ -2887,7 +2949,7 @@ sl
 sl
 sl
 lQ
-Bx
+ue
 Bx
 Pj
 nZ

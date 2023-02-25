@@ -40,6 +40,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "kiloengine";
 	name = "Engine Shutters"
 	},
@@ -106,6 +107,7 @@
 	pixel_x = 32;
 	pixel_y = -32
 	},
+/obj/effect/turf_decal/number/zero,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "aZ" = (
@@ -291,6 +293,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/effect/turf_decal/ntspaceworks_small/left,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "bT" = (
@@ -467,8 +470,9 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/light_switch{
-	pixel_y = -23;
-	dir = 1
+	dir = 1;
+	pixel_x = 10;
+	pixel_y = -23
 	},
 /obj/machinery/light/small/built/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -593,9 +597,17 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen/kitchen)
 "cW" = (
-/obj/machinery/computer/security/telescreen/entertainment,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew)
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "whiteship_bridge";
+	name = "Garage DoorCockpit Emergency Blast Door"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "cY" = (
 /obj/effect/decal/cleanable/greenglow,
 /obj/effect/decal/cleanable/dirt,
@@ -607,11 +619,11 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	name = "Shutter Control";
 	dir = 4;
-	pixel_y = -7;
+	id = "kiloengine";
+	name = "Shutter Control";
 	pixel_x = -23;
-	id = "kiloengine"
+	pixel_y = -7
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -635,12 +647,11 @@
 	color = "#c45c57";
 	dir = 1
 	},
-/obj/machinery/firealarm/directional/east,
 /obj/machinery/light/small/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/status_display{
-	pixel_y = 32;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = 32
 	},
 /turf/open/floor/carpet,
 /area/ship/crew)
@@ -694,11 +705,11 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
+	dir = 8;
 	id = "kilocargo";
 	name = "Cargo Bay Control";
 	pixel_x = 25;
-	pixel_y = 7;
-	dir = 8
+	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -710,9 +721,9 @@
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/machinery/button/shieldwallgen{
 	dir = 8;
-	pixel_y = -6;
+	id = "kiloshield";
 	pixel_x = 24;
-	id = "kiloshield"
+	pixel_y = -6
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -745,6 +756,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "kiloengine";
 	name = "Engine Shutters"
 	},
@@ -768,6 +780,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/effect/turf_decal/ntspaceworks_small,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "gp" = (
@@ -802,6 +815,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/ntspaceworks_small/right,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "gC" = (
@@ -928,8 +942,8 @@
 /obj/machinery/conveyor_switch/oneway{
 	id = "NTMSLoad";
 	name = "Off Ramp";
-	pixel_y = 9;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 9
 	},
 /obj/machinery/conveyor_switch/oneway{
 	id = "NTMSLoad2";
@@ -1122,8 +1136,8 @@
 	dir = 1
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "kiloshield";
-	dir = 4
+	dir = 4;
+	id = "kiloshield"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1134,6 +1148,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
+	dir = 4;
 	name = "Mining Airlock"
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -1288,6 +1303,7 @@
 "xe" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external{
+	dir = 4;
 	name = "Mining Airlock"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1356,7 +1372,6 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
@@ -1411,6 +1426,7 @@
 "AB" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external{
+	dir = 4;
 	name = "Mining Airlock"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1483,6 +1499,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/number/five,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Bm" = (
@@ -1510,6 +1527,7 @@
 "BS" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "whiteship_bridge";
 	name = "Garage DoorCockpit Emergency Blast Door"
 	},
@@ -1586,16 +1604,17 @@
 "EG" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/airalarm/directional/east,
-/obj/machinery/light/small/directional/north,
 /obj/machinery/cryopod,
-/obj/machinery/computer/cryopod{
-	pixel_y = 32
+/obj/machinery/light/small/directional/west,
+/obj/machinery/computer/cryopod/retro{
+	pixel_y = 17
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
 "EU" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/command{
+	dir = 4;
 	name = "Ship Control"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -1718,6 +1737,7 @@
 	pixel_y = 8
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/carpet,
 /area/ship/crew)
 "La" = (
@@ -1742,6 +1762,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/number/zero,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Mj" = (
@@ -1752,9 +1773,14 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "MI" = (
-/obj/structure/sign/poster/contraband/random,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew)
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "whiteship_bridge";
+	name = "Garage DoorCockpit Emergency Blast Door"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "MY" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
@@ -1940,6 +1966,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
+	dir = 4;
 	name = "Mining Airlock"
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -2013,6 +2040,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
+	dir = 4;
 	id = "kiloengine";
 	name = "Engine Shutters"
 	},
@@ -2041,18 +2069,18 @@
 "TD" = (
 /obj/structure/table,
 /obj/machinery/button/door{
+	dir = 1;
 	id = "whiteship_bridge";
 	name = "Bridge Blast Door Control";
 	pixel_x = -6;
-	pixel_y = -2;
-	dir = 1
+	pixel_y = -2
 	},
 /obj/machinery/button/door{
+	dir = 1;
 	id = "whiteship_windows";
 	name = "Windows Blast Door Control";
 	pixel_x = -6;
-	pixel_y = 8;
-	dir = 1
+	pixel_y = 8
 	},
 /obj/item/radio{
 	pixel_x = 6;
@@ -2175,7 +2203,6 @@
 /area/ship/crew/canteen/kitchen)
 "Vx" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/greenglow,
 /obj/structure/toilet{
 	dir = 4;
@@ -2193,6 +2220,7 @@
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "VQ" = (
@@ -2274,6 +2302,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "YJ" = (
@@ -2470,7 +2499,7 @@ aJ
 bV
 Jf
 mz
-cW
+mz
 mz
 sG
 XR
@@ -2484,7 +2513,7 @@ cP
 KM
 bg
 yn
-MI
+mz
 EG
 hS
 YL
@@ -2654,7 +2683,7 @@ Ds
 sW
 Pg
 BS
-Bu
+MI
 aa
 "}
 (23,1,1) = {"
@@ -2667,7 +2696,7 @@ cJ
 bF
 bP
 bF
-bP
+cW
 Bu
 aa
 aa

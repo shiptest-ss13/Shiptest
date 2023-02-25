@@ -406,12 +406,12 @@
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/hallway/port)
 "fa" = (
-/obj/machinery/computer/telecomms/monitor{
-	dir = 8;
-	network = "tcommsat"
-	},
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 6
+	},
+/obj/machinery/computer/telecomms/monitor/solgov{
+	dir = 8;
+	network = "tcommsat"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
@@ -2669,12 +2669,12 @@
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/hallway/aft)
 "EF" = (
-/obj/machinery/computer/telecomms/server{
-	dir = 8;
-	network = "tcommsat"
-	},
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 4
+	},
+/obj/machinery/computer/telecomms/server/solgov{
+	dir = 8;
+	network = "tcommsat"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)

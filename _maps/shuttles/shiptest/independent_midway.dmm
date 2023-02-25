@@ -63,11 +63,11 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "bF" = (
-/obj/machinery/computer/operating{
-	dir = 1
-	},
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/corner/opaque/white/half{
+	dir = 1
+	},
+/obj/machinery/computer/operating/retro{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
@@ -126,7 +126,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
 "cV" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
 	},
@@ -144,6 +146,7 @@
 /area/ship/cargo)
 "dh" = (
 /obj/machinery/door/airlock/command{
+	dir = 4;
 	name = "Bridge"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -216,9 +219,11 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "ee" = (
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/ridged{
 	color = "#4c535b"
@@ -655,12 +660,12 @@
 	},
 /area/ship/hallway/central)
 "la" = (
-/obj/machinery/computer/monitor{
-	dir = 8
-	},
 /obj/effect/turf_decal/spline/fancy/transparent/neutral{
 	color = "#2257AF";
 	dir = 5
+	},
+/obj/machinery/computer/monitor/retro{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -736,8 +741,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "mB" = (
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external{
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/ridged{
@@ -946,6 +953,7 @@
 /area/ship/crew)
 "qz" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "whiteship_port"
 	},
 /turf/open/floor/engine/hull/interior,
@@ -1059,6 +1067,9 @@
 	color = "#2257AF";
 	dir = 9
 	},
+/obj/item/radio/intercom/wideband/table{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "rK" = (
@@ -1086,10 +1097,11 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "sF" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "whiteship_windows"
 	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "sN" = (
@@ -1170,6 +1182,7 @@
 /area/ship/engineering)
 "uJ" = (
 /obj/machinery/door/poddoor{
+	dir = 4;
 	id = "whiteship_bridge"
 	},
 /obj/effect/spawner/structure/window/shuttle,
@@ -1338,7 +1351,6 @@
 /turf/open/floor/engine,
 /area/ship/engineering)
 "zd" = (
-/obj/item/radio/intercom/wideband/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1520,6 +1532,7 @@
 /area/ship/crew)
 "Ch" = (
 /obj/machinery/door/airlock/command{
+	dir = 4;
 	name = "Bridge"
 	},
 /obj/structure/cable{
@@ -1610,12 +1623,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Du" = (
-/obj/machinery/computer/crew,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/spline/fancy/transparent/neutral{
 	color = "#2257AF";
 	dir = 5
 	},
+/obj/machinery/computer/crew/retro,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Dw" = (
@@ -1681,6 +1694,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/effect/turf_decal/ntspaceworks_small/left{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Er" = (
@@ -1701,6 +1717,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/flora/grass/jungle/b,
+/obj/effect/turf_decal/number/five{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Fx" = (
@@ -1862,8 +1881,19 @@
 	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/number/zero{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Jg" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "whiteship_windows"
+	},
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ship/medical)
 "JA" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
@@ -2023,12 +2053,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "MX" = (
-/obj/machinery/computer/helm{
-	dir = 8
-	},
 /obj/effect/turf_decal/spline/fancy/transparent/neutral{
 	color = "#2257AF";
 	dir = 6
+	},
+/obj/machinery/computer/helm/retro{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2232,12 +2262,12 @@
 /area/ship/engineering)
 "OS" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/frame/computer{
-	dir = 1
-	},
 /obj/effect/turf_decal/spline/fancy/transparent/neutral{
 	color = "#2257AF";
 	dir = 6
+	},
+/obj/structure/frame/computer/retro{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -2448,12 +2478,12 @@
 /obj/machinery/cryopod{
 	dir = 8
 	},
-/obj/machinery/computer/cryopod{
-	dir = 8;
-	pixel_x = 23
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
+	},
+/obj/machinery/computer/cryopod/retro{
+	dir = 8;
+	pixel_x = 17
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew)
@@ -2578,6 +2608,9 @@
 /obj/machinery/light/broken/directional/east,
 /obj/structure/closet/emcloset/anchored,
 /obj/item/lightreplacer,
+/obj/effect/turf_decal/ntspaceworks_small{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "SQ" = (
@@ -2621,7 +2654,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "TC" = (
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -2632,6 +2664,9 @@
 	dir = 8
 	},
 /obj/structure/fans/tiny,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/ridged{
 	color = "#4c535b"
 	},
@@ -2642,6 +2677,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/number/one{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "TL" = (
@@ -2687,6 +2725,9 @@
 	icon_state = "1-8"
 	},
 /obj/item/circuitboard/machine/ore_redemption,
+/obj/effect/turf_decal/ntspaceworks_small/right{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Um" = (
@@ -2739,7 +2780,6 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/medical)
 "UI" = (
-/obj/machinery/door/airlock/external,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -2747,6 +2787,9 @@
 	dir = 8
 	},
 /obj/structure/fans/tiny,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/ridged{
 	color = "#4c535b"
 	},
@@ -3143,9 +3186,10 @@
 
 (1,1,1) = {"
 Zn
-Zn
+PR
 fs
 JA
+bA
 Zn
 Zn
 Zn
@@ -3157,11 +3201,10 @@ Zn
 Zn
 Zn
 Zn
-Zn
-Zn
+bA
 JA
 fs
-Zn
+PR
 Zn
 "}
 (2,1,1) = {"
@@ -3169,8 +3212,8 @@ Zn
 PR
 pD
 WE
-bA
 PR
+bA
 Zn
 PR
 qz
@@ -3180,8 +3223,8 @@ qz
 qz
 PR
 Zn
-PR
 bA
+PR
 Vm
 Wy
 PR
@@ -3756,8 +3799,8 @@ Qg
 Zn
 OZ
 OZ
-Ry
-Ry
+Jg
+Jg
 vA
 OZ
 Zn
@@ -3908,13 +3951,13 @@ Zn
 Zn
 Zn
 Zn
-kH
-kH
-kH
 uJ
-kH
-kH
-kH
+uJ
+uJ
+uJ
+uJ
+uJ
+uJ
 Zn
 Zn
 Zn
