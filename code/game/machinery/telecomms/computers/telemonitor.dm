@@ -19,6 +19,16 @@
 	var/temp = ""				// temporary feedback messages
 	circuit = /obj/item/circuitboard/computer/comm_monitor
 
+/obj/machinery/computer/telecomms/monitor/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/telecomms/monitor/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /obj/machinery/computer/telecomms/monitor/ui_interact(mob/user)
 	. = ..()
 	var/dat = "<TITLE>Telecommunications Monitor</TITLE><center><b>Telecommunications Monitor</b></center>"
