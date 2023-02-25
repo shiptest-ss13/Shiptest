@@ -369,8 +369,8 @@
 
 /obj/machinery/computer/helm/viewscreen
 	name = "ship viewscreen"
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "telescreen"
+	icon_state = "wallconsole"
+	icon_screen = "wallconsole_navigation"
 	layer = SIGN_LAYER
 	density = FALSE
 	viewer = TRUE
