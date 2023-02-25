@@ -17,6 +17,7 @@
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "console"
 	density = TRUE
+	unique_icon = TRUE
 	var/obj/item/abductor/gizmo/gizmo
 	var/obj/item/clothing/suit/armor/abductor/vest/vest
 	var/obj/machinery/abductor/experiment/experiment

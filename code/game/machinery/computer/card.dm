@@ -56,6 +56,16 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 
 	COOLDOWN_DECLARE(silicon_access_print_cooldown)
 
+/obj/machinery/computer/card/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/card/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /obj/machinery/computer/card/proc/get_jobs()
 	return get_all_jobs()
 
