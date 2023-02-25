@@ -1078,7 +1078,6 @@
 /obj/item/circuitboard/machine/thermomachine,
 /obj/item/circuitboard/machine/thermomachine,
 /obj/item/storage/box/stockparts/basic,
-/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "uF" = (
@@ -1087,6 +1086,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible{
 	dir = 5
+	},
+/obj/effect/turf_decal/number/three{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -1350,7 +1352,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "yo" = (
@@ -1399,6 +1401,9 @@
 "zi" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/decal/cleanable/oil,
+/obj/effect/turf_decal/number/five{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "zk" = (
@@ -1928,11 +1933,15 @@
 	dir = 1;
 	id = "ModShip_thruster_starboard";
 	name = "thruster doors";
+	pixel_x = -9;
 	pixel_y = -25
 	},
 /obj/structure/closet/crate/radiation,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Jn" = (
@@ -2434,6 +2443,15 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/bridge)
+"Sa" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/kfp_small/left{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Sh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2707,6 +2725,9 @@
 "WB" = (
 /obj/machinery/atmospherics/pipe/manifold/purple/visible{
 	dir = 1
+	},
+/obj/effect/turf_decal/number/zero{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -3041,7 +3062,7 @@ QL
 MO
 xI
 gP
-LH
+Sa
 zi
 WB
 uF
