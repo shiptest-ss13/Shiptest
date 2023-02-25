@@ -102,7 +102,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 4
 	},
-/obj/machinery/computer/cargo/express{
+/obj/machinery/computer/cargo/express/retro{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -130,10 +130,10 @@
 	},
 /area/ship/crew)
 "dL" = (
-/obj/machinery/computer/monitor{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/monitor/retro{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "dS" = (
@@ -414,11 +414,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "iO" = (
-/obj/structure/frame/computer{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 4
+	},
+/obj/structure/frame/computer/retro{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1113,10 +1113,10 @@
 /area/ship/crew)
 "xx" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm/directional/north,
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 9
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "xz" = (
@@ -1186,14 +1186,14 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "zh" = (
-/obj/machinery/computer/operating{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/blue/half{
+	dir = 4
+	},
+/obj/machinery/computer/operating/retro{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/white,
@@ -1828,11 +1828,11 @@
 /turf/closed/wall,
 /area/ship/engineering)
 "NK" = (
-/obj/machinery/computer/helm{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 4
+	},
+/obj/machinery/computer/helm/retro{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
