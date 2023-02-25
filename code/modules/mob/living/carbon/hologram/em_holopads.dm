@@ -168,8 +168,8 @@
 	em_spawn_type = /mob/living/simple_animal/hologram/security
 
 /obj/machinery/holopad/emergency/cargo
-	name = "advanced logisctics holopad"
-	em_name = "logisctics"
+	name = "advanced logistics holopad"
+	em_name = "logistics"
 	em_spawn_type = /mob/living/simple_animal/hologram/cargo
 
 /obj/machinery/holopad/emergency/clown
