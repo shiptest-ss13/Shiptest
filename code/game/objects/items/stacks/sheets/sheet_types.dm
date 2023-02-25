@@ -699,7 +699,7 @@ GLOBAL_LIST_INIT(plastic_recipes, list(
 	new /datum/stack_recipe("colo cups", /obj/item/reagent_containers/food/drinks/colocup, 1), \
 	new /datum/stack_recipe("wet floor sign", /obj/item/clothing/suit/caution, 2), \
 	new /datum/stack_recipe("blank wall sign", /obj/item/sign, 1), \
-	new /datum/stack_recipe("IV drip", /obj/machinery/iv_drip, 5, time = 15)
+	new /datum/stack_recipe("IV drip", /obj/machinery/iv_drip, 5, time = 15), \
 	new /datum/stack_recipe("retro computer frame", /obj/structure/frame/computer/retro, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 	))
 
