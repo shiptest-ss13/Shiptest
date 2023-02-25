@@ -209,7 +209,7 @@
 
 	anchored = TRUE
 	density = FALSE
-	can_be_unanchored = TRUE //foxes HATE booleans
+	can_be_unanchored = FALSE //foxes HATE booleans
 
 	can_buckle = TRUE
 	buckle_lying = TRUE
