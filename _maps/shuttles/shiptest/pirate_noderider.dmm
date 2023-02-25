@@ -69,7 +69,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/item/melee/transforming/energy/sword,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/under/utility,
 /obj/item/clothing/head/soft/black,
@@ -81,6 +80,7 @@
 /obj/item/storage/box/handcuffs,
 /obj/item/clothing/glasses/meson,
 /obj/item/megaphone,
+/obj/item/melee/transforming/energy/sword/saber/red,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "aX" = (
@@ -176,9 +176,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "bY" = (
-/obj/structure/filingcabinet{
-	pixel_x = -6
-	},
 /obj/machinery/camera/emp_proof{
 	dir = 4
 	},
@@ -190,6 +187,9 @@
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -24
+	},
+/obj/machinery/computer/crew{
+	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -287,17 +287,6 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating/airless,
 /area/ship/external)
-"dT" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 6
-	},
-/obj/structure/girder,
-/obj/machinery/light/floor,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/bridge)
 "dU" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -583,16 +572,6 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/cargo)
-"iX" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk/over,
-/obj/structure/chair/plastic{
-	dir = 4
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "ji" = (
 /obj/structure/railing{
 	layer = 3.3
@@ -764,6 +743,9 @@
 	dir = 8;
 	pixel_x = 28
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "kS" = (
@@ -868,6 +850,9 @@
 	icon_state = "6-9"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -1114,21 +1099,18 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 5
-	},
-/obj/structure/girder,
-/turf/open/floor/engine/hull/reinforced,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/airless,
 /area/ship/bridge)
 "rK" = (
-/obj/machinery/computer/helm{
-	dir = 8
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
 /obj/machinery/light/small{
 	dir = 4
+	},
+/obj/machinery/computer/helm{
+	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1273,6 +1255,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "vK" = (
@@ -1307,6 +1292,10 @@
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -1401,6 +1390,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1772,6 +1764,9 @@
 	dir = 8;
 	pixel_x = 22
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "FQ" = (
@@ -1785,23 +1780,6 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"FS" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 6
-	},
-/obj/structure/girder,
-/obj/machinery/light/floor,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/bridge)
 "Ga" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1875,6 +1853,9 @@
 "Hx" = (
 /obj/machinery/autolathe,
 /obj/machinery/airalarm/directional/east,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Ih" = (
@@ -1928,12 +1909,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/porta_turret/centcom_shuttle{
-	dir = 5
-	},
-/obj/structure/girder,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/bridge)
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Jp" = (
 /obj/structure/table,
 /obj/machinery/recharger{
@@ -1977,6 +1954,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/spline/fancy/transparent/solgovgold,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Kn" = (
@@ -1992,13 +1970,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"Kp" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk/over,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external)
 "Kz" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
@@ -2260,6 +2231,9 @@
 	dir = 1
 	},
 /obj/structure/reagent_dispensers/fueltank,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Oa" = (
@@ -2343,8 +2317,6 @@
 	},
 /obj/item/gun/energy/disabler,
 /obj/item/gun/energy/e_gun/smg,
-/obj/item/gun/energy/e_gun/smg,
-/obj/item/gun/energy/e_gun/smg,
 /obj/item/stock_parts/cell/gun,
 /obj/item/stock_parts/cell/gun,
 /obj/item/stock_parts/cell/gun,
@@ -2355,6 +2327,8 @@
 /obj/item/stock_parts/cell/gun,
 /obj/item/melee/baton,
 /obj/item/melee/baton,
+/obj/item/gun/energy/e_gun/iot,
+/obj/item/gun/energy/e_gun/iot,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "PK" = (
@@ -2563,6 +2537,9 @@
 /area/ship/external)
 "Tm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/stairs,
 /area/ship/engineering)
 "Tx" = (
@@ -2668,12 +2645,6 @@
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "Wb" = (
-/obj/machinery/computer/communications{
-	pixel_x = 8
-	},
-/obj/machinery/computer/crew{
-	pixel_x = -19
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/button/door{
@@ -2689,6 +2660,9 @@
 	pixel_y = 4;
 	id = "noderiders";
 	name = "cargo airshield"
+	},
+/obj/machinery/computer/communications{
+	icon_state = "computer-left"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -3116,7 +3090,7 @@ eS
 nO
 EQ
 EQ
-FS
+lr
 EQ
 kd
 by
@@ -3299,7 +3273,7 @@ by
 by
 by
 Jx
-Kp
+EQ
 nO
 EQ
 xy
@@ -3704,7 +3678,7 @@ by
 (31,1,1) = {"
 by
 MZ
-iX
+dS
 by
 by
 by
@@ -3755,7 +3729,7 @@ qc
 by
 by
 sB
-dT
+Vb
 by
 by
 "}
