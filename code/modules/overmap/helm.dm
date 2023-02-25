@@ -371,6 +371,7 @@
 	name = "ship viewscreen"
 	icon_state = "wallconsole"
 	icon_screen = "wallconsole_navigation"
+	icon_keyboard = null
 	layer = SIGN_LAYER
 	density = FALSE
 	viewer = TRUE
