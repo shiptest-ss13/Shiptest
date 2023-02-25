@@ -34,6 +34,16 @@
 	/// store an ntnet relay for tablets on the ship
 	var/obj/machinery/ntnet_relay/integrated/ntnet_relay
 
+/obj/machinery/computer/helm/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/helm/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /datum/config_entry/number/bluespace_jump_wait
 	default = 30 MINUTES
 
@@ -364,6 +374,7 @@
 	layer = SIGN_LAYER
 	density = FALSE
 	viewer = TRUE
+	unique_icon = TRUE
 
 #undef JUMP_STATE_OFF
 #undef JUMP_STATE_CHARGING

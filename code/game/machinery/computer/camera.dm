@@ -17,6 +17,16 @@
 	var/atom/movable/screen/plane_master/lighting/cam_plane_master
 	var/atom/movable/screen/background/cam_background
 
+/obj/machinery/computer/security/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/security/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /obj/machinery/computer/security/Initialize()
 	. = ..()
 	// Map name has to start and end with an A-Z character,
@@ -192,6 +202,7 @@
 	icon_keyboard = null
 	icon_screen = "detective_tv"
 	pass_flags = PASSTABLE
+	unique_icon = TRUE
 
 /obj/machinery/computer/security/mining
 	name = "outpost camera console"
@@ -237,6 +248,7 @@
 	density = FALSE
 	circuit = null
 	light_power = 0
+	unique_icon = TRUE
 
 /obj/machinery/computer/security/telescreen/update_icon_state()
 	icon_state = initial(icon_state)
