@@ -722,7 +722,7 @@ generate/load female uniform sprites matching all previously decided variables
 	// WS Edit End - Worn Icon State
 	//Get the overlays for this item when it's being worn
 	//eg: ammo counters, primed grenade flashes, etc.
-	var/list/worn_overlays = worn_overlays(isinhands, file2use)
+	var/list/worn_overlays = worn_overlays(standing, isinhands, file2use)
 	if(length(worn_overlays))
 		if(mob_species && ("[layer2use]" in mob_species.offset_clothing))
 			var/list/new_overlays = list()
