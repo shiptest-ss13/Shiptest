@@ -160,7 +160,7 @@
 	dir = 4
 	},
 /obj/machinery/computer/cryopod{
-	pixel_y = 24
+	pixel_y = 17
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 5
@@ -262,6 +262,9 @@
 	piping_layer = 5
 	},
 /obj/structure/railing,
+/obj/machinery/airalarm/engine{
+	pixel_y = 24
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cP" = (
@@ -1134,7 +1137,7 @@
 "la" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/helm/viewscreen{
-	pixel_y = 32
+	pixel_y = 18
 	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -2170,7 +2173,7 @@
 /obj/structure/filingcabinet/chestdrawer,
 /obj/item/folder/documents,
 /obj/machinery/computer/helm/viewscreen{
-	pixel_y = 32
+	pixel_y = 18
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
@@ -2365,7 +2368,8 @@
 	id_tag = "incinerator_out"
 	},
 /obj/machinery/airalarm/engine{
-	pixel_y = 24
+	dir = 1;
+	pixel_y = 27
 	},
 /turf/open/floor/engine/airless,
 /area/ship/engineering/incinerator)
@@ -3073,7 +3077,7 @@
 	pixel_y = -5
 	},
 /obj/machinery/computer/helm/viewscreen{
-	pixel_y = 32
+	pixel_y = 18
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
@@ -4706,7 +4710,7 @@
 	},
 /obj/machinery/computer/helm/viewscreen{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -18
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/starboard)

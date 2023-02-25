@@ -541,7 +541,7 @@
 /obj/item/pen/fourcolor,
 /obj/machinery/computer/helm/viewscreen{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -18
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -1377,7 +1377,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "jp" = (
@@ -4753,7 +4753,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "ED" = (
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/firealarm/directional/south,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
@@ -4761,6 +4760,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 6
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "EL" = (

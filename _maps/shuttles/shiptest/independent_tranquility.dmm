@@ -29,6 +29,7 @@
 "aB" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "ext_windows"
 	},
 /turf/open/floor/plating,
@@ -91,6 +92,7 @@
 /area/ship/engineering/electrical)
 "aP" = (
 /obj/machinery/door/airlock/wood{
+	dir = 4;
 	id_tag = "apartment_1";
 	name = "Apartment 1"
 	},
@@ -134,6 +136,7 @@
 "ba" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "a_1_shutter2"
 	},
 /turf/open/floor/plating,
@@ -693,7 +696,7 @@
 	},
 /obj/machinery/computer/cryopod{
 	dir = 4;
-	pixel_x = -19
+	pixel_x = -18
 	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech,
@@ -737,6 +740,9 @@
 "gf" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 10
+	},
+/obj/effect/turf_decal/number/three{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
@@ -849,6 +855,9 @@
 /area/ship/crew/cryo)
 "hi" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/visible/layer2,
+/obj/effect/turf_decal/number/zero{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "hn" = (
@@ -1104,6 +1113,7 @@
 "iN" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "a_5_shutter"
 	},
 /turf/open/floor/plating,
@@ -1230,7 +1240,7 @@
 	},
 /obj/machinery/computer/helm/viewscreen{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 16
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -1707,6 +1717,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/ihejirika_small/left{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "op" = (
@@ -1753,6 +1766,7 @@
 /area/ship/crew/crewfive)
 "oF" = (
 /obj/machinery/door/airlock/grunge{
+	dir = 4;
 	id_tag = "apartment_5";
 	name = "Apartment 5"
 	},
@@ -1777,6 +1791,7 @@
 /area/ship/crew/crewfour)
 "oG" = (
 /obj/machinery/door/airlock{
+	dir = 4;
 	name = "Cryogenics"
 	},
 /obj/structure/cable{
@@ -2002,6 +2017,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 9
 	},
+/obj/effect/turf_decal/ihejirika_small{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "qq" = (
@@ -2043,6 +2061,7 @@
 "qS" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "a_4_shutter2"
 	},
 /turf/open/floor/plating,
@@ -2217,10 +2236,8 @@
 	pixel_x = 2;
 	pixel_y = -1
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 26
-	},
 /obj/machinery/camera/autoname,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood/birch,
 /area/ship/crew/crewtwo)
 "sr" = (
@@ -2612,7 +2629,9 @@
 /turf/open/floor/wood/birch,
 /area/ship/crew/crewtwo)
 "uK" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/ridged{
 	color = "#4c535b"
 	},
@@ -2672,9 +2691,7 @@
 /obj/effect/turf_decal/corner/transparent/bar{
 	dir = 1
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 26
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "vd" = (
@@ -2706,6 +2723,7 @@
 	pixel_x = 8;
 	pixel_y = 12
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/crewfour)
 "vx" = (
@@ -2794,6 +2812,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/number/five{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "wA" = (
@@ -2809,6 +2830,7 @@
 /area/ship/crew/canteen)
 "wI" = (
 /obj/machinery/door/airlock/wood{
+	dir = 4;
 	id_tag = "apartment_3";
 	name = "Apartment 3"
 	},
@@ -2848,6 +2870,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/public/glass{
+	dir = 4;
 	name = "Dining Room"
 	},
 /turf/open/floor/plasteel/patterned/ridged{
@@ -2878,6 +2901,7 @@
 "xi" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "ext_windows"
 	},
 /turf/open/floor/plating,
@@ -2989,6 +3013,7 @@
 "xD" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "ext_windows"
 	},
 /turf/open/floor/plating,
@@ -3038,6 +3063,9 @@
 	},
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 1
+	},
+/obj/effect/turf_decal/ihejirika_small/right{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
@@ -3113,9 +3141,7 @@
 	pixel_x = -9;
 	pixel_y = 1
 	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 26
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "yE" = (
@@ -3699,6 +3725,7 @@
 /area/ship/engineering/electrical)
 "Do" = (
 /obj/machinery/door/airlock/wood{
+	dir = 4;
 	name = "Cryogenics"
 	},
 /obj/structure/cable{
@@ -4136,7 +4163,6 @@
 /area/ship/crew)
 "GR" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/directional/north,
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
@@ -4144,7 +4170,10 @@
 	dir = 9
 	},
 /obj/item/radio/intercom/directional/north{
-	pixel_y = -6
+	pixel_y = 0
+	},
+/obj/item/radio/intercom/wideband/table{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -4207,6 +4236,7 @@
 "Ho" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "a_2_shutter"
 	},
 /turf/open/floor/plating,
@@ -4534,9 +4564,7 @@
 /area/ship/engineering/engine)
 "Kb" = (
 /obj/machinery/hydroponics/soil,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 26
-	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "Kj" = (
@@ -4960,6 +4988,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/public/glass{
+	dir = 4;
 	name = "Dining Room"
 	},
 /turf/open/floor/plasteel/patterned/ridged{
@@ -5002,6 +5031,14 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"Nk" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "a_1_shutter"
+	},
+/turf/open/floor/plating,
+/area/ship/crew/dorm)
 "Nt" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible/layer4{
 	dir = 1
@@ -5152,13 +5189,11 @@
 /area/ship/crew/crewfive)
 "OR" = (
 /obj/structure/chair/sofa,
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 26
-	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#792f27";
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "OS" = (
@@ -5168,6 +5203,7 @@
 "Pf" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "ext_windows"
 	},
 /turf/open/floor/plating,
@@ -5265,14 +5301,16 @@
 /area/ship/crew/crewtwo)
 "PQ" = (
 /obj/structure/table,
-/obj/item/radio/intercom/wideband/directional/west,
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/item/radio/intercom/directional/west,
+/obj/item/radio/intercom/wideband/table{
+	dir = 8;
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/crewfour)
 "PR" = (
@@ -5632,6 +5670,7 @@
 /area/ship/engineering/engine)
 "St" = (
 /obj/machinery/door/airlock/wood{
+	dir = 4;
 	id_tag = "apartment_2";
 	name = "Apartment 2"
 	},
@@ -5660,6 +5699,7 @@
 /area/ship/engineering/electrical)
 "Sw" = (
 /obj/machinery/door/airlock/public/glass{
+	dir = 4;
 	name = "Dining Room"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -5728,6 +5768,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/public/glass{
+	dir = 4;
 	name = "Dining Room"
 	},
 /turf/open/floor/plasteel/patterned/ridged{
@@ -6220,6 +6261,7 @@
 /area/ship/crew/crewfour)
 "Xd" = (
 /obj/machinery/door/airlock/wood{
+	dir = 4;
 	id_tag = "apartment_4";
 	name = "Apartment 4"
 	},
@@ -6337,6 +6379,7 @@
 "Ym" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "a_3_shutter"
 	},
 /turf/open/floor/plating,
@@ -6412,6 +6455,7 @@
 "Zh" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
 	id = "a_3_shutter2"
 	},
 /turf/open/floor/plating,
@@ -6489,6 +6533,7 @@
 /area/ship/engineering/electrical)
 "ZI" = (
 /obj/machinery/door/airlock/wood{
+	dir = 4;
 	name = "Garden"
 	},
 /obj/structure/cable{
@@ -6581,7 +6626,7 @@ qa
 qa
 qa
 ac
-ac
+Nk
 Yd
 Yd
 jz
@@ -6622,7 +6667,7 @@ qa
 qa
 qa
 ac
-ac
+Nk
 CV
 zk
 Yd
@@ -6663,7 +6708,7 @@ qa
 qa
 qa
 UF
-ac
+Nk
 QT
 fc
 or

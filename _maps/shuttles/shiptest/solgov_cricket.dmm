@@ -1,6 +1,5 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "an" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -14,6 +13,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/public/glass{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -414,10 +416,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "fn" = (
-/obj/machinery/computer/monitor{
+/obj/machinery/light/small/directional/south{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/south,
+/obj/machinery/computer/monitor/solgov{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "fp" = (
@@ -893,7 +897,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "kO" = (
@@ -1092,7 +1095,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "nb" = (
-/obj/machinery/door/airlock/atmos,
+/obj/machinery/door/airlock/atmos{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -1198,11 +1203,11 @@
 /turf/template_noop,
 /area/ship/external)
 "ok" = (
-/obj/machinery/computer/atmos_control/tank/air_tank{
-	dir = 8
-	},
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_x = 32
+	},
+/obj/machinery/computer/atmos_control/tank/air_tank/solgov{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
@@ -1554,7 +1559,7 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/hallway/fore)
 "tg" = (
-/obj/machinery/computer/atmos_alert,
+/obj/machinery/computer/atmos_alert/solgov,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "tm" = (
@@ -1833,7 +1838,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "wE" = (
-/obj/machinery/computer/helm{
+/obj/machinery/computer/helm/solgov{
 	dir = 8
 	},
 /turf/open/floor/carpet/nanoweave/blue,
@@ -2164,14 +2169,13 @@
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/ship/engineering/communications)
 "Av" = (
-/obj/machinery/computer/security{
-	dir = 1;
-	network = list("cricket")
-	},
 /obj/structure/sign/poster/retro/we_watch{
 	pixel_y = -32
 	},
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/computer/security/solgov{
+	dir = 1
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "Aw" = (
@@ -2302,7 +2306,7 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "BD" = (
-/obj/structure/frame/computer{
+/obj/structure/frame/computer/solgov{
 	dir = 8
 	},
 /turf/open/floor/carpet/nanoweave/blue,
@@ -2406,16 +2410,17 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/atmospherics)
 "Cr" = (
-/obj/machinery/computer/atmos_control/tank/oxygen_tank{
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/machinery/computer/atmos_control/tank/oxygen_tank/solgov{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "Ct" = (
-/obj/machinery/computer/operating{
+/obj/effect/turf_decal/borderfloor/full,
+/obj/machinery/computer/operating/solgov{
 	dir = 1
 	},
-/obj/effect/turf_decal/borderfloor/full,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Cx" = (
@@ -2441,7 +2446,8 @@
 /area/ship/hallway/port)
 "CK" = (
 /obj/machinery/computer/cryopod{
-	pixel_y = -26
+	dir = 1;
+	pixel_y = -18
 	},
 /obj/machinery/light_switch{
 	dir = 1;
@@ -2458,6 +2464,7 @@
 /obj/machinery/telecomms/bus/preset_one/birdstation{
 	autolinkers = list("processor1","common","receiverA")
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/ship/engineering/communications)
 "CR" = (
@@ -2482,10 +2489,8 @@
 /area/ship/crew/canteen)
 "Da" = (
 /obj/machinery/airalarm/server{
-	dir = 1;
-	pixel_y = -25
+	pixel_y = -27
 	},
-/obj/machinery/light/directional/south,
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/ship/engineering/communications)
 "Db" = (
@@ -2533,16 +2538,15 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/hallway/fore)
 "Dj" = (
-/obj/machinery/computer/crew{
+/obj/machinery/firealarm/directional/west,
+/obj/machinery/computer/crew/solgov{
 	dir = 1
 	},
-/obj/machinery/firealarm/directional/west,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "Dp" = (
-/obj/machinery/computer/security{
-	dir = 1;
-	network = list("cricket")
+/obj/machinery/computer/security/solgov{
+	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
@@ -2704,7 +2708,9 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "FE" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -3154,13 +3160,13 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
 "LA" = (
-/obj/machinery/computer/cargo/express{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/brown/half{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/brown,
+/obj/machinery/computer/cargo/express/solgov{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "LC" = (
@@ -3937,7 +3943,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "VB" = (
-/obj/machinery/computer/atmos_alert{
+/obj/machinery/computer/atmos_alert/solgov{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -4169,6 +4175,7 @@
 /area/ship/medical)
 "XN" = (
 /obj/machinery/door/airlock/grunge{
+	dir = 4;
 	name = "Telecommunications"
 	},
 /obj/structure/cable{
@@ -4209,7 +4216,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
 "YF" = (
-/obj/machinery/computer/atmos_control/tank/nitrogen_tank{
+/obj/machinery/computer/atmos_control/tank/nitrogen_tank/solgov{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
