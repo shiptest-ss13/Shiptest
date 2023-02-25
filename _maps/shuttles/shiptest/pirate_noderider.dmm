@@ -193,6 +193,13 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
+"cb" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "cP" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -774,6 +781,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/poddoor/preopen{
+	id = "noderiderbridge"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "lr" = (
@@ -1020,7 +1030,7 @@
 /obj/machinery/power/shuttle/engine/electric/premium{
 	name = "main drive";
 	dir = 4;
-	power_per_burn = 100000
+	power_per_burn = 200000
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -1095,13 +1105,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
-"rJ" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/catwalk/over,
-/turf/open/floor/plating/airless,
-/area/ship/bridge)
 "rK" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
@@ -1856,6 +1859,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Ih" = (
@@ -2036,6 +2041,12 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_y = 26;
+	pixel_x = 41;
+	name = "bridge lockdown"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Lx" = (
@@ -2124,7 +2135,7 @@
 /obj/machinery/power/shuttle/engine/electric/premium{
 	name = "main drive";
 	dir = 4;
-	power_per_burn = 100000
+	power_per_burn = 200000
 	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering)
@@ -2248,7 +2259,8 @@
 	can_be_unanchored = 1;
 	can_unanchor = 0;
 	name = "low yield fusion bomb";
-	desc = "Every AI needs a failsafe."
+	desc = "Every AI needs a failsafe.";
+	base_icon_state = "nuclearbomb_base"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/maintenance/central)
@@ -3276,7 +3288,7 @@ Jx
 EQ
 nO
 EQ
-xy
+cb
 pi
 rf
 wq
@@ -3290,7 +3302,7 @@ Ok
 wq
 XO
 aX
-xy
+cb
 EQ
 lr
 EQ
@@ -3707,7 +3719,7 @@ by
 (32,1,1) = {"
 by
 by
-rJ
+mJ
 jX
 by
 by
