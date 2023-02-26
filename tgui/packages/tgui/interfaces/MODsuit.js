@@ -1,5 +1,21 @@
 import { useBackend, useLocalState } from '../backend';
-import { Button, ColorBox, LabeledList, ProgressBar, Section, Collapsible, Box, Icon, Stack, Table, Dimmer, NumberInput, Flex, AnimatedNumber, Dropdown } from '../components';
+import {
+  Button,
+  ColorBox,
+  LabeledList,
+  ProgressBar,
+  Section,
+  Collapsible,
+  Box,
+  Icon,
+  Stack,
+  Table,
+  Dimmer,
+  NumberInput,
+  Flex,
+  AnimatedNumber,
+  Dropdown,
+} from '../components';
 import { Window } from '../layouts';
 
 const ConfigureNumberEntry = (props, context) => {
@@ -100,7 +116,8 @@ const RadCounter = (props, context) => {
       <Stack.Item grow>
         <Section
           title="Уровень радиации"
-          color={active && userradiated ? 'bad' : 'good'}>
+          color={active && userradiated ? 'bad' : 'good'}
+        >
           {active && userradiated ? 'РАДИОАКТИВЕН' : 'ЧИСТ'}
         </Section>
       </Stack.Item>
@@ -112,7 +129,8 @@ const RadCounter = (props, context) => {
               good: [-Infinity, 0.2],
               average: [0.2, 0.5],
               bad: [0.5, Infinity],
-            }}>
+            }}
+          >
             <AnimatedNumber value={usertoxins} />
           </ProgressBar>
         </Section>
@@ -121,7 +139,8 @@ const RadCounter = (props, context) => {
         <Section
           title="Уровень заражения"
           color={active && threatlevel ? 'bad' : 'good'}
-          bold>
+          bold
+        >
           {active && threatlevel ? threatlevel : 0}
         </Section>
       </Stack.Item>
@@ -148,7 +167,8 @@ const HealthAnalyzer = (props, context) => {
             good: [0.5, Infinity],
             average: [0.2, 0.5],
             bad: [-Infinity, 0.2],
-          }}>
+          }}
+        >
           <AnimatedNumber value={active ? userhealth : 0} />
         </ProgressBar>
       </Section>
@@ -161,7 +181,8 @@ const HealthAnalyzer = (props, context) => {
                 good: [-Infinity, 0.2],
                 average: [0.2, 0.5],
                 bad: [0.5, Infinity],
-              }}>
+              }}
+            >
               <AnimatedNumber value={active ? userbrute : 0} />
             </ProgressBar>
           </Section>
@@ -174,7 +195,8 @@ const HealthAnalyzer = (props, context) => {
                 good: [-Infinity, 0.2],
                 average: [0.2, 0.5],
                 bad: [0.5, Infinity],
-              }}>
+              }}
+            >
               <AnimatedNumber value={active ? userburn : 0} />
             </ProgressBar>
           </Section>
@@ -187,7 +209,8 @@ const HealthAnalyzer = (props, context) => {
                 good: [-Infinity, 0.2],
                 average: [0.2, 0.5],
                 bad: [0.5, Infinity],
-              }}>
+              }}
+            >
               <AnimatedNumber value={active ? usertoxin : 0} />
             </ProgressBar>
           </Section>
@@ -200,7 +223,8 @@ const HealthAnalyzer = (props, context) => {
                 good: [-Infinity, 0.2],
                 average: [0.2, 0.5],
                 bad: [0.5, Infinity],
-              }}>
+              }}
+            >
               <AnimatedNumber value={active ? useroxy : 0} />
             </ProgressBar>
           </Section>
@@ -248,7 +272,8 @@ const StatusReadout = (props, context) => {
             good: [0.5, Infinity],
             average: [0.2, 0.5],
             bad: [-Infinity, 0.2],
-          }}>
+          }}
+        >
           <AnimatedNumber value={active ? statushealth : 0} />
         </ProgressBar>
       </Section>
@@ -261,7 +286,8 @@ const StatusReadout = (props, context) => {
                 good: [-Infinity, 0.2],
                 average: [0.2, 0.5],
                 bad: [0.5, Infinity],
-              }}>
+              }}
+            >
               <AnimatedNumber value={active ? statusbrute : 0} />
             </ProgressBar>
           </Section>
@@ -274,7 +300,8 @@ const StatusReadout = (props, context) => {
                 good: [-Infinity, 0.2],
                 average: [0.2, 0.5],
                 bad: [0.5, Infinity],
-              }}>
+              }}
+            >
               <AnimatedNumber value={active ? statusburn : 0} />
             </ProgressBar>
           </Section>
@@ -287,7 +314,8 @@ const StatusReadout = (props, context) => {
                 good: [-Infinity, 0.2],
                 average: [0.2, 0.5],
                 bad: [0.5, Infinity],
-              }}>
+              }}
+            >
               <AnimatedNumber value={statustoxin} />
             </ProgressBar>
           </Section>
@@ -300,7 +328,8 @@ const StatusReadout = (props, context) => {
                 good: [-Infinity, 0.2],
                 average: [0.2, 0.5],
                 bad: [0.5, Infinity],
-              }}>
+              }}
+            >
               <AnimatedNumber value={statusoxy} />
             </ProgressBar>
           </Section>
@@ -437,7 +466,8 @@ const ConfigureScreen = (props, context) => {
               fluid
               onClick={props.onExit}
               icon="times"
-              textAlign="center">
+              textAlign="center"
+            >
               Exit
             </Button>
           </Box>
@@ -475,8 +505,8 @@ const ParametersSection = (props, context) => {
   const status = malfunctioning
     ? 'Неисправность'
     : active
-      ? 'Активен'
-      : 'Неактивент';
+    ? 'Активен'
+    : 'Неактивент';
   return (
     <Section title="Параметры">
       <LabeledList>
@@ -488,7 +518,8 @@ const ParametersSection = (props, context) => {
               content={active ? 'Деактивировать' : 'Активировать'}
               onClick={() => act('activate')}
             />
-          }>
+          }
+        >
           {status}
         </LabeledList.Item>
         <LabeledList.Item
@@ -499,7 +530,8 @@ const ParametersSection = (props, context) => {
               content={locked ? 'Разблокировать' : 'Заблокировать'}
               onClick={() => act('lock')}
             />
-          }>
+          }
+        >
           {locked ? 'Заблокировано' : 'Разблокировано'}
         </LabeledList.Item>
         <LabeledList.Item label="Панель">
@@ -536,7 +568,9 @@ const HardwareSection = (props, context) => {
     <Section title="Оборудование">
       <Collapsible title="Детали">
         <LabeledList>
-          <LabeledList.Item label="Управляющий блок">{control}</LabeledList.Item>
+          <LabeledList.Item label="Управляющий блок">
+            {control}
+          </LabeledList.Item>
           <LabeledList.Item label="Шлем">{helmet || 'Нет'}</LabeledList.Item>
           <LabeledList.Item label="Нагрудник">
             {chestplate || 'Нет'}
@@ -740,7 +774,8 @@ export const MODsuit = (props, context) => {
       height={525}
       theme={ui_theme}
       title="MOD панель интерфейса"
-      resizable>
+      resizable
+    >
       <Window.Content scrollable={!interface_break}>
         {(!!interface_break && <LockedInterface />) || (
           <Stack vertical fill>
