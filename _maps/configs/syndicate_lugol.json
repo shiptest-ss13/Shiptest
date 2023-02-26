@@ -5,7 +5,7 @@
 	"namelists": ["ENGINEERING", "MYTHOLOGICAL", "SPACE"],
 	"map_path": "_maps/shuttles/shiptest/syndicate_gec_lugol.dmm",
 	"map_id": "gec_lugol",
-	"limit": 2,
+	"limit": 1,
 	"job_slots": {
 		"Project Overseer": {
 			"outfit": "/datum/outfit/job/ce/gec",
@@ -27,6 +27,10 @@
 		"GEC Apprentice": {
 			"outfit": "/datum/outfit/job/assistant/syndicate/gec",
 			"slots": 2
+		},
+		"Resource Haulier": {
+			"outfit": "/datum/outfit/job/assistant/syndicate/gec",
+			"slots": 1
 		}
 	},
 "enabled": true

@@ -905,9 +905,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plating,
@@ -1940,6 +1937,7 @@
 	},
 /obj/structure/closet/crate/radiation,
 /obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "qD" = (
@@ -2753,13 +2751,13 @@
 /obj/item/construction/rcd/combat{
 	name = "GEC-RCD"
 	},
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
 /obj/structure/closet/crate/engineering{
 	desc = "A crate for the storage of RCDs.";
 	name = "RCD Crate"
 	},
+/obj/item/rcd_ammo/large,
+/obj/item/rcd_ammo/large,
+/obj/item/rcd_ammo/large,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "xv" = (
@@ -3906,19 +3904,18 @@
 	},
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/plasmarglass/twenty,
 /obj/item/stack/sheet/mineral/wood/fifty,
-/obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/item/rcl/pre_loaded,
-/obj/item/stack/sheet/mineral/titanium/twenty,
-/obj/item/stack/sheet/mineral/titanium/five,
+/obj/item/stack/sheet/mineral/plastitanium/twenty,
 /obj/item/stack/sheet/plasteel/twenty,
-/obj/item/stack/sheet/plastic/twenty,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/item/stack/sheet/plastic/twenty,
 /obj/item/stack/rods/fifty,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
@@ -4530,6 +4527,7 @@
 /obj/item/clothing/shoes/sneakers/brown,
 /obj/item/clothing/head/hardhat/weldhat/white,
 /obj/item/areaeditor/shuttle,
+/obj/item/binoculars,
 /obj/item/clothing/head/hardhat/white,
 /obj/structure/closet/secure_closet/engineering_chief{
 	populate = 0;
@@ -5210,12 +5208,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"SN" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "engine_shutters"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering)
 "SQ" = (
 /obj/effect/turf_decal/corner/transparent/solgovgold{
 	dir = 6
@@ -6031,7 +6023,7 @@ Qs
 Qs
 qM
 qM
-SN
+sl
 PC
 PC
 sl
