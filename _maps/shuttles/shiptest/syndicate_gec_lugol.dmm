@@ -2807,10 +2807,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/meter/atmos{
-	name = "Plasma to Engines";
-	desc = "It measures Plasma to Engines."
-	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 9
 	},
@@ -3915,7 +3911,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/item/stack/sheet/plastic/twenty,
+/obj/item/stack/sheet/plastic/fifty,
 /obj/item/stack/rods/fifty,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
@@ -4185,6 +4181,10 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
+/obj/machinery/meter/atmos/layer4{
+	name = "Plasma to Engines";
+	desc = "It measures Plasma to Engines."
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "KV" = (
@@ -4208,6 +4208,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/item/stack/marker_beacon/thirty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Lb" = (
