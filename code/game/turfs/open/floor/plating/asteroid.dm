@@ -81,6 +81,7 @@
 			if(W.use_tool(src, user, 40, volume=50))
 				if(!can_dig(user))
 					return TRUE
+				getDug()
 				SSblackbox.record_feedback("tally", "pick_used_mining", 1, W.type)
 				return TRUE
 		else if(istype(W, /obj/item/storage/bag/ore))
