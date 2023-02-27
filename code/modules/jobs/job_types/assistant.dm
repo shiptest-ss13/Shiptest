@@ -150,6 +150,16 @@ Assistant
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = /obj/item/clothing/under/syndicate
 
+/datum/outfit/job/assistant/syndicate/gec
+	name = "Deckhand (Galactic Engineers Concordat)"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/toggle/hazard
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/safety_helmet
+
 /datum/outfit/job/assistant/independent/crewmatefancy
 	name = "Crewmate (Independent)"
 

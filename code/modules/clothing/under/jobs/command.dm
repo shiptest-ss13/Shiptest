@@ -155,3 +155,4 @@
 	desc = "A uniform used by officers of the Colonial Minutemen."
 	icon_state = "minuteman_officer"
 	item_state = "g_suit"
+	can_adjust = FALSE
