@@ -1,4 +1,7 @@
-//stackless space cash
+//space cash//
+//Faster. Stronger. Able to form variable amounts of infinite size. Icon based on matrix transformations.
+
+//Code borrowed from baycode by way of Eris.
 
 /obj/item/spacecash
 	name = "coin"
@@ -47,6 +50,10 @@
 
 /obj/item/spacecash/bundle
 	icon_state = "nothing"
+
+/obj/item/spacecash/bundle/Initialize()
+	. = ..()
+	update_icon()
 
 /obj/item/spacecash/bundle/update_icon()
 	cut_overlays()
@@ -124,9 +131,17 @@
 	usr.put_in_hands(bundle)
 	update_icon()
 
-/obj/item/spacecash/bundle/Initialize()
-	. = ..()
-	update_icon()
+/obj/item/spacecash/bundle/attack_hand(mob/user)
+	if(user.get_inactive_held_item() == src)
+		if(value == 0)//may prevent any edge case duping
+			qdel(src)
+			return
+		var/nuvalue = value - 1
+		value = nuvalue
+		user.put_in_hands(new /obj/item/spacecash/bundle(loc, 1))
+		update_icon()
+	else
+		. = ..()
 
 /obj/item/spacecash/bundle/get_item_credit_value()//used for vendors and ids.
 	return value
