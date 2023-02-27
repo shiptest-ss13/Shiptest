@@ -188,6 +188,6 @@
 	value = rand(500, 3000)
 	. = ..()
 
-/obj/item/spacecash/bundle/loadsamone/Initialize()
+/obj/item/spacecash/bundle/loadsamoney/Initialize()
 	value = rand(2500, 6000)
 	. = ..()
