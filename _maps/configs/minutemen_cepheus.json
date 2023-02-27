@@ -1,0 +1,37 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Cepheus-Class Mech Carrier",
+	"prefix": "CMSV",
+	"namelists": ["BRITISH_NAVY", "MYTHOLOGICAL"],
+	"map_short_name": "Cepheus-class",
+	"map_path": "_maps/shuttles/shiptest/minutemen_cepheus.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/minutemen",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/engineer/minutemen",
+			"slots": 1
+		},
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/security/minutemen",
+			"slots": 2
+		},
+		"Mech Pilot" :{
+			"outfit": "/datum/outfit/job/security/minutemen/mechpilot",
+			"slots": 2
+		},
+		"Roboticist": {
+			"outfit": "/datum/outfit/job/roboticist/technician/minutemen",
+			"slots": 1
+		},
+		"Cadet": {
+			"outfit": "/datum/outfit/job/assistant/minutemen",
+			"slots": 3
+		}
+	},
+	"enabled": true
+}

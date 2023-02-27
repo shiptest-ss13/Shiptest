@@ -109,7 +109,7 @@
 /obj/item/clothing/suit/armor/vest/security/warden/alt
 	name = "warden's armored jacket"
 	desc = "A white jacket with silver rank pips and body armor strapped on top."
-	icon_state = "armor_warden_vest"
+	icon_state = "armor_warden_jacket"
 
 /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
 	name = "warden's red armored jacket"
@@ -277,27 +277,27 @@
 /obj/item/clothing/suit/armor/riot/knight
 	name = "plate armour"
 	desc = "A classic suit of plate armour, highly effective at stopping melee attacks."
-	icon_state = "knight_green"
-	item_state = "knight_green"
+	icon_state = "riot_knight_green"
+	item_state = "riot_knight_green"
 	allowed = list(/obj/item/nullrod, /obj/item/claymore, /obj/item/banner, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/oxygen, /obj/item/tank/internals/plasmaman)
 
 /obj/item/clothing/suit/armor/riot/knight/yellow
-	icon_state = "knight_yellow"
-	item_state = "knight_yellow"
+	icon_state = "riot_knight_yellow"
+	item_state = "riot_knight_yellow"
 
 /obj/item/clothing/suit/armor/riot/knight/blue
-	icon_state = "knight_blue"
-	item_state = "knight_blue"
+	icon_state = "riot_knight_blue"
+	item_state = "riot_knight_blue"
 
 /obj/item/clothing/suit/armor/riot/knight/red
-	icon_state = "knight_red"
-	item_state = "knight_red"
+	icon_state = "riot_knight_red"
+	item_state = "riot_knight_red"
 
 /obj/item/clothing/suit/armor/riot/knight/greyscale
 	name = "heavy plate armour"
 	desc = "A suit of magical plate armour, able to be made from many different materials. The thick armor is far lighter than it otherwise would be."
-	icon_state = "knight_greyscale"
-	item_state = "knight_greyscale"
+	icon_state = "riot_knight_greyscale"
+	item_state = "riot_knight_greyscale"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS//Can change color and add prefix
 	armor = list("melee" = 45, "bullet" = 20, "laser" = 20, "energy" = 25, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 40, "acid" = 40)
 	slowdown = 0
@@ -468,7 +468,7 @@
 /obj/item/clothing/suit/armor/vest/security/warden
 	name = "warden's jacket"
 	desc = "Perfectly suited for the warden that wants to leave an impression of style on those who visit the brig."
-	icon_state = "wardenjacket"
+	icon_state = "armor_warden"
 	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/vest/security/hos
@@ -480,7 +480,7 @@
 /obj/item/clothing/suit/armor/vest/security/brig_phys
 	name = "brig physician's jacket"
 	desc = "A black jacket with dark blue and silver accents, for the brig physician to prove they're a real member of security in style."
-	icon_state = "brigphysjacket"
+	icon_state = "armor_brigphysjacket"
 	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/frontier
