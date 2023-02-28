@@ -311,38 +311,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
-"cw" = (
-/obj/item/holosign_creator/engineering,
-/obj/item/clothing/under/syndicate/gec,
-/obj/item/clothing/suit/toggle/hazard,
-/obj/item/storage/belt/utility/full/engi,
-/obj/item/clothing/glasses/welding,
-/obj/item/storage/toolbox/syndicate,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/analyzer,
-/obj/item/storage/toolbox/electrical,
-/obj/item/storage/bag/construction,
-/obj/item/clothing/glasses/meson/prescription,
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/mask/gas,
-/obj/structure/closet/secure_closet/engineering_personal{
-	populate = 0;
-	name = "GEC Engineer's Locker"
-	},
-/obj/structure/railing,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/plasteel/tech/grid,
-/area/template_noop)
 "cz" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband{
@@ -1709,28 +1677,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
-"oy" = (
-/obj/item/holosign_creator/engineering,
-/obj/item/clothing/under/syndicate/gec,
-/obj/item/clothing/suit/toggle/hazard,
-/obj/item/storage/belt/utility/full/engi,
-/obj/item/clothing/glasses/welding,
-/obj/item/storage/toolbox/syndicate,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/analyzer,
-/obj/item/storage/toolbox/electrical,
-/obj/item/storage/bag/construction,
-/obj/item/clothing/glasses/meson/prescription,
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/mask/gas,
-/obj/structure/closet/secure_closet/engineering_personal{
-	populate = 0;
-	name = "GEC Engineer's Locker"
-	},
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/plating,
-/area/template_noop)
 "oA" = (
 /obj/effect/turf_decal/corner/transparent/solgovgold{
 	dir = 10
@@ -3587,34 +3533,6 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"Ev" = (
-/obj/item/holosign_creator/engineering,
-/obj/item/clothing/under/syndicate/gec,
-/obj/item/clothing/suit/toggle/hazard,
-/obj/item/storage/belt/utility/full/engi,
-/obj/item/clothing/glasses/welding,
-/obj/item/storage/toolbox/syndicate,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/analyzer,
-/obj/item/storage/toolbox/electrical,
-/obj/item/storage/bag/construction,
-/obj/item/clothing/glasses/meson/prescription,
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/mask/gas,
-/obj/structure/closet/secure_closet/engineering_personal{
-	populate = 0;
-	name = "GEC Engineer's Locker"
-	},
-/obj/structure/railing,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/template_noop)
 "Ex" = (
 /obj/structure/railing{
 	dir = 8
@@ -4589,31 +4507,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"Lx" = (
-/obj/item/holosign_creator/engineering,
-/obj/item/clothing/under/syndicate/gec,
-/obj/item/clothing/suit/toggle/hazard,
-/obj/item/storage/belt/utility/full/engi,
-/obj/item/clothing/glasses/welding,
-/obj/item/storage/toolbox/syndicate,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/analyzer,
-/obj/item/storage/toolbox/electrical,
-/obj/item/storage/bag/construction,
-/obj/item/clothing/glasses/meson/prescription,
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/mask/gas,
-/obj/structure/closet/secure_closet/engineering_personal{
-	populate = 0;
-	name = "GEC Engineer's Locker"
-	},
-/obj/structure/railing,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 5
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/template_noop)
 "Lz" = (
 /obj/structure/catwalk/over/plated_catwalk/white{
 	color = "#4c535b"
@@ -5329,23 +5222,6 @@
 	icon = 'icons/obj/stairs.dmi'
 	},
 /area/ship/bridge)
-"Rb" = (
-/obj/effect/decal/fakelattice{
-	color = "#8D8B8B";
-	layer = 2.1
-	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 2
-	},
-/obj/structure/railing,
-/obj/structure/catwalk/over/plated_catwalk/white{
-	color = "#4c535b"
-	},
-/turf/open/floor/plating{
-	icon_state = "elevatorshaft";
-	color = "#8D8B8B"
-	},
-/area/template_noop)
 "Rj" = (
 /obj/effect/turf_decal/corner/transparent/solgovgold{
 	dir = 5
@@ -6334,9 +6210,9 @@ IC
 sl
 Qy
 Qy
-oy
 kD
-Rb
+kD
+kD
 kD
 kD
 kD
@@ -6376,7 +6252,7 @@ Uy
 kD
 kD
 kD
-cw
+kD
 kD
 kD
 "}
@@ -6409,7 +6285,7 @@ tx
 kD
 kD
 kD
-Ev
+kD
 kD
 kD
 "}
@@ -6442,7 +6318,7 @@ tx
 kD
 kD
 kD
-Lx
+kD
 kD
 kD
 "}
