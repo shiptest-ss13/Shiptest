@@ -12,6 +12,16 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
+"g" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "h" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/preopen{
@@ -20,27 +30,36 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "i" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 9
+/obj/machinery/power/terminal{
+	dir = 8
 	},
-/turf/open/floor/plating,
-/area/ship/bridge)
-"n" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "1-9"
+	},
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/obj/structure/cable{
+	icon_state = "1-5"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "s" = (
-/obj/machinery/atmospherics/pipe/manifold/orange{
-	dir = 4
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "u" = (
-/obj/machinery/atmospherics/components/unary/tank/toxins{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-10"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -49,9 +68,9 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "z" = (
-/obj/machinery/porta_turret/centcom_shuttle{
+/obj/machinery/porta_turret/syndicate/energy{
 	dir = 4;
-	pixel_x = 10
+	pixel_x = 8
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -71,11 +90,14 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "D" = (
-/obj/machinery/atmospherics/pipe/manifold/orange{
+/obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -83,6 +105,9 @@
 /obj/machinery/door/airlock/external,
 /obj/machinery/door/poddoor/preopen{
 	id = "jbs04EM"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -100,14 +125,27 @@
 	id = "jbs04EM"
 	},
 /obj/machinery/suit_storage_unit/inherit,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"G" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "I" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
 	},
 /obj/structure/window/plasma/reinforced{
-	dir = 8
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -115,33 +153,20 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "M" = (
-/obj/machinery/power/emitter/welded{
-	dir = 4;
-	projectile_sound = 'sound/weapons/gun/general/rocket_launch.ogg';
-	projectile_type = /obj/projectile/bullet/a84mm_he;
-	icon = 'icons/mecha/mecha_equipment.dmi';
-	icon_state = "mecha_missilerack_six";
-	icon_state_on = "mecha_missilerack_six";
-	icon_state_underpowered = "mecha_missilerack_six";
-	name = "missile launcher";
-	pixel_y = 12;
-	pixel_x = 12;
-	id = "dbfire"
+/obj/structure/cable{
+	icon_state = "0-9"
 	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
-"N" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ship/bridge)
-"O" = (
-/obj/machinery/porta_turret/centcom_shuttle{
+/obj/machinery/porta_turret/syndicate/energy{
 	dir = 4;
 	pixel_x = 8
 	},
 /turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"N" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/turf/open/floor/engine/hull,
 /area/ship/bridge)
 "Q" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -162,18 +187,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "W" = (
-/obj/machinery/power/emitter/welded{
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/porta_turret/syndicate/energy{
 	dir = 4;
-	projectile_sound = 'sound/weapons/gun/general/rocket_launch.ogg';
-	projectile_type = /obj/projectile/bullet/a84mm_he;
-	icon = 'icons/mecha/mecha_equipment.dmi';
-	icon_state = "mecha_missilerack_six";
-	icon_state_on = "mecha_missilerack_six";
-	icon_state_underpowered = "mecha_missilerack_six";
-	name = "missile launcher";
-	pixel_y = -4;
-	pixel_x = 12;
-	id = "dbfire"
+	pixel_x = 8
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -186,7 +205,7 @@
 "Y" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 33;
-	pixel_x = -8
+	pixel_x = -13
 	},
 /obj/machinery/button/door{
 	pixel_y = 26;
@@ -194,13 +213,17 @@
 	id = "jbs04EM";
 	name = "Emergency Lockdown"
 	},
-/obj/machinery/button{
-	pixel_y = 38;
-	pixel_x = 5;
-	name = "rocket launch";
-	id = "dbfire"
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"Z" = (
+/obj/machinery/turretid{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 
 (1,1,1) = {"
@@ -222,17 +245,17 @@ a
 a
 "}
 (3,1,1) = {"
-O
+z
 L
-I
-b
+g
+G
 I
 L
 z
 "}
 (4,1,1) = {"
 a
-n
+L
 s
 D
 i
@@ -260,7 +283,7 @@ a
 (7,1,1) = {"
 a
 a
-b
+Z
 Y
 E
 a

@@ -263,21 +263,9 @@
 	file_name = "ruin_syndicate_dropship"
 	name = "Syndicate Dropship"
 
-/datum/map_template/shuttle/ruin/syndicate_fighter_shiv
-	file_name = "ruin_syndicate_fighter_shiv"
-	name = "Syndicate Fighter"
-
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
-
-/datum/map_template/shuttle/ruin/syndicate_interceptor
-	file_name = "ruin_syndicate_interceptor"
-	name = "Syndicate Interceptor"
-	prefix = "SSV"
-	name_categories = list("WEAPONS")
-	short_name = "Dartbird"
-
 
 //Subshuttles
 
@@ -286,3 +274,13 @@
 
 //your subshuttle here
 
+/datum/map_template/shuttle/subshuttles/syndicate_interceptor
+	file_name = "syndicate_dartbird_interceptor"
+	name = "Dartbird Interceptor"
+	prefix = "SSV"
+	name_categories = list("WEAPONS")
+	short_name = "Dartbird"
+
+/datum/map_template/shuttle/subshuttles/syndicate_fighter_shiv
+	file_name = "syndicate_fighter_shiv"
+	name = "Shiv Fighter"

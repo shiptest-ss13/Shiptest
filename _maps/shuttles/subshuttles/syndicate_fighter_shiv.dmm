@@ -4,6 +4,9 @@
 	name = "Grav Couch";
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "cU" = (
@@ -90,12 +93,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
-"us" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/security)
 "uW" = (
 /obj/machinery/button/door{
 	id = "caravansyndicate1_bolt";
@@ -133,6 +130,7 @@
 	pixel_y = -26;
 	dir = 1
 	},
+/obj/structure/cable,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "wV" = (
@@ -154,6 +152,9 @@
 	port_direction = 2;
 	preferred_direction = 4;
 	width = 9
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/security)
@@ -197,13 +198,13 @@
 
 (1,1,1) = {"
 Jv
-us
+Jv
 YX
 YX
 wV
 YX
 YX
-us
+Jv
 Jv
 "}
 (2,1,1) = {"
