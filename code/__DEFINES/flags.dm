@@ -46,11 +46,6 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 /// Should we use the initial icon for display? Mostly used by overlay only objects
 #define HTML_USE_INITAL_ICON_1 (1<<20)
 
-/// If the thing can reflect light (lasers/energy)
-#define RICOCHET_SHINY (1<<0)
-/// If the thing can reflect matter (bullets/bomb shrapnel)
-#define RICOCHET_HARD (1<<1)
-
 //turf-only flags
 #define NOJAUNT_1 (1<<0)
 /// If a turf can be made dirty at roundstart. This is also used in areas.
@@ -59,6 +54,13 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define NO_LAVA_GEN_1 (1<<3)
 /// Blocks ruins spawning on the turf
 #define NO_RUINS_1 (1<<4)
+
+
+//ricochet flags
+/// If the thing can reflect light (lasers/energy)
+#define RICOCHET_SHINY (1<<0)
+/// If the thing can reflect matter (bullets/bomb shrapnel)
+#define RICOCHET_HARD (1<<1)
 
 ////////////////Area flags\\\\\\\\\\\\\\
 /// If it's a valid territory for cult summoning or the CRAB-17 phone to spawn
@@ -71,18 +73,16 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define FLORA_ALLOWED (1<<3)
 /// If mobs can be spawned by natural random generation
 #define MOB_SPAWN_ALLOWED (1<<4)
-/// If megafauna can be spawned by natural random generation
-#define MEGAFAUNA_SPAWN_ALLOWED (1<<5)
 /// Are you forbidden from teleporting to the area? (centcom, mobs, wizard, hand teleporter)
-#define NOTELEPORT (1<<6)
+#define NOTELEPORT (1<<5)
 /// Hides area from player Teleport function.
-#define HIDDEN_AREA (1<<7)
+#define HIDDEN_AREA (1<<6)
 /// If false, loading multiple maps with this area type will create multiple instances.
-#define UNIQUE_AREA (1<<8)
+#define UNIQUE_AREA (1<<7)
 /// If people are allowed to suicide in it. Mostly for OOC stuff like minigames
-#define BLOCK_SUICIDE (1<<9)
+#define BLOCK_SUICIDE (1<<8)
 /// Can the Xenobio management console transverse this area by default?
-#define XENOBIOLOGY_COMPATIBLE (1<<10)
+#define XENOBIOLOGY_COMPATIBLE (1<<9)
 
 /*
 	These defines are used specifically with the atom/pass_flags bitmask
