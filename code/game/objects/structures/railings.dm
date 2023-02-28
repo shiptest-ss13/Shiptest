@@ -8,6 +8,8 @@
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
+	var/buildstack = /obj/item/stack/rods
+	var/buildstackamount = 3
 
 
 /obj/structure/railing/Initialize()
@@ -22,7 +24,7 @@
 	icon_state = "railing_corner"
 	density = FALSE
 	climbable = FALSE
-
+	buildstackamount = 1
 /obj/structure/railing/ComponentInitialize(skip)
 	if(skip)
 		return ..()
@@ -56,6 +58,8 @@
 	. = ..()
 	if(!anchored)
 		to_chat(user, "<span class='warning'>You cut apart the railing.</span>")
+		//var/obj/item/stack/rods/M = new (loc, 3)
+		new buildstack(loc, buildstackamount)
 		I.play_tool_sound(src, 100)
 		deconstruct()
 		return TRUE
@@ -132,7 +136,9 @@
 /obj/structure/railing/wood
 	name = "wooden railing"
 	color = "#A47449"
+	buildstack = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/railing/corner/wood
 	name = "wooden railing"
 	color = "#A47449"
+	buildstack = /obj/item/stack/sheet/mineral/wood
