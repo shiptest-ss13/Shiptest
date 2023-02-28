@@ -71,20 +71,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
-"bu" = (
-/obj/machinery/door/window/brigdoor{
-	dir = 1
-	},
-/obj/machinery/door/window/brigdoor,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 9
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/structure/holosign/barrier/atmos,
-/turf/open/floor/engine,
-/area/ship/engineering/engine)
 "bv" = (
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable/yellow{
@@ -1202,15 +1188,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
-"rU" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	width = 7;
-	height = 15;
-	dheight = -1
-	},
-/turf/open/floor/mineral/plastitanium/red/airless,
-/area/ship/external)
 "se" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 1
@@ -1634,13 +1611,7 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"xL" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 10
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/medical)
-"xM" = (
+"xI" = (
 /obj/docking_port/stationary{
 	height = 15;
 	width = 7;
@@ -1649,6 +1620,12 @@
 	},
 /turf/open/floor/mineral/plastitanium/red/airless,
 /area/ship/external)
+"xL" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "xV" = (
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
@@ -2526,6 +2503,20 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Nw" = (
+/obj/machinery/door/window/brigdoor{
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 9
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/holosign/barrier/atmos/infinite,
+/turf/open/floor/engine,
+/area/ship/engineering/engine)
 "NW" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2957,6 +2948,15 @@
 	},
 /turf/open/floor/mineral/plastitanium/airless,
 /area/ship/external)
+"Zw" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	width = 7;
+	height = 15;
+	dheight = -1
+	},
+/turf/open/floor/mineral/plastitanium/red/airless,
+/area/ship/external)
 "ZW" = (
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/crew)
@@ -2979,7 +2979,7 @@ Zf
 Zf
 Zt
 qg
-rU
+Zw
 xe
 Zf
 Zf
@@ -3304,7 +3304,7 @@ Zf
 UN
 HQ
 pl
-bu
+Nw
 ed
 fg
 ja
@@ -3655,7 +3655,7 @@ Zf
 Zf
 Rt
 qk
-xM
+xI
 Bd
 Zf
 Zf

@@ -47,7 +47,8 @@
 	if(mapzone)
 		return TRUE
 	log_shuttle("[src] [REF(src)] OUTPOST LEVEL_INIT")
-	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, FALSE, null)
+	// we just use the default mapgen for now
+	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, null)
 	if(!length(dynamic_encounter_values))
 		return FALSE
 	mapzone = dynamic_encounter_values[1]

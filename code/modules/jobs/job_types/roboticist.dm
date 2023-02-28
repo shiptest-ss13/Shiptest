@@ -106,3 +106,10 @@
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 	shoes = /obj/item/clothing/shoes/workboots
 
+/datum/outfit/job/roboticist/technician/minutemen
+	name = "Mech Technician (Minutemen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	shoes = /obj/item/clothing/shoes/combat
+	ears = /obj/item/radio/headset/minutemen
+	suit = /obj/item/clothing/suit/toggle/labcoat/science

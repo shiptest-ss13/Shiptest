@@ -506,15 +506,6 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science/xenobiology)
-"hD" = (
-/obj/structure/grille/broken,
-/obj/effect/decal/cleanable/glass,
-/obj/item/shard,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/holosign/barrier,
-/obj/machinery/door/firedoor/window,
-/turf/open/floor/plating,
-/area/ship/science/robotics)
 "hH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/jukebox/disco{
@@ -536,17 +527,6 @@
 /obj/effect/spawner/lootdrop/xenospawner,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/canteen)
-"hR" = (
-/obj/structure/holosign/barrier/medical,
-/obj/machinery/light/floor,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/turf/open/floor/mineral/titanium/tiled/purple,
-/area/ship/science/xenobiology)
 "hX" = (
 /obj/item/circuitboard/machine/protolathe/department/science,
 /obj/item/kirbyplants/random,
@@ -1747,22 +1727,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/bridge)
-"zg" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/external,
-/obj/structure/fans/tiny,
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 2
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
-	},
-/turf/open/floor/plating,
-/area/ship/hallway/aft)
 "zr" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/titanium/tiled/white,
@@ -1810,13 +1774,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/office)
-"zY" = (
-/obj/structure/holosign/barrier,
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/turf/open/floor/mineral/titanium/tiled/white,
-/area/ship/hallway/fore)
 "Ab" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2050,6 +2007,13 @@
 /obj/effect/decal/cleanable/xenoblood,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
+"CO" = (
+/obj/structure/holosign/barrier/infinite,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/hallway/fore)
 "CP" = (
 /obj/effect/decal/cleanable/xenoblood,
 /turf/open/floor/plating,
@@ -2707,16 +2671,6 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/aft)
-"Jg" = (
-/obj/structure/holosign/barrier,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/firedoor,
-/turf/open/floor/mineral/titanium/tiled/white,
-/area/ship/hallway/fore)
 "Jh" = (
 /obj/structure/cable{
 	icon_state = "2-5"
@@ -2875,16 +2829,23 @@
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/dorm)
-"KO" = (
-/obj/structure/holosign/barrier,
-/turf/open/floor/mineral/titanium/tiled/white,
-/area/ship/hallway/aft)
 "KS" = (
 /obj/machinery/light/broken{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/fore)
+"Lc" = (
+/obj/structure/holosign/barrier/medical/infinite,
+/obj/machinery/light/floor,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/tiled/purple,
+/area/ship/science/xenobiology)
 "Le" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/glass,
@@ -3004,6 +2965,15 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/bridge)
+"Na" = (
+/obj/structure/grille/broken,
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/holosign/barrier/infinite,
+/obj/machinery/door/firedoor/window,
+/turf/open/floor/plating,
+/area/ship/science/robotics)
 "Nb" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/mineral/titanium/tiled/white,
@@ -3089,6 +3059,10 @@
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/dorm)
+"NX" = (
+/obj/structure/holosign/barrier/infinite,
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/hallway/aft)
 "NY" = (
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/aft)
@@ -3191,6 +3165,16 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/ai_chamber)
+"Pq" = (
+/obj/structure/holosign/barrier/infinite,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor,
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/hallway/fore)
 "Pt" = (
 /obj/effect/decal/cleanable/oil,
 /obj/item/wrench/crescent,
@@ -3476,6 +3460,22 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/ai_chamber)
+"SF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/external,
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 2;
+	dheight = -1
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/aft)
 "SN" = (
 /mob/living/simple_animal/pet/cat/original{
 	mob_size = 1.1
@@ -4408,7 +4408,7 @@ hP
 Rx
 Hz
 Xx
-hR
+Lc
 kS
 jy
 Mc
@@ -4470,7 +4470,7 @@ Jq
 oJ
 CZ
 Xt
-KO
+NX
 QM
 Iz
 TE
@@ -4494,7 +4494,7 @@ YK
 zr
 to
 DK
-Jg
+Pq
 KB
 Qo
 sO
@@ -4519,7 +4519,7 @@ EN
 kC
 Vw
 rT
-zY
+CO
 Gj
 cC
 cC
@@ -4589,7 +4589,7 @@ VQ
 eE
 md
 RQ
-KO
+NX
 jd
 Pt
 WF
@@ -4762,7 +4762,7 @@ yc
 TZ
 eM
 aB
-zg
+SF
 "}
 (22,1,1) = {"
 vo
@@ -4836,7 +4836,7 @@ Dd
 Dd
 dL
 Le
-hD
+Na
 tt
 EM
 EM

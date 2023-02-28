@@ -312,15 +312,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
-"fv" = (
-/obj/machinery/selling_pad,
-/obj/effect/turf_decal/box,
-/obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = 22
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
 "fy" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -413,6 +404,18 @@
 "hs" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
+"hS" = (
+/obj/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/item/radio/intercom{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 31
+	},
+/turf/open/floor/carpet/red_gold,
+/area/ship/hallway/central)
 "hX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/brown/border{
@@ -1191,6 +1194,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"wi" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/clothing/head/HoS/beret/syndicate,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/gun/ballistic/shotgun/doublebarrel,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/structure/closet/secure_closet/bar{
+	req_access = null;
+	req_one_access_txt = list(25,41)
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/engineering)
 "wP" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1431,20 +1448,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"Ca" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/clothing/head/HoS/beret/syndicate,
-/obj/item/radio/headset/syndicate/alt,
-/obj/item/gun/ballistic/shotgun/doublebarrel,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/structure/closet/secure_closet/bar{
-	req_access = null;
-	req_one_access_txt = list(25,41)
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering)
 "CC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/dark,
@@ -1656,6 +1659,31 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
+"Fe" = (
+/obj/effect/turf_decal/siding/red,
+/obj/structure/closet/secure_closet/freezer/wall{
+	dir = 1;
+	name = "refrigerator";
+	pixel_y = -32
+	},
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketteriyaki,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpocketspicy,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets/donkpockethonk,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "Fq" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1697,13 +1725,6 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Gv" = (
-/obj/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/turf/open/floor/carpet/red_gold,
-/area/ship/hallway/central)
 "GG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1726,6 +1747,18 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
+"Hd" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "syndiefuck"
+	},
+/obj/docking_port/stationary{
+	dir = 8;
+	width = 7;
+	height = 15;
+	dheight = -1
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/cargo)
 "Hk" = (
 /obj/machinery/light,
 /obj/structure/rack,
@@ -1918,31 +1951,6 @@
 /obj/item/construction/rcd/combat,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
-"KZ" = (
-/obj/effect/turf_decal/siding/red,
-/obj/structure/closet/secure_closet/freezer/wall{
-	dir = 1;
-	name = "refrigerator";
-	pixel_y = -32
-	},
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketteriyaki,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpocketspicy,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpockethonk,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/canteen)
 "La" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
@@ -2025,18 +2033,6 @@
 "Nr" = (
 /turf/template_noop,
 /area/template_noop)
-"Nt" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "syndiefuck"
-	},
-/obj/docking_port/stationary{
-	dir = 8;
-	width = 7;
-	height = 15;
-	dheight = -1
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
 "NH" = (
 /obj/effect/turf_decal/siding/blue/corner,
 /obj/effect/turf_decal/corner/opaque/blue/half{
@@ -2152,6 +2148,11 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
+"PK" = (
+/obj/machinery/selling_pad,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hallway/central)
 "PO" = (
 /obj/structure/sign/poster/contraband/syndicate_recruitment{
 	pixel_x = 4;
@@ -2713,7 +2714,7 @@ Nr
 hs
 eH
 Rt
-Nt
+Hd
 Rt
 Ev
 Ka
@@ -2997,8 +2998,8 @@ qP
 tU
 tU
 IB
-fv
-Gv
+PK
+hS
 xa
 dp
 dH
@@ -3010,7 +3011,7 @@ Jr
 PO
 vp
 AF
-Ca
+wi
 cB
 Ip
 ul
@@ -3177,7 +3178,7 @@ uB
 kE
 sF
 UI
-KZ
+Fe
 YI
 Rp
 DW
