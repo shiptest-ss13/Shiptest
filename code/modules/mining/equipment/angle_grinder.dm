@@ -28,7 +28,7 @@
 
 /obj/item/anglegrinder
 	name = "angle grinder"
-	desc = "A powerfull tool to salvage about anything. You better wear some protection tough"
+	desc = "A powerfull tool to salvage about anything, you should wear earmuffs and welding protection to avoid damage to your ears and eyes."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "anglegrinder_off"
 	lefthand_file = 'icons/mob/inhands/weapons/chainsaw_lefthand.dmi'
