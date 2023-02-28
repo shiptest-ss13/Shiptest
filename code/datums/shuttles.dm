@@ -10,6 +10,7 @@
 
 	var/port_x_offset
 	var/port_y_offset
+	var/port_dir
 
 	var/limit = 2
 	var/enabled
@@ -44,9 +45,23 @@
 /datum/map_template/shuttle/proc/discover_port_offset()
 	var/key
 	var/list/models = cached_map.grid_models
+	var/start_pos
+	var/model_text = models[key]
 	for(key in models)
-		if(findtext(models[key], "[/obj/docking_port/mobile]")) // Yay compile time checks
+		model_text = models[key]
+		start_pos = findtext(model_text, "[/obj/docking_port/mobile]")
+		if(start_pos) // Yay compile time checks
 			break // This works by assuming there will ever only be one mobile dock in a template at most
+
+	// Finding the dir of the mobile port
+	var/dpos = cached_map.find_next_delimiter_position(model_text, start_pos, ",","{","}")
+	var/cache_text = cached_map.trim_text(copytext(model_text, start_pos, dpos))
+	var/variables_start = findtext(cache_text, "{")
+	port_dir = NORTH // Incase something went wrong with variables from the cache
+	if(variables_start)
+		cache_text = copytext(cache_text, variables_start + length(cache_text[variables_start]), -length(copytext_char(cache_text, -1)))
+		var/list/fields = cached_map.readlist(cache_text, ";")
+		port_dir = fields["dir"] ? fields["dir"] : NORTH
 
 	for(var/datum/grid_set/gset as anything in cached_map.gridSets)
 		var/ycrd = gset.ycrd
