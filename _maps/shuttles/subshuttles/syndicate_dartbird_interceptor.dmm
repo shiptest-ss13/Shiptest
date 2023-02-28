@@ -1,0 +1,318 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/template_noop,
+/area/template_noop)
+"b" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"c" = (
+/obj/structure/chair/comfy/shuttle{
+	name = "Grav Couch";
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"g" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"h" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	id = "jbs04EM"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"i" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-9"
+	},
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/obj/structure/cable{
+	icon_state = "1-5"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"s" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"u" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"v" = (
+/obj/structure/sign/syndicate,
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"z" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 4;
+	pixel_x = 8
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"B" = (
+/obj/structure/sign/syndicate,
+/obj/docking_port/mobile{
+	callTime = 50;
+	dir = 4;
+	dwidth = 4;
+	height = 5;
+	ignitionTime = 25;
+	name = "Syndicate Fighter";
+	port_direction = 2;
+	preferred_direction = 4;
+	width = 9
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"D" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"E" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/door/poddoor/preopen{
+	id = "jbs04EM"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"F" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/item/clothing/suit/space/pilot,
+/obj/item/clothing/head/helmet/space/pilot,
+/obj/item/tank/jetpack/oxygen,
+/obj/machinery/door/poddoor/preopen{
+	id = "jbs04EM"
+	},
+/obj/machinery/suit_storage_unit/inherit,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"G" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"I" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 8
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"L" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"M" = (
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 4;
+	pixel_x = 8
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"N" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/bridge)
+"Q" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 9
+	},
+/obj/effect/turf_decal/number/zero{
+	pixel_x = -6
+	},
+/obj/effect/turf_decal/number/four{
+	pixel_x = 6
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"V" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"W" = (
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 4;
+	pixel_x = 8
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"X" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 10
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+"Y" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 33;
+	pixel_x = -13
+	},
+/obj/machinery/button/door{
+	pixel_y = 26;
+	pixel_x = 5;
+	id = "jbs04EM";
+	name = "Emergency Lockdown"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"Z" = (
+/obj/machinery/turretid{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
+
+(1,1,1) = {"
+a
+a
+a
+B
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+N
+b
+N
+a
+a
+"}
+(3,1,1) = {"
+z
+L
+g
+G
+I
+L
+z
+"}
+(4,1,1) = {"
+a
+L
+s
+D
+i
+b
+a
+"}
+(5,1,1) = {"
+a
+W
+L
+u
+L
+M
+a
+"}
+(6,1,1) = {"
+a
+a
+X
+F
+Q
+a
+a
+"}
+(7,1,1) = {"
+a
+a
+Z
+Y
+E
+a
+a
+"}
+(8,1,1) = {"
+a
+a
+v
+c
+v
+a
+a
+"}
+(9,1,1) = {"
+a
+a
+h
+V
+h
+a
+a
+"}
+(10,1,1) = {"
+a
+a
+h
+h
+h
+a
+a
+"}

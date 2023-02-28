@@ -534,23 +534,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/science)
-"dR" = (
-/obj/structure/fans/tiny,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/door/poddoor{
-	id = "cargo_ageis";
-	name = "Cargo Bay"
-	},
-/obj/docking_port/stationary{
-	dir = 8;
-	width = 7;
-	height = 15;
-	dheight = -1
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/cargo)
 "dS" = (
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable/yellow{
@@ -1075,13 +1058,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
-"ic" = (
-/obj/machinery/power/smes/engineering,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering)
 "ij" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -1832,6 +1808,16 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "enginestorage";
 	name = "Engineering Storage"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"qq" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -4378,6 +4364,23 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/janitor)
+"Pk" = (
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	id = "cargo_ageis";
+	name = "Cargo Bay"
+	},
+/obj/docking_port/stationary{
+	dir = 8;
+	width = 7;
+	height = 15;
+	dheight = -1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
 "PM" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -5421,7 +5424,7 @@ iq
 VG
 ze
 Dy
-dR
+Pk
 ze
 aP
 aP
@@ -5911,7 +5914,7 @@ IU
 iv
 mp
 ya
-ic
+qq
 It
 "}
 (16,1,1) = {"

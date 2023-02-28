@@ -1,4 +1,22 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"am" = (
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "piratecargo";
+	name = "Cargo Bay"
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 2;
+	dheight = -1
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/cargo)
 "au" = (
 /obj/effect/turf_decal/corner/transparent/neutral/full,
 /obj/structure/frame/computer,
@@ -98,24 +116,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
-"fd" = (
-/obj/structure/fans/tiny,
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 2
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "piratecargo";
-	name = "Cargo Bay"
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo)
 "fi" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/cable{
@@ -371,14 +371,6 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/security)
-"oo" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/sign/poster/official/solgov_enlist{
-	pixel_x = 32
-	},
-/obj/machinery/autolathe,
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
 "oQ" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 8
@@ -688,6 +680,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"vm" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/sign/poster/solgov/solgov_enlist{
+	pixel_x = 32
+	},
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "vo" = (
 /obj/machinery/door/airlock/hatch{
 	name = "External Access Hatch"
@@ -2130,7 +2130,7 @@ Sw
 WC
 br
 dD
-fd
+am
 "}
 (10,1,1) = {"
 XB
@@ -2209,7 +2209,7 @@ KS
 Og
 SR
 Xx
-oo
+vm
 NN
 Fx
 "}

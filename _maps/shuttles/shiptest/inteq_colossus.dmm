@@ -1346,18 +1346,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"oP" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/poddoor{
-	id = "colossus_port"
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
-/turf/open/floor/engine/hull,
-/area/ship/cargo)
 "oQ" = (
 /obj/effect/turf_decal/floordetail/edgedrain{
 	dir = 1
@@ -1505,21 +1493,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"pX" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "colossus_starboard"
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
-	},
-/turf/open/floor/engine/hull,
-/area/ship/cargo)
 "qq" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/cable{
@@ -2845,6 +2818,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
+"DU" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/poddoor{
+	id = "colossus_port"
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dheight = -1
+	},
+/turf/open/floor/engine/hull,
+/area/ship/cargo)
 "DX" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -3175,6 +3160,21 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"HQ" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "colossus_starboard"
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 2;
+	dheight = -1
+	},
+/turf/open/floor/engine/hull,
+/area/ship/cargo)
 "It" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -4363,28 +4363,6 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
-"Xa" = (
-/obj/structure/rack,
-/obj/item/ammo_box/magazine/m12g/small{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/magazine/m12g/small{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/gun/ballistic/shotgun/bulldog/inteq{
-	mag_type = /obj/item/ammo_box/magazine/m12g/small;
-	pixel_y = -2
-	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
-/obj/structure/sign/poster/official/twelve_gauge{
-	pixel_y = -32
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security/armory)
 "Xn" = (
 /obj/machinery/rnd/production/protolathe/department/security,
 /obj/structure/extinguisher_cabinet{
@@ -4602,6 +4580,28 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"Za" = (
+/obj/structure/rack,
+/obj/item/ammo_box/magazine/m12g/small{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/ammo_box/magazine/m12g/small{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/shotgun/bulldog/inteq{
+	mag_type = /obj/item/ammo_box/magazine/m12g/small;
+	pixel_y = -2
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/structure/sign/poster/contraband/twelve_gauge{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security/armory)
 "Zc" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -4967,7 +4967,7 @@ XJ
 XJ
 XJ
 XJ
-oP
+DU
 Cu
 qR
 Tk
@@ -4977,7 +4977,7 @@ du
 Zc
 MU
 Ks
-pX
+HQ
 XJ
 XJ
 XJ
@@ -5085,7 +5085,7 @@ jy
 bl
 hf
 al
-Xa
+Za
 Dq
 "}
 (19,1,1) = {"

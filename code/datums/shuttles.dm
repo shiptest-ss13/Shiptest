@@ -325,10 +325,6 @@
 	file_name = "ruin_syndicate_dropship"
 	name = "Syndicate Dropship"
 
-/datum/map_template/shuttle/ruin/syndicate_fighter_shiv
-	file_name = "ruin_syndicate_fighter_shiv"
-	name = "Syndicate Fighter"
-
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
@@ -350,22 +346,24 @@
 	file_name = "independant_pill"
 	name = "Pill-Class Torture Device"
 	prefix = "Pill"
+	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pillb
 	file_name = "pill_black"
 	name = "Blackpill-Class Manned Torpedo"
 	prefix = "Pill"
+	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pills
 	file_name = "pill_super"
 	name = "Superpill-Class Experimental Engineering Platform"
 	prefix = "Pill"
+	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/minimalta
 	file_name = "pirate_mechcarrier_subship"
 	name = "Malta Dropship"
 	prefix = "ISV"
-
 
 /datum/map_template/shuttle/subshuttles/kunai
 	file_name = "kunai_dropship"
@@ -382,5 +380,15 @@
 	name = "Mining Shuttle"
 	prefix = "NTSV"
 
-//your subshuttle here
+/datum/map_template/shuttle/subshuttles/syndicate_interceptor
+	file_name = "syndicate_dartbird_interceptor"
+	name = "Dartbird Interceptor"
+	prefix = "SSV"
+	name_categories = list("WEAPONS")
+	short_name = "Dartbird"
 
+/datum/map_template/shuttle/subshuttles/syndicate_fighter_shiv
+	file_name = "syndicate_fighter_shiv"
+	name = "Shiv Fighter"
+
+//your subshuttle here

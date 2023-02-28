@@ -1539,22 +1539,6 @@
 /obj/item/soap,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/dorm)
-"sh" = (
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8
-	},
-/obj/machinery/door/firedoor/heavy,
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/hallway/aft)
 "sv" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -1930,6 +1914,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
+"xD" = (
+/obj/structure/sign/poster/solgov/solgov_enlist,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/hallway/port)
 "xM" = (
 /obj/item/radio/intercom{
 	pixel_x = 32
@@ -2343,16 +2331,6 @@
 /obj/structure/chair/comfy/black,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
-"Bk" = (
-/obj/structure/catwalk,
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
-	},
-/turf/template_noop,
-/area/ship/external)
 "Bl" = (
 /obj/machinery/mineral/ore_redemption{
 	dir = 8
@@ -2537,6 +2515,22 @@
 	},
 /turf/open/floor/eighties,
 /area/ship/crew/dorm)
+"CN" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8
+	},
+/obj/machinery/door/firedoor/heavy,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dheight = -1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/aft)
 "CO" = (
 /obj/machinery/cryopod,
 /turf/open/floor/eighties,
@@ -3367,10 +3361,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"Mg" = (
-/obj/structure/sign/poster/official/solgov_enlist,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/hallway/port)
 "Mi" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -4349,6 +4339,16 @@
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"Yf" = (
+/obj/structure/catwalk,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dir = 2;
+	dheight = -1
+	},
+/turf/template_noop,
+/area/ship/external)
 "Yg" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -4777,7 +4777,7 @@ Ob
 zR
 "}
 (11,1,1) = {"
-sh
+CN
 iW
 YV
 Jr
@@ -5138,7 +5138,7 @@ fu
 bQ
 us
 AU
-Bk
+Yf
 "}
 (25,1,1) = {"
 YU
@@ -5172,7 +5172,7 @@ YU
 YU
 YU
 wd
-Mg
+xD
 jR
 OL
 qd
