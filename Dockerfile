@@ -31,7 +31,7 @@ RUN git init \
 FROM rust-build as auxmos
 RUN git init \
     && /bin/bash -c "source dependencies.sh \
-    && git remote add origin $AUXMOS_REPO \
+    && git remote add origin \$AUXMOS_REPO \
     && git fetch --depth 1 origin \$AUXMOS_VERSION" \
     && git checkout FETCH_HEAD \
     && cargo rustc --target=i686-unknown-linux-gnu --release --features all_reaction_hooks,katmos -- -C target-cpu=native
