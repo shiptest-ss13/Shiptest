@@ -152,3 +152,34 @@
 	flags_inv = HIDEJUMPSUIT
 	resistance_flags = NONE
 	flags_1 = RAD_PROTECT_CONTENTS_1
+
+/obj/item/clothing/head/radiation/space
+	name = "low-pressure radiation helmet"
+	desc = "A space helmet with radiation protective properties. The label reads, 'Made with lead. Please do not consume insulation.'"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70)
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
+	permeability_coefficient = 0.01
+	cold_protection = HEAD
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+	heat_protection = HEAD
+	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
+	flash_protect = FLASH_PROTECTION_WELDER
+	strip_delay = 50
+	equip_delay_other = 50
+
+/obj/item/clothing/suit/radiation/space
+	name = "low-pressure radiation suit"
+	desc = "A spacesuit that protects against radiation. The label reads, 'Made with lead. Please do not consume insulation.'"
+	gas_transfer_coefficient = 0.01
+	permeability_coefficient = 0.02
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/geiger_counter)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70)
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	cold_protection = CHEST | GROIN | LEGS | FEET | ARMS | HANDS
+	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
+	strip_delay = 80
+	equip_delay_other = 80
+

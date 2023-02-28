@@ -16,7 +16,7 @@
 /obj/item/radio/intercom/Initialize(mapload, ndir, building)
 	. = ..()
 	if(building)
-		setDir(ndir)
+		setDir(turn(ndir,180))
 	var/area/current_area = get_area(src)
 	if(!current_area)
 		return
@@ -138,7 +138,7 @@
 	desc = "A ready-to-go intercom. Just slap it on a wall and screw it in!"
 	icon_state = "intercom"
 	result_path = /obj/item/radio/intercom/unscrewed
-	pixel_shift = 29
+	pixel_shift = 24
 	inverse = TRUE
 	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
 
