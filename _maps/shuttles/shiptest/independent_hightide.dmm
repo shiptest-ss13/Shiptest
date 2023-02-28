@@ -406,18 +406,8 @@
 /area/ship/maintenance/starboard)
 "oY" = (
 /obj/machinery/door/airlock/maintenance_hatch,
-/obj/docking_port/mobile{
-	dir = 8;
-	launch_status = 0;
-	port_direction = 4
-	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -1177,6 +1167,21 @@
 /obj/effect/decal/cleanable/glitter/blue,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"Tp" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 4
+	},
+/obj/docking_port/mobile{
+	dir = 8;
+	launch_status = 0;
+	port_direction = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "TC" = (
 /obj/structure/window/reinforced/tinted{
 	dir = 4
@@ -1887,6 +1892,37 @@ cg
 xq
 oY
 Il
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+"}
+(19,1,1) = {"
+cg
+cg
+cg
+cg
+cg
+cg
+cg
+Tp
+cg
 cg
 cg
 cg

@@ -225,6 +225,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
+"dR" = (
+/turf/open/space/basic,
+/area/template_noop)
 "eF" = (
 /obj/structure/sink{
 	dir = 8;
@@ -1434,6 +1437,9 @@
 "Bw" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/cargo)
+"BM" = (
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/external)
 "BX" = (
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/cryopod{
@@ -1748,17 +1754,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "Hd" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "syndiefuck"
-	},
 /obj/docking_port/stationary{
-	dir = 8;
-	width = 7;
 	height = 15;
-	dheight = -1
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/cargo)
+/area/ship/external)
 "Hk" = (
 /obj/machinery/light,
 /obj/structure/rack,
@@ -2705,6 +2709,35 @@
 /area/ship/storage)
 
 (1,1,1) = {"
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+BM
+BM
+Hd
+BM
+BM
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+dR
+"}
+(2,1,1) = {"
 Nr
 Nr
 Nr
@@ -2714,7 +2747,7 @@ Nr
 hs
 eH
 Rt
-Hd
+Rt
 Rt
 Ev
 Ka
@@ -2733,7 +2766,7 @@ Nr
 Nr
 Nr
 "}
-(2,1,1) = {"
+(3,1,1) = {"
 Nr
 Nr
 Nr
@@ -2762,7 +2795,7 @@ Nr
 Nr
 Nr
 "}
-(3,1,1) = {"
+(4,1,1) = {"
 Nr
 Nr
 Nr
@@ -2791,7 +2824,7 @@ Nr
 Nr
 Nr
 "}
-(4,1,1) = {"
+(5,1,1) = {"
 Nr
 Nr
 Bw
@@ -2820,7 +2853,7 @@ Nr
 Nr
 Nr
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 Nr
 Nr
 RH
@@ -2849,7 +2882,7 @@ pt
 Nr
 Nr
 "}
-(6,1,1) = {"
+(7,1,1) = {"
 Nr
 Nr
 hs
@@ -2878,7 +2911,7 @@ vp
 pt
 Nr
 "}
-(7,1,1) = {"
+(8,1,1) = {"
 Nr
 Nr
 Nr
@@ -2907,7 +2940,7 @@ XS
 iR
 hd
 "}
-(8,1,1) = {"
+(9,1,1) = {"
 Nr
 tU
 tU
@@ -2936,7 +2969,7 @@ vz
 sh
 Nr
 "}
-(9,1,1) = {"
+(10,1,1) = {"
 tU
 tU
 Ej
@@ -2965,7 +2998,7 @@ vp
 vp
 vp
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 Ij
 Ga
 dA
@@ -2994,7 +3027,7 @@ AE
 Mj
 qP
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 tU
 tU
 IB
@@ -3023,7 +3056,7 @@ na
 UO
 Er
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 Nr
 tU
 tU
@@ -3052,7 +3085,7 @@ vz
 sh
 Nr
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 Nr
 Nr
 Nr
@@ -3081,7 +3114,7 @@ vz
 sh
 UE
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 Nr
 Nr
 YI
@@ -3110,7 +3143,7 @@ vp
 pt
 Nr
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 Nr
 Nr
 ow
@@ -3139,7 +3172,7 @@ pt
 Nr
 Nr
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 Nr
 Nr
 Bt
@@ -3168,7 +3201,7 @@ Nr
 Nr
 Nr
 "}
-(17,1,1) = {"
+(18,1,1) = {"
 Nr
 Nr
 Nr
@@ -3197,7 +3230,7 @@ Nr
 Nr
 Nr
 "}
-(18,1,1) = {"
+(19,1,1) = {"
 Nr
 Nr
 Nr
@@ -3226,7 +3259,7 @@ Nr
 Nr
 Nr
 "}
-(19,1,1) = {"
+(20,1,1) = {"
 Nr
 Nr
 Nr

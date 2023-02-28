@@ -97,6 +97,15 @@
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plating,
 /area/ship/construction)
+"bf" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "bl" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
@@ -4350,19 +4359,6 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Yf" = (
-/obj/machinery/door/poddoor{
-	id = "riggerdoors";
-	name = "Mech Bay Blast Door"
-	},
-/obj/structure/fans/tiny,
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo)
 "YF" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/structure/cable{
@@ -5137,7 +5133,7 @@ Ly
 Ly
 Ly
 Ly
-Ly
+vm
 sT
 qQ
 Tk
@@ -5171,7 +5167,7 @@ Ly
 Ly
 Ly
 Ly
-Ly
+vm
 sT
 hy
 SY
@@ -5205,7 +5201,7 @@ Ly
 Ly
 Ly
 Ly
-Ly
+bf
 sT
 yW
 pO
@@ -5239,8 +5235,8 @@ Ly
 Ly
 Ly
 Ly
-Ly
-Yf
+vm
+sT
 yW
 Hy
 wZ
@@ -5273,7 +5269,7 @@ Ly
 Ly
 Ly
 Ly
-Ly
+vm
 sT
 hy
 QT
@@ -5307,7 +5303,7 @@ Ly
 Ly
 Ly
 Ly
-Ly
+vm
 sT
 yW
 Ji

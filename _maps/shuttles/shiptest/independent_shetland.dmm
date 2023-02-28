@@ -1547,18 +1547,15 @@
 /turf/open/floor/plasteel,
 /area/ship/security)
 "pq" = (
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
 	dir = 2
 	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/hallway/starboard)
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "pr" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2836,6 +2833,18 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
+"Bt" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	dwidth = 30;
+	height = 26;
+	launch_status = 0;
+	port_direction = 8;
+	width = 48
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Bx" = (
 /obj/machinery/door/poddoor{
 	id = "ejected";
@@ -3828,6 +3837,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"Mh" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Ml" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -4010,25 +4028,8 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "Ny" = (
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 2;
-	dwidth = 30;
-	height = 26;
-	launch_status = 0;
-	port_direction = 8;
-	width = 48
-	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/hallway/port)
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "NA" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
@@ -5313,6 +5314,7 @@ LO
 LO
 LO
 LO
+LO
 Qb
 Qb
 Qb
@@ -5322,6 +5324,7 @@ Qb
 Qb
 Qb
 Qb
+LO
 LO
 LO
 LO
@@ -5333,6 +5336,7 @@ LO
 LO
 "}
 (2,1,1) = {"
+LO
 LO
 LO
 LO
@@ -5360,6 +5364,7 @@ LO
 LO
 LO
 LO
+LO
 "}
 (3,1,1) = {"
 LO
@@ -5370,6 +5375,7 @@ LO
 LO
 LO
 LO
+LO
 Qb
 UH
 UH
@@ -5381,6 +5387,7 @@ XM
 UH
 UH
 Qb
+LO
 LO
 LO
 LO
@@ -5391,6 +5398,7 @@ LO
 LO
 "}
 (4,1,1) = {"
+LO
 LO
 LO
 LO
@@ -5418,8 +5426,10 @@ dl
 LO
 LO
 LO
+LO
 "}
 (5,1,1) = {"
+LO
 LO
 is
 dl
@@ -5447,8 +5457,10 @@ dl
 dl
 dl
 LO
+LO
 "}
 (6,1,1) = {"
+LO
 LO
 is
 dl
@@ -5476,8 +5488,10 @@ zN
 dl
 dl
 LO
+LO
 "}
 (7,1,1) = {"
+LO
 LO
 LO
 LO
@@ -5505,8 +5519,10 @@ zN
 LO
 LO
 LO
+LO
 "}
 (8,1,1) = {"
+LO
 LO
 LO
 LO
@@ -5534,8 +5550,10 @@ zN
 LO
 LO
 LO
+LO
 "}
 (9,1,1) = {"
+LO
 LO
 LO
 LO
@@ -5563,8 +5581,10 @@ zN
 LO
 LO
 LO
+LO
 "}
 (10,1,1) = {"
+LO
 LO
 LO
 LO
@@ -5592,8 +5612,10 @@ zN
 LO
 LO
 LO
+LO
 "}
 (11,1,1) = {"
+LO
 LO
 LO
 LO
@@ -5621,8 +5643,10 @@ zN
 LO
 LO
 LO
+LO
 "}
 (12,1,1) = {"
+LO
 LO
 LO
 LO
@@ -5650,8 +5674,10 @@ zN
 LO
 LO
 LO
+LO
 "}
 (13,1,1) = {"
+LO
 LO
 is
 dl
@@ -5679,8 +5705,10 @@ zN
 dl
 dl
 LO
+LO
 "}
 (14,1,1) = {"
+LO
 LO
 dl
 dl
@@ -5708,8 +5736,10 @@ zN
 dl
 dl
 LO
+LO
 "}
 (15,1,1) = {"
+LO
 LO
 dl
 dl
@@ -5737,8 +5767,10 @@ zN
 dl
 dl
 LO
+LO
 "}
 (16,1,1) = {"
+LO
 LO
 is
 dl
@@ -5766,8 +5798,10 @@ zN
 cc
 cc
 cc
+LO
 "}
 (17,1,1) = {"
+LO
 TI
 TI
 TI
@@ -5795,8 +5829,10 @@ OU
 lB
 fM
 GV
+Ny
 "}
 (18,1,1) = {"
+Mh
 as
 co
 co
@@ -5823,10 +5859,12 @@ qJ
 qe
 XA
 hk
+GV
 pq
 "}
 (19,1,1) = {"
-Ny
+Bt
+as
 co
 dK
 gZ
@@ -5853,8 +5891,10 @@ zN
 cc
 cc
 cc
+LO
 "}
 (20,1,1) = {"
+LO
 TI
 TI
 TI
@@ -5882,8 +5922,10 @@ zN
 dl
 dl
 LO
+LO
 "}
 (21,1,1) = {"
+LO
 LO
 LO
 dl
@@ -5911,8 +5953,10 @@ Ge
 kV
 dl
 LO
+LO
 "}
 (22,1,1) = {"
+LO
 LO
 LO
 dl
@@ -5940,8 +5984,10 @@ zN
 dl
 dl
 LO
+LO
 "}
 (23,1,1) = {"
+LO
 LO
 LO
 LO
@@ -5969,8 +6015,10 @@ nO
 dl
 dl
 LO
+LO
 "}
 (24,1,1) = {"
+LO
 LO
 LO
 LO
@@ -5998,8 +6046,10 @@ nO
 dl
 dl
 LO
+LO
 "}
 (25,1,1) = {"
+LO
 LO
 LO
 LO
@@ -6027,8 +6077,10 @@ nO
 nO
 dl
 LO
+LO
 "}
 (26,1,1) = {"
+LO
 LO
 LO
 LO
@@ -6056,8 +6108,10 @@ qb
 oS
 LO
 LO
+LO
 "}
 (27,1,1) = {"
+LO
 LO
 LO
 LO
@@ -6085,8 +6139,10 @@ oV
 kt
 LO
 LO
+LO
 "}
 (28,1,1) = {"
+LO
 LO
 LO
 LO
@@ -6114,8 +6170,10 @@ oV
 kt
 LO
 LO
+LO
 "}
 (29,1,1) = {"
+LO
 LO
 LO
 LO
@@ -6143,8 +6201,10 @@ gF
 Fd
 LO
 LO
+LO
 "}
 (30,1,1) = {"
+LO
 LO
 LO
 LO
@@ -6172,8 +6232,10 @@ eV
 Bx
 LO
 LO
+LO
 "}
 (31,1,1) = {"
+LO
 uy
 uy
 uy
@@ -6201,8 +6263,10 @@ OM
 FI
 FI
 FI
+LO
 "}
 (32,1,1) = {"
+LO
 uy
 cV
 ec
@@ -6230,8 +6294,10 @@ OM
 qy
 iS
 FI
+LO
 "}
 (33,1,1) = {"
+LO
 Md
 dr
 dw
@@ -6259,8 +6325,10 @@ Bg
 bL
 bL
 vY
+LO
 "}
 (34,1,1) = {"
+LO
 Md
 dG
 ft
@@ -6288,8 +6356,10 @@ xL
 OI
 zt
 vY
+LO
 "}
 (35,1,1) = {"
+LO
 uy
 bU
 cr
@@ -6317,8 +6387,10 @@ qc
 bL
 zT
 FI
+LO
 "}
 (36,1,1) = {"
+LO
 uy
 uy
 SU
@@ -6346,8 +6418,10 @@ OM
 VC
 FI
 FI
+LO
 "}
 (37,1,1) = {"
+LO
 LO
 uy
 bZ
@@ -6375,8 +6449,10 @@ OM
 OM
 FI
 LO
+LO
 "}
 (38,1,1) = {"
+LO
 LO
 zO
 Gd
@@ -6404,8 +6480,10 @@ Gd
 vo
 zO
 LO
+LO
 "}
 (39,1,1) = {"
+LO
 LO
 zO
 Gd
@@ -6433,8 +6511,10 @@ Gd
 Gd
 zO
 LO
+LO
 "}
 (40,1,1) = {"
+LO
 LO
 zO
 Gd
@@ -6462,8 +6542,10 @@ Gs
 Gd
 zO
 LO
+LO
 "}
 (41,1,1) = {"
+LO
 LO
 oR
 oR
@@ -6491,8 +6573,10 @@ Gd
 oR
 oR
 LO
+LO
 "}
 (42,1,1) = {"
+LO
 LO
 LO
 oR
@@ -6520,8 +6604,10 @@ oR
 oR
 LO
 LO
+LO
 "}
 (43,1,1) = {"
+LO
 LO
 LO
 LO
@@ -6549,8 +6635,10 @@ oR
 LO
 LO
 LO
+LO
 "}
 (44,1,1) = {"
+LO
 LO
 LO
 LO
@@ -6578,8 +6666,10 @@ LO
 LO
 LO
 LO
+LO
 "}
 (45,1,1) = {"
+LO
 LO
 LO
 LO
@@ -6607,8 +6697,10 @@ LO
 LO
 LO
 LO
+LO
 "}
 (46,1,1) = {"
+LO
 LO
 LO
 LO
@@ -6636,8 +6728,10 @@ LO
 LO
 LO
 LO
+LO
 "}
 (47,1,1) = {"
+LO
 LO
 LO
 LO
@@ -6665,8 +6759,10 @@ LO
 LO
 LO
 LO
+LO
 "}
 (48,1,1) = {"
+LO
 LO
 LO
 LO
@@ -6694,6 +6790,7 @@ LO
 LO
 LO
 LO
+LO
 "}
 (49,1,1) = {"
 LO
@@ -6707,11 +6804,13 @@ LO
 LO
 LO
 LO
+LO
 Jc
 Jc
 Jc
 Jc
 Jc
+LO
 LO
 LO
 LO

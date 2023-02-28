@@ -168,6 +168,9 @@
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
+"da" = (
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "dq" = (
 /obj/structure/chair/office/light{
 	dir = 1
@@ -388,6 +391,17 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
+"hi" = (
+/obj/docking_port/mobile{
+	callTime = 250;
+	dir = 2;
+	launch_status = 0;
+	name = "Hospital Ship";
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "hp" = (
 /obj/structure/closet/crate/freezer/surplus_limbs,
 /obj/item/reagent_containers/glass/beaker/synthflesh,
@@ -651,10 +665,6 @@
 /obj/item/reagent_containers/glass/bottle{
 	list_reagents = list(/datum/reagent/medicine/thializid=30);
 	name = "thializid bottle"
-	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
 	},
 /obj/machinery/door/window/southleft{
 	name = "Equipment Storage"
@@ -1248,21 +1258,6 @@
 /obj/machinery/door/poddoor{
 	id = "emergencybay_blastdoors"
 	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "emergencybay_blastdoors"
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -1600,6 +1595,15 @@
 /obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"zF" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "zJ" = (
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2004,14 +2008,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Gn" = (
-/obj/docking_port/mobile{
-	callTime = 250;
-	dir = 2;
-	launch_status = 0;
-	name = "Hospital Ship";
-	port_direction = 8;
-	preferred_direction = 4
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -2966,6 +2962,7 @@ aa
 aa
 aa
 aa
+aa
 vk
 at
 aa
@@ -2979,6 +2976,7 @@ aa
 aa
 "}
 (2,1,1) = {"
+aa
 aa
 aa
 aa
@@ -3003,6 +3001,7 @@ aa
 aa
 aa
 aa
+aa
 at
 BM
 iM
@@ -3017,6 +3016,7 @@ aa
 aa
 "}
 (4,1,1) = {"
+aa
 aa
 aa
 aa
@@ -3041,6 +3041,7 @@ aa
 aa
 aa
 aa
+aa
 at
 QM
 at
@@ -3055,6 +3056,7 @@ aa
 aa
 "}
 (6,1,1) = {"
+aa
 aa
 aa
 aa
@@ -3078,6 +3080,7 @@ aa
 aa
 aa
 aa
+aa
 at
 HY
 ef
@@ -3093,6 +3096,7 @@ aa
 aa
 "}
 (8,1,1) = {"
+aa
 aa
 aa
 aa
@@ -3115,6 +3119,7 @@ aa
 aa
 aa
 aa
+aa
 aS
 at
 zE
@@ -3131,6 +3136,7 @@ aa
 aa
 "}
 (10,1,1) = {"
+aa
 aa
 aa
 aa
@@ -3153,6 +3159,7 @@ aa
 aa
 aa
 aa
+aa
 an
 eA
 Er
@@ -3169,6 +3176,7 @@ aa
 aa
 "}
 (12,1,1) = {"
+aa
 aa
 aa
 WT
@@ -3190,6 +3198,7 @@ aa
 (13,1,1) = {"
 aa
 aa
+aa
 an
 qv
 oq
@@ -3207,6 +3216,7 @@ aa
 aa
 "}
 (14,1,1) = {"
+aa
 aa
 ag
 al
@@ -3227,6 +3237,7 @@ aa
 "}
 (15,1,1) = {"
 aa
+aa
 al
 eQ
 rm
@@ -3245,6 +3256,7 @@ tD
 aa
 "}
 (16,1,1) = {"
+aa
 aa
 WX
 OP
@@ -3265,6 +3277,7 @@ aa
 "}
 (17,1,1) = {"
 aa
+aa
 al
 DH
 gK
@@ -3283,6 +3296,7 @@ tD
 aa
 "}
 (18,1,1) = {"
+aa
 ad
 uD
 uD
@@ -3302,6 +3316,7 @@ tD
 cY
 "}
 (19,1,1) = {"
+da
 UW
 aj
 jP
@@ -3321,6 +3336,7 @@ qG
 Rx
 "}
 (20,1,1) = {"
+da
 od
 XV
 RQ
@@ -3340,6 +3356,7 @@ dq
 Rx
 "}
 (21,1,1) = {"
+zF
 un
 YY
 jZ
@@ -3359,6 +3376,7 @@ Yj
 MY
 "}
 (22,1,1) = {"
+da
 CH
 Et
 RC
@@ -3378,6 +3396,7 @@ ER
 Rx
 "}
 (23,1,1) = {"
+hi
 Gn
 aj
 fY
@@ -3397,6 +3416,7 @@ ds
 Rx
 "}
 (24,1,1) = {"
+aa
 ad
 uD
 yx
@@ -3417,6 +3437,7 @@ cY
 "}
 (25,1,1) = {"
 aa
+aa
 ph
 zN
 op
@@ -3435,6 +3456,7 @@ Rx
 aa
 "}
 (26,1,1) = {"
+aa
 aa
 ph
 jH
@@ -3455,6 +3477,7 @@ aa
 "}
 (27,1,1) = {"
 aa
+aa
 ab
 uD
 Bd
@@ -3473,6 +3496,7 @@ nQ
 aa
 "}
 (28,1,1) = {"
+aa
 aa
 aa
 ab
@@ -3497,6 +3521,7 @@ aa
 aa
 aa
 aa
+aa
 bf
 WP
 bK
@@ -3511,6 +3536,7 @@ aa
 aa
 "}
 (30,1,1) = {"
+aa
 aa
 aa
 aa

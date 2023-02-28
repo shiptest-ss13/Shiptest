@@ -1692,12 +1692,6 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "pW" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	launch_status = 0;
-	port_direction = 4;
-	preferred_direction = 4
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -1834,6 +1828,22 @@
 /obj/structure/sign/number/six,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
+"rd" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	launch_status = 0;
+	port_direction = 4;
+	preferred_direction = 4
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
+	},
+/turf/open/floor/plasteel/patterned/dirty,
+/area/ship/external)
 "rj" = (
 /mob/living/simple_animal/pet/penguin/baby{
 	name = "Corporal Duke";
@@ -6693,7 +6703,7 @@ nI
 ps
 nU
 pW
-Wd
+rd
 "}
 (32,1,1) = {"
 Wd

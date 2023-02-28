@@ -1374,6 +1374,26 @@
 	dir = 4
 	},
 /area/ship/hallway/port)
+"mg" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	dwidth = 12;
+	height = 17;
+	launch_status = 0;
+	name = "chapel ship";
+	port_direction = 8;
+	preferred_direction = 4;
+	width = 28
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "mp" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -3267,26 +3287,6 @@
 	},
 /turf/open/floor/plating/dirt/jungle/dark/actuallydark,
 /area/ship/crew/hydroponics)
-"CY" = (
-/obj/structure/catwalk,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 2;
-	dwidth = 12;
-	height = 17;
-	launch_status = 0;
-	name = "chapel ship";
-	port_direction = 8;
-	preferred_direction = 4;
-	width = 28
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
-/turf/open/floor/plating,
-/area/ship/crew/canteen)
 "CZ" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -5123,7 +5123,7 @@
 /area/ship/crew/hydroponics)
 "Sr" = (
 /turf/open/floor/engine/hull,
-/area/ship/crew/canteen)
+/area/ship/external)
 "Su" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -5794,7 +5794,7 @@
 "YB" = (
 /obj/structure/catwalk,
 /turf/open/floor/plating,
-/area/ship/crew/canteen)
+/area/ship/external)
 "YC" = (
 /obj/structure/destructible/tribal_torch,
 /turf/open/floor/plating/grass/jungle/actuallydark,
@@ -7287,8 +7287,8 @@ xj
 xj
 xj
 xj
-xj
-CY
+mg
+YB
 HF
 Xm
 xG

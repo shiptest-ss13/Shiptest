@@ -101,6 +101,10 @@
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "ba" = (
+/obj/effect/turf_decal/arrows/white,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
+"bc" = (
 /obj/docking_port/mobile{
 	callTime = 250;
 	dir = 2;
@@ -109,14 +113,14 @@
 	port_direction = 8;
 	preferred_direction = 4
 	},
-/obj/effect/turf_decal/arrows/white,
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
-	dheight = -1
+	width = 12;
+	dheight = 1;
+	dwidth = 3
 	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "bj" = (
 /obj/structure/window/reinforced/survival_pod/spawner/west,
 /obj/structure/cable{
@@ -1939,6 +1943,12 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/toilet)
+"Ga" = (
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/external)
+"Gv" = (
+/turf/open/floor/engine/hull,
+/area/ship/external)
 "Hc" = (
 /obj/structure/chair/sofa/right{
 	dir = 8
@@ -3525,6 +3535,7 @@
 xJ
 xJ
 xJ
+xJ
 Fz
 Lo
 Kb
@@ -3541,6 +3552,7 @@ xJ
 xJ
 "}
 (2,1,1) = {"
+xJ
 xJ
 xJ
 Fz
@@ -3562,6 +3574,7 @@ xJ
 (3,1,1) = {"
 xJ
 xJ
+xJ
 OO
 lp
 OO
@@ -3579,6 +3592,7 @@ KW
 xJ
 "}
 (4,1,1) = {"
+xJ
 xJ
 Fz
 OO
@@ -3599,6 +3613,7 @@ xJ
 "}
 (5,1,1) = {"
 xJ
+xJ
 gT
 Ht
 Cb
@@ -3617,6 +3632,7 @@ tR
 xJ
 "}
 (6,1,1) = {"
+xJ
 rU
 Vd
 PW
@@ -3636,6 +3652,7 @@ Wv
 fz
 "}
 (7,1,1) = {"
+Ga
 LC
 Yp
 Ln
@@ -3655,6 +3672,7 @@ YU
 YU
 "}
 (8,1,1) = {"
+Gv
 Yc
 am
 dH
@@ -3674,6 +3692,7 @@ EV
 YU
 "}
 (9,1,1) = {"
+bc
 ba
 EJ
 Hx
@@ -3693,6 +3712,7 @@ KO
 oK
 "}
 (10,1,1) = {"
+Gv
 Pj
 KH
 vC
@@ -3712,6 +3732,7 @@ gB
 oK
 "}
 (11,1,1) = {"
+Ga
 pl
 ix
 Sz
@@ -3731,6 +3752,7 @@ RI
 YU
 "}
 (12,1,1) = {"
+xJ
 Vd
 Vd
 Vd
@@ -3750,6 +3772,7 @@ YU
 YU
 "}
 (13,1,1) = {"
+xJ
 FA
 Vd
 EA
@@ -3769,6 +3792,7 @@ YU
 bP
 "}
 (14,1,1) = {"
+xJ
 px
 Wy
 JB
@@ -3788,6 +3812,7 @@ oK
 fa
 "}
 (15,1,1) = {"
+xJ
 NC
 Vd
 Vd
@@ -3808,6 +3833,7 @@ Pi
 "}
 (16,1,1) = {"
 xJ
+xJ
 KU
 XR
 XR
@@ -3826,6 +3852,7 @@ nB
 xJ
 "}
 (17,1,1) = {"
+xJ
 xJ
 kp
 XR
@@ -3847,6 +3874,7 @@ xJ
 (18,1,1) = {"
 xJ
 xJ
+xJ
 Yx
 ca
 Vc
@@ -3864,6 +3892,7 @@ xJ
 xJ
 "}
 (19,1,1) = {"
+xJ
 xJ
 xJ
 Yx
@@ -3885,6 +3914,7 @@ xJ
 (20,1,1) = {"
 xJ
 xJ
+xJ
 XR
 At
 Yr
@@ -3902,6 +3932,7 @@ xJ
 xJ
 "}
 (21,1,1) = {"
+xJ
 xJ
 xJ
 pB
@@ -3924,6 +3955,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 XR
 ls
 oa
@@ -3940,6 +3972,7 @@ xJ
 xJ
 "}
 (23,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -3962,6 +3995,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 Yw
 hg
 nl
@@ -3981,6 +4015,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 XR
 SC
 Wx
@@ -3997,6 +4032,7 @@ xJ
 xJ
 "}
 (26,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -4020,6 +4056,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 LJ
 Jm
 zz
@@ -4035,6 +4072,7 @@ xJ
 xJ
 "}
 (28,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -4058,6 +4096,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 LJ
 FB
 LJ
@@ -4073,6 +4112,7 @@ xJ
 xJ
 "}
 (30,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -4097,6 +4137,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 bq
 Sl
 AR
@@ -4116,6 +4157,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 bq
 Ra
 xp
@@ -4130,6 +4172,7 @@ xJ
 xJ
 "}
 (33,1,1) = {"
+xJ
 xJ
 xJ
 xJ
@@ -4155,6 +4198,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 IT
 Ig
 Vf
@@ -4174,6 +4218,7 @@ xJ
 xJ
 xJ
 xJ
+xJ
 IT
 bq
 nw
@@ -4187,6 +4232,7 @@ xJ
 xJ
 "}
 (36,1,1) = {"
+xJ
 xJ
 xJ
 xJ

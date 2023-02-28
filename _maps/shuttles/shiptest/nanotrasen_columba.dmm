@@ -361,14 +361,8 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "hU" = (
-/obj/docking_port/stationary{
-	roundstart_template = /datum/map_template/shuttle/subshuttles/nanotrasen_miningshuttle;
-	height = 5;
-	width = 10;
-	load_template_on_initialize = 0;
-	dwidth = 5;
-	dir = 2;
-	name = "Shuttle Bay"
+/obj/effect/landmark/subship{
+	subship_template = /datum/map_template/shuttle/subshuttles/nanotrasen_miningshuttle
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)

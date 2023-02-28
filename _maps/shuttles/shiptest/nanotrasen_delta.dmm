@@ -2844,6 +2844,15 @@
 /area/ship/hallway/central)
 "VY" = (
 /obj/machinery/door/airlock/external,
+/turf/open/floor/plating,
+/area/ship/hallway/port)
+"WS" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
 /obj/docking_port/mobile{
 	callTime = 250;
 	dir = 2;
@@ -2852,13 +2861,8 @@
 	port_direction = 8;
 	preferred_direction = 4
 	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
 /turf/open/floor/plating,
-/area/ship/hallway/port)
+/area/ship/external)
 "XC" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/bar{
@@ -2940,6 +2944,7 @@ aa
 aa
 aa
 aa
+aa
 ah
 aM
 ay
@@ -2955,6 +2960,7 @@ aa
 aa
 "}
 (2,1,1) = {"
+aa
 aa
 ah
 ai
@@ -2975,6 +2981,7 @@ aa
 "}
 (3,1,1) = {"
 aa
+aa
 ai
 az
 rW
@@ -2993,6 +3000,7 @@ ai
 aa
 "}
 (4,1,1) = {"
+aa
 aa
 ai
 aA
@@ -3013,6 +3021,7 @@ aa
 "}
 (5,1,1) = {"
 aa
+aa
 ai
 aB
 oX
@@ -3032,6 +3041,7 @@ aa
 "}
 (6,1,1) = {"
 aa
+aa
 ai
 aC
 mj
@@ -3050,6 +3060,7 @@ ai
 aa
 "}
 (7,1,1) = {"
+aa
 ZY
 ai
 ai
@@ -3069,6 +3080,7 @@ ai
 ZY
 "}
 (8,1,1) = {"
+aa
 ae
 al
 jv
@@ -3088,6 +3100,7 @@ dT
 SN
 "}
 (9,1,1) = {"
+aa
 ae
 ae
 ae
@@ -3107,6 +3120,7 @@ QC
 SN
 "}
 (10,1,1) = {"
+aa
 ae
 Jy
 ae
@@ -3126,6 +3140,7 @@ SN
 SN
 "}
 (11,1,1) = {"
+aa
 ae
 aD
 wE
@@ -3145,6 +3160,7 @@ di
 SN
 "}
 (12,1,1) = {"
+aa
 ae
 ae
 ae
@@ -3164,6 +3180,7 @@ dQ
 Lb
 "}
 (13,1,1) = {"
+aa
 am
 aE
 ae
@@ -3183,6 +3200,7 @@ dR
 SN
 "}
 (14,1,1) = {"
+aa
 ae
 an
 tV
@@ -3202,6 +3220,7 @@ hi
 Go
 "}
 (15,1,1) = {"
+aa
 am
 aF
 ae
@@ -3221,6 +3240,7 @@ vm
 vm
 "}
 (16,1,1) = {"
+aa
 ae
 ae
 ae
@@ -3240,6 +3260,7 @@ ec
 vm
 "}
 (17,1,1) = {"
+aa
 oe
 ap
 aO
@@ -3259,6 +3280,7 @@ uT
 nq
 "}
 (18,1,1) = {"
+WS
 VY
 aj
 ae
@@ -3278,6 +3300,7 @@ xk
 vm
 "}
 (19,1,1) = {"
+aa
 ab
 ab
 ab
@@ -3297,6 +3320,7 @@ qJ
 HJ
 "}
 (20,1,1) = {"
+aa
 ab
 aq
 aH
@@ -3316,6 +3340,7 @@ ea
 HJ
 "}
 (21,1,1) = {"
+aa
 cS
 ar
 aI
@@ -3335,6 +3360,7 @@ Te
 Mc
 "}
 (22,1,1) = {"
+aa
 ab
 aw
 ad
@@ -3354,6 +3380,7 @@ Nx
 HJ
 "}
 (23,1,1) = {"
+aa
 ab
 Sm
 ab
@@ -3373,6 +3400,7 @@ hh
 HJ
 "}
 (24,1,1) = {"
+aa
 ab
 bN
 aV
@@ -3392,6 +3420,7 @@ KV
 HJ
 "}
 (25,1,1) = {"
+aa
 ab
 ab
 bx
@@ -3411,6 +3440,7 @@ Hi
 Mc
 "}
 (26,1,1) = {"
+aa
 ab
 at
 bO
@@ -3430,6 +3460,7 @@ KS
 HJ
 "}
 (27,1,1) = {"
+aa
 ZY
 ab
 aK
@@ -3449,6 +3480,7 @@ HJ
 ZY
 "}
 (28,1,1) = {"
+aa
 aa
 ax
 ab

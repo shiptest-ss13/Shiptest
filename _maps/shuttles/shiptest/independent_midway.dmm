@@ -1421,8 +1421,9 @@
 	},
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
-	dheight = -1
+	width = 12;
+	dheight = 1;
+	dwidth = 3
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
@@ -2081,9 +2082,10 @@
 	},
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
-	dir = 8;
-	dheight = -1
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 8
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering)

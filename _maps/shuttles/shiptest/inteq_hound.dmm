@@ -36,6 +36,14 @@
 /obj/structure/window/reinforced/tinted/frosted,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/toilet)
+"ca" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage/eva)
 "cK" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/power/shieldwallgen/atmos{
@@ -882,9 +890,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
 "sN" = (
-/obj/machinery/door/airlock/external,
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/atmospherics/pipe/layer_manifold{
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
 	dir = 4
 	},
 /obj/docking_port/mobile{
@@ -893,15 +903,8 @@
 	port_direction = 2;
 	preferred_direction = 4
 	},
-/obj/docking_port/stationary{
-	dir = 4;
-	roundstart_template = /datum/map_template/shuttle/subshuttles/pill;
-	load_template_on_initialize = 0;
-	height = 3;
-	width = 1
-	},
 /turf/open/floor/plasteel/tech,
-/area/ship/storage/eva)
+/area/ship/external)
 "tg" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
@@ -2468,15 +2471,35 @@
 /area/ship/maintenance/port)
 
 (1,1,1) = {"
-ih
-Po
-Po
-ih
 ib
 ib
-xm
-xm
+ib
+ib
+ib
+ib
+ib
+ib
 sN
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+"}
+(2,1,1) = {"
+ih
+Po
+Po
+ih
+ib
+ib
+xm
+xm
+ca
 OP
 xm
 xm
@@ -2487,7 +2510,7 @@ MB
 MB
 cX
 "}
-(2,1,1) = {"
+(3,1,1) = {"
 ih
 Jv
 Rh
@@ -2507,7 +2530,7 @@ JX
 Iw
 cX
 "}
-(3,1,1) = {"
+(4,1,1) = {"
 ih
 mx
 mR
@@ -2527,7 +2550,7 @@ dz
 Fx
 cX
 "}
-(4,1,1) = {"
+(5,1,1) = {"
 ih
 ZR
 Ck
@@ -2547,7 +2570,7 @@ DL
 go
 cX
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 ih
 Dh
 HW
@@ -2567,7 +2590,7 @@ VC
 or
 cX
 "}
-(6,1,1) = {"
+(7,1,1) = {"
 ih
 Zr
 iD
@@ -2587,7 +2610,7 @@ at
 Nh
 cX
 "}
-(7,1,1) = {"
+(8,1,1) = {"
 Ao
 Ou
 HD
@@ -2607,7 +2630,7 @@ sx
 nT
 cX
 "}
-(8,1,1) = {"
+(9,1,1) = {"
 Ao
 ih
 ih
@@ -2627,7 +2650,7 @@ cX
 cX
 dB
 "}
-(9,1,1) = {"
+(10,1,1) = {"
 ib
 ib
 ib
@@ -2647,7 +2670,7 @@ ib
 ib
 ib
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 ib
 ib
 ib
@@ -2667,7 +2690,7 @@ ib
 ib
 ib
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 ib
 ib
 ib
@@ -2687,7 +2710,7 @@ ib
 ib
 ib
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 ib
 ib
 ib
@@ -2707,7 +2730,7 @@ ib
 ib
 ib
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 ib
 ib
 ib
@@ -2727,7 +2750,7 @@ ib
 ib
 ib
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 ib
 ib
 ib
@@ -2747,7 +2770,7 @@ ib
 ib
 ib
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 ib
 ib
 ib
@@ -2767,7 +2790,7 @@ ib
 ib
 ib
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 ib
 ib
 ib
@@ -2787,7 +2810,7 @@ ib
 ib
 ib
 "}
-(17,1,1) = {"
+(18,1,1) = {"
 ib
 ib
 ib
@@ -2807,7 +2830,7 @@ ib
 ib
 ib
 "}
-(18,1,1) = {"
+(19,1,1) = {"
 ib
 ib
 ib
@@ -2827,7 +2850,7 @@ ib
 ib
 ib
 "}
-(19,1,1) = {"
+(20,1,1) = {"
 ib
 ib
 ib
@@ -2847,7 +2870,7 @@ ib
 ib
 ib
 "}
-(20,1,1) = {"
+(21,1,1) = {"
 ib
 ib
 ib
@@ -2867,7 +2890,7 @@ ib
 ib
 ib
 "}
-(21,1,1) = {"
+(22,1,1) = {"
 ib
 ib
 ib
@@ -2887,7 +2910,7 @@ ib
 ib
 ib
 "}
-(22,1,1) = {"
+(23,1,1) = {"
 ib
 ib
 ib
@@ -2907,7 +2930,7 @@ ib
 ib
 ib
 "}
-(23,1,1) = {"
+(24,1,1) = {"
 ib
 ib
 ib
@@ -2927,7 +2950,7 @@ ib
 ib
 ib
 "}
-(24,1,1) = {"
+(25,1,1) = {"
 ib
 ib
 ib
@@ -2947,7 +2970,7 @@ ib
 ib
 ib
 "}
-(25,1,1) = {"
+(26,1,1) = {"
 ib
 ib
 ib

@@ -2240,6 +2240,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
+"xb" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
+	},
+/turf/open/floor/engine/hull,
+/area/ship/cargo)
 "xd" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2767,6 +2777,15 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"CT" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/engine/hull,
+/area/ship/hallway/port)
 "CU" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -2819,17 +2838,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "DU" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/poddoor{
-	id = "colossus_port"
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
 /turf/open/floor/engine/hull,
-/area/ship/cargo)
+/area/ship/hallway/port)
 "DX" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -3166,12 +3176,6 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "colossus_starboard"
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
 	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
@@ -4617,6 +4621,15 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"Zs" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/engine/hull,
+/area/ship/cargo)
 "Zu" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4712,6 +4725,7 @@
 
 (1,1,1) = {"
 XJ
+XJ
 bo
 hQ
 oO
@@ -4732,6 +4746,7 @@ rl
 XJ
 "}
 (2,1,1) = {"
+XJ
 XJ
 bo
 hX
@@ -4754,6 +4769,7 @@ XJ
 "}
 (3,1,1) = {"
 XJ
+XJ
 bo
 iG
 pv
@@ -4774,6 +4790,7 @@ rl
 XJ
 "}
 (4,1,1) = {"
+XJ
 XJ
 bo
 iN
@@ -4796,6 +4813,7 @@ XJ
 "}
 (5,1,1) = {"
 XJ
+XJ
 bo
 ja
 pF
@@ -4816,6 +4834,7 @@ rl
 XJ
 "}
 (6,1,1) = {"
+XJ
 XJ
 bo
 jn
@@ -4838,6 +4857,7 @@ XJ
 "}
 (7,1,1) = {"
 XJ
+XJ
 bo
 jo
 qz
@@ -4859,6 +4879,7 @@ XJ
 "}
 (8,1,1) = {"
 XJ
+XJ
 Nb
 bo
 bo
@@ -4879,6 +4900,7 @@ wr
 XJ
 "}
 (9,1,1) = {"
+XJ
 XJ
 XJ
 XJ
@@ -4904,6 +4926,7 @@ XJ
 XJ
 XJ
 XJ
+XJ
 vH
 BD
 Lm
@@ -4921,6 +4944,7 @@ XJ
 XJ
 "}
 (11,1,1) = {"
+XJ
 XJ
 XJ
 XJ
@@ -4946,6 +4970,7 @@ XJ
 XJ
 XJ
 XJ
+XJ
 vZ
 Wu
 BQ
@@ -4967,7 +4992,8 @@ XJ
 XJ
 XJ
 XJ
-DU
+Zs
+vZ
 Cu
 qR
 Tk
@@ -4978,12 +5004,13 @@ Zc
 MU
 Ks
 HQ
-XJ
+xb
 XJ
 XJ
 XJ
 "}
 (14,1,1) = {"
+XJ
 XJ
 XJ
 XJ
@@ -5009,6 +5036,7 @@ XJ
 XJ
 XJ
 XJ
+XJ
 vH
 CJ
 Mx
@@ -5030,6 +5058,7 @@ XJ
 XJ
 XJ
 XJ
+XJ
 vH
 CU
 UI
@@ -5047,6 +5076,7 @@ XJ
 XJ
 "}
 (17,1,1) = {"
+XJ
 bd
 ZB
 ZB
@@ -5068,6 +5098,7 @@ Dq
 cj
 "}
 (18,1,1) = {"
+XJ
 ZB
 cM
 Cx
@@ -5089,6 +5120,7 @@ Za
 Dq
 "}
 (19,1,1) = {"
+XJ
 lU
 dS
 jw
@@ -5110,6 +5142,7 @@ nE
 Dq
 "}
 (20,1,1) = {"
+XJ
 Gl
 ej
 jw
@@ -5131,6 +5164,7 @@ nQ
 Yv
 "}
 (21,1,1) = {"
+XJ
 Wn
 eK
 jw
@@ -5152,6 +5186,7 @@ Ci
 pa
 "}
 (22,1,1) = {"
+XJ
 Ow
 eT
 jw
@@ -5173,6 +5208,7 @@ Dq
 PV
 "}
 (23,1,1) = {"
+XJ
 Oo
 eX
 jX
@@ -5194,6 +5230,7 @@ eH
 JH
 "}
 (24,1,1) = {"
+XJ
 ZB
 fj
 jw
@@ -5215,6 +5252,7 @@ Vr
 RN
 "}
 (25,1,1) = {"
+XJ
 vv
 gg
 lA
@@ -5236,6 +5274,7 @@ Xu
 RN
 "}
 (26,1,1) = {"
+XJ
 Rm
 gy
 YY
@@ -5257,6 +5296,7 @@ wS
 kI
 "}
 (27,1,1) = {"
+XJ
 Nb
 hD
 hD
@@ -5278,7 +5318,8 @@ kI
 wr
 "}
 (28,1,1) = {"
-XJ
+CT
+DU
 hO
 nm
 tF
@@ -5299,6 +5340,7 @@ zF
 XJ
 "}
 (29,1,1) = {"
+XJ
 XJ
 hD
 hD
@@ -5321,6 +5363,7 @@ XJ
 "}
 (30,1,1) = {"
 XJ
+XJ
 tX
 qM
 hD
@@ -5341,6 +5384,7 @@ zF
 XJ
 "}
 (31,1,1) = {"
+XJ
 XJ
 HD
 ny
@@ -5363,6 +5407,7 @@ XJ
 "}
 (32,1,1) = {"
 XJ
+XJ
 tX
 nZ
 tI
@@ -5383,6 +5428,7 @@ zF
 XJ
 "}
 (33,1,1) = {"
+XJ
 XJ
 HD
 sI
@@ -5405,6 +5451,7 @@ XJ
 "}
 (34,1,1) = {"
 XJ
+XJ
 tX
 oe
 uy
@@ -5425,6 +5472,7 @@ zF
 XJ
 "}
 (35,1,1) = {"
+XJ
 XJ
 Lj
 UE

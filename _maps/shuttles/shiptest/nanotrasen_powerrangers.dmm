@@ -11,6 +11,14 @@
 /obj/machinery/nuclearbomb/beer,
 /turf/open/floor/plasteel/grimy,
 /area/ship/hallway/fore)
+"al" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "am" = (
 /obj/structure/chair/pew/left,
 /turf/open/floor/plasteel/dark,
@@ -412,6 +420,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
+"dr" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "dv" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -481,6 +498,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
+"dM" = (
+/obj/machinery/power/solar,
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "dP" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1091,12 +1116,6 @@
 	id = "entrance_lockdown";
 	name = "Entrance Lockdown Shutters"
 	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "il" = (
@@ -1441,6 +1460,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
+"ma" = (
+/obj/machinery/power/solar,
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/cyan{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "mb" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/carpet/executive,
@@ -1542,6 +1569,9 @@
 "mR" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/solar,
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "ne" = (
@@ -1939,6 +1969,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"rI" = (
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "rJ" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 4
@@ -2165,6 +2207,19 @@
 /obj/item/reagent_containers/food/snacks/store/bread/meat,
 /turf/open/floor/plasteel/grimy,
 /area/ship/hallway/fore)
+"uh" = (
+/obj/item/stack/cable_coil/yellow,
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "uk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -2538,8 +2593,10 @@
 "xM" = (
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
-	dir = 8
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 4
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
@@ -2846,6 +2903,18 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"AA" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "AB" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 6
@@ -3296,6 +3365,9 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-4"
 	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "Em" = (
@@ -3629,6 +3701,18 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Hb" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Hr" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
@@ -3960,6 +4044,15 @@
 "JR" = (
 /turf/open/floor/circuit,
 /area/ship/science/ai_chamber)
+"JS" = (
+/obj/structure/cable/cyan{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Kb" = (
 /obj/machinery/porta_turret/ai,
 /turf/open/floor/circuit,
@@ -4597,6 +4690,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
+"PA" = (
+/obj/machinery/power/solar,
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/cyan,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "PB" = (
 /obj/structure/chair/comfy/black{
 	dir = 4
@@ -4739,6 +4838,9 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
 	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "RF" = (
@@ -4796,6 +4898,14 @@
 /obj/effect/spawner/lootdrop/lpcombat,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Sz" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "SA" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 10
@@ -5079,6 +5189,12 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-8"
 	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "Vg" = (
@@ -5273,8 +5389,16 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "WT" = (
-/obj/structure/cable/cyan,
 /obj/item/stack/cable_coil/yellow,
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "WY" = (
@@ -5284,6 +5408,14 @@
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/line,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"WZ" = (
+/obj/machinery/power/solar,
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Xb" = (
 /obj/structure/window/plasma/reinforced/spawner{
 	dir = 4
@@ -5482,12 +5614,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
-"YH" = (
-/obj/structure/cable/cyan{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "YM" = (
 /obj/machinery/vending/cola/pwr_game,
 /obj/effect/turf_decal/trimline/opaque/grey/filled/line{
@@ -5511,6 +5637,12 @@
 /obj/structure/cable/cyan,
 /obj/machinery/camera/autoname{
 	dir = 1
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
@@ -5712,11 +5844,23 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-4"
 	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "ZK" = (
 /obj/structure/cable/cyan{
-	icon_state = "0-2"
+	icon_state = "1-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
@@ -6186,8 +6330,8 @@ zW
 zW
 zW
 Be
-WR
-WR
+WZ
+WZ
 aP
 aP
 aP
@@ -6226,7 +6370,7 @@ zW
 zW
 zW
 zW
-WR
+dM
 RB
 WT
 ZK
@@ -6268,10 +6412,10 @@ zW
 zW
 zW
 zW
-WR
-Be
-WR
-WR
+dM
+dr
+ma
+ma
 zW
 zW
 zW
@@ -6310,10 +6454,10 @@ zW
 zW
 zW
 zW
-WR
-Be
+dM
+dr
 mR
-WR
+WZ
 zW
 zW
 zW
@@ -6352,9 +6496,9 @@ zW
 zW
 zW
 zW
-WR
+dM
 RB
-YH
+rI
 YU
 Lk
 Lk
@@ -6394,8 +6538,8 @@ zW
 zW
 zW
 zW
-WR
-Be
+dM
+dr
 WR
 WR
 Lk
@@ -6436,9 +6580,9 @@ zW
 zW
 zW
 zW
-WR
-Be
-WR
+dM
+AA
+PA
 Lk
 Lk
 ZS
@@ -6478,9 +6622,9 @@ mQ
 mQ
 rq
 zW
-WR
-Be
-WR
+dM
+AA
+PA
 Lk
 cf
 ps
@@ -6520,9 +6664,9 @@ XH
 xB
 Zt
 zW
-WR
+dM
 UZ
-WR
+PA
 Lk
 wD
 cH
@@ -6772,9 +6916,9 @@ yU
 ML
 mQ
 zW
-WR
+dM
 ZG
-WR
+PA
 Lk
 ow
 Sl
@@ -6814,9 +6958,9 @@ mQ
 mQ
 mQ
 zW
-WR
-Be
-WR
+dM
+Hb
+PA
 Lk
 HX
 QU
@@ -6856,9 +7000,9 @@ zW
 zW
 zW
 zW
-WR
-Be
-WR
+dM
+Hb
+PA
 Lk
 Lk
 BN
@@ -6898,10 +7042,10 @@ zW
 zW
 zW
 zW
-WR
-Be
-WR
-WR
+dM
+Hb
+WZ
+WZ
 Lk
 QJ
 dj
@@ -6940,9 +7084,9 @@ zW
 zW
 zW
 zW
-WR
+dM
 Ek
-YH
+rI
 YU
 Lk
 Lk
@@ -6982,10 +7126,10 @@ zW
 zW
 zW
 zW
-WR
-Be
-WR
-WR
+dM
+JS
+ma
+ma
 zW
 zW
 zW
@@ -7024,8 +7168,8 @@ zW
 zW
 zW
 zW
-WR
-Be
+dM
+JS
 mR
 mR
 zW
@@ -7066,10 +7210,10 @@ zW
 zW
 zW
 zW
-mR
+Sz
 Ek
-WT
-ZK
+uh
+rI
 Rn
 zW
 zW
@@ -7110,8 +7254,8 @@ zW
 zW
 zW
 Be
-mR
-mR
+al
+al
 Tb
 Tb
 Tb

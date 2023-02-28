@@ -2582,6 +2582,21 @@
 "we" = (
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"wk" = (
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/hallway/central)
 "wp" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -2857,6 +2872,10 @@
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
+"zv" = (
+/obj/machinery/door/airlock/external,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "zw" = (
 /obj/machinery/iv_drip,
 /obj/structure/bed,
@@ -2973,20 +2992,8 @@
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/medical)
 "AJ" = (
-/obj/machinery/door/airlock/external,
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/cargo)
 "AM" = (
 /obj/effect/turf_decal/atmos/oxygen,
 /turf/open/floor/engine/o2,
@@ -4318,18 +4325,14 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "MN" = (
-/obj/machinery/door/poddoor{
-	id = "amogusdoors";
-	name = "Cargo Bay Blast Door"
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/firedoor,
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
 	dir = 2
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "MP" = (
 /obj/machinery/atmospherics/components/binary/pump{
@@ -5985,6 +5988,7 @@ fW
 fW
 fW
 fW
+fW
 mF
 mF
 ul
@@ -6004,8 +6008,10 @@ fW
 fW
 fW
 fW
+fW
 "}
 (2,1,1) = {"
+fW
 fW
 fW
 fW
@@ -6035,8 +6041,10 @@ fW
 fW
 fW
 fW
+fW
 "}
 (3,1,1) = {"
+fW
 fW
 fW
 fW
@@ -6066,8 +6074,10 @@ fW
 fW
 fW
 fW
+fW
 "}
 (4,1,1) = {"
+fW
 fW
 fW
 fW
@@ -6097,8 +6107,10 @@ gh
 fW
 fW
 fW
+fW
 "}
 (5,1,1) = {"
+fW
 fW
 fW
 kz
@@ -6128,8 +6140,10 @@ gh
 gh
 fW
 fW
+fW
 "}
 (6,1,1) = {"
+fW
 fW
 kz
 kz
@@ -6159,8 +6173,10 @@ BO
 gh
 gh
 fW
+fW
 "}
 (7,1,1) = {"
+fW
 kz
 kz
 gx
@@ -6190,8 +6206,10 @@ tG
 wC
 gh
 fW
+fW
 "}
 (8,1,1) = {"
+fW
 kz
 Vz
 kr
@@ -6221,8 +6239,10 @@ Fu
 Fu
 tx
 fW
+fW
 "}
 (9,1,1) = {"
+fW
 kz
 Pf
 pZ
@@ -6252,8 +6272,10 @@ Ma
 Ns
 tx
 tx
+fW
 "}
 (10,1,1) = {"
+fW
 kz
 gx
 gx
@@ -6283,8 +6305,10 @@ sh
 Kv
 pr
 Dw
+AJ
 "}
 (11,1,1) = {"
+fW
 kz
 AM
 GF
@@ -6314,8 +6338,10 @@ WO
 ug
 jv
 rb
+AJ
 "}
 (12,1,1) = {"
+fW
 kz
 JY
 Lm
@@ -6344,9 +6370,11 @@ Rv
 PI
 Pq
 JE
+Ym
 MN
 "}
 (13,1,1) = {"
+fW
 kz
 gx
 gx
@@ -6376,8 +6404,10 @@ ZI
 JQ
 JE
 Ym
+AJ
 "}
 (14,1,1) = {"
+fW
 kz
 Ek
 rM
@@ -6407,8 +6437,10 @@ Uu
 NC
 jv
 Ym
+AJ
 "}
 (15,1,1) = {"
+fW
 kz
 jc
 as
@@ -6438,8 +6470,10 @@ UC
 FW
 PL
 jX
+AJ
 "}
 (16,1,1) = {"
+fW
 kz
 kz
 kz
@@ -6469,8 +6503,10 @@ QJ
 Ur
 tx
 tx
+fW
 "}
 (17,1,1) = {"
+fW
 hr
 KY
 QL
@@ -6500,9 +6536,11 @@ cQ
 pq
 Xp
 fW
+fW
 "}
 (18,1,1) = {"
-AJ
+wk
+zv
 Wv
 WR
 KL
@@ -6531,8 +6569,10 @@ wG
 TE
 Xp
 fW
+fW
 "}
 (19,1,1) = {"
+fW
 xE
 xE
 Zd
@@ -6562,8 +6602,10 @@ oC
 OJ
 Xp
 fW
+fW
 "}
 (20,1,1) = {"
+fW
 fW
 xE
 Fi
@@ -6593,8 +6635,10 @@ wA
 GX
 Xp
 fW
+fW
 "}
 (21,1,1) = {"
+fW
 fW
 xE
 ka
@@ -6624,8 +6668,10 @@ kt
 XA
 Xp
 fW
+fW
 "}
 (22,1,1) = {"
+fW
 fW
 xE
 xE
@@ -6655,8 +6701,10 @@ AT
 ls
 Xp
 fW
+fW
 "}
 (23,1,1) = {"
+fW
 fW
 fW
 GQ
@@ -6686,8 +6734,10 @@ jh
 hJ
 fW
 fW
+fW
 "}
 (24,1,1) = {"
+fW
 fW
 fW
 GQ
@@ -6717,8 +6767,10 @@ dy
 hJ
 fW
 fW
+fW
 "}
 (25,1,1) = {"
+fW
 fW
 fW
 GQ
@@ -6748,8 +6800,10 @@ hM
 ls
 fW
 fW
+fW
 "}
 (26,1,1) = {"
+fW
 fW
 fW
 xE
@@ -6779,8 +6833,10 @@ ls
 ls
 fW
 fW
+fW
 "}
 (27,1,1) = {"
+fW
 fW
 fW
 fW
@@ -6810,8 +6866,10 @@ ls
 fW
 fW
 fW
+fW
 "}
 (28,1,1) = {"
+fW
 fW
 fW
 fW
@@ -6841,8 +6899,10 @@ ls
 fW
 fW
 fW
+fW
 "}
 (29,1,1) = {"
+fW
 fW
 fW
 fW
@@ -6872,8 +6932,10 @@ ls
 fW
 fW
 fW
+fW
 "}
 (30,1,1) = {"
+fW
 fW
 fW
 fW
@@ -6903,8 +6965,10 @@ ls
 fW
 fW
 fW
+fW
 "}
 (31,1,1) = {"
+fW
 fW
 fW
 fW
@@ -6934,8 +6998,10 @@ fW
 fW
 fW
 fW
+fW
 "}
 (32,1,1) = {"
+fW
 fW
 fW
 fW
@@ -6965,8 +7031,10 @@ fW
 fW
 fW
 fW
+fW
 "}
 (33,1,1) = {"
+fW
 fW
 fW
 fW
@@ -6996,8 +7064,10 @@ fW
 fW
 fW
 fW
+fW
 "}
 (34,1,1) = {"
+fW
 fW
 fW
 fW
@@ -7027,8 +7097,10 @@ fW
 fW
 fW
 fW
+fW
 "}
 (35,1,1) = {"
+fW
 fW
 fW
 fW
@@ -7058,8 +7130,10 @@ fW
 fW
 fW
 fW
+fW
 "}
 (36,1,1) = {"
+fW
 fW
 fW
 fW
@@ -7089,6 +7163,7 @@ fW
 fW
 fW
 fW
+fW
 "}
 (37,1,1) = {"
 fW
@@ -7099,6 +7174,7 @@ fW
 fW
 fW
 fW
+fW
 XU
 XU
 XU
@@ -7112,6 +7188,7 @@ nq
 nq
 nq
 nq
+fW
 fW
 fW
 fW

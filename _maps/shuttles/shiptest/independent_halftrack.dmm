@@ -45,6 +45,9 @@
 /obj/machinery/door/window/eastleft,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
+"by" = (
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "bX" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
@@ -1518,6 +1521,16 @@
 /obj/structure/sign/poster/contraband/stechkin,
 /turf/closed/wall/r_wall,
 /area/ship/hallway/aft)
+"MC" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "MN" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
@@ -2216,6 +2229,7 @@ fp
 fp
 UG
 UG
+UG
 "}
 (2,1,1) = {"
 UG
@@ -2244,6 +2258,7 @@ fe
 Kh
 Ny
 Jn
+UG
 UG
 "}
 (3,1,1) = {"
@@ -2274,6 +2289,7 @@ Gm
 KD
 dR
 Jn
+UG
 "}
 (4,1,1) = {"
 UG
@@ -2303,6 +2319,7 @@ fp
 fp
 fp
 fp
+UG
 "}
 (5,1,1) = {"
 UG
@@ -2329,6 +2346,7 @@ fp
 fp
 vr
 fp
+UG
 UG
 UG
 UG
@@ -2361,6 +2379,7 @@ fp
 fp
 UG
 UG
+UG
 "}
 (7,1,1) = {"
 bX
@@ -2390,6 +2409,7 @@ Fx
 pa
 gL
 gL
+UG
 "}
 (8,1,1) = {"
 bX
@@ -2419,6 +2439,7 @@ YI
 Ja
 Qp
 gL
+UG
 "}
 (9,1,1) = {"
 bX
@@ -2448,6 +2469,7 @@ xa
 ur
 ur
 gO
+by
 "}
 (10,1,1) = {"
 bX
@@ -2477,6 +2499,7 @@ ur
 ur
 ur
 BN
+MC
 "}
 (11,1,1) = {"
 bX
@@ -2506,6 +2529,7 @@ IG
 ur
 ur
 gO
+by
 "}
 (12,1,1) = {"
 bX
@@ -2535,6 +2559,7 @@ tT
 uW
 ZO
 gL
+UG
 "}
 (13,1,1) = {"
 bX
@@ -2564,6 +2589,7 @@ Mm
 gL
 gL
 gL
+UG
 "}
 (14,1,1) = {"
 UG
@@ -2593,6 +2619,7 @@ UO
 UO
 UG
 UG
+UG
 "}
 (15,1,1) = {"
 UG
@@ -2619,6 +2646,7 @@ UO
 UO
 Lt
 UO
+UG
 UG
 UG
 UG
@@ -2651,6 +2679,7 @@ UO
 UO
 UO
 UO
+UG
 "}
 (17,1,1) = {"
 UG
@@ -2680,6 +2709,7 @@ ir
 Hq
 VM
 Dj
+UG
 "}
 (18,1,1) = {"
 UG
@@ -2709,6 +2739,7 @@ QY
 Ob
 Dj
 UG
+UG
 "}
 (19,1,1) = {"
 UG
@@ -2736,6 +2767,7 @@ UO
 UO
 UO
 UO
+UG
 UG
 UG
 "}

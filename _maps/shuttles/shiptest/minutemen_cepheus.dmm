@@ -253,6 +253,22 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
+"cG" = (
+/obj/docking_port/mobile{
+	dir = 4;
+	launch_status = 0;
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/external)
 "cH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -2643,6 +2659,9 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm)
+"zE" = (
+/turf/open/floor/plasteel/dark,
+/area/ship/external)
 "zJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -4889,6 +4908,31 @@ zQ
 zQ
 zQ
 zQ
+zQ
+zE
+cG
+zE
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+"}
+(2,1,1) = {"
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
+zQ
 El
 ol
 ML
@@ -4904,7 +4948,7 @@ zQ
 zQ
 zQ
 "}
-(2,1,1) = {"
+(3,1,1) = {"
 zQ
 zQ
 zQ
@@ -4929,7 +4973,7 @@ zQ
 zQ
 zQ
 "}
-(3,1,1) = {"
+(4,1,1) = {"
 zQ
 zQ
 zQ
@@ -4954,7 +4998,7 @@ zQ
 zQ
 zQ
 "}
-(4,1,1) = {"
+(5,1,1) = {"
 zQ
 zQ
 zQ
@@ -4979,7 +5023,7 @@ zQ
 zQ
 zQ
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 zQ
 zQ
 uX
@@ -5004,7 +5048,7 @@ Ob
 zQ
 zQ
 "}
-(6,1,1) = {"
+(7,1,1) = {"
 ag
 Xv
 uX
@@ -5029,7 +5073,7 @@ Ob
 mf
 WU
 "}
-(7,1,1) = {"
+(8,1,1) = {"
 uX
 Mb
 uX
@@ -5054,7 +5098,7 @@ Ob
 dK
 Ob
 "}
-(8,1,1) = {"
+(9,1,1) = {"
 Mo
 CY
 sm
@@ -5079,7 +5123,7 @@ Up
 FJ
 Ob
 "}
-(9,1,1) = {"
+(10,1,1) = {"
 uX
 aE
 FS
@@ -5104,7 +5148,7 @@ bh
 ng
 Ob
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 qK
 uX
 hc
@@ -5129,7 +5173,7 @@ wZ
 Ob
 iz
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 zQ
 zn
 WB
@@ -5154,7 +5198,7 @@ Ob
 iz
 zQ
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 zQ
 zQ
 WB
@@ -5179,7 +5223,7 @@ Qf
 zQ
 zQ
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 zQ
 zQ
 WB
@@ -5204,7 +5248,7 @@ Qf
 zQ
 zQ
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 zQ
 zQ
 zn
@@ -5229,7 +5273,7 @@ XA
 zQ
 zQ
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 zQ
 zQ
 zQ
@@ -5254,7 +5298,7 @@ zQ
 zQ
 zQ
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 zQ
 zQ
 zQ
@@ -5279,7 +5323,7 @@ zQ
 zQ
 zQ
 "}
-(17,1,1) = {"
+(18,1,1) = {"
 zQ
 zQ
 zQ
@@ -5304,7 +5348,7 @@ zQ
 zQ
 zQ
 "}
-(18,1,1) = {"
+(19,1,1) = {"
 zQ
 zQ
 zQ
@@ -5329,7 +5373,7 @@ zQ
 zQ
 zQ
 "}
-(19,1,1) = {"
+(20,1,1) = {"
 zQ
 zQ
 zQ
@@ -5354,7 +5398,7 @@ zQ
 zQ
 zQ
 "}
-(20,1,1) = {"
+(21,1,1) = {"
 zQ
 zQ
 zQ
@@ -5379,7 +5423,7 @@ zQ
 zQ
 zQ
 "}
-(21,1,1) = {"
+(22,1,1) = {"
 zQ
 zQ
 zQ
@@ -5404,7 +5448,7 @@ zQ
 zQ
 zQ
 "}
-(22,1,1) = {"
+(23,1,1) = {"
 zQ
 zQ
 Qr
@@ -5429,7 +5473,7 @@ TU
 zQ
 zQ
 "}
-(23,1,1) = {"
+(24,1,1) = {"
 zQ
 zQ
 Qr
@@ -5454,7 +5498,7 @@ TU
 zQ
 zQ
 "}
-(24,1,1) = {"
+(25,1,1) = {"
 zQ
 zQ
 Qr
@@ -5479,7 +5523,7 @@ BR
 zQ
 zQ
 "}
-(25,1,1) = {"
+(26,1,1) = {"
 zQ
 zQ
 Qr
@@ -5504,7 +5548,7 @@ BR
 zQ
 zQ
 "}
-(26,1,1) = {"
+(27,1,1) = {"
 zQ
 zQ
 TL
@@ -5529,7 +5573,7 @@ OP
 zQ
 zQ
 "}
-(27,1,1) = {"
+(28,1,1) = {"
 zQ
 zQ
 zQ
@@ -5554,7 +5598,7 @@ zQ
 zQ
 zQ
 "}
-(28,1,1) = {"
+(29,1,1) = {"
 zQ
 zQ
 zQ
@@ -5579,7 +5623,7 @@ zQ
 zQ
 zQ
 "}
-(29,1,1) = {"
+(30,1,1) = {"
 zQ
 zQ
 zQ
@@ -5604,7 +5648,7 @@ zQ
 zQ
 zQ
 "}
-(30,1,1) = {"
+(31,1,1) = {"
 zQ
 zQ
 zQ
@@ -5629,7 +5673,7 @@ zQ
 zQ
 zQ
 "}
-(31,1,1) = {"
+(32,1,1) = {"
 zQ
 zQ
 zQ

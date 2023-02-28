@@ -3116,6 +3116,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"gl" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/ship/crew)
 "hr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/washing_machine,
@@ -3167,26 +3176,14 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "nK" = (
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/docking_port/mobile{
-	callTime = 250;
-	can_move_docking_ports = 1;
-	dir = 2;
-	dwidth = 11;
-	height = 17;
-	launch_status = 0;
-	name = "Salvage Ship";
-	port_direction = 8;
-	preferred_direction = 4;
-	width = 33
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plating,
-/area/ship/crew)
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "nT" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3315,17 +3312,8 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "vM" = (
-/obj/machinery/door/poddoor{
-	id = "whiteship_port"
-	},
-/obj/structure/fans/tiny,
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "wM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood,
@@ -3412,19 +3400,15 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "BU" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/door/poddoor{
-	id = "whiteship_starboard"
-	},
-/obj/structure/fans/tiny,
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
 	},
-/turf/open/floor/plating,
-/area/ship/cargo)
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Fb" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3481,11 +3465,27 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
+"Xh" = (
+/obj/docking_port/mobile{
+	callTime = 250;
+	can_move_docking_ports = 1;
+	dir = 2;
+	dwidth = 11;
+	height = 17;
+	launch_status = 0;
+	name = "Salvage Ship";
+	port_direction = 8;
+	preferred_direction = 4;
+	width = 33
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "YW" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 
 (1,1,1) = {"
+aa
 aa
 ab
 ax
@@ -3503,8 +3503,10 @@ aL
 Un
 ab
 aa
+aa
 "}
 (2,1,1) = {"
+aa
 ab
 ac
 ay
@@ -3522,8 +3524,10 @@ tN
 fb
 ac
 ab
+aa
 "}
 (3,1,1) = {"
+aa
 ac
 ak
 az
@@ -3541,8 +3545,10 @@ dp
 dH
 dW
 ac
+aa
 "}
 (4,1,1) = {"
+aa
 ac
 al
 aA
@@ -3560,8 +3566,10 @@ el
 dI
 dX
 ac
+aa
 "}
 (5,1,1) = {"
+aa
 do
 ac
 aB
@@ -3579,8 +3587,10 @@ JR
 dJ
 ac
 do
+aa
 "}
 (6,1,1) = {"
+aa
 aa
 am
 aC
@@ -3598,8 +3608,10 @@ fX
 dK
 am
 aa
+aa
 "}
 (7,1,1) = {"
+aa
 aa
 YW
 YW
@@ -3617,8 +3629,10 @@ dt
 YW
 YW
 aa
+aa
 "}
 (8,1,1) = {"
+aa
 ad
 YW
 aD
@@ -3636,8 +3650,10 @@ qX
 dL
 YW
 ad
+aa
 "}
 (9,1,1) = {"
+vM
 ae
 ao
 aE
@@ -3655,8 +3671,10 @@ du
 bA
 dY
 eh
+vM
 "}
 (10,1,1) = {"
+vM
 ae
 ap
 ap
@@ -3674,9 +3692,11 @@ qX
 em
 bA
 ei
+vM
 "}
 (11,1,1) = {"
-vM
+nK
+af
 aq
 ap
 aU
@@ -3692,9 +3712,11 @@ dd
 dv
 tZ
 ap
+ei
 BU
 "}
 (12,1,1) = {"
+vM
 ae
 ar
 ap
@@ -3712,8 +3734,10 @@ yh
 ap
 dZ
 eh
+vM
 "}
 (13,1,1) = {"
+vM
 af
 as
 ap
@@ -3731,8 +3755,10 @@ qX
 dM
 ea
 ei
+vM
 "}
 (14,1,1) = {"
+aa
 ad
 YW
 aG
@@ -3750,8 +3776,10 @@ yh
 dN
 YW
 ad
+aa
 "}
 (15,1,1) = {"
+aa
 aa
 YW
 YW
@@ -3769,8 +3797,10 @@ dw
 YW
 YW
 aa
+aa
 "}
 (16,1,1) = {"
+aa
 aa
 aj
 aH
@@ -3788,8 +3818,10 @@ dx
 dO
 eb
 aa
+aa
 "}
 (17,1,1) = {"
+aa
 do
 ai
 ai
@@ -3807,9 +3839,11 @@ dy
 bD
 bD
 do
+aa
 "}
 (18,1,1) = {"
-nK
+Xh
+gl
 at
 aI
 aY
@@ -3826,8 +3860,10 @@ dz
 Nu
 ec
 ej
+aa
 "}
 (19,1,1) = {"
+aa
 ai
 ai
 ai
@@ -3845,8 +3881,10 @@ dA
 bD
 bD
 bD
+aa
 "}
 (20,1,1) = {"
+aa
 ai
 au
 ai
@@ -3864,8 +3902,10 @@ Bw
 uA
 ed
 bD
+aa
 "}
 (21,1,1) = {"
+aa
 aj
 av
 aJ
@@ -3883,8 +3923,10 @@ qn
 yo
 ee
 eb
+aa
 "}
 (22,1,1) = {"
+aa
 ai
 ai
 ai
@@ -3902,8 +3944,10 @@ dD
 dS
 bD
 bD
+aa
 "}
 (23,1,1) = {"
+aa
 aj
 aw
 aK
@@ -3921,8 +3965,10 @@ dE
 dT
 ef
 eb
+aa
 "}
 (24,1,1) = {"
+aa
 ai
 bV
 ai
@@ -3940,8 +3986,10 @@ dF
 dU
 eg
 bD
+aa
 "}
 (25,1,1) = {"
+aa
 ag
 ai
 ai
@@ -3959,9 +4007,11 @@ dG
 dV
 bD
 cW
+aa
 "}
 (26,1,1) = {"
 aa
+aa
 do
 ai
 ai
@@ -3977,5 +4027,6 @@ do
 bD
 bD
 do
+aa
 aa
 "}

@@ -311,6 +311,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"ns" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "ny" = (
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/frame/machine,
@@ -585,19 +597,19 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "AR" = (
-/obj/machinery/door/airlock/external,
 /obj/docking_port/mobile{
 	launch_status = 0;
 	port_direction = 4
 	},
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
 	},
 /turf/open/floor/plating,
-/area/ship/engineering)
+/area/ship/external)
 "BJ" = (
 /obj/structure/sign/departments/cargo{
 	pixel_y = 32
@@ -1051,7 +1063,7 @@
 /area/ship/maintenance/aft)
 "VB" = (
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "VI" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1
@@ -1212,6 +1224,7 @@ VB
 VB
 VB
 VB
+VB
 "}
 (2,1,1) = {"
 VB
@@ -1226,6 +1239,7 @@ hs
 GD
 Ob
 wH
+VB
 VB
 VB
 VB
@@ -1250,6 +1264,7 @@ VB
 VB
 VB
 VB
+VB
 "}
 (4,1,1) = {"
 VB
@@ -1266,6 +1281,7 @@ MW
 VA
 Ob
 Ob
+VB
 VB
 VB
 VB
@@ -1288,6 +1304,7 @@ Ob
 VB
 VB
 VB
+VB
 "}
 (6,1,1) = {"
 VB
@@ -1305,6 +1322,7 @@ nH
 nH
 nH
 nH
+VB
 VB
 VB
 "}
@@ -1326,6 +1344,7 @@ KG
 nH
 VB
 VB
+VB
 "}
 (8,1,1) = {"
 VB
@@ -1343,6 +1362,7 @@ Cc
 ZM
 JF
 nH
+VB
 VB
 VB
 "}
@@ -1364,6 +1384,7 @@ fs
 vR
 DL
 VB
+VB
 "}
 (10,1,1) = {"
 VB
@@ -1382,6 +1403,7 @@ KQ
 kW
 nH
 NX
+VB
 VB
 "}
 (11,1,1) = {"
@@ -1402,9 +1424,10 @@ IL
 Vt
 Rk
 MJ
+VB
 "}
 (12,1,1) = {"
-gl
+ns
 Gl
 ec
 nS
@@ -1420,6 +1443,7 @@ cH
 Ls
 ZQ
 cG
+ZQ
 AR
 "}
 (13,1,1) = {"
@@ -1440,6 +1464,7 @@ UC
 Vt
 mY
 MJ
+VB
 "}
 (14,1,1) = {"
 VB
@@ -1459,6 +1484,7 @@ MJ
 MJ
 VB
 VB
+VB
 "}
 (15,1,1) = {"
 VB
@@ -1475,6 +1501,7 @@ CP
 bb
 Ul
 zy
+VB
 VB
 VB
 VB
@@ -1497,6 +1524,7 @@ zy
 VB
 VB
 VB
+VB
 "}
 (17,1,1) = {"
 VB
@@ -1516,6 +1544,7 @@ VB
 VB
 VB
 VB
+VB
 "}
 (18,1,1) = {"
 VB
@@ -1529,6 +1558,7 @@ hh
 hh
 hh
 CP
+VB
 VB
 VB
 VB

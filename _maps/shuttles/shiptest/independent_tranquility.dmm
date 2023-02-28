@@ -339,14 +339,6 @@
 "cJ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security/armory)
-"cK" = (
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external)
 "cW" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 5
@@ -2556,9 +2548,10 @@
 "tW" = (
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
-	dir = 4;
-	dheight = -1
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 4
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
@@ -7646,7 +7639,7 @@ qa
 qa
 qa
 qa
-cK
+fg
 zK
 fz
 ng

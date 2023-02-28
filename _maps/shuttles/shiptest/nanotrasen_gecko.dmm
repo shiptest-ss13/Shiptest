@@ -1964,9 +1964,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
+	width = 9;
+	dheight = 1;
+	dwidth = 4;
+	dir = 2
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
@@ -2353,8 +2354,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
-	dheight = -1
+	width = 9;
+	dheight = 1;
+	dwidth = 4
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)

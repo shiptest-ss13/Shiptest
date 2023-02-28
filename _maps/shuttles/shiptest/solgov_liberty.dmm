@@ -9,12 +9,6 @@
 	id = "piratecargo";
 	name = "Cargo Bay"
 	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
-	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
 "au" = (
@@ -646,6 +640,13 @@
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
+	},
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dheight = 1;
+	dwidth = 3;
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)

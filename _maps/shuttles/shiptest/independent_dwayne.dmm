@@ -578,7 +578,7 @@
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/reagent_containers/glass/beaker{
-	list_reagents = list(/datum/reagent/fuel = 50)
+	list_reagents = list(/datum/reagent/fuel=50)
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -1367,11 +1367,11 @@
 /area/ship/crew)
 "DX" = (
 /obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 3;
-	height = 5;
-	name = "Mining Ship: Common Mining Dock";
-	width = 7
+	height = 15;
+	width = 9;
+	dheight = 1;
+	dwidth = 4;
+	dir = 2
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)

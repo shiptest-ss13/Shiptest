@@ -1449,6 +1449,9 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
+"ke" = (
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/external)
 "kf" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/corner/opaque/grey/mono,
@@ -2678,24 +2681,6 @@
 "sf" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
-"si" = (
-/obj/structure/fans/tiny,
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor/orange,
-/obj/machinery/door/firedoor/heavy,
-/obj/machinery/door/poddoor{
-	id = "ospreydoors";
-	name = "Cargo Bay Blast Door"
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/hallway/fore)
 "sl" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -5216,6 +5201,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
+"Kw" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 7;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/external)
 "Ky" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -7881,7 +7875,7 @@ XU
 (13,1,1) = {"
 XU
 XU
-XU
+ke
 ap
 mQ
 Cm
@@ -7939,7 +7933,7 @@ XU
 (14,1,1) = {"
 XU
 XU
-XU
+ke
 jh
 vu
 xp
@@ -7997,7 +7991,7 @@ XU
 (15,1,1) = {"
 XU
 XU
-XU
+ke
 jh
 vN
 Xb
@@ -8055,8 +8049,8 @@ XU
 (16,1,1) = {"
 XU
 XU
-XU
-si
+Kw
+jh
 vo
 fI
 hz
@@ -8113,7 +8107,7 @@ XU
 (17,1,1) = {"
 XU
 XU
-XU
+ke
 jh
 vN
 TB
@@ -8171,7 +8165,7 @@ XU
 (18,1,1) = {"
 XU
 XU
-XU
+ke
 jh
 aF
 VM
@@ -8229,7 +8223,7 @@ XU
 (19,1,1) = {"
 XU
 XU
-XU
+ke
 ap
 Mj
 Os

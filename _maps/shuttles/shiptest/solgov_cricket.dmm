@@ -1395,6 +1395,20 @@
 "qd" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
+"qm" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/external)
 "qr" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
@@ -2518,17 +2532,7 @@
 "CN" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8
-	},
 /obj/machinery/door/firedoor/heavy,
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
 "CO" = (
@@ -4343,9 +4347,10 @@
 /obj/structure/catwalk,
 /obj/docking_port/stationary{
 	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
 	},
 /turf/template_noop,
 /area/ship/external)
@@ -4518,6 +4523,7 @@
 
 (1,1,1) = {"
 zR
+zR
 aw
 aw
 dn
@@ -4543,6 +4549,7 @@ zR
 zR
 "}
 (2,1,1) = {"
+zR
 ZV
 lM
 Gu
@@ -4569,6 +4576,7 @@ ZV
 zR
 "}
 (3,1,1) = {"
+zR
 ZV
 aE
 aE
@@ -4595,6 +4603,7 @@ ZV
 zR
 "}
 (4,1,1) = {"
+zR
 ZV
 aG
 bt
@@ -4621,6 +4630,7 @@ ZV
 zR
 "}
 (5,1,1) = {"
+zR
 ZV
 aI
 cu
@@ -4647,6 +4657,7 @@ ZV
 zR
 "}
 (6,1,1) = {"
+zR
 ZV
 aR
 NR
@@ -4673,6 +4684,7 @@ ZV
 zR
 "}
 (7,1,1) = {"
+zR
 ZV
 yC
 mM
@@ -4699,6 +4711,7 @@ ZV
 zR
 "}
 (8,1,1) = {"
+zR
 Pd
 yC
 mM
@@ -4725,6 +4738,7 @@ zR
 zR
 "}
 (9,1,1) = {"
+zR
 Dd
 yC
 OY
@@ -4751,6 +4765,7 @@ zR
 zR
 "}
 (10,1,1) = {"
+zR
 QG
 QG
 HN
@@ -4777,6 +4792,7 @@ Ob
 zR
 "}
 (11,1,1) = {"
+qm
 CN
 iW
 YV
@@ -4803,6 +4819,7 @@ Nn
 zR
 "}
 (12,1,1) = {"
+zR
 Mz
 NH
 gS
@@ -4829,6 +4846,7 @@ Ob
 zR
 "}
 (13,1,1) = {"
+zR
 RH
 RH
 RH
@@ -4855,6 +4873,7 @@ Od
 zR
 "}
 (14,1,1) = {"
+zR
 RH
 LN
 CR
@@ -4881,6 +4900,7 @@ Od
 zR
 "}
 (15,1,1) = {"
+zR
 nO
 ot
 BF
@@ -4907,6 +4927,7 @@ Od
 zR
 "}
 (16,1,1) = {"
+zR
 nO
 gX
 ZL
@@ -4933,6 +4954,7 @@ Od
 zR
 "}
 (17,1,1) = {"
+zR
 nO
 Mq
 ZL
@@ -4959,6 +4981,7 @@ eq
 zR
 "}
 (18,1,1) = {"
+zR
 nO
 HB
 ZL
@@ -4985,6 +5008,7 @@ eq
 zR
 "}
 (19,1,1) = {"
+zR
 RH
 TR
 VE
@@ -5011,6 +5035,7 @@ QD
 zR
 "}
 (20,1,1) = {"
+zR
 Un
 Un
 RH
@@ -5037,6 +5062,7 @@ QD
 zR
 "}
 (21,1,1) = {"
+zR
 YU
 Wt
 ZB
@@ -5063,6 +5089,7 @@ QD
 zR
 "}
 (22,1,1) = {"
+zR
 YU
 zN
 Qi
@@ -5089,6 +5116,7 @@ OI
 oe
 "}
 (23,1,1) = {"
+zR
 YU
 OT
 oL
@@ -5115,6 +5143,7 @@ AU
 oe
 "}
 (24,1,1) = {"
+zR
 YU
 XM
 hz
@@ -5141,6 +5170,7 @@ AU
 Yf
 "}
 (25,1,1) = {"
+zR
 YU
 TD
 vi
@@ -5167,6 +5197,7 @@ AU
 oe
 "}
 (26,1,1) = {"
+zR
 YU
 YU
 YU
@@ -5194,6 +5225,7 @@ JF
 "}
 (27,1,1) = {"
 zR
+zR
 WN
 bn
 vm
@@ -5219,6 +5251,7 @@ oe
 oe
 "}
 (28,1,1) = {"
+zR
 zR
 WN
 uZ
@@ -5246,6 +5279,7 @@ zR
 "}
 (29,1,1) = {"
 zR
+zR
 WN
 tm
 SA
@@ -5271,6 +5305,7 @@ oe
 zR
 "}
 (30,1,1) = {"
+zR
 zR
 WN
 SC
@@ -5298,6 +5333,7 @@ zR
 "}
 (31,1,1) = {"
 zR
+zR
 Dd
 WN
 eE
@@ -5323,6 +5359,7 @@ Dd
 zR
 "}
 (32,1,1) = {"
+zR
 zR
 Dd
 WN
@@ -5350,6 +5387,7 @@ zR
 "}
 (33,1,1) = {"
 zR
+zR
 Dd
 WN
 by
@@ -5375,6 +5413,7 @@ zR
 zR
 "}
 (34,1,1) = {"
+zR
 zR
 Dd
 oe

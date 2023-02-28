@@ -770,6 +770,17 @@
 	dir = 4
 	},
 /area/ship/hallway)
+"sH" = (
+/obj/structure/catwalk,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "sM" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -2375,19 +2386,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
-"TT" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/poddoor{
-	id = "mining_galaxy_port"
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
-	},
-/turf/open/floor/plasteel/patterned/monofloor,
-/area/ship/cargo)
 "Up" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/purple,
@@ -2778,8 +2776,8 @@ Gf
 OY
 OY
 vN
-TT
-eY
+Dm
+sH
 "}
 (7,1,1) = {"
 HV

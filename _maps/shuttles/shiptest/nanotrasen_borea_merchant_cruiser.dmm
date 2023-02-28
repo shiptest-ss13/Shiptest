@@ -1552,9 +1552,6 @@
 /obj/machinery/computer/security{
 	dir = 4
 	},
-/obj/structure/sign/poster/official/twelve_gauge{
-	pixel_x = -30
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "do" = (
@@ -2350,9 +2347,6 @@
 "fk" = (
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/spline/fancy/corner/opaque/ntblue{
-	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -5510,12 +5504,6 @@
 	preferred_direction = 4;
 	can_move_docking_ports = 1
 	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dir = 4;
-	dheight = -1
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "sX" = (
@@ -5672,18 +5660,6 @@
 /obj/machinery/door/window/southleft,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
-"va" = (
-/obj/machinery/door/poddoor{
-	name = "Bay Doors";
-	id = "ntboent2"
-	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/hallway/port)
 "vi" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6369,13 +6345,9 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "Cr" = (
-/obj/docking_port/stationary{
-	dir = 4;
-	roundstart_template = /datum/map_template/shuttle/subshuttles/zetes_delivery_pod;
-	width = 3;
-	height = 8;
-	dwidth = 1;
-	load_template_on_initialize = 0
+/obj/effect/landmark/subship{
+	dir = 1;
+	subship_template = /datum/map_template/shuttle/subshuttles/zetes_delivery_pod
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
@@ -7814,6 +7786,9 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"PZ" = (
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Qi" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -7850,6 +7825,15 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/canteen/kitchen)
+"Qu" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Qz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -9966,7 +9950,7 @@ EY
 EY
 EY
 EY
-EY
+PZ
 aP
 bn
 bs
@@ -10002,7 +9986,7 @@ EY
 EY
 EY
 EY
-EY
+PZ
 aQ
 ba
 bo
@@ -10038,7 +10022,7 @@ EY
 EY
 EY
 EY
-EY
+Qu
 aQ
 ba
 bi
@@ -10074,8 +10058,8 @@ EY
 EY
 EY
 EY
-EY
-va
+PZ
+aQ
 ba
 bo
 bz
@@ -10110,7 +10094,7 @@ EY
 EY
 EY
 EY
-EY
+PZ
 aQ
 ba
 bi
@@ -10146,7 +10130,7 @@ EY
 EY
 EY
 EY
-EY
+PZ
 aS
 bb
 bp

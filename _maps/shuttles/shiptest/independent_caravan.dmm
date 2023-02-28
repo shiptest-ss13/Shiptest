@@ -1560,6 +1560,9 @@
 /obj/effect/landmark/start/shaft_miner,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"BL" = (
+/turf/open/floor/engine,
+/area/ship/external)
 "BT" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
@@ -1929,6 +1932,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
+"In" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/engine,
+/area/ship/external)
 "Iq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
@@ -2953,11 +2965,6 @@
 	id = "cargoblastdoors";
 	name = "Cargo Bay Blast Door"
 	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Zu" = (
@@ -3258,7 +3265,7 @@ bZ
 "}
 (13,1,1) = {"
 bZ
-bZ
+BL
 xo
 GO
 FK
@@ -3278,7 +3285,7 @@ bZ
 "}
 (14,1,1) = {"
 bZ
-bZ
+In
 Zs
 OO
 eI
@@ -3298,7 +3305,7 @@ bZ
 "}
 (15,1,1) = {"
 bZ
-bZ
+BL
 ad
 ZV
 Jn

@@ -8,13 +8,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	name = "minimalta";
-	port_direction = 8;
-	preferred_direction = 4
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
 "d" = (
@@ -235,6 +228,13 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "cargopirate_sub_hatch";
 	name = "Blast Shutters"
+	},
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	name = "minimalta";
+	port_direction = 8;
+	preferred_direction = 4
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage)

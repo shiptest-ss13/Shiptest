@@ -97,23 +97,21 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "fW" = (
-/obj/structure/fans/tiny,
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3;
+	dir = 2
+	},
 /obj/docking_port/mobile{
 	launch_status = 0;
 	port_direction = 2
 	},
-/obj/machinery/door/poddoor{
-	id = "baydoors";
-	name = "Cargo Bay Blast Door"
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
 	},
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dir = 2;
-	dheight = -1
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
+/area/ship/external)
 "gh" = (
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
@@ -1854,6 +1852,7 @@ BZ
 BZ
 BZ
 BZ
+BZ
 "}
 (2,1,1) = {"
 BZ
@@ -1865,6 +1864,7 @@ El
 yp
 El
 BH
+BZ
 BZ
 BZ
 BZ
@@ -1900,6 +1900,7 @@ PR
 BZ
 BZ
 BZ
+BZ
 "}
 (4,1,1) = {"
 BZ
@@ -1920,6 +1921,7 @@ mK
 xB
 Xi
 PR
+BZ
 BZ
 BZ
 BZ
@@ -1946,6 +1948,7 @@ lQ
 dm
 dm
 dm
+BZ
 "}
 (6,1,1) = {"
 BZ
@@ -1969,6 +1972,7 @@ sB
 wt
 bt
 xr
+BZ
 "}
 (7,1,1) = {"
 BZ
@@ -1992,6 +1996,7 @@ dm
 Fk
 sh
 vk
+BZ
 "}
 (8,1,1) = {"
 QM
@@ -2015,6 +2020,7 @@ dm
 dm
 dm
 dm
+BZ
 "}
 (9,1,1) = {"
 AO
@@ -2038,6 +2044,7 @@ tr
 jI
 ER
 hP
+BZ
 "}
 (10,1,1) = {"
 AO
@@ -2060,6 +2067,7 @@ XF
 GI
 qc
 GG
+hP
 fW
 "}
 (11,1,1) = {"
@@ -2084,6 +2092,7 @@ gh
 bL
 rD
 hP
+BZ
 "}
 (12,1,1) = {"
 Fi
@@ -2107,6 +2116,7 @@ sv
 sv
 YB
 YB
+BZ
 "}
 (13,1,1) = {"
 BZ
@@ -2130,6 +2140,7 @@ dm
 Vs
 QU
 vk
+BZ
 "}
 (14,1,1) = {"
 BZ
@@ -2153,6 +2164,7 @@ sK
 RU
 QE
 xr
+BZ
 "}
 (15,1,1) = {"
 BZ
@@ -2176,6 +2188,7 @@ lQ
 dm
 dm
 dm
+BZ
 "}
 (16,1,1) = {"
 BZ
@@ -2196,6 +2209,7 @@ No
 Pt
 mo
 PR
+BZ
 BZ
 BZ
 BZ
@@ -2222,6 +2236,7 @@ PR
 BZ
 BZ
 BZ
+BZ
 "}
 (18,1,1) = {"
 BZ
@@ -2237,6 +2252,7 @@ BH
 BH
 BH
 BH
+BZ
 BZ
 BZ
 BZ

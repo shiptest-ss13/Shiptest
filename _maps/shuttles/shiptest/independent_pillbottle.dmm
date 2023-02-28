@@ -142,11 +142,6 @@
 	name = "Ye Old Docking Airlock"
 	},
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/docking_port/stationary{
-	height = 15;
-	width = 7;
-	dheight = -1
-	},
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "bX" = (
@@ -2530,6 +2525,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
+"QF" = (
+/obj/docking_port/stationary{
+	height = 15;
+	width = 12;
+	dheight = 1;
+	dwidth = 3
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "QI" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/light/small{
@@ -2929,6 +2933,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/item/inducer{
+	name = "Bizarre Power Issue Solver";
+	desc = "Fixes the ship so I don't have to"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -3744,7 +3752,7 @@ tG
 "}
 (28,1,1) = {"
 Oz
-Oz
+QF
 bQ
 Ce
 La

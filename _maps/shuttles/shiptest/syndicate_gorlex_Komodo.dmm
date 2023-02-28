@@ -464,6 +464,13 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
+"el" = (
+/obj/machinery/door/poddoor{
+	id = "syndie_warship_cargo";
+	name = "Cargo Hatch"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
 "es" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/ripped{
@@ -3355,18 +3362,15 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "Gs" = (
-/obj/machinery/door/poddoor{
-	id = "syndie_warship_cargo";
-	name = "Cargo Hatch"
-	},
 /obj/docking_port/stationary{
-	dir = 8;
-	width = 7;
 	height = 15;
-	dheight = 1
+	width = 12;
+	dheight = 1;
+	dwidth = 4;
+	dir = 8
 	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/cargo)
+/turf/open/floor/plasteel/tech,
+/area/ship/external)
 "Gw" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/bodybags{
@@ -5059,6 +5063,9 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/medical)
+"Wx" = (
+/turf/open/floor/plasteel/tech,
+/area/ship/external)
 "Wz" = (
 /obj/effect/turf_decal/trimline/transparent/bar/filled/line{
 	dir = 9
@@ -5493,6 +5500,50 @@
 CM
 CM
 CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+Wx
+Gs
+Wx
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+CM
+"}
+(2,1,1) = {"
+CM
+CM
+CM
 UN
 gN
 gN
@@ -5518,7 +5569,7 @@ Vk
 Vk
 Rk
 bA
-Gs
+el
 zA
 Te
 CM
@@ -5533,7 +5584,7 @@ Te
 CM
 CM
 "}
-(2,1,1) = {"
+(3,1,1) = {"
 CM
 CM
 CM
@@ -5577,7 +5628,7 @@ CO
 CM
 CM
 "}
-(3,1,1) = {"
+(4,1,1) = {"
 CM
 CM
 CM
@@ -5621,7 +5672,7 @@ Nz
 Bg
 CM
 "}
-(4,1,1) = {"
+(5,1,1) = {"
 CM
 CM
 CM
@@ -5665,7 +5716,7 @@ sq
 sq
 CM
 "}
-(5,1,1) = {"
+(6,1,1) = {"
 CM
 CM
 ME
@@ -5709,7 +5760,7 @@ vq
 cV
 CM
 "}
-(6,1,1) = {"
+(7,1,1) = {"
 CM
 ME
 ME
@@ -5753,7 +5804,7 @@ Po
 cV
 CM
 "}
-(7,1,1) = {"
+(8,1,1) = {"
 ME
 ME
 nQ
@@ -5797,7 +5848,7 @@ sq
 hY
 Te
 "}
-(8,1,1) = {"
+(9,1,1) = {"
 ME
 bk
 Sr
@@ -5841,7 +5892,7 @@ eD
 vq
 cV
 "}
-(9,1,1) = {"
+(10,1,1) = {"
 ME
 hj
 uF
@@ -5885,7 +5936,7 @@ ao
 vq
 cV
 "}
-(10,1,1) = {"
+(11,1,1) = {"
 ME
 ax
 gy
@@ -5929,7 +5980,7 @@ iO
 Po
 cV
 "}
-(11,1,1) = {"
+(12,1,1) = {"
 ME
 ME
 WP
@@ -5973,7 +6024,7 @@ sq
 hY
 GS
 "}
-(12,1,1) = {"
+(13,1,1) = {"
 CM
 ME
 ME
@@ -6017,7 +6068,7 @@ vq
 cV
 CM
 "}
-(13,1,1) = {"
+(14,1,1) = {"
 CM
 CM
 ME
@@ -6061,7 +6112,7 @@ Po
 cV
 CM
 "}
-(14,1,1) = {"
+(15,1,1) = {"
 CM
 CM
 CM
@@ -6105,7 +6156,7 @@ sq
 sq
 CM
 "}
-(15,1,1) = {"
+(16,1,1) = {"
 CM
 CM
 CM
@@ -6149,7 +6200,7 @@ sq
 CM
 CM
 "}
-(16,1,1) = {"
+(17,1,1) = {"
 CM
 CM
 CM
@@ -6193,7 +6244,7 @@ CO
 CM
 CM
 "}
-(17,1,1) = {"
+(18,1,1) = {"
 CM
 CM
 CM
