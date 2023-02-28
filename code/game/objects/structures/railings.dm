@@ -58,7 +58,6 @@
 	. = ..()
 	if(!anchored)
 		to_chat(user, "<span class='warning'>You cut apart the railing.</span>")
-		//var/obj/item/stack/rods/M = new (loc, 3)
 		new buildstack(loc, buildstackamount)
 		I.play_tool_sound(src, 100)
 		deconstruct()
@@ -69,8 +68,6 @@
 	if(!loc) //quick check if it's qdeleted already.
 		return
 	if(!(flags_1 & NODECONSTRUCT_1))
-		var/obj/item/stack/rods/rod = new /obj/item/stack/rods(drop_location(), 3)
-		transfer_fingerprints_to(rod)
 		qdel(src)
 ///Implements behaviour that makes it possible to unanchor the railing.
 /obj/structure/railing/wrench_act(mob/living/user, obj/item/I)
