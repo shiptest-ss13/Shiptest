@@ -120,7 +120,7 @@
 /obj/machinery/power/shuttle/engine/electric/bad
 	name = "Outdated Ion Thruster"
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/electric/bad
-	thrust = 2
+	thrust = 4
 	power_per_burn = 70000
 
 /obj/machinery/power/shuttle/engine/electric/premium
