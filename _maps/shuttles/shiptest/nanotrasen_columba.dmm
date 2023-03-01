@@ -360,12 +360,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
-"hU" = (
-/obj/effect/landmark/subship{
-	subship_template = /datum/map_template/shuttle/subshuttles/nanotrasen_miningshuttle
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo)
 "if" = (
 /obj/effect/turf_decal/box,
 /obj/structure/railing{
@@ -2153,6 +2147,14 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/canteen)
+"KU" = (
+/obj/machinery/light/floor,
+/obj/effect/landmark/subship{
+	subship_template = /datum/map_template/shuttle/subshuttles/nanotrasen_miningshuttle;
+	dir = 1
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/cargo)
 "Lk" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -3083,7 +3085,7 @@ cL
 SS
 SS
 SS
-cL
+KU
 Gq
 Xw
 EL
@@ -3159,7 +3161,7 @@ Iq
 By
 GP
 Wm
-hU
+SS
 SS
 SS
 SS
